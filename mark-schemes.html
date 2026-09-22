@@ -593,20 +593,22 @@ window.toggleQuestion = function(qi) {
   if (arrow) arrow.style.transform = open ? 'rotate(180deg)' : '';
 };
 
-// The Maths / Further Maths side files (maths-questions.js,
-// further-maths-questions.js) are hidden: spot checks against the official
-// question papers (2026-09-22) found their questions don't match the papers
-// they're filed under. With this off, Maths boards fall back to the
-// "board publishes them itself" link card. Re-enable once rebuilt from the
-// official PDFs.
-const SHOW_MATHS_SIDE_FILES = false;
+// Maths / Further Maths questions live in side files. Spot checks against the
+// official question papers (2026-09-22) found most entries don't match the
+// papers they're filed under, so only entries rebuilt from the official PDFs
+// (marked `verified`) are shown. Other Maths papers fall back to the "board
+// publishes them itself" link card. Further Maths and the Maths/FM model
+// answers (keyed to the old questions) aren't loaded at all.
+function verifiedMathsEntry(id) {
+  const e = window.MATHS_QUESTIONS && window.MATHS_QUESTIONS[id];
+  return e && e.verified ? e : null;
+}
 
 // A paper can be browsed here only if it has inline parts (e.g. CS) or
-// question data loaded from a side file (Maths / Further Maths).
+// verified question data from a Maths side file.
 function hasMarkSchemeData(p) {
   return (p.parts && p.parts.length > 0) || (p.questions && p.questions.length > 0)
-    || (window.MATHS_QUESTIONS && !!window.MATHS_QUESTIONS[p.id])
-    || (window.FM_QUESTIONS && !!window.FM_QUESTIONS[p.id]);
+    || !!verifiedMathsEntry(p.id);
 }
 
 // ── Picker logic ──
@@ -755,7 +757,7 @@ function buildPicker(userSubs) {
     if (!paper) return;
     // Maths papers carry their questions + mark schemes in a side file
     // (papers-config.js lists them print-only). Merge them in on demand.
-    const mq = (window.MATHS_QUESTIONS && window.MATHS_QUESTIONS[paper.id]) || (window.FM_QUESTIONS && window.FM_QUESTIONS[paper.id]);
+    const mq = verifiedMathsEntry(paper.id);
     if (mq) { paper.questions = mq.questions; paper.markSchemes = mq.markSchemes; }
     // Stable key for localStorage notes: subject + board + paper title
     const paperKey = (entry.subjectName + '_' + entry.board + '_' + (paper.title || paper.label || pi))
@@ -905,12 +907,7 @@ function buildPicker(userSubs) {
   // Load every subject's questions + pre-written model answers (non-fatal if missing).
   await Promise.all([
     ['CS_MODEL_ANSWERS', 'model-answers-cs.js'],
-    ...(SHOW_MATHS_SIDE_FILES ? [
-      ['MATHS_QUESTIONS', 'maths-questions.js'],
-      ['MATHS_MODEL_ANSWERS', 'model-answers-maths.js'],
-      ['FM_QUESTIONS', 'further-maths-questions.js'],
-      ['FM_MODEL_ANSWERS', 'model-answers-fm.js'],
-    ] : []),
+    ['MATHS_QUESTIONS', 'maths-questions.js'],
     ['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js'],
     ['BIO_MODEL_ANSWERS', 'model-answers-biology.js'],
     ['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js'],
