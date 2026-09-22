@@ -846,7 +846,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'Quadrupling the sample size reduces the standard deviation of the sample mean by a factor of:', options: ['2','4','16','No change'], answer: 0 }, // p22
       { q: 'A sample is drawn from a telephone directory to estimate national opinion. The most serious source of bias is that:', options: ['People without listed landlines cannot be selected at all','The directory is alphabetical','The sample is too large','Telephone numbers are discrete data, so the sample cannot be random at all'], answer: 0 }, // p25
       { q: 'A "self-selected sample is always useless" claim is too strong because:', options: ['It may still be informative if its limitations are recognised and stated','Self-selection removes bias','It is a form of random sampling','It always matches the population'], answer: 0 }, // p25
-      { q: 'From September 2026, students on a two-year AS/A Level Mathematics B (MEI) programme use:', options: ['A single large data set','Three large data sets in rotation','A different data set each year','No data set'], answer: 0 }, // LDS
+      { q: 'OCR provides three large data sets for Mathematics B (MEI) on a rotating cycle. For any one cohort of students:', options: ['Just one of them is the focus of some examination questions','All three are examined in the same paper','A different one is examined in each year of the course','None of them is used in the examination'], answer: 0 }, // LDS
       { q: 'A sampling method is described as unbiased when:', options: ['It does not systematically favour any particular outcomes','It always gives the correct answer for the population parameter','The sample equals the population','The sample is large'], answer: 0 }, // p25
     ],
   },

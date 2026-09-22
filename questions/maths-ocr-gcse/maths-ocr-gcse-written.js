@@ -18,7 +18,7 @@ const MATHS_OCR_WRITTEN = {
       {
         q: 'Calculate 347 × 28. Show your working.',
         marks: 2, tier: 'green',
-        modelAnswer: `347 × 28\n• 347 × 20 = 6940 (1)\n• 347 × 8 = 2776 (1)\n• 6940 + 2776 = 9716 (1)\nAnswer: 9716`
+        modelAnswer: `347 × 28\n• 347 × 20 = 6940 and 347 × 8 = 2776 (1)\n• 6940 + 2776 = 9716 (1)\nAnswer: 9716`
       },
       {
         q: 'Work out 2604 ÷ 12.',
@@ -122,7 +122,7 @@ const MATHS_OCR_WRITTEN = {
       {
         q: 'A student says: "Since 3/5 > 1/2 and 7/10 > 1/2, then 3/5 + 7/10 must be greater than 1." Evaluate this claim. Is the reasoning correct? Is the conclusion correct? Give a full justification.',
         marks: 5, tier: 'red',
-        modelAnswer: `Evaluating the conclusion:\n• 3/5 = 6/10; 6/10 + 7/10 = 13/10 = 1.3 > 1 (1)\n• So the conclusion IS correct (1)\nEvaluating the reasoning:\n• The reasoning is incomplete/flawed as stated — two fractions each greater than ½ do not always sum to more than 1 (1)\n• Counter-example: 0.51 + 0.51 = 1.02 > 1 (works here) — but logic needs formal addition, not just comparison to ½ (1)\n• The correct justification requires actually adding the fractions (1)`
+        modelAnswer: `Evaluating the conclusion:\n• 3/5 = 6/10; 6/10 + 7/10 = 13/10 = 1.3 > 1 (1)\n• So the conclusion IS correct (1)\nEvaluating the reasoning:\n• The reasoning is also valid: if a > ½ and b > ½ then a + b > ½ + ½ = 1 (1)\n• So both the reasoning and the conclusion are correct (1)\n• The reasoning only shows that the sum exceeds 1; the fractions must still be added to find the actual value 13/10 (1)`
       },
     ],
   },
@@ -165,7 +165,7 @@ const MATHS_OCR_WRITTEN = {
       {
         q: 'Without a calculator, estimate √(99.3 × 0.251). Show your working and state whether your estimate is an over- or under-estimate.',
         marks: 4, tier: 'amber',
-        modelAnswer: `• Round: √(100 × 0.25) = √25 = 5 (1)\n• 100 > 99.3 and 0.25 < 0.251, so effects partially cancel (1)\n• 99.3 × 0.251 ≈ 24.93, so √24.93 < 5 (1)\n• Estimate of 5 is a slight over-estimate (1)`
+        modelAnswer: `• Round: √(100 × 0.25) = √25 = 5 (1)\n• 100 > 99.3 and 0.25 < 0.251, so effects partially cancel (1)\n• 99.3 × 0.251 ≈ 24.92, so √24.92 < 5 (1)\n• Estimate of 5 is a slight over-estimate (1)`
       },
       {
         q: 'A car travels 247 miles on 38 litres of fuel. Estimate the fuel consumption in miles per litre to 1 significant figure.',
@@ -477,7 +477,7 @@ const MATHS_OCR_WRITTEN = {
       {
         q: 'The graph of y = x³ − 6x² + 9x is drawn for −1 ≤ x ≤ 4. (a) Find the coordinates of the turning points. (b) Determine whether each is a local maximum or minimum, using a table of values or the shape of the cubic.',
         marks: 7, tier: 'red',
-        modelAnswer: `(a) Turning points occur where dy/dx = 0:\n• dy/dx = 3x² − 12x + 9 = 3(x² − 4x + 3) = 3(x−1)(x−3) (2)\n• x = 1 and x = 3 (1)\n• y(1) = 1 − 6 + 9 = 4 → (1, 4)\n• y(3) = 27 − 54 + 27 = 0 → (3, 0) (1)\n(b) From table of values or second derivative:\n• (1, 4) is a local maximum (positive cubic, first turning point) (1)\n• (3, 0) is a local minimum (1)\n• Reasoning clearly explained (1)`
+        modelAnswer: `(a) Table of values for y = x³ − 6x² + 9x:\n• x: −1, 0, 1, 2, 3, 4 gives y: −16, 0, 4, 2, 0, 4 (2)\n• Factorising: y = x(x² − 6x + 9) = x(x − 3)², so the curve crosses the axis at x = 0 and touches it at x = 3 (1)\n• Turning points at (1, 4) and (3, 0) (1)\n(b) From the table and the shape of a positive cubic:\n• y rises up to (1, 4) and then falls, so (1, 4) is a local maximum (1)\n• y falls to (3, 0) and then rises, so (3, 0) is a local minimum — consistent with the repeated root (x − 3)² (1)\n• Reasoning clearly explained (1)`
       },
       {
         q: 'Two straight lines are given: L₁: 3x + 2y = 12 and L₂: y = 2x − 1. Find their point of intersection algebraically. Verify your answer by substitution, and interpret what the intersection means graphically.',
@@ -523,9 +523,9 @@ const MATHS_OCR_WRITTEN = {
         modelAnswer: `• Scale factor = 35/20 = 1.75 (1)\n• Flour: 300 × 1.75 = 525 g (1)\n• Butter: 120 × 1.75 = 210 g (1)\n• Method clearly shown (1)`
       },
       {
-        q: 'Anaya, Ben, and Carl share a prize in the ratio 2:3:5. Carl receives £160 more than Anaya. Find the total prize money.',
+        q: 'Anaya, Ben, and Carl share a prize in the ratio 2:3:5. Carl receives £150 more than Anaya. Find the total prize money.',
         marks: 4, tier: 'amber',
-        modelAnswer: `• Difference in ratio parts: 5 − 2 = 3 parts (1)\n• 3 parts = £160, so 1 part = £160/3 — wait, check: difference = 5−2 = 3 parts = £160 (1)\n• 1 part = £160/3 is not integer — re-examine: 3 parts = 160, 1 part = 160/3 still non-integer\n• Actually accept: total = 10 parts; 3 parts = 160 → 1 part = 53.33... — or note ratio is 2:3:5, C−A = 3 parts = 160, total = 10 parts = (10/3)×160 = £533.33\n• 1 part = 160/3; total = 10 × (160/3) = £533.33 (2)\n• Award marks for correct method (1) and answer (1)`
+        modelAnswer: `• Difference in ratio parts: 5 − 2 = 3 parts (1)\n• 3 parts = £150, so 1 part = £150 ÷ 3 = £50 (1)\n• Total parts = 2 + 3 + 5 = 10 (1)\n• Total prize = 10 × £50 = £500 (check: Anaya £100, Ben £150, Carl £250, and £250 − £100 = £150 ✓) (1)`
       },
       {
         q: 'Explain the difference between direct and inverse proportion. Give a real-life example of each.',
@@ -602,7 +602,7 @@ const MATHS_OCR_WRITTEN = {
       {
         q: 'A runner completes a 5 km race. For the first 2 km she averages 6 m/s. For the remaining 3 km she averages 4 m/s. A friend claims her average speed for the whole race was 5 m/s. Evaluate this claim. Find the actual average speed and the percentage error in the friend\'s estimate.',
         marks: 5, tier: 'red',
-        modelAnswer: `Time for first 2 km = 2000/6 = 333.33 s (1)\nTime for last 3 km = 3000/4 = 750 s (1)\nTotal time = 1083.33 s; Total distance = 5000 m\nActual average speed = 5000/1083.33 = 4.615 m/s (1)\nFriend's claim of 5 m/s is wrong (1)\nPercentage error = (5 − 4.615)/4.615 × 100 = 8.34% (1)`
+        modelAnswer: `Time for first 2 km = 2000/6 = 333.33 s (1)\nTime for last 3 km = 3000/4 = 750 s (1)\nTotal time = 1083.33 s; Total distance = 5000 m\nActual average speed = 5000/1083.33 = 4.615 m/s (1)\nFriend's claim of 5 m/s is wrong (1)\nPercentage error = (5 − 4.6154)/4.6154 × 100 = 8.33% (1)`
       },
     ],
   },
@@ -645,7 +645,7 @@ const MATHS_OCR_WRITTEN = {
       {
         q: 'A quadrilateral has angles in the ratio 2:3:4:6. Find each angle and state whether the quadrilateral could be a trapezium. Justify your answer.',
         marks: 4, tier: 'amber',
-        modelAnswer: `• Total ratio = 15 parts; 360° ÷ 15 = 24° per part (1)\n• Angles: 48°, 72°, 96°, 144° (1)\n• For a trapezium, two sides are parallel, so co-interior angles must sum to 180° (1)\n• 48 + 144 = 192° ≠ 180°; 72 + 96 = 168° ≠ 180° — does NOT work (or check pairs)\n• Actually 72° and 144° do not sum to 180°; 48° and 96° = 144° — no valid pair\n• Cannot be a trapezium (1)`
+        modelAnswer: `• Total ratio = 15 parts; 360° ÷ 15 = 24° per part (1)\n• Angles: 48°, 72°, 96°, 144° (1)\n• For a trapezium, two sides are parallel, so co-interior angles must sum to 180° (1)\n• Checking every pairing: 48 + 72 = 120°, 48 + 96 = 144°, 48 + 144 = 192°, 72 + 96 = 168°, 72 + 144 = 216°, 96 + 144 = 240° — no pair sums to 180°\n• Cannot be a trapezium (1)`
       },
       {
         q: 'Explain why the interior angle of a regular polygon approaches (but never reaches) 180° as the number of sides increases.',
@@ -722,7 +722,7 @@ const MATHS_OCR_WRITTEN = {
       {
         q: 'A farmer has 120 m of fencing. He wants to create a rectangular pen with one side against a wall (needing no fencing). Determine the dimensions that maximise the area of the pen. Prove that this gives a maximum and not a minimum.',
         marks: 6, tier: 'red',
-        modelAnswer: `Let the width = x, length = y (parallel to wall):\n• Fencing: 2x + y = 120 → y = 120 − 2x (1)\n• Area A = xy = x(120 − 2x) = 120x − 2x² (1)\n• dA/dx = 120 − 4x = 0 → x = 30 (1)\n• y = 120 − 60 = 60 m (1)\n• Max area = 30 × 60 = 1800 m² (1)\n• d²A/dx² = −4 < 0, confirming maximum (1)`
+        modelAnswer: `Let the width = x, length = y (parallel to wall):\n• Fencing: 2x + y = 120 → y = 120 − 2x (1)\n• Area A = xy = x(120 − 2x) = 120x − 2x² (1)\n• Complete the square: A = −2(x² − 60x) = −2(x − 30)² + 1800, so x = 30 (1)\n• y = 120 − 60 = 60 m (1)\n• Max area = 30 × 60 = 1800 m² (1)\n• −2(x − 30)² is never positive, so A is greatest when x = 30 — a maximum, not a minimum (1)`
       },
     ],
   },
@@ -765,7 +765,7 @@ const MATHS_OCR_WRITTEN = {
       {
         q: 'A shape undergoes a reflection in y = 1 followed by a rotation of 90° anticlockwise about the origin. Explain why the combination of these two transformations is not a single reflection.',
         marks: 3, tier: 'amber',
-        modelAnswer: `• Reflection preserves orientation; rotation preserves orientation (1)\n• The composition of a reflection and a rotation changes orientation overall — the combined transformation reverses orientation (1)\n• A single reflection reverses orientation in a simple, direct way — but the specific combined effect cannot be reproduced by a single reflection about a line through the origin (1)`
+        modelAnswer: `• Reflection reverses orientation; rotation preserves orientation (1)\n• The composition of a reflection and a rotation changes orientation overall — the combined transformation reverses orientation (1)\n• A single reflection reverses orientation in a simple, direct way — but the specific combined effect cannot be reproduced by a single reflection about a line through the origin (1)`
       },
       {
         q: 'A shape is enlarged by scale factor 1/2. State the effect on (a) the perimeter and (b) the area, compared to the original. Justify your answers.',
@@ -900,7 +900,7 @@ const MATHS_OCR_WRITTEN = {
         modelAnswer: `Diagram: Circle, tangent TPT\', chord PB, point A on major arc. Angles: angle between tangent TP and chord PB = α; angle PAB = β. (1)\nProof:\n• Draw radius OP; tangent ⊥ radius so angle OPT = 90° (1)\n• Angle OPB = 90° − α (since angle TPB = α) (1)\n• OP = OB (radii) → triangle OPB isosceles → angle OBP = angle OPB = 90° − α (1)\n• Angle POB = 180° − 2(90° − α) = 2α (angle sum) (1)\n• Angle PAB = ½ angle POB = α = angle TPB ✓ (alternate segment theorem proved) (1)`
       },
       {
-        q: 'A circular sector has radius r and angle θ (in degrees). The perimeter of the sector equals three times the radius. Find θ in terms of r, and calculate θ when r = 7. Show all working.',
+        q: 'A circular sector has radius r and angle θ (in degrees). The perimeter of the sector equals three times the radius. Find θ, showing that it does not depend on r, and calculate θ when r = 7. Show all working.',
         marks: 5, tier: 'red',
         modelAnswer: `Perimeter of sector = arc length + 2 radii:\n• Arc length = (θ/360) × 2πr (1)\n• Perimeter = (θ/360) × 2πr + 2r = 3r (given) (1)\n• (θ/360) × 2πr = r → θ/360 × 2π = 1 (1)\n• θ = 360/(2π) = 180/π degrees (1)\n• When r = 7: θ = 180/π ≈ 57.3° (1)`
       },
@@ -913,7 +913,7 @@ const MATHS_OCR_WRITTEN = {
       {
         q: 'Given vectors a = (3, −1) and b = (−2, 4), calculate a + b and 2a − b.',
         marks: 2, tier: 'green',
-        modelAnswer: `• a + b = (3+(−2), −1+4) = (1, 3) (1)\n• 2a − b = (6−(−2), −2−4) = (8, −8) (1)`
+        modelAnswer: `• a + b = (3+(−2), −1+4) = (1, 3) (1)\n• 2a − b = (6−(−2), −2−4) = (8, −6) (1)`
       },
       {
         q: 'State the magnitude of the vector (5, −12).',
@@ -948,16 +948,16 @@ const MATHS_OCR_WRITTEN = {
         modelAnswer: `• AB = OB − OA = (a − 2b) − (3a + b) = −2a − 3b (1)\n• AC = (2/3)AB = (2/3)(−2a − 3b) = −(4/3)a − 2b (1)\n• OC = OA + AC = (3a + b) + (−4a/3 − 2b) (1)\n• = (9a/3 − 4a/3) + (b − 2b) = (5/3)a − b (1)`
       },
       {
-        q: 'Explain why a non-zero vector cannot be both parallel and perpendicular to another non-zero vector. Use the dot product or a geometric argument.',
+        q: 'Explain why a non-zero vector cannot be both parallel and perpendicular to another non-zero vector. Use a geometric argument.',
         marks: 3, tier: 'amber',
         modelAnswer: `• Parallel vectors have the same direction (angle = 0° or 180°) (1)\n• Perpendicular vectors are at 90° to each other (1)\n• These conditions are mutually exclusive for non-zero vectors — a vector cannot simultaneously point in the same direction as another and be at 90° to it (1)`
       },
     ],
     red: [
       {
-        q: 'OABC is a parallelogram. OA = a and OC = c. Point P lies on diagonal OB such that OP:PB = 1:2. Point Q is the midpoint of AC. Show that P, Q, and the midpoint of OB are distinct points, and find the position vector of Q. Then determine whether O, P, Q are collinear.',
+        q: 'OABC is a parallelogram. OA = a and OC = c. Point P lies on diagonal OB such that OP:PB = 1:2. Point Q is the midpoint of AC. Show that P is not the midpoint of OB, find the position vector of Q, and then determine whether O, P and Q are collinear.',
         marks: 6, tier: 'red',
-        modelAnswer: `OB = OA + AB = a + c (since AB = OC = c in parallelogram) (1)\nPoint P: OP = (1/3)OB = (1/3)(a + c) (1)\nMidpoint M of OB: OM = (1/2)(a + c) ≠ OP, so P ≠ M (1)\nPosition vector of Q (midpoint of AC):\n• OA = a, OC = c → AC = c − a (since AC = OC − OA in position vectors? No: A has position a, C has position c, so AC = c − a)\n• Q midpoint: OQ = (OA + OC)/2 = (a + c)/2 (1)\nCompare OP and OQ:\n• OP = (1/3)(a + c), OQ = (1/2)(a + c)\n• Both are scalar multiples of (a + c) (1)\n• O, P, Q are collinear (all lie on line OB direction) (1)`
+        modelAnswer: `OB = OA + AB = a + c (since AB = OC = c in parallelogram) (1)\nPoint P: OP = (1/3)OB = (1/3)(a + c) (1)\nMidpoint M of OB: OM = (1/2)(a + c) ≠ OP, so P ≠ M (1)\nPosition vector of Q (midpoint of AC):\n• A has position vector a and C has position vector c, so AC = c − a\n• Q midpoint: OQ = (OA + OC)/2 = (a + c)/2 (1)\nCompare OP and OQ:\n• OP = (1/3)(a + c), OQ = (1/2)(a + c)\n• Both are scalar multiples of (a + c) (1)\n• O, P, Q are collinear (all lie on line OB direction) (1)`
       },
       {
         q: 'Prove using vectors that the diagonals of a parallelogram bisect each other.',
@@ -1015,9 +1015,9 @@ const MATHS_OCR_WRITTEN = {
     ],
     red: [
       {
-        q: 'A biased coin has P(Head) = p. The coin is tossed three times. Show that the probability of exactly two heads is 3p²(1−p). Then find the value of p if P(exactly 2 heads) = 3/8.',
+        q: 'A biased coin has P(Head) = p. The coin is tossed three times. Show that the probability of exactly two heads is 3p²(1−p). Then show that p = ½ gives P(exactly 2 heads) = 3/8.',
         marks: 6, tier: 'red',
-        modelAnswer: `Ways to get exactly 2 heads: HHT, HTH, THH — 3 outcomes (1)\nEach has probability p × p × (1−p) = p²(1−p) (1)\nTotal P(exactly 2 heads) = 3p²(1−p) ✓ (1)\nSet equal to 3/8:\n• 3p²(1−p) = 3/8 (1)\n• p²(1−p) = 1/8 (1)\n• Testing p = 1/2: (1/4)(1/2) = 1/8 ✓ → p = 1/2 (1)`
+        modelAnswer: `Ways to get exactly 2 heads: HHT, HTH, THH — 3 outcomes (1)\nEach has probability p × p × (1−p) = p²(1−p) (1)\nTotal P(exactly 2 heads) = 3p²(1−p) ✓ (1)\nSet equal to 3/8:\n• 3p²(1−p) = 3/8 (1)\n• p²(1−p) = 1/8 (1)\n• Substituting p = 1/2: 3 × (1/2)² × (1/2) = 3 × 1/8 = 3/8 ✓ (1)`
       },
       {
         q: 'In a class, 60% of students study French, 40% study Spanish, and 25% study both. A student is chosen at random. Using a Venn diagram approach, find: (a) P(French only), (b) P(neither), (c) P(French | Spanish). Evaluate the claim that "more than half the Spanish students also study French."',
@@ -1075,9 +1075,9 @@ const MATHS_OCR_WRITTEN = {
     ],
     red: [
       {
-        q: 'A data set of 20 values has a mean of 15 and a standard deviation of 3. A new value of 27 is added to the set. Explain how the mean and spread are likely to be affected. Calculate the new mean exactly, and comment on whether the standard deviation will increase, decrease, or stay the same.',
+        q: 'A data set of 20 values has a mean of 15, a smallest value of 9 and a largest value of 21. A new value of 27 is added to the set. Explain how the mean and spread are likely to be affected. Calculate the new mean exactly, and comment on whether the range will increase, decrease, or stay the same.',
         marks: 5, tier: 'red',
-        modelAnswer: `New mean:\n• Old total = 20 × 15 = 300 (1)\n• New total = 300 + 27 = 327; new mean = 327/21 ≈ 15.57 (1)\nEffect on mean:\n• Mean increases (27 > 15) (1)\nEffect on spread:\n• 27 is 4 standard deviations above the mean — it is an outlier (1)\n• Standard deviation will increase since the new value is far from the mean (1)`
+        modelAnswer: `New mean:\n• Old total = 20 × 15 = 300 (1)\n• New total = 300 + 27 = 327; new mean = 327/21 ≈ 15.57 (1)\nEffect on mean:\n• Mean increases (27 > 15) (1)\nEffect on spread:\n• Old range = 21 − 9 = 12; the new value 27 is above the old largest value, so the new range = 27 − 9 = 18 (1)\n• The range increases, so the data are more spread out (1)`
       },
       {
         q: 'Two students compare their test marks over 5 tests. Alice: 60, 65, 70, 68, 72. Ben: 55, 80, 45, 90, 75. Calculate the mean and range for each. Evaluate who has performed better overall, giving a balanced judgement.',

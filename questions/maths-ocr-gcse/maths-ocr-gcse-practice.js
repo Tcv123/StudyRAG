@@ -167,7 +167,7 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• 35/100 (1)\n• 7/20 (1)`
       },
       {
-        q: 'Convert 0.̄4̄̄5̄ (0.454545...) to a fraction in its simplest form.',
+        q: 'Convert the recurring decimal 0.454545... to a fraction in its simplest form.',
         marks: 3,
         requiresDiagram: false,
         markScheme: `• Let x = 0.454545... so 100x = 45.454545... (1)\n• 99x = 45, so x = 45/99 (1)\n• 5/11 (1)`
@@ -695,16 +695,16 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• Add equations to eliminate y: 3x = 9 (1)\n• x = 3 (1)\n• y = 1 (1)`
       },
       {
-        q: 'Solve simultaneously: 3x + 2y = 11 and 2x − 3y = −4.',
+        q: 'Solve simultaneously: 3x + 2y = 11 and 2x − 3y = −10.',
         marks: 4,
         requiresDiagram: false,
-        markScheme: `• Multiply to match coefficients, e.g. ×3 and ×2: 9x + 6y = 33 and 4x − 6y = −8 (1)\n• Add: 13x = 25 (1)\n• x = 25/13... [check: use another valid approach for full marks] (1)\n• Alternatively: correct method leading to x = 1 and y = 4 (1) [award all 4 if both answers correct]`
+        markScheme: `• Multiply to match coefficients, e.g. ×3 and ×2: 9x + 6y = 33 and 4x − 6y = −20 (1)\n• Add: 13x = 13 (1)\n• x = 1 (1)\n• y = 4 (1)`
       },
       {
-        q: 'Make x the subject of: v = u + at.',
+        q: 'Make a the subject of: v = u + at.',
         marks: 1,
         requiresDiagram: false,
-        markScheme: `• a = (v − u)/t OR t = (v − u)/a depending on instruction — award (1) for correct rearrangement making asked variable the subject`
+        markScheme: `• a = (v − u)/t (1)`
       },
       {
         q: 'Make r the subject of: A = πr².',
@@ -824,7 +824,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'The nth term of sequence A is 3n + 1. The nth term of sequence B is n² − 2. Find the values of n for which both sequences have the same term.',
         marks: 4,
         requiresDiagram: false,
-        markScheme: `• Set equal: 3n + 1 = n² − 2 (1)\n• n² − 3n − 3 = 0 ... no, let's use: n² − 3n − 3 = 0 (1)\n• Correct quadratic manipulation (1)\n• n = (3 ± √21) / 2; valid positive integer n = 4: check 13 and 14 — not equal, so no positive integer solution (1) [award marks for correct algebraic approach]`
+        markScheme: `• Set equal: 3n + 1 = n² − 2 (1)\n• Rearrange: n² − 3n − 3 = 0 (1)\n• Correct quadratic manipulation (1)\n• n = (3 ± √21) / 2 ≈ 3.79 or −0.79, so there is no integer value of n for which the terms are equal (1)`
       },
       {
         q: 'Write down the first five terms of the sequence with nth term (−1)ⁿ × n.',
@@ -872,7 +872,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'The nth term of a sequence is given by 2n² − 3n + 1. Is the sequence increasing for all n ≥ 1? Justify your answer.',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• Evaluate at n = 1: 0, n = 2: 3, n = 3: 10 (1)\n• Differences: 3, 7, 11, ... increasing (1)\n• Sequence decreases from n=1 to n=1 but increases from n=2 onward — or correct analysis showing minimum at n ≈ 0.75 (1)`
+        markScheme: `• Evaluate at n = 1: 0, n = 2: 3, n = 3: 10 (1)\n• Differences: 3, 7, 11, ... increasing (1)\n• Yes: the minimum of 2n² − 3n + 1 is at n = 0.75, which is less than 1, so every difference from n = 1 onwards is positive and the sequence is increasing for all n ≥ 1 (1)`
       },
       {
         q: 'A pattern of squares is built: Pattern 1 has 1 square, Pattern 2 has 5 squares, Pattern 3 has 13 squares. Find the number of squares in Pattern n.',
@@ -1196,7 +1196,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'A 600 g packet of cereal costs £2.40. A 900 g packet costs £3.45. Which is better value for money? Show your working.',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• 600 g: 2.40/600 = 0.4p/g (1)\n• 900 g: 3.45/900 = 0.383p/g (1)\n• 900 g packet is better value (1)`
+        markScheme: `• 600 g: 240p ÷ 600 = 0.4p/g (1)\n• 900 g: 345p ÷ 900 = 0.383p/g (1)\n• 900 g packet is better value (1)`
       },
       {
         q: 'A gradient of a distance-time graph is 40 km/h for the first hour, then 0 for 30 minutes, then 60 km/h for 2 hours. How far has the object travelled in total?',
@@ -1325,10 +1325,10 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• Angles in quadrilateral sum to 360° (1)\n• x = 360 − 65 − 65 − 110 = 120° (1)`
       },
       {
-        q: 'Two angles of a triangle are 47° and 63°. The triangle is isoceles. Find all three possible sets of angles.',
+        q: 'One angle of an isosceles triangle is 47°. Find all the possible sets of angles.',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• Third angle = 180 − 47 − 63 = 70° (1)\n• If 47° repeated: 47 + 47 + 86 = 180°... need to check validity (1)\n• Valid set: 47°, 63°, 70° (and 47°, 47°, 86° if valid) — award marks for correct reasoning (1)`
+        markScheme: `• If 47° is the apex angle, the two base angles are (180 − 47) ÷ 2 (1)\n• 47°, 66.5°, 66.5° (1)\n• If 47° is a base angle: 47°, 47°, 86° (1)`
       },
       {
         q: 'State the properties that distinguish a rhombus from a square.',
@@ -1337,10 +1337,10 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• A rhombus has all sides equal but angles are not 90° (1)\n• A square has all sides equal AND all right angles (1)`
       },
       {
-        q: 'Find angle PQR given that PQ is parallel to SR, angle QPR = 35° and angle PSR = 70°.',
+        q: 'Find angle SPR given that PQ is parallel to SR, angle QPR = 35° and angle PSR = 70°.',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• Angle PRS = 35° (alternate angles, PQ ∥ SR) (1)\n• Angle PSR + angle RSP... correct use of angle rules (1)\n• Correct final answer with justification (1)`
+        markScheme: `• Angle PRS = 35° (alternate angles, PQ ∥ SR) (1)\n• Angles in triangle PSR sum to 180° (1)\n• Angle SPR = 180 − 70 − 35 = 75° (1)`
       },
       {
         q: 'The angles of a quadrilateral are 2x, 3x, 4x and 5x. Find x and state each angle.',
@@ -1373,7 +1373,7 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• Sum of interior angles = (6 − 2) × 180 = 720° (1)\n• Each angle = 720 ÷ 6 = 120° ✓ (1)`
       },
       {
-        q: 'A quadrilateral has one line of symmetry. Name the type of quadrilateral and state its properties.',
+        q: 'A quadrilateral has exactly one line of symmetry, and that line lies along one of its diagonals. Name the type of quadrilateral and state its properties.',
         marks: 2,
         requiresDiagram: false,
         markScheme: `• Kite (1)\n• Two pairs of adjacent equal sides; one diagonal bisects the other at right angles; one pair of equal angles (1)`
@@ -1559,10 +1559,10 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• Find vectors from centre to each vertex (1)\n• Multiply by −1 and add back to centre (1)\n• (5,4), (3,4), (5,1) (1)`
       },
       {
-        q: 'Describe fully the transformation that maps A(2,1) to B(6,3) using an enlargement.',
+        q: 'Describe fully the enlargement with centre the origin that maps A(2,1) to B(6,3).',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• Scale factor identified (1)\n• Centre of enlargement identified correctly (1)\n• Full description: Enlargement, scale factor k, centre (x,y) (1)`
+        markScheme: `• Scale factor = 6/2 = 3 (1)\n• Centre of enlargement = (0,0) (1)\n• Full description: Enlargement, scale factor 3, centre (0,0) (1)`
       },
       {
         q: 'A shape is reflected in y = −x. The original vertex is at (3, −2). Find the image.',
@@ -1571,7 +1571,7 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• Rule for reflection in y = −x: (x,y) → (−y, −x) (1)\n• Image: (2, −3) (1)`
       },
       {
-        q: 'On the grid, draw the image of the shape after a rotation of 180° about the origin.',
+        q: 'On the grid, draw the image of the shape with vertices (1,1), (4,1) and (4,3) after a rotation of 180° about the origin.',
         marks: 2,
         requiresDiagram: true,
         markScheme: `• Rule: (x,y) → (−x, −y) (1)\n• All vertices correctly plotted and joined (1)`
@@ -1601,7 +1601,7 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• Area scale factor = 3² = 9 (1)\n• Area = 54 cm² (1)`
       },
       {
-        q: 'The matrix for a transformation is [[0,−1],[1,0]]. Describe the transformation.',
+        q: 'A transformation maps (1, 0) to (0, 1) and (0, 1) to (−1, 0). Describe the transformation fully.',
         marks: 2,
         requiresDiagram: false,
         markScheme: `• Rotation (1)\n• 90° anticlockwise about origin (1)`
@@ -1700,7 +1700,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'Use the sine rule to find angle B in triangle ABC where a = 9 cm, b = 12 cm, A = 40°.',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• sin B / 12 = sin 40° / 9 (1)\n• sin B = 12 × sin 40° / 9 (1)\n• B = sin⁻¹(0.857...) ≈ 58.9° (1)`
+        markScheme: `• sin B / 12 = sin 40° / 9 (1)\n• sin B = 12 × sin 40° / 9 (1)\n• B = sin⁻¹(0.857...) ≈ 59.0° (1)`
       },
       {
         q: 'In triangle ABC, a = 7 cm, b = 10 cm, C = 50°. Use the cosine rule to find side c.',
@@ -1712,10 +1712,10 @@ const MATHS_OCR_PRACTICE = {
         q: 'Find the area of triangle ABC where a = 8 cm, b = 11 cm and C = 65°.',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• Area = ½ab sin C (1)\n• = ½ × 8 × 11 × sin 65° (1)\n• ≈ 39.87 cm² (1)`
+        markScheme: `• Area = ½ab sin C (1)\n• = ½ × 8 × 11 × sin 65° (1)\n• ≈ 39.88 cm² (1)`
       },
       {
-        q: 'An isoceles triangle has two equal sides of 13 cm and a base of 10 cm. Find the perpendicular height.',
+        q: 'An isosceles triangle has two equal sides of 13 cm and a base of 10 cm. Find the perpendicular height.',
         marks: 3,
         requiresDiagram: false,
         markScheme: `• Half base = 5 cm (1)\n• h² = 13² − 5² = 169 − 25 = 144 (1)\n• h = 12 cm (1)`
@@ -1724,7 +1724,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'A pilot flies due north for 200 km, then due east for 150 km. Find the bearing and distance back to the start.',
         marks: 5,
         requiresDiagram: false,
-        markScheme: `• Distance = √(200² + 150²) = √(40000 + 22500) = √62500 (1)\n• = 250 km (1)\n• tan θ = 150/200, θ = 36.9° (1)\n• Bearing from current position = 180° + 90° − 36.9° = 233.1° (1)\n• Clear method shown (1)`
+        markScheme: `• Distance = √(200² + 150²) = √(40000 + 22500) = √62500 (1)\n• = 250 km (1)\n• tan θ = 150/200, θ = 36.9° (1)\n• Bearing from current position = 180° + 36.9° = 216.9° (1)\n• Clear method shown (1)`
       },
       {
         q: 'In triangle PQR, PQ = 5 cm, QR = 7 cm and PR = 9 cm. Find angle P using the cosine rule.',
@@ -1766,7 +1766,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'Two ships leave port. Ship A travels on a bearing of 040° for 30 km. Ship B travels on a bearing of 130° for 40 km. How far apart are the ships?',
         marks: 5,
         requiresDiagram: false,
-        markScheme: `• Angle between paths = 130 − 40 = 90° (1)\n• Since the angle between them is 90°... (1)\n• Distance² = 30² + 40² = 900 + 1600 = 2500 (1)\n• Distance = 50 km (1)\n• Correct identification of 90° angle (1)`
+        markScheme: `• Angle between paths = 130 − 40 = 90° (1)\n• Since the angle is 90°, use Pythagoras (1)\n• Distance² = 30² + 40² = 900 + 1600 = 2500 (1)\n• Distance = 50 km (1)\n• Correct identification of 90° angle (1)`
       },
     ],
   },
@@ -1811,10 +1811,10 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• Arc centred at P drawn (1)\n• Equilateral triangle construction giving 60°; correct arcs shown (1)`
       },
       {
-        q: 'AB and CD are two chords of a circle that intersect at P. AP = 4 cm, PB = 9 cm and CP = 6 cm. Find PD.',
+        q: 'A, B, C and D lie on a circle. BD is a diameter and angle ABD = 34°. Find angle ADB and angle BCD, giving reasons.',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• Intersecting chords: AP × PB = CP × PD (1)\n• 4 × 9 = 6 × PD → PD = 36/6 (1)\n• PD = 6 cm (1)`
+        markScheme: `• Angle BAD = 90° (angle in a semicircle) (1)\n• Angle ADB = 180 − 90 − 34 = 56° (angles in a triangle) (1)\n• Angle BCD = 180 − 90 = 90° (opposite angles of a cyclic quadrilateral) (1)`
       },
       {
         q: 'PQ is a tangent at Q to a circle. O is the centre. Angle QPO = 25°. Find angle QOP.',
@@ -1838,7 +1838,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'O is the centre of a circle. Angle OAB = 35° where AB is a chord. Find angle AOB.',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• OA = OB (radii), so triangle OAB is isoceles (1)\n• Angle OBA = 35° (base angles equal) (1)\n• Angle AOB = 180 − 35 − 35 = 110° (1)`
+        markScheme: `• OA = OB (radii), so triangle OAB is isosceles (1)\n• Angle OBA = 35° (base angles equal) (1)\n• Angle AOB = 180 − 35 − 35 = 110° (1)`
       },
       {
         q: 'Find the equation of a circle with centre (3, −2) and radius 5.',
@@ -1883,10 +1883,10 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• Half chord = 8 cm (perpendicular from centre bisects chord) (1)\n• r² = 8² + 6² = 64 + 36 = 100 (1)\n• r = 10 cm (1)`
       },
       {
-        q: 'Find the centre and radius of the circle x² + y² − 6x + 4y − 3 = 0.',
+        q: 'The point (3, 4) lies on the circle x² + y² = 25. Find the equation of the tangent to the circle at (3, 4).',
         marks: 4,
         requiresDiagram: false,
-        markScheme: `• Complete the square for x: (x − 3)² − 9 (1)\n• Complete the square for y: (y + 2)² − 4 (1)\n• (x − 3)² + (y + 2)² = 16 (1)\n• Centre (3, −2), radius 4 (1)`
+        markScheme: `• Gradient of the radius to (3, 4) = 4/3 (1)\n• Gradient of the tangent = −3/4 (perpendicular) (1)\n• y − 4 = −3/4 (x − 3) (1)\n• y = −3/4 x + 25/4, i.e. 3x + 4y = 25 (1)`
       },
       {
         q: 'Describe and justify the locus of points equidistant from two fixed points A and B.',
@@ -1898,7 +1898,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'Construct a 75° angle using ruler and compasses only. Show all construction lines.',
         marks: 3,
         requiresDiagram: true,
-        markScheme: `• Construct 60° angle (1)\n• Bisect to get 30°; 60° + 15° = 75° — or bisect 90° to get 45° then add 30° (1)\n• Correct final angle with all arcs shown (1)`
+        markScheme: `• Construct 60° angle (1)\n• Bisect the 60° to get 30°, then bisect the 30° to get 15°; 60° + 15° = 75° — or bisect 90° to get 45° then add 30° (1)\n• Correct final angle with all arcs shown (1)`
       },
     ],
   },
@@ -2003,10 +2003,10 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• AB = 4b − 3a (1)\n• OM = OA + ½AB = 3a + ½(4b − 3a) = 3a/2 + 2b (1)\n• ON = ½OM = 3a/4 + b (1)\n• Clear method (1)`
       },
       {
-        q: 'Explain why a + b and a − b are perpendicular when |a| = |b|.',
+        q: 'Vectors a = (3, −2) and b = (k, 8) are parallel. Find the value of k and state the scalar multiple connecting them.',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• (a + b)·(a − b) = |a|² − |b|² (1)\n• If |a| = |b| then |a|² − |b|² = 0 (1)\n• Zero dot product means perpendicular (1)`
+        markScheme: `• b is a scalar multiple of a: 8 ÷ (−2) = −4 (1)\n• k = −4 × 3 = −12 (1)\n• b = −4a (1)`
       },
       {
         q: 'A boat has velocity (3, 4) km/h. A current adds velocity (−1, 2) km/h. Find the resultant speed.',
@@ -2030,7 +2030,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'Verify that the vectors (6, −8) and (4, 3) are perpendicular.',
         marks: 2,
         requiresDiagram: false,
-        markScheme: `• Dot product = 6×4 + (−8)×3 = 24 − 24 = 0 (1)\n• Dot product = 0, so vectors are perpendicular ✓ (1)`
+        markScheme: `• Gradient of (6, −8) = −8/6 = −4/3; gradient of (4, 3) = 3/4 (1)\n• −4/3 × 3/4 = −1, so the two vectors are perpendicular ✓ (1)`
       },
     ],
   },
@@ -2069,10 +2069,10 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• P(A ∩ B) = P(A) × P(B) (1)\n• 0.6 × 0.4 = 0.24 (1)`
       },
       {
-        q: 'A two-way table shows results of a survey on pet ownership. 30 own dogs, 20 own cats, 8 own both. Find the probability that a randomly selected person owns neither.',
+        q: 'A two-way table shows the results of a survey of 60 people on pet ownership. 30 own dogs, 20 own cats and 8 own both. Find the probability that a randomly selected person owns neither.',
         marks: 3,
         requiresDiagram: false,
-        markScheme: `• P(dog or cat) = P(dog) + P(cat) − P(both) (1)\n• 30 + 20 − 8 = 42 own at least one (1)\n• P(neither) = (total − 42)/total — need total; answer dependent on stated total (1)`
+        markScheme: `• P(dog or cat) = P(dog) + P(cat) − P(both) (1)\n• 30 + 20 − 8 = 42 own at least one (1)\n• P(neither) = (60 − 42)/60 = 18/60 = 3/10 (1)`
       },
       {
         q: 'A bag contains 4 red and 6 blue balls. Two balls are drawn without replacement. Find the probability both are red.',
@@ -2186,7 +2186,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'The heights (cm) of 8 students are: 152, 148, 165, 160, 148, 172, 155, 161. Find the range and the interquartile range.',
         marks: 4,
         requiresDiagram: false,
-        markScheme: `• Range = 172 − 148 = 24 (1)\n• Ordered: 148,148,152,155,160,161,165,172 (1)\n• LQ = 152, UQ = 161 (or 150, 163 — method dependent) (1)\n• IQR = UQ − LQ = 9 (or correct from method) (1)`
+        markScheme: `• Range = 172 − 148 = 24 (1)\n• Ordered: 148,148,152,155,160,161,165,172 (1)\n• LQ = (148+152)/2 = 150, UQ = (161+165)/2 = 163 (1)\n• IQR = UQ − LQ = 163 − 150 = 13 (1)`
       },
       {
         q: 'A data set has values: 3, 5, 7, 9, 11. State the effect on the mean of adding 4 to every value.',
@@ -2243,7 +2243,7 @@ const MATHS_OCR_PRACTICE = {
         markScheme: `• Sample is not representative of all students (1)\n• Those outside a gym are likely to exercise more than average, creating biased results (1)`
       },
       {
-        q: 'A data set has values: 12, 14, 12, 18, 16, 20, 14, 12. Draw a frequency table and state the modal class.',
+        q: 'A data set has values: 12, 14, 12, 18, 16, 20, 14, 12. Draw a frequency table and state the mode.',
         marks: 3,
         requiresDiagram: false,
         markScheme: `• Tally/frequency table correctly completed (1)\n• Mode = 12 (frequency 3) (1)\n• (1 for fully correct frequency table) (1)`
@@ -2294,7 +2294,7 @@ const MATHS_OCR_PRACTICE = {
         q: 'The cumulative frequency for exam marks is: 20 marks (cf=5), 40 marks (cf=20), 60 marks (cf=38), 80 marks (cf=47), 100 marks (cf=50). Find the median.',
         marks: 2,
         requiresDiagram: false,
-        markScheme: `• Median at n/2 = 25th value (1)\n• Read from graph at cf = 25 → median ≈ 44 marks (1)`
+        markScheme: `• Median at n/2 = 25th value (1)\n• Interpolating between (40, cf 20) and (60, cf 38): 40 + (5/18) × 20 ≈ 46 marks (accept 45–46) (1)`
       },
       {
         q: 'From a cumulative frequency graph, the lower quartile is 35 and the upper quartile is 55. Find the interquartile range.',

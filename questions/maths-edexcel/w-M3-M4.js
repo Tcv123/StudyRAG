@@ -186,9 +186,9 @@ const EDEXCEL_WRITTEN_M3_M4 = {
         diagram: true
       },
       {
-        q: 'A string connecting two hanging masses (3 kg and 5 kg) over a smooth pulley has a maximum tensile strength of 40 N. Find the maximum acceleration before the string breaks, and determine which direction the system accelerates. (\\(g = 9.8\\) m/s²)',
+        q: 'A string connecting a 3 kg mass and a mass of \\(M\\) kg over a smooth pulley has a maximum tensile strength of 40 N. Find the largest value of \\(M\\) (with \\(M>3\\)) for which the string does not break, and state the direction of motion. (\\(g = 9.8\\) m/s²)',
         marks: 6, tier: 'red',
-        modelAnswer: 'The heavier 5 kg mass accelerates downward. For 5 kg: \\(5g - T = 5a\\). For 3 kg: \\(T - 3g = 3a\\). From the 3 kg equation: \\(a = \\dfrac{T - 3g}{3}\\). Substitute into 5 kg equation: \\(5g - T = 5 \\times \\dfrac{T-3g}{3}\\). So \\(3(5g - T) = 5(T - 3g)\\), \\(15g - 3T = 5T - 15g\\), \\(30g = 8T\\), \\(T = \\dfrac{30 \\times 9.8}{8} = 36.75\\) N (at equilibrium acceleration). For max tension \\(T = 40\\) N: from 3 kg equation: \\(a = \\dfrac{40 - 29.4}{3} = \\dfrac{10.6}{3} \\approx 3.53\\) m/s². The 5 kg mass accelerates downward.',
+        modelAnswer: 'For two hanging masses \\(m_1\\) and \\(m_2\\) over a smooth pulley, \\(a = \\dfrac{(m_2-m_1)g}{m_1+m_2}\\) and the tension is \\(T = m_1(g+a) = \\dfrac{2m_1m_2g}{m_1+m_2}\\).\n\nHere \\(m_1 = 3\\) and \\(m_2 = M\\), so \\(T = \\dfrac{2(3)M(9.8)}{3+M} = \\dfrac{58.8M}{3+M}\\).\n\nThe string does not break while \\(T \\leq 40\\): \\(58.8M \\leq 40(3+M)\\), i.e. \\(18.8M \\leq 120\\) and \\(M \\leq 6.38\\) kg (3 s.f.).\n\nCheck \\(M = 6.38\\): \\(a = \\dfrac{3.38 \\times 9.8}{9.38} = 3.53\\) m/s² and \\(T = 3(9.8+3.53) = 40.0\\) N ✓.\n\nSince \\(M>3\\), the mass \\(M\\) accelerates downward and the 3 kg mass accelerates upward.',
         diagram: true
       },
       {
@@ -210,9 +210,9 @@ const EDEXCEL_WRITTEN_M3_M4 = {
         diagram: true
       },
       {
-        q: 'A particle of mass 6 kg is connected to a particle of mass 9 kg by a string over a pulley. The string breaks when the tension exceeds 72 N. Show that if the heavier mass starts at rest 3 m above the ground, the string breaks before the mass reaches the ground. (\\(g = 9.8\\) m/s²)',
+        q: 'A particle of mass 6 kg is connected to a particle of mass 9 kg by a string over a smooth pulley. The string breaks when the tension exceeds 70 N. Determine whether the string breaks when the system is released from rest. (\\(g = 9.8\\) m/s²)',
         marks: 7, tier: 'red',
-        modelAnswer: 'System acceleration: \\(a = \\dfrac{(9-6)g}{15} = \\dfrac{3 \\times 9.8}{15} = \\dfrac{29.4}{15} = 1.96\\) m/s². Tension: \\(T = 6(g+a) = 6(9.8+1.96) = 6 \\times 11.76 = 70.56\\) N. Since \\(70.56 < 72\\) N, the string does not break under normal acceleration. For the string to break we need \\(T > 72\\) N; here \\(T = 70.56\\) N so the string does NOT break. (If the calculation gave \\(T > 72\\) it would break — students should verify the calculation. Here note \\(T = 70.56 < 72\\) N so the string is safe throughout the fall.)',
+        modelAnswer: 'System acceleration: \\(a = \\dfrac{(9-6)g}{9+6} = \\dfrac{3 \\times 9.8}{15} = 1.96\\) m/s².\n\nTension (from the 6 kg particle, which accelerates upward): \\(T - 6g = 6a\\), so \\(T = 6(9.8+1.96) = 6 \\times 11.76 = 70.56\\) N.\n\nCheck with the 9 kg particle: \\(9g - T = 9a\\) gives \\(88.2 - 70.56 = 17.64 = 9 \\times 1.96\\) ✓.\n\nSince \\(T = 70.56\\) N \\(> 70\\) N, the tension exceeds the breaking strength, so the string breaks as soon as the system is released.',
         diagram: true
       },
       {
@@ -305,9 +305,9 @@ const EDEXCEL_WRITTEN_M3_M4 = {
         diagram: true
       },
       {
-        q: 'A uniform see-saw of length 5 m and weight 100 N is pivoted at its centre. A child of weight 250 N sits at one end. Find the reaction at the pivot.',
+        q: 'A uniform see-saw of length 5 m and weight 100 N is pivoted at its centre. A child of weight 250 N sits at one end and a second child of weight 500 N sits 1.25 m from the pivot on the other side. Show that the see-saw balances and find the reaction at the pivot.',
         marks: 3, tier: 'green',
-        modelAnswer: 'Since the see-saw is uniform and pivoted at the centre, the weight acts at the pivot — contributing no moment. Taking moments about pivot: \\(250 \\times 2.5\\) (anticlockwise) must be balanced by someone/thing on the other side. If not balanced, the pivot reaction equals the total vertical load: \\(R = 250 + 100 = 350\\) N (the beam weight acts through the pivot for a uniform beam pivoted at centre).'
+        modelAnswer: 'Taking moments about the pivot: the first child is 2.5 m from the pivot, giving a moment of \\(250 \\times 2.5 = 625\\) N m; the second child is 1.25 m from the pivot on the other side, giving \\(500 \\times 1.25 = 625\\) N m in the opposite sense. These are equal, so the see-saw balances. (The see-saw is uniform and pivoted at its centre, so its own weight acts through the pivot and has no moment.)\n\nResolving vertically: \\(R = 100 + 250 + 500 = 850\\) N.',
       },
       {
         q: 'Find the moment of a 50 N force acting vertically at a point P. P is 4 m horizontally from a pivot, but the force acts at an angle of 90° to the rod (which is horizontal). State the moment.',
@@ -353,9 +353,9 @@ const EDEXCEL_WRITTEN_M3_M4 = {
         diagram: true
       },
       {
-        q: 'A uniform plank of mass 10 kg and length 5 m is placed over a single support at its centre. A child of mass 40 kg sits at one end. Find where a second child of mass 25 kg must sit for equilibrium. (\\(g = 9.8\\) m/s²)',
+        q: 'A uniform plank of mass 10 kg and length 5 m is placed over a single support at its centre. A child of mass 40 kg sits at one end. Find where a second child of mass 50 kg must sit for equilibrium. (\\(g = 9.8\\) m/s²)',
         marks: 4, tier: 'amber',
-        modelAnswer: 'Taking moments about the support (midpoint, 2.5 m from each end): \\(40g \\times 2.5 = 25g \\times d\\) (beam weight through support). So \\(d = \\dfrac{40 \\times 2.5}{25} = \\dfrac{100}{25} = 4\\) m from the support. Since the plank is only 2.5 m on the other side, check: the child must be 4 m from support but the plank only extends 2.5 m. So the second child cannot balance the first child of 40 kg on this plank — the child would need to be beyond the end. Note: if the question means including the plank weight, reconsider. Since plank is uniform, its weight acts at the support, contributing zero moment. So result stands: 25 kg child would need to be 4 m from pivot, which is beyond the plank.',
+        modelAnswer: 'The plank is uniform and supported at its centre, so its weight acts through the support and has no moment about it.\n\nTaking moments about the support: \\(40g \\times 2.5 = 50g \\times d\\), so \\(d = \\dfrac{40 \\times 2.5}{50} = 2\\) m from the support, on the opposite side.\n\nSince the plank extends 2.5 m each side of the support, \\(d = 2\\) m is on the plank (0.5 m from the end), so the position is possible.',
         diagram: true
       },
       {
@@ -372,7 +372,7 @@ const EDEXCEL_WRITTEN_M3_M4 = {
       {
         q: 'A uniform beam AB of length 6 m and weight 120 N rests on supports at C (1.5 m from A) and D (1 m from B). A load of 80 N hangs at A. Find the reactions at C and D.',
         marks: 5, tier: 'amber',
-        modelAnswer: 'D is at 5 m from A. Taking moments about C (1.5 m from A): \\(R_D \\times 3.5 = 120 \\times 1.5 + 80 \\times (-1.5)\\). Wait — anticlockwise about C: \\(80 \\times 1.5\\) (load at A is 1.5 m left of C, clockwise). Clockwise: \\(80 \\times 1.5 = 120\\) N m; \\(120 \\times 1.5 = 180\\) N m (beam weight, 3 m from A, 1.5 m right of C, anticlockwise... recheck: beam CG at 3 m from A = 1.5 m right of C, so anticlockwise about C). Taking moments about C (positive = anticlockwise): \\(R_D \\times 3.5 + 80 \\times 1.5 = 120 \\times 1.5\\). \\(3.5 R_D = 180 - 120 = 60\\), so \\(R_D = \\dfrac{60}{3.5} \\approx 17.14\\) N. Resolving: \\(R_C = 80 + 120 - 17.14 = 182.86\\) N.',
+        modelAnswer: '\\(D\\) is 5 m from A and \\(C\\) is 1.5 m from A, so \\(CD = 3.5\\) m. The beam weight acts at the midpoint, 3 m from A, i.e. 1.5 m to the right of C. The 80 N load at A is 1.5 m to the left of C.\n\nTaking moments about C: \\(R_D \\times 3.5 + 80 \\times 1.5 = 120 \\times 1.5\\).\n\\(3.5R_D = 180 - 120 = 60\\), so \\(R_D = \\dfrac{60}{3.5} \\approx 17.14\\) N.\n\nResolving vertically: \\(R_C = 80 + 120 - 17.14 = 182.86\\) N.',
         diagram: true
       },
       {
@@ -400,9 +400,9 @@ const EDEXCEL_WRITTEN_M3_M4 = {
         diagram: true
       },
       {
-        q: 'A uniform plank of weight 80 N and length 4 m overhangs a support by 1 m at one end. Find the minimum weight \\(W\\) that must be placed at the other end to prevent tipping.',
+        q: 'A uniform plank of weight 80 N and length 4 m rests on a single support 1.5 m from end A. Find the minimum weight \\(W\\) that must be placed at A to prevent the plank from tipping about the support.',
         marks: 4, tier: 'amber',
-        modelAnswer: 'Let the support be 3 m from the short end (1 m overhang at right). Taking moments about the support, for tipping about the support the overhang side goes down: \\(80 \\times 0.5 = W \\times 3\\) (beam weight 0.5 m right of support acts clockwise; \\(W\\) at left end acts 3 m from support anticlockwise). \\(40 = 3W\\), so \\(W = \\dfrac{40}{3} \\approx 13.3\\) N.',
+        modelAnswer: 'The plank is uniform, so its weight acts at the midpoint, 2 m from A, which is \\(2 - 1.5 = 0.5\\) m beyond the support on the B side. This produces a moment of \\(80 \\times 0.5 = 40\\) N m tending to tip the plank about the support.\n\nThe weight \\(W\\) at A is 1.5 m from the support on the opposite side, giving a restoring moment of \\(1.5W\\).\n\nFor the plank not to tip: \\(1.5W \\geq 40\\), so \\(W \\geq \\dfrac{40}{1.5} = \\dfrac{80}{3} \\approx 26.7\\) N.\n\nThe minimum weight is \\(\\dfrac{80}{3} \\approx 26.7\\) N.',
         diagram: true
       },
       {
@@ -444,9 +444,9 @@ const EDEXCEL_WRITTEN_M3_M4 = {
         diagram: true
       },
       {
-        q: 'A non-uniform rod AB has length 6 m and weight 240 N. When supported at C (2 m from A) and D (4 m from A), the rod is on the point of tilting about D. Find the position of the centre of mass of the rod.',
+        q: 'A non-uniform rod AB has length 6 m and weight 240 N, with its centre of mass 3 m from A. It rests horizontally on supports at C (2 m from A) and D (4 m from A). A load of weight \\(W\\) is hung at B. Find the value of \\(W\\) for which the rod is on the point of tilting about D.',
         marks: 6, tier: 'red',
-        modelAnswer: 'On the point of tilting about D means \\(R_C = 0\\). Taking moments about D: the clockwise moments must equal anticlockwise. If CG is at distance \\(\\bar{x}\\) from A: \\(240 \\times |4 - \\bar{x}| = 0\\) — but that would require CG at D. More carefully: if the rod tilts about D (end B lifts), CG must be to the left of D. Taking moments about D with \\(R_C = 0\\): \\(240 \\times (4 - \\bar{x}) = 0\\)? Only if CG = D = 4 m. But that gives equilibrium, not tipping. Actually on point of tipping about D means \\(R_C \\to 0\\): \\(240 \\times (\\bar{x} - 4) = 0\\) ... CG must be at D (4 m from A) for neutral equilibrium. Answer: centre of mass is 4 m from A (at D).',
+        modelAnswer: 'On the point of tilting about D, the rod is about to lift off the support at C, so \\(R_C = 0\\) and the only upward force is \\(R_D\\).\n\nTaking moments about D: the centre of mass is 3 m from A, i.e. 1 m to the left of D, and B is 2 m to the right of D.\n\\(W \\times 2 = 240 \\times 1\\), so \\(W = 120\\) N.\n\n(Check: with \\(W = 120\\) N the total downward force is 360 N, all carried at D, and the moments about D balance, so the rod is in equilibrium on the point of tilting.)',
         diagram: true
       },
       {
@@ -470,7 +470,7 @@ const EDEXCEL_WRITTEN_M3_M4 = {
       {
         q: 'A non-uniform beam AB of length 10 m and weight 800 N is supported at C (3 m from A) and D (7 m from A). The centre of mass is \\(\\bar{x}\\) m from A. Given that both reactions are equal, find \\(\\bar{x}\\). Then, a load of 400 N is added at end A. Find the new reactions and determine if the beam tips. If it tips, identify the pivot.',
         marks: 8, tier: 'red',
-        modelAnswer: 'Equal reactions: each = 400 N (since total weight = 800 N). Taking moments about C: \\(400 \\times 4 = 800(\\bar{x}-3)\\), so \\(1600 = 800\\bar{x} - 2400\\), \\(800\\bar{x} = 4000\\), \\(\\bar{x} = 5\\) m from A. Now add 400 N at A. Total = 1200 N. Taking moments about C: \\(R_D \\times 4 = 800 \\times 2 + 400 \\times (-3)\\). Wait: beam CG at 5 m from A = 2 m right of C; load at A is 3 m left of C. \\(R_D \\times 4 = 800 \\times 2 - 400 \\times 3 = 1600 - 1200 = 400\\). \\(R_D = 100\\) N. \\(R_C = 1200 - 100 = 1100\\) N. Both reactions positive, so beam does not tip.',
+        modelAnswer: 'Equal reactions: each \\(= 400\\) N (since the total weight is 800 N).\n\nTaking moments about C: \\(R_D \\times 4 = 800(\\bar{x}-3)\\), so \\(1600 = 800\\bar{x} - 2400\\), giving \\(800\\bar{x} = 4000\\) and \\(\\bar{x} = 5\\) m from A.\n\nNow add the 400 N load at A. The beam weight acts 5 m from A, i.e. 2 m to the right of C; the new load at A is 3 m to the left of C.\n\nTaking moments about C: \\(R_D \\times 4 = 800 \\times 2 - 400 \\times 3 = 1600 - 1200 = 400\\), so \\(R_D = 100\\) N.\n\nResolving vertically: \\(R_C = 1200 - 100 = 1100\\) N.\n\nBoth reactions are positive (upward), so the beam does not tip.',
         diagram: true
       },
     ],

@@ -523,7 +523,7 @@ const EDEXCEL_MCQ_P17_P21 = {
     {
       tier: 'amber',
       q: 'Why does Newton-Raphson fail if applied to \\(f(x) = x^{1/3}\\) starting at \\(x_0 = 1\\)?',
-      options: ['\\(f\'(x) = \\frac{1}{3}x^{-2/3}\\) is small nowhere near \\(x=0\\), so iterates diverge away from root', 'The root is not in \\((0,1)\\)', '\\(f\\) is not continuous', 'The root is irrational'],
+      options: ['With \\(f\'(x) = \\frac{1}{3}x^{-2/3}\\) the formula reduces to \\(x_{n+1} = -2x_n\\), so the iterates double in size and move away from the root at \\(x=0\\)', 'The root is not in \\((0,1)\\)', '\\(f\\) is not continuous', 'The root is irrational'],
       answer: 0
     },
     {
@@ -554,7 +554,7 @@ const EDEXCEL_MCQ_P17_P21 = {
     {
       tier: 'red',
       q: 'Using \\(h = 0.25\\) and the trapezium rule, estimate \\(\\int_0^1 \\frac{1}{1+x^2}dx\\). The exact answer is \\(\\pi/4\\). The error is approximately:',
-      options: ['\\(0.0019\\)', '\\(0.05\\)', '\\(0.1\\)', '\\(0\\)'],
+      options: ['\\(0.0026\\)', '\\(0.05\\)', '\\(0.1\\)', '\\(0\\)'],
       answer: 0
     },
     {
@@ -718,7 +718,7 @@ const EDEXCEL_MCQ_P17_P21 = {
     {
       tier: 'amber',
       q: 'A bacteria culture grows according to \\(\\frac{dP}{dt} = 0.3P\\). Initially \\(P = 500\\). After 4 hours, \\(P\\) is approximately:',
-      options: ['\\(500e^{1.2} \\approx 1661\\)', '\\(500 \\times 1.3^4 \\approx 1820\\)', '\\(600\\)', '\\(500 \\times 4.3 = 2150\\)'],
+      options: ['\\(500e^{1.2} \\approx 1660\\)', '\\(500 \\times 1.3^4 \\approx 1820\\)', '\\(600\\)', '\\(500 \\times 4.3 = 2150\\)'],
       answer: 0
     },
     // RED (6)

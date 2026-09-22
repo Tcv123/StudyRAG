@@ -109,7 +109,7 @@ const EDEXCEL_MCQ_S1_S5 = {
     { tier: 'amber', q: '\\(P(A \\cap B) = 0.12, P(B) = 0.4\\). Find \\(P(A|B)\\).', options: ['0.3', '0.12', '0.048', '0.4'], answer: 0 },
     { tier: 'amber', q: "X has distribution: \\(P(X=1)=0.3, P(X=2)=0.5, P(X=3)=0.2\\). Find \\(E(X^2)\\).", options: ["4.1","1.9","3.61","2.0"], answer: 0 },
     { tier: 'amber', q: 'Given \\(E(X)=2.5\\) and \\(E(X^2)=7.5\\), find \\(\\text{Var}(X)\\).', options: ['1.25', '3.75', '7.5', '6.25'], answer: 0 },
-    { tier: 'amber', q: '\\(P(A) = 0.5, P(B) = 0.4, P(A \\cup B) = 0.7\\). Are A and B independent?', options: ['No; \\(P(A) \\times P(B) = 0.2 \\neq P(A \\cap B) = 0.2\\) — actually yes', 'Yes; since \\(P(A \\cap B) = 0.2 = 0.5 \\times 0.4\\)', 'No; mutually exclusive events cannot be independent', 'Cannot be determined'], answer: 1 },
+    { tier: 'amber', q: '\\(P(A) = 0.5, P(B) = 0.4, P(A \\cup B) = 0.7\\). Are A and B independent?', options: ['No; \\(P(A \\cap B) = 0.7 - 0.5 = 0.2\\) is not equal to \\(P(A) \\times P(B) = 0.9\\)', 'Yes; since \\(P(A \\cap B) = 0.2 = 0.5 \\times 0.4\\)', 'No; mutually exclusive events cannot be independent', 'Cannot be determined'], answer: 1 },
     { tier: 'amber', q: 'A card is drawn from a standard deck. Given it is a heart, what is the probability it is a king?', options: ['1/13', '1/4', '4/13', '1/52'], answer: 0 },
     { tier: 'amber', q: 'Two dice are rolled. Find \\(P(\\text{sum} = 7)\\).', options: ['1/6', '1/12', '5/36', '7/36'], answer: 0 },
     { tier: 'amber', q: 'A box has 4 red and 6 blue balls. Two drawn without replacement. Find \\(P(\\text{both red})\\).', options: ['12/90 = 2/15', '16/100', '4/10 × 4/10 = 4/25', '1/6'], answer: 0 },
@@ -147,7 +147,7 @@ const EDEXCEL_MCQ_S1_S5 = {
 
     // --- AMBER (12) ---
     { tier: 'amber', q: '\\(X \\sim B(15, 0.4)\\). Using a calculator, \\(P(X \\leq 7) = 0.7869\\). Find \\(P(X > 7)\\).', options: ['0.2131', '0.7869', '0.4131', '0.1'], answer: 0 },
-    { tier: 'amber', q: '\\(X \\sim B(20, 0.35)\\). Find \\(P(5 \\leq X \\leq 9)\\) given \\(P(X \\leq 9) = 0.8747\\) and \\(P(X \\leq 4) = 0.1182\\).', options: ['0.7565', '0.8747', '0.6', '0.1182'], answer: 0 },
+    { tier: 'amber', q: '\\(X \\sim B(20, 0.35)\\). Find \\(P(5 \\leq X \\leq 9)\\) given \\(P(X \\leq 9) = 0.8782\\) and \\(P(X \\leq 4) = 0.1182\\).', options: ['0.7600', '0.8782', '0.6', '0.1182'], answer: 0 },
     { tier: 'amber', q: 'A biased coin has \\(P(\\text{heads}) = 0.6\\). It is tossed 8 times. Find \\(P(X = 5)\\) where X = number of heads.', options: ['0.2787', '0.5', '0.3483', '0.12'], answer: 0 },
     { tier: 'amber', q: '\\(X \\sim B(10, p)\\) and \\(E(X) = 3\\). Find p.', options: ['0.3', '0.7', '3', '0.03'], answer: 0 },
     { tier: 'amber', q: '\\(X \\sim B(n, 0.25)\\) and \\(\\text{Var}(X) = 3\\). Find n.', options: ['16', '12', '48', '4'], answer: 0 },
@@ -161,7 +161,7 @@ const EDEXCEL_MCQ_S1_S5 = {
 
     // --- RED (6) ---
     { tier: 'red', q: '\\(X \\sim B(15, 0.35)\\). Find the smallest value of r such that \\(P(X \\leq r) > 0.9\\).', options: ['7', '6', '8', '5'], answer: 2 },
-    { tier: 'red', q: 'A factory has a 5% defect rate. A sample of 40 items is inspected. Find \\(P(\\text{at most 1 defective})\\) to 3 s.f.', options: ['0.400', '0.191', '0.278', '0.640'], answer: 0 },
+    { tier: 'red', q: 'A factory has a 5% defect rate. A sample of 40 items is inspected. Find \\(P(\\text{at most 1 defective})\\) to 3 s.f.', options: ['0.399', '0.191', '0.278', '0.640'], answer: 0 },
     { tier: 'red', q: '\\(X \\sim B(n, 0.4)\\). Given \\(P(X = 0) < 0.01\\), find the minimum value of n.', options: ['10', '8', '11', '9'], answer: 0 },
     { tier: 'red', q: 'X and Y are independent, \\(X \\sim B(5, 0.3)\\), \\(Y \\sim B(4, 0.3)\\). Find \\(P(X + Y = 0)\\).', options: ['\\(0.7^9 \\approx 0.0404\\)', '\\(0.7^{20}\\)', '\\(0.3^9\\)', '0.49'], answer: 0 },
     { tier: 'red', q: 'For \\(X \\sim B(20, p)\\), it is given that \\(P(X=0) = P(X=1)\\). Find p.', options: ['\\(p = 1/20\\)', '\\(p = 0.5\\)', '\\(p = 1/21\\)', '\\(p = 0.05\\)'], answer: 2 },

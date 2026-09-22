@@ -192,7 +192,7 @@ const EDEXCEL_MCQ_M3_M7 = {
       answer: 0, tier: "green"
     },
     {
-      q: "A 10 N force acts 4 m from a pivot. A 20 N force is on the same side. How far from the pivot must the 20 N force act to balance?",
+      q: "A 10 N force acts 4 m from a pivot. A 20 N force acts on the opposite side of the pivot. How far from the pivot must the 20 N force act to balance?",
       options: ["2 m", "4 m", "8 m", "10 m"],
       answer: 0, tier: "green"
     },
@@ -265,7 +265,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A uniform ladder, length 4 m, mass 15 kg, leans against a smooth vertical wall, making 70° with the horizontal. What is the horizontal reaction from the wall?",
-      options: ["26.6 N", "19.2 N", "53.2 N", "73.5 N"],
+      options: ["26.8 N", "19.2 N", "53.5 N", "73.5 N"],
       answer: 0, tier: "amber"
     },
     {
@@ -312,7 +312,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A beam AB (mass 15 kg, length 5 m, uniform) has a hinge at A and is held horizontal by a cable attached at B at 40° to the beam. Find the tension T in the cable.",
-      options: ["56.9 N", "73.5 N", "113.8 N", "95.0 N"],
+      options: ["57.2 N", "73.5 N", "114.3 N", "95.0 N"],
       answer: 2, tier: "red"
     },
     {
@@ -572,7 +572,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A ball is projected from the top of a 40 m cliff at 15 m/s horizontally. How far from the base of the cliff does it land? (g = 9.8)",
-      options: ["43.0 m", "86.0 m", "61.2 m", "21.5 m"],
+      options: ["42.9 m", "85.7 m", "61.2 m", "21.4 m"],
       answer: 0, tier: "amber"
     },
     {
@@ -624,7 +624,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A ball is thrown from a point O at angle 40° above horizontal with speed u. It lands on a slope that falls at angle 15° below horizontal from O. Find u if the ball hits the slope 80 m from O (along slope). (g = 9.8)",
-      options: ["23.8 m/s", "30.2 m/s", "18.5 m/s", "27.4 m/s"],
+      options: ["24.1 m/s", "30.2 m/s", "18.5 m/s", "27.4 m/s"],
       answer: 0, tier: "red"
     },
     {
@@ -718,7 +718,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     // AMBER (12)
     {
       q: "A particle of mass 5 kg is on a rough slope of 35°. μ = 0.3. Find the acceleration when the particle slides down. (g = 9.8)",
-      options: ["3.22 m/s²", "5.62 m/s²", "8.03 m/s²", "1.47 m/s²"],
+      options: ["3.21 m/s²", "5.62 m/s²", "8.03 m/s²", "1.47 m/s²"],
       answer: 0, tier: "amber"
     },
     {
@@ -743,7 +743,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A force of 30 N at 20° above horizontal is applied to a 5 kg block on a rough horizontal surface (μ = 0.35). Find the normal reaction. (g = 9.8)",
-      options: ["38.8 N", "49 N", "59.2 N", "30 N"],
+      options: ["38.7 N", "49 N", "59.2 N", "30 N"],
       answer: 0, tier: "amber"
     },
     {
@@ -763,7 +763,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A particle is projected at 5 m/s up a rough slope of 20°, μ = 0.3. How far up the slope does it travel before stopping? (g = 9.8)",
-      options: ["2.07 m", "3.54 m", "1.27 m", "4.16 m"],
+      options: ["2.04 m", "3.54 m", "1.27 m", "4.16 m"],
       answer: 0, tier: "amber"
     },
     {
@@ -805,7 +805,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A 6 kg block on a rough horizontal surface (μ = 0.35) is connected by a horizontal string to a 4 kg block hanging over a smooth pulley at the table edge. Find the acceleration and tension. (g = 9.8)",
-      options: ["a = 1.848 m/s², T = 32.4 N", "a = 3.92 m/s², T = 23.5 N", "a = 2.45 m/s², T = 27.3 N", "a = 0 m/s², T = 39.2 N"],
+      options: ["a = 1.86 m/s², T = 31.8 N", "a = 3.92 m/s², T = 23.5 N", "a = 2.45 m/s², T = 27.3 N", "a = 0 m/s², T = 39.2 N"],
       answer: 0, tier: "red"
     }
   ]

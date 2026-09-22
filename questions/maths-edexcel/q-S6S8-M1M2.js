@@ -223,7 +223,7 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
         answer: 0
       },
       {
-        q: 'In a 3-circle Venn diagram (events A, B, C), how many distinct regions are there inside the rectangle?',
+        q: 'In a 3-circle Venn diagram (events A, B, C), how many distinct regions lie inside the three overlapping circles?',
         options: ['7', '6', '8', '3'],
         answer: 0
       }

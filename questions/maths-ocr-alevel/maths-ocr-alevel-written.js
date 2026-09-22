@@ -10,7 +10,7 @@ const MATHS_OCR_ALEVEL_WRITTEN = {
 
   '1.1': {
     green: [
-    { q: 'Prove by deduction that the sum of two consecutive integers is odd.', marks: 3, marks_scheme: '1 mark: let the integers be n and n+1. 1 mark: sum = 2n + 1. 1 mark: 2n is even so 2n + 1 is odd.' },
+    { q: 'Prove by deduction that the product of two consecutive integers is even.', marks: 3, marks_scheme: '1 mark: let the integers be n and n+1. 1 mark: one of n, n+1 must be even. 1 mark: a product with an even factor is even.' },
     { q: 'Prove by deduction that the sum of any two consecutive integers is odd.', marks: 3, marks_scheme: '1 mark: Let the integers be n and n + 1. 1 mark: Sum = 2n + 1. 1 mark: 2n is even so 2n + 1 is odd, as required.' },
     ],
     amber: [
@@ -57,7 +57,7 @@ const MATHS_OCR_ALEVEL_WRITTEN = {
     ],
     amber: [
     { q: 'A sequence is defined by u(n+1) = uₙ + 4 with u₁ = 2. Describe the sequence and find uₙ.', marks: 3, marks_scheme: '1 mark: Each term increases by 4, so it is arithmetic. 1 mark: a = 2 and d = 4. 1 mark: uₙ = 4n − 2.' },
-    { q: 'Use a binomial expansion to estimate 1.02⁶ to 4 decimal places.', marks: 4, marks_scheme: '1 mark: Write as (1 + 0.02)⁶. 1 mark: ≈ 1 + 6(0.02) + 15(0.02)². 1 mark: = 1 + 0.12 + 0.006. 1 mark: ≈ 1.1262.' },
+    { q: 'Use a binomial expansion to estimate 1.02⁶ to 4 decimal places.', marks: 4, marks_scheme: '1 mark: Write as (1 + 0.02)⁶. 1 mark: ≈ 1 + 6(0.02) + 15(0.02)² + 20(0.02)³. 1 mark: = 1 + 0.12 + 0.006 + 0.00016. 1 mark: ≈ 1.1262.' },
     ],
     red: [
     { q: 'Prove that the sum of an arithmetic series is (n/2)(2a + (n − 1)d).', marks: 4, marks_scheme: '1 mark: Write S forwards and backwards. 1 mark: Add the two, pairing terms. 1 mark: Each of the n pairs totals 2a + (n − 1)d. 1 mark: So 2S = n[2a + (n − 1)d], giving the result.' },
