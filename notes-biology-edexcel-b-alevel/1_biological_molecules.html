@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — 1: Biological Molecules</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>1: Biological Molecules</h1>
+
+<p>Edexcel B A-level Biology (9BI0), Topic 1. Living things are built from a small number of repeating building blocks. This topic covers the organic molecules of life (carbohydrates, lipids, proteins and nucleic acids), the enzymes that control their reactions, the inorganic ions plants need, and the properties of water that make life possible. A recurring theme is that the <strong>structure</strong> of each molecule explains its <strong>function</strong>.</p>
+
+<div class="definition">
+  <strong>Monomer and polymer:</strong> A monomer is a small unit molecule that can be joined to others of the same kind. A polymer is a long molecule made of many monomers joined in a chain. Glucose is the monomer of starch, glycogen and cellulose; amino acids are the monomers of proteins; nucleotides are the monomers of DNA and RNA. (Triglycerides are not polymers: they are made of four smaller molecules, not a repeating chain.)
+</div>
+
+<div class="definition">
+  <strong>Condensation and hydrolysis:</strong> A <em>condensation</em> reaction joins two molecules with a new covalent bond and releases one molecule of water. A <em>hydrolysis</em> reaction breaks a covalent bond by adding a molecule of water. Glycosidic, ester, peptide and phosphodiester bonds are all made by condensation and broken by hydrolysis.
+</div>
+
+<!-- ============================================================ -->
+<h2>1.1 Carbohydrates</h2>
+<!-- ============================================================ -->
+
+<p>Carbohydrates contain only carbon, hydrogen and oxygen, usually with hydrogen and oxygen in a 2:1 ratio (as in water). They act as respiratory substrates, as energy stores and, in plants, as structural material.</p>
+
+<h3>1.1 (i) Monosaccharides, disaccharides and polysaccharides</h3>
+
+<table>
+  <tr><th>Group</th><th>What it is</th><th>Examples</th><th>Properties</th></tr>
+  <tr><td>Monosaccharide</td><td>A single sugar unit; general formula (CH<sub>2</sub>O)<sub>n</sub></td><td>Glucose, fructose, galactose (hexoses, 6C); ribose and deoxyribose (pentoses, 5C)</td><td>Sweet, soluble in water, small enough to be absorbed and transported</td></tr>
+  <tr><td>Disaccharide</td><td>Two monosaccharides joined by one glycosidic bond</td><td>Maltose, sucrose, lactose</td><td>Sweet, soluble; must be hydrolysed to monosaccharides before absorption</td></tr>
+  <tr><td>Polysaccharide</td><td>Many monosaccharides (often thousands) joined by glycosidic bonds</td><td>Starch (amylose and amylopectin), glycogen, cellulose</td><td>Not sweet; insoluble or only slightly soluble; large molecules suited to storage or structure</td></tr>
+</table>
+
+<h3>1.1 (ii) Alpha and beta glucose, and ribose</h3>
+
+<p>Glucose (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>) is a <strong>hexose</strong>: it has six carbon atoms. In solution it exists mostly as a ring of five carbons and one oxygen, with carbon 6 sticking out above the ring as a CH<sub>2</sub>OH group. Carbon atoms are numbered clockwise from carbon 1, which sits just to the right of the ring oxygen.</p>
+
+<p>There are two ring forms, called <strong>isomers</strong>, that differ only at carbon 1:</p>
+<ul>
+  <li><strong>&alpha;-glucose:</strong> the &ndash;OH on carbon 1 points <em>below</em> the ring (on the opposite side from the CH<sub>2</sub>OH on carbon 5).</li>
+  <li><strong>&beta;-glucose:</strong> the &ndash;OH on carbon 1 points <em>above</em> the ring (on the same side as the CH<sub>2</sub>OH).</li>
+</ul>
+
+<p>This small difference has big consequences: &alpha;-glucose builds starch and glycogen, which can be coiled and branched, while &beta;-glucose builds cellulose, which forms straight, strong chains.</p>
+
+<p><strong>Ribose</strong> (C<sub>5</sub>H<sub>10</sub>O<sub>5</sub>) is a <strong>pentose</strong>, with five carbons. Its ring has four carbons and one oxygen, with carbon 5 outside the ring as CH<sub>2</sub>OH. Ribose is the sugar in RNA, ATP and ADP. <strong>Deoxyribose</strong>, the sugar in DNA, is the same except that carbon 2 carries an H instead of an &ndash;OH (it has one fewer oxygen atom, hence "deoxy").</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 250" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Ring Structures of &#945;-Glucose, &#946;-Glucose and Ribose</text>
+  <!-- alpha glucose -->
+  <g transform="translate(105,125)" font-family="system-ui" font-size="10" fill="#1a1a2e">
+    <polygon points="20,-25 45,0 25,25 -25,25 -45,0 -20,-25" fill="#e8f0fe" stroke="#2563eb" stroke-width="1.5"/>
+    <circle cx="20" cy="-25" r="7" fill="#f8fafc"/><text x="20" y="-21.5" text-anchor="middle" font-weight="bold">O</text>
+    <text x="36" y="3" text-anchor="middle" font-size="8" fill="#666">1</text>
+    <text x="15" y="20" text-anchor="middle" font-size="8" fill="#666">2</text>
+    <text x="-15" y="20" text-anchor="middle" font-size="8" fill="#666">3</text>
+    <text x="-37" y="-4" text-anchor="middle" font-size="8" fill="#666">4</text>
+    <text x="-17" y="-15" text-anchor="middle" font-size="8" fill="#666">5</text>
+    <line x1="45" y1="0" x2="45" y2="-18" stroke="#1a1a2e"/><text x="45" y="-21" text-anchor="middle">H</text>
+    <line x1="45" y1="0" x2="45" y2="18" stroke="#DC2626" stroke-width="1.5"/><text x="45" y="30" text-anchor="middle" fill="#DC2626" font-weight="bold">OH</text>
+    <line x1="25" y1="25" x2="25" y2="43" stroke="#1a1a2e"/><text x="25" y="54" text-anchor="middle">OH</text>
+    <line x1="-25" y1="25" x2="-25" y2="43" stroke="#1a1a2e"/><text x="-25" y="54" text-anchor="middle">H</text>
+    <line x1="-45" y1="0" x2="-45" y2="18" stroke="#1a1a2e"/><text x="-45" y="30" text-anchor="middle">OH</text>
+    <line x1="-45" y1="0" x2="-45" y2="-18" stroke="#1a1a2e"/><text x="-45" y="-21" text-anchor="middle">H</text>
+    <line x1="-20" y1="-25" x2="-20" y2="-43" stroke="#1a1a2e"/><text x="-20" y="-47" text-anchor="middle">CH<tspan baseline-shift="sub" font-size="7">2</tspan>OH</text>
+    <line x1="25" y1="25" x2="25" y2="10" stroke="#1a1a2e"/><text x="25" y="7" text-anchor="middle" font-size="8">H</text>
+    <line x1="-25" y1="25" x2="-25" y2="10" stroke="#1a1a2e"/><text x="-25" y="7" text-anchor="middle" font-size="8">OH</text>
+    <text x="0" y="82" text-anchor="middle" font-size="12" font-weight="bold">&#945;-glucose</text>
+    <text x="0" y="96" text-anchor="middle" font-size="9" fill="#666">C1 &#8211;OH below the ring</text>
+  </g>
+  <!-- beta glucose -->
+  <g transform="translate(300,125)" font-family="system-ui" font-size="10" fill="#1a1a2e">
+    <polygon points="20,-25 45,0 25,25 -25,25 -45,0 -20,-25" fill="#e8f0fe" stroke="#2563eb" stroke-width="1.5"/>
+    <circle cx="20" cy="-25" r="7" fill="#f8fafc"/><text x="20" y="-21.5" text-anchor="middle" font-weight="bold">O</text>
+    <text x="36" y="3" text-anchor="middle" font-size="8" fill="#666">1</text>
+    <text x="15" y="20" text-anchor="middle" font-size="8" fill="#666">2</text>
+    <text x="-15" y="20" text-anchor="middle" font-size="8" fill="#666">3</text>
+    <text x="-37" y="-4" text-anchor="middle" font-size="8" fill="#666">4</text>
+    <text x="-17" y="-15" text-anchor="middle" font-size="8" fill="#666">5</text>
+    <line x1="45" y1="0" x2="45" y2="-18" stroke="#DC2626" stroke-width="1.5"/><text x="45" y="-21" text-anchor="middle" fill="#DC2626" font-weight="bold">OH</text>
+    <line x1="45" y1="0" x2="45" y2="18" stroke="#1a1a2e"/><text x="45" y="30" text-anchor="middle">H</text>
+    <line x1="25" y1="25" x2="25" y2="43" stroke="#1a1a2e"/><text x="25" y="54" text-anchor="middle">OH</text>
+    <line x1="-25" y1="25" x2="-25" y2="43" stroke="#1a1a2e"/><text x="-25" y="54" text-anchor="middle">H</text>
+    <line x1="-45" y1="0" x2="-45" y2="18" stroke="#1a1a2e"/><text x="-45" y="30" text-anchor="middle">OH</text>
+    <line x1="-45" y1="0" x2="-45" y2="-18" stroke="#1a1a2e"/><text x="-45" y="-21" text-anchor="middle">H</text>
+    <line x1="-20" y1="-25" x2="-20" y2="-43" stroke="#1a1a2e"/><text x="-20" y="-47" text-anchor="middle">CH<tspan baseline-shift="sub" font-size="7">2</tspan>OH</text>
+    <line x1="25" y1="25" x2="25" y2="10" stroke="#1a1a2e"/><text x="25" y="7" text-anchor="middle" font-size="8">H</text>
+    <line x1="-25" y1="25" x2="-25" y2="10" stroke="#1a1a2e"/><text x="-25" y="7" text-anchor="middle" font-size="8">OH</text>
+    <text x="0" y="82" text-anchor="middle" font-size="12" font-weight="bold">&#946;-glucose</text>
+    <text x="0" y="96" text-anchor="middle" font-size="9" fill="#666">C1 &#8211;OH above the ring</text>
+  </g>
+  <!-- ribose -->
+  <g transform="translate(490,125)" font-family="system-ui" font-size="10" fill="#1a1a2e">
+    <polygon points="0,-28 32,-6 20,25 -20,25 -32,-6" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.5"/>
+    <circle cx="0" cy="-28" r="7" fill="#f8fafc"/><text x="0" y="-24.5" text-anchor="middle" font-weight="bold">O</text>
+    <text x="24" y="-3" text-anchor="middle" font-size="8" fill="#666">1</text>
+    <text x="15" y="20" text-anchor="middle" font-size="8" fill="#666">2</text>
+    <text x="-15" y="20" text-anchor="middle" font-size="8" fill="#666">3</text>
+    <text x="-24" y="-3" text-anchor="middle" font-size="8" fill="#666">4</text>
+    <line x1="32" y1="-6" x2="32" y2="-24" stroke="#1a1a2e"/><text x="32" y="-27" text-anchor="middle">OH</text>
+    <line x1="32" y1="-6" x2="32" y2="12" stroke="#1a1a2e"/><text x="32" y="24" text-anchor="middle">H</text>
+    <line x1="20" y1="25" x2="20" y2="43" stroke="#1a1a2e"/><text x="20" y="54" text-anchor="middle">OH</text>
+    <line x1="-20" y1="25" x2="-20" y2="43" stroke="#1a1a2e"/><text x="-20" y="54" text-anchor="middle">OH</text>
+    <line x1="-32" y1="-6" x2="-32" y2="-24" stroke="#1a1a2e"/><text x="-32" y="-28" text-anchor="middle">CH<tspan baseline-shift="sub" font-size="7">2</tspan>OH</text>
+    <text x="0" y="82" text-anchor="middle" font-size="12" font-weight="bold">Ribose</text>
+    <text x="0" y="96" text-anchor="middle" font-size="9" fill="#666">Pentose; in RNA and ATP</text>
+  </g>
+  <text x="300" y="240" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Carbons sit at the unlabelled corners of each ring. Deoxyribose has H instead of OH on carbon 2.</text>
+</svg>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> If asked to draw or compare &alpha;- and &beta;-glucose, the <em>only</em> difference is the orientation of the H and OH on carbon 1. Do not move any other group. A common error is to say they have different formulae: both are C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>.
+</div>
+
+<h3>1.1 (iii) Building and breaking disaccharides and polysaccharides</h3>
+
+<p>Two monosaccharides join when an &ndash;OH on one reacts with an &ndash;OH on the other. A molecule of water (H<sub>2</sub>O) is removed and the two rings are left linked through a single oxygen atom. This C&ndash;O&ndash;C link is a <strong>glycosidic bond</strong>, and the reaction is a <strong>condensation</strong>. Bonds are named after the carbons they connect: a bond between carbon 1 of one glucose and carbon 4 of the next is a 1,4-glycosidic bond.</p>
+
+<div class="equation">
+  &alpha;-glucose + &alpha;-glucose &rarr; maltose + H<sub>2</sub>O &nbsp;&nbsp; (C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> &rarr; C<sub>12</sub>H<sub>22</sub>O<sub>11</sub> + H<sub>2</sub>O)
+</div>
+
+<table>
+  <tr><th>Disaccharide</th><th>Monosaccharides</th><th>Bond</th><th>Where it matters</th></tr>
+  <tr><td>Maltose</td><td>glucose + glucose</td><td>&alpha;-1,4 glycosidic</td><td>Produced when amylase digests starch (e.g. in germinating seeds and the gut)</td></tr>
+  <tr><td>Sucrose</td><td>glucose + fructose</td><td>1,2 glycosidic (C1 of glucose to C2 of fructose)</td><td>The form in which plants transport carbohydrate in the phloem</td></tr>
+  <tr><td>Lactose</td><td>galactose + glucose</td><td>&beta;-1,4 glycosidic</td><td>The sugar in mammalian milk</td></tr>
+</table>
+
+<p><strong>Hydrolysis</strong> is the reverse. Adding a water molecule across the glycosidic bond splits it, releasing the monosaccharides. In organisms, hydrolysis is catalysed by specific enzymes (maltase, sucrase, lactase, amylase). In the laboratory it can be done by boiling with dilute acid.</p>
+
+<h3>Polysaccharides</h3>
+
+<p>Polysaccharides are made by repeated condensation reactions. Every new glucose added forms one more glycosidic bond and releases one more water molecule.</p>
+
+<ul>
+  <li><strong>Amylose</strong> (one component of starch): a long, unbranched chain of &alpha;-glucose joined by &alpha;-1,4 glycosidic bonds. The angle of the bonds makes the chain coil into a helix, held by hydrogen bonds within the chain.</li>
+  <li><strong>Amylopectin</strong> (the other component of starch): &alpha;-glucose chains with &alpha;-1,4 bonds, plus &alpha;-1,6 glycosidic bonds that create side branches roughly every 20&ndash;30 glucose units.</li>
+  <li><strong>Glycogen</strong> (the animal and fungal store): like amylopectin, with &alpha;-1,4 and &alpha;-1,6 bonds, but much more branched (a branch roughly every 8&ndash;12 units) and with shorter chains.</li>
+  <li><strong>Cellulose</strong> (plant cell walls): long, straight, unbranched chains of &beta;-glucose joined by &beta;-1,4 glycosidic bonds. Because of the &beta;-OH position, each glucose must be flipped 180&deg; relative to its neighbour for the bond to form.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Count bonds carefully in calculations. A chain of <em>n</em> monosaccharides contains <em>n</em> &minus; 1 glycosidic bonds, and its synthesis releases <em>n</em> &minus; 1 water molecules. Hydrolysing it completely needs <em>n</em> &minus; 1 water molecules. Worked example: maltose has M<sub>r</sub> = 2 &times; 180 &minus; 18 = 342, because one water (M<sub>r</sub> 18) is lost when the two glucose molecules (M<sub>r</sub> 180 each) join.
+</div>
+
+<h3>1.1 (iv) How structure relates to function</h3>
+
+<table>
+  <tr><th>Molecule</th><th>Key structural features</th><th>How these suit its function</th></tr>
+  <tr><td>Glucose</td><td>Small, soluble, many &ndash;OH groups; energy stored in C&ndash;H bonds</td><td>Dissolves easily in blood plasma and cytoplasm for transport; enters cells by carrier proteins; the main respiratory substrate, quickly broken down to release energy for ATP synthesis</td></tr>
+  <tr><td>Starch (amylose + amylopectin)</td><td>Amylose helix is compact; amylopectin branches give many chain ends; large and insoluble</td><td>Compact, so a lot of glucose fits in a small space in plastids; insoluble so it does not lower water potential or draw water into the cell by osmosis; too large to leave the cell; branch ends let enzymes release glucose from many places at once</td></tr>
+  <tr><td>Glycogen</td><td>Highly branched, very compact, insoluble</td><td>Even more chain ends than amylopectin, so glucose can be released very rapidly, which suits animals with high metabolic rates and sudden energy demands (e.g. muscle, liver); insoluble and osmotically inactive</td></tr>
+  <tr><td>Cellulose</td><td>Straight &beta;-glucose chains; &ndash;OH groups on each chain form many hydrogen bonds with neighbouring parallel chains</td><td>Parallel chains bundle into <strong>microfibrils</strong>, and microfibrils into fibres. The huge number of hydrogen bonds gives high tensile strength, so the cell wall resists bursting when the cell is turgid and provides support. Most animals lack enzymes to digest it</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> "Starch is insoluble so it does not affect osmosis" is only half an answer. For full marks, explain the consequence: it does not lower the water potential of the cell, so water is not drawn in by osmosis and the cell does not swell. Similarly, a single hydrogen bond is weak; the strength of cellulose comes from the very <em>large number</em> of hydrogen bonds between chains.
+</div>
+
+<!-- ============================================================ -->
+<h2>1.2 Lipids</h2>
+<!-- ============================================================ -->
+
+<p>Lipids are a varied group of molecules that are insoluble in water but dissolve in organic solvents such as ethanol. Like carbohydrates they contain carbon, hydrogen and oxygen, but they have far less oxygen relative to carbon and hydrogen.</p>
+
+<h3>1.2 (i) Synthesis of a triglyceride</h3>
+
+<p>A triglyceride is made from one molecule of <strong>glycerol</strong> (a three-carbon alcohol with three &ndash;OH groups) and three <strong>fatty acids</strong>. Each fatty acid has a carboxyl group (&ndash;COOH) attached to a hydrocarbon chain, usually written R. In a condensation reaction, the &ndash;OH of a fatty acid carboxyl group reacts with the H of one of the glycerol &ndash;OH groups; water is released and an <strong>ester bond</strong> (&ndash;COO&ndash;) forms. This happens three times, so each triglyceride contains three ester bonds and three water molecules are released. Lipase enzymes hydrolyse ester bonds to reverse the reaction.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 250" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Triglyceride Formation by Condensation</text>
+  <g font-family="system-ui" font-size="12" fill="#1a1a2e">
+    <!-- reactants -->
+    <text x="40" y="80">H<tspan baseline-shift="sub" font-size="8">2</tspan>C&#8211;O</text>
+    <text x="48" y="130">HC&#8211;O</text>
+    <text x="40" y="180">H<tspan baseline-shift="sub" font-size="8">2</tspan>C&#8211;O</text>
+    <line x1="58" y1="86" x2="58" y2="114" stroke="#1a1a2e"/>
+    <line x1="58" y1="136" x2="58" y2="164" stroke="#1a1a2e"/>
+    <text x="90" y="80" fill="#DC2626" font-weight="bold">H</text>
+    <text x="90" y="130" fill="#DC2626" font-weight="bold">H</text>
+    <text x="90" y="180" fill="#DC2626" font-weight="bold">H</text>
+    <text x="118" y="80" fill="#DC2626" font-weight="bold">HO</text>
+    <text x="118" y="130" fill="#DC2626" font-weight="bold">HO</text>
+    <text x="118" y="180" fill="#DC2626" font-weight="bold">HO</text>
+    <text x="140" y="80">&#8211;CO&#8211;R<tspan baseline-shift="sub" font-size="8">1</tspan></text>
+    <text x="140" y="130">&#8211;CO&#8211;R<tspan baseline-shift="sub" font-size="8">2</tspan></text>
+    <text x="140" y="180">&#8211;CO&#8211;R<tspan baseline-shift="sub" font-size="8">3</tspan></text>
+    <rect x="85" y="64" width="54" height="22" rx="8" fill="none" stroke="#DC2626" stroke-dasharray="3,2"/>
+    <rect x="85" y="114" width="54" height="22" rx="8" fill="none" stroke="#DC2626" stroke-dasharray="3,2"/>
+    <rect x="85" y="164" width="54" height="22" rx="8" fill="none" stroke="#DC2626" stroke-dasharray="3,2"/>
+    <text x="55" y="212" text-anchor="middle" font-size="10" font-weight="bold" fill="#2563eb">glycerol</text>
+    <text x="165" y="212" text-anchor="middle" font-size="10" font-weight="bold" fill="#D97706">3 fatty acids</text>
+    <text x="112" y="228" text-anchor="middle" font-size="9" fill="#DC2626">each dashed box is removed as H<tspan baseline-shift="sub" font-size="7">2</tspan>O</text>
+    <!-- arrow -->
+    <line x1="245" y1="120" x2="325" y2="120" stroke="#16A34A" stroke-width="2" marker-end="url(#arrN1a)"/>
+    <text x="285" y="110" text-anchor="middle" font-size="10" fill="#16A34A">condensation</text>
+    <line x1="325" y1="140" x2="245" y2="140" stroke="#666" stroke-width="1.5" marker-end="url(#arrN1b)"/>
+    <text x="285" y="157" text-anchor="middle" font-size="10" fill="#666">hydrolysis</text>
+    <!-- product -->
+    <text x="350" y="80">H<tspan baseline-shift="sub" font-size="8">2</tspan>C&#8211;<tspan fill="#16A34A" font-weight="bold">O&#8211;CO</tspan>&#8211;R<tspan baseline-shift="sub" font-size="8">1</tspan></text>
+    <text x="358" y="130">HC&#8211;<tspan fill="#16A34A" font-weight="bold">O&#8211;CO</tspan>&#8211;R<tspan baseline-shift="sub" font-size="8">2</tspan></text>
+    <text x="350" y="180">H<tspan baseline-shift="sub" font-size="8">2</tspan>C&#8211;<tspan fill="#16A34A" font-weight="bold">O&#8211;CO</tspan>&#8211;R<tspan baseline-shift="sub" font-size="8">3</tspan></text>
+    <line x1="368" y1="86" x2="368" y2="114" stroke="#1a1a2e"/>
+    <line x1="368" y1="136" x2="368" y2="164" stroke="#1a1a2e"/>
+    <text x="500" y="130" font-weight="bold">+ 3H<tspan baseline-shift="sub" font-size="8">2</tspan>O</text>
+    <text x="410" y="212" text-anchor="middle" font-size="10" font-weight="bold" fill="#1a1a2e">triglyceride</text>
+    <text x="410" y="228" text-anchor="middle" font-size="9" fill="#16A34A">green = the three ester bonds</text>
+  </g>
+  <defs>
+    <marker id="arrN1a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker>
+    <marker id="arrN1b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/></marker>
+  </defs>
+</svg>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Name the bond precisely: triglycerides contain <strong>ester</strong> bonds, not glycosidic or peptide bonds. For "describe how a triglyceride is formed", four marking points usually appear: one glycerol and three fatty acids; condensation; three water molecules removed; three ester bonds formed.
+</div>
+
+<h3>1.2 (ii) Saturated and unsaturated lipids</h3>
+
+<table>
+  <tr><th>Feature</th><th>Saturated</th><th>Unsaturated</th></tr>
+  <tr><td>C=C double bonds in the hydrocarbon chain</td><td>None: every carbon holds as many H atoms as possible</td><td>One (monounsaturated) or more (polyunsaturated) C=C double bonds</td></tr>
+  <tr><td>Shape of chain</td><td>Straight</td><td>A kink at each double bond</td></tr>
+  <tr><td>Packing</td><td>Chains pack closely together</td><td>Kinks stop chains packing closely</td></tr>
+  <tr><td>Melting point and state at room temperature</td><td>Higher; usually solid (fats), mostly from animals</td><td>Lower; usually liquid (oils), mostly from plants and fish</td></tr>
+  <tr><td>Effect in membranes</td><td>Make the bilayer less fluid</td><td>Make the bilayer more fluid</td></tr>
+</table>
+
+<h3>1.2 (iii) Energy storage, waterproofing and insulation</h3>
+
+<ul>
+  <li><strong>Energy storage:</strong> fatty acid chains are long hydrocarbons with a very high proportion of C&ndash;H bonds and little oxygen. Oxidising them in respiration releases about twice as much energy per gram as carbohydrate (roughly 37 kJ g<sup>&minus;1</sup> compared with about 16&ndash;17 kJ g<sup>&minus;1</sup>). Triglycerides are insoluble, so they do not affect the water potential of cells, and they are stored without the water that binds to glycogen, so they are a light, compact store. This matters for animals that move, and for seeds that need to be small. Their oxidation also releases metabolic water, useful to desert animals.</li>
+  <li><strong>Waterproofing:</strong> because lipids are hydrophobic, a layer of lipid repels water. Waxes (lipids made from fatty acids and long-chain alcohols) form the cuticle on leaves and the waxy layer on insect exoskeletons, reducing water loss by evaporation. Oily secretions keep mammal fur and bird feathers water-repellent.</li>
+  <li><strong>Insulation:</strong> fat is a poor conductor of heat, so a thick layer of adipose tissue under the skin (e.g. blubber in whales and seals) reduces heat loss. Lipids in the myelin sheath around many neurones act as <em>electrical</em> insulation, speeding up nerve impulses.</li>
+</ul>
+
+<h3>1.2 (iv) Phospholipids and cell membranes</h3>
+
+<p>In a <strong>phospholipid</strong>, glycerol is bonded to only two fatty acids; the third &ndash;OH of glycerol is bonded to a phosphate group (often with a further small charged group attached). The result has two very different ends:</p>
+<ul>
+  <li>a <strong>hydrophilic "head"</strong>: the charged phosphate group is attracted to water;</li>
+  <li>two <strong>hydrophobic "tails"</strong>: the uncharged fatty acid chains are repelled by water.</li>
+</ul>
+
+<p>A molecule with a water-loving part and a water-hating part is described as <strong>amphipathic</strong>. When phospholipids are placed in water, they arrange themselves so that the heads face the water and the tails are hidden from it. In cells this produces a <strong>phospholipid bilayer</strong>: two layers with heads facing the watery cytoplasm and tissue fluid on either side and tails pointing inwards to form a hydrophobic core.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">The Phospholipid Bilayer</text>
+  <rect x="30" y="34" width="420" height="36" fill="#DBEAFE" opacity="0.5"/>
+  <rect x="30" y="210" width="420" height="36" fill="#DBEAFE" opacity="0.5"/>
+  <text x="240" y="57" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">aqueous: tissue fluid (outside cell)</text>
+  <text x="240" y="233" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">aqueous: cytoplasm (inside cell)</text>
+  <g stroke="#D97706" stroke-width="1.5" fill="none">
+    <!-- upper layer tails -->
+    <path d="M52,90 L52,135 M60,90 L60,110 L66,120 L66,135"/>
+    <path d="M87,90 L87,135 M95,90 L95,110 L101,120 L101,135"/>
+    <path d="M122,90 L122,135 M130,90 L130,110 L136,120 L136,135"/>
+    <path d="M157,90 L157,135 M165,90 L165,110 L171,120 L171,135"/>
+    <path d="M192,90 L192,135 M200,90 L200,110 L206,120 L206,135"/>
+    <path d="M297,90 L297,135 M305,90 L305,110 L311,120 L311,135"/>
+    <path d="M332,90 L332,135 M340,90 L340,110 L346,120 L346,135"/>
+    <path d="M367,90 L367,135 M375,90 L375,110 L381,120 L381,135"/>
+    <path d="M402,90 L402,135 M410,90 L410,110 L416,120 L416,135"/>
+    <!-- lower layer tails -->
+    <path d="M52,190 L52,145 M60,190 L60,170 L66,160 L66,145"/>
+    <path d="M87,190 L87,145 M95,190 L95,170 L101,160 L101,145"/>
+    <path d="M122,190 L122,145 M130,190 L130,170 L136,160 L136,145"/>
+    <path d="M157,190 L157,145 M165,190 L165,170 L171,160 L171,145"/>
+    <path d="M192,190 L192,145 M200,190 L200,170 L206,160 L206,145"/>
+    <path d="M297,190 L297,145 M305,190 L305,170 L311,160 L311,145"/>
+    <path d="M332,190 L332,145 M340,190 L340,170 L346,160 L346,145"/>
+    <path d="M367,190 L367,145 M375,190 L375,170 L381,160 L381,145"/>
+    <path d="M402,190 L402,145 M410,190 L410,170 L416,160 L416,145"/>
+  </g>
+  <g fill="#2563eb" stroke="#1e3a5f" stroke-width="1">
+    <circle cx="56" cy="84" r="10"/><circle cx="91" cy="84" r="10"/><circle cx="126" cy="84" r="10"/><circle cx="161" cy="84" r="10"/><circle cx="196" cy="84" r="10"/>
+    <circle cx="301" cy="84" r="10"/><circle cx="336" cy="84" r="10"/><circle cx="371" cy="84" r="10"/><circle cx="406" cy="84" r="10"/>
+    <circle cx="56" cy="196" r="10"/><circle cx="91" cy="196" r="10"/><circle cx="126" cy="196" r="10"/><circle cx="161" cy="196" r="10"/><circle cx="196" cy="196" r="10"/>
+    <circle cx="301" cy="196" r="10"/><circle cx="336" cy="196" r="10"/><circle cx="371" cy="196" r="10"/><circle cx="406" cy="196" r="10"/>
+  </g>
+  <!-- protein -->
+  <rect x="222" y="66" width="52" height="148" rx="18" fill="#16A34A" opacity="0.35" stroke="#16A34A" stroke-width="1.5"/>
+  <rect x="241" y="66" width="14" height="148" fill="#f8fafc" opacity="0.8"/>
+  <!-- labels -->
+  <g font-family="system-ui" font-size="10" fill="#1a1a2e">
+    <line x1="416" y1="84" x2="462" y2="84" stroke="#1a1a2e" stroke-width="0.7"/>
+    <text x="466" y="81">Hydrophilic</text><text x="466" y="93">phosphate head</text>
+    <line x1="420" y1="125" x2="462" y2="125" stroke="#1a1a2e" stroke-width="0.7"/>
+    <text x="466" y="122">Hydrophobic</text><text x="466" y="134">fatty acid tails</text>
+    <line x1="416" y1="165" x2="462" y2="165" stroke="#1a1a2e" stroke-width="0.7"/>
+    <text x="466" y="162">Kink = C=C in an</text><text x="466" y="174">unsaturated tail</text>
+    <line x1="274" y1="200" x2="300" y2="252" stroke="#1a1a2e" stroke-width="0.7"/>
+    <text x="304" y="255" font-size="9">Channel protein spans the bilayer</text>
+  </g>
+</svg>
+</div>
+
+<p>How the properties of phospholipids suit their role in membranes:</p>
+<ul>
+  <li>The hydrophobic core is a barrier to water-soluble substances: ions and polar molecules such as glucose cannot easily pass through, so the membrane is <strong>partially permeable</strong> and the cell can control what enters and leaves using proteins.</li>
+  <li>Small non-polar molecules (O<sub>2</sub>, CO<sub>2</sub>) and lipid-soluble substances can diffuse directly through the bilayer.</li>
+  <li>The bilayer forms spontaneously and reseals itself if damaged, because exposing tails to water is unstable.</li>
+  <li>Phospholipids are not bonded to each other, so they can move sideways: the membrane is <strong>fluid</strong> and flexible, allowing vesicles to form and fuse and cells to change shape. More unsaturated tails make the membrane more fluid. Proteins float among the phospholipids (the <em>fluid mosaic</em> arrangement).</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Do not write that the phospholipid head is "hydrophilic because it likes water". Say that the phosphate group is <strong>charged (polar)</strong> so it forms attractions with water molecules, whereas the fatty acid tails are <strong>non-polar</strong>. When explaining why phospholipids form a bilayer, say which part faces where and why.
+</div>
+
+<!-- ============================================================ -->
+<h2>1.3 Proteins</h2>
+<!-- ============================================================ -->
+
+<h3>1.3 (i) Structure of an amino acid</h3>
+
+<p>Every amino acid has the same basic structure around a central carbon atom (the &alpha;-carbon), to which four groups are attached:</p>
+<ul>
+  <li>an <strong>amine group</strong>, &ndash;NH<sub>2</sub>;</li>
+  <li>a <strong>carboxyl group</strong>, &ndash;COOH;</li>
+  <li>a <strong>hydrogen atom</strong>, &ndash;H;</li>
+  <li>a variable <strong>R group</strong> (side chain).</li>
+</ul>
+<p>There are 20 amino acids commonly found in proteins, and they differ only in their R groups. R groups may be small or large, charged, polar or non-polar (hydrophobic), and some contain sulfur. You do not need to learn the structures of individual amino acids.</p>
+
+<div class="equation">
+  H<sub>2</sub>N &ndash; CH(R) &ndash; COOH
+</div>
+
+<h3>1.3 (ii) Forming polypeptides</h3>
+
+<p>Two amino acids join in a <strong>condensation</strong> reaction between the carboxyl group of one and the amine group of the other. The &ndash;OH from the carboxyl group and an H from the amine group are removed as water, and a <strong>peptide bond</strong> (&ndash;CO&ndash;NH&ndash;) forms. Two amino acids make a <em>dipeptide</em>; many make a <strong>polypeptide</strong>. The chain always has a free amine group at one end and a free carboxyl group at the other. A <strong>protein</strong> is one or more polypeptides folded into a specific three-dimensional shape. Peptide bonds are broken by hydrolysis, catalysed by protease enzymes.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In the cell, peptide bonds are formed at the ribosome during translation (1.4 vi). A polypeptide of 150 amino acids contains 149 peptide bonds, and 149 water molecules are released when it is made.
+</div>
+
+<h3>1.3 (iii) Bonds that hold proteins in shape</h3>
+
+<p>Once a chain has been made, it folds. The final shape is held by bonds and interactions, most of them between R groups:</p>
+
+<table>
+  <tr><th>Bond</th><th>Between</th><th>Strength and sensitivity</th></tr>
+  <tr><td>Hydrogen bonds</td><td>Slightly positive H atoms and slightly negative O or N atoms, both in the backbone (&ndash;NH and C=O) and between polar R groups</td><td>Individually weak, but there are very many of them; broken by heat and by pH changes</td></tr>
+  <tr><td>Ionic bonds</td><td>R groups carrying opposite charges (e.g. &ndash;NH<sub>3</sub><sup>+</sup> and &ndash;COO<sup>&minus;</sup>)</td><td>Stronger than hydrogen bonds, but disrupted by changes in pH, which alter the charges on R groups</td></tr>
+  <tr><td>Disulfide bonds (bridges)</td><td>The sulfur atoms of two cysteine R groups, forming a covalent S&ndash;S link</td><td>Strong covalent bonds; not broken by moderate heat, so they give the most stable parts of a structure</td></tr>
+</table>
+
+<p>In addition, <strong>hydrophobic interactions</strong> cause non-polar R groups to cluster together away from water, usually in the centre of a soluble protein, while polar and charged R groups end up on the outside facing water.</p>
+
+<h3>1.3 (iv) Levels of protein structure and fibrous vs globular proteins</h3>
+
+<ul>
+  <li><strong>Primary structure:</strong> the sequence of amino acids in the polypeptide, held by peptide bonds. It is set by the gene. Because the primary structure decides where every R group sits, it determines all the higher levels of structure. Changing a single amino acid can change the shape and function of a protein.</li>
+  <li><strong>Secondary structure:</strong> regular local folding of the chain, held by hydrogen bonds between the &ndash;NH and C=O groups of the backbone. The two main forms are the <strong>&alpha;-helix</strong> (a coil) and the <strong>&beta;-pleated sheet</strong> (sections of chain lying side by side).</li>
+  <li><strong>Tertiary structure:</strong> the overall three-dimensional folding of the whole polypeptide, held by hydrogen, ionic and disulfide bonds and hydrophobic interactions between R groups. This gives a protein its precise shape, such as the shape of an enzyme active site.</li>
+  <li><strong>Quaternary structure:</strong> the arrangement of two or more polypeptide chains in one functional protein, held by the same types of bond. It can include non-protein <strong>prosthetic groups</strong>, such as the haem groups in haemoglobin.</li>
+</ul>
+
+<table>
+  <tr><th>Feature</th><th>Fibrous proteins (e.g. collagen, keratin)</th><th>Globular proteins (e.g. haemoglobin, enzymes, insulin)</th></tr>
+  <tr><td>Shape</td><td>Long, parallel chains forming fibres or sheets</td><td>Compact, roughly spherical</td></tr>
+  <tr><td>Solubility</td><td>Insoluble in water</td><td>Soluble: hydrophilic R groups face outwards</td></tr>
+  <tr><td>Primary structure</td><td>Often a short, repetitive sequence</td><td>Irregular, non-repetitive sequence</td></tr>
+  <tr><td>Stability</td><td>Stable, strong; less easily denatured</td><td>Shape more easily changed by temperature and pH</td></tr>
+  <tr><td>Role</td><td>Structural: strength and support</td><td>Metabolic: catalysis, transport, signalling, defence</td></tr>
+</table>
+
+<h3>1.3 (v) Collagen and haemoglobin: structure and function</h3>
+
+<p><strong>Collagen</strong> is the main structural protein of tendons, ligaments, skin, bone, cartilage and artery walls.</p>
+<ul>
+  <li>Each molecule consists of <strong>three polypeptide chains</strong>, each a tightly wound helix, twisted around each other into a rope-like triple helix.</li>
+  <li><strong>Glycine</strong>, the amino acid with the smallest R group (a single H), occurs at every third position. This lets the three chains pack very closely together.</li>
+  <li>The chains are held together by many <strong>hydrogen bonds</strong>.</li>
+  <li>Neighbouring collagen molecules are joined by <strong>covalent cross-links</strong>, and they are staggered so that their ends do not line up. This avoids weak points. Molecules combine into <strong>fibrils</strong>, and fibrils into <strong>fibres</strong>.</li>
+  <li>Result: very high <strong>tensile strength</strong> (it resists being stretched), flexibility and insolubility, ideal for transmitting the pull of muscle to bone through tendons or for withstanding the stretch in artery walls.</li>
+</ul>
+
+<p><strong>Haemoglobin</strong> is the oxygen-carrying protein in red blood cells.</p>
+<ul>
+  <li>It is a globular protein with <strong>quaternary structure</strong>: four polypeptide chains, two &alpha;-globin and two &beta;-globin.</li>
+  <li>Each chain has a <strong>haem group</strong> (a prosthetic group) containing an iron ion (Fe<sup>2+</sup>). Each haem binds one O<sub>2</sub> molecule, so one haemoglobin molecule carries up to four O<sub>2</sub> molecules.</li>
+  <li>Hydrophobic R groups point into the centre of the molecule and hydrophilic R groups point outwards, so haemoglobin is <strong>soluble</strong> in the cytoplasm of red blood cells, where it is packed at high concentration.</li>
+  <li>When one O<sub>2</sub> binds, the shape of the molecule changes slightly, making it easier for the next O<sub>2</sub> to bind. This is <strong>cooperative binding</strong>, and it lets haemoglobin load oxygen readily in the lungs and unload it readily in respiring tissues.</li>
+  <li>The precise tertiary and quaternary structure is essential: a single amino acid change in the &beta;-chain causes sickle cell anaemia (see 1.4 ix).</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When a question says "explain how the structure of collagen is related to its function", link <em>each</em> feature to a property: glycine every third residue &rarr; tight packing; hydrogen bonds and cross-links &rarr; strength; staggered molecules &rarr; no weak points; insoluble &rarr; stays in place in tissues. Listing features without the link scores poorly.
+</div>
+
+<!-- ============================================================ -->
+<h2>1.4 DNA and Protein Synthesis</h2>
+<!-- ============================================================ -->
+
+<h3>1.4 (i) The structure of DNA</h3>
+
+<p>DNA (deoxyribonucleic acid) is a polymer of <strong>nucleotides</strong>. Each DNA nucleotide has three parts joined by covalent bonds:</p>
+<ul>
+  <li>a <strong>phosphate group</strong>;</li>
+  <li>the pentose sugar <strong>deoxyribose</strong>;</li>
+  <li>one of four nitrogen-containing <strong>bases</strong>: adenine (A), guanine (G), cytosine (C) or thymine (T).</li>
+</ul>
+
+<p>The bases fall into two groups by size. <strong>Purines</strong> (adenine and guanine) have a double-ring structure. <strong>Pyrimidines</strong> (cytosine and thymine, plus uracil in RNA) have a smaller single ring. Every base pair contains one purine and one pyrimidine, so all pairs are the same width and the two strands stay a constant distance apart.</p>
+
+<p>Nucleotides are joined by condensation reactions between the phosphate of one nucleotide and the sugar of the next, forming <strong>phosphodiester bonds</strong>. This produces a <strong>sugar-phosphate backbone</strong> with the bases sticking out to one side. A DNA molecule has <strong>two</strong> such strands:</p>
+<ul>
+  <li>The strands are held together by <strong>hydrogen bonds</strong> between complementary bases: <strong>A pairs with T</strong> (two hydrogen bonds) and <strong>C pairs with G</strong> (three hydrogen bonds). This is <strong>complementary base pairing</strong>.</li>
+  <li>The strands run in opposite directions: they are <strong>antiparallel</strong>. One runs 5&prime; to 3&prime; and the other 3&prime; to 5&prime; (the numbers refer to carbons of deoxyribose).</li>
+  <li>The two strands coil around each other to form a <strong>double helix</strong>.</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 310" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">A Short Section of DNA (Untwisted)</text>
+  <!-- backbones -->
+  <g stroke="#1a1a2e" stroke-width="1.2" fill="none">
+    <path d="M150,70 L128,100 L150,130 L128,160 L150,190 L128,220 L150,250"/>
+    <path d="M450,70 L472,100 L450,130 L472,160 L450,190 L472,220 L450,250"/>
+  </g>
+  <g fill="#FCD34D" stroke="#D97706" stroke-width="1">
+    <circle cx="128" cy="100" r="8"/><circle cx="128" cy="160" r="8"/><circle cx="128" cy="220" r="8"/>
+    <circle cx="472" cy="100" r="8"/><circle cx="472" cy="160" r="8"/><circle cx="472" cy="220" r="8"/>
+  </g>
+  <g fill="#e8eef6" stroke="#1e3a5f" stroke-width="1">
+    <polygon points="150,58 163,66 158,80 142,80 137,66"/>
+    <polygon points="150,118 163,126 158,140 142,140 137,126"/>
+    <polygon points="150,178 163,186 158,200 142,200 137,186"/>
+    <polygon points="150,238 163,246 158,260 142,260 137,246"/>
+    <polygon points="450,58 463,66 458,80 442,80 437,66"/>
+    <polygon points="450,118 463,126 458,140 442,140 437,126"/>
+    <polygon points="450,178 463,186 458,200 442,200 437,186"/>
+    <polygon points="450,238 463,246 458,260 442,260 437,246"/>
+  </g>
+  <!-- bases: purine width 150, pyrimidine width 90 -->
+  <g font-family="system-ui" font-size="12" font-weight="bold" text-anchor="middle">
+    <!-- row 1: A-T -->
+    <rect x="165" y="62" width="150" height="18" rx="4" fill="#FECACA" stroke="#DC2626"/><text x="240" y="75" fill="#DC2626">A</text>
+    <rect x="345" y="62" width="90" height="18" rx="4" fill="#FDE68A" stroke="#D97706"/><text x="390" y="75" fill="#b45309">T</text>
+    <!-- row 2: G-C -->
+    <rect x="165" y="122" width="150" height="18" rx="4" fill="#BBF7D0" stroke="#16A34A"/><text x="240" y="135" fill="#15803d">G</text>
+    <rect x="345" y="122" width="90" height="18" rx="4" fill="#DBEAFE" stroke="#2563eb"/><text x="390" y="135" fill="#2563eb">C</text>
+    <!-- row 3: C-G -->
+    <rect x="165" y="182" width="90" height="18" rx="4" fill="#DBEAFE" stroke="#2563eb"/><text x="210" y="195" fill="#2563eb">C</text>
+    <rect x="285" y="182" width="150" height="18" rx="4" fill="#BBF7D0" stroke="#16A34A"/><text x="360" y="195" fill="#15803d">G</text>
+    <!-- row 4: T-A -->
+    <rect x="165" y="242" width="90" height="18" rx="4" fill="#FDE68A" stroke="#D97706"/><text x="210" y="255" fill="#b45309">T</text>
+    <rect x="285" y="242" width="150" height="18" rx="4" fill="#FECACA" stroke="#DC2626"/><text x="360" y="255" fill="#DC2626">A</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="1" stroke-dasharray="3,2">
+    <line x1="317" y1="67" x2="343" y2="67"/><line x1="317" y1="75" x2="343" y2="75"/>
+    <line x1="317" y1="125" x2="343" y2="125"/><line x1="317" y1="131" x2="343" y2="131"/><line x1="317" y1="137" x2="343" y2="137"/>
+    <line x1="257" y1="185" x2="283" y2="185"/><line x1="257" y1="191" x2="283" y2="191"/><line x1="257" y1="197" x2="283" y2="197"/>
+    <line x1="257" y1="247" x2="283" y2="247"/><line x1="257" y1="255" x2="283" y2="255"/>
+  </g>
+  <g font-family="system-ui" font-size="10" fill="#1a1a2e">
+    <text x="150" y="50" text-anchor="middle" font-weight="bold">5&#8242;</text>
+    <text x="150" y="278" text-anchor="middle" font-weight="bold">3&#8242;</text>
+    <text x="450" y="50" text-anchor="middle" font-weight="bold">3&#8242;</text>
+    <text x="450" y="278" text-anchor="middle" font-weight="bold">5&#8242;</text>
+    <line x1="120" y1="100" x2="92" y2="100" stroke="#1a1a2e" stroke-width="0.7"/><text x="88" y="103" text-anchor="end">Phosphate</text>
+    <line x1="137" y1="130" x2="92" y2="140" stroke="#1a1a2e" stroke-width="0.7"/><text x="88" y="143" text-anchor="end">Deoxyribose</text>
+    <line x1="139" y1="175" x2="92" y2="185" stroke="#1a1a2e" stroke-width="0.7"/><text x="88" y="182" text-anchor="end">Phosphodiester</text><text x="88" y="194" text-anchor="end">bond</text>
+    <line x1="330" y1="75" x2="330" y2="100" stroke="#1a1a2e" stroke-width="0.7"/><text x="330" y="111" text-anchor="middle">2 H-bonds (A&#8211;T)</text>
+    <line x1="270" y1="182" x2="270" y2="160" stroke="#1a1a2e" stroke-width="0.7"/><text x="270" y="156" text-anchor="middle">3 H-bonds (C&#8211;G)</text>
+    <text x="535" y="100" text-anchor="middle" font-size="9" fill="#666">Sugar-phosphate</text>
+    <text x="535" y="112" text-anchor="middle" font-size="9" fill="#666">backbone</text>
+    <text x="300" y="298" text-anchor="middle" font-size="9" fill="#666">Long bars = purines (A, G, double ring); short bars = pyrimidines (T, C, single ring). Strands are antiparallel.</text>
+  </g>
+</svg>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Base pairing rules give an easy calculation. In double-stranded DNA the amount of A equals T and the amount of C equals G. If 30% of the bases are adenine, then thymine is also 30%, leaving 40% for C and G together, so cytosine = guanine = 20%. Do not apply this to a single strand or to RNA, where the rule does not hold.
+</div>
+
+<h3>1.4 (ii) Semi-conservative replication</h3>
+
+<p>Before a cell divides, its DNA must be copied exactly. Replication is <strong>semi-conservative</strong>: each new DNA molecule contains one strand from the original molecule and one newly made strand.</p>
+<ol>
+  <li><strong>DNA helicase</strong> unwinds the double helix and breaks the hydrogen bonds between complementary bases, separating the two strands. Both strands act as templates.</li>
+  <li>Free DNA nucleotides in the nucleus are attracted to their complementary exposed bases (A to T, C to G) and are held by hydrogen bonds.</li>
+  <li><strong>DNA polymerase</strong> joins adjacent nucleotides of the new strand by catalysing condensation reactions that form phosphodiester bonds. DNA polymerase can only add nucleotides in one direction (to the 3&prime; end of the growing strand), so the two new strands are built in opposite directions.</li>
+  <li>On one template the new strand is built continuously. On the other it is built in short sections, which <strong>DNA ligase</strong> joins by forming phosphodiester bonds between them, creating a continuous strand.</li>
+  <li>Each daughter molecule rewinds into a double helix: one old strand and one new.</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Keep the enzymes straight. Helicase <em>breaks hydrogen bonds</em>; DNA polymerase <em>forms phosphodiester bonds</em> between nucleotides of the new strand; the hydrogen bonds between new and template bases form without an enzyme. Ligase joins fragments. Saying "DNA polymerase pairs the bases" loses the mark.
+</div>
+
+<h3>1.4 (iii) What a gene is</h3>
+
+<div class="definition">
+  <strong>Gene:</strong> A section of a DNA molecule whose sequence of bases codes for the sequence of amino acids in one polypeptide. (Some genes instead code for functional RNA such as tRNA or rRNA.) The position of a gene on a chromosome is its <em>locus</em>.
+</div>
+
+<h3>1.4 (iv) and (v) The structure of mRNA and tRNA</h3>
+
+<p>RNA differs from DNA in three ways: its nucleotides contain <strong>ribose</strong> instead of deoxyribose, it uses the base <strong>uracil (U)</strong> instead of thymine, and it is usually <strong>single-stranded</strong>. RNA nucleotides are also joined by phosphodiester bonds into a sugar-phosphate backbone.</p>
+
+<table>
+  <tr><th>Feature</th><th>Messenger RNA (mRNA)</th><th>Transfer RNA (tRNA)</th></tr>
+  <tr><td>Shape</td><td>A single, largely linear strand</td><td>A single strand folded back on itself into a clover-leaf shape</td></tr>
+  <tr><td>Role of hydrogen bonds</td><td>Unlike tRNA, mRNA is not held in a fixed folded shape by pairing within the strand. Its exposed bases form temporary hydrogen bonds with the DNA template during transcription, and with tRNA anticodons during translation</td><td>Hydrogen bonds between complementary bases in parts of the same strand hold the folded clover-leaf shape; the anticodon also forms temporary hydrogen bonds with the mRNA codon</td></tr>
+  <tr><td>Key features</td><td>Carries the base sequence of a gene as a series of <strong>codons</strong> (triplets) from the nucleus to the ribosome</td><td>Has an <strong>anticodon</strong> (three unpaired bases) at one end and an <strong>amino acid attachment site</strong> at the other; each tRNA carries one specific amino acid</td></tr>
+  <tr><td>Length and life span</td><td>Length depends on the gene; broken down after a short time</td><td>Short (about 75&ndash;90 nucleotides); reused many times</td></tr>
+</table>
+
+<h3>1.4 (vi) Transcription and translation</h3>
+
+<p><strong>Transcription</strong> (in the nucleus) makes an mRNA copy of a gene:</p>
+<ol>
+  <li>The hydrogen bonds between the two DNA strands are broken at the gene, so the double helix unwinds and separates locally.</li>
+  <li>Only one strand is used as the template. This is the <strong>antisense</strong> (template) strand. The other, the <strong>sense</strong> (coding) strand, has the same base sequence as the mRNA that will be made, except that it has T where the mRNA has U.</li>
+  <li>Free RNA nucleotides pair with their complementary bases on the antisense strand (A with U, T with A, C with G, G with C).</li>
+  <li><strong>RNA polymerase</strong> moves along the template and joins the RNA nucleotides with phosphodiester bonds.</li>
+  <li>At the end of the gene, the mRNA detaches, the DNA rewinds, and the mRNA leaves the nucleus through a <strong>nuclear pore</strong> to reach a ribosome. (In eukaryotes the first transcript is modified before it leaves: non-coding sections called introns are removed.)</li>
+</ol>
+
+<p><strong>Translation</strong> (at a ribosome in the cytoplasm or on rough endoplasmic reticulum) uses the mRNA to build a polypeptide:</p>
+<ol>
+  <li>The mRNA binds to a ribosome. Translation begins at the <strong>start codon</strong>, AUG.</li>
+  <li>A tRNA with the complementary anticodon (UAC), carrying its specific amino acid (methionine), pairs with the start codon by hydrogen bonding.</li>
+  <li>A second tRNA pairs with the next codon. The ribosome holds two tRNAs at a time.</li>
+  <li>A <strong>peptide bond</strong> forms between the two amino acids by condensation, catalysed within the ribosome. ATP provides energy for the process.</li>
+  <li>The ribosome moves along the mRNA by one codon. The first tRNA is released and can collect another amino acid; a new tRNA arrives at the next codon.</li>
+  <li>This repeats until the ribosome reaches a <strong>stop codon</strong> (UAA, UAG or UGA), which has no tRNA. The polypeptide is released and folds into its final shape.</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Give sequence-conversion questions careful attention. If the antisense (template) strand reads TAC GGA, the mRNA is AUG CCU, the tRNA anticodons are UAC GGA, and the sense strand is ATG CCT. The sense strand and mRNA match (T &rarr; U); the antisense strand and anticodons match (T &rarr; U).
+</div>
+
+<h3>1.4 (vii) The genetic code</h3>
+
+<ul>
+  <li><strong>Triplet code:</strong> each amino acid is coded by a sequence of three bases, a codon on the mRNA. With four bases there are 4<sup>3</sup> = 64 possible codons, easily enough for 20 amino acids. (A doublet code would give only 4<sup>2</sup> = 16.)</li>
+  <li><strong>Start and stop codons:</strong> AUG signals the start of translation (and codes for methionine); UAA, UAG and UGA mark the end of the polypeptide and code for no amino acid.</li>
+  <li><strong>Degenerate:</strong> most amino acids are coded for by more than one codon. There are 61 codons for amino acids but only 20 amino acids.</li>
+  <li><strong>Non-overlapping:</strong> each base belongs to only one codon; the sequence is read in consecutive, separate triplets from a fixed starting point.</li>
+  <li><strong>Universal:</strong> the same codons code for the same amino acids in almost all organisms.</li>
+  <li><strong>Not all DNA codes for proteins:</strong> much of the genome is non-coding. It includes introns, regulatory sequences that control when genes are switched on, genes for tRNA and rRNA, and repeated sequences. In humans only around 1&ndash;2% of the genome codes for protein.</li>
+</ul>
+
+<p>The degeneracy of the code can be shown as a frequency table for the 20 amino acids of the standard code:</p>
+
+<table>
+  <tr><th>Number of codons per amino acid</th><th>Number of amino acids</th><th>Examples</th><th>Codons used</th></tr>
+  <tr><td>1</td><td>2</td><td>methionine, tryptophan</td><td>2</td></tr>
+  <tr><td>2</td><td>9</td><td>e.g. phenylalanine, lysine, glutamic acid</td><td>18</td></tr>
+  <tr><td>3</td><td>1</td><td>isoleucine</td><td>3</td></tr>
+  <tr><td>4</td><td>5</td><td>e.g. valine, glycine, alanine</td><td>20</td></tr>
+  <tr><td>6</td><td>3</td><td>leucine, serine, arginine</td><td>18</td></tr>
+  <tr><td><strong>Total</strong></td><td><strong>20</strong></td><td></td><td><strong>61</strong> (+ 3 stop = 64)</td></tr>
+</table>
+
+<h3>1.4 (viii) Gene mutations</h3>
+
+<div class="definition">
+  <strong>Gene mutation:</strong> A change in the base sequence of DNA within a gene. Mutations arise mainly from errors during DNA replication, and the rate is increased by mutagens such as ionising radiation, UV light and certain chemicals.
+</div>
+
+<table>
+  <tr><th>Type</th><th>What happens</th><th>Typical effect on the polypeptide</th></tr>
+  <tr><td>Substitution</td><td>One base is replaced by a different base</td><td>Changes only one codon. Because of degeneracy it may be <em>silent</em> (same amino acid); it may change one amino acid (<em>missense</em>); or it may create a stop codon (<em>nonsense</em>), giving a shortened polypeptide</td></tr>
+  <tr><td>Insertion</td><td>An extra base is added</td><td>Causes a <strong>frameshift</strong>: every codon after the mutation is read differently, so many amino acids change and a premature stop codon often appears</td></tr>
+  <tr><td>Deletion</td><td>A base is lost</td><td>Also causes a frameshift, usually with severe effects on the protein</td></tr>
+</table>
+
+<p>A mutation matters only if it changes the protein&#39;s primary structure in a way that changes its tertiary structure and so its function. An insertion or deletion of three bases adds or removes a single amino acid without a frameshift.</p>
+
+<h3>1.4 (ix) Point mutations and sickle cell anaemia</h3>
+
+<p>A point mutation affects a single base. Sickle cell anaemia is caused by a <strong>substitution</strong> in the gene for the &beta;-globin chain of haemoglobin:</p>
+<ul>
+  <li>In the sense strand, the triplet GAG becomes GTG (in the mRNA, codon GAG becomes GUG).</li>
+  <li>As a result, the sixth amino acid of the &beta;-chain changes from <strong>glutamic acid</strong> to <strong>valine</strong>.</li>
+  <li>Glutamic acid has a charged, hydrophilic R group; valine has a non-polar, hydrophobic R group. This produces a hydrophobic patch on the outside of the molecule.</li>
+  <li>When oxygen levels are low, the abnormal haemoglobin molecules (haemoglobin S) stick together and form long, insoluble fibres inside red blood cells.</li>
+  <li>The red blood cells become rigid and sickle-shaped. They carry less oxygen, can block capillaries (causing pain and tissue damage) and are destroyed quickly, leading to anaemia.</li>
+</ul>
+
+<p>People who are homozygous for the mutant allele have the disease. Heterozygous carriers have sickle cell trait: they are usually healthy and have some protection against malaria, which is why the allele is common in regions where malaria occurs.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For a mutation chain question, work through every link: change in base sequence &rarr; change in codon &rarr; different amino acid &rarr; different R group &rarr; change in bonding and folding (tertiary/quaternary structure) &rarr; change in function. Missing the middle steps is the most common reason for losing marks.
+</div>
+
+<!-- ============================================================ -->
+<h2>1.5 Enzymes</h2>
+<!-- ============================================================ -->
+
+<h3>1.5 (i) Enzymes are globular proteins</h3>
+
+<p>Enzymes are <strong>globular proteins</strong> that act as biological catalysts. The polypeptide is folded into a precise tertiary (sometimes quaternary) structure. A small region, the <strong>active site</strong>, is a cleft or pocket formed by a few amino acids whose R groups can bind the substrate and take part in the reaction. The shape and charge distribution of the active site depend on the bonds holding the tertiary structure, which in turn depend on the primary structure. Because they are globular, most enzymes are soluble and work in aqueous solution.</p>
+
+<h3>1.5 (ii) Specificity and the induced fit hypothesis</h3>
+
+<p>Each enzyme catalyses only one reaction, or a small group of very similar reactions. This <strong>specificity</strong> exists because only a substrate with a shape and charge pattern <strong>complementary</strong> to the active site can bind to it and form an <strong>enzyme-substrate complex</strong>.</p>
+
+<p>The <strong>lock and key</strong> model pictured the active site as a rigid shape that exactly matches the substrate. The current <strong>induced fit</strong> hypothesis improves on this:</p>
+<ol>
+  <li>The active site is not a perfectly matching fixed shape. The substrate binds, and its binding causes the active site to change shape slightly so that it moulds more closely around the substrate.</li>
+  <li>This change places strain on particular bonds in the substrate (or brings two substrate molecules close together in the right orientation), making the reaction easier.</li>
+  <li>The products are released, and the active site returns to its original shape, ready for another substrate molecule.</li>
+</ol>
+
+<h3>1.5 (iii) Enzymes lower activation energy</h3>
+
+<div class="definition">
+  <strong>Activation energy:</strong> The minimum energy that reactants must have for a reaction to start. Enzymes provide an alternative reaction pathway with a lower activation energy, so many more molecules have enough energy to react at a given temperature. The enzyme is unchanged at the end, and the overall energy change of the reaction is the same.
+</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Enzymes Lower the Activation Energy</text>
+  <line x1="60" y1="235" x2="560" y2="235" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="60" y1="235" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="310" y="252" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Progress of reaction</text>
+  <text x="30" y="140" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90 30 140)">Energy</text>
+  <path d="M70,170 L150,170 C220,170 250,60 300,60 C350,60 380,205 450,205 L550,205" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <path d="M150,170 C220,170 250,120 300,120 C350,120 380,205 450,205" fill="none" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="150" y1="170" x2="560" y2="170" stroke="#666" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <line x1="286" y1="168" x2="286" y2="64" stroke="#DC2626" stroke-width="1.2" marker-end="url(#arrN1c)"/>
+  <text x="280" y="120" text-anchor="end" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">E<tspan baseline-shift="sub" font-size="7">a</tspan></text>
+  <line x1="314" y1="168" x2="314" y2="124" stroke="#16A34A" stroke-width="1.2" marker-end="url(#arrN1d)"/>
+  <text x="320" y="152" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">E<tspan baseline-shift="sub" font-size="7">a</tspan></text>
+  <line x1="90" y1="200" x2="115" y2="200" stroke="#DC2626" stroke-width="2"/><text x="120" y="203" font-family="system-ui" font-size="9" fill="#1a1a2e">without enzyme</text>
+  <line x1="90" y1="216" x2="115" y2="216" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,3"/><text x="120" y="219" font-family="system-ui" font-size="9" fill="#1a1a2e">with enzyme (lower activation energy)</text>
+  <line x1="530" y1="171" x2="530" y2="201" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrN1e)"/>
+  <text x="525" y="188" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">overall energy change</text>
+  <text x="105" y="162" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Substrate(s)</text>
+  <text x="490" y="222" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Product(s)</text>
+  <defs>
+    <marker id="arrN1c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/></marker>
+    <marker id="arrN1d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/></marker>
+    <marker id="arrN1e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/></marker>
+  </defs>
+</svg>
+</div>
+
+<h3>1.5 (iv) Factors affecting the rate of enzyme activity</h3>
+
+<p><strong>Temperature.</strong> As temperature rises, enzyme and substrate molecules have more kinetic energy, so they move faster and collide more often, and more collisions result in enzyme-substrate complexes. The rate rises, roughly doubling for every 10 &deg;C rise at lower temperatures (a temperature coefficient, Q<sub>10</sub>, of about 2). Above the <strong>optimum temperature</strong>, vibrations become strong enough to break hydrogen and ionic bonds in the tertiary structure. The active site changes shape and is no longer complementary to the substrate, so fewer enzyme-substrate complexes form. This is <strong>denaturation</strong>, and it is usually permanent. The rate falls steeply. Many human enzymes have optima near 37&ndash;40 &deg;C; enzymes of thermophilic bacteria can have optima above 70 &deg;C.</p>
+
+<p><strong>pH.</strong> Each enzyme has an <strong>optimum pH</strong> (e.g. pepsin in the stomach works best near pH 2, while most intracellular enzymes work best near pH 7). A change in H<sup>+</sup> concentration alters the charges on R groups, including those in the active site. This disrupts ionic and hydrogen bonds, changing the shape of the active site and preventing the substrate from binding or reacting. Small changes are often reversible; extreme pH denatures the enzyme.</p>
+
+<p><strong>Substrate concentration.</strong> With a fixed amount of enzyme, increasing substrate concentration increases the rate, because collisions between substrate and active sites become more frequent. Eventually all active sites are occupied at any moment: the enzyme is <strong>saturated</strong>, the rate reaches its maximum (V<sub>max</sub>) and levels off. Enzyme concentration is now the limiting factor.</p>
+
+<p><strong>Enzyme concentration.</strong> Provided substrate is in excess, the rate is directly proportional to enzyme concentration, because more active sites are available. If substrate is limited, adding more enzyme eventually has no further effect, since substrate concentration becomes the limiting factor.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 270" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Temperature, Substrate Concentration and Inhibitors</text>
+  <!-- left panel axes -->
+  <line x1="60" y1="230" x2="295" y2="230" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="60" y1="230" x2="60" y2="60" stroke="#1a1a2e" stroke-width="1.2"/>
+  <path d="M60,219.3 L76.4,214.9 L92.9,208.6 L109.3,199.8 L125.7,187.3 L142.1,169.6 L158.6,145.1 L175.0,113.3 L178.3,106.6 L181.6,100.2 L184.9,94.3 L188.1,89.5 L191.4,86.2 L194.7,85.0 L198.0,86.4 L201.3,90.9 L204.6,98.6 L207.9,109.1 L211.1,121.8 L214.4,135.8 L217.7,150.0 L221.0,163.5 L224.3,175.7 L227.6,186.3 L230.9,195.3 L234.1,202.7 L237.4,208.6 L240.7,213.3 L244.0,217.1 L247.3,220.0 L257.1,225.4 L273.6,228.8 L290.0,229.7" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <line x1="194.7" y1="85" x2="194.7" y2="230" stroke="#666" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <g font-family="system-ui" font-size="10" fill="#1a1a2e">
+    <text x="177" y="250" text-anchor="middle">Temperature</text>
+    <text x="194.7" y="78" text-anchor="middle" font-size="9">optimum</text>
+    <text x="112" y="100" text-anchor="middle" font-size="9" fill="#666">more collisions,</text>
+    <text x="112" y="112" text-anchor="middle" font-size="9" fill="#666">more kinetic energy</text>
+    <text x="262" y="170" text-anchor="middle" font-size="9" fill="#666">denaturation</text>
+    <text x="30" y="145" text-anchor="middle" transform="rotate(-90 30 145)">Rate of reaction</text>
+  </g>
+  <!-- right panel axes -->
+  <line x1="340" y1="230" x2="575" y2="230" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="340" y1="230" x2="340" y2="60" stroke="#1a1a2e" stroke-width="1.2"/>
+  <path d="M340.0,230.0 L345.8,201.0 L351.5,181.7 L357.2,167.9 L363.0,157.5 L368.8,149.4 L374.5,143.0 L380.2,137.7 L386.0,133.3 L391.8,129.6 L397.5,126.4 L403.2,123.7 L409.0,121.2 L414.8,119.1 L420.5,117.2 L426.2,115.5 L432.0,114.0 L437.8,112.6 L443.5,111.4 L449.2,110.2 L455.0,109.2 L460.8,108.2 L466.5,107.3 L472.2,106.5 L478.0,105.7 L483.8,105.0 L489.5,104.3 L495.2,103.7 L501.0,103.1 L506.8,102.6 L512.5,102.1 L518.2,101.6 L524.0,101.1 L529.8,100.7 L535.5,100.3 L541.2,99.9 L547.0,99.5 L552.8,99.1 L558.5,98.8 L564.2,98.5 L570.0,98.2" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <path d="M340.0,230.0 L345.8,218.8 L351.5,209.3 L357.2,201.0 L363.0,193.8 L368.8,187.4 L374.5,181.7 L380.2,176.6 L386.0,172.0 L391.8,167.9 L397.5,164.1 L403.2,160.7 L409.0,157.5 L414.8,154.6 L420.5,151.9 L426.2,149.4 L432.0,147.1 L437.8,145.0 L443.5,143.0 L449.2,141.1 L455.0,139.4 L460.8,137.7 L466.5,136.2 L472.2,134.7 L478.0,133.3 L483.8,132.0 L489.5,130.8 L495.2,129.6 L501.0,128.5 L506.8,127.4 L512.5,126.4 L518.2,125.5 L524.0,124.5 L529.8,123.7 L535.5,122.8 L541.2,122.0 L547.0,121.2 L552.8,120.5 L558.5,119.8 L564.2,119.1 L570.0,118.5" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="6,3"/>
+  <path d="M340.0,230.0 L345.8,215.5 L351.5,205.8 L357.2,198.9 L363.0,193.8 L368.8,189.7 L374.5,186.5 L380.2,183.9 L386.0,181.7 L391.8,179.8 L397.5,178.2 L403.2,176.8 L409.0,175.6 L414.8,174.6 L420.5,173.6 L426.2,172.8 L432.0,172.0 L437.8,171.3 L443.5,170.7 L449.2,170.1 L455.0,169.6 L460.8,169.1 L466.5,168.7 L472.2,168.2 L478.0,167.9 L483.8,167.5 L489.5,167.2 L495.2,166.9 L501.0,166.6 L506.8,166.3 L512.5,166.0 L518.2,165.8 L524.0,165.6 L529.8,165.3 L535.5,165.1 L541.2,164.9 L547.0,164.8 L552.8,164.6 L558.5,164.4 L564.2,164.2 L570.0,164.1" fill="none" stroke="#D97706" stroke-width="2" stroke-dasharray="2,3"/>
+  <line x1="340" y1="85" x2="575" y2="85" stroke="#666" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <g font-family="system-ui" font-size="9">
+    <text x="345" y="80" fill="#666">V<tspan baseline-shift="sub" font-size="7">max</tspan> (all active sites occupied)</text>
+    <text x="570" y="93" text-anchor="end" fill="#1a1a2e">no inhibitor</text>
+    <text x="570" y="134" text-anchor="end" fill="#2563eb">competitive</text>
+    <text x="570" y="180" text-anchor="end" fill="#D97706">non-competitive</text>
+    <text x="457" y="250" text-anchor="middle" font-size="10" fill="#1a1a2e">Substrate concentration</text>
+  </g>
+</svg>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Never say an enzyme is "killed" (it was never alive) or that it "stops working" at low temperatures. At low temperatures the enzyme is inactive but not denatured: warming it restores activity. Above the optimum, name the bonds that break (hydrogen and ionic), say the <strong>active site changes shape</strong> and that the substrate is <strong>no longer complementary</strong>, so <strong>fewer enzyme-substrate complexes</strong> form.
+</div>
+
+<div class="definition">
+  <strong>Core Practical 1 (CP1): Investigate a factor affecting the initial rate of an enzyme-controlled reaction.</strong> The full method, variables, risk assessment and analysis are on the <a href="core_practicals.html#cp1">Core Practicals page (CP1)</a>. Key points for this topic: change only one factor (temperature, pH, enzyme concentration or substrate concentration), control the others with water baths and buffers, measure product formed or substrate used over time, and use the results to find the <em>initial</em> rate.
+</div>
+
+<h3>1.5 (v) Measuring the initial rate, and why it matters</h3>
+
+<p>The rate of an enzyme-controlled reaction can be followed by measuring either how quickly a <strong>product appears</strong> (e.g. the volume of oxygen released when catalase breaks down hydrogen peroxide, collected in a gas syringe or measuring cylinder) or how quickly a <strong>substrate disappears</strong> (e.g. starch broken down by amylase, followed with iodine on a spotting tile or by the fall in absorbance in a colorimeter).</p>
+
+<p>If product formed is plotted against time, the curve is steepest at the very start and then flattens as the reaction slows. The <strong>initial rate</strong> is the gradient at time zero. It is found by drawing a <strong>tangent</strong> to the curve at t = 0 and calculating its gradient (change in y &divide; change in x).</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 290" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Finding the Initial Rate from a Tangent</text>
+  <line x1="80" y1="250" x2="540" y2="250" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="80" y1="250" x2="80" y2="50" stroke="#1a1a2e" stroke-width="1.2"/>
+  <g font-family="system-ui" font-size="9" fill="#1a1a2e" text-anchor="middle">
+    <line x1="170" y1="250" x2="170" y2="254" stroke="#1a1a2e"/><text x="170" y="265">20</text>
+    <line x1="260" y1="250" x2="260" y2="254" stroke="#1a1a2e"/><text x="260" y="265">40</text>
+    <line x1="350" y1="250" x2="350" y2="254" stroke="#1a1a2e"/><text x="350" y="265">60</text>
+    <line x1="440" y1="250" x2="440" y2="254" stroke="#1a1a2e"/><text x="440" y="265">80</text>
+    <line x1="530" y1="250" x2="530" y2="254" stroke="#1a1a2e"/><text x="530" y="265">100</text>
+    <text x="80" y="265">0</text>
+    <text x="310" y="282" font-size="10">Time / s</text>
+  </g>
+  <g font-family="system-ui" font-size="9" fill="#1a1a2e" text-anchor="end">
+    <line x1="76" y1="218" x2="80" y2="218" stroke="#1a1a2e"/><text x="73" y="221">2</text>
+    <line x1="76" y1="186" x2="80" y2="186" stroke="#1a1a2e"/><text x="73" y="189">4</text>
+    <line x1="76" y1="154" x2="80" y2="154" stroke="#1a1a2e"/><text x="73" y="157">6</text>
+    <line x1="76" y1="122" x2="80" y2="122" stroke="#1a1a2e"/><text x="73" y="125">8</text>
+    <line x1="76" y1="90" x2="80" y2="90" stroke="#1a1a2e"/><text x="73" y="93">10</text>
+    <line x1="76" y1="58" x2="80" y2="58" stroke="#1a1a2e"/><text x="73" y="61">12</text>
+  </g>
+  <text x="40" y="150" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90 40 150)">Volume of O&#8322; / cm&#179;</text>
+  <path d="M80.0,250.0 L98.0,226.3 L116.0,206.2 L134.0,189.0 L152.0,174.4 L170.0,161.9 L188.0,151.3 L206.0,142.2 L224.0,134.5 L242.0,127.9 L260.0,122.3 L278.0,117.5 L296.0,113.5 L314.0,110.0 L332.0,107.0 L350.0,104.5 L368.0,102.4 L386.0,100.5 L404.0,99.0 L422.0,97.7 L440.0,96.5 L458.0,95.6 L476.0,94.7 L494.0,94.0 L512.0,93.4 L530.0,92.9" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <line x1="80" y1="250" x2="192.5" y2="90" stroke="#DC2626" stroke-width="1.5"/>
+  <line x1="80" y1="90" x2="192.5" y2="90" stroke="#DC2626" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <line x1="192.5" y1="90" x2="192.5" y2="250" stroke="#DC2626" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <circle cx="192.5" cy="90" r="3" fill="#DC2626"/>
+  <g font-family="system-ui" font-size="10" fill="#DC2626">
+    <text x="200" y="80">tangent at t = 0 passes through (25 s, 10 cm&#179;)</text>
+    <text x="200" y="200">initial rate = 10 &#247; 25 = 0.40 cm&#179; s&#8315;&#185;</text>
+  </g>
+  <text x="440" y="130" text-anchor="middle" font-family="system-ui" font-size="9" fill="#2563eb">rate falls as substrate is used up</text>
+</svg>
+</div>
+
+<div class="equation">
+  initial rate = &Delta;y &divide; &Delta;x = 10 cm<sup>3</sup> &divide; 25 s = 0.40 cm<sup>3</sup> s<sup>&minus;1</sup>
+</div>
+
+<p>In this example, the volume after 50 s is about 8.6 cm<sup>3</sup>, so the <em>mean</em> rate over the first 50 s is only about 0.17 cm<sup>3</sup> s<sup>&minus;1</sup>. That is less than half the initial rate, which shows why a mean rate over a long period misrepresents how fast the enzyme works.</p>
+
+<p><strong>Why the initial rate is used:</strong></p>
+<ul>
+  <li>At the start, the substrate concentration is known and is the same in every trial. As the reaction proceeds, substrate is used up at different speeds under different conditions, so later rates are no longer a fair comparison.</li>
+  <li>Later in the reaction, the rate is limited by falling substrate concentration, and products may accumulate and inhibit the enzyme or the reverse reaction may start to matter. The initial rate reflects only the factor being investigated.</li>
+  <li>If the enzyme denatures gradually (e.g. at high temperature), the initial rate is measured before much denaturation has taken place.</li>
+</ul>
+
+<p>When a reaction is timed to an end point (e.g. the time for starch to disappear), the rate can be expressed as <strong>1/time</strong> (units s<sup>&minus;1</sup>). This is a useful comparative measure but is strictly an average rate, so it only estimates the initial rate.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To draw a tangent, place the ruler so that it touches the curve at the chosen point without crossing it, and draw a long line so the gradient can be read accurately. Show your working: pick two points on the tangent far apart, state &Delta;y and &Delta;x with units, and give the rate with units (e.g. cm<sup>3</sup> s<sup>&minus;1</sup>) to a sensible number of significant figures. Straight-line graphs follow y = mx + c, where m is the gradient (the rate) and c is the y-intercept.
+</div>
+
+<h3>1.5 (vi) Enzyme inhibition</h3>
+
+<table>
+  <tr><th>Feature</th><th>Competitive inhibition</th><th>Non-competitive inhibition</th></tr>
+  <tr><td>Where the inhibitor binds</td><td>The active site</td><td>A different site (an allosteric site), away from the active site</td></tr>
+  <tr><td>Why it works</td><td>Its shape is similar to the substrate, so it is complementary to the active site. While bound it blocks the substrate from entering</td><td>Binding changes the tertiary structure, which changes the shape of the active site so the substrate is no longer complementary and cannot bind (or cannot react)</td></tr>
+  <tr><td>Effect of adding more substrate</td><td>Reduces the inhibition: substrate molecules out-compete inhibitor molecules for the active sites. V<sub>max</sub> can still be reached at very high substrate concentration</td><td>No effect on the inhibition: the substrate does not compete with the inhibitor. V<sub>max</sub> is lowered</td></tr>
+  <tr><td>Examples</td><td>Malonate inhibits succinate dehydrogenase (a respiration enzyme) because it resembles succinate</td><td>Cyanide inhibits cytochrome c oxidase in respiration; heavy metal ions such as Hg<sup>2+</sup> disrupt enzyme structure</td></tr>
+</table>
+
+<p>Inhibition can be <strong>reversible</strong> (the inhibitor binds weakly and leaves again) or <strong>irreversible</strong> (the inhibitor binds permanently, often covalently).</p>
+
+<p><strong>End-product inhibition</strong> is a form of negative feedback that controls metabolic pathways. In a pathway A &rarr; B &rarr; C &rarr; D, each step catalysed by a different enzyme, the final product D inhibits the enzyme that catalyses the first step. As D builds up, the pathway slows; as D is used up, the inhibition is released and the pathway speeds up again. This avoids wasting substrate and energy on product that is not needed. The inhibition is reversible and is usually non-competitive (the end product binds at an allosteric site). A well-known example is in respiration, where a high concentration of ATP inhibits phosphofructokinase, an enzyme early in glycolysis.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> On a graph of rate against substrate concentration, a competitive inhibitor lowers the curve most at <em>low</em> substrate concentrations, and the curve eventually approaches the uninhibited V<sub>max</sub>. A non-competitive inhibitor lowers the plateau itself. When asked to "explain" a graph, describe the pattern with figures from the axes, then give the reason in terms of active sites.
+</div>
+
+<h3>1.5 (vii) Intracellular and extracellular enzymes</h3>
+
+<ul>
+  <li><strong>Intracellular enzymes</strong> work inside the cell that made them, often inside a particular organelle. Examples: DNA polymerase and RNA polymerase in the nucleus; the enzymes of respiration in the cytoplasm and mitochondria; catalase, which breaks down hydrogen peroxide (a toxic by-product of metabolism) into water and oxygen; the enzymes of the Calvin cycle in chloroplasts.</li>
+  <li><strong>Extracellular enzymes</strong> are secreted by exocytosis and work outside the cell. Examples: amylase in saliva and from the pancreas; proteases such as pepsin and trypsin; lipase in the small intestine; enzymes secreted by fungi and bacteria that digest organic matter outside their cells (extracellular digestion), with the soluble products then absorbed.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>1.6 Inorganic Ions</h2>
+<!-- ============================================================ -->
+
+<p>Plants absorb inorganic ions from the soil solution through their root hair cells, mainly by active transport. These are macronutrients, needed in relatively large amounts, and each has specific jobs. Deficiency causes characteristic symptoms.</p>
+
+<table>
+  <tr><th>Ion</th><th>Role in plants</th><th>Why it is needed</th><th>Typical deficiency symptom</th></tr>
+  <tr><td>Nitrate (NO<sub>3</sub><sup>&minus;</sup>)</td><td>Source of nitrogen to make amino acids and the bases of DNA (and RNA)</td><td>Every amino acid contains nitrogen in its amine group; purine and pyrimidine bases are nitrogen-containing. Without nitrate the plant cannot make proteins (including enzymes) or nucleic acids for growth</td><td>Stunted growth; yellowing, starting in older leaves</td></tr>
+  <tr><td>Calcium (Ca<sup>2+</sup>)</td><td>Forms calcium pectate in the middle lamella</td><td>The middle lamella is the layer that cements the cell walls of neighbouring plant cells together. Calcium pectate helps hold cells together and strengthens tissues</td><td>Poor growth of young tissues and growing points</td></tr>
+  <tr><td>Magnesium (Mg<sup>2+</sup>)</td><td>Needed to make chlorophyll</td><td>A magnesium ion lies at the centre of every chlorophyll molecule; without it, chlorophyll cannot be made, so less light is absorbed for photosynthesis</td><td><strong>Chlorosis</strong>: yellowing of leaves</td></tr>
+  <tr><td>Phosphate (PO<sub>4</sub><sup>3&minus;</sup>)</td><td>Needed to make ADP and ATP</td><td>ATP is the energy currency of the cell; it is made by adding phosphate to ADP. Phosphate is also part of the backbone of DNA and RNA and the head of phospholipids</td><td>Poor growth, especially of roots</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Be specific. "Magnesium is needed for photosynthesis" is too vague: say that it is needed to <em>make chlorophyll</em>, so a deficiency reduces light absorption and therefore the rate of photosynthesis and growth. For nitrate, say what the nitrogen goes into (amino acids and nucleotide bases).
+</div>
+
+<!-- ============================================================ -->
+<h2>1.7 Water</h2>
+<!-- ============================================================ -->
+
+<h3>1.7 (i) The dipole nature of water and hydrogen bonding</h3>
+
+<p>A water molecule consists of one oxygen atom covalently bonded to two hydrogen atoms, with the molecule bent at an angle of about 105&deg;. Oxygen attracts the shared electrons more strongly than hydrogen does, so the oxygen end carries a slight negative charge (&delta;&minus;) and each hydrogen carries a slight positive charge (&delta;+). A molecule with this uneven distribution of charge is a <strong>dipole</strong>, or polar molecule.</p>
+
+<p>The &delta;+ hydrogen of one water molecule is attracted to the &delta;&minus; oxygen of a neighbouring molecule. This attraction is a <strong>hydrogen bond</strong>. Each hydrogen bond is weak, but in liquid water there are enormous numbers of them, constantly breaking and re-forming. Together they explain water&#39;s unusual and biologically important properties.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Polar Water Molecules Form Hydrogen Bonds</text>
+  <!-- molecule A -->
+  <g stroke="#1a1a2e" stroke-width="2">
+    <line x1="200" y1="100" x2="170" y2="130"/><line x1="200" y1="100" x2="230" y2="130"/>
+    <line x1="330" y1="160" x2="360" y2="185"/><line x1="330" y1="160" x2="320" y2="200"/>
+    <line x1="140" y1="200" x2="110" y2="225"/><line x1="140" y1="200" x2="170" y2="228"/>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="1.2" stroke-dasharray="4,3">
+    <line x1="240" y1="136" x2="310" y2="155"/>
+    <line x1="164" y1="141" x2="148" y2="182"/>
+  </g>
+  <g>
+    <circle cx="200" cy="100" r="20" fill="#DC2626" opacity="0.85"/>
+    <circle cx="170" cy="130" r="11" fill="#e8eef6" stroke="#1e3a5f"/><circle cx="230" cy="130" r="11" fill="#e8eef6" stroke="#1e3a5f"/>
+    <circle cx="330" cy="160" r="20" fill="#DC2626" opacity="0.85"/>
+    <circle cx="360" cy="185" r="11" fill="#e8eef6" stroke="#1e3a5f"/><circle cx="320" cy="200" r="11" fill="#e8eef6" stroke="#1e3a5f"/>
+    <circle cx="140" cy="200" r="20" fill="#DC2626" opacity="0.85"/>
+    <circle cx="110" cy="225" r="11" fill="#e8eef6" stroke="#1e3a5f"/><circle cx="170" cy="228" r="11" fill="#e8eef6" stroke="#1e3a5f"/>
+  </g>
+  <g font-family="system-ui" font-size="11" font-weight="bold" text-anchor="middle">
+    <text x="200" y="104" fill="#fff">O</text><text x="330" y="164" fill="#fff">O</text><text x="140" y="204" fill="#fff">O</text>
+    <text x="170" y="134" fill="#1e3a5f" font-size="9">H</text><text x="230" y="134" fill="#1e3a5f" font-size="9">H</text>
+    <text x="360" y="189" fill="#1e3a5f" font-size="9">H</text><text x="320" y="204" fill="#1e3a5f" font-size="9">H</text>
+    <text x="110" y="229" fill="#1e3a5f" font-size="9">H</text><text x="170" y="232" fill="#1e3a5f" font-size="9">H</text>
+  </g>
+  <g font-family="system-ui" font-size="11" fill="#1a1a2e">
+    <text x="200" y="70" text-anchor="middle" fill="#DC2626">&#948;&#8722;</text>
+    <text x="252" y="128" fill="#1e3a5f">&#948;+</text>
+    <text x="148" y="126" fill="#1e3a5f" text-anchor="end">&#948;+</text>
+    <text x="352" y="150" fill="#DC2626">&#948;&#8722;</text>
+  </g>
+  <g font-family="system-ui" font-size="10" fill="#1a1a2e">
+    <line x1="280" y1="146" x2="420" y2="90" stroke="#1a1a2e" stroke-width="0.7"/>
+    <text x="424" y="88">Hydrogen bond</text>
+    <text x="424" y="100" font-size="9" fill="#666">(&#948;+ H attracted to &#948;&#8722; O)</text>
+    <line x1="215" y1="115" x2="420" y2="50" stroke="#1a1a2e" stroke-width="0.7"/>
+    <text x="424" y="48">Covalent O&#8211;H bond</text>
+    <text x="424" y="60" font-size="9" fill="#666">(electrons pulled towards O)</text>
+  </g>
+</svg>
+</div>
+
+<table>
+  <tr><th>Property</th><th>Cause</th><th>Significance to organisms</th></tr>
+  <tr><td><strong>High specific heat capacity</strong> (about 4.2 J g<sup>&minus;1</sup> &deg;C<sup>&minus;1</sup>)</td><td>Much of the energy supplied is used to break hydrogen bonds before the molecules can move faster, so a lot of energy is needed to raise the temperature</td><td>Water temperature changes slowly, so aquatic habitats are thermally stable and the bodies of organisms (mostly water) resist rapid temperature change. This keeps enzymes working near their optimum</td></tr>
+  <tr><td><strong>Polar solvent</strong></td><td>&delta;&minus; oxygen and &delta;+ hydrogen ends are attracted to ions and to polar molecules, surrounding them and separating them from each other</td><td>Ions, glucose, amino acids and many other substances dissolve, so metabolic reactions can occur in solution in cytoplasm; water is the transport medium in blood plasma, xylem and phloem, and it carries waste such as urea in urine</td></tr>
+  <tr><td><strong>Surface tension</strong></td><td>At the surface, water molecules are hydrogen bonded more strongly to each other (cohesion) than to the air above</td><td>The surface acts like an elastic film, so small organisms such as pond skaters can walk on it and some live attached to the underside. Cohesion also holds the water column together in xylem</td></tr>
+  <tr><td><strong>Incompressibility</strong></td><td>Molecules are already packed closely and cannot be squeezed together much</td><td>Water under pressure gives support: turgid plant cells keep non-woody stems and leaves firm; fluid-filled body cavities act as <strong>hydrostatic skeletons</strong> (e.g. earthworms) that muscles push against</td></tr>
+  <tr><td><strong>Maximum density at 4 &deg;C</strong></td><td>Below 4 &deg;C, hydrogen bonds begin to hold molecules in an open lattice, so the water expands; ice is less dense than liquid water</td><td>Ice floats and forms an insulating layer on ponds and lakes. The densest water (at 4 &deg;C) sinks to the bottom, so the water below the ice stays liquid and aquatic organisms survive the winter</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Every water-property answer has the same three-part shape: <strong>property</strong> &rarr; <strong>caused by hydrogen bonding / polarity</strong> &rarr; <strong>benefit to a named organism or process</strong>. Distinguish the bond types: the O&ndash;H bonds <em>within</em> a molecule are covalent; hydrogen bonds are the weak attractions <em>between</em> molecules.
+</div>
+
+<!-- ============================================================ -->
+<h2>Maths Skills in Topic 1</h2>
+<!-- ============================================================ -->
+
+<p>The specification lists several maths skills that questions on this topic can test. Worked examples:</p>
+
+<ul>
+  <li><strong>Units:</strong> rates must carry units, such as cm<sup>3</sup> s<sup>&minus;1</sup> of gas or s<sup>&minus;1</sup> for 1/time. Convert consistently: 1 dm<sup>3</sup> = 1000 cm<sup>3</sup>; 1 minute = 60 s. A rate of 0.40 cm<sup>3</sup> s<sup>&minus;1</sup> equals 24 cm<sup>3</sup> min<sup>&minus;1</sup>.</li>
+  <li><strong>Ratios, fractions and percentages:</strong> if a DNA sample has 18% guanine, cytosine is 18%, and A + T = 100 &minus; 36 = 64%, so adenine = thymine = 32%. Percentage change = (new &minus; original) &divide; original &times; 100: if a rate rises from 0.25 to 0.40 cm<sup>3</sup> s<sup>&minus;1</sup>, that is a 60% increase.</li>
+  <li><strong>Frequency tables and diagrams:</strong> e.g. the table of codons per amino acid in 1.4 (vii), or the number of trials giving each end-point time in an enzyme experiment.</li>
+  <li><strong>Translating between graphs, numbers and algebra:</strong> y = mx + c describes a straight line. If product increases linearly with time, m is the rate and c the intercept (ideally zero, since no product is present at t = 0). An enzyme-concentration graph that is linear through the origin shows direct proportionality.</li>
+  <li><strong>Intercepts and rates from graphs:</strong> read the intercept where the line crosses an axis; calculate the rate as the gradient of a straight line, or of a <strong>tangent</strong> to a curve at the point of interest (see 1.5 v).</li>
+  <li><strong>Counting in polymers:</strong> a polypeptide of 150 amino acids needs 150 codons (450 bases) in the mRNA, plus a stop codon, giving 453 bases; it contains 149 peptide bonds.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>Command Words and Common Misconceptions</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Command word</th><th>What Edexcel expects</th><th>Topic 1 example</th></tr>
+  <tr><td>State / Give / Name</td><td>A short answer; no explanation needed</td><td>Name the bond between two amino acids (peptide bond).</td></tr>
+  <tr><td>Describe</td><td>Say what happens or what something is like, in a logical order; no reasons needed</td><td>Describe how a triglyceride is formed.</td></tr>
+  <tr><td>Explain</td><td>Give reasons, linking cause to effect ("because", "so", "therefore")</td><td>Explain why the rate falls above the optimum temperature.</td></tr>
+  <tr><td>Compare</td><td>Give similarities <em>and</em> differences, each point about both items</td><td>Compare the structures of amylose and cellulose.</td></tr>
+  <tr><td>Calculate</td><td>Produce a numerical answer, showing working and units</td><td>Calculate the initial rate from a tangent.</td></tr>
+  <tr><td>Suggest</td><td>Apply knowledge to an unfamiliar context; there may be several acceptable answers</td><td>Suggest why a plant grown without magnesium has yellow leaves.</td></tr>
+  <tr><td>Evaluate / Discuss</td><td>Weigh up evidence or points on both sides and reach a supported judgement</td><td>Evaluate a student&#39;s method for measuring enzyme rate.</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip: common misconceptions in Topic 1</strong>
+  <ul>
+    <li>Hydrolysis <em>uses</em> water; condensation <em>releases</em> it. Do not swap them.</li>
+    <li>Glycogen is made of &alpha;-glucose, not &beta;-glucose; only cellulose (of the named polysaccharides) uses &beta;-glucose.</li>
+    <li>The active site and substrate are <em>complementary</em>, not "the same shape".</li>
+    <li>Denatured enzymes have a changed active site; the enzyme is not destroyed or dissolved.</li>
+    <li>Uracil replaces thymine in RNA only; DNA never contains uracil in these questions.</li>
+    <li>The sense strand is <em>not</em> the template; the antisense strand is.</li>
+    <li>A substitution does not always change the protein, because the code is degenerate.</li>
+    <li>Hydrogen bonds hold the two DNA strands together; phosphodiester bonds hold each strand&#39;s backbone together.</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<h2>Key Terms Checklist</h2>
+<!-- ============================================================ -->
+
+<p>Check that you can define or explain each of these terms.</p>
+
+<table>
+  <tr><th>Section</th><th>Key terms</th></tr>
+  <tr><td>1.1 Carbohydrates</td><td>monosaccharide, disaccharide, polysaccharide, hexose, pentose, &alpha;-glucose, &beta;-glucose, ribose, deoxyribose, fructose, galactose, maltose, sucrose, lactose, glycosidic bond (1,4 and 1,6), condensation, hydrolysis, amylose, amylopectin, glycogen, cellulose, microfibril</td></tr>
+  <tr><td>1.2 Lipids</td><td>triglyceride, glycerol, fatty acid, ester bond, saturated, unsaturated, monounsaturated, polyunsaturated, phospholipid, hydrophilic, hydrophobic, amphipathic, phospholipid bilayer, partially permeable</td></tr>
+  <tr><td>1.3 Proteins</td><td>amino acid, amine group, carboxyl group, R group, peptide bond, dipeptide, polypeptide, hydrogen bond, ionic bond, disulfide bond, primary / secondary / tertiary / quaternary structure, &alpha;-helix, &beta;-pleated sheet, fibrous protein, globular protein, prosthetic group, collagen, haemoglobin, haem, tensile strength</td></tr>
+  <tr><td>1.4 DNA and protein synthesis</td><td>nucleotide, purine, pyrimidine, complementary base pairing, sugar-phosphate backbone, phosphodiester bond, antiparallel, double helix, semi-conservative replication, DNA helicase, DNA polymerase, DNA ligase, gene, mRNA, tRNA, codon, anticodon, transcription, translation, sense strand, antisense strand, RNA polymerase, ribosome, start codon, stop codon, triplet code, degenerate, non-overlapping, non-coding DNA, gene mutation, substitution, insertion, deletion, frameshift, point mutation, sickle cell anaemia</td></tr>
+  <tr><td>1.5 Enzymes</td><td>active site, specificity, complementary, enzyme-substrate complex, induced fit, activation energy, catalyst, optimum temperature, optimum pH, denaturation, saturation, V<sub>max</sub>, limiting factor, initial rate, tangent, competitive inhibitor, non-competitive inhibitor, allosteric site, end-product inhibition, intracellular enzyme, extracellular enzyme</td></tr>
+  <tr><td>1.6 Inorganic ions</td><td>nitrate, calcium pectate, middle lamella, magnesium, chlorophyll, chlorosis, phosphate, ADP, ATP</td></tr>
+  <tr><td>1.7 Water</td><td>dipole, polar, &delta;+ / &delta;&minus;, hydrogen bond, specific heat capacity, solvent, cohesion, surface tension, incompressibility, hydrostatic skeleton, maximum density at 4 &deg;C</td></tr>
+</table>
+
+</div>
+</body>
+</html>

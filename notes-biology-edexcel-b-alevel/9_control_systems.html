@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — 9: Control Systems</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>9: Control Systems</h1>
+
+<p><strong>Edexcel B A-level Biology (9BI0), Topic 9.</strong> This topic is about how the body and the plant coordinate what they do. It covers keeping internal conditions steady, hormones in mammals, growth substances in plants, the structure of the nervous system, how impulses are made and passed on, how drugs act at synapses, how the eye detects light, how heart rate is adjusted, and how the kidney and skin keep water balance and body temperature under control. Core Practical 14 (gibberellin and amylase) belongs to this topic.</p>
+
+<!-- ============================================================ -->
+<h2>9.1 Homeostasis</h2>
+<!-- ============================================================ -->
+
+<h3>9.1 (i) A Dynamic Equilibrium</h3>
+
+<div class="definition">
+  <strong>Homeostasis:</strong> Keeping the internal environment in a state of dynamic equilibrium. Conditions such as core temperature, blood pH and blood water potential are not fixed; they move up and down a little around a set point, and corrective mechanisms keep pulling them back into a narrow range.
+</div>
+
+<p>The word "dynamic" matters. The body is constantly gaining and losing heat, water and hydrogen ions, so the variables are always being disturbed. What stays roughly constant is the balance between input and output. If you plotted core temperature over a day you would see small oscillations about 37 &deg;C, not a flat line.</p>
+
+<h3>9.1 (ii) Why pH, Temperature and Water Potential Matter</h3>
+
+<table>
+  <tr><th>Variable</th><th>Why it must be kept within limits</th></tr>
+  <tr><td>pH</td><td>The tertiary structure of enzymes and other proteins is held by hydrogen bonds and ionic bonds between R groups. A change in H<sup>+</sup> concentration alters the charges on these R groups (and on the active site), so the shape of the active site changes, fewer enzyme&ndash;substrate complexes form and the enzyme may be denatured. Blood pH is normally kept close to 7.4.</td></tr>
+  <tr><td>Temperature</td><td>If core temperature falls, molecules have less kinetic energy, so there are fewer successful collisions and metabolism slows. If it rises too far, bonds in enzymes break, active sites change shape and enzymes denature. Membrane fluidity also changes with temperature.</td></tr>
+  <tr><td>Water potential</td><td>If the blood plasma has a lower water potential than the cells, cells lose water by osmosis and shrink; if it is higher, cells gain water, swell and may burst (animal cells have no cell wall). Changes in cell volume disturb the concentration of metabolites and ions inside the cell, and brain cells are particularly sensitive.</td></tr>
+</table>
+
+<h3>9.1 (iii) Negative and Positive Feedback</h3>
+
+<p>A control system has <strong>receptors</strong> that detect a change, a <strong>coordinator</strong> (often in the brain) that compares the value with the set point, and <strong>effectors</strong> (muscles or glands) that bring about a response.</p>
+
+<div class="definition">
+  <strong>Negative feedback:</strong> A change away from the set point triggers a response that reverses that change, returning the variable towards the set point. As the variable returns to normal, the stimulus shrinks and the corrective response is switched down.
+</div>
+
+<div class="definition">
+  <strong>Positive feedback:</strong> A change away from the normal level triggers a response that increases the change further, so the effect keeps building until some outside event ends the cycle.
+</div>
+
+<p>Most homeostatic systems use negative feedback, often with separate mechanisms to correct a rise and a fall (for example, a heat loss centre and a heat gain centre). Having two opposing mechanisms gives a greater degree of control than simply switching one mechanism on and off.</p>
+
+<p>Positive feedback does not keep conditions stable, but it is useful where a process needs to be completed quickly. Two standard examples:</p>
+<ul>
+  <li><strong>Childbirth:</strong> pressure of the baby on the cervix causes oxytocin release from the posterior pituitary; oxytocin makes the uterus contract more strongly, which increases pressure on the cervix, so yet more oxytocin is released. The cycle ends when the baby is born.</li>
+  <li><strong>The rising phase of an action potential:</strong> a small depolarisation opens some voltage-gated Na<sup>+</sup> channels; Na<sup>+</sup> entering depolarises the membrane further, opening more channels (see 9.5).</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 230" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowN1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">A Negative Feedback Loop</text>
+  <rect x="20" y="50" width="120" height="50" rx="8" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="80" y="72" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">Change from</text>
+  <text x="80" y="88" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">set point</text>
+  <rect x="170" y="50" width="120" height="50" rx="8" fill="#DBEAFE" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="230" y="72" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">Receptor</text>
+  <text x="230" y="88" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">detects change</text>
+  <rect x="320" y="50" width="120" height="50" rx="8" fill="#DBEAFE" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="380" y="72" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">Coordinator</text>
+  <text x="380" y="88" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">e.g. hypothalamus</text>
+  <rect x="460" y="50" width="120" height="50" rx="8" fill="#DBEAFE" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="520" y="72" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">Effector</text>
+  <text x="520" y="88" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">muscle or gland</text>
+  <rect x="300" y="150" width="200" height="50" rx="8" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.2"/>
+  <text x="400" y="172" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">Response opposes</text>
+  <text x="400" y="188" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">the original change</text>
+  <rect x="40" y="150" width="190" height="50" rx="8" fill="#F1F5F9" stroke="#64748b" stroke-width="1.2"/>
+  <text x="135" y="172" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">Variable returns</text>
+  <text x="135" y="188" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">towards set point</text>
+  <line x1="140" y1="75" x2="168" y2="75" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowN1)"/>
+  <line x1="290" y1="75" x2="318" y2="75" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowN1)"/>
+  <line x1="440" y1="75" x2="458" y2="75" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowN1)"/>
+  <path d="M520,100 L520,125 L450,125 L450,148" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowN1)"/>
+  <line x1="300" y1="175" x2="232" y2="175" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrowN1)"/>
+  <path d="M80,150 L80,102" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrowN1)"/>
+  <text x="88" y="130" font-family="system-ui" font-size="9" fill="#666">stimulus reduced</text>
+</svg>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> "Negative" does not mean "harmful" and "positive" does not mean "good". Negative feedback reverses a change; positive feedback amplifies it. If a question asks you to <em>explain</em> why a process is negative feedback, you must say that the response reduces the original stimulus, and so the response itself then decreases.
+</div>
+
+<!-- ============================================================ -->
+<h2>9.2 Chemical Control in Mammals</h2>
+<!-- ============================================================ -->
+
+<h3>9.2 (i) Endocrine Glands, Hormones and Target Cells</h3>
+
+<div class="definition">
+  <strong>Hormone:</strong> A chemical messenger made by an endocrine gland and secreted directly into the blood, which carries it around the body. It affects only <strong>target cells</strong>, which have receptors with a shape complementary to that particular hormone.
+</div>
+
+<p>Endocrine glands are ductless: their secretory cells release hormones straight into capillaries running through the gland. Examples include the pituitary gland, the thyroid, the adrenal glands, the islets of Langerhans in the pancreas and the ovaries. Because every cell is exposed to the blood, specificity depends entirely on receptors. A cell without a receptor for a hormone is not affected by it, even though the hormone reaches it.</p>
+
+<p>Compared with nerve impulses, hormonal responses are usually slower to start, longer lasting and more widespread, because a hormone can reach many different tissues. Hormones are often present at very low concentrations; the response is amplified inside the target cell.</p>
+
+<h3>9.2 (ii) Two Modes of Hormone Action</h3>
+
+<p><strong>Mode 1: receptor on the cell surface and a second messenger (e.g. adrenaline).</strong> Adrenaline is a water-soluble amine hormone, made from the amino acid tyrosine by the adrenal medulla. Being polar, it cannot diffuse through the phospholipid bilayer, so it acts from outside the cell:</p>
+<ol>
+  <li>Adrenaline (the <em>first messenger</em>) binds to a specific receptor protein in the plasma membrane of the target cell, for example a liver cell.</li>
+  <li>Binding changes the shape of the receptor, which activates the enzyme <strong>adenylyl cyclase</strong> on the inner face of the membrane (via a G protein).</li>
+  <li>Adenylyl cyclase converts ATP into <strong>cyclic AMP (cAMP)</strong>, the <em>second messenger</em>.</li>
+  <li>cAMP activates <strong>protein kinase A</strong>, which phosphorylates and activates other enzymes. In liver cells this cascade activates the enzyme that breaks glycogen down to glucose (glycogenolysis).</li>
+</ol>
+<p>Each step activates many molecules of the next, so one adrenaline molecule can lead to the release of a very large number of glucose molecules. This is <strong>amplification</strong>.</p>
+
+<p><strong>Mode 2: entry into the cell and binding to a transcription factor (e.g. oestrogen).</strong> Oestrogen is a steroid hormone made from cholesterol. It is lipid-soluble, so it diffuses through the plasma membrane. Inside the cell it binds to an oestrogen receptor, which is a transcription factor. The hormone&ndash;receptor complex binds to specific DNA sequences in the promoter region of target genes and stimulates (or in some genes reduces) the binding of RNA polymerase. The result is a change in which proteins the cell makes. Responses of this kind take longer to appear (hours) because transcription and translation are involved.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowN2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Two Modes of Hormone Action</text>
+  <!-- Left panel: adrenaline -->
+  <text x="150" y="44" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Adrenaline (second messenger)</text>
+  <rect x="30" y="80" width="240" height="160" rx="10" fill="#FEF2F2" stroke="#DC2626" stroke-width="1.5"/>
+  <circle cx="150" cy="62" r="7" fill="#DC2626"/>
+  <text x="165" y="66" font-family="system-ui" font-size="9" fill="#1a1a2e">adrenaline</text>
+  <rect x="140" y="74" width="20" height="14" fill="#FCA5A5" stroke="#DC2626" stroke-width="1"/>
+  <text x="60" y="98" font-family="system-ui" font-size="9" fill="#1a1a2e">membrane receptor</text>
+  <rect x="100" y="112" width="100" height="22" rx="6" fill="#fff" stroke="#DC2626" stroke-width="1"/>
+  <text x="150" y="127" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">adenylyl cyclase</text>
+  <line x1="150" y1="89" x2="150" y2="110" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowN2)"/>
+  <text x="150" y="156" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">ATP &#8594; cAMP (second messenger)</text>
+  <line x1="150" y1="134" x2="150" y2="146" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowN2)"/>
+  <line x1="150" y1="160" x2="150" y2="174" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowN2)"/>
+  <text x="150" y="186" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">protein kinase A activated</text>
+  <line x1="150" y1="190" x2="150" y2="204" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowN2)"/>
+  <text x="150" y="216" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">enzymes activated:</text>
+  <text x="150" y="229" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">glycogen &#8594; glucose</text>
+  <!-- Right panel: oestrogen -->
+  <text x="450" y="44" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#2563eb">Oestrogen (transcription factor)</text>
+  <rect x="330" y="80" width="240" height="160" rx="10" fill="#EFF6FF" stroke="#2563eb" stroke-width="1.5"/>
+  <circle cx="400" cy="62" r="7" fill="#2563eb"/>
+  <text x="412" y="66" font-family="system-ui" font-size="9" fill="#1a1a2e">oestrogen</text>
+  <line x1="400" y1="70" x2="400" y2="108" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowN2)"/>
+  <text x="408" y="96" font-family="system-ui" font-size="9" fill="#666">diffuses through bilayer</text>
+  <text x="400" y="122" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">binds receptor (a transcription factor)</text>
+  <ellipse cx="450" cy="185" rx="95" ry="42" fill="#DBEAFE" stroke="#2563eb" stroke-width="1"/>
+  <text x="450" y="160" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1e3a5f">nucleus</text>
+  <line x1="400" y1="128" x2="420" y2="165" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowN2)"/>
+  <rect x="385" y="178" width="130" height="10" fill="#93C5FD" stroke="#2563eb" stroke-width="0.8"/>
+  <text x="450" y="200" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">complex binds promoter DNA</text>
+  <text x="450" y="213" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">&#8594; transcription changed</text>
+</svg>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Match the mode of action to solubility. Water-soluble hormones (adrenaline, and peptide hormones such as ADH) cannot cross the membrane, so they need a surface receptor and a second messenger. Lipid-soluble steroid hormones (oestrogen) cross the membrane and act on genes. A common error is to say adrenaline "enters the cell" &mdash; it does not; cAMP carries the signal inside.
+</div>
+
+<!-- ============================================================ -->
+<h2>9.3 Chemical Control in Plants</h2>
+<!-- ============================================================ -->
+
+<h3>9.3 (i) Plant Growth Substances</h3>
+
+<p>Plants have no nervous system, so they coordinate growth and development chemically. Their signalling molecules are called <strong>plant growth substances</strong> (sometimes plant hormones). Unlike mammalian hormones, they are not made in specialised glands; they are produced by cells in growing regions such as shoot tips, root tips and seeds, and they move by diffusion, by active transport from cell to cell, or in the xylem and phloem. Each one has several effects, and the response depends on its concentration, the tissue and the other growth substances present.</p>
+
+<table>
+  <tr><th>Growth substance</th><th>Main sites of production</th><th>Examples of effects</th></tr>
+  <tr><td>Auxins (e.g. IAA, indoleacetic acid)</td><td>Shoot tips, young leaves</td><td>Cell elongation in shoots, apical dominance, stimulates root formation, phototropism</td></tr>
+  <tr><td>Cytokinins</td><td>Root tips, developing seeds</td><td>Stimulate cell division; release lateral buds from dormancy; delay leaf senescence</td></tr>
+  <tr><td>Gibberellins (e.g. GA<sub>3</sub>)</td><td>Young leaves, embryos in seeds</td><td>Stem elongation between nodes; switch on amylase production in germinating cereal grains; break seed dormancy</td></tr>
+</table>
+
+<p><strong>Gibberellin and germination.</strong> When a cereal grain (such as barley) absorbs water, the embryo releases gibberellin. Gibberellin diffuses to the <strong>aleurone layer</strong>, a protein-rich layer just inside the seed coat. There it leads to the breakdown of DELLA proteins, which normally prevent a transcription factor from acting. With the DELLA proteins removed, the gene for amylase is transcribed. Amylase is secreted into the endosperm, where it hydrolyses starch to maltose. The sugars are used by the embryo for respiration and growth. This is a good example of a plant growth substance acting by changing gene expression.</p>
+
+<div class="definition">
+  <strong>Core Practical 14 (CP14):</strong> How gibberellin affects amylase production by germinating cereal grains, measured with a starch agar assay. For the full method, variables and risk assessment, see <a href="core_practicals.html#cp14">Core Practicals: CP14</a>. In outline: half-grains without their embryos are placed on starch agar after soaking in different gibberellin concentrations; iodine solution is added later, and the area of the clear zone round each grain is a measure of how much amylase was secreted.
+</div>
+
+<p><strong>Maths skill: area of a clear zone.</strong> Treat each clear zone as a circle and use area = &pi;r<sup>2</sup>. A zone 12 mm in diameter has r = 6 mm, so its area is &pi; &times; 6<sup>2</sup> &asymp; 113 mm<sup>2</sup>. A zone 8 mm across has an area of about 50 mm<sup>2</sup>, so the first grain produced more than twice the area of starch digestion, not 1.5 times as the diameters might suggest.</p>
+
+<h3>9.3 (ii) The Effects of Auxin</h3>
+
+<p><strong>Cell elongation.</strong> Auxin in the cells just behind a shoot tip stimulates proton pumps in the plasma membrane, which move H<sup>+</sup> ions into the cell wall. The lower pH activates proteins called expansins, which loosen the links between cellulose microfibrils. As the cell takes up water by osmosis, the loosened wall stretches and the cell elongates. This is often called the acid growth hypothesis. Unequal distribution of auxin (for example, more on the shaded side of a shoot lit from one side) causes unequal elongation, so the shoot bends towards light.</p>
+
+<p><strong>Apical dominance.</strong> Auxin made in the apical (terminal) bud travels down the stem and suppresses the growth of lateral (side) buds lower down. The main shoot therefore grows upwards strongly while side branches stay small. If the apical bud is removed, auxin levels in the stem fall and lateral buds start to grow; gardeners use this when they pinch out shoot tips to make a plant bushier. If auxin paste is applied to the cut stump, the lateral buds stay inhibited, showing that auxin is responsible.</p>
+
+<p><strong>Promoting root growth.</strong> Auxin stimulates the formation of new roots, including roots growing from the base of cuttings. This is why commercial rooting powders contain synthetic auxins. Roots are much more sensitive to auxin than shoots: low concentrations promote root growth, while the higher concentrations that stimulate shoot elongation inhibit root elongation.</p>
+
+<h3>9.3 (iii) Interactions Between Growth Substances</h3>
+
+<p>Growth substances rarely act alone. Their effects can be <strong>synergistic</strong> (together they have a larger effect than either alone) or <strong>antagonistic</strong> (they have opposing effects). Apical dominance is controlled antagonistically by auxin and cytokinin:</p>
+<ul>
+  <li>Auxin from the shoot apex inhibits lateral bud growth.</li>
+  <li>Cytokinin, made in the roots and carried up in the xylem, promotes cell division in lateral buds and so stimulates them to grow.</li>
+  <li>Applying cytokinin directly to a lateral bud can make it grow even when the apical bud is still present.</li>
+  <li>What happens to a bud depends on the <strong>ratio</strong> of auxin to cytokinin reaching it. Near the apex, auxin is high relative to cytokinin, so buds stay dormant; further down the stem, and after the apex is removed, the balance shifts towards cytokinin and buds grow.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When interpreting data from decapitation experiments, compare each treatment with its control and state the conclusion carefully. "Removing the apex led to lateral bud growth" only shows the apex is involved; the treatment where auxin replaces the apex is what shows that auxin is the inhibitor. Refer to the ratio of auxin to cytokinin, not to one substance on its own.
+</div>
+
+<h3>9.3 (iv) Phytochrome: Flowering and Photomorphogenesis</h3>
+
+<p><strong>Phytochrome</strong> is a blue-green light-absorbing pigment protein found in small amounts in plant cells. It exists in two interconvertible forms:</p>
+<ul>
+  <li><strong>P<sub>R</sub></strong> (also written P<sub>660</sub>) absorbs red light, peak about 660 nm. Absorbing red light converts it rapidly into P<sub>FR</sub>.</li>
+  <li><strong>P<sub>FR</sub></strong> (P<sub>730</sub>) absorbs far-red light, peak about 730 nm. Absorbing far-red light converts it rapidly back to P<sub>R</sub>. In the dark, P<sub>FR</sub> also changes slowly back to P<sub>R</sub>.</li>
+</ul>
+<p>Sunlight contains more red than far-red light, so during the day most phytochrome is in the P<sub>FR</sub> form. During the night the amount of P<sub>FR</sub> gradually falls. P<sub>FR</sub> is the physiologically active form: it moves into the nucleus and interacts with transcription factors, changing the expression of light-regulated genes.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 200" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowN3r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrowN3f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7C2D12"/>
+    </marker>
+    <marker id="arrowN3d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Interconversion of Phytochrome</text>
+  <rect x="60" y="80" width="130" height="50" rx="10" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="125" y="104" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#1a1a2e">P<tspan baseline-shift="sub" font-size="10">R</tspan></text>
+  <text x="125" y="121" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">absorbs red (660 nm)</text>
+  <rect x="400" y="80" width="150" height="50" rx="10" fill="#FFEDD5" stroke="#7C2D12" stroke-width="1.5"/>
+  <text x="475" y="104" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#1a1a2e">P<tspan baseline-shift="sub" font-size="10">FR</tspan></text>
+  <text x="475" y="121" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">absorbs far-red (730 nm)</text>
+  <path d="M190,90 Q300,45 398,90" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#arrowN3r)"/>
+  <text x="300" y="52" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">red light / daylight (fast)</text>
+  <path d="M400,118 Q300,150 192,118" fill="none" stroke="#7C2D12" stroke-width="2" marker-end="url(#arrowN3f)"/>
+  <text x="300" y="152" text-anchor="middle" font-family="system-ui" font-size="10" fill="#7C2D12" font-weight="bold">far-red light (fast)</text>
+  <path d="M430,132 Q300,195 170,132" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowN3d)"/>
+  <text x="300" y="185" text-anchor="middle" font-family="system-ui" font-size="10" fill="#64748b">darkness (slow)</text>
+  <text x="515" y="146" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">active form</text>
+</svg>
+</div>
+
+<p><strong>Control of flowering (photoperiodism).</strong> Many plants flower only at certain times of year. They detect the season from the length of the night, measured as the amount of P<sub>FR</sub> left at the end of the dark period. The critical factor is an uninterrupted dark period.</p>
+<ul>
+  <li><strong>Long-day plants</strong> flower when nights are shorter than a critical length. Short nights leave a relatively high level of P<sub>FR</sub>, and P<sub>FR</sub> promotes flowering in these plants.</li>
+  <li><strong>Short-day plants</strong> flower when nights are longer than a critical length. In these plants P<sub>FR</sub> inhibits flowering, so a long night, during which P<sub>FR</sub> falls to a low level, allows flowering.</li>
+  <li>A brief flash of red light in the middle of a long night converts P<sub>R</sub> back to P<sub>FR</sub>. This prevents flowering in a short-day plant and can cause a long-day plant to flower. If the red flash is followed immediately by far-red light, the effect is cancelled, which is the key evidence that phytochrome is the pigment involved.</li>
+</ul>
+<p>The photoperiod is detected by the leaves, and a signal (a protein often called florigen) passes through the phloem to the shoot apex, where it switches on the genes that turn a vegetative bud into a flower bud.</p>
+
+<p><strong>Photomorphogenesis.</strong> This is the way light controls the form of a plant as it develops. A seedling grown in darkness is <strong>etiolated</strong>: it has long, thin internodes, a hooked tip, small unexpanded leaves and is pale yellow because no chlorophyll has been made. This helps a seedling buried in soil to reach the light using its limited food store. When the seedling is exposed to light, P<sub>R</sub> is converted to P<sub>FR</sub>, and P<sub>FR</sub> changes gene expression so that stem elongation slows, the hook straightens, leaves expand and chlorophyll is synthesised. The plant can then photosynthesise.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Say that plants respond to the length of the <em>dark</em> period, even though the terms are "long-day" and "short-day". Keep the forms straight: P<sub>R</sub> absorbs red and becomes P<sub>FR</sub>; P<sub>FR</sub> absorbs far-red and becomes P<sub>R</sub>. Do not write that red light "makes P<sub>R</sub>".
+</div>
+
+<!-- ============================================================ -->
+<h2>9.4 Structure and Function of the Mammalian Nervous System</h2>
+<!-- ============================================================ -->
+
+<h3>9.4 (i) Central and Peripheral Nervous Systems</h3>
+
+<p>The <strong>central nervous system (CNS)</strong> is the brain and spinal cord. It receives information, processes it and sends out instructions. The <strong>peripheral nervous system (PNS)</strong> is all the nerves outside the CNS: sensory neurones carrying impulses from receptors to the CNS, and motor neurones carrying impulses from the CNS to effectors.</p>
+
+<h3>9.4 (ii) Structure of the Spinal Cord</h3>
+
+<p>The spinal cord runs from the base of the brain down the back, inside the vertebral column, which protects it. It is surrounded by protective membranes (the meninges) and by cerebrospinal fluid. In cross-section:</p>
+<ul>
+  <li>A small <strong>central canal</strong> in the middle contains cerebrospinal fluid.</li>
+  <li>Around it is an H-shaped (butterfly-shaped) area of <strong>grey matter</strong>. This contains cell bodies of motor neurones and relay neurones, dendrites and synapses, and has little myelin.</li>
+  <li>Outside this is <strong>white matter</strong>, made of myelinated axons running up and down the cord in tracts. Myelin is lipid-rich, which is why it looks white.</li>
+  <li>A pair of spinal nerves leaves the cord between each pair of vertebrae. Each spinal nerve joins the cord by a <strong>dorsal root</strong> (towards the back), which carries sensory neurones and has a swelling, the <strong>dorsal root ganglion</strong>, containing their cell bodies, and a <strong>ventral root</strong> (towards the front), which carries the axons of motor neurones out of the cord.</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Cross-Section of the Spinal Cord</text>
+  <text x="300" y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">dorsal (back) at the top, ventral (front) at the bottom</text>
+  <!-- white matter -->
+  <ellipse cx="300" cy="155" rx="130" ry="90" fill="#FFFFFF" stroke="#1e3a5f" stroke-width="1.5"/>
+  <!-- grey matter butterfly -->
+  <path d="M300,140 C285,110 250,85 240,100 C232,112 262,130 272,150 C255,170 235,200 250,210 C265,218 285,185 300,172 C315,185 335,218 350,210 C365,200 345,170 328,150 C338,130 368,112 360,100 C350,85 315,110 300,140 Z" fill="#CBD5E1" stroke="#475569" stroke-width="1.2"/>
+  <!-- central canal -->
+  <circle cx="300" cy="155" r="5" fill="#DBEAFE" stroke="#2563eb" stroke-width="1"/>
+  <!-- dorsal roots -->
+  <path d="M250,95 Q220,70 180,68" fill="none" stroke="#16A34A" stroke-width="3"/>
+  <ellipse cx="170" cy="68" rx="14" ry="9" fill="#BBF7D0" stroke="#16A34A" stroke-width="1.2"/>
+  <path d="M156,68 L110,72" fill="none" stroke="#16A34A" stroke-width="3"/>
+  <path d="M350,95 Q380,70 420,68" fill="none" stroke="#16A34A" stroke-width="3"/>
+  <ellipse cx="430" cy="68" rx="14" ry="9" fill="#BBF7D0" stroke="#16A34A" stroke-width="1.2"/>
+  <path d="M444,68 L490,72" fill="none" stroke="#16A34A" stroke-width="3"/>
+  <!-- ventral roots -->
+  <path d="M255,208 Q220,235 180,232" fill="none" stroke="#DC2626" stroke-width="3"/>
+  <path d="M345,208 Q380,235 420,232" fill="none" stroke="#DC2626" stroke-width="3"/>
+  <!-- labels -->
+  <line x1="305" y1="155" x2="470" y2="150" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="474" y="154" font-family="system-ui" font-size="10" fill="#1a1a2e">Central canal</text>
+  <line x1="340" y1="195" x2="470" y2="185" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="474" y="189" font-family="system-ui" font-size="10" fill="#1a1a2e">Grey matter</text>
+  <line x1="410" y1="140" x2="470" y2="120" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="474" y="124" font-family="system-ui" font-size="10" fill="#1a1a2e">White matter</text>
+  <text x="430" y="52" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">Dorsal root ganglion</text>
+  <text x="100" y="92" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">Dorsal root</text>
+  <text x="100" y="105" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">(sensory)</text>
+  <text x="140" y="250" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">Ventral root</text>
+  <text x="140" y="263" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">(motor)</text>
+</svg>
+</div>
+
+<h3>9.4 (iii) Regions of the Brain</h3>
+
+<table>
+  <tr><th>Region</th><th>Location</th><th>Main function (as required by the spec)</th></tr>
+  <tr><td>Medulla oblongata</td><td>Base of the brain, in the brainstem, where the brain joins the spinal cord</td><td>Controls breathing rate and heart rate (it contains the cardiac and ventilation centres); these are automatic, unconscious activities</td></tr>
+  <tr><td>Cerebellum</td><td>At the back of the brain, below the rear of the cerebrum; has a deeply folded surface</td><td>Controls balance and coordinates movement, so that muscle contractions are smooth, accurately timed and in the right sequence</td></tr>
+  <tr><td>Cerebrum</td><td>The largest part, made of two cerebral hemispheres joined by the corpus callosum; its folded outer layer is the cerebral cortex</td><td>Initiates voluntary movement; also involved in conscious thought, memory, language and interpreting sensory information</td></tr>
+  <tr><td>Hypothalamus</td><td>Small region at the base of the brain, below the thalamus and just above the pituitary gland</td><td>Regulates body temperature and controls osmoregulation (water balance of the blood); it links the nervous system to the endocrine system through the pituitary</td></tr>
+</table>
+
+<h3>9.4 (iv) Autonomic and Voluntary Systems</h3>
+
+<p>The PNS has two parts:</p>
+<ul>
+  <li>The <strong>voluntary (somatic) nervous system</strong> carries impulses to skeletal muscles, which are under conscious control.</li>
+  <li>The <strong>autonomic nervous system</strong> controls activities you are not normally aware of: heart rate, breathing, the smooth muscle of the gut and blood vessels, and glands such as sweat glands and the adrenal medulla. It is controlled by the medulla oblongata and the hypothalamus.</li>
+</ul>
+
+<h3>9.4 (v) Sympathetic and Parasympathetic Systems</h3>
+
+<p>The autonomic system is itself divided into the <strong>sympathetic</strong> and <strong>parasympathetic</strong> systems. Most organs are supplied by nerves from both, and the two have opposite effects on the same effector: they act <strong>antagonistically</strong>. This arrangement means that the activity of an organ can be actively turned up by one system and actively turned down by the other, which gives rapid and finely graded control in both directions, rather than relying on one set of nerves just stopping.</p>
+
+<table>
+  <tr><th>Feature</th><th>Sympathetic</th><th>Parasympathetic</th></tr>
+  <tr><td>General role</td><td>Prepares the body for activity or stress ("fight or flight")</td><td>Conserves energy and supports routine activities ("rest and digest")</td></tr>
+  <tr><td>Neurotransmitter at the effector</td><td>Mostly noradrenaline</td><td>Acetylcholine</td></tr>
+  <tr><td>Heart rate</td><td>Increases</td><td>Decreases (via the vagus nerve)</td></tr>
+  <tr><td>Pupil</td><td>Dilates</td><td>Constricts</td></tr>
+  <tr><td>Bronchioles</td><td>Widen</td><td>Narrow</td></tr>
+  <tr><td>Digestive activity</td><td>Reduced</td><td>Increased (peristalsis and secretion)</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When asked to <em>explain</em> why the autonomic system has two divisions, use the word "antagonistic" and make the point that each can increase or decrease the activity of the same organ, allowing precise control. Just listing effects of each system is a <em>describe</em> answer and will not earn the explanation marks.
+</div>
+
+<!-- ============================================================ -->
+<h2>9.5 Nervous Transmission</h2>
+<!-- ============================================================ -->
+
+<h3>9.5 (i) The Resting Potential</h3>
+
+<div class="definition">
+  <strong>Resting potential:</strong> The potential difference across the membrane of a neurone that is not transmitting an impulse, usually about &minus;70 mV (the inside is negative compared with the outside). The membrane is said to be polarised.
+</div>
+
+<p>The resting potential results from the properties of the axon membrane and the movement of ions across it:</p>
+<ol>
+  <li><strong>Sodium&ndash;potassium pumps</strong> (Na<sup>+</sup>/K<sup>+</sup>-ATPase) use ATP to actively transport 3 Na<sup>+</sup> ions out of the axon for every 2 K<sup>+</sup> ions they move in. This builds a high Na<sup>+</sup> concentration outside and a high K<sup>+</sup> concentration inside. Because more positive ions leave than enter, the pump itself makes the inside slightly more negative.</li>
+  <li>The membrane contains <strong>K<sup>+</sup> channels that are open at rest</strong>, but most Na<sup>+</sup> channels are closed. The membrane is therefore much more permeable to K<sup>+</sup> than to Na<sup>+</sup>.</li>
+  <li>K<sup>+</sup> ions diffuse out through the open channels, down their concentration gradient, carrying positive charge out. Only a few Na<sup>+</sup> ions can leak back in.</li>
+  <li>As the inside becomes more negative, it attracts K<sup>+</sup> back in. The resting potential is reached when the electrical gradient pulling K<sup>+</sup> in balances the concentration gradient pushing K<sup>+</sup> out. Large negatively charged proteins inside the axon cannot leave, adding to the negative charge inside.</li>
+</ol>
+
+<h3>9.5 (ii) Forming and Propagating an Action Potential</h3>
+
+<p>An action potential is a brief reversal of the membrane potential. The sequence in one region of the axon:</p>
+<ol>
+  <li><strong>Depolarisation:</strong> a stimulus opens some voltage-gated Na<sup>+</sup> channels. Na<sup>+</sup> diffuses in, down its electrochemical gradient, and the inside becomes less negative.</li>
+  <li><strong>Threshold:</strong> if the potential reaches the threshold (about &minus;55 mV), many more voltage-gated Na<sup>+</sup> channels open. The influx of Na<sup>+</sup> causes more depolarisation, which opens more channels (positive feedback). The inside rapidly becomes positive, reaching about +40 mV.</li>
+  <li><strong>Repolarisation:</strong> the Na<sup>+</sup> channels then close and voltage-gated K<sup>+</sup> channels open. K<sup>+</sup> diffuses out and the inside becomes negative again.</li>
+  <li><strong>Hyperpolarisation:</strong> the K<sup>+</sup> channels are slow to close, so slightly too many K<sup>+</sup> ions leave and the potential briefly dips below &minus;70 mV.</li>
+  <li><strong>Return to rest:</strong> the voltage-gated K<sup>+</sup> channels close, and the Na<sup>+</sup>/K<sup>+</sup> pumps and resting K<sup>+</sup> channels restore the resting potential.</li>
+</ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 250" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">An Action Potential</text>
+  <!-- axes -->
+  <line x1="70" y1="35" x2="70" y2="205" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="70" y1="205" x2="560" y2="205" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="315" y="238" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Time / ms</text>
+  <text x="22" y="120" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90 22 120)">Membrane potential / mV</text>
+  <!-- y ticks: y = 90 - 1.2v -->
+  <text x="64" y="46" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">+40</text>
+  <line x1="67" y1="42" x2="73" y2="42" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="64" y="94" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">0</text>
+  <line x1="70" y1="90" x2="560" y2="90" stroke="#cbd5e1" stroke-width="0.8" stroke-dasharray="3,3"/>
+  <text x="64" y="160" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">&#8722;55</text>
+  <line x1="70" y1="156" x2="560" y2="156" stroke="#F59E0B" stroke-width="0.8" stroke-dasharray="4,3"/>
+  <text x="555" y="152" text-anchor="end" font-family="system-ui" font-size="9" fill="#b45309">threshold</text>
+  <text x="64" y="178" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">&#8722;70</text>
+  <line x1="67" y1="174" x2="73" y2="174" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- trace -->
+  <path d="M70,174 L150,174 Q162,172 170,156 L200,42 Q205,38 210,50 L250,174 Q262,190 280,186 Q310,178 340,174 L560,174" fill="none" stroke="#2563eb" stroke-width="2.2"/>
+  <!-- annotations -->
+  <text x="110" y="168" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">resting</text>
+  <text x="150" y="100" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">depolarisation:</text>
+  <text x="150" y="112" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Na<tspan baseline-shift="super" font-size="7">+</tspan> in</text>
+  <text x="275" y="100" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">repolarisation:</text>
+  <text x="275" y="112" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">K<tspan baseline-shift="super" font-size="7">+</tspan> out</text>
+  <line x1="280" y1="188" x2="330" y2="198" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="334" y="201" font-family="system-ui" font-size="9" fill="#1a1a2e">hyperpolarisation</text>
+  <text x="228" y="40" font-family="system-ui" font-size="9" fill="#1a1a2e">peak about +40 mV</text>
+</svg>
+</div>
+
+<p><strong>Refractory period.</strong> For a short time after an action potential, the Na<sup>+</sup> channels in that region cannot be opened again (they are inactivated), so a new action potential cannot be generated there. This ensures that action potentials are separate events, limits how often they can be produced, and makes the impulse travel in one direction only.</p>
+
+<p><strong>All-or-nothing.</strong> Any stimulus that reaches threshold produces an action potential of the same size. A stronger stimulus produces action potentials more frequently, not bigger ones.</p>
+
+<p><strong>Propagation.</strong> When one region of the axon is depolarised, Na<sup>+</sup> ions that have entered diffuse sideways inside the axon towards the next resting region. These <strong>local currents</strong> depolarise the neighbouring membrane to threshold, so its voltage-gated Na<sup>+</sup> channels open and a new action potential forms there. The region behind is refractory, so the wave of depolarisation moves forwards along the axon, away from the cell body.</p>
+
+<h3>9.5 (iii) Myelination and Saltatory Conduction</h3>
+
+<p>Many vertebrate axons are wrapped in a <strong>myelin sheath</strong> formed by Schwann cells, which wind their membranes many times around the axon. Myelin is an electrical insulator: ions cannot flow across the membrane where it is present. Between Schwann cells are short uncovered gaps, the <strong>nodes of Ranvier</strong>, where voltage-gated Na<sup>+</sup> channels are concentrated.</p>
+
+<p>In a myelinated axon, depolarisation can only occur at the nodes. Local currents flow inside the axon from one node to the next, so the action potential effectively jumps from node to node. This is <strong>saltatory conduction</strong>. It is faster than conduction in a non-myelinated axon, where each small section of membrane has to be depolarised in turn. It also uses less energy, because fewer ions move across the membrane and so less ATP is needed to pump them back. Myelinated axons can conduct at up to about 100 m s<sup>&minus;1</sup>, whereas many non-myelinated axons conduct at only around 1 m s<sup>&minus;1</sup>. Wider axons also conduct faster, because there is less resistance to the flow of ions inside the axon.</p>
+
+<div class="equation">
+  speed = distance &divide; time &nbsp;&nbsp; e.g. 0.9 m &divide; 9 ms = 0.9 m &divide; 9 &times; 10<sup>&minus;3</sup> s = 100 m s<sup>&minus;1</sup>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always convert milliseconds to seconds (divide by 1000) before calculating a speed, and give units. For saltatory conduction, say that depolarisation happens <em>only at the nodes of Ranvier</em> because myelin insulates the rest of the axon; do not say that the impulse "travels faster through the myelin".
+</div>
+
+<h3>9.5 (iv) Structure and Function of a Synapse</h3>
+
+<div class="definition">
+  <strong>Synapse:</strong> The junction between two neurones, or between a neurone and an effector. The two cells are separated by a narrow gap, the synaptic cleft, and the signal crosses it chemically as a transmitter substance (neurotransmitter).
+</div>
+
+<p>The presynaptic neurone ends in a swollen <strong>synaptic knob</strong> containing many mitochondria (to supply ATP), vesicles of transmitter and voltage-gated Ca<sup>2+</sup> channels in its membrane. The postsynaptic membrane has <strong>receptor proteins</strong> complementary to the transmitter. The steps at a synapse using acetylcholine (a <strong>cholinergic synapse</strong>):</p>
+<ol>
+  <li>An action potential arrives at the synaptic knob and depolarises the presynaptic membrane.</li>
+  <li>Voltage-gated Ca<sup>2+</sup> channels open and Ca<sup>2+</sup> ions diffuse into the knob.</li>
+  <li>Ca<sup>2+</sup> causes vesicles to move to the presynaptic membrane and fuse with it, releasing acetylcholine (ACh) into the cleft by exocytosis.</li>
+  <li>ACh diffuses across the cleft and binds to receptors on the postsynaptic membrane.</li>
+  <li>The receptors are ligand-gated channels: binding of ACh opens them, Na<sup>+</sup> ions diffuse in and the postsynaptic membrane depolarises. If threshold is reached, an action potential starts in the postsynaptic neurone.</li>
+  <li>The enzyme <strong>acetylcholinesterase</strong> in the cleft hydrolyses ACh into choline and ethanoic acid (acetate). These diffuse back into the synaptic knob and are recombined into ACh using ATP. Removing ACh stops the channels staying open, so the postsynaptic cell is not continuously stimulated.</li>
+</ol>
+
+<p><strong>Noradrenaline</strong> is the transmitter at <strong>adrenergic</strong> synapses, including most sympathetic nerve endings at effectors (such as the SAN). It works in the same basic way, but it is removed from the cleft mainly by being taken back up into the presynaptic knob, where it is either recycled into vesicles or broken down by an enzyme.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowN4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">A Cholinergic Synapse</text>
+  <!-- presynaptic knob -->
+  <path d="M40,90 L180,90 Q260,90 260,140 Q260,190 180,190 L40,190" fill="#DBEAFE" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- mitochondrion -->
+  <ellipse cx="120" cy="115" rx="22" ry="9" fill="#FDE68A" stroke="#D97706" stroke-width="1"/>
+  <!-- vesicles -->
+  <circle cx="200" cy="120" r="9" fill="#fff" stroke="#2563eb" stroke-width="1"/>
+  <circle cx="218" cy="150" r="9" fill="#fff" stroke="#2563eb" stroke-width="1"/>
+  <circle cx="190" cy="165" r="9" fill="#fff" stroke="#2563eb" stroke-width="1"/>
+  <circle cx="198" cy="120" r="1.5" fill="#DC2626"/><circle cx="203" cy="123" r="1.5" fill="#DC2626"/><circle cx="216" cy="148" r="1.5" fill="#DC2626"/><circle cx="220" cy="153" r="1.5" fill="#DC2626"/><circle cx="188" cy="165" r="1.5" fill="#DC2626"/><circle cx="193" cy="162" r="1.5" fill="#DC2626"/>
+  <!-- Ca channel -->
+  <rect x="236" y="100" width="10" height="14" fill="#A7F3D0" stroke="#16A34A" stroke-width="1"/>
+  <!-- released ACh in cleft -->
+  <circle cx="275" cy="130" r="1.8" fill="#DC2626"/><circle cx="282" cy="145" r="1.8" fill="#DC2626"/><circle cx="276" cy="158" r="1.8" fill="#DC2626"/><circle cx="288" cy="136" r="1.8" fill="#DC2626"/>
+  <!-- postsynaptic membrane -->
+  <path d="M300,80 L300,200 L560,200 L560,80 Z" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5"/>
+  <rect x="296" y="118" width="8" height="12" fill="#C4B5FD" stroke="#7C3AED" stroke-width="1"/>
+  <rect x="296" y="148" width="8" height="12" fill="#C4B5FD" stroke="#7C3AED" stroke-width="1"/>
+  <!-- arrows -->
+  <line x1="50" y1="140" x2="100" y2="140" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowN4)"/>
+  <text x="46" y="160" font-family="system-ui" font-size="9" fill="#1a1a2e">action potential</text>
+  <line x1="320" y1="140" x2="380" y2="140" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowN4)"/>
+  <text x="325" y="160" font-family="system-ui" font-size="9" fill="#1a1a2e">Na<tspan baseline-shift="super" font-size="7">+</tspan> enters: depolarisation</text>
+  <!-- labels -->
+  <line x1="120" y1="106" x2="100" y2="62" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="60" y="58" font-family="system-ui" font-size="10" fill="#1a1a2e">Mitochondrion</text>
+  <line x1="200" y1="111" x2="185" y2="62" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="160" y="58" font-family="system-ui" font-size="10" fill="#1a1a2e">Vesicle of ACh</text>
+  <line x1="241" y1="100" x2="270" y2="62" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="252" y="50" font-family="system-ui" font-size="10" fill="#1a1a2e">Ca<tspan baseline-shift="super" font-size="7">2+</tspan> channel</text>
+  <line x1="280" y1="165" x2="270" y2="222" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="235" y="234" font-family="system-ui" font-size="10" fill="#1a1a2e">Synaptic cleft</text>
+  <line x1="304" y1="124" x2="400" y2="95" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="404" y="98" font-family="system-ui" font-size="10" fill="#1a1a2e">ACh receptor</text>
+  <text x="150" y="208" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#2563eb">Presynaptic knob</text>
+  <text x="430" y="218" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#7C3AED">Postsynaptic neurone</text>
+</svg>
+</div>
+
+<p>Synapses make transmission <strong>one-way</strong>, because only the presynaptic side has vesicles and only the postsynaptic side has receptors. They also allow impulses from several neurones to be combined, filtering out weak, unimportant signals.</p>
+
+<h3>9.5 (v) Excitatory and Inhibitory Postsynaptic Potentials</h3>
+
+<p>The transmitter does not always produce an action potential. It produces a small change in the potential of the postsynaptic membrane:</p>
+<ul>
+  <li>An <strong>excitatory postsynaptic potential (EPSP)</strong> is a small depolarisation, caused when the transmitter opens channels that let Na<sup>+</sup> in. It brings the membrane closer to threshold.</li>
+  <li>An <strong>inhibitory postsynaptic potential (IPSP)</strong> is a small hyperpolarisation, caused when the transmitter opens channels that let Cl<sup>&minus;</sup> ions in or K<sup>+</sup> ions out. The inside becomes more negative, so it is harder to reach threshold.</li>
+</ul>
+
+<p>A single EPSP is usually too small to reach threshold. EPSPs add together by <strong>summation</strong>:</p>
+<ul>
+  <li><strong>Spatial summation:</strong> several presynaptic neurones release transmitter onto the same postsynaptic neurone at about the same time.</li>
+  <li><strong>Temporal summation:</strong> one presynaptic neurone fires several times in quick succession, so each new EPSP adds to the last before it dies away.</li>
+</ul>
+<p>The postsynaptic neurone adds up all the EPSPs and IPSPs arriving at that moment. An action potential is produced only if the overall effect depolarises the membrane to threshold. IPSPs therefore allow some inputs to cancel others, which is how the nervous system integrates information and prevents unnecessary responses.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Be exact about which ions move. At the presynaptic knob, it is Ca<sup>2+</sup> entering that triggers exocytosis; in the postsynaptic membrane it is Na<sup>+</sup> entering that causes the EPSP. An IPSP is caused by Cl<sup>&minus;</sup> entering or K<sup>+</sup> leaving, never by Na<sup>+</sup> leaving.
+</div>
+
+<!-- ============================================================ -->
+<h2>9.6 Effects of Drugs on the Nervous System</h2>
+<!-- ============================================================ -->
+
+<h3>9.6 (i) Drugs That Act on Synaptic Transmission</h3>
+
+<p>Because synapses depend on specific molecules binding to specific proteins, they are the site of action of many drugs and toxins. A drug may copy the transmitter, block its receptor, stop it being broken down, or prevent the neurone from producing action potentials in the first place.</p>
+
+<table>
+  <tr><th>Drug</th><th>How it acts</th><th>Effect</th></tr>
+  <tr><td><strong>Nicotine</strong></td><td>Its shape is similar enough to acetylcholine that it binds to and opens one type of ACh receptor (the nicotinic receptor), so it mimics ACh. It is not broken down by acetylcholinesterase, so it keeps the receptors stimulated for longer.</td><td>Postsynaptic neurones are depolarised without ACh being released. In the brain, stimulation of nicotinic receptors leads to the release of dopamine in reward pathways, contributing to addiction. Nicotine also stimulates the sympathetic system, raising heart rate and blood pressure.</td></tr>
+  <tr><td><strong>Lidocaine</strong></td><td>Blocks voltage-gated Na<sup>+</sup> channels in neurone membranes, so Na<sup>+</sup> cannot enter and the membrane cannot depolarise to threshold.</td><td>No action potentials are generated or conducted in the treated nerves. Used as a local anaesthetic: impulses from pain receptors in the area do not reach the CNS, so no pain is felt.</td></tr>
+  <tr><td><strong>Cobra venom</strong></td><td>Contains toxins (&alpha;-neurotoxins) that bind tightly to ACh receptors on the postsynaptic membrane, for example at neuromuscular junctions, blocking ACh from binding.</td><td>Na<sup>+</sup> channels in the muscle membrane do not open, so muscles are not stimulated and cannot contract. Paralysis follows; if the diaphragm and intercostal muscles are affected, breathing stops.</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Nicotine and cobra venom both bind to ACh receptors but have opposite effects: nicotine opens the receptor (an agonist) and cobra toxin blocks it (an antagonist). Lidocaine acts on a different protein altogether, the voltage-gated Na<sup>+</sup> channel, so it stops action potentials rather than acting at the receptor. For a <em>suggest</em> question about an unfamiliar drug, work out which step of transmission it affects and then reason forward to the effect on the postsynaptic cell.
+</div>
+
+<!-- ============================================================ -->
+<h2>9.7 Detection of Light by Mammals</h2>
+<!-- ============================================================ -->
+
+<h3>9.7 (i) Structure of the Human Retina</h3>
+
+<p>The retina is the light-sensitive layer lining the back of the eye. Unexpectedly, the light-sensitive cells are at the back of the retina, so light has to pass through the other layers before reaching them. From the front (the side light comes from) to the back:</p>
+<ol>
+  <li><strong>Ganglion cells</strong>, whose axons run across the surface of the retina and leave the eye together as the <strong>optic nerve</strong>.</li>
+  <li><strong>Bipolar neurones</strong>, which connect the photoreceptors to the ganglion cells.</li>
+  <li><strong>Photoreceptors</strong>: rod cells and cone cells. Their outer segments contain stacks of membranes holding the light-sensitive pigment.</li>
+  <li>A <strong>pigmented epithelium</strong> at the very back, which absorbs light that has passed through, stopping it reflecting around inside the eye.</li>
+</ol>
+<p>The <strong>fovea</strong> is a small pit in the centre of the retina, directly opposite the lens, where cones are densely packed and there are no rods. The <strong>blind spot</strong> is where the optic nerve leaves the eye; it has no photoreceptors at all.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 270" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowN5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/>
+    </marker>
+    <marker id="arrowN5b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Layers of the Retina</text>
+  <!-- light arrow -->
+  <line x1="40" y1="45" x2="40" y2="215" stroke="#D97706" stroke-width="2" marker-end="url(#arrowN5)"/>
+  <text x="48" y="60" font-family="system-ui" font-size="10" fill="#D97706" font-weight="bold">light</text>
+  <!-- impulses arrow -->
+  <line x1="560" y1="200" x2="560" y2="55" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowN5b)"/>
+  <text x="552" y="215" text-anchor="end" font-family="system-ui" font-size="10" fill="#2563eb" font-weight="bold">signals to optic nerve</text>
+  <!-- ganglion layer -->
+  <rect x="80" y="45" width="440" height="36" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+  <circle cx="160" cy="63" r="9" fill="#C4B5FD" stroke="#7C3AED"/>
+  <circle cx="300" cy="63" r="9" fill="#C4B5FD" stroke="#7C3AED"/>
+  <circle cx="390" cy="63" r="9" fill="#C4B5FD" stroke="#7C3AED"/>
+  <text x="515" y="67" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a1a2e">Ganglion cells</text>
+  <!-- bipolar layer -->
+  <rect x="80" y="85" width="440" height="36" fill="#DBEAFE" stroke="#2563eb" stroke-width="1"/>
+  <ellipse cx="160" cy="103" rx="6" ry="10" fill="#93C5FD" stroke="#2563eb"/>
+  <ellipse cx="300" cy="103" rx="6" ry="10" fill="#93C5FD" stroke="#2563eb"/>
+  <ellipse cx="390" cy="103" rx="6" ry="10" fill="#93C5FD" stroke="#2563eb"/>
+  <text x="515" y="107" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a1a2e">Bipolar neurones</text>
+  <line x1="160" y1="72" x2="160" y2="93" stroke="#475569" stroke-width="1"/>
+  <line x1="300" y1="72" x2="300" y2="93" stroke="#475569" stroke-width="1"/>
+  <line x1="390" y1="72" x2="390" y2="93" stroke="#475569" stroke-width="1"/>
+  <!-- photoreceptor layer -->
+  <rect x="80" y="125" width="440" height="70" fill="#DCFCE7" stroke="#16A34A" stroke-width="1"/>
+  <!-- three rods converge on left bipolar -->
+  <rect x="130" y="135" width="8" height="50" rx="3" fill="#86EFAC" stroke="#16A34A"/>
+  <rect x="156" y="135" width="8" height="50" rx="3" fill="#86EFAC" stroke="#16A34A"/>
+  <rect x="182" y="135" width="8" height="50" rx="3" fill="#86EFAC" stroke="#16A34A"/>
+  <line x1="134" y1="135" x2="158" y2="113" stroke="#475569" stroke-width="0.8"/>
+  <line x1="160" y1="135" x2="160" y2="113" stroke="#475569" stroke-width="0.8"/>
+  <line x1="186" y1="135" x2="162" y2="113" stroke="#475569" stroke-width="0.8"/>
+  <text x="160" y="208" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">rods share one bipolar</text>
+  <!-- cones one each -->
+  <path d="M294,140 L306,140 L302,185 L298,185 Z" fill="#FCA5A5" stroke="#DC2626"/>
+  <line x1="300" y1="140" x2="300" y2="113" stroke="#475569" stroke-width="0.8"/>
+  <path d="M384,140 L396,140 L392,185 L388,185 Z" fill="#FCA5A5" stroke="#DC2626"/>
+  <line x1="390" y1="140" x2="390" y2="113" stroke="#475569" stroke-width="0.8"/>
+  <text x="345" y="208" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">each cone has its own bipolar</text>
+  <text x="515" y="165" text-anchor="end" font-family="system-ui" font-size="10" fill="#1a1a2e">Rods and cones</text>
+  <!-- pigmented epithelium -->
+  <rect x="80" y="220" width="440" height="22" fill="#44403C" stroke="#1C1917" stroke-width="1"/>
+  <text x="300" y="235" text-anchor="middle" font-family="system-ui" font-size="10" fill="#fff">Pigmented epithelium (back of eye)</text>
+</svg>
+</div>
+
+<h3>9.7 (ii) Rhodopsin and the Initiation of Action Potentials</h3>
+
+<p>Rod cells contain the pigment <strong>rhodopsin</strong>, which is made of a protein, <strong>opsin</strong>, combined with a light-absorbing molecule, <strong>retinal</strong> (made from vitamin A).</p>
+
+<p><strong>In the dark:</strong> Na<sup>+</sup> channels in the rod outer segment are open, so Na<sup>+</sup> flows in (and is pumped out again by the inner segment). The rod is therefore partly depolarised, at about &minus;40 mV. In this state it continuously releases the transmitter <strong>glutamate</strong>, which inhibits the bipolar neurone it synapses with, so the bipolar neurone does not pass on any signal.</p>
+
+<p><strong>In the light:</strong></p>
+<ol>
+  <li>Retinal absorbs light and changes shape, from the <em>cis</em> form to the <em>trans</em> form.</li>
+  <li>This makes rhodopsin break down into opsin and <em>trans</em>-retinal. This is called bleaching.</li>
+  <li>The released opsin sets off a series of reactions inside the rod which result in the Na<sup>+</sup> channels closing.</li>
+  <li>Na<sup>+</sup> ions are still being pumped out but can no longer flow back in, so the inside of the rod becomes more negative: the rod <strong>hyperpolarises</strong>.</li>
+  <li>The hyperpolarised rod stops releasing glutamate, so the bipolar neurone is no longer inhibited. It depolarises and passes the signal on, causing action potentials in a ganglion cell. These travel along the optic nerve to the brain.</li>
+</ol>
+<p>Before the rod can respond again, rhodopsin must be re-formed: <em>trans</em>-retinal is converted back to <em>cis</em>-retinal and recombines with opsin. This uses ATP and takes time, which is why it takes several minutes for your eyes to adapt when you move from bright light into a dark room.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Light makes a rod <em>hyperpolarise</em>, not depolarise. The signal is passed on because the rod stops releasing an inhibitory transmitter. This reversal is a favourite source of lost marks. Remember the chain: light &rarr; retinal <em>cis</em> to <em>trans</em> &rarr; rhodopsin bleached &rarr; Na<sup>+</sup> channels close &rarr; hyperpolarisation &rarr; less glutamate &rarr; bipolar cell depolarises &rarr; action potential in ganglion cell.
+</div>
+
+<h3>9.7 (iii) How Rods and Cones Allow Vision in Different Light Intensities</h3>
+
+<table>
+  <tr><th>Feature</th><th>Rods</th><th>Cones</th></tr>
+  <tr><td>Distribution</td><td>Found mainly towards the edges of the retina; none at the fovea</td><td>Concentrated at the fovea; fewer towards the edges</td></tr>
+  <tr><td>Approximate number per eye</td><td>About 120 million</td><td>About 6 million</td></tr>
+  <tr><td>Pigment</td><td>Rhodopsin, broken down even by dim light</td><td>Three types of iodopsin, each most sensitive to a different range of wavelengths (red, green or blue); need brighter light to break down</td></tr>
+  <tr><td>Connections</td><td>Several rods synapse with one bipolar neurone (retinal convergence)</td><td>At the fovea, each cone has its own bipolar neurone</td></tr>
+  <tr><td>Sensitivity</td><td>High: small effects from several rods add up (summation) to reach the threshold of the bipolar neurone</td><td>Low: each cone must be stimulated strongly enough on its own</td></tr>
+  <tr><td>Visual acuity</td><td>Low: the brain cannot tell which of the rods sharing a bipolar neurone was stimulated</td><td>High: each cone sends a separate signal, so points close together can be distinguished</td></tr>
+  <tr><td>Colour</td><td>No colour vision (one pigment)</td><td>Colour vision, from comparing the stimulation of the three types</td></tr>
+</table>
+
+<p>In <strong>dim light</strong>, there is not enough light to break down iodopsin, so cones do not respond. Rods still work because rhodopsin is so sensitive and because convergence allows summation. We see in shades of grey, and we see a faint object best by looking slightly to one side of it, so its image falls on a rod-rich area rather than on the fovea. In <strong>bright light</strong>, rhodopsin is bleached faster than it can be re-formed, so rods contribute little, and vision relies on cones, giving detailed colour vision at the fovea. Having both types of photoreceptor, distributed differently, lets the eye work over a very wide range of light intensities.</p>
+
+<!-- ============================================================ -->
+<h2>9.8 Control of Heart Rate in Mammals</h2>
+<!-- ============================================================ -->
+
+<h3>9.8 (i) Autonomic Control of Heart Rate</h3>
+
+<p>Cardiac muscle is <strong>myogenic</strong>: the sinoatrial node (SAN) in the wall of the right atrium sets the basic rhythm without any nervous input. The autonomic nervous system adjusts how fast the SAN fires, so that heart rate matches the body's needs.</p>
+
+<ul>
+  <li><strong>Receptors.</strong> <strong>Baroreceptors</strong> are stretch receptors in the walls of the aorta (aortic arch) and the carotid arteries (carotid sinuses); they detect changes in blood pressure. <strong>Chemoreceptors</strong> in the aortic and carotid bodies (and in the medulla) detect changes in the chemistry of the blood, especially a rise in carbon dioxide concentration and the resulting fall in pH.</li>
+  <li><strong>Coordinator.</strong> Impulses from these receptors travel along sensory neurones to the <strong>cardiac centre in the medulla oblongata</strong>. One part of the centre increases heart rate and another decreases it.</li>
+  <li><strong>Sympathetic pathway (speeding up).</strong> Impulses travel along a sympathetic nerve (the accelerator nerve) to the SAN. The nerve endings release <strong>noradrenaline</strong>, which increases the rate at which the SAN depolarises, so heart rate rises. It also increases the force of contraction.</li>
+  <li><strong>Parasympathetic pathway (slowing down).</strong> Impulses travel along the vagus nerve, a parasympathetic nerve, to the SAN. The nerve endings release <strong>acetylcholine</strong>, which slows the rate at which the SAN depolarises, so heart rate falls.</li>
+</ul>
+
+<p><strong>During exercise:</strong> muscles respire faster and release more CO<sub>2</sub> into the blood. The blood pH falls. Chemoreceptors detect this and send more impulses to the cardiac centre, which sends more impulses down the sympathetic nerve to the SAN. Heart rate and stroke volume increase, so CO<sub>2</sub> is carried to the lungs faster and more oxygen is delivered to the muscles. This is negative feedback: the response lowers blood CO<sub>2</sub>, reducing the stimulus.</p>
+
+<p><strong>When blood pressure is too high:</strong> baroreceptors are stretched more and send more impulses to the cardiac centre, which increases impulses along the parasympathetic (vagus) nerve. Acetylcholine released at the SAN slows the heart, lowering blood pressure. When blood pressure falls, baroreceptors send fewer impulses and sympathetic activity increases.</p>
+
+<h3>9.8 (ii) Adrenaline and Heart Rate</h3>
+
+<p>In stressful or exciting situations, the sympathetic nervous system also acts on the <strong>adrenal medulla</strong> (the inner part of each adrenal gland, above the kidneys). Sympathetic neurones stimulate its cells to secrete <strong>adrenaline</strong> into the blood. Adrenaline travels to the heart and binds to receptors on SAN cells (and on cardiac muscle cells), increasing heart rate and the force of contraction. Because it acts through the second-messenger system described in 9.2, its effect lasts longer than a burst of nerve impulses. Adrenaline also raises blood glucose and widens the airways, preparing the body for "fight or flight".</p>
+
+<div class="equation">
+  heart rate (beats min<sup>&minus;1</sup>) = 60 &divide; time for one cardiac cycle (s) &nbsp;&nbsp; e.g. 60 &divide; 0.75 s = 80 beats min<sup>&minus;1</sup>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The nerves do not "start" the heartbeat; the SAN does that itself. Nerves only change the rate. Name the transmitter with the nerve: sympathetic &rarr; noradrenaline &rarr; faster; parasympathetic (vagus) &rarr; acetylcholine &rarr; slower. Say the receptors are <em>in</em> the aorta and carotid arteries; the cardiac centre is <em>in</em> the medulla oblongata, not the cerebellum or hypothalamus.
+</div>
+
+<!-- ============================================================ -->
+<h2>9.9 Osmoregulation and Temperature Regulation</h2>
+<!-- ============================================================ -->
+
+<h3>9.9 (i) Gross and Microscopic Structure of the Kidney</h3>
+
+<p>Humans have two kidneys at the back of the abdomen. Blood reaches each kidney in a <strong>renal artery</strong> and leaves in a <strong>renal vein</strong>. Urine drains from each kidney down a <strong>ureter</strong> to the bladder.</p>
+
+<p><strong>Gross structure</strong> (seen in a longitudinal section):</p>
+<ul>
+  <li><strong>Capsule:</strong> a tough outer layer.</li>
+  <li><strong>Cortex:</strong> the outer region, containing the glomeruli, Bowman's capsules and convoluted tubules.</li>
+  <li><strong>Medulla:</strong> the inner region, arranged in cone-shaped <strong>renal pyramids</strong>, containing the loops of Henle and collecting ducts.</li>
+  <li><strong>Pelvis:</strong> the space where urine collects from the collecting ducts before entering the ureter.</li>
+</ul>
+
+<p><strong>Microscopic structure.</strong> Each kidney contains around a million <strong>nephrons</strong>. A nephron consists of:</p>
+<ol>
+  <li><strong>Bowman's capsule</strong> (renal capsule), a cup surrounding a knot of capillaries, the <strong>glomerulus</strong>. Blood enters the glomerulus in an afferent arteriole and leaves in a narrower efferent arteriole.</li>
+  <li>The <strong>proximal convoluted tubule</strong> (PCT), in the cortex.</li>
+  <li>The <strong>loop of Henle</strong>, with a descending limb and an ascending limb dipping into the medulla.</li>
+  <li>The <strong>distal convoluted tubule</strong> (DCT), back in the cortex.</li>
+  <li>The <strong>collecting duct</strong>, shared by several nephrons, running down through the medulla to the pelvis.</li>
+</ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 320" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowN6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">A Nephron</text>
+  <!-- regions -->
+  <rect x="20" y="35" width="560" height="100" fill="#FEF3C7" opacity="0.6"/>
+  <rect x="20" y="135" width="560" height="175" fill="#FDE2E2" opacity="0.6"/>
+  <text x="30" y="52" font-family="system-ui" font-size="10" font-weight="bold" fill="#92400E">CORTEX</text>
+  <text x="30" y="152" font-family="system-ui" font-size="10" font-weight="bold" fill="#991B1B">MEDULLA</text>
+  <line x1="20" y1="135" x2="580" y2="135" stroke="#64748b" stroke-width="1" stroke-dasharray="5,3"/>
+  <!-- Bowman's capsule + glomerulus -->
+  <circle cx="110" cy="85" r="26" fill="#fff" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="110" cy="85" r="15" fill="#FCA5A5" stroke="#DC2626" stroke-width="1.2"/>
+  <line x1="60" y1="70" x2="96" y2="80" stroke="#DC2626" stroke-width="3"/>
+  <line x1="96" y1="92" x2="62" y2="100" stroke="#DC2626" stroke-width="1.8"/>
+  <!-- PCT -->
+  <path d="M136,85 C160,60 180,110 200,80 C215,60 235,110 250,85 C262,68 272,80 280,95" fill="none" stroke="#2563eb" stroke-width="5"/>
+  <!-- descending limb -->
+  <path d="M280,95 L280,285" fill="none" stroke="#2563eb" stroke-width="5"/>
+  <!-- loop bottom and ascending -->
+  <path d="M280,285 Q295,300 310,285 L310,110" fill="none" stroke="#2563eb" stroke-width="5"/>
+  <!-- DCT -->
+  <path d="M310,110 C330,70 350,110 370,80 C385,60 400,100 420,80 L440,75" fill="none" stroke="#2563eb" stroke-width="5"/>
+  <!-- collecting duct -->
+  <path d="M440,75 L470,75 L470,300" fill="none" stroke="#7C3AED" stroke-width="6"/>
+  <line x1="470" y1="250" x2="470" y2="295" stroke="#7C3AED" stroke-width="1" marker-end="url(#arrowN6)"/>
+  <!-- labels -->
+  <text x="110" y="128" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Bowman's capsule</text>
+  <text x="110" y="52" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">glomerulus</text>
+  <text x="48" y="68" text-anchor="end" font-family="system-ui" font-size="8" fill="#DC2626">afferent</text>
+  <text x="50" y="108" text-anchor="end" font-family="system-ui" font-size="8" fill="#DC2626">efferent</text>
+  <text x="205" y="50" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Proximal convoluted tubule</text>
+  <text x="272" y="210" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a1a2e">Descending limb</text>
+  <text x="272" y="222" text-anchor="end" font-family="system-ui" font-size="8" fill="#666">(permeable to water)</text>
+  <text x="318" y="210" font-family="system-ui" font-size="9" fill="#1a1a2e">Ascending limb</text>
+  <text x="318" y="222" font-family="system-ui" font-size="8" fill="#666">(pumps out Na<tspan baseline-shift="super" font-size="6">+</tspan>, Cl<tspan baseline-shift="super" font-size="6">&#8722;</tspan>;</text>
+  <text x="318" y="233" font-family="system-ui" font-size="8" fill="#666">impermeable to water)</text>
+  <text x="295" y="306" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Loop of Henle</text>
+  <text x="378" y="126" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Distal convoluted tubule</text>
+  <text x="480" y="180" font-family="system-ui" font-size="9" fill="#7C3AED">Collecting duct</text>
+  <text x="480" y="192" font-family="system-ui" font-size="8" fill="#666">(permeability to water</text>
+  <text x="480" y="203" font-family="system-ui" font-size="8" fill="#666">controlled by ADH)</text>
+  <text x="480" y="290" font-family="system-ui" font-size="9" fill="#1a1a2e">to pelvis</text>
+</svg>
+</div>
+
+<h3>9.9 (ii) Urea Production and Ultrafiltration</h3>
+
+<p>Amino acids cannot be stored in the body. Excess amino acids are broken down in the liver by <strong>deamination</strong>: the amino group (&ndash;NH<sub>2</sub>) is removed and forms ammonia (NH<sub>3</sub>). Ammonia is very soluble and highly toxic, so the liver immediately combines it with carbon dioxide to make <strong>urea</strong>, which is much less toxic. (The detailed pathway, the ornithine cycle, is not required.) The rest of the amino acid (a keto acid) can be respired or converted into carbohydrate or fat for storage.</p>
+
+<div class="equation">
+  2NH<sub>3</sub> + CO<sub>2</sub> &rarr; CO(NH<sub>2</sub>)<sub>2</sub> + H<sub>2</sub>O &nbsp;&nbsp; (ammonia + carbon dioxide &rarr; urea + water)
+</div>
+
+<p>Urea passes into the blood and is carried to the kidneys, where it is removed by <strong>ultrafiltration</strong> in the glomerulus:</p>
+<ul>
+  <li>The afferent arteriole is wider than the efferent arteriole, so blood pressure in the glomerular capillaries is high.</li>
+  <li>This hydrostatic pressure forces small molecules out of the blood into the Bowman's capsule through three layers: the capillary <strong>endothelium</strong>, which has pores (fenestrations); the <strong>basement membrane</strong>, a mesh of collagen and glycoproteins that acts as the main filter; and the <strong>podocytes</strong>, cells of the capsule wall with foot-like processes separated by filtration slits.</li>
+  <li>The filtrate contains water, glucose, amino acids, urea, mineral ions and other small molecules. Blood cells and most plasma proteins are too large to pass through the basement membrane and stay in the blood.</li>
+</ul>
+<p>In an adult, roughly 125 cm<sup>3</sup> of filtrate is formed per minute, about 180 dm<sup>3</sup> per day, yet only about 1.5 dm<sup>3</sup> of urine is produced. So over 99% of the filtered volume must be reabsorbed.</p>
+
+<div class="equation">
+  % reabsorbed = (volume filtered &minus; volume of urine) &divide; volume filtered &times; 100 = (180 &minus; 1.5) &divide; 180 &times; 100 &asymp; 99.2%
+</div>
+
+<h3>9.9 (iii) Selective Reabsorption and the Loop of Henle</h3>
+
+<p><strong>Selective reabsorption in the proximal tubule.</strong> The PCT reabsorbs all the glucose and amino acids, and most of the water and Na<sup>+</sup>, back into the blood. Its cells are adapted with <strong>microvilli</strong> on the side facing the lumen (large surface area), many <strong>mitochondria</strong> (ATP for active transport) and a close association with capillaries.</p>
+<ol>
+  <li>Na<sup>+</sup>/K<sup>+</sup> pumps in the membrane on the blood side of the cell actively transport Na<sup>+</sup> out of the cell into the tissue fluid, from where it enters the capillaries. This keeps the Na<sup>+</sup> concentration inside the cell low.</li>
+  <li>Na<sup>+</sup> therefore diffuses into the cell from the filtrate, through <strong>co-transporter proteins</strong> in the membrane facing the lumen. These carry glucose or amino acids in with the Na<sup>+</sup>, even against their concentration gradient.</li>
+  <li>Glucose and amino acids then diffuse out of the other side of the cell into the blood, by facilitated diffusion.</li>
+  <li>The removal of solutes lowers the water potential of the tissue fluid and blood, so water follows by osmosis.</li>
+</ol>
+<p>This is "selective" because only certain substances are taken back. Urea is not actively reabsorbed (a little diffuses back), so its concentration in the filtrate increases along the nephron.</p>
+
+<p><strong>The loop of Henle as a counter-current multiplier.</strong> The loop makes the tissue fluid of the medulla very concentrated, with the highest concentration at the tip of the loop, deep in the medulla. This gradient is then used to draw water out of the collecting ducts.</p>
+<ol>
+  <li>The cells of the <strong>ascending limb</strong> actively transport Na<sup>+</sup> and Cl<sup>&minus;</sup> out of the filtrate into the tissue fluid of the medulla. The ascending limb is impermeable to water, so water cannot follow. The filtrate in it becomes more dilute as it rises.</li>
+  <li>This lowers the water potential of the medulla tissue fluid.</li>
+  <li>The <strong>descending limb</strong> is permeable to water. As filtrate flows down, water leaves it by osmosis into the concentrated tissue fluid, and is carried away by the blood. The filtrate becomes more concentrated as it goes down, reaching its highest concentration at the bottom of the loop.</li>
+  <li>This very concentrated filtrate then enters the ascending limb, where there are more ions available to pump out. Because the two limbs carry fluid in opposite directions (counter-current), the effect is multiplied along the length of the loop, building up a steep concentration gradient from the cortex to the inner medulla.</li>
+  <li>The <strong>collecting duct</strong> runs down through this gradient. Wherever its walls are permeable, water moves out by osmosis into the increasingly concentrated tissue fluid and is reabsorbed into the blood. This is how the loop of Henle increases water reabsorption and allows urine more concentrated than blood plasma to be produced.</li>
+</ol>
+
+<p>The longer the loop of Henle, the steeper the gradient that can be built up and the more concentrated the urine that can be produced.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The loop of Henle itself does not reabsorb most of the water that ends up in the blood; its main job is to set up the salt gradient in the medulla. Water is then drawn out of the collecting duct. Keep the permeabilities straight: descending limb permeable to water; ascending limb impermeable to water but actively pumps out Na<sup>+</sup> and Cl<sup>&minus;</sup>.
+</div>
+
+<h3>9.9 (iv) ADH and Negative Feedback Control of Plasma Concentration</h3>
+
+<p>The concentration of the blood plasma is monitored by <strong>osmoreceptors</strong> in the <strong>hypothalamus</strong>. The hormone that responds is <strong>antidiuretic hormone (ADH)</strong>. ADH is made by neurosecretory cells in the hypothalamus, passes down their axons to the <strong>posterior pituitary gland</strong>, and is stored there until released into the blood.</p>
+
+<p><strong>If the blood becomes too concentrated</strong> (water potential falls, for example after sweating or eating salty food):</p>
+<ol>
+  <li>Osmoreceptor cells lose water by osmosis and shrink. This stimulates the neurosecretory cells.</li>
+  <li>More ADH is released from the posterior pituitary into the blood.</li>
+  <li>ADH binds to receptors on the cells of the collecting ducts (and DCT). Through a second messenger (cAMP), this causes vesicles containing water channel proteins called <strong>aquaporins</strong> to fuse with the membrane facing the lumen.</li>
+  <li>The walls become more permeable to water, so more water moves out by osmosis into the concentrated medulla and back into the blood.</li>
+  <li>A small volume of concentrated urine is produced. The water potential of the blood rises back towards normal, so the osmoreceptors are stimulated less and ADH release falls. This is negative feedback.</li>
+</ol>
+
+<p><strong>If the blood becomes too dilute</strong> (for example after drinking a lot of water), the osmoreceptors are stimulated less, less ADH is released, aquaporins are removed from the collecting duct membranes, the walls become less permeable to water, and a large volume of dilute urine is produced.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> ADH is <em>released</em> from the posterior pituitary, but it is <em>made</em> in the hypothalamus, and the osmoreceptors are in the hypothalamus, not the pituitary. ADH makes the collecting duct more permeable to <em>water</em>; it does not "cause the kidney to reabsorb salt". Describe the effect on urine in terms of both volume and concentration.
+</div>
+
+<h3>9.9 (v) The Kidney of the Kangaroo Rat</h3>
+
+<p>Kangaroo rats (<em>Dipodomys</em> species) are small rodents of the deserts of south-western North America. They can survive without drinking, getting almost all their water from their food (mainly dry seeds) and from <strong>metabolic water</strong> released when food is oxidised in respiration. To survive, they must lose very little water.</p>
+
+<ul>
+  <li><strong>Very long loops of Henle.</strong> Relative to the size of the kidney, the medulla is very thick and the loops of Henle are very long. The longer ascending limb can pump out more Na<sup>+</sup> and Cl<sup>&minus;</sup>, so a much steeper solute gradient is built up in the medulla.</li>
+  <li><strong>Very concentrated urine.</strong> Because the collecting ducts pass through an extremely concentrated medulla, a great deal of water is reabsorbed by osmosis. Kangaroo rats produce a very small volume of urine that can be around four times as concentrated as the most concentrated human urine.</li>
+  <li><strong>High levels of ADH</strong> keep the collecting ducts highly permeable to water.</li>
+</ul>
+<p>Other features also save water: kangaroo rats produce very dry faeces, have no sweat glands, and are active mainly at night, spending the hot day in humid underground burrows, which reduces water loss by evaporation from the lungs.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A typical <em>explain</em> question gives you data on loop length or medulla thickness for different mammals. Link each step: longer loop &rarr; more ions pumped out of the ascending limb &rarr; lower water potential in the medulla &rarr; more water leaves the collecting duct by osmosis &rarr; smaller volume of more concentrated urine &rarr; less water lost.
+</div>
+
+<h3>9.9 (vi) Endotherms and Ectotherms</h3>
+
+<table>
+  <tr><th>Feature</th><th>Endotherms (e.g. mammals, birds)</th><th>Ectotherms (e.g. reptiles, amphibians, most fish, insects)</th></tr>
+  <tr><td>Main source of body heat</td><td>Heat released by their own metabolism (respiration)</td><td>Heat absorbed from the environment (sunlight, warm surfaces, surrounding water or air)</td></tr>
+  <tr><td>Control of body temperature</td><td>Kept fairly constant using physiological and behavioural mechanisms</td><td>Controlled mainly by behaviour, e.g. basking in the sun or moving into shade</td></tr>
+  <tr><td>Activity in cold conditions</td><td>Can stay active, as enzymes are kept near their optimum</td><td>Become sluggish as body temperature and metabolic rate fall</td></tr>
+  <tr><td>Energy (food) needed</td><td>High, because much of the energy from food is used to generate heat</td><td>Much lower for an animal of the same mass</td></tr>
+</table>
+
+<h3>9.9 (vii) Temperature Regulation in an Endotherm</h3>
+
+<p><strong>Detecting the change.</strong> <strong>Thermoreceptors</strong> in the <strong>hypothalamus</strong> monitor the temperature of the blood flowing through the brain, which reflects core temperature. Thermoreceptors in the <strong>skin</strong> detect changes in the temperature of the surroundings and send impulses to the hypothalamus, giving early warning before the core temperature changes. The hypothalamus contains a <strong>heat loss centre</strong> and a <strong>heat gain centre</strong>, which bring about responses mainly through the autonomic nervous system.</p>
+
+<table>
+  <tr><th>Mechanism</th><th>When the body is too hot</th><th>When the body is too cold</th></tr>
+  <tr><td>Arterioles supplying the skin capillaries</td><td><strong>Vasodilation:</strong> smooth muscle in the arteriole walls relaxes, so more blood flows through capillaries near the skin surface and more heat is lost by radiation</td><td><strong>Vasoconstriction:</strong> smooth muscle contracts, so less blood flows near the surface and less heat is lost</td></tr>
+  <tr><td>Sweat glands</td><td>Secrete more sweat; evaporation of water from the skin uses heat energy from the body</td><td>Secrete little sweat</td></tr>
+  <tr><td>Hair erector muscles</td><td>Relax, so hairs lie flat and less air is trapped</td><td>Contract, so hairs stand up and trap a layer of insulating air (more effective in furry mammals than in humans)</td></tr>
+  <tr><td>Skeletal muscles</td><td>No shivering</td><td><strong>Shivering:</strong> rapid involuntary contractions; the extra respiration releases heat</td></tr>
+  <tr><td>Metabolic rate</td><td>Reduced over time</td><td>Increased, partly by adrenaline and thyroxine, so more heat is released</td></tr>
+</table>
+
+<p><strong>Behavioural responses</strong> also play a part: an animal that is too hot may move into shade, lie spread out, pant or reduce activity; one that is too cold may seek shelter, huddle with others, curl up to reduce its exposed surface area, or (in humans) put on more clothes.</p>
+
+<p>These responses are an example of negative feedback: as core temperature returns to the set point, the hypothalamus reduces the corrective responses. Having separate heat loss and heat gain mechanisms gives more precise control than a single mechanism could.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Blood vessels do not move nearer to or further from the skin surface. Say that <em>arterioles</em> dilate or constrict, changing how much blood flows through the capillaries near the surface. Sweating cools the body only when the sweat <em>evaporates</em>. When the command word is <em>explain</em>, link each response to the way heat is lost or gained.
+</div>
+
+<!-- ============================================================ -->
+<h2>Command Words and Common Misconceptions</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Command word</th><th>What Edexcel expects in this topic</th></tr>
+  <tr><td>State / Give / Name</td><td>A short answer with no explanation, e.g. "Name the transmitter released at the SAN by the vagus nerve" (acetylcholine).</td></tr>
+  <tr><td>Describe</td><td>An account of what happens, in the right order, without reasons, e.g. the stages of an action potential or the shape of a graph with figures quoted.</td></tr>
+  <tr><td>Explain</td><td>Reasons linked to biological mechanisms, e.g. why myelinated axons conduct faster, or why a long loop of Henle produces concentrated urine.</td></tr>
+  <tr><td>Suggest</td><td>Apply your knowledge to an unfamiliar context, e.g. the effect of a new drug on synaptic transmission.</td></tr>
+  <tr><td>Compare</td><td>Similarities and differences, each point referring to both things, e.g. rods and cones, or the two modes of hormone action.</td></tr>
+  <tr><td>Calculate</td><td>Show working and give units and an appropriate number of significant figures, e.g. conduction speed or percentage reabsorption.</td></tr>
+  <tr><td>Evaluate</td><td>Weigh up evidence to reach a judgement, e.g. whether data from decapitation experiments support the idea that auxin and cytokinin act antagonistically.</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Common slips in this topic: saying the membrane is "positive" at rest (the inside is negative); saying that a stronger stimulus makes a bigger action potential (it makes more frequent ones); saying that the hypothalamus controls heart rate (the medulla does); confusing the pituitary (releases ADH) with the hypothalamus (makes ADH and contains the osmoreceptors); and saying that phytochrome measures day length rather than the length of the dark period.
+</div>
+
+<!-- ============================================================ -->
+<h2>Key Terms Checklist</h2>
+<!-- ============================================================ -->
+
+<p>Check that you can define or explain each of these before the exam.</p>
+
+<table>
+  <tr><th>Term</th><th>Meaning</th></tr>
+  <tr><td>Homeostasis</td><td>Keeping the internal environment in a dynamic equilibrium, within narrow limits</td></tr>
+  <tr><td>Negative feedback</td><td>A response that reverses a change and returns a variable towards its set point</td></tr>
+  <tr><td>Positive feedback</td><td>A response that increases a change, e.g. oxytocin in labour</td></tr>
+  <tr><td>Endocrine gland</td><td>A ductless gland that secretes hormones directly into the blood</td></tr>
+  <tr><td>Second messenger</td><td>A molecule inside a cell (e.g. cAMP) that passes on the signal from a hormone bound at the surface</td></tr>
+  <tr><td>Transcription factor</td><td>A protein that binds to DNA and controls the transcription of a gene; the oestrogen receptor is one</td></tr>
+  <tr><td>Auxin</td><td>Growth substance causing cell elongation, apical dominance and root formation</td></tr>
+  <tr><td>Cytokinin</td><td>Growth substance promoting cell division; releases lateral buds, antagonising auxin</td></tr>
+  <tr><td>Gibberellin</td><td>Growth substance causing stem elongation and amylase production in germinating grains</td></tr>
+  <tr><td>Apical dominance</td><td>Suppression of lateral bud growth by auxin from the apical bud</td></tr>
+  <tr><td>Phytochrome (P<sub>R</sub>, P<sub>FR</sub>)</td><td>A photoreceptor pigment that switches between a red-absorbing and a far-red-absorbing form</td></tr>
+  <tr><td>Photomorphogenesis</td><td>The control of plant development and form by light</td></tr>
+  <tr><td>Etiolation</td><td>Growth in the dark: long internodes, pale yellow colour, small leaves</td></tr>
+  <tr><td>Grey and white matter</td><td>Grey: cell bodies and synapses; white: myelinated axons</td></tr>
+  <tr><td>Autonomic nervous system</td><td>The part of the PNS controlling involuntary activities; sympathetic and parasympathetic divisions</td></tr>
+  <tr><td>Antagonistic</td><td>Having opposite effects on the same effector</td></tr>
+  <tr><td>Resting potential</td><td>About &minus;70 mV across the membrane of a neurone at rest</td></tr>
+  <tr><td>Action potential</td><td>A rapid, brief reversal of membrane potential that travels along an axon</td></tr>
+  <tr><td>Threshold</td><td>The potential (about &minus;55 mV) that must be reached for an action potential to be produced</td></tr>
+  <tr><td>Refractory period</td><td>The time after an action potential when another cannot be produced in that region</td></tr>
+  <tr><td>Saltatory conduction</td><td>Conduction in which depolarisation jumps between nodes of Ranvier</td></tr>
+  <tr><td>Cholinergic / adrenergic synapse</td><td>A synapse using acetylcholine / noradrenaline as its transmitter</td></tr>
+  <tr><td>Acetylcholinesterase</td><td>Enzyme in the synaptic cleft that hydrolyses acetylcholine</td></tr>
+  <tr><td>EPSP / IPSP</td><td>A small depolarisation / hyperpolarisation of the postsynaptic membrane</td></tr>
+  <tr><td>Spatial / temporal summation</td><td>Adding EPSPs from several neurones / from repeated firing of one neurone</td></tr>
+  <tr><td>Rhodopsin</td><td>The pigment in rods: opsin plus retinal</td></tr>
+  <tr><td>Retinal convergence</td><td>Several rods synapsing with a single bipolar neurone</td></tr>
+  <tr><td>Fovea</td><td>Central pit of the retina containing densely packed cones and no rods</td></tr>
+  <tr><td>Baroreceptor / chemoreceptor</td><td>Receptor detecting blood pressure / blood CO<sub>2</sub> and pH</td></tr>
+  <tr><td>Cardiac centre</td><td>Region of the medulla oblongata controlling heart rate</td></tr>
+  <tr><td>Deamination</td><td>Removal of the amino group from an amino acid in the liver</td></tr>
+  <tr><td>Ultrafiltration</td><td>Filtration of blood under high pressure in the glomerulus</td></tr>
+  <tr><td>Selective reabsorption</td><td>Reabsorption of useful substances from the filtrate, mainly in the PCT</td></tr>
+  <tr><td>Counter-current multiplier</td><td>The loop of Henle mechanism that builds up a solute gradient in the medulla</td></tr>
+  <tr><td>ADH</td><td>Hormone increasing the water permeability of the collecting ducts</td></tr>
+  <tr><td>Osmoreceptor</td><td>Cell in the hypothalamus that detects changes in blood water potential</td></tr>
+  <tr><td>Endotherm / ectotherm</td><td>Animal that gets its body heat mainly from metabolism / from the environment</td></tr>
+  <tr><td>Thermoreceptor</td><td>Receptor that detects temperature, found in the hypothalamus and the skin</td></tr>
+  <tr><td>Vasodilation / vasoconstriction</td><td>Widening / narrowing of arterioles supplying the skin capillaries</td></tr>
+</table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — 5: Energy for Biological Processes</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>5: Energy for Biological Processes</h1>
+
+<p>Edexcel B A-level Biology (9BI0), Topic 5. This topic follows energy from light to ATP: how cells release energy from respiratory substrates in aerobic and anaerobic respiration, how photosynthetic pigments capture light, and how the two stages of photosynthesis turn carbon dioxide into the raw materials for every other organic molecule in a plant. It builds on carbohydrates and enzymes from earlier topics and includes three core practicals (CP9, CP10 and CP11).</p>
+
+<!-- ============================================================ -->
+<h2>5.1 Aerobic Respiration</h2>
+<!-- ============================================================ -->
+
+<h3>5.1 (i) ATP and Heat from Respiration</h3>
+
+<div class="definition">
+  <strong>Cellular respiration:</strong> A series of enzyme-controlled reactions inside cells in which organic molecules (respiratory substrates, most often glucose) are oxidised step by step. The energy released is used to make ATP from ADP and inorganic phosphate (P<sub>i</sub>); the rest is lost as heat.
+</div>
+
+<p>ATP (adenosine triphosphate) is the immediate energy source for metabolic reactions in every cell. It is a phosphorylated nucleotide: adenine joined to ribose, with a chain of three phosphate groups. When ATP is hydrolysed to ADP and P<sub>i</sub> (a reaction catalysed by ATPase), energy is released, around 30 kJ per mole under standard conditions. That energy is coupled to reactions and processes that need it, such as active transport, muscle contraction, protein synthesis, DNA replication and the movement of vesicles. ATP is then resynthesised from ADP and P<sub>i</sub> using energy from respiration, so each molecule is recycled many times.</p>
+
+<p>ATP is well suited to this role because:</p>
+<ul>
+  <li>energy is released in small, manageable amounts, so little is wasted as heat at any one time;</li>
+  <li>hydrolysis is a single, fast reaction catalysed by one enzyme, so energy is available quickly;</li>
+  <li>it is soluble and small, so it moves easily within the cell to where energy is needed;</li>
+  <li>it can phosphorylate other molecules, making them more reactive (for example glucose at the start of glycolysis).</li>
+</ul>
+
+<p>Respiration is not perfectly efficient. Only part of the chemical energy in glucose ends up in ATP; the remainder is released as <strong>heat</strong>. In endotherms such as birds and mammals, this heat is used to keep body temperature high and stable. In all organisms, the heat raises local temperature a little, which is why germinating seeds in a vacuum flask warm up.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Never write that respiration "produces energy" or "makes energy". Energy cannot be created. Respiration <em>releases</em> energy from respiratory substrates and uses it to <em>produce ATP</em>. Similarly, avoid "ATP stores large amounts of energy": ATP is an immediate, short-term energy carrier, not an energy store (that role belongs to starch, glycogen and triglycerides).
+</div>
+
+<h3>5.1 (ii) The Stages of Aerobic Respiration</h3>
+
+<p>Aerobic respiration of glucose happens in four linked stages. The first takes place in the cytoplasm; the other three take place in the mitochondria.</p>
+
+<div class="equation">
+  C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> &rarr; 6CO<sub>2</sub> + 6H<sub>2</sub>O (+ ATP and heat)
+</div>
+
+<table>
+  <tr><th>Stage</th><th>Location</th><th>What happens (in outline)</th><th>Needs O<sub>2</sub> directly?</th></tr>
+  <tr><td>Glycolysis</td><td>Cytoplasm</td><td>Hexose (6C) is split into two pyruvate (3C); small net gain of ATP and NADH</td><td>No</td></tr>
+  <tr><td>Link reaction</td><td>Mitochondrial matrix</td><td>Pyruvate is decarboxylated and oxidised to a 2C acetyl group, carried by coenzyme A</td><td>No (but stops without O<sub>2</sub> because NAD runs out)</td></tr>
+  <tr><td>Krebs cycle</td><td>Mitochondrial matrix</td><td>Acetyl group is fully oxidised; CO<sub>2</sub> released, NADH (and FADH<sub>2</sub>) and ATP made</td><td>No (same reason)</td></tr>
+  <tr><td>Oxidative phosphorylation</td><td>Inner mitochondrial membrane (cristae)</td><td>Electrons from reduced coenzymes pass along the electron transport chain; ATP made by chemiosmosis</td><td>Yes: O<sub>2</sub> is the final electron acceptor</td></tr>
+</table>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Overview of Aerobic Respiration</text>
+  <defs>
+    <marker id="arrowR1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Cytoplasm region -->
+  <rect x="15" y="40" width="190" height="245" rx="10" fill="#FEF3C7" stroke="#D97706" stroke-width="1" opacity="0.7"/>
+  <text x="110" y="58" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#b45309">CYTOPLASM</text>
+  <rect x="55" y="72" width="110" height="30" rx="6" fill="#fff" stroke="#D97706" stroke-width="1.2"/>
+  <text x="110" y="92" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">Glucose (6C)</text>
+  <path d="M110,102 L110,172" fill="none" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arrowR1)"/>
+  <text x="118" y="130" font-family="system-ui" font-size="10" font-weight="bold" fill="#b45309">Glycolysis</text>
+  <text x="118" y="145" font-family="system-ui" font-size="9" fill="#666">net 2 ATP</text>
+  <text x="118" y="158" font-family="system-ui" font-size="9" fill="#666">2 NADH</text>
+  <rect x="45" y="175" width="130" height="30" rx="6" fill="#fff" stroke="#D97706" stroke-width="1.2"/>
+  <text x="110" y="195" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">2 &#215; pyruvate (3C)</text>
+  <!-- Mitochondrion -->
+  <ellipse cx="410" cy="170" rx="180" ry="112" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.5"/>
+  <ellipse cx="410" cy="170" rx="164" ry="97" fill="#EFF6FF" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="410" y="88" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">MITOCHONDRION: matrix</text>
+  <!-- Link reaction -->
+  <path d="M175,190 L262,190" fill="none" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arrowR1)"/>
+  <rect x="265" y="175" width="100" height="30" rx="6" fill="#fff" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="315" y="194" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Link reaction</text>
+  <text x="315" y="222" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">CO<tspan baseline-shift="sub" font-size="7">2</tspan> + NADH</text>
+  <path d="M315,175 L315,140 L345,140" fill="none" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arrowR1)"/>
+  <text x="275" y="133" font-family="system-ui" font-size="9" fill="#666">acetyl CoA (2C)</text>
+  <!-- Krebs -->
+  <circle cx="400" cy="140" r="36" fill="#fff" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="400" y="137" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Krebs</text>
+  <text x="400" y="150" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">cycle</text>
+  <text x="440" y="116" font-family="system-ui" font-size="9" fill="#666">CO<tspan baseline-shift="sub" font-size="7">2</tspan>, NADH, FADH<tspan baseline-shift="sub" font-size="7">2</tspan>, ATP</text>
+  <!-- Oxidative phosphorylation on inner membrane -->
+  <path d="M400,176 L430,212" fill="none" stroke="#1a1a2e" stroke-width="1.3" marker-end="url(#arrowR1)"/>
+  <text x="388" y="200" font-family="system-ui" font-size="8" fill="#666">reduced</text>
+  <text x="378" y="210" font-family="system-ui" font-size="8" fill="#666">coenzymes</text>
+  <rect x="415" y="215" width="150" height="34" rx="6" fill="#fff" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="490" y="230" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Oxidative phosphorylation</text>
+  <text x="490" y="243" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">inner membrane: most ATP</text>
+  <text x="490" y="262" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">O<tspan baseline-shift="sub" font-size="7">2</tspan> accepts electrons &#8594; H<tspan baseline-shift="sub" font-size="7">2</tspan>O</text>
+</svg>
+</div>
+
+<!-- ============================================================ -->
+<h2>5.2 Glycolysis</h2>
+<!-- ============================================================ -->
+
+<h3>5.2 (i) Converting Hexose to Pyruvate</h3>
+
+<p>Glycolysis ("sugar splitting") is the first stage of both aerobic and anaerobic respiration and happens in the cytoplasm of every living cell. It does not use oxygen. It converts one hexose (6C) monosaccharide such as glucose into two molecules of pyruvate (3C). The specification needs only the key steps, not the names of every intermediate:</p>
+
+<ol>
+  <li><strong>Phosphorylation of the hexose.</strong> Two ATP molecules are hydrolysed, and their phosphate groups are added to the hexose to give a hexose bisphosphate. This raises the energy level of the sugar, making it more reactive and easier to split. The charged phosphorylated sugar also cannot diffuse back out of the cell.</li>
+  <li><strong>Splitting into two 3C molecules.</strong> The hexose bisphosphate is split into two three-carbon sugar phosphates (triose phosphate).</li>
+  <li><strong>Oxidation to glycerate 3-phosphate (GP).</strong> Each triose phosphate is oxidised: hydrogen is removed by the coenzyme NAD, which becomes <strong>reduced NAD (NADH)</strong>. A phosphate group is added and the molecule is then converted to glycerate 3-phosphate. During this step ATP is made directly from ADP (substrate-level phosphorylation).</li>
+  <li><strong>Conversion to pyruvate.</strong> GP is converted to pyruvate, and a further ATP is made from each 3C molecule by substrate-level phosphorylation.</li>
+</ol>
+
+<table>
+  <tr><th>Per glucose molecule</th><th>Number</th></tr>
+  <tr><td>ATP used (phosphorylation)</td><td>2</td></tr>
+  <tr><td>ATP made (substrate-level phosphorylation)</td><td>4 (2 from each 3C molecule)</td></tr>
+  <tr><td><strong>Net ATP</strong></td><td><strong>2</strong></td></tr>
+  <tr><td>Reduced NAD (NADH) made</td><td>2</td></tr>
+  <tr><td>Pyruvate made</td><td>2</td></tr>
+</table>
+
+<p>The pyruvate still contains most of the chemical energy of the original glucose. What happens next depends on oxygen. With oxygen, pyruvate is actively transported into the mitochondrial matrix for the link reaction. Without oxygen, pyruvate is converted to lactate or ethanol in the cytoplasm (see 5.5), which regenerates the NAD that glycolysis needs.</p>
+
+<div class="definition">
+  <strong>Substrate-level phosphorylation:</strong> Formation of ATP by the direct transfer of a phosphate group from a phosphorylated intermediate to ADP, catalysed by an enzyme. It happens in glycolysis and the Krebs cycle and does not involve an electron transport chain.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> "Net" matters. Glycolysis makes 4 ATP but uses 2, so the net yield is 2 ATP per glucose. Questions often ask for the net figure. Also remember that "NAD is reduced" (it gains hydrogen) at the same time as the triose phosphate "is oxidised" (it loses hydrogen); a good answer names both halves of the redox reaction.
+</div>
+
+<!-- ============================================================ -->
+<h2>5.3 The Link Reaction and Krebs Cycle</h2>
+<!-- ============================================================ -->
+
+<h3>5.3 (i) Location: the Mitochondrial Matrix</h3>
+
+<p>Both the link reaction and the Krebs cycle happen in the <strong>matrix</strong>, the gel-like fluid enclosed by the inner mitochondrial membrane. The matrix contains the enzymes for these reactions, a supply of the coenzymes NAD and FAD and coenzyme A, as well as mitochondrial DNA and ribosomes. Keeping these reactions in the matrix places them right next to the inner membrane, where the reduced coenzymes they produce are reoxidised.</p>
+
+<h3>5.3 (ii) Complete Oxidation of Pyruvate</h3>
+
+<p><strong>The link reaction.</strong> Each pyruvate (3C) is:</p>
+<ul>
+  <li><strong>decarboxylated</strong>: one carbon atom is removed as carbon dioxide;</li>
+  <li><strong>oxidised</strong>: hydrogen is removed and used to reduce NAD to NADH;</li>
+  <li>left as a 2C <strong>acetyl</strong> group, which combines with <strong>coenzyme A</strong> to form <strong>acetyl coenzyme A</strong>.</li>
+</ul>
+
+<div class="equation">
+  pyruvate (3C) + NAD + CoA &rarr; acetyl CoA (2C) + CO<sub>2</sub> + reduced NAD
+</div>
+
+<p>No ATP is made in the link reaction. It happens twice for each glucose, because glycolysis gives two pyruvate.</p>
+
+<p><strong>The Krebs cycle.</strong> Coenzyme A delivers the acetyl group to the cycle and is released to be reused. The 2C acetyl group combines with a 4C compound to form a 6C compound. In a series of enzyme-catalysed steps, this 6C compound is broken back down to the 4C compound, so the cycle can continue. During one turn of the cycle:</p>
+<ul>
+  <li>two carbon atoms are removed as two molecules of <strong>CO<sub>2</sub></strong> (decarboxylation);</li>
+  <li>hydrogen atoms are removed (dehydrogenation) and passed to coenzymes: three <strong>reduced NAD</strong> and one reduced FAD are formed;</li>
+  <li>one <strong>ATP</strong> is formed by substrate-level phosphorylation.</li>
+</ul>
+
+<p>The intermediate compounds of the Krebs cycle do not need to be named. The important point is where the carbon atoms go: of the six carbon atoms in glucose, two leave as CO<sub>2</sub> in the two link reactions and four leave as CO<sub>2</sub> in the two turns of the Krebs cycle. After the Krebs cycle, the glucose has been completely oxidised. Its energy is now held mainly in the reduced coenzymes, which carry hydrogen (protons and electrons) to the electron transport chain.</p>
+
+<table>
+  <tr><th>Per glucose (two pyruvate)</th><th>CO<sub>2</sub></th><th>Reduced NAD</th><th>Reduced FAD</th><th>ATP (substrate level)</th></tr>
+  <tr><td>Glycolysis</td><td>0</td><td>2</td><td>0</td><td>2 (net)</td></tr>
+  <tr><td>Link reaction (&times;2)</td><td>2</td><td>2</td><td>0</td><td>0</td></tr>
+  <tr><td>Krebs cycle (&times;2 turns)</td><td>4</td><td>6</td><td>2</td><td>2</td></tr>
+  <tr><td><strong>Total</strong></td><td><strong>6</strong></td><td><strong>10</strong></td><td><strong>2</strong></td><td><strong>4</strong></td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Candidates often say the link reaction or Krebs cycle "needs oxygen". They do not use oxygen directly. They stop in the absence of oxygen because the electron transport chain stops, so reduced NAD cannot be reoxidised and there is no free NAD left to accept hydrogen. Link the absence of O<sub>2</sub> to "NAD not regenerated" for the mark. Also, be careful to say "per turn" or "per glucose": the Krebs cycle turns twice for every glucose molecule.
+</div>
+
+<!-- ============================================================ -->
+<h2>5.4 Oxidative Phosphorylation</h2>
+<!-- ============================================================ -->
+
+<h3>5.4 (i) The Electron Transport Chain Is in the Inner Mitochondrial Membrane</h3>
+
+<p>The <strong>electron transport chain (ETC)</strong> is a series of protein carrier molecules embedded in the inner mitochondrial membrane, together with the enzyme <strong>ATP synthase</strong>. The inner membrane is folded into <strong>cristae</strong>, which give a large surface area for many copies of the chain and of ATP synthase.</p>
+
+<h3>5.4 (ii) How the Electron Transport Chain Generates ATP</h3>
+
+<ol>
+  <li>Reduced NAD and reduced FAD deliver hydrogen atoms to the chain. The hydrogen atoms split into protons (H<sup>+</sup>) and electrons (e<sup>&minus;</sup>); the coenzymes are reoxidised and return to the matrix to pick up more hydrogen.</li>
+  <li>The electrons pass from one carrier to the next in a series of redox reactions. Each carrier is reduced when it gains an electron and oxidised when it passes the electron on.</li>
+  <li>At each step the electrons move to a lower energy level. The energy released is used by some of the carriers to <strong>pump protons</strong> from the matrix across the inner membrane into the <strong>intermembrane space</strong>.</li>
+  <li>This builds up a higher concentration of protons in the intermembrane space than in the matrix: an <strong>electrochemical (proton) gradient</strong>, which is a store of potential energy.</li>
+  <li>Protons diffuse back into the matrix through channels in <strong>ATP synthase</strong>. Their flow drives the enzyme to join ADP and P<sub>i</sub> to make ATP.</li>
+</ol>
+
+<div class="definition">
+  <strong>Oxidative phosphorylation:</strong> The synthesis of ATP using energy released as electrons from reduced coenzymes pass along the electron transport chain to oxygen. It is "oxidative" because the coenzymes are oxidised and oxygen is the final acceptor, and "phosphorylation" because ADP gains a phosphate group.
+</div>
+
+<h3>5.4 (iii) Oxygen as the Terminal Electron Acceptor</h3>
+
+<p>At the end of the chain, electrons are passed to oxygen. Each oxygen atom combines with two electrons and two protons from the matrix to form water:</p>
+
+<div class="equation">
+  &frac12;O<sub>2</sub> + 2H<sup>+</sup> + 2e<sup>&minus;</sup> &rarr; H<sub>2</sub>O
+</div>
+
+<p>Oxygen is essential because it removes electrons from the last carrier. If oxygen is absent, the last carrier stays reduced and cannot accept more electrons, so the whole chain backs up and stops. Reduced NAD and FAD are then no longer reoxidised, and the link reaction and Krebs cycle stop too, because they run out of oxidised coenzymes. The same effect is seen with respiratory poisons such as cyanide, which blocks the final carrier in the chain.</p>
+
+<h3>5.4 (iv) Chemiosmosis</h3>
+
+<div class="definition">
+  <strong>Chemiosmosis:</strong> The movement of protons down their electrochemical gradient across a membrane, through the enzyme ATP synthase, which releases energy used to synthesise ATP from ADP and P<sub>i</sub>. The theory was proposed by Peter Mitchell in 1961 and applies to both mitochondria and chloroplasts.
+</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Electron Transport Chain and Chemiosmosis</text>
+  <defs>
+    <marker id="arrowE1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
+    </marker>
+    <marker id="arrowE2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/>
+    </marker>
+  </defs>
+  <!-- Regions -->
+  <text x="20" y="55" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Intermembrane space (high [H<tspan baseline-shift="super" font-size="7">+</tspan>])</text>
+  <text x="20" y="270" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Matrix (low [H<tspan baseline-shift="super" font-size="7">+</tspan>])</text>
+  <!-- Membrane -->
+  <rect x="10" y="130" width="580" height="44" fill="#FDE68A" stroke="#D97706" stroke-width="1"/>
+  <text x="130" y="197" font-family="system-ui" font-size="9" fill="#b45309">Inner mitochondrial membrane</text>
+  <!-- Carriers -->
+  <rect x="70" y="122" width="56" height="60" rx="10" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="98" y="156" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">carrier</text>
+  <rect x="180" y="122" width="56" height="60" rx="10" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="208" y="156" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">carrier</text>
+  <rect x="290" y="122" width="56" height="60" rx="10" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="318" y="156" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">carrier</text>
+  <!-- electron path -->
+  <path d="M112,160 L190,160" fill="none" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrowE2)"/>
+  <path d="M222,160 L300,160" fill="none" stroke="#1a73e8" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrowE2)"/>
+  <text x="150" y="152" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">e<tspan baseline-shift="super" font-size="7">&#8722;</tspan></text>
+  <text x="260" y="152" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">e<tspan baseline-shift="super" font-size="7">&#8722;</tspan></text>
+  <!-- NADH input -->
+  <text x="40" y="225" font-family="system-ui" font-size="10" fill="#1a1a2e">NADH &#8594; NAD + H<tspan baseline-shift="super" font-size="7">+</tspan> + 2e<tspan baseline-shift="super" font-size="7">&#8722;</tspan></text>
+  <path d="M90,212 L95,186" fill="none" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrowE2)"/>
+  <!-- proton pumping -->
+  <path d="M98,120 L98,72" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowE1)"/>
+  <path d="M208,120 L208,72" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowE1)"/>
+  <path d="M318,120 L318,72" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowE1)"/>
+  <text x="104" y="92" font-family="system-ui" font-size="10" fill="#DC2626">H<tspan baseline-shift="super" font-size="7">+</tspan></text>
+  <text x="214" y="92" font-family="system-ui" font-size="10" fill="#DC2626">H<tspan baseline-shift="super" font-size="7">+</tspan></text>
+  <text x="324" y="92" font-family="system-ui" font-size="10" fill="#DC2626">H<tspan baseline-shift="super" font-size="7">+</tspan></text>
+  <text x="208" y="68" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">protons pumped using energy from electrons</text>
+  <!-- oxygen -->
+  <path d="M318,184 L318,214" fill="none" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrowE2)"/>
+  <text x="318" y="230" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">&#189;O<tspan baseline-shift="sub" font-size="7">2</tspan> + 2H<tspan baseline-shift="super" font-size="7">+</tspan> + 2e<tspan baseline-shift="super" font-size="7">&#8722;</tspan> &#8594; H<tspan baseline-shift="sub" font-size="7">2</tspan>O</text>
+  <!-- ATP synthase -->
+  <rect x="455" y="118" width="40" height="68" rx="6" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5"/>
+  <circle cx="475" cy="205" r="18" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="475" y="112" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">ATP synthase</text>
+  <path d="M475,70 L475,190" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrowE1)"/>
+  <text x="482" y="85" font-family="system-ui" font-size="10" fill="#DC2626">H<tspan baseline-shift="super" font-size="7">+</tspan> flows back</text>
+  <text x="475" y="245" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">ADP + P<tspan baseline-shift="sub" font-size="7">i</tspan> &#8594; ATP</text>
+</svg>
+</div>
+
+<h3>5.4 (v) Why the Mitochondrial Membranes Matter</h3>
+
+<ul>
+  <li><strong>The inner membrane is impermeable to protons</strong> except through ATP synthase. Without this barrier the gradient could not be built up or maintained, and protons would leak back without making ATP.</li>
+  <li><strong>The intermembrane space is small</strong>, so pumping relatively few protons quickly produces a steep concentration gradient.</li>
+  <li><strong>Cristae</strong> provide a large surface area for many electron transport chains and ATP synthase molecules, increasing the rate of ATP production. Cells with a high energy demand, such as muscle and sperm cells, have many mitochondria with densely packed cristae.</li>
+  <li><strong>The outer membrane</strong> separates the mitochondrion from the cytoplasm and has transport proteins that let pyruvate, ADP and ATP pass in and out.</li>
+  <li><strong>Compartmentalisation</strong>: the enzymes of the link reaction and Krebs cycle are in the matrix, next to the membrane where the reduced coenzymes are reoxidised.</li>
+</ul>
+
+<h3>ATP Yield from Aerobic Respiration</h3>
+
+<p>Most of the ATP from aerobic respiration comes from oxidative phosphorylation. Older textbooks give a theoretical maximum of 38 ATP per glucose, assuming each reduced NAD gives 3 ATP and each reduced FAD gives 2. Current estimates are lower, about 30 to 32 ATP per glucose, because the ratio of protons pumped to ATP made is not a whole number, some protons leak across the inner membrane, and some of the gradient is used to transport pyruvate, ADP and phosphate into the mitochondrion. In an exam, use any figure given in the question; otherwise show the principle that aerobic respiration yields roughly fifteen times as much ATP per glucose as anaerobic respiration.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For a 4 to 6 mark "explain how ATP is made in oxidative phosphorylation" question, work through the sequence: reduced coenzymes release H &rarr; electrons along carriers (redox) &rarr; energy released &rarr; protons pumped into intermembrane space &rarr; proton gradient &rarr; protons diffuse back through ATP synthase &rarr; ADP + P<sub>i</sub> &rarr; ATP &rarr; oxygen accepts electrons and protons to form water. Missing out where the protons go (into the intermembrane space, not "out of the mitochondrion") is a very common way to lose marks.
+</div>
+
+<!-- ============================================================ -->
+<h2>5.5 Anaerobic Respiration</h2>
+<!-- ============================================================ -->
+
+<h3>5.5 (i) Partial Breakdown of Hexoses</h3>
+
+<div class="definition">
+  <strong>Anaerobic respiration:</strong> Respiration without oxygen. The hexose is only partly broken down, to lactate (in mammals) or to ethanol and carbon dioxide (in plants and yeast). Only glycolysis produces ATP, so the yield is small.
+</div>
+
+<p>Without oxygen the electron transport chain stops (5.4 iii), and so do the link reaction and Krebs cycle. Glycolysis can continue, but only if the NADH it makes is reoxidised so that NAD is available to accept hydrogen again. Anaerobic pathways do exactly this: pyruvate, or a product made from it, accepts hydrogen from reduced NAD. The pathway itself makes no ATP; its purpose is to regenerate NAD so that glycolysis can keep going.</p>
+
+<h3>5.5 (ii) Comparing ATP Yields</h3>
+
+<table>
+  <tr><th>Condition</th><th>Stages running</th><th>ATP per hexose</th></tr>
+  <tr><td>Aerobic</td><td>Glycolysis, link reaction, Krebs cycle, oxidative phosphorylation</td><td>About 30 to 32 (theoretical maximum often quoted as 38)</td></tr>
+  <tr><td>Anaerobic</td><td>Glycolysis only</td><td>2 (net)</td></tr>
+</table>
+
+<p>The difference arises because in anaerobic conditions the pyruvate is not oxidised further. Most of the energy in the hexose stays in lactate or ethanol, and the reduced NAD from glycolysis is used to reduce pyruvate instead of passing its electrons to the ETC. Taking 32 ATP as the aerobic figure, anaerobic respiration releases only 2 &divide; 32 &times; 100 &asymp; 6% as much ATP per hexose. Using 30 ATP, aerobic respiration yields 15 times as much; using 38, the anaerobic figure is about 5%.</p>
+
+<h3>5.5 (iii) Lactate and Mammalian Muscle Contraction</h3>
+
+<p>During intense exercise, oxygen cannot be delivered to muscle fibres fast enough to meet the demand for ATP. Muscle cells then rely more on anaerobic respiration:</p>
+
+<div class="equation">
+  pyruvate + reduced NAD &rarr; lactate + NAD &nbsp;&nbsp;(enzyme: lactate dehydrogenase)
+</div>
+
+<p>This lets muscles keep contracting for a short time when oxygen is limiting, but it has costs:</p>
+<ul>
+  <li>Lactate and hydrogen ions build up in the muscle and blood, lowering the pH. The fall in pH can affect enzymes involved in respiration and contraction, reducing the force of contraction. Along with low ATP levels, this contributes to <strong>muscle fatigue</strong> and pain.</li>
+  <li>ATP yield is small, so muscles cannot sustain maximum effort for long.</li>
+  <li>After exercise, extra oxygen is taken in (the oxygen debt, or excess post-exercise oxygen consumption). Lactate is carried in the blood to the liver, where it is converted back to pyruvate. Some pyruvate is oxidised aerobically; the rest is converted to glucose and glycogen.</li>
+</ul>
+
+<p>Because lactate can be converted back to pyruvate, the lactate pathway is reversible. No carbon dioxide is lost in forming lactate.</p>
+
+<h3>5.5 (iv) Ethanol Formation in Plants</h3>
+
+<p>In plant cells (for example in waterlogged roots) and in yeast, anaerobic respiration produces ethanol in two steps:</p>
+
+<div class="equation">
+  pyruvate &rarr; ethanal + CO<sub>2</sub> &nbsp;&nbsp;(decarboxylation)<br>
+  ethanal + reduced NAD &rarr; ethanol + NAD &nbsp;&nbsp;(reduction)
+</div>
+
+<p>Here ethanal, not pyruvate, is the hydrogen acceptor that regenerates NAD. Because a carbon atom is lost as CO<sub>2</sub>, the pathway cannot be reversed. Ethanol is toxic at high concentrations, so tissues can survive this way only for a limited time. Some plants that live in waterlogged soils, such as rice, tolerate ethanol better or have air spaces (aerenchyma) that bring oxygen to the roots.</p>
+
+<table>
+  <tr><th>Feature</th><th>Mammals (lactate)</th><th>Plants and yeast (ethanol)</th></tr>
+  <tr><td>Product(s)</td><td>Lactate</td><td>Ethanol and CO<sub>2</sub></td></tr>
+  <tr><td>Hydrogen acceptor</td><td>Pyruvate</td><td>Ethanal</td></tr>
+  <tr><td>CO<sub>2</sub> released?</td><td>No</td><td>Yes</td></tr>
+  <tr><td>Reversible?</td><td>Yes (lactate back to pyruvate in the liver)</td><td>No</td></tr>
+  <tr><td>Net ATP per hexose</td><td>2</td><td>2</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The key idea in every anaerobic question is <em>regenerating NAD</em> so glycolysis can continue. Saying "lactate is made to produce ATP" is wrong; the ATP comes from glycolysis. Also use "lactate" rather than "lactic acid" when describing the product in cells, and do not claim that mammals make ethanol or that plants make lactate in these pathways.
+</div>
+
+<h3>Core Practical 9: Respirometers</h3>
+
+<div class="definition">
+  <strong>Core Practical 9 (CP9):</strong> Using a respirometer to find how a chosen factor (such as temperature) changes the rate of aerobic or anaerobic respiration, with organisms handled safely and ethically. For the full method, variables, risk assessment and analysis, see <a href="core_practicals.html#cp9">CP9 on the core practicals page</a>.
+</div>
+
+<p>In a simple respirometer, small organisms (such as germinating seeds or invertebrates) are sealed in a tube with a CO<sub>2</sub> absorber such as soda lime. As they take in oxygen, and the CO<sub>2</sub> they release is absorbed, the volume of gas falls and a coloured liquid moves along a capillary tube. A control tube with inert material (glass beads of the same volume) corrects for changes in temperature and pressure. Treat animals humanely: keep exposure short, stop them touching the soda lime, and return them to their habitat afterwards.</p>
+
+<p><strong>Worked calculation.</strong> The liquid moves 25 mm along a capillary tube with an internal radius of 0.5 mm in 10 minutes. The volume of oxygen taken up is the volume of a cylinder:</p>
+
+<div class="equation">
+  V = &pi;r<sup>2</sup>l = &pi; &times; 0.5<sup>2</sup> &times; 25 = 19.6 mm<sup>3</sup><br>
+  rate = 19.6 &divide; 10 = 1.96 mm<sup>3</sup> O<sub>2</sub> min<sup>&minus;1</sup>
+</div>
+
+<p>To compare samples of different size, divide by the mass of the organisms to give a rate per gram. If distance moved is plotted against time, the gradient of the straight part of the line gives the rate. For a straight line <em>y</em> = <em>mx</em> + <em>c</em>, the gradient <em>m</em> is the rate and <em>c</em> is the intercept on the <em>y</em>-axis (the reading at time zero). For example, if a line passes through (0 min, 3 mm) and (20 min, 11 mm), <em>m</em> = (11 &minus; 3) &divide; 20 = 0.4 mm min<sup>&minus;1</sup> and <em>c</em> = 3 mm.</p>
+
+<!-- ============================================================ -->
+<h2>5.6 Photosynthetic Pigments</h2>
+<!-- ============================================================ -->
+
+<h3>5.6 (i) Absorption and Action Spectra</h3>
+
+<div class="definition">
+  <strong>Absorption spectrum:</strong> A graph of how much light a pigment (or a mixture of pigments) absorbs at each wavelength.<br>
+  <strong>Action spectrum:</strong> A graph of the rate of photosynthesis (for example, oxygen production) at each wavelength of light.
+</div>
+
+<p>Visible light spans roughly 400 nm (violet) to 700 nm (red). Chlorophylls absorb strongly in the blue-violet and red parts of the spectrum and poorly in the green, which is mostly reflected or transmitted; this is why leaves look green. Carotenoids absorb mainly blue and blue-green light (roughly 400 to 500 nm).</p>
+
+<p>When the action spectrum is plotted on the same axes as the combined absorption spectrum of the pigments, the two curves have very similar shapes: wavelengths that are strongly absorbed give high rates of photosynthesis. This close match is evidence that the absorbed light is what drives photosynthesis, and that the pigments are responsible. The match is not perfect; for instance, not all energy absorbed by accessory pigments is transferred to the reaction centres, and some green light is still used.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 290" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Absorption and Action Spectra (schematic)</text>
+  <!-- colour band -->
+  <defs>
+    <linearGradient id="specS5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="18%" stop-color="#2563eb"/>
+      <stop offset="36%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#16a34a"/>
+      <stop offset="62%" stop-color="#eab308"/>
+      <stop offset="78%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+  <!-- axes: x 80..520 = 400..700 nm ; y 230 = 0 -->
+  <line x1="80" y1="230" x2="530" y2="230" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="80" y1="230" x2="80" y2="45" stroke="#1a1a2e" stroke-width="1"/>
+  <rect x="80" y="232" width="440" height="8" fill="url(#specS5)" opacity="0.8"/>
+  <text x="80" y="254" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">400</text>
+  <text x="227" y="254" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">500</text>
+  <text x="373" y="254" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">600</text>
+  <text x="520" y="254" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">700</text>
+  <text x="300" y="272" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Wavelength / nm</text>
+  <text x="40" y="140" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90 40 140)">Absorption or rate (relative)</text>
+  <!-- chlorophyll a: peaks ~430 (x=124) and ~662 (x=464) -->
+  <path d="M80,150 C100,110 112,62 124,62 C140,62 150,150 175,200 C230,222 330,222 400,205 C430,190 445,90 464,85 C480,85 490,200 520,226" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <!-- chlorophyll b: peaks ~453 (x=158) and ~642 (x=435) -->
+  <path d="M80,200 C110,170 140,80 158,78 C175,78 190,170 215,210 C260,224 340,222 390,200 C410,185 425,120 435,118 C448,118 458,200 490,226" fill="none" stroke="#65a30d" stroke-width="1.6" stroke-dasharray="5,3"/>
+  <!-- carotenoids: broad 400-500 -->
+  <path d="M80,160 C100,110 130,95 160,100 C185,105 200,100 215,120 C235,160 250,215 270,228" fill="none" stroke="#f97316" stroke-width="1.6" stroke-dasharray="2,2"/>
+  <!-- action spectrum -->
+  <path d="M80,120 C100,80 120,60 145,62 C175,66 200,120 230,160 C270,190 330,190 380,160 C420,125 440,80 462,78 C480,80 495,160 520,215" fill="none" stroke="#1a1a2e" stroke-width="2.2"/>
+  <!-- legend -->
+  <line x1="245" y1="44" x2="270" y2="44" stroke="#1a1a2e" stroke-width="2.2"/>
+  <text x="275" y="48" font-family="system-ui" font-size="9" fill="#1a1a2e">Action spectrum</text>
+  <line x1="245" y1="58" x2="270" y2="58" stroke="#16A34A" stroke-width="2"/>
+  <text x="275" y="62" font-family="system-ui" font-size="9" fill="#1a1a2e">Chlorophyll a</text>
+  <line x1="245" y1="72" x2="270" y2="72" stroke="#65a30d" stroke-width="1.6" stroke-dasharray="5,3"/>
+  <text x="275" y="76" font-family="system-ui" font-size="9" fill="#1a1a2e">Chlorophyll b</text>
+  <line x1="245" y1="86" x2="270" y2="86" stroke="#f97316" stroke-width="1.6" stroke-dasharray="2,2"/>
+  <text x="275" y="90" font-family="system-ui" font-size="9" fill="#1a1a2e">Carotenoids</text>
+  <text x="300" y="212" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">green light poorly absorbed</text>
+</svg>
+</div>
+
+<div class="definition">
+  <strong>Core Practical 10 (CP10):</strong> How the colour (wavelength) of light affects the rate of photosynthesis. For the method (for example, coloured filters over an aquatic plant or leaf discs, with light intensity and temperature controlled), see <a href="core_practicals.html#cp10">CP10 on the core practicals page</a>.
+</div>
+
+<p>In CP10 the rate is often measured as the volume of oxygen collected per minute, or as 1/<em>t</em> where <em>t</em> is the time for leaf discs to float. Filters of different colours transmit different wavelengths, but they also transmit different amounts of light, so light intensity should be measured with a light meter and controlled if possible. Blue and red filters should give higher rates than a green filter.</p>
+
+<h3>5.6 (ii) Why Plants Have Several Pigments</h3>
+
+<p>Chloroplasts contain several pigments arranged in <strong>photosystems</strong> (light-harvesting complexes) in the thylakoid membranes. Most pigment molecules act as an antenna: they absorb light and pass the energy from molecule to molecule until it reaches a pair of chlorophyll a molecules at the <strong>reaction centre</strong>, where electrons are excited and emitted.</p>
+
+<table>
+  <tr><th>Pigment</th><th>Group</th><th>Colour</th><th>Main wavelengths absorbed</th></tr>
+  <tr><td>Chlorophyll a</td><td>Primary pigment (at reaction centres)</td><td>Blue-green</td><td>Blue-violet and red</td></tr>
+  <tr><td>Chlorophyll b</td><td>Accessory pigment</td><td>Yellow-green</td><td>Blue and orange-red, slightly different from chlorophyll a</td></tr>
+  <tr><td>Carotene</td><td>Accessory (carotenoid)</td><td>Orange</td><td>Blue and blue-green</td></tr>
+  <tr><td>Xanthophylls</td><td>Accessory (carotenoid)</td><td>Yellow</td><td>Blue and blue-green</td></tr>
+</table>
+
+<p>Having a variety of pigments is an advantage because:</p>
+<ul>
+  <li><strong>A wider range of wavelengths is absorbed.</strong> Each pigment has a different absorption spectrum, so together they capture more of the light energy available and pass it to chlorophyll a. This increases the rate of photosynthesis, particularly when light is limited.</li>
+  <li><strong>Adaptation to different light environments.</strong> Plants in shade receive light that has already passed through other leaves, so it is relatively rich in green and far-red light. Shade leaves typically have more chlorophyll b relative to chlorophyll a. In water, red light is absorbed near the surface; red algae living deeper contain extra pigments that absorb the blue-green light that penetrates further.</li>
+  <li><strong>Protection.</strong> Carotenoids help protect chlorophyll from damage by excess light energy.</li>
+</ul>
+
+<div class="definition">
+  <strong>Core Practical 11 (CP11):</strong> Separating and identifying the pigments in chloroplasts by chromatography. For the full method (extracting pigments with a solvent, spotting, running and calculating R<sub>f</sub> values), see <a href="core_practicals.html#cp11">CP11 on the core practicals page</a>.
+</div>
+
+<p>Pigments separate because they differ in solubility in the running solvent and in how strongly they are attracted to the stationary phase (paper or a thin-layer plate). Each pigment is identified by its <strong>R<sub>f</sub> value</strong>:</p>
+
+<div class="equation">
+  R<sub>f</sub> = distance moved by pigment spot &divide; distance moved by solvent front
+</div>
+
+<p><strong>Worked example.</strong> In one chromatogram the solvent front moved 9.2 cm. Spots were found at 8.6 cm (orange), 5.2 cm (yellow), 4.1 cm (blue-green) and 2.5 cm (yellow-green). The R<sub>f</sub> values are 0.93, 0.57, 0.45 and 0.27. The fastest-moving orange spot is carotene; the yellow spot is a xanthophyll; the blue-green spot is chlorophyll a; the yellow-green spot, which moved least, is chlorophyll b. Exact R<sub>f</sub> values depend on the solvent and the stationary phase, so compare with standards run under the same conditions. R<sub>f</sub> values have no units and always lie between 0 and 1.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Measure to the <em>centre</em> of each spot and from the origin (pencil line), not from the bottom of the paper. Mark the solvent front as soon as the chromatogram is removed, before it evaporates. If asked to "explain" why the action spectrum matches the absorption spectrum, you must say that absorbed light energy is used in photosynthesis; simply describing the peaks is "describe", not "explain".
+</div>
+
+<!-- ============================================================ -->
+<h2>5.7 Photosynthesis</h2>
+<!-- ============================================================ -->
+
+<div class="equation">
+  6CO<sub>2</sub> + 6H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> &nbsp;&nbsp;(light energy absorbed by chlorophyll)
+</div>
+
+<p>Photosynthesis has two linked stages: the <strong>light-dependent stage</strong> on the thylakoid membranes, which uses light energy to make ATP and reduced NADP and releases oxygen, and the <strong>light-independent stage</strong> (Calvin cycle) in the stroma, which uses that ATP and reduced NADP to turn carbon dioxide into sugar phosphates.</p>
+
+<h3>5.7 (i) Chloroplast Structure</h3>
+
+<ul>
+  <li><strong>Envelope:</strong> a double membrane (inner and outer) that surrounds the chloroplast and controls which substances enter and leave.</li>
+  <li><strong>Stroma:</strong> the fluid inside the envelope. It contains the enzymes of the light-independent stage (including RUBISCO), starch grains, lipid droplets, circular DNA and 70S ribosomes.</li>
+  <li><strong>Thylakoids:</strong> flattened membrane sacs, each enclosing a space (the thylakoid lumen). Their membranes hold the photosystems, electron carriers and ATP synthase.</li>
+  <li><strong>Grana</strong> (singular granum): stacks of thylakoids, which give a large membrane area for absorbing light.</li>
+  <li><strong>Lamellae</strong> (intergranal lamellae): thylakoid membranes that extend through the stroma and connect one granum to another. The whole internal membrane system is often called the lamellar structure.</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Chloroplast Structure</text>
+  <!-- Envelope -->
+  <ellipse cx="280" cy="145" rx="210" ry="95" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/>
+  <ellipse cx="280" cy="145" rx="202" ry="87" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.2"/>
+  <!-- Lamellae -->
+  <line x1="140" y1="140" x2="420" y2="140" stroke="#15803d" stroke-width="3"/>
+  <line x1="160" y1="165" x2="400" y2="112" stroke="#15803d" stroke-width="3"/>
+  <!-- Grana: stacks -->
+  <g fill="#16A34A" stroke="#15803d" stroke-width="0.8">
+    <rect x="150" y="118" width="40" height="7" rx="3"/><rect x="150" y="127" width="40" height="7" rx="3"/><rect x="150" y="136" width="40" height="7" rx="3"/><rect x="150" y="145" width="40" height="7" rx="3"/><rect x="150" y="154" width="40" height="7" rx="3"/>
+    <rect x="260" y="112" width="40" height="7" rx="3"/><rect x="260" y="121" width="40" height="7" rx="3"/><rect x="260" y="130" width="40" height="7" rx="3"/><rect x="260" y="139" width="40" height="7" rx="3"/><rect x="260" y="148" width="40" height="7" rx="3"/><rect x="260" y="157" width="40" height="7" rx="3"/>
+    <rect x="370" y="120" width="40" height="7" rx="3"/><rect x="370" y="129" width="40" height="7" rx="3"/><rect x="370" y="138" width="40" height="7" rx="3"/><rect x="370" y="147" width="40" height="7" rx="3"/>
+  </g>
+  <!-- starch grain & DNA & ribosomes -->
+  <ellipse cx="210" cy="200" rx="22" ry="12" fill="#fff" stroke="#9ca3af" stroke-width="1"/>
+  <path d="M330,190 q8,-10 16,0 q8,10 16,0 q8,-10 16,0" fill="none" stroke="#DC2626" stroke-width="1.2"/>
+  <circle cx="240" cy="90" r="2.5" fill="#1a73e8"/><circle cx="250" cy="95" r="2.5" fill="#1a73e8"/><circle cx="232" cy="98" r="2.5" fill="#1a73e8"/>
+  <circle cx="200" cy="175" r="4" fill="#FDE68A" stroke="#D97706" stroke-width="0.8"/>
+  <!-- Labels -->
+  <line x1="480" y1="120" x2="530" y2="80" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="532" y="72" font-family="system-ui" font-size="10" fill="#1a1a2e">Envelope</text>
+  <text x="532" y="84" font-family="system-ui" font-size="9" fill="#666">(double</text>
+  <text x="532" y="95" font-family="system-ui" font-size="9" fill="#666">membrane)</text>
+  <line x1="280" y1="112" x2="300" y2="55" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="302" y="52" font-family="system-ui" font-size="10" fill="#1a1a2e">Granum (stack of thylakoids)</text>
+  <line x1="340" y1="140" x2="520" y2="150" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="522" y="154" font-family="system-ui" font-size="10" fill="#1a1a2e">Lamella</text>
+  <line x1="450" y1="185" x2="520" y2="205" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="522" y="209" font-family="system-ui" font-size="10" fill="#1a1a2e">Stroma</text>
+  <line x1="210" y1="212" x2="170" y2="248" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="95" y="252" font-family="system-ui" font-size="10" fill="#1a1a2e">Starch grain</text>
+  <line x1="362" y1="192" x2="380" y2="248" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="340" y="252" font-family="system-ui" font-size="10" fill="#1a1a2e">Circular DNA</text>
+  <line x1="232" y1="95" x2="150" y2="62" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="60" y="58" font-family="system-ui" font-size="10" fill="#1a1a2e">70S ribosomes</text>
+  <line x1="196" y1="175" x2="80" y2="195" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="20" y="208" font-family="system-ui" font-size="10" fill="#1a1a2e">Lipid droplet</text>
+</svg>
+</div>
+
+<h3>The Light-Dependent Stage</h3>
+
+<h3>5.7 (ii) The Role of the Thylakoid Membranes</h3>
+
+<p>The thylakoid membranes are the site of the light-dependent stage because they hold, in a fixed arrangement:</p>
+<ul>
+  <li>the <strong>photosystems</strong> (photosystem I and photosystem II), each with antenna pigments and a reaction centre, which absorb light;</li>
+  <li>the <strong>electron carriers</strong> that pass excited electrons between the photosystems and to NADP;</li>
+  <li>the enzyme complex that splits water on the lumen side of photosystem II;</li>
+  <li><strong>ATP synthase</strong>, which spans the membrane.</li>
+</ul>
+<p>The membrane is impermeable to protons, so protons pumped into the thylakoid lumen by the electron carriers (and released there by the splitting of water) build up a gradient. Protons flow back into the stroma through ATP synthase, making ATP by chemiosmosis in the same way as in mitochondria. Stacking the thylakoids into grana packs a large area of membrane into a small space.</p>
+
+<h3>5.7 (iii) Cyclic and Non-Cyclic Photophosphorylation</h3>
+
+<div class="definition">
+  <strong>Photophosphorylation:</strong> The synthesis of ATP from ADP and P<sub>i</sub> using energy from light, by chemiosmosis across the thylakoid membrane.
+</div>
+
+<p><strong>Non-cyclic photophosphorylation</strong> involves both photosystems:</p>
+<ol>
+  <li>Light energy absorbed by photosystem II excites a pair of electrons in the chlorophyll at the reaction centre. They reach a higher energy level and leave the chlorophyll, which is oxidised.</li>
+  <li>The excited electrons pass along a chain of electron carriers to photosystem I. The energy they lose is used to pump protons into the thylakoid lumen; the resulting proton gradient drives ATP synthesis through ATP synthase.</li>
+  <li><strong>Photolysis:</strong> the electrons lost from photosystem II are replaced by splitting water: 2H<sub>2</sub>O &rarr; 4H<sup>+</sup> + 4e<sup>&minus;</sup> + O<sub>2</sub>. The oxygen diffuses out of the leaf as a by-product (or is used in respiration); the protons add to the gradient.</li>
+  <li>Light absorbed by photosystem I re-excites the electrons, which pass via further carriers to NADP. NADP accepts the electrons and a proton from the stroma and becomes <strong>reduced NADP</strong> (catalysed by NADP reductase).</li>
+</ol>
+<p>Electrons flow in one direction, from water to NADP, so the pathway is "non-cyclic". Its products are <strong>ATP, reduced NADP and oxygen</strong>.</p>
+
+<p><strong>Cyclic photophosphorylation</strong> involves only photosystem I. Excited electrons from photosystem I pass to the electron carriers and then return to photosystem I instead of reducing NADP. Energy released as the electrons move along the carriers is used to pump protons, so ATP is made. No water is split, so no oxygen is produced, and no reduced NADP is formed. Cyclic photophosphorylation tops up ATP supply, because the Calvin cycle needs more ATP than reduced NADP.</p>
+
+<table>
+  <tr><th>Feature</th><th>Non-cyclic</th><th>Cyclic</th></tr>
+  <tr><td>Photosystems involved</td><td>PSII and PSI</td><td>PSI only</td></tr>
+  <tr><td>Source of electrons</td><td>Water (photolysis)</td><td>PSI (electrons return to it)</td></tr>
+  <tr><td>Final electron acceptor</td><td>NADP</td><td>PSI</td></tr>
+  <tr><td>ATP made?</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Reduced NADP made?</td><td>Yes</td><td>No</td></tr>
+  <tr><td>O<sub>2</sub> released?</td><td>Yes</td><td>No</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The oxygen released in photosynthesis comes from <em>water</em>, not from carbon dioxide. Also note that photolysis is caused by the loss of electrons from photosystem II, not by light striking water directly. In comparisons ("compare cyclic and non-cyclic..."), give points of similarity as well as difference: both use PSI, both involve electron carriers and chemiosmosis, and both make ATP.
+</div>
+
+<h3>The Light-Independent Stage</h3>
+
+<h3>5.7 (iv) The Role of the Stroma</h3>
+
+<p>The light-independent stage takes place in the stroma because this is where the enzymes of the Calvin cycle, including RUBISCO, are found, along with the pool of cycle intermediates. The stroma surrounds the thylakoids, so the ATP and reduced NADP made on the stromal side of the thylakoid membranes are released straight into it. The stroma also receives carbon dioxide, which diffuses in through the envelope. Starch made from the products is stored in the stroma as starch grains.</p>
+
+<p>This stage does not use light directly, but it depends on a continuous supply of ATP and reduced NADP from the light-dependent stage, so in the dark it stops within a short time.</p>
+
+<h3>5.7 (v) Carbon Fixation by RUBISCO</h3>
+
+<p>Carbon dioxide combines with the 5-carbon compound <strong>ribulose bisphosphate (RuBP)</strong>. The reaction is catalysed by the enzyme <strong>ribulose bisphosphate carboxylase (RUBISCO)</strong>. The 6-carbon product is unstable and immediately splits into two molecules of the 3-carbon compound <strong>glycerate 3-phosphate (GP)</strong>. This step is called carbon fixation because inorganic carbon becomes part of an organic molecule.</p>
+
+<div class="equation">
+  RuBP (5C) + CO<sub>2</sub> &rarr; [unstable 6C] &rarr; 2 &times; GP (3C) &nbsp;&nbsp;(enzyme: RUBISCO)
+</div>
+
+<h3>5.7 (vi) Using ATP and Reduced NADP: the Calvin Cycle</h3>
+
+<ul>
+  <li><strong>Reduction of GP to GALP.</strong> GP is reduced to <strong>glyceraldehyde 3-phosphate (GALP)</strong>, a triose phosphate. Reduced NADP supplies the hydrogen (and is reoxidised to NADP, which returns to the thylakoids); ATP supplies the energy (and is hydrolysed to ADP and P<sub>i</sub>).</li>
+  <li><strong>Regeneration of RuBP.</strong> Most of the GALP (five out of every six molecules) is used to regenerate RuBP, so more CO<sub>2</sub> can be fixed. This step uses further ATP. The intermediate compounds are not required.</li>
+  <li>The remaining GALP (one in every six) is the output of the cycle and is used to make other substances (5.7 vii).</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">The Calvin Cycle (in the stroma)</text>
+  <defs>
+    <marker id="arrowC1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#16A34A"/>
+    </marker>
+    <marker id="arrowC2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- nodes -->
+  <rect x="80" y="130" width="120" height="36" rx="8" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="140" y="146" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">RuBP</text>
+  <text x="140" y="160" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">5C</text>
+  <rect x="240" y="50" width="120" height="36" rx="8" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="300" y="66" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">2 &#215; GP</text>
+  <text x="300" y="80" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">3C</text>
+  <rect x="400" y="130" width="120" height="36" rx="8" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="460" y="146" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">2 &#215; GALP</text>
+  <text x="460" y="160" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">3C triose phosphate</text>
+  <!-- arrows -->
+  <path d="M150,128 Q170,70 236,68" fill="none" stroke="#16A34A" stroke-width="1.8" marker-end="url(#arrowC1)"/>
+  <path d="M364,68 Q440,72 458,126" fill="none" stroke="#16A34A" stroke-width="1.8" marker-end="url(#arrowC1)"/>
+  <path d="M450,170 Q380,250 300,250 Q210,250 150,172" fill="none" stroke="#16A34A" stroke-width="1.8" marker-end="url(#arrowC1)"/>
+  <!-- CO2 input -->
+  <text x="110" y="62" font-family="system-ui" font-size="11" fill="#1a1a2e">CO<tspan baseline-shift="sub" font-size="8">2</tspan></text>
+  <path d="M130,65 L162,86" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowC2)"/>
+  <text x="60" y="100" font-family="system-ui" font-size="9" font-weight="bold" fill="#b45309">Fixation (RUBISCO)</text>
+  <!-- reduction inputs -->
+  <text x="420" y="50" font-family="system-ui" font-size="10" fill="#1a1a2e">ATP &#8594; ADP + P<tspan baseline-shift="sub" font-size="7">i</tspan></text>
+  <text x="420" y="64" font-family="system-ui" font-size="10" fill="#1a1a2e">reduced NADP &#8594; NADP</text>
+  <text x="420" y="104" font-family="system-ui" font-size="9" font-weight="bold" fill="#b45309">Reduction</text>
+  <!-- regeneration -->
+  <text x="300" y="270" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#b45309">Regeneration of RuBP (5 of every 6 GALP)</text>
+  <text x="300" y="286" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">ATP &#8594; ADP + P<tspan baseline-shift="sub" font-size="7">i</tspan></text>
+  <!-- output -->
+  <path d="M522,148 L560,148" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowC2)"/>
+  <text x="545" y="180" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">1 in 6 GALP</text>
+  <text x="545" y="192" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">leaves: sugars,</text>
+  <text x="545" y="204" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">amino acids,</text>
+  <text x="545" y="216" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">lipids</text>
+</svg>
+</div>
+
+<p><strong>Balancing the carbon.</strong> Three turns of the cycle fix three CO<sub>2</sub> onto three RuBP (15 carbon atoms), giving six GP and so six GALP (18 carbon atoms). Five GALP (15 carbon atoms) are rearranged into three RuBP, leaving one GALP (3 carbon atoms) as the net gain. Six turns are needed for enough GALP to make one hexose. Per three CO<sub>2</sub> fixed, the cycle uses nine ATP (six for reduction and three for regeneration) and six reduced NADP, which is why the extra ATP from cyclic photophosphorylation is useful.</p>
+
+<h3>Predicting Changes in GP and RuBP</h3>
+
+<table>
+  <tr><th>Change</th><th>GP</th><th>RuBP</th><th>Reason</th></tr>
+  <tr><td>Light switched off</td><td>Rises</td><td>Falls</td><td>No ATP or reduced NADP, so GP cannot be reduced to GALP and RuBP is not regenerated; RuBP is still used up in fixing CO<sub>2</sub></td></tr>
+  <tr><td>CO<sub>2</sub> concentration reduced</td><td>Falls</td><td>Rises</td><td>Less RuBP is used in fixation, so less GP is made, while RuBP is still regenerated from GALP</td></tr>
+</table>
+
+<h3>5.7 (vii) Uses of GALP</h3>
+
+<p>GALP leaving the Calvin cycle is the starting point for making almost all other organic molecules in the plant:</p>
+<ul>
+  <li><strong>Monosaccharides:</strong> two GALP combine to make a hexose such as glucose or fructose. Hexoses are then used in respiration, joined to make <strong>sucrose</strong> (the main transport sugar in phloem), or polymerised into <strong>starch</strong> (storage) and <strong>cellulose</strong> (cell walls).</li>
+  <li><strong>Lipids:</strong> GALP can be converted to <strong>glycerol</strong>, and to acetyl coenzyme A, from which <strong>fatty acids</strong> are made; these combine to form triglycerides and phospholipids (for membranes).</li>
+  <li><strong>Amino acids:</strong> GALP is converted to other organic acids (for example via pyruvate and acetyl CoA), which are combined with nitrogen from nitrate or ammonium ions absorbed from the soil to form amino acids and then proteins.</li>
+  <li><strong>Other molecules:</strong> nucleotides (for DNA, RNA and ATP) also need carbon skeletons from photosynthesis, together with nitrogen and phosphate from the soil.</li>
+</ul>
+
+<h3>5.7 (viii) Limiting Factors</h3>
+
+<div class="definition">
+  <strong>Limiting factor:</strong> The factor that is in shortest supply relative to demand and so holds back the rate of a process. Increasing a limiting factor increases the rate; increasing any other factor does not.
+</div>
+
+<ul>
+  <li><strong>Light intensity</strong> limits the light-dependent stage: less light means fewer excited electrons, so less ATP and reduced NADP are made, and GP cannot be reduced as fast. At low light intensity the rate rises roughly in proportion to light intensity.</li>
+  <li><strong>Carbon dioxide concentration</strong> limits fixation by RUBISCO. Atmospheric CO<sub>2</sub> is about 0.04%, and it is often the limiting factor on bright days. Growers of glasshouse crops raise the CO<sub>2</sub> concentration to increase yields.</li>
+  <li><strong>Temperature</strong> affects the enzyme-controlled reactions, especially the Calvin cycle. At low temperature, enzymes and substrates have less kinetic energy, so there are fewer successful collisions. Above the optimum, enzymes such as RUBISCO begin to denature and the rate falls; stomata may also close to reduce water loss, limiting CO<sub>2</sub> uptake.</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Limiting Factors of Photosynthesis</text>
+  <!-- axes -->
+  <line x1="80" y1="235" x2="540" y2="235" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="80" y1="235" x2="80" y2="45" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="310" y="262" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Light intensity</text>
+  <text x="40" y="140" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90 40 140)">Rate of photosynthesis</text>
+  <!-- curve A: high CO2, 25C -->
+  <path d="M80,235 L190,110 C215,85 240,78 290,76 L530,76" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <text x="535" y="72" text-anchor="end" font-family="system-ui" font-size="9" fill="#16A34A">0.1% CO<tspan baseline-shift="sub" font-size="7">2</tspan>, 25 &#176;C</text>
+  <!-- curve B: high CO2, 15C -->
+  <path d="M80,235 L170,133 C195,112 215,108 250,107 L530,107" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <text x="535" y="103" text-anchor="end" font-family="system-ui" font-size="9" fill="#1a73e8">0.1% CO<tspan baseline-shift="sub" font-size="7">2</tspan>, 15 &#176;C</text>
+  <!-- curve C: low CO2, 25C -->
+  <path d="M80,235 L150,156 C170,140 190,137 220,136 L530,136" fill="none" stroke="#D97706" stroke-width="2"/>
+  <text x="535" y="152" text-anchor="end" font-family="system-ui" font-size="9" fill="#D97706">0.04% CO<tspan baseline-shift="sub" font-size="7">2</tspan>, 25 &#176;C</text>
+  <!-- annotations -->
+  <text x="100" y="200" font-family="system-ui" font-size="9" fill="#666">light is limiting</text>
+  <text x="100" y="211" font-family="system-ui" font-size="9" fill="#666">(same initial slope)</text>
+  <text x="330" y="190" font-family="system-ui" font-size="9" fill="#666">plateau: light no longer limiting;</text>
+  <text x="330" y="201" font-family="system-ui" font-size="9" fill="#666">CO<tspan baseline-shift="sub" font-size="7">2</tspan> or temperature is limiting</text>
+  <line x1="190" y1="110" x2="190" y2="235" stroke="#9ca3af" stroke-width="0.8" stroke-dasharray="3,3"/>
+</svg>
+</div>
+
+<p>On the graph, the curves share the same initial slope, because at low light intensity light is the limiting factor whatever the CO<sub>2</sub> concentration or temperature. Each curve then levels off. Where it levels off, a factor other than light is limiting: raising the CO<sub>2</sub> concentration or the temperature raises the plateau. The graph illustrates the maths skills in this topic: the gradient of the straight region is the rate of change of photosynthesis with light intensity, and a curved region can be analysed by drawing a <strong>tangent</strong> and finding its gradient. For example, a tangent passing through (4, 2) and (12, 14) has a gradient of (14 &minus; 2) &divide; (12 &minus; 4) = 1.5 units of rate per unit of light intensity.</p>
+
+<p>Light intensity from a point source falls with the square of the distance, so in practicals where a lamp is moved, light intensity is proportional to 1/<em>d</em><sup>2</sup>. A heat filter (for example, a beaker of water) or an LED lamp is used so that moving the lamp does not also change the temperature.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When interpreting a limiting-factor graph, name the limiting factor for each region and justify it from the graph: "between 0 and X, light intensity is limiting because the rate increases as light intensity increases; above X the rate stays constant, so another factor such as CO<sub>2</sub> concentration is limiting." For "suggest" questions about glasshouses, weigh the cost of extra heating, lighting or CO<sub>2</sub> against the increase in yield; there is no benefit in raising a factor that is not limiting.
+</div>
+
+<!-- ============================================================ -->
+<h2>Command Words and Common Misconceptions</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Command word</th><th>What it asks for</th><th>Example in this topic</th></tr>
+  <tr><td>State / Give / Name</td><td>A short answer, no explanation needed</td><td>Name the site of the Krebs cycle (mitochondrial matrix)</td></tr>
+  <tr><td>Describe</td><td>An account of what happens or what a graph shows, without reasons</td><td>Describe the shape of the action spectrum</td></tr>
+  <tr><td>Explain</td><td>Reasons or mechanisms, linked by "because" or "so"</td><td>Explain why the rate of respiration falls when oxygen is removed</td></tr>
+  <tr><td>Calculate</td><td>A numerical answer with working and units</td><td>Calculate the R<sub>f</sub> value, or the volume of O<sub>2</sub> taken up in a respirometer</td></tr>
+  <tr><td>Compare</td><td>Similarities <em>and</em> differences, each point about both things</td><td>Compare cyclic and non-cyclic photophosphorylation</td></tr>
+  <tr><td>Suggest</td><td>Apply knowledge to an unfamiliar context; more than one answer may be credited</td><td>Suggest why a shade plant has a higher proportion of chlorophyll b</td></tr>
+  <tr><td>Evaluate / Discuss</td><td>Weigh evidence or arguments and reach a judgement</td><td>Evaluate the use of coloured filters to study the effect of wavelength</td></tr>
+</table>
+
+<ul>
+  <li><strong>"Anaerobic respiration makes lactate to get ATP."</strong> No: it regenerates NAD so that glycolysis, which makes the ATP, can continue.</li>
+  <li><strong>"The light-independent stage happens at night."</strong> No: it runs in the light, using ATP and reduced NADP from the light-dependent stage, and stops soon after dark.</li>
+  <li><strong>"Oxygen from photosynthesis comes from CO<sub>2</sub>."</strong> No: it comes from photolysis of water.</li>
+  <li><strong>"Plants photosynthesise instead of respiring."</strong> No: plant cells respire all the time; photosynthesis happens only in the light and only in cells with chloroplasts.</li>
+  <li><strong>"Protons are pumped out of the mitochondrion."</strong> They are pumped into the intermembrane space; in chloroplasts they are pumped into the thylakoid lumen.</li>
+  <li><strong>"Glycolysis happens in the mitochondria."</strong> It happens in the cytoplasm; only pyruvate enters the mitochondrion.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>Key Terms Checklist</h2>
+<!-- ============================================================ -->
+
+<p>Check that you can define or explain each of these terms:</p>
+<ul>
+  <li>&#9744; ATP, ADP, inorganic phosphate, ATPase, ATP synthase</li>
+  <li>&#9744; Glycolysis, hexose phosphorylation, triose phosphate, glycerate 3-phosphate (GP), pyruvate</li>
+  <li>&#9744; NAD, reduced NAD (NADH), FAD, coenzyme A, acetyl coenzyme A</li>
+  <li>&#9744; Substrate-level phosphorylation, oxidative phosphorylation, photophosphorylation</li>
+  <li>&#9744; Link reaction, decarboxylation, dehydrogenation, Krebs cycle</li>
+  <li>&#9744; Mitochondrial matrix, cristae, intermembrane space</li>
+  <li>&#9744; Electron transport chain, redox reaction, terminal electron acceptor</li>
+  <li>&#9744; Chemiosmosis, proton gradient</li>
+  <li>&#9744; Anaerobic respiration, lactate, lactate dehydrogenase, ethanal, ethanol, oxygen debt</li>
+  <li>&#9744; Respirometer, soda lime, rate of oxygen uptake</li>
+  <li>&#9744; Absorption spectrum, action spectrum, wavelength</li>
+  <li>&#9744; Chlorophyll a, chlorophyll b, carotene, xanthophyll, accessory pigment, photosystem, reaction centre</li>
+  <li>&#9744; Chromatography, solvent front, R<sub>f</sub> value</li>
+  <li>&#9744; Chloroplast envelope, stroma, thylakoid, granum, lamella</li>
+  <li>&#9744; Photolysis, cyclic and non-cyclic photophosphorylation, reduced NADP</li>
+  <li>&#9744; Calvin cycle, carbon fixation, ribulose bisphosphate (RuBP), RUBISCO, glyceraldehyde 3-phosphate (GALP)</li>
+  <li>&#9744; Limiting factor, light intensity, carbon dioxide concentration, temperature, tangent, gradient, intercept</li>
+</ul>
+
+</div>
+</body>
+</html>

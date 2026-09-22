@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — 3: Classification and Biodiversity</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>3 — Classification and Biodiversity</h1>
+
+<p>These notes cover Topic 3 of the Edexcel B A-level Biology specification (9BI0). The topic asks how biologists sort living things into groups, what evidence they use and where that evidence runs out. It then explains how natural selection produces adaptations and new species, and finishes with how biodiversity is measured and why (and how) it is conserved. The maths you need here is the principles of random sampling and using a given formula to calculate an index of diversity.</p>
+
+<div class="exam-tip">
+  <strong>Practical link:</strong> Topic 3 has no core practical of its own. The sampling methods you would use to collect data for a diversity index are practised in the Topic 10 core practicals (CP15 and CP16); see the <a href="core_practicals.html">core practicals page</a>.
+</div>
+
+<!-- ============================================================ -->
+<h2>3.1 Classification</h2>
+<!-- ============================================================ -->
+
+<h3>3.1(i) The taxonomic hierarchy</h3>
+
+<div class="definition">
+  <strong>Classification (taxonomy):</strong> Sorting organisms into groups (taxa) according to shared features and evolutionary relationships. The groups are nested: each taxon sits entirely inside the one above it, and there is no overlap between taxa at the same rank.
+</div>
+
+<p>The system used in this specification has eight ranks. Working from the largest, most inclusive group down to the smallest:</p>
+
+<div class="equation">
+  Domain &rarr; Kingdom &rarr; Phylum &rarr; Class &rarr; Order &rarr; Family &rarr; Genus &rarr; Species
+</div>
+
+<p>As you move down the hierarchy, each group contains fewer organisms, and the organisms within it share more features and a more recent common ancestor. A domain holds a vast range of organisms with only a few basic features in common; a species holds organisms so similar that they can potentially breed with one another.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 330" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">The Taxonomic Hierarchy (human example)</text>
+  <!-- Stacked bars narrowing downwards -->
+  <rect x="60" y="40" width="360" height="30" rx="5" fill="#2563eb" opacity="0.18" stroke="#2563eb" stroke-width="1"/>
+  <text x="240" y="60" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Domain</text>
+  <rect x="80" y="74" width="320" height="30" rx="5" fill="#2563eb" opacity="0.16" stroke="#2563eb" stroke-width="1"/>
+  <text x="240" y="94" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Kingdom</text>
+  <rect x="100" y="108" width="280" height="30" rx="5" fill="#16A34A" opacity="0.16" stroke="#16A34A" stroke-width="1"/>
+  <text x="240" y="128" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Phylum</text>
+  <rect x="120" y="142" width="240" height="30" rx="5" fill="#16A34A" opacity="0.16" stroke="#16A34A" stroke-width="1"/>
+  <text x="240" y="162" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Class</text>
+  <rect x="140" y="176" width="200" height="30" rx="5" fill="#D97706" opacity="0.16" stroke="#D97706" stroke-width="1"/>
+  <text x="240" y="196" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Order</text>
+  <rect x="160" y="210" width="160" height="30" rx="5" fill="#D97706" opacity="0.16" stroke="#D97706" stroke-width="1"/>
+  <text x="240" y="230" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Family</text>
+  <rect x="180" y="244" width="120" height="30" rx="5" fill="#7C3AED" opacity="0.16" stroke="#7C3AED" stroke-width="1"/>
+  <text x="240" y="264" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Genus</text>
+  <rect x="200" y="278" width="80" height="30" rx="5" fill="#7C3AED" opacity="0.2" stroke="#7C3AED" stroke-width="1"/>
+  <text x="240" y="298" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Species</text>
+  <!-- Examples -->
+  <text x="440" y="60" font-family="system-ui" font-size="10" fill="#1a1a2e">Eukarya</text>
+  <text x="440" y="94" font-family="system-ui" font-size="10" fill="#1a1a2e">Animalia</text>
+  <text x="440" y="128" font-family="system-ui" font-size="10" fill="#1a1a2e">Chordata</text>
+  <text x="440" y="162" font-family="system-ui" font-size="10" fill="#1a1a2e">Mammalia</text>
+  <text x="440" y="196" font-family="system-ui" font-size="10" fill="#1a1a2e">Primates</text>
+  <text x="440" y="230" font-family="system-ui" font-size="10" fill="#1a1a2e">Hominidae</text>
+  <text x="440" y="264" font-family="system-ui" font-size="10" font-style="italic" fill="#1a1a2e">Homo</text>
+  <text x="440" y="298" font-family="system-ui" font-size="10" font-style="italic" fill="#1a1a2e">Homo sapiens</text>
+  <!-- Side arrow -->
+  <defs>
+    <marker id="arrowH3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#DC2626"/>
+    </marker>
+  </defs>
+  <path d="M35,45 L35,300" fill="none" stroke="#DC2626" stroke-width="1.2" marker-end="url(#arrowH3)"/>
+  <text x="25" y="175" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626" transform="rotate(-90,25,175)">Fewer organisms, more features shared</text>
+  <text x="300" y="322" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Each rank is nested entirely inside the rank above it</text>
+</svg>
+</div>
+
+<p>Every species is given a two-part scientific name in the <strong>binomial system</strong> devised by Linnaeus: the genus name (capital letter) followed by the specific name (lower case), for example <em>Homo sapiens</em> or <em>Quercus robur</em> (English oak). Printed names are italicised; handwritten names are underlined. Binomial names avoid the confusion of local common names, because every scientist worldwide uses the same name for the same species. Two species in the same genus (such as <em>Panthera leo</em>, the lion, and <em>Panthera tigris</em>, the tiger) are more closely related to each other than either is to a species in another genus.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Learn the order of ranks with a mnemonic such as "<em>Dear King Philip Came Over For Good Soup</em>". A common slip is to put domain below kingdom: the domain is the highest rank. In the binomial name, never write the species name alone (e.g. "sapiens") when the question asks for the scientific name.
+</div>
+
+<h3>3.1(ii) Limitations of the biological species definition</h3>
+
+<div class="definition">
+  <strong>Species (biological species concept):</strong> A group of organisms with similar features that can interbreed in natural conditions to produce fertile offspring.
+</div>
+
+<p>This definition works well for many sexually reproducing animals, and it explains why a horse and a donkey are separate species: they can mate, but their offspring (the mule) is almost always sterile. However, the definition runs into trouble in several situations:</p>
+
+<ul>
+  <li><strong>Asexual reproduction:</strong> bacteria, many protoctists and some plants and animals reproduce without mating, so "interbreeding" cannot be tested at all. Dandelions, for instance, mostly produce seed without fertilisation.</li>
+  <li><strong>Extinct organisms:</strong> fossils can only be grouped by their structure; breeding ability cannot be observed.</li>
+  <li><strong>Populations that never meet:</strong> two populations may be separated geographically, so nobody can know whether they would interbreed if they did meet. Testing this in captivity may not reflect behaviour in natural conditions.</li>
+  <li><strong>Fertile hybrids:</strong> some organisms that are treated as separate species can produce fertile hybrids. This is common in plants, and occurs in some animals, such as wolves and coyotes in North America.</li>
+  <li><strong>Ring species:</strong> neighbouring populations around a geographical ring can interbreed, but the populations at the two ends of the ring cannot. There is no clear line at which one species becomes another.</li>
+  <li><strong>"Similar features" is vague:</strong> members of one species can look very different (males and females, larvae and adults, domestic dog breeds), while members of different species can look almost identical.</li>
+  <li><strong>Practicality:</strong> it is rarely possible to watch organisms breeding in the wild and then check that the offspring are fertile.</li>
+</ul>
+
+<p>Because of these problems, biologists also use other ways of defining a species, for example a <strong>morphological</strong> approach (organisms that share a set of structural features) or a <strong>phylogenetic</strong> approach (the smallest group that shares a common ancestor, identified from DNA). No single definition works for every group of organisms.</p>
+
+<h3>3.1(iii) Why assigning and identifying species is difficult</h3>
+
+<p>Even with several definitions available, deciding whether a set of organisms is one species, two or more is often hard:</p>
+
+<ul>
+  <li><strong>Speciation is gradual.</strong> Populations diverge a little at a time. At any moment many populations are part-way through the process, and any line drawn between "same species" and "different species" is somewhat arbitrary.</li>
+  <li><strong>Variation within a species.</strong> A species can show a wide range of phenotypes across its range, caused by both genes and environment, so two specimens may look like different species when they are not.</li>
+  <li><strong>Cryptic species.</strong> Some groups that look the same turn out, on DNA analysis, to be two or more species that do not interbreed. African elephants, once treated as one species, are now recognised as two: the savanna elephant and the forest elephant, a split supported by genetic evidence.</li>
+  <li><strong>Convergent evolution.</strong> Unrelated organisms living in similar environments can evolve similar structures (for example the streamlined body shapes of sharks and dolphins), which can mislead classification based on appearance.</li>
+  <li><strong>Limited samples.</strong> A new species may be known from only a few specimens, perhaps from a remote habitat such as the deep sea, so the range of variation is unknown.</li>
+  <li><strong>Hidden and microscopic life.</strong> Most microorganisms cannot yet be grown in the laboratory, so they are known only from DNA recovered from the environment.</li>
+  <li><strong>Scientists disagree.</strong> Taxonomists may weigh the same evidence differently, some grouping organisms together and others splitting them into more species.</li>
+</ul>
+
+<p>To identify a new species, a scientist collects specimens, compares them with the descriptions and type specimens of known species, and increasingly compares DNA sequences with those in databases. The new species is then formally described and named in a peer-reviewed publication.</p>
+
+<h3>3.1(iv) Gel electrophoresis to distinguish species</h3>
+
+<p>Gel electrophoresis separates molecules by size (and, for proteins, by charge) by moving them through a gel in an electric field. It can be used to compare DNA (or proteins) from different organisms. The more similar the pattern of bands, the more closely related the organisms are likely to be.</p>
+
+<p><strong>How it works for DNA:</strong></p>
+<ol>
+  <li>DNA is extracted from each sample. A specific region may be amplified first by the polymerase chain reaction (PCR) to make enough copies.</li>
+  <li>The DNA is cut into fragments using <strong>restriction enzymes</strong>, which cut at specific base sequences (recognition sites). Different sequences give fragments of different lengths.</li>
+  <li>The fragments are loaded into wells at one end of an agarose gel, which is covered in buffer solution.</li>
+  <li>A voltage is applied. DNA is negatively charged because of its phosphate groups, so the fragments move towards the <strong>positive electrode (anode)</strong>.</li>
+  <li>The gel acts like a mesh: <strong>smaller fragments move further</strong> in a given time than larger ones. A "ladder" of fragments of known length is run alongside to estimate sizes.</li>
+  <li>The DNA is made visible, for example with a stain or a fluorescent dye viewed under UV light, or with labelled DNA probes.</li>
+  <li>The banding patterns of different samples are compared.</li>
+</ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Comparing DNA Fragments by Gel Electrophoresis</text>
+  <defs>
+    <marker id="arrowG3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Electrodes -->
+  <text x="300" y="44" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">&#8722; Cathode (wells)</text>
+  <text x="300" y="290" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">+ Anode</text>
+  <!-- Gel -->
+  <rect x="90" y="52" width="420" height="220" rx="4" fill="#1a73e8" opacity="0.07" stroke="#1a73e8" stroke-width="1.2"/>
+  <!-- Wells -->
+  <rect x="115" y="60" width="50" height="8" fill="#1a1a2e" opacity="0.5"/>
+  <rect x="195" y="60" width="50" height="8" fill="#1a1a2e" opacity="0.5"/>
+  <rect x="275" y="60" width="50" height="8" fill="#1a1a2e" opacity="0.5"/>
+  <rect x="355" y="60" width="50" height="8" fill="#1a1a2e" opacity="0.5"/>
+  <rect x="435" y="60" width="50" height="8" fill="#1a1a2e" opacity="0.5"/>
+  <!-- Lane labels -->
+  <text x="140" y="84" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Ladder</text>
+  <text x="220" y="84" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Species A</text>
+  <text x="300" y="84" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Species B</text>
+  <text x="380" y="84" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Species C</text>
+  <text x="460" y="84" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Unknown</text>
+  <!-- Ladder bands -->
+  <rect x="120" y="100" width="40" height="4" fill="#7C3AED"/>
+  <rect x="120" y="130" width="40" height="4" fill="#7C3AED"/>
+  <rect x="120" y="160" width="40" height="4" fill="#7C3AED"/>
+  <rect x="120" y="190" width="40" height="4" fill="#7C3AED"/>
+  <rect x="120" y="220" width="40" height="4" fill="#7C3AED"/>
+  <rect x="120" y="250" width="40" height="4" fill="#7C3AED"/>
+  <!-- Species A -->
+  <rect x="200" y="112" width="40" height="4" fill="#16A34A"/>
+  <rect x="200" y="160" width="40" height="4" fill="#16A34A"/>
+  <rect x="200" y="205" width="40" height="4" fill="#16A34A"/>
+  <rect x="200" y="240" width="40" height="4" fill="#16A34A"/>
+  <!-- Species B -->
+  <rect x="280" y="112" width="40" height="4" fill="#D97706"/>
+  <rect x="280" y="175" width="40" height="4" fill="#D97706"/>
+  <rect x="280" y="205" width="40" height="4" fill="#D97706"/>
+  <rect x="280" y="240" width="40" height="4" fill="#D97706"/>
+  <!-- Species C -->
+  <rect x="360" y="98" width="40" height="4" fill="#DC2626"/>
+  <rect x="360" y="145" width="40" height="4" fill="#DC2626"/>
+  <rect x="360" y="185" width="40" height="4" fill="#DC2626"/>
+  <rect x="360" y="228" width="40" height="4" fill="#DC2626"/>
+  <!-- Unknown (matches A) -->
+  <rect x="440" y="112" width="40" height="4" fill="#1a73e8"/>
+  <rect x="440" y="160" width="40" height="4" fill="#1a73e8"/>
+  <rect x="440" y="205" width="40" height="4" fill="#1a73e8"/>
+  <rect x="440" y="240" width="40" height="4" fill="#1a73e8"/>
+  <!-- Size arrow -->
+  <path d="M60,100 L60,255" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowG3)"/>
+  <text x="50" y="178" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e" transform="rotate(-90,50,178)">Smaller fragments travel further</text>
+  <text x="552" y="140" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">A and B</text>
+  <text x="552" y="151" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">share 3 of 4</text>
+  <text x="552" y="162" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">bands; C shares</text>
+  <text x="552" y="173" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">none</text>
+</svg>
+</div>
+
+<p>In the diagram, the unknown sample has the same four bands as species A, so it is probably species A. Species A and B share three of their four bands, so they are likely to be closely related; species C shares no bands with A or B and is more distantly related. Patterns like this can be used to identify a specimen and to suggest which species diverged from each other most recently.</p>
+
+<p>Proteins can be compared in the same way. Electrophoresis of a protein found in many species (for example a blood protein or an enzyme) shows whether the versions differ in size or charge; similar proteins suggest similar genes and therefore a closer relationship.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Explain the direction of movement fully: DNA moves towards the <em>positive</em> electrode <em>because</em> its phosphate groups carry a negative charge. Electrophoresis compares fragment lengths, not base sequences; two fragments of the same length could still differ in sequence. That is one reason why DNA sequencing (3.1(v)) gives stronger evidence.
+</div>
+
+<h3>3.1(v) DNA sequencing and bioinformatics</h3>
+
+<p><strong>DNA sequencing</strong> works out the exact order of bases in a length of DNA. Automated, high-throughput methods now sequence DNA quickly and cheaply, and whole genomes of many species have been sequenced. To compare species, biologists usually sequence the same gene in each species. Useful genes are ones that every species in the group has and that change at a suitable rate, for example:</p>
+<ul>
+  <li><strong>ribosomal RNA genes</strong>, present in every cellular organism and changing slowly, so useful for comparing very distant groups;</li>
+  <li><strong>mitochondrial genes</strong> such as cytochrome oxidase I (used in "DNA barcoding" of animals), which change faster and so separate closely related species.</li>
+</ul>
+
+<div class="definition">
+  <strong>Bioinformatics:</strong> The use of computer software, statistics and large databases to store, search and analyse biological data, such as DNA and protein sequences.
+</div>
+
+<p>Bioinformatics makes sequence data useful. Sequences from laboratories around the world are stored in shared online databases. Software lines up (aligns) the sequences from different species and counts the positions where the bases differ. The underlying logic is:</p>
+<ul>
+  <li>mutations build up in DNA over time;</li>
+  <li>two species that split from a common ancestor recently have had less time to build up differences;</li>
+  <li>so <strong>the fewer differences in a sequence, the more closely related two species are</strong>.</li>
+</ul>
+
+<p>The results are used to draw <strong>phylogenetic trees</strong> showing the probable evolutionary relationships. If the rate of mutation in a gene is roughly constant, the number of differences can also be used as a "molecular clock" to estimate when two lineages separated. An unknown specimen can be identified by comparing its sequence with the database: a close match to a known sequence identifies the species, while a sequence unlike any on record may indicate a new species.</p>
+
+<table>
+  <tr><th>Feature</th><th>Gel electrophoresis</th><th>DNA sequencing and bioinformatics</th></tr>
+  <tr><td>What is compared</td><td>Lengths of DNA fragments (band positions)</td><td>The exact order of bases</td></tr>
+  <tr><td>Level of detail</td><td>Lower; different sequences can give fragments of the same length</td><td>Highest; every base difference is detected</td></tr>
+  <tr><td>Output</td><td>Banding pattern to compare by eye or by measurement</td><td>Counts of differences, phylogenetic trees, estimated divergence times</td></tr>
+  <tr><td>Uses</td><td>Quick identification; comparing a few samples</td><td>Detailed evolutionary relationships; identifying cryptic and new species</td></tr>
+</table>
+
+<p>Molecular evidence has changed several classifications that were based on appearance alone, because it is less affected by convergent evolution and gives numerical data that can be analysed objectively.</p>
+
+<h3>3.1(vi) Validating new evidence: journals, peer review and conferences</h3>
+
+<p>The theory of evolution by natural selection is supported by a huge body of evidence, and new evidence (for example new fossils or new DNA comparisons) is added all the time. Before new evidence is accepted by the scientific community, it passes through several checks:</p>
+
+<ul>
+  <li><strong>Scientific journals:</strong> scientists publish their methods, data and conclusions in journals. Publication makes the work available to other scientists, who can repeat the investigations to see whether the results are reproducible.</li>
+  <li><strong>Peer review:</strong> before publication, the journal sends the paper to other experts in the same field (usually anonymously). They check that the methods are valid, that the data support the conclusions, that the work is original and that other research has been properly acknowledged. The paper may be accepted, returned for changes or rejected. Peer review reduces the chance of flawed or fraudulent work being published, although it does not guarantee that the conclusions are correct.</li>
+  <li><strong>Scientific conferences:</strong> researchers present new findings, often before full publication, to an audience of other scientists. The findings can be questioned and discussed, and conferences help researchers share ideas and form collaborations.</li>
+</ul>
+
+<p>Through this process, new evidence that is repeatedly confirmed by independent groups becomes part of the accepted picture. Evidence that cannot be reproduced is rejected. This is how the theory of evolution has been refined over time (for example by adding genetics and molecular data to Darwin's original ideas) while its central principle has remained well supported.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When asked why peer review matters, give its purpose (checking validity, reliability and originality before publication) and its limits (reviewers may miss errors or be biased; it cannot prove a conclusion is true). Distinguish <em>repeatable</em> (the same scientist gets the same results) from <em>reproducible</em> (other scientists get the same results using the published method).
+</div>
+
+<h3>3.1(vii) The three-domain model and the five-kingdom model</h3>
+
+<p>In the <strong>five-kingdom model</strong>, all organisms were placed in one of five kingdoms, largely on the basis of cell structure, nutrition and body organisation:</p>
+
+<table>
+  <tr><th>Kingdom</th><th>Key features</th><th>Examples</th></tr>
+  <tr><td>Prokaryotae (Monera)</td><td>Prokaryotic cells: no nucleus, no membrane-bound organelles, 70S ribosomes, circular DNA</td><td>All bacteria (at the time, including organisms now called archaea)</td></tr>
+  <tr><td>Protoctista</td><td>Eukaryotic; mostly single-celled; organisms that do not fit the other eukaryotic kingdoms</td><td><em>Amoeba</em>, <em>Plasmodium</em>, algae</td></tr>
+  <tr><td>Fungi</td><td>Eukaryotic; heterotrophic, absorbing food after digesting it outside the body; cell walls of chitin; often made of hyphae</td><td>Yeasts, moulds, mushrooms</td></tr>
+  <tr><td>Plantae</td><td>Eukaryotic; multicellular; photosynthetic; cellulose cell walls</td><td>Mosses, ferns, flowering plants</td></tr>
+  <tr><td>Animalia</td><td>Eukaryotic; multicellular; heterotrophic, usually ingesting food; no cell walls; nervous coordination</td><td>Insects, fish, mammals</td></tr>
+</table>
+
+<p>In the late 1970s, Carl Woese and colleagues compared the base sequences of <strong>ribosomal RNA</strong> from many prokaryotes. They found that one group of prokaryotes, many of them living in extreme environments such as hot springs or very salty water, differed from other bacteria in their rRNA about as much as either group differed from eukaryotes. Woese named this group the archaea, and in 1990 he proposed the <strong>three-domain model</strong>, placing a new rank, the domain, above kingdom:</p>
+
+<ul>
+  <li><strong>Bacteria</strong></li>
+  <li><strong>Archaea</strong></li>
+  <li><strong>Eukarya</strong> (all eukaryotes: protoctists, fungi, plants and animals)</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 290" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Five Kingdoms vs Three Domains</text>
+  <!-- Left: five kingdoms -->
+  <text x="150" y="46" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Five-kingdom model</text>
+  <rect x="30" y="60" width="240" height="34" rx="6" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="150" y="76" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Prokaryotae</text>
+  <text x="150" y="88" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">all prokaryotes in one kingdom</text>
+  <rect x="30" y="104" width="240" height="26" rx="6" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="1"/>
+  <text x="150" y="121" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Protoctista</text>
+  <rect x="30" y="136" width="240" height="26" rx="6" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="1"/>
+  <text x="150" y="153" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Fungi</text>
+  <rect x="30" y="168" width="240" height="26" rx="6" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="1"/>
+  <text x="150" y="185" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Plantae</text>
+  <rect x="30" y="200" width="240" height="26" rx="6" fill="#16A34A" opacity="0.12" stroke="#16A34A" stroke-width="1"/>
+  <text x="150" y="217" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Animalia</text>
+  <text x="150" y="246" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Four eukaryotic kingdoms vs one prokaryotic kingdom</text>
+  <!-- Divider -->
+  <line x1="300" y1="40" x2="300" y2="270" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- Right: three-domain tree -->
+  <text x="450" y="46" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Three-domain model</text>
+  <!-- root -->
+  <circle cx="450" cy="250" r="4" fill="#1a1a2e"/>
+  <text x="450" y="268" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Common ancestor</text>
+  <!-- trunk splits: Bacteria first, then Archaea + Eukarya -->
+  <path d="M450,250 L360,90" fill="none" stroke="#DC2626" stroke-width="2"/>
+  <path d="M450,250 L490,170" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <path d="M490,170 L450,90" fill="none" stroke="#D97706" stroke-width="2"/>
+  <path d="M490,170 L540,90" fill="none" stroke="#16A34A" stroke-width="2"/>
+  <circle cx="490" cy="170" r="3" fill="#1a1a2e"/>
+  <text x="360" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Bacteria</text>
+  <text x="450" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Archaea</text>
+  <text x="540" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Eukarya</text>
+  <text x="540" y="94" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">(protoctists, fungi,</text>
+  <text x="540" y="103" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">plants, animals)</text>
+  <text x="505" y="185" font-family="system-ui" font-size="8" fill="#666">Archaea and Eukarya share</text>
+  <text x="505" y="196" font-family="system-ui" font-size="8" fill="#666">a more recent ancestor</text>
+</svg>
+</div>
+
+<p><strong>Evidence supporting the three-domain model.</strong> The archaea look like bacteria under the microscope (small, no nucleus, circular DNA), which is why they were first grouped with them. At the molecular level, though, they differ from bacteria in many ways, and in several respects they resemble eukaryotes:</p>
+
+<table>
+  <tr><th>Feature</th><th>Bacteria</th><th>Archaea</th><th>Eukarya</th></tr>
+  <tr><td>rRNA base sequences</td><td>Distinct bacterial pattern</td><td>Distinct from both other groups</td><td>Distinct eukaryotic pattern</td></tr>
+  <tr><td>Nucleus and membrane-bound organelles</td><td>Absent</td><td>Absent</td><td>Present</td></tr>
+  <tr><td>Cell wall</td><td>Contains peptidoglycan (murein)</td><td>No peptidoglycan</td><td>No peptidoglycan (cellulose or chitin if present)</td></tr>
+  <tr><td>Membrane lipids</td><td>Unbranched fatty acids joined to glycerol by ester bonds</td><td>Branched chains joined to glycerol by ether bonds</td><td>Unbranched fatty acids joined by ester bonds</td></tr>
+  <tr><td>RNA polymerase</td><td>One simple type</td><td>More complex, similar to eukaryotic enzymes</td><td>Several complex types</td></tr>
+  <tr><td>Histone proteins with DNA</td><td>Absent</td><td>Present in many</td><td>Present</td></tr>
+  <tr><td>First amino acid of proteins</td><td>Formyl-methionine</td><td>Methionine</td><td>Methionine</td></tr>
+  <tr><td>Growth inhibited by common antibacterial antibiotics (e.g. streptomycin)</td><td>Yes</td><td>No</td><td>No</td></tr>
+</table>
+
+<p>Taken together, this evidence shows that the differences among prokaryotes are far greater than the differences between, say, plants and animals. Putting all prokaryotes in one kingdom alongside four eukaryotic kingdoms therefore misrepresents the real pattern of evolutionary relationships. The three-domain model reflects the idea that there are three fundamentally different lineages of cellular life, and that archaea and eukaryotes share a more recent common ancestor with each other than either does with bacteria.</p>
+
+<p><strong>The role of the scientific community.</strong> Woese's proposal was not accepted at once. Many biologists were reluctant to abandon a well-established system on the basis of a new molecular technique. The evidence was published in peer-reviewed journals, debated at conferences and tested by other research groups, who sequenced more genes from more organisms and found biochemical differences (such as the membrane lipids) that pointed the same way. As independent evidence built up, the three-domain model became widely accepted. The debate is still going on: some recent genome studies suggest that eukaryotes may have arisen from within the archaea, which would mean only two primary domains. This is a good example of how scientific models are provisional and are revised when new evidence is validated.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Archaea are <em>not</em> a type of bacteria, even though both are prokaryotes. When asked to "evaluate" the three-domain model, give evidence for it (rRNA sequences, lipids, cell walls, RNA polymerase, histones) and then comment on how the scientific community tested and validated it, and on any remaining uncertainty.
+</div>
+
+<!-- ============================================================ -->
+<h2>3.2 Natural Selection</h2>
+<!-- ============================================================ -->
+
+<h3>3.2(i) Evolution by natural selection</h3>
+
+<div class="definition">
+  <strong>Natural selection:</strong> The process by which individuals whose inherited characteristics make them better suited to their environment are more likely to survive and reproduce, so the alleles responsible become more common in the population over generations.<br>
+  <strong>Evolution:</strong> A change in the allele frequencies of a population over time.<br>
+  <strong>Adaptation:</strong> An inherited feature that increases an organism's chance of surviving and reproducing in its environment.
+</div>
+
+<p>Natural selection needs <strong>variation</strong>, and that variation must be at least partly genetic. New alleles arise by <strong>mutation</strong>; meiosis (crossing over and independent assortment) and random fertilisation then produce new combinations of alleles in every generation. The sequence of events is:</p>
+
+<ol>
+  <li>Individuals in a population show variation, and some of this variation is caused by differences in their alleles.</li>
+  <li>More offspring are produced than the environment can support, so individuals compete for limited resources such as food, water, light, territory or mates.</li>
+  <li>Environmental factors (predators, disease, climate, competition) act as <strong>selection pressures</strong>.</li>
+  <li>Individuals with alleles that give an advantageous phenotype are more likely to survive to reproductive age and to have more offspring.</li>
+  <li>These individuals pass on the advantageous alleles, so the <strong>frequency of those alleles increases</strong> in the next generation.</li>
+  <li>Over many generations, this builds up adaptations to the environment. If the environment changes, different alleles may be favoured.</li>
+</ol>
+
+<p>Natural selection does not create variation; it acts on variation that already exists. A mutation is random with respect to whether it will be useful: organisms do not produce the mutations they "need".</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Always use the word <em>allele</em> and finish with "allele frequency increases in the population". Examiners do not credit answers that say an organism "adapted" or "evolved" during its lifetime, or that individuals change "in order to" survive. Individuals do not evolve; populations do.
+</div>
+
+<h3>3.2(ii) Niches and adaptations</h3>
+
+<div class="definition">
+  <strong>Niche:</strong> The role of a species in its habitat: everything it needs and does, including what it feeds on, what feeds on it, when and where it is active, and the range of conditions it can tolerate.<br>
+  <strong>Habitat:</strong> The place where an organism lives.
+</div>
+
+<p>Each species is adapted to its own niche. According to the <strong>competitive exclusion principle</strong>, two species cannot occupy exactly the same niche in the same habitat for long: one will out-compete the other. Similar species living together usually differ in some part of their niche, for example feeding on different sized seeds or feeding at different heights in a tree.</p>
+
+<p>Adaptations that suit an organism to its niche fall into three groups:</p>
+
+<table>
+  <tr><th>Type</th><th>Meaning</th><th>Examples</th></tr>
+  <tr><td><strong>Anatomical</strong> (structural)</td><td>Features of the body's structure, visible externally or internally</td><td>Marram grass on sand dunes has rolled leaves, stomata sunk in pits and hairs that trap moist air, reducing water loss. The thick fur and small ears of the Arctic fox reduce heat loss. The shapes of finch beaks match the size and type of seed eaten.</td></tr>
+  <tr><td><strong>Physiological</strong></td><td>Processes inside the body, such as metabolism and body chemistry</td><td>Desert mammals such as the kangaroo rat produce very concentrated urine, so they lose little water. Some bacteria and plants make enzymes that break down or tolerate toxins. Hibernating mammals lower their metabolic rate in winter.</td></tr>
+  <tr><td><strong>Behavioural</strong></td><td>The way an organism acts, whether inherited or learned</td><td>Many desert animals are nocturnal or shelter in burrows during the heat of the day. Birds migrate to avoid winter food shortage. Courtship displays attract a mate of the same species.</td></tr>
+</table>
+
+<p>Many adaptations combine all three. A desert mammal may have large ears to radiate heat (anatomical), concentrated urine (physiological) and nocturnal habits (behavioural). In exam questions you may be asked to classify an unfamiliar adaptation: ask whether it is a structure, a process inside the body, or something the organism does.</p>
+
+<h3>3.2(iii) Reproductive isolation and speciation</h3>
+
+<div class="definition">
+  <strong>Speciation:</strong> The formation of a new species. It happens when populations of one species become <strong>reproductively isolated</strong>, so that genes (alleles) no longer flow between them. The populations then change independently until they can no longer interbreed to produce fertile offspring.
+</div>
+
+<p>Once gene flow stops, the two populations change separately because:</p>
+<ul>
+  <li>different <strong>mutations</strong> arise in each population;</li>
+  <li>they may face different <strong>selection pressures</strong>, so natural selection favours different alleles;</li>
+  <li>in small populations, <strong>genetic drift</strong> (chance changes in allele frequency) can shift the populations in different directions.</li>
+</ul>
+
+<p><strong>Mechanisms of reproductive isolation</strong> can be grouped by whether they act before or after a zygote forms:</p>
+
+<table>
+  <tr><th>Stage</th><th>Mechanism</th><th>What happens</th></tr>
+  <tr><td rowspan="5">Before fertilisation (prezygotic)</td><td>Geographical</td><td>A physical barrier (sea, mountain range, river) keeps populations apart</td></tr>
+  <tr><td>Ecological (habitat)</td><td>Populations live in different habitats in the same area, so rarely meet</td></tr>
+  <tr><td>Seasonal (temporal)</td><td>Populations breed or flower at different times of year or day</td></tr>
+  <tr><td>Behavioural</td><td>Courtship rituals, songs or calls differ, so individuals do not recognise each other as mates</td></tr>
+  <tr><td>Mechanical and gametic</td><td>Reproductive organs do not fit together, or sperm cannot fertilise the egg (for example pollen fails to germinate on the stigma)</td></tr>
+  <tr><td rowspan="2">After fertilisation (postzygotic)</td><td>Hybrid inviability</td><td>The hybrid embryo fails to develop or dies young</td></tr>
+  <tr><td>Hybrid sterility</td><td>The hybrid survives but cannot produce functional gametes, often because its chromosomes cannot pair in meiosis (for example the mule)</td></tr>
+</table>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Allopatric vs Sympatric Speciation</text>
+  <defs>
+    <marker id="arrowS3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Column headings -->
+  <text x="150" y="46" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Allopatric (different places)</text>
+  <text x="450" y="46" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Sympatric (same place)</text>
+  <line x1="300" y1="36" x2="300" y2="290" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- Allopatric stage 1 -->
+  <rect x="60" y="58" width="180" height="50" rx="8" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1"/>
+  <circle cx="90" cy="83" r="5" fill="#1a73e8"/><circle cx="120" cy="78" r="5" fill="#1a73e8"/><circle cx="150" cy="88" r="5" fill="#1a73e8"/><circle cx="180" cy="80" r="5" fill="#1a73e8"/><circle cx="210" cy="86" r="5" fill="#1a73e8"/>
+  <text x="150" y="122" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">One population, alleles flow freely</text>
+  <path d="M150,128 L150,142" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowS3)"/>
+  <!-- Allopatric stage 2: barrier -->
+  <rect x="60" y="146" width="180" height="50" rx="8" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1"/>
+  <rect x="143" y="146" width="14" height="50" fill="#D97706" opacity="0.5"/>
+  <text x="150" y="208" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">Geographical barrier, e.g. sea or mountains</text>
+  <circle cx="85" cy="166" r="5" fill="#1a73e8"/><circle cx="115" cy="176" r="5" fill="#1a73e8"/>
+  <circle cx="185" cy="166" r="5" fill="#16A34A"/><circle cx="215" cy="176" r="5" fill="#16A34A"/>
+  <path d="M150,214 L150,228" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowS3)"/>
+  <!-- Allopatric stage 3 -->
+  <rect x="60" y="232" width="80" height="40" rx="8" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="1"/>
+  <text x="100" y="256" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Species 1</text>
+  <rect x="160" y="232" width="80" height="40" rx="8" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="1"/>
+  <text x="200" y="256" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Species 2</text>
+  <text x="150" y="288" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Different selection pressures, mutations, drift</text>
+  <!-- Sympatric stage 1 -->
+  <rect x="360" y="58" width="180" height="50" rx="8" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1"/>
+  <circle cx="390" cy="83" r="5" fill="#1a73e8"/><circle cx="420" cy="78" r="5" fill="#1a73e8"/><circle cx="450" cy="88" r="5" fill="#1a73e8"/><circle cx="480" cy="80" r="5" fill="#1a73e8"/><circle cx="510" cy="86" r="5" fill="#1a73e8"/>
+  <text x="450" y="122" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">One population in one area</text>
+  <path d="M450,128 L450,142" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowS3)"/>
+  <!-- Sympatric stage 2 -->
+  <rect x="360" y="146" width="180" height="50" rx="8" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1"/>
+  <circle cx="390" cy="166" r="5" fill="#1a73e8"/><circle cx="420" cy="178" r="5" fill="#1a73e8"/><circle cx="455" cy="168" r="5" fill="#1a73e8"/>
+  <circle cx="480" cy="178" r="5" fill="#7C3AED"/><circle cx="510" cy="166" r="5" fill="#7C3AED"/>
+  <text x="450" y="208" text-anchor="middle" font-family="system-ui" font-size="8" fill="#7C3AED">No barrier: polyploidy, behaviour, timing, niche</text>
+  <path d="M450,214 L450,228" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowS3)"/>
+  <!-- Sympatric stage 3 -->
+  <rect x="360" y="232" width="80" height="40" rx="8" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="1"/>
+  <text x="400" y="256" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Species 1</text>
+  <rect x="460" y="232" width="80" height="40" rx="8" fill="#7C3AED" opacity="0.15" stroke="#7C3AED" stroke-width="1"/>
+  <text x="500" y="256" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#7C3AED">Species 2</text>
+  <text x="450" y="288" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Gene flow stops within the same area</text>
+</svg>
+</div>
+
+<p><strong>Allopatric speciation</strong> occurs when a population is split by a <strong>geographical barrier</strong>. Examples of barriers include the formation of a mountain range or river, a rise in sea level cutting off an island, or a small group of organisms colonising an island. The finches of the Galápagos Islands are a classic case: birds that reached different islands were isolated from one another, and each population adapted to the food on its own island (beak size and shape suited to different seeds or insects). If the populations later meet again, they may no longer be able to interbreed.</p>
+
+<p><strong>Sympatric speciation</strong> occurs when populations living in the same area become reproductively isolated without a physical barrier. Ways this can happen include:</p>
+<ul>
+  <li><strong>Polyploidy</strong>, especially in plants. An error in cell division gives offspring with extra whole sets of chromosomes. A polyploid plant may be unable to produce fertile offspring with the parent species, so a new species can arise in a single generation. Common cord-grass (<em>Spartina anglica</em>) arose in Britain in this way: a sterile hybrid formed between a native and an introduced cord-grass, and a doubling of its chromosome number then made it fertile, producing a new species that cannot breed with either parent.</li>
+  <li><strong>Ecological isolation</strong>: part of a population begins to use a different food source or microhabitat. In North America, some apple maggot flies (<em>Rhagoletis pomonella</em>) lay eggs on apples rather than on their original host, hawthorn. Because the flies mate on the fruit where they developed, and the two fruits ripen at different times, gene flow between the groups has been greatly reduced.</li>
+  <li><strong>Behavioural or seasonal isolation</strong>: a mutation that changes courtship behaviour or breeding time can stop one group from mating with the rest.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The key idea in every speciation answer is that <em>gene flow stops</em> because the populations are reproductively isolated. Then explain why the populations change: different mutations, different selection pressures and genetic drift change allele frequencies separately in each group. Finish with the test for a new species: the populations can no longer interbreed to produce fertile offspring. "Allopatric" means a geographical barrier is involved; "sympatric" means no geographical barrier.
+</div>
+
+<h3>3.2(iv) The evolutionary race between pathogens and medicines</h3>
+
+<p>Pathogens such as bacteria, viruses and protoctists evolve by natural selection like any other organism. They reproduce very quickly and exist in huge numbers, so resistance mutations arise often and spread quickly. When we develop a drug to treat a disease, the drug becomes a strong selection pressure on the pathogen:</p>
+
+<ol>
+  <li>Within a large pathogen population, a few individuals already carry a random mutation that makes them resistant to the drug.</li>
+  <li>The drug kills or inhibits the susceptible pathogens.</li>
+  <li>The resistant individuals survive, face less competition and multiply.</li>
+  <li>The resistance allele is passed on, so its frequency in the pathogen population increases, and the drug becomes less effective.</li>
+</ol>
+
+<p>In bacteria, resistance genes are often carried on <strong>plasmids</strong>, which can be passed between bacteria, even between different species, speeding up the spread of resistance. Examples of this race include:</p>
+<ul>
+  <li><strong>Antibiotic resistance</strong>: MRSA (methicillin-resistant <em>Staphylococcus aureus</em>) and multidrug-resistant tuberculosis are resistant to several antibiotics and are harder and more expensive to treat.</li>
+  <li><strong>Antiviral resistance</strong>: HIV mutates rapidly, so resistance to a single antiviral drug appears quickly. Patients are therefore given a combination of drugs at once, because it is much less likely that one virus will carry mutations against all of them.</li>
+  <li><strong>Antimalarial resistance</strong>: many strains of the malaria parasite <em>Plasmodium falciparum</em> have become resistant to chloroquine, so other drugs, often used in combination, have replaced it in many regions.</li>
+</ul>
+
+<p>The "race" is that scientists must keep developing new medicines, while each new medicine selects for pathogens that resist it. Ways to slow the evolution of resistance include:</p>
+<ul>
+  <li>prescribing antibiotics only when they are needed, and never for viral infections;</li>
+  <li>patients completing the prescribed course, so that fewer partly resistant bacteria survive;</li>
+  <li>using combinations of drugs;</li>
+  <li>reducing the routine use of antibiotics in farm animals;</li>
+  <li>good hygiene in hospitals to stop resistant strains spreading;</li>
+  <li>investing in research into new drugs and alternative treatments.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The most common error in this topic is writing that bacteria "become resistant" or "build up immunity" to an antibiotic. The antibiotic does not cause the mutation: the resistance allele was already present by chance, and the antibiotic <em>selects</em> for it. Also, bacteria do not have an immune system, so "immunity" is the wrong word.
+</div>
+
+<!-- ============================================================ -->
+<h2>3.3 Biodiversity</h2>
+<!-- ============================================================ -->
+
+<h3>3.3(i) Assessing biodiversity at different scales</h3>
+
+<div class="definition">
+  <strong>Biodiversity:</strong> The variety of life in an area. It can be considered at the level of habitats, of species and of genes.<br>
+  <strong>Species richness:</strong> The number of different species in an area.<br>
+  <strong>Species evenness:</strong> How evenly the individuals are spread between those species.
+</div>
+
+<p><strong>Within a habitat, at the species level.</strong> Counting species (richness) is a start, but it ignores how common each species is. A habitat where one species makes up almost all the individuals is less diverse than one with the same number of species in similar numbers. An <strong>index of diversity</strong> takes both richness and evenness into account. The formula used in this specification is:</p>
+
+<div class="equation">
+  D = N(N &minus; 1) / &Sigma;n(n &minus; 1)
+</div>
+
+<p>where <strong>N</strong> is the total number of organisms of all species, <strong>n</strong> is the number of organisms of one species, and <strong>&Sigma;</strong> means "the sum of". The lowest possible value is 1 (only one species present); the higher the value of D, the greater the diversity.</p>
+
+<p><strong>Worked example.</strong> Two ponds were sampled randomly using the same method. Each sample contained 30 invertebrates from 5 species.</p>
+
+<table>
+  <tr><th>Species</th><th>Pond A: n</th><th>Pond A: n(n &minus; 1)</th><th>Pond B: n</th><th>Pond B: n(n &minus; 1)</th></tr>
+  <tr><td>Water boatman</td><td>10</td><td>90</td><td>26</td><td>650</td></tr>
+  <tr><td>Mayfly nymph</td><td>8</td><td>56</td><td>1</td><td>0</td></tr>
+  <tr><td>Freshwater shrimp</td><td>6</td><td>30</td><td>1</td><td>0</td></tr>
+  <tr><td>Pond snail</td><td>4</td><td>12</td><td>1</td><td>0</td></tr>
+  <tr><td>Caddis fly larva</td><td>2</td><td>2</td><td>1</td><td>0</td></tr>
+  <tr><td><strong>Total</strong></td><td><strong>N = 30</strong></td><td><strong>&Sigma; = 190</strong></td><td><strong>N = 30</strong></td><td><strong>&Sigma; = 650</strong></td></tr>
+</table>
+
+<p>For both ponds, N(N &minus; 1) = 30 &times; 29 = 870.</p>
+<ul>
+  <li>Pond A: D = 870 / 190 = <strong>4.58</strong> (to 3 significant figures)</li>
+  <li>Pond B: D = 870 / 650 = <strong>1.34</strong> (to 3 significant figures)</li>
+</ul>
+
+<p>Both ponds have the same species richness (5 species), but pond A has a much higher index of diversity because its individuals are spread more evenly between the species. Pond B is dominated by one species. Note that a species with only one individual contributes 1 &times; 0 = 0 to the sum.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Same Richness, Different Evenness</text>
+  <!-- Axes pond A -->
+  <line x1="60" y1="210" x2="270" y2="210" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="60" y1="50" x2="60" y2="210" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="165" y="44" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Pond A: D = 4.58</text>
+  <!-- scale: 5 px per individual -->
+  <rect x="75" y="160" width="30" height="50" fill="#16A34A" opacity="0.5"/>
+  <rect x="113" y="170" width="30" height="40" fill="#16A34A" opacity="0.5"/>
+  <rect x="151" y="180" width="30" height="30" fill="#16A34A" opacity="0.5"/>
+  <rect x="189" y="190" width="30" height="20" fill="#16A34A" opacity="0.5"/>
+  <rect x="227" y="200" width="30" height="10" fill="#16A34A" opacity="0.5"/>
+  <text x="90" y="155" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">10</text>
+  <text x="128" y="165" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">8</text>
+  <text x="166" y="175" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">6</text>
+  <text x="204" y="185" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">4</text>
+  <text x="242" y="195" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">2</text>
+  <text x="165" y="226" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">5 species</text>
+  <!-- Axes pond B -->
+  <line x1="330" y1="210" x2="540" y2="210" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="330" y1="50" x2="330" y2="210" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="435" y="44" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Pond B: D = 1.34</text>
+  <rect x="345" y="80" width="30" height="130" fill="#DC2626" opacity="0.45"/>
+  <rect x="383" y="205" width="30" height="5" fill="#DC2626" opacity="0.45"/>
+  <rect x="421" y="205" width="30" height="5" fill="#DC2626" opacity="0.45"/>
+  <rect x="459" y="205" width="30" height="5" fill="#DC2626" opacity="0.45"/>
+  <rect x="497" y="205" width="30" height="5" fill="#DC2626" opacity="0.45"/>
+  <text x="360" y="75" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">26</text>
+  <text x="398" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">1</text>
+  <text x="436" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">1</text>
+  <text x="474" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">1</text>
+  <text x="512" y="200" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">1</text>
+  <text x="435" y="226" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">5 species</text>
+  <text x="40" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666" transform="rotate(-90,40,130)">Number of individuals</text>
+  <text x="300" y="248" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Both samples: N = 30, 5 species. Only evenness differs.</text>
+</svg>
+</div>
+
+<p><strong>Sampling principles.</strong> It is almost never possible to count every organism in a habitat, so a sample is taken. For the sample to represent the whole habitat:</p>
+<ul>
+  <li>sampling sites should be chosen <strong>at random</strong> (for example using random number coordinates on a grid) to avoid bias from choosing "interesting" spots;</li>
+  <li>enough samples should be taken to give a reliable mean and to include rarer species;</li>
+  <li>the same method, sample size and time of day or year should be used when habitats are being compared.</li>
+</ul>
+
+<p><strong>Within a species, at the genetic level.</strong> Genetic diversity is the variety of alleles in the <strong>gene pool</strong> of a population (all the alleles of all the genes present in all the individuals). It can be assessed by finding how many different alleles there are for particular genes, or what proportion of genes have more than one allele. Today this is usually done by comparing DNA sequences or DNA fragment patterns from many individuals.</p>
+
+<p>Genetic diversity matters because a population with many alleles is more likely to contain individuals that can survive a new disease or a change in the environment. Small or isolated populations tend to lose alleles through genetic drift and inbreeding. The cheetah is a well-known example of a species with very low genetic diversity, thought to be the result of its population passing through a severe reduction in numbers (a bottleneck) in the past.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In a calculation, write out N, the n(n &minus; 1) value for each species and the sum before dividing, so you can gain method marks even if you slip. Give the answer to a sensible number of significant figures. When you "compare" two diversity indices, state which is higher, give both values, and link the difference to evenness and/or richness. Do not confuse this formula with other versions of a diversity index, where the scale runs from 0 to 1.
+</div>
+
+<h3>3.3(ii) Why maintain biodiversity: ethical and economic reasons</h3>
+
+<p><strong>Ethical reasons</strong> are about what people believe is right:</p>
+<ul>
+  <li>Every species has <strong>intrinsic value</strong>, a right to exist, whether or not it is useful to humans.</li>
+  <li>Humans have a responsibility (stewardship) to care for the planet, because much of the present loss of biodiversity is caused by human activity.</li>
+  <li>Future generations should be able to enjoy and benefit from the same variety of life.</li>
+  <li>Many people value nature for aesthetic, cultural or religious reasons.</li>
+</ul>
+
+<p><strong>Economic reasons</strong> come from the goods and services that ecosystems provide to people free of charge, called <strong>ecosystem services</strong>:</p>
+
+<table>
+  <tr><th>Type of service</th><th>Examples</th></tr>
+  <tr><td>Provisioning (products)</td><td>Food, timber, fibres and fuel. Medicines: aspirin was developed from compounds found in willow bark; the anti-cancer drug paclitaxel (Taxol) was first obtained from the Pacific yew; vincristine comes from the Madagascar periwinkle. Wild relatives of crops carry alleles (for example for disease resistance) that can be bred into crop plants.</td></tr>
+  <tr><td>Regulating</td><td>Pollination of crops by insects; natural pest control by predators; purification of water by wetlands; flood control; absorption of carbon dioxide by forests and oceans.</td></tr>
+  <tr><td>Supporting</td><td>Soil formation, decomposition and nutrient cycling, which all other services depend on.</td></tr>
+  <tr><td>Cultural</td><td>Tourism and ecotourism, recreation, education and scientific research.</td></tr>
+</table>
+
+<p>Ecosystems with high biodiversity also tend to be more stable: if one species declines, others can often fill its role. Losing species can therefore damage the services an ecosystem provides, sometimes at great cost to replace, and species that have never been studied may hold undiscovered medicines or genes.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Questions often say "discuss" or "explain" reasons for conserving biodiversity. Keep ethical and economic reasons clearly separate and give a specific example for each economic point; "it is useful" earns little credit on its own.
+</div>
+
+<h3>3.3(iii) Ex-situ and in-situ conservation</h3>
+
+<div class="definition">
+  <strong>In-situ conservation:</strong> Protecting species in their natural habitat, for example in national parks, nature reserves and marine protected areas.<br>
+  <strong>Ex-situ conservation:</strong> Protecting species away from their natural habitat, for example in zoos, botanic gardens and seed banks.
+</div>
+
+<p><strong>Zoos</strong> contribute to conservation in several ways:</p>
+<ul>
+  <li><strong>Captive breeding programmes</strong> increase the numbers of endangered animals. Zoos keep breeding records (studbooks) and exchange animals between zoos to avoid inbreeding and keep as much genetic diversity as possible.</li>
+  <li><strong>Reintroduction</strong> of captive-bred animals to the wild, for example the Arabian oryx, which had become extinct in the wild and was returned to parts of the Arabian peninsula from captive populations.</li>
+  <li><strong>Education</strong> of the public and <strong>research</strong> into the biology, behaviour and health of species.</li>
+</ul>
+
+<p><strong>Seed banks</strong>, such as the Millennium Seed Bank run by the Royal Botanic Gardens, Kew, store seeds of wild plants. Seeds are cleaned, dried to a low water content and stored at a low temperature (around &minus;20&nbsp;&deg;C), which slows their metabolism so they stay viable for many years. Samples are germinated from time to time to check they are still alive, and fresh seed is collected when viability falls. A seed bank stores a large amount of genetic variety in a small space at relatively low cost, and seeds can be used for research, habitat restoration or reintroduction.</p>
+
+<p><strong>Protected habitats</strong> (in-situ conservation) include national parks, Sites of Special Scientific Interest (SSSIs), nature reserves and marine protected areas. They may be managed by controlling grazing, removing invasive species, restricting development, fishing or hunting, and creating corridors that link separate fragments of habitat.</p>
+
+<table>
+  <tr><th>Method</th><th>Advantages</th><th>Issues and disadvantages</th></tr>
+  <tr><td>Zoos (ex situ)</td><td>Protection from predators, poaching and disease; veterinary care; managed breeding can increase numbers quickly; a back-up if the wild population is lost; education and research</td><td>Expensive; small captive populations have limited genetic diversity and risk inbreeding; animals may behave abnormally or lose skills needed in the wild (finding food, avoiding predators); reintroduction fails if the original habitat has not been restored or the threat remains; ethical concerns about keeping animals in captivity</td></tr>
+  <tr><td>Seed banks (ex situ)</td><td>Many species and much genetic diversity stored cheaply in a small space; seeds remain viable for a long time; protects against extinction in the wild</td><td>Some seeds (for example those of many tropical trees) cannot survive drying and freezing; samples may not represent the whole gene pool; stored seeds do not evolve alongside changing conditions and pests; viability must be tested regularly</td></tr>
+  <tr><td>Protected habitats (in situ)</td><td>The species stays in its natural environment, keeping its natural behaviour and interactions; the whole ecosystem, including many other species, is protected; populations continue to evolve</td><td>Difficult to protect large areas from poaching, illegal logging and pollution; conflict with local people who need land or resources; habitats may be small and fragmented; climate change can make a reserve unsuitable; can be expensive to manage and patrol</td></tr>
+</table>
+
+<p>In practice, the two approaches work best together: ex-situ methods act as a safety net and a source of individuals, while in-situ protection ensures there is a habitat for them to return to.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> An "evaluate" question on conservation needs both sides and a conclusion. For zoos, strong answers mention genetic diversity (studbooks, avoiding inbreeding) and the problems of reintroduction. For seed banks, mention why seeds are dried and cooled, and that some seeds cannot be stored this way.
+</div>
+
+<!-- ============================================================ -->
+<h2>Command Words and Common Misconceptions</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Command word</th><th>What Edexcel expects in this topic</th></tr>
+  <tr><td>State / Give / Name</td><td>A short answer with no explanation, e.g. name the rank above kingdom (domain).</td></tr>
+  <tr><td>Describe</td><td>Give an account of features or steps, e.g. describe how gel electrophoresis separates DNA fragments.</td></tr>
+  <tr><td>Explain</td><td>Give reasons, using linking words such as "because" and "so", e.g. explain why the fewest sequence differences mean the closest relationship.</td></tr>
+  <tr><td>Calculate</td><td>Obtain a numerical answer, showing working, e.g. an index of diversity.</td></tr>
+  <tr><td>Compare</td><td>Give similarities and/or differences for both items, e.g. compare allopatric and sympatric speciation.</td></tr>
+  <tr><td>Suggest</td><td>Apply your knowledge to an unfamiliar situation; more than one answer may be credited.</td></tr>
+  <tr><td>Discuss</td><td>Identify the issue and explore different aspects of it, e.g. discuss the difficulties of defining a species.</td></tr>
+  <tr><td>Evaluate</td><td>Weigh up strengths and weaknesses and reach a supported judgement, e.g. evaluate zoos as a conservation method.</td></tr>
+  <tr><td>Justify</td><td>Give evidence to support a statement or conclusion.</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Common misconceptions to avoid:</strong>
+  <ul>
+    <li>"Archaea are bacteria." They are both prokaryotes, but they form separate domains.</li>
+    <li>"Organisms evolve because they need to." Mutations are random; selection acts on variation that already exists.</li>
+    <li>"Bacteria become resistant to antibiotics." A resistant mutant was already present; the antibiotic selects for it.</li>
+    <li>"Larger DNA fragments move further in a gel." Smaller fragments move further.</li>
+    <li>"A higher species richness always means a higher index of diversity." Evenness matters too, as the pond example shows.</li>
+    <li>"If two organisms can mate, they are the same species." The offspring must also be fertile, and the definition has many exceptions.</li>
+    <li>"Zoos solve extinction." Captive populations are small, and reintroduction only works if the habitat and the original threat have been dealt with.</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<h2>Key Terms Checklist</h2>
+<!-- ============================================================ -->
+
+<p>Check that you can define or explain each of these terms and give an example where relevant.</p>
+
+<table>
+  <tr><th>Term</th><th>Meaning</th></tr>
+  <tr><td>Taxonomic hierarchy</td><td>Domain, kingdom, phylum, class, order, family, genus, species</td></tr>
+  <tr><td>Binomial name</td><td>Genus plus specific name, e.g. <em>Homo sapiens</em></td></tr>
+  <tr><td>Species</td><td>Similar organisms that can interbreed to produce fertile offspring (with limitations)</td></tr>
+  <tr><td>Cryptic species</td><td>Species that look alike but are genetically distinct and do not interbreed</td></tr>
+  <tr><td>Gel electrophoresis</td><td>Separation of DNA fragments by size in an electric field; smaller fragments travel further</td></tr>
+  <tr><td>Restriction enzyme</td><td>Enzyme that cuts DNA at a specific base sequence</td></tr>
+  <tr><td>DNA sequencing</td><td>Working out the order of bases in DNA</td></tr>
+  <tr><td>Bioinformatics</td><td>Computer-based storage and analysis of biological data such as sequences</td></tr>
+  <tr><td>Phylogenetic tree</td><td>Diagram showing probable evolutionary relationships and common ancestors</td></tr>
+  <tr><td>Peer review</td><td>Evaluation of research by other experts before publication</td></tr>
+  <tr><td>Five-kingdom model</td><td>Prokaryotae, Protoctista, Fungi, Plantae, Animalia</td></tr>
+  <tr><td>Three-domain model</td><td>Bacteria, Archaea, Eukarya, based largely on rRNA evidence</td></tr>
+  <tr><td>Natural selection</td><td>Better-adapted individuals survive and reproduce more, so their alleles increase in frequency</td></tr>
+  <tr><td>Adaptation</td><td>Inherited anatomical, physiological or behavioural feature that aids survival and reproduction</td></tr>
+  <tr><td>Niche</td><td>The role of a species in its habitat</td></tr>
+  <tr><td>Reproductive isolation</td><td>Anything that stops gene flow between populations</td></tr>
+  <tr><td>Allopatric speciation</td><td>New species formed after geographical separation</td></tr>
+  <tr><td>Sympatric speciation</td><td>New species formed in the same area without a geographical barrier</td></tr>
+  <tr><td>Polyploidy</td><td>Having more than two complete sets of chromosomes</td></tr>
+  <tr><td>Selection pressure</td><td>An environmental factor that affects which individuals survive and reproduce</td></tr>
+  <tr><td>Biodiversity</td><td>The variety of life, at the habitat, species and genetic levels</td></tr>
+  <tr><td>Species richness and evenness</td><td>Number of species; how evenly individuals are spread among them</td></tr>
+  <tr><td>Index of diversity</td><td>D = N(N &minus; 1) / &Sigma;n(n &minus; 1); higher values mean greater diversity</td></tr>
+  <tr><td>Gene pool</td><td>All the alleles of all the genes in a population</td></tr>
+  <tr><td>Genetic diversity</td><td>The variety of alleles within a species or population</td></tr>
+  <tr><td>Ecosystem services</td><td>Benefits people gain from ecosystems, e.g. pollination, water purification, medicines</td></tr>
+  <tr><td>In-situ conservation</td><td>Protecting species in their natural habitat</td></tr>
+  <tr><td>Ex-situ conservation</td><td>Protecting species outside their natural habitat (zoos, seed banks)</td></tr>
+  <tr><td>Captive breeding</td><td>Managed breeding of endangered animals in captivity, often for reintroduction</td></tr>
+</table>
+
+</div>
+</body>
+</html>

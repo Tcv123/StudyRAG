@@ -1268,33 +1268,35 @@ const SUBJECT_TOPICS = {
   },
   'Biology_Edexcel A': {
     sections: [
-      { label: 'Edexcel A — Paper 1', topics: [
-        { id: 'T1', name: 'Molecules, Transport and Health', sub: 'Biological molecules, enzymes, membranes, cardiovascular' },
-        { id: 'T2', name: 'Cells, Development and Biodiversity', sub: 'Cell structure, division, stem cells, classification' },
-        { id: 'T3', name: 'Exchange, Transport and Reproduction', sub: 'Plant/animal transport, gas exchange, reproduction' },
-        { id: 'T4', name: 'Energy, Environment and Microbiology', sub: 'Photosynthesis, respiration, ecosystems, microbes' },
-      ]},
-      { label: 'Edexcel A — Paper 2', topics: [
-        { id: 'T5', name: 'Genetics and Evolution', sub: 'DNA, protein synthesis, inheritance, evolution' },
-        { id: 'T6', name: 'Immunity, Infection and Forensics', sub: 'Immune system, pathogens, forensic biology' },
-        { id: 'T7', name: 'Homeostasis and Response', sub: 'Nervous system, hormones, muscles, homeostasis' },
-        { id: 'T8', name: 'Gene Expression and Biotechnology', sub: 'Gene technology, epigenetics, genomics' },
-      ]},
-    ]
-  },
-  'Biology_Edexcel B': {
-    sections: [
-      { label: 'Edexcel B — Paper 1', topics: [
+      { label: 'Edexcel A — Year 1 (Topics 1–4)', topics: [
         { id: 'S1', name: 'Lifestyle, Health and Risk', sub: 'Cardiovascular disease, diet, lipids, water transport' },
         { id: 'S2', name: 'Genes and Health', sub: 'DNA, protein synthesis, genetic disease, membranes' },
         { id: 'S3', name: 'Voice of the Genome', sub: 'Cell division, development, stem cells, gene expression' },
         { id: 'S4', name: 'Biodiversity and Natural Resources', sub: 'Classification, biodiversity, plant biology, sustainability' },
       ]},
-      { label: 'Edexcel B — Paper 2', topics: [
+      { label: 'Edexcel A — Year 2 (Topics 5–8)', topics: [
         { id: 'S5', name: 'On the Wild Side', sub: 'Photosynthesis, climate change, ecosystems, evolution' },
         { id: 'S6', name: 'Immunity, Infection and Forensics', sub: 'Immune system, pathogens, forensic biology' },
         { id: 'S7', name: 'Run for Your Life', sub: 'Respiration, muscles, exercise, homeostasis' },
         { id: 'S8', name: 'Grey Matter', sub: 'Nervous system, brain, vision, learning, drugs' },
+      ]},
+    ]
+  },
+  'Biology_Edexcel B': {
+    sections: [
+      { label: 'Edexcel B — Year 1 (Topics 1–4)', topics: [
+        { id: '1', name: 'Biological Molecules', sub: 'Carbohydrates, lipids, proteins, enzymes, nucleic acids, DNA replication' },
+        { id: '2', name: 'Cells, Viruses and Reproduction of Living Things', sub: 'Cell structure, viruses, cell cycle, meiosis, reproduction' },
+        { id: '3', name: 'Classification and Biodiversity', sub: 'Classification, natural selection, speciation, biodiversity' },
+        { id: '4', name: 'Exchange and Transport', sub: 'Surface area, membranes, gas exchange, circulation, plant transport' },
+      ]},
+      { label: 'Edexcel B — Year 2 (Topics 5–10)', topics: [
+        { id: '5', name: 'Energy for Biological Processes', sub: 'Respiration, photosynthesis, ATP' },
+        { id: '6', name: 'Microbiology and Pathogens', sub: 'Culturing microorganisms, pathogens, immunity, antibiotics' },
+        { id: '7', name: 'Modern Genetics', sub: 'Gene expression, DNA sequencing, genetic engineering' },
+        { id: '8', name: 'Origins of Genetic Variation', sub: 'Mutation, inheritance, population genetics, evolution' },
+        { id: '9', name: 'Control Systems', sub: 'Homeostasis, hormones, nervous system, plant responses' },
+        { id: '10', name: 'Ecosystems', sub: 'Ecosystems, energy flow, nutrient cycles, human effects' },
       ]},
     ]
   },
@@ -1727,8 +1729,8 @@ const DIAG_PAGE = {
   'Biology_AQA|gcse':             { url: 'diagnostics/biology-aqa-gcse-diagnostic.html',      total: 7,  first: '4.1' },
   'Biology_Edexcel|gcse':         { url: 'diagnostics/biology-edexcel-gcse-diagnostic.html',  total: 9,  first: '1'   },
   'Biology_Edexcel IGCSE|gcse':   { url: 'diagnostics/biology-edexcel-igcse-diagnostic.html', total: 21, first: '1.1' },
-  'Biology_Edexcel A':            { url: 'diagnostics/biology-edexcel-a-diagnostic.html',     total: 8,  first: 'T1'  },
-  'Biology_Edexcel B':            { url: 'diagnostics/biology-edexcel-b-diagnostic.html',     total: 8,  first: 'S1'  },
+  'Biology_Edexcel A':            { url: 'diagnostics/biology-edexcel-a-diagnostic.html',     total: 8,  first: 'S1'  },
+  'Biology_Edexcel B':            { url: 'diagnostics/biology-edexcel-b-diagnostic.html',     total: 10, first: '1'   },
   'Biology_OCR A':                { url: 'diagnostics/biology-ocr-a-diagnostic.html',         total: 6,  first: 'M1'  },
   'Biology_OCR A|gcse':           { url: 'diagnostics/biology-ocr-a-gcse-diagnostic.html',    total: 15, first: 'B1.1' },
   'Biology_OCR B':                { url: 'diagnostics/biology-ocr-b-diagnostic.html',         total: 6,  first: 'B1'  },

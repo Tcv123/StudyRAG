@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — 8: Origins of Genetic Variation</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>8 — Origins of Genetic Variation</h1>
+
+<p><strong>Edexcel B A-level Biology (9BI0), Topic 8.</strong> This topic takes what you already know about meiosis and natural selection and asks two questions. First, where does the variation between individuals come from, and how is it passed on? Second, what happens to that variation at the level of a whole population? You will need to handle genetic crosses involving one and two genes, linked and sex-linked genes, the chi squared test, and the Hardy&ndash;Weinberg equation.</p>
+
+<div class="exam-tip">
+  <strong>Maths in this topic:</strong> ratios, fractions and percentages; simple probability; the chi squared test; measures of spread (range and standard deviation); rearranging simple equations; and allele-frequency calculations with the Hardy&ndash;Weinberg equation. Expect at least one calculation on any Topic 8 question.
+</div>
+
+<!-- ============================================================ -->
+<h2>8.1 Origins of Genetic Variation</h2>
+<!-- ============================================================ -->
+
+<h3>8.1(i) Mutation: the source of new alleles</h3>
+
+<div class="definition">
+  <strong>Mutation:</strong> A change in the base sequence of DNA (a gene mutation) or in the structure or number of chromosomes (a chromosome mutation). A gene mutation that alters the base sequence of a gene produces a new <strong>allele</strong>.
+</div>
+
+<p>Mutation is the only process that makes genuinely <em>new</em> alleles. Meiosis and fertilisation shuffle alleles that already exist into new combinations, but they cannot create a new version of a gene. Mutations arise spontaneously, mostly as copying errors during DNA replication, and their rate is increased by mutagens such as ultraviolet light, ionising radiation and certain chemicals.</p>
+
+<ul>
+  <li><strong>Substitution:</strong> one base is replaced by another. Because the genetic code is degenerate, the new codon may code for the same amino acid (no effect), a different amino acid, or a stop codon.</li>
+  <li><strong>Insertion or deletion:</strong> one or more bases are added or lost. Unless the change is a multiple of three bases, the reading frame shifts and every codon after the mutation is altered (a frameshift).</li>
+  <li><strong>Chromosome mutations:</strong> for example, non-disjunction in meiosis produces gametes with an extra or missing chromosome.</li>
+</ul>
+
+<p>Most mutations are neutral or harmful. Occasionally a new allele gives an advantage in a particular environment. Only mutations in cells that give rise to gametes can be inherited, so only these add to the variation passed to the next generation.</p>
+
+<h3>8.1(i) Meiosis: new combinations of alleles in gametes</h3>
+
+<p>Meiosis produces four haploid cells that are genetically different from each other and from the parent cell. Two events in meiosis create this variation.</p>
+
+<p><strong>1. Crossing over (prophase I).</strong> Homologous chromosomes pair up to form a bivalent. Non-sister chromatids of the two homologues wrap around each other, and at points of contact called <strong>chiasmata</strong> they break and rejoin, exchanging equivalent sections. Genes on the same chromosome that were inherited together (one set from the mother, one from the father) can end up recombined on the same chromatid. The chromatids that carry a new mix of alleles are called <strong>recombinant</strong> chromatids.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 270" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Crossing Over Between Non-Sister Chromatids</text>
+  <defs>
+    <marker id="arrowCO8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Stage 1: bivalent -->
+  <text x="120" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">1. Bivalent (prophase I)</text>
+  <rect x="70" y="60" width="12" height="160" rx="6" fill="#2563eb" opacity="0.35" stroke="#2563eb" stroke-width="1"/>
+  <rect x="86" y="60" width="12" height="160" rx="6" fill="#2563eb" opacity="0.35" stroke="#2563eb" stroke-width="1"/>
+  <rect x="142" y="60" width="12" height="160" rx="6" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
+  <rect x="158" y="60" width="12" height="160" rx="6" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
+  <circle cx="84" cy="140" r="5" fill="#1a1a2e"/>
+  <circle cx="156" cy="140" r="5" fill="#1a1a2e"/>
+  <text x="58" y="88" text-anchor="end" font-family="system-ui" font-size="11" font-weight="bold" fill="#2563eb">A</text>
+  <text x="58" y="198" text-anchor="end" font-family="system-ui" font-size="11" font-weight="bold" fill="#2563eb">B</text>
+  <text x="182" y="88" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">a</text>
+  <text x="182" y="198" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">b</text>
+  <text x="84" y="238" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">maternal</text>
+  <text x="156" y="238" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">paternal</text>
+  <path d="M215,140 L255,140" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowCO8)"/>
+  <!-- Stage 2: chiasma -->
+  <text x="320" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">2. Chiasma forms</text>
+  <rect x="282" y="60" width="12" height="160" rx="6" fill="#2563eb" opacity="0.35" stroke="#2563eb" stroke-width="1"/>
+  <rect x="346" y="60" width="12" height="160" rx="6" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
+  <path d="M304,60 L304,160 L336,190 L336,220" fill="none" stroke="#2563eb" stroke-width="10" stroke-opacity="0.35" stroke-linecap="round"/>
+  <path d="M336,60 L336,160 L304,190 L304,220" fill="none" stroke="#DC2626" stroke-width="10" stroke-opacity="0.3" stroke-linecap="round"/>
+  <circle cx="299" cy="140" r="5" fill="#1a1a2e"/>
+  <circle cx="341" cy="140" r="5" fill="#1a1a2e"/>
+  <text x="320" y="238" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">chiasma between the A/a and B/b loci</text>
+  <path d="M380,140 L420,140" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowCO8)"/>
+  <!-- Stage 3: four chromatids -->
+  <text x="505" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">3. Four chromatids</text>
+  <rect x="440" y="60" width="12" height="160" rx="6" fill="#2563eb" opacity="0.35" stroke="#2563eb" stroke-width="1"/>
+  <rect x="475" y="60" width="12" height="100" rx="6" fill="#2563eb" opacity="0.35" stroke="#2563eb" stroke-width="1"/>
+  <rect x="475" y="160" width="12" height="60" rx="6" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
+  <rect x="510" y="60" width="12" height="100" rx="6" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
+  <rect x="510" y="160" width="12" height="60" rx="6" fill="#2563eb" opacity="0.35" stroke="#2563eb" stroke-width="1"/>
+  <rect x="545" y="60" width="12" height="160" rx="6" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
+  <text x="446" y="238" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">AB</text>
+  <text x="481" y="238" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Ab</text>
+  <text x="516" y="238" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">aB</text>
+  <text x="551" y="238" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">ab</text>
+  <text x="446" y="252" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">parental</text>
+  <text x="498" y="252" text-anchor="middle" font-family="system-ui" font-size="7" fill="#16A34A">recombinant</text>
+  <text x="551" y="252" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">parental</text>
+</svg>
+</div>
+
+<p><strong>2. Independent (random) assortment (metaphase I and metaphase II).</strong> At metaphase I, the bivalents line up on the equator of the spindle. Which pole each homologue faces is random, and the orientation of one bivalent has no effect on the orientation of any other. So the maternal and paternal chromosomes are shared out between the daughter cells in a random mix. With <em>n</em> pairs of homologous chromosomes there are 2<sup><em>n</em></sup> possible combinations. For humans (<em>n</em> = 23) that is 2<sup>23</sup> = 8&nbsp;388&nbsp;608, about 8.4 million, before crossing over is even considered. Because crossing over means that sister chromatids are no longer identical, the random orientation of chromatids at metaphase II adds further variation.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 270" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Independent Assortment at Metaphase I (2 pairs of chromosomes)</text>
+  <!-- Arrangement 1 -->
+  <rect x="25" y="40" width="265" height="215" rx="10" fill="#2563eb" opacity="0.05" stroke="#2563eb" stroke-width="1"/>
+  <text x="157" y="60" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Arrangement 1</text>
+  <line x1="157" y1="70" x2="157" y2="175" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="157" y="187" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">equator</text>
+  <!-- pair 1 -->
+  <rect x="130" y="80" width="18" height="40" rx="8" fill="#2563eb" opacity="0.4" stroke="#2563eb"/>
+  <text x="139" y="104" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">A</text>
+  <rect x="166" y="80" width="18" height="40" rx="8" fill="#DC2626" opacity="0.3" stroke="#DC2626"/>
+  <text x="175" y="104" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">a</text>
+  <!-- pair 2 -->
+  <rect x="130" y="132" width="18" height="30" rx="8" fill="#2563eb" opacity="0.4" stroke="#2563eb"/>
+  <text x="139" y="151" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">B</text>
+  <rect x="166" y="132" width="18" height="30" rx="8" fill="#DC2626" opacity="0.3" stroke="#DC2626"/>
+  <text x="175" y="151" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">b</text>
+  <text x="80" y="125" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">to pole 1</text>
+  <text x="235" y="125" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">to pole 2</text>
+  <rect x="55" y="205" width="70" height="26" rx="13" fill="#16A34A" opacity="0.15" stroke="#16A34A"/>
+  <text x="90" y="222" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">AB</text>
+  <rect x="190" y="205" width="70" height="26" rx="13" fill="#16A34A" opacity="0.15" stroke="#16A34A"/>
+  <text x="225" y="222" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">ab</text>
+  <text x="157" y="247" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">gametes</text>
+  <!-- Arrangement 2 -->
+  <rect x="310" y="40" width="265" height="215" rx="10" fill="#D97706" opacity="0.05" stroke="#D97706" stroke-width="1"/>
+  <text x="442" y="60" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">Arrangement 2</text>
+  <line x1="442" y1="70" x2="442" y2="175" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="442" y="187" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">equator</text>
+  <rect x="415" y="80" width="18" height="40" rx="8" fill="#2563eb" opacity="0.4" stroke="#2563eb"/>
+  <text x="424" y="104" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">A</text>
+  <rect x="451" y="80" width="18" height="40" rx="8" fill="#DC2626" opacity="0.3" stroke="#DC2626"/>
+  <text x="460" y="104" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">a</text>
+  <rect x="415" y="132" width="18" height="30" rx="8" fill="#DC2626" opacity="0.3" stroke="#DC2626"/>
+  <text x="424" y="151" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">b</text>
+  <rect x="451" y="132" width="18" height="30" rx="8" fill="#2563eb" opacity="0.4" stroke="#2563eb"/>
+  <text x="460" y="151" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">B</text>
+  <text x="365" y="125" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">to pole 1</text>
+  <text x="520" y="125" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">to pole 2</text>
+  <rect x="340" y="205" width="70" height="26" rx="13" fill="#16A34A" opacity="0.15" stroke="#16A34A"/>
+  <text x="375" y="222" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Ab</text>
+  <rect x="475" y="205" width="70" height="26" rx="13" fill="#16A34A" opacity="0.15" stroke="#16A34A"/>
+  <text x="510" y="222" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">aB</text>
+  <text x="442" y="247" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">gametes</text>
+</svg>
+</div>
+
+<p>Both arrangements are equally likely, so an AaBb individual whose two genes are on different chromosomes makes AB, Ab, aB and ab gametes in equal proportions (1:1:1:1). This is the basis of the dihybrid ratios in 8.2(iii).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Keep the three sources of variation separate. <em>Mutation</em> makes new alleles. <em>Crossing over</em> makes new combinations of alleles on the same chromosome. <em>Independent assortment</em> makes new combinations of whole chromosomes. A common mistake is to say crossing over happens between sister chromatids: it happens between <strong>non-sister</strong> chromatids of homologous chromosomes. Another is to say independent assortment happens in anaphase: the random step is the <strong>orientation</strong> of bivalents at metaphase I.
+</div>
+
+<h3>8.1(ii) Random fertilisation</h3>
+
+<p>During sexual reproduction, any one male gamete can fuse with any one female gamete. Which two gametes meet is a matter of chance. Since each parent can produce a vast number of genetically different gametes, the number of possible zygotes is the product of the two. Counting independent assortment alone, one human couple could produce 2<sup>23</sup> &times; 2<sup>23</sup> = 2<sup>46</sup>, about 7.0 &times; 10<sup>13</sup>, different combinations of chromosomes. Crossing over makes the true number far larger. Fertilisation also brings together alleles from two unrelated lineages, so offspring combine maternal and paternal alleles in new ways.</p>
+
+<p>Together, mutation, crossing over, independent assortment and random fertilisation explain why sexually reproducing organisms (apart from identical twins) are genetically unique. This variation is the raw material on which selection acts in 8.3.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When a question says <em>explain how sexual reproduction produces genetic variation</em>, you need all three meiosis and fertilisation points: crossing over in prophase I, independent assortment in metaphase I (and II), and random fusion of gametes at fertilisation. For &ldquo;explain&rdquo; you must give the reason each one produces variation, not just name it.
+</div>
+
+<!-- ============================================================ -->
+<h2>8.2 Transfer of Genetic Information</h2>
+<!-- ============================================================ -->
+
+<h3>8.2(i) Key terms</h3>
+
+<table>
+  <tr><th>Term</th><th>Meaning</th><th>Example</th></tr>
+  <tr><td>Gene</td><td>A length of DNA at a particular locus that codes for a polypeptide (or a functional RNA)</td><td>The gene for the ABO antigen</td></tr>
+  <tr><td>Allele</td><td>One of the different versions of a gene, with a different base sequence</td><td>I<sup>A</sup>, I<sup>B</sup>, I<sup>O</sup></td></tr>
+  <tr><td>Genotype</td><td>The alleles an organism carries for the gene(s) being considered</td><td>Tt</td></tr>
+  <tr><td>Phenotype</td><td>The characteristics an organism shows, which result from its genotype interacting with its environment</td><td>Tall pea plant</td></tr>
+  <tr><td>Homozygote</td><td>An individual with two identical alleles at a locus</td><td>TT or tt</td></tr>
+  <tr><td>Heterozygote</td><td>An individual with two different alleles at a locus</td><td>Tt</td></tr>
+  <tr><td>Dominant</td><td>An allele whose effect shows in the phenotype of a heterozygote</td><td>T in Tt gives a tall plant</td></tr>
+  <tr><td>Recessive</td><td>An allele whose effect shows only when no dominant allele is present (in a homozygote)</td><td>tt gives a dwarf plant</td></tr>
+  <tr><td>Codominance</td><td>Both alleles in a heterozygote contribute to the phenotype, each being expressed</td><td>I<sup>A</sup>I<sup>B</sup> gives blood group AB</td></tr>
+  <tr><td>Multiple alleles</td><td>A gene with three or more alleles in the population (each diploid individual still carries only two)</td><td>I<sup>A</sup>, I<sup>B</sup>, I<sup>O</sup> for the ABO system</td></tr>
+</table>
+
+<h3>Codominance and multiple alleles: ABO blood groups</h3>
+
+<p>The ABO blood group gene has three alleles. I<sup>A</sup> codes for an enzyme that adds the A antigen to red blood cell membranes, I<sup>B</sup> codes for one that adds the B antigen, and I<sup>O</sup> produces no working enzyme, so no A or B antigen is made. I<sup>A</sup> and I<sup>B</sup> are codominant with each other, and both are dominant to I<sup>O</sup>.</p>
+
+<table>
+  <tr><th>Blood group (phenotype)</th><th>Possible genotypes</th><th>Antigens on red cells</th></tr>
+  <tr><td>A</td><td>I<sup>A</sup>I<sup>A</sup> or I<sup>A</sup>I<sup>O</sup></td><td>A</td></tr>
+  <tr><td>B</td><td>I<sup>B</sup>I<sup>B</sup> or I<sup>B</sup>I<sup>O</sup></td><td>B</td></tr>
+  <tr><td>AB</td><td>I<sup>A</sup>I<sup>B</sup></td><td>A and B</td></tr>
+  <tr><td>O</td><td>I<sup>O</sup>I<sup>O</sup></td><td>Neither</td></tr>
+</table>
+
+<p>So a group A parent (I<sup>A</sup>I<sup>O</sup>) and a group B parent (I<sup>B</sup>I<sup>O</sup>) can have children of all four groups, each with a probability of &frac14;.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Codominance is not the same as &ldquo;blending&rdquo;. In a codominant heterozygote both allele products are present (group AB cells carry both antigens); the alleles themselves are unchanged and separate again in the next generation. Also remember that &ldquo;multiple alleles&rdquo; describes the population: no single diploid person can carry all three ABO alleles.
+</div>
+
+<h3>8.2(ii) Constructing genetic crosses</h3>
+
+<p>Examiners give marks for a clear, logical layout. Use the same steps every time:</p>
+<ol>
+  <li>Write a <strong>key</strong> for the allele symbols (a capital letter for the dominant allele and the same letter in lower case for the recessive one; superscripts for codominant or sex-linked alleles).</li>
+  <li>State the <strong>parental phenotypes and genotypes</strong>.</li>
+  <li>List the possible <strong>gametes</strong> from each parent (circle them). Each gamete carries one allele of each gene.</li>
+  <li>Combine the gametes in a <strong>Punnett square</strong>.</li>
+  <li>State the <strong>offspring genotypes and phenotypes</strong> with their ratio, probability or percentage, as the question asks.</li>
+</ol>
+
+<p><strong>Monohybrid example.</strong> In pea plants, T (tall) is dominant to t (dwarf). Crossing two heterozygotes (Tt &times; Tt) gives gametes T and t from each parent. The Punnett square gives 1 TT : 2 Tt : 1 tt, so the phenotypic ratio is 3 tall : 1 dwarf. A <strong>test cross</strong> (crossing an individual with the dominant phenotype to a homozygous recessive) reveals an unknown genotype: TT &times; tt gives all tall offspring, while Tt &times; tt gives 1 tall : 1 dwarf.</p>
+
+<p><strong>Probability rules.</strong> A ratio is just a set of probabilities. The chance of two independent events <em>both</em> happening is found by multiplying their probabilities (for example, the chance that two children of Tt &times; Tt parents are both dwarf is &frac14; &times; &frac14; = 1/16). Each fertilisation is independent, so a couple who already have one affected child still have the same probability for the next child.</p>
+
+<h3>8.2(ii) Pedigree diagrams</h3>
+
+<p>A pedigree (family tree) shows how a characteristic is passed through several generations. The standard conventions are:</p>
+<ul>
+  <li>Squares are males, circles are females; a horizontal line joining them is a mating, and a vertical line leads down to their children.</li>
+  <li>Shaded symbols are affected individuals. Carriers may be shown half-shaded or with a dot (always check the key).</li>
+  <li>Generations are numbered with Roman numerals (I, II, III) and individuals within a generation with ordinary numbers.</li>
+</ul>
+
+<p>Clues for interpreting pedigrees: if two unaffected parents have an affected child, the allele must be <strong>recessive</strong> and, if it is autosomal, both parents must be heterozygous (for an X-linked allele, the mother is a carrier and the father need not carry it). If an affected child always has at least one affected parent, the allele is likely to be dominant. If mostly males are affected and the allele passes from unaffected mothers to their sons, suspect <strong>X-linked recessive</strong> inheritance (see 8.2(v)).</p>
+
+<h3>8.2(iii) Two unlinked, non-interacting genes (dihybrid inheritance)</h3>
+
+<p>A dihybrid cross follows two genes at once. Here the genes are on <strong>different chromosomes</strong> (unlinked), so they assort independently at meiosis; and they are <strong>non-interacting</strong>, meaning each gene controls a separate characteristic and neither affects the expression of the other.</p>
+
+<p>Mendel&rsquo;s peas are the classic example. Round seed (R) is dominant to wrinkled (r), and yellow seed (Y) is dominant to green (y). A plant heterozygous for both genes (RrYy) makes four kinds of gamete in equal numbers: RY, Ry, rY and ry.</p>
+
+<table>
+  <tr><th>Gametes</th><th>RY</th><th>Ry</th><th>rY</th><th>ry</th></tr>
+  <tr><th>RY</th><td>RRYY</td><td>RRYy</td><td>RrYY</td><td>RrYy</td></tr>
+  <tr><th>Ry</th><td>RRYy</td><td>RRyy</td><td>RrYy</td><td>Rryy</td></tr>
+  <tr><th>rY</th><td>RrYY</td><td>RrYy</td><td>rrYY</td><td>rrYy</td></tr>
+  <tr><th>ry</th><td>RrYy</td><td>Rryy</td><td>rrYy</td><td>rryy</td></tr>
+</table>
+
+<p>Counting the phenotypes in the 16 squares gives <strong>9 round yellow : 3 round green : 3 wrinkled yellow : 1 wrinkled green</strong>. The same answer comes from multiplying the separate monohybrid ratios: (3 round : 1 wrinkled) &times; (3 yellow : 1 green) = 9 : 3 : 3 : 1.</p>
+
+<p>A dihybrid <strong>test cross</strong> (RrYy &times; rryy) gives four phenotypes in a <strong>1 : 1 : 1 : 1</strong> ratio, because the double recessive parent only makes ry gametes, so each offspring&rsquo;s phenotype directly shows which gamete came from the heterozygous parent.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The two ratios to memorise for unlinked genes are 9:3:3:1 (double heterozygote selfed or crossed with another double heterozygote) and 1:1:1:1 (double heterozygote test-crossed). When results depart clearly from these, think about <strong>linkage</strong> (8.2(iv)) and test the difference with chi squared (8.2(vi)). A common slip is giving a gamete two alleles of the same gene (e.g. &ldquo;Rr&rdquo;): each gamete carries one allele of <em>each</em> gene.
+</div>
+
+<h3>8.2(iv) Autosomal linkage</h3>
+
+<div class="definition">
+  <strong>Autosomal linkage:</strong> Two genes whose loci are on the same autosome (a chromosome other than a sex chromosome) are linked. Their alleles tend to be passed on together in the same gamete, so they do not assort independently.
+</div>
+
+<p>If genes were completely linked, a double heterozygote would only pass on the two combinations of alleles it inherited from its parents (the <strong>parental</strong> combinations). In practice, crossing over in prophase I sometimes exchanges sections of non-sister chromatids between the two loci. Gametes that receive one of these chromatids carry a new, <strong>recombinant</strong> combination. A chiasma only forms between two particular loci in some meioses, so recombinant gametes are always fewer than parental ones. The further apart two loci are on the chromosome, the more likely a crossover between them, and the more recombinants appear.</p>
+
+<h3>Drosophila: body colour and wing length</h3>
+
+<p>In the fruit fly <em>Drosophila melanogaster</em>, grey body (G) is dominant to black body (g) and long wings (L) are dominant to vestigial wings (l). Both genes are on the same autosome (chromosome 2). In a test cross, a female heterozygous for both genes, who received GL from one parent and gl from the other (written GL/gl), is crossed with a black, vestigial-winged male (gl/gl).</p>
+
+<p>If the genes were unlinked, you would expect four phenotypes in a 1:1:1:1 ratio. Instead, the results from a classic cross of this kind, widely quoted in textbooks, were:</p>
+
+<table>
+  <tr><th>Offspring phenotype</th><th>Gamete from female</th><th>Type</th><th>Number</th></tr>
+  <tr><td>Grey body, long wings</td><td>GL</td><td>Parental</td><td>965</td></tr>
+  <tr><td>Black body, vestigial wings</td><td>gl</td><td>Parental</td><td>944</td></tr>
+  <tr><td>Grey body, vestigial wings</td><td>Gl</td><td>Recombinant</td><td>206</td></tr>
+  <tr><td>Black body, long wings</td><td>gL</td><td>Recombinant</td><td>185</td></tr>
+  <tr><th>Total</th><td></td><td></td><th>2300</th></tr>
+</table>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 290" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Linked Genes in Drosophila: Test Cross Offspring</text>
+  <!-- chromosomes of the female -->
+  <text x="95" y="48" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1e3a5f">Female GL/gl</text>
+  <rect x="60" y="60" width="14" height="130" rx="7" fill="#2563eb" opacity="0.35" stroke="#2563eb"/>
+  <rect x="116" y="60" width="14" height="130" rx="7" fill="#DC2626" opacity="0.3" stroke="#DC2626"/>
+  <line x1="56" y1="85" x2="78" y2="85" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="56" y1="160" x2="78" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="112" y1="85" x2="134" y2="85" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="112" y1="160" x2="134" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="48" y="89" text-anchor="end" font-family="system-ui" font-size="11" font-weight="bold" fill="#2563eb">G</text>
+  <text x="48" y="164" text-anchor="end" font-family="system-ui" font-size="11" font-weight="bold" fill="#2563eb">L</text>
+  <text x="142" y="89" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">g</text>
+  <text x="142" y="164" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">l</text>
+  <text x="95" y="210" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">both loci on chromosome 2</text>
+  <text x="95" y="222" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">crossover between them in</text>
+  <text x="95" y="234" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">some meioses only</text>
+  <!-- axes -->
+  <line x1="220" y1="250" x2="580" y2="250" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="220" y1="250" x2="220" y2="50" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="200" y="150" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" transform="rotate(-90 200 150)">Number of offspring</text>
+  <text x="214" y="253" text-anchor="end" font-family="system-ui" font-size="8" fill="#666">0</text>
+  <text x="214" y="153" text-anchor="end" font-family="system-ui" font-size="8" fill="#666">500</text>
+  <text x="214" y="53" text-anchor="end" font-family="system-ui" font-size="8" fill="#666">1000</text>
+  <line x1="220" y1="150" x2="580" y2="150" stroke="#cbd5e1" stroke-width="0.6" stroke-dasharray="3,3"/>
+  <line x1="220" y1="135" x2="580" y2="135" stroke="#D97706" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="578" y="130" text-anchor="end" font-family="system-ui" font-size="8" fill="#D97706">expected if unlinked (575 each)</text>
+  <!-- bars scaled 0.2 px per fly -->
+  <rect x="240" y="57" width="60" height="193" fill="#2563eb" opacity="0.45" stroke="#2563eb"/>
+  <text x="270" y="52" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">965</text>
+  <rect x="325" y="61" width="60" height="189" fill="#2563eb" opacity="0.45" stroke="#2563eb"/>
+  <text x="355" y="56" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">944</text>
+  <rect x="410" y="209" width="60" height="41" fill="#16A34A" opacity="0.45" stroke="#16A34A"/>
+  <text x="440" y="204" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">206</text>
+  <rect x="495" y="213" width="60" height="37" fill="#16A34A" opacity="0.45" stroke="#16A34A"/>
+  <text x="525" y="208" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">185</text>
+  <text x="270" y="264" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">grey long</text>
+  <text x="355" y="264" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">black vestigial</text>
+  <text x="440" y="264" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">grey vestigial</text>
+  <text x="525" y="264" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">black long</text>
+  <text x="312" y="280" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#2563eb">parental</text>
+  <text x="482" y="280" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">recombinant</text>
+</svg>
+</div>
+
+<p><strong>Explaining the results with meiosis.</strong> Most of the female&rsquo;s gametes carried an unaltered chromosome, either GL or gl, giving the two large parental classes in roughly equal numbers. In a minority of meioses a chiasma formed between the two loci, producing Gl and gL chromatids; these gave the two small recombinant classes, also in roughly equal numbers (each crossover makes one of each).</p>
+
+<div class="equation">
+  Recombination frequency = (number of recombinant offspring &divide; total offspring) &times; 100
+</div>
+
+<p>Here: (206 + 185) &divide; 2300 &times; 100 = 391 &divide; 2300 &times; 100 = <strong>17%</strong>. A recombination frequency well below 50% shows the genes are linked. Unlinked genes give 50% recombinants (the 1:1:1:1 ratio), so 50% is the maximum.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> To spot linkage in data, look for two large classes and two small classes. The large classes show the parental combinations; the small ones are the recombinants. Use a key that shows which alleles are on which chromosome (for example GL/gl, or draw the two chromosomes with the alleles marked). In a <em>Drosophila</em> linkage cross the heterozygous parent is normally the female, because crossing over does not happen during meiosis in male fruit flies.
+</div>
+
+<h3>8.2(v) Sex linkage on the X chromosome</h3>
+
+<p>In humans, sex is determined by the sex chromosomes: females are XX and males are XY. The X chromosome is much larger than the Y and carries many genes that have no equivalent locus on the Y. A gene with its locus on the X chromosome is <strong>sex-linked</strong> (X-linked).</p>
+
+<ul>
+  <li>A female has two copies of each X-linked gene, so she can be homozygous or heterozygous. A heterozygous female with one recessive allele is a <strong>carrier</strong>: she does not show the condition but can pass the allele on.</li>
+  <li>A male has only one copy of each X-linked gene (he is <strong>hemizygous</strong>). A single recessive allele on his X chromosome is therefore expressed, as there is no second allele to mask it.</li>
+  <li>A son always gets his X from his mother (his father gives him the Y). A daughter gets one X from each parent.</li>
+</ul>
+
+<h3>Haemophilia</h3>
+
+<p>Haemophilia A is a disorder in which blood clots very slowly because a clotting protein, factor VIII, is missing or does not work. The allele that causes it is recessive and is carried on the X chromosome. Using X<sup>H</sup> for the normal allele and X<sup>h</sup> for the haemophilia allele:</p>
+
+<table>
+  <tr><th>Genotype</th><th>Phenotype</th></tr>
+  <tr><td>X<sup>H</sup>X<sup>H</sup></td><td>Unaffected female</td></tr>
+  <tr><td>X<sup>H</sup>X<sup>h</sup></td><td>Carrier female (unaffected)</td></tr>
+  <tr><td>X<sup>h</sup>X<sup>h</sup></td><td>Female with haemophilia (rare)</td></tr>
+  <tr><td>X<sup>H</sup>Y</td><td>Unaffected male</td></tr>
+  <tr><td>X<sup>h</sup>Y</td><td>Male with haemophilia</td></tr>
+</table>
+
+<p><strong>Cross: carrier mother &times; unaffected father</strong> (X<sup>H</sup>X<sup>h</sup> &times; X<sup>H</sup>Y). Mother&rsquo;s gametes: X<sup>H</sup> and X<sup>h</sup>. Father&rsquo;s gametes: X<sup>H</sup> and Y.</p>
+
+<table>
+  <tr><th>Gametes</th><th>X<sup>H</sup> (father)</th><th>Y (father)</th></tr>
+  <tr><th>X<sup>H</sup> (mother)</th><td>X<sup>H</sup>X<sup>H</sup> unaffected female</td><td>X<sup>H</sup>Y unaffected male</td></tr>
+  <tr><th>X<sup>h</sup> (mother)</th><td>X<sup>H</sup>X<sup>h</sup> carrier female</td><td>X<sup>h</sup>Y male with haemophilia</td></tr>
+</table>
+
+<p>Each child has a &frac14; chance of having haemophilia; all affected children in this cross are sons. Of the sons, &frac12; are affected. Of the daughters, &frac12; are carriers and none is affected. Note the difference between &ldquo;the probability that a child is an affected son&rdquo; (&frac14;) and &ldquo;the probability that a son is affected&rdquo; (&frac12;).</p>
+
+<p><strong>Cross: unaffected mother &times; affected father</strong> (X<sup>H</sup>X<sup>H</sup> &times; X<sup>h</sup>Y). All daughters are carriers (X<sup>H</sup>X<sup>h</sup>) and all sons are unaffected (X<sup>H</sup>Y). An affected father cannot pass an X-linked allele to his sons.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Pedigree for an X-Linked Recessive Condition (e.g. Haemophilia)</text>
+  <!-- Generation labels -->
+  <text x="30" y="70" font-family="system-ui" font-size="12" font-weight="bold" fill="#1e3a5f">I</text>
+  <text x="30" y="150" font-family="system-ui" font-size="12" font-weight="bold" fill="#1e3a5f">II</text>
+  <text x="30" y="230" font-family="system-ui" font-size="12" font-weight="bold" fill="#1e3a5f">III</text>
+  <!-- Gen I: carrier female (circle with dot) x unaffected male -->
+  <circle cx="200" cy="65" r="14" fill="#ffffff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="200" cy="65" r="4" fill="#1a1a2e"/>
+  <rect x="286" y="51" width="28" height="28" fill="#ffffff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="214" y1="65" x2="286" y2="65" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="200" y="98" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">1</text>
+  <text x="300" y="98" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">2</text>
+  <line x1="250" y1="65" x2="250" y2="110" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="130" y1="110" x2="370" y2="110" stroke="#1a1a2e" stroke-width="1.2"/>
+  <!-- Gen II children -->
+  <line x1="130" y1="110" x2="130" y2="131" stroke="#1a1a2e" stroke-width="1.2"/>
+  <rect x="116" y="131" width="28" height="28" fill="#DC2626" opacity="0.75" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="210" y1="110" x2="210" y2="131" stroke="#1a1a2e" stroke-width="1.2"/>
+  <circle cx="210" cy="145" r="14" fill="#ffffff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="290" y1="110" x2="290" y2="131" stroke="#1a1a2e" stroke-width="1.2"/>
+  <rect x="276" y="131" width="28" height="28" fill="#ffffff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="370" y1="110" x2="370" y2="131" stroke="#1a1a2e" stroke-width="1.2"/>
+  <circle cx="370" cy="145" r="14" fill="#ffffff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <circle cx="370" cy="145" r="4" fill="#1a1a2e"/>
+  <text x="130" y="175" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">1</text>
+  <text x="210" y="175" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">2</text>
+  <text x="290" y="175" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">3</text>
+  <text x="370" y="175" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">4</text>
+  <!-- II-4 marries unaffected male II-5 -->
+  <rect x="436" y="131" width="28" height="28" fill="#ffffff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="384" y1="145" x2="436" y2="145" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="450" y="175" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">5</text>
+  <line x1="410" y1="145" x2="410" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="360" y1="190" x2="460" y2="190" stroke="#1a1a2e" stroke-width="1.2"/>
+  <line x1="360" y1="190" x2="360" y2="211" stroke="#1a1a2e" stroke-width="1.2"/>
+  <rect x="346" y="211" width="28" height="28" fill="#ffffff" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="460" y1="190" x2="460" y2="211" stroke="#1a1a2e" stroke-width="1.2"/>
+  <rect x="446" y="211" width="28" height="28" fill="#DC2626" opacity="0.75" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="360" y="255" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">1</text>
+  <text x="460" y="255" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">2</text>
+  <!-- Key -->
+  <rect x="495" y="45" width="95" height="105" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="542" y="60" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Key</text>
+  <rect x="503" y="68" width="12" height="12" fill="#ffffff" stroke="#1a1a2e"/>
+  <text x="520" y="78" font-family="system-ui" font-size="8" fill="#1a1a2e">unaffected male</text>
+  <rect x="503" y="86" width="12" height="12" fill="#DC2626" opacity="0.75" stroke="#1a1a2e"/>
+  <text x="520" y="96" font-family="system-ui" font-size="8" fill="#1a1a2e">affected male</text>
+  <circle cx="509" cy="110" r="6" fill="#ffffff" stroke="#1a1a2e"/>
+  <text x="520" y="114" font-family="system-ui" font-size="8" fill="#1a1a2e">unaffected female</text>
+  <circle cx="509" cy="128" r="6" fill="#ffffff" stroke="#1a1a2e"/>
+  <circle cx="509" cy="128" r="2" fill="#1a1a2e"/>
+  <text x="520" y="132" font-family="system-ui" font-size="8" fill="#1a1a2e">carrier female</text>
+  <text x="300" y="272" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1e3a5f">Carrier mothers (I-1, II-4) pass the allele to sons (II-1, III-2); no male-to-male transmission.</text>
+</svg>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For sex-linked crosses, always write the alleles as superscripts on the X (X<sup>H</sup>, X<sup>h</sup>) and write the Y with no allele. Writing &ldquo;Hh&rdquo; for a sex-linked gene loses the marks. When asked to <em>explain</em> why a condition is more common in males, say that males have only one X chromosome, so a single recessive allele is expressed, whereas females need two copies. The Y chromosome does not carry a matching allele, which is why the recessive allele is not masked.
+</div>
+
+<h3>8.2(vi) The chi squared test</h3>
+
+<p>Observed results from a cross rarely match the expected ratio exactly, because fertilisation is random. The chi squared (&chi;<sup>2</sup>) test tells you whether the difference between observed and expected numbers is small enough to be explained by chance, or whether it is <strong>significant</strong>.</p>
+
+<div class="equation">
+  &chi;<sup>2</sup> = &Sigma; (O &minus; E)<sup>2</sup> &divide; E
+</div>
+
+<p>O is the observed number in a category and E is the expected number. The test must be used on raw counts (not percentages or means), and each category needs a reasonable expected number (an expected value of at least 5 is a common guideline).</p>
+
+<ol>
+  <li>State the <strong>null hypothesis</strong>: there is no significant difference between the observed and expected numbers (any difference is due to chance).</li>
+  <li>Calculate the <strong>expected numbers</strong> from the total and the predicted ratio.</li>
+  <li>For each category work out (O &minus; E)<sup>2</sup> &divide; E, then add them up to get &chi;<sup>2</sup>.</li>
+  <li>Find the <strong>degrees of freedom</strong>: number of categories &minus; 1.</li>
+  <li>Compare &chi;<sup>2</sup> with the <strong>critical value</strong> at p = 0.05 for that number of degrees of freedom.</li>
+  <li>If &chi;<sup>2</sup> is <strong>less than</strong> the critical value, accept the null hypothesis: the difference is not significant and can be put down to chance. If &chi;<sup>2</sup> is <strong>equal to or greater than</strong> the critical value, reject the null hypothesis: there is a significant difference, so something other than chance (such as linkage) is affecting the results.</li>
+</ol>
+
+<table>
+  <tr><th>Degrees of freedom</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+  <tr><th>Critical value (p = 0.05)</th><td>3.84</td><td>5.99</td><td>7.82</td><td>9.49</td></tr>
+</table>
+
+<p><strong>Worked example 1: Mendel&rsquo;s dihybrid pea cross.</strong> Mendel crossed RrYy plants together and counted 556 seeds. The expected ratio is 9:3:3:1, so each expected value is 556 &times; (ratio part &divide; 16).</p>
+
+<table>
+  <tr><th>Phenotype</th><th>O</th><th>E</th><th>(O &minus; E)<sup>2</sup> &divide; E</th></tr>
+  <tr><td>Round yellow</td><td>315</td><td>312.75</td><td>0.016</td></tr>
+  <tr><td>Round green</td><td>108</td><td>104.25</td><td>0.135</td></tr>
+  <tr><td>Wrinkled yellow</td><td>101</td><td>104.25</td><td>0.101</td></tr>
+  <tr><td>Wrinkled green</td><td>32</td><td>34.75</td><td>0.218</td></tr>
+  <tr><th>Total</th><th>556</th><th>556</th><th>&chi;<sup>2</sup> = 0.47</th></tr>
+</table>
+
+<p>There are 4 categories, so 3 degrees of freedom and a critical value of 7.82. Since 0.47 &lt; 7.82, the null hypothesis is accepted: the results fit a 9:3:3:1 ratio, consistent with two unlinked genes that assort independently.</p>
+
+<p><strong>Worked example 2: the Drosophila test cross.</strong> If the body-colour and wing genes were unlinked, the 2300 offspring would be expected in a 1:1:1:1 ratio, 575 in each class. Then &chi;<sup>2</sup> = (965 &minus; 575)<sup>2</sup>/575 + (944 &minus; 575)<sup>2</sup>/575 + (206 &minus; 575)<sup>2</sup>/575 + (185 &minus; 575)<sup>2</sup>/575 &asymp; 1003. With 3 degrees of freedom this is far above 7.82, so the null hypothesis is rejected. The difference is significant, and the pattern (two large parental classes, two small recombinant classes) is explained by the genes being linked.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Chi squared never &ldquo;proves&rdquo; anything. Say the results are or are not <em>significantly different</em> from the expected ratio, quote the calculated value, the critical value, the degrees of freedom and p = 0.05, and then link the conclusion back to the biology (for example, &ldquo;so the genes are likely to be linked&rdquo;). A p = 0.05 critical value means there is a 5% probability that a difference this large could arise by chance alone.
+</div>
+
+<!-- ============================================================ -->
+<h2>8.3 Gene Pools</h2>
+<!-- ============================================================ -->
+
+<div class="definition">
+  <strong>Gene pool:</strong> All the alleles of all the genes present in a population of one species at a given time.<br>
+  <strong>Allele frequency:</strong> The proportion of all copies of a gene in the gene pool that are a particular allele, given as a decimal or percentage. For a gene with two alleles, the two frequencies add up to 1.
+</div>
+
+<p>Evolution, at the population level, is a change in allele frequencies in a gene pool over generations. Two kinds of process can cause this change: <strong>selection</strong>, which is non-random, and <strong>genetic drift</strong>, which is random.</p>
+
+<h3>8.3(i) Selection pressures change allele frequencies</h3>
+
+<p>A <strong>selection pressure</strong> is any environmental factor that affects the chance of an organism surviving and reproducing, for example predation, disease, competition for food, climate or the availability of mates. Where there is variation in a population, individuals with phenotypes better suited to the pressure survive and reproduce more successfully. They pass on more copies of the alleles responsible, so the frequency of those alleles in the gene pool rises in the next generation, and the frequency of the alternative alleles falls.</p>
+
+<p>Many characteristics that selection acts on (such as body mass or beak length) show <strong>continuous variation</strong> and a roughly normal distribution. The type of selection is described by which part of that distribution is favoured.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Stabilising and Disruptive Selection</text>
+  <text x="165" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#2563eb">Stabilising selection</text>
+  <text x="445" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#7C3AED">Disruptive selection</text>
+  <!-- axes panel 1 -->
+  <line x1="50" y1="200" x2="280" y2="200" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="50" y1="200" x2="50" y2="55" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- axes panel 2 -->
+  <line x1="330" y1="200" x2="560" y2="200" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="330" y1="200" x2="330" y2="55" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- shaded selected-against zones -->
+  <rect x="52" y="60" width="60" height="139" fill="#DC2626" opacity="0.07"/>
+  <rect x="218" y="60" width="60" height="139" fill="#DC2626" opacity="0.07"/>
+  <rect x="415" y="60" width="60" height="139" fill="#DC2626" opacity="0.07"/>
+  <!-- curves -->
+  <path d="M50,199 L54,198 L58,198 L62,197 L65,196 L69,195 L73,194 L77,193 L81,191 L84,188 L88,186 L92,182 L96,179 L100,175 L104,170 L108,165 L111,159 L115,153 L119,147 L123,141 L127,134 L130,127 L134,121 L138,114 L142,108 L146,103 L150,99 L154,95 L157,92 L161,91 L165,90 L169,91 L173,92 L176,95 L180,99 L184,103 L188,108 L192,114 L196,121 L200,127 L203,134 L207,141 L211,147 L215,153 L219,159 L222,165 L226,170 L230,175 L234,179 L238,182 L242,186 L246,188 L249,191 L253,193 L257,194 L261,195 L265,196 L268,197 L272,198 L276,198 L280,199" fill="none" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M50,200 L96,200 L100,199 L104,199 L108,198 L111,196 L115,193 L119,189 L123,184 L127,176 L130,166 L134,154 L138,139 L142,123 L146,105 L150,88 L154,73 L157,61 L161,53 L165,50 L169,53 L173,61 L176,73 L180,88 L184,105 L188,123 L192,139 L196,154 L200,166 L203,176 L207,184 L211,189 L215,193 L219,196 L222,198 L226,199 L230,199 L234,200 L280,200" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <path d="M330,199 L334,198 L338,198 L342,197 L345,196 L349,195 L353,194 L357,193 L361,191 L364,188 L368,186 L372,182 L376,179 L380,175 L384,170 L388,165 L391,159 L395,153 L399,147 L403,141 L407,134 L410,127 L414,121 L418,114 L422,108 L426,103 L430,99 L434,95 L437,92 L441,91 L445,90 L449,91 L453,92 L456,95 L460,99 L464,103 L468,108 L472,114 L476,121 L480,127 L483,134 L487,141 L491,147 L495,153 L499,159 L502,165 L506,170 L510,175 L514,179 L518,182 L522,186 L526,188 L529,191 L533,193 L537,194 L541,195 L545,196 L548,197 L552,198 L556,198 L560,199" fill="none" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <path d="M330,200 L334,200 L338,199 L342,199 L345,197 L349,195 L353,192 L357,187 L361,181 L364,172 L368,162 L372,151 L376,139 L380,129 L384,121 L388,116 L391,115 L395,119 L399,126 L403,136 L407,147 L410,159 L414,169 L418,178 L422,186 L426,191 L430,194 L434,197 L437,198 L441,199 L445,199 L449,199 L453,198 L456,197 L460,194 L464,191 L468,186 L472,178 L476,169 L480,159 L483,147 L487,136 L491,126 L495,119 L499,115 L502,116 L506,121 L510,129 L514,139 L518,151 L522,162 L526,172 L529,181 L533,187 L537,192 L541,195 L545,197 L548,199 L552,199 L556,200 L560,200" fill="none" stroke="#7C3AED" stroke-width="2"/>
+  <!-- axis labels -->
+  <text x="165" y="215" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Phenotype (e.g. birth mass)</text>
+  <text x="445" y="215" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Phenotype (e.g. beak size)</text>
+  <text x="40" y="130" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" transform="rotate(-90 40 130)">Number of individuals</text>
+  <text x="320" y="130" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e" transform="rotate(-90 320 130)">Number of individuals</text>
+  <!-- selected against labels -->
+  <text x="82" y="72" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">selected</text>
+  <text x="82" y="82" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">against</text>
+  <text x="248" y="72" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">selected</text>
+  <text x="248" y="82" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">against</text>
+  <text x="445" y="72" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">selected</text>
+  <text x="445" y="82" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">against</text>
+  <!-- legend -->
+  <line x1="150" y1="245" x2="180" y2="245" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="186" y="249" font-family="system-ui" font-size="9" fill="#1a1a2e">before selection</text>
+  <line x1="300" y1="245" x2="330" y2="245" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="336" y="249" font-family="system-ui" font-size="9" fill="#1a1a2e">after many generations of selection</text>
+  <text x="165" y="268" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">same mean, smaller spread</text>
+  <text x="445" y="268" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">two peaks (bimodal), larger spread</text>
+</svg>
+</div>
+
+<h3>Stabilising selection</h3>
+
+<p>In stabilising selection, individuals close to the mean phenotype have the highest survival and reproductive success, and both extremes are selected against. Alleles that produce extreme phenotypes become less frequent. The mean stays the same, but the spread of the distribution (its range and standard deviation) becomes smaller. Stabilising selection is typical of a stable environment where the population is already well adapted, so it <strong>maintains continuity</strong>: the population stays much the same from one generation to the next.</p>
+
+<p><strong>Example:</strong> human birth mass. Babies of very low or very high birth mass have historically had lower survival rates than babies of intermediate mass, which has kept the mean birth mass fairly constant.</p>
+
+<h3>Disruptive selection</h3>
+
+<p>In disruptive selection, individuals at <em>both</em> extremes of the range do better than those in the middle. This can happen when the environment offers two distinct resources or habitats, with intermediate forms poorly suited to either. Over generations, the frequency of alleles producing the extremes rises, and the distribution becomes <strong>bimodal</strong> (two peaks) with a larger spread.</p>
+
+<p><strong>Example:</strong> the black-bellied seedcracker, a finch in West Africa, has two distinct beak sizes. Large-beaked birds feed efficiently on hard seeds and small-beaked birds on soft seeds, while birds with intermediate beaks are less efficient at both.</p>
+
+<p><strong>Disruptive selection and speciation.</strong> If the two extreme groups start to mate mainly with their own kind (for example because they feed or breed in different places or at different times), gene flow between them falls. They then become <strong>reproductively isolated</strong>, their gene pools diverge, and they may eventually become separate species that can no longer interbreed to produce fertile offspring. Because this can happen without any geographical barrier, it is a route to <strong>sympatric speciation</strong>. Even without full speciation, disruptive selection causes change in the population.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Selection acts on <strong>phenotypes</strong>, but what changes is the <strong>allele frequency</strong> in the gene pool. In extended answers, follow the chain: variation exists (due to mutation) &rarr; selection pressure &rarr; individuals with a particular phenotype are more likely to survive and <em>reproduce</em> &rarr; they pass on their alleles &rarr; allele frequency changes over many generations. Never say that organisms mutate or adapt &ldquo;in order to&rdquo; survive: the mutations are random and are already present before selection acts. For &ldquo;compare&rdquo; questions on graphs, remember that stabilising selection narrows the distribution about the same mean, and disruptive selection produces two peaks. (Selection that shifts the mean in one direction is directional selection.)
+</div>
+
+<h3>Measuring spread: range and standard deviation</h3>
+
+<p>Because stabilising selection reduces variation and disruptive selection increases it, you may be asked to compare measures of spread for a characteristic before and after selection.</p>
+<ul>
+  <li><strong>Range</strong> is the largest value minus the smallest. It is quick but is distorted by a single extreme value.</li>
+  <li><strong>Standard deviation</strong> measures the spread of data about the mean using every value. In a normal distribution about 68% of values lie within one standard deviation of the mean, and about 95% within two. A smaller standard deviation after selection supports stabilising selection.</li>
+</ul>
+
+<div class="equation">
+  s = &radic;[ &Sigma;(x &minus; x&#772;)<sup>2</sup> &divide; (n &minus; 1) ]
+</div>
+
+<h3>8.3(ii) Chance: genetic drift</h3>
+
+<div class="definition">
+  <strong>Genetic drift:</strong> A change in allele frequencies from one generation to the next that happens by chance, not because one allele gives an advantage.
+</div>
+
+<p>Each generation, only some individuals reproduce, and each offspring receives a random sample of each parent&rsquo;s alleles. So the alleles passed on are a random sample of the gene pool. In a large population these chance effects are tiny and tend to cancel out. In a small population, the random sample is small, so allele frequencies can change a lot from one generation to the next purely by luck (for example, if a few individuals carrying a particular allele happen to die in an accident or happen to leave no offspring).</p>
+
+<ul>
+  <li>Drift can increase or decrease the frequency of any allele, including advantageous ones.</li>
+  <li>Over many generations it can lead to an allele being <strong>lost</strong> (frequency 0) or <strong>fixed</strong> (frequency 1), which reduces genetic diversity.</li>
+  <li>Drift does not make a population better adapted, unlike natural selection.</li>
+  <li>It has the greatest effect in small, isolated populations, which is why it matters for rare and endangered species.</li>
+</ul>
+
+<h3>8.3(iii) Population bottlenecks and the founder effect</h3>
+
+<p>Two situations make populations small and therefore let chance have a large effect on allele frequencies.</p>
+
+<p><strong>Population bottleneck.</strong> An event such as a natural disaster, disease outbreak or heavy hunting kills most of a population, regardless of the alleles individuals carry. The few survivors carry only a sample of the original gene pool, so some alleles are lost and others may become much more (or less) common by chance. Even when the population grows again, its genetic diversity stays low for many generations, because new alleles only arise slowly by mutation.</p>
+
+<p><strong>Example:</strong> the northern elephant seal was hunted almost to extinction in the late nineteenth century, leaving a very small population. Although numbers have since recovered to many thousands, the species now shows very low genetic diversity.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 250" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Population Bottleneck</text>
+  <defs>
+    <marker id="arrowBN8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- bottle outline -->
+  <path d="M40,50 L230,50 L270,110 L330,110 L370,50 L560,50" fill="none" stroke="#1e3a5f" stroke-width="1.5"/>
+  <path d="M40,200 L230,200 L270,140 L330,140 L370,200 L560,200" fill="none" stroke="#1e3a5f" stroke-width="1.5"/>
+  <!-- original population: mixed alleles (4 colours) -->
+  <circle cx="70" cy="75" r="7" fill="#2563eb"/><circle cx="95" cy="95" r="7" fill="#DC2626"/><circle cx="120" cy="70" r="7" fill="#16A34A"/><circle cx="145" cy="100" r="7" fill="#D97706"/>
+  <circle cx="170" cy="75" r="7" fill="#2563eb"/><circle cx="195" cy="95" r="7" fill="#16A34A"/><circle cx="75" cy="125" r="7" fill="#D97706"/><circle cx="100" cy="150" r="7" fill="#2563eb"/>
+  <circle cx="125" cy="125" r="7" fill="#DC2626"/><circle cx="150" cy="150" r="7" fill="#16A34A"/><circle cx="175" cy="125" r="7" fill="#DC2626"/><circle cx="200" cy="150" r="7" fill="#2563eb"/>
+  <circle cx="70" cy="175" r="7" fill="#16A34A"/><circle cx="120" cy="178" r="7" fill="#D97706"/><circle cx="170" cy="178" r="7" fill="#2563eb"/><circle cx="215" cy="125" r="7" fill="#D97706"/>
+  <!-- survivors -->
+  <circle cx="285" cy="125" r="7" fill="#2563eb"/><circle cx="305" cy="125" r="7" fill="#2563eb"/><circle cx="325" cy="125" r="7" fill="#DC2626"/>
+  <!-- recovered population: mostly blue, some red -->
+  <circle cx="400" cy="75" r="7" fill="#2563eb"/><circle cx="425" cy="95" r="7" fill="#2563eb"/><circle cx="450" cy="70" r="7" fill="#DC2626"/><circle cx="475" cy="100" r="7" fill="#2563eb"/>
+  <circle cx="500" cy="75" r="7" fill="#2563eb"/><circle cx="525" cy="95" r="7" fill="#DC2626"/><circle cx="405" cy="125" r="7" fill="#2563eb"/><circle cx="430" cy="150" r="7" fill="#2563eb"/>
+  <circle cx="455" cy="125" r="7" fill="#2563eb"/><circle cx="480" cy="150" r="7" fill="#DC2626"/><circle cx="505" cy="125" r="7" fill="#2563eb"/><circle cx="530" cy="150" r="7" fill="#2563eb"/>
+  <circle cx="400" cy="175" r="7" fill="#DC2626"/><circle cx="450" cy="178" r="7" fill="#2563eb"/><circle cx="500" cy="178" r="7" fill="#2563eb"/><circle cx="545" cy="125" r="7" fill="#2563eb"/>
+  <!-- labels -->
+  <text x="140" y="222" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">Original population</text>
+  <text x="140" y="236" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">four alleles, all fairly common</text>
+  <text x="300" y="222" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">Few survivors</text>
+  <text x="300" y="236" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">chance, not fitness</text>
+  <text x="470" y="222" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">Recovered population</text>
+  <text x="470" y="236" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">two alleles lost; frequencies changed</text>
+  <path d="M240,40 L360,40" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowBN8)"/>
+  <text x="300" y="36" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">time</text>
+</svg>
+</div>
+
+<p><strong>Founder effect.</strong> A small group of individuals leaves a large population and starts a new, isolated population (for example, colonising an island or a religious community that marries only within the group). The founders carry only a small, random sample of the original gene pool, so the new population&rsquo;s allele frequencies can be very different from those of the parent population. An allele that was rare in the original population may, by chance, be common among the founders.</p>
+
+<p><strong>Example:</strong> the Old Order Amish community of Lancaster County, Pennsylvania, descends from a small number of founders and has mostly married within the group. Ellis&ndash;van Creveld syndrome, a recessive condition that is very rare in most populations, occurs at a much higher frequency in this community.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Bottlenecks and the founder effect are both forms of genetic drift, and in both cases the key word is <strong>chance</strong>: the surviving or founding individuals are not selected for their alleles. The difference is the cause. A bottleneck is a sharp fall in the size of an existing population; the founder effect is a new population being started by a few individuals. In both, a reduced gene pool means less genetic diversity, which can reduce a population&rsquo;s ability to adapt to future change (for example a new disease).
+</div>
+
+<h3>8.3(iv) The Hardy&ndash;Weinberg equation</h3>
+
+<p>The Hardy&ndash;Weinberg principle predicts that allele and genotype frequencies in a population stay constant from generation to generation, provided certain conditions are met. For a gene with two alleles, a dominant allele A with frequency <em>p</em> and a recessive allele a with frequency <em>q</em>:</p>
+
+<div class="equation">
+  p + q = 1
+</div>
+<div class="equation">
+  p<sup>2</sup> + 2pq + q<sup>2</sup> = 1
+</div>
+
+<p>where p<sup>2</sup> is the frequency of the AA genotype, 2pq the frequency of heterozygotes (Aa), and q<sup>2</sup> the frequency of aa. The second equation comes from random mating: the chance of an offspring getting A from both parents is p &times; p, a from both is q &times; q, and one of each is pq + qp = 2pq.</p>
+
+<p><strong>Conditions for Hardy&ndash;Weinberg equilibrium:</strong></p>
+<ul>
+  <li>a very large population, so genetic drift is negligible;</li>
+  <li>random mating;</li>
+  <li>no selection (all genotypes survive and reproduce equally well);</li>
+  <li>no mutation at that locus;</li>
+  <li>no migration into or out of the population (no gene flow).</li>
+</ul>
+
+<h3>Worked example 1: estimating carrier frequency</h3>
+
+<p>Cystic fibrosis is caused by a recessive allele. In populations of northern European descent, about 1 in 2500 babies is born with the condition.</p>
+<ol>
+  <li>Affected people are homozygous recessive, so q<sup>2</sup> = 1/2500 = 0.0004.</li>
+  <li>q = &radic;0.0004 = 0.02.</li>
+  <li>p = 1 &minus; q = 0.98.</li>
+  <li>Carrier frequency = 2pq = 2 &times; 0.98 &times; 0.02 = 0.0392, which is about 3.9%, or roughly 1 in 25 people.</li>
+</ol>
+<p>So although the condition affects only 0.04% of babies, around one person in 25 carries the allele. Most copies of a rare recessive allele are hidden in heterozygotes.</p>
+
+<h3>Worked example 2: monitoring change over time</h3>
+
+<p>The real use of the equation is as a baseline. If a population&rsquo;s allele frequencies change between generations, or its genotype frequencies do not match the p<sup>2</sup> : 2pq : q<sup>2</sup> prediction, then at least one of the conditions is not being met, so the population is evolving (through selection, drift, migration or mutation). Where every genotype can be told apart (for example with codominant alleles or a DNA test), you can count alleles directly. Consider this <em>hypothetical</em> data set from 500 individuals sampled in the same population in two different years:</p>
+
+<table>
+  <tr><th>Sample</th><th>AA</th><th>Aa</th><th>aa</th><th>Frequency of A (p)</th><th>Frequency of a (q)</th></tr>
+  <tr><td>Year 1</td><td>245</td><td>210</td><td>45</td><td>(2 &times; 245 + 210) &divide; 1000 = 0.70</td><td>0.30</td></tr>
+  <tr><td>Year 20</td><td>180</td><td>240</td><td>80</td><td>(2 &times; 180 + 240) &divide; 1000 = 0.60</td><td>0.40</td></tr>
+</table>
+
+<p>Each individual carries two alleles, so there are 1000 alleles in each sample. The frequency of allele a has risen from 0.30 to 0.40. Within each year the genotypes fit Hardy&ndash;Weinberg proportions (for example, in year 1: 0.49 &times; 500 = 245, 0.42 &times; 500 = 210, 0.09 &times; 500 = 45), but the change in allele frequency between the samples shows that the population is not in equilibrium over time. A scientist would then look for a cause, such as a selection pressure favouring aa or Aa individuals, migration, or drift in a small population.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In a dominant/recessive system you usually start from q<sup>2</sup>, because only the homozygous recessive phenotype tells you the genotype for certain; you cannot tell AA from Aa by looking. Common mistakes: using q<sup>2</sup> when the question asks for q (or the other way round), and forgetting to multiply by 2 for heterozygotes. Remember p and q are <em>allele</em> frequencies while p<sup>2</sup>, 2pq and q<sup>2</sup> are <em>genotype</em> frequencies. If a question asks you to <em>calculate</em>, show each step; if it asks you to <em>deduce</em> or <em>justify</em>, use the calculated numbers to support a conclusion (for example, whether the population is in equilibrium).
+</div>
+
+<!-- ============================================================ -->
+<h2>Core Practicals and Command Words</h2>
+<!-- ============================================================ -->
+
+<div class="definition">
+  <strong>Core practicals:</strong> The 9BI0 specification does not name a core practical for Topic 8. The chi squared and standard-deviation skills from this topic are, however, used when analysing data from practicals elsewhere in the course. See the <a href="core_practicals.html">core practicals page</a> for the full list (CP1 to CP16).
+</div>
+
+<table>
+  <tr><th>Command word</th><th>What it asks for in a Topic 8 question</th></tr>
+  <tr><td>Calculate</td><td>Get a numerical answer (e.g. a recombination frequency, a &chi;<sup>2</sup> value or a carrier frequency), showing working.</td></tr>
+  <tr><td>Describe</td><td>Give an account without reasons, e.g. describe the pattern of inheritance shown in a pedigree.</td></tr>
+  <tr><td>Explain</td><td>Give reasons, e.g. explain why recombinant offspring are fewer than parental ones (a chiasma only forms between the loci in some meioses).</td></tr>
+  <tr><td>Deduce</td><td>Draw a conclusion from the information given, e.g. deduce the genotypes of individuals in a family tree.</td></tr>
+  <tr><td>Analyse</td><td>Pick out the important features of data, e.g. identify the two large and two small classes in a cross.</td></tr>
+  <tr><td>Comment on / Evaluate</td><td>Judge the evidence, e.g. whether a &chi;<sup>2</sup> result supports the hypothesis that two genes are linked, including the limits of the sample.</td></tr>
+  <tr><td>Suggest</td><td>Apply your knowledge to an unfamiliar situation, e.g. suggest why a small island population has low genetic diversity.</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>Key Terms Checklist</h2>
+<!-- ============================================================ -->
+
+<p>Check that you can define and use each term below.</p>
+
+<table>
+  <tr><th>Term</th><th>Quick definition</th></tr>
+  <tr><td>Mutation</td><td>A change in the base sequence of DNA or in chromosome structure or number; the only source of new alleles</td></tr>
+  <tr><td>Crossing over</td><td>Exchange of sections between non-sister chromatids of homologous chromosomes at chiasmata in prophase I</td></tr>
+  <tr><td>Chiasma (pl. chiasmata)</td><td>The point where non-sister chromatids break and rejoin during crossing over</td></tr>
+  <tr><td>Independent assortment</td><td>Random orientation of each bivalent at metaphase I, giving random combinations of maternal and paternal chromosomes in gametes</td></tr>
+  <tr><td>Random fertilisation</td><td>Any male gamete can fuse with any female gamete, so the combination of alleles in a zygote is a matter of chance</td></tr>
+  <tr><td>Genotype / phenotype</td><td>The alleles present / the characteristics shown (genotype plus environment)</td></tr>
+  <tr><td>Homozygote / heterozygote</td><td>Two identical alleles / two different alleles at a locus</td></tr>
+  <tr><td>Dominant / recessive</td><td>Expressed in a heterozygote / expressed only when homozygous</td></tr>
+  <tr><td>Codominance</td><td>Both alleles are expressed in the heterozygote</td></tr>
+  <tr><td>Multiple alleles</td><td>Three or more alleles of one gene in a population</td></tr>
+  <tr><td>Test cross</td><td>Crossing with a homozygous recessive to reveal an unknown genotype</td></tr>
+  <tr><td>Pedigree diagram</td><td>A family tree showing the inheritance of a characteristic across generations</td></tr>
+  <tr><td>Dihybrid cross</td><td>A cross following two genes; 9:3:3:1 and 1:1:1:1 ratios for unlinked genes</td></tr>
+  <tr><td>Autosomal linkage</td><td>Genes on the same autosome, inherited together unless separated by crossing over</td></tr>
+  <tr><td>Recombinant</td><td>An offspring or gamete with a new combination of alleles not found in either parental chromosome</td></tr>
+  <tr><td>Recombination frequency</td><td>Recombinant offspring as a percentage of the total; below 50% means linkage</td></tr>
+  <tr><td>Sex linkage</td><td>A gene carried on the X chromosome, with no matching locus on the Y</td></tr>
+  <tr><td>Hemizygous</td><td>Having only one copy of a gene, as males do for X-linked genes</td></tr>
+  <tr><td>Carrier</td><td>A heterozygote who carries a recessive allele but does not show its effect</td></tr>
+  <tr><td>Chi squared test</td><td>A statistical test of whether observed numbers differ significantly from expected numbers</td></tr>
+  <tr><td>Null hypothesis</td><td>The statement that there is no significant difference between observed and expected results</td></tr>
+  <tr><td>Degrees of freedom</td><td>Number of categories minus one (for a genetic cross)</td></tr>
+  <tr><td>Gene pool</td><td>All the alleles of all the genes in a population</td></tr>
+  <tr><td>Allele frequency</td><td>The proportion of a gene&rsquo;s copies in the gene pool that are one particular allele</td></tr>
+  <tr><td>Selection pressure</td><td>An environmental factor that affects the chance of survival and reproduction</td></tr>
+  <tr><td>Stabilising selection</td><td>Selection for the mean phenotype; reduces spread and maintains continuity</td></tr>
+  <tr><td>Disruptive selection</td><td>Selection for both extremes; gives a bimodal distribution and can lead to speciation</td></tr>
+  <tr><td>Reproductive isolation</td><td>Groups within a population no longer interbreed, so gene flow between them stops</td></tr>
+  <tr><td>Genetic drift</td><td>A chance change in allele frequencies, strongest in small populations</td></tr>
+  <tr><td>Population bottleneck</td><td>A sharp fall in population size that reduces the gene pool by chance</td></tr>
+  <tr><td>Founder effect</td><td>Low diversity and altered allele frequencies in a new population started by a few individuals</td></tr>
+  <tr><td>Hardy&ndash;Weinberg equation</td><td>p<sup>2</sup> + 2pq + q<sup>2</sup> = 1; predicts genotype frequencies in a population that is not evolving</td></tr>
+</table>
+
+</div>
+</body>
+</html>

@@ -1,498 +1,4082 @@
 /*
- * Edexcel A A-Level Biology — Question Bank
+ * Edexcel A (Salters-Nuffield, 9BN0) A-Level Biology — MCQ Question Bank
  * 50 questions per topic: 20 green (recall/basic), 20 amber (application), 10 red (analysis/evaluate)
- * Diagnostic picks 2 green + 2 amber + 1 red = 5 questions at random.
  * answer: 0-based index of correct option.
  */
 
 const BIOLOGY_EDEXCEL_A_QUESTIONS = {
-
-  /* ─────────────────────────────────────────────────────────── T1 */
-  'T1': {
-    name: 'Molecules, Transport and Health',
-    green: [
-      { q: 'What is the monomer of a protein?', options: ['Monosaccharide','Amino acid','Nucleotide','Fatty acid'], answer: 1 },
-      { q: 'Which bond joins amino acids together?', options: ['Glycosidic bond','Hydrogen bond','Peptide bond','Ester bond'], answer: 2 },
-      { q: 'What type of reaction joins two monosaccharides?', options: ['Hydrolysis (adding water)','Condensation','Oxidation','Reduction'], answer: 1 },
-      { q: 'Which monosaccharide is the main respiratory substrate?', options: ['Fructose','Galactose','Glucose','Ribose'], answer: 2 },
-      { q: 'What is the bond between glucose molecules in starch called?', options: ['Peptide bond (C–N link)','Glycosidic bond','Ester bond','Hydrogen bond'], answer: 1 },
-      { q: 'Which test detects reducing sugars?', options: ['Biuret test','Iodine test','Benedict\'s test','Emulsion test'], answer: 2 },
-      { q: 'What is the role of haemoglobin?', options: ['Transport glucose','Transport oxygen','Transport carbon dioxide only','Break down toxins'], answer: 1 },
-      { q: 'Which level of protein structure is determined by the sequence of amino acids?', options: ['Primary','Secondary','Tertiary','Quaternary'], answer: 0 },
-      { q: 'What type of molecule is an enzyme?', options: ['Carbohydrate','Lipid','Protein','Nucleic acid'], answer: 2 },
-      { q: 'What is the fluid mosaic model?', options: ['A model of DNA structure','A model of cell membrane structure','A model of protein folding','A model of enzyme action'], answer: 1 },
-      { q: "Which component of the cell membrane regulates its fluidity, making it less fluid at higher temperatures?", options: ["Proteins","Cholesterol","Glycolipids","Phospholipid tails"], answer: 1 },
-      { q: 'What is osmosis?', options: ['Movement of solute molecules down a concentration gradient','Net movement of water from high to low water potential through a partially permeable membrane','Active transport of water','Diffusion of gases'], answer: 1 },
-      { q: 'What is active transport?', options: ['Movement down a concentration gradient','Movement of water by osmosis','Movement against a concentration gradient using ATP','Bulk movement of fluids'], answer: 2 },
-      { q: 'Which type of cholesterol is associated with increased cardiovascular disease risk?', options: ['HDL','LDL','VLDL and HDL equally','Neither'], answer: 1 },
-      { q: 'What is an atheroma?', options: ['A type of white blood cell','A fatty deposit in artery walls','A blood clot','A type of platelet'], answer: 1 },
-      { q: 'What is the function of phospholipids in the cell membrane?', options: ['Form a selectively permeable bilayer','Provide energy','Store genetic information','Catalyse reactions'], answer: 0 },
-      { q: 'What is a triglyceride made from?', options: ['3 amino acids and glycerol','3 fatty acids and glycerol','3 glucose molecules','3 nucleotides'], answer: 1 },
-      { q: 'Which element is found in proteins but not in carbohydrates?', options: ['Carbon','Hydrogen','Nitrogen','Oxygen'], answer: 2 },
-      { q: 'What type of bond holds the secondary structure of proteins?', options: ['Ionic bonds','Disulfide bridges','Hydrogen bonds','Peptide bonds'], answer: 2 },
-      { q: 'What is the substrate of the enzyme amylase?', options: ['Protein','Lipid','Starch','Cellulose'], answer: 2 },
+  "S1": {
+    "name": "Lifestyle, Health and Risk",
+    "green": [
+      {
+        "q": "What is the name of the blood vessel that carries oxygenated blood away from the heart to the body?",
+        "options": [
+          "Pulmonary artery",
+          "Vena cava",
+          "Pulmonary vein",
+          "Aorta"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Which type of blood vessel has valves to prevent backflow?",
+        "options": [
+          "Veins",
+          "Arterioles",
+          "Capillaries",
+          "Arteries"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is atherosclerosis?",
+        "options": [
+          "A viral infection",
+          "A type of cancer",
+          "Build-up of fatty deposits in artery walls",
+          "Low blood pressure"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Which molecule is the main component of an atheroma?",
+        "options": [
+          "Cholesterol",
+          "Haemoglobin",
+          "Glucose",
+          "Glycogen"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is a thrombus?",
+        "options": [
+          "A type of white blood cell that engulfs bacteria",
+          "A red blood cell",
+          "A blood clot formed in a vessel",
+          "A platelet"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What does BMI stand for?",
+        "options": [
+          "Body Measurement Index",
+          "Body Mass Index",
+          "Basal Metabolic Indicator",
+          "Blood Mass Index"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Which chamber of the heart pumps blood to the lungs?",
+        "options": [
+          "Left atrium",
+          "Right ventricle",
+          "Left ventricle (via aorta)",
+          "Right atrium"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Why is water a good solvent for ions such as Na⁺ and Cl⁻ in blood plasma?",
+        "options": [
+          "Water molecules are non-polar, so they surround ions with a hydrophobic layer",
+          "Water has a high specific heat capacity, so ions dissolve as the blood warms",
+          "Water molecules are dipoles, so their charged ends are attracted to the ions",
+          "Water molecules form covalent bonds with ions, holding them in the plasma"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Which type of fat is associated with increased cardiovascular disease risk?",
+        "options": [
+          "Monounsaturated fat",
+          "Saturated fat",
+          "Polyunsaturated fat",
+          "Omega-3 fatty acids"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the double circulatory system?",
+        "options": [
+          "Two hearts pump blood",
+          "Blood passes through the heart once per circuit",
+          "Blood passes through the heart twice per complete circuit",
+          "Blood flows in two directions"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is blood pressure measured in?",
+        "options": [
+          "Watts",
+          "Pascals",
+          "Joules",
+          "mmHg"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Which risk factor for CVD cannot be controlled?",
+        "options": [
+          "Genetic predisposition",
+          "Exercise level and body mass",
+          "Smoking",
+          "Diet"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is the cardiac cycle?",
+        "options": [
+          "The clotting process",
+          "The formation of blood cells",
+          "The journey of blood around the body",
+          "One complete heartbeat sequence of contraction and relaxation"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is diastole?",
+        "options": [
+          "Relaxation and filling of heart chambers",
+          "Valve opening",
+          "Contraction of heart chambers",
+          "Blood clotting"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is systole?",
+        "options": [
+          "Relaxation of heart chambers",
+          "Valve closure only",
+          "Electrical conduction through the AVN",
+          "Contraction of heart chambers"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Which lipoprotein is considered \"bad\" cholesterol?",
+        "options": [
+          "Albumin",
+          "HDL",
+          "LDL (and VLDL)",
+          "Both HDL and LDL equally"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Which type of bond joins two monosaccharides together to form a disaccharide?",
+        "options": [
+          "Glycosidic bond",
+          "Ester bond",
+          "Peptide bond",
+          "Hydrogen bond"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Which polysaccharide is the main energy store in animal cells?",
+        "options": [
+          "Amylose",
+          "Glycogen",
+          "Lactose",
+          "Maltose"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Which molecules join in condensation reactions to form a triglyceride?",
+        "options": [
+          "Three monosaccharides joined by glycosidic bonds",
+          "One glycerol molecule and three fatty acids",
+          "Three glycerol molecules and one fatty acid",
+          "Glycerol, a phosphate group and two fatty acids"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "During blood clotting, which enzyme converts soluble fibrinogen into insoluble fibrin?",
+        "options": [
+          "Amylase",
+          "Prothrombin",
+          "Thromboplastin",
+          "Thrombin"
+        ],
+        "answer": 3
+      }
     ],
-    amber: [
-      { q: 'Why does the oxygen dissociation curve shift right during exercise?', options: ['Decreased CO2 concentration and a rise in blood pH in the muscles','Increased CO2 concentration (Bohr effect)','Decreased temperature','Increased pH'], answer: 1 },
-      { q: 'How does competitive inhibition affect enzyme activity?', options: ['Inhibitor binds to the active site permanently, increasing Vmax and lowering Km','Inhibitor binds to active site, competing with substrate','Inhibitor changes enzyme shape permanently','Inhibitor binds to allosteric site'], answer: 1 },
-      { q: 'What is the difference between saturated and unsaturated fatty acids?', options: ['Saturated fatty acids have C=C double bonds causing kinks; unsaturated fatty acids have only single bonds between carbons','Unsaturated have C=C double bonds causing kinks; saturated have only single bonds','Saturated are liquid at room temperature','There is no structural difference'], answer: 1 },
-      { q: 'How does temperature affect enzyme activity above the optimum?', options: ['Enzyme works faster','Hydrogen bonds break, denaturing the active site','Substrate concentration decreases, so fewer enzyme-substrate complexes form each second','pH changes'], answer: 1 },
-      { q: 'Why is water important as a biological solvent?', options: ['It is non-polar','Its polarity allows it to dissolve ionic and polar substances for transport','It has low specific heat capacity','It is a good electrical insulator'], answer: 1 },
-      { q: 'What happens to red blood cells placed in a hypotonic solution?', options: ['They crenate','They swell and may lyse','They remain unchanged because the membrane is rigid','They plasmolyse'], answer: 1 },
-      { q: 'How does the structure of collagen relate to its function?', options: ['Globular shape allows it to dissolve easily','Triple helix of polypeptides with cross-links gives tensile strength','It has a haem group in each chain for oxygen transport, and a globular shape that dissolves in plasma','Its quaternary structure allows cooperative binding'], answer: 1 },
-      { q: 'What is the Bohr effect?', options: ['Oxygen binds more readily at low CO2, so haemoglobin holds on to oxygen more tightly in active tissues','Increased CO2/H+ causes haemoglobin to release oxygen more readily','Temperature has no effect on oxygen binding','Haemoglobin binds CO2 irreversibly'], answer: 1 },
-      { q: 'How does facilitated diffusion differ from simple diffusion?', options: ['It requires ATP','It uses channel or carrier proteins but no ATP','It moves substances against a concentration gradient','It only transports water'], answer: 1 },
-      { q: 'Why is starch a good storage molecule?', options: ['It is soluble and easily transported in the phloem, so it draws water into storage cells by osmosis and swells them','It is insoluble so does not affect osmosis, compact, and easily hydrolysed','It is a reducing sugar','It contains nitrogen'], answer: 1 },
-      { q: 'Explain why LDL cholesterol increases cardiovascular disease risk.', options: ['It strengthens artery walls','It deposits cholesterol in artery walls, forming atheromas that narrow the lumen','It dissolves plaques','It reduces blood pressure'], answer: 1 },
-      { q: 'What is the role of channel proteins in the cell membrane?', options: ['Active transport of ions','Provide hydrophilic channels for specific ions/polar molecules to pass by facilitated diffusion','Produce ATP','Store glucose'], answer: 1 },
-      { q: 'How does surface area to volume ratio affect the rate of diffusion?', options: ['A larger SA:V ratio decreases the rate of diffusion, because there is less volume for the substance to move into','Larger SA:V ratio increases the rate of exchange relative to volume','SA:V ratio has no effect','Only volume matters'], answer: 1 },
-      { q: 'What is cooperative binding in haemoglobin?', options: ['All four subunits bind oxygen simultaneously and independently, so the first binding has no effect on the others','Binding of one O2 molecule changes shape, making subsequent binding easier','Haemoglobin only binds one O2','CO2 binding helps O2 bind'], answer: 1 },
-      { q: 'Why do phospholipids form a bilayer in water?', options: ['Both heads and tails are hydrophilic','Hydrophilic heads face water while hydrophobic tails face inward, away from water','They are held by covalent bonds to water molecules, with the phosphate heads bonded inwards and the fatty acid tails pointing outwards','Cholesterol forces them into a bilayer'], answer: 1 },
-      { q: 'How does non-competitive inhibition affect Vmax?', options: ['Vmax increases','Vmax decreases because fewer functional enzyme-substrate complexes can form','Km increases','No effect on Vmax'], answer: 1 },
-      { q: 'What is the significance of the tertiary structure of an enzyme?', options: ['It determines the primary sequence','It creates the specific 3D shape of the active site, enabling substrate binding','It only affects solubility','It has no functional significance'], answer: 1 },
-      { q: 'How do risk factors interact to increase cardiovascular disease risk?', options: ['They cancel each other out','Multiple risk factors (smoking, high BP, high LDL) have a cumulative effect','Only one risk factor matters','Genetics override all other factors, so smoking, blood pressure and LDL levels only matter in people with a family history of the disease'], answer: 1 },
-      { q: 'Why is cellulose difficult for humans to digest?', options: ['It contains beta-1,4-glycosidic bonds that human enzymes cannot hydrolyse','It is soluble','It is a protein','It contains lipids'], answer: 0 },
-      { q: 'How does the induced fit model differ from the lock and key model?', options: ['Lock and key says the active site changes shape','Induced fit proposes the active site moulds around the substrate, lowering activation energy','They are identical models','Induced fit only applies to non-competitive inhibition, while lock and key describes every normal enzyme-substrate reaction in cells'], answer: 1 },
+    "amber": [
+      {
+        "q": "How does smoking increase the risk of cardiovascular disease?",
+        "options": [
+          "Carbon monoxide reduces oxygen carrying capacity and nicotine raises blood pressure",
+          "It thins the blood",
+          "It reduces heart rate",
+          "It increases HDL cholesterol"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is the relationship between high blood pressure and atherosclerosis?",
+        "options": [
+          "High BP damages artery endothelium, promoting plaque formation",
+          "High blood pressure dissolves existing plaques, so the two are negatively correlated",
+          "They are unrelated",
+          "Atherosclerosis causes low BP"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Why do arteries have thick muscular walls?",
+        "options": [
+          "To produce hormones",
+          "To store blood",
+          "To absorb nutrients from the blood and store them for the muscles during exercise",
+          "To withstand high pressure from ventricular contractions"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "How does a coronary thrombosis lead to a myocardial infarction?",
+        "options": [
+          "It strengthens the heart muscle by making it work harder to push blood past the clot",
+          "A clot blocks coronary arteries, starving heart muscle of oxygen",
+          "It increases blood flow",
+          "It reduces cholesterol"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the difference between a correlation and a causal relationship in epidemiological studies?",
+        "options": [
+          "They are the same thing",
+          "Causation cannot be proven",
+          "Correlation shows association; causation proves one factor directly causes another",
+          "Correlation is always stronger"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How do statins reduce the risk of CVD?",
+        "options": [
+          "They inhibit liver cholesterol production, lowering blood LDL levels",
+          "They increase heart rate",
+          "They widen arteries permanently",
+          "They dissolve existing blood clots in the coronary arteries and prevent new ones forming"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Why does the left ventricle have a thicker wall than the right?",
+        "options": [
+          "It beats faster",
+          "It receives more blood",
+          "It must generate higher pressure to pump blood around the entire body",
+          "It contains more valves, which need thicker muscle around them to open and close them"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does HDL cholesterol reduce CVD risk?",
+        "options": [
+          "It promotes clotting",
+          "It blocks arteries",
+          "It increases blood pressure by carrying cholesterol from the liver into the artery walls",
+          "It transports cholesterol from arteries back to the liver for breakdown"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What happens during atrial systole?",
+        "options": [
+          "The ventricles contract, forcing blood into the arteries through the open semilunar valves",
+          "Atria contract forcing blood into the ventricles through the AV valves",
+          "All chambers relax",
+          "Semilunar valves open"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Why are capillary walls only one cell thick?",
+        "options": [
+          "To allow rapid diffusion of substances between blood and tissues",
+          "To prevent clotting",
+          "To withstand the high pressure of blood arriving directly from the ventricles each beat",
+          "To store blood"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does regular exercise reduce CVD risk?",
+        "options": [
+          "It increases blood viscosity and heart rate at rest, which forces the heart to grow stronger",
+          "It strengthens the heart, lowers resting BP, and increases HDL",
+          "It raises LDL cholesterol",
+          "It narrows arteries"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the role of platelets in the formation of a thrombus?",
+        "options": [
+          "They digest fat",
+          "They produce antibodies that bind to fibrin and dissolve any clot that forms in a vessel",
+          "They clump together at damaged endothelium and release clotting factors",
+          "They carry oxygen"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does obesity increase CVD risk?",
+        "options": [
+          "It reduces blood volume",
+          "It lowers blood pressure",
+          "It is linked to higher LDL, raised BP, and type 2 diabetes",
+          "It strengthens the artery walls, which raises blood pressure and damages the heart"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the difference between absolute and relative risk?",
+        "options": [
+          "Absolute risk is always higher",
+          "Relative risk is more accurate",
+          "They are identical",
+          "Absolute risk is actual probability; relative risk compares risk between two groups"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "How do anticoagulants like warfarin help prevent CVD?",
+        "options": [
+          "They reduce blood pressure by widening arteries, so plaques shrink and disappear",
+          "They lower cholesterol",
+          "They reduce blood clotting, preventing thrombus formation",
+          "They dissolve plaques"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the role of the atrioventricular valves?",
+        "options": [
+          "Prevent backflow from ventricles to atria during ventricular systole",
+          "Filter blood",
+          "Oxygenate blood",
+          "Pump blood forward"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does the structure of an artery relate to its function?",
+        "options": [
+          "Thin walls allow diffusion",
+          "Valves prevent backflow",
+          "Large lumen stores blood",
+          "Thick elastic and muscular walls maintain blood pressure and withstand surges"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "During ventricular systole, what causes the atrioventricular valves to close?",
+        "options": [
+          "Pressure in the aorta rises above the pressure in the ventricles",
+          "Pressure in the ventricles rises above the pressure in the atria",
+          "Pressure in the atria rises above the pressure in the ventricles",
+          "The walls of the atria contract and pull the valve flaps shut"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Why might epidemiological data show a correlation between alcohol and CVD but not prove causation?",
+        "options": [
+          "Because correlation is stronger than causation, so any correlation proves alcohol protects the heart",
+          "Alcohol has no effect on CVD",
+          "Because all studies prove causation",
+          "Confounding variables (diet, exercise, genetics) may influence results"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Why is the highly branched structure of glycogen well suited to its role as an energy store?",
+        "options": [
+          "The branches make glycogen osmotically active, so it draws water into cells",
+          "The many free ends can be hydrolysed at the same time, releasing glucose quickly",
+          "The branches make glycogen soluble, so it can travel in the blood to other cells",
+          "The branches form cross-links that give liver cells extra mechanical strength"
+        ],
+        "answer": 1
+      }
     ],
-    red: [
-      { q: 'A patient has familial hypercholesterolaemia. Which best explains their elevated LDL?', options: ['Excess dietary fibre','Lack of dietary cholesterol','Defective LDL receptors on liver cells prevent LDL uptake from blood','Overproduction of HDL'], answer: 2 },
-      { q: 'Foetal haemoglobin has a higher oxygen affinity than adult haemoglobin. What is the biological advantage?', options: ['It can load oxygen at the low partial pressure in the placenta, taking oxygen from the mother’s haemoglobin','It releases oxygen more easily to the foetus’s tissues, because a higher affinity shifts the curve to the right','It prevents the Bohr effect','It releases oxygen less readily'], answer: 0 },
-      { q: 'Why is the effect of a non-competitive inhibitor NOT overcome by adding more substrate, unlike a competitive inhibitor?', options: ['Competitive inhibitors cannot bind at low substrate','It binds away from the active site and changes its shape, lowering Vmax however much substrate is present','It binds to the active site more tightly than the substrate, so extra substrate cannot displace it and Km falls sharply','Competitive inhibitors only work at high substrate'], answer: 1 },
-      { q: 'Explain why replacing saturated fats with unsaturated fats in the diet may reduce CVD risk.', options: ['Unsaturated fats raise LDL but are broken down faster in the liver, so less cholesterol reaches the coronary arteries overall','Unsaturated fats block arteries more','Unsaturated fats are associated with higher HDL and lower LDL, so less cholesterol is deposited in artery walls as atheroma','Saturated fats are essential'], answer: 2 },
-      { q: 'A membrane is treated with a detergent that removes all proteins. Which transport processes would still occur?', options: ['All processes continue normally','Only active transport','Facilitated diffusion and active transport','Only osmosis and simple diffusion of small non-polar molecules'], answer: 3 },
-      { q: 'Why does the oxygen dissociation curve have a sigmoid shape?', options: ['Temperature variation','pH changes cause the shape','Oxygen binds to each haem group independently and at a constant rate, so saturation rises steadily as the partial pressure increases','Cooperative binding: the first O2 binds with difficulty, then changes haemoglobin’s shape so later O2 molecules bind more easily'], answer: 3 },
-      { q: 'How does smoking increase cardiovascular disease risk through multiple mechanisms?', options: ['Carbon monoxide reduces oxygen transport, nicotine raises heart rate and blood pressure, and toxins damage the artery lining, promoting atheroma','It only affects the lungs','It only raises blood pressure, since carbon monoxide and nicotine stay in the lungs and never enter the bloodstream or reach the heart and arteries','It reduces cholesterol'], answer: 0 },
-      { q: 'Evaluate the evidence that correlation between a risk factor and disease does not prove causation.', options: ['Correlation always disproves causation','All correlations prove causation','Confounding variables may explain the link, so causation needs controlled studies, a plausible mechanism and a consistent dose-response','Only genetic studies can prove causation, so correlations between a risk factor and a disease in large populations can be safely ignored'], answer: 2 },
-      { q: 'Why is water\'s high specific heat capacity important for organisms?', options: ['It allows rapid temperature changes, so organisms warm up quickly in the sun and their enzymes reach the optimum sooner','It resists temperature change, keeping aquatic habitats and cells at a stable temperature for enzyme activity','It makes water a poor solvent','It increases reaction rates'], answer: 1 },
-      { q: 'A drug inhibits the Na+/K+ ATPase pump. Predict the effect on a neurone.', options: ['No effect','The resting potential cannot be maintained as Na+ accumulates inside, so the neurone can no longer generate action potentials','Increased action potential frequency','Faster signal transmission'], answer: 1 },
-    ],
+    "red": [
+      {
+        "q": "Evaluate the evidence linking saturated fat intake to cardiovascular disease.",
+        "options": [
+          "Epidemiological studies show a correlation, but controlled trials give mixed results and confounding factors make causation hard to prove",
+          "All evidence is conclusive and undisputed",
+          "There is no evidence at all",
+          "Only animal studies support the link, and because rats and humans digest fat identically, no human data are needed to prove that saturated fat causes CVD"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "A study shows smokers have 3x the relative risk of CVD compared to non-smokers. If 5% of non-smokers develop CVD, what is the absolute risk for smokers?",
+        "options": [
+          "5%",
+          "10%",
+          "15%",
+          "20%"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Why is it difficult to design studies that definitively prove diet causes CVD in humans?",
+        "options": [
+          "Because CVD is not a real disease",
+          "Because technology is lacking",
+          "Ethical constraints prevent long-term controlled diet trials, and CVD develops over decades with many confounding lifestyle factors",
+          "Because all diets are identical"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Evaluate the use of statins as a preventive measure for CVD in the general population.",
+        "options": [
+          "Statins only work in young people",
+          "Statins lower LDL and reduce CVD events, but side effects, cost and treating many low-risk people to prevent one event limit their value",
+          "Statins cure CVD completely",
+          "Statins have no side effects and cure CVD completely, so they should be given to everyone from childhood onwards, whatever their LDL level or risk"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How might genetic factors explain why some individuals with high-fat diets do not develop CVD?",
+        "options": [
+          "Polymorphisms in genes for LDL receptors or lipid metabolism let some people clear cholesterol efficiently despite a high-fat diet",
+          "Genetics play no role",
+          "All people respond identically to dietary fat, so anyone eating a high-fat diet who stays healthy must be exercising enough to burn off all the extra fat",
+          "Only exercise matters"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Discuss why the incidence of CVD differs between countries, considering both lifestyle and genetic factors.",
+        "options": [
+          "It is the same everywhere",
+          "Only diet matters",
+          "Only genetics matters, because lifestyle is the same in every country and the populations with the highest CVD rates all carry a single dominant CVD allele",
+          "Diets, smoking rates, exercise and healthcare differ between countries, and allele frequencies affecting lipid metabolism also vary between populations"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "A patient has a blood pressure of 160/100 mmHg. Explain why both values are clinically significant.",
+        "options": [
+          "These values are normal",
+          "Raised systolic pressure strains artery walls during contraction; raised diastolic shows high resting pressure, so both increase atheroma risk",
+          "Only the diastolic value matters, because systolic pressure is produced by the atria and has no effect on the artery walls between heartbeats at rest",
+          "Only systolic matters"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Evaluate the limitations of using BMI as a measure of health risk for CVD.",
+        "options": [
+          "BMI is a perfect measure",
+          "BMI does not distinguish muscle from fat or show where fat is stored, so it misclassifies athletes and misses central obesity",
+          "BMI measures cholesterol directly",
+          "BMI accounts for all factors"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Explain how the formation of an atheroma can lead to both a heart attack and a stroke.",
+        "options": [
+          "An atheroma can rupture and trigger a clot: in coronary arteries this blocks blood to heart muscle (MI); in brain arteries it causes a stroke",
+          "Atheromas only affect the brain, where they block the veins draining the cerebrum; heart attacks are caused by weakened valves, not by blocked arteries",
+          "Atheromas are harmless",
+          "They only cause strokes"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Critically assess the claim that \"reducing dietary cholesterol directly reduces blood cholesterol levels in all individuals.\"",
+        "options": [
+          "The claim only applies to children",
+          "Dietary cholesterol has no effect",
+          "The claim is always true, because blood cholesterol comes only from food, so halving dietary cholesterol halves the blood level in every person within a week",
+          "The claim is oversimplified: the liver makes most blood cholesterol and adjusts production, and responses to dietary cholesterol vary between individuals"
+        ],
+        "answer": 3
+      }
+    ]
   },
-
-  /* ─────────────────────────────────────────────────────────── T2 */
-  'T2': {
-    name: 'Cells, Development and Biodiversity',
-    green: [
-      { q: 'What is the function of the rough endoplasmic reticulum?', options: ['Lipid synthesis','Protein synthesis and transport','ATP production','Digestion of waste and old organelles'], answer: 1 },
-      { q: 'What organelle is the site of aerobic respiration?', options: ['Ribosome','Nucleus','Mitochondrion','Golgi apparatus'], answer: 2 },
-      { q: 'What is the purpose of mitosis?', options: ['Produce genetically different cells','Produce two genetically identical daughter cells for growth and repair','Produce gametes','Reduce chromosome number'], answer: 1 },
-      { q: 'How many chromosomes are in a human diploid cell?', options: ['23','46','92','12'], answer: 1 },
-      { q: 'What is a stem cell?', options: ['A fully differentiated cell that can no longer divide or change its type','An undifferentiated cell that can divide and specialise','A dead cell','A gamete'], answer: 1 },
-      { q: 'What is the function of the Golgi apparatus?', options: ['DNA replication and the production of new ribosomes','Modifying, packaging and transporting proteins','Photosynthesis','Cell division'], answer: 1 },
-      { q: 'What is magnification?', options: ['How clear an image is','How much larger an image appears compared to the actual object','The ability to distinguish two close points as separate objects in the image','The thickness of a specimen'], answer: 1 },
-      { q: 'What is resolution?', options: ['How much larger an image is compared with the real size of the object','The ability to distinguish between two points close together','The brightness of an image','The colour depth'], answer: 1 },
-      { q: 'What is cell differentiation?', options: ['Cell death','The process by which a cell becomes specialised for a particular function','Cell division','Cells growing larger'], answer: 1 },
-      { q: 'Which organelle contains digestive enzymes?', options: ['Ribosome','Lysosome','Nucleus','Smooth ER'], answer: 1 },
-      { q: 'What is biodiversity?', options: ['The number of individuals in a population','The variety of living organisms in an area at genetic, species and ecosystem levels','The size of an ecosystem','The number of food chains'], answer: 1 },
-      { q: 'What is a prokaryotic cell?', options: ['A cell with a nucleus but no mitochondria','A cell without a membrane-bound nucleus','A plant cell','A fungal cell'], answer: 1 },
-      { q: 'What is the cell cycle?', options: ['Only mitosis','The series of events including interphase (G1, S, G2) and mitotic phase','Only DNA replication','Only cytokinesis'], answer: 1 },
-      { q: 'What happens during the S phase of interphase?', options: ['Cell divides','DNA is replicated','Organelles are made','Chromosomes condense'], answer: 1 },
-      { q: 'What is a tissue?', options: ['A single cell','A group of similar cells working together to perform a function','An organ','An organ system'], answer: 1 },
-      { q: 'What is taxonomy?', options: ['The study of rocks','The science of classifying organisms into groups','The study of ecosystems and how species interact in them','The study of evolution'], answer: 1 },
-      { q: 'Which kingdom do bacteria belong to?', options: ['Protoctista','Fungi','Prokaryotae','Plantae'], answer: 2 },
-      { q: 'What is an adaptation?', options: ['A mutation','A feature that increases an organism\'s chance of survival in its environment','A type of speciation','A genetic disease'], answer: 1 },
-      { q: 'What does a light microscope use to magnify specimens?', options: ['Electrons','Visible light and glass lenses','X-rays','Radio waves and magnetic lenses'], answer: 1 },
-      { q: 'What is the function of ribosomes?', options: ['Photosynthesis','Site of protein synthesis (translation)','DNA replication and repair in the nucleus','Lipid storage'], answer: 1 },
+  "S2": {
+    "name": "Genes and Health",
+    "green": [
+      {
+        "q": "What is a gene?",
+        "options": [
+          "An amino acid",
+          "A type of cell",
+          "A section of DNA that codes for a protein",
+          "A chromosome"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How many bases code for one amino acid?",
+        "options": [
+          "1",
+          "4",
+          "3",
+          "2"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the name of the bond between complementary bases in DNA?",
+        "options": [
+          "Hydrogen bond",
+          "Peptide bond",
+          "Covalent bond",
+          "Ionic bond"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is a dominant allele?",
+        "options": [
+          "A mutated allele",
+          "An allele that is only expressed when homozygous, and hidden in the heterozygote by any other allele",
+          "An allele that is expressed in both homozygous and heterozygous states",
+          "An allele on the Y chromosome"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the structure of a phospholipid?",
+        "options": [
+          "Two fatty acid tails and a phosphate head",
+          "Three fatty acid tails attached to a glycerol molecule",
+          "A chain of nucleotides",
+          "One amino acid chain"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is cystic fibrosis?",
+        "options": [
+          "A recessive genetic condition affecting the CFTR protein",
+          "A bacterial infection",
+          "A genetic condition caused by a dominant allele on the X chromosome",
+          "A vitamin deficiency disease"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What type of molecule is the CFTR protein?",
+        "options": [
+          "A hormone",
+          "An enzyme",
+          "A lipid",
+          "A channel/transport protein in cell membranes"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is transcription?",
+        "options": [
+          "Translation of mRNA into protein at ribosomes",
+          "Cell division",
+          "DNA replication",
+          "Copying DNA to mRNA in the nucleus"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is translation?",
+        "options": [
+          "Protein folding",
+          "mRNA leaving the nucleus",
+          "DNA copying",
+          "Assembly of amino acids into a polypeptide at a ribosome"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the role of tRNA?",
+        "options": [
+          "Carries genetic code from nucleus",
+          "Carries specific amino acids to the ribosome during translation",
+          "Makes up ribosomes",
+          "Stores genetic information"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is a codon?",
+        "options": [
+          "A type of protein",
+          "A chromosome region",
+          "A single nucleotide",
+          "A sequence of three bases on mRNA coding for an amino acid"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What does heterozygous mean?",
+        "options": [
+          "No alleles present",
+          "Two identical alleles",
+          "Two different alleles for a gene",
+          "Three alleles for a gene, one from each generation"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is a genotype?",
+        "options": [
+          "A type of protein",
+          "The genetic makeup/alleles of an organism",
+          "The environment of an organism",
+          "The physical appearance of an organism and its behaviour"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is a phenotype?",
+        "options": [
+          "A type of mutation",
+          "The observable characteristics of an organism",
+          "A DNA sequence",
+          "The alleles an organism has for each gene, written as letters"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What type of transport moves substances across membranes against a concentration gradient?",
+        "options": [
+          "Facilitated diffusion",
+          "Diffusion",
+          "Osmosis",
+          "Active transport"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the fluid mosaic model?",
+        "options": [
+          "A description of the cell wall",
+          "A description of cell membrane structure with phospholipids and proteins",
+          "A model of DNA",
+          "A type of diffusion"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is a mutation?",
+        "options": [
+          "Protein synthesis",
+          "A change in the base sequence of DNA",
+          "Normal cell division without any change to the chromosomes",
+          "Meiosis"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the genetic code described as?",
+        "options": [
+          "Random and variable",
+          "Overlapping and ambiguous",
+          "Non-overlapping, degenerate, and universal",
+          "Species-specific and overlapping, with each base read in three codons"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What bonds hold amino acids together in a polypeptide?",
+        "options": [
+          "Peptide bonds",
+          "Ionic bonds",
+          "Glycosidic bonds",
+          "Hydrogen bonds"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Where does transcription occur in eukaryotic cells?",
+        "options": [
+          "Nucleus",
+          "Ribosome",
+          "Cytoplasm",
+          "Cell membrane"
+        ],
+        "answer": 0
+      }
     ],
-    amber: [
-      { q: 'How does an electron microscope achieve higher resolution than a light microscope?', options: ['It uses larger glass lenses, which bend the light more strongly and so magnify tiny objects more','Electrons have a shorter wavelength than light, resolving finer detail','It magnifies less','It uses coloured dyes'], answer: 1 },
-      { q: 'Explain why surface area to volume ratio limits cell size.', options: ['Large cells have too much DNA','As cells grow, volume increases faster than surface area, limiting exchange of substances','Small cells cannot divide','Large cells have more organelles, which crowd the cytoplasm and stop enzymes reaching their substrates'], answer: 1 },
-      { q: 'How does meiosis contribute to genetic variation?', options: ['It produces genetically identical diploid cells, so variation only arises from rare mutations','Independent assortment and crossing over create new combinations of alleles','It doubles chromosome number','It only produces mutations'], answer: 1 },
-      { q: 'What is the difference between totipotent and pluripotent stem cells?', options: ['They are the same','Totipotent can differentiate into any cell type including extraembryonic; pluripotent into any body cell but not extraembryonic','Pluripotent can form more types','Totipotent only form blood cells'], answer: 1 },
-      { q: 'How is the ultrastructure of a mitochondrion adapted for its function?', options: ['Smooth outer membrane only','Double membrane; cristae increase SA for oxidative phosphorylation; matrix contains enzymes for Krebs cycle','Single membrane with ribosomes','No internal structure'], answer: 1 },
-      { q: 'What is the Simpson\'s Diversity Index used for?', options: ['Measuring the total population size of one species in a habitat by mark-release-recapture','Quantifying biodiversity by accounting for both species richness and evenness','Measuring DNA similarity','Counting mutations'], answer: 1 },
-      { q: 'How does the binomial naming system work?', options: ['Common name only','Two-part Latin name: Genus (capitalised) + species (lowercase), italicised','A three-part name: Kingdom (capitalised), Genus and species, written in bold and in English','Named by habitat'], answer: 1 },
-      { q: 'Why are organelles not visible under a light microscope at certain sizes?', options: ['They are transparent and colourless, so they cannot be seen without a stain at any magnification','Their size is below the resolution limit (~200nm) of light microscopes','They move too fast','They have no colour'], answer: 1 },
-      { q: 'How does cytokinesis differ in animal and plant cells?', options: ['It is identical in both','Animal cells form a cleavage furrow; plant cells form a cell plate','Plant cells use a furrow','Animal cells form a cell plate from vesicles; plant cells pinch in to form a cleavage furrow'], answer: 1 },
-      { q: 'What is the role of checkpoints in the cell cycle?', options: ['They speed up division','They monitor conditions (DNA integrity, cell size) and can halt the cycle if errors are detected','They occur only in meiosis, where they speed up division by skipping DNA replication so that four haploid gametes form more quickly','They produce ATP'], answer: 1 },
-      { q: 'How does natural selection lead to adaptation?', options: ['Organisms choose to change during their lifetime and then pass on the characteristics they have acquired to their offspring','Individuals with advantageous traits survive and reproduce more, passing alleles to offspring','All organisms adapt equally','Mutations are always beneficial'], answer: 1 },
-      { q: 'Explain how phylogenetic classification differs from traditional taxonomy.', options: ['They are identical','Phylogenetics groups organisms by evolutionary relationships using molecular evidence; traditional uses observable features','Phylogenetics ignores DNA','Traditional uses only DNA'], answer: 1 },
-      { q: 'Why do cells produced by mitosis need to be genetically identical?', options: ['For variation','For consistent growth, repair and function — mutations could lead to cancer','To produce gametes','To increase biodiversity, since identical cells can then specialise into many different types'], answer: 1 },
-      { q: 'How does differential gene expression lead to cell specialisation?', options: ['All genes are always active','Different genes are switched on/off in different cells, producing specific proteins for specialised functions','Cells lose DNA','Only stem cells express genes'], answer: 1 },
-      { q: 'What is the endosymbiotic theory?', options: ['Organelles formed from infoldings of the nucleus, which pinched off to make mitochondria and chloroplasts with their own membranes','Mitochondria and chloroplasts were once free-living prokaryotes engulfed by ancestral eukaryotes','All cells evolved simultaneously','Viruses became organelles'], answer: 1 },
-      { q: 'How is species richness different from species evenness?', options: ['They are the same','Richness is the number of different species; evenness is how equally individuals are distributed among species','Richness measures individuals','Evenness counts species'], answer: 1 },
-      { q: 'What evidence supports endosymbiotic theory?', options: ['Mitochondria have no DNA','Mitochondria/chloroplasts have own circular DNA, 70S ribosomes, double membrane, and divide independently','Mitochondria and chloroplasts are the same size as the whole cell and have single membranes and 80S ribosomes like the cytoplasm','They lack membranes'], answer: 1 },
-      { q: 'How do conservation programmes help maintain biodiversity?', options: ['They reduce all species equally so that no single species can dominate, and they remove captive-bred animals from the wild each year','Seed banks, captive breeding, and habitat protection preserve genetic diversity and prevent extinction','They only help plants','They increase pollution'], answer: 1 },
-      { q: 'What is the significance of the three-domain system?', options: ['It replaced all classification','It separates organisms into Bacteria, Archaea, and Eukarya based on molecular phylogenetics, recognising deep evolutionary splits','It only has two kingdoms','It uses morphology only'], answer: 1 },
-      { q: 'How does crossing over during meiosis I produce genetic variation?', options: ['It doesn\'t affect variation','Homologous chromosomes exchange segments, creating new allele combinations on chromatids','It duplicates whole chromosomes, so each gamete receives an extra copy of every gene from both parents','It causes mutations'], answer: 1 },
+    "amber": [
+      {
+        "q": "How does the delta-F508 mutation cause cystic fibrosis?",
+        "options": [
+          "It adds extra amino acids",
+          "It creates a premature stop codon near the start of the gene, so no CFTR protein is made at all and the channel is missing entirely",
+          "Deletion of phenylalanine at position 508 causes CFTR protein misfolding, preventing it reaching the cell membrane",
+          "It duplicates the gene"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain how the structure of a phospholipid bilayer relates to membrane permeability.",
+        "options": [
+          "Hydrophobic core prevents passage of polar/charged molecules while allowing small non-polar molecules through",
+          "It only allows water",
+          "It is fully permeable to all molecules, since the phosphate heads allow ions and large polar molecules to pass freely",
+          "It blocks all molecules"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does facilitated diffusion differ from simple diffusion?",
+        "options": [
+          "It requires ATP",
+          "It moves substances against the concentration gradient using ATP from respiration in the mitochondria",
+          "It only occurs in plants",
+          "It uses channel or carrier proteins but moves down the concentration gradient without energy"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the role of the CFTR protein in healthy epithelial cells?",
+        "options": [
+          "It acts as a chloride ion channel, allowing Cl- secretion which draws water out by osmosis, keeping mucus thin",
+          "It breaks down proteins",
+          "It transports oxygen",
+          "It produces mucus in the epithelial cells and secretes it into the airways, where it traps bacteria and keeps the lungs free of dust"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How can a genetic cross predict the probability of offspring having cystic fibrosis?",
+        "options": [
+          "Only if one parent is affected; two carriers always have offspring without CF in every pregnancy",
+          "It always gives 50%",
+          "If both parents are carriers (Ff x Ff), the cross shows 1 in 4 (25%) chance of ff offspring",
+          "It cannot predict anything"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain why the genetic code is described as degenerate.",
+        "options": [
+          "It changes over time",
+          "Multiple different codons can code for the same amino acid",
+          "Each codon codes for several different amino acids, depending on the cell type",
+          "It contains errors"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does the primary structure of a protein determine its tertiary structure?",
+        "options": [
+          "It does not",
+          "Only temperature determines shape",
+          "The amino acid sequence determines folding patterns through interactions (H-bonds, disulfide bridges, ionic bonds, hydrophobic interactions) between R groups",
+          "Primary structure is random"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the effect of a substitution mutation on protein function?",
+        "options": [
+          "It always destroys the protein, because a change to one base alters every amino acid after it in the chain and stops translation",
+          "It doubles the protein",
+          "It always has no effect",
+          "It may change one amino acid which could alter protein shape and function, or be silent due to code degeneracy"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Chloride ions secreted by CFTR onto the airway surface attract water molecules. Why does this cause a net movement of water out of the epithelial cells?",
+        "options": [
+          "Water moves out by active transport, using ATP released as chloride ions leave the cell",
+          "There are now fewer free water molecules outside the cell, so water moves out by osmosis",
+          "Water molecules bound to the chloride ions are pumped out through the CFTR channel",
+          "The chloride ions make the phospholipid bilayer fully permeable, so water leaks out"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Why is genetic screening for CF carriers ethically controversial?",
+        "options": [
+          "It has no controversy",
+          "Only cost is an issue",
+          "Issues include insurance discrimination, reproductive pressure, psychological impact, and questions about who should have access to results",
+          "It is always beneficial"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does the structure of DNA allow it to store vast amounts of genetic information?",
+        "options": [
+          "Its small size",
+          "It is single-stranded",
+          "It uses 20 bases",
+          "The sequence of bases along the sugar-phosphate backbone provides a 4-letter code; with thousands of base pairs per gene, enormous variation is possible"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain why a deletion mutation is likely to be more harmful than a substitution.",
+        "options": [
+          "It is always less harmful",
+          "Deletions are silent",
+          "Substitutions are always worse",
+          "A deletion shifts the reading frame (frameshift), changing every subsequent codon and amino acid, usually producing a non-functional protein"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "How does cystic fibrosis impair the functioning of the digestive system?",
+        "options": [
+          "Thick mucus blocks the pancreatic duct, so fewer enzymes reach the small intestine",
+          "Faulty CFTR is the enzyme that normally hydrolyses fats in the small intestine",
+          "Extra chloride secretion makes the gut too acidic for digestive enzymes to work",
+          "Thin, watery mucus washes digestive enzymes out of the small intestine too quickly"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "A section of the DNA template (antisense) strand has the base sequence TAC GGA. What is the sequence of the mRNA transcribed from it?",
+        "options": [
+          "AUG CCU",
+          "AUC CCU",
+          "ATG CCT",
+          "UAC GGA"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does osmosis relate to the symptoms of cystic fibrosis?",
+        "options": [
+          "It does not",
+          "Osmosis only affects plants",
+          "Osmosis makes the mucus thinner, because the faulty CFTR pumps extra chloride into the cells and water follows it inwards",
+          "Without Cl- secretion via CFTR, water is not drawn out by osmosis, so mucus remains thick and sticky"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the significance of hydrogen bonds in DNA structure?",
+        "options": [
+          "They make DNA rigid",
+          "They hold complementary bases together but are weak enough individually to allow separation during replication and transcription",
+          "They bond nucleotides to sugars",
+          "They connect chromosomes"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How do carrier proteins differ from channel proteins?",
+        "options": [
+          "They are identical",
+          "Carrier proteins use no energy and form permanent pores, while channel proteins change shape and actively pump specific molecules using ATP",
+          "Carrier proteins change shape to move specific molecules; channel proteins form pores for ions to pass through",
+          "Channels actively pump"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is one advantage of chorionic villus sampling (CVS) over amniocentesis for prenatal testing?",
+        "options": [
+          "It is only carried out after 20 weeks, when the fetus is larger",
+          "It can be done earlier in pregnancy, at about 10–13 weeks",
+          "It collects fetal cells from the amniotic fluid",
+          "It carries no risk of miscarriage at all"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is a test cross and when would it be used?",
+        "options": [
+          "Crossing a dominant phenotype individual with a homozygous recessive to determine if the dominant is homozygous or heterozygous",
+          "It tests for mutations",
+          "Crossing two heterozygotes",
+          "Crossing two homozygous recessive individuals, to find out whether the recessive allele is carried on a sex chromosome or on one of the autosomes"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "A mutation changes one amino acid a long way from the active site of an enzyme, yet the enzyme no longer works. What is the most likely explanation?",
+        "options": [
+          "The enzyme now has a different sequence of bases, so it cannot be translated at all",
+          "It alters the bonds holding the tertiary structure, so the active site changes shape",
+          "The new amino acid raises the activation energy by binding to the substrate directly",
+          "Amino acids outside the active site are removed from the enzyme before it is used"
+        ],
+        "answer": 1
+      }
     ],
-    red: [
-      { q: 'A cell has a very high density of mitochondria. What can you infer about its function?', options: ['It stores fat','It needs large amounts of ATP, suggesting a high metabolic rate, for example active transport or muscle contraction','It is dormant','It photosynthesises, since mitochondria and chloroplasts are the same organelle seen at different stages of development'], answer: 1 },
-      { q: 'Why might uncontrolled cell division occur if tumour suppressor genes are mutated?', options: ['Cells die faster','Cell cycle checkpoints fail, so cells with damaged DNA keep dividing instead of being repaired or destroyed by apoptosis','Cells differentiate more quickly, which uses up the stem cells and forces the remaining cells to divide faster to replace them','Apoptosis increases'], answer: 1 },
-      { q: 'Evaluate the use of embryonic stem cells in medicine.', options: ['Benefits: pluripotent, so could replace damaged tissue; risks: embryos are destroyed, and cells may be rejected or form tumours','No benefits or risks','They are identical to adult stem cells','They cannot differentiate'], answer: 0 },
-      { q: 'A habitat is fragmented by road building. Predict the effect on biodiversity over time.', options: ['No effect','Gene flow is reduced, populations become smaller and inbred, and genetic diversity and species richness fall over time','Species immediately go extinct on both sides of the road, but new species then evolve within a few years to fill the empty habitats','Biodiversity increases'], answer: 1 },
-      { q: 'Why do antibiotics not work against viruses?', options: ['Viruses are too large for antibiotics to enter, and their thick peptidoglycan cell wall stops the drug reaching their ribosomes and enzymes','Viruses have no metabolism of their own — no ribosomes, cell wall or enzymes for antibiotics to target — and replicate inside host cells','Antibiotics kill all pathogens','Viruses are bacteria'], answer: 1 },
-      { q: 'How does epigenetics affect cell differentiation without changing DNA sequence?', options: ['It changes the base sequence','It adds new genes','Methylation and histone modification switch genes on or off, so different cells express different genes from the same DNA','It deletes genes'], answer: 2 },
-      { q: 'Compare and evaluate TEM and SEM microscopy for studying cell ultrastructure.', options: ['TEM only works on living cells','TEM resolves internal structures in thin 2D sections; SEM gives 3D surface images at lower resolution; neither can view living cells','They are identical','SEM has higher resolution than TEM and can image living cells, so it has replaced TEM for studying all internal organelles in fine detail'], answer: 1 },
-      { q: 'Explain why genetic diversity within a population is important for long-term survival.', options: ['It is not important','A wider range of alleles means some individuals may survive new diseases or environmental change, so the population can adapt','It causes disease','It reduces fitness, because variation dilutes the best alleles, so populations with low diversity survive environmental change better'], answer: 1 },
-      { q: 'A student calculates Simpson\'s Diversity Index as 0.9. Interpret this value.', options: ['No species present','High diversity: there is a high probability (0.9) that two individuals picked at random belong to different species','Only one species dominates, since a value of 0.9 means 90% of the individuals sampled belong to the most common species in the area','Very low diversity'], answer: 1 },
-      { q: 'Discuss the factors that may cause a species to become extinct despite conservation efforts.', options: ['Only hunting causes extinction','Conservation has no limitations','Conservation always prevents extinction','Genetic bottlenecks and inbreeding depression, continued habitat loss, climate change, disease and too few individuals to recover'], answer: 3 },
-    ],
+    "red": [
+      {
+        "q": "Meselson and Stahl grew E. coli on ¹⁵N and then transferred them to ¹⁴N. What would be seen after two generations, and what does it support?",
+        "options": [
+          "A single intermediate band only, supporting dispersive replication",
+          "Equal intermediate and light bands, supporting semi-conservative replication",
+          "A single light band, showing that all the ¹⁵N DNA has been broken down",
+          "A heavy band and a light band in equal amounts, supporting conservative replication"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "A couple are both carriers of the CF allele. They already have one affected child. What is the probability their next child will be unaffected?",
+        "options": [
+          "50%",
+          "100%",
+          "25%",
+          "75%"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Two unaffected parents have a child with cystic fibrosis. What is the probability that their unaffected daughter is a carrier?",
+        "options": [
+          "2/3",
+          "1/4",
+          "1/2",
+          "3/4"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Evaluate the ethical issues surrounding pre-implantation genetic diagnosis (PGD) for CF.",
+        "options": [
+          "There are no ethical issues",
+          "Issues include destroying unused embryos, selecting embryos by genotype and possible ‘designer babies’, weighed against preventing severe disease",
+          "PGD is illegal everywhere",
+          "It is universally accepted, because no embryos are created or discarded during PGD and no religious or ethical group has raised any objection to the procedure"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Explain how a single base substitution in DNA can have no effect, a mild effect, or a severe effect on the organism.",
+        "options": [
+          "No effect if the codon still codes for the same amino acid; mild if a similar amino acid is substituted; severe if the active site or a stop codon changes",
+          "All substitutions are lethal",
+          "All substitutions are silent",
+          "Only position matters"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "The thickness of a gas exchange surface doubles and its surface area halves, while the concentration difference is unchanged. According to Fick's law, what happens to the rate of diffusion?",
+        "options": [
+          "It halves",
+          "It falls to an eighth",
+          "It falls to a quarter",
+          "It stays the same"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Every third amino acid in each collagen polypeptide chain is glycine, which has the smallest R group. Why is this important for collagen's function?",
+        "options": [
+          "Glycine is highly hydrophilic, which makes collagen soluble in the blood plasma",
+          "Its small R group lets the three chains coil tightly into a strong triple helix",
+          "Glycine binds oxygen, so collagen can carry oxygen to tissues such as tendons",
+          "Glycine forms disulfide bridges that join separate collagen fibres end to end"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Discuss the evidence for and against population-wide carrier screening for CF.",
+        "options": [
+          "Screening is always harmful",
+          "There is no debate",
+          "For: informed reproductive choices and fewer affected births; against: cost, anxiety, false results and ethical concerns about selection",
+          "Screening eliminates CF completely within one generation, because carriers identified by screening are legally prevented from having children with each other"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Most men with cystic fibrosis are infertile even though their testes produce sperm. Which explanation fits best?",
+        "options": [
+          "Thick mucus in the urethra contains enzymes that digest the sperm before release",
+          "CFTR is needed for meiosis, so the sperm produced contain no chromosomes at all",
+          "The CF allele is carried on the Y chromosome, so it prevents sperm from forming",
+          "The vas deferens is blocked by mucus or absent, so sperm cannot leave the testes"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "In a catalase experiment, a tangent is drawn to the curve of oxygen volume against time at t = 0. It passes through (0 s, 0 cm³) and (20 s, 8 cm³). What is the initial rate of reaction?",
+        "options": [
+          "0.4 cm³ s⁻¹",
+          "2.5 cm³ s⁻¹",
+          "160 cm³ s⁻¹",
+          "8.0 cm³ s⁻¹"
+        ],
+        "answer": 0
+      }
+    ]
   },
-
-  /* ─────────────────────────────────────────────────────────── T3 */
-  'T3': {
-    name: 'Exchange, Transport and Reproduction',
-    green: [
-      { q: 'What is the function of the alveoli?', options: ['Produce mucus','Gas exchange between air and blood','Filter particles and dust from the incoming air','Warm air'], answer: 1 },
-      { q: 'Which blood vessel carries blood away from the heart?', options: ['Vein','Capillary','Artery','Venule'], answer: 2 },
-      { q: 'What is the role of the left ventricle?', options: ['Pump blood to lungs','Pump oxygenated blood to the body at high pressure','Receive deoxygenated blood from the veins and pump it to the lungs','Filter blood'], answer: 1 },
-      { q: 'What is transpiration?', options: ['Absorption of water by the roots from the soil by osmosis','Loss of water vapour from leaves through stomata','Transport of sugars','Photosynthesis'], answer: 1 },
-      { q: 'What is the function of root hair cells?', options: ['Photosynthesis','Absorb water and mineral ions from soil','Support the plant and anchor it firmly in the soil','Store starch'], answer: 1 },
-      { q: 'What are the two circulations in a double circulatory system?', options: ['Systemic and renal','Pulmonary and systemic','Hepatic and cardiac','Coronary and pulmonary'], answer: 1 },
-      { q: 'What is the function of the xylem?', options: ['Transport sugars','Transport water and mineral ions upward from roots','Transport dissolved amino acids','Provide flexible structural support and carry sugars down to the roots'], answer: 1 },
-      { q: 'What is the function of the phloem?', options: ['Transport water only','Transport dissolved sugars (translocation) from source to sink','Transport oxygen','Structural support only'], answer: 1 },
-      { q: 'What adaptations do alveoli have for efficient gas exchange?', options: ['Thick walls and a small surface area to stop the alveoli collapsing when we breathe out','Large surface area, thin walls, rich blood supply, moist surface','Few blood vessels','No ventilation'], answer: 1 },
-      { q: 'What is fertilisation?', options: ['Cell division','Fusion of male and female gametes to form a zygote','Implantation','Ovulation'], answer: 1 },
-      { q: 'How many chambers does the mammalian heart have?', options: ['2','3','4','5'], answer: 2 },
-      { q: 'What is the role of valves in the heart?', options: ['Pump blood','Prevent backflow of blood','Produce hormones that control heart rate','Filter blood'], answer: 1 },
-      { q: 'What is ventilation?', options: ['Gas exchange at the alveoli','The mechanical process of breathing (moving air in and out of the lungs)','Oxygen transport in blood','Cellular respiration'], answer: 1 },
-      { q: 'What carries oxygen in the blood?', options: ['Plasma','White blood cells (lymphocytes)','Red blood cells (haemoglobin)','Platelets'], answer: 2 },
-      { q: 'What is the placenta\'s main function?', options: ['Produce sperm','Exchange of substances between maternal and foetal blood','Store eggs','Produce testosterone'], answer: 1 },
-      { q: 'Where does gas exchange occur in a leaf?', options: ['Epidermis','Spongy mesophyll air spaces','Xylem vessels in the leaf veins','Cuticle'], answer: 1 },
-      { q: 'What is the trachea lined with?', options: ['Smooth muscle only, with no cells that secrete mucus','Ciliated epithelial cells and goblet cells','Cartilage only','Alveolar cells'], answer: 1 },
-      { q: 'What causes water to move up the xylem?', options: ['Active transport only','Transpiration pull, cohesion, adhesion and root pressure','Gravity','Osmosis only in leaves'], answer: 1 },
-      { q: 'What is the cardiac cycle?', options: ['One heartbeat only','The sequence of events in one complete heartbeat: atrial systole, ventricular systole, diastole','Blood clotting','The pulse rate'], answer: 1 },
-      { q: 'What is the function of stomata?', options: ['Absorb water','Allow gas exchange and control water loss in leaves','Produce sugars','Transport minerals and sugars through the leaf to the stem and roots'], answer: 1 },
+  "S3": {
+    "name": "Voice of the Genome",
+    "green": [
+      {
+        "q": "What is a stem cell?",
+        "options": [
+          "A dead cell",
+          "A gamete",
+          "An undifferentiated cell capable of dividing and differentiating into specialised cell types",
+          "A fully differentiated cell"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is mitosis?",
+        "options": [
+          "Cell division producing four haploid gametes for sexual reproduction",
+          "Fertilisation",
+          "Cell death",
+          "Cell division producing two genetically identical daughter cells"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is meiosis?",
+        "options": [
+          "Division producing two genetically identical diploid body cells",
+          "Division producing four genetically different haploid cells",
+          "Protein synthesis",
+          "DNA replication"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is a zygote?",
+        "options": [
+          "A sperm cell",
+          "A stem cell",
+          "A fertilised egg formed by fusion of gametes",
+          "An unfertilised egg released from the ovary each month"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is differentiation?",
+        "options": [
+          "Mutation",
+          "Cell division",
+          "Cell death",
+          "The process by which a cell becomes specialised for a particular function"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "How many chromosomes are in a human diploid cell?",
+        "options": [
+          "46",
+          "92",
+          "23",
+          "12"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is a totipotent cell?",
+        "options": [
+          "A cancer cell",
+          "A cell that can only become one type of specialised cell, such as a muscle fibre or neurone in the adult",
+          "A cell that can differentiate into any cell type including extraembryonic tissue",
+          "A dead cell"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is a pluripotent cell?",
+        "options": [
+          "A cell that can become any body cell type but not extraembryonic tissue",
+          "A cell that is fully specialised and can no longer divide or change into any other type",
+          "A gamete",
+          "A prokaryotic cell"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What are homologous chromosomes?",
+        "options": [
+          "Sex chromosomes only",
+          "Pairs of chromosomes with the same genes at the same loci but potentially different alleles",
+          "Bacterial chromosomes",
+          "Identical chromosomes"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the cell cycle?",
+        "options": [
+          "Protein synthesis",
+          "The sequence of events from one cell division to the next, including interphase and mitosis",
+          "Meiosis only",
+          "Only mitosis"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "During which phase of the cell cycle does DNA replication occur?",
+        "options": [
+          "M phase",
+          "S phase",
+          "G2 phase",
+          "G1 phase"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is a phenotype?",
+        "options": [
+          "The observable characteristics resulting from genotype and environment",
+          "A DNA sequence",
+          "The alleles an organism possesses, inherited from both of its parents at fertilisation",
+          "A type of cell"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Which organelle is the site of protein synthesis, found free in the cytoplasm and attached to the rough endoplasmic reticulum?",
+        "options": [
+          "Lysosome",
+          "Ribosome",
+          "Centriole",
+          "Golgi apparatus"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Which structure is found in a prokaryotic cell but not in a eukaryotic animal cell?",
+        "options": [
+          "Mitochondrion",
+          "Nucleolus",
+          "Golgi apparatus",
+          "Plasmid"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is meant by a locus?",
+        "options": [
+          "The position of a gene on a chromosome",
+          "A different version of the same gene",
+          "The point where two sister chromatids join",
+          "A pair of matching homologous chromosomes"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is the function of the acrosome in sperm?",
+        "options": [
+          "Energy production",
+          "Stores DNA",
+          "Contains enzymes to digest the zona pellucida of the egg",
+          "Provides movement by beating like a flagellum to drive the sperm forwards"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What triggers the cortical reaction after fertilisation?",
+        "options": [
+          "Light exposure",
+          "Hormone release",
+          "Temperature change",
+          "Calcium ion release causes cortical granules to release enzymes, hardening the zona pellucida to prevent polyspermy"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the zona pellucida?",
+        "options": [
+          "A glycoprotein layer surrounding the egg cell membrane",
+          "The membrane that surrounds the nucleus of the egg",
+          "An enzyme-filled vesicle at the tip of the sperm head",
+          "The layer of follicle cells on the outside of the egg"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is a blastocyst?",
+        "options": [
+          "A type of tissue",
+          "A mature egg",
+          "A type of blood cell that develops in the bone marrow and carries oxygen around the developing embryo",
+          "An early embryonic structure with an inner cell mass and outer trophoblast"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What does haploid mean?",
+        "options": [
+          "Having two sets of chromosomes",
+          "Having no chromosomes",
+          "Having one set of chromosomes",
+          "Having three sets"
+        ],
+        "answer": 2
+      }
     ],
-    amber: [
-      { q: 'How is the structure of an artery adapted to its function?', options: ['Thin walls with valves along their length, so blood can be pushed forward by the surrounding skeletal muscles','Thick muscular walls with elastic tissue to withstand and maintain high blood pressure','Very permeable walls','Large lumen with no muscle'], answer: 1 },
-      { q: 'Explain Fick\'s Law of diffusion.', options: ['Rate is proportional to (membrane thickness × surface area) divided by the concentration difference across it','Rate is proportional to (surface area x concentration difference) / diffusion distance','Rate = volume / time','Rate depends only on temperature'], answer: 1 },
-      { q: 'How does the counter-current flow in fish gills maximise gas exchange?', options: ['Blood and water flow in the same direction, so the two reach equilibrium quickly and oxygen uptake is maximised near the gill arch','Blood flows opposite to water, maintaining a concentration gradient along the entire gill lamella','Water flows through lungs','Blood is stationary'], answer: 1 },
-      { q: 'What is translocation and how does it differ from transpiration?', options: ['They are the same process','Translocation is active transport of sugars in phloem (bidirectional); transpiration is passive water loss from leaves','Translocation only moves water, from the roots to the leaves in the xylem, while transpiration moves sugars down to the roots in the phloem','Transpiration moves sugars'], answer: 1 },
-      { q: 'How do guard cells control stomatal opening?', options: ['They die to create holes','When turgid (K+ influx, water follows by osmosis), inner walls bend apart opening the stoma; when flaccid, stoma closes','They are always open','They use ATP to push apart and open the stoma whenever the plant is short of water, and they close the pore when light falls on the leaf'], answer: 1 },
-      { q: 'Why does the left ventricle have a thicker wall than the right?', options: ['It receives more blood','It must generate higher pressure to pump blood around the entire body, not just to the nearby lungs','It is closer to the lungs, so it must pump blood out against the higher pressure of the pulmonary circulation every beat','The right ventricle pumps faster'], answer: 1 },
-      { q: 'How does the structure of capillaries facilitate exchange?', options: ['Thick walls with valves and elastic tissue, which slow the blood down so there is more time for diffusion into the tissue fluid','One-cell-thick walls with small gaps, providing short diffusion distance and allowing fluid exchange','Elastic walls','Muscular walls'], answer: 1 },
-      { q: 'Explain how the mass flow hypothesis describes translocation in phloem.', options: ['Sugars move by diffusion','Sugars are actively loaded into sieve tubes, lowering water potential; water follows by osmosis, creating hydrostatic pressure that drives mass flow from source to sink','Sugars move by transpiration','Phloem uses xylem pressure'], answer: 1 },
-      { q: 'What is the role of the sinoatrial node (SAN)?', options: ['Pump blood','Acts as the pacemaker, initiating electrical impulses that set the heart rate','Filter blood','Produces hormones such as adrenaline that are released into the blood to control the heart and breathing rates'], answer: 1 },
-      { q: 'How do insects use spiracles and tracheae for gas exchange?', options: ['They use lungs','Air enters through spiracles into tracheae, which branch into tracheoles delivering O2 directly to cells','They use gills','They absorb O2 through their skin into the blood, which carries it to every cell through a network of arteries and capillaries'], answer: 1 },
-      { q: 'How does the cohesion-tension theory explain water movement in xylem?', options: ['Water is pushed by root pressure only','Transpiration creates tension; cohesion between water molecules pulls a continuous column upward; adhesion to xylem walls prevents column breaking','Xylem pumps water actively','Gravity pulls water up'], answer: 1 },
-      { q: 'What environmental factors affect the rate of transpiration?', options: ['Only temperature, since humidity, wind and light have no effect on the rate of water loss from the leaves','Temperature, humidity, wind speed, and light intensity all affect the rate','Only wind','Only time of day'], answer: 1 },
-      { q: 'How is the fish gill adapted for efficient gas exchange?', options: ['Thick filaments','Thin lamellae with large surface area, rich blood supply, counter-current flow, and short diffusion distance','A single large, flat surface covered in thick mucus, which traps oxygen from the water and passes it slowly to the few blood vessels','No blood supply needed'], answer: 1 },
-      { q: 'Describe the passage of an electrical impulse through the heart.', options: ['Random electrical activity','SAN initiates impulse, spreads across atria causing atrial systole, reaches AVN (delays), passes down bundle of His, through Purkinje fibres causing ventricular systole from apex upward','Ventricles contract first','Impulse starts in the brain'], answer: 1 },
-      { q: 'How does the structure of the trachea prevent collapse?', options: ['Muscular walls','C-shaped rings of cartilage hold it open while allowing flexibility for swallowing','Complete bony rings that hold it rigidly open, so the oesophagus cannot expand behind it during swallowing','It is filled with fluid'], answer: 1 },
-      { q: 'What is the role of the atrioventricular node (AVN)?', options: ['Initiates each heartbeat by sending impulses across the walls of both ventricles at the same moment','Delays the impulse slightly to allow atria to empty before ventricles contract','Produces blood cells','Controls breathing rate'], answer: 1 },
-      { q: 'How does xerophytic plant structure reduce water loss?', options: ['Larger stomata','Thick cuticle, sunken stomata, rolled leaves, reduced SA, hairs trap moist air layer','More stomata on the upper surface and larger air spaces in the mesophyll, which let water vapour escape quickly','Thinner cell walls'], answer: 1 },
-      { q: 'Explain how the structure of the leaf is adapted for gas exchange.', options: ['No air spaces','Spongy mesophyll provides air spaces for gas diffusion; stomata allow gas entry/exit; large internal SA; thin cells for short diffusion distance','Thick cuticle aids exchange','Xylem does gas exchange'], answer: 1 },
-      { q: 'How is the human gas exchange system adapted to maintain a steep concentration gradient?', options: ['Slow breathing','Ventilation continuously refreshes alveolar air; blood flow removes O2 and delivers CO2 continuously; large surface area of alveoli','No blood flow needed','Thick respiratory membrane'], answer: 1 },
-      { q: 'What is the significance of a double circulatory system over a single one?', options: ['Less efficient','Blood passes through the heart twice per circuit, maintaining high pressure for efficient systemic delivery after being oxygenated in the lungs','It uses less energy','Single is more efficient'], answer: 1 },
+    "amber": [
+      {
+        "q": "How does gene expression differ between a muscle cell and a nerve cell despite having identical DNA?",
+        "options": [
+          "There is no difference",
+          "They have different DNA",
+          "They have different numbers of chromosomes, because muscle cells lose some chromosomes as they differentiate into long fibres",
+          "Different genes are switched on/off through transcription factors and epigenetic modifications, producing different proteins"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain how crossing over during meiosis contributes to genetic variation.",
+        "options": [
+          "It only occurs in mitosis",
+          "Homologous chromosomes exchange segments during prophase I, creating new allele combinations on each chromatid",
+          "It does not",
+          "It reduces variation, because homologous chromosomes swap identical segments so each chromatid ends up with the same alleles"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does independent assortment of chromosomes during meiosis produce genetic variation?",
+        "options": [
+          "It only affects sex chromosomes",
+          "It produces identical gametes, because homologous pairs always line up with the maternal chromosomes on the same side of the metaphase plate every time",
+          "Homologous pairs line up randomly at metaphase I, so each gamete receives a different combination of maternal and paternal chromosomes",
+          "It does not"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the role of transcription factors in cell differentiation?",
+        "options": [
+          "They destroy mRNA",
+          "They form the cytoskeleton of the cell, giving each type of cell its distinctive shape, which then determines the proteins it makes",
+          "They bind to promoter regions to activate or repress specific genes, determining which proteins a cell produces",
+          "They replicate DNA"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain how the structure of a sperm cell is adapted for its function.",
+        "options": [
+          "It has a cell wall",
+          "Streamlined head with haploid nucleus, acrosome with digestive enzymes, many mitochondria in midpiece for ATP, and flagellum for motility",
+          "It is identical to an egg, with a large cytoplasm full of food stores, few mitochondria and no flagellum, so it is carried passively to the egg by the female reproductive tract",
+          "It has no adaptations"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does epigenetic modification (methylation) affect gene expression?",
+        "options": [
+          "Methyl groups added to DNA/histones can silence genes by preventing transcription factor binding, without altering the base sequence",
+          "It changes the DNA base sequence by adding methyl groups to adenine, so the gene codes for a different protein that is passed on to daughter cells",
+          "It only affects gametes",
+          "It always activates genes"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is the significance of the cortical reaction in fertilisation?",
+        "options": [
+          "It provides nutrients",
+          "It triggers the first cell division of the zygote and releases enzymes that let more sperm enter the egg",
+          "It determines sex",
+          "It prevents polyspermy by hardening the zona pellucida so no additional sperm can enter"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "How do environmental factors interact with genotype to determine phenotype?",
+        "options": [
+          "Factors like nutrition, temperature, and light can influence gene expression and protein function, modifying the phenotypic outcome of a given genotype",
+          "Only the environment determines phenotype, because the genotype is the same in every individual of a species, so differences in nutrition, temperature and light produce all of the variation seen",
+          "Genotype has no effect",
+          "Environment has no effect"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain the difference between totipotent, pluripotent, and multipotent stem cells.",
+        "options": [
+          "Totipotent can form any cell type plus placenta; pluripotent can form any body cell; multipotent can only form cells within a specific tissue lineage",
+          "Multipotent is the most versatile",
+          "Totipotent only forms blood cells",
+          "They are all the same"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does the cell cycle ensure genetic consistency during mitosis?",
+        "options": [
+          "Only meiosis is controlled",
+          "Cells divide randomly",
+          "It does not",
+          "DNA replication in S phase produces identical copies; checkpoints verify accuracy; mitosis separates sister chromatids equally to daughter cells"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "A secretory cell makes an extracellular enzyme. Which sequence shows the route the enzyme takes out of the cell?",
+        "options": [
+          "Ribosome on rER, smooth ER, nucleus, Golgi apparatus, vesicle, cell surface membrane",
+          "Ribosome on rER, rER lumen, vesicle, Golgi apparatus, vesicle, cell surface membrane",
+          "Golgi apparatus, rER lumen, ribosome on rER, vesicle, lysosome, cell surface membrane",
+          "Free ribosome, cytoplasm, lysosome, Golgi apparatus, vesicle, cell surface membrane"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What happens to a protein in the Golgi apparatus before it is secreted from the cell?",
+        "options": [
+          "It is transcribed again and its mRNA is moved into the nucleolus",
+          "It is translated from mRNA into a polypeptide chain on its ribosomes",
+          "It is modified, e.g. by adding carbohydrate, and packed into vesicles",
+          "It is broken down by hydrolytic enzymes into its separate amino acids"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Lactose is added to a culture of E. coli that was growing without lactose. Why do the bacteria start producing beta-galactosidase?",
+        "options": [
+          "Lactose binds to the repressor, changing its shape so it no longer binds to the operator",
+          "Lactose binds to the operator, so RNA polymerase can then bind to the promoter",
+          "Lactose binds to RNA polymerase and activates it to transcribe the repressor gene",
+          "The repressor protein hydrolyses lactose, releasing glucose that switches the gene on"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Two genes are close together on the same chromosome. Why are their alleles usually inherited together?",
+        "options": [
+          "They assort independently into different gametes in meiosis",
+          "They are at the same locus, so they code for one protein",
+          "They are linked, so crossing over rarely separates them",
+          "They are sex-linked, so they are only passed on to sons"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "A man with haemophilia (an X-linked recessive condition) has children with a woman who is homozygous for the normal allele. What proportion of their daughters will be carriers?",
+        "options": [
+          "50%",
+          "100%",
+          "0%",
+          "25%"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Human height shows continuous variation. Which explanation best accounts for this?",
+        "options": [
+          "It is controlled by one gene with multiple alleles and is not affected by diet",
+          "It is determined only by the environment, such as the diet eaten during childhood",
+          "It is controlled by a single gene with two alleles, one of which is dominant",
+          "It is controlled by many genes at different loci and is affected by the environment"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "How can an epigenetic change in one stem cell be present in all the cells produced from it?",
+        "options": [
+          "The methylation pattern is copied onto the new DNA strand when the DNA replicates",
+          "The histones are destroyed in mitosis, so the gene is permanently switched on",
+          "The base sequence is changed, and this mutation is copied when the DNA replicates",
+          "The methyl groups are removed in mitosis and re-added at random in each new cell"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How is X-inactivation an example of epigenetic control?",
+        "options": [
+          "It is not epigenetic",
+          "Only males have X-inactivation",
+          "Both X chromosomes are active",
+          "One X chromosome is silenced by methylation and histone modification in each cell of XX females, forming a Barr body, without changing DNA sequence"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Which list is in order of increasing level of organisation?",
+        "options": [
+          "Epithelium, epithelial cell, digestive system, stomach",
+          "Epithelial cell, stomach, epithelium, digestive system",
+          "Epithelial cell, epithelium, stomach, digestive system",
+          "Stomach, epithelium, epithelial cell, digestive system"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What happens during the acrosome reaction?",
+        "options": [
+          "Cortical granules release their contents, making the zona pellucida harder",
+          "The acrosome releases digestive enzymes that break down the zona pellucida",
+          "The egg completes its second meiotic division and the two nuclei fuse",
+          "The sperm cell membrane fuses with the egg membrane and the sperm nucleus enters"
+        ],
+        "answer": 1
+      }
     ],
-    red: [
-      { q: 'A potometer measures a transpiration rate of 0.5 ml/min. If humidity increases from 40% to 80%, predict and explain the change.', options: ['Rate stays the same','Rate doubles','Rate increases, because higher humidity raises the water content of the air spaces inside the leaf, pushing more vapour out of the stomata','Rate decreases because higher humidity reduces the water vapour concentration gradient between leaf and air, slowing transpiration'], answer: 3 },
-      { q: 'Evaluate the limitations of using a potometer to measure transpiration.', options: ['It measures transpiration directly','It is perfectly accurate','It measures water uptake, not loss; some water is used in photosynthesis, and cutting the shoot or air leaks can affect the results','There are no limitations if the shoot is cut underwater, since every molecule absorbed is lost through the stomata at exactly the same rate'], answer: 2 },
-      { q: 'Explain why cardiac output increases during exercise and the mechanisms involved.', options: ['Only stroke volume changes, because the SAN fires at a fixed rate set by the parasympathetic nerve and cannot speed up during exercise','Only breathing rate changes','Heart slows down','Sympathetic stimulation and adrenaline raise heart rate and stroke volume, increasing cardiac output to supply more O2 to muscles'], answer: 3 },
-      { q: 'How might climate change affect transpiration rates and plant distribution globally?', options: ['Higher temperatures increase transpiration and water stress, so species ranges shift towards the poles and to higher altitudes','Plants always adapt','No effect','Only animals are affected'], answer: 0 },
-      { q: 'A patient has atrioventricular block. Predict the effect on the cardiac cycle.', options: ['No effect on heartbeat','Only affects breathing','The atria beat faster to compensate, and the extra impulses reach the ventricles through the bundle of His instead of through the AVN','Impulses cannot pass from the atria to the ventricles, so the ventricles contract more slowly and out of step with the atria'], answer: 3 },
-      { q: 'Compare and evaluate the gas exchange systems of mammals, fish, and insects in terms of efficiency.', options: ['All are identical','Mammals: alveoli, ventilation and a thin barrier; fish: countercurrent gills; insects: tracheae deliver O2 directly — each suits its environment','Insects are the most efficient, because their tracheal system carries oxygen in the blood to every cell faster than any lung or gill could manage','Fish cannot exchange gases'], answer: 1 },
-      { q: 'Why does pulmonary fibrosis reduce gas exchange efficiency? Link structure to function.', options: ['It increases surface area','It only affects the trachea','It improves gas exchange','Scar tissue thickens the alveolar walls, increasing diffusion distance'], answer: 3 },
-      { q: 'Explain why the mass flow hypothesis for phloem transport is still debated.', options: ['Pressure differences and sap flow support it, but it does not explain different solutes moving at different rates or in both directions','It is fully proven','No one studies it','It has been completely disproven, because phloem sap flows only from the roots to the leaves and the sieve tubes contain no sucrose at all'], answer: 0 },
-      { q: 'A foetus has a foramen ovale (hole between atria). Explain its function and what happens if it fails to close after birth.', options: ['It has no function','It lets blood bypass the non-functioning lungs before birth; if it stays open, oxygenated and deoxygenated blood mix, lowering O2 delivery','It increases blood pressure','It helps the lungs develop by sending extra blood through them, and if it stays open after birth the lungs receive too much oxygen and are damaged'], answer: 1 },
-      { q: 'Analyse how the adaptations of hydrophytes differ from xerophytes and explain why.', options: ['Hydrophytes have aerenchyma and stomata on upper surfaces only; xerophytes have thick cuticles and sunken stomata to reduce water loss','Xerophytes live in water','Hydrophytes have thick cuticles and sunken stomata to trap water in their leaves, while xerophytes have large air spaces to store water in their stems','They have identical adaptations'], answer: 0 },
-    ],
+    "red": [
+      {
+        "q": "Evaluate the ethical arguments for and against using human embryonic stem cells in medical research.",
+        "options": [
+          "It is universally accepted",
+          "It is banned worldwide, because embryonic stem cells cannot divide in culture or differentiate, so there are no medical benefits to set against any concerns",
+          "For: potential to treat many diseases, using spare IVF embryos; against: destroys potential human life, and alternatives such as iPSCs exist",
+          "There are no ethical issues"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Discuss how our understanding of epigenetics challenges the traditional view that DNA sequence alone determines phenotype.",
+        "options": [
+          "Epigenetics only affects plants",
+          "Methylation and histone acetylation change gene expression without altering the DNA sequence, so identical genotypes can give different phenotypes",
+          "DNA sequence is irrelevant",
+          "Epigenetics supports the traditional view, because every epigenetic mark is a change in the base sequence, so phenotype still depends on DNA sequence alone"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "In a root tip squash, 32 of 400 cells close to the tip were in mitosis, compared with 6 of 400 cells 5 mm from the tip. Which conclusion is best supported?",
+        "options": [
+          "The mitotic index is 0.08 near the tip and 0.015 at 5 mm, so most cell division occurs close to the tip",
+          "The mitotic index is 0.08 near the tip, so 8% of the cells there are in interphase at any one time",
+          "The mitotic index is 12.5 near the tip, so those cells divide about 12 times faster than cells further back",
+          "The mitotic index is the same in both regions, because every cell in a root divides at the same rate"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "A researcher proposes using induced pluripotent stem cells (iPSCs) instead of embryonic stem cells. Evaluate this approach.",
+        "options": [
+          "iPSCs are identical to embryonic stem cells in every way, so they carry no risk of tumours, need no reprogramming and are already used routinely in hospitals",
+          "iPSCs avoid embryo destruction and rejection, being patient-specific, but reprogramming is inefficient and may cause tumours",
+          "iPSCs cannot differentiate",
+          "ESCs are always superior"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "A woman with normal colour vision, whose father was red-green colour blind (X-linked recessive), has children with a man with normal colour vision. What is the probability that a son of theirs is colour blind?",
+        "options": [
+          "0, because the father has normal vision and passes his X chromosome to his sons",
+          "1.0, because the mother carries the allele and sons have only one X chromosome",
+          "0.5, because each son receives one of his mother's two X chromosomes at random",
+          "0.25, because one in four of all their children are expected to be colour blind"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Evaluate the potential of therapeutic cloning compared to other stem cell sources for treating degenerative diseases.",
+        "options": [
+          "Therapeutic cloning has no advantages",
+          "It is identical to reproductive cloning",
+          "It has been abandoned",
+          "It produces patient-matched ESCs that avoid rejection, but it is inefficient, costly and ethically contested as it creates embryos"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Discuss how the interaction between genetic and environmental factors during critical periods of development can have lifelong effects on phenotype.",
+        "options": [
+          "Critical periods do not exist",
+          "Only adult experiences matter",
+          "Only genes matter, since the phenotype is fixed at fertilisation, and the environment during development has no effect on gene expression or on adult health",
+          "During critical periods developing systems are especially sensitive, so poor nutrition or stress can alter gene expression with lifelong effects"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "E. coli growing without lactose is moved to a medium containing only lactose. Beta-galactosidase activity rises only after a delay of several minutes. Which explanation fits?",
+        "options": [
+          "Lactose must bind the repressor so the genes can be transcribed, and the enzyme must then be translated",
+          "The enzyme was already present but inactive, and lactose must bind to it as a cofactor to activate it",
+          "Lactose must first be hydrolysed outside the cell by the repressor before the gene can be switched on",
+          "The bacteria must first mutate their lac genes so that they can make an enzyme able to use lactose"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Critically assess the claim that \"nature is more important than nurture\" in determining human characteristics.",
+        "options": [
+          "The dichotomy is false: genes and environment interact continuously, e.g. through epigenetics, so most traits depend on both",
+          "Nurture is always more important",
+          "Nature is always more important",
+          "They never interact"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "A study shows identical twins raised apart have different rates of a disease. Discuss what this reveals about gene-environment interactions.",
+        "options": [
+          "It proves genes are irrelevant",
+          "Different environments have altered gene expression epigenetically, so the same genotype can give different disease risks",
+          "Identical twins always have identical health, so the study must contain errors; different disease rates cannot arise from the same genotype in any environment",
+          "It proves environment is irrelevant"
+        ],
+        "answer": 1
+      }
+    ]
   },
-
-  /* ─────────────────────────────────────────────────────────── T4 */
-  'T4': {
-    name: 'Energy, Environment and Microbiology',
-    green: [
-      { q: 'What is the word equation for photosynthesis?', options: ['Glucose + Oxygen -> Carbon dioxide + Water','Carbon dioxide + Water -> Glucose + Oxygen','Glucose -> Ethanol + Carbon dioxide','Oxygen -> Carbon dioxide'], answer: 1 },
-      { q: 'Where do the light-dependent reactions of photosynthesis occur?', options: ['Stroma of the chloroplast','Thylakoid membranes','Cytoplasm','Matrix'], answer: 1 },
-      { q: 'Where does the Calvin cycle occur?', options: ['Thylakoid membranes of the grana','Stroma of the chloroplast','Mitochondrial matrix','Cytoplasm'], answer: 1 },
-      { q: 'What is the net ATP yield from one molecule of glucose in aerobic respiration?', options: ['2 (net, from glycolysis alone)','4','Approximately 30-32','100'], answer: 2 },
-      { q: 'Where does glycolysis occur?', options: ['Mitochondrial matrix','Cytoplasm','Nucleus','Thylakoid'], answer: 1 },
-      { q: 'What is the link reaction?', options: ['Glycolysis','Conversion of pyruvate to acetyl CoA in the mitochondrial matrix, producing CO2 and reduced NAD','The Calvin cycle','Chemiosmosis'], answer: 1 },
-      { q: 'What is the Krebs cycle?', options: ['Part of photosynthesis','A cycle in the mitochondrial matrix that oxidises acetyl CoA, producing CO2, ATP, reduced NAD and reduced FAD','Glycolysis','Fermentation'], answer: 1 },
-      { q: 'What is a food chain?', options: ['A manufacturing process','A sequence showing the transfer of energy from one organism to the next','A type of molecule','A cycle of nutrients returned to the soil by decomposers and taken up again by plants'], answer: 1 },
-      { q: 'What is a producer?', options: ['A consumer','An organism that synthesises organic molecules from inorganic sources using light or chemical energy','A decomposer','A parasite'], answer: 1 },
-      { q: 'What is anaerobic respiration?', options: ['Respiration with oxygen','Respiration without oxygen, producing less ATP','Photosynthesis','Fermentation only in yeast, which needs oxygen to form ethanol'], answer: 1 },
-      { q: 'What is the role of ATP in cells?', options: ['Long-term energy storage in muscle and liver cells between meals and exercise','Immediate energy currency that provides energy for cellular processes','Structural molecule','Enzyme'], answer: 1 },
-      { q: 'What is a decomposer?', options: ['A producer','An organism that breaks down dead organic matter, releasing nutrients back into the ecosystem','A primary consumer','A predator'], answer: 1 },
-      { q: 'What is the greenhouse effect?', options: ['Plants growing in greenhouses','Greenhouse gases in the atmosphere absorb and re-radiate infrared radiation, warming Earth\'s surface','Ozone depletion','Acid rain'], answer: 1 },
-      { q: 'What is nitrogen fixation?', options: ['Plants absorbing nitrates from the soil and converting them to proteins','Conversion of atmospheric N2 into ammonia/ammonium by bacteria','Denitrification','Nitrification'], answer: 1 },
-      { q: 'What are the products of anaerobic respiration in yeast?', options: ['Lactic acid only, with no gas released','Ethanol and carbon dioxide','Glucose and oxygen','Water and ATP'], answer: 1 },
-      { q: 'What is an ecosystem?', options: ['A single species','A community of organisms interacting with each other and their abiotic environment','Only the physical environment of an area, such as the soil, water, climate and rocks present','A food web'], answer: 1 },
-      { q: 'What is the role of chlorophyll?', options: ['Absorb CO2','Absorb light energy for photosynthesis','Produce oxygen directly from carbon dioxide','Break down glucose'], answer: 1 },
-      { q: 'What is meant by trophic level?', options: ['A type of nutrient','The feeding position of an organism in a food chain','A type of habitat','A measure of biodiversity based on the number of feeding species'], answer: 1 },
-      { q: 'What is chemiosmosis?', options: ['Osmosis of chemicals','The movement of H+ ions through ATP synthase down their concentration gradient, driving ATP synthesis','Active transport of glucose','Diffusion of oxygen'], answer: 1 },
-      { q: 'What is oxidative phosphorylation?', options: ['Glycolysis','The production of ATP using energy from the electron transport chain and chemiosmosis in mitochondria','The Calvin cycle','Substrate-level phosphorylation of ADP during glycolysis and the Krebs cycle in the cytoplasm of the cell'], answer: 1 },
+  "S4": {
+    "name": "Biodiversity and Natural Resources",
+    "green": [
+      {
+        "q": "What is biodiversity?",
+        "options": [
+          "The size of a population",
+          "The variety of living organisms in an area, including species diversity, genetic diversity, and ecosystem diversity",
+          "The number of habitats",
+          "The number of animals in a zoo"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is a species?",
+        "options": [
+          "A type of ecosystem",
+          "A family of plants",
+          "Any group of organisms that live in the same habitat and share a food source",
+          "A group of organisms that can interbreed to produce fertile offspring"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the binomial system of naming organisms?",
+        "options": [
+          "Using common names",
+          "A two-part Latin name: genus and species",
+          "Numbering organisms",
+          "Using DNA codes and numbers for each organism"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is taxonomy?",
+        "options": [
+          "The classification of organisms into groups based on shared characteristics",
+          "The study of taxes",
+          "Ecology",
+          "DNA sequencing"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is the correct order of taxonomic hierarchy from largest to smallest?",
+        "options": [
+          "Kingdom, Domain, Phylum, Class, Family, Order, Genus, Species",
+          "Genus, Species, Family, Class, Order, Phylum, Kingdom, Domain",
+          "Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species",
+          "Species, Genus, Family, Order, Class, Phylum, Kingdom, Domain"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Which structure in a plant cell links the cytoplasm of one cell with the cytoplasm of the next cell?",
+        "options": [
+          "Plasmodesma",
+          "Amyloplast",
+          "Middle lamella",
+          "Tonoplast"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is sustainability?",
+        "options": [
+          "Stopping all human activity",
+          "Meeting current needs without compromising the ability of future generations to meet theirs",
+          "Only using renewable energy",
+          "Using resources as quickly as possible to maximise economic growth before they run out elsewhere"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is a habitat?",
+        "options": [
+          "A type of adaptation",
+          "The role of an organism in its ecosystem",
+          "The place where an organism lives",
+          "A food source"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is cellulose?",
+        "options": [
+          "An animal protein that forms tendons and ligaments and strengthens the skin tissue",
+          "A type of lipid",
+          "A mineral",
+          "A structural polysaccharide made of beta-glucose in plant cell walls"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is starch?",
+        "options": [
+          "An animal storage molecule",
+          "A nucleic acid",
+          "A storage polysaccharide made of alpha-glucose in plants",
+          "A protein used for transport of glucose in the blood of animals"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the function of xylem tissue?",
+        "options": [
+          "Transport of amino acids and sugars downward from the leaves to the roots",
+          "Transport of water and mineral ions upward; structural support",
+          "Transport of sugars",
+          "Photosynthesis"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the function of phloem tissue?",
+        "options": [
+          "Transport of dissolved sugars (translocation) from source to sink",
+          "Structural support only",
+          "Transport of water and minerals upward from the roots to the leaves",
+          "Water transport"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is meant by endemic species?",
+        "options": [
+          "Invasive species",
+          "Extinct species",
+          "Species found everywhere across the world in a wide range of habitats",
+          "Species found naturally only in one particular geographic area"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is a niche?",
+        "options": [
+          "The role an organism plays in its ecosystem including all interactions and resource use",
+          "A type of species",
+          "A food web",
+          "A habitat"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Which kingdom do fungi belong to?",
+        "options": [
+          "Protoctista",
+          "Plantae",
+          "Animalia",
+          "Fungi"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is ex situ conservation?",
+        "options": [
+          "Conservation outside natural habitats, such as in zoos, seed banks, or botanical gardens",
+          "Conservation in natural habitats",
+          "Habitat destruction",
+          "Hunting management"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is in situ conservation?",
+        "options": [
+          "Conservation in laboratories and zoos, away from the threats of the natural habitat",
+          "Museum preservation",
+          "Captive breeding only",
+          "Conservation in the natural habitat, such as nature reserves and national parks"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is a phylogenetic tree?",
+        "options": [
+          "A type of plant",
+          "A branching diagram showing evolutionary relationships between organisms",
+          "A classification key used to identify organisms from their physical features in the field",
+          "A food web"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "In the index of diversity used in 9BN0, D = N(N − 1) / Σn(n − 1), what does N represent?",
+        "options": [
+          "The number of different species in the habitat",
+          "The number of samples taken in the habitat",
+          "The total number of organisms of all species",
+          "The number of organisms of each separate species"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is deforestation?",
+        "options": [
+          "Planting trees",
+          "A type of conservation in which woodland is replanted",
+          "The large-scale removal of forest or woodland",
+          "Natural forest growth"
+        ],
+        "answer": 2
+      }
     ],
-    amber: [
-      { q: 'Explain how the electron transport chain produces ATP.', options: ['Directly from glucose','Electrons from reduced NAD/FAD pass along carriers, releasing energy to pump H+ into intermembrane space; H+ flows back through ATP synthase, driving ATP production','By breaking down ATP','Through the Calvin cycle'], answer: 1 },
-      { q: 'What is the role of RuBisCO in the Calvin cycle?', options: ['It splits water using light energy, releasing oxygen and electrons for photosystem II','It catalyses the fixation of CO2 to RuBP, forming two molecules of GP','It produces NADPH','It generates ATP'], answer: 1 },
-      { q: 'How does a limiting factor affect the rate of photosynthesis?', options: ['It always increases the rate, because adding more of any factor, such as light or CO2, raises photosynthesis without limit however much of the others are present','It is the factor in shortest supply that restricts the rate; increasing it will increase the rate until another factor becomes limiting','It has no effect','All factors limit equally'], answer: 1 },
-      { q: 'Explain why only about 10% of energy is transferred between trophic levels.', options: ['Organisms are inefficient eaters','Energy is lost as heat through respiration, in urine/faeces, and not all biomass is consumed','100% is transferred','Energy is created at each level by respiration, but most of it is stored as fat and never eaten by the next level'], answer: 1 },
-      { q: 'How does deforestation affect the carbon cycle?', options: ['It reduces atmospheric CO2, because fewer trees respire and the cleared land absorbs more carbon into the soil as it is ploughed each year','Reduces CO2 absorption by photosynthesis; burning/decomposing trees releases stored carbon as CO2; reduces biodiversity','Increases oxygen production','Has no effect'], answer: 1 },
-      { q: 'What is the difference between gross primary productivity (GPP) and net primary productivity (NPP)?', options: ['They are the same','NPP = GPP - respiratory losses; NPP is the energy available to the next trophic level','GPP is always less','NPP includes animal respiration, so it is always larger than GPP, which measures only plant growth'], answer: 1 },
-      { q: 'How do nitrifying bacteria contribute to the nitrogen cycle?', options: ['They fix atmospheric N2 in root nodules, converting it directly into nitrates that are passed to the plant in exchange for sugars','They convert ammonia to nitrites and then nitrates (nitrification), making nitrogen available for plant uptake','They denitrify nitrates','They decompose proteins'], answer: 1 },
-      { q: 'Explain the role of photolysis in the light-dependent reactions.', options: ['It fixes CO2','Light energy splits water into H+ ions, electrons (replace those lost from chlorophyll), and O2 (waste product)','It produces glucose','It makes ATP without light by splitting glucose in the stroma, releasing oxygen and carbon dioxide as waste products'], answer: 1 },
-      { q: 'How does substrate-level phosphorylation differ from oxidative phosphorylation?', options: ['They are identical','Substrate-level directly transfers phosphate from a substrate to ADP (e.g., in glycolysis/Krebs); oxidative uses the electron transport chain and chemiosmosis','Substrate-level needs oxygen','Oxidative occurs in cytoplasm'], answer: 1 },
-      { q: 'Why is the Calvin cycle described as a carbon fixation cycle?', options: ['It releases carbon as CO2 from glucose, which is then taken up again by the plant at night','It incorporates inorganic CO2 into organic molecules (GP then TP then glucose)','It produces CO2','It only occurs at night'], answer: 1 },
-      { q: 'How does temperature affect the rate of respiration?', options: ['No effect','Increasing temperature increases kinetic energy and reaction rate up to an optimum; above this, enzymes denature and rate decreases','Rate always increases','Rate always decreases'], answer: 1 },
-      { q: 'What is the role of reduced NAD and reduced FAD in respiration?', options: ['They are waste products','They carry hydrogen atoms/electrons to the electron transport chain, providing energy for ATP synthesis','They produce glucose in the matrix, which is then broken down in glycolysis to release further ATP for the cell’s needs','They are enzymes'], answer: 1 },
-      { q: 'Explain how succession leads to a climax community.', options: ['It happens instantly','Pioneer species colonise bare land, modifying conditions; new species outcompete pioneers; biodiversity increases until a stable climax community is reached','Species decrease over time','Only animals are involved'], answer: 1 },
-      { q: 'What is the role of photosystem I and II in the light-dependent reactions?', options: ['They produce glucose','PSII absorbs light (P680), electrons excited and pass to ETC; PSI (P700) re-energises electrons for NADP reduction; together they drive non-cyclic photophosphorylation','They fix carbon','They split glucose'], answer: 1 },
-      { q: 'How do farmers use their knowledge of limiting factors to increase crop yields?', options: ['They cannot control factors','They optimise light (supplementary lighting), CO2 (enrichment), temperature (heating), water, and minerals in greenhouses','They only use fertilisers, since light, temperature and carbon dioxide cannot be controlled in any commercial greenhouse without huge cost','They reduce light'], answer: 1 },
-      { q: 'Explain the difference between cyclic and non-cyclic photophosphorylation.', options: ['They are the same','Non-cyclic uses both PSI and PSII, produces ATP, NADPH and O2; cyclic uses only PSI, electrons return to PSI, produces only ATP','Cyclic produces oxygen','Non-cyclic uses only PSI and produces only ATP; cyclic uses both PSI and PSII, splits water, and produces ATP, reduced NADP and oxygen as a waste product'], answer: 1 },
-      { q: 'How does eutrophication occur and what are its effects?', options: ['It improves water quality','Excess nitrates/phosphates from fertiliser run-off cause algal bloom; algae die and decomposers multiply, using up dissolved oxygen; aquatic organisms die','It only affects land','It reduces algae'], answer: 1 },
-      { q: 'What is the role of coenzyme A in respiration?', options: ['It is an enzyme that oxidises pyruvate in the cytoplasm, releasing CO2 and producing ATP directly from the energy in the carbon chain','It combines with the 2C acetyl group from the link reaction to form acetyl CoA, carrying it into the Krebs cycle','It produces O2','It splits water'], answer: 1 },
-      { q: 'How is ATP synthase involved in both photosynthesis and respiration?', options: ['It is not involved','In both, H+ ions flow down a concentration gradient through ATP synthase (chemiosmosis), driving the synthesis of ATP from ADP + Pi','It breaks down ATP','It only works in respiration, where it pumps H+ ions out of the matrix using ATP, while chloroplasts make ATP directly from light without any ATP synthase'], answer: 1 },
-      { q: 'Explain how carbon dioxide concentration affects the Calvin cycle.', options: ['No effect','Higher CO2 increases the rate of carbon fixation by RuBisCO, producing more GP and ultimately more glucose; low CO2 limits the cycle','CO2 inhibits the cycle','CO2 only affects the light-dependent reactions, where it is split to release oxygen, so it has no effect on the Calvin cycle or on the rate of GP production'], answer: 1 },
+    "amber": [
+      {
+        "q": "How does natural selection lead to adaptation?",
+        "options": [
+          "All organisms adapt equally",
+          "Only the strongest individuals survive in each generation, and they change their own characteristics during life so that their offspring inherit the improved traits",
+          "Organisms choose to change",
+          "Individuals with advantageous traits survive and reproduce more, passing alleles to offspring; over generations the population becomes better adapted"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain how the structure of cellulose relates to its function in plant cell walls.",
+        "options": [
+          "It stores energy",
+          "Beta-glucose monomers form straight chains with hydrogen bonds between them, creating strong microfibrils that resist tensile forces",
+          "It is water-soluble and made of alpha-glucose in branched chains, so it dissolves into the cell wall and can be broken down to release energy when needed",
+          "It is easily digested"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does the structure of xylem vessels relate to their function?",
+        "options": [
+          "Dead, hollow, continuous tubes with lignified walls provide strength and uninterrupted water flow with no end walls to impede movement",
+          "They are living cells",
+          "They contain chloroplasts",
+          "They have thin, flexible walls made of living cells with cytoplasm and end walls, which pump water upwards using ATP from their own mitochondria"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How do hydrogen bonds between cellulose molecules contribute to cell wall strength?",
+        "options": [
+          "They have no structural role",
+          "Many hydrogen bonds between parallel cellulose chains form strong microfibrils; bundles of microfibrils create a tough, rigid structure",
+          "They dissolve easily",
+          "They make walls flexible and elastic, because hydrogen bonds break and reform constantly so that the cellulose chains slide past each other freely"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Why can bioplastics made from starch contribute to sustainability more than oil-based plastics?",
+        "options": [
+          "They are made from fossil carbon, so they last longer before they are discarded",
+          "They cannot be broken down by microorganisms, so they do not pollute landfill",
+          "They need more oil to manufacture, so less oil is burned as fuel instead",
+          "They come from a renewable crop and can be broken down by microorganisms"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Using D = N(N − 1) / Σn(n − 1), a student finds D = 1.8 for habitat X and D = 4.6 for habitat Y. Which conclusion is correct?",
+        "options": [
+          "Y is more diverse: a higher D means more species or a more even spread",
+          "They cannot be compared, because D only counts the number of species",
+          "X is more diverse, because a value of D closer to 1 shows greater diversity",
+          "Y contains about 4.6 species in every quadrat that the student sampled"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain the role of natural selection in speciation.",
+        "options": [
+          "Only mutation causes speciation",
+          "Geographic or reproductive isolation leads to different selection pressures; natural selection acts differently on separated populations, accumulating genetic differences until reproductive isolation is complete",
+          "It prevents speciation",
+          "Speciation is random"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How do zoos contribute to conservation through captive breeding programmes?",
+        "options": [
+          "They replace natural habitats entirely, so animals bred in zoos are never released, and captive populations are kept small and closely related to make breeding easier to manage",
+          "They only keep common species",
+          "They maintain genetically diverse breeding populations of endangered species, with potential for reintroduction; they also fund research and educate the public",
+          "They only entertain visitors"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does drug development from plants illustrate the value of biodiversity?",
+        "options": [
+          "Only synthetic drugs work",
+          "Many medicines (aspirin, taxol, quinine) derive from plant compounds; loss of species means potential loss of undiscovered drugs; this provides an economic argument for conservation",
+          "All plants are medicinal",
+          "Plants have no medicinal use"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Explain why maintaining genetic diversity within a species is important for its survival.",
+        "options": [
+          "Greater genetic diversity increases the chance some individuals can survive environmental changes, diseases, or new selection pressures, preventing population collapse",
+          "Genetic diversity is unimportant",
+          "All individuals of a species should be genetically identical, because variation reduces fitness, so populations with low diversity survive new diseases and environmental changes better",
+          "Only dominant alleles matter"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does phylogenetic classification differ from traditional morphological classification?",
+        "options": [
+          "Morphological classification is always more accurate, because physical features never evolve independently in unrelated groups, while DNA evidence cannot show relatedness between organisms",
+          "Phylogenetic uses DNA/molecular evidence to group by evolutionary relatedness; morphological groups by physical similarities which may be convergent rather than homologous",
+          "Phylogenetic ignores DNA",
+          "They are identical"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Explain how seed banks contribute to conservation of plant biodiversity.",
+        "options": [
+          "They are only for agriculture, storing seeds of a few crop varieties at room temperature for one season, so they preserve no wild genetic diversity and cannot help restore natural populations",
+          "They replace natural habitats",
+          "They store seeds from many species at low temperatures; this preserves genetic diversity, provides insurance against extinction, and allows future restoration of populations",
+          "They grow crops only"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does overexploitation of fish stocks threaten marine biodiversity?",
+        "options": [
+          "It has no effect",
+          "It only affects one species",
+          "Fish populations always recover quickly because they produce millions of eggs, so removing fish has no lasting effect on food webs or genetic diversity at all",
+          "Removing fish faster than they can reproduce disrupts food webs, reduces genetic diversity, may cause population collapse, and affects dependent species"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "In a population, 16% of individuals show a recessive phenotype. Assuming Hardy–Weinberg equilibrium, what is the frequency of heterozygotes?",
+        "options": [
+          "0.36",
+          "0.24",
+          "0.84",
+          "0.48"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "How does climate change threaten biodiversity?",
+        "options": [
+          "Only polar species are affected",
+          "It has no effect",
+          "Changing temperatures and weather patterns alter habitats faster than many species can adapt or migrate, causing range shifts, phenological mismatches, and increased extinction risk",
+          "It increases biodiversity"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain the difference between amylose and amylopectin in starch structure and function.",
+        "options": [
+          "Amylose is unbranched (alpha-1,4 links) forming compact helices for long-term storage; amylopectin is branched (alpha-1,6 links) allowing rapid hydrolysis for quick energy release",
+          "They are identical",
+          "Amylopectin is structural",
+          "Amylose is branched"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "In a sample of 150 cheetahs, 12 are heterozygous at a particular gene locus. What is the heterozygosity index (H) for this locus?",
+        "options": [
+          "0.12",
+          "12.5",
+          "0.08",
+          "0.92"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain how habitat fragmentation reduces biodiversity.",
+        "options": [
+          "It has no effect",
+          "It increases biodiversity, because each isolated patch develops its own species, gene flow between populations rises across the roads and fields, and edge effects create stable new habitats",
+          "Smaller isolated patches support fewer species, reduce gene flow between populations, increase edge effects, and make populations more vulnerable to stochastic events",
+          "It only affects birds"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does the three-domain classification system differ from the five-kingdom system?",
+        "options": [
+          "Five-kingdom has more domains",
+          "Three-domain ignores evolution",
+          "They are identical",
+          "Three-domain (Bacteria, Archaea, Eukarya) is based on molecular phylogenetics and rRNA analysis, recognising Archaea as distinct from Bacteria; five-kingdom grouped all prokaryotes together"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "A seedling grown in a culture solution lacking magnesium ions develops yellow leaves. What is the explanation?",
+        "options": [
+          "Magnesium is needed to make chlorophyll, so less chlorophyll is formed",
+          "Magnesium is needed to make cellulose, so the leaves cannot stay rigid",
+          "Magnesium is needed to make proteins, so no new cells can be produced",
+          "Magnesium is needed for calcium pectate, so the cell walls break down"
+        ],
+        "answer": 0
+      }
     ],
-    red: [
-      { q: 'A plant is given radioactive 14CO2. Predict where the 14C label would first appear in the Calvin cycle.', options: ['RuBP','Glycerate-3-phosphate (GP), because RuBisCO fixes CO2 by combining it with RuBP to form GP','Triose phosphate','Glucose'], answer: 1 },
-      { q: 'Explain why cyanide poisoning is fatal, linking to oxidative phosphorylation.', options: ['It increases ATP production','It blocks glycolysis','It blocks the Krebs cycle only, so NADH builds up while the electron transport chain keeps running on stored oxygen until the cells swell and burst','Cyanide inhibits cytochrome c oxidase, the final carrier, so the ETC and oxidative phosphorylation stop and ATP production falls fatally'], answer: 3 },
-      { q: 'Evaluate the impact of rising atmospheric CO2 on photosynthesis rates globally.', options: ['No effect on plants','It is always beneficial, since CO2 is the only limiting factor for plants and photosynthesis rises without any limit as CO2 levels keep increasing','Higher CO2 may raise photosynthesis where CO2 is limiting, but gains are offset by heat and drought stress as other factors become limiting','Photosynthesis will stop'], answer: 2 },
-      { q: 'In an experiment, a respiratory inhibitor blocks the Krebs cycle. Predict the effects on glycolysis and ATP yield.', options: ['No effect','ATP yield increases','Glycolysis stops immediately, because pyruvate cannot leave the cytoplasm, but the ETC keeps making ATP from stored NADH for several hours','Glycolysis can continue only if NAD+ is regenerated anaerobically, so the ATP yield falls to 2 ATP per glucose'], answer: 3 },
-      { q: 'Discuss the evidence for and against climate change being primarily caused by human activity.', options: ['No evidence exists','For: CO2 rise tracks industrial emissions and isotopes show a fossil origin; against: natural cycles and solar variation also affect climate','It is entirely natural','Only volcanoes matter, since they release far more CO2 each year than all human activity, and global temperature has not changed at all since 1900'], answer: 1 },
-      { q: 'A pond ecosystem has GPP of 20000 kJ/m2/yr and plant respiration of 12000 kJ/m2/yr. Calculate NPP and explain its significance.', options: ['NPP = 12000','Cannot be calculated','NPP = 32 000 kJ m⁻² yr⁻¹ (GPP + R): the total energy fixed plus the energy respired, all of which is available to the primary consumers','NPP = 8000 kJ m⁻² yr⁻¹ (GPP − R): the energy stored in plant biomass and available to consumers and decomposers'], answer: 3 },
-      { q: 'Why does the rate of photosynthesis reach a plateau even when light intensity continues to increase?', options: ['Plants stop photosynthesising','Another factor (CO2 concentration or temperature) becomes limiting','Light damages chloroplasts','Oxygen inhibits all reactions'], answer: 1 },
-      { q: 'Compare and evaluate aerobic and anaerobic respiration in terms of ATP yield, speed, and biological contexts.', options: ['They are equally efficient','Aerobic: ~30–32 ATP per glucose, slower, needs O2, for sustained activity; anaerobic: 2 ATP, fast, no O2, for short bursts, forming lactate','Anaerobic produces more ATP per glucose, because no energy is lost in the electron transport chain, so it is the main source during long endurance events','Aerobic is always faster'], answer: 1 },
-      { q: 'Explain how the chemiosmotic theory unified our understanding of ATP synthesis in both mitochondria and chloroplasts.', options: ['Both use electron transport chains to pump H+ across a membrane; H+ flows back through ATP synthase, making ATP by the same mechanism','The theory has been disproven','Only mitochondria use chemiosmosis','They use completely different mechanisms: mitochondria make ATP only by substrate-level phosphorylation, and chloroplasts only by the photolysis of water'], answer: 0 },
-      { q: 'Predict the effects of global warming on decomposition rates and the carbon cycle.', options: ['Only affects polar regions','Decomposition stops','Higher temperatures increase decomposer enzyme activity, releasing more CO2 (and methane from thawing peat), which may amplify warming','No effect'], answer: 2 },
-    ],
+    "red": [
+      {
+        "q": "Evaluate the arguments for and against in situ versus ex situ conservation strategies.",
+        "options": [
+          "Neither approach works",
+          "In situ is always better",
+          "Ex situ is always better, because zoos and seed banks keep every species safe and reintroduced animals always survive and breed normally once they are released",
+          "In situ keeps natural behaviours and ecosystem links but may fail against threats; ex situ protects and breeds species but they may not survive release"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "A new drug is tested in a double-blind, placebo-controlled trial. Which statement best explains why this design is used?",
+        "options": [
+          "Neither patients nor doctors know who has the drug, so expectations cannot bias results; comparing with the placebo group shows the drug's own effect",
+          "Patients know they are receiving the drug, so they report its effects honestly, while the doctors are blinded so that they can adjust the dose safely",
+          "Healthy volunteers receive the placebo first to test its safety, and patients then receive the drug to find out whether it works against the disease",
+          "Twice as many patients receive the drug as receive the placebo, so that any rare side effects are detected in the first phase of the drug trial"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Critically assess the use of the index of diversity (D) as the only measure of the conservation value of a habitat.",
+        "options": [
+          "It uses species richness and the numbers of each species, but ignores endemism, rarity and genetic diversity",
+          "It has no limitations, because a habitat with a higher D is always more valuable for conservation",
+          "It is a complete measure, because it includes every aspect of biodiversity, including genetic diversity",
+          "It is not useful at all, because it counts only the number of species present and ignores their abundance"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "After insecticide spraying began, the frequency of a resistance allele in a mosquito population rose from 0.1 to 0.4 over 20 generations. Which conclusion is best supported?",
+        "options": [
+          "The heterozygote frequency must have stayed constant at 0.18, showing that no evolution has taken place",
+          "The population is not in Hardy–Weinberg equilibrium: the allele frequency is changing, consistent with selection",
+          "The spraying caused the allele to arise by mutation in each generation, so the rise shows the mutation rate",
+          "The population is in Hardy–Weinberg equilibrium, because the allele is recessive, so its frequency cannot change"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Two populations of a fish species are separated in different lakes. After many generations, fish from the two lakes no longer produce fertile offspring when brought together. Which explanation is best?",
+        "options": [
+          "Isolation prevented gene flow, so mutation and different selection pressures built up different genetic information",
+          "Isolation made all the fish in both lakes genetically identical, so they no longer recognised each other as mates",
+          "The populations are still one species, because they share a common ancestor and live in the same kind of habitat",
+          "Fish in each lake changed during their lifetimes to suit their lake and passed these acquired changes to their offspring"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Molecular data suggested that Archaea differ from Bacteria as much as from eukaryotes. Why was the three-domain system adopted only after this work had been scrutinised?",
+        "options": [
+          "It was adopted as soon as it was proposed, because new classifications do not need checking by other scientists",
+          "It replaced the old system only after scientists agreed to stop using DNA and rRNA evidence in classification",
+          "Other scientists evaluated the data through peer review and repeated the analyses, and the findings were confirmed",
+          "It was adopted because Archaea look very different from Bacteria under the light microscope, which proved the grouping"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "A government must choose between protecting a biodiversity hotspot and allowing mining that would provide jobs. Discuss the biological and socioeconomic factors involved.",
+        "options": [
+          "Always choose mining, because endemic species can be moved to any other habitat and ecosystem services are replaced by the income that the mine produces",
+          "Biological: irreplaceable endemic species and ecosystem services; socioeconomic: jobs, income and local community needs must be balanced",
+          "Always choose conservation",
+          "The decision is simple"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "A zoo runs a captive breeding programme for a species with only 40 individuals in captivity. Which is the most serious limitation for a later reintroduction programme?",
+        "options": [
+          "Captive animals have more genetic diversity than wild ones, so they will outcompete the wild population",
+          "Reintroduction is never needed, because a species is safe for good once it is being kept in a zoo",
+          "A small population loses genetic diversity through inbreeding, and animals may lack behaviours for the wild",
+          "Using studbooks to choose breeding pairs increases the amount of inbreeding in each generation of animals"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "In an investigation of antimicrobial properties, a disc soaked in garlic extract produced a clear zone 12 mm in diameter and a disc soaked in mint extract produced a zone 6 mm in diameter. Which conclusion is valid?",
+        "options": [
+          "Garlic is twice as effective, because its zone diameter is twice as large as mint's",
+          "Mint is more effective, because a smaller clear zone means fewer bacteria grew there",
+          "Both are equally effective, because both discs produced a clear zone of inhibition",
+          "Garlic inhibited growth over about four times the area, so it is more effective here"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Discuss how evolutionary biology informs conservation management decisions, with reference to minimum viable populations and genetic diversity.",
+        "options": [
+          "Only large populations need management",
+          "Evolutionary principles help set minimum viable populations and manage breeding to keep genetic diversity and avoid inbreeding",
+          "Evolution is irrelevant to conservation",
+          "Genetic diversity is unimportant, since a population of two individuals can always recover fully, so managers need only count animals, not monitor their genetics"
+        ],
+        "answer": 1
+      }
+    ]
   },
-
-  /* ─────────────────────────────────────────────────────────── T5 */
-  'T5': {
-    name: 'Genetics and Evolution',
-    green: [
-      { q: 'What is a gene?', options: ['A chromosome','A section of DNA that codes for a polypeptide/functional RNA','A protein','An allele'], answer: 1 },
-      { q: 'What is an allele?', options: ['A chromosome carrying one copy of each gene','A different version of a gene','A genotype','A phenotype'], answer: 1 },
-      { q: 'What does homozygous mean?', options: ['Two different alleles for the same gene','Two identical alleles for a gene','Having one allele','No alleles'], answer: 1 },
-      { q: 'What does heterozygous mean?', options: ['Two identical alleles','Two different alleles for a gene','Only one allele present for the gene (haploid)','No alleles for a gene'], answer: 1 },
-      { q: 'What is a dominant allele?', options: ['An allele that is always mutated','An allele that is expressed in both homozygous and heterozygous states','An allele that is only expressed when homozygous, and masked by any other allele present','A recessive allele'], answer: 1 },
-      { q: 'What is the genotype?', options: ['The physical appearance of an organism, shaped by both its alleles and its environment','The genetic makeup of an organism (alleles present)','The environment','A mutation'], answer: 1 },
-      { q: 'What is the phenotype?', options: ['The alleles present','The observable characteristics resulting from genotype and environment','DNA sequence only','A type of gene'], answer: 1 },
-      { q: 'What is a mutation?', options: ['Normal DNA replication without any errors made','A change in the base sequence of DNA','An adaptation','A type of allele'], answer: 1 },
-      { q: 'What is natural selection?', options: ['Artificial breeding','The process by which organisms with advantageous traits survive and reproduce more','Random mating','Genetic drift'], answer: 1 },
-      { q: 'What is speciation?', options: ['Extinction','The formation of new species from existing ones','Migration','Inbreeding between closely related individuals of a population'], answer: 1 },
-      { q: 'What is a Punnett square used for?', options: ['Measuring DNA','Predicting the outcomes of a genetic cross','Drawing chromosomes','Counting mutations in the offspring of two parent plants'], answer: 1 },
-      { q: 'How many bases code for one amino acid?', options: ['1','2','3 (a codon)','4 (a tetrad of bases)'], answer: 2 },
-      { q: 'What is the structure of DNA?', options: ['Single-stranded helix','Double helix of two antiparallel polynucleotide strands joined by hydrogen bonds between complementary bases','Triple helix','Circular and single-stranded'], answer: 1 },
-      { q: 'What are the complementary base pairs in DNA?', options: ['A-G and C-T','A-T and C-G','A-C and G-T','A-U and C-G'], answer: 1 },
-      { q: 'What is meiosis?', options: ['Cell division producing two genetically identical diploid cells for growth and repair','Cell division producing four genetically different haploid gametes','Binary fission','Mitosis'], answer: 1 },
-      { q: 'What is a monohybrid cross?', options: ['A cross involving two genes','A genetic cross involving one gene with two alleles','A cross between three organisms of the same species and variety','Cloning'], answer: 1 },
-      { q: 'What is codominance?', options: ['One allele masks another, so only the dominant phenotype appears in the heterozygote','Both alleles are expressed equally in the heterozygote','One allele is dominant','Neither allele is expressed'], answer: 1 },
-      { q: 'What is a sex-linked gene?', options: ['A gene on an autosome','A gene located on the X or Y chromosome','A gene that determines the sex of the offspring','A recessive gene'], answer: 1 },
-      { q: 'What is genetic drift?', options: ['Natural selection','Random changes in allele frequency in small populations','Mutation','Gene flow'], answer: 1 },
-      { q: 'What is the Hardy-Weinberg principle used for?', options: ['Measuring mutation rates','Calculating allele and genotype frequencies in a population in equilibrium','Predicting evolution rate','Measuring fitness'], answer: 1 },
+  "S5": {
+    "name": "On the Wild Side",
+    "green": [
+      {
+        "q": "What is the word equation for photosynthesis?",
+        "options": [
+          "Oxygen + Glucose → Water + Carbon dioxide",
+          "Carbon dioxide + Water → Glucose + Oxygen",
+          "Glucose → Carbon dioxide + Water + Energy",
+          "Glucose + Oxygen → Carbon dioxide + Water"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Where do the light-dependent reactions of photosynthesis occur?",
+        "options": [
+          "Thylakoid membranes",
+          "Cytoplasm",
+          "Cell membrane of mesophyll cells",
+          "Stroma"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Where does the Calvin cycle take place?",
+        "options": [
+          "Cytoplasm",
+          "Mitochondria",
+          "Stroma of the chloroplast",
+          "Thylakoid membranes of the grana"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the role of chlorophyll?",
+        "options": [
+          "To release CO2",
+          "To transport water and minerals from the roots to the leaves",
+          "To store glucose",
+          "To absorb light energy for photosynthesis"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is an ecosystem?",
+        "options": [
+          "A food chain",
+          "All living organisms and non-living components in an area interacting together",
+          "A habitat only",
+          "A single species"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is a producer?",
+        "options": [
+          "A predator",
+          "An organism that eats other organisms and obtains its organic molecules from their tissues",
+          "A decomposer",
+          "An organism that makes its own organic molecules using light energy (photoautotroph)"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is a trophic level?",
+        "options": [
+          "A measure of the temperature at which an organism can live and reproduce in an ecosystem",
+          "A type of nutrient",
+          "A type of habitat",
+          "The position of an organism in a food chain representing a feeding level"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is net primary productivity (NPP)?",
+        "options": [
+          "Gross primary productivity minus respiratory losses — energy available to consumers",
+          "Energy from decomposition",
+          "Total energy fixed by plants",
+          "Energy lost as heat"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is gross primary productivity (GPP)?",
+        "options": [
+          "Energy lost in respiration",
+          "Total rate of energy fixation by photosynthesis in producers",
+          "The energy available to herbivores after the plants have respired and grown",
+          "Net energy stored"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What gas is increasing in the atmosphere due to human activity and contributes to climate change?",
+        "options": [
+          "Argon",
+          "Nitrogen",
+          "Oxygen (from photosynthesis)",
+          "Carbon dioxide"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the greenhouse effect?",
+        "options": [
+          "Plants growing in greenhouses",
+          "Greenhouse gases in the atmosphere absorbing and re-radiating infrared radiation, warming the Earth",
+          "Ozone depletion",
+          "Acid rain"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is succession?",
+        "options": [
+          "Migration",
+          "A food chain",
+          "Extinction of species",
+          "The directional change in community composition over time in a given area"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is a climax community?",
+        "options": [
+          "The first community to colonise an area of bare rock or sand during primary succession",
+          "A temporary community",
+          "The final, stable community in ecological succession in balance with the environment",
+          "An extinct community"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is a pioneer species?",
+        "options": [
+          "The dominant species found in a climax community in balance with its climate",
+          "An endangered species",
+          "The first species to colonise a bare or disturbed habitat",
+          "A predator"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What does ATP stand for?",
+        "options": [
+          "Amino tri-protein",
+          "Adenosine tri-peptide",
+          "Adenosine triphosphate",
+          "Adenosine tetraphosphate"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the light-independent reaction also called?",
+        "options": [
+          "The Calvin cycle",
+          "Chemiosmosis",
+          "Krebs cycle",
+          "Photolysis (splitting water)"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is photolysis?",
+        "options": [
+          "Splitting glucose",
+          "Producing ATP",
+          "Splitting water molecules using light energy to produce H+ ions, electrons, and oxygen",
+          "Breaking down CO2"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What molecule is the initial CO2 acceptor in the Calvin cycle?",
+        "options": [
+          "Glucose",
+          "RuBP (ribulose bisphosphate)",
+          "Triose phosphate (TP or G3P molecule)",
+          "NADPH"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is a food web?",
+        "options": [
+          "Interconnected food chains showing feeding relationships in an ecosystem",
+          "A single food chain",
+          "A pyramid of biomass",
+          "A type of nutrient cycle showing how carbon and nitrogen move between organisms and the air"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What are decomposers?",
+        "options": [
+          "Organisms that break down dead organic matter, recycling nutrients",
+          "Herbivores",
+          "Top predators",
+          "Producers"
+        ],
+        "answer": 0
+      }
     ],
-    amber: [
-      { q: 'How does independent assortment during meiosis produce genetic variation?', options: ['It doesn\'t','Homologous pairs align randomly at the metaphase plate; each gamete receives a random combination of maternal and paternal chromosomes','It produces identical gametes, because homologous pairs always line up with every maternal chromosome on the same side of the metaphase plate in each cell that divides','It only works in mitosis'], answer: 1 },
-      { q: 'Explain how a point mutation can lead to a non-functional protein.', options: ['It cannot','A base substitution may change a codon, coding for a different amino acid, altering protein folding and active site shape','All mutations are silent','Point mutations only affect introns, which are removed before translation, so they cannot change the amino acid sequence or folding of a protein at all'], answer: 1 },
-      { q: 'What is the difference between allopatric and sympatric speciation?', options: ['They are the same','Allopatric involves geographical isolation; sympatric occurs within the same area (e.g., polyploidy, habitat specialisation)','Allopatric is faster','Sympatric speciation requires physical barriers such as rivers or mountains, while allopatric speciation happens within one area through polyploidy or behaviour'], answer: 1 },
-      { q: 'How does stabilising selection differ from directional selection?', options: ['They are identical','Stabilising favours the mean phenotype, reducing variation; directional shifts the mean towards one extreme','Stabilising selection increases variation by favouring both extremes, while directional selection keeps the mean phenotype in the same place over time','Directional favours the mean'], answer: 1 },
-      { q: 'Explain epistasis with an example.', options: ['One gene has no effect on another','One gene masks or modifies the expression of another gene (e.g., coat colour where one gene controls pigment deposition regardless of colour gene)','Genes always act independently','Epistasis is the same as dominance: one allele of a gene masks the other allele of that same gene, as when a dominant allele for brown coat hides the recessive allele for black'], answer: 1 },
-      { q: 'How is the chi-squared test used in genetics?', options: ['To calculate allele frequencies from phenotype ratios, so that the number of carriers can be predicted in the next generation','To test whether observed ratios differ significantly from expected Mendelian ratios (goodness of fit)','To measure DNA length','To sequence genes'], answer: 1 },
-      { q: 'Explain how crossing over during prophase I leads to recombination.', options: ['Chromosomes do not exchange material in prophase I; recombination happens only in anaphase II, when sister chromatids are pulled to opposite poles of the cell','Homologous chromosomes form bivalents; non-sister chromatids exchange segments at chiasmata, producing recombinant allele combinations','It only duplicates DNA','It causes deletion mutations'], answer: 1 },
-      { q: 'What are the conditions required for Hardy-Weinberg equilibrium?', options: ['A large population in which natural selection and migration are constantly changing allele frequencies over time','No selection, no mutation, no migration, random mating, large population size','Only random mating','Small populations with drift'], answer: 1 },
-      { q: 'How does disruptive selection lead to speciation?', options: ['It stabilises the population','It favours both extremes over the mean, potentially splitting the population into two distinct groups that may eventually become reproductively isolated','It reduces variation','It only affects one allele'], answer: 1 },
-      { q: 'Explain how a dihybrid cross produces a 9:3:3:1 ratio.', options: ['Genes are linked','Two heterozygous parents (AaBb x AaBb) produce offspring with independent assortment of two unlinked genes: 9 A_B_ : 3 A_bb : 3 aaB_ : 1 aabb','Only monohybrid crosses show ratios','The ratio is always 3:1 for each gene, so two heterozygous parents give 3:1 offspring whether or not the genes are linked, and 9:3:3:1 only appears after several generations'], answer: 1 },
-      { q: 'What is a gene pool and how does it relate to evolution?', options: ['A type of DNA','The total set of alleles in a population; evolution is a change in allele frequencies within the gene pool over time','A single organism’s complete set of genes, which changes during its lifetime as it adapts to its environment, so evolution happens within each individual','A laboratory technique'], answer: 1 },
-      { q: 'How does polyploidy lead to sympatric speciation in plants?', options: ['It cannot cause speciation','An error in meiosis doubles chromosome number; polyploid cannot breed with diploid parent species due to incompatible chromosome numbers — instant reproductive isolation','It only occurs in animals','It reduces chromosome number'], answer: 1 },
-      { q: 'Explain the difference between continuous and discontinuous variation.', options: ['They are the same','Continuous shows a range of phenotypes (polygenic, environmental influence); discontinuous shows distinct categories (usually one gene, few alleles)','Continuous has distinct categories','Discontinuous variation shows a normal distribution controlled by many genes and the environment, while continuous variation falls into a few distinct categories set by one gene'], answer: 1 },
-      { q: 'How does geographical isolation lead to speciation?', options: ['It prevents all reproduction','Populations separated by a barrier cannot interbreed; different selection pressures and genetic drift cause divergence; eventually become reproductively isolated','It always leads to extinction','Isolation has no genetic effect'], answer: 1 },
-      { q: 'What is the difference between a silent mutation and a missense mutation?', options: ['They are the same','Silent: base change but same amino acid (degenerate code); Missense: base change results in different amino acid, potentially altering protein function','Silent always causes disease','Missense has no effect'], answer: 1 },
-      { q: 'How does the Hardy-Weinberg equation p2 + 2pq + q2 = 1 allow carrier frequency calculation?', options: ['It cannot','If q2 (homozygous recessive frequency) is known, q can be found; p = 1-q; carrier frequency (heterozygous) = 2pq','It only calculates phenotype ratios','It requires knowing all three genotype frequencies directly, because q² cannot be used to find q or the frequency of heterozygous carriers at all'], answer: 1 },
-      { q: 'Explain how antibiotic resistance in bacteria is an example of natural selection.', options: ['Bacteria choose to become resistant','Random mutations confer resistance; antibiotics kill susceptible bacteria; resistant individuals survive and reproduce, passing on resistance alleles; allele frequency changes over generations','Antibiotics cause mutations','It is artificial selection'], answer: 1 },
-      { q: 'What is linkage and how does it affect the expected ratio in a dihybrid cross?', options: ['It has no effect','Genes on the same chromosome tend to be inherited together, producing fewer recombinant offspring than the expected 9:3:3:1 ratio','Linkage increases recombination, because genes on the same chromosome are always separated at chiasmata, so more recombinant offspring appear than in a 9:3:3:1 ratio','It only affects X-linked genes'], answer: 1 },
-      { q: 'How does the founder effect lead to changes in allele frequency?', options: ['It doesn\'t','A small group colonising a new area carries only a subset of the original gene pool; allele frequencies differ from the source population by chance; genetic drift is amplified','It increases diversity','It is the same as natural selection'], answer: 1 },
-      { q: 'Explain how multiple alleles and codominance work in the ABO blood group system.', options: ['Only two alleles exist, IA and IO: IA is dominant, and blood group AB arises when a person inherits IA from one parent and a mutation from the other, giving four phenotypes in total','Three alleles (IA, IB, IO); IA and IB are codominant (both expressed in IAIB giving AB); IO is recessive; produces four phenotypes: A, B, AB, O','All alleles are recessive','There is only dominance'], answer: 1 },
+    "amber": [
+      {
+        "q": "How does the light-dependent reaction produce ATP?",
+        "options": [
+          "Excited electrons from chlorophyll pass along an electron transport chain, pumping H+ across thylakoid membrane; H+ flows back through ATP synthase (chemiosmosis) generating ATP",
+          "By the Calvin cycle",
+          "By breaking down glucose in the thylakoids, releasing electrons that pass to chlorophyll and are used to phosphorylate ADP directly, with no proton gradient or ATP synthase involved at all",
+          "By splitting CO2"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain the role of reduced NADP in the Calvin cycle.",
+        "options": [
+          "It splits water in the stroma to release the oxygen that diffuses out of the leaf",
+          "It supplies hydrogen so that GP is reduced to GALP, using energy from ATP",
+          "It combines with RuBP to form an unstable 6C compound that splits into two GP",
+          "It accepts CO2 from the leaf air spaces and carries it to RuBisCO in the stroma"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does energy transfer between trophic levels explain why food chains are typically short?",
+        "options": [
+          "Food chains are always long",
+          "All energy transfers perfectly",
+          "Only about 10% of energy transfers between levels (rest lost as heat in respiration, excretion, and uneaten parts), so insufficient energy remains to support more than 4-5 levels",
+          "Energy increases at each trophic level, because predators eat many prey, so food chains are short only because top predators are rare and have difficulty finding mates in their habitat"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does deforestation contribute to climate change?",
+        "options": [
+          "It reduces CO2 levels, because fewer trees respire at night, and the cleared soil absorbs carbon from the air, so deforestation actually slows climate change in tropical and temperate regions",
+          "Removing trees reduces CO2 absorption by photosynthesis; burning/decay of wood releases stored carbon; soil disturbance releases carbon; reduced transpiration alters local climate",
+          "It has no effect",
+          "It increases photosynthesis"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Explain how the carbon cycle links photosynthesis and respiration.",
+        "options": [
+          "They are unrelated",
+          "Only photosynthesis moves carbon",
+          "Only respiration involves carbon: it releases CO2 from organic molecules, while photosynthesis uses oxygen and nitrogen to make glucose, so the two processes are unrelated and carbon does not cycle between them at all",
+          "Photosynthesis fixes atmospheric CO2 into organic molecules; respiration releases CO2 back to the atmosphere by oxidising organic molecules; together they cycle carbon between biotic and abiotic components"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "In the Hill reaction, isolated chloroplasts are illuminated in a buffer containing DCPIP, which changes from blue to colourless. What does this colour change show?",
+        "options": [
+          "The Calvin cycle is fixing CO2, and the GALP it makes reacts with DCPIP and bleaches it",
+          "Oxygen released by photolysis oxidises the DCPIP, which turns it colourless",
+          "Light is breaking down the chlorophyll, releasing pigments that decolourise the DCPIP",
+          "Electrons from the light-dependent reactions reduce DCPIP, as they normally reduce NADP"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain how succession leads to increased biodiversity.",
+        "options": [
+          "Only animals increase",
+          "Succession reduces biodiversity",
+          "Pioneer species modify abiotic conditions (soil formation, nutrient accumulation), enabling new species to establish; increasing habitat complexity creates more niches; species interactions become more complex until climax community reached",
+          "Biodiversity stays constant during succession"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How is energy lost between trophic levels?",
+        "options": [
+          "Energy is only lost by producers",
+          "It is not lost",
+          "Energy is lost through respiration (heat), excretion (urine/faeces), and parts not consumed (bones, roots); only energy assimilated into biomass is available to the next level",
+          "All energy passes to the next level, because every part of an organism is eaten and digested, and respiration releases no heat, so the energy at each level stays the same in the food chain"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain how the greenhouse effect maintains life on Earth but enhanced greenhouse effect causes problems.",
+        "options": [
+          "The greenhouse effect is always harmful",
+          "Natural greenhouse effect keeps Earth ~33°C warmer than without atmosphere, enabling liquid water and life; enhanced effect from increased CO2/CH4 raises temperatures further, causing ice melt, sea level rise, and habitat disruption",
+          "Enhanced effect is beneficial",
+          "There is no natural greenhouse effect"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Which statement correctly describes how ATP supplies energy for biological processes?",
+        "options": [
+          "Energy is released when the bond between adenine and ribose breaks, forming AMP and two phosphates",
+          "Hydrolysis of ATP to ADP and Pi gives an immediate energy supply; phosphorylating ADP needs energy",
+          "Phosphorylation of ADP releases energy, and hydrolysis of ATP needs energy from respiration",
+          "ATP is a long-term energy store, built up in large amounts and used only when glucose runs out"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the role of RuBisCO in the Calvin cycle?",
+        "options": [
+          "It catalyses the fixation of CO2 onto RuBP (5C) to form two molecules of GP (3C) — the first step of carbon fixation",
+          "It produces ATP in the stroma by phosphorylating ADP, using energy released when CO2 is split into carbon and oxygen atoms",
+          "It reduces NADP+",
+          "It splits water"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How do pyramids of energy differ from pyramids of biomass or numbers?",
+        "options": [
+          "They are all identical",
+          "Pyramids of numbers are always pyramid-shaped because producers are always more numerous, while pyramids of energy can be inverted when one large tree feeds many insects in a woodland",
+          "Pyramids of energy always have a classic pyramid shape (energy decreases at each level) and account for rate of production over time, unlike biomass/numbers which can be inverted",
+          "Energy pyramids can be inverted"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain how burning fossil fuels disrupts the carbon cycle.",
+        "options": [
+          "It releases carbon that was locked in geological stores over millions of years rapidly back into the atmosphere as CO2, faster than natural sinks can absorb it, causing atmospheric CO2 to increase",
+          "It only affects oxygen levels",
+          "It has no effect",
+          "It reduces atmospheric carbon, because the CO2 released is absorbed immediately by oceans and plants, and burning fuels converts carbon into oxygen, so the carbon cycle becomes faster and better balanced over time"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does temperature affect enzyme-controlled reactions in photosynthesis?",
+        "options": [
+          "Higher temperature always increases the rate, because molecules move faster and collide more often, and RuBisCO and other enzymes are never denatured at the temperatures found in the natural environment",
+          "Temperature has no effect",
+          "Only cold temperatures affect enzymes",
+          "Increasing temperature increases kinetic energy and reaction rate up to an optimum; beyond this, enzymes (especially RuBisCO) denature as hydrogen bonds in tertiary structure break, reducing rate"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the evidence that rising CO2 levels correlate with global temperature increase?",
+        "options": [
+          "There is no evidence",
+          "CO2 and temperature are unrelated",
+          "Only recent data exists",
+          "Ice core data shows CO2 and temperature have co-varied for hundreds of thousands of years; recent rapid CO2 rise from fossil fuels correlates with unprecedented warming; multiple independent datasets confirm this trend"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain the role of chemiosmosis in ATP production during the light-dependent reactions.",
+        "options": [
+          "Electron transport pumps H+ into thylakoid space creating a proton gradient; H+ flows back through ATP synthase down the electrochemical gradient, driving ATP synthesis (chemiosmosis)",
+          "Chemiosmosis is not involved",
+          "It only produces NADPH",
+          "Chemiosmosis occurs in the stroma, where ATP synthase splits ATP into ADP and phosphate, and the energy released is used to pump H+ ions out of the thylakoid space and into the cytoplasm"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Two barnacle species live on the same rocky shore: one only in the upper zone, the other only in the lower zone. Which explanation uses the concept of niche?",
+        "options": [
+          "Distribution is random, because larvae settle wherever the tide carries them and neither abiotic nor biotic factors affect whether they survive there",
+          "Both species share exactly the same niche, so they can live together in equal numbers anywhere on the shore where their larvae happen to settle",
+          "Each species has its own niche; where needs overlap, competition excludes one, so each is most abundant where its tolerances suit the conditions",
+          "The upper species is a pioneer and the lower species forms the climax community, so the zonation is simply one stage of an ongoing succession"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain how the distribution of organisms is affected by abiotic factors.",
+        "options": [
+          "Temperature, light, water availability, soil pH, and mineral ions determine where organisms can survive and reproduce; each species has tolerance ranges and optimal conditions; changes in these factors shift distributions",
+          "All organisms live everywhere",
+          "Abiotic factors are irrelevant",
+          "Only biotic factors matter"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How is the structure of a chloroplast related to its role in photosynthesis?",
+        "options": [
+          "The grana hold RuBisCO and the Calvin cycle enzymes, while the stroma contains the photosystems and the electron transport chain",
+          "Starch grains in the thylakoid space store the ATP made in the light-dependent reactions until the Calvin cycle needs it",
+          "The double outer membrane holds the chlorophyll, so light is trapped at the surface before reaching the stroma, where photolysis happens",
+          "Stacked thylakoids give a large membrane area for pigments, electron carriers and ATP synthase; the stroma has Calvin cycle enzymes"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain how carbon is stored in different global pools (reservoirs).",
+        "options": [
+          "Carbon exists only in the atmosphere",
+          "Carbon is stored in atmosphere (CO2), oceans (dissolved CO2/carbonates), lithosphere (fossil fuels, limestone), and biosphere (living organisms and dead organic matter); transfer between pools occurs at different rates",
+          "Only living things store carbon",
+          "Carbon cannot be stored"
+        ],
+        "answer": 1
+      }
     ],
-    red: [
-      { q: 'In a population, 16% show the recessive phenotype. Calculate the frequency of heterozygous carriers using Hardy-Weinberg.', options: ['32%','64%','16%','q2=0.16, q=0.4, p=0.6; 2pq = 2(0.6)(0.4) = 0.48 or 48% are carriers'], answer: 3 },
-      { q: 'A dihybrid cross produces a 9:7 ratio instead of 9:3:3:1. Explain this using epistasis.', options: ['The genes are linked on the same chromosome, so the two parental combinations are inherited together and crossing over produces the 7 recombinants','Complementary epistasis: both dominant alleles (A_ and B_) are needed for the phenotype, so any genotype lacking one gives the other 7/16','It is a normal ratio','Mutation has occurred'], answer: 1 },
-      { q: 'Evaluate the role of genetic drift versus natural selection in small vs large populations.', options: ['Selection does not exist','Drift only occurs in large populations','In small populations genetic drift can override selection and fix or lose alleles by chance; in large populations selection dominates','They are equally important in all populations, because drift and selection always change allele frequencies by the same amount each generation'], answer: 2 },
-      { q: 'A chi-squared value of 5.99 with 2 degrees of freedom gives p<0.05. Interpret this result for a genetic cross.', options: ['The experiment failed','The observed results differ significantly from the expected ratio, so the difference is unlikely to be due to chance alone','p>0.05 means significant','The results match expected ratios'], answer: 1 },
-      { q: 'How might a gene duplication event contribute to evolution?', options: ['It reduces genetic material','It cannot','It always causes disease, because two copies of a gene double the amount of protein made and the extra protein is toxic to every cell','The duplicate copy can accumulate mutations without affecting the original gene’s function, so it may evolve a new function'], answer: 3 },
-      { q: 'Explain why sickle cell allele is maintained at high frequency in malaria-endemic regions despite being harmful when homozygous.', options: ['Heterozygote advantage: HbAS carriers resist malaria and do not suffer sickle cell disease, so selection maintains both alleles','It is coincidence','It is always beneficial','Malaria causes the mutation in red blood cells, so the allele is produced afresh in every infected person and passed on to their children'], answer: 0 },
-      { q: 'Discuss whether evolution is progressive (leading to "better" organisms) or simply change in allele frequencies.', options: ['Evolution always improves organisms, since each generation is better adapted than the last, so later species are more advanced than earlier ones in the fossil record','Evolution is change in allele frequencies over time driven by selection and drift; it adapts organisms to current conditions, not towards ‘better’','Evolution has stopped','Only humans evolve'], answer: 1 },
-      { q: 'A frameshift mutation occurs early in a gene. Compare its likely effect to a point substitution mutation.', options: ['Point substitutions are always worse, because changing one base alters every amino acid after it, while a frameshift changes only a single codon','Both have equal effect','A frameshift changes every codon downstream, usually giving a non-functional protein; a substitution changes at most one amino acid, or none','Frameshifts have no effect'], answer: 2 },
-      { q: 'Explain how ring species provide evidence for speciation as a gradual process.', options: ['They disprove evolution','Neighbouring populations interbreed around the ring, but the two ends cannot, showing reproductive isolation building up gradually','They are not real','All populations can interbreed'], answer: 1 },
-      { q: 'How do transposable elements (transposons) contribute to genetic variation and evolution?', options: ['Transposons move within the genome, inserting into or near genes, which can disrupt, duplicate or alter regulation of genes and create new variation','They only exist in bacteria','They have no effect','They are always harmful, because every transposon insertion destroys the gene it enters, so they are removed from the genome by natural selection over time'], answer: 0 },
-    ],
+    "red": [
+      {
+        "q": "Evaluate the evidence for anthropogenic (human-caused) climate change.",
+        "options": [
+          "Only one study supports it, and ice cores show that temperature has never changed with CO2, so recent warming is fully explained by the Sun’s output rising each year",
+          "All climate change is natural",
+          "Multiple lines converge: ice cores link CO2 and temperature, CO2 isotopes show a fossil origin, and warming matches models that include human emissions",
+          "There is no evidence"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Discuss the potential consequences of a 2°C rise in global mean temperature on ecosystems and biodiversity.",
+        "options": [
+          "No effects would occur",
+          "Only beneficial effects",
+          "Effects include habitat loss for polar and alpine species, coral bleaching, range shifts, mismatched timing of breeding and food, and extinctions",
+          "Only marine ecosystems are affected, because land plants and animals can tolerate any temperature change and will simply breed earlier each year to keep pace"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Analyse why simply planting trees is not sufficient to solve climate change.",
+        "options": [
+          "Trees take decades to mature and store significant carbon, land is limited, forests can burn, and emissions must also fall for any lasting effect",
+          "Planting trees has no benefit",
+          "Only one tree species matters",
+          "Planting trees completely solves climate change"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Evaluate the strengths and limitations of using ice core data to study past climate.",
+        "options": [
+          "Ice cores are unreliable",
+          "Ice cores are perfect records",
+          "They only cover the last 100 years, since ice melts every summer, so no ancient air is preserved and they cannot show past CO2 levels or temperatures at all",
+          "Strengths: long records (800 000+ years) of trapped gases and temperature proxies; limitations: few sites, dating errors and gas diffusion"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Discuss why some scientists remain cautious about attributing specific weather events to climate change.",
+        "options": [
+          "Scientists never discuss this",
+          "Weather varies naturally with many factors, while climate describes long-term averages, so single events are hard to attribute with certainty",
+          "Attribution is simple",
+          "All weather events are caused by climate change, so every storm or heatwave can be attributed directly to rising CO2 with complete certainty by any scientist"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Analyse the efficiency of energy transfer in agricultural food chains compared to natural ecosystems, and discuss implications.",
+        "options": [
+          "Efficiency is identical",
+          "Agriculture increases transfer to humans by reducing consumer energy losses (e.g. housing animals), but relies on fertiliser and fossil fuel inputs",
+          "Agriculture is always more efficient",
+          "Natural systems waste no energy"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Evaluate the argument that protecting tropical rainforests is the most important action for combating climate change.",
+        "options": [
+          "For: they are huge carbon stores with high NPP and biodiversity; against: cutting fossil fuel emissions matters more, and other ecosystems also store carbon",
+          "Rainforests are irrelevant to climate",
+          "Rainforests store no carbon, because all the carbon they fix is released again by respiration at night, so protecting them has no effect on atmospheric CO2 at all",
+          "Only boreal forests matter"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "The initial rate of an enzyme-catalysed reaction is 0.8 au s⁻¹ at 20 °C and 1.8 au s⁻¹ at 30 °C. Which option gives the correct Q10 and interpretation?",
+        "options": [
+          "Q10 = 22.5 (1.8 ÷ 0.8 × 10): the rate rises about twentyfold per degree, because each 1 °C rise doubles collisions",
+          "Q10 = 1.0 (1.8 − 0.8): the rate rises by the same amount for every 10 °C, so temperature has a linear effect on rate",
+          "Q10 = 0.44 (0.8 ÷ 1.8): the rate falls as temperature rises, showing the enzyme is already denaturing at 30 °C",
+          "Q10 = 2.25 (1.8 ÷ 0.8): the rate more than doubles for a 10 °C rise, due to more successful collisions"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Discuss the biological, economic, and political challenges of implementing effective global strategies to reduce greenhouse gas emissions.",
+        "options": [
+          "Biological: carbon cycle inertia and slow ocean responses; economic: costs of change and fossil fuel dependence; political: agreeing and enforcing global action",
+          "All challenges are political",
+          "Technology solves everything, because carbon capture already removes all emissions at no cost, so there are no biological, economic or political challenges left to overcome",
+          "There are no challenges"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Critically evaluate the concept of carbon neutrality and whether it is achievable for modern societies.",
+        "options": [
+          "Carbon neutrality is easily achieved",
+          "True neutrality needs zero net emissions, which is hard for aviation and industry and relies on offsets that may be unreliable",
+          "It is impossible and pointless",
+          "All countries are already carbon neutral"
+        ],
+        "answer": 1
+      }
+    ]
   },
-
-  /* ─────────────────────────────────────────────────────────── T6 */
-  'T6': {
-    name: 'Immunity, Infection and Forensics',
-    green: [
-      { q: 'What is an antigen?', options: ['An antibody','A molecule (usually protein) on the surface of a cell that triggers an immune response','A white blood cell','A pathogen'], answer: 1 },
-      { q: 'What is an antibody?', options: ['A pathogen','A Y-shaped protein produced by B lymphocytes that binds specifically to an antigen','An antigen','A type of T cell that binds to antigens on infected cells and releases enzymes that destroy the pathogen'], answer: 1 },
-      { q: 'What is the function of phagocytes?', options: ['Produce antibodies that bind to specific antigens and label pathogens for destruction','Engulf and digest pathogens by phagocytosis (non-specific immune response)','Produce antigens','Cause disease'], answer: 1 },
-      { q: 'What type of immunity does vaccination provide?', options: ['Natural passive','Artificial active immunity','Natural active immunity from infection','Artificial passive'], answer: 1 },
-      { q: 'What is a pathogen?', options: ['An antibody','A microorganism that causes disease','A type of medicine','A white blood cell that attacks the body'], answer: 1 },
-      { q: 'What is the role of T helper cells?', options: ['Directly kill pathogens by engulfing them and releasing enzymes into the bloodstream','Release cytokines that activate B cells, T killer cells, and macrophages','Produce antibodies','Engulf bacteria'], answer: 1 },
-      { q: 'What is passive immunity?', options: ['Making your own antibodies after catching a disease or receiving a vaccine, so memory cells are produced as well','Receiving ready-made antibodies from another source (e.g., mother to baby via placenta/milk)','Vaccination','Having a disease'], answer: 1 },
-      { q: 'What are memory cells?', options: ['Brain cells','Long-lived lymphocytes that remain after infection and enable a faster, stronger secondary immune response','Red blood cells','Platelets'], answer: 1 },
-      { q: 'What is an autoimmune disease?', options: ['An infection','A condition where the immune system attacks the body\'s own cells','An allergy','Immunodeficiency caused by a virus that destroys the white blood cells of the body'], answer: 1 },
-      { q: 'What does the term "pathogenic" mean?', options: ['Beneficial to health and digestion','Capable of causing disease','Non-living','Microscopic'], answer: 1 },
-      { q: 'What is herd immunity?', options: ['Immunity found in animals only, where a herd is protected by antibodies passed between individuals in milk','When a high proportion of a population is vaccinated, protecting unvaccinated individuals','Individual immunity','Passive immunity'], answer: 1 },
-      { q: 'What is the difference between specific and non-specific immunity?', options: ['They are the same','Non-specific acts against any pathogen (barriers, phagocytes); specific targets particular antigens (lymphocytes, antibodies)','Specific is faster','Non-specific involves antibodies'], answer: 1 },
-      { q: 'What is forensic entomology?', options: ['Study of crime scenes','Using insect evidence (e.g., succession on a corpse) to estimate time of death','The study of bacteria found at crime scenes and their use in identifying suspects','DNA profiling'], answer: 1 },
-      { q: 'What is DNA profiling?', options: ['Sequencing an entire genome to find every gene a person carries and compare it with relatives','Analysing variable regions of DNA (e.g., STRs) to produce a unique genetic "fingerprint"','Cloning DNA','Gene therapy'], answer: 1 },
-      { q: 'What is a primary immune response?', options: ['The fastest response','The first encounter with an antigen; slow response, low antibody production, as B/T cells must be activated and clonally expand','Response to a vaccine','Memory cell response'], answer: 1 },
-      { q: 'What is the secondary immune response?', options: ['A slower, weaker response on re-exposure to an antigen, because the memory cells have been used up','A faster, stronger response on re-exposure to the same antigen, due to memory cells','The first response','A weaker response'], answer: 1 },
-      { q: 'What type of cells produce antibodies?', options: ['T cells (helper and killer) in the thymus only','Plasma cells (derived from B lymphocytes)','Phagocytes','Red blood cells'], answer: 1 },
-      { q: 'What is a decomposer\'s role in forensic science?', options: ['Preserving evidence','Bacteria and fungi break down remains; their succession patterns help estimate time since death','Producing toxins','Creating fingerprints'], answer: 1 },
-      { q: 'What is the function of the skin as part of the immune system?', options: ['Produces antibodies','Acts as a physical barrier preventing pathogen entry; sebum has antimicrobial properties','Produces T cells','Filters blood'], answer: 1 },
-      { q: 'What is gel electrophoresis used for in forensics?', options: ['Growing bacteria','Separating DNA fragments by size to create a DNA profile for identification','Amplifying DNA from a small sample so that there are millions of copies to be sequenced','Sequencing proteins'], answer: 1 },
+  "S6": {
+    "name": "Immunity, Infection and Forensics",
+    "green": [
+      {
+        "q": "What is an antigen?",
+        "options": [
+          "An antibody",
+          "A vaccine",
+          "A molecule (usually protein) on a cell surface that triggers an immune response",
+          "A type of white blood cell that engulfs and destroys pathogens in the tissues and blood"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is an antibody?",
+        "options": [
+          "A Y-shaped glycoprotein produced by B cells that binds specifically to an antigen",
+          "A toxin",
+          "A type of antigen found on the surface of pathogens that triggers the immune response in the body",
+          "A type of pathogen"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What type of white blood cell produces antibodies?",
+        "options": [
+          "B lymphocytes (plasma cells)",
+          "Phagocytes",
+          "T lymphocytes (killer T cells)",
+          "Neutrophils"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is phagocytosis?",
+        "options": [
+          "Antibody production",
+          "Cell signalling between lymphocytes using cytokines in the lymph nodes",
+          "Cell division",
+          "The engulfing and digestion of pathogens by white blood cells"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is a pathogen?",
+        "options": [
+          "A beneficial organism that lives in the gut",
+          "A type of cell",
+          "A microorganism that causes disease",
+          "An enzyme"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the difference between specific and non-specific immunity?",
+        "options": [
+          "Non-specific is general defence against all pathogens; specific targets particular pathogens using lymphocytes and antibodies",
+          "Non-specific uses antibodies",
+          "They are the same",
+          "Specific is faster"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is a vaccine?",
+        "options": [
+          "A type of antibiotic injected into the blood that kills bacteria directly and gives lifelong protection from all infections",
+          "A preparation containing weakened/dead pathogens or antigens to stimulate immune memory without causing disease",
+          "A painkiller",
+          "A type of antibody"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is passive immunity?",
+        "options": [
+          "Memory cell production",
+          "Immunity gained by vaccination",
+          "Natural infection",
+          "Immunity gained by receiving antibodies from another source (e.g., mother to baby), providing immediate but temporary protection"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is active immunity?",
+        "options": [
+          "Blood transfusion",
+          "Immunity produced by the individual's own immune system in response to antigen exposure, providing long-term protection via memory cells",
+          "Taking antibiotics",
+          "Receiving antibodies"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the function of memory cells?",
+        "options": [
+          "Produce an immediate response by releasing antibodies into the blood during the first infection, then die within a few days of it clearing",
+          "Remain in the body long-term and enable a faster, stronger secondary immune response upon re-exposure to the same antigen",
+          "Kill pathogens directly",
+          "Produce mucus"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is an antibiotic?",
+        "options": [
+          "A substance that kills viruses inside infected cells and in the blood",
+          "A vaccine component",
+          "An antigen",
+          "A substance that kills or inhibits the growth of bacteria"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Why are antibiotics ineffective against viruses?",
+        "options": [
+          "Viruses lack the cellular structures (cell walls, ribosomes) that antibiotics target; they replicate inside host cells",
+          "Viruses are too small",
+          "Antibiotics are only for fungi",
+          "They are too strong for the immune system to control, so antibiotics must be combined with vaccines to work against any virus"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is antibiotic resistance?",
+        "options": [
+          "Viruses fighting antibiotics",
+          "Humans becoming resistant to antibiotics after taking them too often, so the drugs no longer work",
+          "When bacteria evolve mechanisms to survive exposure to antibiotics that previously killed them",
+          "A type of immunity"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the role of T helper cells?",
+        "options": [
+          "Release cytokines that activate other immune cells including B cells and cytotoxic T cells",
+          "Engulf pathogens",
+          "Produce antibodies",
+          "Kill infected cells directly by releasing perforin, and engulf bacteria by phagocytosis in the tissues"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is the primary immune response?",
+        "options": [
+          "A fast response",
+          "A response to a second infection",
+          "An allergic reaction",
+          "The slow initial response when the immune system first encounters a specific antigen, taking days to produce sufficient antibodies"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is decomposition?",
+        "options": [
+          "Growth of organisms as they take in nutrients and increase their biomass over time",
+          "Fossilisation",
+          "Photosynthesis",
+          "The breakdown of dead organic matter by microorganisms, recycling nutrients"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "When estimating time of death, what is meant by the \"stage of succession\" of a body?",
+        "options": [
+          "The rate at which the body cools towards the temperature of its surroundings",
+          "The predictable sequence of different organisms, such as insects, that colonise the body",
+          "The order in which muscles stiffen and then relax as ATP runs out and proteins break down",
+          "The number of STR repeats that can still be read as the DNA in the body degrades"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is meant by \"time of death\" estimation in forensic science?",
+        "options": [
+          "Asking witnesses only",
+          "The exact time recorded by a clock",
+          "Using biological and physical evidence (body temperature, rigor mortis, insect colonisation, decomposition stage) to estimate when death occurred",
+          "Using DNA only"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is DNA profiling?",
+        "options": [
+          "Measuring DNA amount",
+          "Analysing specific variable regions (STRs) of DNA to produce a unique pattern for identification",
+          "Counting chromosomes",
+          "Sequencing entire genomes so that every base of a person’s DNA can be compared with a crime scene sample"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the role of cytotoxic T cells?",
+        "options": [
+          "Produce antibodies",
+          "Engulf bacteria",
+          "Directly kill infected body cells by releasing perforin and granzymes",
+          "Produce memory cells that release antibodies into the blood and lymph fluid"
+        ],
+        "answer": 2
+      }
     ],
-    amber: [
-      { q: 'How does clonal selection ensure a specific immune response?', options: ['All B cells respond to all antigens at once, each producing a mixture of antibodies, so the most common antibody in the blood simply happens to fit the pathogen and no cloning of cells is involved','Only the B cell with a complementary antibody to the antigen is activated; it divides rapidly (clonal expansion) producing identical plasma cells and memory cells','Random B cells are activated','T cells select B cells randomly'], answer: 1 },
-      { q: 'Explain how vaccination prevents disease without causing it.', options: ['Vaccines contain active, fully virulent pathogens in large doses, which cause a mild case of the disease, and the antibodies made during this illness then remain in the blood for life to prevent any later infection','Vaccines contain weakened/dead/fragment antigens that stimulate an immune response and memory cell production without causing disease; on real exposure, secondary response is rapid','Vaccines are antibiotics','Vaccines provide passive immunity only'], answer: 1 },
-      { q: 'How does antigenic variation in influenza virus challenge vaccine programmes?', options: ['It doesn\'t','The virus mutates its surface antigens (antigenic drift/shift); memory cells no longer recognise new strains; new vaccines needed annually','Vaccines last forever','The virus doesn’t change its antigens, but it multiplies so fast that memory cells cannot make antibodies quickly enough, so vaccines fail each year'], answer: 1 },
-      { q: 'Explain the process of opsonisation.', options: ['Antibodies directly kill pathogens by bursting their cell walls, and phagocytes then engulf the debris, so no receptor binding is involved at all in the process','Antibodies bind to pathogen antigens, coating them; this enhances recognition and phagocytosis by phagocytes (Fc region binds to phagocyte receptors)','Antigens destroy antibodies','Phagocytes produce antibodies'], answer: 1 },
-      { q: 'How do T killer (cytotoxic) cells destroy infected cells?', options: ['They produce antibodies that bind to antigens on infected cells, marking them so that phagocytes engulf and digest them by phagocytosis in the blood','They recognise foreign antigens on infected cell surfaces and release perforin/granzymes that create pores, causing cell lysis/apoptosis','They engulf cells','They release histamine'], answer: 1 },
-      { q: 'What is the role of antigen-presenting cells in the immune response?', options: ['They cause disease','Cells like macrophages display pathogen antigens on MHC molecules on their surface, activating T helper cells to coordinate the specific response','They produce antigens and release them into the blood, where the antigens themselves destroy pathogens directly, so T helper cells and B cells are not needed in the specific response at all','They suppress immunity'], answer: 1 },
-      { q: 'Explain how PCR is used in forensic DNA analysis.', options: ['It sequences DNA from the crime scene base by base, so the whole genome can be compared with a suspect’s and matched without any gel electrophoresis','PCR amplifies tiny amounts of DNA from crime scenes, producing millions of copies so there is enough for gel electrophoresis and profiling','It separates DNA','It destroys evidence'], answer: 1 },
-      { q: 'How does the structure of an antibody relate to its function?', options: ['It is a single chain','Y-shaped: variable region (Fab) has specific complementary shape to bind antigen; constant region (Fc) interacts with immune cells; hinge provides flexibility; two binding sites per molecule','It has one binding site','It is circular'], answer: 1 },
-      { q: 'Explain how monoclonal antibodies are produced and one medical use.', options: ['From T cells','B cells fused with tumour cells create hybridomas that divide indefinitely producing identical antibodies; used in pregnancy tests, cancer treatment (targeted drug delivery), diagnosis','They are extracted from the blood of vaccinated animals and purified, since B cells cannot be grown outside the body; they are used only to kill bacteria and cannot be used in pregnancy tests or targeted cancer treatment','They are synthetic chemicals'], answer: 1 },
-      { q: 'How does succession of organisms on a decomposing body help estimate time of death?', options: ['It cannot help','Different species of insects (e.g., blowflies, beetles) colonise remains in a predictable sequence; identifying species present and their life stages (eggs, larvae, pupae) gives an estimate of post-mortem interval','Only bacteria are used','Time of death cannot be estimated'], answer: 1 },
-      { q: 'What is the difference between active and passive immunity in terms of duration and mechanism?', options: ['They last the same time','Active: body produces own antibodies + memory cells, long-lasting; Passive: receives pre-made antibodies, immediate but short-lived (no memory cells produced)','Passive immunity lasts longer, because received antibodies are copied by the body’s own B cells for life, while active immunity is immediate but short-lived since vaccines produce no memory cells at all','Active is immediate'], answer: 1 },
-      { q: 'How do antigens on cell surfaces allow self/non-self recognition?', options: ['They cannot','All body cells display self-antigens (MHC markers); the immune system is tolerant of these; foreign antigens (non-self) trigger an immune response; failure causes autoimmune disease','All body cells have identical antigens to pathogens, so the immune system recognises non-self by the size of a cell rather than by its surface markers, and autoimmune disease is caused by cells becoming too large','Only pathogens have antigens'], answer: 1 },
-      { q: 'Explain the ethical considerations of DNA databases used in forensics.', options: ['No ethical issues','Benefits: solving crimes, exonerating innocent; Concerns: privacy, genetic information misuse, consent, disproportionate representation of certain groups, potential for discrimination','They should include everyone without consent, since DNA reveals nothing personal and cannot be misused, so there are no privacy, discrimination or proportionality issues and every profile can be shared freely with employers','They are always wrong'], answer: 1 },
-      { q: 'How does HIV evade the immune system?', options: ['It does not infect immune cells at all; instead it hides inside red blood cells, where antibodies cannot reach it, and it never changes its surface antigens, so the immune system simply ignores it for years','HIV infects and destroys T helper cells (CD4+), disabling the coordinator of the immune response; it also mutates rapidly (antigenic variation) and hides in latent reservoirs','It only infects red blood cells','The immune system ignores it'], answer: 1 },
-      { q: 'Explain how ELISA tests work for detecting specific antigens or antibodies.', options: ['They use western blotting','Antibodies are bound to a surface; sample added; if target antigen/antibody present, it binds; enzyme-linked secondary antibody added; substrate colour change indicates positive result — quantitative','They directly sequence DNA','They use PCR'], answer: 1 },
-      { q: 'What factors affect the rate of decomposition at a crime scene?', options: ['Only temperature matters: moisture, oxygen, insects, clothing and burial have no measurable effect, so a single thermometer reading at the scene gives the exact time of death in every case','Temperature, moisture, oxygen availability, pH, insect access, clothing, burial, and whether the body was in water all affect decomposition rate','Only insects matter','Time of day only'], answer: 1 },
-      { q: 'How does the complement system enhance the immune response?', options: ['It replaces antibodies','Complement proteins are activated by antibody-antigen complexes; they form membrane attack complexes (pores in pathogen membranes), enhance opsonisation, and attract phagocytes (chemotaxis)','It suppresses immunity','It only works against viruses'], answer: 1 },
-      { q: 'Explain why antibiotic resistance is a growing concern in treating bacterial infections.', options: ['Antibiotics still work perfectly','Overuse/misuse selects for resistant bacteria; resistant genes spread via horizontal gene transfer; fewer effective antibiotics remain; MRSA and other superbugs are difficult to treat','Resistance decreases over time as bacteria become weaker, so overuse is not a problem; resistance genes cannot pass between bacteria, and superbugs such as MRSA are easily treated with any of the common antibiotics','Only affects hospitals'], answer: 1 },
-      { q: 'How is gel electrophoresis used to separate DNA fragments and how are they visualised?', options: ['Fragments separate by colour','DNA (negatively charged) moves through agarose gel towards positive electrode; smaller fragments move faster/further; fragments visualised by UV fluorescence of staining dye or radioactive/fluorescent probes','Larger fragments move faster','Protein is used instead'], answer: 1 },
-      { q: 'What is the significance of short tandem repeats (STRs) in DNA profiling?', options: ['They code for proteins','STRs are highly variable between individuals (different numbers of repeats at each locus); comparing multiple STR loci produces a unique profile; the more loci tested, the lower the probability of a match by chance','They are identical in everyone','They are only found in criminals'], answer: 1 },
+    "amber": [
+      {
+        "q": "Explain how vaccination produces long-term immunity.",
+        "options": [
+          "Vaccines contain antibiotics",
+          "Vaccines kill all pathogens in the body immediately by releasing antibiotics into the blood, so no immune response or memory cells are needed and protection lasts only while the vaccine remains",
+          "It does not produce long-term immunity",
+          "Antigens in the vaccine trigger primary immune response; B and T memory cells are produced and persist; upon re-exposure, secondary response is faster and stronger, preventing disease"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "How does natural selection lead to antibiotic resistance in bacteria?",
+        "options": [
+          "All bacteria are naturally resistant",
+          "Bacteria choose to become resistant",
+          "Antibiotics cause mutations in bacterial DNA, directing each bacterium to change the specific gene the drug targets, so every bacterium in the population becomes resistant at the same time",
+          "Random mutations produce resistance; when antibiotics are used, resistant bacteria survive and reproduce (selection pressure); resistant alleles increase in frequency in the population"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain the process of clonal selection and expansion in the immune response.",
+        "options": [
+          "B cells are selected randomly",
+          "All B cells respond to all antigens at once, each producing a mixture of antibodies, so the most common antibody in the blood happens to fit the pathogen, and no cloning, plasma cells or memory cells are involved in the response",
+          "A specific antigen binds to the one B cell with the complementary receptor; this B cell divides rapidly (clonal expansion) producing many identical plasma cells that secrete the specific antibody, plus memory cells",
+          "Only T cells undergo clonal selection"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does the structure of an antibody relate to its function?",
+        "options": [
+          "Y-shape with two identical antigen-binding sites (variable regions) for specific antigen attachment; constant region determines class and effector function; hinge region allows flexibility; disulfide bonds maintain structure",
+          "All antibodies are identical",
+          "Structure is unrelated to function",
+          "Antibodies are circular proteins with a single binding site that attaches to any antigen, so they have no variable regions, constant regions or hinge; their shape is held by hydrogen bonds alone and does not affect how they recognise pathogens"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain how forensic entomology can help determine time of death.",
+        "options": [
+          "Insects are irrelevant",
+          "Different insect species colonise remains in a predictable succession; identifying species present and their developmental stage (egg, larva, pupa) indicates time since colonisation; environmental conditions (temperature) are factored into calculations",
+          "Insects arrive randomly",
+          "Only flies are used"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does HIV cause immunodeficiency?",
+        "options": [
+          "It blocks phagocytosis only, so bacteria are no longer engulfed, while T helper cells, B cells and antibodies continue to work normally throughout the infection",
+          "It kills red blood cells",
+          "HIV infects and destroys T helper cells (CD4+), progressively weakening the immune system until it cannot fight opportunistic infections (AIDS)",
+          "It destroys antibodies"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain the difference between the primary and secondary immune responses.",
+        "options": [
+          "Primary: fast (a few hours), high antibody levels, memory cells activated; secondary: slow (1–2 weeks to peak), lower antibody levels, naive lymphocytes activated",
+          "Primary: slow (1–2 weeks to peak), lower antibody levels, naive lymphocytes activated; secondary: faster (a few days), much higher antibody levels, memory cells activated",
+          "The primary response produces more antibodies and acts faster because naive lymphocytes are more active, while the secondary response is slower and weaker since memory cells have already been used up",
+          "Both take 1–2 weeks to peak and give the same antibody levels; the secondary response differs only because T killer cells replace B cells in making antibodies"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does PCR (polymerase chain reaction) enable DNA profiling from small samples?",
+        "options": [
+          "PCR amplifies tiny amounts of DNA exponentially through repeated cycles of denaturation, annealing of primers, and elongation by DNA polymerase, producing millions of copies for analysis",
+          "PCR sequences the DNA base by base, reading the whole genome of the sample in a single step at one temperature, so only one copy of the DNA is needed and no amplification or primers are involved at all",
+          "PCR is not used in forensics",
+          "PCR only works with large samples"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain how gel electrophoresis separates DNA fragments in genetic profiling.",
+        "options": [
+          "It separates by colour",
+          "DNA fragments (negatively charged) are placed in a gel and electric current applied; shorter fragments move faster/further toward the positive electrode; fragments separate by size, creating a banding pattern unique to an individual",
+          "It does not separate DNA",
+          "Only proteins are separated this way"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How do physical barriers (skin, mucous membranes) provide non-specific defence?",
+        "options": [
+          "They are not defensive",
+          "They only work against viruses",
+          "Skin provides a physical barrier; mucous membranes trap pathogens; stomach acid kills ingested microbes; cilia sweep mucus away; lysozyme in tears/saliva destroys bacterial walls — all without antigen-specific recognition",
+          "They produce antibodies that are secreted onto the skin and into mucus, where they bind to specific antigens on each pathogen, so these barriers provide a specific defence that depends on memory cells made during an earlier infection"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the difference between bacteriostatic and bactericidal antibiotics?",
+        "options": [
+          "Bacteriostatic antibiotics stop bacteria growing and dividing, so the immune system must clear them; bactericidal ones kill them",
+          "Bacteriostatic antibiotics kill bacteria by bursting their cell walls, whereas bactericidal antibiotics only stop them from dividing",
+          "Bacteriostatic antibiotics act against viruses and bactericidal ones act against bacteria, so each treats a different type of infection",
+          "Both kill bacteria outright, but bacteriostatic antibiotics act more slowly because they are always given in much lower doses"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does antigenic variation (e.g., in influenza) make vaccination challenging?",
+        "options": [
+          "It does not affect vaccines",
+          "Only one strain exists",
+          "Vaccines work against all variants of a virus, because memory cells recognise the whole pathogen rather than its surface antigens, so mutations in antigen genes never make an existing vaccine less effective at all",
+          "Mutations in surface antigen genes change the virus's antigenic profile; memory cells from previous infection/vaccination no longer recognise new variants; new vaccines must be developed regularly"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain how body temperature change after death can be used to estimate time of death.",
+        "options": [
+          "Body temperature rises after death",
+          "Body cools toward ambient temperature at a roughly predictable rate (Newton's law of cooling); measuring core temperature and using cooling curves adjusted for environmental conditions allows back-calculation of time of death",
+          "Body temperature is irrelevant",
+          "The rate is always exactly 1°C per hour whatever the conditions, so the time of death is found by subtracting the body temperature from 37 °C, and air temperature, clothing and body size have no effect on the estimate made from the reading"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does the inflammatory response help fight infection?",
+        "options": [
+          "It only causes pain",
+          "It does not help",
+          "Inflammation is always harmful: histamine narrows the capillaries and reduces blood flow, keeping phagocytes away from the site, and the heat produced helps the pathogens grow faster, so it should be blocked with drugs in every infection",
+          "Damaged cells release histamine causing vasodilation and increased capillary permeability; more blood brings phagocytes and clotting factors to the site; swelling isolates the area; heat inhibits pathogen growth"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is herd immunity and how does vaccination achieve it?",
+        "options": [
+          "Individual immunity only",
+          "When a high percentage of a population is immune (through vaccination), unvaccinated individuals are protected because the pathogen cannot find enough susceptible hosts to spread effectively",
+          "It requires 100% vaccination, because any unvaccinated person will always catch the disease, so herd immunity protects only those who have been vaccinated themselves and never shields the rest of the population",
+          "It only works for one disease"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does rigor mortis help estimate time of death?",
+        "options": [
+          "It happens immediately",
+          "Rigor mortis is irrelevant",
+          "After death, ATP depletion causes actin-myosin cross-bridges to lock, stiffening muscles; rigor starts 2-4 hours after death, peaks around 12 hours, and resolves by 36-48 hours as proteins decompose; timing varies with temperature",
+          "It is permanent"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How can one gene give rise to more than one protein?",
+        "options": [
+          "Introns are removed and exons joined in different combinations, so different mature mRNAs code for different polypeptides",
+          "Each codon can be read by several different tRNAs, so ribosomes insert different amino acids each time one mRNA is translated",
+          "Exons are removed from the pre-mRNA and the introns are joined in different orders, each order coding for a different protein",
+          "The gene is transcribed from both DNA strands at once, and each strand's mRNA is translated into its own separate protein"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How do short tandem repeats (STRs) provide individual-specific DNA profiles?",
+        "options": [
+          "STRs are repetitive DNA sequences that vary in the number of repeats between individuals; analysing multiple STR loci gives a profile that is statistically unique (except identical twins); the probability of two unrelated people matching decreases with more loci",
+          "Everyone has identical STRs",
+          "Only one STR locus is needed",
+          "STRs are genes"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does interferon help to limit a viral infection?",
+        "options": [
+          "It is released by mast cells and causes vasodilation, so that more phagocytes reach the site of the viral infection",
+          "It is an antibody made by plasma cells that binds to viral antigens and makes the virus particles clump together",
+          "Infected cells release it, and it stops viral replication in nearby cells, e.g. by blocking viral protein synthesis",
+          "It is an enzyme in tears and saliva that digests the protein coat of viruses before they are able to enter body cells"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How can microbial decomposition rate be affected by environmental conditions?",
+        "options": [
+          "Environment has no effect",
+          "Only temperature matters",
+          "Decomposition rate is always constant",
+          "Temperature, moisture, oxygen availability, and pH all affect microbial enzyme activity and growth rate; warm, moist, aerobic, neutral pH conditions increase decomposition rate; cold, dry, anaerobic, or extreme pH conditions slow it"
+        ],
+        "answer": 3
+      }
     ],
-    red: [
-      { q: 'Evaluate the benefits and risks of a mass vaccination programme against a new pandemic virus.', options: ['Only benefits, no risks','Benefits: herd immunity, less transmission and fewer deaths; risks: rare side effects, rushed trials and unequal global access','Only risks, no benefits','Vaccination is never effective against a new virus, because the immune system cannot make memory cells for an antigen it has not met before'], answer: 1 },
-      { q: 'Explain how antigenic shift in influenza could lead to a pandemic, contrasting it with antigenic drift.', options: ['They are the same process','Drift: small mutations in HA/NA cause seasonal epidemics; shift: two strains reassort to make a new subtype no one is immune to, risking a pandemic','Shift is less dangerous','Drift causes pandemics, because gradual mutations in HA and NA build up until the virus is unrecognisable, while shift only produces mild seasonal flu'], answer: 1 },
-      { q: 'A forensic scientist finds blowfly larvae at the third instar stage on a body. Explain how this helps estimate time of death.', options: ['It cannot help','Knowing the development time from egg to third instar at the site’s temperature lets the minimum time since death be calculated','Only adult flies are useful','The exact time of death is always known from the larvae, because blowflies lay eggs within seconds of death and grow at the same rate at any temperature'], answer: 1 },
-      { q: 'Discuss the challenges of developing a vaccine against HIV.', options: ['Only cost is a barrier, since the antigens on HIV never change, so a single vaccine would protect everyone once it was paid for and made','HIV mutates rapidly, infects the T helper cells a vaccine relies on, hides in latent reservoirs and has shielded antigens','It is simple to develop','A vaccine already exists'], answer: 1 },
-      { q: 'Evaluate the use of DNA evidence in court, considering reliability and limitations.', options: ['Highly discriminating, but samples can be contaminated or degraded, and statistics can be misinterpreted, so it is not infallible','It is always 100% reliable','It always identifies the criminal','It should never be used'], answer: 0 },
-      { q: 'Explain why immunosuppressed patients are vulnerable to opportunistic infections and how this relates to T helper cell function.', options: ['Innate immunity is unaffected','Only B cells matter','Without functional T helper cells (e.g. in HIV/AIDS), B cells and cytotoxic T cells are not activated, so normally harmless microbes cause disease','They have too many immune cells'], answer: 2 },
-      { q: 'Compare and evaluate the use of monoclonal antibodies versus traditional drug therapy in treating cancer.', options: ['Monoclonal antibodies target specific cancer antigens, reducing harm to healthy cells, but are costly; traditional drugs are cheaper but less selective','Antibodies cure all cancers','Traditional drug therapy is always better, because chemotherapy targets only cancer cells while antibodies attack every cell that carries an antigen in the body','They are identical approaches'], answer: 0 },
-      { q: 'A body is found indoors in a heated room. How would this affect forensic estimates of time of death compared to outdoors?', options: ['A higher constant temperature speeds decomposition and insect development, so the time since death will be shorter than outdoor rates suggest','Indoor rooms always preserve bodies, so decomposition and insect development stop altogether and the time of death cannot be estimated at all by any method','No difference','Temperature doesn\'t affect estimates'], answer: 0 },
-      { q: 'Discuss the concept of immune privilege and why certain body sites (e.g., eyes, brain, testes) have reduced immune responses.', options: ['Immune privilege doesn\'t exist','Only the brain is privileged, because it has no blood supply, so immune cells cannot reach it while the eyes and testes respond as normal tissue does','All body sites respond equally','Barriers such as the blood-brain barrier and local immunosuppression limit inflammation, which could otherwise destroy tissue that cannot regenerate'], answer: 3 },
-      { q: 'Analyse how the misuse of antibiotics in agriculture contributes to the emergence of antibiotic-resistant bacteria in human medicine.', options: ['Resistance cannot transfer between species','Only hospital use matters','Low doses in livestock select for resistant bacteria, whose resistance genes can pass to human pathogens by food, contact or plasmid transfer','Agricultural use has no effect'], answer: 2 },
-    ],
+    "red": [
+      {
+        "q": "Evaluate the arguments for and against compulsory vaccination programmes.",
+        "options": [
+          "For: herd immunity protects the vulnerable and makes eradication possible; against: loss of personal choice, rare side effects and reduced public trust",
+          "There are no arguments against, since vaccines never have side effects and compulsion always increases trust, so every country has already made all vaccines compulsory",
+          "Compulsory vaccination is always wrong",
+          "Vaccination should never be questioned"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Discuss the evolutionary arms race between pathogens and host immune systems, using specific examples.",
+        "options": [
+          "Hosts always win the arms race, because once an antibody has been made against a pathogen, that pathogen can never change its antigens or evade the immune system again",
+          "Pathogens never evolve",
+          "No such arms race exists",
+          "Hosts evolve defences such as antibody and MHC diversity; pathogens evolve antigenic variation and immune evasion, e.g. influenza and HIV"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Critically evaluate the reliability of DNA profiling evidence in criminal investigations.",
+        "options": [
+          "DNA evidence is useless",
+          "Strengths: very high discrimination power; limitations: contamination, degraded or mixed samples, and statistics that can be misinterpreted in court",
+          "It always identifies the criminal",
+          "DNA evidence is always 100% reliable, since samples cannot be contaminated or degraded, so a match proves that the suspect committed the crime in every case"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Analyse the biological factors that make developing an effective HIV vaccine particularly challenging.",
+        "options": [
+          "HIV’s high mutation rate gives enormous antigenic diversity; it infects T helper cells, hides in latent reservoirs and shields its key antigens",
+          "Only one factor makes it difficult",
+          "Vaccines cannot be made for any virus",
+          "An HIV vaccine is easy to make"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Evaluate the ethical implications of using forensic DNA databases that store profiles of convicted individuals.",
+        "options": [
+          "Databases should be deleted",
+          "There are no ethical issues",
+          "For: helps solve crimes, deters offenders and identifies serial offenders; against: privacy, misuse of data and disproportionate representation of some groups",
+          "Databases should store everyone’s profile without consent, since DNA reveals nothing about health or family and the data can never be misused, so there are no ethical concerns"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Discuss how the overuse of antibiotics in agriculture and medicine has contributed to the emergence of superbugs, and evaluate potential solutions.",
+        "options": [
+          "Resistance only occurs in hospitals",
+          "Antibiotic resistance is not a real problem",
+          "Overuse gives selection pressure for resistant bacteria, spread by gene transfer; solutions include stewardship, less farm use, new drugs and better hygiene",
+          "One new antibiotic will solve everything"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "A forensic scientist estimates time of death using multiple methods that give slightly different answers. Discuss why multiple methods are used and how discrepancies might arise.",
+        "options": [
+          "Discrepancies mean all methods are wrong",
+          "Multiple methods (temperature, rigor, lividity, entomology) cross-check each other; they differ because each is affected by conditions such as temperature",
+          "All methods always agree exactly, because body cooling, rigor mortis and insect development proceed at fixed rates whatever the temperature or conditions at the scene",
+          "Only one method should be used"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "A hospital has rising numbers of MRSA and C. difficile infections. Which set of measures best reflects codes of practice on antibiotic prescription and infection control?",
+        "options": [
+          "Give broad-spectrum antibiotics to every patient on admission as a precaution, so that any bacteria present are killed before they spread",
+          "Rely on alcohol hand gel alone, since it kills all bacteria including C. difficile spores, so antibiotic prescribing does not need to change",
+          "Prescribe antibiotics for viral infections to prevent secondary infections, and stop every course early to reduce selection pressure",
+          "Prescribe antibiotics only for confirmed bacterial infections, prefer narrow-spectrum drugs, enforce hand washing, isolate infected patients"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Analyse how Mycobacterium tuberculosis is able to persist in the body despite the immune response.",
+        "options": [
+          "It survives in macrophages by stopping lysosomes fusing with its phagosome; its waxy wall resists digestion; it lies dormant in tubercles",
+          "It releases interferon, which stops macrophages engulfing it and prevents any inflammation or antibody production at the site of infection",
+          "It changes its surface antigens every few days by antigenic shift, so memory cells made against earlier forms no longer recognise it",
+          "It infects and destroys T helper cells by inserting its DNA into their genome, using its own reverse transcriptase enzyme"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "A patient with HIV has a falling T helper cell count and develops TB and pneumonia. Which analysis best explains this?",
+        "options": [
+          "HIV causes these infections itself, because the virus spreads into lung cells and has the same structure as the TB bacterium",
+          "HIV destroys T helper cells, so fewer B cells and T killer cells are activated and opportunistic infections take hold",
+          "Antibodies against HIV cross-react with lung tissue, causing an attack on the lungs that is mistaken for an infection",
+          "HIV destroys B cells directly, so no antibodies are made, while T killer cells and phagocytes keep working normally"
+        ],
+        "answer": 1
+      }
+    ]
   },
-
-  /* ─────────────────────────────────────────────────────────── T7 */
-  'T7': {
-    name: 'Homeostasis and Response',
-    green: [
-      { q: 'What is homeostasis?', options: ['Staying the same','The maintenance of a constant internal environment within a narrow range','Growing larger','Responding to stimuli in the environment by moving towards or away from them quickly'], answer: 1 },
-      { q: 'What is negative feedback?', options: ['A harmful response that amplifies any change away from the set point until the system fails completely','A mechanism that reverses a change from the set point, returning conditions to normal','A positive response','No response'], answer: 1 },
-      { q: 'What is the role of the pancreas in blood glucose regulation?', options: ['Digestion only','Produces insulin and glucagon to regulate blood glucose levels','Filters blood','Produces adrenaline to prepare the body for fight or flight during stress'], answer: 1 },
-      { q: 'What does insulin do?', options: ['Raises blood glucose','Lowers blood glucose by stimulating cells to take up glucose and liver to convert glucose to glycogen','Breaks down glycogen','Produces glucose'], answer: 1 },
-      { q: 'What does glucagon do?', options: ['Lowers blood glucose','Raises blood glucose by stimulating the liver to convert glycogen to glucose (glycogenolysis)','Stores glucose','Produces insulin'], answer: 1 },
-      { q: 'What is a synapse?', options: ['A nerve cell','The junction between two neurones where signals are transmitted by neurotransmitters','A muscle','A receptor'], answer: 1 },
-      { q: 'What is a reflex arc?', options: ['A voluntary response','A rapid, automatic nervous pathway: receptor, sensory neurone, relay neurone, motor neurone, effector','A slow response','A hormonal pathway'], answer: 1 },
-      { q: 'What is the role of the hypothalamus?', options: ['Produces insulin and glucagon to control the concentration of glucose in the blood after meals','Acts as the thermoregulatory centre and links the nervous and endocrine systems','Filters urine','Pumps blood'], answer: 1 },
-      { q: 'What is a hormone?', options: ['A nerve impulse','A chemical messenger produced by endocrine glands, transported in blood to target organs','A type of enzyme','A nutrient'], answer: 1 },
-      { q: 'What organ filters blood and produces urine?', options: ['Liver','Kidney','Pancreas','Bladder'], answer: 1 },
-      { q: 'What is the normal blood glucose level approximately?', options: ['1 mmol/L','4-6 mmol/L','20 mmol/L','0.5 mmol/L'], answer: 1 },
-      { q: 'What is a neurone?', options: ['A hormone-producing cell that releases chemicals into the blood','A nerve cell that transmits electrical impulses','A muscle cell','A blood cell'], answer: 1 },
-      { q: 'What is the function of sensory neurones?', options: ['Carry impulses from the CNS to the effectors such as muscles','Carry impulses from receptors to the CNS','Connect neurones in the brain','Produce neurotransmitters'], answer: 1 },
-      { q: 'What is the function of motor neurones?', options: ['Detect stimuli','Carry impulses from the CNS to effectors (muscles/glands)','Relay information between neurones within the brain and spinal cord','Produce hormones'], answer: 1 },
-      { q: 'What is thermoregulation?', options: ['Controlling blood glucose levels using insulin and glucagon from the pancreas','The regulation of body temperature around a set point (37°C in humans)','Water balance','pH regulation'], answer: 1 },
-      { q: 'What is osmoregulation?', options: ['Temperature control','The control of water potential and solute concentration of body fluids','Blood pressure regulation by the heart and the muscular walls of the arteries','Glucose control'], answer: 1 },
-      { q: 'What is the role of ADH?', options: ['Raises blood glucose','Increases water reabsorption in the collecting duct of the kidney by making it more permeable','Lowers blood pressure','Stimulates sweating'], answer: 1 },
-      { q: 'What is Type 1 diabetes?', options: ['Insulin resistance caused by obesity, so cells stop responding to the insulin that is still made','An autoimmune condition where beta cells are destroyed, so no insulin is produced','Excess insulin production','A dietary condition'], answer: 1 },
-      { q: 'What is Type 2 diabetes?', options: ['No insulin production','A condition where cells become resistant to insulin or insufficient insulin is produced','An autoimmune disease in which the immune system destroys the beta cells, so no insulin is produced at all','Only affects children'], answer: 1 },
-      { q: 'What is an effector?', options: ['A receptor that detects a stimulus and sends an impulse to the CNS','A muscle or gland that carries out a response','A nerve impulse','A hormone'], answer: 1 },
+  "S7": {
+    "name": "Run for Your Life",
+    "green": [
+      {
+        "q": "What is aerobic respiration?",
+        "options": [
+          "Photosynthesis",
+          "Respiration without oxygen, producing lactic acid in muscles and ethanol in yeast",
+          "Fermentation",
+          "The release of energy from glucose using oxygen, producing CO2 and water"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Where does glycolysis take place?",
+        "options": [
+          "Mitochondria",
+          "Cytoplasm",
+          "Chloroplast",
+          "Nucleus"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Where does the Krebs cycle occur?",
+        "options": [
+          "Matrix of the mitochondria",
+          "Cytoplasm of the cell (glycolysis site)",
+          "Thylakoid membrane",
+          "Nucleus"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Where does oxidative phosphorylation take place?",
+        "options": [
+          "Cell membrane and cytoplasm of the muscle cell",
+          "Inner mitochondrial membrane (cristae)",
+          "Cytoplasm",
+          "Nucleus"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the net ATP yield from glycolysis?",
+        "options": [
+          "0 ATP",
+          "2 ATP",
+          "38 ATP",
+          "4 ATP"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the role of NAD in respiration?",
+        "options": [
+          "It produces oxygen",
+          "It is an enzyme that breaks glucose down into pyruvate in the cytoplasm of every cell",
+          "It is a hydrogen carrier/coenzyme that accepts hydrogen atoms to become reduced NAD",
+          "It is a structural protein"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is anaerobic respiration in animals?",
+        "options": [
+          "Incomplete oxidation of glucose without oxygen, producing lactate",
+          "Photosynthesis in the dark",
+          "Respiration with oxygen",
+          "Complete breakdown of glucose to carbon dioxide and water using oxygen"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is the structure that increases the surface area for oxidative phosphorylation in mitochondria?",
+        "options": [
+          "Ribosomes",
+          "Outer membrane (smooth, unfolded)",
+          "Matrix",
+          "Cristae (inner membrane folds)"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is a muscle fibre?",
+        "options": [
+          "A multinucleated cell formed from fused myoblasts, containing myofibrils",
+          "A type of nerve",
+          "A single cell",
+          "A tendon"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What are the two main protein filaments in muscle?",
+        "options": [
+          "Actin and myosin",
+          "Collagen and elastin",
+          "Tubulin and actin",
+          "Keratin and fibrin"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is the sliding filament theory?",
+        "options": [
+          "Myosin dissolves during contraction",
+          "Filaments rotate",
+          "Actin filaments slide over myosin filaments (pulled by cross-bridges), shortening the sarcomere without the filaments themselves shortening",
+          "Filaments grow longer during contraction"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What ion triggers muscle contraction?",
+        "options": [
+          "Sodium",
+          "Magnesium",
+          "Potassium",
+          "Calcium"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is a sarcomere?",
+        "options": [
+          "A nerve ending",
+          "The functional contractile unit of a muscle fibre, from one Z-line to the next",
+          "A tendon",
+          "A type of cell"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the role of ATP in muscle contraction?",
+        "options": [
+          "It has no role",
+          "ATP provides energy for myosin heads to detach from actin and re-cock, and for calcium pump to return Ca2+ to sarcoplasmic reticulum",
+          "ATP builds muscle",
+          "ATP relaxes muscles only"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the sarcoplasmic reticulum?",
+        "options": [
+          "A type of mitochondrion that releases ATP to power contraction of the muscle fibre",
+          "A blood vessel",
+          "A specialised smooth ER in muscle cells that stores and releases calcium ions",
+          "A nerve network"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is oxygen debt (EPOC)?",
+        "options": [
+          "A disease",
+          "Breathing during exercise",
+          "Not needing oxygen",
+          "The additional oxygen consumed after exercise to metabolise accumulated lactate and replenish ATP/creatine phosphate stores"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the role of creatine phosphate in muscle?",
+        "options": [
+          "It carries oxygen",
+          "It removes lactate",
+          "It provides a rapid source of phosphate to regenerate ATP from ADP during the first few seconds of intense exercise",
+          "It builds protein"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What type of muscle fibre is best for endurance activities?",
+        "options": [
+          "Fast-twitch type IIa",
+          "Cardiac muscle",
+          "Slow-twitch type I",
+          "Fast-twitch type IIb"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What does the electron transport chain produce?",
+        "options": [
+          "The majority of ATP (via chemiosmosis) and water as a byproduct",
+          "NADH",
+          "Glucose",
+          "Carbon dioxide and glucose from the breakdown of pyruvate in the matrix"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What molecule links glycolysis to the Krebs cycle?",
+        "options": [
+          "Lactate (formed from pyruvate during anaerobic respiration)",
+          "FAD",
+          "Glucose",
+          "Acetyl CoA (formed from pyruvate via the link reaction)"
+        ],
+        "answer": 3
+      }
     ],
-    amber: [
-      { q: 'Explain how negative feedback regulates blood glucose after a meal.', options: ['Glucose stays high','Blood glucose rises; detected by beta cells in pancreas; insulin secreted; stimulates glycogenesis and glucose uptake; blood glucose falls back to set point; insulin secretion reduces','Glucagon is released from the alpha cells when blood glucose rises after a meal; it stimulates glycogenolysis in the liver, adding more glucose to the blood until the high level is detected and insulin is switched off','Blood glucose keeps rising'], answer: 1 },
-      { q: 'How does the kidney regulate water balance through the action of ADH?', options: ['ADH is always constant','Low water potential detected by osmoreceptors in hypothalamus; more ADH released from posterior pituitary; collecting duct more permeable; more water reabsorbed; concentrated urine produced','ADH prevents water reabsorption: when the blood is too concentrated, the posterior pituitary releases more ADH, which makes the collecting duct impermeable to water, so large volumes of dilute urine are produced','The kidney doesn\'t regulate water'], answer: 1 },
-      { q: 'Describe how nerve impulses are transmitted across a synapse.', options: ['Impulses jump directly','Action potential arrives; Ca2+ enters presynaptic terminal; vesicles fuse with membrane releasing neurotransmitter into cleft; binds to receptors on postsynaptic membrane; new impulse generated','The electrical signal crosses the gap directly: the action potential jumps across the synaptic cleft as a current, and neurotransmitters are released afterwards only to break down any calcium left in the postsynaptic neurone','Hormones cross the synapse'], answer: 1 },
-      { q: 'How do vasodilation and vasoconstriction help regulate body temperature?', options: ['They regulate blood glucose','Vasodilation: arterioles widen, more blood to skin surface, more heat lost by radiation; Vasoconstriction: arterioles narrow, less blood to surface, less heat lost; controlled by hypothalamus','They only affect blood pressure: vasodilation raises pressure by pushing more blood into the skin and vasoconstriction lowers it, while body temperature is controlled only by sweating and shivering, not by the arterioles','They regulate water balance'], answer: 1 },
-      { q: 'Explain the role of the nephron in producing urine.', options: ['It only filters blood','Glomerular filtration forces small molecules into Bowman\'s capsule; selective reabsorption in PCT recovers glucose/amino acids/salts/water; loop of Henle creates concentration gradient; DCT and collecting duct fine-tune composition under hormonal control','It produces hormones only','It stores urine'], answer: 1 },
-      { q: 'How does the sympathetic nervous system prepare the body for "fight or flight"?', options: ['It slows the body down','Increases heart rate, dilates pupils, bronchodilation, redirects blood to muscles, releases adrenaline, inhibits digestion — preparing for rapid physical response','It promotes digestion','It is the same as the parasympathetic system: it slows the heart, constricts the pupils and airways, and increases digestion so that energy is saved for a later physical response to the threat'], answer: 1 },
-      { q: 'Explain how the structure of a myelinated neurone relates to the speed of impulse transmission.', options: ['The myelin sheath slows impulses, because the electrical current must pass through the fatty layer along the whole axon, so unmyelinated neurones always conduct impulses faster than myelinated ones in mammals','Myelin sheath insulates the axon; impulses jump between nodes of Ranvier (saltatory conduction), greatly increasing transmission speed compared to unmyelinated neurones','All neurones are identical','Myelin prevents impulses'], answer: 1 },
-      { q: 'How does the loop of Henle create a concentration gradient in the kidney medulla?', options: ['It doesn\'t create a gradient','The countercurrent multiplier: descending limb permeable to water (water leaves by osmosis); ascending limb actively pumps Na+/Cl- out (impermeable to water); creates increasingly concentrated medulla; enables water reabsorption from collecting duct','It filters blood','It produces ADH'], answer: 1 },
-      { q: 'What is the difference between the nervous and endocrine systems in terms of speed and duration?', options: ['They are identical','Nervous: fast, short-lived, electrical impulses, specific pathway; Endocrine: slower, longer-lasting, chemical (hormones) in blood, widespread targets','Endocrine is faster','Nervous responses last longer and are carried in the blood, while endocrine responses are fast electrical impulses along neurones to one specific target cell, so hormones act within milliseconds'], answer: 1 },
-      { q: 'Explain how an action potential is generated and propagated along a neurone.', options: ['Continuous flow of electrons','Stimulus depolarises membrane; voltage-gated Na+ channels open; Na+ rushes in; depolarisation reaches threshold (-55mV); action potential (+40mV); Na+ channels close, K+ channels open; repolarisation; refractory period; propagates as local currents depolarise adjacent membrane','It is a chemical signal','Only occurs at synapses'], answer: 1 },
-      { q: 'How does the hypothalamus detect and respond to changes in blood temperature?', options: ['It doesn\'t detect temperature','Thermoreceptors in hypothalamus detect blood temperature changes; if too hot: triggers vasodilation, sweating, reduced metabolic rate; if too cold: triggers vasoconstriction, shivering, increased metabolic rate; acts as thermoregulatory centre','Only skin detects temperature','The pancreas regulates temperature'], answer: 1 },
-      { q: 'What is the role of the liver in blood glucose regulation?', options: ['It produces insulin in the islets of Langerhans and releases it straight into the bile duct; it cannot store glucose as glycogen or make glucose from other sources, so blood glucose is controlled only by the pancreas and muscles','Stores glucose as glycogen (glycogenesis) under insulin influence; breaks glycogen to glucose (glycogenolysis) under glucagon influence; can perform gluconeogenesis (making glucose from non-carbohydrate sources)','It only detoxifies','It filters blood for urine'], answer: 1 },
-      { q: 'Explain how summation at a synapse can generate an action potential.', options: ['A single weak stimulus is always enough to generate an action potential, because any neurotransmitter reaching the postsynaptic membrane triggers a full response, so summation is not needed and cannot increase the effect at all','Temporal summation: rapid repeated impulses from one neurone build up neurotransmitter; Spatial summation: impulses from multiple neurones converge; combined effect reaches threshold to generate post-synaptic action potential','Summation reduces response','Only one impulse is needed'], answer: 1 },
-      { q: 'How does the structure of the glomerulus and Bowman\'s capsule enable ultrafiltration?', options: ['Blood pressure is low','High blood pressure (afferent wider than efferent arteriole); fenestrated capillary endothelium; basement membrane filters by size; podocytes with filtration slits; small molecules pass through, large proteins and cells retained','Only water is filtered','Filtration is by active transport: the glomerulus has low blood pressure because the efferent arteriole is wider than the afferent, so carrier proteins in the capsule wall pump every molecule, including proteins and cells, into the nephron'], answer: 1 },
-      { q: 'What is the role of the autonomic nervous system in homeostasis?', options: ['Voluntary movement','Controls involuntary functions (heart rate, digestion, glandular secretion); sympathetic division activates "fight or flight"; parasympathetic promotes "rest and digest"; maintains internal conditions','It controls thinking','It is not involved in homeostasis: the autonomic system controls only voluntary movement of skeletal muscles, while heart rate, digestion and gland secretion are regulated entirely by hormones released from the pituitary gland'], answer: 1 },
-      { q: 'Explain how the kidney handles glucose during filtration and reabsorption.', options: ['Glucose is excreted','Glucose is freely filtered at the glomerulus; all glucose is reabsorbed in the proximal convoluted tubule by active transport (co-transport with Na+); normally none appears in urine; in diabetes, blood glucose exceeds reabsorption capacity (renal threshold)','Glucose is never filtered','Glucose is absorbed in the loop of Henle'], answer: 1 },
-      { q: 'How does adrenaline prepare the body for an emergency response?', options: ['It promotes relaxation','Adrenaline binds to receptors on target cells; increases heart rate and stroke volume; causes glycogenolysis in liver raising blood glucose; bronchodilation; redirects blood from gut to muscles; dilates pupils','It only affects the brain','It lowers blood glucose by stimulating glycogenesis in the liver, slows the heart and constricts the airways, and moves blood from the muscles to the gut, so that the body rests and saves energy until the emergency has passed'], answer: 1 },
-      { q: 'What is the difference between Type 1 and Type 2 diabetes in terms of cause and treatment?', options: ['They are the same','Type 1: autoimmune destruction of beta cells, treated with insulin injections; Type 2: insulin resistance/reduced secretion, managed with diet, exercise, and medication; Type 1 typically younger onset, Type 2 linked to lifestyle','Both treated with insulin only','Type 2 is autoimmune and treated only with insulin injections, while Type 1 is caused by insulin resistance and is managed by diet and exercise alone; Type 2 usually begins in childhood, whereas Type 1 is linked mainly to an unhealthy lifestyle'], answer: 1 },
-      { q: 'Explain how selective reabsorption in the proximal convoluted tubule works.', options: ['All substances are reabsorbed equally','Microvilli increase SA; many mitochondria provide ATP for active transport; Na+ pumped out by Na+/K+ ATPase creating gradient; glucose and amino acids co-transported with Na+; water follows by osmosis; specific carriers for different substances','It is passive diffusion only: the cells have no microvilli or mitochondria, so glucose, amino acids and ions diffuse back into the blood at the same rate as urea, water stays in the tubule, and no carrier proteins or Na+/K+ pumps are involved at all','Nothing is reabsorbed'], answer: 1 },
-      { q: 'How does positive feedback differ from negative feedback? Give one example.', options: ['They are the same','Positive feedback amplifies a change away from the set point (e.g., oxytocin in labour: contractions stimulate more oxytocin, increasing contractions); negative feedback reverses change back to set point; positive is rare and has a defined endpoint','Positive feedback is more common','Negative feedback amplifies change'], answer: 1 },
+    "amber": [
+      {
+        "q": "Explain how the structure of a mitochondrion is adapted for aerobic respiration.",
+        "options": [
+          "Structure is irrelevant",
+          "It has no adaptations",
+          "Only the outer membrane matters: it is folded into cristae holding the Krebs cycle enzymes, while the matrix contains the ETC and ATP synthase, and mitochondria have no DNA of their own, so all their proteins are made from nuclear genes",
+          "Double membrane (inner folded into cristae for large SA for electron transport chain/ATP synthase); matrix contains Krebs cycle enzymes; small size for proximity to reactions; own DNA for producing some respiratory proteins"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Describe the process of the link reaction.",
+        "options": [
+          "It produces glucose",
+          "Pyruvate enters mitochondrial matrix; decarboxylated (CO2 removed) and dehydrogenated (H to NAD+); 2C acetyl group combines with coenzyme A forming acetyl CoA",
+          "It is part of glycolysis",
+          "It occurs in the cytoplasm as the last stage of glycolysis, where glucose is split into two molecules of acetyl CoA, releasing ATP and oxygen but no carbon dioxide"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Explain how the sliding filament mechanism causes muscle contraction.",
+        "options": [
+          "Filaments grow",
+          "Only myosin moves",
+          "Actin dissolves",
+          "Ca2+ binds troponin → tropomyosin moves exposing binding sites → myosin heads bind actin (cross-bridge) → power stroke pulls actin toward centre → ATP binds myosin causing detachment → myosin head re-cocks → cycle repeats"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "How does lactate accumulation during anaerobic respiration affect muscle function?",
+        "options": [
+          "It has no effect",
+          "Lactate improves performance, because it raises the pH of the muscle, activating enzymes and increasing Ca2+ binding, so muscles contract more strongly the more lactate they produce, and it is never removed or broken down afterwards",
+          "Lactate lowers pH, inhibiting enzyme activity and interfering with Ca2+ binding; this reduces contraction efficiency and causes fatigue; lactate is later oxidised in the liver (Cori cycle) or used as respiratory substrate",
+          "Lactate only affects the brain"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain the role of the electron transport chain in producing ATP.",
+        "options": [
+          "It produces NADH",
+          "It directly produces ATP without any chemiosmosis: electrons from glucose are passed to ADP in the cytoplasm, and oxygen is not needed because the carriers in the outer membrane release energy by breaking down water into hydrogen and oxygen gas in the matrix",
+          "Reduced NAD/FAD donate electrons to carrier proteins in the inner membrane; energy released pumps H+ into intermembrane space; H+ flows back through ATP synthase (chemiosmosis), driving ATP synthesis; O2 is final electron acceptor forming water",
+          "It occurs in the cytoplasm"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Compare slow-twitch and fast-twitch muscle fibres in terms of structure and function.",
+        "options": [
+          "They are identical",
+          "Slow-twitch: more mitochondria, more myoglobin, rich blood supply, fatigue-resistant, aerobic; Fast-twitch: fewer mitochondria, less myoglobin, larger glycogen stores, generate force rapidly, fatigue quickly, anaerobic",
+          "Fast-twitch fibres have more mitochondria and myoglobin, a rich blood supply and resist fatigue, while slow-twitch fibres have large glycogen stores, contract rapidly and tire quickly, so they are used mainly by sprinters in races",
+          "Slow-twitch are for sprinting"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Explain how the neuromuscular junction triggers muscle contraction.",
+        "options": [
+          "Action potential arrives at motor neurone terminal → Ca2+ influx → acetylcholine released into synaptic cleft → ACh binds receptors on muscle membrane → depolarisation spreads along T-tubules → Ca2+ released from SR → contraction initiates",
+          "Nerve impulses pass directly into the muscle as an electric current across the gap, with no neurotransmitter or calcium involved; the impulse travels along the outside of the fibre and causes the myosin heads to contract immediately without any T-tubules",
+          "Only hormones trigger contraction",
+          "Muscles contract without nerves"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does temperature regulation relate to metabolic rate during exercise?",
+        "options": [
+          "Exercise increases metabolic rate producing excess heat; vasodilation directs blood to skin for radiation; sweating allows evaporative cooling; if temperature rises too high, enzymes denature and performance decreases",
+          "Temperature is unregulated during exercise",
+          "Only shivering regulates temperature",
+          "Body temperature never changes during exercise, because muscles release no heat, so vasodilation and sweating are not needed and enzymes work at the same rate however long and hard the exercise continues in any athlete"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain why the link reaction and Krebs cycle take place in the mitochondria, while glycolysis takes place in the cytoplasm.",
+        "options": [
+          "Glucose can cross the mitochondrial membranes but pyruvate cannot, so pyruvate must be broken down in the cytoplasm while glucose is broken down in the matrix",
+          "The Krebs cycle takes place on the outer mitochondrial membrane, because this membrane is folded into cristae that hold the Krebs cycle enzymes and ATP synthase",
+          "Their enzymes are in the matrix, next to the inner membrane where the reduced NAD and FAD they produce are reoxidised; glycolysis enzymes are in the cytoplasm",
+          "Glycolysis needs oxygen, so it happens in the cytoplasm where oxygen first arrives; the Krebs cycle is anaerobic, so it is kept inside the mitochondria"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does cardiac muscle differ from skeletal muscle?",
+        "options": [
+          "Skeletal muscle is myogenic and involuntary, with intercalated discs and no fatigue, while cardiac muscle is neurogenic and voluntary, with many nuclei per fibre, so the heart can only beat when it receives impulses from the brain",
+          "Cardiac: myogenic (self-stimulating), intercalated discs for rapid impulse spread, abundant mitochondria, does not fatigue, involuntary; Skeletal: neurogenic, voluntary, can fatigue, multinucleate, no intercalated discs",
+          "Cardiac muscle is voluntary",
+          "They are identical"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Explain how the Krebs cycle generates reduced coenzymes and ATP.",
+        "options": [
+          "Acetyl CoA (2C) joins oxaloacetate (4C) forming citrate (6C); through a series of decarboxylations and dehydrogenations, CO2 is released, NAD+ and FAD are reduced (carrying H to ETC), and 1 ATP is produced by substrate-level phosphorylation per turn",
+          "It directly produces most ATP",
+          "It produces glucose",
+          "It only occurs anaerobically"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain how the electrical activity of the heart makes the ventricles contract after the atria.",
+        "options": [
+          "The AVN starts each beat and sends impulses up the Purkyne fibres to the atria, so the atria contract last, squeezing blood upwards from the ventricle base",
+          "Impulses pass straight from the atria to the ventricles across the whole of the non-conducting tissue, so both chambers contract at once",
+          "The SAN wave spreads over the atria; the AVN delays it so the atria empty first, then it passes down the bundle of His and up Purkyne fibres from the apex",
+          "The bundle of His holds the impulse in the atria until the ventricles have filled, then the SAN sends impulses down both sides of the septum at once"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Which statement correctly describes what happens when the arm is bent at the elbow?",
+        "options": [
+          "The biceps pushes the forearm up as it lengthens, while tendons hold the humerus and ulna together at the elbow and stop it dislocating",
+          "The biceps (a flexor) contracts and the triceps (an extensor) relaxes; tendons pass the pull to the bone and ligaments hold the joint together",
+          "The triceps (a flexor) contracts and the biceps (an extensor) relaxes; ligaments attach the muscles to the bones and tendons join bone to bone",
+          "The biceps and triceps both contract at the same time, and ligaments transmit the pull of each muscle to the bones so that the joint bends"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "During exercise, a student's tidal volume rises from 0.5 dm³ to 2.0 dm³ and their breathing rate rises from 12 to 30 breaths min⁻¹. By what factor does their minute ventilation increase?",
+        "options": [
+          "2.5",
+          "16",
+          "4",
+          "10"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain the role of myoglobin in muscle tissue.",
+        "options": [
+          "It produces ATP",
+          "Myoglobin is an oxygen-storing protein in muscle with higher affinity for O2 than haemoglobin; it acts as an oxygen reserve, releasing O2 when muscle O2 tension drops during intense exercise",
+          "It contracts the muscle fibres by sliding along actin, using ATP made in the cytoplasm, and it has a lower affinity for oxygen than haemoglobin, so it releases O2 into the blood during exercise",
+          "It carries CO2"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Which of these is an example of positive feedback?",
+        "options": [
+          "Na⁺ entering an axon depolarises it, which opens more Na⁺ channels",
+          "Heart rate falling back to resting level as blood CO₂ falls after exercise",
+          "Sweating and vasodilation of skin arterioles when the core temperature rises",
+          "Breathing rate rising when the blood CO₂ concentration increases"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain how decarboxylation and dehydrogenation are important in the Krebs cycle.",
+        "options": [
+          "They produce glucose",
+          "They are not important",
+          "Decarboxylation removes carbon as CO2 (waste product); dehydrogenation removes hydrogen atoms which reduce NAD+/FAD; these reduced coenzymes carry energy to the ETC where most ATP is made; both are essential for continued cycle operation",
+          "They only occur in glycolysis"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does the sympathetic nervous system prepare muscles for exercise?",
+        "options": [
+          "It slows the heart and constricts the bronchioles to save energy, moves blood from the muscles to the gut, stores glucose as glycogen and inhibits adrenaline release, so the body rests before exercise begins",
+          "It relaxes muscles",
+          "It promotes digestion",
+          "It increases heart rate and stroke volume (more O2 to muscles), dilates bronchioles (more gas exchange), redirects blood flow from gut to muscles, stimulates glycogenolysis, and triggers adrenaline release"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain the Cori cycle and its significance during exercise.",
+        "options": [
+          "Lactate produced anaerobically in muscles is transported in blood to the liver, where it is converted back to glucose (gluconeogenesis) which can return to muscles; this allows continued anaerobic activity while managing lactate levels",
+          "It is the same as Krebs cycle",
+          "It produces lactate",
+          "It occurs in muscles only"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does substrate-level phosphorylation differ from oxidative phosphorylation?",
+        "options": [
+          "Oxidative does not need oxygen",
+          "Substrate-level produces more ATP",
+          "They are identical",
+          "Substrate-level: phosphate transferred directly from a substrate to ADP (occurs in glycolysis and Krebs cycle, no O2 needed); Oxidative: ATP produced via chemiosmosis using energy from ETC (requires O2 as final electron acceptor), produces much more ATP"
+        ],
+        "answer": 3
+      }
     ],
-    red: [
-      { q: 'A patient produces large volumes of dilute urine despite being dehydrated. Suggest a diagnosis and explain the mechanism.', options: ['Type 2 diabetes','Diabetes insipidus: too little ADH is made, or the kidneys do not respond to it, so the collecting ducts reabsorb little water','Type 1 diabetes','Kidney stones, which block the ureters so that urine builds up in the bladder and is released in large dilute volumes whenever it overflows'], answer: 1 },
-      { q: 'Explain why a person with untreated Type 1 diabetes may develop ketoacidosis.', options: ['Too much insulin','Without insulin, cells cannot take up glucose, so fats are broken down for energy, producing ketones that lower blood pH','Excess glucose in the blood is itself acidic, so the pH falls directly as glucose builds up and no other metabolic change is involved','It never occurs'], answer: 1 },
-      { q: 'Evaluate the use of stem cell therapy for treating Type 1 diabetes.', options: ['It is simple and risk-free, since the new beta cells are identical to the originals and the immune system never attacks them after transplantation','Stem cells could become functional beta cells, but risks include immune attack on the new cells, tumours and ethical issues over the cell source','It has been perfected','It only works for Type 2'], answer: 1 },
-      { q: 'How does chronic kidney disease affect homeostasis, and why is dialysis necessary?', options: ['Damaged nephrons cannot filter waste or balance water and ions, so urea and potassium accumulate; dialysis does this job artificially','It only affects glucose','It only affects urine colour','Dialysis is never needed'], answer: 0 },
-      { q: 'Explain how drugs that block neurotransmitter reuptake (e.g., SSRIs) affect synaptic transmission.', options: ['They block all nerve impulses','SSRIs block serotonin reuptake, so serotonin stays in the cleft longer and keeps binding to postsynaptic receptors, raising stimulation','They increase reuptake','They destroy the neurotransmitter in the synaptic cleft, so serotonin cannot bind to the receptors and the postsynaptic neurone is less stimulated'], answer: 1 },
-      { q: 'Compare thermoregulation in endotherms and ectotherms. Discuss the advantages of each strategy.', options: ['Endotherms use less energy','They regulate temperature identically','Ectotherms maintain a constant temperature by generating heat in their muscles, so they use more energy than endotherms but stay active in any climate and every season of the year','Endotherms keep a constant temperature metabolically, staying active in the cold but using much energy; ectotherms use little energy but depend on the environment'], answer: 3 },
-      { q: 'A neurotoxin permanently opens Na+ channels. Predict the effect on neural function.', options: ['Impulses travel faster','Only sensory neurones affected','Normal function continues','Continuous Na+ influx prevents repolarisation, so there is no refractory period and no further action potentials can be generated'], answer: 3 },
-      { q: 'Discuss why maintaining blood glucose homeostasis is critical for brain function.', options: ['The brain doesn\'t use glucose','The brain depends almost entirely on glucose for ATP and cannot store it, so low glucose quickly causes confusion or unconsciousness','Blood glucose doesn\'t affect the brain','The brain uses fat preferentially'], answer: 1 },
-      { q: 'Explain how the countercurrent multiplier in the loop of Henle enables the production of hypertonic urine.', options: ['The ascending limb pumps out Na+ and Cl− but is impermeable to water, making the medulla hypertonic, so water leaves the collecting duct by osmosis','It produces dilute urine only','Only the collecting duct matters','The loop has no role in concentration, because all water is reabsorbed in the proximal tubule and the collecting duct simply stores the urine made there'], answer: 0 },
-      { q: 'Analyse how disruption of the hypothalamic-pituitary-adrenal axis could affect multiple homeostatic mechanisms.', options: ['It only affects cortisol','It has no widespread effects','The HPA axis coordinates the stress response, metabolism and immunity, so disruption can upset blood glucose, blood pressure and immune function','It only affects temperature, since the hypothalamus controls body temperature alone and the pituitary and adrenal glands have no role in homeostasis'], answer: 2 },
-    ],
+    "red": [
+      {
+        "q": "Evaluate the use of VO2 max as a measure of athletic fitness, discussing its limitations.",
+        "options": [
+          "VO2 max is a perfect fitness measure with no limitations, because two athletes with the same value always record identical times in every race, whatever the distance",
+          "Only sprinters need VO2 max",
+          "It has no limitations",
+          "Strengths: objective and linked to endurance performance; limitations: ignores efficiency, lactate threshold and motivation, and needs costly equipment"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Discuss how understanding the biochemistry of muscle fatigue has informed strategies for athletic performance enhancement.",
+        "options": [
+          "Biochemistry is irrelevant to sport",
+          "Knowing that fatigue involves H+ accumulation and fuel depletion, not just lactate, has led to buffering, carbohydrate loading and interval training",
+          "Fatigue is poorly understood",
+          "Only lactate causes fatigue, so the one useful strategy is to drink water during events to wash lactate out of the muscles, since pH and fuel stores play no role"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "A sprinter and marathon runner have similar body compositions but very different muscle fibre profiles. Analyse how their fibre type distribution relates to their performance.",
+        "options": [
+          "Sprinters have mostly fast-twitch fibres for rapid, anaerobic power; marathon runners have mostly slow-twitch fibres with many mitochondria for endurance",
+          "Fibre type is irrelevant",
+          "All athletes have identical fibre types, so the difference in their performance comes entirely from the size of their lungs and how much water they drink during a race",
+          "Only training matters"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Evaluate the ethical and health implications of using performance-enhancing substances such as EPO or anabolic steroids.",
+        "options": [
+          "All enhancement is acceptable",
+          "Enhancement has no health risks, because EPO and steroids are natural hormones that the body always removes safely, so they are allowed in all major sports competitions",
+          "EPO raises red cell count and O2 delivery but thickens the blood, risking clots; steroids risk heart and liver damage; both are unfair and banned",
+          "There are no ethical issues"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain why the theoretical maximum ATP yield from one glucose molecule (36-38 ATP) is rarely achieved in practice.",
+        "options": [
+          "The number is always exactly 38",
+          "Actual yield is lower because the proton gradient also drives transport and some H+ leaks across the inner membrane, so about 30–32 ATP are made",
+          "Only 2 ATP are ever made",
+          "The maximum is always achieved"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Analyse the physiological responses to prolonged exercise and explain how the body maintains ATP supply as different substrates are depleted.",
+        "options": [
+          "Only glucose is ever used: the body burns blood glucose at a fixed rate throughout exercise and never uses creatine phosphate, glycogen or fat, even in long events",
+          "Creatine phosphate supplies the first ~10 s, then anaerobic glycolysis, then aerobic use of glycogen, and increasingly fats as glycogen runs low",
+          "ATP supply never changes",
+          "Only one substrate is used"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Discuss how the integration of the cardiovascular, respiratory, and muscular systems enables sustained physical activity.",
+        "options": [
+          "Cardiac output rises to deliver O2 and remove CO2, ventilation increases gas exchange, and muscles use the O2 for aerobic respiration to supply ATP",
+          "Only muscles are involved",
+          "The heart is not important in exercise, because muscles take oxygen directly from the air through the skin, so the lungs and blood vessels work independently of them",
+          "These systems work independently"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "A survey finds that people who take the least exercise have the highest rates of type 2 diabetes. Evaluate what can be concluded from this.",
+        "options": [
+          "Diabetes must cause people to exercise less, so the survey shows only the reverse link, which proves that exercise has no effect on the risk of developing diabetes",
+          "Lack of exercise has been proven to cause type 2 diabetes, because the link was found in a large survey, and large surveys cannot be affected by any other factors such as diet",
+          "Nothing at all can be concluded, because survey data on exercise and disease can never show any kind of relationship between the two variables, however large the sample",
+          "There is a correlation but not proof of cause: diet or obesity could explain it unless controlled, and a mechanism or an intervention trial is needed"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "A patient with a mitochondrial disease has reduced ATP production. Analyse the effects this would have on muscle function and whole-body physiology.",
+        "options": [
+          "Less oxidative phosphorylation means less ATP per glucose, so muscles tire quickly and rely on anaerobic respiration, causing lactate build-up",
+          "Only muscles are affected",
+          "It would have no effect",
+          "The body would function normally"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Anabolic steroids such as testosterone increase muscle mass. Analyse how they bring about this effect at the level of the gene.",
+        "options": [
+          "The steroid enters the nucleus and changes the base sequence of the genes for muscle proteins, so that the mutated genes are transcribed more often in each cell",
+          "The steroid acts as an enzyme in the cytoplasm, breaking down the mRNA for muscle proteins more slowly, so that no new transcription is needed in the fibre",
+          "The lipid-soluble steroid crosses the membrane and binds a receptor; the complex acts as a transcription factor, binding DNA and switching on genes for muscle proteins",
+          "The steroid binds to a receptor on the cell surface, which activates an enzyme inside the cell that joins amino acids directly into muscle proteins without transcription"
+        ],
+        "answer": 2
+      }
+    ]
   },
-
-  /* ─────────────────────────────────────────────────────────── T8 */
-  'T8': {
-    name: 'Gene Expression and Biotechnology',
-    green: [
-      { q: 'What is transcription?', options: ['DNA replication','The process of copying DNA into mRNA in the nucleus','Translation of mRNA into a protein at the ribosomes in the cytoplasm','Protein folding'], answer: 1 },
-      { q: 'What is translation?', options: ['DNA to mRNA','The process of assembling amino acids into a polypeptide at the ribosome using mRNA','DNA replication','Transcription'], answer: 1 },
-      { q: 'What is a restriction enzyme?', options: ['An enzyme that builds DNA','An enzyme that cuts DNA at specific recognition sequences','An enzyme that joins DNA','A protein that transcribes DNA into mRNA at the start of a gene'], answer: 1 },
-      { q: 'What is a plasmid?', options: ['A chromosome','A small circular DNA molecule found in bacteria, used as a vector in genetic engineering','A ribosome','A virus'], answer: 1 },
-      { q: 'What is genetic engineering?', options: ['Selective breeding','The deliberate modification of an organism\'s genome by introducing genes from another organism','Cloning','Natural selection'], answer: 1 },
-      { q: 'What is PCR used for?', options: ['Cutting DNA','Amplifying (copying) specific DNA sequences rapidly','Joining DNA','Sequencing proteins by breaking them into their amino acids'], answer: 1 },
-      { q: 'What is a transgenic organism?', options: ['A clone','An organism containing a gene from another species','A hybrid produced by crossing two different varieties of the same species','A mutant'], answer: 1 },
-      { q: 'What is gel electrophoresis?', options: ['A DNA copying technique that uses heating and cooling cycles and Taq polymerase in repeated cycles','A technique for separating DNA/protein fragments by size using an electric field','A gene editing tool','A cloning method'], answer: 1 },
-      { q: 'What is a vector in genetic engineering?', options: ['A pathogen that infects the host and inserts random genes into its chromosomes by accident','A carrier molecule (e.g., plasmid, virus) used to transfer a gene into a host cell','A restriction enzyme','An amino acid'], answer: 1 },
-      { q: 'What is the role of DNA ligase?', options: ['Cuts DNA at specific base sequences to leave sticky ends for new genes','Joins DNA fragments together by forming phosphodiester bonds','Copies DNA','Unwinds DNA'], answer: 1 },
-      { q: 'What is an intron?', options: ['A coding region of a gene that is translated into part of the final protein chain','A non-coding region of a gene that is spliced out of mRNA before translation','A promoter','An enhancer'], answer: 1 },
-      { q: 'What is an exon?', options: ['A non-coding region of a gene that is removed from pre-mRNA before translation','A coding region of a gene that is expressed as part of the final mRNA/protein','An intron','A regulatory sequence'], answer: 1 },
-      { q: 'What is gene therapy?', options: ['Taking medication that switches off a faulty gene for as long as the drug is taken','Introducing functional copies of genes into cells to treat genetic disorders','Surgery','Vaccination'], answer: 1 },
-      { q: 'What is a codon?', options: ['A single base on the mRNA that pairs with a complementary base on the tRNA','A sequence of three mRNA bases that codes for a specific amino acid','A chromosome','An enzyme'], answer: 1 },
-      { q: 'What is the role of tRNA in translation?', options: ['Carries the genetic code from the nucleus to the ribosome and is read in sets of three bases','Carries specific amino acids to the ribosome, matching its anticodon to the mRNA codon','Makes mRNA','Cuts DNA'], answer: 1 },
-      { q: 'What is reverse transcriptase?', options: ['An enzyme that makes DNA from a DNA template during replication','An enzyme that makes DNA (cDNA) from an mRNA template','An enzyme that makes mRNA from DNA','A restriction enzyme'], answer: 1 },
-      { q: 'What is CRISPR-Cas9?', options: ['A type of bacteria','A gene editing tool that can cut DNA at specific locations, allowing genes to be removed, added, or modified','A cloning technique','A type of PCR'], answer: 1 },
-      { q: 'What is epigenetics?', options: ['Changes to the DNA base sequence caused by mutagens, which are passed on to the offspring in their gametes','Heritable changes in gene expression that do not involve changes to the DNA base sequence','Mutations','Gene therapy'], answer: 1 },
-      { q: 'What is a promoter region?', options: ['A coding sequence','A DNA sequence upstream of a gene where RNA polymerase binds to initiate transcription','A terminator','An intron'], answer: 1 },
-      { q: 'What is recombinant DNA?', options: ['Naturally occurring DNA','DNA that has been artificially created by combining genetic material from different sources','Mutated DNA','Chromosomal DNA'], answer: 1 },
+  "S8": {
+    "name": "Grey Matter",
+    "green": [
+      {
+        "q": "What is a neurone?",
+        "options": [
+          "A nerve cell that transmits electrical impulses",
+          "A blood cell",
+          "A muscle cell",
+          "A type of hormone released into the blood to carry messages"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is a synapse?",
+        "options": [
+          "The junction between two neurones where signal transmission occurs via neurotransmitters",
+          "A nerve cell body",
+          "A type of muscle",
+          "A reflex arc"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is the resting potential of a neurone?",
+        "options": [
+          "-70mV",
+          "+40mV",
+          "-90mV",
+          "0mV"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is a reflex arc?",
+        "options": [
+          "A voluntary response",
+          "A brain structure",
+          "The nerve pathway involved in a rapid, involuntary response: receptor → sensory → relay → motor → effector",
+          "A type of synapse"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is myelin?",
+        "options": [
+          "A type of receptor",
+          "A fatty sheath around nerve fibres that insulates and speeds up impulse transmission",
+          "A neurotransmitter released at the nodes of Ranvier that slows impulses so that they can be processed",
+          "A hormone"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the cerebrum responsible for?",
+        "options": [
+          "Heart rate control, breathing and blood pressure, all of which are involuntary functions kept constant",
+          "Balance",
+          "Breathing",
+          "Higher brain functions: thought, memory, language, consciousness, voluntary movement"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the cerebellum responsible for?",
+        "options": [
+          "Emotion",
+          "Memory storage and the recall of past events each day",
+          "Vision",
+          "Coordination of movement, balance, and posture"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is the medulla oblongata responsible for?",
+        "options": [
+          "Sight",
+          "Voluntary movement of the skeletal muscles and the coordination of posture and balance",
+          "Memory",
+          "Controlling involuntary functions: heart rate, breathing rate, blood pressure"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What is a neurotransmitter?",
+        "options": [
+          "A type of hormone",
+          "An electrical signal that jumps directly across the synaptic gap from one neurone to the next",
+          "A chemical messenger released at synapses that transmits signals between neurones",
+          "A receptor protein"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the visual cortex?",
+        "options": [
+          "The optic nerve",
+          "The lens of the eye, which focuses light onto the retina and changes shape for near and far objects",
+          "The area of the cerebral cortex (occipital lobe) that processes visual information",
+          "The retina"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the role of rod cells in the retina?",
+        "options": [
+          "Focusing light",
+          "Producing tears",
+          "Colour vision in bright light, with three types sensitive to red, green and blue wavelengths",
+          "Sensitive to low light levels, providing black and white/peripheral vision"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What happens to rhodopsin when light strikes a rod cell?",
+        "options": [
+          "It opens Ca²⁺ channels in the rod cell membrane",
+          "It releases acetylcholine onto the bipolar cell",
+          "It combines with opsin to make more retinal",
+          "It breaks down into retinal and opsin (bleaching)"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "What does depolarisation mean?",
+        "options": [
+          "The membrane becomes less negative (more positive) due to influx of Na+ ions",
+          "The cell dies",
+          "The membrane becomes more negative inside as potassium ions flow in through channels",
+          "Potassium leaves the cell"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is an action potential?",
+        "options": [
+          "A type of synapse",
+          "A reflex",
+          "A rapid reversal of membrane potential (depolarisation then repolarisation) that travels along an axon as a nerve impulse",
+          "The resting state"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "What is the all-or-nothing principle?",
+        "options": [
+          "A neurone either fires a full action potential if threshold is reached, or does not fire at all; there is no partial response",
+          "Impulses vary in size",
+          "It only applies to sensory neurones",
+          "Some impulses are larger"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is the function of the hypothalamus?",
+        "options": [
+          "Vision",
+          "Controls homeostatic mechanisms including body temperature, hunger, thirst, and links nervous and endocrine systems",
+          "Hearing",
+          "Voluntary movement"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Which brain imaging technique uses X-rays to produce images of the brain?",
+        "options": [
+          "PET",
+          "CT",
+          "fMRI",
+          "MRI"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is habituation?",
+        "options": [
+          "A reflex",
+          "Learning a new skill through repeated practice until it becomes automatic and needs no conscious attention",
+          "A reduction in response to a repeated, harmless stimulus — the simplest form of learning",
+          "Memory formation"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Which plant growth substance causes cells on the shaded side of a shoot to elongate, so the shoot bends towards light?",
+        "options": [
+          "Abscisic acid",
+          "IAA (auxin)",
+          "Gibberellin",
+          "Phytochrome"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "What is the function of sensory neurones?",
+        "options": [
+          "Connect neurones in the brain",
+          "Carry impulses from receptors to the CNS",
+          "Produce neurotransmitters",
+          "Carry impulses from the CNS to the effectors such as muscles"
+        ],
+        "answer": 1
+      }
     ],
-    amber: [
-      { q: 'Explain how a gene is cloned using plasmids and bacteria.', options: ['The gene is physically cut out of the chromosome with scissors under a microscope and pasted into the bacterium by hand; no restriction enzyme or ligase is used, and the bacteria do not copy the gene when they divide, so each cell must be treated separately','Gene is cut with restriction enzyme; plasmid cut with same enzyme (compatible sticky ends); gene inserted using DNA ligase; recombinant plasmid introduced into bacteria (transformation); bacteria replicate, copying the gene','Gene is printed','Bacteria naturally take up genes'], answer: 1 },
-      { q: 'How does RNA splicing produce mature mRNA?', options: ['Exons are removed from pre-mRNA by ribosomes before transcription, and the remaining introns are joined together and translated in the nucleus, so the mature mRNA contains only non-coding sequences','After transcription, introns are removed from pre-mRNA by spliceosomes; exons are joined together to form mature mRNA ready for translation','Introns are translated','No processing occurs'], answer: 1 },
-      { q: 'How does DNA methylation affect gene expression?', options: ['It activates all genes','Methyl groups added to cytosine bases in promoter regions prevent transcription factors from binding, silencing gene expression','It removes genes','It changes the DNA sequence by replacing cytosine bases with methyl groups, so the gene now codes for a different protein, which is then produced in larger amounts than before'], answer: 1 },
-      { q: 'Explain how transcription factors regulate gene expression.', options: ['They cut DNA','Transcription factors are proteins that bind to specific DNA sequences (promoters/enhancers); they can activate or repress transcription by recruiting or blocking RNA polymerase','They translate mRNA into proteins at the ribosome and act as hormones carried in the blood, switching genes on or off by cutting the DNA at the promoter so that RNA polymerase can reach the coding sequence','They are hormones'], answer: 1 },
-      { q: 'What is the role of sticky ends in genetic engineering?', options: ['They prevent DNA joining, because the single-stranded overhangs repel each other, so ligase can only join blunt ends made by cutting DNA from different sources with different enzymes','Restriction enzymes create complementary single-stranded overhangs that allow DNA from different sources to base-pair and be joined by ligase','They destroy DNA','They are found in RNA only'], answer: 1 },
-      { q: 'How does histone modification affect gene expression?', options: ['It has no effect','Acetylation of histones loosens DNA packing, making genes accessible for transcription; deacetylation tightens packing, silencing genes; methylation can activate or repress depending on site','It deletes histones','It changes the DNA sequence: acetylation adds new bases to the DNA wound around the histones, while deacetylation removes them, so the gene codes for a different protein rather than being switched on or off by how tightly it is packed'], answer: 1 },
-      { q: 'Explain how cDNA is made and why it is used in genetic engineering.', options: ['cDNA is natural DNA','Reverse transcriptase makes DNA from mRNA; this cDNA contains only exons (no introns); used because bacteria cannot splice introns from eukaryotic genes','cDNA has introns, because DNA polymerase copies the whole gene directly from a chromosome, and it is used because bacteria can splice introns out more efficiently than eukaryotic cells can during protein synthesis','It is identical to genomic DNA'], answer: 1 },
-      { q: 'How does the lac operon demonstrate gene regulation in prokaryotes?', options: ['Genes are always active','In absence of lactose: repressor binds operator, blocking transcription; When lactose present: it binds repressor, removing it from operator; RNA polymerase transcribes structural genes for lactose metabolism — inducible expression','Only eukaryotes have regulation','The operon is always on'], answer: 1 },
-      { q: 'What are the steps of PCR and what temperature is each step performed at?', options: ['Only one step','1. Denaturation (~95°C): DNA strands separate; 2. Annealing (~55-65°C): primers bind to complementary sequences; 3. Extension (~72°C): Taq polymerase synthesises new strands; cycle repeated 25-30 times','PCR only needs one temperature: the DNA, primers and Taq polymerase are held at 37°C for several days, the strands separate slowly on their own, and each copy is made once, so no repeated cycles of heating and cooling are involved at all','It takes days to complete'], answer: 1 },
-      { q: 'How can gene therapy treat genetic disorders? Distinguish somatic vs germline.', options: ['Only germline is done','Somatic: functional gene inserted into body cells (not inherited); Germline: modification of gametes/embryos (heritable, more controversial); vectors deliver gene to target cells; gene must be expressed correctly','All therapy is somatic','Gene therapy changes the genome of every cell instantly, including the gametes, so all treatment is germline; somatic therapy does not exist, and no vector is needed because the new gene enters cells by diffusion from the blood after injection'], answer: 1 },
-      { q: 'Explain how small interfering RNA (siRNA) can silence gene expression.', options: ['siRNA activates genes','siRNA (double-stranded) is processed by Dicer; guide strand incorporated into RISC complex; RISC binds complementary mRNA; mRNA is cleaved/degraded; protein not produced — post-transcriptional gene silencing','siRNA is the same as mRNA: it is single-stranded and is translated at the ribosome into a repressor protein, which then binds to the DNA of the target gene in the nucleus and blocks transcription permanently in every daughter cell produced afterwards','It binds DNA directly'], answer: 1 },
-      { q: 'How does alternative splicing increase protein diversity?', options: ['It doesn\'t increase diversity','Same pre-mRNA can be spliced in different ways; different combinations of exons included in mature mRNA; one gene can code for multiple protein variants depending on cell type/conditions','It removes all exons','It only occurs in bacteria, where the same gene is read in several different reading frames; in eukaryotes every gene always produces exactly one protein because all exons must be included in the mature mRNA in the same order'], answer: 1 },
-      { q: 'What is the difference between in vivo and in vitro gene therapy?', options: ['They are the same','In vivo: vector delivers gene directly into patient\'s cells inside the body; In vitro: cells removed, genetically modified in laboratory, then returned to patient; each has advantages depending on target tissue accessibility','In vivo is in the lab','In vitro is inside the body'], answer: 1 },
-      { q: 'How are marker genes used to identify successfully transformed cells?', options: ['They colour cells','Marker genes (e.g., antibiotic resistance, fluorescence) are included in the vector; after transformation, cells grown on selective media; only those expressing the marker survive/fluoresce — indicating successful uptake of recombinant DNA','All cells are transformed','Markers are never needed'], answer: 1 },
-      { q: 'Explain how genome sequencing works and its applications.', options: ['Only one application','DNA fragmented; fragments sequenced (e.g., Sanger/next-gen methods); sequences assembled by computer overlap; Applications: identifying disease-causing mutations, pharmacogenomics, evolutionary studies, forensics, GM organism development','It is the same as PCR','It only sequences one gene'], answer: 1 },
-      { q: 'How does CRISPR-Cas9 edit genes with high precision?', options: ['It edits randomly','Guide RNA directs Cas9 protein to complementary target DNA sequence; Cas9 makes double-strand cut; cell repair mechanisms (NHEJ or HDR) can delete, disrupt, or insert new sequences at the cut site — highly precise and programmable','It only works in bacteria','It cuts proteins, not DNA'], answer: 1 },
-      { q: 'What is the role of enhancers and silencers in eukaryotic gene regulation?', options: ['They are part of the coding sequence','Enhancers: DNA sequences that increase transcription rate when transcription factors bind (can be far from gene); Silencers: decrease transcription when repressors bind; both act in cis and can loop to interact with promoter','They are the same as promoters: both lie directly next to the start of the gene, are transcribed and translated into part of the protein, and occur only in prokaryotes, where they bind RNA polymerase to start transcription of every gene in the operon','They only exist in prokaryotes'], answer: 1 },
-      { q: 'How are GM crops produced and what are the stages involved?', options: ['Seeds are simply treated with chemicals that cause random mutations, and the plants that grow are sold without testing, so no gene is isolated, no vector or Agrobacterium is used, and no field trials or regulatory approval are needed before planting','Desired gene identified and isolated; inserted into vector (e.g., Agrobacterium plasmid or gene gun); transformed cells regenerated into whole plants; plants tested for gene expression; field trials; regulatory approval','Plants are crossed only','It takes one day'], answer: 1 },
-      { q: 'Explain how microarrays (gene chips) can be used to study gene expression.', options: ['They sequence DNA','Thousands of DNA probes fixed to chip; fluorescent cDNA from sample hybridises to complementary probes; fluorescence intensity indicates level of gene expression; can compare expression between cell types/conditions simultaneously','They are microscopes','They only detect one gene'], answer: 1 },
-      { q: 'What is pharmacogenomics and how does it relate to personalised medicine?', options: ['It is standard drug dosing','The study of how genetic variation affects drug response; allows tailoring of drug type and dosage to individual genotype; reduces adverse reactions; improves efficacy; moving towards precision/personalised medicine','It is the same as gene therapy: faulty genes are replaced in every patient before any drug is given, so all people then respond to a medicine in the same way and the same dose can be used safely for everyone regardless of their genotype or conditions','It only affects antibiotics'], answer: 1 },
+    "amber": [
+      {
+        "q": "Explain how saltatory conduction speeds up nerve impulse transmission.",
+        "options": [
+          "Myelin slows impulses",
+          "It does not speed transmission",
+          "Saltatory conduction uses different ions from normal conduction: calcium ions flow along the whole length of the myelin sheath instead of sodium, and because myelin slows these ions, impulses in myelinated fibres travel more slowly than in unmyelinated ones",
+          "In myelinated neurones, ion exchange only occurs at nodes of Ranvier (gaps in myelin); the impulse jumps from node to node, greatly increasing conduction speed compared to continuous conduction in unmyelinated fibres"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Describe how a nerve impulse is transmitted across a cholinergic synapse.",
+        "options": [
+          "Action potential arrives → Ca2+ enters presynaptic terminal → vesicles fuse with membrane releasing ACh → ACh diffuses across cleft → binds to receptors on postsynaptic membrane → Na+ channels open → depolarisation → ACh broken down by acetylcholinesterase",
+          "Neurotransmitters are reused without breakdown: the impulse jumps across the cleft as an electric current, acetylcholine is released afterwards to open K+ channels, and it stays bound to the receptors permanently, so no enzyme is needed and the next impulse passes more easily",
+          "Electricity flows across the gap",
+          "Impulses jump directly across"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How does the brain exhibit plasticity?",
+        "options": [
+          "The brain is fixed from birth: no new synaptic connections form during learning, pathways cannot be strengthened or weakened by experience, and after injury the lost functions can never be taken over by other areas, because each brain region has a single function that cannot change",
+          "Only children show plasticity",
+          "Neural pathways can be strengthened or weakened based on experience; new synaptic connections form during learning; after injury, other brain areas can take over lost functions; this structural and functional reorganisation is called neural plasticity",
+          "It cannot change"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain the role of the sodium-potassium pump in maintaining resting potential.",
+        "options": [
+          "The pump actively transports 3 Na+ out and 2 K+ in per ATP molecule, creating an electrochemical gradient; combined with K+ leak channels, this maintains the interior at -70mV (negative relative to outside)",
+          "It only works during action potentials, pumping 3 K+ out and 2 Na+ in without using ATP, which makes the inside of the neurone positive at +40 mV, so it has no role in keeping the resting potential at −70 mV between impulses",
+          "It has no role",
+          "It makes the inside positive"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "How do drugs that affect synaptic transmission work? Give examples.",
+        "options": [
+          "All drugs are agonists",
+          "Drugs cannot affect synapses",
+          "Only illegal drugs affect synapses",
+          "Agonists mimic/enhance neurotransmitter effects (e.g., nicotine mimics ACh); antagonists block receptors (e.g., curare blocks ACh receptors); others inhibit reuptake (e.g., SSRIs block serotonin reuptake) or inhibit breakdown enzymes (e.g., nerve agents inhibit acetylcholinesterase)"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain how the structure of a myelinated motor neurone relates to its function.",
+        "options": [
+          "Long axon for rapid transmission over distance; myelin sheath with nodes of Ranvier for saltatory conduction; many mitochondria at terminal for ATP (vesicle release); branched endings for multiple synaptic connections; cell body in spinal cord with dendrites for receiving inputs",
+          "Structure is irrelevant",
+          "Motor neurones have no myelin",
+          "All neurones are identical"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain how light falling on a rod cell leads to an action potential in an optic neurone.",
+        "options": [
+          "Light opens Na⁺ channels in the rod, which depolarises and releases more acetylcholine onto the optic neurone, so that an action potential starts in the optic nerve",
+          "Rhodopsin splits into retinal and opsin; cation channels close, the rod hyperpolarises, stops releasing inhibitory transmitter, and the bipolar cell depolarises",
+          "Light makes the rod release K⁺ ions directly into the optic neurone, which depolarises it without any neurotransmitter being released at the synapse",
+          "Rhodopsin is made from retinal and opsin in the light, and it then travels along the optic nerve to the brain, where it acts as the nerve impulse itself"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Explain the concept of critical periods in brain development.",
+        "options": [
+          "Critical periods are time windows during which specific neural circuits require environmental stimulation to develop normally; without appropriate input during this period (e.g., visual input for visual cortex development), the circuits may never function properly; relates to synaptic pruning and plasticity",
+          "The brain develops the same regardless of experience",
+          "Critical periods do not exist",
+          "Critical periods only occur in adults"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain how phytochrome enables a plant to respond to light.",
+        "options": [
+          "Phytochrome absorbs green light and uses the energy to make ATP, which is then used to power germination and flowering when the days lengthen",
+          "Red light converts Pr to active Pfr, which alters transcription of genes, e.g. for germination; far-red light or darkness converts it back to Pr",
+          "Phytochrome is a hormone that is carried down to the roots, where it makes them grow away from the light, so it controls the direction of root growth",
+          "Far-red light converts Pr to Pfr, which moves to the shaded side of the shoot and makes the cells there elongate, so the shoot bends towards the light"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Explain how CT and fMRI scans provide different information about brain structure and function.",
+        "options": [
+          "fMRI shows structure only, using X-rays to find tumours and bleeding, while CT detects changes in blood flow to show which areas are active during tasks, so CT is the functional scan and fMRI the structural one, and both require surgery to the skull",
+          "CT shows function",
+          "CT uses X-rays to show brain structure (tumours, bleeding, bone); fMRI detects blood flow changes indicating active brain areas during tasks (functional mapping); CT is structural, fMRI is functional; both are non-invasive",
+          "They provide identical information"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "How does summation at synapses allow integration of signals?",
+        "options": [
+          "Only one impulse is needed",
+          "All synapses always fire",
+          "Temporal summation: rapid successive impulses from one neurone accumulate enough neurotransmitter to reach threshold; Spatial summation: multiple presynaptic neurones release neurotransmitter simultaneously; both or either can trigger postsynaptic action potential; allows decision-making at neural level",
+          "Summation does not occur"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain the difference between the sympathetic and parasympathetic nervous systems.",
+        "options": [
+          "Both systems increase heart rate and dilate the pupils: the sympathetic system acts only during exercise and the parasympathetic only during sleep, so they work together rather than antagonistically, and neither has any effect on digestion, adrenaline release or maintaining homeostasis in the body",
+          "Sympathetic: \"fight or flight\" — increases heart rate, dilates pupils, inhibits digestion, releases adrenaline; Parasympathetic: \"rest and digest\" — decreases heart rate, constricts pupils, stimulates digestion; they are antagonistic, maintaining homeostasis",
+          "Only one system exists",
+          "They are identical"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does the retina convert light energy into nerve impulses?",
+        "options": [
+          "Light causes rhodopsin (in rods) or cone pigments to change shape (bleaching), triggering a cascade that hyperpolarises photoreceptors; this modulates neurotransmitter release to bipolar cells and then ganglion cells, whose axons form the optic nerve carrying impulses to the brain",
+          "Only the lens creates impulses",
+          "Light directly creates electricity",
+          "The retina does not produce impulses"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Explain how MDMA (ecstasy) affects synaptic transmission.",
+        "options": [
+          "It is converted to dopamine in the brain, so it is prescribed to replace the dopamine that is lost in the synapses of people with Parkinson's disease",
+          "It blocks serotonin receptors on the postsynaptic membrane, so serotonin cannot bind to them and the postsynaptic neurone is stimulated less, lowering mood",
+          "It increases the activity of acetylcholinesterase, so acetylcholine is removed from the synaptic cleft faster than normal and transmission is weakened",
+          "It inhibits the transporters that take serotonin back into the presynaptic neurone, so serotonin stays in the cleft and keeps stimulating receptors"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "How does habituation demonstrate a simple form of learning at the synaptic level?",
+        "options": [
+          "Habituation increases the response to a repeated harmless stimulus: more calcium channels open with each stimulus, so more vesicles fuse and more neurotransmitter is released, and the postsynaptic response grows stronger each time, which involves forming entirely new synapses rather than changing existing ones",
+          "It involves new synapse formation",
+          "With repeated harmless stimuli, less neurotransmitter is released at the sensory synapse (fewer Ca2+ channels open, fewer vesicles fuse); the post-synaptic response decreases; this involves changes in presynaptic calcium channel sensitivity — a simple molecular memory",
+          "Habituation is not learning"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain how the pupil reflex demonstrates a reflex arc.",
+        "options": [
+          "It is not a reflex",
+          "It involves the cerebrum and is voluntary: light is detected by the lens, the decision is made in the visual cortex, and impulses travel down the spinal cord to the radial muscles of the iris, which contract slowly to widen the pupil so more light enters the eye",
+          "It is voluntary",
+          "Light stimulus → retinal photoreceptors (receptor) → optic nerve (sensory) → midbrain (relay/integration) → oculomotor nerve (motor) → circular muscles of iris (effector) → pupil constricts; involuntary, rapid, protective response"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Why is Parkinson's disease treated with L-Dopa rather than dopamine itself?",
+        "options": [
+          "L-Dopa regrows the dopamine-producing neurones that have died, while dopamine only replaces the lost chemical",
+          "L-Dopa blocks the reuptake of dopamine, but dopamine given as a drug is broken down in the synaptic cleft",
+          "L-Dopa can cross the blood–brain barrier and is converted to dopamine in the brain, but dopamine cannot cross",
+          "Dopamine would cure the disease but is too expensive, while L-Dopa is a cheaper form of the same molecule"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Explain how Parkinson's disease relates to neurotransmitter function.",
+        "options": [
+          "Only serotonin is affected",
+          "Parkinson's involves death of dopamine-producing neurones in the substantia nigra; reduced dopamine in the basal ganglia impairs movement initiation and coordination; treatment includes L-DOPA (dopamine precursor) but does not halt neurodegeneration",
+          "It involves excess dopamine produced by overactive neurones in the cerebellum, which causes uncontrolled movement, so treatment with L-DOPA, which blocks dopamine release, cures the disease by halting the loss of neurones and restoring normal coordination permanently",
+          "It is unrelated to neurotransmitters"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "How does the refractory period ensure unidirectional impulse transmission?",
+        "options": [
+          "The refractory period speeds up impulses by letting the same section of membrane fire again immediately, so impulses travel in both directions at once and meet in the middle of the axon, where the Na+ channels are inactivated and the signal is doubled",
+          "The refractory period has no role",
+          "Impulses can travel both ways",
+          "After depolarisation, Na+ channels are inactivated (absolute refractory period) so that section cannot be re-stimulated; this ensures the impulse can only travel forward to resting membrane, preventing backward propagation"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Explain how photoreceptors adapt to changes in light intensity.",
+        "options": [
+          "Adaptation is instant",
+          "In bright light, photopigments are bleached faster than regenerated; sensitivity decreases (light adaptation); in darkness, photopigments regenerate, rhodopsin accumulates increasing sensitivity (dark adaptation takes ~30 minutes); this allows vision across a wide range of light intensities",
+          "They do not adapt",
+          "Only cone cells adapt"
+        ],
+        "answer": 1
+      }
     ],
-    red: [
-      { q: 'Evaluate the ethical, social, and environmental implications of GM crop technology.', options: ['Only benefits exist','Benefits: higher yields and less pesticide; concerns: gene flow to wild relatives, effects on non-target species, and farmers’ dependence on seed companies','Only risks exist','Science cannot address the ethics, so the only issue with GM crops is whether they grow faster than conventional crops in the same field and climate each year'], answer: 1 },
-      { q: 'Discuss the ethical considerations of germline gene therapy versus somatic gene therapy.', options: ['No ethical difference','Both are banned','Both are ethically identical','Somatic therapy affects only the patient and is not inherited; germline changes pass to future generations without their consent, with unknown effects'], answer: 3 },
-      { q: 'Explain how epigenetic changes can be inherited and their implications for evolution.', options: ['Only DNA mutations are inherited','Some methylation and histone marks escape reprogramming and pass to offspring, so environment may shape inheritance for a few generations','Epigenetics contradicts all of genetics','Epigenetics cannot be inherited, because all epigenetic marks are copied into the DNA base sequence in the gametes and then read as normal mutations'], answer: 1 },
-      { q: 'A CRISPR experiment has off-target effects. Explain the risks and how they might be minimised.', options: ['Off-target effects are always fatal to the cell, so they cannot be reduced and any CRISPR edit must be abandoned immediately once one is found','They cannot be reduced','Off-target effects never occur','Cas9 may cut similar non-target sequences, risking harmful mutations; better guide RNA design and high-fidelity Cas9 reduce this'], answer: 3 },
-      { q: 'Compare and evaluate different methods of delivering genes in gene therapy (viral vs non-viral vectors).', options: ['Viral vectors deliver genes efficiently but may trigger immune responses or insert at harmful sites; non-viral methods are safer but less efficient','Only viruses work','All methods are equally effective','Non-viral methods are always better, because liposomes and naked DNA enter far more cells than viruses and never need to be repeated after one treatment'], answer: 0 },
-      { q: 'How might whole genome sequencing raise concerns about genetic privacy and insurance discrimination?', options: ['No privacy concerns','Genome data reveals disease risks and family relationships, which insurers or employers could misuse unless the data is protected by law','It is completely private','Sequencing reveals nothing personal'], answer: 1 },
-      { q: 'Discuss how understanding gene regulation could lead to new cancer treatments.', options: ['Cancer involves overactive oncogenes and silenced tumour suppressor genes, so drugs can target these, e.g. by reversing abnormal methylation','Regulation cannot be targeted','All cancer is genetic only','Gene regulation is unrelated to cancer, because all cancers are caused by viruses, so the only possible new treatments are antiviral drugs and vaccines'], answer: 0 },
-      { q: 'Evaluate the potential of synthetic biology to solve global challenges.', options: ['It only applies to medicine','It is purely theoretical, since no organism has ever been engineered to make a useful product, so it can have no effect on food, fuel or medicine','Engineered microbes could make biofuels, medicines and vaccines, but risks include escape into the environment, misuse and unequal access','Synthetic biology has no applications'], answer: 2 },
-      { q: 'A patient with cystic fibrosis undergoes gene therapy. Explain why repeated treatments may be necessary and the challenges involved.', options: ['Gene therapy is always permanent, because the new gene is inserted into every cell of the body, including the gametes, after a single treatment','CF cannot be treated','One treatment is always permanent','The epithelial cells that receive the gene are replaced within weeks, and the immune system attacks the vector, so treatment must be repeated'], answer: 3 },
-      { q: 'Analyse how comparative genomics and bioinformatics have advanced our understanding of evolutionary relationships.', options: ['They have no contribution','Comparing genomes reveals conserved sequences and the number of differences between species, allowing more accurate phylogenetic trees than anatomy alone','Only fossils show evolution','Genomics contradicts evolution'], answer: 1 },
-    ],
-  },
-
+    "red": [
+      {
+        "q": "Evaluate the ethical issues surrounding the use of animals in research to study brain function and neurological diseases.",
+        "options": [
+          "There are no ethical issues",
+          "For: essential for studying disease and testing treatments safely; against: animal suffering, and results may not apply to the human brain",
+          "Animals are identical to humans, so every result applies directly to the human brain, and because animals feel no pain there are no ethical issues in using them for research",
+          "Animal research is always wrong"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Evaluate the use of twin studies to investigate the contributions of nature and nurture to brain development.",
+        "options": [
+          "Identical twins share all alleles, so their differences are environmental; comparing identical with non-identical twins estimates the genetic part, but shared environments limit this",
+          "Twin studies show brain development is due only to the environment, because twins raised together are always more alike than twins raised apart, in every single trait that is measured",
+          "Twin studies cannot tell us anything, because non-identical twins share no alleles at all, so there is no genetic similarity to compare with identical twins in any trait being studied",
+          "Twin studies prove that all brain characteristics are genetic, because identical twins always have identical abilities and personalities, whether or not they are raised in the same family"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Evaluate the use of genome sequencing in developing personalised medicine.",
+        "options": [
+          "It has no benefits, because a person's genome cannot affect how they respond to any drug, and sequencing is far too slow ever to be done for individual patients in a clinic",
+          "It is entirely beneficial, because genetic data is always kept private, costs nothing to collect, and tells each patient exactly which diseases they will go on to develop in later life",
+          "It raises ethical issues only, because the drugs it produces work equally well in everyone, so matching drugs to the patient's genome makes no difference to side effects or doses",
+          "Drugs and doses can be matched to a patient's alleles, reducing side effects; but it is costly, genetic data raises privacy concerns and people may learn of risks with no cure"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Evaluate the evidence that nature and nurture both contribute to brain development, with reference to specific examples.",
+        "options": [
+          "The debate is resolved",
+          "Only environment matters",
+          "Nature: genes set the basic brain architecture; nurture: experience shapes synapses, e.g. critical periods for vision and language development",
+          "Only genes matter, because every synapse is fixed before birth, so early experience and critical periods have no effect on how the brain develops or functions"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "A new drug blocks acetylcholinesterase. Predict and explain its effects on synaptic transmission and the whole organism.",
+        "options": [
+          "ACh would not be broken down, causing persistent stimulation of postsynaptic cells, leading to muscle spasms, then paralysis and breathing failure",
+          "It would only affect one synapse",
+          "It would speed up transmission normally",
+          "It would have no effect"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Discuss the limitations of current brain scanning technologies in understanding consciousness and mental health disorders.",
+        "options": [
+          "Scanning directly reads thoughts and consciousness, so every mental health disorder can be diagnosed from a single brain scan without any clinical interview or testing",
+          "fMRI measures blood flow, an indirect proxy for neural activity with limited time resolution, and cannot show thoughts or diagnose most disorders alone",
+          "Brain scanning is perfect",
+          "All mental health is visible on scans"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Analyse the potential benefits and risks of using knowledge of synaptic plasticity to develop cognitive enhancement drugs for healthy individuals.",
+        "options": [
+          "Enhancement drugs are completely risk-free, since strengthening synapses can never cause side effects or dependence, so healthy people should take them every day",
+          "Benefits: better memory, learning and attention; risks: side effects, unknown long-term effects, unfair advantage and pressure on others to use them",
+          "There are no risks or benefits",
+          "They could never work"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Evaluate the growing of genetically modified herbicide-resistant crops.",
+        "options": [
+          "They have no risks, because inserted genes can never pass to other plants, and they give higher yields in every environment and every season, whatever the level of weed pressure",
+          "They have no benefits, because herbicide-resistant crops need more herbicide than normal crops and always give lower yields, so farmers gain nothing at all from growing them",
+          "The only risk is that the crops become poisonous to eat, because the herbicide-resistance gene makes the plant produce the herbicide itself in its fruit, leaves and seeds",
+          "Weeds can be sprayed without harming the crop, raising yield; but the gene may spread to wild relatives, making resistant weeds, and heavy spraying can reduce biodiversity"
+        ],
+        "answer": 3
+      },
+      {
+        "q": "Hubel and Wiesel stitched one eye of newborn kittens shut for several months. Analyse what their results showed.",
+        "options": [
+          "Both eyes became blind, showing that light entering one eye damages the rods in the other eye during development, so both retinas degenerate over the months",
+          "The closed eye's rods had all died, showing that the blindness was caused by damage to the retina itself, not by any change in the connections in the visual cortex",
+          "The eye was effectively blind when opened: axons from the open eye had taken over cortical neurones, showing stimulation is needed during a critical period",
+          "When opened, the eye could see normally, showing that the visual cortex is fully wired before birth and so does not need any stimulation after birth to develop"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Evaluate the use of PET scans compared with fMRI for investigating brain function.",
+        "options": [
+          "PET uses a radioactive tracer and can map chemicals such as dopamine uptake; fMRI avoids radiation and has better resolution, but only tracks oxygenated blood flow",
+          "PET and fMRI both use X-rays to show the structure of the skull and brain, so neither of them can show which parts of the brain are active during a particular task",
+          "fMRI measures the electrical activity of single neurones directly, so PET is no longer needed for any purpose in investigating brain function or diagnosing disease",
+          "PET is better in every way, because it uses no radiation at all and shows brain structure in far more detail than fMRI, which has to rely on repeated X-ray exposure"
+        ],
+        "answer": 0
+      }
+    ]
+  }
 };
+
+if (typeof module !== 'undefined') module.exports = BIOLOGY_EDEXCEL_A_QUESTIONS;

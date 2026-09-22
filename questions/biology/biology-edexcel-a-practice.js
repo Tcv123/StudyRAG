@@ -1,366 +1,1673 @@
+/*
+ * Edexcel A (Salters-Nuffield, 9BN0) A-Level Biology — Exam Practice Question Bank
+ * 40 written/exam-style questions per topic (S1–S8), 320 questions total.
+ * Mix of 1–8 mark questions using Edexcel command words.
+ */
+
 const BIOLOGY_EDEXCEL_A_PRACTICE = {
-  'T1': {
-    name: 'Molecules, Transport and Health',
-    questions: [
-      {q: 'State the monomer of a polysaccharide.', marks: 1, markScheme: 'Monosaccharide (1)'},
-      {q: 'Name the bond that joins amino acids together.', marks: 1, markScheme: 'Peptide bond (1)'},
-      {q: 'State the type of reaction that breaks a glycosidic bond.', marks: 1, markScheme: 'Hydrolysis (1)'},
-      {q: 'Name the reagent used to test for reducing sugars.', marks: 1, markScheme: "Benedict's reagent (1)"},
-      {q: 'State one function of cholesterol in the cell membrane.', marks: 1, markScheme: 'Regulates fluidity / reduces permeability to water and ions (1)'},
-      {q: 'State what is meant by the term active transport.', marks: 1, markScheme: 'Movement of molecules/ions against the concentration gradient using energy from ATP (1)'},
-      {q: 'Name the type of bond found between complementary bases in DNA.', marks: 1, markScheme: 'Hydrogen bond (1)'},
-      {q: 'State the difference between a saturated and unsaturated fatty acid.', marks: 1, markScheme: 'Saturated has no C=C double bonds; unsaturated has one or more C=C double bonds (1)'},
-      {q: 'Describe the structure of a triglyceride.', marks: 2, markScheme: 'One glycerol molecule bonded to three fatty acids (1). By ester bonds formed through condensation reactions (1).'},
-      {q: 'Describe how osmosis differs from diffusion.', marks: 2, markScheme: 'Osmosis is the net movement of water molecules only (1). Through a partially permeable membrane from a region of higher water potential to lower water potential (1).'},
-      {q: 'Describe the role of channel proteins in the cell membrane.', marks: 2, markScheme: 'Provide a hydrophilic channel through the membrane (1). Allow specific polar molecules or ions to pass through by facilitated diffusion (1).'},
-      {q: 'Explain why enzymes are described as biological catalysts.', marks: 2, markScheme: 'They speed up the rate of metabolic reactions (1). By lowering the activation energy without being used up in the reaction (1).'},
-      {q: 'Describe two risk factors for cardiovascular disease.', marks: 2, markScheme: 'High blood pressure / hypertension damages artery walls (1). High blood cholesterol / LDL leads to atheroma formation in artery walls (1).'},
-      {q: 'Compare the structure of starch and cellulose.', marks: 3, markScheme: 'Starch is made from alpha-glucose; cellulose is made from beta-glucose (1). Starch has a mixture of 1-4 and 1-6 glycosidic bonds forming branched and coiled chains; cellulose has only 1-4 bonds forming straight chains (1). Cellulose chains are cross-linked by hydrogen bonds into microfibrils; starch is not (1).'},
-      {q: 'Explain how the fluid mosaic model describes the structure of cell membranes.', marks: 3, markScheme: 'Phospholipid bilayer forms the basic structure with hydrophilic heads facing outward and hydrophobic tails inward (1). Proteins are scattered throughout the membrane in a mosaic pattern, including integral and peripheral proteins (1). The membrane is fluid because phospholipids and proteins can move laterally within the layer (1).'},
-      {q: 'Explain why water is important as a solvent in biological systems.', marks: 3, markScheme: 'Water is a polar molecule so it can dissolve other polar and ionic substances (1). This allows metabolic reactions to take place in solution within cells (1). It also acts as a transport medium for dissolved substances such as glucose in blood and mineral ions in xylem (1).'},
-      {q: 'Explain how the structure of a phospholipid is related to its function in the membrane.', marks: 3, markScheme: 'The hydrophilic phosphate head is attracted to water on both sides of the membrane (1). The hydrophobic fatty acid tails are repelled by water and face inward (1). This creates a bilayer that acts as a barrier to most water-soluble substances, maintaining cell compartmentalisation (1).'},
-      {q: 'Describe the process of atherosclerosis and explain how it can lead to a heart attack.', marks: 4, markScheme: 'Damage to the endothelium of a coronary artery triggers an inflammatory response (1). White blood cells and cholesterol accumulate forming an atheroma beneath the endothelium (1). The atheroma narrows the lumen and reduces blood flow to the heart muscle (1). If a blood clot (thrombus) forms at the site and blocks the artery, cardiac muscle is deprived of oxygen causing a myocardial infarction (1).'},
-      {q: 'Explain how temperature affects the rate of diffusion across a membrane.', marks: 3, markScheme: 'Increasing temperature gives molecules more kinetic energy (1). Molecules move faster so more molecules cross the membrane per unit time (1). The phospholipid bilayer also becomes more fluid at higher temperatures, increasing permeability (1).'},
-      {q: 'Describe how you would investigate the effect of temperature on membrane permeability using beetroot.', marks: 4, markScheme: 'Cut equal-sized pieces of beetroot and wash to remove surface pigment (1). Place beetroot pieces in water baths at a range of temperatures for a fixed time (1). Remove the beetroot and use a colorimeter to measure the absorbance of the surrounding solution (1). Higher absorbance indicates more betacyanin pigment has leaked out due to greater membrane damage at higher temperatures (1).'},
-      {q: 'Explain the induced fit model of enzyme action.', marks: 3, markScheme: 'The substrate approaches the active site which is approximately complementary in shape (1). The active site changes shape to fit more closely around the substrate forming an enzyme-substrate complex (1). This places strain on bonds in the substrate, lowering the activation energy for the reaction (1).'},
-      {q: 'Explain why non-competitive inhibitors reduce Vmax but do not affect Km.', marks: 3, markScheme: 'Non-competitive inhibitors bind to an allosteric site away from the active site (1). This changes the shape of the active site so the substrate can no longer bind, reducing the number of functional enzyme molecules and therefore Vmax (1). The affinity of the remaining functional enzymes for the substrate is unchanged so Km remains the same (1).'},
-      {q: 'Describe the Biuret test and explain what a positive result indicates.', marks: 2, markScheme: 'Add sodium hydroxide then copper sulfate solution to the sample (1). A colour change from blue to purple/violet indicates the presence of peptide bonds / protein (1).'},
-      {q: 'Explain how the structure of collagen is related to its function.', marks: 3, markScheme: 'Three polypeptide chains wound around each other forming a triple helix (1). Hydrogen bonds and covalent cross-links between chains provide high tensile strength (1). This makes collagen suitable for structural roles in tendons, bone and cartilage (1).'},
-      {q: 'Calculate the water potential of a cell given that its solute potential is -800 kPa and its pressure potential is 300 kPa.', marks: 2, markScheme: 'Water potential = solute potential + pressure potential (1). Water potential = -800 + 300 = -500 kPa (1).'},
-      {q: 'Suggest why a person with familial hypercholesterolaemia has a higher risk of cardiovascular disease.', marks: 3, markScheme: 'Familial hypercholesterolaemia is a genetic condition causing very high blood LDL cholesterol (1). Excess LDL deposits cholesterol in artery walls forming atheromas more rapidly (1). This increases the risk of atherosclerosis, blood clots and myocardial infarction at a younger age (1).'},
-      {q: 'Draw a labelled diagram of a phospholipid bilayer showing the arrangement of phospholipids, a channel protein and a glycoprotein.', marks: 4, markScheme: 'Two rows of phospholipids with heads facing outward and tails inward correctly drawn (1). Channel protein spanning the full width of the bilayer with a pore/channel visible (1). Glycoprotein shown as protein with carbohydrate chain attached on the outer surface (1). All three components correctly labelled (1).', diagram: true},
-      {q: 'Sketch a graph to show how the rate of an enzyme-catalysed reaction changes with increasing substrate concentration at a fixed enzyme concentration.', marks: 3, markScheme: 'Axes correctly labelled: x-axis substrate concentration, y-axis rate of reaction (1). Curve rises steeply at first then levels off to a plateau (1). Plateau labelled as Vmax where all active sites are saturated (1).', diagram: true},
-      {q: 'Draw and label a diagram showing the formation of a disaccharide from two alpha-glucose molecules.', marks: 3, markScheme: 'Two alpha-glucose molecules shown with correct ring structure (1). Condensation reaction indicated with water molecule released (1). 1-4 glycosidic bond formed between C1 of one glucose and C4 of the other, correctly labelled (1).', diagram: true},
-      {q: 'Explain why competitive inhibitors increase the apparent Km but do not change Vmax.', marks: 3, markScheme: 'Competitive inhibitors bind to the active site competing with the substrate (1). A higher substrate concentration is needed to reach half Vmax so the apparent Km increases (1). At sufficiently high substrate concentration the inhibitor is outcompeted, so Vmax can still be achieved (1).'},
-      {q: 'Explain how carrier proteins facilitate active transport across a membrane.', marks: 3, markScheme: 'Carrier protein binds to a specific molecule or ion on one side of the membrane (1). ATP is hydrolysed providing energy for the carrier protein to change shape (1). The molecule or ion is released on the other side of the membrane against the concentration gradient (1).'},
-      {q: 'Evaluate the evidence linking diet to cardiovascular disease.', marks: 4, markScheme: 'Epidemiological studies show correlations between high saturated fat intake and increased CVD risk (1). However correlation does not prove causation and other lifestyle factors may be confounding variables (1). Intervention studies where diets are modified show reduced CVD risk when saturated fat is replaced with unsaturated fat (1). Some populations with high fat diets (e.g. Mediterranean diet rich in unsaturated fat) have low CVD rates, suggesting the type of fat matters more than total fat intake (1).'},
-      {q: 'Describe how you would use the emulsion test to identify the presence of lipids.', marks: 2, markScheme: 'Dissolve the sample in ethanol by shaking, then pour the solution into water (1). A cloudy white emulsion forms if lipids are present (1).'},
-      {q: 'Explain why glucose is transported into cells by facilitated diffusion rather than simple diffusion.', marks: 2, markScheme: 'Glucose is a polar molecule that cannot pass through the hydrophobic core of the phospholipid bilayer (1). It requires specific carrier or channel proteins to provide a hydrophilic pathway across the membrane (1).'},
-      {q: 'Describe the primary, secondary and tertiary structure of a protein.', marks: 3, markScheme: 'Primary structure is the specific sequence of amino acids in a polypeptide chain joined by peptide bonds (1). Secondary structure is the coiling into alpha helices or folding into beta pleated sheets held by hydrogen bonds between C=O and N-H groups of the peptide backbone (1). Tertiary structure is the overall 3D shape of the polypeptide maintained by hydrogen bonds, ionic bonds, disulfide bonds and hydrophobic interactions between R groups (1).'},
-      {q: 'Sketch a graph showing how water potential changes as solute concentration increases in a solution.', marks: 2, markScheme: 'Axes labelled: x-axis solute concentration, y-axis water potential (1). Line starts at zero (pure water) and decreases / becomes more negative as solute concentration increases (1).', diagram: true},
-      {q: 'Explain how the properties of water make it an effective coolant for mammals.', marks: 2, markScheme: 'Water has a high latent heat of vaporisation due to hydrogen bonds (1). A large amount of heat energy is absorbed from the body surface when sweat evaporates, effectively cooling the organism (1).'},
-      {q: 'A patient is prescribed statins. Explain how statins reduce the risk of cardiovascular disease.', marks: 3, markScheme: 'Statins inhibit the enzyme HMG-CoA reductase in the liver which is involved in cholesterol synthesis (1). This reduces blood LDL cholesterol levels (1). Lower LDL reduces atheroma formation and therefore reduces the risk of atherosclerosis, thrombosis and heart attack (1).'},
-      {q: 'Explain why increasing the enzyme concentration increases the rate of reaction only when substrate is in excess.', marks: 3, markScheme: 'More enzyme molecules means more active sites available for substrate to bind (1). More enzyme-substrate complexes can form per unit time so the rate increases (1). If substrate is limiting, adding more enzyme will not increase the rate as there is not enough substrate to occupy the additional active sites (1).'},
-      {q: 'Describe how you would carry out a serial dilution to produce a range of sucrose concentrations for an osmosis investigation.', marks: 3, markScheme: 'Start with a stock solution of known concentration e.g. 1.0 mol dm-3 sucrose (1). Transfer a measured volume to the next tube and add an equal volume of distilled water to halve the concentration (1). Repeat the process to produce a series of concentrations e.g. 1.0, 0.5, 0.25, 0.125 mol dm-3 (1).'}
+  "S1": {
+    "name": "Lifestyle, Health and Risk",
+    "questions": [
+      {
+        "q": "State the function of the aorta.",
+        "marks": 1,
+        "markScheme": "• Carries oxygenated blood from the left ventricle to the body / systemic circulation (1)"
+      },
+      {
+        "q": "State what is meant by atherosclerosis.",
+        "marks": 2,
+        "markScheme": "• The build-up of fatty deposits / atheromas in the walls of arteries (1)\n• Leading to narrowing of the lumen / reduced blood flow (1)"
+      },
+      {
+        "q": "Describe the structure of an artery.",
+        "marks": 3,
+        "markScheme": "• Thick muscular wall with elastic tissue (1)\n• Narrow lumen relative to wall thickness (1)\n• No valves (except at the base of the aorta and pulmonary artery) / endothelium lining is smooth (1)"
+      },
+      {
+        "q": "Describe the sequence of events in the formation of a blood clot.",
+        "marks": 4,
+        "markScheme": "• Damage to the blood vessel wall / exposed collagen causes platelets to stick to the site and to each other (1)\n• Platelets and damaged tissue release thromboplastin (1)\n• Thromboplastin (with calcium ions) triggers the conversion of the inactive plasma protein prothrombin into the enzyme thrombin (1)\n• Thrombin catalyses the conversion of soluble fibrinogen into insoluble fibrin, forming a mesh of fibres that traps platelets and red blood cells to form a clot (1)"
+      },
+      {
+        "q": "Explain why a blockage in a coronary artery can lead to a myocardial infarction.",
+        "marks": 3,
+        "markScheme": "• Coronary arteries supply the heart muscle with oxygenated blood (1)\n• Blockage reduces / prevents blood flow to an area of heart muscle (1)\n• Cardiac muscle cells are deprived of oxygen for aerobic respiration and die / necrosis (1)"
+      },
+      {
+        "q": "Compare the structure of arteries and veins.",
+        "marks": 4,
+        "markScheme": "• Arteries have thicker muscular/elastic walls than veins (1)\n• Arteries have a narrower lumen relative to their diameter than veins (1)\n• Veins have valves to prevent backflow; arteries generally do not (1)\n• Both have an endothelial lining but arteries need to withstand higher pressure (1)"
+      },
+      {
+        "q": "Describe how the structure of a capillary is related to its function.",
+        "marks": 3,
+        "markScheme": "• Wall is one cell thick / a single layer of endothelium, giving a short diffusion distance for rapid exchange (1)\n• Narrow lumen means red blood cells pass in single file, close to / pressed against the wall, which shortens the diffusion distance (and slows flow, allowing more time for exchange) (1)\n• Small gaps between endothelial cells make the wall permeable, allowing exchange of substances with the surrounding tissues (1)"
+      },
+      {
+        "q": "Explain the difference between correlation and causation, using an example related to cardiovascular disease.",
+        "marks": 3,
+        "markScheme": "• Correlation means two variables change together / there is a statistical relationship (1)\n• Causation means one variable directly causes a change in the other (1)\n• Example: high saturated fat intake correlates with increased CVD risk, but other confounding factors (exercise, genetics) mean the relationship may not be directly causal without controlled experiments (1)"
+      },
+      {
+        "q": "Describe how water molecules form hydrogen bonds.",
+        "marks": 2,
+        "markScheme": "• Water is a polar molecule with a slightly positive hydrogen end and slightly negative oxygen end (1)\n• Hydrogen bonds form between the slightly positive H of one molecule and the slightly negative O of another (1)"
+      },
+      {
+        "q": "Explain how the properties of water make it important as a transport medium in blood.",
+        "marks": 4,
+        "markScheme": "• Water is a dipole / polar molecule: the oxygen is slightly negative (δ−) and the hydrogens slightly positive (δ+) (1)\n• Ions (e.g. Na⁺, Cl⁻) are attracted to the oppositely charged ends of water molecules and become surrounded by them, so they dissolve (1)\n• Polar molecules such as glucose and amino acids form hydrogen bonds with water and dissolve, so they can be carried in solution in the plasma (1)\n• Water is liquid at body temperature, so dissolved substances are carried as the blood flows / non-polar substances such as lipids are insoluble and must be carried in other forms (e.g. lipoproteins) (1)"
+      },
+      {
+        "q": "State what is meant by the term risk factor in relation to disease.",
+        "marks": 1,
+        "markScheme": "• A factor / variable that increases the probability / likelihood of developing a disease (1)"
+      },
+      {
+        "q": "Explain why smoking increases the risk of cardiovascular disease.",
+        "marks": 4,
+        "markScheme": "• Carbon monoxide in smoke binds to haemoglobin, reducing oxygen-carrying capacity (1)\n• Nicotine increases heart rate and blood pressure, increasing strain on the heart (1)\n• Chemicals in smoke damage the endothelium of artery walls, triggering atherosclerosis (1)\n• Smoking increases platelet stickiness, making blood clots more likely (1)"
+      },
+      {
+        "q": "Describe the role of HDLs and LDLs in relation to cholesterol and cardiovascular disease.",
+        "marks": 4,
+        "markScheme": "• LDLs transport cholesterol from the liver to the tissues / cells (1)\n• Excess LDLs deposit cholesterol in artery walls, contributing to atheroma formation (1)\n• HDLs transport cholesterol from the tissues back to the liver for breakdown / excretion (1)\n• High HDL:LDL ratio is associated with reduced risk of CVD (1)"
+      },
+      {
+        "q": "Evaluate the evidence linking diet to cardiovascular disease.",
+        "marks": 6,
+        "markScheme": "• Saturated fat intake raises blood LDL cholesterol levels which promotes atherosclerosis (1)\n• High salt intake increases blood pressure / hypertension which damages artery walls (1)\n• Epidemiological studies show strong correlations between diet and CVD incidence (1)\n• However, confounding variables (exercise, smoking, genetics, stress) make it difficult to establish direct causation (1)\n• Intervention studies (e.g. changing diet) support a causal link in some cases (1)\n• Evaluation: evidence is strong overall but individual risk depends on multiple interacting factors, not diet alone (1)"
+      },
+      {
+        "q": "A student has a daily energy intake of 10 500 kJ and a daily energy expenditure of 11 700 kJ. Calculate the daily energy deficit as a percentage of energy intake, and state the likely effect on body mass if this continued.",
+        "marks": 2,
+        "markScheme": "• (11 700 − 10 500) / 10 500 × 100 = 11.4% (1)\n• Body mass would decrease / weight loss, as energy stores (e.g. fat) are used to meet the deficit (1)"
+      },
+      {
+        "q": "Describe the events of the cardiac cycle during ventricular systole.",
+        "marks": 3,
+        "markScheme": "• Ventricles contract, increasing pressure inside the ventricles (1)\n• Atrioventricular valves close (producing the first heart sound) preventing backflow to the atria (1)\n• Semilunar valves open as ventricular pressure exceeds pressure in the aorta/pulmonary artery, and blood is forced out (1)"
+      },
+      {
+        "q": "Describe how a heart dissection can be used to relate the structure of the heart to its function.",
+        "marks": 3,
+        "markScheme": "• Cut through / measure the thickness of the left and right ventricle walls (e.g. with a ruler) and compare them (1)\n• Relate the thicker left ventricle wall to the higher pressure needed to pump blood around the whole body, compared with the right ventricle pumping to the lungs (1)\n• Locate the atrioventricular and semilunar valves (and tendinous cords) / pour water into the vessels or chambers to show the valves close and prevent backflow (1)"
+      },
+      {
+        "q": "Suggest why the left ventricle has a thicker wall than the right ventricle.",
+        "marks": 2,
+        "markScheme": "• The left ventricle pumps blood to the whole body / systemic circulation, which is at a greater distance (1)\n• A thicker muscular wall generates higher pressure to push blood through the systemic circuit (1)"
+      },
+      {
+        "q": "State what is meant by the term thrombosis.",
+        "marks": 1,
+        "markScheme": "• The formation of a blood clot (thrombus) within a blood vessel, obstructing blood flow (1)"
+      },
+      {
+        "q": "Explain how high blood pressure increases the risk of cardiovascular disease.",
+        "marks": 3,
+        "markScheme": "• High blood pressure damages the endothelial lining of arteries (1)\n• Damage triggers an inflammatory response and deposition of cholesterol / atheroma formation (1)\n• This narrows arteries and can lead to thrombus formation / increased risk of heart attack or stroke (1)"
+      },
+      {
+        "q": "Describe the role of platelets in the blood clotting process.",
+        "marks": 3,
+        "markScheme": "• Platelets are cell fragments that circulate in the blood (1)\n• When a vessel is damaged, platelets adhere to exposed collagen and aggregate to form a platelet plug (1)\n• Platelets release clotting factors that initiate the clotting cascade / conversion of fibrinogen to fibrin (1)"
+      },
+      {
+        "q": "Explain why glucose can be transported dissolved in blood plasma, but triglycerides and cholesterol are transported as lipoproteins.",
+        "marks": 3,
+        "markScheme": "• Glucose is polar / has OH groups that form hydrogen bonds with water (dipoles), so it dissolves in plasma (1)\n• Triglycerides and cholesterol are non-polar / hydrophobic, so they are insoluble in water (1)\n• They are combined with proteins (and phospholipids) to form lipoproteins (HDLs and LDLs), which can be carried in the plasma (1)"
+      },
+      {
+        "q": "Outline how a cohort study can be used to investigate risk factors for cardiovascular disease.",
+        "marks": 3,
+        "markScheme": "• A large group of people is followed over a long period of time (1)\n• Data is collected on lifestyle factors (diet, smoking, exercise) and health outcomes (CVD incidence) (1)\n• Statistical analysis is used to identify associations between risk factors and disease (1)"
+      },
+      {
+        "q": "Describe the structure of the heart, including the names of the four chambers and associated blood vessels.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• Right atrium receives deoxygenated blood from the vena cava; right ventricle pumps it to the lungs via the pulmonary artery (1)\n• Left atrium receives oxygenated blood from the pulmonary veins; left ventricle pumps it to the body via the aorta (1)\n• Atrioventricular valves (tricuspid on right, bicuspid/mitral on left) separate atria and ventricles (1)\n• Septum separates the left and right sides of the heart, preventing mixing of oxygenated and deoxygenated blood (1)"
+      },
+      {
+        "q": "Draw and label a diagram of a cross-section through an artery, showing the key tissue layers.",
+        "marks": 3,
+        "diagram": true,
+        "markScheme": "• Inner endothelium / tunica intima drawn and labelled (1)\n• Thick middle layer of smooth muscle and elastic fibres / tunica media drawn and labelled (1)\n• Outer layer of connective tissue / tunica adventitia drawn and labelled, with small lumen relative to wall thickness (1)"
+      },
+      {
+        "q": "Explain the importance of the double circulatory system in mammals.",
+        "marks": 3,
+        "markScheme": "• Blood passes through the heart twice in one complete circuit (pulmonary and systemic) (1)\n• This maintains high pressure in the systemic circulation for efficient delivery of oxygen/nutrients to tissues (1)\n• Pressure is lower in the pulmonary circuit, preventing damage to the delicate gas exchange surfaces in the lungs (1)"
+      },
+      {
+        "q": "Explain why doctors measure both systolic and diastolic blood pressure.",
+        "marks": 2,
+        "markScheme": "• Systolic pressure measures the pressure during ventricular contraction, indicating the force of heart output (1)\n• Diastolic pressure measures the pressure during relaxation, indicating the resistance of blood vessels / baseline arterial pressure; both are needed for a full picture of cardiovascular health (1)"
+      },
+      {
+        "q": "Suggest why the incidence of CVD varies between different countries.",
+        "marks": 3,
+        "markScheme": "• Differences in diet — e.g. Mediterranean diets are associated with lower CVD rates (1)\n• Differences in prevalence of risk factors such as smoking, obesity, and physical inactivity (1)\n• Genetic differences between populations / differences in healthcare access and screening programmes (1)"
+      },
+      {
+        "q": "Describe how to determine the vitamin C content of a fruit juice using DCPIP.",
+        "marks": 4,
+        "markScheme": "• Put a fixed volume of DCPIP solution (e.g. 1 cm³) into a test tube (1)\n• Add a vitamin C solution of known concentration drop by drop (from a burette / graduated pipette), shaking, until the blue colour just disappears; record the volume needed (1)\n• Repeat with the fruit juice, using the same volume and concentration of DCPIP and the same end point (1)\n• Calculate the vitamin C content of the juice by comparing the volumes needed (vitamin C in juice = concentration of standard × volume of standard ÷ volume of juice); repeat and calculate a mean (1)"
+      },
+      {
+        "q": "Explain the difference between an embolism and a thrombus.",
+        "marks": 2,
+        "markScheme": "• A thrombus is a blood clot that forms at a specific site within a blood vessel (1)\n• An embolism occurs when part of a thrombus breaks away and travels through the bloodstream to block a vessel elsewhere (1)"
+      },
+      {
+        "q": "Evaluate the use of statins in reducing the risk of cardiovascular disease.",
+        "marks": 5,
+        "markScheme": "• Statins reduce blood cholesterol by inhibiting the enzyme involved in cholesterol synthesis in the liver (1)\n• Clinical trials show statins significantly reduce the risk of heart attack and stroke (1)\n• They are widely prescribed and relatively inexpensive (1)\n• However, they can have side effects including muscle pain, liver damage, and digestive problems (1)\n• Evaluation: benefits generally outweigh risks for high-risk individuals, but lifestyle changes should also be encouraged alongside medication (1)"
+      },
+      {
+        "q": "State two differences between saturated and unsaturated fatty acids.",
+        "marks": 2,
+        "markScheme": "• Saturated fatty acids have no C=C double bonds in the hydrocarbon chain; unsaturated fatty acids have one or more C=C double bonds (1)\n• Saturated chains are straight and pack closely, so saturated fats are usually solid at room temperature; C=C bonds put kinks in unsaturated chains, so they are usually liquid (oils) (1)"
+      },
+      {
+        "q": "Describe how pressure changes in the heart during one cardiac cycle.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• During atrial systole, atrial pressure rises above ventricular pressure, forcing blood through AV valves (1)\n• During ventricular systole, ventricular pressure rises rapidly above atrial pressure, closing AV valves, and exceeds arterial pressure, opening semilunar valves (1)\n• During diastole, ventricular pressure falls below arterial pressure, closing semilunar valves (1)\n• Ventricular pressure falls below atrial pressure, AV valves open and passive filling occurs (1)"
+      },
+      {
+        "q": "Calculate BMI for a person who is 1.75 m tall and weighs 82 kg. State whether this is classified as overweight.",
+        "marks": 2,
+        "markScheme": "• BMI = 82 / (1.75)² = 82 / 3.0625 = 26.8 (1)\n• This is classified as overweight (BMI 25–29.9) (1)"
+      },
+      {
+        "q": "Explain why unsaturated fats are generally considered healthier than saturated fats.",
+        "marks": 3,
+        "markScheme": "• Unsaturated fats contain one or more C=C double bonds, giving them kinks that prevent close packing / they are liquid at room temperature (1)\n• Saturated fats increase blood LDL cholesterol levels, promoting atherosclerosis (1)\n• Unsaturated fats can increase HDL cholesterol / do not raise LDL levels, reducing CVD risk (1)"
+      },
+      {
+        "q": "Outline how to investigate the effect of caffeine concentration on the heart rate of Daphnia.",
+        "marks": 3,
+        "markScheme": "• Place a Daphnia in a small volume of pond water / on a cavity slide, leave it to acclimatise, then count heartbeats under a microscope for a set time (e.g. 20 s) to find the resting rate (1)\n• Replace the water with a range of caffeine concentrations, leaving each for the same time before counting heartbeats again (1)\n• Control variables: temperature, volume of solution, size of Daphnia / use a fresh Daphnia each time; include a control with no caffeine; repeat and calculate means (1)"
+      },
+      {
+        "q": "Suggest why epidemiological studies on diet and CVD often produce conflicting results.",
+        "marks": 3,
+        "markScheme": "• Different study designs and sample sizes may produce different levels of statistical significance (1)\n• Self-reported dietary data is unreliable / recall bias (1)\n• Confounding variables (genetics, lifestyle, socioeconomic status) are difficult to control between studies (1)"
+      },
+      {
+        "q": "Draw a diagram to show how two α-glucose molecules join to form maltose.",
+        "marks": 3,
+        "markScheme": "• Two α-glucose molecules drawn with the OH groups on carbon 1 and carbon 4 lined up (1)\n• A water molecule removed / labelled as a condensation reaction (1)\n• Maltose drawn with a 1,4-glycosidic bond (C–O–C link) labelled (1)",
+        "diagram": true
+      },
+      {
+        "q": "Suggest two reasons why some people think it is more acceptable to use Daphnia than vertebrates in heart-rate investigations.",
+        "marks": 2,
+        "markScheme": "• Daphnia have a much simpler nervous system, so they are thought to be less aware of / feel less pain or distress (1)\n• They are abundant, reproduce quickly and can be returned to their habitat unharmed after the experiment (1)"
+      },
+      {
+        "q": "Explain why someone with a family history of CVD may be advised to have regular health checks even if they have a healthy lifestyle.",
+        "marks": 2,
+        "markScheme": "• Genetic factors can predispose individuals to high blood cholesterol, high blood pressure, or atherosclerosis regardless of lifestyle (1)\n• Regular monitoring allows early detection and treatment (e.g. statins, blood pressure medication) to reduce risk (1)"
+      }
     ]
   },
-  'T2': {
-    name: 'Cells, Development and Biodiversity',
-    questions: [
-      {q: 'State two features found in prokaryotic cells but not in eukaryotic cells.', marks: 2, markScheme: 'Circular DNA / naked DNA (no histones) (1). 70S ribosomes / plasmids / no membrane-bound organelles (1).'},
-      {q: 'Name the organelle responsible for aerobic respiration.', marks: 1, markScheme: 'Mitochondrion (1)'},
-      {q: 'State the function of the rough endoplasmic reticulum.', marks: 1, markScheme: 'Synthesis and transport of proteins (1)'},
-      {q: 'Name the stage of the cell cycle where DNA replication occurs.', marks: 1, markScheme: 'S phase / synthesis phase of interphase (1)'},
-      {q: 'State what is meant by the term biodiversity.', marks: 1, markScheme: 'The variety of living organisms in an area / the range of different species and genetic diversity within and between species (1)'},
-      {q: 'State the resolution of an optical microscope compared to a transmission electron microscope.', marks: 1, markScheme: 'Optical microscope: approximately 200 nm; TEM: approximately 0.5 nm (1)'},
-      {q: 'Describe the role of the Golgi apparatus in the cell.', marks: 2, markScheme: 'Modifies and packages proteins and lipids into vesicles (1). Produces lysosomes and secretory vesicles for transport to the cell surface membrane (1).'},
-      {q: 'Describe the differences between a plant cell and an animal cell.', marks: 3, markScheme: 'Plant cells have a cellulose cell wall; animal cells do not (1). Plant cells have a large permanent vacuole with a tonoplast; animal cells have small temporary vacuoles (1). Plant cells may contain chloroplasts for photosynthesis; animal cells do not (1).'},
-      {q: 'Explain why mitosis is important for growth and repair.', marks: 2, markScheme: 'Mitosis produces two genetically identical daughter cells from one parent cell (1). This ensures all new cells have the same number of chromosomes and same genes, maintaining genetic consistency for the organism to function properly (1).'},
-      {q: 'Describe what happens during prophase of mitosis.', marks: 3, markScheme: 'Chromosomes condense and become visible, each consisting of two sister chromatids joined at a centromere (1). The nuclear envelope breaks down (1). Centrioles move to opposite poles of the cell and spindle fibres begin to form (1).'},
-      {q: 'Explain how cell differentiation leads to specialised cells.', marks: 3, markScheme: 'Different genes are switched on or off in different cells (1). This leads to the production of specific proteins that give the cell its specialised structure and function (1). Once differentiated, most animal cells lose the ability to divide, though stem cells retain this capacity (1).'},
-      {q: 'Compare the use of an optical microscope and a transmission electron microscope.', marks: 4, markScheme: 'Optical microscopes use light and glass lenses; TEMs use electron beams and electromagnetic lenses (1). TEMs have much higher resolution (0.5 nm vs 200 nm) so can reveal ultrastructure of organelles (1). Optical microscopes can view living specimens; TEMs require dead, fixed and stained specimens in a vacuum (1). Optical microscopes are cheaper, portable and easier to use; TEMs are expensive and require specialist training (1).'},
-      {q: 'Describe the stages of the cell cycle.', marks: 3, markScheme: 'G1: cell grows and organelles replicate; S phase: DNA replicates; G2: cell checks for errors and prepares for division (1). These three stages collectively form interphase (1). Mitosis: the nucleus divides into two identical nuclei, followed by cytokinesis where the cytoplasm divides (1).'},
-      {q: 'Explain how Simpson\'s Index of Diversity is used to measure biodiversity.', marks: 3, markScheme: 'D = 1 - (sum of (n/N)^2) where n is the number of individuals of each species and N is the total number of individuals (1). A value close to 1 indicates high biodiversity with many species in relatively equal proportions (1). A value close to 0 indicates low biodiversity dominated by one or few species (1).'},
-      {q: 'Calculate the Simpson\'s Index of Diversity for a habitat containing 20 species A, 5 species B and 5 species C.', marks: 3, markScheme: 'N = 30; (n/N)^2 for A = (20/30)^2 = 0.444; B = (5/30)^2 = 0.028; C = (5/30)^2 = 0.028 (1). Sum = 0.444 + 0.028 + 0.028 = 0.500 (1). D = 1 - 0.500 = 0.500 (1).'},
-      {q: 'Explain what is meant by the binomial naming system.', marks: 2, markScheme: 'Each species is given a two-part Latin name consisting of the genus name (capitalised) and species name (lower case) (1). This provides a universal naming system understood by scientists worldwide, avoiding confusion from common names (1).'},
-      {q: 'Describe how you would use a graticule and stage micrometer to calibrate a microscope.', marks: 3, markScheme: 'Place the stage micrometer on the stage and align it with the eyepiece graticule (1). Count how many eyepiece divisions correspond to a known distance on the stage micrometer (1). Calculate the distance represented by one eyepiece division at that magnification for measuring specimens (1).'},
-      {q: 'Explain the role of stem cells in the development of organisms.', marks: 3, markScheme: 'Stem cells are undifferentiated cells that can divide by mitosis and differentiate into specialised cell types (1). During embryonic development, totipotent stem cells can form any cell type in the organism (1). In adults, multipotent stem cells in specific tissues replace dead or damaged cells, such as haematopoietic stem cells producing blood cells (1).'},
-      {q: 'Describe the structure of a prokaryotic cell.', marks: 4, markScheme: 'Cell wall made of peptidoglycan/murein surrounding the cell (1). Cell surface membrane encloses the cytoplasm which contains 70S ribosomes (1). Circular DNA (nucleoid) not enclosed in a nuclear envelope; may also contain plasmids (1). Some have a capsule, flagella for movement, and/or pili for attachment (1).'},
-      {q: 'Explain why classification systems change over time.', marks: 3, markScheme: 'New species are discovered requiring existing groups to be revised (1). Advances in technology such as DNA sequencing reveal evolutionary relationships not apparent from physical features alone (1). Molecular phylogenetics can show that organisms previously classified together are not closely related and vice versa (1).'},
-      {q: 'Draw a labelled diagram of an animal cell as seen under an electron microscope showing at least six organelles.', marks: 4, markScheme: 'Nucleus with nuclear envelope and pores correctly drawn (1). Mitochondria with double membrane and cristae, and rough ER with ribosomes shown (1). Golgi apparatus shown as stacked flattened membranes with vesicles (1). At least six organelles correctly labelled including cell surface membrane (1).', diagram: true},
-      {q: 'Draw a labelled diagram showing the stages of mitosis in order.', marks: 4, markScheme: 'Prophase: condensed chromosomes visible, nuclear envelope breaking down (1). Metaphase: chromosomes lined up at the cell equator attached to spindle fibres at centromeres (1). Anaphase: sister chromatids pulled apart to opposite poles by shortening spindle fibres (1). Telophase: nuclear envelopes reform around each set of chromosomes, chromosomes decondense (1).', diagram: true},
-      {q: 'Describe how ultrafiltration separates cell components using differential centrifugation.', marks: 3, markScheme: 'Tissue is homogenised in cold, isotonic, buffered solution to break open cells (1). The homogenate is filtered and then centrifuged at increasing speeds (1). At each speed, the heaviest organelles pellet out first (nuclei, then mitochondria, then ER/ribosomes), and the supernatant is re-centrifuged at higher speed (1).'},
-      {q: 'Explain the importance of maintaining biodiversity.', marks: 3, markScheme: 'Greater biodiversity increases ecosystem stability and resilience to environmental change (1). Many species provide direct benefits to humans including food sources, medicines and raw materials (1). Genetic diversity within species provides the variation needed for populations to adapt to changing conditions through natural selection (1).'},
-      {q: 'Describe the structure and function of the mitochondrion.', marks: 4, markScheme: 'Double membrane: outer membrane is smooth, inner membrane is folded into cristae (1). Cristae provide a large surface area for oxidative phosphorylation / electron transport chain (1). Matrix contains enzymes for the Krebs cycle, as well as its own circular DNA and 70S ribosomes (1). Produces ATP through aerobic respiration (1).'},
-      {q: 'Explain why cancer can be described as a failure of the cell cycle.', marks: 3, markScheme: 'Mutations in genes controlling the cell cycle (proto-oncogenes and tumour suppressor genes) occur (1). Cells divide uncontrollably because checkpoints that normally stop the cycle fail (1). This results in a mass of undifferentiated cells forming a tumour which may invade other tissues (metastasis) (1).'},
-      {q: 'Suggest why antibiotics can kill prokaryotic cells without damaging eukaryotic cells.', marks: 2, markScheme: 'Prokaryotic cells have structural differences such as 70S ribosomes and peptidoglycan cell walls that eukaryotic cells do not have (1). Antibiotics target these specific prokaryotic features so they do not affect the equivalent structures in eukaryotic cells (1).'},
-      {q: 'Describe how you would measure the actual size of a cell observed under a microscope.', marks: 3, markScheme: 'Measure the image size using the calibrated eyepiece graticule (1). Note the magnification used (1). Apply the formula: actual size = image size / magnification (1).'},
-      {q: 'Explain why the three-domain system of classification replaced the five-kingdom system.', marks: 3, markScheme: 'RNA/DNA sequencing revealed that prokaryotes contain two fundamentally different groups: Bacteria and Archaea (1). Archaea are more closely related to Eukarya than to Bacteria based on molecular evidence (1). The three-domain system (Bacteria, Archaea, Eukarya) better reflects the evolutionary relationships between organisms (1).'},
-      {q: 'Sketch a graph showing the change in DNA content of a cell during two complete cell cycles including mitosis.', marks: 3, markScheme: 'X-axis labelled time, y-axis labelled DNA content per cell (1). DNA content doubles during S phase then halves at mitosis, shown as a stepped pattern (1). Pattern repeats for the second cycle with correct relative timing of interphase and mitosis (1).', diagram: true},
-      {q: 'Describe the role of the cytoskeleton in eukaryotic cells.', marks: 2, markScheme: 'Provides structural support and maintains cell shape through a network of protein filaments (microfilaments and microtubules) (1). Involved in cell movement, intracellular transport of organelles and vesicles, and movement of chromosomes during cell division (1).'},
-      {q: 'A cell has an image size of 30 mm when viewed at x400 magnification. Calculate the actual size of the cell in micrometres.', marks: 2, markScheme: 'Actual size = 30 mm / 400 = 0.075 mm (1). Convert to micrometres: 0.075 x 1000 = 75 um (1).'},
-      {q: 'Explain how DNA evidence is used in phylogenetics.', marks: 3, markScheme: 'DNA base sequences of different species are compared (1). Species with more similar sequences are more closely related and diverged more recently (1). This data is used to construct phylogenetic trees showing evolutionary relationships and common ancestors (1).'},
-      {q: 'Outline the role of lysosomes in the cell.', marks: 2, markScheme: 'Lysosomes contain hydrolytic/digestive enzymes (1). They break down worn-out organelles, engulfed pathogens and food particles through intracellular digestion (1).'},
-      {q: 'Explain the difference between totipotent and pluripotent stem cells.', marks: 2, markScheme: 'Totipotent stem cells can differentiate into any cell type in the organism including extraembryonic tissues such as the placenta (1). Pluripotent stem cells can differentiate into most cell types but not extraembryonic tissues; embryonic stem cells after the first few divisions are pluripotent (1).'},
-      {q: 'Evaluate the ethical issues surrounding the use of embryonic stem cells in medicine.', marks: 4, markScheme: 'Embryonic stem cells are pluripotent and could be used to treat many diseases including Parkinson\'s and diabetes (1). However, extracting them requires destruction of a human embryo which some consider to be a potential human life (1). Alternative sources such as induced pluripotent stem cells (iPSCs) from adult cells may reduce the need for embryonic cells (1). Regulation and informed consent from donors are important to ensure ethical use; benefits to patients must be weighed against moral concerns (1).'},
-      {q: 'Describe how you would estimate the number of daisies in a field using a quadrat.', marks: 4, markScheme: 'Use random number generators to select coordinates for placing quadrats to avoid bias (1). Place quadrats at the random coordinates and count the number of daisies in each quadrat (1). Calculate the mean number of daisies per quadrat (1). Multiply by the total number of quadrats that would fit in the field to estimate the total population (1).'},
-      {q: 'Explain the role of checkpoints in the cell cycle.', marks: 3, markScheme: 'Checkpoints are control points where the cell assesses whether conditions are appropriate to continue dividing (1). G1 checkpoint checks for cell size, nutrients and DNA damage before allowing entry into S phase (1). G2 checkpoint checks DNA replication is complete and M checkpoint ensures chromosomes are correctly attached to spindle before allowing anaphase (1).'},
-      {q: 'Draw a labelled diagram of a prokaryotic cell.', marks: 3, markScheme: 'Cell wall, cell membrane and cytoplasm shown with correct shapes (1). Circular DNA/nucleoid region and ribosomes (smaller 70S) shown (1). At least one of: capsule, flagellum, plasmid, pili correctly drawn and labelled (1).', diagram: true},
-      {q: 'Describe how the magnification of an image is calculated and state the formula.', marks: 2, markScheme: 'Magnification = image size / actual size (1). All measurements must be in the same units before applying the formula; the result has no units (1).'}
+  "S2": {
+    "name": "Genes and Health",
+    "questions": [
+      {
+        "q": "State the components of a nucleotide.",
+        "marks": 2,
+        "markScheme": "• A pentose sugar (deoxyribose in DNA / ribose in RNA) (1)\n• A phosphate group and a nitrogenous base (A, T, C, G in DNA; A, U, C, G in RNA) (1)"
+      },
+      {
+        "q": "Describe the structure of DNA.",
+        "marks": 4,
+        "markScheme": "• Two polynucleotide strands wound into a double helix (1)\n• Strands are antiparallel (run in opposite directions, 5′ to 3′ and 3′ to 5′) (1)\n• Complementary base pairing: adenine pairs with thymine (two hydrogen bonds), cytosine pairs with guanine (three hydrogen bonds) (1)\n• Sugar-phosphate backbone on the outside with bases on the inside (1)"
+      },
+      {
+        "q": "Describe the fluid mosaic model of cell membrane structure.",
+        "marks": 4,
+        "markScheme": "• Phospholipid bilayer forms the basic structure with hydrophilic heads facing outward and hydrophobic tails facing inward (1)\n• Integral/transmembrane proteins span the bilayer; peripheral proteins are on the surface (1)\n• Glycoproteins and glycolipids are present on the outer surface for cell signalling / recognition (1)\n• The membrane is described as fluid because phospholipids and proteins can move laterally (1)"
+      },
+      {
+        "q": "Explain how the structure of the gas exchange system is adapted for efficient gas exchange.",
+        "marks": 4,
+        "markScheme": "• Large surface area provided by millions of alveoli (1)\n• Thin walls (one cell thick) of alveoli and capillaries provide a short diffusion distance (1)\n• Rich blood supply maintains a steep concentration gradient for O₂ and CO₂ (1)\n• Ventilation maintains the concentration gradient by bringing in fresh air and removing stale air (1)"
+      },
+      {
+        "q": "Describe the process of transcription.",
+        "marks": 4,
+        "markScheme": "• RNA polymerase binds to the promoter region on the template/antisense strand of DNA (1)\n• The DNA double helix unwinds and hydrogen bonds between bases break (1)\n• Free RNA nucleotides align with complementary bases on the template strand (A with U, T with A, C with G, G with C) (1)\n• RNA polymerase joins the nucleotides together to form a pre-mRNA strand, which is then processed into mature mRNA (1)"
+      },
+      {
+        "q": "Describe the process of translation.",
+        "marks": 5,
+        "markScheme": "• mRNA binds to a ribosome at the start codon (AUG) (1)\n• tRNA molecules with complementary anticodons bring specific amino acids to the ribosome (1)\n• The ribosome moves along the mRNA, reading codons in sequence (1)\n• Peptide bonds form between adjacent amino acids, building a polypeptide chain (1)\n• Translation continues until a stop codon is reached and the polypeptide is released (1)"
+      },
+      {
+        "q": "Explain the role of the CFTR protein in healthy individuals.",
+        "marks": 3,
+        "markScheme": "• CFTR is a chloride ion channel protein located in epithelial cell membranes (1)\n• It allows chloride ions to move out of cells into the mucus / lumen (1)\n• Water follows by osmosis, keeping the mucus thin and fluid (1)"
+      },
+      {
+        "q": "Explain how a mutation in the CFTR gene causes the symptoms of cystic fibrosis.",
+        "marks": 4,
+        "markScheme": "• A deletion of three bases (most commonly ΔF508) results in a misfolded CFTR protein that is not inserted into the cell membrane (1)\n• Chloride ions cannot be transported out of epithelial cells (1)\n• Water is not drawn out by osmosis, resulting in thick, sticky mucus (1)\n• This mucus blocks airways, pancreatic ducts, and reproductive tracts, causing breathing difficulties, digestive problems, and infertility (1)"
+      },
+      {
+        "q": "State the meaning of the term genotype.",
+        "marks": 1,
+        "markScheme": "• The genetic makeup / combination of alleles an organism has for a particular gene (1)"
+      },
+      {
+        "q": "State the meaning of the term phenotype.",
+        "marks": 1,
+        "markScheme": "• The observable characteristics of an organism, resulting from the interaction of genotype and environment (1)"
+      },
+      {
+        "q": "A cross is carried out between two parents who are both carriers of cystic fibrosis (Cc × Cc). Draw a genetic diagram and state the probability of a child having cystic fibrosis.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• Correct parental genotypes identified: Cc × Cc (1)\n• Correct gametes shown: C and c from each parent (1)\n• Correct Punnett square: CC, Cc, Cc, cc (1)\n• Probability of affected child (cc) = 1 in 4 / 25% (1)"
+      },
+      {
+        "q": "Explain how an error during DNA replication can give rise to a mutation.",
+        "marks": 2,
+        "markScheme": "• During replication, a wrong nucleotide may be inserted opposite the template (incorrect base pairing), or a nucleotide may be added or missed out (1)\n• The altered base sequence is copied in later rounds of replication, so a permanent change in the base sequence / codons (a gene mutation) is passed to daughter cells (1)"
+      },
+      {
+        "q": "Explain why a substitution mutation may not always change the amino acid sequence of a protein.",
+        "marks": 2,
+        "markScheme": "• The genetic code is degenerate / redundant, meaning multiple codons can code for the same amino acid (1)\n• A substitution in the third base of a codon (wobble position) may still code for the same amino acid / silent mutation (1)"
+      },
+      {
+        "q": "Explain why a deletion mutation is usually more harmful than a substitution mutation.",
+        "marks": 3,
+        "markScheme": "• A deletion causes a frameshift, changing every codon downstream of the mutation (1)\n• This alters all subsequent amino acids in the polypeptide (1)\n• A substitution only affects one codon / one amino acid (unless it creates a stop codon), so the rest of the protein is unchanged (1)"
+      },
+      {
+        "q": "Describe the role of carrier proteins in facilitated diffusion.",
+        "marks": 3,
+        "markScheme": "• Carrier proteins are specific to particular molecules (1)\n• The molecule binds to the carrier protein, causing it to change shape (1)\n• The molecule is released on the other side of the membrane, moving down its concentration gradient without energy input (1)"
+      },
+      {
+        "q": "Describe the structure and function of channel proteins in cell membranes.",
+        "marks": 2,
+        "markScheme": "• Channel proteins form water-filled pores through the membrane (1)\n• They allow specific polar molecules or ions to pass through by facilitated diffusion down their concentration gradient (1)"
+      },
+      {
+        "q": "Explain how the structure of a tRNA molecule is related to its function in translation.",
+        "marks": 3,
+        "markScheme": "• Cloverleaf shape with an anticodon loop that is complementary to a specific mRNA codon (1)\n• An amino acid attachment site (3′ end / CCA sequence) carries the specific amino acid (1)\n• The specific shape ensures the correct amino acid is brought to the ribosome for each codon / specificity of the genetic code (1)"
+      },
+      {
+        "q": "Evaluate the arguments for and against genetic screening for cystic fibrosis.",
+        "marks": 6,
+        "markScheme": "• For: allows carriers to make informed decisions about having children (1)\n• For: early diagnosis enables early treatment, improving quality of life (1)\n• For: can reduce incidence of the condition in the population over time (1)\n• Against: may cause anxiety or psychological stress for individuals found to be carriers (1)\n• Against: raises ethical concerns about potential discrimination (insurance, employment) (1)\n• Against: risk of false positives/negatives; testing may lead to difficult decisions about pregnancy termination (1)"
+      },
+      {
+        "q": "Describe the differences between DNA and RNA.",
+        "marks": 3,
+        "markScheme": "• DNA contains deoxyribose sugar; RNA contains ribose sugar (1)\n• DNA is double-stranded; RNA is single-stranded (1)\n• DNA contains thymine; RNA contains uracil instead (1)"
+      },
+      {
+        "q": "Explain how the mutation in people with cystic fibrosis impairs the functioning of the gaseous exchange system.",
+        "marks": 4,
+        "markScheme": "• Faulty CFTR means less chloride secretion, so less water leaves the epithelial cells by osmosis and the mucus is thick and sticky (1)\n• Cilia cannot move the thick mucus, so it builds up and blocks bronchioles; fewer alveoli are ventilated, reducing the surface area for gas exchange (1)\n• The concentration gradient of oxygen is reduced / less oxygen diffuses into the blood, causing breathlessness (1)\n• Bacteria trapped in the mucus are not removed, causing frequent lung infections that damage / scar lung tissue and increase the diffusion distance (1)"
+      },
+      {
+        "q": "State what is meant by the term codon.",
+        "marks": 1,
+        "markScheme": "• A sequence of three bases / triplet on mRNA that codes for a specific amino acid (or stop signal) (1)"
+      },
+      {
+        "q": "Explain why the genetic code is described as non-overlapping and degenerate.",
+        "marks": 2,
+        "markScheme": "• Non-overlapping: each base is part of only one codon / the triplets are read one after another without sharing bases (1)\n• Degenerate: most amino acids are coded for by more than one codon / there are 64 codons for 20 amino acids (1)"
+      },
+      {
+        "q": "Describe how Fick’s law applies to gas exchange in the lungs.",
+        "marks": 3,
+        "markScheme": "• Rate of diffusion is proportional to surface area × concentration difference / thickness of membrane (1)\n• The alveoli provide a large surface area and thin walls to maximise the rate (1)\n• Ventilation and blood flow maintain a steep concentration gradient for O₂ and CO₂ (1)"
+      },
+      {
+        "q": "The surface area of a model gas exchange surface decreases from 60 to 45 units and its thickness increases from 0.5 µm to 0.6 µm. The concentration difference is unchanged. Use Fick's law to calculate the percentage change in the rate of diffusion.",
+        "marks": 3,
+        "markScheme": "• Fick's law: rate of diffusion ∝ (surface area × concentration difference) / thickness (1)\n• Relative rate before = 60 / 0.5 = 120; after = 45 / 0.6 = 75 (1)\n• Percentage change = (75 − 120) / 120 × 100 = −37.5% / a 37.5% decrease (1)"
+      },
+      {
+        "q": "Explain the effect of temperature on membrane permeability.",
+        "marks": 4,
+        "markScheme": "• At low temperatures, phospholipids are closely packed and membrane is less fluid / less permeable (1)\n• As temperature increases, kinetic energy increases, phospholipids move more, membrane becomes more fluid and permeable (1)\n• Above approximately 40°C, proteins begin to denature, disrupting channel and carrier protein function (1)\n• The phospholipid bilayer becomes very permeable / loses its integrity, and cell contents leak out (1)"
+      },
+      {
+        "q": "Draw a labelled diagram of the basic structure of an amino acid.",
+        "marks": 2,
+        "diagram": true,
+        "markScheme": "• Central carbon atom with an amino group (–NH₂) and a carboxyl group (–COOH) correctly drawn (1)\n• R group / variable side chain and hydrogen atom attached to the central carbon shown (1)"
+      },
+      {
+        "q": "Explain how a polypeptide chain folds to form a functional protein.",
+        "marks": 4,
+        "markScheme": "• Primary structure: the specific sequence of amino acids in the polypeptide chain (1)\n• Secondary structure: the chain folds into alpha-helices and beta-pleated sheets held by hydrogen bonds (1)\n• Tertiary structure: further folding into a 3D shape held by hydrogen bonds, ionic bonds, disulfide bridges, and hydrophobic interactions (1)\n• Quaternary structure (if applicable): two or more polypeptide chains associate to form the functional protein (1)"
+      },
+      {
+        "q": "Explain the role of enzymes in digestion of food in the small intestine.",
+        "marks": 3,
+        "markScheme": "• Enzymes are biological catalysts that lower the activation energy of reactions (1)\n• Specific enzymes (e.g. lipase, protease, amylase) hydrolyse large insoluble food molecules into smaller soluble molecules (1)\n• These smaller molecules (e.g. amino acids, fatty acids, glucose) can be absorbed across the intestinal wall into the blood (1)"
+      },
+      {
+        "q": "A couple are both carriers for cystic fibrosis. They already have one unaffected child. Calculate the probability that their next child will have cystic fibrosis.",
+        "marks": 2,
+        "markScheme": "• Each pregnancy is an independent event (1)\n• Probability = 1/4 / 25% (the previous child does not affect the probability for the next) (1)"
+      },
+      {
+        "q": "Compare amniocentesis and chorionic villus sampling (CVS) as methods of prenatal testing for cystic fibrosis.",
+        "marks": 4,
+        "markScheme": "• Both obtain fetal cells / fetal DNA that can be tested for the CF alleles (1)\n• Amniocentesis: a needle is passed through the abdominal wall to remove a sample of amniotic fluid containing fetal cells, usually at about 15–20 weeks (1)\n• CVS: a small sample of the chorionic villi (part of the placenta) is removed through the cervix or abdominal wall, at about 10–13 weeks, so results are available earlier (1)\n• Both carry a small risk of miscarriage (about 0.5–1%) (1)"
+      },
+      {
+        "q": "A prenatal test shows that a fetus has cystic fibrosis. Describe how three different ethical viewpoints could be applied to the parents' decision about whether to continue the pregnancy.",
+        "marks": 3,
+        "markScheme": "• Utilitarian: weigh up the overall balance of benefit and harm, e.g. the quality of life of the child and the effect on the family and society (1)\n• Rights / duty-based (deontological): the fetus may be considered to have a right to life, so termination is wrong whatever the consequences (1)\n• Autonomy / informed choice: the parents have the right to make their own informed decision, supported by genetic counselling without pressure (1)"
+      },
+      {
+        "q": "Draw and label a diagram showing the structure of a section of DNA, including at least two nucleotides on each strand.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• Two antiparallel strands shown with sugar-phosphate backbone on outside (1)\n• Correct complementary base pairs (A–T and C–G) shown between the strands (1)\n• Hydrogen bonds between bases indicated (two between A–T, three between C–G) (1)\n• Deoxyribose sugar, phosphate group, and bases correctly labelled on at least one nucleotide (1)"
+      },
+      {
+        "q": "Explain why membrane-bound receptors are important for cell signalling.",
+        "marks": 3,
+        "markScheme": "• Receptor proteins on the cell surface have a specific complementary shape to signalling molecules / ligands (1)\n• When a signalling molecule binds, it causes a conformational change in the receptor (1)\n• This triggers a response inside the cell (e.g. opening of ion channels, activation of enzymes, gene expression changes) (1)"
+      },
+      {
+        "q": "State the roles of the start codon and the stop codon in translation.",
+        "marks": 2,
+        "markScheme": "• Start codon (AUG): the point at which translation begins / codes for the first amino acid (methionine) (1)\n• Stop codon: does not code for an amino acid, so translation ends and the polypeptide is released from the ribosome (1)"
+      },
+      {
+        "q": "Describe the process of exocytosis.",
+        "marks": 3,
+        "markScheme": "• Substances to be secreted (e.g. mucus glycoproteins or enzymes) are packaged into vesicles, e.g. by the Golgi apparatus (1)\n• The vesicles move to the cell surface membrane and their membrane fuses with it (1)\n• The contents are released outside the cell; the process requires energy from ATP (1)"
+      },
+      {
+        "q": "Explain the ethical issues surrounding preimplantation genetic diagnosis (PGD).",
+        "marks": 4,
+        "markScheme": "• PGD involves testing embryos created by IVF for genetic conditions before implantation (1)\n• Allows selection of unaffected embryos, reducing the chance of a child inheriting a genetic condition (1)\n• Ethical concerns: destruction of embryos carrying the condition raises questions about the moral status of embryos (1)\n• Could lead to \"designer babies\" / selection for non-medical traits; raises issues of equality and access (1)"
+      },
+      {
+        "q": "Explain the role of ATP in active transport.",
+        "marks": 3,
+        "markScheme": "• The substance / ion binds to a specific carrier protein in the membrane (1)\n• ATP is hydrolysed to ADP and phosphate, releasing energy / the phosphate attaches to the carrier protein (1)\n• This causes the carrier protein to change shape, moving the substance across the membrane against its concentration gradient; ATP is the immediate source of energy (1)"
+      },
+      {
+        "q": "Outline the role of mRNA, tRNA and ribosomes in protein synthesis.",
+        "marks": 3,
+        "markScheme": "• mRNA carries the genetic code from the DNA in the nucleus to the ribosome in the cytoplasm (1)\n• Ribosomes read the mRNA codons and provide the site where amino acids are assembled into polypeptides (1)\n• tRNA molecules carry specific amino acids to the ribosome, matching their anticodon to the mRNA codon (1)"
+      },
+      {
+        "q": "Describe how to investigate the effect of substrate concentration on enzyme activity using catalase and hydrogen peroxide.",
+        "marks": 4,
+        "markScheme": "• Prepare a range of hydrogen peroxide concentrations (e.g. using serial dilution) (1)\n• Add a fixed amount of catalase (e.g. potato extract) to each concentration and collect the oxygen gas produced using a gas syringe or inverted measuring cylinder (1)\n• Measure the volume of gas produced at fixed time intervals (1)\n• Control variables: temperature, pH, volume of enzyme, and total volume of reaction mixture (1)"
+      },
+      {
+        "q": "Explain how the structure of the phospholipid bilayer acts as a barrier to most water-soluble substances.",
+        "marks": 2,
+        "markScheme": "• The hydrophobic fatty acid tails of the phospholipids form the interior of the bilayer (1)\n• Polar / charged / water-soluble molecules cannot pass through the hydrophobic core, so require transport proteins (1)"
+      }
     ]
   },
-  'T3': {
-    name: 'Exchange, Transport and Reproduction',
-    questions: [
-      {q: 'State the name of the blood vessel that carries deoxygenated blood from the heart to the lungs.', marks: 1, markScheme: 'Pulmonary artery (1)'},
-      {q: 'Name the structure that prevents backflow of blood in veins.', marks: 1, markScheme: 'Valves (1)'},
-      {q: 'State the tissue in plants that transports water and mineral ions.', marks: 1, markScheme: 'Xylem (1)'},
-      {q: 'Name the gas exchange surface in fish.', marks: 1, markScheme: 'Gills / gill filaments / lamellae (1)'},
-      {q: 'State one adaptation of alveoli for efficient gas exchange.', marks: 1, markScheme: 'Large surface area / thin walls (one cell thick) / rich blood supply / moist surface (any one) (1)'},
-      {q: 'State what is meant by the term double circulatory system.', marks: 1, markScheme: 'Blood passes through the heart twice for each complete circuit of the body; once to the lungs (pulmonary) and once to the body (systemic) (1)'},
-      {q: 'Describe how the structure of an artery is related to its function.', marks: 3, markScheme: 'Thick muscular wall with elastic fibres to withstand and maintain high blood pressure from ventricular contraction (1). Elastic fibres stretch and recoil to smooth blood flow (1). Narrow lumen relative to wall thickness helps maintain high pressure (1).'},
-      {q: 'Explain how a countercurrent system in fish gills maximises gas exchange.', marks: 3, markScheme: 'Blood flows in the opposite direction to water across the gill lamellae (1). This maintains a concentration gradient for oxygen along the entire length of the lamella (1). So diffusion of oxygen from water into blood occurs continuously, achieving a higher percentage extraction than if flow were parallel (1).'},
-      {q: 'Describe the pathway of blood through the heart.', marks: 4, markScheme: 'Deoxygenated blood enters the right atrium via the vena cava (1). Passes through the tricuspid valve into the right ventricle which pumps it to the lungs via the pulmonary artery (1). Oxygenated blood returns via the pulmonary vein to the left atrium (1). Passes through the bicuspid/mitral valve into the left ventricle which pumps it out through the aorta to the body (1).'},
-      {q: 'Explain how the structure of the left ventricle is adapted for its function.', marks: 2, markScheme: 'Thicker muscular wall compared to the right ventricle (1). This generates higher pressure needed to pump blood around the entire systemic circulation to all body organs (1).'},
-      {q: 'Describe how water moves from the soil into the xylem of a root.', marks: 4, markScheme: 'Water enters root hair cells by osmosis down a water potential gradient from the soil (1). Water moves across the cortex via the symplast pathway (through cytoplasm and plasmodesmata) and the apoplast pathway (through cell walls) (1). At the endodermis, the Casparian strip blocks the apoplast pathway, forcing water through the symplast (1). Water enters the xylem by osmosis and is pulled upward by the transpiration stream (1).'},
-      {q: 'Explain the transpiration-cohesion-tension theory of water transport in plants.', marks: 4, markScheme: 'Water evaporates from mesophyll cells into air spaces in the leaf and diffuses out through stomata (transpiration) (1). This creates a tension (negative pressure) in the xylem (1). Water molecules are cohesive due to hydrogen bonding, forming a continuous column in the xylem (1). The tension pulls the entire water column upward from the roots, and adhesion of water molecules to xylem walls prevents the column from breaking (1).'},
-      {q: 'Compare the structure and function of xylem and phloem.', marks: 4, markScheme: 'Xylem transports water and mineral ions upward; phloem transports sucrose and amino acids both up and down (1). Xylem vessels are dead, hollow and lignified; phloem sieve tubes are living with sieve plates and companion cells (1). Xylem transport is passive driven by transpiration; phloem transport (translocation) requires ATP / is active (1). Xylem vessels have no end walls for continuous flow; phloem sieve tube elements have perforated sieve plates (1).'},
-      {q: 'Explain how insects obtain oxygen despite lacking lungs.', marks: 3, markScheme: 'Air enters through spiracles on the body surface (1). It passes through a network of tracheae which branch into smaller tracheoles (1). Tracheoles penetrate directly into tissues and gas exchange occurs by diffusion across the thin, moist tracheole walls directly with cells (1).'},
-      {q: 'Describe the role of the sinoatrial node in controlling heart rate.', marks: 3, markScheme: 'The SAN is the pacemaker located in the wall of the right atrium (1). It generates electrical impulses that spread across both atria causing atrial contraction (atrial systole) (1). The impulse is delayed at the atrioventricular node (AVN) before being transmitted via the bundle of His and Purkinje fibres causing ventricular contraction from the apex upward (1).'},
-      {q: 'Explain how the cardiac cycle is coordinated.', marks: 4, markScheme: 'The SAN initiates an electrical impulse causing atrial systole (1). The AVN delays the impulse slightly to allow the atria to empty before the ventricles contract (1). The impulse travels down the bundle of His through the septum to the Purkinje fibres (1). This causes ventricular systole from the apex upward, pushing blood into the arteries, followed by diastole when the heart relaxes and fills with blood (1).'},
-      {q: 'Describe the mass flow hypothesis (pressure flow) of translocation in phloem.', marks: 4, markScheme: 'At the source (e.g. leaf), sucrose is actively loaded into sieve tube elements by companion cells using ATP (1). This lowers the water potential in the sieve tube so water enters by osmosis from nearby xylem, raising the hydrostatic pressure (1). At the sink (e.g. root), sucrose is removed from the sieve tube for use, water potential rises and water leaves by osmosis (1). The difference in hydrostatic pressure between source and sink drives mass flow of sap from source to sink (1).'},
-      {q: 'Describe the adaptations of a leaf for gas exchange.', marks: 3, markScheme: 'Thin flat shape provides a short diffusion distance and large surface area (1). Stomata (mainly on the lower epidermis) allow gas exchange with the atmosphere; guard cells control their opening (1). Spongy mesophyll has many air spaces increasing the internal surface area for gas exchange between cells and the air (1).'},
-      {q: 'Explain the role of guard cells in regulating gas exchange in plants.', marks: 3, markScheme: 'Guard cells control the opening and closing of stomata (1). When guard cells take up water by osmosis they become turgid and their uneven thickening causes them to bow apart, opening the stoma for gas exchange (1). When water is lost, guard cells become flaccid and the stoma closes, reducing water loss during transpiration (1).'},
-      {q: 'Describe the structure and function of capillaries.', marks: 3, markScheme: 'Walls are one cell thick (one endothelial cell) providing a very short diffusion distance (1). Very narrow lumen (just wide enough for red blood cells) slows blood flow allowing more time for exchange (1). Permeable walls allow exchange of substances such as oxygen, glucose, carbon dioxide and urea between blood and tissues (1).'},
-      {q: 'Draw a labelled diagram of the heart showing all four chambers, major blood vessels and valves.', marks: 4, markScheme: 'Four chambers correctly drawn and labelled: right atrium, right ventricle, left atrium, left ventricle with left ventricle wall thicker (1). Vena cava entering right atrium and pulmonary artery leaving right ventricle correctly shown (1). Pulmonary vein entering left atrium and aorta leaving left ventricle correctly shown (1). Tricuspid and bicuspid valves and semilunar valves shown in correct positions (1).', diagram: true},
-      {q: 'Sketch a graph showing the pressure changes in the left atrium, left ventricle and aorta during one cardiac cycle.', marks: 4, markScheme: 'X-axis labelled time (s), y-axis labelled pressure (kPa); all three curves shown on the same axes (1). Left ventricle pressure rises sharply during systole and exceeds aorta pressure, then falls during diastole (1). Aorta pressure remains relatively high throughout with a slight dip and then maintained by elastic recoil (1). Left atrial pressure remains low throughout with a slight rise when atria fill; valves open and close at correct crossover points (1).', diagram: true},
-      {q: 'Describe how you would investigate the effect of light intensity on the rate of transpiration using a potometer.', marks: 4, markScheme: 'Set up a potometer with a cut shoot ensuring all joints are sealed and no air bubbles are present (1). Record the position of the air bubble or meniscus and time how far it moves in a given period (1). Repeat at different distances from a lamp to vary light intensity, keeping temperature and humidity constant (1). Calculate the rate of water uptake at each light intensity; greater light intensity is expected to increase the rate of transpiration (1).'},
-      {q: 'Explain how the structure of veins differs from arteries and relate these differences to function.', marks: 3, markScheme: 'Veins have thinner walls with less muscle and elastic tissue because blood is at low pressure (1). Veins have a wider lumen to reduce resistance and accommodate a larger volume of blood (1). Veins contain valves to prevent backflow of blood and ensure blood flows toward the heart, aided by the squeezing action of surrounding skeletal muscles (1).'},
-      {q: 'Explain what is meant by Fick\'s law of diffusion and how it applies to gas exchange surfaces.', marks: 3, markScheme: 'Rate of diffusion is proportional to (surface area x concentration difference) / thickness of exchange surface (1). Gas exchange surfaces have large surface areas and thin walls to maximise the rate of diffusion (1). A steep concentration gradient is maintained by ventilation and blood flow, further increasing the rate of gas exchange (1).'},
-      {q: 'Describe the process of pollination and fertilisation in flowering plants.', marks: 4, markScheme: 'Pollen is transferred from the anther to the stigma of the same species by wind or insects (pollination) (1). The pollen grain germinates and a pollen tube grows down through the style toward the ovule (1). The pollen tube enters the ovule through the micropyle and the male gamete nucleus fuses with the female egg cell nucleus (fertilisation) (1). The fertilised ovule develops into a seed and the ovary develops into a fruit (1).'},
-      {q: 'Explain the advantages of a double circulatory system compared to a single circulatory system.', marks: 3, markScheme: 'Blood pressure is raised as blood passes through the heart a second time after the lungs (1). This means blood reaches body tissues at a higher pressure and faster rate (1). This delivers oxygen and glucose more quickly to tissues, supporting a higher metabolic rate in mammals (1).'},
-      {q: 'Describe how environmental factors affect the rate of transpiration.', marks: 4, markScheme: 'Increased temperature increases the kinetic energy of water molecules, increasing the rate of evaporation from mesophyll cells (1). Lower humidity increases the water potential gradient between the leaf air spaces and the external atmosphere (1). Increased wind speed removes water vapour from around the leaf surface, maintaining a steep diffusion gradient (1). Increased light intensity causes stomata to open wider, allowing more water vapour to escape (1).'},
-      {q: 'Explain the role of haemoglobin in oxygen transport.', marks: 3, markScheme: 'Haemoglobin in red blood cells binds to oxygen at the gas exchange surface in the lungs where pO2 is high, forming oxyhaemoglobin (1). Each haemoglobin molecule can carry up to four oxygen molecules (1). At respiring tissues where pO2 is low, oxyhaemoglobin dissociates releasing oxygen for aerobic respiration (1).'},
-      {q: 'Describe the Bohr effect and explain its significance.', marks: 3, markScheme: 'At higher concentrations of carbon dioxide, the oxygen dissociation curve shifts to the right (1). This means haemoglobin has a lower affinity for oxygen at any given partial pressure of oxygen (1). More oxygen is released to actively respiring tissues which produce more carbon dioxide, ensuring oxygen delivery matches metabolic demand (1).'},
-      {q: 'Draw a labelled diagram of the gas exchange system in a bony fish, showing the arrangement of gill filaments and lamellae.', marks: 3, markScheme: 'Gill arches shown with gill filaments extending from them (1). Lamellae shown as thin plate-like structures on the filaments with large surface area (1). Direction of water flow and blood flow shown in opposite directions (countercurrent) with labels (1).', diagram: true},
-      {q: 'Sketch the oxygen dissociation curve for adult haemoglobin and foetal haemoglobin on the same axes.', marks: 3, markScheme: 'Axes correctly labelled: x-axis partial pressure of oxygen (pO2), y-axis percentage saturation of haemoglobin with oxygen (1). Both curves shown as sigmoid/S-shaped (1). Foetal haemoglobin curve shown to the left of the adult curve indicating a higher affinity for oxygen at any given pO2 (1).', diagram: true},
-      {q: 'Describe the adaptations of the tracheal system in insects for gas exchange.', marks: 3, markScheme: 'Spiracles can be opened and closed to regulate water loss (1). Tracheae are reinforced with chitin rings to prevent collapse (1). Tracheoles have thin walls, are fluid-filled at the tips and penetrate close to individual cells providing a large surface area and short diffusion distance (1).'},
-      {q: 'Explain how sucrose is loaded into the phloem at the source.', marks: 3, markScheme: 'Companion cells use ATP to actively pump hydrogen ions out of their cells into the surrounding tissue (1). Hydrogen ions flow back into the companion cell through cotransporter proteins, bringing sucrose with them (1). Sucrose passes from companion cells into sieve tube elements through plasmodesmata (1).'},
-      {q: 'Explain why the heart has its own blood supply through the coronary arteries.', marks: 2, markScheme: 'The heart muscle contracts continuously and has a high metabolic rate requiring a constant supply of oxygen and glucose (1). The coronary arteries branch from the aorta to supply the cardiac muscle directly; the blood inside the heart chambers is not sufficient to meet this demand (1).'},
-      {q: 'Describe the structure of a red blood cell and explain how it is adapted for oxygen transport.', marks: 3, markScheme: 'Biconcave disc shape gives a large surface area to volume ratio for rapid diffusion of oxygen (1). No nucleus or organelles providing more space for haemoglobin molecules (1). Thin and flexible so it can squeeze through narrow capillaries to deliver oxygen close to tissues (1).'},
-      {q: 'Explain the role of the endodermis and Casparian strip in the root.', marks: 3, markScheme: 'The endodermis is a single layer of cells surrounding the vascular bundle in the root (1). The Casparian strip is a waxy band of suberin in the endodermal cell walls that blocks the apoplast pathway (1). This forces water and dissolved minerals through the symplast pathway allowing the endodermis to selectively control which minerals enter the xylem by active transport (1).'},
-      {q: 'Suggest why plants in hot dry environments often have thick waxy cuticles and sunken stomata.', marks: 3, markScheme: 'A thick waxy cuticle is waterproof and reduces water loss by evaporation from the leaf surface (1). Sunken stomata create a pocket of humid air around the stoma reducing the water potential gradient and slowing transpiration (1). These adaptations help the plant conserve water and survive in conditions where water is scarce (1).'},
-      {q: 'Describe the role of the atrioventricular node in the cardiac cycle.', marks: 2, markScheme: 'The AVN receives the electrical impulse from the SAN after it has spread across the atria (1). It delays the impulse for approximately 0.13 seconds to allow the atria to fully contract and empty blood into the ventricles before ventricular systole begins (1).'},
-      {q: 'Explain why plants growing in waterlogged soil may wilt even though water is available.', marks: 3, markScheme: 'Waterlogged soil lacks oxygen so root cells cannot respire aerobically (1). Without ATP, active transport of mineral ions into the root is reduced, and root hair cells may be damaged (1). Reduced mineral uptake lowers the water potential gradient, and damaged roots cannot absorb water effectively, causing wilting (1).'}
+  "S3": {
+    "name": "Voice of the Genome",
+    "questions": [
+      {
+        "q": "State what is meant by the cell cycle.",
+        "marks": 1,
+        "markScheme": "• The sequence of events that takes place in a cell, resulting in cell division and the production of two daughter cells (1)"
+      },
+      {
+        "q": "Describe the stages of the cell cycle.",
+        "marks": 3,
+        "markScheme": "• Interphase: the cell grows, replicates its DNA, and prepares for division (G1, S, G2 phases) (1)\n• Mitosis: the nucleus divides into two genetically identical nuclei (prophase, metaphase, anaphase, telophase) (1)\n• Cytokinesis: the cytoplasm divides, producing two separate daughter cells (1)"
+      },
+      {
+        "q": "Describe the events that occur during the S phase of interphase.",
+        "marks": 2,
+        "markScheme": "• DNA replication occurs / each chromosome is copied to form two identical sister chromatids (1)\n• Sister chromatids are joined at the centromere (1)"
+      },
+      {
+        "q": "Describe the events of mitosis in the correct order.",
+        "marks": 4,
+        "markScheme": "• Prophase: chromosomes condense and become visible, nuclear envelope breaks down, spindle fibres form from centrioles (1)\n• Metaphase: chromosomes line up at the cell equator / metaphase plate, attached to spindle fibres at their centromeres (1)\n• Anaphase: centromeres divide and sister chromatids are pulled to opposite poles by shortening spindle fibres (1)\n• Telophase: chromatids reach the poles, nuclear envelopes reform around each set, chromosomes decondense (1)"
+      },
+      {
+        "q": "Explain the importance of mitosis.",
+        "marks": 3,
+        "markScheme": "• Produces two genetically identical daughter cells for growth and repair of tissues (1)\n• Maintains the diploid chromosome number (1)\n• Ensures genetic consistency / all body cells have the same genome (1)"
+      },
+      {
+        "q": "Compare mitosis and meiosis.",
+        "marks": 6,
+        "markScheme": "• Mitosis produces 2 daughter cells; meiosis produces 4 (1)\n• Mitosis produces diploid cells; meiosis produces haploid cells (1)\n• Mitosis produces genetically identical cells; meiosis produces genetically different cells (1)\n• Mitosis involves one division; meiosis involves two divisions (meiosis I and II) (1)\n• Crossing over occurs in meiosis (prophase I) but not in mitosis (1)\n• Independent assortment of homologous pairs occurs in meiosis I but not in mitosis (1)"
+      },
+      {
+        "q": "Explain how meiosis produces genetic variation.",
+        "marks": 4,
+        "markScheme": "• Crossing over in prophase I: homologous chromosomes exchange genetic material at chiasmata, producing recombinant chromatids (1)\n• Independent assortment in metaphase I: homologous pairs line up randomly at the equator, so different combinations of maternal and paternal chromosomes are distributed to daughter cells (1)\n• Random fertilisation: any sperm can fuse with any egg, combining two unique sets of chromosomes (1)\n• These processes together produce offspring with unique combinations of alleles (1)"
+      },
+      {
+        "q": "State what is meant by the term stem cell.",
+        "marks": 2,
+        "markScheme": "• An undifferentiated cell (1)\n• That can divide to produce more stem cells (self-renew) and differentiate into specialised cell types (1)"
+      },
+      {
+        "q": "Explain the difference between totipotent, pluripotent and multipotent stem cells.",
+        "marks": 3,
+        "markScheme": "• Totipotent cells can differentiate into any cell type, including extra-embryonic tissues (e.g. placenta); found in early embryo up to 8-cell stage (1)\n• Pluripotent cells can differentiate into any cell type of the body but not extra-embryonic tissues; found in the inner cell mass of the blastocyst (1)\n• Multipotent cells can only differentiate into a limited range of cell types within a particular tissue; found in adults, e.g. haematopoietic stem cells (1)"
+      },
+      {
+        "q": "Explain how cells become specialised through differentiation.",
+        "marks": 3,
+        "markScheme": "• All body cells contain the same genome / same DNA (1)\n• During differentiation, specific genes are switched on / expressed while others are switched off (1)\n• This produces specific proteins that give the cell its specialised structure and function (1)"
+      },
+      {
+        "q": "Describe the role of transcription factors in gene expression.",
+        "marks": 3,
+        "markScheme": "• Transcription factors are proteins that bind to specific DNA sequences near the promoter region of a gene (1)\n• They can activate transcription by helping RNA polymerase bind to the promoter (activators) (1)\n• Or they can repress transcription by blocking RNA polymerase binding (repressors) (1)"
+      },
+      {
+        "q": "Explain what is meant by epigenetics.",
+        "marks": 3,
+        "markScheme": "• Epigenetics refers to heritable changes in gene expression that do not involve changes to the DNA base sequence (1)\n• These changes are caused by modifications such as DNA methylation (adding methyl groups to DNA) or histone modification (1)\n• These modifications can switch genes on or off and can be influenced by environmental factors (1)"
+      },
+      {
+        "q": "Explain how DNA methylation can silence a gene.",
+        "marks": 3,
+        "markScheme": "• Methyl groups are added to cytosine bases in the DNA, often at CpG islands near promoter regions (1)\n• Methylation prevents transcription factors / RNA polymerase from binding to the promoter (1)\n• The gene is not transcribed and the protein it codes for is not produced (1)"
+      },
+      {
+        "q": "Explain how histone modification affects gene expression.",
+        "marks": 3,
+        "markScheme": "• DNA is wrapped around histone proteins to form chromatin (1)\n• Acetylation of histones loosens the DNA-histone association, making DNA more accessible to transcription factors / increasing transcription (1)\n• Deacetylation / methylation of histones tightens the DNA-histone association, making DNA less accessible / decreasing transcription (1)"
+      },
+      {
+        "q": "Describe the process of fertilisation in mammals.",
+        "marks": 4,
+        "markScheme": "• Acrosome reaction: when the sperm reaches the zona pellucida, the acrosome releases digestive enzymes (1)\n• The enzymes digest the zona pellucida, and the sperm cell membrane fuses with the egg cell membrane (1)\n• Cortical reaction: cortical granules release their contents, so the zona pellucida thickens / hardens, preventing further sperm entering / polyspermy (1)\n• The sperm nucleus enters the egg and fuses with the egg nucleus, forming a diploid zygote (1)"
+      },
+      {
+        "q": "Explain how a mammalian egg cell is specialised for its function.",
+        "marks": 3,
+        "markScheme": "• Large cytoplasm containing food stores / nutrients for the early embryo (1)\n• Zona pellucida: glycoprotein layer that sperm must penetrate, which hardens after fertilisation to prevent polyspermy (1)\n• Cortical granules beneath the cell membrane release their contents in the cortical reaction / haploid nucleus so the diploid number is restored at fertilisation (1)"
+      },
+      {
+        "q": "Draw and label a diagram showing the stages of mitosis in an animal cell.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• Prophase: condensed chromosomes visible, spindle forming, no nuclear envelope (1)\n• Metaphase: chromosomes aligned at the equator, attached to spindle fibres at centromeres (1)\n• Anaphase: sister chromatids separating and moving to opposite poles (1)\n• Telophase: two groups of chromosomes at poles, nuclear envelopes reforming, cell beginning to divide (1)"
+      },
+      {
+        "q": "Suggest how environmental factors can influence phenotype through epigenetic mechanisms.",
+        "marks": 3,
+        "markScheme": "• Diet, stress, toxins, or temperature can cause epigenetic changes such as DNA methylation or histone modification (1)\n• These changes alter gene expression without changing the DNA sequence (1)\n• Example: identical twins may develop different phenotypes due to different environmental exposures causing different epigenetic patterns (1)"
+      },
+      {
+        "q": "Evaluate the use of embryonic stem cells in medical research and treatment.",
+        "marks": 6,
+        "markScheme": "• Advantage: pluripotent, so can differentiate into almost any cell type for treating diseases such as Parkinson’s, diabetes, spinal cord injuries (1)\n• Advantage: could provide a source of replacement cells/tissues, reducing the need for organ transplants (1)\n• Advantage: can be used to study developmental biology and test drug efficacy (1)\n• Disadvantage: destruction of embryos raises ethical concerns about the moral status of the embryo (1)\n• Disadvantage: risk of immune rejection if donor cells are not matched to the patient (1)\n• Disadvantage: risk of uncontrolled cell division / tumour formation if differentiation is not properly controlled (1)"
+      },
+      {
+        "q": "Explain the debate surrounding nature vs nurture in determining phenotype.",
+        "marks": 4,
+        "markScheme": "• Nature: genes inherited from parents determine many characteristics (e.g. eye colour, blood group) (1)\n• Nurture: environmental factors (diet, lifestyle, experience) also influence phenotype (1)\n• Many characteristics are influenced by both (e.g. height has a genetic component but is also affected by nutrition) (1)\n• Epigenetic mechanisms provide a link between nature and nurture, showing how environment can alter gene expression without changing DNA (1)"
+      },
+      {
+        "q": "Explain why cells in G0 phase do not divide.",
+        "marks": 2,
+        "markScheme": "• G0 is a quiescent / resting phase where the cell has exited the cell cycle (1)\n• The cell carries out its normal functions but does not replicate its DNA or prepare for division; some cells (e.g. neurones) remain in G0 permanently (1)"
+      },
+      {
+        "q": "Describe the role of the rough endoplasmic reticulum and the Golgi apparatus in the production and secretion of an extracellular enzyme.",
+        "marks": 3,
+        "markScheme": "• Ribosomes on the rER synthesise the protein, which enters the rER lumen, where it is folded and transported (1)\n• Vesicles bud off the rER and fuse with the Golgi apparatus, where the protein is modified, e.g. carbohydrate added (1)\n• The Golgi packages the enzyme into vesicles that move to and fuse with the cell surface membrane, releasing it by exocytosis (1)"
+      },
+      {
+        "q": "State the function of two of the following structures in a prokaryotic cell: capsule, pili, flagellum, plasmid.",
+        "marks": 2,
+        "markScheme": "• Any two from:\n• Capsule: protects the cell / helps prevent drying out / helps it avoid being engulfed by phagocytes (1)\n• Pili: attach the cell to surfaces or other cells / used to transfer DNA between cells (1)\n• Flagellum: rotates to move the cell (1)\n• Plasmid: small circular DNA carrying extra genes, e.g. for antibiotic resistance (1)"
+      },
+      {
+        "q": "Explain what is meant by linked genes, and explain why linked genes are not always inherited together.",
+        "marks": 3,
+        "markScheme": "• Linked genes are located on the same chromosome (1)\n• So they tend to be inherited together / do not assort independently in meiosis (1)\n• Crossing over between chromatids in meiosis can separate the alleles, producing recombinant gametes; the further apart the loci, the more likely this is (1)"
+      },
+      {
+        "q": "Describe how to use a light microscope to observe the stages of mitosis in a root tip squash.",
+        "marks": 4,
+        "markScheme": "• Cut 1–2 cm of root tip and place in warm hydrochloric acid to separate cells / break down middle lamellae (1)\n• Place on a microscope slide, add a stain (e.g. acetic orcein / toluidine blue) to make chromosomes visible (1)\n• Squash the root tip gently with a coverslip to spread cells into a single layer (1)\n• Observe under the microscope and identify cells at different stages of mitosis (1)"
+      },
+      {
+        "q": "Calculate the mitotic index if 24 out of 120 cells observed are undergoing mitosis.",
+        "marks": 2,
+        "markScheme": "• Mitotic index = number of cells in mitosis / total number of cells (1)\n• = 24 / 120 = 0.20 / 20% (1)"
+      },
+      {
+        "q": "Explain why meiosis is necessary for sexual reproduction.",
+        "marks": 3,
+        "markScheme": "• Meiosis produces haploid gametes (n) from diploid cells (2n) (1)\n• When two haploid gametes fuse at fertilisation, the diploid number is restored in the zygote (1)\n• Without meiosis, chromosome number would double with each generation (1)"
+      },
+      {
+        "q": "Describe the process of differentiation in a zygote developing into a multicellular organism.",
+        "marks": 3,
+        "markScheme": "• The zygote divides by mitosis, initially producing identical cells (1)\n• As development proceeds, cells begin to express different genes in response to signalling molecules / positional information (1)\n• This leads to different cell types with specialised structures and functions (e.g. neurones, muscle cells, epithelial cells) (1)"
+      },
+      {
+        "q": "Draw a labelled diagram showing crossing over during meiosis I.",
+        "marks": 3,
+        "diagram": true,
+        "markScheme": "• Homologous pair of chromosomes shown synapsed / as a bivalent (1)\n• Chiasma / point of crossover shown where non-sister chromatids exchange segments (1)\n• Resulting recombinant chromatids correctly shown with exchanged sections (1)"
+      },
+      {
+        "q": "Explain why adult stem cells are more limited in their use than embryonic stem cells.",
+        "marks": 2,
+        "markScheme": "• Adult stem cells are multipotent, meaning they can only differentiate into a limited range of cell types within their tissue of origin (1)\n• Embryonic stem cells are pluripotent, so can become almost any cell type, making them more versatile for medical applications (1)"
+      },
+      {
+        "q": "Haemophilia is caused by a recessive allele on the X chromosome. Explain why haemophilia is more common in males than in females.",
+        "marks": 3,
+        "markScheme": "• The gene is sex-linked / carried on the X chromosome, with no corresponding locus on the Y chromosome (1)\n• Males (XY) have only one X chromosome, so a single recessive allele is expressed / there is no second allele to mask it (1)\n• Females (XX) must inherit two recessive alleles to have the condition, which is less likely; heterozygous females are carriers (1)"
+      },
+      {
+        "q": "Explain what is meant by the term genome.",
+        "marks": 1,
+        "markScheme": "• The entire set of DNA / genetic information in an organism, including all genes and non-coding sequences (1)"
+      },
+      {
+        "q": "State why all cells in an organism contain the same genes but have different structures and functions.",
+        "marks": 2,
+        "markScheme": "• All cells arise from the same zygote by mitosis, so they have identical DNA (1)\n• Different genes are expressed in different cell types due to differential gene expression / regulation (1)"
+      },
+      {
+        "q": "Explain how induced pluripotent stem cells (iPS cells) are produced and why they are significant.",
+        "marks": 4,
+        "markScheme": "• Adult differentiated cells (e.g. skin cells) are reprogrammed by introducing specific transcription factors / genes (1)\n• These factors reset the gene expression pattern, returning the cell to a pluripotent state (1)\n• iPS cells can differentiate into many cell types, similar to embryonic stem cells (1)\n• They are significant because they avoid the ethical issues of using embryos and can be patient-specific, reducing immune rejection (1)"
+      },
+      {
+        "q": "Describe how the lac operon is regulated in bacteria.",
+        "marks": 4,
+        "markScheme": "• In the absence of lactose, a repressor protein binds to the operator region, blocking RNA polymerase from transcribing the structural genes (1)\n• When lactose is present, it binds to the repressor and changes its shape so it can no longer bind the operator (1)\n• RNA polymerase can now transcribe the structural genes for lactose metabolism (1)\n• This is an example of gene regulation in prokaryotes by induction (1)"
+      },
+      {
+        "q": "Explain what is meant by continuous variation and how polygenic inheritance can give rise to it.",
+        "marks": 2,
+        "markScheme": "• Continuous variation: a range of phenotypes between two extremes with no distinct categories, e.g. height / mass (1)\n• Many genes at different loci each contribute to the phenotype, and the environment also has an effect, giving many intermediate phenotypes (1)"
+      },
+      {
+        "q": "Describe how X-inactivation demonstrates epigenetic gene regulation.",
+        "marks": 3,
+        "markScheme": "• In female mammals, one X chromosome in each cell is randomly inactivated early in development (1)\n• The inactivated X is heavily methylated and condensed into a Barr body, preventing gene expression (1)\n• This is an epigenetic mechanism because the DNA sequence is unchanged but gene expression is altered; the pattern is maintained through cell divisions (1)"
+      },
+      {
+        "q": "In a root tip squash, a student counted 18 cells in mitosis out of 150 cells in one field of view. Calculate the mitotic index and suggest one reason why this result may not be representative of the root tip.",
+        "marks": 3,
+        "markScheme": "• Mitotic index = number of cells in mitosis / total number of cells = 18 / 150 (1)\n• = 0.12 (1)\n• Only one field of view / one region / one root tip was counted, so count several fields of view and several root tips and calculate a mean (1)"
+      },
+      {
+        "q": "Explain why organisms produced by cloning are genetically identical but may still show phenotypic variation.",
+        "marks": 2,
+        "markScheme": "• Clones have identical DNA / genotype (1)\n• Environmental factors and epigenetic differences (e.g. different methylation patterns) can cause differences in gene expression and therefore phenotype (1)"
+      },
+      {
+        "q": "Using named examples from plants, explain how cells are organised into tissues, tissues into organs and organs into systems.",
+        "marks": 3,
+        "markScheme": "• A tissue is a group of similar cells working together to perform a function, e.g. xylem / palisade mesophyll (1)\n• An organ is made of several tissues working together, e.g. a leaf / stem / root (1)\n• An organ system is a group of organs working together, e.g. the shoot system / root system (1)"
+      }
     ]
   },
-  'T4': {
-    name: 'Energy, Environment and Microbiology',
-    questions: [
-      {q: 'State the site of the light-dependent reactions of photosynthesis.', marks: 1, markScheme: 'Thylakoid membranes (1)'},
-      {q: 'Name the product of the Calvin cycle that is used to synthesise glucose.', marks: 1, markScheme: 'Glyceraldehyde 3-phosphate / G3P / triose phosphate (1)'},
-      {q: 'State where glycolysis occurs in the cell.', marks: 1, markScheme: 'Cytoplasm (1)'},
-      {q: 'Name the electron carrier reduced during the Krebs cycle.', marks: 1, markScheme: 'NAD / FAD (1)'},
-      {q: 'State the net ATP yield from one molecule of glucose undergoing glycolysis.', marks: 1, markScheme: '2 ATP (net) (1)'},
-      {q: 'State what is meant by the term gross primary productivity.', marks: 1, markScheme: 'The total rate of energy fixed by producers through photosynthesis in a given area per unit time (1)'},
-      {q: 'Describe the role of photolysis in the light-dependent reactions.', marks: 2, markScheme: 'Water molecules are split using light energy absorbed by photosystem II (1). This produces hydrogen ions (protons), electrons (which replace those lost from PSII) and oxygen as a by-product (1).'},
-      {q: 'Describe the process of glycolysis.', marks: 3, markScheme: 'Glucose (6C) is phosphorylated using 2 ATP to form hexose bisphosphate (1). Hexose bisphosphate is split into two molecules of triose phosphate (3C) (1). Each triose phosphate is oxidised to pyruvate producing 4 ATP (net gain 2 ATP) and 2 reduced NAD (1).'},
-      {q: 'Explain the role of the electron transport chain in oxidative phosphorylation.', marks: 4, markScheme: 'Reduced NAD and reduced FAD donate electrons to electron carriers on the inner mitochondrial membrane (1). Electrons pass along a chain of carriers at decreasing energy levels, releasing energy (1). This energy is used to pump hydrogen ions from the matrix into the intermembrane space creating a proton gradient (1). Hydrogen ions flow back through ATP synthase by chemiosmosis, driving the synthesis of ATP from ADP and Pi (1).'},
-      {q: 'Describe the link reaction and state where it occurs.', marks: 3, markScheme: 'Occurs in the matrix of the mitochondria (1). Pyruvate (3C) is decarboxylated (CO2 removed) and oxidised (hydrogen removed by NAD to form reduced NAD) (1). The resulting 2C acetyl group combines with coenzyme A to form acetyl CoA which enters the Krebs cycle (1).'},
-      {q: 'Describe the Krebs cycle.', marks: 4, markScheme: 'Acetyl CoA (2C) combines with oxaloacetate (4C) to form citrate (6C) (1). Citrate is decarboxylated and dehydrogenated through a series of reactions regenerating oxaloacetate (1). Per turn: 2 CO2 released, 3 reduced NAD and 1 reduced FAD produced (1). 1 ATP produced by substrate-level phosphorylation per turn; the cycle turns twice per glucose molecule (1).'},
-      {q: 'Explain how the Calvin cycle fixes carbon dioxide into organic molecules.', marks: 4, markScheme: 'CO2 combines with ribulose bisphosphate (RuBP, 5C) catalysed by the enzyme RuBisCO (1). This produces two molecules of glycerate 3-phosphate (GP, 3C) (1). GP is reduced to glyceraldehyde 3-phosphate (G3P) using reduced NADP and ATP from the light-dependent reactions (1). Most G3P is used to regenerate RuBP using ATP; some G3P is used to synthesise glucose and other organic molecules (1).'},
-      {q: 'Explain why the rate of photosynthesis increases with light intensity up to a certain point then plateaus.', marks: 3, markScheme: 'Increasing light intensity provides more energy for the light-dependent reactions, increasing the production of ATP and reduced NADP (1). The rate increases as light is the limiting factor (1). The plateau occurs when another factor (e.g. CO2 concentration or temperature affecting enzymes) becomes limiting (1).'},
-      {q: 'Compare aerobic and anaerobic respiration in terms of ATP yield and end products.', marks: 3, markScheme: 'Aerobic respiration produces up to 38 ATP per glucose; anaerobic produces only 2 ATP per glucose (1). Aerobic respiration produces CO2 and water as end products (1). Anaerobic respiration in animals produces lactate; in yeast it produces ethanol and CO2 (1).'},
-      {q: 'Explain how energy is transferred through trophic levels in an ecosystem.', marks: 3, markScheme: 'Producers convert light energy into chemical energy stored in organic molecules through photosynthesis (1). Consumers obtain energy by eating other organisms; only about 10% of energy is transferred between trophic levels (1). Energy is lost at each level through respiration (heat), excretion and in uneaten parts, limiting the number of trophic levels (1).'},
-      {q: 'Describe how decomposers recycle nutrients in an ecosystem.', marks: 3, markScheme: 'Decomposers (bacteria and fungi) secrete extracellular enzymes onto dead organic matter breaking it down (saprotrophic nutrition) (1). They absorb the soluble products for their own metabolism (1). Inorganic nutrients such as nitrates and phosphates are released back into the soil where they can be taken up by plant roots, completing nutrient cycling (1).'},
-      {q: 'Explain the importance of nitrogen-fixing bacteria in the nitrogen cycle.', marks: 3, markScheme: 'Nitrogen-fixing bacteria (e.g. Rhizobium in root nodules or free-living Azotobacter) convert atmospheric nitrogen gas (N2) into ammonium ions (NH4+) (1). Ammonium can be converted to nitrites and then nitrates by nitrifying bacteria (1). Nitrates are absorbed by plants and used to make amino acids and nucleotides; this is the main way atmospheric nitrogen enters food chains (1).'},
-      {q: 'Describe the technique of aseptic technique when culturing microorganisms.', marks: 4, markScheme: 'Sterilise all equipment (inoculating loops, glassware) by autoclaving or flaming before use (1). Work near a Bunsen burner flame to create an updraft that prevents airborne contamination (1). Briefly flame the neck of culture bottles when opening and closing them (1). Seal Petri dishes with tape (not fully sealed to allow oxygen in) and incubate at appropriate temperature, typically 25°C in school labs (1).'},
-      {q: 'Explain why respiratory substrates other than glucose yield different amounts of ATP.', marks: 3, markScheme: 'Lipids contain more hydrogen atoms per molecule, generating more reduced NAD and FAD, so yield more ATP per gram than carbohydrates (1). Proteins must first be deaminated and the resulting carbon skeletons enter respiration at various points (1). The number of carbon and hydrogen atoms and the point of entry into the respiratory pathway determine the total ATP yield (1).'},
-      {q: 'Explain the difference between net primary productivity and gross primary productivity.', marks: 2, markScheme: 'Gross primary productivity (GPP) is the total rate of energy fixed by photosynthesis in producers (1). Net primary productivity (NPP) = GPP minus respiratory losses; it represents the energy available for growth and for consumers (1).'},
-      {q: 'Describe the role of chemiosmosis in both photosynthesis and respiration.', marks: 4, markScheme: 'In both processes, electrons pass along a chain of carriers releasing energy (1). This energy is used to pump protons (H+) across a membrane creating a proton gradient (1). Protons flow back through ATP synthase down their concentration gradient driving ATP synthesis (1). In photosynthesis this occurs across the thylakoid membrane; in respiration it occurs across the inner mitochondrial membrane (1).'},
-      {q: 'Sketch a graph showing the effect of temperature on the rate of photosynthesis.', marks: 3, markScheme: 'Axes correctly labelled: x-axis temperature, y-axis rate of photosynthesis (1). Rate increases with temperature up to an optimum (1). Rate decreases rapidly above the optimum as enzymes (e.g. RuBisCO) denature (1).', diagram: true},
-      {q: 'Draw a labelled diagram of a chloroplast.', marks: 3, markScheme: 'Double membrane (envelope) correctly drawn (1). Internal thylakoid membranes shown as flattened sacs stacked into grana, connected by intergranal lamellae (1). Stroma labelled containing enzymes, DNA and ribosomes (1).', diagram: true},
-      {q: 'Sketch a graph showing how the rate of respiration changes with oxygen concentration.', marks: 3, markScheme: 'Axes correctly labelled: x-axis oxygen concentration, y-axis rate of respiration / CO2 released (1). At zero oxygen, some CO2 is produced from anaerobic respiration (1). Rate increases as oxygen concentration increases, then plateaus when another factor becomes limiting (1).', diagram: true},
-      {q: 'Explain how limiting factors interact to affect the rate of photosynthesis.', marks: 3, markScheme: 'At any given time, the factor present at the lowest level relative to its optimum limits the overall rate (1). Increasing this limiting factor increases the rate until another factor becomes limiting (1). For example, at low light intensity, increasing CO2 has no effect; but at high light intensity, increasing CO2 may increase the rate until temperature becomes limiting (1).'},
-      {q: 'Describe how you would use a respirometer to measure the rate of aerobic respiration in germinating seeds.', marks: 4, markScheme: 'Place germinating seeds in one tube and dead seeds (or glass beads) of equal volume in a control tube (1). Include soda lime/potassium hydroxide in both tubes to absorb CO2 produced (1). Seal the apparatus and record the movement of the manometer fluid over time at a set temperature (1). The rate of movement indicates the rate of oxygen consumption; compare the experimental tube with the control (1).'},
-      {q: 'Explain why succession leads to changes in biodiversity over time.', marks: 3, markScheme: 'Pioneer species colonise bare ground and modify the abiotic conditions (e.g. adding organic matter to soil) (1). This makes the habitat suitable for new species which outcompete the pioneers, increasing species diversity (1). Over time, a climax community develops with high biodiversity and stable, complex food webs (1).'},
-      {q: 'Describe how a Gram stain distinguishes between two types of bacteria.', marks: 3, markScheme: 'Crystal violet stain is applied then fixed with iodine (1). Alcohol/acetone decolouriser is applied: Gram-positive bacteria retain the purple stain due to their thick peptidoglycan wall; Gram-negative lose it (1). Safranin counterstain is applied making Gram-negative bacteria appear pink/red while Gram-positive remain purple (1).'},
-      {q: 'Explain why energy transfer between trophic levels is inefficient.', marks: 3, markScheme: 'Not all parts of organisms at one trophic level are eaten or digested by the next level (1). A large proportion of assimilated energy is lost as heat through metabolic processes / respiration (1). Energy is also lost in excretory products such as urea and faeces, making only about 10% available to the next level (1).'},
-      {q: 'Describe the role of reduced NAD in respiration.', marks: 2, markScheme: 'Reduced NAD acts as a hydrogen/electron carrier (1). It donates electrons to the electron transport chain on the inner mitochondrial membrane, enabling oxidative phosphorylation and ATP synthesis (1).'},
-      {q: 'Explain why anaerobic respiration produces far less ATP than aerobic respiration.', marks: 3, markScheme: 'In anaerobic respiration, only glycolysis occurs producing just 2 ATP per glucose (1). The Krebs cycle and electron transport chain cannot operate without oxygen as the final electron acceptor (1). The reduced NAD from glycolysis is used to convert pyruvate to lactate or ethanol, and is not oxidised via the ETC so no further ATP is generated (1).'},
-      {q: 'Describe how bacteria can be cultured on an agar plate using a streak plate technique.', marks: 3, markScheme: 'Sterilise the inoculating loop by flaming until red hot and allow to cool (1). Dip the loop into the bacterial broth culture and streak across one section of the agar plate (1). Re-sterilise the loop and streak from the edge of the previous section into a fresh area, repeating several times to dilute the bacteria and obtain isolated colonies (1).'},
-      {q: 'Explain the role of ATP synthase in the light-dependent reactions of photosynthesis.', marks: 2, markScheme: 'A proton gradient is created across the thylakoid membrane as H+ ions accumulate in the thylakoid space (1). H+ ions flow back through ATP synthase into the stroma by chemiosmosis, driving the phosphorylation of ADP to ATP (1).'},
-      {q: 'Describe how carbon is recycled in an ecosystem.', marks: 3, markScheme: 'Producers fix atmospheric CO2 into organic compounds through photosynthesis (1). Carbon passes through food chains as consumers eat producers and other consumers (1). CO2 is returned to the atmosphere by respiration of all organisms and by decomposition of dead organic matter by microorganisms (1).'},
-      {q: 'Explain why serial dilutions are used when estimating bacterial population size.', marks: 2, markScheme: 'Original bacterial samples are too concentrated to count individual colonies (1). Serial dilutions reduce the concentration in a systematic way so that countable numbers of colonies (30-300) grow on agar plates allowing calculation of the original population (1).'},
-      {q: 'Outline how cyclic photophosphorylation differs from non-cyclic photophosphorylation.', marks: 3, markScheme: 'Cyclic involves only photosystem I; non-cyclic involves both PSI and PSII (1). In cyclic, electrons return to PSI and only ATP is produced; in non-cyclic, electrons pass from PSII to PSI to NADP+ producing both ATP and reduced NADP (1). Non-cyclic also involves photolysis of water producing oxygen; cyclic does not (1).'},
-      {q: 'Describe how you would investigate the effect of light intensity on the rate of photosynthesis using an aquatic plant.', marks: 4, markScheme: 'Place an aquatic plant (e.g. Elodea) in water with sodium hydrogen carbonate to provide CO2 (1). Position a lamp at different distances from the plant to vary light intensity (1). Count the number of oxygen bubbles produced per minute or collect gas in an inverted measuring cylinder (1). Repeat at each distance and keep temperature constant using a heat shield or water bath; calculate the rate and plot against light intensity (1).'},
-      {q: 'Draw a labelled diagram of a mitochondrion showing its key features.', marks: 3, markScheme: 'Double membrane with outer membrane smooth and inner membrane folded into cristae (1). Matrix labelled containing enzymes, circular DNA and ribosomes (1). Intermembrane space between the two membranes labelled (1).', diagram: true},
-      {q: 'Explain the role of coenzyme A in respiration.', marks: 2, markScheme: 'Coenzyme A accepts the acetyl group (2C) produced during the link reaction to form acetyl CoA (1). It carries the acetyl group into the Krebs cycle where it combines with oxaloacetate, and coenzyme A is then released to be reused (1).'},
-      {q: 'Evaluate the use of biofuels as an alternative to fossil fuels.', marks: 4, markScheme: 'Biofuels are renewable as they come from recently grown plants which can be replanted (1). They are considered carbon neutral as the CO2 released during combustion was recently absorbed during photosynthesis (1). However, land used for biofuel crops may reduce food production and biodiversity (1). Energy is needed for farming, transport and processing, reducing the net energy gain and true carbon neutrality (1).'}
+  "S4": {
+    "name": "Biodiversity and Natural Resources",
+    "questions": [
+      {
+        "q": "State what is meant by the term biodiversity.",
+        "marks": 1,
+        "markScheme": "• The variety of living organisms in an area, including diversity within species, between species, and of ecosystems (1)"
+      },
+      {
+        "q": "State the formula used to calculate the index of diversity (D) of a habitat.",
+        "marks": 1,
+        "markScheme": "• D = N(N − 1) / Σn(n − 1), where N = total number of organisms of all species and n = number of organisms of each species (1)"
+      },
+      {
+        "q": "Calculate the index of diversity (D) for a habitat with 30 daisies, 20 buttercups and 50 grasses (N = 100), using D = N(N − 1) / Σn(n − 1).",
+        "marks": 3,
+        "markScheme": "• n(n − 1): daisies = 30 × 29 = 870; buttercups = 20 × 19 = 380; grasses = 50 × 49 = 2450 (1)\n• Σn(n − 1) = 870 + 380 + 2450 = 3700 and N(N − 1) = 100 × 99 = 9900 (1)\n• D = 9900 / 3700 = 2.68 (1)"
+      },
+      {
+        "q": "Explain what a high value of the index of diversity (D) indicates about a habitat.",
+        "marks": 2,
+        "markScheme": "• A high value of D indicates high biodiversity (1)\n• Many species are present and the individuals are spread fairly evenly among them / no single species dominates; the lowest possible value, 1, means only one species is present (1)"
+      },
+      {
+        "q": "Describe how to use a quadrat to estimate the abundance of plant species in a field.",
+        "marks": 4,
+        "markScheme": "• Place quadrats randomly in the area (e.g. using random number coordinates) (1)\n• Count the number of individuals of each species within each quadrat, or estimate percentage cover (1)\n• Repeat with multiple quadrats (at least 10) to obtain a representative sample (1)\n• Calculate mean number per quadrat and scale up: mean count × (total area / quadrat area) to estimate total abundance (1)"
+      },
+      {
+        "q": "Explain the difference between species richness and species evenness.",
+        "marks": 2,
+        "markScheme": "• Species richness is the number of different species present in an area (1)\n• Species evenness is the relative abundance of each species / how evenly individuals are distributed among the different species (1)"
+      },
+      {
+        "q": "Describe the hierarchical classification system used in taxonomy.",
+        "marks": 3,
+        "markScheme": "• Organisms are grouped into increasingly specific categories: Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species (1)\n• Organisms within the same group share more characteristics than those in different groups (1)\n• The binomial naming system gives each species a unique two-part name (genus + species) (1)"
+      },
+      {
+        "q": "Explain why classification systems are updated as new evidence becomes available.",
+        "marks": 3,
+        "markScheme": "• Advances in molecular biology / DNA sequencing reveal evolutionary relationships not apparent from morphology alone (1)\n• Species previously grouped together by appearance may be reclassified if their DNA sequences show they are not closely related (1)\n• New species are discovered, and existing classifications need to accommodate them (1)"
+      },
+      {
+        "q": "Describe the structure of a typical plant cell.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• Cellulose cell wall outside the cell membrane providing structural support (1)\n• Large permanent vacuole containing cell sap (water, sugars, pigments) maintaining turgor (1)\n• Chloroplasts containing chlorophyll for photosynthesis (1)\n• Nucleus, mitochondria, ribosomes, endoplasmic reticulum, and cell membrane also present (1)"
+      },
+      {
+        "q": "Describe the structure of cellulose and explain how it is suited to its function.",
+        "marks": 4,
+        "markScheme": "• Cellulose is a polysaccharide made of beta-glucose monomers linked by 1,4-glycosidic bonds (1)\n• Every other glucose molecule is inverted / rotated 180°, forming straight unbranched chains (1)\n• Chains are held together by hydrogen bonds between adjacent chains, forming microfibrils (1)\n• Microfibrils provide high tensile strength, making cellulose ideal for cell walls (1)"
+      },
+      {
+        "q": "Compare the structures of starch and cellulose.",
+        "marks": 4,
+        "markScheme": "• Starch is made of alpha-glucose; cellulose is made of beta-glucose (1)\n• Starch (amylose) forms helical chains; cellulose forms straight chains (1)\n• Starch is a storage polysaccharide; cellulose is a structural polysaccharide (1)\n• Cellulose has hydrogen bonds between parallel chains forming microfibrils; starch does not form microfibrils (1)"
+      },
+      {
+        "q": "Explain why starch is a good storage molecule.",
+        "marks": 3,
+        "markScheme": "• Insoluble, so does not affect water potential / osmosis in cells (1)\n• Compact / coiled structure allows large amounts to be stored in a small space (1)\n• Easily hydrolysed to release alpha-glucose for respiration when needed (1)"
+      },
+      {
+        "q": "Describe how plant fibres are used by humans.",
+        "marks": 3,
+        "markScheme": "• Paper is made from wood pulp (cellulose fibres from trees) (1)\n• Rope and textiles can be made from plant fibres such as hemp, flax, or cotton (1)\n• Building materials (e.g. straw bales, bamboo) use plant fibres for structural support (1)"
+      },
+      {
+        "q": "Explain the importance of maintaining biodiversity.",
+        "marks": 4,
+        "markScheme": "• Biodiversity provides ecosystem services such as pollination, water purification, and nutrient cycling (1)\n• Greater biodiversity increases ecosystem stability / resilience to change (1)\n• Potential sources of new medicines, food crops, and industrial materials may be lost if species go extinct (1)\n• Ethical / aesthetic reasons: many people believe all species have a right to exist / biodiversity has intrinsic value (1)"
+      },
+      {
+        "q": "Describe how deforestation reduces biodiversity.",
+        "marks": 3,
+        "markScheme": "• Habitat destruction removes the living space and food sources for many species (1)\n• Specialist species that depend on the forest habitat may become extinct (1)\n• Fragmentation of remaining habitat isolates populations, reducing gene flow and genetic diversity (1)"
+      },
+      {
+        "q": "Explain what is meant by sustainability and why it is important for natural resources.",
+        "marks": 3,
+        "markScheme": "• Sustainability means using resources at a rate that does not deplete them / meets the needs of the present without compromising future generations (1)\n• Natural resources such as timber, fish stocks, and freshwater are finite and can be exhausted if overexploited (1)\n• Sustainable management ensures long-term availability of resources and maintains ecosystem function (1)"
+      },
+      {
+        "q": "Explain how using plant-based products instead of oil-based plastics may contribute to sustainability.",
+        "marks": 3,
+        "markScheme": "• Plants are a renewable resource that can be regrown, whereas oil is finite / non-renewable (1)\n• Plant-based products, e.g. starch bioplastics, are biodegradable, so less plastic waste accumulates in landfill or the environment (1)\n• Plants absorb carbon dioxide as they grow, so less fossil fuel is used and less net carbon dioxide is added to the atmosphere (1)"
+      },
+      {
+        "q": "Explain the role of zoos and seed banks in conservation.",
+        "marks": 4,
+        "markScheme": "• Zoos maintain captive breeding programmes for endangered species, maintaining genetic diversity (1)\n• Zoos also carry out education and research that supports conservation efforts (1)\n• Seed banks store seeds of plant species under controlled conditions (low temperature, low humidity) to preserve genetic material (1)\n• Both provide insurance against extinction in the wild and can be used for reintroduction or habitat restoration programmes (1)"
+      },
+      {
+        "q": "Describe how the tensile strength of plant fibres can be determined.",
+        "marks": 3,
+        "markScheme": "• Extract fibres from the plant stem (e.g. by retting / soaking and peeling) and cut them to the same length (1)\n• Clamp one end of a fibre and hang masses from the other end, adding masses one at a time until the fibre breaks; record the mass at breaking (1)\n• Repeat with several fibres and calculate a mean; control variables such as fibre length, the plant species and the age of the plant (1)"
+      },
+      {
+        "q": "Explain the difference between in situ and ex situ conservation.",
+        "marks": 2,
+        "markScheme": "• In situ conservation protects species in their natural habitat (e.g. nature reserves, marine protected areas) (1)\n• Ex situ conservation protects species outside their natural habitat (e.g. zoos, botanic gardens, seed banks) (1)"
+      },
+      {
+        "q": "Describe how drug testing has developed from William Withering's digitalis soup to contemporary protocols.",
+        "marks": 5,
+        "markScheme": "• Withering identified foxglove (digitalis) as the active ingredient in a herbal remedy used to treat dropsy (1)\n• He tested different doses on patients by trial and error, with no control group and no standardised procedure (1)\n• Phase 1: the drug is tested on a small number of healthy volunteers for safety, side effects and dosage (1)\n• Phase 2: the drug is tested on a small group of patients to check that it works and to find the best dose (1)\n• Phase 3: large numbers of patients in a randomised double-blind trial, compared with a placebo or an existing treatment (1)"
+      },
+      {
+        "q": "Describe the structure of starch, including amylose and amylopectin.",
+        "marks": 3,
+        "markScheme": "• Starch is a mixture of amylose and amylopectin, both made from alpha-glucose (1)\n• Amylose is an unbranched helix with 1,4-glycosidic bonds (1)\n• Amylopectin is branched with 1,4-glycosidic bonds and 1,6-glycosidic bonds at branch points (1)"
+      },
+      {
+        "q": "State two conditions required for the growth of bacteria.",
+        "marks": 2,
+        "markScheme": "• Any two from:\n• A source of nutrients, e.g. a carbon source such as glucose and a nitrogen source (1)\n• A suitable temperature / around the optimum temperature for their enzymes (1)\n• A suitable pH (1)\n• Oxygen for aerobic bacteria / absence of oxygen for obligate anaerobes (1)\n• Water / moisture (1)"
+      },
+      {
+        "q": "Draw a labelled diagram showing the structure of a cellulose microfibril.",
+        "marks": 3,
+        "diagram": true,
+        "markScheme": "• Individual beta-glucose chains shown as straight, parallel strands (1)\n• Hydrogen bonds between adjacent chains shown / indicated (1)\n• Multiple chains grouped together to form a microfibril, labelled correctly (1)"
+      },
+      {
+        "q": "Describe how to investigate the antimicrobial properties of a plant extract, including the aseptic techniques used.",
+        "marks": 4,
+        "markScheme": "• Crush the plant material (e.g. garlic) with ethanol to extract the antimicrobial substances, then filter (1)\n• Aseptic technique: disinfect the bench, work near a Bunsen flame, sterilise the spreader / loop, and lift the Petri dish lid only slightly (1)\n• Soak sterile paper discs in the extract, with a control disc soaked in ethanol only; let the ethanol evaporate and place the discs on agar spread with bacteria (1)\n• Tape the lid (not fully sealed), incubate at 25 °C, then measure the diameter of the clear zone of inhibition around each disc (1)"
+      },
+      {
+        "q": "Describe how a chi-squared test can be used to test whether observed species distributions differ from expected.",
+        "marks": 3,
+        "markScheme": "• Calculate expected frequencies based on the null hypothesis (e.g. even distribution) (1)\n• Use the formula χ² = Σ (O – E)² / E for each category (1)\n• Compare the calculated χ² value with the critical value at p = 0.05 and the appropriate degrees of freedom; if χ² exceeds the critical value, reject the null hypothesis (1)"
+      },
+      {
+        "q": "Explain why genetic diversity within a species is important for its survival.",
+        "marks": 3,
+        "markScheme": "• Genetic diversity provides a range of alleles within the population (1)\n• If environmental conditions change, some individuals may have alleles that confer a survival advantage (1)\n• This allows the population to adapt through natural selection, reducing the risk of extinction (1)"
+      },
+      {
+        "q": "Describe how habitat destruction and climate change threaten biodiversity.",
+        "marks": 4,
+        "markScheme": "• Habitat destruction removes the environment species depend on for food, shelter and reproduction (1)\n• Climate change alters temperature and rainfall patterns, affecting species distribution and food availability (1)\n• Species unable to migrate or adapt quickly enough may decline or go extinct (1)\n• Both factors can interact: climate change may make fragmented habitats even less suitable for resident species (1)"
+      },
+      {
+        "q": "Evaluate the use of seed banks in the conservation of endangered plant species.",
+        "marks": 3,
+        "markScheme": "• Advantage: large numbers of seeds can be stored in a small space at low temperature and humidity, conserving genetic diversity (1)\n• Advantage: stored seeds can be used for scientific research and to reintroduce species / restore habitats (1)\n• Disadvantage: seeds must be germinated regularly to test viability and grown to collect fresh seed; some seeds cannot be dried or frozen, and stored seeds do not adapt to changes in the environment (1)"
+      },
+      {
+        "q": "Explain why endemic species on islands are particularly vulnerable to extinction.",
+        "marks": 3,
+        "markScheme": "• Island species often have small population sizes and limited geographical range (1)\n• They may have evolved in the absence of predators and therefore lack defences against introduced species (1)\n• Habitat destruction on a small island can eliminate a large proportion of the species’ total habitat (1)"
+      },
+      {
+        "q": "Describe how to investigate the effect of magnesium ion deficiency on the growth of plants.",
+        "marks": 4,
+        "markScheme": "• Grow seedlings in a complete culture solution and in a solution lacking only magnesium ions (1)\n• Control variables: the same species and age of seedling, light intensity, temperature and volume of solution (1)\n• Cover the containers to exclude light and prevent algal growth, and aerate / top up the solutions (1)\n• Over several weeks record growth (e.g. height, number of leaves, dry mass) and leaf colour, and compare with the complete-solution control (1)"
+      },
+      {
+        "q": "Explain why plants need nitrate ions and calcium ions.",
+        "marks": 3,
+        "markScheme": "• Nitrate ions provide nitrogen to make amino acids / proteins (1)\n• Nitrate ions are also needed to make nucleic acids / DNA / chlorophyll (1)\n• Calcium ions form calcium pectate in the middle lamella, holding adjacent plant cells together (1)"
+      },
+      {
+        "q": "Compare the ultrastructure of plant cells with that of animal cells.",
+        "marks": 4,
+        "markScheme": "• Both have a nucleus, mitochondria, ribosomes, endoplasmic reticulum and Golgi apparatus (1)\n• Plant cells have a cellulose cell wall, with a middle lamella, plasmodesmata and pits; animal cells have no cell wall (1)\n• Plant cells have chloroplasts and amyloplasts; animal cells do not (1)\n• Plant cells have a large permanent vacuole surrounded by a tonoplast; animal cells have centrioles, which most plant cells lack (1)"
+      },
+      {
+        "q": "Explain why scientists use the three-domain system of classification.",
+        "marks": 2,
+        "markScheme": "• Molecular evidence (ribosomal RNA sequences) shows that organisms fall into three distinct evolutionary groups: Bacteria, Archaea, and Eukarya (1)\n• The previous five-kingdom system grouped Archaea with Bacteria, but molecular data shows they are more different from each other than previously thought (1)"
+      },
+      {
+        "q": "In a population of 250 bighorn sheep, 45 were heterozygous at a particular gene locus. Calculate the heterozygosity index (H).",
+        "marks": 2,
+        "markScheme": "• H = number of heterozygotes / number of individuals in the population = 45 / 250 (1)\n• H = 0.18 (1)"
+      },
+      {
+        "q": "Draw and label a plan diagram of a transverse section of a dicotyledonous stem to show the positions of the xylem vessels, phloem and sclerenchyma fibres.",
+        "marks": 4,
+        "markScheme": "• Vascular bundles shown arranged in a ring near the outside of the stem (1)\n• Xylem shown on the inner side of each vascular bundle (1)\n• Phloem shown on the outer side of the xylem in each bundle (1)\n• Sclerenchyma fibres shown as a cap on the outside of the phloem; epidermis, cortex and pith labelled, with no individual cells drawn (1)",
+        "diagram": true
+      },
+      {
+        "q": "Describe the role of cellulose in plant cell walls.",
+        "marks": 2,
+        "markScheme": "• Cellulose microfibrils provide tensile strength to the cell wall, preventing the cell from bursting when turgid (1)\n• The cell wall maintains cell shape and provides structural support for the whole plant (1)"
+      },
+      {
+        "q": "Explain how natural selection can lead to changes in the frequency of alleles in a population.",
+        "marks": 4,
+        "markScheme": "• Variation exists within a population due to genetic differences / different alleles (1)\n• Individuals with alleles that confer a selective advantage in the current environment are more likely to survive and reproduce (1)\n• These advantageous alleles are passed on to the next generation at a higher frequency (1)\n• Over many generations, the frequency of the advantageous allele increases in the population (1)"
+      },
+      {
+        "q": "Suggest why maintaining genetic diversity in crop plants is important for food security.",
+        "marks": 3,
+        "markScheme": "• Genetic diversity provides a range of alleles that may confer resistance to new diseases or pests (1)\n• It allows crops to be bred for adaptation to changing environmental conditions (e.g. drought, higher temperatures) (1)\n• Over-reliance on genetically uniform crop varieties increases vulnerability to widespread crop failure (1)"
+      },
+      {
+        "q": "Explain how the arrangement of cellulose microfibrils and secondary thickening give sclerenchyma fibres properties that are exploited by humans.",
+        "marks": 3,
+        "markScheme": "• Cellulose microfibrils are laid down in layers, with the microfibrils in each layer at an angle to those in the next, forming a mesh (1)\n• This gives the walls high tensile strength / resistance to stretching and breaking (1)\n• Secondary thickening adds extra cellulose layers impregnated with lignin, making the fibres rigid and strong, so they are used for ropes, fabrics and composite materials (1)"
+      }
     ]
   },
-  'T5': {
-    name: 'Genetics and Evolution',
-    questions: [
-      {q: 'State the name of the enzyme that catalyses DNA replication.', marks: 1, markScheme: 'DNA polymerase (1)'},
-      {q: 'Name the type of bond that joins nucleotides in a single strand of DNA.', marks: 1, markScheme: 'Phosphodiester bond (1)'},
-      {q: 'State the anticodon for the mRNA codon AUG.', marks: 1, markScheme: 'UAC (1)'},
-      {q: 'Name the type of cell division that produces gametes.', marks: 1, markScheme: 'Meiosis (1)'},
-      {q: 'State what is meant by the term allele.', marks: 1, markScheme: 'An alternative form/version of a gene (1)'},
-      {q: 'State the complementary base pairing rules in DNA.', marks: 1, markScheme: 'Adenine pairs with thymine; guanine pairs with cytosine (1)'},
-      {q: 'Describe the structure of a nucleotide.', marks: 2, markScheme: 'A nucleotide consists of a pentose sugar (deoxyribose in DNA) bonded to a phosphate group (1). And a nitrogenous base (adenine, thymine, guanine or cytosine) (1).'},
-      {q: 'Describe the process of semi-conservative DNA replication.', marks: 4, markScheme: 'DNA helicase unwinds the double helix and breaks hydrogen bonds between complementary bases (1). Each strand acts as a template; free DNA nucleotides align with their complementary bases (A-T, G-C) (1). DNA polymerase joins the nucleotides together forming phosphodiester bonds in the 5\' to 3\' direction (1). Two identical DNA molecules are produced, each containing one original strand and one new strand (semi-conservative) (1).'},
-      {q: 'Describe the process of transcription.', marks: 4, markScheme: 'RNA polymerase binds to the promoter region on the template/antisense strand of DNA (1). The DNA double helix unwinds and hydrogen bonds between bases break (1). RNA polymerase moves along the template strand adding complementary RNA nucleotides (U pairs with A, C with G) in the 5\' to 3\' direction (1). A pre-mRNA molecule is produced which is processed (introns spliced out) to form mature mRNA that leaves the nucleus through nuclear pores (1).'},
-      {q: 'Describe the process of translation.', marks: 4, markScheme: 'mRNA attaches to a ribosome; the start codon AUG is at the P site (1). A tRNA with the complementary anticodon carries a specific amino acid to the ribosome (1). The ribosome moves along the mRNA one codon at a time; peptide bonds form between adjacent amino acids (1). The polypeptide chain grows until a stop codon is reached and the ribosome releases the completed polypeptide (1).'},
-      {q: 'Explain how meiosis produces genetic variation.', marks: 4, markScheme: 'Crossing over during prophase I: homologous chromosomes exchange genetic material at chiasmata producing recombinant chromatids (1). Independent assortment during metaphase I: homologous pairs line up randomly at the equator so each gamete receives a different combination of maternal and paternal chromosomes (1). These processes mean each of the four gametes produced is genetically unique (1). Random fertilisation further increases the possible genetic combinations in offspring (1).'},
-      {q: 'Explain the difference between a gene mutation and a chromosome mutation.', marks: 2, markScheme: 'A gene mutation is a change in the nucleotide base sequence of a single gene, e.g. substitution, deletion or insertion (1). A chromosome mutation involves a change in the structure or number of whole chromosomes, e.g. non-disjunction leading to Down syndrome (1).'},
-      {q: 'Explain why a deletion mutation is likely to have a more severe effect than a substitution mutation.', marks: 3, markScheme: 'A deletion removes a base causing a frameshift where all codons downstream are altered (1). This changes most of the amino acids in the resulting polypeptide producing a non-functional protein (1). A substitution only affects one codon and may be silent (same amino acid due to degeneracy) or conservative (similar amino acid) (1).'},
-      {q: 'In a cross between two heterozygous parents (Aa x Aa), calculate the probability of an offspring being homozygous recessive.', marks: 2, markScheme: 'Draw a Punnett square: AA, Aa, Aa, aa (1). Probability of aa = 1/4 or 25% (1).'},
-      {q: 'A cross between a red-eyed female Drosophila (X^R X^r) and a red-eyed male (X^R Y) was carried out. Determine the expected ratio of phenotypes in the offspring.', marks: 3, markScheme: 'Punnett square: X^R X^R, X^R X^r, X^R Y, X^r Y (1). All females have red eyes (X^R X^R and X^R X^r) (1). Half the males have red eyes (X^R Y) and half have white eyes (X^r Y); overall ratio 3 red : 1 white, with all white-eyed being male (1).'},
-      {q: 'Describe what is meant by codominance, using an example.', marks: 2, markScheme: 'Codominance occurs when both alleles in a heterozygote are equally expressed in the phenotype (1). For example, in sickle cell disease, heterozygotes (HbA HbS) produce both normal and sickle-shaped red blood cells (1).'},
-      {q: 'Explain the Hardy-Weinberg principle and state its two equations.', marks: 3, markScheme: 'The Hardy-Weinberg principle states that allele and genotype frequencies in a population remain constant from generation to generation in the absence of evolutionary influences (1). p + q = 1 where p is the frequency of the dominant allele and q is the frequency of the recessive allele (1). p^2 + 2pq + q^2 = 1 where p^2 is the frequency of homozygous dominant, 2pq is heterozygous and q^2 is homozygous recessive (1).'},
-      {q: 'In a population, 16% of individuals show the recessive phenotype. Calculate the percentage of the population that are carriers (heterozygous).', marks: 3, markScheme: 'q^2 = 0.16 so q = 0.4 (1). p = 1 - 0.4 = 0.6 (1). 2pq = 2 x 0.6 x 0.4 = 0.48 = 48% are carriers (1).'},
-      {q: 'Explain the role of natural selection in evolution.', marks: 4, markScheme: 'Within a population there is genetic variation caused by mutation, meiosis and sexual reproduction (1). Individuals with alleles that give them a selective advantage in their environment are more likely to survive and reproduce (1). These advantageous alleles are passed on to offspring, increasing in frequency in the population over time (1). Over many generations this leads to changes in the characteristics of the population; if populations become reproductively isolated this can lead to speciation (1).'},
-      {q: 'Describe allopatric speciation.', marks: 4, markScheme: 'A population is separated into two groups by a geographical barrier such as a mountain range, river or ocean (1). The two groups experience different selection pressures in their separate environments (1). Different mutations arise and are selected for, causing allele frequencies to diverge over time (1). Eventually the two populations become so genetically different that they can no longer interbreed to produce fertile offspring, forming separate species (1).'},
-      {q: 'Explain the difference between directional and stabilising selection.', marks: 3, markScheme: 'Directional selection favours individuals at one extreme of the phenotypic range when environmental conditions change (1). The mean phenotype shifts in one direction over time (1). Stabilising selection favours individuals with intermediate phenotypes and selects against extremes, reducing variation around the mean in stable environments (1).'},
-      {q: 'Explain why the genetic code is described as degenerate.', marks: 2, markScheme: 'There are 64 possible triplet codons but only 20 amino acids (1). Most amino acids are coded for by more than one codon, meaning that some base changes (especially in the third position) do not change the amino acid and are therefore silent mutations (1).'},
-      {q: 'Describe the role of tRNA in translation.', marks: 3, markScheme: 'Each tRNA molecule has a specific anticodon that is complementary to an mRNA codon (1). It carries a specific amino acid attached at its 3\' end (1). At the ribosome, tRNA base-pairs with the complementary mRNA codon, bringing the correct amino acid into position for peptide bond formation (1).'},
-      {q: 'A dihybrid cross was carried out between two organisms heterozygous for both traits (AaBb x AaBb). State the expected phenotypic ratio.', marks: 2, markScheme: '9:3:3:1 (1). 9 showing both dominant traits, 3 showing first dominant and second recessive, 3 showing first recessive and second dominant, 1 showing both recessive traits (1).'},
-      {q: 'Explain what epistasis is, using an example.', marks: 3, markScheme: 'Epistasis occurs when one gene masks or modifies the expression of another gene at a different locus (1). For example, in Labrador coat colour, the E gene controls pigment deposition; the ee genotype prevents any pigment being deposited regardless of the B gene (1). This modifies the expected dihybrid ratio e.g. 9:3:4 in recessive epistasis (1).'},
-      {q: 'Describe the evidence provided by the Meselson-Stahl experiment for semi-conservative replication.', marks: 4, markScheme: 'Bacteria were grown in heavy nitrogen (15N) medium so all DNA was heavy (1). They were then transferred to light nitrogen (14N) medium; after one generation all DNA was intermediate density (1). This ruled out conservative replication which would have produced one heavy and one light band (1). After two generations in 14N, half the DNA was intermediate and half was light, consistent with semi-conservative replication (1).'},
-      {q: 'Explain why sex-linked conditions are more common in males.', marks: 3, markScheme: 'Sex-linked genes are located on the X chromosome; males have only one X chromosome (XY) (1). Males therefore only need one copy of the recessive allele to express the condition (hemizygous) (1). Females need two copies of the recessive allele (homozygous recessive) to be affected, as a dominant allele on the other X can mask the recessive one (1).'},
-      {q: 'Describe the role of DNA helicase in replication.', marks: 2, markScheme: 'DNA helicase unwinds the double helix by breaking the hydrogen bonds between complementary base pairs (1). This separates the two strands creating a replication fork where each strand serves as a template (1).'},
-      {q: 'State the assumptions required for Hardy-Weinberg equilibrium to apply.', marks: 3, markScheme: 'No mutations occur and no natural selection acts on the population (1). No migration (gene flow) into or out of the population (1). The population is large and mating is random (1).'},
-      {q: 'Explain the difference between sympatric and allopatric speciation.', marks: 3, markScheme: 'Allopatric speciation involves geographical separation of populations; sympatric occurs without geographical separation (1). In sympatric speciation, reproductive isolation occurs within the same area, often due to polyploidy or behavioural differences (1). Both result in populations becoming genetically different enough to be reproductively isolated and form new species (1).'},
-      {q: 'Describe how gel electrophoresis can be used to separate DNA fragments.', marks: 4, markScheme: 'DNA is cut into fragments using restriction enzymes (1). Fragments are loaded into wells in an agarose gel and an electric current is applied (1). DNA is negatively charged so fragments migrate toward the positive electrode (anode) (1). Smaller fragments move further through the gel; fragments are visualised using UV light after staining with ethidium bromide or using fluorescent markers (1).'},
-      {q: 'Explain how a mutation in a regulatory gene could affect phenotype without changing the protein-coding sequence.', marks: 3, markScheme: 'A regulatory gene controls the expression of other genes, for example by coding for a transcription factor (1). A mutation could prevent the transcription factor from binding to the promoter region (1). This could prevent transcription of a structural gene, meaning the protein is not produced even though its coding sequence is normal, altering the phenotype (1).'},
-      {q: 'In pea plants, tall (T) is dominant over dwarf (t) and round seed (R) is dominant over wrinkled (r). Cross TtRr x ttrr and determine the expected phenotypic ratio.', marks: 3, markScheme: 'This is a test cross; gametes from TtRr are TR, Tr, tR, tr; gametes from ttrr are all tr (1). Offspring genotypes: TtRr, Ttrr, ttRr, ttrr (1). Expected phenotypic ratio: 1 tall round : 1 tall wrinkled : 1 dwarf round : 1 dwarf wrinkled (1:1:1:1) (1).'},
-      {q: 'Explain how genetic drift can lead to changes in allele frequency in small populations.', marks: 3, markScheme: 'Genetic drift is the random change in allele frequency due to chance events in small populations (1). Some alleles may be lost entirely or become fixed purely by chance, not because of selective advantage (1). This reduces genetic variation and can lead to different populations diverging genetically, particularly after a bottleneck or founder event (1).'},
-      {q: 'Describe how you would carry out a chi-squared test on genetic cross data.', marks: 4, markScheme: 'State a null hypothesis that there is no significant difference between observed and expected results (1). Calculate expected ratios based on Mendelian genetics and determine the chi-squared value using the formula: sum of (O-E)^2/E (1). Determine degrees of freedom (number of categories minus 1) and compare the calculated value to the critical value at p = 0.05 (1). If the calculated value exceeds the critical value, reject the null hypothesis; if not, the difference is due to chance (1).'},
-      {q: 'Sketch a diagram to show the process of crossing over during meiosis.', marks: 3, markScheme: 'Homologous chromosome pair (bivalent) shown with four chromatids visible (1). Chiasma shown where non-sister chromatids cross over and exchange segments (1). Resulting recombinant chromatids shown with exchanged genetic material clearly indicated (1).', diagram: true},
-      {q: 'Draw a labelled diagram of the structure of DNA showing at least three nucleotides with correct base pairing.', marks: 3, markScheme: 'Sugar-phosphate backbone shown on both strands running antiparallel (5\' to 3\' and 3\' to 5\') (1). Complementary base pairs (A-T and G-C) shown connected by hydrogen bonds between the strands (1). Components correctly labelled: phosphate, deoxyribose, bases, hydrogen bonds (1).', diagram: true},
-      {q: 'Explain why some mutations have no effect on the phenotype.', marks: 3, markScheme: 'The genetic code is degenerate so a base substitution may result in a different codon that codes for the same amino acid (silent mutation) (1). Mutations in introns will be removed during mRNA splicing and so do not affect the polypeptide produced (1). Mutations in non-coding regions of DNA may not affect gene expression or protein function (1).'},
-      {q: 'Explain the biological significance of meiosis.', marks: 3, markScheme: 'Meiosis halves the chromosome number producing haploid gametes, ensuring the diploid number is restored at fertilisation (1). Crossing over and independent assortment produce genetically varied gametes (1). This genetic variation is essential for natural selection and adaptation to changing environments (1).'},
-      {q: 'Explain the concept of a gene pool and how migration affects allele frequencies.', marks: 3, markScheme: 'A gene pool is the total set of all alleles present in a population (1). Immigration introduces new alleles into the population, potentially increasing genetic diversity and changing allele frequencies (1). Emigration removes alleles from the population; both processes violate the Hardy-Weinberg assumptions and can drive evolutionary change (1).'}
+  "S5": {
+    "name": "On the Wild Side",
+    "questions": [
+      {
+        "q": "State the word equation for photosynthesis.",
+        "marks": 1,
+        "markScheme": "• Carbon dioxide + water → glucose + oxygen (in the presence of light energy) (1)"
+      },
+      {
+        "q": "State where the light-dependent reactions of photosynthesis take place.",
+        "marks": 1,
+        "markScheme": "• On the thylakoid membranes (of the grana) in the chloroplast (1)"
+      },
+      {
+        "q": "State where the light-independent reactions (Calvin cycle) take place.",
+        "marks": 1,
+        "markScheme": "• In the stroma of the chloroplast (1)"
+      },
+      {
+        "q": "Describe the light-dependent reactions of photosynthesis.",
+        "marks": 5,
+        "markScheme": "• Light energy is absorbed by chlorophyll and other photosynthetic pigments (1)\n• Electrons in chlorophyll are excited to a higher energy level and pass along the electron transport chain (1)\n• The energy released is used to pump H⁺ ions across the thylakoid membrane, creating a proton gradient (1)\n• H⁺ ions flow back through ATP synthase, driving the synthesis of ATP by chemiosmosis (1)\n• Water is photolysed (split) to provide replacement electrons, H⁺ ions, and O₂ as a by-product; NADP is reduced to NADPH (1)"
+      },
+      {
+        "q": "Describe the Calvin cycle.",
+        "marks": 5,
+        "markScheme": "• CO₂ is fixed by combining with ribulose bisphosphate (RuBP, 5C) catalysed by RuBisCO (1)\n• This produces an unstable 6C compound that immediately splits into two molecules of glycerate-3-phosphate (GP, 3C) (1)\n• GP is reduced to glyceraldehyde-3-phosphate (GALP / G3P, 3C) using ATP and NADPH from the light-dependent reactions (1)\n• Some GALP is used to regenerate RuBP using ATP (1)\n• Some GALP is used to synthesise glucose and other organic molecules (1)"
+      },
+      {
+        "q": "Explain the role of RuBisCO in the Calvin cycle.",
+        "marks": 2,
+        "markScheme": "• RuBisCO is the enzyme that catalyses the fixation of CO₂ by combining it with RuBP (1)\n• This is the first step / carbon fixation step of the Calvin cycle, producing two molecules of GP (1)"
+      },
+      {
+        "q": "Explain how energy is transferred through an ecosystem.",
+        "marks": 4,
+        "markScheme": "• Producers (plants/autotrophs) convert light energy into chemical energy via photosynthesis (1)\n• Primary consumers obtain energy by eating producers; secondary consumers eat primary consumers, and so on (1)\n• Energy is transferred from one trophic level to the next through feeding (1)\n• Energy is lost at each trophic level through respiration (heat), excretion, and in uneaten parts, so less is available at higher trophic levels (1)"
+      },
+      {
+        "q": "Explain why energy transfer between trophic levels is inefficient.",
+        "marks": 3,
+        "markScheme": "• Not all biomass is consumed / some parts (roots, bones) are not eaten (1)\n• Not all consumed biomass is assimilated / some is lost in faeces (1)\n• A significant proportion of assimilated energy is lost as heat through respiration (1)"
+      },
+      {
+        "q": "State the equation for net primary productivity (NPP).",
+        "marks": 1,
+        "markScheme": "• NPP = GPP – R, where GPP is gross primary productivity and R is respiratory losses by the plant (1)"
+      },
+      {
+        "q": "Calculate the net primary productivity if GPP is 20,000 kJ/m²/year and plant respiration uses 12,000 kJ/m²/year.",
+        "marks": 2,
+        "markScheme": "• NPP = GPP – R = 20,000 – 12,000 (1)\n• = 8,000 kJ/m²/year (1)"
+      },
+      {
+        "q": "Describe the stages of ecological succession.",
+        "marks": 4,
+        "markScheme": "• Pioneer species (e.g. lichens, mosses) colonise bare/inhospitable substrate first (1)\n• They modify the environment (e.g. weathering rock, adding organic matter) making it more suitable for other species (1)\n• Each seral stage / community is replaced by the next as conditions change, increasing biodiversity and soil depth (1)\n• Eventually a climax community is established, which is stable and self-sustaining (1)"
+      },
+      {
+        "q": "Explain the difference between primary and secondary succession.",
+        "marks": 2,
+        "markScheme": "• Primary succession occurs on previously uncolonised substrate with no soil (e.g. bare rock, lava, sand dunes) (1)\n• Secondary succession occurs on substrate where a community previously existed but was disturbed (e.g. after fire or clearing); soil and seed bank are already present (1)"
+      },
+      {
+        "q": "Describe the carbon cycle, including the roles of photosynthesis, respiration, and decomposition.",
+        "marks": 5,
+        "diagram": true,
+        "markScheme": "• Photosynthesis removes CO₂ from the atmosphere and incorporates carbon into organic molecules in plants (1)\n• Respiration by all organisms releases CO₂ back into the atmosphere (1)\n• Feeding transfers carbon through food chains from producers to consumers (1)\n• Decomposition by microorganisms breaks down dead organic matter, releasing CO₂ through respiration (1)\n• Combustion of fossil fuels releases stored carbon as CO₂ into the atmosphere (1)"
+      },
+      {
+        "q": "Explain how the burning of fossil fuels contributes to the enhanced greenhouse effect.",
+        "marks": 3,
+        "markScheme": "• Burning fossil fuels releases CO₂ that was locked away in geological stores (1)\n• Increased atmospheric CO₂ absorbs more infrared radiation re-emitted from the Earth’s surface (1)\n• This traps more heat in the atmosphere, raising global temperatures / enhanced greenhouse effect (1)"
+      },
+      {
+        "q": "Evaluate the evidence for human-caused climate change.",
+        "marks": 6,
+        "markScheme": "• Ice core data shows a strong correlation between CO₂ levels and global temperature over hundreds of thousands of years (1)\n• Since the Industrial Revolution, atmospheric CO₂ has risen sharply, correlating with increased fossil fuel use (1)\n• Global average temperatures have risen significantly over the last century, consistent with greenhouse gas increases (1)\n• However, natural climate variation (solar activity, volcanic eruptions) also affects temperature (1)\n• The scientific consensus (IPCC) is that human activities are the dominant cause of observed warming since the mid-20th century (1)\n• Some uncertainty remains in climate models, but the weight of evidence strongly supports anthropogenic climate change (1)"
+      },
+      {
+        "q": "Describe the role of the scientific community in validating new evidence that supports the theory of evolution.",
+        "marks": 3,
+        "markScheme": "• Scientists publish their findings (e.g. genomic or proteomic data) in scientific journals (1)\n• Before publication the work is peer reviewed: other experts in the field check the methods, data and conclusions for validity (1)\n• Findings are presented and discussed at scientific conferences, and other scientists repeat the work to check that the results are reproducible before they are accepted (1)"
+      },
+      {
+        "q": "Explain how sympatric speciation can occur.",
+        "marks": 3,
+        "markScheme": "• Populations living in the same area become reproductively isolated without a geographical barrier (1)\n• e.g. by ecological isolation (occupying different niches), behavioural isolation or temporal isolation (breeding at different times) (1)\n• Gene flow between the populations is reduced, so different mutations and selection pressures change allele frequencies until they can no longer interbreed to produce fertile offspring (1)"
+      },
+      {
+        "q": "Explain how molecular evidence (DNA and protein comparisons) supports the theory of evolution.",
+        "marks": 3,
+        "markScheme": "• Closely related species have more similar DNA base sequences / amino acid sequences than distantly related species (1)\n• The degree of difference in sequences is proportional to the time since species diverged from a common ancestor (molecular clock) (1)\n• Universal features such as DNA and the genetic code support common ancestry of all life (1)"
+      },
+      {
+        "q": "Explain the biological consequences of climate change for organisms.",
+        "marks": 4,
+        "markScheme": "• Changes in distribution: species may shift their range towards the poles or to higher altitudes (1)\n• Changes in phenology: timing of seasonal events (migration, flowering, breeding) may shift (1)\n• Some species may be unable to adapt and face increased risk of extinction (1)\n• Changes in species interactions: mismatches between predators and prey, or pollinators and plants (1)"
+      },
+      {
+        "q": "Calculate the percentage efficiency of energy transfer from primary producers to primary consumers if NPP is 8000 kJ/m²/year and energy in primary consumers is 800 kJ/m²/year.",
+        "marks": 2,
+        "markScheme": "• Efficiency = (energy available at next trophic level / energy available at previous trophic level) × 100 (1)\n• = (800 / 8000) × 100 = 10% (1)"
+      },
+      {
+        "q": "Describe how the Hill reaction can be used to investigate photosynthesis using isolated chloroplasts.",
+        "marks": 4,
+        "markScheme": "• Leaves are blended in ice-cold, isotonic buffer, then filtered and centrifuged to obtain a chloroplast suspension (cold slows enzyme activity; isotonic prevents osmotic damage) (1)\n• The chloroplast suspension is mixed with blue DCPIP (1)\n• When illuminated, electrons from the light-dependent reactions reduce the DCPIP, which turns colourless (1)\n• The rate is measured as time to decolourise / change in absorbance with a colorimeter; controls (tube kept in the dark, tube without chloroplasts) show no colour change (1)"
+      },
+      {
+        "q": "Explain why a food chain usually has no more than four or five trophic levels.",
+        "marks": 2,
+        "markScheme": "• Energy is lost at each trophic level (mainly through respiration as heat) (1)\n• By the fourth or fifth level, there is insufficient energy remaining to support another population / trophic level (1)"
+      },
+      {
+        "q": "Describe how to measure net primary productivity in a terrestrial ecosystem.",
+        "marks": 3,
+        "markScheme": "• Harvest and dry plant biomass from a known area at the start and end of a time period (1)\n• The increase in dry biomass per unit area per unit time gives an estimate of NPP (1)\n• Alternatively, measure GPP (e.g. using CO₂ uptake) and subtract plant respiration (measured in the dark) (1)"
+      },
+      {
+        "q": "Draw and label a diagram of the Calvin cycle, showing the key molecules involved.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• CO₂ entering and combining with RuBP (5C) shown, catalysed by RuBisCO (1)\n• Formation of GP (3C) shown (1)\n• Reduction of GP to GALP (3C) using ATP and NADPH indicated (1)\n• Regeneration of RuBP from GALP using ATP shown, with some GALP leaving the cycle for glucose synthesis (1)"
+      },
+      {
+        "q": "Explain the role of decomposers in nutrient cycling.",
+        "marks": 3,
+        "markScheme": "• Decomposers (bacteria and fungi) break down dead organic matter and waste products (1)\n• They secrete extracellular enzymes that digest complex organic molecules into simpler inorganic molecules (1)\n• This releases mineral ions (e.g. nitrates, phosphates) back into the soil, making them available for uptake by plant roots (1)"
+      },
+      {
+        "q": "Explain the greenhouse effect and distinguish it from the enhanced greenhouse effect.",
+        "marks": 4,
+        "markScheme": "• The natural greenhouse effect: greenhouse gases (CO₂, methane, water vapour) absorb infrared radiation re-emitted from the Earth and re-radiate it back, warming the atmosphere (1)\n• This is a natural process essential for maintaining Earth’s temperature suitable for life (1)\n• The enhanced greenhouse effect: human activities have increased concentrations of greenhouse gases (1)\n• This traps more infrared radiation, causing global temperatures to rise above natural levels (1)"
+      },
+      {
+        "q": "Describe how deforestation affects the carbon cycle.",
+        "marks": 3,
+        "markScheme": "• Trees are a carbon sink; removing them reduces the amount of CO₂ absorbed from the atmosphere by photosynthesis (1)\n• Burning or decomposition of felled trees releases stored carbon as CO₂ (1)\n• Soil carbon may also be released as decomposition increases when vegetation cover is removed (1)"
+      },
+      {
+        "q": "Explain how the structure of a chloroplast is related to its role in photosynthesis.",
+        "marks": 3,
+        "markScheme": "• Thylakoid membranes stacked into grana give a large surface area for photosynthetic pigments, electron carriers and ATP synthase (1)\n• The thylakoid space is enclosed, so H⁺ ions can accumulate to form a proton gradient that drives ATP synthesis by chemiosmosis (1)\n• The stroma contains the enzymes of the Calvin cycle (e.g. RuBisCO), next to the thylakoids that supply ATP and reduced NADP (1)"
+      },
+      {
+        "q": "Explain the role of NADP in photosynthesis.",
+        "marks": 2,
+        "markScheme": "• In the light-dependent reactions, NADP is reduced to NADPH by accepting electrons and H⁺ ions (1)\n• NADPH carries the reducing power to the Calvin cycle, where it is used to reduce GP to GALP (1)"
+      },
+      {
+        "q": "The initial rate of an enzyme-catalysed reaction was 15 au min⁻¹ at 25 °C and 33 au min⁻¹ at 35 °C. Calculate the temperature coefficient (Q10) for this reaction.",
+        "marks": 2,
+        "markScheme": "• Q10 = rate at (T + 10) °C ÷ rate at T °C (1)\n• = 33 ÷ 15 = 2.2 (1)"
+      },
+      {
+        "q": "Explain how an increase in temperature could affect the development of an organism such as brine shrimp.",
+        "marks": 3,
+        "markScheme": "• As temperature rises, enzyme and substrate molecules gain kinetic energy, so there are more frequent successful collisions / enzyme-substrate complexes (1)\n• Metabolic reactions are faster, so development / hatch rate increases (1)\n• Above the optimum, bonds (e.g. hydrogen bonds) in the enzyme's tertiary structure break, the active site changes shape and the enzyme denatures, so development slows or stops (1)"
+      },
+      {
+        "q": "Describe how data loggers and sensors can be used to measure abiotic factors in an ecosystem.",
+        "marks": 3,
+        "markScheme": "• Data loggers connected to sensors can continuously record abiotic factors such as temperature, light intensity, humidity, and soil moisture (1)\n• They record measurements at set time intervals over extended periods (1)\n• Data can be downloaded to a computer for analysis, providing accurate and objective measurements with minimal human error (1)"
+      },
+      {
+        "q": "Draw a labelled diagram showing the flow of energy through a simple food chain, including energy losses.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• Producers shown receiving light energy and converting to chemical energy via photosynthesis (1)\n• Energy transfer arrows from producers to primary consumers to secondary consumers (1)\n• Energy losses at each trophic level labelled: respiration (heat), faeces, uneaten biomass (1)\n• Decomposers shown receiving energy from dead organisms and waste at all trophic levels (1)"
+      },
+      {
+        "q": "Explain how natural selection leads to adaptation of populations to their environment.",
+        "marks": 4,
+        "markScheme": "• Genetic variation exists in a population due to mutations and sexual reproduction (1)\n• Environmental pressures (predation, disease, competition) create a selection pressure (1)\n• Organisms with advantageous phenotypes are more likely to survive, reproduce, and pass on their alleles (1)\n• Over generations, the frequency of advantageous alleles increases, and the population becomes better adapted to its environment (1)"
+      },
+      {
+        "q": "Suggest how rising global temperatures could affect food webs in the Arctic.",
+        "marks": 3,
+        "markScheme": "• Melting sea ice reduces habitat for species such as polar bears and seals (1)\n• Changes in plankton populations at the base of food webs affect all higher trophic levels (1)\n• Altered migration patterns and species distribution could lead to new competitive and predator-prey interactions (1)"
+      },
+      {
+        "q": "Explain the concept of carbon neutrality and why burning biomass is sometimes considered carbon neutral.",
+        "marks": 3,
+        "markScheme": "• Carbon neutrality means no net increase in atmospheric CO₂ (1)\n• Burning biomass releases CO₂, but the same amount was absorbed by the plant during photosynthesis during its lifetime (1)\n• However, this only holds if the biomass is replaced at the same rate it is burned; in practice, emissions from processing and transport mean it may not be truly carbon neutral (1)"
+      },
+      {
+        "q": "Explain how speciation occurs through geographical isolation.",
+        "marks": 4,
+        "markScheme": "• A population is divided by a geographical barrier (e.g. mountain range, river, island formation) (1)\n• The separated populations experience different selection pressures / environmental conditions (1)\n• Different mutations arise and are selected for in each population, leading to genetic divergence (1)\n• Over time, the populations become so genetically different that they can no longer interbreed to produce fertile offspring / they are now separate species (allopatric speciation) (1)"
+      },
+      {
+        "q": "Describe how peat bogs act as carbon stores and why their destruction is a concern.",
+        "marks": 3,
+        "markScheme": "• Peat bogs form in waterlogged, acidic conditions where decomposition is very slow (1)\n• Dead plant material accumulates over thousands of years, locking carbon in the peat (1)\n• Draining or burning peat bogs releases this stored carbon as CO₂, contributing to atmospheric greenhouse gas levels (1)"
+      },
+      {
+        "q": "Explain the difference between photosystem I and photosystem II.",
+        "marks": 3,
+        "markScheme": "• Photosystem II (PSII) absorbs light at 680 nm and is involved in the photolysis of water, releasing electrons, H⁺ ions, and O₂ (1)\n• Photosystem I (PSI) absorbs light at 700 nm and passes excited electrons to NADP⁺ reductase to reduce NADP⁺ to NADPH (1)\n• Electrons flow from PSII through the electron transport chain to PSI in non-cyclic photophosphorylation (1)"
+      },
+      {
+        "q": "Explain what is meant by the term biomass and how it is measured.",
+        "marks": 2,
+        "markScheme": "• Biomass is the total mass of living material / organic matter in an organism or at a trophic level (1)\n• It is measured as dry mass (by drying to constant weight) per unit area, which removes variable water content (1)"
+      }
     ]
   },
-  'T6': {
-    name: 'Immunity, Infection and Forensics',
-    questions: [
-      {q: 'State the name given to an organism that causes disease.', marks: 1, markScheme: 'Pathogen (1)'},
-      {q: 'Name the type of white blood cell that produces antibodies.', marks: 1, markScheme: 'B lymphocyte / plasma cell (1)'},
-      {q: 'State one way in which bacteria cause disease.', marks: 1, markScheme: 'By producing toxins / by damaging host cells directly (1)'},
-      {q: 'Name the type of immunity produced by vaccination.', marks: 1, markScheme: 'Artificial active immunity (1)'},
-      {q: 'State what is meant by the term antigen.', marks: 1, markScheme: 'A molecule (usually a protein) on the surface of a cell that triggers an immune response (1)'},
-      {q: 'State one difference between an antibiotic and an antiviral drug.', marks: 1, markScheme: 'Antibiotics kill or inhibit the growth of bacteria; antivirals target specific stages of virus replication (1)'},
-      {q: 'Describe the role of phagocytes in the innate immune response.', marks: 3, markScheme: 'Phagocytes (e.g. macrophages and neutrophils) are attracted to pathogens by chemicals released at the site of infection (chemotaxis) (1). They engulf the pathogen by endocytosis forming a phagosome (1). Lysosomes fuse with the phagosome releasing hydrolytic enzymes that digest the pathogen; antigens may be presented on the cell surface (1).'},
-      {q: 'Describe the structure of an antibody and explain how it functions.', marks: 4, markScheme: 'Y-shaped glycoprotein made of two heavy chains and two light chains joined by disulfide bonds (1). Each antibody has two identical antigen-binding sites (variable regions) that are complementary to a specific antigen (1). The constant region determines the type of antibody (e.g. IgG, IgM) and can bind to receptors on phagocytes (1). Antibodies neutralise pathogens by agglutination, opsonisation (marking for phagocytosis), or preventing attachment to host cells (1).'},
-      {q: 'Explain the difference between the primary and secondary immune response.', marks: 4, markScheme: 'The primary response occurs on first exposure to an antigen; it is slow because specific B and T cells must be selected and clonally expanded (1). Few antibodies are produced and the person may become ill before the pathogen is eliminated (1). Memory cells are produced which persist in the body long-term (1). The secondary response to the same antigen is faster, produces more antibodies and is stronger because memory cells are activated rapidly, often preventing symptoms (1).'},
-      {q: 'Explain the role of T helper cells in the adaptive immune response.', marks: 3, markScheme: 'T helper cells are activated when their specific receptors bind to antigens presented on the surface of antigen-presenting cells (1). They release cytokines which stimulate B cells to divide and differentiate into plasma cells producing antibodies (1). Cytokines also activate cytotoxic T cells and stimulate phagocytes, coordinating the entire adaptive immune response (1).'},
-      {q: 'Explain how vaccination produces immunity to a specific disease.', marks: 4, markScheme: 'A vaccine contains a weakened/attenuated, dead or fragment of a pathogen carrying specific antigens (1). The antigens stimulate an immune response: B cells are activated, clonally expand and produce antibodies (1). Memory B cells and memory T cells are produced and remain in the body (1). On subsequent exposure to the real pathogen, memory cells respond rapidly producing antibodies quickly before the pathogen can cause disease (secondary response) (1).'},
-      {q: 'Explain why antibiotics are not effective against viruses.', marks: 3, markScheme: 'Antibiotics target bacterial structures and metabolic processes such as cell wall synthesis, protein synthesis on 70S ribosomes, or DNA replication (1). Viruses do not have these structures; they are not cells and use host cell machinery to replicate (1). Therefore antibiotics have no viral target to act upon (1).'},
-      {q: 'Describe the process of clonal selection and clonal expansion.', marks: 3, markScheme: 'Each B lymphocyte has antibodies on its surface specific to one antigen; when a matching antigen binds, that B cell is selected (clonal selection) (1). The selected B cell divides rapidly by mitosis producing many identical clones (clonal expansion) (1). Most clones differentiate into plasma cells secreting antibodies; some become long-lived memory cells (1).'},
-      {q: 'Explain the role of cytotoxic T cells in immunity.', marks: 2, markScheme: 'Cytotoxic T cells recognise and bind to cells displaying foreign antigens on their surface (e.g. virus-infected cells, cancer cells, transplanted cells) (1). They release perforin which creates pores in the target cell membrane causing lysis, and granzymes which trigger apoptosis (1).'},
-      {q: 'Describe how antibiotic resistance develops in a bacterial population.', marks: 4, markScheme: 'Random mutations occur in bacterial DNA that may confer resistance to an antibiotic (1). When the antibiotic is used, susceptible bacteria are killed but resistant bacteria survive (selection pressure) (1). Resistant bacteria reproduce passing on the resistance allele to offspring (vertical gene transfer) or via plasmids to other bacteria (horizontal gene transfer) (1). Over time the proportion of resistant bacteria in the population increases; this is an example of natural selection (1).'},
-      {q: 'Explain how DNA profiling is used in forensic investigations.', marks: 4, markScheme: 'DNA is extracted from a forensic sample (e.g. blood, hair, saliva) (1). Specific regions containing short tandem repeats (STRs) / variable number tandem repeats (VNTRs) are amplified using PCR (1). The amplified DNA is separated by gel electrophoresis or capillary electrophoresis producing a unique banding pattern (1). The profile is compared with profiles from suspects or databases; a match at multiple loci provides strong evidence of identity (1).'},
-      {q: 'Describe how the time of death can be estimated using body temperature.', marks: 3, markScheme: 'Body temperature decreases after death as metabolic heat production stops (1). The rate of cooling follows a predictable pattern (Newton\'s law of cooling) that depends on body mass, clothing and environmental temperature (1). By measuring the rectal temperature and comparing to normal (37°C), the time since death can be estimated, though this is most accurate within the first 24 hours (1).'},
-      {q: 'Describe how forensic entomology can be used to estimate the time of death.', marks: 3, markScheme: 'Different species of insects colonise a body in a predictable succession (1). Blowflies typically arrive first and lay eggs; the developmental stage of larvae (e.g. instar stage) can indicate time since colonisation (1). The rate of development depends on temperature so accumulated degree hours/days must be calculated, and the species present can indicate how long since death (1).'},
-      {q: 'Explain the difference between active and passive immunity.', marks: 3, markScheme: 'Active immunity involves the individual\'s own immune system producing antibodies in response to antigens (1). Passive immunity involves receiving ready-made antibodies from another source (e.g. through breast milk or injection of antiserum) (1). Active immunity is long-lasting because memory cells are produced; passive immunity is temporary because no memory cells are made and the antibodies are eventually broken down (1).'},
-      {q: 'Explain why herd immunity is important for protecting vulnerable individuals.', marks: 3, markScheme: 'When a high proportion of a population is vaccinated, the pathogen cannot spread easily between individuals (1). This protects those who cannot be vaccinated such as the very young, elderly, immunocompromised or allergic individuals (1). If vaccination rates fall below the threshold for herd immunity, outbreaks can occur as the pathogen finds enough susceptible hosts to spread (1).'},
-      {q: 'Describe how monoclonal antibodies are produced.', marks: 4, markScheme: 'A mouse is injected with a specific antigen to stimulate B cell production (1). B cells are extracted from the mouse spleen and fused with myeloma (tumour) cells to produce hybridoma cells (1). Hybridoma cells are screened to select those producing the desired antibody (1). Selected hybridomas are cultured to produce large quantities of identical (monoclonal) antibodies (1).'},
-      {q: 'Explain how monoclonal antibodies can be used in the treatment of cancer.', marks: 3, markScheme: 'Monoclonal antibodies are produced that are specific to antigens found on the surface of cancer cells (1). The antibodies can be attached to a cytotoxic drug, radioactive substance or immune cell activator (1). The antibody delivers the treatment directly to the cancer cell, reducing damage to healthy tissue and side effects compared to conventional chemotherapy (1).'},
-      {q: 'Describe the role of the skin as a defence against pathogens.', marks: 3, markScheme: 'The skin acts as a physical barrier; the outer layer of dead keratinised cells is difficult for pathogens to penetrate (1). Sebaceous glands produce sebum which has antimicrobial properties and maintains a low pH on the skin surface (1). Any breaks in the skin trigger blood clotting which seals the wound preventing pathogen entry (1).'},
-      {q: 'Explain how the decomposition of a body can be used alongside other methods to estimate time of death.', marks: 3, markScheme: 'The degree of decomposition follows a predictable sequence: fresh, bloat, active decay, advanced decay, dry/skeletal (1). The stage of decomposition gives a rough estimate of time since death, though it is affected by temperature, humidity and access by scavengers (1). Combining decomposition evidence with entomological data, body temperature and rigor mortis provides a more accurate estimate (1).'},
-      {q: 'Suggest why autoimmune diseases occur and give one example.', marks: 3, markScheme: 'In autoimmune diseases the immune system fails to distinguish self from non-self antigens (loss of self-tolerance) (1). T and B cells attack the body\'s own cells and tissues causing inflammation and damage (1). For example, in type 1 diabetes, T cells destroy the insulin-producing beta cells of the pancreas (1).'},
-      {q: 'Explain the role of inflammation in the innate immune response.', marks: 3, markScheme: 'Damaged cells and mast cells release histamine and cytokines at the site of infection (1). Histamine causes vasodilation and increased permeability of capillaries, bringing more blood and white blood cells to the area (1). This results in redness, heat, swelling and pain; increased blood flow delivers phagocytes and antimicrobial proteins to combat the infection (1).'},
-      {q: 'Evaluate the benefits and risks of vaccination programmes.', marks: 4, markScheme: 'Benefits: vaccines prevent serious illness and death from infectious diseases; herd immunity protects vulnerable individuals (1). Vaccination programmes have eradicated smallpox and greatly reduced the incidence of diseases like polio and measles (1). Risks: some individuals may experience side effects ranging from mild (soreness, fever) to rare severe allergic reactions (anaphylaxis) (1). However the risk of side effects is vastly outweighed by the benefits; anti-vaccine misinformation can reduce uptake and lead to outbreaks (1).'},
-      {q: 'Draw a labelled diagram of an antibody molecule showing its key structural features.', marks: 3, markScheme: 'Y-shaped molecule with two heavy chains and two light chains correctly drawn (1). Variable regions at the tips of each arm labelled as antigen-binding sites (1). Constant region, hinge region and disulfide bonds labelled (1).', diagram: true},
-      {q: 'Sketch a graph comparing antibody concentration over time during a primary and secondary immune response to the same antigen.', marks: 3, markScheme: 'Axes labelled: x-axis time, y-axis antibody concentration (1). Primary response shown as a slow, small peak after first exposure (1). Secondary response shown as a faster onset, much higher peak and longer duration after second exposure to the same antigen (1).', diagram: true},
-      {q: 'Draw a diagram showing the stages of phagocytosis.', marks: 3, markScheme: 'Phagocyte approaching and recognising the pathogen via surface receptors (1). Engulfing the pathogen by pseudopodia forming a phagosome (1). Lysosome fusing with phagosome and digestive enzymes breaking down the pathogen; antigen presentation on the cell surface shown (1).', diagram: true},
-      {q: 'Explain why a person who has recovered from a disease is usually immune to that disease in the future.', marks: 3, markScheme: 'During the primary response, memory B cells and memory T cells specific to the pathogen\'s antigens are produced (1). These cells persist in the body for many years (1). If the same pathogen is encountered again, memory cells divide rapidly producing a faster and larger immune response that eliminates the pathogen before symptoms develop (1).'},
-      {q: 'Describe how ELISA (enzyme-linked immunosorbent assay) works.', marks: 4, markScheme: 'Antibodies specific to the target antigen are attached to a surface (e.g. well of a plate) (1). The sample is added and if the target antigen is present, it binds to the antibodies (1). A secondary antibody linked to an enzyme is added which binds to the antigen (1). A substrate is added which the enzyme converts to a coloured product; the colour intensity is proportional to the amount of antigen present (1).'},
-      {q: 'Explain what is meant by antigenic variation and why it makes some diseases difficult to vaccinate against.', marks: 3, markScheme: 'Antigenic variation is when a pathogen changes its surface antigens through mutation (1). Memory cells from a previous infection or vaccination no longer recognise the new antigens (1). A new immune response must be generated each time, meaning vaccines become ineffective against the new variant e.g. influenza virus (1).'},
-      {q: 'Describe how potassium levels in the vitreous humour can be used to estimate time of death.', marks: 2, markScheme: 'After death, cells in the eye break down and release potassium ions into the vitreous humour (1). The concentration of potassium increases at a relatively predictable rate after death so measuring the concentration can give an estimate of time since death (1).'},
-      {q: 'Outline the role of lysozyme as part of the body\'s non-specific defences.', marks: 2, markScheme: 'Lysozyme is an enzyme found in tears, saliva and nasal secretions (1). It breaks down peptidoglycan in bacterial cell walls causing them to lyse and die, providing a chemical barrier against infection (1).'},
-      {q: 'Explain why organ transplants may be rejected by the recipient\'s immune system.', marks: 3, markScheme: 'Transplanted organs carry antigens (MHC/HLA proteins) on their cell surfaces that differ from the recipient\'s (1). The recipient\'s T cells recognise these as non-self and mount an immune response against the transplant (1). Cytotoxic T cells attack the transplanted tissue causing rejection; immunosuppressant drugs are used to reduce this response (1).'},
-      {q: 'Describe how the presence of rigor mortis can be used to estimate the time of death.', marks: 3, markScheme: 'After death, ATP is no longer produced and calcium ions leak into muscle fibres causing actin and myosin to bind permanently (1). Rigor mortis typically begins 2-4 hours after death, starting in smaller muscles (face) and spreading to larger muscles (1). It is fully established by about 12 hours and begins to disappear after 36-48 hours as enzymes break down the muscle proteins; timing is affected by temperature and physical activity before death (1).'},
-      {q: 'Explain how the complement system aids the immune response.', marks: 3, markScheme: 'The complement system is a group of plasma proteins that are activated in a cascade when they encounter pathogens or antibody-antigen complexes (1). Some complement proteins create pores in pathogen cell membranes (membrane attack complex) causing lysis (1). Others act as opsonins coating pathogens to enhance phagocytosis and some promote inflammation by attracting phagocytes to the site of infection (1).'},
-      {q: 'Describe how stomach acid acts as a non-specific defence against pathogens.', marks: 2, markScheme: 'The stomach produces hydrochloric acid creating a very low pH (approximately pH 2) (1). This denatures the enzymes and proteins of most pathogens ingested with food or drink, killing them before they can cause infection (1).'},
-      {q: 'Explain why it is difficult to produce a vaccine against HIV.', marks: 3, markScheme: 'HIV has a high mutation rate producing many different strains with different surface antigens (antigenic variation) (1). Memory cells produced against one strain may not recognise a new variant (1). HIV also attacks T helper cells which are essential for coordinating the immune response, weakening the body\'s ability to fight the infection (1).'}
+  "S6": {
+    "name": "Immunity, Infection and Forensics",
+    "questions": [
+      {
+        "q": "State what is meant by the term pathogen.",
+        "marks": 1,
+        "markScheme": "• A microorganism that causes disease (1)"
+      },
+      {
+        "q": "Compare the structure of bacteria and viruses.",
+        "marks": 3,
+        "markScheme": "• Bacteria are cells with a cell membrane and cytoplasm; viruses are acellular / non-cellular (1)\n• Bacteria have 70S ribosomes and a peptidoglycan cell wall (may have capsule, flagella, plasmids); viruses have no ribosomes and a protein coat / capsid, sometimes with a lipid envelope (1)\n• Both contain nucleic acid: bacteria have DNA (circular chromosome), whereas viruses have either DNA or RNA (1)"
+      },
+      {
+        "q": "Describe how bacteria cause disease.",
+        "marks": 3,
+        "markScheme": "• Bacteria reproduce rapidly inside the body by binary fission (1)\n• They produce toxins that damage cells and tissues (1)\n• Some bacteria directly invade and destroy host cells / interfere with normal cell function (1)"
+      },
+      {
+        "q": "Describe how viruses cause disease.",
+        "marks": 3,
+        "markScheme": "• Viruses invade host cells and use the host’s cellular machinery to replicate (1)\n• New virus particles are assembled inside the host cell (1)\n• The host cell may burst (lysis), releasing new viruses that infect other cells, causing cell damage and disease symptoms (1)"
+      },
+      {
+        "q": "Describe the body’s non-specific / innate immune defences.",
+        "marks": 4,
+        "markScheme": "• Skin acts as a physical barrier preventing entry of pathogens (1)\n• Mucous membranes in the respiratory and digestive tracts trap pathogens (1)\n• Stomach acid (low pH) kills many ingested pathogens (1)\n• Phagocytes (neutrophils, macrophages) engulf and destroy pathogens by phagocytosis (1)"
+      },
+      {
+        "q": "Describe the process of phagocytosis.",
+        "marks": 4,
+        "markScheme": "• Phagocyte is attracted to the pathogen by chemicals released at the site of infection (chemotaxis) (1)\n• The phagocyte engulfs the pathogen by surrounding it with its cell membrane, forming a phagosome (1)\n• Lysosomes fuse with the phagosome, releasing hydrolytic enzymes that digest the pathogen (1)\n• Antigens from the digested pathogen are presented on the phagocyte’s surface (antigen presentation) (1)"
+      },
+      {
+        "q": "Explain the role of T lymphocytes in the adaptive immune response.",
+        "marks": 4,
+        "markScheme": "• T helper cells recognise antigens presented by phagocytes / antigen-presenting cells (1)\n• They release cytokines that activate B cells and other T cells (1)\n• T killer / cytotoxic cells recognise and destroy infected body cells by releasing perforin to create pores in the cell membrane (1)\n• T memory cells remain in the body and provide a faster response upon re-infection (1)"
+      },
+      {
+        "q": "Explain the role of B lymphocytes in the adaptive immune response.",
+        "marks": 4,
+        "markScheme": "• B cells have antibodies on their surface that are specific to a particular antigen (1)\n• When activated (by binding to antigen and stimulation by T helper cells), B cells divide by mitosis / clonal expansion (1)\n• They differentiate into plasma cells that secrete large quantities of specific antibodies (1)\n• Memory B cells remain in the body and enable a faster, stronger secondary response upon re-exposure (1)"
+      },
+      {
+        "q": "Draw and label a diagram of an antibody molecule.",
+        "marks": 3,
+        "diagram": true,
+        "markScheme": "• Y-shaped molecule with four polypeptide chains (two heavy, two light) shown (1)\n• Variable region at the tips of the Y labelled, showing the antigen-binding sites (1)\n• Constant region forming the stem of the Y labelled; disulfide bonds between chains indicated (1)"
+      },
+      {
+        "q": "Explain how antibodies help to destroy pathogens.",
+        "marks": 4,
+        "markScheme": "• Antibodies bind to specific antigens on the surface of pathogens (1)\n• Agglutination: antibodies cause pathogens to clump together, making it easier for phagocytes to engulf them (1)\n• Neutralisation: antibodies block pathogen binding sites, preventing attachment to host cells (1)\n• Opsonisation: antibodies coat pathogens, enhancing recognition and phagocytosis (1)"
+      },
+      {
+        "q": "Explain the difference between the primary and secondary immune response.",
+        "marks": 4,
+        "markScheme": "• The primary response occurs on first exposure to an antigen; it is slow because specific B and T cells must be selected and clonally expanded (1)\n• A small amount of antibody is produced after a lag period (1)\n• The secondary response occurs on re-exposure to the same antigen; it is faster and produces more antibodies (1)\n• Memory cells produced during the primary response enable the rapid secondary response (1)"
+      },
+      {
+        "q": "Explain how vaccination provides immunity to a disease.",
+        "marks": 4,
+        "markScheme": "• A vaccine contains a weakened / inactivated / part of a pathogen (antigen) that does not cause disease (1)\n• The antigens stimulate the immune system to produce specific B and T cells (1)\n• Memory cells are produced that remain in the body long-term (1)\n• Upon subsequent exposure to the actual pathogen, a rapid secondary immune response occurs, destroying the pathogen before symptoms develop (1)"
+      },
+      {
+        "q": "Explain the concept of herd immunity.",
+        "marks": 3,
+        "markScheme": "• Herd immunity occurs when a large proportion of a population is immune to a disease (through vaccination or prior infection) (1)\n• This reduces the likelihood of the pathogen spreading because there are fewer susceptible individuals (1)\n• It protects those who cannot be vaccinated (e.g. immunocompromised individuals, infants) (1)"
+      },
+      {
+        "q": "Explain how antibiotic resistance develops in bacteria.",
+        "marks": 4,
+        "markScheme": "• Random mutations in bacterial DNA may give some bacteria resistance to an antibiotic (1)\n• When an antibiotic is used, susceptible bacteria are killed but resistant bacteria survive (1)\n• Resistant bacteria reproduce rapidly, passing on the resistance gene / allele to offspring (1)\n• Horizontal gene transfer (e.g. via plasmids / conjugation) can spread resistance between different bacterial species (1)"
+      },
+      {
+        "q": "Evaluate the use of antibiotics in medicine and agriculture.",
+        "marks": 5,
+        "markScheme": "• Antibiotics have saved millions of lives by treating bacterial infections (1)\n• Overuse and misuse in medicine (e.g. prescribing for viral infections) has accelerated resistance (1)\n• Use in agriculture (e.g. in animal feed) has also contributed to resistance development (1)\n• MRSA and other resistant strains are increasingly difficult to treat (1)\n• Evaluation: antibiotics remain essential but must be used more responsibly; new antibiotics need to be developed and alternatives explored (1)"
+      },
+      {
+        "q": "Describe how DNA profiling (genetic fingerprinting) is carried out.",
+        "marks": 5,
+        "markScheme": "• DNA is extracted from a sample (blood, saliva, tissue) (1)\n• Specific regions (short tandem repeats / STRs) are amplified using PCR (1)\n• The amplified fragments are separated by gel electrophoresis or capillary electrophoresis (1)\n• The pattern of bands / peaks represents the individual’s DNA profile (1)\n• Profiles are compared between samples to determine a match (1)"
+      },
+      {
+        "q": "Explain why DNA profiling is useful in forensic science.",
+        "marks": 3,
+        "markScheme": "• Every individual (except identical twins) has a unique DNA profile based on STR lengths (1)\n• DNA from crime scene evidence can be compared with suspect profiles to establish identity (1)\n• DNA profiling can also be used to establish paternity, identify victims, and solve cold cases (1)"
+      },
+      {
+        "q": "Describe how forensic scientists estimate time of death using body temperature.",
+        "marks": 3,
+        "markScheme": "• Body temperature decreases after death at a roughly predictable rate (1)\n• Normal body temperature is approximately 37°C; rate of cooling depends on environmental temperature, body size, and clothing (1)\n• By measuring the current body temperature and knowing the ambient temperature, the time since death can be estimated using cooling curves / Henssge nomogram (1)"
+      },
+      {
+        "q": "Describe how decomposition and insect succession can be used to estimate time of death.",
+        "marks": 4,
+        "markScheme": "• After death, the body undergoes stages of decomposition: fresh, bloat, active decay, advanced decay, dry/skeletal (1)\n• Different species of insects (especially blowflies) colonise the body at predictable stages (1)\n• Identification of insect species and their developmental stage (egg, larva, pupa, adult) gives information about time since death (1)\n• Environmental factors (temperature, humidity) affect the rate of decomposition and insect development and must be considered (1)"
+      },
+      {
+        "q": "Explain how the degree of rigor mortis can help estimate time of death.",
+        "marks": 3,
+        "markScheme": "• After death, respiration stops and ATP runs out, so actin-myosin cross-bridges cannot be broken and the muscles stiffen (1)\n• Rigor mortis begins about 2–4 hours after death (small muscles such as those of the face first) and is fully developed at about 12 hours (1)\n• It fades after about 36–48 hours as the muscle proteins break down; the timings vary with temperature, so the degree of rigor gives an estimate of time since death (1)"
+      },
+      {
+        "q": "Explain the role of antigen-presenting cells in the immune response.",
+        "marks": 2,
+        "markScheme": "• After phagocytosis, antigen-presenting cells (e.g. macrophages, dendritic cells) display pathogen antigens on their surface using MHC proteins (1)\n• This is necessary for activation of T helper cells, which then coordinate the adaptive immune response (1)"
+      },
+      {
+        "q": "Describe how Mycobacterium tuberculosis infects human cells and causes the symptoms of TB.",
+        "marks": 4,
+        "markScheme": "• Bacteria in inhaled droplets reach the lungs and are engulfed by macrophages (1)\n• They survive inside the macrophages: the thick, waxy cell wall resists digestion and they stop lysosomes fusing with the phagosome (1)\n• An inflammatory response walls off infected macrophages in tubercles, where the bacteria can stay dormant for years (1)\n• If the immune system is weakened, active TB develops: bacteria multiply and destroy lung tissue, causing a persistent cough (sometimes with blood), fever, night sweats and weight loss (1)"
+      },
+      {
+        "q": "State the difference between bacteriostatic and bactericidal antibiotics.",
+        "marks": 2,
+        "markScheme": "• Bacteriostatic antibiotics inhibit the growth and division of bacteria (e.g. by blocking protein synthesis), so the immune system can then destroy them (1)\n• Bactericidal antibiotics kill bacteria (e.g. by weakening the cell wall so the cells burst) (1)"
+      },
+      {
+        "q": "Explain why it is difficult to develop vaccines against some viruses such as influenza.",
+        "marks": 3,
+        "markScheme": "• Influenza virus has a high mutation rate, leading to frequent changes in surface antigens (antigenic drift and shift) (1)\n• Memory cells from previous infection or vaccination may not recognise the new strain (1)\n• New vaccines must be developed each year to match the currently circulating strains (1)"
+      },
+      {
+        "q": "Explain the difference between active and passive immunity.",
+        "marks": 4,
+        "markScheme": "• Active immunity: the body produces its own antibodies in response to exposure to antigens (1)\n• It provides long-term protection because memory cells are produced (1)\n• Passive immunity: antibodies are received from an external source (e.g. mother to baby via breast milk, or injection of antibodies) (1)\n• It provides immediate but short-term protection because no memory cells are produced and the antibodies are eventually broken down (1)"
+      },
+      {
+        "q": "Describe how the polymerase chain reaction (PCR) is used to amplify DNA.",
+        "marks": 4,
+        "markScheme": "• DNA is heated to approximately 95°C to denature / separate the two strands (1)\n• Temperature is lowered to approximately 55–60°C for primers to anneal to complementary sequences on each strand (1)\n• Temperature is raised to approximately 72°C for Taq polymerase to extend the primers by adding complementary nucleotides (1)\n• The cycle is repeated 25–30 times, doubling the DNA with each cycle to produce millions of copies (1)"
+      },
+      {
+        "q": "Explain why Taq polymerase is used in PCR rather than a standard DNA polymerase.",
+        "marks": 2,
+        "markScheme": "• Taq polymerase is a thermostable enzyme isolated from Thermus aquaticus, a thermophilic bacterium (1)\n• It is not denatured at the high temperatures (95°C) required for DNA denaturation in PCR, so it remains functional throughout all cycles (1)"
+      },
+      {
+        "q": "Describe how to investigate the effect of different antibiotics on bacteria.",
+        "marks": 4,
+        "markScheme": "• Using aseptic technique, spread a bacterial culture evenly over an agar plate (1)\n• Place paper discs soaked in the different antibiotics (same concentration and disc size) on the agar, with a control disc soaked in sterile water (1)\n• Tape the lid on without fully sealing it and incubate at about 25 °C (not 37 °C, to reduce the risk of growing human pathogens) (1)\n• Measure the diameter of the clear zone of inhibition around each disc and calculate its area (πr²); the larger the area, the more effective the antibiotic (1)"
+      },
+      {
+        "q": "Explain why forensic evidence from multiple sources is more reliable than a single piece of evidence.",
+        "marks": 2,
+        "markScheme": "• Multiple independent sources of evidence (DNA, entomology, body temperature, witnesses) corroborate each other (1)\n• This reduces the chance of error from a single method and provides a more reliable estimate of events (1)"
+      },
+      {
+        "q": "Explain how micro-organisms involved in decomposition contribute to the recycling of carbon.",
+        "marks": 3,
+        "markScheme": "• Decomposers (bacteria and fungi) secrete enzymes that digest dead organic matter (1)\n• They absorb the products of digestion and use them in respiration (1)\n• This releases CO₂ into the atmosphere, which plants can take up again for photosynthesis (1)"
+      },
+      {
+        "q": "Explain how one gene can give rise to more than one protein.",
+        "marks": 3,
+        "markScheme": "• The primary transcript (pre-mRNA) contains introns and exons (1)\n• Introns are removed by splicing, and exons can be joined in different combinations / some exons are also removed (alternative splicing) (1)\n• Each different mature mRNA is translated into a different polypeptide / protein (1)"
+      },
+      {
+        "q": "Explain the role of cytokines in the immune response.",
+        "marks": 3,
+        "markScheme": "• Cytokines are signalling molecules / proteins released by immune cells (1)\n• They coordinate the immune response by stimulating cell division, differentiation, and activation of other immune cells (1)\n• Examples: interleukins (communication between leukocytes), interferons (antiviral defence), TNF (inflammation and apoptosis of infected cells) (1)"
+      },
+      {
+        "q": "Describe how forensic entomologists use blowfly larvae to estimate time of death.",
+        "marks": 3,
+        "diagram": true,
+        "markScheme": "• Blowflies are among the first insects to colonise a body after death, laying eggs within hours (1)\n• The developmental stage of larvae (instar stage) and their size indicate how long they have been feeding (1)\n• Using known development rates at specific temperatures, the minimum time since colonisation (and thus approximate time of death) can be estimated (1)"
+      },
+      {
+        "q": "Evaluate the use of vaccination programmes.",
+        "marks": 5,
+        "markScheme": "• Vaccines have eradicated smallpox and nearly eradicated polio, demonstrating their effectiveness (1)\n• They protect vulnerable individuals through herd immunity (1)\n• They are cost-effective compared to treating disease (1)\n• Concerns include rare side effects and allergic reactions (1)\n• Evaluation: the benefits of vaccination greatly outweigh the risks for the vast majority of the population; misinformation about vaccines can reduce uptake and threaten herd immunity (1)"
+      },
+      {
+        "q": "Explain how the structure of HIV makes it difficult to develop a vaccine.",
+        "marks": 3,
+        "markScheme": "• HIV has a high mutation rate due to the error-prone reverse transcriptase enzyme (1)\n• Surface antigens (e.g. gp120) change rapidly, making it difficult for antibodies to recognise the virus (1)\n• HIV also hides within host T helper cells, evading the immune system and making it difficult to target (1)"
+      },
+      {
+        "q": "Describe how tuberculosis (TB) is transmitted and why it is difficult to control globally.",
+        "marks": 4,
+        "markScheme": "• TB is caused by Mycobacterium tuberculosis and is spread by airborne droplets from coughing / sneezing (1)\n• Overcrowded and poorly ventilated conditions increase transmission (1)\n• The BCG vaccine provides limited protection, and some TB strains are multi-drug resistant (MDR-TB) (1)\n• Poverty, lack of access to healthcare, and co-infection with HIV make TB difficult to control in many countries (1)"
+      },
+      {
+        "q": "Explain why the overuse of antibiotics is a concern for public health.",
+        "marks": 3,
+        "markScheme": "• Overuse increases selection pressure, accelerating the evolution of antibiotic-resistant bacteria (1)\n• Resistant infections (e.g. MRSA, C. difficile) are harder and more expensive to treat, leading to increased morbidity and mortality (1)\n• Without new antibiotics, previously treatable infections could become life-threatening / return to pre-antibiotic era (1)"
+      },
+      {
+        "q": "Outline the process of gel electrophoresis for separating DNA fragments.",
+        "marks": 3,
+        "markScheme": "• DNA fragments are loaded into wells in an agarose gel and an electric current is applied (1)\n• Negatively charged DNA migrates towards the positive electrode (1)\n• Smaller fragments travel further / faster through the gel, separating fragments by size (1)"
+      },
+      {
+        "q": "Explain the role of skin flora and gut flora in protecting the body from infection.",
+        "marks": 3,
+        "markScheme": "• Harmless (commensal) bacteria live on the skin and in the gut (1)\n• They compete with pathogens for nutrients and space / attachment sites, so pathogens cannot establish (1)\n• Some secrete substances (e.g. lactic acid) that lower the pH or otherwise inhibit the growth of pathogens (1)"
+      },
+      {
+        "q": "Explain how codes of practice in hospitals help to prevent and control hospital-acquired infections.",
+        "marks": 4,
+        "markScheme": "• Antibiotics are prescribed only when needed (not for viral or minor infections), using narrow-spectrum drugs where possible at the correct dose (1)\n• This reduces the selection pressure for antibiotic-resistant bacteria such as MRSA and C. difficile (1)\n• Hand washing with soap and water (needed for C. difficile spores) or alcohol gel between patients, and staff dress codes such as bare below the elbows, reduce transfer of bacteria (1)\n• Infected patients are isolated, patients are screened on admission, and wards and equipment are thoroughly cleaned and disinfected (1)"
+      }
     ]
   },
-  'T7': {
-    name: 'Homeostasis and Response',
-    questions: [
-      {q: 'State the definition of homeostasis.', marks: 1, markScheme: 'The maintenance of a constant internal environment despite changes in external conditions (1)'},
-      {q: 'Name the hormone that lowers blood glucose concentration.', marks: 1, markScheme: 'Insulin (1)'},
-      {q: 'State the part of the brain that controls body temperature.', marks: 1, markScheme: 'Hypothalamus (1)'},
-      {q: 'Name the type of neurone that carries impulses from the CNS to an effector.', marks: 1, markScheme: 'Motor neurone (1)'},
-      {q: 'State one function of the kidney.', marks: 1, markScheme: 'Excretion of urea / osmoregulation / filtering blood / maintaining blood pH (any one) (1)'},
-      {q: 'State the name of the process by which glucose is reabsorbed in the kidney.', marks: 1, markScheme: 'Selective reabsorption (1)'},
-      {q: 'Describe how a nerve impulse is transmitted along a myelinated neurone.', marks: 4, markScheme: 'At rest, the neurone is polarised with the inside negative relative to the outside (resting potential of about -70 mV) maintained by the sodium-potassium pump (1). When stimulated, sodium ion channels open and Na+ rushes in causing depolarisation (action potential) (1). Potassium channels then open and K+ moves out causing repolarisation (1). In myelinated neurones, the impulse jumps between nodes of Ranvier (saltatory conduction), increasing the speed of transmission (1).'},
-      {q: 'Describe how a nerve impulse is transmitted across a cholinergic synapse.', marks: 4, markScheme: 'An action potential arrives at the presynaptic membrane causing calcium ion channels to open; Ca2+ flows in (1). Calcium ions cause synaptic vesicles containing acetylcholine (ACh) to fuse with the presynaptic membrane releasing ACh into the synaptic cleft by exocytosis (1). ACh diffuses across the cleft and binds to specific receptors on the postsynaptic membrane opening sodium ion channels (1). Na+ influx generates a new action potential in the postsynaptic neurone; ACh is then broken down by acetylcholinesterase and the products are recycled (1).'},
-      {q: 'Explain the role of negative feedback in maintaining blood glucose concentration.', marks: 4, markScheme: 'When blood glucose rises (e.g. after a meal), beta cells of the islets of Langerhans in the pancreas detect this and secrete insulin (1). Insulin stimulates cells to take up glucose, stimulates glycogenesis (conversion of glucose to glycogen) in liver and muscle, and increases cellular respiration (1). When blood glucose falls below normal, alpha cells secrete glucagon which stimulates glycogenolysis (glycogen to glucose) and gluconeogenesis in the liver (1). This is negative feedback: the response opposes the change, returning blood glucose to the set point (1).'},
-      {q: 'Explain how the body responds to an increase in core body temperature.', marks: 4, markScheme: 'Thermoreceptors in the hypothalamus detect the rise in blood temperature (1). The hypothalamus sends nerve impulses to effectors: vasodilation of arterioles near the skin surface increases blood flow to the skin and heat loss by radiation (1). Sweat glands increase sweat production; evaporation of sweat from the skin surface uses latent heat from the body cooling it down (1). Erector pili muscles relax so hairs lie flat, reducing the insulating layer of trapped air (1).'},
-      {q: 'Describe the structure and function of the nephron in the kidney.', marks: 6, markScheme: 'The Bowman\'s capsule surrounds the glomerulus; high blood pressure forces small molecules (water, glucose, urea, ions) out of the blood by ultrafiltration (1). The basement membrane and podocytes of the capsule act as a filter retaining blood cells and large proteins (1). In the proximal convoluted tubule, all glucose, most water, amino acids and some ions are reabsorbed into the blood by active transport and osmosis (1). The loop of Henle creates a concentration gradient in the medulla; the descending limb is permeable to water, the ascending limb actively pumps out Na+ and Cl- (1). The distal convoluted tubule fine-tunes ion and pH balance under hormonal control (1). The collecting duct is where final water reabsorption occurs controlled by ADH; the resulting urine passes to the renal pelvis and ureter (1).'},
-      {q: 'Explain how ADH controls the water content of the blood (osmoregulation).', marks: 4, markScheme: 'When blood water potential decreases (becomes more negative), osmoreceptors in the hypothalamus detect this change (1). The posterior pituitary gland releases more ADH into the blood (1). ADH increases the permeability of the collecting duct walls by inserting aquaporin channels, so more water is reabsorbed by osmosis into the blood (1). This produces a small volume of concentrated urine; when blood water potential increases, less ADH is released and more dilute urine is produced (negative feedback) (1).'},
-      {q: 'Explain the difference between endocrine and nervous communication.', marks: 3, markScheme: 'Nervous communication uses electrical impulses along neurones and is fast, short-lived and targets specific cells (1). Endocrine communication uses hormones carried in the blood and is slower, longer-lasting and can affect widespread target cells (1). Nervous responses are precise; hormonal responses are more general and may persist until the hormone is broken down (1).'},
-      {q: 'Describe how thermoregulation involves both the nervous and endocrine systems.', marks: 3, markScheme: 'Thermoreceptors detect temperature changes and send nerve impulses to the hypothalamus (nervous) (1). The hypothalamus coordinates responses through nerve impulses to effectors for rapid responses like vasoconstriction/dilation and shivering (1). The hypothalamus can also stimulate the release of hormones such as thyroxine (endocrine) which increases metabolic rate and heat production for longer-term temperature regulation (1).'},
-      {q: 'Explain what is meant by the refractory period and why it is important.', marks: 3, markScheme: 'The refractory period is the short time after an action potential during which the neurone cannot be re-stimulated (1). It is caused by inactivation of sodium channels and the time needed for repolarisation and restoration of the resting potential (1). This ensures impulses travel in one direction only, prevents summation of impulses and limits the frequency of nerve impulses (1).'},
-      {q: 'Describe the role of the loop of Henle in producing concentrated urine.', marks: 4, markScheme: 'The descending limb is permeable to water but not ions; water leaves by osmosis as the filtrate descends into the hypertonic medulla (1). The ascending limb is impermeable to water; Na+ and Cl- are actively pumped out into the medulla (1). This creates a concentration gradient (high solute concentration) in the medulla tissue (countercurrent multiplier) (1). The high osmolarity of the medulla draws water out of the collecting duct by osmosis when ADH is present, producing concentrated urine (1).'},
-      {q: 'Explain the role of the pancreas as both an endocrine and exocrine gland.', marks: 3, markScheme: 'As an exocrine gland, the pancreas secretes digestive enzymes (amylase, lipase, protease) through the pancreatic duct into the duodenum (1). As an endocrine gland, the islets of Langerhans secrete insulin (from beta cells) and glucagon (from alpha cells) directly into the blood (1). The endocrine function regulates blood glucose concentration through negative feedback (1).'},
-      {q: 'Describe the structure of a motor neurone and explain how its features relate to its function.', marks: 4, markScheme: 'Long axon allows impulses to be transmitted over large distances from the CNS to effectors (1). Cell body contains the nucleus and many mitochondria to produce ATP for active transport of ions (1). Myelin sheath made of Schwann cells insulates the axon; gaps (nodes of Ranvier) allow saltatory conduction for faster transmission (1). Motor end plate at the terminal forms a synapse with the effector (muscle or gland) allowing signal transmission (1).'},
-      {q: 'Explain how type 1 and type 2 diabetes differ in their causes and treatment.', marks: 4, markScheme: 'Type 1 is an autoimmune condition where beta cells are destroyed and no insulin is produced; type 2 involves cells becoming resistant to insulin or insufficient insulin production (1). Type 1 typically develops in childhood; type 2 is more common in adults and linked to obesity and lifestyle (1). Type 1 is treated with regular insulin injections and blood glucose monitoring (1). Type 2 is managed by diet and exercise initially, and may require medication (e.g. metformin) or eventually insulin if it progresses (1).'},
-      {q: 'Explain how a Pacinian corpuscle acts as a receptor.', marks: 3, markScheme: 'The Pacinian corpuscle detects pressure changes in the skin (1). Pressure deforms the layers of connective tissue (lamellae) stretching the sensory nerve ending (1). Stretch-mediated sodium channels open allowing Na+ to enter, generating a generator potential; if this reaches the threshold, an action potential is triggered in the sensory neurone (1).'},
-      {q: 'Describe the role of the medulla oblongata in controlling heart rate.', marks: 4, markScheme: 'The cardiovascular centre in the medulla monitors blood pH and receives input from baroreceptors and chemoreceptors (1). If blood CO2 rises (pH falls), chemoreceptors are stimulated and the acceleratory centre sends impulses via the sympathetic nerve to the SAN increasing heart rate (1). If blood pressure rises, baroreceptors in the aorta and carotid arteries are stimulated (1). The inhibitory centre sends impulses via the vagus nerve (parasympathetic) to the SAN decreasing heart rate; this is a negative feedback mechanism (1).'},
-      {q: 'Explain why shivering helps to increase body temperature.', marks: 2, markScheme: 'Shivering involves rapid involuntary contraction of skeletal muscles (1). Muscle contraction requires ATP hydrolysis which releases heat energy as a by-product, warming the blood and raising body temperature (1).'},
-      {q: 'Describe how ultrafiltration occurs in the Bowman\'s capsule.', marks: 3, markScheme: 'Blood enters the glomerulus via the afferent arteriole which is wider than the efferent arteriole, creating high hydrostatic pressure (1). This pressure forces small molecules (water, glucose, urea, amino acids, ions) through the fenestrated capillary endothelium, basement membrane and podocyte gaps into the Bowman\'s capsule (1). Blood cells and large plasma proteins are too large to pass through and remain in the blood (1).'},
-      {q: 'Explain the importance of the all-or-nothing principle of nerve impulse transmission.', marks: 3, markScheme: 'A stimulus must reach a minimum threshold to trigger an action potential; below this, no impulse is generated (1). All action potentials are the same size regardless of stimulus strength (1). The strength of a stimulus is coded by the frequency of action potentials and the number of neurones firing, not by the size of individual impulses (1).'},
-      {q: 'Describe the role of adrenaline in the fight-or-flight response.', marks: 3, markScheme: 'Adrenaline is released from the adrenal medulla in response to stress or danger (1). It increases heart rate and blood pressure to deliver more oxygen and glucose to muscles (1). It stimulates glycogenolysis in the liver to raise blood glucose, dilates bronchioles for increased gas exchange and diverts blood away from the gut to skeletal muscles (1).'},
-      {q: 'Draw a labelled diagram of a motor neurone showing at least four structural features.', marks: 3, markScheme: 'Cell body with nucleus and dendrites correctly drawn (1). Long axon with myelin sheath and nodes of Ranvier shown (1). Motor end plate / synaptic terminals at the end of the axon labelled, along with direction of impulse (1).', diagram: true},
-      {q: 'Sketch a graph showing the changes in membrane potential during an action potential, labelling key stages.', marks: 4, markScheme: 'Axes labelled: x-axis time (ms), y-axis membrane potential (mV) with correct values (approximately -70 to +40 mV) (1). Resting potential shown at -70 mV, then rapid depolarisation to approximately +40 mV (1). Repolarisation shown as a rapid return toward resting potential (1). Hyperpolarisation (brief undershoot below -70 mV) shown before return to resting potential; key stages labelled (depolarisation, repolarisation, hyperpolarisation, threshold) (1).', diagram: true},
-      {q: 'Draw a labelled diagram of a nephron showing the key regions.', marks: 4, markScheme: 'Bowman\'s capsule with glomerulus shown in the cortex (1). Proximal convoluted tubule, loop of Henle extending into the medulla, and distal convoluted tubule shown (1). Collecting duct leading to the renal pelvis shown (1). Blood supply (afferent and efferent arterioles, peritubular capillaries) and direction of flow indicated (1).', diagram: true},
-      {q: 'Explain why patients with kidney failure require dialysis or a transplant.', marks: 3, markScheme: 'The kidneys are unable to filter waste products (e.g. urea) from the blood, leading to toxic build-up (1). They cannot regulate water and ion balance, risking dangerous changes in blood composition and water potential (1). Dialysis artificially filters the blood or a transplant replaces kidney function to maintain homeostasis and prevent death (1).'},
-      {q: 'Explain the role of the sympathetic and parasympathetic nervous systems in controlling body functions.', marks: 3, markScheme: 'The sympathetic nervous system prepares the body for action (fight or flight) by increasing heart rate, dilating pupils and stimulating adrenaline release (1). The parasympathetic nervous system promotes rest and digest functions by decreasing heart rate, constricting pupils and stimulating digestion (1). The two systems act antagonistically to maintain homeostasis through dual innervation of many organs (1).'},
-      {q: 'Explain why glucose is not normally found in the urine of a healthy person.', marks: 2, markScheme: 'Glucose is filtered into the Bowman\'s capsule during ultrafiltration (1). In the proximal convoluted tubule, all glucose is reabsorbed back into the blood by active transport using carrier proteins / co-transport with Na+ (1).'},
-      {q: 'Explain how summation at a synapse can produce an action potential in the postsynaptic neurone.', marks: 3, markScheme: 'A single presynaptic impulse may release insufficient neurotransmitter to reach the threshold in the postsynaptic neurone (1). Temporal summation occurs when multiple impulses arrive in quick succession at the same synapse, accumulating neurotransmitter (1). Spatial summation occurs when impulses arrive simultaneously from multiple presynaptic neurones; the combined effect may reach the threshold and generate an action potential (1).'},
-      {q: 'Describe how the hypothalamus detects and responds to a decrease in blood water potential.', marks: 3, markScheme: 'Osmoreceptors in the hypothalamus shrink as water moves out by osmosis when blood water potential decreases (1). This stimulates the hypothalamus to send nerve impulses to the posterior pituitary gland to release more ADH (1). ADH travels in the blood to the collecting ducts of the kidneys increasing water reabsorption and restoring blood water potential (1).'},
-      {q: 'Explain the importance of the myelin sheath in nerve impulse transmission.', marks: 2, markScheme: 'The myelin sheath acts as an electrical insulator preventing ion exchange across the membrane between nodes of Ranvier (1). This causes the impulse to jump between nodes (saltatory conduction) greatly increasing the speed of transmission compared to unmyelinated neurones (1).'},
-      {q: 'Explain how the kidney regulates blood pH.', marks: 3, markScheme: 'The kidney tubule cells can secrete hydrogen ions (H+) into the tubular fluid by active transport (1). Bicarbonate ions (HCO3-) are reabsorbed into the blood to act as a buffer (1). If blood pH is too low, more H+ is excreted and more HCO3- is reabsorbed; if blood pH is too high, less H+ is excreted, helping to restore normal blood pH (1).'},
-      {q: 'Describe the role of the cerebrum, cerebellum and medulla oblongata in the brain.', marks: 3, markScheme: 'The cerebrum is responsible for higher brain functions including conscious thought, reasoning, memory and voluntary actions (1). The cerebellum coordinates muscle movement, balance and posture (1). The medulla oblongata controls involuntary functions such as heart rate, breathing rate and blood pressure (1).'},
-      {q: 'Explain how the body responds to a decrease in core body temperature.', marks: 4, markScheme: 'Thermoreceptors in the hypothalamus detect the fall in blood temperature (1). Vasoconstriction of arterioles supplying skin surface capillaries reduces blood flow near the skin, reducing heat loss by radiation (1). Shivering (involuntary muscle contractions) generates heat through increased metabolic activity (1). Erector pili muscles contract raising body hairs to trap an insulating layer of air, and adrenaline and thyroxine release may increase metabolic rate (1).'},
-      {q: 'Explain the role of insulin and glucagon in regulating blood glucose after a period of fasting.', marks: 3, markScheme: 'During fasting, blood glucose concentration falls below the set point (1). Alpha cells in the islets of Langerhans detect this and secrete glucagon into the blood (1). Glucagon binds to liver cell receptors and stimulates glycogenolysis (glycogen to glucose) and gluconeogenesis (production of glucose from non-carbohydrate sources), raising blood glucose back to normal (1).'},
-      {q: 'Describe the structure of a sensory neurone and explain how it differs from a motor neurone.', marks: 3, markScheme: 'A sensory neurone has its cell body located in the dorsal root ganglion, off to the side of the axon, with a long dendron connecting to a receptor (1). A motor neurone has its cell body at one end of the neurone within the CNS, with short dendrites and a long axon leading to an effector (1). Both have a myelin sheath and nodes of Ranvier for saltatory conduction but differ in the position of the cell body and direction of impulse transmission (1).'},
-      {q: 'Explain how the structure of the proximal convoluted tubule is adapted for selective reabsorption.', marks: 3, markScheme: 'Epithelial cells have microvilli on the surface facing the lumen providing a large surface area for reabsorption (1). Many mitochondria are present to provide ATP for active transport of glucose, amino acids and ions (1). The cells have a thin wall and are closely associated with peritubular capillaries to provide a short diffusion distance for reabsorbed substances (1).'}
+  "S7": {
+    "name": "Run for Your Life",
+    "questions": [
+      {
+        "q": "State the role of ATP in living cells.",
+        "marks": 1,
+        "markScheme": "• ATP is the immediate / universal energy currency of cells, providing energy for cellular processes (1)"
+      },
+      {
+        "q": "State what is meant by the term aerobic respiration.",
+        "marks": 1,
+        "markScheme": "• The release of energy from organic molecules (usually glucose) in the presence of oxygen, producing CO₂ and water (1)"
+      },
+      {
+        "q": "State the balanced equation for aerobic respiration.",
+        "marks": 1,
+        "markScheme": "• C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O (+ ATP/energy) (1)"
+      },
+      {
+        "q": "Describe the role of glycolysis in aerobic and anaerobic respiration.",
+        "marks": 4,
+        "markScheme": "• Glycolysis takes place in the cytoplasm and does not need oxygen (1)\n• The hexose (glucose) is phosphorylated using ATP, then split into two 3-carbon molecules (1)\n• These are oxidised to pyruvate, giving a net gain of 2 ATP and 2 reduced NAD per glucose (1)\n• In aerobic respiration the pyruvate enters the mitochondria for the link reaction; in anaerobic respiration it is converted to lactate, which reoxidises the NAD so glycolysis can continue (1)"
+      },
+      {
+        "q": "Describe the link reaction.",
+        "marks": 3,
+        "markScheme": "• Pyruvate (3C) is transported into the mitochondrial matrix (1)\n• Pyruvate is decarboxylated (CO₂ removed) and dehydrogenated (hydrogen removed, reducing NAD to NADH) (1)\n• The resulting 2C acetyl group combines with coenzyme A to form acetyl CoA (1)"
+      },
+      {
+        "q": "Describe the role of the Krebs cycle in the complete oxidation of glucose.",
+        "marks": 5,
+        "markScheme": "• Takes place in the mitochondrial matrix, where its enzymes are found (1)\n• The 2-carbon acetyl group from acetyl CoA combines with a 4-carbon compound to form a 6-carbon compound (1)\n• Decarboxylation releases CO₂ (2 per turn), so the carbon of glucose is fully oxidised to CO₂ (1)\n• Dehydrogenation reduces NAD and FAD (3 reduced NAD and 1 reduced FAD per turn), which carry hydrogen to the electron transport chain (1)\n• 1 ATP is made per turn by substrate-level phosphorylation, the 4-carbon compound is regenerated, and the cycle turns twice per glucose (1)"
+      },
+      {
+        "q": "Describe the electron transport chain and oxidative phosphorylation.",
+        "marks": 5,
+        "markScheme": "• NADH and FADH₂ donate electrons to electron carriers on the inner mitochondrial membrane (1)\n• Electrons pass along a series of carriers, releasing energy at each step (1)\n• This energy is used to pump H⁺ ions from the matrix into the intermembrane space, creating a proton gradient (1)\n• H⁺ ions flow back through ATP synthase by chemiosmosis, driving the synthesis of ATP (1)\n• Oxygen is the final electron acceptor, combining with electrons and H⁺ to form water (1)"
+      },
+      {
+        "q": "Explain why oxygen is described as the final electron acceptor in aerobic respiration.",
+        "marks": 2,
+        "markScheme": "• At the end of the electron transport chain, oxygen accepts electrons and combines with H⁺ ions to form water (1)\n• Without oxygen, electrons cannot be removed from the chain, it stops functioning, and ATP production by oxidative phosphorylation ceases (1)"
+      },
+      {
+        "q": "Describe anaerobic respiration in humans.",
+        "marks": 3,
+        "markScheme": "• In the absence of sufficient oxygen, pyruvate from glycolysis is converted to lactate (1)\n• This is catalysed by lactate dehydrogenase and involves the oxidation of NADH back to NAD (1)\n• This allows glycolysis to continue producing a small amount of ATP (net 2 per glucose) (1)"
+      },
+      {
+        "q": "Explain why anaerobic respiration in muscle produces much less ATP per glucose than aerobic respiration.",
+        "marks": 2,
+        "markScheme": "• Only glycolysis takes place, giving a net 2 ATP per glucose; there is no link reaction, Krebs cycle or oxidative phosphorylation because there is no oxygen to act as the final electron acceptor (1)\n• The glucose is only partly broken down: much of its energy stays in the lactate, which is not oxidised to CO₂ and water (1)"
+      },
+      {
+        "q": "Describe the sliding filament model of muscle contraction.",
+        "marks": 6,
+        "markScheme": "• A nerve impulse triggers the release of calcium ions from the sarcoplasmic reticulum (1)\n• Ca²⁺ binds to troponin, causing tropomyosin to move and expose myosin-binding sites on actin (1)\n• Myosin heads bind to actin, forming cross-bridges (1)\n• The myosin head pivots / undergoes a power stroke, pulling the actin filament towards the centre of the sarcomere (using energy from ATP hydrolysis) (1)\n• ATP binds to the myosin head, causing it to detach from actin (1)\n• The myosin head is re-cocked using energy from ATP hydrolysis, ready to bind again; this cycle repeats, shortening the sarcomere (1)"
+      },
+      {
+        "q": "Explain the role of ATP in muscle contraction.",
+        "marks": 3,
+        "markScheme": "• ATP provides energy for the power stroke / movement of the myosin head along actin (1)\n• ATP is needed to detach the myosin head from the actin binding site (1)\n• ATP powers the calcium ion pump that returns Ca²⁺ to the sarcoplasmic reticulum for muscle relaxation (1)"
+      },
+      {
+        "q": "Explain why muscles require a rich blood supply.",
+        "marks": 3,
+        "markScheme": "• To deliver oxygen for aerobic respiration to produce ATP for muscle contraction (1)\n• To deliver glucose and other respiratory substrates (1)\n• To remove waste products such as CO₂ and lactate to prevent build-up / fatigue (1)"
+      },
+      {
+        "q": "Draw and label a diagram of a sarcomere, identifying the A band, I band, H zone and Z lines.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• Z lines at each end of the sarcomere correctly shown and labelled (1)\n• A band (dark band) in the centre where thick (myosin) filaments are present, labelled (1)\n• I band (light band) either side of the Z line where only thin (actin) filaments are present, labelled (1)\n• H zone in the centre of the A band where only thick filaments are present, labelled (1)"
+      },
+      {
+        "q": "Explain what happens to the I band and H zone during muscle contraction.",
+        "marks": 2,
+        "markScheme": "• The I band gets shorter / narrower because actin filaments slide over myosin towards the centre (1)\n• The H zone gets shorter / narrower because actin filaments overlap more with myosin; the A band stays the same width (1)"
+      },
+      {
+        "q": "Describe the role of creatine phosphate in muscle cells.",
+        "marks": 2,
+        "markScheme": "• Creatine phosphate acts as a rapid reserve of phosphate groups for ATP regeneration (1)\n• It transfers a phosphate group to ADP to regenerate ATP very quickly during the first few seconds of intense exercise (1)"
+      },
+      {
+        "q": "Explain the concept of oxygen debt (excess post-exercise oxygen consumption).",
+        "marks": 3,
+        "markScheme": "• During intense exercise, anaerobic respiration produces lactate (1)\n• After exercise, extra oxygen is consumed to oxidise lactate back to pyruvate in the liver (or convert it to glycogen) (1)\n• Additional oxygen is needed to replenish creatine phosphate stores, myoglobin oxygen stores, and restore resting metabolic conditions (1)"
+      },
+      {
+        "q": "Explain why heart rate increases during exercise.",
+        "marks": 3,
+        "markScheme": "• Increased muscle activity increases demand for oxygen and glucose for aerobic respiration (1)\n• Chemoreceptors detect increased CO₂ / decreased pH in the blood and send signals to the cardiovascular centre in the medulla (1)\n• The medulla sends impulses via the sympathetic nervous system to the SAN, increasing heart rate to deliver more oxygenated blood to muscles (1)"
+      },
+      {
+        "q": "Calculate the cardiac output if heart rate increases to 150 bpm and stroke volume is 80 cm³ during exercise.",
+        "marks": 2,
+        "markScheme": "• Cardiac output = heart rate × stroke volume = 150 × 80 (1)\n• = 12,000 cm³/min / 12 dm³/min (1)"
+      },
+      {
+        "q": "Explain how thermoregulation maintains a constant body temperature during exercise.",
+        "marks": 4,
+        "markScheme": "• Thermoreceptors detect the rise in blood temperature and send signals to the hypothalamus (1)\n• Vasodilation of arterioles near the skin surface increases blood flow to the skin, increasing heat loss by radiation (1)\n• Sweat glands produce more sweat; evaporation of sweat from the skin surface removes heat (1)\n• These are negative feedback mechanisms that bring body temperature back to the set point (1)"
+      },
+      {
+        "q": "Explain the role of myoglobin in muscle tissue.",
+        "marks": 2,
+        "markScheme": "• Myoglobin is a protein in muscle cells that has a higher affinity for oxygen than haemoglobin (1)\n• It acts as an oxygen store, releasing oxygen to mitochondria during intense exercise when blood oxygen supply is insufficient (1)"
+      },
+      {
+        "q": "Describe the structure of a mitochondrion and explain how its features are adapted for aerobic respiration.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• Double membrane: outer membrane is smooth, inner membrane is folded into cristae (1)\n• Cristae increase the surface area for the electron transport chain and ATP synthase (oxidative phosphorylation) (1)\n• Matrix contains enzymes for the Krebs cycle and the link reaction (1)\n• The intermembrane space is narrow, allowing a steep proton gradient to be established quickly for chemiosmosis (1)"
+      },
+      {
+        "q": "Compare the ATP yield from aerobic and anaerobic respiration.",
+        "marks": 3,
+        "markScheme": "• Aerobic respiration produces approximately 30–32 ATP per glucose molecule (theoretical maximum of 38) (1)\n• Anaerobic respiration produces only 2 ATP per glucose (from glycolysis) (1)\n• Aerobic respiration is far more efficient because the Krebs cycle and oxidative phosphorylation generate most of the ATP, which requires oxygen (1)"
+      },
+      {
+        "q": "Explain what is meant by the VO₂ max and why it is an indicator of fitness.",
+        "marks": 2,
+        "markScheme": "• VO₂ max is the maximum rate of oxygen consumption during intense exercise (1)\n• A higher VO₂ max indicates greater aerobic fitness / the body can deliver and use more oxygen for ATP production during exercise (1)"
+      },
+      {
+        "q": "Describe how fast-twitch and slow-twitch muscle fibres differ in structure and function.",
+        "marks": 4,
+        "markScheme": "• Slow-twitch (Type I): contract slowly, are fatigue-resistant, and are suited to endurance activities (1)\n• They have many mitochondria, rich blood supply, and high myoglobin content for sustained aerobic respiration (1)\n• Fast-twitch (Type II): contract rapidly and powerfully but fatigue quickly (1)\n• They have fewer mitochondria but large glycogen stores and high anaerobic capacity for short bursts of intense activity (1)"
+      },
+      {
+        "q": "Explain how negative feedback is involved in homeostasis.",
+        "marks": 3,
+        "markScheme": "• A receptor detects a change / deviation from the set point (1)\n• A control centre / coordinator processes the information and sends signals to effectors (1)\n• Effectors bring about a response that opposes / reverses the change, returning the variable to the set point (1)"
+      },
+      {
+        "q": "Explain the difference between negative feedback and positive feedback, giving one example of each.",
+        "marks": 4,
+        "markScheme": "• Negative feedback: a change from the norm triggers a response that reverses the change, returning the system to the norm / keeping it within narrow limits (1)\n• Example: a rise in core temperature detected by the hypothalamus leads to vasodilation and sweating, lowering the temperature (1)\n• Positive feedback: a change triggers a response that increases the change further, moving the system away from the norm (1)\n• Example: depolarisation of an axon opens more Na⁺ channels, so more Na⁺ enters and depolarisation increases / oxytocin release during labour (1)"
+      },
+      {
+        "q": "Explain why ATP is described as a universal energy currency.",
+        "marks": 3,
+        "markScheme": "• ATP is used by all living cells as an immediate source of energy (1)\n• It releases a small, manageable amount of energy when hydrolysed to ADP + Pi, suitable for individual reactions (1)\n• It can be rapidly regenerated from ADP and Pi, allowing continuous energy supply / it couples exergonic and endergonic reactions (1)"
+      },
+      {
+        "q": "Explain how an electrocardiogram (ECG) can be used to aid the diagnosis of heart conditions.",
+        "marks": 3,
+        "markScheme": "• An ECG records the electrical activity of the heart through electrodes on the skin (1)\n• A normal trace shows a P wave (atrial excitation), a QRS complex (ventricular excitation) and a T wave (ventricular repolarisation) (1)\n• Changes from the normal trace show a problem, e.g. an irregular or absent P wave in atrial fibrillation, a raised ST section in a heart attack (myocardial infarction), or an abnormal rate (tachycardia or bradycardia) (1)"
+      },
+      {
+        "q": "An athlete's cardiac output is 22.5 dm³ min⁻¹ at a heart rate of 180 beats min⁻¹. Calculate the stroke volume in cm³.",
+        "marks": 2,
+        "markScheme": "• Stroke volume = cardiac output ÷ heart rate = 22.5 ÷ 180 = 0.125 dm³ (1)\n• = 125 cm³ (1)"
+      },
+      {
+        "q": "Explain the role of the sarcoplasmic reticulum in muscle contraction.",
+        "marks": 2,
+        "markScheme": "• The sarcoplasmic reticulum stores calcium ions at rest (1)\n• When stimulated by an action potential, it releases Ca²⁺ into the sarcoplasm, triggering the sliding filament mechanism (1)"
+      },
+      {
+        "q": "Explain why training improves cardiovascular fitness.",
+        "marks": 4,
+        "markScheme": "• Regular exercise increases stroke volume by strengthening the cardiac muscle / cardiac hypertrophy (1)\n• Resting heart rate decreases because each beat pumps more blood (1)\n• The number of capillaries supplying muscles increases, improving oxygen delivery (1)\n• VO₂ max increases due to improved oxygen delivery and utilisation / more mitochondria in muscle cells (1)"
+      },
+      {
+        "q": "Describe how a spirometer can be used to measure oxygen consumption and calculate the rate of respiration.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• The subject breathes in and out of a sealed chamber containing oxygen, connected to a recorder / data logger (1)\n• A CO₂ absorber (e.g. soda lime) removes exhaled CO₂ so only O₂ consumption is measured (1)\n• The volume of gas in the chamber decreases over time as oxygen is used up (1)\n• The rate of oxygen consumption is calculated from the gradient of the trace (volume decrease / time) (1)"
+      },
+      {
+        "q": "Describe how lactate is removed from the body after exercise.",
+        "marks": 3,
+        "markScheme": "• Lactate is transported in the blood to the liver (1)\n• In the liver, lactate is converted back to pyruvate by lactate dehydrogenase (1)\n• Pyruvate can then be oxidised in aerobic respiration, or converted to glycogen for storage (Cori cycle) (1)"
+      },
+      {
+        "q": "Explain why sustained vigorous exercise can cause muscle fatigue.",
+        "marks": 3,
+        "markScheme": "• During intense exercise, oxygen supply may be insufficient, leading to anaerobic respiration and lactate accumulation (1)\n• Lactate lowers pH in muscle cells, which inhibits enzyme activity and reduces the efficiency of muscle contraction (1)\n• Depletion of glycogen / creatine phosphate stores also reduces the ability to regenerate ATP rapidly (1)"
+      },
+      {
+        "q": "Describe the role of the neuromuscular junction in stimulating muscle contraction.",
+        "marks": 4,
+        "markScheme": "• A nerve impulse / action potential arrives at the motor neurone terminal (1)\n• Calcium ions enter the terminal, causing synaptic vesicles to release acetylcholine (ACh) into the synaptic cleft (1)\n• ACh binds to receptors on the muscle fibre membrane (sarcolemma), depolarising it and generating an action potential (1)\n• The action potential spreads along the sarcolemma and into T-tubules, stimulating the sarcoplasmic reticulum to release Ca²⁺ (1)"
+      },
+      {
+        "q": "Explain the significance of the inner mitochondrial membrane being folded into cristae.",
+        "marks": 2,
+        "markScheme": "• Cristae increase the surface area of the inner membrane (1)\n• This provides more space for electron transport chain complexes and ATP synthase, increasing the rate of oxidative phosphorylation / ATP production (1)"
+      },
+      {
+        "q": "Explain why endurance athletes typically have a higher proportion of slow-twitch muscle fibres.",
+        "marks": 2,
+        "markScheme": "• Slow-twitch fibres are more resistant to fatigue and can sustain prolonged aerobic activity (1)\n• They have more mitochondria, myoglobin, and blood supply, enabling efficient aerobic ATP production for long-duration exercise (1)"
+      },
+      {
+        "q": "Explain what happens to pyruvate when oxygen is present compared to when oxygen is absent in muscle cells.",
+        "marks": 3,
+        "markScheme": "• When oxygen is present: pyruvate enters the mitochondrial matrix and undergoes the link reaction to form acetyl CoA, which enters the Krebs cycle (1)\n• When oxygen is absent: pyruvate is reduced to lactate in the cytoplasm, using reduced NAD (1)\n• This regenerates NAD so glycolysis can continue producing a small amount of ATP; the lactate is later taken to the liver and converted back to pyruvate (1)"
+      },
+      {
+        "q": "Explain how the structure of the alveoli is adapted for efficient gas exchange during exercise.",
+        "marks": 3,
+        "markScheme": "• Increased ventilation rate during exercise maintains a steep concentration gradient for O₂ and CO₂ across the alveolar walls (1)\n• The thin walls (one cell thick) and large surface area of alveoli allow rapid diffusion (1)\n• Increased cardiac output during exercise maintains blood flow past alveoli, ensuring continuous removal of O₂ and delivery of CO₂ (1)"
+      }
     ]
   },
-  'T8': {
-    name: 'Gene Expression and Biotechnology',
-    questions: [
-      {q: 'State what is meant by the term gene expression.', marks: 1, markScheme: 'The process by which the information encoded in a gene is used to produce a functional product, usually a protein (1)'},
-      {q: 'Name the enzyme used to cut DNA at specific recognition sequences.', marks: 1, markScheme: 'Restriction endonuclease / restriction enzyme (1)'},
-      {q: 'State the purpose of PCR.', marks: 1, markScheme: 'To amplify / make many copies of a specific DNA sequence (1)'},
-      {q: 'Name the enzyme used to join DNA fragments together.', marks: 1, markScheme: 'DNA ligase (1)'},
-      {q: 'State what is meant by epigenetics.', marks: 1, markScheme: 'Heritable changes in gene expression that do not involve changes to the DNA base sequence (1)'},
-      {q: 'State one use of genetic engineering in medicine.', marks: 1, markScheme: 'Production of human insulin by bacteria / production of human growth hormone / gene therapy for genetic disorders (any one) (1)'},
-      {q: 'Describe how transcription factors regulate gene expression.', marks: 3, markScheme: 'Transcription factors are proteins that bind to specific DNA sequences (promoter or enhancer regions) near a gene (1). Activators stimulate RNA polymerase to bind to the promoter, increasing transcription of the gene (1). Repressors block RNA polymerase from binding to the promoter, preventing transcription (1).'},
-      {q: 'Describe the three stages of PCR.', marks: 3, markScheme: 'Denaturation: the sample is heated to approximately 95°C to break hydrogen bonds and separate the two DNA strands (1). Annealing: the temperature is lowered to approximately 55-65°C so that specific primers bind to complementary sequences flanking the target region (1). Extension: the temperature is raised to approximately 72°C and Taq polymerase synthesises new DNA strands by adding nucleotides complementary to the template (1).'},
-      {q: 'Describe how gel electrophoresis separates DNA fragments.', marks: 3, markScheme: 'DNA fragments are placed in wells in an agarose gel and an electric current is applied (1). DNA fragments are negatively charged due to phosphate groups so they migrate toward the positive electrode (anode) (1). Smaller fragments move faster and further through the gel matrix; fragments separate into bands by size (1).'},
-      {q: 'Explain how a recombinant DNA molecule is produced.', marks: 4, markScheme: 'The desired gene is isolated or obtained using reverse transcriptase from mRNA, or cut from DNA using restriction enzymes (1). A vector (e.g. plasmid) is cut with the same restriction enzyme producing complementary sticky ends (1). The gene is inserted into the vector using DNA ligase to join the sugar-phosphate backbones (1). The recombinant vector is introduced into host cells (transformation) where the gene can be expressed (1).'},
-      {q: 'Describe how DNA methylation affects gene expression.', marks: 3, markScheme: 'Methyl groups are added to cytosine bases in DNA, typically at CpG sites (1). Methylation of the promoter region prevents transcription factors from binding (1). This silences the gene so it is not expressed; methylation patterns can be inherited through cell division (1).'},
-      {q: 'Explain how histone modification can alter gene expression.', marks: 3, markScheme: 'DNA is wrapped around histone proteins forming chromatin (1). Acetylation of histones reduces the positive charge on histone tails, loosening the interaction with negatively charged DNA (1). This opens up the chromatin structure (euchromatin), making DNA more accessible to transcription factors and RNA polymerase, increasing gene expression (1).'},
-      {q: 'Describe the process of gene cloning using bacteria.', marks: 4, markScheme: 'The target gene is inserted into a plasmid vector along with a selectable marker gene (e.g. antibiotic resistance) (1). The recombinant plasmid is introduced into bacterial cells by transformation (e.g. heat shock or electroporation) (1). Bacteria are grown on agar containing the antibiotic; only those with the plasmid survive (selection) (1). Selected bacteria are cultured in large quantities in a fermenter to produce many copies of the gene or its protein product (1).'},
-      {q: 'Explain the difference between somatic gene therapy and germ line gene therapy.', marks: 3, markScheme: 'Somatic gene therapy targets body (somatic) cells of an affected individual and is not heritable (1). Germ line gene therapy targets gametes or early embryo cells so the corrected gene is passed to future generations (1). Germ line therapy is currently banned in humans due to ethical concerns about altering the human gene pool and unforeseen consequences (1).'},
-      {q: 'Describe how RNA interference (RNAi) can silence gene expression.', marks: 3, markScheme: 'Small interfering RNA (siRNA) molecules that are complementary to a specific mRNA sequence are introduced into the cell (1). The siRNA binds to the complementary mRNA forming a double-stranded RNA complex (1). This complex is recognised and degraded by cellular enzymes (RISC complex), preventing translation of the mRNA into protein (1).'},
-      {q: 'Explain how genetic engineering has been used to produce human insulin.', marks: 4, markScheme: 'The human insulin gene is obtained using reverse transcriptase to make cDNA from mRNA extracted from pancreatic beta cells, or by chemical synthesis (1). The gene is inserted into a bacterial plasmid using restriction enzymes and DNA ligase (1). The recombinant plasmid is introduced into E. coli bacteria by transformation (1). Bacteria express the human insulin gene and are grown in large-scale fermenters; insulin is extracted and purified for medical use (1).'},
-      {q: 'Describe the role of stem cells in gene therapy for genetic disorders.', marks: 3, markScheme: 'Stem cells can be extracted from the patient (e.g. bone marrow), genetically modified to contain a functional copy of the defective gene, and returned to the patient (1). Because stem cells can divide and differentiate, the corrected gene is present in all cells derived from them (1). This provides a long-term source of cells expressing the functional gene, potentially curing the disorder (e.g. SCID) (1).'},
-      {q: 'Explain the ethical concerns surrounding genetic engineering of organisms.', marks: 4, markScheme: 'There are concerns about unintended effects on the organism or ecosystem if genetically modified organisms are released into the environment (1). Genetic modification of food crops raises questions about safety for human consumption and economic impact on farmers (1). Genetic modification of embryos or germ line cells raises concerns about designer babies and eugenics (1). Some argue that genetic engineering interferes with nature, while others argue the potential benefits (e.g. disease treatment, food security) justify its use with proper regulation (1).'},
-      {q: 'Describe how CRISPR-Cas9 can be used to edit genes.', marks: 4, markScheme: 'A guide RNA (gRNA) is designed to be complementary to the target DNA sequence (1). The gRNA directs the Cas9 enzyme to the specific location in the genome where it creates a double-strand break (1). The cell\'s repair mechanisms can then be used to either disrupt the gene (non-homologous end joining) or insert a new sequence (homology-directed repair with a donor template) (1). This allows precise editing of specific genes for research, agriculture or potential medical therapies (1).'},
-      {q: 'Explain why Taq polymerase is used in PCR rather than human DNA polymerase.', marks: 2, markScheme: 'Taq polymerase is a thermostable enzyme isolated from the thermophilic bacterium Thermus aquaticus (1). It can withstand the high temperatures (95°C) used in the denaturation step of PCR without being denatured, unlike human DNA polymerase which would be destroyed (1).'},
-      {q: 'Describe how a genetic fingerprint / DNA profile is produced and interpreted.', marks: 4, markScheme: 'DNA is extracted and specific STR/VNTR regions are amplified using PCR (1). The amplified fragments are separated by gel electrophoresis or capillary electrophoresis based on size (1). The resulting pattern of bands is unique to each individual (except identical twins) (1). Profiles are compared between samples; matching bands at multiple loci indicate the samples are from the same individual or closely related individuals (1).'},
-      {q: 'Explain how a microarray (DNA chip) can be used to study gene expression.', marks: 4, markScheme: 'A microarray contains thousands of known single-stranded DNA sequences (probes) fixed to specific positions on a chip (1). mRNA is extracted from the cells of interest and converted to fluorescently labelled cDNA using reverse transcriptase (1). The cDNA is added to the microarray; it hybridises (binds) to complementary probes (1). The intensity of fluorescence at each position indicates the level of expression of that gene; this reveals which genes are active in the tissue (1).'},
-      {q: 'Explain why the Human Genome Project was significant for medicine and biology.', marks: 3, markScheme: 'It determined the complete DNA sequence of the human genome, identifying the location and sequence of all human genes (1). This knowledge allows identification of genes associated with genetic diseases enabling development of genetic tests, gene therapies and personalised medicine (1). It also provides a reference for studying variation between individuals and populations and for understanding gene function and regulation (1).'},
-      {q: 'Describe the role of reverse transcriptase in genetic engineering.', marks: 2, markScheme: 'Reverse transcriptase synthesises complementary DNA (cDNA) from an mRNA template (1). This is useful because the cDNA contains only exons (no introns), making it suitable for expression in prokaryotic cells which cannot splice introns (1).'},
-      {q: 'Explain the difference between totipotent, pluripotent and multipotent stem cells in terms of their potential for gene therapy.', marks: 3, markScheme: 'Totipotent stem cells (from early embryos) can differentiate into any cell type including placental tissue (1). Pluripotent stem cells (embryonic stem cells) can differentiate into most cell types and are widely used in research (1). Multipotent stem cells (adult stem cells) can only differentiate into a limited range of cell types within their tissue of origin but avoid ethical issues associated with embryonic cells (1).'},
-      {q: 'Describe the process of producing a transgenic organism.', marks: 4, markScheme: 'The desired gene is isolated from the donor organism using restriction enzymes or reverse transcriptase (1). The gene is inserted into a suitable vector such as a plasmid, virus or liposome (1). The vector carries the gene into the cells of the target organism (transformation/transfection) (1). The gene integrates into the host genome and is expressed, conferring a new characteristic; offspring may inherit the transgene (1).'},
-      {q: 'Evaluate the use of GM crops in agriculture.', marks: 4, markScheme: 'GM crops can be engineered for pest resistance, reducing the need for pesticides and increasing yields (1). They can be modified for improved nutritional content (e.g. golden rice with vitamin A) benefiting human health (1). However, there are concerns about gene transfer to wild relatives creating herbicide-resistant weeds (1). Issues of food safety, corporate control of seed supply, reduced biodiversity in crop monocultures and long-term environmental effects remain debated (1).'},
-      {q: 'Draw a labelled diagram showing the process of producing recombinant DNA using a plasmid vector.', marks: 4, markScheme: 'Plasmid and target DNA both cut with the same restriction enzyme producing complementary sticky ends (1). Gene of interest and cut plasmid shown with matching sticky ends aligning (1). DNA ligase joining the fragments to form a recombinant plasmid (1). Recombinant plasmid being introduced into a bacterial host cell (transformation) (1).', diagram: true},
-      {q: 'Sketch a diagram showing the three temperature stages of one PCR cycle.', marks: 3, markScheme: 'Three distinct temperature stages shown with correct approximate temperatures: 95°C denaturation, 55-65°C annealing, 72°C extension (1). DNA strands separating at denaturation, primers attaching at annealing (1). Taq polymerase extending new strands at the extension stage producing two copies from one template (1).', diagram: true},
-      {q: 'Draw a diagram showing the separation of DNA fragments by gel electrophoresis.', marks: 3, markScheme: 'Gel shown with wells at one end (cathode/negative) and positive electrode (anode) at the other end (1). DNA fragments shown migrating toward the anode with smaller fragments travelling further (1). Resulting bands of different sizes visible with a DNA ladder/size marker shown for comparison (1).', diagram: true},
-      {q: 'Explain how induced pluripotent stem cells (iPSCs) are produced and their significance.', marks: 3, markScheme: 'Adult differentiated cells (e.g. skin cells) are reprogrammed by introducing specific transcription factors (e.g. Oct4, Sox2, Klf4, c-Myc) that reset the cell to a pluripotent state (1). iPSCs can then differentiate into almost any cell type, similar to embryonic stem cells (1). They avoid the ethical issues of using embryos and reduce rejection risk in therapy since they can be produced from the patient\'s own cells (1).'},
-      {q: 'Explain the concept of pharmacogenomics and how it relates to personalised medicine.', marks: 3, markScheme: 'Pharmacogenomics studies how an individual\'s genetic makeup affects their response to drugs (1). Genetic variations (polymorphisms) in drug-metabolising enzymes or drug targets can determine effectiveness and risk of side effects (1). This allows doctors to select the most effective drug and dose for each patient based on their genome, reducing adverse reactions and improving treatment outcomes (1).'},
-      {q: 'Describe how a gene probe can be used to identify a specific gene sequence.', marks: 3, markScheme: 'A gene probe is a short, single-stranded DNA or RNA sequence complementary to the target gene, labelled with a fluorescent or radioactive marker (1). The probe is added to a sample of denatured (single-stranded) DNA under conditions that allow hybridisation (1). If the target sequence is present, the probe binds to it and the label allows detection, indicating the presence of the gene (1).'},
-      {q: 'Explain why bacterial cells are commonly used as host cells in genetic engineering.', marks: 3, markScheme: 'Bacteria reproduce rapidly by binary fission so large quantities of the gene product can be produced quickly (1). They contain plasmids which are easy to manipulate as vectors for inserting foreign DNA (1). Bacterial genetics is well understood, they are cheap to culture in fermenters and their gene expression machinery can produce human proteins (1).'},
-      {q: 'Describe how antibiotic resistance genes are used as selectable markers in gene cloning.', marks: 3, markScheme: 'The plasmid vector contains an antibiotic resistance gene as a marker (1). After transformation, bacteria are grown on agar plates containing the antibiotic (1). Only bacteria that have taken up the plasmid (and therefore the resistance gene) will survive and grow, allowing identification and selection of successfully transformed cells (1).'},
-      {q: 'Explain the potential benefits and risks of gene therapy for cystic fibrosis.', marks: 4, markScheme: 'A functional copy of the CFTR gene could be delivered to lung epithelial cells using a viral vector or liposomes (1). If successfully expressed, the functional CFTR protein would restore chloride ion transport across cell membranes, reducing thick mucus production (1). Risks include the immune response against the vector, difficulty achieving long-term expression as lung cells are replaced, and potential insertional mutagenesis (1). Current treatments require repeated administration as the gene is not permanently integrated into stem cells of the lungs (1).'},
-      {q: 'Describe the role of promoters and enhancers in controlling gene expression.', marks: 3, markScheme: 'A promoter is a DNA sequence located immediately upstream of a gene where RNA polymerase binds to initiate transcription (1). Enhancers are DNA sequences that can be located thousands of base pairs from the gene and increase the rate of transcription when activator proteins bind to them (1). The DNA loops so that proteins bound to enhancers can interact with the transcription machinery at the promoter, stimulating gene expression (1).'},
-      {q: 'Explain the difference between in vivo and ex vivo gene therapy.', marks: 2, markScheme: 'In vivo gene therapy delivers the functional gene directly into the patient\'s body using a vector such as a virus or liposome (1). Ex vivo gene therapy involves removing cells from the patient, genetically modifying them in the laboratory, and then returning the corrected cells to the patient (1).'},
-      {q: 'Describe how reporter genes are used to identify successfully transformed cells.', marks: 3, markScheme: 'A reporter gene (e.g. gene for green fluorescent protein or beta-galactosidase) is inserted into the vector alongside the gene of interest (1). After transformation, cells that have taken up the vector express the reporter gene producing a detectable signal (1). For example, cells expressing GFP glow green under UV light, or cells with beta-galactosidase turn blue in the presence of X-gal, allowing identification of transformed colonies (1).'},
-      {q: 'Explain how bioinformatics is used to analyse genomic data.', marks: 3, markScheme: 'Bioinformatics uses computer software and databases to store, analyse and compare large volumes of DNA and protein sequence data (1). Sequence alignment tools can identify similarities between genes of different species to infer evolutionary relationships and predict gene function (1). It is used in drug target identification, predicting protein structure from sequence data and identifying disease-associated genetic variants (1).'}
+  "S8": {
+    "name": "Grey Matter",
+    "questions": [
+      {
+        "q": "State the function of the nervous system.",
+        "marks": 1,
+        "markScheme": "• To detect stimuli, coordinate responses, and enable communication between different parts of the body via electrical impulses (1)"
+      },
+      {
+        "q": "Describe the structure of a motor neurone.",
+        "marks": 3,
+        "diagram": true,
+        "markScheme": "• Cell body with a nucleus, dendrites receiving impulses from other neurones, and a long axon transmitting impulses to effectors (1)\n• Axon is surrounded by a myelin sheath (Schwann cells) with gaps called nodes of Ranvier (1)\n• Axon terminals / synaptic knobs at the end of the axon release neurotransmitters (1)"
+      },
+      {
+        "q": "Explain how a resting potential is maintained across a neurone membrane.",
+        "marks": 3,
+        "markScheme": "• The sodium-potassium pump actively transports 3 Na⁺ out and 2 K⁺ into the cell, using ATP (1)\n• K⁺ leak channels allow more K⁺ to diffuse out than Na⁺ diffuses in (1)\n• This creates a charge difference of approximately −70 mV across the membrane (inside negative relative to outside) (1)"
+      },
+      {
+        "q": "Describe the events of an action potential.",
+        "marks": 5,
+        "markScheme": "• A stimulus causes sodium ion channels to open; Na⁺ rushes into the cell (depolarisation) (1)\n• The membrane potential rises from −70 mV towards +40 mV (1)\n• At the peak, sodium channels close and potassium channels open; K⁺ rushes out (repolarisation) (1)\n• Hyperpolarisation occurs as the membrane potential temporarily overshoots the resting potential (1)\n• The sodium-potassium pump restores the resting potential; there is a brief refractory period during which another action potential cannot be generated (1)"
+      },
+      {
+        "q": "Explain the role of the myelin sheath in nerve impulse transmission.",
+        "marks": 3,
+        "markScheme": "• The myelin sheath is an insulating layer of fatty material that surrounds the axon (1)\n• Ions can only cross the membrane at the nodes of Ranvier (gaps in the myelin) (1)\n• The action potential jumps from node to node (saltatory conduction), which greatly increases the speed of transmission (1)"
+      },
+      {
+        "q": "Explain what is meant by the all-or-nothing principle of action potentials.",
+        "marks": 2,
+        "markScheme": "• An action potential is only generated if the stimulus reaches the threshold level of depolarisation (1)\n• If the threshold is reached, the action potential is always the same size; a stronger stimulus does not produce a larger action potential (1)"
+      },
+      {
+        "q": "Explain how a stronger stimulus is detected by the nervous system if action potentials are all-or-nothing.",
+        "marks": 2,
+        "markScheme": "• A stronger stimulus causes a higher frequency of action potentials / more action potentials per unit time (1)\n• A stronger stimulus may also recruit more neurones to fire simultaneously (1)"
+      },
+      {
+        "q": "Describe the events at a cholinergic synapse.",
+        "marks": 5,
+        "markScheme": "• An action potential arrives at the presynaptic terminal and causes calcium ion channels to open (1)\n• Ca²⁺ influx causes synaptic vesicles to fuse with the presynaptic membrane, releasing acetylcholine (ACh) into the synaptic cleft by exocytosis (1)\n• ACh diffuses across the cleft and binds to specific receptors on the postsynaptic membrane (1)\n• This causes sodium ion channels to open, depolarising the postsynaptic membrane and potentially generating a new action potential (1)\n• ACh is rapidly broken down by acetylcholinesterase; choline is reabsorbed into the presynaptic neurone for recycling (1)"
+      },
+      {
+        "q": "Explain the role of calcium ions in synaptic transmission.",
+        "marks": 2,
+        "markScheme": "• When an action potential reaches the presynaptic terminal, voltage-gated calcium channels open (1)\n• Ca²⁺ enters the terminal and triggers fusion of synaptic vesicles with the presynaptic membrane, causing neurotransmitter release (1)"
+      },
+      {
+        "q": "Explain why synaptic transmission is unidirectional.",
+        "marks": 2,
+        "markScheme": "• Neurotransmitter vesicles are only present in the presynaptic terminal (1)\n• Receptors for the neurotransmitter are only on the postsynaptic membrane, so the signal can only travel in one direction (1)"
+      },
+      {
+        "q": "Describe the structure of the human brain, including the cerebrum, cerebellum, and medulla oblongata.",
+        "marks": 4,
+        "markScheme": "• The cerebrum is the largest part of the brain, divided into two hemispheres; responsible for conscious thought, reasoning, memory, language, and voluntary movement (1)\n• The cerebral cortex is the outer layer of grey matter (cell bodies) with white matter (myelinated axons) beneath (1)\n• The cerebellum is at the back/base of the brain; it coordinates balance, posture, and fine motor movements (1)\n• The medulla oblongata is at the base of the brain connecting to the spinal cord; it controls involuntary functions such as heart rate, breathing rate, and blood pressure (1)"
+      },
+      {
+        "q": "Describe, with the help of a labelled diagram, how IAA brings about the bending of a shoot towards light from one side.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• IAA is produced in the shoot tip and moves down the shoot (1)\n• Light from one side causes IAA to move to the shaded side, so its concentration is higher there (1)\n• IAA stimulates cell elongation, e.g. by causing H⁺ to be pumped into the cell walls, loosening them, and by affecting transcription of genes (1)\n• Cells on the shaded side elongate more than those on the lit side, so the shoot bends towards the light (positive phototropism) (1)"
+      },
+      {
+        "q": "Explain how light falling on a rod cell leads to an action potential in an optic neurone.",
+        "marks": 4,
+        "markScheme": "• In the dark, cation channels in the rod are open, so Na⁺ enters and the rod is depolarised; it releases an inhibitory neurotransmitter (glutamate) onto the bipolar neurone (1)\n• Light breaks rhodopsin down into retinal and opsin (bleaching) (1)\n• Opsin causes the cation channels to close, so Na⁺ stops entering and the rod cell hyperpolarises (1)\n• The rod stops releasing neurotransmitter, so the bipolar neurone depolarises and releases transmitter to the optic neurone, which produces an action potential (1)"
+      },
+      {
+        "q": "Explain how phytochrome allows a plant to respond to light.",
+        "marks": 3,
+        "markScheme": "• Phytochrome exists in two forms: Pr absorbs red light and is converted to Pfr; Pfr absorbs far-red light and is converted back to Pr (Pfr also slowly reverts to Pr in the dark) (1)\n• Pfr is the active form; it affects transcription, e.g. by interacting with transcription factors that switch genes on or off (1)\n• This brings about responses such as germination of some seeds, inhibition of stem elongation and control of flowering in response to day length (1)"
+      },
+      {
+        "q": "Explain how positron emission tomography (PET) scans are used in investigating brain function.",
+        "marks": 2,
+        "markScheme": "• A radioactive tracer (e.g. labelled glucose) is injected and is taken up most by the most active areas of the brain, where it is detected by the scanner (1)\n• This shows which areas are active during a task, or the level of activity or uptake in a region, e.g. reduced dopamine activity in Parkinson's disease (1)"
+      },
+      {
+        "q": "Explain the role of the hypothalamus in coordinating responses.",
+        "marks": 3,
+        "markScheme": "• The hypothalamus is the control centre for many homeostatic mechanisms (1)\n• It regulates body temperature by detecting blood temperature and coordinating vasodilation/vasoconstriction and sweating (1)\n• It also controls the pituitary gland, linking the nervous and endocrine systems / regulates water balance, hunger, and sleep (1)"
+      },
+      {
+        "q": "Describe the concept of habituation as a type of learning.",
+        "marks": 3,
+        "markScheme": "• Habituation is a form of learning where an organism gradually stops responding to a repeated, harmless stimulus (1)\n• It occurs because fewer neurotransmitter vesicles are released at the synapse with repeated stimulation (1)\n• This is an adaptive behaviour that allows organisms to ignore insignificant stimuli and focus on important ones (1)"
+      },
+      {
+        "q": "Explain how studies of newborn babies provide evidence about the contributions of nature and nurture to brain development.",
+        "marks": 3,
+        "markScheme": "• Newborns have had little experience of the environment, so abilities present at birth are likely to be innate / due to nature (1)\n• E.g. newborns prefer to look at face-like patterns, respond to sounds and show reflexes such as grasping; abilities that develop later may depend on experience (1)\n• Limitation: babies cannot tell us what they perceive, so responses must be inferred from behaviour (e.g. how long they look or how hard they suck), and they have had some experience in the womb (1)"
+      },
+      {
+        "q": "Describe how drugs can affect synaptic transmission, using one example.",
+        "marks": 3,
+        "markScheme": "• Some drugs mimic neurotransmitters and bind to postsynaptic receptors, stimulating the postsynaptic neurone (agonists); e.g. nicotine mimics acetylcholine (1)\n• Some drugs block receptors, preventing the neurotransmitter from binding (antagonists); e.g. curare blocks ACh receptors (1)\n• Some drugs inhibit the breakdown or reuptake of neurotransmitters, prolonging their effect; e.g. SSRIs block serotonin reuptake (1)"
+      },
+      {
+        "q": "Explain the neurological basis of Parkinson’s disease.",
+        "marks": 3,
+        "markScheme": "• Parkinson’s disease is caused by the death / degeneration of dopamine-producing neurones in the substantia nigra of the brain (1)\n• Reduced dopamine levels impair communication in the basal ganglia, which controls movement (1)\n• Symptoms include tremor, rigidity, slow movement (bradykinesia), and balance problems (1)"
+      },
+      {
+        "q": "Describe how L-DOPA is used to treat Parkinson’s disease and explain its limitations.",
+        "marks": 3,
+        "markScheme": "• L-DOPA is a precursor to dopamine that can cross the blood-brain barrier (dopamine itself cannot) (1)\n• In the brain, L-DOPA is converted to dopamine, partially restoring dopamine levels and reducing symptoms (1)\n• Limitations: effectiveness decreases over time, side effects include nausea and involuntary movements, and it does not stop the underlying neurodegeneration (1)"
+      },
+      {
+        "q": "Describe how a human protein used as a drug, such as insulin, can be produced using genetically modified bacteria.",
+        "marks": 3,
+        "markScheme": "• The human gene is obtained, e.g. cut out with restriction enzymes or made from mRNA using reverse transcriptase (1)\n• The gene is inserted into a plasmid (vector) using DNA ligase, and the recombinant plasmid is taken up by bacteria (1)\n• Transformed bacteria are identified (e.g. using a marker gene), grown in large numbers in a fermenter, and the protein is extracted and purified (1)"
+      },
+      {
+        "q": "Explain how brain imaging techniques (e.g. MRI, fMRI, CT) are used in studying brain function.",
+        "marks": 4,
+        "markScheme": "• CT scans use X-rays to produce cross-sectional images of brain structure, useful for detecting tumours and bleeding (1)\n• MRI uses magnetic fields and radio waves to produce detailed structural images of the brain without radiation (1)\n• fMRI detects changes in blood flow / oxygenation to show which brain areas are active during specific tasks (1)\n• These techniques allow scientists to map brain function, diagnose disorders, and study the effects of damage or disease non-invasively (1)"
+      },
+      {
+        "q": "Explain the concept of critical periods in brain development.",
+        "marks": 2,
+        "markScheme": "• Critical periods are specific time windows during development when the brain is particularly sensitive to certain stimuli / experiences (1)\n• If appropriate stimulation does not occur during the critical period (e.g. for language acquisition or vision), normal development may be permanently impaired (1)"
+      },
+      {
+        "q": "Describe the role of the pupil reflex in protecting the eye.",
+        "marks": 3,
+        "markScheme": "• In bright light, the circular muscles of the iris contract and the radial muscles relax, constricting the pupil (1)\n• In dim light, the radial muscles contract and the circular muscles relax, dilating the pupil (1)\n• This is a reflex that protects the retina from damage by excessive light and maximises light entry in dim conditions (1)"
+      },
+      {
+        "q": "Explain the difference between the central nervous system and the peripheral nervous system.",
+        "marks": 2,
+        "markScheme": "• The central nervous system (CNS) consists of the brain and spinal cord; it processes information and coordinates responses (1)\n• The peripheral nervous system (PNS) consists of sensory and motor neurones connecting the CNS to receptors and effectors throughout the body (1)"
+      },
+      {
+        "q": "Explain the role of the refractory period in nerve impulse transmission.",
+        "marks": 2,
+        "markScheme": "• During the refractory period, sodium channels are inactivated and the membrane cannot be depolarised again immediately (1)\n• This ensures action potentials are discrete events, travel in one direction, and limits the maximum frequency of impulses (1)"
+      },
+      {
+        "q": "Compare nervous and hormonal coordination in animals.",
+        "marks": 3,
+        "markScheme": "• Nervous: electrical impulses along neurones, with chemical transmission at synapses; hormonal: chemical hormones carried in the blood (1)\n• Nervous responses are rapid and short-lived; hormonal responses are slower and often longer-lasting (1)\n• Nervous responses are localised to specific effectors; hormones can affect many target cells with the right receptors around the body (1)"
+      },
+      {
+        "q": "Explain the ethical issues surrounding the use of animals in brain research.",
+        "marks": 4,
+        "markScheme": "• Animal studies have provided valuable insights into brain function, drug development, and treatment of neurological diseases (1)\n• However, animals may experience pain, distress, and suffering during experiments (1)\n• There are questions about whether results from animal models can be reliably extrapolated to humans (1)\n• Ethical frameworks (e.g. the 3Rs: Replace, Reduce, Refine) aim to minimise animal use and suffering while still advancing scientific knowledge (1)"
+      },
+      {
+        "q": "Describe how summation at a synapse can determine whether a postsynaptic action potential is generated.",
+        "marks": 3,
+        "markScheme": "• Temporal summation: multiple impulses from a single presynaptic neurone in quick succession build up neurotransmitter to reach the threshold (1)\n• Spatial summation: impulses from several presynaptic neurones converge on one postsynaptic neurone, combining their effects (1)\n• If the total depolarisation of the postsynaptic membrane reaches the threshold, an action potential is generated; if not, the signal is not transmitted (1)"
+      },
+      {
+        "q": "Explain how MDMA (ecstasy) affects synaptic transmission.",
+        "marks": 3,
+        "markScheme": "• MDMA binds to the serotonin transporter proteins in the presynaptic membrane, inhibiting reuptake of serotonin (and triggering its release) (1)\n• Serotonin therefore stays in the synaptic cleft at a higher concentration (1)\n• It keeps binding to postsynaptic receptors, so the postsynaptic neurones are stimulated for longer, raising mood (1)"
+      },
+      {
+        "q": "Draw a labelled diagram of a synapse showing the key structures involved in transmission.",
+        "marks": 4,
+        "diagram": true,
+        "markScheme": "• Presynaptic terminal with synaptic vesicles containing neurotransmitter drawn and labelled (1)\n• Synaptic cleft between the two neurones shown (1)\n• Postsynaptic membrane with receptor proteins shown and labelled (1)\n• Mitochondria in the presynaptic terminal and calcium ion channels labelled (1)"
+      },
+      {
+        "q": "Evaluate the use of drugs to treat depression by altering neurotransmitter levels.",
+        "marks": 4,
+        "markScheme": "• SSRIs block reuptake of serotonin, increasing its availability in the synaptic cleft and improving mood (1)\n• They are effective for many patients and have fewer side effects than older antidepressants (1)\n• However, they do not work for all patients, take weeks to show effects, and can have side effects such as nausea and anxiety (1)\n• The relationship between serotonin levels and depression is complex; drugs address symptoms but not underlying causes (1)"
+      },
+      {
+        "q": "Explain why damage to specific areas of the brain can lead to loss of particular functions.",
+        "marks": 2,
+        "markScheme": "• Different brain regions are specialised for different functions (localisation of function) — e.g. Broca’s area for speech production, visual cortex for vision (1)\n• Damage to a specific area disrupts the neural circuits responsible for that function, leading to specific deficits (e.g. damage to Broca’s area causes speech difficulties) (1)"
+      },
+      {
+        "q": "Describe how the fight-or-flight response is coordinated by the nervous and endocrine systems.",
+        "marks": 4,
+        "markScheme": "• A perceived threat activates the hypothalamus, which stimulates the sympathetic nervous system (1)\n• The adrenal medulla releases adrenaline into the bloodstream (1)\n• Adrenaline increases heart rate, breathing rate, and blood glucose levels, preparing the body for action (1)\n• Blood is diverted from the digestive system to skeletal muscles; pupils dilate to improve vision (1)"
+      },
+      {
+        "q": "Explain how neuroplasticity allows the brain to recover from injury.",
+        "marks": 3,
+        "markScheme": "• Neuroplasticity is the brain’s ability to form new neural connections and reorganise existing pathways (1)\n• After injury, undamaged areas of the brain may take over functions previously performed by the damaged area (1)\n• Rehabilitation exercises promote the formation of new synaptic connections, aiding functional recovery (1)"
+      },
+      {
+        "q": "Describe the difference between sensory, relay and motor neurones.",
+        "marks": 3,
+        "markScheme": "• Sensory neurones carry impulses from receptors to the CNS; they have a long dendron and short axon (1)\n• Relay neurones (interneurones) are found within the CNS and connect sensory and motor neurones (1)\n• Motor neurones carry impulses from the CNS to effectors (muscles/glands); they have a long axon and short dendrites (1)"
+      },
+      {
+        "q": "Explain how a reflex arc enables a rapid, involuntary response to a stimulus.",
+        "marks": 4,
+        "markScheme": "• A receptor detects a stimulus and generates a nerve impulse in a sensory neurone (1)\n• The impulse passes through a relay neurone in the spinal cord (1)\n• The relay neurone transmits the impulse to a motor neurone, which carries it to an effector (muscle/gland) (1)\n• The response is rapid and involuntary because it does not require processing by the brain / the pathway is short with few synapses (1)"
+      },
+      {
+        "q": "Explain how the visual cortex processes information from the eyes to create an image.",
+        "marks": 3,
+        "markScheme": "• Nerve impulses from photoreceptors in the retina travel via the optic nerve to the visual cortex in the occipital lobe (1)\n• The visual cortex contains neurones that respond to specific features such as edges, shapes, colours, and movement (1)\n• Information from both eyes is integrated to form a complete visual image, including depth perception from binocular vision (1)"
+      },
+      {
+        "q": "Describe the evidence that different parts of the cerebral cortex have different functions.",
+        "marks": 3,
+        "markScheme": "• Studies of patients with brain damage show that damage to specific areas causes specific functional loss (e.g. Broca’s area damage impairs speech production) (1)\n• Electrical stimulation of different cortical areas during surgery produces specific responses (movement, sensations) (1)\n• Brain imaging (fMRI) shows that different regions are activated during different tasks (language, motor, visual) (1)"
+      }
     ]
   }
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { BIOLOGY_EDEXCEL_A_PRACTICE };
-}
+if (typeof module !== 'undefined') module.exports = { BIOLOGY_EDEXCEL_A_PRACTICE };

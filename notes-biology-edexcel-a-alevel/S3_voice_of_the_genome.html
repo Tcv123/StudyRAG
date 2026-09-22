@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — S3 — Voice of the Genome</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>S3 — Voice of the Genome</h1>
+
+<!-- ============================================================ -->
+<h2>Cell Structure and Ultrastructure</h2>
+<!-- ============================================================ -->
+
+<p>All living organisms are made of cells, and all cells share some common features: a cell surface membrane, cytoplasm, ribosomes and DNA as the genetic material.</p>
+
+<h3>Eukaryotic Cell Ultrastructure</h3>
+
+<table>
+  <tr><th>Organelle</th><th>Structure</th><th>Function</th></tr>
+  <tr><td>Nucleus</td><td>Surrounded by a double membrane (nuclear envelope) with nuclear pores; contains chromatin (DNA wound around histones)</td><td>Contains the genetic material; controls cell activities; mRNA leaves through the nuclear pores</td></tr>
+  <tr><td>Nucleolus</td><td>Dense, darkly staining region inside the nucleus</td><td>Makes ribosomal RNA and assembles ribosomes</td></tr>
+  <tr><td>Ribosomes</td><td>Small (80S in eukaryotes) particles of rRNA and protein, free in the cytoplasm or attached to rER; not membrane-bound</td><td>Site of protein synthesis (translation)</td></tr>
+  <tr><td>Rough endoplasmic reticulum (rER)</td><td>Flattened membrane-bound sacs (cisternae) studded with ribosomes</td><td>Synthesis and transport of proteins, including proteins for export</td></tr>
+  <tr><td>Smooth endoplasmic reticulum (sER)</td><td>Membrane-bound sacs/tubules without ribosomes</td><td>Synthesis and transport of lipids (including steroids)</td></tr>
+  <tr><td>Mitochondria</td><td>Double membrane; inner membrane folded into cristae; matrix</td><td>Site of aerobic respiration, producing ATP</td></tr>
+  <tr><td>Centrioles</td><td>Pair of hollow cylinders of microtubules at right angles to each other</td><td>Involved in forming the spindle during nuclear division in animal cells</td></tr>
+  <tr><td>Lysosomes</td><td>Small vesicles surrounded by a single membrane, containing hydrolytic (digestive) enzymes</td><td>Break down worn-out organelles and material taken into the cell (e.g. bacteria engulfed by phagocytes)</td></tr>
+  <tr><td>Golgi apparatus</td><td>Stack of flattened, curved membrane-bound sacs with vesicles budding off</td><td>Modifies proteins (e.g. adding carbohydrate to form glycoproteins) and packages them into vesicles</td></tr>
+</table>
+
+<h3>The rER and Golgi Apparatus in Protein Transport</h3>
+
+<p>Proteins for secretion, such as <strong>extracellular enzymes</strong>, are made on ribosomes on the rER and pass into the rER, where they fold and are transported through its cisternae. Vesicles containing the protein pinch off the rER and fuse with the Golgi apparatus, which modifies and packages the protein. Secretory vesicles bud off the Golgi, move to the cell surface membrane and fuse with it, releasing the protein outside the cell by <strong>exocytosis</strong>.</p>
+
+<h3>Prokaryotic Cell Ultrastructure</h3>
+
+<p>Prokaryotic cells (bacteria) have no nucleus and no membrane-bound organelles. Their features include:</p>
+<ul>
+  <li><strong>Cell wall:</strong> Made of peptidoglycan (murein); gives shape and prevents bursting.</li>
+  <li><strong>Capsule:</strong> Slimy outer layer in some bacteria; protects against drying out and against the host's immune system.</li>
+  <li><strong>Circular DNA:</strong> A single loop of DNA lying free in the cytoplasm (not associated with histones).</li>
+  <li><strong>Plasmids:</strong> Small extra loops of DNA carrying a few genes (e.g. antibiotic resistance); can be passed between bacteria.</li>
+  <li><strong>Ribosomes:</strong> Smaller (70S) than eukaryotic ribosomes; site of protein synthesis.</li>
+  <li><strong>Flagellum:</strong> Long, whip-like structure that rotates to move the cell.</li>
+  <li><strong>Pili:</strong> Short, thin projections that help bacteria attach to surfaces and to other bacteria (e.g. when transferring plasmids).</li>
+  <li><strong>Mesosomes:</strong> Infoldings of the cell surface membrane seen in electron micrographs, once thought to be sites of respiration (now thought by many to be artefacts of preparation).</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> You must be able to recognise the eukaryotic organelles above in electron micrographs: the nucleus (large, double envelope with pores, darker nucleolus), mitochondria (double membrane with cristae), rER (parallel membranes dotted with ribosomes), Golgi (stack of curved sacs with vesicles at the edges), lysosomes (small dark single-membrane vesicles) and centrioles (paired cylinders near the nucleus).
+</div>
+
+<!-- ============================================================ -->
+<h2>3.1 Cell Division — Mitosis</h2>
+<!-- ============================================================ -->
+
+<h3>The Cell Cycle</h3>
+
+<div class="definition">
+  <strong>Cell cycle:</strong> The ordered sequence of events that takes place in a cell leading to its division into two daughter cells. It consists of interphase (G1, S, and G2 phases) and mitotic phase (mitosis + cytokinesis).
+</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 340" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">The Cell Cycle</text>
+  <!-- Outer circle -->
+  <circle cx="220" cy="180" r="130" fill="none" stroke="#cbd5e1" stroke-width="2"/>
+  <!-- G1 phase - largest arc (~40%) -->
+  <path d="M220,50 A130,130 0 0,1 343,134" fill="#1a73e8" opacity="0.15" stroke="#1a73e8" stroke-width="3"/>
+  <text x="310" y="80" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a73e8">G1</text>
+  <text x="330" y="95" font-family="system-ui" font-size="9" fill="#1a1a2e">Cell growth</text>
+  <text x="335" y="107" font-family="system-ui" font-size="9" fill="#1a1a2e">Organelles replicate</text>
+  <!-- S phase (~30%) -->
+  <path d="M343,134 A130,130 0 0,1 290,304" fill="#16A34A" opacity="0.15" stroke="#16A34A" stroke-width="3"/>
+  <text x="348" y="210" font-family="system-ui" font-size="13" font-weight="bold" fill="#16A34A">S</text>
+  <text x="368" y="225" font-family="system-ui" font-size="9" fill="#1a1a2e">DNA replication</text>
+  <text x="362" y="237" font-family="system-ui" font-size="9" fill="#1a1a2e">2n → 4n</text>
+  <!-- G2 phase (~15%) -->
+  <path d="M290,304 A130,130 0 0,1 152,304" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="3"/>
+  <text x="220" y="322" font-family="system-ui" font-size="13" font-weight="bold" fill="#D97706">G2</text>
+  <text x="220" y="336" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Growth + check for errors</text>
+  <!-- Mitosis (~10%) -->
+  <path d="M152,304 A130,130 0 0,1 110,240" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="3"/>
+  <text x="108" y="285" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">M</text>
+  <text x="68" y="278" font-family="system-ui" font-size="9" fill="#1a1a2e">Mitosis</text>
+  <!-- Cytokinesis -->
+  <path d="M110,240 A130,130 0 0,1 97,195" fill="#7C3AED" opacity="0.15" stroke="#7C3AED" stroke-width="3"/>
+  <text x="70" y="238" font-family="system-ui" font-size="9" font-weight="bold" fill="#7C3AED">C</text>
+  <!-- Continue to G1 -->
+  <path d="M97,195 A130,130 0 0,1 220,50" fill="none" stroke="#1a73e8" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Center label -->
+  <text x="220" y="170" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">INTERPHASE</text>
+  <text x="220" y="185" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">(~90% of cycle)</text>
+  <text x="220" y="200" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">G1 + S + G2</text>
+  <!-- Arrow showing direction -->
+  <path d="M224,50 L230,48 L226,55" fill="#1a1a2e"/>
+  <!-- Legend on right -->
+  <g transform="translate(420,60)">
+    <text x="0" y="0" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">Phases:</text>
+    <rect x="0" y="12" width="12" height="12" rx="2" fill="#1a73e8" opacity="0.3"/>
+    <text x="18" y="22" font-family="system-ui" font-size="10" fill="#1a1a2e">G1 - Gap 1 (growth)</text>
+    <rect x="0" y="32" width="12" height="12" rx="2" fill="#16A34A" opacity="0.3"/>
+    <text x="18" y="42" font-family="system-ui" font-size="10" fill="#1a1a2e">S - DNA Synthesis</text>
+    <rect x="0" y="52" width="12" height="12" rx="2" fill="#D97706" opacity="0.3"/>
+    <text x="18" y="62" font-family="system-ui" font-size="10" fill="#1a1a2e">G2 - Gap 2 (prep)</text>
+    <rect x="0" y="72" width="12" height="12" rx="2" fill="#DC2626" opacity="0.3"/>
+    <text x="18" y="82" font-family="system-ui" font-size="10" fill="#1a1a2e">M - Mitosis</text>
+    <rect x="0" y="92" width="12" height="12" rx="2" fill="#7C3AED" opacity="0.3"/>
+    <text x="18" y="102" font-family="system-ui" font-size="10" fill="#1a1a2e">C - Cytokinesis</text>
+  </g>
+</svg>
+</div>
+
+<p>Interphase occupies the majority of the cell cycle (approximately 90% of the time) and is a period of intense metabolic activity, not a resting stage:</p>
+<ul>
+  <li><strong>G1 (Gap 1):</strong> Cell grows, organelles replicate, proteins are synthesised. The cell carries out its normal functions and increases in size.</li>
+  <li><strong>S (Synthesis):</strong> DNA replication occurs. Each chromosome is duplicated to form two identical sister chromatids joined at the centromere. The cell's DNA content doubles from 2n to 4n.</li>
+  <li><strong>G2 (Gap 2):</strong> Further growth and protein synthesis. The cell checks for DNA replication errors and prepares for mitosis (e.g., ATP is produced, tubulin for spindle fibres is synthesised).</li>
+</ul>
+
+<h3>Stages of Mitosis</h3>
+
+<table>
+  <tr><th>Stage</th><th>Key Events</th></tr>
+  <tr><td>Prophase</td><td>Chromosomes condense and become visible; each consists of two sister chromatids joined at the centromere. Centrioles migrate to opposite poles and spindle fibres begin to form. Nuclear envelope breaks down; nucleolus disappears.</td></tr>
+  <tr><td>Metaphase</td><td>Chromosomes align along the cell equator (metaphase plate). Spindle fibres attach to centromeres from both poles. This ensures each daughter cell receives one chromatid from each chromosome.</td></tr>
+  <tr><td>Anaphase</td><td>Centromeres divide. Spindle fibres shorten, pulling sister chromatids apart to opposite poles. Chromatids are pulled centromere-first, giving a characteristic V shape.</td></tr>
+  <tr><td>Telophase</td><td>Chromatids (now called chromosomes) reach the poles and decondense. Nuclear envelopes reform around each set of chromosomes. Nucleoli reappear.</td></tr>
+  <tr><td>Cytokinesis</td><td>The cytoplasm divides. In animal cells, a cleavage furrow pinches inward. In plant cells, a cell plate forms from the centre outward. Two genetically identical daughter cells are produced.</td></tr>
+</table>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 220" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="20" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Stages of Mitosis</text>
+  <defs>
+    <marker id="arrowS3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <!-- Prophase -->
+  <g transform="translate(65,110)">
+    <ellipse rx="42" ry="48" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="1.5"/>
+    <!-- Condensing chromosomes -->
+    <path d="M-12,-20 C-14,-10 -8,-5 -10,5 C-12,15 -8,20 -10,25" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+    <path d="M-6,-20 C-4,-10 -10,-5 -8,5 C-6,15 -10,20 -8,25" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+    <path d="M8,-18 C10,-8 4,-3 6,7 C8,17 4,22 6,25" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+    <path d="M14,-18 C12,-8 18,-3 16,7 C14,17 18,22 16,25" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+    <!-- Centrioles -->
+    <circle cx="-30" cy="-30" r="3" fill="#D97706"/>
+    <circle cx="30" cy="30" r="3" fill="#D97706"/>
+    <line x1="-28" y1="-28" x2="-15" y2="-15" stroke="#D97706" stroke-width="0.5" stroke-dasharray="2,2"/>
+    <line x1="28" y1="28" x2="15" y2="15" stroke="#D97706" stroke-width="0.5" stroke-dasharray="2,2"/>
+    <text y="62" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Prophase</text>
+    <text y="74" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Chromosomes condense</text>
+    <text y="84" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Nuclear envelope breaks</text>
+  </g>
+  <path d="M112,110 L130,110" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowS3)"/>
+  <!-- Metaphase -->
+  <g transform="translate(185,110)">
+    <ellipse rx="42" ry="48" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.5"/>
+    <!-- Spindle fibres -->
+    <line x1="-32" y1="-35" x2="0" y2="-8" stroke="#D97706" stroke-width="0.6"/>
+    <line x1="-32" y1="-35" x2="0" y2="8" stroke="#D97706" stroke-width="0.6"/>
+    <line x1="32" y1="-35" x2="0" y2="-8" stroke="#D97706" stroke-width="0.6"/>
+    <line x1="32" y1="-35" x2="0" y2="8" stroke="#D97706" stroke-width="0.6"/>
+    <line x1="-32" y1="35" x2="0" y2="-8" stroke="#D97706" stroke-width="0.6"/>
+    <line x1="-32" y1="35" x2="0" y2="8" stroke="#D97706" stroke-width="0.6"/>
+    <line x1="32" y1="35" x2="0" y2="-8" stroke="#D97706" stroke-width="0.6"/>
+    <line x1="32" y1="35" x2="0" y2="8" stroke="#D97706" stroke-width="0.6"/>
+    <!-- Chromosomes at equator -->
+    <ellipse cx="-8" cy="-8" rx="4" ry="7" fill="#DC2626" opacity="0.6"/>
+    <ellipse cx="-4" cy="-8" rx="4" ry="7" fill="#DC2626" opacity="0.6"/>
+    <ellipse cx="4" cy="8" rx="4" ry="7" fill="#1a73e8" opacity="0.6"/>
+    <ellipse cx="8" cy="8" rx="4" ry="7" fill="#1a73e8" opacity="0.6"/>
+    <!-- Metaphase plate line -->
+    <line x1="-25" y1="0" x2="25" y2="0" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="3,2"/>
+    <text y="62" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Metaphase</text>
+    <text y="74" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Align at equator</text>
+    <text y="84" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Spindles attach</text>
+  </g>
+  <path d="M232,110 L250,110" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowS3)"/>
+  <!-- Anaphase -->
+  <g transform="translate(305,110)">
+    <ellipse rx="42" ry="48" fill="#D97706" opacity="0.08" stroke="#D97706" stroke-width="1.5"/>
+    <!-- Chromatids being pulled apart -->
+    <ellipse cx="-12" cy="-22" rx="4" ry="6" fill="#DC2626" opacity="0.6"/>
+    <ellipse cx="-8" cy="-20" rx="4" ry="6" fill="#1a73e8" opacity="0.6"/>
+    <ellipse cx="12" cy="22" rx="4" ry="6" fill="#DC2626" opacity="0.6"/>
+    <ellipse cx="8" cy="20" rx="4" ry="6" fill="#1a73e8" opacity="0.6"/>
+    <!-- Pull lines -->
+    <line x1="-12" y1="-28" x2="-25" y2="-38" stroke="#D97706" stroke-width="0.6"/>
+    <line x1="-8" y1="-26" x2="-25" y2="-38" stroke="#D97706" stroke-width="0.6"/>
+    <line x1="12" y1="28" x2="25" y2="38" stroke="#D97706" stroke-width="0.6"/>
+    <line x1="8" y1="26" x2="25" y2="38" stroke="#D97706" stroke-width="0.6"/>
+    <!-- Arrows showing movement -->
+    <path d="M-10,-30 L-10,-36" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowS3)"/>
+    <path d="M10,30 L10,36" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowS3)"/>
+    <text y="62" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#D97706">Anaphase</text>
+    <text y="74" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Chromatids pulled</text>
+    <text y="84" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">to opposite poles</text>
+  </g>
+  <path d="M352,110 L370,110" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowS3)"/>
+  <!-- Telophase -->
+  <g transform="translate(425,110)">
+    <ellipse rx="42" ry="48" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1.5"/>
+    <!-- Two nuclei forming -->
+    <ellipse cx="0" cy="-20" rx="18" ry="14" fill="none" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2"/>
+    <ellipse cx="0" cy="20" rx="18" ry="14" fill="none" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3,2"/>
+    <!-- Decondensing chromosomes -->
+    <line x1="-6" y1="-24" x2="-6" y2="-16" stroke="#DC2626" stroke-width="1.5" opacity="0.5"/>
+    <line x1="0" y1="-24" x2="0" y2="-16" stroke="#1a73e8" stroke-width="1.5" opacity="0.5"/>
+    <line x1="6" y1="-24" x2="6" y2="-16" stroke="#DC2626" stroke-width="1.5" opacity="0.5"/>
+    <line x1="-6" y1="16" x2="-6" y2="24" stroke="#1a73e8" stroke-width="1.5" opacity="0.5"/>
+    <line x1="0" y1="16" x2="0" y2="24" stroke="#DC2626" stroke-width="1.5" opacity="0.5"/>
+    <line x1="6" y1="16" x2="6" y2="24" stroke="#1a73e8" stroke-width="1.5" opacity="0.5"/>
+    <!-- Cleavage furrow -->
+    <path d="M-42,0 Q-20,-6 0,-2 Q20,-6 42,0" fill="none" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="3,2"/>
+    <path d="M-42,0 Q-20,6 0,2 Q20,6 42,0" fill="none" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="3,2"/>
+    <text y="62" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Telophase</text>
+    <text y="74" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Nuclei reform</text>
+    <text y="84" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Cytokinesis begins</text>
+  </g>
+  <path d="M472,110 L490,110" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowS3)"/>
+  <!-- Result: 2 cells -->
+  <g transform="translate(540,110)">
+    <ellipse cx="0" cy="-22" rx="22" ry="22" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.2"/>
+    <ellipse cx="0" cy="22" rx="22" ry="22" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.2"/>
+    <circle cx="0" cy="-22" r="6" fill="#16A34A" opacity="0.2"/>
+    <circle cx="0" cy="22" r="6" fill="#16A34A" opacity="0.2"/>
+    <text y="58" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">2 identical</text>
+    <text y="70" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">diploid cells</text>
+  </g>
+</svg>
+</div>
+
+<p>Mitosis produces two genetically identical diploid daughter cells from one parent cell. It is used for growth, repair of damaged tissue, replacement of worn-out cells (e.g., skin cells are replaced every 2-3 weeks, red blood cells every 120 days), and asexual reproduction (e.g., budding in yeast, vegetative propagation in plants). Maintaining the chromosome number is crucial for ensuring genetic stability across generations of cells.</p>
+
+<p><strong>Calculating the mitotic index:</strong> In practical work, the mitotic index measures the proportion of cells in a tissue that are undergoing mitosis. A high mitotic index indicates rapid cell division, which may indicate normal growth or, pathologically, a tumour.</p>
+
+<div class="equation">
+  Mitotic index = (number of cells in mitosis / total number of cells observed) &times; 100%
+</div>
+
+<h3>Core Practical 5: Root Tip Squash</h3>
+
+<p><strong>Core Practical 5</strong> (9BN0): prepare and stain a root tip squash to observe the stages of mitosis.</p>
+<ol>
+  <li>Cut about 5 mm from the tips of growing roots (e.g. garlic or onion) &mdash; the meristem just behind the tip is where cells divide.</li>
+  <li>Place the tips in 1 mol dm<sup>&minus;3</sup> hydrochloric acid at about 60 &deg;C for about 5 minutes. The acid breaks down the middle lamella holding the cells together, so they can be separated, and stops cell division.</li>
+  <li>Rinse in water, then place a tip on a microscope slide, add a stain that binds to DNA (e.g. toluidine blue or acetic orcein) and leave for a few minutes so the chromosomes become visible.</li>
+  <li>Cover with a coverslip and squash gently (e.g. with a pencil end through filter paper) to spread the cells into a single layer so light can pass through and the cells can be seen clearly.</li>
+  <li>View at low then high power (&times;400), identify cells in each stage of mitosis and count them to calculate the mitotic index.</li>
+</ol>
+
+<p><strong>Cancer and uncontrolled cell division (extension &mdash; not required by 9BN0):</strong> Cancer results from mutations in genes that control the cell cycle, particularly <strong>proto-oncogenes</strong> (which normally promote cell division; when mutated into oncogenes, they are permanently activated) and <strong>tumour suppressor genes</strong> (which normally inhibit cell division or trigger apoptosis; when mutated, this brake is lost). For example, mutations in the p53 tumour suppressor gene are found in over 50% of human cancers. The p53 protein normally halts the cell cycle at G1/S checkpoint to allow DNA repair, or triggers apoptosis if damage is irreparable. Multiple mutations are typically required for cancer to develop (the multi-hit hypothesis).</p>
+
+<p><strong>Real-world application:</strong> Anti-cancer drugs such as vincristine and taxol (paclitaxel) target mitosis. Vincristine prevents spindle fibre formation by inhibiting tubulin polymerisation, so chromosomes cannot be separated during anaphase. Taxol stabilises microtubules so they cannot disassemble, also blocking cell division. Both drugs affect rapidly dividing cells, which is why they cause side effects in tissues with high mitotic rates (hair follicles, bone marrow, gut lining).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Learn to identify stages of mitosis from microscope images. Prophase: visible chromosomes, no nuclear envelope. Metaphase: chromosomes lined up in the middle. Anaphase: chromatids being pulled apart. Telophase: two groups at poles, nuclear envelopes reforming.
+</div>
+
+<!-- ============================================================ -->
+<h2>3.2 Cell Division — Meiosis</h2>
+<!-- ============================================================ -->
+
+<h3>Overview of Meiosis</h3>
+
+<div class="definition">
+  <strong>Meiosis:</strong> A type of nuclear division that produces four genetically different haploid daughter cells from one diploid parent cell. It involves two successive divisions (meiosis I and meiosis II) and is essential for sexual reproduction and genetic variation.
+</div>
+
+<p>Meiosis I is the <strong>reduction division</strong> (chromosome number halved from 2n to n). Key events in each stage:</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> 9BN0 (3.9) states that details of the stages of meiosis are not required. You must understand how meiosis produces non-identical gametes through independent assortment of chromosomes and crossing over of alleles between chromatids; the stage-by-stage detail below is for background.
+</div>
+<ul>
+  <li><strong>Prophase I:</strong> Homologous chromosomes pair up (synapsis), forming bivalents. Each bivalent consists of four chromatids (a tetrad). <strong>Crossing over</strong> occurs between non-sister chromatids at points called chiasmata, where segments of DNA are exchanged. This creates recombinant chromosomes with new allele combinations. The nuclear envelope breaks down and spindle fibres form.</li>
+  <li><strong>Metaphase I:</strong> Bivalents line up along the cell equator. The orientation of each bivalent is random (<strong>independent assortment</strong>), meaning that maternal and paternal chromosomes are distributed randomly to the two poles.</li>
+  <li><strong>Anaphase I:</strong> Homologous chromosomes (not sister chromatids) are pulled to opposite poles by spindle fibres. This is the step that halves the chromosome number.</li>
+  <li><strong>Telophase I and cytokinesis:</strong> Two haploid cells form, each containing one chromosome from each homologous pair (but each chromosome still consists of two sister chromatids).</li>
+</ul>
+
+<p><strong>Meiosis II</strong> resembles mitosis: centromeres divide and sister chromatids are separated to opposite poles. No further DNA replication occurs between meiosis I and II. Four haploid cells result, each genetically unique due to the combined effects of crossing over and independent assortment.</p>
+
+<p><strong>Significance of meiosis:</strong> Meiosis halves the chromosome number, ensuring that when two gametes fuse at fertilisation, the diploid number is restored (maintaining a constant chromosome number across generations). It also generates genetic variation, which is the raw material for natural selection and evolution.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="20" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Meiosis Overview</text>
+  <defs>
+    <marker id="arrowM" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#D97706"/>
+    </marker>
+  </defs>
+  <!-- Parent cell (2n) -->
+  <g transform="translate(72,75)">
+    <ellipse rx="40" ry="32" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="1.5"/>
+    <text y="-18" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Diploid cell (2n)</text>
+    <!-- Homologous pair 1 -->
+    <rect x="-22" y="-10" width="6" height="20" rx="2" fill="#DC2626" opacity="0.7"/>
+    <rect x="-14" y="-10" width="6" height="20" rx="2" fill="#DC2626" opacity="0.35"/>
+    <!-- Homologous pair 2 -->
+    <rect x="8" y="-10" width="6" height="20" rx="2" fill="#1a73e8" opacity="0.7"/>
+    <rect x="16" y="-10" width="6" height="20" rx="2" fill="#1a73e8" opacity="0.35"/>
+  </g>
+  <!-- Arrow to Meiosis I -->
+  <path d="M115,75 L150,75" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowM)"/>
+  <text x="132" y="68" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706" font-weight="bold">Meiosis I</text>
+  <!-- Crossing over detail box -->
+  <rect x="155" y="36" width="110" height="80" rx="6" fill="#FEF3C7" stroke="#D97706" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="210" y="50" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">Crossing Over</text>
+  <!-- Bivalent with crossing over -->
+  <g transform="translate(210,82)">
+    <!-- Chromatid 1 (maternal) -->
+    <path d="M-30,-18 L-30,-4 L0,4 L0,18" fill="none" stroke="#DC2626" stroke-width="3" opacity="0.8"/>
+    <!-- Chromatid 2 (maternal) -->
+    <path d="M-20,-18 L-20,-4 L10,4 L10,18" fill="none" stroke="#DC2626" stroke-width="3" opacity="0.4"/>
+    <!-- Chromatid 3 (paternal) -->
+    <path d="M0,-18 L0,-4 L-30,4 L-30,18" fill="none" stroke="#1a73e8" stroke-width="3" opacity="0.8"/>
+    <!-- Chromatid 4 (paternal) -->
+    <path d="M10,-18 L10,-4 L-20,4 L-20,18" fill="none" stroke="#1a73e8" stroke-width="3" opacity="0.4"/>
+    <!-- Chiasma point -->
+    <circle cx="-10" cy="0" r="3" fill="#D97706" stroke="#D97706" stroke-width="1"/>
+    <text x="25" y="3" font-family="system-ui" font-size="8" fill="#D97706">Chiasma</text>
+  </g>
+  <!-- Two intermediate cells after Meiosis I -->
+  <g transform="translate(310,55)">
+    <ellipse rx="32" ry="26" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.2"/>
+    <text y="-12" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#16A34A">Haploid (n)</text>
+    <rect x="-12" y="-6" width="6" height="14" rx="2" fill="#DC2626" opacity="0.7"/>
+    <rect x="6" y="-6" width="6" height="14" rx="2" fill="#1a73e8" opacity="0.7"/>
+  </g>
+  <g transform="translate(310,105)">
+    <ellipse rx="32" ry="26" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.2"/>
+    <rect x="-12" y="-6" width="6" height="14" rx="2" fill="#DC2626" opacity="0.35"/>
+    <rect x="6" y="-6" width="6" height="14" rx="2" fill="#1a73e8" opacity="0.35"/>
+  </g>
+  <path d="M265,70 L276,60" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowM)"/>
+  <path d="M265,85 L276,100" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowM)"/>
+  <!-- Arrow to Meiosis II -->
+  <path d="M345,55 L375,55" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowM)"/>
+  <path d="M345,105 L375,105" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowM)"/>
+  <text x="360" y="48" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706" font-weight="bold">Meiosis II</text>
+  <!-- Four final haploid cells -->
+  <g transform="translate(420,40)">
+    <ellipse rx="24" ry="20" fill="#7C3AED" opacity="0.08" stroke="#7C3AED" stroke-width="1.2"/>
+    <rect x="-4" y="-6" width="5" height="12" rx="1.5" fill="#DC2626" opacity="0.7"/>
+    <rect x="2" y="-6" width="5" height="12" rx="1.5" fill="#1a73e8" opacity="0.7"/>
+  </g>
+  <g transform="translate(420,75)">
+    <ellipse rx="24" ry="20" fill="#7C3AED" opacity="0.08" stroke="#7C3AED" stroke-width="1.2"/>
+    <rect x="-4" y="-6" width="5" height="12" rx="1.5" fill="#DC2626" opacity="0.5"/>
+    <rect x="2" y="-6" width="5" height="12" rx="1.5" fill="#1a73e8" opacity="0.5"/>
+  </g>
+  <g transform="translate(420,110)">
+    <ellipse rx="24" ry="20" fill="#7C3AED" opacity="0.08" stroke="#7C3AED" stroke-width="1.2"/>
+    <rect x="-4" y="-6" width="5" height="12" rx="1.5" fill="#1a73e8" opacity="0.35"/>
+    <rect x="2" y="-6" width="5" height="12" rx="1.5" fill="#DC2626" opacity="0.35"/>
+  </g>
+  <g transform="translate(420,145)">
+    <ellipse rx="24" ry="20" fill="#7C3AED" opacity="0.08" stroke="#7C3AED" stroke-width="1.2"/>
+    <rect x="-4" y="-6" width="5" height="12" rx="1.5" fill="#1a73e8" opacity="0.5"/>
+    <rect x="2" y="-6" width="5" height="12" rx="1.5" fill="#DC2626" opacity="0.5"/>
+  </g>
+  <!-- Result arrows -->
+  <path d="M390,50 L395,42" fill="none" stroke="#D97706" stroke-width="0.8" marker-end="url(#arrowM)"/>
+  <path d="M390,60 L395,70" fill="none" stroke="#D97706" stroke-width="0.8" marker-end="url(#arrowM)"/>
+  <path d="M390,100 L395,108" fill="none" stroke="#D97706" stroke-width="0.8" marker-end="url(#arrowM)"/>
+  <path d="M390,110 L395,140" fill="none" stroke="#D97706" stroke-width="0.8" marker-end="url(#arrowM)"/>
+  <!-- Label -->
+  <g transform="translate(510,85)">
+    <text y="0" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#7C3AED">4 haploid</text>
+    <text y="14" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#7C3AED">gametes</text>
+    <text y="30" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">All genetically</text>
+    <text y="42" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">different</text>
+  </g>
+  <!-- Key points at bottom -->
+  <g transform="translate(30,195)">
+    <text x="0" y="0" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">Sources of Genetic Variation in Meiosis:</text>
+    <rect x="0" y="10" width="170" height="24" rx="6" fill="#DC2626" opacity="0.08" stroke="#DC2626" stroke-width="1"/>
+    <text x="85" y="26" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626" font-weight="bold">Crossing over (prophase I)</text>
+    <rect x="180" y="10" width="200" height="24" rx="6" fill="#1a73e8" opacity="0.08" stroke="#1a73e8" stroke-width="1"/>
+    <text x="280" y="26" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="bold">Independent assortment (metaphase I)</text>
+    <rect x="390" y="10" width="170" height="24" rx="6" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1"/>
+    <text x="475" y="26" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A" font-weight="bold">Random fertilisation</text>
+    <text x="270" y="55" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">2²³ = 8,388,608 possible chromosome combinations from independent assortment alone in humans</text>
+  </g>
+</svg>
+</div>
+
+<h3>Sources of Genetic Variation</h3>
+
+<ul>
+  <li><strong>Independent assortment:</strong> During metaphase I, the orientation of each bivalent is random. With 23 pairs of homologous chromosomes in humans, there are 2<sup>23</sup> (over 8 million) possible combinations of maternal and paternal chromosomes in gametes.</li>
+  <li><strong>Crossing over:</strong> During prophase I, non-sister chromatids of homologous chromosomes exchange genetic material at chiasmata. This produces recombinant chromosomes with new combinations of alleles, further increasing genetic variation.</li>
+  <li><strong>Random fertilisation:</strong> Any male gamete can fuse with any female gamete, multiplying the possible genetic combinations enormously.</li>
+  <li><strong>Mutation:</strong> Random changes in DNA sequence create new alleles.</li>
+</ul>
+
+<h3>Loci, Linkage and Sex Linkage</h3>
+
+<div class="definition">
+  <strong>Locus (plural loci):</strong> The location of a gene on a chromosome.
+</div>
+
+<p><strong>Linkage:</strong> Genes whose loci are on the same chromosome are <strong>linked</strong>. They do not assort independently in meiosis, so their alleles tend to be inherited together. Linked alleles are separated only if crossing over occurs between their loci; the closer together the loci, the less often crossing over separates them, so the fewer recombinant offspring are produced.</p>
+
+<p><strong>Sex linkage:</strong> A sex-linked gene has its locus on a sex chromosome, usually the X chromosome. Females (XX) have two copies of X-linked genes, but males (XY) have only one, because the Y chromosome is smaller and lacks most of these loci. A male therefore expresses whichever X-linked allele he inherits, even if it is recessive, so recessive X-linked conditions such as haemophilia and red&ndash;green colour blindness are much more common in males. A heterozygous female (X<sup>H</sup>X<sup>h</sup>) is a <strong>carrier</strong>: she does not have the condition but passes the recessive allele to half of her children on average. An affected male cannot pass an X-linked allele to his sons (they receive his Y), but all his daughters receive it.</p>
+
+<h3>Comparing Mitosis and Meiosis</h3>
+
+<table>
+  <tr><th>Feature</th><th>Mitosis</th><th>Meiosis</th></tr>
+  <tr><td>Number of divisions</td><td>One</td><td>Two</td></tr>
+  <tr><td>Daughter cells produced</td><td>Two</td><td>Four</td></tr>
+  <tr><td>Chromosome number</td><td>Maintained (diploid)</td><td>Halved (haploid)</td></tr>
+  <tr><td>Genetic composition</td><td>Identical to parent</td><td>Genetically different</td></tr>
+  <tr><td>Crossing over</td><td>Does not occur</td><td>Occurs in prophase I</td></tr>
+  <tr><td>Where it occurs</td><td>Somatic (body) cells</td><td>Reproductive organs (gonads)</td></tr>
+  <tr><td>Purpose</td><td>Growth, repair</td><td>Production of gametes</td></tr>
+</table>
+
+<h3>Mammalian Gametes</h3>
+
+<table>
+  <tr><th>Gamete</th><th>Specialisations</th></tr>
+  <tr><td>Sperm</td><td><strong>Acrosome</strong> (a specialised lysosome in the head) containing digestive enzymes to digest the zona pellucida; haploid nucleus in the head; midpiece packed with mitochondria to supply ATP for movement; flagellum (tail) for swimming to the egg.</td></tr>
+  <tr><td>Egg (secondary oocyte)</td><td>Large cell with cytoplasm containing food stores (e.g. lipid droplets) for the early embryo; haploid nucleus; <strong>zona pellucida</strong> (a jelly-like glycoprotein layer) that sperm must penetrate and that later hardens to prevent more sperm entering; <strong>cortical granules</strong> just beneath the cell surface membrane; surrounded by follicle cells.</td></tr>
+</table>
+
+<h3>Fertilisation in Mammals</h3>
+
+<ol>
+  <li>Sperm swim through the female reproductive tract and meet the egg in the oviduct.</li>
+  <li><strong>Acrosome reaction:</strong> When a sperm contacts the zona pellucida, the acrosome swells and fuses with the sperm cell membrane, releasing digestive enzymes that digest a path through the zona pellucida.</li>
+  <li>The sperm cell membrane fuses with the egg cell surface membrane, and the sperm nucleus enters the egg.</li>
+  <li><strong>Cortical reaction:</strong> Entry of the sperm causes the cortical granules to release their contents out of the egg by exocytosis. These make the zona pellucida thicken and harden, forming a barrier that stops any other sperm entering (preventing polyspermy).</li>
+  <li>The egg completes meiosis II, and the haploid sperm nucleus and haploid egg nucleus <strong>fuse</strong>, forming a diploid zygote.</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>3.3 Cell Differentiation and Specialisation</h2>
+<!-- ============================================================ -->
+
+<h3>Cell Differentiation</h3>
+
+<div class="definition">
+  <strong>Differentiation:</strong> The process by which an unspecialised cell becomes specialised for a particular function. This involves the expression of specific genes while other genes are switched off, leading to the production of specific proteins that give the cell its characteristic structure and function.
+</div>
+
+<p>All cells in a multicellular organism contain the same DNA (genome), but different cells express different genes. Gene expression is controlled by transcription factors, epigenetic modifications (methylation, histone modification), and signalling molecules. Once a cell has fully differentiated, it typically cannot change into another cell type (though there are exceptions, such as in regeneration).</p>
+
+<h3>Examples of Specialised Cells</h3>
+
+<table>
+  <tr><th>Cell Type</th><th>Specialisation</th><th>Function</th></tr>
+  <tr><td>Red blood cell (erythrocyte)</td><td>No nucleus (more space for haemoglobin); biconcave disc shape (large SA:V ratio); flexible</td><td>Transport oxygen</td></tr>
+  <tr><td>Neutrophil</td><td>Lobed nucleus; many lysosomes; flexible membrane</td><td>Engulf and destroy pathogens (phagocytosis)</td></tr>
+  <tr><td>Sperm cell</td><td>Streamlined shape; flagellum; many mitochondria; acrosome with digestive enzymes</td><td>Swim to and fertilise egg</td></tr>
+  <tr><td>Root hair cell</td><td>Long extension (hair) increasing surface area; many mitochondria for active transport</td><td>Absorb water and mineral ions from soil</td></tr>
+  <tr><td>Palisade mesophyll cell</td><td>Many chloroplasts; positioned at top of leaf; elongated shape</td><td>Photosynthesis</td></tr>
+</table>
+
+<h3>Tissues, Organs and Systems</h3>
+
+<p>In multicellular organisms, specialised cells are organised into:</p>
+<ul>
+  <li><strong>Tissues:</strong> Groups of similar cells working together to perform a particular function (e.g. squamous epithelium lining the alveoli; xylem and phloem in plants).</li>
+  <li><strong>Organs:</strong> Structures made of several tissues working together to carry out a function (e.g. the heart, lungs or a leaf).</li>
+  <li><strong>Organ systems:</strong> Groups of organs working together to perform a major function (e.g. the circulatory system, the digestive system).</li>
+</ul>
+<p>This organisation allows division of labour: each cell type can be specialised for one job and carry it out efficiently, while the different tissues and organs are coordinated to meet the needs of the whole organism.</p>
+
+<!-- ============================================================ -->
+<h2>3.4 Stem Cells and Development</h2>
+<!-- ============================================================ -->
+
+<h3>Types of Stem Cells</h3>
+
+<div class="definition">
+  <strong>Stem cell:</strong> An undifferentiated cell capable of self-renewal (dividing to produce more stem cells) and differentiation into one or more specialised cell types.
+</div>
+
+<ul>
+  <li><strong>Totipotent stem cells:</strong> Can differentiate into any cell type in the body plus extraembryonic tissues (e.g., placenta). Found in the zygote and the cells of the very early embryo (up to about the 16-cell morula stage).</li>
+  <li><strong>Pluripotent stem cells:</strong> Can differentiate into any cell type of the three germ layers (ectoderm, mesoderm, endoderm) but not extraembryonic tissues. Found in the inner cell mass of the blastocyst (embryonic stem cells).</li>
+  <li><strong>Multipotent stem cells:</strong> Can differentiate into a limited range of related cell types. Found in adults (e.g., haematopoietic stem cells in bone marrow produce all blood cell types).</li>
+  <li><strong>Unipotent stem cells:</strong> Can only produce one cell type but retain self-renewal capacity. Example: skin stem cells producing keratinocytes.</li>
+</ul>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="20" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Stem Cell Differentiation</text>
+  <defs>
+    <marker id="arrowSC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/>
+    </marker>
+  </defs>
+  <!-- Totipotent -->
+  <circle cx="80" cy="60" r="28" fill="#DC2626" opacity="0.12" stroke="#DC2626" stroke-width="1.5"/>
+  <circle cx="80" cy="60" r="10" fill="#DC2626" opacity="0.25"/>
+  <text x="80" y="100" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Totipotent</text>
+  <text x="80" y="112" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Zygote / morula</text>
+  <text x="80" y="122" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Any cell type + placenta</text>
+  <!-- Arrow -->
+  <path d="M110,60 L150,60" fill="none" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrowSC)"/>
+  <!-- Pluripotent -->
+  <circle cx="195" cy="60" r="28" fill="#D97706" opacity="0.12" stroke="#D97706" stroke-width="1.5"/>
+  <circle cx="195" cy="60" r="10" fill="#D97706" opacity="0.25"/>
+  <text x="195" y="100" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Pluripotent</text>
+  <text x="195" y="112" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Embryonic stem cells</text>
+  <text x="195" y="122" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Any body cell type</text>
+  <!-- Arrow -->
+  <path d="M225,60 L265,60" fill="none" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrowSC)"/>
+  <!-- Multipotent -->
+  <circle cx="310" cy="60" r="28" fill="#1a73e8" opacity="0.12" stroke="#1a73e8" stroke-width="1.5"/>
+  <circle cx="310" cy="60" r="10" fill="#1a73e8" opacity="0.25"/>
+  <text x="310" y="100" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Multipotent</text>
+  <text x="310" y="112" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Adult stem cells</text>
+  <text x="310" y="122" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Limited cell types</text>
+  <!-- Branching arrows to specialised cells -->
+  <path d="M340,55 L400,40" fill="none" stroke="#1a73e8" stroke-width="1" marker-end="url(#arrowSC)"/>
+  <path d="M340,60 L400,65" fill="none" stroke="#1a73e8" stroke-width="1" marker-end="url(#arrowSC)"/>
+  <path d="M340,68 L400,90" fill="none" stroke="#1a73e8" stroke-width="1" marker-end="url(#arrowSC)"/>
+  <!-- Specialised cells -->
+  <!-- Red blood cell -->
+  <ellipse cx="435" cy="38" rx="18" ry="10" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
+  <ellipse cx="435" cy="38" rx="6" ry="3" fill="#DC2626" opacity="0.15"/>
+  <text x="465" y="42" font-family="system-ui" font-size="9" fill="#1a1a2e">Red blood cell</text>
+  <!-- Neurone -->
+  <circle cx="425" cy="65" r="8" fill="#1a73e8" opacity="0.3" stroke="#1a73e8" stroke-width="1"/>
+  <line x1="433" y1="65" x2="470" y2="65" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="480" y="68" font-family="system-ui" font-size="9" fill="#1a1a2e">Neurone</text>
+  <!-- Muscle cell -->
+  <rect x="415" y="84" width="30" height="10" rx="3" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="1"/>
+  <line x1="420" y1="84" x2="420" y2="94" stroke="#16A34A" stroke-width="0.5"/>
+  <line x1="425" y1="84" x2="425" y2="94" stroke="#16A34A" stroke-width="0.5"/>
+  <line x1="430" y1="84" x2="430" y2="94" stroke="#16A34A" stroke-width="0.5"/>
+  <line x1="435" y1="84" x2="435" y2="94" stroke="#16A34A" stroke-width="0.5"/>
+  <line x1="440" y1="84" x2="440" y2="94" stroke="#16A34A" stroke-width="0.5"/>
+  <text x="455" y="93" font-family="system-ui" font-size="9" fill="#1a1a2e">Muscle cell</text>
+  <!-- Decreasing potency arrow -->
+  <line x1="60" y1="135" x2="540" y2="135" stroke="#cbd5e1" stroke-width="1"/>
+  <path d="M60,135 L70,131 L70,139 Z" fill="#16A34A"/>
+  <path d="M540,135 L530,131 L530,139 Z" fill="#DC2626"/>
+  <text x="300" y="150" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Decreasing potency →   |   → Increasing specialisation</text>
+  <!-- Embryo development stages below -->
+  <text x="300" y="175" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">Early Embryo Development</text>
+  <!-- Zygote -->
+  <g transform="translate(65,220)">
+    <circle r="16" fill="#DC2626" opacity="0.1" stroke="#DC2626" stroke-width="1.2"/>
+    <circle r="5" fill="#DC2626" opacity="0.25"/>
+    <text y="28" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Zygote</text>
+    <text y="38" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">1 cell</text>
+  </g>
+  <path d="M84,220 L108,220" fill="none" stroke="#D97706" stroke-width="1" marker-end="url(#arrowSC)"/>
+  <!-- 2-cell -->
+  <g transform="translate(135,220)">
+    <circle r="16" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="1.2"/>
+    <circle cx="-5" cy="0" r="5" fill="#D97706" opacity="0.25"/>
+    <circle cx="5" cy="0" r="5" fill="#D97706" opacity="0.25"/>
+    <text y="28" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">2-cell</text>
+  </g>
+  <path d="M154,220 L178,220" fill="none" stroke="#D97706" stroke-width="1" marker-end="url(#arrowSC)"/>
+  <!-- 4-cell -->
+  <g transform="translate(205,220)">
+    <circle r="16" fill="#D97706" opacity="0.1" stroke="#D97706" stroke-width="1.2"/>
+    <circle cx="-5" cy="-4" r="4" fill="#D97706" opacity="0.25"/>
+    <circle cx="5" cy="-4" r="4" fill="#D97706" opacity="0.25"/>
+    <circle cx="-5" cy="5" r="4" fill="#D97706" opacity="0.25"/>
+    <circle cx="5" cy="5" r="4" fill="#D97706" opacity="0.25"/>
+    <text y="28" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#D97706">4-cell</text>
+  </g>
+  <path d="M224,220 L248,220" fill="none" stroke="#D97706" stroke-width="1" marker-end="url(#arrowSC)"/>
+  <!-- Morula -->
+  <g transform="translate(280,220)">
+    <circle r="18" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1.2"/>
+    <circle cx="-5" cy="-6" r="3" fill="#1a73e8" opacity="0.3"/>
+    <circle cx="4" cy="-6" r="3" fill="#1a73e8" opacity="0.3"/>
+    <circle cx="-7" cy="1" r="3" fill="#1a73e8" opacity="0.3"/>
+    <circle cx="1" cy="0" r="3" fill="#1a73e8" opacity="0.3"/>
+    <circle cx="7" cy="1" r="3" fill="#1a73e8" opacity="0.3"/>
+    <circle cx="-4" cy="7" r="3" fill="#1a73e8" opacity="0.3"/>
+    <circle cx="4" cy="7" r="3" fill="#1a73e8" opacity="0.3"/>
+    <text y="30" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Morula</text>
+    <text y="40" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">~16 cells</text>
+  </g>
+  <path d="M301,220 L328,220" fill="none" stroke="#D97706" stroke-width="1" marker-end="url(#arrowSC)"/>
+  <!-- Blastocyst -->
+  <g transform="translate(380,220)">
+    <ellipse rx="30" ry="22" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.2"/>
+    <!-- Trophoblast (outer ring of small circles) -->
+    <circle cx="-20" cy="-10" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="-22" cy="0" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="-20" cy="10" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="-12" cy="16" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="0" cy="18" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="12" cy="16" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="20" cy="10" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="22" cy="0" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="20" cy="-10" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="12" cy="-16" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="0" cy="-18" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <circle cx="-12" cy="-16" r="2.5" fill="#16A34A" opacity="0.3"/>
+    <!-- Inner cell mass -->
+    <circle cx="-10" cy="-4" r="4" fill="#7C3AED" opacity="0.4"/>
+    <circle cx="-4" cy="-8" r="4" fill="#7C3AED" opacity="0.4"/>
+    <circle cx="-6" cy="3" r="4" fill="#7C3AED" opacity="0.4"/>
+    <circle cx="2" cy="-2" r="4" fill="#7C3AED" opacity="0.4"/>
+    <text y="34" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Blastocyst</text>
+  </g>
+  <!-- Blastocyst labels -->
+  <line x1="415" y1="218" x2="450" y2="210" stroke="#1a1a2e" stroke-width="0.6"/>
+  <text x="452" y="208" font-family="system-ui" font-size="8" fill="#16A34A">Trophoblast</text>
+  <line x1="370" y1="216" x2="450" y2="224" stroke="#1a1a2e" stroke-width="0.6"/>
+  <text x="452" y="228" font-family="system-ui" font-size="8" fill="#7C3AED">Inner cell mass</text>
+  <text x="452" y="238" font-family="system-ui" font-size="8" fill="#666">(pluripotent)</text>
+  <!-- Implantation arrow -->
+  <path d="M413,220 L448,220" fill="none" stroke="#D97706" stroke-width="1" marker-end="url(#arrowSC)"/>
+  <g transform="translate(510,220)">
+    <text y="-8" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Implantation</text>
+    <text y="4" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">into uterus wall</text>
+    <text y="16" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">~day 6-7</text>
+  </g>
+</svg>
+</div>
+
+<h3>Induced Pluripotent Stem Cells (iPSCs)</h3>
+
+<p>Induced pluripotent stem cells (iPSCs) are adult somatic cells (e.g., skin fibroblasts) that have been reprogrammed to an embryonic-like pluripotent state by introducing specific transcription factors (originally the Yamanaka factors: Oct4, Sox2, Klf4, c-Myc, discovered by Shinya Yamanaka in 2006, earning him the Nobel Prize in 2012). iPSCs can differentiate into almost any cell type and avoid the ethical issues associated with embryonic stem cells, since no embryo is destroyed. They also offer the possibility of patient-specific therapies (using the patient's own cells reduces immune rejection). However, concerns remain about potential tumour formation (especially from the c-Myc oncogene), incomplete reprogramming, epigenetic abnormalities, and low efficiency of the reprogramming process.</p>
+
+<p><strong>Applications of stem cell research:</strong></p>
+<ul>
+  <li><strong>Regenerative medicine:</strong> Growing replacement tissues (e.g., skin grafts for burn victims, retinal cells for macular degeneration, dopamine-producing neurons for Parkinson's disease, insulin-producing beta cells for type 1 diabetes).</li>
+  <li><strong>Drug testing:</strong> Testing new drugs on human cells differentiated from stem cells, reducing the need for animal testing and providing more relevant results.</li>
+  <li><strong>Disease modelling:</strong> Creating iPSCs from patients with genetic diseases to study disease mechanisms in the laboratory.</li>
+</ul>
+
+<h3>Ethical Issues</h3>
+
+<p>Embryonic stem cell research raises ethical concerns because extracting cells from the inner cell mass destroys the embryo. Arguments in favour include the potential to treat serious diseases (Parkinson's, diabetes, spinal cord injuries). Arguments against include the view that the embryo has moral status from conception, and that alternative approaches (adult stem cells, iPSCs) may achieve similar goals without embryo destruction. Legislation varies between countries.</p>
+
+<p><strong>How society makes decisions about stem cell therapies (9BN0 3.11ii):</strong> Decisions draw on scientific evidence that has been published and scrutinised by peer review, and on ethical, religious and economic considerations. In the UK, the <strong>Human Fertilisation and Embryology Authority (HFEA)</strong> licenses and regulates research using human embryos; embryos can be used for research only up to 14 days after fertilisation, and only with the donors' consent. Ethics committees, government advisory bodies, public consultation and Parliament (which passes the laws, such as the Human Fertilisation and Embryology Act) all contribute, and regulations are reviewed as new scientific knowledge becomes available.</p>
+
+<!-- ============================================================ -->
+<h2>3.5 Gene Expression and Development</h2>
+<!-- ============================================================ -->
+
+<h3>Control of Gene Expression</h3>
+
+<p>Although every cell contains the full genome, only certain genes are expressed in each cell type. Gene expression is regulated at multiple levels:</p>
+<ul>
+  <li><strong>Transcriptional control:</strong> Transcription factors bind to promoter/enhancer regions to activate or repress transcription. This is the most important level of control.</li>
+  <li><strong>Epigenetic control:</strong> DNA methylation (adding methyl groups to cytosine bases) typically silences genes. Histone modification (acetylation, methylation) affects how tightly DNA is packaged and thus whether genes are accessible for transcription.</li>
+  <li><strong>Post-transcriptional control:</strong> Alternative splicing of mRNA can produce different proteins from the same gene. mRNA stability and degradation rates also affect how much protein is produced.</li>
+  <li><strong>Translational and post-translational control:</strong> Regulation of translation rate; protein modification (phosphorylation, glycosylation); protein degradation.</li>
+</ul>
+
+<h3>The <em>lac</em> Operon</h3>
+
+<p>The <em>lac</em> operon in the bacterium <em>E. coli</em> shows how a gene is switched on so that active mRNA is made and a protein is synthesised only when needed. The operon consists of a <strong>promoter</strong> (where RNA polymerase binds), an <strong>operator</strong>, and the <strong>structural genes</strong>, including <em>lacZ</em>, which codes for <strong>&beta;-galactosidase</strong> (hydrolyses lactose into glucose and galactose), and <em>lacY</em>, which codes for lactose permease (takes lactose into the cell). A separate <strong>regulatory gene</strong> (<em>lacI</em>) codes for a <strong>repressor protein</strong>.</p>
+<ul>
+  <li><strong>Lactose absent:</strong> The repressor protein binds to the operator. This stops RNA polymerase binding to the promoter, so the structural genes are not transcribed and the enzymes are not made.</li>
+  <li><strong>Lactose present:</strong> Lactose binds to the repressor protein, changing its shape so it can no longer bind to the operator. RNA polymerase binds to the promoter and transcribes the structural genes into mRNA, which is translated into &beta;-galactosidase and lactose permease, so the bacterium can use lactose.</li>
+</ul>
+
+<h3>Development and Body Plans</h3>
+
+<p>During embryonic development, the body plan is established through complex patterns of gene expression controlled by master regulator genes. Homeobox genes (including Hox genes) encode transcription factors that specify the identity of body segments along the anterior-posterior axis. Mutations in Hox genes can cause dramatic developmental abnormalities, such as a leg growing where an antenna should be in Drosophila.</p>
+
+<p>Cell signalling is crucial for coordinating development. Cells communicate through chemical signals (morphogens, growth factors, hormones) that bind to receptors and trigger intracellular signalling cascades, ultimately affecting gene expression. The concentration gradient of morphogens helps cells determine their position and differentiate accordingly (positional information).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Remember that differentiation is about which genes are switched on or off, not about changes to DNA sequence. All body cells have the same genome (with a few exceptions like mature red blood cells and lymphocytes). The key concept is differential gene expression.
+</div>
+
+<h3>Genotype, Environment and Phenotype</h3>
+
+<p>An organism's <strong>phenotype</strong> is the result of an interaction between its <strong>genotype</strong> and the <strong>environment</strong>. The genotype sets the potential; the environment affects how it is expressed. For example, human height depends on many genes but also on diet during growth; in Himalayan rabbits and Siamese cats, an enzyme for dark fur pigment works only at lower temperatures, so only the cooler extremities (ears, paws, tail) are dark; hydrangea flower colour depends on soil pH.</p>
+
+<h3>Epigenetics</h3>
+
+<p>Epigenetic changes alter whether genes are switched on or off without changing the base sequence of the DNA:</p>
+<ul>
+  <li><strong>DNA methylation:</strong> Methyl groups are added to cytosine bases, often in or near a gene's promoter. This prevents transcription factors and RNA polymerase binding, so the gene is silenced.</li>
+  <li><strong>Histone modification:</strong> Adding acetyl groups to histones (acetylation) loosens the chromatin so DNA is accessible and the gene can be transcribed; removing acetyl groups (or adding methyl groups to histones) makes the chromatin more condensed, so the gene is not transcribed.</li>
+</ul>
+<p><strong>Passing on epigenetic changes:</strong> When DNA replicates before cell division, enzymes copy the methylation pattern onto the new DNA strand, and histone modifications are re-established, so daughter cells inherit the same pattern of active and silenced genes. This is how differentiated cells stay differentiated through mitosis. Some epigenetic marks can also be passed from parents to offspring.</p>
+
+<h3>Polygenic Inheritance and Continuous Variation</h3>
+
+<p>Some characteristics are controlled by one gene with a few alleles and show <strong>discontinuous variation</strong> (distinct categories, e.g. blood group). Others are <strong>polygenic</strong>: they are affected by multiple alleles of genes at many loci, each having a small additive effect, and also by the environment. This produces a range of phenotypes with no distinct categories, called <strong>continuous variation</strong>, usually giving a normal distribution (e.g. human height, skin colour, milk yield in cattle).</p>
+
+<h3>Programmed Cell Death (Apoptosis) &mdash; extension, not required by 9BN0</h3>
+
+<div class="definition">
+  <strong>Apoptosis:</strong> Programmed cell death &mdash; a controlled, orderly process in which cells self-destruct without causing inflammation. The cell shrinks, chromatin condenses, DNA is fragmented, and the cell breaks into apoptotic bodies that are phagocytosed by neighbouring cells.
+</div>
+
+<p>Apoptosis is essential during development (e.g., separating digits, eliminating excess neurons, removing webbing between fingers) and throughout life (e.g., destroying damaged or potentially cancerous cells, removing cells infected by viruses, maintaining tissue homeostasis). It is controlled by genes such as p53 (tumour suppressor) and the Bcl-2 family. Failure of apoptosis can lead to cancer; excessive apoptosis can lead to degenerative diseases.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Distinguish between apoptosis (controlled, no inflammation, beneficial) and necrosis (uncontrolled cell death due to injury, causes inflammation, harmful). Apoptosis requires ATP and gene expression; necrosis does not.
+</div>
+
+</div>
+</body>
+</html>

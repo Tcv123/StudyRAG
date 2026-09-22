@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — 7: Modern Genetics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>7 — Modern Genetics</h1>
+
+<p>Edexcel B A-level Biology (9BI0), Topic 7. This topic takes what you already know about DNA, RNA and protein synthesis and applies it to modern techniques: reading and copying DNA, switching genes on and off, using stem cells in medicine, and moving genes between organisms. You also need to be able to discuss the ethics of these technologies. The maths skills linked to this topic are working with decimals and standard form, and giving answers to a sensible number of significant figures.</p>
+
+<!-- ============================================================ -->
+<h2>7.1 Using Gene Sequencing</h2>
+<!-- ============================================================ -->
+
+<h3>7.1 (i) The Genome</h3>
+
+<div class="definition">
+  <strong>Genome:</strong> The complete set of genetic material (all of the DNA) in a cell or organism. In eukaryotes this includes every gene and all the non-coding DNA in the nucleus, and it is often taken to include the small genomes of the mitochondria and (in plants) the chloroplasts.
+</div>
+
+<p>The genome is not the same as the set of genes. Only a small fraction of the human genome codes for proteins: roughly 1&ndash;2% of the approximately 3.1 &times; 10<sup>9</sup> base pairs in a haploid set. The rest includes introns, regulatory sequences such as promoters and enhancers, genes for functional RNA (tRNA, rRNA and other non-coding RNAs), and many repeated sequences. The human genome contains about 20,000 protein-coding genes.</p>
+
+<p>The <strong>proteome</strong>, the full set of proteins an organism can make, is larger than the number of genes because of alternative splicing (see 7.2).</p>
+
+<div class="equation">
+  Protein-coding DNA &asymp; 1.5% &times; 3.1 &times; 10<sup>9</sup> bp = 4.65 &times; 10<sup>7</sup> bp &asymp; 4.7 &times; 10<sup>7</sup> bp (2 s.f.)
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In standard form the first number must lie between 1 and 10, so 46.5 &times; 10<sup>6</sup> should be written 4.65 &times; 10<sup>7</sup>. Round your final answer to the same number of significant figures as the least precise value in the data (here 3.1 &times; 10<sup>9</sup> has 2 s.f.). Do not round intermediate steps.
+</div>
+
+<h3>7.1 (ii) The Polymerase Chain Reaction (PCR)</h3>
+
+<div class="definition">
+  <strong>PCR:</strong> A technique that makes millions of copies of a chosen section of DNA in a test tube. It uses repeated cycles of heating and cooling, a heat-stable DNA polymerase, two short primers that mark the ends of the target region, and free DNA nucleotides.
+</div>
+
+<p>PCR is needed because samples such as a drop of blood, a hair root or a cheek swab contain far too little DNA to sequence or profile directly. The reaction mixture contains:</p>
+
+<ul>
+  <li><strong>Template DNA</strong> &mdash; the sample containing the target sequence.</li>
+  <li><strong>Primers</strong> &mdash; two short single-stranded DNA sequences (typically around 20 nucleotides), each complementary to the 3&prime; end of one strand of the target region. They give the polymerase a starting point and decide which section is copied.</li>
+  <li><strong>Free nucleotides</strong> &mdash; deoxyribonucleotides carrying each of the four bases A, T, C and G.</li>
+  <li><strong>Taq polymerase</strong> &mdash; a DNA polymerase from the thermophilic bacterium <em>Thermus aquaticus</em>. It is not denatured at 95&nbsp;&deg;C, so it survives every heating step and does not need to be added again each cycle.</li>
+  <li><strong>Buffer</strong> containing magnesium ions, which the polymerase needs to work.</li>
+</ul>
+
+<p>The mixture is placed in a thermal cycler, which repeats three steps:</p>
+
+<ol>
+  <li><strong>Denaturation (about 95&nbsp;&deg;C):</strong> the hydrogen bonds between complementary bases break and the double helix separates into two single strands.</li>
+  <li><strong>Annealing (about 50&ndash;65&nbsp;&deg;C):</strong> the mixture is cooled so the primers can form hydrogen bonds with their complementary sequences at either end of the target region. Primers are present in excess, so they bind before the long template strands can re-pair.</li>
+  <li><strong>Extension (about 72&nbsp;&deg;C):</strong> the optimum temperature for Taq polymerase. It adds nucleotides to the 3&prime; end of each primer, building a new complementary strand and forming phosphodiester bonds along the new sugar&ndash;phosphate backbone.</li>
+</ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 290" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">One Cycle of PCR</text>
+  <defs>
+    <marker id="arrowPCR7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Stage 0: double-stranded -->
+  <text x="75" y="55" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">Template DNA</text>
+  <line x1="20" y1="80" x2="130" y2="80" stroke="#2563eb" stroke-width="4"/>
+  <line x1="20" y1="90" x2="130" y2="90" stroke="#2563eb" stroke-width="4"/>
+  <text x="75" y="112" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">double-stranded</text>
+  <path d="M138,85 L168,85" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowPCR7)"/>
+  <!-- Stage 1: denaturation -->
+  <rect x="172" y="40" width="120" height="100" rx="8" fill="#DC2626" opacity="0.06" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="232" y="56" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">1. Denature 95 &#176;C</text>
+  <line x1="182" y1="75" x2="282" y2="75" stroke="#2563eb" stroke-width="4"/>
+  <line x1="182" y1="105" x2="282" y2="105" stroke="#2563eb" stroke-width="4"/>
+  <text x="232" y="128" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">H-bonds break</text>
+  <path d="M296,85 L326,85" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowPCR7)"/>
+  <!-- Stage 2: annealing -->
+  <rect x="330" y="40" width="120" height="100" rx="8" fill="#16A34A" opacity="0.06" stroke="#16A34A" stroke-width="1.2"/>
+  <text x="390" y="56" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">2. Anneal ~55 &#176;C</text>
+  <line x1="340" y1="75" x2="440" y2="75" stroke="#2563eb" stroke-width="4"/>
+  <line x1="340" y1="105" x2="440" y2="105" stroke="#2563eb" stroke-width="4"/>
+  <line x1="420" y1="83" x2="440" y2="83" stroke="#D97706" stroke-width="4"/>
+  <line x1="340" y1="97" x2="360" y2="97" stroke="#D97706" stroke-width="4"/>
+  <text x="390" y="128" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">primers bind</text>
+  <path d="M454,85 L484,85" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowPCR7)"/>
+  <!-- Stage 3: extension -->
+  <rect x="488" y="40" width="100" height="100" rx="8" fill="#7C3AED" opacity="0.06" stroke="#7C3AED" stroke-width="1.2"/>
+  <text x="538" y="56" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#7C3AED">3. Extend 72 &#176;C</text>
+  <line x1="496" y1="75" x2="580" y2="75" stroke="#2563eb" stroke-width="4"/>
+  <line x1="496" y1="83" x2="580" y2="83" stroke="#7C3AED" stroke-width="4"/>
+  <line x1="496" y1="97" x2="580" y2="97" stroke="#7C3AED" stroke-width="4"/>
+  <line x1="496" y1="105" x2="580" y2="105" stroke="#2563eb" stroke-width="4"/>
+  <text x="538" y="128" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Taq adds nucleotides</text>
+  <!-- Key -->
+  <line x1="40" y1="175" x2="70" y2="175" stroke="#2563eb" stroke-width="4"/>
+  <text x="78" y="179" font-family="system-ui" font-size="9" fill="#1a1a2e">original strand</text>
+  <line x1="190" y1="175" x2="220" y2="175" stroke="#D97706" stroke-width="4"/>
+  <text x="228" y="179" font-family="system-ui" font-size="9" fill="#1a1a2e">primer</text>
+  <line x1="300" y1="175" x2="330" y2="175" stroke="#7C3AED" stroke-width="4"/>
+  <text x="338" y="179" font-family="system-ui" font-size="9" fill="#1a1a2e">new strand</text>
+  <!-- Doubling -->
+  <text x="300" y="215" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">The amount of target DNA doubles each cycle</text>
+  <text x="80" y="245" text-anchor="middle" font-family="system-ui" font-size="10" fill="#2563eb">Cycle 0: 1</text>
+  <text x="190" y="245" text-anchor="middle" font-family="system-ui" font-size="10" fill="#2563eb">1: 2</text>
+  <text x="270" y="245" text-anchor="middle" font-family="system-ui" font-size="10" fill="#2563eb">2: 4</text>
+  <text x="350" y="245" text-anchor="middle" font-family="system-ui" font-size="10" fill="#2563eb">3: 8</text>
+  <text x="480" y="245" text-anchor="middle" font-family="system-ui" font-size="10" fill="#2563eb">n cycles: 2&#8319;</text>
+  <text x="300" y="272" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">(ideal conditions; the reaction slows when primers and nucleotides run low)</text>
+</svg>
+</div>
+
+<p>Each copy made in one cycle can act as a template in the next, so under ideal conditions the number of copies of the target doubles every cycle. A typical run of 25&ndash;35 cycles takes a few hours. In practice the doubling slows in later cycles as primers and nucleotides are used up.</p>
+
+<div class="equation">
+  Number of copies = starting copies &times; 2<sup>n</sup> &nbsp;&nbsp;(n = number of cycles)
+</div>
+
+<p><strong>Worked example:</strong> a sample contains 5 copies of a target sequence. After 25 cycles the theoretical number of copies is 5 &times; 2<sup>25</sup> = 5 &times; 33,554,432 = 167,772,160, which is 1.68 &times; 10<sup>8</sup> to 3 significant figures. Starting from a single molecule, 30 cycles gives 2<sup>30</sup> = 1.07 &times; 10<sup>9</sup> copies.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Say that the <em>hydrogen bonds</em> between bases break at 95&nbsp;&deg;C. Do not say the DNA is "denatured like an enzyme" or that phosphodiester bonds break &mdash; the sugar&ndash;phosphate backbone stays intact. Also explain <em>why</em> Taq polymerase is used: it comes from a bacterium adapted to hot springs and is not denatured by the high temperature. PCR copies DNA only; it does not involve RNA polymerase, ribosomes or transcription.
+</div>
+
+<h3>Using PCR Products: Gene Sequencing and Predicting Proteins</h3>
+
+<p>Once a gene has been amplified, its base sequence can be determined. In <strong>Sanger (chain-termination) sequencing</strong>, the DNA is copied in the presence of a few fluorescently labelled nucleotides that stop the chain growing when they are added. This gives fragments of every length, each ending in a labelled base. The fragments are separated by size and a detector reads the colour of the last base in each, giving the sequence in order. Modern high-throughput machines sequence millions of fragments in parallel, which has made whole-genome sequencing fast and cheap.</p>
+
+<p>Knowing the base sequence of a gene lets scientists <strong>predict the amino acid sequence</strong> of the protein it codes for:</p>
+
+<ol>
+  <li>Identify the coding strand (or work out the mRNA sequence, which matches the coding strand but has U in place of T).</li>
+  <li>Find the start codon (AUG in mRNA) and read the sequence in non-overlapping triplets from that point.</li>
+  <li>Use a genetic code table to convert each codon into an amino acid, stopping at a stop codon (UAA, UAG or UGA).</li>
+</ol>
+
+<p>In eukaryotes the introns must be left out before translating, so predictions are often made from cDNA (DNA copied from mRNA by reverse transcriptase). Because the code is degenerate, a DNA sequence predicts one amino acid sequence, but an amino acid sequence cannot be traced back to one unique DNA sequence.</p>
+
+<p><strong>Links to genetically determined conditions:</strong> comparing a patient's sequence with the normal (reference) sequence can reveal mutations and show how they change the protein.</p>
+
+<ul>
+  <li>A <strong>substitution</strong> changes one codon. It may have no effect (a silent mutation, because of degeneracy), change one amino acid (as in sickle cell disease, where a single base change in the &beta;-globin gene replaces glutamic acid with valine), or create an early stop codon, giving a shortened protein.</li>
+  <li>An <strong>insertion or deletion</strong> of one or two bases causes a <strong>frameshift</strong>, altering every codon downstream and usually producing a non-functional protein.</li>
+  <li>Deleting a whole triplet removes one amino acid without a frameshift. The most common cystic fibrosis allele (&Delta;F508) is a deletion of three bases that removes the amino acid phenylalanine at position 508 of the CFTR protein, so the protein misfolds and is broken down before it reaches the cell surface membrane.</li>
+</ul>
+
+<p>Sequencing is used to diagnose genetic conditions, to identify carriers, in prenatal and pre-implantation testing, and to find genes linked to a condition by comparing affected and unaffected people.</p>
+
+<h3>Using PCR Products: DNA Profiling</h3>
+
+<div class="definition">
+  <strong>DNA profiling:</strong> A technique that produces a pattern of bands (or peaks) from regions of DNA that vary greatly between individuals. Apart from identical twins, no two people are expected to have the same profile, so a profile can be used to identify a person or to establish how people are related.
+</div>
+
+<p>Most of the genome is almost identical between people, so profiling targets <strong>short tandem repeats (STRs)</strong>: non-coding regions in which a short sequence of bases (often 2&ndash;5 bases long) is repeated one after another. The number of repeats at each STR locus varies a lot between people, and each person inherits one version from each parent, so at every locus a person has two alleles that may be the same length or different lengths.</p>
+
+<ol>
+  <li><strong>Collect and extract DNA</strong> from a sample such as blood, semen, saliva, skin cells or a hair root.</li>
+  <li><strong>Amplify by PCR</strong> using primers that bind to the sequences either side of each STR, so that the length of each product depends on the number of repeats. Primers carrying fluorescent tags are usually used, and many STR loci can be amplified together.</li>
+  <li><strong>Separate the fragments by gel electrophoresis</strong> (or capillary electrophoresis). DNA is negatively charged because of its phosphate groups, so the fragments move towards the positive electrode (anode). The gel acts as a mesh, so shorter fragments move further in a given time than longer ones.</li>
+  <li><strong>Visualise</strong> the fragments (fluorescent tags or a stain) and estimate their sizes against a DNA ladder of known fragment lengths.</li>
+  <li><strong>Compare</strong> the profiles. In a capillary system, the result is shown as a series of peaks rather than bands.</li>
+</ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 300" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">DNA Profiles in a Paternity Test (one gel, several STR loci)</text>
+  <defs>
+    <marker id="arrowGel7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Gel -->
+  <rect x="60" y="45" width="380" height="225" rx="4" fill="#e8eef6" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- Electrodes -->
+  <text x="40" y="60" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">&#8722;</text>
+  <text x="40" y="266" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">+</text>
+  <path d="M40,75 L40,245" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arrowGel7)"/>
+  <!-- Lane labels -->
+  <text x="110" y="40" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Ladder</text>
+  <text x="190" y="40" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Mother</text>
+  <text x="270" y="40" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Child</text>
+  <text x="350" y="40" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Man A</text>
+  <text x="420" y="40" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#7C3AED">Man B</text>
+  <!-- Wells -->
+  <rect x="92" y="50" width="36" height="6" fill="#94a3b8"/>
+  <rect x="172" y="50" width="36" height="6" fill="#94a3b8"/>
+  <rect x="252" y="50" width="36" height="6" fill="#94a3b8"/>
+  <rect x="332" y="50" width="36" height="6" fill="#94a3b8"/>
+  <rect x="402" y="50" width="36" height="6" fill="#94a3b8"/>
+  <!-- Ladder bands -->
+  <rect x="92" y="75" width="36" height="4" fill="#1a1a2e"/>
+  <rect x="92" y="105" width="36" height="4" fill="#1a1a2e"/>
+  <rect x="92" y="135" width="36" height="4" fill="#1a1a2e"/>
+  <rect x="92" y="165" width="36" height="4" fill="#1a1a2e"/>
+  <rect x="92" y="195" width="36" height="4" fill="#1a1a2e"/>
+  <rect x="92" y="225" width="36" height="4" fill="#1a1a2e"/>
+  <!-- Mother bands: 85, 150, 190, 240 -->
+  <rect x="172" y="85" width="36" height="5" fill="#DC2626"/>
+  <rect x="172" y="150" width="36" height="5" fill="#DC2626"/>
+  <rect x="172" y="190" width="36" height="5" fill="#DC2626"/>
+  <rect x="172" y="240" width="36" height="5" fill="#DC2626"/>
+  <!-- Child bands: 85 (M), 120 (A), 150 (M), 210 (A) -->
+  <rect x="252" y="85" width="36" height="5" fill="#1a73e8"/>
+  <rect x="252" y="120" width="36" height="5" fill="#1a73e8"/>
+  <rect x="252" y="150" width="36" height="5" fill="#1a73e8"/>
+  <rect x="252" y="210" width="36" height="5" fill="#1a73e8"/>
+  <!-- Man A bands: 120, 175, 210, 230 -->
+  <rect x="332" y="120" width="36" height="5" fill="#16A34A"/>
+  <rect x="332" y="175" width="36" height="5" fill="#16A34A"/>
+  <rect x="332" y="210" width="36" height="5" fill="#16A34A"/>
+  <rect x="332" y="230" width="36" height="5" fill="#16A34A"/>
+  <!-- Man B bands: 70, 100, 160, 200 -->
+  <rect x="402" y="70" width="36" height="5" fill="#7C3AED"/>
+  <rect x="402" y="100" width="36" height="5" fill="#7C3AED"/>
+  <rect x="402" y="160" width="36" height="5" fill="#7C3AED"/>
+  <rect x="402" y="200" width="36" height="5" fill="#7C3AED"/>
+  <!-- Size labels -->
+  <text x="455" y="80" font-family="system-ui" font-size="8" fill="#666">larger</text>
+  <text x="455" y="90" font-family="system-ui" font-size="8" fill="#666">fragments</text>
+  <text x="455" y="240" font-family="system-ui" font-size="8" fill="#666">smaller</text>
+  <text x="455" y="250" font-family="system-ui" font-size="8" fill="#666">fragments</text>
+  <!-- Interpretation -->
+  <text x="520" y="140" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Every child band</text>
+  <text x="520" y="152" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">matches Mother</text>
+  <text x="520" y="164" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">or Man A;</text>
+  <text x="520" y="176" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">none match Man B</text>
+</svg>
+</div>
+
+<p><strong>Paternity testing:</strong> a child inherits one allele at each STR locus from each parent, so every band in the child should match a band in the mother or in the biological father. In the diagram, the child bands not from the mother all match Man A and none match Man B, so Man B is excluded and Man A is very likely to be the father.</p>
+
+<p><strong>Forensic science:</strong> DNA from a crime scene is compared with profiles from suspects or a national database. A mismatch excludes the suspect. A match is reported with a <strong>match probability</strong>, the chance that an unrelated person chosen at random would share the profile; with many independent STR loci this is extremely small.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A match does not prove guilt. It shows only that the person's DNA (or the DNA of an identical twin) was present, not how or when it got there. When asked to <em>evaluate</em> profiling evidence, mention contamination of samples, the possibility of close relatives sharing many alleles, degraded or mixed samples, and the need for other evidence. In paternity questions, deal with the mother's bands first and then check whether each remaining band in the child is present in the possible father.
+</div>
+
+<!-- ============================================================ -->
+<h2>7.2 Factors Affecting Gene Expression</h2>
+<!-- ============================================================ -->
+
+<p>Almost every body cell has the same genome, yet a neurone and a muscle cell make very different proteins, because genes are switched on and off selectively. Control can act before transcription (transcription factors, chromatin changes), after transcription (splicing, non-coding RNA) or after translation.</p>
+
+<h3>7.2 (i) Transcription Factors Are DNA-Binding Proteins</h3>
+
+<div class="definition">
+  <strong>Transcription factor:</strong> A protein that binds to a specific DNA base sequence, usually in or near the promoter of a gene, and so increases or decreases the rate at which that gene is transcribed.
+</div>
+
+<p>Each transcription factor has a DNA-binding site whose shape is complementary to a particular short base sequence. Because different genes carry different regulatory sequences, a transcription factor affects only the genes that contain its target sequence. Transcription factors are themselves proteins coded for by genes, so the genes that are active in a cell depend on which transcription factors that cell makes.</p>
+
+<h3>7.2 (ii) How Transcription Factors Regulate Gene Expression</h3>
+
+<p>In eukaryotes, RNA polymerase cannot start transcription on its own. It needs a group of transcription factors to assemble at the <strong>promoter</strong> (a region just upstream of the gene) and position it correctly.</p>
+
+<ul>
+  <li><strong>Activators</strong> bind to the promoter or to more distant regulatory sequences (enhancers) and help RNA polymerase bind, so transcription is increased and more mRNA, and therefore more protein, is made.</li>
+  <li><strong>Repressors</strong> bind to DNA and block the binding of RNA polymerase or of activators, so transcription is reduced or prevented.</li>
+</ul>
+
+<p>Transcription factors can be switched on or off by signals from outside or inside the cell. A well-known example is the steroid hormone <strong>oestrogen</strong>. Being lipid-soluble, it diffuses through the cell surface membrane and binds to a receptor protein in the cytoplasm or nucleus. Binding changes the shape of the receptor so that it can now bind to DNA, and the hormone&ndash;receptor complex acts as a transcription factor, stimulating transcription of target genes. Other transcription factors are activated by phosphorylation after a signal molecule binds to a receptor on the cell surface.</p>
+
+
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Transcription factors bind to <em>DNA</em>, not to mRNA or ribosomes, and they act in the <em>nucleus</em>. A strong answer links each step: signal &rarr; transcription factor becomes active &rarr; binds to promoter &rarr; RNA polymerase can (or cannot) bind &rarr; more (or less) mRNA &rarr; more (or less) of the protein.
+</div>
+
+<h3>7.2 (iii) Post-Transcriptional Modification: RNA Splicing</h3>
+
+<p>Eukaryotic genes are split into <strong>exons</strong>, which are kept in the mature mRNA, and <strong>introns</strong>, which are non-coding sequences between them. Transcription copies the whole gene, introns included, to form <strong>pre-mRNA</strong> (primary transcript). Before the mRNA leaves the nucleus, it is processed:</p>
+
+<ul>
+  <li>The introns are cut out and the exons joined together by a complex of proteins and small RNAs called a <strong>spliceosome</strong>.</li>
+  <li>A modified nucleotide cap is added to the 5&prime; end and a tail of adenine nucleotides (poly-A tail) to the 3&prime; end. These help the mRNA leave the nucleus, protect it from breakdown and help ribosomes attach.</li>
+</ul>
+
+<div class="definition">
+  <strong>Alternative splicing:</strong> Processing the same pre-mRNA in different ways, so that different combinations of exons are kept in the mature mRNA. The different mRNAs are translated into different polypeptides, so one gene can code for more than one protein.
+</div>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 290" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Alternative Splicing of One Pre-mRNA</text>
+  <defs>
+    <marker id="arrowSpl7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Pre-mRNA -->
+  <text x="300" y="50" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">Pre-mRNA (primary transcript)</text>
+  <rect x="80" y="62" width="70" height="26" rx="3" fill="#2563eb" opacity="0.8"/>
+  <text x="115" y="79" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">Exon 1</text>
+  <line x1="150" y1="75" x2="190" y2="75" stroke="#94a3b8" stroke-width="3"/>
+  <text x="170" y="100" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">intron</text>
+  <rect x="190" y="62" width="70" height="26" rx="3" fill="#16A34A" opacity="0.8"/>
+  <text x="225" y="79" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">Exon 2</text>
+  <line x1="260" y1="75" x2="300" y2="75" stroke="#94a3b8" stroke-width="3"/>
+  <text x="280" y="100" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">intron</text>
+  <rect x="300" y="62" width="70" height="26" rx="3" fill="#D97706" opacity="0.85"/>
+  <text x="335" y="79" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">Exon 3</text>
+  <line x1="370" y1="75" x2="410" y2="75" stroke="#94a3b8" stroke-width="3"/>
+  <text x="390" y="100" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">intron</text>
+  <rect x="410" y="62" width="70" height="26" rx="3" fill="#7C3AED" opacity="0.8"/>
+  <text x="445" y="79" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#ffffff">Exon 4</text>
+  <!-- Arrows -->
+  <path d="M230,110 L150,150" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowSpl7)"/>
+  <path d="M370,110 L450,150" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowSpl7)"/>
+  <text x="300" y="135" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">spliceosome removes introns</text>
+  <!-- mRNA A: 1-2-3-4 -->
+  <text x="150" y="172" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">Mature mRNA A</text>
+  <rect x="45" y="182" width="50" height="24" rx="3" fill="#2563eb" opacity="0.8"/>
+  <text x="70" y="198" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#ffffff">1</text>
+  <rect x="95" y="182" width="50" height="24" rx="3" fill="#16A34A" opacity="0.8"/>
+  <text x="120" y="198" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#ffffff">2</text>
+  <rect x="145" y="182" width="50" height="24" rx="3" fill="#D97706" opacity="0.85"/>
+  <text x="170" y="198" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#ffffff">3</text>
+  <rect x="195" y="182" width="50" height="24" rx="3" fill="#7C3AED" opacity="0.8"/>
+  <text x="220" y="198" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#ffffff">4</text>
+  <text x="145" y="230" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">&#8594; protein A</text>
+  <!-- mRNA B: 1-2-4 -->
+  <text x="450" y="172" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a1a2e">Mature mRNA B (exon 3 skipped)</text>
+  <rect x="375" y="182" width="50" height="24" rx="3" fill="#2563eb" opacity="0.8"/>
+  <text x="400" y="198" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#ffffff">1</text>
+  <rect x="425" y="182" width="50" height="24" rx="3" fill="#16A34A" opacity="0.8"/>
+  <text x="450" y="198" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#ffffff">2</text>
+  <rect x="475" y="182" width="50" height="24" rx="3" fill="#7C3AED" opacity="0.8"/>
+  <text x="500" y="198" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#ffffff">4</text>
+  <text x="450" y="230" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">&#8594; protein B</text>
+  <text x="300" y="265" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1e3a5f">Same gene, different amino acid sequences, different proteins</text>
+</svg>
+</div>
+
+<p>Which exons are kept can differ between tissues or stages of development. This helps explain how about 20,000 human genes give rise to a much larger number of proteins. Prokaryotic genes lack introns, so this kind of splicing is a eukaryotic feature.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Splicing happens to mRNA, not to DNA: the gene itself is unchanged. It is a <em>post-transcriptional</em> change, so it happens after transcription and before translation, inside the nucleus. Avoid saying "introns are spliced together" &mdash; the introns are removed and the <em>exons</em> are joined.
+</div>
+
+<h3>7.2 (iv) Epigenetic Modification</h3>
+
+<div class="definition">
+  <strong>Epigenetics:</strong> Heritable changes in gene expression that happen without any change to the base sequence of the DNA. Chemical tags on DNA and on histones, and regulatory RNA molecules, change how easily genes can be transcribed or translated. The tags are copied when a cell divides, so the pattern of gene activity passes to daughter cells.
+</div>
+
+<p>In the nucleus, DNA is wound around proteins called <strong>histones</strong> to form chromatin. When chromatin is loosely packed (euchromatin), transcription factors and RNA polymerase can reach the DNA and genes can be expressed. When it is tightly packed (heterochromatin), the DNA is inaccessible and the genes are silenced. Epigenetic modifications work largely by changing this packing.</p>
+
+<table>
+  <tr><th>Modification</th><th>What happens</th><th>Effect on gene expression</th></tr>
+  <tr><td><strong>DNA methylation</strong></td><td>Methyl groups (&ndash;CH<sub>3</sub>) are added to cytosine bases, usually where a cytosine is followed by a guanine (CpG sites), often in or near promoters.</td><td>Usually silences the gene: methylated DNA attracts proteins that make the chromatin condense, and it can prevent transcription factors from binding to the promoter.</td></tr>
+  <tr><td><strong>Histone acetylation</strong></td><td>Acetyl groups are added to the positively charged amino acids (such as lysine) in histone tails.</td><td>Reduces the positive charge, so the histones bind less tightly to negatively charged DNA. The chromatin loosens and transcription is <em>increased</em>.</td></tr>
+  <tr><td><strong>Histone deacetylation</strong></td><td>Acetyl groups are removed by histone deacetylase enzymes.</td><td>Histones bind DNA more tightly, chromatin condenses and transcription is <em>reduced</em>.</td></tr>
+  <tr><td><strong>Histone methylation</strong></td><td>Methyl groups are added to histones.</td><td>Can either activate or repress, depending on which amino acid is methylated.</td></tr>
+  <tr><td><strong>Non-coding RNA</strong></td><td>RNA molecules that are transcribed but not translated, such as microRNA (miRNA), small interfering RNA (siRNA) and long non-coding RNAs.</td><td>miRNA and siRNA bind to complementary sequences in a target mRNA, leading to its breakdown or blocking its translation. Some long non-coding RNAs help condense chromatin and silence whole regions of DNA.</td></tr>
+</table>
+
+<p>A clear example of non-coding RNA in action is <strong>X-chromosome inactivation</strong> in female mammals. In each cell, one of the two X chromosomes produces a long non-coding RNA called <em>Xist</em>, which coats that chromosome and leads to it becoming condensed and almost entirely inactive. The inactive X is then passed on in the same state each time the cell divides.</p>
+
+<p>Epigenetic tags can be affected by the environment, such as diet, stress or smoking, which helps explain why identical twins become more different with age. Abnormal methylation is seen in many cancers, for example when tumour suppressor genes are silenced.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Epigenetic Control of Chromatin Packing</text>
+  <defs>
+    <marker id="arrowEpi7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Left: open chromatin -->
+  <rect x="20" y="40" width="260" height="180" rx="10" fill="#16A34A" opacity="0.06" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="150" y="60" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Loosely packed: gene ON</text>
+  <circle cx="60" cy="120" r="18" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1"/>
+  <circle cx="150" cy="120" r="18" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1"/>
+  <circle cx="240" cy="120" r="18" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1"/>
+  <path d="M30,120 Q45,95 60,102 Q80,110 78,125 Q95,145 132,120 Q140,100 150,102 Q170,110 168,125 Q190,145 222,120 Q230,100 240,102 Q260,110 258,125 L275,125" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="60" y="95" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#16A34A">Ac</text>
+  <text x="150" y="95" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#16A34A">Ac</text>
+  <text x="240" y="95" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#16A34A">Ac</text>
+  <text x="150" y="170" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Histones acetylated, DNA unmethylated</text>
+  <text x="150" y="185" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Transcription factors and RNA</text>
+  <text x="150" y="198" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">polymerase can reach the promoter</text>
+  <!-- Arrows between -->
+  <path d="M288,110 L312,110" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowEpi7)"/>
+  <path d="M312,140 L288,140" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowEpi7)"/>
+  <!-- Right: condensed chromatin -->
+  <rect x="320" y="40" width="260" height="180" rx="10" fill="#DC2626" opacity="0.06" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="450" y="60" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Tightly packed: gene OFF</text>
+  <circle cx="410" cy="115" r="18" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1"/>
+  <circle cx="448" cy="115" r="18" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1"/>
+  <circle cx="486" cy="115" r="18" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="1"/>
+  <path d="M345,115 Q380,95 392,115 Q400,135 430,115 Q440,95 468,115 Q478,135 504,115 L560,115" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="392" y="140" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#DC2626">CH&#8323;</text>
+  <text x="468" y="140" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#DC2626">CH&#8323;</text>
+  <text x="450" y="170" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Histones deacetylated, DNA methylated</text>
+  <text x="450" y="185" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Promoter inaccessible,</text>
+  <text x="450" y="198" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">gene not transcribed</text>
+  <text x="300" y="245" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">Ac = acetyl group on histone &#160;&#160; CH&#8323; = methyl group on cytosine &#160;&#160; orange circles = histones</text>
+</svg>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The two chemical changes have opposite typical effects, and students often mix them up. Remember: <em>acetylation activates</em>, while <em>DNA methylation mutes</em>. Never say that epigenetic changes alter the base sequence or are mutations; the sequence stays the same and only its accessibility changes.
+</div>
+
+<h3>7.2 (v) Epigenetics and Cell Differentiation</h3>
+
+<p>Differentiation is the process by which an unspecialised cell becomes specialised for a particular function. Since all body cells contain the same genes, cells differentiate because they express different sets of genes. Epigenetic modification is what makes this pattern stable:</p>
+
+<ul>
+  <li>Signals from neighbouring cells and the cell's position in the embryo activate particular transcription factors.</li>
+  <li>Genes needed for that cell type are kept accessible (histone acetylation, unmethylated promoters), while genes for other cell types and genes that maintain the unspecialised state are silenced by DNA methylation and histone deacetylation.</li>
+  <li>When the cell divides by mitosis, the methylation pattern is copied onto the new DNA strands by maintenance enzymes, so the daughter cells stay the same cell type. A liver cell gives rise to liver cells, not to neurones.</li>
+</ul>
+
+
+
+<!-- ============================================================ -->
+<h2>7.3 Stem Cells</h2>
+<!-- ============================================================ -->
+
+<h3>7.3 (i) What Is a Stem Cell?</h3>
+
+<div class="definition">
+  <strong>Stem cell:</strong> An undifferentiated cell that can divide by mitosis to renew itself (self-renewal) and can also give rise to cells that differentiate into one or more specialised cell types. How many cell types it can produce is called its <strong>potency</strong>.
+</div>
+
+<table>
+  <tr><th>Type</th><th>What it can become</th><th>Where it is found</th></tr>
+  <tr><td><strong>Totipotent</strong></td><td>Any type of cell, including the cells of the placenta and other extra-embryonic membranes. A single totipotent cell can give rise to a whole organism.</td><td>The zygote and the cells of the very early embryo (the first few divisions, up to around the 8-cell stage in humans).</td></tr>
+  <tr><td><strong>Pluripotent</strong></td><td>Any cell type of the body, from all three germ layers, but not the placenta. Cannot on its own form a complete organism.</td><td>The inner cell mass of the blastocyst (about 5 days after fertilisation in humans); these are the embryonic stem cells. iPS cells are also pluripotent.</td></tr>
+  <tr><td><strong>Multipotent</strong></td><td>A limited range of related cell types.</td><td>Adult tissues, for example bone marrow stem cells that form the different types of blood cell; also umbilical cord blood.</td></tr>
+</table>
+
+
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 270" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Potency Narrows During Development</text>
+  <defs>
+    <marker id="arrowStem7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Zygote -->
+  <circle cx="70" cy="110" r="26" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="1.5"/>
+  <circle cx="70" cy="110" r="7" fill="#DC2626" opacity="0.5"/>
+  <text x="70" y="155" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Zygote /</text>
+  <text x="70" y="167" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">early embryo</text>
+  <text x="70" y="181" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Totipotent</text>
+  <path d="M102,110 L152,110" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowStem7)"/>
+  <!-- Blastocyst -->
+  <circle cx="205" cy="110" r="36" fill="#D97706" opacity="0.08" stroke="#D97706" stroke-width="1.5"/>
+  <ellipse cx="190" cy="98" rx="16" ry="13" fill="#D97706" opacity="0.45"/>
+  <text x="205" y="138" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">cavity</text>
+  <text x="205" y="165" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Blastocyst</text>
+  <text x="205" y="179" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">inner cell mass:</text>
+  <text x="205" y="191" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Pluripotent</text>
+  <path d="M246,110 L296,110" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowStem7)"/>
+  <!-- Multipotent -->
+  <circle cx="340" cy="110" r="24" fill="#7C3AED" opacity="0.15" stroke="#7C3AED" stroke-width="1.5"/>
+  <circle cx="340" cy="110" r="7" fill="#7C3AED" opacity="0.5"/>
+  <text x="340" y="155" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#7C3AED">Adult stem cell</text>
+  <text x="340" y="169" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">e.g. bone marrow</text>
+  <text x="340" y="181" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Multipotent</text>
+  <!-- Branch to specialised -->
+  <path d="M366,100 L440,65" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowStem7)"/>
+  <path d="M366,110 L440,110" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowStem7)"/>
+  <path d="M366,120 L440,155" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowStem7)"/>
+  <ellipse cx="480" cy="62" rx="22" ry="10" fill="#DC2626" opacity="0.3" stroke="#DC2626" stroke-width="1"/>
+  <text x="508" y="66" font-family="system-ui" font-size="9" fill="#1a1a2e">red blood cell</text>
+  <circle cx="480" cy="110" r="13" fill="#2563eb" opacity="0.25" stroke="#2563eb" stroke-width="1"/>
+  <text x="508" y="114" font-family="system-ui" font-size="9" fill="#1a1a2e">lymphocyte</text>
+  <circle cx="480" cy="158" r="14" fill="#16A34A" opacity="0.25" stroke="#16A34A" stroke-width="1"/>
+  <text x="508" y="162" font-family="system-ui" font-size="9" fill="#1a1a2e">neutrophil</text>
+  <text x="500" y="195" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1e3a5f">Differentiated somatic cells</text>
+  <!-- Bottom bar -->
+  <path d="M50,230 L560,230" fill="none" stroke="#1a1a2e" stroke-width="0.8" marker-end="url(#arrowStem7)"/>
+  <text x="300" y="224" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">More genes silenced by epigenetic marks; fewer possible fates</text>
+  <text x="300" y="252" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">(iPS cells reverse this arrow: a differentiated fibroblast is returned to a pluripotent state)</text>
+</svg>
+</div>
+
+<h3>7.3 (ii) Embryonic Stem Cells: Medical Opportunities and Ethical Issues</h3>
+
+<p>Embryonic stem cells (ES cells) are taken from the inner cell mass of blastocysts, usually spare embryos left over from IVF treatment. Because they are pluripotent and can be grown in culture for long periods, they offer many opportunities:</p>
+
+<ul>
+  <li><strong>Regenerative medicine:</strong> growing replacement cells to treat conditions in which cells are lost or damaged, such as type 1 diabetes (insulin-secreting cells), Parkinson&rsquo;s disease (dopamine-producing neurones), macular degeneration (retinal cells), heart muscle damage after a heart attack and spinal cord injury. Several of these are at the clinical trial stage rather than routine treatment.</li>
+  <li><strong>Research:</strong> studying how cells differentiate and how early development goes wrong.</li>
+  <li><strong>Drug testing:</strong> testing new drugs on human cells or tissues grown in the laboratory, reducing some animal testing.</li>
+  <li><strong>Disease models:</strong> growing cells that carry a disease-causing allele to study the condition.</li>
+</ul>
+
+<p>However, there are important <strong>ethical considerations</strong>, as well as practical problems (the last two points):</p>
+
+<ul>
+  <li>Removing the inner cell mass destroys the embryo. People who believe a human embryo has the same moral status as a person from fertilisation consider this unacceptable.</li>
+  <li>There are questions about consent from the embryo donors, and concern that embryos might be created specifically for research.</li>
+  <li>Transplanted cells come from another individual, so they may be rejected by the patient's immune system unless immunosuppressant drugs are used.</li>
+  <li>Pluripotent cells divide readily, so there is a risk that undifferentiated cells left in a transplant could form tumours.</li>
+</ul>
+
+<p>Others argue that a very early embryo, a ball of cells with no nervous system, does not have the same status as a person, and that spare IVF embryos would be destroyed anyway, so using them to reduce human suffering is justified. In the UK, embryo research is permitted only under licence from the Human Fertilisation and Embryology Authority (HFEA), and embryos may not be kept beyond 14 days after fertilisation.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For <em>discuss</em> or <em>evaluate</em> questions on stem cells, give arguments on both sides and then reach a judgement. Keep scientific points (rejection, tumour risk, potency) separate from ethical ones (status of the embryo, consent). Using the word "unnatural" without further explanation will not earn credit.
+</div>
+
+<h3>7.3 (iii) From Totipotent to Differentiated: the Role of Epigenetics</h3>
+
+<p>As an embryo develops, its cells lose potency step by step. Epigenetic modifications drive this change:</p>
+
+<ol>
+  <li><strong>Totipotent cells (zygote and very early embryo):</strong> soon after fertilisation, most of the methylation marks inherited from the sperm and egg are removed. The chromatin is open and the cells can express the genes needed to form any cell type, including placental cells.</li>
+  <li><strong>Pluripotent cells (blastocyst):</strong> by the blastocyst stage, the cells have separated into the outer layer (which forms the placenta) and the inner cell mass. New methylation marks are added. In the inner cell mass, genes for placental tissue are silenced while pluripotency genes such as <em>Oct4</em> and <em>Nanog</em> stay active. These cells can still form any body cell, but no longer the placenta.</li>
+  <li><strong>Differentiated somatic cells:</strong> as cells specialise, the pluripotency genes are methylated and their histones deacetylated, so they are switched off. Genes for other cell types are also silenced, leaving active only the genes needed for that cell's function. The marks are maintained through mitosis, so the cell and its descendants stay specialised.</li>
+</ol>
+
+<p>The genes are silenced rather than lost, which is why the process can in principle be reversed, as happens when iPS cells are made.</p>
+
+<h3>7.3 (iv) Induced Pluripotent Stem Cells (iPS Cells)</h3>
+
+<div class="definition">
+  <strong>Induced pluripotent stem cells (iPS cells):</strong> Pluripotent stem cells made by reprogramming differentiated adult cells, for example skin fibroblasts, by introducing genes for particular transcription factors.
+</div>
+
+<p>In 2006, Shinya Yamanaka and colleagues reprogrammed mouse fibroblasts into pluripotent cells, and human cells followed in 2007; Yamanaka shared the 2012 Nobel Prize in Physiology or Medicine. The method:</p>
+
+<ol>
+  <li>Fibroblasts are taken from a small sample of the patient's skin and grown in culture.</li>
+  <li>Genes for four transcription factors are introduced into the cells: <strong><em>Oct4</em> (also called <em>Oct3/4</em>), <em>Sox2</em>, <em>Klf4</em> and <em>c-Myc</em></strong>. In the original work these were inserted using a <strong>retrovirus</strong> as the vector.</li>
+  <li>The transcription factors produced switch on the cell's own pluripotency genes and help remove the epigenetic marks that kept the cell specialised. The fibroblast's gene expression is reset to resemble that of an embryonic stem cell.</li>
+  <li>The iPS cells can then be grown and treated with specific growth factors and signalling molecules to make them differentiate into the required cell type.</li>
+</ol>
+
+<p>Reprogramming is inefficient: only a small fraction of treated cells become iPS cells. Because <em>c-Myc</em> is an oncogene and retroviruses insert their DNA at random, early iPS cells carried a cancer risk. Newer methods use vectors that do not integrate into the genome, or deliver RNA or proteins instead of DNA.</p>
+
+<h3>7.3 (v) Why iPS Cells May Be Less Problematic than Embryonic Stem Cells</h3>
+
+<table>
+  <tr><th>Issue</th><th>Embryonic stem cells</th><th>iPS cells</th></tr>
+  <tr><td>Source</td><td>Inner cell mass; the embryo is destroyed</td><td>Adult body cells (e.g. skin); no embryo used or destroyed</td></tr>
+  <tr><td>Consent</td><td>Embryo cannot consent; donor consent issues</td><td>Adult donor (often the patient) can give informed consent</td></tr>
+  <tr><td>Immune rejection</td><td>Cells are genetically different from the patient, so rejection is likely without immunosuppressants</td><td>Can be made from the patient's own cells, so they are genetically identical and far less likely to be rejected</td></tr>
+  <tr><td>Supply</td><td>Limited by availability of donated embryos</td><td>Can be made from any person who gives a skin sample</td></tr>
+  <tr><td>Remaining concerns</td><td>Tumour formation from undifferentiated cells</td><td>Tumour risk (oncogenes, viral vectors, incomplete reprogramming); some epigenetic "memory" of the original cell type may remain; low efficiency; still being tested for safety</td></tr>
+</table>
+
+
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Do not claim that iPS cells have "no ethical issues" or "no risks" &mdash; say they are <em>less</em> problematic and explain why (no embryo destroyed, patient's own cells so no rejection), then give a remaining drawback. Also remember that iPS cells are pluripotent, not totipotent.
+</div>
+
+<!-- ============================================================ -->
+<h2>7.4 Gene Technology</h2>
+<!-- ============================================================ -->
+
+<h3>7.4 (i) Producing Recombinant DNA</h3>
+
+<div class="definition">
+  <strong>Recombinant DNA:</strong> DNA made by joining together DNA from two different sources, often from different species, for example a human gene inserted into a bacterial plasmid.
+</div>
+
+<p><strong>Step 1: obtain the gene.</strong> The desired gene can be obtained in several ways:</p>
+<ul>
+  <li>Cutting it out of the donor DNA with restriction enzymes.</li>
+  <li>Using <strong>reverse transcriptase</strong> to make complementary DNA (cDNA) from the mRNA of cells that express the gene strongly (for example, insulin mRNA from pancreatic &beta; cells). This cDNA has no introns, so bacteria can express it; bacteria cannot remove introns.</li>
+  <li>Amplifying it by PCR, or making it artificially if its sequence is known.</li>
+</ul>
+
+<p><strong>Step 2: cut the DNA with restriction endonucleases.</strong> These enzymes, found naturally in bacteria as a defence against viruses, cut DNA at specific base sequences called <strong>recognition sites</strong>, usually 4&ndash;8 base pairs long. Many recognition sites are <strong>palindromic</strong>: the sequence reads the same on both strands in the 5&prime; to 3&prime; direction. Each enzyme hydrolyses phosphodiester bonds in the sugar&ndash;phosphate backbone of both strands.</p>
+
+<ul>
+  <li>Some enzymes cut straight across, leaving <strong>blunt ends</strong>.</li>
+  <li>Others make a staggered cut, leaving short single-stranded overhangs called <strong>sticky ends</strong>. For example, <em>Eco</em>RI recognises G&darr;AATTC and leaves the overhang AATT on each fragment.</li>
+</ul>
+
+<p>The vector (for example a plasmid) is cut with the <strong>same restriction enzyme</strong>, so its sticky ends are complementary to those on the gene fragment.</p>
+
+<p><strong>Step 3: join the DNA with DNA ligase.</strong> The gene and the opened plasmid are mixed. Their complementary sticky ends pair up by hydrogen bonding between bases, and <strong>DNA ligase</strong> then forms phosphodiester bonds between the adjacent nucleotides, sealing the sugar&ndash;phosphate backbones. The result is a recombinant plasmid.</p>
+
+<div class="equation">
+  5&prime;&ndash;G &darr; A A T T C&ndash;3&prime; &nbsp;&nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp; 5&prime;&ndash;G &nbsp;&nbsp;+&nbsp;&nbsp; AATTC&ndash;3&prime; &nbsp;&nbsp;(sticky end AATT)<br>
+  3&prime;&ndash;C T T A A &uarr; G&ndash;5&prime; &nbsp;&nbsp;&nbsp;&rarr;&nbsp;&nbsp;&nbsp; 3&prime;&ndash;CTTAA &nbsp;&nbsp;+&nbsp;&nbsp; G&ndash;5&prime;
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Be precise about which enzyme does what. Restriction enzymes <em>break</em> phosphodiester bonds; ligase <em>forms</em> them. Hydrogen bonds between sticky ends form on their own by base pairing &mdash; ligase does not make hydrogen bonds. Explain that the <em>same</em> restriction enzyme is used on both pieces of DNA so the sticky ends are complementary.
+</div>
+
+<h3>7.4 (ii) Inserting Recombinant DNA into Cells: Vectors</h3>
+
+<p>A <strong>vector</strong> is a means of carrying DNA into a host cell. The choice depends on the type of host cell.</p>
+
+<ul>
+  <li><strong>Plasmids:</strong> small circular DNA molecules in bacteria. Bacteria take up recombinant plasmids by <em>transformation</em>, for example after treatment with calcium ions and a brief heat shock, which makes the membrane temporarily more permeable. Only a small proportion of cells take one up.</li>
+  <li><strong>Viruses:</strong> modified viruses, with their disease-causing genes removed, inject the desired gene into host cells. Bacteriophages are used for bacteria, and modified retroviruses or adenoviruses for animal cells and gene therapy. Retroviruses insert their DNA into host chromosomes, giving lasting expression but risking disruption of other genes.</li>
+  <li><strong><em>Agrobacterium tumefaciens</em>:</strong> a soil bacterium that naturally transfers part of its Ti plasmid into plant cells. Scientists insert the desired gene into this region, and the bacterium carries it into the plant's DNA. This is widely used for dicotyledonous plants such as soya.</li>
+  <li><strong>Gene guns (biolistics):</strong> tiny particles of gold or tungsten are coated with DNA and fired at high speed into plant cells or tissue. Some DNA reaches the nucleus and becomes incorporated into the chromosomes. This method is useful for plants such as cereals that are not easily infected by <em>Agrobacterium</em>, and it was used to make some early GM soya.</li>
+</ul>
+
+<p>The transformed plant cells are grown in tissue culture into whole plants, which works because many plant cells are totipotent (see 7.3).</p>
+
+<h3>7.4 (iii) Identifying Recombinant Cells: Marker Genes and Replica Plating</h3>
+
+<p>After transformation, a culture contains three types of bacteria: those that took up no plasmid, those that took up a plasmid that closed up again without the gene (a non-recombinant plasmid), and those that took up the recombinant plasmid. Only the last group is wanted. <strong>Marker genes</strong> allow them to be identified.</p>
+
+<p>A common approach uses a plasmid carrying <strong>two antibiotic resistance genes</strong>, for example one for resistance to ampicillin and one for resistance to tetracycline. The restriction site used to insert the gene lies <em>within</em> the tetracycline resistance gene, so inserting the gene disrupts it and it no longer works. This is called <strong>insertional inactivation</strong>.</p>
+
+<table>
+  <tr><th>Bacterium contains</th><th>Grows on ampicillin?</th><th>Grows on tetracycline?</th></tr>
+  <tr><td>No plasmid</td><td>No</td><td>No</td></tr>
+  <tr><td>Non-recombinant plasmid</td><td>Yes</td><td>Yes</td></tr>
+  <tr><td>Recombinant plasmid (gene inserted)</td><td>Yes</td><td><strong>No</strong> (resistance gene disrupted)</td></tr>
+</table>
+
+<p><strong>Replica plating</strong> is used to test the same colonies on two media:</p>
+
+<ol>
+  <li>Spread the bacteria on agar containing <strong>ampicillin</strong>. Only bacteria that took up a plasmid (recombinant or not) grow into colonies.</li>
+  <li>Press a sterile velvet pad lightly onto this master plate. Some cells from every colony stick to it.</li>
+  <li>Press the pad onto a fresh plate containing <strong>tetracycline</strong>, keeping the same orientation, so that each colony is copied to the same position.</li>
+  <li>After incubation, compare the plates. Colonies that grow on the ampicillin plate but are <strong>missing</strong> from the tetracycline plate contain the recombinant plasmid.</li>
+  <li>Pick those colonies from the master (ampicillin) plate, where they are still alive, and grow them in culture.</li>
+</ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Replica Plating to Find Recombinant Bacteria</text>
+  <defs>
+    <marker id="arrowRep7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a1a2e"/>
+    </marker>
+  </defs>
+  <!-- Master plate -->
+  <circle cx="110" cy="125" r="70" fill="#D97706" opacity="0.08" stroke="#D97706" stroke-width="1.5"/>
+  <text x="110" y="45" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Master plate: ampicillin</text>
+  <circle cx="80" cy="95" r="8" fill="#1a73e8" opacity="0.6"/>
+  <circle cx="135" cy="90" r="8" fill="#DC2626" opacity="0.6"/>
+  <circle cx="110" cy="130" r="8" fill="#1a73e8" opacity="0.6"/>
+  <circle cx="70" cy="150" r="8" fill="#DC2626" opacity="0.6"/>
+  <circle cx="145" cy="150" r="8" fill="#1a73e8" opacity="0.6"/>
+  <circle cx="110" cy="170" r="8" fill="#DC2626" opacity="0.6"/>
+  <text x="110" y="215" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">All colonies have a plasmid</text>
+  <!-- Velvet pad -->
+  <path d="M190,125 L240,125" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowRep7)"/>
+  <rect x="245" y="105" width="90" height="40" rx="6" fill="#94a3b8" opacity="0.35" stroke="#94a3b8" stroke-width="1"/>
+  <text x="290" y="122" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Sterile velvet</text>
+  <text x="290" y="135" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">pad copies pattern</text>
+  <path d="M340,125 L390,125" fill="none" stroke="#1a1a2e" stroke-width="1.2" marker-end="url(#arrowRep7)"/>
+  <!-- Replica plate -->
+  <circle cx="470" cy="125" r="70" fill="#16A34A" opacity="0.08" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="470" y="45" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Replica plate: tetracycline</text>
+  <circle cx="440" cy="95" r="8" fill="none" stroke="#1a73e8" stroke-width="1" stroke-dasharray="2,2"/>
+  <circle cx="495" cy="90" r="8" fill="#DC2626" opacity="0.6"/>
+  <circle cx="470" cy="130" r="8" fill="none" stroke="#1a73e8" stroke-width="1" stroke-dasharray="2,2"/>
+  <circle cx="430" cy="150" r="8" fill="#DC2626" opacity="0.6"/>
+  <circle cx="505" cy="150" r="8" fill="none" stroke="#1a73e8" stroke-width="1" stroke-dasharray="2,2"/>
+  <circle cx="470" cy="170" r="8" fill="#DC2626" opacity="0.6"/>
+  <text x="470" y="215" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Dashed gaps = colonies that died</text>
+  <!-- Key -->
+  <circle cx="120" cy="240" r="6" fill="#1a73e8" opacity="0.6"/>
+  <text x="132" y="244" font-family="system-ui" font-size="9" fill="#1a1a2e">recombinant plasmid (tetracycline gene disrupted)</text>
+  <circle cx="420" cy="240" r="6" fill="#DC2626" opacity="0.6"/>
+  <text x="432" y="244" font-family="system-ui" font-size="9" fill="#1a1a2e">non-recombinant plasmid</text>
+</svg>
+</div>
+
+<p>Because antibiotic resistance genes raise concerns about spreading resistance, other markers are also used, such as the gene for <strong>green fluorescent protein (GFP)</strong>, which makes transformed cells glow under ultraviolet light.</p>
+
+<div class="exam-tip">
+  <strong>Practical link:</strong> There is no core practical for Topic 7. Replica plating relies on the same aseptic technique used in <a href="core_practicals.html#cp13">CP13 (isolating bacteria from a mixed culture by streak plating)</a> &mdash; sterile equipment, flaming, working near a Bunsen flame and incubating plates taped but not sealed. Revise it there.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The key idea is that the wanted colonies are the ones that <em>die</em> on the second antibiotic. You must then take them from the master plate, because they are dead on the replica plate. Explain <em>why</em> they die: the inserted gene sits inside the resistance gene and disrupts it.
+</div>
+
+<h3>7.4 (iv) Knockout Mice as Animal Models</h3>
+
+<div class="definition">
+  <strong>Knockout mouse:</strong> A genetically modified mouse in which a specific gene has been deliberately inactivated ("knocked out"), so that scientists can study what happens when the gene's product is missing and so deduce the gene's function.
+</div>
+
+<p>The traditional method of producing a knockout mouse:</p>
+<ol>
+  <li>A non-functional copy of the target gene is made, for example by inserting a marker gene into the middle of it so that it can no longer code for a working protein.</li>
+  <li>This altered DNA is introduced into mouse embryonic stem cells. In a few cells it replaces the normal gene by <strong>homologous recombination</strong>, because the sequences at its ends match the gene.</li>
+  <li>The modified ES cells are selected (using the marker gene) and injected into an early mouse embryo (a blastocyst), which is placed in the uterus of a surrogate mother.</li>
+  <li>The offspring are <strong>chimeras</strong>, made of a mixture of normal and modified cells. If some of their gametes carry the knocked-out allele, breeding them produces heterozygous mice, and crossing heterozygotes produces mice homozygous for the knockout, with no working copy of the gene.</li>
+</ol>
+
+<p>The knockout mice are compared with normal (wild-type) mice from the same strain. Any difference in their phenotype, such as altered development, behaviour, metabolism or susceptibility to disease, points to the role of the missing gene.</p>
+
+<p><strong>Why mice make valuable models:</strong></p>
+<ul>
+  <li>Mice are mammals, and most human genes have a closely related version in mice, with similar physiology.</li>
+  <li>They are small, easy to keep and breed quickly, with a short generation time and large litters.</li>
+  <li>Inbred strains are genetically almost identical, so differences between knockout and control mice can be attributed to the knocked-out gene.</li>
+  <li>They allow experiments that would be unethical in humans, and they are used to study human diseases such as cystic fibrosis, cancers (for example mice lacking the tumour suppressor gene <em>p53</em> develop tumours), obesity and heart disease, and to test possible treatments.</li>
+</ul>
+
+<p><strong>Limitations and ethical issues:</strong> results in mice may not apply to humans; knocking out a gene essential for early development kills the embryo, so its later role cannot be studied; other genes may compensate for the missing one; and some knockout mice suffer, raising animal welfare concerns. UK research follows the 3Rs (replacement, reduction and refinement).</p>
+
+<h3>7.4 (v) Genetic Modification of Soya Beans</h3>
+
+<p>Soya (<em>Glycine max</em>) is a major crop grown for its protein-rich beans and its oil, used in cooking, processed foods and animal feed. It was one of the first major crops to be genetically modified.</p>
+
+<p><strong>The general process:</strong></p>
+<ol>
+  <li>Identify and isolate the desired gene and join it into a vector along with a promoter (to make sure it is expressed in the right tissue) and a marker gene.</li>
+  <li>Introduce the DNA into soya cells using <em>Agrobacterium tumefaciens</em> or a gene gun.</li>
+  <li>Select the transformed cells using the marker gene (for example, by growing cells on a medium that only transformed cells can survive).</li>
+  <li>Grow the transformed cells into whole plants by tissue culture, test that the gene is present and expressed, and then breed the plants to produce seed.</li>
+</ol>
+
+<p><strong>Herbicide-tolerant soya (improving production):</strong> the first widely grown GM soya carries a gene from a strain of <em>Agrobacterium</em> coding for a version of the enzyme EPSPS that is not inhibited by the herbicide glyphosate. Glyphosate kills plants by inhibiting their own EPSPS, which is needed to make certain amino acids. Farmers can spray the crop with glyphosate to kill competing weeds without harming the soya, so less competition for light, water and minerals increases yield. Other GM soya varieties carry genes for insect resistance.</p>
+
+<p><strong>Altering the balance of fatty acids to prevent oxidation:</strong> ordinary soya oil contains a high proportion of <strong>polyunsaturated</strong> fatty acids (linoleic and linolenic acid), which have several C=C double bonds. These double bonds react readily with oxygen, so the oil <strong>oxidises</strong>, becoming rancid, developing unpleasant flavours and having a short shelf life, especially when heated for frying.</p>
+
+<ul>
+  <li>Traditionally, manufacturers partially hydrogenated soya oil to reduce the number of double bonds and make it more stable. This process produces <strong>trans fatty acids</strong>, which raise LDL cholesterol and increase the risk of cardiovascular disease.</li>
+  <li><strong>High-oleic GM soya</strong> has been engineered to silence (switch off) the gene for the enzyme <strong>fatty acid desaturase 2 (FAD2)</strong>, which normally adds a second double bond to oleic acid to turn it into linoleic acid. With less FAD2, oleic acid builds up.</li>
+  <li>Oleic acid is <strong>monounsaturated</strong> (one C=C double bond), so it is much less easily oxidised. Oil from these soya beans contains around three-quarters oleic acid, compared with roughly a fifth to a quarter in conventional soya oil, and far less polyunsaturated fat.</li>
+  <li>The oil is more stable when heated, lasts longer and does not need to be hydrogenated, so products contain little or no trans fat.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Link structure to function in soya questions: more C=C double bonds &rarr; more easily oxidised &rarr; oil goes rancid. The modification <em>reduces</em> polyunsaturated fatty acids and <em>increases</em> monounsaturated oleic acid. Do not say the GM oil is "saturated" &mdash; oleic acid still has one double bond.
+</div>
+
+<h3>7.4 (vi) The Public Debate about GM Crops and Transgenic Organisms</h3>
+
+<p>Organisms that contain genes from another species are called <strong>transgenic</strong>. GM crops such as soya, maize, cotton and oilseed rape are now grown on a very large scale in some countries, while others, including much of the EU, restrict them. The debate involves scientific, economic, environmental and ethical arguments.</p>
+
+<table>
+  <tr><th>Possible advantages</th><th>Possible disadvantages and concerns</th></tr>
+  <tr><td>Higher yields, helping to feed a growing population, for example through herbicide tolerance or insect resistance</td><td>Herbicide-tolerant crops may encourage heavy use of one herbicide, leading to the evolution of resistant weeds ("superweeds")</td></tr>
+  <tr><td>Insect-resistant crops can reduce the amount of insecticide sprayed, benefiting non-target insects and farm workers</td><td>Pests may evolve resistance to toxins produced by insect-resistant crops</td></tr>
+  <tr><td>Improved nutritional value, such as Golden Rice with extra &beta;-carotene to reduce vitamin A deficiency, or healthier oils such as high-oleic soya</td><td>Genes might transfer to wild relatives or non-GM crops by cross-pollination, with unknown ecological effects</td></tr>
+  <tr><td>Crops can be engineered to tolerate drought, salt or cold, so they grow on poorer land</td><td>Concerns about possible allergens or other effects on human health, although major scientific reviews have found approved GM foods to be as safe as conventional foods</td></tr>
+  <tr><td>Longer shelf life and less food waste</td><td>Seeds are patented and must often be bought each year, which can concentrate power in a few large companies and disadvantage poor farmers</td></tr>
+  <tr><td>Transgenic microorganisms and animals can produce medicines such as human insulin and clotting factors</td><td>Reduced genetic diversity if a few GM varieties are grown widely (monoculture); ethical and religious objections to moving genes between species; animal welfare concerns for transgenic animals</td></tr>
+</table>
+
+
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> With <em>discuss</em> questions on GM crops, balance advantages and disadvantages, use a named example (such as herbicide-tolerant or high-oleic soya), and separate evidence-based risks from concerns that are ethical, economic or based on opinion. Avoid vague answers such as "it could be dangerous" without saying what the danger is and to whom.
+</div>
+
+<!-- ============================================================ -->
+<h2>Command Words and Common Misconceptions</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Command word</th><th>What Edexcel expects in this topic</th></tr>
+  <tr><td><strong>State / Give / Name</strong></td><td>A short answer with no explanation, e.g. "Name the enzyme used to join DNA fragments" (DNA ligase).</td></tr>
+  <tr><td><strong>Describe</strong></td><td>Give the steps or features in order, e.g. the stages of PCR with temperatures, or the steps in replica plating.</td></tr>
+  <tr><td><strong>Explain</strong></td><td>Give reasons, linking each point to the next, e.g. why acetylation of histones increases transcription.</td></tr>
+  <tr><td><strong>Calculate</strong></td><td>Show your working and give units and a sensible number of significant figures, e.g. copies after n PCR cycles.</td></tr>
+  <tr><td><strong>Compare</strong></td><td>Give similarities and differences between both things, e.g. embryonic stem cells and iPS cells, using linking words such as "whereas".</td></tr>
+  <tr><td><strong>Discuss</strong></td><td>Explore the issue from different sides, e.g. the ethics of embryonic stem cell research, or the GM crop debate.</td></tr>
+  <tr><td><strong>Evaluate</strong></td><td>Weigh up strengths and weaknesses and reach a supported conclusion, e.g. how strong DNA profiling evidence is in a court case.</td></tr>
+  <tr><td><strong>Suggest</strong></td><td>Apply your knowledge to an unfamiliar situation; more than one answer may be acceptable.</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Common misconceptions to avoid:</strong>
+  <ul>
+    <li>"The genome is all the genes." It is all the DNA, most of which is non-coding.</li>
+    <li>"Specialised cells lose the genes they do not need." They keep every gene but silence most of them.</li>
+    <li>"Embryonic stem cells are totipotent." Cells of the inner cell mass are pluripotent.</li>
+    <li>"PCR uses RNA polymerase or helicase." It uses Taq DNA polymerase, and heat separates the strands.</li>
+  </ul>
+</div>
+
+<!-- ============================================================ -->
+<h2>Key Terms Checklist</h2>
+<!-- ============================================================ -->
+
+<p>Make sure you can define and use each of these terms.</p>
+
+<ul>
+  <li>&#9744; Genome</li>
+  <li>&#9744; PCR</li>
+  <li>&#9744; Primer</li>
+  <li>&#9744; Taq polymerase</li>
+  <li>&#9744; Gene sequencing</li>
+  <li>&#9744; Short tandem repeat (STR)</li>
+  <li>&#9744; DNA profiling</li>
+  <li>&#9744; Gel electrophoresis</li>
+  <li>&#9744; Transcription factor</li>
+  <li>&#9744; Promoter</li>
+  <li>&#9744; Exon / intron</li>
+  <li>&#9744; Alternative splicing</li>
+  <li>&#9744; Epigenetics</li>
+  <li>&#9744; DNA methylation</li>
+  <li>&#9744; Histone acetylation</li>
+  <li>&#9744; Non-coding RNA</li>
+  <li>&#9744; Differentiation</li>
+  <li>&#9744; Totipotent / pluripotent / multipotent</li>
+  <li>&#9744; Induced pluripotent stem cell</li>
+  <li>&#9744; Recombinant DNA</li>
+  <li>&#9744; Restriction endonuclease</li>
+  <li>&#9744; Sticky ends</li>
+  <li>&#9744; DNA ligase</li>
+  <li>&#9744; Vector</li>
+  <li>&#9744; Gene gun</li>
+  <li>&#9744; Marker gene</li>
+  <li>&#9744; Replica plating</li>
+  <li>&#9744; Knockout mouse</li>
+  <li>&#9744; Transgenic organism</li>
+  <li>&#9744; High-oleic soya</li>
+</ul>
+
+</div>
+</body>
+</html>

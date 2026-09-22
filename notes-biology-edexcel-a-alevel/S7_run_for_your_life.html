@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — S7 — Run for Your Life</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>S7 — Run for Your Life</h1>
+
+<!-- ============================================================ -->
+<h2>7.1 Cellular Respiration</h2>
+<!-- ============================================================ -->
+
+<h3>Overview</h3>
+
+<div class="definition">
+  <strong>Cellular respiration:</strong> The metabolic process by which cells break down organic molecules (primarily glucose) to release energy in the form of ATP. Aerobic respiration requires oxygen; anaerobic respiration occurs without oxygen.
+</div>
+
+<div class="equation">
+  C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> &rarr; 6CO<sub>2</sub> + 6H<sub>2</sub>O + ATP (+ heat)
+</div>
+
+<p>Respiration occurs in four stages: glycolysis (cytoplasm), the link reaction (mitochondrial matrix), the Krebs cycle (mitochondrial matrix), and oxidative phosphorylation (inner mitochondrial membrane).</p>
+
+<p>Overall, aerobic respiration splits the respiratory substrate (e.g. glucose), releasing carbon dioxide as a waste product, and the hydrogen removed from the substrate is eventually reunited with atmospheric oxygen to form water, releasing a large amount of energy. This does not happen in one step: respiration is a many-stepped process, and each step is controlled and catalysed by a specific intracellular enzyme, so energy is released in small, usable amounts.</p>
+
+<h3>Glycolysis</h3>
+
+<p>Glycolysis occurs in the cytoplasm and does not require oxygen. It is the splitting of one molecule of glucose (6C) into two molecules of pyruvate (3C). Key steps:</p>
+<ol>
+  <li><strong>Phosphorylation:</strong> Glucose is phosphorylated twice using 2 ATP, making it more reactive and preventing it from leaving the cell. This produces fructose-1,6-bisphosphate (6C).</li>
+  <li><strong>Lysis:</strong> The 6C sugar is split into two molecules of triose phosphate (3C each).</li>
+  <li><strong>Oxidation:</strong> Each triose phosphate is oxidised (hydrogen removed by NAD<sup>+</sup>, producing 2 NADH) and phosphorylated, then converted to pyruvate. 4 ATP are produced by substrate-level phosphorylation.</li>
+</ol>
+
+<p>Net yield per glucose: 2 ATP (4 produced minus 2 invested), 2 NADH, 2 pyruvate.</p>
+
+<h3>The Link Reaction</h3>
+
+<p>Pyruvate is actively transported into the mitochondrial matrix. Each pyruvate (3C) is decarboxylated (one CO<sub>2</sub> removed) and dehydrogenated (one NADH produced). The remaining 2C acetyl group combines with coenzyme A to form acetyl CoA, which enters the Krebs cycle. Per glucose: 2 CO<sub>2</sub> released, 2 NADH produced.</p>
+
+<h3>The Krebs Cycle</h3>
+
+<p>The Krebs cycle (citric acid cycle) occurs in the mitochondrial matrix. Acetyl CoA (2C) combines with oxaloacetate (4C) to form citrate (6C). Through a series of enzyme-catalysed reactions, citrate is progressively oxidised and decarboxylated, regenerating oxaloacetate. Per turn of the cycle:</p>
+<ul>
+  <li>2 CO<sub>2</sub> released (decarboxylation)</li>
+  <li>3 NADH produced (by dehydrogenation)</li>
+  <li>1 FADH<sub>2</sub> produced</li>
+  <li>1 ATP produced (substrate-level phosphorylation, actually GTP)</li>
+</ul>
+
+<p>Per glucose (2 turns): 4 CO<sub>2</sub>, 6 NADH, 2 FADH<sub>2</sub>, 2 ATP.</p>
+
+<p><strong>Why these stages happen in the mitochondria:</strong> glycolysis occurs in the cytoplasm because its enzymes are found there, and glucose itself cannot enter mitochondria. Pyruvate enters the mitochondrion, where the enzymes of the link reaction and the Krebs cycle are located in the matrix, and the electron carriers and ATP synthase of oxidative phosphorylation are in the inner membrane (cristae). The reduced NAD and FAD formed in the matrix are therefore right next to the electron transport chain that uses them. (9BN0 does not require the names of Krebs cycle intermediates such as citrate and oxaloacetate.)</p>
+
+<h3>Oxidative Phosphorylation</h3>
+
+<p>This is the final stage and produces the most ATP. It takes place on the inner mitochondrial membrane (cristae). The process involves:</p>
+<ol>
+  <li><strong>Electron transport chain (ETC):</strong> NADH and FADH<sub>2</sub> donate electrons to a series of protein complexes in the inner membrane. As electrons pass along the chain, they lose energy, which is used to pump H<sup>+</sup> ions from the matrix into the intermembrane space, creating an electrochemical gradient (proton motive force).</li>
+  <li><strong>Chemiosmosis:</strong> H<sup>+</sup> ions flow back into the matrix through ATP synthase, driving the phosphorylation of ADP to ATP. This is analogous to the process in chloroplasts.</li>
+  <li><strong>Final electron acceptor:</strong> At the end of the ETC, electrons combine with H<sup>+</sup> ions and molecular oxygen to form water. Without O<sub>2</sub> to accept electrons, the chain stops and no further ATP is produced by this pathway.</li>
+</ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 250" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Aerobic Respiration Pathway</text>
+  <defs>
+    <marker id="arrowR7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1a73e8"/>
+    </marker>
+  </defs>
+  <!-- Glucose -->
+  <rect x="30" y="40" width="100" height="30" rx="15" fill="#D97706" opacity="0.15" stroke="#D97706" stroke-width="1.5"/>
+  <text x="80" y="60" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Glucose (6C)</text>
+  <!-- Glycolysis box -->
+  <rect x="30" y="85" width="100" height="60" rx="8" fill="#D97706" opacity="0.06" stroke="#D97706" stroke-width="1.2"/>
+  <text x="80" y="100" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Glycolysis</text>
+  <text x="80" y="112" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Cytoplasm</text>
+  <text x="80" y="124" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">2 ATP, 2 NADH</text>
+  <text x="80" y="136" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">2 Pyruvate (3C)</text>
+  <path d="M80,70 L80,83" fill="none" stroke="#D97706" stroke-width="1.2" marker-end="url(#arrowR7)"/>
+  <!-- Arrow to Link Reaction -->
+  <path d="M130,115 L175,115" fill="none" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrowR7)"/>
+  <!-- Link Reaction box -->
+  <rect x="180" y="85" width="110" height="60" rx="8" fill="#1a73e8" opacity="0.06" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="235" y="100" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Link Reaction</text>
+  <text x="235" y="112" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Matrix</text>
+  <text x="235" y="124" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">2 NADH, 2 CO₂</text>
+  <text x="235" y="136" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">2 Acetyl CoA (2C)</text>
+  <!-- Arrow to Krebs -->
+  <path d="M290,115 L325,115" fill="none" stroke="#1a73e8" stroke-width="1.2" marker-end="url(#arrowR7)"/>
+  <!-- Krebs cycle box -->
+  <rect x="330" y="75" width="120" height="80" rx="8" fill="#16A34A" opacity="0.06" stroke="#16A34A" stroke-width="1.2"/>
+  <text x="390" y="92" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Krebs Cycle</text>
+  <text x="390" y="104" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Matrix</text>
+  <text x="390" y="118" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">2 ATP</text>
+  <text x="390" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">6 NADH, 2 FADH₂</text>
+  <text x="390" y="142" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">4 CO₂</text>
+  <!-- Cycle arrow -->
+  <path d="M365,78 Q350,85 360,95" fill="none" stroke="#16A34A" stroke-width="0.8"/>
+  <!-- Arrow to ETC -->
+  <path d="M390,155 L390,170" fill="none" stroke="#DC2626" stroke-width="1.2" marker-end="url(#arrowR7)"/>
+  <text x="415" y="165" font-family="system-ui" font-size="7" fill="#666">NADH + FADH₂</text>
+  <!-- Oxidative phosphorylation box -->
+  <rect x="180" y="175" width="350" height="60" rx="8" fill="#DC2626" opacity="0.06" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="355" y="192" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">Oxidative Phosphorylation (ETC + Chemiosmosis)</text>
+  <text x="355" y="205" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Inner mitochondrial membrane (cristae)</text>
+  <text x="355" y="220" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">~34 ATP</text>
+  <text x="450" y="220" font-family="system-ui" font-size="8" fill="#666">O₂ = final electron acceptor → H₂O</text>
+  <!-- Total ATP -->
+  <rect x="30" y="175" width="140" height="60" rx="8" fill="#7C3AED" opacity="0.08" stroke="#7C3AED" stroke-width="1.5"/>
+  <text x="100" y="195" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#7C3AED">Total per glucose:</text>
+  <text x="100" y="212" text-anchor="middle" font-family="system-ui" font-size="14" font-weight="bold" fill="#7C3AED">~38 ATP</text>
+  <text x="100" y="228" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">(theoretical max)</text>
+  <!-- CO2 outputs -->
+  <path d="M235,85 L235,55 L280,55" fill="none" stroke="#666" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="285" y="58" font-family="system-ui" font-size="7" fill="#666">2CO₂</text>
+  <path d="M450,82 L500,55" fill="none" stroke="#666" stroke-width="0.8" stroke-dasharray="3,2"/>
+  <text x="505" y="52" font-family="system-ui" font-size="7" fill="#666">4CO₂</text>
+</svg>
+</div>
+
+<p>Theoretical maximum yield: ~34 ATP from oxidative phosphorylation (assuming 3 ATP per NADH and 2 per FADH<sub>2</sub>). Total for aerobic respiration of one glucose: approximately 38 ATP (though actual yield is lower due to proton leakage and energy costs of transport).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Remember that the role of oxygen in respiration is specifically as the final electron acceptor in oxidative phosphorylation. Without it, electrons accumulate on carriers, the ETC stops, NAD<sup>+</sup> and FAD cannot be regenerated, and the Krebs cycle also stops because it cannot be oxidised.
+</div>
+
+<!-- ============================================================ -->
+<h2>7.2 Anaerobic Respiration</h2>
+<!-- ============================================================ -->
+
+<h3>Anaerobic Pathways</h3>
+
+<p>When oxygen is unavailable or insufficient (e.g., during intense exercise), cells switch to anaerobic respiration. Only glycolysis can proceed, but NAD<sup>+</sup> must be regenerated for it to continue.</p>
+
+<p><strong>In animals (lactate fermentation):</strong> Pyruvate is reduced to lactate by lactate dehydrogenase, using NADH and regenerating NAD<sup>+</sup>. This allows glycolysis to continue producing 2 ATP per glucose. Lactate accumulation lowers pH, contributing to muscle fatigue.</p>
+
+<div class="equation">
+  Pyruvate + NADH &rarr; Lactate + NAD<sup>+</sup>
+</div>
+
+<p><strong>In yeast and plants (alcoholic fermentation) &mdash; extension, not in the 9BN0 specification:</strong> Pyruvate is first decarboxylated to ethanal (acetaldehyde) by pyruvate decarboxylase, releasing CO<sub>2</sub>. Ethanal is then reduced to ethanol by alcohol dehydrogenase, using NADH and regenerating NAD<sup>+</sup>.</p>
+
+<div class="equation">
+  Pyruvate &rarr; Ethanal + CO<sub>2</sub> &rarr; Ethanol (using NADH &rarr; NAD<sup>+</sup>)
+</div>
+
+<p>Anaerobic respiration produces far less ATP (2 per glucose vs ~38 aerobically) because the organic products (lactate or ethanol) still contain significant chemical energy that has not been released &mdash; these molecules have not been fully oxidised.</p>
+
+<table>
+  <tr><th>Feature</th><th>Aerobic Respiration</th><th>Anaerobic (Animals)</th><th>Anaerobic (Yeast)</th></tr>
+  <tr><td>Location</td><td>Cytoplasm + mitochondria</td><td>Cytoplasm only</td><td>Cytoplasm only</td></tr>
+  <tr><td>O<sub>2</sub> required?</td><td>Yes</td><td>No</td><td>No</td></tr>
+  <tr><td>End products</td><td>CO<sub>2</sub> + H<sub>2</sub>O</td><td>Lactate</td><td>Ethanol + CO<sub>2</sub></td></tr>
+  <tr><td>ATP yield per glucose</td><td>~38</td><td>2</td><td>2</td></tr>
+  <tr><td>Reversible?</td><td>N/A</td><td>Yes (lactate &rarr; pyruvate in liver)</td><td>No (ethanol is toxic)</td></tr>
+</table>
+
+<p><strong>Real-world application:</strong> Alcoholic fermentation by yeast is exploited in brewing (ethanol production) and baking (CO<sub>2</sub> causes bread to rise). Lactate fermentation by bacteria is used to produce yoghurt, cheese, and sauerkraut. Understanding anaerobic respiration is also critical in sports science &mdash; the lactate threshold (the exercise intensity above which lactate accumulates faster than it can be removed) is a key metric for endurance training.</p>
+
+<h3>Oxygen Debt</h3>
+
+<div class="definition">
+  <strong>Oxygen debt (Excess Post-exercise Oxygen Consumption, EPOC):</strong> The additional oxygen consumed after exercise above the resting level, used to metabolise accumulated lactate (converted back to pyruvate in the liver, then either oxidised in the Krebs cycle or converted to glycogen), replenish oxygen stores in myoglobin, re-synthesise ATP and phosphocreatine, and support elevated metabolic rate.
+</div>
+
+<h3>Core Practical 16: Investigate Rate of Respiration</h3>
+
+<p>A respirometer is used to measure the rate of oxygen uptake by small organisms (e.g. woodlice, maggots or germinating seeds).</p>
+<ol>
+  <li>Place the organisms in a tube with soda lime (separated by gauze; soda lime is corrosive) to absorb the CO<sub>2</sub> they release. Set up a control tube with glass beads of the same volume instead of organisms.</li>
+  <li>Stand both tubes in a water bath at a set temperature and allow them to equilibrate with the taps open.</li>
+  <li>Close the system. As oxygen is taken up (and CO<sub>2</sub> absorbed), the pressure falls and the coloured fluid in the capillary (manometer) moves towards the organisms.</li>
+  <li>Record the distance moved in a set time. Volume of O<sub>2</sub> used = &pi;r<sup>2</sup>h, where r is the capillary radius and h the distance moved. Rate = volume &divide; time (and &divide; mass of organisms for comparison). Reset the fluid (e.g. with an attached syringe) and repeat; change one variable (e.g. temperature) to investigate its effect.</li>
+</ol>
+
+<!-- ============================================================ -->
+<h2>7.3 Muscle Structure and Contraction</h2>
+<!-- ============================================================ -->
+
+<h3>Skeletal Muscle Structure</h3>
+
+<p>Skeletal muscle is made up of muscle fibres (cells), which are multinucleate (formed by fusion of many cells during development). Each fibre contains many myofibrils, which are the contractile units. Myofibrils have a banded (striated) appearance due to the arrangement of thick (myosin) and thin (actin) filaments. The functional unit is the sarcomere, bounded by Z-lines.</p>
+
+<p><strong>Structure of a muscle fibre:</strong> each fibre is surrounded by a cell membrane, the <strong>sarcolemma</strong>, which folds inwards to form <strong>T-tubules</strong>. The cytoplasm (<strong>sarcoplasm</strong>) contains many nuclei, many mitochondria, glycogen granules and a network of membranes, the <strong>sarcoplasmic reticulum</strong>, which stores Ca<sup>2+</sup> ions and surrounds the myofibrils.</p>
+
+<p><strong>Muscles, tendons, ligaments and the skeleton:</strong> skeletal muscles are attached to bones by <strong>tendons</strong>, which are strong and inelastic so that the pull of a contracting muscle is transmitted to the bone. Bones are joined to other bones at joints by <strong>ligaments</strong>, which are strong and slightly elastic, holding the bones together and stabilising the joint while allowing movement. The skeleton acts as a system of levers, with joints as pivots.</p>
+
+<p>Muscles can only pull (contract), not push, so they work in <strong>antagonistic pairs</strong>: when one muscle contracts, the other relaxes and is stretched. A <strong>flexor</strong> contracts to bend (flex) a joint, e.g. the biceps flexes the elbow; an <strong>extensor</strong> contracts to straighten (extend) it, e.g. the triceps extends the elbow.</p>
+
+<table>
+  <tr><th>Band/Zone</th><th>Contents</th><th>During Contraction</th></tr>
+  <tr><td>I band (light)</td><td>Actin only (thin filaments)</td><td>Gets shorter</td></tr>
+  <tr><td>A band (dark)</td><td>Myosin (+ overlap with actin)</td><td>Stays the same length</td></tr>
+  <tr><td>H zone</td><td>Myosin only (centre of A band)</td><td>Gets shorter</td></tr>
+  <tr><td>Z line</td><td>Boundary between sarcomeres</td><td>Z lines move closer together</td></tr>
+</table>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 230" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="20" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Sarcomere Structure and Sliding Filament Theory</text>
+  <!-- RELAXED sarcomere -->
+  <text x="300" y="42" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Relaxed Sarcomere</text>
+  <!-- Z-lines -->
+  <line x1="80" y1="55" x2="80" y2="110" stroke="#1a1a2e" stroke-width="2.5"/>
+  <line x1="520" y1="55" x2="520" y2="110" stroke="#1a1a2e" stroke-width="2.5"/>
+  <text x="80" y="122" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#1a1a2e">Z</text>
+  <text x="520" y="122" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#1a1a2e">Z</text>
+  <!-- Thin filaments (actin) from left Z -->
+  <line x1="80" y1="68" x2="260" y2="68" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="80" y1="82" x2="260" y2="82" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="80" y1="96" x2="260" y2="96" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <!-- Thin filaments from right Z -->
+  <line x1="520" y1="68" x2="340" y2="68" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="520" y1="82" x2="340" y2="82" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="520" y1="96" x2="340" y2="96" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <!-- Thick filaments (myosin) -->
+  <line x1="180" y1="75" x2="420" y2="75" stroke="#DC2626" stroke-width="5" opacity="0.4"/>
+  <line x1="180" y1="90" x2="420" y2="90" stroke="#DC2626" stroke-width="5" opacity="0.4"/>
+  <!-- Myosin heads -->
+  <circle cx="200" cy="68" r="3" fill="#DC2626" opacity="0.6"/>
+  <circle cx="220" cy="68" r="3" fill="#DC2626" opacity="0.6"/>
+  <circle cx="240" cy="68" r="3" fill="#DC2626" opacity="0.6"/>
+  <circle cx="400" cy="68" r="3" fill="#DC2626" opacity="0.6"/>
+  <circle cx="380" cy="68" r="3" fill="#DC2626" opacity="0.6"/>
+  <circle cx="360" cy="68" r="3" fill="#DC2626" opacity="0.6"/>
+  <circle cx="200" cy="96" r="3" fill="#DC2626" opacity="0.6"/>
+  <circle cx="220" cy="96" r="3" fill="#DC2626" opacity="0.6"/>
+  <circle cx="400" cy="96" r="3" fill="#DC2626" opacity="0.6"/>
+  <circle cx="380" cy="96" r="3" fill="#DC2626" opacity="0.6"/>
+  <!-- Band labels -->
+  <line x1="80" y1="52" x2="180" y2="52" stroke="#1a73e8" stroke-width="1"/>
+  <text x="130" y="48" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">I band</text>
+  <line x1="180" y1="52" x2="420" y2="52" stroke="#DC2626" stroke-width="1"/>
+  <text x="300" y="48" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">A band</text>
+  <line x1="420" y1="52" x2="520" y2="52" stroke="#1a73e8" stroke-width="1"/>
+  <text x="470" y="48" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">I band</text>
+  <!-- H zone -->
+  <line x1="260" y1="112" x2="340" y2="112" stroke="#D97706" stroke-width="1"/>
+  <text x="300" y="122" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">H zone</text>
+  <!-- CONTRACTED sarcomere -->
+  <text x="300" y="148" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Contracted Sarcomere</text>
+  <!-- Z-lines closer -->
+  <line x1="140" y1="158" x2="140" y2="210" stroke="#1a1a2e" stroke-width="2.5"/>
+  <line x1="460" y1="158" x2="460" y2="210" stroke="#1a1a2e" stroke-width="2.5"/>
+  <text x="140" y="222" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#1a1a2e">Z</text>
+  <text x="460" y="222" text-anchor="middle" font-family="system-ui" font-size="8" font-weight="bold" fill="#1a1a2e">Z</text>
+  <!-- Actin pulled inward -->
+  <line x1="140" y1="170" x2="320" y2="170" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="140" y1="184" x2="320" y2="184" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="140" y1="198" x2="320" y2="198" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="460" y1="170" x2="280" y2="170" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="460" y1="184" x2="280" y2="184" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <line x1="460" y1="198" x2="280" y2="198" stroke="#1a73e8" stroke-width="2.5" opacity="0.6"/>
+  <!-- Myosin same length -->
+  <line x1="200" y1="177" x2="400" y2="177" stroke="#DC2626" stroke-width="5" opacity="0.4"/>
+  <line x1="200" y1="192" x2="400" y2="192" stroke="#DC2626" stroke-width="5" opacity="0.4"/>
+  <!-- Labels for changes -->
+  <text x="300" y="158" text-anchor="middle" font-family="system-ui" font-size="7" fill="#666">I bands shorter | A band same | H zone shorter | Z lines closer</text>
+  <!-- Legend -->
+  <rect x="30" y="165" width="8" height="8" fill="#1a73e8" opacity="0.6"/>
+  <text x="42" y="173" font-family="system-ui" font-size="8" fill="#1a73e8">Actin (thin)</text>
+  <rect x="30" y="180" width="8" height="8" fill="#DC2626" opacity="0.4"/>
+  <text x="42" y="188" font-family="system-ui" font-size="8" fill="#DC2626">Myosin (thick)</text>
+</svg>
+</div>
+
+<h3>The Sliding Filament Theory</h3>
+
+<div class="definition">
+  <strong>Sliding filament theory:</strong> Muscle contraction occurs when actin filaments slide over myosin filaments, shortening the sarcomere. The filaments themselves do not shorten; rather, myosin cross-bridges pull actin filaments toward the centre of the sarcomere.
+</div>
+
+<p>The mechanism of contraction:</p>
+<ol>
+  <li><strong>Nerve impulse arrives</strong> at the neuromuscular junction; acetylcholine is released, depolarising the muscle fibre membrane (sarcolemma).</li>
+  <li><strong>Action potential</strong> travels along the sarcolemma and down T-tubules into the fibre interior.</li>
+  <li><strong>Calcium release:</strong> The action potential stimulates the sarcoplasmic reticulum (SR) to release Ca<sup>2+</sup> ions into the sarcoplasm.</li>
+  <li><strong>Ca<sup>2+</sup> binds to troponin</strong> on the actin filament, causing tropomyosin to move and expose the myosin-binding sites on actin.</li>
+  <li><strong>Cross-bridge formation:</strong> Myosin heads (energised by hydrolysis of ATP by the ATPase on the myosin head) bind to exposed sites on actin, forming cross-bridges.</li>
+  <li><strong>Power stroke:</strong> Myosin heads pivot, pulling actin toward the centre of the sarcomere. ADP and Pi are released.</li>
+  <li><strong>Detachment:</strong> A new ATP molecule binds to the myosin head, causing it to detach from actin.</li>
+  <li><strong>Re-cocking:</strong> ATP is hydrolysed to ADP + Pi, re-energising the myosin head for another cycle.</li>
+  <li><strong>Cycle repeats</strong> as long as Ca<sup>2+</sup> and ATP are available.</li>
+</ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 220" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="20" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Neuromuscular Junction</text>
+  <!-- Motor neurone axon terminal -->
+  <path d="M30,90 L180,90" fill="none" stroke="#1a73e8" stroke-width="4" opacity="0.5"/>
+  <rect x="180" y="60" width="120" height="70" rx="12" fill="#1a73e8" opacity="0.1" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="240" y="55" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">Presynaptic terminal</text>
+  <!-- Vesicles with ACh -->
+  <circle cx="210" cy="80" r="7" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="0.8"/>
+  <circle cx="230" cy="78" r="7" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="0.8"/>
+  <circle cx="250" cy="82" r="7" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="0.8"/>
+  <circle cx="220" cy="95" r="7" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="0.8"/>
+  <circle cx="240" cy="98" r="7" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="0.8"/>
+  <circle cx="270" cy="90" r="7" fill="#D97706" opacity="0.3" stroke="#D97706" stroke-width="0.8"/>
+  <!-- Vesicle releasing (exocytosis) -->
+  <circle cx="260" cy="110" r="7" fill="#D97706" opacity="0.5" stroke="#D97706" stroke-width="1"/>
+  <path d="M255,117 L255,127 M260,117 L260,130 M265,117 L265,127" fill="none" stroke="#D97706" stroke-width="1"/>
+  <!-- Mitochondria in terminal -->
+  <ellipse cx="200" cy="108" rx="10" ry="6" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="0.8"/>
+  <ellipse cx="280" cy="78" rx="10" ry="6" fill="#DC2626" opacity="0.15" stroke="#DC2626" stroke-width="0.8"/>
+  <!-- Ca2+ channels -->
+  <rect x="290" y="80" width="6" height="25" rx="2" fill="#16A34A" opacity="0.3" stroke="#16A34A" stroke-width="0.8"/>
+  <text x="302" y="90" font-family="system-ui" font-size="6" fill="#16A34A">Ca²⁺</text>
+  <text x="302" y="100" font-family="system-ui" font-size="6" fill="#16A34A">channel</text>
+  <!-- Synaptic cleft -->
+  <rect x="180" y="132" width="230" height="18" rx="4" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="295" y="144" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Synaptic cleft (~20 nm)</text>
+  <!-- ACh molecules in cleft -->
+  <circle cx="220" cy="138" r="2.5" fill="#D97706"/>
+  <circle cx="240" cy="140" r="2.5" fill="#D97706"/>
+  <circle cx="260" cy="137" r="2.5" fill="#D97706"/>
+  <circle cx="280" cy="141" r="2.5" fill="#D97706"/>
+  <circle cx="300" cy="138" r="2.5" fill="#D97706"/>
+  <!-- Muscle fibre membrane (sarcolemma) -->
+  <rect x="180" y="150" width="230" height="50" rx="6" fill="#DC2626" opacity="0.06" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="295" y="166" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Muscle Fibre (sarcolemma)</text>
+  <!-- Receptors on postsynaptic membrane -->
+  <path d="M215,150 L215,155 Q218,160 221,155 L221,150" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <path d="M245,150 L245,155 Q248,160 251,155 L251,150" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <path d="M275,150 L275,155 Q278,160 281,155 L281,150" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <path d="M305,150 L305,155 Q308,160 311,155 L311,150" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <!-- T-tubule -->
+  <line x1="350" y1="150" x2="350" y2="190" stroke="#DC2626" stroke-width="2" opacity="0.3"/>
+  <text x="370" y="175" font-family="system-ui" font-size="7" fill="#DC2626">T-tubule</text>
+  <!-- SR -->
+  <text x="295" y="185" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">Action potential → T-tubules → SR releases Ca²⁺</text>
+  <text x="295" y="196" text-anchor="middle" font-family="system-ui" font-size="8" fill="#666">→ Muscle contraction</text>
+  <!-- Labels -->
+  <text x="50" y="85" font-family="system-ui" font-size="8" fill="#1a73e8">Motor neurone axon</text>
+  <!-- Steps on right -->
+  <g transform="translate(430,60)">
+    <text x="0" y="0" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a1a2e">Sequence:</text>
+    <text x="0" y="16" font-family="system-ui" font-size="8" fill="#666">1. AP arrives</text>
+    <text x="0" y="30" font-family="system-ui" font-size="8" fill="#16A34A">2. Ca²⁺ influx</text>
+    <text x="0" y="44" font-family="system-ui" font-size="8" fill="#D97706">3. Vesicles fuse</text>
+    <text x="0" y="58" font-family="system-ui" font-size="8" fill="#D97706">4. ACh released</text>
+    <text x="0" y="72" font-family="system-ui" font-size="8" fill="#DC2626">5. Binds receptors</text>
+    <text x="0" y="86" font-family="system-ui" font-size="8" fill="#DC2626">6. Na⁺ channels open</text>
+    <text x="0" y="100" font-family="system-ui" font-size="8" fill="#DC2626">7. Muscle AP</text>
+    <text x="0" y="118" font-family="system-ui" font-size="8" fill="#666">ACh broken down by</text>
+    <text x="0" y="130" font-family="system-ui" font-size="8" fill="#666">acetylcholinesterase</text>
+  </g>
+</svg>
+</div>
+
+<p>Relaxation occurs when nerve stimulation stops: Ca<sup>2+</sup> is actively pumped back into the SR (using ATP), troponin-tropomyosin complex returns to its blocking position, cross-bridges cannot form, and the muscle passively returns to its resting length (or is stretched by an antagonistic muscle).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> ATP is needed for both contraction (energising the myosin head) and relaxation (detaching cross-bridges and pumping Ca<sup>2+</sup> back into SR). This explains rigor mortis: after death, no ATP is produced, so cross-bridges remain permanently attached.
+</div>
+
+<!-- ============================================================ -->
+<h2>7.4 Exercise Physiology</h2>
+<!-- ============================================================ -->
+
+<h3>Energy Systems During Exercise</h3>
+
+<p>During exercise, the demand for ATP increases dramatically. Three energy systems supply ATP:</p>
+<ul>
+  <li><strong>Phosphocreatine (PCr) system:</strong> Immediate energy. PCr donates a phosphate group to ADP (catalysed by creatine kinase) to regenerate ATP. Lasts ~10 seconds; used for explosive activities (sprints, jumps).</li>
+  <li><strong>Anaerobic glycolysis:</strong> Short-term energy (up to ~2 minutes). Glucose broken down to lactate, yielding 2 ATP per glucose. Dominant during high-intensity exercise when O<sub>2</sub> supply cannot meet demand.</li>
+  <li><strong>Aerobic respiration:</strong> Long-term energy. Complete oxidation of glucose (and later fatty acids) yielding ~38 ATP per glucose. Dominant during sustained low-to-moderate intensity exercise. Requires adequate O<sub>2</sub> supply.</li>
+</ul>
+
+<h3>Muscle Fibre Types</h3>
+
+<table>
+  <tr><th>Feature</th><th>Slow-Twitch (Type I)</th><th>Fast-Twitch (Type IIa)</th><th>Fast-Twitch (Type IIb)</th></tr>
+  <tr><td>Contraction speed</td><td>Slow</td><td>Fast</td><td>Very fast</td></tr>
+  <tr><td>Fatigue resistance</td><td>High</td><td>Moderate</td><td>Low (fatigues quickly)</td></tr>
+  <tr><td>Mitochondria</td><td>Many</td><td>Many</td><td>Few</td></tr>
+  <tr><td>Myoglobin content</td><td>High (red)</td><td>High</td><td>Low (white)</td></tr>
+  <tr><td>Capillary density</td><td>High</td><td>High</td><td>Low</td></tr>
+  <tr><td>Main energy source</td><td>Aerobic respiration</td><td>Aerobic (some anaerobic)</td><td>Anaerobic glycolysis</td></tr>
+  <tr><td>Activities</td><td>Marathon, posture</td><td>Middle-distance</td><td>Sprinting, weightlifting</td></tr>
+</table>
+
+<h3>Exercising Too Much or Too Little</h3>
+
+<p><strong>Too much exercise</strong> can cause <strong>wear and tear on joints</strong> (damage to articular cartilage, leading to osteoarthritis, and inflammation of ligaments, tendons and bursae) and <strong>suppression of the immune system</strong>: moderate exercise improves immune function, but very intense or prolonged exercise lowers the number and activity of immune cells (e.g. natural killer cells and phagocytes), raising the risk of infections such as upper respiratory tract infections.</p>
+
+<p><strong>Too little exercise</strong> is associated with an increased risk of <strong>obesity</strong>, <strong>cardiovascular disease</strong> (raised blood pressure and blood LDL levels) and <strong>type 2 diabetes</strong> (reduced sensitivity to insulin).</p>
+
+<p>When interpreting data on exercise and health, distinguish <strong>correlation</strong> from <strong>causation</strong>: a correlation does not prove that one factor causes the other, as confounding variables (e.g. diet, smoking, age) may be responsible. Evidence for causation comes from controlled studies and a plausible biological mechanism.</p>
+
+<!-- ============================================================ -->
+<h2>7.5 Homeostasis and Heart Rate Control</h2>
+<!-- ============================================================ -->
+
+<h3>Homeostasis</h3>
+
+<div class="definition">
+  <strong>Homeostasis:</strong> The maintenance of a relatively constant internal environment within narrow limits, despite fluctuations in the external environment. It involves receptor &rarr; coordination centre &rarr; effector pathways and typically uses negative feedback.
+</div>
+
+<p><strong>Negative feedback:</strong> A mechanism in which a deviation from a set point triggers a response that returns the variable to the set point. For example, if body temperature rises, sweating and vasodilation cool the body back down; if it falls, shivering and vasoconstriction warm it up. Negative feedback maintains stability.</p>
+
+<p><strong>Positive feedback:</strong> A mechanism in which a change triggers responses that amplify the change further (moving away from the set point). Examples include the oxytocin feedback loop during labour and the rapid depolarisation phase of an action potential. Positive feedback is rare in homeostasis but important in certain physiological processes.</p>
+
+<!-- SVG: Cardiac Cycle Pressure Changes -->
+<div style="margin: 20px auto; text-align: center;">
+  <svg viewBox="0 0 620 400" style="max-width:620px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; font-family:system-ui,sans-serif;">
+    <text x="310" y="28" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Cardiac Cycle: Pressure Changes</text>
+    <!-- Axes -->
+    <line x1="70" y1="50" x2="70" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
+    <line x1="70" y1="340" x2="590" y2="340" stroke="#1a1a2e" stroke-width="1.5"/>
+    <text x="30" y="200" text-anchor="middle" font-size="10" fill="#1a1a2e" transform="rotate(-90,30,200)">Pressure (mmHg)</text>
+    <text x="330" y="370" text-anchor="middle" font-size="10" fill="#1a1a2e">Time (one cardiac cycle ~0.8s)</text>
+    <!-- Y-axis labels -->
+    <text x="65" y="340" text-anchor="end" font-size="8" fill="#666">0</text>
+    <text x="65" y="282" text-anchor="end" font-size="8" fill="#666">20</text>
+    <text x="65" y="224" text-anchor="end" font-size="8" fill="#666">40</text>
+    <text x="65" y="166" text-anchor="end" font-size="8" fill="#666">60</text>
+    <text x="65" y="108" text-anchor="end" font-size="8" fill="#666">80</text>
+    <text x="65" y="70" text-anchor="end" font-size="8" fill="#666">120</text>
+    <!-- Grid lines -->
+    <line x1="70" y1="282" x2="590" y2="282" stroke="#e2e8f0" stroke-width="0.5"/>
+    <line x1="70" y1="224" x2="590" y2="224" stroke="#e2e8f0" stroke-width="0.5"/>
+    <line x1="70" y1="166" x2="590" y2="166" stroke="#e2e8f0" stroke-width="0.5"/>
+    <line x1="70" y1="108" x2="590" y2="108" stroke="#e2e8f0" stroke-width="0.5"/>
+    <line x1="70" y1="70" x2="590" y2="70" stroke="#e2e8f0" stroke-width="0.5"/>
+    <!-- Phase labels at top -->
+    <rect x="71" y="42" width="110" height="16" rx="3" fill="#E8F0FE" stroke="#1a73e8" stroke-width="0.5"/>
+    <text x="126" y="53" text-anchor="middle" font-size="7.5" fill="#1a73e8" font-weight="bold">Atrial Systole</text>
+    <rect x="181" y="42" width="170" height="16" rx="3" fill="#FEE2E2" stroke="#DC2626" stroke-width="0.5"/>
+    <text x="266" y="53" text-anchor="middle" font-size="7.5" fill="#DC2626" font-weight="bold">Ventricular Systole</text>
+    <rect x="351" y="42" width="238" height="16" rx="3" fill="#DCFCE7" stroke="#16A34A" stroke-width="0.5"/>
+    <text x="470" y="53" text-anchor="middle" font-size="7.5" fill="#16A34A" font-weight="bold">Diastole (relaxation)</text>
+    <!-- Phase divider lines -->
+    <line x1="181" y1="42" x2="181" y2="340" stroke="#94a3b8" stroke-width="0.5" stroke-dasharray="4,3"/>
+    <line x1="351" y1="42" x2="351" y2="340" stroke="#94a3b8" stroke-width="0.5" stroke-dasharray="4,3"/>
+    <!-- Aorta pressure (red) - stays high, dips slightly during diastole -->
+    <path d="M70,108 L120,108 C140,108 160,106 181,80 C200,68 220,70 240,72 L280,78 C310,82 340,88 351,92 C380,98 440,106 500,110 C540,112 570,112 590,108" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+    <!-- Left ventricle pressure (blue) - rises sharply during systole, drops during diastole -->
+    <path d="M70,330 L120,325 C140,320 160,310 175,300 L181,280 C190,200 200,100 220,72 C230,68 250,70 270,72 L310,78 C330,82 345,140 351,280 C355,310 360,330 380,335 L590,338" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+    <!-- Left atrium pressure (green) - low with small a-wave during atrial systole -->
+    <path d="M70,310 L100,305 C120,298 140,290 160,285 L181,320 C200,325 220,322 240,318 C260,312 280,308 310,305 C330,302 345,300 351,298 C370,310 400,318 430,322 C460,325 500,328 550,330 L590,328" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+    <!-- AV valves annotations -->
+    <line x1="181" y1="290" x2="181" y2="260" stroke="#D97706" stroke-width="1"/>
+    <text x="183" y="256" font-size="7" fill="#D97706" font-weight="bold">AV valves close</text>
+    <line x1="351" y1="290" x2="351" y2="260" stroke="#D97706" stroke-width="1"/>
+    <text x="353" y="256" font-size="7" fill="#D97706" font-weight="bold">SL valves close</text>
+    <!-- Semilunar valve annotations -->
+    <circle cx="200" cy="140" r="2" fill="#7C3AED"/>
+    <text x="205" y="138" font-size="7" fill="#7C3AED" font-weight="bold">SL valves open</text>
+    <circle cx="360" cy="305" r="2" fill="#7C3AED"/>
+    <text x="365" y="303" font-size="7" fill="#7C3AED" font-weight="bold">AV valves open</text>
+    <!-- Legend -->
+    <rect x="400" y="375" width="190" height="20" rx="4" fill="#f1f5f9"/>
+    <line x1="410" y1="385" x2="430" y2="385" stroke="#DC2626" stroke-width="2.5"/>
+    <text x="433" y="388" font-size="8" fill="#1a1a2e">Aorta</text>
+    <line x1="470" y1="385" x2="490" y2="385" stroke="#1a73e8" stroke-width="2.5"/>
+    <text x="493" y="388" font-size="8" fill="#1a1a2e">Ventricle</text>
+    <line x1="540" y1="385" x2="560" y2="385" stroke="#16A34A" stroke-width="2.5"/>
+    <text x="563" y="388" font-size="8" fill="#1a1a2e">Atrium</text>
+  </svg>
+</div>
+
+<h3>Control of Heart Rate</h3>
+
+<p>Heart rate is controlled by the cardiovascular centre in the medulla oblongata of the brain. The heart is myogenic (contracts without external nerve stimulation) &mdash; the sinoatrial node (SAN, the pacemaker) generates electrical impulses that spread across the atria, causing atrial systole. The impulse is delayed at the atrioventricular node (AVN) before passing along the bundle of His and Purkinje fibres to the ventricles, triggering ventricular systole from the apex upward.</p>
+
+<p>Heart rate is modified by the autonomic nervous system:</p>
+<ul>
+  <li><strong>Sympathetic nerve</strong> (accelerator nerve): Releases noradrenaline at the SAN, increasing heart rate and force of contraction. Activated during exercise, stress, or danger (fight-or-flight response).</li>
+  <li><strong>Parasympathetic nerve</strong> (vagus nerve): Releases acetylcholine at the SAN, decreasing heart rate. Dominant at rest.</li>
+</ul>
+
+<p>Factors that increase heart rate: increased CO<sub>2</sub> concentration in blood (detected by chemoreceptors in the aortic and carotid bodies and in the medulla itself), decreased blood pH (CO<sub>2</sub> + H<sub>2</sub>O &rarr; H<sub>2</sub>CO<sub>3</sub> &rarr; H<sup>+</sup> + HCO<sub>3</sub><sup>&minus;</sup>), increased body temperature, adrenaline from the adrenal medulla (part of the hormonal fight-or-flight response), and proprioceptor activity during exercise (stretch receptors in muscles and joints signal movement to the medulla). Baroreceptors in the carotid sinus and aortic arch detect changes in blood pressure and adjust heart rate accordingly through negative feedback.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When explaining heart rate control during exercise, describe the full negative feedback loop: exercise &rarr; increased CO<sub>2</sub> and decreased pH &rarr; detected by chemoreceptors &rarr; impulses to cardiovascular centre in medulla &rarr; increased sympathetic nerve activity to SAN &rarr; heart rate increases &rarr; more blood (and therefore O<sub>2</sub>) delivered to muscles and more CO<sub>2</sub> removed &rarr; CO<sub>2</sub>/pH return toward normal. Also mention the role of adrenaline and proprioceptors as anticipatory mechanisms that increase heart rate even before CO<sub>2</sub> levels change.
+</div>
+
+<p><strong>Electrocardiogram (ECG):</strong> An ECG records the electrical activity of the heart. The normal trace shows: P wave (atrial depolarisation/contraction), QRS complex (ventricular depolarisation/contraction), and T wave (ventricular repolarisation/relaxation). Abnormalities in ECG traces can indicate conditions such as atrial fibrillation (irregular P waves), heart block (extended P-R interval), or myocardial infarction (elevated ST segment).</p>
+
+<p>ECGs therefore aid the diagnosis of cardiovascular disease and other heart conditions: a trace from a patient is compared with a normal trace, and abnormalities in the shape, size or timing of the waves (or in the rhythm) indicate which part of the heart's conduction or muscle is affected.</p>
+
+<h3>Cardiac Output</h3>
+
+<div class="equation">
+  Cardiac output = stroke volume &times; heart rate
+</div>
+
+<p>Cardiac output is the volume of blood pumped by one ventricle per minute; stroke volume is the volume pumped per beat. For example, a stroke volume of 70 cm<sup>3</sup> and a heart rate of 72 beats min<sup>&minus;1</sup> give a cardiac output of 70 &times; 72 = 5040 cm<sup>3</sup> min<sup>&minus;1</sup> (about 5.0 dm<sup>3</sup> min<sup>&minus;1</sup>). During exercise both heart rate and stroke volume rise (greater venous return stretches the ventricle walls, so they contract more forcefully), so cardiac output increases, delivering O<sub>2</sub> to the muscles and removing CO<sub>2</sub> more rapidly.</p>
+
+<h3>Control of Ventilation</h3>
+
+<p>Breathing is controlled by the <strong>ventilation centre</strong> in the medulla oblongata. It sends impulses along nerves to the external intercostal muscles and diaphragm, causing them to contract (inspiration). As the lungs inflate, stretch receptors in the bronchioles send impulses that inhibit the ventilation centre, so these muscles relax and expiration occurs (passive at rest).</p>
+
+<p>During exercise, CO<sub>2</sub> production increases and blood pH falls. Chemoreceptors in the medulla (detecting H<sup>+</sup> in the cerebrospinal fluid) and in the carotid and aortic bodies send impulses to the ventilation centre, which increases the rate and depth of breathing. The motor cortex and proprioceptors in muscles and joints also stimulate the ventilation centre at the start of exercise. Together, increased ventilation and increased cardiac output enable rapid delivery of O<sub>2</sub> to the tissues and removal of CO<sub>2</sub> from them.</p>
+
+<h3>Core Practical 17: Effects of Exercise on Breathing (Spirometer Traces)</h3>
+
+<p>A spirometer has a chamber of medical-grade oxygen floating over water; the subject breathes in and out of it through a mouthpiece (wearing a nose clip). Soda lime absorbs the exhaled CO<sub>2</sub>, so the volume in the chamber falls as O<sub>2</sub> is consumed. Traces are recorded at rest and after exercise.</p>
+<ul>
+  <li><strong>Tidal volume:</strong> the volume of air breathed in or out in one normal breath (height of one peak to the next trough).</li>
+  <li><strong>Breathing rate:</strong> the number of breaths per minute (count peaks in one minute).</li>
+  <li><strong>Minute ventilation</strong> = tidal volume &times; breathing rate.</li>
+  <li><strong>Oxygen consumption:</strong> the fall in volume per unit time, from the gradient of a line drawn through the troughs (or peaks) of the trace.</li>
+</ul>
+<p>After exercise, tidal volume, breathing rate, minute ventilation and O<sub>2</sub> consumption all increase. Safety: disinfect the mouthpiece, use fresh soda lime, and do not use subjects with asthma or heart conditions.</p>
+
+<h3>Thermoregulation</h3>
+
+<p>Body temperature is regulated by the thermoregulatory centre in the hypothalamus. Peripheral thermoreceptors in the skin detect external temperature changes; central thermoreceptors in the hypothalamus monitor blood temperature. Responses to overheating include vasodilation of skin arterioles, sweating, behavioural changes (seeking shade, removing clothing), and reduced metabolic rate. Responses to cooling include vasoconstriction, shivering (rapid involuntary muscle contractions generating heat), piloerection, increased metabolic rate (controlled by thyroid hormones), and behavioural changes.</p>
+
+<p><strong>Thermoregulation during exercise:</strong> exercising muscles release heat, raising blood temperature. This is detected by thermoreceptors in the hypothalamus, whose heat loss centre sends impulses (via the autonomic nervous system) to sweat glands and skin arterioles, increasing sweating and vasodilation. Homeostasis during exercise is therefore a <strong>dynamic equilibrium</strong>: conditions fluctuate around the set point and are continually corrected by negative feedback, rather than staying perfectly constant.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When describing heart rate control, make clear the distinction between the myogenic nature of cardiac muscle (SAN generates its own rhythm) and the role of the autonomic nervous system in modifying that rhythm. The heart will beat without any nerve supply, but its rate is adjusted to meet the body's changing demands.
+</div>
+
+<!-- ============================================================ -->
+<h2>7.6 Medical Technology, Performance Enhancement and Gene Expression</h2>
+<!-- ============================================================ -->
+
+<h3>Medical Technology in Sport</h3>
+
+<p><strong>Keyhole surgery</strong> (e.g. arthroscopy to repair a torn cruciate ligament or cartilage in the knee) uses a few small incisions through which a camera (endoscope) and fine instruments are inserted. Compared with open surgery there is less tissue damage, less blood loss and scarring, a lower infection risk, a shorter hospital stay and a faster recovery, so athletes return to training sooner.</p>
+
+<p><strong>Prostheses</strong> are artificial body parts, such as knee joint replacements or carbon-fibre running blades for amputees. They enable people with injuries and disabilities to take part in sport, including at elite level.</p>
+
+<h3>Performance-Enhancing Substances</h3>
+
+<p>Examples include anabolic steroids (testosterone-like hormones that increase muscle protein synthesis and so muscle mass) and EPO (erythropoietin, which increases red blood cell production and so the O<sub>2</sub>-carrying capacity of the blood). Different ethical positions on whether their use is acceptable:</p>
+<ul>
+  <li><strong>Rights and duties (absolutist) view:</strong> using them is cheating and breaks the rules of sport, so it is wrong regardless of the outcome.</li>
+  <li><strong>Utilitarian view:</strong> weigh the benefits (e.g. better performance) against the harms (health risks such as heart and liver damage, unfairness to other competitors, pressure on others to use them).</li>
+  <li><strong>Autonomy (libertarian) view:</strong> informed adults have the right to make choices about their own bodies, provided they understand the risks.</li>
+</ul>
+
+<h3>Switching Genes On and Off: Transcription Factors</h3>
+
+<p><strong>Transcription factors</strong> are proteins that bind to specific DNA sequences (e.g. in the promoter region) and either help or prevent RNA polymerase binding, so switching transcription of a gene on or off. Some <strong>hormones</strong> act this way. Steroid hormones (e.g. testosterone, oestrogen) are lipid-soluble, diffuse through the cell membrane and bind to a receptor in the cytoplasm (or nucleus); the hormone-receptor complex enters the nucleus and acts as a transcription factor, e.g. switching on genes for muscle proteins. Peptide hormones cannot cross the membrane; they bind to cell-surface receptors and trigger a second messenger inside the cell, which can activate transcription factors.</p>
+
+</div>
+</body>
+</html>

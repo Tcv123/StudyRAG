@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — 2: Cells, Viruses and Reproduction of Living Things</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>2 — Cells, Viruses and Reproduction of Living Things</h1>
+
+<p><strong>Edexcel B A-level Biology (9BI0), Topic 2.</strong> This topic covers the fine structure of prokaryotic and eukaryotic cells, how microscopes reveal it, the structure and replication of viruses, the cell cycle, mitosis and meiosis (and what happens when chromosomes go wrong), and sexual reproduction in mammals and flowering plants. It contains three core practicals: CP2 (microscopy and micrometers), CP3 (root tip squash) and CP4 (pollen tube growth).</p>
+
+<!-- ============================================================ -->
+<h2>2.1 Eukaryotic and Prokaryotic Cell Structure and Function</h2>
+<!-- ============================================================ -->
+
+<h3>2.1 (i) Cell Theory</h3>
+
+<div class="definition">
+  <strong>Cell theory:</strong> The idea that every living organism is made of one or more cells, that the cell is the basic unit of structure, function and organisation in living things, and that new cells only arise by the division of existing cells.
+</div>
+
+<p>Cell theory is described as a <strong>unifying concept</strong> because it applies to every organism, from a single bacterium to a blue whale. It developed over roughly two centuries as microscopes improved: Robert Hooke described and named "cells" in cork in 1665; Schleiden (1838, plants) and Schwann (1839, animals) proposed that all organisms are built from cells; and Virchow (1855) popularised the principle that cells come only from pre-existing cells. It is a good example of how scientific ideas change as new technology produces new evidence.</p>
+
+<p>Viruses sit outside cell theory: they are not made of cells and cannot carry out metabolism or reproduce on their own (see 2.2).</p>
+
+<h3>2.1 (ii) Levels of Organisation</h3>
+
+<p>In multicellular organisms, cells become <strong>specialised</strong> (differentiated) for particular roles, and specialised cells are grouped into higher levels of organisation:</p>
+
+<table>
+  <tr><th>Level</th><th>Meaning</th><th>Animal example</th><th>Plant example</th></tr>
+  <tr><td>Cell</td><td>Basic unit of life, specialised for a function</td><td>Ciliated epithelial cell</td><td>Palisade mesophyll cell</td></tr>
+  <tr><td>Tissue</td><td>A group of similar cells (plus any intercellular material) working together to carry out a particular function</td><td>Ciliated epithelium lining the trachea</td><td>Xylem; palisade mesophyll</td></tr>
+  <tr><td>Organ</td><td>A structure made of several tissues working together to perform one or more functions</td><td>Lung; heart</td><td>Leaf; root</td></tr>
+  <tr><td>Organ system</td><td>A group of organs working together to carry out a major function</td><td>Gas exchange system; circulatory system</td><td>Shoot system</td></tr>
+</table>
+
+<p>Organisation into tissues and organs allows division of labour: each cell type can be highly efficient at one job, but the cells depend on each other and on transport systems to supply them.</p>
+
+<h3>2.1 (iii) Prokaryotic Cell Ultrastructure</h3>
+
+<p>Prokaryotes (bacteria and archaea) are usually 0.5&ndash;5 &mu;m long, roughly ten times smaller than a typical eukaryotic cell. They have no nucleus and no membrane-bound organelles, but they carry out all the processes of life.</p>
+
+<table>
+  <tr><th>Structure</th><th>Description</th><th>Function</th></tr>
+  <tr><td>Nucleoid</td><td>Region of cytoplasm containing a single, circular DNA molecule; not surrounded by a membrane; DNA not wound around histones in the way eukaryotic DNA is</td><td>Carries the genes needed for the cell to survive and reproduce</td></tr>
+  <tr><td>Plasmids</td><td>Small, circular DNA molecules separate from the main chromosome; replicate independently</td><td>Carry extra genes (e.g. antibiotic resistance); can be passed between bacteria; used as vectors in genetic engineering</td></tr>
+  <tr><td>70S ribosomes</td><td>Smaller than eukaryotic ribosomes; made of rRNA and protein (50S + 30S subunits)</td><td>Protein synthesis (translation)</td></tr>
+  <tr><td>Cell wall</td><td>Rigid layer outside the cell membrane made of <strong>peptidoglycan</strong> (murein) &mdash; polysaccharide chains cross-linked by short peptides</td><td>Supports the cell and stops it bursting when water enters by osmosis</td></tr>
+  <tr><td>Cell surface membrane</td><td>Phospholipid bilayer with proteins</td><td>Controls what enters and leaves; site of respiration enzymes (no mitochondria)</td></tr>
+  <tr><td>Capsule (some species)</td><td>Slimy polysaccharide layer outside the wall</td><td>Protects against drying out and phagocytosis; helps bacteria stick to surfaces</td></tr>
+  <tr><td>Flagellum (some species)</td><td>Long protein filament rotated at its base</td><td>Movement</td></tr>
+  <tr><td>Pili (some species)</td><td>Short protein projections from the surface</td><td>Attachment to host cells or surfaces; sex pili are used to transfer plasmids</td></tr>
+</table>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Generalised Prokaryotic Cell (Bacterium)</text>
+  <!-- capsule -->
+  <rect x="120" y="70" width="300" height="130" rx="65" ry="65" fill="#FEF3C7" stroke="#D97706" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <!-- wall -->
+  <rect x="132" y="82" width="276" height="106" rx="53" ry="53" fill="#DCFCE7" stroke="#16A34A" stroke-width="3"/>
+  <!-- membrane -->
+  <rect x="140" y="90" width="260" height="90" rx="45" ry="45" fill="#EFF6FF" stroke="#1a73e8" stroke-width="1.2"/>
+  <!-- nucleoid -->
+  <path d="M230,120 q15,-15 30,0 t30,0 q10,20 -10,25 t-30,5 q-25,0 -20,-30 z" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+  <!-- plasmids -->
+  <circle cx="330" cy="115" r="8" fill="none" stroke="#DC2626" stroke-width="1.3"/>
+  <circle cx="345" cy="155" r="6" fill="none" stroke="#DC2626" stroke-width="1.3"/>
+  <!-- ribosomes -->
+  <circle cx="180" cy="120" r="2.5" fill="#1a1a2e"/><circle cx="190" cy="150" r="2.5" fill="#1a1a2e"/><circle cx="205" cy="110" r="2.5" fill="#1a1a2e"/><circle cx="300" cy="160" r="2.5" fill="#1a1a2e"/><circle cx="310" cy="105" r="2.5" fill="#1a1a2e"/><circle cx="370" cy="135" r="2.5" fill="#1a1a2e"/>
+  <!-- flagellum -->
+  <path d="M420,135 q20,-20 40,0 t40,0 t40,0" fill="none" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- pili -->
+  <line x1="200" y1="72" x2="195" y2="52" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="260" y1="70" x2="260" y2="50" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="330" y1="72" x2="336" y2="52" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- labels -->
+  <line x1="262" y1="145" x2="262" y2="228" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="262" y="240" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Nucleoid (circular DNA)</text>
+  <line x1="338" y1="115" x2="440" y2="80" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="444" y="80" font-family="system-ui" font-size="10" fill="#1a1a2e">Plasmid</text>
+  <line x1="190" y1="150" x2="95" y2="225" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="40" y="238" font-family="system-ui" font-size="10" fill="#1a1a2e">70S ribosome</text>
+  <line x1="140" y1="135" x2="80" y2="135" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="10" y="128" font-family="system-ui" font-size="10" fill="#1a1a2e">Cell surface</text>
+  <text x="10" y="140" font-family="system-ui" font-size="10" fill="#1a1a2e">membrane</text>
+  <line x1="150" y1="100" x2="70" y2="75" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="15" y="70" font-family="system-ui" font-size="10" fill="#16A34A">Peptidoglycan wall</text>
+  <line x1="125" y1="165" x2="70" y2="185" stroke="#1a1a2e" stroke-width="0.7"/>
+  <text x="20" y="197" font-family="system-ui" font-size="10" fill="#D97706">Capsule</text>
+  <text x="480" y="160" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Flagellum</text>
+  <text x="262" y="45" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Pili</text>
+</svg>
+</div>
+
+<h3>2.1 (iv) Gram Positive and Gram Negative Cell Walls</h3>
+
+<p>The <strong>Gram stain</strong> (devised by Hans Christian Gram in 1884) sorts bacteria into two groups according to the structure of their cell walls. The smear is stained with crystal violet, treated with iodine (which forms a large complex with the dye), washed with alcohol, then counterstained with a red dye such as safranin.</p>
+
+<table>
+  <tr><th>Feature</th><th>Gram positive</th><th>Gram negative</th></tr>
+  <tr><td>Peptidoglycan layer</td><td>Thick (many layers)</td><td>Thin (one or a few layers)</td></tr>
+  <tr><td>Outer membrane</td><td>Absent</td><td>Present outside the peptidoglycan; contains lipopolysaccharide</td></tr>
+  <tr><td>Effect of alcohol wash</td><td>Crystal violet&ndash;iodine complex is trapped in the thick wall</td><td>Alcohol disrupts the outer membrane and the thin wall cannot hold the complex, so the violet washes out</td></tr>
+  <tr><td>Colour seen</td><td>Purple / violet</td><td>Red / pink (takes up the counterstain)</td></tr>
+  <tr><td>Examples</td><td><em>Staphylococcus aureus</em>, <em>Streptococcus</em></td><td><em>Escherichia coli</em>, <em>Salmonella</em></td></tr>
+</table>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 220" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Cell Wall Structure (outside at top)</text>
+  <!-- Gram positive -->
+  <text x="150" y="45" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#7C3AED">Gram positive</text>
+  <rect x="50" y="60" width="200" height="70" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="50" y1="78" x2="250" y2="78" stroke="#16A34A" stroke-width="0.6"/>
+  <line x1="50" y1="95" x2="250" y2="95" stroke="#16A34A" stroke-width="0.6"/>
+  <line x1="50" y1="112" x2="250" y2="112" stroke="#16A34A" stroke-width="0.6"/>
+  <rect x="50" y="140" width="200" height="14" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="150" y="99" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Thick peptidoglycan</text>
+  <text x="150" y="172" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Cell surface membrane</text>
+  <text x="150" y="200" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">Retains crystal violet: purple</text>
+  <!-- Gram negative -->
+  <text x="450" y="45" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">Gram negative</text>
+  <rect x="350" y="60" width="200" height="16" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="450" y="72" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Outer membrane (lipopolysaccharide)</text>
+  <rect x="350" y="100" width="200" height="12" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.2"/>
+  <text x="450" y="95" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Thin peptidoglycan</text>
+  <rect x="350" y="140" width="200" height="14" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.2"/>
+  <text x="450" y="172" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Cell surface membrane</text>
+  <text x="450" y="200" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">Loses violet, takes counterstain: red</text>
+</svg>
+</div>
+
+<p><strong>Why they respond differently to antibiotics:</strong> <strong>Penicillin</strong> (and other &beta;-lactam antibiotics) stops the enzymes that build the peptide cross-links in peptidoglycan. As a growing bacterium makes new wall, the wall becomes weak; water enters by osmosis and the cell bursts (osmotic lysis). In Gram positive bacteria the peptidoglycan is exposed on the surface, so penicillin reaches its target easily. In Gram negative bacteria the <strong>outer membrane acts as a barrier</strong>, keeping many antibiotics (including penicillin G) and the enzyme lysozyme away from the peptidoglycan, so Gram negative bacteria are generally less sensitive. Some antibiotics, such as tetracyclines, act on the 70S ribosome instead and work on both groups. Knowing a pathogen&rsquo;s Gram type therefore helps doctors choose an effective drug quickly.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A common mistake is to say that Gram negative bacteria have "no peptidoglycan" or that "the thick wall stops penicillin". It is the other way round: Gram positive bacteria have a thick, exposed peptidoglycan wall that penicillin can attack; Gram negative bacteria have a thin peptidoglycan layer <em>protected</em> by an outer membrane. Penicillin does not harm human cells because they have no peptidoglycan.
+</div>
+
+<h3>2.1 (v) Eukaryotic Cell Ultrastructure</h3>
+
+<p>Eukaryotic cells (animals, plants, fungi and protoctists) are typically 10&ndash;100 &mu;m across. Their DNA is in a nucleus and they contain membrane-bound organelles, which divide the cell into compartments so that different reactions can happen in different conditions at the same time.</p>
+
+<table>
+  <tr><th>Organelle</th><th>Structure</th><th>Function</th></tr>
+  <tr><td>Nucleus</td><td>Surrounded by a double membrane (nuclear envelope) with nuclear pores; contains chromatin (DNA wound round histone proteins)</td><td>Stores genetic information; controls the cell by regulating which genes are transcribed; site of DNA replication and transcription</td></tr>
+  <tr><td>Nucleolus</td><td>Dense, darkly staining region inside the nucleus; not membrane-bound</td><td>Makes ribosomal RNA and assembles ribosome subunits</td></tr>
+  <tr><td>80S ribosomes</td><td>Two subunits (60S + 40S) of rRNA and protein; free in the cytoplasm or attached to RER</td><td>Translation of mRNA into polypeptides</td></tr>
+  <tr><td>Rough endoplasmic reticulum (RER)</td><td>System of flattened membrane sacs (cisternae) studded with ribosomes; continuous with the nuclear envelope</td><td>Proteins made on its ribosomes enter the lumen, where they are folded and transported, often to the Golgi apparatus</td></tr>
+  <tr><td>Smooth endoplasmic reticulum (SER)</td><td>Network of membrane tubules with no ribosomes</td><td>Makes and processes lipids, including phospholipids and steroids such as cholesterol</td></tr>
+  <tr><td>Golgi apparatus</td><td>Stack of flattened, curved membrane sacs with vesicles budding off</td><td>Modifies proteins (e.g. adds carbohydrate to make glycoproteins), packages them into vesicles for secretion or for use in the cell; makes lysosomes</td></tr>
+  <tr><td>Mitochondria</td><td>Double membrane; inner membrane folded into cristae; matrix contains enzymes, circular DNA and 70S ribosomes</td><td>Site of the link reaction, Krebs cycle and oxidative phosphorylation in aerobic respiration, making ATP</td></tr>
+  <tr><td>Centrioles</td><td>Pair of hollow cylinders of microtubules at right angles to each other; found in animal cells but not in flowering plant cells</td><td>Organise the spindle fibres during nuclear division; form the bases of cilia and flagella</td></tr>
+  <tr><td>Lysosomes</td><td>Small vesicles bounded by a single membrane, containing hydrolytic enzymes</td><td>Digest material taken in by phagocytosis, break down worn-out organelles, and can release enzymes outside the cell</td></tr>
+  <tr><td>Cell wall (plants)</td><td>Layer of cellulose microfibrils outside the membrane; freely permeable</td><td>Supports the cell, resists turgor pressure so it does not burst, gives the plant strength</td></tr>
+  <tr><td>Chloroplasts (plants, algae)</td><td>Double membrane (envelope); stacks of thylakoids called grana in a fluid stroma; circular DNA, 70S ribosomes, starch grains</td><td>Site of photosynthesis: light-dependent reactions on the thylakoid membranes, light-independent reactions in the stroma</td></tr>
+  <tr><td>Vacuole (plants)</td><td>Large permanent sac filled with cell sap</td><td>Stores water, ions, sugars and pigments; keeps the cell turgid, which supports non-woody plants</td></tr>
+  <tr><td>Tonoplast</td><td>The partially permeable membrane surrounding the vacuole</td><td>Controls movement of substances into and out of the vacuole</td></tr>
+</table>
+
+<p><strong>How organelles work together &mdash; the secretory pathway:</strong> genes for an extracellular enzyme are transcribed in the nucleus; mRNA leaves through a nuclear pore; ribosomes on the RER translate it and the polypeptide enters the RER lumen; it is carried in a vesicle to the Golgi apparatus and modified; a secretory vesicle then moves to the cell surface membrane and fuses with it, releasing the protein by exocytosis. Mitochondria supply the ATP for this movement and synthesis.</p>
+
+<table>
+  <tr><th>Feature</th><th>Prokaryotic cell</th><th>Eukaryotic cell</th></tr>
+  <tr><td>Typical size</td><td>0.5&ndash;5 &mu;m</td><td>10&ndash;100 &mu;m</td></tr>
+  <tr><td>DNA</td><td>Circular, in a nucleoid, plus plasmids</td><td>Linear chromosomes, with histones, in a nucleus</td></tr>
+  <tr><td>Ribosomes</td><td>70S</td><td>80S in cytoplasm (70S inside mitochondria and chloroplasts)</td></tr>
+  <tr><td>Membrane-bound organelles</td><td>None</td><td>Present</td></tr>
+  <tr><td>Cell wall</td><td>Peptidoglycan</td><td>Cellulose in plants, chitin in fungi, none in animals</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When asked to <em>identify</em> organelles in an electron micrograph, use features you can see: cristae (mitochondrion), grana (chloroplast), ribosome-covered cisternae (RER), a curved stack of sacs with vesicles (Golgi). Do not say that plant cells lack mitochondria, or that ribosomes are membrane-bound &mdash; both are frequent errors.
+</div>
+
+<h3>2.1 (vi) Magnification and Resolution: Light and Electron Microscopy</h3>
+
+<div class="definition">
+  <strong>Magnification:</strong> How many times larger the image is than the real object. <strong>Resolution:</strong> The smallest distance between two points at which they can still be seen as two separate points. Resolution sets how much detail can be seen; magnifying beyond the resolution limit just gives a bigger, blurred image.
+</div>
+
+<div class="equation">
+  magnification = image size &divide; actual size &nbsp;&nbsp;&nbsp; so &nbsp; actual size = image size &divide; magnification
+</div>
+
+<p>Resolution is limited by the wavelength of the radiation used: the shorter the wavelength, the smaller the details that can be separated. Visible light has wavelengths of roughly 400&ndash;700 nm, which limits a light microscope to a resolution of about 200 nm (0.2 &mu;m). A beam of electrons has a far shorter wavelength, so electron microscopes can resolve structures well below 1 nm in principle; in biological specimens the practical limit is a few nanometres.</p>
+
+<table>
+  <tr><th>Feature</th><th>Light microscope</th><th>Transmission electron microscope (TEM)</th><th>Scanning electron microscope (SEM)</th></tr>
+  <tr><td>How the image forms</td><td>Light passes through the specimen and is focused by glass lenses</td><td>Electrons pass through a very thin section and are focused by electromagnets</td><td>Electrons are scanned across the surface and those bounced or emitted from the surface are detected</td></tr>
+  <tr><td>Useful magnification</td><td>Up to about &times;1500</td><td>Up to about &times;500 000 or more</td><td>Up to about &times;100 000 or more</td></tr>
+  <tr><td>Resolution</td><td>About 200 nm</td><td>About 0.5 nm or better</td><td>A few nm (lower than TEM)</td></tr>
+  <tr><td>Specimen</td><td>Living or dead; can show colour</td><td>Dead; fixed, dehydrated, thin-sectioned, in a vacuum</td><td>Dead; coated with a thin metal layer, in a vacuum</td></tr>
+  <tr><td>Image</td><td>Colour, 2D</td><td>Black and white, 2D, shows internal ultrastructure</td><td>Black and white, 3D appearance of surfaces</td></tr>
+</table>
+
+<p><strong>Worked example (changing the subject; units):</strong> A mitochondrion is 36 mm long in a micrograph and is actually 12 &mu;m long. Convert to the same unit: 36 mm = 36 000 &mu;m. Magnification = 36 000 &divide; 12 = <strong>&times;3000</strong>. Remember 1 mm = 1000 &mu;m and 1 &mu;m = 1000 nm.</p>
+
+<p><strong>Order of magnitude:</strong> a cell 20 &mu;m across is 20 000 nm, which is 200 times a 100 nm virus &mdash; a difference of about two orders of magnitude (10<sup>2</sup>). Sizes are often written in standard form, e.g. 2 &times; 10<sup>&minus;5</sup> m for the cell and 1 &times; 10<sup>&minus;7</sup> m for the virus.</p>
+
+<h3>2.1 (vii) Why Specimens Are Stained</h3>
+
+<p>Most cell components are colourless and nearly transparent, so they give very little contrast. Stains bind selectively to particular chemicals or structures, making them visible and allowing different parts to be told apart.</p>
+<ul>
+  <li><strong>Light microscopy:</strong> iodine solution stains starch blue-black; methylene blue stains nuclei in animal cells; toluidine blue or acetic orcein stain DNA, making chromosomes visible in root tip squashes; the Gram stain distinguishes bacterial wall types. Differential stains colour different tissues differently.</li>
+  <li><strong>Electron microscopy:</strong> specimens are treated with compounds of heavy metals (e.g. lead or uranium salts, osmium tetroxide) that scatter electrons, so stained structures such as membranes appear dark.</li>
+</ul>
+<p>Staining usually requires fixing, which kills the cells, and the preparation can introduce <strong>artefacts</strong> (structures that are not present in the living cell).</p>
+
+<div class="definition">
+  <strong>Core Practical 2 (CP2):</strong> Use of the light microscope, including calibrating an eyepiece graticule with a stage micrometer, and drawing a few cells from a specialised tissue. For the full method, see <a href="core_practicals.html#cp2">Core Practicals &mdash; CP2</a>.
+</div>
+
+<p><strong>Calibration example:</strong> A stage micrometer 1 mm long is divided into 100 divisions, so each division is 10 &mu;m. At &times;400, 25 eyepiece divisions line up exactly with 10 stage divisions (100 &mu;m). One eyepiece division = 100 &divide; 25 = <strong>4 &mu;m</strong> at this magnification. A cell that spans 12 eyepiece divisions is 12 &times; 4 = <strong>48 &mu;m</strong> long. The graticule must be recalibrated for every objective lens.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Biological drawings should use a sharp pencil, clear continuous lines with no shading, correct proportions, ruled label lines that do not cross, and a title with the magnification. Only draw what you can see. If a question says <em>calculate</em>, show every step, including the unit conversion; if it says <em>explain</em>, you need to give reasons (e.g. why electron microscopes resolve finer detail: shorter wavelength).
+</div>
+
+<!-- ============================================================ -->
+<h2>2.2 Viruses</h2>
+<!-- ============================================================ -->
+
+<h3>2.2 (i) Classification of Viruses</h3>
+
+<div class="definition">
+  <strong>Virus:</strong> A non-cellular infectious particle, usually 20&ndash;300 nm across, made of a nucleic acid genome (DNA or RNA) inside a protein coat (<strong>capsid</strong>), sometimes surrounded by a lipid <strong>envelope</strong> taken from the host cell membrane. Viruses can only replicate inside a living host cell.
+</div>
+
+<p>Viruses are classified mainly by <strong>the type of nucleic acid</strong> they carry (DNA or RNA; single- or double-stranded; whether they use reverse transcription) and by their <strong>structure</strong> (shape of the capsid, and whether there is an envelope). The four examples you need:</p>
+
+<table>
+  <tr><th>Virus</th><th>Nucleic acid</th><th>Structure</th><th>Host</th></tr>
+  <tr><td>&lambda; (lambda) phage</td><td>Double-stranded DNA</td><td>Bacteriophage: polyhedral (icosahedral) head containing the DNA, attached to a long tail; no envelope</td><td>The bacterium <em>E. coli</em></td></tr>
+  <tr><td>Tobacco mosaic virus (TMV)</td><td>Single-stranded RNA</td><td>Rigid rod: protein subunits arranged in a helix around the RNA; no envelope</td><td>Tobacco and related plants, causing mottled (mosaic) leaves</td></tr>
+  <tr><td>Ebola virus</td><td>Single-stranded RNA</td><td>Long, thread-like (filamentous) particle, often curved or branched; enveloped, with glycoprotein spikes</td><td>Humans and other primates (fruit bats are thought to be the natural reservoir)</td></tr>
+  <tr><td>Human immunodeficiency virus (HIV)</td><td>Single-stranded RNA (two copies); a <strong>retrovirus</strong></td><td>Roughly spherical; cone-shaped capsid containing RNA and the enzymes reverse transcriptase and integrase; enveloped, with glycoproteins (gp120) that bind to the CD4 receptor</td><td>Humans; infects helper T cells</td></tr>
+</table>
+
+<p>A <strong>retrovirus</strong> uses reverse transcriptase to make a DNA copy of its RNA genome inside the host cell. This DNA is then inserted into the host chromosome by integrase, where it is called a <strong>provirus</strong>.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 240" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">The Four Example Viruses (not to scale)</text>
+  <!-- Lambda phage -->
+  <g transform="translate(80,0)">
+    <polygon points="0,45 22,57 22,83 0,95 -22,83 -22,57" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.5"/>
+    <path d="M-8,65 q8,-8 16,0 t-8,15" fill="none" stroke="#7C3AED" stroke-width="1.3"/>
+    <rect x="-3" y="95" width="6" height="70" fill="#E0E7FF" stroke="#1a73e8" stroke-width="1"/>
+    <line x1="0" y1="165" x2="0" y2="180" stroke="#1a73e8" stroke-width="1"/>
+    <text y="200" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">&#955; phage</text>
+    <text y="215" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">dsDNA, head + tail</text>
+  </g>
+  <!-- TMV -->
+  <g transform="translate(220,0)">
+    <rect x="-12" y="45" width="24" height="135" rx="3" fill="#DCFCE7" stroke="#16A34A" stroke-width="1.5"/>
+    <path d="M-12,55 L12,62 M-12,70 L12,77 M-12,85 L12,92 M-12,100 L12,107 M-12,115 L12,122 M-12,130 L12,137 M-12,145 L12,152 M-12,160 L12,167" stroke="#16A34A" stroke-width="0.8"/>
+    <line x1="0" y1="48" x2="0" y2="177" stroke="#DC2626" stroke-width="1.3" stroke-dasharray="3,2"/>
+    <text y="200" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">TMV</text>
+    <text y="215" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">ssRNA, helical rod</text>
+  </g>
+  <!-- Ebola -->
+  <g transform="translate(370,0)">
+    <path d="M-40,160 C-40,100 -20,60 10,60 C40,60 45,95 25,110" fill="none" stroke="#D97706" stroke-width="14" stroke-linecap="round" opacity="0.35"/>
+    <path d="M-40,160 C-40,100 -20,60 10,60 C40,60 45,95 25,110" fill="none" stroke="#DC2626" stroke-width="1.3" stroke-dasharray="3,2"/>
+    <text y="200" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">Ebola</text>
+    <text y="215" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">ssRNA, enveloped filament</text>
+  </g>
+  <!-- HIV -->
+  <g transform="translate(510,110)">
+    <circle r="45" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+    <line x1="0" y1="-45" x2="0" y2="-55" stroke="#D97706" stroke-width="1.5"/><circle cx="0" cy="-57" r="3" fill="#D97706"/>
+    <line x1="45" y1="0" x2="55" y2="0" stroke="#D97706" stroke-width="1.5"/><circle cx="57" cy="0" r="3" fill="#D97706"/>
+    <line x1="-45" y1="0" x2="-55" y2="0" stroke="#D97706" stroke-width="1.5"/><circle cx="-57" cy="0" r="3" fill="#D97706"/>
+    <line x1="0" y1="45" x2="0" y2="55" stroke="#D97706" stroke-width="1.5"/><circle cx="0" cy="57" r="3" fill="#D97706"/>
+    <polygon points="-10,-25 10,-25 20,25 -20,25" fill="#DBEAFE" stroke="#1a73e8" stroke-width="1.2"/>
+    <path d="M-6,-15 q4,8 0,16 t0,16" fill="none" stroke="#DC2626" stroke-width="1.2"/>
+    <path d="M6,-15 q-4,8 0,16 t0,16" fill="none" stroke="#DC2626" stroke-width="1.2"/>
+    <text y="90" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">HIV</text>
+    <text y="105" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">RNA retrovirus, enveloped</text>
+  </g>
+  <!-- legend -->
+  <line x1="20" y1="232" x2="40" y2="232" stroke="#DC2626" stroke-width="1.3" stroke-dasharray="3,2"/>
+  <text x="44" y="235" font-family="system-ui" font-size="9" fill="#666">RNA</text>
+  <line x1="80" y1="232" x2="100" y2="232" stroke="#7C3AED" stroke-width="1.3"/>
+  <text x="104" y="235" font-family="system-ui" font-size="9" fill="#666">DNA</text>
+  <rect x="140" y="227" width="10" height="10" fill="#FEF3C7" stroke="#D97706"/>
+  <text x="154" y="235" font-family="system-ui" font-size="9" fill="#666">Lipid envelope with glycoproteins</text>
+</svg>
+</div>
+
+<h3>2.2 (ii) The Lytic Cycle and Latency</h3>
+
+<p>In the <strong>lytic cycle</strong> a virus takes over the host cell, makes many copies of itself and then bursts (lyses) the cell:</p>
+<ol>
+  <li><strong>Attachment:</strong> proteins on the virus bind to specific receptor molecules on the host cell surface. This is why each virus infects only certain cell types (e.g. HIV binds CD4 on helper T cells).</li>
+  <li><strong>Entry:</strong> a phage injects its DNA through the bacterial wall, leaving the capsid outside; enveloped animal viruses enter when the envelope fuses with the host membrane or when the cell takes them in by endocytosis.</li>
+  <li><strong>Replication and synthesis:</strong> the host cell&rsquo;s ribosomes, enzymes, nucleotides, amino acids and ATP are used to copy the viral genome and make viral proteins. The host&rsquo;s own metabolism is disrupted.</li>
+  <li><strong>Assembly:</strong> new capsids form and are filled with viral nucleic acid.</li>
+  <li><strong>Release:</strong> the host cell bursts, releasing large numbers of new virus particles (for phages, lysis is caused by a viral enzyme that weakens the wall). Enveloped viruses often leave by budding, taking a piece of host membrane as their envelope.</li>
+</ol>
+
+<div class="definition">
+  <strong>Latency:</strong> A stage in which the viral genome stays inside the host cell without new virus particles being made, so there are no symptoms. In &lambda; phage (the <strong>lysogenic</strong> pathway) the DNA is inserted into the bacterial chromosome as a <strong>prophage</strong> and is copied every time the bacterium divides. In HIV, the provirus sits in the DNA of the host cell. A trigger (such as stress or damage to the host cell) can later switch the virus into the lytic cycle.
+</div>
+
+<p>Latency explains why some infections can reappear years later (e.g. cold sores from herpes simplex) and why HIV can remain in the body even when drug treatment has made the virus undetectable in blood.</p>
+
+<h3>2.2 (iii) Antivirals</h3>
+
+<p>Viruses are not cells: they have no cell wall, no 70S ribosomes and no metabolism of their own. <strong>Antibiotics</strong> target bacterial structures and processes, so they have no effect on viruses. <strong>Antiviral drugs</strong> must instead stop the virus replicating, usually by blocking a step or enzyme that is unique to the virus, so that host cells are harmed as little as possible. Examples:</p>
+<ul>
+  <li><strong>Reverse transcriptase inhibitors</strong> (e.g. zidovudine, AZT) stop HIV making DNA from its RNA.</li>
+  <li><strong>Protease inhibitors</strong> stop HIV cutting its proteins into their working forms, so new particles are not infectious.</li>
+  <li><strong>Neuraminidase inhibitors</strong> (e.g. oseltamivir) stop new influenza particles being released from the host cell.</li>
+  <li>Other antivirals block attachment or entry, or are nucleotide analogues that stop the viral genome being copied (e.g. aciclovir for herpes).</li>
+</ul>
+<p>Because viruses use the host&rsquo;s machinery, there are relatively few viral targets, and viruses (especially RNA viruses) mutate rapidly, so resistance to a single drug can develop. HIV is therefore treated with combinations of drugs.</p>
+
+<h3>2.2 (iv) Preventing Spread: the 2014 Ebola Outbreak</h3>
+
+<p>Once a viral infection is established it can be hard to treat, because there are few effective antivirals and the virus is inside the body&rsquo;s own cells. Disease control therefore concentrates on <strong>stopping transmission</strong>.</p>
+
+<p>The West African Ebola epidemic began in Guinea in late 2013 and spread through 2014 to Sierra Leone and Liberia, the largest Ebola outbreak recorded. By the time it ended in 2016 the World Health Organization had recorded more than 28 000 cases and over 11 000 deaths. Ebola virus disease causes fever, vomiting, diarrhoea and in some patients bleeding; many patients died. The virus spreads through direct contact with the blood or other body fluids of infected people (living or dead), or with contaminated objects. Health workers, family carers and people handling bodies at funerals were at high risk.</p>
+
+<p>Measures used to stop the spread included:</p>
+<ul>
+  <li><strong>Isolating</strong> patients in specialised treatment centres, and quarantining people who had been in contact with them.</li>
+  <li><strong>Contact tracing</strong>: finding and monitoring everyone who had been in contact with a case for the 21-day incubation period.</li>
+  <li><strong>Personal protective equipment</strong> (gowns, gloves, masks, eye protection) and strict decontamination for health workers.</li>
+  <li><strong>Safe burial</strong> teams, because traditional burial practices involving touching the body spread infection.</li>
+  <li><strong>Public education</strong> about how the virus is spread; screening of travellers at airports and borders.</li>
+</ul>
+
+<h3>2.2 (v) Ethics of Using Untested Drugs in Epidemics</h3>
+
+<p>At the start of the 2014 outbreak there was no licensed drug or vaccine for Ebola. A few experimental treatments were given to a small number of patients on compassionate grounds, and in August 2014 a WHO ethics panel concluded that offering unproven treatments could be ethical if certain conditions were met (such as informed consent, openness about what is known, and collecting data). Later, an experimental vaccine was tested in a large trial in Guinea in 2015.</p>
+
+<table>
+  <tr><th>Arguments for using untested drugs</th><th>Arguments against / concerns</th></tr>
+  <tr><td>Very high death rate, so a small chance of benefit may outweigh unknown risks</td><td>Unknown side effects; the drug could harm or even kill patients (non-maleficence)</td></tr>
+  <tr><td>Patients have a right to choose (autonomy) if they give informed consent</td><td>Truly informed consent is hard to obtain from very ill, frightened people, or where language and education are barriers</td></tr>
+  <tr><td>Gathering data during an outbreak may be the only chance to find out whether a drug works</td><td>Without a proper controlled trial it is hard to tell whether a drug works; using a placebo group when many patients die is itself ethically difficult</td></tr>
+  <tr><td>Could reduce the number of deaths and help end the epidemic</td><td>Supplies are very limited: who decides who receives them (justice)? Early doses went mostly to foreign health workers, which raised concerns about fairness</td></tr>
+  <tr><td>Standard testing takes many years, which is too slow in an emergency</td><td>Could draw resources and attention away from proven measures such as isolation and supportive care</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> For an <em>evaluate</em> or <em>discuss</em> question on ethics, give points on both sides, link them to principles (safety, consent, fairness, benefit to society), and finish with a justified conclusion. Also be ready to <em>explain</em> why antibiotics cannot treat a viral infection &mdash; say which bacterial targets viruses lack.
+</div>
+
+<!-- ============================================================ -->
+<h2>2.3 Eukaryotic Cell Cycle and Division</h2>
+<!-- ============================================================ -->
+
+<h3>2.3 (i) The Cell Cycle</h3>
+
+<div class="definition">
+  <strong>Cell cycle:</strong> The controlled sequence of events by which a eukaryotic cell grows, copies its DNA and divides to give two genetically identical daughter cells. It has three main stages: <strong>interphase</strong>, <strong>mitosis</strong> (nuclear division) and <strong>cytokinesis</strong> (division of the cytoplasm).
+</div>
+
+<ul>
+  <li><strong>G1 (first growth phase):</strong> the cell grows, makes proteins and organelles, and carries out its normal functions.</li>
+  <li><strong>S phase (synthesis):</strong> DNA is replicated semi-conservatively, so each chromosome becomes two identical <strong>sister chromatids</strong> joined at a <strong>centromere</strong>.</li>
+  <li><strong>G2 (second growth phase):</strong> the cell continues to grow and makes the proteins needed for division, such as tubulin for the spindle; organelles such as mitochondria are replicated.</li>
+  <li><strong>Mitosis</strong> then <strong>cytokinesis</strong>.</li>
+</ul>
+
+<p>The cycle is <strong>regulated</strong> at checkpoints (for example at the end of G1 and before mitosis) where the cell checks that it is large enough, that DNA is undamaged and that replication is complete. Cells that stop dividing leave the cycle into a resting state (G0), as many nerve and muscle cells do. When the controls fail, cells may divide uncontrollably and form a tumour.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 260" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">The Cell Cycle</text>
+  <g transform="translate(200,140)">
+    <!-- G1: 0 to 150 deg ; S: 150 to 250 ; G2: 250 to 310 ; M: 310 to 360 (angles measured clockwise from top) -->
+    <path d="M0,0 L0,-95 A95,95 0 0,1 47.5,82.3 Z" fill="#DBEAFE" stroke="#fff" stroke-width="2"/>
+    <path d="M0,0 L47.5,82.3 A95,95 0 0,1 -89.3,32.5 Z" fill="#DCFCE7" stroke="#fff" stroke-width="2"/>
+    <path d="M0,0 L-89.3,32.5 A95,95 0 0,1 -72.8,-61.1 Z" fill="#FEF3C7" stroke="#fff" stroke-width="2"/>
+    <path d="M0,0 L-72.8,-61.1 A95,95 0 0,1 0,-95 Z" fill="#FECACA" stroke="#fff" stroke-width="2"/>
+    <circle r="40" fill="#f8fafc"/>
+    <text x="55" y="-10" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">G1</text>
+    <text x="-5" y="72" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">S</text>
+    <text x="-68" y="-5" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a1a2e">G2</text>
+    <text x="-24" y="-62" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">M</text>
+    <text x="0" y="-3" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">Interphase</text>
+    <text x="0" y="10" text-anchor="middle" font-family="system-ui" font-size="10" fill="#666">= G1 + S + G2</text>
+  </g>
+  <!-- key -->
+  <rect x="340" y="60" width="12" height="12" fill="#DBEAFE"/><text x="358" y="70" font-family="system-ui" font-size="10" fill="#1a1a2e">G1: growth, protein synthesis</text>
+  <rect x="340" y="90" width="12" height="12" fill="#DCFCE7"/><text x="358" y="100" font-family="system-ui" font-size="10" fill="#1a1a2e">S: DNA replication</text>
+  <rect x="340" y="120" width="12" height="12" fill="#FEF3C7"/><text x="358" y="130" font-family="system-ui" font-size="10" fill="#1a1a2e">G2: growth, preparation for division</text>
+  <rect x="340" y="150" width="12" height="12" fill="#FECACA"/><text x="358" y="160" font-family="system-ui" font-size="10" fill="#1a1a2e">M: mitosis, then cytokinesis</text>
+  <text x="340" y="195" font-family="system-ui" font-size="10" fill="#666">Interphase is usually by far the</text>
+  <text x="340" y="208" font-family="system-ui" font-size="10" fill="#666">longest part of the cycle.</text>
+</svg>
+</div>
+
+<h3>2.3 (ii) Genetic Material During the Cell Cycle and the Stages of Mitosis</h3>
+
+<p>During interphase the DNA is spread out as chromatin, so individual chromosomes cannot be seen. After S phase the amount of DNA per nucleus has doubled (from 2x to 4x), though the chromosome number (2n) is unchanged, because each chromosome now has two chromatids. Mitosis shares these chromatids equally so each daughter nucleus returns to 2x with the full diploid set.</p>
+
+<table>
+  <tr><th>Stage</th><th>What happens</th></tr>
+  <tr><td>Prophase</td><td>Chromosomes condense (supercoil) so they become shorter, thicker and visible, each as two sister chromatids joined at the centromere. The nucleolus disappears and the nuclear envelope breaks down. In animal cells the centrioles move to opposite poles; spindle fibres (microtubules) form between the poles.</td></tr>
+  <tr><td>Metaphase</td><td>Spindle fibres attach to the centromere of each chromosome, and the chromosomes line up individually across the equator of the spindle.</td></tr>
+  <tr><td>Anaphase</td><td>The centromeres split; spindle fibres shorten and pull the sister chromatids apart to opposite poles, centromere first (giving a V shape).</td></tr>
+  <tr><td>Telophase</td><td>The separated chromatids (now chromosomes) reach the poles and uncoil; a nuclear envelope forms around each set and nucleoli reappear; the spindle breaks down.</td></tr>
+  <tr><td>Cytokinesis</td><td>Animal cells: the membrane is pulled inwards to form a cleavage furrow that pinches the cell in two. Plant cells: vesicles from the Golgi apparatus gather at the equator and fuse to form a cell plate, which becomes the new cell wall.</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Distinguish between a <em>chromosome</em>, a <em>chromatid</em> and <em>chromatin</em>. DNA replication happens in <strong>S phase of interphase</strong>, not in prophase. In metaphase of mitosis, chromosomes line up <em>singly</em>; in metaphase I of meiosis they line up in <em>homologous pairs</em>. Examiners also penalise "the chromosomes split" &mdash; say the centromeres divide and the sister chromatids separate.
+</div>
+
+<h3>2.3 (iii) Roles of Mitosis</h3>
+
+<ul>
+  <li><strong>Growth:</strong> a multicellular organism develops from one zygote by repeated mitosis, all cells having the same genetic information. In plants, growth by mitosis happens in meristems, such as those at root and shoot tips.</li>
+  <li><strong>Repair and replacement:</strong> damaged tissue is repaired and worn-out cells (skin, gut lining, blood cells) are replaced with identical cells that can do the same job.</li>
+  <li><strong>Asexual reproduction:</strong> a single parent produces genetically identical offspring (clones) &mdash; for example budding in yeast and <em>Hydra</em>, and vegetative propagation in plants such as strawberry runners and potato tubers. This is fast and does not need a mate, but produces no genetic variation, so a whole population may be vulnerable to the same disease or environmental change.</li>
+</ul>
+
+<div class="definition">
+  <strong>Core Practical 3 (CP3):</strong> Prepare a temporary squash of a root tip, stain it and observe the stages of mitosis in the meristem with a light microscope. For the full method, see <a href="core_practicals.html#cp3">Core Practicals &mdash; CP3</a>.
+</div>
+
+<div class="equation">
+  mitotic index = number of cells in mitosis &divide; total number of cells counted
+</div>
+
+<p><strong>Worked example:</strong> In a field of view of a root tip, 24 of 200 cells are in a stage of mitosis. Mitotic index = 24 &divide; 200 = 0.12, or 12%. The proportion of cells in each stage is proportional to the time that stage lasts, so if the whole cycle takes 20 hours and 5% of cells are in metaphase, metaphase lasts about 0.05 &times; 20 = 1 hour.</p>
+
+<h3>2.3 (iv) Meiosis and Haploid Gametes</h3>
+
+<div class="definition">
+  <strong>Meiosis:</strong> A type of nuclear division involving two successive divisions (meiosis I and meiosis II), after a single round of DNA replication, that produces four haploid (n) nuclei that are genetically different from each other and from the parent cell.
+</div>
+
+<p>Halving the chromosome number is essential for sexual reproduction: when two haploid gametes fuse at fertilisation, the diploid number is restored (in humans, 23 + 23 = 46) instead of doubling every generation.</p>
+
+<table>
+  <tr><th>Stage</th><th>Meiosis I (separates homologous chromosomes)</th><th>Meiosis II (separates sister chromatids)</th></tr>
+  <tr><td>Prophase</td><td>Chromosomes condense; homologous chromosomes pair up to form <strong>bivalents</strong>; crossing over occurs at <strong>chiasmata</strong>; nuclear envelope breaks down; spindle forms</td><td>Chromosomes (still two chromatids each) condense again; new spindles form</td></tr>
+  <tr><td>Metaphase</td><td>Bivalents line up on the equator; the orientation of each pair is random</td><td>Individual chromosomes line up on the equator</td></tr>
+  <tr><td>Anaphase</td><td>Homologous chromosomes are pulled to opposite poles; centromeres do <em>not</em> divide</td><td>Centromeres divide; sister chromatids are pulled to opposite poles</td></tr>
+  <tr><td>Telophase</td><td>Two haploid nuclei form; cytokinesis usually follows</td><td>Four haploid nuclei form; cytokinesis gives four cells</td></tr>
+</table>
+
+<table>
+  <tr><th>Feature</th><th>Mitosis</th><th>Meiosis</th></tr>
+  <tr><td>Number of divisions</td><td>One</td><td>Two</td></tr>
+  <tr><td>Daughter cells</td><td>Two, diploid (2n)</td><td>Four, haploid (n)</td></tr>
+  <tr><td>Genetically</td><td>Identical to each other and parent</td><td>Different from each other and parent</td></tr>
+  <tr><td>Homologous pairing / crossing over</td><td>No</td><td>Yes, in prophase I</td></tr>
+  <tr><td>Used for</td><td>Growth, repair, asexual reproduction</td><td>Producing gametes for sexual reproduction</td></tr>
+</table>
+
+<h3>2.3 (v) Meiosis and Genetic Variation</h3>
+
+<p>Meiosis produces new combinations of alleles (<strong>recombination</strong>) in two ways:</p>
+<ul>
+  <li><strong>Independent assortment</strong> (metaphase I and anaphase I): each homologous pair lines up independently of every other pair, so which maternal and paternal chromosomes end up together in a gamete is random. The number of possible combinations is 2<sup>n</sup>, where n is the haploid number. For humans, 2<sup>23</sup> = 8 388 608 (about 8.4 million) combinations. Independent assortment in meiosis II also adds variation where crossing over has made the sister chromatids different.</li>
+  <li><strong>Crossing over</strong> (prophase I): non-sister chromatids of a homologous pair break and rejoin at chiasmata, exchanging equivalent sections. This produces chromatids carrying new combinations of alleles of linked genes (genes on the same chromosome).</li>
+</ul>
+<p>Random fertilisation then combines two such gametes, so the number of possible genetic combinations in offspring is enormous. This variation is the raw material for natural selection.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Crossing over produces new combinations of <em>alleles</em>, not new alleles &mdash; only mutation creates new alleles. Crossing over happens between <em>non-sister</em> chromatids of <em>homologous</em> chromosomes. When a question asks you to <em>calculate</em> gamete combinations from independent assortment, use 2<sup>n</sup> with n as the number of homologous pairs.
+</div>
+
+<h3>2.3 (vi) Chromosome Mutations: Translocations</h3>
+
+<div class="definition">
+  <strong>Chromosome mutation:</strong> A change in the structure or number of whole chromosomes, large enough in structural cases to affect many genes. <strong>Translocation:</strong> a section of one chromosome breaks off and becomes attached to another, non-homologous chromosome.
+</div>
+
+<p>Translocations may be <strong>reciprocal</strong> (two non-homologous chromosomes swap sections) or non-reciprocal. In a <strong>balanced</strong> translocation no genetic material is lost or gained, so the carrier is usually healthy, but at meiosis the chromosomes may be shared out unevenly, producing gametes with missing or extra sections. This can cause miscarriage or genetic disorders in offspring. Translocations can also harm the person carrying them if a break point disrupts a gene or joins two genes together:</p>
+<ul>
+  <li>In most cases of <strong>chronic myeloid leukaemia</strong>, a reciprocal translocation between chromosomes 9 and 22 produces the shortened "Philadelphia chromosome", carrying a fused gene (<em>BCR-ABL</em>) whose protein continually stimulates cell division.</li>
+  <li>A small percentage of cases of Down&rsquo;s syndrome are caused by a translocation in which an extra copy of most of chromosome 21 is attached to another chromosome (often chromosome 14).</li>
+</ul>
+
+<h3>2.3 (vii) Non-disjunction: Polysomy and Monosomy</h3>
+
+<div class="definition">
+  <strong>Non-disjunction:</strong> The failure of homologous chromosomes (in anaphase I) or sister chromatids (in anaphase II) to separate properly during meiosis, so that some gametes have an extra copy of a chromosome (n + 1) and some lack one (n &minus; 1).
+</div>
+
+<p>If an n + 1 gamete is fertilised by a normal gamete, the zygote has three copies of that chromosome (<strong>trisomy</strong>, a form of <strong>polysomy</strong> &mdash; more than two copies of a chromosome). If an n &minus; 1 gamete is fertilised, the zygote has only one copy (<strong>monosomy</strong>). Most such zygotes do not survive, but some do:</p>
+
+<table>
+  <tr><th>Condition</th><th>Karyotype</th><th>Cause</th><th>Main features</th></tr>
+  <tr><td>Down&rsquo;s syndrome (trisomy 21) &mdash; polysomy</td><td>47 chromosomes, three copies of chromosome 21</td><td>Usually non-disjunction of chromosome 21 during meiosis, most often in the mother; the risk rises with maternal age</td><td>Learning difficulties, characteristic facial features, higher risk of heart defects</td></tr>
+  <tr><td>Turner&rsquo;s syndrome &mdash; monosomy</td><td>45 chromosomes, a single X (45,X)</td><td>A gamete lacking a sex chromosome fuses with an X-bearing gamete</td><td>Female; short stature; ovaries do not develop normally, so usually infertile</td></tr>
+</table>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 250" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Non-disjunction of One Chromosome Pair</text>
+  <!-- Left: in meiosis I -->
+  <text x="150" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">In meiosis I</text>
+  <circle cx="150" cy="80" r="22" fill="#EFF6FF" stroke="#1a73e8"/>
+  <rect x="140" y="68" width="5" height="24" fill="#DC2626"/><rect x="155" y="68" width="5" height="24" fill="#1a73e8"/>
+  <text x="60" y="84" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">pair fails</text><text x="60" y="96" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">to separate</text>
+  <line x1="135" y1="102" x2="105" y2="130" stroke="#1a1a2e" stroke-width="0.8"/>
+  <line x1="165" y1="102" x2="195" y2="130" stroke="#1a1a2e" stroke-width="0.8"/>
+  <circle cx="95" cy="150" r="18" fill="#EFF6FF" stroke="#1a73e8"/>
+  <rect x="87" y="140" width="4" height="20" fill="#DC2626"/><rect x="98" y="140" width="4" height="20" fill="#1a73e8"/>
+  <circle cx="205" cy="150" r="18" fill="#EFF6FF" stroke="#1a73e8"/>
+  <!-- gametes -->
+  <g font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="middle">
+    <circle cx="60" cy="205" r="14" fill="#DCFCE7" stroke="#16A34A"/><rect x="55" y="198" width="3" height="14" fill="#DC2626"/><rect x="62" y="198" width="3" height="14" fill="#1a73e8"/>
+    <circle cx="115" cy="205" r="14" fill="#DCFCE7" stroke="#16A34A"/><rect x="110" y="198" width="3" height="14" fill="#DC2626"/><rect x="117" y="198" width="3" height="14" fill="#1a73e8"/>
+    <circle cx="185" cy="205" r="14" fill="#FEE2E2" stroke="#DC2626"/>
+    <circle cx="240" cy="205" r="14" fill="#FEE2E2" stroke="#DC2626"/>
+    <text x="60" y="235">n + 1</text><text x="115" y="235">n + 1</text>
+    <text x="185" y="235">n &#8722; 1</text><text x="240" y="235">n &#8722; 1</text>
+  </g>
+  <line x1="95" y1="168" x2="65" y2="190" stroke="#1a1a2e" stroke-width="0.8"/><line x1="95" y1="168" x2="112" y2="190" stroke="#1a1a2e" stroke-width="0.8"/>
+  <line x1="205" y1="168" x2="188" y2="190" stroke="#1a1a2e" stroke-width="0.8"/><line x1="205" y1="168" x2="236" y2="190" stroke="#1a1a2e" stroke-width="0.8"/>
+  <text x="150" y="248" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">all 4 gametes abnormal</text>
+  <!-- Right: in meiosis II -->
+  <text x="450" y="45" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1e3a5f">In meiosis II</text>
+  <circle cx="450" cy="80" r="22" fill="#EFF6FF" stroke="#1a73e8"/>
+  <rect x="440" y="68" width="5" height="24" fill="#DC2626"/><rect x="455" y="68" width="5" height="24" fill="#1a73e8"/>
+  <text x="360" y="84" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">pair separates</text><text x="360" y="96" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">normally</text>
+  <line x1="435" y1="102" x2="405" y2="130" stroke="#1a1a2e" stroke-width="0.8"/>
+  <line x1="465" y1="102" x2="495" y2="130" stroke="#1a1a2e" stroke-width="0.8"/>
+  <circle cx="395" cy="150" r="18" fill="#EFF6FF" stroke="#1a73e8"/><rect x="393" y="140" width="4" height="20" fill="#DC2626"/>
+  <circle cx="505" cy="150" r="18" fill="#EFF6FF" stroke="#1a73e8"/><rect x="503" y="140" width="4" height="20" fill="#1a73e8"/>
+  <text x="560" y="140" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">chromatids</text><text x="560" y="152" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">fail to</text><text x="560" y="164" text-anchor="middle" font-family="system-ui" font-size="9" fill="#666">separate</text>
+  <g font-family="system-ui" font-size="10" fill="#1a1a2e" text-anchor="middle">
+    <circle cx="360" cy="205" r="14" fill="#DCFCE7" stroke="#16A34A"/><rect x="359" y="198" width="3" height="14" fill="#DC2626"/>
+    <circle cx="415" cy="205" r="14" fill="#DCFCE7" stroke="#16A34A"/><rect x="414" y="198" width="3" height="14" fill="#DC2626"/>
+    <circle cx="485" cy="205" r="14" fill="#DCFCE7" stroke="#16A34A"/><rect x="480" y="198" width="3" height="14" fill="#1a73e8"/><rect x="487" y="198" width="3" height="14" fill="#1a73e8"/>
+    <circle cx="540" cy="205" r="14" fill="#FEE2E2" stroke="#DC2626"/>
+    <text x="360" y="235">n</text><text x="415" y="235">n</text><text x="450" y="248" font-size="9" fill="#666">2 normal, 2 abnormal</text>
+    <text x="485" y="235">n + 1</text><text x="540" y="235">n &#8722; 1</text>
+  </g>
+  <line x1="395" y1="168" x2="365" y2="190" stroke="#1a1a2e" stroke-width="0.8"/><line x1="395" y1="168" x2="412" y2="190" stroke="#1a1a2e" stroke-width="0.8"/>
+  <line x1="505" y1="168" x2="488" y2="190" stroke="#1a1a2e" stroke-width="0.8"/><line x1="505" y1="168" x2="536" y2="190" stroke="#1a1a2e" stroke-width="0.8"/>
+</svg>
+</div>
+
+<p>Non-disjunction in meiosis I makes all four gametes abnormal (two n + 1, two n &minus; 1); in meiosis II, only the two gametes from the affected cell are abnormal (one n + 1, one n &minus; 1), and the other two are normal. (Each bar in the diagram stands for one chromosome of the pair; the chromatids are not drawn separately.)</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Non-disjunction is a <em>chromosome number</em> mutation; a translocation is a <em>chromosome structure</em> mutation. When asked to <em>describe</em> non-disjunction, name the stage (anaphase I or II), say what fails to separate (homologous chromosomes or sister chromatids), and state the resulting gametes (n + 1 and n &minus; 1).
+</div>
+
+<!-- ============================================================ -->
+<h2>2.4 Sexual Reproduction in Mammals</h2>
+<!-- ============================================================ -->
+
+<h3>2.4 (i) Spermatogenesis and Oogenesis</h3>
+
+<p>Gametogenesis in both sexes follows the same pattern: diploid germ cells multiply by mitosis, grow, and then undergo meiosis to produce haploid cells. The differences lie in timing and in how the cytoplasm is shared.</p>
+
+<p><strong>Spermatogenesis</strong> takes place in the walls of the seminiferous tubules of the testes, supported and nourished by Sertoli cells:</p>
+<ol>
+  <li>Diploid <strong>spermatogonia</strong> near the outer edge of the tubule divide repeatedly by mitosis.</li>
+  <li>Some grow into diploid <strong>primary spermatocytes</strong>.</li>
+  <li>Each primary spermatocyte completes meiosis I to form two haploid <strong>secondary spermatocytes</strong>.</li>
+  <li>Meiosis II gives four haploid <strong>spermatids</strong>.</li>
+  <li>Spermatids mature into <strong>spermatozoa</strong>, developing an acrosome, a mitochondria-rich midpiece and a flagellum, and they are released into the lumen of the tubule.</li>
+</ol>
+<p>Sperm production continues throughout life from puberty onwards, producing millions of sperm every day.</p>
+
+<p><strong>Oogenesis</strong> takes place in the ovaries:</p>
+<ol>
+  <li>Before birth, diploid <strong>oogonia</strong> in the fetal ovary divide by mitosis and grow into diploid <strong>primary oocytes</strong>, each surrounded by follicle cells (a primary follicle).</li>
+  <li>The primary oocytes start meiosis I but stop in prophase I. A baby girl is born with all the primary oocytes she will ever have.</li>
+  <li>From puberty, in each menstrual cycle, a follicle develops and its primary oocyte completes meiosis I. The cytoplasm divides unequally, forming a large haploid <strong>secondary oocyte</strong> and a small <strong>first polar body</strong>.</li>
+  <li>The secondary oocyte starts meiosis II but stops at metaphase II. It is released from the ovary at ovulation.</li>
+  <li>Meiosis II is completed only if a sperm enters, producing the <strong>ovum</strong> and a <strong>second polar body</strong>. Polar bodies eventually degenerate.</li>
+</ol>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 270" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Spermatogenesis and Oogenesis Compared</text>
+  <g font-family="system-ui" font-size="10" fill="#1a1a2e">
+    <text x="150" y="45" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a73e8">Spermatogenesis</text>
+    <text x="450" y="45" text-anchor="middle" font-size="12" font-weight="bold" fill="#DC2626">Oogenesis</text>
+    <!-- row labels -->
+    <text x="300" y="72" text-anchor="middle" fill="#666">mitosis</text>
+    <text x="300" y="117" text-anchor="middle" fill="#666">growth</text>
+    <text x="300" y="162" text-anchor="middle" fill="#666">meiosis I</text>
+    <text x="300" y="207" text-anchor="middle" fill="#666">meiosis II</text>
+    <!-- sperm column -->
+    <circle cx="150" cy="70" r="11" fill="#DBEAFE" stroke="#1a73e8"/><text x="132" y="74" text-anchor="end">Spermatogonium (2n)</text>
+    <line x1="150" y1="81" x2="150" y2="101" stroke="#1a1a2e" stroke-width="0.8"/>
+    <circle cx="150" cy="115" r="14" fill="#DBEAFE" stroke="#1a73e8"/><text x="130" y="112" text-anchor="end">Primary</text><text x="130" y="124" text-anchor="end">spermatocyte (2n)</text>
+    <line x1="140" y1="128" x2="120" y2="150" stroke="#1a1a2e" stroke-width="0.8"/><line x1="160" y1="128" x2="180" y2="150" stroke="#1a1a2e" stroke-width="0.8"/>
+    <circle cx="115" cy="160" r="10" fill="#DBEAFE" stroke="#1a73e8"/><circle cx="185" cy="160" r="10" fill="#DBEAFE" stroke="#1a73e8"/>
+    <text x="98" y="158" text-anchor="end">Secondary</text><text x="98" y="170" text-anchor="end">spermatocytes (n)</text>
+    <circle cx="80" cy="210" r="8" fill="#DBEAFE" stroke="#1a73e8"/><circle cx="125" cy="210" r="8" fill="#DBEAFE" stroke="#1a73e8"/><circle cx="175" cy="210" r="8" fill="#DBEAFE" stroke="#1a73e8"/><circle cx="220" cy="210" r="8" fill="#DBEAFE" stroke="#1a73e8"/>
+    <line x1="112" y1="170" x2="84" y2="202" stroke="#1a1a2e" stroke-width="0.8"/><line x1="118" y1="170" x2="123" y2="202" stroke="#1a1a2e" stroke-width="0.8"/>
+    <line x1="182" y1="170" x2="177" y2="202" stroke="#1a1a2e" stroke-width="0.8"/><line x1="188" y1="170" x2="216" y2="202" stroke="#1a1a2e" stroke-width="0.8"/>
+    <text x="150" y="238" text-anchor="middle">4 spermatids (n)</text>
+    <text x="150" y="252" text-anchor="middle" fill="#666">mature into 4 sperm</text>
+    <!-- egg column -->
+    <circle cx="450" cy="70" r="11" fill="#FEE2E2" stroke="#DC2626"/><text x="475" y="74">Oogonium (2n)</text>
+    <line x1="450" y1="81" x2="450" y2="97" stroke="#1a1a2e" stroke-width="0.8"/>
+    <circle cx="450" cy="115" r="18" fill="#FEE2E2" stroke="#DC2626"/><text x="474" y="112">Primary oocyte (2n)</text><text x="474" y="124" fill="#666">arrested in prophase I</text>
+    <line x1="445" y1="133" x2="435" y2="145" stroke="#1a1a2e" stroke-width="0.8"/><line x1="462" y1="130" x2="505" y2="152" stroke="#1a1a2e" stroke-width="0.8"/>
+    <circle cx="430" cy="162" r="16" fill="#FEE2E2" stroke="#DC2626"/><circle cx="510" cy="158" r="5" fill="#FEE2E2" stroke="#DC2626"/>
+    <text x="360" y="166" text-anchor="middle">Secondary</text><text x="360" y="178" text-anchor="middle">oocyte (n)</text>
+    <text x="545" y="162" text-anchor="middle">1st polar</text><text x="545" y="174" text-anchor="middle">body</text>
+    <line x1="430" y1="178" x2="430" y2="195" stroke="#1a1a2e" stroke-width="0.8"/><line x1="440" y1="175" x2="485" y2="205" stroke="#1a1a2e" stroke-width="0.8"/>
+    <circle cx="430" cy="212" r="16" fill="#FEE2E2" stroke="#DC2626"/><circle cx="490" cy="210" r="5" fill="#FEE2E2" stroke="#DC2626"/>
+    <text x="430" y="242" text-anchor="middle">Ovum (n)</text>
+    <text x="500" y="230" text-anchor="start">2nd polar body</text>
+    <text x="450" y="258" text-anchor="middle" fill="#666">meiosis II completed only after sperm entry</text>
+  </g>
+</svg>
+</div>
+
+<table>
+  <tr><th>Feature</th><th>Spermatogenesis</th><th>Oogenesis</th></tr>
+  <tr><td>Where</td><td>Seminiferous tubules of testes</td><td>Ovaries (meiosis II completed in the oviduct after fertilisation)</td></tr>
+  <tr><td>Functional gametes per meiosis</td><td>Four sperm</td><td>One ovum (plus polar bodies)</td></tr>
+  <tr><td>Division of cytoplasm</td><td>Equal</td><td>Unequal, so the ovum keeps most of the cytoplasm and food reserves</td></tr>
+  <tr><td>Timing</td><td>Continuous from puberty</td><td>Begins before birth; pauses; one secondary oocyte usually released per cycle from puberty to menopause</td></tr>
+  <tr><td>Gamete size and motility</td><td>Small, motile</td><td>Large, not motile</td></tr>
+</table>
+
+<h3>2.4 (ii) Fertilisation</h3>
+
+<p>Fertilisation in humans normally takes place in the oviduct. The sequence, from first contact to the fusion of nuclei, is:</p>
+<ol>
+  <li><strong>Capacitation:</strong> while in the female reproductive tract, chemical changes to the sperm cell surface membrane (such as removal of cholesterol and glycoproteins) make the sperm more active and able to undergo the acrosome reaction.</li>
+  <li><strong>Passing the follicle cells:</strong> the sperm swims through the layer of follicle cells (corona radiata) around the secondary oocyte.</li>
+  <li><strong>Acrosome reaction:</strong> when the sperm head binds to receptors on the <strong>zona pellucida</strong> (a glycoprotein layer around the oocyte), the acrosome releases hydrolytic (protease) enzymes by exocytosis. These digest a path through the zona pellucida.</li>
+  <li><strong>Fusion of membranes:</strong> the sperm cell surface membrane fuses with the oocyte membrane, and the sperm nucleus enters the oocyte cytoplasm.</li>
+  <li><strong>Cortical reaction:</strong> cortical granules just under the oocyte membrane release their contents by exocytosis into the space beneath the zona pellucida. Enzymes change the zona so that it hardens and its sperm receptors are destroyed, preventing further sperm entering (preventing <strong>polyspermy</strong>).</li>
+  <li><strong>Completion of meiosis II:</strong> sperm entry triggers the secondary oocyte to finish meiosis II, forming the ovum nucleus and the second polar body.</li>
+  <li><strong>Fusion of nuclei:</strong> the haploid male and female nuclei move together and fuse, forming a diploid <strong>zygote</strong>.</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Remember the correct order: acrosome reaction <em>then</em> membrane fusion <em>then</em> cortical reaction. The acrosome reaction happens in the <em>sperm</em>; the cortical reaction happens in the <em>oocyte</em>. The cell released at ovulation is a secondary oocyte, not a mature ovum. The cortical reaction does not "kill" other sperm &mdash; it changes the zona pellucida so that no more can bind or get through.
+</div>
+
+<h3>2.4 (iii) Early Development to the Blastocyst</h3>
+
+<p>After fertilisation the zygote moves down the oviduct towards the uterus, dividing by mitosis as it goes. These first divisions are called <strong>cleavage</strong>: the cells do not grow between divisions, so the embryo stays about the same overall size while its cells get smaller.</p>
+<ul>
+  <li>The zygote divides to form 2, then 4, then 8 cells, and so on.</li>
+  <li>After roughly 3&ndash;4 days a solid ball of about 16 or more cells, the <strong>morula</strong>, reaches the uterus.</li>
+  <li>By about day 5 fluid collects inside it and a hollow <strong>blastocyst</strong> forms, with three parts:
+    <ul>
+      <li>an outer layer of cells, the <strong>trophoblast</strong>, which will help implant the embryo and form part of the placenta;</li>
+      <li>the <strong>inner cell mass</strong>, a cluster of cells at one side that will develop into the embryo (these are embryonic stem cells);</li>
+      <li>a fluid-filled cavity (the <strong>blastocoel</strong>).</li>
+    </ul>
+  </li>
+  <li>The blastocyst breaks out of the zona pellucida and, about 6&ndash;7 days after fertilisation, begins to <strong>implant</strong> in the endometrium (lining) of the uterus.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>2.5 Sexual Reproduction in Plants</h2>
+<!-- ============================================================ -->
+
+<h3>2.5 (i) Formation of Pollen Grains and the Embryo Sac</h3>
+
+<p><strong>Pollen grains (male gametophytes) in the anther:</strong></p>
+<ol>
+  <li>Each anther contains four pollen sacs filled with diploid <strong>pollen mother cells</strong>.</li>
+  <li>Each pollen mother cell divides by meiosis to form a <strong>tetrad</strong> of four haploid cells (microspores).</li>
+  <li>The tetrad cells separate and each develops a tough, resistant outer wall (<strong>exine</strong>, made of sporopollenin) and a thin inner wall (<strong>intine</strong>).</li>
+  <li>The haploid nucleus divides by <strong>mitosis</strong> to give a <strong>tube nucleus</strong> and a <strong>generative nucleus</strong>. The pollen grain is now mature.</li>
+  <li>The anther wall dries and splits (dehiscence), releasing the pollen.</li>
+</ol>
+
+<p><strong>The embryo sac (female gametophyte) in the ovule:</strong></p>
+<ol>
+  <li>Inside each ovule, within the nucellus and surrounded by the integuments (which leave a small gap, the <strong>micropyle</strong>), a diploid <strong>megaspore mother cell</strong> divides by meiosis, producing four haploid cells.</li>
+  <li>Three of these degenerate; the surviving <strong>megaspore</strong> enlarges.</li>
+  <li>Its nucleus divides by mitosis three times, giving <strong>eight haploid nuclei</strong>.</li>
+  <li>These become arranged as: the <strong>egg cell</strong> and two <strong>synergids</strong> at the micropyle end; three <strong>antipodal cells</strong> at the opposite end; and two <strong>polar nuclei</strong> in the centre (in the central cell). This is the mature embryo sac.</li>
+</ol>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In flowering plants meiosis produces spores, and it is <em>mitosis</em> that then produces the gamete nuclei. Do not write that the generative nucleus or egg cell is made by meiosis. The pollen grain is not itself a gamete; the male gametes are the two nuclei formed from the generative nucleus.
+</div>
+
+<h3>2.5 (ii) How the Male Nuclei Reach the Embryo Sac</h3>
+
+<ol>
+  <li><strong>Pollination</strong> transfers pollen from an anther to a compatible stigma (by insects or wind, for example).</li>
+  <li>The pollen grain absorbs water and sugars from the sticky stigma surface and <strong>germinates</strong>: a <strong>pollen tube</strong> grows out through a pore (aperture) in the exine.</li>
+  <li>The tube grows down through the style. Its tip secretes <strong>digestive (hydrolytic) enzymes</strong> which break down the tissues of the style; the products of digestion are absorbed and used for growth of the tube.</li>
+  <li>The <strong>tube nucleus</strong> stays near the growing tip and is thought to control the growth of the tube, by controlling the production of the enzymes and proteins needed.</li>
+  <li>The tube grows towards the ovule, guided by chemical signals released from the ovule (chemotropism).</li>
+  <li>As it grows, the <strong>generative nucleus divides by mitosis</strong> to form <strong>two male nuclei</strong> (male gametes), which follow the tube nucleus down the tube.</li>
+  <li>The tube enters the ovule through the micropyle; the tube nucleus degenerates and the tip of the tube bursts, releasing the two male nuclei into the embryo sac.</li>
+</ol>
+
+<div class="definition">
+  <strong>Core Practical 4 (CP4):</strong> Investigate how sucrose concentration affects pollen tube growth or germination. For the full method, see <a href="core_practicals.html#cp4">Core Practicals &mdash; CP4</a>.
+</div>
+
+<p>In CP4, the sucrose concentration is the independent variable; pollen tube length (or the percentage of grains that have germinated) is the dependent variable, measured using a calibrated eyepiece graticule after a fixed time. Plotting the two variables on a graph shows the trend. Sucrose supplies respiratory substrate and affects the water potential of the medium, so if the concentration is too high the pollen loses water by osmosis and tube growth falls.</p>
+
+<h3>2.5 (iii) Double Fertilisation</h3>
+
+<div class="definition">
+  <strong>Double fertilisation:</strong> The process, unique to flowering plants, in which two separate fusions take place in the embryo sac, each involving one of the two male nuclei from a single pollen tube.
+</div>
+
+<ul>
+  <li>One male nucleus (n) fuses with the <strong>egg cell nucleus</strong> (n) to form a <strong>diploid zygote</strong> (2n), which develops into the embryo (plumule, radicle and cotyledons).</li>
+  <li>The other male nucleus (n) fuses with the <strong>two polar nuclei</strong> (n + n) to form a <strong>triploid endosperm nucleus</strong> (3n), which divides repeatedly to form the <strong>endosperm</strong>, a food store (starch, protein, lipids) for the developing embryo.</li>
+</ul>
+<p>After fertilisation the ovule develops into the seed and its integuments become the seed coat (testa); the ovary develops into the fruit.</p>
+
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 600 280" style="max-width:600px; width:100%; height:auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="300" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Pollen Tube Entering the Ovule and Double Fertilisation</text>
+  <!-- ovule integuments -->
+  <path d="M250,250 C140,250 140,60 250,60 C360,60 360,250 300,250" fill="#DCFCE7" stroke="#16A34A" stroke-width="2"/>
+  <!-- micropyle gap at bottom between x=270 and 300 -->
+  <!-- embryo sac -->
+  <ellipse cx="275" cy="150" rx="55" ry="80" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+  <!-- antipodals at top -->
+  <circle cx="260" cy="88" r="7" fill="#E5E7EB" stroke="#666"/><circle cx="275" cy="82" r="7" fill="#E5E7EB" stroke="#666"/><circle cx="290" cy="88" r="7" fill="#E5E7EB" stroke="#666"/>
+  <!-- polar nuclei -->
+  <circle cx="265" cy="145" r="7" fill="#FECACA" stroke="#DC2626"/><circle cx="283" cy="145" r="7" fill="#FECACA" stroke="#DC2626"/>
+  <!-- egg and synergids near micropyle -->
+  <circle cx="275" cy="205" r="10" fill="#FCA5A5" stroke="#DC2626" stroke-width="1.3"/>
+  <circle cx="257" cy="215" r="6" fill="#E5E7EB" stroke="#666"/><circle cx="293" cy="215" r="6" fill="#E5E7EB" stroke="#666"/>
+  <!-- pollen tube -->
+  <path d="M285,275 L285,250 Q285,235 278,225" fill="none" stroke="#1a73e8" stroke-width="5" opacity="0.5"/>
+  <circle cx="283" cy="262" r="3" fill="#1a73e8"/><circle cx="283" cy="248" r="3" fill="#1a73e8"/>
+  <!-- labels left -->
+  <g font-family="system-ui" font-size="10" fill="#1a1a2e">
+    <line x1="253" y1="88" x2="150" y2="60" stroke="#1a1a2e" stroke-width="0.7"/><text x="30" y="58">3 antipodal cells (n)</text>
+    <line x1="258" y1="145" x2="130" y2="130" stroke="#1a1a2e" stroke-width="0.7"/><text x="30" y="128">2 polar nuclei (n + n)</text>
+    <line x1="251" y1="215" x2="130" y2="215" stroke="#1a1a2e" stroke-width="0.7"/><text x="30" y="213">Synergids (n)</text>
+    <line x1="160" y1="170" x2="120" y2="175" stroke="#1a1a2e" stroke-width="0.7"/><text x="30" y="178">Integuments</text>
+    <line x1="287" y1="205" x2="380" y2="200" stroke="#1a1a2e" stroke-width="0.7"/><text x="384" y="203">Egg cell (n)</text>
+    <line x1="330" y1="120" x2="380" y2="110" stroke="#1a1a2e" stroke-width="0.7"/><text x="384" y="113">Embryo sac</text>
+    <line x1="289" y1="262" x2="380" y2="262" stroke="#1a1a2e" stroke-width="0.7"/><text x="384" y="258">Pollen tube with two</text><text x="384" y="270">male nuclei, via micropyle</text>
+  </g>
+  <!-- outcome box -->
+  <rect x="384" y="140" width="200" height="46" rx="6" fill="#EFF6FF" stroke="#1a73e8"/>
+  <text x="484" y="158" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">male + egg &#8594; zygote (2n)</text>
+  <text x="484" y="176" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">male + 2 polar &#8594; endosperm (3n)</text>
+</svg>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> "Double fertilisation" does <em>not</em> mean two pollen grains or two eggs. One pollen tube delivers two male nuclei: one fertilises the egg (zygote, 2n), the other fuses with the two polar nuclei (endosperm, 3n). If a question asks you to <em>state</em> the ploidy of each, give the number (n, 2n or 3n) with no need for explanation; if it asks you to <em>explain</em> why the endosperm is triploid, say which three haploid nuclei fused.
+</div>
+
+<!-- ============================================================ -->
+<h2>Command Words and Common Misconceptions</h2>
+<!-- ============================================================ -->
+
+<table>
+  <tr><th>Command word</th><th>What it asks for</th><th>Example in this topic</th></tr>
+  <tr><td>State / Give / Name</td><td>A short answer; no explanation needed</td><td>Name the enzyme that makes DNA from RNA in HIV</td></tr>
+  <tr><td>Describe</td><td>Say what happens or what something is like, in a logical order; no reasons needed</td><td>Describe what happens during anaphase I</td></tr>
+  <tr><td>Explain</td><td>Give reasons or mechanisms (use "because", "so", "therefore")</td><td>Explain why penicillin is more effective against Gram positive bacteria</td></tr>
+  <tr><td>Calculate</td><td>Get a numerical answer, showing working and units</td><td>Calculate the actual length of a cell from its image and magnification</td></tr>
+  <tr><td>Compare</td><td>Give similarities <em>and</em> differences, each point linked to both items</td><td>Compare spermatogenesis and oogenesis</td></tr>
+  <tr><td>Evaluate / Discuss</td><td>Consider strengths and weaknesses or both sides, then reach a judgement</td><td>Evaluate the use of untested drugs during the Ebola epidemic</td></tr>
+  <tr><td>Deduce / Suggest</td><td>Use the information given, or apply knowledge to a new situation</td><td>Suggest why a stained root tip shows few cells in anaphase</td></tr>
+</table>
+
+<ul>
+  <li><strong>"Viruses are very small bacteria."</strong> Viruses are not cells, have no metabolism and cannot be killed by antibiotics.</li>
+  <li><strong>"Magnification and resolution are the same thing."</strong> Magnification enlarges; resolution determines how much detail is visible.</li>
+  <li><strong>"DNA is copied in prophase."</strong> It is copied in S phase of interphase.</li>
+  <li><strong>"Meiosis produces four identical cells."</strong> The four haploid cells are genetically different.</li>
+  <li><strong>"The egg is released as a mature ovum."</strong> A secondary oocyte is released; it completes meiosis II only when a sperm enters.</li>
+  <li><strong>"The pollen grain fertilises the egg."</strong> A male nucleus, formed by mitosis of the generative nucleus, fertilises the egg.</li>
+</ul>
+
+<!-- ============================================================ -->
+<h2>Key Terms Checklist</h2>
+<!-- ============================================================ -->
+
+<p>Check that you can define and use each term:</p>
+
+<table>
+  <tr><th>Section</th><th>Key terms</th></tr>
+  <tr><td>2.1 Cells</td><td>&#9744; cell theory &nbsp; &#9744; tissue, organ, organ system &nbsp; &#9744; nucleoid &nbsp; &#9744; plasmid &nbsp; &#9744; 70S / 80S ribosome &nbsp; &#9744; peptidoglycan &nbsp; &#9744; Gram positive / Gram negative &nbsp; &#9744; outer membrane (lipopolysaccharide) &nbsp; &#9744; nucleolus &nbsp; &#9744; rough and smooth ER &nbsp; &#9744; Golgi apparatus &nbsp; &#9744; lysosome &nbsp; &#9744; centriole &nbsp; &#9744; tonoplast &nbsp; &#9744; magnification &nbsp; &#9744; resolution &nbsp; &#9744; TEM / SEM &nbsp; &#9744; stain &nbsp; &#9744; artefact &nbsp; &#9744; eyepiece graticule &nbsp; &#9744; stage micrometer</td></tr>
+  <tr><td>2.2 Viruses</td><td>&#9744; capsid &nbsp; &#9744; envelope &nbsp; &#9744; bacteriophage &nbsp; &#9744; &lambda; phage &nbsp; &#9744; tobacco mosaic virus &nbsp; &#9744; Ebola &nbsp; &#9744; retrovirus &nbsp; &#9744; reverse transcriptase &nbsp; &#9744; provirus / prophage &nbsp; &#9744; lytic cycle &nbsp; &#9744; latency (lysogeny) &nbsp; &#9744; antiviral &nbsp; &#9744; contact tracing &nbsp; &#9744; isolation / quarantine &nbsp; &#9744; informed consent</td></tr>
+  <tr><td>2.3 Cell division</td><td>&#9744; interphase (G1, S, G2) &nbsp; &#9744; sister chromatid &nbsp; &#9744; centromere &nbsp; &#9744; spindle &nbsp; &#9744; prophase, metaphase, anaphase, telophase &nbsp; &#9744; cytokinesis &nbsp; &#9744; cell plate &nbsp; &#9744; mitotic index &nbsp; &#9744; meristem &nbsp; &#9744; haploid / diploid &nbsp; &#9744; homologous chromosomes &nbsp; &#9744; bivalent &nbsp; &#9744; chiasma &nbsp; &#9744; crossing over &nbsp; &#9744; independent assortment &nbsp; &#9744; recombination &nbsp; &#9744; translocation &nbsp; &#9744; non-disjunction &nbsp; &#9744; polysomy / trisomy &nbsp; &#9744; monosomy &nbsp; &#9744; Down&rsquo;s syndrome &nbsp; &#9744; Turner&rsquo;s syndrome</td></tr>
+  <tr><td>2.4 Mammals</td><td>&#9744; spermatogonium &nbsp; &#9744; primary / secondary spermatocyte &nbsp; &#9744; spermatid &nbsp; &#9744; oogonium &nbsp; &#9744; primary / secondary oocyte &nbsp; &#9744; polar body &nbsp; &#9744; follicle &nbsp; &#9744; capacitation &nbsp; &#9744; zona pellucida &nbsp; &#9744; acrosome reaction &nbsp; &#9744; cortical reaction &nbsp; &#9744; polyspermy &nbsp; &#9744; zygote &nbsp; &#9744; cleavage &nbsp; &#9744; morula &nbsp; &#9744; blastocyst &nbsp; &#9744; trophoblast &nbsp; &#9744; inner cell mass &nbsp; &#9744; implantation</td></tr>
+  <tr><td>2.5 Plants</td><td>&#9744; anther &nbsp; &#9744; pollen mother cell &nbsp; &#9744; tetrad &nbsp; &#9744; exine / intine &nbsp; &#9744; tube nucleus &nbsp; &#9744; generative nucleus &nbsp; &#9744; male nuclei &nbsp; &#9744; ovule &nbsp; &#9744; micropyle &nbsp; &#9744; megaspore mother cell &nbsp; &#9744; embryo sac &nbsp; &#9744; egg cell &nbsp; &#9744; synergids &nbsp; &#9744; antipodal cells &nbsp; &#9744; polar nuclei &nbsp; &#9744; pollen tube &nbsp; &#9744; double fertilisation &nbsp; &#9744; endosperm (3n)</td></tr>
+</table>
+
+</div>
+</body>
+</html>
