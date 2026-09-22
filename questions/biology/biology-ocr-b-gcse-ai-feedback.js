@@ -79,7 +79,7 @@ const BIOLOGY_OCR_B_GCSE_AI_FEEDBACK = {
     },
   ],
 
-  /* ─────────────────── B2.6 How are non-communicable diseases treated? ─────────────────── */
+  /* ─────────────────── B2.6 How can we treat disease? ─────────────────── */
   'B2.6': [
     {
       q: 'Discuss treatments available for non-communicable diseases such as cardiovascular disease and cancer.',
