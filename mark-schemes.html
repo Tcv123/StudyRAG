@@ -610,7 +610,7 @@ window.toggleQuestion = function(qi) {
 // publishes them itself" link card. Further Maths and the Maths/FM model
 // answers (keyed to the old questions) aren't loaded at all.
 function verifiedMathsEntry(id) {
-  const e = window.MATHS_QUESTIONS && window.MATHS_QUESTIONS[id];
+  const e = (window.MATHS_QUESTIONS && window.MATHS_QUESTIONS[id]) || (window.FM_QUESTIONS && window.FM_QUESTIONS[id]);
   return e && e.verified ? e : null;
 }
 
@@ -920,6 +920,7 @@ function buildPicker(userSubs) {
   await Promise.all([
     ['CS_MODEL_ANSWERS', 'model-answers-cs.js'],
     ['MATHS_QUESTIONS', 'maths-questions.js'],
+    ['FM_QUESTIONS', 'further-maths-questions.js'],
     ['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js'],
     ['BIO_MODEL_ANSWERS', 'model-answers-biology.js'],
     ['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js'],
