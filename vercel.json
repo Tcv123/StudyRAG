@@ -1,6 +1,8 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "buildCommand": "node scripts/check-bank.js",
+  "outputDirectory": ".",
   "redirects": [
     {
       "source": "/index.html",
