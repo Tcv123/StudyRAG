@@ -791,6 +791,7 @@ function buildPicker(userSubs) {
     const partsWithMs = parts.filter(p => p.markScheme);
     const qpBtn = paper.qpUrl
       ? `<a class="btn-qp-pdf" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener">📄 Question paper PDF</a>`
+        + (paper.insertUrl ? `<a class="btn-qp-pdf" href="${esc(paper.insertUrl)}" target="_blank" rel="noopener">📎 Insert PDF</a>` : '')
       : '';
     const pdfBtn = paper.msUrl
       ? `<a class="btn-ms-pdf" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Full MS PDF</a>`

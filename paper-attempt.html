@@ -722,10 +722,16 @@
     }
     function qpButtonHtml(cls) {
       if (paper.qpUrl) {
-        return `<a class="${cls}" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener">📄 Open question paper PDF</a>`;
+        return `<a class="${cls}" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener">📄 Open question paper PDF</a>` + insertButtonHtml(cls);
       }
       const tip = paper.qpNote || 'Question paper not publicly available.';
       return `<span class="${cls}" style="opacity:0.55;cursor:not-allowed;" title="${esc(tip)}">📄 QP unavailable</span>`;
+    }
+    // Some boards print figures in a separate insert / resource booklet.
+    function insertButtonHtml(cls) {
+      return paper.insertUrl
+        ? `<a class="${cls}" href="${esc(paper.insertUrl)}" target="_blank" rel="noopener">📎 Open insert / resource booklet PDF</a>`
+        : '';
     }
     function msButtonHtml(cls) {
       if (paper.msUrl) {
@@ -840,7 +846,7 @@
               <div class="step-desc">Print it, or open it on a second screen.</div>
               <div class="step-action">
                 ${paper.qpUrl
-                  ? `<a class="step-link" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener">Open question paper PDF →</a>`
+                  ? `<a class="step-link" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener">Open question paper PDF →</a>${paper.insertUrl ? `<br><a class="step-link" href="${esc(paper.insertUrl)}" target="_blank" rel="noopener">Open insert / resource booklet →</a>` : ''}`
                   : `<span class="step-link muted" title="${esc(paper.qpNote || 'Question paper not publicly available.')}">QP unavailable</span>`}
               </div>
             </div>
@@ -1601,6 +1607,7 @@ builtins.input = __qbq_input
               ${part.choice ? `<span class="qbq-choice-badge">Choice · answer ${part.choice.choose} of ${part.choice.optionCount}</span>` : ''}
               ${phaseChip}
               ${paper.qpUrl ? `<a class="qbq-qp-link" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener" title="Open the question paper PDF — needed to see figures and graphs">📄 Question paper PDF</a>` : ''}
+              ${paper.insertUrl ? `<a class="qbq-qp-link" href="${esc(paper.insertUrl)}" target="_blank" rel="noopener" title="Figures for this paper are printed in a separate insert / resource booklet">📎 Insert PDF</a>` : ''}
             </div>
             ${choiceHtml}
             ${scenarioHtml}
