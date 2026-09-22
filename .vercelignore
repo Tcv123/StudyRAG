@@ -1,0 +1,9 @@
+# Kept out of the deployment. With "outputDirectory": "." in vercel.json the
+# whole repo root is served, so anything not listed here is public on the site.
+# Nothing the pages, api/ functions or the check-bank build step use lives here.
+
+# SQL run by hand in the Supabase editor, not by the app.
+/db
+
+# Claude Code settings, hooks and worktrees.
+/.claude
