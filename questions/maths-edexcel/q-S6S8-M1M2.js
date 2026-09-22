@@ -89,8 +89,8 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
         answer: 0
       },
       {
-        q: 'Given \\(\\sum x = 60\\), \\(\\sum y = 90\\), \\(\\sum x^2 = 500\\), \\(\\sum xy = 640\\), \\(n = 8\\). Calculate \\(S_{xy}\\).',
-        options: ['\\(-32.5\\)', '\\(32.5\\)', '\\(640\\)', '\\(-640\\)'],
+        q: "Given \\(\\sum x = 60\\), \\(\\sum y = 90\\), \\(\\sum x^2 = 500\\), \\(\\sum xy = 640\\), \\(n = 8\\). Calculate \\(S_{xy}\\).",
+        options: ["\\(-35\\)","\\(35\\)","\\(640\\)","\\(-640\\)"],
         answer: 0
       },
       {
@@ -136,12 +136,12 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
     ],
     red: [
       {
-        q: 'For \\(n = 7\\), \\(\\sum x = 35\\), \\(\\sum y = 56\\), \\(\\sum x^2 = 203\\), \\(\\sum y^2 = 480\\), \\(\\sum xy = 312\\). Calculate \\(r\\) correct to 3 s.f.',
-        options: ['\\(0.820\\)','\\(0.904\\)','\\(0.951\\)','\\(-0.951\\)'], answer: 2
+        q: "For \\(n = 7\\), \\(\\sum x = 35\\), \\(\\sum y = 56\\), \\(\\sum x^2 = 203\\), \\(\\sum y^2 = 480\\), \\(\\sum xy = 308\\). Calculate \\(r\\) correct to 3 s.f.",
+        options: ["\\(0.820\\)","\\(0.875\\)","\\(0.935\\)","\\(-0.935\\)"], answer: 2
       },
       {
-        q: 'Data coded as \\(p = \\frac{x-3}{2}\\), \\(q = \\frac{y-10}{5}\\). Regression line of q on p: \\(q = 0.4 + 1.6p\\). Find the regression line of y on x.',
-        options: ['\\(y = 2 + 1.6x\\)','\\(y = 0.4 + 1.6x\\)','\\(y = 22 + 16x\\)','\\(y = 12 + 8x\\)'], answer: 2
+        q: "Data coded as \\(p = \\frac{x-3}{2}\\), \\(q = \\frac{y-10}{5}\\). Regression line of q on p: \\(q = 0.4 + 1.6p\\). Find the regression line of y on x.",
+        options: ["\\(y = 2 + 1.6x\\)","\\(y = 0.4 + 1.6x\\)","\\(y = 4x\\)","\\(y = 12 + 8x\\)"], answer: 2
       },
       {
         q: 'Test \\(H_0: \\rho = 0\\) vs \\(H_1: \\rho \\neq 0\\) at 1% significance, \\(n = 15\\), \\(r = 0.60\\). Critical value is 0.6411. Conclusion:',
@@ -152,8 +152,8 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
         options: ['The sum of squared vertical residuals \\(\\sum (y_i - \\hat{y}_i)^2\\)','The sum of squared horizontal residuals','The variance of x','The sum of the absolute residuals \\(\\sum |y_i - \\hat{y}_i|\\) only for all points'], answer: 0
       },
       {
-        q: 'For a bivariate dataset, \\(S_{xx} = 50\\), \\(S_{yy} = 72\\), \\(r = 0.6\\). Find \\(S_{xy}\\).',
-        options: ['\\(\\sqrt{3600}\\)','\\(2160\\)','\\(25.46\\)','\\(30\\)'], answer: 2
+        q: "For a bivariate dataset, \\(S_{xx} = 50\\), \\(S_{yy} = 72\\), \\(r = 0.6\\). Find \\(S_{xy}\\).",
+        options: ["\\(\\sqrt{3600}\\)","\\(2160\\)","\\(36\\)","\\(30\\)"], answer: 2
       },
       {
         q: 'A student claims that because a regression line fits the data well (\\(r = 0.95\\)), the x-variable causes changes in y. Which response is correct?',
@@ -464,8 +464,8 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
         options: ['\\(0\\)','\\(\\sigma\\)','\\(\\mu + \\sigma\\)','\\(\\mu\\)'], answer: 3
       },
       {
-        q: 'Test \\(H_0: \\mu = 200\\) vs \\(H_1: \\mu \\neq 200\\) at 5% level. Sample of \\(n=25\\), \\(\\bar{x} = 194\\), \\(\\sigma = 15\\). Is \\(H_0\\) rejected?',
-        options: ['Yes; z = -2 is in critical region since \\(|{-2}| > 1.645\\)','No; \\(z = -2\\), critical value \\(\\pm 1.960\\), so \\(|z| > 1.960\\), reject \\(H_0\\)','No; \\(z = -2\\) and critical value is \\(\\pm 1.960\\), do not reject','Yes; any negative z-value leads to rejection'], answer: 1
+        q: "Test \\(H_0: \\mu = 200\\) vs \\(H_1: \\mu \\neq 200\\) at 5% level. Sample of \\(n=25\\), \\(\\bar{x} = 194\\), \\(\\sigma = 15\\). Is \\(H_0\\) rejected?",
+        options: ["No; \\(z = -0.4\\), which lies inside \\(\\pm 1.960\\)","Yes; \\(z = -2\\), critical value \\(\\pm 1.960\\), so \\(|z| > 1.960\\), reject \\(H_0\\)","No; \\(z = -2\\) and critical value is \\(\\pm 1.960\\), do not reject","Yes; any negative z-value leads to rejection"], answer: 1
       },
       {
         q: 'IQ scores follow \\(N(100, 225)\\). What percentage of people have IQ above 130? [\\(\\Phi(2) = 0.9772\\)]',
@@ -608,20 +608,20 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
         options: ['\\(\\mu = \\tan 40° \\approx 0.839\\)','\\(\\mu = \\cos 40° \\approx 0.766\\)','\\(\\mu = 0.5\\)','\\(\\mu = \\sin 40° \\approx 0.643\\)'], answer: 0
       },
       {
-        q: 'A 4 kg particle is connected to a 7 kg particle by a string over a smooth pulley. Find the tension in the string.',
-        options: ['\\(24.9 \\text{ N}\\)','\\(39.2 \\text{ N}\\)','\\(68.6 \\text{ N}\\)','\\(50.9 \\text{ N}\\)'], answer: 3
+        q: "A 4 kg particle is connected to a 7 kg particle by a string over a smooth pulley. Find the tension in the string.",
+        options: ["\\(24.9 \\text{ N}\\)","\\(39.2 \\text{ N}\\)","\\(68.6 \\text{ N}\\)","\\(49.9 \\text{ N}\\)"], answer: 3
       },
       {
-        q: 'A particle of mass 5 kg rests in equilibrium on a rough plane at 25° under a force of P N up the slope. \\(\\mu = 0.4\\). Find P.',
-        options: ['\\(P = 5g\\sin25° - 0.4 \\times 5g\\cos25° \\approx 2.54 \\text{ N}\\)','\\(P = 5g\\sin25° + 0.4 \\times 5g\\cos25° \\approx 38.5 \\text{ N}\\)','\\(P = 5g\\cos25° \\approx 44.4 \\text{ N}\\)','\\(P = 0.4 \\times 5g \\approx 19.6 \\text{ N}\\)'], answer: 0
+        q: "A particle of mass 5 kg rests on a rough plane at 25° and is on the point of slipping down the slope. A force of P N acts up the slope. \\(\\mu = 0.4\\). Find P.",
+        options: ["\\(P = 5g\\sin25° - 0.4 \\times 5g\\cos25° \\approx 2.94 \\text{ N}\\)","\\(P = 5g\\sin25° + 0.4 \\times 5g\\cos25° \\approx 38.5 \\text{ N}\\)","\\(P = 5g\\cos25° \\approx 44.4 \\text{ N}\\)","\\(P = 0.4 \\times 5g \\approx 19.6 \\text{ N}\\)"], answer: 0
       },
       {
         q: 'A car engine exerts 3000 N driving force. Mass of car = 900 kg. Resistance = 600 N. Find acceleration.',
         options: ['\\(3.33 \\text{ m s}^{-2}\\)','\\(2.33 \\text{ m s}^{-2}\\)','\\(2.67 \\text{ m s}^{-2}\\)','\\(4.0 \\text{ m s}^{-2}\\)'], answer: 2
       },
       {
-        q: 'Masses 3 kg (on rough table, \\(\\mu=0.25\\)) and 5 kg (hanging) connected by string over pulley. Find acceleration.',
-        options: ['\\(4.9 \\text{ m s}^{-2}\\)','\\(7.35 \\text{ m s}^{-2}\\)','\\(5.15 \\text{ m s}^{-2}\\)','\\(6.125 \\text{ m s}^{-2}\\)'], answer: 2
+        q: "Masses 3 kg (on rough table, \\(\\mu=0.25\\)) and 5 kg (hanging) connected by string over pulley. Find acceleration.",
+        options: ["\\(4.9 \\text{ m s}^{-2}\\)","\\(7.35 \\text{ m s}^{-2}\\)","\\(5.21 \\text{ m s}^{-2}\\)","\\(6.125 \\text{ m s}^{-2}\\)"], answer: 2
       },
       {
         q: 'State the assumption that makes the tension the same throughout a string over a pulley.',
@@ -743,9 +743,9 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
         answer: 0
       },
       {
-        q: 'A particle travels 200 m in the first 10 s and 300 m in the next 10 s of constant acceleration from rest. Find the acceleration.',
-        options: ['\\(2 \\text{ m s}^{-2}\\)', '\\(4 \\text{ m s}^{-2}\\)', '\\(1 \\text{ m s}^{-2}\\)', '\\(3 \\text{ m s}^{-2}\\)'],
-        answer: 0
+        q: "A particle moving with constant acceleration travels 200 m in the first 10 s and 300 m in the next 10 s. Find the acceleration.",
+        options: ["\\(2 \\text{ m s}^{-2}\\)","\\(4 \\text{ m s}^{-2}\\)","\\(1 \\text{ m s}^{-2}\\)","\\(3 \\text{ m s}^{-2}\\)"],
+        answer: 2
       },
       {
         q: 'Object A: \\(u=0\\), \\(a=3\\), \\(t=5\\). Object B: \\(u=10\\), \\(a=0\\), \\(t=5\\). Which travels further?',
@@ -753,23 +753,23 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
         answer: 0
       },
       {
-        q: 'A ball is thrown upward. It is at height 20 m at \\(t = 1\\) s and \\(t = 3\\) s. Find the initial velocity. (\\(g = 9.8\\))',
-        options: ['\\(u = 24.6 \\text{ m s}^{-1}\\)', '\\(u = 14.7 \\text{ m s}^{-1}\\)', '\\(u = 20 \\text{ m s}^{-1}\\)', '\\(u = 19.6 \\text{ m s}^{-1}\\)'],
-        answer: 0
+        q: "A ball is thrown vertically upward from ground level. It is at height 14.7 m at \\(t = 1\\) s and \\(t = 3\\) s. Find the initial velocity. (\\(g = 9.8\\))",
+        options: ["\\(u = 24.6 \\text{ m s}^{-1}\\)","\\(u = 14.7 \\text{ m s}^{-1}\\)","\\(u = 20 \\text{ m s}^{-1}\\)","\\(u = 19.6 \\text{ m s}^{-1}\\)"],
+        answer: 3
       }
     ],
     red: [
       {
-        q: 'A particle is projected from a height of 30 m with upward velocity 10 m/s. Find its velocity when it hits the ground. (\\(g=9.8\\))',
-        options: ['\\(\\approx 24.2 \\text{ m s}^{-1}\\) downward','\\(\\approx 27.1 \\text{ m s}^{-1}\\) downward','\\(\\approx 10 \\text{ m s}^{-1}\\) downward','\\(\\approx 19.8 \\text{ m s}^{-1}\\) downward'], answer: 1
+        q: "A particle is projected from a height of 30 m with upward velocity 10 m/s. Find its velocity when it hits the ground. (\\(g=9.8\\))",
+        options: ["\\(\\approx 24.2 \\text{ m s}^{-1}\\) downward","\\(\\approx 26.2 \\text{ m s}^{-1}\\) downward","\\(\\approx 10 \\text{ m s}^{-1}\\) downward","\\(\\approx 19.8 \\text{ m s}^{-1}\\) downward"], answer: 1
       },
       {
         q: 'A particle moves with \\(s = 3t^2 - 12t + 9\\) (metres, seconds). At what time(s) is the particle at rest?',
         options: ['\\(t = 2 \\text{ s}\\)','\\(t = 3 \\text{ s}\\) only','\\(t = 1 \\text{ s}\\) and \\(t = 3 \\text{ s}\\)','\\(t = 0 \\text{ s}\\) and \\(t = 4 \\text{ s}\\)'], answer: 0
       },
       {
-        q: 'Train A leaves station at rest with acceleration 0.4 m/s². Train B passes the same point 30 s later at constant 12 m/s. When and where do they meet?',
-        options: ['\\(t \\approx 60 \\text{ s after A departs; } s \\approx 720 \\text{ m}\\)','\\(t = 45 \\text{ s after A departs; } s = 405 \\text{ m}\\)','\\(t \\approx 30 \\text{ s after A departs; } s = 360 \\text{ m}\\)','\\(t \\approx 90 \\text{ s after A departs; } s = 1080 \\text{ m}\\)'], answer: 0
+        q: "Train A leaves station at rest with acceleration 0.4 m/s². Train B passes the same point 30 s later at constant 24 m/s. When and where do they meet?",
+        options: ["\\(t = 60 \\text{ s after A departs; } s = 720 \\text{ m}\\)","\\(t = 45 \\text{ s after A departs; } s = 405 \\text{ m}\\)","\\(t \\approx 30 \\text{ s after A departs; } s = 360 \\text{ m}\\)","\\(t \\approx 90 \\text{ s after A departs; } s = 1080 \\text{ m}\\)"], answer: 0
       },
       {
         q: 'A particle decelerates at 2.5 m/s² and has \\(v = 0\\) after 8 s. Find its initial velocity and total displacement.',
@@ -780,8 +780,8 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
         options: ['\\(10 \\text{ s}\\)','\\(20 \\text{ s}\\)','\\(16 \\text{ s}\\)','\\(40 \\text{ s}\\)'], answer: 1
       },
       {
-        q: 'A vehicle accelerates from rest for \\(t_1\\) seconds to top speed \\(V\\), travels at \\(V\\) for 120 s, then decelerates uniformly to rest in 40 s. Total distance 3600 m; total time 200 s. Find \\(V\\) and \\(t_1\\).',
-        options: ['\\(V = 24 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)','\\(V = 20 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)','\\(V = 18 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)','\\(V = 20 \\text{ m s}^{-1}\\), \\(t_1 = 60 \\text{ s}\\)'], answer: 1
+        q: "A vehicle accelerates from rest for \\(t_1\\) seconds to top speed \\(V\\), travels at \\(V\\) for 120 s, then decelerates uniformly to rest in 40 s. Total distance 3600 m; total time 200 s. Find \\(V\\) and \\(t_1\\).",
+        options: ["\\(V = 24 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)","\\(V = 22.5 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)","\\(V = 18 \\text{ m s}^{-1}\\), \\(t_1 = 40 \\text{ s}\\)","\\(V = 20 \\text{ m s}^{-1}\\), \\(t_1 = 60 \\text{ s}\\)"], answer: 1
       }
     ]
   }

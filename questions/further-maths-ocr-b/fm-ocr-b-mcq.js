@@ -308,7 +308,7 @@ const FM_OCR_B_MCQ = {
     { q: 'Impulse = ', options: ['\\(F\\)', '\\(\\Delta v\\)', '\\(m\\cdot\\text{time}\\)', '\\(F\\Delta t = \\Delta p\\)'], answer: 3 },
     { q: 'Coefficient of restitution \\(e\\):', options: ['\\(\\le 0\\)', '\\(>1\\)', '\\(\\ge0\\) only, with no upper limit', '\\(0\\le e\\le 1\\)'], answer: 3 },
     { q: 'Perfectly elastic collision: \\(e=\\)', options: ['\\(0\\)', '\\(\\infty\\)', '\\(-1\\)', '\\(1\\)'], answer: 3 },
-    { q: 'Inelastic collision: \\(e=\\)', options: ['\\(0.5\\)', '\\(1\\)', 'Undefined', '\\(0\\)'], answer: 3 },
+    { q: "Perfectly inelastic collision: \\(e=\\)", options: ["\\(0.5\\)","\\(1\\)","Undefined","\\(0\\)"], answer: 3 },
   ],
   amber: [
     { q: 'Momentum conservation in collision:', options: ['Kinetic energy is conserved in every collision', '\\(p_1=p_2\\)', 'Only for \\(e=1\\)', '\\(m_1u_1+m_2u_2=m_1v_1+m_2v_2\\)'], answer: 3 },
@@ -484,7 +484,7 @@ const FM_OCR_B_MCQ = {
     { q: 'Sign test: under \\(H_0\\), number of positives \\(\\sim\\)', options: ['Poisson', 'Normal \\(N(n/2, n/4)\\)', 'Geometric', '\\(B(n,0.5)\\)'], answer: 3 },
     { q: 'Wilcoxon signed-rank: ignore pairs with:', options: ['Large difference', 'Outliers', 'Missing values', 'Zero difference'], answer: 3 },
     { q: 'Wilcoxon signed-rank statistic = ', options: ['Sum of all ranks', 'Median', 'Number of positive differences in the sample (the sign count)', 'Smaller of sum of positive / negative signed ranks'], answer: 3 },
-    { q: 'Mann–Whitney \\(U\\): for samples \\(n_1,n_2\\), min value is:', options: ['\\(n_1n_2\\)', '\\(n_1+n_2\\)', 'Always 0', '0'], answer: 3 },
+    { q: "Mann–Whitney \\(U\\): for samples \\(n_1,n_2\\), min value is:", options: ["\\(n_1n_2\\)","\\(n_1+n_2\\)","\\(n_1n_2/2\\)","0"], answer: 3 },
     { q: 'Non-parametric tests are:', options: ['Always more powerful', 'Assumption-heavy', 'Faster', 'Less powerful than \\(t\\)-test when assumptions hold, but robust'], answer: 3 },
   ],
   red: [

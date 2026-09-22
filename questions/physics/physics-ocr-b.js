@@ -39,7 +39,7 @@ const PHYSICS_OCR_B_QUESTIONS = {
       { q: 'The percentage uncertainty in the radius r is 2%. If the calculated quantity is V = (4/3)πr³, what is the percentage uncertainty in V?', options: ['6%','2%','4%','8%'], answer: 0 },
       { q: 'A log–log graph of T against l for a pendulum gives a straight line with gradient 0.5. What does this confirm?', options: ['T ∝ l','T ∝ l²','T ∝ √l','T ∝ 1/l'], answer: 2 },
       { q: 'A student measures the speed of sound as 335 ± 8 m s⁻¹. The accepted value is 343 m s⁻¹. The percentage difference is 2.3% and total percentage uncertainty is 2.4%. What should they conclude?', options: ['The result proves the speed of sound is 335 m s⁻¹','The random errors are too large to draw any conclusion','The experiment is invalid due to systematic error','The result is consistent with the accepted value as the percentage difference is within the percentage uncertainty'], answer: 3 },
-      { q: 'In a capacitor discharge experiment, a graph of ln(V) against t is plotted. The best-fit gradient is −0.050 s⁻¹ and the worst acceptable gradient is −0.045 s⁻¹. What is the percentage uncertainty in the time constant?', options: ['11%','20%','5%','10%'], answer: 0 },
+      { q: "In a capacitor discharge experiment, a graph of ln(V) against t is plotted. The best-fit gradient is −0.050 s⁻¹ and the worst acceptable gradient is −0.045 s⁻¹. What is the percentage uncertainty in the time constant?", options: ["0.5%","20%","5%","10%"], answer: 3 },
       { q: 'A student claims their experiment validates a model because the R² value of the line of best fit is 0.98. Which criticism is most valid?', options: ['A high R² does not prove causation or that the model is physically correct','R² should always be exactly 1.0','The value should be compared with the number of data points using a chi-squared test only','R² values above 0.95 always prove the model'], answer: 0 },
     ],
   },
@@ -69,7 +69,7 @@ const PHYSICS_OCR_B_QUESTIONS = {
       { q: 'What are the SI base units of pressure?', options: ['kg m⁻¹ s⁻²','kg m s⁻²','kg m² s⁻²','kg m⁻² s⁻¹'], answer: 0 },
       { q: 'A force of 20 N acts at 30° to the horizontal. What is the horizontal component?', options: ['10.0 N','17.3 N','20.0 N','11.5 N'], answer: 1 },
       { q: 'On a ln y vs ln x graph, the gradient is 2 and the y-intercept is ln 5. What is the relationship?', options: ['y = 2x + 5','y = 5x²','y = 5e²ˣ','y = 2 ln x + 5'], answer: 1 },
-      { q: 'An order-of-magnitude estimate of the number of atoms in a human body (mass ~70 kg, average atomic mass ~10⁻²⁶ kg) is:', options: ['10²⁵','10²⁷','10²⁸','10³⁰'], answer: 1 },
+      { q: "An order-of-magnitude estimate of the number of atoms in a human body (mass ~70 kg, average atomic mass ~10⁻²⁶ kg) is:", options: ["10²⁴","10²⁶","10²⁸","10³⁰"], answer: 2 },
     ],
     red: [
       { q: 'The equation for the period of a mass–spring system is T = 2π√(m/k). A student measures m = 0.500 ± 0.005 kg and T = 1.40 ± 0.02 s. What is the percentage uncertainty in k?', options: ['1%','2.9%','3.9%','5.9%'], answer: 2 },
@@ -124,7 +124,7 @@ const PHYSICS_OCR_B_QUESTIONS = {
       { q: 'The resolving power of a telescope can be improved by:', options: ['Using a smaller objective lens','Using a larger objective lens','Using a longer focal length eyepiece','Reducing the light intensity'], answer: 1 },
       { q: 'A rubber band is stretched and released. The force–extension graph shows a hysteresis loop. The area of the loop represents:', options: ['The elastic potential energy stored','The energy dissipated as heat','The Young modulus','The breaking stress'], answer: 1 },
       { q: 'What advantage does digital signalling have over analogue signalling?', options: ['Higher bandwidth requirement','Signals can be regenerated without degradation','No sampling is needed','Simpler circuitry always'], answer: 1 },
-      { q: 'A wire obeys Hooke\'s law up to a force of 40 N, at which point the extension is 2.0 mm. What is the spring constant?', options: ['20 N m⁻¹','80 N m⁻¹','2.0 × 10⁴ N m⁻¹','20 000 N m⁻¹'], answer: 2 },
+      { q: "A wire obeys Hooke's law up to a force of 40 N, at which point the extension is 2.0 mm. What is the spring constant?", options: ["20 N m⁻¹","80 N m⁻¹","2.0 × 10⁴ N m⁻¹","5.0 × 10⁻⁵ N m⁻¹"], answer: 2 },
       { q: 'A converging lens is used as a magnifying glass. For the image to be virtual, the object must be placed:', options: ['At the focal point','Beyond 2f','Between f and 2f','Between the lens and f'], answer: 3 },
     ],
     red: [

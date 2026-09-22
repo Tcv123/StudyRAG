@@ -60,7 +60,7 @@ const MATHS_OCR_ALEVEL_QUESTIONS = {
       { q: 'In a proof by induction, the induction step shows:', options: ['Base case','If P(k) holds then P(k+1) holds','Counter-example','That P is a conjecture which holds for the base case'], answer: 1 },
       { q: 'Which statement is true?', options: ['Every theorem has a unique proof','Every theorem can be proven by induction on some variable','A conjecture becomes a theorem once proven','Proof and verification are synonymous'], answer: 2 },
       { q: 'To prove "for all n ∈ ℕ, 3^n > n":', options: ['Induction (base n=1: 3>1 ✓; step: if 3^k > k then 3^(k+1) = 3·3^k > 3k ≥ k+1 for k ≥ 1)','Exhaustion','Contradiction','Counter-example'], answer: 0 },
-      { q: 'The statement "x² + y² = z² has solutions only with x, y, z integers" combined with Fermat\'s Last Theorem (FLT):', options: ['Is Pythagorean and distinct from FLT (which is x^n + y^n = z^n for n > 2)','Is equivalent to FLT, which proves it has no integer solutions for any power at all','Was proven by Euclid','Is unproven'], answer: 0 },
+      { q: "How is the equation \\(x^2 + y^2 = z^2\\) related to Fermat's Last Theorem (FLT)?", options: ["It is the \\(n = 2\\) case, which has infinitely many positive integer solutions; FLT concerns \\(x^n + y^n = z^n\\) for \\(n > 2\\)","It is covered by FLT, so it has no positive integer solutions","It has no positive integer solutions, as Euclid proved","Whether it has any positive integer solutions is still unproven"], answer: 0 },
       { q: 'Prove: if a² is even then a is even. Strategy:', options: ['Contrapositive: if a is odd then a² is odd (shown by a = 2k+1 → a² = 4k² + 4k + 1 odd)','Induction on a','Exhaustion','Counter-example'], answer: 0 },
       { q: 'Which proof-type is typically used to show an identity like cos(2x) = 1 − 2sin²(x)?', options: ['Direct deduction using the compound-angle formula cos(A+B)','Contradiction, assuming the identity fails for some x and deriving a false result','Exhaustion','Counter-example'], answer: 0 },
       { q: 'The Pigeonhole Principle states:', options: ['If n items are placed in m < n holes, some hole contains at least two items','Every integer has a pigeonhole, so no two numbers can share a remainder mod n','Infinity cannot be partitioned','None'], answer: 0 },
@@ -606,7 +606,7 @@ const MATHS_OCR_ALEVEL_QUESTIONS = {
       { q: 'X ~ B(20, 0.4). The variance is:', options: ['2.19','8','4.8','12'], answer: 2 },
       { q: 'For mutually exclusive events, P(A ∩ B) equals:', options: ['P(A)P(B)','1','P(A) + P(B)','0'], answer: 3 },
     ], red: [
-      { q: 'Calculate the standard deviation of 2, 4, 4, 4, 5, 5, 7, 9.', options: ['2.14','2','4','1.41'], answer: 1 },
+      { q: "Calculate the standard deviation (using divisor n) of 2, 4, 4, 4, 5, 5, 7, 9.", options: ["2.14","2","4","1.41"], answer: 1 },
       { q: 'Find the interquartile range of 3, 5, 7, 8, 12, 15, 20, 22.', options: ['11.5','9','19','10.0 (Q3 − Q1)'], answer: 0 },
       { q: 'X ~ B(10, 0.3). Find P(X = 3) to 4 d.p.', options: ['0.2001','0.3828','0.2668','0.0900'], answer: 2 },
       { q: 'X ~ B(10, 0.3). Find P(X ≤ 2) to 4 d.p.', options: ['0.1493','0.6172','0.3828','0.2668'], answer: 2 },

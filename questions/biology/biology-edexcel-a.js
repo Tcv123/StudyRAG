@@ -21,7 +21,7 @@ const BIOLOGY_EDEXCEL_A_QUESTIONS = {
       { q: 'Which level of protein structure is determined by the sequence of amino acids?', options: ['Primary','Secondary','Tertiary','Quaternary'], answer: 0 },
       { q: 'What type of molecule is an enzyme?', options: ['Carbohydrate','Lipid','Protein','Nucleic acid'], answer: 2 },
       { q: 'What is the fluid mosaic model?', options: ['A model of DNA structure','A model of cell membrane structure','A model of protein folding','A model of enzyme action'], answer: 1 },
-      { q: 'Which component of the cell membrane provides fluidity?', options: ['Proteins','Cholesterol','Glycolipids','Phospholipid tails'], answer: 1 },
+      { q: "Which component of the cell membrane regulates its fluidity, making it less fluid at higher temperatures?", options: ["Proteins","Cholesterol","Glycolipids","Phospholipid tails"], answer: 1 },
       { q: 'What is osmosis?', options: ['Movement of solute molecules down a concentration gradient','Net movement of water from high to low water potential through a partially permeable membrane','Active transport of water','Diffusion of gases'], answer: 1 },
       { q: 'What is active transport?', options: ['Movement down a concentration gradient','Movement of water by osmosis','Movement against a concentration gradient using ATP','Bulk movement of fluids'], answer: 2 },
       { q: 'Which type of cholesterol is associated with increased cardiovascular disease risk?', options: ['HDL','LDL','VLDL and HDL equally','Neither'], answer: 1 },

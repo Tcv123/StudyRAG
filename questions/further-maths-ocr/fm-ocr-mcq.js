@@ -108,7 +108,7 @@ const FM_OCR_MCQ = {
   ],
   amber: [
     { q: 'If \\(\\alpha,\\beta\\) are roots of \\(x^2-5x+3=0\\), find \\(\\alpha^3+\\beta^3\\).', options: ['\\(110\\)', '\\(45\\)', '\\(95\\)', '\\(80\\)'], answer: 3, explanation: '(α+β)³−3αβ(α+β)=125−45=80' },
-    { q: 'Partial fractions of \\(\\frac{7x+1}{(x+1)(x-3)}\\): cover-up gives \\(A=\\)', options: ['\\(3\\)', '\\(7\\)', '\\(1\\)', '\\(-\\frac{3}{2}\\)'], answer: 3, explanation: 'x=−1: A(−4)=−7+1=−6 → A=3/2. Hmm. Actually: 7(−1)+1=−6, (−1−3)=−4, A=−6/−4=3/2', explanation: 'A(x−3)+B(x+1)=7x+1; x=−1: −4A=−6→A=3/2' },
+    { q: "Partial fractions of \\(\\frac{7x+1}{(x+1)(x-3)}\\): cover-up gives \\(A=\\)", options: ["\\(3\\)","\\(7\\)","\\(-\\frac{3}{2}\\)","\\(\\frac{3}{2}\\)"], answer: 3, explanation: 'x=−1: A(−4)=−7+1=−6 → A=3/2. Hmm. Actually: 7(−1)+1=−6, (−1−3)=−4, A=−6/−4=3/2', explanation: 'A(x−3)+B(x+1)=7x+1; x=−1: −4A=−6→A=3/2' },
     { q: 'Form eq with roots \\(\\alpha^2,\\beta^2\\) given \\(\\alpha,\\beta\\) satisfy \\(x^2-4x+1=0\\).', options: ['\\(x^2+14x+1=0\\)', '\\(x^2-14x-1=0\\)', '\\(x^2+4x+1=0\\)', '\\(x^2-14x+1=0\\)'], answer: 3, explanation: 'α²+β²=(α+β)²−2αβ=16−2=14; α²β²=(αβ)²=1. Eqn: x²−14x+1=0' },
     { q: 'Solve \\(\\frac{1}{x-1}>2\\).', options: ['\\(x>\\frac{3}{2}\\)', '\\(x<1\\) or \\(x>\\frac{3}{2}\\)', '\\(x<1\\)', '\\(1<x<\\frac{3}{2}\\)'], answer: 3, explanation: 'Case x>1: 1>2(x−1)→x<3/2. Combined: 1<x<3/2' },
     { q: 'Solve \\(|2x-1|=|x+3|\\).', options: ['\\(x=-4\\) or \\(x=-\\frac{2}{3}\\)', '\\(x=4\\) only', '\\(x=\\frac{2}{3}\\) or \\(x=4\\)', '\\(x=4\\) or \\(x=-\\frac{2}{3}\\)'], answer: 3, explanation: 'Square: 4x²−4x+1=x²+6x+9→3x²−10x−8=0→(3x+2)(x−4)=0' },
@@ -247,7 +247,7 @@ const FM_OCR_MCQ = {
   amber: [
     { q: '\\(\\cosh^{-1}x\\) in log form (\\(x\\geq1\\)):', options: ['\\(\\ln(x-\\sqrt{x^2+1})\\)', '\\(\\ln(x^2-1)\\)', '\\(\\ln(\\sqrt{x^2-1}-x)\\)', '\\(\\ln(x+\\sqrt{x^2-1})\\)'], answer: 3 },
     { q: '\\(\\sinh^{-1}x\\) in log form:', options: ['\\(\\ln(x-\\sqrt{x^2+1})\\)', '\\(\\ln(x-\\sqrt{x^2-1})\\)', '\\(\\ln(\\sqrt{x^2-1}-x)\\)', '\\(\\ln(x+\\sqrt{x^2+1})\\)'], answer: 3 },
-    { q: 'By Osborn\'s rule, \\(\\cosh2x=\\)', options: ['\\(1+2\\cosh^2x\\)', '\\(\\cosh^2x-\\sinh^2x\\)', '\\(2\\cosh^2x-1\\)', '\\(\\cosh^2x+\\sinh^2x\\)'], answer: 3, explanation: 'cos2θ=cos²θ−sin²θ → cosh2x=cosh²x−(−sinh²x)=cosh²x+sinh²x=1+2sinh²x; also =2cosh²x−1. Both B and C are correct forms... actually cosh2x=cosh²x+sinh²x and also =2cosh²x−1. Answer D=cosh²x+sinh²x' },
+    { q: "By Osborn's rule, \\(\\cosh2x=\\)", options: ["\\(1+2\\cosh^2x\\)","\\(\\cosh^2x-\\sinh^2x\\)","\\(1-2\\sinh^2x\\)","\\(\\cosh^2x+\\sinh^2x\\)"], answer: 3, explanation: 'cos2θ=cos²θ−sin²θ; Osborn\'s rule flips the sign of the sinh² term, so cosh2x=cosh²x+sinh²x (equivalently 1+2sinh²x or 2cosh²x−1).' },
     { q: '\\(\\frac{d}{dx}[\\cosh^{-1}x]\\) for \\(x>1\\):', options: ['\\(\\frac{-1}{\\sqrt{x^2-1}}\\)', '\\(\\frac{1}{1+x^2}\\)', '\\(\\frac{1}{\\sqrt{1-x^2}}\\)', '\\(\\frac{1}{\\sqrt{x^2-1}}\\)'], answer: 3 },
     { q: '\\(\\frac{d}{dx}[\\sinh^{-1}x]=\\)', options: ['\\(\\frac{-1}{\\sqrt{1+x^2}}\\)', '\\(\\frac{1}{1+x^2}\\)', '\\(\\frac{1}{\\sqrt{1-x^2}}\\)', '\\(\\frac{1}{\\sqrt{1+x^2}}\\)'], answer: 3 },
     { q: 'Solve \\(\\cosh x=2\\):', options: ['\\(x=\\ln(2-\\sqrt{3})\\)', '\\(x=\\pm\\ln2\\)', '\\(x=\\ln4\\)', '\\(x=\\pm\\ln(2+\\sqrt{3})\\)'], answer: 3 },
@@ -289,11 +289,11 @@ const FM_OCR_MCQ = {
     { q: 'Apply \\(y(0)=1, y\'(0)=0\\) to \\(y=Ae^{2x}+Be^{3x}\\): \\(A=\\)', options: ['\\(-2\\)', '\\(2\\)', '\\(-1\\)', '\\(3\\)'], answer: 3, explanation: 'A+B=1, 2A+3B=0 → A=3,B=−2' },
     { q: 'Substitution to solve homogeneous ODE \\(\\frac{dy}{dx}=F(y/x)\\):', options: ['\\(y=x+v\\)', '\\(x=e^t\\)', '\\(v=x/y\\)', '\\(y=vx\\)'], answer: 3 },
     { q: 'A 2nd order ODE requires how many arbitrary constants?', options: ['0', '1', '3', '2'], answer: 3 },
-    { q: 'Bernoulli equation \\(y\'+P(x)y=Q(x)y^n\\) is linearised by \\(v=\\)', options: ['\\(y^n\\)', '\\(y^{1-n}\\)', '\\(y/P\\)', '\\(1/y^{n-1}\\)'], answer: 1, explanation: 'v=y^{1-n} linearises the equation' },
+    { q: "Bernoulli equation \\(y'+P(x)y=Q(x)y^n\\) is linearised by \\(v=\\)", options: ["\\(y^n\\)","\\(y^{1-n}\\)","\\(y/P\\)","\\(y^{n-1}\\)"], answer: 1, explanation: 'v=y^{1-n} linearises the equation' },
   ],
   red: [
     { q: '\\(y\'\'-2y\'+y=e^x\\): CF is \\((Ax+B)e^x\\). PI must be:', options: ['\\(ax^2e^x\\)','\\(ax^2e^x+bxe^x\\)','\\(axe^x\\)','\\(ae^x\\)'], answer: 0, explanation: 'e^x and xe^x both appear in CF, so try x²e^x' },
-    { q: 'Eigenvalues of \\(\\begin{pmatrix}1&1\\\\4&-2\\end{pmatrix}\\):', options: ['\\(-3,2\\)','\\(2,-3\\)','\\(1,-2\\)','\\(-1,2\\)'], answer: 1, explanation: 'λ²+λ−6=0 → (λ+3)(λ−2)=0' },
+    { q: "Eigenvalues of \\(\\begin{pmatrix}1&1\\\\4&-2\\end{pmatrix}\\):", options: ["\\(3,-2\\)","\\(2,-3\\)","\\(1,-2\\)","\\(-1,2\\)"], answer: 1, explanation: 'λ²+λ−6=0 → (λ+3)(λ−2)=0' },
     { q: 'The Wronskian \\(W\\neq0\\) implies the two solutions are:', options: ['Both zero','The same','Proportional to each other','Linearly independent'], answer: 3 },
     { q: 'For resonance in \\(m\\ddot{x}+kx=F_0\\cos\\omega t\\) (\\(c=0\\)):', options: ['\\(\\omega=\\sqrt{k/m}+c/m\\)','Any \\(\\omega\\)','\\(\\omega=2k/m\\)','\\(\\omega=\\sqrt{k/m}\\)'], answer: 3 },
     { q: 'PI for \\(y\'\'-2y\'+2y=e^x\\sin x\\): must be tried as \\(xe^x(\\cdots)\\) because:', options: ['The CF is polynomial','\\(e^x\\sin x\\) appears in CF (roots \\(1\\pm i\\))','\\(e^x\\sin x\\) is large','PI always uses \\(x\\)'], answer: 1 },
@@ -317,7 +317,7 @@ const FM_OCR_MCQ = {
   amber: [
     { q: 'Apply Newton–Raphson to \\(f(x)=x^2-2\\) from \\(x_0=1.5\\). Then \\(x_1=\\)', options: ['\\(1.3\\)', '\\(1.5\\)', '\\(1.414\\)', '\\(\\frac{17}{12}\\approx1.417\\)'], answer: 3, explanation: 'x₁=1.5−0.25/3=1.5−1/12=17/12' },
     { q: 'Simpson\'s rule with \\(n=2\\) on \\(\\int_0^2 x^3\\,dx\\) gives:', options: ['\\(2\\)', '\\(6\\)', '\\(8\\)', '\\(4\\)'], answer: 3, explanation: 'h=1; (1/3)(0+4·1+8)=4 (exact)' },
-    { q: 'After 1 step of bisection on \\(f(x)=x^2-3\\) starting from \\([1,2]\\), the new interval is:', options: ['\\([1.5,2.0]\\)', '\\([1,1.5]\\)', '\\([1.25,1.75]\\)', '\\([1.5,2]\\)'], answer: 0, explanation: 'f(1.5)=−0.75<0, f(2)=1>0 → root in [1.5,2]' },
+    { q: "After 1 step of bisection on \\(f(x)=x^2-3\\) starting from \\([1,2]\\), the new interval is:", options: ["\\([1.5,2]\\)","\\([1,1.5]\\)","\\([1.25,1.75]\\)","\\([1.5,1.75]\\)"], answer: 0, explanation: 'f(1.5)=−0.75<0, f(2)=1>0 → root in [1.5,2]' },
     { q: 'Euler with \\(h=0.1\\) on \\(y\'=y\\), \\(y(0)=1\\) gives \\(y(0.1)\\approx\\)', options: ['\\(1\\)', '\\(1.105\\)', '\\(1.01\\)', '\\(1.1\\)'], answer: 3, explanation: 'y₁=1+0.1·1=1.1 (true e^{0.1}≈1.105)' },
     { q: 'Newton–Raphson may fail if:', options: ['The function is linear', 'The function is polynomial', 'The starting value is too close to the root itself', '\\(f\'(x_n)\\) is very small or zero'], answer: 3 },
     { q: 'Trapezium rule for \\(\\int_0^1 e^{-x^2}\\,dx\\) with \\(n=2\\) gives approximately:', options: ['\\(0.64\\)', '\\(0.80\\)', '\\(0.85\\)', '\\(0.73\\)'], answer: 3, explanation: 'h=0.5; (0.5/2)(1+2·e^{−0.25}+e^{−1})≈0.731' },
@@ -355,7 +355,7 @@ const FM_OCR_MCQ = {
   red: [
     { q: 'The "all horses same colour" fallacy fails at:', options: ['\\(n>2\\)','\\(n=1\\)','\\(n=2\\) (transition fails)','All \\(n\\), including \\(n=1\\)'], answer: 2 },
     { q: 'Prove \\(2^n>n^2\\) for \\(n\\geq5\\). Need \\(2k^2\\geq(k+1)^2=k^2+2k+1\\), i.e., \\(k^2-2k-1\\geq0\\), for \\(k\\geq\\)', options: ['\\(k\\geq2\\)','\\(k\\geq1\\)','\\(k\\geq3\\) (so \\(k\\geq5\\) certainly works)','\\(k\\leq5\\)'], answer: 2 },
-    { q: 'Prove \\(\\prod_{r=2}^{n}(1-1/r^2)=\\frac{n+1}{2n}\\). The inductive step multiplies by:', options: ['\\((1-1/k^2)\\)','\\(\\frac{k+1}{2k}\\)','\\((1-1/(k+1)^2)\\)','\\(1-1/(k+1)^2\\) (the next factor)'], answer: 2 },
+    { q: "Prove \\(\\prod_{r=2}^{n}(1-1/r^2)=\\frac{n+1}{2n}\\). The inductive step multiplies by:", options: ["\\((1-1/k^2)\\)","\\(\\frac{k+1}{2k}\\)","\\((1-1/(k+1)^2)\\)","\\(\\frac{k+2}{2(k+1)}\\)"], answer: 2 },
     { q: 'Proof by induction on \\(n\\)-element subsets: going from \\(k\\) to \\(k+1\\) elements doubles the count because each subset:', options: ['Includes or excludes the \\((k+1)\\)th element','Contains all \\(k+1\\) of the elements at the same time','Is a subset of the \\(k\\)-set','Has size \\(\\leq k\\)'], answer: 0 },
     { q: 'Prove \\(n!>2^n\\) for \\(n\\geq4\\). Step: \\((k+1)!=(k+1)k!>(k+1)2^k\\geq2^{k+1}\\) requires:', options: ['\\(k+1=2\\)','\\(k+1\\geq2\\), satisfied since \\(k\\geq4\\)','\\(k<2\\)','\\(k+1\\leq2\\), which fails since \\(k\\geq4\\)'], answer: 1 },
   ],
@@ -385,7 +385,7 @@ const FM_OCR_MCQ = {
     { q: 'For independent RVs \\(X,Y\\): \\(\\text{Var}(X+Y)=\\)', options: ['\\(\\text{Var}(X)-\\text{Var}(Y)\\)', '\\(\\text{Var}(X)\\cdot\\text{Var}(Y)\\)', '\\([\\text{Var}(X)+\\text{Var}(Y)]^2\\)', '\\(\\text{Var}(X)+\\text{Var}(Y)\\)'], answer: 3 },
     { q: 'The probability generating function \\(G(t)=E(t^X)=\\)', options: ['\\(\\sum t^x\\)', '\\(\\sum P(X=x)\\)', '\\(E(X)\\cdot t\\)', '\\(\\sum t^x P(X=x)\\)'], answer: 3 },
     { q: '\\(G\'(1)\\) of the pgf gives:', options: ['\\(\\text{Var}(X)\\)', '\\(E(X^2)\\)', '\\(P(X=1)\\)', '\\(E(X)\\)'], answer: 3 },
-    { q: 'For \\(X\\sim B(n,p)\\), the PGF is:', options: ['\\((p t+q)^n\\) where \\(q=1-p\\)... wait \\((q+pt)^n\\)', '\\(e^{\\lambda(t-1)}\\)', '\\(\\frac{pt}{1-qt}\\)', '\\((q+pt)^n\\)'], answer: 3 },
+    { q: "For \\(X\\sim B(n,p)\\), the PGF is:", options: ["\\((p+qt)^n\\) where \\(q=1-p\\)","\\(e^{\\lambda(t-1)}\\)","\\(\\frac{pt}{1-qt}\\)","\\((q+pt)^n\\)"], answer: 3 },
   ],
   red: [
     { q: 'If \\(G(t)=(0.4+0.6t)^5\\), identify the distribution:', options: ['Poisson','Geometric','Binomial \\(B(5,0.6)\\)','Continuous uniform on \\([0,1]\\)'], answer: 2 },
@@ -541,8 +541,8 @@ const FM_OCR_MCQ = {
     { q: '2 kg block, 20 N force along 5 m floor (frictionless). Final KE:', options: ['\\(20\\) J', '\\(40\\) J', '\\(50\\) J (÷2)', '\\(100\\) J'], answer: 3, explanation: 'W=20·5=100 J = ΔKE' },
     { q: 'Ball dropped from 5 m (\\(g=9.8\\)). Speed just before impact:', options: ['\\(7\\) m/s', '\\(9.8\\) m/s (= \\(g\\), after 1 s)', '\\(5\\) m/s', '\\(\\sqrt{98}\\approx9.90\\) m/s'], answer: 3, explanation: 'v²=2gh=98' },
     { q: 'A car\'s engine (15 kW) travelling 20 m/s. Driving force:', options: ['\\(15\\) N', '\\(300\\) N', '\\(3000\\) N', '\\(750\\) N'], answer: 3, explanation: 'P=Fv → F=15000/20=750' },
-    { q: 'Object pushed up 5 m rough slope (\\(\\theta=30°\\), \\(\\mu=0.2\\), \\(m=10\\)kg). Work against friction:', options: ['\\(84.9\\) J', '\\(196\\) J', '\\(245\\) J', '\\(\\mu mg\\cos\\theta\\cdot 5 = 0.2\\cdot 98\\cdot\\cos30°\\cdot5\\approx84.9\\) J'], answer: 3 },
-    { q: 'A 1000 kg car reaches top speed when acceleration = 0. At top speed \\(v\\), with constant resistance 500 N, engine power:', options: ['\\(500v\\)', '\\(1000v^2\\)', '\\(1000/v\\)', '\\(500v\\) W'], answer: 0 },
+    { q: "Object pushed up 5 m rough slope (\\(\\theta=30°\\), \\(\\mu=0.2\\), \\(m=10\\)kg). Work against friction:", options: ["\\(84.9\\) J","\\(196\\) J","\\(245\\) J","\\(98\\) J"], answer: 0 },
+    { q: "A 1000 kg car reaches top speed when acceleration = 0. At top speed \\(v\\), with constant resistance 500 N, engine power:", options: ["\\(500v\\)","\\(1000v^2\\)","\\(1000/v\\)","\\(500v^2\\)"], answer: 0 },
   ],
   red: [
     { q: 'Car \\(m=1200\\) kg, engine \\(P=30\\) kW, resistance 600 N. Acceleration at 20 m/s:', options: ['\\(0\\) m/s²','\\(1\\) m/s² (no 600)','\\(2\\) m/s²','\\(0.75\\) m/s²'], answer: 3, explanation: 'F=30000/20=1500; net=900; a=900/1200=0.75' },
@@ -568,7 +568,7 @@ const FM_OCR_MCQ = {
     { q: 'A ball drops from height \\(h\\), bounces with \\(e=0.6\\). Height of first bounce:', options: ['\\(0.6h\\)', '\\(0.216h\\)', '\\(0.16h\\)', '\\(0.36h\\)'], answer: 3, explanation: 'Speed before=√(2gh), after=0.6√(2gh). New height=(0.6)²h=0.36h' },
     { q: 'An oblique collision: for a smooth sphere, normal impulse acts along the:', options: ['Tangent to sphere', 'Direction of motion', 'Vertical', 'Line of centres'], answer: 3 },
     { q: 'Total KE before elastic collision of equal masses (one stationary) equals total KE after. In this case the objects:', options: ['Both stop', 'Move with equal speed', 'Bounce back', 'Exchange velocities'], answer: 3 },
-    { q: 'For 3 spheres A, B, C in a line, after A→B, B→C, is it possible for A to hit B again?', options: ['Always', 'Never', 'Only if e=1', 'Only if \\(e_1>e_2\\) (first coefficient > second)'], answer: 3 },
+    { q: "Three identical smooth spheres A, B, C lie in a line, with B and C at rest. A hits B, then B hits C. The coefficient of restitution is \\(e\\) (\\(0\\le e\\le1\\)) in both collisions. When does A hit B again?", options: ["Always","Never","Only if \\(e=1\\)","Only if \\(e<1\\)"], answer: 3 },
   ],
   red: [
     { q: 'In an oblique collision with a smooth wall, the component of velocity \\(\\perp\\) to wall changes by factor \\(-e\\). The component \\(\\parallel\\) to wall:', options: ['Also multiplies by \\(-e\\)','Doubles','Reverses','Is unchanged'], answer: 3 },

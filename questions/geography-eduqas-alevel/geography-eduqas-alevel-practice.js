@@ -13,7 +13,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_PRACTICE = {
     { q: 'Which is an exogenous factor shaping a place?', options: ['Local geology', 'International migration flows', 'Topography', 'Local river'], answer: 1, explanation: 'Exogenous means external — flows of migration/investment/media. Endogenous includes geology, topography, internal demography.' },
   ],
   '2.1': [
-    { q: 'A country has annual renewable water of 600 m³/person. This represents:', options: ['Absolute water scarcity', 'Water stress only', 'No issue', 'Surplus water'], answer: 0, explanation: 'Absolute scarcity <500 m³ (stress <1,700 m³). 600 m³ is in the stress-to-scarcity range — often classified as scarce.' },
+    { q: "On the Falkenmark indicator, a country with annual renewable water of 600 m³/person is experiencing:", options: ["Water scarcity","Absolute water scarcity","Water stress only","No water issue"], answer: 0, explanation: 'Falkenmark: below 1,700 m³ per person is water stress, below 1,000 m³ is water scarcity, below 500 m³ is absolute scarcity. 600 m³ is scarcity, not yet absolute scarcity.' },
   ],
   '2.2': [
     { q: 'Which is an example of negative feedback in the carbon cycle?', options: ['Amazon die-back', 'Permafrost thaw releasing methane', 'Ocean CO₂ uptake', 'Albedo loss'], answer: 2, explanation: 'Oceans absorbing CO₂ is a negative feedback (damping). The others are positive feedbacks.' },

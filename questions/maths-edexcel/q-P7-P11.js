@@ -25,7 +25,7 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'The expression \\(3\\sin x + 4\\cos x\\) can be written as \\(R\\sin(x+\\alpha)\\). What is \\(R\\)?', options: ['5', '7', '\\(\\sqrt{7}\\)', '\\(\\sqrt{5}\\)'], answer: 0 },
       { q: 'Solve \\(\\cos^2 x = \\frac{3}{4}\\) for \\(0° \\leq x \\leq 360°\\). The number of solutions is:', options: ['4', '2', '1', '3'], answer: 0 },
       { q: 'If \\(\\sin x = \\frac{3}{5}\\) and \\(x\\) is in the first quadrant, what is \\(\\cos x\\)?', options: ['\\(\\dfrac{4}{5}\\)', '\\(\\dfrac{3}{4}\\)', '\\(\\dfrac{4}{3}\\)', '\\(\\dfrac{5}{4}\\)'], answer: 0 },
-      { q: 'Which equation is equivalent to \\(2\\cos^2\\theta + \\sin\\theta - 1 = 0\\) after using \\(\\cos^2\\theta = 1 - \\sin^2\\theta\\)?', options: ['\\(2\\sin^2\\theta - \\sin\\theta - 1 = 0\\)', '\\(2\\sin^2\\theta + \\sin\\theta - 1 = 0\\)', '\\(-2\\sin^2\\theta + \\sin\\theta + 1 = 0\\)', '\\(2\\sin^2\\theta + \\sin\\theta + 1 = 0\\)'], answer: 0 },
+      { q: "Which equation is equivalent to \\(2\\cos^2\\theta + \\sin\\theta - 1 = 0\\) after using \\(\\cos^2\\theta = 1 - \\sin^2\\theta\\)?", options: ["\\(2\\sin^2\\theta - \\sin\\theta - 1 = 0\\)","\\(2\\sin^2\\theta + \\sin\\theta - 1 = 0\\)","\\(-2\\sin^2\\theta + \\sin\\theta + 3 = 0\\)","\\(2\\sin^2\\theta + \\sin\\theta + 1 = 0\\)"], answer: 0 },
       { q: 'Solve \\(\\tan^2 x = 3\\) for \\(0° \\leq x \\leq 360°\\). The solutions include:', options: ['60°, 120°, 240°, 300°', '30°, 150°, 210°, 330°', '45°, 135°, 225°, 315°', '60°, 240°'], answer: 0 },
       { q: 'In solving \\(\\sin(x + 30°) = 0.8\\) for \\(0° \\leq x \\leq 360°\\), the substitution should set the interval for \\((x+30°)\\) as:', options: ['30° to 390°', '0° to 360°', '30° to 360°', '0° to 330°'], answer: 0 },
       { q: 'Prove: which step correctly starts \\(\\dfrac{\\cos^2\\theta}{1 + \\sin\\theta}\\)?', options: ['\\(\\dfrac{1-\\sin^2\\theta}{1+\\sin\\theta}\\)', '\\(\\dfrac{\\sin^2\\theta-1}{1+\\sin\\theta}\\)', '\\(\\dfrac{1-\\cos^2\\theta}{1+\\sin\\theta}\\)', '\\(\\dfrac{1+\\sin^2\\theta}{1+\\sin\\theta}\\)'], answer: 0 },
@@ -74,7 +74,7 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'A population satisfies \\(P = 500e^{kt}\\). After 20 years, \\(P = 1500\\). Find \\(k\\) exactly:', options: ['\\(k = \\dfrac{\\ln 3}{20}\\)','\\(k = \\dfrac{3}{20}\\)','\\(k = \\dfrac{\\ln 1500}{20}\\)','\\(k = \\dfrac{20}{\\ln 3}\\)'], answer: 0 },
       { q: 'Solve \\(e^{2x} - 3e^x - 4 = 0\\) exactly. The only valid solution is:', options: ['\\(x = \\ln(-1)\\)','\\(x = \\ln 4\\) and \\(x = \\ln(-1)\\)','\\(x = \\ln 4\\)','\\(x = 4\\)'], answer: 2 },
       { q: 'The curve \\(y = 3 + 2e^{-x}\\) has which asymptote?', options: ['\\(y = 3\\)','\\(y = 0\\)','\\(x = 0\\)','\\(y = 2\\)'], answer: 0 },
-      { q: 'Solve \\(2^{x+1} = 3^{x-1}\\) exactly for \\(x\\):', options: ['\\(x = \\dfrac{\\ln 3 + \\ln 2}{\\ln 2 - \\ln 3}\\)','\\(x = \\dfrac{\\ln 3 - \\ln 2}{\\ln 2 + \\ln 3}\\)','\\(x = \\dfrac{\\ln 6}{\\ln(2/3)}\\)','\\(x = \\ln\\!\\left(\\dfrac{3}{2}\\right)\\)'], answer: 0 },
+      { q: "Solve \\(2^{x+1} = 3^{x-1}\\) exactly for \\(x\\):", options: ["\\(x = \\dfrac{\\ln 3 + \\ln 2}{\\ln 3 - \\ln 2}\\)","\\(x = \\dfrac{\\ln 3 - \\ln 2}{\\ln 2 + \\ln 3}\\)","\\(x = \\dfrac{\\ln 6}{\\ln(2/3)}\\)","\\(x = \\ln\\!\\left(\\dfrac{3}{2}\\right)\\)"], answer: 0 },
       { q: 'The graph of \\(y = e^x + e^{-x}\\) is symmetric about:', options: ['the \\(x\\)-axis','the origin','the line \\(y=x\\)','the \\(y\\)-axis'], answer: 3 },
       { q: 'If \\(\\log_a b = p\\) and \\(\\log_a c = q\\), then \\(\\log_a\\!\\left(\\dfrac{a^2 b}{c^3}\\right)\\) equals:', options: ['\\(2p - 3q\\)','\\(2 + p + 3q\\)','\\(2 + p - 3q\\)','\\(p - 3q + a^2\\)'], answer: 2 },
     ]
@@ -113,10 +113,10 @@ const EDEXCEL_MCQ_P7_P11 = {
     red: [
       { q: 'Using first principles, differentiate \\(f(x) = \\dfrac{1}{x}\\). The answer is:', options: ['\\(-\\dfrac{1}{x^2}\\)','\\(\\dfrac{1}{x^2}\\)','\\(\\ln x\\)','\\(-x^{-1} \\ln |x| + c\\)'], answer: 0 },
       { q: 'A cylinder has volume \\(V = 500\\) cm³. Express the total surface area \\(S\\) in terms of radius \\(r\\) only, then find \\(r\\) for minimum \\(S\\):', options: ['\\(r = \\left(\\dfrac{250}{\\pi}\\right)^{1/3}\\)','\\(r = 5\\)','\\(r = \\left(\\dfrac{500}{\\pi}\\right)^{1/3}\\)','\\(r = \\dfrac{250}{\\pi}\\)'], answer: 0 },
-      { q: 'A curve \\(C\\) has equation \\(y = x^3 - 3x + 2\\). The tangent at \\((-1, 4)\\) has equation:', options: ['\\(y = 0\\cdot x + 4\\)','\\(y = -3x + 1\\)','\\(y = 4\\)','\\(y = 3x + 7\\)'], answer: 0 },
+      { q: "A curve \\(C\\) has equation \\(y = x^3 - 3x + 2\\). The tangent at \\((-1, 4)\\) has equation:", options: ["\\(y = 0\\)","\\(y = -3x + 1\\)","\\(y = 4\\)","\\(y = 3x + 7\\)"], answer: 2 },
       { q: 'A function has \\(f\'\'(a) = 0\\) at a stationary point. What additional test is needed?', options: ['Check the sign of \\(f\'(x)\\) either side of \\(x = a\\)','Check \\(f(a)\\)','Compute \\(f\'\'\'(a)\\)','No further test needed — it is a point of inflection'], answer: 0 },
       { q: 'The curve \\(y = ax^3 + bx\\) passes through \\((1, -2)\\) and has gradient 0 at \\(x = 1\\). Find \\(a\\) and \\(b\\):', options: ['\\(a = 2, b = -4\\)','\\(a = -2, b = 0\\)','\\(a = 1, b = -3\\)','\\(a = 2, b = 4\\)'], answer: 2 },
-      { q: 'The rate of change of \\(y = x^3 - 5x^2 + 6x\\) is equal to 2 when:', options: ['\\(x = 1\\) only','\\(x = 2\\) or \\(x = 4\\)','\\(x = 0\\) or \\(x = 2\\)','\\(x = 1\\) or \\(x = 3\\)'], answer: 3 },
+      { q: "The rate of change of \\(y = x^3 - 5x^2 + 6x\\) is equal to 2 when:", options: ["\\(x = \\dfrac{5 \\pm \\sqrt{13}}{3}\\)","\\(x = \\dfrac{5 \\pm \\sqrt{7}}{3}\\)","\\(x = \\dfrac{5 \\pm \\sqrt{19}}{3}\\)","\\(x = 1\\) or \\(x = 3\\)"], answer: 0 },
     ]
   },
 
@@ -147,7 +147,7 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'Find \\(\\displaystyle\\int_2^5 \\dfrac{1}{x} \\, dx\\) in exact form:', options: ['\\(\\ln 5 - \\ln 2\\)', '\\(\\ln 3\\)', '\\(\\dfrac{3}{2}\\)', '\\(\\ln 10 - \\ln 4\\)'], answer: 0 },
       { q: 'A curve passes through \\((2, 3)\\) and \\(\\dfrac{dy}{dx} = kx\\). If the gradient at \\(x=2\\) is 6, find \\(k\\):', options: ['3', '6', '\\(\\dfrac{3}{2}\\)', '12'], answer: 0 },
       { q: 'Find the area between \\(y = x^2 - 4\\) and the x-axis (total area including below x-axis):', options: ['\\(\\dfrac{32}{3}\\)', '0', '\\(\\dfrac{16}{3}\\)', '\\(-\\dfrac{32}{3}\\)'], answer: 0 },
-      { q: 'Evaluate \\(\\displaystyle\\int_1^e \\dfrac{3}{x} \\, dx\\):', options: ['3', '\\(3e\\)', '\\(3\\ln e = 3\\)', '\\(3e - 3\\)'], answer: 0 },
+      { q: "Evaluate \\(\\displaystyle\\int_1^e \\dfrac{3}{x} \\, dx\\):", options: ["3","\\(3e\\)","\\(1\\)","\\(3e - 3\\)"], answer: 0 },
       { q: 'The area between \\(y = x^2\\) and \\(y = 2x\\) is:', options: ['\\(\\dfrac{4}{3}\\)', '2', '\\(\\dfrac{8}{3}\\)', '\\(\\dfrac{2}{3}\\)'], answer: 0 },
     ],
     red: [
@@ -174,7 +174,7 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'If \\(\\mathbf{a} = 2\\mathbf{i} - 3\\mathbf{j}\\), then \\(-\\mathbf{a} =\\)', options: ['\\(-2\\mathbf{i} + 3\\mathbf{j}\\)', '\\(2\\mathbf{i} + 3\\mathbf{j}\\)', '\\(-2\\mathbf{i} - 3\\mathbf{j}\\)', '\\(3\\mathbf{i} - 2\\mathbf{j}\\)'], answer: 0 },
       { q: '\\(|\\mathbf{i}|\\) (magnitude of unit vector \\(\\mathbf{i}\\)) equals:', options: ['1', '0', '\\(\\sqrt{2}\\)', '2'], answer: 0 },
       { q: 'A has position vector \\(\\binom{1}{3}\\), B has position vector \\(\\binom{5}{7}\\). \\(\\vec{AB} =\\)', options: ['\\(\\binom{4}{4}\\)', '\\(\\binom{-4}{-4}\\)', '\\(\\binom{6}{10}\\)', '\\(\\binom{4}{-4}\\)'], answer: 0 },
-      { q: 'The vector \\(\\binom{6}{8}\\) has magnitude:', options: ['10', '14', '2', '\\(\\sqrt{100}\\) (= 10)'], answer: 0 },
+      { q: "The vector \\(\\binom{6}{8}\\) has magnitude:", options: ["10","14","2","\\(\\sqrt{28}\\)"], answer: 0 },
     ],
     amber: [
       { q: 'Find the unit vector in the direction of \\(5\\mathbf{i} - 12\\mathbf{j}\\):', options: ['\\(\\dfrac{5}{13}\\mathbf{i} - \\dfrac{12}{13}\\mathbf{j}\\)', '\\(\\dfrac{5}{17}\\mathbf{i} - \\dfrac{12}{17}\\mathbf{j}\\)', '\\(5\\mathbf{i} - 12\\mathbf{j}\\)', '\\(\\dfrac{1}{13}(5\\mathbf{i} + 12\\mathbf{j})\\)'], answer: 0 },
@@ -191,7 +191,7 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'Point X divides AB in ratio 1:2 from A. \\(\\vec{OX} =\\)', options: ['\\(\\dfrac{2\\mathbf{a}+\\mathbf{b}}{3}\\)', '\\(\\dfrac{\\mathbf{a}+2\\mathbf{b}}{3}\\)', '\\(\\dfrac{\\mathbf{a}+\\mathbf{b}}{2}\\)', '\\(\\dfrac{\\mathbf{a}-\\mathbf{b}}{3}\\)'], answer: 0 },
     ],
     red: [
-      { q: 'Triangle OAB has \\(\\vec{OA} = \\mathbf{a}\\) and \\(\\vec{OB} = \\mathbf{b}\\). P is on OA with OP:PA = 1:2. Q is the midpoint of AB. Show PQ is parallel to OB. \\(\\vec{PQ} =\\)', options: ['\\(\\dfrac{1}{2}\\mathbf{b}\\)','\\(\\mathbf{b} - \\dfrac{1}{3}\\mathbf{a}\\)','\\(\\dfrac{2}{3}\\mathbf{b}\\)','\\(\\dfrac{1}{2}\\mathbf{b} - \\dfrac{1}{6}\\mathbf{a}\\)'], answer: 3 },
+      { q: "Triangle OAB has \\(\\vec{OA} = \\mathbf{a}\\) and \\(\\vec{OB} = \\mathbf{b}\\). P is on OA with OP:PA = 1:2. Q is the midpoint of AB. \\(\\vec{PQ} =\\)", options: ["\\(\\dfrac{1}{6}\\mathbf{a} + \\dfrac{1}{2}\\mathbf{b}\\)","\\(\\mathbf{b} - \\dfrac{1}{3}\\mathbf{a}\\)","\\(\\dfrac{2}{3}\\mathbf{b}\\)","\\(\\dfrac{1}{2}\\mathbf{b} - \\dfrac{1}{6}\\mathbf{a}\\)"], answer: 0 },
       { q: 'Prove: \\(\\vec{OA} = 3\\mathbf{i} + 2\\mathbf{j}\\), \\(\\vec{OB} = 7\\mathbf{i} + 6\\mathbf{j}\\), \\(\\vec{OC} = 11\\mathbf{i} + 10\\mathbf{j}\\) — are A, B, C collinear?', options: ['Yes: \\(\\vec{AC} = 2\\vec{AB}\\)','No: \\(\\vec{AB} \\neq \\vec{BC}\\)','Yes: \\(|AC| = |AB| + |BC|\\)','Cannot determine from given information'], answer: 0 },
       { q: 'In quadrilateral OABC, \\(\\vec{OA} = \\mathbf{a}\\), \\(\\vec{OC} = \\mathbf{c}\\), \\(\\vec{CB} = \\mathbf{a}\\). The midpoint M of OB has position vector:', options: ['\\(\\dfrac{1}{2}(2\\mathbf{a}+\\mathbf{c})\\)','\\(\\dfrac{1}{2}\\mathbf{c}\\)','\\(\\mathbf{a}+\\mathbf{c}\\)','\\(\\dfrac{1}{2}(\\mathbf{a}+\\mathbf{c})\\)'], answer: 3 },
       { q: 'If \\(\\mathbf{p} = \\lambda\\mathbf{a} + \\mu\\mathbf{b}\\) and P lies on the line through A parallel to OB, then:', options: ['\\(\\lambda = 0\\)','\\(\\lambda = 1\\)','\\(\\lambda = \\mu\\)','\\(\\mu = 1\\)'], answer: 1 },

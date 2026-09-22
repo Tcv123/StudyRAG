@@ -110,15 +110,15 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'amber',
     topic: 'P12',
-    q: 'When \\(x^3 + ax^2 - x + b\\) is divided by \\((x-2)\\) the remainder is 9, and \\((x+1)\\) is a factor. Find \\(a + b\\).',
-    options: ['3', '5', '−1', '7'],
+    q: "When \\(x^3 + ax^2 - x + b\\) is divided by \\((x-2)\\) the remainder is 9, and \\((x+1)\\) is a factor. Find \\(a + b\\).",
+    options: ["0","3","−1","1"],
     answer: 0
   },
   {
     tier: 'amber',
     topic: 'P12',
-    q: 'The expression \\(\\dfrac{6x^2 + 5x - 6}{(3x-2)(2x+3)}\\) simplifies to partial fractions. What is the sum \\(A + B\\)?',
-    options: ['2', '3', '1', '0'],
+    q: "Given \\(\\dfrac{5x+1}{(3x-2)(2x+3)} \\equiv \\dfrac{A}{3x-2} + \\dfrac{B}{2x+3}\\), what is the sum \\(A + B\\)?",
+    options: ["2","3","1","0"],
     answer: 0
   },
   {
@@ -131,8 +131,8 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'amber',
     topic: 'P12',
-    q: '\\(f(x) = x^3 + px^2 + qx - 10\\) has factors \\((x+2)\\) and \\((x-1)\\). Find \\(p\\).',
-    options: ['4', '3', '−2', '5'],
+    q: "\\(f(x) = x^3 + px^2 + qx - 10\\) has factors \\((x+2)\\) and \\((x-1)\\). Find \\(p\\).",
+    options: ["6","3","−2","4"],
     answer: 0
   },
   {
@@ -182,15 +182,15 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'red',
     topic: 'P12',
-    q: '\\(f(x) = 6x^3 + ax^2 + bx - 2\\). Given \\((2x-1)\\) and \\((3x+2)\\) are both factors, find \\(a\\) and \\(b\\) then state the third factor.',
-    options: ['\\(a=1,\\ b=-5\\); third factor \\((x+2)\\)', '\\(a=2,\\ b=-3\\); third factor \\((x-2)\\)', '\\(a=-1,\\ b=5\\); third factor \\((x-2)\\)', '\\(a=3,\\ b=-4\\); third factor \\((x+1)\\)'],
+    q: "\\(f(x) = 6x^3 + ax^2 + bx - 2\\). Given \\((2x-1)\\) and \\((3x+2)\\) are both factors, find \\(a\\) and \\(b\\) then state the third factor.",
+    options: ["\\(a=7,\\ b=-1\\); third factor \\((x+1)\\)","\\(a=1,\\ b=-5\\); third factor \\((x+2)\\)","\\(a=2,\\ b=-3\\); third factor \\((x-2)\\)","\\(a=-7,\\ b=1\\); third factor \\((x-1)\\)"],
     answer: 0
   },
   {
     tier: 'red',
     topic: 'P12',
-    q: 'Express \\(\\dfrac{2x^3 + x^2 - x + 3}{(x+1)(x-1)}\\) in the form \\(ax + b + \\dfrac{C}{x+1} + \\dfrac{D}{x-1}\\).',
-    options: ['\\(2x + 1 + \\dfrac{-1}{x+1} + \\dfrac{3}{x-1}\\)', '\\(2x + 3 + \\dfrac{1}{x+1} + \\dfrac{2}{x-1}\\)', '\\(2x - 1 + \\dfrac{2}{x+1} + \\dfrac{1}{x-1}\\)', '\\(2x + 1 + \\dfrac{3}{x+1} + \\dfrac{-1}{x-1}\\)'],
+    q: "Express \\(\\dfrac{2x^3 + x^2 - x + 3}{(x+1)(x-1)}\\) in the form \\(ax + b + \\dfrac{C}{x+1} + \\dfrac{D}{x-1}\\).",
+    options: ["\\(2x + 1 - \\dfrac{3}{2(x+1)} + \\dfrac{5}{2(x-1)}\\)","\\(2x + 1 + \\dfrac{3}{2(x+1)} + \\dfrac{5}{2(x-1)}\\)","\\(2x + 1 - \\dfrac{5}{2(x+1)} + \\dfrac{3}{2(x-1)}\\)","\\(2x - 1 - \\dfrac{3}{2(x+1)} + \\dfrac{5}{2(x-1)}\\)"],
     answer: 0
   },
   {
@@ -203,8 +203,8 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'red',
     topic: 'P12',
-    q: 'The remainder when \\(f(x) = px^3 + 3x^2 - 2x + q\\) is divided by \\((x-1)\\) is twice the remainder when divided by \\((x+1)\\). Which relationship holds?',
-    options: ['\\(p + q = -1\\)', '\\(p + q = 1\\)', '\\(p - q = 2\\)', '\\(2p + q = 0\\)'],
+    q: "The remainder when \\(f(x) = px^3 + 3x^2 - 2x + q\\) is divided by \\((x-1)\\) is twice the remainder when divided by \\((x+1)\\). Which relationship holds?",
+    options: ["\\(3p - q = 9\\)","\\(p + q = -9\\)","\\(3p + q = 9\\)","\\(p - 3q = 9\\)"],
     answer: 0
   },
   {
@@ -391,8 +391,8 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'amber',
     topic: 'P13',
-    q: 'If \\(f(x) = e^x\\) and \\(g(x) = \\ln x\\), \\(x > 0\\), then \\(fg(x)\\) equals:',
-    options: ['\\(x\\)', '\\(e^{\\ln x}\\) — always \\(x\\)', '\\(\\ln(e^x)\\) — also \\(x\\)', '\\(e^x \\cdot \\ln x\\)'],
+    q: "If \\(f(x) = e^x\\) and \\(g(x) = \\ln x\\), \\(x > 0\\), then \\(fg(x)\\) equals:",
+    options: ["\\(x\\)","\\(e^x \\cdot \\ln x\\)","\\(\\dfrac{1}{x}\\)","\\(\\ln x\\)"],
     answer: 0
   },
 
@@ -421,15 +421,15 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'red',
     topic: 'P13',
-    q: 'Describe all transformations mapping \\(y = \\ln x\\) to \\(y = 3\\ln(2x - 4)\\). In which order must they be applied?',
-    options: ['Horizontal stretch SF \\(\\frac{1}{2}\\), translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\), vertical stretch SF 3', 'Translation \\(\\begin{pmatrix}4\\\\0\\end{pmatrix}\\), horizontal stretch SF \\(\\frac{1}{2}\\), vertical stretch SF 3', 'Vertical stretch SF 3, horizontal stretch SF 2, translation \\(\\begin{pmatrix}4\\\\0\\end{pmatrix}\\)', 'Translation \\(\\begin{pmatrix}-2\\\\0\\end{pmatrix}\\), vertical stretch SF 3, horizontal stretch SF \\(\\frac{1}{2}\\)'],
+    q: "Which sequence of transformations maps \\(y = \\ln x\\) to \\(y = 3\\ln(2x - 4)\\)?",
+    options: ["Horizontal stretch SF \\(\\frac{1}{2}\\), translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\), vertical stretch SF 3","Translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\), horizontal stretch SF \\(\\frac{1}{2}\\), vertical stretch SF 3","Vertical stretch SF 3, horizontal stretch SF 2, translation \\(\\begin{pmatrix}4\\\\0\\end{pmatrix}\\)","Translation \\(\\begin{pmatrix}-2\\\\0\\end{pmatrix}\\), vertical stretch SF 3, horizontal stretch SF \\(\\frac{1}{2}\\)"],
     answer: 0
   },
   {
     tier: 'red',
     topic: 'P13',
-    q: 'Solve \\(|x^2 - 5| = |x - 1|\\), giving all real solutions.',
-    options: ['\\(x = 2, x = -2, x = \\dfrac{1+\\sqrt{17}}{2}\\)', '\\(x = 2, x = -2\\)', '\\(x = 1, x = -1, x = 2\\)', '\\(x = 2, x = -3\\)'],
+    q: "Solve \\(|x^2 - 5| = |x - 1|\\), giving all real solutions.",
+    options: ["\\(x = 2,\\ x = -3,\\ x = \\dfrac{1\\pm\\sqrt{17}}{2}\\)","\\(x = 2,\\ x = -3\\)","\\(x = \\dfrac{1\\pm\\sqrt{17}}{2}\\)","\\(x = 2,\\ x = -2,\\ x = \\dfrac{1+\\sqrt{17}}{2}\\)"],
     answer: 0
   },
   {
@@ -532,8 +532,8 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'amber',
     topic: 'P14',
-    q: 'The first three terms of an arithmetic series are \\(x+1\\), \\(3x-1\\), \\(4x+5\\). Find \\(x\\) and the common difference.',
-    options: ['\\(x = -3\\), \\(d = -10\\)', '\\(x = 3\\), \\(d = 8\\)', '\\(x = -3\\), \\(d = 10\\)', '\\(x = 2\\), \\(d = 5\\)'],
+    q: "The first three terms of an arithmetic series are \\(x+1\\), \\(3x-1\\), \\(4x+5\\). Find \\(x\\) and the common difference.",
+    options: ["\\(x = 8\\), \\(d = 14\\)","\\(x = 3\\), \\(d = 8\\)","\\(x = -3\\), \\(d = 10\\)","\\(x = 8\\), \\(d = 23\\)"],
     answer: 0
   },
   {
@@ -632,15 +632,15 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'red',
     topic: 'P14',
-    q: 'Evaluate \\(\\displaystyle\\sum_{r=1}^{n}(3r^2 + 2r - 1)\\) in factorised form.',
-    options: ['\\(n(n+2)(n+1)\\)', '\\(n(n+1)(n+2)\\)', '\\(\\frac{n(n+1)(3n+1)}{2}\\)', '\\(n(3n+5)(n-1)\\)'],
+    q: "Evaluate \\(\\displaystyle\\sum_{r=1}^{n}(3r^2 + 2r - 1)\\) in terms of \\(n\\).",
+    options: ["\\(\\dfrac{n(2n^2+5n+1)}{2}\\)","\\(n(n+1)(n+2)\\)","\\(\\dfrac{n(n+1)(3n+1)}{2}\\)","\\(\\dfrac{n(2n^2+5n-1)}{2}\\)"],
     answer: 0
   },
   {
     tier: 'red',
     topic: 'P14',
-    q: 'The sum of an arithmetic series is \\(S_n = \\frac{n}{2}(3n-1)\\). Find the value of \\(n\\) for which \\(u_n = 50\\).',
-    options: ['17', '18', '16', '19'],
+    q: "The sum of an arithmetic series is \\(S_n = \\frac{n}{2}(3n-1)\\). Find the value of \\(n\\) for which \\(u_n = 49\\).",
+    options: ["17","18","16","19"],
     answer: 0
   },
   {
@@ -653,8 +653,8 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'red',
     topic: 'P14',
-    q: 'A geometric series has first term \\(a\\) and ratio \\(r\\). Given \\(S_\\infty = 4S_3\\), find \\(r\\).',
-    options: ['\\(\\dfrac{1}{\\sqrt[3]{4}}\\) — i.e. \\(4^{-1/3}\\)', '\\(\\frac{1}{4}\\)', '\\(\\frac{3}{4}\\)', '\\(\\frac{1}{2}\\)'],
+    q: "A geometric series has first term \\(a\\) and ratio \\(r\\). Given \\(S_\\infty = 4S_3\\), find \\(r\\).",
+    options: ["\\(\\sqrt[3]{\\tfrac{3}{4}}\\)","\\(\\dfrac{1}{\\sqrt[3]{4}}\\)","\\(\\frac{3}{4}\\)","\\(\\frac{1}{2}\\)"],
     answer: 0
   },
 
@@ -764,15 +764,15 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'amber',
     topic: 'P15',
-    q: 'Use small angle approximations to simplify \\(\\dfrac{\\sin 2\\theta}{\\tan 3\\theta}\\) for small \\(\\theta\\).',
-    options: ['\\(\\dfrac{2}{3}\\)', '\\(\\dfrac{2\\theta}{3\\theta} = \\dfrac{2}{3}\\)', '\\(\\dfrac{2\\theta}{3}\\)', '\\(\\dfrac{6\\theta^2}{1}\\)'],
+    q: "Use small angle approximations to simplify \\(\\dfrac{\\sin 2\\theta}{\\tan 3\\theta}\\) for small \\(\\theta\\).",
+    options: ["\\(\\dfrac{2}{3}\\)","\\(\\dfrac{3}{2}\\)","\\(\\dfrac{2\\theta}{3}\\)","\\(\\dfrac{6\\theta^2}{1}\\)"],
     answer: 0
   },
   {
     tier: 'amber',
     topic: 'P15',
-    q: 'Two radii of length 10 cm enclose a sector of area 40 cm². Find the perimeter of the sector.',
-    options: ['\\(8 + 20 = 28\\) cm', '28 cm', '24 cm', '36 cm'],
+    q: "Two radii of length 10 cm enclose a sector of area 40 cm². Find the perimeter of the sector.",
+    options: ["28 cm","18 cm","24 cm","36 cm"],
     answer: 0
   },
   {
@@ -857,8 +857,8 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'red',
     topic: 'P15',
-    q: 'Two circles of radius \\(r\\) overlap such that each passes through the other\'s centre. Find the area of the overlap region in terms of \\(r\\).',
-    options: ['\\(r^2\\!\\left(\\dfrac{\\pi}{3} - \\dfrac{\\sqrt{3}}{2} + \\dfrac{\\pi}{3} - \\dfrac{\\sqrt{3}}{2}\\right) = r^2\\!\\left(\\dfrac{2\\pi}{3} - \\sqrt{3}\\right)\\)', '\\(\\dfrac{\\pi r^2}{3}\\)', '\\(r^2(\\pi - \\sqrt{3})\\)', '\\(\\dfrac{2\\pi r^2}{3} + r^2\\)'],
+    q: "Two circles of radius \\(r\\) overlap such that each passes through the other's centre. Find the area of the overlap region in terms of \\(r\\).",
+    options: ["\\(r^2\\!\\left(\\dfrac{2\\pi}{3} - \\dfrac{\\sqrt{3}}{2}\\right)\\)","\\(\\dfrac{\\pi r^2}{3}\\)","\\(r^2(\\pi - \\sqrt{3})\\)","\\(r^2\\!\\left(\\dfrac{2\\pi}{3} - \\sqrt{3}\\right)\\)"],
     answer: 0
   },
   {
@@ -982,8 +982,8 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'amber',
     topic: 'P16',
-    q: 'Solve \\(2\\cos^2 x - \\cos x - 1 = 0\\) for \\(0 \\leq x \\leq 2\\pi\\).',
-    options: ['\\(x = \\dfrac{\\pi}{3}, \\pi, \\dfrac{5\\pi}{3}\\)', '\\(x = \\dfrac{\\pi}{3}, \\dfrac{5\\pi}{3}\\)', '\\(x = \\pi, \\dfrac{\\pi}{3}\\)', '\\(x = 0, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}\\)'],
+    q: "Solve \\(2\\cos^2 x - \\cos x - 1 = 0\\) for \\(0 \\leq x \\leq 2\\pi\\).",
+    options: ["\\(x = 0, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}, 2\\pi\\)","\\(x = 0, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}\\)","\\(x = \\dfrac{\\pi}{3}, \\pi, \\dfrac{5\\pi}{3}\\)","\\(x = \\dfrac{\\pi}{3}, \\dfrac{5\\pi}{3}\\)"],
     answer: 0
   },
   {
@@ -1054,8 +1054,8 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'red',
     topic: 'P16',
-    q: 'Solve \\(5\\sin x + 12\\cos x = 6\\) for \\(0 \\leq x \\leq 2\\pi\\). Express \\(x\\) in terms of \\(\\arcsin\\).',
-    options: ['\\(x = \\arcsin\\!\\left(\\frac{6}{13}\\right) - \\arctan\\!\\left(\\frac{12}{5}\\right)\\) and the second solution in range', '\\(x = \\arcsin\\!\\left(\\frac{6}{13}\\right)\\) only', '\\(x = \\arccos\\!\\left(\\frac{6}{13}\\right) - 1.176\\) and \\(x = 2\\pi - \\arccos\\!\\left(\\frac{6}{13}\\right)\\) in radians', '\\(x = 0.487\\) rad and \\(x = 3.629\\) rad'],
+    q: "Solve \\(5\\sin x + 12\\cos x = 6\\) for \\(0 \\leq x \\leq 2\\pi\\), giving answers in radians to 3 d.p.",
+    options: ["\\(x = 1.486\\) and \\(x = 5.587\\)","\\(x = 0.487\\) and \\(x = 3.629\\)","\\(x = 1.486\\) only","\\(x = 0.480\\) and \\(x = 2.662\\)"],
     answer: 0
   },
   {
@@ -1068,15 +1068,15 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'red',
     topic: 'P16',
-    q: 'Find all solutions to \\(3\\cot^2 x - \\cot x - 2 = 0\\) in \\(0 < x < \\pi\\).',
-    options: ['\\(x = \\arctan\\!\\left(\\frac{1}{-2/3}\\right)\\) adjusted for range \\(\\approx 0.405\\) and \\(x = \\arctan(1) = \\frac{\\pi}{4}\\)', '\\(x = \\frac{\\pi}{4}\\) only', '\\(x = \\frac{\\pi}{3}, \\frac{2\\pi}{3}\\)', '\\(x = \\frac{\\pi}{4}, \\frac{3\\pi}{4}\\)'],
+    q: "Find all solutions to \\(3\\cot^2 x - \\cot x - 2 = 0\\) in \\(0 < x < \\pi\\).",
+    options: ["\\(x = \\frac{\\pi}{4}\\) and \\(x \\approx 2.159\\)","\\(x = \\frac{\\pi}{4}\\) only","\\(x = \\frac{\\pi}{4}\\) and \\(x \\approx 0.983\\)","\\(x = \\frac{\\pi}{4}, \\frac{3\\pi}{4}\\)"],
     answer: 0
   },
   {
     tier: 'red',
     topic: 'P16',
-    q: 'Given \\(\\cos(x+30°) = 3\\sin x\\), find \\(\\tan x\\) exactly.',
-    options: ['\\(\\dfrac{\\sqrt{3}}{4}\\)', '\\(\\dfrac{\\sqrt{3}}{2}\\)', '\\(\\dfrac{1}{2\\sqrt{3}}\\)', '\\(\\dfrac{\\sqrt{3}}{5}\\)'],
+    q: "Given \\(\\cos(x+30°) = 3\\sin x\\), find \\(\\tan x\\) exactly.",
+    options: ["\\(\\dfrac{\\sqrt{3}}{7}\\)","\\(\\dfrac{\\sqrt{3}}{5}\\)","\\(\\dfrac{\\sqrt{3}}{4}\\)","\\(\\dfrac{1}{2\\sqrt{3}}\\)"],
     answer: 0
   },
   {
@@ -1089,8 +1089,8 @@ const EDEXCEL_MCQ_P12_P16 = [
   {
     tier: 'red',
     topic: 'P16',
-    q: 'The function \\(f(x) = a\\sin x + b\\cos x\\) has maximum value 10 and \\(f(0) = 6\\). Find \\(a\\).',
-    options: ['8', '6', '\\(\\sqrt{64}\\) = 8', '\\(2\\sqrt{19}\\)'],
+    q: "The function \\(f(x) = a\\sin x + b\\cos x\\), where \\(a > 0\\), has maximum value 10 and \\(f(0) = 6\\). Find \\(a\\).",
+    options: ["8","6","10","\\(2\\sqrt{19}\\)"],
     answer: 0
   }
 

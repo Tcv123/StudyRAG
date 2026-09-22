@@ -87,7 +87,7 @@ const BIOLOGY_AQA_GCSE_QUESTIONS = {
       { q: 'Which enzyme breaks down fats (lipids)?', options: ['Amylase','Protease','Lipase','Maltase'], answer: 2 },
       { q: 'Where is bile made?', options: ['Pancreas','Liver','Stomach','Gallbladder'], answer: 1 },
       { q: 'Where is bile stored?', options: ['Pancreas','Liver','Gallbladder','Small intestine'], answer: 2 },
-      { q: 'What are the products of starch digestion?', options: ['Amino acids','Glucose','Fatty acids and glycerol','Maltose and then glucose'], answer: 3 },
+      { q: "What are the products of starch digestion?", options: ["Amino acids","Sucrose","Fatty acids and glycerol","Maltose and then glucose"], answer: 3 },
       { q: 'Which organ produces insulin?', options: ['Liver','Pancreas','Kidney','Small intestine'], answer: 1 },
       { q: 'What is a non-communicable disease?', options: ['A disease that spreads from person to person','A disease that is not transmitted, such as heart disease or cancer','A type of infection','A disease caused by bacteria only'], answer: 1 },
       { q: 'Which type of plant tissue transports water and mineral ions from roots to leaves?', options: ['Phloem','Xylem','Epidermis','Palisade mesophyll'], answer: 1 },

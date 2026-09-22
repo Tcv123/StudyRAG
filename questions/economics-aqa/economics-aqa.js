@@ -25,7 +25,7 @@ const ECONOMICS_AQA_QUESTIONS = {
       { q: 'In a free market economy, resources are allocated by:', options: ['Government planning', 'The price mechanism', 'Tradition', 'Lottery'], answer: 1 },
       { q: 'A mixed economy combines:', options: ['Agriculture and industry', 'Market forces and government intervention', 'Imports and exports', 'Consumption and saving'], answer: 1 },
       { q: 'Which is NOT a characteristic of a command economy?', options: ['State ownership of resources', 'Central planning', 'Consumer sovereignty', 'Government sets prices'], answer: 2 },
-      { q: 'The concept of scarcity implies that:', options: ['Goods are expensive', 'Choices must be made', 'There is poverty', 'Resources are finite and wants are infinite'], answer: 3 },
+      { q: "The concept of scarcity implies that:", options: ["Goods are expensive","Choices must be made","There is poverty","Resources are infinite and wants are finite"], answer: 1 },
       { q: 'Renewable resources include:', options: ['Oil', 'Coal', 'Solar energy', 'Natural gas'], answer: 2 },
       { q: 'Economic methodology involves:', options: ['Only collecting data', 'Building models, forming hypotheses, and testing them', 'Making value judgements', 'Predicting the future with certainty'], answer: 1 }
     ],

@@ -826,7 +826,7 @@ const POLITICS_AQA_QUESTIONS = {
       { q: 'Both the UK and the USA use which electoral system for their main legislative chamber?', options: ['Proportional representation', 'First Past the Post / single-member plurality', 'The Additional Member System', 'The Single Transferable Vote'], answer: 1 },
       { q: 'Candidates for US Congress are selected by:', options: ['State governors', 'Local party committees', 'Primary elections open to registered voters', 'The national party leadership, from an approved list'], answer: 2 },
       { q: 'Candidates for the UK Parliament are selected by:', options: ['Primary elections', 'The Prime Minister', 'The Electoral Commission', 'Local constituency party members, under national party rules'], answer: 3 },
-      { q: 'Which country elects its head of government directly?', options: ['The UK', 'The USA', 'Both', 'Neither'], answer: 1 },
+      { q: "Which country's head of government is elected separately from the legislature?", options: ["The UK","The USA","Both","Neither"], answer: 1 },
       { q: 'Which country uses proportional systems for some sub-national elections?', options: ['The USA', 'The UK', 'Both use PR at sub-national level', 'Neither'], answer: 1 },
       { q: 'Party discipline in legislative voting is generally:', options: ['Stronger in the USA than the UK', 'Identical in both', 'Absent in both', 'Stronger in the UK than the USA'], answer: 3 },
       { q: 'Campaign spending in national elections is:', options: ['Subject to statutory limits in the UK, while US independent expenditure is effectively unlimited', 'Prohibited in both', 'Strictly capped in the USA and unlimited in the UK', 'Entirely state-funded in both'], answer: 0 },

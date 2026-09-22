@@ -522,7 +522,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The stationary points of y = x³ − 3x occur at:', options: ['x = 1 and x = −1','x = 0 only','x = 3 and x = −3','x = √3 and x = −√3'], answer: 0 }, // c-app
       { q: 'Differentiate (x + 1)/(x − 1).', options: ['−2/(x − 1)²','2/(x − 1)²','1/(x − 1)²','−2/(x + 1)²'], answer: 0 }, // c-rules
       { q: 'For x² + y² = 25, implicit differentiation gives dy/dx =', options: ['−x/y','x/y','−y/x','y/x'], answer: 0 }, // c-imp
-      { q: 'For the parametric curve x = t², y = t³, dy/dx equals:', options: ['3t/2','3t²/2t','2t/3t²','3t²'], answer: 0 }, // c-par
+      { q: "For the parametric curve x = t², y = t³, dy/dx equals:", options: ["3t/2","6t³","2t/3t²","3t²"], answer: 0 }, // c-par
       { q: 'The derivative of tan x is:', options: ['sec²x','−cosec²x','sec x tan x','cot x'], answer: 0 }, // c-trig
       { q: 'Differentiate e^(x²).', options: ['2xe^(x²)','e^(x²)','x²e^(x²)','2e^(x²)'], answer: 0 }, // c-rules
       { q: 'The gradient of the normal to a curve at a point where dy/dx = m is:', options: ['−1/m','m','1/m','−m'], answer: 0 }, // c-app

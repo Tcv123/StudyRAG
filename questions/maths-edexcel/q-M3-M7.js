@@ -141,8 +141,8 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A particle of mass 2 kg is acted on by forces (3i + 4j) N and (−1i + 2j) N. What is the magnitude of the acceleration?",
-      options: ["3 m/s²", "5 m/s²", "6.5 m/s²", "√29 m/s²"],
-      answer: 0, tier: "red"
+      options: ["3 m/s²","5 m/s²","√10 m/s²","√40 m/s²"],
+      answer: 2, tier: "red"
     },
     {
       q: "A particle in a lift of mass 60 kg has an apparent weight of 528 N. What is the acceleration of the lift and its direction?",
@@ -156,7 +156,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "On a smooth incline of 25°, particle A (mass 5 kg) is connected by a string over a pulley to particle B (mass 2 kg) hanging freely. What is the acceleration (taking down the slope as positive for A)?",
-      options: ["−1.32 m/s² (A moves up)", "1.32 m/s² (A moves down)", "4.9 m/s²", "0 m/s²"],
+      options: ["0.16 m/s² (A moves down)","−0.16 m/s² (A moves up)","0.22 m/s² (A moves down)","3.54 m/s² (A moves down)"],
       answer: 0, tier: "red"
     },
     {
@@ -227,8 +227,8 @@ const EDEXCEL_MCQ_M3_M7 = {
       answer: 0, tier: "green"
     },
     {
-      q: "A horizontal force of 8 N acts at the end of a 0.5 m horizontal rod attached to a wall. What is the moment about the wall attachment?",
-      options: ["4 N·m", "16 N·m", "8 N·m", "0.0625 N·m"],
+      q: "A horizontal force of 8 N acts perpendicular to a 0.5 m horizontal rod at its free end; the other end is attached to a wall. What is the moment about the wall attachment?",
+      options: ["4 N·m","16 N·m","8 N·m","0.0625 N·m"],
       answer: 0, tier: "green"
     },
 
@@ -240,7 +240,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A uniform beam AB, length 6 m, mass 20 kg, rests on supports at A and at C (where C is 4 m from A). A 50 N load hangs at B. Find the reaction at C.",
-      options: ["152.6 N", "96.4 N", "248 N", "49 N"],
+      options: ["222 N","24 N","90 N","152.6 N"],
       answer: 0, tier: "amber"
     },
     {
@@ -249,9 +249,9 @@ const EDEXCEL_MCQ_M3_M7 = {
       answer: 0, tier: "amber"
     },
     {
-      q: "A non-uniform rod AB, length 4 m, has its centre of mass 1.5 m from A. The rod (mass 6 kg) rests on a support at the midpoint. What additional mass at A would balance it?",
-      options: ["3 kg", "6 kg", "1.5 kg", "4 kg"],
-      answer: 0, tier: "amber"
+      q: "A non-uniform rod AB, length 4 m, has its centre of mass 1.5 m from A. The rod (mass 6 kg) rests on a support at the midpoint. What additional mass at B would balance it?",
+      options: ["3 kg","6 kg","1.5 kg","4 kg"],
+      answer: 2, tier: "amber"
     },
     {
       q: "A uniform rod AB, mass 4 kg, length 3 m, rests on supports at A and B. A 6 kg load hangs 1 m from A. What is the reaction at A?",
@@ -275,8 +275,8 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A non-uniform beam AB of length 5 m, mass 12 kg, rests on a pivot 3 m from A. When a 4 kg mass is placed at A, the beam is in equilibrium. Find the distance of the centre of mass from A.",
-      options: ["2.0 m from A", "3.0 m from A", "2.5 m from A", "1.5 m from A"],
-      answer: 0, tier: "amber"
+      options: ["2.0 m from A","3.0 m from A","4.0 m from A","1.5 m from A"],
+      answer: 2, tier: "amber"
     },
     {
       q: "A particle rests on a rough ladder. The friction from the ground on the base of the ladder acts in which direction?",
@@ -296,8 +296,8 @@ const EDEXCEL_MCQ_M3_M7 = {
 
     // RED (6)
     {
-      q: "A uniform rod AB of length 6 m and mass 10 kg rests on a support at C (2 m from B). A particle of mass m is placed at A. The rod is on the verge of tilting about C. Find m.",
-      options: ["5 kg", "10 kg", "7.5 kg", "2.5 kg"],
+      q: "A uniform rod AB of length 6 m and mass 10 kg rests on a support at C (2 m from A). A particle of mass m is placed at A. The rod is on the verge of tilting about C. Find m.",
+      options: ["5 kg","10 kg","7.5 kg","2.5 kg"],
       answer: 0, tier: "red"
     },
     {
@@ -307,7 +307,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A ladder of mass 20 kg and length 6 m rests against a smooth wall, making angle 65° with the horizontal. A man of mass 75 kg stands 4 m up the ladder. Find the normal reaction from the wall.",
-      options: ["176 N", "147 N", "254 N", "98 N"],
+      options: ["274 N","217 N","228 N","147 N"],
       answer: 0, tier: "red"
     },
     {
@@ -322,7 +322,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A beam AB of length 4 m is supported at A (pin) and at C (0.5 m from B, roller). Uniform beam, mass 8 kg. A 30 kg load hangs at B. Find the reaction at A.",
-      options: ["135.2 N downward", "58.8 N upward", "370.6 N upward", "135.2 N upward"],
+      options: ["8.4 N downward","8.4 N upward","380.8 N upward","135.2 N upward"],
       answer: 0, tier: "red"
     }
   ],
@@ -406,8 +406,8 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A particle's position is r = (t³ − 4t)i + (2t²)j. Find the speed when t = 2.",
-      options: ["8 m/s", "√80 ≈ 8.94 m/s", "√16 m/s", "4√2 m/s"],
-      answer: 0, tier: "amber"
+      options: ["8 m/s","√80 ≈ 8.94 m/s","8√2 ≈ 11.3 m/s","4√2 m/s"],
+      answer: 2, tier: "amber"
     },
     {
       q: "A particle has acceleration a = 6t − 4. It starts with v = 2 m/s at t = 0. Find v at t = 2.",
@@ -441,7 +441,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A particle starts at origin with velocity 4 m/s and has acceleration a = −2t. When does the particle first return to the origin?",
-      options: ["t = 6 s", "t = 2 s", "t = 4 s", "t = 3 s"],
+      options: ["t = 2√3 ≈ 3.46 s","t = 2 s","t = 4 s","t = 3 s"],
       answer: 0, tier: "amber"
     },
     {
@@ -587,7 +587,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A stone is thrown at 20 m/s at 35° above horizontal from a cliff 30 m high. How long does it take to hit the sea below? (g = 9.8)",
-      options: ["3.21 s", "2.35 s", "4.08 s", "1.87 s"],
+      options: ["3.91 s","2.34 s","4.66 s","2.47 s"],
       answer: 0, tier: "amber"
     },
     {
@@ -607,19 +607,19 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A ball launched at 30° from the ground clears a wall of height 4 m at horizontal distance 20 m. Find the minimum launch speed. (g = 9.8)",
-      options: ["16.6 m/s", "20.0 m/s", "12.3 m/s", "23.1 m/s"],
+      options: ["18.6 m/s","15.0 m/s","20.0 m/s","12.3 m/s"],
       answer: 0, tier: "amber"
     },
     {
       q: "A projectile's horizontal component of velocity is 12 m/s and its vertical component is −9 m/s (downward) at some point. What is the speed at this instant?",
-      options: ["15 m/s", "21 m/s", "3 m/s", "√(144+81) = 15 m/s"],
+      options: ["15 m/s","21 m/s","3 m/s","√(144 − 81) ≈ 7.9 m/s"],
       answer: 0, tier: "amber"
     },
 
     // RED (6)
     {
       q: "A projectile is fired from a cliff top 60 m above sea level at 20 m/s at angle 25° below horizontal. Find the time to hit the sea. (g = 9.8)",
-      options: ["2.62 s", "1.87 s", "3.50 s", "4.15 s"],
+      options: ["2.74 s","4.47 s","3.50 s","2.11 s"],
       answer: 0, tier: "red"
     },
     {
@@ -629,7 +629,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A ball is struck so that it just clears a vertical wall 3 m high placed 15 m horizontally from the launch point, then lands 10 m beyond the wall on the same level as the launch. Find the launch angle. (g = 9.8)",
-      options: ["38.7°", "30°", "45°", "52.1°"],
+      options: ["26.6°","30°","45°","11.3°"],
       answer: 0, tier: "red"
     },
     {
@@ -638,13 +638,13 @@ const EDEXCEL_MCQ_M3_M7 = {
       answer: 0, tier: "red"
     },
     {
-      q: "A particle is projected at 50 m/s at angle α above horizontal. It passes through the point (200, 50) measured from the launch point. Using the trajectory equation, find tan α. (g = 9.8)",
-      options: ["2.28", "1.00", "0.70", "3.45"],
-      answer: 0, tier: "red"
+      q: "A particle is projected at 50 m/s at angle α above horizontal. It passes through the point (200, 43.2) measured from the launch point. Using the trajectory equation, find the smaller possible value of tan α. (g = 9.8)",
+      options: ["2.28","1.00","0.70","1.55"],
+      answer: 1, tier: "red"
     },
     {
       q: "Two balls are thrown simultaneously from the same point: ball A at 20 m/s at 60°, ball B at 20 m/s at 30° to horizontal. Find the horizontal distance between them when ball A is at its maximum height. (g = 9.8)",
-      options: ["17.3 m", "10.0 m", "20.0 m", "34.6 m"],
+      options: ["12.9 m","17.7 m","30.6 m","10.0 m"],
       answer: 0, tier: "red"
     }
   ],
@@ -723,7 +723,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A particle of mass 8 kg is pushed up a rough slope of 20° by a force P parallel to the slope. μ = 0.25. If P = 60 N, find the acceleration. (g = 9.8)",
-      options: ["2.87 m/s²", "7.50 m/s²", "0.93 m/s²", "5.21 m/s²"],
+      options: ["1.85 m/s²","4.15 m/s²","5.20 m/s²","6.45 m/s²"],
       answer: 0, tier: "amber"
     },
     {
@@ -768,12 +768,12 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A particle of mass 3 kg is on a rough horizontal surface (μ = 0.5). A force of P N is applied at angle 30° below the horizontal. Find the range of P for the particle to remain in equilibrium.",
-      options: ["0 ≤ P ≤ 13.0 N", "0 ≤ P ≤ 14.7 N", "0 ≤ P ≤ 8.5 N", "0 ≤ P ≤ 25.5 N"],
+      options: ["0 ≤ P ≤ 23.9 N","0 ≤ P ≤ 13.2 N","0 ≤ P ≤ 17.0 N","0 ≤ P ≤ 14.7 N"],
       answer: 0, tier: "amber"
     },
     {
       q: "A particle on a rough slope (μ = 0.4, angle 30°) is acted on by a horizontal force H. The particle is in limiting equilibrium about to move up the slope. Find H (mass = 3 kg, g = 9.8).",
-      options: ["41.0 N", "19.6 N", "27.7 N", "13.3 N"],
+      options: ["37.4 N","28.7 N","4.2 N","17.0 N"],
       answer: 0, tier: "amber"
     },
 
@@ -785,17 +785,17 @@ const EDEXCEL_MCQ_M3_M7 = {
     },
     {
       q: "A particle of mass m slides down a rough slope of angle 45° with μ = 1/√2. What is the acceleration?",
-      options: ["0 m/s²", "g/√2 m/s²", "g m/s²", "g(1 − 1/√2) m/s²"],
-      answer: 0, tier: "red"
+      options: ["0 m/s²","g/√2 m/s²","g(1/√2 − 1/2) m/s²","g(1 − 1/√2) m/s²"],
+      answer: 2, tier: "red"
     },
     {
       q: "A 10 kg block is on a rough slope (angle α, μ = 0.3). A force of 60 N parallel to and up the slope gives acceleration 2 m/s² up the slope. Find α. (g = 9.8)",
-      options: ["23.6°", "35.0°", "17.2°", "30.0°"],
+      options: ["6.3°","24.1°","19.2°","39.7°"],
       answer: 0, tier: "red"
     },
     {
       q: "A particle is projected up a rough slope of 30° with initial speed 8 m/s (μ = 0.4). Find the speed when it returns to the starting point. (g = 9.8)",
-      options: ["4.10 m/s", "5.64 m/s", "6.86 m/s", "8.00 m/s"],
+      options: ["3.41 m/s","6.15 m/s","8.00 m/s","4.43 m/s"],
       answer: 0, tier: "red"
     },
     {

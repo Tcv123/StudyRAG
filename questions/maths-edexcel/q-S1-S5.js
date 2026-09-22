@@ -29,7 +29,7 @@ const EDEXCEL_MCQ_S1_S5 = {
     { tier: 'amber', q: 'For a simple random sample from a population of 500, numbers 001–500 are assigned. A random number table gives 623. What should the researcher do?', options: ['Ignore 623 and take the next random number', 'Use 623 − 500 = 123', 'Include the 623rd person from another list', 'Start the random number table again'], answer: 0 },
     { tier: 'amber', q: 'A survey uses random start 7 and interval k = 15. Which is the 3rd member selected?', options: ['37', '22', '52', '7'], answer: 0 },
     { tier: 'amber', q: 'Why might a questionnaire that asks "Don\'t you agree that exercise is important?" produce biased results?', options: ['It is a leading question that encourages agreement', 'The sample size is too small', 'It uses an open response format', 'The question is too short'], answer: 0 },
-    { tier: 'amber', q: 'A sample of 40 students is taken from 3 year groups of sizes 120, 160, and 80. How many should come from the group of 80?', options: ['8', '16', '12', '10'], answer: 0 },
+    { tier: 'amber', q: "A sample of 40 students is taken from 3 year groups of sizes 120, 160, and 80. How many should come from the group of 80?", options: ["9","16","12","10"], answer: 0 },
     { tier: 'amber', q: 'State one advantage of stratified sampling over simple random sampling.', options: ['It ensures proportional representation of each subgroup', 'It does not require a sampling frame', 'It is quicker and cheaper to carry out', 'It eliminates all sampling bias'], answer: 0 },
     { tier: 'amber', q: 'Which of the following is NOT a random sampling method?', options: ['Quota sampling', 'Simple random sampling', 'Stratified sampling', 'Systematic sampling'], answer: 0 },
     { tier: 'amber', q: 'A sample of 60 is needed from a company with 4 departments of sizes 200, 150, 100, 50. How many from the department of size 150?', options: ['18', '24', '12', '6'], answer: 0 },
@@ -38,7 +38,7 @@ const EDEXCEL_MCQ_S1_S5 = {
 
     // --- RED (6) ---
     { tier: 'red', q: 'A researcher wants a sample of 24 from 3 strata: A(n=180), B(n=120), C(n=60). How many more from A than C?', options: ['8', '6', '10', '4'], answer: 0 },
-    { tier: 'red', q: 'A company uses systematic sampling with k = 12. If the random start is 9, which of these is NOT in the sample?', options: ['45', '9', '21', '33'], answer: 0 },
+    { tier: 'red', q: "A company uses systematic sampling with k = 12. If the random start is 9, which of these is NOT in the sample?", options: ["45","39","21","33"], answer: 1 },
     { tier: 'red', q: 'Which sampling method would be most appropriate when no sampling frame exists but subgroup representation is important?', options: ['Quota sampling', 'Simple random sampling', 'Systematic sampling', 'Stratified sampling'], answer: 0 },
     { tier: 'red', q: 'A census is taken of all 60 employees in a small company. Why is this preferable to a sample here?', options: ['The population is small enough that a census is practical and gives exact results', 'A census is always cheaper than a sample', 'Sampling would require a sampling frame', 'A census removes all sources of error'], answer: 0 },
     { tier: 'red', q: 'A sample has a sampling interval k = 25 and random start 17. Which value shows this IS a systematic sample member?', options: ['142', '137', '140', '143'], answer: 0 },
@@ -80,9 +80,9 @@ const EDEXCEL_MCQ_S1_S5 = {
     // --- RED (6) ---
     { tier: 'red', q: 'A grouped frequency table gives class 20–30 with frequency 15, and 30–50 with frequency 20. Which class has the higher frequency density?', options: ['20–30, with FD = 1.5 vs FD = 1.0', '30–50, with FD = 2.0', 'Both equal', '20–30, with FD = 15'], answer: 0 },
     { tier: 'red', q: 'Data is coded \\(y = (x-a)/b\\) with \\(\\bar{y}=3, \\sigma_y=2, a=50, b=5\\). Find the variance of x.', options: ['100', '50', '10', '25'], answer: 0 },
-    { tier: 'red', q: 'A dataset has \\(\\sum fx = 840, \\sum fx^2 = 8400, \\sum f = 60\\). What is the standard deviation?', options: ['\\(\\sqrt{37}\\) ≈ 6.08', '14', '\\(\\sqrt{196}\\) = 14', '\\(\\sqrt{4}\\) = 2'], answer: 0 },
+    { tier: 'red', q: "A dataset has \\(\\sum fx = 840, \\sum fx^2 = 13980, \\sum f = 60\\). What is the standard deviation?", options: ["\\(\\sqrt{37}\\) ≈ 6.08","14","37","\\(\\sqrt{233}\\) ≈ 15.26"], answer: 0 },
     { tier: 'red', q: 'The heights of 100 plants are recorded. \\(Q_1 = 12\\) cm, \\(Q_3 = 24\\) cm. A plant is 42 cm tall. Is it an outlier, and why?', options: ['Yes; 42 > 24 + 1.5(12) = 42, so it lies exactly on the fence and is classified as an outlier', 'No; it must exceed the fence strictly', 'Yes; any value above \\(Q_3\\) is an outlier', 'No; only values above \\(Q_3 + 2 \\times IQR\\) are outliers'], answer: 1 },
-    { tier: 'red', q: 'From a histogram, bar [10,15) has height 6 and bar [15,25) has height 3. What is the ratio of their frequencies?', options: ['1:1', '2:1', '6:3 = 2:1 by density, but area gives 30:30, ratio is 1:1', '3:2'], answer: 0 },
+    { tier: 'red', q: "From a histogram, bar [10,15) has height 6 and bar [15,25) has height 3. What is the ratio of their frequencies?", options: ["1:1","2:1","1:2","3:2"], answer: 0 },
     { tier: 'red', q: 'A dataset has coding \\(y = x - 100\\). Given \\(\\bar{y} = -4.2\\) and \\(\\sum(y - \\bar{y})^2 = 504\\) with \\(n = 28\\). Find \\(\\sigma_x\\).', options: ['\\(\\sqrt{18} = 3\\sqrt{2} \\approx 4.24\\)', '18', '3', '\\(\\sqrt{504}\\)'], answer: 0 },
   ],
 
@@ -107,7 +107,7 @@ const EDEXCEL_MCQ_S1_S5 = {
     // --- AMBER (12) ---
     { tier: 'amber', q: '\\(P(A) = 0.6, P(B|A) = 0.3, P(B|A\') = 0.5\\). Find \\(P(B)\\).', options: ['0.38', '0.3', '0.5', '0.8'], answer: 0 },
     { tier: 'amber', q: '\\(P(A \\cap B) = 0.12, P(B) = 0.4\\). Find \\(P(A|B)\\).', options: ['0.3', '0.12', '0.048', '0.4'], answer: 0 },
-    { tier: 'amber', q: 'X has distribution: \\(P(X=1)=0.3, P(X=2)=0.5, P(X=3)=0.2\\). Find \\(E(X^2)\\).', options: ['4.3', '1.9', '3.61', '2.0'], answer: 0 },
+    { tier: 'amber', q: "X has distribution: \\(P(X=1)=0.3, P(X=2)=0.5, P(X=3)=0.2\\). Find \\(E(X^2)\\).", options: ["4.1","1.9","3.61","2.0"], answer: 0 },
     { tier: 'amber', q: 'Given \\(E(X)=2.5\\) and \\(E(X^2)=7.5\\), find \\(\\text{Var}(X)\\).', options: ['1.25', '3.75', '7.5', '6.25'], answer: 0 },
     { tier: 'amber', q: '\\(P(A) = 0.5, P(B) = 0.4, P(A \\cup B) = 0.7\\). Are A and B independent?', options: ['No; \\(P(A) \\times P(B) = 0.2 \\neq P(A \\cap B) = 0.2\\) — actually yes', 'Yes; since \\(P(A \\cap B) = 0.2 = 0.5 \\times 0.4\\)', 'No; mutually exclusive events cannot be independent', 'Cannot be determined'], answer: 1 },
     { tier: 'amber', q: 'A card is drawn from a standard deck. Given it is a heart, what is the probability it is a king?', options: ['1/13', '1/4', '4/13', '1/52'], answer: 0 },
@@ -122,7 +122,7 @@ const EDEXCEL_MCQ_S1_S5 = {
     { tier: 'red', q: '\\(P(A) = 0.6, P(B) = 0.5, P(A \\cup B) = 0.8\\). Find \\(P(A|B\')\\).', options: ['0.6', '0.4', '0.3', '0.5'], answer: 0 },
     { tier: 'red', q: 'A test for a disease has sensitivity 0.95 and specificity 0.90. The disease affects 1% of the population. A person tests positive. Find \\(P(\\text{disease}|\\text{positive})\\) to 3 s.f.', options: ['0.0876', '0.95', '0.01', '0.5'], answer: 0 },
     { tier: 'red', q: 'X has \\(P(X=x) = kx\\) for x = 1, 2, 3, 4. Find k.', options: ['0.1', '0.25', '1/4', '0.4'], answer: 0 },
-    { tier: 'red', q: 'For a discrete RV with \\(E(X) = 3\\) and \\(E(X^2) = 11\\), what is the standard deviation of X?', options: ['\\(\\sqrt{2}\\)', '2', '\\(\\sqrt{11}\\)', '1.41'], answer: 0 },
+    { tier: 'red', q: "For a discrete RV with \\(E(X) = 3\\) and \\(E(X^2) = 11\\), what is the standard deviation of X?", options: ["\\(\\sqrt{2}\\)","2","\\(\\sqrt{11}\\)","\\(\\sqrt{20}\\)"], answer: 0 },
     { tier: 'red', q: 'Three events A, B, C are such that \\(P(A) = 0.3, P(B) = 0.4, P(C) = 0.2\\) and all are mutually exclusive. Find \\(P(A \\cup B \\cup C)\\).', options: ['0.9', '0.024', '1.0', '0.7'], answer: 0 },
     { tier: 'red', q: '\\(P(A \\cap B) = 0.15, P(A \\cap B\') = 0.25, P(A\' \\cap B) = 0.3\\). Find \\(P(A\' \\cap B\')\\).', options: ['0.3', '0.15', '0.45', '0.7'], answer: 0 },
   ],
@@ -141,7 +141,7 @@ const EDEXCEL_MCQ_S1_S5 = {
     { tier: 'green', q: '\\(X \\sim B(20, 0.3)\\). How do you calculate \\(P(X \\geq 5)\\)?', options: ['\\(1 - P(X \\leq 4)\\)', '\\(1 - P(X \\leq 5)\\)', '\\(P(X \\leq 5)\\)', '\\(P(X = 5) + P(X = 6) + \\ldots + P(X = 20)\\) only'], answer: 0 },
     { tier: 'green', q: 'For \\(X \\sim B(12, 0.25)\\), the standard deviation is:', options: ['\\(\\sqrt{12 \\times 0.25 \\times 0.75} = \\sqrt{2.25} = 1.5\\)', '3', '2.25', '\\(\\sqrt{3}\\)'], answer: 0 },
     { tier: 'green', q: '\\(X \\sim B(10, 0.3)\\). \\(P(X \\leq 3) = 0.6496\\). Find \\(P(X \\geq 4)\\).', options: ['0.3504', '0.6496', '0.2001', '0.4'], answer: 0 },
-    { tier: 'green', q: 'A fair coin is flipped 6 times. What is the probability of exactly 3 heads?', options: ['5/16', '1/8', '20/64', '15/64'], answer: 0 },
+    { tier: 'green', q: "A fair coin is flipped 6 times. What is the probability of exactly 3 heads?", options: ["5/16","1/8","1/2","15/64"], answer: 0 },
     { tier: 'green', q: 'Which of these scenarios is best modelled by a binomial distribution?', options: ['Rolling a die 20 times and counting sixes', 'Recording the exact height of 20 students', 'Measuring the time to complete a task', 'Counting the number of different colours in a box'], answer: 0 },
     { tier: 'green', q: 'For \\(X \\sim B(n,p)\\), as n increases and p remains constant, the distribution becomes:', options: ['More bell-shaped and symmetric', 'More skewed', 'Unchanged', 'More concentrated around 0'], answer: 0 },
 
@@ -198,10 +198,10 @@ const EDEXCEL_MCQ_S1_S5 = {
     { tier: 'amber', q: 'In a two-tailed test at 10% with \\(n=25, p_0=0.4\\): lower critical value requires \\(P(X \\leq c) < 0.05\\). Given \\(P(X \\leq 5) = 0.0294, P(X \\leq 6) = 0.0736\\), find the lower critical value.', options: ['5', '6', '4', '7'], answer: 0 },
     { tier: 'amber', q: 'Why is it wrong to say "we accept \\(H_0\\)" in a hypothesis test?', options: ['Failing to reject \\(H_0\\) does not prove it is true; it just means insufficient evidence against it', 'We always reject \\(H_0\\) in statistics', '\\(H_0\\) is never accepted in any context', 'Accepting \\(H_0\\) implies \\(H_1\\) is false'], answer: 0 },
     { tier: 'amber', q: 'A doctor tests whether a new drug increases recovery rate above 60%. Set up the hypotheses.', options: ['\\(H_0: p = 0.6, H_1: p > 0.6\\)', '\\(H_0: p > 0.6, H_1: p = 0.6\\)', '\\(H_0: p = 0.6, H_1: p \\neq 0.6\\)', '\\(H_0: p < 0.6, H_1: p = 0.6\\)'], answer: 0 },
-    { tier: 'amber', q: '\\(n = 20, H_0: p = 0.45, H_1: p \\neq 0.45, \\alpha = 5%\\). Observed \\(x = 14\\). \\(P(X \\geq 14) = 0.0673\\). Compare with \\(\\alpha/2 = 0.025\\). Conclusion?', options: ['Do not reject \\(H_0\\); 0.0673 > 0.025', 'Reject \\(H_0\\); 0.0673 < 0.05', 'Reject \\(H_0\\); upper tail significant at 10%', 'Accept \\(H_1\\)'], answer: 0 },
+    { tier: 'amber', q: "\\(n = 20, H_0: p = 0.45, H_1: p \\neq 0.45, \\alpha = 5\\%\\). Observed \\(x = 13\\). \\(P(X \\geq 13) = 0.0580\\). Compare with \\(\\alpha/2 = 0.025\\). Conclusion?", options: ["Do not reject \\(H_0\\); 0.0580 > 0.025","Reject \\(H_0\\); 0.0580 < 0.10","Reject \\(H_0\\); 13 is well above the expected value of 9","Accept \\(H_1\\)"], answer: 0 },
 
     // --- RED (6) ---
-    { tier: 'red', q: '\\(H_0: p = 0.3, H_1: p > 0.3, n = 25, \\alpha = 5%\\). Find the critical region given: \\(P(X \\geq 11) = 0.0442, P(X \\geq 10) = 0.0905\\).', options: ['\\(X \\geq 11\\); actual significance level 4.42%', '\\(X \\geq 10\\); actual significance level 9.05%', '\\(X \\geq 12\\)', '\\(X \\geq 11\\); actual significance level 5%'], answer: 0 },
+    { tier: 'red', q: "\\(H_0: p = 0.3, H_1: p > 0.3, n = 25, \\alpha = 5\\%\\). Find the critical region given: \\(P(X \\geq 12) = 0.0442, P(X \\geq 11) = 0.0978\\).", options: ["\\(X \\geq 12\\); actual significance level 4.42%","\\(X \\geq 11\\); actual significance level 9.78%","\\(X \\geq 13\\)","\\(X \\geq 12\\); actual significance level 5%"], answer: 0 },
     { tier: 'red', q: 'A two-tailed test at 5% has critical region \\(X \\leq 3\\) or \\(X \\geq 14\\) for \\(X \\sim B(18, p_0)\\). If \\(P(X \\leq 3) = 0.0154\\) and \\(P(X \\geq 14) = 0.0154\\), what is the actual significance level?', options: ['3.08%', '5%', '1.54%', '10%'], answer: 0 },
     { tier: 'red', q: '\\(H_0: p = 0.2, H_1: p \\neq 0.2, n = 30, \\alpha = 10%\\). Observed \\(x = 2\\). \\(P(X \\leq 2) = 0.0442\\). Compare with \\(\\alpha/2 = 5%\\). State a full conclusion.', options: ['Reject \\(H_0\\); 0.0442 < 0.05, sufficient evidence at 10% that p ≠ 0.2', 'Do not reject; 0.0442 < 0.1', 'Accept \\(H_0\\); inconclusive', 'Reject; any p-value below 0.1 is significant for two-tailed test'], answer: 0 },
     { tier: 'red', q: 'For \\(X \\sim B(20, 0.3)\\) under \\(H_0\\), the critical region is \\(X \\leq 2\\) (lower, 5%). If the true value is \\(p = 0.1\\), what type of error occurs if \\(X = 5\\)?', options: ['Type II error; X is not in the critical region even though \\(H_0\\) is false', 'Type I error; \\(H_0\\) is rejected incorrectly', 'No error; the test works correctly', 'Type II error; \\(H_0\\) is accepted and it is true'], answer: 0 },

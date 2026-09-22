@@ -20,7 +20,7 @@ const BIOLOGY_OCR_A_QUESTIONS = {
       { q: 'Why is a risk assessment carried out before a practical?', options: ['To make the experiment more accurate and the results more precise','To identify hazards and minimise risk of harm','To determine the independent variable','To calculate the sample size needed'], answer: 1 },
       { q: 'What is the purpose of a blank or negative control?', options: ['To ensure the experiment works','To show what happens without the independent variable, confirming any effect is due to the IV','To increase accuracy','To reduce anomalies'], answer: 1 },
       { q: 'Which of the following increases the reliability of results?', options: ['Using expensive equipment','Repeating the experiment and calculating a mean','Changing more than one variable at a time to save time','Using smaller sample sizes'], answer: 1 },
-      { q: 'What type of graph should be used for continuous data?', options: ['Bar chart','Pie chart','Line graph','Scatter diagram with line of best fit'], answer: 3 },
+      { q: "What type of graph should be used for continuous data?", options: ["Bar chart","Pie chart","Line graph","Pictogram"], answer: 2 },
     ],
     amber: [
       { q: 'A student measures enzyme activity at different temperatures. At 60°C the rate is very low. What is the most likely explanation?', options: ['The enzyme has not been activated','The enzyme has been denatured','The substrate concentration is too low','The pH is too high'], answer: 1 },

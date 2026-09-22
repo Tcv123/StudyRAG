@@ -90,9 +90,9 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'amber',
-      q: 'Find the gradient of the tangent to \\(x = \\cos t,\\; y = \\sin 2t\\) at \\(t = \\pi/4\\).',
-      options: ['\\(-2\\)', '\\(2\\)', '\\(-\\frac{1}{2}\\)', '\\(\\frac{1}{2}\\)'],
-      answer: 0
+      q: "Find the gradient of the tangent to \\(x = \\cos t,\\; y = \\sin 2t\\) at \\(t = \\pi/4\\).",
+      options: ["\\(-2\\)","\\(2\\)","\\(-\\frac{1}{2}\\)","\\(0\\)"],
+      answer: 3
     },
     {
       tier: 'amber',
@@ -108,8 +108,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'amber',
-      q: 'For \\(x = 3t^2,\\; y = 6t\\), find \\(\\frac{d^2y}{dx^2}\\).',
-      options: ['\\(-\\frac{1}{3t^2}\\)', '\\(\\frac{1}{3t}\\)', '\\(-\\frac{1}{t^2}\\)', '\\(\\frac{2}{3t}\\)'],
+      q: "For \\(x = 3t^2,\\; y = 6t\\), find \\(\\frac{d^2y}{dx^2}\\).",
+      options: ["\\(-\\frac{1}{6t^3}\\)","\\(-\\frac{1}{3t^2}\\)","\\(-\\frac{1}{t^2}\\)","\\(\\frac{1}{6t^3}\\)"],
       answer: 0
     },
     {
@@ -175,8 +175,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'red',
-      q: 'At what value of \\(t\\) does the normal to \\(x = t^2,\\; y = 2t\\) pass through the point \\((3, 0)\\)?',
-      options: ['\\(t = 1\\)', '\\(t = 2\\)', '\\(t = \\sqrt{3}\\)', '\\(t = -1\\)'],
+      q: "At what positive value of \\(t\\) does the normal to \\(x = t^2,\\; y = 2t\\) pass through the point \\((3, 0)\\)?",
+      options: ["\\(t = 1\\)","\\(t = 2\\)","\\(t = \\sqrt{3}\\)","\\(t = \\sqrt{2}\\)"],
       answer: 0
     },
     {
@@ -309,8 +309,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'amber',
-      q: 'Find \\(\\frac{dy}{dx}\\) where \\(x^3 + y^3 = 6xy\\).',
-      options: ['\\(\\frac{2y - x^2}{y^2 - 2x}\\)', '\\(\\frac{x^2 - 2y}{y^2 - 2x}\\)', '\\(\\frac{y-x^2}{y^2-x}\\)', '\\(\\frac{6y-3x^2}{3y^2-6x}\\)'],
+      q: "Find \\(\\frac{dy}{dx}\\) where \\(x^3 + y^3 = 6xy\\).",
+      options: ["\\(\\frac{2y - x^2}{y^2 - 2x}\\)","\\(\\frac{x^2 - 2y}{y^2 - 2x}\\)","\\(\\frac{y-x^2}{y^2-x}\\)","\\(\\frac{2y-x^2}{y^2}\\)"],
       answer: 0
     },
     {
@@ -327,8 +327,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'amber',
-      q: 'Find the gradient of \\(x^2 + 3xy + y^2 = 7\\) at the point \\((1, 1)\\).',
-      options: ['\\(-1\\)', '\\(1\\)', '\\(-\\frac{5}{5}\\)', '\\(\\frac{1}{5}\\)'],
+      q: "Find the gradient of \\(x^2 + 3xy + y^2 = 7\\) at the point \\((1, 1)\\).",
+      options: ["\\(-1\\)","\\(1\\)","\\(-5\\)","\\(\\frac{1}{5}\\)"],
       answer: 0
     },
     {
@@ -364,8 +364,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'red',
-      q: 'A point on \\(e^{xy} = 2x + y\\) passes through \\((0, 0)\\). Find \\(\\frac{dy}{dx}\\) at the origin.',
-      options: ['\\(2\\)', '\\(1\\)', '\\(0\\)', '\\(-1\\)'],
+      q: "The curve \\(e^{xy} = 2x + y + 1\\) passes through \\((0, 0)\\). Find \\(\\frac{dy}{dx}\\) at the origin.",
+      options: ["\\(-2\\)","\\(2\\)","\\(1\\)","\\(0\\)"],
       answer: 0
     },
     {
@@ -376,9 +376,9 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'red',
-      q: 'A particle moves so that \\(x = \\sin^2 t,\\; y = \\cos t\\). Find the rate of change of \\(y\\) with respect to \\(x\\) when \\(t = \\pi/3\\).',
-      options: ['\\(-\\frac{1}{\\sqrt{3}}\\)', '\\(\\frac{1}{2}\\)', '\\(-\\frac{\\sqrt{3}}{2}\\)', '\\(-\\frac{1}{2}\\)'],
-      answer: 0
+      q: "A particle moves so that \\(x = \\sin^2 t,\\; y = \\cos t\\). Find the rate of change of \\(y\\) with respect to \\(x\\) when \\(t = \\pi/3\\).",
+      options: ["\\(-\\frac{1}{\\sqrt{3}}\\)","\\(-1\\)","\\(-\\frac{\\sqrt{3}}{2}\\)","\\(-\\frac{1}{2}\\)"],
+      answer: 1
     },
   ],
 
@@ -462,8 +462,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     // AMBER (12)
     {
       tier: 'amber',
-      q: 'Use Newton-Raphson once on \\(f(x) = x^3 - 5\\) with \\(x_0 = 2\\). Find \\(x_1\\).',
-      options: ['\\(\\frac{11}{6} \\approx 1.833\\)', '\\(1.7\\)', '\\(2.5\\)', '\\(\\frac{5}{3}\\)'],
+      q: "Use Newton-Raphson once on \\(f(x) = x^3 - 5\\) with \\(x_0 = 2\\). Find \\(x_1\\).",
+      options: ["\\(1.75\\)","\\(\\frac{11}{6} \\approx 1.833\\)","\\(2.25\\)","\\(2.5\\)"],
       answer: 0
     },
     {
@@ -516,8 +516,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'amber',
-      q: 'Estimate \\(\\int_1^3 \\ln x\\,dx\\) using the trapezium rule with 4 strips (\\(h=0.5\\)).',
-      options: ['\\(\\approx 1.216\\)', '\\(1.296\\)', '\\(1.100\\)', '\\(1.386\\)'],
+      q: "Estimate \\(\\int_1^3 \\ln x\\,dx\\) using the trapezium rule with 4 strips (\\(h=0.5\\)).",
+      options: ["\\(\\approx 1.282\\)","\\(1.296\\)","\\(1.100\\)","\\(1.386\\)"],
       answer: 0
     },
     {
@@ -535,8 +535,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     // RED (6)
     {
       tier: 'red',
-      q: 'Apply Newton-Raphson to \\(f(x) = x^3 - 3x + 1\\) starting near \\(x_0 = 0\\). This fails to find the root near \\(x=0.347\\) because:',
-      options: ['\\(f\'(0) = -3 \\ne 0\\) — iteration does converge; the real issue is \\(x_0 = 0\\) leads to \\(x_1 = 1/3\\) and then oscillates', '\\(f(0) = 0\\)', 'The function has no roots', 'The tangent at \\(x_0 = 0\\) is vertical'],
+      q: "Apply Newton-Raphson to \\(f(x) = x^3 - 3x + 1\\) with \\(x_0 = 0\\). What happens?",
+      options: ["It converges quickly to the root near \\(0.347\\): \\(x_1 = \\frac{1}{3}\\), \\(x_2 \\approx 0.3472\\)","It fails because \\(f(0) = 0\\)","It fails because the function has no roots","It fails because the tangent at \\(x_0 = 0\\) is vertical"],
       answer: 0
     },
     {
@@ -742,8 +742,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'red',
-      q: 'Using the substitution \\(t = \\tan(x/2)\\), which of these correctly transforms \\(\\int \\frac{1}{1+\\sin x}\\,dx\\)?',
-      options: ['\\(\\int \\frac{1}{(1+t)^2}\\,dt\\)', '\\(\\int \\frac{1}{1+t}\\,dt\\)', '\\(\\int \\frac{2}{(1+t^2)(1+t)}\\,dt\\)', '\\(\\int \\frac{t}{1+t}\\,dt\\)'],
+      q: "Using the substitution \\(t = \\tan(x/2)\\), which of these correctly transforms \\(\\int \\frac{1}{1+\\sin x}\\,dx\\)?",
+      options: ["\\(\\int \\frac{2}{(1+t)^2}\\,dt\\)","\\(\\int \\frac{1}{(1+t)^2}\\,dt\\)","\\(\\int \\frac{2}{(1+t^2)(1+t)}\\,dt\\)","\\(\\int \\frac{1}{1+t}\\,dt\\)"],
       answer: 0
     },
     {
@@ -864,8 +864,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'amber',
-      q: 'Find \\(\\lambda\\) if \\(\\begin{pmatrix}\\lambda\\\\2\\\\1\\end{pmatrix}\\) is perpendicular to \\(\\begin{pmatrix}3\\\\-1\\\\1\\end{pmatrix}\\).',
-      options: ['\\(\\lambda = -1\\)', '\\(\\lambda = 1\\)', '\\(\\lambda = 3\\)', '\\(\\lambda = -3\\)'],
+      q: "Find \\(\\lambda\\) if \\(\\begin{pmatrix}\\lambda\\\\2\\\\1\\end{pmatrix}\\) is perpendicular to \\(\\begin{pmatrix}3\\\\-1\\\\1\\end{pmatrix}\\).",
+      options: ["\\(\\lambda = \\frac{1}{3}\\)","\\(\\lambda = -\\frac{1}{3}\\)","\\(\\lambda = 1\\)","\\(\\lambda = -1\\)"],
       answer: 0
     },
     {
@@ -876,8 +876,8 @@ const EDEXCEL_MCQ_P17_P21 = {
     },
     {
       tier: 'amber',
-      q: 'Lines \\(\\ell_1\\): passes through \\((1,0,0)\\) with direction \\(\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}\\) and \\(\\ell_2\\): passes through \\((0,1,1)\\) with direction \\(\\begin{pmatrix}1\\\\-1\\\\0\\end{pmatrix}\\). Do they intersect?',
-      options: ['Yes, at \\(\\left(\\frac{1}{2}, \\frac{1}{2}, 0\\end{pmatrix}\\) — wait, check \\(z\\) component: skew', 'Yes at \\((0,0,0)\\)', 'No, they are parallel', 'Yes at \\((1,1,0)\\)'],
+      q: "Lines \\(\\ell_1\\): passes through \\((1,0,0)\\) with direction \\(\\begin{pmatrix}1\\\\1\\\\0\\end{pmatrix}\\) and \\(\\ell_2\\): passes through \\((0,1,1)\\) with direction \\(\\begin{pmatrix}1\\\\-1\\\\0\\end{pmatrix}\\). Do they intersect?",
+      options: ["No, they are skew","Yes, at \\((0,0,0)\\)","No, they are parallel","Yes, at \\((1,1,0)\\)"],
       answer: 0
     },
     {
