@@ -21267,16 +21267,2170 @@ window.SUBJECTS = [
           { id: 'chem-edexcel-9ch0-2023-p1', year: 'June 2023', paperName: 'Paper 1 — Advanced Inorganic and Physical Chemistry', paperCode: '9CH0/01', totalMarks: 90, durationMins: 105,
             qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Chemistry/2015/Exam-materials/9ch0-01-que-20230613.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Chemistry/2015/Exam-materials/9ch0-01-rms-20230817.pdf',
+            markSchemes: {
+              "1(a)": {
+                "type": "exact",
+                "points": [
+                  "B (2)"
+                ],
+                "guidance": "1 is s-block, 3 is p-block (a noble gas peak), 4 is a d-block element in Period 5."
+              },
+              "1(b)": {
+                "type": "points",
+                "points": [
+                  "An element whose highest-energy (last added) electron goes into a d-subshell"
+                ],
+                "guidance": "Just 'has electrons in d orbitals' is not enough; 'd-block orbital' not credited."
+              },
+              "2(a)": {
+                "type": "points",
+                "points": [
+                  "A region in an atom where there is a high probability of finding an electron",
+                  "Holds up to 2 electrons (a pair with opposite spins)"
+                ],
+                "guidance": "Marked independently. Just 'where the electrons are' not enough."
+              },
+              "2(b)": {
+                "type": "points",
+                "points": [
+                  "s orbital: a sphere (circle)",
+                  "p orbital: dumb-bell / figure-of-eight, two equal lobes"
+                ],
+                "guidance": "Any orientation of p; lobes of very unequal size not credited."
+              },
+              "2(c)": {
+                "type": "exact",
+                "points": [
+                  "A ([Ar]4s¹3d¹⁰)"
+                ],
+                "guidance": "A full 3d subshell is more stable; copper has no 4p electrons."
+              },
+              "3(a)": {
+                "type": "exact",
+                "points": [
+                  "D (bromide ions reduce sulfuric acid forming sulfur dioxide)"
+                ],
+                "guidance": "Br⁻ is a reducing agent but not strong enough to reduce H₂SO₄ as far as sulfur."
+              },
+              "3(b)(i)": {
+                "type": "exact",
+                "points": [
+                  "C (cream precipitate, dissolves in concentrated ammonia only)"
+                ],
+                "guidance": "AgBr is cream and insoluble in dilute NH₃."
+              },
+              "3(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "To remove carbonate / hydroxide (or other) ions that would also precipitate with Ag⁺ and give a false positive"
+                ],
+                "guidance": "Just 'to prevent a false positive' or 'reacts with impurities' is not enough."
+              },
+              "3(b)(iii)": {
+                "type": "points",
+                "points": [
+                  "Nitric acid, HNO₃",
+                  "Its anion gives no precipitate with Ag⁺, whereas e.g. HCl / H₂SO₄ would (false positive)"
+                ],
+                "guidance": "Marked independently."
+              },
+              "3(c)(i)": {
+                "type": "points",
+                "points": [
+                  "Circuit with power supply, electrodes dipping in the molten compound, and a bulb (or ammeter/buzzer) in series",
+                  "Bulb lights (ammeter shows current / buzzer sounds)"
+                ],
+                "guidance": "Also allow observing iodine or chlorine forming (brown colour, purple vapour, green gas). A voltmeter in place of a cell not credited unless two different electrode materials."
+              },
+              "3(c)(ii)": {
+                "type": "exact",
+                "points": [
+                  "B (square planar)"
+                ],
+                "guidance": "Central I has 4 bond pairs and 2 lone pairs."
+              },
+              "3(c)(iii)": {
+                "type": "exact",
+                "points": [
+                  "D (5.0 × 10⁻³)"
+                ],
+                "guidance": "Kc well below 1 means reactants dominate; values above 1 favour products."
+              },
+              "4": {
+                "type": "points",
+                "points": [
+                  "Na, Mg and Al have metallic bonding in a giant lattice (cations attracted to delocalised electrons)",
+                  "From Na to Al the ion charge rises / cation radius falls (more delocalised electrons, greater charge density), so metallic bonding strengthens and melting temperature rises",
+                  "Si has a giant covalent (macromolecular) structure",
+                  "Much energy is needed to break many strong covalent bonds, so Si has the highest melting temperature",
+                  "P is simple molecular (P₄ molecules), hence the big drop from Si",
+                  "Only weak London forces between molecules are overcome on melting"
+                ],
+                "guidance": "One mark per point (6). Any explanation of why Al is similar to Mg is ignored. No credit for saying covalent bonds break in P, or for simple molecular, London forces or ionic bonding for the metals."
+              },
+              "5(a)(i)": {
+                "type": "points",
+                "points": [
+                  "Sensible scales with points covering at least half the grid in each direction",
+                  "All points plotted correctly (±½ square) with a straight best-fit line"
+                ],
+                "guidance": "x-axis may be broken; the ΔG axis must run in the correct direction."
+              },
+              "5(a)(ii)": {
+                "type": "points",
+                "points": [
+                  "Recognises the gradient = −ΔS(system)",
+                  "Gradient = −36 ÷ 200 = −0.18 kJ K⁻¹ mol⁻¹",
+                  "ΔS(system) = +180 J K⁻¹ mol⁻¹"
+                ],
+                "guidance": "Transferred error from the graph allowed. A missing negative sign is penalised once only across M1 and M2. Correct answer alone scores 3. Simultaneous equations, or finding the intercept and substituting, also acceptable."
+              },
+              "5(a)(iii)": {
+                "type": "exact",
+                "points": [
+                  "C (intercept of the y-axis)"
+                ],
+                "guidance": "At T = 0, ΔG = ΔH; x-intercepts have temperature units, and D would give −ΔH."
+              },
+              "5(b)": {
+                "type": "exact",
+                "points": [
+                  "C (moves to the left, mixture gets lighter)"
+                ],
+                "guidance": "Fewer gas molecules on the left, so higher pressure shifts it left, forming more colourless N₂O₄. Note: the paper also states the volume stays constant; the scheme's reasoning uses only the pressure rise."
+              },
+              "6(a)": {
+                "type": "exact",
+                "points": [
+                  "D (base, acid, acid, base)"
+                ],
+                "guidance": "HNO₃ is the stronger acid so donates H⁺ to benzoic acid; C₆H₅COOH₂⁺ is the conjugate acid and NO₃⁻ the conjugate base."
+              },
+              "6(b)": {
+                "type": "points",
+                "points": [
+                  "Na⁺ is smaller than K⁺ (same charge), so has higher charge density",
+                  "So stronger ionic bonds / electrostatic attraction between ions in sodium benzoate, needing more energy to break"
+                ],
+                "guidance": "Reverse argument allowed. Not credited: Na⁺ has higher charge, or references to other bonding types."
+              },
+              "6(c)(i)": {
+                "type": "points",
+                "points": [
+                  "Ka = [C₆H₅COO⁻][H⁺] / [C₆H₅COOH]"
+                ],
+                "guidance": "[H₃O⁺] allowed. Not credited: [H⁺]²/[acid], [H₂O] included, or round brackets."
+              },
+              "6(c)(ii)": {
+                "type": "points",
+                "points": [
+                  "[H⁺] = 10⁻³·⁵¹ = 3.0903 × 10⁻⁴ mol dm⁻³",
+                  "[C₆H₅COOH] = (3.0903 × 10⁻⁴)² ÷ 6.28 × 10⁻⁵ = 1.5207 × 10⁻³ mol dm⁻³",
+                  "Moles = 1.5207 × 10⁻³ × 0.250 = 3.8017 × 10⁻⁴ mol",
+                  "Mass = 3.8017 × 10⁻⁴ × 122 = 0.046381 g (46.4 mg)"
+                ],
+                "guidance": "Alternative route for M2–M4 (adding [H⁺] back to get the initial acid): 1.82973 × 10⁻³ mol dm⁻³, 4.5743 × 10⁻⁴ mol, mass 0.055807 g — also full marks. Transferred errors allowed; correct answer alone scores 4."
+              },
+              "6(d)(i)": {
+                "type": "exact",
+                "points": [
+                  "D (phenolphthalein)"
+                ],
+                "guidance": "Weak acid–strong base: only phenolphthalein changes within the steep pH range."
+              },
+              "6(d)(ii)": {
+                "type": "points",
+                "points": [
+                  "Heat released = 50 × 4.18 × 2.9 = 606.1 J",
+                  "Moles of quinic acid = 0.0250 × 0.500 = 0.0125 mol",
+                  "ΔneutH = −606.1 ÷ (0.0125 × 1000) = −48.5 kJ mol⁻¹ (negative sign needed)"
+                ],
+                "guidance": "Using moles of NaOH instead gives −30.3 kJ mol⁻¹ (loses M2 only). Correct answer alone scores 3."
+              },
+              "6(d)(iii)": {
+                "type": "points",
+                "points": [
+                  "HCN is only partially dissociated, while HCl is fully dissociated",
+                  "So energy is used to break H–C bonds to dissociate HCN fully, so less energy is released overall"
+                ],
+                "guidance": "If neither mark scored, allow 1 for HCl fully dissociated so no energy needed to break H–Cl."
+              },
+              "7(a)": {
+                "type": "points",
+                "points": [
+                  "Atoms with the same atomic number (number of protons)",
+                  "but different mass numbers (numbers of neutrons)"
+                ],
+                "guidance": "May be put in terms of Cr: 24 protons, 26/28/29/30 neutrons. Not 'different number of electrons'."
+              },
+              "7(b)(i)": {
+                "type": "points",
+                "points": [
+                  "1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁴"
+                ],
+                "guidance": "4s⁰ ignored."
+              },
+              "7(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "Calcium forms 2+ more easily as its 1st + 2nd IE sum is lower (1735 vs 2245 kJ mol⁻¹)",
+                  "Calcium has lower nuclear charge (fewer protons) or larger radius, so outer electrons are further from the nucleus",
+                  "So its outer electrons are less strongly attracted by the nucleus"
+                ],
+                "guidance": "Reverse arguments allowed; shielding ignored."
+              },
+              "7(c)(i)": {
+                "type": "points",
+                "points": [
+                  "Green"
+                ],
+                "guidance": "Violet also allowed; mixed colours such as blue-green not credited."
+              },
+              "7(c)(ii)": {
+                "type": "points",
+                "points": [
+                  "The small, highly charged Cr³⁺ polarises / weakens the O–H bonds in the water ligands",
+                  "So a water ligand loses H⁺ (deprotonated) forming H₃O⁺, e.g. [Cr(H₂O)₆]³⁺ + H₂O ⇌ [Cr(H₂O)₅OH]²⁺ + H₃O⁺"
+                ],
+                "guidance": "Marked independently. Ligand exchange not credited."
+              },
+              "7(d)": {
+                "type": "points",
+                "points": [
+                  "E°cell = 1.33 − 1.36 = −0.03 V, so oxidising Cl⁻ is not feasible under standard conditions",
+                  "The value is small, so changing conditions could make Ecell positive and the reaction feasible",
+                  "e.g. raising the concentration of HCl / H⁺ / Cl⁻ (or changing temperature)",
+                  "This shifts equilibrium 1 to the right or equilibrium 2 to the left, so Cl⁻ oxidation becomes feasible"
+                ],
+                "guidance": "Also allow Cl₂ escaping pulling equilibrium 2 left, or more Cr₂O₇²⁻ pushing equilibrium 1 right."
+              },
+              "8*": {
+                "type": "points",
+                "points": [
+                  "Similarity: both speed up reactions by providing an alternative route with lower activation energy (and are unchanged at the end)",
+                  "Pt is a heterogeneous catalyst (solid, reactants gases); Mn²⁺ is homogeneous (same aqueous phase as reactants)",
+                  "Pt: reactant molecules (e.g. CO, NOₓ) adsorb onto the platinum surface / active sites",
+                  "Pt: bonds in reactants weaken, and products (e.g. CO₂, N₂) desorb",
+                  "Mn²⁺: the reaction starts slowly because the negative MnO₄⁻ and C₂O₄²⁻ ions repel each other",
+                  "Mn²⁺: acts as an autocatalyst — rate increases as Mn²⁺ forms, since positive Mn²⁺ reacts faster with the negative ions (Mn²⁺ reduces MnO₄⁻, then the Mn³⁺ formed oxidises C₂O₄²⁻; variable oxidation states)"
+                ],
+                "guidance": "Max 6. Indicative points give up to 4 marks (6 pts = 4, 4–5 = 3, 2–3 = 2, 1 = 1) and structure/reasoning up to 2 (fully linked and sustained = 2, partly = 1, none = 0), added together."
+              },
+              "9(a)(i)": {
+                "type": "points",
+                "points": [
+                  "Silver box: 2Ag(g)",
+                  "Oxygen box: O⁻(g)"
+                ],
+                "guidance": "Missing state symbols penalised once; wrong charges penalised each time."
+              },
+              "9(a)(ii)": {
+                "type": "points",
+                "points": [
+                  "First EA is exothermic because the nucleus of the neutral atom attracts the incoming electron",
+                  "Second EA is endothermic because of repulsion",
+                  "between the negative O⁻ ion and the incoming electron"
+                ],
+                "guidance": "Any mention of removing electrons scores 0."
+              },
+              "9(a)(iii)": {
+                "type": "points",
+                "points": [
+                  "Hess expression: 2ΔatH° + (1462 + 249.2 − 141.1 + 798 − 2969) = −31",
+                  "2ΔatH° = 569.9 kJ mol⁻¹",
+                  "ΔatH°(Ag) = +284.95 kJ mol⁻¹ (≈ +285)"
+                ],
+                "guidance": "Correct answer alone scores 3."
+              },
+              "9(b)(i)": {
+                "type": "points",
+                "points": [
+                  "Bonding is 100% ionic (no polarisation / covalent character)",
+                  "Ions are perfect spheres",
+                  "Charge is evenly spread / ions are point charges",
+                  "Ions are touching one another"
+                ],
+                "guidance": "Any 2. Using atom/molecule for ion is penalised once."
+              },
+              "9(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "Ag⁺ polarises / distorts the chloride ion's electron cloud",
+                  "So the bonding has some covalent character",
+                  "This extra bonding makes the experimental value more exothermic than the purely ionic model"
+                ],
+                "guidance": "Not credited: 'covalent with ionic character' or wrong ion charges."
+              },
+              "10(a)": {
+                "type": "points",
+                "points": [
+                  "O=O shown with a double bond (two shared pairs) and two lone pairs on each O"
+                ],
+                "guidance": "Circles optional; all dots or all crosses allowed."
+              },
+              "10(b)": {
+                "type": "points",
+                "points": [
+                  "Oxygen is only slightly soluble in water",
+                  "O₂ molecules have only weak London forces",
+                  "Water molecules have hydrogen bonds (plus London and dipole forces)",
+                  "Oxygen–water attractions are only London forces, weaker than the hydrogen bonds in water (so O₂ cannot disrupt them)"
+                ],
+                "guidance": "H-bonds between O₂ and water ignored."
+              },
+              "10(c)(i)": {
+                "type": "points",
+                "points": [
+                  "n(S₂O₃²⁻) = 0.03420 × 0.00518 = 1.7716 × 10⁻⁴ mol",
+                  "n(I₂) = 8.8578 × 10⁻⁵ mol",
+                  "n(O₂) = 4.4289 × 10⁻⁵ mol",
+                  "[O₂] = 4.4289 × 10⁻⁵ × 1000/150 = 2.9526 × 10⁻⁴ mol dm⁻³",
+                  "× 32 = 9.4483 × 10⁻³ g dm⁻³"
+                ],
+                "guidance": "Steps in any order; transferred errors allowed. Correct answer alone scores 5."
+              },
+              "10(c)(ii)": {
+                "type": "points",
+                "points": [
+                  "9.4483 × 10⁻³ g in 1000 g → 9.45 ppm"
+                ],
+                "guidance": "Transferred error from (i) allowed."
+              },
+              "10(d)": {
+                "type": "points",
+                "points": [
+                  "Some Mn³⁺ oxidises other Mn³⁺ and some reduces other Mn³⁺",
+                  "Because E° of B (+1.51 V) is more positive than E° of A (+0.95 V), or E°cell = +0.56 V",
+                  "2Mn³⁺(aq) + 2H₂O(l) → Mn²⁺(aq) + MnO₂(s) + 4H⁺(aq)",
+                  "Disproportionation"
+                ],
+                "guidance": "Just 'redox' not credited for the reaction type."
+              }
+            },
+            questions: [
+              {
+                "number": 1,
+                "scenario": "d-block elements.",
+                "parts": [
+                  {
+                    "code": "1(a)",
+                    "preamble": "A graph (on the question paper) plots first ionisation energy against atomic number for elements 1 to 54. Label 1 marks Z = 20 (the point just after the Period 4 minimum at Z = 19), label 2 marks Z = 26 in the flat middle section of Period 4, label 3 marks the peak at Z = 36, and label 4 marks Z = 42 in the flat middle section of Period 5.",
+                    "prompt": "Which labelled point (1–4) is a d-block element in Period 4?\nA 1\nB 2\nC 3\nD 4",
+                    "marks": 1
+                  },
+                  {
+                    "code": "1(b)",
+                    "prompt": "What is a d-block element?",
+                    "marks": 1
+                  }
+                ]
+              },
+              {
+                "number": 2,
+                "scenario": "Atomic orbitals.",
+                "parts": [
+                  {
+                    "code": "2(a)",
+                    "prompt": "Define the term orbital.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "2(b)",
+                    "prompt": "Sketch the shape of an s orbital and of a p orbital.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "2(c)",
+                    "prompt": "Which is the electronic configuration of a copper atom?\nA [Ar]4s¹3d¹⁰\nB [Ar]4s²3d⁹\nC [Ar]4s²4p¹3d⁸\nD [Ar]4s²4p²3d⁷",
+                    "marks": 1
+                  }
+                ]
+              },
+              {
+                "number": 3,
+                "scenario": "Compounds of Group 7 elements.",
+                "parts": [
+                  {
+                    "code": "3(a)",
+                    "prompt": "What happens when concentrated sulfuric acid is added to potassium bromide?\nA bromide ions oxidise sulfuric acid forming sulfur\nB bromide ions oxidise sulfuric acid forming sulfur dioxide\nC bromide ions reduce sulfuric acid forming sulfur\nD bromide ions reduce sulfuric acid forming sulfur dioxide",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(b)(i)",
+                    "preamble": "Bromide ions in solution are tested with a little acidified silver nitrate, and the precipitate is then tested for solubility in aqueous ammonia.",
+                    "prompt": "Which statement is correct for bromide ions?\nA a white precipitate forms that dissolves in concentrated ammonia only\nB a white precipitate forms that dissolves in both dilute and concentrated ammonia\nC a cream precipitate forms that dissolves in concentrated ammonia only\nD a cream precipitate forms that dissolves in both dilute and concentrated ammonia",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(b)(ii)",
+                    "prompt": "Why must the silver nitrate be acidified?",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(b)(iii)",
+                    "prompt": "Which acid should be used to acidify the silver nitrate, and why are other acids unsuitable?",
+                    "marks": 2
+                  },
+                  {
+                    "code": "3(c)(i)",
+                    "preamble": "Solid iodine trichloride exists as the dimer I₂Cl₆. When molten it is thought to dissociate: I₂Cl₆ ⇌ ICl₂⁺ + ICl₄⁻",
+                    "prompt": "Draw a labelled diagram of a simple experiment that would show this dissociation happens, and give the positive result.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "3(c)(ii)",
+                    "prompt": "What shape is the ICl₄⁻ ion?\nA octahedral\nB square planar\nC tetrahedral\nD trigonal bipyramidal",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(c)(iii)",
+                    "prompt": "The equilibrium I₂Cl₆ ⇌ ICl₂⁺ + ICl₄⁻ in the melt lies to the left. Which is the most likely value of Kc?\nA 1.0 × 10⁶\nB 5.0 × 10³\nC 1.0\nD 5.0 × 10⁻³",
+                    "marks": 1
+                  }
+                ]
+              },
+              {
+                "number": 4,
+                "scenario": "Melting temperatures across Period 3.",
+                "parts": [
+                  {
+                    "code": "4",
+                    "preamble": "A graph shows melting temperatures (K) of Period 3 elements, read approximately: Na about 380, Mg about 930, Al about 930 (level with Mg), Si about 1680, P about 320.",
+                    "prompt": "Explain how the melting temperature changes across these elements, in terms of their structure and bonding.",
+                    "marks": 6
+                  }
+                ]
+              },
+              {
+                "number": 5,
+                "scenario": "Dissociation of dinitrogen tetroxide, which reaches equilibrium: N₂O₄(g) (colourless) ⇌ 2NO₂(g) (brown).",
+                "parts": [
+                  {
+                    "code": "5(a)(i)",
+                    "preamble": "ΔG values at different temperatures: 350 K, −4.0 kJ mol⁻¹; 400 K, −13; 450 K, −22; 500 K, −31; 550 K, −40.",
+                    "prompt": "Plot ΔG against temperature.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "5(a)(ii)",
+                    "prompt": "Using the straight line from your graph and ΔG = −TΔS(system) + ΔH, find ΔS(system) in J K⁻¹ mol⁻¹.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "5(a)(iii)",
+                    "prompt": "Which feature of the graph gives ΔH for the reaction?\nA intercept of the x-axis\nB (intercept of the x-axis) × –1\nC intercept of the y-axis\nD (intercept of the y-axis) × –1",
+                    "marks": 1
+                  },
+                  {
+                    "code": "5(b)",
+                    "prompt": "What happens to the equilibrium position and the colour when the pressure is raised? The volume of the system remains constant.\nA moves to the right / mixture gets lighter\nB moves to the right / mixture gets darker\nC moves to the left / mixture gets lighter\nD moves to the left / mixture gets darker",
+                    "marks": 1
+                  }
+                ]
+              },
+              {
+                "number": 6,
+                "scenario": "Benzoic acid, C₆H₅COOH, is a weak acid found in cranberries (structure: a benzene ring bearing a –COOH group).",
+                "parts": [
+                  {
+                    "code": "6(a)",
+                    "prompt": "Identify the type of each species (in order) in: C₆H₅COOH + HNO₃ ⇌ C₆H₅COOH₂⁺ + NO₃⁻. [Ka of benzoic acid = 6.3 × 10⁻⁵ mol dm⁻³; Ka of nitric acid = 40 mol dm⁻³]\nA acid base acid base\nB acid base base acid\nC base acid base acid\nD base acid acid base",
+                    "marks": 1
+                  },
+                  {
+                    "code": "6(b)",
+                    "prompt": "Sodium benzoate and potassium benzoate are ionic food preservatives. Explain why sodium benzoate melts at a higher temperature.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "6(c)(i)",
+                    "preamble": "Ka of benzoic acid = 6.28 × 10⁻⁵ mol dm⁻³.",
+                    "prompt": "Write the Ka expression for benzoic acid.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "6(c)(ii)",
+                    "prompt": "What mass of benzoic acid is needed to make 250 cm³ of solution of pH 3.51?",
+                    "marks": 4
+                  },
+                  {
+                    "code": "6(d)(i)",
+                    "preamble": "Benzoic acid is neutralised by NaOH: C₆H₅COOH(aq) + NaOH(aq) → C₆H₅CO₂Na(aq) + H₂O(l)",
+                    "prompt": "Which indicator suits a titration of benzoic acid with sodium hydroxide?\nA bromothymol blue\nB litmus\nC methyl orange\nD phenolphthalein",
+                    "marks": 1
+                  },
+                  {
+                    "code": "6(d)(ii)",
+                    "preamble": "Quinic acid, C₆H₇(OH)₄COOH, is another weak cranberry acid neutralised by NaOH in the same way. In a polystyrene cup, 25.0 cm³ of 0.500 mol dm⁻³ quinic acid was neutralised with 25.0 cm³ of 0.800 mol dm⁻³ NaOH, giving a temperature rise of 2.9 °C. Take both solution densities as 1.0 g cm⁻³ and specific heat capacity as 4.18 J g⁻¹ °C⁻¹.",
+                    "prompt": "Calculate the standard enthalpy change of neutralisation of quinic acid, in kJ mol⁻¹.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "6(d)(iii)",
+                    "preamble": "ΔneutH° with NaOH is −11.7 kJ mol⁻¹ for the weak acid HCN and −57.9 kJ mol⁻¹ for the strong acid HCl.",
+                    "prompt": "Explain why these values differ.",
+                    "marks": 2
+                  }
+                ]
+              },
+              {
+                "number": 7,
+                "scenario": "Chromium and its compounds.",
+                "parts": [
+                  {
+                    "code": "7(a)",
+                    "prompt": "Chromium occurs naturally as ⁵⁰Cr, ⁵²Cr, ⁵³Cr and ⁵⁴Cr. Define isotopes.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "7(b)(i)",
+                    "preamble": "Chromium and calcium both form 2+ ions.",
+                    "prompt": "Complete the electronic configuration of Cr²⁺, starting from 1s².",
+                    "marks": 1
+                  },
+                  {
+                    "code": "7(b)(ii)",
+                    "preamble": "Data — Chromium: atomic number 24, 1st IE 653 kJ mol⁻¹, 2nd IE 1592 kJ mol⁻¹, metallic radius 0.129 nm. Calcium: atomic number 20, 1st IE 590 kJ mol⁻¹, 2nd IE 1145 kJ mol⁻¹, metallic radius 0.197 nm.",
+                    "prompt": "Using all the data, explain whether chromium or calcium forms a 2+ ion more easily.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "7(c)(i)",
+                    "preamble": "Chromium(III) sulfate, Cr₂(SO₄)₃, dissolves in water giving [Cr(H₂O)₆]³⁺(aq).",
+                    "prompt": "Give the colour of this complex ion.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "7(c)(ii)",
+                    "prompt": "Explain, via the metal ion–ligand interaction, why the solution is acidic.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "7(d)",
+                    "preamble": "A student claims that electrode potentials show 1.00 mol dm⁻³ potassium dichromate(VI) can never oxidise chloride ions in hydrochloric acid. Equilibrium 1: Cr₂O₇²⁻(aq) + 14H⁺(aq) + 6e⁻ ⇌ 2Cr³⁺(aq) + 7H₂O(l), E° = +1.33 V. Equilibrium 2: Cl₂(aq) + 2e⁻ ⇌ 2Cl⁻(aq), E° = +1.36 V.",
+                    "prompt": "Comment on the student's claim using the data.",
+                    "marks": 4
+                  }
+                ]
+              },
+              {
+                "number": 8,
+                "scenario": "Transition metals and their compounds as catalysts.",
+                "parts": [
+                  {
+                    "code": "8*",
+                    "preamble": "Two examples: platinum, Pt, in vehicle catalytic converters; and Mn²⁺(aq) in the oxidation of ethanedioate ions, C₂O₄²⁻(aq), by manganate(VII) ions, MnO₄⁻(aq).",
+                    "prompt": "Compare and contrast how the catalyst works in each reaction.",
+                    "marks": 6
+                  }
+                ]
+              },
+              {
+                "number": 9,
+                "scenario": "Silver compounds.",
+                "parts": [
+                  {
+                    "code": "9(a)(i)",
+                    "preamble": "Born–Haber cycle for Ag₂O (all values in kJ mol⁻¹), drawn on the question paper. From 2Ag(s) + ½O₂(g): the silver branch goes up by 2 × ΔatH°(Ag(s)) to an empty box, then by +731 × 2 to 2Ag⁺(g). The oxygen branch goes up by +249.2 to O(g), then by −141.1 to an empty box, then by +798 to O²⁻(g). 2Ag⁺(g) + O²⁻(g) → Ag₂O(s) is −2969. The direct formation of Ag₂O(s) from the elements is −31.",
+                    "prompt": "Fill in the two empty boxes with species and state symbols.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "9(a)(ii)",
+                    "prompt": "Explain why oxygen's first electron affinity is negative but its second is positive.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "9(a)(iii)",
+                    "prompt": "Use the cycle to calculate the standard enthalpy change of atomisation of silver.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "9(b)(i)",
+                    "preamble": "Lattice energy of silver chloride, AgCl: experimental −905 kJ mol⁻¹; theoretical −833 kJ mol⁻¹.",
+                    "prompt": "State two assumptions of the model used to calculate the theoretical lattice energy.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "9(b)(ii)",
+                    "prompt": "Explain the difference between the two values in terms of bonding models.",
+                    "marks": 3
+                  }
+                ]
+              },
+              {
+                "number": 10,
+                "scenario": "Manganese compounds are used to measure dissolved oxygen in water.",
+                "parts": [
+                  {
+                    "code": "10(a)",
+                    "prompt": "Draw a dot-and-cross diagram of O₂, outer electrons only.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "10(b)",
+                    "preamble": "Under standard conditions oxygen's solubility in water is 1.22 × 10⁻³ mol dm⁻³.",
+                    "prompt": "Comment on this value using the type and strength of intermolecular forces in pure water, pure oxygen and a water–oxygen mixture (no detailed descriptions of the forces needed).",
+                    "marks": 4
+                  },
+                  {
+                    "code": "10(c)(i)",
+                    "preamble": "Method for a river water sample: excess alkaline MnSO₄ was added to 150 cm³ of water, and Mn²⁺ reacted with the O₂: 2Mn²⁺(aq) + O₂(aq) + 4OH⁻(aq) → 2MnO(OH)₂(s). Excess sulfuric acid dissolved the precipitate: MnO(OH)₂(s) + 4H⁺(aq) → Mn⁴⁺(aq) + 3H₂O(l). Excess KI was added: Mn⁴⁺(aq) + 2I⁻(aq) → Mn²⁺(aq) + I₂(aq). The iodine was titrated with 0.00518 mol dm⁻³ Na₂S₂O₃: I₂(aq) + 2S₂O₃²⁻(aq) → 2I⁻(aq) + S₄O₆²⁻(aq). Mean titre = 34.20 cm³.",
+                    "prompt": "Calculate the dissolved oxygen concentration in g dm⁻³.",
+                    "marks": 5
+                  },
+                  {
+                    "code": "10(c)(ii)",
+                    "prompt": "Express this concentration in ppm (1 ppm = 1 g solute per 1 × 10⁶ g solvent). Take river water density as 1.00 g cm⁻³.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "10(d)",
+                    "preamble": "Half-cell A: MnO₂(s) + 4H⁺(aq) + e⁻ ⇌ Mn³⁺(aq) + 2H₂O(l), E° = +0.95 V. Half-cell B: Mn³⁺(aq) + e⁻ ⇌ Mn²⁺(aq), E° = +1.51 V.",
+                    "prompt": "Explain why Mn³⁺ is unstable in aqueous solution, giving an equation and naming the reaction type.",
+                    "marks": 4
+                  }
+                ]
+              }
+            ],
           },
 
           { id: 'chem-edexcel-9ch0-2023-p2', year: 'June 2023', paperName: 'Paper 2 — Advanced Organic and Physical Chemistry', paperCode: '9CH0/02', totalMarks: 90, durationMins: 105,
             qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Chemistry/2015/Exam-materials/9ch0-02-que-20230620.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Chemistry/2015/Exam-materials/9ch0-02-rms-20230817.pdf',
+            markSchemes: {
+              "1(a)": {
+                "type": "points",
+                "points": [
+                  "Correct skeletal formula: six-membered ring with methyl branches on carbons 1 and 3"
+                ],
+                "guidance": "Displayed or structural formulae not credited."
+              },
+              "1(b)": {
+                "type": "exact",
+                "points": [
+                  "A (CₙH₂ₙ₋₂)"
+                ],
+                "guidance": "One ring plus one C=C removes four H from the alkane formula; CₙH₂ₙ is alkene/cycloalkane."
+              },
+              "1(c)": {
+                "type": "points",
+                "points": [
+                  "Substitution cannot be controlled (number/position of Cl atoms), so a mixture of products forms",
+                  "1,2-dichloroethane would have to be separated from the other products"
+                ],
+                "guidance": "Named unwanted products (e.g. chloroethane, 1,1-dichloroethane, butane) acceptable; H₂ not. Ignore low yield, ozone, UV hazards, HCl."
+              },
+              "2(a)": {
+                "type": "exact",
+                "points": [
+                  "B (a biofuel and renewable)"
+                ],
+                "guidance": "Made from plant material, which can be regrown."
+              },
+              "2(b)": {
+                "type": "points",
+                "points": [
+                  "CH₃OH + 1½O₂ → CO₂ + 2H₂O (or 2CH₃OH + 3O₂ → 2CO₂ + 4H₂O)"
+                ],
+                "guidance": "Multiples/fractions fine; CH₄O allowed."
+              },
+              "2(c)": {
+                "type": "points",
+                "points": [
+                  "Red phosphorus and iodine (P/P₄ + I₂) or PI₃"
+                ],
+                "guidance": "Also allow KI/NaI with H₃PO₄, HI, white P + I₂. Not PI₅; not KI with H₂SO₄. If both name and formula given, both must be right."
+              },
+              "2(d)(i)": {
+                "type": "exact",
+                "points": [
+                  "B (1485 – 1365, 2962 – 2853 and 3750 – 3200)"
+                ],
+                "guidance": "Alcohol O–H is 3750–3200; 3300–2500 is acid O–H, 1669–1645 is C=C, 1740–1720 is aldehyde C=O."
+              },
+              "2(d)(ii)": {
+                "type": "points",
+                "points": [
+                  "2 peaks"
+                ],
+                "guidance": "The two CH₃ carbons are equivalent."
+              },
+              "2(e)": {
+                "type": "points",
+                "points": [
+                  "CH₃CH₂OH + H₂O → CH₃COOH + 4H⁺ + 4e⁻"
+                ],
+                "guidance": "Multiples allowed; −4e⁻ on the left allowed."
+              },
+              "3(a)": {
+                "type": "exact",
+                "points": [
+                  "D (urea, CO(NH₂)₂)"
+                ],
+                "guidance": "Urea sums to 60.0323; ethanamide 59.037, ethanoic acid 60.021, trimethylamine 59.0733."
+              },
+              "3(b)": {
+                "type": "points",
+                "points": [
+                  "n = 5.40 / 24.0 = 0.225 mol",
+                  "M = 9.90 / 0.225 = 44.0 g mol⁻¹"
+                ],
+                "guidance": "TE on moles; correct answer alone scores 2."
+              },
+              "3(c)": {
+                "type": "points",
+                "points": [
+                  "Convert units: p = 1.006 × 10⁵ Pa, T = 368 K, V = 6.00 × 10⁻⁵ m³",
+                  "Rearrange to n = pV/RT",
+                  "n = (1.006 × 10⁵ × 6.00 × 10⁻⁵)/(8.31 × 368) = 1.9738 × 10⁻³ mol",
+                  "M = 0.170 / 1.9738 × 10⁻³ = 86 or 86.1 g mol⁻¹ (2 or 3 s.f.)"
+                ],
+                "guidance": "TE throughout; final mark lost if answer below 1."
+              },
+              "4(a)": {
+                "type": "points",
+                "points": [
+                  "n(CO₂) = 7.59/44 = 0.1725 mol",
+                  "Mass C = 0.1725 × 12 = 2.07 g; mass H = 2.50 − 2.07 = 0.43 g",
+                  "Moles C : H = 0.1725 : 0.43 = 1 : 2.49",
+                  "Empirical formula C₂H₅"
+                ],
+                "guidance": "Correct answer without working scores 1; with some working scores 4."
+              },
+              "4(b)(i)": {
+                "type": "exact",
+                "points": [
+                  "A (accepts a pair of electrons)"
+                ],
+                "guidance": "Donating a pair describes a nucleophile."
+              },
+              "4(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "Benzene has delocalised π electrons",
+                  "Benzene is (kinetically) stable / high activation energy (or needs a halogen carrier such as FeBr₃/AlCl₃)",
+                  "Ethene has localised, high electron density in its C=C π bond",
+                  "So ethene is more readily attacked by electrophiles (polarises Br₂ more easily)"
+                ],
+                "guidance": "If nothing else scores, allow 1 for 'benzene substitutes, ethene adds'. Do not credit attack by Br⁺."
+              },
+              "5(a)(i)": {
+                "type": "points",
+                "points": [
+                  "The number of gas moles/molecules falls (3 → 2), so total pressure changes"
+                ],
+                "guidance": "Ignore volume and partial pressure references."
+              },
+              "5(a)(ii)": {
+                "type": "points",
+                "points": [
+                  "Temperature and volume (of container)"
+                ],
+                "guidance": "Not 'pressure', 'heat' or 'volume of reactants'; no more than two factors."
+              },
+              "5(b)(i)": {
+                "type": "exact",
+                "points": [
+                  "D (line S)"
+                ],
+                "guidance": "[NO] decreases with time."
+              },
+              "5(b)(ii)": {
+                "type": "exact",
+                "points": [
+                  "B (line Q)"
+                ],
+                "guidance": "Rate is directly proportional to [O₂]."
+              },
+              "5(c)": {
+                "type": "exact",
+                "points": [
+                  "C (2z)"
+                ],
+                "guidance": "2² × ½ = 2."
+              },
+              "5(d)(i)": {
+                "type": "points",
+                "points": [
+                  "Product level (N₂ + 2CO₂) drawn lower than reactants, to the right, and labelled",
+                  "Single-headed downward arrow from reactant to product level labelled ΔH",
+                  "Two humps (via an intermediate) both above the reactant line for the catalysed route"
+                ],
+                "guidance": "Double-headed arrow or −ΔH label not credited. Ignore Ea arrows and missing intermediate label."
+              },
+              "5(d)(ii)": {
+                "type": "points",
+                "points": [
+                  "Reaction can run at lower temperature (and the exothermic forward reaction gives a better equilibrium yield there)",
+                  "So energy/fuel costs are lower"
+                ],
+                "guidance": "'Reduce cost' alone not enough. If nothing else, 1 for catalyst not used up, or lowers Ea/speeds up reaction."
+              },
+              "6(a)(i)": {
+                "type": "points",
+                "points": [
+                  "Use much higher concentrations (large excess) of propanone and acid than iodine"
+                ],
+                "guidance": "Ignore larger volume."
+              },
+              "6(a)(ii)": {
+                "type": "points",
+                "points": [
+                  "It neutralises the acid (H⁺ catalyst)",
+                  "So the reaction is stopped/quenched"
+                ],
+                "guidance": "Ignore 'slows down'."
+              },
+              "6(b)(i)": {
+                "type": "points",
+                "points": [
+                  "Iodine concentration is directly proportional to the thiosulfate titre"
+                ],
+                "guidance": "Allow reacting ratio (2 : 1). Not iodide; not 'equal' or 'inversely'."
+              },
+              "6(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "Time on x-axis, both axes labelled with units, scales using at least half the grid",
+                  "Points plotted to ±½ square with a straight line through them"
+                ],
+                "guidance": "x-axis may start at 5. M2 allowed if axes are swapped."
+              },
+              "6(b)(iii)": {
+                "type": "points",
+                "points": [
+                  "Straight line / constant gradient, so rate is constant"
+                ],
+                "guidance": "Depends on a straight sloping line; not a horizontal line."
+              },
+              "6(c)(i)": {
+                "type": "points",
+                "points": [
+                  "Equation with only CH₃COCH₃ and H⁺ as reactants",
+                  "Correct protonated product, CH₃C(O⁺H)CH₃ or CH₃C⁺(OH)CH₃"
+                ],
+                "guidance": "C₃H₇O⁺ allowed; CH₃COCH₄⁺ not."
+              },
+              "6(c)(ii)": {
+                "type": "exact",
+                "points": [
+                  "A (2.24 × 10⁻⁵)"
+                ],
+                "guidance": "Rate ∝ [propanone][H⁺]: 3.36 × 10⁻⁵ × (4.0 × 0.2)/(3.0 × 0.4)."
+              },
+              "6(c)(iii)": {
+                "type": "points",
+                "points": [
+                  "The rate is the same",
+                  "Because the halogen does not appear in the rate equation (zero order / not in the rds)"
+                ],
+                "guidance": "M2 depends on M1."
+              },
+              "7(a)": {
+                "type": "points",
+                "points": [
+                  "Both dissolve because they form hydrogen bonds with water",
+                  "Diagram: hydrogen bond from water H to the carbonyl O of ethanal (O···H–O near 180°)",
+                  "Ethanal has only London forces and permanent dipole–dipole forces between molecules",
+                  "Ethanoic acid forms intermolecular hydrogen bonds, which are stronger and need more energy to overcome"
+                ],
+                "guidance": "No credit for an H-bond drawn from the CHO hydrogen."
+              },
+              "7(b)(i)": {
+                "type": "points",
+                "points": [
+                  "Curly arrow from lone pair on C of CN⁻ to carbonyl C",
+                  "δ+/δ− dipole on C=O and arrow from the double bond to O",
+                  "Alkoxide intermediate with O⁻",
+                  "Arrow from O⁻ lone pair to H of HCN and arrow from H–CN bond to CN (or O⁻ to H⁺)"
+                ],
+                "guidance": "Skeletal formulae allowed; attack must be by CN⁻."
+              },
+              "7(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "The carbonyl group is planar",
+                  "CN⁻ can attack equally from above or below the plane",
+                  "So equal amounts of the two enantiomers form: racemic"
+                ],
+                "guidance": "Only 1 mark for saying a single enantiomer (not racemic) forms."
+              },
+              "7(c)(i)": {
+                "type": "points",
+                "points": [
+                  "Step 1: filter (suction or gravity)",
+                  "Step 2: recrystallise (dissolve in minimum hot solvent, cool, filter)",
+                  "Step 3: dry suitably, e.g. warm oven, between filter papers, desiccator"
+                ],
+                "guidance": "No drying agents (except desiccator); not 'dry to constant mass'."
+              },
+              "7(c)(ii)": {
+                "type": "points",
+                "points": [
+                  "X is cyclohexanone",
+                  "Melting temperature close to cyclohexanone's derivative range and 1717 cm⁻¹ lies in the ketone C=O range (1720–1700)"
+                ],
+                "guidance": "Noting closeness to both propanal and cyclohexanone is acceptable in M2."
+              },
+              "7(c)(iii)": {
+                "type": "points",
+                "points": [
+                  "Each of the three ring H atoms and the N–H hydrogen labelled as separate environments",
+                  "The CH₂ protons labelled as one environment and the CH₃ protons as another"
+                ],
+                "guidance": "Six environments in total (e.g. labelled 1–6 or A–F). M1 lost if the N atom is circled with its H."
+              },
+              "8(a)": {
+                "type": "exact",
+                "points": [
+                  "B (3)"
+                ],
+                "guidance": "Pentane, 2-methylbutane and 2,2-dimethylpropane."
+              },
+              "8(b)": {
+                "type": "points",
+                "points": [
+                  "Curly arrow from C=C to the nearer Br",
+                  "Dipole on Br₂ (δ+ nearer the alkene)",
+                  "Curly arrow from Br–Br bond to the far Br",
+                  "Carbocation intermediate (secondary C⁺, Br on C1)",
+                  "Lone pair on Br⁻",
+                  "Curly arrow from Br⁻ lone pair to C⁺"
+                ],
+                "guidance": "Banded, max 3: 6 points = 3, 4–5 = 2, 2–3 = 1, 0–1 = 0."
+              },
+              "8(c)(i)": {
+                "type": "points",
+                "points": [
+                  "NaCl supplies only Cl⁻, a nucleophile, but the first step needs an electrophile",
+                  "So Brδ+ (bromine) must add first; Cl⁻ only reacts with the carbocation"
+                ],
+                "guidance": "Not Br⁻ or 'Br⁺ must attack first'."
+              },
+              "8(c)(ii)": {
+                "type": "points",
+                "points": [
+                  "A secondary carbocation forms (Br on C1, positive charge on C2)",
+                  "It is more stable than the primary carbocation"
+                ],
+                "guidance": ""
+              },
+              "8(d)*": {
+                "type": "points",
+                "points": [
+                  "E/Z: restricted rotation about the C=C (π) bond",
+                  "CIP priority by atomic number; Z has the higher-priority groups on the same side, E on opposite sides",
+                  "Labelled diagrams of the E and Z isomers of A",
+                  "Optical isomers: a chiral carbon with four different groups gives non-superimposable mirror images",
+                  "3D mirror-image diagrams of the two enantiomers of B",
+                  "Enantiomers rotate plane-polarised light by equal amounts in opposite directions"
+                ],
+                "guidance": "Max 6. Up to 4 for indicative content (6 points = 4, 4–5 = 3, 2–3 = 2, 1 = 1) plus up to 2 for structure and sustained reasoning (full linkage = 2, partial = 1). Incorrect chemistry loses reasoning marks."
+              },
+              "9(a)": {
+                "type": "points",
+                "points": [
+                  "A: 2-chloropropane, CH₃CHClCH₃",
+                  "B: propan-2-ol, CH₃CH(OH)CH₃",
+                  "C: propanone, CH₃COCH₃",
+                  "D: CH₃CH(MgCl)CH₃",
+                  "E: 2-methylpropanoic acid, CH₃CH(CH₃)COOH"
+                ],
+                "guidance": "TE throughout (e.g. 1-chloropropane → propan-1-ol → propanal); propanoic acid not allowed for C."
+              },
+              "9(b)": {
+                "type": "points",
+                "points": [
+                  "n(NaOH) = 15.5 × 0.100/1000 = 1.55 × 10⁻³ mol",
+                  "HCl left in 100 cm³ = 4 × 1.55 × 10⁻³ = 6.2 × 10⁻³ mol",
+                  "HCl at start = 0.225 × 0.1000 = 2.25 × 10⁻² mol",
+                  "n(NH₃) = 0.0225 − 0.0062 = 0.0163 mol",
+                  "Mass N = 0.0163 × 14 = 0.2282 g; %N = 0.2282/1.19 × 100 = 19.2%"
+                ],
+                "guidance": "TE at each step but final answer must be below 100%. Correct answer scores 5."
+              }
+            },
+            questions: [
+              {
+                "number": 1,
+                "scenario": "Some organic compounds.",
+                "parts": [
+                  {
+                    "code": "1(a)",
+                    "prompt": "Draw the skeletal formula of 1,3-dimethylcyclohexane.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "1(b)",
+                    "prompt": "Which is the general formula of a cycloalkene?\nA CₙH₂ₙ₋₂\nB CₙH₂ₙ\nC CₙH₂ₙ₊₁\nD CₙH₂ₙ₊₂",
+                    "marks": 1
+                  },
+                  {
+                    "code": "1(c)",
+                    "preamble": "A student proposes making 1,2-dichloroethane by reacting ethane with chlorine under UV light.",
+                    "prompt": "Give two reasons why this is a poor way to make 1,2-dichloroethane.",
+                    "marks": 2
+                  }
+                ]
+              },
+              {
+                "number": 2,
+                "scenario": "Alcohols.",
+                "parts": [
+                  {
+                    "code": "2(a)",
+                    "preamble": "Ethanol can be made by fermentation of carbohydrates or by hydrating ethene.",
+                    "prompt": "How is ethanol made by fermenting carbohydrates classified?\nA a biofuel and non-renewable\nB a biofuel and renewable\nC a fossil fuel and non-renewable\nD a fossil fuel and renewable",
+                    "marks": 1
+                  },
+                  {
+                    "code": "2(b)",
+                    "prompt": "Give the equation for complete combustion of methanol (no state symbols).",
+                    "marks": 1
+                  },
+                  {
+                    "code": "2(c)",
+                    "prompt": "Name or give the formula of the reagent(s) that convert propan-1-ol into 1-iodopropane.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "2(d)(i)",
+                    "preamble": "Pure propan-2-ol is analysed by infrared and ¹³C NMR spectroscopy.",
+                    "prompt": "Which set of IR absorption ranges (cm⁻¹) appears in the spectrum of propan-2-ol?\nA 1485 – 1365, 2962 – 2853 and 3300 – 2500\nB 1485 – 1365, 2962 – 2853 and 3750 – 3200\nC 1669 – 1645, 2962 – 2853 and 3750 – 3200\nD 1740 – 1720, 3300 – 2500 and 3750 – 3200",
+                    "marks": 1
+                  },
+                  {
+                    "code": "2(d)(ii)",
+                    "prompt": "How many peaks are in the ¹³C NMR spectrum of propan-2-ol?",
+                    "marks": 1
+                  },
+                  {
+                    "code": "2(e)",
+                    "preamble": "Overall equation: 3CH₃CH₂OH + 2Cr₂O₇²⁻ + 16H⁺ → 3CH₃COOH + 4Cr³⁺ + 11H₂O",
+                    "prompt": "Deduce the half-equation for oxidising ethanol to ethanoic acid (no state symbols).",
+                    "marks": 1
+                  }
+                ]
+              },
+              {
+                "number": 3,
+                "scenario": "Finding the molar masses of three organic compounds X, Y and Z.",
+                "parts": [
+                  {
+                    "code": "3(a)",
+                    "preamble": "Accurate relative atomic masses: H 1.0078, C 12.0000, N 14.0031, O 15.9949. The molecular ion of X is at m/z = 60.0323.",
+                    "prompt": "Identify X.\nA ethanamide, CH₃CONH₂\nB ethanoic acid, CH₃COOH\nC trimethylamine, (CH₃)₃N\nD urea, CO(NH₂)₂",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(b)",
+                    "preamble": "9.90 g of gaseous compound Y occupies 5.40 dm³ at r.t.p. (molar gas volume 24.0 dm³ mol⁻¹).",
+                    "prompt": "Calculate the molar mass of Y.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "3(c)",
+                    "preamble": "Volatile liquid Z is vaporised completely in a 60.0 cm³ flask at 95.0 °C, which is then sealed. Mass of vapour 0.170 g; pressure 100.6 kPa; R = 8.31 J mol⁻¹ K⁻¹.",
+                    "prompt": "Calculate the molar mass of Z to an appropriate number of significant figures. Assume no air remains in the flask.",
+                    "marks": 4
+                  }
+                ]
+              },
+              {
+                "number": 4,
+                "scenario": "Some hydrocarbons.",
+                "parts": [
+                  {
+                    "code": "4(a)",
+                    "preamble": "Complete oxidation of 2.50 g of a hydrocarbon gives 7.59 g of CO₂.",
+                    "prompt": "Calculate the empirical formula of the hydrocarbon.",
+                    "marks": 4
+                  },
+                  {
+                    "code": "4(b)(i)",
+                    "preamble": "Benzene and ethene both react with bromine, under different conditions, via an electrophile.",
+                    "prompt": "An electrophile is a species that\nA accepts a pair of electrons\nB accepts an unpaired electron\nC donates a pair of electrons\nD donates an unpaired electron",
+                    "marks": 1
+                  },
+                  {
+                    "code": "4(b)(ii)",
+                    "prompt": "Explain why benzene resists bromination whereas ethene reacts readily with bromine at room temperature.",
+                    "marks": 4
+                  }
+                ]
+              },
+              {
+                "number": 5,
+                "scenario": "Nitrogen monoxide reacts with oxygen: 2NO(g) + O₂(g) → 2NO₂(g). The rate is first order in O₂ and second order in NO.",
+                "parts": [
+                  {
+                    "code": "5(a)(i)",
+                    "prompt": "Why can the rate be followed by measuring total gas pressure?",
+                    "marks": 1
+                  },
+                  {
+                    "code": "5(a)(ii)",
+                    "prompt": "Give two factors, besides initial amounts, that must be held constant for this method.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "5(b)(i)",
+                    "preamble": "A graph shows four lines of Y against X (diagram on the question paper): P rises steeply from the origin then levels off; Q is a straight line through the origin; R is horizontal; S starts high and falls in a decreasing curve that levels off.",
+                    "prompt": "Which line shows [NO] (Y) against time (X)?\nA line P\nB line Q\nC line R\nD line S",
+                    "marks": 1
+                  },
+                  {
+                    "code": "5(b)(ii)",
+                    "prompt": "Which line shows rate (Y) against [O₂] (X)?\nA line P\nB line Q\nC line R\nD line S",
+                    "marks": 1
+                  },
+                  {
+                    "code": "5(c)",
+                    "preamble": "The rate is z mol dm⁻³ s⁻¹. [NO] is doubled and [O₂] halved, all else unchanged.",
+                    "prompt": "What is the new rate in mol dm⁻³ s⁻¹?\nA z/2\nB z\nC 2z\nD 4z",
+                    "marks": 1
+                  },
+                  {
+                    "code": "5(d)(i)",
+                    "preamble": "NO from car engines is removed in catalytic converters: 2NO(g) + 2CO(g) → 2CO₂(g) + N₂(g). The reaction is exothermic; platinum is the most active catalyst.",
+                    "prompt": "Complete the labelled reaction profile (enthalpy against progress) for the catalysed reaction, starting from the reactant level 2NO(g) + 2CO(g).",
+                    "marks": 3
+                  },
+                  {
+                    "code": "5(d)(ii)",
+                    "prompt": "Catalysts like platinum are costly. Explain one economic benefit of using a catalyst in industry.",
+                    "marks": 2
+                  }
+                ]
+              },
+              {
+                "number": 6,
+                "scenario": "Acid-catalysed iodination of propanone: I₂(aq) + CH₃COCH₃(aq) → CH₃COCH₂I(aq) + H⁺(aq) + I⁻(aq), with H⁺ as catalyst. A student predicted rate = k[I₂][CH₃COCH₃][H⁺]⁰ from the 1 : 1 stoichiometry.",
+                "parts": [
+                  {
+                    "code": "6(a)(i)",
+                    "preamble": "To find the order in I₂: 25 cm³ propanone(aq) is mixed with 25 cm³ dilute H₂SO₄; 25 cm³ iodine(aq) is added and timing starts. 10.0 cm³ samples are withdrawn at regular intervals (five in all) and a spatula of sodium hydrogencarbonate is added to each at a recorded time. Remaining iodine is titrated with sodium thiosulfate using starch.",
+                    "prompt": "How could the student keep [propanone] and [acid] effectively constant?",
+                    "marks": 1
+                  },
+                  {
+                    "code": "6(a)(ii)",
+                    "prompt": "Explain why sodium hydrogencarbonate is added.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "6(b)(i)",
+                    "preamble": "Results — time/min: 5, 10, 15, 20, 25; thiosulfate volume/cm³: 15.0, 13.8, 12.6, 11.4, 10.2.",
+                    "prompt": "Why is it unnecessary to convert each titre to an iodine concentration?",
+                    "marks": 1
+                  },
+                  {
+                    "code": "6(b)(ii)",
+                    "prompt": "Plot a graph showing the reaction is zero order in iodine.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "6(b)(iii)",
+                    "prompt": "Why does the graph show zero order in iodine?",
+                    "marks": 1
+                  },
+                  {
+                    "code": "6(c)(i)",
+                    "preamble": "The actual rate equation is rate = k[CH₃COCH₃][H⁺][I₂]⁰.",
+                    "prompt": "Suggest a possible rate-determining step (no curly arrows needed).",
+                    "marks": 2
+                  },
+                  {
+                    "code": "6(c)(ii)",
+                    "preamble": "Same temperature. Exp 1: [CH₃COCH₃] 3.0, [H⁺] 0.4, [I₂] 0.02 mol dm⁻³, rate 3.36 × 10⁻⁵ mol dm⁻³ s⁻¹. Exp 2: [CH₃COCH₃] 4.0, [H⁺] 0.2, [I₂] 0.04 mol dm⁻³.",
+                    "prompt": "What is the rate in Experiment 2 (mol dm⁻³ s⁻¹)?\nA 2.24 × 10⁻⁵\nB 3.36 × 10⁻⁵\nC 4.48 × 10⁻⁵\nD 8.96 × 10⁻⁵",
+                    "marks": 1
+                  },
+                  {
+                    "code": "6(c)(iii)",
+                    "prompt": "The experiment is repeated with aqueous bromine instead of iodine, all else unchanged, and the rate equation is the same. Explain how the bromination rate compares with the iodination rate.",
+                    "marks": 2
+                  }
+                ]
+              },
+              {
+                "number": 7,
+                "scenario": "Carbonyl compounds.",
+                "parts": [
+                  {
+                    "code": "7(a)",
+                    "preamble": "Ethanal (CH₃CHO) and ethanoic acid (CH₃COOH) both dissolve in water, but ethanoic acid boils at a much higher temperature.",
+                    "prompt": "Explain these properties in terms of intermolecular forces, including a labelled diagram showing why ethanal dissolves in water.",
+                    "marks": 4
+                  },
+                  {
+                    "code": "7(b)(i)",
+                    "preamble": "Propanal reacts with HCN in the presence of KCN to give 2-hydroxybutanenitrile, CH₃CH₂CH(OH)CN.",
+                    "prompt": "Draw the mechanism, with curly arrows and relevant lone pairs and dipoles.",
+                    "marks": 4
+                  },
+                  {
+                    "code": "7(b)(ii)",
+                    "prompt": "Explain whether the 2-hydroxybutanenitrile formed is a racemic mixture.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "7(c)(i)",
+                    "preamble": "Carbonyl compounds form solid 2,4-DNPH derivatives with characteristic melting temperatures. A flow chart: reaction mixture (precipitate) → Step 1 → impure solid → Step 2 → purified solid → Step 3 → dry solid.",
+                    "prompt": "Give the three steps needed to obtain a pure, dry derivative of carbonyl compound X.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "7(c)(ii)",
+                    "preamble": "Derivative melting ranges / °C: ethanal 165–168; propanal 154–156; propanone 127–129; cyclohexanone 158–160. X's derivative melts at 156–158 °C and X absorbs at 1717 cm⁻¹ in the IR.",
+                    "prompt": "Deduce the identity of X, with justification.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "7(c)(iii)",
+                    "preamble": "The pentan-3-one 2,4-DNPH derivative (structure on the question paper): a benzene ring carrying NO₂ groups at the 2- and 4-positions, three ring H atoms, and an N–H linked via N=C to C(CH₂CH₃)₂.",
+                    "prompt": "Label the proton environments that give peaks in the low-resolution proton NMR spectrum.",
+                    "marks": 2
+                  }
+                ]
+              },
+              {
+                "number": 8,
+                "scenario": "Isomerism in organic compounds.",
+                "parts": [
+                  {
+                    "code": "8(a)",
+                    "prompt": "How many structural isomers have formula C₅H₁₂?\nA 2\nB 3\nC 4\nD 5",
+                    "marks": 1
+                  },
+                  {
+                    "code": "8(b)",
+                    "preamble": "Propene and bromine give only 1,2-dibromopropane.",
+                    "prompt": "Draw the mechanism for propene reacting with bromine, with curly arrows and relevant lone pairs and dipoles.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "8(c)(i)",
+                    "preamble": "With a mixture of bromine and sodium chloride, propene gives 1,2-dibromopropane, 1-bromo-2-chloropropane and 2-bromo-1-chloropropane, but no 1,2-dichloropropane.",
+                    "prompt": "Using your mechanism from (b), explain why no 1,2-dichloropropane forms.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "8(c)(ii)",
+                    "prompt": "Explain why much more 1-bromo-2-chloropropane forms than 2-bromo-1-chloropropane.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "8(d)*",
+                    "preamble": "A: CHCl=C(CH₃)Br. B: CH₃CH(OH)COOH.",
+                    "prompt": "Discuss the types of stereoisomerism in organic compounds, using only A and B as examples: how each type arises, naming of alkenes with formula A, properties of isomers of B, and diagrams of the isomers.",
+                    "marks": 6
+                  }
+                ]
+              },
+              {
+                "number": 9,
+                "scenario": "Analysis of organic compounds.",
+                "parts": [
+                  {
+                    "code": "9(a)",
+                    "preamble": "A (C₃H₇Cl) with dilute aqueous NaOH gives B (C₃H₈O). B oxidises to C (C₃H₆O), which resists further oxidation. A with magnesium in dry ether gives D (C₃H₇MgCl); passing CO₂ into D then acidifying gives E (C₄H₈O₂).",
+                    "prompt": "Give the structures of A to E.",
+                    "marks": 5
+                  },
+                  {
+                    "code": "9(b)",
+                    "preamble": "Q contains only C, H and N. 1.19 g of Q is heated with NaOH(aq), converting all N to NH₃, which is absorbed in 100.0 cm³ of 0.225 mol dm⁻³ HCl (NH₃ + HCl → NH₄Cl). 25.0 cm³ portions of the resulting solution need a mean titre of 15.5 cm³ of 0.100 mol dm⁻³ NaOH.",
+                    "prompt": "Calculate the percentage of nitrogen in Q.",
+                    "marks": 5
+                  }
+                ]
+              }
+            ],
           },
 
           { id: 'chem-edexcel-9ch0-2023-p3', year: 'June 2023', paperName: 'Paper 3 — General and Practical Principles in Chemistry', paperCode: '9CH0/03', totalMarks: 120, durationMins: 150,
             qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Chemistry/2015/Exam-materials/9ch0-03-que-20230624.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Chemistry/2015/Exam-materials/9ch0-03-rms-20230817.pdf',
+            markSchemes: {
+              "1(a)": {
+                "type": "points",
+                "points": [
+                  "Correctly balanced: C₆H₁₄ + 9½O₂ → 6CO₂ + 7H₂O"
+                ],
+                "guidance": "Multiples (2 : 19 : 12 : 14) and decimals allowed; state symbols ignored."
+              },
+              "1(b)": {
+                "type": "points",
+                "points": [
+                  "Carbon / C (allow soot or particulates)",
+                  "Carbon monoxide / CO",
+                  "Nitrogen oxides (NO, NO₂, NOₓ) or unburnt pentane C₅H₁₂"
+                ],
+                "guidance": "Any 2 (max 2). Hydrogen not credited; CO₂ and just 'unburnt hydrocarbons' ignored."
+              },
+              "1(c)": {
+                "type": "points",
+                "points": [
+                  "Acid rain forms (or breathing problems / bronchitis)",
+                  "Because sulfur oxides such as SO₂ or SO₃ are produced, which dissolve in water (sulfuric acid)"
+                ],
+                "guidance": "Vague environmental harm and global warming ignored; SOₓ allowed but not SO."
+              },
+              "1(d)": {
+                "type": "points",
+                "points": [
+                  "Skeletal formulae used, e.g. pentane → cyclopentane (or a methylcyclobutane / dimethylcyclopropane isomer)",
+                  "H₂ shown as the other product so the equation balances"
+                ],
+                "guidance": "Non-skeletal but balanced equation scores 1. Cyclopentene + 2H₂ allowed. Second mark lost if any other species appears; catalysts over the arrow ignored."
+              },
+              "2(a)(i)": {
+                "type": "points",
+                "points": [
+                  "2Mg(s) + O₂(g) → 2MgO(s), balanced with state symbols"
+                ],
+                "guidance": "Multiples accepted."
+              },
+              "2(a)(ii)": {
+                "type": "points",
+                "points": [
+                  "Reactivity increases down the group as ionisation energy falls (outer electrons lost more easily)",
+                  "Outer electrons are further from the nucleus (larger atomic radius)",
+                  "Outer electrons are more shielded by inner shells"
+                ],
+                "guidance": "Just 'more shells' ignored; ionic radius and charge density not credited. Reverse argument for going up allowed."
+              },
+              "2(b)(i)": {
+                "type": "points",
+                "points": [
+                  "Solubility decreases down the group"
+                ],
+                "guidance": "Reverse or specific comparisons (e.g. BaSO₄ less soluble than MgSO₄) accepted."
+              },
+              "2(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "Calcium sulfate formed is insoluble / only sparingly soluble",
+                  "It forms a layer on the calcium that stops the acid reaching the metal"
+                ],
+                "guidance": "Marks independent. Just 'less soluble' ignored."
+              },
+              "2(c)(i)": {
+                "type": "points",
+                "points": [
+                  "A glowing splint relights"
+                ],
+                "guidance": "A lit splint, or a squeaky pop, not credited."
+              },
+              "2(c)(ii)": {
+                "type": "points",
+                "points": [
+                  "NaNO₃ → NaNO₂ + ½O₂"
+                ],
+                "guidance": "Multiples allowed; state symbols ignored."
+              },
+              "2(c)(iii)": {
+                "type": "points",
+                "points": [
+                  "Oxygen oxidised: −2 → 0 (in O₂)",
+                  "Nitrogen reduced: +5 → +3 (in NaNO₂)"
+                ],
+                "guidance": "All four oxidation numbers correct without stating oxidised/reduced scores 1; annotated equation accepted."
+              },
+              "3(a)": {
+                "type": "points",
+                "points": [
+                  "CH₃CH₂OH → CH₂CH₂ + H₂O (or C₂H₅OH → C₂H₄ + H₂O)"
+                ],
+                "guidance": "Displayed/skeletal forms allowed. Molecular formula for ethanol, reversible arrow, or catalyst on both sides not credited."
+              },
+              "3(b)": {
+                "type": "points",
+                "points": [
+                  "H₃PO₄"
+                ],
+                "guidance": "(V) after the formula ignored."
+              },
+              "3(c)": {
+                "type": "points",
+                "points": [
+                  "Sulfur has two double bonds (to O) and two single bonds (to OH)",
+                  "Rest of the diagram correct (lone pairs on O, O–H bonds)"
+                ],
+                "guidance": "Alternative with 2 dative bonds + 2 single bonds also scores. Diagram with all dots or all crosses scores 1 max."
+              },
+              "3(d)(i)": {
+                "type": "points",
+                "points": [
+                  "Stops liquid ethanol running down the tube onto the catalyst"
+                ],
+                "guidance": "Also allow: keeps ethanol and catalyst separate, or stops the catalyst sliding. Heating references ignored."
+              },
+              "3(d)(ii)": {
+                "type": "points",
+                "points": [
+                  "Ethanol would evaporate and pass over the catalyst without reacting"
+                ],
+                "guidance": "Flammability/combustion ignored."
+              },
+              "3(d)(iii)": {
+                "type": "points",
+                "points": [
+                  "The clamp (or rubber bung) could burn / melt"
+                ],
+                "guidance": ""
+              },
+              "3(d)(iv)": {
+                "type": "points",
+                "points": [
+                  "Prevents water sucking back up the delivery tube"
+                ],
+                "guidance": ""
+              },
+              "3(d)(v)": {
+                "type": "points",
+                "points": [
+                  "Bromine water decolourises (orange/brown → colourless)"
+                ],
+                "guidance": "Acidified KMnO₄ purple → colourless also accepted. 'Clear' ignored."
+              },
+              "3(d)(vi)": {
+                "type": "points",
+                "points": [
+                  "n = 2.759 × 10²⁰ ÷ 6.02 × 10²³ = 4.5831 × 10⁻⁴ mol",
+                  "V = 4.5831 × 10⁻⁴ × 24 000 = 11.0 cm³ (0.0110 dm³)"
+                ],
+                "guidance": "Correct answer alone scores 2. pV = nRT accepted (11.3 cm³ at 298 K, 11.2 cm³ at 293 K). Molecules × 24 000 scores 1."
+              },
+              "4(a)*": {
+                "type": "points",
+                "points": [
+                  "Weigh accurately a known mass of hydrated MgSO₄ (about 1–10 g)",
+                  "Measure a known volume/mass of distilled water (about 20–250 cm³)",
+                  "Use an insulated polystyrene cup (with lid)",
+                  "Record the initial temperature of the water before adding the solid",
+                  "Add the solid to the water and stir",
+                  "Record the temperature at intervals / the final (lowest) temperature, e.g. extrapolate a graph"
+                ],
+                "guidance": "Max 6. Indicative content: 6 points = 4, 5–4 = 3, 3–2 = 2, 1 = 1. Reasoning/structure adds up to 2 (coherent and fully linked = 2, partly linked = 1, unstructured = 0). Any heating of the mixture loses the relevant points."
+              },
+              "4(b)": {
+                "type": "points",
+                "points": [
+                  "Hess cycle: ΔH = −63.2 − (+15.7)",
+                  "ΔH = −78.9 kJ mol⁻¹"
+                ],
+                "guidance": "Correct answer alone scores 2. +78.9 or −47.5 scores 1. −78 900 J mol⁻¹ acceptable."
+              },
+              "4(c)": {
+                "type": "points",
+                "points": [
+                  "Mg²⁺ hydration enthalpy is more exothermic (more negative)",
+                  "Mg²⁺ is smaller than Ca²⁺ with the same charge, so it attracts water molecules more strongly"
+                ],
+                "guidance": "Higher charge density accepted; atomic radius not credited. Reverse argument accepted."
+              },
+              "5(a)": {
+                "type": "points",
+                "points": [
+                  "Y: platinum (Pt)",
+                  "Z: manganese(II) ions, e.g. Mn(NO₃)₂ or MnSO₄, and potassium manganate(VII), KMnO₄",
+                  "Z: acidified with sulfuric acid (nitric also allowed)"
+                ],
+                "guidance": "Each mark stands alone. Hydrochloric acid or manganese halides penalised once. Oxidation numbers needed if only names given."
+              },
+              "5(b)": {
+                "type": "points",
+                "points": [
+                  "Chromium ends up as +2 (Cr²⁺)",
+                  "Cr(VI) → Cr(III) with Zn: E°cell = +1.33 − (−0.76) = +2.09 V",
+                  "Cr(III) → Cr(II) with Zn: E°cell = −0.41 − (−0.76) = +0.35 V",
+                  "Cr(II) → Cr with Zn: E°cell = −0.91 − (−0.76) = −0.15 V",
+                  "First two reductions are feasible (positive E°cell); the last is not (negative)"
+                ],
+                "guidance": "TE on candidate E°cell values. Referring to Zn²⁺ reacting is penalised once."
+              },
+              "5(c)": {
+                "type": "points",
+                "points": [
+                  "NO₃⁻ + 2H⁺ + e⁻ → NO₂ + H₂O"
+                ],
+                "guidance": "Multiples or ⇌ allowed."
+              },
+              "5(d)": {
+                "type": "points",
+                "points": [
+                  "Electrons flow through the external circuit from the negative (top) electrode to the positive (bottom) electrode",
+                  "Because hydrogen is oxidised (loses electrons) and oxygen is reduced (gains electrons)"
+                ],
+                "guidance": "Half-equations H₂ → 2H⁺ + 2e⁻ and ½O₂ + 2H⁺ + 2e⁻ → H₂O accepted. Flow through the cell middle or O²⁻ formation not credited. Second mark independent."
+              },
+              "5(e)": {
+                "type": "points",
+                "points": [
+                  "Any one: only harmless water produced (no CO/CO₂/SO₂/NOₓ); less reliance on fossil fuels; more efficient energy production; smaller, lighter fuel cell"
+                ],
+                "guidance": "Any 1. Just 'more efficient' ignored."
+              },
+              "6(a)": {
+                "type": "points",
+                "points": [
+                  "Components are attracted to both the stationary and mobile phases, but more strongly to one than the other"
+                ],
+                "guidance": "Affinity/solvent wording accepted; reacting with a phase not credited."
+              },
+              "6(b)(i)": {
+                "type": "points",
+                "points": [
+                  "Two of the three amino acids are the same"
+                ],
+                "guidance": "Amino acid not moving or being insoluble ignored."
+              },
+              "6(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "Three spots at correct horizontal distances for solvent 1 (0.33, 0.38, 0.39)",
+                  "Three spots at correct vertical distances for solvent 2 (0.26, 0.43, 0.58)",
+                  "Each spot labelled with the right amino acid (glycine, alanine, valine) at a position matching its Rf in solvent 1 or solvent 2"
+                ],
+                "guidance": "Tolerance ±0.25 of a grid square. Changing the grid dimensions scores 0."
+              },
+              "6(b)(iii)": {
+                "type": "points",
+                "points": [
+                  "Ninhydrin"
+                ],
+                "guidance": "Also: PMA, p-anisaldehyde, cerium molybdate, bromocresol green."
+              },
+              "6(c)": {
+                "type": "points",
+                "points": [
+                  "Mass spectrometry (MS)"
+                ],
+                "guidance": "IR, UV, visible, fluorescence spectroscopy or NMR also accepted."
+              },
+              "7(a)(i)": {
+                "type": "points",
+                "points": [
+                  "Run out some solution to expel the bubble, then refill above the line and adjust"
+                ],
+                "guidance": "Gently tapping the pipette also allowed; opening taps or inverting not credited."
+              },
+              "7(a)(ii)": {
+                "type": "points",
+                "points": [
+                  "25.04 + 25.04 = 50.08 cm³"
+                ],
+                "guidance": ""
+              },
+              "7(a)(iii)": {
+                "type": "points",
+                "points": [
+                  "Two 25 cm³ pipettes: 100 × 0.08 ÷ 50 = 0.16%",
+                  "One 50 cm³ pipette: 100 × 0.05 ÷ 50 = 0.10%, so it has the lower uncertainty (0.16% > 0.10%)"
+                ],
+                "guidance": "TE from (a)(ii)."
+              },
+              "7(b)(i)": {
+                "type": "points",
+                "points": [
+                  "Unsuitable: smallest measurable volume (graduation) is about 10 cm³, too coarse for 2 cm³"
+                ],
+                "guidance": "Also 'suitable, as the volume need not be exact and 2 cm³ can be estimated'."
+              },
+              "7(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "[H⁺] = 10⁻¹⁰ = 1.0 × 10⁻¹⁰ mol dm⁻³ (with Ka expression)",
+                  "[NH₄⁺] = 18.1 × 1.0 × 10⁻¹⁰ ÷ 5.62 × 10⁻¹⁰ = 3.22 mol dm⁻³",
+                  "n(NH₄Cl) = 3.22 × 0.100 = 0.322 mol",
+                  "mass = 0.322 × 53.5 = 17.2 g"
+                ],
+                "guidance": "Henderson–Hasselbalch route (10 = 9.25 + log(18.1/[NH₄⁺])) also fine. TE at each step; answer alone scores 4."
+              },
+              "7(b)(iii)": {
+                "type": "points",
+                "points": [
+                  "Use it in a fume cupboard"
+                ],
+                "guidance": "Mask or ventilated room not credited."
+              },
+              "7(c)(i)": {
+                "type": "points",
+                "points": [
+                  "Three dative bonds to Ca²⁺: from an azo N and from each of the two O atoms"
+                ],
+                "guidance": "Lines allowed for arrows. Dashed lines, arrows pointing from Ca, curly/double-headed arrows, or bonds from other atoms not credited."
+              },
+              "7(c)(ii)": {
+                "type": "points",
+                "points": [
+                  "3"
+                ],
+                "guidance": ""
+              },
+              "7(d)(i)": {
+                "type": "points",
+                "points": [
+                  "Filter off the precipitate"
+                ],
+                "guidance": "Buchner/suction or gravity filtration allowed; decant ignored."
+              },
+              "7(d)(ii)": {
+                "type": "points",
+                "points": [
+                  "n(EDTA⁴⁻) total = 12.80/1000 × 0.0100 = 1.28 × 10⁻⁴ mol",
+                  "n(Ca²⁺) per dm³ = 1.28 × 10⁻⁴ × 20 = 2.56 × 10⁻³ mol",
+                  "mass Ca²⁺ = 2.56 × 10⁻³ × 40.1 = 0.103 g per dm³",
+                  "Total hardness = 103 mg dm⁻³",
+                  "Permanent hardness = 5.15/1000 × 0.0100 × 20 × 40.1 × 1000 = 41 mg dm⁻³",
+                  "Temporary hardness = 103 − 41 = 62 mg dm⁻³ (61.4 unrounded)"
+                ],
+                "guidance": "Alternative: temporary titre 12.80 − 5.15 = 7.65 cm³ gives 61.4, permanent 41.3. Ca = 40 gives 41.2 and 61.2 (full marks). M1–M4 may instead be earned from the permanent-hardness calculation. TE throughout; answers alone score 6."
+              },
+              "8(a)(i)": {
+                "type": "points",
+                "points": [
+                  "Colorimetry",
+                  "(Electrical) conductivity",
+                  "Quench (cool) samples and titrate with thiosulfate",
+                  "Quench with excess carbonate and titrate with acid",
+                  "Add a fixed amount of thiosulfate plus starch; time until blue-black appears"
+                ],
+                "guidance": "Any 2 (max 2). Dilatometry allowed; calorimetry not credited; just 'colour change' and pH ignored."
+              },
+              "8(a)(ii)": {
+                "type": "points",
+                "points": [
+                  "Negative ions repel each other / four ions are unlikely to collide at once"
+                ],
+                "guidance": ""
+              },
+              "8(a)(iii)": {
+                "type": "points",
+                "points": [
+                  "rate = k[ClO₃⁻][H⁺]²[I⁻]"
+                ],
+                "guidance": "Charges needed; 'rate =' must be present."
+              },
+              "8(b)(i)": {
+                "type": "points",
+                "points": [
+                  "Curve with peak lower and shifted to the right (higher energy)"
+                ],
+                "guidance": "Must not cross the original twice, meet the x-axis, or rise/level off high at the right."
+              },
+              "8(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "Area under the curve beyond Ea increases substantially",
+                  "So a much larger proportion of particles have energy ≥ Ea"
+                ],
+                "guidance": "Second mark lost if Ea is said to decrease."
+              },
+              "8(c)(i)": {
+                "type": "points",
+                "points": [
+                  "Gradient = Δy ÷ Δx, e.g. (−8 − (−2)) ÷ (1.31 × 10⁻³ − 1.13 × 10⁻³)",
+                  "Gradient = −33 333 K (range −32 475 to −34 159)",
+                  "Ea = 33 333 × 8.31 = +277 000 J mol⁻¹ (277 kJ mol⁻¹)"
+                ],
+                "guidance": "Ea in range 270–284 kJ mol⁻¹ accepted. Negative Ea loses the last mark; TE from the gradient."
+              },
+              "8(c)(ii)": {
+                "type": "points",
+                "points": [
+                  "Uncatalysed: e^(−50000/(8.31 × 298)) = 1.70 × 10⁻⁹",
+                  "Catalysed: e^(−25000/(8.31 × 298)) = 4.13 × 10⁻⁵",
+                  "About 24 000 times more molecules can react (4.13 × 10⁻⁵ ÷ 1.70 × 10⁻⁹ = 24 276)"
+                ],
+                "guidance": "Stating 4.13 × 10⁻⁵ ≫ 1.70 × 10⁻⁹ so many more can react also scores the last mark."
+              },
+              "9(a)(i)": {
+                "type": "points",
+                "points": [
+                  "Hydrolysis gives the benzoate salt, which must be protonated by H⁺ to give benzoic acid"
+                ],
+                "guidance": "Equation C₆H₅COO⁻Na⁺ + H⁺ → C₆H₅COOH + Na⁺ accepted. Neutralising hydroxide ignored."
+              },
+              "9(a)(ii)": {
+                "type": "points",
+                "points": [
+                  "C₆H₅COOCH₃ + H₂O ⇌ C₆H₅COOH + CH₃OH"
+                ],
+                "guidance": "→ allowed; molecular formulae not credited."
+              },
+              "9(b)": {
+                "type": "points",
+                "points": [
+                  "W: benzyl methanoate, HCOOCH₂C₆H₅",
+                  "X: phenyl ethanoate, CH₃COOC₆H₅",
+                  "W and X both esters; W contains the HCOO– group (X from ethanoic acid)",
+                  "Y: phenylethanoic acid, C₆H₅CH₂COOH",
+                  "Y has COOH (reacts with carbonate to give CO₂) and is monosubstituted",
+                  "Z: 4-methylbenzoic acid, CH₃C₆H₄COOH",
+                  "Z is 1,4 (para), giving 6 carbon environments, and has COOH so it forms an ester with ethanol"
+                ],
+                "guidance": "Displayed or structural formulae accepted."
+              },
+              "9(c)(i)": {
+                "type": "points",
+                "points": [
+                  "Curly arrow from the ring to the C⁺ of CH₃CO⁺ (para to OH)",
+                  "Intermediate: broken delocalised horseshoe with + charge, ring C bonded to H and COCH₃",
+                  "Curly arrow from C–H bond back into ring, giving piceol",
+                  "Catalyst regenerated: AlCl₄⁻ + H⁺ → AlCl₃ + HCl"
+                ],
+                "guidance": "Arrow ending at CH₃ not credited. Horseshoe covers ≥3 carbons facing the sp³ carbon. Other Friedel–Crafts catalysts (e.g. FeCl₃) allowed."
+              },
+              "9(c)(ii)": {
+                "type": "points",
+                "points": [
+                  "Iodine with NaOH (or NaOCl with KI)",
+                  "Pale yellow precipitate"
+                ],
+                "guidance": "Antiseptic smell allowed. Second mark depends on the first or a near miss."
+              },
+              "10(a)": {
+                "type": "points",
+                "points": [
+                  "1s² 2s² 2p⁶ 3s² 3p⁶ 3d⁸"
+                ],
+                "guidance": "[Ar]3d⁸ allowed; 4s⁰ ignored."
+              },
+              "10(b)(i)": {
+                "type": "points",
+                "points": [
+                  "ΔSsystem = 313.4 − (4 × 197.6 + 29.9)",
+                  "ΔSsystem = −506.9 J mol⁻¹ K⁻¹",
+                  "ΔSsurroundings = −ΔH/T = −(−191 000 ÷ 323)",
+                  "ΔSsurroundings = +591.3 J mol⁻¹ K⁻¹",
+                  "ΔStotal = 591.3 − 506.9 = +84.4 J mol⁻¹ K⁻¹"
+                ],
+                "guidance": "Correct answer alone scores 5; TE throughout. +0.0844 kJ mol⁻¹ K⁻¹ allowed."
+              },
+              "10(b)(ii)": {
+                "type": "points",
+                "points": [
+                  "Negative, because the reaction is feasible (used industrially / ΔStotal positive)"
+                ],
+                "guidance": "Just ΔG < 0 and ΔStotal > 0 ignored."
+              },
+              "10(b)(iii)": {
+                "type": "points",
+                "points": [
+                  "n(Ni(CO)₄) = (50 − 0.75) ÷ 4 = 12.3125 mol",
+                  "Total 13.0625 mol; x(CO) = 0.057416, x(Ni(CO)₄) = 0.942584",
+                  "p(CO) = 0.086124 atm; p(Ni(CO)₄) = 1.413876 atm",
+                  "Kp = p(Ni(CO)₄) ÷ p(CO)⁴",
+                  "Kp = 1.413876 ÷ 0.086124⁴ = 25 700",
+                  "Units: atm⁻³"
+                ],
+                "guidance": "TE throughout; square brackets in the Kp expression not credited. A correct Kp value, with or without working, earns M1–M5 (5 marks); the sixth mark is only for the units, atm⁻³."
+              },
+              "10(c)": {
+                "type": "points",
+                "points": [
+                  "Moles of gas increase (1 → 4), and gases have high entropy",
+                  "The gain from forming 4CO(g) outweighs the loss from forming solid Ni"
+                ],
+                "guidance": "Just 'more molecules' ignored; nickel described as molecules not credited."
+              }
+            },
+            questions: [
+              {
+                "number": 1,
+                "scenario": "Alkanes are widely used as fuels.",
+                "parts": [
+                  {
+                    "code": "1(a)",
+                    "prompt": "Balance the equation for the complete combustion of hexane (no state symbols): C₆H₁₄ + …O₂ → …CO₂ + …H₂O",
+                    "marks": 1
+                  },
+                  {
+                    "code": "1(b)",
+                    "prompt": "Name two pollutants formed when pure pentane burns incompletely.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "1(c)",
+                    "prompt": "Explain the problem caused by sulfur impurities in fuels.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "1(d)",
+                    "preamble": "Cyclic hydrocarbons make fuels burn more efficiently; they are made by reforming straight-chain alkanes.",
+                    "prompt": "Write an equation, with skeletal formulae for the organic compounds, for reforming pentane into a cyclic hydrocarbon. State symbols not needed.",
+                    "marks": 2
+                  }
+                ]
+              },
+              {
+                "number": 2,
+                "scenario": "Reactions of Group 1 and Group 2 elements and their compounds.",
+                "parts": [
+                  {
+                    "code": "2(a)(i)",
+                    "preamble": "Group 2 metals burn vigorously in oxygen when heated.",
+                    "prompt": "Write the equation, with state symbols, for magnesium reacting with oxygen.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "2(a)(ii)",
+                    "prompt": "Explain the trend in reactivity down Group 2.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "2(b)(i)",
+                    "prompt": "State how the solubility of Group 2 sulfates changes down the group.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "2(b)(ii)",
+                    "prompt": "Explain why calcium stops reacting with excess sulfuric acid before all the metal is used up.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "2(c)(i)",
+                    "preamble": "Sodium nitrate decomposes on heating, releasing oxygen.",
+                    "prompt": "Describe the test for oxygen and its positive result.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "2(c)(ii)",
+                    "prompt": "Write the equation for the thermal decomposition of sodium nitrate (no state symbols).",
+                    "marks": 1
+                  },
+                  {
+                    "code": "2(c)(iii)",
+                    "prompt": "Use oxidation number changes to show that this decomposition is a redox reaction.",
+                    "marks": 2
+                  }
+                ]
+              },
+              {
+                "number": 3,
+                "scenario": "Ethanol can be dehydrated with concentrated phosphoric(V) acid, concentrated sulfuric acid or aluminium oxide.",
+                "parts": [
+                  {
+                    "code": "3(a)",
+                    "prompt": "Write the equation for dehydrating ethanol, using structural formulae (no state symbols).",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(b)",
+                    "prompt": "Give the formula of phosphoric(V) acid.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(c)",
+                    "prompt": "Draw a dot-and-cross diagram for H₂SO₄, showing outer electrons only and distinguishing S, O and H electrons.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "3(d)(i)",
+                    "preamble": "Ethanol is dehydrated over Al₂O₃ catalyst. A boiling tube, held by a rubber-coated clamp near the bung, is tilted slightly with mineral wool soaked in ethanol at the closed end and aluminium oxide in the middle, heated under the catalyst. Position X is next to the bung and clamp. A delivery tube leads to a test tube of water inverted in a trough; the tube end has a Bunsen valve (a slit in rubber tubing closed by a glass plug) and alkene gas collects over water. (Diagram on the question paper.)",
+                    "prompt": "Suggest why the boiling tube is clamped at the angle shown.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(d)(ii)",
+                    "prompt": "Describe what goes wrong if the ethanol is heated instead of the catalyst.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(d)(iii)",
+                    "prompt": "State a safety problem if the heat were moved to position X.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(d)(iv)",
+                    "prompt": "Suggest why a Bunsen valve is used.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(d)(v)",
+                    "prompt": "Describe a test, with its positive result, confirming an alkene has been collected.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "3(d)(vi)",
+                    "prompt": "Calculate the volume at r.t.p. of 2.759 × 10²⁰ molecules of the alkene.",
+                    "marks": 2
+                  }
+                ]
+              },
+              {
+                "number": 4,
+                "scenario": "This question concerns hydrated magnesium sulfate, MgSO₄·7H₂O.",
+                "parts": [
+                  {
+                    "code": "4(a)*",
+                    "prompt": "Plan an experiment to find the enthalpy change of solution of hydrated magnesium sulfate: MgSO₄·7H₂O(s) + aq → MgSO₄(aq). The calculation method is not needed.",
+                    "marks": 6
+                  },
+                  {
+                    "code": "4(b)",
+                    "preamble": "Experimental enthalpy changes of solution: MgSO₄(s) + aq → MgSO₄(aq), ΔH = −63.2 kJ mol⁻¹; MgSO₄·7H₂O(s) + aq → MgSO₄(aq), ΔH = +15.7 kJ mol⁻¹.",
+                    "prompt": "Use Hess's law to calculate the enthalpy change of hydration of anhydrous magnesium sulfate, MgSO₄(s) + 7H₂O(l) → MgSO₄·7H₂O(s). Give sign and units.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "4(c)",
+                    "prompt": "Explain how the enthalpy change of hydration of Mg²⁺ in magnesium sulfate differs from that of Ca²⁺ in calcium sulfate.",
+                    "marks": 2
+                  }
+                ]
+              },
+              {
+                "number": 5,
+                "scenario": "This question is about electrochemical cells.",
+                "parts": [
+                  {
+                    "code": "5(a)",
+                    "preamble": "A cell is set up to measure the emf between a Zn/Zn²⁺ electrode (zinc rod in zinc nitrate solution) and an acidified Mn²⁺/MnO₄⁻ system, joined by a salt bridge and a voltmeter. Y labels the electrode in the right-hand beaker, Z labels the solution. (Diagram on the question paper.)",
+                    "prompt": "Name the substances needed at labels Y (the electrode) and Z (the solution) in the right-hand half-cell. Temperatures and concentrations are not needed.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "5(b)",
+                    "preamble": "Excess zinc is added to acidified sodium dichromate(VI). E° values: Cr²⁺ + 2e⁻ ⇌ Cr, −0.91 V; Cr³⁺ + e⁻ ⇌ Cr²⁺, −0.41 V; ½Cr₂O₇²⁻ + 7H⁺ + 3e⁻ ⇌ Cr³⁺ + 3½H₂O, +1.33 V; Zn²⁺ + 2e⁻ ⇌ Zn, −0.76 V.",
+                    "prompt": "Using only the data in the table, explain what the final oxidation state of chromium is when zinc is added to acidified dichromate(VI). Include E°cell values; equations are not required.",
+                    "marks": 5
+                  },
+                  {
+                    "code": "5(c)",
+                    "preamble": "Cell diagram: Ni(s) | Ni²⁺(aq) || [NO₃⁻(aq) + 2H⁺(aq)], [NO₂(g) + H₂O(l)] | Pt(s); E°cell = +1.06 V.",
+                    "prompt": "Deduce the reduction half-equation (no state symbols).",
+                    "marks": 1
+                  },
+                  {
+                    "code": "5(d)",
+                    "preamble": "The fuel cell has an acidic electrolyte and a membrane. Hydrogen enters at the top next to the negative electrode; oxygen enters at the bottom next to the positive electrode, where water leaves. The electrodes are linked through an external load. (Diagram on the question paper.)",
+                    "prompt": "State which way electrons flow in this hydrogen–oxygen fuel cell and justify it using the redox processes.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "5(e)",
+                    "prompt": "Give one advantage of a hydrogen–oxygen fuel cell over petrol for powering a vehicle.",
+                    "marks": 1
+                  }
+                ]
+              },
+              {
+                "number": 6,
+                "scenario": "Amino acids can be separated by chromatography.",
+                "parts": [
+                  {
+                    "code": "6(a)",
+                    "prompt": "State how chromatography separates the components of a mixture.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "6(b)(i)",
+                    "preamble": "A tripeptide is hydrolysed and spotted at an X in the bottom right corner of chromatography paper. After developing, two spots appear above the baseline, below solvent front 1. (Diagram on the question paper.)",
+                    "prompt": "Suggest why only two spots appear, other than two amino acids having nearly equal Rf values.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "6(b)(ii)",
+                    "preamble": "Some mixtures need two runs: the paper is dried (not developed), rotated 90° clockwise and run in a second solvent. The answer grid is 10 × 10 squares, each 0.1 in Rf, with the origin (X) at the bottom-left corner where baseline 1 meets baseline 2. After rotation, solvent 1 distances run horizontally (baseline 1 on the left, solvent front 1 on the right) and solvent 2 distances run vertically (baseline 2 at the bottom, solvent front 2 at the top). Rf values (solvent 1, solvent 2): alanine 0.38, 0.43; glycine 0.33, 0.26; valine 0.39, 0.58.",
+                    "prompt": "Complete the grid of the paper after a second run for a tripeptide of alanine, glycine and valine, adding labelled spots for each amino acid.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "6(b)(iii)",
+                    "prompt": "Name a reagent that makes colourless amino acids visible by forming a coloured compound.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "6(c)",
+                    "prompt": "State the technique used together with gas chromatography (GC) in forensic testing.",
+                    "marks": 1
+                  }
+                ]
+              },
+              {
+                "number": 7,
+                "scenario": "Water hardness depends on the concentration of dissolved calcium compounds and can be found by titration.",
+                "parts": [
+                  {
+                    "code": "7(a)(i)",
+                    "preamble": "A 50.0 cm³ water sample is measured with a pipette.",
+                    "prompt": "Describe how to get rid of an air bubble in the tip of a pipette.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "7(a)(ii)",
+                    "prompt": "Calculate the largest volume obtained by using a 25.0 cm³ pipette twice to measure 50.0 cm³; each measurement is ±0.04 cm³.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "7(a)(iii)",
+                    "prompt": "Compare the percentage uncertainty of using a 25.0 cm³ pipette twice with a single 50.0 cm³ pipette (±0.05 cm³) for 50.0 cm³ of water.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "7(b)(i)",
+                    "preamble": "About 2 cm³ of pH 10 buffer is added to each 50.0 cm³ sample.",
+                    "prompt": "Is a 100 cm³ measuring cylinder suitable for this buffer volume? Justify.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "7(b)(ii)",
+                    "preamble": "The buffer is made by dissolving solid NH₄Cl in 18.1 mol dm⁻³ aqueous ammonia. NH₄⁺ ⇌ NH₃ + H⁺, Ka = 5.62 × 10⁻¹⁰ mol dm⁻³.",
+                    "prompt": "Calculate the mass of ammonium chloride to add to 100 cm³ of the ammonia solution to give pH 10. Assume the volume does not change.",
+                    "marks": 4
+                  },
+                  {
+                    "code": "7(b)(iii)",
+                    "prompt": "Give a lab precaution, other than coat, gloves and goggles, for using concentrated ammonia.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "7(c)(i)",
+                    "preamble": "The indicator Eriochrome Black T forms an octahedral complex with Ca²⁺. Its structure has two naphthalene units joined by an azo group (–N=N–), an OH on each unit next to the azo link, plus NO₂ and SO₃⁻Na⁺ groups; Ca²⁺ sits between the two OH groups. (Structure on the question paper.)",
+                    "prompt": "Complete the diagram to show three dative (coordinate) bonds from Eriochrome Black T to the calcium ion.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "7(c)(ii)",
+                    "prompt": "How many water molecules complete this complex?",
+                    "marks": 1
+                  },
+                  {
+                    "code": "7(d)(i)",
+                    "preamble": "Temporary hardness is removed by boiling (a precipitate forms); permanent hardness is not. Hardness is quoted as mg dm⁻³ of Ca²⁺. 50.0 cm³ samples were titrated with EDTA before and after boiling.",
+                    "prompt": "Name the step needed before titrating the boiled water sample.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "7(d)(ii)",
+                    "preamble": "Mean titre of 0.0100 mol dm⁻³ EDTA⁴⁻ for a 50.0 cm³ sample: 12.80 cm³ before boiling, 5.15 cm³ after boiling. EDTA⁴⁻ reacts 1 : 1 with Ca²⁺.",
+                    "prompt": "Calculate the permanent and temporary hardness of this water in mg dm⁻³ of calcium ions.",
+                    "marks": 6
+                  }
+                ]
+              },
+              {
+                "number": 8,
+                "scenario": "Reaction kinetics and the Arrhenius equation.",
+                "parts": [
+                  {
+                    "code": "8(a)(i)",
+                    "preamble": "Hydrogen peroxide iodine clock: H₂O₂ + 2I⁻ + 2H⁺ → I₂ + 2H₂O.",
+                    "prompt": "Suggest two experimental techniques to follow the progress of this reaction.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "8(a)(ii)",
+                    "preamble": "The rate-determining step of the iodate(V) clock is IO₃⁻ + 3HSO₃⁻ → I⁻ + 3HSO₄⁻.",
+                    "prompt": "Suggest why this step is the slowest.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "8(a)(iii)",
+                    "preamble": "The rate-determining step of the chlorate(V) clock is ClO₃⁻ + 2H⁺ + I⁻ → HIO + HClO₂.",
+                    "prompt": "Deduce the rate equation for this clock reaction.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "8(b)(i)",
+                    "preamble": "A Maxwell–Boltzmann curve (number of molecules with energy E against E) is sketched for a mixture at 298 K. (Graph on the question paper.)",
+                    "prompt": "Add a curve for the distribution at 308 K.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "8(b)(ii)",
+                    "prompt": "Explain, using the Maxwell–Boltzmann distribution, why raising the temperature from 298 K to 308 K greatly increases the rate.",
+                    "marks": 2
+                  },
+                  {
+                    "code": "8(c)(i)",
+                    "preamble": "Arrhenius: ln k = −Ea/RT + ln A, or k = A e^(−Ea/RT). For cyclopropane → propene, a graph of ln k (0 to −10) against 1/T (1.1 × 10⁻³ to 1.4 × 10⁻³ K⁻¹) is a straight line falling from about (1.08 × 10⁻³, −0.2) to (1.37 × 10⁻³, −10), passing through (1.13 × 10⁻³, −2) and (1.31 × 10⁻³, −8). (Graph on the question paper.)",
+                    "prompt": "Use the gradient to find the activation energy, Ea, with units.",
+                    "marks": 3
+                  },
+                  {
+                    "code": "8(c)(ii)",
+                    "preamble": "The fraction of molecules with energy ≥ Ea is e^(−Ea/RT). A catalyst lowers Ea.",
+                    "prompt": "Explain with calculations why lowering Ea from 50 000 J mol⁻¹ to 25 000 J mol⁻¹ at 298 K greatly increases the rate.",
+                    "marks": 3
+                  }
+                ]
+              },
+              {
+                "number": 9,
+                "scenario": "This question concerns isomers with formula C₈H₈O₂.",
+                "parts": [
+                  {
+                    "code": "9(a)(i)",
+                    "preamble": "Methyl benzoate is hydrolysed by aqueous NaOH, then acidified to give benzoic acid.",
+                    "prompt": "Explain why acidification is needed after the hydrolysis.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "9(a)(ii)",
+                    "prompt": "Write an equation using structural formulae for the acid hydrolysis of methyl benzoate.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "9(b)",
+                    "preamble": "W and X: monosubstituted aromatic, same functional group as methyl benzoate; only W is made from methanoic acid. Y: monosubstituted aromatic, gives CO₂ with sodium carbonate. Z: disubstituted aromatic, six peaks in its ¹³C NMR spectrum, forms a sweet-smelling product with ethanol.",
+                    "prompt": "Deduce the structures of W, X, Y and Z, with justification.",
+                    "marks": 7
+                  },
+                  {
+                    "code": "9(c)(i)",
+                    "preamble": "Piceol, 4-HOC₆H₄COCH₃ (4-hydroxyphenyl ethanone), occurs in Norway spruce needles. It can be made from phenol and ethanoyl chloride with an AlCl₃ catalyst, which forms the electrophile [CH₃C≡O]⁺; assume the mechanism is like that with benzene. The answer space shows phenol with the CH₃C⁺=O ion below it.",
+                    "prompt": "Complete the mechanism with curly arrows for the formation of piceol, including catalyst regeneration.",
+                    "marks": 4
+                  },
+                  {
+                    "code": "9(c)(ii)",
+                    "prompt": "Give the reagents and the observation for a test that is positive only for piceol, not for HOC₆H₄CH₂CHO.",
+                    "marks": 2
+                  }
+                ]
+              },
+              {
+                "number": 10,
+                "scenario": "The Mond process purifies nickel.",
+                "parts": [
+                  {
+                    "code": "10(a)",
+                    "preamble": "Step 1 at 473 K: NiO(s) + H₂(g) → Ni(s) + H₂O(g). Impurities also react, so the nickel is impure.",
+                    "prompt": "Complete the electronic configuration of Ni²⁺, starting 1s².",
+                    "marks": 1
+                  },
+                  {
+                    "code": "10(b)(i)",
+                    "preamble": "Step 2: CO is passed over impure nickel at 323 K; impurities do not react. Ni(s) + 4CO(g) → Ni(CO)₄(g), ΔrH° = −191 kJ mol⁻¹. S° / J mol⁻¹ K⁻¹: Ni(s) +29.9; CO(g) +197.6; Ni(CO)₄(g) +313.4.",
+                    "prompt": "Calculate ΔS°total for this reaction, with sign and units.",
+                    "marks": 5
+                  },
+                  {
+                    "code": "10(b)(ii)",
+                    "prompt": "Predict the sign of ΔG for this reaction and justify it without calculation.",
+                    "marks": 1
+                  },
+                  {
+                    "code": "10(b)(iii)",
+                    "preamble": "50.0 mol CO is mixed with excess impure nickel at 323 K. At equilibrium 0.750 mol CO remains; pressure stays at 1.5 atm.",
+                    "prompt": "Calculate Kp at 323 K, with units.",
+                    "marks": 6
+                  },
+                  {
+                    "code": "10(c)",
+                    "preamble": "Final stage: Ni(CO)₄ gas is heated to 523 K and decomposes to pure nickel and CO.",
+                    "prompt": "Explain qualitatively why ΔS°system for this decomposition is positive.",
+                    "marks": 2
+                  }
+                ]
+              }
+            ],
           },
 
           // ── June 2022 ──────────────────────────────────────────────────────
