@@ -51,7 +51,7 @@
     <tr><th>Aspect</th><th>Static</th><th>Dynamic</th></tr>
     <tr><td>Size</td><td>Fixed at compile time; cannot grow or shrink.</td><td>Grows and shrinks at run time as items are added or removed.</td></tr>
     <tr><td>Memory allocation</td><td>Allocated in one contiguous block on the stack or in the data segment.</td><td>Allocated on the <em>heap</em>, often in separately-linked nodes.</td></tr>
-    <tr><td>Typical example</td><td>Array of 100 integers.</td><td>Linked list, dynamic vector, tree.</td></tr>
+    <tr><td>Typical example</td><td>Array of 100 integers.</td><td>Linked list, resizing (dynamic) array, tree.</td></tr>
     <tr><td>Access time</td><td>Direct random access by index &mdash; O(1).</td><td>Often sequential &mdash; O(n) for a linked list.</td></tr>
     <tr><td>Memory waste</td><td>Wastes space if only partially filled; overflows if the declared size is exceeded.</td><td>Uses exactly what it needs, but pays per-node overhead for pointers.</td></tr>
 </table>
@@ -161,7 +161,7 @@ s.surname   &larr; "Lovelace"</pre>
     <tr><td>Tree</td><td>insert, delete, traverse</td><td>Connected acyclic graph with a root</td><td>Linked nodes, array (heaps)</td></tr>
     <tr><td>Hash table</td><td>insert, lookup, remove</td><td>Key-value map via hash function</td><td>Array + chaining, open addressing</td></tr>
     <tr><td>Dictionary</td><td>put, get, remove, contains</td><td>Unique keys &rarr; values</td><td>Hash table, balanced BST</td></tr>
-    <tr><td>Vector</td><td>append, get, set, length</td><td>Dynamic, index-addressable sequence</td><td>Resizing array (geometric growth)</td></tr>
+    <tr><td>Vector</td><td>get component, add, scalar multiply, dot product</td><td>n-vector over &#8477;: an index &rarr; real-number mapping</td><td>1-D array / list, dictionary (sparse), function</td></tr>
 </table>
 
 <h2>4.2.5 Queues</h2>
@@ -655,36 +655,170 @@ REMOVE ages["Babbage"]</pre>
 <h2>4.2.11 Vectors</h2>
 
 <div class="definition">
-    A <strong>vector</strong> is an ADT representing a <em>dynamic, index-addressable sequence</em>. It supports <code>get(i)</code>, <code>set(i, v)</code>, <code>length()</code> and <code>append(v)</code>, and can grow arbitrarily at run time. The standard implementation is a <em>resizing array</em> with <strong>geometric growth</strong>, giving <strong>amortised O(1)</strong> append.
+    In AQA 7517 a <strong>vector</strong> is a <em>mathematical</em> object, not a resizing array. An <strong>n-vector over &#8477;</strong> is an ordered list of n real numbers, for example <code>[2.0, 3.0, &minus;1.0]</code>. Equivalently it is a <em>function</em> from a finite set of n indices to the real numbers, or a <em>dictionary</em> mapping each index to its value. The set of all n-vectors over &#8477; is written &#8477;<sup>n</sup>.
 </div>
 
-<h3>Imperative (Resizing-Array) View</h3>
+<h3>Three Equivalent Representations</h3>
 
-<p>The vector holds a capacity <code>cap</code> (the array length) and a count <code>n</code> (number of items used). <code>append</code> writes to <code>data[n]</code> and increments <code>n</code>. When <code>n = cap</code>, the array is <em>doubled</em>: a new array of length <code>2 &times; cap</code> is allocated, all items copied across, and the old array discarded.</p>
+<p>All three views describe exactly the same object &mdash; they differ only in how the index-to-value association is stored. Being able to move between them is examinable.</p>
 
-<pre>PROCEDURE append(v, item)
-    IF v.n = v.cap THEN
-        newCap &larr; IF v.cap = 0 THEN 1 ELSE v.cap * 2 ENDIF
-        newArr &larr; NEW ARRAY[newCap]
-        FOR i &larr; 0 TO v.n - 1
-            newArr[i] &larr; v.data[i]
-        ENDFOR
-        v.data &larr; newArr
-        v.cap  &larr; newCap
+<table>
+    <tr><th>Representation</th><th>The vector [2.0, 3.0, &minus;1.0]</th><th>Why you would choose it</th></tr>
+    <tr><td>List / 1-D array</td><td><code>a = [2.0, 3.0, &minus;1.0]</code>, accessed as <code>a[1]</code>, <code>a[2]</code>, <code>a[3]</code></td><td>Compact and O(1) to index; the natural choice when every component is stored.</td></tr>
+    <tr><td>Function</td><td><code>a : {1, 2, 3} &rarr; &#8477;</code> with <code>a(1) = 2.0</code>, <code>a(2) = 3.0</code>, <code>a(3) = &minus;1.0</code></td><td>The formal definition &mdash; a vector is a mapping from a finite index set to the reals. Useful when components are computed rather than stored.</td></tr>
+    <tr><td>Dictionary</td><td><code>{1: 2.0, 2: 3.0, 3: &minus;1.0}</code></td><td>Best for <em>sparse</em> vectors: only the non-zero components are stored, and any missing key is taken to be 0.0.</td></tr>
+</table>
+
+<pre>// The same 3-vector, three ways (AQA pseudocode)
+
+// 1. list / 1-D array
+DECLARE a : ARRAY[1..3] OF Real
+a[1] &larr; 2.0
+a[2] &larr; 3.0
+a[3] &larr; -1.0
+
+// 2. function  a : {1,2,3} &rarr; R
+FUNCTION a(i)
+    IF i = 1 THEN RETURN 2.0
+    ELSE IF i = 2 THEN RETURN 3.0
+    ELSE RETURN -1.0
     ENDIF
-    v.data[v.n] &larr; item
-    v.n &larr; v.n + 1
-ENDPROCEDURE</pre>
+ENDFUNCTION
 
-<p>Even though a single resize costs O(n), the cost is <em>amortised</em> across the n cheap O(1) appends that preceded it, so the average append is still O(1). Linear growth (e.g. add a fixed 10 each time) would give O(n) amortised append &mdash; much worse.</p>
+// 3. dictionary (sparse: absent key means 0.0)
+DECLARE sparse : Dictionary
+sparse[2]   &larr; 7.0
+sparse[900] &larr; 1.5
+// this represents a 1000-vector whose other 998 components are 0.0</pre>
 
-<h3>Functional (Immutable) View</h3>
+<h3>Notation</h3>
 
-<p>In functional programming languages (Haskell, Scala, Clojure, F#) a vector is often an <em>immutable</em> persistent data structure. Operations such as <code>set</code> do not modify the original vector; they return a new vector that <em>shares</em> most of its internal structure with the old one. This is typically implemented as a shallow tree (often a 32-way trie) giving O(log<sub>32</sub>n) &asymp; O(1) practical access while preserving immutability.</p>
+<ul>
+    <li>Vectors are written in <strong>bold</strong> lower case (<strong>a</strong>, <strong>b</strong>) or with an arrow; components use subscripts, so <strong>a</strong> = [a<sub>1</sub>, a<sub>2</sub>, &hellip;, a<sub>n</sub>].</li>
+    <li>The <strong>dimension</strong> n is the number of components. Two vectors can only be added if they have the same dimension.</li>
+    <li>The <strong>zero vector</strong> <strong>0</strong> = [0, 0, &hellip;, 0] is the identity for addition: <strong>a</strong> + <strong>0</strong> = <strong>a</strong>.</li>
+    <li>The <strong>magnitude</strong> (length) of <strong>a</strong> is |<strong>a</strong>| = &radic;(a<sub>1</sub><sup>2</sup> + &hellip; + a<sub>n</sub><sup>2</sup>).</li>
+    <li>A vector may be drawn as an <em>arrow</em> from the origin to the point with those coordinates &mdash; convenient in 2 or 3 dimensions, but the algebra works for any n.</li>
+</ul>
 
-<p>Advantages of immutable vectors: thread-safety without locks, referential transparency (an expression always evaluates to the same value), easier reasoning, free undo (keep a reference to the previous version).</p>
+<h3>Vector Addition</h3>
 
-<div class="exam-tip">Note: in the AQA 7517 specification a vector is a <em>mathematical</em> vector &mdash; e.g. [2.0, 3.14, &minus;1.0], an n-vector over &#8477; &mdash; represented as a list/1-D array, a dictionary or a function; you must know vector addition, scalar&ndash;vector multiplication, convex combination and dot product. The resizing-array material above is context, not the spec's meaning of 'vector'. If asked "why is append O(1) amortised rather than O(1) worst-case?" explain that most appends are cheap but the occasional resize copies all n items; the doubling strategy ensures resizes are rare enough for the average to remain constant.</div>
+<div class="definition">
+    <strong>Vector addition</strong> is <em>component-wise</em>: <strong>a</strong> + <strong>b</strong> = [a<sub>1</sub> + b<sub>1</sub>, a<sub>2</sub> + b<sub>2</sub>, &hellip;, a<sub>n</sub> + b<sub>n</sub>]. Geometrically, the sum is the arrow you reach by placing <strong>b</strong>'s tail at <strong>a</strong>'s tip &mdash; the diagonal of the parallelogram formed by the two vectors.
+</div>
+
+<p><strong>Worked example.</strong> With <strong>a</strong> = [4, 1] and <strong>b</strong> = [1, 3]:</p>
+
+<pre>a + b = [4 + 1, 1 + 3] = [5, 4]</pre>
+
+<svg viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;display:block;margin:20px auto;">
+  <defs>
+    <marker id="vax" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#1a1a2e"/></marker>
+    <marker id="vblue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#2563eb"/></marker>
+    <marker id="vgreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#16a34a"/></marker>
+    <marker id="vred" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#dc2626"/></marker>
+  </defs>
+  <line x1="50" y1="260" x2="400" y2="260" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#vax)"/>
+  <line x1="50" y1="260" x2="50" y2="30" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#vax)"/>
+  <text x="404" y="265" font-size="13" fill="#1a1a2e">x</text>
+  <text x="40" y="26" font-size="13" fill="#1a1a2e">y</text>
+  <text x="38" y="275" font-size="11" fill="#64748b">0</text>
+  <text x="147" y="275" font-size="11" fill="#64748b">2</text>
+  <text x="247" y="275" font-size="11" fill="#64748b">4</text>
+  <text x="34" y="164" font-size="11" fill="#64748b">2</text>
+  <text x="34" y="64" font-size="11" fill="#64748b">4</text>
+  <line x1="250" y1="210" x2="300" y2="60" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="100" y1="110" x2="300" y2="60" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="50" y1="260" x2="250" y2="210" stroke="#2563eb" stroke-width="2.5" marker-end="url(#vblue)"/>
+  <line x1="50" y1="260" x2="100" y2="110" stroke="#16a34a" stroke-width="2.5" marker-end="url(#vgreen)"/>
+  <line x1="50" y1="260" x2="300" y2="60" stroke="#dc2626" stroke-width="2.5" marker-end="url(#vred)"/>
+  <text x="170" y="248" font-size="12" fill="#2563eb" font-weight="600">a = [4, 1]</text>
+  <text x="104" y="136" font-size="12" fill="#16a34a" font-weight="600">b = [1, 3]</text>
+  <text x="308" y="52" font-size="12" fill="#dc2626" font-weight="600">a + b = [5, 4]</text>
+  <circle cx="300" cy="60" r="3.5" fill="#dc2626"/>
+</svg>
+
+<p>The dashed arrows are copies of <strong>a</strong> and <strong>b</strong> shifted to the tip of the other vector. Both routes arrive at the same point [5, 4], which is why addition is <em>commutative</em>: <strong>a</strong> + <strong>b</strong> = <strong>b</strong> + <strong>a</strong>.</p>
+
+<h3>Scalar&ndash;Vector Multiplication</h3>
+
+<div class="definition">
+    Multiplying a vector by a <strong>scalar</strong> (a single real number) multiplies <em>every</em> component: k<strong>a</strong> = [k&times;a<sub>1</sub>, k&times;a<sub>2</sub>, &hellip;, k&times;a<sub>n</sub>]. This stretches the arrow by a factor of k, keeping its direction &mdash; or reverses it when k is negative.
+</div>
+
+<p><strong>Worked example.</strong> With <strong>u</strong> = [2, 3, &minus;1] and k = 2.5:</p>
+
+<pre>2.5u  = [2.5&times;2, 2.5&times;3, 2.5&times;(&minus;1)] = [5.0, 7.5, &minus;2.5]
+
+&minus;1u   = [&minus;2, &minus;3, 1]                       // same length, opposite direction</pre>
+
+<p>Addition and scalar multiplication combine, so expressions such as 3<strong>a</strong> &minus; 2<strong>b</strong> are evaluated component-wise: with <strong>a</strong> = [4, 1] and <strong>b</strong> = [1, 3] this gives [12 &minus; 2, 3 &minus; 6] = [10, &minus;3].</p>
+
+<h3>The Dot (Scalar) Product</h3>
+
+<div class="definition">
+    The <strong>dot product</strong> (also called the <em>scalar product</em>) of two vectors of the same dimension multiplies matching components and adds the results: <strong>a</strong>&middot;<strong>b</strong> = a<sub>1</sub>b<sub>1</sub> + a<sub>2</sub>b<sub>2</sub> + &hellip; + a<sub>n</sub>b<sub>n</sub>. The answer is a single <em>number</em>, not a vector.
+</div>
+
+<p><strong>Worked example (2-D).</strong> <strong>a</strong> = [4, 1], <strong>b</strong> = [1, 3]:</p>
+
+<pre>a&middot;b = 4&times;1 + 1&times;3 = 4 + 3 = 7</pre>
+
+<p><strong>Worked example (3-D).</strong> <strong>u</strong> = [2, 3, &minus;1], <strong>v</strong> = [5, 0, 4]:</p>
+
+<pre>u&middot;v = 2&times;5 + 3&times;0 + (&minus;1)&times;4 = 10 + 0 &minus; 4 = 6</pre>
+
+<p>What the number <em>means</em>: the dot product measures how much the two vectors point the same way, because <strong>a</strong>&middot;<strong>b</strong> = |<strong>a</strong>| |<strong>b</strong>| cos&theta;, where &theta; is the angle between them. Three consequences worth remembering:</p>
+
+<ul>
+    <li><strong>Perpendicular vectors give zero.</strong> [3, 4]&middot;[&minus;4, 3] = &minus;12 + 12 = 0, so those two arrows meet at a right angle. A positive result means the vectors point broadly the same way; a negative result means broadly opposite.</li>
+    <li><strong>A vector dotted with itself gives its squared length.</strong> <strong>a</strong>&middot;<strong>a</strong> = 4<sup>2</sup> + 1<sup>2</sup> = 17, so |<strong>a</strong>| = &radic;17 &asymp; 4.123.</li>
+    <li><strong>It recovers the angle.</strong> For <strong>a</strong> = [4, 1] and <strong>b</strong> = [1, 3]: |<strong>b</strong>| = &radic;10 &asymp; 3.162, so cos&theta; = 7 / (&radic;17 &times; &radic;10) = 7 / &radic;170 &asymp; 0.537, giving &theta; &asymp; 57.5&deg;.</li>
+</ul>
+
+<h3>Convex Combination</h3>
+
+<div class="definition">
+    A <strong>convex combination</strong> of two vectors <strong>a</strong> and <strong>b</strong> is &lambda;<strong>a</strong> + (1 &minus; &lambda;)<strong>b</strong> where 0 &le; &lambda; &le; 1. Because the two scalars are non-negative and sum to 1, every convex combination lands <em>on the straight line segment joining</em> <strong>a</strong> and <strong>b</strong> &mdash; never outside it.
+</div>
+
+<p><strong>Worked example.</strong> Take <strong>p</strong> = [1, 1] and <strong>q</strong> = [7, 5], and compute &lambda;<strong>p</strong> + (1 &minus; &lambda;)<strong>q</strong>:</p>
+
+<table>
+    <tr><th>&lambda;</th><th>Calculation</th><th>Result</th><th>Position on the segment</th></tr>
+    <tr><td>1</td><td>1&times;[1, 1] + 0&times;[7, 5]</td><td>[1, 1]</td><td>exactly at <strong>p</strong></td></tr>
+    <tr><td>0.75</td><td>[0.75, 0.75] + [1.75, 1.25]</td><td>[2.5, 2.0]</td><td>a quarter of the way from <strong>p</strong> to <strong>q</strong></td></tr>
+    <tr><td>0.5</td><td>[0.5, 0.5] + [3.5, 2.5]</td><td>[4.0, 3.0]</td><td>the midpoint</td></tr>
+    <tr><td>0.25</td><td>[0.25, 0.25] + [5.25, 3.75]</td><td>[5.5, 4.0]</td><td>three quarters of the way to <strong>q</strong></td></tr>
+    <tr><td>0</td><td>0&times;[1, 1] + 1&times;[7, 5]</td><td>[7, 5]</td><td>exactly at <strong>q</strong></td></tr>
+</table>
+
+<p>Sliding &lambda; from 1 down to 0 therefore sweeps smoothly from <strong>p</strong> to <strong>q</strong>. That is exactly <strong>linear interpolation</strong>, and it is why convex combinations appear all over computing:</p>
+
+<ul>
+    <li><strong>Animation / tweening</strong> &mdash; an object at position <strong>p</strong> in the first key frame and <strong>q</strong> in the last is drawn at &lambda;<strong>p</strong> + (1 &minus; &lambda;)<strong>q</strong> for the in-between frames.</li>
+    <li><strong>Colour blending</strong> &mdash; treating RGB colours as 3-vectors, 0.3&times;[255, 0, 0] + 0.7&times;[0, 0, 255] = [76.5, 0, 178.5], a purple much nearer blue than red. Cross-fades and gradients are the same calculation per pixel.</li>
+    <li><strong>Averaging</strong> &mdash; the mean of two vectors is just the case &lambda; = 0.5, and weighted averages generalise it to more than two.</li>
+</ul>
+
+<h3>Where Vectors Are Used</h3>
+
+<ul>
+    <li><strong>Images</strong> &mdash; a greyscale image of 1920&times;1080 pixels can be read as a single vector of 2,073,600 real numbers, so brightening, cross-fading and averaging images become scalar multiplication and vector addition.</li>
+    <li><strong>Graphics</strong> &mdash; positions, directions and velocities of objects in 2-D or 3-D are vectors; moving an object is adding a translation vector, scaling it is scalar multiplication, and lighting calculations use the dot product to find how directly a surface faces the light.</li>
+    <li><strong>Sound</strong> &mdash; a sampled audio clip is a vector of amplitudes; mixing two clips is vector addition and changing the volume is scalar multiplication.</li>
+    <li><strong>Machine learning and search</strong> &mdash; documents, users or items are described by <em>feature vectors</em>, and the dot product (or the angle it gives) measures how similar two of them are.</li>
+</ul>
+
+<h3>Vector Spaces</h3>
+
+<div class="definition">
+    A <strong>vector space</strong> is a set of vectors that is <strong>closed</strong> under vector addition and under scalar multiplication: adding any two members gives another member, and multiplying any member by any real scalar gives another member. &#8477;<sup>n</sup> &mdash; the set of all n-vectors over &#8477; &mdash; is the standard example.
+</div>
+
+<p>Closure is the point of the definition. Because [5, 4] and [10, &minus;3] are still 2-vectors, you can keep combining vectors indefinitely and never leave &#8477;<sup>2</sup>. Note that a convex combination stays inside the space too, but only reaches the segment between the two vectors, whereas allowing <em>any</em> scalars (a <em>linear</em> combination) reaches the whole plane spanned by them.</p>
+
+<div class="exam-tip">When AQA says "vector" in 7517 it means the mathematical object above, so answer with components, not with arrays that grow. For full marks: state the representation you are using (list, function or dictionary), do addition and scalar multiplication <em>component-wise</em>, remember the dot product returns a <em>single number</em>, and check that the weights in a convex combination are non-negative and add up to 1. A common lost mark is writing the dot product as a vector &mdash; and another is forgetting that addition is only defined between vectors of the same dimension.</div>
 
 <h2>Big-O Summary Across Structures</h2>
 
@@ -693,7 +827,7 @@ ENDPROCEDURE</pre>
 <table>
     <tr><th>Structure</th><th>Access by index</th><th>Search by value</th><th>Insert</th><th>Delete</th><th>Space</th></tr>
     <tr><td>Array (static)</td><td>O(1)</td><td>O(n)</td><td>O(n) (shift)</td><td>O(n) (shift)</td><td>O(n)</td></tr>
-    <tr><td>Vector (dynamic)</td><td>O(1)</td><td>O(n)</td><td>O(1) amortised (append)</td><td>O(n) (middle)</td><td>O(n)</td></tr>
+    <tr><td>Resizing (dynamic) array</td><td>O(1)</td><td>O(n)</td><td>O(1) amortised (append)</td><td>O(n) (middle)</td><td>O(n)</td></tr>
     <tr><td>Linked list</td><td>O(n)</td><td>O(n)</td><td>O(1) at head</td><td>O(1) given node</td><td>O(n)</td></tr>
     <tr><td>Stack (array)</td><td>&ndash;</td><td>&ndash;</td><td>O(1) push</td><td>O(1) pop</td><td>O(n)</td></tr>
     <tr><td>Queue (circular)</td><td>&ndash;</td><td>&ndash;</td><td>O(1) enQueue</td><td>O(1) deQueue</td><td>O(n)</td></tr>
@@ -720,7 +854,8 @@ ENDPROCEDURE</pre>
     <li>Write recursive pseudocode for BST insert, search and in-order traversal.</li>
     <li>Describe a hash function's required properties; explain chaining and linear probing; define load factor and rehashing.</li>
     <li>State typical implementations of the dictionary ADT (hash table, balanced BST) and their complexities.</li>
-    <li>Explain why vector append is amortised O(1) and contrast the imperative and functional (immutable) views.</li>
+    <li>Represent a vector as a list, as a function from a finite index set to &#8477;, or as a dictionary, and convert between the three.</li>
+    <li>Carry out vector addition, scalar&ndash;vector multiplication, the dot product and a convex combination, and say what a vector space is.</li>
 </ul>
 
 </div>

@@ -608,6 +608,109 @@ r = (1.822 &times; 10<sup>-23</sup>) / (1.60 &times; 10<sup>-20</sup>) = <strong
 </div>
 
 <!-- ============================================================ -->
+<!-- REQUIRED PRACTICAL 11 -->
+<!-- ============================================================ -->
+<div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">
+<h2 style="color:#1a73e8; margin-top:0;">&#9879; Required Practical 11: Search Coil and Oscilloscope &mdash; Flux Linkage vs Angle</h2>
+
+<svg viewBox="0 0 580 320" style="max-width:600px; display:block; margin:16px auto; background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="rpSCb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#1a73e8"/></marker>
+    <marker id="rpSCr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#DC2626"/></marker>
+    <marker id="rpSCo" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#D97706"/></marker>
+  </defs>
+  <text x="290" y="20" text-anchor="middle" font-family="system-ui" font-size="13" fill="#1a1a2e" font-weight="700">RP11: Peak EMF from a Search Coil as the Angle Changes</text>
+  <!-- Signal generator -->
+  <rect x="14" y="118" width="64" height="44" rx="6" fill="#fef3c7" stroke="#D97706" stroke-width="1.5"/>
+  <text x="46" y="136" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#D97706" font-weight="600">Signal gen.</text>
+  <path d="M26,150 Q36,140 46,150 Q56,160 66,150" fill="none" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="78" y1="130" x2="105" y2="130" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="78" y1="152" x2="105" y2="152" stroke="#1a1a2e" stroke-width="1.5"/>
+  <!-- Solenoid -->
+  <rect x="105" y="80" width="200" height="128" rx="4" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5"/>
+  <path d="M110,80 A10.5,8 0 0 1 131,80 M131,80 A10.5,8 0 0 1 152,80 M152,80 A10.5,8 0 0 1 173,80 M173,80 A10.5,8 0 0 1 194,80 M194,80 A10.5,8 0 0 1 215,80 M215,80 A10.5,8 0 0 1 236,80 M236,80 A10.5,8 0 0 1 257,80 M257,80 A10.5,8 0 0 1 278,80 M278,80 A10.5,8 0 0 1 299,80" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+  <path d="M110,208 A10.5,8 0 0 0 131,208 M131,208 A10.5,8 0 0 0 152,208 M152,208 A10.5,8 0 0 0 173,208 M173,208 A10.5,8 0 0 0 194,208 M194,208 A10.5,8 0 0 0 215,208 M215,208 A10.5,8 0 0 0 236,208 M236,208 A10.5,8 0 0 0 257,208 M257,208 A10.5,8 0 0 0 278,208 M278,208 A10.5,8 0 0 0 299,208" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="205" y="62" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="600">Solenoid: alternating field B = B0 sin &omega;t</text>
+  <!-- Field lines -->
+  <line x1="118" y1="100" x2="288" y2="100" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#rpSCb)"/>
+  <line x1="226" y1="145" x2="288" y2="145" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#rpSCb)"/>
+  <line x1="118" y1="196" x2="172" y2="196" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#rpSCb)"/>
+  <line x1="232" y1="196" x2="288" y2="196" stroke="#1a73e8" stroke-width="1.5" marker-end="url(#rpSCb)"/>
+  <text x="298" y="149" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="700">B</text>
+  <!-- Search coil (rotated) -->
+  <ellipse cx="205" cy="145" rx="9" ry="34" transform="rotate(-35 205 145)" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <ellipse cx="205" cy="145" rx="6" ry="28" transform="rotate(-35 205 145)" fill="none" stroke="#DC2626" stroke-width="1.2"/>
+  <text x="176" y="136" text-anchor="end" font-family="system-ui" font-size="8.5" fill="#DC2626" font-weight="600">search coil</text>
+  <text x="176" y="148" text-anchor="end" font-family="system-ui" font-size="8" fill="#1a1a2e">N turns, area A</text>
+  <!-- Normal and angle -->
+  <line x1="205" y1="145" x2="252.5" y2="111.7" stroke="#DC2626" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#rpSCr)"/>
+  <text x="255" y="118" font-family="system-ui" font-size="8" fill="#DC2626">normal to coil</text>
+  <path d="M251,145 A46,46 0 0 0 242.7,118.6" fill="none" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="228" y="136" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="700">&theta;</text>
+  <!-- Leads to oscilloscope -->
+  <path d="M203,171 L203,232 L330,232 L330,175 L340,175" fill="none" stroke="#1a1a2e" stroke-width="1.2"/>
+  <path d="M213,166 L213,242 L322,242 L322,192 L340,192" fill="none" stroke="#1a1a2e" stroke-width="1.2"/>
+  <!-- Oscilloscope -->
+  <rect x="340" y="78" width="225" height="150" rx="10" fill="#e8eef6" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="452" y="70" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e" font-weight="600">Oscilloscope</text>
+  <rect x="355" y="92" width="150" height="120" rx="5" fill="#1a1a2e"/>
+  <line x1="355" y1="112" x2="505" y2="112" stroke="#334155" stroke-width="0.5"/>
+  <line x1="355" y1="132" x2="505" y2="132" stroke="#334155" stroke-width="0.5"/>
+  <line x1="355" y1="152" x2="505" y2="152" stroke="#16A34A" stroke-width="0.8" stroke-dasharray="4,4"/>
+  <line x1="355" y1="172" x2="505" y2="172" stroke="#334155" stroke-width="0.5"/>
+  <line x1="355" y1="192" x2="505" y2="192" stroke="#334155" stroke-width="0.5"/>
+  <line x1="380" y1="92" x2="380" y2="212" stroke="#334155" stroke-width="0.5"/>
+  <line x1="405" y1="92" x2="405" y2="212" stroke="#334155" stroke-width="0.5"/>
+  <line x1="430" y1="92" x2="430" y2="212" stroke="#334155" stroke-width="0.5"/>
+  <line x1="455" y1="92" x2="455" y2="212" stroke="#334155" stroke-width="0.5"/>
+  <line x1="480" y1="92" x2="480" y2="212" stroke="#334155" stroke-width="0.5"/>
+  <path d="M358,152 Q373,72 388,152 Q403,232 418,152 Q433,72 448,152 Q463,232 478,152" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <line x1="514" y1="112" x2="514" y2="152" stroke="#D97706" stroke-width="1.5" marker-start="url(#rpSCo)" marker-end="url(#rpSCo)"/>
+  <text x="522" y="130" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">peak</text>
+  <text x="522" y="143" font-family="system-ui" font-size="9" fill="#D97706" font-weight="600">EMF</text>
+  <text x="452" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Read peak-to-peak, then halve it</text>
+  <text x="240" y="285" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8" font-weight="600">N&Phi; = BAN cos&theta; &nbsp;&rarr;&nbsp; peak EMF = B0AN&omega; cos&theta;</text>
+  <text x="240" y="303" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Plot peak EMF against cos&theta;: straight line through the origin</text>
+</svg>
+
+<h3>Apparatus</h3>
+<p>Small search coil (many turns, known area A) on a mount that rotates against a protractor scale, long solenoid or a pair of Helmholtz coils, signal generator to drive the coils, oscilloscope, connecting leads.</p>
+
+<h3>Method</h3>
+<ol>
+  <li>Drive the solenoid from the signal generator so that the field along its axis alternates: B = B<sub>0</sub> sin&omega;t. Fix the frequency and output level and leave them alone for the whole experiment.</li>
+  <li>Sit the search coil at the middle of the solenoid, where the field is most uniform, and connect it across the Y-input of the oscilloscope.</li>
+  <li>Set &theta; = 0&deg;, i.e. the coil turned so that its <em>normal</em> lies along the field. Trim the time base and Y-gain until one or two cycles fill most of the screen.</li>
+  <li>Read the peak-to-peak height of the trace in divisions, convert using the Y-gain and halve it to get the peak EMF.</li>
+  <li>Turn the coil in 10&deg; steps up to 90&deg;, keeping its centre in the same spot, and record the peak EMF at each angle. Repeat each reading and take a mean.</li>
+  <li>Plot peak EMF against cos&theta;.</li>
+</ol>
+
+<h3>Analysis</h3>
+<p>The flux linkage is N&Phi; = BAN cos&theta;, with &theta; measured between the field and the normal to the coil. Substituting B = B<sub>0</sub> sin&omega;t and differentiating gives an induced EMF of peak value B<sub>0</sub>AN&omega; cos&theta;, so the peak EMF is proportional to cos&theta;. The graph of peak EMF against cos&theta; should therefore be a straight line through the origin of gradient B<sub>0</sub>AN&omega;; since &omega; = 2&pi;f, the peak flux density follows as B<sub>0</sub> = gradient/(AN&omega;). As a quick check on the data, cos 60&deg; = 0.5, so turning the coil from 0&deg; to 60&deg; should halve the peak EMF, and at 90&deg; (coil plane along the field) the trace should collapse to zero.</p>
+
+<h3>Safety</h3>
+<ul>
+  <li>Low-voltage supply only; the solenoid can warm up, so switch off between sets of readings.</li>
+  <li>Keep the oscilloscope away from mains voltage and support the coil mount so it cannot topple.</li>
+</ul>
+
+<h3>Sources of Error &amp; Improvements</h3>
+<table>
+<tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+<tr><td>Protractor zero does not match true &theta; = 0&deg;</td><td>Systematic</td><td>Set zero where the trace is largest; take readings either side of zero and average</td></tr>
+<tr><td>Coil wanders out of the uniform central region as it turns</td><td>Systematic</td><td>Rotate about the coil's own centre; mark its position on the mount</td></tr>
+<tr><td>Thick trace makes the peak hard to judge</td><td>Random</td><td>Measure peak-to-peak over many divisions and halve; use digital cursors</td></tr>
+<tr><td>Signal generator output or frequency drifts</td><td>Random</td><td>Re-take the &theta; = 0&deg; reading at the end as a check</td></tr>
+<tr><td>Stray pick-up in the connecting leads</td><td>Random</td><td>Use short, twisted leads routed away from the supply</td></tr>
+</table>
+
+<div class="tip-box"><strong>Exam Tip:</strong> The angle in N&Phi; = BAN cos&theta; is between the field and the <em>normal</em> to the coil, not the plane of the coil &mdash; a favourite trap. Note also that the field must be alternating: a stationary coil in a steady field has constant flux linkage and induces no EMF at all.</div>
+
+<p style="margin-bottom:0;"><em>The required practicals page carries the full write-up of RP11 (aim, variables, apparatus and the usual exam points) alongside the other eleven practicals.</em></p>
+</div>
+
+<!-- ============================================================ -->
 <!-- OSCILLOSCOPE SKILLS (not AQA Required Practical 11) -->
 <!-- ============================================================ -->
 <div style="background:#f0f7ff; border:2px solid #1a73e8; border-radius:12px; padding:24px; margin:32px 0;">

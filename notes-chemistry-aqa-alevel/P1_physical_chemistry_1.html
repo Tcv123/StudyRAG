@@ -82,7 +82,8 @@
 <h3>1.3 Mass Spectrometry</h3>
 <p>A mass spectrometer measures the relative masses and abundances of isotopes or molecules. The process involves four stages:</p>
 <ol>
-  <li><strong>Ionisation:</strong> The sample is vaporised and bombarded with high-energy electrons, knocking off an electron to form positive ions: X(g) &#8594; X<sup>+</sup>(g) + e<sup>-</sup>. This is called electron impact ionisation. Only 1+ ions are typically formed.</li>
+  <li><strong>Ionisation:</strong> The sample is vaporised and bombarded with high-energy electrons, knocking off an electron to form positive ions: X(g) &#8594; X<sup>+</sup>(g) + e<sup>-</sup>. This is called <strong>electron impact</strong> ionisation. Only 1+ ions are typically formed, and fragmentation is common because the high-energy electrons leave the molecular ion with excess energy. It suits elements and compounds with a low molecular mass.</li>
+  <li><strong>Ionisation by electrospray:</strong> the sample is dissolved in a volatile, polar solvent and pushed through a fine needle held at a high positive voltage. The spray of charged droplets loses solvent, and each molecule is ionised by gaining a proton: X(g) + H<sup>+</sup> &#8594; XH<sup>+</sup>(g). This is a &quot;soft&quot; method, so there is little or no fragmentation, which makes it suitable for large molecules such as proteins. Remember that the ion detected is one mass unit heavier than the molecule, so M<sub>r</sub> = (m/z) &#8722; 1.</li>
   <li><strong>Acceleration:</strong> The positive ions are accelerated by an electric field so they all have the same kinetic energy (&frac12;mv&sup2; = qV, where q is the charge and V is the accelerating voltage).</li>
   <li><strong>Ion drift:</strong> The ions pass into a flight tube with no electric field. Because they all have the same kinetic energy, lighter ions (lower m/z) travel faster and reach the detector first. The time of flight depends on the mass-to-charge ratio (m/z).</li>
   <li><strong>Detection:</strong> Ions hit the detector and gain electrons, producing an electrical current proportional to their abundance. The time of flight of each ion is used to calculate its m/z.</li>
@@ -91,46 +92,50 @@
 <!-- SVG: Mass Spectrometer Schematic -->
 <div style="margin: 20px auto; text-align: center;">
 <svg viewBox="0 0 520 260" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
-  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Mass Spectrometer — Schematic</text>
+  <text x="260" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Time of Flight Mass Spectrometer — Schematic</text>
   <!-- Ionisation chamber -->
-  <rect x="30" y="80" width="80" height="60" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="70" y="105" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="bold">Ionisation</text>
-  <text x="70" y="118" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">e&#8315; bombardment</text>
-  <text x="70" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">X &#8594; X&#8314; + e&#8315;</text>
+  <rect x="22" y="80" width="78" height="60" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="61" y="102" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8" font-weight="bold">Ionisation</text>
+  <text x="61" y="116" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">e&#8315; bombardment</text>
+  <text x="61" y="129" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">X &#8594; X&#8314; + e&#8315;</text>
   <!-- Sample input -->
-  <line x1="70" y1="60" x2="70" y2="80" stroke="#1a1a2e" stroke-width="1.2"/>
-  <text x="70" y="55" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Sample in</text>
+  <line x1="61" y1="60" x2="61" y2="80" stroke="#1a1a2e" stroke-width="1.2"/>
+  <text x="61" y="55" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Sample in</text>
   <!-- Acceleration -->
-  <line x1="110" y1="110" x2="150" y2="110" stroke="#D97706" stroke-width="2"/>
-  <polygon points="150,110 143,106 143,114" fill="#D97706"/>
-  <rect x="150" y="85" width="70" height="50" rx="6" fill="#fef9c3" stroke="#D97706" stroke-width="1.5"/>
-  <text x="185" y="107" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="bold">Acceleration</text>
-  <text x="185" y="120" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Electric field</text>
-  <!-- Deflection (curved path) -->
-  <line x1="220" y1="110" x2="250" y2="110" stroke="#16A34A" stroke-width="2"/>
-  <polygon points="250,110 243,106 243,114" fill="#16A34A"/>
-  <rect x="250" y="60" width="120" height="100" rx="6" fill="#f0fdf4" stroke="#16A34A" stroke-width="1.5"/>
-  <text x="310" y="82" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="bold">Deflection</text>
-  <text x="310" y="95" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Magnetic field</text>
-  <!-- Curved paths for different masses -->
-  <path d="M270,120 Q290,100 310,120" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
-  <text x="290" y="118" text-anchor="middle" font-family="system-ui" font-size="7" fill="#1a73e8">light</text>
-  <path d="M270,140 Q310,110 340,140" fill="none" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="310" y="148" text-anchor="middle" font-family="system-ui" font-size="7" fill="#DC2626">heavy</text>
+  <line x1="100" y1="110" x2="132" y2="110" stroke="#D97706" stroke-width="2"/>
+  <polygon points="132,110 125,106 125,114" fill="#D97706"/>
+  <rect x="132" y="80" width="74" height="60" rx="6" fill="#fef9c3" stroke="#D97706" stroke-width="1.5"/>
+  <text x="169" y="102" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706" font-weight="bold">Acceleration</text>
+  <text x="169" y="116" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Electric field</text>
+  <text x="169" y="129" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">&frac12;mv&sup2; = qV</text>
+  <!-- Ion drift: field-free flight tube -->
+  <line x1="206" y1="110" x2="230" y2="110" stroke="#16A34A" stroke-width="2"/>
+  <polygon points="230,110 223,106 223,114" fill="#16A34A"/>
+  <rect x="230" y="80" width="152" height="60" rx="6" fill="#f0fdf4" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="306" y="74" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A" font-weight="bold">Ion drift &#8212; field-free flight tube (length d)</text>
+  <!-- Ions in flight -->
+  <circle cx="352" cy="99" r="5" fill="#1a73e8"/>
+  <line x1="359" y1="99" x2="372" y2="99" stroke="#1a73e8" stroke-width="1.2"/>
+  <polygon points="376,99 369,95 369,103" fill="#1a73e8"/>
+  <text x="296" y="97" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="#1a73e8">lighter ion (faster)</text>
+  <circle cx="258" cy="124" r="5" fill="#DC2626"/>
+  <line x1="265" y1="124" x2="274" y2="124" stroke="#DC2626" stroke-width="1.2"/>
+  <polygon points="278,124 271,120 271,128" fill="#DC2626"/>
+  <text x="324" y="127" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="#DC2626">heavier ion (slower)</text>
   <!-- Detection -->
-  <line x1="370" y1="110" x2="400" y2="110" stroke="#DC2626" stroke-width="2"/>
+  <line x1="382" y1="110" x2="400" y2="110" stroke="#DC2626" stroke-width="2"/>
   <polygon points="400,110 393,106 393,114" fill="#DC2626"/>
   <rect x="400" y="80" width="80" height="60" rx="6" fill="#fef2f2" stroke="#DC2626" stroke-width="1.5"/>
-  <text x="440" y="105" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="bold">Detection</text>
-  <text x="440" y="118" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Signal recorded</text>
-  <text x="440" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">m/z vs abundance</text>
+  <text x="440" y="102" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626" font-weight="bold">Detection</text>
+  <text x="440" y="116" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Time of flight</text>
+  <text x="440" y="129" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">m/z vs abundance</text>
   <!-- Vacuum note -->
-  <text x="260" y="190" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Entire apparatus under high vacuum to prevent ions colliding with air molecules</text>
+  <text x="260" y="172" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Entire apparatus under high vacuum to prevent ions colliding with air molecules</text>
   <!-- Output note -->
-  <text x="260" y="210" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Output: mass spectrum showing peaks at each m/z value</text>
-  <!-- Key equation -->
-  <text x="260" y="235" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Lighter ions deflected more; heavier ions deflected less</text>
-  <text x="260" y="250" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Deflection depends on mass-to-charge ratio (m/z)</text>
+  <text x="260" y="192" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Output: mass spectrum showing peaks at each m/z value</text>
+  <!-- Key relationships -->
+  <text x="260" y="216" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">All ions gain the same kinetic energy: &frac12;mv&sup2; = qV, so v = &radic;(2qV/m)</text>
+  <text x="260" y="234" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Time of flight t = d/v, so t depends on m/z: lighter ions reach the detector first</text>
 </svg>
 </div>
 
