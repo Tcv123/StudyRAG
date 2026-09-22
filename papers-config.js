@@ -23257,6 +23257,13 @@ window.SUBJECTS = [
               '13': { type: 'points', points: ['Contestability refers to ease of entry and exit for potential competitors', 'Even a monopoly facing contestable market may behave competitively (limit pricing)', 'Sunk costs are a key barrier — if low, market is more contestable', 'Contestability can improve efficiency without formal competition', 'However, hit-and-run competition may not deliver sustained efficiency gains'], guidance: '15 marks: KAA 15. Use contestability theory clearly with examples.' },
               '14': { type: 'points', points: ['Privatisation can improve efficiency via profit motive and market discipline', 'Evidence: some privatised firms (BT, BA) improved productivity after privatisation', 'However, natural monopolies (water, rail) may simply transfer monopoly from public to private sector', 'Private monopoly may exploit consumers if regulation is weak', 'Regulatory capture can undermine the benefits of privatisation', 'Evaluation: outcome depends heavily on degree of competition and quality of regulation; not always beneficial'], guidance: '25 marks: KAA 15, Evaluation 10. Requires specific examples and balanced evaluation.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['01', '02', '03', '04'], ['05', '06', '07', '08']],
+                instruction: 'Section A: answer ONE context — Context 1 (Questions 01–04) or Context 2 (Questions 05–08).' },
+              { choose: 1, options: [['09', '10'], ['11', '12'], ['13', '14']],
+                instruction: 'Section B: answer ONE essay — Essay 1 (09–10), Essay 2 (11–12) or Essay 3 (13–14).' },
+            ],
             questions: [
               // ── Section A: Context 1 — Electric cars and battery production ──
               {
@@ -23332,6 +23339,13 @@ window.SUBJECTS = [
               '13': { type: 'points', points: ['Identifies and defines key concept', 'Explains first factor with economic reasoning', 'Explains second factor with economic reasoning', 'Applies theory to relevant context', 'Develops chain of reasoning for each point'], guidance: '15 marks: Level 3 (11-15) requires well-developed analysis with good use of economic concepts.' },
               '14': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['01', '02', '03', '04'], ['05', '06', '07', '08']],
+                instruction: 'Section A: answer ONE context — Context 1 (Questions 01–04) or Context 2 (Questions 05–08).' },
+              { choose: 1, options: [['09', '10'], ['11', '12'], ['13', '14']],
+                instruction: 'Section B: answer ONE essay — Essay 1 (09–10), Essay 2 (11–12) or Essay 3 (13–14).' },
+            ],
             questions: [
               // ── Section A: Context 1 — Corporation tax in Ireland ──
               {
@@ -23496,6 +23510,13 @@ window.SUBJECTS = [
               '13': { type: 'points', points: ['Identifies and defines key concept', 'Explains first factor with economic reasoning', 'Explains second factor with economic reasoning', 'Applies theory to relevant context', 'Develops chain of reasoning for each point'], guidance: '15 marks: Level 3 (11-15) requires well-developed analysis with good use of economic concepts.' },
               '14': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['01', '02', '03', '04'], ['05', '06', '07', '08']],
+                instruction: 'Section A: answer ONE context — Context 1 (Questions 01–04) or Context 2 (Questions 05–08).' },
+              { choose: 1, options: [['09', '10'], ['11', '12'], ['13', '14']],
+                instruction: 'Section B: answer ONE essay — Essay 1 (09–10), Essay 2 (11–12) or Essay 3 (13–14).' },
+            ],
             questions: [
               // ── Section A: Context 1 — Flexible labour markets and trade unions ──
               {
@@ -23571,6 +23592,13 @@ window.SUBJECTS = [
               '13': { type: 'points', points: ['Identifies and defines key concept', 'Explains first factor with economic reasoning', 'Explains second factor with economic reasoning', 'Applies theory to relevant context', 'Develops chain of reasoning for each point'], guidance: '15 marks: Level 3 (11-15) requires well-developed analysis with good use of economic concepts.' },
               '14': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['01', '02', '03', '04'], ['05', '06', '07', '08']],
+                instruction: 'Section A: answer ONE context — Context 1 (Questions 01–04) or Context 2 (Questions 05–08).' },
+              { choose: 1, options: [['09', '10'], ['11', '12'], ['13', '14']],
+                instruction: 'Section B: answer ONE essay — Essay 1 (09–10), Essay 2 (11–12) or Essay 3 (13–14).' },
+            ],
             questions: [
               // ── Section A: Context 1 — Investment in Africa ──
               {
@@ -23745,6 +23773,11 @@ window.SUBJECTS = [
               '7': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
               '8': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['7', '8'],
+                instruction: 'Section C: answer Question 7 OR Question 8.' },
+            ],
             questions: [
               // SECTION A — 25 marks total (5 questions × 5 marks each)
               {
@@ -23848,6 +23881,11 @@ window.SUBJECTS = [
               '7': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
               '8': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['7', '8'],
+                instruction: 'Section C: answer Question 7 OR Question 8.' },
+            ],
             questions: [
               // SECTION A — 25 marks
               {
@@ -23942,6 +23980,11 @@ window.SUBJECTS = [
               '2(d)': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
               '2(e)': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['1(d)', '1(e)'] },
+              { choose: 1, options: ['2(d)', '2(e)'] },
+            ],
             questions: [
               // SECTION A — 50 marks (Question 1: parts a–c compulsory; then ONE of d or e)
               {
@@ -24000,6 +24043,11 @@ window.SUBJECTS = [
               '7': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
               '8': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['7', '8'],
+                instruction: 'Section C: answer Question 7 OR Question 8.' },
+            ],
             questions: [
               // SECTION A — 25 marks
               {
@@ -24101,6 +24149,11 @@ window.SUBJECTS = [
               '7': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
               '8': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['7', '8'],
+                instruction: 'Section C: answer Question 7 OR Question 8.' },
+            ],
             questions: [
               // SECTION A — 25 marks
               {
@@ -24193,6 +24246,11 @@ window.SUBJECTS = [
               '2(d)': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
               '2(e)': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['1(d)', '1(e)'] },
+              { choose: 1, options: ['2(d)', '2(e)'] },
+            ],
             questions: [
               // SECTION A — 50 marks (Question 1: parts a–c compulsory; then ONE of d or e)
               {
@@ -24562,6 +24620,13 @@ window.SUBJECTS = [
               '4*': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
               '5*': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['2*', '3*'],
+                instruction: 'Section B: answer Question 2 OR Question 3.' },
+              { choose: 1, options: ['4*', '5*'],
+                instruction: 'Section C: answer Question 4 OR Question 5.' },
+            ],
             questions: [
               // ── Section A: Wage differentials in the USA ──
               {
@@ -24629,6 +24694,13 @@ window.SUBJECTS = [
               '4*': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
               '5*': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['2*', '3*'],
+                instruction: 'Section B: answer Question 2 OR Question 3.' },
+              { choose: 1, options: ['4*', '5*'],
+                instruction: 'Section C: answer Question 4 OR Question 5.' },
+            ],
             questions: [
               // ── Section A: International Competitiveness ──
               {
@@ -24801,6 +24873,13 @@ window.SUBJECTS = [
               '4*': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
               '5*': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['2*', '3*'],
+                instruction: 'Section B: answer Question 2 OR Question 3.' },
+              { choose: 1, options: ['4*', '5*'],
+                instruction: 'Section C: answer Question 4 OR Question 5.' },
+            ],
             questions: [
               // ── Section A: Changing consumer trends in the UK ──
               {
@@ -24868,6 +24947,13 @@ window.SUBJECTS = [
               '4*': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
               '5*': { type: 'points', points: ['Develops arguments in favour of the view', 'Uses relevant economic theory and diagrams', 'Provides counter-arguments / qualifications', 'Considers effectiveness and limitations of policies', 'Reaches a supported, balanced judgement'], guidance: '25 marks: Level 4 (21-25) requires well-developed evaluation with a supported judgement. KAA 15 marks, Evaluation 10 marks.' },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['2*', '3*'],
+                instruction: 'Section B: answer Question 2 OR Question 3.' },
+              { choose: 1, options: ['4*', '5*'],
+                instruction: 'Section C: answer Question 4 OR Question 5.' },
+            ],
             questions: [
               // ── Section A: Does rising national debt matter? ──
               {
@@ -25297,6 +25383,13 @@ window.SUBJECTS = [
                 'Conclusion': 'Whether savanna or rainforest faces more extreme pressures depends on definition of "extreme" — absolute area vs rate vs biodiversity loss vs carbon implications'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['02.1', '02.2', '02.3', '02.4'], ['03.1', '03.2', '03.3', '03.4'], ['04.1', '04.2', '04.3', '04.4']],
+                instruction: 'Section B: answer ONE of Question 2, 3 or 4.' },
+              { choose: 1, options: [['05.1', '05.2', '05.3', '05.4', '05.5'], ['06.1', '06.2', '06.3', '06.4', '06.5']],
+                instruction: 'Section C: answer Question 5 OR Question 6.' },
+            ],
             questions: [
               {
                 number: 1,
@@ -25597,6 +25690,11 @@ window.SUBJECTS = [
                 'Conclusion': 'Statement is an overgeneralisation — small-scale demand management approaches can increase supply sustainably; however, large-scale supply solutions inevitably involve spatial/environmental trade-offs'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['03.1', '03.2', '03.3', '03.4', '03.5'], ['04.1', '04.2', '04.3', '04.4', '04.5'], ['05.1', '05.2', '05.3', '05.4', '05.5']],
+                instruction: 'Section C: answer ONE of Question 3, 4 or 5.' },
+            ],
             questions: [
               {
                 number: 1,
@@ -25910,6 +26008,13 @@ window.SUBJECTS = [
                 'Conclusion': 'Viability depends on definition — many managed ecosystems have been stabilised but are dependent on ongoing intervention; truly self-sustaining future remains uncertain'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['02.1', '02.2', '02.3', '02.4'], ['03.1', '03.2', '03.3', '03.4'], ['04.1', '04.2', '04.3', '04.4']],
+                instruction: 'Section B: answer ONE of Question 2, 3 or 4.' },
+              { choose: 1, options: [['05.1', '05.2', '05.3', '05.4', '05.5'], ['06.1', '06.2', '06.3', '06.4', '06.5']],
+                instruction: 'Section C: answer Question 5 OR Question 6.' },
+            ],
             questions: [
               {
                 number: 1,
@@ -26206,6 +26311,11 @@ window.SUBJECTS = [
                 'Conclusion': 'Historically true but overstated — TNCs are responding to regulatory pressure and reputational risk with genuine (if insufficient) environmental commitments; profit and environmental responsibility increasingly aligned in energy transition'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['03.1', '03.2', '03.3', '03.4', '03.5'], ['04.1', '04.2', '04.3', '04.4', '04.5'], ['05.1', '05.2', '05.3', '05.4', '05.5']],
+                instruction: 'Section C: answer ONE of Question 3, 4 or 5.' },
+            ],
             questions: [
               {
                 number: 1,
@@ -26409,6 +26519,11 @@ window.SUBJECTS = [
                 'Conclusion': 'Most evidence supports greater impact on shorter-term biological processes overall, but fossil fuel combustion represents direct intervention in geological cycle at unprecedented rate'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['2(a)', '2(b)', '2(c)', '2(d)'], ['3(a)', '3(b)', '3(c)', '3(d)']],
+                instruction: 'Section B: answer Question 2 (Glaciated Landscapes) OR Question 3 (Coastal Landscapes).' },
+            ],
             questions: [
               { number: 1, scenario: 'Fig 1: Spearman\'s rank data table — volcanic eruption frequency vs deaths for 8 volcanoes', parts: [
                 { code: '1(a)(i)', prompt: 'Calculate the value of d² for the Kilauea volcano data.', marks: 1 },
@@ -26618,6 +26733,13 @@ window.SUBJECTS = [
                 'Conclusion': '"Inevitable" is too strong — states retain meaningful sovereignty but face constraints; the degree of loss varies by country power and is partly self-imposed through treaty commitments'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['3(a)(i)', '3(a)(ii)', '3(b)', '3(c)'], ['4(a)(i)', '4(a)(ii)', '4(b)', '4(c)']],
+                instruction: 'Section B: answer Question 3 (Regenerating Places) OR Question 4 (Diverse Places).' },
+              { choose: 1, options: [['5(a)(i)', '5(a)(ii)', '5(a)(iii)', '5(b)', '5(c)'], ['6(a)(i)', '6(a)(ii)', '6(a)(iii)', '6(b)', '6(c)']],
+                instruction: 'Section C: answer Question 5 (Health, Human Rights and Intervention) OR Question 6 (Migration, Identity and Sovereignty).' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A Globalisation / Superpowers — Q1 Globalisation', parts: [
                 { code: '1(a)', prompt: 'Explain one way in which the spread of a \'westernised\' culture can affect people in developing countries.', marks: 4 },
@@ -26899,6 +27021,11 @@ window.SUBJECTS = [
                 'Conclusion': 'Land use change is a significant contributory cause, particularly in urban areas and intensively farmed catchments — but not necessarily THE main cause in all cases; climate change increasingly important'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['2(a)', '2(b)', '2(c)', '2(d)'], ['3(a)', '3(b)', '3(c)', '3(d)']],
+                instruction: 'Section B: answer Question 2 (Glaciated Landscapes) OR Question 3 (Coastal Landscapes).' },
+            ],
             questions: [
               { number: 1, scenario: 'Fig 1: data table of earthquake events with over five deaths in Sumatra, Indonesia (magnitude and deaths, 2000–2016)', parts: [
                 { code: '1(a)(i)', prompt: 'Calculate the mean magnitude of these earthquakes. Give your answer to one decimal place.', marks: 1 },
@@ -27109,6 +27236,13 @@ window.SUBJECTS = [
                 'Conclusion': 'Global organisations have been more effective in managing economic issues — stronger enforcement mechanisms (WTO dispute resolution), larger resources (IMF), and greater political will; environmental issues suffer from collective action problems and enforcement gaps'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['3(a)(i)', '3(a)(ii)', '3(b)', '3(c)'], ['4(a)(i)', '4(a)(ii)', '4(b)', '4(c)']],
+                instruction: 'Section B: answer Question 3 (Regenerating Places) OR Question 4 (Diverse Places).' },
+              { choose: 1, options: [['5(a)', '5(b)', '5(c)', '5(d)'], ['6(a)', '6(b)', '6(c)', '6(d)']],
+                instruction: 'Section C: answer Question 5 (Health, Human Rights and Intervention) OR Question 6 (Migration, Identity and Sovereignty).' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A Globalisation / Superpowers — Q1 Globalisation', parts: [
                 { code: '1(a)', prompt: 'Explain one way governments can attract foreign direct investment (FDI).', marks: 4 },
@@ -27272,6 +27406,15 @@ window.SUBJECTS = [
               '11': { type: 'levels', levels: [{ descriptor: 'Level 3', range: [11, 15], criteria: 'Detailed knowledge of quaternary industry clusters with named examples. Thorough assessment of impacts on both people and places. Well-balanced evaluation of positive and negative impacts. Specific evidence and data used effectively. Sophisticated geographical terminology.' }, { descriptor: 'Level 2', range: [6, 10], criteria: 'Some knowledge of quaternary industry clusters. Some assessment of impacts on people and/or places. Some specific evidence. Appropriate terminology.' }, { descriptor: 'Level 1', range: [1, 5], criteria: 'Basic knowledge of quaternary industries or clusters. Limited assessment of impacts. Vague or general evidence. Basic terminology.' }], indicative: { 'Positive impacts on people': 'High-skilled, high-wage employment; investment in local infrastructure; improved public services from tax revenues', 'Negative impacts on people': 'Housing cost inflation displacing lower-income residents; increased inequality; pressure on transport infrastructure', 'Positive impacts on places': 'Economic regeneration; improved built environment; knowledge spillovers to local businesses', 'Negative impacts on places': 'Gentrification; loss of community character; environmental pressures from development', 'Named clusters': 'Silicon Valley, Cambridge Science Park, London Tech City/Silicon Roundabout — credit specific data' } },
               '12': { type: 'levels', levels: [{ descriptor: 'Level 3', range: [11, 15], criteria: 'Detailed knowledge of recreation as a rebranding strategy in rural places. Thorough assessment of importance with comparison to other strategies. Well-developed argument with specific named examples and evidence. Balanced evaluation. Sophisticated terminology.' }, { descriptor: 'Level 2', range: [6, 10], criteria: 'Some knowledge of recreation-led rebranding in rural areas. Some assessment of importance. Some specific evidence. Appropriate terminology.' }, { descriptor: 'Level 1', range: [1, 5], criteria: 'Basic knowledge of recreation or rebranding in rural areas. Limited assessment. Vague evidence. Basic terminology.' }], indicative: { 'Recreation strategies': 'Walking/cycling tourism, adventure sports, eco-tourism, heritage attractions, agri-tourism', 'Importance': 'Can reverse economic decline, create employment, improve rural image and perception', 'Limitations': 'Seasonal employment, leakage of profits, environmental damage, community displacement', 'Other strategies': 'Agri-food branding, film/TV tourism, arts festivals — assess recreation relative to these alternatives', 'Named examples': 'Credit specific rural areas (e.g. Peak District, Brecon Beacons, Eden Project area) with supporting data' } },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['1(a)', '1(b)', '2(a)(i)', '2(a)(ii)'], ['5(a)', '5(b)', '6(a)(i)', '6(a)(ii)']],
+                instruction: 'Section A: answer on ONE landscape — Coastal (Questions 1–4) or Glaciated (Questions 5–8).' },
+              { choose: 1, options: ['3', '4', '7', '8'],
+                instruction: 'Section A: answer ONE essay from your chosen landscape — Question 3 or 4 (Coastal), or Question 7 or 8 (Glaciated).' },
+              { choose: 1, options: ['11', '12'],
+                instruction: 'Section B: answer Question 11 OR Question 12.' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A — Coastal Landscapes. Figure 1: Changes to the coastal environment at Cape Cod, Massachusetts, USA, 1984–2019 (two satellite images showing changes to North Beach, Nantucket Sound, and Atlantic Ocean boundaries).', parts: [
                 { code: '1(a)', prompt: 'Use Figure 1 to describe changes in the coastal environment shown.', marks: 5 },
@@ -27341,6 +27484,15 @@ window.SUBJECTS = [
               '9': { type: 'levels', levels: [{ descriptor: 'Level 4', range: [24, 30], criteria: 'Comprehensive evaluation of economic risks of globalisation to different places and societies. Detailed knowledge of multiple risks (deindustrialisation, dependency, volatility, inequality) applied to a range of places/societies at different scales. Thorough evaluation of relative severity and who bears greatest risk. Specific evidence from named places. Sophisticated terminology and well-structured argument.' }, { descriptor: 'Level 3', range: [16, 23], criteria: 'Clear evaluation of economic risks across different places/societies. Good knowledge of multiple risks with named examples. Some comparison between places. Balanced argument. Appropriate terminology.' }, { descriptor: 'Level 2', range: [8, 15], criteria: 'Some relevant evaluation of economic risks. Limited range of risks or places. Some specific examples. Appropriate terminology.' }, { descriptor: 'Level 1', range: [1, 7], criteria: 'Basic relevant points about economic risks of globalisation. Little or no evaluation. Vague evidence. Basic terminology.' }], indicative: { 'Deindustrialisation': 'Manufacturing job losses in UK/USA as production relocates to lower-cost economies (e.g. Detroit, South Wales)', 'Dependency risks': 'LDCs dependent on single commodity exports vulnerable to price volatility; export processing zones create low-wage dependency', 'Financial contagion': '2008 global financial crisis spread rapidly through interconnected economies; sovereign debt crises', 'Labour exploitation': 'Race to bottom on wages and conditions in global supply chains; sweatshop conditions in garment industry', 'Tax avoidance': 'TNCs use transfer pricing to minimise tax in host countries, reducing government revenue', 'Evaluation': 'Risks unequally distributed — workers in vulnerable sectors and LDCs bear greatest risk; some places have benefited economically; risks can be managed through regulation' } },
               '10': { type: 'levels', levels: [{ descriptor: 'Level 4', range: [24, 30], criteria: 'Comprehensive evaluation of ways of reducing vulnerability to negative impacts of globalisation. Detailed knowledge of multiple strategies (regulation, diversification, social protection, trade agreements) evaluated for effectiveness. Thorough consideration of different scales and places. Specific evidence from named examples. Sophisticated terminology.' }, { descriptor: 'Level 3', range: [16, 23], criteria: 'Clear evaluation of strategies to reduce vulnerability. Good knowledge of multiple strategies with named examples. Some consideration of effectiveness. Balanced argument. Appropriate terminology.' }, { descriptor: 'Level 2', range: [8, 15], criteria: 'Some relevant evaluation of strategies. Limited range of strategies. Some specific examples. Appropriate terminology.' }, { descriptor: 'Level 1', range: [1, 7], criteria: 'Basic relevant points about reducing vulnerability. Little or no evaluation. Vague evidence. Basic terminology.' }], indicative: { 'Regulation': 'National minimum wage legislation; labour standards in trade agreements; WTO rules on dumping and subsidies', 'Diversification': 'Countries reducing dependency on single exports; economic zones attracting variety of industries', 'Social protection': 'Welfare states cushion individuals from economic shocks; retraining programmes for displaced workers', 'International agreements': 'Fair trade certification; ILO labour standards; bilateral investment treaties', 'Protectionism': 'Tariffs and quotas to protect domestic industries; arguments for and against', 'Evaluation': 'Effectiveness varies by scale and context; developing countries have less capacity to implement protections; global cooperation needed but sovereignty concerns limit action' } },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['3', '4'],
+                instruction: 'Section A: answer Question 3 OR Question 4.' },
+              { choose: 1, options: ['7', '8'],
+                instruction: 'Section B: answer Question 7 OR Question 8.' },
+              { choose: 1, options: ['9', '10'],
+                instruction: 'Section C: answer Question 9 OR Question 10.' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A — Global Systems: Water and Carbon Cycles. Figure 1: Annual carbon flows and stores in a temperate grassland ecosystem (grams of carbon per square metre), including respiration, consumption, litter fall, soil biota and water losses.', parts: [
                 { code: '1(a)(i)', prompt: 'Use Figure 1 to calculate the percentage of carbon consumed by grassland animals which is then transferred to the soil. Show your working.', marks: 2 },
@@ -27570,6 +27722,13 @@ window.SUBJECTS = [
                 'Conclusion': 'Strong agreement with statement — adaptation and mitigation are complementary, not alternative, strategies; both roles are essential'
               }},
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['1', '2'],
+                instruction: 'Section A: answer Question 1 OR Question 2.' },
+              { choose: 2, options: ['3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
+                instruction: 'Section B: choose TWO of Themes 2–5 and answer ONE question on each (two of Questions 3–14).' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A — Theme 1: Tectonic Hazards (answer Q1 OR Q2)', parts: [
                 { code: '1', prompt: '\'The characteristics of the physical hazard profile are the key factors influencing the severity of impact of volcanic hazards.\' Discuss.', marks: 38, extended: true },
@@ -27642,6 +27801,15 @@ window.SUBJECTS = [
               '11': { type: 'levels', levels: [{ descriptor: 'Level 3', range: [11, 15], criteria: 'Detailed knowledge of place meanings and representations. Thorough examination of how these influence change in named places. Well-developed argument with specific examples of how contested or promoted place meanings drive change. Sophisticated terminology.' }, { descriptor: 'Level 2', range: [6, 10], criteria: 'Some knowledge of place meanings and representations. Some examination of influence on change. Some specific evidence. Appropriate terminology.' }, { descriptor: 'Level 1', range: [1, 5], criteria: 'Basic knowledge of place or place change. Limited examination. Vague evidence. Basic terminology.' }], indicative: { 'Place meanings': 'Perceived image of a place influences investment decisions, migration patterns, and planning policy', 'Media representations': 'Film, TV, literature shape outsider perceptions and can drive tourism or deter investment', 'Community identity': 'Strong local identity may resist or shape the nature of change (e.g. preserving heritage)', 'Contested meanings': 'Different groups may have conflicting meanings for the same place, leading to conflict over development', 'Named examples': 'Credit specific places where representations have driven change (e.g. Bradford City of Culture bid, Hebden Bridge LGBTQ+ identity, post-industrial city rebranding)' } },
               '12': { type: 'levels', levels: [{ descriptor: 'Level 3', range: [11, 15], criteria: 'Detailed knowledge of industrial decline and its consequences in urban places. Thorough assessment of range of consequences (economic, social, environmental, cultural). Well-balanced evaluation with specific named examples and data. Sophisticated terminology.' }, { descriptor: 'Level 2', range: [6, 10], criteria: 'Some knowledge of industrial decline in urban areas. Some assessment of consequences. Some specific evidence. Appropriate terminology.' }, { descriptor: 'Level 1', range: [1, 5], criteria: 'Basic knowledge of industrial decline or urban change. Limited assessment. Vague evidence. Basic terminology.' }], indicative: { 'Economic consequences': 'Unemployment, reduced tax base, business closure, poverty concentration in former industrial areas', 'Social consequences': 'Population loss, social deprivation, increased crime, health inequalities, reduced community cohesion', 'Environmental consequences': 'Derelict land (brownfield sites), contaminated land, poor housing stock, air/water quality legacy issues', 'Cultural consequences': 'Loss of community identity tied to industry, fragmentation of working-class communities', 'Regeneration response': 'Assessment should consider whether regeneration has offset consequences — property-led, culture-led, digital economy approaches', 'Named examples': 'Credit specific cities (e.g. Detroit, Sheffield, Middlesbrough, Ruhr valley) with supporting data' } },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['1(a)', '1(b)', '2(a)(i)', '2(a)(ii)', '2(b)'], ['5(a)', '5(b)', '6(a)(i)', '6(a)(ii)', '6(b)']],
+                instruction: 'Section A: answer on ONE landscape — Coastal (Questions 1–4) or Glaciated (Questions 5–8).' },
+              { choose: 1, options: ['3', '4', '7', '8'],
+                instruction: 'Section A: answer ONE essay from your chosen landscape — Question 3 or 4 (Coastal), or Question 7 or 8 (Glaciated).' },
+              { choose: 1, options: ['11', '12'],
+                instruction: 'Section B: answer Question 11 OR Question 12.' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A — Coastal Landscapes. Figure 1: Selected impacts of coastal erosion in two Nigerian states — Lagos and Cross River (table showing erosion rates in hectares/year, coastal population in millions, and economic losses in millions US$).', parts: [
                 { code: '1(a)', prompt: 'Use Figure 1 to analyse variations in the impacts of coastal erosion.', marks: 5 },
@@ -27713,6 +27881,15 @@ window.SUBJECTS = [
               '9': { type: 'levels', levels: [{ descriptor: 'Level 4', range: [24, 30], criteria: 'Comprehensive balanced discussion of whether climate change will become the main driver of all international migration. Detailed knowledge of multiple migration drivers (economic, political, environmental, social) evaluated against climate change. Thorough evaluation of evidence for climate migration already occurring and projections. Specific named examples and data. Well-structured argument with clear substantiated conclusion. Sophisticated terminology.' }, { descriptor: 'Level 3', range: [16, 23], criteria: 'Clear discussion with evaluation of climate change as a migration driver relative to others. Good knowledge and range of examples. Balanced argument with named places. Appropriate terminology.' }, { descriptor: 'Level 2', range: [8, 15], criteria: 'Some relevant discussion of climate change and migration. Limited evaluation of other drivers. Some specific examples. Appropriate terminology.' }, { descriptor: 'Level 1', range: [1, 7], criteria: 'Basic relevant points about climate change and/or migration. Little or no evaluation. Basic terminology.' }], indicative: { 'Climate as driver': 'Sea level rise threatening low-lying island states (Kiribati, Tuvalu, Bangladesh deltas); desertification expanding in Sahel; increased storm frequency displacing coastal populations; glacial retreat threatening Himalayan water security', 'Current evidence': 'Climate already contributing to migration in Sahel, Bangladesh, Pacific islands; slow-onset processes (drought, salinisation) creating environmental refugees', 'Other drivers': 'Economic inequality and labour demand remain primary drivers globally; political conflict (Syria, Afghanistan) largest cause of displacement; family reunification; education and opportunity', 'Interaction effects': 'Climate change amplifies existing vulnerabilities — poor, politically marginalised populations most exposed; climate rarely sole cause — interacts with governance failures and poverty', 'Evaluation': '"Will become main driver of all migration" too strong; climate increasingly important but economic and political factors will persist; regional variation — some areas more climate-driven than others; IDP vs international migration distinction important' } },
               '10': { type: 'levels', levels: [{ descriptor: 'Level 4', range: [24, 30], criteria: 'Comprehensive balanced discussion of whether climate change can be stopped from causing permanent harm. Detailed knowledge of mitigation and adaptation strategies evaluated for effectiveness. Thorough consideration of what "permanent harm" means and tipping points. Specific evidence from named agreements, technologies, and case studies. Well-structured argument. Sophisticated terminology.' }, { descriptor: 'Level 3', range: [16, 23], criteria: 'Clear discussion with evaluation of strategies to prevent permanent harm. Good knowledge of mitigation and adaptation with named examples. Balanced argument. Appropriate terminology.' }, { descriptor: 'Level 2', range: [8, 15], criteria: 'Some relevant discussion of preventing climate harm. Limited evaluation of strategies. Some specific examples. Appropriate terminology.' }, { descriptor: 'Level 1', range: [1, 7], criteria: 'Basic relevant points about climate change and harm prevention. Little or no evaluation. Basic terminology.' }], indicative: { 'Mitigation strategies': 'Paris Agreement targets (1.5°C/2°C); renewable energy transition (solar, wind costs falling); carbon capture and storage; nature-based solutions (afforestation, blue carbon); net-zero pledges', 'Adaptation strategies': 'Managed retreat from flood-prone coasts; drought-resistant agriculture; early warning systems; urban cooling infrastructure; sea walls and flood defences', 'Tipping points': 'Some harms may already be irreversible — permafrost thaw releasing methane; coral reef bleaching; Greenland ice sheet dynamics; some species extinctions already occurring', 'Evidence for optimism': 'Renewable energy deployment accelerating; emissions growth slowing in some regions; COP26/28 agreements; technological innovation in carbon removal', 'Evidence against': 'Current pledges insufficient to meet 1.5°C; loss and damage already occurring in vulnerable nations; vested interests slowing transition; carbon budget nearly exhausted', 'Evaluation': '"Still stop" implies reversibility — some harms already locked in (sea level rise for centuries); debate is about scale and distribution of harm rather than all or nothing; equity dimension — poorest nations suffer most from harms they did least to cause' } },
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['3', '4'],
+                instruction: 'Section A: answer Question 3 OR Question 4.' },
+              { choose: 1, options: ['7', '8'],
+                instruction: 'Section B: answer Question 7 OR Question 8.' },
+              { choose: 1, options: ['9', '10'],
+                instruction: 'Section C: answer Question 9 OR Question 10.' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A — Water and Carbon Cycles. Figure 1: Precipitation, evaporation and transpiration data for an area of northern Canada — monthly bar/line chart (annual PP = 392 mm, annual ET = 345 mm) showing water surplus and deficit periods.', parts: [
                 { code: '1(a)(i)', prompt: 'Use Figure 1 to state the water surplus in millimetres for October.', marks: 1 },
@@ -27942,6 +28119,13 @@ window.SUBJECTS = [
                 'Conclusion': 'Management is improving but climate change is raising the frequency and severity of high-pressure hazards faster than management capacity is developing'
               }},
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['1', '2'],
+                instruction: 'Section A: answer Question 1 OR Question 2.' },
+              { choose: 2, options: ['3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
+                instruction: 'Section B: choose TWO of Themes 2–5 and answer ONE question on each (two of Questions 3–14).' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A — Theme 1: Tectonic Hazards (answer Q1 OR Q2)', parts: [
                 { code: '1', prompt: '\'Most volcanic eruptions pose little risk to life, as it is possible to predict, monitor and warn people of their hazardous impacts.\' Discuss.', marks: 38, extended: true },
@@ -28171,6 +28355,11 @@ window.SUBJECTS = [
                 'Conclusion': 'Evidence suggests human activity predominantly disturbs natural water cycle processes; enhancement is possible but requires deliberate management intervention and is spatially limited'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['1(a)', '1(b)(i)', '1(b)(ii)', '1(b)(iii)', '1(c)', '1(d)'], ['2(a)', '2(b)(i)', '2(b)(ii)', '2(b)(iii)', '2(c)', '2(d)'], ['3(a)', '3(b)(i)', '3(b)(ii)', '3(b)(iii)', '3(c)', '3(d)']],
+                instruction: 'Section A: answer ONE option — Coastal (Question 1), Glaciated (Question 2) or Dryland (Question 3).' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A Option A — Coastal Landscapes. Table 1: mean monthly wind speed at a South African coastal location for 11 months (2019). Fig. 1: photograph of a coastal landscape in England showing landform A.', parts: [
                 { code: '1(a)', prompt: 'With reference to a case study of one coastal landscape that is being used by people, explain the reasons for the economic development taking place.', marks: 8 },
@@ -28321,6 +28510,13 @@ window.SUBJECTS = [
                 'Conclusion': 'National governments are key actors — both causes and resolvers of conflict; but international governance provides essential frameworks even if imperfect'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['2(a)(i)', '2(a)(ii)', '2(b)'], ['3(a)(i)', '3(a)(ii)', '3(b)']],
+                instruction: 'Section B: answer Question 2 OR Question 3.' },
+              { choose: 1, options: ['4', '5'],
+                instruction: 'Section B: answer Question 4 OR Question 5.' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A — Changing Spaces; Making Places. Fig. 1: TV set for Coronation Street (fictional inner city). Fig. 2: photographs of rural settlements in Niger (LIDC) and the Netherlands (AC).', parts: [
                 { code: '1(a)', prompt: 'Use one piece of evidence from Fig. 1 to explain how this informal representation of place represents an inner city area.', marks: 3 },
@@ -28862,6 +29058,11 @@ window.SUBJECTS = [
                 'Conclusion': 'Carbon is perhaps the single most important element for human life and civilisation — both as the biological basis of life and as the energy source for modern economies; its management is now the central environmental challenge'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: [['1(a)', '1(b)(i)', '1(b)(ii)', '1(b)(iii)', '1(b)(iv)', '1(c)'], ['2(a)', '2(b)(i)', '2(b)(ii)', '2(b)(iii)', '2(b)(iv)', '2(c)'], ['3(a)', '3(b)(i)', '3(b)(ii)', '3(b)(iii)', '3(b)(iv)', '3(c)']],
+                instruction: 'Section A: answer ONE option — Coastal (Question 1), Glaciated (Question 2) or Dryland (Question 3).' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A Option A — Coastal Landscapes. Fig. 1: scatter graph of spending on coastal management vs time in England. Fig. 2: correlation coefficient and table of critical values for a significance test.', parts: [
                 { code: '1(a)', prompt: 'Explain how coastal landscapes can be viewed as systems.', marks: 8 },
@@ -29013,6 +29214,13 @@ window.SUBJECTS = [
                 'Development created': 'Stability attracts FDI; reconstruction of infrastructure creates employment; humanitarian aid prevents development setbacks from conflict; rule of law enables property rights and investment'
               }}
             },
+            // Optional questions — see paperChoiceGroups() at the end of this file.
+            choices: [
+              { choose: 1, options: ['2', '3'],
+                instruction: 'Section B: answer Question 2 OR Question 3.' },
+              { choose: 1, options: [['4(a)', '4(b)', '4(c)'], ['5(a)', '5(b)', '5(c)']],
+                instruction: 'Section B: answer Question 4 OR Question 5.' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A — Changing Spaces; Making Places. Fig. 1: advertisement for the Lincolnshire Co-op Community Champions scheme. Fig. 2: OS 1:50,000 map extracts of a dockland area in east London for 1974 and 2016.', parts: [
                 { code: '1(a)', prompt: 'Use one piece of evidence from Fig. 1 to explain how local community groups can shape the place in which they live.', marks: 3 },
