@@ -409,7 +409,7 @@ AST:
     <li><strong>Common sub-expression elimination</strong> &mdash; compute <code>a*b</code> once if it appears twice.</li>
 </ul>
 
-<div class="exam-tip">H446 markschemes expect you to name the stages <em>in order</em> and describe the output of each: lexical &rarr; tokens; syntax &rarr; AST; semantic &rarr; IR / type-checked tree; code-gen &rarr; machine code. A useful mnemonic: <strong>"Lexer Parses Semantics then Generates"</strong>.</div>
+<div class="exam-tip">H446 markschemes expect you to name the stages <em>in order</em> and describe the output of each: lexical &rarr; tokens; syntax &rarr; AST; semantic &rarr; IR / type-checked tree; code generation &rarr; machine code; optimisation &rarr; faster/smaller code with the same behaviour. The four the specification itself names are <strong>lexical analysis, syntax analysis, code generation and optimisation</strong> &mdash; do not drop optimisation. A useful mnemonic: <strong>"Lexer Parses Semantics, Generates, Optimises"</strong>.</div>
 
 <h3>Linkers and Loaders</h3>
 
