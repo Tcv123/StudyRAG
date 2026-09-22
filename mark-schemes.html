@@ -740,17 +740,26 @@ function buildPicker(userSubs) {
         if (yA !== yB) return yA - yB;
         return (a.p.paperCode || '').localeCompare(b.p.paperCode || '');
       });
-    sorted.forEach(({ p, pi }) => {
-      if (!hasMarkSchemeData(p)) return;
-      const o = document.createElement('option');
-      o.value = pi;
-      // For "Paper 1 — Pure Mathematics 1" use "Paper 1"; for code-first names
-      // like "Y420 — Core Pure" use the description after the dash.
+    // For "Paper 1 — Pure Mathematics 1" use "Paper 1"; for code-first names
+    // like "Y420 — Core Pure" use the description after the dash. When two
+    // papers would share a label (e.g. Edexcel's Paper 3 Statistics and
+    // Mechanics halves), both keep their subtitle: "Paper 3 — Statistics".
+    const shown = sorted.filter(({ p }) => hasMarkSchemeData(p)).map(({ p, pi }) => {
       const rawName = p.paperName || p.title || p.label || '';
       const parts = rawName.split(/\s+[—–-]\s+/);
       const shortName = parts.length > 1 && /^paper\b/i.test(parts[0]) ? parts[0].trim() : (parts[parts.length - 1] || rawName).trim();
-      const label = [p.year, shortName].filter(Boolean).join(' · ');
-      o.textContent = label || `Paper ${pi + 1}`;
+      const subtitle = parts.length > 1 ? parts.slice(1).join(' — ').replace(/\s*\([^)]*\)\s*$/, '').trim() : '';
+      return { p, pi, shortName, subtitle };
+    });
+    const labelOf = x => [x.p.year, x.shortName].filter(Boolean).join(' · ');
+    const counts = {};
+    shown.forEach(x => { counts[labelOf(x)] = (counts[labelOf(x)] || 0) + 1; });
+    shown.forEach(x => {
+      const o = document.createElement('option');
+      o.value = x.pi;
+      let label = labelOf(x);
+      if (counts[label] > 1 && x.subtitle && x.subtitle !== x.shortName) label += ' — ' + x.subtitle;
+      o.textContent = label || `Paper ${x.pi + 1}`;
       pickPaper.appendChild(o);
     });
     pickPaper.disabled = false;
