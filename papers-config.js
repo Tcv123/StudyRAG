@@ -35964,7 +35964,7 @@ window.SUBJECTS = [
                   "Application: percentage change = 17m / 204.5m x 100 = 8.31% (2dp)",
                   "Application: difference in growth = 62.34% - 8.31% = 54.03 or 54.03% (2dp)",
                 ],
-                guidance: "4 marks: Knowledge 1, Application 3. QS2, QS9. Answer 54.03 or 54.03% = 4 marks. If the candidate calculates the 2010-2011 change as 62.3376 and gives 54.02 or 54.02% = 4 marks. Answer not rounded to 2dp = 3 marks.",
+                guidance: "4 marks: Knowledge 1, Application 3. QS2, QS9. NB: if the answer given is 54.03 or 54.03% award 4 marks; if the candidate calculates the 2010-2011 percentage change as 62.3376 and the answer given is 54.02 or 54.02% award 4 marks; if the answer is not rounded to 2dp award 3 marks.",
               },
               "1(b)": {
                 type: "points",
