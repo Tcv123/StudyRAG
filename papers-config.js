@@ -7408,7 +7408,7 @@ window.SUBJECTS = [
             qpUrl: 'https://www.ocr.org.uk/Images/667253-question-paper-pure-mathematics.pdf',
             msUrl: 'https://www.ocr.org.uk/Images/667259-mark-scheme-pure-mathematics.pdf' },
           { id: 'math-ocr-h240-2021a-p2', year: 'October 2021', paperName: 'Paper 2 — Pure Mathematics and Statistics', paperCode: 'H240/02', totalMarks: 100, durationMins: 120, printOnly: true,
-            qpUrl: 'https://www.ocr.org.uk/Images/667449-question-paper-pure-mathematics-and-statistics.pdf',
+            qpUrl: 'https://www.ocr.org.uk/Images/667255-question-paper-pure-mathematics-and-statistics.pdf',
             msUrl: 'https://www.ocr.org.uk/Images/667260-mark-scheme-pure-mathematics-and-statistics.pdf' },
           { id: 'math-ocr-h240-2021a-p3', year: 'October 2021', paperName: 'Paper 3 — Pure Mathematics and Mechanics', paperCode: 'H240/03', totalMarks: 100, durationMins: 120, printOnly: true,
             qpUrl: 'https://www.ocr.org.uk/Images/667257-question-paper-pure-mathematics-and-mechanics.pdf',
