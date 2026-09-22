@@ -18,6 +18,11 @@
       "source": "/scripts/:path*",
       "destination": "/404",
       "permanent": false
+    },
+    {
+      "source": "/package.json",
+      "destination": "/404",
+      "permanent": false
     }
   ],
   "functions": {
