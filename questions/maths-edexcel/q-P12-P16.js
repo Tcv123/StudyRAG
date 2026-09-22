@@ -779,7 +779,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P15',
     q: 'A chord divides a circle of radius 6 cm, subtending angle \\(\\dfrac{2\\pi}{3}\\) at the centre. Find the area of the minor segment.',
-    options: ['\\(12\\pi - 9\\sqrt{3}\\) cm²', '\\(12\\pi\\) cm²', '\\(rac{12\\pi - 9\\sqrt{3}}{2}\\) cm²', '\\(6\\pi + 9\\sqrt{3}\\) cm²'],
+    options: ['\\(12\\pi - 9\\sqrt{3}\\) cm²', '\\(12\\pi\\) cm²', '\\(\\frac{12\\pi - 9\\sqrt{3}}{2}\\) cm²', '\\(6\\pi + 9\\sqrt{3}\\) cm²'],
     answer: 0
   },
   {

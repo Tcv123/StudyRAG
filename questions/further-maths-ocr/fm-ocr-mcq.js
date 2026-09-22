@@ -155,7 +155,7 @@ const FM_OCR_MCQ = {
   ],
   red: [
     { q: '\\(\\int_0^{\\infty}\\frac{1}{\\sqrt{x}}\\,dx\\) is improper for which reason(s)?', options: ['Upper limit only','Neither','Integrand only (at \\(x=0\\)), since the tail converges','Both: singularity at 0 AND infinite upper limit'], answer: 3 },
-    { q: 'The Wallis product relates to:', options: ['\\(nI_n\\)','\\(I_{2n}/I_{2n+1}	o 1\\) as \\(n	o\\infty\\), which yields the product formula for \\(\\pi/2\\)','\\(I_n/I_{n+1}\\) as \\(n\\to0\\)','\\(I_n+I_{n+2}\\)'], answer: 1 },
+    { q: 'The Wallis product relates to:', options: ['\\(nI_n\\)','\\(I_{2n}/I_{2n+1}\\to 1\\) as \\(n\\to\\infty\\), which yields the product formula for \\(\\pi/2\\)','\\(I_n/I_{n+1}\\) as \\(n\\to0\\)','\\(I_n+I_{n+2}\\)'], answer: 1 },
     { q: 'Volume of revolution of \\(y=f(x)\\) about \\(y=k\\):', options: ['\\(\\pi\\int[f(x)]^2\\,dx\\)','\\(\\pi\\int[f(x)-k]^2\\,dx\\)','\\(2\\pi k\\int f(x)\\,dx\\)','\\(\\pi k\\int[f(x)-k]^2\\,dx\\)'], answer: 1 },
     { q: 'The \\(\\int_0^{\\infty}e^{-x^2}\\,dx=\\)', options: ['\\(\\pi\\)','\\(2\\sqrt{\\pi}\\) (whole line)','\\(1\\)','\\(\\frac{\\sqrt{\\pi}}{2}\\)'], answer: 3 },
     { q: 'Variation of parameters for \\(y\'\'+ y=\\sec x\\) involves integrating:', options: ['\\(\\sec x\\) directly, then \\(\\sec^2 x\\) for the second solution','\\(\\int\\sec x\\cos x\\,dx\\) and \\(\\int\\sec x\\sin x\\,dx\\)','\\(\\sec^2 x\\)','\\(\\tan x\\)'], answer: 1 },
