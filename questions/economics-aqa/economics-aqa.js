@@ -31,7 +31,7 @@ const ECONOMICS_AQA_QUESTIONS = {
     ],
     amber: [
       { q: 'If a country moves from point A inside its PPF to point B on the PPF, this indicates:', options: ['Economic growth', 'More efficient use of existing resources', 'An increase in the quantity of resources', 'Technological progress'], answer: 1 },
-      { q: 'A student chooses to attend university instead of taking a job paying 25,000 pounds. The opportunity cost is:', options: ['The tuition fees', 'The 25,000 salary forgone', 'The tuition fees plus the salary forgone', 'Zero because education is an investment'], answer: 2 },
+      { q: "A student with a full scholarship (no tuition fees to pay) chooses to attend university instead of taking a job paying 25,000 pounds. The opportunity cost is:", options: ["The tuition fees","The 25,000 salary forgone","The higher future earnings the degree will bring","Zero because education is an investment"], answer: 1 },
       { q: 'Which would cause a PPF to shift outward?', options: ['Reducing unemployment', 'Discovering new natural resources', 'Redistributing income', 'Reducing government spending'], answer: 1 },
       { q: 'The statement "The government should increase the minimum wage" is:', options: ['A positive statement', 'A normative statement', 'A hypothesis', 'A fact'], answer: 1 },
       { q: 'If a PPF is concave to the origin, this suggests:', options: ['Constant opportunity costs', 'Increasing opportunity costs', 'Decreasing opportunity costs', 'Zero opportunity costs'], answer: 1 },
@@ -48,7 +48,7 @@ const ECONOMICS_AQA_QUESTIONS = {
       { q: 'If Country A can produce 10 cars or 20 bikes and Country B can produce 8 cars or 24 bikes, Country B has a comparative advantage in:', options: ['Cars', 'Bikes', 'Both goods', 'Neither good'], answer: 1 },
       { q: 'The law of diminishing returns explains why the PPF is:', options: ['Linear', 'Concave to the origin', 'Convex to the origin', 'Vertical'], answer: 1 },
       { q: 'Bounded rationality means that individuals:', options: ['Are completely irrational', 'Make optimal decisions within cognitive limitations', 'Never make mistakes', 'Always follow the crowd'], answer: 1 },
-      { q: 'Which factor would NOT shift a PPF outward?', options: ['Technological innovation', 'Discovery of oil reserves', 'Reduction in structural unemployment', 'A fall in cyclical unemployment'], answer: 3 },
+      { q: "Which factor would NOT shift a PPF outward?", options: ["Technological innovation","Discovery of oil reserves","Net immigration of working-age people","A fall in cyclical unemployment"], answer: 3 },
       { q: 'The free rider problem is most associated with:', options: ['Private goods', 'Merit goods', 'Public goods', 'Demerit goods'], answer: 2 }
     ],
     red: [

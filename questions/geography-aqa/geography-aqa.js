@@ -15,7 +15,7 @@ const GEOGRAPHY_AQA_QUESTIONS = {
       { q: 'Which store holds the largest proportion of freshwater on Earth?', options: ['Rivers','Groundwater','Ice sheets and glaciers','Atmosphere'], answer: 2 },
       { q: 'What is evapotranspiration?', options: ['Water seeping into soil','Combined loss of water from evaporation and plant transpiration','Water flowing over the surface','Condensation of water vapour'], answer: 1 },
       { q: 'What is the term for water soaking into the ground surface?', options: ['Throughflow','Percolation','Infiltration','Interception'], answer: 2 },
-      { q: 'Which part of the carbon cycle involves photosynthesis?', options: ['Terrestrial carbon cycle','Biological carbon cycle','Oceanic carbon cycle','Atmospheric carbon cycle'], answer: 1 },
+      { q: "Photosynthesis is part of which of the following?", options: ["The geological (slow) carbon cycle","The biological (fast) carbon cycle","Volcanic outgassing","Chemical weathering of rocks"], answer: 1 },
       { q: 'What is a drainage basin?', options: ['A river channel','The area of land drained by a river and its tributaries','A lake or reservoir','An underground water store'], answer: 1 },
       { q: 'What is the water table?', options: ['The surface level of a lake','The upper boundary of the saturated zone in the ground','The depth of the ocean floor','The height of a river above sea level'], answer: 1 },
       { q: 'What is the main greenhouse gas released by burning fossil fuels?', options: ['Methane','Nitrous oxide','Carbon dioxide','Water vapour'], answer: 2 },
@@ -134,7 +134,7 @@ const GEOGRAPHY_AQA_QUESTIONS = {
     name: 'Hazards',
     green: [
       { q: 'What is a natural hazard?', options: ['Any weather event','A natural event that threatens life, property, or the environment','A man-made disaster','An earthquake above magnitude 7'], answer: 1 },
-      { q: 'At which type of plate boundary do most earthquakes occur?', options: ['Only constructive boundaries','Only destructive boundaries','All three types: constructive, destructive, and conservative','Only hotspots'], answer: 2 },
+      { q: "At which types of plate boundary do earthquakes occur?", options: ["Only constructive boundaries","Only destructive boundaries","All three types: constructive, destructive, and conservative","Only hotspots"], answer: 2 },
       { q: 'What is the Richter scale used to measure?', options: ['Wind speed','The magnitude (energy released) of an earthquake','Volcanic explosivity','Tsunami wave height'], answer: 1 },
       { q: 'What causes a tsunami?', options: ['High winds','Displacement of ocean water, typically by an undersea earthquake or volcanic eruption','Heavy rainfall','Tidal forces'], answer: 1 },
       { q: 'What type of plate boundary is the San Andreas Fault?', options: ['Constructive','Destructive','Conservative (transform)','Collision'], answer: 2 },

@@ -527,7 +527,7 @@ const MATHS_OCR_ALEVEL_QUESTIONS = {
     { q: 'Vectors a and b are parallel iff:', options: ['a + b = 0','a = b','b = k·a for some scalar k','a·b = 0'], answer: 2 },
     { q: '2D vector in column form [3; 5] represents:', options: ['(3+5)','(5, 3)','(3, 5)','Coordinates'], answer: 2 },
     { q: '|a + b|² = ?', options: ['a·b','|a|² + |b|²','|a|² - |b|²','|a|² + 2a·b + |b|²'], answer: 3 },
-    { q: 'Projection of a onto b:', options: ['(a·b)·b','|a|·b','(a·b/|b|²)·b','a·(b/|b|) (scalar)'], answer: 2 },
+    { q: "Vector projection of a onto b:", options: ["(a·b)·b","|a|·b","(a·b/|b|²)·b","a·(b/|b|) (scalar)"], answer: 2 },
     { q: 'Vector equation of plane through point A with normal n:', options: ['r·n = 0','(r - a)·n = 0','r = a·n','r = a + n'], answer: 1 },
   ], amber: [
       { q: 'Find |3i + 4j|.', options: ['25','√7','7','5'], answer: 3 },

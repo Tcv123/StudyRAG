@@ -84,7 +84,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
       { q: 'Two perpendicular forces of 5 N and 12 N act on an object. What angle does the resultant make with the 12 N force?', options: ['22.6°','67.4°','45°','90°'], answer: 0 },
       { q: 'A student checks whether v = √(2gh) is homogeneous. What are the units of √(2gh)?', options: ['m s⁻¹','m s⁻²','m² s⁻²','m'], answer: 0 },
       { q: 'Express the unit of electrical resistance (ohm) in SI base units.', options: ['kg m² s⁻³ A⁻²','kg m s⁻² A⁻¹','kg m² s⁻² A⁻²','kg m² s⁻¹ A⁻²'], answer: 0 },
-      { q: 'What is the order of magnitude of the mass of the Earth (approximately 6 × 10²⁴ kg)?', options: ['10²³ kg','10²⁴ kg','10²⁵ kg','10⁶ kg'], answer: 2 },
+      { q: "To the nearest power of ten, what is the mass of the Earth (approximately 6 × 10²⁴ kg)?", options: ["10²³ kg","10²⁴ kg","10²⁵ kg","10⁶ kg"], answer: 2 },
       { q: 'Resolve a velocity of 20 m s⁻¹ at 45° to the horizontal into horizontal and vertical components.', options: ['14.1 m s⁻¹ each','10 m s⁻¹ each','20 m s⁻¹ each','17.3 m s⁻¹ and 10 m s⁻¹'], answer: 0 },
       { q: 'Express the volt in SI base units.', options: ['kg m² s⁻³ A⁻¹','kg m s⁻² A⁻¹','kg m² s⁻² A⁻¹','kg m² s⁻³ A⁻²'], answer: 0 },
       { q: 'A boat travels 3 km north then 4 km east. What is the magnitude of the displacement?', options: ['7 km','5 km','1 km','12 km'], answer: 1 },

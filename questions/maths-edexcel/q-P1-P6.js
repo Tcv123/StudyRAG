@@ -196,7 +196,7 @@ const EDEXCEL_MCQ_P1_P6 = {
       { q: "Two tangents are drawn from the point \\(P(5,0)\\) to the circle \\(x^2+y^2=9\\). The angle between the tangents is:", options: ["\\(2\\arctan\\dfrac{3}{4}\\)","\\(60°\\)","\\(2\\arccos\\dfrac{3}{5}\\)","\\(\\arctan\\dfrac{4}{3}\\)"], answer: 0 },
       { q: 'The locus of points equidistant from \\(A(0,0)\\) and \\(B(4,6)\\) is the line:', options: ['\\(2x + 3y = 13\\)','\\(3x + 2y = 13\\)','\\(2x - 3y = 13\\)','\\(x + y = 5\\)'], answer: 0 },
       { q: 'Prove that \\(A(1,1)\\), \\(B(5,3)\\) and \\(C(3,7)\\) form a right-angled triangle by checking dot products. The right angle is at:', options: ['C','B','A','Not right-angled'], answer: 1 },
-      { q: 'The radical axis of circles \\(x^2+y^2=16\\) and \\((x-5)^2+y^2=9\\) is the line on which tangents from external points are equal. Its equation is:', options: ['\\(10x = 32\\), i.e., \\(x = 3.2\\)','\\(x = 5\\)','\\(5x = 16\\)','\\(x = 2\\)'], answer: 0 },
+      { q: "The radical axis of circles \\(x^2+y^2=16\\) and \\((x-5)^2+y^2=9\\) is the line on which tangents from external points are equal. Its equation is:", options: ["\\(10x = 32\\), i.e., \\(x = 3.2\\)","\\(x = 5\\)","\\(10x = 16\\)","\\(x = 2\\)"], answer: 0 },
     ]
   },
 

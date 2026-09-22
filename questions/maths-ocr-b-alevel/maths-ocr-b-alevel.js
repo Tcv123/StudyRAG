@@ -817,7 +817,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
     amber: [
       { q: 'A researcher selects every 10th name from an alphabetical register. This is:', options: ['Systematic sampling','Simple random sampling','Stratified sampling','Cluster sampling'], answer: 0 }, // p24
-      { q: 'A school has 600 girls and 400 boys. A sample of 50 contains 30 girls and 20 boys. This is:', options: ['Stratified sampling','Quota sampling','Cluster sampling','Opportunity sampling'], answer: 0 }, // p24
+      { q: "A school has 600 girls and 400 boys. A random sample of 30 girls and a separate random sample of 20 boys are chosen from the school lists. This is:", options: ["Stratified sampling","Quota sampling","Cluster sampling","Opportunity sampling"], answer: 0 }, // p24
       { q: 'A journalist interviews the first 30 people leaving a station. This is:', options: ['Opportunity sampling','Simple random sampling','Systematic sampling','Stratified sampling'], answer: 0 }, // p24
       { q: 'An online poll is answered by readers who choose to respond. The main problem is:', options: ['The sample is self-selected and likely to be biased towards those with strong views','The sample is too random','The population is too small','There is no sampling frame needed'], answer: 0 }, // p25
       { q: 'A town is divided into 20 districts and 3 whole districts are surveyed. This is:', options: ['Cluster sampling','Stratified sampling','Systematic sampling','Quota sampling'], answer: 0 }, // p24

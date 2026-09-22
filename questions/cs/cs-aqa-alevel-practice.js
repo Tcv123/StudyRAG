@@ -8,7 +8,7 @@
 const CS_AQA_PRACTICE = {
 
   '4.1': [
-    { q: 'Which of the following would be classed as a parameter passed by reference?', options: ['An integer passed normally in most languages','A reference type such as an object/array in Java or C#','A constant','A local variable'], answer: 1, explanation: 'In Java and C#, object references are passed by value but the value is a reference — so modifying object state inside the method is visible to the caller. Primitive types are pass-by-value copies.' },
+    { q: "In Java or C#, which kind of argument allows a method to change data in a way the caller can then see?", options: ["An integer passed normally in most languages","A reference type such as an object/array in Java or C#","A constant","A local variable"], answer: 1, explanation: 'In Java and C#, object references are passed by value but the value is a reference — so modifying object state inside the method is visible to the caller. Primitive types are pass-by-value copies.' },
     { q: 'Given this pseudocode, what is the output? def f(n): if n <= 1: return n; return f(n-1) + f(n-2). f(5) =', options: ['3','5','8','13'], answer: 1, explanation: 'Fibonacci sequence: f(0)=0, f(1)=1, f(2)=1, f(3)=2, f(4)=3, f(5)=5.' },
     { q: 'What does the following Python expression evaluate to: [i*2 for i in range(4) if i % 2 == 0]?', options: ['[0, 2, 4, 6]','[0, 4]','[2, 6]','[]'], answer: 1, explanation: 'Only even i (0 and 2); doubled gives [0, 4].' },
   ],
