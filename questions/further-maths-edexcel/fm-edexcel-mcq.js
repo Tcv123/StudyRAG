@@ -492,8 +492,16 @@ const FM_EDEXCEL_MCQ = {
     ],
   },
 
+  /* SPEC NOTE — CP1.9 is a SUPERSET of the 9FM0 Core Pure requirement.
+     Core Pure (Papers 1-2) section 6 covers only: vector/Cartesian form of a line (6.1)
+     and of a plane (6.2), the scalar product and the angles it gives (6.3), checking
+     perpendicularity (6.4), line-plane intersection and perpendicular distances (6.5).
+     The vector (cross) product and the scalar triple product are Paper 3A: Further Pure
+     Mathematics 1, sections 5.1 and 5.2 — NOT Core Pure. Items here that use a x b are
+     therefore FP1 extension material and are labelled as such in the topic name and in
+     notes-further-maths-edexcel-alevel/CP1.9_vectors.html section 3. Do not add more. */
   'CP1.9': {
-    name: 'Vectors',
+    name: 'Vectors (Core Pure + FP1)',
     green: [
       { q: 'The dot product \\(\\mathbf{a}\\cdot\\mathbf{b}\\) equals:', options: ['\\(|\\mathbf{a}||\\mathbf{b}|\\cos\\theta\\)','\\(|\\mathbf{a}||\\mathbf{b}|\\sin\\theta\\)','\\(|\\mathbf{a}|+|\\mathbf{b}|\\)','\\(|\\mathbf{a}||\\mathbf{b}|\\)'], answer: 0 },
       { q: 'If \\(\\mathbf{a}\\cdot\\mathbf{b}=0\\) and both are non-zero, the vectors are:', options: ['Anti-parallel','Perpendicular','Parallel','Equal'], answer: 1 },
@@ -736,8 +744,15 @@ const FM_EDEXCEL_MCQ = {
     ],
   },
 
+  /* SPEC NOTE — CP2.4 is a SUPERSET of the 9FM0 Core Pure requirement.
+     Core Pure (Papers 1-2) section 5.1 covers volumes of revolution only (Cartesian or
+     parametric, about either axis). Arc length and the area of a surface of revolution
+     are Paper 4A: Further Pure Mathematics 2, section 2.2 — NOT Core Pure. Items here on
+     arc length or surface area are therefore FP2 extension material and are labelled as
+     such in the topic name and in notes-.../CP2.4_volumes_revolution_further.html
+     sections 3 and 4. Do not add more. */
   'CP2.4': {
-    name: 'Volumes of Revolution (Further)',
+    name: 'Volumes of Revolution (Core Pure + FP2)',
     green: [
       { q: 'For a parametric curve \\(x=f(t),\\,y=g(t)\\), the volume of revolution about the \\(x\\)-axis is:', options: ['\\(\\pi\\displaystyle\\int y^2\\dfrac{dx}{dt}\\,dt\\)','\\(\\pi\\displaystyle\\int y^2\\,dy\\)','\\(\\pi\\displaystyle\\int x^2\\dfrac{dy}{dt}\\,dt\\)','\\(2\\pi\\displaystyle\\int y\\dfrac{dx}{dt}\\,dt\\)'], answer: 0 },
       { q: 'The surface area of revolution about the \\(x\\)-axis for \\(y=f(x)\\) from \\(a\\) to \\(b\\) is:', options: ['\\(\\pi\\displaystyle\\int_a^b\\sqrt{1+y^2}\\,dx\\)','\\(2\\pi\\displaystyle\\int_a^b y\\sqrt{1+\\left(\\dfrac{dy}{dx}\\right)^2}\\,dx\\)','\\(\\pi\\displaystyle\\int_a^b y^2\\,dx\\)','\\(2\\pi\\displaystyle\\int_a^b y\\,dx\\)'], answer: 1 },

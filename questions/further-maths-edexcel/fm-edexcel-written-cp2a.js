@@ -136,8 +136,15 @@ const FM_EDEXCEL_WRITTEN_CP2A = {
     ],
   },
 
+  /* SPEC NOTE — CP2.4 is a SUPERSET of the 9FM0 Core Pure requirement.
+     Core Pure (Papers 1-2) section 5.1 covers volumes of revolution only (Cartesian or
+     parametric, about either axis). Arc length and the area of a surface of revolution
+     are Paper 4A: Further Pure Mathematics 2, section 2.2 — NOT Core Pure. Items here on
+     arc length or surface area are therefore FP2 extension material and are labelled as
+     such in the topic name and in notes-.../CP2.4_volumes_revolution_further.html
+     sections 3 and 4. Do not add more. */
   'CP2.4': {
-    name: 'Volumes of Revolution (Further)',
+    name: 'Volumes of Revolution (Core Pure + FP2)',
     green: [
       { q: 'State the formula for the volume of revolution of the parametric curve \\(x=f(t),y=g(t)\\) about the \\(x\\)-axis.', marks: 2, modelAnswer: '• \\(V=\\pi\\displaystyle\\int_{t_1}^{t_2}y^2\\dfrac{dx}{dt}\\,dt\\) (B1 B1)' },
       { q: 'State the formula for the surface area of revolution about the \\(x\\)-axis for \\(y=f(x)\\).', marks: 2, modelAnswer: '• \\(S=2\\pi\\displaystyle\\int_a^b y\\sqrt{1+\\left(\\dfrac{dy}{dx}\\right)^2}\\,dx\\) (B1 B1)' },

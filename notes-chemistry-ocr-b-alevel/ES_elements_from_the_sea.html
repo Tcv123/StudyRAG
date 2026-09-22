@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — ES — Elements from the Sea</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .worked-example { background: #fdf2f8; border-left: 4px solid #db2777; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #be185d; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>ES — Elements from the Sea</h1>
+
+<p style="color:#475569;font-size:0.97rem;margin-top:-18px;margin-bottom:26px;">OCR B (Salters) H433 storyline <strong>ES</strong>. Chemistry from sea water: halogen chemistry, redox and electrolysis, the introduction of equilibrium, and atom economy.</p>
+
+<!-- ============================================================ -->
+<h2>1. Oxidation States and Redox Reactions</h2>
+
+<h3>Oxidation States (Oxidation Numbers)</h3>
+
+<div class="definition">
+  <strong>Oxidation state:</strong> A number assigned to an atom in a compound that represents the number of electrons it has lost, gained, or shared unequally compared to the uncombined element. It is a bookkeeping device for tracking electron transfer.
+</div>
+
+<p>Rules for assigning oxidation states:</p>
+<ul>
+  <li>Uncombined elements have an oxidation state of 0.</li>
+  <li>In simple ions, the oxidation state equals the charge (e.g. Na<sup>+</sup> = +1, Cl<sup>&minus;</sup> = &minus;1).</li>
+  <li>Oxygen is &minus;2 (except in peroxides where it is &minus;1, and in OF<sub>2</sub> where it is +2).</li>
+  <li>Hydrogen is +1 (except in metal hydrides where it is &minus;1).</li>
+  <li>Fluorine is always &minus;1.</li>
+  <li>The sum of oxidation states in a neutral compound is 0; in a polyatomic ion it equals the ionic charge.</li>
+</ul>
+
+<h3>Redox Definitions</h3>
+
+<div class="definition">
+  <strong>Oxidation:</strong> Loss of electrons / increase in oxidation state.<br><br>
+  <strong>Reduction:</strong> Gain of electrons / decrease in oxidation state.<br><br>
+  <strong>Reducing agent:</strong> A substance that donates electrons (is itself oxidised).<br><br>
+  <strong>Oxidising agent:</strong> A substance that accepts electrons (is itself reduced).<br><br>
+  Remember: OIL RIG &mdash; Oxidation Is Loss, Reduction Is Gain (of electrons).
+</div>
+
+<h3>Half-Equations</h3>
+
+<p>A redox reaction can be split into two half-equations: one showing oxidation and one showing reduction. To write and balance half-equations:</p>
+<ol>
+  <li>Write the species being oxidised or reduced on each side.</li>
+  <li>Balance atoms other than O and H.</li>
+  <li>Balance oxygen by adding H<sub>2</sub>O.</li>
+  <li>Balance hydrogen by adding H<sup>+</sup>.</li>
+  <li>Balance charge by adding electrons (e<sup>&minus;</sup>).</li>
+</ol>
+
+<p>To combine half-equations, multiply each so the electrons cancel, then add the two equations together and simplify.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When balancing redox equations, always check that atoms and charges balance on both sides. A common mistake is forgetting to balance hydrogen atoms after adding water molecules. Also check that the electrons cancel completely when combining half-equations.
+</div>
+
+<!-- ============================================================ -->
+<h2>2. Dynamic Equilibrium</h2>
+
+<div class="definition">
+  <strong>Dynamic equilibrium:</strong> A state reached in a closed system when the rate of the forward reaction equals the rate of the reverse reaction, so the concentrations of reactants and products remain constant but are not necessarily equal. Both forward and reverse reactions continue to occur at the molecular level.
+</div>
+
+<p>Conditions for dynamic equilibrium:</p>
+<ul>
+  <li>The system must be closed (no substances can enter or leave).</li>
+  <li>The forward and reverse rates must be equal.</li>
+  <li>The concentrations of all species remain constant over time.</li>
+  <li>The reaction must be reversible.</li>
+</ul>
+
+<h3>Le Chatelier's Principle</h3>
+
+<div class="definition">
+  <strong>Le Chatelier's principle:</strong> If a system at equilibrium is subjected to a change in conditions (concentration, pressure, or temperature), the position of equilibrium will shift in the direction that tends to oppose the change, so as to partially restore the original conditions.
+</div>
+
+<table>
+  <tr><th>Change</th><th>Effect on equilibrium position</th><th>Effect on K</th></tr>
+  <tr><td>Increase concentration of a reactant</td><td>Shifts to the right (towards products)</td><td>No change</td></tr>
+  <tr><td>Decrease concentration of a product</td><td>Shifts to the right</td><td>No change</td></tr>
+  <tr><td>Increase pressure</td><td>Shifts towards the side with fewer moles of gas</td><td>No change</td></tr>
+  <tr><td>Increase temperature</td><td>Shifts in the endothermic direction</td><td>Changes (increases if forward reaction is endothermic)</td></tr>
+  <tr><td>Add a catalyst</td><td>No change (speeds up both forward and reverse equally)</td><td>No change</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> A catalyst does not change the position of equilibrium or the value of K. It only increases the rate at which equilibrium is reached. Temperature is the only factor that changes the value of the equilibrium constant.
+</div>
+
+<!-- SVG: Le Chatelier's Principle - Equilibrium Shifts -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Le Chatelier's Principle &mdash; Equilibrium Shifts</text>
+  <text x="250" y="40" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94a3b8">N&#8322;(g) + 3H&#8322;(g) &#8652; 2NH&#8323;(g) &nbsp;&nbsp; &Delta;H = &minus;92 kJ mol&#8315;&#185; (exothermic, fewer moles on right)</text>
+  <!-- Central equilibrium bar -->
+  <rect x="170" y="60" width="160" height="30" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="250" y="80" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">Equilibrium Position</text>
+  <!-- Left label -->
+  <text x="60" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">&#8592; Reactants</text>
+  <!-- Right label -->
+  <text x="440" y="80" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Products &#8594;</text>
+  <!-- Row 1: Increase concentration of N2 -->
+  <rect x="30" y="105" width="200" height="28" rx="5" fill="#fef9c3" stroke="#D97706" stroke-width="1.5"/>
+  <text x="130" y="123" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Increase [N&#8322;]</text>
+  <line x1="240" y1="119" x2="370" y2="119" stroke="#16A34A" stroke-width="2.5" marker-end="url(#arrGS3)"/>
+  <defs><marker id="arrGS3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#16A34A"/></marker></defs>
+  <text x="400" y="123" text-anchor="start" font-family="system-ui" font-size="9" fill="#16A34A">Shifts right</text>
+  <!-- Row 2: Increase pressure -->
+  <rect x="30" y="143" width="200" height="28" rx="5" fill="#fef9c3" stroke="#D97706" stroke-width="1.5"/>
+  <text x="130" y="161" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Increase pressure</text>
+  <line x1="240" y1="157" x2="370" y2="157" stroke="#16A34A" stroke-width="2.5" marker-end="url(#arrGS3)"/>
+  <text x="400" y="155" text-anchor="start" font-family="system-ui" font-size="9" fill="#16A34A">Shifts right</text>
+  <text x="400" y="166" text-anchor="start" font-family="system-ui" font-size="8" fill="#16A34A">(fewer gas moles)</text>
+  <!-- Row 3: Increase temperature -->
+  <rect x="30" y="181" width="200" height="28" rx="5" fill="#fef9c3" stroke="#D97706" stroke-width="1.5"/>
+  <text x="130" y="199" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Increase temperature</text>
+  <line x1="240" y1="195" x2="120" y2="195" stroke="#DC2626" stroke-width="2.5" marker-end="url(#arrRS3)"/>
+  <defs><marker id="arrRS3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#DC2626"/></marker></defs>
+  <text x="400" y="199" text-anchor="start" font-family="system-ui" font-size="9" fill="#DC2626">Shifts left (endo)</text>
+  <!-- Row 4: Add catalyst -->
+  <rect x="30" y="219" width="200" height="28" rx="5" fill="#fef9c3" stroke="#D97706" stroke-width="1.5"/>
+  <text x="130" y="237" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Add catalyst</text>
+  <text x="310" y="237" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#7c3aed">NO SHIFT</text>
+  <text x="420" y="237" text-anchor="start" font-family="system-ui" font-size="9" fill="#7c3aed">Faster only</text>
+  <!-- Summary box -->
+  <rect x="30" y="262" width="440" height="48" rx="6" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="250" y="280" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Concentration &amp; pressure changes: K unchanged, position shifts to oppose change</text>
+  <text x="250" y="295" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Temperature changes: K changes, shifts in the endothermic direction</text>
+</svg>
+</div>
+
+</div>
+</body>
+</html>

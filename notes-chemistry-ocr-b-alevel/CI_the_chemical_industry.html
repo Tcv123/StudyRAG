@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — CI — The Chemical Industry</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .worked-example { background: #fdf2f8; border-left: 4px solid #db2777; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #be185d; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>CI — The Chemical Industry</h1>
+
+<p style="color:#475569;font-size:0.97rem;margin-top:-18px;margin-bottom:26px;">OCR B (Salters) H433 storyline <strong>CI</strong>. Nitric acid, sulfuric acid and ethanoic acid: kinetics and rate equations, equilibrium constants and their calculation, and choosing the best conditions for an industrial process.</p>
+
+<!-- ============================================================ -->
+<h2>1. Rate Equations and the Arrhenius Equation</h2>
+
+<h3>Rate Equations</h3>
+
+<div class="definition">
+  <strong>Rate equation:</strong> An expression showing how the rate of a reaction depends on the concentrations of reactants. For a reaction involving reactants A and B: rate = k[A]<sup>m</sup>[B]<sup>n</sup>, where k is the rate constant, m and n are the orders of reaction with respect to A and B, and the overall order is m + n.
+</div>
+
+<p>The orders m and n can only be determined experimentally (they cannot be deduced from the balanced equation). Common orders:</p>
+
+<table>
+  <tr><th>Order</th><th>Effect of doubling [A]</th><th>Rate&ndash;concentration graph</th></tr>
+  <tr><td>0 (zero order)</td><td>Rate unchanged</td><td>Horizontal line (rate independent of [A])</td></tr>
+  <tr><td>1 (first order)</td><td>Rate doubles</td><td>Straight line through origin (rate &propto; [A])</td></tr>
+  <tr><td>2 (second order)</td><td>Rate quadruples</td><td>Upward curve (rate &propto; [A]<sup>2</sup>)</td></tr>
+</table>
+
+<p>The rate constant k changes with temperature (increases as temperature increases) and is affected by catalysts, but is independent of concentration.</p>
+
+<h3>Determining Orders from Experimental Data</h3>
+
+<p>The <strong>initial rates method</strong> uses data from experiments where the initial concentration of one reactant is varied while others are held constant. Compare pairs of experiments to see how changing the concentration of one reactant affects the initial rate.</p>
+
+<p>A <strong>concentration-time graph</strong> for a first-order reaction shows exponential decay. The half-life (the time for the concentration to halve) is constant for a first-order reaction. For zero order, the concentration decreases linearly with time. For second order, the concentration decreases as a reciprocal function.</p>
+
+<h3>Rate-Determining Step</h3>
+
+<div class="definition">
+  <strong>Rate-determining step:</strong> The slowest step in a multi-step reaction mechanism. It acts as a bottleneck and determines the overall rate. The rate equation reflects the species involved in the rate-determining step and any preceding steps.
+</div>
+
+<p>If the rate equation is rate = k[A][B], then both A and B (or species derived from them) are involved in or before the rate-determining step. Species that appear in the balanced equation but not in the rate equation are involved in steps after the rate-determining step.</p>
+
+<h3>The Arrhenius Equation</h3>
+
+<div class="equation">
+  k = Ae<sup>&minus;E<sub>a</sub>/RT</sup>
+</div>
+
+<p>where k is the rate constant, A is the pre-exponential factor (related to collision frequency and orientation), E<sub>a</sub> is the activation energy (J mol<sup>&minus;1</sup>), R = 8.314 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>, and T is temperature in K.</p>
+
+<p>Taking natural logarithms gives the linear form:</p>
+
+<div class="equation">
+  ln k = ln A &minus; E<sub>a</sub> / RT
+</div>
+
+<p>Plotting ln k against 1/T gives a straight line with gradient = &minus;E<sub>a</sub>/R and y-intercept = ln A. This allows E<sub>a</sub> to be determined experimentally.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The Arrhenius equation quantitatively explains why rate increases with temperature. A small increase in T produces a large increase in k because of the exponential relationship. When reading values from an Arrhenius plot, ensure you convert the gradient correctly: E<sub>a</sub> = &minus;gradient &times; R, and remember units must be consistent (J not kJ for R).
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Determining Order from Data:</strong><br><br>
+  Experiment 1: [A] = 0.10, rate = 3.0 &times; 10<sup>&minus;4</sup><br>
+  Experiment 2: [A] = 0.30, rate = 2.7 &times; 10<sup>&minus;3</sup><br><br>
+  [A] is multiplied by 3 (0.10 &rarr; 0.30). Rate changes by factor 2.7 &times; 10<sup>&minus;3</sup> / 3.0 &times; 10<sup>&minus;4</sup> = 9.0 = 3<sup>2</sup><br>
+  Therefore order with respect to A = <strong>2</strong> (second order).
+</div>
+
+<!-- ============================================================ -->
+<h2>2. Equilibrium Constants</h2>
+
+<h3>The Equilibrium Constant K<sub>c</sub></h3>
+
+<p>For a general reaction: aA + bB &rlhar; cC + dD</p>
+
+<div class="equation">
+  K<sub>c</sub> = [C]<sup>c</sup>[D]<sup>d</sup> / [A]<sup>a</sup>[B]<sup>b</sup>
+</div>
+
+<p>where square brackets denote equilibrium concentrations in mol dm<sup>&minus;3</sup>. K<sub>c</sub> is constant at a given temperature. A large K<sub>c</sub> means the equilibrium lies to the right (products favoured); a small K<sub>c</sub> means it lies to the left (reactants favoured).</p>
+
+<p>Only species in the aqueous or gaseous phase are included in the expression. Pure solids and pure liquids are excluded because their concentrations are effectively constant.</p>
+
+<h3>The Equilibrium Constant K<sub>p</sub></h3>
+
+<p>For gaseous equilibria, K<sub>p</sub> is expressed in terms of partial pressures:</p>
+
+<div class="equation">
+  K<sub>p</sub> = p<sub>C</sub><sup>c</sup> &middot; p<sub>D</sub><sup>d</sup> / (p<sub>A</sub><sup>a</sup> &middot; p<sub>B</sub><sup>b</sup>)
+</div>
+
+<div class="definition">
+  <strong>Partial pressure:</strong> The pressure that a gas would exert if it alone occupied the total volume of the mixture at the same temperature. The partial pressure of gas A is: p<sub>A</sub> = x<sub>A</sub> &times; P<sub>total</sub>, where x<sub>A</sub> is the mole fraction of A.<br><br>
+  <strong>Mole fraction:</strong> x<sub>A</sub> = moles of A / total moles of all gases.
+</div>
+
+<p>The total pressure equals the sum of all partial pressures (Dalton's law): P<sub>total</sub> = p<sub>A</sub> + p<sub>B</sub> + p<sub>C</sub> + ...</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When calculating K<sub>p</sub>, pay careful attention to units. The units of K<sub>p</sub> depend on the stoichiometry of the reaction. Work out the overall power of pressure in the numerator minus the denominator to determine the unit (e.g. Pa, kPa, atm, or dimensionless).
+</div>
+
+<!-- SVG: Kc and Kp - What they tell us -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Equilibrium Constants &mdash; What K Tells Us</text>
+  <!-- Scale bar -->
+  <defs>
+    <linearGradient id="kGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#DC2626"/>
+      <stop offset="50%" style="stop-color:#D97706"/>
+      <stop offset="100%" style="stop-color:#16A34A"/>
+    </linearGradient>
+  </defs>
+  <rect x="50" y="48" width="400" height="20" rx="10" fill="url(#kGrad)" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- Scale labels -->
+  <text x="80" y="85" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">K &#171; 1</text>
+  <text x="80" y="97" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">Reactants favoured</text>
+  <text x="250" y="85" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">K &#8776; 1</text>
+  <text x="250" y="97" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">Neither side favoured</text>
+  <text x="420" y="85" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">K &#187; 1</text>
+  <text x="420" y="97" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">Products favoured</text>
+  <!-- Kc box -->
+  <rect x="30" y="115" width="210" height="70" rx="8" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="135" y="133" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">K<tspan baseline-shift="sub" font-size="75%">c</tspan> (concentrations)</text>
+  <text x="135" y="152" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">aA + bB &#8652; cC + dD</text>
+  <text x="135" y="172" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">K<tspan baseline-shift="sub" font-size="75%">c</tspan> = [C]<tspan baseline-shift="super" font-size="75%">c</tspan>[D]<tspan baseline-shift="super" font-size="75%">d</tspan> / [A]<tspan baseline-shift="super" font-size="75%">a</tspan>[B]<tspan baseline-shift="super" font-size="75%">b</tspan></text>
+  <!-- Kp box -->
+  <rect x="260" y="115" width="210" height="70" rx="8" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="365" y="133" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">K<tspan baseline-shift="sub" font-size="75%">p</tspan> (partial pressures)</text>
+  <text x="365" y="152" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">For gaseous equilibria</text>
+  <text x="365" y="172" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">K<tspan baseline-shift="sub" font-size="75%">p</tspan> = p<tspan baseline-shift="sub" font-size="75%">C</tspan><tspan baseline-shift="super" font-size="75%">c</tspan> p<tspan baseline-shift="sub" font-size="75%">D</tspan><tspan baseline-shift="super" font-size="75%">d</tspan> / p<tspan baseline-shift="sub" font-size="75%">A</tspan><tspan baseline-shift="super" font-size="75%">a</tspan> p<tspan baseline-shift="sub" font-size="75%">B</tspan><tspan baseline-shift="super" font-size="75%">b</tspan></text>
+  <!-- What changes K -->
+  <rect x="50" y="200" width="400" height="68" rx="8" fill="#fff8e1" stroke="#D97706" stroke-width="1.5"/>
+  <text x="250" y="218" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#D97706">What affects the value of K?</text>
+  <text x="250" y="236" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">&#10004; Temperature changes K (shifts equilibrium in endothermic direction)</text>
+  <text x="250" y="253" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">&#10008; Concentration, pressure, and catalysts do NOT change K</text>
+</svg>
+</div>
+
+</div>
+</body>
+</html>

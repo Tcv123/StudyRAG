@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OZ — The Ozone Story</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .worked-example { background: #fdf2f8; border-left: 4px solid #db2777; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #be185d; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>OZ — The Ozone Story</h1>
+
+<p style="color:#475569;font-size:0.97rem;margin-top:-18px;margin-bottom:26px;">OCR B (Salters) H433 storyline <strong>OZ</strong>. Ozone as a sunscreen: radiation and matter, rates of reaction and catalysis, radical reactions, intermolecular bonding, and the haloalkanes of CFCs and HFCs with their nucleophilic substitution.</p>
+
+<!-- SVG marker definitions used by diagrams below; kept here because the
+     section that originally defined them now lives in another storyline. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <marker id="arrS4" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#1a1a2e"/></marker>
+</defs></svg>
+
+<!-- ============================================================ -->
+<h2>1. Rates of Reaction and Collision Theory</h2>
+
+<h3>Collision Theory</h3>
+
+<div class="definition">
+  <strong>Collision theory:</strong> For a reaction to occur, particles must collide with sufficient energy (equal to or greater than the activation energy, E<sub>a</sub>) and with the correct orientation.
+</div>
+
+<div class="definition">
+  <strong>Activation energy (E<sub>a</sub>):</strong> The minimum energy that colliding particles must have in order to react. It represents the energy barrier that must be overcome for bonds to break and new bonds to form.
+</div>
+
+<h3>Factors Affecting Rate</h3>
+
+<table>
+  <tr><th>Factor</th><th>Effect</th><th>Explanation</th></tr>
+  <tr><td>Concentration (or pressure for gases)</td><td>Increases rate</td><td>More particles per unit volume &rarr; more frequent collisions &rarr; more successful collisions per unit time</td></tr>
+  <tr><td>Temperature</td><td>Increases rate</td><td>Particles have greater kinetic energy &rarr; more frequent collisions AND a greater proportion of particles exceed E<sub>a</sub> (the latter is the dominant effect)</td></tr>
+  <tr><td>Surface area</td><td>Increases rate</td><td>More surface exposed to reactant particles &rarr; more frequent collisions</td></tr>
+  <tr><td>Catalyst</td><td>Increases rate</td><td>Provides an alternative reaction pathway with a lower activation energy</td></tr>
+</table>
+
+<h3>The Boltzmann Distribution</h3>
+
+<p>The Boltzmann (Maxwell-Boltzmann) distribution shows the distribution of molecular kinetic energies in a sample of gas at a given temperature. Key features:</p>
+<ul>
+  <li>No molecules have zero energy.</li>
+  <li>The distribution is asymmetric with a long tail to the right (some molecules have very high energies).</li>
+  <li>The peak (most probable energy) shifts to the right and becomes lower and broader at higher temperatures.</li>
+  <li>The area under the curve is constant (total number of molecules is unchanged).</li>
+  <li>The shaded area to the right of E<sub>a</sub> represents the proportion of molecules with enough energy to react.</li>
+</ul>
+
+<p>Increasing temperature shifts the distribution to the right and significantly increases the proportion of molecules exceeding E<sub>a</sub>. A catalyst lowers E<sub>a</sub>, so a greater proportion of molecules exceed the new, lower E<sub>a</sub> without changing the distribution itself.</p>
+
+<!-- SVG: Maxwell-Boltzmann Distribution -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 310" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Maxwell-Boltzmann Distribution</text>
+  <!-- Axes -->
+  <line x1="60" y1="250" x2="470" y2="250" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="250" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="60,40 56,50 64,50" fill="#1a1a2e"/>
+  <text x="30" y="145" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,30,145)">Number of molecules</text>
+  <text x="265" y="275" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Kinetic energy</text>
+  <!-- T1 curve (lower temp - blue, taller peak) -->
+  <path d="M 60 250 Q 80 248 110 200 Q 140 80 170 70 Q 200 80 240 150 Q 300 220 370 240 Q 420 248 470 250" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="180" y="60" text-anchor="start" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">T&#8321; (lower temp)</text>
+  <!-- T2 curve (higher temp - red, flatter, shifted right) -->
+  <path d="M 60 250 Q 90 248 130 225 Q 170 160 210 140 Q 240 135 260 140 Q 310 170 360 210 Q 420 240 470 248" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="270" y="128" text-anchor="start" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">T&#8322; (higher temp)</text>
+  <!-- Ea line -->
+  <line x1="340" y1="250" x2="340" y2="45" stroke="#D97706" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="345" y="42" text-anchor="start" font-family="system-ui" font-size="11" font-weight="bold" fill="#D97706">E<tspan baseline-shift="sub" font-size="75%">a</tspan></text>
+  <!-- Shaded area for T1 beyond Ea -->
+  <path d="M 340 240 Q 370 240 400 245 Q 435 248 470 250 L 470 250 L 340 250 Z" fill="#1a73e833" stroke="none"/>
+  <!-- Shaded area for T2 beyond Ea -->
+  <path d="M 340 218 Q 370 228 400 238 Q 435 245 470 248 L 470 250 L 340 250 Z" fill="#DC262633" stroke="none"/>
+  <!-- Catalyst Ea' line -->
+  <line x1="280" y1="250" x2="280" y2="120" stroke="#16A34A" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="260" y="118" text-anchor="end" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">E<tspan baseline-shift="sub" font-size="75%">a</tspan>'</text>
+  <text x="260" y="130" text-anchor="end" font-family="system-ui" font-size="8" fill="#16A34A">(with catalyst)</text>
+  <!-- Key -->
+  <rect x="70" y="282" width="420" height="22" rx="4" fill="#f1f5f9" stroke="none"/>
+  <text x="250" y="297" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Shaded areas = proportion of molecules with energy &#8805; E<tspan baseline-shift="sub" font-size="75%">a</tspan>. Higher T or lower E<tspan baseline-shift="sub" font-size="75%">a</tspan> = more molecules can react.</text>
+</svg>
+</div>
+
+<h3>Catalysts</h3>
+
+<!-- SVG: Activation Energy - Effect of a Catalyst -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 300" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Effect of a Catalyst on Activation Energy</text>
+  <!-- Axes -->
+  <line x1="60" y1="260" x2="460" y2="260" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="260" x2="60" y2="40" stroke="#1a1a2e" stroke-width="1.5"/>
+  <polygon points="60,40 56,50 64,50" fill="#1a1a2e"/>
+  <text x="30" y="150" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e" transform="rotate(-90,30,150)">Enthalpy (H)</text>
+  <text x="260" y="285" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Progress of reaction</text>
+  <!-- Reactants level -->
+  <line x1="70" y1="170" x2="140" y2="170" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="105" y="163" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">Reactants</text>
+  <!-- Products level -->
+  <line x1="380" y1="220" x2="450" y2="220" stroke="#16A34A" stroke-width="2.5"/>
+  <text x="415" y="242" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">Products</text>
+  <!-- Uncatalysed pathway (high hump) -->
+  <path d="M 140 170 Q 200 168 240 60 Q 280 168 320 190 Q 350 210 380 220" fill="none" stroke="#DC2626" stroke-width="2.5"/>
+  <text x="248" y="52" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">Uncatalysed</text>
+  <!-- Catalysed pathway (lower hump) -->
+  <path d="M 140 170 Q 190 168 240 110 Q 290 168 340 200 Q 360 212 380 220" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <text x="248" y="103" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Catalysed</text>
+  <!-- Ea uncatalysed arrow -->
+  <line x1="155" y1="170" x2="155" y2="60" stroke="#DC2626" stroke-width="1.5" marker-start="url(#arrRUbott)" marker-end="url(#arrRUtop)"/>
+  <defs>
+    <marker id="arrRUtop" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#DC2626"/></marker>
+    <marker id="arrRUbott" markerWidth="7" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M7,0 L0,2.5 L7,5" fill="#DC2626"/></marker>
+  </defs>
+  <text x="135" y="115" text-anchor="end" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">E<tspan baseline-shift="sub" font-size="75%">a</tspan></text>
+  <!-- Ea catalysed arrow -->
+  <line x1="170" y1="170" x2="170" y2="110" stroke="#16A34A" stroke-width="1.5" marker-start="url(#arrGCbott)" marker-end="url(#arrGCtop)"/>
+  <defs>
+    <marker id="arrGCtop" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#16A34A"/></marker>
+    <marker id="arrGCbott" markerWidth="7" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M7,0 L0,2.5 L7,5" fill="#16A34A"/></marker>
+  </defs>
+  <text x="178" y="143" text-anchor="start" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">E<tspan baseline-shift="sub" font-size="75%">a</tspan>'</text>
+  <!-- Delta H arrow -->
+  <line x1="445" y1="170" x2="445" y2="220" stroke="#D97706" stroke-width="2" marker-end="url(#arrDHcat)"/>
+  <defs><marker id="arrDHcat" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#D97706"/></marker></defs>
+  <line x1="440" y1="170" x2="450" y2="170" stroke="#D97706" stroke-width="1"/>
+  <text x="455" y="198" text-anchor="start" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">&Delta;H</text>
+  <!-- Key note -->
+  <text x="250" y="298" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">A catalyst lowers E<tspan baseline-shift="sub" font-size="75%">a</tspan> but does NOT change &Delta;H. Both pathways have the same overall enthalpy change.</text>
+</svg>
+</div>
+
+<div class="definition">
+  <strong>Catalyst:</strong> A substance that increases the rate of a reaction by providing an alternative pathway with a lower activation energy, without being consumed in the overall reaction.<br><br>
+  <strong>Homogeneous catalyst:</strong> A catalyst in the same phase as the reactants (e.g. H<sup>+</sup>(aq) catalysing an esterification in aqueous solution).<br><br>
+  <strong>Heterogeneous catalyst:</strong> A catalyst in a different phase from the reactants (e.g. iron in the Haber process, vanadium(V) oxide in the Contact process). Reactions occur on the surface of the catalyst, so a greater surface area increases effectiveness.
+</div>
+
+<!-- ============================================================ -->
+<h2>2. Halogenoalkanes</h2>
+
+<div class="definition">
+  <strong>Halogenoalkane:</strong> An organic compound in which one or more hydrogen atoms of an alkane have been replaced by halogen atoms (F, Cl, Br, I). The C&minus;X bond is polar because halogens are more electronegative than carbon, making the carbon atom susceptible to attack by nucleophiles.
+</div>
+
+<h3>Nucleophilic Substitution</h3>
+
+<div class="definition">
+  <strong>Nucleophile:</strong> An electron-pair donor; a species with a lone pair that it can donate to an electron-deficient atom. Examples: OH<sup>&minus;</sup>, CN<sup>&minus;</sup>, NH<sub>3</sub>, H<sub>2</sub>O.
+</div>
+
+<p><strong>SN2 mechanism (primary halogenoalkanes):</strong> A one-step mechanism. The nucleophile attacks the &delta;+ carbon from the opposite side to the halogen (backside attack). Bond making and bond breaking happen simultaneously in a single transition state. The rate equation is: rate = k[halogenoalkane][nucleophile]. SN2 produces inversion of configuration at the chiral centre.</p>
+
+<p><strong>SN1 mechanism (tertiary halogenoalkanes):</strong> A two-step mechanism. Step 1: the C&minus;X bond breaks heterolytically to form a carbocation and a halide ion (slow, rate-determining step). Step 2: the nucleophile rapidly attacks the planar carbocation from either side. The rate equation is: rate = k[halogenoalkane]. SN1 produces a racemic mixture if the carbon was a chiral centre, because the planar carbocation can be attacked equally from both sides.</p>
+
+<p>Secondary halogenoalkanes undergo a mixture of SN1 and SN2 mechanisms.</p>
+
+<!-- SVG: SN2 vs SN1 Nucleophilic Substitution Mechanisms -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 370" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Nucleophilic Substitution Mechanisms</text>
+  <!-- SN2 Section -->
+  <text x="250" y="48" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#1a73e8">SN2 &mdash; Primary Halogenoalkanes (one step)</text>
+  <!-- Nucleophile approaching -->
+  <text x="50" y="95" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">HO&#8315;</text>
+  <!-- Curly arrow from nucleophile -->
+  <path d="M 68 90 Q 90 80 108 85" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrRS4n)"/>
+  <defs><marker id="arrRS4n" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#DC2626"/></marker></defs>
+  <!-- Carbon centre -->
+  <circle cx="125" cy="95" r="16" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="125" y="92" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a73e8">&delta;+</text>
+  <text x="125" y="103" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">C</text>
+  <!-- H atoms -->
+  <text x="125" y="68" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94a3b8">H</text>
+  <line x1="125" y1="79" x2="125" y2="72" stroke="#94a3b8" stroke-width="1"/>
+  <text x="112" y="120" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94a3b8">H</text>
+  <line x1="118" y1="111" x2="114" y2="115" stroke="#94a3b8" stroke-width="1"/>
+  <!-- Leaving group Br -->
+  <line x1="141" y1="95" x2="170" y2="95" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="185" y="99" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Br</text>
+  <text x="185" y="86" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">&delta;&minus;</text>
+  <!-- Curly arrow from C-Br bond -->
+  <path d="M 158 90 Q 170 78 182 82" fill="none" stroke="#16A34A" stroke-width="1.5" marker-end="url(#arrGS4n)"/>
+  <defs><marker id="arrGS4n" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#16A34A"/></marker></defs>
+  <!-- Arrow to transition state -->
+  <line x1="210" y1="95" x2="235" y2="95" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrS4)"/>
+  <!-- Transition state -->
+  <rect x="240" y="72" width="80" height="48" rx="6" fill="#fff8e1" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="280" y="88" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">[HO---C---Br]&#8315;</text>
+  <text x="280" y="103" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">transition state</text>
+  <text x="280" y="115" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">simultaneous</text>
+  <!-- Arrow to product -->
+  <line x1="320" y1="95" x2="345" y2="95" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrS4)"/>
+  <!-- Product -->
+  <text x="380" y="92" text-anchor="middle" font-family="system-ui" font-size="11" fill="#1a1a2e">CH&#8323;OH</text>
+  <text x="380" y="108" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">+ Br&#8315;</text>
+  <!-- Rate equation -->
+  <rect x="30" y="128" width="440" height="22" rx="4" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="250" y="143" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a73e8">Rate = k[halogenoalkane][nucleophile] &nbsp;&nbsp; | &nbsp;&nbsp; Backside attack &rarr; inversion of configuration</text>
+  <!-- Divider -->
+  <line x1="30" y1="162" x2="470" y2="162" stroke="#cbd5e1" stroke-width="1"/>
+  <!-- SN1 Section -->
+  <text x="250" y="182" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#16A34A">SN1 &mdash; Tertiary Halogenoalkanes (two steps)</text>
+  <!-- Step 1 -->
+  <text x="60" y="206" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Step 1 (slow, RDS):</text>
+  <!-- Tertiary C-Br -->
+  <rect x="30" y="215" width="110" height="40" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="85" y="232" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">(CH&#8323;)&#8323;C&mdash;Br</text>
+  <text x="85" y="248" text-anchor="middle" font-family="system-ui" font-size="8" fill="#94a3b8">heterolytic fission</text>
+  <line x1="140" y1="235" x2="175" y2="235" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrS4)"/>
+  <!-- Carbocation -->
+  <rect x="175" y="215" width="100" height="40" rx="6" fill="#fef9c3" stroke="#D97706" stroke-width="2"/>
+  <text x="225" y="232" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">(CH&#8323;)&#8323;C&#8314;</text>
+  <text x="225" y="248" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">carbocation</text>
+  <text x="290" y="235" text-anchor="start" font-family="system-ui" font-size="10" fill="#1a1a2e">+ Br&#8315;</text>
+  <!-- Step 2 -->
+  <text x="60" y="275" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Step 2 (fast):</text>
+  <!-- Carbocation + nucleophile -->
+  <rect x="30" y="285" width="100" height="35" rx="6" fill="#fef9c3" stroke="#D97706" stroke-width="1.5"/>
+  <text x="80" y="307" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">(CH&#8323;)&#8323;C&#8314;</text>
+  <text x="145" y="307" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">+</text>
+  <text x="175" y="307" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">OH&#8315;</text>
+  <!-- Arrow -->
+  <path d="M 190 300 Q 210 290 220 298" fill="none" stroke="#DC2626" stroke-width="1.5" marker-end="url(#arrRS4n)"/>
+  <line x1="220" y1="302" x2="260" y2="302" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrS4)"/>
+  <!-- Product -->
+  <rect x="260" y="285" width="130" height="35" rx="6" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="325" y="307" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">(CH&#8323;)&#8323;C&mdash;OH</text>
+  <!-- Planar note -->
+  <text x="325" y="340" text-anchor="middle" font-family="system-ui" font-size="9" fill="#7c3aed">Planar carbocation &#8594; attack from either side &#8594; racemic mixture</text>
+  <!-- Rate equation -->
+  <rect x="30" y="348" width="440" height="18" rx="4" fill="#dcfce7" stroke="#16A34A" stroke-width="1"/>
+  <text x="250" y="361" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">Rate = k[halogenoalkane] only &nbsp;&nbsp; | &nbsp;&nbsp; Nucleophile not in rate-determining step</text>
+</svg>
+</div>
+
+<h3>Reactions of Halogenoalkanes</h3>
+
+<table>
+  <tr><th>Nucleophile</th><th>Conditions</th><th>Product</th></tr>
+  <tr><td>NaOH(aq) / OH<sup>&minus;</sup></td><td>Warm aqueous solution</td><td>Alcohol</td></tr>
+  <tr><td>KCN / CN<sup>&minus;</sup></td><td>Warm ethanol/water</td><td>Nitrile (extends carbon chain by 1)</td></tr>
+  <tr><td>NH<sub>3</sub></td><td>Excess, warm, sealed tube</td><td>Amine</td></tr>
+</table>
+
+<h3>Elimination</h3>
+
+<p>When a halogenoalkane is heated with a strong base in ethanolic solution (e.g. NaOH in ethanol), elimination occurs instead of substitution. A hydrogen atom and the halogen are removed from adjacent carbons, forming an alkene and water:</p>
+
+<div class="equation">
+  C<sub>2</sub>H<sub>5</sub>Br + NaOH (in ethanol) &rarr; C<sub>2</sub>H<sub>4</sub> + NaBr + H<sub>2</sub>O
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> The choice between substitution and elimination depends on the conditions. Aqueous NaOH favours substitution (nucleophilic); ethanolic NaOH favours elimination (OH<sup>&minus;</sup> acts as a base). Tertiary halogenoalkanes favour elimination and S<sub>N</sub>1; primary halogenoalkanes favour S<sub>N</sub>2.
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Percentage Yield:</strong><br><br>
+  A student reacted 5.00 g of butan-1-ol with excess ethanoic acid. The theoretical yield of the ester (butyl ethanoate, M<sub>r</sub> = 116.2) is 7.85 g. The actual yield was 4.50 g.<br><br>
+  Percentage yield = (4.50 / 7.85) &times; 100 = <strong>57.3%</strong><br><br>
+  The yield is below 100% due to: the reversible nature of esterification, loss during transfer and separation, incomplete reaction, and evaporation of volatile ester.
+</div>
+
+<h3>Reactivity of Halogenoalkanes</h3>
+
+<p>The rate of hydrolysis (reaction with aqueous silver nitrate to test for the halide ion) decreases in the order: R&minus;I &gt; R&minus;Br &gt; R&minus;Cl. This is because the C&minus;I bond is the weakest (lowest bond enthalpy) and easiest to break, despite being the least polar. Bond strength is the dominant factor, not polarity.</p>
+
+<!-- ============================================================ -->
+<h2>3. Organic Mechanisms Summary</h2>
+
+<div class="definition">
+  <strong>Curly arrow:</strong> Represents the movement of a pair of electrons. A curly arrow starts from an electron-rich source (lone pair or bond) and points to an electron-deficient destination. A single-headed (fishhook) arrow represents the movement of a single electron (used in radical mechanisms).
+</div>
+
+<p>Types of organic reaction:</p>
+<ul>
+  <li><strong>Addition:</strong> Two molecules combine to form one product (atoms add across a double bond).</li>
+  <li><strong>Substitution:</strong> An atom or group is replaced by another atom or group.</li>
+  <li><strong>Elimination:</strong> A small molecule (e.g. H<sub>2</sub>O, HBr) is removed from a larger molecule, forming a double bond.</li>
+  <li><strong>Oxidation/Reduction:</strong> Gain or loss of oxygen/hydrogen, or change in oxidation state.</li>
+  <li><strong>Hydrolysis:</strong> A bond is broken by the addition of water (or OH<sup>&minus;</sup>).</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> When drawing mechanisms, every curly arrow must start from a lone pair or bond and point to where the electrons are going. Show relevant partial charges (&delta;+ and &delta;&minus;) on polar bonds. For ionic intermediates, show the charge clearly. Marks are awarded for correct curly arrows, intermediate species, and products.
+</div>
+
+</div>
+</body>
+</html>

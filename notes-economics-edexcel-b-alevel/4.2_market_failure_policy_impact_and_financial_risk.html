@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — Theme 4.2 Market Failure, Policy Impact &amp; Financial Risk — Edexcel B</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.7; padding: 40px 24px; }
+.container { max-width: 820px; margin: 0 auto; }
+h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 28px; }
+h2 { font-size: 1.5rem; color: #16213e; margin: 40px 0 16px; border-left: 4px solid #1a73e8; padding-left: 12px; }
+h3 { font-size: 1.2rem; color: #1a1a2e; margin: 26px 0 10px; }
+h4 { font-size: 1.05rem; color: #374151; margin: 18px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { margin: 10px 0 14px 24px; }
+li { margin: 5px 0; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+th, td { border: 1px solid #cbd5e1; padding: 10px 14px; text-align: left; }
+th { background: #e8eef6; font-weight: 600; }
+tr:nth-child(even) { background: #f8fafc; }
+.def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+.tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+.case-study { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+.case-study strong.cs-title { color: #0369a1; font-size: 1.05rem; }
+.diagram-box { background: #f9fafb; border: 2px solid #d1d5db; border-radius: 10px; padding: 20px; margin: 20px 0; text-align: center; }
+.diagram-box svg { max-width: 100%; }
+.diagram-caption { font-size: 0.9rem; color: #555; margin-top: 10px; font-style: italic; }
+.eval-box { background: #faf5ff; border-left: 4px solid #8b5cf6; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+.eq { text-align: center; font-size: 1.15rem; margin: 14px 0; font-family: "Cambria Math", "Times New Roman", serif; background: #f1f5f9; padding: 10px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>Theme 4.2 Market Failure, Policy Impact &amp; Financial Risk — Edexcel B</h1>
+
+<p><em>This topic covers 9EB0 sub-topics 4.3 Market failure across the economy, 4.4 Macroeconomic policies and impact on firms and individuals, and 4.5 Risk and the financial sector. All data is current as of September 2026 or dated where it refers to an earlier point in time.</em></p>
+
+<!-- ===== PART A: MARKET FAILURE ===== -->
+<h2>1. Market Failure Across the Economy</h2>
+
+<div class="def-box">
+<strong>Market failure:</strong> A situation in which the free market, left to itself, allocates resources inefficiently — the quantity produced and consumed is not the quantity that maximises society's welfare. Formally, market failure occurs whenever marginal social cost does not equal marginal social benefit at the market equilibrium.
+</div>
+
+<p>Theme 1.5 introduced market failure in a single market. Theme 4.3 asks you to see it <strong>across the whole economy</strong>: not just "why is there too much pollution from this factory?" but why the economy as a whole under-provides infrastructure, research, training and clean air, and over-provides congestion, carbon and gambling. The categories to know are:</p>
+
+<table>
+  <tr><th>Source of failure</th><th>What goes wrong</th><th>Economy-wide example</th></tr>
+  <tr><td><strong>Public goods</strong></td><td>Non-rival and non-excludable, so the free-rider problem means the market supplies none at all</td><td>National defence, flood defences, street lighting, the legal system</td></tr>
+  <tr><td><strong>Externalities</strong></td><td>Costs or benefits fall on third parties and are not priced, so MSC &ne; MPC or MSB &ne; MPB</td><td>Carbon emissions, congestion, vaccination, education, R&amp;D spillovers</td></tr>
+  <tr><td><strong>Merit and demerit goods</strong></td><td>Consumers misjudge the private benefit or cost to themselves, so demand is wrong even before externalities</td><td>Pension saving, preventative healthcare, tobacco, gambling</td></tr>
+  <tr><td><strong>Imperfect and asymmetric information</strong></td><td>One side knows more than the other, or nobody knows enough, so exchange is distorted or does not happen</td><td>Used cars, insurance, financial products, energy tariffs</td></tr>
+  <tr><td><strong>Factor immobility</strong></td><td>Labour and capital cannot move to where they are most productive</td><td>Structural unemployment in former industrial regions</td></tr>
+  <tr><td><strong>Market power</strong></td><td>Firms restrict output and raise price above marginal cost</td><td>Covered in Theme 4.1</td></tr>
+  <tr><td><strong>Inequity</strong></td><td>The market distributes income and wealth in a way society judges unacceptable</td><td>Relative poverty, regional inequality</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Note the distinction between <strong>complete</strong> market failure (a missing market — the market supplies nothing at all, as with pure public goods) and <strong>partial</strong> market failure (a market exists but supplies the wrong quantity, as with pollution or education).
+</div>
+
+<!-- ===== PUBLIC GOODS ===== -->
+<h2>2. Public Goods and the Free-Rider Problem</h2>
+
+<div class="def-box">
+<strong>Public good:</strong> A good with two properties.<br><br>
+<strong>Non-rivalry:</strong> one person's consumption does not reduce the amount available to anyone else — the marginal cost of an extra user is zero.<br><br>
+<strong>Non-excludability:</strong> once the good is provided, it is impossible (or prohibitively expensive) to stop non-payers from consuming it.
+</div>
+
+<h3>2.1 The Free-Rider Problem</h3>
+<p>Because the good is non-excludable, every individual's best response is to wait for someone else to pay and then consume for free. If everyone reasons that way, nobody pays and the good is never provided — even though everyone would be better off if it were. This is a <strong>prisoner's dilemma at the scale of society</strong>: individually rational behaviour produces a collectively irrational outcome.</p>
+<p>Consequences:</p>
+<ul>
+  <li>There is <strong>no market demand curve</strong>, because nobody will reveal their true willingness to pay.</li>
+  <li>Private provision is therefore zero or negligible — a <strong>missing market</strong>.</li>
+  <li>The good must be provided collectively, funded through <strong>taxation</strong>, which is compulsory precisely so that free-riding is impossible.</li>
+</ul>
+<p><strong>Clear examples:</strong> national defence, the police and criminal justice system, flood defences, street lighting, lighthouses, clean air, and the basic scientific research on which applied innovation depends.</p>
+
+<h3>2.2 Quasi-Public Goods</h3>
+<div class="def-box">
+<strong>Quasi-public (impure public) good:</strong> A good that has the characteristics of a public good only partially, or only up to a point — it is semi-rival, semi-excludable, or both.
+</div>
+<ul>
+  <li><strong>Roads:</strong> non-rival at 3am on a rural A-road, highly rival at 8am on the M25 — congestion makes them rival. Excludability is technically possible (toll roads, the London congestion charge, the Dartford Crossing), so roads are excludable at a cost.</li>
+  <li><strong>Beaches and parks:</strong> non-rival until crowded; excludable only if you fence them and staff the gate.</li>
+  <li><strong>Broadcast television:</strong> non-rival, but encryption made it excludable, which is exactly how subscription broadcasting became possible.</li>
+  <li><strong>The internet and digital goods:</strong> a piece of software or a dataset is perfectly non-rival (copying costs nothing) but is made excludable by copyright, licensing and paywalls — this is a market <em>created</em> by law.</li>
+</ul>
+<p>The technology point matters: <strong>excludability is not a fixed property of a good but a function of available technology</strong>. Number-plate recognition turned urban road space from non-excludable into excludable, which is why road pricing is now feasible where it once was not.</p>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Flood Defence in England</strong><br>
+Flood defences are close to a pure public good. A sea wall protects every property behind it whether or not the owner contributed, so no household would rationally pay voluntarily, and no private firm could sell the protection. The Environment Agency therefore builds and maintains them from general taxation, with government capital programmes running to billions of pounds over multi-year periods. The economics are strong — the avoided damage typically exceeds the construction cost by a large multiple — but the appraisal problem is real: benefits depend on climate projections decades ahead, and schemes protecting more valuable property score better on a pure benefit–cost test, which raises an equity question about which communities get protected.
+</div>
+
+<!-- ===== EXTERNALITIES ===== -->
+<h2>3. Externalities</h2>
+
+<div class="def-box">
+<strong>Externality:</strong> A cost or benefit imposed on a third party who is not involved in the transaction, and which is therefore not reflected in the market price.<br><br>
+<strong>Marginal private cost (MPC):</strong> the cost to the producer of one more unit.<br>
+<strong>Marginal social cost (MSC):</strong> MPC + the marginal external cost.<br>
+<strong>Marginal private benefit (MPB):</strong> the benefit to the consumer of one more unit.<br>
+<strong>Marginal social benefit (MSB):</strong> MPB + the marginal external benefit.
+</div>
+
+<p>The free market sets MPB = MPC. Welfare is maximised where <strong>MSB = MSC</strong>. Whenever an externality exists these two conditions differ, and the gap between the market quantity and the socially optimal quantity generates a <strong>welfare (deadweight) loss</strong>.</p>
+
+<h3>3.1 The Four Cases</h3>
+<table>
+  <tr><th>Type</th><th>Relationship</th><th>Market outcome</th><th>Examples</th></tr>
+  <tr><td><strong>Negative production externality</strong></td><td>MSC &gt; MPC</td><td>Over-production at too low a price</td><td>Factory emissions, agricultural run-off into rivers, freight congestion, noise from construction</td></tr>
+  <tr><td><strong>Negative consumption externality</strong></td><td>MSB &lt; MPB</td><td>Over-consumption at too high a price</td><td>Passive smoking, alcohol-related disorder and A&amp;E costs, driving in a congested city, antibiotic overuse driving resistance</td></tr>
+  <tr><td><strong>Positive production externality</strong></td><td>MSC &lt; MPC</td><td>Under-production</td><td>R&amp;D spillovers to rival firms, employer training that benefits later employers, a firm restoring a derelict site</td></tr>
+  <tr><td><strong>Positive consumption externality</strong></td><td>MSB &gt; MPB</td><td>Under-consumption</td><td>Vaccination, education, home insulation, cycling instead of driving</td></tr>
+</table>
+
+<h3>3.2 Negative Production Externality</h3>
+<p>Where production imposes costs on third parties, MSC lies above MPC. The market produces Q1 where MPB = MPC, but the social optimum is Q*, where MSB = MSC. Output is too high and price too low, and the shaded triangle measures the welfare loss.</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 470 370" width="470" height="370">
+  <line x1="60" y1="315" x2="425" y2="315" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="315" x2="60" y2="25" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="425,315 417,310 417,320" fill="#1a1a2e"/>
+  <polygon points="60,25 55,33 65,33" fill="#1a1a2e"/>
+  <!-- MPC -->
+  <line x1="90" y1="285" x2="390" y2="75" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="392" y="72" font-size="12" fill="#2563eb" font-weight="600">MPC (S)</text>
+  <!-- MSC shifted left/up -->
+  <line x1="90" y1="215" x2="330" y2="47" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="300" y="40" font-size="12" fill="#7c3aed" font-weight="600">MSC</text>
+  <!-- MPB = MSB demand -->
+  <line x1="95" y1="70" x2="400" y2="285" stroke="#059669" stroke-width="2.5"/>
+  <text x="352" y="299" font-size="12" fill="#059669" font-weight="600">MPB = MSB (D)</text>
+  <!-- market eq: MPC = D -->
+  <circle cx="246" cy="176" r="4.5" fill="#1a1a2e"/>
+  <line x1="246" y1="176" x2="246" y2="315" stroke="#1a1a2e" stroke-width="1.3" stroke-dasharray="5,4"/>
+  <line x1="60" y1="176" x2="246" y2="176" stroke="#1a1a2e" stroke-width="1.3" stroke-dasharray="5,4"/>
+  <text x="238" y="332" font-size="12" fill="#1a1a2e" font-weight="600">Q1</text>
+  <text x="30" y="180" font-size="12" fill="#1a1a2e" font-weight="600">P1</text>
+  <!-- social optimum: MSC = D -->
+  <circle cx="196" cy="141" r="4.5" fill="#7c3aed"/>
+  <line x1="196" y1="141" x2="196" y2="315" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="5,4"/>
+  <line x1="60" y1="141" x2="196" y2="141" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="5,4"/>
+  <text x="188" y="332" font-size="12" fill="#7c3aed" font-weight="600">Q*</text>
+  <text x="30" y="145" font-size="12" fill="#7c3aed" font-weight="600">P*</text>
+  <!-- welfare loss triangle between Q* and Q1, MSC above MSB -->
+  <polygon points="196,141 246,176 246,106" fill="#fca5a5" opacity="0.45" stroke="#dc2626" stroke-width="1.2"/>
+  <text x="262" y="118" font-size="11" fill="#dc2626" font-weight="600">Welfare loss</text>
+  <text x="140" y="248" font-size="11" fill="#9ca3af">external cost</text>
+  <text x="430" y="320" font-size="13" fill="#1a1a2e" font-weight="600">Q</text>
+  <text x="15" y="20" font-size="13" fill="#1a1a2e" font-weight="600">Costs/Benefits (£)</text>
+</svg>
+<div class="diagram-caption">Figure 1: A negative production externality. MSC lies above MPC by the marginal external cost. The market over-produces at Q1 rather than the social optimum Q*, generating the shaded welfare loss. A Pigouvian tax equal to the external cost at Q* shifts MPC up onto MSC and internalises the externality.</div>
+</div>
+
+<h3>3.3 Positive Consumption Externality</h3>
+<p>Where consumption benefits third parties, MSB lies above MPB. The market consumes Q1, below the optimum Q*, and the welfare loss is the value of the extra social benefit forgone.</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 470 370" width="470" height="370">
+  <line x1="60" y1="315" x2="425" y2="315" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="315" x2="60" y2="25" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="425,315 417,310 417,320" fill="#1a1a2e"/>
+  <polygon points="60,25 55,33 65,33" fill="#1a1a2e"/>
+  <!-- MPC = MSC supply -->
+  <line x1="90" y1="285" x2="390" y2="75" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="378" y="68" font-size="12" fill="#2563eb" font-weight="600">MPC = MSC (S)</text>
+  <!-- MPB -->
+  <line x1="95" y1="90" x2="350" y2="285" stroke="#059669" stroke-width="2.5"/>
+  <text x="300" y="299" font-size="12" fill="#059669" font-weight="600">MPB (D)</text>
+  <!-- MSB shifted right -->
+  <line x1="150" y1="70" x2="405" y2="265" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="372" y="250" font-size="12" fill="#7c3aed" font-weight="600">MSB</text>
+  <!-- market eq: S = MPB -->
+  <circle cx="226" cy="190" r="4.5" fill="#1a1a2e"/>
+  <line x1="226" y1="190" x2="226" y2="315" stroke="#1a1a2e" stroke-width="1.3" stroke-dasharray="5,4"/>
+  <line x1="60" y1="190" x2="226" y2="190" stroke="#1a1a2e" stroke-width="1.3" stroke-dasharray="5,4"/>
+  <text x="218" y="332" font-size="12" fill="#1a1a2e" font-weight="600">Q1</text>
+  <text x="30" y="194" font-size="12" fill="#1a1a2e" font-weight="600">P1</text>
+  <!-- social optimum: S = MSB -->
+  <circle cx="268" cy="160" r="4.5" fill="#7c3aed"/>
+  <line x1="268" y1="160" x2="268" y2="315" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="5,4"/>
+  <line x1="60" y1="160" x2="268" y2="160" stroke="#7c3aed" stroke-width="1.3" stroke-dasharray="5,4"/>
+  <text x="260" y="332" font-size="12" fill="#7c3aed" font-weight="600">Q*</text>
+  <text x="30" y="164" font-size="12" fill="#7c3aed" font-weight="600">P*</text>
+  <!-- welfare loss: between Q1 and Q*, MSB above MSC -->
+  <polygon points="226,190 268,160 226,128" fill="#fca5a5" opacity="0.45" stroke="#dc2626" stroke-width="1.2"/>
+  <text x="128" y="148" font-size="11" fill="#dc2626" font-weight="600">Welfare loss</text>
+  <line x1="196" y1="145" x2="224" y2="156" stroke="#dc2626" stroke-width="0.9"/>
+  <text x="308" y="126" font-size="11" fill="#9ca3af">external benefit</text>
+  <text x="430" y="320" font-size="13" fill="#1a1a2e" font-weight="600">Q</text>
+  <text x="15" y="20" font-size="13" fill="#1a1a2e" font-weight="600">Costs/Benefits (£)</text>
+</svg>
+<div class="diagram-caption">Figure 2: A positive consumption externality. MSB lies above MPB by the marginal external benefit. The market under-consumes at Q1 rather than Q*, so welfare is lost. A subsidy equal to the external benefit, or direct state provision, moves consumption towards Q*.</div>
+</div>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Carbon Pricing — Making the Polluter Pay Across the Whole Economy</strong><br>
+Greenhouse gas emissions are the largest negative production externality in existence: the cost falls on the whole world and on future generations, none of whom are parties to the transaction. The UK's principal response is the <strong>UK Emissions Trading Scheme</strong>, a cap-and-trade system covering power generation, energy-intensive industry and aviation. The government sets a declining cap on total emissions and issues allowances; firms that can cut emissions cheaply sell allowances to those that cannot, so abatement happens wherever it costs least — a tradable-permit solution that fixes the quantity and lets the market discover the price. Since Brexit the UK ETS has traded separately from the EU scheme, often at a different price, which created a competitiveness problem for UK exporters facing the EU's carbon border adjustment mechanism. The UK and EU agreed in May 2025 to link the two schemes, and formal negotiations opened in January 2026, with linkage expected to converge the two carbon prices. The episode shows both the strength of market-based instruments and the practical difficulty of pricing a <em>global</em> externality inside a <em>national</em> policy framework.
+</div>
+
+<h3>3.4 Internalising Externalities</h3>
+<ul>
+  <li><strong>Pigouvian taxes:</strong> a tax equal to the marginal external cost at the optimum, shifting MPC onto MSC. UK examples: fuel duty, alcohol and tobacco duty, the Soft Drinks Industry Levy, landfill tax, the plastic bag charge.</li>
+  <li><strong>Subsidies:</strong> a payment equal to the marginal external benefit, shifting MPC down (for production) or effectively raising consumption to Q*. UK examples: R&amp;D tax credits, apprenticeship funding, free childcare hours, heat-pump and insulation grants.</li>
+  <li><strong>Tradable permits:</strong> fix the quantity, let the market set the price — the UK ETS.</li>
+  <li><strong>Regulation and standards:</strong> emissions limits, building regulations, the ban on new petrol and diesel car sales, minimum energy-efficiency standards for rented property.</li>
+  <li><strong>Property rights (the Coase theorem):</strong> if property rights are clearly assigned and bargaining costs are low, the parties can negotiate an efficient outcome without government. In practice transaction costs are high and the affected parties are numerous and dispersed, which is why Coasean bargaining rarely solves pollution.</li>
+  <li><strong>Information and nudges:</strong> energy labels, calorie labelling, default enrolment into pensions.</li>
+</ul>
+
+<!-- ===== MERIT AND DEMERIT ===== -->
+<h2>4. Merit and Demerit Goods</h2>
+
+<div class="def-box">
+<strong>Merit good:</strong> A good that is under-consumed relative to what is good for the individual and for society, because consumers <em>undervalue the private benefit to themselves</em>. Examples: education, preventative healthcare, pension saving, insurance, insulation.<br><br>
+<strong>Demerit good:</strong> A good that is over-consumed because consumers <em>undervalue the private cost to themselves</em>. Examples: tobacco, excessive alcohol, gambling, high-sugar foods.
+</div>
+
+<p>The key distinction from externalities: an externality is about effects on <strong>third parties</strong>; merit and demerit goods are about <strong>information failure and misjudgement by the consumer themselves</strong>. Most real cases involve both. Cigarettes are a demerit good (smokers underweight their own future health costs) <em>and</em> generate negative consumption externalities (passive smoking, healthcare costs borne collectively).</p>
+
+<h3>4.1 Why Consumers Misjudge</h3>
+<ul>
+  <li><strong>Imperfect information:</strong> the consumer does not know the long-run consequences, or the evidence is contested.</li>
+  <li><strong>Present bias (hyperbolic discounting):</strong> costs and benefits far in the future are systematically undervalued. This is why pension under-saving is universal and why automatic enrolment — which changes the default rather than the information — was so much more effective than decades of education campaigns.</li>
+  <li><strong>Addiction and habit:</strong> past consumption changes current preferences, so the "rational consumer" assumption breaks down entirely.</li>
+  <li><strong>Deliberate misinformation by producers:</strong> historically in tobacco, and more recently in the framing of gambling and of high-risk retail investments.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: The Soft Drinks Industry Levy</strong><br>
+The UK's sugar levy, introduced in April 2018, is a rare case of a tax designed to change behaviour rather than to raise revenue — and it worked through the <em>producer</em> rather than the consumer. Because it was banded by sugar content, manufacturers reformulated aggressively to drop below the thresholds, so the average sugar content of soft drinks fell sharply without most consumers paying more. It is the clearest UK example of a tax on a demerit good that shifted supply rather than simply suppressing demand. The levy is charged in two bands: for chargeable events on or after 1 April 2026 the rates are <strong>20.8p per litre</strong> (standard band) and <strong>27.8p per litre</strong> (higher band), set by section 108 of the Finance Act 2026 and superseding the 19.4p and 25.9p rates that applied from 1 April 2025 to 31 March 2026. The design is also being tightened: the minimum threshold falls from 5g to <strong>4.5g</strong> of total sugar per 100ml, and the exemptions for milk-based drinks and for milk-substitute drinks with added sugar (milkshakes, flavoured milks, sweetened yoghurt drinks, ready-to-drink coffees) are removed — all with effect from <strong>1 January 2028</strong>, legislated in Finance Bill 2026-27. The evaluation point is that a well-designed tax on a demerit good is judged by the <em>reformulation</em> it causes, not by the revenue it raises; a levy that raises a lot of money may have failed.
+</div>
+
+<!-- ===== INFORMATION ===== -->
+<h2>5. Imperfect and Asymmetric Information</h2>
+
+<div class="def-box">
+<strong>Imperfect information:</strong> Buyers or sellers lack full information, so they make decisions they would not have made if better informed. Both sides may be equally ignorant.<br><br>
+<strong>Asymmetric information:</strong> One party to the transaction knows materially more than the other, and can exploit that advantage.
+</div>
+
+<h3>5.1 Adverse Selection</h3>
+<p>Asymmetric information <em>before</em> the transaction. Akerlof's "market for lemons": buyers cannot tell a good used car from a bad one, so they will only pay the average value; owners of genuinely good cars refuse to sell at that price and withdraw; average quality falls; buyers lower their offer again. In the limit the market unravels and only the worst goods trade.</p>
+<p>In insurance, the people who most want cover are the people most likely to claim. If the insurer cannot distinguish them, premiums rise, the lowest-risk customers drop out, and the risk pool worsens — which is why insurers demand medical questionnaires, telematics boxes and no-claims histories, and why some cover (flood insurance in high-risk areas, for instance) needs a state-backed pooling scheme to exist at all.</p>
+
+<h3>5.2 Moral Hazard</h3>
+<p>Asymmetric information <em>after</em> the transaction: once insured or protected, a party takes more risk because they no longer bear the full consequences. This is the central concept of section 16 and the single most important idea in financial regulation.</p>
+
+<h3>5.3 The Principal–Agent Problem</h3>
+<p>Where one party (the principal) relies on another (the agent) to act on their behalf, but cannot fully observe what the agent does. Shareholders and managers, patients and doctors, clients and financial advisers, voters and governments. Solutions align incentives rather than eliminate the asymmetry: performance-related pay, share options, regulation of adviser commissions, independent audit.</p>
+
+<h3>5.4 Policy Responses</h3>
+<ul>
+  <li><strong>Mandatory disclosure:</strong> energy performance certificates, nutritional and calorie labelling, APR disclosure on credit, the risk warnings the FCA requires on investment promotions.</li>
+  <li><strong>Standards, licensing and accreditation:</strong> MOT tests, food hygiene ratings, professional registration — these substitute a trusted third party's information for the consumer's own.</li>
+  <li><strong>Compulsion:</strong> where adverse selection would destroy the pool, make participation universal — compulsory motor insurance, National Insurance, pension auto-enrolment.</li>
+  <li><strong>Consumer protection law:</strong> since the Digital Markets, Competition and Consumers Act 2024 the CMA can fine firms directly for practices such as drip pricing and fake reviews, without first going to court.</li>
+  <li><strong>Making prices visible:</strong> the CMA's statutory Fuel Finder scheme, live from 2 February 2026, requires every forecourt to report price changes within 30 minutes — a pure information remedy for an information failure.</li>
+</ul>
+
+<!-- ===== FACTOR IMMOBILITY ===== -->
+<h2>6. Factor Immobility</h2>
+
+<div class="def-box">
+<strong>Factor immobility:</strong> The inability of factors of production — especially labour — to move between locations or between uses. It means resources stay where they are least productive, so the economy operates inside its production possibility frontier.
+</div>
+
+<h3>6.1 Geographical Immobility</h3>
+<p>Workers cannot move to where the jobs are, because of:</p>
+<ul>
+  <li><strong>Housing costs and availability</strong> — the dominant UK barrier. A worker in a low-wage region may face a wage rise that is entirely consumed by higher rent or mortgage costs in a high-wage region.</li>
+  <li><strong>Family and social ties</strong>, schooling, caring responsibilities.</li>
+  <li><strong>Transaction costs of moving</strong> — stamp duty, legal and moving costs.</li>
+  <li><strong>Imperfect information</strong> about vacancies elsewhere.</li>
+</ul>
+
+<h3>6.2 Occupational Immobility</h3>
+<p>Workers cannot move between types of job because they lack the required skills, qualifications or experience. This is the main cause of <strong>structural unemployment</strong>: a redundant steelworker, coal miner or retail worker cannot simply become a software engineer or a nurse.</p>
+<ul>
+  <li><strong>Skills mismatch</strong> between the skills released by declining industries and those demanded by growing ones.</li>
+  <li><strong>Cost and time of retraining</strong>, and the lost income while retraining.</li>
+  <li><strong>Age effects</strong> — the payback period on retraining shortens as a worker approaches retirement, so older workers rationally retrain less.</li>
+  <li><strong>Licensing and accreditation barriers</strong> in the professions.</li>
+</ul>
+
+<h3>6.3 Why It Matters Economy-Wide</h3>
+<ul>
+  <li>It raises the <strong>natural rate of unemployment</strong> — unemployment coexists with unfilled vacancies.</li>
+  <li>It <strong>entrenches regional inequality</strong>: productive investment concentrates where skilled labour already is, widening the gap.</li>
+  <li>It <strong>weakens the multiplier</strong>: a fiscal stimulus in a region with the wrong skills raises wages and prices rather than output.</li>
+  <li>It makes the economy hit capacity constraints sooner, so demand-side expansion becomes inflationary at a lower level of output.</li>
+</ul>
+
+<h3>6.4 Policy Responses</h3>
+<ul>
+  <li><strong>Education and vocational training</strong> — apprenticeships, skills bootcamps, adult retraining entitlements.</li>
+  <li><strong>Housing supply and planning reform</strong> — the most direct attack on geographical immobility.</li>
+  <li><strong>Transport infrastructure</strong> — widening the commuting radius is equivalent to moving the worker.</li>
+  <li><strong>Regional policy</strong> — investment zones, devolution of skills budgets to mayoral authorities, relocating public sector functions.</li>
+  <li><strong>Information</strong> — job-matching services and better careers advice.</li>
+</ul>
+
+<!-- ===== INEQUITY ===== -->
+<h2>7. Inequity</h2>
+
+<div class="def-box">
+<strong>Equity:</strong> Fairness in the distribution of income, wealth and opportunity. It is a <strong>normative</strong> concept — a value judgement — and must be distinguished from <strong>equality</strong>, which is a measurable statement about the actual distribution.
+</div>
+
+<p>A market economy allocates income according to the marginal revenue product of the factors people own. There is no reason why that allocation should be one society regards as fair: people start with very unequal endowments of capital, inherited wealth, education and health, and the market compounds those differences rather than correcting them. Markets can be perfectly <em>efficient</em> and still produce an outcome almost everyone regards as unjust — which is why inequity is treated as a market failure in its own right.</p>
+
+<h3>7.1 The Equity–Efficiency Trade-Off</h3>
+<ul>
+  <li>Redistribution through progressive taxation and transfer payments reduces inequality but may blunt incentives to work, save, take risks and start businesses.</li>
+  <li>High marginal withdrawal rates where benefits taper as earnings rise can create a <strong>poverty trap</strong>, in which an extra pound of earnings leaves a household barely better off.</li>
+  <li>Against that, extreme inequality is itself inefficient: it wastes the potential of people who cannot afford education or healthcare, and the poorest households have the highest marginal propensity to consume, so redistribution can support aggregate demand.</li>
+</ul>
+<p><em>Measures of inequality — the Lorenz curve, the Gini coefficient, absolute and relative poverty — are developed fully in Theme 3.2.</em></p>
+
+<!-- ===== INTERVENTION ===== -->
+<h2>8. Government Intervention and Its Limits</h2>
+
+<h3>8.1 The Case for Intervention</h3>
+<p>Government intervenes to correct market failure, to stabilise the economy over the cycle, and to redistribute. The instruments:</p>
+<table>
+  <tr><th>Instrument</th><th>Best used for</th><th>Limitations</th></tr>
+  <tr><td><strong>Indirect taxes</strong></td><td>Negative externalities and demerit goods — internalising the external cost</td><td>Regressive; the right tax rate requires valuing the externality, which is contested; inelastic demand means little behaviour change</td></tr>
+  <tr><td><strong>Subsidies</strong></td><td>Positive externalities and merit goods</td><td>Expensive, with an opportunity cost; risk of subsidising activity that would have happened anyway; can entrench inefficient producers</td></tr>
+  <tr><td><strong>Tradable permits</strong></td><td>Pollution, where the target quantity matters more than the price</td><td>Setting the cap needs good information; price volatility; risk of carbon leakage to unregulated countries</td></tr>
+  <tr><td><strong>Regulation and standards</strong></td><td>Where the acceptable quantity is zero or near-zero, or where monitoring price signals is impractical</td><td>Compliance and enforcement costs; blunt — does not equalise marginal abatement cost across firms</td></tr>
+  <tr><td><strong>State provision</strong></td><td>Public goods; merit goods where universal access is the objective</td><td>Funded by taxation with an opportunity cost; no price signal, so risk of X-inefficiency and excess demand</td></tr>
+  <tr><td><strong>Price controls</strong></td><td>Protecting consumers from monopoly pricing (the energy price cap) or workers from low pay (the National Living Wage)</td><td>Shortages or surpluses; cap can become a focal price that firms cluster at</td></tr>
+  <tr><td><strong>Information provision and nudges</strong></td><td>Information failure</td><td>Weak on its own; can be swamped by advertising</td></tr>
+  <tr><td><strong>Property rights</strong></td><td>Common-access resources — fishing quotas, water abstraction licences</td><td>Enforcement is hard, especially across borders</td></tr>
+</table>
+
+<h3>8.2 Government Failure</h3>
+<div class="def-box">
+<strong>Government failure:</strong> Where intervention intended to correct a market failure produces a net welfare loss — the cure is worse than the disease, or at least costs more than the problem it solves.
+</div>
+<ul>
+  <li><strong>Information failure in government:</strong> the state cannot know the true value of an externality, the right level of a price cap, or firms' real costs. Every intervention is calibrated under uncertainty.</li>
+  <li><strong>Unintended consequences:</strong> landfill tax raised fly-tipping; a high marginal tax rate can prompt avoidance rather than revenue; diesel was promoted in Europe for its lower CO&#8322; and produced an air-quality crisis instead.</li>
+  <li><strong>Administrative and compliance costs:</strong> the intervention consumes real resources that have an opportunity cost.</li>
+  <li><strong>Regulatory capture:</strong> the regulator comes to reflect the priorities of the industry it supervises, because that is where its information comes from.</li>
+  <li><strong>Political short-termism:</strong> the electoral cycle is shorter than the payback period on infrastructure, training and climate investment.</li>
+  <li><strong>Policy instability:</strong> frequently changed rules deter investment by raising the risk premium firms apply to long-lived projects.</li>
+  <li><strong>Moral hazard created by the state itself:</strong> a bailout guarantee encourages exactly the risk-taking it later has to pay for — see section 16.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Government Failure in the Water Industry</strong><br>
+Water and sewerage in England and Wales is a natural monopoly regulated by Ofwat. Intervention was necessary — competition is impossible — but the design failed. The regulator set price controls with far less information than the companies had, focused on prices and outputs rather than balance sheets, and allowed companies to load up on debt and pay dividends while under-investing in infrastructure. Thames Water, serving around 16 million customers, was carrying roughly £19bn of debt in 2026 and surviving on emergency creditor funding, with special administration under open discussion. Ofwat's PR24 settlement for 2025–2030 allows average bills to rise by about £157 (roughly 36%) before inflation to fund catch-up investment — consumers paying twice for the regulatory failure. Following the Cunliffe Review (July 2025) and the water white paper of January 2026, the government is abolishing Ofwat and merging the water functions of several bodies into a single integrated regulator, the Clean Water Authority, through legislation progressing in 2026. This is the textbook illustration that correcting market failure requires the regulator to have information, powers and incentives that match the firm's — and that when it does not, the result is government failure layered on top of the original market failure.
+</div>
+
+<!-- ===== PART B: MACRO POLICY IMPACT ===== -->
+<h2>9. Aggregate Demand, Capacity and the Multiplier</h2>
+
+<div class="eq">AD = C + I + G + (X &minus; M)</div>
+
+<table>
+  <tr><th>Component</th><th>Share of UK AD (approx.)</th><th>Principal determinants</th></tr>
+  <tr><td><strong>C</strong> — household consumption</td><td>Around 60%</td><td>Real disposable income, consumer confidence, interest rates, wealth (house and equity prices), credit availability</td></tr>
+  <tr><td><strong>I</strong> — investment by firms</td><td>Around 17–18%</td><td>Expected demand and profit, interest rates and the cost of finance, business confidence ("animal spirits"), corporation tax and capital allowances, spare capacity</td></tr>
+  <tr><td><strong>G</strong> — government spending</td><td>Around 20%</td><td>Political choices constrained by the fiscal rules and by debt interest costs</td></tr>
+  <tr><td><strong>X − M</strong> — net trade</td><td>Usually negative for the UK</td><td>The exchange rate, relative inflation and competitiveness, world and domestic income, trade barriers</td></tr>
+</table>
+
+<h3>9.1 Full Capacity Output</h3>
+<div class="def-box">
+<strong>Full capacity output:</strong> The maximum sustainable output an economy can produce with its existing factors of production and technology. Beyond it, extra demand pulls in imports and raises prices rather than raising real output. The <strong>output gap</strong> is the difference between actual and potential output: negative when there is spare capacity, positive when the economy is overheating.
+</div>
+<p>This is the single most important idea for evaluating demand-side policy. <strong>The same stimulus has completely different effects depending on where the economy sits relative to capacity.</strong> With a large negative output gap, higher AD raises real output and employment with little inflation. Close to full capacity, the same stimulus mostly raises the price level.</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 480 380" width="480" height="380">
+  <line x1="65" y1="320" x2="440" y2="320" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="65" y1="320" x2="65" y2="25" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="440,320 432,315 432,325" fill="#1a1a2e"/>
+  <polygon points="65,25 60,33 70,33" fill="#1a1a2e"/>
+  <!-- Keynesian LRAS: flat while spare capacity, vertical at full capacity -->
+  <path d="M 95 250 L 290 250 Q 345 250 355 150 L 358 45" fill="none" stroke="#2563eb" stroke-width="3"/>
+  <text x="362" y="58" font-size="12" fill="#2563eb" font-weight="600">LRAS</text>
+  <line x1="356" y1="140" x2="356" y2="320" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <!-- AD1 -->
+  <line x1="80" y1="130" x2="285" y2="320" stroke="#059669" stroke-width="2.5"/>
+  <text x="62" y="126" font-size="12" fill="#059669" font-weight="600">AD&#8321;</text>
+  <!-- AD2 -->
+  <line x1="120" y1="110" x2="325" y2="300" stroke="#059669" stroke-width="2.5" stroke-dasharray="7,4"/>
+  <text x="102" y="106" font-size="12" fill="#059669" font-weight="600">AD&#8322;</text>
+  <!-- AD3 -->
+  <line x1="260" y1="50" x2="435" y2="212" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="3,3"/>
+  <text x="242" y="46" font-size="12" fill="#7c3aed" font-weight="600">AD&#8323;</text>
+  <!-- eq 1 -->
+  <circle cx="209" cy="250" r="4.5" fill="#1a1a2e"/>
+  <line x1="209" y1="250" x2="209" y2="320" stroke="#1a1a2e" stroke-width="1.1" stroke-dasharray="4,3"/>
+  <text x="201" y="336" font-size="11" fill="#1a1a2e" font-weight="600">Y&#8321;</text>
+  <!-- eq 2 -->
+  <circle cx="271" cy="250" r="4.5" fill="#1a1a2e"/>
+  <line x1="271" y1="250" x2="271" y2="320" stroke="#1a1a2e" stroke-width="1.1" stroke-dasharray="4,3"/>
+  <text x="263" y="336" font-size="11" fill="#1a1a2e" font-weight="600">Y&#8322;</text>
+  <!-- shared price level for eq1 and eq2 -->
+  <line x1="65" y1="250" x2="209" y2="250" stroke="#1a1a2e" stroke-width="1.1" stroke-dasharray="4,3"/>
+  <text x="28" y="254" font-size="11" fill="#1a1a2e" font-weight="600">P&#8321;&#61;P&#8322;</text>
+  <!-- eq 3 on the vertical section -->
+  <circle cx="356" cy="139" r="4.5" fill="#7c3aed"/>
+  <line x1="65" y1="139" x2="356" y2="139" stroke="#7c3aed" stroke-width="1.1" stroke-dasharray="4,3"/>
+  <text x="36" y="143" font-size="11" fill="#7c3aed" font-weight="600">P&#8323;</text>
+  <text x="344" y="336" font-size="11" fill="#7c3aed" font-weight="600">Y&#8323;</text>
+  <text x="240" y="300" font-size="10.5" fill="#6b7280">spare capacity:</text>
+  <text x="240" y="312" font-size="10.5" fill="#6b7280">output rises, prices flat</text>
+  <text x="268" y="196" font-size="10.5" fill="#7c3aed">at full capacity:</text>
+  <text x="268" y="208" font-size="10.5" fill="#7c3aed">prices rise, output flat</text>
+  <text x="445" y="325" font-size="13" fill="#1a1a2e" font-weight="600">Y</text>
+  <text x="20" y="20" font-size="13" fill="#1a1a2e" font-weight="600">Price level</text>
+</svg>
+<div class="diagram-caption">Figure 3: Aggregate demand and full capacity output. A rise in AD from AD&#8321; to AD&#8322; along the flat section raises real output with almost no effect on the price level. The same sized rise from AD&#8322; to AD&#8323;, where the economy is at capacity, is absorbed almost entirely in a higher price level. This single diagram answers most "should the government stimulate demand?" questions.</div>
+</div>
+
+<h3>9.2 The Multiplier</h3>
+<div class="def-box">
+<strong>The multiplier effect:</strong> An initial injection into the circular flow leads to a final change in national income that is <em>larger</em> than the injection, because the recipients of the initial spending themselves spend part of it, generating income for others, and so on.
+</div>
+
+<div class="eq">k = 1 &divide; (1 &minus; MPC)&nbsp;&nbsp;&nbsp;or equivalently&nbsp;&nbsp;&nbsp;k = 1 &divide; (MPS + MRT + MPM)</div>
+
+<p>Where MPC is the marginal propensity to consume, and the withdrawals are savings (MPS), taxation (MRT) and imports (MPM). If the MPC is 0.6, the multiplier is 1 ÷ 0.4 = 2.5: a £1bn injection eventually raises national income by £2.5bn.</p>
+
+<h4>Determinants of the multiplier's size</h4>
+<ul>
+  <li><strong>The marginal propensity to consume.</strong> Larger MPC, larger multiplier. This is why <em>who</em> receives the money matters: lower-income households have a much higher MPC than wealthy ones, so a given sum spent on benefits or on the lowest-paid generates more activity than the same sum in a tax cut for high earners.</li>
+  <li><strong>The marginal propensity to import.</strong> In an open economy like the UK, a large share of extra spending leaks abroad, which is why UK multiplier estimates are modest.</li>
+  <li><strong>The marginal rate of tax.</strong> Higher tax rates withdraw more at each round.</li>
+  <li><strong>Spare capacity.</strong> With unemployed resources the multiplier works on real output; at full capacity it works on prices and imports instead — the multiplier is effectively much smaller.</li>
+  <li><strong>The monetary policy response.</strong> If the central bank offsets a fiscal stimulus by raising interest rates, the effective multiplier shrinks. This matters directly in 2026: with CPI inflation at 3.1% in the year to August 2026 and three MPC members voting for a rate <em>rise</em> in September 2026, a fiscal loosening would be more likely to be offset than accommodated.</li>
+  <li><strong>Crowding out.</strong> Government borrowing that raises interest rates or absorbs scarce resources can displace private investment.</li>
+</ul>
+<p>The multiplier also works <strong>in reverse</strong>: a withdrawal (spending cuts, tax rises, a fall in exports) produces a larger contraction than the initial change. And it interacts with the <strong>accelerator</strong>: rising output raises expected demand, which triggers investment, which raises output again.</p>
+
+<!-- ===== FISCAL ===== -->
+<h2>10. Fiscal Policy and Its Impact on Firms and Individuals</h2>
+
+<div class="def-box">
+<strong>Fiscal policy:</strong> The use of government spending, taxation and borrowing to influence aggregate demand and the supply side of the economy.
+</div>
+
+<h3>10.1 The UK Fiscal Framework in 2026</h3>
+<ul>
+  <li>The <strong>Office for Budget Responsibility (OBR)</strong>, created in 2010, produces the independent forecasts against which the fiscal rules are judged. From 2025–26 the government legislated for the OBR to formally assess performance against the rules <strong>once a year at the Budget</strong>, while still publishing a second five-year forecast each spring.</li>
+  <li>The <strong>stability rule</strong>: the current budget must be in balance or surplus by 2029–30, so the government borrows only to invest. From 2026–27 "balance" is defined with a margin of 0.5% of GDP either side.</li>
+  <li>The <strong>investment rule</strong>: public sector net financial liabilities must be falling as a share of GDP by the target year — a measure that counts financial assets as well as debt, giving more room for productive public investment.</li>
+  <li>At the spring 2026 forecast, headroom was around £23.6bn against the stability rule and £27.1bn against the investment rule in 2029–30 — figures small enough that a modest change in gilt yields or growth can wipe them out, which is why the OBR forecast has become a political event in its own right.</li>
+  <li>Growth context: the UK economy grew 1.3% in 2025, and the OBR's spring 2026 forecast expected 1.1% growth in 2026.</li>
+</ul>
+
+<h3>10.2 How Fiscal Policy Lands on Firms</h3>
+<table>
+  <tr><th>Fiscal change</th><th>Transmission to the firm</th><th>Firm-level response</th></tr>
+  <tr><td><strong>Corporation tax</strong> (UK main rate 25%, capped at 25% for the Parliament under the 2024 Corporate Tax Roadmap)</td><td>Reduces post-tax return on investment projects</td><td>Marginal projects fail the hurdle rate and are shelved; multinationals may book profit elsewhere</td></tr>
+  <tr><td><strong>Capital allowances</strong> — full expensing of qualifying plant and machinery</td><td>Brings forward the tax relief on capital spending, cutting the effective cost of investment</td><td>Brings capital projects forward; biases investment toward qualifying assets</td></tr>
+  <tr><td><strong>Employer National Insurance contributions</strong> — the employer rate rose from 13.8% to 15% with a much lower threshold from April 2025</td><td>A direct rise in the cost of employing each worker, weighted toward part-time and lower-paid staff</td><td>Hiring freezes, fewer hours, automation, or passing the cost into prices; labour-intensive sectors such as hospitality, retail and social care are hit hardest</td></tr>
+  <tr><td><strong>Business rates</strong></td><td>A fixed cost tied to property, unrelated to profitability</td><td>Penalises physical premises relative to online operation; a long-standing complaint from high-street retail</td></tr>
+  <tr><td><strong>Government spending and procurement</strong></td><td>Direct demand for construction, defence, healthcare and IT suppliers</td><td>Order books, capacity planning and hiring in those supply chains</td></tr>
+  <tr><td><strong>Indirect taxes and levies</strong> (fuel duty, UK ETS, SDIL)</td><td>Raise variable costs or force reformulation</td><td>Price pass-through where demand is inelastic; product redesign where it is elastic</td></tr>
+</table>
+
+<h3>10.3 How Fiscal Policy Lands on Individuals</h3>
+<ul>
+  <li><strong>Real disposable income</strong> is the direct channel: income tax, National Insurance and VAT all change take-home pay and purchasing power.</li>
+  <li><strong>Fiscal drag.</strong> Freezing income tax thresholds while wages rise pulls people into higher bands without any headline rate rising. With CPI inflation at 3.1% in the year to August 2026 and the National Living Wage up to £12.71 an hour from April 2026, frozen thresholds raise the average tax rate on low and middle earners year after year. It is a tax rise that requires no announcement.</li>
+  <li><strong>Distributional effects.</strong> Direct progressive taxes and means-tested benefits reduce inequality; indirect taxes such as VAT and duties are generally regressive as a share of income. The overall effect of a Budget depends on the package, which is why distributional analysis is published alongside it.</li>
+  <li><strong>Incentives.</strong> High marginal withdrawal rates where benefits taper create the poverty trap; high marginal tax rates may affect hours worked, though the empirical effect for most employees is small.</li>
+  <li><strong>Public services.</strong> Spending decisions change the <strong>social wage</strong> — the value of healthcare, education and transport a household receives without paying directly — which matters far more to low-income households than to high-income ones.</li>
+</ul>
+
+<div class="eval-box">
+<strong>Evaluation: The Limits of Fiscal Policy</strong>
+<ul>
+  <li><strong>Time lags:</strong> recognition, decision (Budgets come once or twice a year), implementation and impact lags mean a stimulus can arrive after the downturn has ended.</li>
+  <li><strong>Crowding out:</strong> borrowing may raise gilt yields and displace private investment — a live concern in 2026, when rising borrowing costs were reported to have eroded much of the Chancellor's headroom.</li>
+  <li><strong>Debt interest:</strong> a large stock of index-linked gilts means higher inflation feeds straight into debt servicing costs, squeezing everything else.</li>
+  <li><strong>Political constraints:</strong> spending is easier to increase than to cut, so discretionary fiscal policy has a deficit bias.</li>
+  <li><strong>Automatic stabilisers</strong> work without any of these lags — tax receipts fall and benefit spending rises in a downturn — and are often the more effective part of fiscal policy.</li>
+</ul>
+</div>
+
+<!-- ===== MONETARY ===== -->
+<h2>11. Monetary Policy and Its Impact on Firms and Individuals</h2>
+
+<div class="def-box">
+<strong>Monetary policy:</strong> Control of the money supply, interest rates and credit conditions to meet a target. The Bank of England's Monetary Policy Committee (MPC) has operational independence to meet the government's <strong>2% CPI inflation target</strong>, subject to supporting growth and employment.
+</div>
+
+<h3>11.1 The Position in September 2026</h3>
+<ul>
+  <li>On <strong>16 September 2026</strong> the MPC voted <strong>6–3 to hold Bank Rate at 3.75%</strong>, the sixth consecutive hold since the cut to 3.75% in December 2025. The three dissenters voted for a rise to 4%.</li>
+  <li><strong>CPI inflation was 3.1% in the year to August 2026</strong>, up from 2.9% in July, driven substantially by higher global energy prices; CPIH was 3.3%, services inflation 3.4% and core inflation 2.6%. Headline inflation was therefore more than a percentage point above target and expected to rise further in the near term — though core inflation <em>below</em> target is a large part of why six members judged the shock to be a supply-side one that would pass.</li>
+  <li>The <strong>unemployment rate was 4.9%</strong> over May to July 2026, with youth unemployment at 16.4% — a loosening labour market pulling in the opposite direction to the energy-driven inflation.</li>
+</ul>
+<p>That combination — inflation above target for supply-side reasons while the labour market weakens — is the classic monetary policy dilemma. Raise rates and you deepen the slowdown; hold or cut and you risk second-round effects as higher energy costs feed into wage demands and become embedded.</p>
+
+<h3>11.2 The Transmission Mechanism</h3>
+<p>A change in Bank Rate reaches the real economy through several channels, with a lag usually estimated at 18 months to two years:</p>
+<ol>
+  <li><strong>Market rates:</strong> mortgage, savings and business lending rates follow Bank Rate.</li>
+  <li><strong>Asset prices:</strong> house prices and equity prices respond to discount rates, changing household wealth.</li>
+  <li><strong>Expectations and confidence:</strong> the signal about the future path of policy affects spending and investment decisions immediately.</li>
+  <li><strong>The exchange rate:</strong> higher rates attract capital inflows, appreciating sterling.</li>
+  <li><strong>Credit availability:</strong> banks' willingness to lend tightens or loosens independently of the price of credit.</li>
+</ol>
+
+<h3>11.3 Impact on Firms</h3>
+<ul>
+  <li><strong>Cost of borrowing and the hurdle rate.</strong> Higher rates raise the discount rate applied to future cash flows, so fewer investment projects clear the hurdle. Capital-intensive, long-payback sectors — property development, renewables, infrastructure — are most sensitive.</li>
+  <li><strong>Working capital and refinancing.</strong> Firms on floating-rate debt feel the change immediately; firms refinancing fixed-rate debt taken out in the low-rate era face a step change in interest costs.</li>
+  <li><strong>Demand for the product.</strong> For firms selling on credit — cars, furniture, housing, big-ticket retail — the rate affects the customer's monthly payment, so demand falls before the firm's own costs even change.</li>
+  <li><strong>Exchange rate and exporters.</strong> A rate rise that appreciates sterling makes UK exports dearer abroad and imports cheaper at home. An exporter with costs in sterling and prices in dollars sees its margin compressed directly; an importer of components gains. This is the sharpest illustration that the same policy helps some firms and hurts others.</li>
+  <li><strong>Inventory and hiring decisions.</strong> Higher financing costs make holding stock expensive and make firms slower to hire.</li>
+</ul>
+
+<h3>11.4 Impact on Individuals</h3>
+<ul>
+  <li><strong>Mortgage holders</strong> on variable or expiring fixed deals see monthly payments rise, cutting disposable income directly. Because most UK fixes are short (two to five years), a change in Bank Rate passes through to households over several years rather than at once.</li>
+  <li><strong>Savers</strong> gain, which partly offsets the effect in aggregate but redistributes from younger, indebted households to older, asset-holding ones.</li>
+  <li><strong>Renters</strong> are affected indirectly as landlords' costs feed into rents.</li>
+  <li><strong>Consumer confidence and the wealth effect:</strong> falling house prices reduce perceived wealth and raise precautionary saving, amplifying the direct effect.</li>
+  <li><strong>Employment:</strong> tighter policy slows hiring, and the burden falls disproportionately on new entrants to the labour market — visible in the 16.4% youth unemployment rate in 2026.</li>
+</ul>
+
+<h3>11.5 Other Monetary Instruments</h3>
+<ul>
+  <li><strong>Quantitative easing (QE):</strong> central bank purchases of government bonds to lower long-term yields and raise asset prices when Bank Rate is near its floor. The Bank has been running <strong>quantitative tightening</strong> since 2022, reducing the stock of gilts it holds.</li>
+  <li><strong>Forward guidance:</strong> communicating the likely future path of policy so that expectations do the work.</li>
+  <li><strong>Macroprudential tools:</strong> set by the Financial Policy Committee rather than the MPC — the countercyclical capital buffer and the mortgage loan-to-income flow limit. These target financial stability, not inflation, and are covered in section 18.</li>
+</ul>
+
+<div class="eval-box">
+<strong>Evaluation: The Limits of Monetary Policy</strong>
+<ul>
+  <li><strong>Long and variable lags</strong> mean the MPC is always setting policy for an economy it cannot yet observe.</li>
+  <li><strong>It is a blunt instrument:</strong> one interest rate for every region, sector and household. It cannot distinguish an overheating South East from a weak region, or a mortgage-free retiree from a first-time buyer.</li>
+  <li><strong>It is poorly suited to supply-side inflation.</strong> The 2026 inflation is driven substantially by global energy prices; raising Bank Rate does nothing to increase the supply of crude oil. The MPC raises rates in these circumstances to stop second-round effects — wage and price expectations — not to fix the original shock.</li>
+  <li><strong>Liquidity trap:</strong> at very low rates, further cuts may not stimulate spending if confidence is absent.</li>
+  <li><strong>Distributional consequences</strong> are large and unchosen: monetary policy redistributes between borrowers and savers, and between generations, with no democratic decision about who should bear it.</li>
+</ul>
+</div>
+
+<!-- ===== SUPPLY SIDE ===== -->
+<h2>12. Supply-Side Policy and Its Impact on Firms and Individuals</h2>
+
+<div class="def-box">
+<strong>Supply-side policy:</strong> Measures intended to raise the productive potential of the economy — shifting LRAS to the right — by improving the quantity, quality or efficiency of the factors of production. Supply-side policy is the only way to raise output <em>and</em> lower inflation at the same time.
+</div>
+
+<h3>12.1 Market-Based and Interventionist Measures</h3>
+<table>
+  <tr><th>Market-based (reduce state involvement)</th><th>Interventionist (state provides or directs)</th></tr>
+  <tr><td>Cutting marginal income and corporation tax rates to sharpen incentives</td><td>Education, training and apprenticeship funding</td></tr>
+  <tr><td>Reducing benefit generosity or tightening conditionality to raise participation</td><td>Infrastructure investment — transport, grid, housing</td></tr>
+  <tr><td>Labour market deregulation and reducing trade union restrictive practices</td><td>R&amp;D tax credits and public research funding</td></tr>
+  <tr><td>Privatisation, deregulation and opening markets to competition</td><td>Regional and industrial policy, investment zones</td></tr>
+  <tr><td>Planning liberalisation to let housing and energy infrastructure be built</td><td>Subsidised childcare to raise participation, particularly of mothers</td></tr>
+</table>
+
+<h3>12.2 Impact on Firms</h3>
+<ul>
+  <li><strong>Lower unit costs</strong> through better-skilled labour, faster transport links and a more reliable grid connection — this shifts the firm's cost curves down and raises international competitiveness.</li>
+  <li><strong>Higher returns on investment</strong> where capital allowances and R&amp;D credits raise the post-tax return, which is the direct link from supply-side tax policy to the investment component of AD.</li>
+  <li><strong>Access to skills:</strong> the binding constraint reported by many UK firms is not finance but the inability to recruit — so training policy acts on the supply side and the firm's costs simultaneously.</li>
+  <li><strong>Regulatory burden:</strong> planning delays and consenting times are a major cost for capital projects; reform lowers them, but deregulation has its own risks, as the water and financial sectors both demonstrate.</li>
+</ul>
+
+<h3>12.3 Impact on Individuals</h3>
+<ul>
+  <li><strong>Real wages</strong> ultimately depend on productivity, so supply-side success is the only sustainable route to higher living standards. The UK's weak productivity growth since 2008 is the underlying reason real wages stagnated for so long.</li>
+  <li><strong>Employability:</strong> training and retraining directly attack the occupational immobility of section 6.</li>
+  <li><strong>Participation:</strong> childcare provision, health interventions to reduce economic inactivity and flexible working all raise labour supply.</li>
+  <li><strong>Distribution:</strong> market-based supply-side reforms (lower top tax rates, weaker employment protection) often increase inequality even while raising aggregate output — the equity–efficiency trade-off again.</li>
+</ul>
+
+<div class="eval-box">
+<strong>Evaluation: Supply-Side Policy</strong>
+<ul>
+  <li><strong>Long time lags:</strong> a child entering school today affects the labour force in a decade or more, and major infrastructure takes as long. This is precisely why political short-termism under-supplies it.</li>
+  <li><strong>Uncertain effectiveness:</strong> the link between a tax cut and actual investment depends on expectations of demand — firms do not invest into a market they think is shrinking, however generous the allowances.</li>
+  <li><strong>Opportunity cost:</strong> interventionist supply-side policy is spending, which must be financed within the fiscal rules.</li>
+  <li><strong>Equity effects:</strong> market-based measures can widen inequality; interventionist ones can be captured by well-organised interests.</li>
+  <li><strong>It is the only answer to stagflation.</strong> When inflation is above target and growth is weak — the UK's position in 2026 — demand-side policy faces a direct trade-off and supply-side policy does not.</li>
+</ul>
+</div>
+
+<!-- ===== CONFLICTS ===== -->
+<h2>13. Conflicts Between Policy Objectives</h2>
+
+<p>The four principal macroeconomic objectives — <strong>low and stable inflation, sustainable growth, low unemployment, and a sustainable balance of payments</strong> — plus the subsidiary objectives of balanced public finances, reduced inequality and environmental sustainability, cannot all be met at once.</p>
+
+<table>
+  <tr><th>Conflict</th><th>Mechanism</th><th>2026 illustration</th></tr>
+  <tr><td><strong>Inflation vs unemployment</strong></td><td>The short-run Phillips curve: reducing unemployment by raising AD bids up wages and prices</td><td>The MPC held at 3.75% in September 2026 with inflation at 3.1% and unemployment at 4.9% — three members wanted to prioritise inflation, six the risk to activity</td></tr>
+  <tr><td><strong>Growth vs the current account</strong></td><td>Faster domestic growth sucks in imports, widening the trade deficit</td><td>The UK's persistent goods trade deficit widens whenever domestic demand recovers</td></tr>
+  <tr><td><strong>Growth vs the environment</strong></td><td>Output growth has historically raised emissions and resource use</td><td>The UK ETS cap and its planned linkage with the EU scheme are an attempt to decouple the two</td></tr>
+  <tr><td><strong>Growth vs equity</strong></td><td>Measures that sharpen incentives often widen the distribution</td><td>Market-based supply-side reform versus redistribution through the tax and benefit system</td></tr>
+  <tr><td><strong>Fiscal consolidation vs growth</strong></td><td>Tightening to meet the fiscal rules withdraws demand through the reverse multiplier</td><td>Headroom of around £23.6bn against the stability rule in the spring 2026 forecast constrains any discretionary loosening</td></tr>
+  <tr><td><strong>Monetary vs fiscal policy</strong></td><td>A fiscal loosening that raises demand may be offset by a tighter monetary stance</td><td>With three MPC members voting for a rise in September 2026, a fiscal stimulus would be more likely to be leaned against than accommodated</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Policy-conflict questions are where the highest evaluation marks sit. Structure your answer around three variables: <strong>where the economy is relative to capacity</strong>, <strong>whether the shock is on the demand side or the supply side</strong>, and <strong>the time horizon</strong>. A supply-side shock creates a genuine short-run trade-off that demand-side policy cannot resolve, but supply-side policy can resolve in the long run.
+</div>
+
+<!-- ===== PART C: RISK AND FINANCE ===== -->
+<h2>14. Risk and Uncertainty</h2>
+
+<div class="def-box">
+<strong>Risk:</strong> A situation in which the possible outcomes are known and a probability can be attached to each. Risk can be measured, priced, insured against and traded.<br><br>
+<strong>Uncertainty:</strong> A situation in which the possible outcomes, or their probabilities, are unknown. Frank Knight's distinction (1921): uncertainty cannot be quantified, and therefore cannot be insured or hedged in the ordinary way.
+</div>
+
+<p>The distinction is the foundation of the whole financial sector. Everything the sector does — insurance, derivatives, diversification, credit scoring — works by converting <em>uncertainty</em> into <em>measurable risk</em> that can be priced and spread. When that conversion fails, because the model of the world was wrong, the consequences are severe: the 2008 crisis happened in large part because instruments were priced on the assumption that house prices across different US regions were statistically independent, when in fact they were not.</p>
+
+<h3>14.1 Attitudes to Risk</h3>
+<ul>
+  <li><strong>Risk averse:</strong> prefers a certain outcome to a gamble with the same expected value. Most households most of the time — which is why insurance exists and why people pay more than the actuarially fair premium for it.</li>
+  <li><strong>Risk neutral:</strong> judges only by expected value. A useful approximation for large, well-diversified institutions.</li>
+  <li><strong>Risk loving:</strong> prefers the gamble. Explains gambling and some entrepreneurial behaviour.</li>
+</ul>
+<p><strong>Behavioural qualifications:</strong> Kahneman and Tversky's prospect theory shows that people are loss-averse (a loss hurts roughly twice as much as an equivalent gain pleases), that they overweight small probabilities (buying lottery tickets and insuring against remote events at once), and that framing changes the decision. Risk-taking in real markets is therefore not the smooth, rational calculation the standard model assumes — herding, overconfidence and recency bias are pervasive.</p>
+
+<h3>14.2 Risk and Entrepreneurship</h3>
+<p>Risk-bearing is the economic function of the entrepreneur, and profit is in part the reward for bearing it. Policy that reduces unquantifiable uncertainty — stable rules, credible institutions, an independent central bank, predictable tax treatment — raises investment more cheaply than any subsidy, because it lowers the risk premium firms apply to long-lived projects. Conversely, frequent policy reversals are a tax on investment that appears in no Budget document.</p>
+
+<!-- ===== FINANCIAL SECTOR ROLES ===== -->
+<h2>15. The Roles of the Financial Sector</h2>
+
+<p>The specification asks for four functions specifically. Financial markets do not produce anything physical; their economic contribution is to move resources across <em>time</em>, across <em>people</em>, and across <em>states of the world</em>.</p>
+
+<h3>15.1 Channelling Savings into Investment</h3>
+<p>The core function of <strong>financial intermediation</strong>. Households have surplus funds and short horizons; firms need long-term capital. Banks and other intermediaries bridge that gap by performing three transformations:</p>
+<ul>
+  <li><strong>Maturity transformation:</strong> borrowing short (instant-access deposits) and lending long (25-year mortgages, multi-year business loans). This creates value — and creates the possibility of a bank run, because the bank cannot repay all depositors at once by design.</li>
+  <li><strong>Risk transformation:</strong> pooling many loans so that the failure of any one borrower is absorbed by the portfolio, and screening borrowers to reduce adverse selection.</li>
+  <li><strong>Size transformation:</strong> aggregating many small deposits into large loans.</li>
+</ul>
+<p>Without intermediation, investment would be limited to firms' retained profits and personal wealth, and the allocation of capital would depend on who happened to be rich rather than on which project had the highest return.</p>
+
+<h3>15.2 Providing a Market for Equities</h3>
+<p>Equity markets do two distinct jobs:</p>
+<ul>
+  <li><strong>The primary market</strong> raises new capital — an initial public offering or a rights issue converts investors' savings directly into a firm's investment funds.</li>
+  <li><strong>The secondary market</strong> (the London Stock Exchange and its equivalents) does not raise new money for the firm at all, but makes the primary market possible: nobody would buy a share they could never sell. Liquidity in the secondary market lowers the cost of capital in the primary market.</li>
+</ul>
+<p>Equity markets also perform <strong>price discovery</strong> — the share price aggregates dispersed information into a single number — and provide the <strong>market for corporate control</strong>, since an underperforming management team can be removed via takeover. That disciplining role is real, but it is also the source of short-termism, since managers judged on a quarterly share price may cut R&amp;D and training to hit it.</p>
+
+<h3>15.3 Forward Markets in Currencies and Commodities</h3>
+<div class="def-box">
+<strong>Forward (and futures) market:</strong> A market in contracts to buy or sell an asset at a price agreed <em>today</em> for delivery at a specified date in the <em>future</em>. Its economic purpose is <strong>hedging</strong>: transferring price risk from someone who does not want to bear it to someone who is willing to.
+</div>
+<ul>
+  <li>A UK manufacturer that has agreed to be paid $5m in six months can sell those dollars forward today, fixing the sterling value and removing exchange-rate risk from the contract entirely. The firm can then quote a price and plan production without betting on the currency.</li>
+  <li>An airline can buy jet fuel futures to fix its largest variable cost, and a food manufacturer can hedge wheat. A farmer can sell the harvest forward before planting it, which is what makes the investment in planting financeable.</li>
+  <li>The counterparty is a <strong>speculator</strong> who accepts the risk in exchange for expected return. Speculators are what make hedging possible: without someone willing to take the other side, there is no hedge. This is the strongest efficiency argument for speculation.</li>
+</ul>
+
+<h3>15.4 Facilitating the Exchange of Goods and Services</h3>
+<p>The payments system — cash, bank transfers, card networks, faster payments, and increasingly account-to-account payments under open banking — is what allows specialisation and exchange to happen at all. Trade credit, letters of credit, trade finance and foreign exchange conversion do the same for international trade. This function is invisible when it works and catastrophic when it fails, which is why payment infrastructure is treated as critical national infrastructure and why <strong>operational resilience</strong> is now a formal regulatory objective.</p>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Why Firms Hedge — Exchange Rate Risk for a UK Exporter</strong><br>
+Consider a mid-sized UK engineering firm exporting to the United States. It agrees a contract worth $4m payable in nine months. If sterling appreciates over that period, the sterling value of the payment falls and the contract may become loss-making, even though nothing about the firm's operations has changed. The exchange rate is affected by, among other things, the interest rate differential — so a decision by the MPC, taken for entirely domestic reasons, can wipe out the margin on an export contract signed months earlier. By selling the dollars forward the firm converts an uncertain sterling receipt into a certain one. It gives up the upside if sterling depreciates, which is precisely the point: the firm is in engineering, not currency speculation. This example ties three parts of the specification together — the financial sector's forward-market role, the exchange-rate transmission channel of monetary policy, and the distinction between risk that can be hedged and uncertainty that cannot.
+</div>
+
+<!-- ===== SYSTEMIC RISK ===== -->
+<h2>16. Systemic Risk, Moral Hazard and Speculative Bubbles</h2>
+
+<h3>16.1 Systemic Risk</h3>
+<div class="def-box">
+<strong>Systemic risk:</strong> The risk that the failure of one institution, or a shock to one market, cascades through the financial system and damages the real economy. It is an <strong>externality</strong>: a bank choosing its own level of risk considers its own possible failure, not the cost its failure would impose on everyone else. Because that cost is not priced, the market generates too much of it.
+</div>
+<p>Systemic risk is transmitted by:</p>
+<ul>
+  <li><strong>Interconnectedness:</strong> banks lend to each other, so one failure becomes many.</li>
+  <li><strong>Contagion and loss of confidence:</strong> depositors and lenders cannot tell a solvent bank from an insolvent one, so they withdraw from all of them — an information failure producing a run.</li>
+  <li><strong>Fire sales:</strong> institutions forced to sell assets to raise cash push prices down, causing losses for everyone holding the same asset, forcing further sales.</li>
+  <li><strong>Common exposures:</strong> many institutions holding the same asset class means a single shock hits them all at once.</li>
+  <li><strong>The credit channel:</strong> banks that lose capital stop lending, so the shock reaches firms and households that had nothing to do with the original problem.</li>
+</ul>
+
+<h3>16.2 Moral Hazard</h3>
+<div class="def-box">
+<strong>Moral hazard:</strong> The tendency to take greater risks when protected from the consequences. In finance the classic case is <strong>"too big to fail"</strong>: an institution whose collapse would be intolerable expects to be rescued, so it takes risks it would otherwise avoid — and, because lenders share that expectation, it also borrows more cheaply than its risk warrants, an implicit public subsidy.
+</div>
+<p>Moral hazard also appears in <strong>bonus structures</strong> that reward short-term profit while losses fall on shareholders or taxpayers, and in <strong>deposit insurance</strong>, which is necessary to prevent runs but reduces depositors' incentive to check whether their bank is sound. Almost every post-2008 reform is an attempt to neutralise moral hazard: higher capital requirements so shareholders bear more loss, bonus deferral and clawback, and resolution regimes designed to let a large bank fail without bringing down the system.</p>
+
+<h3>16.3 Speculation and Market Bubbles</h3>
+<div class="def-box">
+<strong>Speculative bubble:</strong> A sustained rise in an asset's price far above any plausible valuation based on its fundamentals, driven by expectations of further price rises rather than by the income the asset generates. Bubbles end in a crash when expectations reverse.
+</div>
+<p><strong>The anatomy of a bubble</strong> (following Kindleberger and Minsky):</p>
+<ol>
+  <li><strong>Displacement:</strong> a genuine innovation or shock changes expectations — railways, the internet, securitisation, a new technology.</li>
+  <li><strong>Boom:</strong> prices rise, early buyers profit, credit expands to fund more buying.</li>
+  <li><strong>Euphoria:</strong> buying is justified only by expected resale price. Herding and extrapolative expectations take over; sceptics are proved wrong often enough to stop arguing.</li>
+  <li><strong>Profit-taking:</strong> informed investors begin to exit.</li>
+  <li><strong>Panic:</strong> expectations reverse, leverage forces selling, prices collapse below fundamental value.</li>
+</ol>
+
+<div class="diagram-box">
+<svg viewBox="0 0 480 330" width="480" height="330">
+  <line x1="60" y1="285" x2="440" y2="285" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="285" x2="60" y2="25" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="440,285 432,280 432,290" fill="#1a1a2e"/>
+  <polygon points="60,25 55,33 65,33" fill="#1a1a2e"/>
+  <!-- fundamental value -->
+  <line x1="70" y1="235" x2="430" y2="200" stroke="#059669" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="330" y="222" font-size="11.5" fill="#059669" font-weight="600">fundamental value</text>
+  <!-- bubble path -->
+  <path d="M 80 240 Q 150 232 200 200 Q 250 165 285 90 Q 300 55 315 48 Q 335 44 350 75 Q 370 130 395 210 Q 410 245 425 232" fill="none" stroke="#dc2626" stroke-width="2.8"/>
+  <text x="80" y="228" font-size="11" fill="#dc2626" font-weight="600">market price</text>
+  <!-- phase labels -->
+  <line x1="200" y1="200" x2="200" y2="285" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="168" y="299" font-size="10.5" fill="#6b7280">displacement</text>
+  <line x1="275" y1="105" x2="275" y2="285" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="248" y="299" font-size="10.5" fill="#6b7280">boom</text>
+  <line x1="322" y1="50" x2="322" y2="285" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="296" y="313" font-size="10.5" fill="#6b7280">euphoria</text>
+  <line x1="385" y1="195" x2="385" y2="285" stroke="#9ca3af" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="352" y="299" font-size="10.5" fill="#6b7280">panic / crash</text>
+  <text x="300" y="36" font-size="11" fill="#dc2626" font-weight="600">peak</text>
+  <text x="445" y="290" font-size="13" fill="#1a1a2e" font-weight="600">Time</text>
+  <text x="18" y="20" font-size="13" fill="#1a1a2e" font-weight="600">Asset price</text>
+</svg>
+<div class="diagram-caption">Figure 4: The anatomy of a speculative bubble. The market price detaches from fundamental value during the boom and euphoria phases, then overshoots downwards in the panic. Note that the crash typically takes the price <em>below</em> fundamental value — which is why the real-economy damage outlasts the bubble itself.</div>
+</div>
+
+<p><strong>Why bubbles are a market failure:</strong> they misallocate capital on a huge scale (too much housing, too many dot-com firms, too much subprime lending), they redistribute arbitrarily from late buyers to early sellers, and — critically — when they are financed by <strong>leverage</strong>, the crash destroys bank capital and transmits the loss to the whole economy. A bubble in an unleveraged asset is a private misfortune; a bubble financed with borrowed money is a public one.</p>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: The 2008 Financial Crisis — Every Concept in One Event</strong><br>
+US house prices rose far above fundamentals on the belief they could not fall nationally (<strong>bubble</strong>). Mortgages were made to borrowers who could not repay and sold on, so the originator kept no exposure to the default (<strong>moral hazard</strong> and <strong>adverse selection</strong>). Those mortgages were bundled into securities that credit rating agencies — paid by the issuers (<strong>principal–agent problem</strong>) — rated as safe, and which almost nobody holding them understood (<strong>asymmetric information</strong>). When US house prices fell, losses appeared across interconnected banks simultaneously (<strong>common exposure</strong>); nobody could tell which banks were solvent, so interbank lending froze (<strong>contagion</strong>); forced selling depressed prices further (<strong>fire sales</strong>); and lending to firms and households collapsed, turning a financial shock into a deep recession (<strong>systemic risk</strong>). In the UK, Northern Rock suffered the first bank run in over a century and Royal Bank of Scotland — briefly one of the largest banks in the world by assets — required a bailout of around £45.5bn. The entire architecture described in section 18 was built in response to this sequence, and every element of it maps onto one link in the chain.
+</div>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: The 2022 Gilt and LDI Crisis — Systemic Risk Without a Bank Failure</strong><br>
+In late September 2022 an unfunded UK fiscal announcement triggered a sharp rise in gilt yields. Defined-benefit pension schemes using "liability-driven investment" strategies had used leverage and derivatives to hedge their interest-rate exposure; as yields rose they faced collateral calls, and to raise cash they sold gilts — which pushed yields higher still, triggering further calls. This is a pure <strong>fire-sale feedback loop</strong>, and it happened in the pension sector rather than in banks. The Bank of England intervened with a temporary, targeted gilt-purchase operation to restore orderly market conditions. The episode is the best modern UK illustration of two points: systemic risk is not confined to banks but can build up anywhere that leverage and common exposures coincide, and macroprudential supervision must therefore look across the entire financial system, including non-bank institutions.
+</div>
+
+<!-- ===== REGULATION ===== -->
+<h2>17. The Regulation of Financial Markets</h2>
+
+<p>Financial regulation exists because the sector fails in specific, identifiable ways: systemic risk is an externality, moral hazard is created by the very safety nets that prevent runs, consumers face severe asymmetric information about products they buy once in a lifetime, and the social cost of failure vastly exceeds the private cost.</p>
+
+<h3>17.1 The UK Regulatory Architecture</h3>
+<table>
+  <tr><th>Body</th><th>Remit</th><th>Principal tools</th></tr>
+  <tr><td><strong>Financial Policy Committee (FPC)</strong>, at the Bank of England</td><td><strong>Macroprudential</strong> — the stability of the system as a whole</td><td>The countercyclical capital buffer, the mortgage loan-to-income flow limit, system-wide stress tests, recommendations and directions to the PRA and FCA, the twice-yearly Financial Stability Report</td></tr>
+  <tr><td><strong>Prudential Regulation Authority (PRA)</strong>, part of the Bank of England</td><td><strong>Microprudential</strong> — the safety and soundness of individual banks, building societies, insurers and major investment firms</td><td>Capital and liquidity requirements, leverage ratio, senior managers regime, authorisation and supervision, resolution planning</td></tr>
+  <tr><td><strong>Financial Conduct Authority (FCA)</strong></td><td><strong>Conduct</strong> — how firms treat consumers and how markets behave; prudential regulation of firms outside the PRA's scope</td><td>The Consumer Duty, product governance and financial-promotion rules, market-abuse enforcement, the Financial Ombudsman Service as redress</td></tr>
+  <tr><td><strong>HM Treasury</strong></td><td>Sets the statutory objectives and the perimeter of regulation</td><td>Legislation, remit letters, decisions involving public funds</td></tr>
+  <tr><td><strong>Financial Services Compensation Scheme (FSCS)</strong></td><td>Depositor and policyholder protection</td><td>Deposit protection, raised from £85,000 to <strong>£120,000</strong> per person per authorised firm on 1 December 2025 (£240,000 for joint accounts), with temporary high balances covered to £1.4m for six months</td></tr>
+</table>
+
+<h3>17.2 The Main Instruments</h3>
+
+<h4>Capital requirements</h4>
+<p>Banks must fund a minimum share of their assets with equity rather than debt, so that losses are absorbed by shareholders before depositors or taxpayers. More capital directly reduces moral hazard by giving owners more to lose. On top of minimum requirements sit <strong>buffers</strong>:</p>
+<ul>
+  <li>The <strong>countercyclical capital buffer (CCyB)</strong> is raised in good times so it can be released in a downturn, letting banks absorb losses without cutting lending. The FPC held the UK CCyB at its neutral setting of <strong>2%</strong> through 2026, confirming it in April and again in July 2026.</li>
+  <li>Buffers for systemically important institutions (the O-SII buffer) impose extra capital on the banks whose failure would matter most — a direct charge on the systemic-risk externality.</li>
+  <li>In 2026 the FPC and PRA began work on <strong>broad reform of the buffer framework</strong>, moving towards a single buffer that is genuinely releasable in stress, and on making the leverage ratio more proportionate. The problem being solved is "usability": a buffer banks are afraid to dip into does not do its job.</li>
+</ul>
+
+<h4>Liquidity requirements</h4>
+<p>Capital protects against <em>insolvency</em>; liquidity protects against <em>illiquidity</em>. Banks must hold enough high-quality liquid assets to survive a severe outflow of funding for a defined period, and must fund long-term assets with reasonably stable funding. Northern Rock in 2007 and Silicon Valley Bank in March 2023 both failed primarily because funding disappeared faster than assets could be sold, not because they had no capital on paper.</p>
+
+<h4>Ring-fencing</h4>
+<div class="def-box">
+<strong>Ring-fencing:</strong> A UK reform in force since 2019, following the Independent Commission on Banking, requiring large banks to separate their retail operations — deposit-taking from individuals and small businesses, and payments — into a legally distinct entity with its own board and capital, insulated from riskier investment banking. The aim is that retail depositors can be protected without underwriting trading losses, reducing "too big to fail" moral hazard.
+</div>
+<p>Ring-fencing has always been a trade-off between stability and efficiency: separation raises banks' costs and fragments capital and liquidity. The <strong>Ring-Fencing Review</strong>, published by HM Treasury on 18 May 2026, eased it: the core-deposit threshold for being in scope rises from <strong>£25bn to £35bn</strong> (to be reviewed every three years), retail-focused banks without material investment banking activity come out of the regime altogether, and the PRA is consulting on greater flexibility in sharing operational resources across the fence. This is a live evaluation case — the government argues the regime is disproportionate for banks that do not run large trading books, while critics argue that loosening post-crisis protections during a calm period is exactly how the next crisis becomes possible.</p>
+
+<h4>Stress testing</h4>
+<p>Regulators model a severe but plausible adverse scenario — a deep recession, a property crash, a sharp rise in unemployment and rates — and check whether each bank would still meet its capital requirements. The results are published at individual bank level, which is itself a regulatory tool: disclosure disciplines management and informs the market. The Bank of England published the results of the <strong>2025 Bank Capital Stress Test</strong> on 2 December 2025, and alternates full participatory tests with lighter "desk-based" exercises run on the Bank's own models in intervening years.</p>
+
+<h4>Conduct regulation and consumer protection</h4>
+<ul>
+  <li>The FCA's <strong>Consumer Duty</strong> requires firms to deliver good outcomes for retail customers, not merely to disclose terms — a direct response to the failure of disclosure alone to overcome asymmetric information.</li>
+  <li>Rules on financial promotions, product governance and the treatment of vulnerable customers.</li>
+  <li>Enforcement against <strong>market abuse</strong> — insider dealing and market manipulation — which protects the price-discovery function of markets.</li>
+  <li>The <strong>Senior Managers and Certification Regime</strong> makes named individuals personally accountable, attacking the principal–agent problem inside firms.</li>
+  <li><strong>Bonus deferral and clawback</strong> align the timing of reward with the timing of risk.</li>
+</ul>
+
+<h4>Macroprudential limits on lending</h4>
+<p>The FPC maintains a <strong>loan-to-income flow limit</strong> restricting the share of new mortgages that may be issued at high income multiples, protecting against a debt-fuelled housing bubble. The PRA and FCA consulted on the implementation of a revised recommendation on 1 April 2026. This is the clearest example of a tool aimed at the <em>system</em> rather than at any individual bank: each mortgage may be prudent on its own, while the aggregate is not.</p>
+
+<h4>Resolution</h4>
+<p>If a bank fails anyway, a resolution regime allows the authorities to impose losses on shareholders and specified creditors ("bail-in"), transfer the business to a purchaser, and keep critical functions — deposits and payments — running through the weekend. The objective is to make failure possible without a bailout, which is the only durable cure for too-big-to-fail moral hazard.</p>
+
+<div class="eval-box">
+<strong>Evaluation: How Much Regulation Is the Right Amount?</strong>
+<ul>
+  <li><strong>The stability–growth trade-off is real.</strong> Capital that sits as a buffer is capital not lent to firms. The UK government's 2025–26 direction of travel — the ring-fencing review, buffer reform, and a growth-focused remit for the regulators — reflects a judgement that the post-crisis settlement went too far for a mid-sized bank with no trading book.</li>
+  <li><strong>Regulatory arbitrage:</strong> tightening bank rules pushes activity into less regulated non-banks. The 2022 LDI episode originated in pensions, not banks — so a bank-centric framework can miss where the risk has moved.</li>
+  <li><strong>Regulatory capture and complexity:</strong> rules written with industry input, and complex enough that only the largest firms can comply cheaply, can entrench incumbents.</li>
+  <li><strong>The forgetting problem:</strong> pressure to deregulate is always strongest when the system looks safest, because the memory of the last crisis has faded and the cost of the buffers is visible while the benefit is invisible.</li>
+  <li><strong>Government failure applies here too:</strong> deposit insurance, lender-of-last-resort support and implicit bailout guarantees all create the moral hazard that further regulation then has to correct. Financial regulation is permanently managing a problem partly of its own making.</li>
+</ul>
+</div>
+
+<!-- ===== EXAM TIPS ===== -->
+<div class="tip-box">
+<strong>Exam Tips — Market Failure, Policy Impact &amp; Financial Risk</strong>
+<ul>
+  <li><strong>Economics B is applied.</strong> Anchor every point in a named firm, market, institution or policy. "Regulation reduces risk" earns little; "the FPC held the UK countercyclical capital buffer at 2% through 2026 so banks can absorb losses without cutting lending" earns a lot.</li>
+  <li><strong>Draw the externality diagram properly.</strong> Label all four curves (MPC, MSC, MPB, MSB), mark both the market quantity and the social optimum, and shade the welfare loss between them. State explicitly which curve diverges and why — that sentence is where the analysis mark is.</li>
+  <li><strong>Always ask where the economy is relative to capacity.</strong> Figure 3 answers most demand-side policy questions: the same stimulus raises output when there is a negative output gap and raises prices when there is not.</li>
+  <li><strong>For "impact on firms and individuals", split your answer explicitly.</strong> Firms: investment decisions, borrowing costs, the exchange rate and export margins, employment costs. Individuals: disposable income, mortgage costs, confidence, employment, and the distributional effect. The best answers also note that the same policy helps some and hurts others — a rate rise helps savers and importers, hurts mortgage holders and exporters.</li>
+  <li><strong>Keep risk and uncertainty distinct.</strong> Risk is probabilistic and can be priced, hedged and insured; uncertainty cannot. The entire forward market exists because of that distinction.</li>
+  <li><strong>Moral hazard is <em>after</em> the contract; adverse selection is <em>before</em> it.</strong> Examiners test this directly and it is the most commonly confused pair in the topic.</li>
+  <li><strong>Every intervention has a government-failure counter-argument.</strong> The strongest evaluation names the specific mechanism — information failure in setting the tax rate, regulatory capture, unintended consequences, time lags, or moral hazard created by the intervention itself.</li>
+  <li><strong>Date your evidence.</strong> "Bank Rate was held at 3.75% on a 6–3 vote in September 2026 with CPI inflation at 3.1%" is worth far more than "interest rates are high and inflation is above target".</li>
+</ul>
+</div>
+
+</div>
+</body>
+</html>

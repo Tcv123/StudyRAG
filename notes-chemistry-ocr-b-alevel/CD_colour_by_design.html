@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — CD — Colour by Design</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .definition strong { color: #1e3a5f; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip strong { color: #b45309; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; font-size: 1.1rem; text-align: center; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+  .worked-example { background: #fdf2f8; border-left: 4px solid #db2777; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .worked-example strong { color: #be185d; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>CD — Colour by Design</h1>
+
+<p style="color:#475569;font-size:0.97rem;margin-top:-18px;margin-bottom:26px;">OCR B (Salters) H433 storyline <strong>CD</strong>. Dyes and colour to order: the origins of colour in delocalised systems, arenes and their reactions, diazonium compounds and dyeing, fats and oils, gas-liquid chromatography and carbonyl chemistry.</p>
+
+<!-- ============================================================ -->
+<h2>1. Aromatic Chemistry</h2>
+
+<h3>Structure of Benzene</h3>
+
+<div class="definition">
+  <strong>Benzene (C<sub>6</sub>H<sub>6</sub>):</strong> A planar, cyclic hydrocarbon with a ring of six carbon atoms. Each carbon is sp<sup>2</sup> hybridised with bond angles of 120&deg;. The unhybridised p orbital on each carbon overlaps sideways with those on adjacent carbons, forming a delocalised &pi; system above and below the plane of the ring.
+</div>
+
+<p><strong>Kekul&eacute; model:</strong> Originally proposed as alternating single and double bonds (cyclohexatriene). However, this model is inconsistent with experimental evidence:</p>
+<ul>
+  <li>All C&minus;C bond lengths in benzene are equal (0.139 nm), intermediate between a single bond (0.154 nm) and a double bond (0.134 nm).</li>
+  <li>Benzene does not undergo addition reactions typical of alkenes (e.g. it does not readily decolourise bromine water).</li>
+  <li>The enthalpy of hydrogenation of benzene (&minus;208 kJ mol<sup>&minus;1</sup>) is less exothermic than predicted for three C=C bonds (3 &times; &minus;120 = &minus;360 kJ mol<sup>&minus;1</sup>), showing benzene is more stable than the hypothetical cyclohexatriene by about 152 kJ mol<sup>&minus;1</sup> (the delocalisation/resonance energy).</li>
+</ul>
+
+<p><strong>Delocalised model:</strong> The six &pi; electrons are spread evenly over all six carbon atoms in a ring of electron density. This delocalisation makes benzene more thermodynamically stable than the Kekul&eacute; structure and explains its tendency to undergo substitution rather than addition reactions (preserving the stable delocalised ring).</p>
+
+<!-- SVG: Benzene Structure - Kekulé vs Delocalised -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Benzene Structure &mdash; Kekul&#233; vs Delocalised Model</text>
+  <!-- Kekulé model (left) -->
+  <text x="130" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#DC2626">Kekul&#233; Model</text>
+  <text x="130" y="62" text-anchor="middle" font-family="system-ui" font-size="9" fill="#DC2626">(alternating single/double bonds)</text>
+  <!-- Hexagon with alternating bonds -->
+  <polygon points="130,80 175,106 175,158 130,184 85,158 85,106" fill="none" stroke="#1a1a2e" stroke-width="2.5"/>
+  <!-- Double bonds on alternating sides -->
+  <line x1="135" y1="86" x2="168" y2="108" stroke="#1a1a2e" stroke-width="2.5"/>
+  <line x1="168" y1="156" x2="135" y2="178" stroke="#1a1a2e" stroke-width="2.5"/>
+  <line x1="92" y1="108" x2="92" y2="156" stroke="#1a1a2e" stroke-width="2.5"/>
+  <!-- H atoms -->
+  <text x="130" y="72" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <text x="192" y="102" text-anchor="start" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <text x="192" y="168" text-anchor="start" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <text x="130" y="200" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <text x="68" y="168" text-anchor="end" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <text x="68" y="102" text-anchor="end" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <!-- Cross -->
+  <text x="130" y="222" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">&#10008; Incorrect</text>
+  <text x="130" y="236" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">Would predict different C-C lengths</text>
+  <text x="130" y="248" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">and typical alkene addition reactions</text>
+  <!-- Arrow between -->
+  <line x1="210" y1="132" x2="250" y2="132" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrS6)"/>
+  <defs><marker id="arrS6" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#1a1a2e"/></marker></defs>
+  <!-- Delocalised model (right) -->
+  <text x="370" y="48" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">Delocalised Model</text>
+  <text x="370" y="62" text-anchor="middle" font-family="system-ui" font-size="9" fill="#16A34A">(&#960; electron cloud above &amp; below ring)</text>
+  <!-- Hexagon -->
+  <polygon points="370,80 415,106 415,158 370,184 325,158 325,106" fill="none" stroke="#1a1a2e" stroke-width="2.5"/>
+  <!-- Inner circle for delocalisation -->
+  <circle cx="370" cy="132" r="28" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+  <!-- H atoms -->
+  <text x="370" y="72" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <text x="432" y="102" text-anchor="start" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <text x="432" y="168" text-anchor="start" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <text x="370" y="200" text-anchor="middle" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <text x="308" y="168" text-anchor="end" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <text x="308" y="102" text-anchor="end" font-family="system-ui" font-size="9" fill="#D97706">H</text>
+  <!-- Tick -->
+  <text x="370" y="222" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#16A34A">&#10004; Correct</text>
+  <text x="370" y="236" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">All C-C bonds equal (0.139 nm)</text>
+  <text x="370" y="248" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">152 kJ mol&#8315;&#185; more stable (delocalisation energy)</text>
+  <!-- Bottom note -->
+  <rect x="60" y="258" width="380" height="18" rx="4" fill="#fff8e1" stroke="#D97706" stroke-width="1"/>
+  <text x="250" y="271" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Benzene undergoes substitution (not addition) to preserve the stable delocalised ring</text>
+</svg>
+</div>
+
+<h3>Electrophilic Substitution of Benzene</h3>
+
+<p>The delocalised &pi; electron ring is a region of high electron density that attracts electrophiles. However, benzene undergoes substitution rather than addition to preserve the stability of the aromatic ring.</p>
+
+<p><strong>Nitration:</strong></p>
+<div class="equation">
+  C<sub>6</sub>H<sub>6</sub> + HNO<sub>3</sub> &xrarr; (conc. H<sub>2</sub>SO<sub>4</sub>, 50&deg;C) C<sub>6</sub>H<sub>5</sub>NO<sub>2</sub> + H<sub>2</sub>O
+</div>
+<p>The electrophile is the nitronium ion (NO<sub>2</sub><sup>+</sup>), generated by the reaction of concentrated nitric acid with concentrated sulfuric acid: HNO<sub>3</sub> + H<sub>2</sub>SO<sub>4</sub> &rarr; NO<sub>2</sub><sup>+</sup> + HSO<sub>4</sub><sup>&minus;</sup> + H<sub>2</sub>O. The mechanism involves the NO<sub>2</sub><sup>+</sup> being attracted to the &pi; system, forming a positively charged intermediate (Wheland intermediate), followed by loss of H<sup>+</sup> to restore aromaticity. Temperature must be kept below 55 &deg;C to prevent dinitration.</p>
+
+<p><strong>Halogenation:</strong></p>
+<div class="equation">
+  C<sub>6</sub>H<sub>6</sub> + Br<sub>2</sub> &xrarr; (AlBr<sub>3</sub> or FeBr<sub>3</sub> catalyst) C<sub>6</sub>H<sub>5</sub>Br + HBr
+</div>
+<p>A halogen carrier catalyst (Lewis acid such as AlBr<sub>3</sub>, FeBr<sub>3</sub>, or AlCl<sub>3</sub>) is needed to generate the electrophile. The catalyst polarises the Br&minus;Br bond or forms Br<sup>+</sup>: Br<sub>2</sub> + AlBr<sub>3</sub> &rarr; Br<sup>+</sup> + AlBr<sub>4</sub><sup>&minus;</sup>. The Br<sup>+</sup> then attacks the &pi; ring.</p>
+
+<p><strong>Friedel-Crafts alkylation:</strong></p>
+<div class="equation">
+  C<sub>6</sub>H<sub>6</sub> + RCl &xrarr; (AlCl<sub>3</sub>) C<sub>6</sub>H<sub>5</sub>R + HCl
+</div>
+<p>The AlCl<sub>3</sub> catalyst generates a carbocation electrophile (R<sup>+</sup>) from the halogenoalkane. This introduces an alkyl group onto the benzene ring.</p>
+
+<p><strong>Friedel-Crafts acylation:</strong></p>
+<div class="equation">
+  C<sub>6</sub>H<sub>6</sub> + RCOCl &xrarr; (AlCl<sub>3</sub>) C<sub>6</sub>H<sub>5</sub>COR + HCl
+</div>
+<p>The electrophile is an acylium ion (RCO<sup>+</sup>). This introduces an acyl group (C=O bonded to R) onto the ring. Acylation is preferred over alkylation in synthesis because it does not give multiple substitutions (the C=O group deactivates the ring).</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In all electrophilic substitution mechanisms on benzene, draw two curly arrows: one from the &pi; ring to the electrophile (forming the new bond), and one from the C&minus;H bond to the ring (restoring aromaticity by losing H<sup>+</sup>). Show the intermediate Wheland complex with its positive charge delocalised over the ring.
+</div>
+
+<!-- ============================================================ -->
+<h2>2. Carbonyl Compounds</h2>
+
+<h3>Aldehydes and Ketones</h3>
+
+<p>Both contain the C=O (carbonyl) group. Aldehydes have the carbonyl at the end of the chain (RCHO); ketones have it within the chain (RCOR'). The C=O bond is polar (&delta;+ on C, &delta;&minus; on O) because oxygen is more electronegative than carbon, making the carbonyl carbon susceptible to nucleophilic attack.</p>
+
+<h3>Nucleophilic Addition</h3>
+
+<p>The key mechanism for carbonyl compounds. A nucleophile attacks the &delta;+ carbon of the C=O group:</p>
+
+<p><strong>With HCN (hydrogen cyanide):</strong> The nucleophile is CN<sup>&minus;</sup>. It attacks the &delta;+ carbon, breaking the &pi; bond and forming an alkoxide intermediate, which is then protonated by HCN to give a hydroxynitrile (cyanohydrin). This reaction extends the carbon chain by one carbon atom and introduces both an OH and CN group. A trace of base (NaCN or KCN) is used as a catalyst to generate CN<sup>&minus;</sup>.</p>
+
+<p><strong>With NaBH<sub>4</sub> (sodium borohydride):</strong> A reducing agent. The H<sup>&minus;</sup> ion acts as the nucleophile, attacking the &delta;+ carbonyl carbon. Aldehydes are reduced to primary alcohols; ketones are reduced to secondary alcohols. NaBH<sub>4</sub> is used in aqueous/ethanolic solution.</p>
+
+<!-- SVG: Nucleophilic Addition to a Carbonyl (HCN mechanism) -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 280" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">Nucleophilic Addition &mdash; CN&#8315; to a Carbonyl</text>
+  <text x="250" y="38" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94a3b8">Formation of a cyanohydrin (hydroxynitrile)</text>
+  <!-- Step 1 -->
+  <text x="130" y="60" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Step 1: Nucleophilic attack</text>
+  <!-- CN- nucleophile -->
+  <text x="45" y="120" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">CN&#8315;</text>
+  <text x="45" y="105" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">nucleophile</text>
+  <!-- Curly arrow from CN to C -->
+  <path d="M 62 115 Q 85 100 103 107" fill="none" stroke="#DC2626" stroke-width="2" marker-end="url(#arrRS6n)"/>
+  <defs><marker id="arrRS6n" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#DC2626"/></marker></defs>
+  <!-- Carbonyl group -->
+  <circle cx="120" cy="120" r="16" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="120" y="116" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">&delta;+</text>
+  <text x="120" y="128" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a73e8">C</text>
+  <!-- C=O double bond -->
+  <line x1="136" y1="118" x2="160" y2="108" stroke="#1a1a2e" stroke-width="2.5"/>
+  <line x1="136" y1="123" x2="160" y2="113" stroke="#1a1a2e" stroke-width="2.5"/>
+  <circle cx="172" cy="105" r="14" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="172" y="101" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">&delta;&minus;</text>
+  <text x="172" y="112" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">O</text>
+  <!-- R group -->
+  <text x="120" y="155" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94a3b8">R</text>
+  <line x1="120" y1="136" x2="120" y2="147" stroke="#94a3b8" stroke-width="1.5"/>
+  <!-- Curly arrow from C=O pi bond to O -->
+  <path d="M 150 118 Q 165 100 172 92" fill="none" stroke="#16A34A" stroke-width="2" marker-end="url(#arrGS6n)"/>
+  <defs><marker id="arrGS6n" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#16A34A"/></marker></defs>
+  <!-- Arrow to intermediate -->
+  <line x1="200" y1="120" x2="235" y2="120" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrS6)"/>
+  <!-- Intermediate -->
+  <rect x="240" y="80" width="100" height="75" rx="8" fill="#fff8e1" stroke="#D97706" stroke-width="1.5"/>
+  <text x="290" y="100" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">R</text>
+  <text x="290" y="115" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">C&mdash;CN</text>
+  <text x="290" y="130" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">|</text>
+  <text x="290" y="145" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#DC2626">O&#8315;</text>
+  <text x="290" y="70" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">alkoxide intermediate</text>
+  <!-- Step 2 -->
+  <text x="415" y="60" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Step 2: Protonation</text>
+  <!-- Arrow -->
+  <line x1="340" y1="120" x2="370" y2="120" stroke="#1a1a2e" stroke-width="1.5" marker-end="url(#arrS6)"/>
+  <text x="355" y="112" text-anchor="middle" font-family="system-ui" font-size="8" fill="#D97706">+HCN</text>
+  <!-- Product -->
+  <rect x="375" y="80" width="110" height="75" rx="8" fill="#dcfce7" stroke="#16A34A" stroke-width="2"/>
+  <text x="430" y="100" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">R</text>
+  <text x="430" y="115" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">C&mdash;CN</text>
+  <text x="430" y="130" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">|</text>
+  <text x="430" y="145" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#16A34A">OH</text>
+  <text x="430" y="70" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">Cyanohydrin</text>
+  <!-- Summary -->
+  <rect x="30" y="175" width="440" height="22" rx="4" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1"/>
+  <text x="250" y="190" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">CN&#8315; attacks the &delta;+ carbonyl C, &#960; bond breaks, O&#8315; forms, then protonated by HCN</text>
+  <!-- NaBH4 comparison -->
+  <rect x="30" y="208" width="440" height="60" rx="8" fill="#fef9c3" stroke="#D97706" stroke-width="1.5"/>
+  <text x="250" y="226" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#D97706">Also: Reduction with NaBH&#8324;</text>
+  <text x="250" y="244" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">H&#8315; acts as nucleophile, attacks &delta;+ C of C=O in the same way</text>
+  <text x="250" y="258" text-anchor="middle" font-family="system-ui" font-size="9" fill="#1a1a2e">Aldehyde &#8594; primary alcohol &nbsp;&nbsp;|&nbsp;&nbsp; Ketone &#8594; secondary alcohol</text>
+</svg>
+</div>
+
+<h3>Distinguishing Aldehydes from Ketones</h3>
+
+<table>
+  <tr><th>Test</th><th>Reagent</th><th>Aldehyde result</th><th>Ketone result</th></tr>
+  <tr><td>Tollens' test</td><td>[Ag(NH<sub>3</sub>)<sub>2</sub>]<sup>+</sup> (silver mirror reagent), warm</td><td>Silver mirror forms (Ag<sup>+</sup> reduced to Ag)</td><td>No reaction</td></tr>
+  <tr><td>Fehling's test</td><td>Fehling's solution (Cu<sup>2+</sup> tartrate complex), heat</td><td>Brick-red precipitate of Cu<sub>2</sub>O</td><td>No reaction</td></tr>
+  <tr><td>2,4-DNP test</td><td>2,4-dinitrophenylhydrazine (Brady's reagent)</td><td>Orange/yellow precipitate (confirms C=O present)</td><td>Orange/yellow precipitate (confirms C=O present)</td></tr>
+</table>
+
+<p>Tollens' and Fehling's tests work because aldehydes can be oxidised to carboxylic acids, but ketones cannot be oxidised under these mild conditions. The 2,4-DNP test confirms the presence of a carbonyl group (aldehyde or ketone) but does not distinguish between them. The melting point of the 2,4-DNP derivative can be used to identify the specific aldehyde or ketone.</p>
+
+</div>
+</body>
+</html>

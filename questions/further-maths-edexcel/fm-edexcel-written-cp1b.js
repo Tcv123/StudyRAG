@@ -186,8 +186,16 @@ const FM_EDEXCEL_WRITTEN_CP1B = {
     ],
   },
 
+  /* SPEC NOTE — CP1.9 is a SUPERSET of the 9FM0 Core Pure requirement.
+     Core Pure (Papers 1-2) section 6 covers only: vector/Cartesian form of a line (6.1)
+     and of a plane (6.2), the scalar product and the angles it gives (6.3), checking
+     perpendicularity (6.4), line-plane intersection and perpendicular distances (6.5).
+     The vector (cross) product and the scalar triple product are Paper 3A: Further Pure
+     Mathematics 1, sections 5.1 and 5.2 — NOT Core Pure. Items here that use a x b are
+     therefore FP1 extension material and are labelled as such in the topic name and in
+     notes-further-maths-edexcel-alevel/CP1.9_vectors.html section 3. Do not add more. */
   'CP1.9': {
-    name: 'Vectors',
+    name: 'Vectors (Core Pure + FP1)',
     green: [
       { q: 'Find the dot product of \\(\\mathbf{a}=\\begin{pmatrix}1\\\\2\\\\3\\end{pmatrix}\\) and \\(\\mathbf{b}=\\begin{pmatrix}4\\\\-1\\\\2\\end{pmatrix}\\).', marks: 2, modelAnswer: '• \\(\\mathbf{a}\\cdot\\mathbf{b}=4-2+6=8\\) (M1 A1)' },
       { q: 'Find the cross product \\(\\mathbf{a}\\times\\mathbf{b}\\) where \\(\\mathbf{a}=\\mathbf{i}+2\\mathbf{j}\\) and \\(\\mathbf{b}=3\\mathbf{j}+\\mathbf{k}\\).', marks: 3, modelAnswer: '• \\(\\mathbf{a}\\times\\mathbf{b}=\\begin{vmatrix}\\mathbf{i}&\\mathbf{j}&\\mathbf{k}\\\\1&2&0\\\\0&3&1\\end{vmatrix}\\) (M1)\n• \\(=\\mathbf{i}(2-0)-\\mathbf{j}(1-0)+\\mathbf{k}(3-0)=2\\mathbf{i}-\\mathbf{j}+3\\mathbf{k}\\) (M1 A1)' },

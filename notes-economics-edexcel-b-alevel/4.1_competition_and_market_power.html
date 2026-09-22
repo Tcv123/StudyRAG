@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — Theme 4.1 Competition &amp; Market Power — Edexcel B</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.7; padding: 40px 24px; }
+.container { max-width: 820px; margin: 0 auto; }
+h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 28px; }
+h2 { font-size: 1.5rem; color: #16213e; margin: 40px 0 16px; border-left: 4px solid #1a73e8; padding-left: 12px; }
+h3 { font-size: 1.2rem; color: #1a1a2e; margin: 26px 0 10px; }
+h4 { font-size: 1.05rem; color: #374151; margin: 18px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { margin: 10px 0 14px 24px; }
+li { margin: 5px 0; }
+table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+th, td { border: 1px solid #cbd5e1; padding: 10px 14px; text-align: left; }
+th { background: #e8eef6; font-weight: 600; }
+tr:nth-child(even) { background: #f8fafc; }
+.def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+.tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+.case-study { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+.case-study strong.cs-title { color: #0369a1; font-size: 1.05rem; }
+.diagram-box { background: #f9fafb; border: 2px solid #d1d5db; border-radius: 10px; padding: 20px; margin: 20px 0; text-align: center; }
+.diagram-box svg { max-width: 100%; }
+.diagram-caption { font-size: 0.9rem; color: #555; margin-top: 10px; font-style: italic; }
+.eval-box { background: #faf5ff; border-left: 4px solid #8b5cf6; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+.eq { text-align: center; font-size: 1.15rem; margin: 14px 0; font-family: "Cambria Math", "Times New Roman", serif; background: #f1f5f9; padding: 10px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>Theme 4.1 Competition &amp; Market Power — Edexcel B</h1>
+
+<p><em>This topic covers 9EB0 sub-topics 4.1 Competition and market power and 4.2 Market power and market failure. All data is current as of September 2026 or dated where it refers to an earlier point in time.</em></p>
+
+<!-- ===== SPECTRUM OVERVIEW ===== -->
+<h2>1. The Spectrum of Market Structures</h2>
+
+<div class="def-box">
+<strong>Market power:</strong> The ability of a firm to influence the price of the product it sells (or the price it pays for an input) rather than simply accept the price the market sets. Market power comes from being large relative to the market, from barriers that keep rivals out, and from consumers having few close substitutes to turn to.
+</div>
+
+<table>
+  <tr><th>Feature</th><th>Perfect Competition</th><th>Monopolistic Competition</th><th>Oligopoly</th><th>Monopoly</th></tr>
+  <tr><td><strong>Number of firms</strong></td><td>Very many</td><td>Many</td><td>Few (dominated by a handful)</td><td>One</td></tr>
+  <tr><td><strong>Barriers to entry</strong></td><td>None</td><td>Low</td><td>High</td><td>Very high</td></tr>
+  <tr><td><strong>Product</strong></td><td>Homogeneous (identical)</td><td>Differentiated</td><td>Differentiated or homogeneous</td><td>Unique (no close substitutes)</td></tr>
+  <tr><td><strong>Price-setting power</strong></td><td>None (price taker)</td><td>Some</td><td>Significant (but interdependent)</td><td>Price maker</td></tr>
+  <tr><td><strong>Supernormal profit (LR)</strong></td><td>No</td><td>No</td><td>Yes (if colluding or barriers hold)</td><td>Yes</td></tr>
+  <tr><td><strong>Real-world example</strong></td><td>Foreign exchange markets, some agriculture</td><td>Restaurants, hairdressers</td><td>Supermarkets, banks, mobile networks</td><td>Regional water supply, the electricity transmission grid</td></tr>
+</table>
+
+<p>Two measures are used to describe how concentrated a market is:</p>
+<ul>
+  <li><strong>The n-firm concentration ratio:</strong> the combined market share of the largest <em>n</em> firms. In Great Britain's grocery market, Kantar's 2026 data put Tesco at roughly 27%, Sainsbury's at around 15%, Aldi at around 10% and Lidl at around 8% — a four-firm concentration ratio of roughly 60%.</li>
+  <li><strong>The share-of-supply test:</strong> the UK's own jurisdictional threshold. A merger can be reviewed by the Competition and Markets Authority (CMA) where the parties together supply <strong>25% or more</strong> of a category of goods or services in the UK, and the merger increases that share.</li>
+</ul>
+
+<!-- ===== GROWTH OF FIRMS ===== -->
+<h2>2. The Growth of Firms — the Source of Market Power</h2>
+
+<p>Market power is not usually granted; it is <strong>built</strong>. Firms acquire it by growing, either from within or by absorbing other firms. Understanding how firms grow is therefore the starting point for understanding why some markets end up concentrated.</p>
+
+<div class="def-box">
+<strong>Business growth:</strong> An increase in the size of a firm, measured by output, revenue, market share, number of employees, or asset value. Firms grow to exploit economies of scale, to gain market power over price, to diversify risk, and to satisfy managerial or shareholder ambitions.
+</div>
+
+<h3>2.1 Why Firms Grow</h3>
+<ul>
+  <li><strong>Economies of scale:</strong> Larger output spreads fixed costs and lowers long-run average cost, improving margins and competitiveness.</li>
+  <li><strong>Market power:</strong> A larger share means more control over price, more bargaining power over suppliers, and more scope to deter entry.</li>
+  <li><strong>Risk diversification:</strong> Operating across several products, markets or countries reduces exposure to a downturn in any one.</li>
+  <li><strong>Managerial motives:</strong> Marris's growth-maximisation model argues managers pursue size because their pay, status and security rise with it — a manifestation of the principal-agent problem.</li>
+  <li><strong>Shareholder pressure:</strong> Equity investors reward revenue and earnings growth, which pushes management toward acquisitions.</li>
+  <li><strong>Survival:</strong> In markets with high minimum efficient scale, a firm that does not grow is eventually outcompeted or bought.</li>
+</ul>
+
+<h3>2.2 Organic (Internal) Growth</h3>
+<p>Growth generated from within the firm: opening new outlets, adding capacity, developing new products, entering new geographic markets, all typically funded from retained profit or new borrowing.</p>
+<ul>
+  <li><strong>Advantages:</strong> Lower risk, easier to finance incrementally, preserves culture and management control, avoids competition-authority scrutiny.</li>
+  <li><strong>Disadvantages:</strong> Slow; the firm may miss a window of opportunity; limited by internal capabilities and by the growth of the market itself.</li>
+</ul>
+
+<h3>2.3 Inorganic (External) Growth — Mergers, Takeovers and Integration</h3>
+
+<div class="def-box">
+<strong>Merger:</strong> Two firms agree to combine into a single new entity.<br><br>
+<strong>Takeover (acquisition):</strong> One firm buys a controlling stake in another, which may be agreed (friendly) or resisted (hostile).
+</div>
+
+<table>
+  <tr><th>Type</th><th>Description</th><th>Example</th><th>Motivation / effect on market power</th></tr>
+  <tr><td><strong>Horizontal integration</strong></td><td>Combination with a firm at the same stage of the same industry</td><td>Vodafone UK and Three UK, cleared by the CMA with binding commitments in December 2024, reducing the UK from four mobile networks to three</td><td>Directly raises market share and removes a competitor — the type competition authorities scrutinise most closely</td></tr>
+  <tr><td><strong>Vertical integration (forward)</strong></td><td>Combination with a firm closer to the final consumer</td><td>A brewery buying a pub chain; Amazon buying Whole Foods (2017)</td><td>Controls distribution and captures the retail margin; can foreclose rivals' route to market</td></tr>
+  <tr><td><strong>Vertical integration (backward)</strong></td><td>Combination with a firm closer to raw materials or components</td><td>A carmaker buying a battery plant; Tesla's in-house battery and chip design</td><td>Secures supply and cuts input costs; can deny rivals access to key inputs</td></tr>
+  <tr><td><strong>Conglomerate (lateral)</strong></td><td>Combination with a firm in an unrelated industry</td><td>Virgin Group spanning aviation, telecoms and financial services</td><td>Spreads risk; little direct effect on any single market's concentration, so rarely blocked</td></tr>
+</table>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Amazon — Organic and Inorganic Growth Combined</strong><br>
+Amazon is the clearest modern example of a firm using both routes at once. Organically it moved from books into general retail, then built Amazon Web Services (now its most profitable division) and a logistics network that competes with national postal operators. Inorganically it acquired Whole Foods (2017) for physical grocery space, Ring (2018) for smart-home hardware, and MGM Studios (2022) for Prime Video content. The result is market power in several markets at once, reinforced by network effects and by the data the group collects across them. Amazon's marketplace also gives it <strong>monopsony</strong> power over the third-party sellers who depend on it for access to customers — a point the CMA examined when securing commitments from Amazon in 2023 over how it selects the "Buy Box" and uses seller data.
+</div>
+
+<h3>2.4 Constraints on Growth</h3>
+<ul>
+  <li><strong>Diseconomies of scale:</strong> Beyond a point, coordination and communication costs push long-run average cost back up.</li>
+  <li><strong>Finance:</strong> Growth needs capital; smaller firms face higher borrowing costs, and with Bank Rate at 3.75% (Bank of England, September 2026) debt-funded expansion remains materially more expensive than it was in the 2010s.</li>
+  <li><strong>Regulation:</strong> The CMA can block, unwind or attach conditions to mergers that substantially lessen competition.</li>
+  <li><strong>Market size:</strong> In a niche market there is simply nowhere left to grow.</li>
+  <li><strong>Managerial capacity:</strong> A firm can outgrow the ability of its management to run it.</li>
+</ul>
+
+<h3>2.5 Demergers</h3>
+<div class="def-box">
+<strong>Demerger:</strong> The splitting of a firm into two or more separate businesses, either by selling a division or by spinning it off to shareholders as an independent listed company.
+</div>
+<p><strong>Reasons for demerging:</strong></p>
+<ul>
+  <li><strong>Lack of synergy:</strong> The expected cost savings or cross-selling benefits never materialised.</li>
+  <li><strong>The conglomerate discount:</strong> Investors often value the parts of a diversified group at less than they would value the same businesses separately, because the group is harder to analyse.</li>
+  <li><strong>Focus:</strong> Management attention is scarce; a narrower business can be run better.</li>
+  <li><strong>Regulatory requirement:</strong> A competition authority may order divestment as a remedy.</li>
+</ul>
+<p><strong>Examples:</strong> eBay separating from PayPal (2015); GSK spinning out its consumer-health arm as Haleon (2022); and, as an ordered remedy, Meta being required by the CMA to sell Giphy, which it divested to Shutterstock in 2023.</p>
+
+<!-- ===== ECONOMIES OF SCALE ===== -->
+<h2>3. Economies and Diseconomies of Scale</h2>
+
+<div class="def-box">
+<strong>Economies of scale:</strong> Reductions in long-run average cost (LRAC) as a firm increases its scale of production. They explain the downward-sloping section of the LRAC curve and are one of the most important barriers to entry in a concentrated market.
+</div>
+
+<h3>3.1 Internal Economies of Scale</h3>
+<p>Internal economies arise from the growth of the <strong>individual firm</strong>.</p>
+<table>
+  <tr><th>Type</th><th>Explanation</th><th>Example</th></tr>
+  <tr><td><strong>Technical</strong></td><td>Larger plants use specialised, indivisible machinery and benefit from the <strong>cube-square rule</strong> — doubling the linear dimensions of a container multiplies volume by 8 but surface area (and hence material cost) only by 4</td><td>Very large container ships and oil tankers have a far lower cost per unit shipped; automated car assembly lines</td></tr>
+  <tr><td><strong>Purchasing (bulk buying)</strong></td><td>Large orders command discounts from suppliers</td><td>Tesco buying milk and produce at prices no independent convenience store can match</td></tr>
+  <tr><td><strong>Managerial</strong></td><td>Specialist managers (tax, HR, data science) can be employed and their salaries spread over a large output</td><td>A multinational employing a dedicated transfer-pricing team</td></tr>
+  <tr><td><strong>Financial</strong></td><td>Large firms borrow more cheaply — they are seen as lower risk and can issue bonds and equity directly</td><td>FTSE 100 firms issuing corporate bonds at spreads well below the bank loan rates SMEs pay</td></tr>
+  <tr><td><strong>Marketing</strong></td><td>Advertising and brand-building costs are spread over far more units</td><td>A national TV campaign costs Coca-Cola a fraction of a penny per bottle sold</td></tr>
+  <tr><td><strong>Risk-bearing</strong></td><td>Diversification across products, markets and countries smooths earnings</td><td>Unilever selling food, cleaning and personal-care products in around 190 countries</td></tr>
+</table>
+
+<h3>3.2 External Economies of Scale</h3>
+<p>External economies arise from the growth of the <strong>whole industry</strong> and benefit every firm in it, regardless of that firm's own size. They shift the entire LRAC curve downwards.</p>
+<ul>
+  <li><strong>A pooled skilled-labour market:</strong> A cluster of firms attracts specialist workers and specialist training provision — tech engineers around Cambridge and Shoreditch, financial-services staff in the City of London, life-sciences researchers in the Oxford–Cambridge corridor.</li>
+  <li><strong>Infrastructure:</strong> Transport links, power connections and fibre capacity get built out around an industrial cluster.</li>
+  <li><strong>Knowledge spillovers:</strong> Ideas, techniques and staff move between neighbouring firms.</li>
+  <li><strong>Specialist suppliers and services:</strong> Component makers, maintenance contractors and specialist law and accountancy firms locate near the cluster.</li>
+</ul>
+
+<h3>3.3 Diseconomies of Scale</h3>
+<div class="def-box">
+<strong>Diseconomies of scale:</strong> Increases in long-run average cost as a firm grows beyond its optimal size. They explain the upward-sloping section of the LRAC curve.
+</div>
+<ul>
+  <li><strong>Communication failures:</strong> Information is distorted or lost as it passes through many layers of hierarchy.</li>
+  <li><strong>Coordination difficulties:</strong> Running dozens of divisions across many countries requires costly management systems.</li>
+  <li><strong>Loss of motivation:</strong> Workers feel anonymous and less accountable, reducing effort and raising unit labour costs.</li>
+  <li><strong>Principal-agent problems:</strong> Owners cannot effectively monitor managers, and managers cannot effectively monitor front-line staff.</li>
+</ul>
+<p><strong>External diseconomies</strong> also exist: as an industry concentrates in one place, congestion, higher rents and bidding wars for scarce specialist labour raise costs for everyone in it — a long-standing problem in London and the South East.</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 460 360" width="460" height="360">
+  <line x1="60" y1="310" x2="420" y2="310" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="310" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="420,310 412,305 412,315" fill="#1a1a2e"/>
+  <polygon points="60,20 55,28 65,28" fill="#1a1a2e"/>
+  <path d="M 90 250 Q 150 140 230 110 Q 280 100 310 110 Q 370 150 400 230" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
+  <text x="402" y="228" font-size="13" fill="#1a73e8" font-weight="600">LRAC</text>
+  <line x1="280" y1="100" x2="280" y2="310" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="260" y="325" font-size="12" fill="#9ca3af" font-weight="600">MES</text>
+  <text x="130" y="170" font-size="11" fill="#059669" font-weight="600">Economies</text>
+  <text x="130" y="185" font-size="11" fill="#059669" font-weight="600">of scale</text>
+  <text x="330" y="170" font-size="11" fill="#dc2626" font-weight="600">Diseconomies</text>
+  <text x="330" y="185" font-size="11" fill="#dc2626" font-weight="600">of scale</text>
+  <text x="425" y="315" font-size="14" fill="#1a1a2e" font-weight="600">Output (Q)</text>
+  <text x="15" y="18" font-size="14" fill="#1a1a2e" font-weight="600">Cost (£)</text>
+</svg>
+<div class="diagram-caption">Figure 1: The long-run average cost (LRAC) curve. MES = minimum efficient scale — the lowest output at which LRAC is minimised.</div>
+</div>
+
+<h3>3.4 Minimum Efficient Scale (MES) and Market Structure</h3>
+<div class="def-box">
+<strong>Minimum efficient scale (MES):</strong> The lowest level of output at which long-run average cost is minimised. Where MES is large <em>relative to total market demand</em>, only a few firms can reach it, so the market naturally concentrates into an oligopoly — or, in the limit, a natural monopoly. Where MES is small relative to demand, many small firms can compete on equal cost terms.
+</div>
+<p>MES is therefore the single most useful link between cost theory and market structure. Compare:</p>
+<ul>
+  <li><strong>High MES:</strong> electricity transmission, water networks, semiconductor fabrication, commercial aircraft manufacture — a handful of firms worldwide.</li>
+  <li><strong>Low MES:</strong> hairdressing, plumbing, independent cafés, freelance software development — thousands of firms, none with any price-setting power.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Economies of Scale in UK Grocery Retail</strong><br>
+The Great Britain grocery market is dominated by a handful of chains; Kantar's 2026 market-share data put Tesco at around 27%, Sainsbury's around 15%, Aldi around 10% and Lidl around 8%. These firms exploit purchasing economies (buying direct from growers and processors), technical economies (automated regional distribution centres), marketing economies (national campaigns spread across billions of items) and financial economies (bond-market funding). MES in grocery retail is very high, which is why independent shops cannot compete on price and instead compete on convenience and location. Crucially, the discounters show that scale is not the only route to low cost: Aldi and Lidl reached low unit costs with a narrow range (a few thousand lines against a superstore's tens of thousands), minimal promotions and high sales per square foot — a different cost model rather than simply a smaller version of the same one. Aldi overtook Morrisons to become Britain's fourth-largest grocer in 2022 and has held a share around a tenth of the market since.
+</div>
+
+<!-- ===== PERFECT COMPETITION ===== -->
+<h2>4. Perfect Competition</h2>
+
+<div class="def-box">
+<strong>Perfect competition:</strong> A theoretical market structure with many buyers and sellers, homogeneous products, perfect information, no barriers to entry or exit, and firms that are price takers. It serves as the benchmark against which every other market structure is evaluated.
+</div>
+
+<h3>4.1 Assumptions</h3>
+<ul>
+  <li>Very large number of small firms — no single firm can influence the market price.</li>
+  <li>Homogeneous (identical) products — consumers see no difference between firms' output.</li>
+  <li>Perfect information — all buyers and sellers know all prices, qualities, and production methods.</li>
+  <li>No barriers to entry or exit — firms enter freely when profits are high and leave when they are low.</li>
+  <li>Firms are <strong>price takers</strong> — they accept the market price set by industry supply and demand.</li>
+  <li>Profit maximisation is the objective.</li>
+</ul>
+
+<h3>4.2 Short Run — Supernormal Profit</h3>
+<p>In the short run, a perfectly competitive firm can earn supernormal profit if market price is above ATC at the profit-maximising output (MC = MR).</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 460 360" width="460" height="360">
+  <line x1="60" y1="310" x2="420" y2="310" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="310" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="420,310 412,305 412,315" fill="#1a1a2e"/>
+  <polygon points="60,20 55,28 65,28" fill="#1a1a2e"/>
+  <path d="M 120 270 Q 180 190 220 165 Q 260 150 290 160 Q 340 195 380 80" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="382" y="75" font-size="13" fill="#dc2626" font-weight="600">MC</text>
+  <path d="M 120 250 Q 200 145 270 120 Q 320 110 360 130 Q 400 160 415 195" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="400" y="205" font-size="13" fill="#2563eb" font-weight="600">ATC</text>
+  <line x1="60" y1="130" x2="400" y2="130" stroke="#059669" stroke-width="2"/>
+  <text x="402" y="128" font-size="13" fill="#059669" font-weight="600">AR = MR = P</text>
+  <rect x="200" y="118" width="100" height="22" fill="#c4b5fd" opacity="0.35" stroke="#7c3aed" stroke-width="1"/>
+  <text x="210" y="113" font-size="11" fill="#7c3aed" font-weight="600">Supernormal profit</text>
+  <line x1="300" y1="130" x2="300" y2="310" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="292" y="325" font-size="12" fill="#1a1a2e" font-weight="600">Q*</text>
+  <text x="425" y="315" font-size="14" fill="#1a1a2e" font-weight="600">Q</text>
+  <text x="15" y="18" font-size="14" fill="#1a1a2e" font-weight="600">Cost/Revenue (£)</text>
+</svg>
+<div class="diagram-caption">Figure 2: Perfect competition — short-run supernormal profit. The firm produces at MC = MR (Q*), earning supernormal profit (shaded area).</div>
+</div>
+
+<h3>4.3 Long Run — Normal Profit</h3>
+<p>Supernormal profits attract new entrants (there are no barriers). Industry supply increases, pushing down market price until all firms earn only normal profit. In long-run equilibrium: <strong>P = MC = ATC (at the minimum of ATC)</strong>.</p>
+<ul>
+  <li><strong>Allocative efficiency</strong> is achieved: P = MC — price reflects the marginal cost of production, so resources go to their highest-valued use.</li>
+  <li><strong>Productive efficiency</strong> is achieved: production at the minimum of ATC — the lowest possible cost per unit.</li>
+</ul>
+
+<div class="eval-box">
+<strong>Evaluation: Perfect Competition</strong>
+<ul>
+  <li>Purely theoretical — no real market satisfies all the assumptions, though foreign-exchange and commodity-futures markets come close on information and homogeneity.</li>
+  <li>Achieves static efficiency (allocative and productive) but may lack dynamic efficiency — normal profits leave no surplus for R&amp;D.</li>
+  <li>Homogeneous products mean no variety or choice for consumers.</li>
+  <li>Useful precisely <em>because</em> it is a benchmark: the welfare loss from market power is measured against it.</li>
+</ul>
+</div>
+
+<!-- ===== MONOPOLY ===== -->
+<h2>5. Monopoly</h2>
+
+<div class="def-box">
+<strong>Pure monopoly:</strong> A single firm is the sole seller in a market with no close substitutes. In UK practice a 25% share is the traditional benchmark for "monopoly" (and is the CMA's share-of-supply test for taking jurisdiction over a merger), whereas abuse-of-dominance cases under Chapter II of the Competition Act 1998 usually involve shares of 40% or more. A literal 100% share is rare — most real monopolies are <em>dominant firms</em> with very high share.
+</div>
+
+<h3>5.1 Sources of Monopoly Power (Barriers to Entry)</h3>
+<ul>
+  <li><strong>Economies of scale / high MES:</strong> The incumbent's low unit costs make entry at small scale unprofitable.</li>
+  <li><strong>Legal barriers:</strong> Patents (20 years from filing in the UK), copyright, trademarks, licences and statutory franchises.</li>
+  <li><strong>Control of an essential resource or facility:</strong> De Beers historically controlled most of the world's rough diamond supply; today, control of airport slots or of a distribution network plays the same role.</li>
+  <li><strong>Brand loyalty and advertising:</strong> Heavy sunk advertising spending makes it expensive for an entrant to be noticed.</li>
+  <li><strong>Sunk costs:</strong> Irrecoverable entry costs raise the risk of entering and so deter it.</li>
+  <li><strong>Network effects:</strong> The product becomes more valuable as more people use it, so an incumbent platform is hard to dislodge.</li>
+  <li><strong>Predatory and limit pricing:</strong> Incumbents price low to make entry look unattractive (see section 10).</li>
+  <li><strong>Vertical integration:</strong> Owning the supply chain or the route to market can foreclose rivals.</li>
+</ul>
+
+<h3>5.2 Monopoly Diagram — Profit Maximisation</h3>
+
+<div class="diagram-box">
+<svg viewBox="0 0 460 400" width="460" height="400">
+  <line x1="60" y1="350" x2="420" y2="350" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="350" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="420,350 412,345 412,355" fill="#1a1a2e"/>
+  <polygon points="60,20 55,28 65,28" fill="#1a1a2e"/>
+  <path d="M 100 300 Q 160 220 200 190 Q 250 170 280 180 Q 330 210 370 80" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="372" y="75" font-size="13" fill="#dc2626" font-weight="600">MC</text>
+  <path d="M 110 290 Q 190 165 260 138 Q 320 125 365 150 Q 400 180 415 210" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="400" y="220" font-size="13" fill="#2563eb" font-weight="600">ATC</text>
+  <line x1="80" y1="60" x2="400" y2="310" stroke="#059669" stroke-width="2"/>
+  <text x="402" y="308" font-size="13" fill="#059669" font-weight="600">AR = D</text>
+  <line x1="80" y1="60" x2="250" y2="310" stroke="#059669" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="252" y="308" font-size="13" fill="#059669" font-weight="600">MR</text>
+  <circle cx="245" cy="178" r="4" fill="#1a1a2e"/>
+  <line x1="245" y1="178" x2="245" y2="350" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="237" y="368" font-size="12" fill="#1a1a2e" font-weight="600">Qm</text>
+  <line x1="60" y1="120" x2="245" y2="120" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="30" y="124" font-size="12" fill="#1a1a2e" font-weight="600">Pm</text>
+  <line x1="60" y1="150" x2="245" y2="150" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>
+  <rect x="100" y="120" width="145" height="30" fill="#c4b5fd" opacity="0.35" stroke="#7c3aed" stroke-width="1"/>
+  <text x="115" y="110" font-size="11" fill="#7c3aed" font-weight="600">Supernormal profit</text>
+  <polygon points="245,120 245,178 320,155" fill="#fca5a5" opacity="0.3" stroke="#dc2626" stroke-width="1"/>
+  <text x="260" y="200" font-size="10" fill="#dc2626" font-weight="600">DWL</text>
+  <text x="425" y="355" font-size="14" fill="#1a1a2e" font-weight="600">Q</text>
+  <text x="15" y="18" font-size="14" fill="#1a1a2e" font-weight="600">Cost/Revenue (£)</text>
+</svg>
+<div class="diagram-caption">Figure 3: Monopoly profit maximisation at MC = MR. The monopolist charges Pm (read from the AR curve), earning supernormal profit. DWL = the deadweight welfare loss caused by restricting output below the allocatively efficient level.</div>
+</div>
+
+<h3>5.3 Market Power and Market Failure: Costs and Benefits of Monopoly</h3>
+<p>This is the heart of 9EB0 sub-topic 4.2. Market power is a source of <strong>market failure</strong> because the dominant firm restricts output below the allocatively efficient level (P &gt; MC), transferring consumer surplus into profit and destroying the deadweight triangle altogether.</p>
+<table>
+  <tr><th>Costs (arguments against)</th><th>Benefits (arguments for)</th></tr>
+  <tr><td>Higher prices and lower output than competition — allocative inefficiency (P &gt; MC) and deadweight welfare loss</td><td>Supernormal profits can fund R&amp;D and innovation (the Schumpeter argument — dynamic efficiency)</td></tr>
+  <tr><td>Productive inefficiency and X-inefficiency — no competitive pressure to minimise costs</td><td>Economies of scale — a natural monopoly may have lower average cost than many small firms could achieve</td></tr>
+  <tr><td>Reduced consumer surplus and, over time, reduced choice</td><td>Cross-subsidisation — profits from dense urban routes can fund loss-making rural services</td></tr>
+  <tr><td>Rent-seeking — resources spent defending the position (lobbying, litigation) rather than creating value</td><td>International competitiveness — scale can be necessary to compete with foreign rivals</td></tr>
+  <tr><td>Reduced incentive to innovate once entry is blocked; possible exploitation of suppliers and workers</td><td>Patent protection makes risky innovation financeable — essential in pharmaceuticals, where most candidate drugs fail</td></tr>
+</table>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Google — Market Power in Search, and What Regulators Did About It</strong><br>
+Google handles around 90% of general search queries in the UK (CMA, 2025–26). In August 2024 a US federal court ruled that Google had unlawfully maintained a monopoly in general search, largely through exclusive default-placement deals — it had paid partners over $26bn in 2021, roughly $20bn of it to Apple. In the September 2025 remedies ruling the court declined to force a sale of Chrome but prohibited exclusive default-search contracts and required Google to share some search data with rivals. In the UK, the CMA used its new powers under the Digital Markets, Competition and Consumers Act 2024 to designate Google as having <strong>Strategic Market Status</strong> in general search and search advertising in October 2025, and in January 2026 consulted on its first conduct requirements: default-search choice screens in Chrome and on Android, fair and non-discriminatory ranking, a complaints process for affected businesses, and greater control for publishers over how their content is used. Google's defence is that its share reflects a better product freely chosen. The case shows the central tension of Theme 4: market power won by innovation may be legitimate, while market power <em>maintained</em> by exclusion is not.
+</div>
+
+<h3>5.4 Natural Monopoly</h3>
+<div class="def-box">
+<strong>Natural monopoly:</strong> An industry in which minimum efficient scale is so large relative to market demand that a single firm can supply the whole market at lower average cost than two or more firms could. LRAC is still falling at the level of market demand, so duplicating the network would waste resources.
+</div>
+<p><strong>Examples:</strong> regional water and sewerage networks, the electricity transmission grid, the gas transmission system, and the rail infrastructure operated by Network Rail.</p>
+<p>Because entry is neither possible nor desirable, natural monopolies are controlled by <strong>regulation</strong> rather than by competition — see section 13.</p>
+
+<!-- ===== OLIGOPOLY ===== -->
+<h2>6. Oligopoly</h2>
+
+<div class="def-box">
+<strong>Oligopoly:</strong> A market structure dominated by a small number of large firms, each with significant market share. The defining feature is <strong>interdependence</strong> — each firm's pricing and output decisions depend on, and are shaped by, the expected reactions of its rivals.
+</div>
+
+<h3>6.1 Characteristics</h3>
+<ul>
+  <li><strong>High concentration ratio:</strong> a few firms hold most of the market — UK grocery, mobile telecoms (three networks after the Vodafone–Three merger completed in 2025), the big four audit firms, retail banking.</li>
+  <li><strong>Interdependence:</strong> firms must anticipate rivals' reactions, which is what makes oligopoly analytically distinct.</li>
+  <li><strong>High barriers to entry:</strong> economies of scale, brand loyalty, sunk costs, control of distribution.</li>
+  <li><strong>Non-price competition:</strong> advertising, loyalty schemes, product innovation, service quality.</li>
+  <li><strong>Price rigidity:</strong> prices tend to be sticky, one explanation for which is the kinked demand curve.</li>
+</ul>
+
+<h3>6.2 The Kinked Demand Curve</h3>
+<p>The kinked demand curve model (Sweezy) offers one explanation of price rigidity:</p>
+<ul>
+  <li>If a firm <strong>raises</strong> price, rivals do not follow — it loses customers heavily (elastic demand above the kink).</li>
+  <li>If a firm <strong>lowers</strong> price, rivals match — it gains little share (inelastic demand below the kink).</li>
+  <li>There is therefore a discontinuity ("gap") in MR, so marginal cost can shift within that gap without changing the profit-maximising price or output.</li>
+</ul>
+
+<div class="diagram-box">
+<svg viewBox="0 0 460 380" width="460" height="380">
+  <line x1="60" y1="330" x2="420" y2="330" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="330" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="420,330 412,325 412,335" fill="#1a1a2e"/>
+  <polygon points="60,20 55,28 65,28" fill="#1a1a2e"/>
+  <line x1="100" y1="50" x2="240" y2="160" stroke="#059669" stroke-width="2.5"/>
+  <line x1="240" y1="160" x2="380" y2="300" stroke="#059669" stroke-width="2.5"/>
+  <text x="382" y="298" font-size="13" fill="#059669" font-weight="600">D (AR)</text>
+  <circle cx="240" cy="160" r="5" fill="#1a1a2e"/>
+  <line x1="100" y1="50" x2="175" y2="160" stroke="#059669" stroke-width="2" stroke-dasharray="6,3"/>
+  <line x1="240" y1="230" x2="320" y2="310" stroke="#059669" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="322" y="308" font-size="13" fill="#059669" font-weight="600">MR</text>
+  <line x1="240" y1="160" x2="240" y2="230" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="248" y="200" font-size="11" fill="#dc2626" font-weight="600">Gap in MR</text>
+  <line x1="60" y1="160" x2="240" y2="160" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="30" y="164" font-size="12" fill="#1a1a2e" font-weight="600">P*</text>
+  <line x1="240" y1="160" x2="240" y2="330" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="232" y="348" font-size="12" fill="#1a1a2e" font-weight="600">Q*</text>
+  <text x="95" y="100" font-size="11" fill="#9ca3af">Elastic (rivals</text>
+  <text x="95" y="113" font-size="11" fill="#9ca3af">don't follow)</text>
+  <text x="300" y="240" font-size="11" fill="#9ca3af">Inelastic (rivals</text>
+  <text x="300" y="253" font-size="11" fill="#9ca3af">match cut)</text>
+  <text x="425" y="335" font-size="14" fill="#1a1a2e" font-weight="600">Q</text>
+  <text x="15" y="18" font-size="14" fill="#1a1a2e" font-weight="600">P (£)</text>
+</svg>
+<div class="diagram-caption">Figure 4: The kinked demand curve. The gap in MR means MC can shift anywhere within the gap without changing the profit-maximising price or output.</div>
+</div>
+
+<h3>6.3 Game Theory and the Prisoner's Dilemma</h3>
+<p>Game theory analyses strategic decisions under interdependence. The <strong>prisoner's dilemma</strong> shows why co-operation is unstable:</p>
+
+<table>
+  <tr><th></th><th>Firm B: High Price</th><th>Firm B: Low Price</th></tr>
+  <tr><td><strong>Firm A: High Price</strong></td><td>A: £10m, B: £10m (both co-operate)</td><td>A: £2m, B: £15m (A loses out)</td></tr>
+  <tr><td><strong>Firm A: Low Price</strong></td><td>A: £15m, B: £2m (B loses out)</td><td>A: £5m, B: £5m (both compete)</td></tr>
+</table>
+
+<p>The <strong>dominant strategy</strong> for each firm is the low price — whatever the rival does, each does better by cutting. The <strong>Nash equilibrium</strong> is therefore (Low, Low) at £5m each, even though (High, High) would give both £10m. This explains both why cartels form and why they collapse.</p>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: UK Road Fuel Retailing</strong><br>
+Road fuel retailing is a textbook oligopoly: the large supermarket chains, the oil-company forecourts (BP, Shell, Esso) and forecourt operators such as EG Group. The CMA's road fuel market study (2023) found "rocket and feather" pricing — pump prices rising quickly when wholesale costs rise but falling slowly when they fall — and a widening of retail margins, especially at supermarkets, without proving formal collusion. The CMA's remedy was <strong>price transparency rather than price control</strong>: the statutory <strong>Fuel Finder</strong> scheme went live on 2 February 2026, legally requiring every forecourt to report price changes within 30 minutes, with the CMA prioritising enforcement from 1 May 2026. By its August 2026 monitoring update the CMA reported that around 99% of UK road fuel was sold by registered retailers, and that shopping around could save up to about £9 on a tank. This is a neat example of correcting a market failure caused by <em>imperfect information</em> rather than attacking market structure directly.
+</div>
+
+<!-- ===== MONOPOLISTIC COMPETITION ===== -->
+<h2>7. Monopolistic Competition</h2>
+
+<div class="def-box">
+<strong>Monopolistic competition:</strong> Many firms, each producing a slightly differentiated product. Each has a little market power (a downward-sloping demand curve) because of branding, location or service, but faces close substitutes and low barriers to entry and exit.
+</div>
+
+<h3>7.1 Characteristics</h3>
+<ul>
+  <li>Many buyers and sellers, none large relative to the market.</li>
+  <li>Product differentiation — real or perceived (branding, quality, location, service).</li>
+  <li>Low barriers to entry and exit.</li>
+  <li>Each firm faces a downward-sloping demand curve, so it is a price maker within a narrow range.</li>
+  <li>Non-price competition matters a great deal.</li>
+</ul>
+
+<h3>7.2 Short Run vs Long Run</h3>
+<p><strong>Short run:</strong> Firms can earn supernormal profit — produce where MC = MR, read price from the AR curve.</p>
+<p><strong>Long run:</strong> Supernormal profit attracts entrants; each incumbent's demand curve shifts left and becomes more elastic until AR is tangent to ATC and only normal profit is earned.</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 460 360" width="460" height="360">
+  <line x1="60" y1="310" x2="420" y2="310" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="310" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="420,310 412,305 412,315" fill="#1a1a2e"/>
+  <polygon points="60,20 55,28 65,28" fill="#1a1a2e"/>
+  <path d="M 100 280 Q 190 130 260 110 Q 320 105 370 130 Q 410 170 420 210" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="408" y="220" font-size="13" fill="#2563eb" font-weight="600">ATC</text>
+  <path d="M 120 260 Q 180 180 220 155 Q 260 140 290 150 Q 340 190 380 70" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="382" y="65" font-size="13" fill="#dc2626" font-weight="600">MC</text>
+  <line x1="110" y1="50" x2="390" y2="260" stroke="#059669" stroke-width="2"/>
+  <text x="392" y="258" font-size="13" fill="#059669" font-weight="600">AR = D</text>
+  <line x1="110" y1="50" x2="260" y2="260" stroke="#059669" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="262" y="260" font-size="13" fill="#059669" font-weight="600">MR</text>
+  <circle cx="270" cy="112" r="4" fill="#1a1a2e"/>
+  <line x1="248" y1="153" x2="248" y2="310" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="240" y="325" font-size="12" fill="#1a1a2e" font-weight="600">Q</text>
+  <line x1="60" y1="153" x2="248" y2="153" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="5,4"/>
+  <text x="35" y="157" font-size="12" fill="#1a1a2e" font-weight="600">P</text>
+  <text x="160" y="100" font-size="11" fill="#9ca3af">AR tangent to ATC</text>
+  <text x="160" y="115" font-size="11" fill="#9ca3af">(normal profit only)</text>
+  <text x="425" y="315" font-size="14" fill="#1a1a2e" font-weight="600">Q</text>
+  <text x="15" y="18" font-size="14" fill="#1a1a2e" font-weight="600">Cost/Revenue (£)</text>
+</svg>
+<div class="diagram-caption">Figure 5: Monopolistic competition — long-run equilibrium. AR is tangent to ATC at the profit-maximising output, so only normal profit is earned.</div>
+</div>
+
+<h3>7.3 Efficiency in Monopolistic Competition</h3>
+<ul>
+  <li><strong>Not allocatively efficient:</strong> P &gt; MC.</li>
+  <li><strong>Not productively efficient:</strong> output is below minimum ATC — the firm carries <strong>excess capacity</strong>.</li>
+  <li>However consumers gain <strong>variety and choice</strong>, which has real welfare value even at a slightly higher unit cost.</li>
+</ul>
+
+<!-- ===== CONTESTABILITY ===== -->
+<h2>8. Contestable Markets</h2>
+
+<div class="def-box">
+<strong>Contestable market:</strong> A market with freedom of entry and exit and low or zero sunk costs. The <em>threat</em> of entry disciplines incumbents, forcing competitive behaviour even where the market is currently concentrated. Contestability theory (Baumol) shifts the focus from the <em>number</em> of firms to the <em>ease of entry</em>.
+</div>
+
+<h3>8.1 Key Conditions</h3>
+<ul>
+  <li>No barriers to entry or exit.</li>
+  <li>Low or zero <strong>sunk costs</strong> — costs that cannot be recovered on exit, such as advertising or bespoke equipment.</li>
+  <li>Perfect information about profit opportunities.</li>
+  <li><strong>Hit-and-run entry</strong> is possible: enter, take supernormal profit, exit before the incumbent can respond.</li>
+</ul>
+
+<h3>8.2 Implications</h3>
+<p>In a perfectly contestable market even a single incumbent would be forced to price at normal profit, because any supernormal profit would attract hit-and-run entry. Policy follows: if you cannot create more firms, at least remove the barriers so entry is credible. This is the rationale behind open-banking rules, airport-slot trading, and requiring dominant platforms to offer choice screens.</p>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Airline Deregulation and the Limits of Contestability</strong><br>
+Aviation became markedly more contestable after deregulation in the US (1978) and the EU single aviation market (completed 1997). Low-cost carriers such as Ryanair, easyJet and Wizz Air entered routes once held by flag carriers, and sunk costs are genuinely low because aircraft are leased and can be redeployed within weeks. But contestability is route-specific: take-off and landing slots at congested hubs, above all Heathrow, remain a hard barrier, and a slot-constrained hub route is far less contestable than a point-to-point regional route. The lesson is that contestability is a matter of degree, and that the binding barrier is often a single scarce, non-reproducible asset.
+</div>
+
+<!-- ===== EFFICIENCY ===== -->
+<h2>9. Efficiency</h2>
+
+<table>
+  <tr><th>Type</th><th>Condition</th><th>Meaning</th></tr>
+  <tr><td><strong>Allocative efficiency</strong></td><td>P = MC</td><td>Resources reflect consumer preferences — what consumers pay for the last unit equals what it costs society to make it.</td></tr>
+  <tr><td><strong>Productive efficiency</strong></td><td>Output at minimum ATC</td><td>The lowest possible cost per unit — no waste of resources.</td></tr>
+  <tr><td><strong>Dynamic efficiency</strong></td><td>Innovation and cost reduction over time</td><td>Investment in R&amp;D, new products and better processes. Requires retained supernormal profit to fund it.</td></tr>
+  <tr><td><strong>X-inefficiency</strong></td><td>Costs above the achievable minimum</td><td>Leibenstein's idea: sheltered firms do not try hard enough to minimise cost. The classic justification for privatisation and for opening markets to competition.</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Every comparison of market structures should end in efficiency. Perfect competition delivers static efficiency but little dynamic efficiency; monopoly is statically inefficient but can be dynamically efficient (Schumpeter). The "best" structure depends on which efficiency you weight most, and over what time horizon.
+</div>
+
+<!-- ===== PRICING STRATEGIES ===== -->
+<h2>10. Pricing Strategies and Non-Price Competition</h2>
+
+<p>Firms with market power do not simply "charge Pm". They choose a pricing <em>strategy</em>, and the strategy chosen is often itself the mechanism by which market power is created or defended.</p>
+
+<h3>10.1 Predatory Pricing</h3>
+<div class="def-box">
+<strong>Predatory pricing:</strong> Deliberately pricing below cost for a sustained period in order to drive a rival out of the market or deter entry, with the intention of raising prices once the rival has gone. It is an abuse of a dominant position under Chapter II of the Competition Act 1998 and is unlawful.
+</div>
+<p>It is notoriously hard to prove, because a firm accused of predation can argue it was simply competing hard, or pricing at marginal cost in a downturn. Regulators look for pricing below average variable cost plus evidence of intent (internal documents, a plan to recoup losses later).</p>
+
+<h3>10.2 Limit Pricing</h3>
+<div class="def-box">
+<strong>Limit pricing:</strong> Setting price <em>below</em> the short-run profit-maximising level, but still above cost, so that the market looks insufficiently profitable to a potential entrant. Unlike predation it is legal, because the incumbent is not pricing below cost.
+</div>
+<p>Limit pricing sacrifices short-run profit for long-run protection of market power — rational whenever the present value of future protected profits exceeds the profit given up now.</p>
+
+<h3>10.3 Price Discrimination</h3>
+<div class="def-box">
+<strong>Price discrimination:</strong> Charging different consumers different prices for the <em>same</em> good or service, where the price difference does not reflect a difference in cost.
+</div>
+<p><strong>Three conditions must hold:</strong></p>
+<ol>
+  <li>The firm must have <strong>price-setting power</strong> (it cannot be a price taker).</li>
+  <li>Consumers must have <strong>different price elasticities of demand</strong>, and the firm must be able to identify and separate them.</li>
+  <li><strong>Resale (arbitrage) must be prevented</strong> — otherwise the low-price group would simply resell to the high-price group.</li>
+</ol>
+<p><strong>Degrees:</strong></p>
+<ul>
+  <li><strong>First degree (perfect):</strong> each consumer pays exactly their maximum willingness to pay, so the firm captures the entire consumer surplus. Rare, but personalised algorithmic pricing moves towards it.</li>
+  <li><strong>Second degree:</strong> price varies with quantity or timing of purchase — bulk discounts, off-peak tariffs, airline seats that cost more as departure nears.</li>
+  <li><strong>Third degree:</strong> price varies by identifiable consumer group — railcards for students and over-60s, cinema concessions, peak and off-peak rail fares.</li>
+</ul>
+
+<div class="diagram-box">
+<svg viewBox="0 0 620 320" width="620" height="320">
+  <!-- Market A: inelastic -->
+  <line x1="50" y1="270" x2="270" y2="270" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="50" y1="270" x2="50" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="270,270 262,265 262,275" fill="#1a1a2e"/>
+  <polygon points="50,30 45,38 55,38" fill="#1a1a2e"/>
+  <line x1="80" y1="50" x2="150" y2="260" stroke="#059669" stroke-width="2.5"/>
+  <text x="152" y="258" font-size="12" fill="#059669" font-weight="600">D(A)</text>
+  <line x1="80" y1="50" x2="115" y2="260" stroke="#059669" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="105" y="275" font-size="11" fill="#059669">MR(A)</text>
+  <line x1="50" y1="200" x2="260" y2="200" stroke="#dc2626" stroke-width="2"/>
+  <text x="235" y="195" font-size="11" fill="#dc2626" font-weight="600">MC</text>
+  <circle cx="105" cy="200" r="3.5" fill="#1a1a2e"/>
+  <line x1="50" y1="125" x2="105" y2="125" stroke="#1a1a2e" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="105" y1="125" x2="105" y2="270" stroke="#1a1a2e" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="26" y="129" font-size="12" fill="#1a1a2e" font-weight="600">P&#8321;</text>
+  <text x="97" y="287" font-size="12" fill="#1a1a2e" font-weight="600">Q&#8321;</text>
+  <text x="70" y="24" font-size="12" fill="#1a1a2e" font-weight="600">Market A — inelastic</text>
+  <!-- Market B: elastic -->
+  <line x1="350" y1="270" x2="580" y2="270" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="350" y1="270" x2="350" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="580,270 572,265 572,275" fill="#1a1a2e"/>
+  <polygon points="350,30 345,38 355,38" fill="#1a1a2e"/>
+  <line x1="365" y1="90" x2="560" y2="250" stroke="#059669" stroke-width="2.5"/>
+  <text x="545" y="265" font-size="12" fill="#059669" font-weight="600">D(B)</text>
+  <line x1="365" y1="90" x2="462" y2="250" stroke="#059669" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="440" y="265" font-size="11" fill="#059669">MR(B)</text>
+  <line x1="350" y1="200" x2="570" y2="200" stroke="#dc2626" stroke-width="2"/>
+  <text x="545" y="195" font-size="11" fill="#dc2626" font-weight="600">MC</text>
+  <circle cx="432" cy="200" r="3.5" fill="#1a1a2e"/>
+  <line x1="350" y1="145" x2="432" y2="145" stroke="#1a1a2e" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="432" y1="145" x2="432" y2="270" stroke="#1a1a2e" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="326" y="149" font-size="12" fill="#1a1a2e" font-weight="600">P&#8322;</text>
+  <text x="424" y="287" font-size="12" fill="#1a1a2e" font-weight="600">Q&#8322;</text>
+  <text x="372" y="24" font-size="12" fill="#1a1a2e" font-weight="600">Market B — elastic</text>
+  <text x="14" y="46" font-size="11" fill="#1a1a2e">P (£)</text>
+</svg>
+<div class="diagram-caption">Figure 6: Third-degree price discrimination. The firm equates MR to the same MC in each separated market, so the group with the more inelastic demand (A) is charged the higher price P&#8321; and the group with the more elastic demand (B) the lower price P&#8322;.</div>
+</div>
+
+<div class="eval-box">
+<strong>Evaluation: Is Price Discrimination Bad for Welfare?</strong>
+<ul>
+  <li><strong>Against:</strong> it transfers consumer surplus to the producer, and the inelastic group — often those with least choice, such as commuters or last-minute travellers — pays most.</li>
+  <li><strong>For:</strong> total output is usually higher than under a single price, so some consumers are served who would otherwise be priced out; off-peak discounts spread demand and improve capacity utilisation; and the extra profit can cross-subsidise loss-making services or fund investment.</li>
+  <li><strong>Fairness:</strong> a railcard that cuts fares for students and pensioners is broadly seen as progressive; personalised pricing based on browsing data is not, which is why data-driven pricing is under regulatory scrutiny.</li>
+</ul>
+</div>
+
+<h3>10.4 Cost-Plus and Psychological Pricing</h3>
+<ul>
+  <li><strong>Cost-plus (mark-up) pricing:</strong> price is set at average cost plus a target percentage margin. It is a heuristic used by most real firms — consistent with Simon's bounded rationality, since calculating MR = MC precisely is impossible in practice. It is simple and protects the margin but ignores demand conditions and rivals' prices.</li>
+  <li><strong>Psychological pricing:</strong> exploits how consumers actually process prices — £9.99 rather than £10 (left-digit bias), decoy options that make the middle option look reasonable, and anchoring on an inflated "was" price. This is behavioural economics applied directly to pricing.</li>
+  <li><strong>Penetration pricing:</strong> a low introductory price to build share quickly, common where network effects or switching costs mean early share is self-reinforcing (streaming services, mobile plans).</li>
+  <li><strong>Price skimming:</strong> a high launch price to capture the least price-sensitive buyers first, then reductions — standard practice for new consumer electronics.</li>
+</ul>
+
+<h3>10.5 Non-Price Competition</h3>
+<p>Where price cuts are quickly matched (see the kinked demand curve), firms compete in other ways:</p>
+<ul>
+  <li><strong>Advertising and branding</strong> — creates perceived differentiation, makes demand less elastic, and acts as a sunk-cost barrier to entry.</li>
+  <li><strong>Loyalty schemes and personalised pricing</strong> — Tesco Clubcard and Sainsbury's Nectar prices both reward membership with lower prices and harvest data that improves targeting. The CMA reviewed supermarket loyalty pricing in 2024 and concluded it was not in itself misleading, while pressing for clearer unit pricing.</li>
+  <li><strong>Product innovation and quality</strong> — new features, reliability, design.</li>
+  <li><strong>Customer service, warranties, delivery speed and returns policies.</strong></li>
+  <li><strong>Locking customers in</strong> — long contracts, proprietary ecosystems, high switching costs.</li>
+</ul>
+
+<!-- ===== CARTELS ===== -->
+<h2>11. Cartels and Collusive Agreements</h2>
+
+<div class="def-box">
+<strong>Collusion:</strong> Co-operation between firms, in place of competition, to raise joint profits towards the monopoly level.<br><br>
+<strong>Cartel:</strong> A formal agreement between firms to fix prices, restrict output, rig bids or share out markets and customers. Cartels are illegal in the UK under Chapter I of the Competition Act 1998, and individuals who take part can be prosecuted for the criminal cartel offence under the Enterprise Act 2002.
+</div>
+
+<h3>11.1 Forms of Collusion</h3>
+<ul>
+  <li><strong>Overt (formal) collusion:</strong> an explicit agreement — price fixing, output quotas, market sharing, or <strong>bid rigging</strong> (including "cover pricing", where a firm submits a deliberately high bid so a chosen rival wins).</li>
+  <li><strong>Tacit (informal) collusion:</strong> no agreement, but parallel behaviour that produces the same result — <strong>price leadership</strong>, where a dominant firm moves first and the others follow, or simple parallel pricing sustained by mutual observation. Tacit collusion is much harder to prosecute because there is nothing to find.</li>
+  <li><strong>Information exchange:</strong> sharing commercially sensitive future pricing information can itself be an infringement, even without an agreement to fix anything.</li>
+</ul>
+
+<h3>11.2 What Makes Collusion More or Less Likely</h3>
+<table>
+  <tr><th>Encourages collusion</th><th>Causes collusion to break down</th></tr>
+  <tr><td>Few firms, so co-ordination is easy to organise and to police</td><td>The incentive to cheat — one firm can gain by secretly undercutting (the prisoner's dilemma)</td></tr>
+  <tr><td>Similar cost structures and similar products</td><td>Different costs or objectives, so firms want different prices</td></tr>
+  <tr><td>High barriers to entry — no outsider can undercut the agreement</td><td>New entrants, or an existing "maverick" firm that refuses to play</td></tr>
+  <tr><td>Stable, transparent market conditions</td><td>Recession, which sharpens the temptation to cut price to hold volume</td></tr>
+  <tr><td>Repeated interaction over many periods, allowing punishment of cheats</td><td>Detection: competition-authority investigation, dawn raids, fines and director disqualification</td></tr>
+</table>
+
+<h3>11.3 Detection and Deterrence</h3>
+<ul>
+  <li><strong>Fines:</strong> up to <strong>10% of worldwide group turnover</strong> for an infringement of the Competition Act 1998.</li>
+  <li><strong>Leniency:</strong> the first cartel member to come forward with evidence can receive full immunity from fines. This deliberately destabilises cartels from the inside — the prisoner's dilemma turned against the colluders.</li>
+  <li><strong>Director disqualification:</strong> up to 15 years for a director involved in or who ought to have known of an infringement.</li>
+  <li><strong>Criminal prosecution</strong> of individuals for the hard-core cartel offence.</li>
+  <li><strong>Private damages actions</strong> in the Competition Appeal Tribunal, including collective (class-action style) claims.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: The UK Gilts Information-Sharing Case (CMA, February 2025)</strong><br>
+On 21 February 2025 the CMA fined four banks a total of £104.5m — RBC £34.2m, Morgan Stanley £29.7m, HSBC £23.4m and Citi £17.2m — for unlawfully exchanging competitively sensitive information about UK government bonds (gilts) in one-to-one Bloomberg chatrooms between 2009 and 2013. Deutsche Bank took part but paid nothing because it reported the conduct first and received full immunity under the leniency programme; the other banks received discounts for settling and admitting liability. The case illustrates three exam-ready points at once: collusion need not involve a formal price-fixing agreement, leniency is the main reason cartels are detected, and the deterrent works through both the size of the fine and the incentive to defect first. The CMA has also used the same tools against bid rigging, having fined ten construction firms around £60m in 2023 for cover pricing on demolition contracts.
+</div>
+
+<!-- ===== MONOPSONY ===== -->
+<h2>12. Monopsony Power</h2>
+
+<div class="def-box">
+<strong>Monopsony:</strong> A market with a single (or dominant) <em>buyer</em>. Monopsony power is buying power — the ability to drive the price paid for a good, an input or labour below the competitive level. It is the mirror image of monopoly.
+</div>
+
+<h3>12.1 Monopsony in the Product Market</h3>
+<p>A dominant buyer faces an upward-sloping supply curve from its suppliers, so buying one more unit raises the price on <em>all</em> units. Its marginal cost of purchase therefore lies above the supply curve, and it maximises profit by buying <strong>less</strong> and paying <strong>less</strong> than a competitive buyer would.</p>
+<ul>
+  <li><strong>Effects on suppliers:</strong> squeezed margins, late payment, costs transferred down the chain, and under-investment because suppliers cannot finance it.</li>
+  <li><strong>Effects on consumers:</strong> potentially lower retail prices if the savings are passed on — the "countervailing power" defence for large retailers.</li>
+  <li><strong>Long-run risk:</strong> if suppliers exit or stop investing, quality, resilience and variety fall.</li>
+</ul>
+<p>The UK's specific response is the <strong>Groceries Supply Code of Practice</strong>, enforced by the <strong>Groceries Code Adjudicator (GCA)</strong>, which regulates how the largest retailers treat their direct suppliers and can fine a retailer up to 1% of UK turnover. A 2025 proposal to fold the GCA into the CMA was dropped after opposition from suppliers, and sponsorship of the Adjudicator moved from the Department for Business and Trade to Defra on 1 July 2026.</p>
+
+<h3>12.2 Monopsony in the Labour Market</h3>
+<p>A monopsony employer faces the market supply of labour, so to hire one more worker it must raise the wage for everyone. The marginal cost of labour (MCL) therefore lies above the supply curve (ACL). The firm hires where <strong>MCL = MRP</strong> at Qm, but pays only the wage on the supply curve at that quantity, Wm — below both the competitive wage Wc and the worker's marginal revenue product.</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 470 370" width="470" height="370">
+  <line x1="60" y1="315" x2="425" y2="315" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="315" x2="60" y2="25" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="425,315 417,310 417,320" fill="#1a1a2e"/>
+  <polygon points="60,25 55,33 65,33" fill="#1a1a2e"/>
+  <!-- ACL = S -->
+  <line x1="90" y1="285" x2="390" y2="75" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="352" y="66" font-size="12" fill="#2563eb" font-weight="600">S = ACL</text>
+  <!-- MCL steeper -->
+  <line x1="90" y1="285" x2="270" y2="55" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="7,4"/>
+  <text x="256" y="48" font-size="12" fill="#7c3aed" font-weight="600">MCL</text>
+  <!-- MRP -->
+  <line x1="95" y1="70" x2="400" y2="285" stroke="#e53e3e" stroke-width="2.5"/>
+  <text x="358" y="298" font-size="12" fill="#e53e3e" font-weight="600">D = MRP</text>
+  <!-- Competitive equilibrium: intersection S and MRP -->
+  <circle cx="246" cy="176" r="4" fill="#1a1a2e"/>
+  <line x1="60" y1="176" x2="246" y2="176" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="26" y="180" font-size="12" fill="#1a1a2e" font-weight="600">Wc</text>
+  <line x1="246" y1="176" x2="246" y2="315" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="238" y="332" font-size="12" fill="#1a1a2e" font-weight="600">Qc</text>
+  <!-- Monopsony: MCL = MRP -->
+  <circle cx="200" cy="144" r="4" fill="#7c3aed"/>
+  <line x1="200" y1="144" x2="200" y2="315" stroke="#1a1a2e" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <text x="192" y="332" font-size="12" fill="#1a1a2e" font-weight="600">Qm</text>
+  <!-- Wage read off ACL at Qm -->
+  <circle cx="200" cy="208" r="4" fill="#1a1a2e"/>
+  <line x1="60" y1="208" x2="200" y2="208" stroke="#1a1a2e" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <text x="24" y="212" font-size="12" fill="#1a1a2e" font-weight="600">Wm</text>
+  <text x="208" y="138" font-size="10.5" fill="#7c3aed" font-weight="600">MCL = MRP</text>
+  <text x="430" y="320" font-size="13" fill="#1a1a2e" font-weight="600">Labour</text>
+  <text x="15" y="20" font-size="13" fill="#1a1a2e" font-weight="600">Wage (£)</text>
+</svg>
+<div class="diagram-caption">Figure 7: Monopsony in the labour market. The employer hires Qm where MCL = MRP but pays only Wm, read off the labour supply (ACL) curve — below the competitive wage Wc and below workers' marginal revenue product. Employment is lower and wages are lower than in a competitive labour market.</div>
+</div>
+
+<p>Real approximations to labour-market monopsony include the NHS as the dominant employer of UK nurses and junior doctors, a single large employer in an isolated town, and — more subtly — any labour market where workers face high switching costs, poor information about alternatives, or non-compete clauses.</p>
+
+<div class="eval-box">
+<strong>Evaluation: Why Monopsony Matters for Policy</strong>
+<ul>
+  <li>If employers have monopsony power, a minimum wage set between Wm and Wc <strong>raises both wages and employment</strong>, because the wage floor removes the employer's incentive to restrict hiring. This is the main theoretical reason economists no longer expect moderate minimum-wage rises to destroy jobs.</li>
+  <li>The same logic makes trade unions welfare-improving in a monopsonised market: a bilateral monopoly can move the wage back towards MRP without cutting employment.</li>
+  <li>Monopsony power over suppliers, unlike monopoly power over consumers, does not automatically show up as a higher price, so it is easily missed by competition tests that focus on consumer prices alone.</li>
+</ul>
+</div>
+
+<!-- ===== REGULATION ===== -->
+<h2>13. The Regulation of Market Power</h2>
+
+<h3>13.1 The Competition and Markets Authority (CMA)</h3>
+<p>The CMA is the UK's principal competition authority. Its chief executive is Sarah Cardell and Doug Gurr, interim chair from January 2025, was confirmed as permanent chair in February 2026. Its main tools are:</p>
+<table>
+  <tr><th>Power</th><th>Legal basis</th><th>What it does</th></tr>
+  <tr><td><strong>Anti-trust enforcement</strong></td><td>Competition Act 1998, Chapters I and II</td><td>Investigates anti-competitive agreements (Chapter I) and abuse of a dominant position (Chapter II); fines up to 10% of worldwide turnover</td></tr>
+  <tr><td><strong>Merger control</strong></td><td>Enterprise Act 2002</td><td>Reviews mergers meeting the turnover or 25% share-of-supply test; can clear, attach remedies, or prohibit a merger that substantially lessens competition</td></tr>
+  <tr><td><strong>Market studies and market investigations</strong></td><td>Enterprise Act 2002</td><td>Examines a whole market where competition appears not to be working (road fuel, veterinary services, housebuilding) and can impose binding remedies without proving any firm broke the law</td></tr>
+  <tr><td><strong>Digital markets regime</strong></td><td>Digital Markets, Competition and Consumers Act 2024 (in force 1 January 2025)</td><td>Designates firms with <strong>Strategic Market Status</strong> and imposes tailored conduct requirements and pro-competition interventions; penalties up to 10% of global turnover</td></tr>
+  <tr><td><strong>Consumer protection</strong></td><td>DMCC Act 2024</td><td>Direct enforcement of consumer law — the CMA can now fine firms itself for practices such as drip pricing and fake reviews, without going to court first</td></tr>
+</table>
+<p>Recent merger decisions show the range of outcomes: the CMA blocked Microsoft's original acquisition of Activision Blizzard in April 2023 and cleared a restructured deal in October 2023; it required Meta to divest Giphy, sold to Shutterstock in 2023; and it cleared Vodafone–Three in December 2024 subject to binding network-investment and price commitments. Since the government's 2025 "strategic steer" the CMA has been directed to weigh growth and investment more heavily, and in 2025–26 it consulted on more flexible merger remedies — a live evaluation point about whether competition enforcement is being loosened.</p>
+
+<h3>13.2 Sector Regulators</h3>
+<p>Where an industry is a natural monopoly, competition law alone cannot help, so a dedicated regulator sets the terms on which the monopolist may operate.</p>
+<table>
+  <tr><th>Regulator</th><th>Sector</th><th>Principal instrument (2026)</th></tr>
+  <tr><td><strong>Ofgem</strong></td><td>Gas and electricity</td><td>The <strong>RIIO</strong> network price controls (RIIO-3 runs April 2026 to March 2031, with £28.1bn of upfront investment funding approved in December 2025) and the domestic default tariff cap, which rose 4% to about £1,723 a year for a typical dual-fuel direct-debit household from 1 October 2026</td></tr>
+  <tr><td><strong>Ofwat</strong></td><td>Water and sewerage in England and Wales</td><td>The PR24 price control covering 2025–2030, allowing average household bills to rise by around £157 (about 36%) before inflation over the five years. Following the Cunliffe Review (July 2025) and the January 2026 water white paper, Ofwat is to be <strong>abolished</strong> and replaced by a single integrated regulator, the Clean Water Authority, through legislation proceeding during 2026</td></tr>
+  <tr><td><strong>Ofcom</strong></td><td>Telecoms, post and broadcasting; also online safety</td><td>Wholesale access and price controls on Openreach, the Royal Mail universal service obligation, spectrum allocation</td></tr>
+  <tr><td><strong>ORR</strong></td><td>Rail</td><td>Network Rail's five-yearly access charges and performance targets; safety regulation</td></tr>
+  <tr><td><strong>FCA / PRA</strong></td><td>Financial services</td><td>Conduct and prudential regulation (covered in Theme 4.2)</td></tr>
+</table>
+
+<h3>13.3 Methods of Regulating a Natural Monopoly</h3>
+
+<h4>Price capping — RPI-X</h4>
+<div class="def-box">
+<strong>RPI-X regulation:</strong> Devised by Stephen Littlechild at privatisation, this caps the annual increase in the regulated firm's prices at the rate of inflation (RPI) <em>minus</em> an efficiency factor X. The firm must therefore cut real costs by at least X% a year simply to stand still — but it keeps any savings beyond X until the next review, which preserves the incentive to become efficient.
+</div>
+<ul>
+  <li><strong>Advantages:</strong> mimics the cost discipline of competition; protects consumers from monopoly pricing; rewards genuine efficiency gains, so it attacks X-inefficiency rather than just capping profit.</li>
+  <li><strong>Disadvantages:</strong> setting X requires information the regulator does not have and the firm has every incentive to distort — the <strong>asymmetric information</strong> problem. Too tough an X starves the network of investment; too soft an X hands the firm easy profit. Firms may also cut quality to meet the cap, which is why price caps are always paired with quality standards.</li>
+  <li><strong>Modern practice:</strong> pure RPI-X has evolved into <strong>RIIO</strong> at Ofgem (Revenue = Incentives + Innovation + Outputs), which sets allowed revenue against delivered outputs rather than capping price alone, and into Ofwat's outcome-based price reviews. Regulators have also moved from RPI to CPIH as the inflation measure.</li>
+</ul>
+
+<h4>Other regulatory tools</h4>
+<ul>
+  <li><strong>Quality standards:</strong> minimum service obligations enforced by fines — supply interruptions and sewage-spill limits in water, punctuality and cancellation standards in rail, delivery-speed targets in post.</li>
+  <li><strong>Performance targets and incentive payments:</strong> the regulator sets measurable outputs and the firm's allowed revenue rises or falls with performance against them.</li>
+  <li><strong>Rate-of-return (profit) regulation:</strong> caps the return on capital employed. Simple, but it removes the incentive to cut costs and encourages over-investment in the asset base (the Averch–Johnson effect).</li>
+  <li><strong>Windfall taxes:</strong> a one-off levy on unexpectedly high profits, such as the Energy Profits Levy on North Sea oil and gas.</li>
+  <li><strong>Yardstick (comparative) competition:</strong> compare regional monopolists with each other to infer what efficient costs should be — exactly how Ofwat sets water company allowances.</li>
+  <li><strong>Introducing competition where possible:</strong> splitting the contestable parts from the natural-monopoly network (retail energy supply competes; the wires do not), and opening access to the network on regulated terms.</li>
+  <li><strong>Nationalisation or public ownership:</strong> removes the profit motive entirely, at the cost of losing the efficiency incentive and putting investment on the public balance sheet.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Thames Water and the Limits of Regulating a Natural Monopoly</strong><br>
+Thames Water supplies around 16 million customers and cannot be competed with — no one is going to lay a second set of pipes under London. It is therefore entirely dependent on regulation. After years in which the company paid dividends and took on debt while under-investing in infrastructure, it was carrying roughly £19bn of debt in 2026 and surviving on emergency creditor funding, with its creditors, the government and MPs openly debating whether to place it into the <strong>special administration regime</strong> — the statutory mechanism that keeps a water company supplying customers while it is restructured. Ofwat's PR24 determination allows bills to rise around 36% in real terms over 2025–2030 to fund investment, and the government's response to the Cunliffe Review is to abolish Ofwat and create a single Clean Water Authority. The case is the strongest available illustration of regulatory failure: the regulator had weaker information than the firm, focused on prices rather than the balance sheet, and had no effective tool to stop financial engineering — a real-world instance of <strong>government failure</strong> in the correction of a market failure.
+</div>
+
+<div class="eval-box">
+<strong>Evaluation: Does Regulating Market Power Work?</strong>
+<ul>
+  <li><strong>Asymmetric information</strong> is the fundamental constraint: the firm always knows its costs better than the regulator does, so every cap is a negotiation under uncertainty.</li>
+  <li><strong>Regulatory capture:</strong> regulators staffed by, and dependent on information from, the industry may come to see the world as the industry does.</li>
+  <li><strong>Regulatory risk:</strong> if firms fear that returns will be clawed back, they under-invest — a genuine problem in water and energy networks where the required investment is enormous and long-lived.</li>
+  <li><strong>Timeliness:</strong> competition investigations take years, and in fast-moving digital markets a remedy delivered three years late can be worthless. This is exactly why the DMCC Act 2024 created a faster, forward-looking conduct-requirement regime instead of relying on case-by-case abuse findings.</li>
+  <li><strong>Trade-off with growth:</strong> the 2025 strategic steer and the 2025–26 review of merger remedies reflect a judgement that enforcement had become too interventionist. Whether that improves investment or simply permits more concentration is the open question.</li>
+</ul>
+</div>
+
+<!-- ===== LABOUR MARKET ===== -->
+<h2>14. The Labour Market</h2>
+
+<div class="def-box">
+<strong>Demand for labour:</strong> A <em>derived</em> demand — firms demand labour not for its own sake but for the output it produces. The firm's labour demand curve is its <strong>marginal revenue product (MRP)</strong> curve.<br><br>
+<strong>MRP = Marginal Physical Product (MPP) &times; Marginal Revenue (MR)</strong>
+</div>
+
+<h3>14.1 Wage Determination in a Competitive Labour Market</h3>
+<p>In a competitive labour market the wage is set where labour supply meets labour demand, and every worker is paid their marginal revenue product.</p>
+
+<div class="diagram-box">
+<svg viewBox="0 0 440 360" width="440" height="360">
+  <line x1="60" y1="310" x2="400" y2="310" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="310" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="400,310 392,305 392,315" fill="#1a1a2e"/>
+  <polygon points="60,20 55,28 65,28" fill="#1a1a2e"/>
+  <line x1="100" y1="270" x2="370" y2="60" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="372" y="55" font-size="13" fill="#2563eb" font-weight="600">S (Labour)</text>
+  <line x1="100" y1="60" x2="370" y2="270" stroke="#e53e3e" stroke-width="2.5"/>
+  <text x="350" y="290" font-size="13" fill="#e53e3e" font-weight="600">D = MRP</text>
+  <circle cx="235" cy="165" r="4" fill="#1a1a2e"/>
+  <line x1="60" y1="165" x2="235" y2="165" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="235" y1="165" x2="235" y2="310" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="30" y="169" font-size="12" fill="#1a1a2e" font-weight="600">We</text>
+  <text x="227" y="328" font-size="12" fill="#1a1a2e" font-weight="600">Qe</text>
+  <text x="405" y="315" font-size="14" fill="#1a1a2e" font-weight="600">Quantity of Labour</text>
+  <text x="15" y="18" font-size="14" fill="#1a1a2e" font-weight="600">Wage Rate (£)</text>
+</svg>
+<div class="diagram-caption">Figure 8: Competitive labour market — the wage is determined where labour supply meets labour demand (MRP). Compare with Figure 7, where a monopsonist pays less and hires fewer workers.</div>
+</div>
+
+<h3>14.2 Factors Affecting the Demand for Labour</h3>
+<ul>
+  <li><strong>Demand for the final product</strong> — labour demand is derived, so a boom in the product market raises MRP.</li>
+  <li><strong>Labour productivity</strong> — more productive workers have a higher MRP at every wage.</li>
+  <li><strong>The price of substitute factors</strong> — cheaper automation and, increasingly, AI tools substitute for some labour and complement other labour.</li>
+  <li><strong>Non-wage employment costs</strong> — employer National Insurance contributions, pension auto-enrolment and compliance costs all raise the effective cost of hiring.</li>
+</ul>
+
+<h3>14.3 Factors Affecting the Supply of Labour</h3>
+<ul>
+  <li><strong>The wage rate</strong> — higher wages attract more workers, though an individual's supply curve can bend backwards at very high wages as the income effect outweighs the substitution effect.</li>
+  <li><strong>Non-monetary factors</strong> — job satisfaction, conditions, hours, flexibility, status, commuting.</li>
+  <li><strong>Qualifications and training time</strong> — long training restricts supply in skilled occupations and sustains a wage premium.</li>
+  <li><strong>Barriers to entry into the occupation</strong> — professional licensing for doctors, lawyers, pilots.</li>
+  <li><strong>Migration</strong> — inward migration raises supply, particularly in specific occupations.</li>
+  <li><strong>Demographics</strong> — an ageing population and rising economic inactivity reduce the working-age labour supply.</li>
+</ul>
+
+<h3>14.4 Wage Differentials</h3>
+<ul>
+  <li><strong>Skills, qualifications and MRP:</strong> restricted supply plus high marginal revenue product produces the largest premiums.</li>
+  <li><strong>Compensating differentials:</strong> unpleasant, dangerous or antisocial-hours work must pay more to attract workers.</li>
+  <li><strong>Discrimination:</strong> pay gaps persist beyond what productivity differences explain.</li>
+  <li><strong>Monopsony power:</strong> where one employer dominates, wages sit below MRP (Figure 7).</li>
+  <li><strong>Trade union power:</strong> collective bargaining raises union members' wages relative to comparable non-members.</li>
+  <li><strong>Geography and immobility:</strong> housing costs and imperfect information stop workers moving to where MRP is highest.</li>
+</ul>
+
+<h3>14.5 The National Living Wage</h3>
+<p>The UK introduced a National Minimum Wage in 1999. The <strong>National Living Wage</strong>, which applies to workers aged 21 and over, rose from £12.21 an hour in April 2025 to <strong>£12.71 an hour from April 2026</strong>, a 4.1% increase recommended by the Low Pay Commission and accepted in full by the government. Standard competitive theory predicts that a wage floor above equilibrium creates excess supply of labour and unemployment; the monopsony model in section 12 predicts the opposite. The empirical evidence for the UK has mostly supported the second view for moderate increases, although the Low Pay Commission has warned that as the NLW approaches two-thirds of median earnings the employment risks grow — and youth unemployment did rise to 16.4% in 2026 (ONS), with the labour market loosening and the unemployment rate at 4.9% in the three months to July 2026.</p>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: The UK Gender Pay Gap</strong><br>
+Using ASHE data for April 2025 (published October 2025, the most recent full release), median hourly pay excluding overtime was £20.27 for men and £18.87 for women. The gap was <strong>6.9% among full-time employees</strong>, down from 7.1% a year earlier, and <strong>12.8% across all employees</strong>, the wider figure reflecting the concentration of women in part-time work. Since 2017 employers with 250 or more staff must publish their gender pay gap annually. The main drivers are occupational segregation (women over-represented in lower-paying sectors such as care and retail), the "motherhood penalty" of career breaks and part-time hours, under-representation in senior roles, and residual discrimination. Policy responses include the Equality Act 2010, shared parental leave and mandatory reporting, but the full-time gap has narrowed by only around a quarter over the past decade.
+</div>
+
+<div class="eval-box">
+<strong>Evaluation: Intervening in Labour Markets</strong>
+<ul>
+  <li>Minimum wages can raise productivity by forcing firms to train, invest and organise work better — but they can also accelerate automation of the lowest-paid tasks.</li>
+  <li>Monopsonistic employers can absorb wage floors without cutting jobs; competitive employers in low-margin sectors such as hospitality and social care cannot as easily.</li>
+  <li>The incidence matters: higher wage floors and employer National Insurance can be passed to consumers in prices, absorbed in profit, or offset by fewer hours — the outcome depends on elasticities.</li>
+  <li>Trade unions raise members' pay and can improve conditions and information, but may push wages above market clearing in a competitive market and create insider–outsider unemployment.</li>
+  <li>Flexibility versus security — the "flexicurity" debate. Denmark combines easy hiring and firing with generous benefits and active retraining; the UK has historically chosen flexibility with a thinner safety net.</li>
+</ul>
+</div>
+
+<!-- ===== EXAM TIPS ===== -->
+<div class="tip-box">
+<strong>Exam Tips — Competition &amp; Market Power</strong>
+<ul>
+  <li><strong>Economics B is applied.</strong> Every analytical point should be anchored to a named firm, industry or regulator from the extract or from your own knowledge. "A monopolist raises price" scores less than "Google, with around 90% of UK search, was designated with Strategic Market Status by the CMA in October 2025".</li>
+  <li><strong>Link growth → scale → market power → market failure.</strong> That chain is the spine of this whole topic: firms grow, growth delivers economies of scale, high MES relative to demand produces concentration, concentration produces P &gt; MC and deadweight loss, which is why the CMA exists.</li>
+  <li><strong>Diagram discipline.</strong> Profit maximisation is always MC = MR — never MC = AR or MR = 0. Show the profit rectangle as (P − ATC) × Q with P and ATC both labelled on the vertical axis. On the monopsony diagram, put MCL <em>above</em> ACL and read the wage off ACL, not off MCL.</li>
+  <li><strong>Distinguish predatory from limit pricing.</strong> Predatory pricing is below cost and illegal; limit pricing is above cost, below the profit-maximising level, and legal. Examiners look for that distinction.</li>
+  <li><strong>Use contestability to evaluate.</strong> Whenever you have argued that a concentrated market harms consumers, ask whether it is contestable. A market with three firms and easy entry may behave better than one with ten firms and a slot constraint.</li>
+  <li><strong>Evaluate regulation, do not just describe it.</strong> The strongest evaluation points are asymmetric information, regulatory capture, regulatory risk and under-investment, and the speed of enforcement — Thames Water gives you all of them in one case.</li>
+  <li><strong>Date your evidence.</strong> Write "Bank Rate was 3.75% in September 2026" or "CPI inflation was 3.1% in the year to August 2026" rather than "interest rates are high". Dated evidence reads as knowledge; undated evidence reads as guesswork.</li>
+</ul>
+</div>
+
+</div>
+</body>
+</html>

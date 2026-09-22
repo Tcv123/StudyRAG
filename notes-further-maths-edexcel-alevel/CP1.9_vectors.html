@@ -42,6 +42,11 @@
 
 <h1>CP1.9: Vectors in 3D</h1>
 
+<div class="exam-tip">
+  <strong>Which paper is this on?</strong> Core Pure (Papers 1 and 2) covers only the <em>scalar</em> product side of 3D vectors: the vector and Cartesian forms of a line and of a plane (6.1, 6.2), the scalar product and the angles it gives (6.3), checking perpendicularity (6.4), and the intersection of a line and a plane together with perpendicular distances (6.5).<br><br>
+  The <strong>vector (cross) product and the scalar triple product are not in Core Pure</strong> — they are section 5 of <strong>Paper 3A: Further Pure Mathematics 1</strong>. They are kept here because they are the quickest route to a normal, an area or a shortest distance, and because most students meet them alongside this topic. Section 3 below, and anything that uses \(\mathbf{a}\times\mathbf{b}\), is flagged <strong>FP1</strong>. If you are not sitting Further Pure 1, you can be asked for all of these results by scalar-product methods instead, and you will never be asked for \(\mathbf{a}\times\mathbf{b}\) itself.
+</div>
+
 <h2>1. 3D Vector Basics</h2>
 
 <div class="definition">
@@ -80,7 +85,9 @@ $$\cos\alpha = \frac{a_1}{|\mathbf{a}|}, \quad \cos\beta = \frac{a_2}{|\mathbf{a
   <li>\(\mathbf{a} \cdot \mathbf{a} = |\mathbf{a}|^2\)</li>
 </ul>
 
-<h2>3. Cross (Vector) Product</h2>
+<h2>3. Cross (Vector) Product <span style="font-size:0.75rem;font-weight:600;color:#b45309;background:#fff8e1;border:1px solid #f59e0b;border-radius:4px;padding:2px 8px;vertical-align:middle;">FP1 — not Core Pure</span></h2>
+
+<p style="color:#64748b;font-size:0.95rem;">Specification reference: Paper 3A Further Pure Mathematics 1, 5.1 (vector product) and 5.2 (scalar triple product). Core Pure papers assume only the scalar product.</p>
 
 <div class="definition">
   <strong>Geometric definition:</strong>
@@ -257,16 +264,16 @@ $$\text{Area of triangle} = \frac{1}{2}|\mathbf{a} \times \mathbf{b}|$$
 <table>
   <tr><th>Result</th><th>Formula</th></tr>
   <tr><td>Dot product</td><td>\(\mathbf{a}\cdot\mathbf{b} = a_1b_1+a_2b_2+a_3b_3 = |\mathbf{a}||\mathbf{b}|\cos\theta\)</td></tr>
-  <tr><td>Cross product magnitude</td><td>\(|\mathbf{a}\times\mathbf{b}| = |\mathbf{a}||\mathbf{b}|\sin\theta\)</td></tr>
-  <tr><td>Area of triangle</td><td>\(\frac{1}{2}|\mathbf{a}\times\mathbf{b}|\)</td></tr>
+  <tr><td>Cross product magnitude <em>(FP1)</em></td><td>\(|\mathbf{a}\times\mathbf{b}| = |\mathbf{a}||\mathbf{b}|\sin\theta\)</td></tr>
+  <tr><td>Area of triangle <em>(FP1)</em></td><td>\(\frac{1}{2}|\mathbf{a}\times\mathbf{b}|\)</td></tr>
   <tr><td>Line equation</td><td>\(\mathbf{r} = \mathbf{a} + \lambda\mathbf{b}\)</td></tr>
   <tr><td>Plane equation</td><td>\(\mathbf{r}\cdot\mathbf{n} = d\) or \(ax+by+cz=d\)</td></tr>
   <tr><td>Angle between lines</td><td>\(\cos\theta = \frac{|\mathbf{b}_1\cdot\mathbf{b}_2|}{|\mathbf{b}_1||\mathbf{b}_2|}\)</td></tr>
   <tr><td>Angle between planes</td><td>\(\cos\theta = \frac{|\mathbf{n}_1\cdot\mathbf{n}_2|}{|\mathbf{n}_1||\mathbf{n}_2|}\)</td></tr>
   <tr><td>Angle: line and plane</td><td>\(\sin\theta = \frac{|\mathbf{b}\cdot\mathbf{n}|}{|\mathbf{b}||\mathbf{n}|}\)</td></tr>
   <tr><td>Point to plane distance</td><td>\(\frac{|\mathbf{p}\cdot\mathbf{n}-d|}{|\mathbf{n}|}\)</td></tr>
-  <tr><td>Point to line distance</td><td>\(\frac{|\overrightarrow{BA}\times\mathbf{d}|}{|\mathbf{d}|}\)</td></tr>
-  <tr><td>Skew lines distance</td><td>\(\frac{|(\mathbf{c}-\mathbf{a})\cdot(\mathbf{b}\times\mathbf{d})|}{|\mathbf{b}\times\mathbf{d}|}\)</td></tr>
+  <tr><td>Point to line distance <em>(FP1 form)</em></td><td>\(\frac{|\overrightarrow{BA}\times\mathbf{d}|}{|\mathbf{d}|}\)</td></tr>
+  <tr><td>Skew lines distance <em>(FP1 form)</em></td><td>\(\frac{|(\mathbf{c}-\mathbf{a})\cdot(\mathbf{b}\times\mathbf{d})|}{|\mathbf{b}\times\mathbf{d}|}\)</td></tr>
 </table>
 
 <div class="exam-tip">
