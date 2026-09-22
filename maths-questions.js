@@ -14181,96 +14181,103 @@ window.MATHS_QUESTIONS = {
   }
  },
  "math-aqa-7357-2018-p1": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "y = 1/x²",
     "parts": [
      {
       "code": "1",
-      "prompt": "y = 1/x². Find an expression for dy/dx. Circle your answer.\nOptions: dy/dx = 0/(2x)    dy/dx = x⁻²    dy/dx = −2/x    dy/dx = −2/x³",
+      "prompt": "Choose the correct expression for dy/dx.\nOptions: dy/dx = 0/(2x)   dy/dx = x⁻²   dy/dx = −2/x   dy/dx = −2/x³",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "The graph of y = 5ˣ is stretched parallel to the y-axis with scale factor 5.",
     "parts": [
      {
       "code": "2",
-      "prompt": "The graph of y = 5^x is transformed by a stretch in the y-direction, scale factor 5. State the equation of the transformed graph. Circle your answer.\nOptions: y = 5 × 5^x    y = 5^(x/5)    y = (1/5) × 5^x    y = 5^(5x)",
+      "prompt": "Choose the equation of the new graph.\nOptions: y = 5 × 5ˣ   y = 5^(x/5)   y = (1/5) × 5ˣ   y = 5^(5x)",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "A periodic sequence has Uₙ = sin(nπ/2).",
     "parts": [
      {
       "code": "3",
-      "prompt": "A periodic sequence is defined by Uₙ = sin(nπ/2). State the period of this sequence. Circle your answer.\nOptions: 8    2π    4    π",
+      "prompt": "Give the period of the sequence.\nOptions: 8   2π   4   π",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
+    "scenario": "f(x) = e^(x−4), x ∈ ℝ.",
     "parts": [
      {
       "code": "4",
-      "prompt": "The function f is defined by f(x) = e^(x−4), x ∈ ℝ. Find f⁻¹(x) and state its domain.",
+      "prompt": "Find f⁻¹(x) and state its domain.",
       "marks": 3
      }
     ]
    },
    {
     "number": 5,
-    "scenario": "A curve is defined by the parametric equations x = 4 × 2^(−t) + 3 and y = 3 × 2^t − 5",
+    "scenario": "A curve has parametric equations x = 4 × 2^(−t) + 3, y = 3 × 2ᵗ − 5.",
     "parts": [
      {
       "code": "5(a)",
-      "prompt": "Show that dy/dx = −(3/4) × 2^(2t)",
+      "prompt": "Show that dy/dx = −(3/4) × 2^(2t).",
       "marks": 3
      },
      {
       "code": "5(b)",
-      "prompt": "Find the Cartesian equation of the curve in the form xy + ax + by = c, where a, b and c are integers.",
+      "prompt": "Find the Cartesian equation in the form xy + ax + by = c, with a, b, c integers.",
       "marks": 3
      }
     ]
    },
    {
     "number": 6,
+    "scenario": "Binomial expansions of 1/√(4 + x) and 1/√(4 − x³).",
     "parts": [
      {
       "code": "6(a)",
-      "prompt": "Find the first three terms, in ascending powers of x, of the binomial expansion of 1/√(4 + x)",
+      "prompt": "Find the first three terms, in ascending powers of x, of the expansion of 1/√(4 + x).",
       "marks": 3
      },
      {
       "code": "6(b)",
-      "prompt": "Hence, find the first three terms of the binomial expansion of 1/√(4 − x³)",
+      "prompt": "Hence find the first three terms of the expansion of 1/√(4 − x³).",
       "marks": 2
      },
      {
       "code": "6(c)",
-      "prompt": "Using your answer to part (b), find an approximation for ∫₀¹ 1/√(4 − x³) dx, giving your answer to seven decimal places.",
+      "prompt": "Use (b) to approximate ∫₀¹ 1/√(4 − x³) dx to 7 decimal places.",
       "marks": 3
      },
      {
       "code": "6(d)(i)",
-      "prompt": "Edward, a student, decides to use this method to find a more accurate value for the integral by increasing the number of terms of the binomial expansion used. Explain clearly whether Edward's approximation will be an overestimate, an underestimate, or if it is impossible to tell.",
+      "prompt": "Edward uses more terms of the expansion to improve the estimate. Explain whether his approximation is an overestimate, an underestimate or impossible to tell.",
       "marks": 2
      },
      {
       "code": "6(d)(ii)",
-      "prompt": "Edward goes on to use the expansion from part (b) to find an approximation for ∫₋₂⁰ 1/√(4 − x³) dx. Explain why Edward's approximation is invalid.",
+      "prompt": "Edward uses the expansion from (b) to approximate ∫₋₂⁰ 1/√(4 − x³) dx. Explain why this is invalid.",
       "marks": 2
      }
     ]
    },
    {
     "number": 7,
-    "scenario": "Three points A, B and C have coordinates A (8, 17), B (15, 10) and C (−2, −7).",
+    "scenario": "Points A(8, 17), B(15, 10) and C(−2, −7).",
     "parts": [
      {
       "code": "7(a)",
@@ -14279,96 +14286,96 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "7(b)(i)",
-      "prompt": "A, B and C lie on a circle. Explain why AC is a diameter of the circle.",
+      "prompt": "A, B and C lie on a circle. Explain why AC is a diameter.",
       "marks": 1
      },
      {
       "code": "7(b)(ii)",
-      "prompt": "Determine whether the point D (−8, −2) lies inside the circle, on the circle or outside the circle. Fully justify your answer.",
+      "prompt": "Decide, with full justification, whether D(−8, −2) is inside, on or outside the circle.",
       "marks": 4
      }
     ]
    },
    {
     "number": 8,
-    "scenario": "The diagram shows a sector of a circle OAB. C is the midpoint of OB. Angle AOB is θ radians. (OA and OB are radii; A is on the arc, B is on the arc, with C between O and B on the straight edge OB.)",
+    "scenario": "Sector OAB of a circle with angle AOB = θ radians; C is the midpoint of OB (diagram on the question paper).",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Given that the area of the triangle OAC is equal to one quarter of the area of the sector OAB, show that θ = 2 sin θ",
+      "prompt": "The area of triangle OAC is a quarter of the area of sector OAB. Show that θ = 2 sin θ.",
       "marks": 4
      },
      {
       "code": "8(b)",
-      "prompt": "Use the Newton-Raphson method with θ₁ = π, to find θ₃ as an approximation for θ. Give your answer correct to five decimal places.",
+      "prompt": "Use Newton–Raphson with θ₁ = π to find θ₃, to 5 decimal places.",
       "marks": 3
      },
      {
       "code": "8(c)",
-      "prompt": "Given that θ = 1.89549 to five decimal places, find an estimate for the percentage error in the approximation found in part (b).",
+      "prompt": "Given θ = 1.89549 (5 d.p.), estimate the percentage error in your answer to (b).",
       "marks": 1
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "An arithmetic sequence has first term a and common difference d. The sum of the first 36 terms of the sequence is equal to the square of the sum of the first 6 terms.",
+    "scenario": "Arithmetic sequence, first term a, common difference d. The sum of the first 36 terms equals the square of the sum of the first 6 terms.",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Show that 4a + 70d = 4a² + 20ad + 25d²",
+      "prompt": "Show that 4a + 70d = 4a² + 20ad + 25d².",
       "marks": 4
      },
      {
       "code": "9(b)",
-      "prompt": "Given that the sixth term of the sequence is 25, find the smallest possible value of a.",
+      "prompt": "The sixth term is 25. Find the smallest possible value of a.",
       "marks": 5
      }
     ]
    },
    {
     "number": 10,
-    "scenario": "A scientist is researching the effects of caffeine. She models the mass of caffeine in the body using m = m₀e^(−kt), where m₀ milligrams is the initial mass of caffeine in the body and m milligrams is the mass of caffeine in the body after t hours. On average, it takes 5.7 hours for the mass of caffeine in the body to halve. One cup of strong coffee contains 200 mg of caffeine.",
+    "scenario": "Caffeine model m = m₀e^(−kt): m₀ mg initially, m mg after t hours. The mass halves in 5.7 hours on average. One strong coffee contains 200 mg of caffeine.",
     "parts": [
      {
       "code": "10(a)",
-      "prompt": "The scientist drinks two strong cups of coffee at 8 am. Use the model to estimate the mass of caffeine in the scientist's body at midday.",
+      "prompt": "Two strong coffees are drunk at 8 am. Estimate the mass of caffeine in the body at midday.",
       "marks": 4
      },
      {
       "code": "10(b)",
-      "prompt": "The scientist wants the mass of caffeine in her body to stay below 480 mg. Use the model to find the earliest time that she could drink another cup of strong coffee. Give your answer to the nearest minute.",
+      "prompt": "The mass must stay below 480 mg. Find, to the nearest minute, the earliest time another strong coffee could be drunk.",
       "marks": 3
      },
      {
       "code": "10(c)",
-      "prompt": "State a reason why the mass of caffeine remaining in the scientist's body predicted by the model may not be accurate.",
+      "prompt": "Give a reason why the model's prediction may be inaccurate.",
       "marks": 1
      }
     ]
    },
    {
     "number": 11,
-    "scenario": "The daily world production of oil can be modelled using V = 10 + 100(t/30)³ − 50(t/30)⁴, where V is volume of oil in millions of barrels, and t is time in years since 1 January 1980.",
+    "scenario": "World oil production model: V = 10 + 100(t/30)³ − 50(t/30)⁴, V millions of barrels per day, t years after 1 January 1980.",
     "parts": [
      {
       "code": "11(a)(i)",
-      "prompt": "The model is used to predict the time, T, when oil production will fall to zero. Show that T satisfies the equation T = ³√(60T² + 162000/T)",
+      "prompt": "The time T when production falls to zero is predicted. Show that T = ∛(60T² + 162000/T).",
       "marks": 3
      },
      {
       "code": "11(a)(ii)",
-      "prompt": "Use the iterative formula T_(n+1) = ³√(60Tₙ² + 162000/Tₙ), with T₀ = 38, to find the values of T₁, T₂, and T₃, giving your answers to three decimal places.",
+      "prompt": "Use Tₙ₊₁ = ∛(60Tₙ² + 162000/Tₙ) with T₀ = 38 to find T₁, T₂ and T₃ to 3 decimal places.",
       "marks": 2
      },
      {
       "code": "11(a)(iii)",
-      "prompt": "Explain the relevance of using T₀ = 38",
+      "prompt": "Explain the relevance of T₀ = 38.",
       "marks": 1
      },
      {
       "code": "11(b)",
-      "prompt": "From 1 January 1980 the daily use of oil by one technologically developing country can be modelled as V = 4.5 × 1.063^t. Use the models to show that the country's use of oil and the world production of oil will be equal during the year 2029.",
+      "prompt": "A developing country's daily oil use is modelled by V = 4.5 × 1.063ᵗ from 1 January 1980. Show that its use equals world production during 2029.",
       "marks": 4
      }
     ]
@@ -14379,7 +14386,7 @@ window.MATHS_QUESTIONS = {
     "parts": [
      {
       "code": "12(a)",
-      "prompt": "Prove that (2x + 1) is a factor of p(x)",
+      "prompt": "Prove that (2x + 1) is a factor of p(x).",
       "marks": 2
      },
      {
@@ -14389,59 +14396,60 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "12(c)",
-      "prompt": "Prove that there are no real solutions to the equation (30 sec²x + 2 cos x)/7 = sec x + 1",
+      "prompt": "Prove that (30sec²x + 2cos x)/7 = sec x + 1 has no real solutions.",
       "marks": 5
      }
     ]
    },
    {
     "number": 13,
+    "scenario": "A logo is a circle of radius 4 inches with the largest possible inscribed rectangle, modelled on x-y axes with the circle centred at the origin and the rectangle's sides parallel to the axes (diagram on the question paper).",
     "parts": [
      {
       "code": "13",
-      "prompt": "A company is designing a logo. The logo is a circle of radius 4 inches with an inscribed rectangle. The rectangle must be as large as possible. The company models the logo on an x-y plane (the circle x² + y² = 16 centred at the origin, with the rectangle inscribed symmetrically about both axes, a vertex at (x, y) in the first quadrant). Use calculus to find the maximum area of the rectangle. Fully justify your answer.",
+      "prompt": "Use calculus to find the maximum area of the rectangle, fully justifying your answer.",
       "marks": 10
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "Some students are trying to prove an identity for sin(A + B). They start by drawing two right-angled triangles ODE and OEF. (F is at the top; OEF is right-angled at E; ODE is right-angled at D, with O at the bottom right, D at the bottom left. P is the foot of the perpendicular from F to the line through E parallel to OD, R is the foot of the perpendicular from F to OD; angle DOE = A, angle EOF = B.) The students' incomplete proof continues: Let angle DOE = A and angle EOF = B. In triangle OFR,\nLine 1:  sin(A + B) = RF/OF\nLine 2:  = (RP + PF)/OF\nLine 3:  = DE/OF + PF/OF  since DE = RP\nLine 4:  = (DE/_____) × (_____/OF) + (PF/EF) × (EF/OF)\nLine 5:  = _____________ + cos A sin B",
+    "scenario": "Proof of sin(A + B) using right-angled triangles ODE (right angle at D) and OEF (right angle at E); angle DOE = A, angle EOF = B; R on OD and P on the perpendicular from F with EP ∥ OD, Q where FR crosses OE (diagram on the question paper). Proof so far: sin(A+B) = RF/OF = (RP + PF)/OF = DE/OF + PF/OF (as DE = RP); Line 4 = (DE/…) × (…/OF) + (PF/EF) × (EF/OF); Line 5 = … + cos A sin B.",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "Explain why (PF/EF) × (EF/OF) in Line 4 leads to cos A sin B in Line 5",
+      "prompt": "Explain why (PF/EF) × (EF/OF) in Line 4 gives cos A sin B in Line 5.",
       "marks": 2
      },
      {
       "code": "14(b)",
-      "prompt": "Complete Line 4 and Line 5 to prove the identity.\nLine 4: = (DE/_____) × (_____/OF) + (PF/EF) × (EF/OF)\nLine 5: = _____________ + cos A sin B",
+      "prompt": "Complete Lines 4 and 5 to prove the identity.",
       "marks": 1
      },
      {
       "code": "14(c)",
-      "prompt": "Explain why the argument used in part (a) only proves the identity when A and B are acute angles.",
+      "prompt": "Explain why this argument only proves the identity for acute A and B.",
       "marks": 1
      },
      {
       "code": "14(d)",
-      "prompt": "Another student claims that by replacing B with −B in the identity for sin(A + B) it is possible to find an identity for sin(A − B). Assuming the identity for sin(A + B) is correct for all values of A and B, prove a similar result for sin(A − B).",
+      "prompt": "Assuming sin(A + B) holds for all A and B, replace B by −B to prove the identity for sin(A − B).",
       "marks": 3
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "A curve has equation y = x³ − 48x. The point A on the curve has x coordinate −4. The point B on the curve has x coordinate −4 + h.",
+    "scenario": "Curve y = x³ − 48x; A has x-coordinate −4 and B has x-coordinate −4 + h.",
     "parts": [
      {
       "code": "15(a)",
-      "prompt": "Show that the gradient of the line AB is h² − 12h",
+      "prompt": "Show that the gradient of AB is h² − 12h.",
       "marks": 4
      },
      {
       "code": "15(b)",
-      "prompt": "Explain how the result of part (a) can be used to show that A is a stationary point on the curve.",
+      "prompt": "Explain how (a) shows that A is a stationary point.",
       "marks": 2
      }
     ]
@@ -14449,541 +14457,521 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circle dy/dx = −2/x³"
-    ],
-    "guidance": "B1. y = x⁻² ⇒ dy/dx = −2x⁻³ = −2/x³."
+     "B1 D: dy/dx = −2/x³"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circle y = 5 × 5^x"
-    ],
-    "guidance": "B1. A stretch in the y-direction with scale factor 5 multiplies the function by 5: y = 5 × 5^x."
+     "B1 A: y = 5 × 5ˣ"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circle 4"
-    ],
-    "guidance": "B1. Uₙ = sin(nπ/2) repeats every 4 terms (values 1, 0, −1, 0, …), so the period is 4."
+     "B1 C: 4"
+    ]
    },
    "4": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "y = e^(x−4) ⇒ ln y = x − 4 ⇒ x = 4 + ln y",
-     "f⁻¹(x) = 4 + ln x",
-     "Domain x > 0"
-    ],
-    "guidance": "M1 take logs of an equation with correct use of logs. A1 obtain the correct inverse function in any correct form. B1 deduce the correct domain x > 0 (the range of f is e^(x−4) > 0)."
+     "M1 Takes logs correctly, e.g. ln y = x − 4",
+     "A1 Correct inverse in any form, e.g. f⁻¹(x) = 4 + ln x",
+     "B1 Domain x > 0"
+    ]
    },
    "13": {
     "type": "points",
     "points": [
-     "Let a vertex of the rectangle be (x, y) with x, y > 0; width = 2x, height = 2y, so area A = 4xy",
-     "On the circle x² + y² = 16 ⇒ y = √(16 − x²), so A = 4x√(16 − x²)",
-     "dA/dx = 4√(16 − x²) − 4x²/√(16 − x²) = (64 − 8x²)/√(16 − x²); set = 0 ⇒ 64 − 8x² = 0 ⇒ x = 2√2",
-     "Second derivative / sign test confirms a maximum; A = 4(2√2)√(16 − 8) = 4(2√2)(2√2) = 32",
-     "Maximum area = 32 square inches"
+     "B1 Defines consistent variables, e.g. width 2x and height 2y",
+     "M1 Area A = 4xy",
+     "M1 Uses x² + y² = 16 to eliminate a variable",
+     "A1 A = 4x√(16 − x²)",
+     "M1 Differentiates their area (condone one error)",
+     "E1 Sets dA/dx = 0 for a maximum/stationary point",
+     "A1 x = 2√2 (or y = 2√2)",
+     "M1 Checks the nature with a gradient test or second derivative",
+     "R1 Concludes the area is a maximum at x = 2√2",
+     "B1 Maximum area 32 square inches (awrt 32, with units)"
     ],
-    "guidance": "B1 identify and clearly define consistent variables for length and width (can be shown on diagram). M1 model the area of the rectangle with an expression of the correct dimensions A = 4xy. M1 eliminate either variable to form a model for the area in one variable. A1 obtain a correct equation A = 4x√(16 − x²). M1 differentiate their expression for area (condone one error). E1 explain that the derivative equals zero for a maximum/stationary point. A1 equate the area derivative to zero and obtain the correct value x = 2√2 (CAO). M1 complete a gradient test or use the second derivative of their area function to determine the nature of the stationary point. R1 deduce that the area is a maximum at x = 2√2 (or θ = π/4); values need not be exact. B1 obtain the maximum area with correct units, AWRT 32 sq in."
+    "guidance": "An angle-based parameter (e.g. θ = π/4) is an acceptable alternative variable."
    },
    "5(a)": {
     "type": "points",
     "points": [
-     "dy/dt = (3 ln 2)2^t and dx/dt = (−4 ln 2)2^(−t)",
-     "dy/dx = (dy/dt)/(dx/dt) = (3 ln 2)2^t / ((−4 ln 2)2^(−t))",
-     "= −(3/4) × 2^(2t)"
-    ],
-    "guidance": "M1 differentiate 2^t or 2^(−t) to obtain ±A ln 2 × 2^(±t). A1 obtain both dy/dt = (3 ln 2)2^t and dx/dt = (−4 ln 2)2^(−t). R1 use the chain rule with correct dy/dt and dx/dt and complete a rigorous argument to obtain the printed answer −(3/4)2^(2t). AG."
+     "M1 Differentiates 2ᵗ or 2^(−t) to the form A ln2 × 2^(±t)",
+     "A1 dy/dt = 3 ln2 × 2ᵗ and dx/dt = −4 ln2 × 2^(−t)",
+     "R1 Uses the chain rule dy/dx = (dy/dt)/(dx/dt) with a rigorous argument to reach −(3/4) × 2^(2t)"
+    ]
    },
    "5(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "2^t = (y + 5)/3 and 2^(−t) = (x − 3)/4",
-     "Multiply: 1 = ((y+5)/3)((x−3)/4) ⇒ 12 = xy + 5x − 3y − 15",
-     "xy + 5x − 3y = 27  (a = 5, b = −3, c = 27)"
+     "M1 Writes 2ᵗ = (y + 5)/3 or 2^(−t) = (x − 3)/4 (or substitutes into the given form)",
+     "M1 Eliminates t, e.g. (y + 5)(x − 3) = 12, or compares coefficients",
+     "R1 Correct values reached rigorously: xy + 5x − 3y = 27"
     ],
-    "guidance": "M1 rearrange to write 2^t in terms of y or 2^(−t) in terms of x. M1 eliminate t (or compare coefficients PI by a = 5 or b = −3). R1 complete a rigorous argument to obtain correct integer values a = 5, b = −3, c = 27 and write the Cartesian equation in the required form. ISW."
+    "guidance": "The alternative substitutes the parametric forms into xy + ax + by and compares coefficients to get a = 5, b = −3."
    },
    "6(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1/√(4+x) = ½(1 + x/4)^(−½)",
-     "Expand: ½[1 − ½(x/4) + (3/8)(x/4)²/... ]",
-     "≈ ½ − x/16 + 3x²/256"
-    ],
-    "guidance": "M1 write in a form to which the binomial expansion applies, A(1 + x/4)^(−½) with A = ½. M1 use the binomial expansion of (1 + kx)^(−½) with at least two terms correct (can be unsimplified). A1 obtain the correct simplified answer ½ − x/16 + 3x²/256 (no need to expand brackets). CAO."
+     "M1 Rewrites as ½(1 + x/4)^(−½) (or equivalent) ready for expansion",
+     "M1 Expands (1 + kx)^(−½) with at least two correct terms",
+     "A1 ½ − x/16 + 3x²/256 (CAO)"
+    ]
    },
    "6(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Substitute −x³ for x in the part (a) expansion",
-     "1/√(4 − x³) ≈ ½ − (−x³)/16 + 3(−x³)²/256",
-     "= ½ + x³/16 + 3x⁶/256"
-    ],
-    "guidance": "M1 substitute −x³ in the three-term expansion from part (a). A1F obtain the correct expansion ½ + x³/16 + 3x⁶/256 (follow through their (a))."
+     "M1 Replaces x by −x³ in their three-term expansion",
+     "A1F ½ + x³/16 + 3x⁶/256 (follow through from (a))"
+    ]
    },
    "6(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "∫₀¹ 1/√(4 − x³) dx ≈ ∫₀¹ (½ + x³/16 + 3x⁶/256) dx",
-     "= [x/2 + x⁴/64 + 3x⁷/1792]₀¹ = ½ + 1/64 + 3/1792",
-     "≈ 0.5172991"
-    ],
-    "guidance": "M1 use the three-term expansion as the integrand (ignore limits PI by next mark). M1 integrate at least two terms correctly. A1 obtain the correct value 0.5172991 (to seven decimal places). CAO."
+     "M1 Integrates their three-term expansion from (b) (limits may be ignored)",
+     "M1 Integrates with at least two terms correct: x/2 + x⁴/64 + 3x⁷/1792",
+     "A1 0.5172991 (CAO)"
+    ]
    },
    "6(d)(i)": {
     "type": "points",
     "points": [
-     "Each term in the expansion (½ + x³/16 + 3x⁶/256 + …) is positive",
-     "So increasing the number of terms increases the estimated value, and the value (using only a few terms) must be an underestimate"
+     "E1 Every term of the expansion is positive",
+     "R1 So adding terms increases the estimate, meaning it is an underestimate"
     ],
-    "guidance": "E1 explain that each term in the expansion is positive. R1 deduce that increasing the number of terms will increase the estimated value and that the value must be an underestimate (condone E1 only if there is evidence the terms have been numerically calculated and compared)."
+    "guidance": "A numerical comparison with the true value is acceptable evidence."
    },
    "6(d)(ii)": {
     "type": "points",
     "points": [
-     "The binomial expansion of (1 + (−x³/4))^(−½) is only valid for |−x³/4| < 1, i.e. |x| < ³√4",
-     "The lower integration limit x = −2 gives |x| = 2 > ³√4, so the series does not converge there and the approximation is invalid"
-    ],
-    "guidance": "B1F state the validity of the binomial expansion from part (b), namely |x| < ³√4 (provided their k = ±1). E1 compare the integral's lower limit (x = −2, so 2 > ³√4) with the validity range of the expansion, concluding the approximation is invalid. CAO."
+     "B1F The expansion is only valid for |x| < ∛4",
+     "E1 The lower limit −2 lies outside this range since 2 > ∛4"
+    ]
    },
    "7(a)": {
     "type": "points",
     "points": [
-     "Use a technique that could lead to showing two lines are perpendicular: gradient of AB = (17 − 10)/(8 − 15) = 7/(−7) = −1; gradient of BC = (10 − (−7))/(15 − (−2)) = 17/17 = 1",
-     "Product of gradients = (−1)(1) = −1 (OR use Pythagoras: AB² = 98, BC² = 578, AC² = 676 and AB² + BC² = 676 = AC²)",
-     "Hence angle ABC is a right angle"
-    ],
-    "guidance": "M1 use a technique that could lead to showing two lines are perpendicular (e.g. gradients, or distances for Pythagoras). A1 obtain three correct distances (or two gradients): lengths AB = 7√2, BC = 17√2, AC = 26 (gradients AB = −7/7 = −1, BC = 17/17 = 1). R1 complete a rigorous argument to show the required result, using Pythagoras OR multiplying gradients to show the product is −1, and write a concluding statement that angle ABC is a right angle."
+     "M1 Uses a method that could show perpendicularity and gets at least one correct distance² or gradient",
+     "A1 Three correct distances² (AB² = 98, BC² = 578, AC² = 676) or two correct gradients (−1 and 1)",
+     "R1 Pythagoras AB² + BC² = AC², or gradient product = −1, with a conclusion"
+    ]
    },
    "7(b)(i)": {
     "type": "points",
     "points": [
-     "The angle in a semicircle (subtended by a diameter) is 90°",
-     "Since angle ABC = 90° at B on the circle, AC must be a diameter of the circle"
-    ],
-    "guidance": "E1. The angle subtended by a diameter is 90°, so since ABC = 90°, AC must be a diameter of the circle (condone \"angle in a semicircle\" or give full relevant explanation)."
+     "E1 The angle subtended by a diameter is 90° (angle in a semicircle), so AC is a diameter"
+    ]
    },
    "7(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Radius = ½ × AC = ½ × √676 = ½ × 26 = 13; centre is midpoint of AC = ((8 + (−2))/2, (17 + (−7))/2) = (3, 5)",
-     "Distance from centre (3, 5) to D(−8, −2): (3 − (−8))² + (5 − (−2))² = 11² + 7² = 121 + 49 = 170",
-     "√170 ≈ 13.04 > 13 (170 > 169 = 13²), so D lies outside the circle"
-    ],
-    "guidance": "B1 deduce the correct radius (or radius²) = 13. B1 obtain the mid-point of the diameter (centre) = (3, 5). M1 use D(−8, −2) and the centre to find the distance (or distance²) from D to the centre. R1 complete a rigorous argument: √170 > 13 (or 170 > 169) to show D lies outside the circle."
+     "B1 Radius 13 (or radius² 169)",
+     "B1 Centre is the midpoint of AC: (3, 5)",
+     "M1 Distance (or distance²) from their centre to D(−8, −2)",
+     "R1 Compares √170 > 13 (or 170 > 169) and concludes D is outside the circle"
+    ]
    },
    "8(a)": {
     "type": "points",
     "points": [
-     "Area of triangle OAC = ½ × r × (r/2) × sin θ (C is the midpoint of OB so OC = r/2); area of sector OAB = ½ r²θ",
-     "Given area OAC = ¼ × area sector: ½ · r · (r/2) · sin θ = ¼ · (½ r²θ)",
-     "(r²/4) sin θ = (1/8) r²θ ⇒ 2 sin θ = θ",
-     "Hence θ = 2 sin θ"
-    ],
-    "guidance": "B1 use A = ½ ab sin C for triangle OAC or OAB (PI by equation). M1 form an equation relating the area of OAC and the sector ABC in the form Ar² sin θ = Br²θ. A1 obtain a fully correct equation ACF. R1 simplify to obtain the required equation, only awarded if all working is correct with a rigorous argument. AG."
+     "B1 Uses ½ab sin C for triangle OAC or the sector area ½r²θ",
+     "M1 Forms an equation relating the two areas, of the form Ar² sin θ = Br²θ",
+     "A1 Correct equation, e.g. (r²/4) sin θ = (1/4)(½r²θ)",
+     "R1 Simplifies rigorously to θ = 2 sin θ (AG)"
+    ]
    },
    "8(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Let f(θ) = θ − 2 sin θ = 0; θ_(n+1) = θₙ − (θₙ − 2 sin θₙ)/(1 − 2 cos θₙ)",
-     "With θ₁ = π: θ₂ = 2.094395…",
-     "θ₃ = 1.91322 (5 d.p.)"
-    ],
-    "guidance": "M1 rearrange to the form f(θ) = 0 (PI by correct θ₂ or θ₃). A1 differentiate their f(θ) (or use calculator) and find correct θ₂ (= 2.094395…). A1 obtain the correct θ₃ = 1.91322 (5 d.p.)."
+     "M1 Writes f(θ) = θ − 2 sin θ = 0 (PI by correct θ₂ or θ₃)",
+     "A1 Correct derivative 1 − 2cos θ, or θ₂ = 2.094395…",
+     "A1 θ₃ = 1.91322"
+    ]
    },
    "8(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Percentage error = |1.91322 − 1.89549| / 1.89549 × 100",
-     "= 0.01773/1.89549 × 100 ≈ 0.935% (AWRT 0.94%)"
-    ],
-    "guidance": "B1. Obtain the percentage error for θ₃, AWRT 0.94% (i.e. 0.935%)."
+     "B1 Percentage error 0.935% (awrt 0.94%)"
+    ]
    },
    "9(a)": {
     "type": "points",
     "points": [
-     "S₆ = (6/2)(2a + 5d) = 6a + 15d; S₃₆ = (36/2)(2a + 35d) = 36a + 630d",
-     "Given S₃₆ = (S₆)²: 36a + 630d = (6a + 15d)²",
-     "36a + 630d = 36a² + 180ad + 225d²; divide by 9: 4a + 70d = 4a² + 20ad + 25d²"
-    ],
-    "guidance": "M1 use Sₙ for an arithmetic sequence with n = 6 and n = 36. A1 find correct expressions for S₆ = 6a + 15d and S₃₆ = 36a + 630d. M1 form an equation in a and d using their S₃₆ = (their S₆)². R1 expand quadratic and collect terms, only award for completely correct solution with no errors, to obtain the printed answer. AG."
+     "M1 Uses the arithmetic series formula with n = 6 or 36",
+     "A1 S₆ = 6a + 15d and S₃₆ = 36a + 630d",
+     "M1 Sets S₃₆ = (S₆)²",
+     "R1 Expands and divides by 9 to reach the given result with no errors"
+    ]
    },
    "9(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Sixth term U₆ = a + 5d = 25 ⇒ d = (25 − a)/5",
-     "Substitute into 4a + 70d = 4a² + 20ad + 25d²: 4a + 70((25−a)/5) = 4a² + 20a((25−a)/5) + 25((25−a)/5)²",
-     "Simplify to 350 − 10a = 100a + 625 − 50a + a² ⇒ a² + 60a + 275 = 0",
-     "(a + 5)(a + 55) = 0 ⇒ a = −5 or a = −55; smallest value a = −55"
+     "B1 a + 5d = 25",
+     "M1 Substitutes to eliminate a or d in the (a) result, giving a quadratic in one variable",
+     "A1 Correct quadratic, e.g. a² + 60a + 275 = 0",
+     "M1 Solves: a = −5 or a = −55 (d = 6 or 16)",
+     "A1 Smallest a = −55"
     ],
-    "guidance": "B1 use U₆ = a + 5d for the arithmetic sequence with n = 6. M1 eliminate a or d, using their a + 5d = 25 and the printed result, to obtain a quadratic in one variable. A1 obtain the correct quadratic equation a² + 60a + 275 = 0. M1 solve their quadratic (a = −5, a = −55, or d = 6, d = 16). A1 deduce the minimum value a = −55 (NMS 5/5)."
+    "guidance": "A correct answer with no working scores 5/5."
    },
    "10(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Half-life 5.7 h ⇒ k = ln 2 / 5.7 = 0.1216047…",
-     "Two cups at 8 am ⇒ m₀ = 400 mg; at midday t = 4",
-     "m = 400 e^(−0.1216047 × 4) = 245.9296… ≈ 246 mg (AWRT 250 mg to 2 s.f.)"
-    ],
-    "guidance": "M1 use the model to form an equation to find k with t = 5.7, m = ½ m₀ (i.e. 200 = 400e^(−5.7k)). A1 obtain the correct value k = 0.1216047… M1 use the model with t = 4, m₀ = 400 and their k (condone m₀ = 200). A1 obtain the correct mass m = 245.9296… (AWRT 250)."
+     "M1 Forms 200 = 400e^(−5.7k) (or m = ½m₀ at t = 5.7)",
+     "A1 k = 0.1216…",
+     "M1 Evaluates the model at t = 4 with m₀ = 400 and their k (condone m₀ = 200)",
+     "A1 m = 250 mg (awrt; 245.93…)"
+    ]
    },
    "10(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "After drinking another 200 mg cup, total stays below 480 mg ⇒ remaining caffeine must be below 280 mg: 400 e^(−0.1216t) < 280",
-     "e^(−0.1216t) < 0.7 ⇒ −0.1216t < ln 0.7 ⇒ t > 2.933 (2.93303…)",
-     "Time = 8 am + 2.933 h ≈ 10:56 am (to the nearest minute)"
+     "M1 Sets up 400e^(−0.1216t) = 280 (or inequality) with their k",
+     "A1F t = 2.933 hours (follow through their k)",
+     "A1F 10:56 am"
     ],
-    "guidance": "M1 use the model to set up an inequality/equation using their k and 280. A1F solve their inequality to find t (follow through their k only), t ≥ 2.933. A1F interpret their solution as a clock time (only follow through if their t is earlier than 1:42 pm), giving 10:56 am."
+    "guidance": "The final follow-through is only allowed if the time is earlier than 1:42 pm."
    },
    "10(c)": {
     "type": "points",
     "points": [
-     "Different people eliminate caffeine at different rates / the 5.7-hour half-life is an average for a typical person",
-     "OR the amount of caffeine in a \"strong cup of coffee\" may vary, so the 200 mg figure may be inaccurate"
-    ],
-    "guidance": "B1. States any sensible reason such as: different people eliminate caffeine at different rates; the model is based on an average person; the amount of caffeine in a \"strong cup of coffee\" may vary."
+     "B1 A sensible reason, e.g. people eliminate caffeine at different rates, the model is for an average person, or caffeine per cup varies"
+    ]
    },
    "11(a)(i)": {
     "type": "points",
     "points": [
-     "Production zero ⇒ 10 + 100(T/30)³ − 50(T/30)⁴ = 0",
-     "Multiply through / rearrange to isolate the (T/30)⁴ term: 50 T⁴/30⁴ = 10 + 100 T³/30³ ⇒ T⁴/16200 = 10 + T³/270",
-     "T³ = 162000/T + 60T² ⇒ T = ³√(60T² + 162000/T)"
-    ],
-    "guidance": "M1 use the model to form the equation 10 + 100(T/30)³ − 50(T/30)⁴ = 0. M1 rearrange to isolate the T⁴ term. R1 complete a rigorous and convincing argument clearly showing the required result, with evidence of division by T to isolate the T³ term, must be an equation throughout. AG."
+     "M1 Sets V = 0 in the model",
+     "M1 Rearranges to isolate the T⁴ term",
+     "R1 Divides by T to isolate T³ and reaches the given equation rigorously (AG)"
+    ]
    },
    "11(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "T₁ = ³√(60(38)² + 162000/38) = 44.963",
-     "T₂ = 49.987",
-     "T₃ = 53.504"
-    ],
-    "guidance": "M1 calculate T₁ = 44.963 (…). A1 calculate T₂ = 49.987 and T₃ = 53.504, condone greater than 3 dp."
+     "M1 T₁ = 44.963",
+     "A1 T₂ = 49.987 and T₃ = 53.504"
+    ]
    },
    "11(a)(iii)": {
     "type": "points",
     "points": [
-     "t is measured in years since 1 January 1980, so t = 38 corresponds to the year 2018",
-     "Using T₀ = 38 starts the iteration from the present (current) year 2018"
-    ],
-    "guidance": "B1. Explains that 38 represents the current year 2018 (the number of years since 1 January 1980)."
+     "B1 T₀ = 38 corresponds to the current year, 2018"
+    ]
    },
    "11(b)": {
     "type": "points",
     "points": [
-     "Set the two models equal: 10 + 100(t/30)³ − 50(t/30)⁴ = 4.5 × 1.063^t",
-     "Solve numerically: t = 49 gives world 89.89 and country use 89.81; t = 50 gives 87.16 and 95.47 — sign change between t = 49 and t = 50 (root ≈ 49.009)",
-     "1980 + 49 = 2029, so use of oil and production of oil will be equal during the year 2029"
-    ],
-    "guidance": "B1 translate \"during 2029\" to t = 49 (or use of years since 1980). M1 use both models and set them equal, or model both and obtain or use a value of t. A1 obtain correct values for both models at two appropriate values of t (e.g. t = 49 gives 89.89 and 89.81; t = 50 gives 87.16 and 95.47), OR solve to obtain t ≈ 49.009. E1 explain that the use of oil and the production of oil are equal for t ∈ (49, 50), i.e. during the year 2029."
+     "B1 Year 2029 corresponds to t = 49",
+     "M1 Sets the models equal, or evaluates both at one value of t",
+     "A1 Correct values at two suitable t, e.g. t = 49: 89.89 vs 89.81; t = 50: 87.16 vs 95.47 (or solves to t ≈ 49.009)",
+     "E1 Change-of-sign (or solution) argument showing they are equal for t between 49 and 50, i.e. in 2029"
+    ]
    },
    "12(a)": {
     "type": "points",
     "points": [
-     "Factor theorem: evaluate p(−½) = 30(−½)³ − 7(−½)² − 7(−½) + 2",
-     "= 30(−1/8) − 7(1/4) + 7/2 + 2 = −15/4 − 7/4 + 7/2 + 2 = 0",
-     "Since p(−½) = 0, (2x + 1) is a factor of p(x)"
-    ],
-    "guidance": "M1 begin a proof using a valid method, e.g. factor theorem, algebraic division or multiplication of correct factors. R1 construct a rigorous mathematical proof: clearly substitute x = −½, state that p(−½) = 0 and clearly state this implies 2x + 1 is a factor (with a concluding statement)."
+     "M1 Valid method, e.g. evaluates p(−½)",
+     "R1 Shows p(−½) = 0 and concludes (2x + 1) is a factor"
+    ]
    },
    "12(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "p(x) = (2x + 1)(15x² − 11x + 2)",
-     "Factorise the quadratic: 15x² − 11x + 2 = (5x − 2)(3x − 1)",
-     "p(x) = (2x + 1)(5x − 2)(3x − 1)"
+     "M1 Quadratic factor 15x² − 11x + 2 (PI)",
+     "A1 Second linear factor found",
+     "A1 p(x) = (2x + 1)(5x − 2)(3x − 1)"
     ],
-    "guidance": "M1 obtain the quadratic factor 15x² − 11x + 2 (PI). A1 obtain the second linear factor (5x − 2) or (3x − 1). A1 write p(x) as the product of the correct three linear factors (2x + 1)(5x − 2)(3x − 1). NMS correct answer 3/3."
+    "guidance": "Correct answer with no working scores 3/3."
    },
    "12(c)": {
     "type": "points",
     "points": [
-     "Multiply through by 7 (using sec x = 1/cos x, so 2 cos x = 2/sec x): 30 sec²x + 2 cos x = 7 sec x + 7",
-     "Form a cubic in sec x: 30 sec³x + 2 = 7 sec²x + 7 sec x ⇒ 30 sec³x − 7 sec²x − 7 sec x + 2 = 0, i.e. p(sec x) = 0",
-     "So (2 sec x + 1)(5 sec x − 2)(3 sec x − 1) = 0 ⇒ sec x = −½, 2/5 or 1/3",
-     "All three values lie strictly between −1 and 1, but |sec x| ≥ 1 for all real x, so none is attainable — hence there are no real solutions"
-    ],
-    "guidance": "M1 rearrange to achieve a cubic equation in sec x (or cos x), using 2 cos x = 2/sec x and ×7. A1 equate to zero and use the result from part (b) / factorise. A1 deduce that if solutions exist they must be of the form sec x = −½, sec x = 2/5 or sec x = 1/3. E1 explain that the range of sec x is (−∞, −1] ∪ [1, ∞), so these values are outside the function's range. R1 complete a rigorous argument explaining the real solutions are values which cannot be achieved (all three lie between −1 and 1), so there are no real solutions."
+     "M1 Rearranges to a cubic in sec x (or cos x): 30sec³x − 7sec²x − 7sec x + 2 = 0",
+     "M1 Uses (b) to factorise it",
+     "A1 Solutions would need sec x = −½, ⅓ or ⅖",
+     "E1 States the range of sec x is sec x ≤ −1 or sec x ≥ 1 (or equivalent for cos x)",
+     "R1 All three values lie between −1 and 1, so there are no real solutions"
+    ]
    },
    "14(a)": {
     "type": "points",
     "points": [
-     "Angle OQE = angle FQP are vertically opposite angles, and angle OQR (= EQF region) = angle FEQ = 90°, so angle QEF = A",
-     "(In effect angle EFP = A because angle PEF = 90° and the angle EOF setup gives angle EFP = angle DOE = A, by similar right-angled triangles)",
-     "So PF/EF = sin B and EF/OF = cos B? — note PF/EF = sin(angle FEP); using EF/OF = sin B and PF/EF = cos A gives (PF/EF)(EF/OF) = cos A sin B"
-    ],
-    "guidance": "E1 explain why angle EFQ = A: must be a fully correct explanation with reasons which may include vertically opposite angles and right angle implies similar triangles (angle OQR = angle FQE vertically opposite, angle ORQ = angle FEQ = 90°, so angle QFE = A). E1 deduce PF/EF = cos A AND EF/OF = sin B (must be at least stated or implied that angle EFQ = A through similarity), giving (PF/EF)(EF/OF) = cos A sin B."
+     "E1 Shows angle EFQ = A, e.g. vertically opposite angles at Q plus right angles give similar triangles",
+     "R1 Deduces PF/EF = cos A and EF/OF = sin B"
+    ]
    },
    "14(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Line 4: = (DE/OE) × (OE/OF) + (PF/EF) × (EF/OF)",
-     "Line 5: = sin A cos B + cos A sin B",
-     "Hence sin(A + B) = sin A cos B + cos A sin B"
-    ],
-    "guidance": "B1. Complete the proof: Line 4 first blank denominator is OE and the inserted numerator is OE, so (DE/OE)(OE/OF) = sin A cos B; Line 5 first blank is sin A cos B, giving sin(A + B) = sin A cos B + cos A sin B."
+     "B1 Line 4 uses OE: (DE/OE)(OE/OF), so Line 5 = sin A cos B + cos A sin B"
+    ]
    },
    "14(c)": {
     "type": "points",
     "points": [
-     "The proof is based on the diagram, which uses right-angled triangles",
-     "A and B are assumed to be the (acute) angles of right-angled triangles, so the argument only holds for acute angles"
-    ],
-    "guidance": "E1. Explain that the proof is based on the diagram which uses right-angled triangles: it is assumed that A and B are acute angles, so the proof only holds for acute angles."
+     "E1 The proof relies on right-angled triangles, which forces A and B to be acute"
+    ]
    },
    "14(d)": {
     "type": "points",
     "points": [
-     "Replace B with −B in sin(A + B) = sin A cos B + cos A sin B",
-     "Use the identities sin(−B) = −sin B and cos(−B) = cos B",
-     "sin(A − B) = sin A cos(−B) + cos A sin(−B) = sin A cos B − cos A sin B"
-    ],
-    "guidance": "R1 substitute −B into the identity for sin(A + B) to write sin(A − B) = sin A cos(−B) + cos A sin(−B). B1 recall and state at least one of the identities sin(−B) = −sin B and cos(−B) = cos B (must be explicitly stated). R1 deduce the correct identity with no errors, clearly: sin(A − B) = sin A cos B − cos A sin B."
+     "R1 Substitutes −B: sin(A − B) = sin A cos(−B) + cos A sin(−B)",
+     "B1 Explicitly states sin(−B) = −sin B and/or cos(−B) = cos B",
+     "R1 Correctly deduces sin(A − B) = sin A cos B − cos A sin B"
+    ]
    },
    "15(a)": {
     "type": "points",
     "points": [
-     "y_A = (−4)³ − 48(−4) = −64 + 192 = 128; y_B = (−4 + h)³ − 48(−4 + h)",
-     "Gradient of AB = [(−4 + h)³ − 48(−4 + h) − ((−4)³ − 48(−4))] / h",
-     "= (h³ − 12h² + 48h − 64 − 192 + 48h + 192 − 128)/h = (h³ − 12h²)/h = h² − 12h"
-    ],
-    "guidance": "M1 form an expression of the correct form for the gradient of the line AB (condone sign error). B1 obtain the correct expansion of (−4 + h)³. A1 obtain the correct expansion of the numerator. R1 simplify the numerator and show the given result h² − 12h."
+     "M1 Gradient = [((−4 + h)³ − 48(−4 + h)) − ((−4)³ − 48(−4))]/h (condone a sign error)",
+     "B1 Correct expansion of (−4 + h)³",
+     "A1 Correct numerator h³ − 12h²",
+     "R1 Simplifies to h² − 12h"
+    ]
    },
    "15(b)": {
     "type": "points",
     "points": [
-     "As h → 0, the point B approaches A, so the gradient of the line AB tends to the gradient of the tangent to the curve at A: gradient = lim_(h→0) (h² − 12h)",
-     "lim_(h→0) (h² − 12h) = 0, so the gradient of the curve at A is 0, hence A is a stationary point"
+     "E1 As h → 0, the gradient of AB tends to the gradient of the curve (tangent) at A",
+     "E1 h² − 12h → 0, so A is a stationary point"
     ],
-    "guidance": "E1 explain that as h → 0 the gradient of the line AB tends to the gradient of the curve/tangent at A, i.e. gradient = lim_(h→0)(h² − 12h) (must not use h = 0). E1 explain that lim_(h→0)(h² − 12h) = 0, therefore A must be a stationary point."
+    "guidance": "Do not accept setting h = 0."
    }
   }
  },
  "math-aqa-7357-2018-p2": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "Logical implication.",
     "parts": [
      {
       "code": "1",
-      "prompt": "Which of these statements is correct? Tick (✓) one box.\nOptions: x = 2 ⇒ x² = 4;   x² = 4 ⇒ x = 2;   x² = 4 ⇔ x = 2;   x² = 4 ⇒ x = −2",
+      "prompt": "Pick the one correct statement.\nOptions: x = 2 ⇒ x² = 4   x² = 4 ⇒ x = 2   x² = 4 ⇔ x = 2   x² = 4 ⇒ x = −2",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "Expansion of (1 + 2x)⁷.",
     "parts": [
      {
       "code": "2",
-      "prompt": "Find the coefficient of x² in the expansion of (1 + 2x)⁷. Circle your answer.\nOptions: 42, 4, 21, 84",
+      "prompt": "Find the coefficient of x².\nOptions: 42   4   21   84",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
-    "scenario": "The graph of y = x³ is shown. Two regions are shaded: the region between the curve and the x-axis from x = −2 to x = 0 (below the axis), and the region between the curve and the x-axis from x = 0 to x = 4 (above the axis).",
+    "scenario": "Graph of y = x³ with two shaded regions between the curve and the x-axis: one below the axis from x = −2 up to the origin, one above the axis from the origin to x = 4 (diagram on the question paper).",
     "parts": [
      {
       "code": "3",
-      "prompt": "Find the total shaded area. Circle your answer.\nOptions: −68, 60, 68, 128",
+      "prompt": "Find the total shaded area.\nOptions: −68   60   68   128",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
-    "scenario": "A curve, C, has equation y = x² − 6x + k, where k is a constant. The equation x² − 6x + k = 0 has two distinct positive roots.",
+    "scenario": "Curve C: y = x² − 6x + k, k constant. The equation x² − 6x + k = 0 has two distinct positive roots.",
     "parts": [
      {
       "code": "4(a)",
-      "prompt": "Sketch C on the axes below. (Axes provided.)",
+      "prompt": "Sketch C.",
       "marks": 2
      },
      {
       "code": "4(b)",
-      "prompt": "Find the range of possible values for k. Fully justify your answer.",
+      "prompt": "Find, with full justification, the range of possible values of k.",
       "marks": 4
      }
     ]
    },
    {
     "number": 5,
+    "scenario": "Proof.",
     "parts": [
      {
       "code": "5",
-      "prompt": "Prove that 23 is a prime number.",
+      "prompt": "Prove that 23 is prime.",
       "marks": 2
      }
     ]
    },
    {
     "number": 6,
+    "scenario": "Curve (x + y − 2)² = e^y − 1.",
     "parts": [
      {
       "code": "6",
-      "prompt": "Find the coordinates of the stationary point of the curve with equation (x + y − 2)² = e^(y) − 1",
+      "prompt": "Find the coordinates of the stationary point.",
       "marks": 7
      }
     ]
    },
    {
     "number": 7,
-    "scenario": "A function f has domain ℝ and range {y ∈ ℝ : y ≥ e}. The graph of y = f(x) is shown (a curve that decreases from the upper left to a minimum, then rises steeply; the minimum value is e). The gradient of the curve at the point (x, y) is given by dy/dx = (x − 1)eˣ.",
+    "scenario": "f has domain ℝ and range y ≥ e. Its graph approaches a horizontal asymptote on the left, has a single minimum just right of the y-axis, then rises steeply (diagram on the question paper). The gradient is dy/dx = (x − 1)eˣ.",
     "parts": [
      {
       "code": "7",
-      "prompt": "Find an expression for f(x). Fully justify your answer.",
+      "prompt": "Find f(x), fully justifying your answer.",
       "marks": 8
      }
     ]
    },
    {
     "number": 8,
+    "scenario": "The expression √3 sin x − 3cos x + 4.",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Determine a sequence of transformations which maps the graph of y = sin x onto the graph of y = √3 sin x − 3 cos x + 4. Fully justify your answer.",
+      "prompt": "With full justification, find a sequence of transformations mapping y = sin x onto y = √3 sin x − 3cos x + 4.",
       "marks": 7
      },
      {
       "code": "8(b)(i)",
-      "prompt": "Show that the least value of 1/(√3 sin x − 3 cos x + 4) is (2 − √3)/2",
+      "prompt": "Show that the least value of 1/(√3 sin x − 3cos x + 4) is (2 − √3)/2.",
       "marks": 2
      },
      {
       "code": "8(b)(ii)",
-      "prompt": "Find the greatest value of 1/(√3 sin x − 3 cos x + 4)",
+      "prompt": "Find the greatest value of 1/(√3 sin x − 3cos x + 4).",
       "marks": 1
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "A market trader notices that daily sales are dependent on two variables: number of hours, t, after the stall opens, and total sales, x, in pounds since the stall opened. The trader models the rate of sales as directly proportional to (8 − t)/x. After two hours the rate of sales is £72 per hour and total sales are £336.",
+    "scenario": "A market stall: t hours after opening, total sales £x. The rate of sales is modelled as directly proportional to (8 − t)/x. After 2 hours the rate is £72 per hour and total sales are £336.",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Show that x(dx/dt) = 4032(8 − t)",
+      "prompt": "Show that x dx/dt = 4032(8 − t).",
       "marks": 3
      },
      {
       "code": "9(b)",
-      "prompt": "Hence, show that x² = 4032t(16 − t)",
+      "prompt": "Hence show that x² = 4032t(16 − t).",
       "marks": 3
      },
      {
       "code": "9(c)(i)",
-      "prompt": "The stall opens at 09.30. The trader closes the stall when the rate of sales falls below £24 per hour. Using the results in parts (a) and (b), calculate the earliest time that the trader closes the stall.",
+      "prompt": "The stall opens at 09:30 and closes when the rate of sales drops below £24 per hour. Using (a) and (b), find the earliest closing time.",
       "marks": 6
      },
      {
       "code": "9(c)(ii)",
-      "prompt": "Explain why the model used by the trader is not valid at 09.30.",
+      "prompt": "Explain why the model is not valid at 09:30.",
       "marks": 2
      }
     ]
    },
    {
     "number": 10,
+    "scenario": "A snail accelerates uniformly in a straight line from rest to 1.28 cm s⁻¹ in 1.8 seconds.",
     "parts": [
      {
       "code": "10",
-      "prompt": "A garden snail moves in a straight line from rest to 1.28 cm s⁻¹, with a constant acceleration in 1.8 seconds. Find the acceleration of the snail. Circle your answer.\nOptions: 2.30 m s⁻², 0.71 m s⁻², 0.0071 m s⁻², 0.023 m s⁻²",
+      "prompt": "Find its acceleration.\nOptions: 2.30 m s⁻²   0.71 m s⁻²   0.0071 m s⁻²   0.023 m s⁻²",
       "marks": 1
      }
     ]
    },
    {
     "number": 11,
-    "scenario": "A uniform rod, AB, has length 4 metres. The rod is resting on a support at its midpoint C. A particle of mass 4 kg is placed 0.6 metres to the left of C. Another particle of mass 1.5 kg is placed x metres to the right of C, as shown. The rod is balanced in equilibrium at C.",
+    "scenario": "A uniform 4 m rod AB balances on a support at its midpoint C, with a 4 kg particle 0.6 m left of C and a 1.5 kg particle x m right of C.",
     "parts": [
      {
       "code": "11",
-      "prompt": "Find x. Circle your answer.\nOptions: 1.8 m, 1.5 m, 1.75 m, 1.6 m",
+      "prompt": "Find x.\nOptions: 1.8 m   1.5 m   1.75 m   1.6 m",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
-    "scenario": "The graph below shows the velocity of an object moving in a straight line over a 20 second journey. The velocity v (m/s) against time t (s): v = 0 at t = 0, falls linearly to −2 at t = 4, rises linearly through 0 to 2 at t = 6, stays at 2 from t = 6 to t = 11, falls steeply (linearly) to −4 by about t = 12.5, stays at −4 until about t = 16, then rises linearly back to 0 at t = 20. (The steepest section of the graph has gradient of magnitude 4.)",
+    "scenario": "Velocity–time graph for a 20 s straight-line journey, with points (t, v): (0, 0) to (4, −2), up to (6, 2), constant to (11, 2), down to (12, 0) and (13, −4), constant to (16, −4), then up to (20, 0) (graph on the question paper).",
     "parts": [
      {
       "code": "12(a)",
-      "prompt": "Find the maximum magnitude of the acceleration of the object.",
+      "prompt": "Find the maximum magnitude of the acceleration.",
       "marks": 1
      },
      {
       "code": "12(b)",
-      "prompt": "The object is at its starting position at times 0, t₁ and t₂ seconds. Find t₁ and t₂.",
+      "prompt": "The object is at its start position at times 0, t₁ and t₂. Find t₁ and t₂.",
       "marks": 4
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "In this question use g = 9.8 m s⁻². A boy attempts to move a wooden crate of mass 20 kg along horizontal ground. The coefficient of friction between the crate and the ground is 0.85.",
+    "scenario": "g = 9.8 m s⁻². A 20 kg crate on horizontal ground; coefficient of friction 0.85.",
     "parts": [
      {
       "code": "13(a)",
-      "prompt": "The boy applies a horizontal force of 150 N. Show that the crate remains stationary.",
+      "prompt": "A horizontal force of 150 N is applied. Show that the crate stays at rest.",
       "marks": 3
      },
      {
       "code": "13(b)",
-      "prompt": "Instead, the boy uses a handle to pull the crate forward. He exerts a force of 150 N, at an angle of 15° above the horizontal, as shown in the diagram. Determine whether the crate remains stationary. Fully justify your answer.",
+      "prompt": "Instead the boy pulls with 150 N at 15° above the horizontal. Decide, with full justification, whether the crate stays at rest.",
       "marks": 5
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "A quadrilateral has vertices A, B, C and D with position vectors given by OA = [3, 5, 1], OB = [−1, 2, 7], OC = [0, 7, 6] and OD = [4, 10, 0].",
+    "scenario": "Quadrilateral ABCD with position vectors OA = (3, 5, 1), OB = (−1, 2, 7), OC = (0, 7, 6), OD = (4, 10, 0).",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "Write down the vector AB.",
+      "prompt": "Write down AB.",
       "marks": 1
      },
      {
       "code": "14(b)",
-      "prompt": "Show that ABCD is a parallelogram, but not a rhombus.",
+      "prompt": "Show that ABCD is a parallelogram but not a rhombus.",
       "marks": 5
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "A driver is road-testing two minibuses, A and B, for a taxi company. The performance of each minibus along a straight track is compared. A flag is dropped to indicate the start of the test. Each minibus starts from rest. The acceleration in m s⁻² of each minibus is modelled as a function of time, t seconds, after the flag is dropped: the acceleration of A = 0.138t², the acceleration of B = 0.024t³.",
+    "scenario": "Two minibuses start from rest when a flag drops. Accelerations (m s⁻²) at t seconds: A = 0.138t², B = 0.024t³.",
     "parts": [
      {
       "code": "15(a)",
-      "prompt": "Find the time taken for A to travel 100 metres. Give your answer to four significant figures.",
+      "prompt": "Find the time for A to travel 100 m, to 4 significant figures.",
       "marks": 4
      },
      {
       "code": "15(b)",
-      "prompt": "The company decides to buy the minibus which travels 100 metres in the shortest time. Determine which minibus should be bought.",
+      "prompt": "The company buys the minibus that covers 100 m faster. Decide which.",
       "marks": 4
      },
      {
       "code": "15(c)",
-      "prompt": "The models assume that both minibuses start moving immediately when t = 0. In light of this, explain why the company may, in reality, make the wrong decision.",
+      "prompt": "The models assume both start moving at t = 0. Explain why the company might then choose wrongly.",
       "marks": 1
      }
     ]
    },
    {
     "number": 16,
-    "scenario": "In this question use g = 9.81 m s⁻². A particle is projected with an initial speed u, at an angle of 35° above the horizontal. It lands at a point 10 metres vertically below its starting position. The particle takes 1.5 seconds to reach the highest point of its trajectory.",
+    "scenario": "g = 9.81 m s⁻². A particle is projected at speed u at 35° above the horizontal, landing 10 m below its start point. It reaches its highest point after 1.5 s.",
     "parts": [
      {
       "code": "16(a)",
@@ -14992,14 +14980,14 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "16(b)",
-      "prompt": "Find the total time that the particle is in flight.",
+      "prompt": "Find the total flight time.",
       "marks": 3
      }
     ]
    },
    {
     "number": 17,
-    "scenario": "A buggy is pulling a roller-skater, in a straight line along a horizontal road, by means of a connecting rope as shown in the diagram. The combined mass of the buggy and driver is 410 kg. A driving force of 300 N and a total resistance force of 140 N act on the buggy. The mass of the roller-skater is 72 kg. A total resistance force of R newtons acts on the roller-skater. The buggy and the roller-skater have an acceleration of 0.2 m s⁻².",
+    "scenario": "A buggy (with driver, 410 kg) tows a 72 kg roller-skater by a rope along a horizontal road. On the buggy: driving force 300 N, resistance 140 N. On the skater: resistance R N. Acceleration 0.2 m s⁻² (diagram on the question paper).",
     "parts": [
      {
       "code": "17(a)(i)",
@@ -15008,22 +14996,22 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "17(a)(ii)",
-      "prompt": "Find the tension in the rope.",
+      "prompt": "Find the rope tension.",
       "marks": 3
      },
      {
       "code": "17(b)",
-      "prompt": "State a necessary assumption that you have made.",
+      "prompt": "State a necessary assumption you have made.",
       "marks": 1
      },
      {
       "code": "17(c)(i)",
-      "prompt": "The roller-skater releases the rope at a point A, when she reaches a speed of 6 m s⁻¹. She continues to move forward, experiencing the same resistance force. The driver notices a change in motion of the buggy, and brings it to rest at a distance of 20 m from A. Determine whether the roller-skater will stop before reaching the stationary buggy. Fully justify your answer.",
+      "prompt": "The skater lets go at A at 6 m s⁻¹ and keeps the same resistance. The buggy is brought to rest 20 m from A. Decide, with full justification, whether the skater stops before reaching it.",
       "marks": 5
      },
      {
       "code": "17(c)(ii)",
-      "prompt": "Explain the change in motion that the driver noticed.",
+      "prompt": "Explain the change in the buggy's motion that the driver noticed.",
       "marks": 2
      }
     ]
@@ -15031,590 +15019,572 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x = 2 ⇒ x² = 4"
-    ],
-    "guidance": "B1: ticks the correct option. x = 2 does imply x² = 4 (the implication is one-way; the converse and the other statements are false because x² = 4 also allows x = −2)."
+     "B1 A: x = 2 ⇒ x² = 4"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "84"
-    ],
-    "guidance": "B1: circles the correct answer. The x² term of (1 + 2x)⁷ is C(7,2)(2x)² = 21 × 4x² = 84x², so the coefficient is 84."
+     "B1 D: 84"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "68"
-    ],
-    "guidance": "B1: circles the correct answer. Area = ∫₋₂⁰ |x³| dx + ∫₀⁴ x³ dx = 4 + 64 = 68 (the first region is below the axis so its magnitude 4 is added)."
+     "B1 C: 68"
+    ]
    },
    "5": {
     "type": "points",
     "points": [
-     "√23 ≈ 4.8, so it is sufficient to test prime factors up to √23, i.e. only 2 and 3",
-     "23 is odd, so 2 is not a factor; 23 is not a multiple of 3",
-     "Since no prime ≤ √23 divides 23, it has no factors other than 1 and itself, so 23 is prime"
+     "M1 Starts proof by exhaustion, e.g. √23 ≈ 4.8 so only 2 and 3 need checking",
+     "R1 Complete argument: 23 is not divisible by 2 or 3, so it is prime"
     ],
-    "guidance": "M1: begins checking for factors, starting a proof by exhaustion or stating which numbers need to be checked (primes less than √23). R1: completes a rigorous argument — 23 is odd (not divisible by 2) and not a multiple of 3, therefore 23 is prime. The candidate must make clear that checking 2 and 3 is sufficient."
+    "guidance": "Checking all possible factors, or more than needed, is fine if the argument is complete."
    },
    "6": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Differentiate implicitly: 2(x + y − 2)(1 + dy/dx) = e^(y) (dy/dx)",
-     "At a stationary point dy/dx = 0: 2(x + y − 2) = 0 ⇒ x + y − 2 = 0",
-     "Substitute into the curve: 0 = e^(y) − 1 ⇒ e^(y) = 1 ⇒ y = 0",
-     "Then x + 0 − 2 = 0 ⇒ x = 2",
-     "Stationary point is (2, 0)"
-    ],
-    "guidance": "M1: selects an appropriate technique to differentiate (implicit differentiation, chain rule applied to both sides). B1: differentiates the e^(y) term correctly to e^(y) dy/dx. A1: differentiates fully correctly. M1: uses dy/dx = 0. A1: eliminates x or y to obtain y = 0 (from e^(y) − 1 = 0). A1: obtains correct y = 0. A1: obtains correct x = 2, giving (2, 0)."
+     "M1 Chooses implicit differentiation (chain rule on the bracket)",
+     "B1 Differentiates e^y correctly to e^y dy/dx",
+     "A1 Fully correct: 2(x + y − 2)(1 + dy/dx) = e^y dy/dx",
+     "M1 Sets dy/dx = 0",
+     "M1 Eliminates a variable using the curve equation, e.g. x + y − 2 = 0 so e^y − 1 = 0",
+     "A1 y = 0",
+     "A1 x = 2, so the point is (2, 0)"
+    ]
    },
    "7": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Integrate by parts: f(x) = ∫(x − 1)eˣ dx with u = x − 1, dv = eˣ dx",
-     "= (x − 1)eˣ − ∫eˣ dx = (x − 1)eˣ − eˣ + c = (x − 2)eˣ + c",
-     "The range is y ≥ e, so the minimum value of y is e; the minimum occurs where dy/dx = 0, i.e. (x − 1)eˣ = 0 ⇒ x = 1",
-     "So the curve passes through (1, e): e = (1 − 2)e¹ + c = −e + c ⇒ c = 2e",
-     "Therefore f(x) = (x − 2)eˣ + 2e"
-    ],
-    "guidance": "M1: integrates using integration by parts. M1: applies the by-parts formula correctly to (x − 1)eˣ. A1: obtains the fully correct integral (x − 2)eˣ (+ c), condone missing constant. E1: explains clearly that the minimum y value is e (from the range). M1: uses dy/dx = 0 to find x = 1 (the x-coordinate of the minimum). A1: deduces the curve passes through (1, e). M1: uses their minimum point to find c. A1 (CAO): states f(x) = (x − 2)eˣ + 2e."
+     "M1 Integrates (x − 1)eˣ by parts",
+     "M1 Applies the parts formula correctly (u = x − 1, dv/dx = eˣ)",
+     "A1 y = (x − 1)eˣ − eˣ + c (condone missing c)",
+     "E1 Uses the range to state the minimum y-value is e",
+     "M1 Sets dy/dx = 0 to get x = 1 at the minimum",
+     "A1 Curve passes through (1, e)",
+     "M1 Substitutes their minimum point to find c = 2e",
+     "A1 f(x) = (x − 2)eˣ + 2e (CAO)"
+    ]
    },
    "10": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "0.0071 m s⁻²"
-    ],
-    "guidance": "B1: circles the correct answer. a = (v − u)/t = (0.0128 − 0)/1.8 = 0.00711… ≈ 0.0071 m s⁻² (the speed 1.28 cm s⁻¹ = 0.0128 m s⁻¹)."
+     "B1 C: 0.0071 m s⁻²"
+    ]
    },
    "11": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1.6 m"
-    ],
-    "guidance": "B1: circles the correct answer. Taking moments about C: 4 × 0.6 = 1.5 × x ⇒ x = 2.4/1.5 = 1.6 m (the rod is uniform so its weight acts at C and contributes no moment)."
+     "B1 D: 1.6 m"
+    ]
    },
    "4(a)": {
     "type": "points",
     "points": [
-     "Sketch a positive (upward) parabola",
-     "Show both intersections with the x-axis on the positive x side, with the minimum below the x-axis and the y-intercept (= k) positive (above the origin)"
-    ],
-    "guidance": "B1: sketches a graph recalling correct upward parabola (∪) shape. B1: deduces correct relative positions of the intersections with the axes — both roots positive, vertex below the x-axis and the y-intercept k labelled/positive."
+     "B1 U-shaped parabola",
+     "B1 Crosses the positive x-axis twice, with y-intercept k marked above the origin"
+    ]
    },
    "4(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "For two distinct real roots, discriminant > 0: b² − 4ac > 0 ⇒ (−6)² − 4(1)(k) > 0 ⇒ 36 − 4k > 0 ⇒ k < 9",
-     "For both roots positive, the y-intercept must be positive (curve crosses the positive y-axis): k > 0",
-     "Combine: 0 < k < 9"
-    ],
-    "guidance": "M1: shows evidence of using the discriminant (or completing the square) for distinct roots. A1: obtains k < 9 (condone ≤). E1: explains that for the roots to be positive the y-intercept k must be positive, i.e. k > 0. R1: states the correct combined range 0 < k < 9."
+     "M1 Uses the discriminant b² − 4ac > 0 (or completes the square for the vertex)",
+     "A1 36 − 4k > 0 so k < 9 (condone k ≤ 9)",
+     "E1 Positive roots with a U shape mean the y-intercept k must be positive",
+     "R1 0 < k < 9"
+    ]
    },
    "8(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Write √3 sin x − 3 cos x = R sin(x − α): R cos α = √3, R sin α = 3, so R = √(3 + 9) = √12 = 2√3 and tan α = 3/√3 = √3 ⇒ α = π/6",
-     "So y = √3 sin x − 3 cos x + 4 = 2√3 sin(x − π/6) + 4",
-     "Transformations from y = sin x: a stretch in the y-direction (parallel to the y-axis), scale factor 2√3",
-     "a translation of π/6 in the positive x-direction (right), i.e. by vector [π/6, 0]",
-     "a translation of 4 in the positive y-direction (up), i.e. by vector [0, 4]"
-    ],
-    "guidance": "M1: compares with R sin(x ± α) (or R cos(x ± α)). M1: obtains two correct equations for R and α, e.g. R cos α = √3, R sin α = 3. B1: correct R (= 2√3, condone AWRT 3.46). B1: correct α in radians (= π/6, or by description of the translation). B1F: interprets their values of R and α to form an equation, e.g. y = 2√3 sin(x − π/6) + 4. E1F: interprets their equation to identify a transformation — stretch in the y-direction scale factor 2√3. A1: identifies all required transformations in a correct order — stretch ×2√3, translation [π/6, 0], translation [0, 4]. (Order: stretch then translations.)"
+     "M1 Compares with R sin(x − α) or R cos(x ± α)",
+     "M1 Two correct equations, e.g. R cos α = √3, R sin α = 3",
+     "B1 R = 2√3 (awrt 3.46)",
+     "B1 α = π/3 (or 60°)",
+     "B1F Writes y = 2√3 sin(x − π/3) + 4 (or cosine form)",
+     "E1F Identifies a transformation from their equation",
+     "A1 All in a correct order: translation (π/3, 0), stretch in y-direction scale factor 2√3, translation (0, 4)"
+    ]
    },
    "8(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "The denominator √3 sin x − 3 cos x + 4 = 2√3 sin(x − π/6) + 4 has greatest value 2√3 + 4 (when sin = 1)",
-     "The fraction 1/(…) is least when the denominator is greatest: least value = 1/(2√3 + 4)",
-     "Rationalise: 1/(2√3 + 4) = (2√3 − 4) / ((2√3 + 4)(2√3 − 4))... = (2 − √3)/2"
-    ],
-    "guidance": "M1: deduces the least value of the fraction occurs when sin(x − π/6) = 1, i.e. uses the maximum value of the denominator = 2√3 + 4 and so PI by least value 1/(2√3 + 4). R1: completes a rigorous argument to obtain 1/(2√3 + 4) and then the given answer (2 − √3)/2 (the AG must be shown)."
+     "M1 Least value when sin(x − π/3) = 1, giving 1/(2√3 + 4)",
+     "R1 Rationalises rigorously to (2 − √3)/2"
+    ]
    },
    "8(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "The fraction is greatest when the denominator is least; least value of denominator is −2√3 + 4 (when sin = −1)",
-     "Greatest value = 1/(4 − 2√3) = (2 + √3)/2"
-    ],
-    "guidance": "B1F: deduces the greatest value occurs when sin(x − π/6) = −1, using their R and α, giving greatest value = 1/(4 − 2√3) = (2 + √3)/2 (ACF)."
+     "B1F Greatest value 1/(4 − 2√3) = (2 + √3)/2"
+    ]
    },
    "9(a)": {
     "type": "points",
     "points": [
-     "The rate of sales dx/dt is proportional to (8 − t)/x, so dx/dt = k(8 − t)/x for some constant k",
-     "Substitute t = 2, x = 336, dx/dt = 72: 72 = k(8 − 2)/336 = 6k/336",
-     "Solve: k = 72 × 336 / 6 = 4032",
-     "So dx/dt = 4032(8 − t)/x, hence x(dx/dt) = 4032(8 − t)"
-    ],
-    "guidance": "B1: translates the proportionality into a differential equation involving dx/dt, t, x and a constant of proportionality. M1: substitutes t = 2, x = 336, dx/dt = 72 to find k. R1 (AG): obtains the correct value k = 4032 and shows the given result x(dx/dt) = 4032(8 − t)."
+     "B1 dx/dt = k(8 − t)/x",
+     "M1 Substitutes t = 2, x = 336, dx/dt = 72 to find k",
+     "R1 k = 4032 giving the stated result (AG)"
+    ]
    },
    "9(b)": {
     "type": "points",
     "points": [
-     "x dx = 4032(8 − t) dt; integrate both sides",
-     "½x² = 4032(8t − t²/2) + c",
-     "Use x = 0 when t = 0: c = 0",
-     "So x² = 4032(16t − t²) = 4032t(16 − t)"
-    ],
-    "guidance": "M1: integrates one side correctly. A1: integrates both sides correctly, condone the missing constant. R1 (AG): uses the condition x = 0 at t = 0 to show c = 0 and correctly obtains the given result x² = 4032t(16 − t)."
+     "M1 Separates and integrates one side correctly",
+     "A1 ½x² = 4032(8t − ½t²) + c (condone missing c)",
+     "R1 Uses the conditions to get c = 0 and reach x² = 4032t(16 − t) (AG)"
+    ]
    },
    "9(c)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Rate of sales falls to 24: dx/dt = 24, so 24x = 4032(8 − t), giving x = 168(8 − t)",
-     "Substitute into x² = 4032t(16 − t): (168(8 − t))² = 4032t(16 − t)",
-     "Form the quadratic: t² − 16t + 56 = 0",
-     "Solve: t = 8 ± 2√2 = 5.171… or 10.828…; take the earliest, t ≈ 5.171 hours",
-     "5.171 hours = 5 hours 10 minutes; opening at 09.30 gives closing time 14.40"
-    ],
-    "guidance": "M1: translates the rate of growth into dx/dt = 24 and uses it in the model for rate of sales. A1: x = 168(8 − t). M1: eliminates x to form a quadratic in t. A1: t² − 16t + 56 = 0 (or not simplified). A1: obtains t ≈ 5.17. A1: converts their time (5.171 h) into hours and minutes (5 h 10 min). R1F: interprets the closing time as 14.40 (their converted time after 09.30)."
+     "M1 Uses dx/dt = 24 in (a): x = 168(8 − t)",
+     "M1 Eliminates x with (b) to get a quadratic in t",
+     "A1 t² − 16t + 56 = 0 (need not be simplified)",
+     "A1 t = 5.17 (other root 10.83)",
+     "A1 Converts to 5 hours 10 minutes",
+     "R1F Closes at 14:40"
+    ]
    },
    "9(c)(ii)": {
     "type": "points",
     "points": [
-     "At 09.30, t = 0 and total sales x = 0 (no sales have yet been made)",
-     "Then dx/dt = 4032(8 − t)/x has a zero denominator, so the rate of sales is undefined — the model is not valid at 09.30"
-    ],
-    "guidance": "E1: explains in context that when the stall opens the sales are zero. E1: explains that when x = 0 the rate dx/dt is undefined because the denominator is zero, so the model is not valid at 09.30."
+     "E1 At opening total sales are zero",
+     "E1 With x = 0 the rate dx/dt is undefined (zero denominator)"
+    ]
    },
    "12(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Maximum magnitude of acceleration = 4 m s⁻²"
-    ],
-    "guidance": "B1: finds the steepest gradient on the velocity–time graph; the steepest section has a velocity change of 6 over 1.5 s, giving magnitude 6/1.5 = 4 m s⁻². Answer 4 m s⁻² (do not allow −4 — magnitude is required)."
+     "B1 4 m s⁻² (not −4)"
+    ]
    },
    "12(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "The object returns to its start when the net area (displacement) under the v–t graph since t = 0 is zero",
-     "Up to t = 6: area = −½(4)(2)... net signed area from 0 to 6 = −4 + 2 = −2 (using triangle areas); displacement becomes zero again at t₁ = 8 (after the positive region t = 6 to 8 cancels the earlier negative area)",
-     "t₁ = 8",
-     "Continuing, the positive area then the later negative area balance again at t₂ = 14.25",
-     "t₂ = 14.25"
-    ],
-    "guidance": "M1: shows evidence of determining areas above and below the time axis (the displacement is the signed area). A2: deduces t₁ correctly, t₁ = 8 (use values from t = 7 and 8 inclusive / area method). M1: shows evidence of determining areas above and below the time axis for values between t = 13 and t = 15 inclusive. A1: deduces t₂ correctly, t₂ = 14.25."
+     "M1 Compares areas above and below the axis for t between 7 and 9",
+     "A1 t₁ = 8",
+     "M1 Compares areas above and below the axis for t between 13 and 15",
+     "A1 t₂ = 14.25"
+    ]
    },
    "13(a)": {
     "type": "points",
     "points": [
-     "Maximum (limiting) friction = μmg = 0.85 × 20 × 9.8 = 166.6 N",
-     "The applied force 150 N is compared with the maximum friction 166.6 N",
-     "150 < 166.6, so the applied force cannot overcome friction; the crate remains stationary"
-    ],
-    "guidance": "B1: uses the model for maximum friction = μmg. M1: makes an appropriate comparison (150 with their 166.6). E1: explains clearly why the crate remains stationary (150 < 166.6 ⇒ crate does not move)."
+     "B1 Maximum friction μmg = 0.85 × 20 × 9.8 = 166.6 N",
+     "M1 Compares 150 with this",
+     "E1 150 < 166.6, so the crate does not move"
+    ]
    },
    "13(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Resolve vertically: R + 150 sin 15° = 20g ⇒ R = 20 × 9.8 − 150 sin 15° = 157.177 N",
-     "Maximum friction = μR = 0.85 × 157.177 = 133.6 N",
-     "Horizontal component of the pull = 150 cos 15° = 145 N",
-     "Compare: 145 > 133.6, so the horizontal force exceeds the maximum friction; the crate begins to move"
-    ],
-    "guidance": "M1: forms an equation by resolving vertically (condone one sign or sin/cos error). A1: obtains the correct reaction force R = 157.177 N. B1F: uses maximum friction = μR with their reaction force (must identify it as the maximum/limiting friction). M1: compares 150 cos 15° with their maximum friction. E1F: explains, using their values, why the crate begins to move (145 > 133.6 ⇒ crate begins to move)."
+     "M1 Resolves vertically: R + 150 sin 15° = 20g (condone one sign or trig error)",
+     "A1 R = 157.2 N",
+     "B1F Maximum friction μR = 133.6 N",
+     "M1 Compares 150 cos 15° = 145 N with the maximum friction",
+     "E1F 145 > 133.6 so the crate starts to move"
+    ]
    },
    "14(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "AB = OB − OA = [−1, 2, 7] − [3, 5, 1] = [−4, −3, 6]"
-    ],
-    "guidance": "B1: obtains the correct vector AB = [−4, −3, 6]."
+     "B1 AB = (−4, −3, 6)"
+    ]
    },
    "14(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Find another edge, e.g. DC = OC − OD = [0, 7, 6] − [4, 10, 0] = [−4, −3, 6]",
-     "Since AB = DC, AB is parallel and equal to DC, so ABCD is a parallelogram",
-     "Find lengths of two different edges: |AB| = √((−4)² + (−3)² + 6²) = √61; AD = OD − OA = [1, 5, −1], |AD| = √(1² + 5² + (−1)²) = √27 = 3√3",
-     "Since |AB| ≠ |AD| (√61 ≠ 3√3), adjacent sides are unequal, so ABCD is not a rhombus"
-    ],
-    "guidance": "M1: obtains one other edge as a vector. A1: obtains DC correctly (or both BC and AD, or both CB and DA). M1: obtains the length of one edge (or its square). A1: obtains two correct lengths of different edges. R1: completes a rigorous argument — AB = DC ⇒ parallelogram, and AB ≠ AD ⇒ not a rhombus."
+     "M1 Finds another edge vector, e.g. BC = (1, 5, −1)",
+     "A1 DC = (−4, −3, 6), or both BC and AD = (1, 5, −1) (or CB and DA)",
+     "M1 Finds the length (or length²) of one edge",
+     "A1 Two different correct lengths: |AB| = √61, |AD| = √27 = 3√3",
+     "R1 AB = DC so parallelogram; |AB| ≠ |AD| so not a rhombus"
+    ]
    },
    "15(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Integrate acceleration twice: v = ∫0.138t² dt = 0.046t³ (+c); v = 0 at t = 0 ⇒ c = 0",
-     "s = ∫0.046t³ dt = 0.0115t⁴ (+k); s = 0 at t = 0 ⇒ k = 0",
-     "Set s = 100: 0.0115t⁴ = 100 ⇒ t⁴ = 8695.65… ⇒ t = 9.657 s (4 s.f.)"
-    ],
-    "guidance": "M1: integrates 0.138t² twice. A1: finds the correct displacement expression, condoning no constant of integration. B1: demonstrates at least one constant of integration is zero (from starting from rest / s = 0). A1: finds the correct time for minibus A, t = 9.657 s."
+     "M1 Integrates 0.138t² twice",
+     "A1 s = 0.0115t⁴ (condone no constant)",
+     "B1 Shows at least one integration constant is zero from t = 0 conditions",
+     "A1 0.0115t⁴ = 100 gives t = 9.657 s"
+    ]
    },
    "15(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "For B: v = ∫0.024t³ dt = 0.006t⁴ (c = 0); s = ∫0.006t⁴ dt = 0.0012t⁵ (k = 0)",
-     "Set s = 100: 0.0012t⁵ = 100 ⇒ t⁵ = 83333… ⇒ t = 9.642 s",
-     "Compare: 9.642 < 9.657, so B reaches 100 m in less time",
-     "The company should buy minibus B"
-    ],
-    "guidance": "M1: integrates 0.024t³ twice. A1: finds the correct displacement expression, condoning no constant. A1: finds the correct time for minibus B, t = 9.642 s. E1F: states the correct choice consistent with their answers (must have integrated twice in both parts) — choose minibus B."
+     "M1 Integrates 0.024t³ twice",
+     "A1 s = 0.0012t⁵ (condone no constant)",
+     "A1 0.0012t⁵ = 100 gives t = 9.642 s",
+     "E1F 9.642 < 9.657, so choose minibus B (must have integrated twice in both parts)"
+    ]
    },
    "15(c)": {
     "type": "points",
     "points": [
-     "In reality a vehicle does not start moving instantly when t = 0; there is a driver reaction time / delay before it sets off",
-     "If driver B has a longer reaction time than driver A, then in reality A could travel the 100 metres faster than B, so buying B would be the wrong decision"
-    ],
-    "guidance": "E1: explains how the reaction times of each driver could change the outcome — e.g. if B has a greater reaction time than A, then A could actually travel 100 m faster, so the decision based purely on the model may be wrong."
+     "E1 The drivers' reaction times may differ, e.g. if B's driver reacts more slowly A could reach 100 m first"
+    ]
    },
    "16(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Vertical motion to the highest point: v = u sin 35° − gt with v = 0 at t = 1.5",
-     "0 = u sin 35° − 9.81 × 1.5",
-     "u sin 35° = 14.715 ⇒ u = 14.715 / sin 35° = 25.7 m s⁻¹ (3 s.f.)"
-    ],
-    "guidance": "M1: uses v = u + at with v = 0 for the vertical motion (condone cos or sign error). A1: obtains the correct equation 0 = u sin 35° − 9.81 × 1.5. A1 (CAO): obtains u = 25.7 m s⁻¹ to 3 s.f."
+     "M1 Uses v = u + at vertically with v = 0 at t = 1.5 (condone cos or sign error)",
+     "A1 0 = u sin 35° − 9.81 × 1.5",
+     "A1 u = 25.7 m s⁻¹ (3 s.f.)"
+    ]
    },
    "16(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Use s = ut + ½at² vertically with s = −10 (lands 10 m below), u_vertical = u sin 35° = 25.7 sin 35°",
-     "−10 = (25.7 sin 35°)t − ½ × 9.81 × t²",
-     "Solve the quadratic for t (take the positive root): t = 3.571",
-     "Total time of flight ≈ 3.57 seconds"
-    ],
-    "guidance": "M1: uses s = ut + ½at² with s = −10 and their u for the vertical motion (condone cos or sign error). A1F: obtains the correct equation. A1 (CAO): obtains the correct time of flight with units, AWRT 3.6 (= 3.57 s)."
+     "M1 Uses s = ut + ½at² vertically with s = −10 and their u (condone cos or sign error)",
+     "A1F −10 = 25.7 sin 35° t − ½ × 9.81t²",
+     "A1 t = 3.57 s (awrt 3.6, with units)"
+    ]
    },
    "17(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Apply Newton's second law to the whole system (buggy + skater), mass 410 + 72 = 482 kg",
-     "Driving force − total resistance = total mass × acceleration: 300 − 140 − R = 482 × 0.2",
-     "300 − 140 − R = 96.4 ⇒ R = 160 − 96.4 = 63.6 N"
-    ],
-    "guidance": "M1: forms an equation of motion with four correct terms for the whole system (condone sign error). A1: obtains the correct equation. A1: obtains the correct value of R = 63.6 N."
+     "M1 Equation of motion for the whole system with four correct terms (condone sign error)",
+     "A1 300 − 140 − R = 482 × 0.2",
+     "A1 R = 63.6 N"
+    ]
    },
    "17(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Apply Newton's second law to the roller-skater alone (mass 72 kg): T − R = 72 × 0.2",
-     "T − 63.6 = 14.4",
-     "T = 78 N"
-    ],
-    "guidance": "M1: forms an equation of motion for the roller-skater with correct terms, using their R (condone sign error). A1F: obtains the correct equation, following their R. A1: obtains the correct value of T = 78 N."
+     "M1 Equation of motion for the skater (or buggy) with correct terms",
+     "A1F T − 63.6 = 72 × 0.2 (follow through R)",
+     "A1 T = 78 N"
+    ]
    },
    "17(b)": {
     "type": "points",
     "points": [
-     "The rope is light (has no mass) / the rope is horizontal / the rope is inextensible",
-     "Any one of these is an acceptable necessary assumption"
+     "E1 The rope is light, horizontal or inextensible"
     ],
-    "guidance": "E1: states an appropriate assumption — the rope has no mass, or the rope is horizontal, or the rope is inextensible. (NOT friction and NOT air resistance.)"
+    "guidance": "Assumptions about friction or air resistance do not score."
    },
    "17(c)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "After releasing the rope the only horizontal force on the skater is the resistance R = 63.6 N (mass 72 kg)",
-     "Deceleration: −63.6 = 72a ⇒ a = −0.883 m s⁻²",
-     "Use v² = u² + 2as with u = 6, v = 0: 0 = 6² − 2 × 0.883 × s",
-     "s = 36 / (2 × 0.883) = 20.4 m",
-     "Since 20.4 > 20, the skater travels further than 20 m before stopping, so she does NOT stop before reaching the buggy — she hits the buggy"
-    ],
-    "guidance": "M1: forms an equation of motion for the skater using their R (−63.6 = 72a). A1F: finds the deceleration a = −0.883 m s⁻² (following their R). M1: uses a suitable constant-acceleration formula with their a. A1F: uses v = 0 when u = 6 (or v² with positive route). A1: obtains s = 20.4 m and, since 20.4 > 20, concludes the skater hits the buggy."
+     "M1 Equation of motion for the skater with their R: −63.6 = 72a",
+     "A1F a = −0.883 m s⁻²",
+     "M1 Uses a constant-acceleration formula with u = 6, v = 0 and their a",
+     "A1F Stopping distance 20.4 m (or finds v at s = 20)",
+     "E1 20.4 > 20, so the skater reaches (hits) the buggy"
+    ]
    },
    "17(c)(ii)": {
     "type": "points",
     "points": [
-     "When the rope is released there is no longer a tension acting on the buggy",
-     "With the same driving force but no rope tension, the resultant force on the buggy is larger, so the buggy accelerates (the driver notices the buggy speeding up / increasing acceleration)"
-    ],
-    "guidance": "E1: explains that the tension is removed from the buggy. E1: explains that the driver notices an increase in acceleration — the rope is released so there is no tension on the buggy, giving a higher resultant force and so a greater acceleration."
+     "E1 Once the rope is released there is no tension on the buggy, so its resultant force increases",
+     "E1 The driver notices an increase in acceleration"
+    ]
    }
   }
  },
  "math-aqa-7357-2018-p3": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "Circle (x − 4)² + (y + 4)² = 9.",
     "parts": [
      {
       "code": "1",
-      "prompt": "A circle has equation (x − 4)² + (y + 4)² = 9\nWhat is the area of the circle? Circle your answer.\nOptions: 3π, 9π, 16π, 81π",
+      "prompt": "Find the area of the circle.\nOptions: 3π   9π   16π   81π",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "Curve y = x⁵ + 4x³ + 7x + q, q a positive constant.",
     "parts": [
      {
       "code": "2",
-      "prompt": "A curve has equation y = x⁵ + 4x³ + 7x + q where q is a positive constant.\nFind the gradient of the curve at the point where x = 0. Circle your answer.\nOptions: 0, 4, 7, q",
+      "prompt": "Find the gradient at x = 0.\nOptions: 0   4   7   q",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "Line L: 2x + 3y = 7.",
     "parts": [
      {
       "code": "3",
-      "prompt": "The line L has equation 2x + 3y = 7\nWhich one of the following is perpendicular to L? Tick one box.\nOptions: 2x − 3y = 7; 3x + 2y = −7; 2x + 3y = −1/7; 3x − 2y = 7",
+      "prompt": "Pick the line perpendicular to L.\nOptions: 2x − 3y = 7   3x + 2y = −7   2x + 3y = −1/7   3x − 2y = 7",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
+    "scenario": "y = |2x + a|, where a is a positive constant.",
     "parts": [
      {
       "code": "4",
-      "prompt": "Sketch the graph of y = |2x + a|, where a is a positive constant. Show clearly where the graph intersects the axes. (Axes provided.)",
+      "prompt": "Sketch the graph, showing where it meets the axes.",
       "marks": 3
      }
     ]
    },
    {
     "number": 5,
+    "scenario": "y = 5 + 4 sin(x/2) + 12 tan(x/3).",
     "parts": [
      {
       "code": "5",
-      "prompt": "Show that, for small values of x, the graph of y = 5 + 4 sin(x/2) + 12 tan(x/3) can be approximated by a straight line.",
+      "prompt": "Show that for small x the graph can be approximated by a straight line.",
       "marks": 3
      }
     ]
    },
    {
     "number": 6,
-    "scenario": "A function f is defined by f(x) = x / √(2x − 2)",
+    "scenario": "f(x) = x/√(2x − 2).",
     "parts": [
      {
       "code": "6(a)",
-      "prompt": "State the maximum possible domain of f.",
+      "prompt": "State the largest possible domain of f.",
       "marks": 2
      },
      {
       "code": "6(b)",
-      "prompt": "Use the quotient rule to show that f′(x) = (x − 2) / (2x − 2)^(3/2).",
+      "prompt": "Use the quotient rule to show that f′(x) = (x − 2)/(2x − 2)^(3/2).",
       "marks": 3
      },
      {
       "code": "6(c)",
-      "prompt": "Show that the graph of y = f(x) has exactly one point of inflection.",
+      "prompt": "Show that y = f(x) has exactly one point of inflection.",
       "marks": 7
      },
      {
       "code": "6(d)",
-      "prompt": "Write down the values of x for which the graph of y = f(x) is convex.",
+      "prompt": "Write down the values of x for which the graph is convex.",
       "marks": 1
      }
     ]
    },
    {
     "number": 7,
+    "scenario": "Logarithms to base a.",
     "parts": [
      {
       "code": "7(a)",
-      "prompt": "Given that logₐ y = 2 logₐ 7 + logₐ 4 + ½, find y in terms of a.",
+      "prompt": "Given logₐ y = 2 logₐ 7 + logₐ 4 + ½, find y in terms of a.",
       "marks": 4
      },
      {
       "code": "7(b)",
-      "prompt": "When asked to solve the equation 2 logₐ x = logₐ 9 − logₐ 4, a student gives the following solution:\n2 logₐ x = logₐ 9 − logₐ 4\n⇒ 2 logₐ x = logₐ(9/4)\n⇒ logₐ x² = logₐ(9/4)\n⇒ x² = 9/4\n∴ x = 3/2 or −3/2\nExplain what is wrong with the student’s solution.",
+      "prompt": "A student solves 2 logₐ x = logₐ 9 − logₐ 4 by combining logs to get x² = 9/4, so x = 3/2 or −3/2. Explain the error.",
       "marks": 1
      }
     ]
    },
    {
     "number": 8,
+    "scenario": "Trigonometric identity and integration.",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Prove the identity (sin 2x)/(1 + tan²x) ≡ 2 sin x cos³x",
+      "prompt": "Prove that sin 2x/(1 + tan²x) ≡ 2 sin x cos³x.",
       "marks": 3
      },
      {
       "code": "8(b)",
-      "prompt": "Hence find ∫ (4 sin 4θ)/(1 + tan²2θ) dθ",
+      "prompt": "Hence find ∫ 4 sin 4θ/(1 + tan²2θ) dθ.",
       "marks": 6
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "Helen is creating a mosaic pattern by placing square tiles next to each other along a straight line. (The diagram shows a row of squares decreasing in size from left to right.) The area of each tile is half the area of the previous tile, and the sides of the largest tile have length w centimetres.",
+    "scenario": "Helen places square tiles in a line. Each tile has half the area of the previous one; the largest has side w cm.",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Find, in terms of w, the length of the sides of the second largest tile.",
+      "prompt": "Find the side length of the second largest tile in terms of w.",
       "marks": 1
      },
      {
       "code": "9(b)",
-      "prompt": "Assume the tiles are in contact with adjacent tiles, but do not overlap. Show that, no matter how many tiles are in the pattern, the total length of the series of tiles will be less than 3.5w.",
+      "prompt": "Adjacent tiles touch without overlapping. Show that however many tiles are used, the total length is less than 3.5w.",
       "marks": 4
      },
      {
       "code": "9(c)",
-      "prompt": "Helen decides the pattern will look better if she leaves a 3 millimetre gap between adjacent tiles. Explain how you could refine the model used in part (b) to account for the 3 millimetre gap, and state how the total length of the series of tiles will be affected.",
+      "prompt": "She now leaves a 3 mm gap between neighbouring tiles. Explain how to refine the model and how the total length is affected.",
       "marks": 2
      }
     ]
    },
    {
     "number": 10,
+    "scenario": "Proof by contradiction.",
     "parts": [
      {
       "code": "10",
-      "prompt": "Prove by contradiction that ³√2 is an irrational number.",
+      "prompt": "Prove by contradiction that ∛2 is irrational.",
       "marks": 7
      }
     ]
    },
    {
     "number": 11,
-    "scenario": "The table below shows the probability distribution for a discrete random variable X.\nx: 1, 2, 3, 4, 5\nP(X = x): k, 2k, 4k, 2k, k",
+    "scenario": "Discrete random variable X with P(X = x) for x = 1, 2, 3, 4, 5 equal to k, 2k, 4k, 2k, k.",
     "parts": [
      {
       "code": "11",
-      "prompt": "Find the value of k. Circle your answer.\nOptions: 1/2, 1/4, 1/10, 1",
+      "prompt": "Find k.\nOptions: 1/2   1/4   1/10   1",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
-    "scenario": "The histogram shows the heights, in cm, of male A-level students at a particular school. Frequency density against height: [155, 160) has density 0.8; [160, 170) has density 2.4; [170, 180) has density 2.0; [180, 190] has density 1.0.",
+    "scenario": "Histogram of heights (cm) of male A-level students: frequency densities 0.8 for [155, 160), 2.4 for [160, 170), 2 for [170, 180), 1 for [180, 190] (histogram on the question paper).",
     "parts": [
      {
       "code": "12",
-      "prompt": "Which class interval contains the median height? Circle your answer.\nOptions: [155, 160), [160, 170), [170, 180), [180, 190]",
+      "prompt": "Which class contains the median height?\nOptions: [155, 160)   [160, 170)   [170, 180)   [180, 190]",
       "marks": 1
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "The table below shows an extract from the Large Data Set.\nOther takeaway food brought home — Year 2011: 0, 2012: 0, 2013: 0, 2014: 0; % change since 2011: −29",
+    "scenario": "Large Data Set extract: 'Other takeaway food brought home' shows 0 for each of 2011, 2012, 2013 and 2014, with a % change since 2011 of −29.",
     "parts": [
      {
       "code": "13",
-      "prompt": "Sarah claims that the −29% change since 2011 is incorrect, as there is no change between 2011 and 2014. Using your knowledge of the Large Data Set to justify your answer, explain whether Sarah’s claim is correct.",
+      "prompt": "Sarah says the −29% is wrong because nothing changed from 2011 to 2014. Using knowledge of the Large Data Set, explain whether she is right.",
       "marks": 3
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "A teacher in a college asks her mathematics students what other subjects they are studying. She finds that, of her 24 students: 12 study physics, 8 study geography, 4 study geography and physics.",
+    "scenario": "Of 24 maths students, 12 study physics, 8 study geography and 4 study both.",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "A student is chosen at random from the class. Determine whether the event ‘the student studies physics’ and the event ‘the student studies geography’ are independent.",
+      "prompt": "For a randomly chosen student, decide whether studying physics and studying geography are independent events.",
       "marks": 2
      },
      {
       "code": "14(b)",
-      "prompt": "It is known that for the whole college: the probability of a student studying mathematics is 1/5; the probability of a student studying biology is 1/6; the probability of a student studying biology given that they study mathematics is 3/8. Calculate the probability that a student studies mathematics or biology or both.",
+      "prompt": "Across the college, P(maths) = 1/5, P(biology) = 1/6 and P(biology | maths) = 3/8. Find P(maths or biology or both).",
       "marks": 4
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "Abu visits his local hardware store to buy six light bulbs. He knows that 15% of all bulbs at this store are faulty.",
+    "scenario": "Abu buys six light bulbs; 15% of bulbs at the store are faulty.",
     "parts": [
      {
       "code": "15(a)",
-      "prompt": "State a distribution which can be used to model the number of faulty bulbs he buys.",
+      "prompt": "State a distribution to model the number of faulty bulbs.",
       "marks": 1
      },
      {
       "code": "15(b)",
-      "prompt": "Find the probability that all of the bulbs he buys are faulty.",
+      "prompt": "Find P(all six are faulty).",
       "marks": 1
      },
      {
       "code": "15(c)",
-      "prompt": "Find the probability that at least two of the bulbs he buys are faulty.",
+      "prompt": "Find P(at least two are faulty).",
       "marks": 2
      },
      {
       "code": "15(d)",
-      "prompt": "Find the mean of the distribution stated in part (a).",
+      "prompt": "Find the mean of the distribution.",
       "marks": 1
      },
      {
       "code": "15(e)",
-      "prompt": "State two necessary assumptions in context so that the distribution stated in part (a) is valid.",
+      "prompt": "State two assumptions, in context, needed for the distribution to be valid.",
       "marks": 2
      }
     ]
    },
    {
     "number": 16,
-    "scenario": "A survey of 120 adults found that the volume, X litres per person, of carbonated drinks they consumed in a week had the following results: Σx = 165.6 and Σx² = 261.8",
+    "scenario": "Survey of 120 adults: weekly carbonated drink volume X litres per person, Σx = 165.6, Σx² = 261.8.",
     "parts": [
      {
       "code": "16(a)(i)",
-      "prompt": "Calculate the mean of X.",
+      "prompt": "Find the mean of X.",
       "marks": 1
      },
      {
       "code": "16(a)(ii)",
-      "prompt": "Calculate the standard deviation of X.",
+      "prompt": "Find the standard deviation of X.",
       "marks": 2
      },
      {
       "code": "16(b)(i)",
-      "prompt": "Assuming that X can be modelled by a normal distribution find P(0.5 < X < 1.5).",
+      "prompt": "Modelling X as normal, find P(0.5 < X < 1.5).",
       "marks": 2
      },
      {
       "code": "16(b)(ii)",
-      "prompt": "Assuming that X can be modelled by a normal distribution find P(X = 1).",
+      "prompt": "Find P(X = 1).",
       "marks": 1
      },
      {
       "code": "16(c)",
-      "prompt": "Determine, with a reason, whether a normal distribution is suitable to model this data.",
+      "prompt": "Decide, with a reason, whether a normal model suits these data.",
       "marks": 2
      },
      {
       "code": "16(d)",
-      "prompt": "It is known that the volume, Y litres per person, of energy drinks consumed in a week may be modelled by a normal distribution with standard deviation 0.21. Given that P(Y > 0.75) = 0.10, find the value of μ, correct to three significant figures.",
+      "prompt": "Weekly energy drink volume Y litres ~ N(μ, 0.21²) and P(Y > 0.75) = 0.10. Find μ to 3 significant figures.",
       "marks": 4
      }
     ]
    },
    {
     "number": 17,
-    "scenario": "Suzanne is a member of a sports club. For each sport she competes in, she wins half of the matches.",
+    "scenario": "Suzanne wins half of her matches in every sport.",
     "parts": [
      {
       "code": "17(a)",
-      "prompt": "After buying a new tennis racket Suzanne plays 10 matches and wins 7 of them. Investigate, at the 10% level of significance, whether Suzanne’s new racket has made a difference to the probability of her winning a match.",
+      "prompt": "With a new tennis racket she wins 7 of 10 matches. Test at the 10% level whether the racket has changed her probability of winning.",
       "marks": 7
      },
      {
       "code": "17(b)",
-      "prompt": "After buying a new squash racket, Suzanne plays 20 matches. Find the minimum number of matches she must win for her to conclude, at the 10% level of significance, that the new racket has improved her performance.",
+      "prompt": "With a new squash racket she plays 20 matches. Find the minimum number of wins needed to conclude at the 10% level that her performance has improved.",
       "marks": 5
      }
     ]
    },
    {
     "number": 18,
-    "scenario": "In a region of England, the government decides to use an advertising campaign to encourage people to eat more healthily. Before the campaign, the mean consumption of chocolate per person per week was known to be 66.5 g, with a standard deviation of 21.2 g.",
+    "scenario": "Before a healthy-eating campaign, weekly chocolate consumption per person had mean 66.5 g and standard deviation 21.2 g.",
     "parts": [
      {
       "code": "18(a)(i)",
-      "prompt": "After the campaign, the first 750 available people from this region were surveyed to find out their average consumption of chocolate. State the sampling method used to collect the survey.",
+      "prompt": "After the campaign the first 750 available people were surveyed. Name the sampling method.",
       "marks": 1
      },
      {
       "code": "18(a)(ii)",
-      "prompt": "Explain why this sample should not be used to conduct a hypothesis test.",
+      "prompt": "Explain why this sample should not be used for a hypothesis test.",
       "marks": 1
      },
      {
       "code": "18(b)",
-      "prompt": "A second sample of 750 people revealed that the mean consumption of chocolate per person per week was 65.4 g. Investigate, at the 10% level of significance, whether the advertising campaign has decreased the mean consumption of chocolate per person per week. Assume that an appropriate sampling method was used and that the consumption of chocolate is normally distributed with an unchanged standard deviation.",
+      "prompt": "A suitable second sample of 750 had mean 65.4 g. Assuming normality with unchanged standard deviation, test at 10% whether the campaign has reduced mean consumption.",
       "marks": 6
      }
     ]
@@ -15622,402 +15592,371 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "9π"
-    ],
-    "guidance": "B1: circles the correct answer. The circle (x−4)²+(y+4)²=9 has radius² = 9, so r = 3 and area = πr² = 9π."
+     "B1 B: 9π"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "7"
-    ],
-    "guidance": "B1: circles the correct answer. dy/dx = 5x⁴ + 12x² + 7; at x = 0 the gradient is 7."
+     "B1 C: 7"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "3x − 2y = 7"
-    ],
-    "guidance": "B1: circles the correct answer. L: 2x+3y=7 has gradient −2/3; a perpendicular line has gradient 3/2. The line 3x−2y=7 (i.e. y = (3/2)x − 7/2) has gradient 3/2, so it is perpendicular."
+     "B1 D: 3x − 2y = 7"
+    ]
    },
    "4": {
     "type": "points",
     "points": [
-     "Draw the correct V-shape, with nothing below the x-axis",
-     "Intersects the negative x-axis at x = −a/2 (labelled)",
-     "Intersects the positive y-axis at y = a (labelled)"
-    ],
-    "guidance": "M1: draws the correct V-shape (modulus graph), nothing below the x-axis. A1: x-intercept −a/2 labelled. A1: y-intercept a labelled. The vertex is at (−a/2, 0) and the graph meets the y-axis at (0, a)."
+     "M1 Correct V shape with nothing below the x-axis",
+     "A1 Vertex on the negative x-axis at −a/2, labelled",
+     "A1 Meets the positive y-axis at a, labelled"
+    ]
    },
    "5": {
     "type": "points",
     "points": [
-     "Use small-angle approximations sin θ ≈ θ and tan θ ≈ θ: sin(x/2) ≈ x/2 and tan(x/3) ≈ x/3",
-     "y ≈ 5 + 4(x/2) + 12(x/3) = 5 + 2x + 4x",
-     "y ≈ 6x + 5, which is the equation of a straight line"
-    ],
-    "guidance": "M1: use the small-angle approximation for sin and/or tan (condone y = 5 + 4x + 12x for this mark). A1: obtain the correct equation y ≈ 6x + 5 (allow unsimplified form). R1: simplify and conclude that the graph can be approximated by a straight line."
+     "M1 Uses sin x ≈ x or tan x ≈ x (condone y = 5 + 4x + 12x)",
+     "A1 y ≈ 5 + 4(x/2) + 12(x/3), i.e. y ≈ 6x + 5",
+     "R1 Simplifies and states this is a straight line"
+    ]
    },
    "10": {
     "type": "points",
     "points": [
-     "Assume the opposite: ³√2 is rational, so ³√2 = a/b where a, b are integers with no common factors (in lowest terms)",
-     "Cube both sides: 2 = a³/b³ ⇒ a³ = 2b³, so a³ is even ⇒ a is even, write a = 2k",
-     "Then (2k)³ = 2b³ ⇒ 8k³ = 2b³ ⇒ b³ = 4k³, so b³ is even ⇒ b is even",
-     "But a and b are both even, contradicting that a/b is in lowest terms",
-     "Therefore the assumption is false, so ³√2 is irrational"
-    ],
-    "guidance": "M1: begin proof by contradiction, assuming ³√2 is rational (OE). B1: use language and notation correctly, stating the initial assumption (a/b have no common factors). M1: manipulate fractions, including cubing, to reach 2b³ = a³. R1: deduce a is even. R1: deduce b is even. E1: explain why there is a contradiction. R1: complete a rigorous argument to show ³√2 is irrational (the assumption that ³√2 is rational must be false, and it is proved that ³√2 is an irrational number)."
+     "M1 Assumes ∛2 is rational",
+     "B1 Writes ∛2 = a/b with a, b having no common factors",
+     "M1 Rearranges and cubes: 2b³ = a³",
+     "R1 Deduces a is even",
+     "R1 Sets a = 2d so b³ = 4d³ and deduces b is even",
+     "E1 a and b share factor 2: a contradiction",
+     "R1 Concludes the assumption is false, so ∛2 is irrational"
+    ]
    },
    "11": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1/10"
-    ],
-    "guidance": "B1: circles the correct answer. Probabilities sum to 1: k + 2k + 4k + 2k + k = 10k = 1, so k = 1/10."
+     "B1 C: 1/10"
+    ]
    },
    "12": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "[170, 180)"
-    ],
-    "guidance": "B1: circles the correct answer 170–180. Frequencies (density × width): [155,160) = 4, [160,170) = 24, [170,180) = 20, [180,190) = 10, total 58. The median (29.5th value) lies in [170, 180)."
+     "B1 C: [170, 180)"
+    ]
    },
    "13": {
     "type": "points",
     "points": [
-     "The recorded values for ‘Other takeaway food brought home’ are non-zero but have been rounded to the nearest whole number, so they appear as 0 in the table (knowledge of the Large Data Set)",
-     "If the unrounded values (available to many decimal places in the data set) were used, the −29% change could be calculated correctly",
-     "Therefore Sarah’s claim is incorrect"
-    ],
-    "guidance": "E1: explain that the actual recorded values are non-zero but have been rounded to the nearest whole number (with reference to the Large Data Set). E1: explain that if unrounded numbers were used the change could be calculated, showing the −29% is correct. R1: deduce that Sarah’s claim is incorrect."
+     "E1 The Large Data Set values are non-zero but rounded to whole numbers in the table",
+     "E1 Using the unrounded values (given to many decimal places) the −29% change can be computed",
+     "R1 So Sarah's claim is wrong"
+    ]
    },
    "6(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Need 2x − 2 > 0 (strictly, as it is in a denominator under a root)",
-     "Domain: x > 1, i.e. {x ∈ ℝ : x > 1}"
-    ],
-    "guidance": "M1: deduces the lower bound of x is 1 (from 2x − 2 > 0). A1: states the domain correctly as x > 1 (strict inequality because √(2x−2) is in the denominator)."
+     "M1 Lower bound of x is 1",
+     "A1 Domain {x ∈ ℝ : x > 1} in correct notation"
+    ]
    },
    "6(b)": {
     "type": "points",
     "points": [
-     "Write f(x) = x(2x−2)^(−1/2); using the quotient rule with u = x, v = (2x−2)^(1/2)",
-     "f′(x) = [(2x−2)^(1/2)·1 − x·½(2x−2)^(−1/2)·2] / (2x−2)",
-     "= [(2x−2) − x] / (2x−2)^(3/2) = (x − 2)/(2x−2)^(3/2)"
-    ],
-    "guidance": "M1: differentiate using the quotient rule (condone a correct product-rule version), with v′ correct. A1: obtain the correct derivative in unsimplified form. R1: complete the algebra rigorously to the given form f′(x) = (x−2)/(2x−2)^(3/2) (AG)."
+     "M1 Quotient rule, numerator of form (2x − 2)^(1/2) − kx(2x − 2)^(−1/2) (condone correct product rule)",
+     "A1 Correct unsimplified derivative",
+     "R1 Correct algebra to (x − 2)/(2x − 2)^(3/2) (AG)"
+    ]
    },
    "6(c)": {
     "type": "points",
     "points": [
-     "A point of inflection requires f″(x) = 0",
-     "Differentiate f′(x) = (x−2)(2x−2)^(−3/2): f″(x) = [(2x−2)^(3/2) − (x−2)·(3/2)(2x−2)^(1/2)·2] / (2x−2)³",
-     "Set numerator = 0: (2x−2) − 3(x−2) = 0 ⇒ 2x − 2 − 3x + 6 = 0 ⇒ −x + 4 = 0 ⇒ x = 4",
-     "x = 4 is in the domain (x > 1); reject x = 1 (cancels a factor / domain endpoint)",
-     "Test either side (or evaluate): f″ changes sign at x = 4, so there is exactly one point of inflection at x = 4"
+     "E1 A point of inflection needs f″(x) = 0",
+     "M1 Forms f″(x) = 0",
+     "M1 Solves their equation, e.g. factorising to (2x − 2)^(1/2)(4 − x) = 0",
+     "A1 x = 4",
+     "E1 Rejects x = 1 because of the domain (or cancels the factor stating x ≠ 1)",
+     "M1 Tests f″ either side of x = 4, e.g. f″(3) = 1/32 > 0, f″(5) = −√2/256 < 0",
+     "R1 Sign change, so exactly one point of inflection at x = 4"
     ],
-    "guidance": "M1: state that a point of inflection requires f″(x) = 0. M1: form f″(x) = 0. A1: solve to obtain x = 4. E1: give a valid reason for rejecting x = 1 (cancels a factor / 2x−2 ≠ 0). M1: test either side of x = 4. A1: deduce f″ changes sign. R1: complete a rigorous argument to conclude there is exactly one point of inflection (at x = 4). Do not award final R1 if 2nd E1 not earned."
+    "guidance": "The final R1 needs the second E1."
    },
    "6(d)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Convex where f″(x) > 0, which is for 1 < x < 4"
-    ],
-    "guidance": "B1: deduces the values of x for the convex section of the graph: 1 < x < 4 (between the domain endpoint x = 1 and the point of inflection x = 4)."
+     "B1 1 < x < 4"
+    ]
    },
    "7(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "logₐ y = 2 logₐ 7 + logₐ 4 + ½ = logₐ 7² + logₐ 4 + ½ logₐ a",
-     "= logₐ(49 × 4) + logₐ √a = logₐ 196 + logₐ √a = logₐ(196√a)",
-     "∴ y = 196√a"
-    ],
-    "guidance": "M1: use n logₐ x = logₐ xⁿ correctly. M1: use logₐ x + logₐ y = logₐ(xy) (or the subtraction law) correctly. B1: write ½ = logₐ √a (obtains √a). A1: obtain the correct answer y = 196√a in any correct form."
+     "M1 Uses n logₐ x = logₐ xⁿ correctly",
+     "M1 Uses the sum (or difference) log law correctly",
+     "B1 Writes ½ as logₐ √a",
+     "A1 y = 196√a"
+    ]
    },
    "7(b)": {
     "type": "points",
     "points": [
-     "−3/2 should be rejected because it is not possible to evaluate logₐ(−3/2) (the original equation requires x > 0)",
-     "So only x = 3/2 is a valid solution"
-    ],
-    "guidance": "E1: explain that x = −3/2 should be rejected as it is not possible to evaluate logₐ(−3/2) — the logarithm of a negative number is undefined."
+     "E1 x = −3/2 must be rejected because logₐ(−3/2) is undefined"
+    ]
    },
    "8(a)": {
     "type": "points",
     "points": [
-     "Use 1 + tan²x = sec²x, so LHS = sin 2x / sec²x = sin 2x · cos²x",
-     "Use sin 2x = 2 sin x cos x: LHS = 2 sin x cos x · cos²x",
-     "= 2 sin x cos³x = RHS"
-    ],
-    "guidance": "B1: recall a correct trig identity which could lead to a correct answer (e.g. 1 + tan²x = sec²x). M1: demonstrate a strategy for proving the identity, e.g. converting all terms in the LHS to cos x and sin x. R1: complete a rigorous argument to prove the given identity (AG)."
+     "B1 Recalls a useful identity, e.g. sin 2x = 2 sin x cos x or 1 + tan²x = sec²x",
+     "M1 Strategy such as converting everything to sin and cos",
+     "R1 Rigorous argument to 2 sin x cos³x (AG)"
+    ]
    },
    "8(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Use part (a): (sin 2(2θ))/(1 + tan²2θ) = 2 sin 2θ cos³2θ, so the integrand 4 sin 4θ/(1 + tan²2θ) = 8 sin 2θ cos³2θ",
-     "So I = ∫ 8 sin 2θ cos³2θ dθ",
-     "Substitute u = cos 2θ, du/dθ = −2 sin 2θ ⇒ sin 2θ dθ = −½ du",
-     "I = ∫ 8 u³ (−½) du = −4 ∫ u³ du = −u⁴ + c",
-     "= −cos⁴2θ + c"
-    ],
-    "guidance": "M1: use the identity to write the integrand as 8 sin 2θ cos³2θ. A1: correctly write the integrand 8 sin 2θ cos³2θ. M1: select an appropriate method (substitution u = cos 2θ, or by inspection). M1: obtain k ∫ u³ du correctly (or PI a solution of form k cos⁴2θ by inspection). A1F: obtain −u⁴ (or −cos⁴2θ), FT value of u. R1: complete a rigorous argument to obtain −cos⁴2θ + c (OE)."
+     "M1 Uses (a) to write the integrand as a sin 2θ cos³2θ",
+     "A1 8 sin 2θ cos³2θ",
+     "M1 Suitable method, e.g. substitution u = cos 2θ or inspection",
+     "M1 Obtains k∫u³ du correctly (PI by k cos⁴2θ)",
+     "A1F −u⁴ or −cos⁴2θ (follow through a only)",
+     "R1 Complete argument to −cos⁴2θ + c"
+    ]
    },
    "9(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Area halves, so the side length scales by 1/√2",
-     "Second largest side = w/√2 = (√2 w)/2"
-    ],
-    "guidance": "B1: obtains the correct length w/√2 = √2 w/2 (any correct form)."
+     "B1 w/√2 (= √2w/2)"
+    ]
    },
    "9(b)": {
     "type": "points",
     "points": [
-     "The side lengths form a geometric sequence with first term a = w and common ratio r = 1/√2",
-     "Since |r| = 1/√2 < 1, the sum to infinity exists",
-     "S∞ = w / (1 − 1/√2)",
-     "S∞ ≈ 3.41w, and 3.41w < 3.5w, so the total length is always less than 3.5w"
-    ],
-    "guidance": "M1: model the lengths as a geometric sequence (a = w, r = 1/√2). M1: find the sum to infinity, provided their r < 1. A1: use the model to obtain the correct sum w/(1 − 1/√2) in terms of w. E1: compare their sum (≈ 3.41w) with 3.5w and conclude it is less."
+     "M1 Models the side lengths as geometric with a = w, r = 1/√2",
+     "M1 Uses the sum to infinity (with |r| < 1)",
+     "A1 S∞ = w/(1 − 1/√2) ≈ 3.41w",
+     "E1 Compares: 3.41w < 3.5w"
+    ]
    },
    "9(c)": {
     "type": "points",
     "points": [
-     "Refine the model by including an additional 3 mm for each tile (i.e. add a constant 0.3 cm per tile / gap)",
-     "Because there are infinitely many tiles, the total of the gaps has no upper limit, so the total length will no longer have an upper limit (it may now exceed 3.5w)"
-    ],
-    "guidance": "E1: explain that the model would have to include an additional 3 mm for each tile. E1: explain that the total length will then not have an upper limit (or that the total length may now exceed 3.5w)."
+     "E1 Add an extra 3 mm for each tile (gap)",
+     "E1 The total length then has no upper limit (may exceed 3.5w)"
+    ]
    },
    "14(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(P) = 12/24 = 1/2; P(G) = 8/24 = 1/3; P(P ∩ G) = 4/24 = 1/6",
-     "P(P) × P(G) = (1/2)(1/3) = 1/6 = P(P ∩ G)",
-     "Since P(P ∩ G) = P(P) × P(G), the events are independent"
-    ],
-    "guidance": "M1: calculate P(P ∩ G) and P(P)·P(G) (or use the conditional probability P(P|G)). R1: show P(P ∩ G) = 1/6 = P(P)·P(G) and conclude the events are independent."
+     "M1 Finds P(P) × P(G) = (12/24)(8/24) = 1/6, or a relevant conditional probability",
+     "R1 Shows this equals P(P ∩ G) = 4/24 = 1/6 (or conditional equals unconditional) and concludes independent"
+    ]
    },
    "14(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(M) = 1/5, P(B) = 1/6, P(B | M) = 3/8",
-     "P(M ∩ B) = P(B | M) × P(M) = (3/8)(1/5) = 3/40",
-     "P(M ∪ B) = P(M) + P(B) − P(M ∩ B) = 1/5 + 1/6 − 3/40",
-     "= 8/40 + ... (common denominator) = 7/24"
-    ],
-    "guidance": "M1: calculate P(M ∩ B) = P(B|M) × P(M) = 3/40. M1: use the addition rule P(M ∪ B) = P(M) + P(B) − P(M ∩ B). A1: correct value of P(M ∩ B). A1: obtain P(M ∪ B) = 7/24."
+     "M1 P(M ∩ B) = P(M) × P(B | M)",
+     "A1 P(M ∩ B) = 3/40",
+     "M1 Addition rule P(M) + P(B) − P(M ∩ B)",
+     "A1 7/24"
+    ]
    },
    "15(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Let X = number of faulty bulbs",
-     "X ~ B(6, 0.15)"
-    ],
-    "guidance": "B1: state the correct binomial distribution B(6, 0.15)."
+     "B1 B(6, 0.15)"
+    ]
    },
    "15(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X = 6) = 0.15⁶",
-     "≈ 0.0000114"
-    ],
-    "guidance": "B1: calculate the correct probability 0.15⁶ ≈ 0.0000114."
+     "B1 0.0000114"
+    ]
    },
    "15(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X ≥ 2) = 1 − P(X ≤ 1)",
-     "P(X ≤ 1) = 0.7764",
-     "P(X ≥ 2) = 1 − 0.7764 ≈ 0.224"
-    ],
-    "guidance": "M1: calculate P(X ≤ 1) (or P(X ≤ 2)) using the binomial distribution. A1: obtain the correct answer P(X ≥ 2) ≈ 0.224."
+     "M1 Finds P(X ≤ 1) = 0.7764 (or P(X ≤ 2))",
+     "A1 P(X ≥ 2) = 0.224"
+    ]
    },
    "15(d)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Mean = np = 6 × 0.15 = 0.9"
-    ],
-    "guidance": "B1: find the correct mean 0.9."
+     "B1 Mean 0.9"
+    ]
    },
    "15(e)": {
     "type": "points",
     "points": [
-     "The probability of a light bulb being faulty is fixed (constant at 0.15)",
-     "Whether one light bulb is faulty is independent of whether any other light bulb is faulty"
-    ],
-    "guidance": "B1: state a first appropriate assumption in context (probability of being faulty is fixed). B1: state a second appropriate assumption in context (faults are independent of each other)."
+     "B1 One assumption in context, e.g. the probability a bulb is faulty is constant",
+     "B1 A second, e.g. bulbs are faulty independently of each other"
+    ]
    },
    "16(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Mean = Σx/n = 165.6/120",
-     "= 1.38"
-    ],
-    "guidance": "B1: obtain the correct mean 1.38."
+     "B1 Mean 1.38"
+    ]
    },
    "16(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "σ = √(Σx²/n − mean²) = √(261.8/120 − 1.38²)",
-     "= √(2.1817 − 1.9044) ≈ √0.2773",
-     "≈ 0.526 to 0.529"
-    ],
-    "guidance": "M1: use the correct formula for standard deviation (variance = Σx²/n − mean²). A1: obtain the correct standard deviation 0.526 to 0.529."
+     "M1 Uses √(Σx²/n − x̄²) = √(261.8/120 − 1.38²)",
+     "A1 0.526 to 0.529"
+    ]
    },
    "16(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Model X ~ N(1.38, 0.527²)",
-     "P(0.5 < X < 1.5) using the normal distribution",
-     "≈ 0.5417 to 0.5428"
-    ],
-    "guidance": "M1: use the model to calculate a normal probability. A1: obtain the correct probability 0.5417 to 0.5428."
+     "M1 Uses the normal model to find a probability",
+     "A1 0.5417 to 0.5428"
+    ]
    },
    "16(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "For a continuous (normal) distribution, P(X = 1) = 0"
-    ],
-    "guidance": "B1: recall that the probability of a single value is 0 for a continuous distribution, so P(X = 1) = 0."
+     "B1 0"
+    ]
    },
    "16(c)": {
     "type": "points",
     "points": [
-     "Calculate (mean − 3σ) ≈ 1.38 − 3(0.527) ≈ −0.1998 to −0.207, which is negative",
-     "Since volume cannot be negative but the model gives non-negligible probability below 0, a normal distribution is not (entirely) suitable to model this data"
-    ],
-    "guidance": "M1: calculate the value of (mean − 3 standard deviations) ≈ −0.1998 to −0.207. A1: conclude that the model might be inappropriate because the value is less than 0 (a normal model allows negative volumes, which are impossible)."
+     "M1 Mean − 3 s.d. ≈ −0.20 (−0.1998 to −0.207)",
+     "A1 This is negative, so a normal model may be unsuitable (volumes cannot be negative)"
+    ]
    },
    "16(d)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Y ~ N(μ, 0.21²) with P(Y > 0.75) = 0.10",
-     "Standardise: P(Z > (0.75 − μ)/0.21) = 0.10, so (0.75 − μ)/0.21 = 1.2816 (z-value for upper 10%)",
-     "Solve: 0.75 − μ = 0.21 × 1.2816",
-     "μ = 0.75 − 0.269 ≈ 0.481"
-    ],
-    "guidance": "M1: standardise appropriately and form a probability statement (PI by full correct equation). M1: obtain the z-value from the inverse normal (z = 1.2816). A1: form a correct equation (0.75 − μ)/0.21 = 1.2816 using a correctly standardised result. A1: solve to obtain μ ≈ 0.481."
+     "M1 Standardises: P(Z > (0.75 − μ)/0.21) = 0.1 (PI)",
+     "M1 z = 1.2816 from the inverse normal",
+     "A1 (0.75 − μ)/0.21 = 1.2816",
+     "A1 μ = 0.481"
+    ]
    },
    "17(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Let X = number of matches won; under H₀, X ~ B(10, 0.5). Two-tailed test",
-     "H₀: p = 0.5, H₁: p ≠ 0.5",
-     "P(X ≥ 7) = 1 − P(X ≤ 6) = 1 − 0.8281 = 0.1719 ≈ 0.172",
-     "Compare with 0.05 (half of 10% for a two-tailed test): 0.172 > 0.05",
-     "Insufficient evidence to reject H₀; accept H₀ — there is not sufficient evidence that Suzanne’s new racket has made a difference"
+     "B1 H₀: p = 0.5, H₁: p ≠ 0.5",
+     "M1 Model X ~ B(10, 0.5) under H₀ (PI)",
+     "M1 Finds P(X ≤ 6) = 0.828 or P(X ≤ 7) = 0.945",
+     "A1 P(X ≥ 7) = 0.172",
+     "M1 Compares with 0.05 (two-tailed)",
+     "A1 0.172 > 0.05 so accept H₀ (CSO)",
+     "E1F Not enough evidence that the new racket has made a difference"
     ],
-    "guidance": "B1: state both hypotheses correctly for a two-tailed test (p ≠ 0.5). M1: state the model X ~ B(10, 0.5). M1: calculate P(X ≥ 7) (or P(X ≤ 7)). A1: obtain P(X ≥ 7) = 0.172. M1: compare with 0.05. A1: infer H₀ accepted (CSO). E1F: conclude correctly in context — not sufficient evidence that the new racket has made a difference. (Alternative: critical-region method, X = 9 not in the critical region, accept H₀.)"
+    "guidance": "Alternative: critical region X ≤ 1 or X ≥ 9 (tail probabilities 0.0107), and 7 is not in it."
    },
    "17(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Let Y = number of matches won; under H₀, Y ~ B(20, 0.5). One-tailed test (improvement), 10% level",
-     "Require P(Y ≥ y) < 0.10",
-     "P(Y ≥ 13) = 0.1316 > 0.1 (not significant)",
-     "P(Y ≥ 14) = 0.0577 < 0.1 (significant)",
-     "Minimum number of matches she must win = 14"
-    ],
-    "guidance": "M1: state the model Y ~ B(20, 0.5). M1: express the condition in terms of a cumulative probability statement P(Y ≥ c) < 0.1. R1: test one appropriate value for y. A1: obtain at least two correct cumulative probabilities (P(Y ≥ 13) = 0.1316, P(Y ≥ 14) = 0.0577). A1: state the correct minimum number of matches = 14 (CSO)."
+     "M1 Model Y ~ B(20, 0.5) (PI)",
+     "M1 Condition written as a cumulative probability, e.g. P(Y ≥ c) < 0.1",
+     "R1 Tests appropriate values of c",
+     "A1 At least two correct probabilities: P(Y ≥ 13) = 0.1316, P(Y ≥ 14) = 0.0577",
+     "A1 Minimum 14 wins (CSO)"
+    ]
    },
    "18(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Opportunistic (convenience) sampling"
-    ],
-    "guidance": "B1: state opportunistic (or convenience) sampling. Accept opportunity/convenience."
+     "B1 Opportunity (convenience) sampling"
+    ]
    },
    "18(a)(ii)": {
     "type": "points",
     "points": [
-     "The sample is not random — the first 750 available people are not a random sample",
-     "A non-random (opportunistic) sample may not be representative, so it should not be used to conduct a hypothesis test"
-    ],
-    "guidance": "E1: explain that the sample is not random, so it should not be used for a hypothesis test."
+     "E1 The sample is not random"
+    ]
    },
    "18(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "One-tailed test for a decrease in mean; H₀: μ = 66.5, H₁: μ < 66.5",
-     "Test statistic z = (x̄ − μ)/(σ/√n) = (65.4 − 66.5)/(21.2/√750)",
-     "z = −1.1/(0.7742) ≈ −1.42",
-     "Critical value at 10% (one-tailed) is z = −1.28; since −1.42 < −1.28, the result is significant",
-     "Reject H₀: there is sufficient evidence that the advertising campaign has reduced (decreased) the mean consumption of chocolate"
-    ],
-    "guidance": "B1: state both hypotheses correctly for a one-tailed test (μ < 66.5). M1: formulate the correct test statistic z = (65.4 − 66.5)/(21.2/√750). A1: obtain z ≈ −1.42. A1: state the correct critical value −1.28 (OE). A1: infer H₀ rejected (−1.42 < −1.28). E1F: conclude correctly in context — there is sufficient evidence that the advertising campaign has reduced the consumption of chocolate."
+     "B1 H₀: μ = 66.5, H₁: μ < 66.5",
+     "M1 z = (65.4 − 66.5)/(21.2/√750)",
+     "A1 z = −1.42",
+     "B1 Critical value −1.28 (or equivalent p-value approach)",
+     "A1 −1.42 < −1.28 so reject H₀ (CSO)",
+     "E1F Sufficient evidence that the campaign has reduced mean chocolate consumption"
+    ]
    }
   }
  },
  "math-aqa-7357-2019-p1": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "Given a > 0.",
     "parts": [
      {
       "code": "1",
-      "prompt": "Given that a > 0, determine which of these expressions is not equivalent to the others. Circle your answer.\nOptions: −2 log₁₀(1/a)    2 log₁₀(a)    log₁₀(a²)    −4 log₁₀(√a)",
+      "prompt": "Which expression is not equivalent to the other three?\nOptions: −2log₁₀(1/a)   2log₁₀(a)   log₁₀(a²)   −4log₁₀(√a)",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "y = e^(kx), k constant.",
     "parts": [
      {
       "code": "2",
-      "prompt": "Given y = e^(kx), where k is a constant, find dy/dx. Circle your answer.\nOptions: dy/dx = e^(kx)    dy/dx = ke^(kx)    dy/dx = kxe^(kx−1)    dy/dx = e^(kx)/k",
+      "prompt": "Choose dy/dx.\nOptions: dy/dx = e^(kx)   dy/dx = ke^(kx)   dy/dx = kxe^(kx−1)   dy/dx = e^(kx)/k",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "Sector of a circle with radius 4 cm and angle θ = 0.8 radians (diagram on the question paper).",
     "parts": [
      {
       "code": "3",
-      "prompt": "The diagram below shows a sector of a circle (sector with angle θ at the centre). The radius of the circle is 4 cm and θ = 0.8 radians. Find the area of the sector. Circle your answer.\nOptions: 1.28 cm²    3.2 cm²    6.4 cm²    12.8 cm²",
+      "prompt": "Find the sector's area.\nOptions: 1.28 cm²   3.2 cm²   6.4 cm²   12.8 cm²",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
+    "scenario": "A(−1, a) and B(3, b) lie on the line 5x + 4y = 17.",
     "parts": [
      {
       "code": "4",
-      "prompt": "The point A has coordinates (−1, a) and the point B has coordinates (3, b). The line AB has equation 5x + 4y = 17. Find the equation of the perpendicular bisector of the points A and B.",
+      "prompt": "Find the equation of the perpendicular bisector of AB.",
       "marks": 4
      }
     ]
    },
    {
     "number": 5,
-    "scenario": "An arithmetic sequence has first term a and common difference d. The sum of the first 16 terms of the sequence is 260.",
+    "scenario": "Arithmetic sequence, first term a, common difference d; the first 16 terms sum to 260.",
     "parts": [
      {
       "code": "5(a)",
-      "prompt": "Show that 4a + 30d = 65",
+      "prompt": "Show that 4a + 30d = 65.",
       "marks": 2
      },
      {
       "code": "5(b)",
-      "prompt": "Given that the sum of the first 60 terms is 315, find the sum of the first 41 terms.",
+      "prompt": "The first 60 terms sum to 315. Find the sum of the first 41 terms.",
       "marks": 3
      },
      {
       "code": "5(c)",
-      "prompt": "Sₙ is the sum of the first n terms of the sequence. Explain why the value you found in part (b) is the maximum value of Sₙ.",
+      "prompt": "Sₙ is the sum of the first n terms. Explain why your answer to (b) is the greatest value of Sₙ.",
       "marks": 2
      }
     ]
    },
    {
     "number": 6,
-    "scenario": "The function f is defined by f(x) = ½(x² + 1), x ≥ 0",
+    "scenario": "f(x) = ½(x² + 1), x ≥ 0.",
     "parts": [
      {
       "code": "6(a)",
@@ -16026,211 +15965,217 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "6(b)(i)",
-      "prompt": "Find f⁻¹(x)",
+      "prompt": "Find f⁻¹(x).",
       "marks": 3
      },
      {
       "code": "6(b)(ii)",
-      "prompt": "State the range of f⁻¹(x)",
+      "prompt": "State the range of f⁻¹(x).",
       "marks": 1
      },
      {
       "code": "6(c)",
-      "prompt": "State the transformation which maps the graph of y = f(x) onto the graph of y = f⁻¹(x)",
+      "prompt": "State the transformation taking y = f(x) to y = f⁻¹(x).",
       "marks": 1
      },
      {
       "code": "6(d)",
-      "prompt": "Find the coordinates of the point of intersection of the graphs of y = f(x) and y = f⁻¹(x)",
+      "prompt": "Find where the graphs of y = f(x) and y = f⁻¹(x) intersect.",
       "marks": 2
      }
     ]
    },
    {
     "number": 7,
+    "scenario": "The equation 1/x = sec 2x, for x > 0 (axes for sketching and a grid for a cobweb diagram are on the question paper).",
     "parts": [
      {
       "code": "7(a)",
-      "prompt": "By sketching the graphs of y = 1/x and y = sec 2x on the axes provided (axes shown with x marked at π and 2π), show that the equation 1/x = sec 2x has exactly one solution for x > 0",
+      "prompt": "Sketch y = 1/x and y = sec 2x to show the equation has exactly one positive solution.",
       "marks": 3
      },
      {
       "code": "7(b)",
-      "prompt": "By considering a suitable change of sign, show that the solution to the equation lies between 0.4 and 0.6",
+      "prompt": "Use a change of sign to show the solution lies between 0.4 and 0.6.",
       "marks": 2
      },
      {
       "code": "7(c)",
-      "prompt": "Show that the equation can be rearranged to give x = ½ cos⁻¹ x",
+      "prompt": "Show the equation rearranges to x = ½cos⁻¹x.",
       "marks": 2
      },
      {
       "code": "7(d)(i)",
-      "prompt": "Use the iterative formula x_(n+1) = ½ cos⁻¹ xₙ with x₁ = 0.4, to find x₂, x₃ and x₄, giving your answers to four decimal places.",
+      "prompt": "Using xₙ₊₁ = ½cos⁻¹xₙ with x₁ = 0.4, find x₂, x₃ and x₄ to 4 decimal places.",
       "marks": 2
      },
      {
       "code": "7(d)(ii)",
-      "prompt": "On the graph provided (showing y = 1/(2) cos⁻¹ x and y = x style lines), draw a cobweb or staircase diagram to show how convergence takes place, indicating the positions of x₂, x₃ and x₄.",
+      "prompt": "Draw a cobweb or staircase diagram showing the convergence, marking x₂, x₃ and x₄ (graph on the question paper).",
       "marks": 2
      }
     ]
    },
    {
     "number": 8,
-    "scenario": "P(n) = ∑(k=0 to n) k³ − ∑(k=0 to n−1) k³ where n is a positive integer.",
+    "scenario": "P(n) = Σ_{k=0}^{n} k³ − Σ_{k=0}^{n−1} k³, n a positive integer.",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Find P(3) and P(10)",
+      "prompt": "Find P(3) and P(10).",
       "marks": 2
      },
      {
       "code": "8(b)",
-      "prompt": "Solve the equation P(n) = 1.25 × 10⁸",
+      "prompt": "Solve P(n) = 1.25 × 10⁸.",
       "marks": 2
      }
     ]
    },
    {
     "number": 9,
+    "scenario": "Rational and irrational numbers.",
     "parts": [
      {
       "code": "9",
-      "prompt": "Prove that the sum of a rational number and an irrational number is always irrational.",
+      "prompt": "Prove that a rational number plus an irrational number is always irrational.",
       "marks": 5
      }
     ]
    },
    {
     "number": 10,
+    "scenario": "A spherical bubble's volume increases at a constant rate. Volume of a sphere = (4/3)πr³.",
     "parts": [
      {
       "code": "10",
-      "prompt": "The volume of a spherical bubble is increasing at a constant rate. Show that the rate of increase of the radius, r, of the bubble is inversely proportional to r².\n(Volume of a sphere = (4/3)πr³)",
+      "prompt": "Show that the rate of increase of the radius r is inversely proportional to r².",
       "marks": 4
      }
     ]
    },
    {
     "number": 11,
-    "scenario": "Jodie is attempting to use differentiation from first principles to prove that the gradient of y = sin x is zero when x = π/2. Jodie's teacher tells her that she has made mistakes starting in Step 4 of her working. Her working is shown below.\nStep 1: Gradient of chord AB = [sin(π/2 + h) − sin(π/2)] / h\nStep 2: = [sin(π/2)cos(h) + cos(π/2)sin(h) − sin(π/2)] / h\nStep 3: = sin(π/2)·[(cos(h) − 1)/h] + cos(π/2)·[sin(h)/h]\nStep 4: For gradient of curve at A, let h = 0 then (cos(h) − 1)/h = 0 and sin(h)/h = 0\nStep 5: Hence the gradient of the curve at A is given by sin(π/2)×0 + cos(π/2)×0 = 0",
+    "scenario": "Jodie uses differentiation from first principles to show that y = sin x has zero gradient at x = π/2, using a chord from A (π/2) to B (π/2 + h). Her Steps 1–3 correctly reach gradient = sin(π/2)·(cos h − 1)/h + cos(π/2)·(sin h)/h. In Step 4 she sets h = 0 and claims (cos h − 1)/h = 0 and (sin h)/h = 0; in Step 5 she concludes sin(π/2)×0 + cos(π/2)×0 = 0. Her teacher says the errors start at Step 4.",
     "parts": [
      {
       "code": "11",
-      "prompt": "Complete Steps 4 and 5 of Jodie's working, to correct her proof.",
+      "prompt": "Rewrite Steps 4 and 5 correctly.",
       "marks": 4
      }
     ]
    },
    {
     "number": 12,
+    "scenario": "The equation 2cot²x + 2cosec²x = 1 + 4cosec x.",
     "parts": [
      {
       "code": "12(a)",
-      "prompt": "Show that the equation 2cot²x + 2cosec²x = 1 + 4cosecx can be written in the form a cosec²x + b cosecx + c = 0",
+      "prompt": "Show it can be written as a cosec²x + b cosec x + c = 0.",
       "marks": 2
      },
      {
       "code": "12(b)",
-      "prompt": "Hence, given x is obtuse and 2cot²x + 2cosec²x = 1 + 4cosecx, find the exact value of tan x. Fully justify your answer.",
+      "prompt": "Given x is obtuse, find the exact value of tan x, fully justifying your answer.",
       "marks": 5
      }
     ]
    },
    {
     "number": 13,
+    "scenario": "Curve C: y = e^(3x−5)/x².",
     "parts": [
      {
       "code": "13",
-      "prompt": "A curve, C, has equation y = e^(3x−5) / x². Show that C has exactly one stationary point. Fully justify your answer.",
+      "prompt": "Show, with full justification, that C has exactly one stationary point.",
       "marks": 7
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "The graph of y = 2x³/(x² + 1) is shown for 0 ≤ x ≤ 4. Caroline is attempting to approximate the shaded area, A, under the curve using the trapezium rule by splitting the area into n trapezia.",
+    "scenario": "Graph of y = 2x³/(x² + 1) for 0 ≤ x ≤ 4; A is the area under the curve over this interval (diagram on the question paper). Caroline estimates A with the trapezium rule using n trapezia.",
     "parts": [
      {
       "code": "14(a)(i)",
-      "prompt": "When n = 4. State the number of ordinates that Caroline uses.",
+      "prompt": "With n = 4, state how many ordinates she uses.",
       "marks": 1
      },
      {
       "code": "14(a)(ii)",
-      "prompt": "When n = 4. Calculate the area that Caroline should obtain using this method. Give your answer correct to two decimal places.",
+      "prompt": "With n = 4, calculate her estimate to 2 decimal places.",
       "marks": 3
      },
      {
       "code": "14(b)",
-      "prompt": "Show that the exact area of A is 16 − ln 17. Fully justify your answer.",
+      "prompt": "Show, with full justification, that A = 16 − ln 17 exactly.",
       "marks": 5
      },
      {
       "code": "14(c)",
-      "prompt": "Explain what would happen to Caroline's answer to part (a)(ii) as n → ∞",
+      "prompt": "Explain what happens to her answer to (a)(ii) as n → ∞.",
       "marks": 1
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "At time t hours after a high tide, the height, h metres, of the tide and the velocity, v knots, of the tidal flow can be modelled using the parametric equations v = 4 − (2t/3 − 2)² and h = 3 − 2·∛(t − 3). High tides and low tides occur alternately when the velocity of the tidal flow is zero. A high tide occurs at 2 am.",
+    "scenario": "t hours after a high tide, tide height h metres and tidal-flow velocity v knots are modelled by v = 4 − (2t/3 − 2)² and h = 3 − 2∛(t − 3). High and low tides alternate, occurring when v = 0. There is a high tide at 2 am.",
     "parts": [
      {
       "code": "15(a)(i)",
-      "prompt": "Use the model to find the height of this high tide.",
+      "prompt": "Find the height of this high tide.",
       "marks": 1
      },
      {
       "code": "15(a)(ii)",
-      "prompt": "Find the time of the first low tide after 2 am.",
+      "prompt": "Find the time of the next low tide after 2 am.",
       "marks": 3
      },
      {
       "code": "15(a)(iii)",
-      "prompt": "Find the height of this low tide.",
+      "prompt": "Find the height of that low tide.",
       "marks": 1
      },
      {
       "code": "15(b)",
-      "prompt": "Use the model to find the height of the tide when it is flowing with maximum velocity.",
+      "prompt": "Find the tide height when the flow velocity is greatest.",
       "marks": 3
      },
      {
       "code": "15(c)",
-      "prompt": "Comment on the validity of the model.",
+      "prompt": "Comment on how valid the model is.",
       "marks": 2
      }
     ]
    },
    {
     "number": 16,
+    "scenario": "y = e^(−x)(sin x + cos x). Later, the curve y = e^(−x)sin x for x ≥ 0 cuts the x-axis repeatedly; the finite regions between the curve and the axis have areas A₁, A₂, …, Aₙ, … (A₁ from 0 to π, sketch on the question paper).",
     "parts": [
      {
       "code": "16(a)",
-      "prompt": "y = e^(−x)(sin x + cos x). Find dy/dx. Simplify your answer.",
+      "prompt": "Find dy/dx in simplified form.",
       "marks": 3
      },
      {
       "code": "16(b)",
-      "prompt": "Hence, show that ∫ e^(−x) sin x dx = a·e^(−x)(sin x + cos x) + c where a is a rational number.",
+      "prompt": "Hence show that ∫e^(−x)sin x dx = a e^(−x)(sin x + cos x) + c, with a rational.",
       "marks": 2
      },
      {
       "code": "16(c)(i)",
-      "prompt": "A sketch of the graph of y = e^(−x) sin x for x ≥ 0 is shown. The areas of the finite regions bounded by the curve and the x-axis are denoted by A₁, A₂, ..., Aₙ, ... Find the exact value of the area A₁",
+      "prompt": "Find A₁ exactly.",
       "marks": 3
      },
      {
       "code": "16(c)(ii)",
-      "prompt": "Show that A₂/A₁ = e^(−π)",
+      "prompt": "Show that A₂/A₁ = e^(−π).",
       "marks": 4
      },
      {
       "code": "16(c)(iii)",
-      "prompt": "Given that A_(n+1)/Aₙ = e^(−π), show that the exact value of the total area enclosed between the curve and the x-axis is (1 + e^π) / (2(e^π − 1))",
+      "prompt": "Given Aₙ₊₁/Aₙ = e^(−π), show the total area between the curve and the x-axis is exactly (1 + e^π)/(2(e^π − 1)).",
       "marks": 4
      }
     ]
@@ -16238,499 +16183,482 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circle −4 log₁₀(√a)"
-    ],
-    "guidance": "B1. −4 log₁₀(√a) = −4·½ log₁₀(a) = −2 log₁₀(a), which is the negative of 2 log₁₀(a); the other three all equal 2 log₁₀(a)."
+     "B1 D: −4log₁₀(√a)"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circle dy/dx = ke^(kx)"
-    ],
-    "guidance": "B1. Differentiating y = e^(kx) gives dy/dx = ke^(kx)."
+     "B1 B: dy/dx = ke^(kx)"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circle 6.4 cm²"
-    ],
-    "guidance": "B1. Area = ½r²θ = ½ × 4² × 0.8 = 6.4 cm²."
+     "B1 C: 6.4 cm²"
+    ]
    },
    "4": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "y = (4/5)x + 11/5 (i.e. 5y − 4x = 11)"
-    ],
-    "guidance": "M1 use negative reciprocal gradient 4/5 to form −4x + 5y = k. B1 correct midpoint x-coordinate (or perpendicular lines through A and B). Using x = 1 on AB gives y = 3, so midpoint is (1, 3); k = −4×1 + 5×3 = 11. M1 substitute midpoint to find the value. A1 obtain y = (4/5)x + 11/5 (c = 2.2) ACF."
+     "M1 Perpendicular gradient 4/5, e.g. −4x + 5y = k",
+     "B1 Midpoint x-coordinate 1",
+     "M1 Uses the line to get the midpoint y = 3 (or finds k another valid way)",
+     "A1 5y − 4x = 11, i.e. y = (4/5)x + 11/5 (any correct form)"
+    ]
    },
    "9": {
     "type": "points",
     "points": [
-     "Assume the statement is false: suppose rational + irrational = rational. Let a/b be rational and x irrational with a/b + x = c/d (rational), a, b, c, d integers.",
-     "Rearrange: x = c/d − a/b = (bc − ad)/(bd)",
-     "bc − ad and bd are integers, so x = (bc − ad)/(bd) is rational — contradiction, since x was assumed irrational",
-     "Hence the sum of a rational number and an irrational number is always irrational"
-    ],
-    "guidance": "M1 begin by contradiction, stating the assumption at the start that the sum is rational OR sight of \"contradiction\" later as part of argument. M1 express both the rational and the irrational as algebraic fractions (a/b rational, and assume the irrational = rational of the form c/d). A1 manipulate to show the irrational equals (bc − ad)/(bd), a rational, which is a contradiction. R1 complete a valid proof by contradiction, where a, b, c and d are all integers. CSO."
+     "M1 Begins proof by contradiction: assume rational + irrational is rational",
+     "M1 Writes a/b + n = c/d with a, b, c, d integers and n irrational",
+     "A1 Rearranges to n = (bc − ad)/bd, so n is rational",
+     "E1 States this contradicts n being irrational",
+     "R1 Complete rigorous argument with correct initial assumptions and conclusion"
+    ]
    },
    "10": {
     "type": "points",
     "points": [
-     "dV/dt = k (constant rate)",
-     "V = (4/3)πr³ ⇒ dV/dr = 4πr²",
-     "Chain rule: dV/dt = (dV/dr)(dr/dt) ⇒ k = 4πr² · dr/dt",
-     "dr/dt = k/(4πr²), so dr/dt ∝ 1/r²"
-    ],
-    "guidance": "B1 model dV/dt = k (with respect to time, not contradicted). B1 dV/dr = 4πr² by differentiation. M1 use chain rule dV/dt = (dV/dr)(dr/dt) substituting expressions (or integrate V = kt + c then differentiate). R1 complete argument obtaining dr/dt = k/(4πr²) and conclude dr/dt ∝ 1/r²."
+     "B1 dV/dt = k",
+     "B1 dV/dr = 4πr²",
+     "M1 Chain rule linking dV/dt, dV/dr and dr/dt",
+     "R1 dr/dt = k/(4πr²), so dr/dt ∝ 1/r²"
+    ]
    },
    "11": {
     "type": "points",
     "points": [
-     "Step 4: For gradient of curve at A, let h → 0 (replace h = 0 with the limit h → 0). Then (cos(h) − 1)/h → 0 and sin(h)/h → 1",
-     "Step 5: Hence the gradient of the curve at A is given by sin(π/2)×0 + cos(π/2)×1 = 0"
-    ],
-    "guidance": "M1 replaces h = 0 with h → 0 (or better) seen anywhere. A1 uses limit notation fully correctly (accept sin(h)/h → 0... full limit notation). B1 sin(h)/h = 1 seen (OE e.g. sin(h) ≈ h as h → 0). B1 writes the last line explicitly as sin(π/2)×0 + cos(π/2)×1 = 0 (accept 1×0 + 0×1 = 0). The key fix: sin(h)/h → 1, not 0."
+     "M1 Replaces 'h = 0' with h → 0",
+     "A1 Correct limit notation throughout",
+     "B1 States (sin h)/h → 1",
+     "B1 Final line sin(π/2)×0 + cos(π/2)×1 = 0"
+    ]
    },
    "13": {
     "type": "points",
     "points": [
-     "x ≠ 0 (y is undefined at x = 0)",
-     "Differentiate (quotient/product rule): dy/dx = (3e^(3x−5)x² − 2xe^(3x−5)) / x⁴",
-     "At a stationary point dy/dx = 0 ⇒ 3e^(3x−5)x² − 2xe^(3x−5) = 0 ⇒ (3x − 2)xe^(3x−5) = 0",
-     "e^(3x−5) ≠ 0 and x ≠ 0, so 3x − 2 = 0 ⇒ x = 2/3 only",
-     "Hence there is exactly one stationary point (at x = 2/3)"
-    ],
-    "guidance": "M1 choose an appropriate technique to differentiate (evidence of product or quotient rule). B1 differentiate e^(3x−5) correctly. A1 obtain correct dy/dx ACF. E1 explain that stationary points occur when dy/dx = 0. M1 equate dy/dx to zero and solve with at least one correct line of rearrangement giving a value for x. B1F deduce factor e^(3x−5) ≠ 0. R1 complete argument to show exactly one stationary point at x = 2/3; must include consideration of x ≠ 0 somewhere."
+     "M1 Uses product or quotient rule",
+     "B1 Differentiates e^(3x−5) correctly",
+     "A1 dy/dx = (3x²e^(3x−5) − 2xe^(3x−5))/x⁴ (any correct form)",
+     "E1 Stationary points occur where dy/dx = 0",
+     "M1 Solves: (3x − 2)xe^(3x−5) = 0 giving a value of x",
+     "B1F States e^(3x−5) ≠ 0",
+     "R1 Concludes exactly one stationary point at x = 2/3, having noted x ≠ 0"
+    ]
    },
    "5(a)": {
     "type": "points",
     "points": [
-     "S₁₆ = (16/2)(2a + 15d) = 260",
-     "8(2a + 15d) = 260",
-     "2(2a + 15d) = 65, hence 4a + 30d = 65"
-    ],
-    "guidance": "M1 use Sₙ = (n/2)(2a + (n−1)d) with n = 16 to form 8(2a + 15d) = 260 (or equivalent). R1 complete rigorous argument with correct algebraic manipulation to reach the printed result; must show at least one line of simplification before 8(2a + 15d) = 260."
+     "M1 Sets 16/2 (2a + 15d) = 260",
+     "R1 Simplifies with at least one clear step to 4a + 30d = 65 (AG)"
+    ]
    },
    "5(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Second equation: (60/2)(2a + 59d) = 315 ⇒ 20a + 590d = 105",
-     "Solve with 4a + 30d = 65: a = 20, d = −0.5",
-     "S₄₁ = (41/2)(2×20 − 40×0.5) = 410"
-    ],
-    "guidance": "M1 form a second equation in a and d using S₆₀ = 315 and solve simultaneously (PI by 20a + 590d = 105). A1 a = 20 and d = −0.5. A1F S₄₁ = 410 (follow through provided one of a or d correct)."
+     "M1 Second equation 30(2a + 59d) = 315, solved simultaneously for a or d",
+     "A1 a = 20, d = −0.5",
+     "A1F S₄₁ = 410 (ft if one of a, d is correct)"
+    ]
    },
    "5(c)": {
     "type": "points",
     "points": [
-     "The terms after the 41st term are all positive (or the terms after the 41st are negative — argument linking to the sign of terms)",
-     "The 41st term is the last non-negative term; adding subsequent negative terms decreases the sum, so S must be a maximum at n = 41"
-    ],
-    "guidance": "M1 explain that values of Uₙ are positive for n < 41 OR negative for n > 41, OR use quadratic/differentiation of Sₙ to obtain n = 40.5. R1 complete a valid argument explaining all terms positive before 41 and negative after 41 (or argument linking the sum to 40 terms and the sum to 41 terms). CSO."
+     "M1 Notes terms are positive for n < 41 (or negative for n > 41), or finds n = 40.5 from the Sₙ formula",
+     "R1 Full argument: terms positive up to the 41st and negative after, so S₄₁ is the maximum (CSO)"
+    ]
    },
    "6(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "{y : y ≥ ½}  (f(x) ≥ ½)"
-    ],
-    "guidance": "B1. Minimum of f at x = 0 gives f(0) = ½ and f increases for x ≥ 0; accept y ≥ ½ or [0.5, ∞)."
+     "B1 f(x) ≥ ½"
+    ]
    },
    "6(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "y = ½(x² + 1) ⇒ 2y = x² + 1 ⇒ x = √(2y − 1)",
-     "f⁻¹(x) = √(2x − 1)",
-     "Domain x ≥ ½"
-    ],
-    "guidance": "M1 rearrange isolating the squared term with at least one correct step. A1 inverse in any correct form. A1 correct inverse f⁻¹(x) = √(2x − 1) using f⁻¹(x) = ... notation and states correct domain x ≥ ½ (positive square root only)."
+     "M1 Rearranges y = ½(x² + 1) to isolate x²",
+     "A1 Inverse in any correct form, e.g. x = √(2y − 1)",
+     "A1 f⁻¹(x) = √(2x − 1) with domain x ≥ ½"
+    ]
    },
    "6(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "{y : y ≥ 0}  (f⁻¹(x) ≥ 0)"
-    ],
-    "guidance": "B1. The range of f⁻¹ equals the domain of f, namely y ≥ 0."
+     "B1 f⁻¹(x) ≥ 0"
+    ]
    },
    "6(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Reflection in the line y = x"
-    ],
-    "guidance": "B1. Recalls correct transformation: a reflection in y = x maps a graph onto its inverse."
+     "B1 Reflection in the line y = x"
+    ]
    },
    "6(d)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Point of intersection lies on y = x: ½(x² + 1) = x ⇒ x² − 2x + 1 = 0 ⇒ x = 1",
-     "Coordinates (1, 1)"
-    ],
-    "guidance": "M1 form an equation using two of the three expressions, e.g. (x²+1)/2 = √(2x−1) or (x²+1)/2 = x. A1 obtains x = 1 and y = 1, point (1, 1). CSO."
+     "M1 Equates two of x, ½(x² + 1), √(2x − 1)",
+     "A1 (1, 1) (CSO)"
+    ]
    },
    "7(a)": {
     "type": "points",
     "points": [
-     "Sketch y = 1/x: decreasing curve in first quadrant, asymptotic to both axes",
-     "Sketch y = sec 2x: branches with vertical asymptotes (first branch up to asymptote near x = π/4)",
-     "The graphs intersect at exactly one point for x > 0 (with sec 2x branch up to asymptote), so the equation has exactly one solution"
-    ],
-    "guidance": "B1 sketch y = 1/x not crossing axes with correct asymptotes. M1 sketch y = sec 2x up to the first asymptote. A1 fully correct graphs in first quadrant intersecting at exactly one point, asymptote at x = 5π/4 region; ignore behaviour in the fourth quadrant / negative y, condone missing labels on y-axis."
+     "B1 Graph of y = 1/x with correct asymptotes, not crossing the axes",
+     "M1 Graph of y = sec 2x up to its first asymptote",
+     "A1 Both correct in the first quadrant, meeting at one point, sec 2x drawn up to its asymptote"
+    ]
    },
    "7(b)": {
     "type": "points",
     "points": [
-     "Let f(x) = 1/x − sec 2x and evaluate at x = 0.4 and x = 0.6",
-     "f(0.4) = 1.06... > 0 and f(0.6) = −1.09... < 0",
-     "Sign change between 0.4 and 0.6, so the solution lies in this interval"
+     "M1 Writes f(x) = 1/x − sec 2x and evaluates at 0.4 and 0.6 (f(0.4) ≈ 1.06, f(0.6) ≈ −1.09)",
+     "R1 Refers to the change of sign to conclude the root lies in (0.4, 0.6)"
     ],
-    "guidance": "M1 rearrange to f(x) = 0 and evaluate at 0.4 and 0.6 (may evaluate either side of the root 0.515 in [0.4, 0.6]). R1 complete rigorous argument referring to the change of sign; must show evidence of correct evaluations, values correct to 1 sf, and use function notation if claimed."
+    "guidance": "Values at two points either side of the root 0.515 within the interval are also accepted; function notation must be defined."
    },
    "7(c)": {
     "type": "points",
     "points": [
-     "1/x = sec 2x ⇒ 1/x = 1/cos 2x ⇒ x = cos 2x",
-     "2x = cos⁻¹ x",
-     "x = ½ cos⁻¹ x"
-    ],
-    "guidance": "M1 use sec 2x = 1/cos 2x to obtain x = cos 2x (or 1/x = x/cos2x). R1 complete rigorous rearrangement; must reach 2x = cos⁻¹ x before stating the given answer."
+     "M1 Uses sec 2x = 1/cos 2x to get x = cos 2x (or equivalent)",
+     "R1 Shows cos⁻¹x = 2x before the given result"
+    ]
    },
    "7(d)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x₂ = 0.5796",
-     "x₃ = 0.4763",
-     "x₄ = 0.5372"
-    ],
-    "guidance": "M1 obtain any one correct value to at least 3 dp ignoring labels. A1 x₂ = 0.5796, x₃ = 0.4763, x₄ = 0.5372 all correct to 4 dp (if no labels, accept the three correct values in the correct order with no extras). CAO."
+     "M1 One value correct to at least 3 dp",
+     "A1 x₂ = 0.5796, x₃ = 0.4763, x₄ = 0.5372 (CAO)"
+    ]
    },
    "7(d)(ii)": {
     "type": "points",
     "points": [
-     "Draw correct cobweb (staircase/spiral) diagram between the line y = x and the curve y = ½ cos⁻¹ x, starting from x₁ = 0.4",
-     "Show positions of x₂, x₃ and x₄ clearly indicated on the x-axis (not on y = x)"
-    ],
-    "guidance": "M1 draw correct cobweb diagram (condone missing vertical line at x = 0.4). A1 show positions of x₂, x₃, x₄ with clear indication of positioning on the x-axis."
+     "M1 Correct cobweb diagram",
+     "A1 x₂, x₃, x₄ clearly marked on the x-axis"
+    ]
    },
    "8(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(n) = n³ (the two sums differ only by the n³ term)",
-     "P(3) = 27",
-     "P(10) = 1000"
-    ],
-    "guidance": "B1 obtains one correct value, B1 obtains both correct values. P(n) = ∑₀ⁿ k³ − ∑₀^(n−1) k³ = n³."
+     "B1 P(3) = 27 (or P(10) correct)",
+     "B1 Both: P(3) = 27, P(10) = 1000"
+    ]
    },
    "8(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "n³ = 1.25 × 10⁸",
-     "n = ³√(1.25 × 10⁸) = 500"
-    ],
-    "guidance": "M1 forms the cubic equation n³ = 1.25 × 10⁸ using P(n) = n³. A1 n = 500. CSO."
+     "M1 Recognises P(n) = n³, so n³ = 1.25 × 10⁸",
+     "A1 n = 500 (CSO)"
+    ]
    },
    "12(a)": {
     "type": "points",
     "points": [
-     "Use cot²x = cosec²x − 1: 2(cosec²x − 1) + 2cosec²x = 1 + 4cosecx",
-     "4cosec²x − 2 = 1 + 4cosecx",
-     "4cosec²x − 4cosecx − 3 = 0  (a = 4, b = −4, c = −3)"
-    ],
-    "guidance": "M1 use the identity cot²x = cosec²x − 1 to form a quadratic in a single trigonometric term; condone 2(1 + cosec²x). R1 complete rigorous argument to show the required result 4cosec²x − 4cosecx − 3 = 0."
+     "M1 Uses cot²x = cosec²x − 1 to form a quadratic in cosec x",
+     "R1 Reaches 4cosec²x − 4cosec x − 3 = 0"
+    ]
    },
    "12(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Solve 4cosec²x − 4cosecx − 3 = 0 ⇒ cosecx = 3/2 or cosecx = −½",
-     "Reject cosecx = −½ since |cosecx| ≥ 1",
-     "cosecx = 3/2 ⇒ cot²x = cosec²x − 1 = 9/4 − 1 = 5/4",
-     "tan²x = 4/5, and x obtuse ⇒ tan x is negative, so tan x = −2√5/5  (i.e. −2/√5)"
-    ],
-    "guidance": "M1 solve the quadratic and obtain cosecx = 3/2 or cosecx = −½. E1F explain why cosecx = −½ is rejected, referring to the range of cosec (|cosecx| ≥ 1). M1 use a trig identity / right-angled triangle / Pythagoras to obtain an exact value of tan x; value used must satisfy |cosecx| ≥ 1. R1 complete rigorous argument to find the correct exact magnitude of tan x, ACF. B1 deduce tan x is negative (x obtuse), giving tan x = −2√5/5."
+     "B1 Solves: cosec x = 3/2 or −½",
+     "E1F Rejects cosec x = −½ because |cosec x| ≥ 1",
+     "M1 Uses an identity or right-angled triangle with cosec x = 3/2 to get an exact tan x",
+     "R1 Correct exact magnitude, |tan x| = 2/√5",
+     "B1 Deduces tan x < 0 as x is obtuse: tan x = −2√5/5"
+    ]
    },
    "14(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "5 ordinates"
-    ],
-    "guidance": "B1. With n = 4 trapezia (strips), the number of ordinates is n + 1 = 5."
+     "B1 5"
+    ]
    },
    "14(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Strip width h = 1; ordinates at x = 0,1,2,3,4 give y = 0, 1, 3.2, 5.4, 7.52941...",
-     "Area ≈ ½ × 1 × (0 + 7.52941 + 2(1 + 3.2 + 5.4)) = 13.36 (2 dp)"
-    ],
-    "guidance": "B1 obtain at least 4 correct y-values and correct h. M1 substitute y-values into the trapezium rule with correct number of strips (condone one missing y; may work on graph). A1 area = 13.36 (exact 1136/85 = 13.4647...; NMS can score 3). CAO to 2 dp."
+     "B1 At least 4 correct y-values (1, 3.2, 5.4, 7.529…) and h = 1",
+     "M1 Substitutes into the trapezium rule with 4 strips",
+     "A1 13.36 (CAO)"
+    ]
    },
    "14(b)": {
     "type": "points",
     "points": [
-     "Substitute u = x² + 1, du = 2x dx, rewrite integrand: ∫₀⁴ 2x³/(x²+1) dx = ∫₁¹⁷ (u − 1)/u du",
-     "= ∫₁¹⁷ (1 − 1/u) du = [u − ln u]₁¹⁷",
-     "= (17 − ln 17) − (1 − ln 1) = 16 − ln 17"
-    ],
-    "guidance": "M1 select substitution u = x² + 1 (or u = x², obtaining du/dx = 2x) or write integrand in the form Bx/(x²+1). A1 obtain ∫₁¹⁷ (1 − 1/u) du OE (or ∫ 2x − 2x/(x²+1) dx; ignore limits). M1 integrate the resulting expression obtaining a ln term correctly. A1 u − ln u (or x² − ln(x²+1)) using correct limits. R1 complete fully correct argument with correct limits and substitution to reach 16 − ln 17 with no errors. AG."
+     "M1 Substitution u = x² + 1 with du/dx = 2x, or splits the integrand into Ax + Bx/(x² + 1)",
+     "A1 ∫₁¹⁷ (1 − 1/u) du or equivalent",
+     "M1 Integrates to obtain a correct ln term",
+     "A1 u − ln u, or x² − ln(x² + 1)",
+     "R1 Correct limits and notation giving 16 − ln 17 (AG)"
+    ]
    },
    "14(c)": {
     "type": "points",
     "points": [
-     "As n increases the trapezium-rule approximation tends to the exact value of the integral, 16 − ln 17 (the approximation improves / converges to the true area)"
-    ],
-    "guidance": "E1. Explains that as n → ∞ the approximation found will tend to the value of ∫₀⁴ 2x³/(x²+1) dx, i.e. it approaches the exact area 16 − ln 17."
+     "E1 The estimate tends to the exact area, 16 − ln 17"
+    ]
    },
    "15(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "High tide at t = 0: h = 3 − 2·∛(0 − 3) = 3 − 2·∛(−3) = 5.88 metres (AWRT 5.9)"
-    ],
-    "guidance": "B1. Use the model with t = 0 to find the correct value of h = 5.88 metres (AWRT 5.9)."
+     "B1 h = 3 + 2∛3 ≈ 5.88 m (awrt 5.9)"
+    ]
    },
    "15(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "First low tide when v = 0: 4 − (2t/3 − 2)² = 0",
-     "(2t/3 − 2)² = 4 ⇒ 2t/3 − 2 = ±2 ⇒ t = 0 or t = 6; first low tide at t = 6",
-     "Time = 2 am + 6 hours = 8 am"
-    ],
-    "guidance": "M1 use v = 0 to set up the quadratic equation for t. A1 obtain t = 6 (PI by correct answer). A1F interpret in lowest positive solution correctly: NMS can score 3; answer 8 am."
+     "M1 Sets v = 0 to form an equation for t",
+     "A1 t = 6",
+     "A1F 8 am"
+    ]
    },
    "15(a)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "At t = 6: h = 3 − 2·∛(6 − 3) = 3 − 2·∛3 = 0.12 metres (AWRT 0.115 to 0.116)"
-    ],
-    "guidance": "B1F. Obtain correct h for their positive t (t = 6), h = 0.12 m. FT their t allowing for a negative h; if given to more decimal places AWFW 0.115 to 0.116."
+     "B1F h ≈ 0.12 m (awfw 0.115 to 0.116 if more dp)"
+    ]
    },
    "15(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Maximum velocity when (2t/3 − 2)² = 0 ⇒ t = 3",
-     "Substitute t = 3 into h: h = 3 − 2·∛(3 − 3) = 3 − 0 = 3 metres"
-    ],
-    "guidance": "B1 identifies t = 3 (for maximum velocity, since v = 4 − (2t/3 − 2)² is greatest when the bracket is zero). M1 substitute their t into the model for h (PI by their answer). A1 find correct height with units, h = 3 metres."
+     "B1 Maximum velocity at t = 3",
+     "M1 Substitutes into h",
+     "A1 3 metres"
+    ]
    },
    "15(c)": {
     "type": "points",
     "points": [
-     "The model breaks down after one cycle of the tide (height continues to decrease for t > 6, or there are no other times when v = 0 within the first tide)",
-     "After 6 hours the model shows the height continues to decrease (or first low tide), which is not realistic for a repeating tide"
-    ],
-    "guidance": "B1 explains that the validity of the model is limited by time (the model breaks down after one cycle of the tide). B1 explains that the height continues to decrease beyond 6 hours (or after the first low tide), or explains there are no other times when v = 0."
+     "B1 The model is only valid for a limited time (one tidal cycle)",
+     "B1 After 6 hours the model's height keeps falling (or v = 0 never recurs)"
+    ]
    },
    "16(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Product rule: dy/dx = −e^(−x)(sin x + cos x) + e^(−x)(cos x − sin x)",
-     "Simplify: dy/dx = −2e^(−x) sin x"
-    ],
-    "guidance": "M1 choose appropriate technique to differentiate (evidence of product rule). A1 differentiate fully correctly. A1 obtain fully correct simplified answer dy/dx = −2e^(−x) sin x."
+     "M1 Uses product rule",
+     "A1 −e^(−x)(sin x + cos x) + e^(−x)(cos x − sin x)",
+     "A1 −2e^(−x)sin x"
+    ]
    },
    "16(b)": {
     "type": "points",
     "points": [
-     "From (a), ∫ −2e^(−x) sin x dx = e^(−x)(sin x + cos x) + k",
-     "So ∫ e^(−x) sin x dx = −½ e^(−x)(sin x + cos x) + c, i.e. a = −½"
-    ],
-    "guidance": "M1 use the result from (a) in the form Be^(−x) sin x and show understanding of the fundamental theorem of calculus (condone missing constant). R1F obtain (1/B)e^(−x)(sin x + cos x), giving a = −½."
+     "M1 Reverses (a): ∫−2e^(−x)sin x dx = e^(−x)(sin x + cos x) + k",
+     "R1F a = −½"
+    ]
    },
    "16(c)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "A₁ = ∫₀^π e^(−x) sin x dx = [−½ e^(−x)(sin x + cos x)]₀^π",
-     "= −½ e^(−π)(0 − 1) − (−½(0 + 1)) = ½ e^(−π) + ½",
-     "A₁ = (1 + e^(−π))/2  (= (e^π + 1)/(2e^π))"
-    ],
-    "guidance": "M1 write the area with correct limits 0 to π into the integral from (b) (condone missing limits). A1 deduce correct limits and substitute correctly. A1 obtain correct exact value for the area, A₁ = (1 + e^(−π))/2. CSO."
+     "M1 A₁ = [−½e^(−x)(sin x + cos x)] between limits",
+     "A1 Correct limits 0 and π substituted",
+     "A1 A₁ = (e^(−π) + 1)/2 (CSO)"
+    ]
    },
    "16(c)(ii)": {
     "type": "points",
     "points": [
-     "A₂ = −∫_π^(2π) e^(−x) sin x dx = −[−½ e^(−x)(sin x + cos x)]_π^(2π) = (e^(−π) + 1)/2 · e^(−π)  (using substitution u = x − π)",
-     "A₂/A₁ = [(e^(−π) + 1)/2 · e^(−π)] / [(e^(−π) + 1)/2] = e^(−π)"
-    ],
-    "guidance": "M1 substitute correct limits π to 2π into the integral for A₂ (or use A₂ = ±∫_π^(2π) e^(−x) sin x dx and substitution u = x − π). A1 obtain correct exact area for ±A₂, CSO (or make complete substitution A₂ = ±∫₀^π e^(−(u+π)) sin(u + π) du). M1 form the required ratio using their exact A₁ and A₂ (may be unsimplified; or extract factor of e^(−π) and use sin(u + π) = −sin u). R1 complete rigorous argument, with correct limits and negatives, to show A₂/A₁ = e^(−π). CSO."
+     "M1 Substitutes π and 2π for A₂ (or uses u = x − π)",
+     "A1 A₂ = e^(−π)(e^(−π) + 1)/2 (CSO)",
+     "M1 Forms the ratio A₂/A₁ (or extracts e^(−π) using sin(u + π) = −sin u)",
+     "R1 Rigorous argument with signs and limits handled correctly giving e^(−π)"
+    ]
    },
    "16(c)(iii)": {
     "type": "points",
     "points": [
-     "The areas A₁, A₂, A₃, ... form a geometric series with first term A₁ = (1 + e^(−π))/2 and common ratio r = e^(−π)",
-     "Total area = A₁/(1 − r) = [(1 + e^(−π))/2] / (1 − e^(−π))",
-     "Multiply numerator and denominator by e^π: = (e^π + 1)/(2(e^π − 1))"
-    ],
-    "guidance": "B1 deduce that the areas form a geometric series (accept any indication of this) with common ratio e^(−π). M1 use the sum to infinity S∞ = A₁/(1 − r). B1F obtain a value for the geometric series sum using their A₁. R1 complete rigorous argument to achieve the required result (1 + e^π)/(2(e^π − 1)) in correct form. CSO. AG."
+     "B1 Recognises a geometric series",
+     "M1 Uses S∞ = A₁/(1 − e^(−π))",
+     "B1F First term from their (c)(i)",
+     "R1 Simplifies to (1 + e^π)/(2(e^π − 1)) (AG)"
+    ]
    }
   }
  },
  "math-aqa-7357-2019-p2": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "The graph of y = 1 − |x + 2|. Four sketches are offered (diagrams on the question paper): A an upright V with vertex below the x-axis, left of the y-axis; B an inverted V with apex below the x-axis, left of the y-axis; C an inverted V with apex below the x-axis, right of the y-axis; D an inverted V with apex above the x-axis, left of the y-axis.",
     "parts": [
      {
       "code": "1",
-      "prompt": "Identify the graph of y = 1 − |x + 2| from the options below. Tick (✓) one box.\nA: a V-shape (modulus shape opening upwards) with vertex below the x-axis, near the origin.\nB: an inverted-V (Λ) shape with vertex on the negative side, opening downwards, mostly below the axis to the right.\nC: an inverted-V (Λ) shape with vertex on the positive y-axis side.\nD: an inverted-V (Λ) shape with vertex at (−2, 1), i.e. shifted left 2 and reflected so it opens downwards with maximum 1.",
+      "prompt": "Pick the correct graph.\nOptions: A   B   C   D",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "Index laws.",
     "parts": [
      {
       "code": "2",
-      "prompt": "Simplify √(a^(2/3) × a^(2/5)). Circle your answer.\nOptions: a^(2/15), a^(4/15), a^(8/15), a^(16/15)",
+      "prompt": "Simplify √(a^(2/3) × a^(2/5)).\nOptions: a^(2/15)   a^(4/15)   a^(8/15)   a^(16/15)",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "Each function has domain x ∈ ℝ.",
     "parts": [
      {
       "code": "3",
-      "prompt": "Each of these functions has domain x ∈ ℝ. Which function does not have an inverse? Circle your answer.\nOptions: f(x) = x³, f(x) = 2x + 1, f(x) = x², f(x) = eˣ",
+      "prompt": "Which function has no inverse?\nOptions: f(x) = x³   f(x) = 2x + 1   f(x) = x²   f(x) = eˣ",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
+    "scenario": "x² + bx + c and x² + dx + e share the factor (x + 2).",
     "parts": [
      {
       "code": "4",
-      "prompt": "x² + bx + c and x² + dx + e have a common factor (x + 2). Show that 2(d − b) = e − c. Fully justify your answer.",
+      "prompt": "Show, with full justification, that 2(d − b) = e − c.",
       "marks": 4
      }
     ]
    },
    {
     "number": 5,
+    "scenario": "Differential equation dt/dx = ln x/(x²t), x > 0, with x = 1 when t = 2.",
     "parts": [
      {
       "code": "5",
-      "prompt": "Solve the differential equation dt/dx = (ln x)/(x²t) for x > 0, given x = 1 when t = 2. Write your answer in the form t² = f(x).",
+      "prompt": "Solve it, giving t² = f(x).",
       "marks": 7
      }
     ]
    },
    {
     "number": 6,
-    "scenario": "A curve has equation y = a sin x + b cos x, where a and b are constants. The maximum value of y is 4 and the curve passes through the point (π/3, 2√3), as shown in the diagram (a sinusoidal curve with the marked point on the rising part just after the y-axis).",
+    "scenario": "Curve y = a sin x + b cos x (a, b constants) has maximum value 4 and passes through (π/3, 2√3) (diagram on the question paper).",
     "parts": [
      {
       "code": "6",
-      "prompt": "Find the exact values of a and b.",
+      "prompt": "Find a and b exactly.",
       "marks": 6
      }
     ]
    },
    {
     "number": 7,
-    "scenario": "Parts (b) onward concern the function f(x) = x³ + 3px² + q, where p and q are constants and p > 0.",
+    "scenario": "Cubics. In (b), f(x) = x³ + 3px² + q, with constants p > 0 and q.",
     "parts": [
      {
       "code": "7(a)",
-      "prompt": "Sketch the graph of any cubic function that has both three distinct real roots and a positive coefficient of x³. (Axes provided.)",
+      "prompt": "Sketch any cubic with three distinct real roots and a positive x³ coefficient.",
       "marks": 2
      },
      {
       "code": "7(b)(i)",
-      "prompt": "The function f(x) is defined by f(x) = x³ + 3px² + q where p and q are constants and p > 0. Show that there is a turning point where the curve crosses the y-axis.",
+      "prompt": "Show the curve y = f(x) has a turning point on the y-axis.",
       "marks": 3
      },
      {
       "code": "7(b)(ii)",
-      "prompt": "The equation f(x) = 0 has three distinct real roots. By considering the positions of the turning points find, in terms of p, the range of possible values of q.",
+      "prompt": "Given f(x) = 0 has three distinct real roots, use the turning points to find the possible values of q in terms of p.",
       "marks": 5
      }
     ]
    },
    {
     "number": 8,
-    "scenario": "Theresa bought a house on 2 January 1970 for £8000. The house was valued by a local estate agent on the same date every 10 years up to 2010. Valuations: 1970 £8000, 1980 £19000, 1990 £36000, 2000 £82000, 2010 £205000. The valuation price can be modelled by V = pqᵗ, where V pounds is the valuation price t years after 2 January 1970 and p and q are constants.",
+    "scenario": "A house bought on 2 January 1970 for £8000 was valued every 10 years: 1970 £8000, 1980 £19000, 1990 £36000, 2000 £82000, 2010 £205000. Model V = pqᵗ, t years after 2 Jan 1970. Values of log₁₀V against t: 3.90, 4.28, 4.56, 4.91, 5.31 at t = 0, 10, 20, 30, 40, plotted with a line of best fit (graph on the question paper).",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Show that V = pqᵗ can be written as log₁₀ V = log₁₀ p + t log₁₀ q.",
+      "prompt": "Show the model can be written log₁₀V = log₁₀p + t log₁₀q.",
       "marks": 2
      },
      {
       "code": "8(b)",
-      "prompt": "The values in the table of log₁₀ V against t have been plotted and a line of best fit has been drawn (t: 0,10,20,30,40 against log₁₀ V: 3.90, 4.28, 4.56, 4.91, 5.31). Using the given line of best fit, find estimates for the values of p and q. Give your answers correct to three significant figures.",
+      "prompt": "Use the line of best fit to estimate p and q to 3 significant figures.",
       "marks": 4
      },
      {
       "code": "8(c)",
-      "prompt": "Determine the year in which Theresa’s house will first be worth half a million pounds.",
+      "prompt": "Find the year when the house is first worth £500 000.",
       "marks": 3
      },
      {
       "code": "8(d)",
-      "prompt": "Explain whether your answer to part (c) is likely to be reliable.",
+      "prompt": "Explain whether your answer to (c) is likely to be reliable.",
       "marks": 2
      }
     ]
    },
    {
     "number": 9,
+    "scenario": "Binomial expansion of √(4 − 2x²).",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Show that the first two terms of the binomial expansion of √(4 − 2x²) are 2 − x²/2.",
+      "prompt": "Show the first two terms are 2 − x²/2.",
       "marks": 2
      },
      {
       "code": "9(b)",
-      "prompt": "State the range of values of x for which the expansion found in part (a) is valid.",
+      "prompt": "State the values of x for which this expansion is valid.",
       "marks": 2
      },
      {
       "code": "9(c)",
-      "prompt": "Hence, find an approximation for ∫₀^0.4 √(cos x) dx, giving your answer to five decimal places. Fully justify your answer.",
+      "prompt": "Hence approximate ∫₀^0.4 √(cos x) dx to 5 decimal places, fully justifying your answer.",
       "marks": 4
      },
      {
       "code": "9(d)",
-      "prompt": "A student decides to use this method to find an approximation for ∫₀^1.4 √(cos x) dx. Explain why this may not be a suitable method.",
+      "prompt": "Explain why the same method may be unsuitable for ∫₀^1.4 √(cos x) dx.",
       "marks": 1
      }
     ]
    },
    {
     "number": 10,
-    "scenario": "The diagram shows a velocity-time graph for a particle moving with velocity v m s⁻¹ at time t seconds. The velocity is −12 for 0 ≤ t ≤ 4, rises linearly from −12 at t = 4 to 18 at t = 9 (crossing v = 0 near t = 6), stays at 18 for 9 ≤ t ≤ 12, then decreases linearly from 18 at t = 12 to 0 at t = 20.",
+    "scenario": "Velocity–time graph (on the question paper): v = −12 m s⁻¹ for 0 ≤ t ≤ 4, rising linearly through 0 at t = 6 to 18 at t = 9, constant at 18 until t = 12, then falling linearly to 0 at t = 20.",
     "parts": [
      {
       "code": "10",
-      "prompt": "Which statement is correct? Tick (✓) one box.\nOptions: The particle was stationary for 9 ≤ t ≤ 12; The particle was decelerating for 12 ≤ t ≤ 20; The particle had a displacement of zero when t = 6; The particle’s speed when t = 4 was −12 m s⁻¹.",
+      "prompt": "Pick the true statement.\nOptions: stationary for 9 ≤ t ≤ 12   decelerating for 12 ≤ t ≤ 20   displacement zero at t = 6   speed at t = 4 was −12 m s⁻¹",
       "marks": 1
      }
     ]
    },
    {
     "number": 11,
+    "scenario": "A crate on a rough horizontal surface (μ = 0.6) is on the point of moving under a horizontal force of 600 N.",
     "parts": [
      {
       "code": "11",
-      "prompt": "A wooden crate rests on a rough horizontal surface. The coefficient of friction between the crate and the surface is 0.6. A forward force acts on the crate, parallel to the surface. When this force is 600 N, the crate is on the point of moving. Find the weight of the crate. Circle your answer.\nOptions: 1000 N, 100 kg, 360 N, 36 kg",
+      "prompt": "Find the crate's weight.\nOptions: 1000 N   100 kg   360 N   36 kg",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
+    "scenario": "A particle moves at constant speed 10 m s⁻¹ on a smooth horizontal surface under forces (400i + 180j) N and (pi − 180j) N.",
     "parts": [
      {
       "code": "12",
-      "prompt": "A particle, under the action of two constant forces, is moving across a perfectly smooth horizontal surface at a constant speed of 10 m s⁻¹. The first force acting on the particle is (400i + 180j) N. The second force acting on the particle is (pi − 180j) N. Find the value of p. Circle your answer.\nOptions: −400, −390, 390, 400",
+      "prompt": "Find p.\nOptions: −400   −390   390   400",
       "marks": 1
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "In a school experiment, a particle, of mass m kilograms, is released from rest at a point h metres above the ground. At the instant it reaches the ground, the particle has velocity v m s⁻¹.",
+    "scenario": "A particle of mass m kg is dropped from rest h m above the ground and lands with speed v m s⁻¹.",
     "parts": [
      {
       "code": "13(a)",
@@ -16739,72 +16667,72 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "13(b)",
-      "prompt": "A student correctly used h = 18 and measured v as 20. The student’s teacher claims that the machine measuring the velocity must have been faulty. Determine if the teacher’s claim is correct. Fully justify your answer.",
+      "prompt": "With h = 18 a student measured v = 20. Decide, with full justification, whether the teacher is right that the speed-measuring machine was faulty.",
       "marks": 3
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "A metal rod, of mass m kilograms and length 20 cm, lies at rest on a horizontal shelf. The end of the rod, B, extends 6 cm beyond the edge of the shelf, A, as shown in the diagram (rod total length 20 cm; the overhang AB = 6 cm).",
+    "scenario": "A metal rod of mass m kg, length 20 cm, rests on a horizontal shelf with end B projecting 6 cm beyond the shelf edge A (diagram on the question paper).",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "The rod is in equilibrium when an object of mass 0.28 kilograms hangs from the midpoint of AB. Show that m = 0.21.",
+      "prompt": "A 0.28 kg mass hung at the midpoint of AB keeps the rod in equilibrium. Show that m = 0.21.",
       "marks": 3
      },
      {
       "code": "14(b)",
-      "prompt": "The object of mass 0.28 kilograms is removed. A number, n, of identical objects, each of mass 0.048 kg, are hung from the rod all at a distance of 1 cm from B. Find the maximum value of n such that the rod remains horizontal.",
+      "prompt": "That mass is removed; n identical 0.048 kg masses are hung 1 cm from B. Find the largest n for which the rod stays horizontal.",
       "marks": 4
      },
      {
       "code": "14(c)",
-      "prompt": "State one assumption you have made about the rod.",
+      "prompt": "State one assumption you made about the rod.",
       "marks": 1
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "Four buoys on the surface of a large, calm lake are located at A, B, C and D with position vectors OA = [410, 710], OB = [−210, 530], OC = [−340, −310] and OD = [590, −40]. All values are in metres.",
+    "scenario": "Buoys on a lake at OA = (410, 710), OB = (−210, 530), OC = (−340, −310), OD = (590, −40), in metres.",
     "parts": [
      {
       "code": "15(a)",
-      "prompt": "Prove that the quadrilateral ABCD is a trapezium but not a parallelogram.",
+      "prompt": "Prove ABCD is a trapezium but not a parallelogram.",
       "marks": 5
      },
      {
       "code": "15(b)",
-      "prompt": "A speed boat travels directly from B to C at a constant speed in 50 seconds. Find the speed of the boat between B and C.",
+      "prompt": "A boat goes straight from B to C at constant speed in 50 s. Find its speed.",
       "marks": 4
      }
     ]
    },
    {
     "number": 16,
-    "scenario": "An elite athlete runs in a straight line to complete a 100-metre race. During the race, the athlete’s velocity, v m s⁻¹, may be modelled by v = 11.71 − 11.68e^(−0.9t) − 0.03e^(0.3t), where t is the time, in seconds, after the starting pistol is fired.",
+    "scenario": "An athlete's velocity in a 100 m race is modelled by v = 11.71 − 11.68e^(−0.9t) − 0.03e^(0.3t), t seconds after the start.",
     "parts": [
      {
       "code": "16(a)",
-      "prompt": "Find the maximum value of v, giving your answer to one decimal place. Fully justify your answer.",
+      "prompt": "Find the maximum v to 1 decimal place, fully justifying your answer.",
       "marks": 8
      },
      {
       "code": "16(b)",
-      "prompt": "Find an expression for the distance run in terms of t.",
+      "prompt": "Find an expression for the distance run at time t.",
       "marks": 6
      },
      {
       "code": "16(c)",
-      "prompt": "The athlete’s actual time for this race is 9.8 seconds. Comment on the accuracy of the model.",
+      "prompt": "The actual race time was 9.8 s. Comment on the model's accuracy.",
       "marks": 2
      }
     ]
    },
    {
     "number": 17,
-    "scenario": "Lizzie is sat securely on a wooden sledge. The combined mass of Lizzie and the sledge is M kilograms. The sledge is being pulled forward in a straight line along a horizontal surface by means of a light inextensible rope, attached to the front of the sledge. This rope stays inclined at an acute angle θ above the horizontal and remains taut as the sledge moves forward. The sledge remains in contact with the surface throughout. The coefficient of friction between the sledge and the surface is μ and there are no other resistance forces. Lizzie and the sledge move forward with constant acceleration, a m s⁻². The tension in the rope is a constant T Newtons.",
+    "scenario": "Lizzie on a sledge, total mass M kg, is pulled along rough horizontal ground (coefficient of friction μ, no other resistance) by a taut light inextensible rope at a constant acute angle θ above the horizontal, with constant tension T N and constant acceleration a m s⁻²; the sledge stays in contact with the ground.",
     "parts": [
      {
       "code": "17(a)",
@@ -16813,7 +16741,7 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "17(b)",
-      "prompt": "It is known that when M = 30, θ = 30°, and T = 40, the sledge remains at rest. Lizzie uses these values with the relationship formed in part (a) to find the value for μ. Explain why her value for μ may be incorrect.",
+      "prompt": "With M = 30, θ = 30°, T = 40 the sledge stays at rest; Lizzie uses these values in (a) to find μ. Explain why her μ may be wrong.",
       "marks": 2
      }
     ]
@@ -16821,571 +16749,546 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Graph D"
-    ],
-    "guidance": "R1: ticks the correct response. y = 1 − |x+2| is the modulus graph translated 2 left and reflected, giving an inverted-V (Λ) with vertex (maximum) at (−2, 1) — graph D."
+     "R1 D (inverted V with apex at (−2, 1))"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "a^(8/15)"
-    ],
-    "guidance": "B1: circles the correct response. a^(2/3)·a^(2/5) = a^(2/3+2/5) = a^(16/15); then the square root gives a^(8/15)."
+     "B1 C: a^(8/15)"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "f(x) = x²"
-    ],
-    "guidance": "B1: circles the correct response. f(x) = x² is not one-to-one on x ∈ ℝ, so it has no inverse."
+     "B1 C: f(x) = x²"
+    ]
    },
    "4": {
     "type": "points",
     "points": [
-     "Use the factor theorem: (x+2) a factor ⇒ f(−2) = 0 for each quadratic",
-     "For x²+bx+c: 4 − 2b + c = 0 ⇒ 2b − c = 4 (i.e. 4 − 2b + c = 0)",
-     "For x²+dx+e: 4 − 2d + e = 0",
-     "Subtract/combine the two equations to get 2d − 2b = e − c, i.e. 2(d − b) = e − c"
-    ],
-    "guidance": "E1: explain factor theorem applies (or that the quadratic factorises). M1: substitute x = −2 to obtain a correct expression for each. A1: deduce both correct equations 4 − 2b + c = 0 and 4 − 2d + e = 0 (or by equating coefficients of factorised forms). R1: form a single equation in b, c, d, e and complete a rigorous argument to the required result 2(d − b) = e − c. R1 can be awarded even if E1 not awarded."
+     "E1 Explains that (x + 2) a factor means the expression is 0 at x = −2 (or equivalent via factorising or zero remainder)",
+     "M1 Substitutes x = −2 into one expression, e.g. 4 − 2b + c",
+     "A1 Both 4 − 2b + c = 0 and 4 − 2d + e = 0",
+     "R1 Combines to show 2(d − b) = e − c"
+    ]
    },
    "5": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Separate variables: ∫ t dt = ∫ (ln x)/x² dx",
-     "LHS: ∫ t dt = t²/2 + c",
-     "By parts on ∫ (ln x)/x² dx with u = ln x, v = −1/x: = −(ln x)/x − ∫ (−1/x²) dx = −(ln x)/x − 1/x",
-     "So t²/2 = −(ln x)/x − 1/x + c",
-     "Use x = 1, t = 2: 2 = −0 − 1 + c ⇒ c = 3",
-     "t² = 6 − 2((1 + ln x)/x)"
-    ],
-    "guidance": "M1 separate variables (one side correct). A1F integrate ∫ t dt = t²/2. B1 u′ = 1/x and v = −1/x. M1 integrate by parts (condone sign errors in formula). A1 obtains −(ln x)/x − 1/x. M1 substitute t = 2, x = 1 to find +c. A1 (ACF) correct solution must have t² = …; t² = 6 − 2((1 + ln x)/x)."
+     "M1 Separates variables: ∫t dt = ∫(ln x)/x² dx",
+     "A1F ∫t dt = t²/2",
+     "B1 Parts with u = ln x: u′ = 1/x, v = −1/x",
+     "M1 Applies integration by parts to (ln x)/x²",
+     "A1 −(ln x)/x − 1/x",
+     "M1 Uses x = 1, t = 2 to find c (c = −3)",
+     "A1 t² = 6 − 2(1 + ln x)/x (any correct form)"
+    ]
    },
    "6": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Write a sin x + b cos x = R sin(x + α) with R = √(a²+b²) = 4 (maximum value)",
-     "So a² + b² = 16",
-     "Substitute the point: 4 sin(π/3 + α) = 2√3, giving α = π/3",
-     "a = R cos α = 4 cos(π/3) = 2",
-     "b = R sin α = 4 sin(π/3) = 2√3"
-    ],
-    "guidance": "M1 compare with R sin(x+α)/R cos(x±α) (or differentiate and set to 0). A1 deduce R = 4 (a²+b²=16). B1 form a correct equation for α, e.g. 2√3 = a(√3/2) + b/2. M1 solve to obtain α (= π/3 for R sin). R1 deduce a = 2. R1 deduce b = 2√3."
+     "M1 Compares with R sin(x + α) or R cos(x ± α) (or differentiates and sets to zero)",
+     "A1 R = 4, i.e. a² + b² = 16",
+     "B1 Correct equation, e.g. 4 sin(π/3 + α) = 2√3 or 2√3 = (√3/2)a + ½b",
+     "M1 Solves for α (α = π/3 for R sin(x + α)) or eliminates a variable",
+     "R1 a = 2",
+     "R1 b = 2√3"
+    ]
    },
    "10": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "The particle was decelerating for 12 ≤ t ≤ 20"
-    ],
-    "guidance": "B1: ticks the correct box. For 12 ≤ t ≤ 20 the speed (magnitude of velocity, from 18 down to 0) is decreasing, so the particle is decelerating."
+     "B1 B: decelerating for 12 ≤ t ≤ 20"
+    ]
    },
    "11": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1000 N"
-    ],
-    "guidance": "B1: circles the correct answer. On the point of moving, F = μR ⇒ 600 = 0.6·W ⇒ W = 1000 N (W is the weight = normal reaction)."
+     "B1 A: 1000 N"
+    ]
    },
    "12": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "p = −400"
-    ],
-    "guidance": "B1: circles the correct answer. Constant speed ⇒ resultant force = 0. i-components: 400 + p = 0 ⇒ p = −400 (the j-components 180 − 180 = 0 already balance)."
+     "B1 A: −400"
+    ]
    },
    "7(a)": {
     "type": "points",
     "points": [
-     "Sketch any cubic crossing the x-axis at three distinct points",
-     "Curve has a positive coefficient of x³ (rises from bottom-left to top-right, N-shaped with two turning points)"
-    ],
-    "guidance": "B1 sketches any cubic graph crossing the x-axis in three distinct places. B1 sketches a cubic with a positive coefficient of x³ (correct orientation: from lower-left up to upper-right)."
+     "B1 Cubic crossing the x-axis three times",
+     "B1 Shape consistent with positive x³ coefficient"
+    ]
    },
    "7(b)(i)": {
     "type": "points",
     "points": [
-     "f′(x) = 3x² + 6px",
-     "Set f′(x) = 0: 3x² + 6px = 0 ⇒ 3x(x + 2p) = 0 ⇒ x = 0 or x = −2p",
-     "x = 0 is a root of f′, so there is a turning point at x = 0, which is where the curve crosses the y-axis"
-    ],
-    "guidance": "M1 differentiate to f′(x) = 3x² + 6px (two terms, at least one correct). A1 solve 3x²+6px = 0 to obtain x = 0 (and x = −2p). R1 obtain the correct two roots and state that, since one root of f′ is x = 0, there must be a turning point on the y-axis."
+     "M1 f′(x) = 3x² + 6px (at least one term right)",
+     "A1 Solves 3x(x + 2p) = 0 (or checks f′(0) = 0)",
+     "R1 Roots x = 0 and x = −2p; x = 0 gives a turning point on the y-axis"
+    ]
    },
    "7(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Turning points at x = 0 and x = −2p; since p > 0, x = 0 is the minimum and x = −2p is the maximum",
-     "f(0) = q (value at the minimum on the y-axis)",
-     "f(−2p) = (−2p)³ + 3p(−2p)² + q = −8p³ + 12p³ + q = 4p³ + q (value at the maximum)",
-     "For three distinct real roots: maximum > 0 and minimum < 0 ⇒ 4p³ + q > 0 and q < 0",
-     "Range: −4p³ < q < 0"
-    ],
-    "guidance": "M1 deduce that turning point x = −2p is a maximum and x = 0 is the minimum (or sketch showing this). B1 f(0) = q and f(−2p) = 4p³ + q. M1 substitute x = −2p into f. A1 obtain f(−2p) = 4p³ + q. A1 deduce q < 0 or −4p³ < q (condone ≤). A1 (CAO) deduce −4p³ < q < 0."
+     "B1 x = −2p is the maximum and x = 0 the minimum (as p > 0)",
+     "M1 Substitutes x = −2p into f",
+     "A1 f(0) = q and f(−2p) = 4p³ + q",
+     "R1 Deduces q < 0 or q > −4p³",
+     "R1 −4p³ < q < 0 (CAO)"
+    ]
    },
    "8(a)": {
     "type": "points",
     "points": [
-     "Take logs (base 10) of both sides of V = pqᵗ: log₁₀ V = log₁₀(pqᵗ)",
-     "Apply log laws: log₁₀(pqᵗ) = log₁₀ p + log₁₀ qᵗ = log₁₀ p + t log₁₀ q",
-     "Hence log₁₀ V = log₁₀ p + t log₁₀ q"
-    ],
-    "guidance": "M1 take logs of both sides and form/use the simultaneous-like relationship (multiplication/power rules). R1 complete a rigorous argument to show log₁₀ V = log₁₀ p + t log₁₀ q."
+     "M1 Takes logs and uses the addition law",
+     "R1 log V = log p + t log q (AG)"
+    ]
    },
    "8(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Gradient of line = log₁₀ q ≈ (5.28 − 3.90)/(40 − 0) = 0.0345",
-     "Intercept = log₁₀ p ≈ 3.90",
-     "p = 10^3.90 ≈ 7940 (3 s.f.)",
-     "q = 10^0.0345 ≈ 1.08 (3 s.f.)"
-    ],
-    "guidance": "M1 use the gradient = log₁₀ q from the line of best fit; A1 q ≈ 1.08. M1 use the intercept log₁₀ p ≈ 3.90; A1 p ≈ 7940. Accept values read consistently from the candidate’s line of best fit; final answers to 3 s.f."
+     "M1 log₁₀p = 3.90 (or two simultaneous equations from the line)",
+     "M1 Gradient of line as log₁₀q, e.g. (5.28 − 3.90)/40 = 0.0345",
+     "A1 p = 7940 (awrt 8000)",
+     "A1 q = 1.08 (awrt 1.1)"
+    ]
    },
    "8(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Set V = 500000: 500000 = 7940 × 1.08ᵗ",
-     "Solve: 1.08ᵗ = 500000/7940 ⇒ t = log(62.97…)/log(1.08) ≈ 53.82",
-     "Round up to whole years: t = 54 years after 1970",
-     "Year = 1970 + 54 = 2024 (house first worth half a million in 2024)"
-    ],
-    "guidance": "M1 substitute V = 500000 into V = p·1.08ᵗ (their p, q). A1 t ≈ 53.82. A1F state the year (their part-(a) value + 1970), giving 2024 (accept 2023 with consistent rounding of t — MS shows answer 2023/2024 depending on values used). The MS typical value gives t ≈ 53.82 ⇒ 2023/2024."
+     "M1 Sets 500000 = 7940 × 1.08ᵗ (or log form)",
+     "M1 Solves for t (t ≈ 53.8, must exceed 40)",
+     "A1F 2023"
+    ]
    },
    "8(d)": {
     "type": "points",
     "points": [
-     "The answer relies on extrapolation well beyond the data range (data only to t = 40, i.e. 2010), so it may not be reliable",
-     "The trend/model may not continue: house prices can rise/fall differently in future, the market may change, so the prediction is uncertain"
-    ],
-    "guidance": "E1: comment that the result is found by extrapolation beyond the given data and the model may not continue to hold (e.g. market changes, crashes, improvements), so it may not be reliable."
+     "E1F Answer lies outside the 1970–2010 data range",
+     "E1 House prices may not keep growing the same way (e.g. a crash, or home improvements) — must be in context"
+    ]
    },
    "9(a)": {
     "type": "points",
     "points": [
-     "Write √(4 − 2x²) = √4 · √(1 − x²/2) = 2(1 − x²/2)^(1/2)",
-     "Binomial expansion: 2[1 + (1/2)(−x²/2) + …]",
-     "= 2[1 − x²/4 + …] = 2 − x²/2 (first two terms)"
-    ],
-    "guidance": "M1 take out factor of 2 (or 4 under the root) so the binomial form (1 + …)^(1/2) can be applied. R1 complete a rigorous argument to obtain the correct expansion 2 − x²/2."
+     "M1 Writes 2(1 − x²/2)^(1/2) ready for binomial expansion",
+     "R1 ≈ 2(1 − x²/4) = 2 − x²/2 (AG)"
+    ]
    },
    "9(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Valid when |x²/2| < 1",
-     "⇒ x² < 2 ⇒ |x| < √2 (equivalently −√2 < x < √2)"
-    ],
-    "guidance": "M1 compare x²/2 to 1, condone incorrect inequality, PI by |−2x²| < 4. A1 (ACF) obtain correct range of values |x| < √2."
+     "M1 Uses |x²/2| < 1",
+     "A1 |x| < √2 (any correct form)"
+    ]
    },
    "9(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "For small x, cos x ≈ 1 − x²/2, so √(cos x) ≈ √(1 − x²/2) ≈ 1 − x²/4 (using part (a) with x² replaced)",
-     "∫₀^0.4 √(cos x) dx ≈ ∫₀^0.4 (1 − x²/4) dx = [x − x³/12]₀^0.4",
-     "= 0.4 − (0.4)³/12 = 0.4 − 0.0064/12",
-     "≈ 0.39467"
-    ],
-    "guidance": "E1 explain that 0.4 radians is a small angle so cos x ≈ 1 − x²/2 applies. M1 use half of their part-(a) expansion for √(cos x). M1 integrate the expression (at least one term correct). A1 (CAO) obtain ≈ 0.39467 (exact 148/375)."
+     "E1 0.4 is small so cos x ≈ 1 − x²/2 (must mention 0.4 being small)",
+     "M1 Uses half of the (a) expansion, e.g. ∫(1 − x²/4) dx",
+     "M1 Integrates with at least one term correct",
+     "A1 0.39467 (CAO, at least 5 dp; 148/375 condoned)"
+    ]
    },
    "9(d)": {
     "type": "points",
     "points": [
-     "1.4 radians is not a small angle, so the small-angle approximation cos x ≈ 1 − x²/2 is not valid there",
-     "Also 1.4 > 0.664 (= the limiting value √(2/…) for validity / the x-range where the expansion is valid), so the approximation is not suitable"
-    ],
-    "guidance": "E1: state that 1.4 radians is not a small angle so the approximation is not suitable (must refer to small angle and 1.4), or state the expansion is invalid because 1.4 is bigger than 0.664 (limiting value for validity)."
+     "E1 1.4 rad is not a small angle so the approximation is invalid"
+    ]
    },
    "13(a)": {
     "type": "points",
     "points": [
-     "Released from rest (u = 0) and falls under gravity with a = g over distance s = h",
-     "Use v² = u² + 2as with u = 0, a = g, s = h: v² = 0 + 2gh",
-     "v = √(2gh)"
-    ],
-    "guidance": "M1 state appropriate suvat equation and identify u = 0, a = g, s = h (PI by v² = 0 + 2gh). R1 complete a rigorous argument, using consistent signs for s and a, to rearrange correctly and obtain v = √(2gh)."
+     "M1 v² = u² + 2as with u = 0, a = g, s = h",
+     "R1 Rearranges to v = √(2gh) with consistent signs (AG)"
+    ]
    },
    "13(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Using v = √(2gh) with g = 9.8 and h = 18: v = √(2 × 9.8 × 18) = √352.8 ≈ 18.8",
-     "Compare with measured value 20: 18.8 < 20",
-     "The model value (18.8) does not match the measured value (20), so the machine is faulty — the teacher’s claim is correct"
+     "M1 Substitutes two values to find the third, e.g. v = √(2 × 9.8 × 18)",
+     "A1 v ≈ 18.8 (awrt 19; or g ≈ 11, or h ≈ 20)",
+     "R1 Compares (e.g. 18.8 < 20) and concludes the teacher is right"
     ],
-    "guidance": "M1 substitute g = 9.8 and h = 18 into v = √(2gh). A1 obtain v ≈ 18.8 (AWRT 19 if v varies; AWRT 11 if finding g; AWRT 20 if finding h). R1 make an appropriate comparison (v measured 20 vs computed 18.8) and conclude the teacher is correct / machine is faulty."
+    "guidance": "Using g = 10 to get v ≈ 19 rounded to 20 and concluding the teacher is wrong is also accepted."
    },
    "14(a)": {
     "type": "points",
     "points": [
-     "Take moments about A (the shelf edge). The overhang AB = 6 cm; the 0.28 kg object hangs at the midpoint of AB, i.e. 0.03 m from A",
-     "The rod’s weight mg acts at its centre, 10 cm from B and so 10 − 6 = 4 cm = 0.04 m from A on the shelf side",
-     "Moments about A: 0.28g × 0.03 = mg × 0.04",
-     "So m = 0.28 × 0.03 / 0.04 = 0.21"
-    ],
-    "guidance": "B1 find a moment of a force about a point (form × distance). M1 form a fully correct moments equation including g on both sides, e.g. 0.28g(0.03) + 0·1·mg = 0.06g(0.28 + mg) form. A1 (AG) solve to show m = 0.21."
+     "B1 A correct moment (force × distance)",
+     "M1 Full moments equation, e.g. about A: mg × 0.04 = 0.28g × 0.03",
+     "A1 m = 0.21 (AG)"
+    ]
    },
    "14(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Object removed (rod now mass m = 0.21). n objects each 0.048 kg hang 1 cm from B, i.e. 6 − 1 = 5 cm = 0.05 m from A (on the overhang side)",
-     "For the rod to remain horizontal (about to tip about A): moment of hanging objects ≤ moment of rod weight",
-     "0.21g × 0.04 = 0.048g × 0.05 × n at the limiting case",
-     "n = (0.21 × 0.04)/(0.048 × 0.05) = 0.0084/0.0024 = 3.5",
-     "Maximum whole number: n = 3"
-    ],
-    "guidance": "M1 form a moments equation about A with the correct number of terms (can use m, 0.21, or their part-(a) m). A1F fully correct moments equation, term involving n. A1 obtain a fully correct integrated/simplified equation (n = 3.5). A1 (CSO) state maximum n = 3."
+     "M1 Moments equation for equilibrium with correct terms",
+     "A1F Term in n correct",
+     "A1 Fully correct equation, e.g. 0.21g × 0.04 = 0.048g × 0.05 × n, giving n = 3.5",
+     "A1 n = 3 (CSO)"
+    ]
    },
    "14(c)": {
     "type": "points",
     "points": [
-     "The rod is uniform (so its weight acts at the midpoint / centre)",
-     "Accept: the mass/weight of the rod acts at the middle; or the rod is in limiting equilibrium; or the rod is rigid"
-    ],
-    "guidance": "E1: state one valid assumption about the rod, e.g. the rod is uniform (weight acts at the centre), the rod is rigid, or it is in limiting equilibrium."
+     "E1 e.g. the rod is uniform (weight at its midpoint), or rigid"
+    ]
    },
    "15(a)": {
     "type": "points",
     "points": [
-     "Find side vectors: AB = OB − OA = [−620, −180]; CD = OD − OC = [930, 270]",
-     "CD = −1.5 × AB, so AB and CD are parallel (scalar multiple) — one pair of sides is parallel",
-     "But |CD| ≠ |AB| (1.5 times the length and opposite direction), so AB and CD are not equal: not a parallelogram",
-     "Check the other pair (BC and AD) are not parallel (gradients/ratios differ), confirming exactly one pair of parallel sides",
-     "Therefore ABCD is a trapezium but not a parallelogram"
-    ],
-    "guidance": "M1 find AB and CD (or BC and DA) correctly. A1 show CD = −1.5 AB (or equivalent ratio) so AB ∥ CD. A1 show the second pair BC and DA are not parallel (or AB ≠ CD). R1 (CSO) complete a rigorous argument deducing exactly one pair of parallel sides not equal in length ⇒ trapezium but not parallelogram (parallel sides not equal). NB: must make a clear concluding statement. If incorrect labelling used the max is M1 A0 A0 E1 R0."
+     "M1 Finds one of AB, CD, BC, DA (or a gradient) correctly",
+     "A1 AB = (−620, −180) and CD = (930, 270), or their gradients",
+     "A1 CD = −1.5 AB, or shows BC ≠ k × DA, e.g. BC = (−130, −840), DA = (−180, 750)",
+     "E1 AB ∥ CD (or BC not parallel to DA)",
+     "R1 Complete proof: one pair of parallel sides, unequal in length / other pair not parallel, so a trapezium but not a parallelogram"
+    ]
    },
    "15(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Displacement BC = OC − OB = [−340, −310] − [−210, 530] = [−130, −840]",
-     "Velocity = BC / 50 = [−2.6, −16.8]",
-     "Speed = |velocity| = √(2.6² + 16.8²) = √(6.76 + 282.24) = √289 = 17",
-     "Speed = 17 m s⁻¹"
-    ],
-    "guidance": "M1 use velocity/displacement relationship v = BC/50. M1 find the magnitude of BC (or of the velocity), √(2.6² + 16.8²). A1 obtain 17. A1 state correct speed with units, 17 m s⁻¹."
+     "M1 Divides BC = (−130, −840) by 50",
+     "M1 Finds the magnitude",
+     "A1 17",
+     "A1 17 m s⁻¹ with units"
+    ]
    },
    "16(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Maximum v occurs when dv/dt = 0",
-     "dv/dt = 10.512e^(−0.9t) − 0.009e^(0.3t)",
-     "Set = 0: 10.512e^(−0.9t) − 0.009e^(0.3t) = 0 ⇒ solve for t",
-     "t ≈ 5.886",
-     "Substitute back: v = 11.71 − 11.68e^(−0.9×5.886) − 0.03e^(0.3×5.886) ≈ 11.5",
-     "Justify it is a maximum (only stationary value with relevant t, or 2nd-derivative d²v/dt² = −9.4608e^(−0.9t) − 0.0027e^(0.3t) < 0 at t = 5.9), giving maximum (5.9, 11.5)",
-     "Maximum v ≈ 11.5 (1 d.p.)"
-    ],
-    "guidance": "M1 differentiate to dv/dt with at least one exponent term correct. A1 fully correct dv/dt. E1 explain maximum occurs where dv/dt = 0. M1 form dv/dt = 0 and solve for t. A1 t ≈ 5.886 (AWRT 5.9). M1 substitute t into v. A1 v ≈ 11.5 (AWRT 11.5). R1 (CSO) justify it is the maximum (only value, or 2nd derivative negative, or test/sketch). NB R1 can be earned even if E1 not awarded."
+     "M1 Differentiates with at least one exponential term correct",
+     "A1 dv/dt = 10.512e^(−0.9t) − 0.009e^(0.3t)",
+     "E1 Maximum where dv/dt = 0",
+     "M1 Solves dv/dt = 0 for t",
+     "A1 t = 5.886 (awrt 5.9)",
+     "M1 Substitutes t into v",
+     "A1 v = 11.5 (awrt)",
+     "R1 Justifies it is a maximum (only stationary point, or second derivative −0.063 < 0, or gradient test)"
+    ]
    },
    "16(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Distance s = ∫ v dt = ∫ [11.71 − 11.68e^(−0.9t) − 0.03e^(0.3t)] dt",
-     "s = 11.71t + (11.68/0.9)e^(−0.9t) − (0.03/0.3)e^(0.3t) + c = 11.71t + 12.978e^(−0.9t) − 0.1e^(0.3t) + c",
-     "When t = 0, s = 0: 0 = 12.978 − 0.1 + c ⇒ c = −12.878",
-     "s = 11.71t + 12.978e^(−0.9t) − 0.1e^(0.3t) − 12.878"
-    ],
-    "guidance": "M1 integrate at least one term correctly; M1 integrate at least two terms correctly. A1 fully correct integrated expression including constant. B1 interpret initial conditions s = 0 when t = 0 (PI by substituting correct values). M1 substitute s = 0, t = 0 to find c (must be clear; condone incorrect c). A1 (ACF) obtain correct distance expression with c = −12.878."
+     "M1 Integrates at least one term correctly",
+     "M1 Integrates at least two terms correctly",
+     "A1 s = 11.71t + 12.978e^(−0.9t) − 0.1e^(0.3t) + c",
+     "B1 s = 0 when t = 0",
+     "M1 Substitutes to find c",
+     "A1 c = −12.878, giving s = 11.71t + 12.978e^(−0.9t) − 0.1e^(0.3t) − 12.878"
+    ]
    },
    "16(c)": {
     "type": "points",
     "points": [
-     "Substitute t = 9.8 into s: s ≈ 99.99 m (the model predicts the athlete covers ≈ 99.99 m in 9.8 s)",
-     "This is very close to the actual 100 m, so the model is accurate / a good model",
-     "(Alternatively substitute s = 100 to find the model time, ≈ 9.801 s, again very close to 9.8 s)"
-    ],
-    "guidance": "M1 substitute t = 9.8 into their s (PI by 99.99), or substitute s = 100 to find t (PI by 9.801). A1 (CAO) compare s ≈ 99.99 with 100 m (or t ≈ 9.8) and conclude the model is accurate / a good model."
+     "M1 Finds s at t = 9.8 (99.99 m) or t for s = 100 (9.801 s)",
+     "A1 Compares with 100 m / 9.8 s and concludes the model is accurate"
+    ]
    },
    "17(a)": {
     "type": "points",
     "points": [
-     "Resolve vertically: R + T sin θ = Mg",
-     "Resolve horizontally with Newton’s 2nd law: T cos θ − F = Ma",
-     "Friction at limiting/moving value: F = μR",
-     "Substitute R = Mg − T sin θ: T cos θ − μ(Mg − T sin θ) = Ma",
-     "T cos θ + μT sin θ = Ma + μMg",
-     "T(cos θ + μ sin θ) = M(a + μg)",
-     "T = M(a + μg)/(cos θ + μ sin θ)"
-    ],
-    "guidance": "M1 resolve vertically into a three-term equation (condone sign/sin-cos error). A1 obtain R + T sin θ = Mg. M1 use Newton’s 2nd law horizontally as a three-term equation (condone sign/sin-cos error). A1 obtain T cos θ − F = Ma. B1 use F = μR to replace F. M1 eliminate R to a single equation. R1 (AG) complete a rigorous argument, dividing by (cos θ + μ sin θ), to obtain the given result. Must see T as a factor before dividing."
+     "M1 Resolves vertically (three terms)",
+     "A1 R + T sin θ = Mg",
+     "M1 Newton's second law horizontally (three terms)",
+     "A1 T cos θ − F = Ma",
+     "B1 Uses F = μR",
+     "M1 Eliminates R to get one equation",
+     "R1 T(cos θ + μ sin θ) = M(a + μg), hence the result (AG)"
+    ]
    },
    "17(b)": {
     "type": "points",
     "points": [
-     "The sledge is at rest (remains stationary), so it is not necessarily on the point of slipping",
-     "Therefore friction may not be acting at its limiting value (F = μR may not hold), so the relationship from part (a) — derived assuming limiting friction — may not be valid",
-     "Hence the value Lizzie calculates for μ may be incorrect"
-    ],
-    "guidance": "B1 explain the relationship may not be valid because the sledge is at rest so friction may not be acting at its limiting value. B1 identify that friction may not be limiting / sledge may not be on the point of slipping (accept reference to F ≤ μR)."
+     "B1 The sledge is at rest, so the relationship may not apply",
+     "B1 Friction may not be at its limiting value (F ≤ μR)"
+    ]
    }
   }
  },
  "math-aqa-7357-2019-p3": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "f(x) = arcsin x.",
     "parts": [
      {
       "code": "1",
-      "prompt": "f(x) = arcsin x\nState the maximum possible domain of f.\nTick (✓) one box.\nOptions: {x ∈ ℝ : −1 ≤ x ≤ 1}; {x ∈ ℝ : −π/2 ≤ x ≤ π/2}; {x ∈ ℝ : −π ≤ x ≤ π}; {x ∈ ℝ : −90 ≤ x ≤ 90}",
+      "prompt": "Give the largest possible domain of f.\nOptions: {x ∈ ℝ : −1 ≤ x ≤ 1}   {x ∈ ℝ : −π/2 ≤ x ≤ π/2}   {x ∈ ℝ : −π ≤ x ≤ π}   {x ∈ ℝ : −90 ≤ x ≤ 90}",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "Factorials.",
     "parts": [
      {
       "code": "2",
-      "prompt": "Find the value of 100! / (98! × 3!). Circle your answer.\nOptions: 50/147, 1650, 3300, 161700",
+      "prompt": "Evaluate 100!/(98! × 3!).\nOptions: 50/147   1650   3300   161700",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "u₁ = 1.",
     "parts": [
      {
       "code": "3",
-      "prompt": "Given u₁ = 1, determine which one of the formulae below defines an increasing sequence for n ≥ 1. Circle your answer.\nOptions: uₙ₊₁ = 1 + 1/uₙ ;  uₙ = 2 − 0.9ⁿ⁻¹ ;  uₙ₊₁ = −1 + 0.5uₙ ;  uₙ = 0.9ⁿ⁻¹",
+      "prompt": "Which formula gives an increasing sequence for n ≥ 1?\nOptions: uₙ₊₁ = 1 + 1/uₙ   uₙ = 2 − 0.9^(n−1)   uₙ₊₁ = −1 + 0.5uₙ   uₙ = 0.9^(n−1)",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
+    "scenario": "Region given by y ≤ (1 − 2x)(x + 3) and y − x ≤ 3 (axes on the question paper).",
     "parts": [
      {
       "code": "4",
-      "prompt": "Sketch the region defined by the inequalities y ≤ (1 − 2x)(x + 3) and y − x ≤ 3. Clearly indicate your region by shading it in and labelling it R. (Axes provided.)",
+      "prompt": "Sketch the region, shading it and labelling it R.",
       "marks": 3
      }
     ]
    },
    {
     "number": 5,
+    "scenario": "Circle x² + y² − 6x − 8y = 264. Chord AB subtends 0.9 radians at the centre (diagram on the question paper).",
     "parts": [
      {
       "code": "5",
-      "prompt": "A circle has equation x² + y² − 6x − 8y = 264. AB is a chord of the circle. The angle at the centre of the circle, subtended by AB, is 0.9 radians, as shown in the diagram. Find the area of the minor segment shaded on the diagram. Give your answer to three significant figures.",
+      "prompt": "Find the area of the shaded minor segment to 3 significant figures.",
       "marks": 5
      }
     ]
    },
    {
     "number": 6,
-    "scenario": "The three sides of a right-angled triangle have lengths a, b and c, where a, b, c ∈ ℤ (c is the hypotenuse; a and b are the two shorter sides).",
+    "scenario": "A right-angled triangle has integer sides a, b and hypotenuse c (diagram on the question paper).",
     "parts": [
      {
       "code": "6(a)",
-      "prompt": "State an example where a, b and c are all even.",
+      "prompt": "Give an example with a, b, c all even.",
       "marks": 1
      },
      {
       "code": "6(b)",
-      "prompt": "Prove that it is not possible for all of a, b and c to be odd.",
+      "prompt": "Prove a, b and c cannot all be odd.",
       "marks": 3
      }
     ]
    },
    {
     "number": 7,
+    "scenario": "The function (4x + 3)/(x − 1)².",
     "parts": [
      {
       "code": "7(a)",
-      "prompt": "Express (4x + 3)/(x − 1)² in the form A/(x − 1) + B/(x − 1)².",
+      "prompt": "Write it as A/(x − 1) + B/(x − 1)².",
       "marks": 3
      },
      {
       "code": "7(b)",
-      "prompt": "Show that ∫₃⁴ (4x + 3)/(x − 1)² dx = p + ln q, where p and q are rational numbers.",
+      "prompt": "Show ∫₃⁴ (4x + 3)/(x − 1)² dx = p + ln q with p, q rational.",
       "marks": 5
      }
     ]
    },
    {
     "number": 8,
-    "scenario": "A student is conducting an experiment in a laboratory to investigate how quickly liquids cool to room temperature. A beaker containing a hot liquid at an initial temperature of 75 °C cools so that the temperature, θ °C, of the liquid at time t minutes can be modelled by the equation θ = 5(4 + λe^(−kt)), where λ and k are constants. After 2 minutes the temperature falls to 68 °C.",
+    "scenario": "A liquid at 75 °C cools; its temperature θ °C after t minutes is modelled by θ = 5(4 + λe^(−kt)), λ and k constants. After 2 minutes it is 68 °C.",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Find the temperature of the liquid after 15 minutes. Give your answer to three significant figures.",
+      "prompt": "Find the temperature after 15 minutes to 3 significant figures.",
       "marks": 7
      },
      {
       "code": "8(b)(i)",
-      "prompt": "Find the room temperature of the laboratory, giving a reason for your answer.",
+      "prompt": "Find the laboratory's room temperature, with a reason.",
       "marks": 2
      },
      {
       "code": "8(b)(ii)",
-      "prompt": "Find the time taken in minutes for the liquid to cool to 1 °C above the room temperature of the laboratory.",
+      "prompt": "Find how long the liquid takes to reach 1 °C above room temperature.",
       "marks": 2
      },
      {
       "code": "8(c)",
-      "prompt": "Explain why the model might need to be changed if the experiment was conducted in a different place.",
+      "prompt": "Explain why the model might need changing if the experiment were done elsewhere.",
       "marks": 1
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "A curve has equation x²y² + xy⁴ = 12.",
+    "scenario": "Curve x²y² + xy⁴ = 12.",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Prove that the curve does not intersect the coordinate axes.",
+      "prompt": "Prove the curve does not meet either coordinate axis.",
       "marks": 2
      },
      {
       "code": "9(b)(i)",
-      "prompt": "Show that dy/dx = −(2xy + y³)/(2x² + 4xy²).",
+      "prompt": "Show dy/dx = −(2xy + y³)/(2x² + 4xy²).",
       "marks": 5
      },
      {
       "code": "9(b)(ii)",
-      "prompt": "Prove that the curve has no stationary points.",
+      "prompt": "Prove the curve has no stationary points.",
       "marks": 4
      },
      {
       "code": "9(b)(iii)",
-      "prompt": "In the case when x > 0, find the equation of the tangent to the curve when y = 1.",
+      "prompt": "For x > 0, find the equation of the tangent where y = 1.",
       "marks": 4
      }
     ]
    },
    {
     "number": 10,
-    "scenario": "A scatter diagram shows eight points which, reading left to right, descend from high on the upper-left towards the lower-right in a clear, tightly-clustered downward trend.",
+    "scenario": "A scatter diagram of y against x (on the question paper) with points closely following a downward trend.",
     "parts": [
      {
       "code": "10",
-      "prompt": "Which of the options below best describes the correlation shown in the diagram? Tick (✓) one box.\nOptions: moderate positive; strong positive; moderate negative; strong negative",
+      "prompt": "Describe the correlation.\nOptions: moderate positive   strong positive   moderate negative   strong negative",
       "marks": 1
      }
     ]
    },
    {
     "number": 11,
+    "scenario": "Lenny must survey 50 women aged 18 to 29 in a town centre.",
     "parts": [
      {
       "code": "11",
-      "prompt": "Lenny is one of a team of people interviewing shoppers in a town centre. He is asked to survey 50 women between the ages of 18 and 29. Identify the name of this type of sampling. Circle your answer.\nOptions: simple random, stratified, quota, systematic",
+      "prompt": "Name this sampling method.\nOptions: simple random   stratified   quota   systematic",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
-    "scenario": "Amelia decides to analyse the heights of members of her school rowing club. The heights (cm) of a random sample of 10 rowers are: Jess 162, Nell 169, Liv 172, Neve 156, Ann 146, Tori 161, Maya 159, Kath 164, Darcy 157, Jen 160.",
+    "scenario": "Heights (cm) of a random sample of 10 rowers: Jess 162, Nell 169, Liv 172, Neve 156, Ann 146, Tori 161, Maya 159, Kath 164, Darcy 157, Jen 160. An outlier is more than 2 standard deviations from the mean.",
     "parts": [
      {
       "code": "12(a)",
-      "prompt": "Any value more than 2 standard deviations from the mean may be regarded as an outlier. Verify that Ann’s height is an outlier. Fully justify your answer.",
+      "prompt": "Verify, with full justification, that Ann's height is an outlier.",
       "marks": 4
      },
      {
       "code": "12(b)",
-      "prompt": "Amelia thinks she may have written down Ann’s height incorrectly. If Ann’s height were discarded, state with a reason what, if any, difference this would make to the mean and standard deviation.",
+      "prompt": "If Ann's height were removed, state with reasons the effect on the mean and standard deviation.",
       "marks": 2
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "Patrick is practising his skateboarding skills. On each day, he has 30 attempts at performing a difficult trick. Every time he attempts the trick, there is a probability of 0.2 that he will fall off his skateboard. Assume that the number of times he falls off on any given day may be modelled by a binomial distribution.",
+    "scenario": "Each day Patrick tries a skateboard trick 30 times; P(fall) = 0.2 each attempt. Daily number of falls modelled as binomial.",
     "parts": [
      {
       "code": "13(a)(i)",
-      "prompt": "Find the mean number of times he falls off in a day.",
+      "prompt": "Find the mean number of falls per day.",
       "marks": 1
      },
      {
       "code": "13(a)(ii)",
-      "prompt": "Find the variance of the number of times he falls off in a day.",
+      "prompt": "Find the variance of the number of falls per day.",
       "marks": 1
      },
      {
       "code": "13(b)(i)",
-      "prompt": "Find the probability that, on a particular day, he falls off exactly 10 times.",
+      "prompt": "Find P(exactly 10 falls in a day).",
       "marks": 2
      },
      {
       "code": "13(b)(ii)",
-      "prompt": "Find the probability that, on a particular day, he falls off 5 or more times.",
+      "prompt": "Find P(5 or more falls in a day).",
       "marks": 3
      },
      {
       "code": "13(c)(i)",
-      "prompt": "Patrick has 30 attempts to perform the trick on each of 5 consecutive days. Calculate the probability that he will fall off his skateboard at least 5 times on each of the 5 days.",
+      "prompt": "Over 5 consecutive days (30 attempts each), find P(at least 5 falls on every day).",
       "marks": 2
      },
      {
       "code": "13(c)(ii)",
-      "prompt": "Explain why it may be unrealistic to use the same value of 0.2 for the probability of falling off for all 5 days.",
+      "prompt": "Explain why keeping p = 0.2 for all 5 days may be unrealistic.",
       "marks": 1
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "A survey was conducted into the health of 120 teachers. The survey recorded whether or not they had suffered from a range of four health issues in the past year. Their physical exercise level was categorised as low, medium or high: 50 teachers had a low exercise level, 40 a medium level and 30 a high level. Results table (rows = health issue, columns = Low / Medium / High exercise): Back trouble 14 / 7 / 10; Stress 38 / 14 / 5; Depression 9 / 2 / 1; Headache/Migraine 4 / 5 / 5.",
+    "scenario": "Survey of 120 teachers by exercise level (low 50, medium 40, high 30) and health issues in the past year. Back trouble: 14, 7, 10; Stress: 38, 14, 5; Depression: 9, 2, 1; Headache/Migraine: 4, 5, 5 (low, medium, high).",
     "parts": [
      {
       "code": "14(a)(i)",
-      "prompt": "Find the probability that a randomly selected teacher suffers from back trouble and has a high exercise level.",
+      "prompt": "Find P(back trouble and high exercise).",
       "marks": 1
      },
      {
       "code": "14(a)(ii)",
-      "prompt": "Find the probability that a randomly selected teacher suffers from depression.",
+      "prompt": "Find P(depression).",
       "marks": 2
      },
      {
       "code": "14(a)(iii)",
-      "prompt": "Find the probability that a randomly selected teacher suffers from stress, given that they have a low exercise level.",
+      "prompt": "Find P(stress | low exercise).",
       "marks": 2
      },
      {
       "code": "14(b)",
-      "prompt": "For teachers in the survey with a low exercise level, explain why the events ‘suffers from back trouble’ and ‘suffers from stress’ are not mutually exclusive.",
+      "prompt": "For low-exercise teachers, explain why 'back trouble' and 'stress' are not mutually exclusive.",
       "marks": 2
      }
     ]
    },
    {
     "number": 15,
+    "scenario": "Jamal tests at 5% whether more rainfall means greater wheat yield. Sample of 10 years gives PMCC 0.567. Critical values for n = 10: 1-tailed 5%/2.5%/1%/0.5% (2-tailed 10%/5%/2%/1%) are 0.549, 0.632, 0.716, 0.765.",
     "parts": [
      {
       "code": "15",
-      "prompt": "Jamal, a farmer, claims that the larger the rainfall, the greater the yield of wheat from his farm. He decides to investigate his claim, at the 5% level of significance. He measures the rainfall in centimetres and the yield in kilograms for a random sample of ten years. He correctly calculates the product moment correlation coefficient between rainfall and yield for his sample to be 0.567. The table of critical values for a sample size of 10 is: 1-tailed significance 5%, 2.5%, 1%, 0.5% (equivalently 2-tailed 10%, 5%, 2%, 1%) with critical values 0.549, 0.632, 0.716, 0.765 respectively. Determine what Jamal’s conclusion to his investigation should be, justifying your answer.",
+      "prompt": "Decide, with justification, what Jamal should conclude.",
       "marks": 3
      }
     ]
    },
    {
     "number": 16,
+    "scenario": "Large data set (Family Food). A graph (on the question paper) shows salt purchased per person per week in England, 2001–02 to 2014, falling overall with fluctuations, on a y-axis that does not start at zero. Sugar: 2014 mean 78.9 g, s.d. 25.0 g; a 2018 sample of 918 people had mean 80.4 g.",
     "parts": [
      {
       "code": "16(a)",
-      "prompt": "A graph shows the amount of salt, in grams, purchased per person per week in England between 2001–02 and 2014, based upon the Large Data Set. The line generally falls over the period (with fluctuations) but the vertical (Salt g) axis does not start at zero. Meera believes that the amount of salt consumed by people decreased greatly during this period. Gemma says that this is not the case. Using your knowledge of the Large Data Set, give two reasons why Gemma may be correct.",
+      "prompt": "Meera says salt consumption fell greatly; give two reasons, using knowledge of the data set, why Gemma may be right to disagree.",
       "marks": 2
      },
      {
       "code": "16(b)",
-      "prompt": "It is known that the mean amount of sugar purchased per person in England in 2014 was 78.9 grams, with a standard deviation of 25.0 grams. In 2018, a sample of 918 people had a mean of 80.4 grams of sugar purchased per person. Investigate, at the 5% level of significance, whether the mean amount of sugar purchased per person in England has changed between 2014 and 2018. Assume that the survey data is a random sample taken from a normal distribution and that the standard deviation has remained the same.",
+      "prompt": "Test at 5% whether mean sugar purchased per person has changed since 2014, assuming normality and unchanged s.d.",
       "marks": 6
      },
      {
       "code": "16(c)",
-      "prompt": "Another test is performed to determine whether the mean amount of fat purchased per person has changed between 2014 and 2018. At the 10% significance level, the null hypothesis is rejected. With reference to the 10% significance level, explain why it is not necessarily true that there has been a change.",
+      "prompt": "A test on fat purchases rejects H₀ at 10%. Referring to the 10% level, explain why a change has not necessarily happened.",
       "marks": 2
      }
     ]
    },
    {
     "number": 17,
-    "scenario": "Elizabeth’s Bakery makes brownies. It is known that the mass, X grams, of a brownie may be modelled by a normal distribution. 10% of the brownies have a mass less than 30 grams. 80% of the brownies have a mass greater than 32.5 grams.",
+    "scenario": "Brownie mass X g is normally distributed; 10% weigh less than 30 g and 80% weigh more than 32.5 g.",
     "parts": [
      {
       "code": "17(a)",
@@ -17404,7 +17307,7 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "17(c)",
-      "prompt": "Brownies are baked in batches of 13. Calculate the probability that, in a batch of brownies, no more than 3 brownies are less than 35 grams. You may assume that the masses of brownies are independent of each other.",
+      "prompt": "In a batch of 13 (independent masses), find P(no more than 3 are under 35 g).",
       "marks": 2
      }
     ]
@@ -17412,614 +17315,587 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "{x ∈ ℝ : −1 ≤ x ≤ 1}"
-    ],
-    "guidance": "B1: ticks the correct response. arcsin x is only defined for inputs in [−1, 1], so the maximum domain is {x ∈ ℝ : −1 ≤ x ≤ 1}."
+     "B1 A: {x ∈ ℝ : −1 ≤ x ≤ 1}"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1650"
-    ],
-    "guidance": "B1: circles the correct response. 100!/(98!·3!) = (100·99)/(3!) = 9900/6 = 1650."
+     "B1 B: 1650"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "uₙ = 2 − 0.9ⁿ⁻¹"
-    ],
-    "guidance": "B1: circles the correct response. uₙ = 2 − 0.9ⁿ⁻¹ has 0.9ⁿ⁻¹ decreasing, so 2 − 0.9ⁿ⁻¹ increases towards 2; it is the only increasing sequence."
+     "B1 B: uₙ = 2 − 0.9^(n−1)"
+    ]
    },
    "4": {
     "type": "points",
     "points": [
-     "Draw the quadratic y = (1 − 2x)(x + 3): a ∩-shaped parabola (negative x² coefficient) crossing the x-axis at x = −3 and x = 0.5, with two intersections on the x-axis above the axis between the roots",
-     "Draw the straight line y = x + 3, passing through (−3, 0) and (0, 3)",
-     "Shade the region R below the parabola (y ≤ quadratic) and below/right of the line (y ≤ x + 3), bounded by both, and label it R"
-    ],
-    "guidance": "M1 draw the quadratic with correct orientation (∩-shape), vertex above the x-axis and two roots at x = −3 and x = 0.5. A1 label all correct points of intersection for the quadratic (crosses x-axis at −3 and 0.5). A1F draw the correct straight line y = x + 3, and shade the correct region (FT their quadratic). Lines must be solid; condone a missing R label."
+     "M1 ∩-shaped quadratic with vertex above the x-axis and two x-intercepts",
+     "A1 Intercepts −3, 0.5 and 3 labelled, vertex in the second quadrant",
+     "A1F Line through (−3, 0) and (0, 3), with the correct region below both shaded (solid lines)"
+    ]
    },
    "5": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Complete the square: (x − 3)² + (y − 4)² = 264 + 9 + 16 = 289, so radius r = 17",
-     "Area of sector = ½ r²θ = ½ × 17² × 0.9 = 130.05",
-     "Area of triangle = ½ r² sin θ = ½ × 17² × sin 0.9 = 113.19",
-     "Area of segment = sector − triangle = 130.05 − 113.19 = 16.86… ≈ 16.9 (3 s.f.)"
-    ],
-    "guidance": "M1 use an appropriate method to complete the square (radius² = 3² + 4² + 264 = 289). A1 deduce radius = 17. M1 use ½ r²θ for the sector and ½ r² sin θ for the triangle (clearly shown or on the diagram). M1 area of segment = sector − triangle. A1 obtain 16.9 (AWRT, 3 s.f.)."
+     "M1 Completes the square: (x − 3)² + (y − 4)² = 289",
+     "A1 Radius 17",
+     "M1 Sector area ½ × 17² × 0.9 = 130.05",
+     "M1 Triangle area ½ × 17² × sin 0.9 = 113.19",
+     "A1 Segment area 16.9 (awrt)"
+    ]
    },
    "10": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "strong negative"
-    ],
-    "guidance": "B1: ticks the correct box. The points lie close to a downward-sloping line, indicating a strong negative correlation."
+     "B1 D: strong negative"
+    ]
    },
    "11": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "quota"
-    ],
-    "guidance": "B1: circles the correct answer. Selecting a fixed number (50) of a specified group (women aged 18–29) is quota sampling."
+     "B1 C: quota"
+    ]
    },
    "15": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "One-tailed test (claim is “larger rainfall ⇒ greater yield”, i.e. positive correlation) at the 5% level, sample size 10",
-     "Critical value from the table = 0.549",
-     "Compare: 0.567 > 0.549",
-     "There is sufficient evidence, at the 5% level, to support Jamal’s claim that the larger the rainfall, the greater the yield"
-    ],
-    "guidance": "B1 identify the correct critical value 0.549 (1-tailed, 5%). M1 compare 0.567 correctly with their chosen critical value from the table. R1F make the correct inference: as the sample value exceeds the critical value, there is sufficient/significant evidence of positive correlation, so Jamal’s claim is supported (FT their critical value)."
+     "B1 Critical value 0.549 (one-tailed 5%)",
+     "M1 Compares 0.567 > 0.549",
+     "R1F Significant evidence that more rainfall goes with greater yield (positive correlation)"
+    ]
    },
    "6(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "a = 6, b = 8, c = 10 (the 6, 8, 10 right-angled triangle; any all-even Pythagorean triple)"
-    ],
-    "guidance": "B1: states an appropriate even Pythagorean triple, e.g. (6, 8, 10). Accept any valid all-even triple such as (12, 16, 20)."
+     "B1 e.g. 6, 8, 10"
+    ]
    },
    "6(b)": {
     "type": "points",
     "points": [
-     "Assume, for contradiction, that a, b and c are all odd. Write a = 2m + 1 and b = 2n + 1",
-     "a² + b² = (2m + 1)² + (2n + 1)² = 4m² + 4m + 1 + 4n² + 4n + 1 = 2(2m² + 2m + 2n² + 2n + 1), which is even",
-     "By Pythagoras, c² = a² + b², so c² is even, hence c is even — contradicting c being odd",
-     "Therefore it is not possible for all of a, b and c to be odd"
-    ],
-    "guidance": "M1 use Pythagoras’ theorem with at least two sides written as odd (e.g. a = 2m + 1, b = 2n + 1), algebraically or in words. R1 (CSO) complete a rigorous argument: a² + b² is even ⇒ c² even ⇒ c even, contradicting the assumption that c is odd, so all three cannot be odd."
+     "B1 Assumes a and b odd, e.g. a = 2m + 1, b = 2n + 1 (different unknowns)",
+     "M1 Uses Pythagoras with the odd sides: a² + b² = 4m² + 4m + 4n² + 4n + 2",
+     "R1 This is even so c² and hence c is even; so not all three can be odd (CSO)"
+    ]
    },
    "7(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Write 4x + 3 = A(x − 1) + B",
-     "Compare/substitute: x = 1 ⇒ 7 = B, so B = 7",
-     "Compare x-coefficients (or x = 0): A = 4",
-     "So (4x + 3)/(x − 1)² = 4/(x − 1) + 7/(x − 1)²"
-    ],
-    "guidance": "B1 form 4x + 3 = A(x − 1) + B. M1 substitute x = 1 (or compare coefficients) to find A or B. A1 obtain A = 4 and B = 7."
+     "B1 4x + 3 ≡ A(x − 1) + B",
+     "M1 Substitution or comparing coefficients to find A or B",
+     "A1 A = 4, B = 7"
+    ]
    },
    "7(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Integrate using part (a): ∫ [4/(x − 1) + 7/(x − 1)²] dx = 4 ln(x − 1) − 7/(x − 1)",
-     "Evaluate from 3 to 4: [4 ln 3 − 7/3] − [4 ln 2 − 7/2]",
-     "= 4(ln 3 − ln 2) + (7/2 − 7/3) = 4 ln(3/2) + 7/6",
-     "= ln(81/16) + 7/6, so p = 7/6 and q = 81/16"
-    ],
-    "guidance": "M1 integrate their expression with at least one term correct. A1F integrate fully correctly to A ln(x − 1) − B/(x − 1) (FT their A and B). M1 substitute the limits correctly into their integrated expression. M1 use at least one law of logs to combine. R1 (CSO) complete the argument to the correct exact form p + ln q with p = 7/6 and q = 81/16 (4 ln(3/2) = ln(3/2)⁴ = ln(81/16))."
+     "M1 Integrates with at least one term correct",
+     "A1F 4 ln(x − 1) − 7/(x − 1)",
+     "M1 Substitutes limits 3 and 4",
+     "M1 Uses a log law correctly",
+     "R1 7/6 + ln(81/16), i.e. p = 7/6, q = 81/16"
+    ]
    },
    "8(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Use t = 0, θ = 75: 75 = 5(4 + λ) ⇒ 15 = 4 + λ ⇒ λ = 11",
-     "Use t = 2, θ = 68: 68 = 5(4 + 11e^(−2k)) ⇒ 13.6 = 4 + 11e^(−2k) ⇒ 11e^(−2k) = 9.6",
-     "e^(−2k) = 9.6/11 ⇒ k = −½ ln(9.6/11) = 0.068066…",
-     "θ at t = 15: θ = 5(4 + 11e^(−0.068066×15)) ≈ 39.8 °C (3 s.f.)"
-    ],
-    "guidance": "M1 use t = 0 and θ = 75 to form an equation; A1 obtain λ = 11. M1 use t = 2 and θ = 68 to form an equation in k; M1 solve correctly to find k; A1 k = 0.068066 (AWRT 0.07). M1 substitute their λ, k and t = 15 into the model. A1 obtain the correct temperature AWRT 39.8 (accept 39.9)."
+     "M1 Uses t = 0, θ = 75",
+     "A1 λ = 11",
+     "M1 Uses t = 2, θ = 68 with their λ",
+     "M1 Solves for k",
+     "A1 k = 0.068066 (awrt 0.07)",
+     "M1 Substitutes t = 15",
+     "A1 39.8 °C (awrt)"
+    ]
    },
    "8(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "As t → ∞, e^(−kt) → 0, so θ → 5 × 4 = 20",
-     "Room temperature = 20 °C, because the model predicts the temperature will approach this value as t becomes large (the liquid cools towards room temperature)"
-    ],
-    "guidance": "B1 (CAO) state correct room temperature 20 °C (condone missing units). E1 explain that as t becomes large the temperature predicted by the model approaches room temperature, since the e^(−kt) term tends to 0."
+     "B1 20 °C",
+     "E1 As t grows the model's temperature approaches this value"
+    ]
    },
    "8(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1 °C above room temperature means θ = 21",
-     "Solve 5(4 + 11e^(−0.068066t)) = 21 ⇒ 4 + 11e^(−0.068066t) = 4.2 ⇒ 11e^(−0.068066t) = 0.2",
-     "e^(−0.068066t) = 0.2/11 ⇒ t = 58.87 ≈ 59 minutes"
-    ],
-    "guidance": "M1 use the model with their k and θ = (their room temperature) + 1 = 21 to form an equation for t. A1 obtain the correct value of t (AWRT 59 minutes). ISW."
+     "M1 Sets 5(4 + 11e^(−0.068066t)) = 21",
+     "A1 t ≈ 58.9 (awrt 59)"
+    ]
    },
    "8(c)": {
     "type": "points",
     "points": [
-     "In a different place the room temperature is likely to be different (warmer or cooler), so the limiting value 20 in the model would change",
-     "Hence the constant term (and possibly the rate constant) in the model would need to be altered to fit the new surroundings"
-    ],
-    "guidance": "E1: explain that a different place may have a different room temperature, so the model (its limiting value / cooling rate) might need to change. Accept any equivalent reference to a change in room temperature / surroundings."
+     "E1 e.g. a different room temperature or cooling rate there"
+    ]
    },
    "9(a)": {
     "type": "points",
     "points": [
-     "On the y-axis x = 0: LHS = 0²·y² + 0·y⁴ = 0 ≠ 12, so the curve does not meet the y-axis",
-     "On the x-axis y = 0: LHS = x²·0² + x·0⁴ = 0 ≠ 12, so the curve does not meet the x-axis",
-     "Since the equation gives 0 = 12 (a contradiction) when either coordinate is 0, the curve does not intersect the coordinate axes"
-    ],
-    "guidance": "E1 demonstrate by substitution that x = 0 or y = 0 leads to LHS = 0. R1 complete a rigorous argument: 0 = 12 is a contradiction, so the curve does not intersect either axis."
+     "E1 Shows x = 0 or y = 0 makes the left side 0",
+     "R1 0 ≠ 12, so the curve meets neither axis"
+    ]
    },
    "9(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Differentiate implicitly: 2xy² + x²·2y(dy/dx) + y⁴ + x·4y³(dy/dx) = 0",
-     "Collect dy/dx terms: (2x²y + 4xy³)(dy/dx) = −(2xy² + y⁴)",
-     "dy/dx = −(2xy² + y⁴)/(2x²y + 4xy³)",
-     "Factor a y from top and bottom: = −y(2xy + y³)/[y(2x² + 4xy²)] = −(2xy + y³)/(2x² + 4xy²)"
-    ],
-    "guidance": "M1 use implicit differentiation. A1 correct product-rule differentiation of LHS (at least one pair correct). A1 differentiate the whole equation fully correctly. M1 collect the dy/dx terms and factorise. R1 (AG) complete a convincing argument, cancelling the common factor of y, to obtain the required result."
+     "M1 Uses implicit differentiation",
+     "M1 Product rule on the left side (at least one pair right)",
+     "A1 2xy² + 2x²y dy/dx + y⁴ + 4xy³ dy/dx = 0",
+     "M1 Collects dy/dx terms and factorises",
+     "R1 Cancels y to reach the given result (AG)"
+    ]
    },
    "9(b)(ii)": {
     "type": "points",
     "points": [
-     "Stationary points need dy/dx = 0, i.e. 2xy + y³ = 0 ⇒ y(2x + y²) = 0",
-     "Since the curve never meets y = 0 (from part (a)), we need 2x + y² = 0, i.e. y² = −2x",
-     "Substitute into the curve x²y² + xy⁴ = 12: factor x²y² + xy²·y² = x²y² + xy²(−2x) = x²y² − 2x²y² = −x²y²",
-     "So −x²y² = 12; but −x²y² ≤ 0 for all real x, y, so this is impossible — there are no stationary points"
-    ],
-    "guidance": "M1 set dy/dx = 0 to form an equation (PI by 2xy + y³ = 0). A1 obtain y² = −2x (or x = −y²/2). M1 substitute y² = −2x (or x = −y²/2) into the curve equation. R1 (AG) complete a convincing argument: the equation reduces to −x²y² = 12, which is impossible since −x²y² < 0, so there are no stationary points."
+     "M1 Sets dy/dx = 0: 2xy + y³ = 0",
+     "A1 y² = −2x (or x = −y²/2)",
+     "M1 Substitutes into the curve equation",
+     "R1 Gets −x²y² = 12, impossible since −x²y² ≤ 0, so no stationary points"
+    ]
    },
    "9(b)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Put y = 1 into the curve: x²·1 + x·1 = 12 ⇒ x² + x − 12 = 0 ⇒ (x + 4)(x − 3) = 0",
-     "Since x > 0, x = 3, so the point is (3, 1)",
-     "Gradient: dy/dx = −(2·3·1 + 1³)/(2·3² + 4·3·1²) = −(6 + 1)/(18 + 12) = −7/30",
-     "Tangent: y − 1 = −(7/30)(x − 3)"
-    ],
-    "guidance": "M1 substitute y = 1 into the curve to obtain the correct quadratic x² + x − 12 = 0 (ACF). R1 deduce x = 3 (taking x > 0). M1 substitute x = 3, y = 1 into their dy/dx. A1 (ACF, ISW) obtain the correct tangent equation y − 1 = −(7/30)(x − 3)."
+     "M1 y = 1 gives x² + x − 12 = 0",
+     "R1 x = 3 (x > 0)",
+     "M1 Substitutes into dy/dx: −7/30",
+     "A1 y − 1 = −(7/30)(x − 3) (any correct form)"
+    ]
    },
    "12(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Mean x̄ = (162 + 169 + 172 + 156 + 146 + 161 + 159 + 164 + 157 + 160)/10 = 1606/10 = 160.6",
-     "Standard deviation s.d = 6.8 (using the sample data; accept 6.8 or better)",
-     "Lower limit for an outlier: x̄ − 2 × s.d = 160.6 − 2 × 6.8 = 147",
-     "Ann’s height is 146; since 146 < 147, it is more than 2 standard deviations below the mean, so it is an outlier"
-    ],
-    "guidance": "B1 correct mean 160.6 (accept 161). B1 correct standard deviation 6.8 (accept 7.2 or better; AWRT 6.8). M1 use x̄ − 2 × s.d (146.2/147). R1F compare 146 with their limit and correctly conclude Ann’s height is an outlier (FT their mean and s.d)."
+     "B1 Mean 160.6 (accept 161)",
+     "B1 s.d. 6.8 (accept 7.2)",
+     "M1 Mean − 2 × s.d. = 147 (their values)",
+     "R1F 146 < 147 so Ann is an outlier"
+    ]
    },
    "12(b)": {
     "type": "points",
     "points": [
-     "Removing Ann’s height (146, the lowest, below-the-mean value) increases the mean: new mean ≈ 162.2",
-     "Removing this low outlier makes the data less spread out, so the standard deviation decreases: new s.d ≈ 5.03"
-    ],
-    "guidance": "B1 state the mean would increase, with a valid reason (a below-mean / low value has been removed); accept new mean ≈ 162.2. B1 state the standard deviation would decrease, with a valid reason (data less spread / outlier removed); accept new s.d ≈ 5.03."
+     "B1 Mean increases (to 162.2), as Ann's height is below the mean",
+     "B1 s.d. decreases (to 5.03), as the data become less spread"
+    ]
    },
    "13(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "X ~ B(30, 0.2); mean = np = 30 × 0.2 = 6"
-    ],
-    "guidance": "B1: obtain the correct mean, 6."
+     "B1 6"
+    ]
    },
    "13(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Variance = np(1 − p) = 30 × 0.2 × 0.8 = 4.8"
-    ],
-    "guidance": "B1: obtain the correct variance, 4.8."
+     "B1 4.8"
+    ]
    },
    "13(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X = 10) = C(30, 10) × 0.2¹⁰ × 0.8²⁰",
-     "= 0.0355 (AWRT)"
-    ],
-    "guidance": "M1 use the binomial formula with n = 30, p = 0.2 for P(X = 10) (PI by the correct answer). A1 obtain the correct probability, AWRT 0.0355 (accept 0.035–0.036)."
+     "M1 Uses B(30, 0.2): ³⁰C₁₀ 0.2¹⁰ 0.8²⁰",
+     "A1 0.0355 (awfw 0.035 to 0.036)"
+    ]
    },
    "13(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X ≥ 5) = 1 − P(X ≤ 4)",
-     "P(X ≤ 4) = 0.255 (from the binomial distribution)",
-     "P(X ≥ 5) = 1 − 0.255 = 0.745 (AWRT)"
-    ],
-    "guidance": "M1 calculate P(X ≤ 4) = 0.255, or state P(X ≥ 5) = 1 − P(X ≤ 4). M1 subtract their value from 1. A1 obtain the correct probability, AWRT 0.745 (accept 0.74–0.75)."
+     "M1 Finds P(X ≤ 4) = 0.255 (or P(X ≤ 5))",
+     "M1 Uses 1 − P(X ≤ 4)",
+     "A1 0.745 (awfw 0.74 to 0.75)"
+    ]
    },
    "13(c)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Each day P(at least 5 falls) = 0.745; days are independent",
-     "P(at least 5 on each of 5 days) = 0.745⁵ = 0.229 (AWRT)"
-    ],
-    "guidance": "M1 raise their part-(b)(ii) probability to the power 5. A1F obtain the correct probability, AWRT 0.229 (FT their 0.745)."
+     "M1 Raises their 0.745 to the power 5",
+     "A1F 0.229"
+    ]
    },
    "13(c)(ii)": {
     "type": "points",
     "points": [
-     "The probability of falling off is unlikely to stay exactly 0.2 every day",
-     "As Patrick practises over the 5 days he is likely to improve, so the probability of falling off should decrease (alternatively tiredness/fatigue could change it)"
-    ],
-    "guidance": "E1: give a valid reason that the probability/likelihood may change across the 5 days (e.g. Patrick improves with practice, or an external factor / tiredness changes it)."
+     "E1 The probability may change over the days, e.g. as Patrick improves"
+    ]
    },
    "14(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(back trouble and high exercise) = 10/120 = 1/12 ≈ 0.0833"
-    ],
-    "guidance": "B1: obtain the correct probability, 10/120 (or equivalent)."
+     "B1 10/120 = 1/12"
+    ]
    },
    "14(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Total with depression = 9 + 2 + 1 = 12",
-     "P(depression) = 12/120 = 1/10 = 0.1"
-    ],
-    "guidance": "M1 find the total number with depression (9 + 2 + 1 = 12). A1 obtain the correct probability, 12/120 (or equivalent)."
+     "M1 Depression total 9 + 2 + 1 = 12",
+     "A1 12/120 = 1/10"
+    ]
    },
    "14(a)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Restrict to the 50 low-exercise teachers; 38 of them suffer from stress",
-     "P(stress | low exercise) = 38/50 = 19/25 = 0.76"
-    ],
-    "guidance": "M1 use conditional probability, P(stress | low exercise) = 38/50. A1 (ACF) obtain the correct probability, 38/50 (or equivalent)."
+     "M1 Conditional probability using the low-exercise total",
+     "A1 38/50"
+    ]
    },
    "14(b)": {
     "type": "points",
     "points": [
-     "Among low-exercise teachers, 14 suffer from back trouble and 38 from stress: 14 + 38 = 52",
-     "But there are only 50 low-exercise teachers, and 52 > 50, so some teachers must suffer from both back trouble and stress",
-     "Since the two events can occur together (their intersection is non-empty), they are not mutually exclusive"
-    ],
-    "guidance": "M1 show 14 + 38 = 52, or compare 14/50 + 38/50 with 1. R1 compare 52 with 50 (or the probabilities with 1) and conclude that, because the totals overlap, the two events are not mutually exclusive."
+     "M1 14 + 38 = 52 (or 14/50 + 38/50)",
+     "R1 52 > 50 (or sum > 1), so some teachers have both: not mutually exclusive"
+    ]
    },
    "16(a)": {
     "type": "points",
     "points": [
-     "The vertical (Salt g) axis does not start at zero, so the scale exaggerates the apparent fall — the actual decrease is much smaller than it looks",
-     "The data is the amount of salt purchased, not the amount consumed; food (and so salt) may be thrown away or wasted, so purchasing data does not directly measure consumption"
-    ],
-    "guidance": "E1 state a correct first reason involving the y-axis (no scale / the y-axis does not start at zero, so the graph is misleading). E1 state a correct second reason involving salt purchased not consumed (data measures purchasing, implying the data is not directly comparable to consumption)."
+     "E1 The y-axis does not start at zero (or has no scale), exaggerating the fall",
+     "E1 The data are for salt purchased as separate items, not salt consumed"
+    ]
    },
    "16(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Two-tailed test. H₀: μ = 78.9, H₁: μ ≠ 78.9 (population mean amount of sugar)",
-     "Test statistic z = (80.4 − 78.9)/(25.0/√918) = 1.5/(25.0/30.30) = 1.82",
-     "Critical value for a two-tailed test at 5% is z = 1.96",
-     "Since 1.82 < 1.96, do not reject H₀: there is insufficient evidence to suggest the mean amount of sugar purchased has changed"
-    ],
-    "guidance": "B1 state both hypotheses correctly for a two-tailed test (accept μ; H₀: population mean is 78.9). M1 formulate the test statistic (80.4 − 78.9)/(25.0/√918) or use the correct probability / acceptance region. A1 obtain the correct value of the test statistic 1.82 (or correct probability). M1 compare 1.82 with 1.96 (or the probability with 0.05, or 80.4 with the acceptance region). A1 infer H₀ accepted (CSO). E1 correctly conclude in context that there is insufficient evidence that the mean amount of sugar purchased has changed (CSO)."
+     "B1 H₀: μ = 78.9, H₁: μ ≠ 78.9",
+     "M1 Uses the sample-mean distribution: z = (80.4 − 78.9)/(25.0/√918)",
+     "A1 z = 1.82 (or p = 0.0345 / 0.0691, or acceptance region [77.3, 80.5])",
+     "M1 Compares with 1.96 (or 0.025 / 0.05, or the region)",
+     "A1 H₀ not rejected (CSO)",
+     "E1 Insufficient evidence that mean sugar purchased has changed (CSO, in context)"
+    ]
    },
    "16(c)": {
     "type": "points",
     "points": [
-     "Testing at the 10% significance level means there is a 10% chance of rejecting the null hypothesis when it is actually true (a Type I error)",
-     "So rejecting H₀ does not prove a change has occurred — the rejection could be due to this 10% chance, so the conclusion may be incorrect"
-    ],
-    "guidance": "E1 explain the role of the significance level in rejecting the null hypothesis in error (accept a reference to a Type I error). E1 explain that there is a 10% chance for this to occur / refer to the 10% chance, so the conclusion that there has been a change may be incorrect."
+     "E1 The significance level is the chance of wrongly rejecting a true H₀ (Type I error)",
+     "E1 So there is a 10% chance this has happened"
+    ]
    },
    "17(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "X ~ N(μ, σ²). P(X < 30) = 0.1 ⇒ (30 − μ)/σ = −1.2816",
-     "P(X > 32.5) = 0.8 ⇒ P(X < 32.5) = 0.2 ⇒ (32.5 − μ)/σ = −0.8416",
-     "Subtract the equations: (30 − μ) − (32.5 − μ) = σ(−1.2816 + 0.8416) ⇒ −2.5 = −0.44σ ⇒ σ = 5.68",
-     "Then μ = 30 + 1.2816 × 5.68 ≈ 37.3",
-     "Mean ≈ 37.3, standard deviation ≈ 5.68"
-    ],
-    "guidance": "B1 obtain a z-value from the inverse normal (AWRT −1.28 or −1.282). M1 form an equation in μ and σ using the standardised result and z-value for 0.1 (z = −1.2816). M1 form the second equation using the standardised result and z-value for 0.8 (z = −0.8416, since P(X < 32.5) = 0.2). A1 obtain both equations correctly. M1 solve the two simultaneous equations. A1 σ ≈ 5.68 (AWFW 5.2–5.9). A1 μ ≈ 37.3 (AWFW 37.1–37.5). ISW."
+     "B1 A z-value: −1.2816 (awfw −1.29 to −1.28) or −0.8416",
+     "M1 One equation, e.g. (30 − μ)/σ = −1.2816",
+     "M1 Second equation, e.g. (32.5 − μ)/σ = −0.8416",
+     "A1 Both equations correct",
+     "M1 Solves simultaneously",
+     "A1 σ = 5.68 (awfw 5.2 to 5.9)",
+     "A1 μ = 37.3 (awfw 37.1 to 37.5)"
+    ]
    },
    "17(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "X is continuous, so P(X = 35) = 0",
-     "Therefore P(X ≠ 35) = 1"
-    ],
-    "guidance": "B1: state the correct probability, 1 (since for a continuous distribution the probability of a single exact value is 0)."
+     "B1 1"
+    ]
    },
    "17(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Standardise using μ ≈ 37.3 and σ ≈ 5.68: z = (35 − 37.3)/5.68 ≈ −0.40",
-     "P(X < 35) = P(Z < −0.40) ≈ 0.344"
-    ],
-    "guidance": "M1 use their μ and σ to find P(X < 35) (PI by the correct probability, or by a correctly calculated z-value with their μ and σ). A1F obtain the probability to 2 decimal places or better, 0.344 (FT their μ and σ; with μ = 37.3, σ = 5.68 the answer is ≈ 0.344, accept 0.31–0.37)."
+     "M1 Uses their μ and σ",
+     "A1F 0.344"
+    ]
    },
    "17(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Let Y = number of brownies (out of 13) with mass less than 35 g; Y ~ B(13, 0.344)",
-     "P(no more than 3) = P(Y ≤ 3) = 0.294 (AWRT)"
-    ],
-    "guidance": "M1 set up the binomial model with n = 13 and their p (= 0.344) and use P(Y ≤ 3). A1F obtain the probability to 2 decimal places or better, 0.294 (FT their p; accept 0.28–0.31 if p = 0.31–0.37)."
+     "M1 Y ~ B(13, their 0.344)",
+     "A1F P(Y ≤ 3) = 0.294"
+    ]
    }
   }
  },
  "math-aqa-7357-2021n-p1": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "Quadratic inequality (x − 3)(2x + 7) > 0.",
     "parts": [
      {
       "code": "1",
-      "prompt": "State the set of values of x which satisfies the inequality\n(x − 3)(2x + 7) > 0\nTick (✓) one box.\n  □ {x : −7/2 < x < 3}\n  □ {x : x < −3 or x > 7/2}\n  □ {x : x < −7/2 or x > 3}\n  □ {x : −3 < x < 7/2}",
+      "prompt": "Choose the solution set.\nOptions: {x : −7/2 < x < 3}   {x : x < −3 or x > 7/2}   {x : x < −7/2 or x > 3}   {x : −3 < x < 7/2}",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "y = ln(5x).",
     "parts": [
      {
       "code": "2",
-      "prompt": "Given that y = ln(5x), find dy/dx.\nCircle your answer.\n  dy/dx = 1/x      dy/dx = 1/(5x)      dy/dx = 5/x      dy/dx = ln 5",
+      "prompt": "Choose dy/dx.\nOptions: 1/x   1/(5x)   5/x   ln 5",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "A geometric sequence has sum to infinity −3. Every term is multiplied by −2 to give a new sequence.",
     "parts": [
      {
       "code": "3",
-      "prompt": "A geometric sequence has a sum to infinity of −3.\nA second sequence is formed by multiplying each term of the original sequence by −2.\nWhat is the sum to infinity of the new sequence?\nCircle your answer.\n  The sum to infinity does not exist      −6      −3      6",
+      "prompt": "Choose the sum to infinity of the new sequence.\nOptions: it does not exist   −6   −3   6",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
+    "scenario": "A proof by contradiction that an irrational number times a non-zero rational number is always irrational.",
     "parts": [
      {
       "code": "4",
-      "prompt": "Millie is attempting to use proof by contradiction to show that the result of multiplying an irrational number by a non-zero rational number is always an irrational number.\nSelect the assumption she should make to start her proof.\nTick (✓) one box.\n  □ Every irrational multiplied by a non-zero rational is irrational.\n  □ Every irrational multiplied by a non-zero rational is rational.\n  □ There exists a non-zero rational and an irrational whose product is irrational.\n  □ There exists a non-zero rational and an irrational whose product is rational.",
+      "prompt": "Choose the assumption the proof should start from.\nOptions: every irrational × non-zero rational is irrational   every irrational × non-zero rational is rational   some non-zero rational and irrational have an irrational product   some non-zero rational and irrational have a rational product",
       "marks": 1
      }
     ]
    },
    {
     "number": 5,
-    "scenario": "The line L has equation 3y − 4x = 21. The point P has coordinates (15, 2).",
+    "scenario": "Line L: 3y − 4x = 21; point P(15, 2).",
     "parts": [
      {
       "code": "5(a)",
-      "prompt": "Find the equation of the line perpendicular to L which passes through P.",
+      "prompt": "Find the equation of the line through P perpendicular to L.",
       "marks": 2
      },
      {
       "code": "5(b)",
-      "prompt": "Hence, find the shortest distance from P to L.",
+      "prompt": "Hence find the shortest distance from P to L.",
       "marks": 4
      }
     ]
    },
    {
     "number": 6,
+    "scenario": "Arithmetic series: 9th term is 3 and S₂₁ = 42 (Sₙ = sum of first n terms). A second arithmetic series has first term −18 and common difference 3/4, with sum of first n terms Tₙ.",
     "parts": [
      {
       "code": "6(a)",
-      "prompt": "The ninth term of an arithmetic series is 3. The sum of the first n terms of the series is Sₙ and S₂₁ = 42. Find the first term and common difference of the series.",
+      "prompt": "Find the first term and common difference of the first series.",
       "marks": 4
      },
      {
       "code": "6(b)",
-      "prompt": "A second arithmetic series has first term −18 and common difference ¾. The sum of the first n terms of this series is Tₙ. Find the value of n such that Tₙ = Sₙ.",
+      "prompt": "Find n such that Tₙ = Sₙ.",
       "marks": 3
      }
     ]
    },
    {
     "number": 7,
-    "scenario": "The equation x² = x³ + x − 3 has a single solution, x = α.",
+    "scenario": "x² = x³ + x − 3 has exactly one root, x = α.",
     "parts": [
      {
       "code": "7(a)",
-      "prompt": "By considering a suitable change of sign, show that α lies between 1.5 and 1.6",
+      "prompt": "Use a change of sign to show 1.5 < α < 1.6.",
       "marks": 2
      },
      {
       "code": "7(b)",
-      "prompt": "Show that the equation x² = x³ + x − 3 can be rearranged into the form\nx² = x − 1 + 3/x",
+      "prompt": "Show the equation can be written as x² = x − 1 + 3/x.",
       "marks": 2
      },
      {
       "code": "7(c)",
-      "prompt": "Use the iterative formula\nx_(n+1) = √(xₙ − 1 + 3/xₙ)\nwith x₁ = 1.5, to find x₂, x₃ and x₄, giving your answers to four decimal places.",
+      "prompt": "Using xₙ₊₁ = √(xₙ − 1 + 3/xₙ) with x₁ = 1.5, find x₂, x₃, x₄ to 4 decimal places.",
       "marks": 2
      },
      {
       "code": "7(d)",
-      "prompt": "Hence, deduce an interval of width 0.001 in which α lies.",
+      "prompt": "Hence give an interval of width 0.001 containing α.",
       "marks": 1
      }
     ]
    },
    {
     "number": 8,
+    "scenario": "Trigonometric equation 9sin²θ + sin2θ = 8.",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Given that 9sin²θ + sin 2θ = 8, show that 8cot²θ − 2cot θ − 1 = 0",
+      "prompt": "Show that the equation leads to 8cot²θ − 2cotθ − 1 = 0.",
       "marks": 4
      },
      {
       "code": "8(b)",
-      "prompt": "Hence, solve 9sin²θ + sin 2θ = 8 in the interval 0 < θ < 2π. Give your answers to two decimal places.",
+      "prompt": "Hence solve 9sin²θ + sin2θ = 8 for 0 < θ < 2π, to 2 decimal places.",
       "marks": 3
      },
      {
       "code": "8(c)",
-      "prompt": "Solve 9sin²(2x − π/4) + sin(4x − π/2) = 8 in the interval 0 < x < π/2. Give your answers to one decimal place.",
+      "prompt": "Solve 9sin²(2x − π/4) + sin(4x − π/2) = 8 for 0 < x < π/2, to 1 decimal place.",
       "marks": 2
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "The table below shows the annual global production of plastics, P, measured in millions of tonnes per year, for six selected years.\nYear: 1980, 1985, 1990, 1995, 2000, 2005\nP: 75, 94, 120, 156, 206, 260\nIt is thought that P can be modelled by P = A × 10^(kt) where t is the number of years after 1980 and A and k are constants.",
+    "scenario": "Annual global plastics production P (million tonnes): 1980: 75, 1985: 94, 1990: 120, 1995: 156, 2000: 206, 2005: 260. Proposed model P = A × 10^(kt), t = years after 1980.",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Show algebraically that the graph of log₁₀ P against t should be linear.",
+      "prompt": "Show algebraically that log₁₀P against t should give a straight line.",
       "marks": 3
      },
      {
       "code": "9(b)(i)",
-      "prompt": "Complete the table below.\nt: 0, 5, 10, 15, 20, 25\nlog₁₀ P: 1.88, 1.97, 2.08, ?, 2.31, ?",
+      "prompt": "Complete the table of log₁₀P for t = 0, 5, 10, 15, 20, 25 (given: 1.88, 1.97, 2.08, —, 2.31, —).",
       "marks": 1
      },
      {
       "code": "9(b)(ii)",
-      "prompt": "Plot log₁₀ P against t, and draw a line of best fit for the data.",
+      "prompt": "Plot log₁₀P against t and draw a line of best fit (grid on the question paper).",
       "marks": 2
      },
      {
       "code": "9(c)(i)",
-      "prompt": "Hence, show that k is approximately 0.02",
+      "prompt": "Hence show that k ≈ 0.02.",
       "marks": 2
      },
      {
       "code": "9(c)(ii)",
-      "prompt": "Find the value of A.",
+      "prompt": "Find A.",
       "marks": 1
      },
      {
       "code": "9(d)",
-      "prompt": "Using the model with k = 0.02 predict the number of tonnes of annual global production of plastics in 2030.",
+      "prompt": "With k = 0.02, predict annual production in 2030.",
       "marks": 2
      },
      {
       "code": "9(e)",
-      "prompt": "Using the model with k = 0.02 predict the year in which P first exceeds 8000",
+      "prompt": "With k = 0.02, predict the first year in which P exceeds 8000.",
       "marks": 3
      },
      {
       "code": "9(f)",
-      "prompt": "Give a reason why it may be inappropriate to use the model to make predictions about future annual global production of plastics.",
+      "prompt": "Give one reason the model may be unsuitable for predicting future production.",
       "marks": 1
      }
     ]
    },
    {
     "number": 10,
+    "scenario": "y = tan x. The region bounded by y = tan²x and the horizontal line meeting the curve at x = ±π/4 is shaded (diagram on the question paper).",
     "parts": [
      {
       "code": "10(a)",
-      "prompt": "Given that y = tan x, use the quotient rule to show that dy/dx = sec²x",
+      "prompt": "Use the quotient rule to show that d(tan x)/dx = sec²x.",
       "marks": 3
      },
      {
       "code": "10(b)",
-      "prompt": "The region enclosed by the curve y = tan²x and the horizontal line, which intersects the curve at x = −π/4 and x = π/4, is shaded in the diagram below. (The shaded region lies between the curve y = tan²x and the horizontal line y = 1, for −π/4 ≤ x ≤ π/4.)\nShow that the area of the shaded region is π − 2. Fully justify your answer.",
+      "prompt": "Show, with full justification, that the shaded area is π − 2.",
       "marks": 5
      }
     ]
    },
    {
     "number": 11,
+    "scenario": "Curve C passes through (1, 6) and dy/dx = (1/6)(xy)².",
     "parts": [
      {
       "code": "11",
-      "prompt": "A curve, C, passes through the point with coordinates (1, 6). The gradient of C is given by\ndy/dx = (1/6)(xy)²\nShow that C intersects the coordinate axes at exactly one point and state the coordinates of this point. Fully justify your answer.",
+      "prompt": "Show, with full justification, that C meets the coordinate axes at exactly one point, and give its coordinates.",
       "marks": 8
      }
     ]
    },
    {
     "number": 12,
-    "scenario": "The equation of a curve is (x + y)² = 4y + 2x + 8. The curve intersects the positive x-axis at the point P.",
+    "scenario": "Curve (x + y)² = 4y + 2x + 8 meets the positive x-axis at P.",
     "parts": [
      {
       "code": "12(a)",
-      "prompt": "Show that the gradient of the curve at P is −3/2",
+      "prompt": "Show that the gradient at P is −3/2.",
       "marks": 6
      },
      {
       "code": "12(b)",
-      "prompt": "Find the equation of the normal to the curve at P, giving your answer in the form ax + by = c, where a, b and c are integers.",
+      "prompt": "Find the normal at P in the form ax + by = c with integers a, b, c.",
       "marks": 2
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "Given that P(x) = 125x³ + 150x² + 55x + 6",
+    "scenario": "P(x) = 125x³ + 150x² + 55x + 6.",
     "parts": [
      {
       "code": "13(a)",
-      "prompt": "Use the factor theorem to prove that (5x + 1) is a factor of P(x).",
+      "prompt": "Use the factor theorem to prove (5x + 1) is a factor of P(x).",
       "marks": 2
      },
      {
       "code": "13(b)",
-      "prompt": "Factorise P(x) completely.",
+      "prompt": "Factorise P(x) fully.",
       "marks": 3
      },
      {
       "code": "13(c)",
-      "prompt": "Hence, prove that 250n³ + 300n² + 110n + 12 is a multiple of 12 when n is a positive whole number.",
+      "prompt": "Hence prove 250n³ + 300n² + 110n + 12 is a multiple of 12 for every positive whole number n.",
       "marks": 3
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "The curve C is defined for t ≥ 0 by the parametric equations x = t² + t and y = 4t² − t³. C is shown in the diagram (the curve starts at the origin, rises to a maximum, then descends crossing the positive x-axis and continuing below).",
+    "scenario": "Curve C: x = t² + t, y = 4t² − t³ for t ≥ 0; it starts at O, rises, then crosses the positive x-axis (diagram on the question paper). A is the area between C and the x-axis, A = ∫₀ᵇ y dx.",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "Find the gradient of C at the point where it intersects the positive x-axis.",
+      "prompt": "Find the gradient of C where it crosses the positive x-axis.",
       "marks": 5
      },
      {
       "code": "14(b)(i)",
-      "prompt": "The area A enclosed between C and the x-axis is given by A = ∫₀ᵇ y dx. Find the value of b.",
+      "prompt": "Find b.",
       "marks": 1
      },
      {
       "code": "14(b)(ii)",
-      "prompt": "Use the substitution y = 4t² − t³ to show that A = ∫₀⁴ (4t² + 7t³ − 2t⁴) dt",
+      "prompt": "Using y = 4t² − t³, show that A = ∫₀⁴ (4t² + 7t³ − 2t⁴) dt.",
       "marks": 3
      },
      {
       "code": "14(b)(iii)",
-      "prompt": "Find the value of A.",
+      "prompt": "Find A.",
       "marks": 1
      }
     ]
    },
    {
     "number": 15,
+    "scenario": "Small-angle work with sin x − sin x cos 2x.",
     "parts": [
      {
       "code": "15(a)",
-      "prompt": "Show that sin x − sin x cos 2x ≈ 2x³ for small values of x.",
+      "prompt": "Show that sin x − sin x cos 2x ≈ 2x³ for small x.",
       "marks": 3
      },
      {
       "code": "15(b)",
-      "prompt": "Hence, show that the area between the graph with equation y = √(8(sin x − sin x cos 2x)), the positive x-axis and the line x = 0.25 can be approximated by Area ≈ 2^m × 5^n where m and n are integers to be found.",
+      "prompt": "Hence show the area under y = √(8(sin x − sin x cos 2x)) between x = 0 and x = 0.25 is approximately 2ᵐ × 5ⁿ, finding integers m and n.",
       "marks": 4
      },
      {
       "code": "15(c)(i)",
-      "prompt": "Explain why ∫₆.₃^6.4 2x³ dx is not a suitable approximation for ∫₆.₃^6.4 (sin x − sin x cos 2x) dx",
+      "prompt": "Explain why ∫ from 6.3 to 6.4 of 2x³ dx is not a good approximation to ∫ from 6.3 to 6.4 of (sin x − sin x cos 2x) dx.",
       "marks": 1
      },
      {
       "code": "15(c)(ii)",
-      "prompt": "Explain how ∫₆.₃^6.4 (sin x − sin x cos 2x) dx may be approximated by ∫ₐᵇ 2x³ dx for suitable values of a and b.",
+      "prompt": "Explain how that integral could instead be approximated by ∫ₐᵇ 2x³ dx for suitable a and b.",
       "marks": 2
      }
     ]
@@ -18027,620 +17903,587 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "{x : x < −7/2 or x > 3}"
-    ],
-    "guidance": "B1 ticks the correct box. Roots of (x−3)(2x+7)=0 are x=3 and x=−7/2; upward parabola positive outside the roots."
+     "B1 C: {x : x < −7/2 or x > 3}"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "dy/dx = 1/x"
-    ],
-    "guidance": "B1 circles correct answer. ln(5x)=ln5+ln x, derivative of constant is 0, so dy/dx = 1/x."
+     "B1 A: dy/dx = 1/x"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "6"
-    ],
-    "guidance": "R1 circles correct answer. Multiplying every term by −2 multiplies the sum to infinity by −2: −2 × (−3) = 6."
+     "R1 D: 6"
+    ]
    },
    "4": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "There exists a non-zero rational and an irrational whose product is rational."
-    ],
-    "guidance": "R1 ticks the correct box. Proof by contradiction assumes the negation of the statement."
+     "R1 D: there exists a non-zero rational and an irrational whose product is rational"
+    ]
    },
    "11": {
     "type": "points",
     "points": [
-     "Separate variables: ∫ (1/y²) dy = ∫ (1/6) x² dx",
-     "−1/y = x³/18 + c",
-     "Use (1, 6): −1/6 = 1/18 + c ⇒ c = −2/9",
-     "So −1/y = x³/18 − 2/9, i.e. y = 1/(2/9 − x³/18)",
-     "y can never equal 0 (since −1/y is undefined at y = 0), so C does not cross the x-axis",
-     "At x = 0: −1/y = −2/9 ⇒ y = 9/2 = 4.5",
-     "Therefore C intersects the coordinate axes at exactly one point: (0, 4.5)"
-    ],
-    "guidance": "M1 separate variables to ∫ A/y² dy = ∫ Bx² dx; M1 integrate correctly; A1 obtain integrated equation; M1 substitute (1,6) to find c = −2/9; E1F explain y cannot equal 0 (y⁻¹ undefined) so no x-axis intercept; M1 substitute x = 0; A1 obtain y = 4.5; R1 deduce and state the single point (0, 4.5) and that C does not intersect the x-axis, CSO."
+     "M1 Separates variables: ∫ y^(−2) dy = ∫ (1/6)x² dx",
+     "M1 Integrates one side correctly",
+     "A1 −1/y = x³/18 + c",
+     "M1 Uses (1, 6) to find c = −2/9",
+     "E1F Explains y cannot be 0 (1/y undefined), so C does not meet the x-axis",
+     "M1 Puts x = 0 to find the y-intercept",
+     "A1 y = 9/2",
+     "R1 Concludes C meets the axes only at (0, 4.5)"
+    ]
    },
    "5(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "4y + 3x = 53 (or y = −3/4 x + 53/4)"
-    ],
-    "guidance": "M1 uses negative reciprocal of gradient of L (gradient of L is 4/3, so perpendicular gradient is −3/4). A1 obtains correct equation through (15,2), any correct form. 4×2 + 3×15 = 53."
+     "M1 Uses the negative reciprocal gradient −3/4 through (15, 2)",
+     "A1 4y + 3x = 53 (or equivalent)"
+    ]
    },
    "5(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Solve 3y − 4x = 21 with 4y + 3x = 53 simultaneously → foot of perpendicular (3, 11)",
-     "Distance from P(15,2) to (3,11) = √((15−3)² + (2−11)²) = √(144 + 81) = √225 = 15",
-     "Shortest distance = 15"
-    ],
-    "guidance": "M1 eliminate one variable to find point of intersection; M1 use distance formula between (15,2) and another point; M1 use distance formula for (15,2) and intersection point; A1 obtains 15 CAO."
+     "M1 Starts solving 3y − 4x = 21 with their perpendicular line (eliminates a variable), or gives the correct intersection",
+     "M1 Uses the distance formula between (15, 2) and another point (not the origin)",
+     "M1 Distance (or distance²) from (15, 2) to their intersection (3, 11)",
+     "A1 15"
+    ]
    },
    "6(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "a + 8d = 3",
-     "(21/2)(2a + 20d) = 42 → a + 10d = 2",
-     "a = 7, d = −0.5"
-    ],
-    "guidance": "B1 a+8d=3; B1 sum equation (21/2)(2a+20d)=42 oe; M1 solve simultaneously with elimination; A1 correct a and d."
+     "B1 a + 8d = 3",
+     "B1 (21/2)(2a + 20d) = 42, i.e. a + 10d = 2",
+     "M1 Solves their pair simultaneously",
+     "A1 a = 7, d = −0.5"
+    ]
    },
    "6(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Tₙ = (n/2)(−36 + 0.75(n−1)); Sₙ = (n/2)(14 − 0.5(n−1))",
-     "Equate Tₙ = Sₙ and solve: n = 0 or n = 41",
-     "n = 41"
+     "B1F A correct expression for Sₙ or Tₙ, e.g. (n/2)(14 − 0.5(n − 1)) or (n/2)(−36 + 0.75(n − 1))",
+     "M1 Equates the two sums and finds a non-zero n",
+     "R1 n = 41"
     ],
-    "guidance": "B1F at least one correct (unsimplified) sum expression; M1 equate Sₙ and Tₙ and find non-zero n; R1 deduce n = 41."
+    "guidance": "n = 0 must be rejected."
    },
    "7(a)": {
     "type": "points",
     "points": [
-     "Let f(x) = x³ − x² + x − 3 (= 0 at the root)",
-     "f(1.5) = −0.375 < 0",
-     "f(1.6) = 0.136 > 0",
-     "Change of sign and f continuous ⇒ α lies between 1.5 and 1.6"
-    ],
-    "guidance": "M1 rearrange to f(x)=0 and evaluate f at least once in [1.5,1.6]; R1 complete with correct evaluation either side of root and reference to change of sign."
+     "M1 Writes f(x) = x³ − x² + x − 3 = 0 and evaluates f at a value in [1.5, 1.6]",
+     "R1 f(1.5) = −0.375 < 0, f(1.6) = 0.136 > 0, change of sign so 1.5 < α < 1.6"
+    ]
    },
    "7(b)": {
     "type": "points",
     "points": [
-     "x² = x³ + x − 3 ⇒ x³ = x² − x + 3 (move terms)",
-     "Divide by x (or cancel): x² = x − 1 + 3/x"
-    ],
-    "guidance": "M1 isolate x³ or divide by x and cancel (condone one slip); R1 complete argument showing the given result with the three terms in correct order."
+     "M1 Makes x³ the subject or divides by x",
+     "R1 Reaches x² = x − 1 + 3/x"
+    ]
    },
    "7(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x₂ = 1.5811",
-     "x₃ = 1.5743",
-     "x₄ = 1.5748"
-    ],
-    "guidance": "M1 obtains any one value correct to ≥3 dp (ignore labels); A1 obtains x₂, x₃, x₄ correct to 4 dp with no extras beyond x₄."
+     "M1 One correct value to at least 3 d.p.",
+     "A1 x₂ = 1.5811, x₃ = 1.5743, x₄ = 1.5748"
+    ]
    },
    "7(d)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1.574 ≤ α ≤ 1.575"
-    ],
-    "guidance": "R1 states an interval of width 0.001 which includes 1.5743 and 1.5748. Condone strict inequalities or correct inequality in words."
+     "R1 1.574 ≤ α ≤ 1.575 (width 0.001 containing 1.5743 and 1.5748)"
+    ]
    },
    "8(a)": {
     "type": "points",
     "points": [
-     "Use sin 2θ = 2 sin θ cos θ: 9sin²θ + 2sin θ cos θ = 8",
-     "Use 8 = 8(cot²θ + 1)·sin²θ via 1 + cot²θ = cosec²θ i.e. 8 = 8cosec²θ·sin²θ; so 9 + 2cot θ = 8cosec²θ = 8(cot²θ + 1)",
-     "Divide through by sin²θ and rearrange to 8cot²θ − 2cot θ − 1 = 0"
-    ],
-    "guidance": "B1 recall sin2θ=2sinθcosθ; M1 use 1+cot²θ=cosec²θ; M1 divide through by sin²θ; R1 complete rearrangement to the given result (AG)."
+     "B1 Uses sin2θ = 2sinθcosθ",
+     "M1 Uses cot²θ + 1 = cosec²θ (or tan²θ + 1 = sec²θ)",
+     "M1 Divides through by sin²θ (or cos²θ)",
+     "R1 Completes to 8cot²θ − 2cotθ − 1 = 0 (answer given)"
+    ]
    },
    "8(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "8cot²θ − 2cot θ − 1 = 0 ⇒ cot θ = −1/4 or cot θ = 1/2",
-     "tan θ = −4 or tan θ = 2",
-     "θ = 1.11, 1.82, 4.25, 4.96"
-    ],
-    "guidance": "M1 solve for cot θ or tan θ (PI by 2 and −4, or 1/2, or two correct answers); A1 two correct values; A1 all four correct with no extras in interval, AWRT 1.11, 1.82, 4.25, 4.96 CAO."
+     "M1 cotθ = −1/4 or 1/2, i.e. tanθ = −4 or 2",
+     "A1 Two correct values",
+     "A1 θ = 1.11, 1.82, 4.25, 4.96 only"
+    ]
    },
    "8(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Replace θ with (2x − π/4): set 2x − π/4 = 1.107…, 1.815…",
-     "x = 0.9, 1.3"
-    ],
-    "guidance": "M1 sets 2x − π/4 equal to at least one of the solutions (PI by a correct answer); A1 obtains correct AWRT values (rounded from 0.94627… and 1.300058…) CSO, condone extra values outside interval."
+     "M1 Sets 2x − π/4 equal to one of their solutions",
+     "A1 x = 0.9, 1.3"
+    ]
    },
    "9(a)": {
     "type": "points",
     "points": [
-     "Take log₁₀ of both sides: log₁₀ P = log₁₀(A × 10^(kt))",
-     "log₁₀ P = log₁₀ A + log₁₀ 10^(kt) = log₁₀ A + kt",
-     "This is of the form Y = mt + c (linear in t with gradient k and intercept log₁₀ A)"
-    ],
-    "guidance": "M1 take log₁₀ of both sides (or state A = 10^c); A1 obtains log₁₀ P = log₁₀ A + log₁₀ 10^(kt) oe; R1 complete rigorous argument to log₁₀ P = kt + log₁₀ A showing it is linear."
+     "M1 Takes log₁₀ of both sides",
+     "A1 log₁₀P = log₁₀A + log₁₀10^(kt)",
+     "R1 log₁₀P = log₁₀A + kt, a linear form"
+    ]
    },
    "9(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "At t = 15: log₁₀ P = 2.19",
-     "At t = 25: log₁₀ P = 2.41"
-    ],
-    "guidance": "B1 completes the table (log₁₀ 156 ≈ 2.19, log₁₀ 260 ≈ 2.41)."
+     "B1 2.19 (t = 15) and 2.41 (t = 25)"
+    ]
    },
    "9(b)(ii)": {
     "type": "points",
     "points": [
-     "Plot the six points (t, log₁₀ P) correctly (allow ± one small square)",
-     "Draw a ruled straight line of best fit from t = 0 to t = 25"
-    ],
-    "guidance": "M1 plots at least four points correctly; A1 draws a ruled line of best fit from t=0 to t=25 or better, CSO."
+     "M1 At least four points plotted correctly (within one small square)",
+     "A1 Ruled best-fit line from t = 0 to t = 25"
+    ]
    },
    "9(c)(i)": {
     "type": "points",
     "points": [
-     "Gradient k = (change in log₁₀ P)/(change in t) read from line, e.g. (2.41 − 1.88)/25 = 0.0212",
-     "k ≈ 0.0212 ≈ 0.02"
-    ],
-    "guidance": "M1 calculate gradient using line of best fit or two points from the table; R1 obtains a value of k which rounds to 0.02."
+     "M1 Gradient from the line or two table points, e.g. (2.41 − 1.88)/25",
+     "R1 k = 0.0212 ≈ 0.02"
+    ]
    },
    "9(c)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "A = 75"
-    ],
-    "guidance": "B1F infers A from the data (P at t = 0) or uses A = 10^(intercept). A = 10^1.88 ≈ 75."
+     "B1F A = 75 (or 10^(their intercept))"
+    ]
    },
    "9(d)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "t = 50 (year 2030); P = A × 10^(kt) = 75 × 10^(0.02×50) = 75 × 10¹",
-     "P = 750 (millions of tonnes), i.e. 750 million tonnes"
-    ],
-    "guidance": "M1 substitute t = 50 into P = A × 10^(0.02t) (PI by 750); A1F obtains 750 million tonnes (FT their 70 < A < 90)."
+     "M1 Substitutes t = 50 into P = A × 10^(0.02t)",
+     "A1F 750 million tonnes"
+    ]
    },
    "9(e)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "8000 = 75 × 10^(0.02t) ⇒ 10^(0.02t) = 106.67 ⇒ 0.02t = log₁₀(106.67)",
-     "t = 101.401",
-     "Year = 1980 + 102 = 2082"
-    ],
-    "guidance": "M1 form equation 8000 = A × 10^(0.02t) and solve; A1F obtains t = 101.4 (AWRT [97.44, 102.90]); A1F interprets as a year (integer part of t)+1980+1, t > 50, giving 2082."
+     "M1 Sets A × 10^(0.02t) = 8000",
+     "A1F t = 101.4 (range 97.44 to 102.90)",
+     "A1F Converts to a year: 2082"
+    ]
    },
    "9(f)": {
     "type": "points",
     "points": [
-     "It is not appropriate to extrapolate the future global production of plastics far beyond the data provided",
-     "e.g. global production of plastics may decrease in the future (e.g. for environmental reasons), so the exponential model will not hold"
-    ],
-    "guidance": "E1 gives a reason in context why the model for production of plastics will be inappropriate."
+     "E1 Contextual reason, e.g. extrapolating well beyond the data, or production may fall for environmental reasons"
+    ]
    },
    "10(a)": {
     "type": "points",
     "points": [
-     "y = tan x = sin x / cos x",
-     "Quotient rule: dy/dx = (cos x·cos x − sin x·(−sin x))/cos²x = (cos²x + sin²x)/cos²x",
-     "= 1/cos²x = sec²x"
-    ],
-    "guidance": "B1 recall tan x = sin x/cos x; M1 use quotient rule correctly (condone sign error); R1 complete rigorous argument using sin²x + cos²x = 1 to reach sec²x; working must be explicit."
+     "B1 tan x = sin x / cos x",
+     "M1 Correct quotient rule applied",
+     "R1 (cos²x + sin²x)/cos²x = 1/cos²x = sec²x, with the identity used explicitly"
+    ]
    },
    "10(b)": {
     "type": "points",
     "points": [
-     "Area = (area of rectangle width π/2, height 1) − ∫_{−π/4}^{π/4} tan²x dx",
-     "tan²x = sec²x − 1, so ∫ tan²x dx = tan x − x",
-     "∫_{−π/4}^{π/4} (sec²x − 1) dx = [tan x − x]_{−π/4}^{π/4} = (1 − π/4) − (−1 + π/4) = 2 − π/2",
-     "Rectangle area = 1 × π/2 = π/2",
-     "Shaded area = π/2 − (2 − π/2) = π − 2 (AG)"
-    ],
-    "guidance": "M1 write down integral of tan²x form; M1 use tan²x = sec²x − 1; A1F integrate to tan x − x; B1 form/evaluate area of rectangle (π/2)·1; R1 complete rigorous argument with consistent limits to obtain π − 2 (AG)."
+     "M1 Sets up an integral of tan²x (or 1 − tan²x) between ±π/4",
+     "M1 Uses tan²x = sec²x − 1",
+     "A1F Integrates to [tan x − x], giving 2 − π/2",
+     "B1 Rectangle area (π/2) × 1 = π/2 (may be implicit)",
+     "R1 Area = π/2 − (2 − π/2) = π − 2 with limits shown (answer given)"
+    ]
    },
    "12(a)": {
     "type": "points",
     "points": [
-     "Find P: set y = 0 in (x + y)² = 4y + 2x + 8 ⇒ x² = 2x + 8 ⇒ x² − 2x − 8 = 0 ⇒ x = 4 (positive root); P = (4, 0)",
-     "Differentiate implicitly: 2(x + y)(1 + dy/dx) = 4 dy/dx + 2",
-     "At P(4, 0): 8(1 + dy/dx) = 4 dy/dx + 2 ⇒ 8 + 8 dy/dx = 4 dy/dx + 2 ⇒ 4 dy/dx = −6",
-     "dy/dx = −3/2 (AG)"
-    ],
-    "guidance": "M1 substitute y = 0 to find x; A1 x = 4; M1 expand and use product/chain rule for the derivative; B1 correct implicit differentiation of 4y or y²; A1 correct derivative equation; R1 substitute x = 4, y = 0 to reach dy/dx = −3/2 (AG)."
+     "M1 Sets y = 0 to get x² = 2x + 8",
+     "A1 x = 4 at P",
+     "M1 Product rule on the xy term (or chain rule on (x + y)²)",
+     "B1 Correct derivative of 4y or y²",
+     "A1 Correct differentiated equation",
+     "R1 Substitutes (4, 0) to get dy/dx = −3/2 (answer given)"
+    ]
    },
    "12(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Normal gradient = negative reciprocal of −3/2 = 2/3",
-     "Through P(4, 0): y = (2/3)(x − 4)",
-     "2x − 3y = 8"
-    ],
-    "guidance": "M1 use gradient 2/3 and P(4,0) to form normal equation; A1F obtain 2x − 3y = 8 in integer form."
+     "M1 Uses gradient 2/3 through (4, 0)",
+     "A1F 2x − 3y = 8"
+    ]
    },
    "13(a)": {
     "type": "points",
     "points": [
-     "Substitute x = −1/5 into P(x): 125(−1/5)³ + 150(−1/5)² + 55(−1/5) + 6",
-     "= −1 + 6 − 11 + 6 = 0",
-     "Since P(−1/5) = 0, (5x + 1) is a factor of P(x)"
-    ],
-    "guidance": "M1 substitute x = −1/5 and obtain zero (bracketed correctly in the cubed and squared terms); R1 complete factor theorem argument: P(−1/5) = 0 ⇒ (5x + 1) is a factor."
+     "M1 Substitutes x = −1/5 (bracketed correctly) and gets 0",
+     "R1 Concludes (5x + 1) is a factor since P(−1/5) = 0, in that direction"
+    ]
    },
    "13(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Divide P(x) by (5x + 1): quotient quadratic factor 25x² + 25x + 6",
-     "Factorise: 25x² + 25x + 6 = (5x + 2)(5x + 3)",
-     "P(x) = (5x + 1)(5x + 2)(5x + 3)"
-    ],
-    "guidance": "M1 obtain quadratic factor of form 25x² + bx + 6 (or other roots); M1 obtain second linear factor; A1 obtains (5x + 1)(5x + 2)(5x + 3) oe."
+     "M1 Quadratic factor 25x² + bx + 6 (or other roots)",
+     "M1 Second linear factor",
+     "A1 (5x + 1)(5x + 2)(5x + 3)"
+    ]
    },
    "13(c)": {
     "type": "points",
     "points": [
-     "250n³ + 300n² + 110n + 12 = 2(125n³ + 150n² + 55n + 6) = 2(5n + 1)(5n + 2)(5n + 3)",
-     "(5n + 1), (5n + 2), (5n + 3) are three consecutive whole numbers",
-     "Among any three consecutive integers one is a multiple of 3, and at least one is even (a multiple of 2)",
-     "So the product contains a factor 3 and a factor 2; together with the factor 2 outside, 2 × 2 × 3 = 12",
-     "Hence 250n³ + 300n² + 110n + 12 is a multiple of 12"
-    ],
-    "guidance": "M1 deduce 250n³ + 300n² + 110n + 12 = 2(5n+1)(5n+2)(5n+3); R1 explain the three factors are consecutive whole numbers so contain a multiple of 3 and a multiple of 2; R1 complete reasoned argument that with the extra factor of 2 the expression is a multiple of 2×2×3 = 12."
+     "M1 Writes the expression as 2(5n + 1)(5n + 2)(5n + 3)",
+     "R1 Notes these are three consecutive positive whole numbers",
+     "R1 So a multiple of 3 and of 2 appear; with the extra 2 this gives 2 × 2 × 3 = 12"
+    ]
    },
    "14(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Curve crosses positive x-axis when y = 0 (non-zero t): 4t² − t³ = 0 ⇒ t²(4 − t) = 0 ⇒ t = 4",
-     "dx/dt = 2t + 1, dy/dt = 8t − 3t²",
-     "dy/dx = (8t − 3t²)/(2t + 1)",
-     "At t = 4: dy/dx = (32 − 48)/(9) = −16/9"
-    ],
-    "guidance": "M1 use y = 0 to obtain non-zero t = 4; B1 dy/dt = 8t − 3t²; B1 dx/dt = 2t + 1; M1 form dy/dx = (dy/dt)/(dx/dt) and substitute t = 4; A1 obtains −16/9 oe."
+     "M1 Sets y = 0 to get t = 4",
+     "B1 dy/dt = 8t − 3t²",
+     "B1 dx/dt = 2t + 1",
+     "M1 dy/dx = (dy/dt) ÷ (dx/dt) at their t",
+     "A1 −16/9"
+    ]
    },
    "14(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "b = 20"
-    ],
-    "guidance": "B1F deduces b = 20 (the value of x = t² + t when t = 4: 16 + 4 = 20)."
+     "B1F b = 20"
+    ]
    },
    "14(b)(ii)": {
     "type": "points",
     "points": [
-     "x = t² + t ⇒ dx = (2t + 1) dt; when x = 0, t = 0; when x = 20, t = 4",
-     "A = ∫₀²⁰ y dx = ∫₀⁴ (4t² − t³)(2t + 1) dt",
-     "Expand: (4t² − t³)(2t + 1) = 8t³ + 4t² − 2t⁴ − t³ = 4t² + 7t³ − 2t⁴",
-     "A = ∫₀⁴ (4t² + 7t³ − 2t⁴) dt (AG)"
-    ],
-    "guidance": "M1 substitute dx = (2t + 1) dt and change limits to 0 and 4; A1F correct substitution for y and dx (condone incorrect/omitted limits); R1 complete rigorous argument expanding to the given integrand (AG)."
+     "M1 Uses dx = (2t + 1) dt",
+     "A1F ∫ (4t² − t³)(2t + 1) dt",
+     "R1 Expands to the given integrand with limits 0 to 4 justified (t = 4 when x = 20)"
+    ]
    },
    "14(b)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "A = ∫₀⁴ (4t² + 7t³ − 2t⁴) dt = [4t³/3 + 7t⁴/4 − 2t⁵/5]₀⁴",
-     "A = 1856/15 ≈ 124"
-    ],
-    "guidance": "B1 evaluates A = 1856/15 or AWRT 124."
+     "B1 1856/15 (awrt 124)"
+    ]
    },
    "15(a)": {
     "type": "points",
     "points": [
-     "Use cos 2x ≈ 1 − (2x)²/2 = 1 − 2x² (small angle) and sin x ≈ x",
-     "sin x − sin x cos 2x = sin x(1 − cos 2x) ≈ x(1 − (1 − 2x²)) = x(2x²) = 2x³",
-     "So sin x − sin x cos 2x ≈ 2x³ for small x"
-    ],
-    "guidance": "B1 use small angle approximation for sine at least once; M1 replace cos 2x with 1 − (2x)²/2 (or use double angle + small angle approximations, condone a sign error or missing brackets); R1 complete rigorous argument to the given result (condone = instead of ≈)."
+     "B1 Uses sin x ≈ x",
+     "M1 Uses cos 2x ≈ 1 − (2x)²/2 (or double-angle plus small angles)",
+     "R1 x − x(1 − 2x²) = 2x³"
+    ]
    },
    "15(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Area = ∫₀^0.25 √(8(sin x − sin x cos 2x)) dx ≈ ∫₀^0.25 √(8·2x³) dx = ∫₀^0.25 4x^(3/2) dx",
-     "= 4[2x^(5/2)/5]₀^0.25 = (8/5)·0.25^(5/2)",
-     "= (8/5)(1/2)⁵ = 2⁻² × 5⁻¹",
-     "So m = −2 and n = −1"
-    ],
-    "guidance": "M1 form integral ∫₀^0.25 y dx with y ≈ √(8·2x³); M1 simplify integrand to Bx^(3/2); A1F integrate to Bx^(5/2); R1 substitute limits and complete to 2⁻² × 5⁻¹ (m = −2, n = −1)."
+     "M1 Area ≈ ∫₀^0.25 √(8 × 2x³) dx",
+     "M1 Integrand simplified to 4x^(3/2)",
+     "A1F Integrates to (8/5)x^(5/2)",
+     "R1 (8/5)(1/4)^(5/2) = 2^(−2) × 5^(−1), so m = −2, n = −1"
+    ]
    },
    "15(c)(i)": {
     "type": "points",
     "points": [
-     "The approximation 2x³ for sin x − sin x cos 2x is only valid for small values of x",
-     "On the interval 6.3 to 6.4 the values of x are not small, so the approximation is not valid"
-    ],
-    "guidance": "E1 explains that the limits 6.4 and 6.3 are not small (x not near 0), so the small-angle approximation does not apply."
+     "E1 The approximation needs small x; 6.3 and 6.4 are not small"
+    ]
    },
    "15(c)(ii)": {
     "type": "points",
     "points": [
-     "sin x − sin x cos 2x is periodic with period 2π, so the integral over a shifted interval (by a multiple of 2π) gives the same value",
-     "Reduce/shift the limits by 2π: take a = 6.3 − 2π ≈ 0.017 and b = 6.4 − 2π ≈ 0.117",
-     "These limits are small, so ∫_{6.3}^{6.4} (sin x − sin x cos 2x) dx = ∫_a^b (sin x − sin x cos 2x) dx ≈ ∫_a^b 2x³ dx"
-    ],
-    "guidance": "E1 explain the function is periodic (period 2π) so evaluating over a shifted interval gives the same value / shift limits by 2π; R1 deduces a = 6.3 − 2π = AWRT 0.017 and b = 6.4 − 2π = AWRT 0.117."
+     "E1 The function has period 2π, so the interval can be shifted down by 2π",
+     "R1 a = 6.3 − 2π ≈ 0.017, b = 6.4 − 2π ≈ 0.117"
+    ]
    }
   }
  },
  "math-aqa-7357-2021n-p2": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "y = ax² + bx + c with b² − 4ac = 0 and a, b, c all non-zero. Four sketches are offered (diagrams on the question paper).",
     "parts": [
      {
       "code": "1",
-      "prompt": "Four possible sketches of y = ax² + bx + c are shown below.\nGiven b² − 4ac = 0 and a, b and c are non-zero constants, which sketch is the only one that could possibly be correct?\nTick (✓) one box.\nA: an upward parabola with a single (repeated) root at the origin, touching the x-axis at x = 0.\nB: a downward parabola touching the x-axis at a positive x-value (single repeated root on the positive x-axis), with positive y-intercept region.\nC: an upward parabola with two distinct positive roots.\nD: a downward parabola lying entirely below the x-axis (no real roots).",
+      "prompt": "Choose the only sketch that could be correct.\nOptions: U-shape with its vertex touching the x-axis at the origin   ∩-shape with its vertex touching the negative x-axis, crossing the negative y-axis   U-shape with vertex below the x-axis at positive x, crossing the axis twice   ∩-shape lying wholly below the x-axis",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "y = f(x) has a point of inflection at x = 7, with f′(7) = a and f″(7) = b (a, b real).",
     "parts": [
      {
       "code": "2",
-      "prompt": "A curve has equation y = f(x). The curve has a point of inflection at x = 7. It is given that f′(7) = a and f″(7) = b, where a and b are real numbers.\nIdentify which one of the statements below must be true.\nCircle your answer.\nf′(7) ≠ 0     f′(7) = 0     f″(7) ≠ 0     f″(7) = 0",
+      "prompt": "Choose the statement that must be true.\nOptions: f′(7) ≠ 0   f′(7) = 0   f″(7) ≠ 0   f″(7) = 0",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "Sequence u₁ = a, uₙ₊₁ = −1 × uₙ.",
     "parts": [
      {
       "code": "3",
-      "prompt": "A sequence is defined by u₁ = a and u(n+1) = −1 × uₙ.\nFind ∑(n=1 to 95) uₙ.\nCircle your answer.\n−a     0     a     95a",
+      "prompt": "Choose the value of Σ from n = 1 to 95 of uₙ.\nOptions: −a   0   a   95a",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
-    "scenario": "Figure 1 shows the graph of y = |2x| (a V-shaped graph with its vertex at the origin O).",
+    "scenario": "The graph of y = |2x| is given (Figure 1 on the question paper).",
     "parts": [
      {
       "code": "4(a)",
-      "prompt": "On Figure 1 add a sketch of the graph of y = |3x − 6|.",
+      "prompt": "Add a sketch of y = |3x − 6| to the same axes.",
       "marks": 2
      },
      {
       "code": "4(b)",
-      "prompt": "Find the coordinates of the points of intersection of the two graphs. Fully justify your answer.",
+      "prompt": "Find, with full justification, the coordinates of the points where the two graphs meet.",
       "marks": 4
      }
     ]
    },
    {
     "number": 5,
+    "scenario": "The expression 5(x − 3) / ((2x − 11)(4 − 3x)).",
     "parts": [
      {
       "code": "5",
-      "prompt": "Express  5(x − 3) / ((2x − 11)(4 − 3x))  in the form  A/(2x − 11) + B/(4 − 3x),  where A and B are integers.",
+      "prompt": "Write it as A/(2x − 11) + B/(4 − 3x) with integers A and B.",
       "marks": 3
      }
     ]
    },
    {
     "number": 6,
+    "scenario": "Equation 5ˣ = 3^(x+4).",
     "parts": [
      {
       "code": "6",
-      "prompt": "Show that the solution of the equation  5^(x) = 3^(x+4)  can be written as  x = ln81 / (ln5 − ln3).  Fully justify your answer.",
+      "prompt": "Show, with full justification, that its solution is x = ln81 / (ln5 − ln3).",
       "marks": 4
      }
     ]
    },
    {
     "number": 7,
-    "scenario": "A circle has equation  x² + y² − 6x − 8y = p.",
+    "scenario": "Circle x² + y² − 6x − 8y = p.",
     "parts": [
      {
       "code": "7(a)(i)",
-      "prompt": "State the coordinates of the centre of the circle.",
+      "prompt": "Write down the centre.",
       "marks": 1
      },
      {
       "code": "7(a)(ii)",
-      "prompt": "Find the radius of the circle in terms of p.",
+      "prompt": "Find the radius in terms of p.",
       "marks": 3
      },
      {
       "code": "7(b)",
-      "prompt": "The circle intersects the coordinate axes at exactly three points. Find the two possible values of p.",
+      "prompt": "The circle meets the coordinate axes at exactly three points. Find the two possible values of p.",
       "marks": 4
      }
     ]
    },
    {
     "number": 8,
-    "scenario": "Kai is proving that n³ − n is a multiple of 3 for all positive integer values of n. Kai begins a proof by exhaustion.\nStep 1:  n³ − n = n(n² − 1)\nStep 2: When n = 3m, where m is a non-negative integer,  n³ − n = 3m(9m² − 1)  which is a multiple of 3\nStep 3: When n = 3m + 1,  n³ − n = (3m + 1)((3m + 1)² − 1)\nStep 4:  = (3m + 1)(9m²)  = 3(3m + 1)(3m²)  which is a multiple of 3\nStep 5: Therefore n³ − n is a multiple of 3 for all positive integer values of n.",
+    "scenario": "Kai tries to prove by exhaustion that n³ − n is a multiple of 3 for all positive integers n. Step 1: n³ − n = n(n² − 1). Step 2: n = 3m gives 3m(9m² − 1), a multiple of 3. Step 3: n = 3m + 1 gives (3m + 1)((3m + 1)² − 1). Step 4: he writes this as (3m + 1)(9m²) = 3(3m + 1)(3m²). Step 5: he concludes the result holds for all n.",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Explain the two mistakes that Kai has made after Step 3.",
+      "prompt": "Explain the two mistakes Kai makes after Step 3.",
       "marks": 2
      },
      {
       "code": "8(b)",
-      "prompt": "Correct Kai’s argument from Step 4 onwards.",
+      "prompt": "Write a correct version of the argument from Step 4 onwards.",
       "marks": 4
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "A robotic arm which is attached to a flat surface at the origin O, is used to draw a graphic design. The arm is made from two rods OP and PQ, each of length d, which are joined at P. A pen is attached to the arm at Q. The coordinates of the pen are controlled by adjusting the angle OPQ and the angle θ between OP and the x-axis. For this particular design the pen is made to move so that the two angles are always equal to each other with 0 ≤ θ ≤ π/2 (as shown in Figure 2).",
+    "scenario": "A robotic arm fixed at O has rods OP and PQ, each of length d, jointed at P; the pen is at Q. The angle between OP and the x-axis is θ and angle OPQ is also θ, with 0 ≤ θ ≤ π/2 (Figures 2 and 3 on the question paper).",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Show that the x-coordinate of the pen can be modelled by the equation  x = d(cos θ + sin(2θ − π/2)).",
+      "prompt": "Show the pen's x-coordinate is x = d(cosθ + sin(2θ − π/2)).",
       "marks": 2
      },
      {
       "code": "9(b)",
-      "prompt": "Hence, show that  x = d(1 + cos θ − 2cos²θ).",
+      "prompt": "Hence show x = d(1 + cosθ − 2cos²θ).",
       "marks": 2
      },
      {
       "code": "9(c)",
-      "prompt": "It can be shown that  x = 9d/8 − d(cos θ − ¼)².  State the greatest possible value of x and the corresponding value of cos θ.",
+      "prompt": "Given x = 9d/8 − d(cosθ − 1/4)², state the maximum x and the value of cosθ at which it occurs.",
       "marks": 2
      },
      {
       "code": "9(d)",
-      "prompt": "Figure 3 shows the arm when the x-coordinate is at its greatest possible value (the angle OP makes with the y-axis is θ and the angle at P between PO and PQ is θ). Find, in terms of d, the exact distance OQ.",
+      "prompt": "With x at its maximum (Figure 3), find the exact length OQ in terms of d.",
       "marks": 3
      }
     ]
    },
    {
     "number": 10,
-    "scenario": "The function h is defined by  h(x) = √x / (x − 3),  where h has its maximum possible domain.",
+    "scenario": "h(x) = √x / (x − 3), defined on its largest possible domain. Alice finds h(1) = −0.5 and h(4) = 2 and claims a root must lie in 1 < x < 4 because the sign changes.",
     "parts": [
      {
       "code": "10(a)",
-      "prompt": "Find the domain of h. Give your answer using set notation.",
+      "prompt": "Find the domain of h in set notation.",
       "marks": 3
      },
      {
       "code": "10(b)",
-      "prompt": "Alice correctly calculates  h(1) = −0.5  and  h(4) = 2.  She then argues that since there is a change of sign there must be a value of x in the interval 1 < x < 4 that gives h(x) = 0. Explain the error in Alice’s argument.",
+      "prompt": "Explain what is wrong with Alice's reasoning.",
       "marks": 2
      },
      {
       "code": "10(c)",
-      "prompt": "By considering any turning points of h, determine whether h has an inverse function. Fully justify your answer.",
+      "prompt": "Using turning points, decide with full justification whether h has an inverse.",
       "marks": 6
      }
     ]
    },
    {
     "number": 11,
+    "scenario": "Displacement r = 3e^(0.5t) metres at time t seconds.",
     "parts": [
      {
       "code": "11",
-      "prompt": "A particle’s displacement, r metres, with respect to time, t seconds, is defined by the equation  r = 3e^(0.5t).  Find an expression for the velocity, v m s⁻¹, of the particle at time t seconds.\nCircle your answer.\nv = 1.5e^(0.5t)     v = 6e^(0.5t)     v = 1.5te^(0.5t)     v = 6te^(0.5t)",
+      "prompt": "Choose the velocity v m s⁻¹.\nOptions: v = 1.5e^(0.5t)   v = 6e^(0.5t)   v = 1.5te^(0.5t)   v = 6te^(0.5t)",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
+    "scenario": "A particle moves at 6 m s⁻¹ in a direction 30° above the i direction (diagram on the question paper); its velocity is (v₁, v₂) m s⁻¹.",
     "parts": [
      {
       "code": "12",
-      "prompt": "A particle has a speed of 6 m s⁻¹ in a direction relative to unit vectors i and j, where the velocity vector makes an angle of 30° above the i (horizontal) direction (j is vertical). The velocity of this particle can be expressed as a vector [v₁; v₂] m s⁻¹. Find the correct expression for v₂.\nCircle your answer.\nv₂ = 6cos30°     v₂ = 6sin30°     v₂ = −6sin30°     v₂ = −6cos30°",
+      "prompt": "Choose the expression for v₂.\nOptions: 6cos30°   6sin30°   −6sin30°   −6cos30°",
       "marks": 1
      }
     ]
    },
    {
     "number": 13,
+    "scenario": "A 1200 kg vehicle on a straight level road speeds up uniformly from 13 m s⁻¹ to 17 m s⁻¹ over 40 m.",
     "parts": [
      {
       "code": "13",
-      "prompt": "A vehicle, of total mass 1200 kg, is travelling along a straight, horizontal road at a constant speed of 13 m s⁻¹. This vehicle begins to accelerate at a constant rate. After 40 metres it reaches a speed of 17 m s⁻¹. Find the resultant force acting on the vehicle during the period of acceleration.",
+      "prompt": "Find the resultant force during the acceleration.",
       "marks": 3
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "A motorised scooter is travelling along a straight path with velocity v m s⁻¹ over time t seconds as shown by a velocity–time graph. The curve rises from the origin to about v = 5.8 near t = 12, dips slightly to about v = 5.2 near t = 18, rises to a peak of about v = 6.2 near t = 26, then falls to about v = 4 near t = 36 and continues down to 0 near t = 48.",
+    "scenario": "Velocity–time graph of a scooter for 0 ≤ t ≤ 48 (graph on the question paper). Approximate readings: v ≈ 5.8 at t = 12, a dip to about 5.2 at t = 18, a peak near 6.2 around t = 25, about 6 at t = 30, falling to about 3.8 at t = 36.",
     "parts": [
      {
       "code": "14",
-      "prompt": "Noosha says that, in the period 12 ≤ t ≤ 36, the scooter travels approximately 130 metres. Determine if Noosha is correct, showing clearly any calculations you have used.",
+      "prompt": "Noosha claims the scooter covers about 130 m for 12 ≤ t ≤ 36. Decide if she is right, showing your calculations.",
       "marks": 4
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "A cyclist is towing a trailer behind her bicycle. She is riding along a straight, horizontal path at a constant speed. A tension of T newtons acts on the connecting rod between the bicycle and the trailer. The cyclist is causing a constant driving force of 40 N to be applied whilst pedalling forwards on her bicycle. The constant resistance force acting on the trailer is 12 N.",
+    "scenario": "A cyclist tows a trailer along a straight level path at constant speed. Tension T N in the connecting rod; driving force 40 N on the bicycle; resistance on the trailer 12 N.",
     "parts": [
      {
       "code": "15(a)",
-      "prompt": "State the value of T giving a clear reason for your answer.",
+      "prompt": "State T, with a clear reason.",
       "marks": 2
      },
      {
       "code": "15(b)",
-      "prompt": "State one assumption you have made in reaching your answer to part (a).",
+      "prompt": "State one assumption used in (a).",
       "marks": 1
      },
      {
       "code": "15(c)",
-      "prompt": "Find the external resistance force acting on the cyclist and her bicycle.",
+      "prompt": "Find the external resistance on the cyclist and bicycle.",
       "marks": 2
      }
     ]
    },
    {
     "number": 16,
-    "scenario": "A straight uniform rod, AB, has length 6 m and mass 0.2 kg. A particle of weight w newtons is fixed at A. A second particle of weight 3w newtons is fixed at B. The rod is suspended by a string from a point x metres from B. The rod rests in equilibrium with AB horizontal and the string hanging vertically.",
+    "scenario": "Uniform rod AB, 6 m long, mass 0.2 kg; particle of weight w N at A and 3w N at B. The rod hangs horizontally in equilibrium from a vertical string attached x m from B (diagram on the question paper).",
     "parts": [
      {
       "code": "16",
-      "prompt": "Show that  x = (3w + 0.3g) / (2w + 0.1g).",
+      "prompt": "Show that x = (3w + 0.3g)/(2w + 0.1g).",
       "marks": 4
      }
     ]
    },
    {
     "number": 17,
-    "scenario": "A ball is released from a great height so that it falls vertically downwards towards the surface of the Earth.",
+    "scenario": "A ball is released from rest from a great height and falls vertically. Andy's simple model predicts v = 2g m s⁻¹ after 2 s. Amy's refined model has acceleration a = g − 0.1v.",
     "parts": [
      {
       "code": "17(a)",
-      "prompt": "Using a simple model, Andy predicts that the velocity of the ball, exactly 2 seconds after being released from rest, is 2g m s⁻¹. Show how Andy has obtained his prediction.",
+      "prompt": "Show how Andy obtained his prediction.",
       "marks": 2
      },
      {
       "code": "17(b)",
-      "prompt": "Using a refined model, Amy predicts that the ball’s acceleration, a m s⁻², at time t seconds after being released from rest is  a = g − 0.1v,  where v m s⁻¹ is the velocity of the ball at time t seconds. Find an expression for v in terms of t.",
+      "prompt": "Using Amy's model, find v in terms of t.",
       "marks": 7
      },
      {
       "code": "17(c)",
-      "prompt": "Comment on the value of v for the two models as t becomes large.",
+      "prompt": "Comment on v in each model as t becomes large.",
       "marks": 2
      }
     ]
    },
    {
     "number": 18,
-    "scenario": "Two particles, P and Q, are projected at the same time from a fixed point X, on the ground, so that they travel in the same vertical plane. P is projected at an acute angle θ° to the horizontal, with speed u m s⁻¹. Q is projected at an acute angle 2θ° to the horizontal, with speed 2u m s⁻¹. Both particles land back on the ground at exactly the same point, Y. Resistance forces to motion may be ignored.",
+    "scenario": "From point X on the ground, P is projected at speed u m s⁻¹ at acute angle θ° and Q at speed 2u m s⁻¹ at acute angle 2θ° to the horizontal, at the same time and in the same vertical plane. Both land at the same point Y. No resistance.",
     "parts": [
      {
       "code": "18(a)",
-      "prompt": "Show that  cos 2θ = 1/8.",
+      "prompt": "Show that cos2θ = 1/8.",
       "marks": 6
      },
      {
       "code": "18(b)",
-      "prompt": "P takes a total of 0.4 seconds to travel from X to Y. Find the time taken by Q to travel from X to Y.",
+      "prompt": "P takes 0.4 s from X to Y. Find Q's time from X to Y.",
       "marks": 4
      },
      {
       "code": "18(c)",
-      "prompt": "State one modelling assumption you have chosen to make in this question.",
+      "prompt": "State one modelling assumption you made.",
       "marks": 1
      }
     ]
    },
    {
     "number": 19,
-    "scenario": "Two skaters, Jo and Amba, are separately skating across a smooth, horizontal surface of ice. Both are moving in the same direction, so that their paths are straight and are parallel to each other. Jo is moving with constant velocity (2.8i + 9.6j) m s⁻¹. At time t = 0 seconds Amba is at position (2i − 7j) metres and is moving with a constant speed of 8 m s⁻¹.",
+    "scenario": "Two skaters move on smooth horizontal ice along parallel straight paths in the same direction. Jo's velocity is (2.8i + 9.6j) m s⁻¹. At t = 0 Amba is at (2i − 7j) m, moving at a constant 8 m s⁻¹.",
     "parts": [
      {
       "code": "19(a)(i)",
-      "prompt": "Explain why Amba’s velocity must be in the form k(2.8i + 9.6j) m s⁻¹, where k is a constant.",
+      "prompt": "Explain why Amba's velocity must be k(2.8i + 9.6j) for some constant k.",
       "marks": 1
      },
      {
@@ -18650,12 +18493,12 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "19(b)",
-      "prompt": "Find the position vector of Amba when t = 4.",
+      "prompt": "Find Amba's position vector at t = 4.",
       "marks": 3
      },
      {
       "code": "19(c)",
-      "prompt": "At both t = 0 and t = 4 there is a distance of 5 metres between Jo and Amba’s positions. Determine the shortest distance between their two parallel lines of motion. Fully justify your answer.",
+      "prompt": "The skaters are 5 m apart at both t = 0 and t = 4. Find, with full justification, the shortest distance between their parallel paths.",
       "marks": 5
      }
     ]
@@ -18663,628 +18506,606 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Ticks box B"
-    ],
-    "guidance": "B1. b² − 4ac = 0 means a repeated root, so the curve touches the x-axis at one point; with a, b, c non-zero the vertex/touch point is not at the origin, giving sketch B."
+     "B1 B (∩-shape touching the negative x-axis)"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circles f″(7) = 0"
-    ],
-    "guidance": "B1. At a point of inflection the second derivative is zero, so f″(7) = 0 must be true."
+     "B1 D: f″(7) = 0"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circles a"
-    ],
-    "guidance": "B1. The sequence alternates a, −a, a, −a, … 95 terms (odd number) sum to a single a."
+     "B1 C: a"
+    ]
    },
    "5": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "5(x − 3) = A(4 − 3x) + B(2x − 11)",
-     "Substituting x = 11/2 gives A = −1",
-     "Substituting x = 4/3 gives B = 1"
-    ],
-    "guidance": "M1 forms the identity/equation and either compares coefficients or substitutes a value for x. A1 A = −1; A1 B = 1. So the expression = −1/(2x − 11) + 1/(4 − 3x)."
+     "M1 5(x − 3) ≡ A(4 − 3x) + B(2x − 11), then substitutes or compares coefficients",
+     "A1 A = −1",
+     "A1 B = 1"
+    ]
    },
    "6": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Take ln of both sides: ln(5^x) = ln(3^(x+4))",
-     "x ln5 = (x + 4) ln3",
-     "x ln5 − x ln3 = 4 ln3, so x(ln5 − ln3) = 4 ln3",
-     "4 ln3 = ln81 (or ln5 − ln3 = ln(5/3)), giving x = ln81 / (ln5 − ln3)"
-    ],
-    "guidance": "M1 take logs and apply log rules correctly; M1 apply power rule so x is no longer an exponent; B1 obtain ln81 from 4 ln3 (or 3⁴ from 3·3·3·3); R1 complete reasoned argument to the given result (full logs required, not base-converted at the end)."
+     "M1 Takes logs of both sides and uses a log law correctly",
+     "M1 Brings powers down and collects x terms: x ln5 − x ln3 = 4 ln3",
+     "B1 4 ln3 = ln81 (or 3⁴ = 81)",
+     "R1 x(ln5 − ln3) = ln81 shown, then the given result"
+    ]
    },
    "11": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circles v = 1.5e^(0.5t)"
-    ],
-    "guidance": "B1. v = dr/dt = 3 × 0.5 e^(0.5t) = 1.5e^(0.5t)."
+     "B1 A: v = 1.5e^(0.5t)"
+    ]
    },
    "12": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circles v₂ = 6sin30°"
-    ],
-    "guidance": "B1. j-component (vertical) = 6 sin30°."
+     "B1 B: v₂ = 6sin30°"
+    ]
    },
    "13": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "v² = u² + 2as: 17² = 13² + 2a(40) ⇒ 289 = 169 + 80a ⇒ a = 1.5 m s⁻²",
-     "F = ma = 1200 × 1.5 = 1800 N"
-    ],
-    "guidance": "M1 select suitable constant-acceleration equation (v² = u² + 2as) with values correctly substituted; A1 a = 1.5; B1ft F = ma = 1200 × 1.5 = 1800 N."
+     "M1 v² = u² + 2as: 289 = 169 + 80a",
+     "A1 a = 1.5",
+     "B1F F = 1200 × 1.5 = 1800 N"
+    ]
    },
    "14": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Distance = area under the v–t curve for 12 ≤ t ≤ 36; split into strips and use the trapezium rule",
-     "Trapezium 1 (12–18): ½(5.8 + 5.2)×6 = 33",
-     "Trapezium 2 (18–24): ½(5.2 + 6.2)×6 = 39.6",
-     "Trapezium 3 (24–30): ½(6.2 + 6)×6 = 36.6 (MS uses ½(6.2 + 6)·? ≈ 36.6)",
-     "Trapezium 4 (30–36): ½(6 + 3.8)×6 = 29.4 (MS uses ½(6 + 3.8)·6)",
-     "Total ≈ 132.8 m ≈ 130 m, so Noosha’s estimate is reasonable"
-    ],
-    "guidance": "M1 interpret distance as area below curve and split into trapezia; A1 divide into appropriate strips and find at least one area; M1 use the trapezium rule over 12 < t < 36; R1 compare total (≈132.8) with 130 and conclude Noosha’s estimate is reasonable. (Strip values depend on readings; total ≈ 130–133.)"
+     "M1 Distance is the area under the graph",
+     "A1 Splits into at least three shapes with one area correct, e.g. trapezia (6/2)(5.8 + 5.2) = 33, (7/2)(5.2 + 6.2) = 39.9, (5/2)(6.2 + 6) = 30.5, (6/2)(6 + 3.8) = 30.5",
+     "M1 Total for 12 < t < 36, in the range 125 to 135 (e.g. 132.8)",
+     "R1 Concludes Noosha's estimate is reasonable"
+    ]
    },
    "16": {
     "type": "points",
     "points": [
-     "Weights: w at A, 3w at B, rod weight 0.2g at the centre (3 m from each end); string is x m from B",
-     "Take moments about the point of suspension: w(6 − x) + 0.2g(3 − x) = 3w(x)",
-     "Expand: 6w − wx + 0.6g − 0.2gx = 3wx ⇒ 6w + 0.6g = 4wx + 0.2gx",
-     "x = (6w + 0.6g)/(4w + 0.2g) = (3w + 0.3g)/(2w + 0.1g)"
+     "M1 Moments about the string point (or another point, involving T) with one term correct, e.g. 3wx = (3 − x)0.2g + (6 − x)w",
+     "M1 Dimensionally correct equation with two terms correct",
+     "A1 Fully correct equation in w, x and g only (T = 4w + 0.2g substituted if needed)",
+     "R1 x(4w + 0.2g) = 6w + 0.6g shown, giving the result"
     ],
-    "guidance": "M1 take moments about the suspension point forming an equation in w and x (and g); M1 take moments about any point including all terms; A1 dimensionally correct equation with two terms correct; R1 obtain the given answer showing at least the step x = (6w + 0.6g)/(4w + 0.2g) = (3w + 0.3g)/(2w + 0.1g) AG."
+    "guidance": "Weight and mass must be handled consistently throughout."
    },
    "4(a)": {
     "type": "points",
     "points": [
-     "Sketches a V-shaped graph with its vertex (apex) on the positive x-axis at x = 2",
-     "Symmetrical about x = 2, touching the x-axis there and rising in the first and second quadrants, intersecting the existing y = |2x| graph"
-    ],
-    "guidance": "M1 for any V-shape with apex on positive x-axis; A1 for a correct symmetric V with vertex at (2, 0). Condone missing/incorrect axis labels."
+     "M1 V-shape with vertex on the positive x-axis",
+     "A1 Roughly symmetric V touching the x-axis at 2 (y-intercept 6), crossing y = |2x| twice in the first quadrant"
+    ]
    },
    "4(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Form |3x − 6| = |2x| and remove modulus to consider 3x − 6 = ±2x",
-     "3x − 6 = 2x ⇒ x = 6, y = 12",
-     "3x − 6 = −2x ⇒ 5x = 6 ⇒ x = 1.2, y = 2.4",
-     "Points of intersection: (6, 12) and (1.2, 2.4)"
-    ],
-    "guidance": "M1 set up equation and select appropriate method (e.g. squaring, or ±). A1 x = 6 (y = 12); A1 x = 1.2 OE; A1 y values, giving both coordinate pairs (6, 12) and (1.2, 2.4)."
+     "M1 Sets |3x − 6| = |2x| and removes the moduli (squaring, or 3x − 6 = ±2x)",
+     "A1 x = 6",
+     "A1 x = 1.2",
+     "A1 y = 12 and y = 2.4, i.e. (6, 12) and (1.2, 2.4)"
+    ]
    },
    "7(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Centre (3, 4)"
-    ],
-    "guidance": "B1. Complete the square: (x − 3)² + (y − 4)² = p + 25, so centre is (3, 4). Accept a = 3, b = 4."
+     "B1 (3, 4)"
+    ]
    },
    "7(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Rearrange to (x − 3)² + (y − 4)² = 25 + p",
-     "radius² = 25 + p",
-     "radius = √(25 + p)"
-    ],
-    "guidance": "M1 rearrange to standard form / form an expression for r²; A1 r² = 25 + p; A1 r = √(25 + p)."
+     "M1 Completes the square, e.g. (x − 3)² + (y − 4)² form",
+     "A1 (x − 3)² + (y − 4)² = 25 + p",
+     "A1 Radius √(25 + p)"
+    ]
    },
    "7(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circle intersects axes at exactly three points: either it passes through the origin, or it touches one axis",
-     "If it passes through the origin: (0,0) on circle ⇒ p = 0 (radius √25 = 5)",
-     "If it touches the x-axis: radius = 4 ⇒ √(25 + p) = 4 ⇒ 25 + p = 16 ⇒ p = −9",
-     "p = 0 and p = −9"
-    ],
-    "guidance": "M1 set up condition by substituting x = 0 or y = 0 / equating radius to a distance; M1 form an equation to find p; A1 p = 0; A1 p = −9."
+     "M1 Starts: e.g. sketch through the origin or touching an axis, or substitutes x = 0 or y = 0",
+     "M1 Forms an equation for p (radius = 5, radius = 4, or discriminant = 0)",
+     "R1 p = 0 (circle passes through the origin)",
+     "R1 p = −9 (circle touches the x-axis)"
+    ]
    },
    "8(a)": {
     "type": "points",
     "points": [
-     "Kai has not expanded the brackets correctly (after Step 3 the algebra (3m + 1)((3m + 1)² − 1) is wrong)",
-     "Kai has not considered numbers of the form n = 3m + 2, so the proof by exhaustion is incomplete"
-    ],
-    "guidance": "E1 for identifying the algebraic mistake; E1 for identifying that the case n = 3m + 2 has not been exhausted."
+     "E1 The bracket (3m + 1)² − 1 was expanded wrongly",
+     "E1 The case n = 3m + 2 was not considered, so not all cases were covered"
+    ]
    },
    "8(b)": {
     "type": "points",
     "points": [
-     "Correct Step 4: (3m + 1)((3m + 1)² − 1) = (3m + 1)(9m² + 6m) = 3(3m + 1)(3m² + 2m), which is a multiple of 3",
-     "Then consider n = 3m + 2: n³ − n = (3m + 2)((3m + 2)² − 1) = (3m + 2)(9m² + 12m + 3) = 3(3m + 2)(3m² + 4m + 1), which is a multiple of 3",
-     "Having now covered n = 3m, 3m + 1 and 3m + 2, conclude n³ − n is a multiple of 3 for all positive integers n"
-    ],
-    "guidance": "B1 correct manipulation in Step 4 to obtain 3(3m + 1)(3m² + 2m); M1 use a third substitution n = 3m + 2; A1 correct expression showing it is a multiple of 3; R1 rigorous conclusion covering all three cases."
+     "B1 Correct Step 4: (3m + 1)(9m² + 6m) = 3(3m + 1)(3m² + 2m)",
+     "M1 Third case using n = 3m + 2 (or 3m − 1)",
+     "A1 (3m + 2)(9m² + 12m + 3) = 3(3m + 2)(3m² + 4m + 1)",
+     "R1 Shows the factor 3 in both cases and concludes for all positive integers"
+    ]
    },
    "9(a)": {
     "type": "points",
     "points": [
-     "OP has angle θ to the x-axis, so the x-component of P is d cos θ",
-     "PQ makes the equal angle, so the rod PQ turns through 2θ; the x-displacement from P to Q is d sin(2θ − π/2) (or d cos2θ equivalently)",
-     "Adding: x = d cos θ + d sin(2θ − π/2) = d(cos θ + sin(2θ − π/2))"
-    ],
-    "guidance": "M1 find horizontal distance using a right-angled triangle / correct angle of 2θ for QP with the horizontal; R1 complete correct manipulation to the given result."
+     "M1 Identifies a horizontal component, e.g. d cosθ, d cos2θ or d sin(π/2 − 2θ)",
+     "R1 Combines to the given expression (QP at angle 2θ to the horizontal)"
+    ]
    },
    "9(b)": {
     "type": "points",
     "points": [
-     "sin(2θ − π/2) = −cos 2θ",
-     "x = d(cos θ − cos 2θ)",
-     "cos 2θ = 2cos²θ − 1, so x = d(cos θ − (2cos²θ − 1)) = d(1 + cos θ − 2cos²θ)"
-    ],
-    "guidance": "M1 use a compound-angle formula or complementary angles to get sin(2θ − π/2) = −cos2θ; R1 use cos2θ = 2cos²θ − 1 to reach the required result AG."
+     "M1 Expands sin(2θ − π/2) or uses complementary angles to get x = d(cosθ − cos2θ)",
+     "R1 Uses cos2θ = 2cos²θ − 1 to reach the given result"
+    ]
    },
    "9(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Greatest value of x = 9d/8",
-     "This occurs when cos θ = ¼"
-    ],
-    "guidance": "B1 greatest value 9d/8 (the squared term is zero); B1 cos θ = ¼."
+     "B1 Maximum x = 9d/8",
+     "B1 cosθ = 1/4"
+    ]
    },
    "9(d)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "In triangle OPQ, OP = PQ = d and angle OPQ = 2θ; cosine rule OQ² = d² + d² − 2d²cos2θ",
-     "When x is greatest cos θ = ¼, so cos 2θ = 2(¼)² − 1 = −7/8",
-     "OQ² = 2d² − 2d²(−7/8)? gives 2d²(1 − cos2θ); with cos2θ = 1/4 used in the MS, OQ² = 2d² − 2d²(¼) = 3d²/2",
-     "OQ = (√6 / 2) d"
-    ],
-    "guidance": "M1 use cosine rule (or sine rule) on triangle OPQ; M1 substitute the exact value of cos 2θ (cos θ = ¼ giving cos 2θ = 1/8 per the MS typical solution, OQ² = 2d² − 2d²·¼ = 3d²/2); A1 OQ = (√6/2)d. (MS typical solution: OQ² = 2d² − 2d²·¼ = 3d²/2, OQ = √6·d/2.)"
+     "M1 Cosine rule OQ² = d² + d² − 2d²cosθ (or sine rule)",
+     "M1 Substitutes cosθ = 1/4",
+     "A1 OQ = (√6/2)d"
+    ]
    },
    "10(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Need x ≥ 0 (for √x) and x ≠ 3 (denominator non-zero)",
-     "Domain = {x : x ≥ 0, x ≠ 3}"
-    ],
-    "guidance": "M1 obtain a domain excluding negatives and excluding 3 (condone x > 0); A1 deduce both x ≥ 0 and x ≠ 3 with no extras; R1 state domain correctly in set notation {x : x ≥ 0, x ≠ 3}."
+     "M1 Excludes negatives or excludes 3",
+     "A1 x ≥ 0 and x ≠ 3",
+     "R1 {x : x ≥ 0, x ≠ 3}"
+    ]
    },
    "10(b)": {
     "type": "points",
     "points": [
-     "h(x) is not continuous at x = 3 (it has a discontinuity there)",
-     "The change of sign between x = 1 and x = 4 spans this discontinuity, so it does not imply a root in the interval"
-    ],
-    "guidance": "M1 state that h has a discontinuity / is not continuous at x = 3 (which lies in (1, 4)); A1 explain that because of this discontinuity the change of sign does not guarantee a root."
+     "M1 h has a discontinuity/asymptote at x = 3",
+     "A1 Since x = 3 lies in (1, 4), the sign change does not imply a root"
+    ]
    },
    "10(c)": {
     "type": "points",
     "points": [
-     "Differentiate: h′(x) = (½ x^(−½)(x − 3) − √x) / (x − 3)²",
-     "Set h′(x) = 0: ½ x^(−½)(x − 3) − √x = 0 ⇒ (x − 3)/(2√x) − √x = 0 ⇒ x − 3 − 2x = 0 ⇒ x = −3",
-     "x = −3 is not in the domain of h (which requires x ≥ 0), so h has no turning points on its domain",
-     "For x > 3, h(x) > 0; for x < 3 (with x ≥ 0), h(x) < 0, so h is one-to-one and therefore has an inverse"
-    ],
-    "guidance": "M1 differentiate to a correct form for h′(x); A1 correct h′(x); M1 set h′(x) = 0; A1 obtain x = −3; E1 explain x = −3 is not in the domain so there are no turning points; R1 reasoned argument that the function is one-to-one (considering the sign of h either side of x = 3) and hence has an inverse."
+     "M1 Differentiates to the form ax^(−1/2)(x − 3)^(−1) + bx^(1/2)(x − 3)^(−2)",
+     "A1 Correct h′(x)",
+     "M1 Sets h′(x) = 0",
+     "A1 x = −3",
+     "E1 A continuous function with no turning points is one-to-one, so an inverse exists",
+     "R1 −3 is outside the domain, so no turning points; h < 0 for x < 3 and h > 0 for x > 3, so h is one-to-one and has an inverse"
+    ]
    },
    "15(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "T = 12 N",
-     "Reason: constant speed ⇒ no acceleration, so the trailer is in equilibrium; the tension must balance the trailer’s 12 N resistance"
-    ],
-    "guidance": "B1 T = 12; E1 clear reason (no resultant force since constant speed / trailer in equilibrium, so T balances the resistance)."
+     "B1 T = 12",
+     "E1 Constant speed, so no resultant force on the trailer: tension balances the resistance"
+    ]
    },
    "15(b)": {
     "type": "points",
     "points": [
-     "One valid assumption, e.g. the connecting rod is rigid / light / inextensible, or it lies parallel to the direction of travel"
-    ],
-    "guidance": "E1 for any one valid assumption (rod rigid, rod inextensible, rod parallel to direction of travel, etc.)."
+     "E1 e.g. the rod is horizontal, rigid, inextensible or parallel to the motion"
+    ]
    },
    "15(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "For the whole system at constant speed: driving force 40 = T + R, where R is the external resistance on cyclist + bicycle",
-     "40 = 12 + R ⇒ R = 28 N"
-    ],
-    "guidance": "M1 form an equilibrium equation for the cyclist + bicycle (or whole system), e.g. 40 = T + R; A1 R = 28 N (must state units)."
+     "M1 Equilibrium for the cyclist and bicycle: 40 = T + R",
+     "A1 R = 28 N"
+    ]
    },
    "17(a)": {
     "type": "points",
     "points": [
-     "Use constant acceleration with a = g, u = 0, t = 2: v = u + at = 0 + g×2 = 2g",
-     "So velocity after 2 s is 2g m s⁻¹"
-    ],
-    "guidance": "M1 select a suitable constant-acceleration equation (v = u + at) or integrate a = g with u = 0; R1 reasoned argument stating u = 0 and substituting t = 2 to obtain v = 2g AG."
+     "M1 Uses v = u + at (or integrates a = g)",
+     "R1 u = 0, a = g, t = 2 gives v = 2g"
+    ]
    },
    "17(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "a = dv/dt = g − 0.1v; separate variables: ∫ 1/(g − 0.1v) dv = ∫ 1 dt",
-     "−10 ln(g − 0.1v) = t + c",
-     "When t = 0, v = 0: −10 ln g = c",
-     "So −10 ln((g − 0.1v)/g) = t ⇒ (g − 0.1v)/g = e^(−0.1t)",
-     "g − 0.1v = g e^(−0.1t) ⇒ v = 10g(1 − e^(−0.1t))"
-    ],
-    "guidance": "B1 a = dv/dt; M1 form differential equation using a = dv/dt; M1 separate variables; A1 −10 ln(g − 0.1v) = t + c; M1 substitute t = 0, v = 0 for c; A1 find c = −10 ln g; A1 v = 10g(1 − e^(−0.1t)) OE."
+     "B1 Uses a = dv/dt",
+     "M1 Forms dv/dt = g − 0.1v",
+     "M1 Separates variables and integrates one side correctly",
+     "A1 −10 ln(g − 0.1v) = t + c",
+     "M1 Uses t = 0, v = 0 to find c",
+     "A1 c = −10 ln g",
+     "A1 v = 10g(1 − e^(−0.1t))"
+    ]
    },
    "17(c)": {
     "type": "points",
     "points": [
-     "Andy’s simple model (v = gt): v keeps increasing without limit as t becomes large",
-     "Amy’s refined model (v = 10g(1 − e^(−0.1t))): v approaches an upper limit (terminal velocity) of 10g as t becomes large"
-    ],
-    "guidance": "E1 Andy’s model velocity keeps increasing; E1 Amy’s model velocity approaches an upper limit (10g)."
+     "E1 Andy's model: v keeps increasing without limit",
+     "E1 Amy's model: v approaches a limit (10g)"
+    ]
    },
    "18(a)": {
     "type": "points",
     "points": [
-     "Time of flight for projectile: t = 2(speed)sinθ / g; for P, t_P = 2u sinθ / g, for Q, t_Q = 2(2u)sin2θ / g = 4u sin2θ / g",
-     "Both land at Y, so horizontal ranges (or relevant horizontal distances) match: u cosθ · t_P = 2u cos2θ · t_Q (range equality)",
-     "Set the ranges equal: (2u² sinθ cosθ)/g = (8u² sin2θ cos2θ)/g",
-     "Using sin2θ = 2 sinθ cosθ: 2 sinθ cosθ = 8 sin2θ cos2θ ⇒ sin2θ = 8 sin2θ cos2θ ⇒ 1 = 8 cos2θ",
-     "cos 2θ = 1/8"
-    ],
-    "guidance": "B1 expression for vertical motion / time of flight; M1 consider vertical motion and write the time of flight for one particle; A1 correct t_P and t_Q; B1 horizontal distance = u cosθ × t (or 2u cos2θ × t); M1 equate the two range expressions and substitute; R1 simplify using sin2θ = 2 sinθ cosθ to reach cos 2θ = 1/8 AG."
+     "B1 Uses a horizontal or vertical velocity component",
+     "M1 Vertical motion with a constant-acceleration equation for one particle",
+     "A1 t_P = 2u sinθ / g and t_Q = 4u sin2θ / g",
+     "B1 Horizontal ranges u t_P cosθ and 2u t_Q cos2θ",
+     "M1 Equates the ranges and substitutes the times",
+     "R1 Uses sin2θ = 2sinθcosθ to reach cos2θ = 1/8"
+    ]
    },
    "18(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "From cos 2θ = 1/8, cos θ = 3/4 (since cos2θ = 2cos²θ − 1 = 1/8 ⇒ cos²θ = 9/16)",
-     "t_P = 2u sinθ / g = 0.4",
-     "t_Q = 4u sin2θ / g = t_P × 2cos2θ = 0.4 × 2 × (1/8) = 0.1? — using t_Q = t_P × 2cos2θ",
-     "t_Q = 1.2 seconds"
-    ],
-    "guidance": "B1 obtain cos θ = 3/4 (or θ ≈ 41.4°); M1 use t_P = t_Q × relationship, e.g. t_Q = t_P × 2cos2θ (note MS: t_Q : t_P relation gives t_Q = 1.2); A1 t_Q = 1.2 seconds (AWRT 1.2). The given relation in the MS yields t_Q = 1.2 s."
+     "B1 cosθ = 3/4 (or θ ≈ 41.4°)",
+     "M1 Uses t_P cosθ = t_Q × 2cos2θ with t_P = 0.4 (or finds u ≈ 2.96)",
+     "M1 Completes the substitution to find t_Q",
+     "A1 t_Q = 1.2 s"
+    ]
    },
    "18(c)": {
     "type": "points",
     "points": [
-     "One suitable modelling assumption, e.g. acceleration (g) is constant, or X and Y are at the same height (level ground)"
-    ],
-    "guidance": "E1 for any suitable assumption (e.g. acceleration constant; X and Y at the same height; particles modelled as point masses)."
+     "E1 e.g. X and Y at the same height, or constant acceleration"
+    ]
    },
    "19(a)(i)": {
     "type": "points",
     "points": [
-     "Amba moves parallel to Jo, so their velocity vectors are parallel",
-     "Parallel vectors are scalar multiples of one another, so Amba’s velocity = k(2.8i + 9.6j) for some scalar k"
-    ],
-    "guidance": "E1. Must refer to a scalar multiple / show algebraically the form a = kb. Do not accept the word “factor” alone."
+     "E1 Parallel vectors are scalar multiples of one another"
+    ]
    },
    "19(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Amba’s speed = |k(2.8i + 9.6j)| = k√(2.8² + 9.6²) = k × 10",
-     "Given speed 8 = 10k ⇒ k = 0.8"
-    ],
-    "guidance": "B1. |2.8i + 9.6j| = √(2.24² ... ) = 10, so Amba’s velocity = 0.8(2.8i + 9.6j); speed = √(2.24² + 7.68²) = 8 m s⁻¹, verifying k = 0.8."
+     "B1 0.8(2.8i + 9.6j) = 2.24i + 7.68j, magnitude √(2.24² + 7.68²) = 8"
+    ]
    },
    "19(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Amba’s velocity = 0.8(2.8i + 9.6j) = (2.24i + 7.68j) m s⁻¹",
-     "Displacement over 4 s = 4 × (2.24, 7.68) = (8.96, 30.72)",
-     "Position at t = 4: r = (2, −7) + (8.96, 30.72) = (10.96, 23.72) m"
-    ],
-    "guidance": "B1 find displacement when t = 4 using s = ut (= (8.96, 30.72)); M1 add the displacement to the initial position vector (2, −7); A1 r = (10.96i + 23.72j) m (must state units / OE)."
+     "B1 Displacement in 4 s: 8.96i + 30.72j",
+     "M1 Adds to 2i − 7j",
+     "A1 10.96i + 23.72j m"
+    ]
    },
    "19(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Jo’s speed = √(2.8² + 9.6²) = 10 m s⁻¹, so Jo travels 4 × 10 = 40 m in 4 s",
-     "Amba travels 8 × 4 = 32 m in 4 s (parallel direction)",
-     "The two 5 m separations (at t = 0 and t = 4), together with the parallel displacements 40 m and 32 m, form a trapezium; the perpendicular (shortest) distance d satisfies d = √(5² − ((40 − 32)/2)²)",
-     "d = √(25 − 16) = √9 = 3 m"
-    ],
-    "guidance": "M1 find Jo’s speed (PI by Jo’s distance 40 m); A1 Jo’s distance = 40 m; B1 Amba’s distance over 4 s = 32 m; M1 use an appropriate method (geometry of the trapezium) to find the perpendicular distance; A1 shortest distance = 3 m (must state units). d = √(5² − ((40 − 32)/2)²) = 3 m."
+     "M1 Jo's speed √(2.8² + 9.6²) = 10 m s⁻¹",
+     "A1 Jo travels 40 m",
+     "B1 Amba travels 32 m",
+     "M1 Suitable geometry, e.g. √(5² − ((40 − 32)/2)²)",
+     "A1 3 m"
+    ]
    }
   }
  },
  "math-aqa-7357-2021n-p3": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "Graph of y = arccos x, with left-hand end point P (diagram on the question paper).",
     "parts": [
      {
       "code": "1",
-      "prompt": "The graph of y = arccos x is shown (curve starting at end point P top-left, decreasing to the x-axis). State the coordinates of the end point P. Circle your answer.\nOptions: (−π, 1)   (−1, π)   (−π/2, 1)   (−1, π/2)",
+      "prompt": "Choose the coordinates of P.\nOptions: (−π, 1)   (−1, π)   (−π/2, 1)   (−1, π/2)",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "The expression (x + 3)(6 − 2x) / ((x − 3)(3 + x)), x ≠ ±3.",
     "parts": [
      {
       "code": "2",
-      "prompt": "Simplify fully (x+3)(6−2x)/((x−3)(3+x)) for x ≠ ±3. Circle your answer.\nOptions: −2   2   (6−2x)/(x−3)   (2x−6)/(x−3)",
+      "prompt": "Choose its fully simplified form.\nOptions: −2   2   (6 − 2x)/(x − 3)   (2x − 6)/(x − 3)",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "f(x) = 3x².",
     "parts": [
      {
       "code": "3",
-      "prompt": "f(x) = 3x². Obtain lim(h→0) [f(x+h) − f(x)]/h. Circle your answer.\nOptions: 3h²/h   x³   (3(x+h)²−3x²)/h   6x",
+      "prompt": "Choose the limit as h → 0 of (f(x + h) − f(x))/h.\nOptions: 3h²/h   x³   (3(x + h)² − 3x²)/h   6x",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
+    "scenario": "Binomial expansions of (2x − 3)¹⁰ and (2x − 3/x)¹⁰.",
     "parts": [
      {
       "code": "4(a)",
-      "prompt": "Show that the first three terms, in descending powers of x, of the expansion of (2x − 3)¹⁰ are given by 1024x¹⁰ + px⁹ + qx⁸ where p and q are integers to be found.",
+      "prompt": "Show the first three terms of (2x − 3)¹⁰ in descending powers of x are 1024x¹⁰ + px⁹ + qx⁸, finding integers p and q.",
       "marks": 3
      },
      {
       "code": "4(b)",
-      "prompt": "Find the constant term in the expansion of (2x − 3/x)¹⁰.",
+      "prompt": "Find the constant term of (2x − 3/x)¹⁰.",
       "marks": 2
      }
     ]
    },
    {
     "number": 5,
-    "scenario": "A gardener is creating flowerbeds in the shape of sectors of circles. The gardener uses an edging strip around the perimeter of each of the flowerbeds. The cost of the edging strip is £1.80 per metre and can be purchased for any length. One of the flowerbeds has a radius of 5 metres and an angle at the centre of 0.7 radians (sector diagram with radius 5 m and angle 0.7).",
+    "scenario": "Sector-shaped flowerbeds are edged all round with strip costing £1.80 per metre (any length). One bed has radius 5 m and angle 0.7 radians (diagram on the question paper). Another bed is to have area 20 m².",
     "parts": [
      {
       "code": "5(a)(i)",
-      "prompt": "Find the area of this flowerbed.",
+      "prompt": "Find the area of the 5 m bed.",
       "marks": 2
      },
      {
       "code": "5(a)(ii)",
-      "prompt": "Find the cost of the edging strip required for this flowerbed.",
+      "prompt": "Find the cost of edging the 5 m bed.",
       "marks": 3
      },
      {
       "code": "5(b)(i)",
-      "prompt": "A flowerbed is to be made with an area of 20 m². Show that the cost, £C, of the edging strip required for this flowerbed is given by C = (18/5)(20/r + r) where r is the radius measured in metres.",
+      "prompt": "For the 20 m² bed with radius r m, show the edging cost is C = (18/5)(20/r + r).",
       "marks": 3
      },
      {
       "code": "5(b)(ii)",
-      "prompt": "Hence, show that the minimum cost of the edging strip for this flowerbed occurs when r ≈ 4.5. Fully justify your answer.",
+      "prompt": "Hence show, with full justification, that the minimum cost occurs when r ≈ 4.5.",
       "marks": 5
      }
     ]
    },
    {
     "number": 6,
+    "scenario": "The expression (10 + 5x − 2x^(1/2) − x^(3/2)) / (5 − √x) for x > 0, x ≠ 25.",
     "parts": [
      {
       "code": "6",
-      "prompt": "Given that x > 0 and x ≠ 25, fully simplify (10 + 5x − 2x^(1/2) − x^(3/2))/(5 − √x). Fully justify your answer.",
+      "prompt": "Simplify fully, justifying your working.",
       "marks": 4
      }
     ]
    },
    {
     "number": 7,
-    "scenario": "A building has a leaking roof and, while it is raining, water drips into a 12 litre bucket. When the rain stops, the bucket is one third full. Water continues to drip into the bucket from a puddle on the roof. In the first minute after the rain stops, 30 millilitres of water drips into the bucket. In each subsequent minute, the amount of water that drips into the bucket reduces by 2%. During the nth minute after the rain stops, the volume of water that drips into the bucket is Wₙ millilitres.",
+    "scenario": "A 12-litre bucket is one third full when the rain stops. Water keeps dripping in: 30 ml in the first minute, then 2% less each minute than the minute before. Wₙ ml drips in during minute n.",
     "parts": [
      {
       "code": "7(a)",
-      "prompt": "Find W₂",
+      "prompt": "Find W₂.",
       "marks": 1
      },
      {
       "code": "7(b)",
-      "prompt": "Explain why Wₙ = A × 0.98^(n−1) and state the value of A.",
+      "prompt": "Explain why Wₙ = A × 0.98^(n−1) and state A.",
       "marks": 2
      },
      {
       "code": "7(c)",
-      "prompt": "Find the increase in the water in the bucket 15 minutes after the rain stops. Give your answer to the nearest millilitre.",
+      "prompt": "Find the increase in water in the bucket over the first 15 minutes, to the nearest ml.",
       "marks": 2
      },
      {
       "code": "7(d)",
-      "prompt": "Assuming it does not start to rain again, find the maximum amount of water in the bucket.",
+      "prompt": "If no more rain falls, find the greatest amount of water the bucket could hold.",
       "marks": 3
      },
      {
       "code": "7(e)",
-      "prompt": "After several hours the water has stopped dripping. Give two reasons why the amount of water in the bucket is not as much as the answer found in part (d).",
+      "prompt": "Hours later the dripping has stopped. Give two reasons why the bucket holds less than the answer to (d).",
       "marks": 2
      }
     ]
    },
    {
     "number": 8,
+    "scenario": "∫ from π/4 to π/3 of x cos x dx = aπ + b.",
     "parts": [
      {
       "code": "8",
-      "prompt": "Given that ∫(π/4 to π/3) x cos x dx = aπ + b, find the exact value of a and the exact value of b. Fully justify your answer.",
+      "prompt": "Find the exact values of a and b, fully justifying your answer.",
       "marks": 6
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "A function f is defined for all real values of x as f(x) = x⁴ + 5x³. The function has exactly two stationary points when x = 0 and x = −15/4.",
+    "scenario": "f(x) = x⁴ + 5x³ for all real x, with exactly two stationary points, at x = 0 and x = −15/4. g(x) = x⁴ − 5x³.",
     "parts": [
      {
       "code": "9(a)(i)",
-      "prompt": "Find f″(x)",
+      "prompt": "Find f″(x).",
       "marks": 2
      },
      {
       "code": "9(a)(ii)",
-      "prompt": "Determine the nature of the stationary points. Fully justify your answer.",
+      "prompt": "Determine, with full justification, the nature of each stationary point.",
       "marks": 4
      },
      {
       "code": "9(b)",
-      "prompt": "State the range of values of x for which f(x) = x⁴ + 5x³ is an increasing function.",
+      "prompt": "State the values of x for which f is increasing.",
       "marks": 1
      },
      {
       "code": "9(c)(i)",
-      "prompt": "A second function g is defined for all real values of x as g(x) = x⁴ − 5x³. State the single transformation which maps f onto g.",
+      "prompt": "State the single transformation mapping f onto g.",
       "marks": 1
      },
      {
       "code": "9(c)(ii)",
-      "prompt": "State the range of values of x for which g is an increasing function.",
+      "prompt": "State the values of x for which g is increasing.",
       "marks": 1
      }
     ]
    },
    {
     "number": 10,
+    "scenario": "Anke collects data on age and market value for 30 similar cars and gets a correlation coefficient of −1.2.",
     "parts": [
      {
       "code": "10",
-      "prompt": "Anke has collected data from 30 similar-sized cars to investigate any correlation between the age of the car and the current market value. She calculates the correlation coefficient. Which of the following statements best describes her answer of −1.2? Tick (✓) one box.\nOptions: Definitely incorrect   Probably incorrect   Probably correct   Definitely correct",
+      "prompt": "Choose the best description of her answer.\nOptions: definitely incorrect   probably incorrect   probably correct   definitely correct",
       "marks": 1
      }
     ]
    },
    {
     "number": 11,
+    "scenario": "X ~ B(n, p) with mean 225 and variance 144.",
     "parts": [
      {
       "code": "11",
-      "prompt": "The random variable X is such that X ~ B(n, p). The mean value of X is 225. The variance of X is 144. Find p. Circle your answer.\nOptions: 0.36   0.6   0.64   0.8",
+      "prompt": "Choose p.\nOptions: 0.36   0.6   0.64   0.8",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
+    "scenario": "An electoral register has 8000 names; a systematic sample of 100 is wanted.",
     "parts": [
      {
       "code": "12",
-      "prompt": "An electoral register contains 8000 names. A researcher decides to select a systematic sample of 100 names from the register. Explain how the researcher should select such a sample.",
+      "prompt": "Explain how to select the sample.",
       "marks": 3
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "The table below is an extract from the Large Data Set (columns: Propulsion Type, Region, Engine Size, Mass, CO2, Particulate Emissions). The 13 rows of CO2 emissions are: 154, 146, 138, 159, 138, 130, 146, 146, 192, 122, 175, 140, 146. The last row reads Propulsion Type 2, North West, Engine Size 1896, Mass 0, CO2 146, and a blank Particulate Emissions value.",
+    "scenario": "Large Data Set extract: 13 cars, all propulsion type 2 (regions London, North West, South West). CO₂ values: 154, 146, 138, 159, 138, 130, 146, 146, 192, 122, 175, 140, 146. The last row (North West, engine 1896, CO₂ 146) has mass recorded as 0 and a blank particulate-emissions cell (full table on the question paper).",
     "parts": [
      {
       "code": "13(a)(i)",
-      "prompt": "Calculate the mean and standard deviation of CO2 emissions in the table.",
+      "prompt": "Calculate the mean and standard deviation of the CO₂ emissions.",
       "marks": 2
      },
      {
       "code": "13(a)(ii)",
-      "prompt": "Any value more than 2 standard deviations from the mean can be identified as an outlier. Determine, using this definition of an outlier, if there are any outliers in this sample of CO2 emissions. Fully justify your answer.",
+      "prompt": "Taking an outlier as more than 2 standard deviations from the mean, decide with justification whether any CO₂ values are outliers.",
       "marks": 2
      },
      {
       "code": "13(b)",
-      "prompt": "Maria claims that the last line in the table must contain two errors. Use your knowledge of the Large Data Set to comment on Maria’s claim.",
+      "prompt": "Maria says the last row must contain two errors. Comment, using your knowledge of the Large Data Set.",
       "marks": 2
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "A and B are two events such that P(A∩B) = 0.1, P(A′∩B′) = 0.2 and P(B) = 2P(A).",
+    "scenario": "Events A and B: P(A ∩ B) = 0.1, P(A′ ∩ B′) = 0.2, P(B) = 2P(A).",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "Find P(A)",
+      "prompt": "Find P(A).",
       "marks": 4
      },
      {
       "code": "14(b)",
-      "prompt": "Find P(B|A)",
+      "prompt": "Find P(B | A).",
       "marks": 2
      },
      {
       "code": "14(c)",
-      "prompt": "Determine if A and B are independent events.",
+      "prompt": "Decide whether A and B are independent.",
       "marks": 1
      }
     ]
    },
    {
     "number": 15,
+    "scenario": "Escape-room times historically have mean 65 min and standard deviation 11.3 min. After puzzle changes, 100 random teams take 6780 min in total. Times are normally distributed.",
     "parts": [
      {
       "code": "15",
-      "prompt": "A team game involves solving puzzles to escape from a room. Using data from the past, the mean time to solve the puzzles and escape from one of these rooms is 65 minutes with a standard deviation of 11.3 minutes. After recent changes to the puzzles in the room, it is claimed that the mean time to solve the puzzles and escape has changed. To test this claim, a random sample of 100 teams is selected. The total time to solve the puzzles and escape for the 100 teams is 6780 minutes. Assuming that the times are normally distributed, test at the 2% level the claim that the mean time has changed.",
+      "prompt": "Test at the 2% level whether the mean time has changed.",
       "marks": 7
      }
     ]
    },
    {
     "number": 16,
-    "scenario": "The discrete random variable X has the probability function P(X = x) = c(7 − 2x) for x = 0, 1, 2, 3; P(X = x) = k for x = 4; and P(X = x) = 0 otherwise, where c and k are constants.",
+    "scenario": "P(X = x) = c(7 − 2x) for x = 0, 1, 2, 3; k for x = 4; 0 otherwise.",
     "parts": [
      {
       "code": "16(a)",
-      "prompt": "Show that 16c + k = 1",
+      "prompt": "Show that 16c + k = 1.",
       "marks": 2
      },
      {
       "code": "16(b)",
-      "prompt": "Given that P(X ≥ 3) = 5/8, find the value of c and the value of k.",
+      "prompt": "Given P(X ≥ 3) = 5/8, find c and k.",
       "marks": 2
      }
     ]
    },
    {
     "number": 17,
-    "scenario": "James is playing a mathematical game on his computer. The probability that he wins is 0.6. As part of an online tournament, James plays the game 10 times. Let Y be the number of games that James wins.",
+    "scenario": "James wins a computer game with probability 0.6 and plays 10 times; Y = number of wins.",
     "parts": [
      {
       "code": "17(a)",
-      "prompt": "State two assumptions, in context, for Y to be modelled as B(10, 0.6)",
+      "prompt": "Give two contextual assumptions needed for Y ~ B(10, 0.6).",
       "marks": 2
      },
      {
       "code": "17(b)",
-      "prompt": "Find P(Y = 4)",
+      "prompt": "Find P(Y = 4).",
       "marks": 1
      },
      {
       "code": "17(c)",
-      "prompt": "Find P(Y ≥ 4)",
+      "prompt": "Find P(Y ≥ 4).",
       "marks": 2
      },
      {
       "code": "17(d)",
-      "prompt": "After practising the game, James claims that he has increased his probability of winning the game. In a random sample of 15 subsequent games, he wins 12 of them. Test at a 5% significance level whether James’s claim is correct.",
+      "prompt": "After practice he wins 12 of 15 games. Test at 5% his claim that his win probability has increased.",
       "marks": 6
      }
     ]
    },
    {
     "number": 18,
-    "scenario": "A factory produces jars of jam and jars of marmalade.",
+    "scenario": "Jam weight X g ~ N(372, 3.5²). Marmalade weight Y g ~ N(μ, σ²).",
     "parts": [
      {
       "code": "18(a)(i)",
-      "prompt": "The weight, X grams, of jam in a jar can be modelled as a normal variable with mean 372 and a standard deviation of 3.5. Find the probability that the weight of jam in a jar is equal to 372 grams.",
+      "prompt": "Find P(X = 372).",
       "marks": 1
      },
      {
       "code": "18(a)(ii)",
-      "prompt": "Find the probability that the weight of jam in a jar is greater than 368 grams.",
+      "prompt": "Find P(X > 368).",
       "marks": 2
      },
      {
       "code": "18(b)(i)",
-      "prompt": "The weight, Y grams, of marmalade in a jar can be modelled as a normal variable with mean μ and standard deviation σ. Given that P(Y < 346) = 0.975, show that 346 − μ = 1.96σ. Fully justify your answer.",
+      "prompt": "Given P(Y < 346) = 0.975, show with full justification that 346 − μ = 1.96σ.",
       "marks": 3
      },
      {
       "code": "18(b)(ii)",
-      "prompt": "Given further that P(Y < 336) = 0.14, find μ and σ",
+      "prompt": "Given also P(Y < 336) = 0.14, find μ and σ.",
       "marks": 4
      }
     ]
@@ -19292,430 +19113,401 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "(−1, π)"
-    ],
-    "guidance": "B1. arccos has domain −1 ≤ x ≤ 1 and range 0 ≤ y ≤ π; the end point P is where x = −1, giving y = arccos(−1) = π."
+     "B1 B: (−1, π)"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "−2"
-    ],
-    "guidance": "B1. (x+3)(6−2x)/((x−3)(3+x)) = (x+3)·(−2)(x−3)/((x−3)(x+3)) = −2."
+     "B1 A: −2"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "6x"
-    ],
-    "guidance": "B1. This limit is the derivative of f(x) = 3x², which is 6x."
+     "B1 D: 6x"
+    ]
    },
    "6": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Multiply numerator and denominator by (5+√x) (or factorise/group terms): expanded numerator (50 + 23x − x²) over (25 − x)",
-     "Factorise: (25 − x)(2 + x)/(25 − x)",
-     "2 + x"
-    ],
-    "guidance": "M1 begins to solve using an appropriate technique (factorising/grouping, writing y = √x, or multiplying by (5+√x)/(5+√x)) — PI if 2 + x or 25 − x or 5 − x^(1/2) seen. M1 obtains one correct common factor in the numerator (or expands numerator, condone one error, may be unsimplified). M1 obtains the second correct common factor (or correct simplified numerator and denominator, PI in long division). A1 cancels the common factor to obtain 2 + x."
+     "M1 Suitable start: factorising/grouping, substituting y = √x, or multiplying by (5 + √x)/(5 + √x)",
+     "M1 One correct common factor (e.g. 2 + x, 25 − x or 5 − √x) or expanded numerator",
+     "M1 Second common factor, or correct simplified numerator and denominator (50 + 23x − x²)/(25 − x)",
+     "A1 2 + x"
+    ]
    },
    "8": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Integration by parts: u = x, v′ = cos x ⇒ ∫ x cos x dx = x sin x + cos x",
-     "Evaluate between π/4 and π/3: [x sin x + cos x] = π/3·(√3/2) + ½ − (π/4·(√2/2) + √2/2)",
-     "a = (4√3 − 3√2)/24",
-     "b = (1 − √2)/2"
-    ],
-    "guidance": "B1 uses integration by parts with u = x and v′ = cos x (PI by x sin x + cos x). M1 applies the by-parts formula correctly. A1 (CAO) obtains x sin x + cos x. M1 substitutes the limits correctly into the integrated expression (PI by correct a and b). B1 uses a correct exact value for one of sin(π/3)=√3/2, cos(π/3)=½, cos(π/4)=√2/2, sin(π/4)=√2/2. A1 obtains correct exact values a = (4√3 − 3√2)/24 and b = (1 − √2)/2 (ACF)."
+     "B1 Parts with u = x, v′ = cos x",
+     "M1 Applies the parts formula correctly",
+     "A1 x sin x + cos x",
+     "M1 Substitutes π/3 and π/4",
+     "B1 Uses an exact value such as sin(π/3) = √3/2 or cos(π/4) = √2/2",
+     "A1 a = (4√3 − 3√2)/24, b = (1 − √2)/2"
+    ]
    },
    "10": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Definitely incorrect"
-    ],
-    "guidance": "R1 ticks the correct box: Definitely incorrect, because a correlation coefficient must lie between −1 and 1, so −1.2 is impossible."
+     "R1 A: definitely incorrect"
+    ]
    },
    "11": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "0.36"
-    ],
-    "guidance": "B1 circles 0.36. Mean np = 225 and variance np(1−p) = 144, so 1 − p = 144/225 = 0.64, giving p = 0.36."
+     "B1 A: 0.36"
+    ]
    },
    "12": {
     "type": "points",
     "points": [
-     "Number the population 1 to 8000",
-     "Calculate the sampling interval 8000 ÷ 100 = 80",
-     "Randomly select a starting number (the first person) from 1 to 80, then select every 80th person thereafter on the register"
-    ],
-    "guidance": "E1 explains how to enumerate the population using a valid numbering stating the range used (1 to 8000). B1 calculates 8000 ÷ 100 = 80. E1 explains they randomly select the first person from the first 80 people and thereafter every subsequent 80th person."
+     "E1 Number the names 1 to 8000",
+     "B1 Interval 8000 ÷ 100 = 80",
+     "E1 Choose a random start among the first 80, then take every 80th name"
+    ]
    },
    "15": {
     "type": "points",
     "points": [
-     "H₀: μ = 65, H₁: μ ≠ 65 (two-tailed test; X = times to solve in minutes)",
-     "Sample mean x̄ = 6780/100 = 67.8",
-     "Test statistic z = (67.8 − 65)/(11.3/√100) = 2.48",
-     "Critical value (2% two-tailed) = 2.33; since 2.48 > 2.33, reject H₀",
-     "There is sufficient evidence at the 2% level to suggest the mean escape time has changed"
-    ],
-    "guidance": "B1 states both hypotheses correctly for a two-tailed test (accept population mean μ). B1 calculates mean of the sample (67.8). M1 formulates the test statistic or uses the correct distribution / acceptance region. A1 obtains the test statistic value 2.48 (or correct probability/acceptance region). M1 compares 2.48 with critical value 2.33 (or compares probabilities/sample mean with the acceptance region). A1 compares correctly and infers H₀ is rejected (CSO). R1 concludes correctly in context that there is sufficient evidence the mean escape time has changed (CSO)."
+     "B1 H₀: μ = 65, H₁: μ ≠ 65",
+     "B1 Sample mean 67.8",
+     "M1 Test statistic (67.8 − 65)/(11.3/√100), or probability, or acceptance region",
+     "A1 z ≈ 2.48 (or p ≈ 0.0066–0.007, or acceptance region 62.3 to 67.7)",
+     "M1 Compares with critical value 2.33 (or equivalent comparison)",
+     "A1 Reject H₀",
+     "R1 Sufficient evidence at 2% that the mean escape time has changed"
+    ]
    },
    "4(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "(2x)¹⁰ + ¹⁰C₁(2x)⁹(−3) + ¹⁰C₂(2x)⁸(−3)²",
-     "p = −15360",
-     "q = 103680"
-    ],
-    "guidance": "M1 express at least one term correctly using the binomial expansion (PI by correct value of p or q, or expression for x⁹ and x⁸ term; condone sign error on −3). M1 obtains correct value of p or q (may be unsimplified). R1 completes the argument with correct p and q to show the required result. So 1024x¹⁰ − 15360x⁹ + 103680x⁸."
+     "M1 At least one term correct via the binomial expansion, e.g. ¹⁰C₁(2x)⁹(−3)",
+     "M1 Correct p or q",
+     "R1 1024x¹⁰ − 15360x⁹ + 103680x⁸, so p = −15360, q = 103680"
+    ]
    },
    "4(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Constant term comes from (2x)⁵(−3/x)⁵: ¹⁰C₅ × 2⁵ × (−3)⁵",
-     "−1959552"
-    ],
-    "guidance": "M1 deduces the constant term comes from (2x)⁵(±3/x)⁵, i.e. ¹⁰C₅×2⁵×(−3)⁵ (PI by (…x)⁰ i.e. (…x)⁸ thinking). A1 obtains −1959552."
+     "M1 Constant term comes from (2x)⁵(−3/x)⁵ with coefficient ¹⁰C₅",
+     "A1 −1959552"
+    ]
    },
    "5(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Area = ½ r²θ = ½ × 5² × 0.7",
-     "8.75 m²"
-    ],
-    "guidance": "M1 uses ½ r²θ correctly for the area of the sector. A1 obtains 8.75 m² (condone incorrect or missing units)."
+     "M1 ½ × 5² × 0.7",
+     "A1 8.75 m²"
+    ]
    },
    "5(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Perimeter = arc + 2 radii = rθ + 2r = 5×0.7 + 2×5 = 13.5 m",
-     "Cost = 13.5 × 1.80",
-     "£24.30"
-    ],
-    "guidance": "M1 obtains the perimeter by adding the arc length to twice the radius (= 13.5). M1 multiplies a perimeter by 1.80. A1 (CAO) cost £24.30."
+     "B1 Arc length 5 × 0.7 = 3.5",
+     "M1 Perimeter = arc + 2 radii (13.5 m) times £1.80",
+     "A1 £24.30"
+    ]
    },
    "5(b)(i)": {
     "type": "points",
     "points": [
-     "Area: ½r²θ = 20 ⇒ θ = 40/r²",
-     "Perimeter P = rθ + 2r = 40/r + 2r",
-     "Cost C = 1.8 × P = 1.8(40/r + 2r) = (18/5)(20/r + r)"
-    ],
-    "guidance": "M1 forms at least one correct equation or perimeter (P = θr + 2r). A1 eliminates θ from fully correct equation to obtain P = 40/r + 2r. R1 completes argument with correct values of θ and r to show C = (18/5)(20/r + r) (accept 3.6/r form via 18/5 = 3.6). Multiplying the perimeter by 1.8 gives the printed cost."
+     "M1 A correct area or perimeter equation: ½r²θ = 20 or P = rθ + 2r",
+     "A1 Eliminates θ (θ = 40/r²) to get P = 40/r + 2r",
+     "R1 C = 1.8P = 72/r + 3.6r = (18/5)(20/r + r)"
+    ]
    },
    "5(b)(ii)": {
     "type": "points",
     "points": [
-     "C = 72/r + (18/5)r so dC/dr = −72/r² + 18/5",
-     "Minimum/stationary point occurs when dC/dr = 0",
-     "Solve: −72/r² + 18/5 = 0 ⇒ r² = 20 ⇒ r = √20 ≈ 4.472 ≈ 4.5",
-     "Second derivative d²C/dr² = 144/r³ > 0 when r = √20, so minimum"
-    ],
-    "guidance": "B1 recognises use of differentiation in the model (PI if dC/dr seen). M1 differentiates the model with at least one term correct (condone sign error, OE). E1 explains a minimum/stationary/turning point occurs when dC/dr = 0. A1 solves dC/dr = 0 for the correct exact value (r = √20) or decimal to at least two decimal places. R1 uses a gradient test or second derivative (or sketch) to determine the nature and completes the argument that the minimum occurs at r ≈ 4.5 (must have shown r ≈ 4.5)."
+     "B1 Recognises differentiation is needed",
+     "M1 dC/dr = −72/r² + 18/5 (one term correct)",
+     "E1 Minimum/stationary point where dC/dr = 0",
+     "A1 r = √20 = 4.47… (≈ 4.5)",
+     "R1 Second derivative 144/r³ > 0 (or gradient test) shows a minimum at r ≈ 4.5"
+    ]
    },
    "7(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "W₂ = 30 × 0.98 = 29.4"
-    ],
-    "guidance": "B1 obtains the correct volume, AWRT 29 (condone incorrect or missing units)."
+     "B1 W₂ = 29.4 ml"
+    ]
    },
    "7(b)": {
     "type": "points",
     "points": [
-     "Wₙ is the nth term of a geometric sequence",
-     "A 2% reduction per minute gives a common ratio of 0.98",
-     "First term is 30, so A = 30"
-    ],
-    "guidance": "B1 states A = 30 (PI by building up a sequence to three terms or Wₙ = 30×0.98^(n−1) seen). E1 explains Wₙ is the nth term of a geometric sequence and that a 2% reduction gives a common ratio of 0.98 (PI by building up a sequence to three terms)."
+     "B1 A = 30",
+     "E1 Geometric sequence: a 2% reduction each minute gives common ratio 0.98"
+    ]
    },
    "7(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Sum of 15 terms: S₁₅ = 30(1 − 0.98¹⁵)/(1 − 0.98)",
-     "≈ 392 millilitres"
-    ],
-    "guidance": "M1 uses a geometric model with their value of A to find S₁₅. A1F obtains their correct value of S₁₅ (FT their A; condone unrounded). Increase ≈ 392 ml."
+     "M1 S₁₅ = 30(1 − 0.98¹⁵)/(1 − 0.98)",
+     "A1F 392 ml"
+    ]
    },
    "7(d)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Sum to infinity S∞ = 30/(1 − 0.98) = 1500 millilitres = 1.5 litres",
-     "Bucket already one third full = 4 litres",
-     "Maximum = 4 + 1.5 = 5.5 litres"
-    ],
-    "guidance": "M1 uses the sum to infinity formula with their A. A1F obtains their correct value of the sum to infinity (= 1500 ml = 1.5 litres). A1 (CAO) obtains 5.5 litres (accept litres or millilitres)."
+     "M1 Sum to infinity 30/(1 − 0.98)",
+     "A1F 1500 ml",
+     "A1 4 + 1.5 = 5.5 litres"
+    ]
    },
    "7(e)": {
     "type": "points",
     "points": [
-     "The sum to infinity assumes the drips continue indefinitely, which is unrealistic — they have actually stopped",
-     "A relevant environmental factor, e.g. water has evaporated over several hours (or wind affected the level, or water consumed by animals)"
-    ],
-    "guidance": "E1 explains the model assumes the drips continue indefinitely which is unrealistic. E1 states a relevant environmental factor (e.g. evaporation, wind, animals)."
+     "E1 The sum to infinity assumes the drips never stop, which is unrealistic",
+     "E1 An environmental factor, e.g. evaporation, wind or animals drinking"
+    ]
    },
    "9(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "f′(x) = 4x³ + 15x²",
-     "f″(x) = 12x² + 30x"
-    ],
-    "guidance": "M1 differentiates f(x) at least one correct term. A1 obtains f″(x) = 12x² + 30x."
+     "M1 Differentiates with at least one term correct (f′(x) = 4x³ + 15x²)",
+     "A1 f″(x) = 12x² + 30x"
+    ]
    },
    "9(a)(ii)": {
     "type": "points",
     "points": [
-     "At x = −15/4: f″(−15/4) = 12(−15/4)² + 30(−15/4) = 225/4 > 0, so this is a minimum",
-     "At x = 0: f″(0) = 0, so the second-derivative test is inconclusive",
-     "Check signs of f′(x) either side of x = 0 (f′ < 0 just below and just above 0, since f′(x) = x²(4x+15)): x = 0 is a point of inflection (not a turning point in the usual max/min sense)"
-    ],
-    "guidance": "M1 substitutes x = −15/4 into f″(x). R1 completes rigorous justification that x = −15/4 is a minimum. M1 substitutes x = 0 into f″(x) giving 0, OR argues the shape (using sign of f′ either side). R1 completes a rigorous argument for the point of inflection at x = 0 (e.g. f′(x) does not change sign, or considers both sides), confirming x = 0 is a stationary point of inflection."
+     "M1 Evaluates f″(−15/4) (or gradient test either side)",
+     "R1 f″(−15/4) = 225/4 > 0, so a minimum",
+     "M1 Tests either side of x = 0 (e.g. f″(1) > 0, f″(−1) < 0) or argues from the quartic's shape",
+     "R1 x = 0 is a point of inflection"
+    ]
    },
    "9(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x > −15/4"
-    ],
-    "guidance": "B1 deduces x > −15/4 (OE; condone use of ≥). f is increasing where f′(x) = x²(4x+15) ≥ 0."
+     "B1 x > −15/4"
+    ]
    },
    "9(c)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Reflection in the y-axis"
-    ],
-    "guidance": "B1 deduces the transformation is a reflection in the y-axis (OE). g(x) = x⁴ − 5x³ = f(−x)."
+     "B1 Reflection in the y-axis"
+    ]
    },
    "9(c)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x > 15/4"
-    ],
-    "guidance": "B1F deduces x > 15/4 (condone use of ≥; FT their part (b) answer reflected only if negative). g increasing where g′(x) = x²(4x−15) ≥ 0."
+     "B1F x > 15/4"
+    ]
    },
    "13(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Mean = 148.6",
-     "Standard deviation = 17.8 (accept AWRT 18.5 from sample sd)"
-    ],
-    "guidance": "B1 mean AWRT 149 (= 148.6). B1 standard deviation AWRT 17.8 (accept AWRT 18.5 for the sample standard deviation)."
+     "B1 Mean 148.6 (awrt 149)",
+     "B1 Standard deviation 17.8 (18.5 also accepted)"
+    ]
    },
    "13(a)(ii)": {
     "type": "points",
     "points": [
-     "Upper boundary: mean + 2sd = 148.6 + 2×17.8 = 184.2",
-     "Lower boundary: mean − 2sd = 148.6 − 2×17.8 = 113",
-     "192 > 184.2, so 192 is the only outlier"
-    ],
-    "guidance": "M1 calculates either mean + 2×sd or mean − 2×sd. R1F deduces that the CO2 value of 192 is the only outlier — must make a clear comparison and have both lower and upper boundaries (FT their mean and standard deviation)."
+     "M1 Mean ± 2 s.d.: about 113 and 184.2",
+     "R1F 192 > 184.2, so 192 is the only outlier (both boundaries needed)"
+    ]
    },
    "13(b)": {
     "type": "points",
     "points": [
-     "The Mass of 0 is an error: every car has a mass (there is a driver mass / cars cannot have zero mass)",
-     "The blank Particulate Emissions cell may NOT be an error: in the Large Data Set not all cars have particulate emissions recorded"
-    ],
-    "guidance": "E1 explains that the 0 value is an error because every car has a mass (there is a driver mass). E1 explains the blank cell may not be an error as the LDS only has particulate emissions recorded for some cars. So Maria is only partly correct (only one definite error)."
+     "E1 Mass 0 is an error since every car has mass",
+     "E1 The blank particulate cell may be genuine, as the LDS records particulates for only some cars"
+    ]
    },
    "14(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(A∪B) = 1 − P(A′∩B′) = 1 − 0.2 = 0.8",
-     "P(A∪B) = P(A) + P(B) − P(A∩B) with P(B) = 2P(A) and P(A∩B) = 0.1",
-     "0.8 = P(A) + 2P(A) − 0.1 ⇒ 3P(A) = 0.9",
-     "P(A) = 0.3"
-    ],
-    "guidance": "B1 uses P(A∪B) = P(A) + P(B) − P(A∩B) with 0.1 substituted correctly, or draws a Venn diagram with 0.1 in the correct region. B1 uses P(A∪B) = 0.8 in the equation (PI by showing at least three of the regions, or a correct Venn). M1 substitutes for P(B) to form an equation to find P(A). A1 obtains P(A) = 0.3."
+     "B1 P(A ∪ B) = P(A) + P(B) − 0.1 (or Venn diagram with 0.1 placed)",
+     "B1 Uses P(A ∪ B) = 0.8",
+     "M1 Substitutes P(B) = 2P(A): 0.8 = 3P(A) − 0.1",
+     "A1 P(A) = 0.3"
+    ]
    },
    "14(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(B|A) = P(A∩B)/P(A) = 0.1/0.3",
-     "= 1/3"
-    ],
-    "guidance": "M1 uses the conditional probability formula with 0.1 and their P(A). A1F obtains 1/3 (FT their P(A) if 0.1 < P(A) < 1; allow 0.3 but not 0.33…)."
+     "M1 P(B | A) = 0.1 ÷ their P(A)",
+     "A1F 1/3"
+    ]
    },
    "14(c)": {
     "type": "points",
     "points": [
-     "P(A)×P(B) = 0.3 × 0.6 = 0.18",
-     "P(A∩B) = 0.1 ≠ 0.18, so A and B are NOT independent"
-    ],
-    "guidance": "R1 deduces that A and B are not independent by comparing P(A)×P(B) = 0.18 with P(A∩B) = 0.1, or by showing P(B) ≠ P(B|A)."
+     "R1 Not independent: P(A)P(B) = 0.3 × 0.6 = 0.18 ≠ 0.1"
+    ]
    },
    "16(a)": {
     "type": "points",
     "points": [
-     "P(X=0)=7c, P(X=1)=5c, P(X=2)=3c, P(X=3)=c, P(X=4)=k",
-     "Probabilities sum to 1: 7c + 5c + 3c + c + k = 1",
-     "16c + k = 1"
-    ],
-    "guidance": "M1 substitutes the x values into the probability function to obtain at least three correct expressions in terms of c. R1 completes a rigorous argument by obtaining all five correct expressions and summing them to 1 to obtain 16c + k = 1 (OE)."
+     "M1 At least three of 7c, 5c, 3c, c, k",
+     "R1 7c + 5c + 3c + c + k = 1 gives 16c + k = 1"
+    ]
    },
    "16(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X ≥ 3) = P(X=3) + P(X=4) = c + k = 5/8",
-     "Solve with 16c + k = 1: subtract to get 15c = 1 − 5/8 = 3/8",
-     "c = 1/40 and k = 3/5"
-    ],
-    "guidance": "M1 forms a second equation using their expressions for P(X=3) and P(X=4): c + k = 5/8. A1 obtains c = 1/40 and k = 3/5 (OE)."
+     "M1 c + k = 5/8",
+     "A1 c = 1/40, k = 3/5"
+    ]
    },
    "17(a)": {
     "type": "points",
     "points": [
-     "Each game James plays he can only win or not win (two outcomes); the number of games is fixed (10)",
-     "The probability of James winning a game remains constant at 0.6 from game to game / each game is independent of him winning another game"
-    ],
-    "guidance": "E1 states one correct binomial assumption in context. E1 states a second correct binomial assumption in context (e.g. fixed number of trials with two outcomes; constant probability 0.6 / independent games). Condone omission of 0.6 from the statement."
+     "E1 One valid binomial assumption in context, e.g. games independent",
+     "E1 A second, e.g. win probability stays 0.6, or fixed number of games, or only win/not win"
+    ]
    },
    "17(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(Y = 4) = ¹⁰C₄ (0.6)⁴(0.4)⁶ ≈ 0.111"
-    ],
-    "guidance": "B1 obtains the correct probability AWRT 0.11 (= 0.111)."
+     "B1 0.111 (awrt 0.11)"
+    ]
    },
    "17(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(Y ≥ 4) = 1 − P(Y ≤ 3) = 1 − 0.05476",
-     "≈ 0.945"
-    ],
-    "guidance": "M1 calculates P(Y ≤ 3) = 0.05476 or P(Y ≤ 4) = 0.16623 using the binomial distribution (or states P(Y ≥ 4) = 1 − P(Y ≤ 3), or subtracts their stated value from 1). A1 obtains the correct probability AWFW [0.94, 0.95] (= 0.94524)."
+     "M1 1 − P(Y ≤ 3), with P(Y ≤ 3) = 0.05476",
+     "A1 0.945 (0.94 to 0.95)"
+    ]
    },
    "17(d)": {
     "type": "points",
     "points": [
-     "Let X = number of games won in 15; H₀: p = 0.6, H₁: p > 0.6 (one-tailed), X ~ B(15, 0.6)",
-     "P(X ≥ 12) = 1 − P(X ≤ 11) = 1 − 0.9094 = 0.0906",
-     "Critical region requires P(X ≥ 12) ≤ 0.05; here 0.0906 > 0.05",
-     "So accept H₀: there is insufficient evidence to suggest James has increased his probability of winning"
-    ],
-    "guidance": "B1 states both hypotheses correctly for a one-tailed test. M1 uses the correct binomial model with P(X ≤ 11) or P(X ≥ 12) (or the correct critical region X ≥ 13, PI by critical region X ≥ 13). A1 obtains the correct probability P(X ≥ 12) = 0.0906 (or correct critical region) and compares. A1 (CSO) infers H₀ is not rejected (allow reference to H₁). R1 concludes correctly in context that there is insufficient evidence to suggest the game probability has increased (CSO)."
+     "B1 H₀: p = 0.6, H₁: p > 0.6",
+     "M1 Uses B(15, 0.6) for a relevant tail probability",
+     "A1 P(X ≥ 12) = 0.0905 (or critical region X ≥ 13)",
+     "M1 Compares with 0.05 (or 12 with the critical region)",
+     "A1 Do not reject H₀",
+     "R1 Insufficient evidence that his probability of winning has increased"
+    ]
    },
    "18(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "0"
-    ],
-    "guidance": "B1 states 0 — for a continuous (normal) random variable, the probability of any single exact value is 0."
+     "B1 0"
+    ]
    },
    "18(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X > 368) = 1 − P(X < 368), X ~ N(372, 3.5²)",
-     "≈ 0.87 (AWRT 0.87)"
-    ],
-    "guidance": "M1 uses the normal distribution model to find P(X > 368) (shows 368 on a diagram or correct standardisation z = (368−372)/3.5). A1 obtains the probability AWRT 0.87 (= 0.873...)."
+     "M1 Uses the normal model, 1 − P(X < 368)",
+     "A1 0.873 (awrt 0.87)"
+    ]
    },
    "18(b)(i)": {
     "type": "points",
     "points": [
-     "P(Y < 346) = 0.975 ⇒ the z-value for area 0.975 is 1.96",
-     "Standardise: (346 − μ)/σ = 1.96",
-     "Rearrange: 346 − μ = 1.96σ"
-    ],
-    "guidance": "E1 explains the 1.96 is obtained through reverse normal distribution function, OE, or shows 1.96 on a diagram (using inverse normal, the z-value is 1.95996398 for area 0.975). M1 forms an equation with unknown μ and σ and the z-value, accept z = (−4, 4) except ±0.14. R1 completes a rigorous argument by forming and rearranging the equation to obtain 346 − μ = 1.96σ."
+     "E1 1.96 comes from the inverse normal for 0.975 (1.95996…)",
+     "M1 Forms (346 − μ)/σ = their z",
+     "R1 Rearranges to 346 − μ = 1.96σ"
+    ]
    },
    "18(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(Y < 336) = 0.14 ⇒ z = −1.08, so (336 − μ)/σ = −1.08, i.e. 336 − μ = −1.08σ",
-     "Solve simultaneously with 346 − μ = 1.96σ: subtracting gives 10 = 3.04σ",
-     "σ ≈ 3.29 (AWRT 3.3)",
-     "μ ≈ 340 (AWRT 340)"
-    ],
-    "guidance": "B1 obtains the z-value −1.08 from the inverse normal (AWFW [−1.1, −1.08], condone sign error). M1 forms the second equation 336 − μ = −1.08σ with their z-value and solves simultaneously with the first equation (accept z in (−4,4) except ±0.14; condone μ − 336). A1 obtains σ AWRT 3.3 (ISW). A1 obtains μ AWRT 340 (ISW)."
+     "B1 z = −1.08 (−1.1 to −1.08)",
+     "M1 Second equation (336 − μ)/σ = −1.08",
+     "A1 σ = 3.29 (awrt 3.3)",
+     "A1 μ = 340 (awrt)"
+    ]
    }
   }
  },
  "math-aqa-7357-2022-p1": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "Parametric curve x = cos θ, y = sin θ for 0 ≤ θ ≤ 2π.",
     "parts": [
      {
       "code": "1",
-      "prompt": "A curve is defined by the parametric equations\n\nx = cos θ  and  y = sin θ     where 0 ≤ θ ≤ 2π\n\nWhich of the options shown below is a Cartesian equation for this curve?\n\nCircle your answer.\n\ny/x = tan θ        x² + y² = 1        x² − y² = 1        x²y² = 1",
+      "prompt": "Choose the Cartesian equation of the curve.\nOptions: y/x = tan θ   x² + y² = 1   x² − y² = 1   x²y² = 1",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "Periodic sequence Uₙ = (−1)ⁿ.",
     "parts": [
      {
       "code": "2",
-      "prompt": "A periodic sequence is defined by\n\nUₙ = (−1)ⁿ\n\nState the period of the sequence.\n\nCircle your answer.\n\n−1        0        1        2",
+      "prompt": "State the period of the sequence.\nOptions: −1   0   1   2",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "The curve y = log₄ x is stretched parallel to the y-axis with scale factor 2.",
     "parts": [
      {
       "code": "3",
-      "prompt": "The curve\n\ny = log₄ x\n\nis transformed by a stretch, scale factor 2, parallel to the y-axis.\n\nState the equation of the curve after it has been transformed.\n\nCircle your answer.\n\ny = ½ log₄ x        y = 2 log₄ x        y = log₄ 2x        y = log₈ x",
+      "prompt": "Give the equation of the transformed curve.\nOptions: y = ½log₄ x   y = 2log₄ x   y = log₄ 2x   y = log₈ x",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
-    "scenario": "The graph of y = f(x), where f(x) = ax² + bx + c, is shown in Figure 1. (Figure 1 shows a \"frown\"-shaped parabola opening downwards, with a positive y-intercept and crossing the x-axis at one negative and one positive root.)",
+    "scenario": "Figure 1 shows y = f(x), f(x) = ax² + bx + c: an n-shaped parabola with a positive y-intercept, its maximum at a positive x-value, one negative root and one positive root (diagram on the question paper).",
     "parts": [
      {
       "code": "4",
-      "prompt": "Which of the following shows the graph of y = f′(x)?\n\nTick (✓) one box. (The four options are straight lines: a steeply decreasing line through a positive y-intercept; a steeply decreasing line through the origin region; a steeply increasing line; and a less steeply increasing line. The correct derivative of a downward parabola is a decreasing straight line.)",
+      "prompt": "Which straight-line graph shows y = f′(x)?\nOptions: negative gradient, positive y-intercept, crossing the positive x-axis   negative gradient, negative y-intercept   positive gradient, positive y-intercept   positive gradient, negative y-intercept (graphs on the question paper)",
       "marks": 1
      }
     ]
    },
    {
     "number": 5,
+    "scenario": "Curve y = (x − 2)⁴.",
     "parts": [
      {
       "code": "5",
-      "prompt": "Find an equation of the tangent to the curve\n\ny = (x − 2)⁴\n\nat the point where x = 0",
+      "prompt": "Find the equation of the tangent to the curve where x = 0.",
       "marks": 3
      }
     ]
    },
    {
     "number": 6,
+    "scenario": "Binomial expansion and small-angle approximations.",
     "parts": [
      {
       "code": "6(a)",
-      "prompt": "Find the first two terms, in ascending powers of x, of the binomial expansion of\n\n(1 − x/2)^(½)",
+      "prompt": "Find the first two terms, in ascending powers of x, of the expansion of (1 − x/2)^(1/2).",
       "marks": 2
      },
      {
       "code": "6(b)",
-      "prompt": "Hence, for small values of x, show that\n\nsin 4x + √(cos x) ≈ A + Bx + Cx²\n\nwhere A, B and C are constants to be found.",
+      "prompt": "Hence show that, for small x, sin 4x + √(cos x) ≈ A + Bx + Cx², finding the constants A, B and C.",
       "marks": 4
      }
     ]
    },
    {
     "number": 7,
+    "scenario": "The graph of y = cot(x − π/2) for 0 ≤ x ≤ 2π (axes marked at π and 2π on the question paper).",
     "parts": [
      {
       "code": "7",
-      "prompt": "Sketch the graph of\n\ny = cot(x − π/2)\n\nfor 0 ≤ x ≤ 2π",
+      "prompt": "Sketch the graph of y = cot(x − π/2) for 0 ≤ x ≤ 2π.",
       "marks": 3
      }
     ]
    },
    {
     "number": 8,
-    "scenario": "The lines L₁ and L₂ are parallel. L₁ has equation 5x + 3y = 15 and L₂ has equation 5x + 3y = 83. L₁ intersects the y-axis at the point P. The point Q is the point on L₂ closest to P, as shown in the diagram (P is the y-intercept of L₁ and PQ is the perpendicular segment from P to L₂).",
+    "scenario": "Parallel lines L₁: 5x + 3y = 15 and L₂: 5x + 3y = 83. P is where L₁ meets the y-axis; Q is the point on L₂ nearest to P (diagram on the question paper).",
     "parts": [
      {
       "code": "8(a)(i)",
@@ -19724,12 +19516,12 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "8(a)(ii)",
-      "prompt": "Hence show that PQ = k√34, where k is an integer to be found.",
+      "prompt": "Hence show that PQ = k√34, finding the integer k.",
       "marks": 2
      },
      {
       "code": "8(b)(i)",
-      "prompt": "A circle, C, has centre (a, −17). L₁ and L₂ are both tangents to C.\n\nFind a.",
+      "prompt": "A circle C with centre (a, −17) touches both L₁ and L₂. Find a.",
       "marks": 2
      },
      {
@@ -19741,165 +19533,167 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 9,
-    "scenario": "The first three terms of an arithmetic sequence are given by 2x + 5,  5x + 1,  6x + 7",
+    "scenario": "The first three terms of an arithmetic sequence are 2x + 5, 5x + 1, 6x + 7.",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Show that x = 5 is the only value which gives an arithmetic sequence.",
+      "prompt": "Show that x = 5 is the only value giving an arithmetic sequence.",
       "marks": 3
      },
      {
       "code": "9(b)(i)",
-      "prompt": "Write down the value of the first term of the sequence.",
+      "prompt": "State the first term.",
       "marks": 1
      },
      {
       "code": "9(b)(ii)",
-      "prompt": "Find the value of the common difference of the sequence.",
+      "prompt": "Find the common difference.",
       "marks": 1
      },
      {
       "code": "9(c)",
-      "prompt": "The sum of the first N terms of the arithmetic sequence is Sₙ where\n\nS_N < 100 000\nS_(N+1) > 100 000\n\nFind the value of N.",
+      "prompt": "The sum of the first N terms satisfies S_N < 100 000 and S_(N+1) > 100 000. Find N.",
       "marks": 4
      }
     ]
    },
    {
     "number": 10,
-    "scenario": "The diagram shows a sector of a circle OAB. The point C lies on OB such that AC is perpendicular to OB. Angle AOB is θ radians. (OA and OB are radii; AC drops perpendicularly from A to OB at point C between O and B; the arc AB closes the sector.)",
+    "scenario": "Sector OAB of a circle with angle AOB = θ radians; C lies on OB with AC perpendicular to OB (diagram on the question paper).",
     "parts": [
      {
       "code": "10(a)",
-      "prompt": "Given the area of the triangle OAC is half the area of the sector OAB, show that\n\nθ = sin 2θ",
+      "prompt": "Given that triangle OAC has half the area of sector OAB, show that θ = sin 2θ.",
       "marks": 4
      },
      {
       "code": "10(b)",
-      "prompt": "Use a suitable change of sign to show that a solution to the equation\n\nθ = sin 2θ\n\nlies in the interval given by θ ∈ [π/5, 2π/5]",
+      "prompt": "Use a change of sign to show that θ = sin 2θ has a root in [π/5, 2π/5].",
       "marks": 2
      },
      {
       "code": "10(c)(i)",
-      "prompt": "The Newton-Raphson method is used to find an approximate solution to the equation θ = sin 2θ.\n\nUsing θ₁ = π/5 as a first approximation for θ apply the Newton-Raphson method twice to find the value of θ₃\n\nGive your answer to three decimal places.",
+      "prompt": "Starting from θ₁ = π/5, apply Newton-Raphson twice to find θ₃ to 3 decimal places.",
       "marks": 3
      },
      {
       "code": "10(c)(ii)",
-      "prompt": "Explain how a more accurate approximation for θ can be found using the Newton-Raphson method.",
+      "prompt": "Explain how Newton-Raphson could give a more accurate approximation.",
       "marks": 1
      },
      {
       "code": "10(c)(iii)",
-      "prompt": "Explain why using θ₁ = π/6 as a first approximation in the Newton-Raphson method does not lead to a solution for θ.",
+      "prompt": "Explain why starting from θ₁ = π/6 does not lead to a solution.",
       "marks": 2
      }
     ]
    },
    {
     "number": 11,
-    "scenario": "The polynomial p(x) is given by p(x) = x³ + (b + 2)x² + 2(b + 2)x + 8 where b is a constant.",
+    "scenario": "p(x) = x³ + (b + 2)x² + 2(b + 2)x + 8, where b is a constant.",
     "parts": [
      {
       "code": "11(a)",
-      "prompt": "Use the factor theorem to prove that (x + 2) is a factor of p(x) for all values of b.",
+      "prompt": "Use the factor theorem to prove (x + 2) is a factor of p(x) for every b.",
       "marks": 3
      },
      {
       "code": "11(b)(i)",
-      "prompt": "The graph of y = p(x) meets the x-axis at exactly two points.\n\nSketch a possible graph of y = p(x)",
+      "prompt": "y = p(x) meets the x-axis at exactly two points. Sketch a possible graph.",
       "marks": 3
      },
      {
       "code": "11(b)(ii)",
-      "prompt": "Given p(x) can be written as\n\np(x) = (x + 2)(x² + bx + 4)\n\nfind the value of b.\n\nFully justify your answer.",
+      "prompt": "Given p(x) = (x + 2)(x² + bx + 4), find b, fully justifying your answer.",
       "marks": 4
      }
     ]
    },
    {
     "number": 12,
+    "scenario": "Geometric series.",
     "parts": [
      {
       "code": "12(a)(i)",
-      "prompt": "A geometric sequence has first term 1 and common ratio ½.\n\nFind the sum to infinity of the sequence.",
+      "prompt": "A geometric sequence has first term 1 and common ratio ½. Find its sum to infinity.",
       "marks": 2
      },
      {
       "code": "12(a)(ii)",
-      "prompt": "Hence, or otherwise, evaluate\n\n∑(n=1 to ∞) (sin 30°)ⁿ",
+      "prompt": "Hence or otherwise evaluate Σ (sin 30°)ⁿ from n = 1 to ∞.",
       "marks": 2
      },
      {
       "code": "12(b)",
-      "prompt": "Find the smallest positive exact value of θ, in radians, which satisfies the equation\n\n∑(n=0 to ∞) (cos θ)ⁿ = 2 − √2",
+      "prompt": "Find the smallest positive exact θ, in radians, with Σ (cos θ)ⁿ from n = 0 to ∞ equal to 2 − √2.",
       "marks": 4
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "Figure 2 shows the approximate shape of the vertical cross section of the entrance to a cave. The cave has a horizontal floor. The entrance to the cave joins the floor at the points O and P. (Figure 2 shows an asymmetric arch rising from O on the left to a maximum and descending to P on the right along the floor line OP.) Garry models the shape of the cross section of the entrance to the cave using the equation\n\nx² + y² = a√x − y\n\nwhere a is a constant, and x and y are the horizontal and vertical distances respectively, in metres, measured from O.",
+    "scenario": "Cave entrance cross-section (Figure 2) meeting the horizontal floor at O and P, modelled by x² + y² = a√x − y, with x and y in metres measured horizontally and vertically from O.",
     "parts": [
      {
       "code": "13(a)",
-      "prompt": "The distance OP is 16 metres.\n\nFind the value of a that Garry should use in the model.",
+      "prompt": "OP = 16 m. Find the value of a.",
       "marks": 2
      },
      {
       "code": "13(b)",
-      "prompt": "Show that the maximum height of the cave above OP is approximately 10.5 metres.",
+      "prompt": "Show that the greatest height of the cave above OP is about 10.5 m.",
       "marks": 6
      },
      {
       "code": "13(c)",
-      "prompt": "Suggest one limitation of the model Garry has used.",
+      "prompt": "Suggest one limitation of the model.",
       "marks": 1
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "The region bounded by the curve y = (2x − 8) ln x and the x-axis is shaded in the diagram below. The curve crosses the x-axis at x = 1 and x = 4, and the shaded region lies below the x-axis between these points.",
+    "scenario": "The region between y = (2x − 8) ln x and the x-axis, from x = 1 to x = 4, lies below the x-axis (diagram on the question paper).",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "Use the trapezium rule with 5 ordinates to find an estimate for the area of the shaded region.\n\nGive your answer correct to three significant figures.",
+      "prompt": "Use the trapezium rule with 5 ordinates to estimate the area, to 3 significant figures.",
       "marks": 3
      },
      {
       "code": "14(b)",
-      "prompt": "Show that the exact area is given by\n\n32 ln 2 − 33/2\n\nFully justify your answer.",
+      "prompt": "Show that the exact area is 32 ln 2 − 33/2, fully justifying your answer.",
       "marks": 6
      }
     ]
    },
    {
     "number": 15,
+    "scenario": "y = cosec θ, and the integral ∫ 1/(x²√(x² − 4)) dx for x > 2.",
     "parts": [
      {
       "code": "15(a)(i)",
-      "prompt": "Given that y = cosec θ\n\nExpress y in terms of sin θ.",
+      "prompt": "Write y in terms of sin θ.",
       "marks": 1
      },
      {
       "code": "15(a)(ii)",
-      "prompt": "Hence, prove that\n\ndy/dθ = −cosec θ cot θ",
+      "prompt": "Hence prove dy/dθ = −cosec θ cot θ.",
       "marks": 3
      },
      {
       "code": "15(a)(iii)",
-      "prompt": "Show that\n\n√(y² − 1)/y = cos θ        for 0 < θ < π/2",
+      "prompt": "Show that √(y² − 1)/y = cos θ for 0 < θ < π/2.",
       "marks": 3
      },
      {
       "code": "15(b)(i)",
-      "prompt": "Use the substitution\n\nx = 2 cosec u\n\nto show that\n\n∫ 1/(x²√(x² − 4)) dx        for x > 2\n\ncan be written as\n\nk ∫ sin u du\n\nwhere k is a constant to be found.",
+      "prompt": "Using x = 2 cosec u, show the integral can be written k∫ sin u du, finding k.",
       "marks": 6
      },
      {
       "code": "15(b)(ii)",
-      "prompt": "Hence, show\n\n∫ 1/(x²√(x² − 4)) dx = √(x² − 4)/(4x) + c        for x > 2\n\nwhere c is a constant.",
+      "prompt": "Hence show the integral equals √(x² − 4)/(4x) + c.",
       "marks": 3
      }
     ]
@@ -19907,617 +19701,598 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x² + y² = 1"
-    ],
-    "guidance": "B1. Since x = cos θ, y = sin θ, using cos²θ + sin²θ = 1 gives x² + y² = 1 (a circle)."
+     "B1 B: x² + y² = 1"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "2"
-    ],
-    "guidance": "B1. Uₙ = (−1)ⁿ gives terms −1, 1, −1, 1, … which repeat with period 2."
+     "B1 D: 2"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "y = 2 log₄ x"
-    ],
-    "guidance": "R1. A stretch scale factor 2 parallel to the y-axis multiplies y by 2: y = 2 log₄ x."
+     "R1 B: y = 2log₄ x"
+    ]
    },
    "4": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "The decreasing straight line through a positive y-intercept (negative gradient)"
-    ],
-    "guidance": "R1. f(x) is a downward (negative a) quadratic so f′(x) is a straight line with negative gradient."
+     "R1 A: the line with negative gradient and positive y-intercept"
+    ]
    },
    "5": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "dy/dx = 4(x − 2)³",
-     "At x = 0: gradient = −32 and y = 16",
-     "y = −32x + 16"
-    ],
-    "guidance": "B1 for correct derivative 4(x − 2)³ (or 4x³ − 24x² + 48x − 32). M1 substitute x = 0 to get a numerical gradient (−32). A1 for y = −32x + 16 (ACF), award at first opportunity and ISW any incorrect rearrangement; no errors seen."
+     "B1 Correct derivative, e.g. 4(x − 2)³",
+     "M1 Substitutes x = 0 into their derivative to get a gradient (−32)",
+     "A1 y = −32x + 16 (any correct form)"
+    ]
    },
    "7": {
     "type": "points",
     "points": [
-     "Sketch one of the sections of the curve correctly (cot graph shifted)",
-     "Three branches within the interval 0 to 2π",
-     "Fully correct sketch with asymptotes (vertical asymptotes at x = 0, π, 2π) drawn in approximately correct positions"
+     "B1 Draws one correct branch shape (translations condoned)",
+     "M1 Three branches within 0 to 2π",
+     "A1 Fully correct sketch with asymptotes at about x = π/2 and 3π/2"
     ],
-    "guidance": "cot(x − π/2) = tan x. B1 one correct section; M1 three branches within 0 to 2π (condone overlapping); A1 fully correct sketch with asymptotes at approx correct positions. Curve passes through where appropriate; do not allow end points turning to intersect the asymptote."
+    "guidance": "Branch ends must not bend back to meet an asymptote."
    },
    "6(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1 − x/4"
-    ],
-    "guidance": "M1 expand (1 − x/2)^(½) = 1 + (½)(−x/2) + … A1 for first two terms 1 − x/4 (separate terms required)."
+     "M1 Expands to two terms (sign slip condoned)",
+     "A1 1 − ¼x"
+    ]
    },
    "6(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "sin 4x ≈ 4x (small-angle approx)",
-     "√(cos x) = (1 − x²/2)^(½) ≈ 1 − x²/4",
-     "sin 4x + √(cos x) ≈ 1 + 4x − ¼x²",
-     "A = 1, B = 4, C = −¼"
-    ],
-    "guidance": "M1 small-angle approximations sin 4x ≈ 4x and cos x ≈ 1 − x²/2. M1 uses their part (a) with x² (replacing x by x² in the expansion). A1 result 1 + 4x − ¼x². Do not simplify required; state A = 1, B = 4, C = −¾… (MS gives 1 + 4x − ¼x², i.e. C = −¼). [Note: MS typical solution shows −¼x² as the x² term.]"
+     "M1 Uses one small-angle result correctly: sin kx ≈ kx or cos x ≈ 1 − x²/2",
+     "A1 Uses both correctly, all trig removed",
+     "M1 Applies their (a) with x replaced by x² (or expands (1 − x²/2)^(1/2) directly)",
+     "R1 Reaches 1 + 4x − ¼x² (A = 1, B = 4, C = −¼)"
+    ]
    },
    "8(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P = (0, 5)",
-     "Line PQ has gradient 3/5: y = (3/5)x + 5 (i.e. 3x − 5y = −25)",
-     "Solve simultaneously with 5x + 3y = 83",
-     "Q = (10, 11)"
-    ],
-    "guidance": "B1 P = (0, 5). M1 equation of PQ with correct (perpendicular) gradient 3/5, or forms distance/distance² to a point on L₂. A1 correct equation. M1 solves simultaneous equations of their PQ and L₂ (or minimises distance). A1 Q = (10, 11)."
+     "B1 P = (0, 5)",
+     "M1 Line PQ with gradient 3/5 (or a distance expression from P to a point on L₂)",
+     "A1 Correct equation, e.g. 3x − 5y = −25",
+     "M1 Solves PQ with L₂ simultaneously (or minimises the distance)",
+     "A1 Q = (10, 11)"
+    ]
    },
    "8(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "PQ² = (10 − 0)² + (11 − 5)² = 136",
-     "PQ = √136 = 2√34",
-     "k = 2"
+     "M1 Distance formula, e.g. 10² + 6²",
+     "R1 PQ = √136 = 2√34, so k = 2"
     ],
-    "guidance": "M1 uses distance formula for PQ or PQ² (10² + 6² seen). R1 completes demonstration to show k = 2 with clear use of distance formula. Answer 2√34 with no working scores M1 R0."
+    "guidance": "Answer 2√34 with no working gets M1 R0."
    },
    "8(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "a = 20"
-    ],
-    "guidance": "M1 forms an equation using a only via the midpoint of P and Q, or the equation of line PQ, or the perpendicular distances. The centre (a, −17) lies on PQ: −17 = (3/5)a + 5 ⇒ a = ... (MS: substitute y = −17 in y = (3/5)x + 5 gives x = a = ... = 20). A1 a = 20."
+     "M1 Valid method, e.g. the midway line 5x + 3y = 49, or midpoint of PQ (5, 8) used with the line direction",
+     "R1 a = 20"
+    ]
    },
    "8(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Radius = ½ PQ = √34",
-     "r² = 34",
-     "(x − 20)² + (y + 17)² = 34"
-    ],
-    "guidance": "M1 forms correct equation of circle with their centre (20, −17) and radius = ½ PQ from (a)(ii). A1F (x − 20)² + (y + 17)² = 34."
+     "M1 Form (x ± a)² + (y ± 17)² using their a",
+     "A1F (x − 20)² + (y + 17)² = 34"
+    ]
    },
    "9(a)": {
     "type": "points",
     "points": [
-     "Use that consecutive differences are equal: (5x + 1) − (2x + 5) = (6x + 7) − (5x + 1)",
-     "3x − 4 = x + 6",
-     "2x = 10 ⇒ x = 5 (only solution from a linear equation)"
+     "M1 Equation in x from equal differences (or mean of 1st and 3rd = 2nd)",
+     "A1 Correct equation, e.g. 3x − 4 = x + 6",
+     "R1 Solves to x = 5 and states it is the only solution"
     ],
-    "guidance": "M1 forms an appropriate equation in x only using the differences (or substitutes x = 5 into the terms and shows differences equal). A1 sets up correct equation and concludes x = 5 (a linear equation has a unique solution). R1 concludes x = 5 is the only value; M1 R0 if just verifies x = 5 works without showing uniqueness."
+    "guidance": "Merely substituting x = 5 to check (terms 15, 26, 37) scores M1 only."
    },
    "9(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "First term = 15"
-    ],
-    "guidance": "B1. With x = 5, first term 2x + 5 = 15."
+     "B1 15"
+    ]
    },
    "9(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Common difference d = 11"
-    ],
-    "guidance": "B1. Terms become 15, 26, 37 so d = 11."
+     "B1 11"
+    ]
    },
    "9(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Sₙ = (N/2)(2×15 + 11(N − 1)) = (N/2)(11N + 19)",
-     "Set (N/2)(11N + 19) < 100000 and ((N+1)/2)(11(N+1) + 19) > 100000",
-     "Solving the quadratic 11N² + 19N − 200000 = 0 gives N ≈ 133.9 (positive root)",
-     "N = 133"
-    ],
-    "guidance": "M1 forms an expression for Sₙ with a = 15 and d = 11. M1 forms and solves an inequality/quadratic 11N² + 19N − 200000 < 0 (or = 0). A1 obtains N < 133.9… or N < 132 and N < 134 region. A1 N = 133 from a correct quadratic."
+     "M1 Sum expression, e.g. (N/2)(30 + 11(N − 1)), or trial sums for two n",
+     "M1 Sets equal to (or compares with) 100 000",
+     "A1 N = 133.9… (or 132.9…); or S₁₃₃ = 98 553 and S₁₃₄ = 100 031",
+     "A1 N = 133"
+    ]
    },
    "10(a)": {
     "type": "points",
     "points": [
-     "Area of sector OAB = ½ r² θ",
-     "In triangle OAC: OC = r cos θ, AC = r sin θ, so area = ½ (r cos θ)(r sin θ) = ½ r² sin θ cos θ",
-     "Given triangle area = ½ × sector area: ½ r² sin θ cos θ = ½ (½ r² θ)",
-     "r² sin θ cos θ = ½ r² θ ⇒ 2 sin θ cos θ = θ ⇒ sin 2θ = θ"
-    ],
-    "guidance": "B1 area of sector ½ r²θ. M1 area of triangle = ½ × base × height with OC = r cos θ and AC = r sin θ (or ½ OA·OC sin θ). B1 uses 2 sin θ cos θ = sin 2θ. R1 completes to obtain given result θ = sin 2θ."
+     "B1 Sector area ½r²θ",
+     "M1 Equation linking triangle area to k × sector area",
+     "B1 Triangle area ½(r cos θ)(r sin θ)",
+     "R1 Uses 2 sin θ cos θ = sin 2θ to reach θ = sin 2θ"
+    ]
    },
    "10(b)": {
     "type": "points",
     "points": [
-     "Let f(θ) = θ − sin 2θ",
-     "f(π/5) = π/5 − sin(2π/5) ≈ 0.6283 − 0.9511 = −0.3227 < 0",
-     "f(2π/5) = 2π/5 − sin(4π/5) ≈ 1.2566 − 0.5878 = 0.6688 > 0",
-     "Change of sign between π/5 and 2π/5 (f continuous) ⇒ a root lies in [π/5, 2π/5]"
-    ],
-    "guidance": "M1 evaluates f(θ) = θ − sin 2θ (or compares θ and sin 2θ) at both ends, obtaining f(π/5) ≈ −0.32 and f(2π/5) ≈ 0.67. R1 states sign change and correct conclusion that a root lies between."
+     "M1 Evaluates θ − sin 2θ at π/5 and 2π/5 (−0.323, 0.669)",
+     "R1 Change of sign so root lies between π/5 and 2π/5"
+    ]
    },
    "10(c)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "f(θ) = θ − sin 2θ, f′(θ) = 1 − 2 cos 2θ",
-     "θ_(n+1) = θₙ − (θₙ − sin 2θₙ)/(1 − 2 cos 2θₙ)",
-     "θ₂ = 1.4732575…",
-     "θ₃ = 1.0413241… = 1.041 (3 dp)"
-    ],
-    "guidance": "B1 differentiates sin 2θ to 2 cos 2θ (PI by correct θ₂ or θ₃). M1 correct Newton-Raphson expression (AWRT θ₂ 1.473). A1 θ₃ = 1.041 (AWRT)."
+     "B1 Derivative of sin 2θ is 2cos 2θ",
+     "M1 θₙ₊₁ = θₙ − (θₙ − sin 2θₙ)/(1 − 2cos 2θₙ)",
+     "A1 θ₃ = 1.041 (awrt; θ₂ ≈ 1.473)"
+    ]
    },
    "10(c)(ii)": {
     "type": "points",
     "points": [
-     "Use (apply) more iterations of the Newton-Raphson method"
-    ],
-    "guidance": "E1. Accept: keep on using Newton-Raphson / keep re-iterating."
+     "E1 Carry out more iterations"
+    ]
    },
    "10(c)(iii)": {
     "type": "points",
     "points": [
-     "f′(π/6) = 1 − 2 cos(π/3) = 1 − 2(½) = 0",
-     "The first approximation is at a stationary point of f (the tangent is horizontal), so the Newton-Raphson formula is undefined / does not give a new value"
-    ],
-    "guidance": "E1 states that f′(π/6) = 0. E1 explains a valid general reason: the value is at/too close to a stationary point, the tangent does not cross the x-axis, the formula is undefined, or it converges to a different root. Accept equivalents to these only."
+     "E1 f′(π/6) = 0",
+     "E1 So it is a stationary point: the tangent never meets the x-axis / formula undefined"
+    ]
    },
    "11(a)": {
     "type": "points",
     "points": [
-     "Substitute x = −2 into p(x): p(−2) = (−2)³ + (b + 2)(−2)² + 2(b + 2)(−2) + 8",
-     "= −8 + 4(b + 2) − 4(b + 2) + 8 = −8 + 8 = 0",
-     "Since p(−2) = 0 for all b, (x + 2) is a factor of p(x) for all values of b (factor theorem)"
-    ],
-    "guidance": "M1 substitutes x = −2 into p(x) (condone bracket errors). A1 correct evaluation showing the b-terms cancel leaving 0. R1 concludes (x + 2) is a factor for all/any values of b."
+     "M1 Substitutes x = −2 into p(x)",
+     "A1 Clear evaluation giving 0, e.g. −8 + 4b + 8 − 4b − 8 + 8 = 0",
+     "R1 States (x + 2) is a factor for all b"
+    ]
    },
    "11(b)(i)": {
     "type": "points",
     "points": [
-     "Cubic shape that meets the x-axis at exactly two points",
-     "A repeated root (turning point touching the x-axis) and a single root",
-     "Positive-x³ cubic orientation, passing through (0, 8) i.e. positive y-intercept"
-    ],
-    "guidance": "B1 cubic graph that has correct shape and turning points. M1 single root labelled x = −2 (the guaranteed factor). A1 correctly orientated cubic with a single root x = −2, a repeated (touching) root elsewhere, positive y-intercept; ignore any extra values. [MS typical: y-intercept (0, 8), single crossing at x = −2.]"
+     "B1 Positive cubic with two turning points",
+     "M1 Cubic touching the x-axis at one point and crossing at another",
+     "A1 Single root at −2, y-intercept 8, repeated root on positive x-axis"
+    ]
    },
    "11(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "For exactly two x-axis intersections, the quadratic factor x² + bx + 4 must have a repeated root",
-     "b² − 4ac = 0 ⇒ b² − 16 = 0 ⇒ b = ±4",
-     "b = 4 gives (x + 2)² which gives only one extra point of intersection (overall a single point with x-axis besides via repeated), so reject b = 4",
-     "b = −4 (gives (x − 2)² , the required repeated root distinct from x = −2)"
-    ],
-    "guidance": "M1 deduces possible factor pair / uses b² − 4ac (PI by b = 4 or b = −4 or b² − 16 seen). R1 identifies the quadratic factor as (x − 2)² or obtains b² − 16 = 0. M1 obtains b = ±4 or b = −4. R1 rejects b = 4 with a valid reason (b = 4 gives (x + 2)³ which has only one point of intersection with the x-axis) and concludes b = −4."
+     "M1 Considers repeated factor (e.g. (x − 2)² or (x + 2)²) or uses the discriminant",
+     "R1 Needs b² − 16 = 0 (or factor (x − 2)²)",
+     "M1 b = ±4",
+     "R1 Rejects b = 4 (gives (x + 2)³, one intersection) so b = −4"
+    ]
    },
    "12(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "S∞ = a/(1 − r) = 1/(1 − ½) = 2"
-    ],
-    "guidance": "M1 uses S∞ = a/(1 − r). A1 obtains 2."
+     "M1 a/(1 − r)",
+     "A1 2"
+    ]
    },
    "12(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "sin 30° = ½, so ∑(n=1 to ∞) (½)ⁿ = ½ + ¼ + … = (½)/(1 − ½) = 1"
-    ],
-    "guidance": "M1 deduces a = ½ and r = ½ (or that the sum is half the part (a)(i) answer, or = part (a)(i) − 1). A1 obtains 1."
+     "M1 Uses a = ½, r = ½ or (a)(i) − 1",
+     "A1 1"
+    ]
    },
    "12(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "∑(n=0 to ∞)(cos θ)ⁿ = 1/(1 − cos θ) = 2 − √2",
-     "a = 1, r = cos θ",
-     "1 − cos θ = 1/(2 − √2) ⇒ cos θ = 1 − 1/(2 − √2) = −√2/2",
-     "Smallest positive θ: θ = 3π/4"
-    ],
-    "guidance": "M1 forms a/(1 − r) = 2 − √2 (condone cos θ/(1 − cos θ) or numerical a > 0). B1 uses a = 1 and r = cos θ. A1 obtains cos θ = 1 − 1/(2 − √2) = −√2/2 (ACF). R1 deduces smallest positive θ = 3π/4."
+     "M1 Forms a/(1 − r) = 2 − √2",
+     "B1 a = 1, r = cos θ",
+     "A1 cos θ = 1 − 1/(2 − √2) = −√2/2",
+     "R1 θ = 3π/4"
+    ]
    },
    "13(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "At P (x = 16, y = 0): 16² + 0² = a√16 − 0",
-     "256 = 4a",
-     "a = 64"
-    ],
-    "guidance": "M1 substitutes the point (16, 0) (x = 16, y = 0) into the model. A1 a = 64."
+     "M1 Substitutes x = 16, y = 0",
+     "A1 a = 64"
+    ]
    },
    "13(b)": {
     "type": "points",
     "points": [
-     "Differentiate implicitly: 2x + 2y(dy/dx) = a/(2√x) − dy/dx",
-     "At a maximum dy/dx = 0: 2x = 64/(2√x) ⇒ 2x = 32/√x ⇒ x^(3/2) = 16 ⇒ x = 16^(2/3) = 6.3496…",
-     "Solve x² + y² = 64√x − y at x = 6.3496… to obtain y = 10.51… (taking the upper solution)",
-     "Maximum height ≈ 10.5 metres"
-    ],
-    "guidance": "B1 differentiates implicitly (2x + 2y dy/dx = … − dy/dx seen). M1 sets dy/dx = 0 and follows through. A1F correct equation for x with dy/dx = 0: 2x = 32/√x. M1 solves to get x = 16^(2/3) = 6.3496… then substitutes to find y. R1 obtains y = 10.51… (AWRT, taking the larger root) and concludes maximum height ≈ 10.5 m with a correct supporting argument (CSO)."
+     "B1 Implicit differentiation with 2y dy/dx or −dy/dx",
+     "M1 Two of the four terms differentiated correctly",
+     "A1F Fully correct: 2x + 2y dy/dx = (a/2)x^(−1/2) − dy/dx",
+     "M1 Sets dy/dx = 0 (gives x^(3/2) = 16, x ≈ 6.35)",
+     "M1 Substitutes their x (0 < x < 16) into the model",
+     "R1 y ≈ 10.51, so maximum height about 10.5 m (with units)"
+    ]
    },
    "13(c)": {
     "type": "points",
     "points": [
-     "The entrance to the cave is unlikely to be a perfectly smooth curve"
+     "E1 The real entrance won't be a perfectly smooth curve"
     ],
-    "guidance": "E1. Accept: the cave has dents / the entrance is not perfectly smooth. Ignore comments about the floor or the vertical cross section."
+    "guidance": "Comments about the floor are ignored."
    },
    "14(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "h = (4 − 1)/4 = 0.75; ordinates at x = 1, 1.75, 2.5, 3.25, 4",
-     "y-values: 0, −2.51827, −2.74887, −1.76798, 0",
-     "Area ≈ (0.75/2)[0 + 0 + 2(−2.51827 − 2.74887 − 1.76798)] = −5.28, area ≈ 5.28"
+     "M1 y-values at 5 ordinates with h = 0.75 (0, −2.518, −2.749, −1.768, 0)",
+     "A1 Correct trapezium rule application",
+     "A1 5.28 (awrt; −5.28 condoned)"
     ],
-    "guidance": "M1 finds 5 y-values with h = 0.75 (PI by AWRT 5.28 or −5.28). A1 uses trapezium rule correctly with h = 0.75 and correct y-values. A1 obtains AWRT 5.28 (condone AWRT −5.28). The region is below the x-axis so the magnitude 5.28 is the area."
+    "guidance": "Using 6 ordinates (≈5.42) scores M1 only."
    },
    "14(b)": {
     "type": "points",
     "points": [
-     "∫(2x − 8) ln x dx by parts: u = ln x, dv = (2x − 8)dx ⇒ v = x² − 8x",
-     "= (x² − 8x) ln x − ∫(x² − 8x)(1/x) dx = (x² − 8x) ln x − ∫(x − 8) dx",
-     "= (x² − 8x) ln x − x²/2 + 8x",
-     "Evaluate from 1 to 4: at x = 4: (16 − 32) ln 4 − 8 + 32 = −16 ln 4 + 24 = −32 ln 2 + 24; at x = 1: 0 − ½ + 8 = 15/2",
-     "Definite integral = (−32 ln 2 + 24) − 15/2 = −32 ln 2 + 33/2",
-     "Region is below the x-axis, so area = 32 ln 2 − 33/2"
-    ],
-    "guidance": "M1 sets up integration by parts. M1 obtains correct integral (x² − 8x) ln x − ∫(x − 8) dx and simplifies. A1F correct integrated expression. M1 substitutes limits 1 and 4 and subtracts. R1 obtains −32 ln 2 + 33/2 (i.e. −(32 ln 2 − 33/2)). E1 explains the change of sign because the shaded region is below the x-axis, so the area is 32 ln 2 − 33/2. (Uses ln 4 = 2 ln 2.)"
+     "M1 Sets up integration by parts",
+     "M1 Correct first stage, e.g. (x² − 8x)ln x − ∫(x − 8) dx",
+     "A1 (x² − 8x)ln x − x²/2 + 8x",
+     "M1 Substitutes limits 1 and 4",
+     "R1 Reaches 33/2 − 32 ln 2 (or its negative) correctly",
+     "E1 Explains the sign change because the region is below the x-axis"
+    ]
    },
    "15(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "y = 1/sin θ"
+     "B1 y = 1/sin θ or (sin θ)^(−1)"
     ],
-    "guidance": "B1. cosec θ = 1/sin θ. (sin⁻¹ θ scores B0; ignore sin⁻¹ θ if the correct expression is also written.)"
+    "guidance": "sin⁻¹θ scores 0."
    },
    "15(a)(ii)": {
     "type": "points",
     "points": [
-     "y = (sin θ)⁻¹",
-     "dy/dθ = −(sin θ)⁻² cos θ (chain/quotient rule)",
-     "= −(cos θ/sin θ)(1/sin θ) = −cot θ cosec θ = −cosec θ cot θ"
-    ],
-    "guidance": "M1 uses chain or quotient rule on (sin θ)⁻¹, obtaining −(sin θ)⁻² cos θ OE. A1 obtains −(sin θ)⁻² cos θ. R1 completes rigorous argument to the given result, making clear use of cot θ = cos θ/sin θ and cosec θ = 1/sin θ. AG."
+     "M1 Chain/quotient rule giving ±k(sin θ)^(−2) cos θ",
+     "A1 −(sin θ)^(−2) cos θ",
+     "R1 Splits into −(cos θ/sin θ)(1/sin θ) = −cosec θ cot θ"
+    ]
    },
    "15(a)(iii)": {
     "type": "points",
     "points": [
-     "y = cosec θ so y² − 1 = cosec²θ − 1 = cot²θ",
-     "√(y² − 1)/y = √(cot²θ)/cosec θ = cot θ/cosec θ (cot θ > 0 for 0 < θ < π/2)",
-     "= (cos θ/sin θ) × sin θ = cos θ"
-    ],
-    "guidance": "B1 substitutes y = cosec θ (or draws a right-angled triangle with hypotenuse y, opposite 1), PI by obtaining y² or 1/y² in terms of cos θ. M1 uses cosec²θ − 1 = cot²θ (or Pythagoras for the adjacent side). R1 completes rigorous argument with clear replacement of cosec θ and cot θ using only sine and cosine before reaching the given answer. AG."
+     "B1 Substitutes y = cosec θ (or right-angled triangle with hypotenuse y, opposite 1)",
+     "M1 Uses cosec²θ − 1 = cot²θ",
+     "R1 Rewrites cot θ/cosec θ in sin and cos to get cos θ"
+    ]
    },
    "15(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x = 2 cosec u ⇒ dx/du = −2 cosec u cot u, dx = −2 cosec u cot u du",
-     "x² − 4 = 4 cosec²u − 4 = 4(cosec²u − 1) = 4 cot²u, √(x² − 4) = 2 cot u (for x > 2, cot u > 0)",
-     "1/(x²√(x² − 4)) dx = [−2 cosec u cot u]/(4 cosec²u · 2 cot u) du",
-     "= −(1/(4 cosec u)) du = −¼ sin u du",
-     "So the integral = −¼ ∫ sin u du, k = −¼"
-    ],
-    "guidance": "M1 substitutes x = 2 cosec u and finds dx = −2 cosec u cot u du. M1 obtains the correct integrand (using cosec²u − 1 = cot²u so √(x² − 4) = 2 cot u). A1 correct integrand −2 cosec u cot u/(4 cosec²u √(4 cot²u)). M1 uses the Pythagorean identity to simplify the surd. A1F obtains k ∫ sin u du. R1 (CSO) obtains k = −¼."
+     "B1 dx/du = −2 cosec u cot u",
+     "M1 Full substitution into the integrand",
+     "A1 Correct integrand, e.g. −2cosec u cot u /(4cosec²u √(4cosec²u − 4))",
+     "M1 Uses 1 + cot²u = cosec²u (or 1 − sin²u = cos²u) under the root",
+     "A1F Reaches k∫ sin u du with no identity errors",
+     "R1 k = −¼"
+    ]
    },
    "15(b)(ii)": {
     "type": "points",
     "points": [
-     "−¼ ∫ sin u du = ¼ cos u + c",
-     "cos u = √((x/2)² − 1)/(x/2) (from x = 2 cosec u and 15(a)(iii) with √(y²−1)/y = cos u)",
-     "¼ cos u + c = ¼ · √(x²/4 − 4/4)/(x/2) + c [substituting back] = ¼ · √(x² − 4)/(2) /(x) … ",
-     "Simplifies to √(x² − 4)/(4x) + c"
+     "B1 ∫ sin u du = −cos u",
+     "M1 Writes cos u in terms of x, e.g. √((x/2)² − 1)/(x/2)",
+     "R1 Reaches √(x² − 4)/(4x) + c, with +c throughout"
     ],
-    "guidance": "B1 integrates ∫ sin u du to −cos u (so −¼ ∫ sin u du = ¼ cos u + c). M1 deduces cos u in terms of x: cos u = √((x/2)² − 1)/(x/2) OE. R1 (must have + c throughout) completes a reasoned argument to the given result √(x² − 4)/(4x) + c. Validation starting from √(x² − 4)/(4x) and replacing x with 2 cosec u to reach ¼ cos u scores a maximum of B1 M1 R0. AG."
+    "guidance": "Working backwards from the given answer (substituting x = 2 cosec u) scores at most B1 M1."
    }
   }
  },
  "math-aqa-7357-2022-p2": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "A circle has centre (4, −5) and radius 6.",
     "parts": [
      {
       "code": "1",
-      "prompt": "A circle has centre (4, −5) and radius 6\nFind the equation of the circle.\nTick (✓) one box.\n  (x−4)²+(y+5)²=6\n  (x+4)²+(y−5)²=6\n  (x−4)²+(y+5)²=36\n  (x+4)²+(y−5)²=36",
+      "prompt": "Choose the equation of the circle.\nOptions: (x − 4)² + (y + 5)² = 6   (x + 4)² + (y − 5)² = 6   (x − 4)² + (y + 5)² = 36   (x + 4)² + (y − 5)² = 36",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "The limit as h → 0 of (sin(π + h) − sin π)/h.",
     "parts": [
      {
       "code": "2",
-      "prompt": "State the value of\n  lim_(h→0) [sin(π+h) − sin π] / h\nCircle your answer.\n  cos h     −1     0     1",
+      "prompt": "State the value of the limit.\nOptions: cos h   −1   0   1",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "A concave function f is shown by one of four graphs (graphs on the question paper).",
     "parts": [
      {
       "code": "3",
-      "prompt": "The function f is concave and is represented by one of the graphs below.\nIdentify the graph which represents f.\nTick (✓) one box. (Four graphs: a positive parabola; an increasing curve passing through the origin region that is concave (log-shaped, bending downwards); an increasing convex curve; and a curve with two branches rising away from the y-axis.)",
+      "prompt": "Identify the graph of f.\nOptions: U-shaped curve with minimum at O   increasing curve rising steeply from below, flattening off (log-shaped)   increasing exponential-shaped curve   curve like 1/x², both branches above the x-axis",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
-    "scenario": "The diagram shows a triangle ABC. AB is the shortest side. The lengths of AC and BC are 6.1 cm and 8.7 cm respectively. The size of angle ABC is 38°.",
+    "scenario": "Triangle ABC with AB the shortest side, AC = 6.1 cm, BC = 8.7 cm and angle ABC = 38° (diagram on the question paper).",
     "parts": [
      {
       "code": "4",
-      "prompt": "Find the size of the largest angle.\nGive your answer to the nearest degree.",
+      "prompt": "Find the largest angle, to the nearest degree.",
       "marks": 3
      }
     ]
    },
    {
     "number": 5,
-    "scenario": "The binomial expansion of (2+5x)⁴ is given by\n  (2+5x)⁴ = A + 160x + Bx² + 1000x³ + 625x⁴",
+    "scenario": "(2 + 5x)⁴ = A + 160x + Bx² + 1000x³ + 625x⁴.",
     "parts": [
      {
       "code": "5(a)",
-      "prompt": "Find the value of A and the value of B.",
+      "prompt": "Find A and B.",
       "marks": 2
      },
      {
       "code": "5(b)",
-      "prompt": "Show that\n  (2+5x)⁴ − (2−5x)⁴ = Cx + Dx³\nwhere C and D are constants to be found.",
+      "prompt": "Show that (2 + 5x)⁴ − (2 − 5x)⁴ = Cx + Dx³, finding the constants C and D.",
       "marks": 2
      },
      {
       "code": "5(c)",
-      "prompt": "Hence, or otherwise, find\n  ∫ ((2+5x)⁴ − (2−5x)⁴) dx",
+      "prompt": "Hence or otherwise find ∫ ((2 + 5x)⁴ − (2 − 5x)⁴) dx.",
       "marks": 2
      }
     ]
    },
    {
     "number": 6,
-    "scenario": "Asif notices that 24² = 576 and 2+4 = 6 gives the last digit of 576. He checks two more examples: 27² = 729, 2+7 = 9, Last digit 9; and 29² = 841, 2+9 = 11, Last digit 1.",
+    "scenario": "Asif notes 24² = 576 with 2 + 4 = 6, and similar results for 27² = 729 and 29² = 841, and claims the last digit of any square over 100 is found by adding the digits of the number squared. Claire says only the last digit of the number squared matters (e.g. 7² = 49 matches 27² = 729).",
     "parts": [
      {
       "code": "6(a)",
-      "prompt": "Asif concludes that he can find the last digit of any square number greater than 100 by adding the digits of the number being squared.\nGive a counter example to show that Asif’s conclusion is not correct.",
+      "prompt": "Give a counter-example to Asif's claim.",
       "marks": 2
      },
      {
       "code": "6(b)",
-      "prompt": "Claire tells Asif that he should look only at the last digit of the number being squared. (e.g. 27²=729, 7²=49, Last digit 9; 24²=576, 4²=16, Last digit 6.)\nUsing Claire’s method determine the last digit of 23456789²",
+      "prompt": "Use Claire's method to find the last digit of 23456789².",
       "marks": 1
      },
      {
       "code": "6(c)",
-      "prompt": "Given Claire’s method is correct, use proof by exhaustion to show that no square number has a last digit of 8",
+      "prompt": "Assuming Claire's method is right, prove by exhaustion that no square number ends in 8.",
       "marks": 2
      }
     ]
    },
    {
     "number": 7,
-    "scenario": "The curve y = 15 − x² and the isosceles triangle OPQ are shown on a diagram. Vertices P and Q lie on the curve such that Q lies vertically above some point (q, 0). The line PQ is parallel to the x-axis, and O is the origin (the lower vertex of the triangle).",
+    "scenario": "Curve y = 15 − x². Isosceles triangle OPQ has P and Q on the curve with PQ parallel to the x-axis and Q directly above (q, 0) (diagram on the question paper).",
     "parts": [
      {
       "code": "7(a)",
-      "prompt": "Show that the area, A, of the triangle OPQ is given by\n  A = 15q − q³   for 0 < q < c\nwhere c is a constant to be found.",
+      "prompt": "Show that the triangle's area is A = 15q − q³ for 0 < q < c, finding the constant c.",
       "marks": 3
      },
      {
       "code": "7(b)",
-      "prompt": "Find the exact maximum area of triangle OPQ.\nFully justify your answer.",
+      "prompt": "Find the exact maximum area of OPQ, fully justifying your answer.",
       "marks": 6
      }
     ]
    },
    {
     "number": 8,
+    "scenario": "The graphs y = 1/x² and y = 9/x².",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Sketch the graph of y = 1/x²",
+      "prompt": "Sketch y = 1/x².",
       "marks": 2
      },
      {
       "code": "8(b)",
-      "prompt": "The graph of y = 1/x² can be transformed onto the graph of y = 9/x² using a stretch in one direction.\nBeth thinks the stretch should be in the y-direction.\nPaul thinks the stretch should be in the x-direction.\nState, giving reasons for your answer, whether Beth is correct, Paul is correct, both are correct or neither is correct.",
+      "prompt": "y = 1/x² maps onto y = 9/x² by a single stretch. Beth says it's in the y-direction, Paul says the x-direction. Decide, with reasons, who is correct (one, both or neither).",
       "marks": 3
      }
     ]
    },
    {
     "number": 9,
+    "scenario": "log₂ x³ − log₂ y² = 9.",
     "parts": [
      {
       "code": "9",
-      "prompt": "Given that\n  log₂ x³ − log₂ y² = 9\nshow that\n  x = Ayᵖ\nwhere A is an integer and p is a rational number.",
+      "prompt": "Show that x = Ayᵖ with A an integer and p rational.",
       "marks": 4
      }
     ]
    },
    {
     "number": 10,
-    "scenario": "A gardener has a greenhouse containing 900 tomato plants. The gardener notices that some of the tomato plants are damaged by insects. Initially there are 25 damaged tomato plants. The number of tomato plants damaged by insects is increasing by 32% each day.",
+    "scenario": "A greenhouse holds 900 tomato plants. Initially 25 are damaged by insects, and the number damaged rises by 32% per day. First model: x = A × Bᵗ, t days after the damage was first noticed.",
     "parts": [
      {
       "code": "10(a)(i)",
-      "prompt": "The total number of plants damaged by insects, x, is modelled by\n  x = A × Bᵗ\nwhere A and B are constants and t is the number of days after the gardener first noticed the damaged plants.\nUse this model to find the total number of plants damaged by insects 5 days after the gardener noticed the damaged plants.",
+      "prompt": "Use the model to find the number of damaged plants after 5 days.",
       "marks": 3
      },
      {
       "code": "10(a)(ii)",
-      "prompt": "Explain why this model is not realistic in the long term.",
+      "prompt": "Explain why the model is unrealistic in the long run.",
       "marks": 2
      },
      {
       "code": "10(b)(i)",
-      "prompt": "A refined model assumes the rate of increase of the number of plants damaged by insects is given by\n  dx/dt = x(900−x)/2700\nShow that\n  ∫ (A/x + B/(900−x)) dx = ∫ dt\nwhere A and B are positive integers to be found.",
+      "prompt": "A refined model has dx/dt = x(900 − x)/2700. Show that ∫ (A/x + B/(900 − x)) dx = ∫ dt with A and B positive integers to be found.",
       "marks": 3
      },
      {
       "code": "10(b)(ii)",
-      "prompt": "Hence, find t in terms of x.",
+      "prompt": "Hence find t in terms of x.",
       "marks": 5
      },
      {
       "code": "10(b)(iii)",
-      "prompt": "Hence, find the number of days it takes from when the damage is first noticed until half of the plants are damaged by the insects.",
+      "prompt": "Hence find how many days until half the plants are damaged.",
       "marks": 2
      }
     ]
    },
    {
     "number": 11,
+    "scenario": "A moon vehicle has mass 212 kg, length 3 m and weight 345 N on the moon.",
     "parts": [
      {
       "code": "11",
-      "prompt": "A moon vehicle has a mass of 212 kg and a length of 3 metres. On the moon the vehicle has a weight of 345 N.\nCalculate a value for acceleration due to gravity on the moon.\nCircle your answer.\n  0.614 m s⁻²     1.63 m s⁻²     1.84 m s⁻²     4.89 m s⁻²",
+      "prompt": "Find the moon's gravitational acceleration.\nOptions: 0.614 m s⁻²   1.63 m s⁻²   1.84 m s⁻²   4.89 m s⁻²",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
+    "scenario": "A car with initial velocity u m s⁻¹ accelerates uniformly at a m s⁻² for 5 s to reach 4u m s⁻¹.",
     "parts": [
      {
       "code": "12",
-      "prompt": "A car is travelling along a straight horizontal road with initial velocity u m s⁻¹. The car begins to accelerate at a constant rate a m s⁻² for 5 seconds, to reach a final velocity of 4u m s⁻¹.\nExpress a in terms of u.\nCircle your answer.\n  a = 0.2u     a = 0.4u     a = 0.6u     a = 0.8u",
+      "prompt": "Express a in terms of u.\nOptions: a = 0.2u   a = 0.4u   a = 0.6u   a = 0.8u",
       "marks": 1
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "In this question use g = 9.8 m s⁻². A ball is projected from a point on horizontal ground with an initial velocity of 7 m s⁻¹ at an angle θ above the horizontal. The ball reaches a maximum vertical height of h metres above the ground.",
+    "scenario": "g = 9.8 m s⁻². A ball is projected from horizontal ground at 7 m s⁻¹ at angle θ above the horizontal and reaches maximum height h m.",
     "parts": [
      {
       "code": "13(a)",
-      "prompt": "Show that\n  h = 2.5 sin² θ",
+      "prompt": "Show that h = 2.5 sin²θ.",
       "marks": 3
      },
      {
       "code": "13(b)",
-      "prompt": "Hence, given that 0° ≤ θ ≤ 60°, find the maximum value of h.",
+      "prompt": "Given 0° ≤ θ ≤ 60°, find the greatest value of h.",
       "marks": 2
      },
      {
       "code": "13(c)",
-      "prompt": "Nisha claims that the larger the size of the ball, the greater the maximum vertical height will be.\nState whether Nisha is correct, giving a reason for your answer.",
+      "prompt": "Nisha says a bigger ball reaches a greater maximum height. Is she right? Give a reason.",
       "marks": 1
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "A £2 coin has a diameter of 28 mm and a mass of 12 grams. A uniform rod AB of length 160 mm and a fixed load of mass m grams are used to check that a £2 coin has the correct mass. The rod rests with its midpoint on a support. A £2 coin is placed face down on the rod with part of its curved edge directly above A. The fixed load is hung by a light inextensible string from a point directly below the other end of the rod at B.",
+    "scenario": "A £2 coin has diameter 28 mm and mass 12 g. A uniform rod AB, 160 mm long, balances on a support at its midpoint. The coin lies flat on the rod with its edge directly above A; a load of m grams hangs by a light string from B (diagram on the question paper).",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "Given that the rod is horizontal and rests in equilibrium, find m.",
+      "prompt": "The rod is horizontal and in equilibrium. Find m.",
       "marks": 3
      },
      {
       "code": "14(b)",
-      "prompt": "State an assumption you have made about the £2 coin to answer part (a).",
+      "prompt": "State an assumption about the coin used in (a).",
       "marks": 1
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "A car is moving in a straight line along a horizontal road. A velocity–time graph shows how the car’s velocity v m s⁻¹ changes with time t seconds: v rises linearly from 0 at t=0 to 4 at t=5, then falls linearly, crossing v=0 at t=7 and reaching −4 at t=10, then stays at −4 until t=15. Over the period 0 ≤ t ≤ 15 the car has a total displacement of −7 metres. Initially the car has velocity 0 m s⁻¹.",
+    "scenario": "Velocity-time graph of a car: v rises linearly from 0 at t = 0 to 4 at t = 5, then decreases linearly to 0 at an unknown time and continues down (more steeply) to −4 at t = 10, then stays at −4 until t = 15 (graph on the question paper). Total displacement for 0 ≤ t ≤ 15 is −7 m.",
     "parts": [
      {
       "code": "15",
-      "prompt": "Find the next time when the velocity of the car is 0 m s⁻¹",
+      "prompt": "Find the next time after t = 0 when the velocity is zero.",
       "marks": 4
      }
     ]
    },
    {
     "number": 16,
-    "scenario": "Two particles, P and Q, move in the same horizontal plane. Particle P is initially at rest at the point with position vector (−4i + 5j) metres and moves with constant acceleration (3i − 4j) m s⁻². Particle Q moves in a straight line, passing through the points with position vectors (i − j) metres and (10i + cj) metres. P and Q are moving along parallel paths.",
+    "scenario": "P starts at rest at (−4i + 5j) m with constant acceleration (3i − 4j) m s⁻². Q moves in a straight line through (i − j) m and (10i + cj) m. The paths of P and Q are parallel.",
     "parts": [
      {
       "code": "16(a)",
-      "prompt": "Show that c = −13",
+      "prompt": "Show that c = −13.",
       "marks": 4
      },
      {
       "code": "16(b)(i)",
-      "prompt": "Find an expression for the position vector of P at time t seconds.",
+      "prompt": "Find P's position vector at time t.",
       "marks": 1
      },
      {
       "code": "16(b)(ii)",
-      "prompt": "Hence, prove that the paths of P and Q are not collinear.",
+      "prompt": "Hence prove that the paths of P and Q are not collinear.",
       "marks": 3
      }
     ]
    },
    {
     "number": 17,
+    "scenario": "Position vector r = eᵗ cos t i + eᵗ sin t j metres at time t seconds.",
     "parts": [
      {
       "code": "17",
-      "prompt": "A particle is moving such that its position vector, r metres, at time t seconds, is given by\n  r = eᵗ cos t i + eᵗ sin t j\nShow that the magnitude of the acceleration of the particle, a m s⁻², is given by\n  a = 2eᵗ\nFully justify your answer.",
+      "prompt": "Show, with full justification, that the magnitude of the acceleration is a = 2eᵗ.",
       "marks": 7
      }
     ]
    },
    {
     "number": 18,
-    "scenario": "An object, O, of mass m kilograms is hanging from a ceiling by two light, inelastic strings of different lengths. The shorter string, of length 0.8 metres, is fixed to the ceiling at A. The longer string, of length 1.2 metres, is fixed to the ceiling at B. This object hangs 0.6 metres directly below the ceiling.",
+    "scenario": "An object O of mass m kg hangs 0.6 m below a horizontal ceiling from two light inextensible strings: 0.8 m to A and 1.2 m to B (diagram on the question paper).",
     "parts": [
      {
       "code": "18(a)",
-      "prompt": "Show that the tension in the shorter string is over 30% more than the tension in the longer string.",
+      "prompt": "Show that the tension in the shorter string exceeds that in the longer string by more than 30%.",
       "marks": 4
      },
      {
       "code": "18(b)",
-      "prompt": "The tension in the longer string is known to be 2g newtons.\nFind the value of m.",
+      "prompt": "The longer string's tension is 2g N. Find m.",
       "marks": 4
      }
     ]
    },
    {
     "number": 19,
-    "scenario": "In this question use g = 9.8 m s⁻². A rough wooden ramp is 10 metres long and is inclined at an angle of 25° above the horizontal. The bottom of the ramp is at the point O. A crate of mass 20 kg is at rest at the point A on the ramp. The crate is pulled up the ramp using a rope attached to the crate. Once in motion, the rope remains taut and parallel to the line of greatest slope of the ramp.",
+    "scenario": "g = 9.8 m s⁻². A rough ramp 10 m long is inclined at 25°, with bottom at O. A 20 kg crate at rest at A on the ramp is pulled up by a rope parallel to the line of greatest slope.",
     "parts": [
      {
       "code": "19(a)",
-      "prompt": "The tension in the rope is 230 N. The crate accelerates up the ramp at 1.2 m s⁻².\nFind the coefficient of friction between the crate and the ramp.",
+      "prompt": "With tension 230 N the crate accelerates up the ramp at 1.2 m s⁻². Find the coefficient of friction.",
       "marks": 7
      },
      {
       "code": "19(b)(i)",
-      "prompt": "The crate takes 3.8 seconds to reach the top of the ramp.\nFind the distance OA.",
+      "prompt": "The crate reaches the top after 3.8 s. Find OA.",
       "marks": 3
      },
      {
       "code": "19(b)(ii)",
-      "prompt": "Other than air resistance, state one assumption you have made about the crate in answering part (b)(i).",
+      "prompt": "Apart from air resistance, state one assumption about the crate used in (b)(i).",
       "marks": 1
      }
     ]
@@ -20525,380 +20300,363 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "(x−4)²+(y+5)²=36"
-    ],
-    "guidance": "B1 for ticking the correct box. Centre (4,−5) gives (x−4) and (y+5); radius 6 gives r²=36."
+     "B1 C: (x − 4)² + (y + 5)² = 36"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "−1"
-    ],
-    "guidance": "R1 for circling −1. The limit is the derivative of sin x at x=π, i.e. cos π = −1."
+     "R1 B: −1"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "The increasing concave (log-shaped) curve — bending downwards (second derivative negative)"
-    ],
-    "guidance": "B1 for ticking the correct box (the curve resembling y = ln x, concave with f″ < 0)."
+     "B1 B: the log-shaped increasing curve that flattens off"
+    ]
    },
    "4": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Largest angle = 119°"
-    ],
-    "guidance": "M1 use sine rule sinθ/8.7 = sin38/6.1 (or substitute correctly into cosine rule). A1 obtains 61 (61.41…), PI by 81 or by AB=3.9367…. A1 (2.2a) deduces the largest angle is 119° (AWRT, CAO). Largest angle is opposite the longest side BC."
+     "M1 Sine rule, sin θ/8.7 = sin 38°/6.1 (or cosine rule for AB)",
+     "A1 θ = 61 (61.41…), or AB = 3.9367…",
+     "A1 Largest angle 119° (awrt)"
+    ]
    },
    "9": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "log₂(x³/y²) = 9 ⇒ x³/y² = 2⁹",
-     "x³ = 2⁹y² = 512y²",
-     "x = 8y^(2/3)   (A = 8, p = 2/3)"
-    ],
-    "guidance": "B1 uses a log/index law correctly. M1 raises 2 to the power of both sides (removes log₂) or writes 9 = log₂512. A1 obtains correct equation without logs (or log₂x = log₂(8y^(2/3))). R1 completes reasoned argument to obtain x = 8y^(2/3)."
+     "B1 Correct use of a log law, e.g. log₂(x³/y²) = 9",
+     "M1 Removes logs, e.g. x³/y² = 2⁹",
+     "A1 x³ = 512y²",
+     "R1 x = 8y^(2/3)"
+    ]
    },
    "11": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1.63 m s⁻²"
-    ],
-    "guidance": "B1 circles 1.63 m s⁻². g = W/m = 345/212 = 1.63."
+     "B1 B: 1.63 m s⁻²"
+    ]
    },
    "12": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "a = 0.6u"
-    ],
-    "guidance": "B1 circles a = 0.6u. Using v = u + at: 4u = u + 5a ⇒ 3u = 5a ⇒ a = 0.6u."
+     "B1 C: a = 0.6u"
+    ]
    },
    "15": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Let t be the next time v = 0 (after t=7). Area (displacement) above axis from 0 to 7 = ½×7×... gives +7 (the triangle 0–5 up to 4 plus 5–7 down to 0): net +7 above-axis displacement",
-     "Below axis from t=7: displacement = −[2(10−7)+... ] expressed as 2(10−t)+20 in the working with the trapezium",
-     "Total displacement = −7: forming 2t + 7 = 2(10−t) + 20 (consistent area equation)",
-     "Solving gives t = 8.25 seconds"
-    ],
-    "guidance": "B1 correct expression for area of the triangle above the time axis in terms of a time variable. B1 correct expression for the area of the triangle/trapezium below the axis. M1 forms an equation in a single variable (area above − area below = ±k, or displacements summing to k, with k one of 3,7,13,17). A1 obtains t = 8.25 seconds (OE), condone units."
+     "B1 Area above the axis in terms of the unknown time t: 2t",
+     "B1 Area below: 2(10 − t) + 20",
+     "M1 Equation using the −7 m displacement, e.g. 2t + 7 = 2(10 − t) + 20",
+     "A1 t = 8.25 s"
+    ]
    },
    "17": {
     "type": "points",
     "points": [
-     "r = eᵗcos t i + eᵗ sin t j",
-     "velocity: ṙ = eᵗ(cos t − sin t) i + eᵗ(sin t + cos t) j",
-     "acceleration: r̈ = −2eᵗ sin t i + 2eᵗ cos t j",
-     "|r̈| = √[(−2eᵗ sin t)² + (2eᵗ cos t)²] = √[4e^(2t)(sin²t + cos²t)] = 2eᵗ"
-    ],
-    "guidance": "M1 differentiates r to get velocity (product rule), M1 a fully correct velocity expression. M1 differentiates again for acceleration (with brackets), A1 correct acceleration components −2eᵗ sin t and 2eᵗ cos t. M1 forms magnitude √(component² + component²). A1 simplifies using sin²t+cos²t=1 to a = 2eᵗ (AG, fully justified)."
+     "M1 Product rule used to differentiate",
+     "M1 Velocity with one component fully correct",
+     "A1 v = (eᵗcos t − eᵗsin t)i + (eᵗsin t + eᵗcos t)j",
+     "M1 Differentiates again, one component correct",
+     "A1 a = −2eᵗ sin t i + 2eᵗ cos t j",
+     "M1 Magnitude of their a",
+     "R1 √(4e^(2t)(sin²t + cos²t)) = 2eᵗ"
+    ]
    },
    "5(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "A = 16",
-     "B = 600"
-    ],
-    "guidance": "B1 A=16 (constant term 2⁴), B1 B=600 (coefficient of x²: C(4,2)·2²·5² = 6·4·25). Not incorrectly labelled."
+     "B1 A = 16",
+     "B1 B = 600"
+    ]
    },
    "5(b)": {
     "type": "points",
     "points": [
-     "Expand (2−5x)⁴ = 16 − 160x + 600x² − 1000x³ + 625x⁴",
-     "Subtract: (2+5x)⁴ − (2−5x)⁴ = 320x + 2000x³",
-     "So C = 320 and D = 2000"
+     "M1 Expansion of (2 − 5x)⁴ = A − 160x + Bx² − 1000x³ + 625x⁴",
+     "R1F Subtracts to reach 320x + 2000x³"
     ],
-    "guidance": "M1 obtains expansion of (2−5x)⁴ (or finds one of C=320 or D=2000). R1F completes reasoned argument to reach 320x+2000x³ (must finish with this; not just stating C and D)."
+    "guidance": "Must end with the expression, not just C = 320, D = 2000."
    },
    "5(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "∫(320x+2000x³)dx = 160x² + 500x⁴ + c"
+     "M1 Integrates one term correctly (or reverse chain rule on (2 ± 5x)⁵)",
+     "A1F 160x² + 500x⁴ + c"
     ],
-    "guidance": "M1 integrates one term correctly (or reverse chain rule). A1F obtains 160x²+500x⁴+c, follow through their C and D. Condone missing +c."
+    "guidance": "Missing +c is condoned."
    },
    "6(a)": {
     "type": "points",
     "points": [
-     "A valid counter example, e.g. 12² = 144 but 1+2 = 3 ≠ 4 (last digit of 144)"
-    ],
-    "guidance": "M1 squares a number with two or more digits and adds its digits (must be explicit). R1 completes argument comparing the digit sum with the last digit of the square to show Asif is wrong."
+     "M1 Squares a number of two or more digits and adds its digits, e.g. 12² = 144, 1 + 2 = 3",
+     "R1 Compares digit sum with the last digit to show the claim fails (3 ≠ 4)"
+    ]
    },
    "6(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1"
-    ],
-    "guidance": "B1. Last digit of 9 is 9, and 9² = 81 has last digit 1."
+     "B1 1"
+    ]
    },
    "6(c)": {
     "type": "points",
     "points": [
-     "Square the digits 0–9: 0²=0, 1²=1, 2²=4, 3²=9, 4²=16, 5²=25, 6²=36, 7²=49, 8²=64, 9²=81",
-     "The possible last digits are 0,1,4,9,6,5,6,9,4,1 — none is 8",
-     "Therefore no square number can have a last digit of 8"
-    ],
-    "guidance": "M1 lists at least four single digits and their squares (or explains odd digits need not be considered). R1 completes a rigorous argument (CSO / OE)."
+     "M1 Lists squares of at least four single digits (or explains odd digits need not be checked)",
+     "R1 All ten digits 0–9 checked: last digits 0, 1, 4, 5, 6, 9 only, so none end in 8"
+    ]
    },
    "7(a)": {
     "type": "points",
     "points": [
-     "Q lies on curve at (q, 15−q²), so height of triangle = 15−q² and base PQ = 2q",
-     "Area A = ½ × base × height = ½ × 2q × (15−q²) = 15q − q³",
-     "Since A = q(15−q²) > 0 requires 15−q² > 0, the upper limit is c = √15"
-    ],
-    "guidance": "M1 identifies height 15−q² (PI by (q,15−q²)). R1 completes rigorous argument using ½×2q(15−q²), clearly defining base and height. B1 deduces c = √15 (ACF)."
+     "M1 Height of triangle is 15 − q²",
+     "R1 A = ½ × 2q × (15 − q²) = 15q − q³ with base and height clear",
+     "B1 c = √15"
+    ]
    },
    "7(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "dA/dq = 15 − 3q²",
-     "Maximum where dA/dq = 0 ⇒ q = √5",
-     "Maximum area = 15√5 − 5√5 = 10√5"
-    ],
-    "guidance": "E1 explains maximum occurs when derivative = 0. M1 differentiates (at least one term correct), A1 obtains 15−3q². M1 solves their dA/dq=0 to find q and substitutes for area, A1 obtains exact max area 10√5 (ACF). E1 justifies it is a maximum (e.g. d²A/dq² = −6√5 < 0, or only turning point in 0<q<√15 with area 0 at endpoints)."
+     "E1 Maximum where dA/dq = 0",
+     "M1 Differentiates, at least one term correct",
+     "A1 15 − 3q²",
+     "M1 Solves to get q = √5 and substitutes",
+     "A1 Maximum area 10√5",
+     "E1 Justifies maximum, e.g. d²A/dq² = −6√5 < 0 (or only turning point, area 0 at the ends)"
+    ]
    },
    "8(a)": {
     "type": "points",
     "points": [
-     "Two symmetric branches, both lying above the x-axis (y > 0 for all x ≠ 0)",
-     "Curve approaches the y-axis (asymptote x = 0) and the x-axis (asymptote y = 0) without touching them"
-    ],
-    "guidance": "M1 sketches a branch in the 1st or 2nd quadrant with correct shape and asymptotes (not touching axes). A1 fully correct curve with correct asymptotes and not touching the axes."
+     "M1 One correct branch in quadrant 1 or 2, asymptotic to both axes",
+     "A1 Both branches correct, not touching the axes"
+    ]
    },
    "8(b)": {
     "type": "points",
     "points": [
-     "9/x² = 9 × (1/x²), a stretch in the y-direction by scale factor 9 — so Beth is correct",
-     "Also 9/x² = 1/(x/3)², a stretch in the x-direction by scale factor 3 — so Paul is correct",
-     "Both Beth and Paul are correct"
-    ],
-    "guidance": "M1 describes a stretch of scale factor 3 or 9 in either direction. A1 explains y-direction stretch by factor 9 OR x-direction stretch by factor 3 (PI by 9f(x) or f(x/3)). R1 explains both stretches and concludes both are correct."
+     "M1 Describes a stretch with scale factor 3 or 9",
+     "A1 Stretch in y-direction, factor 9, or in x-direction, factor 3",
+     "R1 Both stretches valid, so both are correct"
+    ]
    },
    "10(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x = 25 × 1.32ᵗ",
-     "At t = 5: x = 25 × 1.32⁵ = 100.18…",
-     "x = 101 (plants)"
-    ],
-    "guidance": "B1 forms correct model (A=25, B=1.32). M1 substitutes t=5 (or applies repeated 32% increase 5 times). A1 obtains 101 (condone 100), CAO."
+     "B1 x = 25 × 1.32ᵗ",
+     "M1 Substitutes t = 5",
+     "A1 101 (100 condoned)"
+    ]
    },
    "10(a)(ii)": {
     "type": "points",
     "points": [
-     "The model grows exponentially, so the predicted number of damaged plants grows without limit",
-     "This is unrealistic because there are only 900 tomato plants, so the number damaged cannot exceed 900"
-    ],
-    "guidance": "E1 explains the model grows exponentially (must refer to model and exponential). E1 refers to the 900 plant limit (can’t exceed 900)."
+     "E1 Exponential model grows without limit",
+     "E1 Impossible since there are only 900 plants"
+    ]
    },
    "10(b)(i)": {
     "type": "points",
     "points": [
-     "Rearrange: ∫ 2700/(x(900−x)) dx = ∫ dt",
-     "Partial fractions: 2700/(x(900−x)) = A/x + B/(900−x) with 2700 = A(900−x) + Bx",
-     "x=0 ⇒ A = 2700/900 = 3; x=900 ⇒ B = 3",
-     "So ∫ (3/x + 3/(900−x)) dx = ∫ dt   (A = 3, B = 3)"
-    ],
-    "guidance": "B1 rearranges dx/dt to separate variables (P/(x(900−x)) form with P×Q = 2700). M1 forms partial fraction equation with correct denominators and a valid method for the numerators. R1 obtains correct A and B (both 3) and concludes ∫(3/x+3/(900−x))dx = ∫dt."
+     "B1 Separates variables, e.g. 2700/(x(900 − x)) dx = dt",
+     "M1 Partial fractions with correct denominators and a method for numerators",
+     "R1 A = 3, B = 3 and the stated result"
+    ]
    },
    "10(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Integrate: 3(ln x − ln(900−x)) + c = t",
-     "Use t=0, x=25: 3(ln25 − ln875) + c = 0 ⇒ c = 10.67…",
-     "t = 3(ln x − ln(900−x)) + 10.67   (equivalently t = 3 ln(35x/(900−x)))"
-    ],
-    "guidance": "M1 integrates to obtain ln x (condone brackets). M1 integrates to obtain ±ln(900−x). A1 reaches 3(ln x − ln(900−x)) + c = t. M1 uses t=0, x=25 to find c (=10.67). A1 obtains correct expression for t (AWRT 11 if numeric form given), e.g. t = 3 ln(35x/(900−x))."
+     "M1 Integrates to get ln x or ±ln(900 − x)",
+     "M1 Gets both logs",
+     "A1 3(ln x − ln(900 − x)) + c = t",
+     "M1 Uses t = 0, x = 25 to find c",
+     "A1 t = 3 ln(35x/(900 − x)) (c ≈ 10.67)"
+    ]
    },
    "10(b)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Half of 900 plants means x = 450",
-     "t = 3(ln450 − ln450) + 10.67 = 10.67…",
-     "It takes 11 days"
-    ],
-    "guidance": "M1 substitutes x = 450 into their t expression. A1 obtains 11 days, CAO."
+     "M1 Substitutes x = 450",
+     "A1 11 days"
+    ]
    },
    "13(a)": {
     "type": "points",
     "points": [
-     "Vertical component of initial velocity = 7 sin θ",
-     "At max height v = 0: using v² = u² + 2as with a = −9.8, s = h: 0 = (7 sin θ)² − 2(9.8)h",
-     "h = (49 sin²θ)/(19.6) = 2.5 sin²θ"
-    ],
-    "guidance": "B1 obtains 7 sinθ for vertical component. M1 uses v²=u²+2as with v=0 (or suitable suvat) to form a complete method for h. R1 completes argument to the given result (AG), with consistent use of signs."
+     "B1 Vertical velocity component 7 sin θ",
+     "M1 v² = u² + 2as with v = 0 (or equivalent suvat method)",
+     "R1 0 = 49 sin²θ − 19.6h, giving h = 2.5 sin²θ"
+    ]
    },
    "13(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "h is maximised when sin²θ is greatest on 0°≤θ≤60°, i.e. at θ = 60°",
-     "h = 2.5 sin²60° = 2.5 × (3/4) = 1.9 (= 15/8)"
-    ],
-    "guidance": "M1 substitutes a value of θ in 0–60 giving height greater than zero. A1 deduces h = 1.9 (15/8), AWRT 1.9, at θ=60°."
+     "M1 Substitutes a valid θ (0 < θ ≤ 60°) to get a positive height",
+     "A1 h = 1.9 (awrt) or 15/8, at θ = 60°"
+    ]
    },
    "13(c)": {
     "type": "points",
     "points": [
-     "Nisha is incorrect",
-     "The model treats the ball as a particle and ignores air resistance, so the size of the ball does not affect the maximum height (which gets larger as the ball gets larger only if air resistance matters)"
-    ],
-    "guidance": "E1 states Nisha is incorrect AND refers to air resistance or to the ball being modelled as a particle (the model ignores air resistance / treats the ball as a particle, so size has no effect)."
+     "E1 Incorrect: the model treats the ball as a particle / ignores air resistance, which would increase for a larger ball"
+    ]
    },
    "14(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Take moments about the support (midpoint, 80 mm from each end)",
-     "Coin (12 g) acts 80−14 = 66 mm from support on side A; load m acts 80 mm from support on side B",
-     "Rod is uniform so its weight acts at the support (no moment): 12 × 66 = m × 80",
-     "m = 9.9 (grams)"
-    ],
-    "guidance": "M1 forms a correct single moments equation (e.g. 12 × 0.066 = m × 0.080, or in g·mm), using that the coin’s curved edge means its centre is 14 mm in from A so its load acts 66 mm from the support; correct forces and distances. A1 obtains m = 9.9 (OE)."
+     "B1 A correct non-zero moment, e.g. 12g × 66",
+     "M1 One equation in m only, e.g. 66 × 12g = 80mg",
+     "A1 m = 9.9"
+    ]
    },
    "14(b)": {
     "type": "points",
     "points": [
-     "The coin is assumed to be uniform / its mass acts at its centre (centre of mass at the geometric centre)"
+     "E1 The coin is uniform (its weight acts at its centre)"
     ],
-    "guidance": "E1 states a valid assumption about the coin: that it is uniform, or that its mass/weight acts at its centre."
+    "guidance": "'Mass acts at the centre' is not accepted."
    },
    "16(a)": {
     "type": "points",
     "points": [
-     "Direction of motion (acceleration) of P is (3i − 4j), gradient −4/3",
-     "Q passes through (1,−1) and (10, c): direction (9i + (c+1)j)",
-     "Parallel ⇒ (9, c+1) = k(3, −4): k = 3, so c+1 = −12 ⇒ c = −13"
+     "M1 Uses direction 3i − 4j (or gradient −4/3) and 9i + (c + 1)j (or its gradient)",
+     "A1 Correct vector/cartesian equation for Q, or both directions",
+     "M1 Eliminates parameter or equates gradients, (c + 1)/9 = −4/3",
+     "A1 c = −13"
     ],
-    "guidance": "M1 states/uses direction of motion as (3,−4) or (9, c+1), or the gradient −4/3 = (c+1)/9. A1 obtains a correct vector equation or both direction vectors, or a correct cartesian equation for Q. M1 eliminates the parameter / equates gradients / substitutes x=10. A1 shows c = −13 (AG). Note: verification using the given c = −13 scores max M1A1M0A0."
+    "guidance": "Verifying with c = −13 scores at most M1 A1."
    },
    "16(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "r = (−4i + 5j) + ½(3i − 4j)t²   metres"
-    ],
-    "guidance": "B1 obtains r = (−4i+5j) + ½(3i−4j)t² (OE), since P starts at rest: r = r₀ + ½at². Condone missing units."
+     "B1 r = (−4i + 5j) + ½(3i − 4j)t²"
+    ]
    },
    "16(b)(ii)": {
     "type": "points",
     "points": [
-     "P’s path: position (−4 + 1.5t², 5 − 2t²). Eliminating t² gives the line through P with gradient −4/3: y − 5 = −4/3 (x − (−4)), i.e. y = −4/3·x − 16/3 + 5 = −4/3 x − 1/3",
-     "Q’s line through (1,−1) with gradient −4/3: y + 1 = −4/3(x − 1), i.e. y = −4/3 x + 1/3",
-     "The two parallel lines have different intercepts (−1/3 ≠ 1/3), so they are distinct parallel lines — the paths are not collinear (do not lie on the same straight line)"
-    ],
-    "guidance": "M1 finds the cartesian equation of P’s path (eliminating t²) — gradient −4/3. A1 obtains both line equations / shows the intercepts differ. R1 concludes the paths are parallel but distinct, hence not collinear."
+     "M1 Equates P's position to a known point on Q's path (or compares cartesian equations)",
+     "A1 Components give t² = 10/3 and t² = 3 (or lines y = −4x/3 + 1/3 and y = −4x/3 − 1/3)",
+     "R1 Inconsistent, so the paths are not collinear"
+    ]
    },
    "18(a)": {
     "type": "points",
     "points": [
-     "Geometry: shorter string 0.8 m at A, longer 1.2 m at B, object 0.6 m below ceiling",
-     "Angle of shorter string to horizontal: A = sin⁻¹(0.6/0.8) = 48.59°; angle of longer string: B = sin⁻¹(0.6/1.2) = 30°",
-     "Horizontal equilibrium: T_OA cos A = T_OB cos B ⇒ T_OA = T_OB · cos B / cos A = T_OB · cos30/cos48.59 = 1.327 T_OB",
-     "So T_OA is about 32.7% more than T_OB, i.e. over 30% more"
-    ],
-    "guidance": "B1 obtains the string angles, e.g. A = sin⁻¹(0.6/0.8) = 48.59° and B = sin⁻¹(0.6/1.2) = 30° (OE, accept the angles to the vertical with consistent use). M1 resolves horizontally with correct angles to relate the tensions. A1 obtains T_OA = T_OB cos30/cos48.59. R1 evaluates the ratio as 1.327 (1.30 ≤ ratio ≤ 1.325 to 1.327) and concludes T_OA is over 30% more than T_OB."
+     "B1 Angles with the ceiling: sin⁻¹(0.6/0.8) = 48.59° and sin⁻¹(0.6/1.2) = 30°",
+     "M1 Resolves horizontally, T_A cos A = T_B cos B (or triangle of forces)",
+     "A1 Correct equation with angles",
+     "R1 T_A = kT_B with 1.305 ≤ k ≤ 1.325 (1.309), so over 30% more"
+    ]
    },
    "18(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "T_OB = 2g, so T_OA = 2g × 1.327 = 2.6g (using the ratio from (a))",
-     "Resolve vertically: mg = T_OA sin A + T_OB sin B = 2.6g sin48.59° + 2g sin30°",
-     "mg = 2.6g(0.75) + 2g(0.5) = 1.95g + g ... giving m = 3.0",
-     "m = 3.0 (kg)"
-    ],
-    "guidance": "B1 obtains T_OA = 2g × their ratio (≈2.6g). M1 resolves forces vertically into a three-term equilibrium equation (at least two terms correct), or uses a triangle of forces with the sine rule. A1 forms the fully correct equation mg = T_OA sinA + T_OB sinB. A1F substitutes their tensions and correct angles to obtain AWRT m = 3 (FT their ratio provided m = AWRT 3)."
+     "B1 T_A = 2g × their ratio",
+     "M1 Vertical resolution with three terms",
+     "A1 mg = T_A sin 48.59° + T_B sin 30°",
+     "A1F m = 3 (awrt)"
+    ]
    },
    "19(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Perpendicular to ramp: R = mg cos25° = 20 × 9.8 × cos25°",
-     "Friction opposes motion (up the ramp): F = μR",
-     "Along ramp (up positive): T − mg sin25° − F = ma",
-     "230 − 20(9.8)sin25° − μ(20)(9.8)cos25° = 20 × 1.2",
-     "230 − 196 sin25° − 196 μ cos25° = 24 ⇒ μ = 0.69"
-    ],
-    "guidance": "B1 R = μR statement / weight component perpendicular R = mg cos25°. B1 weight component parallel mg sin25° (or μR for friction). M1 resolves perpendicular to get R; M1 forms a four-term equation T − weight − friction = ma using R = μR; M1 substitutes T=230, a=1.2 etc. A1 reaches 230 − 196 sin25° − 196μ cos25° = 24. A1 obtains μ = 0.69, CAO."
+     "B1 F = μR",
+     "B1 Weight component along slope 20g sin 25°",
+     "B1 R = 20g cos 25°",
+     "M1 Four-term F = ma along the slope with consistent signs",
+     "M1 Substitutes T = 230 and F = μ × 20g cos 25°",
+     "A1 230 − 196 sin 25° − 196μ cos 25° = 24",
+     "A1 μ = 0.69"
+    ]
    },
    "19(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Crate starts from rest (u=0), a = 1.2 m s⁻², t = 3.8 s",
-     "s = ut + ½at² = ½ × 1.2 × 3.8² = 8.664 m (distance up the ramp from A to the top)",
-     "OA = total ramp length − distance travelled = 10 − 8.664 = 1.3 m"
-    ],
-    "guidance": "M1 substitutes u=0, a=1.2, t=3.8 into s = ut + ½at² (or suitable suvat) for a complete method for s. A1 obtains AWRT 8.7 for the distance travelled. A1F obtains OA = 10 − 8.7 = AWRT 1.3 m (FT their value provided < 10). Condone missing units."
+     "M1 s = ut + ½at² with u = 0, a = 1.2, t = 3.8",
+     "A1 8.664 (awrt 8.7)",
+     "A1F OA = 10 − 8.664 = 1.3 m"
+    ]
    },
    "19(b)(ii)": {
     "type": "points",
     "points": [
-     "The crate is modelled as a particle"
-    ],
-    "guidance": "E1 states the crate has been modelled as a particle (OE), other than air resistance."
+     "E1 The crate is modelled as a particle"
+    ]
    }
   }
  },
  "math-aqa-7357-2022-p3": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "The binomial expansion of √(1 − x/4).",
     "parts": [
      {
       "code": "1",
-      "prompt": "State the range of values of x for which the binomial expansion of √(1 − x/4) is valid.\nCircle your answer.\n|x| < ¼      |x| < 1      |x| < 2      |x| < 4",
+      "prompt": "State the values of x for which the expansion is valid.\nOptions: A   x   < 1/4   B   x   < 1   C   x   < 2   D   x   < 4",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
-    "scenario": "The shaded region, shown in the diagram, is defined by x² − 7x + 7 ≤ y ≤ 7 − 2x. (The region is bounded above by the line y = 7 − 2x and below by the parabola y = x² − 7x + 7, between their intersections at x = 0 and x = 5.)",
+    "scenario": "Shaded region x² − 7x + 7 ≤ y ≤ 7 − 2x, between x = 0 and x = 5 where the line and parabola meet (diagram on the question paper).",
     "parts": [
      {
       "code": "2",
-      "prompt": "Identify which of the following gives the area of the shaded region.\nTick (✓) one box.\n∫(7 − 2x) dx − ∫(x² − 7x + 7) dx      ∫₀⁵ (x² − 5x) dx      ∫₀⁵ (5x − x²) dx      ∫₀⁵ (x² − 9x + 14) dx",
+      "prompt": "Choose the expression for the shaded area.\nOptions: ∫(7 − 2x) dx − ∫(x² − 7x + 7) dx (no limits)   ∫₀⁵ (x² − 5x) dx   ∫₀⁵ (5x − x²) dx   ∫₀⁵ (x² − 9x + 14) dx",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "f(x) = 2x + 1.",
     "parts": [
      {
       "code": "3",
-      "prompt": "The function f is defined by f(x) = 2x + 1.\nSolve the equation f(x) = f⁻¹(x).\nCircle your answer.\nx = −1      x = 0      x = 1      x = 2",
+      "prompt": "Solve f(x) = f⁻¹(x).\nOptions: x = −1   x = 0   x = 1   x = 2",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
+    "scenario": "Indefinite integration.",
     "parts": [
      {
       "code": "4",
-      "prompt": "Find ∫(x² + x^(½)) dx",
+      "prompt": "Find ∫ (x² + x^(1/2)) dx.",
       "marks": 2
      }
     ]
    },
    {
     "number": 5,
+    "scenario": "y = sin 2x for 0° ≤ x ≤ 360°.",
     "parts": [
      {
       "code": "5(a)",
-      "prompt": "Sketch the graph of y = sin 2x for 0° ≤ x ≤ 360°.",
+      "prompt": "Sketch y = sin 2x for 0° ≤ x ≤ 360°.",
       "marks": 2
      },
      {
       "code": "5(b)",
-      "prompt": "The equation sin 2x = A has exactly two solutions for 0° ≤ x ≤ 360°.\nState the possible values of A.",
+      "prompt": "sin 2x = A has exactly two solutions in 0° ≤ x ≤ 360°. State the possible values of A.",
       "marks": 1
      }
     ]
    },
    {
     "number": 6,
-    "scenario": "A design for a surfboard (Figure 1) has a length and a width. The curve of the top half of the surfboard can be modelled by the parametric equations x = −2t², y = 9t − 0.7t² for 0 ≤ t ≤ 9.5 (Figure 2), where x and y are measured in centimetres.",
+    "scenario": "A surfboard (Figure 1) whose top half is modelled by x = −2t², y = 9t − 0.7t² for 0 ≤ t ≤ 9.5, in cm (Figure 2 shows the curve from the origin leftwards; diagrams on the question paper).",
     "parts": [
      {
       "code": "6(a)",
@@ -20907,56 +20665,56 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "6(b)(i)",
-      "prompt": "Find an expression for dy/dx in terms of t.",
+      "prompt": "Find dy/dx in terms of t.",
       "marks": 3
      },
      {
       "code": "6(b)(ii)",
-      "prompt": "Hence, show that the width of the surfboard is approximately one third of its length.",
+      "prompt": "Hence show the width is about one third of the length.",
       "marks": 4
      }
     ]
    },
    {
     "number": 7,
-    "scenario": "A planet takes T days to complete one orbit of the Sun. T is known to be related to the planet's average distance d, in millions of kilometres, from the Sun. A graph of log₁₀ T against log₁₀ d is shown with data for Mercury (1.76, 1.94) and Uranus (3.46, 4.49) labelled (these are (log₁₀ d, log₁₀ T) coordinates lying on a straight line).",
+    "scenario": "A planet's orbit takes T days; its mean distance from the Sun is d million km. The graph of log₁₀ T against log₁₀ d is a straight line through Mercury (1.76, 1.94) and Uranus (3.46, 4.49).",
     "parts": [
      {
       "code": "7(a)(i)",
-      "prompt": "Find the equation of the straight line in the form log₁₀ T = a + b log₁₀ d, where a and b are constants to be found.",
+      "prompt": "Find the line in the form log₁₀ T = a + b log₁₀ d.",
       "marks": 3
      },
      {
       "code": "7(a)(ii)",
-      "prompt": "Show that T = K d^n, where K and n are constants to be found.",
+      "prompt": "Show that T = Kdⁿ, finding K and n.",
       "marks": 2
      },
      {
       "code": "7(b)",
-      "prompt": "Neptune takes approximately 60 000 days to complete one orbit of the Sun.\nUse your answer to 7(a)(ii) to find an estimate for the average distance of Neptune from the Sun.",
+      "prompt": "Neptune's orbit takes about 60 000 days. Use (a)(ii) to estimate its mean distance from the Sun.",
       "marks": 2
      }
     ]
    },
    {
     "number": 8,
-    "scenario": "Water is poured into an empty cone at a constant rate of 8 cm³/s. After t seconds the depth of the water in the inverted cone is h cm. When the depth of the water in the inverted cone is h cm, the volume, V cm³, is given by V = πh³/12.",
+    "scenario": "Water flows into an empty inverted cone at 8 cm³/s. After t seconds the depth is h cm and volume V = πh³/12 cm³ (diagram on the question paper).",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Show that when t = 3, dV/dh = 6·∛(6π).",
+      "prompt": "Show that when t = 3, dV/dh = 6∛(6π).",
       "marks": 4
      },
      {
       "code": "8(b)",
-      "prompt": "Hence, find the rate at which the depth is increasing when t = 3.\nGive your answer to three significant figures.",
+      "prompt": "Hence find the rate of increase of depth when t = 3, to 3 significant figures.",
       "marks": 3
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "Assume that a and b are integers such that a² − 4b − 2 = 0.",
+    "scenario": "Assume integers a and b satisfy a² − 4b − 2 = 0.",
     "parts": [
      {
       "code": "9(a)",
@@ -20965,96 +20723,97 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "9(b)",
-      "prompt": "Hence, prove that 2b + 1 is even and explain why this is a contradiction.",
+      "prompt": "Hence prove that 2b + 1 is even and explain why this is a contradiction.",
       "marks": 3
      },
      {
       "code": "9(c)",
-      "prompt": "Explain what can be deduced about the solutions of the equation a² − 4b − 2 = 0.",
+      "prompt": "What can be deduced about the solutions of a² − 4b − 2 = 0?",
       "marks": 1
      }
     ]
    },
    {
     "number": 10,
-    "scenario": "The function f is defined by f(x) = (x² + 10)/(2x + 5), where f has its maximum possible domain. The curve y = f(x) intersects the line y = x at the points P and Q (P below the origin, Q just above the origin), as shown.",
+    "scenario": "f(x) = (x² + 10)/(2x + 5) on its largest possible domain. The curve y = f(x) meets y = x at P and Q, which appear to be turning points (diagram on the question paper).",
     "parts": [
      {
       "code": "10(a)",
-      "prompt": "State the value of x which is not in the domain of f.",
+      "prompt": "State the value of x excluded from the domain.",
       "marks": 1
      },
      {
       "code": "10(b)",
-      "prompt": "Explain how you know that the function f is many-to-one.",
+      "prompt": "Explain how you know f is many-to-one.",
       "marks": 2
      },
      {
       "code": "10(c)(i)",
-      "prompt": "Show that the x-coordinates of P and Q satisfy the equation x² + 5x − 10 = 0.",
+      "prompt": "Show the x-coordinates of P and Q satisfy x² + 5x − 10 = 0.",
       "marks": 2
      },
      {
       "code": "10(c)(ii)",
-      "prompt": "Hence, find the exact x-coordinate of P and the exact x-coordinate of Q.",
+      "prompt": "Hence find the exact x-coordinates of P and Q.",
       "marks": 1
      },
      {
       "code": "10(d)",
-      "prompt": "Show that P and Q are stationary points of the curve.\nFully justify your answer.",
+      "prompt": "Show, with full justification, that P and Q are stationary points.",
       "marks": 5
      },
      {
       "code": "10(e)",
-      "prompt": "Using set notation, state the range of f.",
+      "prompt": "State the range of f in set notation.",
       "marks": 2
      }
     ]
    },
    {
     "number": 11,
+    "scenario": "X ~ N(14, 0.35).",
     "parts": [
      {
       "code": "11",
-      "prompt": "X ~ N(14, 0.35).\nFind the standard deviation of X, correct to two decimal places.\nCircle your answer.\n0.12      0.35      0.59      1.78",
+      "prompt": "Find the standard deviation of X to 2 d.p.\nOptions: 0.12   0.35   0.59   1.78",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
-    "scenario": "The box plot shows summary data for the number of minutes late that buses arrived at a rural bus stop. The five-figure summary is: minimum 1, lower quartile 4, median 6, upper quartile 17, maximum 23.",
+    "scenario": "Box plot of minutes late for buses: minimum 1, lower quartile 4, median 6, upper quartile 17, maximum 23.",
     "parts": [
      {
       "code": "12",
-      "prompt": "Identify which term best describes the distribution of this data.\nCircle your answer.\nnegatively skewed      normal      positively skewed      symmetrical",
+      "prompt": "Which term best describes the distribution?\nOptions: negatively skewed   normal   positively skewed   symmetrical",
       "marks": 1
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "A reporter is writing an article on the CO₂ emissions from vehicles using the Large Data Set. The reporter claims that the Large Data Set shows that the CO₂ emissions from all vehicles in the UK have declined every year from 2002 to 2016.",
+    "scenario": "A reporter says the Large Data Set shows CO₂ emissions from all UK vehicles fell every year from 2002 to 2016.",
     "parts": [
      {
       "code": "13",
-      "prompt": "Using your knowledge of the Large Data Set, give two reasons why this claim is invalid.",
+      "prompt": "Using your knowledge of the Large Data Set, give two reasons why the claim is invalid.",
       "marks": 2
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "A customer service centre records every call they receive. It is found that 30% of all calls made to this centre are complaints. A sample of 20 calls is selected. The number of calls in the sample which are complaints is denoted by the random variable X.",
+    "scenario": "30% of calls to a customer service centre are complaints. X = number of complaints in a sample of 20 calls.",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "State two assumptions necessary for X to be modelled by a binomial distribution.",
+      "prompt": "State two assumptions needed to model X as binomial.",
       "marks": 2
      },
      {
       "code": "14(b)(i)",
-      "prompt": "Assume that X can be modelled by a binomial distribution. Find P(X = 1).",
+      "prompt": "Assuming X is binomial, find P(X = 1).",
       "marks": 1
      },
      {
@@ -21069,115 +20828,117 @@ window.MATHS_QUESTIONS = {
      },
      {
       "code": "14(c)",
-      "prompt": "In a random sample of 10 calls to a school, the number of calls which are complaints, Y, may be modelled by a binomial distribution Y ~ B(10, p). The standard deviation of Y is 1.5. Calculate the possible values of p.",
+      "prompt": "For a school, complaints Y in 10 calls follow B(10, p) with standard deviation 1.5. Find the possible values of p.",
       "marks": 3
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "Researchers are investigating the average time spent on social media by adults on the electoral register of a town. They select every 100th adult from the electoral register for their investigation.",
+    "scenario": "Researchers studying average social media time for adults on a town's electoral register choose every 100th adult on the register.",
     "parts": [
      {
       "code": "15(a)",
-      "prompt": "Identify the population in their investigation.",
+      "prompt": "Identify the population.",
       "marks": 1
      },
      {
       "code": "15(b)(i)",
-      "prompt": "State the name of this method of sampling.",
+      "prompt": "Name the sampling method.",
       "marks": 1
      },
      {
       "code": "15(b)(ii)",
-      "prompt": "Describe one advantage of this sampling method.",
+      "prompt": "Give one advantage of this method.",
       "marks": 1
      }
     ]
    },
    {
     "number": 16,
-    "scenario": "A sample of 240 households were asked which, if any, of the following animals they own as pets: cats (C), dogs (D), tortoises (T). The results: C = 153, D = 70, T = 45, C and D = 48, C and T = 21, D and T = 32, C, D and T = 17.",
+    "scenario": "240 households report pets (cats C, dogs D, tortoises T): C 153, D 70, T 45, C and D 48, C and T 21, D and T 32, all three 17. The Venn diagram on the question paper already shows 101 in C only.",
     "parts": [
      {
       "code": "16(a)",
-      "prompt": "Represent this information by fully completing the Venn diagram.",
+      "prompt": "Complete the Venn diagram.",
       "marks": 3
      },
      {
       "code": "16(b)(i)",
-      "prompt": "A household is chosen at random from the sample. Find the probability that the household owns a cat only.",
+      "prompt": "Find the probability a random household owns a cat only.",
       "marks": 1
      },
      {
       "code": "16(b)(ii)",
-      "prompt": "Find the probability that the household owns at least two of the three types of pet.",
+      "prompt": "Find the probability it owns at least two of the three types.",
       "marks": 2
      },
      {
       "code": "16(b)(iii)",
-      "prompt": "Find the probability that the household owns a cat or a dog or both, given that the household does not own a tortoise.",
+      "prompt": "Find the probability it owns a cat or a dog (or both), given it has no tortoise.",
       "marks": 2
      },
      {
       "code": "16(c)",
-      "prompt": "Determine whether a household owning a cat and a household owning a tortoise are independent of each other. Fully justify your answer.",
+      "prompt": "Decide, with full justification, whether owning a cat and owning a tortoise are independent.",
       "marks": 2
      }
     ]
    },
    {
     "number": 17,
+    "scenario": "Weekly working hours are modelled as N(34, 4.5²). A sample of 30 employees has mean 36.2 hours; the manager claims the mean has increased.",
     "parts": [
      {
       "code": "17",
-      "prompt": "The number of working hours per week of employees in a company is modelled by a normal distribution with mean 34 hours and a standard deviation of 4.5 hours. The manager claims that the mean working hours per week of the company's employees has increased. A random sample of 30 employees in the company was found to have mean working hours per week of 36.2 hours. Carry out a hypothesis test at the 2.5% significance level to investigate the manager's claim.",
+      "prompt": "Test the manager's claim at the 2.5% level.",
       "marks": 6
      }
     ]
    },
    {
     "number": 18,
-    "scenario": "In a particular year, the height of a male athlete at the Summer Olympics has a mean 1.78 metres and standard deviation 0.23 metres. The heights of 95% of male athletes are between 1.33 metres and 2.22 metres.",
+    "scenario": "Male Summer Olympic athletes' heights have mean 1.78 m and s.d. 0.23 m, and 95% lie between 1.33 m and 2.22 m.",
     "parts": [
      {
       "code": "18(a)",
-      "prompt": "Comment on whether a normal distribution may be suitable to model the height of a male athlete at the Summer Olympics in this particular year.",
+      "prompt": "Comment on whether a normal distribution could model the heights.",
       "marks": 3
      },
      {
       "code": "18(b)(i)",
-      "prompt": "You may assume that the height of a male athlete at the Summer Olympics may be modelled by a normal distribution with mean 1.78 metres and standard deviation 0.23 metres. Find the probability that the height of a randomly selected male athlete is 1.82 metres.",
+      "prompt": "Assuming N(1.78, 0.23²), find P(height is exactly 1.82 m).",
       "marks": 1
      },
      {
       "code": "18(b)(ii)",
-      "prompt": "Find the probability that the height of a randomly selected male athlete is between 1.70 metres and 1.90 metres.",
+      "prompt": "Find P(1.70 < height < 1.90).",
       "marks": 1
      },
      {
       "code": "18(b)(iii)",
-      "prompt": "Two male athletes are chosen at random. Calculate the probability that both of their heights are between 1.70 metres and 1.90 metres.",
+      "prompt": "Find the probability that both of two random athletes are between 1.70 m and 1.90 m.",
       "marks": 1
      },
      {
       "code": "18(c)",
-      "prompt": "The summarised data for the heights, h metres, of a random sample of 40 male athletes at the Winter Olympics is given below: ∑h = 69.2 and ∑(h − h̄)² = 2.81. Use this data to calculate estimates of the mean and standard deviation of the heights of male athletes at the Winter Olympics.",
+      "prompt": "A sample of 40 Winter Olympic male athletes has Σh = 69.2 and Σ(h − h̄)² = 2.81. Estimate the mean and standard deviation.",
       "marks": 3
      },
      {
       "code": "18(d)",
-      "prompt": "Using your answers from part (c), compare the heights of male athletes at the Summer Olympics and male athletes at the Winter Olympics.",
+      "prompt": "Using (c), compare the heights of Summer and Winter athletes.",
       "marks": 2
      }
     ]
    },
    {
     "number": 19,
+    "scenario": "Before a campaign, 42% of a bank's customers had Internet banking. A week in, 18 of 35 randomly surveyed customers had registered.",
     "parts": [
      {
       "code": "19",
-      "prompt": "A bank runs a campaign to promote Internet banking accounts to their customers. Before the campaign, 42% of their customers had an Internet banking account. One week after the campaign started, 35 customers were surveyed at random and 18 of them were found to have registered for an Internet banking account. Using a binomial distribution, carry out a hypothesis test at the 10% significance level to investigate the claim that, since the campaign, there has been an increase in the proportion of customers registered for an Internet banking account.",
+      "prompt": "Using a binomial model, test at the 10% level whether the proportion has increased.",
       "marks": 6
      }
     ]
@@ -21185,1984 +20946,672 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "|x| < 4"
-    ],
-    "guidance": "B1 for circling the correct answer. Expansion of (1 − x/4)^(½) is valid when |x/4| < 1, i.e. |x| < 4."
+     "B1 D: |x| < 4"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "∫₀⁵ (5x − x²) dx"
-    ],
-    "guidance": "B1 for ticking the correct box. Area = ∫₀⁵ [(7 − 2x) − (x² − 7x + 7)] dx = ∫₀⁵ (5x − x²) dx."
+     "B1 C: ∫₀⁵ (5x − x²) dx"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x = −1"
-    ],
-    "guidance": "B1 for circling the correct answer."
+     "B1 A: x = −1"
+    ]
    },
    "4": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x³/3 + (2x^(3/2))/3 + c"
-    ],
-    "guidance": "M1 integrates one x term correctly (accept unsimplified). A1 correct answer ACF, must include + c (accept unsimplified; do not ISW)."
+     "M1 One term integrated correctly",
+     "A1 x³/3 + (2/3)x^(3/2) + c (must include + c)"
+    ]
    },
    "11": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "0.59"
-    ],
-    "guidance": "B1 for circling the correct answer. Standard deviation = √0.35 = 0.5916 ≈ 0.59."
+     "B1 C: 0.59"
+    ]
    },
    "12": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "positively skewed"
-    ],
-    "guidance": "B1 for circling the correct answer. Q3 − median (17 − 6 = 11) > median − Q1 (6 − 4 = 2), so positively skewed."
+     "B1 C: positively skewed"
+    ]
    },
    "13": {
     "type": "points",
     "points": [
-     "Makes a valid comment about the sample of vehicles in the LDS, e.g. the Large Data Set is only a sample of vehicles in the UK / not all regions or types of vehicles included / some missing CO₂ data",
-     "Makes a valid comment about the data years in the LDS, e.g. data is shown only for 2002 and 2016 with nothing in between"
-    ],
-    "guidance": "E1 for a valid comment about the sample of vehicles (not all UK/England regions included, not all types of vehicles included, or some missing CO₂ data). E1 for a valid comment about the data years (data shown only for two years 2002 and 2016, but nothing in between)."
+     "E1 The LDS is only a sample of UK vehicles (not all regions/vehicle types, some missing CO₂ values)",
+     "E1 It only contains data for 2002 and 2016, nothing in between"
+    ]
    },
    "17": {
     "type": "points",
     "points": [
-     "H₀: μ = 34, H₁: μ > 34 (one-tailed test)",
-     "X̄ ~ N(34, 4.5²/30); test statistic z = (36.2 − 34)/(4.5/√30) = 2.68",
-     "P(X̄ ≥ 36.2) = 0.004 (or critical value 35.61 / z-critical 1.96)",
-     "Since 0.004 < 0.025 (or 2.68 > 1.96), reject H₀",
-     "There is sufficient evidence to suggest the mean working hours have increased"
+     "B1 H₀: μ = 34, H₁: μ > 34",
+     "M1 Uses X̄ ~ N(34, 4.5²/30)",
+     "A1 P(X̄ > 36.2) ≈ 0.004 (or z ≈ 2.68, or critical region X̄ > 35.6)",
+     "M1 Compares with 0.025 (or 1.96, or 36.2 with the CR)",
+     "A1 Reject H₀",
+     "R1 Sufficient evidence the mean working hours have increased"
     ],
-    "guidance": "B1 states both hypotheses correctly for one-tailed test (H₀: μ = 34, H₁: μ > 34). M1 states or uses correct model X̄ ~ N(34, 4.5²/30) with calculation of P(X̄ ≥ 36.2) = 0.004 or test statistic z ≈ 2.68 or critical region X̄ > 35.61 (AWFW [35.6, 35.632]) or critical z ± [2.67, 2.68] (condone ≥). A1 obtains the correct probability/value/critical region (condone incorrect or missing labels). M1 compares correctly (0.004 < 0.025, or compares with z-critical, allowing positive values 1.96 to 4dp). A1 infers H₀ rejected (condone H₁ accepted; all figures correct). R1 concludes correctly in context: sufficient evidence to suggest the mean working hours have increased (M1A1M1A1 minimum required for R1)."
+    "guidance": "The final R1 needs the M1 A1 M1 A1 before it."
    },
    "19": {
     "type": "points",
     "points": [
-     "p = proportion of customers with an Internet banking account; H₀: p = 0.42, H₁: p > 0.42 (one-tailed)",
-     "Under H₀, X ~ B(35, 0.42); observed x = 18",
-     "P(X ≥ 18) = 1 − P(X ≤ 17) = 1 − 0.832 = 0.168 (critical region is X ≥ 19)",
-     "Since 0.168 > 0.10 (and 18 < 19), do not reject H₀",
-     "There is insufficient evidence to suggest an increase in the proportion of customers registered for an Internet banking account"
+     "B1 H₀: p = 0.42, H₁: p > 0.42",
+     "M1 Uses X ~ B(35, 0.42)",
+     "A1 P(X ≥ 18) ≈ 0.169 (or critical region X ≥ 19)",
+     "M1 Compares with 0.10 (or 18 with the CR)",
+     "A1 Do not reject H₀",
+     "R1 Insufficient evidence of an increase in the proportion with Internet banking"
     ],
-    "guidance": "B1 states both hypotheses correctly for one-tailed test (X = number of customers with account; H₀: p = 0.42, H₁: p > 0.42 OE). M1 states or uses correct model and calculation of one of the relevant probabilities: P(X ≤ 16) = 0.733, P(X ≤ 17) = 0.832, P(X ≥ 18) = 0.169, P(X ≤ 18) = 0.903, P(X ≥ 19) = 0.097 or critical value 19 / region ≥ 19. A1 obtains P(X ≥ 18) = 0.168/0.169 OE or critical value 19. M1 evaluates by comparing their P(X ≥ 18) with 0.10 (or compares their critical region with 18). A1 infers H₀ not rejected (condone H₁ rejected; all figures correct). R1 concludes correctly in context that there is insufficient evidence to suggest an increase in the proportion of customers registered for an Internet banking account (M1A1M1A1 minimum required for R1)."
+    "guidance": "The final R1 needs the M1 A1 M1 A1 before it."
    },
    "5(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Sine wave through the origin with correct orientation for at least one period",
-     "y = sin 2x drawn with correct axis intersections at 0°, 90°, 180°, 270°, 360° over 0° ≤ x ≤ 360° (two full periods)"
-    ],
-    "guidance": "M1 sketches sine wave with correct orientation through the origin to at least one period (ignore numbers on y-axis). A1 correct axis intersections, condone slight differences in amplitudes; ignore sections outside 0° ≤ x ≤ 360°."
+     "M1 Sine wave through the origin, correct orientation, at least one period",
+     "A1 Two full cycles crossing the x-axis at 0°, 90°, 180°, 270°, 360°"
+    ]
    },
    "5(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "A = ±1"
-    ],
-    "guidance": "B1 CAO. Exactly two solutions occur only at the turning points, i.e. A = 1 and A = −1."
+     "B1 A = ±1"
+    ]
    },
    "6(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Length = 180.5 cm"
-    ],
-    "guidance": "M1 substitutes t = 9.5 into x = −2t² (or 2t²). A1 obtains 180.5 (condone incorrect/missing units; ISW). x at t = 9.5 is −2 × 9.5² = −180.5, so length = 180.5 cm."
+     "M1 Substitutes t = 9.5 into x = −2t²",
+     "A1 180.5 cm"
+    ]
    },
    "6(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "dy/dt = 9 − 1.4t",
-     "dx/dt = −4t",
-     "dy/dx = (9 − 1.4t)/(−4t)"
-    ],
-    "guidance": "B1 obtains 9 − 1.4t or −4t (OE, ignore labels). M1 uses chain rule dy/dx = (dy/dt)/(dx/dt) (condone sign error). A1 correct expression (do not ISW)."
+     "B1 dy/dt = 9 − 1.4t or dx/dt = −4t",
+     "M1 Chain rule dy/dx = (dy/dt)/(dx/dt)",
+     "A1 (9 − 1.4t)/(−4t)"
+    ]
    },
    "6(b)(ii)": {
     "type": "points",
     "points": [
-     "Set numerator of dy/dx to 0: 9 − 1.4t = 0 ⇒ t = 45/7 ≈ 6.43 (or 6.4)",
-     "Substitute into y: y = 9(6.43) − 0.7(6.43)² ≈ 28.9, so width = 2 × 28.9 ≈ 58 cm",
-     "Length ÷ 3 = 180.5 ÷ 3 = 60.2 ≈ 58, so width ≈ one third of length"
-    ],
-    "guidance": "M1 equates their dy/dx numerator to 0 (PI by correct t). A1 obtains correct t ACF (t = 6.4 or 9/1.4) from correct dy/dx. M1 substitutes t into model for y to obtain a y value (0 < t < 9.5). R1 compares correct width and correct length and the fraction ⅓ or 3 with a correct concluding statement (OE, CSO; allow 180 for length)."
+     "M1 Sets numerator (dy/dt) to 0",
+     "A1 t = 6.43 (45/7)",
+     "M1 Substitutes into y (0 < t < 9.5), giving y ≈ 28.9",
+     "R1 Width ≈ 58 cm vs 180.5/3 ≈ 60, so about one third"
+    ]
    },
    "7(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "b = (4.49 − 1.94)/(3.46 − 1.76) = 1.5",
-     "log₁₀ T = −0.7 + 1.5 log₁₀ d",
-     "a = −0.7, b = 1.5"
-    ],
-    "guidance": "M1 forms a correct expression for the gradient or sets up two correct simultaneous equations (PI by a = −0.7 or b = 1.5; ignore missing labels). A1 obtains a = −0.7, b = 1.5 (OE; ignore missing labels). A1 obtains a = −0.7 and b = 1.5 (ISW)."
+     "M1 Gradient (4.49 − 1.94)/(3.46 − 1.76) or simultaneous equations",
+     "A1 a = −0.7 or b = 1.5",
+     "A1 log₁₀ T = −0.7 + 1.5 log₁₀ d"
+    ]
    },
    "7(a)(ii)": {
     "type": "points",
     "points": [
-     "Uses log laws: log₁₀ T − log₁₀ d^(1.5) = −0.7 ⇒ log₁₀(T/d^(1.5)) = −0.7",
-     "T/d^(1.5) = 10^(−0.7) ⇒ T = 10^(−0.7) × d^(1.5)",
-     "So K = 10^(−0.7) ≈ 0.2 and n = 1.5"
-    ],
-    "guidance": "M1 uses law of logarithm correctly to allow use of logarithm without values for a and b (if values used, a ≠ 0). R1 completes reasoned argument to obtain T = K d^n with K = 10^(−0.7) (or AWRT 0.2) and n = 1.5, must come from correct working."
+     "M1 One log law used correctly",
+     "R1 T = 10^(−0.7) d^1.5, so K ≈ 0.2 and n = 1.5"
+    ]
    },
    "7(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "60 000 = 0.2 × d^(1.5)",
-     "d = 4488.5",
-     "Average distance ≈ 4500 million kilometres"
-    ],
-    "guidance": "M1 forms an equation using their answer to (a)(ii) with K > 0, n > 0 and T = 60 000 (only unknown d in the equation). A1 obtains AWRT 4500 million kilometres ACF with units (e.g. 4.5 × 10⁹ km, 4500 × 10⁶ km, 4.5 × 10¹² m, 4500 × 10⁹ m)."
+     "M1 60 000 = 0.2 d^1.5 (their K and n)",
+     "A1 About 4500 million km (with units)"
+    ]
    },
    "8(a)": {
     "type": "points",
     "points": [
-     "dV/dh = 3πh²/12 = πh²/4",
-     "At t = 3: V = 8 × 3 = 24, so πh³/12 = 24 ⇒ h = (288/π)^(1/3)",
-     "dV/dh = (π/4)(288/π)^(2/3) = ∛(1296π) = ∛(216 × 6π) = 6·∛(6π)"
-    ],
-    "guidance": "B1 obtains dV/dh = 3πh²/12 or πh²/4 OE (condone missing/incorrect labels). B1 obtains V = 8 × 3 or 24 (can be embedded, e.g. 288 or 96 × 3). M1 equates their 24 to πh³/12 to obtain h = ∛(24×12/π) or h² = (288/π)^(2/3) (can be embedded; condone decimals h = 4.51, h² = 20.3). R1 completes reasoned argument to show given result AG (must include dV/dh with at least one intermediate step without 288; must not include incorrect working)."
+     "B1 dV/dh = πh²/4",
+     "B1 V = 24 at t = 3",
+     "M1 πh³/12 = 24 so h = (288/π)^(1/3), substituted into dV/dh",
+     "R1 Reasoned simplification to 6∛(6π)"
+    ]
    },
    "8(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "dh/dt = (dV/dt) × (dh/dV) = 8 / (6·∛(6π))",
-     "dh/dt = 0.501 cm s⁻¹"
-    ],
-    "guidance": "M1 states any correct chain rule connecting dV/dt, dV/dh and dh/dt (PI by 8/(6·∛(6π)) or correct answer, or states h = ∛(96t/π)). M1 substitutes dV/dt = 8 and dV/dh = 6·∛(6π) into their chain rule (PI by correct answer, or substitutes t = 3). A1 obtains dh/dt AWRT 0.501 cm/s, at least 3sf with correct unit cm/s or cm s⁻¹."
+     "M1 Chain rule linking dh/dt, dV/dt and dV/dh",
+     "M1 Substitutes dV/dt = 8 and dV/dh = 6∛(6π)",
+     "A1 0.501 cm s⁻¹ (units needed)"
+    ]
    },
    "9(a)": {
     "type": "points",
     "points": [
-     "a² − 4b − 2 = 0 ⇒ a² = 4b + 2 = 2(2b + 1)",
-     "Hence a² is even (has a factor of 2), which means a must be even"
-    ],
-    "guidance": "M1 begins argument: factorises −4b−2 or 4b+2 correctly to 2(2b+1), OR states 4b and 2 are both even (OR begins proof by contradiction by assuming a is odd therefore a² is odd). R1 completes reasoned argument by deducing that a² must be even / has a factor of 2 so a must be even (or that a² = 4b + 2 is even because 4b and 2 are both even, hence a² is even which is a contradiction OE)."
+     "M1 a² = 4b + 2 = 2(2b + 1) (or assumes a odd)",
+     "R1 So a² is even, hence a is even"
+    ]
    },
    "9(b)": {
     "type": "points",
     "points": [
-     "Since a is even, let a = 2p, so a² = (2p)² = 4p²",
-     "Then 4p² = 2(2b + 1) ⇒ 2p² = 2b + 1",
-     "So 2b + 1 is even, but 2b + 1 is an odd number — a contradiction"
-    ],
-    "guidance": "M1 uses 2p and obtains (2p)² = 4p² (PI by 4p²; allow any letter for p except a and b). A1 obtains either 4p² = 2(2b+1) ⇒ 2p² = 2b+1 OE. R1 complete reasoned argument by deducing 2b + 1 is even hence contradiction as 2b + 1 cannot be an odd integer / is odd."
+     "M1 Writes a = 2p, a² = 4p²",
+     "A1 4p² = 2(2b + 1), so 2p² = 2b + 1",
+     "R1 2b + 1 would be even, but it is odd: contradiction"
+    ]
    },
    "9(c)": {
     "type": "points",
     "points": [
-     "There are no (integer) solutions to a² − 4b − 2 = 0 where a and b are integers"
-    ],
-    "guidance": "R1 deduces that there are no solutions to a² − 4b − 2 = 0 where a and b are integers."
+     "R1 There are no integer solutions for a and b"
+    ]
    },
    "10(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x = −2.5"
-    ],
-    "guidance": "B1 states −2.5 OE (denominator 2x + 5 = 0)."
+     "B1 x = −2.5"
+    ]
    },
    "10(b)": {
     "type": "points",
     "points": [
-     "A many-to-one function is when two (or more) x values give the same y value",
-     "From the shape of the graph: a horizontal line would cross the graph twice (e.g. f(0) = f(4))"
-    ],
-    "guidance": "E1 explains that many-to-one function is when two or more x values give the same y value. E1 uses the shape of the graph to justify (gives an example of two x values with equal y, e.g. f(0) = f(4), OR states a horizontal line would cross the curve twice, OR turning/minimum or maximum points indicate many-to-one)."
+     "E1 Many-to-one means different x-values give the same y-value",
+     "E1 Justified from the graph, e.g. a horizontal line crosses it twice, or f(0) = f(4), or turning points"
+    ]
    },
    "10(c)(i)": {
     "type": "points",
     "points": [
-     "Set f(x) = x: (x² + 10)/(2x + 5) = x",
-     "x² + 10 = x(2x + 5) ⇒ x² + 10 = 2x² + 5x",
-     "Rearranges to x² + 5x − 10 = 0 (AG)"
-    ],
-    "guidance": "M1 equates x and (x² + 10)/(2x + 5). R1 rearranges with at least one intermediate step to obtain the quadratic AG (condone 0 = x² + 5x − 10)."
+     "M1 Sets x = (x² + 10)/(2x + 5)",
+     "R1 Rearranges with a step to x² + 5x − 10 = 0"
+    ]
    },
    "10(c)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x = (−5 − √65)/2 for P",
-     "x = (−5 + √65)/2 for Q"
-    ],
-    "guidance": "B1 obtains x = (−5 ± √65)/2 (ignore labels; ISW). P is the more negative root, Q the less negative root."
+     "B1 x = (−5 ± √65)/2"
+    ]
    },
    "10(d)": {
     "type": "points",
     "points": [
-     "f'(x) = [2x(2x + 5) − 2(x² + 10)]/(2x + 5)² = (2x² + 10x − 20)/(2x + 5)²",
-     "At a stationary point f'(x) = 0 ⇒ 2x² + 10x − 20 = 0 ⇒ x² + 5x − 10 = 0",
-     "This is the same equation solved in (c), whose roots are the x-coordinates of P and Q",
-     "Hence P and Q are stationary points of the curve"
-    ],
-    "guidance": "M1 uses quotient rule to obtain a correct expression for f'(x) = (2x² + 10x − 20)/(2x + 5)². A1 correct derivative simplified. M1 equates their f'(x) numerator to 0 (or sets gradient = x equation). A1 obtains x² + 5x − 10 = 0. R1 completes reasoned argument using x = (−5 ± √65)/2 to conclude that P and Q are stationary points (CSO; must have brackets correct throughout). The stationary-point equation is identical to the intersection equation in part (c), so P and Q (which lie on y = x at those x-values) are stationary points."
+     "M1 Quotient (or product/implicit) rule of the right form",
+     "A1 f′(x) = (2x² + 10x − 20)/(2x + 5)²",
+     "M1 Sets f′(x) (or its numerator) to 0",
+     "M1 Gets x² + 5x − 10 = 0 and links it to (c)",
+     "R1 Concludes P and Q, at x = (−5 ± √65)/2, are stationary points"
+    ]
    },
    "10(e)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Range: { f(x) : f(x) ≤ (−5 − √65)/2 } ∪ { f(x) : f(x) ≥ (−5 + √65)/2 }",
-     "(−∞, (−5 − √65)/2 ] ∪ [ (−5 + √65)/2, ∞)"
-    ],
-    "guidance": "M1 deduces critical regions from their (c)(ii): f(x) ≤ (−5 − √65)/2 and f(x) ≥ (−5 + √65)/2 (condone strict inequalities/poor notation/decimals). A1F writes the correct range in correct set notation (accept other letters or f(x) provided consistent; follow through their (c)(ii)). The stationary y-values equal the corresponding x-values since P and Q lie on y = x."
+     "M1 Critical values from (c)(ii): f(x) ≤ (−5 − √65)/2 or f(x) ≥ (−5 + √65)/2",
+     "A1F Correct set notation, e.g. {y: y ≤ (−5 − √65)/2} ∪ {y: y ≥ (−5 + √65)/2}"
+    ]
    },
    "14(a)": {
     "type": "points",
     "points": [
-     "The probability of getting a complaint call is fixed (constant)",
-     "Calls occur independently of each other / there are only two outcomes (complaint or non-complaint) / fixed number of calls"
+     "B1 One assumption in context: constant probability of a complaint call, calls independent, or only two outcomes",
+     "B1 A second one"
     ],
-    "guidance": "B1 states one assumption in context: probability of a complaint call is constant, OR complaint calls occur independently, OR only two outcomes (complaint or not). B1 states a second assumption in context. (Condone \"complaint\" for \"complaint call\"; do not allow probability being independent, or fixed number of calls as the stated assumption.)"
+    "guidance": "'Fixed number of calls' is not accepted."
    },
    "14(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X = 1) = 0.00684"
-    ],
-    "guidance": "B1 calculates the correct probability ACF, AWFW [0.0068, 0.007]. X ~ B(20, 0.3): P(X = 1) = C(20,1)(0.3)(0.7)¹⁹ = 0.00684."
+     "B1 0.00684 (awfw 0.0068 to 0.007)"
+    ]
    },
    "14(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X < 4) = P(X ≤ 3) = 0.107"
-    ],
-    "guidance": "M1 finds P(X ≤ 4) or P(X ≤ 3) (PI by 0.2375 or 0.107; allow figures to 2sf). A1 obtains correct probability ACF, AWFW [0.107, 0.11]."
+     "M1 Finds P(X ≤ 3) (or P(X ≤ 4) = 0.2375)",
+     "A1 0.107"
+    ]
    },
    "14(b)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X ≥ 10) = 1 − P(X ≤ 9) = 1 − 0.952 = 0.048"
-    ],
-    "guidance": "M1 finds their P(X ≤ 9) or P(X ≤ 10) or P(X ≥ 10) or P(X > 10) (PI by 0.952 or 0.983 or 0.0172 or correct answer; allow figures to 2sf). A1 obtains correct probability ACF, AWFW [0.0479, 0.048]."
+     "M1 1 − P(X ≤ 9)",
+     "A1 0.048"
+    ]
    },
    "14(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "10p(1 − p) = 1.5² ⇒ −10p² + 10p − 2.25 = 0",
-     "p = (10 ± √10)/20",
-     "p = 0.34 and p = 0.66"
-    ],
-    "guidance": "M1 uses np(1 − p) for the variance. A1 forms a correct equation in p using 10 and 1.5 ACF. A1 obtains values for p ACF (ISW), allow AWFW [0.34, 0.342] and [0.658, 0.66], or p = (10 ± √10)/20."
+     "M1 Uses variance np(1 − p)",
+     "A1 10p(1 − p) = 1.5²",
+     "A1 p = 0.342 or 0.658 ((10 ± √10)/20)"
+    ]
    },
    "15(a)": {
     "type": "points",
     "points": [
-     "Adults on the electoral register (of the town)"
-    ],
-    "guidance": "B1 states the correct population (allow \"people\"/\"names\"/\"members\" for adults; must see electoral register)."
+     "B1 Adults on the (town's) electoral register"
+    ]
    },
    "15(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Systematic sampling"
-    ],
-    "guidance": "B1 recalls correct name for sampling method."
+     "B1 Systematic sampling"
+    ]
    },
    "15(b)(ii)": {
     "type": "points",
     "points": [
-     "Cheap to collect / easy to carry out / quick / no bias / fair / reduces chance of cluster"
+     "E1 e.g. cheap, quick or easy to carry out, or unbiased"
     ],
-    "guidance": "E1 states one advantage of systematic sampling (e.g. easy to carry out or quick, no bias / fair, reduces chance of cluster). Do not accept \"random\"; do not ignore incorrect statement."
+    "guidance": "'Random' alone is not accepted."
    },
    "16(a)": {
     "type": "points",
     "points": [
-     "C only = 101, C∩D only = 31, D only = 7, C∩T only = 4, centre C∩D∩T = 17, D∩T only = 15, T only = 9, outside (none) = 56"
-    ],
-    "guidance": "M1 writes at least two of 4, 15, 17 or 31 in the correct place. A1 obtains either 7 or 9 in the correct place. A1 completes the Venn diagram fully correctly including 56 outside."
+     "M1 At least two of 31 (C∩D only), 4 (C∩T only), 15 (D∩T only), 17 (all three) correctly placed",
+     "A1 7 (D only) or 9 (T only) correct",
+     "A1 Fully correct including 56 outside"
+    ]
    },
    "16(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "101/240"
-    ],
-    "guidance": "B1 obtains the correct probability AWFW [0.42, 0.421] (ignore subsequent incorrect simplification once correct fraction or decimals obtained)."
+     "B1 101/240 ≈ 0.421"
+    ]
    },
    "16(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "(31 + 4 + 17 + 15)/240 = 67/240"
-    ],
-    "guidance": "M1 adds their (4 + 15 + 17 + 31) = 67 (PI by correct answer; total not required at this stage). A1 obtains the correct probability AWFW [0.279, 0.28]."
+     "M1 4 + 15 + 17 + 31 = 67",
+     "A1 67/240 ≈ 0.279"
+    ]
    },
    "16(b)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "No tortoise total = 240 − 45 = 195; cat or dog (not tortoise) = 101 + 31 + 7 = 139",
-     "P = 139/195"
-    ],
-    "guidance": "M1 adds their (101 + 31 + 7) = 139 for the numerator (PI by correct answer OE). A1 obtains the correct probability AWFW [0.71, 0.713]. Denominator is those not owning a tortoise = 195."
+     "M1 101 + 31 + 7 = 139",
+     "A1 139/195 ≈ 0.713"
+    ]
    },
    "16(c)": {
     "type": "points",
     "points": [
-     "P(C) × P(T) = (153/240)(45/240) = 0.1196",
-     "P(C ∩ T) = 21/240 = 0.0875",
-     "Since 0.0875 ≠ 0.1196, the events are not independent"
-    ],
-    "guidance": "M1 finds P(C) × P(T) = 153/240 × 45/240 = 153/1280 (= 0.1196) and uses correct probabilities, OR uses P(C ∩ T) = 21/240 = 0.0875. R1 compares P(C ∩ T) = 21/240 with their 153/1280 and concludes (with correct values) that C and T are not independent (OE)."
+     "M1 P(C) × P(T) = (153/240)(45/240) ≈ 0.12 (or a conditional probability)",
+     "R1 Compares with P(C ∩ T) = 21/240 = 0.0875; not equal, so not independent"
+    ]
    },
    "18(a)": {
     "type": "points",
     "points": [
-     "Mean ± 2 standard deviations: 1.78 ± 2(0.23) = 1.32 to 2.24",
-     "These are approximately 1.33 and 2.22, the stated 95% interval (and 95% of data lies within ≈ 2 sd of the mean for a normal distribution)",
-     "Height is continuous data, so a normal distribution may be a suitable model"
-    ],
-    "guidance": "M1 calculates 1.78 ± 2 × 0.23 = 1.32 and 2.24 (or calculates P(1.33 < x < 2.22) ≈ 0.947). A1 obtains 1.32 and 2.24 and states they are approximately 1.33 and 2.22 (or obtains 0.9469/0.947 and states this is approximately 0.95). R1 infers that the normal distribution may be suitable because height is continuous data and ≈ 95% of heights lie within two standard deviations of the mean."
+     "M1 Finds 1.78 ± 2 × 0.23 (or ± 1.96 × 0.23, or P(1.33 < X < 2.22))",
+     "A1 Gets 1.32 and 2.24 ≈ 1.33 and 2.22 (or probability 0.947 ≈ 0.95)",
+     "R1 Normal may be suitable: height is continuous and about 95% lies within 2 s.d. of the mean"
+    ]
    },
    "18(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "0"
-    ],
-    "guidance": "B1 states 0. The probability that a continuous random variable equals an exact single value is 0."
+     "B1 0"
+    ]
    },
    "18(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(1.70 < X < 1.90) = 0.335"
-    ],
-    "guidance": "B1 calculates the correct probability AWFW [0.335, 0.34]."
+     "B1 0.335"
+    ]
    },
    "18(b)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "0.335² = 0.112"
-    ],
-    "guidance": "B1F finds the value of their answer to (b)(ii) squared (their answer must be correct to at least 2sf). 0.335² ≈ 0.112."
+     "B1F Their (b)(ii) squared: 0.335² ≈ 0.112"
+    ]
    },
    "18(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Mean = ∑h/40 = 69.2/40 = 1.73",
-     "Standard deviation = √(2.81/39) = 0.265"
-    ],
-    "guidance": "B1 obtains mean = 1.73 CAO (ignore missing/incorrect units). M1 uses the correct formula for standard deviation s = √(∑(h−h̄)²/(n−1)) = √(2.81/39) (do not allow division by 40 for the variance). A1 obtains correct standard deviation AWFW [0.265, 0.27] (allow if not labelled but labelled mean must be correct; ignore missing/incorrect units)."
+     "B1 Mean 1.73",
+     "M1 Correct s.d. formula, e.g. √(2.81/40) or √(2.81/39)",
+     "A1 s.d. ≈ 0.265 (awfw 0.265 to 0.27)"
+    ]
    },
    "18(d)": {
     "type": "points",
     "points": [
-     "Summer athletes are taller on average than Winter athletes (1.78 > 1.73)",
-     "Summer athletes' heights are less varied/spread than Winter athletes' heights (0.23 < 0.265)"
+     "E1F On average Summer athletes are taller (1.78 vs 1.73)",
+     "E1F Summer heights are less varied than Winter heights (s.d. 0.23 vs 0.265)"
     ],
-    "guidance": "E1F uses their mean and 1.78 to compare heights (comparison must include \"on average\"; follow through their (c); do not allow \"general\"; allow \"about the same on average\"). E1F uses their standard deviation and 0.23 to compare heights (comparison must include \"varies\"/\"spread\"/\"disperse\"/\"more variation\" or \"consistent\"; follow through their (c); do not allow comparison using \"range\" or \"variety\")."
+    "guidance": "Spread comparison must use words like spread or variation, not range."
    }
   }
  },
  "math-aqa-7357-2024-p1": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "Expansion of (4x³ − 5x² + 3x − 2)(x⁵ + 4x + 1).",
     "parts": [
      {
       "code": "1",
-      "prompt": "Fully simplify\n\n(x² − 9) / (x² − x − 6)",
-      "marks": 2
+      "prompt": "Find the coefficient of x in the expansion.\nOptions: −5   −2   7   11",
+      "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "f(x) = eˣ + 1 for x ∈ ℝ.",
     "parts": [
      {
       "code": "2",
-      "prompt": "Find ∫ (6x² − 4/x³ + 5) dx",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 3,
-    "parts": [
-     {
-      "code": "3(a)",
-      "prompt": "Express 2x² − 8x + 3 in the form a(x + b)² + c, stating the values of a, b and c.",
-      "marks": 3
-     },
-     {
-      "code": "3(b)",
-      "prompt": "Hence write down the minimum value of 2x² − 8x + 3 and the value of x at which this minimum occurs.",
-      "marks": 2
-     }
-    ]
-   },
-   {
-    "number": 4,
-    "parts": [
-     {
-      "code": "4(a)",
-      "prompt": "Show that the equation 3 sin²θ + 7 cos θ − 5 = 0 can be written as\n\n3 cos²θ − 7 cos θ + 2 = 0",
-      "marks": 2
-     },
-     {
-      "code": "4(b)",
-      "prompt": "Hence solve 3 sin²θ + 7 cos θ − 5 = 0 for 0° ≤ θ ≤ 360°",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 5,
-    "scenario": "A curve has equation y = (2x − 1)⁴.",
-    "parts": [
-     {
-      "code": "5(a)",
-      "prompt": "Find dy/dx",
-      "marks": 2
-     },
-     {
-      "code": "5(b)",
-      "prompt": "Find the equation of the tangent to the curve at the point where x = 1.\n\nGive your answer in the form y = mx + c.",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 6,
-    "parts": [
-     {
-      "code": "6(a)",
-      "prompt": "Given that log₃ p = a and log₃ q = b, express in terms of a and b:\n\nlog₃ (9p²/√q)",
-      "marks": 3
-     },
-     {
-      "code": "6(b)",
-      "prompt": "Solve log₂(x + 5) + log₂(x − 2) = 3",
-      "marks": 4
-     }
-    ]
-   },
-   {
-    "number": 7,
-    "scenario": "An arithmetic sequence has first term a and common difference d. The sum of the first 20 terms is 530. The 15th term is 45.",
-    "parts": [
-     {
-      "code": "7(a)",
-      "prompt": "Show that 20a + 190d = 530",
-      "marks": 2
-     },
-     {
-      "code": "7(b)",
-      "prompt": "Find the values of a and d.",
-      "marks": 3
-     },
-     {
-      "code": "7(c)",
-      "prompt": "Find the value of the first negative term of the sequence.",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 8,
-    "scenario": "The diagram shows part of the curve with equation y = 6/x and the line with equation y = 7 − x. The line and the curve intersect at the points A and B.",
-    "parts": [
-     {
-      "code": "8(a)",
-      "prompt": "Find the coordinates of A and B.",
-      "marks": 3
-     },
-     {
-      "code": "8(b)",
-      "prompt": "Find the area of the finite region bounded by the curve and the line.\n\nGive your exact answer.",
-      "marks": 5
-     }
-    ]
-   },
-   {
-    "number": 9,
-    "parts": [
-     {
-      "code": "9(a)",
-      "prompt": "Sketch the graph of y = |3x − 2|, showing clearly the coordinates of any points where the graph meets the coordinate axes.",
-      "marks": 3
-     },
-     {
-      "code": "9(b)",
-      "prompt": "Solve |3x − 2| = x + 4",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 10,
-    "scenario": "A geometric series has first term 5 and common ratio r. The sum to infinity is 20.",
-    "parts": [
-     {
-      "code": "10(a)",
-      "prompt": "Find the value of r.",
-      "marks": 2
-     },
-     {
-      "code": "10(b)",
-      "prompt": "Find the sum of the first 8 terms. Give your answer to three significant figures.",
-      "marks": 3
-     },
-     {
-      "code": "10(c)",
-      "prompt": "Find the smallest value of n such that Sₙ > 19.9",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 11,
-    "scenario": "A curve has equation y = x³ − 3x² − 9x + 5.",
-    "parts": [
-     {
-      "code": "11(a)",
-      "prompt": "Find the coordinates of the stationary points of the curve.",
-      "marks": 4
-     },
-     {
-      "code": "11(b)",
-      "prompt": "Determine the nature of each stationary point.",
-      "marks": 2
-     },
-     {
-      "code": "11(c)",
-      "prompt": "Sketch the curve, showing clearly the coordinates of the stationary points and the y-intercept.",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 12,
-    "parts": [
-     {
-      "code": "12(a)",
-      "prompt": "Prove that for all values of x:\n\n(cos x + sin x)² + (cos x − sin x)² = 2",
-      "marks": 3
-     },
-     {
-      "code": "12(b)",
-      "prompt": "Given that sin θ = 3/5 and that θ is obtuse, find the exact value of:\n\n(i) cos θ\n(ii) tan θ",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 13,
-    "scenario": "The diagram shows a triangle ABC. AB = 8 cm, BC = 11 cm and angle BAC = 70°.",
-    "parts": [
-     {
-      "code": "13(a)",
-      "prompt": "Find the two possible values of angle ABC, giving your answers to one decimal place.",
-      "marks": 3
-     },
-     {
-      "code": "13(b)",
-      "prompt": "For the case where angle ABC is obtuse, find the length of AC.\n\nGive your answer to three significant figures.",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 14,
-    "scenario": "A curve is defined by the parametric equations x = t² + 1, y = 3t − t³ for t ∈ ℝ.",
-    "parts": [
-     {
-      "code": "14(a)",
-      "prompt": "Find dy/dx in terms of t.",
-      "marks": 3
-     },
-     {
-      "code": "14(b)",
-      "prompt": "Find the coordinates of the stationary points of the curve.",
-      "marks": 4
-     },
-     {
-      "code": "14(c)",
-      "prompt": "Find the Cartesian equation of the curve, in the form y² = f(x), where f(x) is a polynomial in x.",
-      "marks": 4
-     }
-    ]
-   },
-   {
-    "number": 15,
-    "scenario": "The function f is defined by f(x) = 2x² + 8x − 3 for x ≥ k, where k is a constant.",
-    "parts": [
-     {
-      "code": "15(a)",
-      "prompt": "State the minimum value of k such that f has an inverse function.",
+      "prompt": "Choose the correct expression for f⁻¹(x).\nOptions: ln(x − 1)   ln(x) − 1   1/(eˣ + 1)   (x − 1)/e",
       "marks": 1
-     },
-     {
-      "code": "15(b)",
-      "prompt": "Given that k takes the minimum value found in part (a), find f⁻¹(x) and state its domain.",
-      "marks": 4
-     }
-    ]
-   },
-   {
-    "number": 16,
-    "parts": [
-     {
-      "code": "16(a)",
-      "prompt": "Find the first four terms, in ascending powers of x, of the binomial expansion of (1 + 3x)¹⁰.\n\nSimplify each term.",
-      "marks": 4
-     },
-     {
-      "code": "16(b)",
-      "prompt": "By substituting a suitable value of x into your expansion, find an approximate value of 1.03¹⁰.\n\nGive your answer to five decimal places.",
-      "marks": 2
-     }
-    ]
-   },
-   {
-    "number": 17,
-    "scenario": "The curve C has equation y = x²eˣ.",
-    "parts": [
-     {
-      "code": "17(a)",
-      "prompt": "Find dy/dx.",
-      "marks": 2
-     },
-     {
-      "code": "17(b)",
-      "prompt": "Show that the x-coordinates of the stationary points of C satisfy\n\nx(x + 2) = 0",
-      "marks": 2
-     },
-     {
-      "code": "17(c)",
-      "prompt": "Find the coordinates of the stationary points of C and determine their nature.",
-      "marks": 4
-     }
-    ]
-   }
-  ],
-  "markSchemes": {
-   "1": {
-    "type": "exact",
-    "points": [
-     "Factorise numerator: x² − 9 = (x − 3)(x + 3)",
-     "Factorise denominator: x² − x − 6 = (x − 3)(x + 2)",
-     "Simplify: (x + 3)/(x + 2)"
-    ],
-    "answer": "(x + 3)/(x + 2)",
-    "guidance": "M1 for factorising numerator or denominator correctly. A1 for correct simplified fraction."
-   },
-   "2": {
-    "type": "exact",
-    "points": [
-     "2x³ + 2/x² + 5x + c"
-    ],
-    "answer": "2x³ + 2x⁻² + 5x + c",
-    "guidance": "M1 for integrating at least two terms correctly. A1 for 2x³, A1 for 2x⁻² (i.e. 2/x²) and 5x. B1 for + c."
-   },
-   "3(a)": {
-    "type": "exact",
-    "points": [
-     "a = 2, b = −2, c = −5",
-     "2(x − 2)² − 5"
-    ],
-    "answer": "2(x − 2)² − 5",
-    "guidance": "M1 for attempting to complete the square. A1 for 2(x − 2)². A1 for − 5."
-   },
-   "3(b)": {
-    "type": "exact",
-    "points": [
-     "Minimum value = −5 at x = 2"
-    ],
-    "answer": "Minimum value −5 when x = 2",
-    "guidance": "B1 for minimum value −5. B1 for x = 2."
-   },
-   "4(a)": {
-    "type": "points",
-    "points": [
-     "Use sin²θ = 1 − cos²θ",
-     "3(1 − cos²θ) + 7 cos θ − 5 = 0",
-     "3 − 3cos²θ + 7 cos θ − 5 = 0",
-     "−3cos²θ + 7 cos θ − 2 = 0",
-     "Multiply by −1: 3cos²θ − 7 cos θ + 2 = 0"
-    ],
-    "guidance": "M1 for using sin²θ = 1 − cos²θ and expanding. R1 for obtaining the printed result with correct algebra."
-   },
-   "4(b)": {
-    "type": "exact",
-    "points": [
-     "Factorise: (3 cos θ − 1)(cos θ − 2) = 0",
-     "cos θ = 1/3 or cos θ = 2 (rejected, |cos θ| ≤ 1)",
-     "θ = 70.5° or θ = 289.5°"
-    ],
-    "answer": "θ = 70.5° and θ = 289.5°",
-    "guidance": "M1 for solving the quadratic in cos θ. A1 for cos θ = 1/3 (reject cos θ = 2). A1 for both 70.5° and 289.5°."
-   },
-   "5(a)": {
-    "type": "exact",
-    "points": [
-     "dy/dx = 8(2x − 1)³"
-    ],
-    "answer": "dy/dx = 8(2x − 1)³",
-    "guidance": "M1 for using the chain rule: multiply by the power and differentiate the bracket. A1 for 8(2x − 1)³."
-   },
-   "5(b)": {
-    "type": "exact",
-    "points": [
-     "At x = 1: y = (2 − 1)⁴ = 1",
-     "Gradient = 8(2 − 1)³ = 8",
-     "Equation: y − 1 = 8(x − 1) → y = 8x − 7"
-    ],
-    "answer": "y = 8x − 7",
-    "guidance": "B1 for y = 1 at x = 1. M1 for substituting x = 1 into dy/dx. A1 for the equation y = 8x − 7."
-   },
-   "6(a)": {
-    "type": "exact",
-    "points": [
-     "log₃(9p²/√q) = log₃ 9 + 2 log₃ p − ½ log₃ q",
-     "= 2 + 2a − b/2"
-    ],
-    "answer": "2 + 2a − b/2",
-    "guidance": "M1 for using log laws to split the expression. A1 for 2 + 2a. A1 for − b/2."
-   },
-   "6(b)": {
-    "type": "exact",
-    "points": [
-     "log₂((x + 5)(x − 2)) = 3",
-     "(x + 5)(x − 2) = 8",
-     "x² + 3x − 10 = 8",
-     "x² + 3x − 18 = 0",
-     "(x + 6)(x − 3) = 0",
-     "x = 3 (reject x = −6 since x − 2 > 0 required)"
-    ],
-    "answer": "x = 3",
-    "guidance": "M1 for combining logs. M1 for 2³ = 8. M1 for forming and solving quadratic. A1 for x = 3 with x = −6 rejected with reason."
-   },
-   "7(a)": {
-    "type": "points",
-    "points": [
-     "S₂₀ = (20/2)(2a + 19d) = 10(2a + 19d) = 530",
-     "20a + 190d = 530"
-    ],
-    "guidance": "M1 for using Sₙ = (n/2)(2a + (n−1)d) with n = 20. R1 for obtaining the printed result."
-   },
-   "7(b)": {
-    "type": "exact",
-    "points": [
-     "U₁₅ = a + 14d = 45",
-     "From 20a + 190d = 530: 2a + 19d = 53",
-     "Solve simultaneously: from a + 14d = 45 and 2a + 19d = 53",
-     "d = −37/9 … recalculate: 2(45 − 14d) + 19d = 53 → 90 − 28d + 19d = 53 → −9d = −37 → d = 37/9",
-     "Wait — recheck: 2a + 19d = 53 and a + 14d = 45, so 2a + 28d = 90. Subtract: 9d = 37, d = 37/9. Then a = 45 − 14(37/9) = 45 − 518/9 = (405 − 518)/9 = −113/9",
-     "a = −113/9 ≈ −12.6, d = 37/9 ≈ 4.1"
-    ],
-    "answer": "a = −113/9, d = 37/9",
-    "guidance": "M1 for forming two equations using S₂₀ and U₁₅. M1 for solving simultaneously. A1 for both correct values."
-   },
-   "7(c)": {
-    "type": "exact",
-    "points": [
-     "Uₙ = a + (n − 1)d < 0",
-     "−113/9 + (n − 1)(37/9) < 0",
-     "−113 + 37(n − 1) < 0",
-     "37n < 150",
-     "n < 4.05…",
-     "U₄ = −113/9 + 3(37/9) = (−113 + 111)/9 = −2/9",
-     "First negative term is the 4th term: −2/9"
-    ],
-    "answer": "First negative term is U₄ = −2/9",
-    "guidance": "M1 for Uₙ < 0 inequality. M1 for substituting a and d and solving. A1 for the correct term value −2/9 or AWRT."
-   },
-   "8(a)": {
-    "type": "exact",
-    "points": [
-     "Set 6/x = 7 − x: 6 = 7x − x² → x² − 7x + 6 = 0 → (x − 1)(x − 6) = 0",
-     "x = 1: y = 6, x = 6: y = 1",
-     "A = (1, 6), B = (6, 1)"
-    ],
-    "answer": "A = (1, 6) and B = (6, 1)",
-    "guidance": "M1 for equating and forming a quadratic. A1 for both x-values. A1 for both coordinate pairs."
-   },
-   "8(b)": {
-    "type": "exact",
-    "points": [
-     "Area = ∫₁⁶ (7 − x − 6/x) dx",
-     "= [7x − x²/2 − 6 ln x]₁⁶",
-     "At x = 6: 42 − 18 − 6 ln 6 = 24 − 6 ln 6",
-     "At x = 1: 7 − 0.5 − 0 = 6.5",
-     "Area = (24 − 6 ln 6) − 6.5 = 17.5 − 6 ln 6"
-    ],
-    "answer": "17.5 − 6 ln 6  (or 35/2 − 6 ln 6)",
-    "guidance": "M1 for integrating (line − curve) between limits. A1 for correct integral expression. A1 for substituting limits. A1 for 24 − 6 ln 6. A1 for 35/2 − 6 ln 6."
-   },
-   "9(a)": {
-    "type": "points",
-    "points": [
-     "V-shape with vertex at (2/3, 0) on the x-axis",
-     "y-intercept at (0, 2)",
-     "Arms with gradients −3 (left) and +3 (right)"
-    ],
-    "guidance": "B1 for correct V-shape. B1 for vertex (2/3, 0) marked. B1 for y-intercept 2 marked."
-   },
-   "9(b)": {
-    "type": "exact",
-    "points": [
-     "Case 1 (3x − 2 ≥ 0): 3x − 2 = x + 4 → 2x = 6 → x = 3 ✓",
-     "Case 2 (3x − 2 < 0): −(3x − 2) = x + 4 → −3x + 2 = x + 4 → −4x = 2 → x = −1/2 ✓"
-    ],
-    "answer": "x = 3 or x = −1/2",
-    "guidance": "M1 for setting up both cases. A1 for x = 3. A1 for x = −1/2."
-   },
-   "10(a)": {
-    "type": "exact",
-    "points": [
-     "S∞ = a/(1 − r) = 5/(1 − r) = 20",
-     "1 − r = 1/4 → r = 3/4"
-    ],
-    "answer": "r = 3/4",
-    "guidance": "M1 for using S∞ = a/(1 − r). A1 for r = 3/4."
-   },
-   "10(b)": {
-    "type": "exact",
-    "points": [
-     "S₈ = 5(1 − (3/4)⁸)/(1 − 3/4) = 20(1 − (3/4)⁸)",
-     "(3/4)⁸ = 6561/65536 ≈ 0.10011",
-     "S₈ ≈ 20(1 − 0.10011) = 20 × 0.89989 ≈ 17.998 ≈ 18.0"
-    ],
-    "answer": "S₈ ≈ 18.0",
-    "guidance": "M1 for using Sₙ = a(1 − rⁿ)/(1 − r). A1 for correct substitution. A1 for 18.0 (3 s.f.)."
-   },
-   "10(c)": {
-    "type": "exact",
-    "points": [
-     "20(1 − (3/4)ⁿ) > 19.9",
-     "1 − (3/4)ⁿ > 0.995",
-     "(3/4)ⁿ < 0.005",
-     "n ln(3/4) < ln(0.005)",
-     "n > ln(0.005)/ln(3/4) = −5.298/(−0.2877) ≈ 18.41",
-     "Smallest n = 19"
-    ],
-    "answer": "n = 19",
-    "guidance": "M1 for Sₙ > 19.9 with correct formula. M1 for taking logarithms and solving (allow equality). A1 for n = 19."
-   },
-   "11(a)": {
-    "type": "exact",
-    "points": [
-     "dy/dx = 3x² − 6x − 9 = 3(x² − 2x − 3) = 3(x − 3)(x + 1)",
-     "Set dy/dx = 0: x = 3 or x = −1",
-     "At x = 3: y = 27 − 27 − 27 + 5 = −22",
-     "At x = −1: y = −1 − 3 + 9 + 5 = 10"
-    ],
-    "answer": "Stationary points: (3, −22) and (−1, 10)",
-    "guidance": "M1 for differentiating. A1 for correct derivative. M1 for solving dy/dx = 0. A1 for both coordinate pairs."
-   },
-   "11(b)": {
-    "type": "exact",
-    "points": [
-     "d²y/dx² = 6x − 6",
-     "At x = 3: d²y/dx² = 12 > 0 → local minimum",
-     "At x = −1: d²y/dx² = −12 < 0 → local maximum"
-    ],
-    "answer": "(3, −22) is a local minimum; (−1, 10) is a local maximum",
-    "guidance": "M1 for using the second derivative or sign of first derivative. A1 for both natures correctly identified."
-   },
-   "11(c)": {
-    "type": "points",
-    "points": [
-     "Cubic curve with positive leading coefficient (rises to the right)",
-     "y-intercept at (0, 5)",
-     "Local maximum at (−1, 10) and local minimum at (3, −22)"
-    ],
-    "guidance": "B1 for correct general cubic shape. B1 for y-intercept 5. B1 for stationary points labelled correctly."
-   },
-   "12(a)": {
-    "type": "points",
-    "points": [
-     "(cos x + sin x)² = cos²x + 2 sin x cos x + sin²x = 1 + sin 2x",
-     "(cos x − sin x)² = cos²x − 2 sin x cos x + sin²x = 1 − sin 2x",
-     "Sum = (1 + sin 2x) + (1 − sin 2x) = 2"
-    ],
-    "guidance": "M1 for expanding at least one bracket. A1 for using sin²x + cos²x = 1. R1 for the correct sum = 2 (AG)."
-   },
-   "12(b)": {
-    "type": "exact",
-    "points": [
-     "sin θ = 3/5, θ obtuse, so cos θ < 0",
-     "cos θ = −√(1 − 9/25) = −√(16/25) = −4/5",
-     "tan θ = sin θ / cos θ = (3/5)/(−4/5) = −3/4"
-    ],
-    "answer": "(i) cos θ = −4/5   (ii) tan θ = −3/4",
-    "guidance": "M1 for using sin²θ + cos²θ = 1. A1 for cos θ = −4/5. A1 for tan θ = −3/4."
-   },
-   "13(a)": {
-    "type": "exact",
-    "points": [
-     "By the sine rule: sin(ABC)/AC... use sin rule for angle: sin(ABC)/11 = sin(70°)/11 — need to use sine rule correctly",
-     "sin(BAC)/BC = sin(ABC)/AC — actually angle at A = 70°, AB = 8, BC = 11",
-     "By sine rule: sin(∠ABC)/AC = sin(∠BAC)/BC → use: sin(∠BCA)/AB = sin(∠BAC)/BC",
-     "sin(∠BCA)/8 = sin70°/11 → sin(∠BCA) = 8 sin70°/11 = 0.6837",
-     "∠BCA = 43.1° or 136.9°",
-     "∠ABC = 180° − 70° − 43.1° = 66.9° or 180° − 70° − 136.9° < 0 (invalid)",
-     "Recheck: sin(∠ABC)/11 vs sin(∠BAC)/BC — AB = 8, BC = 11, ∠BAC = 70°",
-     "Sine rule: BC/sin(∠BAC) = AB/sin(∠BCA) → 11/sin70° = 8/sin(∠BCA) → sin(∠BCA) = 8sin70°/11 = 0.6837",
-     "∠BCA = 43.1° or 136.9°",
-     "If ∠BCA = 43.1°: ∠ABC = 180 − 70 − 43.1 = 66.9°",
-     "If ∠BCA = 136.9°: ∠ABC = 180 − 70 − 136.9 < 0 (impossible)",
-     "So the ambiguous case applies to ∠ABC directly: sin rule on side AB vs BC",
-     "AB/sin(∠ACB) = BC/sin(∠BAC): same as above → two cases for ∠ACB giving one valid ∠ABC = 66.9°",
-     "But question says 'two possible values' so must use sine rule giving ambiguous ∠ABC",
-     "BC/sin(∠BAC) = AB/sin(∠ACB) → 11/sin70° = 8/sin(∠ACB) gives one angle for ACB not ABC",
-     "Correct setup: AB = 8, BC = 11, ∠BAC = 70°. Opposite side to ∠BAC is BC = 11; opposite to ∠ABC is AC (unknown).",
-     "Use: BC/sin(∠BAC) = AB/sin(∠BCA) → sin(∠BCA) = 0.6837 → ∠BCA = 43.1° or 136.9°",
-     "∠ABC = 66.9° or 180 − 70 − 136.9 = −26.9° (rejected)",
-     "Only one value is valid: ∠ABC = 66.9°",
-     "Alternatively interpreting: if ∠ABC is the angle between AB = 8 and BC = 11 with opposite AC unknown, then sine rule gives the ambiguous case via AC",
-     "sin(∠BAC)/BC = sin(∠ABC)/AC ... wait — to get ambiguity in ∠ABC we need to use: AC/sin(∠ABC) = BC/sin(∠BAC)",
-     "This requires AC known; but AC is unknown. The ambiguous case arises because BC = 11 > AB sin∠BAC = 8 sin70° ≈ 7.52 but we need to compare BC to AB",
-     "Since BC = 11 > AB = 8: two triangles exist. sin(∠BCA) = AB sin(∠BAC)/BC = 8×sin70°/11 ≈ 0.684 → ∠BCA = 43.1° or 136.9°",
-     "∠ABC case 1: 180 − 70 − 43.1 = 66.9°; case 2: 180 − 70 − 136.9 = −26.9° (invalid)",
-     "So actually only one valid triangle → ∠ABC = 66.9°"
-    ],
-    "answer": "∠BCA = 43.1° or 136.9° (giving ∠ABC ≈ 66.9° for the valid case); if interpreting two values of ∠ABC: 66.9° is the only valid one",
-    "guidance": "M1 for applying the sine rule correctly. A1 for sin(∠BCA) = 8sin70°/11. A1 for both angles 43.1° and 136.9° (if the question gives two angles of ∠BCA or ∠ABC as the two values). Accept correct alternative identification."
-   },
-   "13(b)": {
-    "type": "exact",
-    "points": [
-     "For ∠ABC obtuse: ∠BCA = 136.9° (but this gave invalid ∠ABC)",
-     "Reinterpreting: If the two possible values of ∠ABC are taken as 66.9° and some obtuse angle from the ambiguous case, and BC = 11 > AB = 8, one of the angles is obtuse",
-     "For ∠ABC = 66.9° (acute), use cosine rule to find AC: AC² = AB² + BC² − 2·AB·BC·cos(∠ABC) = 64 + 121 − 176cos(66.9°) = 185 − 68.9 = 116.1; AC ≈ 10.8 cm",
-     "For the obtuse case of ∠ABC ≈ 113.1°: AC² = 64 + 121 − 176cos(113.1°) = 185 + 69.0 = 254; AC ≈ 15.9 cm"
-    ],
-    "answer": "AC ≈ 15.9 cm (for obtuse ∠ABC)",
-    "guidance": "M1 for using cosine rule or sine rule with obtuse angle. A1 for correct equation. A1 for AC ≈ 15.9 cm (3 s.f.)."
-   },
-   "14(a)": {
-    "type": "exact",
-    "points": [
-     "dx/dt = 2t, dy/dt = 3 − 3t²",
-     "dy/dx = (dy/dt)/(dx/dt) = (3 − 3t²)/(2t)"
-    ],
-    "answer": "dy/dx = (3 − 3t²)/(2t)",
-    "guidance": "M1 for differentiating x and y with respect to t. A1 for both derivatives. A1 for the correct quotient."
-   },
-   "14(b)": {
-    "type": "exact",
-    "points": [
-     "dy/dx = 0: 3 − 3t² = 0 → t² = 1 → t = 1 or t = −1",
-     "At t = 1: x = 2, y = 2",
-     "At t = −1: x = 2, y = −2"
-    ],
-    "answer": "Stationary points: (2, 2) and (2, −2)",
-    "guidance": "M1 for setting dy/dx = 0. A1 for t = ±1. A1 for x = 2 at both. A1 for y = ±2."
-   },
-   "14(c)": {
-    "type": "exact",
-    "points": [
-     "From x = t² + 1: t² = x − 1",
-     "y = 3t − t³ = t(3 − t²)",
-     "y² = t²(3 − t²)² = (x − 1)(3 − (x − 1))² = (x − 1)(4 − x)²"
-    ],
-    "answer": "y² = (x − 1)(4 − x)²",
-    "guidance": "M1 for finding t² = x − 1. M1 for expressing y in terms of t² and t. M1 for eliminating t. A1 for y² = (x − 1)(4 − x)²."
-   },
-   "15(a)": {
-    "type": "exact",
-    "points": [
-     "k = −2 (vertex of the parabola is at x = −b/(2a) = −8/4 = −2)"
-    ],
-    "answer": "k = −2",
-    "guidance": "B1 for k = −2."
-   },
-   "15(b)": {
-    "type": "exact",
-    "points": [
-     "y = 2x² + 8x − 3 → complete the square: y = 2(x + 2)² − 11",
-     "Swap x and y: x = 2(y + 2)² − 11",
-     "Solve for y: (y + 2)² = (x + 11)/2 → y + 2 = √((x + 11)/2) (positive root since x ≥ −2 means f(x) ≥ −11)",
-     "f⁻¹(x) = −2 + √((x + 11)/2)",
-     "Domain: x ≥ −11"
-    ],
-    "answer": "f⁻¹(x) = √((x + 11)/2) − 2, domain x ≥ −11",
-    "guidance": "M1 for rearranging to make x the subject. M1 for taking the correct square root. A1 for correct f⁻¹(x). B1 for domain x ≥ −11."
-   },
-   "16(a)": {
-    "type": "exact",
-    "points": [
-     "Using binomial expansion: (1 + 3x)¹⁰ = 1 + 10(3x) + C(10,2)(3x)² + C(10,3)(3x)³ + …",
-     "= 1 + 30x + 45×9x² + 120×27x³ + …",
-     "= 1 + 30x + 405x² + 3240x³ + …"
-    ],
-    "answer": "1 + 30x + 405x² + 3240x³",
-    "guidance": "M1 for using the binomial expansion. A1 for 1 + 30x. A1 for 405x². A1 for 3240x³."
-   },
-   "16(b)": {
-    "type": "exact",
-    "points": [
-     "1.03¹⁰ = (1 + 3(0.01))¹⁰, so substitute x = 0.01",
-     "≈ 1 + 30(0.01) + 405(0.0001) + 3240(0.000001)",
-     "= 1 + 0.3 + 0.0405 + 0.00324",
-     "= 1.34374"
-    ],
-    "answer": "1.34374",
-    "guidance": "M1 for substituting x = 0.01. A1 for 1.34374."
-   },
-   "17(a)": {
-    "type": "exact",
-    "points": [
-     "dy/dx = 2xeˣ + x²eˣ = xeˣ(2 + x)"
-    ],
-    "answer": "dy/dx = eˣ(x² + 2x) = xeˣ(x + 2)",
-    "guidance": "M1 for using the product rule. A1 for dy/dx = eˣ(x² + 2x) or equivalent factored form."
-   },
-   "17(b)": {
-    "type": "points",
-    "points": [
-     "Set dy/dx = 0: xeˣ(x + 2) = 0",
-     "Since eˣ > 0 for all x, we need x(x + 2) = 0"
-    ],
-    "guidance": "M1 for setting dy/dx = 0. R1 for dividing by eˣ (never zero) to get x(x + 2) = 0 (AG)."
-   },
-   "17(c)": {
-    "type": "exact",
-    "points": [
-     "x = 0: y = 0·e⁰ = 0 → stationary point (0, 0)",
-     "x = −2: y = (−2)²e⁻² = 4e⁻² → stationary point (−2, 4e⁻²)",
-     "d²y/dx² = eˣ(x² + 4x + 2)",
-     "At x = 0: d²y/dx² = 1·2 = 2 > 0 → local minimum",
-     "At x = −2: d²y/dx² = e⁻²(4 − 8 + 2) = −2e⁻² < 0 → local maximum"
-    ],
-    "answer": "Local minimum at (0, 0); local maximum at (−2, 4e⁻²)",
-    "guidance": "A1 for (0, 0) minimum. A1 for (−2, 4/e²) maximum. M1 for second derivative. A1 for nature of each point."
-   }
-  }
- },
- "math-aqa-7357-2024-p2": {
-  "questions": [
-   {
-    "number": 1,
-    "parts": [
-     {
-      "code": "1",
-      "prompt": "Use proof by contradiction to show that there is no greatest odd integer.",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 2,
-    "parts": [
-     {
-      "code": "2(a)",
-      "prompt": "The functions f and g are defined by f(x) = 3x − 2 for x ∈ ℝ and g(x) = x² + 1 for x ∈ ℝ.\n\nFind gf(x), giving your answer in the form ax² + bx + c.",
-      "marks": 3
-     },
-     {
-      "code": "2(b)",
-      "prompt": "Solve gf(x) = 26",
-      "marks": 3
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "(12x² + 3x + 7)/(3x − 5) can be written as Ax + B + C/(3x − 5).",
     "parts": [
      {
       "code": "3",
-      "prompt": "A curve has the equation y = x³ − 6x² + 5.\n\nFind the range of values of x for which the curve is concave (i.e. d²y/dx² < 0).",
-      "marks": 3
+      "prompt": "State the value of A.\nOptions: 3   4   7   9",
+      "marks": 1
      }
     ]
    },
    {
     "number": 4,
-    "scenario": "The first three terms of a geometric sequence are\n\n(k + 4),   k,   (2k − 15)\n\nwhere k is a positive constant.",
+    "scenario": "Four graphs are shown (diagram on the question paper): top-left increasing from (−1, 0) through (0, π/2); top-right increasing through O between x = −1 and 1; bottom-left decreasing from (0, π/2) through (1, 0); bottom-right decreasing from (−1, π) through (0, π/2) to (1, 0).",
     "parts": [
      {
-      "code": "4(a)",
-      "prompt": "Show that k² − 19k − 60 = 0... and hence find the value of k.",
-      "marks": 4
-     },
-     {
-      "code": "4(b)",
-      "prompt": "Find the common ratio of the geometric sequence.",
+      "code": "4",
+      "prompt": "Identify which graph is y = arccos x.\nOptions: top-left   top-right   bottom-left   bottom-right",
       "marks": 1
-     },
-     {
-      "code": "4(c)",
-      "prompt": "Find the sum to infinity of the geometric sequence.",
-      "marks": 2
      }
     ]
    },
    {
     "number": 5,
+    "scenario": "sin²x = 1 for 0° < x < 360°.",
     "parts": [
      {
-      "code": "5(a)",
-      "prompt": "Use the trapezium rule with 4 strips of equal width to find an approximate value for\n\n∫₁⁵ √(ln x) dx\n\ngiving your answer to three decimal places.",
-      "marks": 4
-     },
-     {
-      "code": "5(b)",
-      "prompt": "State, with a reason, whether the trapezium rule gives an overestimate or underestimate of the true value of the integral.",
-      "marks": 2
+      "code": "5",
+      "prompt": "Solve the equation.",
+      "marks": 3
      }
     ]
    },
    {
     "number": 6,
+    "scenario": "y = (x³ + 5x)⁷",
     "parts": [
      {
-      "code": "6(a)",
-      "prompt": "Given that 5 cos θ + 12 sin θ ≡ R sin(θ + α), where R > 0 and 0° < α < 90°, find the values of R and α.",
-      "marks": 3
-     },
-     {
-      "code": "6(b)",
-      "prompt": "Hence, or otherwise, solve 5 cos θ + 12 sin θ = 8 for 0° ≤ θ ≤ 360°.\n\nGive your answers to one decimal place.",
-      "marks": 4
-     },
-     {
-      "code": "6(c)",
-      "prompt": "Write down the maximum value of 5 cos θ + 12 sin θ and the smallest positive value of θ at which it occurs.",
+      "code": "6",
+      "prompt": "Use the chain rule to find dy/dx.",
       "marks": 2
      }
     ]
    },
    {
     "number": 7,
+    "scenario": "n is a positive integer.",
     "parts": [
      {
-      "code": "7(a)",
-      "prompt": "Use integration by parts to find ∫ x sin 2x dx.",
+      "code": "7",
+      "prompt": "Show that (3 + √(8n))/(1 + √(2n)) = (4n − 3 + √(2n))/(2n − 1).",
       "marks": 4
-     },
-     {
-      "code": "7(b)",
-      "prompt": "Hence find the exact value of ∫₀^(π/4) x sin 2x dx.",
-      "marks": 2
      }
     ]
    },
    {
     "number": 8,
-    "scenario": "The random variable X has a normal distribution with mean 45 and standard deviation 8.",
+    "scenario": "(2 + kx)⁵ where k is a positive constant.",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Find P(X > 50).",
-      "marks": 2
+      "prompt": "Find the first three terms of the expansion in ascending powers of x.",
+      "marks": 3
      },
      {
       "code": "8(b)",
-      "prompt": "Find the value of a such that P(X < a) = 0.2.",
-      "marks": 3
+      "prompt": "The coefficient of x is four times the coefficient of x². Hence find k.",
+      "marks": 2
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "A researcher records the heights, in cm, of 80 plants of a certain species. The results are summarised in the table below.\n\nHeight h (cm) | Frequency\n10 ≤ h < 20   |  12\n20 ≤ h < 30   |  25\n30 ≤ h < 40   |  28\n40 ≤ h < 50   |  11\n50 ≤ h < 70   |   4",
+    "scenario": "Small-angle approximations, θ in radians.",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Draw a histogram for these data.",
+      "prompt": "Show that cos 4θ + 2 sin 3θ − tan 2θ ≈ A + Bθ + Cθ² for small θ, finding A, B and C.",
       "marks": 3
      },
      {
       "code": "9(b)",
-      "prompt": "Estimate the mean height of the plants.",
-      "marks": 3
-     },
-     {
-      "code": "9(c)",
-      "prompt": "Estimate the standard deviation of the heights.",
-      "marks": 3
+      "prompt": "Use part (a) to approximate cos 0.28 + 2 sin 0.21 − tan 0.14 to 3 decimal places.",
+      "marks": 2
      }
     ]
    },
    {
     "number": 10,
-    "scenario": "Each morning, the probability that Asha cycles to school is 0.35, independently of all other mornings.",
+    "scenario": "Arithmetic sequences.",
     "parts": [
      {
       "code": "10(a)",
-      "prompt": "Find the probability that, during a school week of 5 days, Asha cycles to school on exactly 2 days.",
+      "prompt": "An arithmetic sequence has 300 terms, first term −7 and last term 32. Find the sum of all the terms.",
       "marks": 2
      },
      {
       "code": "10(b)",
-      "prompt": "Find the probability that, during a school week of 5 days, Asha cycles to school on at least 3 days.",
-      "marks": 3
-     },
-     {
-      "code": "10(c)",
-      "prompt": "Find the expected number of days in a school week on which Asha cycles to school.",
-      "marks": 1
+      "prompt": "Nine raffle prizes, total £1260, form an arithmetic sequence; the top prize is six times the bottom prize. Find the value of the top prize.",
+      "marks": 4
      }
     ]
    },
    {
     "number": 11,
-    "scenario": "A scientist believes that the time, T minutes, taken for a chemical reaction is related to the temperature, x °C, by the equation T = ab^x, where a and b are constants.",
+    "scenario": "f(x) = x(x − a)(x − 6), where 0 < a < 6.",
     "parts": [
      {
       "code": "11(a)",
-      "prompt": "Show that log T = log a + x log b.",
-      "marks": 1
-     },
-     {
-      "code": "11(b)",
-      "prompt": "The scientist plots log T against x for six values of x and obtains the regression line log T = 3.14 − 0.021x.\n\nFind the values of a and b, giving your answers to three significant figures.",
+      "prompt": "Sketch y = f(x).",
       "marks": 3
      },
      {
-      "code": "11(c)",
-      "prompt": "Estimate the time taken for the reaction at a temperature of 60 °C.",
+      "code": "11(b)",
+      "prompt": "Sketch y = f(−2x).",
       "marks": 2
-     },
-     {
-      "code": "11(d)",
-      "prompt": "Interpret the value of b in the context of this question.",
-      "marks": 1
      }
     ]
    },
    {
     "number": 12,
-    "scenario": "A bag contains 5 red counters and 3 blue counters. Three counters are drawn at random without replacement.",
+    "scenario": "A periodic sequence: u₁ = 3, uₙ₊₁ = −6/uₙ.",
     "parts": [
      {
       "code": "12(a)",
-      "prompt": "Find the probability that all three counters drawn are red.",
+      "prompt": "Find u₂, u₃ and u₄.",
       "marks": 2
      },
      {
       "code": "12(b)",
-      "prompt": "Find the probability that at least one blue counter is drawn.",
-      "marks": 2
+      "prompt": "State the period of the sequence.",
+      "marks": 1
      },
      {
       "code": "12(c)",
-      "prompt": "Given that at least one blue counter is drawn, find the probability that exactly two blue counters are drawn.",
-      "marks": 3
+      "prompt": "Find Σ uₙ from n = 1 to 101.",
+      "marks": 2
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "A hypothesis test is to be carried out to test the claim that a coin is biased towards heads. The coin is tossed 20 times and the number of heads, X, is recorded.",
+    "scenario": "P(x) = 4x³ + 8x² + 11x + 4",
     "parts": [
      {
       "code": "13(a)",
-      "prompt": "Write down a suitable null hypothesis H₀ and alternative hypothesis H₁ for this test.",
-      "marks": 1
+      "prompt": "Use the factor theorem to show (2x + 1) is a factor of P(x).",
+      "marks": 2
      },
      {
       "code": "13(b)",
-      "prompt": "Given that X = 14, carry out the hypothesis test at the 5% significance level, stating your conclusion clearly.",
-      "marks": 5
+      "prompt": "Write P(x) as (2x + 1)(ax² + bx + c), finding a, b and c.",
+      "marks": 2
      },
      {
       "code": "13(c)",
-      "prompt": "State the critical region for this test at the 5% significance level.",
+      "prompt": "Using part (b), explain why 4n³ + 8n² + 11n + 4 is never prime for positive integers n.",
       "marks": 2
      }
     ]
    },
    {
     "number": 14,
+    "scenario": "The equation x³ = e^(6 − 2x) has a single root x = α.",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "Use the substitution u = 2x + 1 to find ∫ x(2x + 1)⁵ dx.",
-      "marks": 5
+      "prompt": "Use a change of sign to show α lies between 0 and 4.",
+      "marks": 2
      },
      {
       "code": "14(b)",
-      "prompt": "Hence evaluate ∫₀¹ x(2x + 1)⁵ dx, giving your answer as an exact fraction.",
+      "prompt": "Show the equation can be rearranged to x = 3 − (3/2) ln x.",
+      "marks": 3
+     },
+     {
+      "code": "14(c)(i)",
+      "prompt": "Using xₙ₊₁ = 3 − (3/2) ln xₙ with x₁ = 4, find x₂, x₃ and x₄ to 3 decimal places.",
       "marks": 2
+     },
+     {
+      "code": "14(c)(ii)",
+      "prompt": "On the given sketch of y = 3 − (3/2) ln x and y = x (Figure 1 on the question paper, x = 4 marked), draw a staircase or cobweb diagram and label x₂, x₃, x₄ on the x-axis.",
+      "marks": 2
+     },
+     {
+      "code": "14(c)(iii)",
+      "prompt": "Explain why the iteration fails to converge to α when x₁ = 0.",
+      "marks": 1
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "The heights of adult males in a population are normally distributed with mean μ cm and standard deviation σ cm. It is known that 10% of adult males are taller than 185 cm and 25% are shorter than 165 cm.",
+    "scenario": "The expression sin 2θ cosec θ + cos 2θ sec θ, where sin θ ≠ 0 and cos θ ≠ 0.",
     "parts": [
      {
       "code": "15(a)",
-      "prompt": "Write down two equations in μ and σ.",
-      "marks": 2
+      "prompt": "Show that the expression equals 4 cos θ − sec θ.",
+      "marks": 4
      },
      {
-      "code": "15(b)",
-      "prompt": "Hence find the values of μ and σ, giving your answers to one decimal place.",
-      "marks": 4
+      "code": "15(b)(i)",
+      "prompt": "A student solves sin 2θ cosec θ + cos 2θ sec θ = 3 for 0° ≤ θ ≤ 360° via 4cos²θ − 3cos θ − 1 = 0, getting cos θ = 1 or cos θ = −0.25 and θ = 0°, 104.5°, 255.5°, 360°. Explain why one of the values of cos θ must be rejected.",
+      "marks": 1
+     },
+     {
+      "code": "15(b)(ii)",
+      "prompt": "State the correct solutions for 0° ≤ θ ≤ 360°.",
+      "marks": 1
      }
     ]
    },
    {
     "number": 16,
-    "scenario": "A curve C has the equation y = (4x² − 1)/(2x − 1).",
+    "scenario": "A 1.5 m length of pipe has a symmetrical cross-section (x, y in cm) running from (−2, 0) down to (0, −3) and up to (2, 0) (diagrams on the question paper). Table: x = 0, 0.4, 0.8, 1.2, 1.6, 2; y = −3, −2.943, −2.752, −2.353, −1.572, 0.",
     "parts": [
      {
-      "code": "16(a)",
-      "prompt": "Show that dy/dx = (8x² − 8x + 2)/(2x − 1)².",
-      "marks": 4
-     },
-     {
-      "code": "16(b)",
-      "prompt": "Find the coordinates of the stationary point of C.",
-      "marks": 3
-     },
-     {
-      "code": "16(c)",
-      "prompt": "Determine the nature of the stationary point.",
-      "marks": 2
+      "code": "16",
+      "prompt": "Use the trapezium rule with the tabulated values to find the best estimate for the volume of the pipe.",
+      "marks": 5
      }
     ]
    },
    {
     "number": 17,
+    "scenario": "f(x) = |x| + 1 for x ∈ ℝ; g(x) = ln x with its largest possible domain; h(x) = gf(x) for x ∈ ℝ.",
     "parts": [
      {
       "code": "17(a)",
-      "prompt": "Show that ∫₁² (3/x − 2) dx = 3 ln 2 − 2.",
-      "marks": 3
+      "prompt": "State the range of f in set notation.",
+      "marks": 2
      },
      {
       "code": "17(b)",
-      "prompt": "A student claims that ∫₋₁¹ (3/x − 2) dx = 0 by symmetry. Identify the error in this reasoning.",
+      "prompt": "State the domain of g.",
+      "marks": 1
+     },
+     {
+      "code": "17(c)(i)",
+      "prompt": "Write down h(x) in terms of x.",
+      "marks": 1
+     },
+     {
+      "code": "17(c)(ii)",
+      "prompt": "Decide, with full justification, whether h has an inverse.",
       "marks": 2
      }
     ]
-   }
-  ],
-  "markSchemes": {
-   "1": {
-    "type": "points",
-    "points": [
-     "Assume for contradiction that there is a greatest odd integer N.",
-     "Then N + 2 is also an integer, and N + 2 > N.",
-     "N + 2 = (odd) + (even) = odd, so N + 2 is a greater odd integer — contradiction.",
-     "Hence there is no greatest odd integer. ∎"
-    ],
-    "guidance": "M1 for stating the assumption. M1 for constructing N + 2 and showing it is odd. R1 for identifying the contradiction and conclusion."
    },
-   "2(a)": {
-    "type": "exact",
-    "points": [
-     "gf(x) = g(3x − 2) = (3x − 2)² + 1",
-     "= 9x² − 12x + 4 + 1 = 9x² − 12x + 5"
-    ],
-    "answer": "9x² − 12x + 5",
-    "guidance": "M1 for substituting f(x) into g. A1 for expanding. A1 for correct simplified expression."
-   },
-   "2(b)": {
-    "type": "exact",
-    "points": [
-     "9x² − 12x + 5 = 26 ⇒ 9x² − 12x − 21 = 0",
-     "3x² − 4x − 7 = 0",
-     "(3x − 7)(x + 1) = 0",
-     "x = 7/3 or x = −1"
-    ],
-    "answer": "x = 7/3 or x = −1",
-    "guidance": "M1 for setting gf(x) = 26. M1 for solving the quadratic. A1 A1 for both correct values."
-   },
-   "3": {
-    "type": "exact",
-    "points": [
-     "dy/dx = 3x² − 12x",
-     "d²y/dx² = 6x − 12",
-     "6x − 12 < 0 ⇒ x < 2"
-    ],
-    "answer": "x < 2",
-    "guidance": "M1 for finding d²y/dx². M1 for solving the inequality. A1 for x < 2."
-   },
-   "4(a)": {
-    "type": "points",
-    "points": [
-     "Common ratio: k/(k + 4) = (2k − 15)/k",
-     "k² = (k + 4)(2k − 15) = 2k² − 15k + 8k − 60 = 2k² − 7k − 60",
-     "k² − 19k − 60 = 0... wait: 0 = 2k² − 7k − 60 − k² = k² − 7k − 60",
-     "Recheck: k² = 2k² − 7k − 60 ⇒ 0 = k² − 7k − 60... factorises as (k − 12)(k + 5) = 0",
-     "k = 12 (since k is a positive constant)"
-    ],
-    "answer": "k = 12",
-    "guidance": "M1 for equating the two expressions for the common ratio. M1 for forming a quadratic. A1 for k = 12."
-   },
-   "4(b)": {
-    "type": "exact",
-    "points": [
-     "r = k/(k + 4) = 12/16 = 3/4"
-    ],
-    "answer": "r = 3/4",
-    "guidance": "B1 for r = 3/4 (allow ft from their k)."
-   },
-   "4(c)": {
-    "type": "exact",
-    "points": [
-     "First term a = k + 4 = 16, common ratio r = 3/4",
-     "S∞ = a/(1 − r) = 16/(1 − 3/4) = 16/(1/4) = 64"
-    ],
-    "answer": "64",
-    "guidance": "M1 for using S∞ = a/(1 − r). A1 for 64."
-   },
-   "5(a)": {
-    "type": "exact",
-    "points": [
-     "Strip width h = (5 − 1)/4 = 1",
-     "x-values: 1, 2, 3, 4, 5; y-values: √(ln 1) = 0, √(ln 2) ≈ 0.8326, √(ln 3) ≈ 1.0481, √(ln 4) ≈ 1.1774, √(ln 5) ≈ 1.2686",
-     "Area ≈ (1/2)[y₀ + y₄ + 2(y₁ + y₂ + y₃)] = (1/2)[0 + 1.2686 + 2(0.8326 + 1.0481 + 1.1774)]",
-     "= (1/2)[1.2686 + 2(3.0581)] = (1/2)[1.2686 + 6.1162] = (1/2)(7.3848) = 3.692"
-    ],
-    "answer": "≈ 3.692",
-    "guidance": "M1 for correct strip width and y-values. M1 for correct trapezium rule application. A1 for 3.692 (3 d.p.)."
-   },
-   "5(b)": {
-    "type": "points",
-    "points": [
-     "Since √(ln x) is concave upwards (d²y/dx² > 0 for x > 1), the trapezium rule gives an overestimate."
-    ],
-    "guidance": "B1 for overestimate. B1 for correct reason (curve is convex/concave upward on [1, 5])."
-   },
-   "6(a)": {
-    "type": "exact",
-    "points": [
-     "Write 5 cos θ + 12 sin θ = R sin(θ + α) = R sin θ cos α + R cos θ sin α",
-     "Compare: R cos α = 12, R sin α = 5",
-     "R = √(12² + 5²) = √(144 + 25) = √169 = 13",
-     "tan α = 5/12 ⇒ α = arctan(5/12) = 22.6°"
-    ],
-    "answer": "R = 13, α = 22.6°",
-    "guidance": "M1 for correct form of expansion. A1 for R = 13. A1 for α = 22.6°."
-   },
-   "6(b)": {
-    "type": "exact",
-    "points": [
-     "13 sin(θ + 22.6°) = 8 ⇒ sin(θ + 22.6°) = 8/13",
-     "Principal value: θ + 22.6° = arcsin(8/13) = 37.98° ≈ 38.0°",
-     "Solutions: θ + 22.6° = 38.0° or 180° − 38.0° = 142.0°",
-     "θ = 15.4° or 119.4°"
-    ],
-    "answer": "θ = 15.4° or 119.4°",
-    "guidance": "M1 for using R sin(θ + α) = 8. M1 for finding both angles. A1 A1 for each correct value."
-   },
-   "6(c)": {
-    "type": "exact",
-    "points": [
-     "Maximum value = R = 13",
-     "Occurs when sin(θ + 22.6°) = 1, i.e. θ + 22.6° = 90°, so θ = 67.4°"
-    ],
-    "answer": "Maximum = 13 at θ = 67.4°",
-    "guidance": "B1 for maximum = 13. B1 for θ = 67.4°."
-   },
-   "7(a)": {
-    "type": "exact",
-    "points": [
-     "Integration by parts: u = x, dv = sin 2x dx",
-     "du = dx, v = −½ cos 2x",
-     "∫ x sin 2x dx = −(x/2) cos 2x − ∫ −½ cos 2x dx",
-     "= −(x/2) cos 2x + (1/4) sin 2x + c"
-    ],
-    "answer": "−(x/2) cos 2x + (¼) sin 2x + c",
-    "guidance": "M1 for identifying correct u and dv. A1 for −(x/2)cos 2x. M1 for integrating the remaining integral. A1 for + (1/4) sin 2x + c."
-   },
-   "7(b)": {
-    "type": "exact",
-    "points": [
-     "Evaluate [−(x/2) cos 2x + (1/4) sin 2x]₀^(π/4)",
-     "At x = π/4: −(π/8) cos(π/2) + (1/4) sin(π/2) = 0 + 1/4 = 1/4",
-     "At x = 0: 0 + 0 = 0",
-     "∫₀^(π/4) x sin 2x dx = 1/4"
-    ],
-    "answer": "1/4",
-    "guidance": "M1 for substituting limits. A1 for exact answer 1/4."
-   },
-   "8(a)": {
-    "type": "exact",
-    "points": [
-     "P(X > 50) = P(Z > (50 − 45)/8) = P(Z > 0.625)",
-     "= 1 − Φ(0.625) = 1 − 0.7340 = 0.2660"
-    ],
-    "answer": "0.266 (3 s.f.)",
-    "guidance": "M1 for standardising correctly. A1 for probability 0.266."
-   },
-   "8(b)": {
-    "type": "exact",
-    "points": [
-     "P(X < a) = 0.2 ⇒ P(Z < (a − 45)/8) = 0.2",
-     "(a − 45)/8 = −0.8416 (from tables)",
-     "a = 45 − 8 × 0.8416 = 45 − 6.733 = 38.3"
-    ],
-    "answer": "a = 38.3 (3 s.f.)",
-    "guidance": "M1 for standardising. M1 for using the inverse normal. A1 for a = 38.3."
-   },
-   "9(a)": {
-    "type": "points",
-    "points": [
-     "Frequency densities: [10,20): 12/10 = 1.2; [20,30): 25/10 = 2.5; [30,40): 28/10 = 2.8; [40,50): 11/10 = 1.1; [50,70): 4/20 = 0.2",
-     "Draw bars at correct heights with correct class widths."
-    ],
-    "guidance": "B1 for at least three correct frequency densities. M1 for correct class widths. A1 for fully correct histogram."
-   },
-   "9(b)": {
-    "type": "exact",
-    "points": [
-     "Midpoints: 15, 25, 35, 45, 60",
-     "Mean = (12×15 + 25×25 + 28×35 + 11×45 + 4×60)/80",
-     "= (180 + 625 + 980 + 495 + 240)/80 = 2520/80 = 31.5 cm"
-    ],
-    "answer": "31.5 cm",
-    "guidance": "M1 for using midpoints. M1 for Σfx. A1 for mean = 31.5 cm."
-   },
-   "9(c)": {
-    "type": "exact",
-    "points": [
-     "Σfx² = 12×225 + 25×625 + 28×1225 + 11×2025 + 4×3600 = 2700 + 15625 + 34300 + 22275 + 14400 = 89300",
-     "Variance = Σfx²/n − mean² = 89300/80 − 31.5² = 1116.25 − 992.25 = 124",
-     "Standard deviation = √124 = 11.1 cm (3 s.f.)"
-    ],
-    "answer": "11.1 cm",
-    "guidance": "M1 for calculating Σfx². M1 for variance formula. A1 for s.d. ≈ 11.1 cm."
-   },
-   "10(a)": {
-    "type": "exact",
-    "points": [
-     "X ~ B(5, 0.35)",
-     "P(X = 2) = C(5,2)(0.35)²(0.65)³ = 10 × 0.1225 × 0.274625 = 0.3364"
-    ],
-    "answer": "0.336 (3 s.f.)",
-    "guidance": "M1 for using binomial with correct parameters. A1 for 0.336."
-   },
-   "10(b)": {
-    "type": "exact",
-    "points": [
-     "P(X ≥ 3) = P(X = 3) + P(X = 4) + P(X = 5)",
-     "P(X = 3) = C(5,3)(0.35)³(0.65)² = 10 × 0.042875 × 0.4225 = 0.18115",
-     "P(X = 4) = C(5,4)(0.35)⁴(0.65)¹ = 5 × 0.015006 × 0.65 = 0.04877",
-     "P(X = 5) = (0.35)⁵ = 0.00525",
-     "P(X ≥ 3) = 0.18115 + 0.04877 + 0.00525 = 0.235"
-    ],
-    "answer": "0.235 (3 s.f.)",
-    "guidance": "M1 for identifying correct binomial terms. M1 for summing. A1 for 0.235."
-   },
-   "10(c)": {
-    "type": "exact",
-    "points": [
-     "E(X) = np = 5 × 0.35 = 1.75"
-    ],
-    "answer": "1.75 days",
-    "guidance": "B1 for E(X) = 1.75."
-   },
-   "11(a)": {
-    "type": "points",
-    "points": [
-     "T = ab^x ⇒ log T = log(ab^x) = log a + x log b (AG)"
-    ],
-    "guidance": "B1 for applying log laws correctly to show the result."
-   },
-   "11(b)": {
-    "type": "exact",
-    "points": [
-     "Comparing log T = log a + x log b with log T = 3.14 − 0.021x:",
-     "log a = 3.14 ⇒ a = 10^(3.14) = 1380 (3 s.f.)",
-     "log b = −0.021 ⇒ b = 10^(−0.021) = 0.952 (3 s.f.)"
-    ],
-    "answer": "a = 1380, b = 0.952",
-    "guidance": "M1 for equating coefficients. A1 for a = 1380. A1 for b = 0.952."
-   },
-   "11(c)": {
-    "type": "exact",
-    "points": [
-     "At x = 60: log T = 3.14 − 0.021 × 60 = 3.14 − 1.26 = 1.88",
-     "T = 10^(1.88) = 75.9 minutes (3 s.f.)"
-    ],
-    "answer": "75.9 minutes",
-    "guidance": "M1 for substituting x = 60. A1 for T ≈ 75.9 minutes."
-   },
-   "11(d)": {
-    "type": "points",
-    "points": [
-     "b = 0.952 is the multiplicative factor by which the reaction time changes for each 1 °C increase in temperature; the reaction time decreases by a factor of 0.952 (i.e. decreases by about 4.8%) for every 1 °C rise in temperature."
-    ],
-    "guidance": "B1 for correct contextual interpretation of b as the multiplier per degree."
-   },
-   "12(a)": {
-    "type": "exact",
-    "points": [
-     "P(all 3 red) = (5/8) × (4/7) × (3/6) = 60/336 = 5/28"
-    ],
-    "answer": "5/28",
-    "guidance": "M1 for correct product of fractions. A1 for 5/28."
-   },
-   "12(b)": {
-    "type": "exact",
-    "points": [
-     "P(at least one blue) = 1 − P(all red) = 1 − 5/28 = 23/28"
-    ],
-    "answer": "23/28",
-    "guidance": "M1 for complement method. A1 for 23/28."
-   },
-   "12(c)": {
-    "type": "exact",
-    "points": [
-     "P(exactly 2 blue) = C(3,2)×C(5,1)/C(8,3) = 3×5/56 = 15/56",
-     "P(at least one blue) = 23/28 = 46/56",
-     "P(exactly 2 blue | at least one blue) = (15/56)/(46/56) = 15/46"
-    ],
-    "answer": "15/46",
-    "guidance": "M1 for P(exactly 2 blue). M1 for conditional probability formula. A1 for 15/46."
-   },
-   "13(a)": {
-    "type": "points",
-    "points": [
-     "H₀: p = 0.5 (the coin is fair)",
-     "H₁: p > 0.5 (the coin is biased towards heads)"
-    ],
-    "guidance": "B1 for both hypotheses correct."
-   },
-   "13(b)": {
-    "type": "points",
-    "points": [
-     "Under H₀: X ~ B(20, 0.5)",
-     "P(X ≥ 14) = 1 − P(X ≤ 13) = 1 − 0.9423 = 0.0577",
-     "0.0577 > 0.05 so do not reject H₀.",
-     "There is insufficient evidence at the 5% significance level to conclude the coin is biased towards heads."
-    ],
-    "guidance": "M1 for identifying correct distribution. M1 for finding P(X ≥ 14). A1 for probability. M1 for comparison with 0.05. A1 for correct conclusion in context."
-   },
-   "13(c)": {
-    "type": "exact",
-    "points": [
-     "Find smallest c such that P(X ≥ c) ≤ 0.05 under B(20, 0.5).",
-     "P(X ≥ 15) = 1 − P(X ≤ 14) = 1 − 0.9793 = 0.0207 < 0.05",
-     "P(X ≥ 14) = 0.0577 > 0.05",
-     "Critical region: X ≥ 15"
-    ],
-    "answer": "X ≥ 15",
-    "guidance": "M1 for systematic search. A1 for critical region X ≥ 15."
-   },
-   "14(a)": {
-    "type": "exact",
-    "points": [
-     "u = 2x + 1 ⇒ x = (u − 1)/2, dx = du/2",
-     "∫ x(2x + 1)⁵ dx = ∫ ((u − 1)/2) · u⁵ · (du/2) = (1/4)∫(u⁶ − u⁵) du",
-     "= (1/4)[u⁷/7 − u⁶/6] + c",
-     "= (2x + 1)⁷/28 − (2x + 1)⁶/24 + c"
-    ],
-    "answer": "(2x + 1)⁷/28 − (2x + 1)⁶/24 + c",
-    "guidance": "M1 for correct substitution. M1 for changing limits/dx. M1 for integrating. A1 A1 for both terms correct."
-   },
-   "14(b)": {
-    "type": "exact",
-    "points": [
-     "At x = 1 (u = 3): 3⁷/28 − 3⁶/24 = 2187/28 − 729/24 = 2187/28 − 729/24",
-     "Common denominator 168: 2187×6/168 − 729×7/168 = 13122/168 − 5103/168 = 8019/168 = 2673/56",
-     "At x = 0 (u = 1): 1/28 − 1/24 = 6/168 − 7/168 = −1/168",
-     "Integral = 2673/56 − (−1/168) = 2673/56 + 1/168 = 8019/168 + 1/168 = 8020/168 = 1003/21"
-    ],
-    "answer": "1003/21",
-    "guidance": "M1 for correct limits substitution. A1 for exact fraction 1003/21."
-   },
-   "15(a)": {
-    "type": "exact",
-    "points": [
-     "P(X > 185) = 0.10 ⇒ (185 − μ)/σ = 1.2816",
-     "P(X < 165) = 0.25 ⇒ (165 − μ)/σ = −0.6745"
-    ],
-    "answer": "185 − μ = 1.2816σ and 165 − μ = −0.6745σ",
-    "guidance": "B1 B1 for each equation with correct z-values (allow ±0.01)."
-   },
-   "15(b)": {
-    "type": "exact",
-    "points": [
-     "Subtracting: 20 = 1.9561σ ⇒ σ = 20/1.9561 = 10.2 cm",
-     "μ = 185 − 1.2816 × 10.2 = 185 − 13.1 = 171.9 cm"
-    ],
-    "answer": "σ = 10.2 cm, μ = 171.9 cm",
-    "guidance": "M1 for subtracting the equations. A1 for σ = 10.2. M1 for finding μ. A1 for μ = 171.9."
-   },
-   "16(a)": {
-    "type": "points",
-    "points": [
-     "y = (4x² − 1)/(2x − 1); use the quotient rule with u = 4x² − 1, v = 2x − 1",
-     "u′ = 8x, v′ = 2",
-     "dy/dx = (8x(2x − 1) − 2(4x² − 1))/(2x − 1)²",
-     "= (16x² − 8x − 8x² + 2)/(2x − 1)² = (8x² − 8x + 2)/(2x − 1)² (AG)"
-    ],
-    "guidance": "M1 for quotient rule setup. A1 for numerator expansion. A1 for correct simplification."
-   },
-   "16(b)": {
-    "type": "exact",
-    "points": [
-     "dy/dx = 0: 8x² − 8x + 2 = 0 ⇒ 4x² − 4x + 1 = 0 ⇒ (2x − 1)² = 0 ⇒ x = 1/2",
-     "But x = 1/2 makes the denominator of y zero, so x = 1/2 is not in the domain.",
-     "The curve has no stationary point (the numerator and denominator vanish simultaneously)."
-    ],
-    "answer": "No stationary point (x = 1/2 is not in the domain of C)",
-    "guidance": "M1 for setting numerator = 0. A1 for x = 1/2. A1 for recognising x = 1/2 is excluded from the domain."
-   },
-   "16(c)": {
-    "type": "points",
-    "points": [
-     "Since there is no stationary point in the domain, this part is not applicable.",
-     "Note: the curve simplifies to y = 2x + 1 for x ≠ 1/2, which is a straight line with no stationary points."
-    ],
-    "guidance": "Accept any correct reasoning consistent with part (b)."
-   },
-   "17(a)": {
-    "type": "points",
-    "points": [
-     "∫₁² (3/x − 2) dx = [3 ln x − 2x]₁²",
-     "= (3 ln 2 − 4) − (3 ln 1 − 2) = 3 ln 2 − 4 − 0 + 2 = 3 ln 2 − 2 (AG)"
-    ],
-    "guidance": "M1 for integrating correctly. A1 for [3 ln x − 2x]. A1 for correct evaluation giving 3 ln 2 − 2."
-   },
-   "17(b)": {
-    "type": "points",
-    "points": [
-     "The integrand 3/x − 2 has a discontinuity at x = 0, which lies inside the interval [−1, 1].",
-     "The function is not defined at x = 0, so the integral is improper and cannot be evaluated by the standard symmetry argument.",
-     "The claim is invalid."
-    ],
-    "guidance": "B1 for identifying discontinuity at x = 0. B1 for explaining why symmetry argument fails (improper integral)."
-   }
-  }
- },
- "math-aqa-7357-2024-p3": {
-  "questions": [
    {
-    "number": 1,
+    "number": 18,
+    "scenario": "The integral ∫₀⁴ (4x + 1)(2x + 1)^(1/2) dx.",
     "parts": [
      {
-      "code": "1",
-      "prompt": "Use proof by contradiction to show that √3 is irrational.",
+      "code": "18(a)",
+      "prompt": "Use a suitable substitution to show the integral equals ½ ∫ₐ⁹ (2u^(3/2) − u^(1/2)) du, finding a.",
+      "marks": 5
+     },
+     {
+      "code": "18(b)",
+      "prompt": "Hence show the integral equals 1322/15.",
       "marks": 4
-     }
-    ]
-   },
-   {
-    "number": 2,
-    "scenario": "The vectors a and b are defined as a = 2i − j + 3k and b = i + 4j − 2k.",
-    "parts": [
+     },
      {
-      "code": "2(a)",
-      "prompt": "Find a · b.",
+      "code": "18(c)",
+      "prompt": "For y = (4x + 1)√(2x + 1), four equal-width rectangles lying under the curve from x = 0 to 4 have total area A (diagram on the question paper). Explain why using more rectangles gives an approximation greater than A but less than 1322/15.",
       "marks": 2
-     },
-     {
-      "code": "2(b)",
-      "prompt": "Find |a × b|, the magnitude of the cross product of a and b.",
-      "marks": 4
      }
     ]
    },
    {
-    "number": 3,
-    "scenario": "A curve C is defined by y = x³ e^(−2x) for x ≥ 0.",
+    "number": 19,
+    "scenario": "Curve y³e^(2x) + 2y − 16x = k, with a stationary point on the y-axis.",
     "parts": [
      {
-      "code": "3(a)",
-      "prompt": "Find dy/dx.",
-      "marks": 3
-     },
-     {
-      "code": "3(b)",
-      "prompt": "Find the x-coordinates of the stationary points of C.",
-      "marks": 3
-     },
-     {
-      "code": "3(c)",
-      "prompt": "Determine the nature of each stationary point.",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 4,
-    "parts": [
-     {
-      "code": "4(a)",
-      "prompt": "Use implicit differentiation to find dy/dx for the curve x² + 3xy + y² = 11.",
-      "marks": 4
-     },
-     {
-      "code": "4(b)",
-      "prompt": "Find the equation of the tangent to the curve at the point (1, 2).",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 5,
-    "parts": [
-     {
-      "code": "5",
-      "prompt": "Use the substitution x = 3 sin θ to find the exact value of\n\n∫₀^(3/2) √(9 − x²) dx",
+      "code": "19",
+      "prompt": "Find k.",
       "marks": 7
      }
     ]
    },
    {
-    "number": 6,
+    "number": 20,
+    "scenario": "A cylindrical rain-water container is 130 cm tall; a hose 5 cm above the base drains it. The depth h cm falls at a rate proportional to h − 5; when full, the depth falls at 1.5 cm per minute. t is in minutes.",
     "parts": [
      {
-      "code": "6(a)",
-      "prompt": "Express f(x) = (5x + 1)/((2x − 1)(x + 2)) in partial fractions.",
-      "marks": 4
-     },
-     {
-      "code": "6(b)",
-      "prompt": "Hence find ∫ (5x + 1)/((2x − 1)(x + 2)) dx.",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 7,
-    "scenario": "The differential equation dy/dx = 2y(1 − y) is used to model a population, where y is the proportion of the population that is infected, 0 < y < 1.",
-    "parts": [
-     {
-      "code": "7(a)",
-      "prompt": "Using partial fractions, show that\n\n∫ 1/(y(1 − y)) dy = ln|y/(1 − y)| + c",
+      "code": "20(a)",
+      "prompt": "Show that dh/dt = −0.012(h − 5).",
       "marks": 3
      },
      {
-      "code": "7(b)",
-      "prompt": "Given that y = 0.1 when x = 0, solve the differential equation, expressing y in terms of x.",
-      "marks": 5
-     }
-    ]
-   },
-   {
-    "number": 8,
-    "parts": [
-     {
-      "code": "8(a)",
-      "prompt": "Show that the equation x³ + 4x − 6 = 0 has a root between x = 1 and x = 2.",
-      "marks": 2
-     },
-     {
-      "code": "8(b)",
-      "prompt": "Use Newton-Raphson with x₀ = 1.2 to find a better approximation to this root, giving your answer to 3 decimal places.",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 9,
-    "scenario": "A particle of mass 3 kg is on a rough inclined plane at angle 30° to the horizontal. The coefficient of friction between the particle and the plane is μ. The particle is on the point of sliding down the plane.",
-    "parts": [
-     {
-      "code": "9(a)",
-      "prompt": "Draw a force diagram showing all the forces acting on the particle.",
-      "marks": 1
-     },
-     {
-      "code": "9(b)",
-      "prompt": "Show that μ = 1/√3.",
-      "marks": 4
-     }
-    ]
-   },
-   {
-    "number": 10,
-    "scenario": "A ball is projected from ground level with speed 20 m s⁻¹ at an angle of 40° above the horizontal. Take g = 9.8 m s⁻².",
-    "parts": [
-     {
-      "code": "10(a)",
-      "prompt": "Find the maximum height reached by the ball.",
-      "marks": 3
-     },
-     {
-      "code": "10(b)",
-      "prompt": "Find the horizontal range of the ball.",
-      "marks": 4
-     },
-     {
-      "code": "10(c)",
-      "prompt": "Find the speed of the ball 2 seconds after projection.",
-      "marks": 4
-     }
-    ]
-   },
-   {
-    "number": 11,
-    "scenario": "A particle moves in a straight line. At time t seconds, the velocity of the particle is v m s⁻¹, where\n\nv = 3t² − 12t + 9.",
-    "parts": [
-     {
-      "code": "11(a)",
-      "prompt": "Find the acceleration of the particle when t = 3.",
-      "marks": 2
-     },
-     {
-      "code": "11(b)",
-      "prompt": "Find the times when the particle is at rest.",
-      "marks": 3
-     },
-     {
-      "code": "11(c)",
-      "prompt": "Find the total distance travelled by the particle in the first 3 seconds.",
-      "marks": 5
-     }
-    ]
-   },
-   {
-    "number": 12,
-    "scenario": "Two particles A and B are connected by a light inextensible string passing over a smooth fixed pulley. A has mass 5 kg and B has mass 3 kg. The particles are released from rest.",
-    "parts": [
-     {
-      "code": "12(a)",
-      "prompt": "Find the acceleration of the system.",
-      "marks": 4
-     },
-     {
-      "code": "12(b)",
-      "prompt": "Find the tension in the string.",
-      "marks": 2
-     },
-     {
-      "code": "12(c)",
-      "prompt": "Find the force exerted on the pulley.",
-      "marks": 2
-     }
-    ]
-   },
-   {
-    "number": 13,
-    "scenario": "A uniform rod AB of mass 4 kg and length 2 m rests horizontally on two supports. One support is at end A and the other is 0.5 m from end B.",
-    "parts": [
-     {
-      "code": "13(a)",
-      "prompt": "Find the reactions at each support.",
+      "code": "20(b)",
+      "prompt": "Solve the differential equation to give h in terms of t.",
       "marks": 5
      },
      {
-      "code": "13(b)",
-      "prompt": "A particle of mass m kg is placed at B. Given that the rod is about to tilt about the support 0.5 m from B, find the value of m.",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 14,
-    "scenario": "Particle P has position vector r = (t² − 2)i + (3t − t³)j at time t seconds, where distances are in metres.",
-    "parts": [
-     {
-      "code": "14(a)",
-      "prompt": "Find the velocity of P when t = 1.",
-      "marks": 3
-     },
-     {
-      "code": "14(b)",
-      "prompt": "Find the value of t for which the particle is moving parallel to the vector i.",
-      "marks": 3
-     },
-     {
-      "code": "14(c)",
-      "prompt": "Find the acceleration of P when t = 2.",
+      "code": "20(c)",
+      "prompt": "Find, to the nearest minute, how long it takes for the container to be half empty.",
       "marks": 2
      }
     ]
@@ -23172,612 +21621,1937 @@ window.MATHS_QUESTIONS = {
    "1": {
     "type": "points",
     "points": [
-     "Assume √3 is rational, so √3 = p/q where p, q are integers with no common factors (in lowest terms).",
-     "Then 3 = p²/q², so p² = 3q².",
-     "Hence p² is divisible by 3, so p is divisible by 3. Write p = 3k.",
-     "Then 9k² = 3q², so q² = 3k², meaning q is also divisible by 3.",
-     "This contradicts p and q having no common factors. Hence √3 is irrational. ∎"
-    ],
-    "guidance": "M1 for assuming rational form p/q in lowest terms. M1 for p² = 3q² and deducing 3|p. M1 for writing p = 3k and deducing 3|q. R1 for identifying contradiction."
+     "B1 A: −5"
+    ]
    },
-   "2(a)": {
-    "type": "exact",
-    "points": [
-     "a · b = (2)(1) + (−1)(4) + (3)(−2) = 2 − 4 − 6 = −8"
-    ],
-    "answer": "−8",
-    "guidance": "M1 for correct dot product formula. A1 for −8."
-   },
-   "2(b)": {
-    "type": "exact",
-    "points": [
-     "a × b = |i  j  k; 2 −1 3; 1 4 −2|",
-     "= i((−1)(−2) − (3)(4)) − j((2)(−2) − (3)(1)) + k((2)(4) − (−1)(1))",
-     "= i(2 − 12) − j(−4 − 3) + k(8 + 1)",
-     "= −10i + 7j + 9k",
-     "|a × b| = √(100 + 49 + 81) = √230"
-    ],
-    "answer": "√230",
-    "guidance": "M1 for setting up determinant. A1 for each component (i, j, k). M1 for magnitude calculation. A1 for √230."
-   },
-   "3(a)": {
-    "type": "exact",
-    "points": [
-     "Use product rule: u = x³, v = e^(−2x), so u′ = 3x², v′ = −2e^(−2x).",
-     "dy/dx = 3x² e^(−2x) + x³(−2e^(−2x)) = e^(−2x)(3x² − 2x³) = x²e^(−2x)(3 − 2x)"
-    ],
-    "answer": "dy/dx = x²e^(−2x)(3 − 2x)",
-    "guidance": "M1 for product rule. A1 for correct differentiation of each factor. A1 for factorised form."
-   },
-   "3(b)": {
-    "type": "exact",
-    "points": [
-     "dy/dx = 0: x²e^(−2x)(3 − 2x) = 0",
-     "Since e^(−2x) > 0 always, we need x² = 0 or 3 − 2x = 0.",
-     "x = 0 or x = 3/2"
-    ],
-    "answer": "x = 0 and x = 3/2",
-    "guidance": "M1 for setting dy/dx = 0. A1 for x = 0. A1 for x = 3/2."
-   },
-   "3(c)": {
+   "2": {
     "type": "points",
     "points": [
-     "Find d²y/dx² or use sign analysis of dy/dx.",
-     "For x slightly less than 0: dy/dx = (small positive)(positive) > 0. For x slightly more than 0: dy/dx = (small positive)(positive) > 0. The sign does not change at x = 0, so x = 0 is a point of inflection.",
-     "For x < 3/2: (3 − 2x) > 0, so dy/dx > 0. For x > 3/2: (3 − 2x) < 0, so dy/dx < 0. Sign changes from + to − at x = 3/2, so x = 3/2 is a local maximum.",
-     "y(3/2) = (3/2)³ e^(−3) = (27/8)e^(−3)"
-    ],
-    "guidance": "M1 for sign-change analysis (or second derivative test). A1 for x = 0 is point of inflection with valid reason. A1 A1 for x = 3/2 is maximum with valid reason."
+     "B1 A: f⁻¹(x) = ln(x − 1)"
+    ]
    },
-   "4(a)": {
-    "type": "exact",
+   "3": {
+    "type": "points",
     "points": [
-     "Differentiate implicitly with respect to x:",
-     "2x + 3y + 3x(dy/dx) + 2y(dy/dx) = 0",
-     "dy/dx(3x + 2y) = −2x − 3y",
-     "dy/dx = −(2x + 3y)/(3x + 2y)"
-    ],
-    "answer": "dy/dx = −(2x + 3y)/(3x + 2y)",
-    "guidance": "M1 for differentiating x² and y² terms. M1 for correct product rule on 3xy. A1 for collecting dy/dx terms. A1 for correct final expression."
+     "B1 B: 4"
+    ]
    },
-   "4(b)": {
-    "type": "exact",
+   "4": {
+    "type": "points",
     "points": [
-     "At (1, 2): dy/dx = −(2 + 6)/(3 + 4) = −8/7",
-     "Tangent: y − 2 = −(8/7)(x − 1)",
-     "7y − 14 = −8x + 8",
-     "8x + 7y = 22"
-    ],
-    "answer": "8x + 7y = 22",
-    "guidance": "M1 for substituting (1, 2) into dy/dx. A1 for gradient −8/7. A1 for correct equation of tangent."
+     "B1 D: the bottom-right graph"
+    ]
    },
    "5": {
-    "type": "exact",
-    "points": [
-     "x = 3 sin θ, dx = 3 cos θ dθ. √(9 − x²) = √(9 − 9sin²θ) = 3 cos θ.",
-     "Limits: x = 0 ⇒ θ = 0; x = 3/2 ⇒ sin θ = 1/2 ⇒ θ = π/6.",
-     "∫₀^(π/6) 3 cos θ · 3 cos θ dθ = 9∫₀^(π/6) cos²θ dθ",
-     "= 9∫₀^(π/6) (1 + cos 2θ)/2 dθ = (9/2)[θ + sin 2θ/2]₀^(π/6)",
-     "= (9/2)[π/6 + sin(π/3)/2] = (9/2)[π/6 + (√3/2)/2] = (9/2)[π/6 + √3/4]",
-     "= 3π/4 + 9√3/8"
-    ],
-    "answer": "3π/4 + 9√3/8",
-    "guidance": "M1 for substitution x = 3 sin θ and changing dx. M1 for correct limits. M1 for using cos²θ = (1 + cos 2θ)/2. A1 for correct integration. A1 for correct limits substitution. A1 A1 for exact answer 3π/4 + 9√3/8."
-   },
-   "6(a)": {
-    "type": "exact",
-    "points": [
-     "(5x + 1)/((2x − 1)(x + 2)) ≡ A/(2x − 1) + B/(x + 2)",
-     "5x + 1 = A(x + 2) + B(2x − 1)",
-     "x = 1/2: 5/2 + 1 = A(5/2) ⇒ 7/2 = 5A/2 ⇒ A = 7/5... let x = −2: −10 + 1 = B(−5) ⇒ B = 9/5",
-     "Recheck x = 1/2: 7/2 = A(5/2) ⇒ A = 7/5.",
-     "Answer: 7/(5(2x − 1)) + 9/(5(x + 2))"
-    ],
-    "answer": "7/(5(2x − 1)) + 9/(5(x + 2))",
-    "guidance": "M1 for correct partial fraction form. M1 for substituting roots. A1 for A = 7/5. A1 for B = 9/5."
-   },
-   "6(b)": {
-    "type": "exact",
-    "points": [
-     "∫ [7/(5(2x − 1)) + 9/(5(x + 2))] dx",
-     "= (7/10) ln|2x − 1| + (9/5) ln|x + 2| + c"
-    ],
-    "answer": "(7/10) ln|2x − 1| + (9/5) ln|x + 2| + c",
-    "guidance": "M1 for integrating each partial fraction. A1 for (7/10) ln|2x − 1|. A1 for (9/5) ln|x + 2| + c."
-   },
-   "7(a)": {
     "type": "points",
     "points": [
-     "1/(y(1 − y)) = A/y + B/(1 − y)",
-     "1 = A(1 − y) + By.",
-     "y = 0: A = 1. y = 1: B = 1.",
-     "∫ [1/y + 1/(1 − y)] dy = ln|y| − ln|1 − y| + c = ln|y/(1 − y)| + c (AG)"
+     "M1 Gets sin x = ±1 (or cos x = 0)",
+     "A1 One of 90° or 270°",
+     "A1 90° and 270° only"
     ],
-    "guidance": "M1 for partial fractions with A = B = 1. M1 for integrating both terms. A1 for combining into ln|y/(1 − y)| + c."
+    "guidance": "Method mark allowed for radians or values outside the range."
    },
-   "7(b)": {
-    "type": "exact",
+   "6": {
+    "type": "points",
     "points": [
-     "Separate variables: ∫ 1/(y(1 − y)) dy = ∫ 2 dx",
-     "ln|y/(1 − y)| = 2x + C",
-     "At x = 0, y = 0.1: ln(0.1/0.9) = C ⇒ C = ln(1/9)",
-     "ln|y/(1 − y)| = 2x + ln(1/9)",
-     "y/(1 − y) = (1/9)e^(2x)",
-     "y = (1/9)e^(2x)(1 − y) ⇒ y(1 + (1/9)e^(2x)) = (1/9)e^(2x)",
-     "y = e^(2x)/(9 + e^(2x))"
+     "M1 Chain rule giving 7(x³ + 5x)⁶ × (polynomial) or (polynomial) × (3x² + 5)",
+     "A1 dy/dx = 7(3x² + 5)(x³ + 5x)⁶"
+    ]
+   },
+   "7": {
+    "type": "points",
+    "points": [
+     "B1 Writes √(8n) as 2√(2n)",
+     "M1 Multiplies top and bottom by (1 − √(2n)) or equivalent conjugate",
+     "A1 Correct single fraction over 1 − 2n or 2n − 1",
+     "R1 Completes the argument to the given form (AG)"
+    ]
+   },
+   "16": {
+    "type": "points",
+    "points": [
+     "M1 Uses symmetry (doubles the area for 0 to 2, or covers −2 to 2)",
+     "B1 Strip width h = 0.4",
+     "M1 Correct trapezium bracket, e.g. 3 + 0 + 2(2.943 + 2.752 + 2.353 + 1.572)",
+     "A1 Cross-section area ±8.896 (or half-area 4.448)",
+     "A1 Volume awrt 1300 cm³ (or 0.0013 m³), units needed"
     ],
-    "answer": "y = e^(2x)/(9 + e^(2x))",
-    "guidance": "M1 for separating variables. M1 for integrating both sides. A1 for finding C using initial conditions. M1 for rearranging. A1 for correct explicit form."
+    "guidance": "Length is 150 cm, giving about 1334 cm³."
+   },
+   "19": {
+    "type": "points",
+    "points": [
+     "M1 Implicit differentiation giving a term Ay² dy/dx or 2 dy/dx",
+     "M1 Product rule on y³e^(2x)",
+     "A1 3y²e^(2x) dy/dx + 2y³e^(2x) + 2 dy/dx − 16 = 0",
+     "M1 Substitutes dy/dx = 0 and x = 0 to find y",
+     "A1 y = 2",
+     "M1 Substitutes x = 0 and their y into the curve to find k",
+     "R1 k = 12"
+    ]
    },
    "8(a)": {
     "type": "points",
     "points": [
-     "Let f(x) = x³ + 4x − 6.",
-     "f(1) = 1 + 4 − 6 = −1 < 0.",
-     "f(2) = 8 + 8 − 6 = 10 > 0.",
-     "Since f is continuous and f(1) < 0 < f(2), by the intermediate value theorem there is a root between 1 and 2."
-    ],
-    "guidance": "M1 for evaluating f(1) and f(2) with correct values. A1 for sign-change conclusion citing continuity."
+     "B1 Constant term 32",
+     "M1 A correct x or x² term structure, e.g. 5·2⁴·kx or 10·2³(kx)²",
+     "A1 32 + 80kx + 80k²x²"
+    ]
    },
    "8(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "f(x) = x³ + 4x − 6, f′(x) = 3x² + 4.",
-     "x₁ = x₀ − f(x₀)/f′(x₀) = 1.2 − f(1.2)/f′(1.2).",
-     "f(1.2) = 1.728 + 4.8 − 6 = 0.528.",
-     "f′(1.2) = 3(1.44) + 4 = 4.32 + 4 = 8.32.",
-     "x₁ = 1.2 − 0.528/8.32 = 1.2 − 0.063 = 1.137"
-    ],
-    "answer": "x₁ ≈ 1.137",
-    "guidance": "M1 for correct Newton-Raphson formula with f and f′. A1 for f(1.2) and f′(1.2). A1 for x₁ = 1.137 (3 d.p.)."
+     "M1 Forms 80k = 4 × 80k²",
+     "A1F k = ¼ only (k = 0 rejected)"
+    ]
    },
    "9(a)": {
     "type": "points",
     "points": [
-     "Forces: Weight W = 3g = 29.4 N acting vertically downward at centre of mass.",
-     "Normal reaction N perpendicular to the inclined surface.",
-     "Friction F acting up the slope (opposing tendency to slide down)."
-    ],
-    "guidance": "B1 for correct diagram with all three forces correctly labelled and directed."
+     "M1 Uses at least one small-angle approximation correctly",
+     "A1 Correct expression in θ, e.g. 1 − (4θ)²/2 + 2(3θ) − 2θ",
+     "R1 Reaches 1 + 4θ − 8θ²"
+    ]
    },
    "9(b)": {
     "type": "points",
     "points": [
-     "Resolve perpendicular to plane: N = 3g cos 30° = 3g(√3/2).",
-     "Resolve along the plane (on point of sliding down, friction acts up): F = 3g sin 30° = 3g(1/2).",
-     "On the point of sliding: F = μN.",
-     "μ = F/N = (3g/2)/(3g√3/2) = (3g/2) × (2/(3g√3)) = 1/√3. ∎"
-    ],
-    "guidance": "M1 for resolving perpendicular and along plane. A1 for N and F. M1 for F = μN. A1 for μ = 1/√3."
+     "M1 Substitutes θ = 0.07 into their expression",
+     "A1 1.241 (awrt)"
+    ]
    },
    "10(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Vertical component of velocity: uy = 20 sin 40° ≈ 12.856 m s⁻¹.",
-     "At maximum height, vy = 0: vy² = uy² − 2g·H.",
-     "0 = (20 sin 40°)² − 2(9.8)H.",
-     "H = (20 sin 40°)²/(2 × 9.8) = 165.32/19.6 ≈ 8.43 m"
-    ],
-    "answer": "H ≈ 8.43 m",
-    "guidance": "M1 for resolving vertically. M1 for using vy² = uy² − 2gH with vy = 0. A1 for H ≈ 8.43 m."
+     "M1 Uses Sₙ = n/2(a + l) with n = 300, a = −7, l = 32 (or with d = 39/299)",
+     "A1 3750"
+    ]
    },
    "10(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Time of flight: total time T = 2uy/g = 2(20 sin 40°)/9.8 = 2(12.856)/9.8 ≈ 2.624 s.",
-     "Horizontal component: ux = 20 cos 40° ≈ 15.321 m s⁻¹.",
-     "Range = ux × T = 15.321 × 2.624 ≈ 40.2 m"
-    ],
-    "answer": "Range ≈ 40.2 m",
-    "guidance": "M1 for finding time of flight using vertical motion. M1 for horizontal component. A1 M1 A1 for correct range calculation."
-   },
-   "10(c)": {
-    "type": "exact",
-    "points": [
-     "At t = 2: vx = 20 cos 40° ≈ 15.321 m s⁻¹ (constant).",
-     "vy = 20 sin 40° − 9.8(2) = 12.856 − 19.6 = −6.744 m s⁻¹.",
-     "Speed = √(vx² + vy²) = √(15.321² + 6.744²) = √(234.73 + 45.48) = √280.21 ≈ 16.7 m s⁻¹"
-    ],
-    "answer": "≈ 16.7 m s⁻¹",
-    "guidance": "M1 for horizontal component. M1 for vertical component using v = u − gt. M1 for speed using Pythagoras. A1 for ≈ 16.7 m s⁻¹."
+     "M1 Equation from S₉ = 1260, e.g. a + 4d = 140 or a + l = 280",
+     "M1 Equation linking top and bottom prizes, e.g. l = 6a",
+     "M1 Solves an equation in one variable",
+     "A1 £240 (units needed)"
+    ]
    },
    "11(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "a = dv/dt = 6t − 12.",
-     "At t = 3: a = 18 − 12 = 6 m s⁻²"
-    ],
-    "answer": "6 m s⁻²",
-    "guidance": "M1 for differentiating v. A1 for a = 6 m s⁻² at t = 3."
+     "M1 Cubic with exactly two turning points",
+     "A1 Positive cubic through O and cutting the positive x-axis twice",
+     "R1 Fully correct, intercepts labelled a and 6"
+    ]
    },
    "11(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "v = 0: 3t² − 12t + 9 = 0 ⇒ t² − 4t + 3 = 0 ⇒ (t − 1)(t − 3) = 0.",
-     "t = 1 s and t = 3 s"
+     "M1 Cubic of correct orientation through O and the negative x-axis twice (or correct transformation described)",
+     "R1 Fully correct, intercepts at −a/2 and −3"
     ],
-    "answer": "t = 1 s and t = 3 s",
-    "guidance": "M1 for setting v = 0. A1 for t = 1. A1 for t = 3."
-   },
-   "11(c)": {
-    "type": "exact",
-    "points": [
-     "v > 0 for 0 ≤ t < 1, v < 0 for 1 < t < 3.",
-     "Distance from t = 0 to t = 1: ∫₀¹ (3t² − 12t + 9) dt = [t³ − 6t² + 9t]₀¹ = 1 − 6 + 9 = 4 m.",
-     "Distance from t = 1 to t = 3: |∫₁³ (3t² − 12t + 9) dt| = |[t³ − 6t² + 9t]₁³|",
-     "= |(27 − 54 + 27) − (1 − 6 + 9)| = |0 − 4| = 4 m.",
-     "Total distance = 4 + 4 = 8 m"
-    ],
-    "answer": "8 m",
-    "guidance": "M1 for identifying intervals. M1 for integrating v. A1 for each section distance (4 m, 4 m). A1 for total = 8 m."
+    "guidance": "The transformation is a reflection in the y-axis with a stretch of factor ½ in the x-direction."
    },
    "12(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "For the system, applying Newton's second law:",
-     "5g − T = 5a (for mass A going down)",
-     "T − 3g = 3a (for mass B going up)",
-     "Adding: 2g = 8a ⇒ a = g/4 = 9.8/4 = 2.45 m s⁻²"
-    ],
-    "answer": "a = 2.45 m s⁻²",
-    "guidance": "M1 for equations of motion for each particle. M1 for adding equations. A1 for a = g/4. A1 for a = 2.45 m s⁻²."
+     "M1 Substitutes u₁ = 3 to get u₂ = −2",
+     "A1 u₂ = −2, u₃ = 3, u₄ = −2"
+    ]
    },
    "12(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "T = 3g + 3a = 3(9.8) + 3(2.45) = 29.4 + 7.35 = 36.75 N"
-    ],
-    "answer": "T = 36.75 N",
-    "guidance": "M1 for substituting a into one equation. A1 for T = 36.75 N."
+     "B1 Period 2"
+    ]
    },
    "12(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Force on pulley = 2T = 2 × 36.75 = 73.5 N (directed downward toward the string)"
-    ],
-    "answer": "73.5 N",
-    "guidance": "M1 for recognising force = 2T. A1 for 73.5 N."
+     "M1 Pairs of terms sum to 1, or sums 51 threes and 50 negative twos",
+     "R1 53"
+    ]
    },
    "13(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Let reactions at A and at the support 0.5 m from B be R_A and R_B respectively. Distance from A to the second support = 2 − 0.5 = 1.5 m.",
-     "Moments about A: R_B × 1.5 = 4g × 1 ⇒ R_B = 4g/1.5 = 8g/3 ≈ 26.1 N.",
-     "Resolve vertically: R_A + R_B = 4g ⇒ R_A = 4g − 8g/3 = 4g/3 ≈ 13.1 N"
-    ],
-    "answer": "R_A = 4g/3 ≈ 13.1 N, R_B = 8g/3 ≈ 26.1 N",
-    "guidance": "M1 for moments equation. A1 for R_B. M1 for vertical resolution. A1 for R_A. A1 for both values (allow g = 9.8)."
+     "M1 Substitutes x = −½ and gets 0 (with correct brackets)",
+     "R1 Concludes (2x + 1) is a factor"
+    ]
    },
    "13(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "About to tilt means R_A = 0 and the rod is on the verge of rotating about the support 0.5 m from B.",
-     "Taking moments about the support 0.5 m from B:",
-     "mg × 0.5 = 4g × (1.5 − 1) = 4g × 0.5",
-     "0.5m = 2 ⇒ m = 4 kg"
-    ],
-    "answer": "m = 4 kg",
-    "guidance": "M1 for moments about the right support with R_A = 0. M1 for setting up equation. A1 for m = 4 kg."
+     "M1 Two of 2, 3, 4 correct",
+     "A1 (2x + 1)(2x² + 3x + 4)"
+    ]
+   },
+   "13(c)": {
+    "type": "points",
+    "points": [
+     "M1 Argues one factor (2n + 1 or the quadratic) is not 1, or not equal to the whole cubic",
+     "R1F Both factors are integers not equal to 1, so the expression is never prime"
+    ]
    },
    "14(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "v = dr/dt = (2t)i + (3 − 3t²)j.",
-     "At t = 1: v = 2i + (3 − 3)j = 2i + 0j = 2i"
+     "M1 Rearranges to = 0 and evaluates at a point in [0, 4], e.g. f(x) = x³ − e^(6 − 2x)",
+     "R1 f(0) ≈ −403 < 0 and f(4) ≈ 63.9 > 0; sign change so α lies between 0 and 4"
     ],
-    "answer": "v = 2i (m s⁻¹)",
-    "guidance": "M1 for differentiating position vector. A1 for v = 2ti + (3 − 3t²)j. A1 for v = 2i at t = 1."
+    "guidance": "Values must be correct to 2 s.f.; exact value at x = 0 accepted."
    },
    "14(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Parallel to i means j component of velocity = 0.",
-     "3 − 3t² = 0 ⇒ t² = 1 ⇒ t = 1 (taking t > 0)"
-    ],
-    "answer": "t = 1 s",
-    "guidance": "M1 for setting j component of v to zero. A1 for t = 1."
+     "M1 Takes natural logs: ln x³ = 6 − 2x",
+     "M1 Uses log law: 3 ln x = 6 − 2x",
+     "R1 Rearranges to x = 3 − (3/2) ln x (AG)"
+    ]
    },
-   "14(c)": {
-    "type": "exact",
+   "14(c)(i)": {
+    "type": "points",
     "points": [
-     "a = dv/dt = 2i − 6tj.",
-     "At t = 2: a = 2i − 12j (m s⁻²)"
-    ],
-    "answer": "a = 2i − 12j (m s⁻²)",
-    "guidance": "M1 for differentiating velocity. A1 for a = 2i − 12j at t = 2."
+     "M1 Any one correct value to 3 d.p.",
+     "A1 x₂ = 0.921, x₃ = 3.124, x₄ = 1.291"
+    ]
+   },
+   "14(c)(ii)": {
+    "type": "points",
+    "points": [
+     "M1 Correct cobweb diagram",
+     "A1 x₂, x₃, x₄ shown on the x-axis (awrt 0.92, 3.12, 1.29 accepted)"
+    ]
+   },
+   "14(c)(iii)": {
+    "type": "points",
+    "points": [
+     "E1 ln 0 is undefined, so x₂ cannot be found"
+    ]
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "B1 Uses sin 2θ = 2 sin θ cos θ or a cos 2θ identity",
+     "M1 Substitutes these identities (sign slips condoned)",
+     "M1 Simplifies B sin θ cosec θ to B, or D cos²θ sec θ to D cos θ",
+     "R1 Reaches 4 cos θ − sec θ"
+    ]
+   },
+   "15(b)(i)": {
+    "type": "points",
+    "points": [
+     "E1 cos θ = 1 gives sin θ = 0, so cosec θ is undefined"
+    ]
+   },
+   "15(b)(ii)": {
+    "type": "points",
+    "points": [
+     "B1 θ = 104.5°, 255.5°"
+    ]
+   },
+   "17(a)": {
+    "type": "points",
+    "points": [
+     "M1 f(x) ≥ 1",
+     "A1 In set notation, e.g. {y : y ≥ 1} or [1, ∞)"
+    ]
+   },
+   "17(b)": {
+    "type": "points",
+    "points": [
+     "B1 {x : x > 0} or (0, ∞)"
+    ]
+   },
+   "17(c)(i)": {
+    "type": "points",
+    "points": [
+     "B1 h(x) = ln(|x| + 1)"
+    ]
+   },
+   "17(c)(ii)": {
+    "type": "points",
+    "points": [
+     "E1 h has no inverse because it is not one-to-one",
+     "E1 Justifies, e.g. h(1) = h(−1) = ln 2"
+    ]
+   },
+   "18(a)": {
+    "type": "points",
+    "points": [
+     "B1 Chooses u = 2x + 1",
+     "M1 Replaces dx using du/dx = 2",
+     "M1 Complete substitution giving an integrand of the form A(2u − k)u^(1/2)",
+     "M1 Correct lower limit",
+     "R1 Completes the argument with a = 1"
+    ]
+   },
+   "18(b)": {
+    "type": "points",
+    "points": [
+     "M1 Integrates a term correctly, e.g. 4u^(5/2)/5 or 2u^(3/2)/3",
+     "A1 ½[4u^(5/2)/5 − 2u^(3/2)/3] correct",
+     "M1 Substitutes limits 9 and 1 explicitly",
+     "R1 Shows 1322/15 with no slips"
+    ]
+   },
+   "18(c)": {
+    "type": "points",
+    "points": [
+     "E1 More rectangles increase the total, so it exceeds A",
+     "E1 The rectangles are always under the curve, so the total stays below the exact area 1322/15"
+    ]
+   },
+   "20(a)": {
+    "type": "points",
+    "points": [
+     "M1 Models dh/dt = ±k(h − 5)",
+     "M1 Substitutes h = 130 and dh/dt = −1.5",
+     "R1 Gets k = 0.012 and the given equation with no sign slips"
+    ]
+   },
+   "20(b)": {
+    "type": "points",
+    "points": [
+     "M1 Separates variables: ∫A/(h − 5) dh = ∫B dt",
+     "M1 Integrates one side correctly",
+     "A1 ln(h − 5) = −0.012t + c",
+     "M1 Uses t = 0, h = 130 to find the constant",
+     "A1 h = 5 + 125e^(−0.012t)"
+    ]
+   },
+   "20(c)": {
+    "type": "points",
+    "points": [
+     "M1 Substitutes h = 65 and gets a positive t",
+     "A1 61 minutes (62 accepted), with units"
+    ]
    }
   }
  },
- "math-aqa-7357-2023-p1": {
+ "math-aqa-7357-2024-p2": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
+    "scenario": "Four equations, one of which is a circle.",
     "parts": [
      {
       "code": "1",
-      "prompt": "Find the coefficient of x⁷ in the expansion of (2x − 3)⁷\n\nCircle your answer.\n\n−2187     −128     2     128",
+      "prompt": "Identify the equation of a circle.\nOptions: (x + 1)² − (y + 2)² = −36   (x + 1)² − (y + 2)² = 36   (x + 1)² + (y + 2)² = −36   (x + 1)² + (y + 2)² = 36",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "y = f(x) crosses the x-axis at (−3, 0), (0, 0) and (2, 0). Region A (above the axis, from −3 to 0) has area 189; region B (below the axis, from 0 to 2) has area 64 (diagram on the question paper).",
     "parts": [
      {
       "code": "2",
-      "prompt": "Given that y = 2x³ find dy/dx\n\nCircle your answer.\n\ndy/dx = 5x²     dy/dx = 6x²     dy/dx = x⁴/2     dy/dx = 6x³",
+      "prompt": "Find ∫₋₃² f(x) dx.\nOptions: −253   −125   125   253",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "The inequality (1 − x)(x − 4) < 0.",
     "parts": [
      {
       "code": "3",
-      "prompt": "The curve with equation y = ln x is transformed by a stretch parallel to the x-axis with scale factor 2\n\nFind the equation of the transformed curve.\n\nCircle your answer.\n\ny = ½ ln x     y = 2 ln x     y = ln(x/2)     y = ln 2x",
+      "prompt": "Solve the inequality.\nOptions: {x : x < 1} ∪ {x : x > 4}   {x : x < 1} ∩ {x : x > 4}   {x : x < 1} ∪ {x : x ≥ 4}   {x : x < 1} ∩ {x : x ≥ 4}",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
+    "scenario": "5^(x − 2) = 7^1570",
     "parts": [
      {
       "code": "4",
-      "prompt": "Given that θ is a small angle, find an approximation for cos 2θ\n\nCircle your answer.\n\n1 − θ²/2     2 − 2θ²     1 − 2θ²     1 − θ²",
-      "marks": 1
+      "prompt": "Solve using logarithms, giving x to 2 decimal places.",
+      "marks": 3
      }
     ]
    },
    {
     "number": 5,
-    "scenario": "The graph of y = 5/(eˣ − 1) is shown (a decreasing curve, with the shaded region bounded by the curve, the x-axis and the lines x = 1 and x = 4). The trapezium rule with 6 ordinates (5 strips) is to be used to find an approximation for the shaded area. The values required are given in the table:\nx: 1, 1.6, 2.2, 2.8, 3.4, 4\ny: 2.90988, 1.26485, 0.62305, 0.32374, 0.17263, 0.09329",
+    "scenario": "y = x³/sin x",
     "parts": [
      {
-      "code": "5(a)",
-      "prompt": "Use the trapezium rule with 6 ordinates (5 strips) to find an approximate value for the shaded area.\n\nGive your answer to four decimal places.",
+      "code": "5",
+      "prompt": "Find dy/dx.",
       "marks": 3
-     },
-     {
-      "code": "5(b)",
-      "prompt": "Using your answer to part (a) deduce an estimate for ∫₁⁴ 20/(eˣ − 1) dx",
-      "marks": 1
      }
     ]
    },
    {
     "number": 6,
+    "scenario": "(2 sin θ + 3 cos θ)² + (6 sin θ − cos θ)² = 30, with θ obtuse.",
     "parts": [
      {
       "code": "6",
-      "prompt": "Show that the equation\n\n2 log₁₀ x = log₁₀ 4 + log₁₀ (x + 8)\n\nhas exactly one solution.\n\nFully justify your answer.",
-      "marks": 5
+      "prompt": "Find the exact value of sin θ, fully justifying your answer.",
+      "marks": 6
      }
     ]
    },
    {
     "number": 7,
+    "scenario": "Kate pays £50 into savings on the first day of each month; 0.2% interest is added to the whole balance on the last day of each month. Tₙ is the balance after n months: T₁ = 50 × 1.002 = 50.10, T₂ = (T₁ + 50) × 1.002 = 50 × 1.002² + 50 × 1.002 ≈ 100.30.",
     "parts": [
      {
       "code": "7(a)",
-      "prompt": "Given that n is a positive integer, express\n\n7/(3 + 5√n) − 7/(5√n − 3)\n\nas a single fraction not involving surds.",
+      "prompt": "Show that T₃ = 50 × 1.002³ + 50 × 1.002² + 50 × 1.002.",
+      "marks": 1
+     },
+     {
+      "code": "7(b)(i)",
+      "prompt": "Find the amount Kate expects to have after 10 years.",
       "marks": 3
      },
      {
-      "code": "7(b)",
-      "prompt": "Hence, deduce that\n\n7/(3 + 5√n) − 7/(5√n − 3)\n\nis a rational number for all positive integer values of n",
+      "code": "7(b)(ii)",
+      "prompt": "Explain why her actual balance after 10 years may differ from this.",
       "marks": 1
      }
     ]
    },
    {
     "number": 8,
+    "scenario": "Median mass y kg of infant monkeys (up to 2 years) modelled by y = a + b log₁₀ x, with x the age in months. Data: x = 3, y = 6.4; x = 24, y = 12. The 3-month data give 6.4 = a + b log₁₀ 3.",
+    "parts": [
+     {
+      "code": "8(a)(i)",
+      "prompt": "Write a second equation using the 24-month data.",
+      "marks": 1
+     },
+     {
+      "code": "8(a)(ii)",
+      "prompt": "Show that b = 5.6/log₁₀ 8.",
+      "marks": 3
+     },
+     {
+      "code": "8(a)(iii)",
+      "prompt": "Find a to 2 decimal places.",
+      "marks": 1
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Using a suitable x, decide whether the model can predict the median mass of monkeys under one week old.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "Binomial expansions and partial fractions.",
+    "parts": [
+     {
+      "code": "9(a)(i)",
+      "prompt": "Expand (1 + 3x)⁻¹ up to the x² term.",
+      "marks": 2
+     },
+     {
+      "code": "9(a)(ii)",
+      "prompt": "Show the first three terms of the expansion of 1/(2 − 3x) form a geometric sequence, and state the common ratio.",
+      "marks": 5
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Given 36x/((1 + 3x)(2 − 3x)) ≡ P/(2 − 3x) + Q/(1 + 3x) with integers P and Q, find P and Q.",
+      "marks": 3
+     },
+     {
+      "code": "9(c)(i)",
+      "prompt": "Using (a) and (b), expand 12x/((1 + 3x)(2 − 3x)) up to the x² term.",
+      "marks": 2
+     },
+     {
+      "code": "9(c)(ii)",
+      "prompt": "Find the range of x for which this expansion is valid.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "f(x) = x² + 2 cos x for −π ≤ x ≤ π.",
+    "parts": [
+     {
+      "code": "10",
+      "prompt": "Determine, with full justification, whether y = f(x) has a point of inflection at x = 0.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "The interval 3 < k < 4. A teacher's proof that it has no smallest value: assume x is the smallest value; let y = (3 + x)/2; then 3 < y < x, a contradiction; so there is no smallest value.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "A student says 3 is the smallest value of k in 3 < k < 4. Explain the error.",
+      "marks": 1
+     },
+     {
+      "code": "11(b)(i)",
+      "prompt": "Explain the contradiction in the teacher's Step 3.",
+      "marks": 1
+     },
+     {
+      "code": "11(b)(ii)",
+      "prompt": "Prove that there is no largest value of k in 3 < k < 4.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A 2 kg particle moves in a straight line under a 10 N forward driving force and a 4 N resistance.",
+    "parts": [
+     {
+      "code": "12",
+      "prompt": "Find the acceleration.\nOptions: 2 m s⁻²   3 m s⁻²   5 m s⁻²   12 m s⁻²",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A car starts from rest; its velocity–time graph is a straight line rising from the origin, then a horizontal line (constant velocity) with a sharp corner between them (diagram on the question paper).",
+    "parts": [
+     {
+      "code": "13",
+      "prompt": "Which assumption does the graph imply?\nOptions: The car never accelerates   The acceleration is always positive   The acceleration can change instantaneously   The acceleration is never constant",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "Displacement r = 6t − 2t² metres at time t seconds.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find r when t = 4.",
+      "marks": 1
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find the values of t for which r is positive.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A 3 kg particle is acted on by F₁ = (a, 23) N and F₂ = (4, b) N (column vectors), and has acceleration (4b, a) m s⁻².",
+    "parts": [
+     {
+      "code": "15",
+      "prompt": "Find a and b.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "Use g = 9.8 m s⁻². Two apples hang at rest from branches, d cm apart vertically, and start falling freely at the same moment. The first lands after 0.5 s, the second 0.1 s later.",
+    "parts": [
+     {
+      "code": "16",
+      "prompt": "Show that d ≈ 54.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "A uniform rod of length 2L m and mass m kg rests horizontally on supports A and B. A is x m from one end; B is (x + 0.1) m from the other end (diagram on the question paper). The reaction at B is twice the reaction at A.",
+    "parts": [
+     {
+      "code": "17",
+      "prompt": "Show that L − x = k, finding the constant k.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "A particle moves in a line through O with displacement r = p + 2t − qe^(−0.2t) metres at time t s (p, q constants). At t = 3 the acceleration is −1.8 m s⁻².",
+    "parts": [
+     {
+      "code": "18(a)",
+      "prompt": "Show that q ≈ 82.",
+      "marks": 5
+     },
+     {
+      "code": "18(b)",
+      "prompt": "The initial displacement is 5 m. Find p to 2 significant figures.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 19,
+    "scenario": "Use g = 9.8 m s⁻². A toy fires balls upwards at 7 m s⁻¹; it is advertised as reaching a maximum height of 2.5 m.",
+    "parts": [
+     {
+      "code": "19(a)(i)",
+      "prompt": "Assuming the balls go vertically upwards, verify the claim.",
+      "marks": 2
+     },
+     {
+      "code": "19(a)(ii)",
+      "prompt": "State two modelling assumptions you used.",
+      "marks": 2
+     },
+     {
+      "code": "19(b)",
+      "prompt": "Actually the balls leave at 0° to 11° from the vertical, so the maximum heights satisfy k < h ≤ 2.5. Find k.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 20,
+    "scenario": "On a smooth horizontal surface, P moves with constant velocity (3i + 4j) m s⁻¹. Q moves from (5i − 7j) m to (14i + 5j) m in 3 seconds.",
+    "parts": [
+     {
+      "code": "20(a)",
+      "prompt": "Show that P and Q move along parallel lines.",
+      "marks": 3
+     },
+     {
+      "code": "20(b)",
+      "prompt": "Stevie says Q also has constant velocity (3i + 4j) m s⁻¹. Explain why this may be wrong.",
+      "marks": 1
+     },
+     {
+      "code": "20(c)",
+      "prompt": "R moves in a straight line at a constant 4 m s⁻¹; the paths of P and R cross at X. P passes X 2 s after R does, and 3 s after R passes X they are 13 m apart. Show P and R move along perpendicular lines.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 21,
+    "scenario": "Box M (50 kg) is on a rough slope at 60° to the horizontal; a rope over a smooth pulley at the top joins it to box N (80 kg) hanging vertically (diagram on the question paper). Released from rest, M moves up the slope and N falls with acceleration a m s⁻²; tension T N.",
+    "parts": [
+     {
+      "code": "21(a)",
+      "prompt": "Explain why N's equation of motion is 80g − T = 80a.",
+      "marks": 1
+     },
+     {
+      "code": "21(b)",
+      "prompt": "Show the normal reaction on M is 25g N.",
+      "marks": 1
+     },
+     {
+      "code": "21(c)",
+      "prompt": "Given 0 ≤ μ ≤ 1, show that a ≥ (11 − 5√3)g/26.",
+      "marks": 6
+     },
+     {
+      "code": "21(d)",
+      "prompt": "State one modelling assumption used throughout.",
+      "marks": 1
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "points",
+    "points": [
+     "B1 D: (x + 1)² + (y + 2)² = 36"
+    ]
+   },
+   "2": {
+    "type": "points",
+    "points": [
+     "B1 C: 125"
+    ]
+   },
+   "3": {
+    "type": "points",
+    "points": [
+     "B1 A: {x : x < 1} ∪ {x : x > 4}"
+    ]
+   },
+   "4": {
+    "type": "points",
+    "points": [
+     "B1 Takes logs to the same base on both sides, e.g. x − 2 = log₅ 7^1570",
+     "M1 Uses log Aⁿ = n log A",
+     "R1 x = 2 + 1570 log₅ 7 = 1900.23 (awrt 1900)"
+    ]
+   },
+   "5": {
+    "type": "points",
+    "points": [
+     "B1 Derivatives 3x² and cos x",
+     "M1 Quotient rule giving a numerator Ax² sin x ± Bx³ cos x (or product rule with cosec x)",
+     "A1 (3x² sin x − x³ cos x)/sin²x"
+    ]
+   },
+   "6": {
+    "type": "points",
+    "points": [
+     "M1 Expands the brackets, at least one fully correct",
+     "A1 Both expansions correct",
+     "M1 Uses sin²θ + cos²θ = 1 to eliminate one of them, e.g. 30 sin²θ + 10 = 30",
+     "M1 Reaches sin²θ = k or cos²θ = k with 0 < k < 1",
+     "A1 sin θ = ±√6/3 (±√(2/3))",
+     "R1F sin θ = √6/3, rejecting the negative because θ is obtuse"
+    ]
+   },
+   "10": {
+    "type": "points",
+    "points": [
+     "M1 f′(x) = 2x ± 2 sin x",
+     "A1 f″(x) = 2 − 2 cos x",
+     "M1 Notes f″(0) = 0 and tests the sign either side (or shows f″(x) ≥ 0)",
+     "R1 f″ does not change sign (e.g. f″(±0.1) ≈ 9.99 × 10⁻³ > 0), so no point of inflection"
+    ]
+   },
+   "12": {
+    "type": "points",
+    "points": [
+     "B1 B: 3 m s⁻²"
+    ]
+   },
+   "13": {
+    "type": "points",
+    "points": [
+     "B1 C: the acceleration can change instantaneously"
+    ]
+   },
+   "15": {
+    "type": "points",
+    "points": [
+     "B1 Resultant (a + 4, b + 23)",
+     "M1 Uses F = ma with m = 3",
+     "M1 Two linear equations: a + 4 = 12b, b + 23 = 3a",
+     "A1 a = 8, b = 1"
+    ]
+   },
+   "16": {
+    "type": "points",
+    "points": [
+     "B1 First apple: s = ½(9.8)(0.5)² = 1.225 m",
+     "M1 Second apple: s = ½(9.8)(0.6)² = 1.764 m",
+     "M1 Difference of the two heights",
+     "R1 0.539 m = 53.9 cm ≈ 54 (AG)"
+    ]
+   },
+   "17": {
+    "type": "points",
+    "points": [
+     "B1 A dimensionally correct moment in L and x, e.g. (L − x)R",
+     "M1 Moments equation with at least one correct term",
+     "A1 Correct equation in L and x only, e.g. L − x = 2(L − x − 0.1)",
+     "R1 L − x = 0.2"
+    ],
+    "guidance": "Taking moments about the centre with R at A and 2R at B is quickest; brackets must be expanded before the final line."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "R1 Shows T₃ = (50 × 1.002² + 50 × 1.002 + 50) × 1.002 expanding to the given result"
+    ]
+   },
+   "7(b)(i)": {
+    "type": "points",
+    "points": [
+     "M1 Uses a geometric series sum with at least two of a = 50.1, r = 1.002, n = 120",
+     "A1 T₁₂₀ = 50.1(1 − 1.002¹²⁰)/(1 − 1.002)",
+     "A1 £6787 (or £6787.15/£6787.16)"
+    ]
+   },
+   "7(b)(ii)": {
+    "type": "points",
+    "points": [
+     "E1 Sensible reason, e.g. the interest rate may change, or she may withdraw or change payments"
+    ]
+   },
+   "8(a)(i)": {
+    "type": "points",
+    "points": [
+     "B1 12 = a + b log₁₀ 24"
+    ]
+   },
+   "8(a)(ii)": {
+    "type": "points",
+    "points": [
+     "M1 Subtracts to eliminate a",
+     "M1 Combines logs: 5.6 = b(log₁₀ 24 − log₁₀ 3) = b log₁₀ 8",
+     "R1 b = 5.6/log₁₀ 8 (AG)"
+    ]
+   },
+   "8(a)(iii)": {
+    "type": "points",
+    "points": [
+     "B1 a = 3.44 (awrt)"
+    ]
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "M1 Substitutes 0 < x ≤ 0.25 with b ≈ 6.2, e.g. x = 0.25 gives y ≈ −0.29 (or solves y = 0 for x ≈ 0.28)",
+     "R1 Negative/meaningless mass, so the model cannot be used for monkeys under a week old"
+    ]
+   },
+   "9(a)(i)": {
+    "type": "points",
+    "points": [
+     "M1 Binomial expansion with at least two correct terms",
+     "A1 1 − 3x + 9x²"
+    ]
+   },
+   "9(a)(ii)": {
+    "type": "points",
+    "points": [
+     "B1 Writes as (2 − 3x)⁻¹",
+     "M1 Factorises to 2⁻¹(1 − 3x/2)⁻¹",
+     "M1 Expands (1 − 3x/2)⁻¹ (one sign error condoned)",
+     "R1 ½ + ¾x + (9/8)x²",
+     "B1 Common ratio 3x/2"
+    ]
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "M1 Valid method, e.g. substituting x = −⅓ or ⅔ into 36x = P(1 + 3x) + Q(2 − 3x)",
+     "A1 P = 8",
+     "A1 Q = −4"
+    ]
+   },
+   "9(c)(i)": {
+    "type": "points",
+    "points": [
+     "M1 Combines their P, Q with the expansions (then divides by 3), sign error condoned",
+     "A1 6x − 9x²"
+    ]
+   },
+   "9(c)(ii)": {
+    "type": "points",
+    "points": [
+     "R1 |x| < ⅓"
+    ]
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "E1 3 is not in the interval"
+    ]
+   },
+   "11(b)(i)": {
+    "type": "points",
+    "points": [
+     "E1 y lies between 3 and x, contradicting x being the smallest value"
+    ]
+   },
+   "11(b)(ii)": {
+    "type": "points",
+    "points": [
+     "B1 Assumes a largest value x exists in the interval",
+     "B1 Constructs a larger value, e.g. y = (x + 4)/2",
+     "E1 States x < y < 4, a contradiction",
+     "R1 Concludes there is no largest value"
+    ]
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "B1 r = −8"
+    ]
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "M1 Compares 6t − 2t² with 0 (e.g. finds t = 0 and t = 3)",
+     "A1 0 < t < 3"
+    ]
+   },
+   "18(a)": {
+    "type": "points",
+    "points": [
+     "M1 Differentiates r for v with one term correct",
+     "A1 v = 2 + 0.2qe^(−0.2t)",
+     "A1 a = −0.04qe^(−0.2t)",
+     "M1 Substitutes t = 3, a = −1.8",
+     "R1 q = 81.99… ≈ 82"
+    ]
+   },
+   "18(b)": {
+    "type": "points",
+    "points": [
+     "M1 Substitutes t = 0, r = 5 and q = 82",
+     "A1 p = 87"
+    ]
+   },
+   "19(a)(i)": {
+    "type": "points",
+    "points": [
+     "M1 Uses v² = u² + 2as with three of v = 0, u = 7, a = −9.8, s = 2.5",
+     "R1 h = 49/19.6 = 2.5 m, so the claim holds"
+    ]
+   },
+   "19(a)(ii)": {
+    "type": "points",
+    "points": [
+     "E1 One of: no air resistance, ball is a particle, fired from ground level",
+     "E1 A second of these"
+    ]
+   },
+   "19(b)": {
+    "type": "points",
+    "points": [
+     "B1 Vertical component 7 cos 11°",
+     "M1 v² = u² + 2as with v = 0, a = −9.8",
+     "A1 0 = 49cos²11° − 19.6k",
+     "A1 k = 2.4 (awrt)"
+    ]
+   },
+   "20(a)": {
+    "type": "points",
+    "points": [
+     "M1 Subtracts the position vectors of Q",
+     "A1 Displacement 9i + 12j (or average velocity 3i + 4j)",
+     "R1 9i + 12j = 3(3i + 4j), so the lines are parallel"
+    ]
+   },
+   "20(b)": {
+    "type": "points",
+    "points": [
+     "E1 Only the average velocity is known; Q's speed could vary"
+    ]
+   },
+   "20(c)": {
+    "type": "points",
+    "points": [
+     "B1 XR = 12 m",
+     "B1 P's speed 5 m s⁻¹",
+     "M1 Distance of P from X using t = 1: 5 m",
+     "A1 Recognises 5, 12, 13 as a Pythagorean triple (or cosine rule gives 90°)",
+     "R1 Angle PXR is a right angle, so the lines are perpendicular"
+    ]
+   },
+   "21(a)": {
+    "type": "points",
+    "points": [
+     "E1 Resultant force on N is 80g − T, and F = ma"
+    ]
+   },
+   "21(b)": {
+    "type": "points",
+    "points": [
+     "B1 R = 50g cos 60° = 25g"
+    ]
+   },
+   "21(c)": {
+    "type": "points",
+    "points": [
+     "B1 Weight component along slope 50g sin 60°",
+     "B1 Friction 25gμ",
+     "M1 Equation of motion for M: T − 50g sin 60° − 25gμ = 50a",
+     "A1 Correct single equation, e.g. 80g − 50g sin 60° − 25gμ = 130a",
+     "M1 Eliminates T using 80g − T = 80a",
+     "R1 a = (16 − 5√3 − 5μ)g/26 is least when μ = 1, giving a ≥ (11 − 5√3)g/26"
+    ]
+   },
+   "21(d)": {
+    "type": "points",
+    "points": [
+     "E1 e.g. light or inextensible rope, fixed pulley, no air resistance"
+    ]
+   }
+  }
+ },
+ "math-aqa-7357-2024-p3": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "The first four terms of four geometric series.",
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Identify the only convergent series.\nOptions: 0.1 + 0.2 + 0.4 + 0.8 + …   1 − 1 + 1 − 1 + …   128 − 64 + 32 − 16 + …   1 + 2 + 4 + 8 + …",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "4x² + bx + 9 = 0 has one repeated real root.",
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Find b.\nOptions: b = 0   b = ±12   b = ±13   b = ±36",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "Four graphs (diagram on the question paper): A increasing curve above the x-axis, approaching it as x → −∞; B decreasing curve above the x-axis, approaching it as x → ∞; C curve entirely below the x-axis, decreasing more steeply as x increases; D horizontal line above the x-axis.",
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "Identify the graph that cannot be of the form y = aˣ with a > 0.\nOptions: A   B   C   D",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "y = x⁴ + 2ˣ",
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "Find dy/dx.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "Sector OAB of radius 18 cm with angle AOB = π/6; chord AB cuts off a shaded segment (diagram on the question paper).",
+    "parts": [
+     {
+      "code": "5",
+      "prompt": "Show the segment's area is k(π − 3) cm², where k is an integer to be found.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "Integration of 6x² − 5/√x.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find ∫(6x² − 5/√x) dx.",
+      "marks": 3
+     },
+     {
+      "code": "6(b)",
+      "prompt": "A curve has dy/dx = 6x² − 5/√x and passes through (4, 90). Find its equation.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "y = 2 + 3x − 2x² and x + y = 1 meet at A (x < 0) and B (below the x-axis) (diagram on the question paper).",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Shade and label the region R where 0 ≤ y ≤ 2 + 3x − 2x² and x + y ≥ 1.",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find the exact coordinates of A.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "Oven temperature θ °C, t minutes after switching on: θ = 20(11 − 10e^(−kt)), k > 0. It starts at room temperature and rises towards a maximum T °C (graph on the question paper).",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the room temperature.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find T.",
+      "marks": 2
+     },
+     {
+      "code": "8(c)(i)",
+      "prompt": "The oven is at 86 °C after 1 minute. Find k.",
+      "marks": 2
+     },
+     {
+      "code": "8(c)(ii)",
+      "prompt": "Find how long it takes to get within 1 °C of the maximum.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "Circle x² + y² = 12y − 8x − 27 with centre P; it meets the y-axis at Q (the upper intersection, Figure 1 on the question paper).",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Write the equation as (x − a)² + (y − b)² = k.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "State the coordinates of P.",
+      "marks": 1
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Find the y-coordinate of Q.",
+      "marks": 2
+     },
+     {
+      "code": "9(d)",
+      "prompt": "QR is a tangent to the circle at Q and R = (9, −3) (Figure 2 on the question paper). Find angle QPR in radians to 3 s.f.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "f(x) = 5x³ + x",
+    "parts": [
+     {
+      "code": "10",
+      "prompt": "Prove from first principles that f′(x) = 15x² + 1.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "Curve C: y = (x² − 8x) ln x for x > 0. Region R lies below the x-axis, between C and the x-axis (diagram on the question paper).",
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "Show the area of R is p + q ln 2 with p and q rational, and find them.",
+      "marks": 10
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "84 students' number of revision websites visited: 0 (1), 1 (4), 2 (18), 3 (16), 4 (5), 5 (37), 6 (2), 7 (1).",
+    "parts": [
+     {
+      "code": "12",
+      "prompt": "Find the interquartile range.\nOptions: 3   4   19   42",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "Four three-set Venn diagrams (diagram on the question paper): top-left shades A ∪ C; top-right shades B ∪ C; bottom-left shades (A ∩ B) together with (B ∩ C); bottom-right shades (A ∩ B) together with (A ∩ C).",
+    "parts": [
+     {
+      "code": "13",
+      "prompt": "Identify the diagram showing (A ∪ C) ∩ B.\nOptions: top-left   top-right   bottom-left   bottom-right",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "Annual 2021 energy cost £X for 350 households in Village A: Σx = 945 000, Σx² = 2 607 500 000.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find the mean of X.",
+      "marks": 1
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find the standard deviation of X.",
+      "marks": 2
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Village B has mean £3100 and standard deviation £325. Compare the two villages.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "X ~ B(48, 0.175)",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Find the mean of X.",
+      "marks": 1
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Show that Var(X) = 6.93.",
+      "marks": 1
+     },
+     {
+      "code": "15(c)",
+      "prompt": "Find P(X < 10).",
+      "marks": 1
+     },
+     {
+      "code": "15(d)",
+      "prompt": "Find P(X ≥ 6).",
+      "marks": 2
+     },
+     {
+      "code": "15(e)",
+      "prompt": "Find P(9 ≤ X ≤ 15).",
+      "marks": 2
+     },
+     {
+      "code": "15(f)",
+      "prompt": "Planes on a route have 48 seats and 17.5% of its passengers travel on business. Make two comments on whether X is a suitable model for the number of business passengers on a plane.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "A sample of 50 adults gives a correlation of −0.45 between blood nicotine and energy level. One-tailed 2.5% critical value for n = 50: 0.2787.",
+    "parts": [
+     {
+      "code": "16",
+      "prompt": "Test at the 2.5% level whether there is evidence of negative correlation.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "In 2019, new-born babies' lengths at a clinic ~ N(50, 4²) cm.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "On the given normal curve (diagram on the question paper), label 50 and 54 on the horizontal axis.",
+      "marks": 2
+     },
+     {
+      "code": "17(b)",
+      "prompt": "State P(length < 50).",
+      "marks": 1
+     },
+     {
+      "code": "17(c)",
+      "prompt": "Find P(length > 56).",
+      "marks": 1
+     },
+     {
+      "code": "17(d)",
+      "prompt": "Find P(40 < length < 60).",
+      "marks": 1
+     },
+     {
+      "code": "17(e)",
+      "prompt": "Find the length exceeded by 95% of babies.",
+      "marks": 2
+     },
+     {
+      "code": "17(f)",
+      "prompt": "In 2020 a random sample of 40 babies had total length 2060 cm. Assuming σ = 4 still, test at 10% whether the mean length has increased.",
+      "marks": 7
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "G: employee is a graduate; H: earns at least £40 000. P(G ∩ H) = 0.21, P(G ∩ H′) = 0.18, P(G′ ∩ H) = 0.07, P(G′ ∩ H′) = 0.54.",
+    "parts": [
+     {
+      "code": "18(a)(i)",
+      "prompt": "Find P(G).",
+      "marks": 1
+     },
+     {
+      "code": "18(a)(ii)",
+      "prompt": "Find P[(G ∩ H)′].",
+      "marks": 2
+     },
+     {
+      "code": "18(a)(iii)",
+      "prompt": "Find P(H | G′).",
+      "marks": 2
+     },
+     {
+      "code": "18(b)",
+      "prompt": "Decide, with full justification, whether G and H are independent.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 19,
+    "scenario": "80% of diesel cars registered in 2017 had CO emissions below 0.3 g/km. Talat tests at 10% whether this proportion has changed for 2022, using a random sample of 25 diesel cars.",
+    "parts": [
+     {
+      "code": "19(a)(i)",
+      "prompt": "State the hypotheses.",
+      "marks": 1
+     },
+     {
+      "code": "19(a)(ii)",
+      "prompt": "Find the critical region at the 10% level.",
+      "marks": 5
+     },
+     {
+      "code": "19(a)(iii)",
+      "prompt": "18 cars in his sample are below 0.3 g/km. State his conclusion in context.",
+      "marks": 1
+     },
+     {
+      "code": "19(b)",
+      "prompt": "Using knowledge of the Large Data Set, give two reasons why Talat cannot use his sample to test for a change in the proportion of diesel cars in England with CO emissions above 0.5 g/km compared with the Large Data Set.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "points",
+    "points": [
+     "B1 C: 128 − 64 + 32 − 16 + …"
+    ]
+   },
+   "2": {
+    "type": "points",
+    "points": [
+     "B1 B: b = ±12"
+    ]
+   },
+   "3": {
+    "type": "points",
+    "points": [
+     "B1 C: the curve below the x-axis"
+    ]
+   },
+   "4": {
+    "type": "points",
+    "points": [
+     "M1 One correct term",
+     "A1 dy/dx = 4x³ + 2ˣ ln 2"
+    ],
+    "guidance": "No isw."
+   },
+   "5": {
+    "type": "points",
+    "points": [
+     "M1 Sector area ½ × 18² × π/6 or triangle area ½ × 18² sin(π/6)",
+     "A1 Both areas correct",
+     "R1 Segment = 27π − 81 = 27(π − 3), so k = 27"
+    ],
+    "guidance": "Degrees accepted."
+   },
+   "10": {
+    "type": "points",
+    "points": [
+     "M1 Writes [5(x + h)³ + (x + h) − (5x³ + x)]/h",
+     "M1 Expands (x + h)³ correctly",
+     "A1 Numerator reduces to 15x²h + 15xh² + 5h³ + h",
+     "A1 Divides by h: 15x² + 15xh + 5h² + 1",
+     "R1 Lets h → 0 to conclude f′(x) = 15x² + 1"
+    ]
+   },
+   "11": {
+    "type": "points",
+    "points": [
+     "M1 Sets (x² − 8x) ln x = 0",
+     "A1 Finds x = 1 or x = 8",
+     "R1 Uses limits 1 and 8",
+     "M1 Integration by parts with u = ln x, v′ = x² − 8x",
+     "A1 u′ = 1/x and v = x³/3 − 4x²",
+     "M1 Applies the parts formula correctly",
+     "A1 (x³/3 − 4x²) ln x − (x³/9 − 2x²)",
+     "M1 Substitutes the limits",
+     "A1 623/9 − 256 ln 2 (exact, two terms)",
+     "R1 Area = −623/9 + 256 ln 2"
+    ],
+    "guidance": "The final R1 needs all other marks; the integral itself is negative."
+   },
+   "12": {
+    "type": "points",
+    "points": [
+     "B1 A: 3"
+    ]
+   },
+   "13": {
+    "type": "points",
+    "points": [
+     "B1 C: the bottom-left diagram"
+    ]
+   },
+   "16": {
+    "type": "points",
+    "points": [
+     "B1 H₀: ρ = 0, H₁: ρ < 0",
+     "M1 Compares −0.45 with −0.2787",
+     "A1 −0.45 < −0.2787 so reject H₀",
+     "R1 Evidence supports a negative correlation between nicotine level and energy level in adults (non-definite wording)"
+    ]
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "B1 Writes 1/√x as x^(−1/2)",
+     "M1 One term integrated correctly",
+     "A1 2x³ − 10x^(1/2) + c"
+    ]
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "M1 Substitutes x = 4, y = 90 to find c",
+     "A1 y = 2x³ − 10x^(1/2) − 18"
+    ]
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "M1 Shades part of the correct region (or the whole area between the parabola and line above B)",
+     "R1 Only the region above the line, below the parabola and above the x-axis"
+    ]
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "M1 Eliminates a variable to get a quadratic, e.g. 2x² − 4x − 1 = 0",
+     "A1 x = (2 − √6)/2 (≈ −0.22) or y = √6/2 (≈ 1.22)",
+     "A1 A((2 − √6)/2, √6/2)"
+    ]
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "M1 Substitutes t = 0",
+     "A1 20 °C (units needed)"
+    ]
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "M1 Lets e^(−kt) → 0",
+     "A1 T = 220"
+    ]
+   },
+   "8(c)(i)": {
+    "type": "points",
+    "points": [
+     "M1 Forms 86 = 20(11 − 10e^(−k))",
+     "A1 k = 0.4 (= −ln 0.67)"
+    ]
+   },
+   "8(c)(ii)": {
+    "type": "points",
+    "points": [
+     "M1 Forms 219 = 20(11 − 10e^(−0.4t)) with their T and k",
+     "A1 t ≈ 13.2 minutes (13 accepted)"
+    ]
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "M1 One completed square, (x + 4)² or (y − 6)²",
+     "M1 Both completed squares",
+     "A1 (x + 4)² + (y − 6)² = 25"
+    ]
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "B1F P(−4, 6)"
+    ]
+   },
+   "9(c)": {
+    "type": "points",
+    "points": [
+     "M1 Substitutes x = 0 to get a quadratic in y (y² − 12y + 27 = 0), or uses a right-angled triangle",
+     "A1 y = 9"
+    ]
+   },
+   "9(d)": {
+    "type": "points",
+    "points": [
+     "M1 Distance formula for PR or QR: PR = 5√10, QR = 15",
+     "M1 Correct trig ratio, e.g. cos QPR = 5/(5√10)",
+     "A1 1.25 rad (awfw 1.249 to 1.25)"
+    ]
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "B1 2700"
+    ]
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "M1 √(2 607 500 000/350 − 2700²)",
+     "A1 400"
+    ]
+   },
+   "14(c)": {
+    "type": "points",
+    "points": [
+     "E1F On average energy costs are lower in Village A",
+     "E1F Costs vary more in Village A"
+    ],
+    "guidance": "Must use 'on average'-type and spread words; 'range' is not accepted."
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "B1 8.4"
+    ]
+   },
+   "15(b)": {
+    "type": "points",
+    "points": [
+     "B1 48 × 0.175 × 0.825 = 6.93"
+    ]
+   },
+   "15(c)": {
+    "type": "points",
+    "points": [
+     "B1 0.674 (awfw 0.674 to 0.6742)"
+    ]
+   },
+   "15(d)": {
+    "type": "points",
+    "points": [
+     "M1 P(X ≤ 5) ≈ 0.1325 or a related value",
+     "A1 0.8675 (awfw 0.867 to 0.868)"
+    ]
+   },
+   "15(e)": {
+    "type": "points",
+    "points": [
+     "M1 P(X ≤ 15) ≈ 0.9940 or P(X ≤ 8) ≈ 0.5317",
+     "A1 0.462 (awfw 0.462 to 0.4631)"
+    ]
+   },
+   "15(f)": {
+    "type": "points",
+    "points": [
+     "E1 One valid comment, e.g. n = 48 and p = 0.175 match; or the plane may not be full; or p may vary at peak times; or group bookings break independence",
+     "E1 A second, non-contradictory comment"
+    ]
+   },
+   "17(a)": {
+    "type": "points",
+    "points": [
+     "B1 50 below the peak",
+     "B1 54 below the right-hand point of inflection"
+    ]
+   },
+   "17(b)": {
+    "type": "points",
+    "points": [
+     "B1 0.5"
+    ]
+   },
+   "17(c)": {
+    "type": "points",
+    "points": [
+     "B1 0.0668 (awfw 0.0668 to 0.067)"
+    ]
+   },
+   "17(d)": {
+    "type": "points",
+    "points": [
+     "B1 0.988 (awfw 0.987 to 0.99)"
+    ]
+   },
+   "17(e)": {
+    "type": "points",
+    "points": [
+     "M1 (x − 50)/4 = −1.6449",
+     "A1 43.4 cm (43 accepted)"
+    ]
+   },
+   "17(f)": {
+    "type": "points",
+    "points": [
+     "B1 H₀: μ = 50, H₁: μ > 50",
+     "B1 Sample mean 51.5",
+     "M1 Uses X̄ ~ N(50, 4²/40)",
+     "A1 P(X̄ > 51.5) ≈ 0.0089, or z ≈ 2.37, or critical value ≈ 50.8",
+     "M1 Compares with 0.1 (or z with 1.2816, or 51.5 with the critical value)",
+     "A1F Rejects H₀",
+     "R1 Evidence suggests the mean length in 2020 has increased (non-definite wording)"
+    ]
+   },
+   "18(a)(i)": {
+    "type": "points",
+    "points": [
+     "B1 0.39"
+    ]
+   },
+   "18(a)(ii)": {
+    "type": "points",
+    "points": [
+     "M1 1 − 0.21 or 0.07 + 0.18 + 0.54",
+     "A1 0.79"
+    ]
+   },
+   "18(a)(iii)": {
+    "type": "points",
+    "points": [
+     "M1 P(H ∩ G′)/P(G′) with 0.07 or 0.61 seen",
+     "A1 7/61 (≈ 0.115)"
+    ]
+   },
+   "18(b)": {
+    "type": "points",
+    "points": [
+     "M1 A valid comparison, e.g. P(G) × P(H) = 0.39 × 0.28 = 0.1092 vs P(G ∩ H) = 0.21",
+     "R1 Not equal, so G and H are not independent"
+    ]
+   },
+   "19(a)(i)": {
+    "type": "points",
+    "points": [
+     "B1 H₀: p = 0.8, H₁: p ≠ 0.8"
+    ]
+   },
+   "19(a)(ii)": {
+    "type": "points",
+    "points": [
+     "B1 Uses X ~ B(25, 0.8)",
+     "M1 Finds a relevant tail probability, e.g. P(X ≤ 16) = 0.0468 or P(X ≥ 24) = 0.0274",
+     "M1 Compares a tail probability with 0.05",
+     "A1 One tail correct: X ≤ 16 or X ≥ 24",
+     "A1 Critical region X ≤ 16 or X ≥ 24"
+    ],
+    "guidance": "Neighbouring values: P(X ≤ 17) = 0.1091 and P(X ≥ 23) = 0.0982, both above 0.05."
+   },
+   "19(a)(iii)": {
+    "type": "points",
+    "points": [
+     "E1F 18 is not in the critical region: insufficient evidence that the proportion below 0.3 g/km has changed"
+    ]
+   },
+   "19(b)": {
+    "type": "points",
+    "points": [
+     "E1 One reason, e.g. no diesel cars in the Large Data Set emit more than 0.5 g/km CO",
+     "E1 Another, e.g. some CO values are missing, or the data cover only some regions, makes or years so are not representative of England"
+    ]
+   }
+  }
+ },
+ "math-aqa-7357-2023-p1": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "",
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Find the coefficient of x⁷ in the expansion of (2x − 3)⁷.\nOptions: −2187   −128   2   128",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "",
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Given y = 2x³, find dy/dx.\nOptions: dy/dx = 5x²   dy/dx = 6x²   dy/dx = x⁴/2   dy/dx = 6x³",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "",
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "y = ln x is stretched parallel to the x-axis with scale factor 2. Choose the equation of the new curve.\nOptions: y = ½ ln x   y = 2 ln x   y = ln(x/2)   y = ln 2x",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "",
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "For small θ, choose an approximation for cos 2θ.\nOptions: 1 − θ²/2   2 − 2θ²   1 − 2θ²   1 − θ²",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "Curve y = 5/(eˣ − 1); the shaded area lies under it between x = 1 and x = 4 (diagram on the question paper). Table: x = 1, 1.6, 2.2, 2.8, 3.4, 4 gives y = 2.90988, 1.26485, 0.62305, 0.32374, 0.17263, 0.09329.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Use the trapezium rule with 6 ordinates (5 strips) to estimate the shaded area, to 4 decimal places.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Hence estimate ∫₁⁴ 20/(eˣ − 1) dx.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "",
+    "parts": [
+     {
+      "code": "6",
+      "prompt": "Prove that 2 log₁₀ x = log₁₀ 4 + log₁₀ (x + 8) has exactly one solution, fully justifying your answer.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "n is a positive integer; consider 7/(3 + 5√n) − 7/(5√n − 3).",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Write the expression as a single fraction with no surds.",
+      "marks": 3
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Hence deduce that the expression is rational for every positive integer n.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "",
     "parts": [
      {
       "code": "8",
-      "prompt": "Show that\n\n∫₀^(π/2) (x sin 4x) dx = −π/8",
+      "prompt": "Show that ∫₀^(π/2) x sin 4x dx = −π/8.",
       "marks": 6
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "The points P and Q have coordinates (−6, 15) and (12, 19) respectively.",
+    "scenario": "P(−6, 15) and Q(12, 19).",
     "parts": [
      {
       "code": "9(a)(i)",
-      "prompt": "Find the coordinates of the midpoint of PQ",
+      "prompt": "Find the midpoint of PQ.",
       "marks": 1
      },
      {
       "code": "9(a)(ii)",
-      "prompt": "Find the equation of the perpendicular bisector of PQ\n\nGive your answer in the form ax + by = c where a, b and c are integers.",
+      "prompt": "Find the perpendicular bisector of PQ in the form ax + by = c with integers a, b, c.",
       "marks": 4
      },
      {
       "code": "9(b)(i)",
-      "prompt": "A circle passes through the points P and Q\n\nThe centre of the circle lies on the line with equation 2x − 5y = −30\n\nFind the equation of the circle.",
+      "prompt": "A circle through P and Q has its centre on 2x − 5y = −30. Find its equation.",
       "marks": 3
      },
      {
       "code": "9(b)(ii)",
-      "prompt": "The circle intersects the coordinate axes at n points.\n\nState the value of n",
+      "prompt": "The circle meets the coordinate axes at n points. State n.",
       "marks": 1
      }
     ]
    },
    {
     "number": 10,
-    "scenario": "The curve with equation y = sin x° for −360 ≤ x ≤ 360 is shown. Point A lies on the curve in the second quadrant (between x = −360 and 0) and point B lies on the curve between x = 0 and 360 (below the x-axis).",
+    "scenario": "Graph of y = sin x° for −360 ≤ x ≤ 360 (diagram on the question paper). A is above the x-axis on the decreasing part of the curve between the maximum at x = −270 and the zero at x = −180; B is below the x-axis on the decreasing part between the zero at x = 180 and the minimum at x = 270.",
     "parts": [
      {
       "code": "10(a)(i)",
-      "prompt": "Point A on the curve has coordinates (a, 0.5)\n\nFind the value of a",
+      "prompt": "A is the point (a, 0.5). Find a.",
       "marks": 2
      },
      {
       "code": "10(a)(ii)",
-      "prompt": "State the value of sin(180° − a°)",
+      "prompt": "State sin(180° − a°).",
       "marks": 1
      },
      {
       "code": "10(b)(i)",
-      "prompt": "Point B on the curve has coordinates (b, −3/7)\n\nFind the exact value of sin(b° − 180°)",
+      "prompt": "B is the point (b, −3/7). Find the exact value of sin(b° − 180°).",
       "marks": 2
      },
      {
       "code": "10(b)(ii)",
-      "prompt": "Find the exact value of cos b°",
+      "prompt": "Find the exact value of cos b°.",
       "marks": 3
      }
     ]
    },
    {
     "number": 11,
-    "scenario": "The nth term of a sequence is uₙ\n\nThe sequence is defined by uₙ₊₁ = puₙ + 70 where u₁ = 400 and p is a constant.",
+    "scenario": "Sequence with uₙ₊₁ = puₙ + 70, u₁ = 400, p constant.",
     "parts": [
      {
       "code": "11(a)",
-      "prompt": "Find an expression, in terms of p, for u₂",
+      "prompt": "Write u₂ in terms of p.",
       "marks": 1
      },
      {
       "code": "11(b)(i)",
-      "prompt": "It is given that u₃ = 382\n\nShow that p satisfies the equation\n\n200p² + 35p − 156 = 0",
+      "prompt": "Given u₃ = 382, show that 200p² + 35p − 156 = 0.",
       "marks": 3
      },
      {
       "code": "11(b)(ii)",
-      "prompt": "It is given that the sequence is a decreasing sequence.\n\nFind the value of u₄ and the value of u₅",
+      "prompt": "The sequence is decreasing. Find u₄ and u₅.",
       "marks": 3
      },
      {
       "code": "11(c)(i)",
-      "prompt": "The limit of uₙ as n tends to infinity is L\n\nWrite down an equation for L",
+      "prompt": "uₙ → L as n → ∞. Write down an equation for L.",
       "marks": 1
      },
      {
       "code": "11(c)(ii)",
-      "prompt": "Find the value of L",
+      "prompt": "Find L.",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
-    "scenario": "One of the rides at a theme park is a room where the floor and ceiling both move up and down for 10π seconds. At time t seconds after the ride begins, the distance f metres of the floor above the ground is f = 1 − cos t. At time t seconds after the ride begins, the distance c metres of the ceiling above the ground is c = 8 − 4 sin t. (A diagram shows the ceiling a height c metres above the ground and the floor a height f metres above the ground.)",
+    "scenario": "A theme-park room runs for 10π seconds. At time t s the floor is f = 1 − cos t metres above the ground and the ceiling is c = 8 − 4 sin t metres above the ground (diagram on the question paper).",
     "parts": [
      {
       "code": "12(a)",
-      "prompt": "Show that the initial distance between the floor and ceiling is 8 metres.",
+      "prompt": "Show the floor-to-ceiling distance is 8 m at the start.",
       "marks": 1
      },
      {
       "code": "12(b)",
-      "prompt": "Show that the distance d metres between the floor and ceiling at time t is given by\n\nd = 7 + R cos(t + α)\n\nwhere R and α are positive constants to be found.",
+      "prompt": "Show the distance d between floor and ceiling is d = 7 + R cos(t + α), finding the positive constants R and α.",
       "marks": 5
      },
      {
       "code": "12(c)",
-      "prompt": "Hence, find the minimum distance between the ceiling and the floor.\n\nGive your answer to the nearest centimetre.",
+      "prompt": "Hence find the minimum floor-to-ceiling distance, to the nearest centimetre.",
       "marks": 2
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "The function f is defined by f(x) = arccos x for 0 ≤ x ≤ a. The curve with equation y = f(x) is shown, starting at (0, π/2) and decreasing to (a, 0) on the x-axis (with π/2 also marked on the x-axis).",
+    "scenario": "f(x) = arccos x for 0 ≤ x ≤ a; the graph runs from (0, π/2) down to (a, 0) (diagram on the question paper).",
     "parts": [
      {
       "code": "13(a)",
-      "prompt": "State the value of a",
+      "prompt": "State a.",
       "marks": 1
      },
      {
       "code": "13(b)(i)",
-      "prompt": "On the diagram above, sketch the curve with equation\n\ny = cos x for 0 ≤ x ≤ π/2\n\nand\n\nsketch the line with equation\n\ny = x for 0 ≤ x ≤ π/2",
+      "prompt": "On the same axes sketch y = cos x and the line y = x, both for 0 ≤ x ≤ π/2.",
       "marks": 4
      },
      {
       "code": "13(b)(ii)",
-      "prompt": "Explain why the solution to the equation\n\nx − cos x = 0\n\nmust also be a solution to the equation\n\ncos x = arccos x",
+      "prompt": "Explain why the root of x − cos x = 0 must also solve cos x = arccos x.",
       "marks": 1
      },
      {
       "code": "13(c)",
-      "prompt": "Use the Newton-Raphson method with x₀ = 0 to find an approximate solution, x₃, to the equation\n\nx − cos x = 0\n\nGive your answer to four decimal places.",
+      "prompt": "Use Newton–Raphson with x₀ = 0 to find x₃, an approximate root of x − cos x = 0, to 4 decimal places.",
       "marks": 3
      }
     ]
    },
    {
     "number": 14,
+    "scenario": "Curve y = 2ˣ.",
     "parts": [
      {
       "code": "14(a)(i)",
-      "prompt": "Given that\n\ny = 2ˣ\n\nwrite down dy/dx",
+      "prompt": "Write down dy/dx for y = 2ˣ.",
       "marks": 1
      },
      {
       "code": "14(a)(ii)",
-      "prompt": "Hence find\n\n∫ 2ˣ dx",
+      "prompt": "Hence find ∫2ˣ dx.",
       "marks": 2
      },
      {
       "code": "14(b)(i)",
-      "prompt": "The area, A, bounded by the curve with equation y = 2ˣ, the x-axis, the y-axis and the line x = −4 is approximated using eight rectangles of equal width as shown in the diagram (the rectangles lie under the curve between x = −4 and x = 0, increasing in height towards x = 0).\n\nShow that the exact area of the largest rectangle is √2/4",
+      "prompt": "The area A between y = 2ˣ, the x-axis, the y-axis and x = −4 is approximated by eight equal-width rectangles lying under the curve (diagram on the question paper). Show the largest rectangle has exact area √2/4.",
       "marks": 2
      },
      {
       "code": "14(b)(ii)",
-      "prompt": "The areas of these rectangles form a geometric sequence with common ratio √2/2\n\nFind the exact value of the total area of the eight rectangles.\n\nGive your answer in the form k(1 + √2) where k is a rational number.",
+      "prompt": "The rectangle areas form a geometric sequence with ratio √2/2. Find the exact total area of the eight rectangles in the form k(1 + √2), k rational.",
       "marks": 3
      },
      {
       "code": "14(b)(iii)",
-      "prompt": "More accurate approximations for A can be found by increasing the number, n, of rectangles used.\n\nFind the exact value of the limit of the approximations for A as n → ∞",
+      "prompt": "Find the exact limit of these approximations to A as the number of rectangles n → ∞.",
       "marks": 3
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "The curve with equation x² + 2y³ − 4xy = 0 has a single stationary point at P as shown in the diagram (a loop in the first quadrant passing through the origin, with P near its top-right).",
+    "scenario": "Curve x² + 2y³ − 4xy = 0, which has a single stationary point P (a loop from the origin; diagram on the question paper).",
     "parts": [
      {
       "code": "15(a)",
-      "prompt": "Show that the y-coordinate of P satisfies the equation\n\ny²(y − 2) = 0",
+      "prompt": "Show that the y-coordinate of P satisfies y²(y − 2) = 0.",
       "marks": 7
      },
      {
       "code": "15(b)",
-      "prompt": "Hence, find the coordinates of P",
+      "prompt": "Hence find the coordinates of P.",
       "marks": 2
      }
     ]
    },
    {
     "number": 16,
+    "scenario": "1/(16 − 9x²) ≡ A/(4 − 3x) + B/(4 + 3x). An empty cuboid container, 1.6 m long, 1.25 m wide and 0.5 m deep, is filled at 0.16 m³ per minute; water leaks out of a hole at 0.36d² m³ per minute, where d m is the depth at time t minutes and V m³ the volume.",
     "parts": [
      {
       "code": "16(a)",
-      "prompt": "Given that\n\n1/(16 − 9x²) ≡ A/(4 − 3x) + B/(4 + 3x)\n\nfind the values of A and B",
+      "prompt": "Find A and B.",
       "marks": 3
      },
      {
       "code": "16(b)(i)",
-      "prompt": "An empty container, in the shape of a cuboid, has length 1.6 metres, width 1.25 metres and depth 0.5 metres. The container has a small hole in the bottom. Water is poured into the container at a rate of 0.16 cubic metres per minute. At time t minutes after the container starts to be filled, the depth of water is d metres and water leaks out at a rate of 0.36d² cubic metres per minute. At time t minutes after the container starts to be filled, the volume of water in the container is V cubic metres.\n\nShow that\n\ndV/dt = (16 − 9V²)/100",
+      "prompt": "Show that dV/dt = (16 − 9V²)/100.",
       "marks": 4
      },
      {
       "code": "16(b)(ii)",
-      "prompt": "Hence, find t in terms of V",
+      "prompt": "Hence find t in terms of V.",
       "marks": 5
      },
      {
       "code": "16(b)(iii)",
-      "prompt": "Determine how long it takes to fill the container with water.\n\nGive your answer to the nearest minute.",
+      "prompt": "Find how long it takes to fill the container, to the nearest minute.",
       "marks": 2
      }
     ]
@@ -23785,363 +23559,363 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "128"
-    ],
-    "guidance": "B1 for circling the correct answer. The term in x⁷ is C(7,7)(2x)⁷(−3)⁰ = 2⁷ = 128."
+     "B1 128 (option D)"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "dy/dx = 6x²"
-    ],
-    "guidance": "B1 for circling the correct answer. Differentiate 2x³ to get 6x²."
+     "B1 dy/dx = 6x² (option B)"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "y = ln(x/2)"
-    ],
-    "guidance": "R1 for circling the correct answer. A stretch parallel to the x-axis, scale factor 2, replaces x with x/2."
+     "R1 y = ln(x/2) (option C)"
+    ]
    },
    "4": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1 − 2θ²"
-    ],
-    "guidance": "R1 for circling the correct answer. cos 2θ ≈ 1 − (2θ)²/2 = 1 − 2θ²."
+     "R1 1 − 2θ² (option C)"
+    ]
    },
    "6": {
     "type": "points",
     "points": [
-     "Use the power log rule: 2 log₁₀ x = log₁₀ x²",
-     "Combine the RHS: log₁₀ 4 + log₁₀(x+8) = log₁₀ 4(x+8)",
-     "Form the quadratic x² = 4x + 32, i.e. x² − 4x − 32 = 0",
-     "Solve to get x = 8 or x = −4",
-     "Reject x = −4 because log₁₀(−4) has no real value (log only defined for positive arguments), so there is exactly one solution x = 8"
-    ],
-    "guidance": "B1 power log rule (or raises 10 to both sides). B1 addition log rule. M1 solves the three-term quadratic. A1 obtains x = 8 (must have scored B1,B1,M1). E1 explains why −4 is rejected, referring to the log of a negative / domain of log (must have B1,B1,M1,A1)."
+     "B1 Power law used correctly, giving log₁₀ x²",
+     "B1 Addition law used correctly, giving log₁₀ 4(x + 8)",
+     "M1 Solves the resulting quadratic x² − 4x − 32 = 0",
+     "A1 x = 8",
+     "E1 Rejects x = −4 because the log of a negative number is undefined, so exactly one solution"
+    ]
    },
    "8": {
     "type": "points",
     "points": [
-     "Use integration by parts with u = x, dv = sin 4x dx, giving v = −¼ cos 4x",
-     "∫ x sin 4x dx = −(x/4) cos 4x + ¼ ∫ cos 4x dx = −(x/4) cos 4x + (1/16) sin 4x",
-     "Evaluate between 0 and π/2: [−(π/8) cos 2π + (1/16) sin 2π] − 0 = −π/8"
-    ],
-    "guidance": "M1 integration by parts in the right direction. M1 obtains −(x/4)cos 4x − ∫ −¼ cos 4x dx. A1 correct first integration. M1 integrates again to −(x/4)cos 4x + (1/16) sin 4x. A1 correct B = 1/16. R1 substitutes limits to obtain −π/8 (AG); accept (−π/8 cos 2π + 1/16 sin 2π) − 0."
+     "M1 Starts integration by parts with u = x, v′ = sin 4x",
+     "M1 Correct choice of parts, giving the form Ax cos 4x − A∫cos 4x dx",
+     "M1 Substitutes into the parts formula",
+     "A1 −¼x cos 4x + ¼∫cos 4x dx",
+     "M1 Completes to −¼x cos 4x + B sin 4x",
+     "R1 Substitutes limits into −¼x cos 4x + (1/16) sin 4x explicitly to reach −π/8 (AG)"
+    ]
    },
    "5(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Area ≈ 2.3315"
-    ],
-    "guidance": "B1 uses h = 0.6 (accept 0.3 as the ½h multiplier). M1 substitutes the y-values into the trapezium rule: (0.6/2)[2.90988 + 0.09329 + 2(1.26485 + 0.62305 + 0.32374 + 0.17263)] = 7.77171. A1 obtains 2.3315 AWRT."
+     "B1 Strip width h = 0.6 (or multiplier 0.3)",
+     "M1 Correct trapezium sum: 2.90988 + 0.09329 + 2(1.26485 + 0.62305 + 0.32374 + 0.17263) (= 7.77171)",
+     "A1 2.3315 (awrt)"
+    ]
    },
    "5(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Estimate ≈ 9.3 (4 × 2.3315 = 9.326)"
-    ],
-    "guidance": "R1F obtains 4 × their answer to (a) correct to at least 2 sig figs, since 20/(eˣ−1) = 4 × 5/(eˣ−1)."
+     "R1F 4 × their (a), to at least 2 s.f.: 9.3"
+    ]
    },
    "7(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "−42/(25n − 9)"
-    ],
-    "guidance": "M1 multiplies numerator and denominator of at least one fraction by an appropriate conjugate, or obtains a common denominator. A1 a correct single unsimplified fraction. A1 the correct simplified fraction −42/(25n − 9) OE."
+     "M1 Rationalises with a conjugate, or combines over a common denominator",
+     "A1 Correct unsimplified single fraction",
+     "A1 −42/(25n − 9) (OE)"
+    ]
    },
    "7(b)": {
     "type": "points",
     "points": [
-     "Both 42 and 25n − 9 are integers (for positive integer n), so the quotient −42/(25n − 9) is rational"
-    ],
-    "guidance": "E1F explains that numerator and denominator are both integers (or rational) and concludes the expression is rational."
+     "E1F Numerator and denominator are integers, so the expression is rational"
+    ]
    },
    "9(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Midpoint = (3, 17)"
-    ],
-    "guidance": "Midpoint = ((−6+12)/2, (15+19)/2) = (3, 17)."
+     "B1 (3, 17)"
+    ]
    },
    "9(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "9x + 2y = 61"
-    ],
-    "guidance": "Gradient of PQ = (19−15)/(12−(−6)) = 4/18 = 2/9, so perpendicular gradient = −9/2. Through (3, 17): y − 17 = −9/2(x − 3) ⇒ 9x + 2y = 61. M1 gradient of PQ, M1 perpendicular gradient and through the midpoint, A1 correct line (condone slips), A1 correct integer form."
+     "B1 Gradient of PQ = 2/9",
+     "M1 Line using the negative reciprocal gradient or the midpoint",
+     "M1 Line using both the negative reciprocal and the midpoint",
+     "A1 9x + 2y = 61 (OE with integers)"
+    ]
    },
    "9(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "(x − 5)² + (y − 8)² = 170"
-    ],
-    "guidance": "M1 the centre (h,k) lies on the perpendicular bisector 9x + 2y = 61 and on 2x − 5y = −30; solve simultaneously to get centre (5, 8). M1 forms r² = (5−(−6))² + (8−15)² = 121 + 49 = 170. A1 correct equation (x − 5)² + (y − 8)² = 170."
+     "M1 Solves 9x + 2y = 61 with 2x − 5y = −30: centre (5, 8)",
+     "M1 Uses P or Q with the centre to find r or r²",
+     "A1 (x − 5)² + (y − 8)² = 170 (ACF)"
+    ]
    },
    "9(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "n = 4"
-    ],
-    "guidance": "B1. With centre (5,8) and r² = 170, the circle crosses both axes (it cuts the x-axis twice and the y-axis twice), giving 4 intersection points with the coordinate axes."
+     "R1 n = 4 (needs correct centre and radius)"
+    ]
    },
    "10(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "a = −210"
-    ],
-    "guidance": "M1 uses sin 30 = 0.5 (PI by ±150, ±30 or −330). Point A is in the range −360 to 0 with sin = 0.5, so a = −180 − 30 = −210. A1 obtains −210."
+     "M1 Uses sin 30° = 0.5 (e.g. sees ±150 or ±30)",
+     "A1 a = −210"
+    ]
    },
    "10(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "0.5"
-    ],
-    "guidance": "B1. sin(180° − a°) = sin a° = 0.5."
+     "B1 0.5"
+    ]
    },
    "10(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "sin(b° − 180°) = 3/7"
-    ],
-    "guidance": "M1 uses a correct approach to find sin(b − 180), e.g. sin(b − 180) = −sin b. R1 deduces sin(b° − 180°) = −(−3/7) = 3/7 (CAO)."
+     "M1 Valid method, e.g. uses b ≈ 205.4 or a compound-angle expansion",
+     "R1 3/7 (CAO)"
+    ]
    },
    "10(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "cos b° = −2√10/7"
-    ],
-    "guidance": "M1 uses cos²x + sin²x = 1 (or a right-angled triangle with opposite 3 and hypotenuse 7). cos²b = 1 − (3/7)² = 40/49. B is below the x-axis with positive x, but cos b is negative here, so A1 cos²b = 40/49 and R1 deduces cos b = −2√10/7 (exact form, CAO)."
+     "M1 Uses cos² + sin² = 1 or a right-angled triangle with sides 3 and 7",
+     "A1 cos² b = 40/49 (or correct magnitude)",
+     "R1 cos b = −2√10/7 (exact, CAO)"
+    ]
    },
    "11(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "u₂ = 400p + 70"
-    ],
-    "guidance": "B1. u₂ = pu₁ + 70 = 400p + 70."
+     "B1 u₂ = 400p + 70"
+    ]
    },
    "11(b)(i)": {
     "type": "points",
     "points": [
-     "u₂ = 400p + 70",
-     "u₃ = p·u₂ + 70 = p(400p + 70) + 70 = 400p² + 70p + 70",
-     "Set u₃ = 382: 400p² + 70p + 70 = 382 ⇒ 400p² + 70p − 312 = 0 ⇒ 200p² + 35p − 156 = 0"
-    ],
-    "guidance": "M1 substitutes 382 and u₂ into the recurrence. M1 expands brackets to form a quadratic 400p² + 70p − 312 = 0. R1 obtains the printed equation 200p² + 35p − 156 = 0 (AG)."
+     "M1 Uses u₃ = pu₂ + 70",
+     "M1 Substitutes 382 and u₂ to get a quadratic: 382 = p(400p + 70) + 70",
+     "R1 Expands and rearranges to the given equation"
+    ]
    },
    "11(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "u₄ = −302.45 (AWRT)",
-     "u₅ = 364.88875 (AWRT)"
-    ],
-    "guidance": "M1 solves 200p² + 35p − 156 = 0 to get p = 0.8 or p = −0.975. B1 since the sequence is decreasing, p = −0.975. R1 obtains u₄ = −0.975 × 375.6 + 70 = −302.45 and u₅ = −0.975 × (−302.45) + 70 = 364.88875 (uses u₃ = 375.6 from p = −0.975)."
+     "B1 p = 0.8 and p = −0.975",
+     "M1 Uses a value of p to find u₄",
+     "R1 u₄ = 375.6, u₅ = 370.48 (p = −0.975 rejected as not decreasing)"
+    ]
    },
    "11(c)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "L = 0.8L + 70 (i.e. L = pL + 70 with p = 0.8, or (1 − p)L = 70)"
-    ],
-    "guidance": "B1. Forms the limit equation L = pL + 70 (accept with p = 0.8 or −0.975 substituted)."
+     "B1 L = 0.8L + 70 (or (1 − p)L = 70 with their p)"
+    ]
    },
    "11(c)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "L = 350"
+     "R1 L = 350"
     ],
-    "guidance": "R1. With p = 0.8: L = 0.8L + 70 ⇒ 0.2L = 70 ⇒ L = 350. (For p = −0.975, L = 2800/79 ≈ 35.4 — accept either or both; the decreasing sequence with p = 0.8 gives L = 350.)"
+    "guidance": "AWRT 35.4 (from p = −0.975) is also accepted, alone or alongside 350."
    },
    "12(a)": {
     "type": "points",
     "points": [
-     "At t = 0: f = 1 − cos 0 = 0 and c = 8 − 4 sin 0 = 8",
-     "Initial distance = c − f = 8 − 0 = 8 metres"
-    ],
-    "guidance": "B1. Show the initial distance d = c − f = 8 − 4 sin 0 − (1 − cos 0) = 8 metres."
+     "B1 Substitutes t = 0 into both models: 8 − (1 − 1) = 8 m"
+    ]
    },
    "12(b)": {
     "type": "points",
     "points": [
-     "d = c − f = (8 − 4 sin t) − (1 − cos t) = 7 + cos t − 4 sin t",
-     "Write cos t − 4 sin t = R cos(t + α) with R cos α = 1 and R sin α = 4",
-     "R = √(1² + 4²) = √17 and tan α = 4 ⇒ α = 1.33 (rad)",
-     "So d = 7 + √17 cos(t + 1.33)"
+     "M1 Models d = c − f = 7 + cos t − 4 sin t",
+     "M1 Uses compound-angle form: R cos α = 1, R sin α = 4 or tan α = 4",
+     "A1 R = √17 (≈ 4.1)",
+     "A1 α = 1.33 rad (awrt; or 76°)",
+     "R1 Completes to d = 7 + √17 cos(t + 1.33)"
     ],
-    "guidance": "M1 forms d = c − f and collects to 7 + cos t − 4 sin t. M1 compares with R cos(t+α): R cos α = 1, R sin α = 4. A1 R = √17 (R = √(1²+4²)). M1 tan α = 4 (or sin α = 4/R and cos α = 1/R, leading angle). A1 α = 1.33 (in radians), giving d = 7 + √17 cos(t + 1.33)."
+    "guidance": "The final mark is lost if the ratios are the wrong way round (e.g. tan α = 1/4)."
    },
    "12(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Minimum distance = 7 − √17 ≈ 2.88 m (288 cm)"
-    ],
-    "guidance": "M1 subtracts R from 7 (valid since R = √17 < 7): minimum of d is 7 − √17. A1 obtains 2.88 metres (288 cm) — correct units must be seen."
+     "M1 7 − R (R < 7)",
+     "A1 2.88 m (288 cm), with units"
+    ]
    },
    "13(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "a = 1"
-    ],
-    "guidance": "B1. arccos x = 0 when x = 1, so a = 1."
+     "B1 a = 1"
+    ]
    },
    "13(b)(i)": {
     "type": "points",
     "points": [
-     "Draw the curve y = cos x for 0 ≤ x ≤ π/2: starts at (0, 1) and decreases to (π/2, 0)",
-     "Draw the line y = x for 0 ≤ x ≤ π/2 (a straight line through the origin at 45°)",
-     "The cosine curve crosses the y-axis at 1 and the x-axis at π/2; the line passes through the origin and the point (π/2, π/2)"
-    ],
-    "guidance": "M1 draws the arccos arc (given) for 0 ≤ x ≤ π/2; M1 must draw the y-axis intercept of cos below π/2 with concavity correct; A1 labels y-intercept 1 and x-intercept π/2 (cosine); M1 draws y = x through the origin with approximately 45° gradient, A1 correct position as a straight line."
+     "M1 Concave arc for y = cos x crossing the y-axis below π/2",
+     "A1 Its y-intercept labelled 1 (or a)",
+     "M1 Straight line through O at about 45° crossing y = arccos x",
+     "A1 All three graphs meet at one common point, with shapes correct"
+    ]
    },
    "13(b)(ii)": {
     "type": "points",
     "points": [
-     "x − cos x = 0 means x = cos x",
-     "Since arccos is the inverse of cos (on this domain), applying arccos: x = cos x ⇒ arccos x = arccos(cos x) = x",
-     "So at the solution, cos x = x = arccos x, hence it also satisfies cos x = arccos x (it is the point where y = cos x, y = x and y = arccos x all intersect)"
-    ],
-    "guidance": "E1. Explain that y = cos x and y = arccos x are reflections of each other in the line y = x, so where y = x meets y = cos x it also meets y = arccos x. Accept: x = cos x throughout, so arccos x = x = cos x."
+     "E1 y = cos x and y = arccos x are reflections in y = x, so all three meet at the same point"
+    ]
    },
    "13(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x₃ = 0.7391 (AWRT)"
-    ],
-    "guidance": "B1 obtains f′(x) = 1 + sin x (PI by x₂ = 0.75036, AWRT 0.75). M1 applies Newton-Raphson xₙ₊₁ = xₙ − (xₙ − cos xₙ)/(1 + sin xₙ) starting from x₀ = 0. A1 obtains x₃ = 0.7391 (must have scored M1)."
+     "B1 Derivative 1 + sin x",
+     "M1 Correct iteration xₙ₊₁ = xₙ − (xₙ − cos xₙ)/(1 + sin xₙ) (x₂ ≈ 0.75036)",
+     "A1 x₃ = 0.7391 (awrt)"
+    ]
    },
    "14(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "dy/dx = 2ˣ ln 2"
-    ],
-    "guidance": "B1. Differentiate y = 2ˣ to get 2ˣ ln 2 (or ln 2 · e^(x ln 2))."
+     "B1 2ˣ ln 2"
+    ]
    },
    "14(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "∫ 2ˣ dx = 2ˣ/ln 2 + c"
-    ],
-    "guidance": "M1 integrates to k·2ˣ (k ≠ 1, 0). R1 deduces ∫ 2ˣ dx = 2ˣ/ln 2 + c (must include + c)."
+     "M1 Integrates to k·2ˣ",
+     "R1 2ˣ/ln 2 + c (constant needed)"
+    ]
    },
    "14(b)(i)": {
     "type": "points",
     "points": [
-     "The eight rectangles have width 0.5; the largest is the rightmost, with height equal to y at its left edge x = −0.5",
-     "Height = 2^(−1/2) = 1/√2",
-     "Area = 0.5 × 2^(−1/2) = ½ × 1/√2 = √2/4"
-    ],
-    "guidance": "M1 obtains the height 2^(−1/2) (exact value, ACF). R1 writes the product 0.5 × 2^(−1/2) in exact form to reach the given √2/4 (AG)."
+     "M1 Height of largest rectangle 2^(−½)",
+     "R1 0.5 × 2^(−½) written exactly as √2/4"
+    ]
    },
    "14(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Total area = (15/32)(1 + √2)"
-    ],
-    "guidance": "M1 uses Sₙ = a(1 − rⁿ)/(1 − r) with a = √2/4, r = √2/2, n = 8 (or equivalent). A1 a correct (possibly unsimplified) expression. R1 obtains (15(1 + √2))/32, i.e. (15/32)(1 + √2). Do not award the value of k alone."
+     "M1 GP sum formula with at least two of a = √2/4, r = √2/2, n = 8 correct (or a = 1/32, r = √2); or adds at least 4 correct areas",
+     "A1 Correct expression (may be unsimplified)",
+     "R1 (15/32)(1 + √2)"
+    ]
    },
    "14(b)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Limit A = 15/(16 ln 2)"
-    ],
-    "guidance": "M1 forms the definite integral ∫₋₄⁰ 2ˣ dx = (1/ln 2)[2ˣ]₋₄⁰ (PI by AWRT ±1.35). A1 substitutes 0 and −4 correctly into the integrated expression (or obtains AWRT 1.35): (1/ln 2)(2⁰ − 2⁻⁴). A1 obtains the correct exact value 15/(16 ln 2) (ACF)."
+     "M1 Forms ∫₋₄⁰ 2ˣ dx",
+     "A1 Substitutes limits into the correct integral (or awrt 1.35)",
+     "A1 15/(16 ln 2)"
+    ]
    },
    "15(a)": {
     "type": "points",
     "points": [
-     "Differentiate x² + 2y³ − 4xy = 0 implicitly: 2x + 6y²(dy/dx) − 4y − 4x(dy/dx) = 0",
-     "At a stationary point dy/dx = 0, giving 2x − 4y = 0, so x = 2y",
-     "Substitute x = 2y into the curve: (2y)² + 2y³ − 4(2y)y = 4y² + 2y³ − 8y² = 2y³ − 4y² = 0",
-     "Factorise: 2y²(y − 2) = 0, hence y²(y − 2) = 0"
-    ],
-    "guidance": "M1 differentiates the y³ and xy terms correctly (implicit differentiation, product rule). A1 correct full derivative. M1 sets dy/dx = 0 to get 2x − 4y = 0, i.e. x = 2y. R1 eliminates x by substituting x = 2y. R1 forms 2y³ − 4y² = 0 leading to y²(y − 2) = 0 (AG); marks for correct argument throughout."
+     "B1 x² differentiates to 2x",
+     "M1 Implicit differentiation giving a y² dy/dx or x dy/dx term",
+     "M1 Product rule on −4xy",
+     "A1 2x + 6y² dy/dx − 4y − 4x dy/dx = 0",
+     "M1 Sets dy/dx = 0",
+     "R1 Deduces x = 2y",
+     "R1 Substitutes into the curve and shows y²(y − 2) = 0 with an intermediate step"
+    ]
    },
    "15(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P = (4, 2)"
-    ],
-    "guidance": "B1 obtains y-coordinate 2 (y = 0 corresponds to the origin, not the stationary point P shown). B1 obtains x-coordinate 4 (from x = 2y). So P = (4, 2)."
+     "B1 y = 2",
+     "B1 x = 4, so P(4, 2)"
+    ]
    },
    "16(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "A = 1/8 and B = 1/8"
-    ],
-    "guidance": "1 ≡ A(4 + 3x) + B(4 − 3x). M1 forms the identity. Let x = 4/3: 1 = 8A ⇒ A = 1/8. Let x = −4/3: 1 = 8B ⇒ B = 1/8. A1 A = 1/8, A1 B = 1/8."
+     "M1 Valid method (substitution, cover-up, comparing coefficients) to find A or B",
+     "A1 A = 1/8",
+     "A1 B = 1/8"
+    ]
    },
    "16(b)(i)": {
     "type": "points",
     "points": [
-     "V = (volume) so dV/dt = rate in − rate out = 0.16 − 0.36d²",
-     "Base area = 1.6 × 1.25 = 2, so V = 2d ⇒ d = V/2",
-     "dV/dt = 0.16 − 0.36(V/2)² = 0.16 − 0.09V² = (16 − 9V²)/100"
-    ],
-    "guidance": "M1 dV/dt = 0.16 − 0.36d². B1 uses V = 2d (base area = 2) so d = V/2. M1 substitutes d = V/2. A1 simplifies to (16 − 9V²)/100 (AG)."
+     "M1 dV/dt = 0.16 − 0.36d²",
+     "B1 V = 1.25 × 1.6 × d = 2d",
+     "M1 Substitutes d = V/2 to get an equation in V and t only",
+     "R1 Completes to (16 − 9V²)/100"
+    ]
    },
    "16(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "t = (100/24)[ln(4 + 3V) − ln(4 − 3V)] + c, with c = 0 (since V = 0 at t = 0), i.e. t = (25/6) ln((4 + 3V)/(4 − 3V))"
-    ],
-    "guidance": "B1 separates variables: ∫ 100/(16 − 9V²) dV = ∫ 1 dt. M1 uses partial fractions 100/(16 − 9V²) = (100/8)[1/(4 − 3V) + 1/(4 + 3V)] (from part (a) scaled by 100). A1F integrates to (100/24)[−ln(4 − 3V) + ln(4 + 3V)] = t (+ c). A1 correct expression with the constant; applying V = 0 at t = 0 gives c = 0, so t = (25/6) ln((4 + 3V)/(4 − 3V))."
+     "B1 Separates: ∫ 1/(16 − 9V²) dV = ∫ 1/100 dt",
+     "B1F Integrates the t side correctly",
+     "M1 Uses the partial fractions from (a)",
+     "A1F (1/24)[−ln(4 − 3V) + ln(4 + 3V)] (+c)",
+     "R1 Shows c = 0 from t = 0, V = 0, giving t = (25/6) ln((4 + 3V)/(4 − 3V))"
+    ]
    },
    "16(b)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Approximately 8 minutes"
-    ],
-    "guidance": "M1 substitutes V = 1 (the full volume = base area × depth = 2 × 0.5 = 1 m³) into the expression for t: t = (100/24)(−ln(4 − 3) + ln(4 + 3)) = (100/24) ln 7. A1 obtains 8 minutes (to the nearest minute)."
+     "M1 Substitutes V = 1 into their expression",
+     "A1 8 minutes"
+    ]
    }
   }
  },
  "math-aqa-7357-2023-p2": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
-    "scenario": "The graph of y = ax² + bx + c has roots x = 2 and x = 5 (an upward-opening parabola crossing the x-axis at x = 2 and x = 5).",
+    "scenario": "The graph of y = ax² + bx + c is a U-shaped parabola crossing the x-axis at x = 2 and x = 5 (diagram on the question paper).",
     "parts": [
      {
       "code": "1",
-      "prompt": "State the set of values of x which satisfy ax² + bx + c > 0\nTick (✓) one box.\n• {x : x < 2} ∪ {x : x > 5}\n• {x : 0 < x < 2} ∩ {x : x > 5}\n• {x : 2 < x < 5}\n• {x : 2 > x > 5}",
+      "prompt": "Choose the set of x for which ax² + bx + c > 0.\nOptions: {x : x < 2} ∪ {x : x > 5}   {x : 0 < x < 2} ∩ {x : x > 5}   {x : 2 < x < 5}   {x : 2 > x > 5}",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "",
     "parts": [
      {
       "code": "2",
-      "prompt": "It is given that ∫₀⁶ f(x) dx = 20 and ∫₃⁶ f(x) dx = −10\nFind the value of ∫₀³ f(x) dx\nCircle your answer:  −30   −10   10   30",
+      "prompt": "Given ∫₀⁶ f(x) dx = 20 and ∫₃⁶ f(x) dx = −10, find ∫₀³ f(x) dx.\nOptions: −30   −10   10   30",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "",
     "parts": [
      {
       "code": "3",
-      "prompt": "A circle has equation (x − 5)² + (y − 13)² = 16\nFind the radius of the circle.\nCircle your answer:  4   12   16   256",
+      "prompt": "Find the radius of the circle (x − 5)² + (y − 13)² = 16.\nOptions: 4   12   16   256",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
-    "scenario": "A curve has equation y = x²/8 + 4√x",
+    "scenario": "Curve y = x²/8 + 4√x.",
     "parts": [
      {
       "code": "4(a)",
-      "prompt": "Find an expression for dy/dx",
+      "prompt": "Find dy/dx.",
       "marks": 3
      },
      {
       "code": "4(b)",
-      "prompt": "The point P with coordinates (4, 10) lies on the curve.\nFind an equation of the tangent to the curve at the point P",
+      "prompt": "P(4, 10) is on the curve. Find the equation of the tangent at P.",
       "marks": 2
      },
      {
@@ -24153,281 +23927,286 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 5,
-    "scenario": "Ziad is training to become a long-distance swimmer. He trains every day by swimming lengths at his local pool. The length of the pool is 25 metres. Each day he increases the number of lengths that he swims by four. On his first day of training, Ziad swims 10 lengths of the pool.",
+    "scenario": "Ziad trains in a 25 m pool. He swims 10 lengths on day 1 and 4 more lengths each day than the day before.",
     "parts": [
      {
       "code": "5(a)",
-      "prompt": "Write down an expression for the number of lengths Ziad will swim on his nth day of training.",
+      "prompt": "Write an expression for the number of lengths on day n.",
       "marks": 1
      },
      {
       "code": "5(b)(i)",
-      "prompt": "Ziad’s target is to be able to swim at least 3000 metres in one day.\nDetermine the minimum number of days he will need to train to reach his target.",
+      "prompt": "His target is at least 3000 m in a single day. Find the minimum number of days of training needed.",
       "marks": 3
      },
      {
       "code": "5(b)(ii)",
-      "prompt": "Ziad’s coach claims that when he reaches his target he will have covered a total distance of over 50 000 metres.\nDetermine if Ziad’s coach is correct.",
+      "prompt": "His coach says that by the time he hits the target he will have swum more than 50 000 m in total. Is the coach right?",
       "marks": 3
      }
     ]
    },
    {
     "number": 6,
-    "scenario": "Victoria, a market researcher, believes the average weekly value, £V million, of online grocery sales in the UK has grown exponentially since 2009. Victoria models the incomplete data, shown in the table, using the formula V = a × b^(N) where N is the number of years since 2009 and a and b are constants.\nTable (Year : Average Weekly Sales £V million): 2009 : 56.4 ; 2011 : 74.5 ; 2012 : 86.9 ; 2013 : 97.7 ; 2014 : 109.3 ; 2016 : 141.9.\nTo do this she plots a graph of log₁₀V against N and draws a line of best fit. The equation of Victoria’s line of best fit is log₁₀V = 0.057N + 1.76",
+    "scenario": "Average weekly UK online grocery sales £V million, modelled as V = a × b^N, N = years since 2009. Data: 2009 56.4, 2011 74.5, 2012 86.9, 2013 97.7, 2014 109.3, 2016 141.9 (2010 and 2015 missing). A plot of log₁₀ V against N has line of best fit log₁₀ V = 0.057N + 1.76 (graph on the question paper).",
     "parts": [
      {
       "code": "6(a)(i)",
-      "prompt": "Use the equation of Victoria’s line of best fit to show that, correct to three significant figures, a = 57.5",
+      "prompt": "Use the line to show a = 57.5 to 3 s.f.",
       "marks": 1
      },
      {
       "code": "6(a)(ii)",
-      "prompt": "Use the equation of Victoria’s line of best fit to find the value of b\nGive your answer to three significant figures.",
+      "prompt": "Use the line to find b to 3 s.f.",
       "marks": 1
      },
      {
       "code": "6(b)",
-      "prompt": "According to Victoria’s model, state the yearly percentage increase in the average weekly value of online grocery sales.",
+      "prompt": "State the model's yearly percentage increase in weekly sales.",
       "marks": 1
      },
      {
       "code": "6(c)(i)",
-      "prompt": "Use Victoria’s model to predict the average weekly value of online grocery sales in 2025.",
+      "prompt": "Use the model to predict average weekly sales in 2025.",
       "marks": 2
      },
      {
       "code": "6(c)(ii)",
-      "prompt": "Explain why the prediction made in part (c)(i) may be unreliable.",
+      "prompt": "Explain why that prediction may be unreliable.",
       "marks": 1
      }
     ]
    },
    {
     "number": 7,
-    "scenario": "The functions f and g are defined by f(x) = √(10 − 2x) for x ≤ 5 and g(x) = 1/x for x ≠ 0. The function h has maximum possible domain and is defined by h(x) = gf(x).",
+    "scenario": "f(x) = √(10 − 2x) for x ≤ 5; g(x) = 1/x for x ≠ 0; h(x) = gf(x) with the largest possible domain.",
     "parts": [
      {
       "code": "7(a)",
-      "prompt": "Find an expression for h(x)",
+      "prompt": "Find h(x).",
       "marks": 1
      },
      {
       "code": "7(b)",
-      "prompt": "Find the domain of h",
+      "prompt": "Find the domain of h.",
       "marks": 1
      },
      {
       "code": "7(c)",
-      "prompt": "Show that h⁻¹(x) = 5 − 1/(2x²)",
+      "prompt": "Show that h⁻¹(x) = 5 − 1/(2x²).",
       "marks": 3
      }
     ]
    },
    {
     "number": 8,
+    "scenario": "Expression 1/(1 − cos θ) + 1/(1 + cos θ), with cos θ ≠ ±1.",
     "parts": [
      {
       "code": "8(a)",
-      "prompt": "Given that cos θ ≠ ±1, prove the identity\n1/(1 − cos θ) + 1/(1 + cos θ) ≡ 2 cosec² θ",
+      "prompt": "Prove that the expression is identically 2 cosec² θ.",
       "marks": 4
      },
      {
       "code": "8(b)",
-      "prompt": "Hence, find the set of values of A for which the equation\n1/(1 − cos θ) + 1/(1 + cos θ) = A\nhas real solutions.\nFully justify your answer.",
+      "prompt": "Hence find, with full justification, the values of A for which the expression = A has real solutions.",
       "marks": 3
      },
      {
       "code": "8(c)",
-      "prompt": "Given that θ is obtuse and\n1/(1 − cos θ) + 1/(1 + cos θ) = 16\nfind the exact value of cot θ",
+      "prompt": "θ is obtuse and the expression equals 16. Find cot θ exactly.",
       "marks": 3
      }
     ]
    },
    {
     "number": 9,
+    "scenario": "Binomial expansion of (1 + x)^(−½).",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Find the first three terms, in ascending powers of x, of the binomial expansion of (1 + x)^(−1/2)",
+      "prompt": "Find the first three terms in ascending powers of x.",
       "marks": 2
      },
      {
       "code": "9(b)",
-      "prompt": "A student substitutes x = 2 into the expansion of (1 + x)^(−1/2) to find an approximation for 1/√3\nExplain the mistake in the student’s approach.",
+      "prompt": "A student puts x = 2 into the expansion to approximate 1/√3. Explain the error.",
       "marks": 1
      },
      {
       "code": "9(c)",
-      "prompt": "By substituting x = −1/4 in your expansion for (1 + x)^(−1/2) find an approximation for 1/√3\nGive your answer to three significant figures.",
+      "prompt": "Substitute x = −¼ into your expansion to approximate 1/√3, to 3 s.f.",
       "marks": 3
      }
     ]
    },
    {
     "number": 10,
+    "scenario": "Peter claims any rational number plus its reciprocal exceeds 2; he checks 2/3 + 3/2 = 2.166… and 2 + ½ = 2.5.",
     "parts": [
      {
       "code": "10(a)",
-      "prompt": "Expand and simplify (a − b)²",
+      "prompt": "Expand and simplify (a − b)².",
       "marks": 1
      },
      {
       "code": "10(b)",
-      "prompt": "Peter thinks that the sum of any rational number and its reciprocal is always greater than 2\nPeter checks two examples:\n2/3 + 3/2 = 2.16̇\n2 + 1/2 = 2.5\nUse a counter example to show that Peter is incorrect.",
+      "prompt": "Give a counter-example showing Peter is wrong.",
       "marks": 2
      },
      {
       "code": "10(c)",
-      "prompt": "Given that a and b are distinct positive numbers, use proof by contradiction to prove that a/b + b/a > 2",
+      "prompt": "For distinct positive a and b, prove by contradiction that a/b + b/a > 2.",
       "marks": 3
      }
     ]
    },
    {
     "number": 11,
+    "scenario": "",
     "parts": [
      {
       "code": "11",
-      "prompt": "A decoration is hanging freely from a fixed point on a ceiling. The decoration has a mass of 0.2 kilograms. The decoration is hanging by a light, inextensible wire. The wire is 0.1 metres long.\nFind the tension in the wire.\nCircle your answer:  0.02 N   0.02g N   0.2 N   0.2g N",
+      "prompt": "A 0.2 kg decoration hangs at rest from a ceiling on a light inextensible wire 0.1 m long. Find the tension.\nOptions: 0.02 N   0.02g N   0.2 N   0.2g N",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
+    "scenario": "",
     "parts": [
      {
       "code": "12",
-      "prompt": "A particle moves in a straight line. After the first 4 seconds of its motion, the displacement of the particle from its initial position is 0 metres. One of the graphs on the opposite page shows the velocity v m s⁻¹ of the particle after time t seconds of its motion.\nIdentify the correct graph. Tick (✓) one box. (The four velocity–time graphs over 0 ≤ t ≤ 4 are: (1) a straight line from v=5 at t=0 down to v=0 at t=4; (2) a line up from 0 to 5 at t=2 then down to −5 at t=4; (3) a line down from 5 at t=0 to −5 at t=2 then up to 5 at t=4; (4) a line down from 5 at t=0 to 0 at t=2 then up to 5 at t=4.)",
+      "prompt": "A particle moving in a line is back at its starting position (displacement 0) after 4 s. Pick the velocity–time graph that fits (graphs on the question paper).\nOptions: v falls linearly from 5 at t = 0 to 0 at t = 4   v rises from 0 to 5 at t = 2, then falls to −5 at t = 4   v falls from 5 to −5 at t = 2, then rises to 5 at t = 4   v falls from 5 to 0 at t = 2, then rises to 5 at t = 4",
       "marks": 1
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "A ball falls freely towards the Earth. The ball passes through two different fixed points M and N before reaching the Earth’s surface. At M the ball has velocity u m s⁻¹. At N the ball has velocity 3u m s⁻¹. It can be assumed that: the motion is due to gravitational force only; the acceleration due to gravity remains constant throughout.",
+    "scenario": "A ball falls freely (gravity only, constant g) past point M at u m s⁻¹ and then point N at 3u m s⁻¹, before reaching the ground.",
     "parts": [
      {
       "code": "13(a)",
-      "prompt": "Show that the time taken for the ball to travel from M to N is 2u/g seconds.",
+      "prompt": "Show the time from M to N is 2u/g seconds.",
       "marks": 2
      },
      {
       "code": "13(b)",
-      "prompt": "Point M is h metres above the Earth.\nShow that h > 4u²/g\nFully justify your answer.",
+      "prompt": "M is h m above the ground. Show, with full justification, that h > 4u²/g.",
       "marks": 3
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "A car has an initial velocity of 1 m s⁻¹. The car is moving in a straight line. The acceleration a m s⁻² of the car at time t seconds is given by a = 3kt² − 2kt + 1 where k is a constant. When t = 3 the car has a velocity of 10 m s⁻¹.",
+    "scenario": "",
     "parts": [
      {
       "code": "14",
-      "prompt": "Show that k = 1/3",
+      "prompt": "A car moving in a straight line starts with velocity 1 m s⁻¹ and has acceleration a = 3kt² − 2kt + 1 m s⁻². At t = 3 its velocity is 10 m s⁻¹. Show that k = 1/3.",
       "marks": 4
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "In this question use g = 9.8 m s⁻². A particle, Q, moves in a straight line across a rough horizontal surface. A horizontal driving force of magnitude D newtons acts on Q. Q moves with a constant acceleration of 0.91 m s⁻². Q has a weight of 0.65 N. The only resistance force acting on Q is due to friction. The coefficient of friction between Q and the surface is 0.4",
+    "scenario": "",
     "parts": [
      {
       "code": "15",
-      "prompt": "Find D",
+      "prompt": "Use g = 9.8 m s⁻². A particle Q of weight 0.65 N is pushed across a rough horizontal surface (μ = 0.4, friction the only resistance) by a horizontal force D N, accelerating at 0.91 m s⁻². Find D.",
       "marks": 4
      }
     ]
    },
    {
     "number": 16,
-    "scenario": "A particle moves under the action of two forces, F₁ and F₂. It is given that F₁ = (1.6i − 5j) N and F₂ = (ki + 5kj) N where k is a constant. The acceleration of the particle is (3.2i + 12j) m s⁻².",
+    "scenario": "",
     "parts": [
      {
       "code": "16",
-      "prompt": "Find k",
+      "prompt": "Forces F₁ = (1.6i − 5j) N and F₂ = (ki + 5kj) N act on a particle, giving it acceleration (3.2i + 12j) m s⁻². Find k.",
       "marks": 4
      }
     ]
    },
    {
     "number": 17,
-    "scenario": "A uniform plank PQ, of length 7 metres, lies horizontally at rest, in equilibrium, on two fixed supports at points X and Y. The distance PX is 1.4 metres and the distance QY is 2 metres (X is 1.4 m from end P, Y is 2 m from end Q).",
+    "scenario": "Uniform plank PQ, 7 m long, rests horizontally on supports X and Y with PX = 1.4 m and QY = 2 m (diagram on the question paper). The reaction at X is 4g N.",
     "parts": [
      {
       "code": "17(a)(i)",
-      "prompt": "The reaction force on the plank at X is 4g newtons.\nShow that the mass of the plank is 9.6 kilograms.",
+      "prompt": "Show the plank's mass is 9.6 kg.",
       "marks": 2
      },
      {
       "code": "17(a)(ii)",
-      "prompt": "Find the reaction force, in terms of g, on the plank at Y",
+      "prompt": "Find the reaction at Y in terms of g.",
       "marks": 2
      },
      {
       "code": "17(b)",
-      "prompt": "The support at Y is moved so that the distance QY = 1.4 metres. The plank remains horizontally at rest in equilibrium. It is claimed that the reaction force at Y remains unchanged.\nExplain, with a reason, whether this claim is correct.",
+      "prompt": "Y is moved so that QY = 1.4 m and the plank stays in equilibrium. Someone claims the reaction at Y is unchanged. Is this right? Give a reason.",
       "marks": 2
      }
     ]
    },
    {
     "number": 18,
-    "scenario": "In this question i and j are perpendicular unit vectors representing due east and due north respectively. A particle, T, is moving on a plane at a constant speed. The path followed by T makes the exact shape of a triangle ABC. T moves around ABC in an anticlockwise direction (from A to B to C and back to A). On its journey from A to B the velocity vector of T is (3i + √3 j) m s⁻¹.",
+    "scenario": "i and j point east and north. Particle T moves at constant speed anticlockwise around triangle ABC (diagram on the question paper). From A to B its velocity is (3i + √3j) m s⁻¹.",
     "parts": [
      {
       "code": "18(a)",
-      "prompt": "Find the speed of T as it moves from A to B",
+      "prompt": "Find T's speed from A to B.",
       "marks": 1
      },
      {
       "code": "18(b)",
-      "prompt": "On its journey from B to C the velocity vector of T is (−3i + √3 j) m s⁻¹.\nShow that the acute angle ABC = 60°",
+      "prompt": "From B to C its velocity is (−3i + √3j) m s⁻¹. Show the acute angle ABC is 60°.",
       "marks": 2
      },
      {
       "code": "18(c)",
-      "prompt": "It is given that ABC is an equilateral triangle. T returns to its initial position after 9 seconds. Vertex B lies at position vector (1, 0) metres with respect to a fixed origin O.\nFind the position vector of C",
+      "prompt": "ABC is equilateral, T completes the circuit in 9 s and B has position vector (1, 0) m. Find the position vector of C.",
       "marks": 3
      }
     ]
    },
    {
     "number": 19,
-    "scenario": "A wooden toy comprises a train engine and a trailer connected to each other by a light, inextensible rod. The train engine has a mass of 1.5 kilograms. The trailer has a mass 0.7 kilograms. A string inclined at an angle of 40° above the horizontal is attached to the front of the train engine. The tension in the string is 2 newtons. As a result the toy moves forward, from rest, in a straight line along a horizontal surface with acceleration 0.06 m s⁻². As it moves the train engine experiences a total resistance force of 0.8 N.",
+    "scenario": "A toy engine (1.5 kg) pulls a trailer (0.7 kg) via a light inextensible rod. A string at 40° above horizontal on the engine has tension 2 N; the toy accelerates from rest at 0.06 m s⁻² along a horizontal surface. Resistance on the engine is 0.8 N (diagram on the question paper).",
     "parts": [
      {
       "code": "19(a)",
-      "prompt": "Show that the total resistance force experienced by the trailer is approximately 0.6 N",
+      "prompt": "Show the total resistance on the trailer is about 0.6 N.",
       "marks": 4
      },
      {
       "code": "19(b)(i)",
-      "prompt": "At the instant that the toy reaches a speed of 0.5 m s⁻¹ the string breaks. As a result of this the train engine and trailer decelerate at a constant rate until they come to rest, having travelled a distance of h metres. It can be assumed that the resistance forces remain unchanged.\nFind the tension in the rod after the string has broken.",
+      "prompt": "At 0.5 m s⁻¹ the string breaks and the toy decelerates uniformly to rest over h m, resistances unchanged. Find the tension in the rod after the break.",
       "marks": 4
      },
      {
       "code": "19(b)(ii)",
-      "prompt": "Find h",
+      "prompt": "Find h.",
       "marks": 3
      },
      {
       "code": "19(c)",
-      "prompt": "State one modelling assumption that you have used about the rod when answering part (b)(i).",
+      "prompt": "State one modelling assumption about the rod used in (b)(i).",
       "marks": 1
      }
     ]
    },
    {
     "number": 20,
-    "scenario": "In this question use g = 9.8 m s⁻². Nell and her pet dog Maia are visiting the beach. The beach surface can be assumed to be level and horizontal. Nell and Maia are initially standing next to each other. Nell throws a ball forward, from a height of 1.8 metres above the surface of the beach, at an angle of 60° above the horizontal with a speed of 14 m s⁻¹. Exactly 0.2 seconds after the ball is thrown, Maia sets off from Nell and runs across the surface of the beach, in a straight line with a constant acceleration a m s⁻². Maia catches the ball when it is 0.3 metres above ground level.",
+    "scenario": "",
     "parts": [
      {
       "code": "20",
-      "prompt": "Find a",
+      "prompt": "Use g = 9.8 m s⁻². On level ground, Nell throws a ball from 1.8 m high at 14 m s⁻¹, 60° above horizontal. 0.2 s after the throw her dog sets off from beside her from rest in a straight line with constant acceleration a m s⁻² and catches the ball 0.3 m above the ground (diagram on the question paper). Find a.",
       "marks": 7
      }
     ]
@@ -24435,683 +24214,636 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "{x : x < 2} ∪ {x : x > 5}"
-    ],
-    "guidance": "B1: ticks the correct box. The parabola is positive outside its roots, i.e. for x < 2 or x > 5."
+     "B1 {x : x < 2} ∪ {x : x > 5} (option A)"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "30"
-    ],
-    "guidance": "R1: circles 30. ∫₀³ = ∫₀⁶ − ∫₃⁶ = 20 − (−10) = 30."
+     "R1 30 (option D)"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "4"
-    ],
-    "guidance": "B1: circles 4. radius² = 16 so radius = 4."
+     "B1 4 (option A)"
+    ]
    },
    "11": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Tension = weight = 0.2g N"
-    ],
-    "guidance": "B1: circles 0.2g N. The decoration hangs in equilibrium so tension = mg = 0.2g N."
+     "B1 0.2g N (option D)"
+    ]
    },
    "12": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Graph 3: v starts at 5 (t=0), falls to −5 at t=2, rises back to 5 at t=4"
-    ],
-    "guidance": "B1: ticks the correct box — the graph for which the signed area (displacement) over 0 ≤ t ≤ 4 is zero, i.e. the one going from +5 down to −5 then back up to +5."
+     "B1 Graph C (falls to −5 at t = 2, back to 5 at t = 4), whose net area is zero"
+    ]
    },
    "14": {
     "type": "points",
     "points": [
-     "v = ∫a dt = kt³ − kt² + t + c",
-     "At t = 0, v = 1 ⇒ c = 1, so v = kt³ − kt² + t + 1",
-     "At t = 3: 10 = 27k − 9k + 3 + 1 = 18k + 4",
-     "18k = 6 ⇒ k = 1/3"
-    ],
-    "guidance": "M1: integrates a with at least one correct term. A1: v = kt³ − kt² + t + c (constant condoned). M1: uses v = 1 at t = 0 to find c (must be before substituting t = 3). A1: substitutes t = 3, v = 10 and completes to k = 1/3. AG."
+     "M1 Integrates a with at least one term correct",
+     "A1 v = kt³ − kt² + t + c",
+     "M1 Uses v = 1 at t = 0 to get c = 1",
+     "A1 10 = 27k − 9k + 3 + 1 gives 18k = 6, so k = 1/3"
+    ]
    },
    "15": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Mass m = W/g = 0.65/9.8 = 0.0663… kg",
-     "Friction F = μR = 0.4 × 0.65 = 0.26 N (R = weight = 0.65 N)",
-     "Newton’s 2nd law: D − 0.26 = m × 0.91 = 0.0663 × 0.91 ≈ 0.0603",
-     "D = 0.32 N"
-    ],
-    "guidance": "B1: m = W/g (PI by 0.26). M1: F = μR = 0.26. M1: forms a three-term equation D − F = ma with their m. A1: D = 0.32 N (AWRT 0.32)."
+     "B1 Mass m = 0.65/9.8 ≈ 0.066 kg",
+     "M1 F = μR = 0.4 × 0.65 = 0.26",
+     "M1 Three-term equation D − F = ma",
+     "A1 D = 0.32 (awrt)"
+    ]
    },
    "16": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "F₁ + F₂ = ((1.6 + k)i + (5k − 5)j) N",
-     "F = ma: 1.6 + k = 3.2m and 5k − 5 = 12m",
-     "Eliminate m: (5k − 5)/12 = (1.6 + k)/3.2",
-     "Solve ⇒ k = 8.8 (m = 3.25)"
-    ],
-    "guidance": "B1: adds the two forces correctly. M1: applies F = ma with their resultant and a = (3.2i + 12j) (PI by ratio). A1: two correct scalar equations (vectors removed) or a correct linear equation in k. A1: k = 8.8 (ACF)."
+     "B1 Resultant (1.6 + k)i + (5k − 5)j",
+     "M1 Uses F = ma: 1.6 + k = 3.2m and 5k − 5 = 12m",
+     "A1 A correct linear equation in k (or m = 3.25)",
+     "A1 k = 8.8"
+    ]
    },
    "20": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Horizontal component of throw: 14 cos 60° = 7 m s⁻¹",
-     "Vertical component: 14 sin 60° = 7√3 m s⁻¹",
-     "Vertical motion of ball: s = ut − ½gt² with u = 7√3, s = 0.3 − 1.8 = −1.5",
-     "−1.5 = 7√3 t − 4.9t² ⇒ 4.9t² − 12.124t − 1.5 = 0 ⇒ t = 2.592 s",
-     "Horizontal distance of ball when caught = 7 × 2.592 = 18.144 m",
-     "Dog runs from rest (u = 0) for time t − 0.2 = 2.392 s: 18.144 = ½ a (2.392)²",
-     "a = 6.3 m s⁻²"
-    ],
-    "guidance": "B1: 14 cos 60° = 7 (horizontal). B1: 14 sin 60° = 7√3 (vertical). M1: uses s = ut + ½at² for the ball with u = vertical component, a = −g, s = ±1.5 (PI by t AWFW [2.54, 2.60]). A1: t = 2.592 (exact (3√10 + 5√3)/7). M1: horizontal distance = their t × horizontal component (t > 0.2). M1: substitutes u = 0 and time (their t − 0.2) into ut + ½at² for the dog. A1: a = 6.3 (CAO)."
+     "B1 Horizontal velocity 14 cos 60° = 7",
+     "B1 Vertical velocity 14 sin 60° = 7√3",
+     "M1 −1.5 = 7√3 t − 4.9t²",
+     "A1 t = 2.592 (2.54–2.60)",
+     "M1 Horizontal distance 7t ≈ 18.14",
+     "M1 Dog's distance ½a(t − 0.2)² set equal",
+     "A1 a = 6.3"
+    ]
    },
    "4(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "dy/dx = x/4 + 2x^(−1/2)"
-    ],
-    "guidance": "B1: writes √x as x^(1/2) (PI by derivative term kx^(−1/2)). M1: differentiates with at least one term correct. A1: correct dy/dx, any correct form, ISW."
+     "B1 Writes √x as x^(½)",
+     "M1 Differentiates with at least one term correct",
+     "A1 dy/dx = x/4 + 2x^(−½) (ACF)"
+    ]
    },
    "4(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Gradient at P is 2",
-     "Tangent: y = 2x + 2  (e.g. y − 10 = 2(x − 4))"
-    ],
-    "guidance": "M1: obtains gradient 2 or substitutes x = 4 into their dy/dx. A1: correct tangent equation, need not be fully simplified, ACF, ISW."
+     "M1 Substitutes x = 4 into dy/dx (gradient 2)",
+     "A1 y − 10 = 2(x − 4), i.e. y = 2x + 2"
+    ]
    },
    "4(c)": {
     "type": "points",
     "points": [
-     "dy/dx = x/4 + 2/√x",
-     "For x > 0 (the domain, since √x requires x > 0) both x/4 > 0 and 2/√x > 0",
-     "Therefore dy/dx = x/4 + 2/√x > 0, so dy/dx is never 0 ⇒ no stationary points"
-    ],
-    "guidance": "M1: equates dy/dx to zero. A1 (R1): reasoned argument that dy/dx > 0 throughout the domain so there are no solutions and hence no stationary points (e.g. x² = −8 has no real solutions)."
+     "M1 Sets their dy/dx = 0",
+     "R1 Rearranges to e.g. x^(3/2) = −8 and argues no solution since √x ≥ 0 (x ≥ 0), so no stationary points"
+    ]
    },
    "5(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Number of lengths on day n = 4n + 6"
-    ],
-    "guidance": "B1: correct expression for the number of lengths (arithmetic sequence, first term 10, common difference 4). ACF, e.g. 10 + 4(n − 1)."
+     "B1 10 + 4(n − 1) = 4n + 6"
+    ]
    },
    "5(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Lengths needed: 3000/25 = 120 lengths",
-     "4n + 6 ≥ 120 ⇒ n ≥ 28.5",
-     "Minimum number of days = 29"
-    ],
-    "guidance": "M1: forms a correct inequality 25 × (their day-n expression) ≥ 3000. M1: solves to n = 28.5. A1: 29 (CAO)."
+     "M1 Sets 25 × (their expression) = 3000",
+     "M1 Solves and rounds to a whole number of days",
+     "A1 29 days"
+    ]
    },
    "5(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Total lengths over 29 days = (29/2)(2×10 + (29−1)×4) = 1914",
-     "Total distance = 1914 × 25 = 47 850 metres",
-     "47 850 < 50 000, so the coach is NOT correct"
-    ],
-    "guidance": "M1: uses correct arithmetic-series sum with a = 10, d = 4, n = 29. A1: obtains 47 850 m (or 1914 lengths). R1: explicit comparison 47 850 < 50 000 with correct conclusion that the coach is wrong."
+     "M1 Arithmetic-series sum with a = 10, d = 4 (or last term 122)",
+     "A1 47 850 m (or 1914 lengths)",
+     "R1F Explicit comparison, e.g. 47 850 < 50 000, so the coach is wrong"
+    ]
    },
    "6(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "When N = 0, log₁₀ a = 1.76",
-     "a = 10^(1.76) = 57.5 (3 s.f.)"
-    ],
-    "guidance": "B1: shows log₁₀ a = 1.76 (or log₁₀ V = 1.76 at N = 0) leading to a = 10^(1.76) = 57.5. AG."
+     "B1 log₁₀ a = 1.76, so a = 10^1.76 = 57.5"
+    ]
    },
    "6(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "log₁₀ b = 0.057 (gradient)",
-     "b = 10^(0.057) = 1.14 (3 s.f.)"
-    ],
-    "guidance": "B1: b = 1.14 (AWRT 1.14)."
+     "B1 b = 10^0.057 = 1.14 (awrt)"
+    ]
    },
    "6(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Yearly percentage increase = 100(b − 1) = 100(1.14 − 1) = 14%"
-    ],
-    "guidance": "B1: 14%. FT their b where b > 1."
+     "B1F 14% (100(b − 1))"
+    ]
    },
    "6(c)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "2025 ⇒ N = 16",
-     "V = 57.5 × 1.14^(16) = 467.9 (£ million)",
-     "Average weekly value ≈ £467 900 000"
-    ],
-    "guidance": "M1: substitutes N = 16 into V = 57.5 × 1.14^N (or log₁₀ V = 0.057×16 + 1.76), giving V AWRT 467.9 or 469.9. A1: value in the interval [£467 800 000, £470 000 000], including £ or pounds (accept millions, e.g. £467.9 million)."
+     "M1 Substitutes N = 16 into the model",
+     "A1 £467.9 million (accept £467.8m to £470m; £ needed)"
+    ]
    },
    "6(c)(ii)": {
     "type": "points",
     "points": [
-     "2025 is well beyond the data range (extrapolation), so the model may not be valid",
-     "e.g. sales could fall or rise unexpectedly due to events such as a pandemic, supply shortages, or a shift back to in-person shopping"
-    ],
-    "guidance": "E1: gives a reason in context (must reference sales/shopping) why extrapolation from the model may not be valid."
+     "E1 A contextual reason why extrapolating is unsafe, e.g. the pandemic changed shopping habits after 2016"
+    ]
    },
    "7(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "h(x) = 1/√(10 − 2x)"
-    ],
-    "guidance": "B1: h(x) = 1/√(10 − 2x). ACF."
+     "B1 h(x) = 1/√(10 − 2x)"
+    ]
    },
    "7(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Domain of h: x < 5"
-    ],
-    "guidance": "B1: x < 5 (need 10 − 2x > 0, strict to avoid division by zero). Condone incorrect set notation."
+     "B1 x < 5"
+    ]
    },
    "7(c)": {
     "type": "points",
     "points": [
-     "Let y = 1/√(10 − 2x), so √(10 − 2x) = 1/y",
-     "10 − 2x = 1/y²",
-     "2x = 10 − 1/y² ⇒ x = 5 − 1/(2y²)",
-     "Hence h⁻¹(x) = 5 − 1/(2x²)"
-    ],
-    "guidance": "M1: sets y = h(x) and squares both sides to remove the root (or rearranges). A1: obtains 10 − 2x = 1/y² or x = 5 − 1/(2y²). R1: reasoned argument with no incorrect steps reaching the given result, correct inverse notation. AG."
+     "M1 Sets y = h(x) and squares to remove the root",
+     "A1 Rearranges correctly to x = 5 − 1/(2y²)",
+     "R1 Fully correct argument ending with h⁻¹(x) = 5 − 1/(2x²) in correct notation"
+    ]
    },
    "8(a)": {
     "type": "points",
     "points": [
-     "Common denominator: [(1 + cos θ) + (1 − cos θ)] / [(1 − cos θ)(1 + cos θ)]",
-     "= 2 / (1 − cos²θ)",
-     "= 2 / sin²θ",
-     "= 2 cosec²θ"
-    ],
-    "guidance": "B1: recalls cosec θ = 1/sin θ (PI by use of cosec²θ = 1/sin²θ). B1: combines over a single denominator (1 − cos θ)(1 + cos θ). M1: simplifies numerator to 2 and denominator to 1 − cos²θ. R1: uses cos²θ + sin²θ = 1 to reach 2/sin²θ = 2 cosec²θ. AG."
+     "B1 cosec θ = 1/sin θ",
+     "B1 cos² θ + sin² θ = 1",
+     "M1 Single fraction over (1 − cos θ)(1 + cos θ)",
+     "R1 Completes the proof to 2 cosec² θ"
+    ]
    },
    "8(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Equation becomes 2 cosec²θ = A",
-     "Since cosec²θ ≥ 1 (cosec θ ≤ −1 or cosec θ ≥ 1), 2 cosec²θ ≥ 2",
-     "For real solutions: A ≥ 2"
-    ],
-    "guidance": "M1: forms 2 cosec²θ = A (or 2/sin²θ = A). E1: explains that cosec²θ ≥ 1, i.e. cosec θ ≤ −1 or cosec θ ≥ 1 (or −1 ≤ sin θ ≤ 1, sin²θ ≤ 1). R1: deduces A ≥ 2."
+     "M1 Sets 2 cosec² θ = A",
+     "E1 Explains cosec² θ ≥ 1 because sin² θ ≤ 1",
+     "R1 A ≥ 2"
+    ]
    },
    "8(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "2 cosec²θ = 16 ⇒ cosec²θ = 8",
-     "1 + cot²θ = 8 ⇒ cot²θ = 7",
-     "θ obtuse ⇒ cot θ < 0, so cot θ = −√7"
-    ],
-    "guidance": "M1: uses the part (a) identity to get 2 cosec²θ = 16, i.e. cosec²θ = 8 (or sin²θ = 1/8). A1: cot²θ = 7 (PI by cot θ = ±√7). R1: deduces cot θ = −√7 because θ is obtuse."
+     "M1 Uses (a): 2(1 + cot² θ) = 16 (or cosec² θ = 8)",
+     "A1 cot² θ = 7",
+     "R1 cot θ = −√7 since θ is obtuse"
+    ]
    },
    "9(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "(1 + x)^(−1/2) = 1 + (−1/2)x + [(−1/2)(−3/2)/2!]x² + …",
-     "= 1 − ½x + (3/8)x²"
-    ],
-    "guidance": "M1: correct binomial structure with n = −1/2. A1: 1 − ½x + (3/8)x²."
+     "M1 Binomial expansion with a correct x² term structure",
+     "A1 1 − ½x + (3/8)x²"
+    ]
    },
    "9(b)": {
     "type": "points",
     "points": [
-     "x = 2 lies outside the interval of validity |x| < 1",
-     "so the expansion does not converge / the approximation is not valid"
-    ],
-    "guidance": "E1: explains the expansion is only valid for |x| < 1 and x = 2 is not in this interval."
+     "E1 Expansion is only valid for |x| < 1, so x = 2 is not allowed"
+    ]
    },
    "9(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "x = −1/4: 1 − ½(−1/4) + (3/8)(−1/4)² = 1 + 1/8 + 3/128 = 147/128",
-     "(1 − 1/4)^(−1/2) = (3/4)^(−1/2) = 2/√3",
-     "So 1/√3 = ½ × (147/128) = 147/256 = 0.574 (3 s.f.)"
+     "M1 Substitutes x = −¼ into their expansion",
+     "A1 147/128 (awrt 1.148), which approximates 2/√3",
+     "A1 1/√3 ≈ 0.574"
     ],
-    "guidance": "M1: substitutes x = −1/4 into their expansion to obtain 147/128 (≈1.148). A1: relates (3/4)^(−1/2) = 2/√3 so 1/√3 = ½ × 147/128. A1: 0.574 (AWRT), ISW."
+    "guidance": "awrt 0.580 is also accepted for the final mark."
    },
    "10(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "(a − b)² = a² − 2ab + b²"
-    ],
-    "guidance": "B1: a² − 2ab + b²."
+     "B1 a² − 2ab + b²"
+    ]
    },
    "10(b)": {
     "type": "points",
     "points": [
-     "Choose a negative rational, e.g. a = −2",
-     "a + 1/a = −2 + (−1/2) = −5/2",
-     "−5/2 is not greater than 2, so Peter is incorrect"
-    ],
-    "guidance": "M1: forms the sum of a non-zero rational and its reciprocal. A1: a valid counter-example giving a value not greater than 2 (must use a negative value)."
+     "M1 A different rational plus its reciprocal",
+     "R1 A valid counter-example compared with 2, e.g. 1 + 1 = 2 or a negative number"
+    ]
    },
    "10(c)": {
     "type": "points",
     "points": [
-     "Assume the contrary: a/b + b/a ≤ 2",
-     "Multiply by ab (> 0): a² + b² ≤ 2ab",
-     "So a² − 2ab + b² ≤ 0, i.e. (a − b)² ≤ 0",
-     "But a, b distinct ⇒ (a − b)² > 0, a contradiction",
-     "Hence a/b + b/a > 2"
-    ],
-    "guidance": "M1: assumes a/b + b/a ≤ 2. A1: rearranges and factorises to (a − b)² ≤ 0 (deduce (a − b)² ≤ 0). R1: reasoned argument concluding a contradiction since (a − b)² > 0 for distinct a, b."
+     "M1 Assumes a/b + b/a ≤ 2",
+     "A1 Rearranges to (a − b)² ≤ 0",
+     "R1 Contradiction since a ≠ b gives (a − b)² > 0, so the result holds"
+    ]
    },
    "13(a)": {
     "type": "points",
     "points": [
-     "Use v = u + at with v = 3u, initial velocity u, a = g",
-     "3u = u + gt",
-     "2u = gt ⇒ t = 2u/g"
-    ],
-    "guidance": "M1: selects a suitable constant-acceleration equation with u = u, v = 3u, a = g. R1: reasoned argument clearly stating these values and reaching t = 2u/g. AG."
+     "M1 Uses v = u + at with initial u, final 3u, a = g",
+     "R1 3u = u + gt, so t = 2u/g"
+    ]
    },
    "13(b)": {
     "type": "points",
     "points": [
-     "MN = s: use v² = u² + 2as with v = 3u, u = u, a = g",
-     "(3u)² = u² + 2gs ⇒ 9u² = u² + 2gs ⇒ 8u² = 2gs ⇒ s = MN = 4u²/g",
-     "M is above N (which is above the ground), so h = height of M > MN",
-     "Therefore h > 4u²/g"
-    ],
-    "guidance": "M1: uses v² = u² + 2as with correct substitution (condone a = −g). A1: reaches MN = 4u²/g. R1: explains that N is above the ground so the height of M exceeds MN, giving h > 4u²/g. AG."
+     "M1 Uses v² = u² + 2as: (3u)² = u² + 2gs",
+     "A1 MN = 4u²/g",
+     "R1 N is above the ground, so h > MN"
+    ]
    },
    "17(a)(i)": {
     "type": "points",
     "points": [
-     "Weight mg acts at the centre, 3.5 m from P. X is 1.4 m from P, Y is 5 m from P.",
-     "Take moments about Y: R_X × (5 − 1.4) = mg × (5 − 3.5)",
-     "4g × 3.6 = mg × 1.5",
-     "m = (4 × 3.6)/1.5 = 9.6 kg"
-    ],
-    "guidance": "M1: forms a correct moments equation using R_X = 4g and the weight at the centre. A1: completes to m = 9.6 kg. AG. (Alternative correct moment points accepted.)"
+     "M1 Moments about Y with one term correct: 1.5mg = 3.6 × 4g",
+     "R1 m = 9.6 kg"
+    ]
    },
    "17(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Resolve vertically: R_X + R_Y = mg = 9.6g",
-     "4g + R_Y = 9.6g",
-     "R_Y = 5.6g N"
-    ],
-    "guidance": "M1: resolves vertically (R_X + R_Y = weight) or takes moments. A1: R_Y = 5.6g N."
+     "M1 Resolves vertically (or takes moments elsewhere): 4g + R = 9.6g",
+     "A1 R = 5.6g N"
+    ]
    },
    "17(b)": {
     "type": "points",
     "points": [
-     "Original supports X (1.4 m from P) and Y (5 m from P) are equidistant from the centre (3.5 m), so reactions were equal — but here 4g ≠ 5.6g, so they were NOT equal originally",
-     "Moving Y to QY = 1.4 m (so Y is 5.6 m from P, 2.1 m from centre) changes the moments",
-     "New R_Y = 4.8g (< 5.6g), so the reaction at Y decreases",
-     "Therefore the claim is wrong"
-    ],
-    "guidance": "B1: obtains the new reaction 4.8g, or refers to symmetry/ the supports no longer equidistant from the centre. E1: states the reaction at Y changes/decreases (4.8g < 5.6g) and concludes the claim is incorrect."
+     "B1 New reaction 4.8g, or supports now equidistant from the centre",
+     "E1 The reaction at Y changes (decreases), so the claim is wrong"
+    ]
    },
    "18(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Speed = |(3, √3)| = √(3² + (√3)²) = √(9 + 3) = √12 = 2√3 m s⁻¹"
-    ],
-    "guidance": "B1: speed = √12 = 2√3 m s⁻¹ (≈3.46)."
+     "B1 2√3 (= √12, awrt 3.46) m s⁻¹"
+    ]
    },
    "18(b)": {
     "type": "points",
     "points": [
-     "Direction A→B: tan θ = (√3)/3 ⇒ 30° above i (east)",
-     "Direction B→C: velocity (−3, √3), tan = (√3)/3 above the −i direction ⇒ 150° from east",
-     "Interior angle ABC = angle between BA and BC; angle of incoming AB with east is 30°, of BC is 150°",
-     "Acute angle ABC = 180° − (150° − 30°) ... gives 60°"
+     "M1 Uses tan⁻¹(√3/3) (or similar) for the angle of a velocity to i or j",
+     "R1 Both directions make 30° with i, so ABC = 30° + 30° = 60°"
     ],
-    "guidance": "M1: finds the direction of each velocity (e.g. each makes 30° with the i-axis). R1: reasoned argument combining the two directions to show the acute angle ABC = 60°. AG."
+    "guidance": "Using the sine or cosine rule with a length for AC scores nothing."
    },
    "18(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Equilateral, total time 9 s ⇒ each side takes 3 s; speed 2√3, so each side has length 6√3",
-     "Velocity B→C is (−3, √3); displacement B→C = 3 × (−3, √3) = (−9, 3√3)",
-     "OC = OB + BC = (1, 0) + (−9, 3√3) = (−8, 3√3)"
-    ],
-    "guidance": "R1: deduces time from B to C is 9/3 = 3 s. M1: displacement B→C = t(−3, √3) with 1 < t ≤ 9 (here t = 3). A1: position vector of C = (−8, 3√3)."
+     "R1 B to C takes 3 s",
+     "M1 Displacement BC = t(−3, √3) with 1 < t < 9",
+     "A1 C = (−8, 3√3)"
+    ]
    },
    "19(a)": {
     "type": "points",
     "points": [
-     "Resolve string: horizontal component 2 cos 40° ≈ 1.53 N",
-     "Whole system, F = ma: 2 cos 40° − (0.8 + R) = (1.5 + 0.7)(0.06)",
-     "1.53 − 0.8 − R = 0.132",
-     "R ≈ 0.6 N (trailer resistance)"
-    ],
-    "guidance": "M1: resolves the 2 N force (2 cos 40° ≈ 1.53). M1: applies Newton’s 2nd law to the whole system (total mass 2.2 kg) with resistance 0.8 + R. A1: fully correct system equation. R1: completes to show R ≈ 0.6 N. AG."
+     "M1 Resolves the string force: 2 cos 40° ≈ 1.53",
+     "M1 Newton's 2nd law for the whole system (or trailer/engine)",
+     "A1 Fully correct equation, e.g. 2 cos 40° − (0.8 + R) = 2.2 × 0.06",
+     "R1 Shows R ≈ 0.6 N"
+    ]
    },
    "19(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "After string breaks, driving force removed; total resistance 0.8 + 0.6 = 1.4 N decelerates the 2.2 kg system",
-     "Whole system: −1.4 = 2.2a ⇒ a = −7/11 m s⁻²",
-     "Trailer (0.7 kg), let T be rod tension: ±(T − 0.6) = 0.7a (rod pulls/pushes trailer)",
-     "T = 17/110 N (≈ 0.155 N)"
-    ],
-    "guidance": "M1: forms an equation of motion without a driving force for the engine or the whole system (a = −7/11). M1: forms a correct equation of motion for the trailer (or engine) involving T. A1: correct pair / equation in T. A1: T = 17/110 N."
+     "M1 Equation of motion with no driving force (engine or whole system)",
+     "M1 One of −(T − 0.6) = 0.7a, −(0.8 + T) = 1.5a, −1.4 = 2.2a",
+     "A1 a = −7/11 and one correct equation involving T",
+     "A1 T = 17/110 ≈ 0.155 N (anything from 0.15 to 0.16)"
+    ]
    },
    "19(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Deceleration a = −7/11 m s⁻², initial speed 0.5 m s⁻¹, final 0",
-     "v² = u² + 2as: 0 = 0.5² + 2(−7/11)h",
-     "h = 0.25/(14/11) = 11/56 ≈ 0.20 m"
-    ],
-    "guidance": "B1: a = −7/11 (AWRT −0.64). M1: uses a correct constant-acceleration equation with u = 0.5, v = 0 and their a (do not accept a = −g). A1: h ≈ 0.2 m (AWRT 0.2, ISW)."
+     "B1 a = −7/11 (awrt −0.64)",
+     "M1 0 = 0.5² + 2ah",
+     "A1 h ≈ 0.20 m"
+    ]
    },
    "19(c)": {
     "type": "points",
     "points": [
-     "The rod is horizontal (or the rod is rigid / light)"
-    ],
-    "guidance": "E1: states one appropriate modelling assumption about the rod, e.g. the rod is horizontal (accept rod is rigid OE)."
+     "E1 e.g. the rod is horizontal, or rigid"
+    ]
    }
   }
  },
  "math-aqa-7357-2023-p3": {
+  "verified": "2026-09-22",
+  "source": "Rebuilt from the official question paper and mark scheme; wording paraphrased — see the PDFs for exact questions and diagrams.",
   "questions": [
    {
     "number": 1,
-    "scenario": "The graph of y = f(x) is shown. It is a V-shaped (modulus) graph with its vertex (minimum) below the x-axis and to the right of the y-axis, at the point (2, −3).",
+    "scenario": "A V-shaped modulus graph y = f(x) with its vertex below the x-axis to the right of the y-axis, crossing the y-axis below O (diagram on the question paper).",
     "parts": [
      {
       "code": "1",
-      "prompt": "One of the four equations listed below is the equation of the graph y = f(x). Identify which one is the correct equation of the graph. Tick (✓) one box.\ny = |x+2|+3\ny = |x+2|−3\ny = |x−2|+3\ny = |x−2|−3",
+      "prompt": "Pick the equation of the graph.\nOptions: y =   x + 2   + 3   y =   x + 2   − 3   y =   x − 2   + 3   y =   x − 2   − 3",
       "marks": 1
      }
     ]
    },
    {
     "number": 2,
+    "scenario": "",
     "parts": [
      {
       "code": "2",
-      "prompt": "The trapezium rule is used to estimate the area of the shaded region in each of four graphs. Identify the graph for which the trapezium rule produces an overestimate. Tick (✓) one box. (The four graphs show, in order: a straight increasing line; a convex increasing curve (curving upwards, e.g. exponential growth); a concave increasing curve (curving downwards); and a curve that rises then falls (a maximum within the strip).)",
+      "prompt": "The trapezium rule estimates each shaded area (graphs on the question paper). Which gives an overestimate?\nOptions: a straight line with positive gradient   an increasing curve that bends upwards (convex, like an exponential)   an increasing curve that bends downwards (concave)   a tent shape rising then falling, with the shaded strip spanning the peak",
       "marks": 1
      }
     ]
    },
    {
     "number": 3,
+    "scenario": "",
     "parts": [
      {
       "code": "3",
-      "prompt": "A curve with equation y = f(x) passes through the point (3, 7). Given that f′(3) = 0 find the equation of the normal to the curve at (3, 7). Circle your answer.\ny = (7/3)x        y = 0        x = 3        x = 7",
+      "prompt": "y = f(x) passes through (3, 7) and f′(3) = 0. Find the normal at (3, 7).\nOptions: y = (7/3)x   y = 0   x = 3   x = 7",
       "marks": 1
      }
     ]
    },
    {
     "number": 4,
+    "scenario": "",
     "parts": [
      {
       "code": "4",
-      "prompt": "Express (5 − ³√x)/x² in the form 5x^(p) − x^(q) where p and q are constants.",
+      "prompt": "Write (5 − ∛x)/x² in the form 5x^p − x^q, where p and q are constants.",
       "marks": 2
      }
     ]
    },
    {
     "number": 5,
+    "scenario": "",
     "parts": [
      {
       "code": "5",
-      "prompt": "A curve has equation y = 3e^(2x). Find the gradient of the curve at the point where y = 10",
+      "prompt": "For the curve y = 3e^(2x), find the gradient where y = 10.",
       "marks": 3
      }
     ]
    },
    {
     "number": 6,
+    "scenario": "Curve y = x²(2x + a) with a > 0; polynomial p(x) = x²(2x + a) + 36.",
     "parts": [
      {
       "code": "6(a)",
-      "prompt": "Sketch the curve with equation y = x²(2x + a) where a > 0",
+      "prompt": "Sketch y = x²(2x + a), a > 0 (axes on the question paper).",
       "marks": 3
      },
      {
       "code": "6(b)(i)",
-      "prompt": "The polynomial p(x) is given by p(x) = x²(2x + a) + 36. It is given that x + 3 is a factor of p(x). Use the factor theorem to show a = 2",
+      "prompt": "Given (x + 3) is a factor of p(x), use the factor theorem to show a = 2.",
       "marks": 2
      },
      {
       "code": "6(b)(ii)",
-      "prompt": "State the transformation which maps the curve with equation y = x²(2x + 2) onto the curve with equation y = x²(2x + 2) + 36",
+      "prompt": "State the transformation taking y = x²(2x + 2) to y = x²(2x + 2) + 36.",
       "marks": 2
      },
      {
       "code": "6(b)(iii)",
-      "prompt": "The polynomial x²(2x + 2) + 36 can be written as (x + 3)(2x² + bx + c). Without finding the values of b and c, use your answers to parts (a) and (b)(ii) to explain why b² < 8c",
+      "prompt": "x²(2x + 2) + 36 = (x + 3)(2x² + bx + c). Without finding b and c, use (a) and (b)(ii) to explain why b² < 8c.",
       "marks": 2
      }
     ]
    },
    {
     "number": 7,
-    "scenario": "A new design for a company logo is to be made from two sectors of a circle, ORP and OQS, and a rhombus OSTR. The points P, O and Q lie on a straight line and the angle ROS is θ radians. (The rhombus OSTR sits above O with T at the top; R and S are the upper vertices of the two sectors.) A large copy of the logo, with PQ = 5 metres, is to be put on a wall.",
+    "scenario": "A logo is made from two sectors ORP and OQS of a circle centre O and a rhombus OSTR; P, O, Q are collinear and angle ROS = θ radians (diagram on the question paper). A wall copy has PQ = 5 m.",
     "parts": [
      {
       "code": "7(a)",
-      "prompt": "Show that the area of the logo, A square metres, is given by A = (25/8)(π − θ + 2 sin θ)",
+      "prompt": "Show that the logo's area is A = (25/8)(π − θ + 2 sin θ) m².",
       "marks": 4
      },
      {
       "code": "7(b)(i)",
-      "prompt": "Show that the maximum value of A occurs when θ = π/3. Fully justify your answer.",
+      "prompt": "Show, fully justified, that A is greatest when θ = π/3.",
       "marks": 6
      },
      {
       "code": "7(b)(ii)",
-      "prompt": "Find the exact maximum value of A",
+      "prompt": "Find the exact maximum value of A.",
       "marks": 2
      },
      {
       "code": "7(c)",
-      "prompt": "Without further calculation, state how your answers to parts (b)(i) and (b)(ii) would change if PQ were increased to 10 metres.",
+      "prompt": "Without further calculation, say how the answers to (b)(i) and (b)(ii) change if PQ becomes 10 m.",
       "marks": 2
      }
     ]
    },
    {
     "number": 8,
+    "scenario": "",
     "parts": [
      {
       "code": "8",
-      "prompt": "Use the substitution u = x⁵ + 2 to show that ∫₀¹ x⁹/(x⁵+2)³ dx = 1/180",
+      "prompt": "Using u = x⁵ + 2, show that ∫₀¹ x⁹/(x⁵ + 2)³ dx = 1/180.",
       "marks": 7
      }
     ]
    },
    {
     "number": 9,
-    "scenario": "A water slide is the shape of a curve PQ. The curve can be modelled by the parametric equations x = t − 1/t + 4.8 and y = t + 2/t, where 0.2 ≤ t ≤ 3. The horizontal distance from O is x metres. The vertical distance above the point O at ground level is y metres. P is the point where t = 0.2 and Q is the point where t = 3.",
+    "scenario": "A water slide PQ is modelled by x = t − 1/t + 4.8, y = t + 2/t for 0.2 ≤ t ≤ 3, where x m is horizontal distance from O and y m is height above O at ground level. P is at t = 0.2 and Q at t = 3; the slide dips to a lowest point between them (figures on the question paper).",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "To make sure speeds are safe at Q, the difference in height between P and Q must be less than 7 metres. Show that the slide meets this safety requirement.",
+      "prompt": "For safety, P must be less than 7 m higher than Q. Show the slide meets this.",
       "marks": 3
      },
      {
       "code": "9(b)(i)",
-      "prompt": "Find an expression for dy/dx in terms of t",
+      "prompt": "Find dy/dx in terms of t.",
       "marks": 3
      },
      {
       "code": "9(b)(ii)",
-      "prompt": "A vertical support, RS, is to be added between the ground and the lowest point on the slide (R is the lowest point of the curve, S is directly below it on the ground). Find the length of RS",
+      "prompt": "A vertical support RS runs from the ground to the lowest point of the slide. Find the length RS.",
       "marks": 4
      },
      {
       "code": "9(b)(iii)",
-      "prompt": "Find the acute angle the slide makes with the horizontal at Q. Give your answer to the nearest degree.",
+      "prompt": "Find the acute angle between the slide and the horizontal at Q, to the nearest degree.",
       "marks": 2
      }
     ]
    },
    {
     "number": 10,
+    "scenario": "",
     "parts": [
      {
       "code": "10",
-      "prompt": "Which of the following is not a possible value for a product moment correlation coefficient? Circle your answer.\n−6/5        −3/5        0        1",
+      "prompt": "Which value cannot be a product moment correlation coefficient?\nOptions: −6/5   −3/5   0   1",
       "marks": 1
      }
     ]
    },
    {
     "number": 11,
+    "scenario": "",
     "parts": [
      {
       "code": "11",
-      "prompt": "A and B are mutually exclusive events. Which one of the following statements must be correct? Tick (✓) one box.\nP(A∪B) = P(A) × P(B)\nP(A∪B) = P(A) − P(B)\nP(A∩B) = 0\nP(A∩B) = 1",
+      "prompt": "A and B are mutually exclusive. Which statement must be true?\nOptions: P(A ∪ B) = P(A) × P(B)   P(A ∪ B) = P(A) − P(B)   P(A ∩ B) = 0   P(A ∩ B) = 1",
       "marks": 1
      }
     ]
    },
    {
     "number": 12,
-    "scenario": "It is known that, on average, 40% of the drivers who take their driving test at a local test centre pass their driving test. Each day 32 drivers take their driving test at this centre. The number of drivers who pass their test on a particular day can be modelled by the distribution B(32, 0.4).",
+    "scenario": "On average 40% of drivers pass at a test centre; 32 drivers are tested each day. Daily passes are modelled by B(32, 0.4).",
     "parts": [
      {
       "code": "12(a)",
-      "prompt": "State one assumption, in context, required for this distribution to be used.",
+      "prompt": "State one assumption, in context, needed for this model.",
       "marks": 1
      },
      {
       "code": "12(b)",
-      "prompt": "Find the probability that exactly 7 of the drivers on a particular day pass their test.",
+      "prompt": "Find P(exactly 7 pass).",
       "marks": 1
      },
      {
       "code": "12(c)",
-      "prompt": "Find the probability that, at most, 16 of the drivers on a particular day pass their test.",
+      "prompt": "Find P(at most 16 pass).",
       "marks": 1
      },
      {
       "code": "12(d)",
-      "prompt": "Find the probability that more than 12 of the drivers on a particular day pass their test.",
+      "prompt": "Find P(more than 12 pass).",
       "marks": 2
      },
      {
       "code": "12(e)",
-      "prompt": "Find the mean number of drivers per day who pass their test.",
+      "prompt": "Find the mean number of passes per day.",
       "marks": 1
      },
      {
       "code": "12(f)",
-      "prompt": "Find the standard deviation of the number of drivers per day who pass their test.",
+      "prompt": "Find the standard deviation of the daily number of passes.",
       "marks": 2
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "There are two types of coins in a money box: 20% are bronze coins and 80% are silver coins. Craig takes out a coin at random and places it back in the money box. Craig then takes out a second coin at random.",
+    "scenario": "A money box holds 20% bronze and 80% silver coins. Craig draws a coin at random, replaces it, then draws a second.",
     "parts": [
      {
       "code": "13(a)",
-      "prompt": "Find the probability that both coins were of the same type.",
+      "prompt": "Find P(both coins the same type).",
       "marks": 2
      },
      {
       "code": "13(b)",
-      "prompt": "Find the probability that both coins are bronze, given that at least one of the coins is bronze.",
+      "prompt": "Find P(both bronze | at least one bronze).",
       "marks": 2
      }
     ]
    },
    {
     "number": 14,
-    "scenario": "The mass of aluminium cans recycled each day in a city may be modelled by a normal distribution with mean 24 500 kg and standard deviation 5 200 kg.",
+    "scenario": "Daily mass of recycled aluminium cans ~ N(24 500, 5200²) kg. After collections become less frequent, a 24-day random sample totals 641 520 kg (σ still 5200 kg, still normal).",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "State the probability that the mass of aluminium cans recycled on any given day is not equal to 24 500 kg.",
+      "prompt": "State the probability that the mass on a given day is not exactly 24 500 kg.",
       "marks": 1
      },
      {
       "code": "14(b)",
-      "prompt": "To reduce costs, the city’s council decides to collect aluminium cans for recycling less frequently. Following the decision, it was found that over a 24-day period a total mass of 641 520 kg of aluminium cans was recycled. It can be assumed that the distribution of the mass of aluminium cans recycled is still normal with standard deviation 5 200 kg, and that the 24-day period can be regarded as a random sample. Investigate, at the 5% level of significance, whether the mean daily mass of aluminium cans recycled has changed.",
+      "prompt": "Test at the 5% level whether the mean daily mass has changed.",
       "marks": 7
      },
      {
       "code": "14(c)",
-      "prompt": "A member of the council claims that if a different sample of 24 days had been used the hypothesis test in part (b) would have given the same result. Comment on the validity of this claim.",
+      "prompt": "A councillor claims a different 24-day sample would have given the same test result. Comment on this claim.",
       "marks": 2
      }
     ]
    },
    {
     "number": 15,
+    "scenario": "Large Data Set (cars). A sample of eight masses (kg): 950, 989, 1247, 1415, 1506, 1680, 1833, 2040. Population lower quartile 1167, median 1393, upper quartile 1570.",
     "parts": [
      {
       "code": "15(a)(i)",
-      "prompt": "A random sample of eight cars was selected from the Large Data Set. The masses of these cars, in kilograms, were as follows: 950, 989, 1247, 1415, 1506, 1680, 1833, 2040. It is given that, for the population of cars in the Large Data Set: lower quartile = 1167, median = 1393, upper quartile = 1570. It was decided to remove any of the masses which fall outside the following interval: median − 1.5 × interquartile range ≤ mass ≤ median + 1.5 × interquartile range. Show that only one of the eight masses in the sample should be removed.",
+      "prompt": "Masses outside median ± 1.5 × IQR are removed. Show exactly one sample mass goes.",
       "marks": 3
      },
      {
       "code": "15(a)(ii)",
-      "prompt": "Write down the statistical name for the mass that should be removed in part (a)(i).",
+      "prompt": "Give the statistical name for the removed value.",
       "marks": 1
      },
      {
       "code": "15(b)",
-      "prompt": "The table shows the probability distribution of the number of previous owners, N, for a sample of cars taken from the Large Data Set.\nn:        0     1     2     3     4     5     6 or more\nP(N=n): 0.14  0.37  0.9k  0.25  0.4k  1.7k   0\nFind the value of P(1 ≤ N < 5)",
+      "prompt": "Number of previous owners N has P(N = n) for n = 0, 1, 2, 3, 4, 5, ≥6 of 0.14, 0.37, 0.9k, 0.25, 0.4k, 1.7k, 0. Find P(1 ≤ N < 5).",
       "marks": 4
      },
      {
       "code": "15(c)(i)",
-      "prompt": "An expert team is investigating whether there have been any changes in CO₂ emissions from all cars taken from the Large Data Set. The team decided to collect a quota sample of 200 cars to reflect the different years and the different makes of cars in the Large Data Set. Using your knowledge of the Large Data Set, explain how the team can collect this sample.",
+      "prompt": "A team wants a quota sample of 200 cars from the Large Data Set reflecting years and makes, to study CO₂ emissions. Using your knowledge of the data set, explain how to collect it.",
       "marks": 2
      },
      {
       "code": "15(c)(ii)",
-      "prompt": "Describe one disadvantage of quota sampling.",
+      "prompt": "Give one disadvantage of quota sampling.",
       "marks": 1
      }
     ]
    },
    {
     "number": 16,
-    "scenario": "A farm supplies apples to a supermarket. The diameters of the apples, D centimetres, are normally distributed with mean 6.5 and standard deviation 0.73",
+    "scenario": "Apple diameters D cm ~ N(6.5, 0.73²). Plum diameters are normal: 60% are below 5.9 cm and 20% are above 6.1 cm.",
     "parts": [
      {
       "code": "16(a)(i)",
-      "prompt": "Find P(D < 5.2)",
+      "prompt": "Find P(D < 5.2).",
       "marks": 1
      },
      {
       "code": "16(a)(ii)",
-      "prompt": "Find P(D > 7)",
+      "prompt": "Find P(D > 7).",
       "marks": 1
      },
      {
       "code": "16(a)(iii)",
-      "prompt": "The supermarket only accepts apples with diameters between 5 cm and 8 cm. Find the proportion of apples that the supermarket accepts.",
+      "prompt": "The supermarket accepts apples with diameters between 5 cm and 8 cm. Find the proportion accepted.",
       "marks": 1
      },
      {
       "code": "16(b)",
-      "prompt": "The farm also supplies plums to the supermarket. These plums have diameters that are normally distributed. It is found that 60% of these plums have a diameter less than 5.9 cm. It is found that 20% of these plums have a diameter greater than 6.1 cm. Find the mean and standard deviation of the diameter, in centimetres, of the plums supplied by the farm.",
+      "prompt": "Find the mean and standard deviation of plum diameters.",
       "marks": 6
      }
     ]
    },
    {
     "number": 17,
+    "scenario": "",
     "parts": [
      {
       "code": "17",
-      "prompt": "A council found that 70% of its new local businesses made a profit in their first year. The council introduced an incentive scheme for its residents to encourage the use of new local businesses. At the end of the scheme, a random sample of 25 new local businesses was selected and it was found that 21 of them had made a profit in their first year. Using a binomial distribution, investigate, at the 2.5% level of significance, whether there is evidence of an increase in the proportion of new local businesses making a profit in their first year.",
+      "prompt": "70% of a council's new local businesses made a profit in year one. After an incentive scheme, 21 of a random sample of 25 new businesses did so. Using a binomial model, test at 2.5% for an increase in the proportion.",
       "marks": 6
      }
     ]
@@ -25119,344 +24851,310 @@ window.MATHS_QUESTIONS = {
   ],
   "markSchemes": {
    "1": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Ticks the box y = |x−2|−3"
-    ],
-    "guidance": "R1. Vertex at (2, −3) gives a horizontal shift +2 (|x−2|) and vertical shift −3."
+     "R1 y = |x − 2| − 3 (option D)"
+    ]
    },
    "2": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Ticks the box for the convex (curving-upwards) increasing curve — the second graph"
-    ],
-    "guidance": "R1. The trapezium rule overestimates when the curve is convex (lies below its chords), i.e. the curve that bends upwards."
+     "R1 Option B: the upward-curving (convex) increasing graph"
+    ]
    },
    "3": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circles x = 3"
-    ],
-    "guidance": "R1. f′(3)=0 means the tangent is horizontal, so the normal is vertical: x = 3."
+     "R1 x = 3 (option C)"
+    ]
    },
    "4": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "5x⁻² or x^(1/3 − 2) seen (M1)",
-     "5x⁻² − x^(−5/3), i.e. p = −2 and q = −5/3 (A1)"
-    ],
-    "guidance": "M1 obtains 5x⁻² or x^(1/3−2); A1 for 5x⁻² − x^(−5/3) (p = −2, q = −5/3). Allow −1.67 or better for −5/3. Do not ISW incorrect algebra."
+     "M1 Obtains 5x^(−2) or x^(1/3 − 2)",
+     "A1 5x^(−2) − x^(−5/3), i.e. p = −2, q = −5/3 (−1.67 or better accepted)"
+    ]
    },
    "5": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "dy/dx = 2 × 3e^(2x) = 6e^(2x) (B1)",
-     "Substitutes y = 10 (so 3e^(2x) = 10) into their dy/dx, or substitutes x = ½ln(10/3) ≈ 0.602 (M1)",
-     "Gradient = 20 (A1, CAO)"
-    ],
-    "guidance": "B1 for 2×3e^(2x) (= 2y). M1 substitutes y=10 into dy/dx=2y. A1 = 20 exactly; 20 cannot come from a rounded value."
+     "B1 dy/dx = 6e^(2x) (= 2y)",
+     "M1 Substitutes y = 10 (or x = ½ ln(10/3) ≈ 0.6)",
+     "A1 20 (CAO)"
+    ]
    },
    "8": {
     "type": "points",
     "points": [
-     "du/dx = 5x⁴, PI by (1/5)(u−2)^(−4/5) (B1)",
-     "Substitutes for the denominator and dx operator: ∫ x⁹/u³ · (1/(5x⁴)) du (M1)",
-     "Substitutes x⁵ = u − 2 (so x⁹ = x⁵·x⁴ = (u−2)x⁴): obtains (1/5)∫ (u−2)/u³ du (M1, A1)",
-     "Integrates: (1/5)∫ (u⁻² − 2u⁻³) du = (1/5)[−u⁻¹ + u⁻²] (M1)",
-     "Applies the limits u = 2 (x=0) to u = 3 (x=1): (1/5)[(1/9 − 1/3) − (1/4 − 1/2)] = 1/180 (A1, R1 AG)"
-    ],
-    "guidance": "With u = x⁵ + 2, du = 5x⁴ dx. New limits u = 2 (x=0) and u = 3 (x=1). The integrand becomes (1/5)(u−2)/u³ = (1/5)(u⁻² − 2u⁻³). Integrate and evaluate to show exactly 1/180. R1 for substituting correct limits consistent with the variable to show the given result."
+     "B1 du/dx = 5x⁴",
+     "M1 Replaces the denominator and dx with u and du",
+     "M1 Uses x⁵ = u − 2 in the numerator",
+     "A1 (1/5)∫(u − 2)/u³ du",
+     "M1 Integrates u^(−2) or u^(−3) correctly",
+     "A1 (1/5)(−u^(−1) + u^(−2))",
+     "R1 Uses limits u = 2 to 3 (or x = 0 to 1 consistently) to reach 1/180"
+    ]
    },
    "10": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Circles −6/5"
-    ],
-    "guidance": "B1. A correlation coefficient must lie in [−1, 1]; −6/5 = −1.2 is outside this range."
+     "B1 −6/5 (option A)"
+    ]
    },
    "11": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Ticks P(A∩B) = 0"
-    ],
-    "guidance": "B1. Mutually exclusive events cannot occur together, so P(A∩B) = 0."
+     "B1 P(A ∩ B) = 0 (option C)"
+    ]
    },
    "17": {
     "type": "points",
     "points": [
-     "H₀: p = 0.7, H₁: p > 0.7 (one-tailed) (B1)",
-     "Under H₀, X ~ B(25, 0.7); P(X ≥ 21) = 1 − P(X ≤ 20) = 1 − 0.9095 = 0.0905 (M1, A1)",
-     "Compare with 0.025: 0.0905 > 0.025 (M1)",
-     "Do not reject H₀ (A1)",
-     "Conclude in context: there is insufficient evidence of an increase in the proportion of new local businesses making a profit in their first year (R1)"
-    ],
-    "guidance": "One-tailed test at 2.5%. P(X ≥ 21) = 0.0905 > 0.025 (critical region is X ≥ 23), so do not reject H₀. R1 requires M1A1M1A1 minimum, correct probability labels, and a non-definite contextual conclusion."
+     "B1 H₀: p = 0.7, H₁: p > 0.7",
+     "M1 Uses X ~ B(25, 0.7)",
+     "A1 P(X ≥ 21) = 0.0905 (or critical region X ≥ 23)",
+     "M1 Compares with 0.025",
+     "A1 Do not reject H₀",
+     "R1 Insufficient evidence of an increase in the proportion making a first-year profit"
+    ]
    },
    "6(a)": {
     "type": "points",
     "points": [
-     "Cubic drawn in the correct (positive) orientation (M1)",
-     "Minimum (and maximum) deduced — curve has a minimum/maximum at the origin (0,0) (M1)",
-     "Fully correct cubic with x-intercept at −a/2 shown, touching at O (A1)"
-    ],
-    "guidance": "M1 correct cubic orientation; M1 turning point at (0,0); A1 fully correct with other intercept at x = −a/2 (a double root at x=0 so the curve touches the x-axis at O)."
+     "M1 Cubic with positive x³ orientation",
+     "M1 Turning point touching the axis at (0, 0)",
+     "A1 Fully correct, with x-intercept −a/2 marked"
+    ]
    },
    "6(b)(i)": {
     "type": "points",
     "points": [
-     "Substitutes x = −3 into p(x): (−3)²(2×−3 + a) + 36 = 0 (M1)",
-     "−54 + 9a + 36 = 0 ⇒ 9a − 18 = 0 ⇒ a = 2, completed with no errors (R1, AG)"
-    ],
-    "guidance": "M1 sets p(−3)=0 with an expression in a. R1 reasoned argument with at least one correct intermediate step and no errors to reach a = 2. Do not condone missing brackets (other than the condoned (−3)²)."
+     "M1 Substitutes x = −3 into p(x) giving an expression in a",
+     "R1 Sets p(−3) = 0: −54 + 9a + 36 = 0, so a = 2 (AG)"
+    ]
    },
    "6(b)(ii)": {
     "type": "points",
     "points": [
-     "States it is a translation (B1)",
-     "States the vector (0, 36), i.e. 36j — translation 36 units in the positive y-direction (B1)"
-    ],
-    "guidance": "B1 “translation” (no other transformation). B1 vector (0,36) or 36j."
+     "B1 Translation (and no other transformation)",
+     "B1 By vector (0, 36)"
+    ]
    },
    "6(b)(iii)": {
     "type": "points",
     "points": [
-     "The translated graph y = x²(2x+2) + 36 has only one real root (at x = −3), since the original curve had a minimum at the origin and the +36 translation lifts it so it crosses once (E1)",
-     "Hence the quadratic factor 2x² + bx + c has no real roots, so its discriminant < 0: b² − 4(2)c < 0 ⇒ b² < 8c (E1)"
-    ],
-    "guidance": "E1 explains translated graph has only one real solution / root at −3. E1 deduces discriminant of 2x²+bx+c is negative: b² − 8c < 0. Do not allow use of a = 2 with reference to (b)(i)."
+     "E1 The translated curve crosses the x-axis only once (at x = −3)",
+     "E1 So 2x² + bx + c has no real roots: b² − 4(2)c < 0, giving b² < 8c"
+    ]
    },
    "7(a)": {
     "type": "points",
     "points": [
-     "Area of one or both sectors: 2 × ½r²((π−θ)/2) = r²(π−θ)/2 with r = 2.5 (M1)",
-     "Area of (half/full) rhombus: 2 × ½r² sinθ = r² sinθ with r = 2.5 (M1)",
-     "Substitutes r = 2.5 to get A = (2.5)²((π−θ)/2) + (2.5)² sinθ = (25/8)(π−θ) + (25/4) sinθ (A1)",
-     "Reasoned argument shows A = (25/8)(π − θ + 2 sinθ) (R1, AG)"
-    ],
-    "guidance": "PQ = 5 so radius r = 2.5. The two sectors together subtend angle (π − θ) (since angle ROS = θ and POQ is a straight line). Rhombus area = r² sinθ. M1 sectors, M1 rhombus, A1 correct expression, R1 completes to given answer."
+     "M1 Area of one or both sectors, e.g. 2 × ½r²(π − θ)/2",
+     "M1 Area of half or all of the rhombus, e.g. r² sin θ",
+     "A1 Correct expression with r = 2.5 for sectors or rhombus",
+     "R1 Adds to give the stated total with a correct intermediate step"
+    ]
    },
    "7(b)(i)": {
     "type": "points",
     "points": [
-     "Differentiates: dA/dθ = (25/8)(−1 + 2cosθ) (M1)",
-     "Sets dA/dθ = 0 ⇒ −1 + 2cosθ = 0 ⇒ cosθ = ½ (A1)",
-     "θ = π/3 (E1)",
-     "Second derivative d²A/dθ² = (25/8)(−2sinθ) = −(25/4)sinθ (M1)",
-     "At θ = π/3, d²A/dθ² = −5.41 < 0 (A1)",
-     "Since d²A/dθ² < 0 the stationary point is a maximum (R1)"
-    ],
-    "guidance": "M1 correct derivative, A1 cosθ=½, E1 θ=π/3. Then justify it is a maximum: M1 second derivative, R1 shows it is negative at θ=π/3 (≈ −5.41 < 0). AWRT/AWFW accepted for the numerical value."
+     "M1 Differentiates A with respect to θ",
+     "A1 dA/dθ = (25/8)(−1 + 2 cos θ)",
+     "E1 States the maximum occurs where dA/dθ = 0",
+     "M1 Solves for cos θ",
+     "A1 cos θ = ½ so θ = π/3",
+     "R1 Second derivative −25√3/8 (≈ −5.41) < 0 (or gradient test), so maximum"
+    ]
    },
    "7(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Substitutes θ = π/3 fully into A = (25/8)(π − θ + 2 sinθ) (M1)",
-     "A = (25/8)(π − π/3 + 2 sin(π/3)) = (25/8)(2π/3 + √3) square metres (A1)"
-    ],
-    "guidance": "M1 full substitution θ=π/3 or AWFW [11.9, 12]. A1 correct exact area (25/8)(2π/3 + √3) with sin(π/3) evaluated to √3/2. ISW."
+     "M1 Substitutes θ = π/3 (or gets 11.9–12)",
+     "A1 (25/8)(2π/3 + √3) (ACF, exact)"
+    ]
    },
    "7(c)": {
     "type": "points",
     "points": [
-     "The angle (answer to (b)(i)) would be the same, θ = π/3 (E1)",
-     "The maximum area (answer to (b)(ii)) would be quadrupled — A = (25/2)(2π/3 + √3) — since radius doubles and area scales by the square (E1)"
-    ],
-    "guidance": "E1 angle unchanged. E1 area quadrupled (scale factor 4) because PQ doubles so r doubles and area ∝ r²."
+     "E1 θ = π/3 is unchanged",
+     "E1 The maximum area is multiplied by 4"
+    ]
    },
    "9(a)": {
     "type": "points",
     "points": [
-     "At t = 0.2: y = 10.2; at t = 3: y = 11/3 ≈ 3.67 (B1)",
-     "Finds the difference in the two y-values: 10.2 − 11/3 (M1)",
-     "= 6.53 < 7, so the safety requirement is met / the slide is safe (R1)"
-    ],
-    "guidance": "B1 y = 10.2 or y = 11/3. M1 difference between the two y-values. R1 compares 6.53 with 7 and states requirement met. AWFW [6.5, 6.53] for the difference."
+     "B1 y = 10.2 at P or y = 11/3 at Q",
+     "M1 Difference of the two heights",
+     "R1 6.53 < 7, so it is safe"
+    ]
    },
    "9(b)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "dx/dt = 1 + t⁻² and dy/dt = 1 − 2t⁻² (B1)",
-     "Uses chain rule dy/dx = (dy/dt)/(dx/dt) (M1)",
-     "dy/dx = (1 − 2t⁻²)/(1 + t⁻²) (A1)"
-    ],
-    "guidance": "B1 one correct derivative; M1 forms (dy/dt)/(dx/dt); A1 correct expression. ISW."
+     "B1 dx/dt = 1 + t^(−2) or dy/dt = 1 − 2t^(−2)",
+     "M1 dy/dx = (dy/dt)/(dx/dt)",
+     "A1 (1 − 2t^(−2))/(1 + t^(−2))"
+    ]
    },
    "9(b)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Lowest point where dy/dx = 0 (or dy/dt = 0): 1 − 2t⁻² = 0 ⇒ t² = 2 ⇒ t = √2 (M1, A1)",
-     "Substitutes t = √2 into y: y = √2 + 2/√2 = 2√2 (M1)",
-     "RS = 2√2 ≈ 2.83 metres (A1)"
-    ],
-    "guidance": "M1 sets derivative = 0; A1 t = √2 (from correct dy/dx or dy/dt). M1 substitutes into y; A1 RS = 2√2 ≈ 2.83 m. AWFW [2.82, 2.83]."
+     "M1 Sets the gradient to zero",
+     "A1 t = √2",
+     "M1 Substitutes into y",
+     "A1 RS = 2√2 m (awrt 2.83 m, with units)"
+    ]
    },
    "9(b)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "At Q (t = 3): tanθ = dy/dx = (1 − 2/9)/(1 + 1/9) = 0.7 (M1)",
-     "θ = arctan(0.7) = 35° to the nearest degree (A1, CAO)"
-    ],
-    "guidance": "M1 sets tanθ equal to dy/dx at t = 3 (= 0.7 or 0.61 or 55° if measured from vertical). A1 = 35°."
+     "M1 tan(angle) = dy/dx at t = 3 = 0.7",
+     "A1 35°"
+    ]
    },
    "12(a)": {
     "type": "points",
     "points": [
-     "One valid assumption in context, e.g. the probability of each driver passing the test is constant (0.4), OR each driver passes independently of the others, OR there are only two outcomes (pass/fail) for each test"
+     "E1 e.g. each driver's chance of passing the test is constant, or drivers pass independently"
     ],
-    "guidance": "E1. Must be in context (test/pass/drivers). Allow equivalent statements about constant probability or independence. Do not allow incorrect statements about the mean."
+    "guidance": "Must be in context (the test); 'fixed number of drivers' is not credited."
    },
    "12(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X = 7) = 0.0157"
-    ],
-    "guidance": "B1. AWFW [0.0156, 0.016]. X ~ B(32, 0.4)."
+     "B1 0.0157 (0.0156–0.016)"
+    ]
    },
    "12(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X ≤ 16) = 0.908"
-    ],
-    "guidance": "B1. AWFW [0.908, 0.91]."
+     "B1 0.908 (0.908–0.91)"
+    ]
    },
    "12(d)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(X > 12) = 1 − P(X ≤ 12) = 1 − 0.4618 (M1)",
-     "= 0.538 (A1)"
-    ],
-    "guidance": "M1 states P(X > 12) = 1 − P(X ≤ 12) (or P(13 ≤ X ≤ 32)). A1 = 0.538. AWFW [0.538, 0.54]."
+     "M1 1 − P(X ≤ 12)",
+     "A1 0.538 (0.538–0.54)"
+    ]
    },
    "12(e)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Mean = np = 32 × 0.4 = 12.8"
-    ],
-    "guidance": "B1 = 12.8. Do not ISW."
+     "B1 12.8"
+    ]
    },
    "12(f)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Variance = npq = 32 × 0.4 × 0.6 = 7.68 (M1)",
-     "Standard deviation = √7.68 = 8√3/5 ≈ 2.77 (A1)"
-    ],
-    "guidance": "M1 correct variance formula with 32, 0.4, 0.6, giving 7.68 (or 8√3/5). A1 sd = 2.77 (AWFW [2.77, 2.8] or 8√3/5). Do not ISW; do not allow leaving the answer as √7.68."
+     "M1 Variance 32 × 0.4 × 0.6 = 7.68",
+     "A1 2.77 (2.77–2.8)"
+    ]
    },
    "13(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(both bronze) = 0.2 × 0.2 = 0.04; P(both silver) = 0.8 × 0.8 = 0.64 (M1)",
-     "P(both same type) = 0.04 + 0.64 = 0.68 (A1)"
-    ],
-    "guidance": "M1 finds P(both bronze) or P(both silver), or computes 1 − 2×0.2×0.8. A1 = 0.68. (Replacement, so the draws are independent.)"
+     "M1 P(both bronze) = 0.04 or P(both silver) = 0.64",
+     "A1 0.68"
+    ]
    },
    "13(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(at least one bronze) = 1 − 0.8 × 0.8 = 0.36 (M1)",
-     "P(both bronze | at least one bronze) = (0.2 × 0.2)/0.36 = 0.04/0.36 = 1/9 (A1)"
-    ],
-    "guidance": "M1 finds P(at least one bronze) = 0.36. A1 = 1/9 ≈ 0.111. Conditional probability P(both bronze ∩ at least one bronze)/P(at least one bronze) = 0.04/0.36."
+     "M1 P(at least one bronze) = 1 − 0.64 = 0.36",
+     "A1 0.04/0.36 = 1/9"
+    ]
    },
    "14(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(mass ≠ 24 500) = 1 (or 100%)"
-    ],
-    "guidance": "B1. For a continuous distribution P(D = a specific value) = 0, so P(D ≠ 24 500) = 1."
+     "B1 1"
+    ]
    },
    "14(b)": {
     "type": "points",
     "points": [
-     "H₀: μ = 24 500, H₁: μ ≠ 24 500 (two-tailed) (B1)",
-     "Sample mean X̄ = 641 520 / 24 = 26 730 (B1)",
-     "Under H₀, X̄ ~ N(24 500, 5200²/24); compute P(X̄ ≥ 26 730) = 0.018 < 0.025, OR test statistic z = (26 730 − 24 500)/(5200/√24) ≈ 2.10, OR critical value 26 600 / acceptance region (M1, A1)",
-     "Correctly compares with 0.025 (or z with 1.96) (M1)",
-     "Reject H₀ — all figures correct (A1)",
-     "Conclude in context: there is sufficient evidence to suggest the mean daily mass of aluminium cans recycled has changed (R1)"
-    ],
-    "guidance": "Two-tailed test at 5%. X̄ = 26 730. Probability 0.018 < 0.025 (or |z| ≈ 2.10 > 1.96), so reject H₀. R1 requires M1A1M1A1 as a minimum and a correct contextual conclusion (mean changed, non-definite wording)."
+     "B1 H₀: μ = 24 500, H₁: μ ≠ 24 500",
+     "B1 Sample mean 26 730",
+     "M1 X̄ ~ N(24 500, 5200²/24)",
+     "A1 P(X̄ > 26 730) ≈ 0.018 (or z ≈ 2.1, or critical value ≈ 26 600)",
+     "M1 Compares with 0.025 (or 1.96)",
+     "A1 Reject H₀",
+     "R1 Evidence that the mean daily mass has changed"
+    ]
    },
    "14(c)": {
     "type": "points",
     "points": [
-     "The claim is not necessarily valid: a different sample of 24 days could give a different sample mean (E1)",
-     "so the test result could be different — the claim that it would give the same result need not be true / cannot be definite (E1)"
-    ],
-    "guidance": "E1 a different sample would likely give a different sample mean. E1 hence the result might differ, so the claim could be wrong / result not definite."
+     "E1 A different sample would probably give a different sample mean",
+     "E1 So the result could differ; the claim is not valid"
+    ]
    },
    "15(a)(i)": {
     "type": "points",
     "points": [
-     "IQR = UQ − LQ = 1570 − 1167 = 403 (B1)",
-     "Lower limit = 1393 − 1.5 × 403 = 788.5; Upper limit = 1393 + 1.5 × 403 = 1997.5 (M1)",
-     "Only 2040 lies outside [788.5, 1997.5], so only one mass should be removed (A1)"
-    ],
-    "guidance": "B1 IQR = 403. M1 substitutes into median ± 1.5×IQR for at least one limit. A1 obtains limits 788.5 and 1997.5 and identifies that only 2040 (> 1997.5) is removed."
+     "B1 IQR = 403",
+     "M1 Computes a limit: 1393 ± 1.5 × 403",
+     "A1 Limits 788.5 and 1997.5, so only 2040 is removed"
+    ]
    },
    "15(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Outlier"
-    ],
-    "guidance": "B1. The mass 2040 kg is an outlier. ISW."
+     "B1 Outlier"
+    ]
    },
    "15(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Total probability = 1: 0.14 + 0.37 + 0.9k + 0.25 + 0.4k + 1.7k + 0 = 1 (M1)",
-     "0.76 + 3k = 1 ⇒ k = 0.08 (A1)",
-     "P(1 ≤ N < 5) = P(1) + P(2) + P(3) + P(4) = 0.37 + 0.9k + 0.25 + 0.4k = 0.37 + 0.25 + 1.3k (M1)",
-     "= 0.62 + 1.3(0.08) = 0.724 (A1)"
-    ],
-    "guidance": "M1 forms total-probability equation; A1 k = 0.08. M1 forms P(1 ≤ N < 5) = P(1)+P(2)+P(3)+P(4) (note N=5 excluded); A1 = 0.724."
+     "M1 Probabilities sum to 1: 0.76 + 3k = 1",
+     "A1 k = 0.08",
+     "M1 P(1 ≤ N < 5) = 0.37 + 0.9k + 0.25 + 0.4k",
+     "A1 0.724"
+    ]
    },
    "15(c)(i)": {
     "type": "points",
     "points": [
-     "Use knowledge of the LDS: it contains cars from two years (so choose 100 cars from each year) and identifies 5 makes (so choose 20 of each make in each year), reflecting the different years and makes (M1)",
-     "Concludes that 20 cars are selected from each of the 5 makes of car for both years (so 5 × 20 × 2 = 200) (R1)"
-    ],
-    "guidance": "M1 identifies the LDS structure (2 years, 5 makes) and how to split the 200. R1 concludes 20 cars of each make per year. Answer reflects specific LDS knowledge."
+     "M1 Notes the data set has 2 years (100 per year) or 5 makes (40 per make)",
+     "R1 Take 20 cars of each of the 5 makes from each of the 2 years"
+    ]
    },
    "15(c)(ii)": {
     "type": "points",
     "points": [
-     "Quota sampling is non-random, so it could produce a biased (unrepresentative) sample"
-    ],
-    "guidance": "E1. Disadvantage: not random / can be biased / not proportionate, so may not be representative."
+     "E1 It may be biased or is not random"
+    ]
    },
    "16(a)(i)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(D < 5.2) = 0.0375"
-    ],
-    "guidance": "B1. AWFW [0.037, 0.038]. D ~ N(6.5, 0.73²)."
+     "B1 0.0375 (0.037–0.038)"
+    ]
    },
    "16(a)(ii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(D > 7) = 0.2467"
-    ],
-    "guidance": "B1. AWFW [0.246, 0.25]."
+     "B1 0.2467 (0.246–0.25)"
+    ]
    },
    "16(a)(iii)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "P(5 < D < 8) = 0.9601"
-    ],
-    "guidance": "B1. AWFW [0.96, 0.9602]. Proportion accepted ≈ 0.960."
+     "B1 0.9601 (0.96–0.9602)"
+    ]
    },
    "16(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "From inverse normal: P(D < 5.9) = 0.6 ⇒ z = 0.2533; P(D > 6.1) = 0.2 ⇒ z = 0.8416 (B1)",
-     "Equation 1: (5.9 − μ)/σ = 0.2533 (M1)",
-     "Equation 2: (6.1 − μ)/σ = 0.8416 (M1)",
-     "Both equations correct (A1)",
-     "Solving: μ = 5.81 (A1) and σ = 0.34 (A1)"
-    ],
-    "guidance": "B1 both z-values (0.2533 and 0.8416). M1, M1 form the two standardised equations using 5.9 and 6.1. A1 both equations correct. A1 μ ≈ 5.81 (AWFW [5.8, 5.82]); A1 σ ≈ 0.34 (AWFW [0.33, 0.35]). ISW."
+     "B1 A z-value: 0.2533 or 0.8416",
+     "M1 (5.9 − μ)/σ = z for the 60% condition",
+     "M1 (6.1 − μ)/σ = z for the 20% condition",
+     "A1 Both equations correct",
+     "A1 μ = 5.81 (5.8–5.82)",
+     "A1 σ = 0.34 (0.33–0.35)"
+    ]
    }
   }
  },
@@ -25588,7 +25286,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 8,
-    "scenario": "Curve y = x(x + 2)(x − 4). R₁ lies between the curve and the negative x-axis; R₂ is bounded by the curve, the positive x-axis and x = b, where 0 < b < 4 (Figure 2 on the question paper). Area R₁ = area R₂. The roots of 3b² − 20b + 20 = 0 are 1.225 and 5.442 (3 d.p.), so b = 1.225.",
+    "scenario": "Curve y = x(x + 2)(x − 4), which crosses the x-axis at −2, 0 and 4 (maximum between −2 and 0, minimum between 0 and 4). R₁ lies between the curve and the negative x-axis (above the axis, from x = −2 to 0); R₂ is bounded by the curve, the positive x-axis and x = b, where 0 < b < 4, and lies below the axis (Figure 2 on the question paper). Area R₁ = area R₂. The roots of 3b² − 20b + 20 = 0 are 1.225 and 5.442 (3 d.p.), so b = 1.225.",
     "parts": [
      {
       "code": "8(a)",
@@ -25662,7 +25360,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 12,
-    "scenario": "f(x) = 10e^(−0.25x) sin x, x ≥ 0 (Figure 3 shows a decaying oscillation; diagram on the question paper). H(t) = |10e^(−0.25t) sin t|, t ≥ 0, models the height in metres of a kicked ball t seconds after the kick.",
+    "scenario": "f(x) = 10e^(−0.25x) sin x, x ≥ 0. Figure 3 shows y = f(x) starting at the origin and oscillating about the x-axis with steadily decreasing amplitude, the first maximum being the highest (diagram on the question paper). H(t) = |10e^(−0.25t) sin t|, t ≥ 0, models the height in metres of a kicked ball t seconds after the kick.",
     "parts": [
      {
       "code": "12(a)",
@@ -25688,7 +25386,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 13,
-    "scenario": "Curve C: y = (p − 3x)/((2x − q)(x + 3)), x ∈ ℝ, x ≠ −3, x ≠ 2, passes through (3, ½) and has vertical asymptotes x = 2 and x = −3. R is bounded by C, the x-axis and x = 3 (Figure 4 on the question paper; C crosses the x-axis to the right of x = 3).",
+    "scenario": "Curve C: y = (p − 3x)/((2x − q)(x + 3)), x ∈ ℝ, x ≠ −3, x ≠ 2, passes through (3, ½) and has vertical asymptotes x = 2 and x = −3. Figure 4 shows the part of C for x > 2: it decreases from the asymptote, crosses the x-axis to the right of x = 3 and then stays just below it. R is the shaded region bounded by C, the x-axis and x = 3 (diagram on the question paper).",
     "parts": [
      {
       "code": "13(a)",
@@ -25729,7 +25427,7 @@ window.MATHS_QUESTIONS = {
     "type": "points",
     "points": [
      "M1 Sets f(−3) = 0: 3(−3)³ + 2a(−3)² − 4(−3) + 5a = 0",
-     "M1 Solves the linear equation in a",
+     "M1 Solves the linear equation in a (23a = 69)",
      "A1 a = 3 (cso)"
     ],
     "guidance": "Long division is allowed if it leads to a correct remainder set to zero."
@@ -25808,7 +25506,7 @@ window.MATHS_QUESTIONS = {
    "5(c)": {
     "type": "points",
     "points": [
-     "M1 Identifies a translation with one component right",
+     "M1 Identifies a translation with one correct aspect (e.g. 2 right or 4 down), or states the vector (2, −4)",
      "A1 Translation by vector (2, −4)",
      "M1 Finds the maximum of h as 21/7 = 3",
      "A1ft 0 < h(x) ≤ 3"
@@ -25879,7 +25577,8 @@ window.MATHS_QUESTIONS = {
     "points": [
      "B1 Sketch with a vertical line x = 5.442 to the right of x = 4",
      "B1 Explains that between x = −2 and x = 5.442 the area above the axis equals the area below"
-    ]
+    ],
+    "guidance": "Drawing on Figure 2 is fine. Also accepted: the area between 1.225 and 4 equals the area between 4 and 5.442, or the net area from 0 to 5.442 is −20/3."
    },
    "9(a)": {
     "type": "points",
@@ -25949,8 +25648,9 @@ window.MATHS_QUESTIONS = {
     "type": "points",
     "points": [
      "M1 At least two loops, second lower than the first",
-     "A1 At least four loops of decreasing height with cusps on the axis"
-    ]
+     "A1 At least four loops of decreasing height, meeting the t-axis in sharp cusps (not rounded)"
+    ],
+    "guidance": "Drawing over Figure 3 is allowed if every loop is clear."
    },
    "12(c)": {
     "type": "points",
@@ -27039,7 +26739,7 @@ window.MATHS_QUESTIONS = {
      "M1 Separates and integrates to …h^(3/2) = λt + c",
      "A1 (2/3)h^(3/2) = λt + c",
      "dM1 t = 0, h = 1.44 gives c = 1.152",
-     "dM1 t = 8, h = 3.24 gives λ = 0.342 (printed as ddM1: depends on both earlier method marks)",
+     "ddM1 t = 8, h = 3.24 gives λ = 0.342 (depends on both earlier method marks)",
      "A1 h^(3/2) = 0.513t + 1.728"
     ]
    },
@@ -27104,7 +26804,7 @@ window.MATHS_QUESTIONS = {
      "M1 Overall method: suitable technique giving a ln term, with correct limits",
      "M1 Correct form, e.g. with u = 3 + x: …ln u + …/u",
      "A1 6ln u + 18/u (or 6ln(3 + x) − 6x/(3 + x))",
-     "dM1 Applies the limits and subtracts (printed as ddM1: depends on both earlier method marks)",
+     "ddM1 Applies the limits and subtracts (depends on both earlier method marks)",
      "A1 6ln(17/16) − 45/136"
     ]
    },
@@ -29502,7 +29202,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 4,
-    "scenario": "y = 2 ln(8 − x) meets y = x at exactly one point, x = α. The graphs of both are sketched on the question paper (Figure 2). Iteration: xₙ₊₁ = 2 ln(8 − xₙ), with x₁ = 4.",
+    "scenario": "y = 2 ln(8 − x) meets y = x at exactly one point, x = α. Figure 2 (on the question paper) sketches both: the decreasing curve crosses the y-axis just above 4 (at 2 ln 8) and the x-axis at x = 7; the line y = x passes through O and meets the curve once, a little below x = 4. Iteration: xₙ₊₁ = 2 ln(8 − xₙ), with x₁ = 4.",
     "parts": [
      {
       "code": "4(a)",
@@ -29582,7 +29282,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 9,
-    "scenario": "Curve x² − 2xy + 3y² = 50 models a cycle track (x, y in km; x east, y north). P and Q are the furthest west and east points (sketch on the question paper).",
+    "scenario": "Curve x² − 2xy + 3y² = 50 models a cycle track (x, y in km; x east, y north). The sketch (Figure 4) is a tilted closed loop around O; P is its furthest west point (below the x-axis) and Q its furthest east point (above the x-axis), each with a vertical tangent.",
     "parts": [
      {
       "code": "9(a)",
@@ -29705,7 +29405,7 @@ window.MATHS_QUESTIONS = {
      "M1 Uses both and simplifies to a single term",
      "A1 4/3 (oe)"
     ],
-    "guidance": "Alternative: cos 4θ = 1 − 2sin²2θ with sin 2θ ≈ 2θ. Getting 4θ/3 after a slip loses the A mark."
+    "guidance": "Alternative: cos 4θ = 1 − 2sin²2θ with sin 2θ ≈ 2θ. A1 needs no incorrect lines (e.g. writing 8θ²/6θ = 4/3 is M1 M1 A0); awrt 1.33 is condoned."
    },
    "3": {
     "type": "points",
@@ -29946,7 +29646,8 @@ window.MATHS_QUESTIONS = {
      "M1 ∩-shaped parabola with maximum in the first quadrant",
      "A1 Correct, ending at (1, 2) and (5, 2), max (3, 6)",
      "B1 Since −1 ≤ sin t ≤ 1, 1 ≤ x ≤ 5"
-    ]
+    ],
+    "guidance": "The sketch need not be symmetrical. For B1 the reason must link the bounds of sin or cos to a restriction on x or y (e.g. −1 ≤ cos 2t ≤ 1 so 2 ≤ y ≤ 6); an upper limit on y alone does not score."
    },
    "14(c)": {
     "type": "points",
@@ -30094,7 +29795,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 8,
-    "scenario": "Rugby ball trajectory: height H m against horizontal distance x m from the kick (graph on the question paper). Maximum height 12 m; lands 40 m away. It clears a bar 3 m high, perpendicular to its path.",
+    "scenario": "Rugby ball trajectory: height H m against horizontal distance x m from the kick at O, an arch from O back down to the x-axis (graph on the question paper). Maximum height 12 m; lands 40 m away. It clears a bar 3 m high, perpendicular to its path.",
     "parts": [
      {
       "code": "8(a)",
@@ -30179,7 +29880,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 13,
-    "scenario": "Curve C: y = x ln x, x > 0. Line l is the normal to C at P(e, e). Region R is bounded by C, l and the x-axis (diagram on the question paper).",
+    "scenario": "Curve C: y = x ln x, x > 0. Line l is the normal to C at P(e, e). Region R (shaded, above the x-axis) is bounded by C from where it meets the x-axis up to P, then by l from P down to the x-axis (diagram on the question paper).",
     "parts": [
      {
       "code": "13",
@@ -30586,7 +30287,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 4,
-    "scenario": "Commute times. Charlie asks workers arriving at the office between 08 40 and 08 50. Taruni asks every member of the company: box plot on the question paper (lowest value 20, LQ 26, median 40, UQ 58, upper whisker 92, two outliers above 110), with n = 95, Σx = 4133, Σx² = 202 294. Later Rana's journey changes from 75 to 35 min and David's from 60 to 33 min.",
+    "scenario": "Commute times. Charlie asks workers arriving at the office between 08 40 and 08 50. Taruni asks every member of the company: box plot on the question paper (lowest value 20, LQ 26, median 40, UQ 58, upper whisker 92, outliers at 118 and 124), with n = 95, Σx = 4133, Σx² = 202 294. Later Rana's journey changes from 75 to 35 min and David's from 60 to 33 min.",
     "parts": [
      {
       "code": "4(a)",
@@ -32203,7 +31904,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 2,
-    "scenario": "Rod length L cm ~ N(8, x²); 2.5% of rods are shorter than 7.902 cm. Costs and selling prices depend on L (see the question paper). Hinges: P(faulty) = 0.015; a batch is accepted if fewer than 6 of a sample of 200 are faulty.",
+    "scenario": "Rod length L cm ~ N(8, x²); 2.5% of rods are shorter than 7.902 cm. Each rod costs 20p to make; L < 7.94 sells as scrap for 5p, 7.94 ≤ L ≤ 8.09 sells for 50p, L > 8.09 costs an extra 10p to shorten then sells for 50p. Hinges: P(faulty) = 0.015; a batch is accepted if fewer than 6 of a sample of 200 are faulty.",
     "parts": [
      {
       "code": "2(a)",
@@ -32281,7 +31982,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 5,
-    "scenario": "1825 employees in a two-way table (professional / skilled / elementary × area A / B). Home-working rates: 65% professional, 40% skilled, 5% elementary. Events F (professional), H (works from home), R (area A). The Venn diagram is on the question paper.",
+    "scenario": "1825 employees by type and area (A, B): professional 740, 380; skilled 275, 90; elementary 260, 80. Home-working rates: 65% professional, 40% skilled, 5% elementary. Events F (professional), H (works from home), R (area A). Venn diagram (on the question paper) already shows H∩R only = 123, R only = 412, H∩F only = 247, F only = 133.",
     "parts": [
      {
       "code": "5(a)",
@@ -32317,7 +32018,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 6,
-    "scenario": "19 people: resting heart rate h against weekly exercise minutes m (scatter diagram on the question paper). Coded x = log₁₀ m, y = log₁₀ h; PMCC = −0.897; regression line y = −0.05x + 1.92.",
+    "scenario": "19 people: resting heart rate h against weekly exercise minutes m (scatter diagram on the question paper: h falls from about 76 to about 63 as m goes from 0 to about 380, levelling off). Coded x = log₁₀ m, y = log₁₀ h; PMCC = −0.897; regression line y = −0.05x + 1.92.",
     "parts": [
      {
       "code": "6(a)",
@@ -32359,7 +32060,7 @@ window.MATHS_QUESTIONS = {
     "type": "points",
     "points": [
      "M1 Sets (7.902 − 8)/x = −1.96",
-     "A1* x = 0.05 with no incorrect working (answer given)"
+     "A1cso* x = 0.05 with no incorrect working (answer given)"
     ]
    },
    "2(b)": {
@@ -32374,7 +32075,7 @@ window.MATHS_QUESTIONS = {
      "B1 P(L < 7.94) = 0.115 or P(L > 8.09) = 0.036 (awrt)",
      "B1 Both of these",
      "M1 Expected income or profit summed over the three outcomes",
-     "M1 Converts to profit for 500 rods (subtracting the 20p cost per rod)",
+     "dM1 Converts to profit for 500 rods (subtracting the 20p cost per rod)",
      "A1 £122 (awrt)"
     ]
    },
@@ -32689,7 +32390,7 @@ window.MATHS_QUESTIONS = {
     "points": [
      "M1 μ = 3, resultant (6i + 2j) N",
      "M1 Uses F = 4a",
-     "dM1 s = ut + ½at² with u = 0, t = 4 (printed as DM1): r = 12i + 4j",
+     "DM1 s = ut + ½at² with u = 0, t = 4: r = 12i + 4j",
      "M1 Pythagoras for the magnitude",
      "A1 AB = √160 = 4√10 ≈ 12.6 m"
     ]
@@ -32732,7 +32433,7 @@ window.MATHS_QUESTIONS = {
      "A1 U cos α × t = 120 (or 60 to the top)",
      "M1 Vertical motion",
      "A1 U sin α t − ½gt² = 0 (or 0 = U sin α − gt to the top)",
-     "dM1 Eliminates t (printed as DM1)",
+     "DM1 Eliminates t",
      "A1* U² sin α cos α = 588 (answer given)"
     ],
     "guidance": "Using the result from (b) earns no credit here."
@@ -32742,7 +32443,7 @@ window.MATHS_QUESTIONS = {
     "points": [
      "M1 Vertical motion to the top (or energy)",
      "A1 0 = (U sin α)² − 2g × 10",
-     "dM1 Eliminates α, e.g. U sin α = 14 so U cos α = 42, then squares and adds (printed as DM1)",
+     "DM1 Eliminates α, e.g. U sin α = 14 so U cos α = 42, then squares and adds",
      "A1* U² = 1960 (answer given)"
     ],
     "guidance": "Working backwards from U² = 1960, or using a rounded angle, loses the final mark."
@@ -33245,7 +32946,7 @@ window.MATHS_QUESTIONS = {
      "A1 5x² + (2k − 4)x + 2k + 8 = 0",
      "dM1 Uses b² − 4ac to find critical values",
      "A1 k = 7 ± √85",
-     "dM1 Chooses the outside region (printed as ddM1: depends on both earlier method marks)",
+     "ddM1 Chooses the outside region for their critical values (depends on both earlier method marks)",
      "A1 k < 7 − √85 or k > 7 + √85"
     ],
     "guidance": "Writing 'and' between the two inequalities loses the final mark."
@@ -33334,7 +33035,7 @@ window.MATHS_QUESTIONS = {
     "type": "points",
     "points": [
      "M1 Evaluates a suitable function, e.g. h(x) = (2e^(3x) − 4)/(e^(3x) + 4) − x, at 0.4315 and 0.4325",
-     "A1 cao: h(0.4315) ≈ −0.000297, h(0.4325) ≈ 0.000947; sign change, function continuous, so α = 0.432"
+     "A1cao h(0.4315) ≈ −0.000297, h(0.4325) ≈ 0.000947; sign change, function continuous, so α = 0.432"
     ]
    }
   }
@@ -34575,7 +34276,7 @@ window.MATHS_QUESTIONS = {
    },
    {
     "number": 2,
-    "scenario": "A bird's height h m above the ground is recorded at 10 times t s during its flight. Regression line: h = 38.6 − 1.28t; PMCC = −0.510. The scatter diagram (on the question paper) shows h rising from about 28 at t = 1 to about 40 near t = 3.5, then falling to about 20 at t = 8.5.",
+    "scenario": "A bird's height h m above the ground is recorded at 10 times t s during its flight. Regression line: h = 38.6 − 1.28t; PMCC = −0.510. The scatter diagram (on the question paper) plots the 10 points (t, h): (1, 28), (1.5, 34), (2, 36), (2.5, 38), (3.5, 40), (4.5, 39), (5, 37), (6.5, 33), (7, 27), (8.5, 20), so h rises to a peak of 40 near t = 3.5 and then falls.",
     "parts": [
      {
       "code": "2(a)",
