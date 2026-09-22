@@ -8,6 +8,11 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/vercel.json",
+      "destination": "/404",
+      "permanent": false
     }
   ],
   "functions": {
