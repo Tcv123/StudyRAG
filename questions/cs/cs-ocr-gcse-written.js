@@ -93,7 +93,7 @@ const CS_OCR_WRITTEN = {
       {
         q: 'An image is 800 × 600 pixels with a 24-bit colour depth. Calculate the uncompressed file size in MB. Show your working.',
         marks: 4, tier: 'amber',
-        modelAnswer: `800 × 600 = 480,000 pixels\n480,000 × 24 = 11,520,000 bits\n÷ 8 = 1,440,000 bytes\n÷ 1,024 = 1,406.25 KB\n÷ 1,024 ≈ 1.37 MB`
+        modelAnswer: `800 × 600 = 480,000 pixels\n480,000 × 24 = 11,520,000 bits\n÷ 8 = 1,440,000 bytes\n÷ 1,000 = 1,440 KB\n÷ 1,000 = 1.44 MB\n(OCR uses 1 kB = 1,000 bytes. If the binary prefix is used instead: 1,440,000 ÷ 1,024 = 1,406.25 KB ÷ 1,024 ≈ 1.37 MB.)`
       },
       {
         q: 'Explain the difference between lossy and lossless compression. Give one example file format for each.',
@@ -103,7 +103,7 @@ const CS_OCR_WRITTEN = {
       {
         q: 'A sound clip is sampled at 44,100 Hz with a 16-bit depth in stereo for 3 minutes. Calculate the file size in MB. Show your working.',
         marks: 4, tier: 'amber',
-        modelAnswer: `Sample rate × bit depth × channels × duration (seconds)\n= 44,100 × 16 × 2 × 180\n= 254,016,000 bits\n÷ 8 = 31,752,000 bytes\n÷ 1,024 = 31,007.81 KB\n÷ 1,024 ≈ 30.28 MB`
+        modelAnswer: `Sample rate × bit depth × channels × duration (seconds)\n= 44,100 × 16 × 2 × 180\n= 254,016,000 bits\n÷ 8 = 31,752,000 bytes\n÷ 1,000 = 31,752 KB\n÷ 1,000 ≈ 31.75 MB\n(OCR uses 1 kB = 1,000 bytes. If the binary prefix is used instead: 31,752,000 ÷ 1,024 = 31,007.81 KB ÷ 1,024 ≈ 30.28 MB.)`
       },
       {
         q: 'Describe the purpose of virtual memory and explain one disadvantage of relying on it heavily.',

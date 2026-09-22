@@ -131,9 +131,8 @@ const CS_AQA_ALEVEL_QUESTIONS = {
     ],
   },
 
-  /* Topics 4.3 through 4.10 follow identical structure. */
-  /* To keep this file manageable, minimal placeholder questions are provided. */
-  /* These will be expanded to 50 questions per topic in follow-up content drops. */
+  /* Topics 4.3 through 4.10 follow the same structure. 4.3 and 4.4 are complete
+     (20 green + 20 amber + 10 red). 4.5 to 4.10 currently hold a green tier only. */
 
   '4.3': {
     name: 'Fundamentals of Algorithms',
@@ -255,7 +254,7 @@ const CS_AQA_ALEVEL_QUESTIONS = {
     ],
   },
 
-  /* Placeholder stubs for 4.5–4.10 — to be expanded */
+  /* 4.5–4.10: green tier only (20 questions each); amber and red tiers not yet written */
   '4.5': { name: 'Fundamentals of Data Representation', green: [
     { q: 'The 8-bit two\'s complement representation of −1 is:', options: ['1111 1111','1000 0001','0000 0001','1000 0000'], answer: 0 },
     { q: 'Hex digit F represents decimal:', options: ['14','15','16','F'], answer: 1 },
@@ -267,14 +266,14 @@ const CS_AQA_ALEVEL_QUESTIONS = {
     { q: 'A symmetric encryption algorithm uses:', options: ['Different keys for encryption and decryption','The same key for encryption and decryption','No keys','A hash only'], answer: 1 },
     { q: 'Asymmetric encryption uses:', options: ['Two related keys (public/private)','Only one key','Hashes only','Digital signatures only'], answer: 0 },
     { q: 'A hash function for integrity should be:', options: ['Reversible','One-way and collision-resistant','Linear','Always encrypting'], answer: 1 },
-    { q: '1 kilobyte (binary/kiB) is:', options: ['1000 bytes','1024 bytes','10000 bytes','1 bit'], answer: 1 },
+    { q: 'One kibibyte (KiB) is:', options: ['1000 bytes (that is a kilobyte, kB)','1024 bytes','10000 bytes','1 bit'], answer: 1 },
     { q: 'A bitmap stores an image as:', options: ['Mathematical descriptions','A 2D grid of pixels with colour values','Only text','Compressed vectors'], answer: 1 },
     { q: 'Sampling rate in audio is:', options: ['Number of channels','Samples per second (e.g. 44.1 kHz)','Bit depth','File size'], answer: 1 },
     { q: 'Bit depth affects:', options: ['Only file size','Range and precision of sample values','Sampling rate','Number of channels only'], answer: 1 },
     { q: 'Which is a disadvantage of vector graphics?', options: ['Poor scaling','Not well-suited for photographs','Fixed resolution','Lossy by design'], answer: 1 },
     { q: 'Digital signatures provide:', options: ['Confidentiality only','Authentication and integrity of a message','Compression','Sampling'], answer: 1 },
     { q: 'In IEEE 754 single precision, there are how many bits?', options: ['8','16','32','64'], answer: 2 },
-    { q: 'Normalised floating-point numbers typically have the leading bit of the mantissa equal to:', options: ['0','1 (implicit in IEEE 754)','Depends on sign','Always 0'], answer: 1 },
+    { q: 'In the AQA two\'s complement floating-point format, a number is normalised when the first two bits of the mantissa are:', options: ['Both 0','Different — 0.1… for a positive value, 1.0… for a negative value','Both 1','Always 1.0… whatever the sign'], answer: 1 },
     { q: 'Public-key cryptography is often based on hard mathematical problems like:', options: ['Sorting','Integer factorisation or discrete log','Hashing keys','Compression'], answer: 1 },
     { q: 'Unicode BMP stands for:', options: ['Bitmap Mode Processing','Basic Multilingual Plane','Binary Memory Pool','Byte-Mapped Protocol'], answer: 1 },
   ], amber: [], red: [] },
@@ -342,7 +341,7 @@ const CS_AQA_ALEVEL_QUESTIONS = {
     { q: 'Job automation by AI can:', options: ['Only create jobs','Displace some roles while creating new ones, shifting skills demand','Leave labour markets unchanged','Affect only manual jobs'], answer: 1 },
     { q: 'A privacy-by-design principle recommends:', options: ['Collecting as much data as possible','Building data minimisation and protection in from the start','Encrypting only servers','Ignoring users'], answer: 1 },
     { q: 'Bias in ML models often stems from:', options: ['Balanced training data','Biased or incomplete training data and flawed proxies','Hardware failure','Network latency'], answer: 1 },
-    { q: 'Which law governs electronic communications privacy in the UK largely updated from earlier ones?', options: ['PECR','ISO 9001','Patents Act only','None'], answer: 0 },
+    { q: 'Which UK rules govern privacy in electronic communications, such as cookies and marketing emails?', options: ['PECR (the Privacy and Electronic Communications Regulations)','ISO 9001','The Patents Act 1977','The Computer Misuse Act 1990'], answer: 0 },
     { q: 'E-waste recycling is important because:', options: ['It recovers materials and reduces toxic landfill impact','It speeds up computers','It improves cooling','It prevents software bugs'], answer: 0 },
     { q: 'Professional accreditation (e.g. BCS) encourages:', options: ['Unethical behaviour','Ongoing competence, ethics, and accountability','Lower pay','Closed discussions'], answer: 1 },
     { q: 'Whistleblowing in a computing context could involve:', options: ['Leaking trade secrets','Reporting unlawful or unethical practices internally or to appropriate authorities','Ignoring bugs','Stealing customer data'], answer: 1 },
