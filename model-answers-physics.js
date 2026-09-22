@@ -5698,49 +5698,65 @@ g_Moon = (6.67 × 10⁻¹¹ × 6.0 × 10²²) / (1.12 × 10⁹)² = 3.2 × 10⁻
 That is only about 0.05% of the 5.99 × 10⁻³ N kg⁻¹ already there: the maximum total field becomes 6.0 × 10⁻³ N kg⁻¹ and the orbital speed stays at 3.0 × 10⁴ m s⁻¹ to 2 s.f.
 
 So the Moon has only a very small effect and does not stop the JWST orbiting L2. Its effect is not quite zero, though: because its distance from L2 and its direction both change through the month, the resultant field at L2 varies slightly and periodically, and this varying field slowly disturbs the telescope's path around L2, so small corrections have to be made.`,
-  "phys-ocrb-h557-2024-p3::1(a)": `Apply thermal conducting paste (such as thermal grease or heat sink compound) between the thermometer and the block to fill any air gaps and ensure good thermal contact. Alternatively, drill a small hole in the block and insert the thermometer bulb directly into the aluminium, ensuring the thermometer tip is in direct contact with the metal.`,
+  "phys-ocrb-h557-2024-p3::1(a)": `Put a few drops of water (or of oil) into the hole before pushing the thermometer in. The liquid fills the air gap between the thermometer bulb and the aluminium, so heat passes readily from the block to the bulb and the thermometer records the block's temperature rather than lagging behind it.`,
   "phys-ocrb-h557-2024-p3::1(b)(i)": `For each data point on Fig. 1.2, draw a vertical bar (error bar) extending ±1.0°C above and below the plotted point. Each bar should be centred on the data point and have a total length corresponding to 2.0°C on the temperature axis scale.`,
-  "phys-ocrb-h557-2024-p3::1(b)(ii)": `Maximum gradient line: draw a straight line through the data that has the steepest possible slope while still passing through (or touching the error bars of) the first and last data points. This line should pass through the upper extreme of the first point's error bar and the lower extreme of the last point's error bar (or whichever combination gives the steepest slope that is consistent with all error bars).
+  "phys-ocrb-h557-2024-p3::1(b)(ii)": `Draw the two extreme ruled straight lines that still pass inside every one of the eleven uncertainty bars, each extended right across the grid from t = 0 to t = 10 minutes.
 
-Minimum gradient line: draw a straight line through the data that has the shallowest possible slope while still passing through (or touching the error bars of) all data points. This line passes through the lower extreme of the first point's error bar and the upper extreme of the last point's error bar.`,
-  "phys-ocrb-h557-2024-p3::1(b)(iii)": `Read the gradients of the best-fit line, maximum gradient line, and minimum gradient line from the graph.
+Maximum-gradient (steepest) line: since the temperature is rising, the steepest acceptable line starts at the bottom of an early bar and finishes at the top of a later bar — draw it through (0 min, 19 °C) and (8 min, 33 °C).
 
-Best-fit gradient (mean rate of temperature rise): read two well-separated points on the best-fit line.
-For example, if the best-fit line goes from (0 min, 20°C) to (10 min, 38°C):
-gradient = (38 − 20) / (10 × 60) = 18 / 600 = 0.030 °C s⁻¹
+Minimum-gradient (shallowest) line: this one starts at the top of an early bar and finishes at the bottom of a later bar — draw it through (2 min, 23 °C) and (10 min, 35 °C).
 
-Maximum gradient: e.g. (0 min, 19°C) to (10 min, 40°C) → gradient_max = 21/600 = 0.035 °C s⁻¹
-Minimum gradient: e.g. (0 min, 21°C) to (10 min, 37°C) → gradient_min = 16/600 = 0.0267 °C s⁻¹
+Both lines must be thin and ruled, and must still pass through every uncertainty bar.`,
+  "phys-ocrb-h557-2024-p3::1(b)(iii)": `Steepest line — read two widely separated points on it: (0 min, 19.0 °C) and (8 min, 33.0 °C)
 
-Uncertainty in gradient = (gradient_max − gradient_min) / 2 = (0.035 − 0.0267) / 2 = 0.0042 °C s⁻¹
-Percentage uncertainty = (0.0042 / 0.030) × 100 = 14%
+gradient = (33.0 − 19.0)/(8 − 0) = 1.75 °C min⁻¹ = 1.75/60 = 0.0292 °C s⁻¹
 
-Mean rate of temperature rise = 0.030 ± 0.004 °C s⁻¹ (percentage uncertainty ≈ 14%).
-(Students should read their own graph values; numerical answers will depend on Fig. 1.2.)`,
-  "phys-ocrb-h557-2024-p3::1(c)(i)": `From the definition of specific thermal capacity:
-P = mc × (ΔT/Δt)
-where P is the power input, m is the mass, c is the specific thermal capacity, and ΔT/Δt is the rate of temperature rise.
-Rearranging: ΔT/Δt = P/(mc)
-The left-hand side is the gradient of the temperature–time graph, so:
-gradient = P/(mc)
-This shows that the gradient of the graph equals P/(mc). ✓
+Shallowest line — (2 min, 23.0 °C) and (10 min, 35.0 °C)
 
-(The derivation assumes all electrical power goes into heating the block, i.e. no heat loss.)`,
-  "phys-ocrb-h557-2024-p3::1(c)(ii)": `Power: P = V × I = 9.6 × 3.76 = 36.10 W
-From c = P / (m × gradient):
-Using gradient = 0.030 °C s⁻¹ (from b(iii)), m = 1.00 kg:
-c = 36.10 / (1.00 × 0.030) = 1203 J kg⁻¹ K⁻¹ ≈ 1200 J kg⁻¹ K⁻¹
+gradient = (35.0 − 23.0)/(10 − 2) = 1.50 °C min⁻¹ = 1.50/60 = 0.0250 °C s⁻¹
 
-Percentage uncertainty in c:
-% unc in P = % unc in V + % unc in I = 2% + 0.9% = 2.9%
-% unc in m = 0.01/1.00 × 100 = 1%
-% unc in gradient ≈ 14% (from b(iii))
-Total % unc in c = 2.9% + 1% + 14% = 17.9% ≈ 18%
-Absolute uncertainty = 18% × 1203 = ±216 J kg⁻¹ K⁻¹ ≈ ±200 J kg⁻¹ K⁻¹
+mean rate = ½(0.0292 + 0.0250) = 0.0271 °C s⁻¹
+uncertainty = ½(0.0292 − 0.0250) = 0.0021 °C s⁻¹
+percentage uncertainty = (0.0021/0.0271) × 100 = 7.7 %
 
-c = (1200 ± 200) J kg⁻¹ K⁻¹
-(Values will differ depending on the gradient read from the graph.)`,
-  "phys-ocrb-h557-2024-p3::1(d)": `The calculated value (approximately 1200 J kg⁻¹ K⁻¹) is significantly higher than the textbook value of 900 J kg⁻¹ K⁻¹. The main reason for this discrepancy is heat loss from the aluminium block to the surroundings during the experiment. Some of the electrical energy supplied by the heater is lost as heat to the environment (by conduction through the bench, convection and radiation from the block surfaces) rather than being used entirely to raise the temperature of the block. This means the measured rate of temperature rise (the gradient) is lower than it would be if all the energy went into the block, causing the calculated specific heat capacity to be overestimated.`,
+rate of temperature rise = 0.027 °C s⁻¹ ± 7.7 %`,
+  "phys-ocrb-h557-2024-p3::1(c)(i)": `The energy needed to raise the temperature of the block by Δθ is
+
+E = mcΔθ
+
+and the heater delivers that energy in time t at a rate
+
+P = E/t
+
+Substituting the first expression into the second:
+
+P = mcΔθ/t
+
+Rearranging for Δθ/t, which is exactly the gradient of the temperature–time graph:
+
+gradient = Δθ/t = P/(mc)
+
+which is the required result.`,
+  "phys-ocrb-h557-2024-p3::1(c)(ii)": `Power supplied to the heater:
+
+P = IV = 3.76 × 9.6 = 36.1 W
+
+From gradient = P/(mc), with the mean gradient 0.0271 °C s⁻¹ from part (b)(iii):
+
+c = P/(m × gradient) = 36.1/(1.00 × 0.0271) = 1330 J kg⁻¹ K⁻¹
+
+Percentage uncertainties, added because c is a product/quotient of the quantities:
+pd 2 % and current 0.9 %, so power 2.9 %
+mass (0.01/1.00) × 100 = 1 %
+gradient 7.7 % (from part (b)(iii))
+total = 2.9 + 1 + 7.7 = 11.6 %
+
+absolute uncertainty = 0.116 × 1330 = 150 J kg⁻¹ K⁻¹
+
+specific thermal capacity = 1330 ± 150 J kg⁻¹ K⁻¹`,
+  "phys-ocrb-h557-2024-p3::1(d)": `The experimental value, about 1330 J kg⁻¹ K⁻¹, is much higher than the textbook value of 900 J kg⁻¹ K⁻¹ — the difference of more than 400 J kg⁻¹ K⁻¹ is far larger than the ±150 J kg⁻¹ K⁻¹ uncertainty, so it cannot be explained by the uncertainties alone.
+
+The main reason is that not all of the electrical energy supplied by the heater goes into warming the aluminium. The block is not insulated, so energy is transferred to the surroundings from its surfaces and through the bench while the heating is going on. The block therefore warms more slowly than it would if all the power reached it, the measured gradient is too small, and since c = P/(m × gradient) a gradient that is too small makes the calculated value of c too large.`,
   "phys-ocrb-h557-2024-p3::2(a)": `Conductance G = I/V = 7.5 × 10⁻³ / 0.65 = 0.01154 S
 
 Percentage uncertainty in I: 0.02/7.5 × 100 = 0.267%
@@ -5749,9 +5765,11 @@ Total percentage uncertainty in G = 0.267% + 3.08% = 3.35% ≈ 3.3%
 Absolute uncertainty = 3.35% × 0.01154 = ±3.9 × 10⁻⁴ S ≈ ±4 × 10⁻⁴ S
 
 G = (1.15 ± 0.04) × 10⁻² S`,
-  "phys-ocrb-h557-2024-p3::2(b)": `To obtain values of current at different emfs: vary the setting on the variable voltage supply (potentiometer or rheostat) to change the emf applied to the circuit. For each setting, record the voltmeter reading (potential difference across the diode) and the ammeter reading (current through the diode). Repeat for a range of values from 0 V up to the maximum safe forward bias, and then reverse the connections to obtain reverse bias values (the current will be very small, essentially zero or a tiny reverse saturation current). Record at least 8–10 pairs of (V, I) values in each direction.
+  "phys-ocrb-h557-2024-p3::2(b)": `Vary the potential difference. Set the variable d.c. supply to a series of different emfs and, at each setting, record the voltmeter reading (the pd across the diode) and the ammeter reading (the current through it); plot these pairs as the I–V graph. Reverse the supply connections to obtain the reverse-bias points.
 
-Purpose of the fixed resistor: the fixed resistor limits the maximum current that can flow through the diode in forward bias. Without it, when the forward voltage exceeds about 0.6–0.7 V the diode resistance becomes very small and the current could increase to a damaging level, potentially destroying the diode. The resistor protects the diode by ensuring the current stays within a safe operating range.`,
+Use small increments of pd, and take many more readings close to the threshold pd (around 0.6–0.7 V), because that is where the current changes most rapidly and the interesting part of the curve lies; larger steps are adequate well away from it.
+
+The fixed resistor protects the circuit. Once the threshold pd is exceeded the resistance of the diode becomes very small, so without the resistor the current would rise to a very large value and destroy the diode. The resistor takes the rest of the supply emf and so limits the current to a safe value.`,
   "phys-ocrb-h557-2024-p3::2(c)": `The graph of I against V for a semiconductor diode: In forward bias (positive V), the current is very small for V below about 0.5 V (the threshold voltage), then increases very steeply and exponentially once V exceeds the threshold (approximately 0.6–0.7 V). In reverse bias (negative V), the current is approximately zero (a very small, nearly constant reverse saturation current) for all reverse voltages within the normal operating range, until breakdown voltage is reached (not normally shown on A-level graphs). The sketch should show: a curve that hugs the x-axis for V > 0 up to ~0.6 V, then rises steeply; and a flat line very close to the I = 0 axis for negative V.`,
   "phys-ocrb-h557-2024-p3::2(d)": `In forward bias, the current increases very steeply with voltage, so very small changes in voltage produce large changes in current. A standard ammeter and voltmeter may have insufficient precision to measure both accurately. To improve accuracy:
 1. Use a milliammeter (or microammeter for reverse bias) with a small full-scale deflection and high sensitivity, so that the small forward currents near threshold and any reverse currents can be measured accurately.
@@ -5769,20 +5787,28 @@ Completed table values:
 - Row 2: 1/u = −8.70 m⁻¹, 1/v = 1.85 m⁻¹ (given)
 - Row 3: 1/u = −7.75 m⁻¹ (given), 1/v = 2.54 m⁻¹
 - Row 4: 1/u = −6.49 m⁻¹, 1/v = 4.08 m⁻¹`,
-  "phys-ocrb-h557-2024-p3::3(b)": `Plot the five data points on Fig. 3.2 with 1/u on the x-axis (negative values, from about −9.5 to −4.7 m⁻¹) and 1/v on the y-axis (positive values, from about 1.37 to 5.78 m⁻¹). The five points are:
+  "phys-ocrb-h557-2024-p3::3(b)": `Set the axes up as instructed: label the x-axis 1/u / m⁻¹ running from −12 at the left to 0, and the y-axis 1/v / m⁻¹ running from 0 up to +12, choosing scales that fill the grid and are easy to read — for example 1 cm to 1 m⁻¹ on the x-axis and 2 cm to 1 m⁻¹ on the y-axis.
+
+Plot the five points from the completed table as small sharp crosses (not blobs):
+
 (−9.53, 1.37), (−8.70, 1.85), (−7.75, 2.54), (−6.49, 4.08), (−4.67, 5.78)
 
-Draw a straight line of best fit passing as close as possible to all five points. The line should be drawn with a ruler and extend across the plotted range. The lens formula 1/v = 1/f + 1/u (i.e. 1/v = 1/u + 1/f) predicts a straight line with gradient 1 and y-intercept 1/f (and x-intercept −1/f).`,
-  "phys-ocrb-h557-2024-p3::3(c)": `From the lens formula 1/v = 1/f + 1/u, the graph of 1/v against 1/u has:
-- gradient = −1 (since increasing 1/u by 1 decreases 1/v by 1)
-- y-intercept = 1/f (where 1/u = 0, i.e. x = 0)
-- x-intercept = −1/f (where 1/v = 0)
+Then draw one thin ruled line of best fit through them, with roughly equal numbers of points just above and just below it, and extend it beyond the outermost points so that it cuts both axes. Since 1/v = 1/u + 1/f the line has a gradient of about +1; it should meet the y-axis a little above +10 m⁻¹ and the x-axis at about −11 m⁻¹.`,
+  "phys-ocrb-h557-2024-p3::3(c)": `The lens equation 1/v − 1/u = 1/f can be written
 
-Method 1 — y-intercept: Extend the best-fit line to the y-axis (where 1/u = 0) and read off the intercept = 1/f. If the y-intercept ≈ 8.5 m⁻¹, then f = 1/8.5 = 0.118 m ≈ 0.12 m.
+1/v = 1/u + 1/f
 
-Method 2 — x-intercept: The line cuts the x-axis at 1/u = −1/f. If this intercept is at about −8.5 m⁻¹, then f = 1/8.5 ≈ 0.12 m.
+so on this graph the y-intercept (where 1/u = 0) is 1/f, and the x-intercept (where 1/v = 0) is −1/f.
 
-Focal length f ≈ 0.12 m (12 cm). (Students should read intercept values from their own graph.)`,
+Reading both intercepts from the line of best fit:
+y-intercept = 10.1 m⁻¹, giving 1/f = 10.1 m⁻¹
+x-intercept = −10.8 m⁻¹, giving 1/f = 10.8 m⁻¹
+
+mean value of 1/f = ½(10.1 + 10.8) = 10.45 m⁻¹
+
+f = 1/10.45 = 0.0957 m
+
+focal length = 0.096 m`,
   "phys-ocrb-h557-2024-p3::3(d)": `Sources of uncertainty and limitations:
 1. Measurement of object distance u: the position of the object (e.g. a lamp or cross-wire) and the optical centre of the lens are difficult to locate precisely; parallax errors when reading the optical bench scale introduce uncertainty in u. Similarly, locating the exact position of the sharpest image to measure v is subjective — different observers may judge 'sharp' differently.
 2. The lens has a finite thickness; the thin lens formula assumes a thin lens, so the use of a thick lens introduces systematic error.
@@ -5796,36 +5822,54 @@ Improvements:
 - Take repeated measurements of v for each value of u and average them to reduce random errors.
 - Use a camera or CCD detector to objectively determine when the image is sharpest, removing the subjective judgement.
 - Use a longer optical bench to extend the range of u values and reduce the percentage uncertainty in each measurement.`,
-  "phys-ocrb-h557-2024-p3::4(a)": `Using conservation of momentum (the spacecraft becomes embedded in Dimorphos, so they move together after impact — perfectly inelastic collision):
+  "phys-ocrb-h557-2024-p3::4(a)": `Momentum is conserved in the impact, and since the spacecraft becomes embedded the two bodies move together afterwards:
 
-Data (from the question): mass of DART spacecraft m₁ = 570 kg, velocity of DART u₁ = 6140 m s⁻¹; mass of Dimorphos m₂ = 4.3 × 10¹¹ kg (from the question context), initial velocity of Dimorphos u₂ = 0.
+m_DART × u = (m_DART + m_Dimorphos) × v
 
-Total momentum before = m₁u₁ = 570 × 6140 = 3.50 × 10⁶ kg m s⁻¹
-Total mass after = m₁ + m₂ ≈ m₂ (since m₂ >> m₁)
-Velocity after: v = (m₁u₁) / (m₁ + m₂) ≈ 3.50 × 10⁶ / 4.3 × 10¹¹ = 8.14 × 10⁻⁶ m s⁻¹ ≈ 8.1 × 10⁻⁶ m s⁻¹
+The mass of Dimorphos is so much greater than that of DART that 570 + 4.8 × 10⁹ ≈ 4.8 × 10⁹ kg, so
 
-Assumption: Dimorphos was stationary before impact (u₂ = 0). Also assume no mass is ejected from Dimorphos by the impact (or that the question instructs to ignore ejected material).`,
-  "phys-ocrb-h557-2024-p3::4(b)": `It would be challenging to replicate the DART collision because the mass ratio is extremely large: Dimorphos is approximately 10¹¹ kg while DART is 570 kg, a ratio of about 10⁸. On an air track with a 150 g rider, the stationary target would need to be about 10⁸ × 0.15 kg ≈ 10⁷ kg — impossible to put on a laboratory air track. The change in velocity of the target in the real collision is tiny (∼8 × 10⁻⁶ m s⁻¹), and achieving such an extreme mass ratio in the lab is not feasible with the available apparatus. Additionally, the DART impact also ejected a large cloud of material from Dimorphos (the recoil from ejected debris contributed significantly to the momentum change), which cannot be replicated in a simple air-track collision.`,
-  "phys-ocrb-h557-2024-p3::4(c)(i)": `In the first run, the 150 g rider collides with the second stationary 150 g rider. For the maximum initial velocity, the first rider comes to rest immediately (implying a perfectly elastic-like or head-on collision where all momentum is transferred).
-By conservation of momentum: m × v₁ = m × v₂ (first rider stops, second moves off).
-From Fig. 4.3, the velocity of the second rider immediately after the collision (at t = 0 after the collision): read the initial velocity from the graph.
-If the graph shows the second rider has initial velocity ≈ 0.85 m s⁻¹ (to be read from the graph), then the first rider's approach velocity = 0.85 m s⁻¹ (since the masses are equal and first rider stops).`,
-  "phys-ocrb-h557-2024-p3::4(c)(ii)": `From Fig. 4.3, the velocity–time graph shows the rider decelerating after the collision. The graph is approximately linear (constant deceleration) due to a roughly constant drag/friction force.
+v = (570 × 6000)/(4.8 × 10⁹) = (3.42 × 10⁶)/(4.8 × 10⁹)
 
-Drag force = m × |a| = m × (Δv/Δt)
-Read from Fig. 4.3: initial velocity ≈ 0.85 m s⁻¹, and the rider comes to rest after approximately t = 3.0 s (read from graph).
-Deceleration a = Δv/Δt = 0.85/3.0 = 0.283 m s⁻²
-F_drag = m × a = 0.150 × 0.283 = 0.0425 N ≈ 0.042 N
+v = 7.1 × 10⁻⁴ m s⁻¹
 
-(Read the actual values from Fig. 4.3 and substitute.)`,
-  "phys-ocrb-h557-2024-p3::4(c)(iii)": `Using conservation of momentum for the collision between the 150 g rider (approaching at v₁ = 0.85 m s⁻¹) and the stationary 250 g rider:
-m₁v₁ = m₁v₁' + m₂v₂'
-0.150 × 0.85 = 0.150 × (−0.23) + 0.250 × v₂'
-0.1275 = −0.0345 + 0.250 × v₂'
-0.1620 = 0.250 × v₂'
-v₂' = 0.648 m s⁻¹ ≈ 0.65 m s⁻¹
+Assumption: all of DART's linear momentum is transferred to the linear momentum of Dimorphos — none of it sets Dimorphos rotating or is carried away by material ejected from the surface, Dimorphos stays intact and the whole of the spacecraft ends up embedded in it. (Because 6.0 km s⁻¹ is a relative velocity, the answer is the change in the velocity of Dimorphos.)`,
+  "phys-ocrb-h557-2024-p3::4(b)": `What matters is the ratio of the two masses rather than the difference between them. For the real collision
 
-Comparing with the 150 g rider's initial velocity of ≈ 0.85 m s⁻¹ in Fig. 4.3: the 250 g rider moves away at 0.65 m s⁻¹, which is smaller than 0.85 m s⁻¹. Therefore the 250 g rider will move away with a smaller velocity than the 150 g rider shown in Fig. 4.3.`,
+4.8 × 10⁹ / 570 = 8.4 × 10⁶
+
+so Dimorphos is about 8.4 million times as massive as DART.
+
+To reproduce that ratio on the air track, either the rider playing the part of the spacecraft would have to have a mass of
+
+150 g ÷ (8.4 × 10⁶) ≈ 1.8 × 10⁻⁸ kg = 18 μg
+
+if the 150 g rider represents the asteroid, or the rider playing the part of the asteroid would have to have a mass of
+
+150 g × (8.4 × 10⁶) ≈ 1.3 × 10⁶ kg
+
+if the 150 g rider represents the spacecraft. Neither an 18 μg rider nor a 1300 tonne rider is possible on a laboratory air track, and the velocity given to the struck rider would be smaller than the approach velocity by the same factor of 8.4 × 10⁶, far too small for the ultrasonic ranging device to detect. Modelling the DART collision with this apparatus is therefore impractical.`,
+  "phys-ocrb-h557-2024-p3::4(c)(i)": `The two riders have equal masses and the first is assumed to stop dead, so conservation of momentum gives
+
+0.150 × u = 0.150 × v₂ , so u = v₂
+
+Reading Fig. 4.3 where the line meets the velocity axis at t = 0, the second rider leaves the collision at 0.90 m s⁻¹.
+
+maximum velocity = 0.90 m s⁻¹`,
+  "phys-ocrb-h557-2024-p3::4(c)(ii)": `The line on Fig. 4.3 is straight, so the deceleration is constant. Reading its two ends: v = 0.90 m s⁻¹ at t = 0 and v = 0.80 m s⁻¹ at t = 1.0 s.
+
+a = Δv/Δt = (0.90 − 0.80)/1.0 = 0.10 m s⁻²
+
+F = ma = 0.150 × 0.10
+
+magnitude of force = 0.015 N`,
+  "phys-ocrb-h557-2024-p3::4(c)(iii)": `Momentum is conserved. Taking the original direction of the 150 g rider as positive, it rebounds so its final velocity is −0.23 m s⁻¹, and its approach velocity is the 0.90 m s⁻¹ found in part (i):
+
+0.150 × 0.90 = 0.150 × (−0.23) + 0.250 × v
+0.135 = −0.0345 + 0.250v
+0.250v = 0.1695
+v = 0.68 m s⁻¹
+
+The 250 g rider therefore moves away at 0.68 m s⁻¹, which is smaller than the 0.90 m s⁻¹ shown in Fig. 4.3 for the 150 g rider.`,
   "phys-ocrb-h557-2024-p3::4(d)": `The graph (Fig. 4.5) shows the velocity of the rider with the sail decreasing more rapidly than the rider without the sail (Fig. 4.3). The shape of the graph is a curve (not a straight line) — the rate of decrease of velocity becomes smaller as the velocity decreases. This is because the drag force is proportional to v² (F_D ∝ v²): when the rider moves fast, the drag force is large, causing rapid deceleration; as the rider slows down, the drag force decreases (proportionally to v²), so the deceleration also decreases, producing a curved (convex) velocity–time graph rather than the linear graph seen without the sail.`,
   "phys-ocrb-h557-2024-p3::4(e)": `Plan to investigate F_D ∝ v²:
 
