@@ -8,3 +8,7 @@
 
 # Claude Code settings, hooks and worktrees.
 /.claude
+
+# This file. Vercel reads it before applying it, so listing it here only
+# stops it being served.
+/.vercelignore
