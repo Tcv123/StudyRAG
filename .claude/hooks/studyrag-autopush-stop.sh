@@ -31,10 +31,26 @@ if git rev-parse --verify --quiet "refs/remotes/origin/$BRANCH" >/dev/null 2>&1;
   BEHIND=$(git rev-list --count "HEAD..refs/remotes/origin/$BRANCH" 2>/dev/null || echo 0)
 fi
 
+# BANK GUARD. Question banks go straight to students, and nothing else runs
+# scripts/check-bank.js before they do. On 2026-09-22 about 4,200 literal
+# "\n" sequences were found live in Politics Edexcel, Physics Edexcel and
+# Maths AQA mark schemes, which this check now fails on. Run over the working
+# tree (what is about to be committed) from the repo root; a checkout that
+# predates the script, or a machine without node, skips the guard.
+ROOT=$(git rev-parse --show-toplevel 2>/dev/null)
+BANK_FAIL=""
+if [ -n "$ROOT" ] && [ -f "$ROOT/scripts/check-bank.js" ] && command -v node >/dev/null 2>&1; then
+  if ! BANK_OUT=$(cd "$ROOT" && node scripts/check-bank.js 2>&1); then
+    BANK_FAIL=$(printf '%s\n' "$BANK_OUT" | grep -A2 '^FAIL' | head -6)
+  fi
+fi
+
 if [ -n "$AUTOPUSH_DRY_RUN" ]; then
   echo "DRY RUN: flag present ($FLAG), branch $BRANCH"
   echo "DRY RUN: behind origin/$BRANCH by ${BEHIND:-0} commit(s)"
-  if [ "${BEHIND:-0}" -gt 0 ]; then
+  if [ -n "$BANK_FAIL" ]; then
+    echo "DRY RUN: would commit but HOLD the push (check-bank failed):"; printf '%s\n' "$BANK_FAIL"
+  elif [ "${BEHIND:-0}" -gt 0 ]; then
     echo "DRY RUN: would commit but HOLD the push (non-fast-forward)"
   else
     echo "DRY RUN: would commit $(git status --porcelain | wc -l | tr -d ' ') changed path(s) and push to origin/$BRANCH"
@@ -55,6 +71,16 @@ if [ "${BEHIND:-0}" -gt 0 ]; then
   commit_if_dirty 2>/dev/null
   printf '{"systemMessage":"Auto-push HELD: %s is %s commit(s) behind origin/%s, so a push would be rejected. Work is committed locally but NOT published. Reconcile first: git fetch origin && git rebase origin/%s && git push origin %s"}\n' \
     "$BRANCH" "$BEHIND" "$BRANCH" "$BRANCH" "$BRANCH"
+  exit 0
+fi
+
+# A failing bank: same shape as the guard above — checkpoint, do not publish.
+if [ -n "$BANK_FAIL" ]; then
+  commit_if_dirty 2>/dev/null
+  # node, not printf: the report quotes bank text, backslashes included, and
+  # JSON.stringify is the only escaping here that cannot produce bad JSON.
+  BANK_FAIL="$BANK_FAIL" node -e 'console.log(JSON.stringify({ systemMessage:
+    "Auto-push HELD: scripts/check-bank.js failed, so nothing was pushed. Work is committed locally but NOT published. Fix the bank, then the next turn pushes as normal.\n" + process.env.BANK_FAIL }))'
   exit 0
 fi
 
