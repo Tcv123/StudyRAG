@@ -87,7 +87,7 @@ const BIOLOGY_OCR_B_QUESTIONS = {
       { q: 'How do channel proteins differ from carrier proteins?', options: ['They are identical','Channel proteins form a pore for passive movement; carrier proteins change shape to transport molecules','Channel proteins use ATP to pump molecules; carrier proteins allow passive diffusion through a fixed pore','Carrier proteins only move water'], answer: 1 },
       { q: 'What is co-transport?', options: ['Two molecules moving in opposite directions','The movement of one substance coupled with another down its concentration gradient, e.g., sodium-glucose co-transport','Active transport without ATP','Osmosis and diffusion together'], answer: 1 },
       { q: 'What is the role of ATP in active transport?', options: ['It provides energy to change the shape of carrier proteins to move substances against their concentration gradient','It provides oxygen','It breaks down the membrane','It acts as an enzyme'], answer: 0 },
-      { q: 'Which microscopy technique allows observation of living cells?', options: ['Transmission electron microscopy','Scanning electron microscopy','Light microscopy','All of the above'], answer: 2 },
+      { q: "Which microscopy technique allows observation of living cells?", options: ["Transmission electron microscopy","Scanning electron microscopy","Light microscopy","Both kinds of electron microscopy"], answer: 2 },
       { q: 'What is cell fractionation used for?', options: ['Counting cells','Separating cell organelles by spinning at increasing speeds (differential centrifugation)','Staining cells','Measuring cell size'], answer: 1 },
     ],
     red: [

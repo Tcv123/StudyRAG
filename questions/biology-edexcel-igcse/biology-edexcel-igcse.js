@@ -123,7 +123,7 @@ const BIOLOGY_EDEXCEL_IGCSE_QUESTIONS = {
       { q: 'Define diffusion.', options: ['Net movement of particles from a low to a high concentration','Net movement of particles from a high to a low concentration down a concentration gradient','Movement of water against a gradient','Active movement requiring ATP'], answer: 1 },
       { q: 'Define osmosis.', options: ['Net movement of water from dilute to concentrated solution across a partially permeable membrane','Movement of solutes through a membrane','Diffusion of gases','Active transport of ions'], answer: 0 },
       { q: 'Active transport requires what?', options: ['Only a concentration gradient','Energy from respiration (ATP)','Only a temperature difference','Water only'], answer: 1 },
-      { q: 'Which of these moves particles against a concentration gradient?', options: ['Diffusion','Osmosis','Active transport','None of the above'], answer: 2 },
+      { q: "Which of these moves particles against a concentration gradient?", options: ["Diffusion","Osmosis","Active transport","Facilitated diffusion"], answer: 2 },
       { q: 'What is a partially permeable membrane?', options: ['A membrane that lets all molecules through','A membrane that lets nothing through','A membrane that lets small molecules through but blocks larger ones','A wall of cellulose'], answer: 2 },
       { q: 'Oxygen enters a leaf through which process?', options: ['Osmosis','Active transport','Diffusion','Translocation'], answer: 2 },
       { q: 'Which factor does NOT affect rate of diffusion?', options: ['Temperature','Concentration gradient size','Colour of the substance','Surface area'], answer: 2 },

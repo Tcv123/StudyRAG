@@ -133,7 +133,7 @@ const ECONOMICS_OCR_QUESTIONS = {
       { q: 'Fixed costs are costs that:', options: ['Change with output', 'Do not change with output in the short run', 'Are always zero', 'Only exist in the long run'], answer: 1 },
       { q: 'Variable costs:', options: ['Remain constant as output changes', 'Change as output changes', 'Include rent and salaries', 'Are zero at all output levels'], answer: 1 },
       { q: 'Profit is calculated as:', options: ['Total revenue minus total cost', 'Total revenue plus total cost', 'Average cost minus average revenue', 'Marginal revenue minus marginal cost'], answer: 0 },
-      { q: 'Normal profit is:', options: ['The same as supernormal profit', 'The minimum profit needed to keep a firm in the industry', 'Zero economic profit', 'Both B and C'], answer: 3 },
+      { q: "Normal profit is:", options: ["The same as supernormal profit","The minimum profit needed to keep a firm in the industry, i.e. zero economic profit","Any revenue above average variable cost","Profit earned only by monopolies in the long run"], answer: 1 },
       { q: 'Supernormal profit occurs when:', options: ['Total revenue equals total cost', 'Total revenue exceeds total cost (including normal profit)', 'Average cost exceeds average revenue', 'The firm is making a loss'], answer: 1 },
       { q: 'The law of diminishing marginal returns states that:', options: ['Output always falls', 'Adding more of a variable factor eventually leads to smaller increases in output', 'Fixed costs rise in the long run', 'Marginal cost always falls'], answer: 1 },
       { q: 'Economies of scale occur when:', options: ['Average costs rise as output increases', 'Average costs fall as output increases', 'Marginal costs rise', 'Total costs fall'], answer: 1 },

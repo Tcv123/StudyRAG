@@ -30,7 +30,7 @@ const CS_AQA_PRACTICE = {
 
   '4.5': [
     { q: 'Convert 0xB6 to binary.', options: ['1011 0110','1010 0110','1011 1100','0110 1011'], answer: 0, explanation: 'B = 1011, 6 = 0110.' },
-    { q: 'Which compression technique is best suited to consecutive repeats in data?', options: ['Huffman coding','Run-length encoding','Dictionary coding','None of the above'], answer: 1, explanation: 'RLE replaces runs of a repeated value with (count, value) pairs.' },
+    { q: "Which compression technique is best suited to consecutive repeats in data?", options: ["Huffman coding","Run-length encoding","Dictionary coding","Lossy quantisation"], answer: 1, explanation: 'RLE replaces runs of a repeated value with (count, value) pairs.' },
   ],
 
   '4.6': [

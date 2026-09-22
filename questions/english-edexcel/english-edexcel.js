@@ -513,7 +513,7 @@ const ENGLISH_EDEXCEL_QUESTIONS = {
       { q: 'In IRF, who controls two of the three turns?', options: ['The teacher','The pupil','A third party','Nobody'], answer: 0 },
       { q: 'Which of these is a feature of powerful speech?', options: ['Imperatives + modals of obligation','Fillers only','Hedges only','Silence'], answer: 0 },
       { q: 'Which of these is typical of less-powerful speech?', options: ['Hedges, rising intonation, tag questions','Only imperatives','Only modals of obligation','Only Latinate lexis'], answer: 0 },
-      { q: 'A modal verb of obligation is…', options: ['"must", "should"','"might", "could"','"can", "may"','None of the above'], answer: 0 },
+      { q: "A modal verb of obligation is…", options: ["\"must\", \"should\"","\"might\", \"could\"","\"can\", \"may\"","\"would\", \"will\""], answer: 0 },
       { q: 'A modal verb of possibility is…', options: ['"might", "could"','"must", "shall"','"should"','None'], answer: 0 },
       { q: 'What is "nominalisation"?', options: ['Turning a process/verb into a noun, e.g. "decision"','A type of phonology','A kind of punctuation','An interjection'], answer: 0 },
       { q: '"Reforms were introduced" (passive) hides the…', options: ['Agent / actor','Object','Verb','Subject'], answer: 0 },

@@ -263,7 +263,7 @@ const PHYSICS_AQA_QUESTIONS = {
       { q: 'What is the unit of resistance?', options: ['Ampere (A)','Volt','Watt','Ohm (Ω)'], answer: 3 },
       { q: 'What is resistivity?', options: ['Resistance per unit length of any wire','A property of a material: ρ = RA/L','The same as resistance','Conductivity'], answer: 1 },
       { q: 'How are resistors in series combined?', options: ['1/R_total = 1/R₁ + 1/R₂','R_total = R₁ + R₂','R_total = R₁ × R₂','R_total = R₁ - R₂'], answer: 1 },
-      { q: 'How are resistors in parallel combined?', options: ['R_total = R₁ + R₂','1/R_total = 1/R₁ + 1/R₂','R_total = R₁ × R₂/(R₁ + R₂) for two resistors','Both B and C are correct'], answer: 3 },
+      { q: "How are resistors in parallel combined?", options: ["R_total = R₁ + R₂","1/R_total = 1/R₁ + 1/R₂ (for two resistors, R_total = R₁R₂/(R₁ + R₂))","R_total = R₁ × R₂","R_total = (R₁ + R₂)/2"], answer: 1 },
       { q: 'What is the equation for electrical power?', options: ['P = IV','P = IR','P = V/I','P = QV'], answer: 0 },
       { q: 'What does the I-V characteristic of an ohmic conductor look like?', options: ['A curve','A straight line through the origin','A horizontal line','A vertical line through the origin always'], answer: 1 },
       { q: 'What is Kirchhoff\'s first law?', options: ['The sum of EMFs equals the sum of PDs in a loop','The total current entering a junction equals the total current leaving it','V = IR','P = IV'], answer: 1 },

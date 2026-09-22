@@ -29,7 +29,7 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { q: 'Why does the first ionisation energy generally increase across a period?', options: ['Increasing nuclear charge with similar shielding', 'Decreasing atomic radius only', 'Increasing number of electron shells', 'Decreasing number of protons'], answer: 0 },
       { q: 'What is the shape of SF6?', options: ['Octahedral', 'Tetrahedral', 'Trigonal bipyramidal', 'Square planar'], answer: 0 },
       { q: 'A dative covalent bond differs from a normal covalent bond because:', options: ['Both electrons come from one atom', 'Electrons are transferred', 'No electrons are shared', 'Three electrons are shared'], answer: 0 },
-      { q: 'What volume does 1 mole of gas occupy at RTP (room temperature and pressure)?', options: ['24 dm^3', '22.4 dm^3', '24000 cm^3', 'Both A and C'], answer: 3 },
+      { q: "What volume does 1 mole of gas occupy at RTP (room temperature and pressure)?", options: ["24 dm^3 (= 24 000 cm^3)","22.4 dm^3","2.4 dm^3","240 dm^3"], answer: 0 },
       { q: 'Which molecule has a permanent dipole moment?', options: ['HCl', 'CO2', 'BF3', 'CCl4'], answer: 0 },
       { q: 'Hydrogen bonding occurs when hydrogen is bonded to:', options: ['N, O, or F', 'Any non-metal', 'C, N, or O', 'Any halogen'], answer: 0 },
       { q: 'The concentration of a solution is 0.1 mol dm^-3 and the volume is 250 cm^3. How many moles of solute are present?', options: ['0.025 mol', '0.25 mol (x 10)', '0.1 mol', '25 mol'], answer: 0, explanation: 'n = c × V(dm³) = 0.1 × 0.250 = 0.025 mol (250 cm³ = 0.250 dm³).' },
