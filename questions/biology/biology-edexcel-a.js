@@ -1137,12 +1137,12 @@ const BIOLOGY_EDEXCEL_A_QUESTIONS = {
         "answer": 1
       },
       {
-        "q": "What is a phenotype?",
+        "q": "Which statement best describes how the phenotype of an organism arises?",
         "options": [
-          "The observable characteristics resulting from genotype and environment",
-          "A DNA sequence",
-          "The alleles an organism possesses, inherited from both of its parents at fertilisation",
-          "A type of cell"
+          "The observable characteristics result from the genotype and the environment acting together",
+          "The phenotype is set only by the genotype, so the environment has no effect on any characteristic",
+          "The phenotype is set only by the environment, so all organisms of a species start out identical",
+          "The phenotype is the list of alleles an organism inherits from each of its parents at fertilisation"
         ],
         "answer": 0
       },
@@ -3147,7 +3147,7 @@ const BIOLOGY_EDEXCEL_A_QUESTIONS = {
         "options": [
           "A multinucleated cell formed from fused myoblasts, containing myofibrils",
           "A type of nerve",
-          "A single cell",
+          "A single thick filament made of the protein myosin",
           "A tendon"
         ],
         "answer": 0

@@ -6,7 +6,7 @@ const BIOLOGY_AQA_QUESTIONS = {
       {q: 'Which bond joins amino acids together?', options: ['Peptide bond', 'Glycosidic bond', 'Hydrogen bond', 'Ester bond'], answer: 'Peptide bond'},
       {q: 'What type of reaction joins two monosaccharides?', options: ['Condensation', 'Hydrolysis (with water)', 'Oxidation', 'Reduction'], answer: 'Condensation'},
       {q: 'Which monosaccharide is the main respiratory substrate?', options: ['Glucose', 'Fructose', 'Galactose', 'Ribose'], answer: 'Glucose'},
-      {q: 'What is the general formula for a carbohydrate?', options: ['Cn(H2O)n', 'CnH2nOn', 'CnHnOn', 'Cn(H2O)2n'], answer: 'Cn(H2O)n'},
+      {q: 'What is the general formula for a carbohydrate?', options: ['Cn(H2O)n', 'CnH2nO2n', 'CnHnOn', 'Cn(H2O)2n'], answer: 'Cn(H2O)n'},
       {q: 'Which test detects reducing sugars?', options: ["Benedict's test", "Biuret test", 'Iodine test', 'Emulsion test'], answer: "Benedict's test"},
       {q: 'What colour does iodine turn in the presence of starch?', options: ['Blue-black', 'Brick red (orange)', 'Purple', 'White'], answer: 'Blue-black'},
       {q: 'Which element is found in ALL proteins but not in carbohydrates?', options: ['Nitrogen', 'Phosphorus', 'Sulfur', 'Iron'], answer: 'Nitrogen'},

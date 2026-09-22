@@ -2645,7 +2645,7 @@ const BIOLOGY_EDEXCEL_B_QUESTIONS = {
         "answer": 1
       },
       {
-        "q": "Which bacterium is the specification example of a pathogen that causes disease mainly through exotoxins?",
+        "q": "Which pathogen causes disease mainly through exotoxins it secretes?",
         "options": [
           "Puccinia graminis",
           "Salmonella",
@@ -3775,12 +3775,12 @@ const BIOLOGY_EDEXCEL_B_QUESTIONS = {
     ],
     "amber": [
       {
-        "q": "An organism has a diploid number of 8. How many different combinations of chromosomes can its gametes have from independent assortment alone?",
+        "q": "A plant has a diploid number of 12. How many different combinations of chromosomes can its gametes have from independent assortment alone?",
         "options": [
-          "4",
-          "8",
-          "16",
-          "256"
+          "12",
+          "36",
+          "64",
+          "4096"
         ],
         "answer": 2
       },
@@ -4983,7 +4983,7 @@ const BIOLOGY_EDEXCEL_B_QUESTIONS = {
         "answer": 1
       },
       {
-        "q": "Ice cores show a pre-industrial carbon dioxide concentration of about 280 ppm. What is the percentage increase to a present-day value of 420 ppm?",
+        "q": "Ice cores show a pre-industrial carbon dioxide concentration of about 280 ppm. What is the percentage increase to the 420 ppm first reached in the early 2020s?",
         "options": [
           "67%",
           "140%",
