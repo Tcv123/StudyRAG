@@ -43,6 +43,16 @@
    Fix a tell by lengthening the distractors, never by trimming the
    correct answer — it has to stay complete enough to still be right.
 
+     6. LITERAL \n — a backslash followed by n in the loaded text, where a
+        line break was meant. `\\n` in the source is two characters, not
+        a newline, in template literals and quoted strings alike, and the
+        pages render with white-space: pre-line, so students see "\n" on
+        screen. About 4,200 reached Politics Edexcel, Physics Edexcel and
+        Maths AQA mark schemes that way. LaTeX commands starting with n
+        (\neq, \ne, \not, \nu ...) are allowed, inside maths delimiters
+        only. Checked in EVERY file the sweep loads, whatever its shape,
+        and always a failure.
+
        node scripts/check-bank.js
        node scripts/check-bank.js questions/politics/politics-edexcel-alevel.js
 
@@ -167,6 +177,40 @@ function checkPractice(bank) {
   }
   const tariffs = Object.keys(tariffCount).map(Number).sort((a, b) => a - b).join('/');
   return { errors, warnings, questions, tariffs };
+}
+
+/* Check 6. Walks every string in the bank, not just the fields the other
+   checks know about, because the escape was found in q, markScheme and
+   modelAnswer alike. A LaTeX command starting with n is allowed only when
+   it is a whole word AND sits inside maths delimiters, so a stray newline
+   before prose ("\ne.g.", "\nnumber") still fails. */
+const LATEX_N = new Set(['neq', 'ne', 'neg', 'not', 'notin', 'nu', 'nabla', 'ni', 'nmid',
+                         'nleq', 'ngeq', 'nexists', 'newline', 'nparallel', 'nsubseteq',
+                         'nsupseteq', 'ncong', 'nsim']);
+
+function insideMath(before) {
+  const open = (re) => (before.match(re) || []).length;
+  if (open(/\\\(/g) > open(/\\\)/g)) return true;
+  if (open(/\\\[/g) > open(/\\\]/g)) return true;
+  const display = open(/(?<!\\)\$\$/g);                 // $$…$$
+  const inline  = open(/(?<!\\)\$/g) - 2 * display;     // $…$
+  return display % 2 === 1 || inline % 2 === 1;
+}
+
+function literalNewlines(bank) {
+  const found = [];
+  (function walk(v, at) {
+    if (typeof v === 'string') {
+      for (const m of v.matchAll(/\\(n[A-Za-z]*)/g)) {
+        if (LATEX_N.has(m[1]) && insideMath(v.slice(0, m.index))) continue;
+        found.push(`${at}: …${v.slice(Math.max(0, m.index - 30), m.index + 12).replace(/\n/g, '⏎')}…`);
+        break;   // one report per string is enough to find it
+      }
+    } else if (v && typeof v === 'object') {
+      for (const [k, x] of Object.entries(v)) walk(x, Array.isArray(v) ? `${at}[${k}]` : (at ? `${at}.${k}` : k));
+    }
+  })(bank, '');
+  return found;
 }
 
 function loadBank(file) {
@@ -299,6 +343,17 @@ for (const file of files) {
     // Only complain when the caller named this file; a sweep meets plenty
     // of question files that are not banks at all.
     if (args.length) { console.log(`FAIL ${rel}\n       ${error}`); failed++; }
+    continue;
+  }
+
+  // Before the shape dispatch, so banks the sweep otherwise skips as
+  // 'empty' (the AI-feedback files) are covered too.
+  const newlines = literalNewlines(bank);
+  if (newlines.length) {
+    console.log(`FAIL ${rel}  (${newlines.length} string(s) with a literal \\n — use \\n for a line break, not \\\\n)`);
+    for (const e of newlines.slice(0, 12)) console.log(`       ${e}`);
+    if (newlines.length > 12) console.log(`       ... and ${newlines.length - 12} more`);
+    failed++;
     continue;
   }
 
