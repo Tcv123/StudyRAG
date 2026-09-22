@@ -417,7 +417,7 @@ const PHYSICS_AQA_WRITTEN = {
       {
         q: 'Explain the conditions for a geostationary orbit and calculate the orbital radius. (M_Earth = 5.97 × 10²⁴ kg, G = 6.67 × 10⁻¹¹ N m² kg⁻²)',
         marks: 4, tier: 'amber',
-        modelAnswer: `• Geostationary orbit: period T = 24 hours = 86400 s, orbits above the equator, and moves west to east (same direction as Earth\'s rotation) (1)\n• The satellite appears stationary relative to the ground — used for communications satellites (1)\n• Equating gravitational force to centripetal force: GMm/r² = mω²r, so r³ = GM/ω² where ω = 2π/T (1)\n• r³ = (6.67 × 10⁻¹¹ × 5.97 × 10²⁴) / (2π/86400)² = 3.98 × 10¹⁴ / 5.30 × 10⁻⁹ = 7.53 × 10²² → r = 4.23 × 10⁷ m ≈ 42,300 km from Earth\'s centre (1)`
+        modelAnswer: `• Geostationary orbit: period T = 24 hours = 86400 s, orbits above the equator, and moves west to east (same direction as Earth\'s rotation) (1)\n• The satellite appears stationary relative to the ground — used for communications satellites (1)\n• Equating gravitational force to centripetal force: GMm/r² = mω²r, so r³ = GM/ω² where ω = 2π/T (1)\n• r³ = (6.67 × 10⁻¹¹ × 5.97 × 10²⁴) / (2π/86400)² = 3.98 × 10¹⁴ / 5.29 × 10⁻⁹ = 7.53 × 10²² → r = 4.22 × 10⁷ m ≈ 42,200 km from Earth\'s centre (1)`
       },
     ],
     red: [

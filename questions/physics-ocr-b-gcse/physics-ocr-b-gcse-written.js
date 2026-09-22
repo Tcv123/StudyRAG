@@ -82,7 +82,7 @@ const PHYSICS_OCR_B_GCSE_WRITTEN = {
     ],
     red: [
       { q: 'A student investigates stopping distance. They claim that "doubling the speed only doubles the stopping distance." Use physics to evaluate this claim and describe how the thinking and braking distances each change with speed. [6]', marks: 6,
-        modelAnswer: 'Thinking distance = reaction time × speed. If reaction time is constant, thinking distance is proportional to speed — doubling the speed doubles the thinking distance.\n\nBraking distance comes from dissipating the car\'s kinetic energy (½mv²) through friction at the brakes: F × d = ½mv². So d ∝ v² for a given friction force — doubling the speed quadruples the braking distance.\n\nStopping distance = thinking + braking. At low speeds the thinking term dominates (≈ linear), but at higher speeds the v² braking term grows much faster. So the student\'s claim is wrong above about 20 mph: doubling the speed more than doubles the stopping distance. This is why speed limits in urban areas are set at 20–30 mph to keep stopping distances manageable.' },
+        modelAnswer: 'Thinking distance = reaction time × speed. If reaction time is constant, thinking distance is proportional to speed — doubling the speed doubles the thinking distance.\n\nBraking distance comes from dissipating the car\'s kinetic energy (½mv²) through friction at the brakes: F × d = ½mv². So d ∝ v² for a given friction force — doubling the speed quadruples the braking distance.\n\nStopping distance = thinking + braking. At low speeds the thinking term is a large share of the total, but at higher speeds the v² braking term grows much faster. So the student\'s claim is wrong: because the braking distance quadruples, doubling the speed always more than doubles the stopping distance, and the gap widens at higher speeds. This is why speed limits in urban areas are set at 20–30 mph to keep stopping distances manageable.' },
     ],
   },
 
@@ -108,7 +108,7 @@ const PHYSICS_OCR_B_GCSE_WRITTEN = {
   'P6': {
     green: [
       { q: 'State what happens to the particles of a solid when it is heated from room temperature up to (but not at) its melting point.', marks: 2,
-        modelAnswer: 'The particles gain kinetic energy and vibrate more vigorously about their fixed positions; their temperature rises.' },
+        modelAnswer: 'The particles gain kinetic energy and vibrate more vigorously about their fixed positions; the temperature of the solid rises.' },
       { q: 'State the equation that defines density.', marks: 1,
         modelAnswer: 'density = mass / volume (ρ = m / V).' },
     ],

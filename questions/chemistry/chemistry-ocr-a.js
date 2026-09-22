@@ -19,7 +19,7 @@ const CHEMISTRY_OCR_A_QUESTIONS = {
     { q: 'In a titration, concordant results are those that agree within:', options: ['0.50 cm³', '0.10 cm³', '1.00 cm³', '0.01 cm³'], answer: 1 },
     { q: 'A student obtains titre values of 24.10, 24.15, 24.10, and 25.80 cm³. Which value should be excluded?', options: ['24.10', '24.15', '25.80', 'None should be excluded'], answer: 2 },
     { q: "When calculating the percentage uncertainty in a burette titre, you should use:", options: ["The uncertainty of two readings (2 × ±0.05 cm³) divided by the titre, × 100","The uncertainty of one reading (±0.05 cm³) divided by the titre, × 100","The uncertainty of two readings divided by the burette capacity (50 cm³), × 100","The titre divided by the uncertainty of two readings, × 100"], answer: 0 },
-    { q: 'A burette has an uncertainty of ±0.05 cm³. For a single titre reading, the total uncertainty is:', options: ['±0.05 cm³', '±0.10 cm³', '±0.15 cm³', '±0.50 cm³'], answer: 1 },
+    { q: 'A burette has an uncertainty of ±0.05 cm³. The total uncertainty in a single titre (initial and final readings) is:', options: ['±0.05 cm³', '±0.10 cm³', '±0.15 cm³', '±0.50 cm³'], answer: 1 },
     { q: 'Which technique is most suitable for determining the concentration of an unknown acid?', options: ['Distillation', 'Titration', 'Filtration', 'Chromatography'], answer: 1 },
     { q: 'A student heats a crucible to constant mass. This means they heat until:', options: ['The crucible glows red', 'Two consecutive masses agree within 0.01 g', 'Exactly 10 minutes have passed', 'The substance has melted'], answer: 1 },
     { q: 'The percentage error in using a 250 cm³ volumetric flask (±0.23 cm³) is:', options: ['0.092%', '0.23%', '0.046%', '2.3%'], answer: 0, explanation: 'Percentage error = (absolute uncertainty ÷ total volume) × 100 = (0.23 ÷ 250) × 100 = 0.092%. A very common mistake is option B — quoting the uncertainty (0.23) as if it were already a percentage. Option C would be the answer if the uncertainty were ±0.115 cm³.' },
@@ -60,7 +60,7 @@ const CHEMISTRY_OCR_A_QUESTIONS = {
     { q: 'A dative covalent bond is one where:', options: ['Electrons are transferred', 'Both electrons in the shared pair come from the same atom', 'Electrons are delocalised', 'The bond is between two metals'], answer: 1 },
   ],
   amber: [
-    { q: 'Chlorine has two isotopes: ³⁵Cl (75.8%) and ³⁷Cl (24.2%). What is the relative atomic mass?', options: ['35.0', '35.5', '36.0', '35.2'], answer: 1, explanation: 'Ar = (35×75.8 + 37×24.2) ÷ 100 = (2653 + 896.4) ÷ 100 = 3549.4 ÷ 100 = 35.5.' },
+    { q: 'Chlorine has two isotopes: ³⁵Cl (75.8%) and ³⁷Cl (24.2%). What is the relative atomic mass?', options: ['35.0', '35.5', '36.0', '35.2'], answer: 1, explanation: 'Ar = (35×75.8 + 37×24.2) ÷ 100 = (2653 + 895.4) ÷ 100 = 3548.4 ÷ 100 = 35.5.' },
     { q: 'What mass of NaOH (Mr = 40.0) is needed to make 250 cm³ of a 0.10 mol dm⁻³ solution?', options: ['0.50 g', '1.00 g', '2.50 g', '4.00 g'], answer: 1, explanation: 'moles NaOH = c×V = 0.10×0.250 = 0.025 mol; mass = 0.025×40 = 1.00 g.' },
     { q: 'In the reaction 2Na + 2H₂O → 2NaOH + H₂, sodium is:', options: ['Reduced', 'Oxidised', 'Neither oxidised nor reduced', 'Acting as a catalyst'], answer: 1 },
     { q: 'What is the oxidation state of sulfur in SO₄²⁻?', options: ['+4', '+6', '-2', '+2'], answer: 1, explanation: 'In SO₄²⁻: O is −2 (×4 = −8); total charge = −2. S + (−8) = −2 → S = +6.' },
@@ -142,7 +142,7 @@ const CHEMISTRY_OCR_A_QUESTIONS = {
   ],
   red: [
     { q: 'Chlorine reacts with cold dilute NaOH: Cl₂ + 2NaOH → NaCl + NaClO + H₂O. The oxidation states of Cl change from:', options: ['0 to -1 and +1','0 to -1 and +3','-1 to 0 and +1','+1 to -1 and +3'], answer: 0 },
-    { q: 'A student mixes 50 cm³ of 1.0 mol dm⁻³ HCl with 50 cm³ of 1.0 mol dm⁻³ NaOH. The temperature rises by 6.8 °C. Given c = 4.18 J g⁻¹ K⁻¹, the enthalpy of neutralisation is approximately:', options: ['-28.4 kJ mol⁻¹','-5.69 kJ mol⁻¹','-56.9 kJ mol⁻¹','-114 kJ mol⁻¹'], answer: 2 },
+    { q: 'A student mixes 50 cm³ of 1.0 mol dm⁻³ HCl with 50 cm³ of 1.0 mol dm⁻³ NaOH. The temperature rises by 6.8 °C. Given c = 4.18 J g⁻¹ K⁻¹, the enthalpy of neutralisation is approximately:', options: ['-28.4 kJ mol⁻¹','-5.69 kJ mol⁻¹','-56.8 kJ mol⁻¹','-114 kJ mol⁻¹'], answer: 2 },
     { q: 'For the equilibrium PCl₅(g) ⇌ PCl₃(g) + Cl₂(g), which change increases both the rate of reaction and the yield of products?', options: ['Decreasing temperature','Adding a catalyst','Increasing pressure','Increasing temperature'], answer: 3 },
     { q: 'Concentrated sulfuric acid reacts with NaBr to produce HBr and also Br₂, SO₂, and H₂O. This occurs because:', options: ['H₂SO₄ is a weak acid','Br⁻ is too small to reduce sulfuric acid','HBr is a strong enough reducing agent to reduce H₂SO₄','NaBr is thermally unstable'], answer: 2 },
     { q: 'Concentrated H₂SO₄ with NaI produces I₂, H₂S, and S among other products. This shows that I⁻ is:', options: ['Not reactive with H₂SO₄','A weaker reducing agent than Br⁻, so it reduces H₂SO₄ less','An oxidising agent','A stronger reducing agent than Br⁻ and Cl⁻'], answer: 3 },
@@ -150,7 +150,7 @@ const CHEMISTRY_OCR_A_QUESTIONS = {
     { q: 'In the Contact process (2SO₂ + O₂ ⇌ 2SO₃), a compromise temperature of 450°C is used because:', options: ['V₂O₅ catalyst only works at this temperature','The reaction is endothermic, so high temperature favours products','Higher pressure is impossible to achieve','Lower temperature gives higher yield but the rate is too slow without a higher temperature'], answer: 3 },
     { q: 'The enthalpy change calculated from bond enthalpies often differs from the experimental value because:', options: ['Bond enthalpies are exact values','Mean bond enthalpies are averages over many compounds, and actual bond strengths vary with the molecular environment','Hess\'s Law does not apply','Bond enthalpies include intermolecular forces'], answer: 1 },
     { q: 'For the reaction N₂O₄(g) ⇌ 2NO₂(g) ΔH = +57 kJ mol⁻¹, a sealed flask at equilibrium is placed in warm water. Which row is correct?', options: ['Colour darkens, Kc increases','Colour lightens, Kc increases','Colour darkens, Kc decreases','Colour lightens, Kc decreases'], answer: 0 },
-    { q: 'In a Hess\'s Law calculation, given: C(s) + O₂(g) → CO₂(g) ΔH = -394 kJ; H₂(g) + ½O₂(g) → H₂O(l) ΔH = -286 kJ; 2C(s) + 3H₂(g) + ½O₂(g) → C₂H₅OH(l) ΔH = -277 kJ, the enthalpy of combustion of C₂H₅OH is:', options: ['-1646 kJ mol⁻¹','-1367 kJ mol⁻¹','-957 kJ mol⁻¹','-1269 kJ mol⁻¹'], answer: 1 },
+    { q: 'In a Hess\'s Law calculation, given: C(s) + O₂(g) → CO₂(g) ΔH = -394 kJ; H₂(g) + ½O₂(g) → H₂O(l) ΔH = -286 kJ; 2C(s) + 3H₂(g) + ½O₂(g) → C₂H₅OH(l) ΔH = -277 kJ, the enthalpy of combustion of C₂H₅OH is:', options: ['-1646 kJ mol⁻¹','-1369 kJ mol⁻¹','-957 kJ mol⁻¹','-1269 kJ mol⁻¹'], answer: 1 },
   ],
 },
 
@@ -197,7 +197,7 @@ const CHEMISTRY_OCR_A_QUESTIONS = {
     { q: 'In the SN2 mechanism, the rate depends on:', options: ['Concentration of the haloalkane only', 'Concentration of both the haloalkane and the nucleophile', 'Temperature only', 'The solvent used'], answer: 1 },
     { q: 'Dehydration of butan-2-ol can produce:', options: ['Only but-1-ene', 'Only but-2-ene', 'A mixture of but-1-ene and but-2-ene', 'Butane'], answer: 2 },
     { q: 'Which test distinguishes an aldehyde from a ketone?', options: ['Bromine water', 'Tollens\' reagent (silver mirror test)', 'Sodium carbonate solution (fizzing with aldehydes)', 'Universal indicator'], answer: 1 },
-    { q: 'The mass spectrum of a compound shows M+ at m/z = 46 and a peak at m/z = 31 (loss of 15). The compound is likely:', options: ['Ethanol (loss of CH₃)', 'Dimethyl ether (CH₃OCH₃)', 'Methanal', 'Propane'], answer: 0 },
+    { q: 'The mass spectrum of a compound shows M+ at m/z = 46 and a peak at m/z = 31 (loss of 15). Its IR spectrum shows a broad absorption at 3200–3600 cm⁻¹. The compound is likely:', options: ['Ethanol (loss of CH₃)', 'Dimethyl ether (CH₃OCH₃)', 'Methanal', 'Propane'], answer: 0 },
     { q: 'Bond polarity in C-X bonds decreases in the order:', options: ['C-F > C-Cl > C-Br > C-I', 'C-I > C-Br > C-Cl > C-F', 'C-Cl > C-F > C-Br > C-I', 'All C-X bonds have equal polarity'], answer: 0 },
   ],
   red: [

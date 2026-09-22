@@ -109,7 +109,7 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
       { q: 'For the reaction A + 2B -> C, experiments show rate = k[A][B]. A possible mechanism consistent with this is:', options: ['A + B -> X (slow), X + B -> C (fast)','A + 2B -> C (one step)','2B -> X (slow), X + A -> C (fast)','A -> X (slow), X + 2B -> C (fast)'], answer: 0 },
       { q: 'The cell potential for the reaction Zn + Cu2+ -> Zn2+ + Cu is +1.10V. This means:', options: ['The reaction is not feasible','The reaction is feasible under standard conditions','Zinc is reduced','Copper is oxidised'], answer: 1 },
       { q: 'If E°cell is positive, the Gibbs free energy change is:', options: ['Positive','Negative','Zero','Cannot be determined'], answer: 1 },
-      { q: 'For the equilibrium PCl5(g) <=> PCl3(g) + Cl2(g), Kp = 1.8 atm at 250°C. If total pressure is 2.0 atm and p(PCl3) = p(Cl2) = x, then x is approximately:', options: ['0.6 atm','0.9 atm','1.0 atm','1.2 atm'], answer: 1 },
+      { q: 'For the equilibrium PCl5(g) <=> PCl3(g) + Cl2(g), Kp = 1.8 atm at 250°C. If total pressure is 2.0 atm and p(PCl3) = p(Cl2) = x, then x is approximately:', options: ['0.6 atm','0.8 atm','1.0 atm','1.2 atm'], answer: 1 },
       { q: 'In the iodine clock reaction, the order with respect to persulfate can be determined by:', options: ['Varying persulfate concentration while keeping iodide constant','Changing the temperature only','Adding a catalyst','Using excess iodide only'], answer: 0 },
       { q: 'A reaction has the rate equation rate = k[X]^2. When [X] = 0.1 mol dm-3, rate = 3.0 x 10-3 mol dm-3 s-1. The value of k is:', options: ['3.0 dm3 mol-1 s-1','0.3 dm3 mol-1 s-1','30 dm3 mol-1 s-1','0.03 dm3 mol-1 s-1'], answer: 1 },
       { q: 'Which conditions would give the greatest yield of ammonia: N2 + 3H2 <=> 2NH3, deltaH = -92 kJ/mol?', options: ['Low temperature, low pressure','High temperature, high pressure','High temperature, low pressure','Low temperature, high pressure'], answer: 3 },
@@ -203,7 +203,7 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
     amber: [
       { q: 'Markownikoff\'s rule predicts that when HBr is added to propene, the major product is:', options: ['1-bromopropane', '2-bromopropane', 'A mixture in equal amounts', '3-bromopropane'], answer: 1 },
       { q: 'The mechanism of the reaction between ethene and HBr is:', options: ['Free radical substitution', 'Electrophilic addition', 'Nucleophilic substitution', 'Electrophilic substitution'], answer: 1 },
-      { q: 'In electrophilic addition of HBr to ethene, the electrophile is:', options: ['Br-', 'H+', 'HBr', 'Br2'], answer: 2 },
+      { q: 'In electrophilic addition of HBr to ethene, the electrophile is:', options: ['Br-', 'OH-', 'HBr', 'Br2'], answer: 2 },
       { q: 'Halogenoalkanes react with NaOH(aq) by which mechanism?', options: ['Electrophilic addition', 'Free radical substitution', 'Nucleophilic substitution', 'Elimination'], answer: 2 },
       { q: 'An SN2 mechanism involves:', options: ['Two slow steps', 'A one-step process with a transition state', 'Formation of a carbocation intermediate in the slow step', 'Free radicals'], answer: 1 },
       { q: 'An SN1 mechanism involves:', options: ['A one-step process', 'Formation of a carbocation intermediate followed by nucleophilic attack', 'Free radical intermediates', 'Concerted bond breaking and forming'], answer: 1 },
@@ -283,14 +283,14 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
     ],
     red: [
       { q: 'Calculate the pH of a 0.1 mol dm-3 solution of ethanoic acid (Ka = 1.8 x 10-5).', options: ['5.00','1.00','4.74','2.87'], answer: 3 },
-      { q: 'A buffer is made from 0.1 mol dm-3 CH3COOH and 0.2 mol dm-3 CH3COONa (Ka = 1.8 x 10-5). The pH is:', options: ['5.04','5.74','4.44','4.74'], answer: 0 },
+      { q: 'A buffer is made from 0.1 mol dm-3 CH3COOH and 0.2 mol dm-3 CH3COONa (Ka = 1.8 x 10-5). The pH is:', options: ['5.05','5.74','4.44','4.74'], answer: 0 },
       { q: 'The theoretical lattice enthalpy of NaCl (from the ionic model) is -770 kJ/mol and the experimental value (Born-Haber) is -787 kJ/mol. This small difference suggests:', options: ['NaCl is purely covalent','NaCl is almost purely ionic with slight covalent character','The ionic model is completely wrong','NaCl has metallic bonding'], answer: 1 },
       { q: 'For the reaction CaCO3(s) -> CaO(s) + CO2(g), deltaH = +178 kJ/mol and deltaS = +165 J/K/mol. The minimum temperature for spontaneity is:', options: ['165 K','1079 K','178 K','1079 °C'], answer: 1 },
-      { q: 'A polyprotic acid like H2SO4 has:', options: ['Two Ka values (Ka1 >> Ka2)','One Ka value','No Ka values as it is strong','Equal Ka1 and Ka2'], answer: 0 },
+      { q: 'A diprotic weak acid such as carbonic acid (H2CO3) has:', options: ['Two Ka values (Ka1 >> Ka2)','One Ka value','No Ka values as it is fully dissociated','Equal Ka1 and Ka2'], answer: 0 },
       { q: "The pH of a 0.05 mol dm-3 solution of Ba(OH)2 is:", options: ["1","12","13","12.7"], answer: 2 },
       { q: 'In a Born-Haber cycle, the most endothermic step for NaCl is typically:', options: ['First ionisation energy of Na','Atomisation of Na','Bond dissociation of Cl2','Electron affinity of Cl'], answer: 0 },
       { q: 'The enthalpy of hydration of Mg2+ is more exothermic than Na+ because:', options: ['Mg2+ is larger','Mg2+ has a higher charge density attracting water molecules','Na+ is more electronegative','Mg2+ has a smaller charge'], answer: 1 },
-      { q: 'For the dissolution of a salt, deltaG(solution) = lattice enthalpy + sum of hydration enthalpies. If lattice enthalpy = +780 kJ/mol and hydration enthalpies sum to -790 kJ/mol, then deltaH(solution) is:', options: ['+10 kJ/mol','+1570 kJ/mol','-10 kJ/mol','-1570 kJ/mol'], answer: 2 },
+      { q: 'For the dissolution of a salt, deltaH(solution) = lattice dissociation enthalpy + sum of hydration enthalpies. If the lattice dissociation enthalpy = +780 kJ/mol and hydration enthalpies sum to -790 kJ/mol, then deltaH(solution) is:', options: ['+10 kJ/mol','+1570 kJ/mol','-10 kJ/mol','-1570 kJ/mol'], answer: 2 },
       { q: 'In a titration of 25.0 cm3 of 0.1 mol dm-3 CH3COOH with 0.1 mol dm-3 NaOH, the volume of NaOH at the equivalence point is:', options: ['12.5 cm3','25.0 cm3','50.0 cm3','100 cm3'], answer: 1 }
     ]
   },
