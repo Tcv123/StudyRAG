@@ -135,6 +135,8 @@
     .pr-name { font-size: 13.5px; color: var(--text); font-weight: 500; }
     .pr-name .code { font-size: 11px; font-weight: 600; color: var(--muted2); display: inline-block; margin-left: 7px; padding: 1px 8px; background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; }
     .pr-actions { white-space: nowrap; flex-shrink: 0; }
+    .qbq-badge { font-size: 11px; font-weight: 600; color: var(--accent-dark); background: var(--accent-dim); display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+    .ss-qbq { font-size: 11px; font-weight: 600; color: var(--accent-dark); border: 1px solid var(--accent-glow); padding: 1px 8px; border-radius: 999px; }
     .mini-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 11px; border-radius: 7px; font-size: 12px; font-weight: 500; text-decoration: none; border: 1px solid var(--border); background: var(--surface); color: var(--text); margin-right: 5px; transition: border-color 0.13s, color 0.13s, background 0.13s; }
     .mini-btn:last-child { margin-right: 0; }
     .mini-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
@@ -243,6 +245,12 @@
   // Boards render expanded by default (openByDefault is true at the call
   // site) so the year/series rows are visible on load, but every series
   // inside starts collapsed — the user clicks a year to reveal its papers.
+  // Same test paper-attempt.html uses to offer "Work through it question by
+  // question", so the badge here can never promise a mode the paper lacks.
+  function hasQbq(p) {
+    return !p.printOnly && typeof window.paperParts === 'function' && window.paperParts(p).length > 0;
+  }
+
   function boardBlockHtml(board, openByDefault) {
     if (!Array.isArray(board.papers) || !board.papers.length) return '';
     // Some boards give year as a number (Geography: year: 2023), others as a
@@ -280,18 +288,20 @@
         : `<span class="mini-btn muted" title="${esc(p.msNote || 'Not publicly available')}">MS</span>`;
       return `
         <div class="paper-row" id="paper-${esc(p.id)}">
-          <span class="pr-name">${esc(p.paperName)} <span class="code">${esc(p.paperCode || '')}</span></span>
+          <span class="pr-name">${esc(p.paperName)} <span class="code">${esc(p.paperCode || '')}</span>${hasQbq(p) ? ' <span class="qbq-badge" title="Can be worked through question by question on-screen">📝 Question by question</span>' : ''}</span>
           <span class="pr-actions">${attemptBtn} ${qpBtn} ${msBtn}</span>
         </div>`;
     };
 
     const seriesHtml = seriesOrder.map((yr) => {
       const ps = seriesMap.get(yr);
+      const qbqCount = ps.filter(hasQbq).length;
       return `
         <details class="series-block" id="series-${esc(yr.replace(/\s+/g,'-').toLowerCase())}">
           <summary class="series-summary">
             <span class="ss-year">${esc(yr)}</span>
             <span class="ss-count">${ps.length} paper${ps.length === 1 ? '' : 's'}</span>
+            ${qbqCount ? `<span class="ss-qbq" title="${qbqCount} of these can be worked through question by question">📝 ${qbqCount}</span>` : ''}
             <span class="ss-chev">▾</span>
           </summary>
           <div class="series-papers">${ps.map(paperRow).join('')}</div>
@@ -428,11 +438,12 @@
 
     attemptable.forEach(subj => {
       const directCount = subj.boards.reduce((n, b) => n + b.papers.length, 0);
+      const qbqTotal = subj.boards.reduce((n, b) => n + b.papers.filter(hasQbq).length, 0);
       html += `
         <section class="subject-section">
           <div class="subject-head">
             <div class="subject-title">${subj.icon || ''} ${esc(subj.name)}</div>
-            <div class="subject-meta">${directCount} attemptable paper${directCount === 1 ? '' : 's'}</div>
+            <div class="subject-meta">${directCount} paper${directCount === 1 ? '' : 's'} · ${qbqTotal} question by question</div>
           </div>
           ${subj.boards.map(b => boardBlockHtml(b, true)).join('')}
         </section>`;
