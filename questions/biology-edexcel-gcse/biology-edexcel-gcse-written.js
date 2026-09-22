@@ -477,7 +477,7 @@ const BIOLOGY_EDEXCEL_GCSE_WRITTEN = {
       {
         q: 'Compare aerobic and anaerobic respiration in humans and in yeast. Refer to oxygen, products, energy yield and uses.',
         marks: 6, tier: 'red',
-        modelAnswer: `• Aerobic: glucose + O₂ → CO₂ + H₂O; releases a large amount of energy (~38 ATP) in the mitochondria (1)\n• Anaerobic (human): glucose → lactic acid; no oxygen needed; small amount of energy; used in muscles during vigorous exercise; builds up lactic acid → oxygen debt (2)\n• Anaerobic (yeast / fermentation): glucose → ethanol + CO₂; small amount of energy; used in brewing (ethanol) and breadmaking (CO₂) (2)\n• Aerobic releases much more energy per glucose than anaerobic because glucose is fully broken down (1)`
+        modelAnswer: `• Aerobic: glucose + O₂ → CO₂ + H₂O; releases a large amount of energy (roughly 30–32 ATP per glucose) in the mitochondria (1)\n• Anaerobic (human): glucose → lactic acid; no oxygen needed; small amount of energy; used in muscles during vigorous exercise; builds up lactic acid → oxygen debt (2)\n• Anaerobic (yeast / fermentation): glucose → ethanol + CO₂; small amount of energy; used in brewing (ethanol) and breadmaking (CO₂) (2)\n• Aerobic releases much more energy per glucose than anaerobic because glucose is fully broken down (1)`
       },
       {
         q: 'Describe the structure of the heart and trace the pathway of a blood cell from the vena cava to the aorta, naming every chamber, valve and vessel.',
