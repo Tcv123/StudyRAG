@@ -85,6 +85,8 @@
     .q-marks { font-size: 13px; color: var(--muted); }
     .q-choice { font-size: 12px; font-weight: 600; color: var(--warn, #B45309); background: rgba(180,83,9,0.08); border: 1px solid rgba(180,83,9,0.3); border-radius: 999px; padding: 3px 10px; }
     .q-group-note { font-size: 13.5px; color: var(--text); background: rgba(180,83,9,0.08); border-left: 3px solid var(--warn, #B45309); border-radius: 6px; padding: 10px 14px; }
+    .q-scenario { padding: 12px 20px; font-size: 13.5px; color: var(--text); line-height: 1.6; background: var(--surface2); border-bottom: 1px solid var(--border); white-space: pre-line; }
+    .ms-source-note { font-size: 13px; color: var(--muted); margin: -8px 0 16px; line-height: 1.5; }
     .q-arrow { color: var(--muted2); font-size: 13px; margin-left: 8px; transition: transform 0.2s; display: inline-block; }
     .q-card.open .q-arrow { transform: rotate(180deg); }
     .q-card-body { display: none; border-top: 1px solid var(--border); }
@@ -834,6 +836,7 @@ function buildPicker(userSubs) {
             <span class="q-arrow" id="qa-${qi}">▾</span>
           </div>
           <div class="q-card-body" id="qb-${qi}">
+            ${mq && q.scenario ? `<div class="q-scenario">${esc(q.scenario)}</div>` : ''}
             ${partsHtml}
           </div>
         </div>`;
@@ -849,6 +852,7 @@ function buildPicker(userSubs) {
         ${qpBtn}
         ${pdfBtn}
       </div>
+      ${mq && mq.source ? `<div class="ms-source-note">${esc(mq.source)}</div>` : ''}
       <div class="ms-legend">
         <span class="ms-legend-label">What the tags mean</span>
         <span class="ms-legend-item"><span class="part-ms-type">Points</span> One mark per valid point, up to the maximum. The examiner note (orange) says how many are needed, e.g. "max 1 advantage + max 1 disadvantage".</span>
