@@ -7671,7 +7671,7 @@ window.SUBJECTS = [
             msUrl: 'https://www.ocr.org.uk/Images/667005-mark-scheme-core-pure.pdf' },
           // June 2019 question paper was published inside the printed answer booklet (-pab).
           { id: 'fmath-ocrb-h645-2019-y420', year: 'June 2019', paperName: 'Y420 — Core Pure', paperCode: 'Y420/01', totalMarks: 144, durationMins: 160, printOnly: true,
-            qpUrl: 'https://www.ocr.org.uk/Images/621177-question-paper-core-pure-pab.pdf',
+            qpUrl: 'https://www.ocr.org.uk/Images/621178-question-paper-core-pure.pdf',
             msUrl: 'https://www.ocr.org.uk/Images/621378-mark-scheme-core-pure.pdf' }
         ] }
     ]
