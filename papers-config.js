@@ -23754,16 +23754,16 @@ window.SUBJECTS = [
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-01-rms-20230817.pdf',
             markSchemes: {
               '1(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
-              '1(b)': { type: 'exact', points: ['C'], guidance: 'Correct MCQ answer.' },
+              '1(b)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
               '2(a)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
               '2(b)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
               '2(c)': { type: 'exact', points: ['B'], guidance: 'Correct MCQ answer.' },
-              '3(a)': { type: 'exact', points: ['A'], guidance: 'Correct MCQ answer.' },
+              '3(a)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
               '3(b)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
               '4(a)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
               '4(b)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
-              '4(c)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
-              '5(a)': { type: 'exact', points: ['C'], guidance: 'Correct MCQ answer.' },
+              '4(c)': { type: 'exact', points: ['C'], guidance: 'Correct MCQ answer.' },
+              '5(a)': { type: 'exact', points: ['B'], guidance: 'Correct MCQ answer.' },
               '5(b)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
               '6(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Explains the concept with economic reasoning', 'Applies to the given context or data', 'Develops a logical chain of reasoning', 'Supports with relevant evidence'], guidance: '5 marks: Level 2 (3-5) requires explanation with good application.' },
               '6(b)': { type: 'points', points: ['Identifies relevant economic concept', 'Develops explanation with theory', 'Applies to given context', 'Supports with evidence or data'], guidance: '10 marks: Level 3 (8-10) requires developed analysis with good application.' },
@@ -23862,17 +23862,17 @@ window.SUBJECTS = [
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-02-rms-20230817.pdf',
             markSchemes: {
               '1(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
-              '1(b)': { type: 'exact', points: ['B'], guidance: 'Correct MCQ answer.' },
-              '2(a)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
+              '1(b)': { type: 'exact', points: ['A'], guidance: 'Correct MCQ answer.' },
+              '2(a)': { type: 'exact', points: ['B'], guidance: 'Correct MCQ answer.' },
               '2(b)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
               '3(a)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
               '3(b)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
-              '3(c)': { type: 'exact', points: ['A'], guidance: 'Correct MCQ answer.' },
-              '4(a)': { type: 'exact', points: ['C'], guidance: 'Correct MCQ answer.' },
+              '3(c)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
+              '4(a)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
               '4(b)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
               '5(a)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
               '5(b)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
-              '5(c)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
+              '5(c)': { type: 'exact', points: ['A'], guidance: 'Correct MCQ answer.' },
               '6(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Explains the concept with economic reasoning', 'Applies to the given context or data', 'Develops a logical chain of reasoning', 'Supports with relevant evidence'], guidance: '5 marks: Level 2 (3-5) requires explanation with good application.' },
               '6(b)': { type: 'points', points: ['Identifies and explains first relevant factor', 'Develops first factor with economic theory', 'Identifies and explains second relevant factor', 'Develops second factor with theory', 'Applies economic analysis to the given context'], guidance: '8 marks: Level 3 (7-8) requires well-developed analysis with good application.' },
               '6(c)': { type: 'points', points: ['Identifies and defines the key concept', 'Explains mechanism or relationship with economic theory', 'Applies theory to the given context', 'Develops a chain of reasoning', 'Supports with relevant evidence or examples'], guidance: '12 marks: Level 3 (9-12) requires well-developed analysis with good application of theory.' },
@@ -24023,15 +24023,15 @@ window.SUBJECTS = [
             qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-01-que-20220524.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-01-rms-20220818.pdf',
             markSchemes: {
-              '1(a)': { type: 'exact', points: ['B'], guidance: 'Correct MCQ answer.' },
+              '1(a)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
               '1(b)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
               '2(a)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
               '2(b)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
-              '2(c)': { type: 'exact', points: ['C'], guidance: 'Correct MCQ answer.' },
+              '2(c)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
               '3(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
-              '3(b)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
+              '3(b)': { type: 'exact', points: ['C'], guidance: 'Correct MCQ answer.' },
               '4(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
-              '4(b)': { type: 'exact', points: ['A'], guidance: 'Correct MCQ answer.' },
+              '4(b)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
               '5(a)': { type: 'exact', points: ['C'], guidance: 'Correct MCQ answer.' },
               '5(b)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
               '5(c)': { type: 'points', points: ['Identifies correct economic concept or relationship', 'Provides brief supporting explanation or example'], guidance: '2 marks: 1 for identification, 1 for explanation.' },
@@ -24132,15 +24132,15 @@ window.SUBJECTS = [
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-02-rms-20220818.pdf',
             markSchemes: {
               '1(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
-              '1(b)': { type: 'exact', points: ['C'], guidance: 'Correct MCQ answer.' },
-              '2(a)': { type: 'exact', points: ['B'], guidance: 'Correct MCQ answer.' },
+              '1(b)': { type: 'exact', points: ['B'], guidance: 'Correct MCQ answer.' },
+              '2(a)': { type: 'exact', points: ['C'], guidance: 'Correct MCQ answer.' },
               '2(b)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
               '3(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
-              '3(b)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
-              '4(a)': { type: 'exact', points: ['A'], guidance: 'Correct MCQ answer.' },
+              '3(b)': { type: 'exact', points: ['B'], guidance: 'Correct MCQ answer.' },
+              '4(a)': { type: 'exact', points: ['D'], guidance: 'Correct MCQ answer.' },
               '4(b)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
               '5(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
-              '5(b)': { type: 'exact', points: ['C'], guidance: 'Correct MCQ answer.' },
+              '5(b)': { type: 'exact', points: ['A'], guidance: 'Correct MCQ answer.' },
               '6(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Explains the concept with economic reasoning', 'Applies to the given context or data', 'Develops a logical chain of reasoning', 'Supports with relevant evidence'], guidance: '5 marks: Level 2 (3-5) requires explanation with good application.' },
               '6(b)': { type: 'points', points: ['Identifies and explains first relevant factor', 'Develops first factor with economic theory', 'Identifies and explains second relevant factor', 'Develops second factor with theory', 'Applies economic analysis to the given context'], guidance: '8 marks: Level 3 (7-8) requires well-developed analysis with good application.' },
               '6(c)': { type: 'points', points: ['Identifies relevant economic concept', 'Develops explanation with theory', 'Applies to given context', 'Supports with evidence or data'], guidance: '10 marks: Level 3 (8-10) requires developed analysis with good application.' },
@@ -24291,7 +24291,7 @@ window.SUBJECTS = [
             paperCode: '9EB0/01',
             totalMarks: 100,
             durationMins: 120,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-01-que-20230518.pdf',
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-01-que-20230519.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-01-rms-20230817.pdf',
             markSchemes: {
               '1(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
@@ -24313,7 +24313,7 @@ window.SUBJECTS = [
                 parts: [
                   { code: '1(a)', prompt: 'Explain one method the Competition and Markets Authority (CMA) could use to research the music streaming industry.', marks: 4 },
                   { code: '1(b)', prompt: 'Using a supply and demand diagram, illustrate the impact on the market for traditional music formats following the increase in music streaming.', marks: 4, kind: 'diagram' },
-                  { code: '1(c)', prompt: 'Using Extract B, calculate, to two decimal places, the percentage of revenue spent on research and development (R&D) by Spotify in 2021. You are advised to show your working.', marks: 4 },
+                  { code: '1(c)', prompt: 'Using the data from Extract B calculate, to two decimal places, the percentage of revenue spent on research and development (R&D) by Spotify in 2021. You are advised to show your working.', marks: 4 },
                   { code: '1(d)', prompt: 'Analyse two possible reasons why Spotify might have increased its spending on R&D.', marks: 6 },
                   { code: '1(e)', prompt: 'Discuss the benefits for Spotify of using price discrimination.', marks: 8 },
                   { code: '1(f)', prompt: 'Using a supply and demand diagram, assess the likely impact on the market for live music if the UK Government reduced VAT on tickets for live music events.', marks: 10, kind: 'diagram' },
@@ -24326,7 +24326,7 @@ window.SUBJECTS = [
                 number: 2,
                 scenario: 'SECTION B\n\nExtract G: UK smoking and health — The Better Health Smoke Free campaign released a new film showing parents how children are four times more likely to start smoking if parents or caregivers smoke. In the UK, approximately 14% of adults smoke. The NHS and government provide stop-smoking services and information campaigns to reduce smoking rates.',
                 parts: [
-                  { code: '2', prompt: 'Evaluate the effectiveness of the UK Government providing information in reducing the number of smokers in the UK.', marks: 20, extended: true }
+                  { code: '2', prompt: 'Evaluate the effectiveness of the UK Government providing information to reduce the number of smokers in the UK.', marks: 20, extended: true }
                 ]
               },
               // ── Section C: Essay ──
@@ -24346,7 +24346,7 @@ window.SUBJECTS = [
             paperCode: '9EB0/02',
             totalMarks: 100,
             durationMins: 120,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-02-que-20230522.pdf',
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-02-que-20230523.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-02-rms-20230817.pdf',
             markSchemes: {
               '1(a)': { type: 'points', points: ['Identifies relevant economic concept', 'Defines or explains the concept clearly', 'Applies to the given context', 'Develops the economic chain of reasoning'], guidance: '4 marks: 1 per valid developed point with application.' },
@@ -24372,7 +24372,7 @@ window.SUBJECTS = [
                   { code: '1(d)', prompt: 'Analyse two ways small firms might survive in the competitive restaurant market.', marks: 6 },
                   { code: '1(e)', prompt: 'Discuss the possible benefits to takeaway firms of using dark kitchens.', marks: 8 },
                   { code: '1(f)', prompt: 'With reference to Extract A, assess the likely impact of rising inflation on the UK restaurant market.', marks: 10 },
-                  { code: '1(g)', prompt: 'With reference to Extract A, assess problems arising from the inorganic growth used by UK restaurant chains such as The Restaurant Group and the Casual Dining Group.', marks: 12 },
+                  { code: '1(g)', prompt: 'With reference to Extract A, assess problems arising from the inorganic growth used by UK restaurant chains such as The Restaurant Group and Casual Dining Group.', marks: 12 },
                   { code: '1(h)', prompt: 'With reference to Extract B, assess potential stakeholder conflicts associated with the growth of dark kitchens.', marks: 12 }
                 ]
               },
@@ -24401,7 +24401,7 @@ window.SUBJECTS = [
             paperCode: '9EB0/03',
             totalMarks: 100,
             durationMins: 120,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-03-que-20230605.pdf',
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-03-que-20230606.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-03-rms-20230817.pdf',
             markSchemes: {
               '1(a)': { type: 'points', points: ['Identifies and explains first relevant factor', 'Develops first factor with economic theory', 'Identifies and explains second relevant factor', 'Develops second factor with theory', 'Applies economic analysis to the given context'], guidance: '8 marks: Level 3 (7-8) requires well-developed analysis with good application.' },
@@ -24523,12 +24523,12 @@ window.SUBJECTS = [
                 parts: [
                   { code: '1(a)', prompt: 'Using the data from Extract A, calculate to two decimal places the UK GDP per capita for 2017.', marks: 4 },
                   { code: '1(b)', prompt: 'Calculate the median hourly wage for the service sector only. You are advised to show your workings.', marks: 4 },
-                  { code: '1(c)', prompt: 'Using the data in Extract D, calculate the difference in the percentage change in labour productivity for the United Kingdom and Denmark between 2015 and 2018.', marks: 4 },
+                  { code: '1(c)', prompt: 'Using the data in Extract D, calculate the difference in the percentage change in labour productivity for the UK and Denmark between 2015 and 2018. You are advised to show your working.', marks: 4 },
                   { code: '1(d)', prompt: 'Analyse two factors influencing labour productivity in either Denmark or the UK.', marks: 6 },
-                  { code: '1(e)', prompt: 'Discuss the likely impact of low productivity on economic growth in the United Kingdom between 2015 and 2018.', marks: 8 },
-                  { code: '1(f)', prompt: 'Assess the use of the Gini coefficient as a measure of absolute and relative poverty.', marks: 10 },
-                  { code: '1(g)', prompt: 'The United Kingdom has a legal minimum wage. Denmark has no legal minimum wage. Assess the impact of a minimum wage on income inequality.', marks: 12 },
-                  { code: '1(h)', prompt: 'Using Extract B and a suitable diagram, assess the likely economic impact of the level of investment in Denmark.', marks: 12, kind: 'diagram' }
+                  { code: '1(e)', prompt: 'Discuss the likely impact of low productivity on economic growth in the UK between 2015 and 2018.', marks: 8 },
+                  { code: '1(f)', prompt: 'Assess the usefulness of the GINI coefficient as a measure of absolute and relative poverty.', marks: 10 },
+                  { code: '1(g)', prompt: 'The UK has a legal minimum wage. Denmark has no legal minimum wage. Assess the impact of a minimum wage on income inequality.', marks: 12 },
+                  { code: '1(h)', prompt: 'With reference to Extract B and using a suitable diagram, assess the likely economic impact of the level of investment in Denmark.', marks: 12, kind: 'diagram' }
                 ]
               },
               // ── Section B: Essay ──
@@ -24556,7 +24556,7 @@ window.SUBJECTS = [
             paperCode: '9EB0/03',
             totalMarks: 100,
             durationMins: 120,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-03-que-20220613.pdf',
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-03-que-20220614.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-03-rms-20220818.pdf',
             markSchemes: {
               '1(a)': { type: 'points', points: ['Identifies and explains first relevant factor', 'Develops first factor with economic theory', 'Identifies and explains second relevant factor', 'Develops second factor with theory', 'Applies economic analysis to the given context'], guidance: '8 marks: Level 3 (7-8) requires well-developed analysis with good application.' },
@@ -24586,7 +24586,7 @@ window.SUBJECTS = [
                 scenario: 'SECTION 2: Emerging economies and global business\n\nExtract F: Vietnam\'s economic growth — Vietnam is predicted to experience GDP growth of 8.5% in 2021, making it the fastest-growing economy in South East Asia. FDI inflows reached $17 billion in 2020. Major MNCs including Toyota, Honda, Canon, Nike, and Apple have established manufacturing operations in Vietnam.\n\nExtract G: The Regional Comprehensive Economic Partnership (RCEP) — signed in 2020, RCEP became the world\'s largest trading bloc with an output of $26.2 trillion, reducing trade barriers for nearly a third of the global population. Members include China, Japan, South Korea, Australia, and 10 ASEAN nations including Vietnam.\n\nExtract H: South East Asian growth prospects — Vietnam 8.5%; Philippines 8.4%; Malaysia 7.1%; Thailand 4.0%; Indonesia 3.8% (forecast GDP growth rates for 2021). China (RCEP member) has considerable competitive advantages in manufacturing over smaller neighbours.',
                 parts: [
                   { code: '2(a)', prompt: 'Discuss the possible impact of economic growth on employment patterns in a country such as Vietnam.', marks: 8 },
-                  { code: '2(b)', prompt: 'Assess the benefits of membership of a trade bloc for a country such as Vietnam.', marks: 10 },
+                  { code: '2(b)', prompt: 'Assess the benefits of being a member of a trading bloc for a country such as Vietnam.', marks: 10 },
                   { code: '2(c)', prompt: 'Assess the impact of Multinational Corporations (MNCs) on the national economy of a country such as Vietnam.', marks: 12 },
                   { code: '2(d)', prompt: 'Evaluate the impact on European firms of the growing economic power of emerging economies in South East Asia.', marks: 20, extended: true }
                 ]
