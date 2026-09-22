@@ -274,7 +274,7 @@ This is actually XOR! Q = A XOR B
 <h2>2.4.3 De Morgan's Laws</h2>
 
 <div class="definition">
-    <strong>De Morgan's Laws</strong> are two fundamental rules for simplifying Boolean expressions involving NOT applied to AND or OR. They allow you to rewrite a NAND as a NOR (and vice versa), which is useful both in Boolean algebra and in logic circuit design.
+    <strong>De Morgan's Laws</strong> are two fundamental rules for simplifying Boolean expressions involving NOT applied to AND or OR. They allow you to rewrite a NAND as an OR of inverted inputs (and a NOR as an AND of inverted inputs), which is useful both in Boolean algebra and in logic circuit design.
 </div>
 
 <p>De Morgan's Laws state:</p>
@@ -348,11 +348,11 @@ The rule: "break the NOT, change the AND/OR to its opposite."
 AND ↔ OR, NOT distributes to each variable.
 </pre>
 
-<div class="exam-tip">De Morgan's Laws appear on the OCR J277 spec and are examined directly. You must be able to: (1) state both laws; (2) verify them with a truth table; (3) use them to simplify an expression. The key phrase in the mark scheme is "NOT(A AND B) is equivalent to NOT A OR NOT B" and vice versa. A very common exam question is to "use De Morgan's Law to simplify NOT(A OR B)" &mdash; the answer is "(NOT A) AND (NOT B)". Do not confuse the two laws: NOT of AND gives OR; NOT of OR gives AND.</div>
+<div class="exam-tip">De Morgan's Laws are not on the OCR J277 spec (they are A-level content, OCR H446), so treat this as extension material. If you study them, be able to: (1) state both laws; (2) verify them with a truth table; (3) use them to simplify an expression. The key phrase in the mark scheme is "NOT(A AND B) is equivalent to NOT A OR NOT B" and vice versa. A very common exam question is to "use De Morgan's Law to simplify NOT(A OR B)" &mdash; the answer is "(NOT A) AND (NOT B)". Do not confuse the two laws: NOT of AND gives OR; NOT of OR gives AND.</div>
 
 <h2>2.4.4 Boolean Algebra Simplification</h2>
 
-<p>Boolean algebra is a set of rules for simplifying Boolean expressions. A simpler expression needs fewer logic gates, which means cheaper, faster, and more energy-efficient circuits. The <strong>OCR J277 spec</strong> requires you to apply these laws to simplify expressions.</p>
+<p>Boolean algebra is a set of rules for simplifying Boolean expressions. A simpler expression needs fewer logic gates, which means cheaper, faster, and more energy-efficient circuits. Boolean algebra simplification is <strong>not</strong> on the OCR J277 spec (it is A-level content, OCR H446), so treat this section as extension material.</p>
 
 <h3>Core Boolean Algebra Laws</h3>
 <table style="text-align:left;">
@@ -493,7 +493,7 @@ Final result: A OR B
   <text x="300" y="185" text-anchor="middle" font-size="10" fill="#6b7280">Q = (A AND B) OR (NOT C)</text>
 </svg>
 </div>
-<p style="text-align:left">To draw a circuit: start at the inputs (right to left), draw each operation as a gate, connect with wires. The output of the AND gate and the NOT gate both feed into the OR gate, which produces Q.</p>
+<p style="text-align:left">To draw a circuit: start at the inputs (left to right), draw each operation as a gate, connect with wires. The output of the AND gate and the NOT gate both feed into the OR gate, which produces Q.</p>
 
 <div class="exam-tip">For Boolean algebra simplification questions, <strong>show every step</strong> and name the law used at each step &mdash; these are method marks. The most useful laws to memorise for GCSE are: <strong>Complement</strong> (A AND NOT A = 0; A OR NOT A = 1), <strong>Absorption</strong> (A AND (A OR B) = A), <strong>Idempotent</strong> (A OR A = A), <strong>Double negation</strong> (NOT NOT A = A), and <strong>De Morgan's</strong>. When asked to draw a logic circuit: identify the operations in order (inner brackets first), draw gates for each, and connect them left-to-right from inputs to output. Always verify your simplified expression by plugging in test values.</div>
 

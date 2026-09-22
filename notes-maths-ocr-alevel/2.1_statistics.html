@@ -63,7 +63,7 @@
 <p>The gold standard: every member of the population is equally likely to be selected, and every sample of a given size is equally likely to arise. In practice one numbers the population 1 to \(N\), then uses a random-number generator (or table) to pick \(n\) distinct numbers without replacement.</p>
 
 <div class="definition">
-<strong>Simple random sample.</strong> A sample of size \(n\) from a population of size \(N\) such that every possible sample of size \(n\) has the same probability, \(1\big/\binom{N}{n}\), of being chosen. Equivalently, each individual has probability \(n/N\) of being in the sample, and selections are made without replacement.
+<strong>Simple random sample.</strong> A sample of size \(n\) from a population of size \(N\) such that every possible sample of size \(n\) has the same probability, \(1\big/\binom{N}{n}\), of being chosen. In particular, each individual has probability \(n/N\) of being in the sample, and selections are made without replacement.
 </div>
 
 <h3>1.2 Systematic sampling</h3>
@@ -702,17 +702,17 @@ Lowering \(\alpha\) makes Type I errors rarer but raises \(\beta\) (other things
 <span class="ln">14.</span>    Mean under H0:  np = 50·(1/6) ≈ 8.333.
 <span class="ln">15.</span>    P(X ≥ 14) = 1 − P(X ≤ 13).
 <span class="ln">16.</span>    Using a calculator (or binomcdf):
-<span class="ln">17.</span>        P(X ≤ 13) ≈ 0.9696.
-<span class="ln">18.</span>        P(X ≥ 14) ≈ 1 − 0.9696 = 0.0304.
+<span class="ln">17.</span>        P(X ≤ 13) ≈ 0.9693.
+<span class="ln">18.</span>        P(X ≥ 14) ≈ 1 − 0.9693 = 0.0307.
 <span class="ln">19.</span>
 <span class="ln">20.</span> STEP 5 — Compare with α.
-<span class="ln">21.</span>    p-value 0.0304 &lt; 0.05 = α.
+<span class="ln">21.</span>    p-value 0.0307 &lt; 0.05 = α.
 <span class="ln">22.</span>    ⇒ Reject H0.
 <span class="ln">23.</span>
 <span class="ln">24.</span> STEP 6 — Conclusion in context.
 <span class="ln">25.</span>    There is evidence at the 5% significance level that the die is biased
 <span class="ln">26.</span>    in favour of sixes.  (Had α been 1%, we would NOT reject, since
-<span class="ln">27.</span>    0.0304 &gt; 0.01 — the strength of evidence is moderate.)
+<span class="ln">27.</span>    0.0307 &gt; 0.01 — the strength of evidence is moderate.)
 </pre>
 </div>
 

@@ -80,7 +80,7 @@
   $$V = \pi\int_0^{\pi/2} \sin^6\theta \cdot 3\cos^2\theta\sin\theta\,d\theta = 3\pi\int_0^{\pi/2}\sin^7\theta\cos^2\theta\,d\theta$$
   Using the reduction formula or substitution \(u = \cos\theta\):
   $$= 3\pi\int_0^1 (1-u^2)^3 u^2\,(-du) \cdot (-1)$$
-  (Actually with \(u = \cos\theta\), \(du = -\sin\theta\,d\theta\), limits \(\theta=0\to u=1\), \(\theta=\pi/2\to u=0\)):
+  (With \(u = \cos\theta\), \(du = -\sin\theta\,d\theta\), limits \(\theta=0\to u=1\), \(\theta=\pi/2\to u=0\)):
   $$= 3\pi\int_0^1 (1-u^2)^3 u^2\,du$$
   Expanding \((1-u^2)^3 = 1-3u^2+3u^4-u^6\):
   $$= 3\pi\int_0^1 (u^2-3u^4+3u^6-u^8)\,du = 3\pi\left[\frac{1}{3}-\frac{3}{5}+\frac{3}{7}-\frac{1}{9}\right] = 3\pi\cdot\frac{105-189+135-35}{315} = 3\pi\cdot\frac{16}{315} = \frac{16\pi}{105}$$
@@ -177,11 +177,10 @@ $$V = \pi\int_a^b \left[f(x)^2 - g(x)^2\right]\,dx$$
   <br><br>
   Here \(f(x) = x+1\), \(g(x) = x^2-1\) (check: at \(x=0\), \(f=1>g=-1\)).
   <br>
-  Note: \(g(x) = x^2-1 < 0\) at \(x=0\). Use \(g^2 = (x^2-1)^2\).
-  $$V = \pi\int_0^2\left[(x+1)^2-(x^2-1)^2\right]\,dx$$
-  $$= \pi\int_0^2\left[(x^2+2x+1)-(x^4-2x^2+1)\right]\,dx$$
-  $$= \pi\int_0^2\left(-x^4+3x^2+2x\right)\,dx$$
-  $$= \pi\left[-\frac{x^5}{5}+x^3+x^2\right]_0^2 = \pi\left(-\frac{32}{5}+8+4\right) = \pi\cdot\frac{28}{5} = \frac{28\pi}{5}$$
+  Note: \(g(x) = x^2-1 < 0\) for \(0 \leq x < 1\), so the region crosses the x-axis there. For \(0 \leq x \leq 1\), \(|g(x)| \leq f(x)\), so each slice is a solid disc of radius \(f\) (no hole); the washer formula applies only for \(1 \leq x \leq 2\).
+  $$V = \pi\int_0^1 (x+1)^2\,dx + \pi\int_1^2\left[(x+1)^2-(x^2-1)^2\right]\,dx$$
+  $$= \pi\left[\frac{(x+1)^3}{3}\right]_0^1 + \pi\int_1^2\left(-x^4+3x^2+2x\right)\,dx$$
+  $$= \frac{7\pi}{3} + \pi\left[-\frac{x^5}{5}+x^3+x^2\right]_1^2 = \frac{7\pi}{3} + \frac{19\pi}{5} = \frac{92\pi}{15}$$
 </div>
 
 <h2>6. Summary of Formulas</h2>

@@ -643,10 +643,11 @@ Edges (undirected, weighted):
 
 <p>Dijkstra's correctness relies on the invariant that once a vertex is extracted from the priority queue, its shortest distance is final &mdash; because any future path through yet-unvisited vertices can only get <em>longer</em> (edges add non-negative weight). A negative edge could later shorten an already-finalised distance, violating the invariant. Counter-example:</p>
 
-<pre>A --1--&gt; B --1--&gt; C
-  \______ &minus;5 ______/</pre>
+<pre>A --1--&gt; B
+A --2--&gt; C
+C --(&minus;5)--&gt; B</pre>
 
-<p>Dijkstra from A finalises <code>dist[B] = 1</code>, then <code>dist[C] = 2</code>, and misses the <code>A &rarr; B</code> path through the negative edge (which would give <code>dist[C] = 1 + (&minus;5) + 1 = &minus;3</code>).</p>
+<p>Dijkstra from A extracts and finalises <code>B</code> first with <code>dist[B] = 1</code>, then extracts <code>C</code> (<code>dist[C] = 2</code>), and misses the cheaper path <code>A &rarr; C &rarr; B</code> through the negative edge (which would give <code>dist[B] = 2 + (&minus;5) = &minus;3</code>).</p>
 
 <p>When edges may be negative (but there are no negative cycles), use the <strong>Bellman&ndash;Ford</strong> algorithm. It relaxes every edge V &minus; 1 times and runs in O(VE); it also detects a negative cycle by checking if any edge can still be relaxed after V &minus; 1 rounds.</p>
 
@@ -676,7 +677,7 @@ Edges (undirected, weighted):
 
 <h3>Complexity Classes &mdash; Growth Ordering</h3>
 
-<p>From fastest-growing to slowest-growing (i.e. best-to-worst as n &rarr; &infin;):</p>
+<p>From slowest-growing to fastest-growing (i.e. best-to-worst as n &rarr; &infin;):</p>
 
 <pre>O(1)  &lt;  O(log n)  &lt;  O(n)  &lt;  O(n log n)  &lt;  O(n&sup2;)  &lt;  O(n&sup3;)  &lt;  O(2&#x207F;)  &lt;  O(n!)</pre>
 

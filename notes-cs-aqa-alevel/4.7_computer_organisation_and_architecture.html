@@ -251,7 +251,7 @@ With pipelining, they complete in 3 + (5 - 1) = 7 cycles.
 
 <h3>Addressing modes</h3>
 
-<p>The <strong>addressing mode</strong> says how the operand field should be interpreted. AQA examines four modes:</p>
+<p>The <strong>addressing mode</strong> says how the operand field should be interpreted. AQA 7517 examines two modes &mdash; immediate and direct; indirect and indexed are shown for wider context:</p>
 
 <table>
     <tr><th>Mode</th><th>Meaning</th><th>Example (pseudocode)</th><th>Effect</th></tr>
@@ -384,7 +384,7 @@ If we improve hit rate to 99%:
 <p>Each extra address line doubles the number of addressable memory locations. With an <em>n</em>-bit address bus you can address <code>2<sup>n</sup></code> distinct locations.</p>
 
 <pre>Worked example: a CPU has a 20-bit address bus.
-   Number of addressable locations = 2&sup2;&deg; = 1,048,576 = 1 MiB (of words).
+   Number of addressable locations = 2<sup>20</sup> = 1,048,576 = 1 MiB (of words).
    If each word is 1 byte, maximum RAM = 1 MiB.
    If each word is 4 bytes (32 bits), maximum RAM = 4 MiB.
 

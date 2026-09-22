@@ -140,30 +140,29 @@
   <circle cx="406" cy="76"    r="4" fill="#2563eb"/>
   <circle cx="490" cy="40"    r="4" fill="#2563eb"/>
 
-  <!-- Median line: n/2 = 30, y=310-30*4.5=175 → read x from curve ≈ 322 (h=30) -->
-  <!-- Actually from curve h≈28.5 for cf=30; approximate x = 70+28.5*8.4 ≈ 309 -->
-  <line x1="70" y1="175" x2="309" y2="175" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <line x1="309" y1="175" x2="309" y2="310" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Median line: n/2 = 30, y=310-30*4.5=175 → h≈26.5, x = 70+26.5*8.4 ≈ 292.6 -->
+  <line x1="70" y1="175" x2="292.6" y2="175" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="292.6" y1="175" x2="292.6" y2="310" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="68" y="172" text-anchor="end" font-size="11" fill="#dc2626" font-weight="600">30</text>
-  <text x="309" y="325" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="600">~28.5</text>
-  <text x="315" y="165" font-size="11" fill="#dc2626" font-weight="600">Median</text>
+  <text x="292.6" y="325" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="600">~26.5</text>
+  <text x="298.6" y="165" font-size="11" fill="#dc2626" font-weight="600">Median</text>
 
-  <!-- Q1 line: n/4=15, y=310-15*4.5=242.5 → h≈21.5, x≈70+21.5*8.4≈251 -->
-  <line x1="70" y1="242.5" x2="251" y2="242.5" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <line x1="251" y1="242.5" x2="251" y2="310" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Q1 line: n/4=15, y=310-15*4.5=242.5 → h≈18.5, x≈70+18.5*8.4≈225.4 -->
+  <line x1="70" y1="242.5" x2="225.4" y2="242.5" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="225.4" y1="242.5" x2="225.4" y2="310" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="68" y="239" text-anchor="end" font-size="11" fill="#f59e0b" font-weight="600">15</text>
-  <text x="251" y="325" text-anchor="middle" font-size="11" fill="#f59e0b" font-weight="600">~21.5</text>
-  <text x="257" y="234" font-size="11" fill="#f59e0b" font-weight="600">Q1</text>
+  <text x="225.4" y="325" text-anchor="middle" font-size="11" fill="#f59e0b" font-weight="600">~18.5</text>
+  <text x="231.4" y="234" font-size="11" fill="#f59e0b" font-weight="600">Q1</text>
 
-  <!-- Q3 line: 3n/4=45, y=310-45*4.5=107.5 → h≈36.5, x≈70+36.5*8.4≈377 -->
-  <line x1="70" y1="107.5" x2="377" y2="107.5" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <line x1="377" y1="107.5" x2="377" y2="310" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <!-- Q3 line: 3n/4=45, y=310-45*4.5=107.5 → h≈35.5, x≈70+35.5*8.4≈368.2 -->
+  <line x1="70" y1="107.5" x2="368.2" y2="107.5" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="368.2" y1="107.5" x2="368.2" y2="310" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
   <text x="68" y="104" text-anchor="end" font-size="11" fill="#16a34a" font-weight="600">45</text>
-  <text x="377" y="325" text-anchor="middle" font-size="11" fill="#16a34a" font-weight="600">~36.5</text>
-  <text x="383" y="98" font-size="11" fill="#16a34a" font-weight="600">Q3</text>
+  <text x="368.2" y="325" text-anchor="middle" font-size="11" fill="#16a34a" font-weight="600">~35.5</text>
+  <text x="374.2" y="98" font-size="11" fill="#16a34a" font-weight="600">Q3</text>
 </svg>
 
-<p>From the graph above: $Q1 \approx 21.5$, Median $\approx 28.5$, $Q3 \approx 36.5$, so $\text{IQR} = 36.5 - 21.5 = 15$ cm.</p>
+<p>From the graph above: $Q1 \approx 18.5$, Median $\approx 26.5$, $Q3 \approx 35.5$, so $\text{IQR} = 35.5 - 18.5 = 17$ cm.</p>
 
 <div class="exam-tip">
   Always plot cumulative frequency at the <strong>upper class boundary</strong> (not the midpoint). The curve must start at the lower boundary of the first class with CF = 0. Draw the S-curve smoothly — do not join points with ruled straight lines.
@@ -208,51 +207,51 @@
   <text x="520" y="130" text-anchor="middle" font-size="11" fill="#374151">50</text>
 
   <!-- Five-number summary: Min=3, Q1=21.5, Median=28.5, Q3=36.5, Max=48 -->
-  <!-- x positions: min=60+3*9.2=87.6, Q1=60+21.5*9.2=257.8, Med=60+28.5*9.2=322.2, Q3=60+36.5*9.2=395.8, max=60+48*9.2=501.6 -->
+  <!-- x positions: min=60+3*9.2=87.6, Q1=60+18.5*9.2=230.2, Med=60+26.5*9.2=303.8, Q3=60+35.5*9.2=386.6, max=60+48*9.2=501.6 -->
 
   <!-- Left whisker -->
-  <line x1="87.6" y1="75" x2="257.8" y2="75" stroke="#1e40af" stroke-width="2"/>
+  <line x1="87.6" y1="75" x2="230.2" y2="75" stroke="#1e40af" stroke-width="2"/>
   <!-- Min vertical tick -->
   <line x1="87.6" y1="62" x2="87.6" y2="88" stroke="#1e40af" stroke-width="2"/>
 
   <!-- Box from Q1 to Q3 -->
-  <rect x="257.8" y="55" width="138" height="40" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+  <rect x="230.2" y="55" width="156.4" height="40" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
 
   <!-- Median line -->
-  <line x1="322.2" y1="55" x2="322.2" y2="95" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="303.8" y1="55" x2="303.8" y2="95" stroke="#dc2626" stroke-width="2.5"/>
 
   <!-- Right whisker -->
-  <line x1="395.8" y1="75" x2="501.6" y2="75" stroke="#1e40af" stroke-width="2"/>
+  <line x1="386.6" y1="75" x2="501.6" y2="75" stroke="#1e40af" stroke-width="2"/>
   <!-- Max vertical tick -->
   <line x1="501.6" y1="62" x2="501.6" y2="88" stroke="#1e40af" stroke-width="2"/>
 
   <!-- Labels -->
   <text x="87.6"  y="50" text-anchor="middle" font-size="10" fill="#374151">Min</text>
   <text x="87.6"  y="42" text-anchor="middle" font-size="10" fill="#374151">3</text>
-  <text x="257.8" y="50" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">Q1</text>
-  <text x="257.8" y="42" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">21.5</text>
-  <text x="322.2" y="50" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="600">Med</text>
-  <text x="322.2" y="42" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="600">28.5</text>
-  <text x="395.8" y="50" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">Q3</text>
-  <text x="395.8" y="42" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">36.5</text>
+  <text x="230.2" y="50" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">Q1</text>
+  <text x="230.2" y="42" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">18.5</text>
+  <text x="303.8" y="50" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="600">Med</text>
+  <text x="303.8" y="42" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="600">26.5</text>
+  <text x="386.6" y="50" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">Q3</text>
+  <text x="386.6" y="42" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="600">35.5</text>
   <text x="501.6" y="50" text-anchor="middle" font-size="10" fill="#374151">Max</text>
   <text x="501.6" y="42" text-anchor="middle" font-size="10" fill="#374151">48</text>
 
   <!-- IQR brace annotation -->
-  <text x="326.9" y="150" text-anchor="middle" font-size="11" fill="#1e40af">IQR = Q3 − Q1 = 36.5 − 21.5 = 15 cm</text>
+  <text x="326.9" y="150" text-anchor="middle" font-size="11" fill="#1e40af">IQR = Q3 − Q1 = 35.5 − 18.5 = 17 cm</text>
 </svg>
 
 <div class="worked-example">
-  <strong>Constructing a box plot</strong> from the plant height data (Min=3, Q1=21.5, Median=28.5, Q3=36.5, Max=48):<br><br>
+  <strong>Constructing a box plot</strong> from the plant height data (Min=3, Q1=18.5, Median=26.5, Q3=35.5, Max=48):<br><br>
   <ol>
     <li>Draw a scaled number line.</li>
-    <li>Draw a box from Q1 (21.5) to Q3 (36.5).</li>
-    <li>Draw a vertical line inside the box at the median (28.5).</li>
+    <li>Draw a box from Q1 (18.5) to Q3 (35.5).</li>
+    <li>Draw a vertical line inside the box at the median (26.5).</li>
     <li>Draw whiskers from Q1 to the minimum (3) and from Q3 to the maximum (48).</li>
     <li>Add short vertical lines at the minimum and maximum.</li>
   </ol>
   <br>
-  $\text{IQR} = 36.5 - 21.5 = 15$ cm
+  $\text{IQR} = 35.5 - 18.5 = 17$ cm
 </div>
 
 <div class="exam-tip">

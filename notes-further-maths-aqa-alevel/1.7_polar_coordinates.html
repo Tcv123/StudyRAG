@@ -97,7 +97,7 @@
   <tr><td>\(r = a\)</td><td>Circle, centre O, radius \(a\)</td><td>Cartesian: \(x^2+y^2=a^2\)</td></tr>
   <tr><td>\(r = a\theta\)</td><td>Archimedean spiral</td><td>Spacing proportional to \(\theta\)</td></tr>
   <tr><td>\(r = a(1+\cos\theta)\)</td><td>Cardioid</td><td>Heart-shaped; passes through origin at \(\theta=\pi\)</td></tr>
-  <tr><td>\(r = a(1+\cos\theta)\)</td><td>Lima\(\c{c}\)on</td><td>Dimpled or looped depending on parameter</td></tr>
+  <tr><td>\(r = a + b\cos\theta\)</td><td>Limaçon</td><td>Dimpled or looped depending on parameter</td></tr>
   <tr><td>\(r = a\cos(n\theta)\)</td><td>Rose curve</td><td>\(n\) petals if \(n\) odd; \(2n\) petals if \(n\) even</td></tr>
   <tr><td>\(r^2 = a^2\cos(2\theta)\)</td><td>Lemniscate of Bernoulli</td><td>Figure-8 shape; \(r\) real only when \(\cos2\theta\geq0\)</td></tr>
   <tr><td>\(r = a\sec\theta\)</td><td>Vertical line \(x=a\)</td><td>Since \(r\cos\theta=a\)</td></tr>
@@ -174,7 +174,7 @@
 </div>
 
 <div class="exam-tip">
-  <strong>AQA Exam Tip:</strong> Always identify the correct limits carefully. For a cardioid or lima\c{c}on, the full curve is \([0, 2\pi]\). For one loop of a rose, find where \(r = 0\) to determine limits. Write down your limits explicitly — AQA marks this.
+  <strong>AQA Exam Tip:</strong> Always identify the correct limits carefully. For a cardioid or limaçon, the full curve is \([0, 2\pi]\). For one loop of a rose, find where \(r = 0\) to determine limits. Write down your limits explicitly — AQA marks this.
 </div>
 
 <h2>5. Tangents to Polar Curves</h2>
@@ -271,13 +271,13 @@
 
 <h2>Tangents at the Pole</h2>
 
-<p>The curve \(r=f(\theta)\) passes through the pole when \(f(\theta_0)=0\). The tangent at the pole has direction \(\theta=\theta_0\) (i.e.\ slope \(\tan\theta_0\)).</p>
+<p>The curve \(r=f(\theta)\) passes through the pole when \(f(\theta_0)=0\). The tangent at the pole has direction \(\theta=\theta_0\) (i.e. slope \(\tan\theta_0\)).</p>
 
 <div class="example">
 <strong>Example:</strong> Find the tangent lines at the pole for \(r=\cos 2\theta\).
 
 At the pole: \(\cos 2\theta=0 \Rightarrow \theta = \pi/4, 3\pi/4, 5\pi/4, 7\pi/4\).
-Tangent lines: \(y=x\), \(y=-x\), \(y=x\), \(y=-x\) (i.e.\ two distinct tangents \(y=x\) and \(y=-x\)).
+Tangent lines: \(y=x\), \(y=-x\), \(y=x\), \(y=-x\) (i.e. two distinct tangents \(y=x\) and \(y=-x\)).
 </div>
 
 <h2>Area Between Two Polar Curves</h2>
@@ -288,9 +288,7 @@ $$A = \frac{1}{2}\int_\alpha^\beta \left[f(\theta)^2 - g(\theta)^2\right]d\theta
 <div class="example">
 <strong>Example:</strong> Find the area inside \(r=2\) but outside \(r=1+\cos\theta\).
 
-Intersections: \(1+\cos\theta=2 \Rightarrow \cos\theta=1 \Rightarrow \theta=0\). Also \(r=1+\cos\theta=0\) at \(\theta=\pi\). For \(\theta\in(0,\pi)\), the outer curve is \(r=2\) for \(\theta\in(0,\pi/2)\) and inner is \(r=1+\cos\theta\)...
-
-In fact: \(1+\cos\theta\leq2\) always since \(\cos\theta\leq1\), so \(r=2\) is always outer (except touching at \(\theta=0\)).
+Intersections: \(1+\cos\theta=2 \Rightarrow \cos\theta=1 \Rightarrow \theta=0\). Also \(r=1+\cos\theta=0\) at \(\theta=\pi\). \(1+\cos\theta\leq2\) always since \(\cos\theta\leq1\), so \(r=2\) is always outer (except touching at \(\theta=0\)).
 
 $$A = \frac{1}{2}\int_0^{2\pi}(4-(1+\cos\theta)^2)d\theta = \frac{1}{2}\int_0^{2\pi}(3-2\cos\theta-\cos^2\theta)d\theta$$
 $$= \frac{1}{2}\left[3(2\pi)-0-\pi\right] = \frac{1}{2}(5\pi) = \frac{5\pi}{2}$$
@@ -332,7 +330,7 @@ $$= \frac{1}{2}\left[3(2\pi)-0-\pi\right] = \frac{1}{2}(5\pi) = \frac{5\pi}{2}$$
 <div class="definition">
   <strong>Spiral of Archimedes:</strong> \(r = a\theta\) — radius increases linearly with angle.<br>
   <strong>Reciprocal spiral:</strong> \(r = a/\theta\) — radius decreases as angle increases.<br>
-  <strong>Conic sections in polar:</strong> \(r = \dfrac{l}{1+e\cos\theta}\) where \(l\) is semi-latus rectum, \(e\) eccentricity. Circle: \(e=0\); ellipse: \(0<e<1\); parabola: \(e=1\); hyperbola: \(e>1\).
+  <strong>Conic sections in polar:</strong> \(r = \dfrac{l}{1+e\cos\theta}\) where \(l\) is semi-latus rectum, \(e\) eccentricity. Circle: \(e=0\); ellipse: \(0&lt;e&lt;1\); parabola: \(e=1\); hyperbola: \(e>1\).
 </div>
 <div class="example">
   <strong>Example — Sketching \(r = 1+2\cos\theta\) (limaçon with inner loop):</strong><br>
@@ -386,7 +384,7 @@ $$= \frac{1}{2}\left[3(2\pi)-0-\pi\right] = \frac{1}{2}(5\pi) = \frac{5\pi}{2}$$
     <tr><th>Symmetry</th><th>Condition</th></tr>
     <tr><td>About initial line (\(x\)-axis)</td><td>\(r(-\theta)=r(\theta)\), i.e. \(r\) is even function of \(\theta\)</td></tr>
     <tr><td>About \(\theta=\pi/2\) (\(y\)-axis)</td><td>\(r(\pi-\theta)=r(\theta)\)</td></tr>
-    <tr><td>About pole (origin)</td><td>\(r(\pi+\theta)=r(\theta)\) or \(r(-\theta)=-r(\theta)\)</td></tr>
+    <tr><td>About pole (origin)</td><td>\(r(\pi+\theta)=r(\theta)\)</td></tr>
   </table>
 </div>
 <div class="example">
@@ -417,7 +415,7 @@ $$= \frac{1}{2}\left[3(2\pi)-0-\pi\right] = \frac{1}{2}(5\pi) = \frac{5\pi}{2}$$
   \(\dfrac{dr}{d\theta} = -a\sin\theta\).<br>
   \(r^2+\left(\dfrac{dr}{d\theta}\right)^2 = a^2(1+\cos\theta)^2 + a^2\sin^2\theta = a^2(1+2\cos\theta+\cos^2\theta+\sin^2\theta) = a^2(2+2\cos\theta)\).<br>
   Using \(2+2\cos\theta = 4\cos^2(\theta/2)\):<br>
-  \(L = \displaystyle\int_0^{2\pi}a\cdot 2|\cos(\theta/2)|\,d\theta = 4a\int_0^{\pi}\cos u\,du\cdot 2 = 8a\).
+  \(L = \displaystyle\int_0^{2\pi}a\cdot 2|\cos(\theta/2)|\,d\theta = 4a\int_0^{\pi}|\cos u|\,du = 8a\).
 </div>
 
 <h2>Finding Areas Using Symmetry</h2>
@@ -452,8 +450,8 @@ $$= \frac{1}{2}\left[3(2\pi)-0-\pi\right] = \frac{1}{2}(5\pi) = \frac{5\pi}{2}$$
 <div class="example">
   <strong>Sketching \(r = 2\sin 3\theta\) (three-petal rose):</strong><br>
   \(r=0\) when \(\sin 3\theta=0 \Rightarrow \theta=0, \pi/3, 2\pi/3, \pi\).<br>
-  Maximum \(r=2\) when \(\sin 3\theta=1 \Rightarrow \theta=\pi/6, \pi/2, 5\pi/6\).<br>
-  Three petals, at angles \(\pi/6, \pi/2, 5\pi/6\) from the initial line. Symmetric about \(\theta=\pi/2\).
+  Maximum \(r=2\) when \(\sin 3\theta=1 \Rightarrow \theta=\pi/6, 5\pi/6, 3\pi/2\).<br>
+  Three petals, at angles \(\pi/6, 5\pi/6, 3\pi/2\) from the initial line. Symmetric about \(\theta=\pi/2\).
 </div>
 
 <h2>Equations of Lines in Polar Form</h2>
@@ -576,10 +574,10 @@ $$= \frac{1}{2}\left[3(2\pi)-0-\pi\right] = \frac{1}{2}(5\pi) = \frac{5\pi}{2}$$
   <ul>
     <li>Cardioid \(r=a(1+\cos\theta)\): total area \(=\dfrac{3\pi a^2}{2}\), total arc length \(=8a\).</li>
     <li>Circle \(r=2a\cos\theta\): area \(=\pi a^2\) (as expected for radius \(a\)).</li>
-    <li>Rose \(r=a\cos n\theta\): area of each petal \(=\dfrac{\pi a^2}{4n}\); total area \(=\dfrac{\pi a^2}{4}\) (all petals combined, regardless of \(n\)).</li>
+    <li>Rose \(r=a\cos n\theta\): area of each petal \(=\dfrac{\pi a^2}{4n}\); total area \(=\dfrac{\pi a^2}{4}\) for odd \(n\) (\(n\) petals) and \(\dfrac{\pi a^2}{2}\) for even \(n\) (\(2n\) petals).</li>
     <li>Lemniscate \(r^2=a^2\cos 2\theta\): total area \(=a^2\).</li>
     <li>At the pole: the tangent direction \(\theta=\theta_0\) where \(r(\theta_0)=0\).</li>
-    <li>Cartesian gradient: \(\dfrac{dy}{dx} = \dfrac{r'+r\cos\theta\cdot(1/\sin\theta)}{r'-r\sin\theta\cdot(1/\cos\theta)}\) — or better, compute \(dy/d\theta\) and \(dx/d\theta\) separately.</li>
+    <li>Cartesian gradient: \(\dfrac{dy}{dx} = \tan\theta\cdot\dfrac{r'+r\cot\theta}{r'-r\tan\theta}\) — or better, compute \(dy/d\theta\) and \(dx/d\theta\) separately.</li>
     <li>When converting \(r=f(\theta)\) to Cartesian, if you cannot simplify the expression, leave it in the form \(r^2 = \ldots\) with \(r^2=x^2+y^2\) substituted — this is acceptable in AQA answers.</li>
     <li>The formula sheet gives the area formula \(\tfrac{1}{2}\int_\alpha^\beta r^2\,d\theta\) — always double-check your limits are in radians and that they describe exactly one complete region.</li>
     <li>For AQA proof questions involving polar curves: begin from \(x=r\cos\theta,\;y=r\sin\theta\) and differentiate, showing all intermediate steps for full marks.</li>

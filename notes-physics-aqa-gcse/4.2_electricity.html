@@ -66,7 +66,7 @@
 
   <!-- 3. Switch (open) -->
   <rect x="400" y="40" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
-  <line x1="460" y1="90" x2="520" y2="90" stroke="#1e40af" stroke-width="2"/>
+  <line x1="460" y1="90" x2="515" y2="72" stroke="#1e40af" stroke-width="2"/>
   <circle cx="520" cy="90" r="3" fill="#1e40af"/>
   <text x="490" y="135" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Switch (open)</text>
 
@@ -85,11 +85,11 @@
 
   <!-- 6. LED -->
   <rect x="210" y="160" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
-  <circle cx="290" cy="200" r="10" fill="none" stroke="#1e40af" stroke-width="2"/>
-  <line x1="283" y1="193" x2="297" y2="207" stroke="#1e40af" stroke-width="2"/>
-  <line x1="297" y1="193" x2="283" y2="207" stroke="#1e40af" stroke-width="2"/>
-  <line x1="285" y1="210" x2="278" y2="220" stroke="#1e40af" stroke-width="1.5"/>
-  <line x1="295" y1="210" x2="302" y2="220" stroke="#1e40af" stroke-width="1.5"/>
+  <line x1="262" y1="200" x2="318" y2="200" stroke="#1e40af" stroke-width="2"/>
+  <polygon points="280,190 300,200 280,210" fill="#1e40af"/>
+  <line x1="300" y1="190" x2="300" y2="210" stroke="#1e40af" stroke-width="2"/>
+  <line x1="286" y1="187" x2="298" y2="171" stroke="#1e40af" stroke-width="1" marker-end="url(#arr)"/>
+  <line x1="295" y1="190" x2="307" y2="174" stroke="#1e40af" stroke-width="1" marker-end="url(#arr)"/>
   <text x="290" y="235" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">LED</text>
 
   <!-- 7. Ammeter -->
@@ -107,8 +107,6 @@
   <!-- Row 3 -->
   <!-- 9. Resistor (fixed) -->
   <rect x="20" y="280" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
-  <rect x="75" y="190" width="50" height="20" fill="none" stroke="#1e40af" stroke-width="2" y="190"/>
-  <rect x="75" y="190" width="50" height="20" fill="none" stroke="#1e40af" stroke-width="2"/>
   <text x="100" y="355" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Resistor</text>
 
   <!-- SVG issue fix: proper resistor symbol -->
@@ -169,7 +167,7 @@ Working: Q = 2 × 30
 Answer:  60 coulombs (C)
 </pre>
 
-<div class="exam-tip">Remember that 1 coulomb is quite a large amount of charge. A typical AA battery contains about 2000 C (roughly 1 amp-hour, or 1 Ah). Always use seconds, not minutes or hours, in the formula <code>Q = I t</code> unless the question specifically gives time in other units.</div>
+<div class="exam-tip">Remember that 1 coulomb is quite a large amount of charge. A typical AA battery contains about 7000 C (roughly 2 amp-hours; 1 Ah = 1 A × 3600 s = 3600 C). Always use seconds, not minutes or hours, in the formula <code>Q = I t</code> unless the question specifically gives time in other units.</div>
 
 <h2>4.2.3 Potential Difference and Resistance</h2>
 
@@ -329,11 +327,11 @@ Answer:  24 ohms
     <line x1="410" y1="100" x2="410" y2="320" stroke="#e5e7eb" stroke-width="0.8"/>
 
     <!-- I-V curve: S-curve (resistance increases) -->
-    <path d="M 330 315 Q 370 295 410 200 Q 450 140 490 115" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+    <path d="M 330 320 Q 360 180 490 140" stroke="#dc2626" stroke-width="2.5" fill="none"/>
 
     <!-- Title -->
     <text x="410" y="380" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Filament lamp (non-ohmic)</text>
-    <text x="410" y="395" text-anchor="middle" font-size="9" fill="#6b7280">Curves upward; R increases with T</text>
+    <text x="410" y="395" text-anchor="middle" font-size="9" fill="#6b7280">Gradient falls; R increases with T</text>
   </g>
 
   <!-- Graph 3: Diode (with symmetry note) -->
@@ -377,7 +375,7 @@ Answer:  24 ohms
 </div>
 
 <div class="definition">
-    A <strong>filament lamp</strong> is <strong>non-ohmic</strong> &mdash; its I-V graph curves upward (increasing gradient). As the lamp gets brighter, its filament heats up, its resistance increases, and more voltage is needed to drive the same current. At low voltages, the filament is cool and resistance is low; at high voltages, it is hot and resistance is high.
+    A <strong>filament lamp</strong> is <strong>non-ohmic</strong> &mdash; its I-V graph is a curve whose gradient decreases as the p.d. increases (it flattens off). As the lamp gets brighter, its filament heats up, its resistance increases, and more voltage is needed to drive the same current. At low voltages, the filament is cool and resistance is low; at high voltages, it is hot and resistance is high.
 </div>
 
 <div class="definition">
@@ -450,7 +448,7 @@ Answer:  24 ohms
   <line x1="80" y1="140" x2="480" y2="140" stroke="#e5e7eb" stroke-width="0.8"/>
 
   <!-- Curve: decreasing (inverse power law) -->
-  <path d="M 90 220 Q 150 180 250 120 Q 350 80 470 50" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+  <path d="M 90 50 Q 180 200 470 225" stroke="#2563eb" stroke-width="2.5" fill="none"/>
 </svg>
 
 <h2>4.2.5 Series and Parallel Circuits</h2>
@@ -630,7 +628,7 @@ Answer:  R_total = 3 Ω,   I₁ = 3 A,   I₂ = 1 A
 
 <table>
     <tr><th>Wire</th><th>Colour</th><th>Voltage</th><th>Purpose</th></tr>
-    <tr><td><strong>Live</strong></td><td>Brown</td><td>Alternates between +230 V and −230 V (at 50 Hz)</td><td>Carries the current to the device. Always dangerous if touched.</td></tr>
+    <tr><td><strong>Live</strong></td><td>Brown</td><td>Alternating p.d. of 230 V (at 50 Hz)</td><td>Carries the current to the device. Always dangerous if touched.</td></tr>
     <tr><td><strong>Neutral</strong></td><td>Blue</td><td>Approximately 0 V (ground reference)</td><td>Completes the circuit, carrying current back. Normally safe to touch (but not recommended).</td></tr>
     <tr><td><strong>Earth</strong></td><td>Green + Yellow (striped)</td><td>Approximately 0 V (ground reference)</td><td>Safety wire. Normally carries no current. If the live wire touches the metal casing, earth provides a low-resistance path to ground, triggering a fuse or circuit breaker.</td></tr>
 </table>
@@ -840,7 +838,7 @@ Answer:  E = 3.6 MJ (or 3 600 000 J)
 
 <h2>4.2.9 Static Electricity (Triple Only)</h2>
 
-<p>This section is for Triple Science (separate physics) students only. Foundation Science students are not examined on static electricity at GCSE.</p>
+<p>This section is for Triple Science (separate physics) students only. Combined Science students are not examined on static electricity at GCSE.</p>
 
 <h3>How Charge is Generated by Friction</h3>
 
@@ -852,7 +850,7 @@ Answer:  E = 3.6 MJ (or 3 600 000 J)
     </ul>
 </div>
 
-<p>Example: when you rub a balloon on your hair, electrons transfer from the hair to the balloon. The balloon becomes negatively charged and attracts the hair. Your hair also becomes positively charged and repels the balloon's negative charge — but the attraction to the balloon's negative charge (pulling) is stronger than the repulsion (pushing) because the balloon is closer, so the hair sticks.</p>
+<p>Example: when you rub a balloon on your hair, electrons transfer from the hair to the balloon. The balloon becomes negatively charged and attracts the hair. Your hair becomes positively charged; unlike charges attract, so the hair is pulled towards the negatively charged balloon and sticks.</p>
 
 <h3>Electric Forces: Attraction and Repulsion</h3>
 

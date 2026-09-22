@@ -78,7 +78,7 @@
 
 <p>LZ77 and its derivatives (LZSS, DEFLATE which combines LZ77 with Huffman) are the basis of ZIP, GZIP and PNG. LZW &mdash; used historically in GIF and UNIX <code>compress</code> &mdash; maintains an explicit dictionary where each new substring seen is added with a new numeric code.</p>
 
-<p><strong>Worked example &mdash; LZ77 on "the cat sat on the mat, the rat sat on the mat":</strong> as the encoder reaches the second &ldquo;the&rdquo;, it notices the earlier occurrence and replaces it with a back-reference pointing 12 characters back, length 4 (&ldquo;the &rdquo;). When it reaches &ldquo;sat on the mat&rdquo; at the end, a single long back-reference can replace 14 characters with one (offset, length) pair. The longer and more repetitive the source, the bigger the savings &mdash; which is why logs, natural-language text and HTML pages compress so well.</p>
+<p><strong>Worked example &mdash; LZ77 on "the cat sat on the mat, the rat sat on the mat":</strong> as the encoder reaches the second &ldquo;the&rdquo;, it notices the earlier occurrence and replaces it with a back-reference pointing 15 characters back, length 4 (&ldquo;the &rdquo;). When it reaches &ldquo;sat on the mat&rdquo; at the end, a single long back-reference can replace 14 characters with one (offset, length) pair. The longer and more repetitive the source, the bigger the savings &mdash; which is why logs, natural-language text and HTML pages compress so well.</p>
 
 <h3>Huffman Coding</h3>
 
@@ -282,11 +282,11 @@
   <text x="55" y="172" font-size="11" fill="#374151">DateOfBirth</text>
   <!-- Relationship line -->
   <line x1="240" y1="125" x2="440" y2="125" stroke="#f59e0b" stroke-width="2"/>
-  <!-- Cardinality markings: 1 (crow's foot: single bar) near Student, M (crow's foot) near Course -->
+  <!-- Cardinality markings: M near Student, 1 near Course -->
   <line x1="255" y1="115" x2="255" y2="135" stroke="#f59e0b" stroke-width="2"/>
-  <text x="265" y="120" font-size="11" font-weight="bold" fill="#b45309">1</text>
+  <text x="265" y="120" font-size="11" font-weight="bold" fill="#b45309">M</text>
   <line x1="425" y1="115" x2="425" y2="135" stroke="#f59e0b" stroke-width="2"/>
-  <text x="410" y="120" font-size="11" font-weight="bold" fill="#b45309">M</text>
+  <text x="410" y="120" font-size="11" font-weight="bold" fill="#b45309">1</text>
   <text x="340" y="118" text-anchor="middle" font-size="11" font-style="italic" fill="#b45309">enrols on</text>
   <!-- Course entity -->
   <rect x="440" y="60" width="200" height="130" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
@@ -509,7 +509,7 @@ COMMIT;</pre>
 
 <p><strong>Redundancy</strong> in this context means keeping more than one copy of the database (mirroring, replication, RAID) so that hardware failure does not cause data loss &mdash; part of how <em>durability</em> is achieved in practice.</p>
 
-<p><strong>Worked example &mdash; concurrency without locking:</strong> suppose two cashpoints simultaneously read the same account balance of &pound;200. Customer X withdraws &pound;150, Customer Y withdraws &pound;100. Both machines compute a new balance based on the initial &pound;200 they each read (&pound;50 and &pound;100 respectively) and each writes its result back. Whichever transaction commits last &ldquo;wins&rdquo;, and the bank loses &pound;50 or &pound;100. This is called the <strong>lost update</strong> problem. Record locking forces one transaction to wait until the other has committed, after which it reads the updated balance and proceeds correctly.</p>
+<p><strong>Worked example &mdash; concurrency without locking:</strong> suppose two cashpoints simultaneously read the same account balance of &pound;200. Customer X withdraws &pound;150, Customer Y withdraws &pound;100. Both machines compute a new balance based on the initial &pound;200 they each read (&pound;50 and &pound;100 respectively) and each writes its result back. Whichever transaction commits last &ldquo;wins&rdquo;, and the bank loses &pound;100 or &pound;150. This is called the <strong>lost update</strong> problem. Record locking forces one transaction to wait until the other has committed, after which it reads the updated balance and proceeds correctly.</p>
 
 <h3>Capturing, Selecting, Managing and Exchanging Data</h3>
 
@@ -888,7 +888,7 @@ document.getElementById('btn').addEventListener('click', () =&gt; {
     <li>The browser resolves the shop's domain via <strong>DNS</strong> and opens a <strong>TCP</strong> connection to port 443.</li>
     <li>A <strong>TLS handshake</strong> verifies the server's certificate and establishes a symmetric <strong>AES</strong> session key using <strong>asymmetric</strong> crypto.</li>
     <li>The browser sends an <strong>HTTPS</strong> POST with order details. The payload is split into multiple <strong>packets</strong>, each carrying a <strong>header</strong> with source/destination IPs and sequence numbers, and routed independently.</li>
-    <li>The server-side script (<strong>PHP</strong>, <strong>Node</strong>&hellip;) queries a <strong>relational database</strong> inside a single <strong>ACID transaction</strong>: decrement stock, create an order, charge the payment processor. All four steps must succeed together or all roll back.</li>
+    <li>The server-side script (<strong>PHP</strong>, <strong>Node</strong>&hellip;) queries a <strong>relational database</strong> inside a single <strong>ACID transaction</strong>: decrement stock, create an order, charge the payment processor. All three steps must succeed together or all roll back.</li>
     <li>The user's password is never transmitted in the clear; only a <strong>salted hash</strong> is stored on the server for authentication.</li>
     <li>The response HTML is returned, optionally <strong>GZIP compressed</strong> (LZ77 + Huffman) to save bandwidth.</li>
 </ol>

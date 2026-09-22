@@ -98,7 +98,7 @@
 
 <h3>Error correction &mdash; Hamming code</h3>
 
-<p>Parity, checksum and CRC only <em>detect</em> errors; the receiver must ask for retransmission. <strong>Forward error correction</strong> goes further: redundancy bits are added so the receiver can reconstruct the original without retransmission. Hamming(7,4) encodes 4 data bits as 7 transmitted bits (three parity bits interleaved with the data) and can correct any single-bit error and detect any double-bit error. Used where retransmission is expensive or impossible &mdash; deep-space links (Voyager), ECC RAM, flash storage.</p>
+<p>Parity, checksum and CRC only <em>detect</em> errors; the receiver must ask for retransmission. <strong>Forward error correction</strong> goes further: redundancy bits are added so the receiver can reconstruct the original without retransmission. Hamming(7,4) encodes 4 data bits as 7 transmitted bits (three parity bits interleaved with the data) and can correct any single-bit error. Used where retransmission is expensive or impossible &mdash; deep-space links (Voyager), ECC RAM, flash storage.</p>
 
 <h2>4.9.2 Communication Basics</h2>
 
@@ -111,7 +111,7 @@
     <tbody>
         <tr><td>Simplex</td><td>One-way only</td><td>N/A</td><td>Broadcast TV/radio, keyboard to PC</td></tr>
         <tr><td>Half-duplex</td><td>Both directions</td><td>No &mdash; one at a time</td><td>Walkie-talkies ("over"), classic Ethernet hub</td></tr>
-        <tr><td>Full-duplex</td><td>Both directions</td><td>Yes &mdash; simultaneously</td><td>Telephone, switched Ethernet, modern Wi-Fi with MU-MIMO</td></tr>
+        <tr><td>Full-duplex</td><td>Both directions</td><td>Yes &mdash; simultaneously</td><td>Telephone, switched Ethernet</td></tr>
     </tbody>
 </table>
 
@@ -656,7 +656,7 @@ AND      = 11000000 . 10101000 . 00000001 . 00000000
 </table>
 
 <div class="exam-tip">
-    The single most common CIDR mistake is forgetting to subtract two (network + broadcast) for usable hosts. A /26 has 64 addresses but only 62 hosts. Another trap: a /31 has 4 addresses but only 2 are usable under RFC 1918; RFC 3021 allows point-to-point use of all 2 addresses on a /31. In exam conditions, always state the formula "2<sup>host bits</sup> &minus; 2" in your working.
+    The single most common CIDR mistake is forgetting to subtract two (network + broadcast) for usable hosts. A /26 has 64 addresses but only 62 hosts. Another trap: a /30 has 4 addresses but only 2 are usable; RFC 3021 allows point-to-point use of both addresses on a /31. In exam conditions, always state the formula "2<sup>host bits</sup> &minus; 2" in your working.
 </div>
 
 <h3>Public vs private (RFC 1918)</h3>

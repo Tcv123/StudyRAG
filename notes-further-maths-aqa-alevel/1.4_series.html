@@ -389,9 +389,9 @@ $$e^{-x^2} = 1-x^2+\frac{x^4}{2}-\frac{x^6}{6}+\cdots$$
 
 Integrate term by term:
 $$\int_0^{0.3}\left(1-x^2+\frac{x^4}{2}-\frac{x^6}{6}\right)dx = \left[x-\frac{x^3}{3}+\frac{x^5}{10}-\frac{x^7}{42}\right]_0^{0.3}$$
-$$= 0.3-0.009+0.000243-0.0000052\approx0.2911$$
+$$= 0.3-0.009+0.000243-0.0000052\approx0.2912$$
 
-Error bound: next term \(\approx0.3^9/216\approx 5\times10^{-8}\). Accurate to 4 d.p.
+Error bound: next term \(\approx0.3^9/216\approx 9\times10^{-8}\). Accurate to 4 d.p.
 </div>
 
 <h2>Binomial Series — Applications</h2>
@@ -402,7 +402,7 @@ Error bound: next term \(\approx0.3^9/216\approx 5\times10^{-8}\). Accurate to 4
 $$\frac{1}{\sqrt{4+x}} = \frac{1}{2}(1+x/4)^{-1/2} = \frac{1}{2}\left[1+\left(-\frac{1}{2}\right)\frac{x}{4}+\frac{(-1/2)(-3/2)}{2}\cdot\frac{x^2}{16}+\cdots\right]$$
 $$= \frac{1}{2}\left[1-\frac{x}{8}+\frac{3x^2}{128}+\cdots\right] = \frac{1}{2}-\frac{x}{16}+\frac{3x^2}{256}+\cdots$$
 
-Valid for \(|x/4|&lt;1\), i.e.\ \(|x|&lt;4\).
+Valid for \(|x/4|&lt;1\), i.e. \(|x|&lt;4\).
 </div>
 
 <h2>Standard Sum Results Summary</h2>
@@ -451,7 +451,7 @@ Valid for \(|x/4|&lt;1\), i.e.\ \(|x|&lt;4\).
   \(f(x)=\ln(1+x)\): \(f(0)=0\). \(f'(x)=\dfrac{1}{1+x}\): \(f'(0)=1\).<br>
   \(f''(x)=-\dfrac{1}{(1+x)^2}\): \(f''(0)=-1\). \(f'''(x)=\dfrac{2}{(1+x)^3}\): \(f'''(0)=2\).<br>
   In general: \(f^{(n)}(0) = (-1)^{n+1}(n-1)!\).<br>
-  \(\ln(1+x) = x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots\quad(-1<x\le 1)\)
+  \(\ln(1+x) = x-\dfrac{x^2}{2}+\dfrac{x^3}{3}-\dfrac{x^4}{4}+\cdots\quad(-1&lt;x\le 1)\)
 </div>
 
 <h2>Taylor Series and Approximations</h2>
@@ -475,8 +475,7 @@ Valid for \(|x/4|&lt;1\), i.e.\ \(|x|&lt;4\).
   Telescoping: \(\left(1-\tfrac{1}{2}\right)+\left(\tfrac{1}{2}-\tfrac{1}{3}\right)+\cdots+\left(\tfrac{1}{n}-\tfrac{1}{n+1}\right) = 1-\dfrac{1}{n+1} = \dfrac{n}{n+1}\).
 </div>
 <div class="example">
-  <strong>Example 2:</strong> Find \(\displaystyle\sum_{r=1}^n r(r+1)(r+2) - r(r+1)(r+2)(r+3)\)... actually, use a difference form.<br>
-  <strong>Alternative:</strong> Sum \(\displaystyle\sum_{r=1}^n \dfrac{1}{(2r-1)(2r+1)}\).<br>
+  <strong>Example 2:</strong> Sum \(\displaystyle\sum_{r=1}^n \dfrac{1}{(2r-1)(2r+1)}\).<br>
   \(\dfrac{1}{(2r-1)(2r+1)} = \dfrac{1}{2}\left(\dfrac{1}{2r-1}-\dfrac{1}{2r+1}\right)\).<br>
   Sum \(= \dfrac{1}{2}\left(1-\dfrac{1}{2n+1}\right) = \dfrac{n}{2n+1}\).
 </div>
@@ -595,7 +594,7 @@ Valid for \(|x/4|&lt;1\), i.e.\ \(|x|&lt;4\).
   <strong>Method of differences:</strong> Always write out at least 4 rows of the telescoping sum, then write the last 2 rows. State clearly which terms cancel and which survive. Don't forget to simplify the final answer.
 </div>
 <div class="exam-tip">
-  <strong>Maclaurin series validity:</strong> AQA will often ask you to <em>state</em> the range of validity. For \(\ln(1+x)\) the range is \(-1<x\le 1\); do not write \(|x|<1\) (this misses \(x=1\)). For \((1+x)^n\) with integer \(n\), the series terminates and is valid for all \(x\).
+  <strong>Maclaurin series validity:</strong> AQA will often ask you to <em>state</em> the range of validity. For \(\ln(1+x)\) the range is \(-1&lt;x\le 1\); do not write \(|x|&lt;1\) (this misses \(x=1\)). For \((1+x)^n\) with integer \(n\), the series terminates and is valid for all \(x\).
 </div>
 <div class="exam-tip">
   <strong>Standard result sums:</strong> The formulae \(\sum r\), \(\sum r^2\), \(\sum r^3\) are given in the formula booklet. Always quote the formula, substitute, then simplify step by step showing the factorisation. Leaving an unexpanded polynomial will lose accuracy marks.

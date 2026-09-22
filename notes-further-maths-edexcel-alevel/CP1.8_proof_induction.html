@@ -179,16 +179,9 @@
 <h2>5. Type 4: Recurrence Relations</h2>
 
 <div class="example">
-  <strong>Proof:</strong> A sequence is defined by \(u_1 = 3\), \(u_{n+1} = 3u_n - 4\). Prove by induction that \(u_n = 2 \cdot 3^{n-1} + 2\).<br><br>
+  <strong>Proof:</strong> A sequence is defined by \(u_1 = 5\), \(u_{n+1} = 2u_n - 1\). Prove by induction that \(u_n = 4 \cdot 2^{n-1} + 1\).<br><br>
 
-  <strong>Base case (\(n=1\)):</strong> \(u_1 = 2 \cdot 3^0 + 2 = 2 + 2 = 4\)... wait, we're given \(u_1 = 3\).<br>
-  Check: \(2 \cdot 3^{1-1} + 2 = 2(1) + 2 = 4 \neq 3\).<br>
-  <em>This formula would be wrong in a real question — the example below uses a correct formula.</em><br><br>
-
-  <strong>Correct example:</strong> \(u_1 = 5\), \(u_{n+1} = 2u_n - 1\). Prove \(u_n = 3 \cdot 2^{n-1} + 1\).<br><br>
-
-  <strong>Base case (\(n=1\)):</strong> \(u_1 = 3 \cdot 2^0 + 1 = 3 + 1 = 4\).<br>
-  But \(u_1 = 5\). So check formula: \(3 \cdot 1 + 1 = 4 \neq 5\). Let's use: \(u_n = 4 \cdot 2^{n-1} + 1\).<br>
+  <strong>Base case (\(n=1\)):</strong><br>
   \(n=1\): \(4 + 1 = 5\) ✓<br><br>
 
   <strong>Hypothesis:</strong> Assume \(u_k = 4 \cdot 2^{k-1} + 1\).<br><br>

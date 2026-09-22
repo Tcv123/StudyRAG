@@ -326,12 +326,12 @@ $$y=3(At+B)e^{2t}-(A+2At+2B)e^{2t}=(At-A+B)e^{2t}$$
 <p>The equation \(m\ddot{x}+c\dot{x}+kx=F(t)\) models a mass-spring-damper system:</p>
 <ul>
   <li>\(m\): mass, \(c\): damping coefficient, \(k\): spring constant, \(F(t)\): forcing function.</li>
-  <li>Dividing by \(m\): \(\ddot{x}+2\beta\dot{x}+\omega_0^2 x = F(t)/m\) where \(\omega_0=\sqrt{k/m}\) is the natural frequency and \(\beta=c/(2m)\) is the damping ratio.</li>
+  <li>Dividing by \(m\): \(\ddot{x}+2\beta\dot{x}+\omega_0^2 x = F(t)/m\) where \(\omega_0=\sqrt{k/m}\) is the natural frequency and \(\beta=c/(2m)\) is the damping constant (decay rate).</li>
 </ul>
 
 <table>
   <tr><th>Condition</th><th>Root type</th><th>Motion type</th></tr>
-  <tr><td>\(c^2&lt;4mk\) (i.e.\ \(\beta&lt;\omega_0\))</td><td>Complex conjugates \(-\beta\pm i\omega_d\)</td><td><strong>Underdamped</strong>: damped oscillation \(e^{-\beta t}\sin(\omega_d t+\phi)\)</td></tr>
+  <tr><td>\(c^2&lt;4mk\) (i.e. \(\beta&lt;\omega_0\))</td><td>Complex conjugates \(-\beta\pm i\omega_d\)</td><td><strong>Underdamped</strong>: damped oscillation \(e^{-\beta t}\sin(\omega_d t+\phi)\)</td></tr>
   <tr><td>\(c^2=4mk\)</td><td>Repeated real root \(-\beta\)</td><td><strong>Critically damped</strong>: fastest decay without oscillation \((A+Bt)e^{-\beta t}\)</td></tr>
   <tr><td>\(c^2&gt;4mk\)</td><td>Two distinct real negative roots</td><td><strong>Overdamped</strong>: slow exponential decay \(Ae^{-\alpha_1 t}+Be^{-\alpha_2 t}\)</td></tr>
   <tr><td>\(c=0\)</td><td>Pure imaginary \(\pm i\omega_0\)</td><td><strong>Simple harmonic motion</strong>: \(A\cos\omega_0 t+B\sin\omega_0 t\)</td></tr>
@@ -489,7 +489,7 @@ $$y=3(At+B)e^{2t}-(A+2At+2B)e^{2t}=(At-A+B)e^{2t}$$
 <div class="example">
   <strong>Example — Newton's cooling:</strong> A body at \(80°C\) cools in a room at \(20°C\). After 10 minutes it is \(60°C\). Find its temperature after 20 minutes.<br>
   \(\theta-20 = Ae^{-kt}\). At \(t=0\): \(A=60\). At \(t=10\): \(40=60e^{-10k} \Rightarrow e^{-10k}=\tfrac{2}{3}\).<br>
-  At \(t=20\): \(\theta-20 = 60\cdot\left(\tfrac{2}{3}\right)^2 = \tfrac{160}{3}\). \(\theta = 20+\tfrac{160}{3} \approx 73.3°C\).
+  At \(t=20\): \(\theta-20 = 60\cdot\left(\tfrac{2}{3}\right)^2 = \tfrac{80}{3}\). \(\theta = 20+\tfrac{80}{3} \approx 46.7°C\).
 </div>
 
 <h2>Resonance — Full Worked Example</h2>

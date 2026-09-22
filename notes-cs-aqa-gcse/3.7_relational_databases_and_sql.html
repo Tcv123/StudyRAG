@@ -383,7 +383,7 @@
     <strong>SQL</strong> (Structured Query Language) is the standard language used to communicate with a relational database. SQL statements can <em>query</em> data (SELECT), <em>insert</em> new records (INSERT), <em>change</em> existing records (UPDATE) and <em>remove</em> records (DELETE).
 </div>
 
-<p>SQL keywords are traditionally written in UPPERCASE and statements end with a semicolon. The DBMS is not case-sensitive about the keywords themselves but <em>is</em> sensitive to string comparisons (more on that below).</p>
+<p>SQL keywords are traditionally written in UPPERCASE and statements end with a semicolon. The DBMS is not case-sensitive about the keywords themselves but string comparisons may be case-sensitive depending on the DBMS (more on that below).</p>
 
 <h3>The SELECT Statement</h3>
 
@@ -526,7 +526,6 @@ WHERE  Title LIKE '%the%';</code></pre>
 <table>
     <tr><th>Title</th></tr>
     <tr><td>The Hobbit</td></tr>
-    <tr><td>A Brief History of Time</td></tr>
     <tr><td>Northern Lights</td></tr>
     <tr><td>The BFG</td></tr>
 </table>
@@ -574,11 +573,11 @@ ORDER BY Genre ASC, Year DESC;</code></pre>
 
 <table>
     <tr><th>Title</th><th>Genre</th><th>Year</th></tr>
-    <tr><td>Matilda</td><td>Fiction</td><td>1988</td></tr>
-    <tr><td>The BFG</td><td>Fiction</td><td>1982</td></tr>
-    <tr><td>Holes</td><td>Fiction</td><td>1998</td></tr>
     <tr><td>Northern Lights</td><td>Fantasy</td><td>1995</td></tr>
     <tr><td>The Hobbit</td><td>Fantasy</td><td>1937</td></tr>
+    <tr><td>Holes</td><td>Fiction</td><td>1998</td></tr>
+    <tr><td>Matilda</td><td>Fiction</td><td>1988</td></tr>
+    <tr><td>The BFG</td><td>Fiction</td><td>1982</td></tr>
     <tr><td>Stargazing</td><td>Science</td><td>2020</td></tr>
     <tr><td>A Brief History of Time</td><td>Science</td><td>1988</td></tr>
 </table>
@@ -962,7 +961,7 @@ ORDER BY Loan.DateOut ASC;</code></pre>
 
 <h3>Scenario B &mdash; An Online Shop</h3>
 
-<p>The shop has three tables: Customer, `Order`, and OrderLine (because each order can contain several products &mdash; a many-to-many between `Order` and Product):</p>
+<p>The shop has four tables: Customer, Product, `Order`, and OrderLine (because each order can contain several products &mdash; a many-to-many between `Order` and Product):</p>
 
 <pre><code>Customer  ( <u>CustomerID</u>, Name, Email, Postcode )
 Product   ( <u>ProductID</u>,  Name, Category, Price, Stock )

@@ -101,7 +101,7 @@ Check: 0xAD = 10&times;16 + 13 = 160 + 13 = 173. Correct.</pre>
 
 <h3>Fractional binary</h3>
 
-<p>Columns <em>after</em> the binary point have weights &frac12;, &frac14;, &#8539;, &#8528;&hellip; To convert a decimal fraction to binary, multiply by 2 repeatedly and read the integer parts top-to-bottom.</p>
+<p>Columns <em>after</em> the binary point have weights &frac12;, &frac14;, &#8539;, 1/16&hellip; To convert a decimal fraction to binary, multiply by 2 repeatedly and read the integer parts top-to-bottom.</p>
 
 <pre>Convert 0.6875 to binary:
  0.6875 &times; 2 = 1.375  &rarr; 1
@@ -110,7 +110,7 @@ Check: 0xAD = 10&times;16 + 13 = 160 + 13 = 173. Correct.</pre>
  0.5    &times; 2 = 1.0    &rarr; 1    (fraction now zero &mdash; stop)
 
 Answer: 0.6875&#8321;&#8320; = 0.1011&#8322;
-Check: &frac12; + &#8539; + &#8528; = 0.5 + 0.125 + 0.0625 = 0.6875. Correct.</pre>
+Check: &frac12; + &#8539; + 1/16 = 0.5 + 0.125 + 0.0625 = 0.6875. Correct.</pre>
 
 <div class="exam-tip">When asked "convert this decimal to binary", always <em>show every division</em> and circle the remainder column. Mark schemes usually award 1 mark for method and 1 mark for the final answer &mdash; a bare answer scores only 1/2.</div>
 
@@ -308,7 +308,7 @@ Mantissa = 23-bit fractional part of a normalised value 1.xxxx
 <h3>Worked example: IEEE 754 representation of &minus;6.25</h3>
 
 <pre>Step 1  |&minus;6.25| = 6.25  = 110.01&#8322;
-Step 2  Normalise:     110.01  =  1.1001 &times; 2&#8322;
+Step 2  Normalise:     110.01  =  1.1001 &times; 2&sup2;
 Step 3  Sign:          S = 1          (negative)
 Step 4  Exponent:      2 + 127 = 129  = 10000001&#8322;
 Step 5  Mantissa:      drop the leading 1, pad to 23 bits
@@ -451,7 +451,7 @@ character    =  chr(n + ord('0'))         # e.g. chr(3 + 48) = '3'</pre>
 <pre>Uncompressed PCM mono file size (bits) = duration_s &times; sample_rate &times; bit_depth
 
 Example: 30 s of CD-quality mono
-  = 30 &times; 44100 &times; 16  = 21 168 000 bits  = 2 646 000 B  &asymp; 2.58 MiB</pre>
+  = 30 &times; 44100 &times; 16  = 21 168 000 bits  = 2 646 000 B  &asymp; 2.52 MiB</pre>
 
 <p>Stereo doubles it; 5.1 surround multiplies by six.</p>
 

@@ -48,24 +48,124 @@
 <div class="toc">
 <h2>Table of Contents</h2>
 <ol>
-  <li><a href="#p1">Volumetric Analysis / Titration</a></li>
-  <li><a href="#p2">Enthalpy Determination by Calorimetry</a></li>
-  <li><a href="#p3">Rates of Reaction</a></li>
-  <li><a href="#p4">Qualitative Analysis</a></li>
-  <li><a href="#p5">Organic Preparation</a></li>
-  <li><a href="#p6">Functional Group Identification Tests</a></li>
-  <li><a href="#p7">Electrochemical Cells and EMF</a></li>
-  <li><a href="#p8">pH Curves and Buffer Solutions</a></li>
-  <li><a href="#p9">Colorimetry and Transition Metal Complexes</a></li>
-  <li><a href="#p10">Chromatography</a></li>
-  <li><a href="#p11">Equilibrium Investigation</a></li>
-  <li><a href="#p12">Moles and Gas Volume Determination</a></li>
+  <li><a href="#pag1">PAG1: Moles Determination</a></li>
+  <li><a href="#pag2">PAG2: Acid&#8211;Base Titration</a></li>
+  <li><a href="#pag3">PAG3: Enthalpy Determination</a></li>
+  <li><a href="#pag4">PAG4: Qualitative Analysis of Ions</a></li>
+  <li><a href="#pag5">PAG5: Synthesis of an Organic Liquid</a></li>
+  <li><a href="#pag6">PAG6: Synthesis of an Organic Solid</a></li>
+  <li><a href="#pag7">PAG7: Qualitative Analysis of Organic Functional Groups</a></li>
+  <li><a href="#pag8">PAG8: Electrochemical Cells</a></li>
+  <li><a href="#pag9">PAG9: Rates of Reaction &mdash; Continuous Monitoring Method</a></li>
+  <li><a href="#pag10">PAG10: Rates of Reaction &mdash; Initial Rates Method</a></li>
+  <li><a href="#pag11">PAG11: pH Measurement</a></li>
+  <li><a href="#pag12">PAG12: Research Skills</a></li>
 </ol>
+<p style="margin-top:12px;"><strong>Supporting practicals (not PAGs):</strong></p>
+<ul>
+  <li><a href="#support-colorimetry">Colorimetry and Transition Metal Complexes</a></li>
+  <li><a href="#support-chromatography">Chromatography</a></li>
+  <li><a href="#support-equilibria">Equilibrium Investigation</a></li>
+</ul>
 </div>
 
-<!-- P1 -->
-<div class="practical-card" id="p1">
-<h2>&#9879; 1: Volumetric Analysis / Titration</h2>
+<div class="definition"><strong>OCR Practical Endorsement:</strong> the Chemistry B (Salters) specification (H433, section 5h) uses the same twelve Practical Activity Groups as Chemistry A, PAG1&#8211;PAG12. You must complete a minimum of 12 practical activities covering all of them. The experiment in each section below is one suitable example; your school may use a different activity for the same PAG.</div>
+
+<!-- PAG1 -->
+<div class="practical-card" id="pag1">
+<h2>&#9879; PAG1: Moles Determination</h2>
+
+<svg viewBox="0 0 460 280" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Flask + gas syringe -->
+  <polygon points="50,180 130,180 118,125 62,125" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="80" y="111" width="18" height="16" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <polygon points="53,175 127,175 119,130 61,130" fill="#1a73e8" fill-opacity="0.12"/>
+  <!-- Delivery tube -->
+  <path d="M98,115 L120,100 L210,100" fill="none" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Gas syringe -->
+  <rect x="210" y="88" width="150" height="24" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <rect x="350" y="92" width="40" height="16" fill="#ccc" stroke="#999" stroke-width="1" rx="2"/>
+  <!-- Scale -->
+  <line x1="230" y1="112" x2="230" y2="118" stroke="#1a1a2e" stroke-width="0.5"/>
+  <line x1="270" y1="112" x2="270" y2="118" stroke="#1a1a2e" stroke-width="0.5"/>
+  <line x1="310" y1="112" x2="310" y2="118" stroke="#1a1a2e" stroke-width="0.5"/>
+  <text x="280" y="80" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Gas syringe</text>
+
+  <text x="90" y="200" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Mg + 2HCl</text>
+  <text x="90" y="215" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle">→ MgCl₂ + H₂</text>
+
+  <!-- Balance -->
+  <rect x="50" y="230" width="120" height="16" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <text x="110" y="242" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Balance: 0.024 g Mg</text>
+
+  <!-- Calculation box -->
+  <rect x="250" y="150" width="190" height="110" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1" rx="6"/>
+  <text x="345" y="170" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Calculation</text>
+  <text x="345" y="190" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">n(Mg) = mass / Aᵣ</text>
+  <text x="345" y="208" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">n(H₂) = n(Mg) [1:1 ratio]</text>
+  <text x="345" y="226" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">V(gas) = reading from syringe</text>
+  <text x="345" y="248" font-size="9" fill="#16A34A" font-family="system-ui" text-anchor="middle" font-weight="600">Molar volume = V / n</text>
+
+  <text x="230" y="278" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Expected: ~24,000 cm³ mol⁻¹ at RTP (room temperature and pressure)</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Conical flask with bung and delivery tube</li>
+  <li>Gas syringe (100 cm³)</li>
+  <li>Balance (to 0.001 g)</li>
+  <li>Measuring cylinder</li>
+  <li>Magnesium ribbon (weighed accurately)</li>
+  <li>Excess dilute HCl</li>
+  <li>Thermometer and barometer (to record conditions)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Weigh a known length of clean Mg ribbon accurately (e.g., ~0.03 g).</li>
+  <li>Place excess dilute HCl (e.g., 20 cm³ of 1 mol dm⁻³) in the conical flask.</li>
+  <li>Connect the delivery tube to the gas syringe. Check there are no leaks.</li>
+  <li>Add the Mg ribbon to the flask, quickly insert the bung, and allow the reaction to proceed.</li>
+  <li>Wait until the reaction is complete (Mg fully dissolved, no more gas produced).</li>
+  <li>Record the final volume of H₂ gas in the syringe.</li>
+  <li>Record room temperature and atmospheric pressure.</li>
+  <li>Calculate: n(Mg) = mass/24.3. n(H₂) = n(Mg). Molar gas volume = V(gas)/n(H₂).</li>
+  <li>Alternatively, use pV = nRT to calculate n from p, V, and T, then find Mᵣ.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>H₂ gas is flammable — no naked flames.</li>
+  <li>Dilute HCl is irritant — goggles.</li>
+  <li>Gas syringe may pop out — clamp securely.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Calculate:</strong> Molar gas volume at room conditions. Expected ~24 dm³ mol⁻¹ (24,000 cm³ mol⁻¹) at ~298 K, 101 kPa.</p>
+<p><strong>Alternative:</strong> Use pV = nRT to find n, then compare with calculated n from mass.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>H₂ gas escaping before sealing</td><td>Systematic</td><td>Seal quickly, or hang the Mg in a small tube inside the sealed flask and tip it into the acid</td></tr>
+  <tr><td>Gas syringe friction</td><td>Systematic</td><td>Lubricate; tap gently</td></tr>
+  <tr><td>Mg oxide layer on ribbon</td><td>Systematic</td><td>Clean with emery paper before weighing</td></tr>
+  <tr><td>Gas not at room temperature</td><td>Systematic</td><td>Allow time for gas to cool before reading</td></tr>
+  <tr><td>H₂ slightly soluble in water/acid</td><td>Systematic</td><td>Negligible at normal conditions; acknowledged</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> The molar gas volume at RTP (room temperature and pressure, ~298 K, 100 kPa) is approximately 24.0 dm&sup3; mol&#8315;&#185;. At STP (273 K, 100 kPa) it is 22.7 dm&sup3; mol&#8315;&#185;. Always state the conditions. Use pV = nRT when exact conditions matter: p in Pa, V in m&sup3;, T in K, R = 8.314.</div>
+
+<div class="worked-example"><strong>Worked Example &mdash; Molar Gas Volume:</strong><br><br>
+0.0360 g of magnesium ribbon reacted with excess dilute HCl, producing 35.8 cm&sup3; of H&#8322; at room temperature and pressure.<br><br>
+n(Mg) = 0.0360 / 24.3 = 1.48 &times; 10&#8315;&sup3; mol = n(H&#8322;) (1:1 ratio)<br>
+Molar gas volume = 35.8 / 1.48 &times; 10&#8315;&sup3; = 2.42 &times; 10&#8308; cm&sup3; mol&#8315;&#185; = <strong>24.2 dm&sup3; mol&#8315;&#185;</strong>, close to the expected 24.0 dm&sup3; mol&#8315;&#185; at RTP.</div>
+
+</div>
+
+<!-- PAG2 -->
+<div class="practical-card" id="pag2">
+<h2>&#9879; PAG2: Acid&#8211;Base Titration</h2>
 
 <svg viewBox="0 0 420 340" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
   <!-- Burette -->
@@ -113,9 +213,11 @@
 
 <h3>Method</h3>
 <ol>
+  <li><strong>Standard solution:</strong> Weigh the solid accurately (weigh the boat before and after transfer), dissolve in distilled water in a beaker, transfer with rinsings to a 250 cm³ volumetric flask, make up to the mark (bottom of meniscus at eye level) and invert to mix.</li>
   <li><strong>Acid-base:</strong> Pipette 25.0 cm³ of one solution into a conical flask. Add indicator. Titrate from the burette until permanent colour change. Repeat for concordant results (within 0.10 cm³).</li>
   <li><strong>Back titration:</strong> React the sample with known excess of reagent. Titrate the remaining unreacted reagent. Calculate original amount by difference. Useful when the analyte is insoluble (e.g., CaCO₃ in antacid tablets).</li>
-  <li><strong>Redox (KMnO₄):</strong> Pipette acidified Fe²⁺ into flask. Titrate with KMnO₄ until permanent faint pink (self-indicating). Use H₂SO₄ to acidify (not HCl or HNO₃).</li>
+  <li><strong>Indicator choice:</strong> strong acid/strong base &mdash; methyl orange or phenolphthalein; strong acid/weak base (e.g. HCl with NaHCO₃) &mdash; methyl orange; weak acid/strong base &mdash; phenolphthalein.</li>
+  <li><strong>Extension &mdash; Redox (KMnO₄):</strong> redox titrations use the same technique and are examinable, but PAG2 itself is an acid&ndash;base titration. Pipette acidified Fe²⁺ into flask. Titrate with KMnO₄ until permanent faint pink (self-indicating). Use H₂SO₄ to acidify (not HCl or HNO₃).</li>
   <li>Calculate using n = cV and stoichiometric ratios from balanced equations.</li>
 </ol>
 
@@ -133,6 +235,7 @@
 <h3>Error Analysis</h3>
 <table>
   <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Standard solution not made up exactly to the mark</td><td>Systematic</td><td>Rinse all solid into the flask; add the last drops with a dropping pipette</td></tr>
   <tr><td>Overshooting end point</td><td>Systematic</td><td>Add drop-wise near end point</td></tr>
   <tr><td>Parallax reading burette</td><td>Random</td><td>Eye level; bottom of meniscus (top for KMnO₄)</td></tr>
   <tr><td>Not rinsing burette correctly</td><td>Systematic</td><td>Rinse with solution to be used</td></tr>
@@ -142,17 +245,17 @@
 <div class="exam-tip"><strong>Exam Tip:</strong> For back titrations, always set up the calculation as: moles reacted with analyte = total moles added &minus; moles determined by titration. Common example: finding % CaCO&#8323; in limestone &mdash; add excess HCl, then titrate remaining HCl with NaOH.</div>
 
 <div class="worked-example"><strong>Worked Example &mdash; Back Titration:</strong><br><br>
-1.50 g of impure CaCO&#8323; was dissolved in 50.0 cm&sup3; of 1.00 mol dm&#8315;&sup3; HCl (excess). The remaining HCl required 24.8 cm&sup3; of 0.500 mol dm&#8315;&sup3; NaOH to neutralise it.<br><br>
+1.50 g of impure CaCO&#8323; was dissolved in 50.0 cm&sup3; of 1.00 mol dm&#8315;&sup3; HCl (excess). The remaining HCl required 23.05 cm&sup3; of 1.00 mol dm&#8315;&sup3; NaOH to neutralise it.<br><br>
 n(HCl total) = 1.00 &times; 0.0500 = 0.0500 mol<br>
-n(NaOH) = 0.500 &times; 0.0248 = 0.0124 mol = n(HCl remaining)<br>
-n(HCl reacted with CaCO&#8323;) = 0.0500 &minus; 0.0124 = 0.0376 mol<br>
-n(CaCO&#8323;) = 0.0376 / 2 = 0.0188 mol (from CaCO&#8323; + 2HCl equation)<br>
-Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Check: the CaCO&#8323; is impure, so the actual pure CaCO&#8323; mass = 0.0188 &times; 100.1 = 1.88 g &mdash; this exceeds the sample mass, indicating an error. Recalculating with correct titre would give a realistic % purity.</div>
+n(NaOH) = 1.00 &times; 0.02305 = 0.02305 mol = n(HCl remaining)<br>
+n(HCl reacted with CaCO&#8323;) = 0.0500 &minus; 0.02305 = 0.02695 mol<br>
+n(CaCO&#8323;) = 0.02695 / 2 = 0.01348 mol (CaCO&#8323; + 2HCl &rarr; CaCl&#8322; + H&#8322;O + CO&#8322;)<br>
+Mass CaCO&#8323; = 0.01348 &times; 100.1 = 1.349 g &rarr; percentage purity = (1.349 / 1.50) &times; 100 = <strong>89.9%</strong></div>
 </div>
 
-<!-- P2 -->
-<div class="practical-card" id="p2">
-<h2>&#9879; 2: Enthalpy Determination by Calorimetry</h2>
+<!-- PAG3 -->
+<div class="practical-card" id="pag3">
+<h2>&#9879; PAG3: Enthalpy Determination</h2>
 
 <svg viewBox="0 0 460 300" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
   <!-- Method A: Neutralisation (cup) -->
@@ -231,74 +334,9 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
 
 </div>
 
-<!-- P3 -->
-<div class="practical-card" id="p3">
-<h2>&#9879; 3: Rates of Reaction</h2>
-
-<svg viewBox="0 0 480 260" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
-  <!-- Continuous monitoring -->
-  <text x="130" y="25" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Continuous Monitoring</text>
-  <polygon points="50,180 120,180 110,130 60,130" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
-  <rect x="75" y="116" width="16" height="16" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
-  <path d="M91,120 L120,105 L200,105" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
-  <rect x="200" y="93" width="100" height="22" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
-  <text x="250" y="85" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Gas syringe</text>
-  <text x="85" y="200" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">CaCO₃+HCl</text>
-
-  <!-- Initial rates -->
-  <text x="390" y="25" font-size="11" fill="#D97706" font-family="system-ui" text-anchor="middle" font-weight="600">Initial Rates</text>
-  <!-- Iodine clock flasks -->
-  <rect x="340" y="60" width="40" height="45" fill="#1a1a2e" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1" rx="3"/>
-  <rect x="400" y="60" width="40" height="45" fill="#1a1a2e" fill-opacity="0.2" stroke="#1a73e8" stroke-width="1" rx="3"/>
-  <text x="360" y="120" font-size="8" fill="#DC2626" font-family="system-ui" text-anchor="middle">Fast</text>
-  <text x="420" y="120" font-size="8" fill="#1a73e8" font-family="system-ui" text-anchor="middle">Slow</text>
-  <text x="390" y="140" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Iodine clock</text>
-  <text x="390" y="155" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Rate = 1/t</text>
-
-  <!-- Graph -->
-  <rect x="30" y="210" width="420" height="40" fill="#fff8e1" stroke="#D97706" stroke-width="1" rx="6"/>
-  <text x="240" y="232" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Plot: Vol vs time (continuous) | Rate vs [conc] (initial rates) → find order</text>
-</svg>
-
-<h3>Apparatus</h3>
-<ul>
-  <li><strong>Continuous:</strong> Conical flask, gas syringe, delivery tube, stopwatch, measuring cylinder</li>
-  <li><strong>Initial rates:</strong> Beakers/flasks, stopwatch, measuring cylinders, iodine clock reagents + starch</li>
-</ul>
-
-<h3>Method</h3>
-<ol>
-  <li><strong>Continuous monitoring:</strong> Collect gas at timed intervals from a reaction (e.g., CaCO₃ + HCl). Plot volume vs. time. Initial rate = gradient at t = 0.</li>
-  <li><strong>Initial rates (iodine clock):</strong> Vary [one reactant], keep total volume constant. Time the colour change. Rate = 1/t. Plot rate vs. [varied species] to determine order.</li>
-  <li>Repeat with temperature variation to investigate Arrhenius relationship.</li>
-</ol>
-
-<h3>Safety</h3>
-<ul>
-  <li>HCl is irritant — goggles.</li>
-  <li>SO₂ from thiosulfate reactions — ventilation.</li>
-</ul>
-
-<h3>Analysis</h3>
-<p><strong>Continuous:</strong> Tangent at t = 0 gives initial rate. Compare different conditions.</p>
-<p><strong>Initial rates:</strong> Rate vs. [X]: straight line through origin = 1st order; parabola = 2nd order.</p>
-<p><strong>Arrhenius:</strong> ln(rate) vs. 1/T gives straight line; gradient = -Eₐ/R.</p>
-
-<h3>Error Analysis</h3>
-<table>
-  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-  <tr><td>Gas lost before sealing</td><td>Systematic</td><td>Seal quickly</td></tr>
-  <tr><td>Subjective colour change</td><td>Random</td><td>Same observer; colorimeter</td></tr>
-  <tr><td>Temperature variation</td><td>Systematic</td><td>Thermostatted water bath</td></tr>
-  <tr><td>Volume measurement error</td><td>Random</td><td>Use burettes for better precision</td></tr>
-</table>
-
-<div class="exam-tip"><strong>Exam Tip:</strong> To determine order from initial rate data: if doubling [X] doubles rate, the reaction is first order in X. If doubling [X] quadruples rate, it is second order. Zero order means the rate is unaffected by changing [X]. The overall order is the sum of individual orders.</div>
-</div>
-
-<!-- P4 -->
-<div class="practical-card" id="p4">
-<h2>&#9879; 4: Qualitative Analysis</h2>
+<!-- PAG4 -->
+<div class="practical-card" id="pag4">
+<h2>&#9879; PAG4: Qualitative Analysis of Ions</h2>
 
 <svg viewBox="0 0 480 230" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
   <!-- Flame tests -->
@@ -335,18 +373,20 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
 <h3>Apparatus</h3>
 <ul>
   <li>Test tubes, nichrome wire, Bunsen burner</li>
-  <li>NaOH(aq), NH₃(aq), AgNO₃(aq), BaCl₂(aq), dilute HNO₃, HCl</li>
+  <li>NaOH(aq), NH₃(aq), AgNO₃(aq), BaCl₂(aq) or Ba(NO₃)₂(aq), dilute HNO₃, HCl, Devarda's alloy</li>
   <li>Limewater, litmus paper</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
   <li><strong>Flame tests:</strong> Clean wire → dip in sample → observe colour in Bunsen flame.</li>
-  <li><strong>Cation tests:</strong> Add NaOH — observe precipitate colour and behaviour in excess.</li>
+  <li><strong>Cation tests:</strong> Add NaOH(aq) dropwise, then in excess — observe precipitate colour and whether it redissolves (e.g. Cu²⁺ blue, Fe²⁺ green, Fe³⁺ orange-brown; Zn²⁺, Al³⁺ and Pb²⁺ white precipitates that dissolve in excess NaOH).</li>
   <li><strong>Halide tests:</strong> Acidify with HNO₃, add AgNO₃. Confirm with NH₃: AgCl dissolves in dilute NH₃, AgBr in concentrated NH₃, AgI does not dissolve.</li>
   <li><strong>Sulfate:</strong> Acidify with HNO₃, add BaCl₂ → white precipitate.</li>
-  <li><strong>Carbonate:</strong> Add HCl → effervescence, gas turns limewater milky.</li>
+  <li><strong>Carbonate:</strong> Add dilute HNO₃ (not HCl if you will test the same sample for halides) → effervescence, gas turns limewater milky.</li>
   <li><strong>Ammonium:</strong> Add NaOH, warm → NH₃ turns damp red litmus blue.</li>
+  <li><strong>Nitrate(V):</strong> Warm with NaOH(aq) and Devarda's alloy → NH₃ given off (turns damp red litmus blue).</li>
+  <li><strong>Sensible order on one sample:</strong> carbonate, then sulfate, then halide &mdash; BaCO₃ is insoluble and Ag₂SO₄ is only slightly soluble, so either could give a false positive; use Ba(NO₃)₂ rather than BaCl₂ if the halide test follows.</li>
 </ol>
 
 <h3>Safety</h3>
@@ -370,9 +410,9 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
 <div class="exam-tip"><strong>Exam Tip:</strong> To distinguish between halide silver precipitates further: add dilute NH₃ — AgCl dissolves (soluble complex forms); add conc. NH₃ — AgBr dissolves. AgI does not dissolve in either. This is a common extension question.</div>
 </div>
 
-<!-- P5 -->
-<div class="practical-card" id="p5">
-<h2>&#9879; 5: Organic Preparation</h2>
+<!-- PAG5 -->
+<div class="practical-card" id="pag5">
+<h2>&#9879; PAG5: Synthesis of an Organic Liquid</h2>
 
 <svg viewBox="0 0 500 260" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
   <!-- Process flow -->
@@ -434,17 +474,17 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
   <li>Round-bottomed flask, anti-bumping granules</li>
   <li>Reflux condenser (vertical) and distillation condenser (angled)</li>
   <li>Separating funnel, conical flask</li>
-  <li>Drying agent (anhydrous MgSO₄ or Na₂SO₄)</li>
-  <li>Buchner funnel + vacuum pump (for solids)</li>
-  <li>Melting point apparatus, thermometer</li>
+  <li>Drying agent (anhydrous MgSO₄, Na₂SO₄ or CaCl₂)</li>
+  <li>Thermometer for the still head; electric heating mantle</li>
+  <li>Example reagents (haloalkane): butan-1-ol, sodium bromide, concentrated sulfuric acid, sodium hydrogencarbonate solution</li>
 </ul>
 
-<h3>Method</h3>
+<h3>Method (e.g. 1-bromobutane from butan-1-ol)</h3>
 <ol>
-  <li><strong>Reaction:</strong> Heat reaction mixture under reflux for the required time.</li>
-  <li><strong>Separation (liquids):</strong> Distil to collect crude product. Wash in separating funnel with Na₂CO₃ (removes acid) then water. Dry with anhydrous drying agent. Filter. Redistil at correct boiling point.</li>
-  <li><strong>Purification (solids):</strong> Dissolve crude solid in minimum hot solvent. Hot filter. Cool to crystallise. Buchner filter. Wash with cold solvent. Dry.</li>
-  <li><strong>Test purity:</strong> Melting point (solids — sharp mp = pure) or boiling point (liquids).</li>
+  <li><strong>Reaction:</strong> Heat butan-1-ol with sodium bromide and concentrated sulfuric acid (which generate HBr) under reflux, with anti-bumping granules.</li>
+  <li><strong>Separation:</strong> Distil to collect the crude product. Wash in a separating funnel with water, then sodium hydrogencarbonate solution (removes acid; vent often), then water. 1-bromobutane is denser than water, so keep the <em>lower</em> layer.</li>
+  <li><strong>Drying:</strong> Add anhydrous drying agent until the liquid is clear. Decant or filter.</li>
+  <li><strong>Purification:</strong> Redistil, collecting the fraction that boils close to the data-book value (about 100&ndash;104 &#176;C).</li>
   <li>Calculate percentage yield.</li>
 </ol>
 
@@ -453,6 +493,7 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
   <li>Organic chemicals are flammable — electric heating, no flames.</li>
   <li>Work in fume cupboard.</li>
   <li>Vent separating funnel to release pressure.</li>
+  <li>Concentrated sulfuric acid is corrosive — add slowly with cooling. A written risk assessment is part of this PAG.</li>
 </ul>
 
 <h3>Analysis</h3>
@@ -463,17 +504,110 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
   <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
   <tr><td>Product lost in transfers</td><td>Systematic</td><td>Minimise transfers; rinse with small amounts</td></tr>
   <tr><td>Incomplete reaction</td><td>Systematic</td><td>Reflux longer; use excess reagent</td></tr>
-  <tr><td>Product still wet</td><td>Systematic</td><td>Dry thoroughly; use desiccator</td></tr>
+  <tr><td>Product still wet (cloudy)</td><td>Systematic</td><td>Add more drying agent until the liquid is clear</td></tr>
   <tr><td>Wrong fraction collected</td><td>Systematic</td><td>Monitor thermometer; collect narrow range</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> Always explain the purpose of each step: reflux = complete reaction; distillation = separate by boiling point; washing with Na&#8322;CO&#8323; = removes acidic impurities; drying agent = removes water; recrystallisation = removes soluble impurities from solid. Each step reduces yield, so high yields require careful technique.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> Always explain the purpose of each step: reflux = complete reaction; distillation = separate by boiling point; washing with NaHCO&#8323; (or Na&#8322;CO&#8323;) = removes acidic impurities; drying agent = removes water; redistillation = purifies the product, collected at its boiling point. Never heat a sealed system. Each step reduces yield, so high yields require careful technique.</div>
 
 </div>
 
-<!-- P6 -->
-<div class="practical-card" id="p6">
-<h2>&#9879; 6: Functional Group Identification Tests</h2>
+<!-- PAG6 -->
+<div class="practical-card" id="pag6">
+<h2>&#9879; PAG6: Synthesis of an Organic Solid</h2>
+
+<svg viewBox="0 0 500 270" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Buchner filtration -->
+  <text x="90" y="25" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Buchner filtration</text>
+  <path d="M55,50 L125,50 L118,80 L62,80 Z" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="62" y1="70" x2="118" y2="70" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="85" y="80" width="10" height="30" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1.5"/>
+  <polygon points="45,190 135,190 120,120 60,120" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="78" y="108" width="24" height="14" fill="#666" rx="2"/>
+  <path d="M120,140 L160,140" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="165" y="144" font-size="9" fill="#1a1a2e" font-family="system-ui">to vacuum</text>
+  <text x="90" y="210" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Crystals collect on filter paper</text>
+
+  <!-- Melting point -->
+  <text x="290" y="25" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Melting point</text>
+  <rect x="255" y="45" width="70" height="120" fill="#e0e7ef" stroke="#1a73e8" stroke-width="2" rx="6"/>
+  <rect x="278" y="38" width="4" height="60" fill="#D97706" stroke="#b45309" stroke-width="0.5" rx="1"/>
+  <rect x="292" y="38" width="4" height="90" fill="#DC2626" fill-opacity="0.5" stroke="#DC2626" stroke-width="0.5" rx="1"/>
+  <text x="290" y="185" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Sharp mp at 135&#8211;136 &#176;C</text>
+  <text x="290" y="199" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">= pure aspirin</text>
+
+  <!-- TLC -->
+  <text x="430" y="25" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">TLC check</text>
+  <rect x="395" y="40" width="70" height="140" fill="white" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="395" y1="165" x2="465" y2="165" stroke="#1a1a2e" stroke-width="0.8" stroke-dasharray="4,3"/>
+  <line x1="395" y1="55" x2="465" y2="55" stroke="#16A34A" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="410" cy="95" r="4" fill="#1a73e8" fill-opacity="0.5"/>
+  <circle cx="430" cy="95" r="4" fill="#1a73e8" fill-opacity="0.5"/>
+  <circle cx="450" cy="120" r="4" fill="#DC2626" fill-opacity="0.5"/>
+  <text x="410" y="195" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">P</text>
+  <text x="430" y="195" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">A</text>
+  <text x="450" y="195" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">S</text>
+  <text x="430" y="210" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">P = product, A = pure aspirin,</text>
+  <text x="430" y="222" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">S = salicylic acid</text>
+
+  <rect x="30" y="237" width="440" height="26" fill="#fff8e1" stroke="#D97706" stroke-width="1" rx="6"/>
+  <text x="250" y="254" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">React &#8594; Crystallise &#8594; Filter &#8594; Recrystallise &#8594; Dry &#8594; Melting point &amp; TLC</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Conical flask or pear-shaped flask (with reflux condenser if heating for longer), water bath or electric heater</li>
+  <li>Salicylic acid (2-hydroxybenzoic acid), ethanoic anhydride, a few drops of concentrated phosphoric(V) or sulfuric acid as catalyst</li>
+  <li>Buchner funnel, filter flask, filter paper, vacuum pump; ice bath</li>
+  <li>Solvent for recrystallisation (e.g. hot water or an ethanol&#8211;water mixture)</li>
+  <li>Melting point apparatus and capillary tubes</li>
+  <li>TLC plate, developing chamber, capillary spotters, UV lamp</li>
+</ul>
+
+<h3>Method (Synthesis of Aspirin)</h3>
+<ol>
+  <li>Weigh about 2 g of salicylic acid accurately into a dry flask. Add excess ethanoic anhydride (about 4 cm&#179;) in a fume cupboard, then a few drops of the acid catalyst.</li>
+  <li>Warm in a water bath at roughly 80&#8211;90 &#176;C for 10&#8211;15 minutes, swirling, until all the solid has dissolved. (Heating under reflux can be used instead; reflux may be covered in either PAG5 or PAG6.)</li>
+  <li>Carefully add cold water to hydrolyse the excess ethanoic anhydride, then cool the flask in an ice bath to crystallise the crude aspirin.</li>
+  <li>Collect the crystals by suction filtration using a Buchner funnel. Wash with a little ice-cold water.</li>
+  <li><strong>Recrystallise:</strong> dissolve the crude solid in the minimum volume of hot solvent, filter while hot if there are insoluble impurities, then cool slowly so that pure crystals form and soluble impurities stay in solution. Filter again under reduced pressure, wash with a little cold solvent, and dry (e.g. between filter papers or in a desiccator).</li>
+  <li>Weigh the dry product and calculate the percentage yield.</li>
+  <li><strong>Check purity:</strong> measure the melting point range and compare with the data-book value (about 136 &#176;C). Run a TLC plate spotted with the product, pure aspirin and salicylic acid.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Ethanoic anhydride is corrosive and its vapour is irritating to the eyes and lungs &#8212; dispense in a fume cupboard.</li>
+  <li>Concentrated phosphoric(V)/sulfuric acid is corrosive &#8212; goggles and gloves.</li>
+  <li>Ethanol (if used in recrystallisation) is flammable &#8212; heat with a water bath or electric heater, not a flame.</li>
+  <li>A written risk assessment is part of this PAG: identify each hazard, the risk and how it is controlled.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Calculate:</strong> Percentage yield = (actual mass / theoretical mass) &times; 100, using the limiting reagent (salicylic acid; ethanoic anhydride is in excess).</p>
+<p><strong>Purity:</strong> A pure solid melts sharply (over 1&#8211;2 &#176;C) at the data-book value. On the TLC plate, a pure product gives a single spot at the same R<sub>f</sub> as pure aspirin; a spot matching salicylic acid shows unreacted starting material.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Too much solvent used in recrystallisation</td><td>Systematic</td><td>Use the minimum volume of hot solvent so less product stays dissolved</td></tr>
+  <tr><td>Product lost during transfers and filtration</td><td>Systematic</td><td>Minimise transfers; rinse with small amounts of ice-cold solvent</td></tr>
+  <tr><td>Wet product (mass too high; mp lowered)</td><td>Systematic</td><td>Dry thoroughly; dry to constant mass</td></tr>
+  <tr><td>Heating melting point apparatus too quickly</td><td>Systematic</td><td>Heat slowly (about 1&#8211;2 &#176;C per minute) near the expected mp</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Be ready to explain each recrystallisation step: <em>minimum</em> hot solvent (so the product crystallises on cooling), hot filtration (removes insoluble impurities), slow cooling (purer, larger crystals), cold-solvent wash (removes soluble impurities on the crystal surface without redissolving much product). Impurities <em>lower and broaden</em> the melting point range.</div>
+
+<div class="worked-example"><strong>Worked Example &mdash; Percentage Yield:</strong><br><br>
+A student prepared aspirin from 2.00 g of salicylic acid. The theoretical yield is 2.61 g. The actual yield after purification was 1.85 g.<br><br>
+Percentage yield = (1.85 / 2.61) &times; 100 = <strong>70.9%</strong><br><br>
+This is a typical yield for a lab preparation. Losses occur during transfer, filtration, washing, and recrystallisation.</div>
+
+</div>
+
+<!-- PAG7 -->
+<div class="practical-card" id="pag7">
+<h2>&#9879; PAG7: Qualitative Analysis of Organic Functional Groups</h2>
 
 <svg viewBox="0 0 480 210" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
   <!-- Test summary boxes -->
@@ -488,9 +622,9 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
   <text x="230" y="72" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Fehling's → red ppt</text>
 
   <rect x="315" y="20" width="145" height="70" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1" rx="6"/>
-  <text x="387" y="40" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Carbonyl (C=O)</text>
-  <text x="387" y="57" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">2,4-DNP → orange ppt</text>
-  <text x="387" y="72" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">(aldehydes + ketones)</text>
+  <text x="387" y="40" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Amine (–NH₂)</text>
+  <text x="387" y="57" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Indicator paper</text>
+  <text x="387" y="72" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Alkaline solution</text>
 
   <rect x="15" y="105" width="130" height="70" fill="#fff8e1" stroke="#D97706" stroke-width="1" rx="6"/>
   <text x="80" y="125" font-size="9" fill="#D97706" font-family="system-ui" text-anchor="middle" font-weight="600">Alcohol (OH)</text>
@@ -503,9 +637,9 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
   <text x="230" y="157" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Limewater goes milky</text>
 
   <rect x="315" y="105" width="145" height="70" fill="#fff8e1" stroke="#D97706" stroke-width="1" rx="6"/>
-  <text x="387" y="125" font-size="9" fill="#D97706" font-family="system-ui" text-anchor="middle" font-weight="600">Methyl ketone</text>
-  <text x="387" y="142" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Iodoform (I₂/NaOH)</text>
-  <text x="387" y="157" font-size="8" fill="#D97706" font-family="system-ui" text-anchor="middle">Yellow ppt of CHI₃</text>
+  <text x="387" y="125" font-size="9" fill="#D97706" font-family="system-ui" text-anchor="middle" font-weight="600">Phenol</text>
+  <text x="387" y="142" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Neutral FeCl₃(aq)</text>
+  <text x="387" y="157" font-size="8" fill="#D97706" font-family="system-ui" text-anchor="middle">Purple colour</text>
 
   <text x="240" y="200" font-size="10" fill="#16A34A" font-family="system-ui" text-anchor="middle" font-weight="600">Warm Tollens'/Fehling's/K₂Cr₂O₇ in a water bath at 60-70 °C</text>
 </svg>
@@ -513,18 +647,18 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
 <h3>Apparatus</h3>
 <ul>
   <li>Test tubes, water bath (60-70 °C)</li>
-  <li>Bromine water, Tollens' reagent, Fehling's A+B, 2,4-DNP solution</li>
-  <li>Acidified K₂Cr₂O₇, Na₂CO₃ solution, I₂/NaOH</li>
+  <li>Bromine water, Tollens' reagent, Fehling's A+B</li>
+  <li>Acidified K₂Cr₂O₇, Na₂CO₃ solution, limewater, neutral iron(III) chloride solution, indicator paper</li>
 </ul>
 
 <h3>Method</h3>
 <ol>
   <li><strong>C=C:</strong> Add Br₂(aq) — decolourises = alkene.</li>
   <li><strong>CHO (aldehyde):</strong> Tollens' (silver mirror) or Fehling's (brick-red precipitate).</li>
-  <li><strong>C=O (carbonyl):</strong> 2,4-DNP — orange precipitate = aldehyde or ketone.</li>
   <li><strong>OH (alcohol 1°/2°):</strong> Warm with acidified K₂Cr₂O₇ — orange to green.</li>
   <li><strong>COOH:</strong> Add Na₂CO₃ — effervescence = carboxylic acid.</li>
-  <li><strong>CH₃CO- (methyl ketone):</strong> Iodoform test — yellow precipitate.</li>
+  <li><strong>Phenol:</strong> Neutral FeCl₃(aq) — purple colour. Phenols are weakly acidic (dissolve in NaOH) but do <em>not</em> fizz with Na₂CO₃.</li>
+  <li><strong>Amine:</strong> Solution turns damp indicator paper alkaline (lone pair on N accepts H⁺).</li>
 </ol>
 
 <h3>Safety</h3>
@@ -546,12 +680,12 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
   <tr><td>False positives from contamination</td><td>Systematic</td><td>Run blank tests; use fresh reagents</td></tr>
 </table>
 
-<div class="exam-tip"><strong>Exam Tip:</strong> To distinguish aldehyde from ketone: both give orange ppt with 2,4-DNP, but only aldehydes give a positive Tollens'/Fehling's. Tertiary alcohols do NOT react with K₂Cr₂O₇ (no colour change) because they cannot be oxidised without breaking C-C bonds.</div>
+<div class="exam-tip"><strong>Exam Tip:</strong> To distinguish aldehyde from ketone: only aldehydes give a silver mirror with Tollens' or a red precipitate with Fehling's; ketones give no change. To distinguish a phenol from a carboxylic acid: both are acidic, but only the carboxylic acid fizzes with carbonate, and only the phenol gives a purple colour with neutral FeCl₃. Tertiary alcohols do NOT react with K₂Cr₂O₇ (no colour change) because they cannot be oxidised without breaking C-C bonds.</div>
 </div>
 
-<!-- P7 -->
-<div class="practical-card" id="p7">
-<h2>&#9879; 7: Electrochemical Cells and EMF Measurement</h2>
+<!-- PAG8 -->
+<div class="practical-card" id="pag8">
+<h2>&#9879; PAG8: Electrochemical Cells</h2>
 
 <svg viewBox="0 0 440 240" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
   <!-- Left half-cell -->
@@ -597,6 +731,7 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
   <li>Connect electrodes to the high-resistance voltmeter.</li>
   <li>Record the EMF and note the polarity (which is +, which is -).</li>
   <li>Test multiple metal combinations and compare with E° values.</li>
+  <li>Investigate the effect of concentration: dilute one electrolyte (e.g. the Cu²⁺ solution in a Zn/Cu cell) and record the new cell potential.</li>
 </ol>
 
 <h3>Safety</h3>
@@ -622,9 +757,150 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
 
 </div>
 
-<!-- P8 -->
-<div class="practical-card" id="p8">
-<h2>&#9879; 8: pH Curves and Buffer Solutions</h2>
+<!-- PAG9 -->
+<div class="practical-card" id="pag9">
+<h2>&#9879; PAG9: Rates of Reaction &mdash; Continuous Monitoring Method</h2>
+
+<svg viewBox="0 0 480 260" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Continuous monitoring -->
+  <text x="130" y="25" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Continuous Monitoring</text>
+  <polygon points="50,180 120,180 110,130 60,130" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="75" y="116" width="16" height="16" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <path d="M91,120 L120,105 L200,105" fill="none" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="200" y="93" width="100" height="22" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
+  <text x="250" y="85" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Gas syringe</text>
+  <text x="85" y="200" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">CaCO₃+HCl</text>
+
+  <!-- Graph -->
+  <rect x="30" y="210" width="420" height="40" fill="#fff8e1" stroke="#D97706" stroke-width="1" rx="6"/>
+  <text x="240" y="232" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Plot volume vs time | tangent gradient = rate | constant half-life = 1st order</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li><strong>Continuous:</strong> Conical flask, gas syringe, delivery tube, stopwatch, measuring cylinder</li>
+  <li><strong>Alternatives:</strong> top-pan balance (mass of CO₂ lost) or colorimeter with data logger (colour change)</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li><strong>Continuous monitoring:</strong> Collect gas at timed intervals from a reaction (e.g., CaCO₃ + HCl). Plot volume vs. time. Initial rate = gradient at t = 0.</li>
+  <li>Take readings at regular intervals (e.g. every 30 s) until the reaction stops, keeping the temperature constant.</li>
+  <li>Convert readings into the amount of reactant remaining (proportional to V<sub>final</sub> &minus; V) and plot concentration against time to find half-lives.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>HCl is irritant — goggles.</li>
+  <li>Acid spray — use a cotton wool plug if measuring mass loss.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Continuous:</strong> Tangent at t = 0 gives initial rate. Compare different conditions.</p>
+<p><strong>Half-life:</strong> Constant successive half-lives = first order; then k = ln 2 / t<sub>&frac12;</sub>. A straight-line concentration&ndash;time graph = zero order.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Gas lost before sealing</td><td>Systematic</td><td>Seal quickly</td></tr>
+  <tr><td>Reading syringe and clock at the same moment</td><td>Random</td><td>Two people, or use a data logger</td></tr>
+  <tr><td>Temperature variation</td><td>Systematic</td><td>Thermostatted water bath</td></tr>
+  <tr><td>Volume measurement error</td><td>Random</td><td>Use burettes for better precision</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Continuous monitoring follows one reaction mixture all the way through, so a single run gives a whole concentration&ndash;time curve. Draw tangents to find the rate at any time. For a first-order reaction the half-life is constant and does not depend on the starting concentration, so measuring two or three successive half-lives is a quick check of order.</div>
+</div>
+
+<!-- PAG10 -->
+<div class="practical-card" id="pag10">
+<h2>&#9879; PAG10: Rates of Reaction &mdash; Initial Rates Method</h2>
+
+<svg viewBox="0 0 480 270" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <!-- Clock reaction flasks -->
+  <text x="110" y="25" font-size="11" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Iodine clock</text>
+  <polygon points="30,130 90,130 80,85 40,85" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="52" y="72" width="16" height="14" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <polygon points="33,126 87,126 79,92 41,92" fill="#e0e7ef" fill-opacity="0.2"/>
+  <text x="60" y="148" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">t = 0: colourless</text>
+  <path d="M100,105 L125,105" fill="none" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arr10)"/>
+  <polygon points="130,130 190,130 180,85 140,85" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
+  <rect x="152" y="72" width="16" height="14" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
+  <polygon points="133,126 187,126 179,92 141,92" fill="#1e3a8a" fill-opacity="0.6"/>
+  <text x="160" y="148" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">time t: blue-black</text>
+  <defs><marker id="arr10" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0 0,6 2,0 4" fill="#1a1a2e"/></marker></defs>
+  <text x="110" y="172" font-size="10" fill="#16A34A" font-family="system-ui" text-anchor="middle" font-weight="600">Initial rate &#8733; 1/t</text>
+
+  <!-- Rate-concentration graphs -->
+  <rect x="250" y="20" width="210" height="165" fill="white" stroke="#1a73e8" stroke-width="1" rx="4"/>
+  <text x="355" y="38" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Initial rate vs concentration</text>
+  <line x1="270" y1="165" x2="270" y2="50" stroke="#1a1a2e" stroke-width="0.8"/>
+  <line x1="270" y1="165" x2="445" y2="165" stroke="#1a1a2e" stroke-width="0.8"/>
+  <line x1="270" y1="130" x2="440" y2="130" stroke="#16A34A" stroke-width="1.5"/>
+  <line x1="270" y1="165" x2="440" y2="80" stroke="#1a73e8" stroke-width="1.5"/>
+  <path d="M270,165 Q380,160 430,55" fill="none" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="440" y="126" font-size="8" fill="#16A34A" font-family="system-ui" text-anchor="end">zero order</text>
+  <text x="440" y="92" font-size="8" fill="#1a73e8" font-family="system-ui" text-anchor="end">first order</text>
+  <text x="425" y="52" font-size="8" fill="#DC2626" font-family="system-ui" text-anchor="end">second order</text>
+  <text x="258" y="110" font-size="8" fill="#1a1a2e" font-family="system-ui">rate</text>
+  <text x="357" y="178" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">[reactant]</text>
+
+  <rect x="30" y="205" width="430" height="50" fill="#fff8e1" stroke="#D97706" stroke-width="1" rx="6"/>
+  <text x="245" y="225" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Change ONE concentration at a time; keep total volume and temperature constant</text>
+  <text x="245" y="243" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">rate = k[A]&#8319;[B]&#7504;  &#8594;  k = rate / ([A]&#8319;[B]&#7504;)</text>
+</svg>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Conical flasks or boiling tubes, burettes or graduated pipettes for each solution</li>
+  <li>Stopwatch; thermometer; water baths (for the temperature extension)</li>
+  <li><strong>Iodine clock:</strong> potassium iodide, dilute sulfuric acid, hydrogen peroxide, sodium thiosulfate (small fixed amount), starch solution, distilled water</li>
+  <li><strong>Temperature extension:</strong> sodium thiosulfate and dilute hydrochloric acid, paper marked with a cross</li>
+  <li>Spreadsheet software to process the results</li>
+</ul>
+
+<h3>Method</h3>
+<ol>
+  <li>Mix fixed volumes of KI(aq), H&#8322;SO&#8324;(aq), Na&#8322;S&#8322;O&#8323;(aq) and starch in a flask. Add the H&#8322;O&#8322;(aq) last and start the stopwatch immediately.</li>
+  <li>The iodine formed (H&#8322;O&#8322; + 2I&#8315; + 2H&#8314; &#8594; I&#8322; + 2H&#8322;O) is immediately turned back into I&#8315; by the thiosulfate. When all the thiosulfate has been used, free I&#8322; appears and the starch suddenly turns blue-black. Record this time, t.</li>
+  <li>Repeat with different volumes of KI(aq), making up the difference with distilled water so that the <strong>total volume stays the same</strong> and only [I&#8315;] changes.</li>
+  <li>Repeat the series varying [H&#8322;O&#8322;] and then [H&#8314;] in the same way, each time keeping the other concentrations fixed.</li>
+  <li>Carry out each run at the same temperature (measure it) and repeat runs to check reliability.</li>
+  <li><strong>Temperature extension:</strong> time the disappearance of a cross under a flask of Na&#8322;S&#8322;O&#8323;(aq) + HCl(aq) at several temperatures, keeping all volumes and concentrations the same.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Dilute sulfuric acid and hydrochloric acid are irritants &#8212; goggles.</li>
+  <li>Hydrogen peroxide is an irritant/oxidiser &#8212; avoid skin contact.</li>
+  <li>The thiosulfate/acid reaction releases SO&#8322; &#8212; work in a well-ventilated room and dispose of the mixture promptly; take care if you have asthma.</li>
+  <li>Hot water baths &#8212; care with scalds.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Orders:</strong> Because the same small amount of I&#8322; is formed before the colour appears, the initial rate &#8733; 1/t. Plot 1/t against the concentration you varied: a horizontal line = zero order, a straight line through the origin = first order, an upward curve = second order (confirm by plotting 1/t against concentration&sup2;). Alternatively plot log(rate) against log(concentration): the gradient is the order.</p>
+<p><strong>Rate constant:</strong> Once the orders are known, substitute an initial rate and the concentrations into the rate equation to find k, and work out its units.</p>
+<p><strong>Temperature:</strong> Plot ln(1/t) (&#8733; ln k) against 1/T (T in K). The gradient = &minus;E&#8336;/R, so E&#8336; = &minus;gradient &times; 8.314.</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Judging the exact moment of colour change</td><td>Random</td><td>Same observer; white background; repeat and average; use a colorimeter/light sensor</td></tr>
+  <tr><td>Delay between mixing and starting the clock</td><td>Random</td><td>Add the last reagent quickly and start timing at the same moment</td></tr>
+  <tr><td>Total volume not kept constant</td><td>Systematic</td><td>Make up each run to the same total volume with distilled water</td></tr>
+  <tr><td>Temperature varies between runs</td><td>Systematic</td><td>Use a thermostatted water bath; pre-equilibrate the solutions</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> 1/t is only a fair measure of the <em>initial</em> rate if the reaction has gone only a small way when the colour appears &mdash; that is why only a small, fixed amount of thiosulfate is used. Always state that you keep the concentrations of the other reactants, the total volume and the temperature constant. The units of k depend on the overall order: for rate = k[A][B], k has units dm&sup3; mol&#8315;&sup1; s&#8315;&sup1;.</div>
+
+<div class="worked-example"><strong>Worked Example &mdash; Finding an Order:</strong><br><br>
+Doubling [I&#8315;] (all else constant) changes the time from 84 s to 42 s, so 1/t (the initial rate) doubles &rarr; the reaction is <strong>first order with respect to I&#8315;</strong>.<br><br>
+Doubling [H&#8314;] leaves the time unchanged at 84 s &rarr; <strong>zero order with respect to H&#8314;</strong> (H&#8314; does not appear in the rate equation).</div>
+
+</div>
+
+<!-- PAG11 -->
+<div class="practical-card" id="pag11">
+<h2>&#9879; PAG11: pH Measurement</h2>
 
 <svg viewBox="0 0 480 280" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
   <!-- Burette -->
@@ -673,9 +949,17 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
   <li>Beaker with acid (or base)</li>
   <li>Magnetic stirrer</li>
   <li>Buffer solutions for calibration</li>
+  <li>Unknown solutions of equal concentration (e.g. 0.100 mol dm⁻³ strong acid, weak acid, strong base, weak base, neutral salt)</li>
 </ul>
 
-<h3>Method</h3>
+<h3>Method (A — Identifying Unknown Solutions)</h3>
+<ol>
+  <li>Calibrate the pH meter with standard buffers; rinse the probe with distilled water between samples.</li>
+  <li>Measure the pH of each unknown (all the same concentration). At 0.100 mol dm⁻³: strong acid pH 1.0, weak acid roughly 2&ndash;4, neutral salt about 7, weak base roughly 10&ndash;12, strong base 13.0.</li>
+  <li>For a weak acid, use [H⁺] = 10<sup>&minus;pH</sup> and K<sub>a</sub> = [H⁺]&sup2;/[HA] to estimate K<sub>a</sub>.</li>
+</ol>
+
+<h3>Method (B — pH Curve and Buffers)</h3>
 <ol>
   <li>Calibrate pH meter with standard buffers.</li>
   <li>Pipette 25.0 cm³ of acid into beaker. Record initial pH.</li>
@@ -708,9 +992,88 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
 <div class="exam-tip"><strong>Exam Tip:</strong> For weak acid + strong base: initial pH > 1 (partially dissociated), buffer region before equivalence, equivalence pH > 7, half-equivalence pH = pKₐ. The buffer region exists because both HA and A⁻ are present in significant quantities. Use phenolphthalein for this combination.</div>
 </div>
 
-<!-- P9 -->
-<div class="practical-card" id="p9">
-<h2>&#9879; 9: Colorimetry and Transition Metal Complexes</h2>
+<!-- PAG12 -->
+<div class="practical-card" id="pag12">
+<h2>&#9879; PAG12: Research Skills</h2>
+
+<svg viewBox="0 0 480 200" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
+  <defs><marker id="arr12" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto"><polygon points="0 0,6 2,0 4" fill="#1a1a2e"/></marker></defs>
+  <rect x="15" y="30" width="80" height="44" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1.5" rx="6"/>
+  <text x="55" y="50" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Research</text>
+  <text x="55" y="64" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">online + offline</text>
+  <path d="M95,52 L108,52" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arr12)"/>
+  <rect x="110" y="30" width="80" height="44" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1.5" rx="6"/>
+  <text x="150" y="50" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Plan</text>
+  <text x="150" y="64" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">aim, variables</text>
+  <path d="M190,52 L203,52" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arr12)"/>
+  <rect x="205" y="30" width="80" height="44" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1.5" rx="6"/>
+  <text x="245" y="50" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Risk assess</text>
+  <text x="245" y="64" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">hazards, controls</text>
+  <path d="M285,52 L298,52" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arr12)"/>
+  <rect x="300" y="30" width="80" height="44" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1.5" rx="6"/>
+  <text x="340" y="50" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Carry out</text>
+  <text x="340" y="64" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">trial, then record</text>
+  <path d="M380,52 L393,52" stroke="#1a1a2e" stroke-width="1" marker-end="url(#arr12)"/>
+  <rect x="395" y="30" width="75" height="44" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1.5" rx="6"/>
+  <text x="432" y="50" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Evaluate</text>
+  <text x="432" y="64" font-size="8" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">+ cite sources</text>
+
+  <rect x="30" y="100" width="420" height="80" fill="#fff8e1" stroke="#D97706" stroke-width="1" rx="6"/>
+  <text x="240" y="120" font-size="10" fill="#D97706" font-family="system-ui" text-anchor="middle" font-weight="600">Example question (OCR's suggestion)</text>
+  <text x="240" y="140" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">How long does it take an iron tablet to break down in the stomach?</text>
+  <text x="240" y="160" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Model the stomach with dilute HCl at 37 &#176;C; measure Fe&#178;&#8314; released over time</text>
+</svg>
+
+<p>PAG12 is not a single fixed experiment. It is an open-ended investigation in which you research a question yourself, plan and carry out your own method, and correctly reference the sources you used. It covers the CPAC competency on using online and offline research skills and citing sources.</p>
+
+<h3>Apparatus</h3>
+<ul>
+  <li>Depends on your plan. For the iron tablet example: iron(II) sulfate tablets, dilute HCl (to model stomach acid, pH about 1&#8211;2), a water bath at 37 &#176;C, stirrer, stopwatch, pipettes</li>
+  <li>For analysis of Fe&#178;&#8314;: burette and standard KMnO&#8324;(aq) for redox titration, or a colorimeter with a suitable colour-forming reagent</li>
+  <li>Access to textbooks, journals, reputable websites and data books for research</li>
+</ul>
+
+<h3>Method (Investigative Approach)</h3>
+<ol>
+  <li><strong>Research:</strong> find background information and possible methods from several sources (e.g. textbooks, the CLEAPSS/RSC resources your school uses, scientific articles). Note full details of each source as you go.</li>
+  <li><strong>Plan:</strong> write an aim and a testable question. Identify the independent, dependent and control variables and choose apparatus with suitable resolution.</li>
+  <li><strong>Risk assessment:</strong> list the hazards of each chemical and procedure and how you will reduce the risk.</li>
+  <li><strong>Trial and refine:</strong> carry out a preliminary run to choose sensible quantities and sampling times.</li>
+  <li><strong>Carry out:</strong> e.g. drop a tablet into the acid at 37 &#176;C, withdraw samples at timed intervals, and titrate each with KMnO&#8324;(aq) to find how much Fe&#178;&#8314; has dissolved (for a KMnO&#8324; titration, model the stomach acid with dilute H&#8322;SO&#8324; rather than HCl, because MnO&#8324;&#8315; also oxidises Cl&#8315; ions; or use colorimetry instead). Repeat to check reproducibility.</li>
+  <li><strong>Evaluate and reference:</strong> compare your findings with published information and cite every source you used in a consistent referencing style.</li>
+</ol>
+
+<h3>Safety</h3>
+<ul>
+  <li>Your own written risk assessment must be checked by your teacher before you start.</li>
+  <li>Dilute HCl and KMnO&#8324; are irritants &#8212; goggles; KMnO&#8324; is an oxidiser and stains.</li>
+  <li>Iron tablets must not be taken internally or removed from the lab.</li>
+</ul>
+
+<h3>Analysis</h3>
+<p><strong>Process data:</strong> plot the amount of Fe&#178;&#8314; released against time and find when release is complete (or 50% complete). Comment on the uncertainty in each measurement.</p>
+<p><strong>Referencing:</strong> for each source give the author(s), title, publisher or website, year and (for web sources) the URL and date accessed. Judge reliability: is it peer-reviewed, recent, and from a reputable organisation?</p>
+
+<h3>Error Analysis</h3>
+<table>
+  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
+  <tr><td>Model does not match real conditions (no stirring/enzymes)</td><td>Systematic</td><td>Stir at a constant rate; state the limitations of the model</td></tr>
+  <tr><td>Fe&#178;&#8314; oxidised to Fe&#179;&#8314; by air before titration</td><td>Systematic</td><td>Titrate samples immediately; keep them acidified</td></tr>
+  <tr><td>Tablets vary in mass/coating</td><td>Random</td><td>Use several tablets from the same batch and average</td></tr>
+  <tr><td>Unreliable or uncited sources</td><td>&#8212;</td><td>Use reputable sources and reference all of them</td></tr>
+</table>
+
+<div class="exam-tip"><strong>Exam Tip:</strong> Written papers can test PAG12 skills through planning questions: expect to write a method with named apparatus and quantities, identify variables to control, suggest a risk and its control measure, and evaluate whether a secondary source is reliable. Always justify your choices rather than just listing them.</div>
+
+</div>
+
+<!-- SUPPORTING -->
+<h2>Supporting Practicals (not PAGs)</h2>
+<p>The three practicals below are <strong>not</strong> Practical Activity Groups in the OCR Chemistry B (Salters) specification. They are kept because they practise examinable techniques: colorimetry can be used for continuous monitoring (PAG9), chromatography is one of the PAG6 techniques, and the equilibrium work supports the equilibrium content of the course.</p>
+
+<!-- SUPPORT-COLORIMETRY -->
+<div class="practical-card" id="support-colorimetry">
+<h2>&#9879; Supporting: Colorimetry and Transition Metal Complexes</h2>
 
 <svg viewBox="0 0 460 230" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
   <!-- Colorimeter diagram -->
@@ -793,9 +1156,9 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
 
 </div>
 
-<!-- P10 -->
-<div class="practical-card" id="p10">
-<h2>&#9879; 10: Chromatography</h2>
+<!-- SUPPORT-CHROMATOGRAPHY -->
+<div class="practical-card" id="support-chromatography">
+<h2>&#9879; Supporting: Chromatography</h2>
 
 <svg viewBox="0 0 420 280" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
   <!-- TLC chamber -->
@@ -884,9 +1247,9 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
 <div class="exam-tip"><strong>Exam Tip:</strong> TLC uses adsorption (interaction with solid stationary phase). Paper chromatography uses partition (between two liquids). In TLC, more polar compounds have lower Rf because they adsorb more strongly to the polar silica. Rf values are only comparable under identical conditions.</div>
 </div>
 
-<!-- P11 -->
-<div class="practical-card" id="p11">
-<h2>&#9879; 11: Equilibrium Investigation (Le Chatelier's)</h2>
+<!-- SUPPORT-EQUILIBRIA -->
+<div class="practical-card" id="support-equilibria">
+<h2>&#9879; Supporting: Equilibrium Investigation (Le Chatelier's)</h2>
 
 <svg viewBox="0 0 460 250" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
   <!-- Test tubes -->
@@ -963,99 +1326,6 @@ Mass CaCO&#8323; = 0.0188 &times; 100.1 = 1.88 g... but we only had 1.50 g. Chec
 </table>
 
 <div class="exam-tip"><strong>Exam Tip:</strong> A catalyst does NOT shift the position of equilibrium and does NOT change Kc. It only increases the rate at which equilibrium is reached. In exam questions, always state that Le Chatelier's principle predicts the system opposes the change imposed. Only temperature changes Kc; concentration and pressure changes only shift the position.</div>
-</div>
-
-<!-- P12 -->
-<div class="practical-card" id="p12">
-<h2>&#9879; 12: Moles and Gas Volume Determination</h2>
-
-<svg viewBox="0 0 460 280" style="max-width:600px;width:100%;background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;">
-  <!-- Flask + gas syringe -->
-  <polygon points="50,180 130,180 118,125 62,125" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5"/>
-  <rect x="80" y="111" width="18" height="16" fill="#e0e7ef" fill-opacity="0.5" stroke="#1a73e8" stroke-width="1.5" rx="1"/>
-  <polygon points="53,175 127,175 119,130 61,130" fill="#1a73e8" fill-opacity="0.12"/>
-  <!-- Delivery tube -->
-  <path d="M98,115 L120,100 L210,100" fill="none" stroke="#1a73e8" stroke-width="2"/>
-  <!-- Gas syringe -->
-  <rect x="210" y="88" width="150" height="24" fill="#e0e7ef" fill-opacity="0.4" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
-  <rect x="350" y="92" width="40" height="16" fill="#ccc" stroke="#999" stroke-width="1" rx="2"/>
-  <!-- Scale -->
-  <line x1="230" y1="112" x2="230" y2="118" stroke="#1a1a2e" stroke-width="0.5"/>
-  <line x1="270" y1="112" x2="270" y2="118" stroke="#1a1a2e" stroke-width="0.5"/>
-  <line x1="310" y1="112" x2="310" y2="118" stroke="#1a1a2e" stroke-width="0.5"/>
-  <text x="280" y="80" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Gas syringe</text>
-
-  <text x="90" y="200" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Mg + 2HCl</text>
-  <text x="90" y="215" font-size="9" fill="#1a73e8" font-family="system-ui" text-anchor="middle">→ MgCl₂ + H₂</text>
-
-  <!-- Balance -->
-  <rect x="50" y="230" width="120" height="16" fill="#e0e7ef" stroke="#1a73e8" stroke-width="1.5" rx="3"/>
-  <text x="110" y="242" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Balance: 0.024 g Mg</text>
-
-  <!-- Calculation box -->
-  <rect x="250" y="150" width="190" height="110" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1" rx="6"/>
-  <text x="345" y="170" font-size="10" fill="#1a73e8" font-family="system-ui" text-anchor="middle" font-weight="600">Calculation</text>
-  <text x="345" y="190" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">n(Mg) = mass / Aᵣ</text>
-  <text x="345" y="208" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">n(H₂) = n(Mg) [1:1 ratio]</text>
-  <text x="345" y="226" font-size="9" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">V(gas) = reading from syringe</text>
-  <text x="345" y="248" font-size="9" fill="#16A34A" font-family="system-ui" text-anchor="middle" font-weight="600">Molar volume = V / n</text>
-
-  <text x="230" y="278" font-size="10" fill="#1a1a2e" font-family="system-ui" text-anchor="middle">Expected: ~24,000 cm³ mol⁻¹ at RTP (room temperature and pressure)</text>
-</svg>
-
-<h3>Apparatus</h3>
-<ul>
-  <li>Conical flask with bung and delivery tube</li>
-  <li>Gas syringe (100 cm³)</li>
-  <li>Balance (to 0.001 g)</li>
-  <li>Measuring cylinder</li>
-  <li>Magnesium ribbon (weighed accurately)</li>
-  <li>Excess dilute HCl</li>
-  <li>Thermometer and barometer (to record conditions)</li>
-</ul>
-
-<h3>Method</h3>
-<ol>
-  <li>Weigh a known length of clean Mg ribbon accurately (e.g., ~0.03 g).</li>
-  <li>Place excess dilute HCl (e.g., 20 cm³ of 1 mol dm⁻³) in the conical flask.</li>
-  <li>Connect the delivery tube to the gas syringe. Check there are no leaks.</li>
-  <li>Add the Mg ribbon to the flask, quickly insert the bung, and allow the reaction to proceed.</li>
-  <li>Wait until the reaction is complete (Mg fully dissolved, no more gas produced).</li>
-  <li>Record the final volume of H₂ gas in the syringe.</li>
-  <li>Record room temperature and atmospheric pressure.</li>
-  <li>Calculate: n(Mg) = mass/24.3. n(H₂) = n(Mg). Molar gas volume = V(gas)/n(H₂).</li>
-  <li>Alternatively, use pV = nRT to calculate n from p, V, and T, then find Mᵣ.</li>
-</ol>
-
-<h3>Safety</h3>
-<ul>
-  <li>H₂ gas is flammable — no naked flames.</li>
-  <li>Dilute HCl is irritant — goggles.</li>
-  <li>Gas syringe may pop out — clamp securely.</li>
-</ul>
-
-<h3>Analysis</h3>
-<p><strong>Calculate:</strong> Molar gas volume at room conditions. Expected ~24 dm³ mol⁻¹ (24,000 cm³ mol⁻¹) at ~298 K, 101 kPa.</p>
-<p><strong>Alternative:</strong> Use pV = nRT to find n, then compare with calculated n from mass.</p>
-
-<h3>Error Analysis</h3>
-<table>
-  <tr><th>Source of Error</th><th>Type</th><th>Improvement</th></tr>
-  <tr><td>H₂ gas escaping before sealing</td><td>Systematic</td><td>Seal quickly; use an inverted flask method</td></tr>
-  <tr><td>Gas syringe friction</td><td>Systematic</td><td>Lubricate; tap gently</td></tr>
-  <tr><td>Mg oxide layer on ribbon</td><td>Systematic</td><td>Clean with emery paper before weighing</td></tr>
-  <tr><td>Gas not at room temperature</td><td>Systematic</td><td>Allow time for gas to cool before reading</td></tr>
-  <tr><td>H₂ slightly soluble in water/acid</td><td>Systematic</td><td>Negligible at normal conditions; acknowledged</td></tr>
-</table>
-
-<div class="exam-tip"><strong>Exam Tip:</strong> The molar gas volume at RTP (room temperature and pressure, ~298 K, 100 kPa) is approximately 24.0 dm&sup3; mol&#8315;&#185;. At STP (273 K, 100 kPa) it is 22.7 dm&sup3; mol&#8315;&#185;. Always state the conditions. Use pV = nRT when exact conditions matter: p in Pa, V in m&sup3;, T in K, R = 8.314.</div>
-
-<div class="worked-example"><strong>Worked Example &mdash; Water of Crystallisation:</strong><br><br>
-Mass of crucible = 22.50 g. Mass of crucible + hydrated salt = 27.48 g. Mass after heating to constant mass = 25.28 g.<br><br>
-Mass of water lost = 27.48 &minus; 25.28 = 2.20 g &rarr; n(H&#8322;O) = 2.20 / 18.0 = 0.122 mol<br>
-Mass of anhydrous salt = 25.28 &minus; 22.50 = 2.78 g &rarr; n(MgSO&#8324;) = 2.78 / 120.4 = 0.0231 mol<br>
-Ratio = 0.122 / 0.0231 = 5.28 &asymp; <strong>5</strong>, so formula is <strong>MgSO&#8324;&middot;5H&#8322;O</strong> (but the accepted value is 7 &mdash; incomplete dehydration or experimental error may account for this discrepancy).</div>
-
 </div>
 
 </div>

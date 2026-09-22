@@ -145,7 +145,7 @@
     <tr><th>Advantages</th><th>Disadvantages</th></tr>
     <tr><td><strong>Very resilient</strong> &mdash; if one connection fails, data can be rerouted via alternative paths. No single point of failure.</td><td><strong>Very expensive</strong> &mdash; requires a large amount of cabling. Full mesh of n devices needs n(n-1)/2 connections (e.g., 10 devices need 45 connections).</td></tr>
     <tr><td><strong>Multiple data paths</strong> &mdash; data can take the fastest or least congested route, improving performance</td><td><strong>Complex</strong> to set up, configure, and maintain. Each device needs multiple network interfaces.</td></tr>
-    <tr><td><strong>Fault tolerant</strong> &mdash; ideal for critical infrastructure where downtime is unacceptable</td><td>Impractical for large networks due to the exponential growth in connections required</td></tr>
+    <tr><td><strong>Fault tolerant</strong> &mdash; ideal for critical infrastructure where downtime is unacceptable</td><td>Impractical for large networks due to the quadratic growth in connections required</td></tr>
 </table>
 <p>The <strong>internet</strong> uses a partial mesh topology &mdash; core routers have multiple redundant connections to ensure reliability, but not every device connects to every other. This balances cost with resilience.</p>
 
@@ -453,7 +453,7 @@ Client                          Server
 <h2>Network Hardware — Detailed Comparison</h2>
 
 <div class="definition">
-    Network hardware devices operate at different layers of the TCP/IP stack. Understanding <strong>which layer each device operates at</strong> and <strong>what address type it uses</strong> is essential for explaining how data moves through a network.
+    Network hardware devices operate at different layers of the network stack (the layer numbers below follow the 7-layer OSI convention: Layer 1 physical, Layer 2 data link, Layer 3 network, not the 1-4 numbering of the TCP/IP table above). Understanding <strong>which layer each device operates at</strong> and <strong>what address type it uses</strong> is essential for explaining how data moves through a network.
 </div>
 
 <table>

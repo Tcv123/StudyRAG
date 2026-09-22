@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCR A GCSE — Required Practicals (PAG1–PAG8)</title>
+    <title>OCR A GCSE — Practical Activity Groups (PAG P1–P8)</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
@@ -35,19 +35,19 @@
 
 <div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
 
-<h1>Required Practicals — PAG1 to PAG8</h1>
+<h1>Practical Activity Groups — PAG P1 to PAG P8</h1>
 <p class="spec-ref">OCR GCSE Physics A (J249) &mdash; Practical Activity Group summaries</p>
 
-<p>There are eight <strong>Practical Activity Groups (PAGs)</strong> you need to know for OCR A GCSE Physics. You may be asked about apparatus, method, variables, or how to analyse the results in the written papers. Each one is summarised below with an apparatus diagram and key expected results.</p>
+<p>OCR splits the required apparatus and techniques into eight <strong>Practical Activity Groups (PAGs)</strong>, P1 to P8, and you must complete at least eight practical activities that cover them. The specification gives one example activity for each PAG (your school may use different ones); each is summarised below with an apparatus diagram and key expected results. You may be asked about apparatus, method, variables, or how to analyse the results in the written papers &mdash; around 15% of the marks test practical skills.</p>
 
-<h2>PAG1 — Density of Solid Objects and Liquids</h2>
+<h2>PAG P1 — Materials: Density of Solid Objects and Liquids</h2>
 
 <div class="practical-card">
 
 <p><strong>Aim</strong>: determine the density of regular solids, irregular solids, and a liquid.</p>
 <p><strong>Independent variable</strong>: object / liquid used.<br>
 <strong>Dependent variable</strong>: density (calculated).<br>
-<strong>Control variable</strong>: temperature (affects density of water noticeably), use same balance.</p>
+<strong>Control variable</strong>: temperature (the density of a liquid changes slightly with temperature), use same balance.</p>
 
 <svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
   <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Measuring density by displacement (irregular solid)</text>
@@ -83,7 +83,63 @@
 
 </div>
 
-<h2>PAG2 — Force, Mass and Acceleration (Newton's Second Law)</h2>
+<h2>PAG P2 — Forces: Effect of Forces on Springs (Hooke's Law)</h2>
+
+<div class="practical-card">
+
+<p><strong>Aim</strong>: investigate how the extension of a spring depends on the force applied, find the spring constant, and use the force&ndash;extension graph to find the work done in stretching it.</p>
+<p><strong>Independent variable</strong>: force (weight of slotted masses, W = mg).<br>
+<strong>Dependent variable</strong>: extension of the spring.<br>
+<strong>Control variables</strong>: same spring, same starting (unloaded) length, readings taken from the same point on the pointer.</p>
+
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Spring, pointer and metre rule on a clamp stand</text>
+  <!-- Stand -->
+  <rect x="200" y="195" width="160" height="10" fill="#6b7280"/>
+  <line x1="220" y1="195" x2="220" y2="40" stroke="#374151" stroke-width="4"/>
+  <line x1="220" y1="45" x2="330" y2="45" stroke="#374151" stroke-width="4"/>
+  <!-- Spring -->
+  <path d="M 320 45 L 320 55 L 310 60 L 330 66 L 310 72 L 330 78 L 310 84 L 330 90 L 310 96 L 330 102 L 320 107 L 320 115" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <!-- Pointer -->
+  <line x1="320" y1="115" x2="375" y2="115" stroke="#dc2626" stroke-width="2"/>
+  <text x="440" y="119" font-size="10" fill="#dc2626">Pointer</text>
+  <!-- Hanger and masses -->
+  <line x1="320" y1="115" x2="320" y2="130" stroke="#111827" stroke-width="1.5"/>
+  <rect x="305" y="130" width="30" height="8" fill="#6b7280"/>
+  <rect x="305" y="139" width="30" height="8" fill="#6b7280"/>
+  <rect x="305" y="148" width="30" height="8" fill="#6b7280"/>
+  <text x="250" y="170" font-size="10" fill="#374151">Slotted masses</text>
+  <!-- Metre rule -->
+  <rect x="380" y="40" width="18" height="150" fill="#fef3c7" stroke="#92400e"/>
+  <text x="410" y="60" font-size="10" fill="#374151">Metre rule (clamped vertically)</text>
+</svg>
+
+<div class="method">
+1. Clamp the spring from a clamp stand and fix a metre rule vertically beside it, with a pointer attached to the bottom of the spring.<br>
+2. Record the pointer reading with no load (or just the hanger).<br>
+3. Add one slotted mass at a time (e.g. 100 g = about 1 N). After each, let the spring settle and record the new pointer reading.<br>
+4. Extension = new reading − original reading.<br>
+5. Continue for at least 6 loads, then remove the masses one by one to check whether the spring returns to its original length (elastic limit not exceeded).<br>
+6. Plot force (y-axis) against extension (x-axis).
+</div>
+
+<div class="equation">
+    <strong>F = k x</strong>&nbsp;&nbsp;&nbsp; energy stored = <strong>½ k x²</strong>&nbsp; (for the linear region)
+</div>
+
+<ul>
+  <li>A straight line through the origin shows extension is proportional to force (Hooke's law); the gradient is the spring constant k (in N/m &mdash; convert cm to m).</li>
+  <li>Beyond the limit of proportionality the graph curves.</li>
+  <li>The area under the force&ndash;extension graph is the work done in stretching the spring (energy stored).</li>
+</ul>
+
+<div class="hazard">Wear eye protection in case the spring snaps or flies off. Put a tray or foam under the masses and keep feet clear. Clamp the stand to the bench so it cannot topple.</div>
+
+<div class="exam-tip">Read the pointer with your eye level with it (or use a set square) to avoid parallax error. Extension is the <em>increase</em> in length, not the total length.</div>
+
+</div>
+
+<h2>PAG P3 — Motion: Acceleration of a Trolley Down a Ramp (Newton's Second Law)</h2>
 
 <div class="practical-card">
 
@@ -144,7 +200,77 @@
 
 </div>
 
-<h2>PAG3 — Specific Heat Capacity</h2>
+<h2>PAG P4 — Measuring Waves: Speed, Frequency and Wavelength (Ripple Tank and Stretched String)</h2>
+
+<div class="practical-card">
+
+<p><strong>Aim</strong>: measure the speed, frequency and wavelength of water waves in a ripple tank (and of transverse waves on a stretched string), and judge how suitable the apparatus is for each measurement.</p>
+
+<h3>Method A &mdash; Water waves in a ripple tank</h3>
+
+<svg viewBox="0 0 700 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Ripple tank setup</text>
+  <!-- Lamp -->
+  <rect x="320" y="35" width="60" height="20" fill="#fde047" stroke="#92400e"/>
+  <text x="350" y="50" text-anchor="middle" font-size="9" fill="#92400e">Lamp</text>
+  <line x1="330" y1="55" x2="330" y2="80" stroke="#fde047" stroke-width="1"/>
+  <line x1="350" y1="55" x2="350" y2="80" stroke="#fde047" stroke-width="1"/>
+  <line x1="370" y1="55" x2="370" y2="80" stroke="#fde047" stroke-width="1"/>
+  <!-- Tank -->
+  <rect x="150" y="80" width="400" height="50" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+  <!-- Vibrator bar -->
+  <rect x="150" y="75" width="400" height="6" fill="#6b7280"/>
+  <circle cx="180" cy="78" r="6" fill="#111827"/>
+  <text x="180" y="70" text-anchor="middle" font-size="9" fill="#111827">Motor</text>
+  <!-- Waves -->
+  <g fill="none" stroke="#2563eb" stroke-width="1.5">
+    <line x1="200" y1="105" x2="540" y2="105"/>
+    <line x1="200" y1="115" x2="540" y2="115"/>
+    <line x1="200" y1="125" x2="540" y2="125"/>
+  </g>
+  <!-- Screen -->
+  <rect x="150" y="145" width="400" height="50" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="350" y="170" text-anchor="middle" font-size="10" fill="#374151">Wavefronts visible on screen below tank</text>
+</svg>
+
+<div class="method">
+Use a vibrating bar driven by a motor. Light above casts a shadow of the wavefronts on a screen below.<br>
+<strong>Frequency f</strong>: count the waves passing a point on the screen in 10 s and divide by 10 (or use a stroboscope to freeze the pattern).<br>
+<strong>Wavelength λ</strong>: place a ruler next to the shadow (or photograph it), measure across several wavefronts and divide by the number of wavelengths.<br>
+<strong>Speed</strong>: v = f × λ; check it by timing one wavefront over a measured distance (v = distance / time).<br>
+<strong>Suitability</strong>: ripples are slow and low-frequency, so a ruler, stopwatch and camera are suitable; faster waves (e.g. sound in a solid rod) need electronic equipment such as a microphone and oscilloscope to measure frequency.
+</div>
+
+<h3>Method B &mdash; Transverse waves on a string</h3>
+
+<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Vibration generator, pulley, masses</text>
+  <!-- Generator -->
+  <rect x="60" y="70" width="50" height="40" fill="#6b7280"/>
+  <text x="85" y="95" text-anchor="middle" font-size="9" fill="#fff">Gen</text>
+  <!-- String -->
+  <path d="M 110 90 Q 150 60 190 90 Q 230 120 270 90 Q 310 60 350 90 Q 390 120 430 90 Q 470 60 510 90" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <!-- Pulley -->
+  <circle cx="520" cy="90" r="10" fill="none" stroke="#111827" stroke-width="2"/>
+  <line x1="510" y1="90" x2="520" y2="100" stroke="#111827" stroke-width="1.5"/>
+  <!-- Hanging mass -->
+  <line x1="520" y1="100" x2="520" y2="140" stroke="#111827" stroke-width="1.5"/>
+  <rect x="510" y="140" width="20" height="20" fill="#6b7280"/>
+  <text x="540" y="152" font-size="10" fill="#374151">Mass (tension)</text>
+  <!-- Signal generator -->
+  <rect x="60" y="130" width="50" height="30" fill="#111827"/>
+  <text x="85" y="150" text-anchor="middle" font-size="9" fill="#fbbf24">Signal gen</text>
+</svg>
+
+<div class="method">
+Fix a known length of string between a vibration generator and a pulley with a mass providing tension. Use a signal generator to set the frequency. Increase f until a stable standing wave forms (e.g. two loops). From λ = 2L/n (n = number of loops) and given f, compute v.
+</div>
+
+<div class="hazard">Keep fingers clear of the vibration generator. Wear eye protection if strings might snap.</div>
+
+</div>
+
+<h2>PAG P5 — Energy: Specific Heat Capacity of a Metal</h2>
 
 <div class="practical-card">
 
@@ -200,7 +326,7 @@
 
 </div>
 
-<h2>PAG4 — I-V Characteristics of Components</h2>
+<h2>PAG P6 — Circuit Components: I-V Characteristics and Resistance</h2>
 
 <div class="practical-card">
 
@@ -257,166 +383,9 @@
 
 </div>
 
-<h2>PAG5 — Wave Speed (Ripple Tank and Stretched String)</h2>
-
 <div class="practical-card">
 
-<p><strong>Aim</strong>: measure the speed of waves on a water surface and of transverse waves on a stretched string.</p>
-
-<h3>Method A &mdash; Water waves in a ripple tank</h3>
-
-<svg viewBox="0 0 700 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
-  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Ripple tank setup</text>
-  <!-- Lamp -->
-  <rect x="320" y="35" width="60" height="20" fill="#fde047" stroke="#92400e"/>
-  <text x="350" y="50" text-anchor="middle" font-size="9" fill="#92400e">Lamp</text>
-  <line x1="330" y1="55" x2="330" y2="80" stroke="#fde047" stroke-width="1"/>
-  <line x1="350" y1="55" x2="350" y2="80" stroke="#fde047" stroke-width="1"/>
-  <line x1="370" y1="55" x2="370" y2="80" stroke="#fde047" stroke-width="1"/>
-  <!-- Tank -->
-  <rect x="150" y="80" width="400" height="50" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
-  <!-- Vibrator bar -->
-  <rect x="150" y="75" width="400" height="6" fill="#6b7280"/>
-  <circle cx="180" cy="78" r="6" fill="#111827"/>
-  <text x="180" y="70" text-anchor="middle" font-size="9" fill="#111827">Motor</text>
-  <!-- Waves -->
-  <g fill="none" stroke="#2563eb" stroke-width="1.5">
-    <line x1="200" y1="105" x2="540" y2="105"/>
-    <line x1="200" y1="115" x2="540" y2="115"/>
-    <line x1="200" y1="125" x2="540" y2="125"/>
-  </g>
-  <!-- Screen -->
-  <rect x="150" y="145" width="400" height="50" fill="#f3f4f6" stroke="#6b7280"/>
-  <text x="350" y="170" text-anchor="middle" font-size="10" fill="#374151">Wavefronts visible on screen below tank</text>
-</svg>
-
-<div class="method">
-Use a vibrating bar at known frequency f. Light above casts a shadow on a screen below. Measure wavelength λ by timing a known number of waves crossing a fixed distance (or by placing a ruler next to the shadow and measuring the spacing).<br>
-Wave speed v = f × λ.
-</div>
-
-<h3>Method B &mdash; Transverse waves on a string</h3>
-
-<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
-  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Vibration generator, pulley, masses</text>
-  <!-- Generator -->
-  <rect x="60" y="70" width="50" height="40" fill="#6b7280"/>
-  <text x="85" y="95" text-anchor="middle" font-size="9" fill="#fff">Gen</text>
-  <!-- String -->
-  <path d="M 110 90 Q 150 60 190 90 Q 230 120 270 90 Q 310 60 350 90 Q 390 120 430 90 Q 470 60 510 90" fill="none" stroke="#2563eb" stroke-width="2"/>
-  <!-- Pulley -->
-  <circle cx="520" cy="90" r="10" fill="none" stroke="#111827" stroke-width="2"/>
-  <line x1="510" y1="90" x2="520" y2="100" stroke="#111827" stroke-width="1.5"/>
-  <!-- Hanging mass -->
-  <line x1="520" y1="100" x2="520" y2="140" stroke="#111827" stroke-width="1.5"/>
-  <rect x="510" y="140" width="20" height="20" fill="#6b7280"/>
-  <text x="540" y="152" font-size="10" fill="#374151">Mass (tension)</text>
-  <!-- Signal generator -->
-  <rect x="60" y="130" width="50" height="30" fill="#111827"/>
-  <text x="85" y="150" text-anchor="middle" font-size="9" fill="#fbbf24">Signal gen</text>
-</svg>
-
-<div class="method">
-Fix a known length of string between a vibration generator and a pulley with a mass providing tension. Use a signal generator to set the frequency. Increase f until a stable standing wave forms (e.g. two loops). From λ = 2L/n (n = number of loops) and given f, compute v.
-</div>
-
-<div class="hazard">Keep fingers clear of the vibration generator. Wear eye protection if strings might snap.</div>
-
-</div>
-
-<h2>PAG6 — Refraction (Glass Block)</h2>
-
-<div class="practical-card">
-
-<p><strong>Aim</strong>: investigate how a light ray changes direction when it passes through a rectangular glass block.</p>
-
-<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:15px auto;display:block;">
-  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Ray box and glass block on plain paper</text>
-  <!-- Block -->
-  <rect x="180" y="80" width="320" height="90" fill="#93c5fd" opacity="0.4" stroke="#1e40af" stroke-width="1.5"/>
-  <!-- Incident ray -->
-  <line x1="80" y1="40" x2="200" y2="85" stroke="#dc2626" stroke-width="2" marker-end="url(#ar6)"/>
-  <defs><marker id="ar6" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker></defs>
-  <text x="90" y="62" font-size="10" fill="#dc2626">Incident</text>
-  <!-- Normal at entry -->
-  <line x1="200" y1="85" x2="200" y2="50" stroke="#9ca3af" stroke-dasharray="4,3"/>
-  <!-- Refracted in block -->
-  <line x1="200" y1="85" x2="470" y2="170" stroke="#7c3aed" stroke-width="2" marker-end="url(#ar7)"/>
-  <defs><marker id="ar7" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/></marker></defs>
-  <!-- Normal at exit -->
-  <line x1="470" y1="170" x2="470" y2="210" stroke="#9ca3af" stroke-dasharray="4,3"/>
-  <!-- Emerging ray -->
-  <line x1="470" y1="170" x2="600" y2="220" stroke="#2563eb" stroke-width="2" marker-end="url(#ar8)"/>
-  <defs><marker id="ar8" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker></defs>
-  <!-- Angles -->
-  <text x="193" y="75" font-size="11" fill="#7c3aed" font-weight="bold">i</text>
-  <text x="215" y="95" font-size="11" fill="#7c3aed" font-weight="bold">r</text>
-</svg>
-
-<div class="method">
-1. Place the glass block on plain paper; draw around it.<br>
-2. Shine a narrow ray from a ray box at an angle of incidence i onto one long side.<br>
-3. Mark where the ray enters and leaves the block.<br>
-4. Remove the block; join up the dots to reconstruct the path inside the block.<br>
-5. Draw normals at the entry and exit points.<br>
-6. Measure i and r with a protractor.<br>
-7. Repeat for several angles of incidence (e.g. 20°, 30°, 40°, 50°, 60°).<br>
-8. Plot r against i (not a straight line) or sin r against sin i (straight through origin — gradient = 1 / refractive index).
-</div>
-
-<div class="exam-tip">Use a <strong>thin</strong> pencil to mark ray positions. Use at least three dots along each ray so you can draw straight lines accurately. Measure angles <em>from the normal</em>, not from the block surface.</div>
-
-</div>
-
-<h2>PAG7 — Magnetic Field Around a Wire / Current in a Magnetic Field</h2>
-
-<div class="practical-card">
-
-<p><strong>Aim</strong>: investigate the magnetic field pattern around a current-carrying wire, and the force on a current-carrying conductor in a magnetic field.</p>
-
-<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
-  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Current-carrying wire between magnet poles on top-pan balance</text>
-  <!-- Balance -->
-  <rect x="250" y="160" width="220" height="40" fill="#9ca3af"/>
-  <rect x="280" y="145" width="160" height="18" fill="#111827"/>
-  <text x="360" y="158" text-anchor="middle" font-size="10" fill="#fbbf24">Top-pan balance</text>
-  <!-- Magnet -->
-  <rect x="320" y="80" width="40" height="65" fill="#dc2626"/>
-  <text x="340" y="117" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">N</text>
-  <rect x="360" y="80" width="40" height="65" fill="#1e40af"/>
-  <text x="380" y="117" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">S</text>
-  <!-- Wire -->
-  <line x1="120" y1="110" x2="580" y2="110" stroke="#92400e" stroke-width="3"/>
-  <text x="130" y="100" font-size="10" fill="#92400e">Current I</text>
-  <polygon points="580,110 570,105 570,115" fill="#92400e"/>
-  <!-- PSU -->
-  <rect x="60" y="90" width="60" height="40" fill="#111827"/>
-  <text x="90" y="113" text-anchor="middle" font-size="10" fill="#fbbf24">PSU</text>
-</svg>
-
-<div class="method">
-1. Clamp a pair of opposite magnetic poles so the field passes horizontally between them.<br>
-2. Place the magnets on a top-pan balance; tare to 0.<br>
-3. Pass a wire horizontally between the poles (perpendicular to the field).<br>
-4. Switch on the current; note the reading on the balance.<br>
-5. A change in reading shows the force on the wire (Newton's 3rd law: wire pushes on the magnets, magnets push wire up/down).<br>
-6. Vary the current I; plot mass change against I. Line should be straight through origin — F ∝ I.<br>
-7. Reverse the current → force reverses (reading swaps sign).
-</div>
-
-<div class="equation">
-    <strong>F = B I L</strong>&nbsp; — force is proportional to current (this practical checks that).
-</div>
-
-<div class="hazard">Keep current values low (≤ 5 A) and limit duration — wires get hot. Use a thick wire to reduce resistance.</div>
-
-</div>
-
-<h2>PAG8 — Investigating Resistance (Wire / Thermistor / LDR)</h2>
-
-<div class="practical-card">
-
-<p><strong>Aim</strong>: investigate how the resistance of a wire depends on its length, and how thermistor / LDR resistance varies with environment.</p>
+<p><strong>Further P6 activities</strong> (suggested in the specification): how the resistance of a wire depends on its length, and how thermistor / LDR resistance varies with conditions.</p>
 
 <h3>Wire length</h3>
 
@@ -471,6 +440,170 @@ Place the LDR a measured distance from a lamp. Vary the distance (or light inten
 <div class="hazard">Keep current low (&lt; 0.5 A for nichrome wire). Do not leave the circuit on continuously — the wire gets hot and can burn. Use insulated crocodile clips.</div>
 
 <div class="exam-tip">Measure the <strong>diameter</strong> of the wire with a micrometer screw gauge in several places, take an average. A thinner wire has higher resistance for the same length.</div>
+
+</div>
+
+<h2>PAG P7 — Series and Parallel Circuits: Brightness of Bulbs</h2>
+
+<div class="practical-card">
+
+<p><strong>Aim</strong>: build series and parallel circuits from circuit diagrams, compare the brightness of identical bulbs, and measure the current and potential difference in each arrangement.</p>
+<p><strong>Independent variable</strong>: circuit arrangement (series or parallel) and the number of bulbs.<br>
+<strong>Dependent variables</strong>: brightness of each bulb; current and p.d. readings.<br>
+<strong>Control variables</strong>: same supply p.d., identical bulbs, same meters.</p>
+
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Two identical bulbs: series (left) and parallel (right)</text>
+  <g stroke="#111827" stroke-width="2" fill="none">
+    <!-- Series -->
+    <rect x="50" y="50" width="250" height="110"/>
+    <line x1="165" y1="150" x2="165" y2="170"/>
+    <line x1="175" y1="155" x2="175" y2="165"/>
+    <circle cx="120" cy="50" r="12" fill="#fff"/>
+    <line x1="112" y1="42" x2="128" y2="58"/><line x1="128" y1="42" x2="112" y2="58"/>
+    <circle cx="230" cy="50" r="12" fill="#fff"/>
+    <line x1="222" y1="42" x2="238" y2="58"/><line x1="238" y1="42" x2="222" y2="58"/>
+    <circle cx="50" cy="105" r="12" fill="#fff"/>
+    <!-- Parallel -->
+    <rect x="400" y="50" width="250" height="110"/>
+    <line x1="400" y1="100" x2="650" y2="100"/>
+    <line x1="515" y1="150" x2="515" y2="170"/>
+    <line x1="525" y1="155" x2="525" y2="165"/>
+    <circle cx="525" cy="50" r="12" fill="#fff"/>
+    <line x1="517" y1="42" x2="533" y2="58"/><line x1="533" y1="42" x2="517" y2="58"/>
+    <circle cx="525" cy="100" r="12" fill="#fff"/>
+    <line x1="517" y1="92" x2="533" y2="108"/><line x1="533" y1="92" x2="517" y2="108"/>
+    <circle cx="400" cy="130" r="12" fill="#fff"/>
+  </g>
+  <text x="50" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">A</text>
+  <text x="400" y="135" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">A</text>
+  <text x="175" y="192" text-anchor="middle" font-size="10" fill="#374151">Bulbs share the supply p.d. &rarr; dimmer</text>
+  <text x="525" y="192" text-anchor="middle" font-size="10" fill="#374151">Each bulb gets the full supply p.d. &rarr; brighter</text>
+</svg>
+
+<div class="method">
+1. Build a circuit with one bulb, a switch and an ammeter. Note its brightness and record the current and the p.d. across the bulb.<br>
+2. Add a second identical bulb <strong>in series</strong>. Compare the brightness; measure the current at different points and the p.d. across each bulb.<br>
+3. Rebuild with the two bulbs <strong>in parallel</strong>. Measure the current in each branch and in the main circuit, and the p.d. across each bulb.<br>
+4. Repeat with three bulbs if time allows, and check each circuit against its diagram before switching on.
+</div>
+
+<table>
+    <tr><th></th><th>Series</th><th>Parallel</th></tr>
+    <tr><td>Current</td><td>Same at every point</td><td>Branch currents add up to the total current</td></tr>
+    <tr><td>Potential difference</td><td>Supply p.d. is shared between the bulbs</td><td>Each branch has the full supply p.d.</td></tr>
+    <tr><td>Total resistance</td><td>Sum of the resistances &mdash; increases as bulbs are added</td><td>Less than the smallest branch resistance &mdash; decreases as bulbs are added</td></tr>
+    <tr><td>Brightness</td><td>Bulbs get dimmer as more are added</td><td>Each bulb stays about as bright as a single bulb</td></tr>
+</table>
+
+<div class="hazard">Use a low-voltage supply. Bulbs get hot &mdash; switch off between readings and let them cool before handling.</div>
+
+<div class="exam-tip">Brightness depends on the power of the bulb (P = I V). In parallel each bulb has the full p.d. and a larger current, so it transfers more energy per second than a bulb in series.</div>
+
+</div>
+
+<h2>PAG P8 — Interactions of Waves: Reflection and Refraction of Light</h2>
+
+<div class="practical-card">
+
+<p><strong>Aim</strong>: investigate how a light ray changes direction when it is reflected by a plane mirror and when it passes through a glass block or prism.</p>
+
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Ray box and glass block on plain paper</text>
+  <!-- Block -->
+  <rect x="180" y="80" width="320" height="90" fill="#93c5fd" opacity="0.4" stroke="#1e40af" stroke-width="1.5"/>
+  <!-- Incident ray -->
+  <line x1="80" y1="40" x2="200" y2="85" stroke="#dc2626" stroke-width="2" marker-end="url(#ar6)"/>
+  <defs><marker id="ar6" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker></defs>
+  <text x="90" y="62" font-size="10" fill="#dc2626">Incident</text>
+  <!-- Normal at entry -->
+  <line x1="200" y1="85" x2="200" y2="50" stroke="#9ca3af" stroke-dasharray="4,3"/>
+  <!-- Refracted in block -->
+  <line x1="200" y1="85" x2="470" y2="170" stroke="#7c3aed" stroke-width="2" marker-end="url(#ar7)"/>
+  <defs><marker id="ar7" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/></marker></defs>
+  <!-- Normal at exit -->
+  <line x1="470" y1="170" x2="470" y2="210" stroke="#9ca3af" stroke-dasharray="4,3"/>
+  <!-- Emerging ray -->
+  <line x1="470" y1="170" x2="600" y2="220" stroke="#2563eb" stroke-width="2" marker-end="url(#ar8)"/>
+  <defs><marker id="ar8" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker></defs>
+  <!-- Angles -->
+  <text x="193" y="75" font-size="11" fill="#7c3aed" font-weight="bold">i</text>
+  <text x="215" y="95" font-size="11" fill="#7c3aed" font-weight="bold">r</text>
+</svg>
+
+<div class="method">
+1. Place the glass block on plain paper; draw around it.<br>
+2. Shine a narrow ray from a ray box at an angle of incidence i onto one long side.<br>
+3. Mark where the ray enters and leaves the block.<br>
+4. Remove the block; join up the dots to reconstruct the path inside the block.<br>
+5. Draw normals at the entry and exit points.<br>
+6. Measure i and r with a protractor.<br>
+7. Repeat for several angles of incidence (e.g. 20°, 30°, 40°, 50°, 60°).<br>
+8. Plot r against i (not a straight line) or sin r against sin i (straight through origin — gradient = 1 / refractive index).
+</div>
+
+<h3>Reflection from a plane mirror</h3>
+
+<div class="method">
+1. Stand a plane mirror upright on a line drawn across a sheet of plain paper and draw a normal at 90° to the line.<br>
+2. Aim a narrow ray from the ray box at the point where the normal meets the mirror.<br>
+3. Mark the incident and reflected rays with crosses; remove the mirror and join them up.<br>
+4. Measure the angle of incidence and the angle of reflection from the normal. Repeat for several angles &mdash; they are equal.
+</div>
+
+<h3>Prisms</h3>
+
+<div class="method">
+Repeat the refraction method with a triangular prism: the ray bends towards the normal on entering and away from the normal on leaving, so it is deviated towards the base of the prism. With white light, the different colours refract by different amounts and a spectrum is seen.
+</div>
+
+<div class="exam-tip">Use a <strong>thin</strong> pencil to mark ray positions. Use at least three dots along each ray so you can draw straight lines accurately. Measure angles <em>from the normal</em>, not from the block surface.</div>
+
+</div>
+
+<h2>Not a PAG example — Force on a Current-Carrying Wire in a Magnetic Field</h2>
+
+<p>This is not one of the eight PAG example activities in the J249 specification, but it is useful supporting practice for the motor effect and F = B I l (topic P4.2).</p>
+
+<div class="practical-card">
+
+<p><strong>Aim</strong>: investigate the force on a current-carrying conductor in a magnetic field.</p>
+
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Current-carrying wire between magnet poles on top-pan balance</text>
+  <!-- Balance -->
+  <rect x="250" y="160" width="220" height="40" fill="#9ca3af"/>
+  <rect x="280" y="145" width="160" height="18" fill="#111827"/>
+  <text x="360" y="158" text-anchor="middle" font-size="10" fill="#fbbf24">Top-pan balance</text>
+  <!-- Magnet -->
+  <rect x="320" y="80" width="40" height="65" fill="#dc2626"/>
+  <text x="340" y="117" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">N</text>
+  <rect x="360" y="80" width="40" height="65" fill="#1e40af"/>
+  <text x="380" y="117" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">S</text>
+  <!-- Wire -->
+  <line x1="120" y1="110" x2="580" y2="110" stroke="#92400e" stroke-width="3"/>
+  <text x="130" y="100" font-size="10" fill="#92400e">Current I</text>
+  <polygon points="580,110 570,105 570,115" fill="#92400e"/>
+  <!-- PSU -->
+  <rect x="60" y="90" width="60" height="40" fill="#111827"/>
+  <text x="90" y="113" text-anchor="middle" font-size="10" fill="#fbbf24">PSU</text>
+</svg>
+
+<div class="method">
+1. Clamp a pair of opposite magnetic poles so the field passes horizontally between them.<br>
+2. Place the magnets on a top-pan balance; tare to 0.<br>
+3. Pass a wire horizontally between the poles (perpendicular to the field).<br>
+4. Switch on the current; note the reading on the balance.<br>
+5. A change in reading shows the force on the wire (Newton's 3rd law: wire pushes on the magnets, magnets push wire up/down).<br>
+6. Vary the current I; plot mass change against I. Line should be straight through origin — F ∝ I.<br>
+7. Reverse the current → force reverses (reading swaps sign).
+</div>
+
+<div class="equation">
+    <strong>F = B I L</strong>&nbsp; — force is proportional to current (this practical checks that).
+</div>
+
+<div class="hazard">Keep current values low (≤ 5 A) and limit duration — wires get hot. Use a thick wire to reduce resistance.</div>
 
 </div>
 

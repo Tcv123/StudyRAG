@@ -58,7 +58,7 @@
   <li><a href="#rp8">RP8: Boyle's Law and Charles's Law</a> (3.6 Thermal Physics)</li>
   <li><a href="#rp9">RP9: Capacitor Charge and Discharge</a> (3.7 Fields)</li>
   <li><a href="#rp10">RP10: Force on a Current-Carrying Wire</a> (3.7 Fields)</li>
-  <li><a href="#rp11">RP11: AC Supply with Oscilloscope</a> (3.7 Fields)</li>
+  <li><a href="#rp11">RP11: Search Coil and Oscilloscope (Flux Linkage vs Angle)</a> (3.7 Fields)</li>
   <li><a href="#rp12">RP12: Inverse-Square Law for Gamma Radiation</a> (3.8 Nuclear)</li>
 </ol>
 </div>
@@ -463,19 +463,22 @@ E = stress/strain = 8.12 &times; 10<sup>7</sup> / 7.20 &times; 10<sup>-4</sup> =
 <div class="prac-box" id="rp10">
 <h2>&#9879; RP10: Force on a Current-Carrying Wire</h2>
 <p><strong>Aim:</strong> To investigate F = BIL by measuring the force on a current-carrying wire in a magnetic field.</p>
-<p><strong>Key equation:</strong> F = BIL. Plot F vs I: gradient = BL, so B = gradient/L.</p>
+<p><strong>Key equation:</strong> F = BIL. Plot F vs I: gradient = BL, so B = gradient/L. The spec also asks how F varies with length (plot F vs L at constant I) and with flux density (e.g. add magnets).</p>
 <p><strong>Key apparatus:</strong> Horseshoe magnet on a top-pan balance, stiff copper wire cradle clamped above, ammeter, variable DC supply.</p>
 <p><strong>Key points:</strong> The balance detects the reaction force (Newton's third law). Tare the balance before switching on current. Wire must be perpendicular to B for maximum force. F = &Delta;m &times; g.</p>
 <p><em>Full details including diagrams are in the 3.7 Fields notes.</em></p>
 </div>
 
 <div class="prac-box" id="rp11">
-<h2>&#9879; RP11: AC Supply with Oscilloscope</h2>
-<p><strong>Aim:</strong> To use an oscilloscope to measure the peak voltage V<sub>0</sub>, frequency f, and period T of an AC supply.</p>
-<p><strong>Key equations:</strong> V<sub>0</sub> = divisions &times; V/div. T = divisions &times; time/div. f = 1/T. V<sub>rms</sub> = V<sub>0</sub>/&radic;2.</p>
-<p><strong>Key apparatus:</strong> Oscilloscope, signal generator (or low-voltage AC supply), connecting leads.</p>
-<p><strong>Key points:</strong> Adjust Y-gain and time base for a clear display. V<sub>rms</sub> is the DC equivalent that delivers the same power. UK mains: V<sub>rms</sub> = 230 V, f = 50 Hz.</p>
-<p><em>Full details including diagrams are in the 3.7 Fields notes.</em></p>
+<h2>&#9879; RP11: Search Coil and Oscilloscope (Flux Linkage vs Angle)</h2>
+<p><strong>Aim:</strong> To investigate how the magnetic flux linkage through a search coil depends on the angle between the coil and the direction of an alternating magnetic field, using an oscilloscope to measure the induced EMF.</p>
+<p><strong>Key equations:</strong> Flux linkage N&Phi; = BAN cos&theta;, where &theta; is the angle between the field and the <em>normal</em> to the plane of the coil. For a field B = B<sub>0</sub> sin&omega;t, the induced EMF has peak value &epsilon;<sub>0</sub> = B<sub>0</sub>AN&omega; cos&theta;, so &epsilon;<sub>0</sub> &prop; cos&theta;.</p>
+<p><strong>IV:</strong> Angle &theta; (0&deg; to 90&deg;, e.g. in 10&deg; steps). <strong>DV:</strong> Peak (or peak-to-peak) EMF read from the oscilloscope. <strong>Controls:</strong> Signal generator frequency and output (so B<sub>0</sub> and &omega; are fixed), position of the coil in the field, number of turns and area of the search coil.</p>
+<p><strong>Key apparatus:</strong> Search coil (small flat coil of many turns) on a rotating mount with a protractor, large solenoid or pair of Helmholtz coils driven by a signal generator to give an alternating field, oscilloscope connected across the search coil.</p>
+<p><strong>Method:</strong> Place the search coil at the centre of the solenoid/coils, with its plane perpendicular to the field (&theta; = 0&deg;), and adjust the time base and Y-gain so the induced EMF trace fills the screen. Measure the peak-to-peak height and halve it. Rotate the coil in steps using the protractor, keeping its centre fixed, and record the peak EMF at each angle. Repeat each reading.</p>
+<p><strong>Analysis:</strong> Plot peak EMF &epsilon;<sub>0</sub> against cos&theta; &mdash; a straight line through the origin confirms flux linkage &prop; cos&theta;. The EMF is a maximum at &theta; = 0&deg; and zero at &theta; = 90&deg; (coil plane parallel to the field). Peak flux linkage can be found from &epsilon;<sub>0</sub>/&omega;.</p>
+<p><strong>Key points:</strong> The field must be alternating (a steady field induces no EMF in a stationary coil). Measure peak-to-peak and halve it to reduce reading uncertainty; the trace width is the main reading error. Keep the coil in the uniform central region of the field. Low voltages only; switch off between readings if the solenoid warms up.</p>
+<p><em>Flux and flux-linkage theory is in the 3.7 Fields notes.</em></p>
 </div>
 
 <div class="prac-box" id="rp12">
@@ -503,7 +506,7 @@ E = stress/strain = 8.12 &times; 10<sup>7</sup> / 7.20 &times; 10<sup>-4</sup> =
   <tr><td>8</td><td>Gas laws</td><td>P vs 1/V &nbsp; or &nbsp; V vs T(K)</td><td>nRT &nbsp; or &nbsp; nR/P</td></tr>
   <tr><td>9</td><td>Capacitor discharge</td><td>ln(V) vs t</td><td>&minus;1/RC</td></tr>
   <tr><td>10</td><td>Force on wire</td><td>F vs I</td><td>BL</td></tr>
-  <tr><td>11</td><td>AC with oscilloscope</td><td>Read V<sub>0</sub> and T from screen</td><td>&mdash; (direct reading)</td></tr>
+  <tr><td>11</td><td>Search coil: flux linkage vs angle</td><td>Peak EMF &epsilon;<sub>0</sub> vs cos&theta;</td><td>B<sub>0</sub>AN&omega; (line through origin)</td></tr>
   <tr><td>12</td><td>Inverse-square law</td><td>C vs 1/d<sup>2</sup></td><td>Proportionality constant</td></tr>
 </table>
 

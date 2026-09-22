@@ -108,7 +108,7 @@ The area of the corresponding triangular <em>segment</em> (bounded by the chord 
 <div class="definition">
 <strong>Small-angle approximations.</strong> For \(x\) small and in radians,
 \[ \sin x \approx x, \qquad \cos x \approx 1 - \tfrac{x^2}{2}, \qquad \tan x \approx x. \]
-The errors are of order \(x^3\), \(x^4\) and \(x^3\) respectively, so for \(|x| < 0.1\) all three give four-decimal accuracy.
+The errors are of order \(x^3\), \(x^4\) and \(x^3\) respectively, so for \(|x| < 0.05\) all three give four-decimal accuracy.
 </div>
 
 <p>These come from the Taylor (power) series of the trig functions. Intuitively, for a small arc on the unit circle, the arc length \(x\) and the vertical drop \(\sin x\) are nearly equal, and the horizontal coordinate \(\cos x\) drops from \(1\) by approximately half \(x^2\).</p>
@@ -279,7 +279,7 @@ The errors are of order \(x^3\), \(x^4\) and \(x^3\) respectively, so for \(|x| 
 
 <h2>6. Compound-Angle Formulae</h2>
 
-<p>The compound-angle formulae express \(\sin(A \pm B)\), \(\cos(A \pm B)\) and \(\tan(A \pm B)\) in terms of the trig values of \(A\) and \(B\) separately. They are the central toolkit of A-level trigonometry: every other identity on the syllabus (double-angle, \(R\sin(\theta + \alpha)\), product-to-sum) is a corollary.</p>
+<p>The compound-angle formulae express \(\sin(A \pm B)\), \(\cos(A \pm B)\) and \(\tan(A \pm B)\) in terms of the trig values of \(A\) and \(B\) separately. They are the central toolkit of A-level trigonometry: every other identity on the syllabus (double-angle, \(R\sin(\theta + \alpha)\)) is a corollary.</p>
 
 <div class="definition">
 <strong>Compound-angle formulae.</strong>
@@ -436,7 +436,7 @@ Matching coefficients of \(\sin\theta\) and \(\cos\theta\) in \(a\sin\theta + b\
 <span class="ln">15.</span>        θ₂ = 2.7301 − 0.9273 ≈ 1.8028 rad   (in [0, 2π]) ✓
 <span class="ln">16.</span>     ∴ θ ≈ 1.8028 rad   or   5.7674 rad    (to 4 d.p.).
 
-<span class="cm">// In degrees these are θ ≈ 103.28°  and  θ ≈ 330.42°.</span>
+<span class="cm">// In degrees these are θ ≈ 103.29°  and  θ ≈ 330.45°.</span>
 </pre>
 </div>
 
@@ -453,7 +453,7 @@ Matching coefficients of \(\sin\theta\) and \(\cos\theta\) in \(a\sin\theta + b\
 
 <h3>The CAST Diagram</h3>
 
-<p>The CAST diagram summarises in which of the four quadrants each trig function is positive. Starting in the fourth quadrant (\(0\) to \(\pi/2\) reversed) and moving anticlockwise:</p>
+<p>The CAST diagram summarises in which of the four quadrants each trig function is positive. Starting in the fourth quadrant and moving anticlockwise, the letters read C, A, S, T:</p>
 
 <table>
 <tr><th>Quadrant</th><th>Angle range</th><th>Functions positive</th><th>Label</th></tr>
@@ -595,15 +595,15 @@ Matching coefficients of \(\sin\theta\) and \(\cos\theta\) in \(a\sin\theta + b\
 <span class="ln">3.</span>     R = √(5² + 12²) = √169 = 13.
 <span class="ln">4.</span>     tan α = 12/5 ⇒ α = arctan(12/5) ≈ 1.1760 rad.
 <span class="ln">5.</span>  Equation becomes:  13 sin(θ − α) = 6  ⇒  sin(θ − α) = 6/13.
-<span class="ln">6.</span>  Principal:  θ − α = arcsin(6/13) ≈ 0.4776 rad.
-<span class="ln">7.</span>  Second value:  θ − α = π − 0.4776 ≈ 2.6640 rad.
+<span class="ln">6.</span>  Principal:  θ − α = arcsin(6/13) ≈ 0.4797 rad.
+<span class="ln">7.</span>  Second value:  θ − α = π − 0.4797 ≈ 2.6619 rad.
 <span class="ln">8.</span>  Add back α:
-<span class="ln">9.</span>     θ ≈ 0.4776 + 1.1760 = 1.6536 rad
-<span class="ln">10.</span>    θ ≈ 2.6640 + 1.1760 = 3.8400 rad.
+<span class="ln">9.</span>     θ ≈ 0.4797 + 1.1760 = 1.6557 rad
+<span class="ln">10.</span>    θ ≈ 2.6619 + 1.1760 = 3.8379 rad.
 <span class="ln">11.</span> Both lie in [0, 2π], so there are exactly two solutions.
-<span class="ln">12.</span> ∴ θ ≈ 1.6536 rad  or  θ ≈ 3.8400 rad.
+<span class="ln">12.</span> ∴ θ ≈ 1.6557 rad  or  θ ≈ 3.8379 rad.
 
-<span class="cm">// Because |6/13| < 1 < |6|/√(5² + 12²)? Check: |6| ≤ R = 13 ✓, so solutions exist.</span>
+<span class="cm">// Check: |6| ≤ R = 13 ✓ (so |6/13| ≤ 1), hence solutions exist.</span>
 <span class="cm">// If the right-hand side exceeded R in absolute value, no solutions at all.</span>
 </pre>
 </div>

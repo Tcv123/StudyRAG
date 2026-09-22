@@ -279,7 +279,7 @@ Columns (A&middot;B)' and A'+B' match row-for-row. QED.</pre>
 
 <p>A two-gate circuit (AND, AND, OR) collapses to a wire.</p>
 
-<h2>4.6.6 Karnaugh Maps</h2>
+<h2>4.6.6 Karnaugh Maps (beyond the AQA 7517 specification)</h2>
 
 <div class="definition">
     <strong>Karnaugh map (K-map)</strong> &mdash; a two-dimensional grid representation of a truth table, arranged so that adjacent cells differ in exactly one variable (Gray code ordering). Grouping adjacent 1s visually simplifies a Boolean expression without algebraic manipulation.
@@ -643,16 +643,16 @@ All four rows agree, therefore (A+B)' = A'&middot;B' identically.</pre>
 
 Round-robin (q=2), arrival order P1,P2,P3,P4:
 
-  Gantt: |P1|P2|P3|P4|P1|P2|P1|P2|P1|
-          2  4  6  7  9 11 13 14 15
+  Gantt: |P1|P2|P3|P4|P1|P2|P1|P1|
+          2  4  6  7  9 11 13 15
 
-  Finish times: P3=6, P4=7, P2=14, P1=15.
+  Finish times: P3=6, P4=7, P2=11, P1=15.
   Waiting = finish &minus; burst:
     P1: 15 &minus; 8 = 7
-    P2: 14 &minus; 4 = 10
+    P2: 11 &minus; 4 = 7
     P3:  6 &minus; 2 = 4
     P4:  7 &minus; 1 = 6
-  Average = (7+10+4+6)/4 = 6.75 ms.
+  Average = (7+7+4+6)/4 = 6.0 ms.
 
 SJF wins on average waiting but starves long jobs when short jobs
 keep arriving; round-robin is predictable and interactive.</pre>

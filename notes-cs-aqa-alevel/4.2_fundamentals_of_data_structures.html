@@ -684,7 +684,7 @@ ENDPROCEDURE</pre>
 
 <p>Advantages of immutable vectors: thread-safety without locks, referential transparency (an expression always evaluates to the same value), easier reasoning, free undo (keep a reference to the previous version).</p>
 
-<div class="exam-tip">AQA distinguishes vectors from plain arrays by emphasising <em>dynamic resizing</em>. If asked "why is append O(1) amortised rather than O(1) worst-case?" explain that most appends are cheap but the occasional resize copies all n items; the doubling strategy ensures resizes are rare enough for the average to remain constant.</div>
+<div class="exam-tip">Note: in the AQA 7517 specification a vector is a <em>mathematical</em> vector &mdash; e.g. [2.0, 3.14, &minus;1.0], an n-vector over &#8477; &mdash; represented as a list/1-D array, a dictionary or a function; you must know vector addition, scalar&ndash;vector multiplication, convex combination and dot product. The resizing-array material above is context, not the spec's meaning of 'vector'. If asked "why is append O(1) amortised rather than O(1) worst-case?" explain that most appends are cheap but the occasional resize copies all n items; the doubling strategy ensures resizes are rare enough for the average to remain constant.</div>
 
 <h2>Big-O Summary Across Structures</h2>
 

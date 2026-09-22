@@ -626,10 +626,10 @@ REVOKE DELETE ON Enrolment FROM registrar_role;
 
 <pre>
 # BAD -- vulnerable, user can inject SQL
-name = request.form['username']          # attacker sends:  ' OR '1'='1
+name = request.form['username']          # attacker sends:  ' OR '1'='1' --
 pw   = request.form['password']
 sql  = "SELECT * FROM User WHERE name='" + name + "' AND pw='" + pw + "'"
-# resulting query is:   SELECT * FROM User WHERE name='' OR '1'='1' AND pw='...'
+# resulting query is:   SELECT * FROM User WHERE name='' OR '1'='1' --' AND pw='...'
 # which is true for every row -- login bypass.
 cursor.execute(sql)
 

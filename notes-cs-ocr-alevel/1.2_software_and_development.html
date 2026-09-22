@@ -287,7 +287,7 @@
 
 <h3>Stages of Compilation</h3>
 
-<p>A compiler is not a monolith &mdash; it is a pipeline of distinct phases. The H446 specification explicitly names four: <strong>lexical analysis</strong>, <strong>syntax analysis</strong>, <strong>semantic analysis / code generation</strong> and <strong>optimisation</strong>.</p>
+<p>A compiler is not a monolith &mdash; it is a pipeline of distinct phases. The H446 specification explicitly names four: <strong>lexical analysis</strong>, <strong>syntax analysis</strong>, <strong>code generation</strong> and <strong>optimisation</strong> (semantic analysis, below, is extra detail often shown between syntax analysis and code generation).</p>
 
 <!-- Compilation Pipeline Diagram -->
 <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
@@ -642,7 +642,7 @@ AST:
 
 <h3>Assembly Language</h3>
 
-<p>Assembly uses <strong>mnemonics</strong> &mdash; short human-readable codes for each machine instruction. The H446 specification requires familiarity with a small teaching ISA (e.g. LMC or the OCR assembly card):</p>
+<p>Assembly uses <strong>mnemonics</strong> &mdash; short human-readable codes for each machine instruction. The H446 specification requires familiarity with the Little Man Computer (LMC) instruction set (ADD, SUB, STA, LDA, BRA, BRZ, BRP, INP, OUT, HLT, DAT). The ARM-style mnemonics below are a general illustration, not the OCR set:</p>
 
 <table>
     <tr><th>Mnemonic</th><th>Meaning</th><th>Example</th></tr>
@@ -679,7 +679,7 @@ end:    HALT
 <table>
     <tr><th>Mode</th><th>Notation</th><th>Meaning</th><th>Worked example (assume memory shown below)</th></tr>
     <tr><td><strong>Immediate</strong></td><td><code>#n</code></td><td>Operand <em>is</em> the value</td><td><code>LDR R1, #4</code> &rarr; R1 = 4</td></tr>
-    <tr><td><strong>Direct</strong></td><td><code>addr</code></td><td>Operand is the memory address holding the value</td><td><code>LDR R1, 100</code> &rarr; R1 = memory[100] = 42</td></tr>
+    <tr><td><strong>Direct</strong></td><td><code>addr</code></td><td>Operand is the memory address holding the value</td><td><code>LDR R1, 100</code> &rarr; R1 = memory[100] = 200</td></tr>
     <tr><td><strong>Indirect</strong></td><td><code>[Rn]</code> or <code>(addr)</code></td><td>Operand is an address whose <em>contents</em> are the address of the value</td><td><code>LDR R1, (100)</code>: memory[100]=200, so R1 = memory[200] = 99</td></tr>
     <tr><td><strong>Indexed</strong></td><td><code>base, Rx</code></td><td>Effective address = base + index register's contents</td><td><code>LDR R1, 100, R2</code> with R2=2 &rarr; R1 = memory[102] = 7</td></tr>
 </table>

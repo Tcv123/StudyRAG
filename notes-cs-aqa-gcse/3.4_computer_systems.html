@@ -208,7 +208,7 @@
 
 <p>A useful technique for two-input gates: think about when the output is "unusual" (i.e. 1 rather than 0).</p>
 <ul>
-    <li><strong>AND:</strong> output is 1 only in the <em>top row of the usual table</em> &mdash; the row where both inputs are 1. All other rows give 0.</li>
+    <li><strong>AND:</strong> output is 1 only in the <em>bottom row of the usual table</em> &mdash; the row where both inputs are 1. All other rows give 0.</li>
     <li><strong>OR:</strong> output is 0 only when <em>both inputs are 0</em>. All other rows give 1.</li>
     <li><strong>XOR:</strong> output is 1 when the inputs <em>disagree</em>, 0 when they <em>agree</em>. Useful mnemonic: "different = 1".</li>
     <li><strong>NOT:</strong> just flips the single input.</li>
@@ -298,7 +298,7 @@
 
 <h4>Worked Simplification Example</h4>
 
-<p>Consider the expression <code>Q = (A AND B) OR (A AND NOT B)</code>. At first glance it has three gates. But the truth table shows something nice:</p>
+<p>Consider the expression <code>Q = (A AND B) OR (A AND NOT B)</code>. At first glance it has four gates (two AND, one NOT, one OR). But the truth table shows something nice:</p>
 
 <table class="tt">
   <tr><th>A</th><th>B</th><th>A AND B</th><th>A AND NOT B</th><th>Q</th></tr>
@@ -308,7 +308,7 @@
   <tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
 </table>
 
-<p>The output column is identical to A. So <code>Q = (A AND B) OR (A AND NOT B) = A</code>. The three-gate circuit can be replaced with a plain wire. This is the idea behind <strong>circuit simplification</strong> &mdash; using algebra or truth tables to find the smallest circuit that produces the same output. Fewer gates means a cheaper, smaller, faster circuit that uses less power, which is why real processor designers spend a lot of effort simplifying logic.</p>
+<p>The output column is identical to A. So <code>Q = (A AND B) OR (A AND NOT B) = A</code>. The four-gate circuit can be replaced with a plain wire. This is the idea behind <strong>circuit simplification</strong> &mdash; using algebra or truth tables to find the smallest circuit that produces the same output. Fewer gates means a cheaper, smaller, faster circuit that uses less power, which is why real processor designers spend a lot of effort simplifying logic.</p>
 
 <h3>Two-Input Combinations &mdash; A Worked Example</h3>
 
@@ -475,7 +475,7 @@
   <!-- Buses legend -->
   <rect x="40" y="395" width="640" height="60" rx="6" fill="#f9fafb" stroke="#d1d5db"/>
   <text x="55" y="414" font-size="11" font-weight="bold" fill="#1e40af">The three buses:</text>
-  <text x="55" y="432" font-size="11" fill="#374151"><tspan font-weight="bold">Address bus:</tspan> one-way, CPU \u2192 memory, carrying the address of the location to read/write.</text>
+  <text x="55" y="432" font-size="11" fill="#374151"><tspan font-weight="bold">Address bus:</tspan> one-way, CPU → memory, carrying the address of the location to read/write.</text>
   <text x="55" y="448" font-size="11" fill="#374151"><tspan font-weight="bold">Data bus:</tspan> two-way, carrying the actual data or instruction between CPU and memory.  <tspan font-weight="bold">Control bus:</tspan> carries control signals like read/write.</text>
 </svg>
 
@@ -499,8 +499,8 @@
 
 <table>
     <tr><th>Bus</th><th>Direction</th><th>What it carries</th></tr>
-    <tr><td><strong>Address bus</strong></td><td>One-way: CPU \u2192 memory</td><td>The <em>memory address</em> the CPU wants to read from or write to (e.g. "location 20").</td></tr>
-    <tr><td><strong>Data bus</strong></td><td>Two-way (CPU \u2194 memory)</td><td>The actual <em>data or instruction</em> being moved in or out of memory.</td></tr>
+    <tr><td><strong>Address bus</strong></td><td>One-way: CPU → memory</td><td>The <em>memory address</em> the CPU wants to read from or write to (e.g. "location 20").</td></tr>
+    <tr><td><strong>Data bus</strong></td><td>Two-way (CPU ↔ memory)</td><td>The actual <em>data or instruction</em> being moved in or out of memory.</td></tr>
     <tr><td><strong>Control bus</strong></td><td>Two-way</td><td>Control signals such as "read", "write", "interrupt", and the clock signal that synchronises everything.</td></tr>
 </table>
 
@@ -597,9 +597,9 @@
   <!-- Stage 1: Fetch -->
   <rect x="30" y="60" width="660" height="140" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
   <text x="50" y="82" font-size="13" font-weight="bold" fill="#1e40af">STAGE 1 &mdash; FETCH</text>
-  <text x="50" y="104" font-size="11" fill="#374151">1. PC (20) \u2192 MAR.  Address bus carries 20 to main memory. Control bus = read.</text>
-  <text x="50" y="122" font-size="11" fill="#374151">2. Memory sends instruction at address 20 ("ADD 40") back on the data bus \u2192 MDR.</text>
-  <text x="50" y="140" font-size="11" fill="#374151">3. MDR \u2192 CIR.    PC incremented: PC = 21 (ready for next instruction).</text>
+  <text x="50" y="104" font-size="11" fill="#374151">1. PC (20) → MAR.  Address bus carries 20 to main memory. Control bus = read.</text>
+  <text x="50" y="122" font-size="11" fill="#374151">2. Memory sends instruction at address 20 ("ADD 40") back on the data bus → MDR.</text>
+  <text x="50" y="140" font-size="11" fill="#374151">3. MDR → CIR.    PC incremented: PC = 21 (ready for next instruction).</text>
   <!-- register state -->
   <g font-family="Consolas, monospace" font-size="11">
     <rect x="50"  y="155" width="90" height="28" fill="#fff" stroke="#2563eb"/><text x="95" y="174" text-anchor="middle">PC = 21</text>
@@ -639,7 +639,7 @@
 
   <!-- Loop arrow -->
   <path d="M 30 535 L 690 535" stroke="#2563eb" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
-  <text x="360" y="551" text-anchor="middle" font-size="11" fill="#2563eb">\u2190 Fetch-Decode-Execute repeats for every instruction in the program \u2192</text>
+  <text x="360" y="551" text-anchor="middle" font-size="11" fill="#2563eb">← Fetch-Decode-Execute repeats for every instruction in the program →</text>
 </svg>
 
 <h3>A Worked Trace of Four Instructions</h3>
@@ -753,7 +753,7 @@ Memory:   address 100 = 7
 <p>Solid-state storage uses <strong>flash memory</strong> &mdash; silicon chips with no moving parts. Each cell stores bits by trapping electrons in a floating gate. SSDs fit into the same slots as HDDs but are much faster; USB sticks and SD cards use the same technology in more portable form factors.</p>
 <ul>
     <li><strong>Advantages:</strong> very fast (no seek time), silent, durable (no moving parts so survive drops), low power use, small and light.</li>
-    <li><strong>Disadvantages:</strong> more expensive per GB than HDD; flash cells have a limited number of write cycles (millions, but finite); capacity currently lower at the top end than the largest HDDs.</li>
+    <li><strong>Disadvantages:</strong> more expensive per GB than HDD; flash cells have a limited number of write cycles (thousands to around 100,000, but finite); capacity currently lower at the top end than the largest HDDs.</li>
 </ul>
 
 <h3>Comparison Table &mdash; HDD vs SSD vs Optical vs Flash</h3>
@@ -888,7 +888,7 @@ Memory:   address 100 = 7
   <!-- Annotations -->
   <rect x="40" y="355" width="640" height="70" rx="6" fill="#eff6ff" stroke="#2563eb"/>
   <text x="55" y="375" font-size="11" font-weight="bold" fill="#1e40af">Indicative access times:</text>
-  <text x="55" y="392" font-size="11" fill="#374151">Registers: ~1 CPU cycle  \u2022  Cache: ~5-50 cycles  \u2022  RAM: ~100 cycles  \u2022  SSD: ~100,000 cycles  \u2022  HDD: ~10,000,000 cycles.</text>
+  <text x="55" y="392" font-size="11" fill="#374151">Registers: ~1 CPU cycle  •  Cache: ~5-50 cycles  •  RAM: ~100 cycles  •  SSD: ~100,000 cycles  •  HDD: ~10,000,000 cycles.</text>
   <text x="55" y="410" font-size="11" fill="#374151">A cache hit is roughly a million times faster than a hard-disk read, which is why caching matters so much for performance.</text>
 </svg>
 

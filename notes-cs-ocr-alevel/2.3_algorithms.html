@@ -47,7 +47,7 @@
     An <strong>algorithm</strong> is a finite, ordered sequence of unambiguous, executable instructions that transforms one or more inputs into one or more well-defined outputs in a finite amount of time.
 </div>
 
-<p>The four essential properties of a formal algorithm are:</p>
+<p>The five essential properties of a formal algorithm are:</p>
 
 <ul>
     <li><strong>Finiteness</strong> &mdash; the algorithm must terminate after a finite number of steps. An infinite loop is therefore <em>not</em> an algorithm.</li>
@@ -482,7 +482,7 @@ ENDPROCEDURE</pre>
     <tr><td>5 vs 2</td><td>[<strong>5, 2</strong>, 8, 1, 9]</td><td>Yes (5&gt;2)</td><td>[2, 5, 8, 1, 9]</td></tr>
     <tr><td>5 vs 8</td><td>[2, <strong>5, 8</strong>, 1, 9]</td><td>No</td><td>[2, 5, 8, 1, 9]</td></tr>
     <tr><td>8 vs 1</td><td>[2, 5, <strong>8, 1</strong>, 9]</td><td>Yes (8&gt;1)</td><td>[2, 5, 1, 8, 9]</td></tr>
-    <tr><td>1 vs 9 (was 8 vs 9)</td><td>[2, 5, 1, <strong>8, 9</strong>]</td><td>No</td><td>[2, 5, 1, 8, 9]</td></tr>
+    <tr><td>8 vs 9</td><td>[2, 5, 1, <strong>8, 9</strong>]</td><td>No</td><td>[2, 5, 1, 8, 9]</td></tr>
 </table>
 
 <p>After one pass the largest value (9) is in its final position. Subsequent passes will bubble 8 into position, then 5, and so on.</p>
@@ -1164,15 +1164,15 @@ ENDFUNCTION</pre>
 
 <table>
     <tr><th>Node</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
-    <tr><td>h(n)</td><td>20</td><td>17</td><td>12</td><td>6</td><td>0</td><td>9</td></tr>
+    <tr><td>h(n)</td><td>20</td><td>17</td><td>11</td><td>6</td><td>0</td><td>9</td></tr>
 </table>
 
 <p>Expansion order (lowest <code>f = g + h</code> first):</p>
 
 <table>
     <tr><th>Step</th><th>Expand</th><th>Reasoning</th></tr>
-    <tr><td>1</td><td>A</td><td>f(A) = 0 + 20 = 20. Relax neighbours: B (f=7+17=24), C (f=9+12=21), F (f=14+9=23).</td></tr>
-    <tr><td>2</td><td>C</td><td>Lowest f=21. Relax: D via C f=(9+11)+6=26, F via C f=(9+2)+9=20.</td></tr>
+    <tr><td>1</td><td>A</td><td>f(A) = 0 + 20 = 20. Relax neighbours: B (f=7+17=24), C (f=9+11=20), F (f=14+9=23).</td></tr>
+    <tr><td>2</td><td>C</td><td>Lowest f=20. Relax: D via C f=(9+11)+6=26, F via C f=(9+2)+9=20.</td></tr>
     <tr><td>3</td><td>F</td><td>Lowest f=20. Relax: E via F f=(11+9)+0=20.</td></tr>
     <tr><td>4</td><td>E</td><td>E = goal &mdash; return path A&rarr;C&rarr;F&rarr;E, cost 20.</td></tr>
 </table>

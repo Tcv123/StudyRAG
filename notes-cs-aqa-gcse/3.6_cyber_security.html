@@ -432,7 +432,7 @@
     <strong>SQL injection</strong> is an attack in which the attacker enters <em>SQL code into a form or URL field</em> on a badly-written website. If the website pastes the user&rsquo;s input directly into a database query without checking it, the attacker&rsquo;s SQL is executed on the database &mdash; allowing them to read, change or delete data they were never supposed to see.
 </div>
 
-<p>Example: a login form builds the query <code>SELECT * FROM users WHERE name = '&lt;input&gt;' AND password = '&lt;input&gt;'</code>. If the attacker types <code>' OR '1'='1</code> in the name field, the query becomes <code>SELECT * FROM users WHERE name = '' OR '1'='1' AND password = ''</code>, which matches every user and logs the attacker in as the first account. You will meet SQL properly in topic 3.7 &mdash; for now just remember <strong>validated / sanitised input and parameterised queries</strong> prevent injection.</p>
+<p>Example: a login form builds the query <code>SELECT * FROM users WHERE name = '&lt;input&gt;' AND password = '&lt;input&gt;'</code>. If the attacker types <code>' OR '1'='1</code> in both the name and password fields, the query becomes <code>SELECT * FROM users WHERE name = '' OR '1'='1' AND password = '' OR '1'='1'</code>, which matches every user and logs the attacker in as the first account. You will meet SQL properly in topic 3.7 &mdash; for now just remember <strong>validated / sanitised input and parameterised queries</strong> prevent injection.</p>
 
 <h3>Data Interception and Theft</h3>
 
