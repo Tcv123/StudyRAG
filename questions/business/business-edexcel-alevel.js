@@ -340,7 +340,7 @@ const BUSINESS_EDEXCEL_QUESTIONS = {
       { q: 'Liquidity refers to:', options: ['The total profit a firm makes over a year', 'The value of a firm\'s shares on the stock market', 'The proportion of finance provided by loans', 'A firm\'s ability to pay its short-term debts as they fall due'], answer: 3 },
       { q: 'Which document shows a firm\'s assets and liabilities at a point in time?', options: ['The statement of comprehensive income', 'The cash-flow forecast', 'The sales budget', 'The statement of financial position'], answer: 3 },
       { q: 'Which is an example of an external cause of business failure?', options: ['A recession that reduces demand', 'Poor cash-flow management', 'Weak leadership', 'Overtrading by expanding too fast'], answer: 0 },
-      { q: 'Profit for the year (net profit) is:', options: ['Revenue minus cost of sales', 'Gross profit before operating expenses', 'Operating profit after interest and tax', 'The cash left in the bank at the year end'], answer: 2 },
+      { q: 'Profit for the year (net profit) is:', options: ['Revenue minus cost of sales', 'Gross profit before operating expenses', 'Operating profit minus interest', 'The cash left in the bank at the year end'], answer: 2 },
     ],
     amber: [
       { q: 'Revenue is £500,000 and cost of sales £300,000. The gross profit margin is:', options: ['60%', '40%', '67%', '20%'], answer: 1 },

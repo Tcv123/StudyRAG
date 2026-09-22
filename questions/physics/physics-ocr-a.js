@@ -93,7 +93,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
     ],
     red: [
       { q: 'The equation F = Aρv² relates force F to area A, density ρ and speed v. Show this is homogeneous by checking units. Which units does the right-hand side give?', options: ['kg m s⁻²','kg m⁻¹ s⁻²','kg m² s⁻²','kg m⁻² s⁻¹'], answer: 0 },
-      { q: 'An equation is given as v = 2πr/T. A student claims this proves the equation must be correct. Why is this claim invalid?', options: ['Homogeneity checks can show an equation is wrong','The equation is actually incorrect','The equation has the wrong units','The student has not checked the dimensions'], answer: 0 },
+      { q: 'A student shows that the equation v = 2πr/T is homogeneous and claims this proves the equation must be correct. Why is this claim invalid?', options: ['A homogeneity check can only show an equation is wrong; it cannot prove it is correct (e.g. dimensionless constants such as 2π are not tested)','The equation is actually incorrect','The equation has the wrong units','The student has not checked the dimensions'], answer: 0 },
       { q: 'Estimate the number of atoms in a human body (mass ~70 kg, average atomic mass ~10⁻²⁶ kg). Which order of magnitude is closest?', options: ['10²⁰','10²⁵','10²⁸','10³⁵'], answer: 2 },
       { q: "Three coplanar forces of 5 N, 8 N, and 10 N act on a point. The 5 N and 8 N forces are perpendicular. The 10 N force acts at 180° to the resultant of the other two. What is the net force?", options: ["0.6 N in the direction of the 10 N force","0.6 N in the direction of the resultant of 5 N and 8 N","9.4 N in the direction of the 10 N force","23 N"], answer: 0 },
       { q: 'The drag force on a sphere is given by F = kηrv, where η is viscosity (Pa s), r is radius, and v is speed. What are the units of the dimensionless constant k?', options: ['m⁻¹ s','No units — k is dimensionless','Pa s m','kg m s⁻¹'], answer: 1 },
@@ -101,7 +101,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
       { q: 'A student derives an expression for the period of a pendulum as T = 2π√(l/g). By checking dimensions, which side has units of seconds?', options: ['Only the left side','Only the right side','Both sides — the equation is dimensionally consistent','Neither side'], answer: 2 },
       { q: 'A vector A has magnitude 15 N at 30° to the x-axis, and vector B has magnitude 10 N at 120° to the x-axis. What is the x-component of A + B?', options: ['18.0 N','25 N','3.0 N','8.0 N'], answer: 3 },
       { q: 'The equation for energy stored in a spring is E = ½kx². Using base units, express the unit of k (the spring constant).', options: ['kg m² s⁻²','kg s⁻²','kg m s⁻²','kg m⁻¹ s⁻²'], answer: 1 },
-      { q: 'A student estimates the power output of a human climbing stairs. If a 70 kg person climbs 3 m in 5 s, which order of magnitude is the power?', options: ['10¹ W','10² W','10³ W','10⁴ W'], answer: 1 },
+      { q: 'A student estimates the power output of a human climbing stairs. If a 70 kg person climbs 3 m in 10 s, which order of magnitude is the power?', options: ['10¹ W','10² W','10³ W','10⁴ W'], answer: 1 },
     ],
   },
 
@@ -134,7 +134,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
       { q: 'A ball is thrown horizontally at 15 m s⁻¹ from a cliff. What is its horizontal velocity after 2 s (ignoring air resistance)?', options: ['5 m s⁻¹','10 m s⁻¹','15 m s⁻¹','19.6 m s⁻¹'], answer: 2 },
       { q: 'A projectile is launched at 30° to the horizontal at 20 m s⁻¹. What is the initial vertical component of velocity?', options: ['10 m s⁻¹','17.3 m s⁻¹','20 m s⁻¹','14.1 m s⁻¹'], answer: 0 },
       { q: 'A 1200 kg car decelerates from 30 m s⁻¹ to rest in 6 s. What is the braking force?', options: ['200 N','3600 N','6000 N','36000 N'], answer: 2 },
-      { q: 'A 0.5 kg ball hits a wall at 8 m s⁻¹ and bounces back at 6 m s⁻¹. What is the change in momentum?', options: ['1 kg m s⁻¹','7 kg m s⁻¹','-7 kg m s⁻¹','14 kg m s⁻¹'], answer: 2 },
+      { q: 'A 0.5 kg ball hits a wall at 8 m s⁻¹ and bounces back at 6 m s⁻¹. Taking the initial direction as positive, what is the change in momentum?', options: ['1 kg m s⁻¹','-1 kg m s⁻¹','-7 kg m s⁻¹','14 kg m s⁻¹'], answer: 2 },
       { q: 'A force of 50 N acts on a 10 kg object on a frictionless surface. What is the acceleration?', options: ['0.2 m s⁻²','5 m s⁻²','50 m s⁻²','500 m s⁻²'], answer: 1 },
       { q: 'An object falls from rest. How far does it fall in 3 s? (g = 9.81 m s⁻²)', options: ['14.7 m','29.4 m','44.1 m','88.3 m'], answer: 2 },
       { q: 'A 2 kg object moves at 3 m s⁻¹. What is its kinetic energy?', options: ['3 J','6 J','9 J','18 J'], answer: 2 },
@@ -146,7 +146,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
       { q: 'A 5 kg trolley moving at 4 m s⁻¹ collides with a stationary 3 kg trolley and they stick together. What is their common velocity?', options: ['1.5 m s⁻¹','2.5 m s⁻¹','4 m s⁻¹','20 m s⁻¹'], answer: 1 },
       { q: 'A car engine provides a driving force of 2000 N while travelling at a constant 30 m s⁻¹. What is the power output?', options: ['66.7 W','6000 W','60 000 W','600 W'], answer: 2 },
       { q: 'A ball is dropped from 20 m. What is its speed just before hitting the ground? (g = 9.81 m s⁻²)', options: ['14 m s⁻¹','19.8 m s⁻¹','20 m s⁻¹','39.2 m s⁻¹'], answer: 1 },
-      { q: 'What happens to the vertical component of velocity of a projectile during flight (no air resistance)?', options: ['It remains constant','It increases at 9.81 m s⁻² downward','It decreases at 9.81 m s⁻² then increases','It depends on the horizontal component'], answer: 1 },
+      { q: 'What happens to the vertical component of velocity of a projectile during flight (no air resistance)?', options: ['It remains constant','It changes at a constant rate, with an acceleration of 9.81 m s⁻² downward throughout','It is greatest at the highest point of the flight','It depends on the horizontal component'], answer: 1 },
       { q: 'A force acts on a 4 kg object for 0.5 s, changing its velocity from 2 m s⁻¹ to 8 m s⁻¹. What is the force?', options: ['12 N','24 N','48 N','6 N'], answer: 2 },
       { q: 'A horizontal force of 40 N pushes a 5 kg box across a floor with friction force 10 N. What is the acceleration?', options: ['2 m s⁻²','6 m s⁻²','8 m s⁻²','10 m s⁻²'], answer: 1 },
       { q: 'A stone is projected horizontally from a 45 m cliff. How long does it take to reach the ground? (g = 9.81 m s⁻²)', options: ['1.5 s','2.1 s','3.0 s','4.5 s'], answer: 2 },
@@ -155,7 +155,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
     red: [
       { q: 'A 0.15 kg cricket ball is bowled at 40 m s⁻¹ and hit back at 25 m s⁻¹. The contact time is 0.002 s. What is the average force on the ball?', options: ['1125 N','7500 N','3000 N','4875 N'], answer: 3 },
       { q: 'A bullet of mass 10 g is fired at 400 m s⁻¹ into a 2 kg block of wood at rest on a smooth surface. The bullet embeds in the block. What is the velocity of the block and bullet?', options: ['0.5 m s⁻¹','4.0 m s⁻¹','1.0 m s⁻¹','2.0 m s⁻¹'], answer: 3 },
-      { q: 'A projectile is launched at 50 m s⁻¹ at 45° to the horizontal. What is the maximum height reached? (g = 9.81 m s⁻²)', options: ['255.1 m','127.6 m','63.8 m','31.9 m'], answer: 2 },
+      { q: 'A projectile is launched at 50 m s⁻¹ at 45° to the horizontal. What is the maximum height reached? (g = 9.81 m s⁻²)', options: ['254.8 m','127.4 m','63.7 m','31.9 m'], answer: 2 },
       { q: 'A skydiver of mass 80 kg reaches terminal velocity. What is the drag force acting on them?', options: ['0 N','80 N','392 N','784.8 N'], answer: 3 },
       { q: 'A car of mass 1200 kg travelling at 25 m s⁻¹ brakes to a stop. What is the minimum braking distance if the maximum braking force is 7500 N?', options: ['50 m','25 m','200 m','100 m'], answer: 0 },
       { q: 'Two ice skaters push off from rest. Skater A (60 kg) moves at 2 m s⁻¹. What is the velocity of skater B (80 kg)?', options: ['1.0 m s⁻¹','1.5 m s⁻¹ in opposite direction','2.0 m s⁻¹','2.5 m s⁻¹ in opposite direction'], answer: 1 },
@@ -170,7 +170,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
   'M4': {
     name: 'Electrons, Waves and Photons',
     green: [
-      { q: 'What is the charge on one electron?', options: ['1.6 × 10⁻¹⁹ C','-1.6 × 10⁻¹⁹ C','+1.6 × 10¹⁹ C (e)','-1.6 × 10¹⁹ C'], answer: 1 },
+      { q: 'What is the charge on one electron?', options: ['1.6 × 10⁻¹⁹ C','-1.6 × 10⁻¹⁹ C','+1.6 × 10¹⁹ C','-1.6 × 10¹⁹ C'], answer: 1 },
       { q: 'Define electric current.', options: ['The rate of flow of charge','The force on a charge','The energy per unit charge','The resistance of a wire'], answer: 0 },
       { q: 'Define potential difference.', options: ['The rate of flow of charge','The work done per unit charge between two points','The charge per unit time','The current times resistance'], answer: 1 },
       { q: 'State Ohm\'s law.', options: ['V = IR for all components','V is directly proportional to I at constant temperature for an ohmic conductor','P = IV','R = ρL/A'], answer: 1 },
@@ -216,8 +216,8 @@ const PHYSICS_OCR_A_QUESTIONS = {
     red: [
       { q: 'A battery of EMF 12 V and internal resistance 2 Ω is connected to two resistors in parallel (6 Ω and 3 Ω). What is the current drawn from the battery?', options: ['4 A','1.5 A','3 A','2 A'], answer: 2 },
       { q: 'Light of wavelength 600 nm is incident on a diffraction grating with 3.0 × 10⁵ lines per metre. What is the maximum order of diffraction observed?', options: ['3','5','7','9'], answer: 1 },
-      { q: 'A photon of wavelength 200 nm strikes a metal with work function 3.5 eV. What is the maximum kinetic energy of the emitted electron? (h = 6.63 × 10⁻³⁴ J s, c = 3 × 10⁸ m s⁻¹)', options: ['3.5 eV','9.9 eV','6.2 eV','2.7 eV'], answer: 3 },
-      { q: 'In a Wheatstone bridge circuit, R₁ = 100 Ω, R₂ = 200 Ω, R₃ = 150 Ω. For balance, what must R₄ be?', options: ['100 Ω','250 Ω','75 Ω','300 Ω'], answer: 3 },
+      { q: 'A photon of wavelength 200 nm strikes a metal with work function 3.5 eV. What is the maximum kinetic energy of the emitted electron? (h = 6.63 × 10⁻³⁴ J s, c = 3 × 10⁸ m s⁻¹, e = 1.6 × 10⁻¹⁹ C)', options: ['3.5 eV','9.9 eV','6.2 eV','2.7 eV'], answer: 3 },
+      { q: 'Two potential dividers are connected in parallel across the same supply: R₁ = 100 Ω in series with R₂ = 200 Ω, and R₃ = 150 Ω in series with R₄, with R₁ and R₃ both joined to the positive terminal. A voltmeter connected between the two junctions reads zero. What is R₄?', options: ['100 Ω','250 Ω','75 Ω','300 Ω'], answer: 3 },
       { q: 'A stationary wave on a string has 4 nodes (including both ends). If the string length is 1.5 m, what is the wavelength?', options: ['1.5 m','0.5 m','1.0 m','0.75 m'], answer: 2 },
       { q: 'An electron is accelerated through 5 kV. What is its de Broglie wavelength? (m = 9.11 × 10⁻³¹ kg, h = 6.63 × 10⁻³⁴ J s, e = 1.6 × 10⁻¹⁹ C)', options: ['1.7 × 10⁻¹¹ m','5.5 × 10⁻¹² m','1.2 × 10⁻¹⁰ m','3.9 × 10⁻¹⁰ m'], answer: 0 },
       { q: 'The intensity of a wave is proportional to the square of its amplitude. If the amplitude is halved, what happens to the intensity?', options: ['It quarters','It stays the same','It doubles','It halves'], answer: 0 },
@@ -275,7 +275,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
       { q: 'A damped oscillator loses 10% of its energy each cycle. After 3 cycles, approximately what fraction of the original energy remains?', options: ['70%','72.9%','90%','30%'], answer: 1 },
     ],
     red: [
-      { q: 'A geostationary satellite orbits Earth at approximately 42 000 km from Earth\'s centre. What is its orbital speed? (Use T = 24 hours)', options: ['7.9 km s⁻¹','3.07 km s⁻¹','30 km s⁻¹','11.2 km s⁻¹'], answer: 1 },
+      { q: 'A geostationary satellite orbits Earth at approximately 42 000 km from Earth\'s centre. What is its orbital speed? (Use T = 24 hours)', options: ['7.9 km s⁻¹','3.05 km s⁻¹','30 km s⁻¹','11.2 km s⁻¹'], answer: 1 },
       { q: 'A star has twice the radius and twice the surface temperature of the Sun. By what factor is its luminosity greater than the Sun\'s?', options: ['4','8','16','64'], answer: 3 },
       { q: 'An oscillator is driven at frequency f near its natural frequency f₀. Heavy damping is applied. What happens to the resonance peak?', options: ['It becomes taller and sharper','It disappears entirely','It shifts above f₀','It becomes shorter and broader, shifting slightly below f₀'], answer: 3 },
       { q: 'The gravitational potential at the surface of a planet (mass M, radius R) is V = -GM/R. What is the potential at height R above the surface?', options: ['-GM/R','-GM/2R','-GM/4R','0'], answer: 1 },

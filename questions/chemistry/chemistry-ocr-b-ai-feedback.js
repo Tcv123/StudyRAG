@@ -11,7 +11,7 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
 
   /* ────────── S1 Foundations of Chemistry ────────── */
   'S1': [
-    { q: 'Describe the principles of time-of-flight mass spectrometry and explain how the resulting spectrum is used to determine relative atomic mass.', marks: 9, command: 'Describe' },
+    { q: 'Describe what the mass spectrum of an element shows and explain how the spectrum is used to determine relative atomic mass.', marks: 9, command: 'Describe' },
     { q: 'Explain how successive ionisation energies provide evidence for the existence of electron shells and sub-shells.', marks: 12, command: 'Explain' },
     { q: 'Compare ionic, covalent and metallic bonding and explain how the type of bonding determines the physical properties of the resulting substance.', marks: 12, command: 'Compare' },
     { q: 'Discuss the shapes and bond angles of molecules and ions using electron-pair repulsion theory, with examples that include lone pairs.', marks: 12, command: 'Discuss' },
@@ -106,15 +106,15 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
 
   /* ────────── S6 Advanced Organic & Analysis ────────── */
   'S6': [
-    { q: 'Discuss optical isomerism shown by carbon compounds containing a chiral centre and explain why optical isomers have identical physical properties.', marks: 9, command: 'Discuss' },
+    { q: 'Discuss optical isomerism shown by carbon compounds containing a chiral centre and explain why optical isomers have identical physical properties except for their effect on plane-polarised light.', marks: 9, command: 'Discuss' },
     { q: 'Compare the reactivity of aldehydes and ketones towards nucleophilic addition reactions, with specific examples.', marks: 9, command: 'Compare' },
     { q: 'Explain the mechanism of nucleophilic addition of hydrogen cyanide to a carbonyl compound and discuss the importance of this reaction in synthesis.', marks: 12, command: 'Explain' },
     { q: 'Describe the formation of esters from carboxylic acids and alcohols and explain the role of concentrated sulfuric acid as a catalyst.', marks: 9, command: 'Describe' },
-    { q: 'Discuss the saponification of triglycerides to produce soap and explain the difference between soaps and synthetic detergents.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the hydrolysis of esters under acidic and alkaline conditions and explain why alkaline hydrolysis goes to completion.', marks: 12, command: 'Discuss' },
     { q: 'Explain the bonding in benzene using delocalisation theory and discuss the experimental evidence that supports this model over the Kekule structure.', marks: 12, command: 'Explain' },
     { q: 'Compare the mechanisms of electrophilic substitution for nitration and halogenation of benzene, including the role of the catalyst.', marks: 12, command: 'Compare' },
     { q: 'Describe the synthesis of an azo dye from phenylamine, including the diazotisation and coupling steps.', marks: 9, command: 'Describe' },
-    { q: 'Discuss the basicity of aliphatic and aromatic amines and explain the trend in terms of inductive and mesomeric effects.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the basicity of aliphatic and aromatic amines and explain the difference in terms of the availability of the lone pair on nitrogen.', marks: 12, command: 'Discuss' },
     { q: 'Explain how amino acids combine to form the primary structure of proteins and how this primary structure determines higher-order folding.', marks: 12, command: 'Explain' },
     { q: 'Describe the behaviour of amino acids as zwitterions and explain the meaning of the isoelectric point.', marks: 9, command: 'Describe' },
     { q: 'Compare the disposal options for addition and condensation polymers and assess their respective environmental impacts.', marks: 12, command: 'Compare' },

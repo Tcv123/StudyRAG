@@ -164,7 +164,7 @@ const GEOGRAPHY_EDUQAS_QUESTIONS = {
       { q: 'Why is patterned ground found in periglacial regions?', options: ['Frost heave sorts stones into polygons or stripes', 'Rivers deposit them', 'Animals arrange stones', 'Wind does the sorting'], answer: 0 },
       { q: 'Which feature is formed by meltwater deposition in front of a glacier?', options: ['Outwash plain', 'Moraine', 'Corrie', 'Arête'], answer: 0 },
       { q: 'Why is quarrying controversial in Snowdonia?', options: ['Scars landscape but provides local jobs', 'It is illegal', 'It increases tourism dramatically', 'It has no impact on landscape'], answer: 0 },
-      { q: 'Which is the best example of a ribbon lake in the UK?', options: ['Windermere (Lake District)', 'Loch Ness (only tectonic)', 'Lake Bala', 'Any reservoir'], answer: 0 },
+      { q: 'Which is the best example of a ribbon lake in the UK?', options: ['Windermere (Lake District)', 'Loch Ness (only tectonic)', 'Llyn Idwal (a corrie tarn)', 'Any reservoir'], answer: 0 },
     ],
     red: [
       { q: 'Evaluate tourism in Snowdonia.', options: ['Has no negative impacts','Brings income but causes footpath erosion, congestion','Removes all local jobs','Only brings environmental benefits'], answer: 1 },
@@ -377,7 +377,7 @@ const GEOGRAPHY_EDUQAS_QUESTIONS = {
       { q: 'What is urban regeneration?', options: ['Renewal of run-down urban areas', 'Demolishing all buildings', 'Rural redevelopment', 'Building new cities from scratch'], answer: 0 },
       { q: 'Which is a key issue in HIC cities?', options: ['Traffic congestion', 'No employment at all', 'Lack of any housing', 'No infrastructure'], answer: 0 },
       { q: 'What is deprivation?', options: ['Lack of income, services, or opportunities', 'Luxury living standards', 'Gentrified neighbourhoods', 'High wage employment'], answer: 0 },
-      { q: 'Which Japanese megacity is the world’s most populous urban area?', options: ['Tokyo', 'Osaka', 'Nagoya', 'Kobe'], answer: 0 },
+      { q: 'Which Japanese megacity has long been ranked the world’s most populous urban area?', options: ['Tokyo', 'Osaka', 'Nagoya', 'Kobe'], answer: 0 },
       { q: 'Which Mexican megacity is over 20 million?', options: ['Mexico City', 'Guadalajara', 'Monterrey', 'Puebla'], answer: 0 },
     ],
     amber: [
@@ -508,7 +508,7 @@ const GEOGRAPHY_EDUQAS_QUESTIONS = {
       { q: 'Why might tourism not always lead to development in LICs?', options: ['Tourism always benefits local communities equally', 'Profits often leave the country through "tourism leakage" to multinational hotel chains, limiting local benefit', 'Tourists only visit HICs', 'Tourism always increases pollution but never creates jobs'], answer: 1 },
       { q: 'Why is access to safe water considered a key development indicator?', options: ['Countries with safe water have fewer earthquakes', 'Lack of safe water causes disease, reduces productivity, and limits time for education — especially for girls', 'Safe water only matters in tropical countries', 'Access to safe water only affects life expectancy in elderly people'], answer: 1 },
       { q: 'What is a limitation of using birth rate as a development indicator?', options: ['Birth rate data is never collected in LICs', 'Birth rates can vary greatly within a country and do not show income levels or health directly', 'Birth rates are always higher in HICs', 'Birth rates are the best measure of development, so they have no limitations'], answer: 1 },
-      { q: 'How does Fairtrade help farmers in LICs?', options: ['It gives farmers free equipment from governments', 'It guarantees a minimum price above market rate, providing income stability and funding for community projects', 'It forces all farmers to export only to Europe', 'Fairtrade replaces all other forms of development aid'], answer: 1 },
+      { q: 'How does Fairtrade help farmers in LICs?', options: ['It gives farmers free equipment from governments', 'It guarantees a minimum price that protects farmers when market prices fall, providing income stability and funding for community projects', 'It forces all farmers to export only to Europe', 'Fairtrade replaces all other forms of development aid'], answer: 1 },
       { q: 'Why does conflict slow development?', options: ['Conflict attracts foreign investment', 'Conflict destroys infrastructure, displaces populations, diverts government spending to military, and scares off investors', 'Conflict has no long-term effect on development', 'Conflict only slows development in landlocked countries'], answer: 1 },
       { q: 'Why might FDI have both positive and negative effects on a developing country?', options: ['FDI always benefits developing countries without exception', 'FDI creates jobs and transfers technology but profits may leave the country, and workers may face poor conditions', 'FDI only creates negative outcomes for developing countries', 'FDI has no effect on employment in developing countries'], answer: 1 },
       { q: 'Why is the Brandt Line considered outdated by some geographers?', options: ['The Brandt Line was never based on real data', 'The rise of NEEs like China, Brazil, and India means the simple North/South division no longer reflects the complexity of global development', 'The Brandt Line only divided Europe', 'The Brandt Line was replaced by the HDI in 1990'], answer: 1 },

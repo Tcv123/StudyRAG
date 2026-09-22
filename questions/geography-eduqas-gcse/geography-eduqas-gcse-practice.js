@@ -131,7 +131,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe the physical geography of the Holderness Coast. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for: located on east coast of Yorkshire/England; cliffs made of soft boulder clay/glacial till; one of the fastest eroding coastlines in Europe (up to 2m per year); approximately 50 villages lost since Roman times.',
+        markScheme: '1 mark each for: located on east coast of Yorkshire/England; cliffs made of soft boulder clay/glacial till; one of the fastest eroding coastlines in Europe (up to 2m per year); approximately 30 villages lost since Roman times.',
       },
       {
         q: 'Explain why the Holderness Coast erodes so rapidly. [4 marks]',
@@ -347,7 +347,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe the upper course of the River Tees. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for: rises in Pennines/Cross Fell; steep gradient; narrow, fast-flowing channel; V-shaped valleys and waterfalls (High Force — tallest waterfall in England at ~21m); hard volcanic rock (whinstone).',
+        markScheme: '1 mark each for: rises in Pennines/Cross Fell; steep gradient; narrow, fast-flowing channel; V-shaped valleys and waterfalls (High Force — one of England’s most powerful waterfalls, ~21m drop); hard igneous rock (whinstone/dolerite of the Whin Sill).',
       },
       {
         q: 'Using the River Tees as an example, describe how the river changes from source to mouth. [6 marks]',
@@ -390,7 +390,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
         markScheme: '1 mark each for: river slows as gradient decreases; discharge may decrease (e.g. spread over floodplain during flood); when velocity drops below competency, river cannot carry its load; heaviest/largest particles deposited first.',
       },
       {
-        q: 'Describe two ways rivers are used by people that can increase flood risk. [4 marks]',
+        q: 'Describe two human activities that can increase flood risk. [4 marks]',
         marks: 4,
         markScheme: '2 marks per point. Accept: urbanisation — impermeable surfaces increase runoff (1 mark) causing flashier hydrograph/higher peak discharge (1 mark); deforestation — removes interception and transpiration (1 mark) increasing runoff and reducing lag time (1 mark).',
       },
@@ -556,7 +556,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Using Snowdonia as an example, describe the opportunities that glaciated landscapes provide for tourism. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for: dramatic scenery (U-shaped valleys, arêtes, peaks) attracts walkers/climbers; Snowdon most visited mountain in Wales/UK; mountain railway; water sports on ribbon lakes; walking/cycling trails; brings £$£ to local economy (approximately 4 million visitors/year).',
+        markScheme: '1 mark each for: dramatic scenery (U-shaped valleys, arêtes, peaks) attracts walkers/climbers; Snowdon most visited mountain in Wales/UK; mountain railway; water sports on ribbon lakes; walking/cycling trails; brings income to local economy (approximately 4 million visitors/year).',
       },
       {
         q: 'Explain how tourism in Snowdonia/glaciated uplands can damage the environment. [4 marks]',
@@ -576,7 +576,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Explain why glacial landscapes are important for water supply. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for: glaciers store large amounts of freshwater; meltwater feeds rivers (important in dry seasons); reservoirs built in glaciated valleys (e.g. Thirlmere, Wales supplies water to Manchester); permeable glacial sediments store groundwater.',
+        markScheme: '1 mark each for: glaciers store large amounts of freshwater; meltwater feeds rivers (important in dry seasons); reservoirs built in glaciated valleys (e.g. Thirlmere in the Lake District supplies water to Manchester); permeable glacial sediments store groundwater.',
       },
       {
         q: 'Describe the glacial budget and explain how it affects glacier advance or retreat. [4 marks]',
@@ -657,7 +657,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Compare the characteristics of tropical maritime and polar continental air masses. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for: tropical maritime — source south Atlantic, warm/mild, moist, brings mild wet weather, affects UK in winter/autumn; polar continental — source Scandinavia/Siberia, cold, dry; brings cold clear conditions in winter, possibly snow from east; may bring warm dry conditions in summer.',
+        markScheme: '1 mark each for: tropical maritime — source sub-tropical Atlantic (near the Azores, to the south-west), warm/mild, moist, brings mild wet weather, affects UK in winter/autumn; polar continental — source Scandinavia/Siberia, cold, dry; brings cold clear conditions in winter, possibly snow from east; may bring warm dry conditions in summer.',
       },
       {
         q: 'Describe the sequence of weather associated with the passage of a depression over the UK. [6 marks]',
@@ -754,7 +754,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'To what extent are human factors more important than natural factors in causing climate change? [8 marks]',
         marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Evaluates both human and natural factors with evidence and examples, reaches a supported overall judgement with clear reasoning. Level 2 (3–5 marks): Describes human and natural factors, some evaluation. Level 1 (1–2 marks): Basic description. Accept: human — burning fossil fuels, deforestation, agriculture all increasing greenhouse gas concentrations rapidly; rate of change unprecedented; IPCC 97% scientific consensus; natural — Milankovitch, volcanic, solar variability explain past changes but not current rapid warming; conclusion should judge relative importance with evidence.',
+        markScheme: 'Level 3 (6–8 marks): Evaluates both human and natural factors with evidence and examples, reaches a supported overall judgement with clear reasoning. Level 2 (3–5 marks): Describes human and natural factors, some evaluation. Level 1 (1–2 marks): Basic description. Accept: human — burning fossil fuels, deforestation, agriculture all increasing greenhouse gas concentrations rapidly; rate of change unprecedented; ~97% of climate scientists agree humans are the main cause and the IPCC calls human influence unequivocal; natural — Milankovitch, volcanic, solar variability explain past changes but not current rapid warming; conclusion should judge relative importance with evidence.',
       },
       {
         q: 'Explain how the UK\'s distance from the sea affects its climate. [3 marks]',
@@ -784,7 +784,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe two pieces of evidence from temperature records that show climate change is occurring. [4 marks]',
         marks: 4,
-        markScheme: '2 marks per piece of evidence. Accept: instrumental temperature records since 1850 — show ~1.1°C average global warming (1 mark), with 19 of 20 hottest years on record occurring since 2000 (1 mark); proxy records (tree rings, pollen, ice cores) — extend record further back (1 mark), show current warming is unprecedented in last 2000 years (1 mark).',
+        markScheme: '2 marks per piece of evidence. Accept: instrumental temperature records since 1850 — show ~1.1–1.3°C average global warming (1 mark), with the ten warmest years on record all occurring since 2015 (1 mark); proxy records (tree rings, pollen, ice cores) — extend record further back (1 mark), show current warming is unprecedented in last 2000 years (1 mark).',
       },
       {
         q: 'Explain why volcanic eruptions can cause short-term cooling of global temperatures. [3 marks]',
@@ -1020,14 +1020,14 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
         markScheme: 'Level 3 (6–8 marks): Detailed assessment of all three impact types with specific evidence/examples, reaches a supported overall judgement with consideration of most significant impact. Level 2 (3–5 marks): Covers at least two impact types with some development. Level 1 (1–2 marks): Basic impacts listed. Accept: environmental — species extinction, climate change, soil erosion, hydrological disruption; economic — short-term profit for TNCs/governments but long-term loss of ecosystem services; social — displacement of indigenous peoples, poverty, health risks; judgement on which is most significant.',
       },
       {
-        q: 'Describe one adaptation of an animal to life in the tropical rainforest. [2 marks]',
+        q: 'Describe one way in which indigenous people use the tropical rainforest sustainably. [2 marks]',
         marks: 2,
-        markScheme: '1 mark for naming an animal and adaptation + 1 mark development. E.g. sloth — slow movement and algae in fur for camouflage from predators; toucan — large light bill for reaching fruit on thin branches; spider monkey — prehensile tail for gripping branches in canopy; poison dart frog — bright colours warn predators of toxicity.',
+        markScheme: '1 mark for a valid way + 1 mark development. E.g. shifting cultivation — small plots cleared and farmed for a few years, then left fallow for many years so the forest and soil recover; small-scale hunting and gathering that takes only what is needed; use of detailed knowledge of medicinal plants without clearing forest.',
       },
       {
-        q: 'Explain how the nutrient cycle operates in a tropical rainforest. [4 marks]',
+        q: 'Explain why clearing a tropical rainforest makes its soils infertile. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for: dead organic matter (leaf litter) falls to forest floor; warm/wet conditions speed up decomposition by bacteria and fungi; nutrients released quickly into the soil; shallow tree roots rapidly absorb nutrients; most nutrients stored in biomass (vegetation) not soil; cycle is rapid and almost closed — if trees removed nutrients are quickly lost through leaching.',
+        markScheme: '1 mark each for: most nutrients are stored in the biomass, so they are removed when trees are cut down or burned; no new leaf litter falls, so the nutrient supply to the soil stops; heavy rainfall leaches remaining nutrients out of the thin soil; bare soil is eroded by rain splash and surface runoff; exposed soil can harden (laterisation); crop yields fall within a few years, so farmers move on to clear more forest.',
       },
       {
         q: 'Suggest why ecotourism is considered a sustainable way of managing the rainforest. [3 marks]',
@@ -1133,7 +1133,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Explain how the Great Green Wall project aims to reduce desertification. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for: plan to plant a belt of trees 15km wide and 7,775km long across Africa (from Senegal to Djibouti); trees provide wind barriers, reduce erosion, restore soil, provide shade; restores ecosystem functions; provides timber and food (e.g. Acacia gum); creates green jobs/income for local people; only ~15% complete as of 2020s.',
+        markScheme: '1 mark each for: plan to plant a belt of trees 15km wide and 7,775km long across Africa (from Senegal to Djibouti); trees provide wind barriers, reduce erosion, restore soil, provide shade; restores ecosystem functions; provides timber and food (e.g. Acacia gum); creates green jobs/income for local people; only a small fraction of the 2030 target achieved by the early 2020s.',
       },
       {
         q: 'Describe how education can help manage desertification. [2 marks]',
@@ -1213,15 +1213,15 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
         diagram: true,
       },
       {
-        q: 'Draw and label a diagram to show three adaptations of a cactus to the hot desert environment. [4 marks]',
+        q: 'Draw and annotate a diagram to show how the Hadley cell leads to hot deserts forming at about 30°N and 30°S. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for up to four labelled adaptations: thick waxy cuticle/stem to reduce water loss; spines instead of leaves (reduce transpiration and deter herbivores); shallow widespread roots to capture rare rainfall; fleshy stem stores water; ribbed/concertina stem expands to hold water; white hairs reflect sunlight. Diagram must be recognisably a cactus with labels.',
+        markScheme: '1 mark each for: warm air rising at the equator/ITCZ (low pressure, heavy rain) labelled; air moving polewards at high altitude labelled; air sinking at about 30°N/S labelled as high pressure; sinking air warms, so clouds do not form and there is little rain — hot desert location labelled. Diagram must be labelled.',
         diagram: true,
       },
       {
-        q: 'Describe the climate of a hot desert. [3 marks]',
+        q: 'Explain why hot deserts experience flash floods when it does rain. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for any three: very low annual rainfall (<250 mm/year); rainfall is unpredictable/erratic; very high daytime temperatures (often >40°C in summer); cold nights (can drop below 0°C in winter) due to lack of cloud cover; large diurnal temperature range; high rates of evaporation; dominated by high-pressure systems.',
+        markScheme: '1 mark each for any three: rain often falls as short, intense convectional storms; soils are baked hard/crusted and there is little vegetation, so infiltration is very low; most rain becomes rapid surface runoff; runoff is channelled into dry valleys (wadis), where water levels rise suddenly; little warning is given.',
       },
       {
         q: 'Explain why hot deserts are located around 30° north and south of the equator. [3 marks]',
@@ -1239,9 +1239,9 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
         markScheme: '1 mark each for: irrigation allows cultivation of high-value crops (e.g. dates, citrus, vegetables in California\'s Imperial Valley or Israel\'s Negev); creates farming jobs and export income; supports food supply for growing populations; centre-pivot irrigation using fossil aquifers increases productivity (e.g. Ogallala aquifer, US); Israel uses drip irrigation to reduce water loss — highly productive. BUT unsustainable water use leads to aquifer depletion.',
       },
       {
-        q: 'Describe the Great Green Wall initiative and explain how it aims to reduce desertification. [4 marks]',
+        q: 'Describe how zai pits help farmers in the Sahel to reduce the effects of desertification. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for any four: Great Green Wall — African Union-led project launched 2007 to plant belt of trees/vegetation across Sahel (~8,000 km from Senegal to Djibouti); aims to restore 100 million hectares of degraded land by 2030; trees reduce wind erosion and bind soil; roots improve water infiltration; provides fuelwood and fodder for locals; creates jobs; sequesters carbon; progress uneven — about 18% complete but provides replicable model.',
+        markScheme: '1 mark each for any four: small pits (about 20–30 cm across) dug in hard, degraded soil; filled with compost or manure; collect and concentrate rainwater runoff and nutrients around plant roots; allow crops such as millet and sorghum to grow on land that was too degraded to farm; cheap and use local labour and knowledge (e.g. popularised by farmer Yacouba Sawadogo in Burkina Faso); improve soil fertility and crop yields over time.',
       },
       {
         q: 'Suggest why the population of hot desert areas is often sparse. [3 marks]',
@@ -1291,7 +1291,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe the distribution of megacities globally. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for: increasing number — approximately 34+ megacities as of mid-2020s; majority located in Asia (e.g. Tokyo, Delhi, Shanghai, Beijing, Mumbai); growing number in Africa (Lagos, Kinshasa) and Latin America (São Paulo, Mexico City); fewer in HICs/Europe (Tokyo is exception as HIC megacity); concentrated in LICs and NEEs.',
+        markScheme: '1 mark each for: increasing number — over 30 megacities by the mid-2020s (the UN counted 33 in 2025); majority located in Asia (e.g. Tokyo, Delhi, Shanghai, Beijing, Mumbai); growing number in Africa (Lagos, Kinshasa) and Latin America (São Paulo, Mexico City); fewer in HICs/Europe (Tokyo is exception as HIC megacity); concentrated in LICs and NEEs.',
       },
       {
         q: 'Describe the characteristics of a squatter settlement (shanty town/favela). [4 marks]',
@@ -1341,7 +1341,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe what is meant by the Index of Multiple Deprivation. [2 marks]',
         marks: 2,
-        markScheme: '1 mark for: a government measure that ranks areas in England by level of deprivation; 1 mark for: based on seven domains: income, employment, education, health/disability, crime, housing, living environment.',
+        markScheme: '1 mark for: a government measure that ranks areas in England by level of deprivation; 1 mark for: based on seven domains: income, employment, education, health/disability, crime, barriers to housing and services, living environment.',
       },
       {
         q: 'Explain the difference between suburbanisation and counter-urbanisation. [3 marks]',
@@ -1361,7 +1361,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Using a named example, explain how an area of an HIC city has been regenerated. [6 marks]',
         marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Detailed explanation of regeneration with specific named area, describes what was there before, what changed and impact, with data. Level 2 (3–4 marks): Named example described with some specific detail. Level 1 (1–2 marks): Generic regeneration. Accept Cardiff Bay: former coal export dock — derelict; 1987 Cardiff Bay Development Corporation; Senedd, Wales Millennium Centre built; 30,000 new homes; 30,000 jobs; BUT critics say cost £2 billion+, existing residents displaced, not all benefited.',
+        markScheme: 'Level 3 (5–6 marks): Detailed explanation of regeneration with specific named area, describes what was there before, what changed and impact, with data. Level 2 (3–4 marks): Named example described with some specific detail. Level 1 (1–2 marks): Generic regeneration. Accept Cardiff Bay: former coal export dock — derelict; 1987 Cardiff Bay Development Corporation; Senedd, Wales Millennium Centre built; about 5,000 new homes; tens of thousands of jobs claimed (estimates vary from ~17,000 to ~30,000); BUT critics say it cost around £2 billion of public and private money, existing residents displaced, not all benefited.',
       },
       {
         q: 'Assess the success of urban regeneration in improving quality of life in deprived areas. [8 marks]',
@@ -1451,9 +1451,9 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
         markScheme: '1 mark for: a city with a population of 10 million or more people.',
       },
       {
-        q: 'Explain two pull factors that cause people to migrate from rural to urban areas in LICs/NEEs. [4 marks]',
+        q: 'Explain two opportunities that rapid urbanisation can create for people living in LIC/NEE cities. [4 marks]',
         marks: 4,
-        markScheme: '1 mark per factor + 1 mark development. Any two from: perceived better paid jobs in factories/services (e.g. Mumbai, Lagos); better education and healthcare in cities; access to electricity/water/sanitation; housing opportunities; escape from rural poverty and drought; family/kinship networks in cities; bright lights syndrome — exposure to media showing city life.',
+        markScheme: '1 mark per opportunity + 1 mark development. Any two from: jobs in the formal and informal economy that usually pay more than rural farming; better access to schools, colleges and hospitals; access to piped water, electricity and sanitation (in some areas); a wider range of services, shops and entertainment; chances to start small businesses and send money back to rural families (remittances).',
       },
       {
         q: 'Assess the social and environmental challenges of rapid urbanisation in a named LIC/NEE city. [6 marks]',
@@ -1555,7 +1555,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe how the Index of Multiple Deprivation (IMD) is used to measure urban deprivation. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for any three of: uses multiple indicators; income, employment, education, health, crime, housing, living environment domains; scores each small area (LSOA); ranks areas nationally; allows comparison between areas; identifies most deprived 10%/20%; updated regularly.',
+        markScheme: '1 mark each for any three of: uses multiple indicators; income, employment, education, health, crime, barriers to housing and services, living environment domains; scores each small area (LSOA); ranks areas nationally; allows comparison between areas; identifies most deprived 10%/20%; updated regularly.',
       },
       {
         q: 'Explain how crime and anti-social behaviour can create a cycle of deprivation in urban areas. [4 marks]',
@@ -1792,7 +1792,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe Nigeria\'s economic growth since the 1990s. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for any four of: GDP has grown significantly; oil industry major contributor; Lagos is a major financial/commercial hub; growing manufacturing sector; ICT and banking growing; one of Africa\'s largest economies; annual growth rates averaging 5–7% in 2000s–2010s; classified as NEE.',
+        markScheme: '1 mark each for any four of: GDP has grown significantly; oil industry major contributor; Lagos is a major financial/commercial hub; growing manufacturing sector; ICT and banking growing; one of Africa\'s largest economies; annual growth rates averaging 5–7% in the 2000s and early 2010s (much slower since 2015); classified as NEE.',
       },
       {
         q: 'Explain how oil extraction has both benefited and harmed Nigeria. [6 marks]',
@@ -1822,7 +1822,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'State two development indicators that could be used to classify a country as an LIC. [2 marks]',
         marks: 2,
-        markScheme: '1 mark each for any two: low GDP/GNI per capita (under $1,025 World Bank threshold); low HDI score; high infant mortality rate; low life expectancy; low literacy rate; high birth rate; high % of labour force in agriculture; limited access to clean water/sanitation.',
+        markScheme: '1 mark each for any two: low GDP/GNI per capita (under ~$1,135 World Bank threshold, 2025); low HDI score; high infant mortality rate; low life expectancy; low literacy rate; high birth rate; high % of labour force in agriculture; limited access to clean water/sanitation.',
       },
       {
         q: 'Explain the difference between infant mortality rate and life expectancy as development indicators. [4 marks]',
@@ -1955,7 +1955,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe the causes and immediate effects of the Japan earthquake and tsunami (2011). [6 marks]',
         marks: 6,
-        markScheme: 'Level 1 (1–2): basic facts. Level 2 (3–4): some detail. Level 3 (5–6): detailed and accurate. Causes: magnitude 9.0 (Tōhoku); 11 March 2011; destructive boundary — Pacific Plate subducting under Eurasian Plate; megathrust earthquake. Immediate effects: ~15,900 killed (mostly by tsunami); tsunami waves 10–40 m high; entire coastal towns destroyed; Fukushima Daiichi nuclear disaster; 450,000 displaced; $235 billion damage.',
+        markScheme: 'Level 1 (1–2): basic facts. Level 2 (3–4): some detail. Level 3 (5–6): detailed and accurate. Causes: magnitude 9.0 (Tōhoku); 11 March 2011; destructive boundary — Pacific Plate subducting under the North American (Okhotsk) Plate; megathrust earthquake. Immediate effects: ~15,900 killed (mostly by tsunami); tsunami waves 10–40 m high; entire coastal towns destroyed; Fukushima Daiichi nuclear disaster; 450,000 displaced; $235 billion damage.',
       },
       {
         q: 'Compare the responses to the Haiti earthquake (2010) and the Japan earthquake (2011). [6 marks]',
@@ -2046,7 +2046,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe the social impacts of the Japan 2011 earthquake and tsunami. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for any four: ~15,900 killed, 2,500 missing; 450,000+ displaced; entire coastal communities destroyed (e.g. Rikuzentakata); psychological trauma; nuclear evacuation (200,000 people from Fukushima); schools/hospitals destroyed; community bonds broken by displacement; recovery slow for elderly population.',
+        markScheme: '1 mark each for any four: ~15,900 killed, 2,500 missing; 450,000+ displaced; entire coastal communities destroyed (e.g. Rikuzentakata); psychological trauma; nuclear evacuation (over 150,000 people from around Fukushima); schools/hospitals destroyed; community bonds broken by displacement; recovery slow for elderly population.',
       },
       {
         q: 'Explain what is meant by the term \'natural hazard\' and how tectonic events become hazards. [3 marks]',
@@ -2064,9 +2064,9 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
         markScheme: '1 mark for: a zone around the Pacific Ocean where many earthquakes and volcanic eruptions occur; 1 mark for: marks the boundaries of the Pacific plate with surrounding plates — contains ~75% of world\'s volcanoes and 90% of earthquakes.',
       },
       {
-        q: 'Explain the difference between the Richter scale and the Mercalli scale. [3 marks]',
+        q: 'Explain why the 2004 Indian Ocean tsunami caused so many deaths. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for: Richter scale — measures magnitude/energy released by an earthquake using seismograph readings; logarithmic scale (each number is 10x stronger); Mercalli scale — measures intensity/impact of earthquake on people and structures; based on observation, ranges I–XII (Roman numerals); Richter objective/instrumental, Mercalli subjective/experiential.',
+        markScheme: '1 mark each for any three: there was no tsunami warning system in the Indian Ocean at the time; waves up to 30 m high reached densely populated, low-lying coasts; many people (including tourists) did not recognise warning signs such as the sea drawing back; many coastal buildings were poorly built; the waves travelled across the whole ocean, affecting 14 countries — over 230,000 people died.',
       },
       {
         q: 'Suggest two primary effects and two secondary effects of a volcanic eruption. [4 marks]',
@@ -2074,9 +2074,9 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
         markScheme: '1 mark each for: primary — lava flows destroying buildings/crops; pyroclastic flows killing people; ash fall damaging roofs/crops; volcanic bombs. Secondary — lahars/mudflows when ash mixes with water/snow (e.g. Nevado del Ruiz 1985); tsunamis from underwater eruptions; disruption to air travel (e.g. Eyjafjallajökull 2010 grounded European flights); long-term climate cooling.',
       },
       {
-        q: 'Compare the responses to the Haiti 2010 and Japan 2011 earthquakes. [6 marks]',
+        q: 'Explain why the 2015 Nepal earthquake had such severe impacts. [6 marks]',
         marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Compares short-term and long-term responses using specific detail from both events, reaches a supported conclusion about effectiveness. Level 2 (3–4 marks): Describes responses with some comparison. Level 1 (1–2 marks): Basic points. Accept Haiti: slow response due to destroyed infrastructure; dependent on international aid (US, UN, NGOs); limited emergency services; cholera outbreak from poor sanitation; 5 years later still 80,000 in tented camps. Japan: rapid self-sufficient response; Self-Defence Forces mobilised; advanced early-warning systems worked; tsunami walls held in places (failed in others); nuclear crisis complicated response; most infrastructure rebuilt within years. Conclusion: HIC vs LIC capacity explains vast difference.',
+        markScheme: 'Level 3 (5–6 marks): Detailed explanation of several physical and human factors with specific evidence, linked clearly to the impacts. Level 2 (3–4 marks): Explains some factors with some evidence. Level 1 (1–2 marks): Basic points. Accept: magnitude 7.8 with a shallow focus; most rural homes were unreinforced stone or mud brick and collapsed (600,000+ homes destroyed); remote mountainous terrain and landslides blocked roads, delaying rescue and aid; avalanches on Everest; poverty and limited government capacity to prepare or respond; aid bottleneck at Kathmandu\'s single-runway airport; around 9,000 deaths.',
       },
       {
         q: 'Explain why some people continue to live in areas at high risk from tectonic hazards. [4 marks]',
@@ -2152,7 +2152,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe the effects of climate change on coral reefs. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for any four: ocean warming causes coral bleaching — corals expel symbiotic algae (zooxanthellae) and turn white; bleached coral can recover but prolonged bleaching leads to death; Great Barrier Reef has experienced mass bleaching events (2016, 2017, 2020, 2022); ocean acidification (CO₂ dissolved in seawater) weakens coral skeletons; loss of coral destroys habitat for 25% of marine species; economic impact on tourism and fishing.',
+        markScheme: '1 mark each for any four: ocean warming causes coral bleaching — corals expel symbiotic algae (zooxanthellae) and turn white; bleached coral can recover but prolonged bleaching leads to death; Great Barrier Reef has experienced mass bleaching events (2016, 2017, 2020, 2022, 2024); ocean acidification (CO₂ dissolved in seawater) weakens coral skeletons; loss of coral destroys habitat for 25% of marine species; economic impact on tourism and fishing.',
       },
       {
         q: 'Suggest how climate change could affect food security. [4 marks]',
@@ -2237,12 +2237,12 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe how Arctic sea ice extent has changed and explain what this shows about climate change. [4 marks]',
         marks: 4,
-        markScheme: '2 marks for change: summer Arctic sea ice extent has declined by ~40% since 1979; record low minimums regularly broken; multi-year ice (thicker) being replaced by thinner first-year ice. 2 marks for what it shows: reflects warming Arctic temperatures (Arctic is warming 2–3x faster than global average — Arctic amplification); positive feedback: less white ice → more dark ocean absorbs heat → more warming; threat to polar bears and indigenous communities.',
+        markScheme: '2 marks for change: summer Arctic sea ice extent has declined by ~40% since 1979; record low minimums regularly broken; multi-year ice (thicker) being replaced by thinner first-year ice. 2 marks for what it shows: reflects warming Arctic temperatures (Arctic is warming about 3–4x faster than global average — Arctic amplification); positive feedback: less white ice → more dark ocean absorbs heat → more warming; threat to polar bears and indigenous communities.',
       },
       {
         q: 'Explain how the volcanic eruption of Mount Pinatubo (1991) provides evidence that natural factors can affect climate. [4 marks]',
         marks: 4,
-        markScheme: '1 mark per developed point: Mount Pinatubo, Philippines erupted June 1991; largest eruption of 20th century; ejected 20 million tonnes of SO₂ into stratosphere; sulphur dioxide formed aerosols that reflected solar radiation; global average temperature fell by ~0.5°C for 1–2 years; demonstrated that aerosols from volcanoes can cause short-term cooling; used to model geoengineering proposals (stratospheric aerosol injection).',
+        markScheme: '1 mark per developed point: Mount Pinatubo, Philippines erupted June 1991; second-largest eruption of the 20th century; ejected 20 million tonnes of SO₂ into stratosphere; sulphur dioxide formed aerosols that reflected solar radiation; global average temperature fell by ~0.5°C for 1–2 years; demonstrated that aerosols from volcanoes can cause short-term cooling; used to model geoengineering proposals (stratospheric aerosol injection).',
       },
       {
         q: 'Describe two adaptation strategies used by communities in low-lying coastal countries to cope with sea level rise. [4 marks]',
@@ -2257,12 +2257,12 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe the global pattern of temperature change since 1850. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for any three: global average temperature has risen ~1.1–1.2°C since pre-industrial; most warming since 1980; accelerating rate of warming; Arctic warming fastest (2–4x global average); some areas warming more than others; 2023 was hottest year on record; each decade since 1980s warmer than the last; brief cooling events from volcanic eruptions.',
+        markScheme: '1 mark each for any three: global average temperature has risen ~1.1–1.2°C since pre-industrial; most warming since 1980; accelerating rate of warming; Arctic warming fastest (2–4x global average); some areas warming more than others; 2024 was the hottest year on record (beating 2023); each decade since 1980s warmer than the last; brief cooling events from volcanic eruptions.',
       },
       {
-        q: 'Draw and label a diagram to show the enhanced greenhouse effect. [4 marks]',
+        q: 'Draw and annotate a diagram to show the ice-albedo positive feedback loop. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for: sun/short-wave solar radiation arriving at Earth; some radiation reflected back to space; Earth re-emits long-wave/infrared radiation; greenhouse gases (CO₂, CH₄) in atmosphere trapping long-wave radiation; enhanced layer of greenhouse gases shown trapping more heat; warming of Earth\'s surface labelled.',
+        markScheme: '1 mark each for: warming causes sea ice/snow to melt; darker ocean or land surface is exposed; albedo falls, so less solar radiation is reflected; more solar radiation is absorbed, causing further warming — arrows must show a continuous loop. Diagram must be labelled.',
         diagram: true,
       },
       {
@@ -2288,7 +2288,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Suggest why international agreements on climate change can be difficult to achieve. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for any four: different countries have different emissions histories and current levels (HIC vs LIC fairness debate); LICs argue HICs should pay more as they caused most historical emissions; economic cost of transition seen as uncompetitive; fossil fuel lobbies oppose action; lack of enforcement mechanisms in international law; political changes (e.g. US withdrawal from Paris under Trump 2017); differing national priorities; developing nations prioritise growth over emissions cuts.',
+        markScheme: '1 mark each for any four: different countries have different emissions histories and current levels (HIC vs LIC fairness debate); LICs argue HICs should pay more as they caused most historical emissions; economic cost of transition seen as uncompetitive; fossil fuel lobbies oppose action; lack of enforcement mechanisms in international law; political changes (e.g. US withdrawals from Paris under Trump in 2017 and again in 2025); differing national priorities; developing nations prioritise growth over emissions cuts.',
       },
       {
         q: 'Assess the view that adaptation is a more realistic approach to climate change than mitigation. [8 marks]',
@@ -2349,7 +2349,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe how waterborne diseases are linked to water insecurity. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for any three: where clean water is unavailable, people drink from contaminated sources; waterborne diseases include cholera, typhoid, dysentery, hepatitis A, diarrhoea; cause millions of deaths annually — mainly children; in LICs, poor sanitation contaminates water supply; diarrhoea kills approximately 525,000 children under 5 per year; reduces economic productivity.',
+        markScheme: '1 mark each for any three: where clean water is unavailable, people drink from contaminated sources; waterborne diseases include cholera, typhoid, dysentery, hepatitis A, diarrhoea; cause millions of deaths annually — mainly children; in LICs, poor sanitation contaminates water supply; diarrhoea kills over 400,000 children under 5 per year (WHO); reduces economic productivity.',
       },
       {
         q: 'Explain how conflict can arise over shared water resources. [4 marks]',
@@ -2369,7 +2369,7 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       {
         q: 'Describe how the China South-North Water Transfer Project works. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for any four: moves water from water-surplus south (Yangtze River basin) to water-deficit north (Yellow River/Beijing region); three routes: Eastern, Central, Western; Eastern route completed 2013; Central route 2014; transfers billions of cubic metres annually; Western route still under planning; 50,000 km of canals/tunnels/pipes; one of world\'s largest water engineering projects.',
+        markScheme: '1 mark each for any four: moves water from water-surplus south (Yangtze River basin) to water-deficit north (Yellow River/Beijing region); three routes: Eastern, Central, Western; Eastern route completed 2013; Central route 2014; transfers billions of cubic metres annually; Western route still under planning; thousands of km of canals/tunnels/pipes; one of world\'s largest water engineering projects.',
       },
       {
         q: 'Explain how desalination can increase water supply and suggest two limitations of this method. [4 marks]',
@@ -2474,9 +2474,9 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
         markScheme: '1 mark for geopolitical: water crosses national boundaries, is scarce, is essential for life and economic activity — makes it a resource over which countries compete and negotiate politically. 1 mark for any example + 1 mark explanation + 1 mark development: Nile Basin — Ethiopia vs Egypt over Grand Ethiopian Renaissance Dam; Colorado River — US states + Mexico dispute; Indus Waters Treaty between India and Pakistan (1960 — landmark agreement); Mekong River — China dams affecting downstream SE Asia.',
       },
       {
-        q: 'Draw and label a diagram to show the global hydrological (water) cycle. [4 marks]',
+        q: 'Draw and annotate a diagram to show how a household rainwater harvesting system works. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for at least four labelled processes: evaporation from oceans/lakes; transpiration from plants; condensation forming clouds; precipitation as rain/snow; surface runoff/overland flow; infiltration into soil; groundwater/percolation; arrows showing the cyclical movement of water. Diagram must clearly show transfer between stores.',
+        markScheme: '1 mark each for: roof acting as the catchment surface; gutters and downpipes carrying water; filter or first-flush device removing debris; storage tank; outlet/tap for uses such as washing, flushing toilets or irrigation (drinking only after treatment). Diagram must be labelled.',
         diagram: true,
       },
       {

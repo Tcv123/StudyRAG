@@ -343,7 +343,7 @@ const ECONOMICS_OCR_QUESTIONS = {
       { q: 'If the economy is in a deflationary gap, this means:', options: ['AD exceeds the full employment level', 'AD is insufficient to achieve full employment output', 'The economy is overheating', 'Inflation is high'], answer: 1 },
       { q: 'An inflationary gap occurs when:', options: ['Actual output is below potential', 'AD exceeds the full employment level of output', 'There is unemployment', 'Prices are falling'], answer: 1 },
       { q: 'Net trade deteriorates (X-M falls). On the AD/AS diagram this:', options: ['Shifts AD right', 'Shifts AD left', 'Shifts LRAS right', 'Has no effect on AD'], answer: 1 },
-      { q: 'The accelerator model suggests investment depends on:', options: ['The level of GDP', 'Changes in the rate of GDP growth', 'Only interest rates', 'Only business confidence'], answer: 1 },
+      { q: 'The accelerator model suggests investment depends on:', options: ['The level of GDP', 'The rate of change of GDP (how fast output is growing)', 'Only interest rates', 'Only business confidence'], answer: 1 },
       { q: 'In practice, the multiplier may be smaller than theory suggests because:', options: ['There are no time lags', 'Leakages, time lags, spare capacity constraints, and crowding out reduce it', 'The MPC is always 1', 'Government never spends money'], answer: 1 }
     ],
     red: [
@@ -439,7 +439,7 @@ const ECONOMICS_OCR_QUESTIONS = {
       { q: 'The terms of trade are measured as:', options: ['Export volume / Import volume', '(Index of export prices / Index of import prices) x 100', 'Total trade value', 'Current account balance'], answer: 1 },
       { q: 'Multinational corporations (MNCs) are firms that:', options: ['Only operate domestically', 'Operate in more than one country', 'Are owned by governments', 'Only export goods'], answer: 1 },
       { q: 'Absolute poverty is defined as:', options: ['Being poorer than average', 'Living below a minimum income needed for basic necessities', 'Earning below median income', 'Having no savings'], answer: 1 },
-      { q: 'Relative poverty is defined as:', options: ['Having no income', 'Having income below a proportion (e.g., 60%) of median income', 'Living on less than $1.90 per day', 'Having no access to healthcare'], answer: 1 },
+      { q: 'Relative poverty is defined as:', options: ['Having no income', 'Having income below a proportion (e.g., 60%) of median income', 'Living on less than $3.00 per day', 'Having no access to healthcare'], answer: 1 },
       { q: 'The Gini coefficient measures:', options: ['GDP growth', 'Income or wealth inequality (0 = perfect equality, 1 = perfect inequality)', 'Inflation', 'Unemployment'], answer: 1 }
     ],
     amber: [

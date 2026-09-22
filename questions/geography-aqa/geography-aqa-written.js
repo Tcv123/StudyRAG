@@ -529,9 +529,9 @@ const GEOGRAPHY_AQA_WRITTEN = {
       {
         q: 'Explain how geopolitical factors affect energy security.',
         marks: 4,
-        marks_scheme: '1 mark: concentration of supply in politically unstable regions (Middle East, Russia) creates supply risk. 1 mark: political tensions/sanctions/conflicts disrupt supply (e.g. EU sanctions on Russian gas post-2022). 1 mark: transit dependency through chokepoints (Strait of Hormuz) vulnerable to disruption. 1 mark: resource nationalism — governments restrict exports or nationalise industries.',
+        marks_scheme: '1 mark: concentration of supply in politically unstable regions (Middle East, Russia) creates supply risk. 1 mark: political tensions/sanctions/conflicts disrupt supply (e.g. EU moves to cut Russian gas imports post-2022). 1 mark: transit dependency through chokepoints (Strait of Hormuz) vulnerable to disruption. 1 mark: resource nationalism — governments restrict exports or nationalise industries.',
         tier: 'amber',
-        modelAnswer: `• Concentration of supply — major oil and gas reserves are concentrated in politically unstable regions (Middle East, Russia), creating supply risk (1).\n• Political tensions — sanctions, conflicts, and trade disputes can disrupt supply or restrict access (e.g. EU sanctions on Russian gas after 2022) (1).\n• Transit dependency — pipelines and shipping routes pass through chokepoints (e.g. Strait of Hormuz) that could be disrupted (1).\n• Resource nationalism — governments may restrict exports or nationalise energy industries, reducing availability for importing countries (1).`
+        modelAnswer: `• Concentration of supply — major oil and gas reserves are concentrated in politically unstable regions (Middle East, Russia), creating supply risk (1).\n• Political tensions — sanctions, conflicts, and trade disputes can disrupt supply or restrict access (e.g. the EU cutting Russian gas imports after 2022) (1).\n• Transit dependency — pipelines and shipping routes pass through chokepoints (e.g. Strait of Hormuz) that could be disrupted (1).\n• Resource nationalism — governments may restrict exports or nationalise energy industries, reducing availability for importing countries (1).`
       },
       {
         q: 'Explain the environmental impacts of fossil fuel extraction and use.',
@@ -616,7 +616,7 @@ const GEOGRAPHY_AQA_WRITTEN = {
       {
         q: 'Explain the purpose and application of the Spearman rank correlation coefficient in geographical fieldwork.',
         marks: 4,
-        marks_scheme: '1 mark: measures strength and direction of relationship between two ranked variables (-1 to +1). 1 mark: +1 = strong positive correlation; -1 = strong negative; 0 = no correlation. 1 mark: tests hypotheses about relationships between variables (e.g. distance from coast vs temperature). 1 mark: result compared against critical values at chosen significance level (e.g. 0.05) to determine statistical significance.',
+        marks_scheme: '1 mark: measures strength and direction of relationship between two ranked variables (-1 to +1). 1 mark: +1 = perfect positive correlation (close to +1 = strong positive); -1 = perfect negative; 0 = no correlation. 1 mark: tests hypotheses about relationships between variables (e.g. distance from coast vs temperature). 1 mark: result compared against critical values at chosen significance level (e.g. 0.05) to determine statistical significance.',
         tier: 'amber',
         modelAnswer: `• It measures the strength and direction of the relationship between two ranked variables, producing a value between -1 and +1 (1).\n• Values close to +1 indicate a strong positive correlation; close to -1 indicate a strong negative correlation; close to 0 indicate no correlation (1).\n• It is used to test hypotheses about relationships (e.g. does distance from the coast correlate with temperature?) (1).\n• The result is compared against critical values at a chosen significance level (e.g. 0.05) to determine whether the relationship is statistically significant or could have occurred by chance (1).`
       },

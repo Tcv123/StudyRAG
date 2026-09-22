@@ -74,7 +74,7 @@ const PHYSICS_OCR_B_QUESTIONS = {
     red: [
       { q: 'The equation for the period of a mass–spring system is T = 2π√(m/k). A student measures m = 0.500 ± 0.005 kg and T = 1.40 ± 0.02 s. What is the percentage uncertainty in k?', options: ['1%','2.9%','3.9%','5.9%'], answer: 2 },
       { q: 'A student plots ln(I) against V for a filament lamp and obtains a curve rather than a straight line. What does this indicate?', options: ['The data should be replotted as I against V²','There is a systematic error in the ammeter','The resistance changes with temperature so the relationship is not exponential','The relationship is I = I₀ ln(V)'], answer: 2 },
-      { q: 'An equation is proposed: F = 6πηrv, where F is force (N), r is radius (m), and v is velocity (m s⁻¹). What must the units of η be for the equation to be homogeneous?', options: ['kg m⁻¹ s⁻¹','kg m s⁻¹','kg m⁻² s⁻¹','N m⁻² s'], answer: 0 },
+      { q: 'An equation is proposed: F = 6πηrv, where F is force (N), r is radius (m), and v is velocity (m s⁻¹). What must the units of η be for the equation to be homogeneous?', options: ['kg m⁻¹ s⁻¹','kg m s⁻¹','kg m⁻² s⁻¹','N m⁻¹ s'], answer: 0 },
       { q: 'Two vectors of magnitude 5 N and 12 N act on a point. Which of the following is NOT a possible magnitude of their resultant?', options: ['18 N','17 N','13 N','7 N'], answer: 0 },
       { q: 'A student uses dimensional analysis to check E = ½mv² + mgh. Both terms have dimensions of:', options: ['kg m s⁻²','kg m² s⁻²','kg m s⁻¹','kg m² s⁻¹'], answer: 1 },
     ],
@@ -206,7 +206,7 @@ const PHYSICS_OCR_B_QUESTIONS = {
   'B5': {
     name: 'Rise and Fall of the Clockwork Universe',
     green: [
-      { q: 'What is the equation for displacement in uniform acceleration: s = ?', options: ['ut + at² (m)','ut + ½at²','v/t','at'], answer: 1 },
+      { q: 'What is the equation for displacement in uniform acceleration: s = ?', options: ['ut + at²','ut + ½at²','v/t','at'], answer: 1 },
       { q: 'Newton\'s first law states that an object remains at rest or in uniform motion unless:', options: ['It has mass','It is in a vacuum','An external resultant force acts on it','It is moving in a circle'], answer: 2 },
       { q: 'Newton\'s second law is expressed as:', options: ['F = ma','F = mv','F = mg only','F = mv²/r'], answer: 0 },
       { q: 'What is the SI unit of momentum?', options: ['N','kg m s⁻¹','J','Pa s (N s m⁻²)'], answer: 1 },
@@ -255,10 +255,10 @@ const PHYSICS_OCR_B_QUESTIONS = {
       { q: 'A planet orbits a star. By equating gravitational force to centripetal force, the orbital period T is related to orbital radius r by:', options: ['T³ ∝ r²','T² ∝ r³','T ∝ r²','T ∝ r'], answer: 1 },
       { q: 'Two identical gas samples are at the same temperature. Sample A is helium (M = 4) and sample B is oxygen (M = 32). The ratio of their rms speeds (v_He/v_O₂) is:', options: ['1/√8','1/8','8','√8'], answer: 3 },
       { q: 'A mass on a spring undergoes forced oscillations. Resonance occurs when:', options: ['The damping is maximum','The amplitude is zero','The driving frequency is much higher than the natural frequency of the system','The driving frequency equals the natural frequency of the system'], answer: 3 },
-      { q: 'A rocket ejects gas at a rate of dm/dt = 50 kg s⁻¹ at an exhaust velocity of 3000 m s⁻¹. The thrust produced is:', options: ['1500 N','60 N','15 000 N (÷ 10)','150 000 N'], answer: 3 },
+      { q: 'A rocket ejects gas at a rate of dm/dt = 50 kg s⁻¹ at an exhaust velocity of 3000 m s⁻¹. The thrust produced is:', options: ['1500 N','60 N','15 000 N','150 000 N'], answer: 3 },
       { q: 'The second law of thermodynamics implies that:', options: ['Heat cannot spontaneously flow from a cold body to a hot one; total entropy tends to increase','Temperature is always uniform','Entropy always decreases','Energy is always conserved'], answer: 0 },
       { q: 'A body moves in a vertical circle on the end of a string. At the top of the circle, the minimum speed to maintain a taut string is:', options: ['gr','√(gr/2)','√(2gr)','√(gr)'], answer: 3 },
-      { q: 'In SHM, the velocity as a function of displacement is v = ±ω√(A² − x²). At what displacement is the speed half the maximum speed?', options: ['A/2','A/√2','3A/4 (m)','A√3/2'], answer: 3 },
+      { q: 'In SHM, the velocity as a function of displacement is v = ±ω√(A² − x²). At what displacement is the speed half the maximum speed?', options: ['A/2','A/√2','3A/4','A√3/2'], answer: 3 },
       { q: 'The gravitational potential energy of a mass m at distance r from a planet of mass M is −GMm/r. The escape velocity from the surface (radius R) is:', options: ['√(GM/R)','√(2GM/R)','2GM/R','GM/R²'], answer: 1 },
     ],
   },
@@ -267,8 +267,8 @@ const PHYSICS_OCR_B_QUESTIONS = {
   'B6': {
     name: 'Field and Particle Physics',
     green: [
-      { q: 'Coulomb\'s law gives the force between two point charges as:', options: ['F = kQq/r (N)','F = kQq/r²','F = kQ/r²','F = Qq/r'], answer: 1 },
-      { q: 'What is the SI unit of electric field strength?', options: ['N','N C⁻¹ or V m⁻¹','C N⁻¹ or m V⁻¹ (SI)','J'], answer: 1 },
+      { q: 'Coulomb\'s law gives the force between two point charges as:', options: ['F = kQq/r','F = kQq/r²','F = kQ/r²','F = Qq/r'], answer: 1 },
+      { q: 'What is the SI unit of electric field strength?', options: ['N','N C⁻¹ or V m⁻¹','C N⁻¹ or m V⁻¹','J'], answer: 1 },
       { q: 'Electric field lines point:', options: ['From negative to positive','From positive to negative','In circles around charges','Perpendicular to the force'], answer: 1 },
       { q: 'What is a capacitor?', options: ['A device that stores charge on two separated conductors','A device that stores current','A type of resistor','A type of inductor'], answer: 0 },
       { q: 'The capacitance of a capacitor is defined as:', options: ['C = Q/V','C = V/Q','C = QV','C = Q²/V'], answer: 0 },

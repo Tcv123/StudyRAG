@@ -502,7 +502,7 @@ const ECONOMICS_AQA_QUESTIONS = {
       { q: 'The money multiplier in banking means:', options: ['Banks cannot create money', 'An initial deposit can lead to a multiple expansion of credit in the banking system', 'Only central banks create money', 'Deposits always decrease'], answer: 1 }
     ],
     amber: [
-      { q: 'The zero lower bound problem means:', options: ['Interest rates cannot be negative', 'When interest rates are near zero, conventional monetary policy loses effectiveness', 'Rates are always zero', 'QE is impossible'], answer: 1 },
+      { q: 'The zero lower bound problem means:', options: ['Interest rates must always be kept above 2%', 'When interest rates are near zero, conventional monetary policy loses effectiveness', 'Rates are always zero', 'QE is impossible'], answer: 1 },
       { q: 'Quantitative easing works through:', options: ['Directly increasing government spending', 'Increasing bank reserves, lowering yields, boosting asset prices, and creating a wealth effect', 'Raising the bank rate', 'Reducing the money supply'], answer: 1 },
       { q: 'A criticism of QE is that it:', options: ['Always causes hyperinflation', 'May increase asset prices disproportionately benefiting the wealthy while having limited impact on real economy lending', 'Reduces the money supply', 'Always works perfectly'], answer: 1 },
       { q: 'The quantity theory of money (MV=PQ) suggests:', options: ['Money supply never affects prices', 'If velocity is stable, increases in money supply lead to proportional increases in prices', 'Only output changes', 'Velocity always changes'], answer: 1 },

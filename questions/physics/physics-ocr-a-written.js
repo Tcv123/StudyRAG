@@ -15,7 +15,7 @@ const PHYSICS_OCR_A_WRITTEN = {
       {
         q: 'State what is meant by a systematic error and give one example.',
         marks: 2, tier: 'green',
-        modelAnswer: `• A systematic error is a consistent error in the same direction that affects all readings equally (1)\n• Example: a zero error on a balance / a ruler with a worn end / an uncalibrated thermometer (1)`
+        modelAnswer: `• A systematic error is a consistent error in the same direction that affects every reading by the same amount or the same proportion (1)\n• Example: a zero error on a balance / a ruler with a worn end / an uncalibrated thermometer (1)`
       },
       {
         q: 'State the difference between accuracy and precision.',
@@ -74,7 +74,7 @@ const PHYSICS_OCR_A_WRITTEN = {
     name: 'Foundations of Physics',
     green: [
       {
-        q: 'State the five SI base quantities and their units.',
+        q: 'State five of the SI base quantities and their units.',
         marks: 3, tier: 'green',
         modelAnswer: `• Mass — kilogram (kg) (1)\n• Length — metre (m); Time — second (s) (1)\n• Electric current — ampere (A); Temperature — kelvin (K); Amount of substance — mole (mol); Luminous intensity — candela (cd) (any additional two for 1 mark) (1)`
       },
@@ -160,7 +160,7 @@ const PHYSICS_OCR_A_WRITTEN = {
       {
         q: 'Explain why a projectile follows a parabolic path when air resistance is negligible.',
         marks: 4, tier: 'amber',
-        modelAnswer: `• The horizontal component of velocity remains constant because there is no horizontal force (1)\n• The vertical component of velocity increases at a constant rate (g = 9.81 m s⁻²) due to gravity (1)\n• The horizontal and vertical motions are independent of each other (1)\n• The combination of constant horizontal velocity and uniformly accelerating vertical velocity produces a parabolic trajectory (1)`
+        modelAnswer: `• The horizontal component of velocity remains constant because there is no horizontal force (1)\n• The vertical component of velocity changes at a constant rate (acceleration g = 9.81 m s⁻² downwards) due to gravity (1)\n• The horizontal and vertical motions are independent of each other (1)\n• The combination of constant horizontal velocity and uniformly accelerating vertical velocity produces a parabolic trajectory (1)`
       },
       {
         q: 'Describe how a velocity-time graph can be used to determine both the acceleration and the displacement of an object.',
@@ -244,7 +244,7 @@ const PHYSICS_OCR_A_WRITTEN = {
       {
         q: 'The work function of sodium is 2.3 eV. Light of wavelength 400 nm is incident on a sodium surface. Calculate the maximum kinetic energy of the emitted photoelectrons and explain why increasing the intensity of this light does not increase the maximum kinetic energy.',
         marks: 6, tier: 'red',
-        modelAnswer: `• Energy of a photon: E = hc/λ = (6.63 × 10⁻³⁴ × 3 × 10⁸) / (400 × 10⁻⁹) = 4.97 × 10⁻¹⁹ J = 3.1 eV (1)\n• Maximum KE = hf − φ = 3.1 − 2.3 = 0.8 eV = 1.28 × 10⁻¹⁹ J (1)\n• Each photon interacts with a single electron in a one-to-one interaction (1)\n• The maximum KE depends only on the energy of each individual photon (hf) minus the work function (1)\n• Increasing intensity increases the number of photons per second, not the energy per photon (1)\n• Therefore more electrons are emitted (higher photocurrent), but each electron still receives the same maximum energy — maximum KE is unchanged (1)`
+        modelAnswer: `• Energy of a photon: E = hc/λ = (6.63 × 10⁻³⁴ × 3 × 10⁸) / (400 × 10⁻⁹) = 4.97 × 10⁻¹⁹ J = 3.1 eV (1)\n• Maximum KE = hf − φ = 3.11 − 2.3 = 0.81 eV ≈ 1.3 × 10⁻¹⁹ J (1)\n• Each photon interacts with a single electron in a one-to-one interaction (1)\n• The maximum KE depends only on the energy of each individual photon (hf) minus the work function (1)\n• Increasing intensity increases the number of photons per second, not the energy per photon (1)\n• Therefore more electrons are emitted (higher photocurrent), but each electron still receives the same maximum energy — maximum KE is unchanged (1)`
       },
       {
         q: 'A battery of EMF 12 V and internal resistance 0.8 Ω is connected to an external resistance R. Discuss how the terminal PD, current, and power dissipated in R vary as R is changed from very small to very large values. Determine the condition for maximum power transfer to R.',
