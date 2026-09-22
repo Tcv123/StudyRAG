@@ -44,7 +44,9 @@
     'History':             ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
     'Psychology':          ['AQA', 'Edexcel', 'OCR'],
     'Sociology':           ['AQA', 'OCR', 'Eduqas'],
-    'Business Studies':    ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
+    // Only Edexcel (9BS0) is built. Add a board here when its content exists,
+    // or students can pick a board whose diagnostics and notes are empty.
+    'Business Studies':    ['Edexcel'],
     'French':              ['AQA', 'Edexcel', 'Eduqas'],
     'German':              ['AQA', 'Edexcel', 'Eduqas'],
     'Spanish':             ['AQA', 'Edexcel', 'Eduqas'],
@@ -75,7 +77,6 @@
     'English Language',
     'Psychology',
     'Sociology',
-    'Business Studies',
   ];
 
   function isComingSoonAlevel(subjectName, level) {

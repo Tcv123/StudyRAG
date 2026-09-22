@@ -45,7 +45,8 @@
   // it just lands at the end of the live group.
   const ORDER_BY_LEVEL = {
     alevel: ['Biology', 'Chemistry', 'Physics', 'Mathematics', 'Further Mathematics',
-             'Computer Science', 'Economics', 'Geography', 'Politics'],
+             'Computer Science', 'Economics', 'Geography', 'Politics',
+             'Business Studies'],
     gcse: [],
   };
 
