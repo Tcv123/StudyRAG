@@ -130,6 +130,8 @@
     .mc-empty { font-size: 13.5px; color: var(--muted2); padding: 6px 0; }
     .mc-model-answer-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--good); margin-bottom: 6px; margin-top: 18px; display: flex; align-items: center; gap: 5px; }
     .mc-model-answer { white-space: pre-wrap; font-size: 14px; line-height: 1.7; color: var(--text); padding: 13px 15px; background: var(--surface); border-radius: 9px; border-left: 3px solid var(--good); border: 1px solid rgba(22,163,74,0.25); border-left: 3px solid var(--good); }
+    .mc-model-answer p { margin: 0 0 10px; }
+    .mc-model-answer p:last-child { margin-bottom: 0; }
 
     /* Levels */
     .ms-level-card { padding: 11px 15px; border-radius: 9px; margin-bottom: 6px; }
@@ -410,7 +412,8 @@ function renderMsCard(part, paperKey, paperId) {
        ((window.BIO_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.CHEM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.ECON_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
-       ((window.GEOG_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
+       ((window.GEOG_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
+       ((window.POLITICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
     : '';
   const modelAns   = preWritten || getModelAnswer(paperKey, partCode);
   const officialPts = (ms && msType === 'points') ? (ms.points || []) : [];
@@ -935,6 +938,7 @@ function buildPicker(userSubs) {
     ['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js'],
     ['ECON_MODEL_ANSWERS', 'model-answers-economics.js'],
     ['GEOG_MODEL_ANSWERS', 'model-answers-geography.js'],
+    ['POLITICS_MODEL_ANSWERS', 'model-answers-politics.js'],
   ].map(([flag, src]) => window[flag] ? Promise.resolve() : new Promise((resolve) => {
     const s = document.createElement('script');
     s.src = src;
