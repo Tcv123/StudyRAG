@@ -13,6 +13,11 @@
       "source": "/vercel.json",
       "destination": "/404",
       "permanent": false
+    },
+    {
+      "source": "/scripts/:path*",
+      "destination": "/404",
+      "permanent": false
     }
   ],
   "functions": {
