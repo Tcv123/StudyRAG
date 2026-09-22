@@ -369,7 +369,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
     { q: 'Informal settlements are:', options: ['Unplanned/unregistered housing areas, often lacking services (e.g. favelas, slums)', 'Luxury compounds', 'National parks', 'Industrial sites'], answer: 0 },
     { q: 'Megacities have:', options: ['Population ≥10 million inhabitants', '1 million', '100 million', '500 thousand'], answer: 0 },
     { q: 'Demographic dividend requires:', options: ['Large working-age population with fewer dependents and productive employment', 'Aging population', 'Population decline', 'Migration alone'], answer: 0 },
-    { q: 'Dependency ratio measures:', options: ['Non-working population relative to working-age', 'Income inequality', 'Debt level', 'Inflation'], answer: 0 },
+    { q: "Dependency ratio measures:", options: ["Non-working population relative to working-age population","Income inequality","Debt level","Inflation"], answer: 0 },
     { q: 'Global interdependence arises from:', options: ['Trade, finance, labour, information, environmental flows linking nations', 'Isolation', 'Only local trade', 'Self-sufficiency'], answer: 0 },
     { q: 'China\'s Belt and Road Initiative is:', options: ['Infrastructure-investment strategy across Eurasia/Africa, extending Chinese economic reach', 'US strategy', 'EU strategy', 'UN project'], answer: 0 },
     { q: 'The Anthropocene concept proposes:', options: ['Geological epoch marked by significant human influence on Earth systems', 'Ice age return', 'Mesozoic', 'Pre-history'], answer: 0 },

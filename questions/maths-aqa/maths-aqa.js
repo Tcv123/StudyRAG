@@ -341,7 +341,7 @@ const MATHS_AQA_QUESTIONS = {
       { q: 'Given \\(\\log_a 2 = p\\) and \\(\\log_a 5 = q\\), express \\(\\log_a 20\\) in terms of \\(p\\) and \\(q\\).', options: ['\\(2p + q\\)', '\\(p + 2q\\)', '\\(pq\\)', '\\(4pq\\)'], answer: 0 },
     ],
     red: [
-      { q: 'Solve \\(4^x + 2^{x+1} = 12\\).', options: ['\\(x = \\log_2(\\sqrt{13} - 1)\\); simplifies to approximately','\\(x = 1\\)','\\(x = 2\\)','\\(x = \\log_2 10\\)'], answer: 0 },
+      { q: "Solve \\(4^x + 2^{x+1} = 12\\).", options: ["\\(x = \\log_2(\\sqrt{13} - 1)\\); simplifies to approximately \\(1.38\\)","\\(x = 1\\)","\\(x = 2\\)","\\(x = \\log_2 10\\)"], answer: 0 },
       { q: 'Show that \\(\\log_a b \\cdot \\log_b c \\cdot \\log_c a = 1\\). The proof relies on:', options: ['Change of base: writing each as \\(\\frac{\\ln b}{\\ln a} \\cdot \\frac{\\ln c}{\\ln b} \\cdot \\frac{\\ln a}{\\ln c}\\), which cancels to 1', 'The product rule of logarithms', 'All logs equalling 1', 'Setting \\(a = b = c\\)'], answer: 0 },
       { q: 'A model \\(P = 200e^{-0.05t}\\) represents decay. Find the time when the rate of decay equals 5.', options: ['\\(t = 20\\ln 40 \\approx 73.8\\)', '\\(t = 20\\ln 2 \\approx 13.9\\)', '\\(t = 10\\ln 2 \\approx 6.9\\)', '\\(t = 40\\ln 2 \\approx 27.7\\)'], answer: 1 },
       { q: "Solve \\(\\log_2(x-1) + \\log_4(x+1) = 2\\).", options: ["\\(x = 1 + \\sqrt{3}\\)","\\(x = 2\\)","\\(x = \\sqrt{5}\\)","\\(x = 3\\)"], answer: 3 },

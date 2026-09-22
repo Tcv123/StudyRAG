@@ -88,7 +88,7 @@ const MATHS_OCR_ALEVEL_QUESTIONS = {
     { q: 'A polynomial of degree 3 has at most how many real roots?', options: ['2','3','4','1'], answer: 1 },
     { q: 'Factor theorem: if f(a) = 0 then:', options: ['a divides f','(x − a) is a factor of f(x)','f is linear','(x + a) is a factor'], answer: 1 },
     { q: 'Remainder when x³ − 1 is divided by (x − 2) is:', options: ['0','7','3','8'], answer: 1 },
-    { q: 'A function f: ℝ → ℝ is surjective if:', options: ['f is continuous','Every element of ℝ is mapped to','f is one-to-one','f is bounded'], answer: 1 },
+    { q: "A function f: ℝ → ℝ is surjective if:", options: ["f is continuous","Every element of ℝ is mapped to by at least one element of the domain","f is one-to-one","f is bounded"], answer: 1 },
   ], amber: [
       { q: 'Solve 3x² − 11x + 6 = 0.', options: ['x = −3 or x = −2/3','x = 2 or x = 3','x = 3 or x = 2/3','x = 1/3 or x = 6'], answer: 2 },
       { q: 'Complete the square for x² + 6x + 1.', options: ['(x + 6)² − 35','(x + 3)² − 8','(x − 3)² − 8','(x + 3)² + 8'], answer: 1 },
