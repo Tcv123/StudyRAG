@@ -13,7 +13,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_PRACTICE = {
     { q: 'Which is an exogenous factor shaping a place?', options: ['Local geology', 'International migration flows', 'Topography', 'Local river'], answer: 1, explanation: 'Exogenous means external — flows of migration/investment/media. Endogenous includes geology, topography, internal demography.' },
   ],
   '2.1': [
-    { q: "On the Falkenmark indicator, a country with annual renewable water of 600 m³/person is experiencing:", options: ["Water scarcity","Absolute water scarcity","Water stress only","No water issue"], answer: 0, explanation: 'Falkenmark: below 1,700 m³ per person is water stress, below 1,000 m³ is water scarcity, below 500 m³ is absolute scarcity. 600 m³ is scarcity, not yet absolute scarcity.' },
+    { q: 'In which theory of precipitation formation do ice crystals grow at the expense of supercooled water droplets in a cold cloud?', options: ['Collision-coalescence', 'Bergeron-Findeisen process', 'Orographic uplift', 'Convectional uplift'], answer: 1, explanation: 'In the Bergeron-Findeisen process saturation vapour pressure is lower over ice than over water, so ice crystals grow as droplets evaporate, then fall (melting to rain if the air below is warm). Collision-coalescence is the warm-cloud process; orographic and convectional uplift are causes of cloud formation, not theories of droplet growth.' },
   ],
   '2.2': [
     { q: 'Which is an example of negative feedback in the carbon cycle?', options: ['Amazon die-back', 'Permafrost thaw releasing methane', 'Ocean CO₂ uptake', 'Albedo loss'], answer: 2, explanation: 'Oceans absorbing CO₂ is a negative feedback (damping). The others are positive feedbacks.' },
@@ -25,7 +25,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_PRACTICE = {
     { q: 'Under UNCLOS, an EEZ extends up to how many nautical miles?', options: ['12 nm', '24 nm', '200 nm', '500 nm'], answer: 2, explanation: 'EEZ extends to 200 nautical miles. Territorial sea is 12 nm; contiguous zone 24 nm.' },
   ],
   '2.5': [
-    { q: 'Which country is NOT a BRICS member?', options: ['Brazil', 'Russia', 'India', 'Japan'], answer: 3, explanation: 'BRICS = Brazil, Russia, India, China, South Africa.' },
+    { q: 'Which country is NOT a BRICS member?', options: ['Brazil', 'Russia', 'India', 'Japan'], answer: 3, explanation: 'BRICS began as Brazil, Russia, India, China and South Africa; it expanded in 2024 (UAE, Iran, Egypt, Ethiopia) and 2025 (Indonesia). Japan is not a member.' },
   ],
   '3.1': [
     { q: 'Which is a primary hazard of an earthquake?', options: ['Tsunami', 'Ground shaking', 'Liquefaction', 'Fire from broken gas mains'], answer: 1, explanation: 'Ground shaking is the primary hazard (direct effect of seismic waves). The others are secondary hazards.' },

@@ -420,7 +420,7 @@ Application: up to 2 marks for
 Analysis: 1 mark for
 • the broad aim of getting more people riding is translated into a measurable target for e-bike sales, so managers across the 42 stores know what they are working towards and performance can be reviewed against the mission after three years` },
 
-      { q: 'Aldi is the UK\'s fourth-largest supermarket and opened its 1,000th UK store in 2024. It stocks around 2,000 product lines, compared with tens of thousands in a large Tesco, and the great majority of its products are own label.\n\nExplain how a cost leadership strategy may give Aldi a competitive advantage.', marks: 4, command: 'Explain',
+      { q: 'Aldi is the UK\'s fourth-largest supermarket and opened its 1,000th UK store in 2023. It stocks around 2,000 product lines, compared with tens of thousands in a large Tesco, and the great majority of its products are own label.\n\nExplain how a cost leadership strategy may give Aldi a competitive advantage.', marks: 4, command: 'Explain',
         markScheme: `Knowledge 1, Application 2, Analysis 1
 
 Knowledge: 1 mark for
@@ -1850,14 +1850,14 @@ L1 (1–2): Knowledge is fragmentary and recall-based; little or no relevant use
 L2 (3–5): Accurate knowledge and understanding; reasoning shows causes and/or effects but some links are asserted or incomplete; an assessment is attempted using quantitative and/or qualitative evidence; the context is used throughout, though the significance of competing arguments is unlikely to be shown.
 L3 (6–8): Accurate, thorough knowledge; logical chains of reasoning showing causes and/or effects; a balanced, well-contextualised assessment using quantitative and/or qualitative evidence; relevant, effective use of the context and awareness of competing arguments/factors, with a supported judgement.` },
 
-      { q: 'Redcar Steel Products Ltd makes steel sections for construction and sells 30% of its output to customers in the EU. The EU uses "safeguard" import quotas on steel: once a country\'s quota for a product is used up in a quarter, further imports face a 25% tariff. In 2025 the UK\'s quota for some products was being used up within weeks of each quarter starting.\n\nAssess the impact of EU import quotas on Redcar Steel Products.', marks: 8, command: 'Assess',
+      { q: 'Redcar Steel Products Ltd makes steel sections for construction and sells 30% of its output to customers in the EU. The EU limits steel imports with quotas: once a country\'s quota for a product is used up in a quarter, further imports face a tariff. In 2025, under the EU\'s "safeguard" measure, that tariff was 25% and the UK\'s quota for some products was being used up within weeks of each quarter starting. From July 2026 the EU cut its tariff-free steel quotas by almost half and raised the out-of-quota tariff to 50%.\n\nAssess the impact of EU import quotas on Redcar Steel Products.', marks: 8, command: 'Assess',
         markScheme: `Knowledge 2, Application 2, Analysis 2, Evaluation 2
 
 Indicative content:
 • An import quota is a physical limit on the quantity of a good that can be imported into a country or trading bloc over a period.
 
 Negative impact:
-• Once the UK quota is used up, Redcar's steel faces a 25% tariff, making it less price competitive in the EU
+• Once the UK quota is used up, Redcar's steel faces a 50% tariff (25% before July 2026), making it much less price competitive in the EU; smaller quotas will be used up even sooner
 • EU customers may switch to EU steelmakers to avoid uncertainty about whether the quota will be available
 • With 30% of output sold to the EU, lower sales could reduce capacity utilisation and increase unit costs.
 
