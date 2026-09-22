@@ -23,6 +23,11 @@
       "source": "/package.json",
       "destination": "/404",
       "permanent": false
+    },
+    {
+      "source": "/package-lock.json",
+      "destination": "/404",
+      "permanent": false
     }
   ],
   "functions": {
