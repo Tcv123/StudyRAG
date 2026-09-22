@@ -838,6 +838,8 @@ sparse[900] &larr; 1.5
     <tr><td>Graph (adj. list)</td><td>O(deg) edge test</td><td>&ndash;</td><td>O(1) edge</td><td>O(deg) edge</td><td>O(V+E)</td></tr>
 </table>
 
+<p><strong>Why appending to a resizing array is O(1) amortised.</strong> The array is held in a block of a fixed capacity. While there is spare room, an append writes one element and costs O(1). When the block is full, a larger block (typically double the capacity) is allocated and all n elements are copied across, which costs O(n). Because the capacity doubles, those expensive copies get rarer as the array grows: going from capacity 1 to capacity n copies 1 + 2 + 4 + &hellip; + n/2 &lt; n elements in total. So n appends cost O(n) altogether, which is O(1) each on average &mdash; an individual append can still cost O(n) when it triggers a resize.</p>
+
 <h2>Summary Checklist</h2>
 
 <ul>
