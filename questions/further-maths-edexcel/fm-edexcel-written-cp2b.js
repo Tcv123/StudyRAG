@@ -104,12 +104,12 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'Find the area of one loop of the curve \\(r^2 = 4\\cos 2\\theta\\).',
         marks: 4,
-        modelAnswer: '• One loop: \\(A = \\tfrac{1}{2}\\int_{-\\pi/4}^{\\pi/4}4\\cos 2\\theta\\,d\\theta\\) (M1)\n• \\(= 2\\int_0^{\\pi/4}4\\cos 2\\theta \\cdot \\tfrac{1}{2}\\,d\\theta = 2\\left[\\sin 2\\theta\\right]_0^{\\pi/4}\\) — rewriting: \\(\\left[\\tfrac{1}{2}\\cdot 4\\sin 2\\theta / 2\\right]\\) (M1)\n• \\(= \\left[\\sin 2\\theta\\right]_{-\\pi/4}^{\\pi/4} \\cdot \\tfrac{1}{2}\\cdot 4 / 2\\): Area \\(= \\tfrac{1}{2}\\cdot 4\\cdot\\tfrac{1}{2}[\\sin 2\\theta]_{-\\pi/4}^{\\pi/4} = [\\sin 2\\theta]_{-\\pi/4}^{\\pi/4}\\) (M1)\n• \\(= 1 - (-1) = 2\\) (A1)'
+        modelAnswer: '• One loop: \\(A = \\tfrac{1}{2}\\int_{-\\pi/4}^{\\pi/4}4\\cos 2\\theta\\,d\\theta\\) (M1)\n• \\(= 2\\int_{-\\pi/4}^{\\pi/4}\\cos 2\\theta\\,d\\theta\\) (M1)\n• \\(= 2\\left[\\tfrac{\\sin 2\\theta}{2}\\right]_{-\\pi/4}^{\\pi/4} = \\left[\\sin 2\\theta\\right]_{-\\pi/4}^{\\pi/4}\\) (M1)\n• \\(= 1 - (-1) = 2\\) (A1)'
       },
       {
-        q: 'The curves \\(r = 2\\) and \\(r = 1 + \\cos\\theta\\) intersect. Find the area of the region that lies inside \\(r = 1 + \\cos\\theta\\) but outside \\(r = 2\\).',
+        q: 'The curves \\(r = 3\\) and \\(r = 2 + 2\\cos\\theta\\) intersect. Find the area of the region that lies inside \\(r = 2 + 2\\cos\\theta\\) but outside \\(r = 3\\).',
         marks: 6,
-        modelAnswer: '• Intersection: \\(1+\\cos\\theta = 2 \\Rightarrow \\cos\\theta = 1 \\Rightarrow \\theta = 0\\) only; curves meet at \\((2,0)\\) (M1)\n• Actually \\(r=2\\) and \\(r=1+\\cos\\theta\\): no region outside \\(r=2\\), since max of cardioid is 2. (M1)\n• Correct interpretation: area inside \\(r=1+\\cos\\theta\\) and inside \\(r=2\\): find intersections \\(\\theta = \\pm\\tfrac{2\\pi}{3}\\) where \\(1+\\cos\\theta=2\\) — note \\(\\cos\\theta=-1\\) gives \\(r=0\\) not 2. Intersection at \\(\\theta=0\\) only. (M1)\n• Area inside cardioid only: \\(\\tfrac{3\\pi a^2}{2} = \\tfrac{3\\pi}{2}\\) for \\(a=1\\). Answer: \\(\\dfrac{3\\pi}{2} - \\pi\\cdot 4 \\cdot \\tfrac{1}{2\\pi}\\)... (A1A1A1)'
+        modelAnswer: '• Intersections: \\(2+2\\cos\\theta = 3 \\Rightarrow \\cos\\theta = \\tfrac{1}{2} \\Rightarrow \\theta = \\pm\\tfrac{\\pi}{3}\\) (M1)\n• For \\(|\\theta| < \\tfrac{\\pi}{3}\\) the cardioid lies outside the circle (M1)\n• \\(A = \\tfrac{1}{2}\\int_{-\\pi/3}^{\\pi/3}\\left[(2+2\\cos\\theta)^2 - 9\\right]d\\theta = \\int_0^{\\pi/3}\\left[(2+2\\cos\\theta)^2 - 9\\right]d\\theta\\) (M1)\n• \\((2+2\\cos\\theta)^2 = 6 + 8\\cos\\theta + 2\\cos 2\\theta\\) (M1)\n• \\(A = \\int_0^{\\pi/3}(-3 + 8\\cos\\theta + 2\\cos 2\\theta)\\,d\\theta = \\left[-3\\theta + 8\\sin\\theta + \\sin 2\\theta\\right]_0^{\\pi/3}\\) (A1)\n• \\(= -\\pi + 4\\sqrt{3} + \\tfrac{\\sqrt{3}}{2} = \\dfrac{9\\sqrt{3}}{2} - \\pi\\) (A1)'
       },
       {
         q: 'Find the polar equation of the circle with centre \\((3,0)\\) in Cartesian coordinates and radius 3.',
@@ -117,7 +117,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
         modelAnswer: '• Cartesian: \\((x-3)^2 + y^2 = 9\\), so \\(x^2 + y^2 - 6x = 0\\) (M1)\n• \\(r^2 - 6r\\cos\\theta = 0\\) (M1)\n• \\(r = 6\\cos\\theta\\) (A1)'
       },
       {
-        q: 'Show that the curve \\(r = \\sec^2(\\tfrac{\\theta}{2})\\) has Cartesian equation \\(y^2 = 4(1-x)\\cdot x\\)... Actually show \\(r = \\dfrac{2}{1+\\cos\\theta}\\) is a parabola.',
+        q: 'Show that the curve \\(r = \\dfrac{2}{1+\\cos\\theta}\\) is a parabola, and state the coordinates of its vertex.',
         marks: 4,
         modelAnswer: '• \\(r(1+\\cos\\theta) = 2 \\Rightarrow r + r\\cos\\theta = 2 \\Rightarrow r = 2 - x\\) (M1)\n• \\(r^2 = (2-x)^2\\): \\(x^2+y^2 = 4 - 4x + x^2\\) (M1)\n• \\(y^2 = 4 - 4x\\) i.e. \\(y^2 = -4(x-1)\\) — a parabola (A1)\n• Vertex at \\((1, 0)\\), opens left (A1)'
       },
@@ -132,7 +132,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
         modelAnswer: '• \\(1 + 2\\cos\\theta = 0 \\Rightarrow \\cos\\theta = -\\tfrac{1}{2}\\) (M1)\n• \\(\\theta = \\tfrac{2\\pi}{3},\\; \\tfrac{4\\pi}{3}\\) (A1)'
       },
       {
-        q: 'Sketch the lima\\c{c}on \\(r = 1 + 2\\cos\\theta\\) for \\(0 \\leq \\theta \\leq 2\\pi\\), marking the inner loop.',
+        q: 'Sketch the limaçon \\(r = 1 + 2\\cos\\theta\\) for \\(0 \\leq \\theta \\leq 2\\pi\\), marking the inner loop.',
         marks: 3,
         modelAnswer: '• Correct shape: outer loop passing through \\((3,0)\\) and inner loop for \\(\\tfrac{2\\pi}{3} < \\theta < \\tfrac{4\\pi}{3}\\) (B1)\n• Inner loop clearly marked/shaded (B1)\n• Values \\(r=3\\) at \\(\\theta=0\\), \\(r=0\\) at \\(\\theta=\\tfrac{2\\pi}{3}\\), \\(r=-1\\) at \\(\\theta=\\pi\\) indicated (B1)'
       },
@@ -144,7 +144,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'Find the area of the region that lies inside both \\(r = 2\\sin\\theta\\) and \\(r = 2\\cos\\theta\\).',
         marks: 6,
-        modelAnswer: '• Intersection: \\(2\\sin\\theta = 2\\cos\\theta \\Rightarrow \\theta = \\tfrac{\\pi}{4}\\) (M1)\n• By symmetry: \\(A = 2\\cdot\\tfrac{1}{2}\\int_0^{\\pi/4}(2\\sin\\theta)^2\\,d\\theta\\) (M1)\n• \\(= \\int_0^{\\pi/4}4\\sin^2\\theta\\,d\\theta = \\int_0^{\\pi/4}(2 - 2\\cos 2\\theta)\\,d\\theta\\) (M1)\n• \\(= \\left[2\\theta - \\sin 2\\theta\\right]_0^{\\pi/4} = \\tfrac{\\pi}{2} - 1\\) (A1)\n• Total area \\(= 2(\\tfrac{\\pi}{2}-1) = \\pi - 2\\) (A1A1)'
+        modelAnswer: '• Intersection: \\(2\\sin\\theta = 2\\cos\\theta \\Rightarrow \\theta = \\tfrac{\\pi}{4}\\) (M1)\n• By symmetry: \\(A = 2\\cdot\\tfrac{1}{2}\\int_0^{\\pi/4}(2\\sin\\theta)^2\\,d\\theta\\) (M1)\n• \\(= \\int_0^{\\pi/4}4\\sin^2\\theta\\,d\\theta = \\int_0^{\\pi/4}(2 - 2\\cos 2\\theta)\\,d\\theta\\) (M1)\n• \\(= \\left[2\\theta - \\sin 2\\theta\\right]_0^{\\pi/4} = \\tfrac{\\pi}{2} - 1\\) (A1)\n• The factor 2 for symmetry is already included, so the total area \\(= \\dfrac{\\pi}{2} - 1\\) (A1A1)'
       },
       {
         q: 'Find all points on the curve \\(r = 2 + 2\\sin\\theta\\) where the tangent is perpendicular to the initial line.',
@@ -154,14 +154,14 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'Prove that the curve \\(r = a(1-\\sin\\theta)\\) is symmetric about the line \\(\\theta = -\\tfrac{\\pi}{2}\\).',
         marks: 2,
-        modelAnswer: '• Replacing \\(\\theta\\) by \\(-\\pi - \\theta\\): \\(r = a(1 - \\sin(-\\pi-\\theta)) = a(1+\\sin(\\pi+\\theta))\\)... (M1)\n• Better: replace \\(\\theta\\) by \\(\\pi + \\theta\\) then note \\(\\sin(-\\theta) = -\\sin\\theta\\); or use \\((r,-\\pi-\\theta)\\) gives same \\(r\\), proving symmetry about \\(\\theta=-\\tfrac{\\pi}{2}\\) (A1)'
+        modelAnswer: '• Replacing \\(\\theta\\) by \\(\\pi-\\theta\\) gives \\(r = a(1-\\sin(\\pi-\\theta)) = a(1-\\sin\\theta)\\), which is unchanged (M1)\n• The map \\((r,\\theta)\\mapsto(r,\\pi-\\theta)\\) is reflection in the vertical line through the pole, i.e. the line \\(\\theta = \\pm\\tfrac{\\pi}{2}\\), so the curve is symmetric about \\(\\theta=-\\tfrac{\\pi}{2}\\) (A1)'
       },
     ],
     red: [
       {
-        q: 'Find the exact area enclosed between the curves \\(r = 3\\cos\\theta\\) and \\(r = 1 + \\cos\\theta\\).',
+        q: 'Find the exact area of the region that lies inside both \\(r = 3\\cos\\theta\\) and \\(r = 1 + \\cos\\theta\\).',
         marks: 7,
-        modelAnswer: '• Intersections: \\(3\\cos\\theta = 1+\\cos\\theta \\Rightarrow \\cos\\theta = \\tfrac{1}{2} \\Rightarrow \\theta = \\pm\\tfrac{\\pi}{3}\\) (M1)\n• For \\(|\\theta| < \\tfrac{\\pi}{3}\\): \\(r = 3\\cos\\theta\\) is outer; for \\(|\\theta| > \\tfrac{\\pi}{3}\\): \\(r = 1+\\cos\\theta\\) is outer (M1)\n• Area inside \\(3\\cos\\theta\\), \\(-\\tfrac{\\pi}{3}\\leq\\theta\\leq\\tfrac{\\pi}{3}\\): \\(\\tfrac{1}{2}\\int_{-\\pi/3}^{\\pi/3}9\\cos^2\\theta\\,d\\theta = \\tfrac{9}{4}[\\theta+\\tfrac{\\sin 2\\theta}{2}]_{-\\pi/3}^{\\pi/3} = \\tfrac{9}{4}(\\tfrac{2\\pi}{3}+\\tfrac{\\sqrt3}{2}) = \\tfrac{3\\pi}{2}+\\tfrac{9\\sqrt3}{8}\\cdot 2\\) — carrying through (M1A1)\n• Area inside cardioid for remaining: \\(\\tfrac{1}{2}\\int_{\\pi/3}^{\\pi}(1+\\cos\\theta)^2\\,d\\theta \\times 2\\) (M1)\n• Combine and simplify: Total \\(= \\pi\\) (A1A1)'
+        modelAnswer: '• Intersections: \\(3\\cos\\theta = 1+\\cos\\theta \\Rightarrow \\cos\\theta = \\tfrac{1}{2} \\Rightarrow \\theta = \\pm\\tfrac{\\pi}{3}\\) (M1)\n• For \\(|\\theta| < \\tfrac{\\pi}{3}\\) the cardioid is the inner curve; for \\(\\tfrac{\\pi}{3} < |\\theta| \\leq \\tfrac{\\pi}{2}\\) the circle is the inner curve (and the circle is complete for \\(|\\theta|\\leq\\tfrac{\\pi}{2}\\)) (M1)\n• \\(A = 2\\left[\\tfrac{1}{2}\\int_0^{\\pi/3}(1+\\cos\\theta)^2\\,d\\theta + \\tfrac{1}{2}\\int_{\\pi/3}^{\\pi/2}9\\cos^2\\theta\\,d\\theta\\right]\\) (M1A1)\n• \\(\\int_0^{\\pi/3}(1+\\cos\\theta)^2\\,d\\theta = \\left[\\tfrac{3\\theta}{2}+2\\sin\\theta+\\tfrac{\\sin 2\\theta}{4}\\right]_0^{\\pi/3} = \\tfrac{\\pi}{2}+\\tfrac{9\\sqrt3}{8}\\) (M1)\n• \\(\\int_{\\pi/3}^{\\pi/2}9\\cos^2\\theta\\,d\\theta = 9\\left[\\tfrac{\\theta}{2}+\\tfrac{\\sin 2\\theta}{4}\\right]_{\\pi/3}^{\\pi/2} = \\tfrac{3\\pi}{4}-\\tfrac{9\\sqrt3}{8}\\) (A1)\n• Total \\(= \\tfrac{\\pi}{2}+\\tfrac{9\\sqrt3}{8}+\\tfrac{3\\pi}{4}-\\tfrac{9\\sqrt3}{8} = \\dfrac{5\\pi}{4}\\) (A1)'
       },
       {
         q: 'The curve \\(C\\) has polar equation \\(r = \\dfrac{6}{2 - \\cos\\theta}\\). Show that \\(C\\) is an ellipse and find its eccentricity and the coordinates of its foci.',
@@ -184,9 +184,9 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
         modelAnswer: '• \\(A = \\tfrac{1}{2}\\int_0^{\\pi/2}(2+\\cos 2\\theta)^2\\,d\\theta\\) (M1)\n• \\(= \\tfrac{1}{2}\\int_0^{\\pi/2}(4 + 4\\cos 2\\theta + \\cos^2 2\\theta)\\,d\\theta\\) (M1)\n• \\(\\cos^2 2\\theta = \\tfrac{1+\\cos 4\\theta}{2}\\); integral \\(= \\tfrac{1}{2}\\left[4\\theta + 2\\sin 2\\theta + \\tfrac{\\theta}{2} + \\tfrac{\\sin 4\\theta}{8}\\right]_0^{\\pi/2}\\) (M1A1)\n• \\(= \\tfrac{1}{2}\\left(2\\pi + 0 + \\tfrac{\\pi}{4} + 0\\right) = \\dfrac{9\\pi}{8}\\) (A1)'
       },
       {
-        q: 'Show that the area of the region inside \\(r = a(1+\\cos\\theta)\\) and outside \\(r = a\\) is \\(a^2\\left(\\tfrac{\\pi}{4} + 1\\right)\\).',
+        q: 'Show that the area of the region inside \\(r = a(1+\\cos\\theta)\\) and outside \\(r = a\\) is \\(a^2\\left(\\tfrac{\\pi}{4} + 2\\right)\\).',
         marks: 6,
-        modelAnswer: '• Intersection: \\(1+\\cos\\theta = 1 \\Rightarrow \\theta = \\pm\\tfrac{\\pi}{2}\\) (M1)\n• Area \\(= \\tfrac{1}{2}\\int_{-\\pi/2}^{\\pi/2}\\left[(1+\\cos\\theta)^2 - 1\\right]a^2\\,d\\theta\\) (M1)\n• \\(= a^2\\int_0^{\\pi/2}(2\\cos\\theta + \\cos^2\\theta)\\,d\\theta\\) (by symmetry) (M1)\n• \\(= a^2\\left[2\\sin\\theta + \\tfrac{\\theta}{2} + \\tfrac{\\sin 2\\theta}{4}\\right]_0^{\\pi/2}\\) (M1)\n• \\(= a^2\\left(2 + \\tfrac{\\pi}{4} + 0\\right) = a^2\\left(\\tfrac{\\pi}{4}+2\\right)\\) — note: correct result is \\(a^2(\\tfrac{\\pi}{4}+2)\\)... (A1A1)'
+        modelAnswer: '• Intersection: \\(1+\\cos\\theta = 1 \\Rightarrow \\theta = \\pm\\tfrac{\\pi}{2}\\) (M1)\n• Area \\(= \\tfrac{1}{2}\\int_{-\\pi/2}^{\\pi/2}\\left[(1+\\cos\\theta)^2 - 1\\right]a^2\\,d\\theta\\) (M1)\n• \\(= a^2\\int_0^{\\pi/2}(2\\cos\\theta + \\cos^2\\theta)\\,d\\theta\\) (by symmetry) (M1)\n• \\(= a^2\\left[2\\sin\\theta + \\tfrac{\\theta}{2} + \\tfrac{\\sin 2\\theta}{4}\\right]_0^{\\pi/2}\\) (M1)\n• \\(= a^2\\left(2 + \\tfrac{\\pi}{4} + 0\\right) = a^2\\left(\\tfrac{\\pi}{4}+2\\right)\\) as required (A1A1)'
       },
       {
         q: 'Sketch and find the total area enclosed by the four-petalled rose \\(r = \\cos 2\\theta\\).',
@@ -411,12 +411,12 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'Solve \\(\\text{arcosh}(2x+1) = \\text{arsinh}\\,x\\), giving an exact answer.',
         marks: 6,
-        modelAnswer: '• \\(\\ln(2x+1+\\sqrt{(2x+1)^2-1}) = \\ln(x+\\sqrt{x^2+1})\\) (M1)\n• \\(2x+1+\\sqrt{4x^2+4x} = x+\\sqrt{x^2+1}\\) (M1)\n• \\(x+1+2\\sqrt{x}\\sqrt{x+1} = \\sqrt{x^2+1}\\) ... complex approach; better: let both sides equal \\(t\\): \\(\\cosh t = 2x+1\\) and \\(\\sinh t = x\\) (M1)\n• \\(\\cosh^2 t - \\sinh^2 t = 1 \\Rightarrow (2x+1)^2 - x^2 = 1\\) (M1)\n• \\(3x^2+4x = 0 \\Rightarrow x(3x+4) = 0\\) (A1)\n• \\(x=0\\) (valid, gives \\(t=0\\)) or \\(x=-\\tfrac{4}{3}\\) (invalid as \\(\\text{arcosh}\\) requires argument \\(\\geq 1\\)) (A1)'
+        modelAnswer: '• \\(\\ln(2x+1+\\sqrt{(2x+1)^2-1}) = \\ln(x+\\sqrt{x^2+1})\\) (M1)\n• \\(2x+1+\\sqrt{4x^2+4x} = x+\\sqrt{x^2+1}\\) (M1)\n• A quicker route: let both sides equal \\(t\\), so \\(\\cosh t = 2x+1\\) and \\(\\sinh t = x\\) (M1)\n• \\(\\cosh^2 t - \\sinh^2 t = 1 \\Rightarrow (2x+1)^2 - x^2 = 1\\) (M1)\n• \\(3x^2+4x = 0 \\Rightarrow x(3x+4) = 0\\) (A1)\n• \\(x=0\\) (valid, gives \\(t=0\\)) or \\(x=-\\tfrac{4}{3}\\) (invalid as \\(\\text{arcosh}\\) requires argument \\(\\geq 1\\)) (A1)'
       },
       {
         q: 'Evaluate \\(\\displaystyle\\int_0^1 x\\,\\text{arsinh}\\,x\\,dx\\) exactly.',
         marks: 6,
-        modelAnswer: '• IBP: \\(u=\\text{arsinh}\\,x\\), \\(dv=x\\,dx \\Rightarrow v=\\tfrac{x^2}{2}\\), \\(du=\\tfrac{1}{\\sqrt{1+x^2}}dx\\) (M1)\n• \\(= \\left[\\tfrac{x^2}{2}\\text{arsinh}\\,x\\right]_0^1 - \\int_0^1 \\dfrac{x^2}{2\\sqrt{1+x^2}}\\,dx\\) (M1)\n• \\(= \\tfrac{1}{2}\\ln(1+\\sqrt{2}) - \\tfrac{1}{2}\\int_0^1\\dfrac{x^2}{\\sqrt{1+x^2}}\\,dx\\) (A1)\n• \\(\\dfrac{x^2}{\\sqrt{1+x^2}} = \\sqrt{1+x^2} - \\dfrac{1}{\\sqrt{1+x^2}}\\) (M1)\n• \\(\\int_0^1 \\sqrt{1+x^2}\\,dx - \\int_0^1\\dfrac{1}{\\sqrt{1+x^2}}\\,dx = \\left[\\tfrac{x\\sqrt{1+x^2}}{2}+\\tfrac{\\text{arsinh}\\,x}{2}\\right]_0^1 - [\\text{arsinh}\\,x]_0^1\\) (M1)\n• Combining: \\(\\dfrac{\\sqrt{2}-1}{4} + \\dfrac{\\ln(1+\\sqrt{2})}{4}\\) ... final answer \\(= \\dfrac{\\sqrt{2}-1}{4} + \\dfrac{\\ln(1+\\sqrt{2})}{4}\\) (A1)'
+        modelAnswer: '• IBP: \\(u=\\text{arsinh}\\,x\\), \\(dv=x\\,dx \\Rightarrow v=\\tfrac{x^2}{2}\\), \\(du=\\tfrac{1}{\\sqrt{1+x^2}}dx\\) (M1)\n• \\(= \\left[\\tfrac{x^2}{2}\\text{arsinh}\\,x\\right]_0^1 - \\int_0^1 \\dfrac{x^2}{2\\sqrt{1+x^2}}\\,dx\\) (M1)\n• \\(= \\tfrac{1}{2}\\ln(1+\\sqrt{2}) - \\tfrac{1}{2}\\int_0^1\\dfrac{x^2}{\\sqrt{1+x^2}}\\,dx\\) (A1)\n• \\(\\dfrac{x^2}{\\sqrt{1+x^2}} = \\sqrt{1+x^2} - \\dfrac{1}{\\sqrt{1+x^2}}\\) (M1)\n• \\(\\int_0^1 \\sqrt{1+x^2}\\,dx - \\int_0^1\\dfrac{1}{\\sqrt{1+x^2}}\\,dx = \\left[\\tfrac{x\\sqrt{1+x^2}}{2}+\\tfrac{\\text{arsinh}\\,x}{2}\\right]_0^1 - [\\text{arsinh}\\,x]_0^1\\) (M1)\n• \\(\\int_0^1\\dfrac{x^2}{\\sqrt{1+x^2}}\\,dx = \\dfrac{\\sqrt2}{2}-\\dfrac{\\ln(1+\\sqrt2)}{2}\\), so \\(I = \\tfrac{1}{2}\\ln(1+\\sqrt2) - \\tfrac{1}{2}\\left(\\dfrac{\\sqrt2}{2}-\\dfrac{\\ln(1+\\sqrt2)}{2}\\right) = \\dfrac{3\\ln(1+\\sqrt{2})}{4} - \\dfrac{\\sqrt{2}}{4}\\) (A1)'
       },
     ],
   },
@@ -509,7 +509,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'Solve \\(\\dfrac{d^2y}{dx^2} + 2\\dfrac{dy}{dx} + 5y = 10\\sin x\\) with \\(y=0,\\, \\dfrac{dy}{dx}=1\\) when \\(x=0\\).',
         marks: 8,
-        modelAnswer: '• AE: \\(m^2+2m+5=0 \\Rightarrow m=-1\\pm 2i\\) (M1)\n• CF: \\(e^{-x}(A\\cos 2x+B\\sin 2x)\\) (A1)\n• PI: try \\(y=a\\sin x+b\\cos x\\): \\(-a\\sin x-b\\cos x+2a\\cos x-2b\\sin x+5a\\sin x+5b\\cos x=10\\sin x\\) (M1)\n• \\((4a-2b)\\sin x+(2a+4b)\\cos x=10\\sin x\\): \\(4a-2b=10,\\;2a+4b=0 \\Rightarrow b=-a\\) (M1A1)\n• \\(4a+2a=10 \\Rightarrow a=\\tfrac{5}{3},\\;b=-\\tfrac{5}{3}\\) — checking: \\(6a=10\\) (A1)\n• GS: \\(y=e^{-x}(A\\cos2x+B\\sin2x)+\\tfrac{5}{3}(\\sin x-\\cos x)\\) (A1)\n• \\(y(0)=0: A-\\tfrac{5}{3}=0 \\Rightarrow A=\\tfrac{5}{3}\\); \\(y\'(0)=1\\): solve for \\(B\\) (A1)'
+        modelAnswer: '• AE: \\(m^2+2m+5=0 \\Rightarrow m=-1\\pm 2i\\) (M1)\n• CF: \\(e^{-x}(A\\cos 2x+B\\sin 2x)\\) (A1)\n• PI: try \\(y=a\\sin x+b\\cos x\\): \\(-a\\sin x-b\\cos x+2a\\cos x-2b\\sin x+5a\\sin x+5b\\cos x=10\\sin x\\) (M1)\n• \\((4a-2b)\\sin x+(2a+4b)\\cos x=10\\sin x\\): \\(4a-2b=10,\\;2a+4b=0 \\Rightarrow b=-\\tfrac{a}{2}\\) (M1A1)\n• \\(4a+a=10 \\Rightarrow a=2,\\;b=-1\\), so PI \\(=2\\sin x-\\cos x\\) (A1)\n• GS: \\(y=e^{-x}(A\\cos2x+B\\sin2x)+2\\sin x-\\cos x\\) (A1)\n• \\(y(0)=0: A-1=0 \\Rightarrow A=1\\); \\(y\'(0)=1: -A+2B+2=1 \\Rightarrow B=0\\), so \\(y=e^{-x}\\cos 2x+2\\sin x-\\cos x\\) (A1)'
       },
       {
         q: 'Use the substitution \\(v = \\dfrac{y}{x}\\) to solve \\(x\\dfrac{dy}{dx} = y + x\\tan\\dfrac{y}{x}\\).',
@@ -539,7 +539,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'Find the general solution of \\(\\dfrac{d^2y}{dx^2} - 2\\dfrac{dy}{dx} + y = xe^x\\).',
         marks: 6,
-        modelAnswer: '• AE: \\(m=1\\) (repeated), CF: \\((A+Bx)e^x\\) (M1A1)\n• PI: try \\(y=x^2(ax+b)e^x\\) since \\(e^x\\) is in CF with multiplicity 2 — try \\(y=(ax^3+bx^2)e^x\\)... standard: try \\(y=ax^3e^x\\) since polynomial×e^x with repeated root (M1)\n• Actually try \\(y=kx^2e^x\\cdot x = kx^3e^x\\)... let \\(y=kx^2e^x\\) first doesn\'t work; need \\(y=(cx^2+dx^3)e^x\\) — simplest: \\(y=\\tfrac{x^3}{6}e^x\\) (by operator method or direct substitution) (M1A1)\n• GS: \\(y=(A+Bx)e^x + \\tfrac{x^3}{6}e^x\\) (A1)'
+        modelAnswer: '• AE: \\(m^2-2m+1=0 \\Rightarrow m=1\\) (repeated), CF: \\((A+Bx)e^x\\) (M1A1)\n• Since \\(e^x\\) corresponds to a repeated root, write \\(y=u(x)e^x\\); then \\(y\'\'-2y\'+y=u\'\'e^x\\) (M1)\n• So \\(u\'\'e^x = xe^x \\Rightarrow u\'\'=x\\) (M1)\n• Taking the particular solution \\(u=\\tfrac{x^3}{6}\\), PI \\(=\\tfrac{x^3}{6}e^x\\) (A1)\n• GS: \\(y=(A+Bx)e^x + \\tfrac{x^3}{6}e^x\\) (A1)'
       },
       {
         q: 'A second-order ODE has solution \\(y = Ae^{-x}\\cos 2x + Be^{-x}\\sin 2x + 3\\). Write down the ODE and the particular integral.',
@@ -574,14 +574,14 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'Given the ODE \\(\\dfrac{d^2y}{dx^2}+y=\\sec x\\), verify that \\(y_p=x\\sin x+\\cos x\\ln|\\cos x|\\) is a particular integral.',
         marks: 3,
-        modelAnswer: '• \\(y_p\'=\\sin x+x\\cos x-\\sin x\\ln|\\cos x|+\\cos x\\cdot\\tfrac{-\\sin x}{\\cos x}=\\sin x+x\\cos x-\\sin x\\ln|\\cos x|-\\sin x\\) (M1)\n• \\(y_p\'\'=\\cos x+\\cos x-x\\sin x-\\cos x\\ln|\\cos x|-\\sin x\\cdot\\tfrac{-\\sin x}{\\cos x}\\) (M1)\n• \\(y_p\'\'+y_p=\\sec x\\) ✓ (A1)'
+        modelAnswer: '• \\(y_p\'=\\sin x+x\\cos x-\\sin x\\ln|\\cos x|+\\cos x\\cdot\\tfrac{-\\sin x}{\\cos x}=x\\cos x-\\sin x\\ln|\\cos x|\\) (M1)\n• \\(y_p\'\'=\\cos x-x\\sin x-\\cos x\\ln|\\cos x|+\\dfrac{\\sin^2 x}{\\cos x}\\) (M1)\n• \\(y_p\'\'+y_p=\\cos x+\\dfrac{\\sin^2 x}{\\cos x}=\\dfrac{\\cos^2x+\\sin^2x}{\\cos x}=\\sec x\\) ✓ (A1)'
       },
     ],
     red: [
       {
         q: 'Find the general solution of \\(\\dfrac{d^2y}{dx^2}-4\\dfrac{dy}{dx}+4y=e^{2x}\\sin x\\).',
         marks: 7,
-        modelAnswer: '• CF: \\((A+Bx)e^{2x}\\) (m=2 repeated) (M1A1)\n• PI: try \\(y=e^{2x}(a\\sin x+b\\cos x)\\) (M1)\n• \\(y\'=e^{2x}[(2a+b)\\sin x+(2b-a)\\cos x]... \\) continue differentiation (M1)\n• Sub into ODE; coefficient matching: \\(-a\\sin x - b\\cos x = \\sin x\\) after simplification \\(\\Rightarrow a=-1,b=0\\) — working: \\(y\'\'=e^{2x}[(4a+4b-a)\\sin x+(4b-4a-b)\\cos x]=e^{2x}[(3a+4b)\\sin x+(3b-4a)\\cos x]\\) (M1)\n• \\(y\'\'-4y\'+4y=e^{2x}[(3a+4b-4(2a+b)+4a)\\sin x+...]=e^{2x}[-a\\sin x-b\\cos x]\\) (A1)\n• \\(-a=1 \\Rightarrow a=-1\\), \\(b=0\\); PI: \\(y=-e^{2x}\\sin x\\) (A1)'
+        modelAnswer: '• CF: \\((A+Bx)e^{2x}\\) (\\(m=2\\) repeated) (M1A1)\n• Write \\(y=u(x)e^{2x}\\); then \\(y\'=e^{2x}(u\'+2u)\\) and \\(y\'\'=e^{2x}(u\'\'+4u\'+4u)\\) (M1)\n• \\(y\'\'-4y\'+4y=e^{2x}\\left[(u\'\'+4u\'+4u)-4(u\'+2u)+4u\\right]=u\'\'e^{2x}\\) (M1)\n• So \\(u\'\'=\\sin x \\Rightarrow u=-\\sin x\\) (taking the particular solution), PI \\(=-e^{2x}\\sin x\\) (M1A1)\n• GS: \\(y=(A+Bx)e^{2x}-e^{2x}\\sin x\\) (A1)'
       },
       {
         q: 'Solve the Bernoulli equation \\(\\dfrac{dy}{dx}+y=xy^3\\).',
@@ -591,7 +591,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'Find the general solution of \\(x\\dfrac{dy}{dx}+2y=x^3\\cos x\\).',
         marks: 5,
-        modelAnswer: '• Rewrite: \\(\\dfrac{dy}{dx}+\\dfrac{2}{x}y=x^2\\cos x\\) (M1)\n• IF: \\(e^{2\\ln x}=x^2\\) (M1)\n• \\(\\dfrac{d}{dx}(x^2y)=x^4\\cos x\\) (M1)\n• \\(x^2y=\\int x^4\\cos x\\,dx\\): IBP repeatedly — \\(=x^4\\sin x-4x^3(-\\cos x)-12x^2(-\\sin x)-...\\) standard reduction gives \\(x^4\\sin x+4x^3\\cos x-12x^2\\sin x-24x\\cos x+24\\sin x+c\\) (M1A1)\n• \\(y=x^2\\sin x+4x\\cos x-12\\sin x-\\dfrac{24\\cos x}{x}+\\dfrac{24\\sin x}{x^2}+\\dfrac{c}{x^2}\\) (A1 for correct division)'
+        modelAnswer: '• Rewrite: \\(\\dfrac{dy}{dx}+\\dfrac{2}{x}y=x^2\\cos x\\) (M1)\n• IF: \\(e^{2\\ln x}=x^2\\) (M1)\n• \\(\\dfrac{d}{dx}(x^2y)=x^4\\cos x\\) (M1)\n• \\(x^2y=\\int x^4\\cos x\\,dx\\): integrating by parts four times gives \\(x^4\\sin x+4x^3\\cos x-12x^2\\sin x-24x\\cos x+24\\sin x+c\\) (M1A1)\n• \\(y=x^2\\sin x+4x\\cos x-12\\sin x-\\dfrac{24\\cos x}{x}+\\dfrac{24\\sin x}{x^2}+\\dfrac{c}{x^2}\\) (A1 for correct division)'
       },
       {
         q: 'The charge \\(Q\\) on a capacitor satisfies \\(\\dfrac{d^2Q}{dt^2}+3\\dfrac{dQ}{dt}+2Q=5\\cos t\\). Find \\(Q(t)\\) given \\(Q=0\\) and \\(\\dfrac{dQ}{dt}=1\\) at \\(t=0\\).',
@@ -626,7 +626,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'Given \\(\\dfrac{d^2y}{dx^2}-5\\dfrac{dy}{dx}+6y=f(x)\\), the particular integrals for \\(f(x)=e^{2x}\\) and \\(f(x)=e^{3x}\\) need special treatment. Explain why and find the PI for \\(f(x)=e^{2x}+e^{3x}\\).',
         marks: 6,
-        modelAnswer: '• AE: \\(m^2-5m+6=(m-2)(m-3)=0\\); roots 2 and 3 — both present in CF (B1B1)\n• For \\(e^{2x}\\): try \\(y=kxe^{2x}\\): \\((4k+4kx)e^{2x}-5(k+2kx)e^{2x}+6kxe^{2x}=ke^{2x}(4+4x-5-10x+6x)=ke^{2x}(4x \\cdot 0-1)=-ke^{2x}\\) — so \\(-k=1 \\Rightarrow k=-1\\), PI: \\(-xe^{2x}\\) (M1A1)\n• For \\(e^{3x}\\): try \\(y=lxe^{3x}\\): sub gives \\(le^{3x}(9x+6-5(1+3x)+6x)\\cdot... = le^{3x}\\) — \\(l=1\\), PI: \\(xe^{3x}\\) (M1A1)\n• Combined PI: \\(y=-xe^{2x}+xe^{3x}\\) (A1)'
+        modelAnswer: '• AE: \\(m^2-5m+6=(m-2)(m-3)=0\\); roots 2 and 3 — both present in CF (B1B1)\n• For \\(e^{2x}\\): try \\(y=kxe^{2x}\\): \\((4k+4kx)e^{2x}-5(k+2kx)e^{2x}+6kxe^{2x}=ke^{2x}(4+4x-5-10x+6x)=-ke^{2x}\\), so \\(-k=1 \\Rightarrow k=-1\\), PI: \\(-xe^{2x}\\) (M1A1)\n• For \\(e^{3x}\\): try \\(y=lxe^{3x}\\): \\((6l+9lx)e^{3x}-5(l+3lx)e^{3x}+6lxe^{3x}=le^{3x}(6+9x-5-15x+6x)=le^{3x}\\), so \\(l=1\\), PI: \\(xe^{3x}\\) (M1A1)\n• Combined PI: \\(y=-xe^{2x}+xe^{3x}\\) (A1)'
       },
     ],
   },
@@ -729,7 +729,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'A forced spring-mass system satisfies \\(\\ddot x+9x=18\\sin3t\\). Identify the phenomenon that occurs and find the general solution.',
         marks: 6,
-        modelAnswer: '• AE roots: \\(m=\\pm3i\\), so \\(\\sin3t\\) is in CF — resonance occurs (B1)\n• CF: \\(A\\cos3t+B\\sin3t\\) (A1)\n• PI: try \\(y=t(a\\cos3t+b\\sin3t)\\) (M1)\n• \\(\\ddot y + 9y = -6a\\sin3t+6b\\cos3t=18\\sin3t \\Rightarrow a=-3,b=0\\) (M1A1)\n• GS: \\(x=(A+B)\\cos3t+(B)\\sin3t-3t\\cos3t\\) — write: \\(x=A\\cos3t+B\\sin3t-3t\\cos3t\\) (A1)'
+        modelAnswer: '• AE roots: \\(m=\\pm3i\\), so \\(\\sin3t\\) is in CF — resonance occurs (B1)\n• CF: \\(A\\cos3t+B\\sin3t\\) (A1)\n• PI: try \\(y=t(a\\cos3t+b\\sin3t)\\) (M1)\n• \\(\\ddot y + 9y = -6a\\sin3t+6b\\cos3t=18\\sin3t \\Rightarrow a=-3,b=0\\) (M1A1)\n• GS: \\(x=A\\cos3t+B\\sin3t-3t\\cos3t\\) (A1)'
       },
       {
         q: 'A tank initially contains 200 L of brine with 50 kg of salt. Pure water flows in at 4 L/min and brine flows out at 4 L/min. Find the mass of salt after \\(t\\) minutes.',
@@ -774,7 +774,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'A bead on a wire satisfies \\(\\ddot \\theta + 0.4\\dot\\theta + 4\\theta = 2\\cos t\\). Find the amplitude of the steady-state response.',
         marks: 5,
-        modelAnswer: '• PI: \\(\\theta=a\\cos t+b\\sin t\\); sub: \\((-a+0.4b+4a)\\cos t+(-b-0.4a+4b)\\sin t=2\\cos t\\) (M1)\n• \\(3a+0.4b=2,\\;3b-0.4a=0\\) (M1A1)\n• \\(b=0.4a/3\\): \\(3a+0.16a/3=2 \\Rightarrow a=\\dfrac{6}{9.16}\\approx 0.655\\) (exact: \\(a=\\tfrac{60}{91.6}\\)) (M1)\n• Amplitude \\(=\\sqrt{a^2+b^2}\\approx\\sqrt{a^2+0.0178a^2}\\) (A1)'
+        modelAnswer: '• PI: \\(\\theta=a\\cos t+b\\sin t\\); sub: \\((-a+0.4b+4a)\\cos t+(-b-0.4a+4b)\\sin t=2\\cos t\\) (M1)\n• \\(3a+0.4b=2,\\;3b-0.4a=0\\) (M1A1)\n• \\(b=\\tfrac{0.4a}{3}\\): \\(3a+\\tfrac{0.16a}{3}=2 \\Rightarrow 9.16a=6 \\Rightarrow a=\\dfrac{150}{229}\\approx0.655,\\; b=\\dfrac{20}{229}\\approx0.0873\\) (M1)\n• Amplitude \\(=\\sqrt{a^2+b^2}=\\dfrac{2}{\\sqrt{9.16}}=\\dfrac{10}{\\sqrt{229}}\\approx0.661\\) (A1)'
       },
       {
         q: 'In a series LCR circuit, \\(L\\ddot Q+R\\dot Q+\\dfrac{Q}{C}=E_0\\sin\\omega t\\). Write this in standard second-order form and identify the damping coefficient and natural frequency.',
@@ -791,7 +791,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'A particle of mass \\(m\\) is attached to a spring (constant \\(k\\)) and a damper (constant \\(c\\)) and is driven by force \\(F_0\\cos\\omega t\\). Find the amplitude of steady-state oscillations and show that resonance occurs at \\(\\omega_r=\\sqrt{\\omega_0^2-2\\zeta^2\\omega_0^2}\\) where \\(\\omega_0=\\sqrt{k/m}\\) and \\(\\zeta=c/(2m\\omega_0)\\).',
         marks: 8,
-        modelAnswer: '• ODE: \\(m\\ddot x+c\\dot x+kx=F_0\\cos\\omega t\\) (B1)\n• PI: \\(x=\\dfrac{F_0/k}{\\sqrt{(1-r^2)^2+(2\\zeta r)^2}}\\cos(\\omega t-\\phi)\\) where \\(r=\\omega/\\omega_0\\) (M1A1)\n• Amplitude \\(X=\\dfrac{F_0/k}{\\sqrt{(1-r^2)^2+4\\zeta^2r^2}}\\) (A1)\n• Maximise: \\(\\dfrac{dX}{dr}=0 \\Rightarrow 1-r^2=-2\\zeta^2 \\cdot 2r^2/(1-r^2)\\) ... differentiate denominator (M1)\n• \\(\\dfrac{d}{dr}[(1-r^2)^2+4\\zeta^2r^2]=0 \\Rightarrow -4r(1-r^2)+8\\zeta^2r=0 \\Rightarrow r^2=1-2\\zeta^2\\) (M1A1)\n• \\(\\omega_r=\\omega_0\\sqrt{1-2\\zeta^2}\\) ✓ (A1)'
+        modelAnswer: '• ODE: \\(m\\ddot x+c\\dot x+kx=F_0\\cos\\omega t\\) (B1)\n• PI: \\(x=\\dfrac{F_0/k}{\\sqrt{(1-r^2)^2+(2\\zeta r)^2}}\\cos(\\omega t-\\phi)\\) where \\(r=\\omega/\\omega_0\\) (M1A1)\n• Amplitude \\(X=\\dfrac{F_0/k}{\\sqrt{(1-r^2)^2+4\\zeta^2r^2}}\\) (A1)\n• \\(X\\) is maximal when the denominator \\((1-r^2)^2+4\\zeta^2r^2\\) is minimal, so differentiate it with respect to \\(r\\) (M1)\n• \\(\\dfrac{d}{dr}[(1-r^2)^2+4\\zeta^2r^2]=0 \\Rightarrow -4r(1-r^2)+8\\zeta^2r=0 \\Rightarrow r^2=1-2\\zeta^2\\) (M1A1)\n• \\(\\omega_r=\\omega_0\\sqrt{1-2\\zeta^2}\\) ✓ (A1)'
       },
       {
         q: 'The SIR model: \\(\\dot S=-\\beta SI\\), \\(\\dot I=\\beta SI-\\gamma I\\), \\(\\dot R=\\gamma I\\). Show that \\(S+I+R=N\\) (constant) and find the equation of the phase curve \\(I\\) as a function of \\(S\\).',
@@ -821,7 +821,7 @@ const FM_EDEXCEL_WRITTEN_CP2B = {
       {
         q: 'Two tanks are connected. Tank 1 holds 100 L, tank 2 holds 200 L, both initially pure water. Brine (1 g/L) pumps into tank 1 at 2 L/min; mixed fluid flows from tank 1 to tank 2 at 2 L/min; and out of tank 2 at 2 L/min. Write the system of ODEs and find the long-run salt content in each tank.',
         marks: 7,
-        modelAnswer: '• \\(\\dfrac{dm_1}{dt}=2-\\dfrac{2m_1}{100}=2-\\dfrac{m_1}{50}\\) (M1A1)\n• \\(\\dfrac{dm_2}{dt}=\\dfrac{m_1}{50}\\cdot 2\\div 1 = \\dfrac{m_1}{50}-\\dfrac{m_2}{100}\\)... careful: flow from tank1 has conc \\(m_1/100\\), rate 2: input to tank 2 = \\(2m_1/100=m_1/50\\); output: \\(2m_2/200=m_2/100\\) (M1A1)\n• Steady state: \\(\\dot m_1=0 \\Rightarrow m_1=100\\) g; \\(\\dot m_2=0\\Rightarrow \\tfrac{100}{50}=\\tfrac{m_2}{100}\\Rightarrow m_2=200\\) g (M1A1A1)'
+        modelAnswer: '• \\(\\dfrac{dm_1}{dt}=2-\\dfrac{2m_1}{100}=2-\\dfrac{m_1}{50}\\) (M1A1)\n• Flow from tank 1 has concentration \\(m_1/100\\) at 2 L/min, so input to tank 2 \\(=\\tfrac{2m_1}{100}=\\tfrac{m_1}{50}\\); output \\(=\\tfrac{2m_2}{200}=\\tfrac{m_2}{100}\\), giving \\(\\dfrac{dm_2}{dt}=\\dfrac{m_1}{50}-\\dfrac{m_2}{100}\\) (M1A1)\n• Steady state: \\(\\dot m_1=0 \\Rightarrow m_1=100\\) g; \\(\\dot m_2=0\\Rightarrow \\tfrac{100}{50}=\\tfrac{m_2}{100}\\Rightarrow m_2=200\\) g (M1A1A1)'
       },
       {
         q: 'The motion of a nonlinear pendulum for small angles is approximated by \\(\\ddot\\theta+\\tfrac{g}{l}\\theta=0\\). For larger angles, include the correction term: \\(\\ddot\\theta+\\tfrac{g}{l}\\left(\\theta-\\dfrac{\\theta^3}{6}\\right)=0\\). Show this is equivalent to \\(\\ddot\\theta+\\omega_0^2\\theta=\\tfrac{\\omega_0^2\\theta^3}{6}\\) and find a first-order perturbation correction to the frequency.',

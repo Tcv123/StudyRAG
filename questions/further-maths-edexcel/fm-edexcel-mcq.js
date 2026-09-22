@@ -594,7 +594,7 @@ const FM_EDEXCEL_MCQ = {
       { q: 'Express \\(\\cos^6\\theta\\) in terms of multiple angles.', options: ['\\(\\dfrac{10+15\\cos 2\\theta+6\\cos 4\\theta+\\cos 6\\theta}{32}\\)','\\(\\dfrac{10+12\\cos 2\\theta+\\cos 6\\theta}{32}\\)','\\(\\dfrac{5+6\\cos 2\\theta+\\cos 6\\theta}{16}\\)','\\(\\dfrac{3+4\\cos 2\\theta+\\cos 4\\theta}{8}\\)'], answer: 0 },
       { q: 'For \\(z=e^{i\\theta}\\), \\(z^n+z^{-n}=\\)', options: ['\\(2\\cos n\\theta\\)','\\(2\\sin n\\theta\\)','\\(2i\\sin n\\theta\\)','\\(e^{in\\theta}\\)'], answer: 0 },
       { q: 'Find the cube roots of \\(-27i\\).', options: ['\\(3e^{-i\\pi/6},\\;3e^{i\\pi/2},\\;3e^{7i\\pi/6}\\)','\\(3i,-3i,3\\)','\\(3e^{i\\pi/3},3e^{i\\pi},3e^{5i\\pi/3}\\)','\\(3,\\;3e^{2i\\pi/3},\\;3e^{4i\\pi/3}\\)'], answer: 0 },
-      { q: 'The argument of the product of all \\(n\\)th roots of unity (for \\(n>1\\)) is:', options: ['\\(\\pi(n-1)\\)','0','\\(2\\pi\\)','\\(\\pi\\)'], answer: 0 },
+      { q: 'The argument of the product of all \\(n\\)th roots of unity (for \\(n>1\\)) is:', options: ['\\(\\pi(n-1)\\) (mod \\(2\\pi\\))','0 for every \\(n\\)','\\(2\\pi\\)','\\(\\pi\\) for every \\(n\\)'], answer: 0 },
       { q: 'Use \\(2i\\sin\\theta=z-z^{-1}\\) (\\(z=e^{i\\theta}\\)) to express \\(\\sin^5\\theta\\) in terms of multiple angles.', options: ['\\(\\dfrac{10\\sin\\theta-5\\sin 3\\theta+\\sin 5\\theta}{16}\\)','\\(\\dfrac{5\\sin\\theta-\\sin 5\\theta}{16}\\)','\\(\\dfrac{10\\sin\\theta+5\\sin 3\\theta-\\sin 5\\theta}{16}\\)','\\(\\dfrac{\\sin 5\\theta}{16}\\)'], answer: 0 },
       { q: 'The real part of \\(e^{(1+i)t}\\) is:', options: ['\\(e^t\\cos t\\)','\\(e^t\\sin t\\)','\\(\\cos t\\)','\\(e^{2t}\\)'], answer: 0 },
       { q: 'Solve \\(z^4=1+i\\) — first write \\(1+i\\) in modulus-argument form. Its modulus is:', options: ['\\(\\sqrt{2}\\)','1','2','\\(\\sqrt{2}/2\\)'], answer: 0 },
@@ -720,7 +720,7 @@ const FM_EDEXCEL_MCQ = {
       { q: 'The integral \\(\\displaystyle\\int_0^\\infty e^{-x^2}\\,dx\\) equals \\(\\sqrt{\\pi}/2\\). Using this, \\(\\displaystyle\\int_{-\\infty}^0 e^{-x^2}\\,dx=\\)', options: ['\\(\\sqrt{\\pi}/2\\)','\\(\\sqrt{\\pi}\\)','0','\\(\\pi/2\\)'], answer: 0 },
       { q: "Find the mean value of \\(1/x\\) over \\([1,e]\\).", options: ["\\(\\dfrac{1}{e-1}\\)","\\(1\\)","\\(e-1\\)","\\(\\dfrac{e+1}{2e}\\)"], answer: 0 },
       { q: "Evaluate \\(\\displaystyle\\int\\dfrac{1}{\\sqrt{4-x^2}}\\,dx\\).", options: ["\\(\\arcsin\\dfrac{x}{2}+C\\)","\\(\\arctan\\dfrac{x}{2}+C\\)","\\(\\dfrac{1}{2}\\arcsin x+C\\)","\\(2\\arcsin\\dfrac{x}{2}+C\\)"], answer: 0 },
-      { q: 'Show \\(\\displaystyle\\int_0^\\infty \\dfrac{1}{1+x^2}\\,dx=\\pi/2\\). The integrand is \\(\\arctan x\\), and \\(\\arctan(\\infty)=\\)', options: ['\\(\\pi/2\\)','\\(\\pi\\)','\\(\\infty\\)','1'], answer: 0 },
+      { q: 'Show \\(\\displaystyle\\int_0^\\infty \\dfrac{1}{1+x^2}\\,dx=\\pi/2\\). An antiderivative of the integrand is \\(\\arctan x\\), and \\(\\displaystyle\\lim_{x\\to\\infty}\\arctan x=\\)', options: ['\\(\\pi/2\\)','\\(\\pi\\)','\\(\\infty\\)','1'], answer: 0 },
     ],
     red: [
       { q: 'Determine whether \\(\\displaystyle\\int_1^\\infty \\dfrac{\\sin x}{x^2}\\,dx\\) converges absolutely.', options: ['Yes, since \\(|\\sin x/x^2|\\leq 1/x^2\\) and \\(\\int_1^\\infty x^{-2}\\,dx=1\\) converges','No, it diverges','Yes, but only conditionally','Cannot be determined'], answer: 0 },
