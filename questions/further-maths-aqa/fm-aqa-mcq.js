@@ -477,7 +477,7 @@ const FM_AQA_MCQ = {
       { q: 'A catenary has equation \\(y=a\\cosh(x/a)\\). Its arc length from \\(x=-a\\) to \\(x=a\\) is:', options: ['\\(2a\\)','\\(2a\\cosh 1\\)','\\(2a\\sinh 1\\)','\\(a\\sinh 2\\)'], answer: 2 },
       { q: "Solve \\(\\sinh^2 x-5\\cosh x+5=0\\).", options: ["\\(x=0\\) only","\\(x=0\\) or \\(x=\\pm\\ln(2+\\sqrt{3})\\)","\\(x=0\\) or \\(x=\\pm\\ln(4+\\sqrt{15})\\)","No real solutions"], answer: 2 },
       { q: 'The integral \\(\\displaystyle\\int_1^2\\frac{1}{\\sqrt{x^2-1}}\\,dx\\) equals:', options: ['\\(\\ln(2+\\sqrt{5})\\) (arcsinh)','\\(\\arctan\\sqrt{3}\\)','\\(\\pi/4\\)','\\(\\text{arccosh}\\,2\\)'], answer: 3 },
-      { q: 'Express \\(\\sinh^3 x\\) in terms of multiple arguments using \\(3\\sinh x=\\sinh(3x)-4\\sinh^3 x\\) ... wait, the identity gives \\(\\sinh(3x)=3\\sinh x+4\\sinh^3 x\\). So \\(\\sinh^3 x=\\)', options: ['\\(\\frac{\\sinh 3x+3\\sinh x}{4}\\)','\\(\\frac{\\sinh 3x-3\\sinh x}{4}\\)','\\(\\sinh 3x/4\\)','\\(\\frac{3\\sinh x-\\sinh 3x}{4}\\)'], answer: 1 },
+      { q: 'Using the identity \\(\\sinh(3x)=3\\sinh x+4\\sinh^3 x\\), express \\(\\sinh^3 x\\) in terms of multiple arguments: \\(\\sinh^3 x=\\)', options: ['\\(\\frac{\\sinh 3x+3\\sinh x}{4}\\)','\\(\\frac{\\sinh 3x-3\\sinh x}{4}\\)','\\(\\sinh 3x/4\\)','\\(\\frac{3\\sinh x-\\sinh 3x}{4}\\)'], answer: 1 },
       { q: 'Show \\(1-\\tanh^2 x=\\text{sech}^2 x\\). This follows from:', options: ['Adding the squares','The definition of \\(\\tanh\\) as \\(\\sinh x/\\cosh x\\) alone','Osborne\'s rule','Dividing \\(\\cosh^2 x-\\sinh^2 x=1\\) by \\(\\cosh^2 x\\)'], answer: 3 },
       { q: 'The relationship between \\(\\text{arctanh}\\,x\\) and partial fractions gives \\(\\displaystyle\\int\\frac{1}{a^2-x^2}\\,dx=\\)', options: ['\\(\\frac{1}{a^2}\\ln|a^2-x^2|+C\\)','\\(\\frac{1}{a}\\text{arctanh}\\frac{x}{a}+C\\) for \\(|x|<a\\)','\\(\\text{arccosh}(x/a)+C\\)','\\(\\frac{1}{a}\\arctan\\frac{x}{a}+C\\) for all real values of \\(x\\)'], answer: 1 },
       { q: 'The surface area of a catenary \\(y=\\cosh x\\) rotated about the \\(x\\)-axis from \\(-a\\) to \\(a\\) requires:', options: ['\\(2\\pi\\int_{-a}^{a}\\cosh^2 x\\,dx\\) (since \\(\\sqrt{1+\\sinh^2 x}=\\cosh x\\))','\\(\\pi\\int_{-a}^a\\cosh^2 x\\,dx\\)','\\(4\\pi a^2\\)','\\(2\\pi\\int_{-a}^a x\\,dx\\)'], answer: 0 },
@@ -527,7 +527,7 @@ const FM_AQA_MCQ = {
       { q: 'To solve \\(y\'\'+y=e^x\\), the PI trial is:', options: ['\\(\\lambda e^x\\) (since \\(e^x\\) is not in CF)','\\(\\lambda x e^x\\)','\\(\\lambda x^2 e^x\\)','\\(\\lambda\\)'], answer: 0 },
       { q: 'Apply \\(y(0)=1\\), \\(y\'(0)=2\\) to \\(y=Ae^{2x}+Be^{3x}\\). Then:', options: ['\\(A+B=1\\), \\(2A+3B=2\\), so \\(A=1,B=0\\)','\\(A=2,B=-1\\)','\\(A=0,B=1\\)','\\(A=B=1\\)'], answer: 0 },
       { q: 'For the equation \\(y\\frac{dy}{dx}=x\\), the general solution (separating variables) is:', options: ['\\(y^2=x^2+C\\)','\\(y=x+C\\)','\\(y=\\sqrt{x}+C\\)','\\(y^2=2x^2+C\\)'], answer: 0 },
-      { q: 'For the non-homogeneous equation \\(y\'\'-y=x\\), the PI is:', options: ['\\(-x\\)','\\(x\\)','\\(-x-1\\) — wait, try \\(y=ax+b\\): \\(-a-(ax+b)=x\\), so \\(-a=1,\\ -b-0=0\\)','\\(x+1\\)'], answer: 0 },
+      { q: 'For the non-homogeneous equation \\(y\'\'-y=x\\), the PI is:', options: ['\\(-x\\)','\\(x\\)','\\(-x-1\\)','\\(x+1\\)'], answer: 0 },
       { q: 'The coupled system \\(\\dot{x}=2x+y\\), \\(\\dot{y}=x+2y\\) has eigenvalues (of the matrix):', options: ['1 and 3','2 and 2','0 and 4','\\(-1\\) and 3'], answer: 0 },
     ],
     red: [

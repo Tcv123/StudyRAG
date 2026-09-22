@@ -1,6 +1,6 @@
 /*
  * OCR B (MEI) A-Level Further Mathematics — Written Question Bank (assembled)
- * Merges four partial files: Core Pure 1, Core Pure 2, Mechanics, Statistics, Algorithms.
+ * Merges five partial files: Core Pure 1, Core Pure 2, Mechanics, Statistics, Algorithms.
  * FM_OCR_B_WRITTEN is used by fm-ocr-b-practice.js and the diagnostic.
  */
 const FM_OCR_B_WRITTEN = {

@@ -152,7 +152,7 @@ const FM_OCR_WRITTEN = {
     ],
     red: [
       { q: 'Solve \\(y\'\'+4y=\\sin 2x, y(0)=0, y\'(0)=0\\).', marks: 6, tier: 'red', modelAnswer: `Resonance case. Particular y_p=-(x/4)cos 2x [M1, M1, M1]. Apply ICs to full solution [M1, M1, A1]` },
-      { q: 'A 5kg mass, spring k=80, damping \\(-2v\\). Classify damping and find motion for x(0)=0.1, v(0)=0.', marks: 6, tier: 'red', modelAnswer: `ẍ+0.4ẋ+16x=0. Roots -0.2±3.997i underdamped [M1, M1, M1]. x(t)=e^{-0.2t}(0.1 cos ω't + 0.005 sin ω't) [M1, M1, A1]` },
+      { q: 'A 5kg mass, spring k=80, damping \\(-2v\\). Classify damping and find motion for x(0)=0.1, v(0)=0.', marks: 6, tier: 'red', modelAnswer: `ẍ+0.4ẋ+16x=0. Roots -0.2±3.995i underdamped [M1, M1, M1]. x(t)=e^{-0.2t}(0.1 cos ω't + 0.005 sin ω't) [M1, M1, A1]` },
     ],
   },
   '1.9': {
@@ -186,7 +186,7 @@ const FM_OCR_WRITTEN = {
       { q: 'Prove \\(\\sum r = n(n+1)/2\\) by induction.', marks: 5, tier: 'amber', modelAnswer: `Base ✓, assume k, show k+1 [B1, M1, M1, M1, A1]` },
       { q: 'Prove \\(7^n-1\\) divisible by 6.', marks: 5, tier: 'amber', modelAnswer: `Base 6 ✓. 7^{k+1}-1=7(6m+1)-1=6(7m+1) [B1, M1, M1, M1, A1]` },
       { q: 'Prove \\(2^n>n\\) for n≥1.', marks: 4, tier: 'amber', modelAnswer: `Base, inductive [B1, M1, M1, A1]` },
-      { q: 'Prove \\(\\binom{1\\ 1}{0\\ 1}^n = \\binom{1\\ n}{0\\ 1}\\).', marks: 4, tier: 'amber', modelAnswer: `Matrix product step [B1, M1, M1, A1]` },
+      { q: 'Prove \\(\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}^n = \\begin{pmatrix}1&n\\\\0&1\\end{pmatrix}\\).', marks: 4, tier: 'amber', modelAnswer: `Base n=1 ✓ [B1]. Assume M^k=[[1,k],[0,1]] [M1]. M^{k+1}=M^k M=[[1,k+1],[0,1]] [M1, A1]` },
     ],
     red: [
       { q: 'Prove \\(\\sum r^3 = (n(n+1)/2)^2\\) by induction.', marks: 6, tier: 'red', modelAnswer: `Base, assume k, add (k+1)^3, factorise [B1, M1, M1, M1, M1, A1]` },

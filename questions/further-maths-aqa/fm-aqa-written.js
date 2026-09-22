@@ -106,9 +106,10 @@ So 32cos⁵θ = 2cos5θ + 10cos3θ + 20cosθ
 cos⁵θ = (1/16)(cos5θ + 5cos3θ + 10cosθ)
 
 Integral: ∫₀^(π/2) cos⁵θ dθ = (1/16)[sin5θ/5 + 5sin3θ/3 + 10sinθ]₀^(π/2)
-= (1/16)[(−1/5) + (−5/3) + 10]
-= (1/16)[(−3/15) + (−25/15) + 150/15]
-= (1/16)(122/15) = 61/120`
+At θ = π/2: sin(5π/2) = 1, sin(3π/2) = −1, sin(π/2) = 1; at θ = 0 every term is 0.
+= (1/16)[(1/5) + 5(−1)/3 + 10]
+= (1/16)[(3/15) − (25/15) + 150/15]
+= (1/16)(128/15) = 8/15`
       }
     ]
   },
@@ -238,9 +239,8 @@ z³ − 2z² − z + 3 = 0`
         tier: 'green',
         modelAnswer: `(5x+1)/((x+1)(x−2)) = A/(x+1) + B/(x−2)
 5x+1 = A(x−2) + B(x+1)
-x=2: 11 = 3B → B = 11/3...
-Let x=−1: −4 = −3A → A = 4/3
-Wait — checking: A(x−2)+B(x+1), x=−1: −4 = −3A → A = 4/3; x=2: 11 = 3B → B = 11/3
+Let x = −1: −4 = −3A → A = 4/3
+Let x = 2: 11 = 3B → B = 11/3
 Answer: 4/(3(x+1)) + 11/(3(x−2))
 Verify: [4(x−2)+11(x+1)]/(3(x+1)(x−2)) = [4x−8+11x+11]/(3...) = [15x+3]/(3(x+1)(x−2)) = (5x+1)/((x+1)(x−2)) ✓`
       },
@@ -253,7 +253,6 @@ Verify: [4(x−2)+11(x+1)]/(3(x+1)(x−2)) = [4x−8+11x+11]/(3...) = [15x+3]/(3
 [x+3 − 2x+2]/(x−1) > 0
 (5−x)/(x−1) > 0
 Critical values: x=5 and x=1.
-Sign table: x<1: (−)(−)=+ ✓; 1<x<5: (−)(+)=− ✗; x>5: (+)(+)... wait
 Numerator 5−x: positive for x<5, negative for x>5.
 Denominator x−1: positive for x>1.
 (5−x)/(x−1) > 0 when both positive or both negative.
@@ -531,28 +530,17 @@ nIₙ = (n−1)Iₙ₋₂ → Iₙ = ((n−1)/n)Iₙ₋₂
 I₄ = (3/4)I₂ = (3/4)(1/2)I₀ = (3/8)·π/2 = 3π/16`
       },
       {
-        q: 'Find the surface area generated when the arc of \\(y = x^2\\) from \\(x=0\\) to \\(x=1\\) is rotated through \\(2\\pi\\) about the \\(x\\)-axis.',
+        q: 'Find the surface area generated when the arc of \\(y = x^2\\) from \\(x=0\\) to \\(x=1\\) is rotated through \\(2\\pi\\) about the \\(y\\)-axis.',
         marks: 5,
         tier: 'amber',
-        modelAnswer: `dy/dx = 2x
-SA = 2π ∫₀¹ y √(1+(dy/dx)²) dx = 2π ∫₀¹ x² √(1+4x²) dx
-Let x = (1/2)tan θ, dx = (1/2)sec²θ dθ, √(1+4x²) = sec θ
-x²= (1/4)tan²θ
-SA = 2π ∫ (1/4)tan²θ · secθ · (1/2)sec²θ dθ = (π/4)∫tan²θ sec³θ dθ
-= (π/4)∫(sec²θ−1)sec³θ dθ = (π/4)∫(sec⁵θ−sec³θ)dθ
-[Using standard results or integration by parts for secⁿθ...]
-Alternatively (numerical/direct): SA = 2π∫₀¹ x²√(1+4x²) dx
-= π/2·[(2x√(1+4x²)·x + ... )] — use substitution u=1+4x²
-du=8x dx, x²=(u−1)/4:
-= 2π∫₀¹ x²√(1+4x²) dx = (π/32)∫₁⁵ (u−1)√u du = (π/32)∫₁⁵(u^(3/2)−u^(1/2))du
-= (π/32)[2u^(5/2)/5 − 2u^(3/2)/3]₁⁵
-= (π/16)[(u^(5/2)/5 − u^(3/2)/3)]₁⁵... note x→u: when x=0,u=1; x=1,u=5
-= (π/32)[2(5)^(5/2)/5 − 2(5)^(3/2)/3 − 2/5 + 2/3]
-= (π/32)[2·25√5/5 − 2·5√5/3 − 2/5 + 2/3]
-= (π/32)[10√5 − 10√5/3 + 4/15]
-= (π/32)[20√5/3 + 4/15] = π(30√5+1)/60...
-
-Final answer: SA = π(5√5−1)/6 (standard result for this curve)`
+        modelAnswer: `dy/dx = 2x, so ds = √(1+(dy/dx)²) dx = √(1+4x²) dx
+For rotation about the y-axis the radius of each circular strip is x:
+SA = 2π ∫₀¹ x √(1+4x²) dx
+Substitute u = 1+4x², du = 8x dx, so x dx = du/8; x=0 → u=1, x=1 → u=5
+SA = 2π · (1/8) ∫₁⁵ √u du
+= (π/4) · [ (2/3)u^(3/2) ]₁⁵
+= (π/6)[ 5^(3/2) − 1 ]
+= π(5√5 − 1)/6 ≈ 5.33`
       },
       {
         q: 'Find \\(\\displaystyle\\int \\frac{3x+2}{x^2+4x+5}\\,dx\\).',
@@ -714,36 +702,22 @@ Area = (1/2)|AB×AC| = 7/2`
     ],
     red: [
       {
-        q: 'Three planes are given by: \\(x+y+z=1\\), \\(2x-y+z=2\\), \\(x+2y+2z=k\\). Find the value of \\(k\\) for which the planes have a common line of intersection, and find the equation of that line.',
+        q: 'Three planes are given by: \\(x+y+z=1\\), \\(2x-y+z=2\\), \\(3x+2z=k\\). Find the value of \\(k\\) for which the planes have a common line of intersection, and find the equation of that line.',
         marks: 7,
         tier: 'red',
-        modelAnswer: `From planes 1 and 2: add → 3x+2z=3 ...(i); subtract → −3y+0z=1 → y=−1/3 ...(ii)
-From plane 1: x+z = 1−y = 1+1/3 = 4/3 ...(iii)
-For three planes to have a line (not unique point), plane 3 must be consistent with these.
-Substitute y=−1/3 and x+z=4/3 into plane 3:
-x+2(−1/3)+2z = k → x+2z−2/3 = k
-x+2z = k+2/3
-But from (i): 3x+2z = 3 → 2x+2z = 3−x; and x+2z = k+2/3
-Subtract: x = 3−(k+2/3) ... let me use parametric.
-From (ii): y=−1/3. From x+z=4/3, let x=t → z=4/3−t.
-Substitute into plane 3: t+2(−1/3)+2(4/3−t)=k → t−2/3+8/3−2t=k → −t+2=k → k=2−t must be constant.
-For a common line, k must be satisfied for all t, which is impossible unless k is chosen to make the three equations dependent.
-Re-approach: for a line of intersection (rather than a single point), det of coefficient matrix = 0.
-A = [[1,1,1],[2,−1,1],[1,2,2]], det = 1(−2−2)−1(4−1)+1(4+1) = −4−3+5 = −2 ≠ 0
-So for general k, unique point exists. For a line, need k such that augmented matrix is rank 2.
-[A|b]: row reduce with b=(1,2,k)
-R2→R2−2R1: [0,−3,−1|0], R3→R3−R1: [0,1,1|k−1]
-R3→R3+(1/3)R2: [0,0,2/3|k−1+0] hmm... [0,0,2/3|k−1]
-Wait: R2 after subtraction: 2x−y+z−2(x+y+z)=2−2 → −3y−z=0
-R3 after subtraction: x+2y+2z−(x+y+z)=k−1 → y+z=k−1
-From R2': z=−3y; sub into R3': y−3y=k−1 → −2y=k−1 → y=(1−k)/2
-For a line: the system must be underdetermined → rank(A)=rank([A|b])=2
-This requires the third equation after elimination to be 0=0.
-From above: −2y=k−1 gives unique y unless equation vanishes: this is 1 equation in y.
-With rank(A)=2 (since det≠0... wait det was −2≠0, so rank=3).
-Actually if det(A)≠0, all three planes meet at a unique point for any k.
-For a line, need det(A)=0: but det = −2 ≠ 0, so no value of k gives a common line.
-The answer is: there is no value of k for which these planes share a common line (they always meet at a unique point). This is a valid exam answer demonstrating understanding.`
+        modelAnswer: `Coefficient matrix A = [[1,1,1],[2,−1,1],[3,0,2]].
+det(A) = 1(−2−0) − 1(4−3) + 1(0+3) = −2 − 1 + 3 = 0, so the planes cannot meet in a unique point.
+Row 3 of A is Row 1 + Row 2, so the system is consistent only when k = 1 + 2 = 3.
+For k = 3 the third plane is a linear combination of the first two, so the three planes share the line in which planes 1 and 2 meet.
+
+Direction of that line = n₁ × n₂ = (1,1,1) × (2,−1,1)
+= i(1·1 − 1·(−1)) − j(1·1 − 1·2) + k(1·(−1) − 1·2)
+= (2, 1, −3)
+
+A point on the line: set z = 0 → x + y = 1 and 2x − y = 2; adding gives 3x = 3, so x = 1 and y = 0.
+Point (1, 0, 0). Check in plane 3: 3(1) + 2(0) = 3 = k ✓
+
+k = 3, and the line is r = (1, 0, 0) + t(2, 1, −3).`
       },
       {
         q: 'Given the line \\(\\ell: \\mathbf{r} = (2, -1, 3) + t(1, 2, -1)\\) and the plane \\(\\Pi: 3x - y + 2z = 10\\), find: (a) the point of intersection, (b) the angle between the line and the plane, (c) the reflection of the point \\(A(2,-1,3)\\) in the plane.',
@@ -804,8 +778,7 @@ Sketch: circle of radius 1 centred at (1,0).`
         marks: 2,
         tier: 'green',
         modelAnswer: `r = 3 − 2sinθ
-Maximum r: sinθ minimum = −1, at θ = 3π/2 (outside range), so within [0,π] minimum of sinθ is sin0=0 or sinπ=0.
-Actually on [0,π]: sinθ ≥ 0, so minimum is 0 at θ=0 or π → r_max = 3
+On [0,π] we have sinθ ≥ 0, so the smallest value of sinθ on this interval is 0, at θ=0 and θ=π → r_max = 3
 Minimum r: sinθ maximum on [0,π] is 1 at θ=π/2 → r_min = 1
 Maximum r=3 at θ=0 (or π); minimum r=1 at θ=π/2.`
       }
@@ -864,40 +837,20 @@ Total area = 4 × π/8 = π/2`
         marks: 7,
         tier: 'red',
         modelAnswer: `Intersection: a(1+cosθ) = 3a/2 → 1+cosθ = 3/2 → cosθ = 1/2 → θ = ±π/3
-For |θ| < π/3: circle r=3a/2 is larger (cardioid inside circle)
-For π/3 < |θ| < π: cardioid r=a(1+cosθ) is larger
+For |θ| < π/3: cosθ > 1/2, so 1+cosθ > 3/2 and the cardioid lies OUTSIDE the circle.
+For π/3 < |θ| ≤ π: 1+cosθ < 3/2, so the cardioid lies inside the circle.
 
-Area inside cardioid but outside circle = area of cardioid − area of circle − overlap...
-Use: ∫ over region where r_cardioid > r_circle
-= 2×(1/2)∫_(π/3)^π [(a(1+cosθ))² − (3a/2)²] dθ
-= a²∫_(π/3)^π [(1+cosθ)² − 9/4] dθ
-= a²∫_(π/3)^π [1+2cosθ+cos²θ−9/4] dθ
-= a²∫_(π/3)^π [−5/4+2cosθ+(1+cos2θ)/2] dθ
-= a²∫_(π/3)^π [−3/4+2cosθ+cos2θ/2] dθ
-= a²[−3θ/4+2sinθ+sin2θ/4]_(π/3)^π
-= a²[(−3π/4+0+0)−(−π/4+√3+√3/8... wait
-At θ=π: −3π/4+2(0)+0 = −3π/4
-At θ=π/3: −π/4+2(√3/2)+sin(2π/3)/4 = −π/4+√3+√3/8
-= a²[−3π/4 − (−π/4+√3+√3/8)]
-= a²[−π/2 − 9√3/8]
-This is negative — swap: = a²[π/2 − ... ]
+So the required region corresponds to −π/3 < θ < π/3, and by symmetry
+Area = 2 × (1/2)∫₀^(π/3) [(a(1+cosθ))² − (3a/2)²] dθ
+= a²∫₀^(π/3) [(1+cosθ)² − 9/4] dθ
+= a²∫₀^(π/3) [1 + 2cosθ + cos²θ − 9/4] dθ
+= a²∫₀^(π/3) [−5/4 + 2cosθ + (1+cos2θ)/2] dθ
+= a²∫₀^(π/3) [−3/4 + 2cosθ + (1/2)cos2θ] dθ
+= a²[−3θ/4 + 2sinθ + (1/4)sin2θ]₀^(π/3)
+At θ = π/3: −π/4 + 2(√3/2) + (1/4)(√3/2) = −π/4 + √3 + √3/8 = −π/4 + 9√3/8
+At θ = 0: 0
 
-Correct: Area = a²[−3θ/4+2sinθ+sin2θ/4] from π/3 to π
-= a²{(−3π/4) − (−π/4 + √3 + (√3/4)/1)}
-Hmm, let me recompute sin(2π/3)/4 = (√3/2)/4 = √3/8
-= a²[−3π/4 − (−π/4 + √3 + √3/8)]
-= a²[−3π/4 + π/4 − √3 − √3/8]
-= a²[−π/2 − 9√3/8]
-Since this is negative, take absolute value: Area = a²(π/2 + 9√3/8) — but sign issue from limits.
-Re-evaluating by taking limits in order and noting integrand is positive in [π/3, π]:
-Actually the integrand (1+cosθ)²−9/4 at θ=π/2: (1+0)²−9/4 = 1−9/4 = −5/4 < 0
-So cardioid < circle for some of this range. The intersection region needs care.
-For π/3 < θ < π: need to check where (1+cosθ)² > 9/4 i.e. 1+cosθ > 3/2... same as before.
-So cardioid > circle only for |θ| < π/3 — I had it backwards.
-Area inside cardioid but outside circle = 2×(1/2)∫₀^(π/3)[(a(1+cosθ))²−(3a/2)²]dθ
-= a²∫₀^(π/3)[(1+cosθ)²−9/4]dθ = a²∫₀^(π/3)[−3/4+2cosθ+cos2θ/2]dθ
-= a²[−3θ/4+2sinθ+sin2θ/4]₀^(π/3)
-= a²[−π/4+√3+√3/8] = a²[−π/4+9√3/8]`
+Area = a²(9√3/8 − π/4) ≈ 1.163a²`
       },
       {
         q: 'Find the points on the polar curve \\(r = 1 + 2\\cos\\theta\\) where the tangent is parallel to the initial line, and find the maximum distance from the pole.',
@@ -1143,7 +1096,7 @@ CF: (At+B)e^(−2t)
 PI: try x = a cos2t + b sin2t
 ẋ = −2a sin2t + 2b cos2t
 ẍ = −4a cos2t − 4b sin2t
-Substitute: (−4a+4b·... wait:
+Substitute:
 ẍ + 4ẋ + 4x = (−4a cos2t−4b sin2t) + 4(−2a sin2t+2b cos2t) + 4(a cos2t+b sin2t)
 = (−4a+8b+4a)cos2t + (−4b−8a+4b)sin2t
 = 8b cos2t − 8a sin2t = 8sin2t

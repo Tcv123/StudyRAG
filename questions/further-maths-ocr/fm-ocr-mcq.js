@@ -19,7 +19,7 @@ const FM_OCR_MCQ = {
     { q: 'What is \\(i^3\\)?', options: ['\\(1\\)', '\\(-1\\)', '\\(i\\)', '\\(-i\\)'], answer: 3 },
     { q: 'What is \\(\\text{Re}(7-3i)\\)?', options: ['\\(-3\\)', '\\(\\sqrt{58}\\)', '\\(3\\)', '\\(7\\)'], answer: 3 },
     { q: 'What is \\(\\text{Im}(4+9i)\\)?', options: ['\\(4\\)', '\\(9i\\)', '\\(\\sqrt{97}\\)', '\\(9\\)'], answer: 3 },
-    { q: 'What is \\((2+i)(2-i)\\)?', options: ['\\(3\\)', '\\(4-1\\)', '\\(4+1\\)', '\\(5\\)'], answer: 3 },
+    { q: 'What is \\((2+i)(2-i)\\)?', options: ['\\(3\\)', '\\(4i\\)', '\\(4-i\\)', '\\(5\\)'], answer: 3 },
     { q: 'What is \\(i^4\\)?', options: ['\\(-1\\)', '\\(i\\)', '\\(-i\\)', '\\(1\\)'], answer: 3 },
     { q: 'For \\(z=a+bi\\), \\(z+\\bar{z}\\) equals:', options: ['\\(0\\)', '\\(2bi\\)', '\\(2b\\)', '\\(2a\\)'], answer: 3 },
     { q: 'What is \\(\\arg(1+i)\\)?', options: ['\\(\\pi/2\\)', '\\(\\pi/3\\)', '\\(3\\pi/4\\)', '\\(\\pi/4\\)'], answer: 3 },
@@ -108,7 +108,7 @@ const FM_OCR_MCQ = {
   ],
   amber: [
     { q: 'If \\(\\alpha,\\beta\\) are roots of \\(x^2-5x+3=0\\), find \\(\\alpha^3+\\beta^3\\).', options: ['\\(110\\)', '\\(45\\)', '\\(95\\)', '\\(80\\)'], answer: 3, explanation: '(α+β)³−3αβ(α+β)=125−45=80' },
-    { q: "Partial fractions of \\(\\frac{7x+1}{(x+1)(x-3)}\\): cover-up gives \\(A=\\)", options: ["\\(3\\)","\\(7\\)","\\(-\\frac{3}{2}\\)","\\(\\frac{3}{2}\\)"], answer: 3, explanation: 'x=−1: A(−4)=−7+1=−6 → A=3/2. Hmm. Actually: 7(−1)+1=−6, (−1−3)=−4, A=−6/−4=3/2', explanation: 'A(x−3)+B(x+1)=7x+1; x=−1: −4A=−6→A=3/2' },
+    { q: "Partial fractions of \\(\\frac{7x+1}{(x+1)(x-3)}\\): cover-up gives \\(A=\\)", options: ["\\(3\\)","\\(7\\)","\\(-\\frac{3}{2}\\)","\\(\\frac{3}{2}\\)"], answer: 3, explanation: 'A(x−3)+B(x+1)=7x+1; x=−1: −4A=−6→A=3/2' },
     { q: 'Form eq with roots \\(\\alpha^2,\\beta^2\\) given \\(\\alpha,\\beta\\) satisfy \\(x^2-4x+1=0\\).', options: ['\\(x^2+14x+1=0\\)', '\\(x^2-14x-1=0\\)', '\\(x^2+4x+1=0\\)', '\\(x^2-14x+1=0\\)'], answer: 3, explanation: 'α²+β²=(α+β)²−2αβ=16−2=14; α²β²=(αβ)²=1. Eqn: x²−14x+1=0' },
     { q: 'Solve \\(\\frac{1}{x-1}>2\\).', options: ['\\(x>\\frac{3}{2}\\)', '\\(x<1\\) or \\(x>\\frac{3}{2}\\)', '\\(x<1\\)', '\\(1<x<\\frac{3}{2}\\)'], answer: 3, explanation: 'Case x>1: 1>2(x−1)→x<3/2. Combined: 1<x<3/2' },
     { q: 'Solve \\(|2x-1|=|x+3|\\).', options: ['\\(x=-4\\) or \\(x=-\\frac{2}{3}\\)', '\\(x=4\\) only', '\\(x=\\frac{2}{3}\\) or \\(x=4\\)', '\\(x=4\\) or \\(x=-\\frac{2}{3}\\)'], answer: 3, explanation: 'Square: 4x²−4x+1=x²+6x+9→3x²−10x−8=0→(3x+2)(x−4)=0' },
@@ -191,7 +191,7 @@ const FM_OCR_MCQ = {
   ],
   red: [
     { q: 'Direction of line of intersection of two planes:', options: ['\\(\\mathbf{n}_1+\\mathbf{n}_2\\)','\\(\\mathbf{n}_1\\cdot\\mathbf{n}_2\\) (a scalar)','\\(\\mathbf{n}_1-\\mathbf{n}_2\\)','\\(\\mathbf{n}_1\\times\\mathbf{n}_2\\)'], answer: 3 },
-    { q: '\\(\\mathbf{a}\\times(\\mathbf{b}\\times\\mathbf{c})\\) (BAC–CAB rule):', options: ['\\((\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}+(\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}\\)','\\((\\mathbf{a}\\times\\mathbf{b})\\times\\mathbf{c}\\)','\\((\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}+(\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}\\)','\\((\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}-(\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}\\)'], answer: 3 },
+    { q: '\\(\\mathbf{a}\\times(\\mathbf{b}\\times\\mathbf{c})\\) (BAC–CAB rule):', options: ['\\((\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}+(\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}\\)','\\((\\mathbf{a}\\times\\mathbf{b})\\times\\mathbf{c}\\)','\\((\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}+(\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}\\)','\\((\\mathbf{a}\\cdot\\mathbf{c})\\mathbf{b}-(\\mathbf{a}\\cdot\\mathbf{b})\\mathbf{c}\\)'], answer: 3 },
     { q: 'Angle \\(\\phi\\) between a line (direction \\(\\mathbf{d}\\)) and a plane (normal \\(\\mathbf{n}\\)):', options: ['\\(\\cos\\phi=\\frac{\\mathbf{d}\\cdot\\mathbf{n}}{|\\mathbf{d}||\\mathbf{n}|}\\)','\\(\\cos\\phi=\\frac{|\\mathbf{d}\\cdot\\mathbf{n}|}{|\\mathbf{d}||\\mathbf{n}|}\\)','\\(\\tan\\phi=\\frac{|\\mathbf{d}\\times\\mathbf{n}|}{|\\mathbf{d}||\\mathbf{n}|}\\)','\\(\\sin\\phi=\\frac{|\\mathbf{d}\\cdot\\mathbf{n}|}{|\\mathbf{d}||\\mathbf{n}|}\\)'], answer: 3 },
     { q: 'Three planes form a triangular prism (no common point) when:', options: ['All normals parallel','Two planes parallel','Normals independent','Normals coplanar but not parallel, system inconsistent'], answer: 3 },
     { q: 'If \\(\\mathbf{a}\\cdot(\\mathbf{b}\\times\\mathbf{c})=0\\), this means:', options: ['\\(\\mathbf{a},\\mathbf{b},\\mathbf{c}\\) are coplanar','\\(\\mathbf{a}\\perp\\mathbf{c}\\)','\\(\\mathbf{b}\\parallel\\mathbf{c}\\) only, whatever \\(\\mathbf{a}\\)','\\(\\mathbf{a}\\perp\\mathbf{b}\\)'], answer: 0 },
@@ -205,7 +205,7 @@ const FM_OCR_MCQ = {
     { q: 'Convert Cartesian \\((3,3)\\) to polar \\((r,\\theta)\\):', options: ['\\((3,\\pi/4)\\) (no root)', '\\((9,\\pi/3)\\)', '\\((3,\\pi/3)\\)', '\\((3\\sqrt{2},\\pi/4)\\)'], answer: 3 },
     { q: 'The polar curve \\(r=a\\) (constant) is:', options: ['A spiral', 'A straight line', 'A parabola', 'A circle centred at origin'], answer: 3 },
     { q: 'Area formula in polar coordinates:', options: ['\\(\\int_\\alpha^\\beta r\\,d\\theta\\)', '\\(\\pi\\int_\\alpha^\\beta r^2\\,d\\theta\\)', '\\(\\int_\\alpha^\\beta r^2\\,d\\theta\\)', '\\(\\frac{1}{2}\\int_\\alpha^\\beta r^2\\,d\\theta\\)'], answer: 3 },
-    { q: 'The curve \\(r=1+\\cos\\theta\\) is called:', options: ['Lemniscate', 'Archimedean spiral', 'Limaçon', 'Cardioid'], answer: 3 },
+    { q: 'The curve \\(r=1+\\cos\\theta\\) is called:', options: ['Lemniscate', 'Archimedean spiral', 'Limaçon with an inner loop', 'Cardioid'], answer: 3 },
     { q: 'At the pole, \\(r=0\\). For \\(r=\\sin\\theta\\), \\(r=0\\) when:', options: ['\\(\\theta=\\pi/2\\) (maximum)', '\\(\\theta=\\pi\\)', '\\(\\theta=\\pi/4\\)', '\\(\\theta=0\\) or \\(\\pi\\)'], answer: 3 },
     { q: 'The polar equation of \\(x^2+y^2=4x\\) is:', options: ['\\(r=4\\sin\\theta\\)', '\\(r=4\\)', '\\(r=4\\cos^2\\theta\\)', '\\(r=4\\cos\\theta\\)'], answer: 3, explanation: 'r²=4r cosθ → r=4cosθ' },
     { q: 'The curve \\(r^2=a^2\\cos2\\theta\\) is a:', options: ['Cardioid', 'Archimedean spiral', 'Limaçon', 'Lemniscate'], answer: 3 },
@@ -515,7 +515,7 @@ const FM_OCR_MCQ = {
     { q: 'Period \\(T\\) of a pendulum depends on \\(l, g, m\\). By dimensional analysis \\(T\\propto\\)', options: ['\\(\\sqrt{l/m}\\)', '\\(l^2/g\\)', '\\(\\sqrt{m/g}\\)', '\\(\\sqrt{l/g}\\)'], answer: 3 },
     { q: 'Stokes\' law: drag \\(F=6\\pi\\eta r v\\). Dimensions of viscosity \\(\\eta\\):', options: ['\\(M L^{-1} T\\)', '\\(M L T^{-2}\\)', '\\(M L^{-2} T^{-1}\\)', '\\(M L^{-1} T^{-1}\\)'], answer: 3, explanation: '[η]=[F]/([r][v])=MLT^{-2}/(L·LT^{-1})=ML^{-1}T^{-1}' },
     { q: 'Speed of sound \\(c\\) depends on density \\(\\rho\\) and bulk modulus \\(K\\) (dims \\(ML^{-1}T^{-2}\\)). \\(c\\propto\\)', options: ['\\(\\rho K\\)', '\\(\\sqrt{\\rho/K}\\)', '\\(\\rho/K\\)', '\\(\\sqrt{K/\\rho}\\)'], answer: 3 },
-    { q: 'Reynolds number (dimensionless): \\(Re=\\rho v L/\\eta\\). Check: \\([\\rho v L/\\eta]=\\)', options: ['\\(ML T^{-1}\\)', '\\(M L^{-1} T^{-1}\\)', '\\(L T^{-1}\\)', 'Dimensionless ✓'], answer: 3 },
+    { q: 'Reynolds number (dimensionless): \\(Re=\\rho v L/\\eta\\). Check: \\([\\rho v L/\\eta]=\\)', options: ['\\(ML T^{-1}\\)', '\\(M L^{-1} T^{-1}\\)', '\\(L T^{-1}\\)', 'Dimensionless'], answer: 3 },
     { q: 'Power = Force × velocity. Dimensions of power:', options: ['\\(MLT^{-2}\\)', '\\(ML^2T^{-3}\\)', '\\(ML^2T^{-2}\\)', '\\(ML^{-1}T^{-3}\\)'], answer: 1, explanation: '[P]=[F][v]=MLT^{-2}·LT^{-1}=ML^2T^{-3}' },
   ],
   red: [
@@ -721,7 +721,7 @@ const FM_OCR_MCQ = {
   amber: [
     { q: 'Mixed strategy Nash equilibrium: player randomises to make the opponent:', options: ['Lose always', 'Play a pure strategy only, never mixing', 'Indifferent between their strategies', 'Win always'], answer: 2, explanation: 'Mixed equilibrium: opponent\'s expected payoff is same for all strategies they mix over' },
     { q: 'Value of the game \\(V\\): row player can guarantee AT LEAST \\(V\\), column player can limit row to AT MOST \\(V\\). In a fair game \\(V=\\)', options: ['\\(1\\)', '\\(-1\\)', '\\(0.5\\)', '\\(0\\)'], answer: 3 },
-    { q: 'For a \\(2\\times2\\) game with no saddle point, the optimal mixed strategy for rows uses \\(p=\\)', options: ['\\(\\frac{a_{22}-a_{12}}{a_{11}-a_{12}-a_{21}+a_{22}}\\)', '\\(\\frac{1}{2}\\) always', '\\(a_{11}/\\sum a_{ij}\\)', '\\(\\frac{a_{22}-a_{21}}{a_{11}-a_{12}-a_{21}+a_{22}}\\)'], answer: 3, explanation: 'Standard formula for 2×2: p=(a₂₂-a₁₂)/(a₁₁-a₁₂-a₂₁+a₂₂)' },
+    { q: 'For a \\(2\\times2\\) game with no saddle point, the optimal mixed strategy for rows uses \\(p=\\)', options: ['\\(\\frac{a_{22}-a_{12}}{a_{11}-a_{12}-a_{21}+a_{22}}\\)', '\\(\\frac{1}{2}\\) always', '\\(a_{11}/\\sum a_{ij}\\)', '\\(\\frac{a_{22}-a_{21}}{a_{11}-a_{12}-a_{21}+a_{22}}\\)'], answer: 3, explanation: 'Equate the expected row payoff against each column: p=(a₂₂-a₂₁)/(a₁₁-a₁₂-a₂₁+a₂₂)' },
     { q: 'Payoff matrix \\(\\begin{pmatrix}3&1\\\\2&4\\end{pmatrix}\\). Check for saddle point: row minima are \\(1,2\\); maximin=2. Column maxima are \\(3,4\\); minimax=3. Since \\(2\\neq3\\):', options: ['Saddle point at (1,1)', 'Saddle point at (2,2)', 'Game is unfair', 'No saddle point; mixed strategies needed'], answer: 3 },
     { q: 'Dominant strategy equilibrium: if one strategy dominates another regardless of opponent\'s choice, rational player:', options: ['Randomises equally', 'Plays the dominated strategy to surprise the opponent', 'Plays randomly', 'Eliminates dominated strategies'], answer: 3 },
   ],
@@ -743,11 +743,11 @@ const FM_OCR_MCQ = {
     { q: 'If the auxiliary equation has equal roots \\(m=k\\), the general solution is:', options: ['\\(Ak^n\\)', '\\(A\\cdot nk^n\\)', '\\(Ak^{2n}\\)', '\\((An+B)k^n\\)'], answer: 3 },
   ],
   amber: [
-    { q: 'Solve \\(u_{n+1}=3u_n\\), \\(u_1=2\\). Then \\(u_n=\\)', options: ['\\(2\\cdot3^{n-1}\\)', '\\(3^n\\)', '\\(2n+3\\)', '\\(3n-1\\)'], answer: 0, explanation: 'u_n=Ca^{n-1}·u_1=2·3^{n-1}' },
+    { q: 'Solve \\(u_{n+1}=3u_n\\), \\(u_1=2\\). Then \\(u_n=\\)', options: ['\\(2\\cdot3^{n-1}\\)', '\\(3^n\\)', '\\(2n+3\\)', '\\(3n-1\\)'], answer: 0, explanation: 'u_n=u_1·3^{n-1}=2·3^{n-1}' },
     { q: 'Auxiliary equation of \\(u_{n+2}-5u_{n+1}+6u_n=0\\) has roots \\(m=2,3\\). General solution:', options: ['\\(A\\cdot2^n-B\\cdot3^n\\)', '\\(A(2+3)^n\\)', '\\(An+B\\)', '\\(A\\cdot2^n+B\\cdot3^n\\)'], answer: 3 },
     { q: 'Particular solution of \\(u_{n+1}-2u_n=4\\) (try \\(u_n^*=k\\) constant):', options: ['\\(k=2\\)', '\\(k=4\\)', '\\(k=-2\\)', '\\(k=-4\\)'], answer: 3, explanation: 'k-2k=4 → -k=4 → k=-4' },
     { q: 'The Fibonacci sequence golden ratio \\(\\phi=\\frac{1+\\sqrt{5}}{2}\\approx1.618\\) appears because it is a root of:', options: ['\\(m^2-m+1=0\\)', '\\(m^2+m-1=0\\)', '\\(m^2+m+1=0\\)', '\\(m^2-m-1=0\\)'], answer: 3 },
-    { q: 'If \\(u_{n+2}=3u_{n+1}-2u_n\\) with \\(u_1=1,u_2=3\\): auxiliary roots are \\(1,2\\). General solution: \\(u_n=A\\cdot1^n+B\\cdot2^n=A+B\\cdot2^n\\). Using initial conditions \\(A+2B=3, A+B=1\\): \\(B=\\)', options: ['\\(B=1\\)', '\\(B=-1\\)', '\\(B=3\\)', '\\(B=2\\)'], answer: 3, explanation: 'A+2B=3, A+B=1 → B=2' },
+    { q: 'If \\(u_{n+2}=3u_{n+1}-2u_n\\) with \\(u_0=1,u_1=3\\): auxiliary roots are \\(1,2\\). General solution: \\(u_n=A\\cdot1^n+B\\cdot2^n=A+B\\cdot2^n\\). Using initial conditions \\(A+2B=3, A+B=1\\): \\(B=\\)', options: ['\\(B=1\\)', '\\(B=-1\\)', '\\(B=3\\)', '\\(B=2\\)'], answer: 3, explanation: 'A+2B=3, A+B=1 → B=2' },
     { q: 'The recurrence \\(u_{n+2}-4u_{n+1}+4u_n=0\\) has repeated root \\(m=2\\). General solution:', options: ['\\(A\\cdot2^{n+1}+B\\cdot4^n\\)', '\\(A+B\\cdot2^n\\)', '\\(An\\cdot2^n\\)', '\\((An+B)\\cdot2^n\\)'], answer: 3 },
   ],
   red: [

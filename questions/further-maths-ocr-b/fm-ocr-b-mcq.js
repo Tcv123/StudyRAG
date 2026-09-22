@@ -121,7 +121,7 @@ const FM_OCR_B_MCQ = {
     { q: 'Using partial fractions, \\(\\sum_{r=1}^{n}\\dfrac{1}{r(r+1)}=\\)', options: ['\\(n\\)', '\\(\\ln 2\\) (for all \\(n\\))', '\\(1\\)', '\\(\\dfrac{n}{n+1}\\)'], answer: 3 },
     { q: 'Coefficient of \\(x^3\\) in Maclaurin of \\(\\sin x\\):', options: ['\\(1/3\\)', '\\(-1/3\\)', '\\(1/6\\)', '\\(-1/6\\)'], answer: 3 },
     { q: '\\((1+x)^{1/2}\\) expansion to \\(x^2\\):', options: ['\\(1+x/2+x^2/4\\)', '\\(1+x-x^2/2\\)', '\\(1+x/2+x^2/2\\)', '\\(1+x/2-x^2/8\\)'], answer: 3 },
-    { q: 'Radius of convergence of \\(\\ln(1+x)\\):', options: ['All \\(x\\)', '\\(|x|<2\\)', '\\(|x|<\\infty\\)', '\\(|x|<1\\) (with \\(x=1\\) included)'], answer: 3 },
+    { q: 'Radius of convergence of \\(\\ln(1+x)\\):', options: ['All \\(x\\)', '\\(|x|<2\\)', '\\(|x|<\\infty\\)', '\\(|x|<1\\) (radius 1)'], answer: 3 },
   ],
   red: [
     { q: 'Evaluate \\(\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}\\) using series:', options: ['\\(2\\)','\\(0\\) (as \\(x\\to0\\))','\\(1\\)','\\(1/2\\)'], answer: 3 },
