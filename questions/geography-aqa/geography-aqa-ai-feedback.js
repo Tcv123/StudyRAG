@@ -142,6 +142,25 @@ const GEOGRAPHY_AQA_AI_FEEDBACK = {
     { q: 'To what extent must wealthy nations restrict consumption, rather than rely on technological substitution, to achieve sustainable resource security?', marks: 20, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── 2.5 Global Systems & Global Governance ─────────────────────── */
+  '2.5': [
+    { q: 'Describe the main dimensions of globalisation and the flows associated with each.', marks: 6, command: 'Describe' },
+    { q: 'Explain why interdependence between places is rarely symmetrical.', marks: 6, command: 'Explain' },
+    { q: 'Explain how tariff escalation limits the ability of commodity-producing countries to add value to their exports.', marks: 9, command: 'Explain' },
+    { q: 'Explain the spatial organisation of a specified transnational corporation and its consequences for the countries in which it operates.', marks: 9, command: 'Explain' },
+    { q: 'Describe the maritime zones established by UNCLOS and explain why the high seas required a separate agreement.', marks: 9, command: 'Describe' },
+    { q: 'Compare the governance of Antarctica with the governance of the high seas as global commons.', marks: 9, command: 'Compare' },
+    { q: 'Discuss the ways in which unequal power relations allow some states to shape global systems to their own advantage.', marks: 9, command: 'Discuss' },
+    { q: 'Discuss the importance of scale — local, national, regional and global — in making global governance effective.', marks: 9, command: 'Discuss' },
+    { q: 'Assess the extent to which global systems promote growth and stability rather than inequality and injustice.', marks: 20, command: 'Assess' },
+    { q: 'Assess the effectiveness of the Antarctic Treaty System in protecting Antarctica as a global common.', marks: 20, command: 'Assess' },
+    { q: 'Assess the significance of the entry into force of the High Seas (BBNJ) Treaty in January 2026 for the governance of the global commons.', marks: 20, command: 'Assess' },
+    { q: 'Evaluate the view that transnational corporations do more harm than good in the countries in which they operate. Refer to a specified TNC.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the effectiveness of the World Trade Organization as a system of global trade governance.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent are international trade rules written in the interests of the most powerful states?', marks: 20, command: 'To what extent' },
+    { q: 'To what extent is globalisation being reversed rather than reorganised along geopolitical lines?', marks: 20, command: 'To what extent' },
+  ],
+
   /* ─────────────────────── 3.1 Fieldwork & Investigation ─────────────────────── */
   '3.1': [
     { q: 'Describe the characteristics of a strong, focused geographical research question suitable for the Non-Examined Assessment (NEA).', marks: 6, command: 'Describe' },

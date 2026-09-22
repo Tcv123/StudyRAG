@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — 3.1.2 Individual Economic Decision Making — AQA A-Level Economics</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.7; padding: 40px 24px; }
+  .container { max-width: 820px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #1a1a2e; padding-bottom: 8px; margin-bottom: 28px; }
+  h2 { font-size: 1.5rem; color: #16213e; margin: 40px 0 16px; border-left: 4px solid #1a73e8; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #1a1a2e; margin: 26px 0 10px; }
+  h4 { font-size: 1.05rem; color: #374151; margin: 18px 0 8px; }
+  p { margin: 10px 0; }
+  ul, ol { margin: 10px 0 14px 24px; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 14px; text-align: left; }
+  th { background: #e8eef6; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .def-box { background: #e8f0fe; border-left: 4px solid #1a73e8; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .tip-box { background: #fef7e0; border-left: 4px solid #f59e0b; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .case-study { background: #f0f9ff; border-left: 4px solid #0ea5e9; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .case-study strong.cs-title { color: #0369a1; font-size: 1.05rem; }
+  .diagram-box { background: #f9fafb; border: 2px solid #d1d5db; border-radius: 10px; padding: 20px; margin: 20px 0; text-align: center; }
+  .diagram-box svg { max-width: 100%; }
+  .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 10px; font-style: italic; }
+  .eval-box { background: #faf5ff; border-left: 4px solid #8b5cf6; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
+  .eq { text-align: center; font-size: 1.15rem; margin: 12px 0; font-family: "Cambria Math", "Times New Roman", serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>3.1.2 Individual Economic Decision Making</h1>
+
+<!-- ============================================================ -->
+<h2>The Traditional Model of Rational Economic Decision Making</h2>
+<!-- ============================================================ -->
+
+<p>Almost all of the economics you meet in 3.1.3 to 3.1.8 — demand curves, supply curves, profit maximisation, elasticity — rests on one assumption: that economic agents behave <strong>rationally</strong>. This topic examines what that assumption actually says, and then examines the growing body of evidence that it is an incomplete description of how people really behave.</p>
+
+<div class="def-box">
+<strong>Rational economic decision making</strong> is the assumption that economic agents act consistently and purposefully to maximise their own welfare: consumers maximise <em>utility</em>, firms maximise <em>profit</em>, workers maximise <em>net advantage from work</em>, and governments maximise <em>social welfare</em>.
+</div>
+
+<h3>The Assumptions Behind the Traditional Model</h3>
+<p>For the traditional model to hold, four conditions must be satisfied. Learn these — AQA regularly asks candidates to state and then challenge them.</p>
+
+<table>
+<tr><th>Assumption</th><th>What It Means</th><th>Why It Matters</th></tr>
+<tr><td><strong>Utility maximisation</strong></td><td>The consumer has a clear objective: to get the greatest possible satisfaction from a limited budget.</td><td>Without a single objective there is no unique "best" choice to solve for.</td></tr>
+<tr><td><strong>Perfect information</strong></td><td>The agent knows all available options, all prices, and the exact benefit each option will deliver — including in the future.</td><td>Choice can only be optimal if the agent can actually see what the options are worth.</td></tr>
+<tr><td><strong>Transitive and consistent preferences</strong></td><td>If A is preferred to B, and B to C, then A must be preferred to C. Preferences do not flip depending on how the question is asked.</td><td>Consistency is what makes a stable demand curve possible.</td></tr>
+<tr><td><strong>Self-interest</strong></td><td>The agent weighs up only their own costs and benefits, not those of others.</td><td>Gives the model a definite prediction; it is also the basis of Adam Smith's "invisible hand".</td></tr>
+</table>
+
+<p>Two further conditions are often added: agents have <strong>unlimited cognitive capacity</strong> (they can process whatever information they are given) and <strong>unlimited willpower</strong> (having worked out the best course of action, they carry it out).</p>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> "Rational" in economics does <em>not</em> mean "sensible" or "wise". It means consistent maximisation of a stated objective. A shoplifter who correctly weighs the expected gain against the probability of being caught is behaving rationally in the economist's sense. Never define rationality as "making good decisions" — that is a normative statement and will not earn the mark.
+</div>
+
+<!-- ============================================================ -->
+<h2>Utility: Total and Marginal</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>Utility</strong> is the satisfaction or benefit a consumer derives from consuming a good or service.<br><br>
+<strong>Total utility (TU)</strong> is the overall satisfaction obtained from consuming a given quantity of a good.<br><br>
+<strong>Marginal utility (MU)</strong> is the <em>addition</em> to total utility from consuming one extra unit of a good.
+</div>
+
+<div class="eq">MU = ΔTU ÷ ΔQ</div>
+
+<p>Utility is subjective and cannot be measured in real units, so economists use an imaginary unit — the "util" — purely to illustrate the relationship. What matters for the exam is the <em>pattern</em>, not the numbers.</p>
+
+<h3>A Worked Example: Slices of Pizza</h3>
+
+<table>
+<tr><th>Slices consumed (Q)</th><th>Total utility (utils)</th><th>Marginal utility (utils)</th><th>What is happening</th></tr>
+<tr><td>0</td><td>0</td><td>—</td><td>Nothing consumed</td></tr>
+<tr><td>1</td><td>20</td><td>20</td><td>First slice: you are hungry, so satisfaction is high</td></tr>
+<tr><td>2</td><td>36</td><td>16</td><td>Still enjoyable, but less so than the first</td></tr>
+<tr><td>3</td><td>48</td><td>12</td><td>Marginal utility continues to fall</td></tr>
+<tr><td>4</td><td>56</td><td>8</td><td>Appetite is fading</td></tr>
+<tr><td>5</td><td>60</td><td>4</td><td>Barely worth eating</td></tr>
+<tr><td>6</td><td>60</td><td>0</td><td><strong>Satiation point</strong> — TU is at a maximum, MU = 0</td></tr>
+<tr><td>7</td><td>56</td><td>−4</td><td>Negative marginal utility — you now feel ill</td></tr>
+</table>
+
+<p>Three relationships come out of this table and they are examined constantly:</p>
+<ol>
+  <li><strong>Total utility rises as long as marginal utility is positive</strong>, but it rises by smaller and smaller amounts.</li>
+  <li><strong>Total utility is maximised at the quantity where marginal utility equals zero.</strong> This is the satiation point.</li>
+  <li><strong>If marginal utility becomes negative, total utility falls.</strong></li>
+</ol>
+
+<div class="diagram-box">
+<svg width="460" height="380" viewBox="0 0 460 380">
+  <!-- ===== TOP PANEL: TOTAL UTILITY ===== -->
+  <line x1="60" y1="160" x2="430" y2="160" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="160" x2="60" y2="18" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="430,160 420,155 420,165" fill="#1a1a2e"/>
+  <polygon points="60,18 55,28 65,28" fill="#1a1a2e"/>
+  <text x="26" y="92" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a2e" transform="rotate(-90,26,92)">Total utility</text>
+
+  <!-- TU curve: parabola with vertex at (299,30), TU(0)=0 at (60,160) -->
+  <path d="M 60,160 Q 179.5,30 299,30 Q 359.5,30 420,63" stroke="#2563eb" stroke-width="3" fill="none"/>
+  <text x="424" y="60" font-size="13" fill="#2563eb" font-weight="700">TU</text>
+
+  <!-- Peak marker -->
+  <circle cx="299" cy="30" r="5" fill="#2563eb"/>
+  <rect x="180" y="8" width="102" height="15" fill="white" fill-opacity="0.9" rx="2"/>
+  <text x="282" y="20" font-size="11" fill="#2563eb" text-anchor="end" font-weight="600">TU at a maximum</text>
+
+  <!-- ===== BOTTOM PANEL: MARGINAL UTILITY ===== -->
+  <line x1="60" y1="300" x2="430" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="345" x2="60" y2="196" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="430,300 420,295 420,305" fill="#1a1a2e"/>
+  <polygon points="60,196 55,206 65,206" fill="#1a1a2e"/>
+  <text x="26" y="248" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a2e" transform="rotate(-90,26,248)">Marginal utility</text>
+  <text x="245" y="368" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">Quantity consumed (Q)</text>
+
+  <!-- MU line: straight, falling, crosses zero at x=299 -->
+  <line x1="60" y1="215" x2="420" y2="343" stroke="#dc2626" stroke-width="3"/>
+  <text x="424" y="345" font-size="13" fill="#dc2626" font-weight="700">MU</text>
+  <circle cx="299" cy="300" r="5" fill="#dc2626"/>
+  <rect x="304" y="282" width="56" height="15" fill="white" fill-opacity="0.9" rx="2"/>
+  <text x="306" y="294" font-size="11" fill="#dc2626" font-weight="600">MU = 0</text>
+
+  <!-- Linking dashed line at the satiation quantity -->
+  <line x1="299" y1="30" x2="299" y2="160" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <line x1="299" y1="196" x2="299" y2="300" stroke="#64748b" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <text x="299" y="176" font-size="11" fill="#64748b" text-anchor="middle">Q*</text>
+</svg>
+<div class="diagram-caption">Figure 1: Total and marginal utility. Total utility rises at a decreasing rate and peaks at Q*, exactly the quantity at which the marginal utility curve cuts the horizontal axis. Beyond Q* marginal utility is negative and total utility falls.</div>
+</div>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> The commonest error in this topic is to say that "total utility falls because of diminishing marginal utility". It does not. Diminishing marginal utility means total utility rises <em>more slowly</em>. Total utility only falls once marginal utility turns negative. Get the TU peak lined up vertically with the point where MU cuts the axis and the diagram mark is secure.
+</div>
+
+<!-- ============================================================ -->
+<h2>The Law of Diminishing Marginal Utility</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>The law of diminishing marginal utility</strong> states that, as more units of a good are consumed within a given time period, the additional satisfaction gained from each extra unit eventually falls, ceteris paribus.
+</div>
+
+<p>The law depends on two conditions that are worth quoting in an answer:</p>
+<ul>
+  <li><strong>Within a given time period</strong> — the third cup of coffee this hour delivers less than the third cup this month.</li>
+  <li><strong>Ceteris paribus</strong> — tastes, income and the consumption of other goods are held constant.</li>
+</ul>
+
+<h3>Why This Explains the Downward-Sloping Demand Curve</h3>
+<p>This is the key link AQA wants you to make. A rational consumer will buy an extra unit only if the utility gained from it is at least equal to the price paid. In money terms, the consumer buys up to the point where:</p>
+
+<div class="eq">Marginal utility of the last unit = Price</div>
+
+<p>Because marginal utility falls as quantity rises, the consumer will only be willing to buy a <em>larger</em> quantity if the price is <em>lower</em>. The marginal utility curve, expressed in money terms, therefore <em>is</em> the individual's demand curve. Diminishing marginal utility is the microeconomic foundation of the law of demand.</p>
+
+<div class="diagram-box">
+<svg width="460" height="380" viewBox="0 0 460 380">
+  <!-- Axes -->
+  <line x1="70" y1="320" x2="430" y2="320" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="70" y1="320" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="430,320 420,315 420,325" fill="#1a1a2e"/>
+  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
+  <text x="250" y="360" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e">Quantity demanded per period</text>
+  <text x="24" y="175" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,175)">Price and marginal utility (£)</text>
+
+  <!-- MU / demand line: from (100,60) to (400,300), slope 0.8 -->
+  <line x1="100" y1="60" x2="400" y2="300" stroke="#2563eb" stroke-width="3"/>
+  <text x="404" y="300" font-size="13" fill="#2563eb" font-weight="700">MU = D</text>
+
+  <!-- Price line P1 at y=120, cuts MU at x=175 -->
+  <line x1="70" y1="120" x2="175" y2="120" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <line x1="175" y1="120" x2="175" y2="320" stroke="#dc2626" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <circle cx="175" cy="120" r="5" fill="#dc2626"/>
+  <text x="64" y="124" font-size="12" fill="#dc2626" text-anchor="end" font-weight="600">P₁</text>
+  <text x="175" y="338" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="600">Q₁</text>
+
+  <!-- Price line P2 at y=220, cuts MU at x=300 -->
+  <line x1="70" y1="220" x2="300" y2="220" stroke="#16a34a" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <line x1="300" y1="220" x2="300" y2="320" stroke="#16a34a" stroke-width="1.4" stroke-dasharray="5,4"/>
+  <circle cx="300" cy="220" r="5" fill="#16a34a"/>
+  <text x="64" y="224" font-size="12" fill="#16a34a" text-anchor="end" font-weight="600">P₂</text>
+  <text x="300" y="338" font-size="12" fill="#16a34a" text-anchor="middle" font-weight="600">Q₂</text>
+
+  <!-- Annotation -->
+  <rect x="96" y="242" width="190" height="50" fill="white" fill-opacity="0.9" rx="3"/>
+  <text x="191" y="259" font-size="11" fill="#64748b" text-anchor="middle">The consumer buys until the</text>
+  <text x="191" y="273" font-size="11" fill="#64748b" text-anchor="middle">marginal utility of the last unit</text>
+  <text x="191" y="287" font-size="11" fill="#64748b" text-anchor="middle">just equals the price paid.</text>
+  <line x1="286" y1="256" x2="296" y2="226" stroke="#94a3b8" stroke-width="1"/>
+</svg>
+<div class="diagram-caption">Figure 2: Deriving the demand curve from diminishing marginal utility. At the high price P₁ only Q₁ units deliver marginal utility worth paying for. When price falls to P₂ the consumer extends consumption to Q₂, where marginal utility again equals price. The MU curve is the demand curve.</div>
+</div>
+
+<!-- ============================================================ -->
+<h2>The Equi-Marginal Principle and Consumer Equilibrium</h2>
+<!-- ============================================================ -->
+
+<p>A consumer does not buy one good; they allocate a limited budget across many goods. The rule that tells them how to do it is the <strong>equi-marginal principle</strong>.</p>
+
+<div class="def-box">
+<strong>The equi-marginal principle</strong> states that a utility-maximising consumer allocates their income so that the marginal utility gained from the last pound spent is the same across every good purchased.
+</div>
+
+<div class="eq">MU<sub>A</sub> ÷ P<sub>A</sub> = MU<sub>B</sub> ÷ P<sub>B</sub> = … = MU<sub>N</sub> ÷ P<sub>N</sub></div>
+
+<p>This point is called <strong>consumer equilibrium</strong>: the consumer cannot reallocate a single pound between goods and make themselves better off.</p>
+
+<h3>Why the Rule Works</h3>
+<p>Suppose a consumer buys coffee at £2 and sandwiches at £4:</p>
+<ul>
+  <li>The marginal utility of the next coffee is 20 utils, so MU ÷ P = 20 ÷ 2 = <strong>10 utils per pound</strong>.</li>
+  <li>The marginal utility of the next sandwich is 24 utils, so MU ÷ P = 24 ÷ 4 = <strong>6 utils per pound</strong>.</li>
+</ul>
+<p>The consumer is <em>not</em> in equilibrium. Every pound moved out of sandwiches and into coffee gains 10 utils and loses only 6 — a net gain of 4 utils. So the consumer buys more coffee. As they do, the marginal utility of coffee falls (diminishing marginal utility) and the marginal utility of sandwiches rises. The reallocation continues until the two ratios are equal. Only then is total utility maximised.</p>
+
+<h3>What Happens When a Price Changes</h3>
+<p>If the price of coffee rises to £4, then MU ÷ P for coffee falls to 5 utils per pound. Coffee now delivers less utility per pound than sandwiches, so the consumer switches spending away from coffee — which is exactly the contraction in quantity demanded predicted by the law of demand. The equi-marginal principle therefore also gives us the <strong>substitution effect</strong> of a price change.</p>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Write the condition as MU ÷ P, not MU alone. A very common error is to claim the consumer equalises <em>marginal utility</em> across goods. They equalise marginal utility <em>per pound spent</em> — price has to be in the denominator, otherwise a consumer would buy equal marginal utility from a £1 chocolate bar and a £40,000 car.
+</div>
+
+<!-- ============================================================ -->
+<h2>Why the Traditional Model Breaks Down (1): Imperfect Information</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>Imperfect information</strong> exists when economic agents do not have all the information they need to make a fully informed, welfare-maximising decision. It may take the form of <em>incomplete</em> information (gaps in what is known) or <em>inaccurate</em> information (what is known is wrong).<br><br>
+<strong>Asymmetric information</strong> is a specific type of imperfect information in which one party to a transaction has <em>more or better</em> information than the other, and can use that advantage to their own benefit.
+</div>
+
+<h3>How Information Failure Undermines Rational Choice</h3>
+<ul>
+  <li><strong>Complexity:</strong> mortgages, pension products, mobile phone tariffs and energy contracts are hard to compare even for a determined consumer. Utility cannot be maximised if the options cannot be understood.</li>
+  <li><strong>Long time horizons:</strong> the benefits of a pension or of stopping smoking arrive decades later, so the consumer cannot observe them before choosing.</li>
+  <li><strong>Deliberate obfuscation:</strong> sellers may design complicated pricing precisely so that comparison is difficult.</li>
+  <li><strong>Search costs:</strong> gathering information takes time and money, so a rational agent may stop searching before finding the best option.</li>
+</ul>
+
+<h3>Asymmetric Information: The Classic Cases</h3>
+<table>
+<tr><th>Market</th><th>Who knows more</th><th>Consequence</th></tr>
+<tr><td>Second-hand cars</td><td>The seller knows the car's history</td><td>Buyers discount every car in case it is a "lemon"; good cars are withdrawn and the market shrinks (Akerlof's market for lemons, 1970)</td></tr>
+<tr><td>Health and life insurance</td><td>The customer knows their own health and habits</td><td><strong>Adverse selection</strong> — high-risk customers are keenest to buy, pushing up premiums</td></tr>
+<tr><td>Insurance after purchase</td><td>The customer knows how carefully they behave</td><td><strong>Moral hazard</strong> — being insured makes risky behaviour more likely</td></tr>
+<tr><td>Professional services (dentists, mechanics, financial advisers)</td><td>The supplier knows what work is genuinely needed</td><td>Over-treatment and over-charging; the seller is also the diagnostician</td></tr>
+</table>
+
+<p>Asymmetric information is a <strong>market failure</strong> because it leads to a misallocation of resources — too much of some goods, too little of others, and in extreme cases a missing market. It links directly to topic 3.1.8.</p>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: Pension Complexity and Auto-Enrolment</strong><br>
+Choosing a workplace pension requires a person to forecast their income decades ahead, understand compound returns, compare charges and judge investment risk. Faced with that, most employees under the old opt-in system simply did nothing. When automatic enrolment began to be phased in from 2012 the decision was reversed: employees are enrolled by default and must actively opt out within one month. Participation among eligible employees rose from roughly 55% in 2012 to over 88% by 2024, and employers must re-enrol staff who opted out every three years (DWP; House of Commons Library briefing SN06417). The underlying pension product did not change — only the information burden and the default did.
+</div>
+
+<!-- ============================================================ -->
+<h2>Why the Traditional Model Breaks Down (2): Behavioural Economics</h2>
+<!-- ============================================================ -->
+
+<div class="def-box">
+<strong>Behavioural economics</strong> combines insights from psychology with economic analysis to explain why individuals make decisions that depart <em>systematically and predictably</em> from the traditional model of rational choice.
+</div>
+
+<p>The key word is <strong>systematically</strong>. If consumers simply made random errors, the errors would cancel out and the traditional model would still predict market behaviour well on average. Behavioural economics shows the errors run in the same direction for most people, most of the time — which is precisely why they can be modelled and why they can be used in policy.</p>
+
+<h3>Bounded Rationality</h3>
+<div class="def-box">
+<strong>Bounded rationality</strong> (Herbert Simon) is the idea that agents intend to be rational but are limited by the information they have, the cognitive capacity to process it, and the time available to decide. Rather than optimising, they <strong>satisfice</strong> — they accept the first option that is good enough.
+</div>
+
+<p>Bounded rationality does not claim people are irrational. It claims that fully optimising is too costly, so people economise on thinking itself.</p>
+
+<h3>Bounded Self-Control</h3>
+<div class="def-box">
+<strong>Bounded self-control</strong> is the observation that agents often know what is in their own long-term interest but fail to act on it, because willpower is limited and immediate gratification is hard to resist.
+</div>
+
+<p>Gym memberships that go unused, New Year resolutions that collapse in February, and saving intentions that never translate into standing orders are all examples. Note how damaging this is for the traditional model: the agent has full information and a clear objective, and <em>still</em> fails to maximise.</p>
+
+<h3>Biases and Heuristics in Decision Making</h3>
+
+<table>
+<tr><th>Bias or heuristic</th><th>What it means</th><th>Everyday example</th></tr>
+<tr><td><strong>Rules of thumb (heuristics)</strong></td><td>Mental short cuts that give a quick, adequate answer instead of a full calculation.</td><td>Buying the same brand of washing powder every week rather than comparing unit prices.</td></tr>
+<tr><td><strong>Anchoring</strong></td><td>Giving excessive weight to the first piece of information seen, and judging everything else relative to it.</td><td>A "was £120, now £60" sticker makes £60 feel cheap even if the good never sold at £120.</td></tr>
+<tr><td><strong>Availability bias</strong></td><td>Judging how likely something is by how easily examples come to mind.</td><td>Over-estimating the risk of a plane crash after heavy news coverage, while under-estimating road risk.</td></tr>
+<tr><td><strong>Social norms and herding</strong></td><td>Copying the behaviour of the group, because it is a cheap guide and because conformity has value in itself.</td><td>Queues outside a restaurant attract more customers; panic buying of fuel or pasta.</td></tr>
+<tr><td><strong>Loss aversion</strong></td><td>Losses are felt roughly twice as strongly as equivalent gains (Kahneman and Tversky's prospect theory, 1979).</td><td>Refusing to sell shares that have fallen, in order to avoid "realising" the loss.</td></tr>
+<tr><td><strong>Endowment effect</strong></td><td>People value something more once they own it, so the price they will accept to sell exceeds what they would have paid to buy.</td><td>Free trial periods raise subscription rates because cancelling now feels like giving something up.</td></tr>
+<tr><td><strong>Framing</strong></td><td>The same choice produces different decisions depending on how it is presented.</td><td>"90% fat free" outsells "contains 10% fat"; "survival rate 90%" is chosen over "mortality rate 10%".</td></tr>
+<tr><td><strong>Present bias (hyperbolic discounting)</strong></td><td>Heavily over-weighting immediate costs and benefits relative to future ones, in a way that reverses earlier plans.</td><td>Choosing a payday loan at a very high APR to solve a problem this week.</td></tr>
+<tr><td><strong>Status quo bias / inertia</strong></td><td>A strong preference for the existing arrangement, so defaults are rarely changed.</td><td>Staying on an expensive energy or broadband tariff for years despite cheaper deals.</td></tr>
+<tr><td><strong>Altruism and fairness</strong></td><td>Agents sacrifice their own payoff to help others or to punish unfair behaviour, contradicting pure self-interest.</td><td>Tipping in a restaurant you will never visit again; charitable giving; rejecting a "lowball" split in the ultimatum game.</td></tr>
+</table>
+
+<div class="diagram-box">
+<svg width="460" height="380" viewBox="0 0 460 380">
+  <!-- Axes crossing at the reference point (230,190) -->
+  <line x1="60" y1="190" x2="430" y2="190" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="230" y1="350" x2="230" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="430,190 420,185 420,195" fill="#1a1a2e"/>
+  <polygon points="230,30 225,40 235,40" fill="#1a1a2e"/>
+  <text x="400" y="207" font-size="12" font-weight="600" fill="#16a34a" text-anchor="middle">Gains</text>
+  <text x="92" y="207" font-size="12" font-weight="600" fill="#dc2626" text-anchor="middle">Losses</text>
+  <text x="236" y="42" font-size="12" font-weight="600" fill="#1a1a2e">Value</text>
+  <text x="238" y="226" font-size="11" fill="#64748b">Reference point</text>
+
+  <!-- Gains branch: concave, v = d^0.88 -->
+  <path d="M 230,190 C 265,155 320,122 400,80" stroke="#16a34a" stroke-width="3" fill="none"/>
+  <!-- Losses branch: convex and steeper -->
+  <path d="M 230,190 C 205,235 175,268 120,330" stroke="#dc2626" stroke-width="3" fill="none"/>
+
+  <!-- Gain of a given size -->
+  <circle cx="315" cy="130" r="5" fill="#16a34a"/>
+  <line x1="315" y1="190" x2="315" y2="130" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <line x1="315" y1="130" x2="230" y2="130" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <text x="315" y="205" font-size="11" fill="#16a34a" text-anchor="middle">+£100</text>
+  <text x="226" y="126" font-size="11" fill="#16a34a" text-anchor="end">value of gain</text>
+
+  <!-- Loss of the same size -->
+  <circle cx="145" cy="302" r="5" fill="#dc2626"/>
+  <line x1="145" y1="190" x2="145" y2="302" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <line x1="145" y1="302" x2="230" y2="302" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="4,4"/>
+  <text x="145" y="181" font-size="11" fill="#dc2626" text-anchor="middle">−£100</text>
+  <text x="234" y="306" font-size="11" fill="#dc2626">value of loss (larger)</text>
+</svg>
+<div class="diagram-caption">Figure 3: The loss-aversion value function. Value is measured from a reference point rather than from total wealth. The curve is concave in the gains domain (diminishing sensitivity) but steeper and convex in the losses domain, so a £100 loss reduces perceived welfare by more than a £100 gain raises it.</div>
+</div>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: The 5p Carrier Bag Charge (England, October 2015)</strong><br>
+England introduced a 5p charge on single-use carrier bags at large retailers in October 2015; it was raised to 10p and extended to all retailers in May 2021. Bag use in the main supermarkets fell by over 98% compared with pre-charge levels. The charge is far too small to matter to a household budget, so a purely rational cost-benefit calculation cannot explain the response. Behavioural explanations do: the charge makes the cost <em>salient</em> at the till, it frames taking a bag as a small loss rather than a free entitlement, and it changed the social norm about reusable bags.
+</div>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> Do not write that behavioural economics shows consumers are "irrational" or "stupid". Examiners reward the precise formulation: behaviour departs <em>systematically and predictably</em> from the traditional model's assumptions. Always name the specific bias (anchoring, present bias, loss aversion) rather than writing vaguely about "psychology".
+</div>
+
+<!-- ============================================================ -->
+<h2>Behavioural Economics and Economic Policy</h2>
+<!-- ============================================================ -->
+
+<p>If people depart from rational choice in predictable ways, governments can redesign the way choices are presented in order to improve outcomes — without banning anything or changing prices.</p>
+
+<div class="def-box">
+<strong>Choice architecture</strong> is the design of the environment in which decisions are made: what the options are, what order they appear in, what happens if the agent does nothing, and how each option is described.<br><br>
+<strong>A nudge</strong> is any feature of the choice architecture that predictably alters behaviour without forbidding options or significantly changing financial incentives. Thaler and Sunstein set this out in <em>Nudge</em> (2008) and called the approach "libertarian paternalism".
+</div>
+
+<h3>The Main Policy Tools</h3>
+
+<table>
+<tr><th>Tool</th><th>How it works</th><th>UK example</th></tr>
+<tr><td><strong>Default choice</strong></td><td>Sets the outcome that applies if the agent does nothing, exploiting status quo bias and inertia.</td><td>Workplace pension automatic enrolment (from 2012); organ donation deemed consent in England (May 2020).</td></tr>
+<tr><td><strong>Framing</strong></td><td>Presents the same information in the way most likely to prompt the desired decision.</td><td>Traffic-light food labelling; letters telling late taxpayers that most people in their area have already paid.</td></tr>
+<tr><td><strong>Salience and simplification</strong></td><td>Makes a cost or a required action impossible to overlook.</td><td>The carrier bag charge at the till; simplified, shortened government forms.</td></tr>
+<tr><td><strong>Restricted choice</strong></td><td>Cuts the number of options so bounded rationality is less of an obstacle, without removing freedom entirely.</td><td>A short list of default pension funds instead of hundreds; limiting confectionery at supermarket checkouts.</td></tr>
+<tr><td><strong>Mandated choice</strong></td><td>Requires the agent to make an active decision one way or the other, so inaction is not an option.</td><td>Being asked to record an organ donation decision when applying for a driving licence.</td></tr>
+</table>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: The Behavioural Insights Team</strong><br>
+The Behavioural Insights Team — widely known as the "Nudge Unit" — was established inside the Cabinet Office in 2010, the first government institution of its kind anywhere in the world. Its characteristic method is the randomised controlled trial: an altered letter, form or default is tested against the existing version before being rolled out. Its work on tax reminder letters, court fine payment and public service forms established that very cheap changes in wording and default settings can produce measurable behaviour change, and dozens of governments have since copied the model.
+</div>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: Organ Donation and Deemed Consent</strong><br>
+Wales moved to an opt-out organ donation system in 2015, England followed in May 2020 under Max and Keira's Law, and Scotland in 2021. Under deemed consent, adults are treated as willing donors unless they have registered an objection. Nothing about the medical procedure, the cost or the benefit changed — only the default did. It is a textbook illustration of status quo bias operating on a life-or-death choice, though families are still consulted, which is one reason registrations do not translate one-for-one into transplants.
+</div>
+
+<h3>Nudges Compared with Traditional Interventions</h3>
+
+<table>
+<tr><th>Approach</th><th>Mechanism</th><th>Strengths</th><th>Weaknesses</th></tr>
+<tr><td><strong>Indirect tax</strong></td><td>Raises the private cost so that it reflects the social cost.</td><td>Internalises the externality; raises revenue that can be hypothecated; works on the whole market at once.</td><td>Regressive; ineffective if demand is very price inelastic; may push activity into unregulated markets.</td></tr>
+<tr><td><strong>Regulation and bans</strong></td><td>Removes the option altogether or sets a binding standard.</td><td>Certainty of outcome; easy to explain; appropriate where harm is severe.</td><td>Costly to monitor and enforce; removes consumer freedom; risk of black markets and government failure.</td></tr>
+<tr><td><strong>Information provision</strong></td><td>Corrects information failure so agents can choose better.</td><td>Preserves choice entirely; low cost; addresses the underlying market failure directly.</td><td>Assumes agents can process the information — bounded rationality means more information is not always better.</td></tr>
+<tr><td><strong>Nudges</strong></td><td>Redesigns the choice architecture without changing prices or options.</td><td>Very cheap; preserves freedom of choice; can be trialled and evaluated before rollout.</td><td>Effects can be small or fade over time; ethical concerns about manipulation; unlikely to be sufficient for severe market failures.</td></tr>
+</table>
+
+<div class="case-study">
+<strong class="cs-title">Real-World Example: The Soft Drinks Industry Levy — Tax or Nudge?</strong><br>
+The Soft Drinks Industry Levy took effect in April 2018 at 18p per litre for drinks with 5g to 8g of sugar per 100ml and 24p per litre above 8g; the rates were raised to 19.4p and 25.9p from April 2025. It is a conventional Pigouvian-style tax, but its most important effect worked on <em>producers</em> rather than consumers: because the thresholds were announced in advance, over half of manufacturers had reformulated their drinks below the 5g threshold by April 2019. The design combined a price incentive with a highly salient threshold — a useful example when an essay asks whether nudges and traditional tools are really alternatives.
+</div>
+
+<div class="eval-box">
+<strong>Evaluation: are nudges a better policy than taxes and regulation?</strong>
+<ul>
+  <li><strong>Cost-effectiveness:</strong> nudges are extraordinarily cheap relative to their effect. Changing a pension default cost almost nothing yet moved participation from roughly 55% to over 88% of eligible employees between 2012 and 2024. Few tax changes deliver that ratio of benefit to administrative cost.</li>
+  <li><strong>Freedom of choice:</strong> libertarian paternalism preserves the option to opt out, so the welfare loss imposed on people who genuinely prefer the alternative is small — unlike a ban.</li>
+  <li><strong>But scale matters:</strong> nudges work on individual decisions at the margin. Where the externality is very large — climate change, or the health costs of smoking — the change in behaviour needed is far bigger than a nudge can deliver, and taxes, regulation and public investment remain necessary.</li>
+  <li><strong>Effectiveness may fade:</strong> some behavioural effects weaken once novelty wears off, and firms can respond by redesigning their own choice architecture to pull in the opposite direction.</li>
+  <li><strong>Ethical objection:</strong> nudges work <em>because</em> people do not notice them. Critics argue that governments exploiting known biases is manipulation, and that it is less transparent and less democratically accountable than a tax debated in Parliament.</li>
+  <li><strong>Distributional effects:</strong> taxes on demerit goods are regressive because low-income households spend a larger share of income on them; nudges avoid that but may also be less effective for the groups experiencing the greatest harm.</li>
+  <li><strong>Judgement:</strong> the evidence points towards nudges being a <em>complement</em> rather than a substitute. The Soft Drinks Industry Levy worked best where a price signal and salient thresholds operated together; auto-enrolment works best alongside minimum contribution rules and tax relief. The right mix depends on the size of the market failure, the price elasticity of demand and the political cost of restricting choice.</li>
+</ul>
+</div>
+
+<!-- ============================================================ -->
+<h2>Bringing It Together: When Does the Traditional Model Still Work?</h2>
+<!-- ============================================================ -->
+
+<p>AQA rewards candidates who can evaluate the traditional model rather than simply discard it. Strong answers recognise that rationality is a better approximation in some settings than in others.</p>
+
+<table>
+<tr><th>The traditional model performs well when…</th><th>The traditional model performs badly when…</th></tr>
+<tr><td>Decisions are repeated often, so agents learn from mistakes (weekly grocery shopping)</td><td>Decisions are one-off or rare (choosing a pension, buying a house)</td></tr>
+<tr><td>The stakes are large enough to justify careful research</td><td>The stakes feel small individually but accumulate (daily snacks, subscriptions)</td></tr>
+<tr><td>Information is simple, standardised and easy to compare (petrol prices per litre)</td><td>Products are complex, bundled or deliberately hard to compare (mobile tariffs, insurance add-ons)</td></tr>
+<tr><td>Costs and benefits arrive at the same time</td><td>Costs are immediate but benefits are far in the future, so present bias dominates</td></tr>
+<tr><td>Competitive pressure punishes firms and consumers who choose badly</td><td>Firms have market power and can profit from exploiting consumer biases</td></tr>
+</table>
+
+<div class="tip-box">
+<strong>Exam Tip:</strong> On a 25-mark evaluation question, the strongest structure is: explain the traditional prediction with a diagram, then introduce <em>one or two</em> specific behavioural insights with a named UK example, then evaluate the policy implication. Three named biases used precisely beats a list of eight named vaguely. A chain of reasoning ending in a supported judgement is what separates Level 5 from Level 3.
+</div>
+
+<!-- ============================================================ -->
+<h2>Key Thinkers for This Topic</h2>
+<!-- ============================================================ -->
+
+<table>
+<tr><th>Economist</th><th>Key Idea</th><th>Relevance</th></tr>
+<tr><td><strong>Alfred Marshall</strong> (1842–1924)</td><td>Formalised marginal utility analysis and consumer surplus in <em>Principles of Economics</em> (1890).</td><td>Source of the marginal utility explanation of the demand curve.</td></tr>
+<tr><td><strong>Herbert Simon</strong> (1916–2001)</td><td>Bounded rationality and satisficing: agents intend to be rational but are limited by information, cognition and time.</td><td>The first systematic challenge to full rationality; Nobel Memorial Prize 1978.</td></tr>
+<tr><td><strong>Daniel Kahneman and Amos Tversky</strong></td><td>Prospect theory (1979): choices are evaluated as gains and losses relative to a reference point, with losses weighted about twice as heavily.</td><td>Loss aversion, the endowment effect and framing; Kahneman received the Nobel Memorial Prize in 2002.</td></tr>
+<tr><td><strong>George Akerlof</strong></td><td>"The Market for Lemons" (1970): asymmetric information can cause good products to be driven out of a market.</td><td>Links information failure to market failure in 3.1.8.</td></tr>
+<tr><td><strong>Richard Thaler and Cass Sunstein</strong></td><td><em>Nudge</em> (2008): choice architecture and libertarian paternalism.</td><td>Intellectual foundation of the Behavioural Insights Team (2010); Thaler received the Nobel Memorial Prize in 2017.</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>Summary of Key Terms</h2>
+<!-- ============================================================ -->
+
+<table>
+<tr><th>Term</th><th>Definition</th></tr>
+<tr><td>Utility</td><td>The satisfaction or benefit derived from consuming a good or service.</td></tr>
+<tr><td>Total utility</td><td>The overall satisfaction from consuming a given quantity of a good.</td></tr>
+<tr><td>Marginal utility</td><td>The addition to total utility from consuming one more unit.</td></tr>
+<tr><td>Diminishing marginal utility</td><td>The fall in additional satisfaction as successive units are consumed in a given period.</td></tr>
+<tr><td>Equi-marginal principle</td><td>Utility is maximised where MU ÷ P is equal across all goods purchased.</td></tr>
+<tr><td>Imperfect information</td><td>Agents lack the complete or accurate information needed to maximise welfare.</td></tr>
+<tr><td>Asymmetric information</td><td>One party in a transaction has more or better information than the other.</td></tr>
+<tr><td>Bounded rationality</td><td>Agents intend to be rational but are limited by information, cognitive capacity and time, so they satisfice.</td></tr>
+<tr><td>Bounded self-control</td><td>Agents know what is in their long-term interest but lack the willpower to act on it.</td></tr>
+<tr><td>Heuristic</td><td>A mental short cut or rule of thumb used in place of full calculation.</td></tr>
+<tr><td>Anchoring</td><td>Over-weighting the first piece of information received when making a judgement.</td></tr>
+<tr><td>Availability bias</td><td>Judging probability by how easily examples come to mind.</td></tr>
+<tr><td>Loss aversion</td><td>Losses are felt more strongly than equivalent gains.</td></tr>
+<tr><td>Endowment effect</td><td>Valuing a good more highly simply because you own it.</td></tr>
+<tr><td>Framing</td><td>The presentation of a choice altering the decision made.</td></tr>
+<tr><td>Present bias</td><td>Over-weighting immediate costs and benefits relative to future ones.</td></tr>
+<tr><td>Choice architecture</td><td>The design of the environment in which choices are presented.</td></tr>
+<tr><td>Nudge</td><td>A change in choice architecture that alters behaviour without banning options or changing incentives significantly.</td></tr>
+<tr><td>Default choice</td><td>The outcome that applies if the agent takes no action.</td></tr>
+<tr><td>Mandated choice</td><td>A requirement that an agent makes an active decision, so inaction is not possible.</td></tr>
+</table>
+
+</div>
+</body>
+</html>

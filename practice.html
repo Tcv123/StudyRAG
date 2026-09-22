@@ -999,10 +999,13 @@ const SUBJECT_TOPICS = {
     sections: [
       { label: 'AQA — Microeconomics (Paper 1)', topics: [
         { id: '3.1.1', name: 'Economic Problem & Methodology', sub: 'Scarcity, opportunity cost, PPF, economic methodology' },
-        { id: '3.1.2', name: 'Price Determination', sub: 'Demand, supply, equilibrium, elasticity (PED, YED, XED, PES)' },
-        { id: '3.1.3', name: 'Production Costs & Revenue', sub: 'Short/long run costs, economies of scale, revenue curves' },
-        { id: '3.1.4', name: 'Competitive & Concentrated Markets', sub: 'Perfect competition, monopoly, oligopoly, monopolistic competition' },
-        { id: '3.1.5', name: 'Market Failure & Government Intervention', sub: 'Externalities, public goods, merit goods, government failure' },
+        { id: '3.1.2', name: 'Individual Economic Decision Making', sub: 'Utility, rationality, behavioural biases, nudges and choice architecture' },
+        { id: '3.1.3', name: 'Price Determination', sub: 'Demand, supply, equilibrium, elasticity (PED, YED, XED, PES)' },
+        { id: '3.1.4', name: 'Production Costs & Revenue', sub: 'Short/long run costs, economies of scale, revenue curves' },
+        { id: '3.1.5', name: 'Competitive & Concentrated Markets', sub: 'Perfect competition, monopoly, oligopoly, monopolistic competition' },
+        { id: '3.1.6', name: 'The Labour Market', sub: 'MRP, labour supply, wage determination, monopsony, trade unions' },
+        { id: '3.1.7', name: 'Income Distribution, Poverty & Inequality', sub: 'Lorenz curve, Gini, absolute/relative poverty, redistribution' },
+        { id: '3.1.8', name: 'Market Failure & Government Intervention', sub: 'Externalities, public goods, merit goods, government failure' },
       ]},
       { label: 'AQA — Macroeconomics (Paper 2)', topics: [
         { id: '3.2.1', name: 'Measurement of Macroeconomic Performance', sub: 'GDP, inflation (CPI/RPI), unemployment, balance of payments' },
@@ -1010,6 +1013,7 @@ const SUBJECT_TOPICS = {
         { id: '3.2.3', name: 'Economic Performance', sub: 'Economic growth, trade cycles, Phillips curve, conflicts' },
         { id: '3.2.4', name: 'Financial Markets & Monetary Policy', sub: 'Money supply, interest rates, central banks, quantitative easing' },
         { id: '3.2.5', name: 'Fiscal & Supply-Side Policies', sub: 'Taxation, government spending, supply-side reforms, laffer curve' },
+        { id: '3.2.6', name: 'The International Economy', sub: 'Globalisation, trade, exchange rates, trading blocs, development' },
       ]},
     ]
   },
@@ -1344,6 +1348,7 @@ const SUBJECT_TOPICS = {
         { id: '2.2', name: 'Contemporary Urban Environments', sub: 'Urbanisation, urban forms, sustainability' },
         { id: '2.3', name: 'Population & the Environment', sub: 'DTM, migration, resource management' },
         { id: '2.4', name: 'Resource Security', sub: 'Energy, water, food security' },
+        { id: '2.5', name: 'Global Systems & Global Governance', sub: 'Globalisation, trade, TNCs, global commons, Antarctica' },
       ]},
       { label: 'AQA — Fieldwork (Paper 3)', topics: [
         { id: '3.1', name: 'Fieldwork & Investigation', sub: 'Methodology, sampling, data presentation' },
@@ -1717,7 +1722,7 @@ const DIAG_PAGE = {
   'Physics_OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
   'Physics_OCR B':                { url: 'diagnostics/physics-ocr-b-diagnostic.html',    total: 6,  first: 'B1'  },
   'Physics_OCR B|gcse':           { url: 'diagnostics/physics-ocr-b-gcse-diagnostic.html', total: 6,  first: 'P1'  },
-  'Economics_AQA':                { url: 'diagnostics/economics-aqa-diagnostic.html',         total: 10, first: '3.1.1' },
+  'Economics_AQA':                { url: 'diagnostics/economics-aqa-diagnostic.html',         total: 14, first: '3.1.1' },
   'Economics_Edexcel A':          { url: 'diagnostics/economics-edexcel-a-diagnostic.html',   total: 8,  first: '1.1' },
   'Economics_Edexcel B':          { url: 'diagnostics/economics-edexcel-b-diagnostic.html',   total: 8,  first: '1.1' },
   'Economics_OCR':                { url: 'diagnostics/economics-ocr-diagnostic.html',         total: 8,  first: '1.1' },
@@ -1735,7 +1740,7 @@ const DIAG_PAGE = {
   'Biology_OCR A|gcse':           { url: 'diagnostics/biology-ocr-a-gcse-diagnostic.html',    total: 15, first: 'B1.1' },
   'Biology_OCR B':                { url: 'diagnostics/biology-ocr-b-diagnostic.html',         total: 6,  first: 'B1'  },
   'Biology_OCR B|gcse':           { url: 'diagnostics/biology-ocr-b-gcse-diagnostic.html',    total: 23, first: 'B1.1' },
-  'Geography_AQA':                { url: 'diagnostics/geography-aqa-diagnostic.html',         total: 8,  first: '1.1' },
+  'Geography_AQA':                { url: 'diagnostics/geography-aqa-diagnostic.html',         total: 9,  first: '1.1' },
   'Geography_Edexcel':            { url: 'diagnostics/geography-edexcel-diagnostic.html',     total: 8,  first: 'T1'  },
   'Geography_OCR':                { url: 'diagnostics/geography-ocr-diagnostic.html',         total: 8,  first: '1.1' },
   'Geography_Eduqas|gcse':        { url: 'diagnostics/geography-eduqas-gcse-diagnostic.html', total: 12, first: '1.1' },

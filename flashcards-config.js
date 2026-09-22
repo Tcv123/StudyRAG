@@ -232,15 +232,19 @@
     // ── Economics ───────────────────────────────────────────────────
     'Economics|AQA': [
       { num: '3.1.1', name: 'Economic Problem & Methodology' },
-      { num: '3.1.2', name: 'Price Determination' },
-      { num: '3.1.3', name: 'Production Costs & Revenue' },
-      { num: '3.1.4', name: 'Competitive & Concentrated Markets' },
-      { num: '3.1.5', name: 'Market Failure & Government Intervention' },
+      { num: '3.1.2', name: 'Individual Economic Decision Making' },
+      { num: '3.1.3', name: 'Price Determination' },
+      { num: '3.1.4', name: 'Production Costs & Revenue' },
+      { num: '3.1.5', name: 'Competitive & Concentrated Markets' },
+      { num: '3.1.6', name: 'The Labour Market' },
+      { num: '3.1.7', name: 'Income Distribution, Poverty & Inequality' },
+      { num: '3.1.8', name: 'Market Failure & Government Intervention' },
       { num: '3.2.1', name: 'Measurement of Macroeconomic Performance' },
       { num: '3.2.2', name: 'How the Macroeconomy Works' },
       { num: '3.2.3', name: 'Economic Performance' },
       { num: '3.2.4', name: 'Financial Markets & Monetary Policy' },
       { num: '3.2.5', name: 'Fiscal & Supply-Side Policies' },
+      { num: '3.2.6', name: 'The International Economy' },
     ],
     'Economics|Edexcel A': [
       { num: '1.1', name: 'Nature of Economics & Markets' },
@@ -366,6 +370,7 @@
       { num: '2.2', name: 'Contemporary Urban Environments' },
       { num: '2.3', name: 'Population & the Environment' },
       { num: '2.4', name: 'Resource Security' },
+      { num: '2.5', name: 'Global Systems & Global Governance' },
       { num: '3.1', name: 'Fieldwork & Investigation' },
     ],
     'Geography|Edexcel': [

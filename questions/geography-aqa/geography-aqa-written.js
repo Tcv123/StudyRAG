@@ -573,6 +573,86 @@ const GEOGRAPHY_AQA_WRITTEN = {
     ],
   },
 
+  /* ─────────────────────────────────────────────────────────── 2.5 */
+  '2.5': {
+    green: [
+      {
+        q: 'State two dimensions of globalisation.',
+        marks: 2,
+        marks_scheme: '1 mark each for any two valid flows: capital (FDI, portfolio investment, remittances); labour (migration); products (goods); services (finance, tourism, offshored work); information (data, ideas, media).',
+        tier: 'green',
+        modelAnswer: `• Flows of capital — foreign direct investment, portfolio investment and remittances moving between countries (1).\n• Flows of labour — economic migrants, skilled professionals and seasonal workers moving between countries (1).\n(Also accept: products, services, information.)`
+      },
+      {
+        q: 'State what is meant by a "transnational corporation".',
+        marks: 2,
+        marks_scheme: '1 mark: a firm that owns or controls operations in more than one country. 1 mark: typically with headquarters/R&D in one country and production, assembly or services in others.',
+        tier: 'green',
+        modelAnswer: `A transnational corporation is a firm that owns or controls production, service or research operations in more than one country (1). Typically its headquarters and research functions are located in a high-income country while manufacturing and assembly take place in lower-cost economies (1).`
+      },
+      {
+        q: 'Identify three barriers that limit developing countries\' access to global markets.',
+        marks: 3,
+        marks_scheme: '1 mark each for any three: tariffs (with peaks on agriculture and textiles); tariff escalation; quotas and non-tariff barriers such as standards and certification; subsidies to HIC producers; common external tariffs of trade blocs; weak infrastructure or landlocked geography.',
+        tier: 'green',
+        modelAnswer: `• Tariffs — taxes on imports, with peaks concentrated on agricultural goods and textiles, which are exactly what many developing countries export (1).\n• Tariff escalation — duties rise with the level of processing, discouraging value-adding at source (1).\n• Non-tariff barriers — safety, labelling and sustainability standards that are costly for small producers to certify against (1).\n(Also accept: HIC subsidies, trade bloc external tariffs, weak infrastructure.)`
+      },
+      {
+        q: 'State what is meant by the "global commons" and name two of them.',
+        marks: 2,
+        marks_scheme: '1 mark: resource domains lying outside the political reach of any single state, to which all nations have a legal right of access. 1 mark: any two of the high seas, the atmosphere, Antarctica, outer space.',
+        tier: 'green',
+        modelAnswer: `The global commons are resource domains that lie outside the political reach of any single state and to which all nations have a legal right of access (1). Two examples are Antarctica and the high seas (1).`
+      },
+    ],
+    amber: [
+      {
+        q: 'Explain how the structure of a transnational corporation\'s supply chain affects the countries in which it operates.',
+        marks: 4,
+        marks_scheme: '1 mark: HQ/R&D concentrated in HICs so high-value functions and profit stay there. 1 mark: assembly located where labour costs are lower, creating employment. 1 mark: backward linkages to local suppliers generate a multiplier where sourced locally, but little benefit where components are imported. 1 mark: intra-firm transfers and transfer pricing shift declared profit to low-tax jurisdictions, or mobility — the TNC can relocate faster than host communities can adjust.',
+        tier: 'amber',
+        modelAnswer: `• Headquarters, design and research remain in high-income countries, so the highest-value functions and most of the profit are captured there (1).\n• Assembly is located where labour costs are lower, creating large-scale employment — Foxconn's Zhengzhou campus employs well over 100,000 workers at peak production (1).\n• Backward linkages to local component suppliers create a multiplier effect, but where components are imported the host country gains only wages (1).\n• Much of the resulting trade is intra-firm, and transfer pricing can shift declared profit into low-tax jurisdictions; TNCs are also highly mobile, as Apple's shift of assembly towards India and Vietnam since 2020 shows (1).`
+      },
+      {
+        q: 'Explain why unequal flows within global systems can cause inequality as well as promote growth.',
+        marks: 4,
+        marks_scheme: '1 mark: FDI brings capital, jobs and technology. 1 mark: but investment is highly concentrated — the top 20 host economies took over 80% of global FDI in 2025. 1 mark: migration fills labour shortages and generates remittances (about $685bn to LMICs in 2024). 1 mark: but can strip origin countries of skilled workers (brain drain), and profits are often repatriated rather than reinvested.',
+        tier: 'amber',
+        modelAnswer: `• Foreign direct investment brings capital, employment and technology transfer to host economies (1).\n• However, it is highly concentrated: in 2025 the top 20 host economies attracted more than 80% of global FDI, and developing-economy inflows grew only 2% against 11% for developed economies (UNCTAD, 2026) (1).\n• Labour migration fills shortages in destination countries and generates remittances — around $685 billion to low- and middle-income countries in 2024, exceeding both FDI and aid (1).\n• But the same flow can strip origin countries of skilled workers, such as health professionals leaving sub-Saharan Africa for the UK and Gulf states, and TNC profits are frequently repatriated rather than reinvested (1).`
+      },
+      {
+        q: 'Explain how the Antarctic Treaty System protects Antarctica as a global common.',
+        marks: 5,
+        marks_scheme: '1 mark: the 1959 Treaty reserves Antarctica for peaceful purposes and prohibits nuclear activity. 1 mark: Article IV freezes territorial claims, preventing sovereignty conflict. 1 mark: Article VII allows any Consultative Party to inspect any station or ship at any time without notice. 1 mark: the 1991 Madrid Protocol bans mineral resource activity other than research. 1 mark: CCAMLR manages Southern Ocean fisheries by an ecosystem approach and agreed the 1.55 million km² Ross Sea MPA.',
+        tier: 'amber',
+        modelAnswer: `• The 1959 Antarctic Treaty reserves the continent south of 60°S for peaceful purposes and prohibits nuclear explosions and radioactive waste disposal (1).\n• Article IV freezes all territorial claims — neither recognising nor denying the seven existing claims and barring new ones — which has prevented sovereignty conflict for over sixty years (1).\n• Article VII gives every Consultative Party the right to inspect any station, installation or ship at any time without advance notice, which is unusually strong enforcement for an international treaty (1).\n• The 1991 Madrid Protocol (in force 1998) designates Antarctica a natural reserve devoted to peace and science and prohibits any mineral resource activity other than scientific research (1).\n• CCAMLR (1980) manages Southern Ocean fishing using an ecosystem approach and agreed the Ross Sea region MPA in 2016 — at 1.55 million km² the largest marine protected area in the world (1).`
+      },
+      {
+        q: 'Explain why the governance of the high seas changed in 2026, and why it was needed.',
+        marks: 4,
+        marks_scheme: '1 mark: the BBNJ (High Seas) Treaty entered into force on 17 January 2026 after reaching 60 ratifications in September 2025. 1 mark: UNCLOS gave rights over the high seas but created no mechanism for protected areas or environmental impact assessment there. 1 mark: the new agreement allows high-seas MPAs, requires EIA and shares benefits from marine genetic resources. 1 mark: about two-thirds of the ocean lies beyond national jurisdiction, so the 30% by 2030 protection target was unreachable without it.',
+        tier: 'amber',
+        modelAnswer: `• The Agreement on Marine Biodiversity of Areas Beyond National Jurisdiction (the High Seas Treaty) reached its 60-ratification threshold on 19 September 2025 and entered into force on 17 January 2026 (1).\n• It was needed because UNCLOS (1982) granted freedoms on the high seas but created no mechanism for establishing protected areas there, no requirement for environmental impact assessment, and no rules on sharing the benefits of marine genetic resources (1).\n• The new agreement provides all three, plus capacity-building and technology transfer for developing states (1).\n• Roughly two-thirds of the ocean lies beyond national jurisdiction, so the Kunming-Montreal target of protecting 30% of the ocean by 2030 could not have been met without a high-seas mechanism (1).`
+      },
+    ],
+    red: [
+      {
+        q: 'Assess the effectiveness of global governance in managing the global commons.',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced assessment across more than one commons with dated evidence and an evaluative conclusion distinguishing threat types. Level 2 (3-4 marks): explains strengths and weaknesses with some evidence. Level 1 (1-2 marks): describes institutions with limited assessment. Credit: Antarctic Treaty demilitarisation/frozen claims/mining ban/open inspection, Ross Sea MPA, Montreal Protocol, BBNJ entry into force 2026; against — consensus vetoes at CCAMLR, narrow Consultative Party group, weak enforcement over vast areas, powerlessness against externally driven climate change.',
+        tier: 'red',
+        modelAnswer: `Arguments that governance is effective:\n• The Antarctic Treaty has demilitarised a continent, frozen seven conflicting territorial claims and survived over sixty years, with open inspection genuinely exercised (1).\n• The Madrid Protocol's mining ban has held through periods of high commodity prices, and CCAMLR agreed the 1.55 million km² Ross Sea MPA in 2016 (1).\n• The High Seas Treaty entered into force on 17 January 2026, closing a gap UNCLOS left open for four decades; the Montreal Protocol shows an atmospheric commons can be repaired (1).\n\nArguments that it is ineffective:\n• Consensus decision-making gives every party a veto — Russia and China again blocked the Weddell Sea, East Antarctic and Peninsula MPAs at CCAMLR in October 2025 (1).\n• Enforcement across vast, remote areas is thin: the Area 48 krill trigger limit of 620,000 tonnes was reached for the first time in 2025, and IUU fishing persists (1).\n• Membership is voluntary and instruments bind only their parties — Japan left the IWC in 2019 — and no Antarctic instrument can slow warming driven from outside the region (1).\n\n(Credit an evaluative conclusion distinguishing threats the system was designed for from threats that are external or newly emerging.)`
+      },
+      {
+        q: 'Discuss the extent to which international trade rules work in the interests of developing countries.',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced discussion using named mechanisms and dated evidence, with an evaluative conclusion. Level 2 (3-4 marks): explains arguments both ways with some evidence. Level 1 (1-2 marks): describes trade with limited discussion. Credit: WTO membership gives rules-based access and dispute settlement, tariffs have fallen, export-led growth reduced poverty; against — tariff escalation, HIC subsidies, paralysed Appellate Body since 2019, cost of compliance with standards, commodity price volatility.',
+        tier: 'red',
+        modelAnswer: `Arguments that trade rules help:\n• WTO membership gives 166 members, covering about 98% of world trade, predictable rules-based access to markets rather than dependence on bilateral power (1).\n• Average tariffs have fallen substantially since 1947, and export-led growth in East and South-East Asia drove the largest reduction in extreme poverty in history (1).\n• Dispute settlement allows a small state to bring a case against a large one, and 61 members now use the MPIA to keep appeals functioning (1).\n\nArguments that they do not:\n• Tariff escalation raises duties with each stage of processing, keeping cocoa producers such as Côte d'Ivoire and Ghana exporting beans rather than chocolate (1).\n• Subsidies to EU and US farmers allow their producers to undercut unsubsidised competitors, and non-tariff standards impose certification costs that fall hardest on smallholders (1).\n• The WTO Appellate Body has been paralysed since December 2019 because the United States blocks appointments, weakening precisely the mechanism weaker states rely on (1).\n\n(Credit an evaluative conclusion recognising that the rules provide real protection but were largely written by, and continue to favour, the wealthiest members.)`
+      },
+    ],
+  },
+
   /* ─────────────────────────────────────────────────────────── 3.1 */
   '3.1': {
     green: [
