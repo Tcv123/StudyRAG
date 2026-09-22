@@ -593,6 +593,14 @@ window.toggleQuestion = function(qi) {
   if (arrow) arrow.style.transform = open ? 'rotate(180deg)' : '';
 };
 
+// The Maths / Further Maths side files (maths-questions.js,
+// further-maths-questions.js) are hidden: spot checks against the official
+// question papers (2026-09-22) found their questions don't match the papers
+// they're filed under. With this off, Maths boards fall back to the
+// "board publishes them itself" link card. Re-enable once rebuilt from the
+// official PDFs.
+const SHOW_MATHS_SIDE_FILES = false;
+
 // A paper can be browsed here only if it has inline parts (e.g. CS) or
 // question data loaded from a side file (Maths / Further Maths).
 function hasMarkSchemeData(p) {
@@ -897,10 +905,12 @@ function buildPicker(userSubs) {
   // Load every subject's questions + pre-written model answers (non-fatal if missing).
   await Promise.all([
     ['CS_MODEL_ANSWERS', 'model-answers-cs.js'],
-    ['MATHS_QUESTIONS', 'maths-questions.js'],
-    ['MATHS_MODEL_ANSWERS', 'model-answers-maths.js'],
-    ['FM_QUESTIONS', 'further-maths-questions.js'],
-    ['FM_MODEL_ANSWERS', 'model-answers-fm.js'],
+    ...(SHOW_MATHS_SIDE_FILES ? [
+      ['MATHS_QUESTIONS', 'maths-questions.js'],
+      ['MATHS_MODEL_ANSWERS', 'model-answers-maths.js'],
+      ['FM_QUESTIONS', 'further-maths-questions.js'],
+      ['FM_MODEL_ANSWERS', 'model-answers-fm.js'],
+    ] : []),
     ['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js'],
     ['BIO_MODEL_ANSWERS', 'model-answers-biology.js'],
     ['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js'],
