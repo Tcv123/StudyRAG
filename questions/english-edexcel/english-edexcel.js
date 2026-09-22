@@ -450,7 +450,7 @@ const ENGLISH_EDEXCEL_QUESTIONS = {
       { q: 'What is a "lead" (or "lede") paragraph?', options: ['The opening paragraph of a news story','The final paragraph','An image caption','A headline only'], answer: 0 },
       { q: 'Which is typically characteristic of tabloid headlines?', options: ['Puns, alliteration, short monosyllabic Anglo-Saxon lexis','Only Latinate lexis','Only academic register','Footnotes'], answer: 0 },
       { q: 'Which is typically characteristic of broadsheet reporting?', options: ['Longer sentences, more Latinate lexis, balanced quotations','Only puns','Only rhyming','Only exclamation marks'], answer: 0 },
-      { q: 'What is a "kicker" in journalism?', options: ['An opening image or striking phrase designed to hook the reader','An exercise','A kind of vehicle','A closing line'], answer: 0 },
+      { q: 'What is a "kicker" in journalism?', options: ['An opening image or striking phrase designed to hook the reader','An exercise','A kind of vehicle','A closing line'], answer: 3 },
       { q: 'What is "editorial stance"?', options: ['The publication\'s overall ideological position','The price','The size','The image'], answer: 0 },
       { q: 'Who proposed "Critical Discourse Analysis" (CDA)?', options: ['Norman Fairclough','Lakoff','Butler','Crystal'], answer: 0 },
       { q: 'CDA treats every text as…', options: ['An instance of social practice — language + power + ideology','Only grammar','Only phonology','Random signs'], answer: 0 },

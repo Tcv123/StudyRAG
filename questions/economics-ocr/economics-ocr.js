@@ -150,7 +150,7 @@ const ECONOMICS_OCR_QUESTIONS = {
     amber: [
       { q: 'A firm currently produces where MR > MC. To maximise profit it should:', options: ['Reduce output', 'Increase output', 'Raise price', 'Shut down'], answer: 1 },
       { q: 'If a firm experiences increasing returns to scale, this means:', options: ['Doubling inputs less than doubles output', 'Doubling inputs more than doubles output', 'Average costs are rising', 'The firm has diseconomies of scale'], answer: 1 },
-      { q: 'A firm pursuing sales maximisation will produce where:', options: ['MR = MC', 'AR = ATC (normal profit constraint)', 'MR = 0', 'MC is minimised'], answer: 2 },
+      { q: 'A firm pursuing sales maximisation will produce where:', options: ['MR = MC', 'AR = ATC (normal profit constraint)', 'MR = 0', 'MC is minimised'], answer: 1 },
       { q: 'Managerial economies of scale arise because:', options: ['Larger firms can employ specialist managers', 'All managers are equally productive', 'Small firms have better management', 'Management costs rise proportionally'], answer: 0 },
       { q: 'The minimum efficient scale (MES) is:', options: ['The lowest possible output', 'The smallest output at which long-run average cost is minimised', 'The maximum profitable output', 'Where marginal cost is zero'], answer: 1 },
       { q: 'A natural monopoly has cost characteristics where:', options: ['Average costs always rise', 'One firm can supply the whole market at lower average cost than two or more firms', 'There are constant returns to scale', 'Fixed costs are zero'], answer: 1 },

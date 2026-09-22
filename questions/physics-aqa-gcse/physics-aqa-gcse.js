@@ -34,7 +34,7 @@ const PHYSICS_AQA_GCSE_QUESTIONS = {
       { q: 'Energy cannot be created or destroyed, only transferred — this is the law of:', options: ['Conservation of energy','Conservation of momentum','Thermodynamics dissipation','Ohm'], answer: 0 },
     ],
     amber: [
-      { q: 'A 0.5 kg ball moves at 4 m/s. Its kinetic energy is:', options: ['2 J','4 J','8 J','1 J'], answer: 0 },
+      { q: 'A 0.5 kg ball moves at 4 m/s. Its kinetic energy is:', options: ['2 J','4 J','8 J','1 J'], answer: 1 },
       { q: 'A 2 kg object is raised 5 m. Taking g = 9.8 N/kg, its GPE gain is:', options: ['10 J','49 J','98 J','9.8 J'], answer: 2 },
       { q: 'A spring of spring constant 200 N/m is extended by 0.1 m. Its elastic potential energy is:', options: ['1 J','2 J','0.5 J','10 J'], answer: 0 },
       { q: 'A force of 20 N moves an object 5 m. Work done is:', options: ['4 J','100 J','25 J (÷ 4)','15 J'], answer: 1 },

@@ -109,7 +109,7 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
       { q: 'For the reaction A + 2B -> C, experiments show rate = k[A][B]. A possible mechanism consistent with this is:', options: ['A + B -> X (slow), X + B -> C (fast)','A + 2B -> C (one step)','2B -> X (slow), X + A -> C (fast)','A -> X (slow), X + 2B -> C (fast)'], answer: 0 },
       { q: 'The cell potential for the reaction Zn + Cu2+ -> Zn2+ + Cu is +1.10V. This means:', options: ['The reaction is not feasible','The reaction is feasible under standard conditions','Zinc is reduced','Copper is oxidised'], answer: 1 },
       { q: 'If E°cell is positive, the Gibbs free energy change is:', options: ['Positive','Negative','Zero','Cannot be determined'], answer: 1 },
-      { q: 'For the equilibrium PCl5(g) <=> PCl3(g) + Cl2(g), Kp = 1.8 atm at 250°C. If total pressure is 2.0 atm and p(PCl3) = p(Cl2) = x, then x is approximately:', options: ['0.6 atm','0.9 atm','1.0 atm','1.2 atm'], answer: 2 },
+      { q: 'For the equilibrium PCl5(g) <=> PCl3(g) + Cl2(g), Kp = 1.8 atm at 250°C. If total pressure is 2.0 atm and p(PCl3) = p(Cl2) = x, then x is approximately:', options: ['0.6 atm','0.9 atm','1.0 atm','1.2 atm'], answer: 1 },
       { q: 'In the iodine clock reaction, the order with respect to persulfate can be determined by:', options: ['Varying persulfate concentration while keeping iodide constant','Changing the temperature only','Adding a catalyst','Using excess iodide only'], answer: 0 },
       { q: 'A reaction has the rate equation rate = k[X]^2. When [X] = 0.1 mol dm-3, rate = 3.0 x 10-3 mol dm-3 s-1. The value of k is:', options: ['3.0 dm3 mol-1 s-1','0.3 dm3 mol-1 s-1','30 dm3 mol-1 s-1','0.03 dm3 mol-1 s-1'], answer: 1 },
       { q: 'Which conditions would give the greatest yield of ammonia: N2 + 3H2 <=> 2NH3, deltaH = -92 kJ/mol?', options: ['Low temperature, low pressure','High temperature, high pressure','High temperature, low pressure','Low temperature, high pressure'], answer: 3 },
@@ -203,7 +203,7 @@ const CHEMISTRY_EDEXCEL_QUESTIONS = {
     amber: [
       { q: 'Markownikoff\'s rule predicts that when HBr is added to propene, the major product is:', options: ['1-bromopropane', '2-bromopropane', 'A mixture in equal amounts', '3-bromopropane'], answer: 1 },
       { q: 'The mechanism of the reaction between ethene and HBr is:', options: ['Free radical substitution', 'Electrophilic addition', 'Nucleophilic substitution', 'Electrophilic substitution'], answer: 1 },
-      { q: 'In electrophilic addition of HBr to ethene, the electrophile is:', options: ['Br-', 'H+', 'HBr', 'Br2'], answer: 1 },
+      { q: 'In electrophilic addition of HBr to ethene, the electrophile is:', options: ['Br-', 'H+', 'HBr', 'Br2'], answer: 2 },
       { q: 'Halogenoalkanes react with NaOH(aq) by which mechanism?', options: ['Electrophilic addition', 'Free radical substitution', 'Nucleophilic substitution', 'Elimination'], answer: 2 },
       { q: 'An SN2 mechanism involves:', options: ['Two slow steps', 'A one-step process with a transition state', 'Formation of a carbocation intermediate in the slow step', 'Free radicals'], answer: 1 },
       { q: 'An SN1 mechanism involves:', options: ['A one-step process', 'Formation of a carbocation intermediate followed by nucleophilic attack', 'Free radical intermediates', 'Concerted bond breaking and forming'], answer: 1 },

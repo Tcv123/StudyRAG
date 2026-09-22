@@ -147,7 +147,7 @@ const PHYSICS_EDEXCEL_GCSE_QUESTIONS = {
       { q: 'If useful work done is 400 J and total energy supplied is 1000 J, what is the efficiency?', options: ['2.5%','25%','40%','250%'], answer: 2 },
     ],
     red: [
-      { q: 'A 50 kg child slides down a 3 m slide, reaching 6 m/s at the bottom. How much energy is dissipated by friction? (g = 10)', options: ['300 J','600 J','900 J','1500 J'], answer: 0, explanation: 'GPE = 50 × 10 × 3 = 1500 J. KE = ½ × 50 × 6² = 900 J. Dissipated = 1500 - 900 = 600 J? Wait recalc: 1500-900 = 600 J.' },
+      { q: 'A 50 kg child slides down a 3 m slide, reaching 6 m/s at the bottom. How much energy is dissipated by friction? (g = 10)', options: ['300 J','600 J','900 J','1500 J'], answer: 1, explanation: 'GPE = 50 × 10 × 3 = 1500 J. KE = ½ × 50 × 6² = 900 J. Dissipated = 1500 - 900 = 600 J? Wait recalc: 1500-900 = 600 J.' },
       { q: 'A 1500 kg car moving at 20 m/s brakes to a stop. How much energy is dissipated as heat in the brakes?', options: ['15 000 J','30 000 J','150 000 J','300 000 J'], answer: 3, explanation: 'KE = ½ × 1500 × 400 = 300 000 J, all dissipated.' },
       { q: 'A motor lifts a 30 kg mass through 4 m in 5 s (g = 10). The motor uses 300 W. What is its efficiency?', options: ['40%','60%','80%','100%'], answer: 2, explanation: 'Useful E = mgh = 1200 J. Input E = 300 × 5 = 1500 J. η = 1200/1500 = 80%.' },
       { q: 'An electric kettle rated 2000 W heats 1 kg of water from 20 °C to 100 °C in 180 s. (c = 4200). What is its efficiency?', options: ['70%','80%','93%','100%'], answer: 2, explanation: 'E_useful = 1 × 4200 × 80 = 336 000 J. E_input = 2000 × 180 = 360 000 J. η = 336/360 ≈ 93%.' },

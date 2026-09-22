@@ -162,7 +162,7 @@ const CHEMISTRY_AQA_QUESTIONS = {
       { q: 'What is the flame colour of calcium compounds?', options: ['Orange-red', 'Green', 'Red', 'Yellow-orange'], answer: 0 },
       { q: 'How is chlorine used in water treatment?', options: ['It kills bacteria by oxidation', 'It removes dissolved metal ions by precipitation', 'It adjusts pH', 'It removes sediment'], answer: 0 },
       { q: 'What precipitate colour forms when silver nitrate is added to iodide ions?', options: ['Yellow', 'White', 'Cream', 'No precipitate'], answer: 0 },
-      { q: 'Why is the first ionisation energy of neon much higher than sodium?', options: ['Neon has a higher nuclear charge with the same number of electron shells', 'Neon has more electron shells', 'Sodium has a higher nuclear charge', 'Neon has less shielding'], answer: 0 },
+      { q: 'Why is the first ionisation energy of neon much higher than sodium?', options: ['Neon has a higher nuclear charge with the same number of electron shells', 'Neon has more electron shells', 'Sodium has a higher nuclear charge', 'Neon has less shielding'], answer: 3 },
       { q: 'Group 2 hydroxides show what trend in solubility?', options: ['Increase down the group', 'Decrease down the group', 'All are equally soluble', 'All are insoluble'], answer: 0 },
       { q: 'What is the test for a carbonate? Adding dilute HCl produces...', options: ['CO2 gas which turns limewater milky', 'H2 gas which pops', 'O2 gas which relights a glowing splint', 'Cl2 gas which bleaches litmus'], answer: 0 }
     ],

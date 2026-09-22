@@ -128,7 +128,7 @@ const EDEXCEL_MCQ_P17_P21 = {
       tier: 'amber',
       q: 'For \\(x = 2\\cos t,\\; y = \\sin t\\), at \\(t = 0\\) the normal has gradient:',
       options: ['\\(\\infty\\) (vertical)', '\\(0\\)', '\\(-2\\)', '\\(2\\)'],
-      answer: 0
+      answer: 1
     },
     {
       tier: 'amber',
@@ -165,7 +165,7 @@ const EDEXCEL_MCQ_P17_P21 = {
       tier: 'red',
       q: 'For \\(x = 3t^2,\\; y = 2t^3\\), the second derivative \\(\\frac{d^2y}{dx^2}\\) at \\(t=1\\) is:',
       options: ['\\(\\frac{1}{3}\\)', '\\(\\frac{1}{9}\\)', '\\(1\\)', '\\(\\frac{1}{6}\\)'],
-      answer: 0
+      answer: 3
     },
     {
       tier: 'red',
@@ -854,7 +854,7 @@ const EDEXCEL_MCQ_P17_P21 = {
       tier: 'amber',
       q: 'The line \\(\\ell_1: \\mathbf{r} = \\begin{pmatrix}0\\\\1\\\\2\\end{pmatrix}+s\\begin{pmatrix}1\\\\1\\\\1\\end{pmatrix}\\) and \\(\\ell_2: \\mathbf{r} = \\begin{pmatrix}1\\\\2\\\\3\\end{pmatrix}+t\\begin{pmatrix}2\\\\2\\\\2\\end{pmatrix}\\) are:',
       options: ['Parallel (same direction)', 'Identical', 'Skew', 'Perpendicular'],
-      answer: 0
+      answer: 1
     },
     {
       tier: 'amber',

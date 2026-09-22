@@ -463,7 +463,7 @@ const MATHS_OCR_ALEVEL_QUESTIONS = {
     { q: 'Errors in numerical methods arise from:', options: ['Only choice of formula','None','Truncation and rounding','Only the limits of the calculator'], answer: 2 },
     { q: 'The interval bisection method halves the interval. Its convergence is:', options: ['Cubic','Constant','Linear (halving per step)','Quadratic'], answer: 2 },
     { q: 'Newton-Raphson typically exhibits:', options: ['No convergence','Linear convergence (order 1)','Quadratic convergence','Oscillation only'], answer: 2 },
-    { q: 'Approximate √7 using Newton on x² - 7 = 0, starting x_0 = 3: x_1 = ?', options: ['2.5','3.333','2.645','2.667'], answer: 2 },
+    { q: 'Approximate √7 using Newton on x² - 7 = 0, starting x_0 = 3: x_1 = ?', options: ['2.5','3.333','2.645','2.667'], answer: 3 },
     { q: 'Error bound for trapezium rule decreases as:', options: ['h increases','Function value increases','Number of strips increases (h decreases)','All random'], answer: 2 },
     { q: 'Which numerical method is a direct root finder?', options: ['Simpson','Trapezium','Euler','Bisection'], answer: 3 },
     { q: 'A solution is said to diverge if iterates:', options: ['Stay constant','Grow without bound or oscillate wildly','None','Converge to a value'], answer: 1 },

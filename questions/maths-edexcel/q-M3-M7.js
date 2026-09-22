@@ -256,7 +256,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     {
       q: "A uniform rod AB, mass 4 kg, length 3 m, rests on supports at A and B. A 6 kg load hangs 1 m from A. What is the reaction at A?",
       options: ["45.1 N", "34.3 N", "78.4 N", "58.8 N"],
-      answer: 0, tier: "amber"
+      answer: 3, tier: "amber"
     },
     {
       q: "A body is about to tilt about support B. What is the contact force at the other support A at this instant?",
@@ -313,7 +313,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     {
       q: "A beam AB (mass 15 kg, length 5 m, uniform) has a hinge at A and is held horizontal by a cable attached at B at 40° to the beam. Find the tension T in the cable.",
       options: ["56.9 N", "73.5 N", "113.8 N", "95.0 N"],
-      answer: 0, tier: "red"
+      answer: 2, tier: "red"
     },
     {
       q: "A uniform rod of weight 40 N and length 1.2 m rests with one end on the floor and the other against a smooth vertical wall, making angle θ with the floor where tanθ = 4/3. Find the friction at the floor.",
@@ -412,7 +412,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     {
       q: "A particle has acceleration a = 6t − 4. It starts with v = 2 m/s at t = 0. Find v at t = 2.",
       options: ["10 m/s", "14 m/s", "6 m/s", "8 m/s"],
-      answer: 0, tier: "amber"
+      answer: 2, tier: "amber"
     },
     {
       q: "Velocity v = t² − 4t + 3. For what values of t is the particle moving in the negative direction?",
@@ -452,7 +452,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     {
       q: "For motion with v = 4 − t², the particle reverses direction at t = 2. What is the total distance from t = 0 to t = 4?",
       options: ["21.33 m", "10.67 m", "16 m", "5.33 m"],
-      answer: 0, tier: "amber"
+      answer: 2, tier: "amber"
     },
 
     // RED (6)
@@ -474,17 +474,17 @@ const EDEXCEL_MCQ_M3_M7 = {
     {
       q: "A particle has position r = (t³ − 6t)i + (t² − 4)j. Find the speed at the instant the particle is moving parallel to the i-direction.",
       options: ["4 m/s", "6 m/s", "2 m/s", "√20 m/s"],
-      answer: 0, tier: "red"
+      answer: 1, tier: "red"
     },
     {
       q: "A particle moves with a = v dv/ds = ks where k = 2. Given v = 4 when s = 1, find v when s = 3.",
       options: ["√24 ≈ 4.90 m/s", "√32 ≈ 5.66 m/s", "6 m/s", "√20 ≈ 4.47 m/s"],
-      answer: 0, tier: "red"
+      answer: 1, tier: "red"
     },
     {
       q: "A particle's velocity (m/s) changes as v = 12t − 3t² for 0 ≤ t ≤ 4, then v = 0. What is the total distance from t = 0 to t = 5?",
       options: ["64 m", "48 m", "32 m", "80 m"],
-      answer: 0, tier: "red"
+      answer: 2, tier: "red"
     }
   ],
 
@@ -578,7 +578,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     {
       q: "A projectile passes through the point (60, 20) m where x is horizontal and y is vertical (origin at launch). Given it was launched at 30° to horizontal, find the initial speed.",
       options: ["30.5 m/s", "40.0 m/s", "24.0 m/s", "35.3 m/s"],
-      answer: 0, tier: "amber"
+      answer: 1, tier: "amber"
     },
     {
       q: "A ball is thrown at 15 m/s at 50° above horizontal from the ground. What is the speed of the ball at maximum height?",
@@ -781,7 +781,7 @@ const EDEXCEL_MCQ_M3_M7 = {
     {
       q: "Particle A (5 kg) on a rough slope of 35° (μ = 0.3) is connected over a smooth pulley at the top to particle B (4 kg) hanging freely. Find the acceleration and state which way A moves. (g = 9.8)",
       options: ["a ≈ 0.38 m/s², A moves up", "a ≈ 0.38 m/s², A moves down", "a ≈ 2.45 m/s², A moves up", "System is in equilibrium"],
-      answer: 0, tier: "red"
+      answer: 3, tier: "red"
     },
     {
       q: "A particle of mass m slides down a rough slope of angle 45° with μ = 1/√2. What is the acceleration?",

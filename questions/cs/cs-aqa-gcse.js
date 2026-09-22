@@ -36,7 +36,7 @@ const CS_AQA_QUESTIONS = {
       { q: 'Consider: total \u2190 0; FOR i \u2190 1 TO 4: total \u2190 total + i. What is total after the loop?', options: ['4','6','10','16'], answer: 2 },
       { q: 'Linear search on the list [4, 9, 2, 7, 5] for value 7 takes how many comparisons?', options: ['1','2','3','4'], answer: 3 },
       { q: 'Binary search on the sorted list [2, 4, 6, 8, 10, 12, 14] looking for 10: which element is compared first?', options: ['2','8','10','14'], answer: 1 },
-      { q: 'A bubble sort is run on [4, 1, 3, 2]. How many swaps happen in the FIRST pass?', options: ['0','1','2','3'], answer: 2 },
+      { q: 'A bubble sort is run on [4, 1, 3, 2]. How many swaps happen in the FIRST pass?', options: ['0','1','2','3'], answer: 3 },
       { q: 'For a list of 16 sorted items, how many comparisons does binary search need at most?', options: ['2','4','8','16'], answer: 1 },
       { q: 'For a list of 16 items, how many comparisons does linear search need in the worst case?', options: ['4','8','16','256'], answer: 2 },
       { q: 'Which statement about a trace table is correct?', options: ['A new row is added each time a variable changes','A new row is added for every line of code','Trace tables only record output, not variables','Trace tables are used only for sorting algorithms'], answer: 0 },

@@ -33,7 +33,7 @@ const EDEXCEL_MCQ_P7_P11 = {
     red: [
       { q: 'The general solution of \\(\\sin\\theta = k\\) (in degrees) is:', options: ['\\(\\theta = \\pm \\sin^{-1}(k) + 360n\\)', '\\(\\theta = \\sin^{-1}(k) + 180n\\)', '\\(\\theta = \\sin^{-1}(k) + 360n\\) or \\(\\theta = 180 - \\sin^{-1}(k) + 360n\\)', '\\(\\theta = \\sin^{-1}(k) + 90n\\)'], answer: 2 },
       { q: 'Express \\(5\\sin x - 12\\cos x\\) in the form \\(R\\sin(x - \\alpha)\\). What is \\(R\\)?', options: ['13','17','\\(\\sqrt{119}\\)','7'], answer: 0 },
-      { q: 'Solve \\(2\\sin^2 x + 3\\cos x - 3 = 0\\) for \\(0 \\leq x \\leq 2\\pi\\). The number of solutions is:', options: ['2','3','1','4'], answer: 1 },
+      { q: 'Solve \\(2\\sin^2 x + 3\\cos x - 3 = 0\\) for \\(0 \\leq x \\leq 2\\pi\\). The number of solutions is:', options: ['2','3','1','4'], answer: 3 },
       { q: 'If \\(\\cos 2x = 1 - 2\\sin^2 x\\), which quadratic in \\(\\sin x\\) is equivalent to \\(\\cos 2x + \\sin x = 0\\)?', options: ['\\(2\\sin^2 x - \\sin x - 1 = 0\\)','\\(2\\sin^2 x + \\sin x - 1 = 0\\)','\\(2\\sin^2 x - \\sin x + 1 = 0\\)','\\(\\sin^2 x - \\sin x - 1 = 0\\)'], answer: 0 },
       { q: 'The maximum value of \\(3\\sin x - 4\\cos x\\) is:', options: ['1','5','7','\\(\\sqrt{7}\\)'], answer: 1 },
       { q: 'Solve \\(\\sin\\theta = \\cos\\theta\\) for \\(0° \\leq \\theta \\leq 360°\\). The solutions are:', options: ['45° and 225°','45° and 135°','0° and 180°','135° and 315°'], answer: 0 },
@@ -115,7 +115,7 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'A cylinder has volume \\(V = 500\\) cm³. Express the total surface area \\(S\\) in terms of radius \\(r\\) only, then find \\(r\\) for minimum \\(S\\):', options: ['\\(r = \\left(\\dfrac{250}{\\pi}\\right)^{1/3}\\)','\\(r = 5\\)','\\(r = \\left(\\dfrac{500}{\\pi}\\right)^{1/3}\\)','\\(r = \\dfrac{250}{\\pi}\\)'], answer: 0 },
       { q: 'A curve \\(C\\) has equation \\(y = x^3 - 3x + 2\\). The tangent at \\((-1, 4)\\) has equation:', options: ['\\(y = 0\\cdot x + 4\\)','\\(y = -3x + 1\\)','\\(y = 4\\)','\\(y = 3x + 7\\)'], answer: 0 },
       { q: 'A function has \\(f\'\'(a) = 0\\) at a stationary point. What additional test is needed?', options: ['Check the sign of \\(f\'(x)\\) either side of \\(x = a\\)','Check \\(f(a)\\)','Compute \\(f\'\'\'(a)\\)','No further test needed — it is a point of inflection'], answer: 0 },
-      { q: 'The curve \\(y = ax^3 + bx\\) passes through \\((1, -2)\\) and has gradient 0 at \\(x = 1\\). Find \\(a\\) and \\(b\\):', options: ['\\(a = 2, b = -4\\)','\\(a = -2, b = 0\\)','\\(a = 1, b = -3\\)','\\(a = 2, b = 4\\)'], answer: 0 },
+      { q: 'The curve \\(y = ax^3 + bx\\) passes through \\((1, -2)\\) and has gradient 0 at \\(x = 1\\). Find \\(a\\) and \\(b\\):', options: ['\\(a = 2, b = -4\\)','\\(a = -2, b = 0\\)','\\(a = 1, b = -3\\)','\\(a = 2, b = 4\\)'], answer: 2 },
       { q: 'The rate of change of \\(y = x^3 - 5x^2 + 6x\\) is equal to 2 when:', options: ['\\(x = 1\\) only','\\(x = 2\\) or \\(x = 4\\)','\\(x = 0\\) or \\(x = 2\\)','\\(x = 1\\) or \\(x = 3\\)'], answer: 3 },
     ]
   },
@@ -137,7 +137,7 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: '\\(\\displaystyle\\int \\cos x \\, dx =\\)', options: ['\\(\\sin x + C\\)', '\\(-\\sin x + C\\)', '\\(-\\cos x + C\\)', '\\(\\cos x + C\\)'], answer: 0 },
     ],
     amber: [
-      { q: 'Evaluate \\(\\displaystyle\\int_1^4 \\left(\\sqrt{x} + \\dfrac{1}{x^2}\\right)dx\\):', options: ['\\(\\dfrac{40}{12} + \\dfrac{3}{4}\\)', '\\(\\dfrac{14}{3} + \\dfrac{3}{4}\\)', '\\(\\dfrac{14}{3}\\)', '\\(\\dfrac{14}{3} - \\dfrac{3}{4}\\)'], answer: 0 },
+      { q: 'Evaluate \\(\\displaystyle\\int_1^4 \\left(\\sqrt{x} + \\dfrac{1}{x^2}\\right)dx\\):', options: ['\\(\\dfrac{40}{12} + \\dfrac{3}{4}\\)', '\\(\\dfrac{14}{3} + \\dfrac{3}{4}\\)', '\\(\\dfrac{14}{3}\\)', '\\(\\dfrac{14}{3} - \\dfrac{3}{4}\\)'], answer: 1 },
       { q: 'Find the area between \\(y = x^2\\) and \\(y = x + 2\\):', options: ['\\(\\dfrac{9}{2}\\)', '\\(\\dfrac{3}{2}\\)', '\\(\\dfrac{7}{2}\\)', '\\(\\dfrac{5}{2}\\)'], answer: 0 },
       { q: 'Using the trapezium rule with 2 strips on \\(\\displaystyle\\int_0^2 e^x \\, dx\\), the estimate is:', options: ['\\(\\dfrac{1}{2}(1 + 2e + e^2)\\)', '\\(e^2 - 1\\)', '\\(1 + e^2\\)', '\\(\\dfrac{e^2 + 1}{2}\\)'], answer: 0 },
       { q: 'The trapezium rule gives an overestimate when the curve is:', options: ['Concave up (\\(f\'\'(x) > 0\\))', 'Concave down (\\(f\'\'(x) < 0\\))', 'Decreasing', 'A straight line'], answer: 0 },
@@ -155,8 +155,8 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'Using the trapezium rule with 4 strips to estimate \\(\\displaystyle\\int_0^1 x^2 \\, dx\\), the estimate minus the exact value is:', options: ['Positive (overestimate)','Negative (underestimate)','Zero (exact)','Cannot determine'], answer: 0 },
       { q: 'Find the area between \\(y = x^3 - 3x^2\\) and \\(y = 0\\) from \\(x = 0\\) to \\(x = 3\\):', options: ['\\(\\dfrac{27}{4}\\)','0','\\(-\\dfrac{27}{4}\\)','27'], answer: 0 },
       { q: 'The area enclosed between \\(y = x^3\\) and \\(y = x\\) is:', options: ['\\(\\dfrac{1}{2}\\)','\\(\\dfrac{1}{4}\\)','1','0'], answer: 0 },
-      { q: 'Find the value of \\(k\\) such that \\(\\displaystyle\\int_0^k (2x - 3) \\, dx = 4\\):', options: ['\\(k = 1 + \\sqrt{5}\\)','\\(k = 4\\)','\\(k = \\dfrac{7}{2}\\)','\\(k = 2\\)'], answer: 0 },
-      { q: 'The region R is bounded by \\(y = e^x\\), \\(y = 1\\), and \\(x = 2\\). The area of R is:', options: ['\\(e^2 - 2\\)','\\(e^2 - 1\\)','\\(e^2 + 1\\)','\\(e^2 - 3\\)'], answer: 0 },
+      { q: 'Find the value of \\(k\\) such that \\(\\displaystyle\\int_0^k (2x - 3) \\, dx = 4\\):', options: ['\\(k = 1 + \\sqrt{5}\\)','\\(k = 4\\)','\\(k = \\dfrac{7}{2}\\)','\\(k = 2\\)'], answer: 1 },
+      { q: 'The region R is bounded by \\(y = e^x\\), \\(y = 1\\), and \\(x = 2\\). The area of R is:', options: ['\\(e^2 - 2\\)','\\(e^2 - 1\\)','\\(e^2 + 1\\)','\\(e^2 - 3\\)'], answer: 3 },
     ]
   },
 

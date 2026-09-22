@@ -98,7 +98,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     topic: 'P12',
     q: 'Given \\(f(x) = 2x^3 - 3x^2 - 11x + 6\\), which linear factor can be confirmed by the Factor Theorem, and what is the fully factorised form?',
     options: ['\\((x-3)(2x+1)(x-2)\\) — verified by \\(f(3)=0\\)', '\\((x+3)(x-1)(2x-2)\\)', '\\((x-2)(x+2)(2x-3)\\)', '\\((2x-1)(x-3)(x+2)\\)'],
-    answer: 0
+    answer: 3
   },
   {
     tier: 'amber',
@@ -604,14 +604,14 @@ const EDEXCEL_MCQ_P12_P16 = [
     topic: 'P14',
     q: 'Find the term independent of \\(x\\) in \\(\\left(x + \\dfrac{2}{x}\\right)^6\\).',
     options: ['240', '160', '120', '192'],
-    answer: 0
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P14',
     q: 'An arithmetic series has \\(S_n > 200\\) for the first time when \\(n = k\\). Given \\(a = 3\\), \\(d = 2\\), find \\(k\\).',
     options: ['13', '14', '12', '15'],
-    answer: 0
+    answer: 1
   },
 
   // RED (6)
