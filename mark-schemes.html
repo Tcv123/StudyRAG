@@ -444,13 +444,21 @@ function renderMsCard(part, paperKey, paperId) {
     pointsHtml = pts.map(p => renderPoint(p, msType === 'exact' ? 'type-exact' : '')).join('');
     if (ms.guidance) pointsHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
   } else if (ms && msType === 'levels') {
-    const lvls = ms.levels || [], tot = lvls.length;
-    pointsHtml = lvls.map((l, i) => {
-      const cls = i === 0 ? 'top' : (i === tot - 1 ? 'low' : 'mid');
-      return `<div class="ms-level-card ${cls}">
+    // Some boards mark on more than one grid (e.g. Edexcel Economics A: knowledge,
+    // application and analysis + a separate evaluation grid, added together).
+    // Levels carry an optional `grid` label; unlabelled levels form one grid.
+    const lvls = ms.levels || [];
+    const grids = [...new Set(lvls.map(l => l.grid || ''))];
+    pointsHtml = grids.map(g => {
+      const gl = lvls.filter(l => (l.grid || '') === g), tot = gl.length;
+      const head = g ? `<div class="mc-sub-label" style="margin-top:12px;">${esc(g)} · up to ${Math.max(...gl.map(l => l.range[1]))} marks</div>` : '';
+      return head + gl.map((l, i) => {
+        const cls = i === 0 ? 'top' : (i === tot - 1 ? 'low' : 'mid');
+        return `<div class="ms-level-card ${cls}">
         <div class="ms-level-range">${esc(l.descriptor)} · ${l.range[0]}–${l.range[1]} marks</div>
         ${l.criteria ? `<div class="ms-level-criteria">${esc(l.criteria)}</div>` : ''}
       </div>`;
+      }).join('');
     }).join('');
     if (ms.indicative) {
       const ind = Object.entries(ms.indicative).map(([k, v]) => renderPoint(`${k}: ${v}`, '')).join('');

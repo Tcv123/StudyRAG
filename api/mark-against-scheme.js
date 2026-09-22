@@ -32,8 +32,13 @@ function initClients() {
   return null;
 }
 
-function buildSystemPrompt({ subject, board, paperCode, msType }) {
+function buildSystemPrompt({ subject, board, paperCode, msType, gridNames }) {
   const examLevel = 'A-level';
+  // Separate grids (e.g. knowledge/application/analysis + evaluation) are marked
+  // independently and added; picking a single level would cap the total.
+  const levelStep = gridNames && gridNames.length > 1
+    ? `This scheme has ${gridNames.length} separate grids (${gridNames.join('; ')}). For EACH grid, pick the highest level whose criteria the answer fully meets and a mark within that level; "awarded" is the SUM of the grid marks. In "level", name each grid's level and mark, e.g. "KAA Level 3 (10) + Evaluation Level 2 (5)".`
+    : 'Pick the highest level whose criteria the answer fully meets, then a mark within that level.';
   return `You are an experienced ${board} ${examLevel} ${subject} examiner marking paper ${paperCode || 'this paper'}. You mark STRICTLY against the official mark scheme supplied below. Do not award marks for content not present in the mark scheme — even if the answer is correct in real life, only the listed points count.
 
 Your job:
@@ -41,7 +46,7 @@ Your job:
 2. Check it against EACH mark-scheme point.
 3. Decide which points the answer covers (in substance — exact wording isn't required, but the underlying idea must be present).
 4. Apply the guidance notes (case sensitivity, "do not allow" rules, dependencies between points, etc.).
-5. ${msType === 'levels' ? 'Pick the highest level whose criteria the answer fully meets, then a mark within that level.' : 'Award 1 mark per point covered, up to the part\'s max marks.'}
+5. ${msType === 'levels' ? levelStep : 'Award 1 mark per point covered, up to the part\'s max marks.'}
 
 You MUST respond with a single JSON object and nothing else. Schema:
 {
@@ -65,7 +70,13 @@ function buildUserPrompt({ partCode, question, marks, studentAnswer, markScheme,
 
   lines.push(`\nOFFICIAL MARK SCHEME (type: ${markScheme.type}):`);
   if (markScheme.type === 'levels') {
+    let grid = null;
     (markScheme.levels || []).forEach(lvl => {
+      if (lvl.grid && lvl.grid !== grid) {
+        grid = lvl.grid;
+        const max = Math.max(...markScheme.levels.filter(l => l.grid === grid).map(l => l.range[1]));
+        lines.push(`\n=== GRID: ${grid} (0–${max} marks) ===`);
+      }
       const r = Array.isArray(lvl.range) ? `${lvl.range[0]}–${lvl.range[1]} marks` : '';
       lines.push(`\n${lvl.descriptor} (${r}):\n${lvl.criteria}`);
     });
@@ -148,7 +159,8 @@ module.exports = async function handler(req, res) {
     const completion = await groq.chat.completions.create({
       model: 'llama-3.3-70b-versatile',
       messages: [
-        { role: 'system', content: buildSystemPrompt({ subject: subject || 'Computer Science', board: board || 'OCR', paperCode, msType: markScheme.type }) },
+        { role: 'system', content: buildSystemPrompt({ subject: subject || 'Computer Science', board: board || 'OCR', paperCode, msType: markScheme.type,
+            gridNames: [...new Set((markScheme.levels || []).map(l => l.grid).filter(Boolean))] }) },
         { role: 'user',   content: buildUserPrompt({ partCode, question, marks, studentAnswer, markScheme, preamble, scenario }) },
       ],
       response_format: { type: 'json_object' },
