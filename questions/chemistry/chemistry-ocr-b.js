@@ -381,6 +381,10 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { "q": "A high-resolution mass spectrum shows an ion at m/z 28.0313. Which species is it?", "options": ["N2", "CO", "C2H4", "CH2N"], "answer": 2 },
       { "q": "What does a high-resolution M+ value give that a low-resolution one does not?", "options": ["The number of hydrogen environments in the molecule", "The relative abundance of each isotope present", "The percentage of carbon-13 in the sample", "The molecular formula of the compound"], "answer": 3 },
       { "q": "An organic compound gives a sharp infrared absorption at 1742 cm^-1 and no O-H absorption at all. Which functional group is present?", "options": ["An ester", "A ketone", "An aldehyde", "A carboxylic acid"], "answer": 0 },
+      { "q": "Which type of bond holds the primary structure of a protein together?", "options": ["Ionic attraction between R groups", "A hydrogen bond", "Peptide bond", "Disulfide bridge"], "answer": 2 },
+      { "q": "Which two groups hydrogen bond to one another to hold the secondary structure of a protein?", "options": ["C=O and N-H on the protein backbone", "Two -CH2SH side chains", "-NH3+ and -COO- side chains", "Two non-polar hydrocarbon side chains"], "answer": 0 },
+      { "q": "Which of these is a form of secondary structure in a protein?", "options": ["The zwitterion form of an amino acid", "A double helix of two nucleotide strands", "An active site that fits only one substrate", "The beta-pleated sheet"], "answer": 3 },
+      { "q": "Nylon-6,6 is made from 1,6-diaminohexane and which other monomer?", "options": ["Decanedioic acid", "Hexanedioic acid", "6-aminohexanoic acid", "Benzene-1,4-dicarboxylic acid"], "answer": 1 },
     ],
     amber: [
       { "q": "A chiral centre is a carbon atom bonded to:", "options": ["Three different groups", "Two different groups", "Four identical groups", "Four different groups"], "answer": 3 },
@@ -400,6 +404,8 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { "q": "A high-resolution molecular ion appears at m/z 88.0524. Using 1H = 1.007825, 12C = 12.000000, 14N = 14.003074 and 16O = 15.994915, which molecular formula is it?", "options": ["C3H4O3", "C5H12O", "C4H8O2", "C3H8N2O"], "answer": 2 },
       { "q": "A compound of molecular formula C4H8O2 gives a very broad infrared absorption between 2500 and 3300 cm^-1. Which structure fits?", "options": ["Ethyl ethanoate", "1,4-dioxane", "Methyl propanoate", "Butanoic acid"], "answer": 3 },
       { "q": "In the 1H NMR spectrum of ethyl ethanoate the CH2 signal is at delta 4.12 rather than near delta 2. Why?", "options": ["The CH2 protons are split into a quartet by the three protons on the adjacent carbon", "The CH2 group is bonded to the ester oxygen, which withdraws electron density", "The CH2 group lies closer to the carbonyl carbon than either methyl group does", "The CH2 group carries two protons where each methyl group carries three"], "answer": 1 },
+      { "q": "Which of the interactions holding the tertiary structure of a protein is covalent?", "options": ["A hydrogen bond between two polar side chains", "The disulfide bridge", "An ionic attraction between charged side chains", "An instantaneous dipole-induced dipole bond"], "answer": 1 },
+      { "q": "Which polymer has the repeat unit -[NH(CH2)5CO]- ?", "options": ["Nylon-6,10", "Nylon-6,6", "Nylon-6", "Kevlar"], "answer": 2 },
     ],
     red: [
       { "q": "A compound shows a doublet at delta 2.2 ppm (3H) and a quartet at delta 9.8 ppm (1H) in ^1H NMR, with a strong absorption at 1720 cm^-1 in IR. The compound is most likely:", "options": ["Ethanal (CH3CHO)", "Ethanol", "Propanone", "Methanoic acid (HCOOH)"], "answer": 0 },
@@ -412,6 +418,8 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { "q": "Why does a laboratory synthesis from achiral starting materials give a racemate?", "options": ["Chiral products are inherently unstable", "Both faces of a planar intermediate are attacked equally", "One of the two enantiomers decomposes as soon as it forms", "The product formed is achiral overall"], "answer": 1 },
       { "q": "A liquid of molecular formula C4H8O2 gives a 1H NMR spectrum with a 3H singlet at delta 3.67, a 2H quartet at delta 2.32 and a 3H triplet at delta 1.14. What is it?", "options": ["Methyl propanoate", "Ethyl ethanoate", "Propyl methanoate", "Butanoic acid"], "answer": 0 },
       { "q": "Which single observation would distinguish propyl methanoate from ethyl ethanoate?", "options": ["A strong C=O absorption between 1735 and 1750 cm^-1 in the infrared spectrum", "Four separate peaks in the proton-decoupled carbon-13 NMR spectrum", "A 1H NMR singlet integrating to one proton at about delta 8.0", "A molecular ion peak at m/z 88 in the mass spectrum"], "answer": 2 },
+      { "q": "A polyamide has the repeat unit -[NH(CH2)6NHCO(CH2)8CO]-. What is its name?", "options": ["Nylon-6,10", "Nylon-10,6", "Nylon-6,6", "Nylon-8,6"], "answer": 0 },
+      { "q": "Heating an enzyme above its optimum temperature destroys its activity, yet the order of its amino acid residues is unchanged. Why?", "options": ["The peptide bonds are hydrolysed, splitting the chain into amino acids", "The alpha-helix converts into a beta-pleated sheet of equal stability", "Heat reduces the disulfide bridges in the chain to pairs of -SH groups", "Hydrogen bonds and ionic attractions in the tertiary structure break"], "answer": 3 },
     ],
   },
 
