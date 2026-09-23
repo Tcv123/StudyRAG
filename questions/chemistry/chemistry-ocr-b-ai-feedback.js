@@ -22,6 +22,8 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Assess the importance of the mole concept in stoichiometric calculations.", "marks": 9, "command": "Assess" },
     { "q": "Explain why the bond angle in NH3 is smaller than in CH4, and the bond angle in H2O is smaller still.", "marks": 9, "command": "Explain" },
     { "q": "Compare the bonding and properties of giant ionic and giant covalent lattices.", "marks": 9, "command": "Compare" },
+    { "q": "Explain how the chemical elements are built up by nuclear fusion inside stars, and why fusion cannot produce elements heavier than iron.", "marks": 12, "command": "Explain" },
+    { "q": "Describe the trends in the reactions of the Group 2 elements and their compounds, and explain them in terms of ionisation enthalpy and charge density.", "marks": 12, "command": "Describe" },
   ],
 
   // DF — Developing Fuels
@@ -47,6 +49,10 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Explain the meaning of dynamic equilibrium and describe the conditions under which Kc remains constant.", "marks": 9, "command": "Explain" },
     { "q": "Describe how the equilibrium constant Kc is calculated from experimental data and explain what its value tells us about the position of equilibrium.", "marks": 9, "command": "Describe" },
     { "q": "Explain the rules for assigning oxidation numbers and use them to identify oxidation, reduction and disproportionation in a series of reactions.", "marks": 9, "command": "Explain" },
+    { "q": "Explain the trends in the physical properties and the oxidising power of the halogens on going down Group 17.", "marks": 9, "command": "Explain" },
+    { "q": "Describe the reactions of concentrated sulfuric acid with the solid sodium halides and explain what they show about the reducing power of the halide ions.", "marks": 12, "command": "Describe" },
+    { "q": "Describe the electrolysis of molten and of aqueous electrolytes, and explain what determines the product formed at each electrode.", "marks": 12, "command": "Describe" },
+    { "q": "Evaluate the risks and the benefits of the large-scale manufacture and use of chlorine.", "marks": 9, "command": "Evaluate" },
   ],
 
   // OZ — The Ozone Story
@@ -62,6 +68,9 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Discuss the difference between SN1 and SN2 nucleophilic substitution mechanisms and the factors that determine which is preferred.", "marks": 12, "command": "Discuss" },
     { "q": "Compare the conditions and products of the nucleophilic substitution and elimination reactions of haloalkanes.", "marks": 9, "command": "Compare" },
     { "q": "Evaluate the historical use of chlorofluorocarbons and assess the success of international action in protecting the ozone layer.", "marks": 12, "command": "Evaluate" },
+    { "q": "Explain how ozone is formed and destroyed in the stratosphere and how the ozone layer acts as a sunscreen for living things.", "marks": 12, "command": "Explain" },
+    { "q": "Describe the mechanism of a radical chain reaction, using the reaction of methane with chlorine as your example.", "marks": 9, "command": "Describe" },
+    { "q": "Assess the case for replacing CFCs with HCFCs, HFCs and hydrocarbons, considering both ozone depletion and climate change.", "marks": 12, "command": "Assess" },
   ],
 
   // WM — What's in a Medicine?
@@ -73,6 +82,8 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Describe the formation of esters from carboxylic acids and alcohols and explain the role of concentrated sulfuric acid as a catalyst.", "marks": 9, "command": "Describe" },
     { "q": "Discuss the hydrolysis of esters under acidic and alkaline conditions and explain why alkaline hydrolysis goes to completion.", "marks": 12, "command": "Discuss" },
     { "q": "To what extent does retrosynthesis allow chemists to plan the multi-step synthesis of a complex organic molecule?", "marks": 12, "command": "To what extent" },
+    { "q": "Explain the principles of green chemistry and discuss how they are applied in the industrial synthesis of aspirin.", "marks": 12, "command": "Explain" },
+    { "q": "Compare atom economy and percentage yield as measures of the efficiency of a chemical process.", "marks": 9, "command": "Compare" },
   ],
 
   // CI — The Chemical Industry
@@ -99,6 +110,10 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Describe the behaviour of amino acids as zwitterions and explain the meaning of the isoelectric point.", "marks": 9, "command": "Describe" },
     { "q": "Compare the disposal options for addition and condensation polymers and assess their respective environmental impacts.", "marks": 12, "command": "Compare" },
     { "q": "Evaluate the use of high-resolution NMR spectroscopy in identifying organic compounds, with reference to both proton and carbon-13 spectra.", "marks": 12, "command": "Evaluate" },
+    { "q": "Describe the structure of DNA and explain the significance of hydrogen bonding in the pairing of the bases.", "marks": 12, "command": "Describe" },
+    { "q": "Explain how the sequence of bases in DNA determines the primary structure of a protein.", "marks": 9, "command": "Explain" },
+    { "q": "Discuss the characteristics of enzyme catalysis and explain each of them in terms of a three-dimensional active site.", "marks": 12, "command": "Discuss" },
+    { "q": "Explain what is meant by molecular recognition and describe how it accounts for the action of a pharmacologically active molecule.", "marks": 12, "command": "Explain" },
   ],
 
   // O — Oceans
@@ -138,5 +153,9 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Compare the mechanisms of electrophilic substitution for nitration and halogenation of benzene, including the role of the catalyst.", "marks": 12, "command": "Compare" },
     { "q": "Describe the synthesis of an azo dye from phenylamine, including the diazotisation and coupling steps.", "marks": 9, "command": "Describe" },
     { "q": "Discuss how thin-layer chromatography and gas-liquid chromatography are used to separate and identify components of a mixture.", "marks": 12, "command": "Discuss" },
+    { "q": "Explain the origins of colour in organic molecules and discuss how the extent of delocalisation determines the colour that is observed.", "marks": 12, "command": "Explain" },
+    { "q": "Discuss how a dye molecule is designed, explaining the roles of the chromophore, of the groups that modify it, of solubilising groups and of fibre-bonding groups.", "marks": 12, "command": "Discuss" },
+    { "q": "Compare the ways in which different classes of dye attach themselves to fibres, and relate these to the fastness of the dye.", "marks": 9, "command": "Compare" },
+    { "q": "Explain the structural differences between fats and oils and describe the reactions that they undergo.", "marks": 9, "command": "Explain" },
   ],
 };
