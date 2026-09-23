@@ -1,5 +1,6 @@
 /*
- * Eduqas GCSE Geography — Written / Short-Answer Question Bank
+ * Eduqas GCSE Geography B (C112QS) — Written / Short-Answer Question Bank
+ * WJEC Eduqas GCSE (9-1) Geography B: 11 key ideas across Themes 1–3
  * 10 questions per topic: 4 green + 4 amber + 2 red
  * tier: 'green' (state/identify 2-3 marks), 'amber' (explain/describe 4-5 marks), 'red' (evaluate/discuss 6-8 marks)
  * Student self-marks against model answer: Full / Partial / Missed
@@ -8,8 +9,218 @@
 
 const GEOGRAPHY_EDUQAS_WRITTEN = {
 
-  /* ─────────────────────────────────────────────────────────── 1.1 Coastal Landscapes */
+  /* ─────────────────────────────────────────────────────────── 1.1 Urbanisation in Contrasting Global Cities */
   '1.1': {
+    green: [
+      {
+        q: 'State what is meant by urbanisation.',
+        marks: 2, tier: 'green',
+        modelAnswer: `Urbanisation is the process by which an increasing proportion of a country's population lives in urban areas (towns and cities) rather than rural areas (1). It is caused by rural-to-urban migration and natural population increase within cities, and it is associated with economic development as countries industrialise (1).`,
+        marks_scheme: '1 mark: urbanisation is increasing proportion of population living in urban areas. 1 mark: caused by rural-to-urban migration and natural increase, associated with industrialisation.'
+      },
+      {
+        q: 'State two differences in the rate of urbanisation between HICs and LICs.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• HICs (e.g. UK, USA) have slow or stagnant rates of urbanisation as they are already highly urbanised (typically 75–85% urban); LICs and MICs (e.g. Nigeria, India) have rapid urbanisation rates as they are still industrialising (1).\n• In some HICs, counter-urbanisation (movement from cities to rural areas) partially offsets urbanisation; in LICs, strong rural-to-urban migration continues to drive rapid urban growth (1).`,
+        marks_scheme: '1 mark: HICs have slow/stagnant urbanisation as already highly urbanised; LICs have rapid rates as still industrialising. 1 mark: counter-urbanisation occurs in some HICs; strong rural-to-urban migration continues in LICs.'
+      },
+      {
+        q: 'Identify two push factors that cause people to migrate from rural to urban areas in developing countries.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Poverty and lack of economic opportunity — few jobs available in rural areas; subsistence farming provides an uncertain and low income (1).\n• Natural disasters and environmental change — drought, flooding, and desertification can destroy farming livelihoods, forcing people to seek opportunities in cities (1).\n(Also accept: conflict, lack of services, mechanisation of agriculture reducing farm employment.)`,
+        marks_scheme: '1 mark: poverty and lack of economic opportunity — few jobs in rural areas. 1 mark: natural disasters and environmental change destroying farming livelihoods.'
+      },
+      {
+        q: 'State what is meant by a megacity.',
+        marks: 1, tier: 'green',
+        modelAnswer: `A megacity is an urban area with a population of more than 10 million people (1). Examples include Tokyo (37 million), Delhi (32 million), Mexico City (22 million), and São Paulo (22 million).`,
+        marks_scheme: '1 mark: a megacity is an urban area with a population of more than 10 million people.'
+      },
+    ],
+    amber: [
+      {
+        q: 'Explain the differences in urban land use patterns between HICs and LICs.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• In HICs, land use typically follows the Burgess concentric zone model — a CBD in the centre, surrounded by inner-city terraced housing (often gentrified), then inter-war suburbs, with newer affluent housing on the urban fringe; the poorest tend to live in inner-city areas (1).\n• In LICs and MICs, the pattern is often reversed — the wealthy live near the city centre or in gated communities on the outskirts, while the poorest live in informal squatter settlements (favelas, barrios) on the urban fringe or in environmentally hazardous areas (1).\n• LIC cities often lack formal planning — informal settlements (shanty towns) grow spontaneously wherever land is unoccupied, often on steep slopes, riverbanks, or near industrial sites (1).\n• HICs have well-defined suburban areas with planned infrastructure; LIC cities have rapidly growing peri-urban zones with limited access to clean water, sanitation, electricity, and roads (1).`,
+        marks_scheme: '1 mark: HICs follow concentric zone model — CBD, inner-city housing, inter-war suburbs, affluent fringe; poorest in inner city. 1 mark: LICs often reversed — wealthy near centre or in gated communities; poorest in informal settlements on urban fringe. 1 mark: LIC cities often lack formal planning — informal settlements grow wherever land is unoccupied. 1 mark: HICs have planned suburban infrastructure; LIC peri-urban zones lack clean water, sanitation, and roads.'
+      },
+      {
+        q: 'Explain why squatter settlements develop in cities in LICs and MICs.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Rapid rural-to-urban migration brings more people to cities than formal housing can accommodate — migrants cannot afford formal housing and so occupy unused land illegally, building makeshift shelters from salvaged materials (1).\n• Governments in LICs lack the resources to build enough affordable housing to keep pace with population growth — urban populations grow by around 3–4% per year in cities like Lagos and Dhaka (1).\n• Migrants are often attracted by the perceived economic opportunities of the city; on arrival they settle close to industrial or commercial areas where work might be found (1).\n• Land ownership laws are weak or unenforced, making informal occupation possible; over time, settlements may be given legal recognition (e.g. favelas in Rio de Janeiro) (1).`,
+        marks_scheme: '1 mark: rapid rural-to-urban migration brings more people than formal housing can accommodate; migrants occupy land illegally. 1 mark: LIC governments lack resources to build enough affordable housing to keep pace. 1 mark: migrants attracted by economic opportunities settle near industrial areas where work may be found. 1 mark: weak land ownership laws make informal occupation possible; over time settlements may gain legal recognition.'
+      },
+      {
+        q: 'Describe and explain one way in which squatter settlements can be improved.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Site and service schemes — the government provides a basic plot of land with access to essential infrastructure (running water, sanitation, electricity connections, roads); residents build their own homes using their own labour (self-help) (1).\n• This is more affordable for governments than building new housing from scratch, and residents take pride in their homes, maintaining and improving them over time (1).\n• Example: in Mumbai, wholesale clearance of slums such as Dharavi has often been criticised for displacing communities and livelihoods, which is why in-situ upgrading and site-and-service approaches are often preferred (1).\n• NGO-supported self-help schemes in Kibera, Nairobi have successfully upgraded housing, provided clean water points and improved sanitation — disease rates have fallen and community cohesion improved (1).`,
+        marks_scheme: '1 mark: site and service schemes — government provides plot with basic infrastructure; residents build own homes (self-help). 1 mark: more affordable for governments than building from scratch; residents maintain and improve homes over time. 1 mark: named example with specific outcome (e.g. Dharavi, Mumbai or Kibera, Nairobi). 1 mark: improvements include better housing, clean water, improved sanitation, and reduced disease rates.'
+      },
+      {
+        q: 'Explain how economic development leads to changes in land use in a city.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• As cities grow economically, the CBD expands outward — shops, offices, and financial institutions replace older residential housing; land values in the centre rise significantly (1).\n• Deindustrialisation in HICs leads to derelict industrial land becoming available for regeneration — former factory sites are redeveloped as retail, leisure, or housing (e.g. London Docklands) (1).\n• Suburbanisation occurs as higher incomes allow people to move to the urban fringe, creating low-density residential areas; this is facilitated by improved transport links and car ownership (1).\n• In LIC/MIC cities, rapid economic growth attracts foreign investment — new business districts (e.g. Gurgaon, India; Shanghai's Pudong district) are created, often displacing residential and agricultural land on the city edge (1).`,
+        marks_scheme: '1 mark: as cities grow economically the CBD expands, replacing residential housing; land values rise. 1 mark: deindustrialisation frees derelict industrial land for regeneration as retail, leisure, or housing. 1 mark: suburbanisation occurs as higher incomes allow movement to urban fringe with improved transport. 1 mark: in LIC/MIC cities rapid growth attracts foreign investment creating new business districts, displacing residential and agricultural land.'
+      },
+    ],
+    red: [
+      {
+        q: 'Evaluate the success of strategies used to manage urbanisation in either a LIC/MIC or HIC city. [6 marks]',
+        marks: 6, tier: 'red',
+        modelAnswer: `(Rio de Janeiro, Brazil — MIC example — credit any appropriate named city with specific evidence.)\n• Favela Bairro project (Rio) — upgrading of favelas rather than clearance; paved streets, water and sewage connections, schools, and health centres built in dozens of favelas, benefiting hundreds of thousands of residents (1). Successes: improved living conditions, tenure security, reduced disease; limitations: only reached a fraction of the 1.4 million favela residents; crime and gang control remained a problem in many upgraded areas (1).\n• UPP (Pacifying Police Units) — police occupied and "pacified" key favelas; initially reduced crime and attracted investment but by 2016 violence had returned to many areas as funding fell (1).\n• Porto Maravilha (Port Revitalisation) — redeveloping the port area; attracted investment and improved infrastructure but criticised for displacing poorer residents through gentrification (1).\n• Overall: strategies have had mixed success — physical improvements have been made but social inequality, crime, and lack of economic opportunity remain severe; the scale of the challenge (over 1 million people in informal settlements) means that individual projects have limited overall impact without broader economic reform (1).\nConclusion: urban management strategies work best when they involve communities in planning, provide long-term funding, and address both physical infrastructure and economic opportunity simultaneously (1).`,
+        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of named city strategies with specific evidence of successes and limitations, plus an overall conclusion. Level 2 (3-4 marks): some specific detail about strategies but limited evaluation or conclusion. Level 1 (1-2 marks): basic description of one strategy. Credit: Favela Bairro improved 70 favelas benefiting 250,000 residents; UPP initially reduced crime but violence returned; Porto Maravilha attracted investment but displaced residents; scale of challenge limits impact of individual projects.'
+      },
+      {
+        q: '"Rapid urbanisation creates more problems than opportunities." To what extent do you agree? Refer to named examples. [8 marks]',
+        marks: 8, tier: 'red',
+        modelAnswer: `Problems of rapid urbanisation:\n• Housing shortages — rapid growth outpaces construction; informal settlements with poor sanitation and overcrowding develop (e.g. Dharavi, Mumbai — 1 million people in 2 km², 1 toilet per 1,440 people) (1).\n• Traffic congestion and poor air quality — Lagos, Nigeria is one of the world's most congested cities; air pollution from vehicles and industry causes serious respiratory health problems (1).\n• Strain on services — schools, hospitals, and clean water supply unable to keep pace with population growth; waterborne disease is widespread in areas without clean water (e.g. cholera in informal settlements in Nairobi) (1).\n• Environmental degradation — deforestation on urban fringes, river pollution from untreated sewage and industrial waste, increased flood risk from impermeable surfaces (1).\nOpportunities of urbanisation:\n• Economic growth — cities drive national economic development; urban workers are on average much more productive than rural workers; cities in MICs like China have lifted hundreds of millions out of poverty (1).\n• Better access to services — cities generally offer better hospitals, schools, and employment than rural areas — rural-to-urban migrants typically experience improved incomes and life expectancy (1).\n• Innovation and creativity — cities concentrate educated populations and foster innovation; economic agglomeration effects attract investment (e.g. Silicon Valley, Shenzhen's tech industry) (1).\nConclusion:\n• Whether rapid urbanisation creates more problems or opportunities depends on the pace of change and the capacity of governments to manage it. Where urbanisation is managed with investment in infrastructure and services, it generates enormous benefits; where it outpaces government capacity (most LIC/MIC cities), severe problems dominate. A managed, slower rate of urbanisation with investment in affordable housing and services offers the best outcomes (1).`,
+        marks_scheme: 'Level 3 (7-8 marks): balanced discussion of problems and opportunities with named examples and a conclusion about the role of managed urbanisation. Level 2 (4-6 marks): covers both sides with some specific examples. Level 1 (1-3 marks): basic points on one side. Credit: housing shortages and informal settlements (Dharavi); traffic congestion and air pollution (Lagos); economic growth — urban workers 3× more productive than rural; better access to healthcare, schools, and employment.'
+      },
+    ],
+  },
+
+  /* ─────────────────────────────────────────────────────────── 1.2 Urban and Rural Processes and Change in the UK */
+  '1.2': {
+    green: [
+      {
+        q: 'State two characteristics of the Central Business District (CBD) of a UK city.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• High land values — the CBD is the most accessible point of the city; competition for land drives prices up, resulting in high-rise buildings to maximise floor space per unit of land (1).\n• High concentration of retail and commercial functions — major department stores, banks, offices, and entertainment venues cluster in the CBD to benefit from maximum customer accessibility (1).\n(Also accept: traffic congestion; pedestrianised shopping streets; low residential population; high daytime footfall.)`,
+        marks_scheme: '1 mark: high land values — competition for land drives prices up resulting in high-rise buildings. 1 mark: high concentration of retail and commercial functions — shops, banks, offices cluster for maximum customer accessibility.'
+      },
+      {
+        q: 'Identify two causes of inner-city deprivation in UK cities.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Deindustrialisation — the loss of manufacturing industry in the 20th century left many inner-city areas with high unemployment, derelict land, and declining populations (1).\n• Poor quality housing stock — much inner-city housing dates from the Victorian era; terraced housing is often in poor repair, damp, and overcrowded (1).\n(Also accept: poor educational attainment; high crime rates; out-migration of wealthier residents; poor transport links to suburban employment.)`,
+        marks_scheme: '1 mark: deindustrialisation — loss of manufacturing left areas with high unemployment and derelict land. 1 mark: poor quality housing stock — much inner-city housing is Victorian era, often in poor repair and damp.'
+      },
+      {
+        q: 'State what is meant by counter-urbanisation.',
+        marks: 2, tier: 'green',
+        modelAnswer: `Counter-urbanisation is the movement of people from urban areas to rural areas or smaller towns on the urban fringe (1). It is driven by factors such as lower house prices, improved quality of life, car ownership, and improved transport links that allow commuting, and has led to growth in "commuter belt" villages around major UK cities (1).`,
+        marks_scheme: '1 mark: counter-urbanisation is movement of people from urban areas to rural areas or smaller towns. 1 mark: driven by lower house prices, improved quality of life, car ownership, and transport links allowing commuting.'
+      },
+      {
+        q: 'Name one area of regeneration in a UK city and state one aim of the regeneration project.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• London Docklands / Manchester Salford Quays / Birmingham Eastside / Leeds South Bank — credit any named UK urban regeneration area (1).\n• Aim: to transform derelict post-industrial land into a mixed-use area of housing, offices, retail, and leisure, attracting investment and creating employment to reduce deprivation (1).`,
+        marks_scheme: '1 mark: name a specific UK urban regeneration area (e.g. London Docklands, Salford Quays). 1 mark: state one aim — to transform derelict post-industrial land into mixed-use area attracting investment and creating employment.'
+      },
+    ],
+    amber: [
+      {
+        q: 'Explain the social and economic impacts of deindustrialisation on UK cities.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Mass unemployment — the decline of traditional industries (steel, coal, textiles, shipbuilding) from the 1970s onward caused sudden and large-scale job losses in cities such as Sheffield, Manchester, and Liverpool (e.g. Sheffield lost tens of thousands of steel industry jobs in the 1970s–80s) (1).\n• Urban deprivation — unemployment drove poverty, poor housing conditions, and declining health; areas such as Toxteth (Liverpool) and Moss Side (Manchester) experienced severe deprivation and social unrest in the 1980s (1).\n• Population decline — wealthier residents left depressed inner-city areas for suburbs or new towns; some UK cities (Liverpool, Glasgow) lost over 30% of their population between 1960 and 1990 (1).\n• Loss of tax base — declining economic activity reduced local government revenue, making it harder to invest in services, housing, and infrastructure — creating a spiral of decline (1).`,
+        marks_scheme: '1 mark: mass unemployment — decline of traditional industries caused large-scale job losses (e.g. Sheffield lost tens of thousands of steel jobs in the 1970s–80s). 1 mark: urban deprivation — unemployment drove poverty, poor housing, declining health, and social unrest. 1 mark: population decline — wealthier residents left inner-city areas; some cities lost over 30% of population. 1 mark: loss of tax base — declining economic activity reduced local government revenue creating a spiral of decline.'
+      },
+      {
+        q: 'Explain how urban regeneration has changed one area of a UK city. Refer to named examples.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `(London Docklands / Salford Quays — credit any named area with specific detail.)\n• London Docklands Development Corporation (LDDC) — established 1981 to regenerate 22 km² of derelict dockland in East London; attracted £7.7 billion of private investment by 1998 (1).\n• Physical changes: Canary Wharf developed as a major financial centre; the DLR extended connectivity; over 24,000 new homes built; around 2,700 businesses were trading in the area by 1998 (1).\n• Economic impacts: 100,000+ jobs created in financial and media sectors; Canary Wharf became the UK's second most important financial district after the City of London (1).\n• Social tensions: rapid gentrification raised house prices and rents, displacing some of the original working-class community; critics argue regeneration benefited wealthy incomers more than existing residents (1).`,
+        marks_scheme: '1 mark: name a specific regeneration area and give a key statistic (e.g. LDDC attracted £7.7 billion private investment). 1 mark: describe physical changes — Canary Wharf, DLR extension, 24,000 new homes. 1 mark: describe economic impacts — 100,000+ jobs in financial and media sectors. 1 mark: describe social tensions — gentrification raised prices and rents, displacing original working-class community.'
+      },
+      {
+        q: 'Describe and explain the challenges of managing urban growth on the rural-urban fringe.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Pressure for new housing — population growth and household formation in and around UK cities creates demand for new homes; the rural-urban fringe is the main available location, but development threatens agricultural land and wildlife habitats (1).\n• Greenbelt policy restricts development around major cities to prevent urban sprawl — this protects open space and countryside but can push house prices up by limiting supply (1).\n• Traffic congestion — new suburban and peri-urban development increases car dependency; rural roads and ring roads become congested, increasing pollution and travel times (1).\n• Loss of services in rural areas — as new commuter suburbs grow, local shops and schools in surrounding villages lose trade; local character changes as urban culture and residents move in (1).`,
+        marks_scheme: '1 mark: pressure for new housing threatens agricultural land and wildlife habitats on rural-urban fringe. 1 mark: greenbelt policy restricts development to prevent urban sprawl but can push house prices up. 1 mark: traffic congestion from new suburban development increases pollution and travel times. 1 mark: loss of services in rural areas as new commuter suburbs change local character and reduce trade.'
+      },
+      {
+        q: 'Explain why some parts of UK cities are more deprived than others.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Historical industrial decline — inner-city areas built around Victorian industries (e.g. Sheffield's Lower Don Valley, formerly steel; Manchester's Moss Side) have suffered from deindustrialisation; unemployment, poverty and poor housing have persisted for decades (1).\n• Selective out-migration — better-off residents have moved to suburbs or commuter towns, leaving behind those who cannot afford to move; this concentrates deprivation in specific areas (1).\n• Poor built environment — Victorian terraced housing is often in poor structural condition; high-rise estates built in the 1960s (e.g. Aylesbury Estate, London) have poor design, maintenance issues, and are stigmatised (1).\n• Inequalities in public investment — some areas attract regeneration funding (London Docklands) while others remain neglected, creating stark contrasts within the same city (1).`,
+        marks_scheme: '1 mark: historical industrial decline left inner-city areas with unemployment, poverty, and poor housing persisting for decades. 1 mark: selective out-migration of better-off residents concentrates deprivation in specific areas. 1 mark: poor built environment — Victorian housing in poor condition; 1960s high-rise estates with design issues. 1 mark: inequalities in public investment — some areas attract regeneration funding while others remain neglected.'
+      },
+    ],
+    red: [
+      {
+        q: 'Evaluate how successful urban regeneration has been in improving the quality of life for residents in UK cities. [6 marks]',
+        marks: 6, tier: 'red',
+        modelAnswer: `Successes:\n• Physical environment improved dramatically — derelict industrial land converted to offices, apartments, and leisure facilities; cities like Manchester, Leeds, and Birmingham now have vibrant city centres attracting significant investment (1).\n• Employment created — Canary Wharf created 100,000+ jobs; MediaCityUK at Salford Quays created thousands of media and digital jobs (BBC, ITV) and attracted over £650 million of investment (1).\n• Cultural regeneration — galleries, restaurants, and events venues have made regenerated areas attractive to visitors and the creative economy (e.g. Baltic and Sage Gateshead — now The Glasshouse — on the Tyne) (1).\nLimitations:\n• Gentrification and displacement — rising house prices and rents in regenerated areas push out lower-income original residents; London Docklands is often cited as an example of regeneration that benefited wealthy newcomers rather than original communities (1).\n• Uneven distribution — regeneration has concentrated on commercially attractive sites (waterfront, central areas); more deprived neighbourhoods away from these hotspots remain neglected (1).\nConclusion:\n• Urban regeneration has significantly improved the physical environment and economy of many UK cities, but has too often prioritised economic and property-led growth over social justice; improvements in quality of life for the most deprived residents have been less consistent and unequal geographically (1).`,
+        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of successes and limitations of regeneration with named examples and specific evidence, and an overall conclusion. Level 2 (3-4 marks): describes successes and limitations with some specific detail. Level 1 (1-2 marks): basic points about regeneration. Credit: Canary Wharf 100,000+ jobs; MediaCityUK 7,000 media jobs; gentrification and displacement of lower-income residents; uneven distribution focusing on commercially attractive sites.'
+      },
+      {
+        q: '"The challenges of UK cities are now mainly social rather than economic." Discuss this statement. [8 marks]',
+        marks: 8, tier: 'red',
+        modelAnswer: `Social challenges:\n• Deprivation and inequality remain significant — UK cities contain both the wealthiest and most deprived communities in the country; in London, life expectancy differs by several years between the richest and poorest boroughs, and by over a decade between some wards (1).\n• Housing affordability — the average London house price in 2024 was ~£500,000; average income ~£40,000; millions priced out of ownership and spending 50%+ of income on rent (1).\n• Ethnic and racial inequalities — segregation persists in many UK cities; ethnic minority communities often face higher poverty rates, overcrowded housing, and poorer health outcomes (1).\n• Mental health and loneliness — urban isolation, particularly in high-rise estates and among the elderly, is increasingly recognised as a major public health challenge (1).\nEconomic challenges (still significant):\n• Regional economic inequality — Northern cities continue to lag London and the South-East in wages, productivity, and investment despite decades of regional policy ("Levelling Up") (1).\n• Post-pandemic high street decline — retail closures have accelerated in many city centres; unemployment in some urban areas remains above national average (1).\n• Skills mismatch — deindustrialised cities struggle to retain young talent as graduates move to London; knowledge economy jobs cluster disproportionately in the capital (1).\nConclusion:\n• Economic and social challenges are deeply intertwined — poverty drives poor social outcomes, and social disadvantage limits economic participation. While the nature of economic challenges has shifted from industrial decline to knowledge-economy inequality, economic issues remain fundamental; the statement somewhat overstates the social dimension. True improvement requires addressing both simultaneously (1).`,
+        marks_scheme: 'Level 3 (7-8 marks): balanced discussion of social and economic challenges with named examples and a nuanced conclusion about their interconnection. Level 2 (4-6 marks): covers both sides with some development. Level 1 (1-3 marks): basic points about one type of challenge. Credit: London inequality — life expectancy gaps of several years between richest and poorest boroughs; housing affordability (average London house ~£500k); Northern cities lag London in wages and productivity; economic and social challenges are deeply intertwined.'
+      },
+    ],
+  },
+
+  /* ─────────────────────────────────────────────────────────── 1.3 A Global Perspective on Development Issues */
+  '1.3': {
+    green: [
+      {
+        q: 'State what is meant by the Human Development Index (HDI).',
+        marks: 2, tier: 'green',
+        modelAnswer: `The HDI is a composite measure of development combining three indicators: life expectancy (health), mean and expected years of schooling (education), and Gross National Income (GNI) per capita at purchasing power parity (standard of living) (1). It produces a score between 0 and 1; countries above 0.8 are considered "very high development" (e.g. Norway: 0.966), while scores below 0.55 indicate low development (e.g. Niger: 0.394) (1).`,
+        marks_scheme: '1 mark: HDI combines life expectancy, education (mean and expected years of schooling), and GNI per capita. 1 mark: produces score between 0 and 1 — above 0.8 is very high development (e.g. Norway 0.966); below 0.55 is low development.'
+      },
+      {
+        q: 'Identify two social indicators of development.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Life expectancy — the average number of years a person born today can expect to live; generally higher in more developed countries (e.g. Japan: 84 years; Chad: 54 years) (1).\n• Infant mortality rate — the number of children who die before their first birthday per 1,000 live births; inversely correlated with development (e.g. Finland: 2; Sierra Leone: 77 per 1,000) (1).\n(Also accept: literacy rate, years of schooling, access to clean water/sanitation, doctors per 1,000 people.)`,
+        marks_scheme: '1 mark: life expectancy — average years a person born today can expect to live; generally higher in more developed countries. 1 mark: infant mortality rate — number of children dying before first birthday per 1,000 live births; inversely correlated with development.'
+      },
+      {
+        q: 'State two reasons why GDP per capita may be a limited measure of development.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• GDP per capita is an average — it conceals enormous inequalities within a country; a high average may mask extreme poverty among the majority while a small elite holds most wealth (e.g. Nigeria has a high GDP but 40% live below the poverty line) (1).\n• GDP measures economic output but not welfare — it includes negative activities (clearing up pollution, treating disease caused by poor conditions) and excludes unpaid work, leisure, and environmental quality (1).`,
+        marks_scheme: '1 mark: GDP per capita is an average concealing enormous inequality within a country. 1 mark: GDP measures economic output but not welfare, excluding unpaid work and environmental quality.'
+      },
+      {
+        q: 'State what is meant by the North-South divide in terms of global development.',
+        marks: 2, tier: 'green',
+        modelAnswer: `The North-South divide refers to the broad contrast in levels of development between the wealthy, industrialised countries of the "Global North" (Europe, North America, Australia, Japan) and the less developed countries of the "Global South" (much of Africa, Asia, and Latin America) (1). It is a generalisation — some southern countries (e.g. Singapore, UAE) are highly developed, and some northern countries have pockets of severe poverty — but it broadly captures the global pattern of inequality (1).`,
+        marks_scheme: '1 mark: North-South divide is the broad contrast in development between wealthy Global North and less developed Global South. 1 mark: it is a generalisation as some southern countries are highly developed and some northern countries have pockets of poverty, but broadly captures global inequality.'
+      },
+    ],
+    amber: [
+      {
+        q: 'Explain how physical geography can influence a country\'s level of development.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Landlocked countries have limited access to international trade without costly overland transport — sub-Saharan Africa contains many landlocked LICs (e.g. Mali, Niger, Chad) that face higher trade costs, reducing economic growth (1).\n• Natural hazard risk — countries in disaster-prone regions (e.g. Bangladesh — flooding; Haiti — earthquakes) face repeated economic setbacks as infrastructure and agricultural land is destroyed; recovery costs divert resources from development investment (1).\n• Climate — tropical countries often have hot, humid climates conducive to disease vectors such as malaria mosquitoes; malaria costs Africa an estimated $12 billion/year in lost productivity and healthcare costs, hindering development (1).\n• Natural resources — countries with abundant resources (oil: Saudi Arabia; minerals: Botswana's diamonds) can generate wealth, but the "resource curse" shows that resource wealth does not always translate to broad development (1).`,
+        marks_scheme: '1 mark: landlocked countries face higher trade costs reducing economic growth. 1 mark: natural hazard risk causes repeated economic setbacks diverting resources from development. 1 mark: tropical climate conducive to disease vectors — malaria costs Africa $12 billion/year in lost productivity. 1 mark: natural resources can generate wealth but resource curse shows this does not always translate to broad development.'
+      },
+      {
+        q: 'Explain the role of international trade in causing and maintaining global development inequalities.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Unequal terms of trade — LICs often export raw materials (commodities) and import manufactured goods; commodity prices are volatile and low relative to manufactured products, locking LICs in a pattern of low-value production (1).\n• Trade barriers — HIC tariffs and subsidies protect their own farmers and industries, preventing LICs from competing in valuable markets (e.g. EU agricultural subsidies disadvantage African farmers in EU markets) (1).\n• TNCs and profit repatriation — transnational corporations in LICs extract profits back to HICs; limited economic multiplier effect stays in the host country (1).\n• However, trade has also enabled development — East Asian "Tiger" economies (South Korea, Taiwan, Singapore) used export-led manufacturing to achieve rapid development; China's trade growth lifted 800 million out of poverty since 1980 (1).`,
+        marks_scheme: '1 mark: unequal terms of trade — LICs export raw materials and import manufactured goods; commodity prices low relative to manufactured products. 1 mark: trade barriers — HIC tariffs and subsidies protect own farmers preventing LICs competing. 1 mark: TNC profit repatriation — limited economic multiplier stays in host country. 1 mark: trade has also enabled development — East Asian Tigers and China used export-led growth (800 million out of poverty since 1980).'
+      },
+      {
+        q: 'Explain how aid can help a country to develop. Refer to a named example.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Emergency/humanitarian aid — provides food, clean water, medicine, and shelter after disasters, preventing loss of life and allowing rapid recovery that maintains development progress (e.g. UN response to 2010 Haiti earthquake, providing emergency aid to 1.5 million people) (1).\n• Tied/bilateral aid — can fund major infrastructure projects (roads, dams, ports) that improve connectivity and economic productivity, though it may benefit donor-country firms rather than local industry (1).\n• Multilateral aid through organisations like the World Bank funds healthcare (e.g. polio eradication — 3 billion children vaccinated; cases reduced 99.9% since 1988) and education, building long-term human capital (1).\n• Microfinance (e.g. Grameen Bank, Bangladesh) provides small loans to entrepreneurs — particularly women — to start businesses, generating income and reducing poverty; 9 million borrowers in Bangladesh alone (1).`,
+        marks_scheme: '1 mark: emergency aid prevents loss of life after disasters allowing rapid recovery. 1 mark: tied/bilateral aid funds major infrastructure projects improving connectivity and productivity. 1 mark: multilateral aid funds healthcare and education building long-term human capital. 1 mark: microfinance (e.g. Grameen Bank) provides small loans to entrepreneurs especially women, generating income and reducing poverty.'
+      },
+      {
+        q: 'Explain why some countries have experienced more rapid development than others since 2000.',
+        marks: 5, tier: 'amber',
+        modelAnswer: `• Political stability — countries with stable governance and rule of law (e.g. Botswana, Rwanda) attract foreign investment and can implement long-term development plans; countries with conflict or corruption (e.g. DRC, Somalia) struggle to develop (1).\n• Foreign Direct Investment — globalisation has enabled MICs with educated, low-cost workforces to attract TNC manufacturing — China, Vietnam, and Bangladesh have experienced rapid development through export-led industrialisation (1).\n• Good governance and investment in education and health — South Korea and Singapore invested heavily in education from the 1960s onward; their highly skilled workforces attracted high-value industries (1).\n• China's state-led development model — the Chinese government directed investment into infrastructure, manufacturing, and exports; GDP per capita grew from ~$1,000 in 2000 to ~$12,500 by 2023 (1).\n• Debt burden — heavily indebted countries spend large proportions of government revenue on debt repayment, leaving less for health, education, and infrastructure — the World Bank estimates many LICs spend more on debt service than on healthcare (1).`,
+        marks_scheme: '1 mark: political stability attracts FDI and enables long-term development plans; conflict and corruption hinder development. 1 mark: FDI — countries with educated low-cost workforces attract TNC manufacturing enabling export-led growth. 1 mark: investment in education and health builds skilled workforces attracting high-value industries. 1 mark: debt burden — heavily indebted countries spend large revenue proportions on repayment leaving less for development. 1 mark: China\'s state-led development model directed investment into infrastructure and exports.'
+      },
+    ],
+    red: [
+      {
+        q: 'Evaluate the effectiveness of different strategies to reduce the development gap between HICs and LICs. [6 marks]',
+        marks: 6, tier: 'red',
+        modelAnswer: `Aid:\n• Emergency aid saves lives but does not address structural causes of underdevelopment; long-term aid dependency can undermine local industries (e.g. cheap food aid may undercut local farmers) (1).\n• Well-targeted development aid (microfinance, education, healthcare) can be transformative — PEPFAR (US AIDS programme) is estimated to have saved around 25 million lives, mostly in sub-Saharan Africa, although US aid cuts in 2025 threatened its future (1).\nFair Trade:\n• Guarantees higher prices for producers; improves farmers' incomes and community investment in education and healthcare (e.g. Fairtrade coffee co-operatives in Ethiopia receive a guaranteed minimum price plus a premium) — but reaches only a tiny fraction of global trade (1).\nDebt relief:\n• HIPC Initiative wrote off around $76 billion of debt for over 35 countries; freed up government spending for services — e.g. Tanzania used the savings to help abolish primary school fees (1) — but many LICs have accumulated new debt, particularly to Chinese lenders (1).\nFDI and trade:\n• Potentially the most powerful driver of development — as shown by China and South-East Asia — but benefits may flow to elites and TNCs rather than the poorest (1).\nConclusion:\n• No single strategy is sufficient; a combination tailored to the specific context of each country, combined with fairer global trade rules and governance improvements, offers the best hope — but fundamental reform of global economic systems is required for sustained reduction in the development gap (1).`,
+        marks_scheme: 'Level 3 (5-6 marks): evaluates multiple strategies (aid, fair trade, debt relief, FDI) with specific evidence and a conclusion about the need for combined approaches. Level 2 (3-4 marks): discusses some strategies with limited evaluation. Level 1 (1-2 marks): basic description of strategies. Credit: PEPFAR saved an estimated 25 million lives; Fairtrade gives Ethiopian farmers a guaranteed minimum price plus premium; HIPC Initiative wrote off $76 billion debt; FDI most powerful development driver but benefits may not reach poorest.'
+      },
+      {
+        q: '"Globalisation has widened rather than narrowed global development inequalities." Evaluate this statement. [8 marks]',
+        marks: 8, tier: 'red',
+        modelAnswer: `Evidence that globalisation has widened inequalities:\n• While some MICs have benefited enormously (China, India, Vietnam), the poorest LICs — particularly landlocked or conflict-affected nations in sub-Saharan Africa — have been largely bypassed by FDI and trade growth (1).\n• TNC activity concentrates in countries with existing advantages (infrastructure, education, political stability); the least developed countries lack the conditions to attract investment (1).\n• Profit repatriation — TNCs take profits back to HIC headquarters; tax avoidance (e.g. Apple, Google routing profits through Ireland/Netherlands) reduces tax revenues in LICs (1).\n• Unequal terms of trade persist — commodity prices remain depressed relative to manufactured goods; LIC primary exporters remain trapped in low-value chains (1).\nEvidence that globalisation has reduced inequalities:\n• Global extreme poverty (below $2.15/day) fell from 36% in 1990 to under 10% in 2019 — largely due to globalisation-driven growth in China, India, and South-East Asia (800 million lifted out of poverty in China alone) (1).\n• Access to mobile technology, information, and global markets has enabled entrepreneurship and development even in LICs — mobile banking (M-Pesa, which began in Kenya) reached over 50 million users across Africa, enabling financial inclusion for millions without bank accounts (1).\n• Global health and education outcomes have improved — child mortality has fallen by 60% since 1990; primary school enrollment has risen to over 90% globally (1).\nConclusion:\n• Globalisation has produced a deeply uneven pattern of development — it has undoubtedly narrowed the gap between MICs (particularly in Asia) and HICs, but has left the poorest LICs further behind in relative terms. The statement is partially correct: within-country inequality has increased in many nations even as global averages improve. Globalisation's benefits are real but have been distributed profoundly unequally, reflecting and reinforcing existing power structures in the global economy (1).`,
+        marks_scheme: 'Level 3 (7-8 marks): balanced evaluation of evidence for and against the statement with specific examples and a nuanced conclusion about uneven distribution of globalisation\'s benefits. Level 2 (4-6 marks): covers both sides with some specific evidence. Level 1 (1-3 marks): basic points about globalisation and inequality. Credit: poorest LICs bypassed by FDI; TNC profit repatriation reduces tax revenue in LICs; global extreme poverty fell from 36% to under 10% since 1990; M-Pesa mobile banking reached 50 million users in Kenya.'
+      },
+    ],
+  },
+
+  /* ─────────────────────────────────────────────────────────── 2.1 Coasts and Coastal Management */
+  '2.1': {
     green: [
       {
         q: 'State two processes of coastal erosion.',
@@ -79,8 +290,8 @@ const GEOGRAPHY_EDUQAS_WRITTEN = {
     ],
   },
 
-  /* ─────────────────────────────────────────────────────────── 1.2 River Landscapes */
-  '1.2': {
+  /* ─────────────────────────────────────────────────────────── 2.2 Rivers and River Management */
+  '2.2': {
     green: [
       {
         q: 'State two processes of river erosion.',
@@ -150,81 +361,8 @@ const GEOGRAPHY_EDUQAS_WRITTEN = {
     ],
   },
 
-  /* ─────────────────────────────────────────────────────────── 1.3 Glaciated Landscapes */
-  '1.3': {
-    green: [
-      {
-        q: 'State two processes by which glaciers erode the landscape.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Plucking — meltwater at the base or sides of a glacier freezes onto bedrock; as the glacier moves forward, it pulls blocks of rock away (1).\n• Abrasion — rock fragments embedded in the base of the glacier act like sandpaper, scratching and grinding the bedrock surface to produce a smooth, striated surface (1).`,
-        marks_scheme: '1 mark: plucking — meltwater freezes onto bedrock and glacier pulls blocks away. 1 mark: abrasion — rock fragments embedded in ice grind and scratch the bedrock surface.'
-      },
-      {
-        q: 'Identify two features of a glaciated upland landscape.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Corrie (cirque) — an armchair-shaped hollow with steep backwall and over-deepened basin, often containing a tarn (1).\n• Arête — a knife-edged ridge formed between two adjacent corries where freeze-thaw weathering and plucking have eroded the rock from both sides (1).\n(Also accept: pyramidal peak, U-shaped valley, hanging valley, ribbon lake, truncated spur, drumlin.)`,
-        marks_scheme: '1 mark: corrie — armchair-shaped hollow with steep backwall and over-deepened basin often containing a tarn. 1 mark: arête — knife-edged ridge formed between two adjacent corries.'
-      },
-      {
-        q: 'State what is meant by a terminal moraine.',
-        marks: 2, tier: 'green',
-        modelAnswer: `A terminal moraine is a ridge of unsorted rock debris (till) deposited at the furthest extent of a glacier's advance (1). It marks the maximum point the glacier reached before it began to retreat or melt, and is typically a crescent-shaped mound of material bulldozed and dumped by the ice snout (1).`,
-        marks_scheme: '1 mark: terminal moraine is a ridge of unsorted rock debris deposited at furthest extent of glacier advance. 1 mark: it marks the maximum point reached before the glacier began to retreat, typically a crescent-shaped mound.'
-      },
-      {
-        q: 'Name and describe one upland glacial erosion landform. You may use a diagram.',
-        marks: 2, tier: 'green',
-        diagram: true,
-        modelAnswer: `• Corrie (cirque/cwm) — a steep-sided, armchair-shaped hollow with a concave back wall and an over-deepened rock basin, often containing a corrie lake (tarn) (1).\n• It forms on north-facing slopes (in the northern hemisphere) where snow accumulates, compresses into ice, and erodes through rotational sliding, plucking the back wall and abrading the floor (1).\n(Diagram should show: steep back wall, over-deepened basin, rock lip/threshold, tarn, direction of ice movement.)`,
-        marks_scheme: '1 mark: name and describe a glacial erosion landform (e.g. corrie — steep-sided armchair-shaped hollow with concave back wall). 1 mark: formation detail — snow accumulates, compresses to ice, erodes through rotational sliding, plucking and abrasion.'
-      },
-    ],
-    amber: [
-      {
-        q: 'Explain the formation of a corrie (cirque). You may use a diagram.',
-        marks: 4, tier: 'amber',
-        diagram: true,
-        modelAnswer: `• Snow accumulates in a sheltered hollow on a hillside — typically a north or north-east facing slope in the northern hemisphere, where less solar radiation means snow persists (1).\n• Snow is compressed into firn and then glacial ice; the mass of ice begins to move downslope under gravity in a rotational manner (1).\n• Plucking steepens the back wall as ice freezes onto rock and pulls blocks away; abrasion deepens the floor of the hollow by the rock debris embedded in the ice (1).\n• A rock lip or threshold forms where the rotational movement deposits material; when the glacier melts, a tarn (corrie lake) may fill the over-deepened basin (1).\n(Diagram: show hollow with snow, back wall, rotational movement arrows, plucking at back wall, abrasion on floor, rock lip, tarn.)\n(Example: Cwm Idwal, Snowdonia, Wales.)`,
-        marks_scheme: '1 mark: snow accumulates in sheltered hollow, typically north-facing in northern hemisphere. 1 mark: snow compressed into ice and moves downslope rotationally under gravity. 1 mark: plucking steepens back wall; abrasion deepens floor by embedded rock debris. 1 mark: rock lip forms where rotational movement deposits material; tarn may fill over-deepened basin when glacier melts.'
-      },
-      {
-        q: 'Explain the difference between a U-shaped valley and a V-shaped valley and explain how each is formed.',
-        marks: 4, tier: 'amber',
-        diagram: true,
-        modelAnswer: `• A V-shaped valley has steep sides meeting at a narrow river channel at the bottom; it is formed by a river vertically eroding downwards into the rock, with the sides shaped by mass movement supplying material which the river removes (1).\n• A U-shaped valley (glacial trough) has near-vertical sides and a wide, flat floor; it is formed when a glacier occupies and modifies a pre-existing river valley through powerful abrasion and plucking on all sides (1).\n• The glacier erodes much more forcefully than a river because of its greater mass and basal debris — it removes the interlocking spurs, creating truncated spurs and widening the valley to the characteristic U shape (1).\n• After glaciation, a much smaller stream (misfit stream) may occupy the oversized valley floor, and tributary valleys may be left hanging high on the valley sides as hanging valleys (1).`,
-        marks_scheme: '1 mark: V-shaped valley — steep sides meeting at narrow river channel, formed by vertical river erosion with mass movement shaping sides. 1 mark: U-shaped valley — near-vertical sides and wide flat floor, formed when glacier modifies river valley through abrasion and plucking. 1 mark: glacier erodes more forcefully than river, removing interlocking spurs and creating truncated spurs. 1 mark: after glaciation, misfit stream may occupy valley floor and hanging valleys appear on sides.'
-      },
-      {
-        q: 'Describe the characteristics and formation of drumlins.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Drumlins are smooth, elongated, egg-shaped hills of glacial till (unsorted sediment), typically 250–1000 m long and 10–50 m high (1).\n• They are found in clusters ("swarms") on lowland plains, with their steeper blunt end (stoss end) facing the direction from which the glacier came, and their tapering end (lee end) pointing in the direction of ice flow (1).\n• They form under active glacial ice when till is deposited and then moulded by the moving glacier — the exact mechanism is debated, but may involve deposition around a nucleus of harder rock or the reshaping of pre-existing till (1).\n• Drumlins indicate the former direction of ice flow; their presence suggests the glacier was actively depositing material (1).\n(Example: Vale of Eden, Cumbria; Central Lowlands of Scotland.)`,
-        marks_scheme: '1 mark: drumlins are smooth elongated egg-shaped hills of glacial till, 250–1000 m long. 1 mark: found in clusters with steeper stoss end facing ice direction and tapering lee end pointing direction of flow. 1 mark: form under active glacial ice when till deposited and moulded by moving glacier. 1 mark: indicate former direction of ice flow and suggest glacier was actively depositing.'
-      },
-      {
-        q: 'Explain how glaciated upland areas provide opportunities for human activities.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Tourism — dramatic scenery (U-shaped valleys, arêtes, ribbon lakes) attracts millions of visitors for activities including hiking, climbing, and winter sports (e.g. Snowdonia National Park attracts over 4 million visitors per year) (1).\n• Hydroelectric power — ribbon lakes and steep-sided glacial valleys are ideal for HEP schemes; reservoirs are easily created behind natural features (e.g. Dinorwig power station, North Wales, uses glacial lake Marchlyn Mawr) (1).\n• Farming — glacial soils (till) on lowland areas can be fertile; valley floors provide level land for pastoral farming (1).\n• Water storage — glacially formed reservoirs provide drinking water for nearby cities (e.g. Thirlmere and Haweswater supply Manchester) (1).`,
-        marks_scheme: '1 mark: tourism — dramatic scenery attracts visitors for hiking, climbing, winter sports. 1 mark: hydroelectric power — ribbon lakes and steep valleys ideal for HEP schemes. 1 mark: farming — glacial till soils can be fertile; valley floors provide level land for pastoral farming. 1 mark: water storage — glacially formed reservoirs provide drinking water for nearby cities.'
-      },
-    ],
-    red: [
-      {
-        q: 'Evaluate the challenges and opportunities that glaciated landscapes present for people living and working in these areas. [6 marks]',
-        marks: 6, tier: 'red',
-        modelAnswer: `Opportunities:\n• Tourism is a major economic benefit — e.g. tourist spending in Snowdonia National Park was estimated at around £475 million a year (2015); steep terrain supports skiing, hiking, and climbing industries (1).\n• HEP generation using glacially formed lakes and steep valleys provides sustainable energy — Dinorwig provides 1,800 MW of pumped-storage power (1).\n• Water reservoirs built in glacial valleys supply major cities — Thirlmere (Lake District) supplies Manchester (1).\nChallenges:\n• Remoteness and rugged terrain make infrastructure (roads, communications) expensive to build and maintain — communities can be cut off in winter (1).\n• Limited flat land restricts agriculture; thin, acidic soils on valley sides support only rough grazing (1).\n• Conflicts arise between tourism, conservation, and farming — footpath erosion, traffic congestion, and pressure on natural habitats are significant issues in national parks (1).\nConclusion:\n• Glaciated landscapes offer unique economic opportunities through tourism and energy but pose significant challenges for communities; careful management is needed to balance economic development with environmental conservation (1 for developed conclusion — not required for 6-mark response; credit all well-reasoned points).`,
-        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of both opportunities and challenges with named examples and a developed conclusion. Level 2 (3-4 marks): covers both sides but with limited examples or underdeveloped balance. Level 1 (1-2 marks): basic points about challenges or opportunities. Credit: tourism generates income (Snowdonia £600m); HEP from glacial lakes (Dinorwig 1800 MW); remoteness makes infrastructure expensive; limited flat land restricts agriculture.'
-      },
-      {
-        q: '"Glacial deposition landforms are more important to human activity than glacial erosion landforms." Discuss. [8 marks]',
-        marks: 8, tier: 'red',
-        modelAnswer: `Glacial deposition landforms and their importance:\n• Drumlins and moraines create fertile lowland landscapes — till soils support agriculture across large areas (e.g. Central Lowlands of Scotland) (1).\n• Outwash plains of sorted sands and gravels are quarried for construction material — economically important and widespread across many lowland areas (1).\n• Kettle holes (formed by melting ice blocks) create wetland habitats of conservation value (1).\n• Lowland depositional areas allow transport corridors and settlement that is impossible on steep upland terrain (1).\nGlacial erosion landforms and their importance:\n• U-shaped valleys, arêtes, and ribbon lakes attract enormous numbers of tourists — the scenic quality of upland glaciated areas drives major rural economies (e.g. Lake District, Switzerland) (1).\n• Ribbon lakes and steep glacial valleys are ideal for HEP, providing renewable energy (1).\n• Glacially deepened lake basins store freshwater in natural reservoirs, supplying major cities (1).\nConclusion:\n• Both types of landform are economically and socially important, but in different contexts — depositional landforms tend to be more important for agriculture and everyday settlement, while erosional landforms are crucial for tourism and energy; the statement is therefore an oversimplification. Overall importance depends heavily on regional context (1).`,
-        marks_scheme: 'Level 3 (7-8 marks): balanced discussion of both deposition and erosion landforms with named examples and a nuanced conclusion about context-dependence. Level 2 (4-6 marks): covers both types but with limited comparative analysis. Level 1 (1-3 marks): basic points about one type of landform. Credit: drumlins/moraines create fertile lowland soils for agriculture; outwash plains provide construction aggregate; U-shaped valleys and arêtes attract tourists; ribbon lakes ideal for HEP.'
-      },
-    ],
-  },
-
-  /* ─────────────────────────────────────────────────────────── 1.4 Weather and Climate */
-  '1.4': {
+  /* ─────────────────────────────────────────────────────────── 2.3 Weather and Climate */
+  '2.3': {
     green: [
       {
         q: 'State two differences between weather and climate.',
@@ -293,428 +431,8 @@ const GEOGRAPHY_EDUQAS_WRITTEN = {
     ],
   },
 
-  /* ─────────────────────────────────────────────────────────── 1.5 Tropical Rainforests */
-  '1.5': {
-    green: [
-      {
-        q: 'State two characteristics of the tropical rainforest climate.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• High temperatures throughout the year — typically 26–28°C with very little seasonal variation, as the equatorial location means the sun is always high in the sky (1).\n• High and reliable rainfall — typically 2,000 mm or more per year, falling throughout the year and often as convectional afternoon storms (1).`,
-        marks_scheme: '1 mark: high temperatures throughout year (~26–28°C) with little seasonal variation. 1 mark: high and reliable rainfall (2000 mm+/year) falling throughout the year, often as convectional afternoon storms.'
-      },
-      {
-        q: 'Identify two ways in which plants in the tropical rainforest are adapted to the environment.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Drip tips — leaves have pointed tips to shed heavy rainfall quickly, preventing the growth of algae and bacteria that would damage the leaf (1).\n• Buttress roots — large flared roots support the tall emergent trees and allow them to access nutrients from the thin surface soil (1).\n(Also accept: smooth bark to shed rain; waxy leaf surfaces; epiphytes growing on branches to reach light; lianas climbing towards the canopy.)`,
-        marks_scheme: '1 mark: drip tips — leaves have pointed tips to shed heavy rainfall quickly. 1 mark: buttress roots — large flared roots support tall trees and access surface nutrients.'
-      },
-      {
-        q: 'State two reasons why tropical rainforests are important at a global scale.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Carbon store — tropical rainforests store approximately 250 billion tonnes of carbon in their biomass and soils; they act as major carbon sinks, absorbing CO₂ and helping regulate global climate (1).\n• Biodiversity — they are home to over 50% of the world's species despite covering only around 6% of Earth's land surface, making them critical reservoirs of biodiversity (1).\n(Also accept: oxygen production; water cycle regulation; medicines derived from rainforest plants.)`,
-        marks_scheme: '1 mark: carbon store — store ~250 billion tonnes of carbon, acting as major carbon sinks. 1 mark: biodiversity — home to over 50% of world species despite covering only 6% of land surface.'
-      },
-      {
-        q: 'Name and describe the layers of the tropical rainforest.',
-        marks: 4, tier: 'green',
-        modelAnswer: `• Emergent layer — tallest trees (40–60 m) rising above the main canopy, exposed to full sun and wind (1).\n• Canopy layer — dense, continuous layer of branches and leaves at ~20–30 m, intercepting most sunlight and rainfall (1).\n• Understorey — shade-tolerant shrubs and smaller trees below the canopy; little wind, high humidity (1).\n• Forest floor — very little light reaches here; decomposers rapidly recycle nutrients from dead organic matter; ground plants adapted to low light (1).`,
-        marks_scheme: '1 mark: emergent layer — tallest trees 40–60 m rising above canopy, exposed to full sun. 1 mark: canopy layer — dense continuous layer at 20–30 m intercepting most sunlight and rainfall. 1 mark: understorey — shade-tolerant shrubs and smaller trees below canopy, high humidity. 1 mark: forest floor — very little light, decomposers rapidly recycle nutrients from dead matter.'
-      },
-    ],
-    amber: [
-      {
-        q: 'Explain how nutrients are cycled in the tropical rainforest ecosystem.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• The nutrient cycle in the tropical rainforest is rapid and efficient — almost all nutrients are stored in the biomass (living plants) rather than the soil (1).\n• Leaf litter and dead organic matter fall to the forest floor and are decomposed very quickly by bacteria and fungi in the hot, humid conditions — nutrients are released into the thin topsoil (1).\n• Plant roots near the surface quickly absorb nutrients before they can be washed away (leached) by heavy rainfall — the cycle keeps nutrients in the living system (1).\n• The soil is therefore surprisingly infertile — it is thin, acidic, and nutrient-poor; when the forest is cleared, nutrients are lost rapidly through leaching, making the land unsuitable for farming within a few years (1).`,
-        marks_scheme: '1 mark: nutrient cycle is rapid — almost all nutrients stored in biomass rather than soil. 1 mark: leaf litter decomposed quickly by bacteria and fungi releasing nutrients into thin topsoil. 1 mark: plant roots near surface quickly absorb nutrients before leaching by heavy rainfall. 1 mark: when forest is cleared nutrients are rapidly lost through leaching making land unsuitable for farming.'
-      },
-      {
-        q: 'Explain the causes of deforestation in tropical rainforests. Refer to a named example.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `(Amazon, Brazil / Congo Basin / Borneo — credit any named example with specific data.)\n• Commercial farming — in the Amazon, large-scale soy bean farming and cattle ranching are the leading causes; Brazil exports millions of tonnes of soy annually, driving continued forest clearance (1).\n• Logging — both legal and illegal logging for valuable hardwoods (mahogany, teak) is widespread; Indonesia lost around 25 million hectares of forest between 1990 and 2015 (1).\n• Mining — the Amazon contains large deposits of iron ore, gold, and bauxite; open-cast mining clears forest and contaminates rivers with heavy metals (e.g. Serra Pelada, Brazil) (1).\n• Road building — infrastructure projects open up previously inaccessible forest to settlers, loggers, and farmers; the Trans-Amazonian Highway opened large areas to clearance (1).`,
-        marks_scheme: '1 mark: commercial farming — soy and cattle ranching leading causes in Amazon. 1 mark: logging — legal and illegal removal of valuable hardwoods. 1 mark: mining — open-cast mining for iron ore, gold, bauxite clears forest and contaminates rivers. 1 mark: road building — infrastructure projects open up previously inaccessible forest.'
-      },
-      {
-        q: 'Explain the effects of deforestation on the local environment and the people who depend on the rainforest.',
-        marks: 5, tier: 'amber',
-        modelAnswer: `• Loss of biodiversity — deforestation destroys habitat, driving species to extinction before scientists can even identify them; the world's rainforests are estimated to lose up to 137 species per day (1).\n• Soil erosion — without tree roots holding soil together and interception reducing raindrop impact, heavy rain rapidly erodes unprotected topsoil; rivers become choked with sediment (1).\n• Disruption of the water cycle — reduced transpiration leads to less moisture in the atmosphere, decreasing regional rainfall and potentially turning cleared areas into savannah (1).\n• Indigenous communities — groups such as the Kayapo in Brazil lose their homeland and traditional way of life; forced displacement causes cultural loss, poverty, and health impacts (1).\n• Local communities who depended on forest products (non-timber forest products, bushmeat, medicines) lose their livelihoods, increasing poverty (1).`,
-        marks_scheme: '1 mark: loss of biodiversity — destroys habitat driving species to extinction. 1 mark: soil erosion — without tree roots heavy rain rapidly erodes unprotected topsoil. 1 mark: disruption of water cycle — reduced transpiration decreases regional rainfall. 1 mark: indigenous communities lose homeland and traditional way of life. 1 mark: local communities lose livelihoods from forest products.'
-      },
-      {
-        q: 'Describe and explain one strategy used to manage tropical rainforests sustainably.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Ecotourism — allows visitors to experience the rainforest with minimal environmental impact, providing income for local communities and creating an economic incentive to protect the forest (1).\n• Revenue from ecotourism can fund conservation, ranger patrols to prevent illegal logging and poaching, and education programmes (1).\n• Successful examples include the Amazon jungle lodges of the Peruvian Amazon, where local indigenous guides lead tours — communities earn more from keeping the forest standing than clearing it (1).\n• However, ecotourism can be limited in scale — it cannot replace the economic returns from large-scale farming or mining for many governments — and poorly managed tourism can itself damage sensitive ecosystems (1).`,
-        marks_scheme: '1 mark: ecotourism allows visitors to experience the forest with minimal environmental impact, providing income for local communities. 1 mark: revenue funds conservation, ranger patrols, and education programmes. 1 mark: successful examples where local guides earn more from keeping forest standing than clearing it. 1 mark: limitations — cannot replace returns from large-scale farming; poorly managed tourism can damage ecosystems.'
-      },
-    ],
-    red: [
-      {
-        q: 'Evaluate the extent to which tropical rainforests can be used sustainably. [6 marks]',
-        marks: 6, tier: 'red',
-        modelAnswer: `Evidence that sustainable use is possible:\n• Selective logging — removing only mature trees while leaving the structure of the forest intact allows regeneration; certified timber (FSC — Forest Stewardship Council) schemes exist in Brazil and Indonesia (1).\n• REDD+ (Reducing Emissions from Deforestation and Forest Degradation) — international payments to developing countries that protect their forests; Brazil's Amazon Fund, a REDD+-style scheme backed mainly by Norway, rewarded Brazil after deforestation fell by about 80% from the 2004 peak by 2012 (mainly through stronger monitoring and law enforcement) (1).\n• Ecotourism and non-timber forest product harvesting (nuts, fruits, rubber) can generate income without clearing — e.g. Brazil nut industry in the Amazon (1).\nLimitations:\n• Economic pressures are enormous — debt-laden countries like Brazil and Indonesia face strong incentives to convert forest to agricultural land; soy and cattle are far more profitable per hectare than sustainable forestry (1).\n• Enforcement is extremely difficult in remote rainforest regions — illegal logging and land clearance continues despite laws (e.g. Amazon deforestation under Bolsonaro government rose sharply) (1).\nConclusion:\n• Sustainable use is technically possible and examples demonstrate it can work at a local scale, but global economic systems continue to drive unsustainable deforestation; without stronger international frameworks, financial incentives, and enforcement, truly sustainable management of rainforests at scale remains aspirational rather than a reality (1).`,
-        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of evidence that sustainable use is possible and limitations, with named examples, and a realistic overall conclusion. Level 2 (3-4 marks): discusses both possibilities and limitations with some evidence. Level 1 (1-2 marks): basic points about sustainable use. Credit: selective logging and FSC certification; REDD+ international payments (Amazon deforestation fell 80%); ecotourism and non-timber products; economic pressures and enforcement difficulty.'
-      },
-      {
-        q: '"The economic development needs of tropical countries outweigh the arguments for conserving rainforests." Discuss. [8 marks]',
-        marks: 8, tier: 'red',
-        modelAnswer: `Arguments supporting the statement (development):\n• Countries like Brazil and Indonesia argue that developed nations cleared their own forests for economic growth centuries ago — it is unfair to deny developing countries the same right to use their resources for poverty reduction (1).\n• Agriculture (soy, palm oil, cattle) generates billions in export income and employs millions of people — Brazil's wider agribusiness sector accounts for around a quarter of GDP (1).\n• Mining and logging provide government revenue that funds schools, hospitals, and infrastructure in countries where many still lack basic services (1).\nArguments against (conservation):\n• Rainforests provide ecosystem services of incalculable global value — climate regulation, water cycling, biodiversity — that benefit all humanity, not just the host nation (1).\n• Once cleared, rainforests are very difficult to restore — the nutrient cycle breaks down, soils erode, and biodiversity losses are largely irreversible (1).\n• The economic benefits of forest clearance are often short-term — soils exhausted within years, forcing further clearance; sustainable forest use offers longer-term income (1).\n• Indigenous peoples' rights — clearance often violates the rights of communities whose livelihoods and cultures depend on the forest (1).\nConclusion:\n• A binary choice is a false dichotomy; sustainable development models exist that can provide economic growth while protecting forest. The real challenge is creating international financial systems that make conservation more profitable than destruction — until that happens, economic pressures will continue to drive deforestation. Rich nations have a particular responsibility to fund conservation as they benefit most from the ecosystem services rainforests provide (1).`,
-        marks_scheme: 'Level 3 (7-8 marks): balanced discussion of development needs vs. conservation arguments with named examples and a nuanced conclusion rejecting the binary framing. Level 2 (4-6 marks): covers both sides but limited development or examples. Level 1 (1-3 marks): basic points on one side. Credit: developing countries argue right to use resources for poverty reduction; ecosystem services benefit all humanity; economic benefits of clearance are short-term; indigenous peoples\'s rights.'
-      },
-    ],
-  },
-
-  /* ─────────────────────────────────────────────────────────── 1.6 Hot Deserts */
-  '1.6': {
-    green: [
-      {
-        q: 'State two characteristics of a hot desert climate.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Very low precipitation — most hot deserts receive less than 250 mm of rainfall per year, and this is often unreliable and may fall in a few intense storms (1).\n• Extreme temperature range — daytime temperatures regularly exceed 40°C, while nights can be very cold (below 10°C) because the dry air and lack of cloud cover mean heat is rapidly lost by radiation at night (1).`,
-        marks_scheme: '1 mark: very low precipitation — less than 250 mm/year, often unreliable. 1 mark: extreme temperature range — daytime over 40°C, nights cold due to lack of cloud cover.'
-      },
-      {
-        q: 'Identify two ways in which animals in hot deserts are adapted to survive.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Nocturnal behaviour — many desert animals (e.g. fennec fox, gerbil) are active only at night when temperatures are lower, avoiding dehydration and overheating during the day (1).\n• Water conservation — animals such as the kangaroo rat obtain all their water from the food they eat and produce very concentrated urine to minimise water loss (1).\n(Also accept: burrowing to escape heat; light colouring to reflect sunlight; large ears for heat dissipation.)`,
-        marks_scheme: '1 mark: nocturnal behaviour — active only at night to avoid dehydration and overheating. 1 mark: water conservation — obtaining water from food and producing very concentrated urine.'
-      },
-      {
-        q: 'State what is meant by desertification.',
-        marks: 2, tier: 'green',
-        modelAnswer: `Desertification is the process by which land on the margins of deserts (semi-arid areas) becomes increasingly degraded and dry, losing its vegetation and soil fertility, and increasingly resembling desert conditions (1). It is driven by a combination of climate change (reducing rainfall) and human activities such as overgrazing, deforestation, and over-cultivation (1).`,
-        marks_scheme: '1 mark: desertification is the process by which semi-arid land becomes increasingly degraded and dry. 1 mark: driven by climate change reducing rainfall and human activities such as overgrazing, deforestation, and over-cultivation.'
-      },
-      {
-        q: 'Name one hot desert and state its location.',
-        marks: 1, tier: 'green',
-        modelAnswer: `• Sahara Desert — North Africa, covering approximately 9 million km² across countries including Algeria, Libya, Egypt, and Morocco (1).\n(Also accept: Arabian Desert — Middle East; Atacama Desert — coastal South America; Namib Desert — coastal south-west Africa; Australian Outback — central and western Australia.)`,
-        marks_scheme: '1 mark: name a hot desert. 1 mark: state its correct location.'
-      },
-    ],
-    amber: [
-      {
-        q: 'Explain why hot deserts form where they do.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Most hot deserts are located around 20–30° north and south of the equator — in the subtropical high-pressure belt (1).\n• At the equator, air heated by intense solar radiation rises, cools, loses moisture as tropical rainfall, then spreads poleward at altitude. At ~30° latitude, this dry air descends (subsides), compressing and warming — any remaining moisture evaporates, creating stable, cloudless conditions (1).\n• Rain shadow deserts form where moist air is forced to rise over mountain ranges, loses moisture on the windward side, then descends as dry air on the leeward side — e.g. Atacama Desert in the lee of the Andes (1).\n• Coastal deserts form where cold ocean currents cool air over the sea, reducing evaporation and moisture — air reaches land too dry for significant rainfall (e.g. Namib Desert, cooled by Benguela Current) (1).`,
-        marks_scheme: '1 mark: most hot deserts located around 20–30° N and S of equator in subtropical high-pressure belt. 1 mark: at equator air rises and loses moisture; at 30° it descends, warming and creating stable cloudless conditions. 1 mark: rain shadow deserts form in lee of mountain ranges (e.g. Atacama behind Andes). 1 mark: coastal deserts form where cold ocean currents cool air, reducing evaporation (e.g. Namib).'
-      },
-      {
-        q: 'Explain the adaptations of plants (xerophytes) to survive in hot desert environments.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Cacti (e.g. saguaro cactus) have thick, waxy stems to reduce water loss through transpiration; their stems expand accordion-like to store large volumes of water after rainfall (1).\n• Shallow but extensive root systems spread wide to capture moisture from even light rain before it evaporates; some plants also have deep tap roots to reach groundwater (1).\n• Spines replace leaves to reduce surface area for transpiration; spines also provide shade to the stem surface and deter herbivores (1).\n• Some plants (ephemeral annuals) complete their entire life cycle — germinating, flowering, and setting seed — within weeks of rare rainfall, remaining dormant as seeds for years between events (1).`,
-        marks_scheme: '1 mark: thick waxy stems reduce transpiration and expand to store water after rainfall. 1 mark: shallow extensive root systems capture moisture from light rain; some have deep tap roots to groundwater. 1 mark: spines replace leaves reducing surface area for transpiration and deterring herbivores. 1 mark: ephemeral annuals complete life cycle within weeks of rainfall and remain dormant as seeds between events.'
-      },
-      {
-        q: 'Explain the causes of desertification in the Sahel region of Africa.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Overgrazing — rapidly growing populations mean more livestock per hectare; animals strip vegetation from the surface, exposing bare soil to wind and water erosion (1).\n• Deforestation — trees are cut for fuelwood (the primary energy source for over 80% of rural families in sub-Saharan Africa); without tree roots, soil is no longer held together and is blown or washed away (1).\n• Over-cultivation — soils are cultivated too intensively without allowing fallow periods to recover nutrients; yields decline and eventually the land can no longer support crops (1).\n• Climate change — the Sahel has experienced declining and increasingly unreliable rainfall since the 1970s — droughts are more frequent and severe, reducing vegetation cover and accelerating soil erosion (1).\n(Example: Niger, Burkina Faso, Chad — millions of people at risk of food insecurity due to desertification.)`,
-        marks_scheme: '1 mark: overgrazing — more livestock strips vegetation exposing soil to erosion. 1 mark: deforestation — trees cut for fuelwood removing root systems that hold soil. 1 mark: over-cultivation — soils too intensively farmed without fallow periods, yields decline. 1 mark: climate change — declining and unreliable rainfall since 1970s, more frequent droughts.'
-      },
-      {
-        q: 'Describe and explain one strategy used to reduce desertification.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• The Great Green Wall (Africa) — an ambitious project to plant a 8,000 km wall of trees and vegetation across the Sahel from Senegal to Djibouti to halt the advance of the Sahara (1).\n• Trees are planted to bind soil, reduce wind erosion, and restore the water cycle through increased transpiration and interception; they also provide fuelwood and food (e.g. gum arabic from acacia trees provides income) (1).\n• The programme involves local communities in planting and maintenance, reducing overgrazing pressure and providing sustainable livelihoods, which reduces the poverty that drives overuse of land (1).\n• By 2020, the UNCCD reported about 18 million hectares restored across the wider programme area — well short of the 100 million hectare target; by 2030 it aims to sequester 250 million tonnes of carbon and create 10 million jobs (1).`,
-        marks_scheme: '1 mark: Great Green Wall — 8000 km project to plant trees and vegetation across Sahel. 1 mark: trees bind soil, reduce wind erosion and restore water cycle; provide fuelwood and food income. 1 mark: involves local communities in planting, reducing overgrazing and providing sustainable livelihoods. 1 mark: by 2022, ~18 million hectares restored; UN estimates 250 million tonnes carbon sequestered and 10 million jobs created.'
-      },
-    ],
-    red: [
-      {
-        q: 'Evaluate the challenges and opportunities that hot desert environments offer for human development. [6 marks]',
-        marks: 6, tier: 'red',
-        modelAnswer: `Opportunities:\n• Mineral and energy resources — deserts are rich in oil and gas (Arabian Peninsula — Saudi Arabia's Ghawar oil field, largest in the world) and minerals; the Atacama contains vast lithium reserves critical for EV batteries (1).\n• Solar energy — hot deserts receive more solar radiation than anywhere else on Earth — ideal for large-scale solar farms (e.g. Morocco's Noor Ouarzazate complex, generating 580 MW) (1).\n• Tourism — unique landscapes, extreme experiences (e.g. Dubai desert safaris), and clear skies attract tourists, generating significant income (1).\nChallenges:\n• Extreme heat — working conditions are dangerous; construction, agriculture, and infrastructure require expensive cooling systems and adapted technologies (1).\n• Water scarcity — all human activities require water; desalination is expensive and energy-intensive (e.g. Saudi Arabia spends billions of dollars a year on desalination) (1).\n• Remote locations — transport infrastructure is costly to build and maintain across vast desert distances, making access to markets difficult (1).\nConclusion:\n• Hot deserts offer significant opportunities particularly for energy-rich countries, but their development depends heavily on available capital — resource-poor developing nations face extreme challenges that the revenue from resources may not offset (1).`,
-        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of opportunities and challenges with named examples and a conclusion linking to available capital. Level 2 (3-4 marks): covers both sides with some specific detail. Level 1 (1-2 marks): basic points. Credit: mineral/energy resources (Arabian oil, Atacama lithium); solar energy (Morocco Noor 580 MW); extreme heat makes working conditions dangerous; water scarcity requires expensive desalination.'
-      },
-      {
-        q: '"Climate change rather than human activity is the main cause of desertification." Discuss this statement. [8 marks]',
-        marks: 8, tier: 'red',
-        modelAnswer: `Climate change as a cause:\n• Sahel rainfall fell by 25–40% between the wet 1950s–60s and the drought decades of the 1970s–80s; it has partly recovered since the 1990s but is more erratic, and higher temperatures increase drought stress (1).\n• Increased frequency and severity of droughts reduce vegetation cover, leaving soil exposed and vulnerable to erosion — the 1984 Ethiopian famine was triggered by drought (worsened by civil war) (1).\n• Rising temperatures increase evaporation rates, further reducing soil moisture and stressing plants even where rainfall is unchanged (1).\nHuman activity as a cause:\n• Overgrazing is widely considered the primary driver in the Sahel — livestock populations have grown faster than the land can support, degrading vegetation far beyond what climate change alone would cause (1).\n• Deforestation removes vegetation that protects and enriches soil; cleared land in the Sahel erodes much faster than land with tree cover (1).\n• Unsustainable farming practices — monoculture, over-irrigation causing salinisation — degrade land independently of climate (e.g. Aral Sea basin — Soviet-era irrigation caused severe desertification) (1).\nInteraction:\n• Climate change and human activity are interrelated — drought stress makes land more vulnerable to overgrazing damage; poverty drives unsustainable land use that climate change then amplifies (1).\nConclusion:\n• Neither factor alone adequately explains desertification — they interact and reinforce each other. In the Sahel, human activity (overgrazing, deforestation) appears to be the more proximate cause, but climate change increasingly amplifies vulnerability. Addressing desertification requires tackling both: reducing unsustainable land use while mitigating climate change through global emissions reductions (1).`,
-        marks_scheme: 'Level 3 (7-8 marks): balanced discussion of climate change and human activity as causes, recognising their interaction, with a nuanced conclusion. Level 2 (4-6 marks): covers both causes but limited integration or examples. Level 1 (1-3 marks): basic points about one cause. Credit: Sahel rainfall fell 25–40% from the 1950s–60s to the 1970s–80s; overgrazing widely considered primary driver; deforestation greatly increases erosion; climate change and human activity interact and reinforce each other.'
-      },
-    ],
-  },
-
-  /* ─────────────────────────────────────────────────────────── 2.1 Urbanisation and Urban Change */
-  '2.1': {
-    green: [
-      {
-        q: 'State what is meant by urbanisation.',
-        marks: 2, tier: 'green',
-        modelAnswer: `Urbanisation is the process by which an increasing proportion of a country's population lives in urban areas (towns and cities) rather than rural areas (1). It is caused by rural-to-urban migration and natural population increase within cities, and it is associated with economic development as countries industrialise (1).`,
-        marks_scheme: '1 mark: urbanisation is increasing proportion of population living in urban areas. 1 mark: caused by rural-to-urban migration and natural increase, associated with industrialisation.'
-      },
-      {
-        q: 'State two differences in the rate of urbanisation between HICs and LICs.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• HICs (e.g. UK, USA) have slow or stagnant rates of urbanisation as they are already highly urbanised (typically 75–85% urban); LICs and MICs (e.g. Nigeria, India) have rapid urbanisation rates as they are still industrialising (1).\n• In some HICs, counter-urbanisation (movement from cities to rural areas) partially offsets urbanisation; in LICs, strong rural-to-urban migration continues to drive rapid urban growth (1).`,
-        marks_scheme: '1 mark: HICs have slow/stagnant urbanisation as already highly urbanised; LICs have rapid rates as still industrialising. 1 mark: counter-urbanisation occurs in some HICs; strong rural-to-urban migration continues in LICs.'
-      },
-      {
-        q: 'Identify two push factors that cause people to migrate from rural to urban areas in developing countries.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Poverty and lack of economic opportunity — few jobs available in rural areas; subsistence farming provides an uncertain and low income (1).\n• Natural disasters and environmental change — drought, flooding, and desertification can destroy farming livelihoods, forcing people to seek opportunities in cities (1).\n(Also accept: conflict, lack of services, mechanisation of agriculture reducing farm employment.)`,
-        marks_scheme: '1 mark: poverty and lack of economic opportunity — few jobs in rural areas. 1 mark: natural disasters and environmental change destroying farming livelihoods.'
-      },
-      {
-        q: 'State what is meant by a megacity.',
-        marks: 1, tier: 'green',
-        modelAnswer: `A megacity is an urban area with a population of more than 10 million people (1). Examples include Tokyo (37 million), Delhi (32 million), Mexico City (22 million), and São Paulo (22 million).`,
-        marks_scheme: '1 mark: a megacity is an urban area with a population of more than 10 million people.'
-      },
-    ],
-    amber: [
-      {
-        q: 'Explain the differences in urban land use patterns between HICs and LICs.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• In HICs, land use typically follows the Burgess concentric zone model — a CBD in the centre, surrounded by inner-city terraced housing (often gentrified), then inter-war suburbs, with newer affluent housing on the urban fringe; the poorest tend to live in inner-city areas (1).\n• In LICs and MICs, the pattern is often reversed — the wealthy live near the city centre or in gated communities on the outskirts, while the poorest live in informal squatter settlements (favelas, barrios) on the urban fringe or in environmentally hazardous areas (1).\n• LIC cities often lack formal planning — informal settlements (shanty towns) grow spontaneously wherever land is unoccupied, often on steep slopes, riverbanks, or near industrial sites (1).\n• HICs have well-defined suburban areas with planned infrastructure; LIC cities have rapidly growing peri-urban zones with limited access to clean water, sanitation, electricity, and roads (1).`,
-        marks_scheme: '1 mark: HICs follow concentric zone model — CBD, inner-city housing, inter-war suburbs, affluent fringe; poorest in inner city. 1 mark: LICs often reversed — wealthy near centre or in gated communities; poorest in informal settlements on urban fringe. 1 mark: LIC cities often lack formal planning — informal settlements grow wherever land is unoccupied. 1 mark: HICs have planned suburban infrastructure; LIC peri-urban zones lack clean water, sanitation, and roads.'
-      },
-      {
-        q: 'Explain why squatter settlements develop in cities in LICs and MICs.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Rapid rural-to-urban migration brings more people to cities than formal housing can accommodate — migrants cannot afford formal housing and so occupy unused land illegally, building makeshift shelters from salvaged materials (1).\n• Governments in LICs lack the resources to build enough affordable housing to keep pace with population growth — urban populations grow by around 3–4% per year in cities like Lagos and Dhaka (1).\n• Migrants are often attracted by the perceived economic opportunities of the city; on arrival they settle close to industrial or commercial areas where work might be found (1).\n• Land ownership laws are weak or unenforced, making informal occupation possible; over time, settlements may be given legal recognition (e.g. favelas in Rio de Janeiro) (1).`,
-        marks_scheme: '1 mark: rapid rural-to-urban migration brings more people than formal housing can accommodate; migrants occupy land illegally. 1 mark: LIC governments lack resources to build enough affordable housing to keep pace. 1 mark: migrants attracted by economic opportunities settle near industrial areas where work may be found. 1 mark: weak land ownership laws make informal occupation possible; over time settlements may gain legal recognition.'
-      },
-      {
-        q: 'Describe and explain one way in which squatter settlements can be improved.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Site and service schemes — the government provides a basic plot of land with access to essential infrastructure (running water, sanitation, electricity connections, roads); residents build their own homes using their own labour (self-help) (1).\n• This is more affordable for governments than building new housing from scratch, and residents take pride in their homes, maintaining and improving them over time (1).\n• Example: in Mumbai, wholesale clearance of slums such as Dharavi has often been criticised for displacing communities and livelihoods, which is why in-situ upgrading and site-and-service approaches are often preferred (1).\n• NGO-supported self-help schemes in Kibera, Nairobi have successfully upgraded housing, provided clean water points and improved sanitation — disease rates have fallen and community cohesion improved (1).`,
-        marks_scheme: '1 mark: site and service schemes — government provides plot with basic infrastructure; residents build own homes (self-help). 1 mark: more affordable for governments than building from scratch; residents maintain and improve homes over time. 1 mark: named example with specific outcome (e.g. Dharavi, Mumbai or Kibera, Nairobi). 1 mark: improvements include better housing, clean water, improved sanitation, and reduced disease rates.'
-      },
-      {
-        q: 'Explain how economic development leads to changes in land use in a city.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• As cities grow economically, the CBD expands outward — shops, offices, and financial institutions replace older residential housing; land values in the centre rise significantly (1).\n• Deindustrialisation in HICs leads to derelict industrial land becoming available for regeneration — former factory sites are redeveloped as retail, leisure, or housing (e.g. London Docklands) (1).\n• Suburbanisation occurs as higher incomes allow people to move to the urban fringe, creating low-density residential areas; this is facilitated by improved transport links and car ownership (1).\n• In LIC/MIC cities, rapid economic growth attracts foreign investment — new business districts (e.g. Gurgaon, India; Shanghai's Pudong district) are created, often displacing residential and agricultural land on the city edge (1).`,
-        marks_scheme: '1 mark: as cities grow economically the CBD expands, replacing residential housing; land values rise. 1 mark: deindustrialisation frees derelict industrial land for regeneration as retail, leisure, or housing. 1 mark: suburbanisation occurs as higher incomes allow movement to urban fringe with improved transport. 1 mark: in LIC/MIC cities rapid growth attracts foreign investment creating new business districts, displacing residential and agricultural land.'
-      },
-    ],
-    red: [
-      {
-        q: 'Evaluate the success of strategies used to manage urbanisation in either a LIC/MIC or HIC city. [6 marks]',
-        marks: 6, tier: 'red',
-        modelAnswer: `(Rio de Janeiro, Brazil — MIC example — credit any appropriate named city with specific evidence.)\n• Favela Bairro project (Rio) — upgrading of favelas rather than clearance; paved streets, water and sewage connections, schools, and health centres built in dozens of favelas, benefiting hundreds of thousands of residents (1). Successes: improved living conditions, tenure security, reduced disease; limitations: only reached a fraction of the 1.4 million favela residents; crime and gang control remained a problem in many upgraded areas (1).\n• UPP (Pacifying Police Units) — police occupied and "pacified" key favelas; initially reduced crime and attracted investment but by 2016 violence had returned to many areas as funding fell (1).\n• Porto Maravilha (Port Revitalisation) — redeveloping the port area; attracted investment and improved infrastructure but criticised for displacing poorer residents through gentrification (1).\n• Overall: strategies have had mixed success — physical improvements have been made but social inequality, crime, and lack of economic opportunity remain severe; the scale of the challenge (over 1 million people in informal settlements) means that individual projects have limited overall impact without broader economic reform (1).\nConclusion: urban management strategies work best when they involve communities in planning, provide long-term funding, and address both physical infrastructure and economic opportunity simultaneously (1).`,
-        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of named city strategies with specific evidence of successes and limitations, plus an overall conclusion. Level 2 (3-4 marks): some specific detail about strategies but limited evaluation or conclusion. Level 1 (1-2 marks): basic description of one strategy. Credit: Favela Bairro improved 70 favelas benefiting 250,000 residents; UPP initially reduced crime but violence returned; Porto Maravilha attracted investment but displaced residents; scale of challenge limits impact of individual projects.'
-      },
-      {
-        q: '"Rapid urbanisation creates more problems than opportunities." To what extent do you agree? Refer to named examples. [8 marks]',
-        marks: 8, tier: 'red',
-        modelAnswer: `Problems of rapid urbanisation:\n• Housing shortages — rapid growth outpaces construction; informal settlements with poor sanitation and overcrowding develop (e.g. Dharavi, Mumbai — 1 million people in 2 km², 1 toilet per 1,440 people) (1).\n• Traffic congestion and poor air quality — Lagos, Nigeria is one of the world's most congested cities; air pollution from vehicles and industry causes serious respiratory health problems (1).\n• Strain on services — schools, hospitals, and clean water supply unable to keep pace with population growth; waterborne disease is widespread in areas without clean water (e.g. cholera in informal settlements in Nairobi) (1).\n• Environmental degradation — deforestation on urban fringes, river pollution from untreated sewage and industrial waste, increased flood risk from impermeable surfaces (1).\nOpportunities of urbanisation:\n• Economic growth — cities drive national economic development; urban workers are on average much more productive than rural workers; cities in MICs like China have lifted hundreds of millions out of poverty (1).\n• Better access to services — cities generally offer better hospitals, schools, and employment than rural areas — rural-to-urban migrants typically experience improved incomes and life expectancy (1).\n• Innovation and creativity — cities concentrate educated populations and foster innovation; economic agglomeration effects attract investment (e.g. Silicon Valley, Shenzhen's tech industry) (1).\nConclusion:\n• Whether rapid urbanisation creates more problems or opportunities depends on the pace of change and the capacity of governments to manage it. Where urbanisation is managed with investment in infrastructure and services, it generates enormous benefits; where it outpaces government capacity (most LIC/MIC cities), severe problems dominate. A managed, slower rate of urbanisation with investment in affordable housing and services offers the best outcomes (1).`,
-        marks_scheme: 'Level 3 (7-8 marks): balanced discussion of problems and opportunities with named examples and a conclusion about the role of managed urbanisation. Level 2 (4-6 marks): covers both sides with some specific examples. Level 1 (1-3 marks): basic points on one side. Credit: housing shortages and informal settlements (Dharavi); traffic congestion and air pollution (Lagos); economic growth — urban workers 3× more productive than rural; better access to healthcare, schools, and employment.'
-      },
-    ],
-  },
-
-  /* ─────────────────────────────────────────────────────────── 2.2 UK Cities */
-  '2.2': {
-    green: [
-      {
-        q: 'State two characteristics of the Central Business District (CBD) of a UK city.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• High land values — the CBD is the most accessible point of the city; competition for land drives prices up, resulting in high-rise buildings to maximise floor space per unit of land (1).\n• High concentration of retail and commercial functions — major department stores, banks, offices, and entertainment venues cluster in the CBD to benefit from maximum customer accessibility (1).\n(Also accept: traffic congestion; pedestrianised shopping streets; low residential population; high daytime footfall.)`,
-        marks_scheme: '1 mark: high land values — competition for land drives prices up resulting in high-rise buildings. 1 mark: high concentration of retail and commercial functions — shops, banks, offices cluster for maximum customer accessibility.'
-      },
-      {
-        q: 'Identify two causes of inner-city deprivation in UK cities.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Deindustrialisation — the loss of manufacturing industry in the 20th century left many inner-city areas with high unemployment, derelict land, and declining populations (1).\n• Poor quality housing stock — much inner-city housing dates from the Victorian era; terraced housing is often in poor repair, damp, and overcrowded (1).\n(Also accept: poor educational attainment; high crime rates; out-migration of wealthier residents; poor transport links to suburban employment.)`,
-        marks_scheme: '1 mark: deindustrialisation — loss of manufacturing left areas with high unemployment and derelict land. 1 mark: poor quality housing stock — much inner-city housing is Victorian era, often in poor repair and damp.'
-      },
-      {
-        q: 'State what is meant by counter-urbanisation.',
-        marks: 2, tier: 'green',
-        modelAnswer: `Counter-urbanisation is the movement of people from urban areas to rural areas or smaller towns on the urban fringe (1). It is driven by factors such as lower house prices, improved quality of life, car ownership, and improved transport links that allow commuting, and has led to growth in "commuter belt" villages around major UK cities (1).`,
-        marks_scheme: '1 mark: counter-urbanisation is movement of people from urban areas to rural areas or smaller towns. 1 mark: driven by lower house prices, improved quality of life, car ownership, and transport links allowing commuting.'
-      },
-      {
-        q: 'Name one area of regeneration in a UK city and state one aim of the regeneration project.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• London Docklands / Manchester Salford Quays / Birmingham Eastside / Leeds South Bank — credit any named UK urban regeneration area (1).\n• Aim: to transform derelict post-industrial land into a mixed-use area of housing, offices, retail, and leisure, attracting investment and creating employment to reduce deprivation (1).`,
-        marks_scheme: '1 mark: name a specific UK urban regeneration area (e.g. London Docklands, Salford Quays). 1 mark: state one aim — to transform derelict post-industrial land into mixed-use area attracting investment and creating employment.'
-      },
-    ],
-    amber: [
-      {
-        q: 'Explain the social and economic impacts of deindustrialisation on UK cities.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Mass unemployment — the decline of traditional industries (steel, coal, textiles, shipbuilding) from the 1970s onward caused sudden and large-scale job losses in cities such as Sheffield, Manchester, and Liverpool (e.g. Sheffield lost tens of thousands of steel industry jobs in the 1970s–80s) (1).\n• Urban deprivation — unemployment drove poverty, poor housing conditions, and declining health; areas such as Toxteth (Liverpool) and Moss Side (Manchester) experienced severe deprivation and social unrest in the 1980s (1).\n• Population decline — wealthier residents left depressed inner-city areas for suburbs or new towns; some UK cities (Liverpool, Glasgow) lost over 30% of their population between 1960 and 1990 (1).\n• Loss of tax base — declining economic activity reduced local government revenue, making it harder to invest in services, housing, and infrastructure — creating a spiral of decline (1).`,
-        marks_scheme: '1 mark: mass unemployment — decline of traditional industries caused large-scale job losses (e.g. Sheffield lost tens of thousands of steel jobs in the 1970s–80s). 1 mark: urban deprivation — unemployment drove poverty, poor housing, declining health, and social unrest. 1 mark: population decline — wealthier residents left inner-city areas; some cities lost over 30% of population. 1 mark: loss of tax base — declining economic activity reduced local government revenue creating a spiral of decline.'
-      },
-      {
-        q: 'Explain how urban regeneration has changed one area of a UK city. Refer to named examples.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `(London Docklands / Salford Quays — credit any named area with specific detail.)\n• London Docklands Development Corporation (LDDC) — established 1981 to regenerate 22 km² of derelict dockland in East London; attracted £7.7 billion of private investment by 1998 (1).\n• Physical changes: Canary Wharf developed as a major financial centre; the DLR extended connectivity; over 24,000 new homes built; around 2,700 businesses were trading in the area by 1998 (1).\n• Economic impacts: 100,000+ jobs created in financial and media sectors; Canary Wharf became the UK's second most important financial district after the City of London (1).\n• Social tensions: rapid gentrification raised house prices and rents, displacing some of the original working-class community; critics argue regeneration benefited wealthy incomers more than existing residents (1).`,
-        marks_scheme: '1 mark: name a specific regeneration area and give a key statistic (e.g. LDDC attracted £7.7 billion private investment). 1 mark: describe physical changes — Canary Wharf, DLR extension, 24,000 new homes. 1 mark: describe economic impacts — 100,000+ jobs in financial and media sectors. 1 mark: describe social tensions — gentrification raised prices and rents, displacing original working-class community.'
-      },
-      {
-        q: 'Describe and explain the challenges of managing urban growth on the rural-urban fringe.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Pressure for new housing — population growth and household formation in and around UK cities creates demand for new homes; the rural-urban fringe is the main available location, but development threatens agricultural land and wildlife habitats (1).\n• Greenbelt policy restricts development around major cities to prevent urban sprawl — this protects open space and countryside but can push house prices up by limiting supply (1).\n• Traffic congestion — new suburban and peri-urban development increases car dependency; rural roads and ring roads become congested, increasing pollution and travel times (1).\n• Loss of services in rural areas — as new commuter suburbs grow, local shops and schools in surrounding villages lose trade; local character changes as urban culture and residents move in (1).`,
-        marks_scheme: '1 mark: pressure for new housing threatens agricultural land and wildlife habitats on rural-urban fringe. 1 mark: greenbelt policy restricts development to prevent urban sprawl but can push house prices up. 1 mark: traffic congestion from new suburban development increases pollution and travel times. 1 mark: loss of services in rural areas as new commuter suburbs change local character and reduce trade.'
-      },
-      {
-        q: 'Explain why some parts of UK cities are more deprived than others.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Historical industrial decline — inner-city areas built around Victorian industries (e.g. Sheffield's Lower Don Valley, formerly steel; Manchester's Moss Side) have suffered from deindustrialisation; unemployment, poverty and poor housing have persisted for decades (1).\n• Selective out-migration — better-off residents have moved to suburbs or commuter towns, leaving behind those who cannot afford to move; this concentrates deprivation in specific areas (1).\n• Poor built environment — Victorian terraced housing is often in poor structural condition; high-rise estates built in the 1960s (e.g. Aylesbury Estate, London) have poor design, maintenance issues, and are stigmatised (1).\n• Inequalities in public investment — some areas attract regeneration funding (London Docklands) while others remain neglected, creating stark contrasts within the same city (1).`,
-        marks_scheme: '1 mark: historical industrial decline left inner-city areas with unemployment, poverty, and poor housing persisting for decades. 1 mark: selective out-migration of better-off residents concentrates deprivation in specific areas. 1 mark: poor built environment — Victorian housing in poor condition; 1960s high-rise estates with design issues. 1 mark: inequalities in public investment — some areas attract regeneration funding while others remain neglected.'
-      },
-    ],
-    red: [
-      {
-        q: 'Evaluate how successful urban regeneration has been in improving the quality of life for residents in UK cities. [6 marks]',
-        marks: 6, tier: 'red',
-        modelAnswer: `Successes:\n• Physical environment improved dramatically — derelict industrial land converted to offices, apartments, and leisure facilities; cities like Manchester, Leeds, and Birmingham now have vibrant city centres attracting significant investment (1).\n• Employment created — Canary Wharf created 100,000+ jobs; MediaCityUK at Salford Quays created thousands of media and digital jobs (BBC, ITV) and attracted over £650 million of investment (1).\n• Cultural regeneration — galleries, restaurants, and events venues have made regenerated areas attractive to visitors and the creative economy (e.g. Baltic and Sage Gateshead — now The Glasshouse — on the Tyne) (1).\nLimitations:\n• Gentrification and displacement — rising house prices and rents in regenerated areas push out lower-income original residents; London Docklands is often cited as an example of regeneration that benefited wealthy newcomers rather than original communities (1).\n• Uneven distribution — regeneration has concentrated on commercially attractive sites (waterfront, central areas); more deprived neighbourhoods away from these hotspots remain neglected (1).\nConclusion:\n• Urban regeneration has significantly improved the physical environment and economy of many UK cities, but has too often prioritised economic and property-led growth over social justice; improvements in quality of life for the most deprived residents have been less consistent and unequal geographically (1).`,
-        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of successes and limitations of regeneration with named examples and specific evidence, and an overall conclusion. Level 2 (3-4 marks): describes successes and limitations with some specific detail. Level 1 (1-2 marks): basic points about regeneration. Credit: Canary Wharf 100,000+ jobs; MediaCityUK 7,000 media jobs; gentrification and displacement of lower-income residents; uneven distribution focusing on commercially attractive sites.'
-      },
-      {
-        q: '"The challenges of UK cities are now mainly social rather than economic." Discuss this statement. [8 marks]',
-        marks: 8, tier: 'red',
-        modelAnswer: `Social challenges:\n• Deprivation and inequality remain significant — UK cities contain both the wealthiest and most deprived communities in the country; in London, life expectancy differs by several years between the richest and poorest boroughs, and by over a decade between some wards (1).\n• Housing affordability — the average London house price in 2024 was ~£500,000; average income ~£40,000; millions priced out of ownership and spending 50%+ of income on rent (1).\n• Ethnic and racial inequalities — segregation persists in many UK cities; ethnic minority communities often face higher poverty rates, overcrowded housing, and poorer health outcomes (1).\n• Mental health and loneliness — urban isolation, particularly in high-rise estates and among the elderly, is increasingly recognised as a major public health challenge (1).\nEconomic challenges (still significant):\n• Regional economic inequality — Northern cities continue to lag London and the South-East in wages, productivity, and investment despite decades of regional policy ("Levelling Up") (1).\n• Post-pandemic high street decline — retail closures have accelerated in many city centres; unemployment in some urban areas remains above national average (1).\n• Skills mismatch — deindustrialised cities struggle to retain young talent as graduates move to London; knowledge economy jobs cluster disproportionately in the capital (1).\nConclusion:\n• Economic and social challenges are deeply intertwined — poverty drives poor social outcomes, and social disadvantage limits economic participation. While the nature of economic challenges has shifted from industrial decline to knowledge-economy inequality, economic issues remain fundamental; the statement somewhat overstates the social dimension. True improvement requires addressing both simultaneously (1).`,
-        marks_scheme: 'Level 3 (7-8 marks): balanced discussion of social and economic challenges with named examples and a nuanced conclusion about their interconnection. Level 2 (4-6 marks): covers both sides with some development. Level 1 (1-3 marks): basic points about one type of challenge. Credit: London inequality — life expectancy gaps of several years between richest and poorest boroughs; housing affordability (average London house ~£500k); Northern cities lag London in wages and productivity; economic and social challenges are deeply intertwined.'
-      },
-    ],
-  },
-
-  /* ─────────────────────────────────────────────────────────── 2.3 Global Development */
-  '2.3': {
-    green: [
-      {
-        q: 'State what is meant by the Human Development Index (HDI).',
-        marks: 2, tier: 'green',
-        modelAnswer: `The HDI is a composite measure of development combining three indicators: life expectancy (health), mean and expected years of schooling (education), and Gross National Income (GNI) per capita at purchasing power parity (standard of living) (1). It produces a score between 0 and 1; countries above 0.8 are considered "very high development" (e.g. Norway: 0.966), while scores below 0.55 indicate low development (e.g. Niger: 0.394) (1).`,
-        marks_scheme: '1 mark: HDI combines life expectancy, education (mean and expected years of schooling), and GNI per capita. 1 mark: produces score between 0 and 1 — above 0.8 is very high development (e.g. Norway 0.966); below 0.55 is low development.'
-      },
-      {
-        q: 'Identify two social indicators of development.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Life expectancy — the average number of years a person born today can expect to live; generally higher in more developed countries (e.g. Japan: 84 years; Chad: 54 years) (1).\n• Infant mortality rate — the number of children who die before their first birthday per 1,000 live births; inversely correlated with development (e.g. Finland: 2; Sierra Leone: 77 per 1,000) (1).\n(Also accept: literacy rate, years of schooling, access to clean water/sanitation, doctors per 1,000 people.)`,
-        marks_scheme: '1 mark: life expectancy — average years a person born today can expect to live; generally higher in more developed countries. 1 mark: infant mortality rate — number of children dying before first birthday per 1,000 live births; inversely correlated with development.'
-      },
-      {
-        q: 'State two reasons why GDP per capita may be a limited measure of development.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• GDP per capita is an average — it conceals enormous inequalities within a country; a high average may mask extreme poverty among the majority while a small elite holds most wealth (e.g. Nigeria has a high GDP but 40% live below the poverty line) (1).\n• GDP measures economic output but not welfare — it includes negative activities (clearing up pollution, treating disease caused by poor conditions) and excludes unpaid work, leisure, and environmental quality (1).`,
-        marks_scheme: '1 mark: GDP per capita is an average concealing enormous inequality within a country. 1 mark: GDP measures economic output but not welfare, excluding unpaid work and environmental quality.'
-      },
-      {
-        q: 'State what is meant by the North-South divide in terms of global development.',
-        marks: 2, tier: 'green',
-        modelAnswer: `The North-South divide refers to the broad contrast in levels of development between the wealthy, industrialised countries of the "Global North" (Europe, North America, Australia, Japan) and the less developed countries of the "Global South" (much of Africa, Asia, and Latin America) (1). It is a generalisation — some southern countries (e.g. Singapore, UAE) are highly developed, and some northern countries have pockets of severe poverty — but it broadly captures the global pattern of inequality (1).`,
-        marks_scheme: '1 mark: North-South divide is the broad contrast in development between wealthy Global North and less developed Global South. 1 mark: it is a generalisation as some southern countries are highly developed and some northern countries have pockets of poverty, but broadly captures global inequality.'
-      },
-    ],
-    amber: [
-      {
-        q: 'Explain how physical geography can influence a country\'s level of development.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Landlocked countries have limited access to international trade without costly overland transport — sub-Saharan Africa contains many landlocked LICs (e.g. Mali, Niger, Chad) that face higher trade costs, reducing economic growth (1).\n• Natural hazard risk — countries in disaster-prone regions (e.g. Bangladesh — flooding; Haiti — earthquakes) face repeated economic setbacks as infrastructure and agricultural land is destroyed; recovery costs divert resources from development investment (1).\n• Climate — tropical countries often have hot, humid climates conducive to disease vectors such as malaria mosquitoes; malaria costs Africa an estimated $12 billion/year in lost productivity and healthcare costs, hindering development (1).\n• Natural resources — countries with abundant resources (oil: Saudi Arabia; minerals: Botswana's diamonds) can generate wealth, but the "resource curse" shows that resource wealth does not always translate to broad development (1).`,
-        marks_scheme: '1 mark: landlocked countries face higher trade costs reducing economic growth. 1 mark: natural hazard risk causes repeated economic setbacks diverting resources from development. 1 mark: tropical climate conducive to disease vectors — malaria costs Africa $12 billion/year in lost productivity. 1 mark: natural resources can generate wealth but resource curse shows this does not always translate to broad development.'
-      },
-      {
-        q: 'Explain the role of international trade in causing and maintaining global development inequalities.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Unequal terms of trade — LICs often export raw materials (commodities) and import manufactured goods; commodity prices are volatile and low relative to manufactured products, locking LICs in a pattern of low-value production (1).\n• Trade barriers — HIC tariffs and subsidies protect their own farmers and industries, preventing LICs from competing in valuable markets (e.g. EU agricultural subsidies disadvantage African farmers in EU markets) (1).\n• TNCs and profit repatriation — transnational corporations in LICs extract profits back to HICs; limited economic multiplier effect stays in the host country (1).\n• However, trade has also enabled development — East Asian "Tiger" economies (South Korea, Taiwan, Singapore) used export-led manufacturing to achieve rapid development; China's trade growth lifted 800 million out of poverty since 1980 (1).`,
-        marks_scheme: '1 mark: unequal terms of trade — LICs export raw materials and import manufactured goods; commodity prices low relative to manufactured products. 1 mark: trade barriers — HIC tariffs and subsidies protect own farmers preventing LICs competing. 1 mark: TNC profit repatriation — limited economic multiplier stays in host country. 1 mark: trade has also enabled development — East Asian Tigers and China used export-led growth (800 million out of poverty since 1980).'
-      },
-      {
-        q: 'Explain how aid can help a country to develop. Refer to a named example.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Emergency/humanitarian aid — provides food, clean water, medicine, and shelter after disasters, preventing loss of life and allowing rapid recovery that maintains development progress (e.g. UN response to 2010 Haiti earthquake, providing emergency aid to 1.5 million people) (1).\n• Tied/bilateral aid — can fund major infrastructure projects (roads, dams, ports) that improve connectivity and economic productivity, though it may benefit donor-country firms rather than local industry (1).\n• Multilateral aid through organisations like the World Bank funds healthcare (e.g. polio eradication — 3 billion children vaccinated; cases reduced 99.9% since 1988) and education, building long-term human capital (1).\n• Microfinance (e.g. Grameen Bank, Bangladesh) provides small loans to entrepreneurs — particularly women — to start businesses, generating income and reducing poverty; 9 million borrowers in Bangladesh alone (1).`,
-        marks_scheme: '1 mark: emergency aid prevents loss of life after disasters allowing rapid recovery. 1 mark: tied/bilateral aid funds major infrastructure projects improving connectivity and productivity. 1 mark: multilateral aid funds healthcare and education building long-term human capital. 1 mark: microfinance (e.g. Grameen Bank) provides small loans to entrepreneurs especially women, generating income and reducing poverty.'
-      },
-      {
-        q: 'Explain why some countries have experienced more rapid development than others since 2000.',
-        marks: 5, tier: 'amber',
-        modelAnswer: `• Political stability — countries with stable governance and rule of law (e.g. Botswana, Rwanda) attract foreign investment and can implement long-term development plans; countries with conflict or corruption (e.g. DRC, Somalia) struggle to develop (1).\n• Foreign Direct Investment — globalisation has enabled MICs with educated, low-cost workforces to attract TNC manufacturing — China, Vietnam, and Bangladesh have experienced rapid development through export-led industrialisation (1).\n• Good governance and investment in education and health — South Korea and Singapore invested heavily in education from the 1960s onward; their highly skilled workforces attracted high-value industries (1).\n• China's state-led development model — the Chinese government directed investment into infrastructure, manufacturing, and exports; GDP per capita grew from ~$1,000 in 2000 to ~$12,500 by 2023 (1).\n• Debt burden — heavily indebted countries spend large proportions of government revenue on debt repayment, leaving less for health, education, and infrastructure — the World Bank estimates many LICs spend more on debt service than on healthcare (1).`,
-        marks_scheme: '1 mark: political stability attracts FDI and enables long-term development plans; conflict and corruption hinder development. 1 mark: FDI — countries with educated low-cost workforces attract TNC manufacturing enabling export-led growth. 1 mark: investment in education and health builds skilled workforces attracting high-value industries. 1 mark: debt burden — heavily indebted countries spend large revenue proportions on repayment leaving less for development. 1 mark: China\'s state-led development model directed investment into infrastructure and exports.'
-      },
-    ],
-    red: [
-      {
-        q: 'Evaluate the effectiveness of different strategies to reduce the development gap between HICs and LICs. [6 marks]',
-        marks: 6, tier: 'red',
-        modelAnswer: `Aid:\n• Emergency aid saves lives but does not address structural causes of underdevelopment; long-term aid dependency can undermine local industries (e.g. cheap food aid may undercut local farmers) (1).\n• Well-targeted development aid (microfinance, education, healthcare) can be transformative — PEPFAR (US AIDS programme) is estimated to have saved around 25 million lives, mostly in sub-Saharan Africa, although US aid cuts in 2025 threatened its future (1).\nFair Trade:\n• Guarantees higher prices for producers; improves farmers' incomes and community investment in education and healthcare (e.g. Fairtrade coffee co-operatives in Ethiopia receive a guaranteed minimum price plus a premium) — but reaches only a tiny fraction of global trade (1).\nDebt relief:\n• HIPC Initiative wrote off around $76 billion of debt for over 35 countries; freed up government spending for services — e.g. Tanzania used the savings to help abolish primary school fees (1) — but many LICs have accumulated new debt, particularly to Chinese lenders (1).\nFDI and trade:\n• Potentially the most powerful driver of development — as shown by China and South-East Asia — but benefits may flow to elites and TNCs rather than the poorest (1).\nConclusion:\n• No single strategy is sufficient; a combination tailored to the specific context of each country, combined with fairer global trade rules and governance improvements, offers the best hope — but fundamental reform of global economic systems is required for sustained reduction in the development gap (1).`,
-        marks_scheme: 'Level 3 (5-6 marks): evaluates multiple strategies (aid, fair trade, debt relief, FDI) with specific evidence and a conclusion about the need for combined approaches. Level 2 (3-4 marks): discusses some strategies with limited evaluation. Level 1 (1-2 marks): basic description of strategies. Credit: PEPFAR saved an estimated 25 million lives; Fairtrade gives Ethiopian farmers a guaranteed minimum price plus premium; HIPC Initiative wrote off $76 billion debt; FDI most powerful development driver but benefits may not reach poorest.'
-      },
-      {
-        q: '"Globalisation has widened rather than narrowed global development inequalities." Evaluate this statement. [8 marks]',
-        marks: 8, tier: 'red',
-        modelAnswer: `Evidence that globalisation has widened inequalities:\n• While some MICs have benefited enormously (China, India, Vietnam), the poorest LICs — particularly landlocked or conflict-affected nations in sub-Saharan Africa — have been largely bypassed by FDI and trade growth (1).\n• TNC activity concentrates in countries with existing advantages (infrastructure, education, political stability); the least developed countries lack the conditions to attract investment (1).\n• Profit repatriation — TNCs take profits back to HIC headquarters; tax avoidance (e.g. Apple, Google routing profits through Ireland/Netherlands) reduces tax revenues in LICs (1).\n• Unequal terms of trade persist — commodity prices remain depressed relative to manufactured goods; LIC primary exporters remain trapped in low-value chains (1).\nEvidence that globalisation has reduced inequalities:\n• Global extreme poverty (below $2.15/day) fell from 36% in 1990 to under 10% in 2019 — largely due to globalisation-driven growth in China, India, and South-East Asia (800 million lifted out of poverty in China alone) (1).\n• Access to mobile technology, information, and global markets has enabled entrepreneurship and development even in LICs — mobile banking (M-Pesa, which began in Kenya) reached over 50 million users across Africa, enabling financial inclusion for millions without bank accounts (1).\n• Global health and education outcomes have improved — child mortality has fallen by 60% since 1990; primary school enrollment has risen to over 90% globally (1).\nConclusion:\n• Globalisation has produced a deeply uneven pattern of development — it has undoubtedly narrowed the gap between MICs (particularly in Asia) and HICs, but has left the poorest LICs further behind in relative terms. The statement is partially correct: within-country inequality has increased in many nations even as global averages improve. Globalisation's benefits are real but have been distributed profoundly unequally, reflecting and reinforcing existing power structures in the global economy (1).`,
-        marks_scheme: 'Level 3 (7-8 marks): balanced evaluation of evidence for and against the statement with specific examples and a nuanced conclusion about uneven distribution of globalisation\'s benefits. Level 2 (4-6 marks): covers both sides with some specific evidence. Level 1 (1-3 marks): basic points about globalisation and inequality. Credit: poorest LICs bypassed by FDI; TNC profit repatriation reduces tax revenue in LICs; global extreme poverty fell from 36% to under 10% since 1990; M-Pesa mobile banking reached 50 million users in Kenya.'
-      },
-    ],
-  },
-
-  /* ─────────────────────────────────────────────────────────── 3.1 Tectonic Hazards */
-  '3.1': {
-    green: [
-      {
-        q: 'State two differences between the primary and secondary effects of an earthquake.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Primary effects occur immediately as a direct result of the ground shaking — e.g. buildings collapsing, bridges falling, people being killed or injured by structural collapse (1).\n• Secondary effects are indirect consequences that occur in the hours, days, or weeks after the event — e.g. fires caused by ruptured gas mains, tsunamis triggered by offshore quakes, disease outbreaks from contaminated water, homelessness (1).`,
-        marks_scheme: '1 mark: primary effects occur immediately as direct result — buildings collapsing, people killed. 1 mark: secondary effects are indirect consequences in hours/days/weeks — fires, tsunamis, disease, homelessness.'
-      },
-      {
-        q: 'Identify the two types of plate boundary where earthquakes most commonly occur and give one example of each.',
-        marks: 4, tier: 'green',
-        modelAnswer: `• Destructive (convergent) boundary — oceanic crust subducts beneath continental or other oceanic crust; the friction as plates move past each other causes powerful earthquakes (e.g. Japan Trench — 2011 Tōhoku earthquake, magnitude 9.0) (1).\n• Conservative (transform) boundary — plates slide past each other horizontally; friction builds up and is released as earthquakes with no volcanic activity (e.g. San Andreas Fault, California — 1906 San Francisco earthquake) (1).\n(Also accept constructive boundaries for some earthquake activity — credit if explained.)`,
-        marks_scheme: '1 mark: destructive boundary — oceanic crust subducts causing powerful earthquakes (e.g. Japan Trench, 2011 Tōhoku M9.0). 1 mark: conservative boundary — plates slide past each other causing earthquakes with no volcanic activity (e.g. San Andreas Fault, 1906 San Francisco).'
-      },
-      {
-        q: 'State what is meant by the epicentre and focus of an earthquake.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• The focus (hypocentre) is the point within the Earth's crust where the earthquake originates — where the rock fractures and seismic energy is first released (1).\n• The epicentre is the point on the Earth's surface directly above the focus; it is where the greatest intensity of shaking is usually felt (1).`,
-        marks_scheme: '1 mark: focus is the point within the Earth where the earthquake originates and seismic energy is first released. 1 mark: epicentre is the point on the surface directly above the focus where greatest shaking intensity is felt.'
-      },
-      {
-        q: 'Name two types of tectonic plate boundary and state whether they are associated with constructive or destructive activity.',
-        marks: 2, tier: 'green',
-        modelAnswer: `• Constructive (divergent) boundary — plates move apart; magma rises to fill the gap, creating new oceanic crust and forming volcanic features (e.g. Mid-Atlantic Ridge — Iceland) (1).\n• Destructive (convergent) boundary — plates move together; one (usually oceanic) is subducted into the mantle; creates powerful earthquakes, explosive volcanoes, and ocean trenches (e.g. Pacific Ring of Fire) (1).`,
-        marks_scheme: '1 mark: constructive boundary — plates move apart, magma rises creating new crust and volcanic features. 1 mark: destructive boundary — plates move together, one is subducted creating powerful earthquakes, explosive volcanoes, and ocean trenches.'
-      },
-    ],
-    amber: [
-      {
-        q: 'Explain why earthquakes in LICs typically cause more deaths than earthquakes of similar magnitude in HICs.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• Poor building quality — LICs lack the resources to construct earthquake-resistant buildings; traditional materials (unreinforced brick, adobe) collapse easily in strong shaking (e.g. 2010 Haiti earthquake, magnitude 7.0: ~230,000 deaths — poor construction; 2010 Chile earthquake, magnitude 8.8: ~500 deaths — strict building codes) (1).\n• Lack of early warning and emergency response capacity — LICs may lack seismograph networks, trained emergency services, and rescue equipment; response relies on local, often overwhelmed resources (1).\n• High population density in vulnerable areas — LIC cities often have dense, informal settlements on unstable ground (e.g. hillsides, reclaimed land) that amplify shaking and are hardest to reach for rescue teams (1).\n• Pre-existing poverty and lack of resilience — communities already suffering from poverty, poor healthcare, and weak infrastructure have less capacity to recover; food shortages, disease, and homelessness persist for years after the event (1).`,
-        marks_scheme: '1 mark: poor building quality — unreinforced materials collapse easily (Haiti M7.0: ~230,000 deaths vs Chile M8.8: ~500 deaths). 1 mark: lack of early warning and emergency response capacity — LICs lack seismographs and rescue equipment. 1 mark: high population density in vulnerable areas — dense informal settlements on unstable ground amplify shaking. 1 mark: pre-existing poverty — communities less resilient; food shortages, disease, and homelessness persist for years.'
-      },
-      {
-        q: 'Explain how a tsunami is formed following an earthquake.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `• A tsunami is generated when a large earthquake occurs at a subduction zone beneath the ocean, causing a sudden vertical displacement of the seafloor (1).\n• The upward movement of the seafloor displaces an enormous volume of water, creating a series of waves that radiate outward from the epicentre in all directions (1).\n• In deep water the waves travel at speeds up to 800 km/h but have a very long wavelength and low height (less than 1 m), making them almost undetectable at sea (1).\n• As the waves approach shallow coastal water, their speed decreases but their height increases dramatically (shoaling) — waves can reach heights of 30 m or more; they surge inland with devastating force, inundating low-lying coastal areas (1).\n(Example: 2004 Indian Ocean tsunami — triggered by magnitude 9.1 earthquake off Sumatra; killed 230,000 across 14 countries; waves 30 m high in Aceh province.)`,
-        marks_scheme: '1 mark: large earthquake at subduction zone causes sudden vertical displacement of seafloor. 1 mark: upward movement displaces enormous water volume creating waves radiating outward. 1 mark: in deep water waves travel at 800 km/h with long wavelength and low height, almost undetectable. 1 mark: in shallow coastal water speed decreases but height increases dramatically (shoaling) to 30 m+, surging inland.'
-      },
-      {
-        q: 'Describe and explain the impacts of a volcanic eruption you have studied.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `(Montserrat 1995–1997 / Mount Pinatubo 1991 / Eyjafjallajökull 2010 — credit any appropriate named example.)\n(Montserrat, 1995–1997):\n• Primary impacts: pyroclastic flows destroyed the capital Plymouth and surrounding villages; 19 people killed; 6,000 of 12,000 population evacuated to the north of the island or emigrated (1).\n• Secondary impacts: ash covered farmland and destroyed crops; the economy collapsed as tourism fell and infrastructure was buried; the southern two-thirds of the island remained a restricted exclusion zone (1).\n• Long-term impacts: the island's population fell from 12,000 to 4,000 by 1998; major UK aid of ~£200 million was provided to rebuild the north of the island; volcanic tourism to view the buried Plymouth now generates some income (1).\n• Environmental impacts: new land created by lava flows; volcanic soils potentially fertile for future agriculture; geothermal energy potential (1).`,
-        marks_scheme: '1 mark: name a volcanic eruption and describe primary impacts (e.g. pyroclastic flows, deaths, evacuation). 1 mark: describe secondary impacts (e.g. economy collapsed, crops destroyed, infrastructure buried). 1 mark: describe long-term impacts (e.g. population fall, aid received, recovery programmes). 1 mark: describe environmental impacts (e.g. new land from lava, fertile volcanic soils, geothermal potential).'
-      },
-      {
-        q: 'Explain the immediate and long-term responses to a tectonic hazard you have studied.',
-        marks: 4, tier: 'amber',
-        modelAnswer: `(Nepal earthquake 2015 / Haiti earthquake 2010 / 2011 Japan tsunami — credit any appropriate example.)\n(Nepal earthquake, April 2015 — magnitude 7.8):\n• Immediate responses: search and rescue teams deployed from Nepal and internationally (UK, USA, India); UN launched a $415 million appeal; field hospitals set up; emergency food, water, and temporary shelters distributed; military used to reach remote Himalayan villages cut off by landslides (1).\n• International aid: over 70 countries provided assistance; $4.4 billion pledged at donor conference; UN helicopter airlifts reached isolated mountain communities (1).\n• Long-term responses: rebuilding of 600,000+ homes with earthquake-resistant designs using local materials; schools rebuilt to stronger standards; National Reconstruction Authority established (1).\n• Challenges: corruption delayed fund distribution; difficult terrain slowed reconstruction; many villages still not fully rebuilt 3 years later; tourist revenue (vital to economy) took 2–3 years to recover fully (1).`,
-        marks_scheme: '1 mark: immediate responses — search and rescue deployed, emergency appeal launched, field hospitals set up. 1 mark: international aid — multiple countries contributed, donor conference pledged funds, helicopter airlifts. 1 mark: long-term responses — rebuilding homes with earthquake-resistant designs, schools rebuilt to stronger standards. 1 mark: challenges — corruption delayed fund distribution, difficult terrain slowed reconstruction, tourist revenue took years to recover.'
-      },
-    ],
-    red: [
-      {
-        q: 'Evaluate the extent to which people can be protected from the impacts of tectonic hazards. [6 marks]',
-        marks: 6, tier: 'red',
-        modelAnswer: `Monitoring and prediction:\n• Volcanic eruptions — scientists can monitor seismic activity, ground deformation, and gas emissions to give hours to weeks of warning; successful evacuations (e.g. Mount Pinatubo, 1991 — 60,000 evacuated, saved thousands of lives) (1).\n• Earthquakes — currently cannot be reliably predicted; only probabilistic hazard mapping identifies high-risk areas over decades; no short-term warning technology exists (1).\nEarly warning systems:\n• Japan's earthquake early warning system provides 30–60 seconds of warning after an earthquake is detected — enough to stop trains, trigger factory shutdowns, warn the public; this limited the additional casualties in the 2011 Tōhoku earthquake (1).\n• Pacific Tsunami Warning System gives hours of warning for distant tsunamis but is ineffective for local tsunamis; community-level education and evacuation routes are critical (1).\nBuilding design:\n• Earthquake-resistant building (e.g. Japan, California) can dramatically reduce casualties — same-magnitude earthquakes kill vastly fewer people in well-prepared HICs (1).\n• However, retrofitting existing buildings is extremely expensive and slow; much of the global urban stock remains vulnerable, particularly in LICs (1).\nConclusion:\n• Protection is much more achievable for volcanic eruptions and distant tsunamis, where monitoring gives useful warning time, than for earthquakes. The protection gap between HICs and LICs is stark and reflects wealth inequality as much as scientific capability — reducing vulnerability in LICs is as important as improving technology (1).`,
-        marks_scheme: 'Level 3 (5-6 marks): evaluates protection measures for different hazard types (volcanoes, earthquakes, tsunamis) with named examples and a conclusion about the HIC/LIC protection gap. Level 2 (3-4 marks): discusses some measures with limited comparison or conclusion. Level 1 (1-2 marks): basic points about protection measures. Credit: volcanoes can give hours to weeks warning — Pinatubo evacuated 60,000; earthquakes cannot be reliably predicted; Japan early warning system provides 30–60 seconds; earthquake-resistant building dramatically reduces casualties.'
-      },
-      {
-        q: '"The impacts of tectonic hazards are more to do with human factors than physical factors." Discuss. [8 marks]',
-        marks: 8, tier: 'red',
-        modelAnswer: `Physical factors affecting impact:\n• Magnitude — the energy released determines initial destructive power; the 2011 Japan earthquake (9.0) released ~1,000 times more energy than the 2010 Haiti quake (7.0) (1).\n• Depth of focus — shallow earthquakes (< 70 km) cause more surface shaking than deep-focus quakes; the Haiti earthquake had a shallow focus of only 13 km, amplifying destruction (1).\n• Proximity to population centres — the 2011 earthquake occurred offshore under the Pacific; a similar-magnitude onshore earthquake would have been catastrophic even in Japan (1).\nHuman factors affecting impact:\n• Poverty — the most important human factor; Haiti (GDP per capita ~$1,200 in 2010) suffered ~230,000 deaths; Chile (GDP per capita ~$12,000 in 2010) suffered ~500 deaths in a stronger earthquake 7 weeks later (1).\n• Building quality — poor construction (unreinforced concrete, brick) collapses in earthquakes; strict building codes and enforcement in Japan, California, and New Zealand dramatically reduce casualties (1).\n• Population density — dense urban populations in high-risk areas suffer greater total casualties; informal settlements on steep slopes (Port-au-Prince, Haiti) amplify disaster impacts (1).\n• Governance and preparedness — countries that invest in hazard mapping, early warning, emergency planning, and building regulation suffer far fewer deaths regardless of physical hazard level (1).\nConclusion:\n• Human factors are arguably the most significant determinants of impact in most cases — the "disaster gap" between rich and poor countries is primarily a human construct; physical factors set the hazard level but human vulnerability determines the outcome. The statement therefore has considerable merit, though physical factors (especially magnitude and proximity) remain important underlying causes (1).`,
-        marks_scheme: 'Level 3 (7-8 marks): balanced discussion of human and physical factors determining impact with named examples and a conclusion about relative significance. Level 2 (4-6 marks): covers both factor types with some specific evidence. Level 1 (1-3 marks): basic points about factors. Credit: magnitude sets initial destructive power; depth of focus determines surface shaking intensity; poverty most important human factor (Haiti vs Chile comparison); building quality and governance determine preparedness.'
-      },
-    ],
-  },
-
-  /* ─────────────────────────────────────────────────────────── 3.2 Climate Change */
-  '3.2': {
+  /* ─────────────────────────────────────────────────────────── 2.4 Climate Change — Cause and Effect */
+  '2.4': {
     green: [
       {
         q: 'State two pieces of evidence that suggest global temperatures are rising.',
@@ -783,7 +501,146 @@ const GEOGRAPHY_EDUQAS_WRITTEN = {
     ],
   },
 
-  /* ─────────────────────────────────────────────────────────── 3.3 Water Management */
+  /* ─────────────────────────────────────────────────────────── 3.1 How Ecosystems Function */
+  '3.1': {
+    green: [
+      {
+        q: 'State two characteristics of the tropical rainforest climate.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• High temperatures throughout the year — typically 26–28°C with very little seasonal variation, as the equatorial location means the sun is always high in the sky (1).\n• High and reliable rainfall — typically 2,000 mm or more per year, falling throughout the year and often as convectional afternoon storms (1).`,
+        marks_scheme: '1 mark: high temperatures throughout year (~26–28°C) with little seasonal variation. 1 mark: high and reliable rainfall (2000 mm+/year) falling throughout the year, often as convectional afternoon storms.'
+      },
+      {
+        q: 'State two characteristics of hot semi-arid grassland (savanna) climate.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Hot all year, with mean temperatures of roughly 25–30°C (1).\n• A single wet season separated by a long dry season of about 5–7 months, with annual rainfall of roughly 500–1,500 mm (1).\n(Also accept: rainfall is unreliable and varies greatly from year to year.)`,
+        marks_scheme: '1 mark: hot all year, roughly 25–30°C. 1 mark: one wet season and a long dry season of about 5–7 months, roughly 500–1,500 mm a year.'
+      },
+      {
+        q: 'Identify two ways in which plants in the tropical rainforest are adapted to the environment.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Drip tips — leaves have pointed tips to shed heavy rainfall quickly, preventing the growth of algae and bacteria that would damage the leaf (1).\n• Buttress roots — large flared roots support the tall emergent trees and allow them to access nutrients from the thin surface soil (1).\n(Also accept: smooth bark to shed rain; waxy leaf surfaces; epiphytes growing on branches to reach light; lianas climbing towards the canopy.)`,
+        marks_scheme: '1 mark: drip tips — leaves have pointed tips to shed heavy rainfall quickly. 1 mark: buttress roots — large flared roots support tall trees and access surface nutrients.'
+      },
+      {
+        q: 'Name and describe the layers of the tropical rainforest.',
+        marks: 4, tier: 'green',
+        modelAnswer: `• Emergent layer — tallest trees (40–60 m) rising above the main canopy, exposed to full sun and wind (1).\n• Canopy layer — dense, continuous layer of branches and leaves at ~20–30 m, intercepting most sunlight and rainfall (1).\n• Understorey — shade-tolerant shrubs and smaller trees below the canopy; little wind, high humidity (1).\n• Forest floor — very little light reaches here; decomposers rapidly recycle nutrients from dead organic matter; ground plants adapted to low light (1).`,
+        marks_scheme: '1 mark: emergent layer — tallest trees 40–60 m rising above canopy, exposed to full sun. 1 mark: canopy layer — dense continuous layer at 20–30 m intercepting most sunlight and rainfall. 1 mark: understorey — shade-tolerant shrubs and smaller trees below canopy, high humidity. 1 mark: forest floor — very little light, decomposers rapidly recycle nutrients from dead matter.'
+      },
+    ],
+    amber: [
+      {
+        q: 'Explain how nutrients are cycled in the tropical rainforest ecosystem.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• The nutrient cycle in the tropical rainforest is rapid and efficient — almost all nutrients are stored in the biomass (living plants) rather than the soil (1).\n• Leaf litter and dead organic matter fall to the forest floor and are decomposed very quickly by bacteria and fungi in the hot, humid conditions — nutrients are released into the thin topsoil (1).\n• Plant roots near the surface quickly absorb nutrients before they can be washed away (leached) by heavy rainfall — the cycle keeps nutrients in the living system (1).\n• The soil is therefore surprisingly infertile — it is thin, acidic, and nutrient-poor; when the forest is cleared, nutrients are lost rapidly through leaching, making the land unsuitable for farming within a few years (1).`,
+        marks_scheme: '1 mark: nutrient cycle is rapid — almost all nutrients stored in biomass rather than soil. 1 mark: leaf litter decomposed quickly by bacteria and fungi releasing nutrients into thin topsoil. 1 mark: plant roots near surface quickly absorb nutrients before leaching by heavy rainfall. 1 mark: when forest is cleared nutrients are rapidly lost through leaching making land unsuitable for farming.'
+      },
+      {
+        q: 'Explain how the interdependence of climate, vegetation, animals and soils works in a hot semi-arid grassland.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Seasonal rainfall supports grasses whose growing point sits at the base of the plant, so they can be cropped without being killed (1).\n• Large migrating herds such as wildebeest and zebra graze that grass and move on, following the rain (1).\n• Their dung and urine return nitrogen and other nutrients to the soil, maintaining its fertility (1).\n• That fertility supports the next season of grass growth, and grazing also keeps woody scrub from taking over — so breaking any one link changes the whole system (1).`,
+        marks_scheme: '1 mark: seasonal rainfall supports grasses that grow from the base. 1 mark: migrating herds graze the grass and move on. 1 mark: dung returns nutrients to the soil. 1 mark: soil fertility supports the next season of growth / grazing suppresses scrub.'
+      },
+      {
+        q: 'Explain how energy flows through an ecosystem and why food chains are short.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Energy enters the ecosystem as sunlight and is converted into chemical energy by producers through photosynthesis (1).\n• It then passes along a one-way chain from producers to primary, secondary and tertiary consumers — unlike nutrients, energy does not cycle (1).\n• Only about 10% of the energy at one trophic level is passed to the next; the rest is lost in respiration, movement, body heat and waste (1).\n• After four or five links too little energy remains to support another level, which is also why top predators are far less numerous than producers (1).`,
+        marks_scheme: '1 mark: energy enters as sunlight and is fixed by producers. 1 mark: it passes one way along trophic levels and does not cycle. 1 mark: about 10% passes to each next level, the rest lost as heat, respiration, movement and waste. 1 mark: too little energy remains after four or five links.'
+      },
+      {
+        q: 'Explain why a small-scale UK ecosystem may need active management. Refer to a named example.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• At Kenfig National Nature Reserve in South Wales, the dune system has become too stable — the proportion of bare, mobile sand has fallen sharply (1).\n• Grazing by rabbits and livestock has largely stopped, so vegetation is no longer cropped short and scrub and coarse grasses have spread (1).\n• Nitrogen deposition from vehicle and industrial emissions fertilises naturally poor sand, favouring vigorous coarse plants over specialists (1).\n• Rare species such as the fen orchid need open, damp, low-nutrient ground, so without intervention they are shaded out — management therefore involves scrub clearance, turf stripping and reintroduced grazing (1).\n(Credit any named UK small-scale ecosystem with equivalent detail.)`,
+        marks_scheme: '1 mark: name the ecosystem and state the management problem. 1 mark: loss of grazing allows vegetation to build up. 1 mark: nitrogen deposition favours coarse species over specialists. 1 mark: rare species need the earlier successional conditions, so intervention recreates them.'
+      },
+    ],
+    red: [
+      {
+        q: 'Evaluate the usefulness of comparing two contrasting biomes when studying how ecosystems function. [6 marks]',
+        marks: 6, tier: 'red',
+        modelAnswer: `Arguments that comparison is useful:\n• It separates what is general from what is particular. Both rainforest and savanna cycle nutrients, but the rainforest holds almost all of them in the biomass while the savanna holds more in the soil — so a student learns that the store, not the process, is what climate controls (2).\n• It makes the role of climate visible. The two biomes sit next to each other in latitude, yet one has rain all year and the other a five to seven month dry season, and almost every difference in soils, vegetation and animal life follows from that (2).\n• It supports evaluation questions, because the contrast supplies ready comparisons of decomposition speed, biodiversity, energy distribution and vulnerability to human use (1).\n\nLimitations:\n• Two biomes cannot represent all of them — tundra and temperate forest behave differently again (1).\n• Comparison can encourage over-simple generalisation, for example treating all rainforest soils as infertile when fertility varies considerably within the biome (1).\n\nJudgement: Comparison is the most efficient way to understand why biomes differ, because it forces attention onto the controlling variable — climate — rather than onto lists of species. Its value depends on choosing two biomes that differ in one major respect rather than in every respect.`,
+        marks_scheme: 'Level 3 (5–6): balanced evaluation with specific biome evidence and a supported judgement. Level 2 (3–4): some comparison with limited evidence. Level 1 (1–2): basic points. Credit: comparison isolates the role of climate; shows nutrient stores differ though the process is the same; supplies contrasts in decomposition, biodiversity and energy distribution; limitation that two biomes do not represent all.'
+      },
+      {
+        q: '"Humans should be treated as part of an ecosystem, not as something separate from it." Discuss, using hot semi-arid grassland as your example. [8 marks]',
+        marks: 8, tier: 'red',
+        modelAnswer: `Evidence that humans are part of the ecosystem:\n• Pastoralists such as the Maasai and Fulani have grazed livestock in the savanna for centuries, moving between seasonal pastures and water points in a pattern that mirrors the movement of the wild herds (2).\n• Human-set dry season fires are part of the fire regime that clears dead grass, releases nutrients and stops woody scrub invading. Suppress fire entirely and the grassland changes character (2).\n• Livestock grazing performs the same ecological function as wild grazing — cropping the grass and returning nutrients in dung — so removing people can itself degrade the habitat (1).\n\nEvidence that human activity is different in kind:\n• The scale and speed of modern change is unlike anything in the ecosystem's history: fencing, land subdivision, borehole drilling and conversion to cropland alter the system faster than it can adjust (2).\n• Some pressures have no ecological analogue at all — commercial charcoal production for distant urban markets, or poaching driven by international demand for ivory (1).\n\nJudgement: The distinction that matters is not human versus natural but mobile versus fixed. Traditional pastoralism worked because it moved, matching the seasonal and unreliable nature of savanna productivity. Modern pressures mostly involve fixing people, animals or boundaries in place. Treating humans as part of the ecosystem is therefore the more useful framing, because it directs management towards restoring mobility and rotation rather than towards excluding people — which is exactly what community conservancies attempt.`,
+        marks_scheme: 'Level 4 (7–8): sustained discussion of both positions with specific savanna evidence and a clear, reasoned judgement. Level 3 (5–6): both sides with some evidence. Level 2 (3–4): mostly one-sided or descriptive. Level 1 (1–2): basic points. Credit: pastoralism and human-set fire as ecosystem processes; grazing as an ecological function; scale and speed of modern change; pressures with no ecological analogue; judgement distinguishing mobility from fixity.'
+      },
+    ],
+  },
+  /* ─────────────────────────────────────────────────────────── 3.2 Ecosystems Under Threat */
+  '3.2': {
+    green: [
+      {
+        q: 'State two reasons why tropical rainforests are important at a global scale.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Carbon store — tropical rainforests store approximately 250 billion tonnes of carbon in their biomass and soils; they act as major carbon sinks, absorbing CO₂ and helping regulate global climate (1).\n• Biodiversity — they are home to over 50% of the world's species despite covering only around 6% of Earth's land surface, making them critical reservoirs of biodiversity (1).\n(Also accept: oxygen production; water cycle regulation; medicines derived from rainforest plants.)`,
+        marks_scheme: '1 mark: carbon store — store ~250 billion tonnes of carbon, acting as major carbon sinks. 1 mark: biodiversity — home to over 50% of world species despite covering only 6% of land surface.'
+      },
+      {
+        q: 'State two ways in which people use ecosystems to obtain resources.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Food — clearing land for crops and pasture, grazing livestock, hunting, fishing and gathering wild foods (1).\n• Energy — collecting firewood and charcoal, establishing biofuel plantations, or flooding valleys for hydroelectric reservoirs (1).\n(Also accept: water — boreholes, river abstraction for irrigation, dams and transfer schemes; materials — timber, mining and quarrying.)`,
+        marks_scheme: '1 mark: one use with a named resource, e.g. food through clearing land for crops or grazing. 1 mark: a second, different use, e.g. energy through firewood, charcoal or HEP.'
+      },
+      {
+        q: 'State two reasons why ecosystems are conserved.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Economic — ecosystems produce marketable goods such as timber, grazing and tourism income, and a degraded ecosystem produces less of all of them (1).\n• Environmental — services such as carbon storage, water cycle regulation, flood control and pollination would be extremely expensive to replace artificially (1).\n(Also accept: social and cultural value to the communities who live there; the ethical argument that species have a right to exist; scientific value, including undiscovered medicines.)`,
+        marks_scheme: '1 mark: one valid reason with brief development. 1 mark: a second, different reason with brief development.'
+      },
+      {
+        q: 'Identify two human activities that damage hot semi-arid grassland.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Overgrazing — more livestock graze the same land than the grass can support, so it is cropped faster than it regrows and the soil is left exposed (1).\n• Fuelwood and charcoal cutting — trees and shrubs are removed for cooking fuel and for urban charcoal markets, taking away shade, deep roots and windbreaks (1).\n(Also accept: conversion of grassland to cropland; fencing and land subdivision; borehole drilling that concentrates livestock; changed fire regimes; poaching and predator removal.)`,
+        marks_scheme: '1 mark: one named activity with brief explanation of the damage. 1 mark: a second, different named activity with brief explanation.'
+      },
+    ],
+    amber: [
+      {
+        q: 'Explain the causes of deforestation in tropical rainforests. Refer to a named example.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `(Amazon, Brazil / Congo Basin / Borneo — credit any named example with specific data.)\n• Commercial farming — in the Amazon, large-scale soy bean farming and cattle ranching are the leading causes; Brazil exports millions of tonnes of soy annually, driving continued forest clearance (1).\n• Logging — both legal and illegal logging for valuable hardwoods (mahogany, teak) is widespread; Indonesia lost around 25 million hectares of forest between 1990 and 2015 (1).\n• Mining — the Amazon contains large deposits of iron ore, gold, and bauxite; open-cast mining clears forest and contaminates rivers with heavy metals (e.g. Serra Pelada, Brazil) (1).\n• Road building — infrastructure projects open up previously inaccessible forest to settlers, loggers, and farmers; the Trans-Amazonian Highway opened large areas to clearance (1).`,
+        marks_scheme: '1 mark: commercial farming — soy and cattle ranching leading causes in Amazon. 1 mark: logging — legal and illegal removal of valuable hardwoods. 1 mark: mining — open-cast mining for iron ore, gold, bauxite clears forest and contaminates rivers. 1 mark: road building — infrastructure projects open up previously inaccessible forest.'
+      },
+      {
+        q: 'Explain the effects of ecosystem damage at the local scale and at the global scale.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `Local scale:\n• Soil is lost — nutrients held in biomass are removed with the vegetation, surface crusting cuts infiltration, and topsoil is washed into gullies or blown away (1).\n• Biodiversity falls — habitat is fragmented into patches too small to hold viable populations, specialists with narrow niches disappear first, and food webs simplify (1).\n\nGlobal scale:\n• Carbon stored in biomass and soils is released, weakening a major carbon sink and adding to global warming (1).\n• A disproportionate share of the world's species is lost — tropical rainforest alone holds over half of them on about 6% of the land surface — and reduced food production in already food-insecure regions drives displacement and migration (1).`,
+        marks_scheme: '1 mark: a local soil or water effect. 1 mark: a local biodiversity effect. 1 mark: a global climate effect through carbon release. 1 mark: a global biodiversity, food security or migration effect.'
+      },
+      {
+        q: 'Explain the effects of deforestation on the local environment and the people who depend on the rainforest.',
+        marks: 5, tier: 'amber',
+        modelAnswer: `• Loss of biodiversity — deforestation destroys habitat, driving species to extinction before scientists can even identify them; the world's rainforests are estimated to lose up to 137 species per day (1).\n• Soil erosion — without tree roots holding soil together and interception reducing raindrop impact, heavy rain rapidly erodes unprotected topsoil; rivers become choked with sediment (1).\n• Disruption of the water cycle — reduced transpiration leads to less moisture in the atmosphere, decreasing regional rainfall and potentially turning cleared areas into savannah (1).\n• Indigenous communities — groups such as the Kayapo in Brazil lose their homeland and traditional way of life; forced displacement causes cultural loss, poverty, and health impacts (1).\n• Local communities who depended on forest products (non-timber forest products, bushmeat, medicines) lose their livelihoods, increasing poverty (1).`,
+        marks_scheme: '1 mark: loss of biodiversity — destroys habitat driving species to extinction. 1 mark: soil erosion — without tree roots heavy rain rapidly erodes unprotected topsoil. 1 mark: disruption of water cycle — reduced transpiration decreases regional rainfall. 1 mark: indigenous communities lose homeland and traditional way of life. 1 mark: local communities lose livelihoods from forest products.'
+      },
+      {
+        q: 'Describe and explain one strategy used to manage tropical rainforests sustainably.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Ecotourism — allows visitors to experience the rainforest with minimal environmental impact, providing income for local communities and creating an economic incentive to protect the forest (1).\n• Revenue from ecotourism can fund conservation, ranger patrols to prevent illegal logging and poaching, and education programmes (1).\n• Successful examples include the Amazon jungle lodges of the Peruvian Amazon, where local indigenous guides lead tours — communities earn more from keeping the forest standing than clearing it (1).\n• However, ecotourism can be limited in scale — it cannot replace the economic returns from large-scale farming or mining for many governments — and poorly managed tourism can itself damage sensitive ecosystems (1).`,
+        marks_scheme: '1 mark: ecotourism allows visitors to experience the forest with minimal environmental impact, providing income for local communities. 1 mark: revenue funds conservation, ranger patrols, and education programmes. 1 mark: successful examples where local guides earn more from keeping forest standing than clearing it. 1 mark: limitations — cannot replace returns from large-scale farming; poorly managed tourism can damage ecosystems.'
+      },
+    ],
+    red: [
+      {
+        q: 'Evaluate the extent to which tropical rainforests can be used sustainably. [6 marks]',
+        marks: 6, tier: 'red',
+        modelAnswer: `Evidence that sustainable use is possible:\n• Selective logging — removing only mature trees while leaving the structure of the forest intact allows regeneration; certified timber (FSC — Forest Stewardship Council) schemes exist in Brazil and Indonesia (1).\n• REDD+ (Reducing Emissions from Deforestation and Forest Degradation) — international payments to developing countries that protect their forests; Brazil's Amazon Fund, a REDD+-style scheme backed mainly by Norway, rewarded Brazil after deforestation fell by about 80% from the 2004 peak by 2012 (mainly through stronger monitoring and law enforcement) (1).\n• Ecotourism and non-timber forest product harvesting (nuts, fruits, rubber) can generate income without clearing — e.g. Brazil nut industry in the Amazon (1).\nLimitations:\n• Economic pressures are enormous — debt-laden countries like Brazil and Indonesia face strong incentives to convert forest to agricultural land; soy and cattle are far more profitable per hectare than sustainable forestry (1).\n• Enforcement is extremely difficult in remote rainforest regions — illegal logging and land clearance continues despite laws (e.g. Amazon deforestation under Bolsonaro government rose sharply) (1).\nConclusion:\n• Sustainable use is technically possible and examples demonstrate it can work at a local scale, but global economic systems continue to drive unsustainable deforestation; without stronger international frameworks, financial incentives, and enforcement, truly sustainable management of rainforests at scale remains aspirational rather than a reality (1).`,
+        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of evidence that sustainable use is possible and limitations, with named examples, and a realistic overall conclusion. Level 2 (3-4 marks): discusses both possibilities and limitations with some evidence. Level 1 (1-2 marks): basic points about sustainable use. Credit: selective logging and FSC certification; REDD+ international payments (Amazon deforestation fell 80%); ecotourism and non-timber products; economic pressures and enforcement difficulty.'
+      },
+      {
+        q: '"The economic development needs of tropical countries outweigh the arguments for conserving rainforests." Discuss. [8 marks]',
+        marks: 8, tier: 'red',
+        modelAnswer: `Arguments supporting the statement (development):\n• Countries like Brazil and Indonesia argue that developed nations cleared their own forests for economic growth centuries ago — it is unfair to deny developing countries the same right to use their resources for poverty reduction (1).\n• Agriculture (soy, palm oil, cattle) generates billions in export income and employs millions of people — Brazil's wider agribusiness sector accounts for around a quarter of GDP (1).\n• Mining and logging provide government revenue that funds schools, hospitals, and infrastructure in countries where many still lack basic services (1).\nArguments against (conservation):\n• Rainforests provide ecosystem services of incalculable global value — climate regulation, water cycling, biodiversity — that benefit all humanity, not just the host nation (1).\n• Once cleared, rainforests are very difficult to restore — the nutrient cycle breaks down, soils erode, and biodiversity losses are largely irreversible (1).\n• The economic benefits of forest clearance are often short-term — soils exhausted within years, forcing further clearance; sustainable forest use offers longer-term income (1).\n• Indigenous peoples' rights — clearance often violates the rights of communities whose livelihoods and cultures depend on the forest (1).\nConclusion:\n• A binary choice is a false dichotomy; sustainable development models exist that can provide economic growth while protecting forest. The real challenge is creating international financial systems that make conservation more profitable than destruction — until that happens, economic pressures will continue to drive deforestation. Rich nations have a particular responsibility to fund conservation as they benefit most from the ecosystem services rainforests provide (1).`,
+        marks_scheme: 'Level 3 (7-8 marks): balanced discussion of development needs vs. conservation arguments with named examples and a nuanced conclusion rejecting the binary framing. Level 2 (4-6 marks): covers both sides but limited development or examples. Level 1 (1-3 marks): basic points on one side. Credit: developing countries argue right to use resources for poverty reduction; ecosystem services benefit all humanity; economic benefits of clearance are short-term; indigenous peoples\'s rights.'
+      },
+    ],
+  },
+
+  /* ─────────────────────────────────────────────────────────── 3.3 Water Resources and Management */
   '3.3': {
     green: [
       {
@@ -849,6 +706,76 @@ const GEOGRAPHY_EDUQAS_WRITTEN = {
         marks: 8, tier: 'red',
         modelAnswer: `Arguments supporting the statement (political/economic factors):\n• Global water supply is physically sufficient — there is technically enough freshwater on Earth for the current and projected global population; the problem is distribution, access, and management, not total supply (1).\n• Poverty restricts access — 2.2 billion people lack safe drinking water; this is almost entirely a function of poverty and governance rather than physical scarcity — wealthy countries with low rainfall (Israel, UAE, Singapore) have achieved water security through technology and investment (1).\n• Governance failures — water is often priced too cheaply, encouraging waste; agricultural subsidies incentivise water-intensive crops in arid regions (e.g. cotton growing in Uzbekistan contributed to the Aral Sea disaster); corruption means infrastructure is not maintained (1).\n• Political disputes — trans-boundary water conflicts (Nile, Indus, Euphrates) are fundamentally political; technical solutions exist but are blocked by national interests (1).\nArguments against (physical factors are important):\n• Arid and semi-arid regions have genuinely low rainfall — no amount of political will creates water where none falls; sub-Saharan and Middle Eastern aridity is a fundamental physical constraint (1).\n• Climate change is altering physical availability — retreating glaciers reduce river flows in countries like Pakistan and Peru; declining Sahel rainfall is a physical reality beyond political control (1).\n• Remote populations — sparsely populated areas lack the water table depth, river access, or rainfall even for small-scale solutions; physical geography sets real limits (1).\nConclusion:\n• The statement is substantially correct — in most water-stressed regions, political will, economic investment, and fairer governance could dramatically reduce scarcity; the examples of water-secure desert nations prove this is achievable. However, physical geography sets the boundaries within which human agency operates; climate change is increasingly shrinking those boundaries, and no political solution can fully substitute for adequate physical water resources. A combined analysis is essential (1).`,
         marks_scheme: 'Level 3 (7-8 marks): balanced discussion of political/economic and physical factors with named examples and a conclusion acknowledging both while affirming primacy of governance. Level 2 (4-6 marks): covers both sides with some specific evidence. Level 1 (1-3 marks): basic points about causes of water scarcity. Credit: global water supply physically sufficient but distribution is the problem; poverty restricts access — 2.2 billion lack safe water; arid regions have genuinely low rainfall setting physical limits; climate change is altering physical availability.'
+      },
+    ],
+  },
+
+  /* ─────────────────────────────────────────────────────────── 3.4 Desertification */
+  '3.4': {
+    green: [
+      {
+        q: 'State two characteristics of a hot desert climate.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Very low precipitation — most hot deserts receive less than 250 mm of rainfall per year, and this is often unreliable and may fall in a few intense storms (1).\n• Extreme temperature range — daytime temperatures regularly exceed 40°C, while nights can be very cold (below 10°C) because the dry air and lack of cloud cover mean heat is rapidly lost by radiation at night (1).`,
+        marks_scheme: '1 mark: very low precipitation — less than 250 mm/year, often unreliable. 1 mark: extreme temperature range — daytime over 40°C, nights cold due to lack of cloud cover.'
+      },
+      {
+        q: 'Identify two ways in which animals in hot deserts are adapted to survive.',
+        marks: 2, tier: 'green',
+        modelAnswer: `• Nocturnal behaviour — many desert animals (e.g. fennec fox, gerbil) are active only at night when temperatures are lower, avoiding dehydration and overheating during the day (1).\n• Water conservation — animals such as the kangaroo rat obtain all their water from the food they eat and produce very concentrated urine to minimise water loss (1).\n(Also accept: burrowing to escape heat; light colouring to reflect sunlight; large ears for heat dissipation.)`,
+        marks_scheme: '1 mark: nocturnal behaviour — active only at night to avoid dehydration and overheating. 1 mark: water conservation — obtaining water from food and producing very concentrated urine.'
+      },
+      {
+        q: 'State what is meant by desertification.',
+        marks: 2, tier: 'green',
+        modelAnswer: `Desertification is the process by which land on the margins of deserts (semi-arid areas) becomes increasingly degraded and dry, losing its vegetation and soil fertility, and increasingly resembling desert conditions (1). It is driven by a combination of climate change (reducing rainfall) and human activities such as overgrazing, deforestation, and over-cultivation (1).`,
+        marks_scheme: '1 mark: desertification is the process by which semi-arid land becomes increasingly degraded and dry. 1 mark: driven by climate change reducing rainfall and human activities such as overgrazing, deforestation, and over-cultivation.'
+      },
+      {
+        q: 'Name one hot desert and state its location.',
+        marks: 1, tier: 'green',
+        modelAnswer: `• Sahara Desert — North Africa, covering approximately 9 million km² across countries including Algeria, Libya, Egypt, and Morocco (1).\n(Also accept: Arabian Desert — Middle East; Atacama Desert — coastal South America; Namib Desert — coastal south-west Africa; Australian Outback — central and western Australia.)`,
+        marks_scheme: '1 mark: name a hot desert. 1 mark: state its correct location.'
+      },
+    ],
+    amber: [
+      {
+        q: 'Explain why hot deserts form where they do.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Most hot deserts are located around 20–30° north and south of the equator — in the subtropical high-pressure belt (1).\n• At the equator, air heated by intense solar radiation rises, cools, loses moisture as tropical rainfall, then spreads poleward at altitude. At ~30° latitude, this dry air descends (subsides), compressing and warming — any remaining moisture evaporates, creating stable, cloudless conditions (1).\n• Rain shadow deserts form where moist air is forced to rise over mountain ranges, loses moisture on the windward side, then descends as dry air on the leeward side — e.g. Atacama Desert in the lee of the Andes (1).\n• Coastal deserts form where cold ocean currents cool air over the sea, reducing evaporation and moisture — air reaches land too dry for significant rainfall (e.g. Namib Desert, cooled by Benguela Current) (1).`,
+        marks_scheme: '1 mark: most hot deserts located around 20–30° N and S of equator in subtropical high-pressure belt. 1 mark: at equator air rises and loses moisture; at 30° it descends, warming and creating stable cloudless conditions. 1 mark: rain shadow deserts form in lee of mountain ranges (e.g. Atacama behind Andes). 1 mark: coastal deserts form where cold ocean currents cool air, reducing evaporation (e.g. Namib).'
+      },
+      {
+        q: 'Explain the adaptations of plants (xerophytes) to survive in hot desert environments.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Cacti (e.g. saguaro cactus) have thick, waxy stems to reduce water loss through transpiration; their stems expand accordion-like to store large volumes of water after rainfall (1).\n• Shallow but extensive root systems spread wide to capture moisture from even light rain before it evaporates; some plants also have deep tap roots to reach groundwater (1).\n• Spines replace leaves to reduce surface area for transpiration; spines also provide shade to the stem surface and deter herbivores (1).\n• Some plants (ephemeral annuals) complete their entire life cycle — germinating, flowering, and setting seed — within weeks of rare rainfall, remaining dormant as seeds for years between events (1).`,
+        marks_scheme: '1 mark: thick waxy stems reduce transpiration and expand to store water after rainfall. 1 mark: shallow extensive root systems capture moisture from light rain; some have deep tap roots to groundwater. 1 mark: spines replace leaves reducing surface area for transpiration and deterring herbivores. 1 mark: ephemeral annuals complete life cycle within weeks of rainfall and remain dormant as seeds between events.'
+      },
+      {
+        q: 'Explain the causes of desertification in the Sahel region of Africa.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• Overgrazing — rapidly growing populations mean more livestock per hectare; animals strip vegetation from the surface, exposing bare soil to wind and water erosion (1).\n• Deforestation — trees are cut for fuelwood (the primary energy source for over 80% of rural families in sub-Saharan Africa); without tree roots, soil is no longer held together and is blown or washed away (1).\n• Over-cultivation — soils are cultivated too intensively without allowing fallow periods to recover nutrients; yields decline and eventually the land can no longer support crops (1).\n• Climate change — the Sahel has experienced declining and increasingly unreliable rainfall since the 1970s — droughts are more frequent and severe, reducing vegetation cover and accelerating soil erosion (1).\n(Example: Niger, Burkina Faso, Chad — millions of people at risk of food insecurity due to desertification.)`,
+        marks_scheme: '1 mark: overgrazing — more livestock strips vegetation exposing soil to erosion. 1 mark: deforestation — trees cut for fuelwood removing root systems that hold soil. 1 mark: over-cultivation — soils too intensively farmed without fallow periods, yields decline. 1 mark: climate change — declining and unreliable rainfall since 1970s, more frequent droughts.'
+      },
+      {
+        q: 'Describe and explain one strategy used to reduce desertification.',
+        marks: 4, tier: 'amber',
+        modelAnswer: `• The Great Green Wall (Africa) — an ambitious project to plant a 8,000 km wall of trees and vegetation across the Sahel from Senegal to Djibouti to halt the advance of the Sahara (1).\n• Trees are planted to bind soil, reduce wind erosion, and restore the water cycle through increased transpiration and interception; they also provide fuelwood and food (e.g. gum arabic from acacia trees provides income) (1).\n• The programme involves local communities in planting and maintenance, reducing overgrazing pressure and providing sustainable livelihoods, which reduces the poverty that drives overuse of land (1).\n• By 2020, the UNCCD reported about 18 million hectares restored across the wider programme area — well short of the 100 million hectare target; by 2030 it aims to sequester 250 million tonnes of carbon and create 10 million jobs (1).`,
+        marks_scheme: '1 mark: Great Green Wall — 8000 km project to plant trees and vegetation across Sahel. 1 mark: trees bind soil, reduce wind erosion and restore water cycle; provide fuelwood and food income. 1 mark: involves local communities in planting, reducing overgrazing and providing sustainable livelihoods. 1 mark: by 2022, ~18 million hectares restored; UN estimates 250 million tonnes carbon sequestered and 10 million jobs created.'
+      },
+    ],
+    red: [
+      {
+        q: 'Evaluate the challenges and opportunities that hot desert environments offer for human development. [6 marks]',
+        marks: 6, tier: 'red',
+        modelAnswer: `Opportunities:\n• Mineral and energy resources — deserts are rich in oil and gas (Arabian Peninsula — Saudi Arabia's Ghawar oil field, largest in the world) and minerals; the Atacama contains vast lithium reserves critical for EV batteries (1).\n• Solar energy — hot deserts receive more solar radiation than anywhere else on Earth — ideal for large-scale solar farms (e.g. Morocco's Noor Ouarzazate complex, generating 580 MW) (1).\n• Tourism — unique landscapes, extreme experiences (e.g. Dubai desert safaris), and clear skies attract tourists, generating significant income (1).\nChallenges:\n• Extreme heat — working conditions are dangerous; construction, agriculture, and infrastructure require expensive cooling systems and adapted technologies (1).\n• Water scarcity — all human activities require water; desalination is expensive and energy-intensive (e.g. Saudi Arabia spends billions of dollars a year on desalination) (1).\n• Remote locations — transport infrastructure is costly to build and maintain across vast desert distances, making access to markets difficult (1).\nConclusion:\n• Hot deserts offer significant opportunities particularly for energy-rich countries, but their development depends heavily on available capital — resource-poor developing nations face extreme challenges that the revenue from resources may not offset (1).`,
+        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of opportunities and challenges with named examples and a conclusion linking to available capital. Level 2 (3-4 marks): covers both sides with some specific detail. Level 1 (1-2 marks): basic points. Credit: mineral/energy resources (Arabian oil, Atacama lithium); solar energy (Morocco Noor 580 MW); extreme heat makes working conditions dangerous; water scarcity requires expensive desalination.'
+      },
+      {
+        q: '"Climate change rather than human activity is the main cause of desertification." Discuss this statement. [8 marks]',
+        marks: 8, tier: 'red',
+        modelAnswer: `Climate change as a cause:\n• Sahel rainfall fell by 25–40% between the wet 1950s–60s and the drought decades of the 1970s–80s; it has partly recovered since the 1990s but is more erratic, and higher temperatures increase drought stress (1).\n• Increased frequency and severity of droughts reduce vegetation cover, leaving soil exposed and vulnerable to erosion — the 1984 Ethiopian famine was triggered by drought (worsened by civil war) (1).\n• Rising temperatures increase evaporation rates, further reducing soil moisture and stressing plants even where rainfall is unchanged (1).\nHuman activity as a cause:\n• Overgrazing is widely considered the primary driver in the Sahel — livestock populations have grown faster than the land can support, degrading vegetation far beyond what climate change alone would cause (1).\n• Deforestation removes vegetation that protects and enriches soil; cleared land in the Sahel erodes much faster than land with tree cover (1).\n• Unsustainable farming practices — monoculture, over-irrigation causing salinisation — degrade land independently of climate (e.g. Aral Sea basin — Soviet-era irrigation caused severe desertification) (1).\nInteraction:\n• Climate change and human activity are interrelated — drought stress makes land more vulnerable to overgrazing damage; poverty drives unsustainable land use that climate change then amplifies (1).\nConclusion:\n• Neither factor alone adequately explains desertification — they interact and reinforce each other. In the Sahel, human activity (overgrazing, deforestation) appears to be the more proximate cause, but climate change increasingly amplifies vulnerability. Addressing desertification requires tackling both: reducing unsustainable land use while mitigating climate change through global emissions reductions (1).`,
+        marks_scheme: 'Level 3 (7-8 marks): balanced discussion of climate change and human activity as causes, recognising their interaction, with a nuanced conclusion. Level 2 (4-6 marks): covers both causes but limited integration or examples. Level 1 (1-3 marks): basic points about one cause. Credit: Sahel rainfall fell 25–40% from the 1950s–60s to the 1970s–80s; overgrazing widely considered primary driver; deforestation greatly increases erosion; climate change and human activity interact and reinforce each other.'
       },
     ],
   },

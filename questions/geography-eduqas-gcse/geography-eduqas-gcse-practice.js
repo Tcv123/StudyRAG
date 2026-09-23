@@ -1,1262 +1,10 @@
-// Geography Eduqas GCSE — Practice/Exam-Style Questions
-// 12 topics × 40 written questions with mark schemes
+// Geography Eduqas GCSE B (C112QS) — Practice/Exam-Style Questions
+// WJEC Eduqas GCSE (9-1) Geography B: 11 key ideas across Themes 1–3
+// 11 topics × 40 written questions with mark schemes
 
 const GEOGRAPHY_EDUQAS_PRACTICE = {
   '1.1': {
-    name: 'Coastal Landscapes',
-    questions: [
-      {
-        q: 'Describe the process of hydraulic action. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: waves/water force air into cracks in rock; 1 mark for: compression of air/water pressure weakens and breaks apart rock.',
-      },
-      {
-        q: 'Explain how abrasion erodes a cliff face. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: waves pick up/carry sediment/pebbles/sand; 1 mark for: these are thrown/scraped against cliff face, wearing it away (like sandpaper).',
-      },
-      {
-        q: 'What is attrition? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: rocks/pebbles carried by the sea collide with each other, breaking into smaller, rounder, smoother fragments.',
-      },
-      {
-        q: 'Describe the difference between constructive and destructive waves. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for any three of: constructive waves have a strong swash and weak backwash; destructive waves have a weak swash and strong backwash; constructive waves are low frequency/long wavelength; destructive waves are high frequency/short wavelength; constructive waves build up beaches; destructive waves erode coastlines.',
-      },
-      {
-        q: 'Draw and label a diagram to show the formation of a headland and bay. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: alternating bands of hard and soft rock shown; soft rock eroded faster (labelled); headland = hard rock protruding into sea (labelled); bay = where soft rock eroded (labelled). Diagram must be labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Explain the process of longshore drift. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: waves approach beach at angle (direction of prevailing wind); swash carries sediment up beach at same angle; backwash carries sediment back down beach at right angles (due to gravity); net movement of sediment along coast. Award 3 from these points.',
-      },
-      {
-        q: 'Draw and label a diagram to show how longshore drift transports sediment along a coastline. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: arrows showing swash direction at an angle to beach; arrows showing backwash perpendicular to beach; overall direction of sediment movement indicated; prevailing wind direction labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Describe the formation of a cave, arch, stack and stump. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Detailed, accurate explanation of all four features in sequence, using correct terminology throughout. Level 2 (3–4 marks): Explains most stages with some accurate detail; may lack full development. Level 1 (1–2 marks): Basic description of one or two features. Accept: waves erode a weakness/crack in headland → cave formed; continued erosion/two caves on either side join → arch formed; roof of arch collapses due to weathering/weight → stack; stack eroded at base by waves → stump (only visible at low tide).',
-      },
-      {
-        q: 'Explain how a spit is formed. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: longshore drift transports sediment along coast; at a change in coastline direction (e.g. estuary/river mouth) the energy drops; deposition occurs; sediment accumulates above water as a spit; spit may curve due to secondary wind/wave direction (accept any 4).',
-      },
-      {
-        q: 'What is meant by a wave-cut platform? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: a flat/gently sloping rocky surface at base of cliff/at sea level; 1 mark for: formed by erosion of cliff — as cliff retreats, platform is left behind.',
-      },
-      {
-        q: 'Describe the formation of a wave-cut notch and explain how it leads to cliff retreat. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: erosion (hydraulic action/abrasion) concentrated at high tide/wave height; undercutting creates a notch at base of cliff; rock above notch is unsupported and collapses; cliff retreats and wave-cut platform is left behind.',
-      },
-      {
-        q: 'Draw a labelled diagram of a wave-cut platform. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: cliff face shown; wave-cut notch at base of cliff labelled; wave-cut platform at sea level extending outward labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Explain what is meant by solution as a process of coastal erosion. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: slightly acidic seawater; 1 mark for: dissolves soluble minerals in rock (e.g. limestone/chalk).',
-      },
-      {
-        q: 'Describe the four main types of coastal transportation. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for correct description of: traction — large boulders rolled along seabed; saltation — pebbles bounce along seabed; suspension — fine sand/silt carried within water; solution — dissolved minerals carried in solution.',
-      },
-      {
-        q: 'What is meant by the term "fetch"? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: the distance of open water over which the wind has blown to generate a wave.',
-      },
-      {
-        q: 'Explain why coasts with a longer fetch have more powerful waves. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: longer fetch means wind acts on water over greater distance; 1 mark for: more energy transferred to water / greater wave height and energy.',
-      },
-      {
-        q: 'Describe the features of a beach. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark each for any two of: accumulation of sand/shingle/sediment; found in sheltered bays; has a berm/berms (ridges) at high tide mark; backed by sand dunes or cliffs.',
-      },
-      {
-        q: 'Explain how a bar is different from a spit. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: a bar extends all the way across a bay/estuary (connecting two headlands); 1 mark for: a spit is attached to land at one end only and does not seal off a bay.',
-      },
-      {
-        q: 'Explain how a tombolo is formed. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: longshore drift deposits sediment; spit builds outward from land; spit reaches and connects to an offshore island, forming a tombolo.',
-      },
-      {
-        q: 'Describe the difference between hard engineering and soft engineering at the coast. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: hard engineering uses artificial/man-made structures (e.g. sea walls, groynes); 1 mark for: soft engineering works with natural processes (e.g. beach nourishment, managed retreat).',
-      },
-      {
-        q: 'Evaluate the effectiveness of sea walls as a coastal management strategy. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Evaluates advantages and disadvantages, reaches a supported conclusion. Level 2 (3–4 marks): Describes advantages and disadvantages with some development. Level 1 (1–2 marks): Basic points. Accept: advantages — effective at reflecting wave energy, long-lasting, protects property; disadvantages — expensive (£5,000–10,000 per metre), can cause increased erosion at base/flanks, visually intrusive, may reflect wave energy increasing erosion elsewhere.',
-      },
-      {
-        q: 'Explain how groynes reduce coastal erosion. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: groynes are wooden/rock structures built perpendicular to shore; they interrupt longshore drift; sediment accumulates on updrift side building up beach; wider beach absorbs wave energy/protects cliff.',
-      },
-      {
-        q: 'What is beach nourishment? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: adding (imported) sand or shingle to an existing beach; 1 mark for: to replace sediment lost to longshore drift / to widen the beach to absorb wave energy.',
-      },
-      {
-        q: 'Explain what is meant by managed retreat (coastal realignment). [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: allowing low-lying coastal land to be flooded/eroded naturally; sea defences not maintained or removed; land is allowed to return to saltmarsh/intertidal habitat; cheapest option but compensates landowners for loss of land.',
-      },
-      {
-        q: 'Describe the physical geography of the Holderness Coast. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: located on east coast of Yorkshire/England; cliffs made of soft boulder clay/glacial till; one of the fastest eroding coastlines in Europe (up to 2m per year); approximately 30 villages lost since Roman times.',
-      },
-      {
-        q: 'Explain why the Holderness Coast erodes so rapidly. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: cliffs made of soft, easily eroded boulder clay; fetch across North Sea allows powerful destructive waves; long, exposed coastline with few natural protections; waves attack at base, undercutting cliffs (hydraulic action/abrasion); freeze-thaw weakens cliffs; longshore drift removes eroded material quickly.',
-      },
-      {
-        q: 'Assess the impact of coastal erosion on communities along the Holderness Coast. [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Detailed assessment, balances social, economic and environmental impacts, uses evidence, reaches supported judgement. Level 2 (3–5 marks): Describes a range of impacts with some development. Level 1 (1–2 marks): Basic impacts listed. Accept: loss of homes/properties (e.g. Easington, Skipsea); loss of farmland; threat to gas terminal at Easington; loss of local businesses/tourism; psychological stress for residents; BUT some areas protected (e.g. Hornsea, Mappleton) while others sacrificed — creates inequality/conflict.',
-      },
-      {
-        q: 'Explain one conflict that arises from coastal management decisions. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark for identifying a conflict (e.g. protecting one area increases erosion downdrift); 1 mark for explaining why conflict arises; 1 mark for example (e.g. Mappleton protected — erosion increased south of Mappleton, farmers lost land).',
-      },
-      {
-        q: 'What is rock armour (rip rap)? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: large boulders (often imported granite) placed at base of cliff/sea wall to absorb/dissipate wave energy.',
-      },
-      {
-        q: 'Describe the formation of Chesil Beach. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: a tombolo/barrier beach connecting Isle of Portland to mainland Dorset; formed by longshore drift depositing shingle over thousands of years; notable for grading of pebbles from west (pea gravel) to east (cricket ball size).',
-      },
-      {
-        q: 'Explain how revetments protect a coastline. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: sloping wooden/rock structures placed at base of cliff; absorb and dissipate wave energy; reduce hydraulic action on cliff base; allow water to drain through structure (reducing pressure).',
-      },
-      {
-        q: 'Draw a labelled cross-section to show the profile of a destructive wave. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: steep front face shown; high crest; weak swash and strong backwash labelled/indicated.',
-        diagram: true,
-      },
-      {
-        q: 'To what extent is soft engineering preferable to hard engineering for managing the coast? [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Evaluates both approaches with developed points, uses case study examples, reaches an overall judgement with justification. Level 2 (3–5 marks): Describes advantages of one or both approaches with some comparison. Level 1 (1–2 marks): Basic statements. Accept: soft engineering — cheaper, sustainable, works with nature, creates habitats; BUT may not protect high-value property; hard engineering — reliable, protects specific locations, high value areas; BUT expensive, causes problems elsewhere, visually intrusive. Conclusion should weigh these up.',
-      },
-      {
-        q: 'Describe the characteristics of a constructive wave. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark each for any two of: low, gentle waves; long wavelength; low frequency (6–8 per minute); strong swash, weak backwash; builds up beaches.',
-      },
-      {
-        q: 'Explain how freeze-thaw weathering contributes to coastal cliff collapse. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: water enters cracks in cliff; freezes and expands (by ~9%), widening cracks; repeated freeze-thaw cycles enlarge cracks; eventually rock breaks off/cliff collapses.',
-      },
-      {
-        q: 'Using a named example, explain the management strategies used to protect a stretch of coastline. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Detailed named example with explanation of at least two strategies, why they were chosen, and their effectiveness. Level 2 (3–4 marks): Named example with description of strategies, limited explanation. Level 1 (1–2 marks): Generic strategies without clear named example. Accept Holderness/Mappleton: rock groynes — reduce longshore drift, protect beach; rock armour — absorb wave energy at cliff base; cost ~£2 million (1991); protected village but increased erosion to south.',
-      },
-      {
-        q: 'What is a corrosion/solution coast erosion process? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: seawater dissolves soluble minerals/carbonate rocks such as limestone or chalk.',
-      },
-      {
-        q: 'Explain how arches and stacks form from headlands. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: waves erode weaknesses/cracks in headland forming a cave; cave deepens and may break through headland forming an arch; continued erosion weakens arch roof; roof collapses leaving an isolated stack.',
-      },
-      {
-        q: 'Draw and label the sequence of formation from headland to stump. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: headland shown with crack/weakness; cave formed at base; arch showing breakthrough; stack and stump shown as separate features. All must be labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Assess the social and economic impacts of coastal flooding on low-lying coastlines. [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Detailed assessment of both social and economic impacts, uses specific evidence or examples, clearly distinguishes between types of impact, reaches a supported overall judgement. Level 2 (3–5 marks): Describes both types of impact with some development or examples. Level 1 (1–2 marks): Basic listing of impacts. Accept social: displacement of communities, loss of life, psychological trauma, disruption to services; economic: damage to property and infrastructure, agricultural land lost, tourism affected, cost of flood defences.',
-      },
-    ],
-  },
-  '1.2': {
-    name: 'River Landscapes',
-    questions: [
-      {
-        q: 'What is meant by a drainage basin? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: the area of land drained by a river and its tributaries.',
-      },
-      {
-        q: 'Define the following terms: watershed, confluence, tributary. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: watershed — the boundary/ridge of high land separating two drainage basins; confluence — the point where two rivers/streams join; tributary — a smaller river/stream that flows into a larger river.',
-      },
-      {
-        q: 'Explain the difference between infiltration and surface runoff. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: infiltration is water soaking/moving into the soil from the surface; 1 mark for: surface runoff is water flowing over the land surface (when infiltration rate is exceeded).',
-      },
-      {
-        q: 'Describe how the long profile of a river changes from source to mouth. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: steep gradient in upper course; gradient becomes gentler in middle course; very gentle/almost flat gradient in lower course; overall the profile is concave upward.',
-      },
-      {
-        q: 'Draw and label a diagram to show the long profile and cross-profile of a river in its upper, middle and lower course. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: long profile showing steep-to-gentle gradient; upper course cross-profile — narrow, V-shaped valley; middle course — wider valley, some floodplain; lower course — broad, flat floodplain. All features labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Explain how a V-shaped valley and interlocking spurs are formed in the upper course of a river. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: vertical/downward erosion dominates in upper course; river cuts downward into bedrock; valley sides weathered and material falls into river; river lacks energy to erode sideways so valley is V-shaped; river winds around outcrops of hard rock creating interlocking spurs.',
-      },
-      {
-        q: 'Draw and label a diagram of a V-shaped valley with interlocking spurs. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: V-shaped valley profile shown; interlocking spurs on alternating sides labelled; river at base of valley labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Describe the process of hydraulic action in a river. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: force/pressure of fast-moving water compresses air in cracks in riverbed/bank; 1 mark for: this weakens and breaks apart the rock.',
-      },
-      {
-        q: 'Explain how a waterfall is formed. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: river flows over a band of hard (resistant) rock overlying softer rock; soft rock erodes faster, undercutting the hard rock; hard rock overhangs and eventually collapses into plunge pool; plunge pool deepens by abrasion from falling water/load; waterfall retreats upstream over time leaving a gorge.',
-      },
-      {
-        q: 'Draw and label a diagram to show the formation of a waterfall and gorge. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: hard rock cap shown above soft rock; plunge pool labelled beneath waterfall; gorge (steep-sided valley) labelled behind waterfall; direction of waterfall retreat indicated.',
-        diagram: true,
-      },
-      {
-        q: 'Explain how meanders are formed in the middle and lower course of a river. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: river swings from side to side due to variations in flow; water moves faster on outside bend (erosion by hydraulic action/abrasion → river cliff/steep bank); water moves slower on inside bend (deposition → slip-off slope/point bar); this accentuates the bend over time forming a meander.',
-      },
-      {
-        q: 'Describe the formation of an ox-bow lake. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: meander bends become exaggerated over time; necks of meander narrow as erosion occurs on outer bends; river breaks through the neck during a flood; new straight channel forms; deposition seals off old meander loop forming an ox-bow lake.',
-      },
-      {
-        q: 'What is a flood plain? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: flat area of land either side of a river in its lower course; 1 mark for: formed by deposition of alluvium (fertile sediment) during repeated flooding.',
-      },
-      {
-        q: 'Explain how a levée is formed. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: during a flood, river overflows its banks; velocity decreases as water spreads out over floodplain; heaviest/coarsest material deposited closest to channel; over many floods these deposits build up raised banks (levées) either side of the channel.',
-      },
-      {
-        q: 'Describe the features of a delta and explain how it forms. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: flat, low-lying land at river mouth; river splits into many distributaries; forms when river enters sea/lake and velocity drops suddenly; deposition of sediment faster than it can be removed by waves/tides; sediment builds up above water level.',
-      },
-      {
-        q: 'Draw and annotate a hydrograph for a river in an urban area after a heavy rainstorm. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: axes labelled (discharge/cumecs on y-axis, time on x-axis); rising limb shown as steep; short lag time shown; high peak discharge labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Explain what is meant by lag time on a hydrograph. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: the time difference between peak rainfall and peak discharge; 1 mark for: longer lag time = less flood risk / shorter lag time = greater flood risk.',
-      },
-      {
-        q: 'Explain two factors that would increase flood risk in a drainage basin. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per factor (1 mark for naming, 1 mark for explanation). Accept: impermeable rock/soil — water cannot infiltrate, more runoff; prolonged/heavy rainfall — ground becomes saturated, more runoff; deforestation — less interception/transpiration, more runoff; urbanisation — tarmac/concrete impermeable, faster runoff; steep slopes — water reaches river faster; snowmelt — large amounts of water released rapidly.',
-      },
-      {
-        q: 'Describe how deforestation affects the storm hydrograph of a river. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: less interception by tree canopy; more water reaches ground directly; increased surface runoff; shorter lag time and higher peak discharge on hydrograph.',
-      },
-      {
-        q: 'Explain how urbanisation increases flood risk. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: buildings and roads create impermeable surfaces; water cannot infiltrate into soil; surface runoff increases; storm drains channel water rapidly into rivers; lag time decreases; peak discharge increases — greater flood risk.',
-      },
-      {
-        q: 'Describe the drainage basin as a system, including inputs, stores and outputs. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: inputs — precipitation (rain, snow); stores — interception, soil moisture, groundwater, channel storage; flows/transfers — infiltration, throughflow, groundwater flow, surface runoff; outputs — evapotranspiration, river discharge to sea.',
-      },
-      {
-        q: 'Explain how a dam and reservoir can be used to manage flooding. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: dam built across river valley; reservoir stores excess water during high rainfall; water released in controlled amounts; reduces peak discharge downstream.',
-      },
-      {
-        q: 'Evaluate the use of hard engineering to manage flooding. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Evaluates both advantages and disadvantages of hard engineering with examples, reaches a supported conclusion. Level 2 (3–4 marks): Describes advantages and disadvantages. Level 1 (1–2 marks): Basic points only. Accept: advantages — reliable, long-lasting protection for settlements; dams provide HEP and water supply; embankments protect large areas; disadvantages — expensive, dams displace communities, trap sediment, alter downstream habitats; channel straightening increases downstream flood risk.',
-      },
-      {
-        q: 'Explain how afforestation can reduce flood risk. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: trees intercept rainfall; roots increase infiltration capacity of soil; transpiration returns water to atmosphere; all reduce surface runoff and lag time is increased.',
-      },
-      {
-        q: 'What is floodplain zoning? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: restricting types of land use in flood-risk areas of the floodplain; 1 mark for: e.g. only parks/sports fields in highest risk zones — reduced property damage when flooding occurs.',
-      },
-      {
-        q: 'Describe the upper course of the River Tees. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: rises in Pennines/Cross Fell; steep gradient; narrow, fast-flowing channel; V-shaped valleys and waterfalls (High Force — one of England’s most powerful waterfalls, ~21m drop); hard igneous rock (whinstone/dolerite of the Whin Sill).',
-      },
-      {
-        q: 'Using the River Tees as an example, describe how the river changes from source to mouth. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Detailed description of changes across all three courses with accurate named features/places and correct use of terminology. Level 2 (3–4 marks): Describes changes in two courses, some terminology. Level 1 (1–2 marks): Basic changes. Accept: upper — steep, narrow, V-shaped valleys, High Force waterfall, hard rock; middle — wider valley, meanders, floodplain widens; lower — broad floodplain, levées, Teesside conurbation, industry, mouth at North Sea.',
-      },
-      {
-        q: 'Explain how abrasion and attrition differ as river erosion processes. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: abrasion — sediment carried by river scrapes/grinds against riverbed and banks wearing them away; 1 mark for: attrition — rocks/stones carried by river collide with each other, becoming smaller and more rounded.',
-      },
-      {
-        q: 'What is throughflow? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: water that has infiltrated into the soil and moves laterally through the soil towards the river channel.',
-      },
-      {
-        q: 'Explain how the cross-profile of a river channel changes from source to mouth. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: in upper course — narrow and shallow channel, rough/angular bed; in middle course — wider and deeper, smoother bed due to attrition; in lower course — very wide and deep channel, low gradient, large discharge; channel becomes more efficient downstream.',
-      },
-      {
-        q: 'Describe how a flood warning system can reduce the impacts of flooding. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: monitors rainfall and river levels; gives advance warning to people in flood-risk areas; allows time for evacuation of people/valuables; reduces loss of life and property damage.',
-      },
-      {
-        q: 'To what extent are soft engineering strategies more sustainable than hard engineering for flood management? [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Evaluates sustainability of both approaches with specific examples, considers environmental/social/economic dimensions, reaches a supported overall judgement. Level 2 (3–5 marks): Compares both approaches, some development. Level 1 (1–2 marks): Basic description. Accept: soft — cheaper, environmentally friendly, improves habitats, long-term; hard — effective short-term but expensive, can cause downstream problems, harms ecosystems; conclusion should weigh these and reach a judgement.',
-      },
-      {
-        q: 'Explain the processes of traction and saltation in river transportation. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: traction — largest/heaviest boulders rolled along riverbed by force of water; 1 mark for: saltation — smaller pebbles bounced/hopped along riverbed.',
-      },
-      {
-        q: 'Explain why deposition occurs in the lower course of a river. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: river slows as gradient decreases; discharge may decrease (e.g. spread over floodplain during flood); when velocity drops below competency, river cannot carry its load; heaviest/largest particles deposited first.',
-      },
-      {
-        q: 'Describe two human activities that can increase flood risk. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per point. Accept: urbanisation — impermeable surfaces increase runoff (1 mark) causing flashier hydrograph/higher peak discharge (1 mark); deforestation — removes interception and transpiration (1 mark) increasing runoff and reducing lag time (1 mark).',
-      },
-      {
-        q: 'What is groundwater flow? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: the slowest transfer in the drainage basin — water moves through pores in rock/saturated rock below the water table towards the river.',
-      },
-      {
-        q: 'Explain how the falling limb of a hydrograph shows the river returning to base flow. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: the falling limb shows discharge decreasing after peak discharge; 1 mark for: as surface runoff ends, river relies on slower throughflow and groundwater — discharge returns gradually to base flow.',
-      },
-      {
-        q: 'Draw and label a cross-section through a meander showing erosion and deposition zones. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: outer bank — river cliff, faster flow, erosion labelled; inner bank — slip-off slope/point bar, slower flow, deposition labelled; arrows indicating water flow pattern across channel.',
-        diagram: true,
-      },
-      {
-        q: 'Assess the social, economic and environmental impacts of flooding on a named area. [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Detailed assessment of all three types of impact using named evidence, balanced and reaches a supported conclusion. Level 2 (3–5 marks): Covers at least two types of impact with some development. Level 1 (1–2 marks): Basic impacts listed. Accept any recent UK/global flood. Social: loss of life, homelessness, trauma, disruption to services; Economic: property damage, loss of business, cost of repairs; Environmental: contamination of water sources, damage to habitats/ecosystems, soil erosion.',
-      },
-      {
-        q: 'Explain why a river with steep valley sides and impermeable rock has a shorter lag time than one in a gentle, permeable area. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: steep sides mean water reaches river faster; impermeable rock means water cannot infiltrate; surface runoff is rapid; lag time is therefore shorter; permeable rock allows infiltration/throughflow which is slower, increasing lag time.',
-      },
-    ],
-  },
-  '1.3': {
-    name: 'Glaciated Landscapes',
-    questions: [
-      {
-        q: 'What is meant by the glacial budget? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: the balance between accumulation (snowfall adding to glacier) and ablation (melting/evaporation removing ice); 1 mark for: positive budget = glacier advances; negative budget = glacier retreats.',
-      },
-      {
-        q: 'Explain the difference between basal sliding and internal deformation as mechanisms of glacial movement. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: basal sliding — meltwater at base of glacier acts as lubricant, glacier slides over bedrock; internal deformation — ice crystals within glacier deform/recrystallise under pressure and gravity, causing slow flow; basal sliding faster than internal deformation.',
-      },
-      {
-        q: 'Describe the process of freeze-thaw (frost shattering) weathering. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: water enters cracks/joints in rock and freezes; 1 mark for: water expands by ~9% on freezing, widening cracks; repeated cycles break off angular fragments of rock.',
-      },
-      {
-        q: 'Explain how abrasion and plucking erode the landscape under a glacier. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: abrasion — rock fragments embedded in base of glacier grind against bedrock (like sandpaper), smoothing and scratching it (striations); plucking/quarrying — meltwater freezes around fragments of bedrock; as glacier moves forward it pulls/plucks these fragments away from the bedrock surface.',
-      },
-      {
-        q: 'Draw and label a diagram to show the formation of a corrie (cirque). [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: north-facing/sheltered hollow shown; snow accumulates and compresses to ice; rotational sliding of ice shown (rotational movement arrows); steep back wall from plucking; rock lip/threshold at front; tarn shown if present.',
-        diagram: true,
-      },
-      {
-        q: 'Explain how a corrie is formed. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: snow collects in north/east-facing hollow (less sun); snow compresses to form glacier ice; glacier erodes backward and downward by rotational sliding; plucking steepens back wall; abrasion deepens floor; rock lip at front formed by reduced erosion; tarn forms in hollow after glacier melts.',
-      },
-      {
-        q: 'What is an arête? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: a narrow, knife-edged ridge between two corries; 1 mark for: formed as two adjacent corries erode backward into a mountain from opposite sides.',
-      },
-      {
-        q: 'Explain how a pyramidal peak is formed. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: three or more corries form on different sides of a mountain; they erode back into the mountain from multiple directions; the central summit is left as a steep-sided pyramid shape (e.g. Snowdon/The Matterhorn).',
-      },
-      {
-        q: 'Describe the differences between a V-shaped valley and a U-shaped valley. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for any three: V-shaped — formed by river erosion, narrow, steep sides, river at bottom; U-shaped — formed by glacial erosion, wide flat floor, very steep sides, often contains a misfit stream; U-shaped wider and deeper; U-shaped has truncated spurs (cut off by glacier).',
-      },
-      {
-        q: 'Draw and label a diagram to show a U-shaped valley with a hanging valley and ribbon lake. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: U-shape of main valley clearly shown; truncated spurs labelled; hanging valley shown entering main valley from height (with waterfall); ribbon lake on valley floor labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Explain how truncated spurs are formed by glacial erosion. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: before glaciation, river valley has interlocking spurs; glacier moves down valley and cannot wind around spurs; glacier erodes and cuts off ends of spurs leaving steep cliff faces (truncated spurs).',
-      },
-      {
-        q: 'What is a hanging valley? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: a tributary valley that joins a main U-shaped valley at a higher level than the main valley floor; 1 mark for: formed because the smaller tributary glacier eroded less deeply than the larger main glacier; often has a waterfall where it meets the main valley.',
-      },
-      {
-        q: 'Explain how ribbon lakes form in glaciated valleys. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: glacier erodes valley floor unevenly; softer rock or areas of compression eroded more deeply; after glacier melts these depressions fill with water; moraine may dam the valley helping to create lake.',
-      },
-      {
-        q: 'Describe the features of a roche moutonnée. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: smoothed, gently sloping upstream (stoss) face — polished by abrasion; rough, jagged, steep downstream (lee) face — caused by plucking; asymmetric shape showing direction of ice movement.',
-      },
-      {
-        q: 'Explain the difference between till and outwash. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: till (boulder clay) — unsorted, unstratified sediment deposited directly by glacier; 1 mark for: outwash — sorted, stratified sediment deposited by meltwater streams beyond snout of glacier.',
-      },
-      {
-        q: 'What is a drumlin? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: a smooth, elongated hill made of glacial till; 1 mark for: formed under a moving glacier — steep blunt end (stoss) faces direction ice came from; tapers in direction of ice flow (lee end).',
-      },
-      {
-        q: 'Describe the four types of moraine. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: terminal moraine — ridge of till at maximum advance of glacier; lateral moraine — deposited along sides of glacier (from weathered valley walls); medial moraine — ridge in middle of glacier where two glaciers merge; ground moraine — till deposited beneath glacier as it moves.',
-      },
-      {
-        q: 'Draw and label a diagram to show the different types of moraine associated with a glacier. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: glacier outline shown; lateral moraine on both sides labelled; medial moraine in middle (from tributary) labelled; terminal moraine at snout labelled.',
-        diagram: true,
-      },
-      {
-        q: 'What is an erratic? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: a rock/boulder that has been transported by a glacier; 1 mark for: the rock is of a different type from the bedrock on which it now rests (e.g. limestone boulder on granite).',
-      },
-      {
-        q: 'Explain how eskers and kames are formed by fluvioglacial processes. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: eskers — ridges of sorted sand and gravel deposited by meltwater streams flowing in tunnels under glacier; kames — hills/mounds of stratified sand and gravel deposited at margin/front of glacier by meltwater; both feature sorted/stratified material (unlike till); kames may also form in crevasses.',
-      },
-      {
-        q: 'Describe the features of a periglacial environment. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: area around edge of glacier/ice sheet; permanently frozen ground (permafrost); freeze-thaw weathering very active; solifluction; patterned ground (ice wedge polygons, stone circles); little precipitation (polar desert).',
-      },
-      {
-        q: 'What is permafrost? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: permanently frozen ground/subsoil that remains at or below 0°C for at least two consecutive years.',
-      },
-      {
-        q: 'Explain how solifluction occurs in periglacial areas. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: active layer (surface) thaws in summer; water cannot drain through permafrost beneath; waterlogged soil/sediment slowly flows downslope under gravity; creates lobes of sediment (solifluction lobes).',
-      },
-      {
-        q: 'Explain how patterned ground forms in periglacial areas. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: freeze-thaw sorts sediment by size; repeated freezing pushes larger stones outward/upward; stones arranged in circles, polygons or stripes on slopes; ice wedge polygons form as ground contracts in cold, cracks fill with water which freezes.',
-      },
-      {
-        q: 'Describe one conflict between tourism and conservation in a glaciated upland area. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark for: identifying conflict (e.g. footpath erosion, litter, overcrowding); 1 mark for: explaining cause (tourism pressure on fragile landscape); 1 mark for: impact on landscape/ecosystem (erosion of paths, disturbance of wildlife, damage to habitats). Accept Snowdonia example.',
-      },
-      {
-        q: 'Using Snowdonia as an example, describe the opportunities that glaciated landscapes provide for tourism. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: dramatic scenery (U-shaped valleys, arêtes, peaks) attracts walkers/climbers; Snowdon most visited mountain in Wales/UK; mountain railway; water sports on ribbon lakes; walking/cycling trails; brings income to local economy (approximately 4 million visitors/year).',
-      },
-      {
-        q: 'Explain how tourism in Snowdonia/glaciated uplands can damage the environment. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: footpath erosion — vegetation worn away, soil compacted/eroded on popular routes (e.g. Snowdon path); littering; car park/road building disrupts habitats; noise pollution disturbs wildlife; water pollution from visitor numbers.',
-      },
-      {
-        q: 'Evaluate the strategies used to manage tourism in a glaciated upland area. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Evaluates strategies with specific examples, considers effectiveness and drawbacks, reaches a supported conclusion. Level 2 (3–4 marks): Describes strategies with some evaluation. Level 1 (1–2 marks): Basic strategies listed. Accept Snowdonia: footpath repair using stone pitching; visitor management (car park charges); Snowdon mountain railway reduces walkers on summit path; wardening; information centres; BUT hard to enforce without restricting access, expensive to maintain.',
-      },
-      {
-        q: 'What is an outwash plain (sandur)? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: a flat plain of sorted sand and gravel beyond the snout/terminus of a glacier; 1 mark for: deposited by meltwater streams flowing out from the glacier — material is sorted/layered by size.',
-      },
-      {
-        q: 'Explain why glacial landscapes are important for water supply. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: glaciers store large amounts of freshwater; meltwater feeds rivers (important in dry seasons); reservoirs built in glaciated valleys (e.g. Thirlmere in the Lake District supplies water to Manchester); permeable glacial sediments store groundwater.',
-      },
-      {
-        q: 'Describe the glacial budget and explain how it affects glacier advance or retreat. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: budget = difference between accumulation (snow gain) and ablation (melting loss); equilibrium line separates zones; positive budget (more accumulation than ablation) → glacier advances; negative budget (more ablation than accumulation) → glacier retreats; currently most glaciers have negative budgets due to climate change.',
-      },
-      {
-        q: 'Explain how meltwater channels are formed. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: channels carved by meltwater flowing under, through or beside glaciers; 1 mark for: often left as dry/misfit valleys in landscape after glacier retreats.',
-      },
-      {
-        q: 'To what extent has human activity increased the threats to glaciated landscapes? [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Evaluates human threats with named evidence, compares to natural threats, reaches a supported judgement with consideration of relative importance. Level 2 (3–5 marks): Describes human and natural threats, some comparison. Level 1 (1–2 marks): Basic threats listed. Accept: human — climate change (glacier retreat), tourism damage, quarrying/mining, overgrazing; natural — tectonic activity, climate variability; conclusion should judge extent human vs natural, using evidence.',
-      },
-      {
-        q: 'Draw a diagram to show the cross-section of a corrie after the glacier has melted, including the tarn. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: steep back wall shown; over-deepened basin/hollow; rock lip/threshold at front; tarn (lake) filling the hollow labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Explain why glaciated areas are used for farming and how this might conflict with conservation. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: glacial till is fertile — good for pastoral farming (sheep/cattle); flat valley floors good for arable farming; overgrazing removes vegetation, causes soil erosion, reduces biodiversity; hedgerow/wall removal changes landscape character. Conflict: farmers want to maximise land use, conservationists want to protect natural habitats.',
-      },
-      {
-        q: 'What evidence suggests that Snowdonia was glaciated in the past? [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for any three: U-shaped valleys (e.g. Nant Ffrancon); corries with tarns (e.g. Glaslyn); arêtes (e.g. Crib Goch); pyramidal peak (Snowdon); ribbon lakes (e.g. Llyn Tegid/Bala Lake); erratics; moraines; striations on rock.',
-      },
-      {
-        q: 'Explain how quarrying in glaciated areas can conflict with tourism and conservation. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: quarrying provides jobs and materials (economic benefit); large open-cast quarries visible in landscape (e.g. Penrhyn, Dinorwic slate quarries in Snowdonia); noise, dust and lorry traffic deters tourists; destroys habitats and glacial landforms; creates conflict between economic and environmental interests.',
-      },
-      {
-        q: 'Describe the characteristics of glacial till. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: unsorted — mixture of all particle sizes from boulders to clay; 1 mark for: unstratified — no distinct layers (unlike fluvioglacial material).',
-      },
-      {
-        q: 'Suggest why corries in the UK are typically found on north or east-facing slopes. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: north/east-facing slopes receive less direct sunlight (in northern hemisphere); 1 mark for: snow accumulates and is preserved for longer, allowing compaction into glacier ice and hollow enlargement through rotational erosion.',
-      },
-      {
-        q: 'Compare the characteristics of glacial till and fluvioglacial outwash deposits. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for any three: till is unsorted whereas outwash is sorted by size; till is unstratified whereas outwash shows clear layering/stratification; till has angular fragments whereas outwash particles are rounded/smoother (worked by water); till deposited directly by ice, outwash deposited by meltwater streams; till found beneath and at glacier margins, outwash found beyond the snout on the sandur.',
-      },
-    ],
-  },
-  '1.4': {
-    name: 'Weather and Climate',
-    questions: [
-      {
-        q: 'State two factors that affect the UK\'s climate. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark each for any two of: latitude; altitude; distance from the sea (maritime influence); prevailing south-westerly winds; North Atlantic Drift (warm ocean current).',
-      },
-      {
-        q: 'Explain how the North Atlantic Drift affects the UK\'s climate. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: warm ocean current flowing from Gulf of Mexico north-east towards UK; warms air passing over it; brings mild temperatures to west coast of UK in winter; keeps ports ice-free; UK warmer than expected for its latitude.',
-      },
-      {
-        q: 'Explain how altitude affects temperature and precipitation in the UK. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: temperature decreases with altitude (approximately 1°C per 100m); higher land forces air to rise, cool and condense → orographic/relief rainfall; western uplands (e.g. Welsh mountains, Pennines, Scottish Highlands) receive most rainfall; rain shadow on leeward side.',
-      },
-      {
-        q: 'Describe the characteristics of the polar maritime air mass as it affects the UK. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: source region — north Atlantic/Arctic Ocean; characteristics — cool/cold, moist; most common air mass affecting UK; brings cloud, rain and showers; cooler temperatures in summer; less cold in winter than polar continental.',
-      },
-      {
-        q: 'Compare the characteristics of tropical maritime and polar continental air masses. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: tropical maritime — source sub-tropical Atlantic (near the Azores, to the south-west), warm/mild, moist, brings mild wet weather, affects UK in winter/autumn; polar continental — source Scandinavia/Siberia, cold, dry; brings cold clear conditions in winter, possibly snow from east; may bring warm dry conditions in summer.',
-      },
-      {
-        q: 'Describe the sequence of weather associated with the passage of a depression over the UK. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Detailed description of weather changes in order from warm sector approach to cold front clearance, using correct terminology. Level 2 (3–4 marks): Describes most stages with some accuracy. Level 1 (1–2 marks): Basic description. Accept: ahead of warm front — cirrus then altostratus clouds, pressure falling, wind picking up, temperature falling; at warm front — nimbostratus, steady rain, temperature rises, wind veers; warm sector — stratocumulus, drizzle, mild; at cold front — cumulonimbus, heavy rain/thunder, temperature drops sharply, pressure rises; behind cold front — cumulus, bright spells and showers.',
-      },
-      {
-        q: 'Draw and label a cross-section through a depression showing the warm and cold fronts. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: warm front shown with correct symbol (half circles on leading edge); cold front shown with correct symbol (triangles); warm sector between fronts labelled; cloud types associated with each front shown/labelled (e.g. nimbostratus at warm front, cumulonimbus at cold front).',
-        diagram: true,
-      },
-      {
-        q: 'Explain how a depression forms. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: depressions form where warm tropical air meets cold polar air along the polar front; warm air is less dense and rises above cold air; this creates low pressure at the surface; the air masses swirl around the low due to Coriolis effect (anticlockwise in northern hemisphere); warm and cold fronts develop.',
-      },
-      {
-        q: 'Describe the weather typically brought by a summer anticyclone in the UK. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: high pressure; descending air — no clouds/few clouds; very warm/hot temperatures; dry conditions/drought risk; light winds; possibly morning mist/fog.',
-      },
-      {
-        q: 'Compare the weather of summer and winter anticyclones in the UK. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: summer — hot, dry, sunny, light winds, possible heatwave/hosepipe bans; winter — cold, clear skies, frost/fog, ground frost/black ice, possible snow in upland areas; both — high pressure, descending air, dry conditions; winter is cold because clear skies allow heat to escape at night (radiation fog common).',
-      },
-      {
-        q: 'What are isobars on a synoptic chart? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: lines on a weather map connecting places of equal atmospheric pressure.',
-      },
-      {
-        q: 'Explain what closely spaced isobars on a synoptic chart indicate. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: closely spaced isobars indicate a steep pressure gradient; 1 mark for: steep pressure gradient causes strong winds.',
-      },
-      {
-        q: 'Draw and annotate a synoptic chart showing a depression centred over the UK. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: low pressure centre labelled (L); isobars drawn around centre; warm front symbol shown correctly; cold front symbol shown correctly.',
-        diagram: true,
-      },
-      {
-        q: 'Describe three pieces of evidence that show the Earth\'s climate is changing. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for any three: rising global average temperatures (instrumental records show ~1.1°C rise since 1850); rising sea levels (thermal expansion + ice melt); ice cores show increased CO₂ concentrations; retreat of glaciers and ice sheets; shifting seasons (phenology — earlier blossom/migration); reduced Arctic sea ice extent.',
-      },
-      {
-        q: 'Explain how ice cores provide evidence for climate change. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: ice cores drilled from Antarctic/Greenland ice sheets; trapped air bubbles contain samples of ancient atmosphere; analysis shows CO₂ and methane concentrations at different times in the past; also shows temperature variations (from oxygen isotope ratios); provide record going back ~800,000 years.',
-      },
-      {
-        q: 'Explain two natural causes of climate change. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per cause: Milankovitch cycles — changes in Earth\'s orbit/tilt/wobble over thousands of years alter the amount of solar radiation reaching Earth (1 mark) changing global temperatures (1 mark); volcanic eruptions — large eruptions eject sulphur dioxide into stratosphere (1 mark) which reflects solar radiation back to space causing cooling (1 mark). Also accept: changes in solar output.',
-      },
-      {
-        q: 'Explain the enhanced greenhouse effect and how it causes global warming. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: sun\'s radiation (short-wave) passes through atmosphere and warms Earth\'s surface; Earth emits long-wave (infrared) radiation back outward; greenhouse gases (CO₂, methane, water vapour, nitrous oxide) absorb and re-emit this long-wave radiation; human activities have increased concentrations of greenhouse gases (burning fossil fuels, deforestation, agriculture); more radiation trapped → enhanced greenhouse effect → rising temperatures.',
-      },
-      {
-        q: 'Describe two impacts of climate change on the UK. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per impact. Accept: increased flood risk — more intense rainfall events (1 mark) → more frequent river/coastal flooding (1 mark); heatwaves — more frequent/intense summer heat (1 mark) → health risks, water shortages, crop stress (1 mark); changing seasons — earlier spring, milder winters; coastal erosion — sea level rise increases rate of erosion.',
-      },
-      {
-        q: 'Explain two global impacts of climate change. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per impact. Accept: sea level rise — melting ice sheets/thermal expansion (1 mark) → flooding of low-lying islands/coasts e.g. Maldives, Bangladesh (1 mark); food insecurity — changing rainfall patterns/droughts (1 mark) → crop failures in already food-insecure regions (1 mark); extreme weather events; species extinction; desertification.',
-      },
-      {
-        q: 'Distinguish between mitigation and adaptation in the context of climate change. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: mitigation — actions to reduce greenhouse gas emissions/slow the rate of climate change (e.g. renewable energy, reducing deforestation); 1 mark for: adaptation — adjusting to the effects of climate change that are already occurring or expected (e.g. flood defences, drought-resistant crops).',
-      },
-      {
-        q: 'Explain two strategies to mitigate climate change. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per strategy: renewable energy (solar/wind/hydro) — replaces fossil fuels (1 mark), reduces CO₂ emissions (1 mark); afforestation — trees absorb CO₂ from atmosphere (1 mark), acts as carbon sink (1 mark). Also accept: carbon capture and storage, improving energy efficiency, electric vehicles, international agreements (e.g. Paris Agreement).',
-      },
-      {
-        q: 'Explain two strategies to adapt to climate change. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per strategy. Accept: flood defences (sea walls, flood barriers) — protect coastal/low-lying communities from rising sea levels and flooding (1 mark each); drought-resistant crop varieties — ensure food security in areas experiencing reduced rainfall (1 mark each); managed retreat; early warning systems.',
-      },
-      {
-        q: 'Describe the characteristics of the tropical continental air mass. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark each for: source region — north Africa/Sahara Desert; warm and dry; brings hot, dry, sunny weather in summer; occasionally brings haze and dust; less common than other air masses affecting UK.',
-      },
-      {
-        q: 'To what extent are human factors more important than natural factors in causing climate change? [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Evaluates both human and natural factors with evidence and examples, reaches a supported overall judgement with clear reasoning. Level 2 (3–5 marks): Describes human and natural factors, some evaluation. Level 1 (1–2 marks): Basic description. Accept: human — burning fossil fuels, deforestation, agriculture all increasing greenhouse gas concentrations rapidly; rate of change unprecedented; ~97% of climate scientists agree humans are the main cause and the IPCC calls human influence unequivocal; natural — Milankovitch, volcanic, solar variability explain past changes but not current rapid warming; conclusion should judge relative importance with evidence.',
-      },
-      {
-        q: 'Explain how the UK\'s distance from the sea affects its climate. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: sea heats and cools more slowly than land (higher specific heat capacity); coasts have milder winters and cooler summers (maritime climate); areas further inland (e.g. eastern England) have greater temperature extremes (continental influence); western UK more influenced by Atlantic, eastern UK drier.',
-      },
-      {
-        q: 'Describe the weather at a cold front. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: cold air undercuts warm air rapidly; steep front → very heavy, intense rainfall/thunder; cumulonimbus clouds; temperature drops sharply; pressure rises; wind may veer (change direction); short duration of heavy rain.',
-      },
-      {
-        q: 'Explain how phenological evidence shows that climate is changing. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: phenology records timing of biological events (blossom dates, bird migration, first appearance of insects); 1 mark for: records show these events are occurring earlier (e.g. cherry blossom earlier, birds arriving/nesting earlier) indicating earlier/warmer springs — consistent with warming.',
-      },
-      {
-        q: 'What is the difference between weather and climate? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: weather is the day-to-day conditions of the atmosphere (temperature, rainfall, wind speed); 1 mark for: climate is the average weather conditions of a place over a long period (30 years).',
-      },
-      {
-        q: 'Explain how Milankovitch cycles cause long-term climate change. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: Earth\'s orbit around sun changes shape (eccentricity — circular to elliptical, ~100,000 year cycle); Earth\'s axial tilt changes (obliquity — 22.1–24.5°, ~41,000 year cycle); Earth\'s wobble on its axis (precession — ~26,000 year cycle); these cycles change the distribution/amount of solar radiation reaching Earth, causing glacial/interglacial cycles.',
-      },
-      {
-        q: 'Describe two pieces of evidence from temperature records that show climate change is occurring. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per piece of evidence. Accept: instrumental temperature records since 1850 — show ~1.1–1.3°C average global warming (1 mark), with the ten warmest years on record all occurring since 2015 (1 mark); proxy records (tree rings, pollen, ice cores) — extend record further back (1 mark), show current warming is unprecedented in last 2000 years (1 mark).',
-      },
-      {
-        q: 'Explain why volcanic eruptions can cause short-term cooling of global temperatures. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: large eruptions inject sulphur dioxide (SO₂) into stratosphere; SO₂ combines with water vapour to form sulphate aerosols; these reflect incoming solar radiation back into space; reduces solar radiation reaching Earth\'s surface; cooling effect lasts 1–3 years (e.g. Mount Pinatubo 1991 cooled Earth by ~0.5°C).',
-      },
-      {
-        q: 'Assess the extent to which the UK is prepared to cope with the impacts of climate change. [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Evaluates specific UK adaptation and mitigation strategies, considers their effectiveness and limitations, reaches a supported judgement. Level 2 (3–5 marks): Describes UK strategies, some evaluation. Level 1 (1–2 marks): Basic strategies. Accept: Thames Barrier (flood protection); Climate Change Act 2008 (legally binding emission targets); UKCP18 projections informing planning; coastal managed retreat; BUT economic/social cost challenges; unequal vulnerability across UK; need for international cooperation.',
-      },
-      {
-        q: 'Explain how latitude affects the UK\'s climate. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: UK is at approximately 50–60°N — relatively high latitude; 1 mark for: sun\'s rays strike at a lower angle, spread over wider area → less intense solar radiation → cooler temperatures than equatorial regions.',
-      },
-      {
-        q: 'Describe the formation of relief (orographic) rainfall. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: prevailing south-westerly winds bring moist air from Atlantic; air is forced to rise over upland areas (mountains/hills); air cools at dew point, water vapour condenses forming clouds; precipitation falls on windward (west) side; dry rain shadow on leeward (east) side.',
-      },
-      {
-        q: 'Draw and annotate a diagram to show relief rainfall over a mountain range. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: mountain cross-section shown; windward side — arrows showing air rising, cloud forming, rain falling; leeward side — rain shadow, descending air, dry conditions labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Explain why sea levels are rising and what impact this has on coastal communities. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: sea levels rising due to thermal expansion of seawater as temperatures increase; melting of ice sheets (Greenland, Antarctica) and glaciers adds freshwater to oceans; impacts: increased coastal flooding (storm surges higher), increased coastal erosion, saltwater intrusion into freshwater/agricultural land, displacement of coastal communities (e.g. Pacific island nations).',
-      },
-      {
-        q: 'What is a tropical storm? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: an intense low-pressure weather system with strong winds (over 74 mph / 119 km/h) and heavy rainfall that forms over warm tropical oceans (also known as hurricane/typhoon/cyclone depending on region).',
-      },
-      {
-        q: 'Explain three conditions needed for a tropical storm to form. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: warm ocean surface temperatures above 26.5°C to a depth of ~50m (provides heat/moisture energy); latitude of 5–30° (sufficient Coriolis effect to cause rotation); low wind shear (winds similar speed at all heights so storm is not torn apart); high humidity in lower/middle atmosphere; unstable atmospheric conditions.',
-      },
-      {
-        q: 'Describe the primary effects of a named tropical storm. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for any four (named storm e.g. Typhoon Haiyan 2013 Philippines): over 6,300 killed; ~14 million people affected; 1.9 million homeless; 1 million homes damaged/destroyed; storm surge of 5m in Tacloban; winds of 314 km/h; coconut and rice crops destroyed; airports/roads destroyed. Accept Hurricane Katrina or other valid named example with specific detail.',
-      },
-      {
-        q: 'To what extent can the impacts of extreme weather events in the UK be reduced by planning and preparation? [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Evaluates a range of preparation strategies with UK named examples (e.g. Somerset Levels floods 2014, Beast from the East 2018, Storm Desmond 2015), considers effectiveness and limitations, reaches a supported conclusion. Level 2 (3–5 marks): Describes strategies with some evaluation. Level 1 (1–2 marks): Basic points. Accept: flood defences (dredging, barriers, SUDS); Environment Agency flood warnings; Met Office weather warnings; improved drainage; building regulations; resilient infrastructure; limitations — cost, climate change increasing severity beyond design limits, human behaviour, rural/remote areas harder to protect.',
-      },
-    ],
-  },
-  '1.5': {
-    name: 'Tropical Rainforests',
-    questions: [
-      {
-        q: 'Describe the climate of a tropical rainforest. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: located near equator; high temperatures throughout year (~27°C/no seasons); high annual rainfall (~2000mm+); rainfall is convectional (afternoon storms); low pressure (ITCZ); high humidity.',
-      },
-      {
-        q: 'Explain why tropical rainforests receive high levels of rainfall. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: located near equator where sun is overhead/intense heating; air heated and rises (low pressure/ITCZ); rapid evapotranspiration from trees adds moisture; rising air cools and condenses → heavy convectional rainfall most afternoons.',
-      },
-      {
-        q: 'Draw and label a diagram to show the four layers of a tropical rainforest. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: emergent layer (tallest trees ~40m+) labelled; canopy (continuous layer ~20–30m) labelled; understorey (shade-tolerant shrubs, small trees ~5–20m) labelled; forest floor (dark, little vegetation, leaf litter) labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Explain the nutrient cycle in a tropical rainforest. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: nutrients stored in three places — biomass (plants), litter (dead matter on floor), soil; rapid decomposition by bacteria/fungi in warm, moist conditions releases nutrients from litter to soil quickly; leaching — heavy rainfall washes nutrients down through soil; most nutrients in biomass store; soils are nutrient-poor (infertile) if trees are removed.',
-      },
-      {
-        q: 'Explain two plant adaptations to the tropical rainforest environment. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per adaptation: buttress roots — large fin-like roots extending from trunk (1 mark) provide stability for tall trees in shallow, nutrient-poor soils (1 mark); drip tips — pointed/elongated leaf tips (1 mark) allow excess water to drain off quickly, preventing fungal growth (1 mark). Also accept: lianas (climbing plants reach light), epiphytes (grow on branches to reach light), waxy/large leaves to maximise photosynthesis in low light.',
-      },
-      {
-        q: 'What is meant by biodiversity? [1 mark]',
-        marks: 1,
-        markScheme: '1 mark for: the variety of plant and animal species in an area/ecosystem.',
-      },
-      {
-        q: 'Explain why tropical rainforests have such high biodiversity. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: consistent warm and wet climate throughout year supports year-round growth; multiple layers provide many different habitats and niches; high primary productivity — abundant food supply; millions of years of evolution without ice ages (stable environment); estimated 50% of world\'s species in rainforests.',
-      },
-      {
-        q: 'Describe the concept of interdependence in the tropical rainforest. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: plants and animals depend on each other; e.g. trees rely on insects for pollination; animals rely on trees for food and shelter; if one species is removed it affects others; trees cycle water (transpiration) affecting local rainfall; shows food web/ecological interdependence.',
-      },
-      {
-        q: 'Explain two causes of deforestation in tropical rainforests. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per cause. Accept: commercial logging — valuable hardwood timber (mahogany, teak) exported for profit (1 mark) creates large clearings and access roads for further deforestation (1 mark); cattle ranching — forest cleared for beef production (1 mark) major cause in Amazon — approx 70% of Amazon deforestation (1 mark); mining — mineral extraction requires forest clearance; HEP dams — flood large areas; road building — Amazon highways open up forest.',
-      },
-      {
-        q: 'Using the Amazon Basin as an example, describe the main causes of deforestation. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Detailed explanation of multiple causes with specific Amazon facts/data. Level 2 (3–4 marks): Describes several causes with some Amazon detail. Level 1 (1–2 marks): Basic causes. Accept: cattle ranching (70% of deforestation), soya farming for animal feed, logging (legal/illegal), mining (e.g. iron ore at Carajás), HEP dams (Belo Monte Dam), Trans-Amazon Highway, population pressure/subsistence farming, government development policies.',
-      },
-      {
-        q: 'Explain the impact of deforestation on the hydrological cycle. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: trees intercept rainfall and take up water through roots; transpiration returns water to atmosphere (30–50% of Amazon rainfall recycled through trees); removal of trees reduces transpiration; less cloud formation and rainfall; surface runoff increases (soil has no protection); rivers carry more sediment; local and regional climate may become drier.',
-      },
-      {
-        q: 'Explain the impact of deforestation on biodiversity. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: destruction of habitats for millions of species; estimated 137 species extinct per day globally due to deforestation; specialist species (those with narrow niches) particularly vulnerable; loss of genetic diversity; reduces ecosystem resilience.',
-      },
-      {
-        q: 'Describe the impact of deforestation on indigenous peoples. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: loss of land/homes for tribes who depend on forest; loss of traditional knowledge and ways of life; exposure to western diseases (no immunity); violence and conflict with loggers/farmers; some tribes face extinction (uncontacted tribes); displacement to urban areas with poverty.',
-      },
-      {
-        q: 'Explain how deforestation contributes to climate change. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: trees store carbon (carbon sink); burning/decomposing trees releases stored CO₂ into atmosphere; deforestation accounts for ~10–15% of global CO₂ emissions; loss of trees reduces ability to absorb future CO₂; positive feedback loop.',
-      },
-      {
-        q: 'Explain how deforestation leads to soil erosion. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: tree roots bind/hold soil together; removal of trees leaves soil exposed to heavy rain; no canopy to intercept rainfall (raindrops hit soil directly, breaking it up — splash erosion); nutrients leached from unprotected soil; laterite soils can harden (laterisation) when exposed to sun making land infertile.',
-      },
-      {
-        q: 'What is selective logging? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: only certain (mature/valuable) trees are cut down rather than clearing all trees; 1 mark for: allows forest to regenerate naturally; reduces overall damage to ecosystem compared to clear-felling.',
-      },
-      {
-        q: 'Explain how ecotourism can support the sustainable management of rainforests. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: small-scale, low-impact tourism to experience natural environment; provides income for local communities; gives economic value to standing forest (incentive to preserve it); raises awareness of rainforest importance; tourists pay for guided tours keeping money in local economy; can fund conservation projects.',
-      },
-      {
-        q: 'What is a debt-for-nature swap? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: an agreement where a country\'s debt is reduced/cancelled in exchange for protecting areas of natural habitat (e.g. rainforest); 1 mark for: provides economic incentive for LIC governments to conserve forests rather than develop them.',
-      },
-      {
-        q: 'Explain how international agreements help to protect tropical rainforests. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: e.g. REDD+ (Reducing Emissions from Deforestation and Degradation) — pays countries to protect forests; Paris Agreement — countries commit to reducing emissions including from deforestation; CITES controls trade in endangered species; FSC (Forest Stewardship Council) certification ensures sustainable timber trade.',
-      },
-      {
-        q: 'Describe two characteristics of the emergent layer of a tropical rainforest. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark each for: tallest trees (40–60m); widely spaced; umbrella-shaped crowns spread to maximise light; exposed to strong winds, rain, intense sunlight; home to eagles, butterflies, some monkeys.',
-      },
-      {
-        q: 'Explain the adaptation of buttress roots in tropical rainforest trees. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: large, flat, fin-like roots extending from base of trunk; 1 mark for: spread weight of very tall trees / anchor trees in shallow, nutrient-poor soils.',
-      },
-      {
-        q: 'Compare the soil characteristics of a tropical rainforest with an area that has been deforested. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: rainforest — nutrient-poor subsoil but rich litter layer on surface; rapid nutrient cycling keeps nutrients in biomass; deep red/laterite soils; thin fertile layer; deforested — litter layer removed/not replenished; soils lose nutrients through leaching and erosion; laterite can harden to impermeable crust; soil degradation within a few years.',
-      },
-      {
-        q: 'Describe the role of decomposers in the nutrient cycle of a tropical rainforest. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: bacteria and fungi break down dead plant/animal material in litter layer; 1 mark for: releases nutrients back into soil quickly (aided by warm, moist conditions) — completing the nutrient cycle.',
-      },
-      {
-        q: 'Using Malaysia or another named example, explain the conflict between development and conservation in a tropical rainforest. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Detailed explanation of specific development pressures and conservation arguments with named evidence from chosen location. Level 2 (3–4 marks): Describes both perspectives with some specific detail. Level 1 (1–2 marks): Generic points. Accept Malaysia/Borneo: palm oil plantations for economic growth vs biodiversity loss (orangutan habitat); logging for timber exports vs deforestation; poverty alleviation through development vs long-term sustainability.',
-      },
-      {
-        q: 'To what extent can tropical rainforests be managed sustainably? [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Evaluates a range of sustainable management strategies with specific examples, considers their effectiveness and limitations, reaches a supported judgement. Level 2 (3–5 marks): Describes management strategies, some evaluation. Level 1 (1–2 marks): Basic strategies. Accept: selective logging, replanting, ecotourism, international agreements, protected areas, debt-for-nature swaps; limitations — enforcement difficult, economic pressures for development, corruption, poverty; conclusion should weigh possibilities against challenges.',
-      },
-      {
-        q: 'Draw and annotate a diagram to show the nutrient cycle of a tropical rainforest. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: three stores shown (biomass, litter, soil); arrows showing flows between stores (decomposition from litter to soil; uptake from soil to biomass; leaf fall from biomass to litter); leaching shown (arrow from soil downward); precipitation/weathering inputs shown.',
-        diagram: true,
-      },
-      {
-        q: 'Explain one animal adaptation to the tropical rainforest environment. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for naming an appropriate adaptation with correct animal; 1 mark for explaining its purpose. Accept: tree frog — sticky pads on feet (1 mark) enable climbing in tree layers to find food/avoid predators (1 mark); toucan — large, colourful bill (1 mark) to reach and break open fruits in dense vegetation (1 mark); sloth — slow movement and green algae on fur (1 mark) as camouflage to avoid predators (1 mark).',
-      },
-      {
-        q: 'Describe the ITCZ and its role in creating the equatorial climate. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: ITCZ = Inter-Tropical Convergence Zone — a band of low pressure near the equator where north-east and south-east trade winds converge; intense solar heating causes warm air to rise constantly; creates persistent cloud and convectional rainfall; moves slightly north and south with seasons following overhead sun.',
-      },
-      {
-        q: 'What is meant by convectional rainfall? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: intense solar heating of ground/surface causes rapid evaporation and rising air; 1 mark for: rising air cools and condenses forming cumulonimbus clouds → heavy afternoon thunderstorms.',
-      },
-      {
-        q: 'Explain the concept of leaching and its importance in the tropical rainforest nutrient cycle. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: heavy rainfall washes (leaches) soluble nutrients downward through soil profile; nutrients are removed from the upper soil horizon; this means soils are naturally infertile; explains why clearing rainforest leads to rapid soil degradation — nutrients go with vegetation, not stored in soil.',
-      },
-      {
-        q: 'Assess the effectiveness of protected areas (national parks/reserves) in conserving tropical rainforests. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Evaluates protected areas with specific examples, considers effectiveness and limitations, reaches a supported conclusion. Level 2 (3–4 marks): Describes advantages and disadvantages. Level 1 (1–2 marks): Basic points. Accept: advantages — legal protection, habitat conservation, enforced boundaries, ecotourism revenue; limitations — illegal logging/poaching difficult to stop, buffer zones needed, local communities may resent exclusion, enforcement requires funding, corruption, total area insufficient.',
-      },
-      {
-        q: 'Describe the characteristics of the canopy layer of a tropical rainforest. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark each for: forms a continuous (closed) layer of interlocking branches and leaves at 20–30m; intercepts ~80% of sunlight; most animal diversity found here; leaves have waxy surfaces; bromeliads and orchids (epiphytes) grow here.',
-      },
-      {
-        q: 'Explain how subsistence farming contributes to deforestation in the Amazon. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: poor farmers move into forest areas along roads; practice slash-and-burn (clear small areas, burn trees to release nutrients); farm for a few years until soil exhausted; move on to clear more forest — shifting cultivation; small scale individually but large cumulative effect.',
-      },
-      {
-        q: 'Explain how replanting/reforestation can help manage tropical rainforests. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: trees planted to replace those cut down; restores forest cover; can restore habitats and biodiversity over time; BUT monoculture plantations less biodiverse than natural rainforest; takes many decades for mature forest to re-establish; difficult to replicate full ecosystem complexity.',
-      },
-      {
-        q: 'Assess the social, economic and environmental impacts of deforestation in tropical rainforests. [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Detailed assessment of all three impact types with specific evidence/examples, reaches a supported overall judgement with consideration of most significant impact. Level 2 (3–5 marks): Covers at least two impact types with some development. Level 1 (1–2 marks): Basic impacts listed. Accept: environmental — species extinction, climate change, soil erosion, hydrological disruption; economic — short-term profit for TNCs/governments but long-term loss of ecosystem services; social — displacement of indigenous peoples, poverty, health risks; judgement on which is most significant.',
-      },
-      {
-        q: 'Describe one way in which indigenous people use the tropical rainforest sustainably. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for a valid way + 1 mark development. E.g. shifting cultivation — small plots cleared and farmed for a few years, then left fallow for many years so the forest and soil recover; small-scale hunting and gathering that takes only what is needed; use of detailed knowledge of medicinal plants without clearing forest.',
-      },
-      {
-        q: 'Explain why clearing a tropical rainforest makes its soils infertile. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: most nutrients are stored in the biomass, so they are removed when trees are cut down or burned; no new leaf litter falls, so the nutrient supply to the soil stops; heavy rainfall leaches remaining nutrients out of the thin soil; bare soil is eroded by rain splash and surface runoff; exposed soil can harden (laterisation); crop yields fall within a few years, so farmers move on to clear more forest.',
-      },
-      {
-        q: 'Suggest why ecotourism is considered a sustainable way of managing the rainforest. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: generates income from tourists without cutting down the forest (economic benefit for local communities); provides employment as guides/hosts reducing need for logging/farming; raises awareness of conservation and funds protection; small-scale, low impact; BUT can cause disturbance if poorly managed. E.g. Costa Rica derives significant GDP from ecotourism while protecting >25% of land.',
-      },
-      {
-        q: 'Explain the role of international agreements in protecting tropical rainforests. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: CITES — controls trade in endangered species; REDD+ (UN) — pays LICs to reduce emissions from deforestation; Paris Agreement includes forest protection commitments; debt-for-nature swaps — debt cancelled in return for conservation; BUT enforcement is weak, countries may prioritise development, funding often insufficient to offset economic incentives for deforestation.',
-      },
-      {
-        q: 'Evaluate the effectiveness of selective logging as a sustainable management strategy in tropical rainforests. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Evaluates strengths and weaknesses with detail, reaches a supported conclusion. Level 2 (3–4 marks): Describes strategy with some evaluation. Level 1 (1–2 marks): Basic points. Accept: only mature trees of specific species cut; forest structure/canopy largely preserved; wildlife habitats retained; regrowth possible; BUT access roads cause damage, machinery compacts/damages surrounding trees, illegal logging often follows legal roads; slow growth of tropical hardwoods means cycle must be long; requires enforcement; more sustainable than clear-felling but not a complete solution.',
-      },
-    ],
-  },
-  '1.6': {
-    name: 'Hot Deserts',
-    questions: [
-      {
-        q: 'Describe the distribution of hot deserts. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: located around 30°N and 30°S of equator (horse latitudes); found in subtropical high pressure belts (descending air); examples — Sahara, Arabian, Namib, Atacama, Australian outback; also in continental interiors far from moisture sources; rain shadow deserts on leeward side of mountains.',
-      },
-      {
-        q: 'Explain why hot deserts receive very little precipitation. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: located in areas of descending air (~30°N/S); descending air is compressed and warms; this reduces relative humidity and prevents cloud formation; therefore very little rainfall (< 250mm/year); also: continental interiors far from sea moisture sources; cold ocean currents offshore (e.g. Benguela) chill air reducing precipitation.',
-      },
-      {
-        q: 'Describe the climate characteristics of a hot desert. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: very low annual precipitation (< 250mm); very high daytime temperatures (up to 50°C); extreme diurnal (day-night) temperature range (can be 30–40°C difference); low humidity; clear skies; intense solar radiation.',
-      },
-      {
-        q: 'Explain why hot deserts have a large diurnal temperature range. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: clear skies — no cloud cover during day allows intense solar heating → very high daytime temperatures; at night, clear skies allow heat to radiate back to space quickly (no greenhouse blanket); dry air has low specific heat capacity — heats and cools quickly; large diurnal range results.',
-      },
-      {
-        q: 'Describe the soil characteristics of a hot desert. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark each for any two: very dry/arid; thin and stony; little organic matter (little vegetation to decompose); often saline (soluble salts remain as water evaporates); infertile; may have hard calcrete/duricrust layer near surface.',
-      },
-      {
-        q: 'Explain two plant adaptations to hot desert conditions. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per adaptation: cacti — thick, succulent stems store water (1 mark); spines instead of leaves reduce transpiration/water loss (1 mark); waxy cuticle to reduce water loss; shallow but extensive root system to capture rare rainfall quickly; deep tap roots to reach water table; drought-deciduous plants — shed leaves in dry season to reduce water loss (1 mark), grow leaves rapidly after rain (1 mark).',
-      },
-      {
-        q: 'Draw and label a diagram of a cactus, showing its adaptations to the desert environment. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: succulent/thick stem labelled (water storage); spines labelled (reduce water loss/protect from grazers); shallow widespread roots labelled (absorb rainwater quickly).',
-        diagram: true,
-      },
-      {
-        q: 'Explain two animal adaptations to life in a hot desert. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per adaptation: camel — hump stores fat (not water) providing energy (1 mark); can lose up to 30% body water without harm; wide feet for sand; fennec fox — large ears dissipate heat (1 mark) keeping body cool in extreme heat (1 mark); desert rat/jerboa — nocturnal (active at night, avoiding heat) (1 mark); concentrated urine to conserve water (1 mark).',
-      },
-      {
-        q: 'What is desertification? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: the process by which fertile/semi-arid land becomes increasingly arid and desert-like; 1 mark for: reducing/destroying its ability to support vegetation and agriculture.',
-      },
-      {
-        q: 'Explain two human causes of desertification. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks per cause: overgrazing — too many animals for land to support (1 mark), remove vegetation, compact/erode soil, remove protective cover (1 mark); deforestation/removal of fuelwood — trees removed for fuel and building (1 mark), exposes soil to wind/rain erosion, reduces transpiration, dries local climate (1 mark); over-cultivation — farming same land repeatedly, exhausts nutrients; over-extraction of groundwater.',
-      },
-      {
-        q: 'Explain how climate change is contributing to desertification in the Sahel. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: global warming is shifting climate zones poleward; Sahara Desert is expanding southward into the Sahel; rainfall in Sahel has become more unpredictable/reduced; more frequent droughts; prolonged droughts kill vegetation, making land more vulnerable to desertification.',
-      },
-      {
-        q: 'Describe the Sahel region and explain why it is vulnerable to desertification. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: semi-arid strip of land south of Sahara (Senegal to Ethiopia/Eritrea); annual rainfall 200–600mm, highly variable; poor, dry soils; rapidly growing population increases pressure on land; combination of climate change, poverty and population pressure makes it highly vulnerable.',
-      },
-      {
-        q: 'Describe the social and economic impacts of desertification on communities in the Sahel. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: food insecurity/famine — crop failures; loss of livelihoods for farmers/pastoralists; forced migration to cities/other countries (environmental refugees); increased poverty; conflict over remaining resources (e.g. Lake Chad water disputes); loss of traditional ways of life.',
-      },
-      {
-        q: 'Explain how overgrazing leads to desertification. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: too many animals graze on limited vegetation; vegetation removed faster than it can regenerate; without plant cover, roots no longer bind soil; soil exposed to wind erosion (deflation) and rain splash; compacted by animal hooves — less infiltration; bare, eroded soil becomes desert-like.',
-      },
-      {
-        q: 'Explain the use of stone bunds (magic stones) to manage desertification in the Sahel. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: small stone walls/lines built along contours of slope; slow surface runoff, allowing water to infiltrate soil; reduces soil erosion; moisture retained → vegetation can regrow; cheap, appropriate technology using local materials; communities build them collaboratively.',
-      },
-      {
-        q: 'What is the "half-moon" technique for managing desertification? [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: semi-circular shallow pits dug in soil in a pattern; 1 mark for: concentrate rainwater runoff into centre of the half-moon where seeds planted, improving chances of germination and plant growth in arid conditions.',
-      },
-      {
-        q: 'Explain how the Great Green Wall project aims to reduce desertification. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: plan to plant a belt of trees 15km wide and 7,775km long across Africa (from Senegal to Djibouti); trees provide wind barriers, reduce erosion, restore soil, provide shade; restores ecosystem functions; provides timber and food (e.g. Acacia gum); creates green jobs/income for local people; only a small fraction of the 2030 target achieved by the early 2020s.',
-      },
-      {
-        q: 'Describe how education can help manage desertification. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: teaching sustainable farming practices to local communities; 1 mark for: e.g. training in contour ploughing, crop rotation, water harvesting techniques — reduces overgrazing/over-cultivation.',
-      },
-      {
-        q: 'Evaluate the effectiveness of strategies to manage desertification in the Sahel. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Evaluates specific strategies with Sahel examples and data where possible, considers advantages and limitations, reaches a supported conclusion. Level 2 (3–4 marks): Describes strategies with some evaluation. Level 1 (1–2 marks): Basic strategies listed. Accept: stone bunds/magic stones — cheap, effective (crop yields up 50% in Burkina Faso), community-owned; Great Green Wall — large-scale ambition but slow progress, funding issues; appropriate technology vs need for outside funding; conclusion on overall effectiveness.',
-      },
-      {
-        q: 'Explain why population growth increases the risk of desertification. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: more people require more food — more land is cultivated; more animals are grazed (overgrazing); more fuelwood is removed; land cannot recover — greater pressure than it can sustain; rapid population growth in Sahel (some of highest rates globally) makes this particularly acute.',
-      },
-      {
-        q: 'Draw a map to show the location of the Sahel region in Africa. [2 marks]',
-        marks: 2,
-        markScheme: '1 mark for: Africa outline shown; 1 mark for: Sahel region correctly shaded/indicated — strip across Africa south of Sahara Desert, approximately between 12°N and 20°N.',
-        diagram: true,
-      },
-      {
-        q: 'Compare the xerophyte adaptations of a cactus with those of a drought-deciduous plant. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: both adapted to conserve water/survive drought; cactus — permanent structural adaptations (succulence, spines, waxy cuticle) — survives through dry season actively; drought-deciduous — sheds leaves in dry season to prevent water loss through transpiration (1 mark); regrows leaves quickly after rain when water available (1 mark); different strategies — permanent vs seasonal adaptation.',
-      },
-      {
-        q: 'Explain how appropriate technology helps communities manage desertification more effectively than large-scale projects. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: appropriate technology uses local materials and knowledge (e.g. stone bunds) — cheap and affordable for poor communities; communities can maintain it themselves without outside expertise; no dependency on imported machinery; builds community capacity and ownership; large-scale projects may require outside funding/expertise that is not sustained; BUT appropriate tech covers smaller areas — combination of both may be most effective.',
-      },
-      {
-        q: 'To what extent is desertification a natural or human-caused process? [8 marks]',
-        marks: 8,
-        markScheme: 'Level 3 (6–8 marks): Evaluates natural and human causes with specific evidence from the Sahel or other named areas, reaches a supported judgement on relative importance. Level 2 (3–5 marks): Describes natural and human causes, some comparison. Level 1 (1–2 marks): Basic causes. Accept: natural — climate change, drought cycles (Sahel received above-average rainfall 1950s, then devastating droughts 1970s–80s — partly natural variability); human — overgrazing, deforestation, over-cultivation are primary causes; most scientists argue human factors accelerate and worsen natural vulnerability; conclusion should weigh evidence.',
-      },
-      {
-        q: 'Explain how cold ocean currents contribute to the formation of coastal deserts. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: cold currents (e.g. Benguela off Namibia/South Africa; Humboldt off Peru/Chile) chill air above them; cooled air loses ability to hold moisture/become stable; prevents cloud formation and rainfall; fog forms instead of rain; creates extreme coastal deserts (e.g. Namib, Atacama).',
-      },
-      {
-        q: 'Describe the features of an erg, reg and hammada desert landscape. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: erg — sandy desert with sand dunes (covers ~25% of Sahara); reg — flat, stony desert pavement (gravel/pebbles); hammada — bare, rocky plateau (wind removes fine material leaving exposed rock).',
-      },
-      {
-        q: 'Explain how wind erosion shapes desert landscapes. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: deflation — wind removes loose fine sand and dust leaving stony surfaces (reg/serir); abrasion — sand-laden wind sandblasts exposed rock surfaces at ground level; ventifacts and yardangs (streamlined rock ridges) formed by wind abrasion; sand transported and deposited as dunes (barchan, seif).',
-      },
-      {
-        q: 'Explain how the removal of fuelwood causes desertification. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: trees and shrubs cut/collected for cooking/heating fuel (major energy source in rural Sahel); removes plant cover from soil; roots no longer bind soil; soil exposed to wind/rain erosion; loss of tree transpiration may reduce local rainfall; harder to find fuel as trees disappear — positive feedback cycle.',
-      },
-      {
-        q: 'Describe the economic opportunities provided by desert environments. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: tourism (safari, desert tours, cultural tourism — e.g. Sahara desert tours); solar energy — high solar radiation ideal for solar power generation; mineral resources (e.g. oil, gas in Sahara; copper in Atacama; precious gems); irrigated agriculture in oases; salt extraction.',
-      },
-      {
-        q: 'Assess the challenges of living in a hot desert environment. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Evaluates physical, social and economic challenges with specific examples, reaches a supported conclusion. Level 2 (3–4 marks): Describes a range of challenges with some development. Level 1 (1–2 marks): Basic challenges listed. Accept: physical — extreme heat/cold, lack of water, hostile soils; social — food insecurity, poverty, limited services; economic — limited livelihoods, vulnerability to drought/desertification; BUT some areas overcome these (oil wealth, tourism, technology); conclusion should weigh.',
-      },
-      {
-        q: 'Explain how overgrazing leads to a positive feedback cycle of desertification. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: overgrazing removes vegetation; bare soil erodes more easily (wind/water); soil becomes less fertile; less vegetation can grow; more livestock compete for less vegetation → more overgrazing; cycle intensifies until land is completely degraded/desertified (positive feedback = self-reinforcing).',
-      },
-      {
-        q: 'Draw and label a diagram to show a barchan (crescent-shaped) sand dune. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: crescent/horseshoe shape shown; horns pointing downwind; gentle windward slope and steep lee face labelled; wind direction arrow shown.',
-        diagram: true,
-      },
-      {
-        q: 'Draw and annotate a diagram to show how the Hadley cell leads to hot deserts forming at about 30°N and 30°S. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: warm air rising at the equator/ITCZ (low pressure, heavy rain) labelled; air moving polewards at high altitude labelled; air sinking at about 30°N/S labelled as high pressure; sinking air warms, so clouds do not form and there is little rain — hot desert location labelled. Diagram must be labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Explain why hot deserts experience flash floods when it does rain. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for any three: rain often falls as short, intense convectional storms; soils are baked hard/crusted and there is little vegetation, so infiltration is very low; most rain becomes rapid surface runoff; runoff is channelled into dry valleys (wadis), where water levels rise suddenly; little warning is given.',
-      },
-      {
-        q: 'Explain why hot deserts are located around 30° north and south of the equator. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: air rises at equator (ITCZ), cools and releases rainfall as tropical rainforest; this air travels polewards at high altitude, cools and sinks at around 30° N/S (Hadley cell descending limb); sinking air warms adiabatically, holds more moisture, so very little cloud or rainfall forms; creates arid subtropical high-pressure belt where hot deserts form.',
-      },
-      {
-        q: 'Suggest two ways in which camels are adapted to survive in hot desert conditions. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark for each adaptation + 1 mark development. Any two from: hump stores fat (metabolised for energy and water); can drink 100+ litres at once and go weeks without water; wide padded feet prevent sinking in sand; long eyelashes and closable nostrils keep out sand; thick fur insulates against heat and cold nights; concentrated urine/dry dung conserves water; body temperature fluctuates to reduce sweating.',
-      },
-      {
-        q: 'Explain how irrigation can create economic opportunities in hot desert areas. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: irrigation allows cultivation of high-value crops (e.g. dates, citrus, vegetables in California\'s Imperial Valley or Israel\'s Negev); creates farming jobs and export income; supports food supply for growing populations; centre-pivot irrigation using fossil aquifers increases productivity (e.g. Ogallala aquifer, US); Israel uses drip irrigation to reduce water loss — highly productive. BUT unsustainable water use leads to aquifer depletion.',
-      },
-      {
-        q: 'Describe how zai pits help farmers in the Sahel to reduce the effects of desertification. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for any four: small pits (about 20–30 cm across) dug in hard, degraded soil; filled with compost or manure; collect and concentrate rainwater runoff and nutrients around plant roots; allow crops such as millet and sorghum to grow on land that was too degraded to farm; cheap and use local labour and knowledge (e.g. popularised by farmer Yacouba Sawadogo in Burkina Faso); improve soil fertility and crop yields over time.',
-      },
-      {
-        q: 'Suggest why the population of hot desert areas is often sparse. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for: lack of water limits settlement and agriculture; extreme temperatures make life difficult and unhealthy; poor soils/lack of vegetation limits food production; isolation from major infrastructure/markets; frequent sandstorms and droughts damage settlements and livelihoods.',
-      },
-      {
-        q: 'Evaluate the impacts of climate change on hot desert environments and their populations. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Evaluates environmental and human impacts with named examples, reaches a supported conclusion. Level 2 (3–4 marks): Describes impacts with some development. Level 1 (1–2 marks): Basic points. Accept: rising temperatures increase evaporation and reduce already-scarce water; droughts more frequent/severe (e.g. Sahel); desertification accelerates — pushes desert margins outwards; crop failure, food insecurity, forced migration (climate refugees); some areas may see increased rainfall variability/flash floods; wildlife species at risk; BUT desert solar energy potential may increase. Conclusion should judge overall severity.',
-      },
-    ],
-  },
-  '2.1': {
-    name: 'Urbanisation and Urban Change',
+    name: 'Urbanisation in Contrasting Global Cities',
     questions: [
       {
         q: 'What is urbanisation? [1 mark]',
@@ -1462,8 +210,8 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       },
     ],
   },
-  '2.2': {
-    name: 'UK Cities',
+  '1.2': {
+    name: 'Urban and Rural Processes and Change in the UK',
     questions: [
       {
         q: 'Describe the characteristics of the Central Business District (CBD). [3 marks]',
@@ -1675,8 +423,8 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       },
     ],
   },
-  '2.3': {
-    name: 'Global Development',
+  '1.3': {
+    name: 'A Global Perspective on Development Issues',
     questions: [
       {
         q: 'Define GDP per capita. [1 mark]',
@@ -1881,217 +629,636 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       },
     ],
   },
-  '3.1': {
-    name: 'Tectonic Hazards',
+  '2.1': {
+    name: 'Coasts and Coastal Management',
     questions: [
       {
-        q: 'Draw a labelled diagram of the Earth\'s internal structure. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for correctly labelled: inner core (solid iron/nickel); outer core (liquid iron/nickel); mantle (including asthenosphere/lithosphere); crust (continental and/or oceanic). Layers must be shown in correct order from centre outward.',
-        diagram: true,
-      },
-      {
-        q: 'State two differences between continental crust and oceanic crust. [2 marks]',
+        q: 'Describe the process of hydraulic action. [2 marks]',
         marks: 2,
-        markScheme: '1 mark each for any two correct differences: continental crust is thicker (30–70 km) vs oceanic (5–10 km); continental crust is less dense (2.7 g/cm³) vs oceanic (3.0 g/cm³); continental crust is made of granite vs oceanic basalt; continental crust is older vs oceanic crust (younger — constantly being created/destroyed).',
+        markScheme: '1 mark for: waves/water force air into cracks in rock; 1 mark for: compression of air/water pressure weakens and breaks apart rock.',
       },
       {
-        q: 'Explain how convection currents in the mantle drive tectonic plate movement. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark per developed point: heat from the core heats mantle rock; hot rock becomes less dense and rises; cooler rock sinks; creates circular convection cells; these drag tectonic plates above them; where currents diverge, plates are pulled apart; where currents converge, plates are pushed together; ridge push and slab pull also contribute (1 mark each if mentioned).',
-      },
-      {
-        q: 'Describe the features formed at a constructive plate boundary. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for any four of: plates move apart/diverge; magma rises to fill the gap; new crust/seafloor created; mid-ocean ridges formed (e.g. Mid-Atlantic Ridge); rift valleys on land (e.g. Great Rift Valley); shield volcanoes; shallow-focus earthquakes; no subduction.',
-      },
-      {
-        q: 'Draw and label a diagram to show the features of a destructive plate boundary (oceanic-continental). [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: oceanic plate shown subducting beneath continental plate; subduction zone/trench labelled (e.g. Peru-Chile Trench); magma rising/volcano on continental plate (e.g. Andes); fold mountains labelled; earthquake foci at depth on subduction zone. Diagram must be recognisable and labelled.',
-        diagram: true,
-      },
-      {
-        q: 'Explain why composite (strato) volcanoes are more dangerous than shield volcanoes. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark per developed point: composite volcanoes have viscous/silica-rich lava that does not flow easily — pressure builds up; cause explosive eruptions; produce pyroclastic density currents — fast-moving, extremely hot, lethal; generate ash falls over wide areas; can collapse catastrophically (e.g. Montserrat). Shield volcanoes: low-viscosity basaltic lava flows; rarely explosive; people can usually evacuate.',
-      },
-      {
-        q: 'Describe the volcanic hazards associated with a major eruption. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 1 (1–2): names some hazards. Level 2 (3–4): describes several hazards with some development. Level 3 (5–6): detailed description of multiple hazards explaining their impacts: lava flows (destroy property, slow — can be avoided); pyroclastic density currents (fast, >700°C, very dangerous, cannot be outrun); ash falls (disrupts transport, agriculture, health, can cause roof collapse); lahars (volcanic mudflows along river valleys, bury settlements); volcanic gases (SO₂, CO₂ — toxic, acid rain); tsunamis (if eruption is coastal/underwater).',
-      },
-      {
-        q: 'Define the terms focus (hypocentre) and epicentre of an earthquake. [2 marks]',
+        q: 'Explain how abrasion erodes a cliff face. [2 marks]',
         marks: 2,
-        markScheme: '1 mark for focus/hypocentre: the point underground/within the Earth\'s crust where the earthquake originates/where rocks first fracture. 1 mark for epicentre: the point on the Earth\'s surface directly above the focus.',
+        markScheme: '1 mark for: waves pick up/carry sediment/pebbles/sand; 1 mark for: these are thrown/scraped against cliff face, wearing it away (like sandpaper).',
       },
       {
-        q: 'Explain the difference between the Richter scale and the Mercalli intensity scale. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark for Richter: measures the magnitude/energy released by an earthquake; logarithmic scale; measured using a seismograph; same value worldwide. 1 mark for Mercalli: measures the intensity/effects of the earthquake at a particular location; based on observations of damage and human experience; varies with distance from epicentre. 1 mark for key difference: magnitude is objective/measured; intensity is subjective/varies by location. 1 mark for development.',
+        q: 'What is attrition? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: rocks/pebbles carried by the sea collide with each other, breaking into smaller, rounder, smoother fragments.',
       },
       {
-        q: 'Describe three secondary hazards caused by earthquakes. [3 marks]',
+        q: 'Describe the difference between constructive and destructive waves. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for any three: liquefaction — saturated soils lose strength, buildings sink; tsunami — underwater earthquake displaces water; landslides/rockfalls — slopes destabilised; fires — ruptured gas pipes, downed electricity lines; flooding — dam failure; disease outbreak — contaminated water/damaged sanitation.',
+        markScheme: '1 mark each for any three of: constructive waves have a strong swash and weak backwash; destructive waves have a weak swash and strong backwash; constructive waves are low frequency/long wavelength; destructive waves are high frequency/short wavelength; constructive waves build up beaches; destructive waves erode coastlines.',
       },
       {
-        q: 'Draw a labelled diagram to show how a tsunami is generated by a submarine earthquake. [4 marks]',
+        q: 'Draw and label a diagram to show the formation of a headland and bay. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for: earthquake shown at subduction zone/undersea; seafloor displacement shown (uplift); water column displaced upward; waves radiating outward; waves shown increasing in height (shoaling) as they approach shore. Diagram must be clear and labelled.',
+        markScheme: '1 mark each for: alternating bands of hard and soft rock shown; soft rock eroded faster (labelled); headland = hard rock protruding into sea (labelled); bay = where soft rock eroded (labelled). Diagram must be labelled.',
         diagram: true,
       },
       {
-        q: 'Explain how the level of development of a country affects its vulnerability to tectonic hazards. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 1 (1–2): simple statement that poorer countries suffer more. Level 2 (3–4): explains some factors with development. Level 3 (5–6): detailed explanation covering multiple factors: building quality — poor standards mean more collapse; emergency services — insufficient response capacity; early warning systems — LICs may lack these; community preparedness; access to healthcare; ability to rebuild. Links to specific examples (Haiti 2010 vs Japan 2011) for full marks.',
+        q: 'Explain the process of longshore drift. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: waves approach beach at angle (direction of prevailing wind); swash carries sediment up beach at same angle; backwash carries sediment back down beach at right angles (due to gravity); net movement of sediment along coast. Award 3 from these points.',
       },
       {
-        q: 'Describe the causes and immediate effects of the Haiti earthquake (2010). [6 marks]',
-        marks: 6,
-        markScheme: 'Level 1 (1–2): basic facts. Level 2 (3–4): some detail on causes and effects. Level 3 (5–6): detailed and accurate. Causes: magnitude 7.0; 13 January 2010; conservative/transform boundary between Caribbean and North American plates; shallow focus (13 km); near Port-au-Prince. Immediate effects: 230,000+ deaths; 1.5 million homeless; 250,000 homes/30,000 businesses destroyed; government buildings collapsed (including Presidential Palace); roads impassable; hospitals overwhelmed; cholera outbreak later.',
-      },
-      {
-        q: 'Describe the causes and immediate effects of the Japan earthquake and tsunami (2011). [6 marks]',
-        marks: 6,
-        markScheme: 'Level 1 (1–2): basic facts. Level 2 (3–4): some detail. Level 3 (5–6): detailed and accurate. Causes: magnitude 9.0 (Tōhoku); 11 March 2011; destructive boundary — Pacific Plate subducting under the North American (Okhotsk) Plate; megathrust earthquake. Immediate effects: ~15,900 killed (mostly by tsunami); tsunami waves 10–40 m high; entire coastal towns destroyed; Fukushima Daiichi nuclear disaster; 450,000 displaced; $235 billion damage.',
-      },
-      {
-        q: 'Compare the responses to the Haiti earthquake (2010) and the Japan earthquake (2011). [6 marks]',
-        marks: 6,
-        markScheme: 'Level 1 (1–2): describes one country. Level 2 (3–4): describes both with limited comparison. Level 3 (5–6): direct comparison of responses. Haiti: slow response due to damaged infrastructure; international aid essential; UN peacekeepers; long-term recovery very slow; political instability; still rebuilding a decade later. Japan: highly organised response; Self-Defence Forces deployed; tsunami warning system gave some warning; nuclear evacuation; faster rebuilding; insurance payouts; government reconstruction funding. Key contrast: GDP/resources, preparedness, governance.',
-      },
-      {
-        q: 'Explain how building design can reduce earthquake deaths. [4 marks]',
+        q: 'Draw and label a diagram to show how longshore drift transports sediment along a coastline. [4 marks]',
         marks: 4,
-        markScheme: '1 mark per developed point: cross-bracing — steel framework absorbs shaking; rubber base isolators — building moves independently of ground; counterweights at top (e.g. Taipei 101 damper); open ground floors — absorb collapse; reinforced concrete; automatic gas shut-offs; low-rise buildings safer in LICs; retrofitting old buildings.',
+        markScheme: '1 mark each for: arrows showing swash direction at an angle to beach; arrows showing backwash perpendicular to beach; overall direction of sediment movement indicated; prevailing wind direction labelled.',
+        diagram: true,
       },
       {
-        q: 'Describe how prediction and preparation can reduce the impact of volcanic eruptions. [4 marks]',
+        q: 'Describe the formation of a cave, arch, stack and stump. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Detailed, accurate explanation of all four features in sequence, using correct terminology throughout. Level 2 (3–4 marks): Explains most stages with some accurate detail; may lack full development. Level 1 (1–2 marks): Basic description of one or two features. Accept: waves erode a weakness/crack in headland → cave formed; continued erosion/two caves on either side join → arch formed; roof of arch collapses due to weathering/weight → stack; stack eroded at base by waves → stump (only visible at low tide).',
+      },
+      {
+        q: 'Explain how a spit is formed. [4 marks]',
         marks: 4,
-        markScheme: '1 mark per point: seismometers detect increased seismic activity before eruption; ground deformation measured (tiltmeters); gas emissions monitored (increased SO₂ before eruption); thermal imaging; on this basis, evacuation warnings issued; exclusion zones established; emergency drills; evacuation plans prepared.',
+        markScheme: '1 mark each for: longshore drift transports sediment along coast; at a change in coastline direction (e.g. estuary/river mouth) the energy drops; deposition occurs; sediment accumulates above water as a spit; spit may curve due to secondary wind/wave direction (accept any 4).',
       },
       {
-        q: 'To what extent can tectonic hazards ever be effectively managed? [8 marks]',
+        q: 'What is meant by a wave-cut platform? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: a flat/gently sloping rocky surface at base of cliff/at sea level; 1 mark for: formed by erosion of cliff — as cliff retreats, platform is left behind.',
+      },
+      {
+        q: 'Describe the formation of a wave-cut notch and explain how it leads to cliff retreat. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: erosion (hydraulic action/abrasion) concentrated at high tide/wave height; undercutting creates a notch at base of cliff; rock above notch is unsupported and collapses; cliff retreats and wave-cut platform is left behind.',
+      },
+      {
+        q: 'Draw a labelled diagram of a wave-cut platform. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: cliff face shown; wave-cut notch at base of cliff labelled; wave-cut platform at sea level extending outward labelled.',
+        diagram: true,
+      },
+      {
+        q: 'Explain what is meant by solution as a process of coastal erosion. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: slightly acidic seawater; 1 mark for: dissolves soluble minerals in rock (e.g. limestone/chalk).',
+      },
+      {
+        q: 'Describe the four main types of coastal transportation. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for correct description of: traction — large boulders rolled along seabed; saltation — pebbles bounce along seabed; suspension — fine sand/silt carried within water; solution — dissolved minerals carried in solution.',
+      },
+      {
+        q: 'What is meant by the term "fetch"? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: the distance of open water over which the wind has blown to generate a wave.',
+      },
+      {
+        q: 'Explain why coasts with a longer fetch have more powerful waves. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: longer fetch means wind acts on water over greater distance; 1 mark for: more energy transferred to water / greater wave height and energy.',
+      },
+      {
+        q: 'Describe the features of a beach. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark each for any two of: accumulation of sand/shingle/sediment; found in sheltered bays; has a berm/berms (ridges) at high tide mark; backed by sand dunes or cliffs.',
+      },
+      {
+        q: 'Explain how a bar is different from a spit. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: a bar extends all the way across a bay/estuary (connecting two headlands); 1 mark for: a spit is attached to land at one end only and does not seal off a bay.',
+      },
+      {
+        q: 'Explain how a tombolo is formed. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: longshore drift deposits sediment; spit builds outward from land; spit reaches and connects to an offshore island, forming a tombolo.',
+      },
+      {
+        q: 'Describe the difference between hard engineering and soft engineering at the coast. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: hard engineering uses artificial/man-made structures (e.g. sea walls, groynes); 1 mark for: soft engineering works with natural processes (e.g. beach nourishment, managed retreat).',
+      },
+      {
+        q: 'Evaluate the effectiveness of sea walls as a coastal management strategy. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Evaluates advantages and disadvantages, reaches a supported conclusion. Level 2 (3–4 marks): Describes advantages and disadvantages with some development. Level 1 (1–2 marks): Basic points. Accept: advantages — effective at reflecting wave energy, long-lasting, protects property; disadvantages — expensive (£5,000–10,000 per metre), can cause increased erosion at base/flanks, visually intrusive, may reflect wave energy increasing erosion elsewhere.',
+      },
+      {
+        q: 'Explain how groynes reduce coastal erosion. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: groynes are wooden/rock structures built perpendicular to shore; they interrupt longshore drift; sediment accumulates on updrift side building up beach; wider beach absorbs wave energy/protects cliff.',
+      },
+      {
+        q: 'What is beach nourishment? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: adding (imported) sand or shingle to an existing beach; 1 mark for: to replace sediment lost to longshore drift / to widen the beach to absorb wave energy.',
+      },
+      {
+        q: 'Explain what is meant by managed retreat (coastal realignment). [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: allowing low-lying coastal land to be flooded/eroded naturally; sea defences not maintained or removed; land is allowed to return to saltmarsh/intertidal habitat; cheapest option but compensates landowners for loss of land.',
+      },
+      {
+        q: 'Describe the physical geography of the Holderness Coast. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: located on east coast of Yorkshire/England; cliffs made of soft boulder clay/glacial till; one of the fastest eroding coastlines in Europe (up to 2m per year); approximately 30 villages lost since Roman times.',
+      },
+      {
+        q: 'Explain why the Holderness Coast erodes so rapidly. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: cliffs made of soft, easily eroded boulder clay; fetch across North Sea allows powerful destructive waves; long, exposed coastline with few natural protections; waves attack at base, undercutting cliffs (hydraulic action/abrasion); freeze-thaw weakens cliffs; longshore drift removes eroded material quickly.',
+      },
+      {
+        q: 'Assess the impact of coastal erosion on communities along the Holderness Coast. [8 marks]',
         marks: 8,
-        markScheme: 'Level 1 (1–2): simple statements. Level 2 (3–4): some explanation with limited balance. Level 3 (5–6): explains both effective and ineffective management with evidence. Level 4 (7–8): evaluates effectiveness with named examples, reaches a justified conclusion. Effective: Japan\'s preparedness, early warning systems, building codes. Less effective: Haiti (poverty limits preparation); volcanic eruptions still unpredictable; some hazards (tsunamis) too fast; cannot prevent tectonic events. Conclusion must weigh development level, hazard type, and preparedness.',
+        markScheme: 'Level 3 (6–8 marks): Detailed assessment, balances social, economic and environmental impacts, uses evidence, reaches supported judgement. Level 2 (3–5 marks): Describes a range of impacts with some development. Level 1 (1–2 marks): Basic impacts listed. Accept: loss of homes/properties (e.g. Easington, Skipsea); loss of farmland; threat to gas terminal at Easington; loss of local businesses/tourism; psychological stress for residents; BUT some areas protected (e.g. Hornsea, Mappleton) while others sacrificed — creates inequality/conflict.',
       },
       {
-        q: 'Describe the features of a conservative (transform) plate boundary and give a named example. [3 marks]',
+        q: 'Explain one conflict that arises from coastal management decisions. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for any three: plates slide past each other horizontally; no crust created or destroyed; no volcanic activity; causes powerful earthquakes; plates may lock then release (elastic rebound); example: San Andreas Fault, California (North American and Pacific plates); also accept: Caribbean/North American at Haiti.',
+        markScheme: '1 mark for identifying a conflict (e.g. protecting one area increases erosion downdrift); 1 mark for explaining why conflict arises; 1 mark for example (e.g. Mappleton protected — erosion increased south of Mappleton, farmers lost land).',
       },
       {
-        q: 'Explain why people continue to live near active volcanoes despite the risks. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark per developed point: volcanic soils are extremely fertile — high crop yields; tourism/economic opportunities; geothermal energy; historical/cultural attachment to land; perception that eruption is rare or warning will be given; poverty — cannot afford to move; lack of alternatives; some volcanoes dormant for generations.',
+        q: 'What is rock armour (rip rap)? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: large boulders (often imported granite) placed at base of cliff/sea wall to absorb/dissipate wave energy.',
       },
       {
-        q: 'Describe the characteristics of the Mid-Atlantic Ridge and explain how it was formed. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark for characteristics: runs N-S through Atlantic Ocean; 16,000 km long; mid-ocean ridge; forms islands where above sea level (Iceland); deep rift valley along centre. 1 mark for formation explanation: constructive boundary; North American and Eurasian plates diverge; magma rises; new basaltic crust created; ridge built up over millions of years.',
+        q: 'Describe the formation of Chesil Beach. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: a tombolo/barrier beach connecting Isle of Portland to mainland Dorset; formed by longshore drift depositing shingle over thousands of years; notable for grading of pebbles from west (pea gravel) to east (cricket ball size).',
       },
       {
-        q: 'Compare the formation of the Himalayas and the Andes. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 1 (1–2): describes one range. Level 2 (3–4): describes both with limited comparison. Level 3 (5–6): direct comparison. Himalayas: continental-continental collision (India and Eurasian plates); neither plate subducts — both uplift to form fold mountains; highest on Earth. Andes: oceanic-continental destructive boundary (Nazca and South American plates); oceanic plate subducts; fold mountains on overriding plate; also associated with volcanoes. Key differences: Himalayas — no subduction, no volcanoes; Andes — subduction, active volcanoes, earthquakes.',
+        q: 'Explain how revetments protect a coastline. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: sloping wooden/rock structures placed at base of cliff; absorb and dissipate wave energy; reduce hydraulic action on cliff base; allow water to drain through structure (reducing pressure).',
       },
       {
-        q: 'What evidence supports the theory of tectonic plate movement? [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for any four: matching coastlines (jigsaw fit) of South America and Africa; matching fossil evidence on separated continents (e.g. Mesosaurus); matching rock types/geological structures across ocean basins; paleomagnetism — magnetic striping either side of mid-ocean ridges; GPS measurements showing current plate movement.',
-      },
-      {
-        q: 'Describe the distribution of tectonic hazards at a global scale. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for any four of: concentrated along plate boundaries; the Ring of Fire (Pacific) has highest frequency; earthquakes along all boundary types; volcanoes mainly at destructive and constructive boundaries; mid-ocean ridges (constructive) are mostly underwater; hotspots (e.g. Hawaii) not at plate boundaries; destructive boundaries along Andes, Japan, SE Asia.',
-      },
-      {
-        q: 'Draw a diagram to show the features of an island arc formed at an oceanic-oceanic destructive boundary. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: two oceanic plates shown; one subducting beneath the other; ocean trench labelled (e.g. Mariana Trench); chain of volcanic islands (island arc) labelled above the subducting plate. All four features must be shown and labelled.',
+        q: 'Draw a labelled cross-section to show the profile of a destructive wave. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: steep front face shown; high crest; weak swash and strong backwash labelled/indicated.',
         diagram: true,
       },
       {
-        q: 'Explain why shallow-focus earthquakes tend to cause more damage than deep-focus earthquakes. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark each for up to three: shallow-focus earthquakes have their focus close to the surface (less than 70 km); less energy is absorbed/dissipated as waves travel upward; stronger shaking felt at the surface; more energy reaches buildings; deep-focus earthquakes (>300 km) lose more energy travelling through rock.',
-      },
-      {
-        q: 'Suggest how land use planning can reduce the risk from tectonic hazards. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark per developed point: zoning laws prevent building on fault lines or close to volcanoes; exclusion zones around active craters; critical infrastructure (hospitals, schools) built away from high-risk areas; mapped floodplains/lahar channels kept free of development; planning requires earthquake-resistant construction standards in seismic zones.',
-      },
-      {
-        q: 'Compare the volcanic activity at Montserrat and Iceland and explain the differences. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 1 (1–2): describes one location. Level 2 (3–4): describes both. Level 3 (5–6): direct comparison and explanation. Montserrat: Soufrière Hills; destructive boundary (subduction); composite/strato volcano; andesitic lava; explosive eruptions; pyroclastic flows; 19 deaths (1997); south of island abandoned. Iceland: constructive boundary; Mid-Atlantic Ridge; shield volcanoes and fissure eruptions; basaltic lava; less explosive generally; geothermal energy harnessed. Key: type of boundary explains type of eruption.',
-      },
-      {
-        q: 'Describe the human responses to the Montserrat volcanic eruption (1995–1997). [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for any four: evacuation of southern half of island; Plymouth (capital) abandoned; exclusion zones established; UK aid provided (Montserrat is UK Overseas Territory); some residents refused to leave; international humanitarian aid; long-term relocation to UK and other islands; population fell from ~11,000 to ~4,000; north of island developed as new safe zone.',
-      },
-      {
-        q: 'Explain how elastic rebound theory explains why earthquakes occur. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: tectonic plates try to move past each other at a fault; friction causes them to lock/stick together; stress/strain energy builds up over years; eventually stress exceeds friction; rocks fracture/slip suddenly; stored energy released as seismic waves/earthquake; process repeats — explains regularity of earthquakes in seismic zones.',
-      },
-      {
-        q: 'Assess the view that earthquake prediction has made earthquake hazards manageable. [8 marks]',
+        q: 'To what extent is soft engineering preferable to hard engineering for managing the coast? [8 marks]',
         marks: 8,
-        markScheme: 'Level 1 (1–2): simple statements. Level 2 (3–4): some explanation of prediction methods and limitations. Level 3 (5–6): explains both the advances and limitations of prediction with evidence. Level 4 (7–8): evaluates different aspects of management, noting prediction is only one component; references named examples; reaches a justified conclusion. Prediction: seismometers, GPS, radon gas, animal behaviour — none fully reliable. Preparation more important than prediction: Japan building codes, drills, early warning. Conclusion: prediction has limited success but preparation/protection more effective.',
+        markScheme: 'Level 3 (6–8 marks): Evaluates both approaches with developed points, uses case study examples, reaches an overall judgement with justification. Level 2 (3–5 marks): Describes advantages of one or both approaches with some comparison. Level 1 (1–2 marks): Basic statements. Accept: soft engineering — cheaper, sustainable, works with nature, creates habitats; BUT may not protect high-value property; hard engineering — reliable, protects specific locations, high value areas; BUT expensive, causes problems elsewhere, visually intrusive. Conclusion should weigh these up.',
       },
       {
-        q: 'Describe the social impacts of the Japan 2011 earthquake and tsunami. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for any four: ~15,900 killed, 2,500 missing; 450,000+ displaced; entire coastal communities destroyed (e.g. Rikuzentakata); psychological trauma; nuclear evacuation (over 150,000 people from around Fukushima); schools/hospitals destroyed; community bonds broken by displacement; recovery slow for elderly population.',
-      },
-      {
-        q: 'Explain what is meant by the term \'natural hazard\' and how tectonic events become hazards. [3 marks]',
-        marks: 3,
-        markScheme: '1 mark for definition: a natural event that poses a threat to human life or property. 1 mark for: tectonic events (earthquakes, volcanic eruptions) become hazards when they occur near human populations. 1 mark for development: the same magnitude earthquake in an uninhabited area is a natural event but not a hazard; vulnerability (population density, building quality, economic capacity) determines hazard level.',
-      },
-      {
-        q: 'Describe the differences in the economic impacts of the Haiti 2010 and Japan 2011 earthquakes. [4 marks]',
-        marks: 4,
-        markScheme: '2 marks for Haiti: very high economic impact relative to GDP; $14 billion damage; 120% of GDP; slower to rebuild due to poverty; international debt relief required. 2 marks for Japan: $235 billion absolute cost but represented about 3% of GDP; ability to fund reconstruction; insurance payouts; economy recovered within years.',
-      },
-      {
-        q: 'Describe what is meant by the \'ring of fire\'. [2 marks]',
+        q: 'Describe the characteristics of a constructive wave. [2 marks]',
         marks: 2,
-        markScheme: '1 mark for: a zone around the Pacific Ocean where many earthquakes and volcanic eruptions occur; 1 mark for: marks the boundaries of the Pacific plate with surrounding plates — contains ~75% of world\'s volcanoes and 90% of earthquakes.',
+        markScheme: '1 mark each for any two of: low, gentle waves; long wavelength; low frequency (6–8 per minute); strong swash, weak backwash; builds up beaches.',
       },
       {
-        q: 'Explain why the 2004 Indian Ocean tsunami caused so many deaths. [3 marks]',
+        q: 'Explain how freeze-thaw weathering contributes to coastal cliff collapse. [3 marks]',
         marks: 3,
-        markScheme: '1 mark each for any three: there was no tsunami warning system in the Indian Ocean at the time; waves up to 30 m high reached densely populated, low-lying coasts; many people (including tourists) did not recognise warning signs such as the sea drawing back; many coastal buildings were poorly built; the waves travelled across the whole ocean, affecting 14 countries — over 230,000 people died.',
+        markScheme: '1 mark each for: water enters cracks in cliff; freezes and expands (by ~9%), widening cracks; repeated freeze-thaw cycles enlarge cracks; eventually rock breaks off/cliff collapses.',
       },
       {
-        q: 'Suggest two primary effects and two secondary effects of a volcanic eruption. [4 marks]',
-        marks: 4,
-        markScheme: '1 mark each for: primary — lava flows destroying buildings/crops; pyroclastic flows killing people; ash fall damaging roofs/crops; volcanic bombs. Secondary — lahars/mudflows when ash mixes with water/snow (e.g. Nevado del Ruiz 1985); tsunamis from underwater eruptions; disruption to air travel (e.g. Eyjafjallajökull 2010 grounded European flights); long-term climate cooling.',
-      },
-      {
-        q: 'Explain why the 2015 Nepal earthquake had such severe impacts. [6 marks]',
+        q: 'Using a named example, explain the management strategies used to protect a stretch of coastline. [6 marks]',
         marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Detailed explanation of several physical and human factors with specific evidence, linked clearly to the impacts. Level 2 (3–4 marks): Explains some factors with some evidence. Level 1 (1–2 marks): Basic points. Accept: magnitude 7.8 with a shallow focus; most rural homes were unreinforced stone or mud brick and collapsed (600,000+ homes destroyed); remote mountainous terrain and landslides blocked roads, delaying rescue and aid; avalanches on Everest; poverty and limited government capacity to prepare or respond; aid bottleneck at Kathmandu\'s single-runway airport; around 9,000 deaths.',
+        markScheme: 'Level 3 (5–6 marks): Detailed named example with explanation of at least two strategies, why they were chosen, and their effectiveness. Level 2 (3–4 marks): Named example with description of strategies, limited explanation. Level 1 (1–2 marks): Generic strategies without clear named example. Accept Holderness/Mappleton: rock groynes — reduce longshore drift, protect beach; rock armour — absorb wave energy at cliff base; cost ~£2 million (1991); protected village but increased erosion to south.',
       },
       {
-        q: 'Explain why some people continue to live in areas at high risk from tectonic hazards. [4 marks]',
+        q: 'What is a corrosion/solution coast erosion process? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: seawater dissolves soluble minerals/carbonate rocks such as limestone or chalk.',
+      },
+      {
+        q: 'Explain how arches and stacks form from headlands. [4 marks]',
         marks: 4,
-        markScheme: '1 mark each for any four: fertile volcanic soils excellent for farming (e.g. slopes of Mt Etna, Vesuvius); geothermal energy sources; tourism income (e.g. Iceland); mineral/gemstone deposits; familiar/cultural attachment to home; poverty — cannot afford to move; belief monitoring/defences will protect them; events infrequent — perceived low risk; employment opportunities in the area.',
+        markScheme: '1 mark each for: waves erode weaknesses/cracks in headland forming a cave; cave deepens and may break through headland forming an arch; continued erosion weakens arch roof; roof collapses leaving an isolated stack.',
       },
       {
-        q: 'Evaluate the effectiveness of monitoring and prediction in reducing the impacts of tectonic hazards. [6 marks]',
-        marks: 6,
-        markScheme: 'Level 3 (5–6 marks): Evaluates volcanic and earthquake monitoring with named examples, reaches a supported conclusion. Level 2 (3–4 marks): Describes methods with some evaluation. Level 1 (1–2 marks): Basic methods listed. Accept volcanic — seismometers, gas sampling, tiltmeters, thermal imaging (successful prediction at Mt Pinatubo 1991 saved thousands of lives through evacuation); Mt Etna continuously monitored. Earthquakes — much harder to predict precisely; Japan uses early-warning systems giving seconds of warning; animal behaviour inconclusive. Conclusion: monitoring highly effective for volcanoes, limited for earthquakes — so prediction alone insufficient, must combine with planning/preparation/building design.',
+        q: 'Draw and label the sequence of formation from headland to stump. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: headland shown with crack/weakness; cave formed at base; arch showing breakthrough; stack and stump shown as separate features. All must be labelled.',
+        diagram: true,
+      },
+      {
+        q: 'Assess the social and economic impacts of coastal flooding on low-lying coastlines. [8 marks]',
+        marks: 8,
+        markScheme: 'Level 3 (6–8 marks): Detailed assessment of both social and economic impacts, uses specific evidence or examples, clearly distinguishes between types of impact, reaches a supported overall judgement. Level 2 (3–5 marks): Describes both types of impact with some development or examples. Level 1 (1–2 marks): Basic listing of impacts. Accept social: displacement of communities, loss of life, psychological trauma, disruption to services; economic: damage to property and infrastructure, agricultural land lost, tourism affected, cost of flood defences.',
       },
     ],
   },
-  '3.2': {
-    name: 'Climate Change',
+  '2.2': {
+    name: 'Rivers and River Management',
+    questions: [
+      {
+        q: 'What is meant by a drainage basin? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: the area of land drained by a river and its tributaries.',
+      },
+      {
+        q: 'Define the following terms: watershed, confluence, tributary. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: watershed — the boundary/ridge of high land separating two drainage basins; confluence — the point where two rivers/streams join; tributary — a smaller river/stream that flows into a larger river.',
+      },
+      {
+        q: 'Explain the difference between infiltration and surface runoff. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: infiltration is water soaking/moving into the soil from the surface; 1 mark for: surface runoff is water flowing over the land surface (when infiltration rate is exceeded).',
+      },
+      {
+        q: 'Describe how the long profile of a river changes from source to mouth. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: steep gradient in upper course; gradient becomes gentler in middle course; very gentle/almost flat gradient in lower course; overall the profile is concave upward.',
+      },
+      {
+        q: 'Draw and label a diagram to show the long profile and cross-profile of a river in its upper, middle and lower course. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: long profile showing steep-to-gentle gradient; upper course cross-profile — narrow, V-shaped valley; middle course — wider valley, some floodplain; lower course — broad, flat floodplain. All features labelled.',
+        diagram: true,
+      },
+      {
+        q: 'Explain how a V-shaped valley and interlocking spurs are formed in the upper course of a river. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: vertical/downward erosion dominates in upper course; river cuts downward into bedrock; valley sides weathered and material falls into river; river lacks energy to erode sideways so valley is V-shaped; river winds around outcrops of hard rock creating interlocking spurs.',
+      },
+      {
+        q: 'Draw and label a diagram of a V-shaped valley with interlocking spurs. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: V-shaped valley profile shown; interlocking spurs on alternating sides labelled; river at base of valley labelled.',
+        diagram: true,
+      },
+      {
+        q: 'Describe the process of hydraulic action in a river. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: force/pressure of fast-moving water compresses air in cracks in riverbed/bank; 1 mark for: this weakens and breaks apart the rock.',
+      },
+      {
+        q: 'Explain how a waterfall is formed. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: river flows over a band of hard (resistant) rock overlying softer rock; soft rock erodes faster, undercutting the hard rock; hard rock overhangs and eventually collapses into plunge pool; plunge pool deepens by abrasion from falling water/load; waterfall retreats upstream over time leaving a gorge.',
+      },
+      {
+        q: 'Draw and label a diagram to show the formation of a waterfall and gorge. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: hard rock cap shown above soft rock; plunge pool labelled beneath waterfall; gorge (steep-sided valley) labelled behind waterfall; direction of waterfall retreat indicated.',
+        diagram: true,
+      },
+      {
+        q: 'Explain how meanders are formed in the middle and lower course of a river. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: river swings from side to side due to variations in flow; water moves faster on outside bend (erosion by hydraulic action/abrasion → river cliff/steep bank); water moves slower on inside bend (deposition → slip-off slope/point bar); this accentuates the bend over time forming a meander.',
+      },
+      {
+        q: 'Describe the formation of an ox-bow lake. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: meander bends become exaggerated over time; necks of meander narrow as erosion occurs on outer bends; river breaks through the neck during a flood; new straight channel forms; deposition seals off old meander loop forming an ox-bow lake.',
+      },
+      {
+        q: 'What is a flood plain? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: flat area of land either side of a river in its lower course; 1 mark for: formed by deposition of alluvium (fertile sediment) during repeated flooding.',
+      },
+      {
+        q: 'Explain how a levée is formed. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: during a flood, river overflows its banks; velocity decreases as water spreads out over floodplain; heaviest/coarsest material deposited closest to channel; over many floods these deposits build up raised banks (levées) either side of the channel.',
+      },
+      {
+        q: 'Describe the features of a delta and explain how it forms. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: flat, low-lying land at river mouth; river splits into many distributaries; forms when river enters sea/lake and velocity drops suddenly; deposition of sediment faster than it can be removed by waves/tides; sediment builds up above water level.',
+      },
+      {
+        q: 'Draw and annotate a hydrograph for a river in an urban area after a heavy rainstorm. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: axes labelled (discharge/cumecs on y-axis, time on x-axis); rising limb shown as steep; short lag time shown; high peak discharge labelled.',
+        diagram: true,
+      },
+      {
+        q: 'Explain what is meant by lag time on a hydrograph. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: the time difference between peak rainfall and peak discharge; 1 mark for: longer lag time = less flood risk / shorter lag time = greater flood risk.',
+      },
+      {
+        q: 'Explain two factors that would increase flood risk in a drainage basin. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per factor (1 mark for naming, 1 mark for explanation). Accept: impermeable rock/soil — water cannot infiltrate, more runoff; prolonged/heavy rainfall — ground becomes saturated, more runoff; deforestation — less interception/transpiration, more runoff; urbanisation — tarmac/concrete impermeable, faster runoff; steep slopes — water reaches river faster; snowmelt — large amounts of water released rapidly.',
+      },
+      {
+        q: 'Describe how deforestation affects the storm hydrograph of a river. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: less interception by tree canopy; more water reaches ground directly; increased surface runoff; shorter lag time and higher peak discharge on hydrograph.',
+      },
+      {
+        q: 'Explain how urbanisation increases flood risk. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: buildings and roads create impermeable surfaces; water cannot infiltrate into soil; surface runoff increases; storm drains channel water rapidly into rivers; lag time decreases; peak discharge increases — greater flood risk.',
+      },
+      {
+        q: 'Describe the drainage basin as a system, including inputs, stores and outputs. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: inputs — precipitation (rain, snow); stores — interception, soil moisture, groundwater, channel storage; flows/transfers — infiltration, throughflow, groundwater flow, surface runoff; outputs — evapotranspiration, river discharge to sea.',
+      },
+      {
+        q: 'Explain how a dam and reservoir can be used to manage flooding. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: dam built across river valley; reservoir stores excess water during high rainfall; water released in controlled amounts; reduces peak discharge downstream.',
+      },
+      {
+        q: 'Evaluate the use of hard engineering to manage flooding. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Evaluates both advantages and disadvantages of hard engineering with examples, reaches a supported conclusion. Level 2 (3–4 marks): Describes advantages and disadvantages. Level 1 (1–2 marks): Basic points only. Accept: advantages — reliable, long-lasting protection for settlements; dams provide HEP and water supply; embankments protect large areas; disadvantages — expensive, dams displace communities, trap sediment, alter downstream habitats; channel straightening increases downstream flood risk.',
+      },
+      {
+        q: 'Explain how afforestation can reduce flood risk. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: trees intercept rainfall; roots increase infiltration capacity of soil; transpiration returns water to atmosphere; all reduce surface runoff and lag time is increased.',
+      },
+      {
+        q: 'What is floodplain zoning? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: restricting types of land use in flood-risk areas of the floodplain; 1 mark for: e.g. only parks/sports fields in highest risk zones — reduced property damage when flooding occurs.',
+      },
+      {
+        q: 'Describe the upper course of the River Tees. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: rises in Pennines/Cross Fell; steep gradient; narrow, fast-flowing channel; V-shaped valleys and waterfalls (High Force — one of England’s most powerful waterfalls, ~21m drop); hard igneous rock (whinstone/dolerite of the Whin Sill).',
+      },
+      {
+        q: 'Using the River Tees as an example, describe how the river changes from source to mouth. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Detailed description of changes across all three courses with accurate named features/places and correct use of terminology. Level 2 (3–4 marks): Describes changes in two courses, some terminology. Level 1 (1–2 marks): Basic changes. Accept: upper — steep, narrow, V-shaped valleys, High Force waterfall, hard rock; middle — wider valley, meanders, floodplain widens; lower — broad floodplain, levées, Teesside conurbation, industry, mouth at North Sea.',
+      },
+      {
+        q: 'Explain how abrasion and attrition differ as river erosion processes. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: abrasion — sediment carried by river scrapes/grinds against riverbed and banks wearing them away; 1 mark for: attrition — rocks/stones carried by river collide with each other, becoming smaller and more rounded.',
+      },
+      {
+        q: 'What is throughflow? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: water that has infiltrated into the soil and moves laterally through the soil towards the river channel.',
+      },
+      {
+        q: 'Explain how the cross-profile of a river channel changes from source to mouth. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: in upper course — narrow and shallow channel, rough/angular bed; in middle course — wider and deeper, smoother bed due to attrition; in lower course — very wide and deep channel, low gradient, large discharge; channel becomes more efficient downstream.',
+      },
+      {
+        q: 'Describe how a flood warning system can reduce the impacts of flooding. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: monitors rainfall and river levels; gives advance warning to people in flood-risk areas; allows time for evacuation of people/valuables; reduces loss of life and property damage.',
+      },
+      {
+        q: 'To what extent are soft engineering strategies more sustainable than hard engineering for flood management? [8 marks]',
+        marks: 8,
+        markScheme: 'Level 3 (6–8 marks): Evaluates sustainability of both approaches with specific examples, considers environmental/social/economic dimensions, reaches a supported overall judgement. Level 2 (3–5 marks): Compares both approaches, some development. Level 1 (1–2 marks): Basic description. Accept: soft — cheaper, environmentally friendly, improves habitats, long-term; hard — effective short-term but expensive, can cause downstream problems, harms ecosystems; conclusion should weigh these and reach a judgement.',
+      },
+      {
+        q: 'Explain the processes of traction and saltation in river transportation. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: traction — largest/heaviest boulders rolled along riverbed by force of water; 1 mark for: saltation — smaller pebbles bounced/hopped along riverbed.',
+      },
+      {
+        q: 'Explain why deposition occurs in the lower course of a river. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: river slows as gradient decreases; discharge may decrease (e.g. spread over floodplain during flood); when velocity drops below competency, river cannot carry its load; heaviest/largest particles deposited first.',
+      },
+      {
+        q: 'Describe two human activities that can increase flood risk. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per point. Accept: urbanisation — impermeable surfaces increase runoff (1 mark) causing flashier hydrograph/higher peak discharge (1 mark); deforestation — removes interception and transpiration (1 mark) increasing runoff and reducing lag time (1 mark).',
+      },
+      {
+        q: 'What is groundwater flow? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: the slowest transfer in the drainage basin — water moves through pores in rock/saturated rock below the water table towards the river.',
+      },
+      {
+        q: 'Explain how the falling limb of a hydrograph shows the river returning to base flow. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: the falling limb shows discharge decreasing after peak discharge; 1 mark for: as surface runoff ends, river relies on slower throughflow and groundwater — discharge returns gradually to base flow.',
+      },
+      {
+        q: 'Draw and label a cross-section through a meander showing erosion and deposition zones. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: outer bank — river cliff, faster flow, erosion labelled; inner bank — slip-off slope/point bar, slower flow, deposition labelled; arrows indicating water flow pattern across channel.',
+        diagram: true,
+      },
+      {
+        q: 'Assess the social, economic and environmental impacts of flooding on a named area. [8 marks]',
+        marks: 8,
+        markScheme: 'Level 3 (6–8 marks): Detailed assessment of all three types of impact using named evidence, balanced and reaches a supported conclusion. Level 2 (3–5 marks): Covers at least two types of impact with some development. Level 1 (1–2 marks): Basic impacts listed. Accept any recent UK/global flood. Social: loss of life, homelessness, trauma, disruption to services; Economic: property damage, loss of business, cost of repairs; Environmental: contamination of water sources, damage to habitats/ecosystems, soil erosion.',
+      },
+      {
+        q: 'Explain why a river with steep valley sides and impermeable rock has a shorter lag time than one in a gentle, permeable area. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: steep sides mean water reaches river faster; impermeable rock means water cannot infiltrate; surface runoff is rapid; lag time is therefore shorter; permeable rock allows infiltration/throughflow which is slower, increasing lag time.',
+      },
+    ],
+  },
+  '2.3': {
+    name: 'Weather and Climate',
+    questions: [
+      {
+        q: 'State two factors that affect the UK\'s climate. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark each for any two of: latitude; altitude; distance from the sea (maritime influence); prevailing south-westerly winds; North Atlantic Drift (warm ocean current).',
+      },
+      {
+        q: 'Explain how the North Atlantic Drift affects the UK\'s climate. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: warm ocean current flowing from Gulf of Mexico north-east towards UK; warms air passing over it; brings mild temperatures to west coast of UK in winter; keeps ports ice-free; UK warmer than expected for its latitude.',
+      },
+      {
+        q: 'Explain how altitude affects temperature and precipitation in the UK. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: temperature decreases with altitude (approximately 1°C per 100m); higher land forces air to rise, cool and condense → orographic/relief rainfall; western uplands (e.g. Welsh mountains, Pennines, Scottish Highlands) receive most rainfall; rain shadow on leeward side.',
+      },
+      {
+        q: 'Describe the characteristics of the polar maritime air mass as it affects the UK. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: source region — north Atlantic/Arctic Ocean; characteristics — cool/cold, moist; most common air mass affecting UK; brings cloud, rain and showers; cooler temperatures in summer; less cold in winter than polar continental.',
+      },
+      {
+        q: 'Compare the characteristics of tropical maritime and polar continental air masses. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: tropical maritime — source sub-tropical Atlantic (near the Azores, to the south-west), warm/mild, moist, brings mild wet weather, affects UK in winter/autumn; polar continental — source Scandinavia/Siberia, cold, dry; brings cold clear conditions in winter, possibly snow from east; may bring warm dry conditions in summer.',
+      },
+      {
+        q: 'Describe the sequence of weather associated with the passage of a depression over the UK. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Detailed description of weather changes in order from warm sector approach to cold front clearance, using correct terminology. Level 2 (3–4 marks): Describes most stages with some accuracy. Level 1 (1–2 marks): Basic description. Accept: ahead of warm front — cirrus then altostratus clouds, pressure falling, wind picking up, temperature falling; at warm front — nimbostratus, steady rain, temperature rises, wind veers; warm sector — stratocumulus, drizzle, mild; at cold front — cumulonimbus, heavy rain/thunder, temperature drops sharply, pressure rises; behind cold front — cumulus, bright spells and showers.',
+      },
+      {
+        q: 'Draw and label a cross-section through a depression showing the warm and cold fronts. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: warm front shown with correct symbol (half circles on leading edge); cold front shown with correct symbol (triangles); warm sector between fronts labelled; cloud types associated with each front shown/labelled (e.g. nimbostratus at warm front, cumulonimbus at cold front).',
+        diagram: true,
+      },
+      {
+        q: 'Explain how a depression forms. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: depressions form where warm tropical air meets cold polar air along the polar front; warm air is less dense and rises above cold air; this creates low pressure at the surface; the air masses swirl around the low due to Coriolis effect (anticlockwise in northern hemisphere); warm and cold fronts develop.',
+      },
+      {
+        q: 'Describe the weather typically brought by a summer anticyclone in the UK. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: high pressure; descending air — no clouds/few clouds; very warm/hot temperatures; dry conditions/drought risk; light winds; possibly morning mist/fog.',
+      },
+      {
+        q: 'Compare the weather of summer and winter anticyclones in the UK. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: summer — hot, dry, sunny, light winds, possible heatwave/hosepipe bans; winter — cold, clear skies, frost/fog, ground frost/black ice, possible snow in upland areas; both — high pressure, descending air, dry conditions; winter is cold because clear skies allow heat to escape at night (radiation fog common).',
+      },
+      {
+        q: 'What are isobars on a synoptic chart? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: lines on a weather map connecting places of equal atmospheric pressure.',
+      },
+      {
+        q: 'Explain what closely spaced isobars on a synoptic chart indicate. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: closely spaced isobars indicate a steep pressure gradient; 1 mark for: steep pressure gradient causes strong winds.',
+      },
+      {
+        q: 'Draw and annotate a synoptic chart showing a depression centred over the UK. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: low pressure centre labelled (L); isobars drawn around centre; warm front symbol shown correctly; cold front symbol shown correctly.',
+        diagram: true,
+      },
+      {
+        q: 'Describe three pieces of evidence that show the Earth\'s climate is changing. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for any three: rising global average temperatures (instrumental records show ~1.1°C rise since 1850); rising sea levels (thermal expansion + ice melt); ice cores show increased CO₂ concentrations; retreat of glaciers and ice sheets; shifting seasons (phenology — earlier blossom/migration); reduced Arctic sea ice extent.',
+      },
+      {
+        q: 'Explain how ice cores provide evidence for climate change. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: ice cores drilled from Antarctic/Greenland ice sheets; trapped air bubbles contain samples of ancient atmosphere; analysis shows CO₂ and methane concentrations at different times in the past; also shows temperature variations (from oxygen isotope ratios); provide record going back ~800,000 years.',
+      },
+      {
+        q: 'Explain two natural causes of climate change. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per cause: Milankovitch cycles — changes in Earth\'s orbit/tilt/wobble over thousands of years alter the amount of solar radiation reaching Earth (1 mark) changing global temperatures (1 mark); volcanic eruptions — large eruptions eject sulphur dioxide into stratosphere (1 mark) which reflects solar radiation back to space causing cooling (1 mark). Also accept: changes in solar output.',
+      },
+      {
+        q: 'Explain the enhanced greenhouse effect and how it causes global warming. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: sun\'s radiation (short-wave) passes through atmosphere and warms Earth\'s surface; Earth emits long-wave (infrared) radiation back outward; greenhouse gases (CO₂, methane, water vapour, nitrous oxide) absorb and re-emit this long-wave radiation; human activities have increased concentrations of greenhouse gases (burning fossil fuels, deforestation, agriculture); more radiation trapped → enhanced greenhouse effect → rising temperatures.',
+      },
+      {
+        q: 'Describe two impacts of climate change on the UK. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per impact. Accept: increased flood risk — more intense rainfall events (1 mark) → more frequent river/coastal flooding (1 mark); heatwaves — more frequent/intense summer heat (1 mark) → health risks, water shortages, crop stress (1 mark); changing seasons — earlier spring, milder winters; coastal erosion — sea level rise increases rate of erosion.',
+      },
+      {
+        q: 'Explain two global impacts of climate change. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per impact. Accept: sea level rise — melting ice sheets/thermal expansion (1 mark) → flooding of low-lying islands/coasts e.g. Maldives, Bangladesh (1 mark); food insecurity — changing rainfall patterns/droughts (1 mark) → crop failures in already food-insecure regions (1 mark); extreme weather events; species extinction; desertification.',
+      },
+      {
+        q: 'Distinguish between mitigation and adaptation in the context of climate change. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: mitigation — actions to reduce greenhouse gas emissions/slow the rate of climate change (e.g. renewable energy, reducing deforestation); 1 mark for: adaptation — adjusting to the effects of climate change that are already occurring or expected (e.g. flood defences, drought-resistant crops).',
+      },
+      {
+        q: 'Explain two strategies to mitigate climate change. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per strategy: renewable energy (solar/wind/hydro) — replaces fossil fuels (1 mark), reduces CO₂ emissions (1 mark); afforestation — trees absorb CO₂ from atmosphere (1 mark), acts as carbon sink (1 mark). Also accept: carbon capture and storage, improving energy efficiency, electric vehicles, international agreements (e.g. Paris Agreement).',
+      },
+      {
+        q: 'Explain two strategies to adapt to climate change. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per strategy. Accept: flood defences (sea walls, flood barriers) — protect coastal/low-lying communities from rising sea levels and flooding (1 mark each); drought-resistant crop varieties — ensure food security in areas experiencing reduced rainfall (1 mark each); managed retreat; early warning systems.',
+      },
+      {
+        q: 'Describe the characteristics of the tropical continental air mass. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark each for: source region — north Africa/Sahara Desert; warm and dry; brings hot, dry, sunny weather in summer; occasionally brings haze and dust; less common than other air masses affecting UK.',
+      },
+      {
+        q: 'To what extent are human factors more important than natural factors in causing climate change? [8 marks]',
+        marks: 8,
+        markScheme: 'Level 3 (6–8 marks): Evaluates both human and natural factors with evidence and examples, reaches a supported overall judgement with clear reasoning. Level 2 (3–5 marks): Describes human and natural factors, some evaluation. Level 1 (1–2 marks): Basic description. Accept: human — burning fossil fuels, deforestation, agriculture all increasing greenhouse gas concentrations rapidly; rate of change unprecedented; ~97% of climate scientists agree humans are the main cause and the IPCC calls human influence unequivocal; natural — Milankovitch, volcanic, solar variability explain past changes but not current rapid warming; conclusion should judge relative importance with evidence.',
+      },
+      {
+        q: 'Explain how the UK\'s distance from the sea affects its climate. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: sea heats and cools more slowly than land (higher specific heat capacity); coasts have milder winters and cooler summers (maritime climate); areas further inland (e.g. eastern England) have greater temperature extremes (continental influence); western UK more influenced by Atlantic, eastern UK drier.',
+      },
+      {
+        q: 'Describe the weather at a cold front. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: cold air undercuts warm air rapidly; steep front → very heavy, intense rainfall/thunder; cumulonimbus clouds; temperature drops sharply; pressure rises; wind may veer (change direction); short duration of heavy rain.',
+      },
+      {
+        q: 'Explain how phenological evidence shows that climate is changing. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: phenology records timing of biological events (blossom dates, bird migration, first appearance of insects); 1 mark for: records show these events are occurring earlier (e.g. cherry blossom earlier, birds arriving/nesting earlier) indicating earlier/warmer springs — consistent with warming.',
+      },
+      {
+        q: 'What is the difference between weather and climate? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: weather is the day-to-day conditions of the atmosphere (temperature, rainfall, wind speed); 1 mark for: climate is the average weather conditions of a place over a long period (30 years).',
+      },
+      {
+        q: 'Explain how Milankovitch cycles cause long-term climate change. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: Earth\'s orbit around sun changes shape (eccentricity — circular to elliptical, ~100,000 year cycle); Earth\'s axial tilt changes (obliquity — 22.1–24.5°, ~41,000 year cycle); Earth\'s wobble on its axis (precession — ~26,000 year cycle); these cycles change the distribution/amount of solar radiation reaching Earth, causing glacial/interglacial cycles.',
+      },
+      {
+        q: 'Describe two pieces of evidence from temperature records that show climate change is occurring. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per piece of evidence. Accept: instrumental temperature records since 1850 — show ~1.1–1.3°C average global warming (1 mark), with the ten warmest years on record all occurring since 2015 (1 mark); proxy records (tree rings, pollen, ice cores) — extend record further back (1 mark), show current warming is unprecedented in last 2000 years (1 mark).',
+      },
+      {
+        q: 'Explain why volcanic eruptions can cause short-term cooling of global temperatures. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: large eruptions inject sulphur dioxide (SO₂) into stratosphere; SO₂ combines with water vapour to form sulphate aerosols; these reflect incoming solar radiation back into space; reduces solar radiation reaching Earth\'s surface; cooling effect lasts 1–3 years (e.g. Mount Pinatubo 1991 cooled Earth by ~0.5°C).',
+      },
+      {
+        q: 'Assess the extent to which the UK is prepared to cope with the impacts of climate change. [8 marks]',
+        marks: 8,
+        markScheme: 'Level 3 (6–8 marks): Evaluates specific UK adaptation and mitigation strategies, considers their effectiveness and limitations, reaches a supported judgement. Level 2 (3–5 marks): Describes UK strategies, some evaluation. Level 1 (1–2 marks): Basic strategies. Accept: Thames Barrier (flood protection); Climate Change Act 2008 (legally binding emission targets); UKCP18 projections informing planning; coastal managed retreat; BUT economic/social cost challenges; unequal vulnerability across UK; need for international cooperation.',
+      },
+      {
+        q: 'Explain how latitude affects the UK\'s climate. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: UK is at approximately 50–60°N — relatively high latitude; 1 mark for: sun\'s rays strike at a lower angle, spread over wider area → less intense solar radiation → cooler temperatures than equatorial regions.',
+      },
+      {
+        q: 'Describe the formation of relief (orographic) rainfall. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: prevailing south-westerly winds bring moist air from Atlantic; air is forced to rise over upland areas (mountains/hills); air cools at dew point, water vapour condenses forming clouds; precipitation falls on windward (west) side; dry rain shadow on leeward (east) side.',
+      },
+      {
+        q: 'Draw and annotate a diagram to show relief rainfall over a mountain range. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: mountain cross-section shown; windward side — arrows showing air rising, cloud forming, rain falling; leeward side — rain shadow, descending air, dry conditions labelled.',
+        diagram: true,
+      },
+      {
+        q: 'Explain why sea levels are rising and what impact this has on coastal communities. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: sea levels rising due to thermal expansion of seawater as temperatures increase; melting of ice sheets (Greenland, Antarctica) and glaciers adds freshwater to oceans; impacts: increased coastal flooding (storm surges higher), increased coastal erosion, saltwater intrusion into freshwater/agricultural land, displacement of coastal communities (e.g. Pacific island nations).',
+      },
+      {
+        q: 'What is a tropical storm? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: an intense low-pressure weather system with strong winds (over 74 mph / 119 km/h) and heavy rainfall that forms over warm tropical oceans (also known as hurricane/typhoon/cyclone depending on region).',
+      },
+      {
+        q: 'Explain three conditions needed for a tropical storm to form. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: warm ocean surface temperatures above 26.5°C to a depth of ~50m (provides heat/moisture energy); latitude of 5–30° (sufficient Coriolis effect to cause rotation); low wind shear (winds similar speed at all heights so storm is not torn apart); high humidity in lower/middle atmosphere; unstable atmospheric conditions.',
+      },
+      {
+        q: 'Describe the primary effects of a named tropical storm. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for any four (named storm e.g. Typhoon Haiyan 2013 Philippines): over 6,300 killed; ~14 million people affected; 1.9 million homeless; 1 million homes damaged/destroyed; storm surge of 5m in Tacloban; winds of 314 km/h; coconut and rice crops destroyed; airports/roads destroyed. Accept Hurricane Katrina or other valid named example with specific detail.',
+      },
+      {
+        q: 'To what extent can the impacts of extreme weather events in the UK be reduced by planning and preparation? [8 marks]',
+        marks: 8,
+        markScheme: 'Level 3 (6–8 marks): Evaluates a range of preparation strategies with UK named examples (e.g. Somerset Levels floods 2014, Beast from the East 2018, Storm Desmond 2015), considers effectiveness and limitations, reaches a supported conclusion. Level 2 (3–5 marks): Describes strategies with some evaluation. Level 1 (1–2 marks): Basic points. Accept: flood defences (dredging, barriers, SUDS); Environment Agency flood warnings; Met Office weather warnings; improved drainage; building regulations; resilient infrastructure; limitations — cost, climate change increasing severity beyond design limits, human behaviour, rural/remote areas harder to protect.',
+      },
+    ],
+  },
+  '2.4': {
+    name: 'Climate Change — Cause and Effect',
     questions: [
       {
         q: 'State three types of evidence that scientists use to show that the climate has changed in recent decades. [3 marks]',
@@ -2302,8 +1469,421 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
       },
     ],
   },
+  '3.1': {
+    name: 'How Ecosystems Function',
+    questions: [
+      {
+        q: 'Describe the climate of a tropical rainforest. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: located near equator; high temperatures throughout year (~27°C/no seasons); high annual rainfall (~2000mm+); rainfall is convectional (afternoon storms); low pressure (ITCZ); high humidity.',
+      },
+      {
+        q: 'What is a biome? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: a global-scale ecosystem / very large ecosystem defined by its climate and the plant and animal communities that climate supports.',
+      },
+      {
+        q: 'Explain why tropical rainforests receive high levels of rainfall. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: located near equator where sun is overhead/intense heating; air heated and rises (low pressure/ITCZ); rapid evapotranspiration from trees adds moisture; rising air cools and condenses → heavy convectional rainfall most afternoons.',
+      },
+      {
+        q: 'Describe the global distribution of hot semi-arid grassland (savanna). [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for any three of: found roughly between 5° and 20° north and south of the equator; between the tropical rainforest and the hot deserts; largest area in Africa (the Sahel and East Africa); also the Brazilian cerrado / Venezuelan llanos; northern Australia; parts of central India.',
+      },
+      {
+        q: 'Draw and label a diagram to show the four layers of a tropical rainforest. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: emergent layer (tallest trees ~40m+) labelled; canopy (continuous layer ~20–30m) labelled; understorey (shade-tolerant shrubs, small trees ~5–20m) labelled; forest floor (dark, little vegetation, leaf litter) labelled.',
+        diagram: true,
+      },
+      {
+        q: 'Explain why hot semi-arid grassland has a distinct wet and dry season. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: the ITCZ migrates north and south following the overhead sun; when the ITCZ is overhead, rising air brings low pressure and a wet season; for the rest of the year the descending limb of the Hadley cell brings high pressure; descending air warms and dries, so little or no rain falls; dry season typically lasts 5–7 months.',
+      },
+      {
+        q: 'Explain the nutrient cycle in a tropical rainforest. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: nutrients stored in three places — biomass (plants), litter (dead matter on floor), soil; rapid decomposition by bacteria/fungi in warm, moist conditions releases nutrients from litter to soil quickly; leaching — heavy rainfall washes nutrients down through soil; most nutrients in biomass store; soils are nutrient-poor (infertile) if trees are removed.',
+      },
+      {
+        q: 'Describe the climate of hot semi-arid grassland. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for any three of: hot all year, roughly 25–30°C; annual rainfall roughly 500–1,500 mm; rainfall concentrated into one wet season; long dry season of about 5–7 months; rainfall unreliable / varies greatly from year to year.',
+      },
+      {
+        q: 'Explain two plant adaptations to the tropical rainforest environment. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per adaptation: buttress roots — large fin-like roots extending from trunk (1 mark) provide stability for tall trees in shallow, nutrient-poor soils (1 mark); drip tips — pointed/elongated leaf tips (1 mark) allow excess water to drain off quickly, preventing fungal growth (1 mark). Also accept: lianas (climbing plants reach light), epiphytes (grow on branches to reach light), waxy/large leaves to maximise photosynthesis in low light.',
+      },
+      {
+        q: 'Explain two ways in which savanna trees are adapted to the dry season. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks each (1 for the adaptation, 1 for the explanation) for any two of: deep tap roots reach groundwater below the grass root zone; deciduous leaf loss cuts transpiration when water is scarce; water stored in a swollen trunk (baobab) carries the tree through the dry months; small waxy or thorn-like leaves reduce the surface area losing water; thick fire-resistant bark protects living tissue from dry season fires; umbrella crown shades the soil and cuts evaporation.',
+      },
+      {
+        q: 'What is meant by biodiversity? [1 mark]',
+        marks: 1,
+        markScheme: '1 mark for: the variety of plant and animal species in an area/ecosystem.',
+      },
+      {
+        q: 'Explain how savanna grasses survive both grazing and fire. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: the growing point is at or below ground level; grazing or fire removes the leaf but not the growing point; regrowth is therefore rapid once rain returns / roots survive underground.',
+      },
+      {
+        q: 'Explain why tropical rainforests have such high biodiversity. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: consistent warm and wet climate throughout year supports year-round growth; multiple layers provide many different habitats and niches; high primary productivity — abundant food supply; millions of years of evolution without ice ages (stable environment); estimated 50% of world\'s species in rainforests.',
+      },
+      {
+        q: 'Describe the soils of a hot semi-arid grassland. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for any three of: reddish-brown, iron-rich (ferruginous); hold more nutrients in the topsoil than rainforest soils because leaching is less intense; thin organic layer; bake hard in the dry season, sometimes forming a laterite crust; the crust reduces infiltration so the first rains run off.',
+      },
+      {
+        q: 'Describe the concept of interdependence in the tropical rainforest. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: plants and animals depend on each other; e.g. trees rely on insects for pollination; animals rely on trees for food and shelter; if one species is removed it affects others; trees cycle water (transpiration) affecting local rainfall; shows food web/ecological interdependence.',
+      },
+      {
+        q: 'Explain what is meant by interdependence in an ecosystem. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark for: species and non-living parts rely on one another; 1 mark for a worked link (e.g. grass feeds herds, herd dung returns nutrients to soil, soil fertility supports grass); 1 mark for: removing one part causes change through the rest of the system.',
+      },
+      {
+        q: 'Describe two characteristics of the emergent layer of a tropical rainforest. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark each for: tallest trees (40–60m); widely spaced; umbrella-shaped crowns spread to maximise light; exposed to strong winds, rain, intense sunlight; home to eagles, butterflies, some monkeys.',
+      },
+      {
+        q: 'Explain the role of termites in the savanna ecosystem. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for any three of: termites break down dry, tough grass litter that few other organisms can digest; they return nutrients to the soil; their mounds create drainage channels; mounds form raised, nutrient-rich patches colonised by trees; decomposition by termites is especially important because bacterial decay slows in the dry season.',
+      },
+      {
+        q: 'Explain the adaptation of buttress roots in tropical rainforest trees. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: large, flat, fin-like roots extending from base of trunk; 1 mark for: spread weight of very tall trees / anchor trees in shallow, nutrient-poor soils.',
+      },
+      {
+        q: 'Explain how migration helps wildebeest survive in the savanna. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: rainfall and therefore grass growth are seasonal and patchy; herds move to follow the rain rather than waiting for it; around 1.3 million wildebeest circuit the Serengeti–Mara ecosystem annually; migration spreads grazing pressure so no area is grazed continuously; calving is timed to the short-grass plains where grass is most nutritious.',
+      },
+      {
+        q: 'Describe the role of decomposers in the nutrient cycle of a tropical rainforest. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: bacteria and fungi break down dead plant/animal material in litter layer; 1 mark for: releases nutrients back into soil quickly (aided by warm, moist conditions) — completing the nutrient cycle.',
+      },
+      {
+        q: 'Explain how grazing succession reduces competition between savanna herbivores. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: zebra take the tough upper stems first; wildebeest then take the middle leaf; gazelle crop the short new shoots beneath; three species therefore use the same grass without competing directly.',
+      },
+      {
+        q: 'Draw and annotate a diagram to show the nutrient cycle of a tropical rainforest. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: three stores shown (biomass, litter, soil); arrows showing flows between stores (decomposition from litter to soil; uptake from soil to biomass; leaf fall from biomass to litter); leaching shown (arrow from soil downward); precipitation/weathering inputs shown.',
+        diagram: true,
+      },
+      {
+        q: 'Describe the role of people in the savanna ecosystem. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for any three of: pastoralists such as the Maasai or Fulani graze cattle, goats and sheep; herds are moved between seasonal grazing areas and water points; this mobility allows grazed land to recover; people also set dry season fires which clear dead material and release nutrients; where movement is restricted, grazing concentrates and vegetation thins.',
+      },
+      {
+        q: 'Explain one animal adaptation to the tropical rainforest environment. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for naming an appropriate adaptation with correct animal; 1 mark for explaining its purpose. Accept: tree frog — sticky pads on feet (1 mark) enable climbing in tree layers to find food/avoid predators (1 mark); toucan — large, colourful bill (1 mark) to reach and break open fruits in dense vegetation (1 mark); sloth — slow movement and green algae on fur (1 mark) as camouflage to avoid predators (1 mark).',
+      },
+      {
+        q: 'What is meant by a producer, a consumer and a decomposer? [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: producer — a green plant that converts sunlight into chemical energy by photosynthesis; consumer — an animal that obtains energy by eating other organisms; decomposer — a bacterium, fungus or detritivore that breaks down dead material and returns nutrients to the soil.',
+      },
+      {
+        q: 'Describe the ITCZ and its role in creating the equatorial climate. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: ITCZ = Inter-Tropical Convergence Zone — a band of low pressure near the equator where north-east and south-east trade winds converge; intense solar heating causes warm air to rise constantly; creates persistent cloud and convectional rainfall; moves slightly north and south with seasons following overhead sun.',
+      },
+      {
+        q: 'Explain why only about 10% of energy passes from one trophic level to the next. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for any three of: energy is used in respiration; energy is lost as body heat; energy is used in movement; some energy is lost in waste / undigested material; not all of an organism is eaten.',
+      },
+      {
+        q: 'What is meant by convectional rainfall? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: intense solar heating of ground/surface causes rapid evaporation and rising air; 1 mark for: rising air cools and condenses forming cumulonimbus clouds → heavy afternoon thunderstorms.',
+      },
+      {
+        q: 'Explain why food chains rarely contain more than four or five links. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: roughly 90% of energy is lost at each level; too little energy remains to support a further level; this is also why top predators are far less numerous than producers.',
+      },
+      {
+        q: 'Explain the concept of leaching and its importance in the tropical rainforest nutrient cycle. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: heavy rainfall washes (leaches) soluble nutrients downward through soil profile; nutrients are removed from the upper soil horizon; this means soils are naturally infertile; explains why clearing rainforest leads to rapid soil degradation — nutrients go with vegetation, not stored in soil.',
+      },
+      {
+        q: 'Draw and label a food web for a hot semi-arid grassland. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: at least two named producers (e.g. red oat grass, acacia); at least two named primary consumers (e.g. wildebeest, zebra, termite); at least one named secondary or tertiary consumer (e.g. lion, cheetah, hyena); all arrows drawn pointing from the organism eaten towards the organism eating it.',
+        diagram: true,
+      },
+      {
+        q: 'Describe the characteristics of the canopy layer of a tropical rainforest. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark each for: forms a continuous (closed) layer of interlocking branches and leaves at 20–30m; intercepts ~80% of sunlight; most animal diversity found here; leaves have waxy surfaces; bromeliads and orchids (epiphytes) grow here.',
+      },
+      {
+        q: 'Compare the speed of decomposition in a tropical rainforest and a hot semi-arid grassland. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: rainforest decomposition is very rapid, taking weeks, because it is constantly warm and wet; nutrients are taken straight back up by shallow roots; savanna decomposition almost stops in the dry season because decomposers need moisture; dead grass therefore lies unrotted for months and fire often recycles it instead.',
+      },
+      {
+        q: 'Explain why the savanna supports larger herds of large herbivores than the rainforest. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: grass is far easier for herbivores to eat and digest than wood; a large share of savanna plant growth is therefore converted into herbivore biomass; in the rainforest most biomass is locked in standing trees, so consumers are mostly small canopy specialists.',
+      },
+      {
+        q: 'Explain why a food web with more species is more resilient. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: predators have alternative prey if one species declines; the web holds together rather than collapsing; a simplified web (e.g. a monoculture) has no alternatives so losing one species can remove several others.',
+      },
+      {
+        q: 'Describe the characteristics of a named small-scale ecosystem in the UK. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for any four of (Kenfig NNR used here): coastal sand dune system in South Wales between Porthcawl and Port Talbot; around 1,300 acres (roughly 520 hectares); a succession from bare mobile sand through marram-covered yellow dunes to stabilised grey dunes; damp hollows called slacks where the water table reaches the surface; very low soil nutrient levels and high salt spray near the sea; nationally important population of the rare fen orchid. Credit any named UK small-scale ecosystem with equivalent detail.',
+      },
+      {
+        q: 'Explain two benefits a small-scale UK ecosystem brings to local communities. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks each (1 for the benefit, 1 for development) for any two of: coastal protection — the dune ridge absorbs wave energy and storm surge protecting land behind it; recreation and wellbeing — free public access for walking and birdwatching; education — heavily used by schools and universities for fieldwork; local economy — visitors support nearby cafés and shops; regulating services — carbon storage and groundwater filtration.',
+      },
+      {
+        q: 'Explain why a sand dune ecosystem may need active management rather than being left alone. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: the proportion of bare, mobile sand has fallen so the succession is no longer reset; loss of grazing by rabbits and livestock means vegetation is no longer cropped short; nitrogen deposition fertilises naturally poor sand and favours coarse plants; invasive and aggressive species such as sea buckthorn spread; rare species such as the fen orchid need open, damp, low-nutrient ground and are shaded out.',
+      },
+      {
+        q: 'Assess the challenges of managing a small-scale ecosystem where stakeholders disagree. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Identifies several stakeholders, explains why their values differ, and reaches a supported judgement. Level 2 (3–4 marks): Describes two or more stakeholder views with some explanation. Level 1 (1–2 marks): Names stakeholders only. Accept (Kenfig): conservation body values rare species and measures success in orchid numbers and bare sand; scrub clearance and turf stripping look destructive to visitors; local commoners value long-standing access rights and object to fencing for grazing; dog walkers disturb ground-nesting birds and conflict with livestock; schools cause trampling on repeated transects; businesses want more access while managers want footfall concentrated. Judgement should note that one group\'s successful outcome is another\'s idea of damage.',
+      },
+    ],
+  },
+  '3.2': {
+    name: 'Ecosystems Under Threat',
+    questions: [
+      {
+        q: 'Explain two causes of deforestation in tropical rainforests. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per cause. Accept: commercial logging — valuable hardwood timber (mahogany, teak) exported for profit (1 mark) creates large clearings and access roads for further deforestation (1 mark); cattle ranching — forest cleared for beef production (1 mark) major cause in Amazon — approx 70% of Amazon deforestation (1 mark); mining — mineral extraction requires forest clearance; HEP dams — flood large areas; road building — Amazon highways open up forest.',
+      },
+      {
+        q: 'Explain how people use ecosystems to obtain food, energy and water. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for any four of: land is cleared for crops and pasture; livestock are grazed and wild species hunted or gathered; firewood and charcoal are collected and biofuel plantations established; reservoirs are built for hydroelectric power; boreholes and wells extract groundwater; rivers are abstracted for irrigation.',
+      },
+      {
+        q: 'Using the Amazon Basin as an example, describe the main causes of deforestation. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Detailed explanation of multiple causes with specific Amazon facts/data. Level 2 (3–4 marks): Describes several causes with some Amazon detail. Level 1 (1–2 marks): Basic causes. Accept: cattle ranching (70% of deforestation), soya farming for animal feed, logging (legal/illegal), mining (e.g. iron ore at Carajás), HEP dams (Belo Monte Dam), Trans-Amazon Highway, population pressure/subsistence farming, government development policies.',
+      },
+      {
+        q: 'What is meant by ecosystem services? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: the benefits people obtain from ecosystems. 1 mark for a category or example: provisioning (food, timber, water); regulating (carbon storage, flood control, pollination); supporting (soil formation, nutrient cycling); cultural (recreation, spiritual, scientific value).',
+      },
+      {
+        q: 'Explain the impact of deforestation on the hydrological cycle. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: trees intercept rainfall and take up water through roots; transpiration returns water to atmosphere (30–50% of Amazon rainfall recycled through trees); removal of trees reduces transpiration; less cloud formation and rainfall; surface runoff increases (soil has no protection); rivers carry more sediment; local and regional climate may become drier.',
+      },
+      {
+        q: 'Explain why the use of an ecosystem is not always damaging. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: damage occurs only when extraction exceeds the rate at which the ecosystem can recover; traditional pastoralism and shifting cultivation operated inside these ecosystems for centuries; the threshold is usually crossed by population growth, market demand or a technology that raises extraction rates.',
+      },
+      {
+        q: 'Explain the impact of deforestation on biodiversity. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: destruction of habitats for millions of species; estimated 137 species extinct per day globally due to deforestation; specialist species (those with narrow niches) particularly vulnerable; loss of genetic diversity; reduces ecosystem resilience.',
+      },
+      {
+        q: 'Explain how overgrazing damages hot semi-arid grassland. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: more livestock graze the same land as herd numbers rise; grass is cropped faster than it can regrow and the growing point at the base is damaged; vegetation cover falls so less litter reaches the soil and the nutrient cycle slows; roots no longer bind the soil so it is exposed to wind and water erosion; hooves compact the surface, reducing infiltration.',
+      },
+      {
+        q: 'Describe the impact of deforestation on indigenous peoples. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: loss of land/homes for tribes who depend on forest; loss of traditional knowledge and ways of life; exposure to western diseases (no immunity); violence and conflict with loggers/farmers; some tribes face extinction (uncontacted tribes); displacement to urban areas with poverty.',
+      },
+      {
+        q: 'Explain why fencing and land subdivision threaten savanna ecosystems. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: fences stop pastoralists and wild herds moving between seasonal pastures; grazing pressure concentrates permanently in one place instead of rotating; the recovery period grasses depend on is removed; migration and dispersal corridors are cut, increasing human–wildlife conflict; in the Maasai Mara subdivision of former group ranches is regarded as the largest structural threat to the ecosystem.',
+      },
+      {
+        q: 'Explain how deforestation contributes to climate change. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: trees store carbon (carbon sink); burning/decomposing trees releases stored CO₂ into atmosphere; deforestation accounts for ~10–15% of global CO₂ emissions; loss of trees reduces ability to absorb future CO₂; positive feedback loop.',
+      },
+      {
+        q: 'Explain how a new borehole can make land degradation worse. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: a permanent water point allows livestock to stay year-round where they previously could not; grazing and trampling concentrate around the water point; a ring of bare, compacted ground (a piosphere) extends for several kilometres.',
+      },
+      {
+        q: 'Explain how deforestation leads to soil erosion. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: tree roots bind/hold soil together; removal of trees leaves soil exposed to heavy rain; no canopy to intercept rainfall (raindrops hit soil directly, breaking it up — splash erosion); nutrients leached from unprotected soil; laterite soils can harden (laterisation) when exposed to sun making land infertile.',
+      },
+      {
+        q: 'Explain how changing fire regimes damage savanna. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: suppressing fire allows woody scrub to invade and shade out grasses (bush encroachment); burning too frequently kills tree seedlings and exhausts soil nutrients; the natural regime is patchy, low-intensity fire that clears dead material and releases nutrients.',
+      },
+      {
+        q: 'What is selective logging? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: only certain (mature/valuable) trees are cut down rather than clearing all trees; 1 mark for: allows forest to regenerate naturally; reduces overall damage to ecosystem compared to clear-felling.',
+      },
+      {
+        q: 'Describe the sequence by which loss of vegetation cover leads to soil loss. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: vegetation cover falls below the point where it shields the soil; rain strikes bare ground directly and raindrop impact seals the surface, reducing infiltration; surface runoff rises and topsoil is washed into gullies; dry topsoil is blown away in the dry season; with less organic matter the soil holds less water, so the next drought bites harder.',
+      },
+      {
+        q: 'Explain how ecotourism can support the sustainable management of rainforests. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: small-scale, low-impact tourism to experience natural environment; provides income for local communities; gives economic value to standing forest (incentive to preserve it); raises awareness of rainforest importance; tourists pay for guided tours keeping money in local economy; can fund conservation projects.',
+      },
+      {
+        q: 'Explain how the loss of vegetation can reduce local rainfall. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: evapotranspiration falls so less moisture is recycled into the air; less atmospheric moisture means fewer clouds and less convectional rainfall; less rain means still less vegetation — a positive feedback loop.',
+      },
+      {
+        q: 'What is a debt-for-nature swap? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: an agreement where a country\'s debt is reduced/cancelled in exchange for protecting areas of natural habitat (e.g. rainforest); 1 mark for: provides economic incentive for LIC governments to conserve forests rather than develop them.',
+      },
+      {
+        q: 'Explain the effects of ecosystem damage on biodiversity at the local scale. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for any four of: habitat is fragmented into patches too small to hold viable populations; specialists with narrow niches disappear first; edge effects dry out the margins of remaining habitat; palatable grass species are replaced by unpalatable or woody species; migration corridors are lost for large mammals; food webs simplify so the system becomes less resilient.',
+      },
+      {
+        q: 'Explain how international agreements help to protect tropical rainforests. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: e.g. REDD+ (Reducing Emissions from Deforestation and Degradation) — pays countries to protect forests; Paris Agreement — countries commit to reducing emissions including from deforestation; CITES controls trade in endangered species; FSC (Forest Stewardship Council) certification ensures sustainable timber trade.',
+      },
+      {
+        q: 'Explain two global-scale effects of ecosystem damage. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks each (1 for the effect, 1 for development) for any two of: carbon stored in biomass and soils is released, weakening a major carbon sink and adding to global warming; a disproportionate share of world species is lost, since rainforest holds over half of them on about 6% of the land surface; regional atmospheric moisture transport is disrupted, changing rainfall far beyond the damaged area; reduced food production in already food-insecure regions drives displacement and migration.',
+      },
+      {
+        q: 'Compare the soil characteristics of a tropical rainforest with an area that has been deforested. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: rainforest — nutrient-poor subsoil but rich litter layer on surface; rapid nutrient cycling keeps nutrients in biomass; deep red/laterite soils; thin fertile layer; deforested — litter layer removed/not replenished; soils lose nutrients through leaching and erosion; laterite can harden to impermeable crust; soil degradation within a few years.',
+      },
+      {
+        q: 'Explain why ecosystems are conserved and managed. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: economic — ecosystems produce marketable goods such as timber, grazing and tourism income; environmental — services such as carbon storage, water regulation and pollination would be very expensive to replace; social and cultural — local and indigenous communities have lived in and shaped these ecosystems for generations; ethical and scientific — species have a right to exist, and undiscovered species may hold future medicines.',
+      },
+      {
+        q: 'Using Malaysia or another named example, explain the conflict between development and conservation in a tropical rainforest. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Detailed explanation of specific development pressures and conservation arguments with named evidence from chosen location. Level 2 (3–4 marks): Describes both perspectives with some specific detail. Level 1 (1–2 marks): Generic points. Accept Malaysia/Borneo: palm oil plantations for economic growth vs biodiversity loss (orangutan habitat); logging for timber exports vs deforestation; poverty alleviation through development vs long-term sustainability.',
+      },
+      {
+        q: 'Explain how rotational grazing helps manage hot semi-arid grassland sustainably. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: land is divided into blocks grazed in sequence; each block is rested for months before livestock return; the rest period allows grasses to regrow from their basal growing point and root systems to recover.',
+      },
+      {
+        q: 'To what extent can tropical rainforests be managed sustainably? [8 marks]',
+        marks: 8,
+        markScheme: 'Level 3 (6–8 marks): Evaluates a range of sustainable management strategies with specific examples, considers their effectiveness and limitations, reaches a supported judgement. Level 2 (3–5 marks): Describes management strategies, some evaluation. Level 1 (1–2 marks): Basic strategies. Accept: selective logging, replanting, ecotourism, international agreements, protected areas, debt-for-nature swaps; limitations — enforcement difficult, economic pressures for development, corruption, poverty; conclusion should weigh possibilities against challenges.',
+      },
+      {
+        q: 'Explain how community conservancies help protect savanna ecosystems. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: neighbouring landowners pool their land into a single conservancy; they agree to remove fences and limit livestock numbers; they receive lease payments funded by tourism; conservation therefore has a direct cash value to the people who bear its costs; land under conservancy management around the Maasai Mara roughly doubled to about 1,420 km² in the decade after 2013.',
+      },
+      {
+        q: 'Assess the effectiveness of protected areas (national parks/reserves) in conserving tropical rainforests. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Evaluates protected areas with specific examples, considers effectiveness and limitations, reaches a supported conclusion. Level 2 (3–4 marks): Describes advantages and disadvantages. Level 1 (1–2 marks): Basic points. Accept: advantages — legal protection, habitat conservation, enforced boundaries, ecotourism revenue; limitations — illegal logging/poaching difficult to stop, buffer zones needed, local communities may resent exclusion, enforcement requires funding, corruption, total area insufficient.',
+      },
+      {
+        q: 'Explain why wildlife corridors are important in savanna management. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: fragmentation, not hunting, causes most savanna wildlife loss; corridors are strips of unfenced land negotiated between protected areas; they reconnect migration and dispersal routes so populations stay viable.',
+      },
+      {
+        q: 'Explain how subsistence farming contributes to deforestation in the Amazon. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: poor farmers move into forest areas along roads; practice slash-and-burn (clear small areas, burn trees to release nutrients); farm for a few years until soil exhausted; move on to clear more forest — shifting cultivation; small scale individually but large cumulative effect.',
+      },
+      {
+        q: 'Evaluate the Great Green Wall as a response to land degradation in the Sahel. [8 marks]',
+        marks: 8,
+        markScheme: 'Level 4 (7–8 marks): Detailed, balanced evaluation with specific evidence and a clear supported judgement. Level 3 (5–6 marks): Balanced with some evidence. Level 2 (3–4 marks): Mostly descriptive with limited evaluation. Level 1 (1–2 marks): Basic points. Accept: aim of 100 million hectares restored, 250 million tonnes of carbon sequestered and 10 million jobs by 2030; roughly 18 million hectares restored and about 350,000 jobs created, with over US$14 billion raised or pledged; the initiative\'s own assessment puts it at around 15% of its goal, requiring about 8.2 million hectares a year and roughly $4.3 billion annually to reach it; original concept of a continuous planted wall failed because seedlings were placed where rainfall could not sustain them; now pursued as a mosaic of natural regeneration, water harvesting, agroforestry and improved grazing; remaining obstacles are organisational — incomplete data, coordination between many governments, insecurity, and lag between pledges and work. Judgement: more effective as a funding and coordination mechanism for community-scale restoration than as a physical structure.',
+      },
+      {
+        q: 'Explain how replanting/reforestation can help manage tropical rainforests. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: trees planted to replace those cut down; restores forest cover; can restore habitats and biodiversity over time; BUT monoculture plantations less biodiverse than natural rainforest; takes many decades for mature forest to re-establish; difficult to replicate full ecosystem complexity.',
+      },
+      {
+        q: 'Assess the view that local, low-cost strategies manage degraded land better than large international schemes. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Considers both sides with evidence and reaches a supported judgement. Level 2 (3–4 marks): Some comparison with limited evidence. Level 1 (1–2 marks): Basic points. Accept for local: farmer-managed natural regeneration, stone bunds and zai pits are cheap, fast, use local knowledge and species, and are maintained by the people who benefit; documented yield increases and large restored areas in Niger and Burkina Faso. Accept for international: large schemes supply funding, training, research on drought-tolerant varieties, and political attention that local projects cannot generate; the UNCCD provides comparable data and a permanent institutional home. Judgement should note that the two are complementary — the Great Green Wall works best where it funds techniques that were already working locally.',
+      },
+      {
+        q: 'Assess the social, economic and environmental impacts of deforestation in tropical rainforests. [8 marks]',
+        marks: 8,
+        markScheme: 'Level 3 (6–8 marks): Detailed assessment of all three impact types with specific evidence/examples, reaches a supported overall judgement with consideration of most significant impact. Level 2 (3–5 marks): Covers at least two impact types with some development. Level 1 (1–2 marks): Basic impacts listed. Accept: environmental — species extinction, climate change, soil erosion, hydrological disruption; economic — short-term profit for TNCs/governments but long-term loss of ecosystem services; social — displacement of indigenous peoples, poverty, health risks; judgement on which is most significant.',
+      },
+      {
+        q: 'Describe one way in which indigenous people use the tropical rainforest sustainably. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for a valid way + 1 mark development. E.g. shifting cultivation — small plots cleared and farmed for a few years, then left fallow for many years so the forest and soil recover; small-scale hunting and gathering that takes only what is needed; use of detailed knowledge of medicinal plants without clearing forest.',
+      },
+      {
+        q: 'Explain why clearing a tropical rainforest makes its soils infertile. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: most nutrients are stored in the biomass, so they are removed when trees are cut down or burned; no new leaf litter falls, so the nutrient supply to the soil stops; heavy rainfall leaches remaining nutrients out of the thin soil; bare soil is eroded by rain splash and surface runoff; exposed soil can harden (laterisation); crop yields fall within a few years, so farmers move on to clear more forest.',
+      },
+      {
+        q: 'Suggest why ecotourism is considered a sustainable way of managing the rainforest. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: generates income from tourists without cutting down the forest (economic benefit for local communities); provides employment as guides/hosts reducing need for logging/farming; raises awareness of conservation and funds protection; small-scale, low impact; BUT can cause disturbance if poorly managed. E.g. Costa Rica derives significant GDP from ecotourism while protecting >25% of land.',
+      },
+      {
+        q: 'Explain the role of international agreements in protecting tropical rainforests. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: CITES — controls trade in endangered species; REDD+ (UN) — pays LICs to reduce emissions from deforestation; Paris Agreement includes forest protection commitments; debt-for-nature swaps — debt cancelled in return for conservation; BUT enforcement is weak, countries may prioritise development, funding often insufficient to offset economic incentives for deforestation.',
+      },
+      {
+        q: 'Evaluate the effectiveness of selective logging as a sustainable management strategy in tropical rainforests. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Evaluates strengths and weaknesses with detail, reaches a supported conclusion. Level 2 (3–4 marks): Describes strategy with some evaluation. Level 1 (1–2 marks): Basic points. Accept: only mature trees of specific species cut; forest structure/canopy largely preserved; wildlife habitats retained; regrowth possible; BUT access roads cause damage, machinery compacts/damages surrounding trees, illegal logging often follows legal roads; slow growth of tropical hardwoods means cycle must be long; requires enforcement; more sustainable than clear-felling but not a complete solution.',
+      },
+    ],
+  },
   '3.3': {
-    name: 'Water Management',
+    name: 'Water Resources and Management',
     questions: [
       {
         q: 'State the percentage of the world\'s water that is accessible fresh water. [1 mark]',
@@ -2513,6 +2093,215 @@ const GEOGRAPHY_EDUQAS_PRACTICE = {
         q: 'Explain how climate change is affecting global water security. [4 marks]',
         marks: 4,
         markScheme: '1 mark each for: rising temperatures increase evaporation — reducing surface water and soil moisture; changing rainfall patterns — some areas wetter, others drier (e.g. Mediterranean drying); glacier retreat reduces meltwater for rivers (Himalayas, Andes) — threatens water for ~2 billion people; rising sea levels cause saltwater intrusion into coastal aquifers; more extreme droughts and floods; increasing competition for water between countries/sectors.',
+      },
+    ],
+  },
+  '3.4': {
+    name: 'Desertification',
+    questions: [
+      {
+        q: 'Describe the distribution of hot deserts. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: located around 30°N and 30°S of equator (horse latitudes); found in subtropical high pressure belts (descending air); examples — Sahara, Arabian, Namib, Atacama, Australian outback; also in continental interiors far from moisture sources; rain shadow deserts on leeward side of mountains.',
+      },
+      {
+        q: 'Explain why hot deserts receive very little precipitation. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: located in areas of descending air (~30°N/S); descending air is compressed and warms; this reduces relative humidity and prevents cloud formation; therefore very little rainfall (< 250mm/year); also: continental interiors far from sea moisture sources; cold ocean currents offshore (e.g. Benguela) chill air reducing precipitation.',
+      },
+      {
+        q: 'Describe the climate characteristics of a hot desert. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: very low annual precipitation (< 250mm); very high daytime temperatures (up to 50°C); extreme diurnal (day-night) temperature range (can be 30–40°C difference); low humidity; clear skies; intense solar radiation.',
+      },
+      {
+        q: 'Explain why hot deserts have a large diurnal temperature range. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: clear skies — no cloud cover during day allows intense solar heating → very high daytime temperatures; at night, clear skies allow heat to radiate back to space quickly (no greenhouse blanket); dry air has low specific heat capacity — heats and cools quickly; large diurnal range results.',
+      },
+      {
+        q: 'Describe the soil characteristics of a hot desert. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark each for any two: very dry/arid; thin and stony; little organic matter (little vegetation to decompose); often saline (soluble salts remain as water evaporates); infertile; may have hard calcrete/duricrust layer near surface.',
+      },
+      {
+        q: 'Explain two plant adaptations to hot desert conditions. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per adaptation: cacti — thick, succulent stems store water (1 mark); spines instead of leaves reduce transpiration/water loss (1 mark); waxy cuticle to reduce water loss; shallow but extensive root system to capture rare rainfall quickly; deep tap roots to reach water table; drought-deciduous plants — shed leaves in dry season to reduce water loss (1 mark), grow leaves rapidly after rain (1 mark).',
+      },
+      {
+        q: 'Draw and label a diagram of a cactus, showing its adaptations to the desert environment. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: succulent/thick stem labelled (water storage); spines labelled (reduce water loss/protect from grazers); shallow widespread roots labelled (absorb rainwater quickly).',
+        diagram: true,
+      },
+      {
+        q: 'Explain two animal adaptations to life in a hot desert. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per adaptation: camel — hump stores fat (not water) providing energy (1 mark); can lose up to 30% body water without harm; wide feet for sand; fennec fox — large ears dissipate heat (1 mark) keeping body cool in extreme heat (1 mark); desert rat/jerboa — nocturnal (active at night, avoiding heat) (1 mark); concentrated urine to conserve water (1 mark).',
+      },
+      {
+        q: 'What is desertification? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: the process by which fertile/semi-arid land becomes increasingly arid and desert-like; 1 mark for: reducing/destroying its ability to support vegetation and agriculture.',
+      },
+      {
+        q: 'Explain two human causes of desertification. [4 marks]',
+        marks: 4,
+        markScheme: '2 marks per cause: overgrazing — too many animals for land to support (1 mark), remove vegetation, compact/erode soil, remove protective cover (1 mark); deforestation/removal of fuelwood — trees removed for fuel and building (1 mark), exposes soil to wind/rain erosion, reduces transpiration, dries local climate (1 mark); over-cultivation — farming same land repeatedly, exhausts nutrients; over-extraction of groundwater.',
+      },
+      {
+        q: 'Explain how climate change is contributing to desertification in the Sahel. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: global warming is shifting climate zones poleward; Sahara Desert is expanding southward into the Sahel; rainfall in Sahel has become more unpredictable/reduced; more frequent droughts; prolonged droughts kill vegetation, making land more vulnerable to desertification.',
+      },
+      {
+        q: 'Describe the Sahel region and explain why it is vulnerable to desertification. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: semi-arid strip of land south of Sahara (Senegal to Ethiopia/Eritrea); annual rainfall 200–600mm, highly variable; poor, dry soils; rapidly growing population increases pressure on land; combination of climate change, poverty and population pressure makes it highly vulnerable.',
+      },
+      {
+        q: 'Describe the social and economic impacts of desertification on communities in the Sahel. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: food insecurity/famine — crop failures; loss of livelihoods for farmers/pastoralists; forced migration to cities/other countries (environmental refugees); increased poverty; conflict over remaining resources (e.g. Lake Chad water disputes); loss of traditional ways of life.',
+      },
+      {
+        q: 'Explain how overgrazing leads to desertification. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: too many animals graze on limited vegetation; vegetation removed faster than it can regenerate; without plant cover, roots no longer bind soil; soil exposed to wind erosion (deflation) and rain splash; compacted by animal hooves — less infiltration; bare, eroded soil becomes desert-like.',
+      },
+      {
+        q: 'Explain the use of stone bunds (magic stones) to manage desertification in the Sahel. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: small stone walls/lines built along contours of slope; slow surface runoff, allowing water to infiltrate soil; reduces soil erosion; moisture retained → vegetation can regrow; cheap, appropriate technology using local materials; communities build them collaboratively.',
+      },
+      {
+        q: 'What is the "half-moon" technique for managing desertification? [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: semi-circular shallow pits dug in soil in a pattern; 1 mark for: concentrate rainwater runoff into centre of the half-moon where seeds planted, improving chances of germination and plant growth in arid conditions.',
+      },
+      {
+        q: 'Explain how the Great Green Wall project aims to reduce desertification. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: plan to plant a belt of trees 15km wide and 7,775km long across Africa (from Senegal to Djibouti); trees provide wind barriers, reduce erosion, restore soil, provide shade; restores ecosystem functions; provides timber and food (e.g. Acacia gum); creates green jobs/income for local people; only a small fraction of the 2030 target achieved by the early 2020s.',
+      },
+      {
+        q: 'Describe how education can help manage desertification. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: teaching sustainable farming practices to local communities; 1 mark for: e.g. training in contour ploughing, crop rotation, water harvesting techniques — reduces overgrazing/over-cultivation.',
+      },
+      {
+        q: 'Evaluate the effectiveness of strategies to manage desertification in the Sahel. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Evaluates specific strategies with Sahel examples and data where possible, considers advantages and limitations, reaches a supported conclusion. Level 2 (3–4 marks): Describes strategies with some evaluation. Level 1 (1–2 marks): Basic strategies listed. Accept: stone bunds/magic stones — cheap, effective (crop yields up 50% in Burkina Faso), community-owned; Great Green Wall — large-scale ambition but slow progress, funding issues; appropriate technology vs need for outside funding; conclusion on overall effectiveness.',
+      },
+      {
+        q: 'Explain why population growth increases the risk of desertification. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: more people require more food — more land is cultivated; more animals are grazed (overgrazing); more fuelwood is removed; land cannot recover — greater pressure than it can sustain; rapid population growth in Sahel (some of highest rates globally) makes this particularly acute.',
+      },
+      {
+        q: 'Draw a map to show the location of the Sahel region in Africa. [2 marks]',
+        marks: 2,
+        markScheme: '1 mark for: Africa outline shown; 1 mark for: Sahel region correctly shaded/indicated — strip across Africa south of Sahara Desert, approximately between 12°N and 20°N.',
+        diagram: true,
+      },
+      {
+        q: 'Compare the xerophyte adaptations of a cactus with those of a drought-deciduous plant. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: both adapted to conserve water/survive drought; cactus — permanent structural adaptations (succulence, spines, waxy cuticle) — survives through dry season actively; drought-deciduous — sheds leaves in dry season to prevent water loss through transpiration (1 mark); regrows leaves quickly after rain when water available (1 mark); different strategies — permanent vs seasonal adaptation.',
+      },
+      {
+        q: 'Explain how appropriate technology helps communities manage desertification more effectively than large-scale projects. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: appropriate technology uses local materials and knowledge (e.g. stone bunds) — cheap and affordable for poor communities; communities can maintain it themselves without outside expertise; no dependency on imported machinery; builds community capacity and ownership; large-scale projects may require outside funding/expertise that is not sustained; BUT appropriate tech covers smaller areas — combination of both may be most effective.',
+      },
+      {
+        q: 'To what extent is desertification a natural or human-caused process? [8 marks]',
+        marks: 8,
+        markScheme: 'Level 3 (6–8 marks): Evaluates natural and human causes with specific evidence from the Sahel or other named areas, reaches a supported judgement on relative importance. Level 2 (3–5 marks): Describes natural and human causes, some comparison. Level 1 (1–2 marks): Basic causes. Accept: natural — climate change, drought cycles (Sahel received above-average rainfall 1950s, then devastating droughts 1970s–80s — partly natural variability); human — overgrazing, deforestation, over-cultivation are primary causes; most scientists argue human factors accelerate and worsen natural vulnerability; conclusion should weigh evidence.',
+      },
+      {
+        q: 'Explain how cold ocean currents contribute to the formation of coastal deserts. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: cold currents (e.g. Benguela off Namibia/South Africa; Humboldt off Peru/Chile) chill air above them; cooled air loses ability to hold moisture/become stable; prevents cloud formation and rainfall; fog forms instead of rain; creates extreme coastal deserts (e.g. Namib, Atacama).',
+      },
+      {
+        q: 'Describe the features of an erg, reg and hammada desert landscape. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: erg — sandy desert with sand dunes (covers ~25% of Sahara); reg — flat, stony desert pavement (gravel/pebbles); hammada — bare, rocky plateau (wind removes fine material leaving exposed rock).',
+      },
+      {
+        q: 'Explain how wind erosion shapes desert landscapes. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: deflation — wind removes loose fine sand and dust leaving stony surfaces (reg/serir); abrasion — sand-laden wind sandblasts exposed rock surfaces at ground level; ventifacts and yardangs (streamlined rock ridges) formed by wind abrasion; sand transported and deposited as dunes (barchan, seif).',
+      },
+      {
+        q: 'Explain how the removal of fuelwood causes desertification. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: trees and shrubs cut/collected for cooking/heating fuel (major energy source in rural Sahel); removes plant cover from soil; roots no longer bind soil; soil exposed to wind/rain erosion; loss of tree transpiration may reduce local rainfall; harder to find fuel as trees disappear — positive feedback cycle.',
+      },
+      {
+        q: 'Describe the economic opportunities provided by desert environments. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: tourism (safari, desert tours, cultural tourism — e.g. Sahara desert tours); solar energy — high solar radiation ideal for solar power generation; mineral resources (e.g. oil, gas in Sahara; copper in Atacama; precious gems); irrigated agriculture in oases; salt extraction.',
+      },
+      {
+        q: 'Assess the challenges of living in a hot desert environment. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Evaluates physical, social and economic challenges with specific examples, reaches a supported conclusion. Level 2 (3–4 marks): Describes a range of challenges with some development. Level 1 (1–2 marks): Basic challenges listed. Accept: physical — extreme heat/cold, lack of water, hostile soils; social — food insecurity, poverty, limited services; economic — limited livelihoods, vulnerability to drought/desertification; BUT some areas overcome these (oil wealth, tourism, technology); conclusion should weigh.',
+      },
+      {
+        q: 'Explain how overgrazing leads to a positive feedback cycle of desertification. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: overgrazing removes vegetation; bare soil erodes more easily (wind/water); soil becomes less fertile; less vegetation can grow; more livestock compete for less vegetation → more overgrazing; cycle intensifies until land is completely degraded/desertified (positive feedback = self-reinforcing).',
+      },
+      {
+        q: 'Draw and label a diagram to show a barchan (crescent-shaped) sand dune. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: crescent/horseshoe shape shown; horns pointing downwind; gentle windward slope and steep lee face labelled; wind direction arrow shown.',
+        diagram: true,
+      },
+      {
+        q: 'Draw and annotate a diagram to show how the Hadley cell leads to hot deserts forming at about 30°N and 30°S. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: warm air rising at the equator/ITCZ (low pressure, heavy rain) labelled; air moving polewards at high altitude labelled; air sinking at about 30°N/S labelled as high pressure; sinking air warms, so clouds do not form and there is little rain — hot desert location labelled. Diagram must be labelled.',
+        diagram: true,
+      },
+      {
+        q: 'Explain why hot deserts experience flash floods when it does rain. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for any three: rain often falls as short, intense convectional storms; soils are baked hard/crusted and there is little vegetation, so infiltration is very low; most rain becomes rapid surface runoff; runoff is channelled into dry valleys (wadis), where water levels rise suddenly; little warning is given.',
+      },
+      {
+        q: 'Explain why hot deserts are located around 30° north and south of the equator. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: air rises at equator (ITCZ), cools and releases rainfall as tropical rainforest; this air travels polewards at high altitude, cools and sinks at around 30° N/S (Hadley cell descending limb); sinking air warms adiabatically, holds more moisture, so very little cloud or rainfall forms; creates arid subtropical high-pressure belt where hot deserts form.',
+      },
+      {
+        q: 'Suggest two ways in which camels are adapted to survive in hot desert conditions. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark for each adaptation + 1 mark development. Any two from: hump stores fat (metabolised for energy and water); can drink 100+ litres at once and go weeks without water; wide padded feet prevent sinking in sand; long eyelashes and closable nostrils keep out sand; thick fur insulates against heat and cold nights; concentrated urine/dry dung conserves water; body temperature fluctuates to reduce sweating.',
+      },
+      {
+        q: 'Explain how irrigation can create economic opportunities in hot desert areas. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for: irrigation allows cultivation of high-value crops (e.g. dates, citrus, vegetables in California\'s Imperial Valley or Israel\'s Negev); creates farming jobs and export income; supports food supply for growing populations; centre-pivot irrigation using fossil aquifers increases productivity (e.g. Ogallala aquifer, US); Israel uses drip irrigation to reduce water loss — highly productive. BUT unsustainable water use leads to aquifer depletion.',
+      },
+      {
+        q: 'Describe how zai pits help farmers in the Sahel to reduce the effects of desertification. [4 marks]',
+        marks: 4,
+        markScheme: '1 mark each for any four: small pits (about 20–30 cm across) dug in hard, degraded soil; filled with compost or manure; collect and concentrate rainwater runoff and nutrients around plant roots; allow crops such as millet and sorghum to grow on land that was too degraded to farm; cheap and use local labour and knowledge (e.g. popularised by farmer Yacouba Sawadogo in Burkina Faso); improve soil fertility and crop yields over time.',
+      },
+      {
+        q: 'Suggest why the population of hot desert areas is often sparse. [3 marks]',
+        marks: 3,
+        markScheme: '1 mark each for: lack of water limits settlement and agriculture; extreme temperatures make life difficult and unhealthy; poor soils/lack of vegetation limits food production; isolation from major infrastructure/markets; frequent sandstorms and droughts damage settlements and livelihoods.',
+      },
+      {
+        q: 'Evaluate the impacts of climate change on hot desert environments and their populations. [6 marks]',
+        marks: 6,
+        markScheme: 'Level 3 (5–6 marks): Evaluates environmental and human impacts with named examples, reaches a supported conclusion. Level 2 (3–4 marks): Describes impacts with some development. Level 1 (1–2 marks): Basic points. Accept: rising temperatures increase evaporation and reduce already-scarce water; droughts more frequent/severe (e.g. Sahel); desertification accelerates — pushes desert margins outwards; crop failure, food insecurity, forced migration (climate refugees); some areas may see increased rainfall variability/flash floods; wildlife species at risk; BUT desert solar energy potential may increase. Conclusion should judge overall severity.',
       },
     ],
   },

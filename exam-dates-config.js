@@ -207,9 +207,9 @@ const EXAM_DATES = {
     { paper: 'Paper 3 — Geographical Debates', date: '2026-06-08', time: 'PM', duration: '2h 30m' },
   ],
   'Geography_Eduqas|gcse': [
-    { paper: 'Component 1 — Changing Physical World', date: '2026-05-13', time: 'AM', duration: '1h 45m' },
-    { paper: 'Component 2 — Changing Human World', date: '2026-05-22', time: 'PM', duration: '1h 45m' },
-    { paper: 'Component 3 — Environmental Challenges', date: '2026-06-09', time: 'AM', duration: '1h' },
+    { paper: 'Component 1 — Investigating Geographical Issues', date: '2026-05-13', time: 'AM', duration: '1h 45m' },
+    { paper: 'Component 2 — Problem Solving Geography', date: '2026-05-22', time: 'PM', duration: '1h 30m' },
+    { paper: 'Component 3 — Applied Fieldwork Enquiry', date: '2026-06-09', time: 'AM', duration: '1h 30m' },
   ],
   'Geography_Eduqas|alevel': [
     { paper: 'Component 1 — Changing Landscapes & Changing Places', date: '2026-05-19', time: 'AM', duration: '1h 45m' },
