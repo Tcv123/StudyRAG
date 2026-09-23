@@ -376,6 +376,11 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { "q": "Which of these molecules is chiral?", "options": ["Ethanol, C2H5OH", "Propan-2-ol, CH3CH(OH)CH3", "2-hydroxypropanoic acid", "Propanone, CH3COCH3"], "answer": 2 },
       { "q": "Which convention is used to draw a pair of optical isomers?", "options": ["Dot-and-cross diagrams", "Skeletal formulae only", "Displayed formulae only", "Wedge and dash bonds"], "answer": 3 },
       { "q": "Naturally occurring amino acids in proteins are almost all of which form?", "options": ["L-form", "D-form", "Racemic", "Achiral"], "answer": 0 },
+      { "q": "Why is the relative isotopic mass of carbon-12 exactly 12.00000?", "options": ["Because carbon-12 is by far the most abundant of the carbon isotopes found on Earth", "Because the mass scale is defined from one twelfth of a carbon-12 atom", "Because a carbon-12 nucleus contains equal numbers of protons and of neutrons", "Because no mass at all is lost as binding energy when a carbon-12 nucleus forms"], "answer": 1 },
+      { "q": "What is the precise relative isotopic mass of oxygen-16 used in high-resolution mass spectrometry?", "options": ["16.00000", "15.99999", "16.00305", "15.99491"], "answer": 3 },
+      { "q": "A high-resolution mass spectrum shows an ion at m/z 28.0313. Which species is it?", "options": ["N2", "CO", "C2H4", "CH2N"], "answer": 2 },
+      { "q": "What does a high-resolution M+ value give that a low-resolution one does not?", "options": ["The number of hydrogen environments in the molecule", "The relative abundance of each isotope present", "The percentage of carbon-13 in the sample", "The molecular formula of the compound"], "answer": 3 },
+      { "q": "An organic compound gives a sharp infrared absorption at 1742 cm^-1 and no O-H absorption at all. Which functional group is present?", "options": ["An ester", "A ketone", "An aldehyde", "A carboxylic acid"], "answer": 0 },
     ],
     amber: [
       { "q": "A chiral centre is a carbon atom bonded to:", "options": ["Three different groups", "Two different groups", "Four identical groups", "Four different groups"], "answer": 3 },
@@ -392,6 +397,9 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { "q": "How can the effect of a competitive inhibitor on an enzyme be reduced?", "options": ["By lowering the temperature of the reaction mixture", "By increasing the concentration of the substrate", "By raising the pH well above the enzyme's optimum", "By adding a second enzyme to the reaction mixture"], "answer": 1 },
       { "q": "Why can an enzyme distinguish between two enantiomers?", "options": ["Its active site is itself chiral", "One enantiomer is more soluble", "They have different melting points", "One enantiomer is heavier"], "answer": 0 },
       { "q": "In CH3CH(NH2)COOH, which carbon atom is the chiral centre?", "options": ["The CH3 carbon", "The CH carbon", "The COOH carbon", "None of them"], "answer": 1 },
+      { "q": "A high-resolution molecular ion appears at m/z 88.0524. Using 1H = 1.007825, 12C = 12.000000, 14N = 14.003074 and 16O = 15.994915, which molecular formula is it?", "options": ["C3H4O3", "C5H12O", "C4H8O2", "C3H8N2O"], "answer": 2 },
+      { "q": "A compound of molecular formula C4H8O2 gives a very broad infrared absorption between 2500 and 3300 cm^-1. Which structure fits?", "options": ["Ethyl ethanoate", "1,4-dioxane", "Methyl propanoate", "Butanoic acid"], "answer": 3 },
+      { "q": "In the 1H NMR spectrum of ethyl ethanoate the CH2 signal is at delta 4.12 rather than near delta 2. Why?", "options": ["The CH2 protons are split into a quartet by the three protons on the adjacent carbon", "The CH2 group is bonded to the ester oxygen, which withdraws electron density", "The CH2 group lies closer to the carbonyl carbon than either methyl group does", "The CH2 group carries two protons where each methyl group carries three"], "answer": 1 },
     ],
     red: [
       { "q": "A compound shows a doublet at delta 2.2 ppm (3H) and a quartet at delta 9.8 ppm (1H) in ^1H NMR, with a strong absorption at 1720 cm^-1 in IR. The compound is most likely:", "options": ["Ethanal (CH3CHO)", "Ethanol", "Propanone", "Methanoic acid (HCOOH)"], "answer": 0 },
@@ -402,6 +410,8 @@ const CHEMISTRY_OCR_B_QUESTIONS = {
       { "q": "Methanol poisoning is treated by giving the patient ethanol. Which explanation is correct?", "options": ["Ethanol reacts chemically with methanol to form a harmless ester", "Ethanol competes for the same active site, so methanol is excreted unchanged", "Ethanol permanently denatures the enzyme so that no methanol at all is oxidised", "Ethanol raises the pH of the blood so the enzyme can no longer function"], "answer": 1 },
       { "q": "How many chiral centres are there in HOOC-CH(OH)-CH2-COOH?", "options": ["1", "2", "3", "0"], "answer": 0 },
       { "q": "Why does a laboratory synthesis from achiral starting materials give a racemate?", "options": ["Chiral products are inherently unstable", "Both faces of a planar intermediate are attacked equally", "One of the two enantiomers decomposes as soon as it forms", "The product formed is achiral overall"], "answer": 1 },
+      { "q": "A liquid of molecular formula C4H8O2 gives a 1H NMR spectrum with a 3H singlet at delta 3.67, a 2H quartet at delta 2.32 and a 3H triplet at delta 1.14. What is it?", "options": ["Methyl propanoate", "Ethyl ethanoate", "Propyl methanoate", "Butanoic acid"], "answer": 0 },
+      { "q": "Which single observation would distinguish propyl methanoate from ethyl ethanoate?", "options": ["A strong C=O absorption between 1735 and 1750 cm^-1 in the infrared spectrum", "Four separate peaks in the proton-decoupled carbon-13 NMR spectrum", "A 1H NMR singlet integrating to one proton at about delta 8.0", "A molecular ion peak at m/z 88 in the mass spectrum"], "answer": 2 },
     ],
   },
 

@@ -37,7 +37,7 @@
 
 <h1>PL — Polymers and Life</h1>
 
-<p style="color:#475569;font-size:0.97rem;margin-top:-18px;margin-bottom:26px;">OCR B (Salters) H433 storyline <strong>PL</strong>. Polymers, proteins and DNA: condensation polymers, amines and amides, amino acid and protein chemistry, optical isomerism, enzyme catalysis and structural analysis.</p>
+<p style="color:#475569;font-size:0.97rem;margin-top:-18px;margin-bottom:26px;">OCR B (Salters) H433 storyline <strong>PL</strong>. Polymers, proteins and DNA: condensation polymers, amines and amides, amino acid and protein chemistry, optical isomerism, enzyme catalysis, and structure determination from mass, IR and NMR spectra.</p>
 
 <!-- ============================================================ -->
 <h2>1. Amines and Amino Acids</h2>
@@ -361,6 +361,192 @@
 
 <div class="exam-tip">
   <strong>Exam Tip:</strong> Denaturing is not the same as inhibiting. Denaturing destroys the tertiary structure by breaking intermolecular bonds, and is usually irreversible; competitive inhibition leaves the enzyme intact and can be reversed by adding more substrate. If a question tells you the effect is overcome by increasing substrate concentration, that is your signal for competitive inhibition &mdash; say so explicitly.
+</div>
+
+<!-- ============================================================ -->
+<h2>6. High-Resolution Mass Spectrometry</h2>
+
+<p>Mass spectrometry was introduced in <strong>WM</strong>: the molecular ion peak M<sup>+</sup> gives the relative molecular mass, and the fragments below it show how the molecule breaks up. An ordinary low-resolution instrument reports m/z as a whole number, and that is a real limitation, because a great many different formulae share the same whole number. A <strong>high-resolution</strong> instrument measures m/z to four or five decimal places, and that is enough to fix the molecular formula at one answer.</p>
+
+<div class="definition">
+  <strong>Nominal mass:</strong> the mass of an ion worked out from whole-number masses (H = 1, C = 12, N = 14, O = 16). <strong>Precise relative isotopic mass:</strong> the mass of one specific isotope measured against <sup>12</sup>C = 12.000000 exactly, quoted to several decimal places. A high-resolution mass spectrum gives the precise mass of the molecular ion, and only one molecular formula fits it.
+</div>
+
+<p>Only <sup>12</sup>C has a whole-number mass, and that is because the whole scale is <em>defined</em> from it: one unit is one twelfth of the mass of a <sup>12</sup>C atom. Every other isotope comes out slightly off a whole number, because nuclei differ in how tightly their nucleons are bound and so in how much mass is lost as binding energy. A nucleus more tightly bound per nucleon than <sup>12</sup>C comes out <strong>below</strong> its nominal mass; one less tightly bound comes out <strong>above</strong> it.</p>
+
+<table>
+  <tr><th>Isotope</th><th>Precise relative isotopic mass</th><th>Nominal mass</th><th>Above or below?</th></tr>
+  <tr><td><sup>1</sup>H</td><td>1.007825</td><td>1</td><td>Above</td></tr>
+  <tr><td><sup>12</sup>C</td><td>12.000000 (exact, by definition)</td><td>12</td><td>&mdash;</td></tr>
+  <tr><td><sup>14</sup>N</td><td>14.003074</td><td>14</td><td>Above</td></tr>
+  <tr><td><sup>16</sup>O</td><td>15.994915</td><td>16</td><td>Below</td></tr>
+  <tr><td><sup>32</sup>S</td><td>31.972071</td><td>32</td><td>Below</td></tr>
+  <tr><td><sup>35</sup>Cl</td><td>34.968853</td><td>35</td><td>Below</td></tr>
+</table>
+
+<p>The consequence is that hydrogen and oxygen pull a formula's precise mass in opposite directions, so the errors do not cancel. Two formulae with the same nominal mass end up measurably apart. The standard demonstration is the set of ions at nominal m/z 28, which a low-resolution instrument cannot tell apart at all:</p>
+
+<table>
+  <tr><th>Ion</th><th>Working</th><th>Precise m/z</th></tr>
+  <tr><td>CO<sup>+</sup></td><td>12.000000 + 15.994915</td><td>27.9949</td></tr>
+  <tr><td>N<sub>2</sub><sup>+</sup></td><td>2 &times; 14.003074</td><td>28.0061</td></tr>
+  <tr><td>CH<sub>2</sub>N<sup>+</sup></td><td>12.000000 + 2.015650 + 14.003074</td><td>28.0187</td></tr>
+  <tr><td>C<sub>2</sub>H<sub>4</sub><sup>+</sup></td><td>24.000000 + 4.031300</td><td>28.0313</td></tr>
+</table>
+
+<p>The four are spread over 0.036 of a mass unit. An instrument that reads to four decimal places separates them without difficulty; one that reads to the nearest whole number sees a single peak at 28.</p>
+
+<div class="worked-example">
+  <strong>Worked example &mdash; deducing a molecular formula.</strong> The high-resolution mass spectrum of a compound shows M<sup>+</sup> at m/z 88.0524. Four formulae have a nominal mass of 88. Which one is it?
+  <table>
+    <tr><th>Formula</th><th>Working</th><th>Precise mass</th></tr>
+    <tr><td>C<sub>3</sub>H<sub>4</sub>O<sub>3</sub></td><td>36.000000 + 4.031300 + 47.984745</td><td>88.0160</td></tr>
+    <tr><td>C<sub>4</sub>H<sub>8</sub>O<sub>2</sub></td><td>48.000000 + 8.062600 + 31.989830</td><td>88.0524</td></tr>
+    <tr><td>C<sub>3</sub>H<sub>8</sub>N<sub>2</sub>O</td><td>36.000000 + 8.062600 + 28.006148 + 15.994915</td><td>88.0637</td></tr>
+    <tr><td>C<sub>5</sub>H<sub>12</sub>O</td><td>60.000000 + 12.093900 + 15.994915</td><td>88.0888</td></tr>
+  </table>
+  Only <strong>C<sub>4</sub>H<sub>8</sub>O<sub>2</sub></strong> matches. The nearest rival is 0.011 away, more than a hundred times the precision of the measurement, so the identification is not in doubt. Notice that the molecular formula is all you have so far: C<sub>4</sub>H<sub>8</sub>O<sub>2</sub> could be ethyl ethanoate, methyl propanoate, propyl methanoate, butanoic acid, 2-methylpropanoic acid, 1,4-dioxane and more besides. Section 7 shows how the other techniques choose between them.
+</div>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Carry every decimal place the question gives you all the way to the end and round only at the last step. Neighbouring candidates can be as little as 0.01 apart, so rounding 1.007825 to 1.01 in a molecule with twelve hydrogens moves your answer by 0.026 &mdash; further than the gap you are trying to resolve. A quick sanity check that saves time: measure each formula from its <em>nominal</em> mass rather than from zero. Every H pushes the precise mass about 0.0078 above the nominal value, every N about 0.0031 above, and every O about 0.0051 below. For C<sub>4</sub>H<sub>8</sub>O<sub>2</sub> that gives (8 &times; 0.0078) &minus; (2 &times; 0.0051) &asymp; +0.052, which is the +0.0524 observed.
+</div>
+
+<h3>Mass Differences Between Peaks</h3>
+
+<p>The second half of this outcome is the one covered in <strong>WM</strong>: the gap between two peaks is the mass of the neutral fragment lost, so a difference of 15 means a CH<sub>3</sub> group has gone, 17 an OH, 18 a water molecule, 29 a CHO or C<sub>2</sub>H<sub>5</sub>, 31 a CH<sub>2</sub>OH or OCH<sub>3</sub>, 43 a CH<sub>3</sub>CO or C<sub>3</sub>H<sub>7</sub>, and 45 an OC<sub>2</sub>H<sub>5</sub> or COOH. Read the gaps <em>down</em> from M<sup>+</sup> rather than reading the fragment masses on their own: M<sup>+</sup> &minus; 15 tells you the molecule had a methyl group on it, which a bare peak at 15 does not.</p>
+
+<p>High resolution helps here too. A fragment at nominal m/z 43 is CH<sub>3</sub>CO<sup>+</sup> at 43.0184 but C<sub>3</sub>H<sub>7</sub><sup>+</sup> at 43.0548, and a fragment at 29 is CHO<sup>+</sup> at 29.0027 but C<sub>2</sub>H<sub>5</sub><sup>+</sup> at 29.0391. In each pair, one answer means a carbonyl compound and the other means an alkyl chain.</p>
+
+<!-- ============================================================ -->
+<h2>7. Combining Mass Spectrometry, IR and NMR</h2>
+
+<p>No single technique identifies an unknown compound. Mass spectrometry, infrared spectroscopy and NMR each answer a different question, and a structure is only proved when all three sets of data are accounted for by one and the same molecule. This is the skill the H433 papers test most heavily at the top of the mark range, and the marks go to candidates who reason from the evidence rather than recognising the answer.</p>
+
+<table>
+  <tr><th>Technique</th><th>What it tells you</th><th>What it cannot tell you</th></tr>
+  <tr><td><strong>Mass spectrometry</strong></td><td>The relative molecular mass from M<sup>+</sup>; the molecular formula, if the M<sup>+</sup> value is high resolution; which pieces break off, from the gaps between peaks</td><td>How the pieces are joined together. Isomers share a molecular formula and often share fragments</td></tr>
+  <tr><td><strong>Infrared</strong></td><td>Which functional groups are present &mdash; and, just as usefully, which are absent</td><td>How many of each group there are, or where in the molecule they sit</td></tr>
+  <tr><td><strong><sup>13</sup>C NMR</strong></td><td>How many different carbon environments there are, and what kind each one is</td><td>How many hydrogens are attached (the spectra you are given are proton-decoupled)</td></tr>
+  <tr><td><strong><sup>1</sup>H NMR</strong></td><td>How many different hydrogen environments there are, how many hydrogens in each (integration), what kind each is (shift), and what sits next door (splitting)</td><td>Anything about the parts of the molecule with no hydrogens on them</td></tr>
+</table>
+
+<h3>A Method That Works Every Time</h3>
+
+<ol>
+  <li><strong>Start with the mass spectrum.</strong> Get M<sub>r</sub> from M<sup>+</sup>, and the molecular formula if the value is high resolution. Work out how far the formula is from the saturated one: butane is C<sub>4</sub>H<sub>10</sub>, so a C<sub>4</sub>H<sub>8</sub>O<sub>2</sub> molecule is two hydrogens short and must contain one double bond or one ring.</li>
+  <li><strong>Read the IR for functional groups,</strong> and write down the absences as firmly as the presences. No broad absorption in 2500&ndash;3300 cm<sup>&minus;1</sup> rules out a carboxylic acid; no broad absorption in 3200&ndash;3600 cm<sup>&minus;1</sup> rules out an alcohol or phenol.</li>
+  <li><strong>Count the <sup>13</sup>C peaks.</strong> Fewer peaks than carbon atoms means the molecule is symmetrical. Use the shifts to say what kind of carbon each peak is.</li>
+  <li><strong>Work through the <sup>1</sup>H NMR in the order shift, integration, splitting.</strong> Check the integration adds up to the number of hydrogens in the molecular formula &mdash; if it does not, you have misread something.</li>
+  <li><strong>Assemble the fragments</strong> into a structure, then <strong>test it against every piece of data</strong>, including the data you have not used yet. Finally, name the isomers you have rejected and say what rejected them.</li>
+</ol>
+
+<div class="worked-example">
+  <strong>Worked example &mdash; determining a structure from combined spectra.</strong>
+  <p>Compound <strong>X</strong> is a colourless liquid. Deduce its structure from the following data.</p>
+  <ul>
+    <li><strong>High-resolution mass spectrum:</strong> M<sup>+</sup> at m/z 88.0524. Base peak at m/z 43; further peaks at m/z 45 and m/z 29.</li>
+    <li><strong>Infrared spectrum:</strong> strong sharp absorption at 1742 cm<sup>&minus;1</sup>; strong absorptions at 1240 cm<sup>&minus;1</sup> and 1045 cm<sup>&minus;1</sup>; medium absorptions at 2850&ndash;2950 cm<sup>&minus;1</sup>; <em>nothing</em> above 3000 cm<sup>&minus;1</sup>, and nothing broad anywhere.</li>
+    <li><sup>13</sup>C NMR (proton-decoupled): four peaks, at &delta; 171.1, 60.4, 21.0 and 14.2.</li>
+    <li><sup>1</sup>H NMR: &delta; 4.12 (2H, quartet); &delta; 2.04 (3H, singlet); &delta; 1.26 (3H, triplet).</li>
+  </ul>
+
+  <p><strong>Step 1 &mdash; molecular formula.</strong> From the worked example in Section 6, m/z 88.0524 is <strong>C<sub>4</sub>H<sub>8</sub>O<sub>2</sub></strong>. The saturated formula for four carbons and two oxygens is C<sub>4</sub>H<sub>10</sub>O<sub>2</sub>, so X is two hydrogens short: it contains exactly one double bond or one ring.</p>
+
+  <p><strong>Step 2 &mdash; functional groups from the IR.</strong> The sharp 1742 cm<sup>&minus;1</sup> absorption is a C=O stretch, and it lies in the Data Sheet's <strong>ester</strong> window of 1735&ndash;1750 cm<sup>&minus;1</sup> rather than the ketone (1705&ndash;1725), aldehyde (1720&ndash;1740) or carboxylic acid (1700&ndash;1725) windows. The strong 1240 and 1045 cm<sup>&minus;1</sup> absorptions are C&minus;O stretches (1000&ndash;1300 cm<sup>&minus;1</sup>). That C=O accounts for the one double bond found in Step 1. Now the absences: nothing broad at 2500&ndash;3300 cm<sup>&minus;1</sup>, so <em>not</em> a carboxylic acid, which kills butanoic acid and 2-methylpropanoic acid outright; nothing at 3200&ndash;3600 cm<sup>&minus;1</sup>, so no O&minus;H of any kind; nothing at 1620&ndash;1680 cm<sup>&minus;1</sup>, so no C=C. X is an ester, and an ester uses up both oxygen atoms.</p>
+
+  <p><strong>Step 3 &mdash; carbon environments.</strong> Four peaks for four carbon atoms means every carbon is in a different environment, so X has no symmetry. This rules out 1,4-dioxane, the cyclic isomer, which would give a single <sup>13</sup>C peak. The shifts confirm the IR: &delta; 171.1 is a carbonyl carbon (170&ndash;220), &delta; 60.4 is a carbon singly bonded to oxygen (50&ndash;80), and &delta; 21.0 and 14.2 are ordinary alkyl carbons (5&ndash;40).</p>
+
+  <p><strong>Step 4 &mdash; hydrogen environments.</strong> The integrations are 2 : 3 : 3, totalling 8H, which matches C<sub>4</sub>H<sub>8</sub>O<sub>2</sub> exactly &mdash; no hydrogen is unaccounted for, and no signal has been missed. Taking the three signals in turn:</p>
+  <ul>
+    <li>&delta; 1.26, <strong>3H triplet</strong>: a CH<sub>3</sub> in the plain H&minus;C&minus;R alkyl band at the right-hand end of the Data Sheet chart, split into three by <em>two</em> neighbouring hydrogens (n + 1 = 3, so n = 2).</li>
+    <li>&delta; 4.12, <strong>2H quartet</strong>: a CH<sub>2</sub> split into four by <em>three</em> neighbouring hydrogens (n + 1 = 4, so n = 3). These two signals split each other, so the CH<sub>3</sub> and the CH<sub>2</sub> are joined: X contains a CH<sub>3</sub>CH<sub>2</sub>&minus; ethyl group.</li>
+    <li>&delta; 2.04, <strong>3H singlet</strong>: a CH<sub>3</sub> with <em>no</em> hydrogens on the neighbouring atom. In an ester the only such position is the methyl of a CH<sub>3</sub>C=O group, and &delta; 2.04 sits in the Data Sheet&rsquo;s H&minus;C&minus;C=O band, around &delta; 2 to 3, rather than in the plain alkyl band.</li>
+  </ul>
+
+  <p>The Data Sheet shows the <sup>1</sup>H shifts as a chart of overlapping bands rather than a table, and prints the warning that shifts vary with solvent, concentration and substituents and may fall outside the ranges drawn. Use the bands to decide which <em>kind</em> of environment a signal belongs to, not to rule an environment out because a value is a tenth of a ppm outside the bar.</p>
+
+  <p><strong>Step 5 &mdash; which way round is the ester?</strong> This is the step that decides between the two candidates left, ethyl ethanoate and methyl propanoate, and it turns on the <em>shift</em> of the quartet. At &delta; 4.12 the CH<sub>2</sub> is in the Data Sheet&rsquo;s H&minus;C&minus;O band, around &delta; 3 to 4.5, well downfield of the H&minus;C&minus;C=O band, because the electronegative oxygen it is attached to withdraws electron density and deshields those protons. So the CH<sub>2</sub> is bonded to the ester oxygen, and the ethyl group is on the <strong>oxygen</strong> side:</p>
+
+  <div class="equation">CH<sub>3</sub>&mdash;CO&mdash;O&mdash;CH<sub>2</sub>&mdash;CH<sub>3</sub> &nbsp;&nbsp; ethyl ethanoate</div>
+
+  <p><strong>Step 6 &mdash; test the answer and reject the rivals.</strong></p>
+  <ul>
+    <li><strong>Methyl propanoate, CH<sub>3</sub>CH<sub>2</sub>COOCH<sub>3</sub>,</strong> gives the same 2H quartet, 3H singlet and 3H triplet, so integration and splitting alone cannot separate it from X. But its quartet is next to the C=O, at about &delta; 2.3, and its singlet is the OCH<sub>3</sub>, at about &delta; 3.7. X has these the other way round. Rejected.</li>
+    <li><strong>Propyl methanoate, HCOOCH<sub>2</sub>CH<sub>2</sub>CH<sub>3</sub>,</strong> would show a 1H singlet near &delta; 8.0 for the HC=O hydrogen and a 2H multiplet for the middle CH<sub>2</sub>. Neither is there, and the integration pattern would be 1 : 2 : 2 : 3. Rejected.</li>
+    <li><strong>Butanoic acid and 2-methylpropanoic acid</strong> would show a very broad O&minus;H absorption at 2500&ndash;3300 cm<sup>&minus;1</sup> and a 1H signal at &delta; 10&ndash;12. Rejected at Step 2.</li>
+    <li><strong>1,4-dioxane</strong> would give one <sup>13</sup>C peak and one <sup>1</sup>H singlet for all 8H, and no C=O absorption at all. Rejected at Step 2.</li>
+  </ul>
+
+  <p><strong>Step 7 &mdash; the fragments agree.</strong> The base peak at m/z 43 is CH<sub>3</sub>CO<sup>+</sup>, the acylium ion left when the molecule breaks at the C&minus;O bond; the complementary fragment is OC<sub>2</sub>H<sub>5</sub><sup>+</sup> at m/z 45, and 43 + 45 = 88. The smaller peak at m/z 29 is C<sub>2</sub>H<sub>5</sub><sup>+</sup>. Methyl propanoate would have broken the other way, giving C<sub>2</sub>H<sub>5</sub>CO<sup>+</sup> at m/z 57 and OCH<sub>3</sub><sup>+</sup> at m/z 31, neither of which appears. Every piece of data is now explained by one structure, so <strong>X is ethyl ethanoate</strong>.</p>
+</div>
+
+<!-- SVG: 1H NMR of ethyl ethanoate, annotated -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 320" style="max-width: 600px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">&#185;H NMR Spectrum &mdash; Compound X (CH&#8323;COOCH&#8322;CH&#8323;)</text>
+  <!-- Axes -->
+  <line x1="60" y1="220" x2="460" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="220" x2="60" y2="50" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="260" y="242" text-anchor="middle" font-family="system-ui" font-size="10" fill="#1a1a2e">Chemical shift (&delta;) / ppm</text>
+  <!-- Delta scale: 0 at right, 60 px per ppm -->
+  <text x="440" y="235" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94a3b8">0</text>
+  <line x1="440" y1="220" x2="440" y2="225" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="380" y="235" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94a3b8">1</text>
+  <line x1="380" y1="220" x2="380" y2="225" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="320" y="235" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94a3b8">2</text>
+  <line x1="320" y1="220" x2="320" y2="225" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="260" y="235" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94a3b8">3</text>
+  <line x1="260" y1="220" x2="260" y2="225" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="200" y="235" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94a3b8">4</text>
+  <line x1="200" y1="220" x2="200" y2="225" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="140" y="235" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94a3b8">5</text>
+  <line x1="140" y1="220" x2="140" y2="225" stroke="#1a1a2e" stroke-width="1"/>
+  <!-- TMS reference at delta = 0 -->
+  <rect x="437" y="170" width="6" height="50" fill="#94a3b8"/>
+  <text x="440" y="164" text-anchor="middle" font-family="system-ui" font-size="7" fill="#94a3b8">TMS</text>
+  <!-- Quartet: OCH2 at delta 4.12  ->  x = 440 - 60(4.12) = 192.8 -->
+  <rect x="181" y="120" width="4" height="100" fill="#DC2626"/>
+  <rect x="189" y="85"  width="4" height="135" fill="#DC2626"/>
+  <rect x="197" y="85"  width="4" height="135" fill="#DC2626"/>
+  <rect x="205" y="120" width="4" height="100" fill="#DC2626"/>
+  <line x1="193" y1="80" x2="193" y2="62" stroke="#DC2626" stroke-width="1"/>
+  <text x="193" y="57" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">&minus;OCH&#8322;&minus;</text>
+  <!-- Singlet: CH3CO at delta 2.04  ->  x = 440 - 60(2.04) = 317.6 -->
+  <rect x="315" y="70" width="5" height="150" fill="#16A34A"/>
+  <line x1="317" y1="65" x2="317" y2="52" stroke="#16A34A" stroke-width="1"/>
+  <text x="317" y="47" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">CH&#8323;CO&minus;</text>
+  <!-- Triplet: CH3 of ethyl at delta 1.26  ->  x = 440 - 60(1.26) = 364.4 -->
+  <rect x="357" y="95"  width="4" height="125" fill="#1a73e8"/>
+  <rect x="363" y="75"  width="4" height="145" fill="#1a73e8"/>
+  <rect x="369" y="95"  width="4" height="125" fill="#1a73e8"/>
+  <line x1="365" y1="70" x2="365" y2="57" stroke="#1a73e8" stroke-width="1"/>
+  <text x="365" y="52" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">&minus;CH&#8323;</text>
+  <!-- Detail boxes -->
+  <rect x="30" y="252" width="140" height="62" rx="6" fill="#fecaca" stroke="#DC2626" stroke-width="1.5"/>
+  <text x="100" y="267" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#DC2626">&delta; 4.12 &mdash; OCH&#8322;</text>
+  <text x="100" y="280" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Quartet (n+1 = 3+1 = 4)</text>
+  <text x="100" y="292" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Integration: 2H</text>
+  <text x="100" y="305" text-anchor="middle" font-family="system-ui" font-size="8" fill="#DC2626">H&minus;C&minus;O shift: on the O</text>
+
+  <rect x="180" y="252" width="140" height="62" rx="6" fill="#dcfce7" stroke="#16A34A" stroke-width="1.5"/>
+  <text x="250" y="267" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#16A34A">&delta; 2.04 &mdash; CH&#8323;CO</text>
+  <text x="250" y="280" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Singlet (no adjacent H)</text>
+  <text x="250" y="292" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Integration: 3H</text>
+  <text x="250" y="305" text-anchor="middle" font-family="system-ui" font-size="8" fill="#16A34A">H&minus;C&minus;C=O shift</text>
+
+  <rect x="330" y="252" width="140" height="62" rx="6" fill="#dbeafe" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="400" y="267" text-anchor="middle" font-family="system-ui" font-size="9" font-weight="bold" fill="#1a73e8">&delta; 1.26 &mdash; CH&#8323;</text>
+  <text x="400" y="280" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Triplet (n+1 = 2+1 = 3)</text>
+  <text x="400" y="292" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a1a2e">Integration: 3H</text>
+  <text x="400" y="305" text-anchor="middle" font-family="system-ui" font-size="8" fill="#1a73e8">Alkyl shift: end of chain</text>
+</svg>
+</div>
+
+<p style="color:#475569;font-size:0.9rem;">Peak heights in the sketch above are drawn for legibility. In a real spectrum it is the <em>area</em> under each signal, shown by the integration trace, that is proportional to the number of hydrogens &mdash; a tall thin singlet and a short wide quartet can represent the same number of protons.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In a combined-spectra question the marks are for the reasoning, not for the name at the end. Quote the evidence with the conclusion every time: "1742 cm<sup>&minus;1</sup>, in the ester range on the Data Sheet, so C=O in an ester" earns the mark; "it's an ester" does not. Two habits are worth building. First, always say what the <em>absences</em> rule out &mdash; no broad O&minus;H is usually worth a mark on its own. Second, when two isomers survive everything else, look at the chemical shift of the CH<sub>2</sub> or CH<sub>3</sub>: whichever group sits next to the oxygen is dragged downfield past &delta; 3.5, and that single number is usually what separates them.
 </div>
 
 </div>

@@ -126,6 +126,8 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Explain what is meant by molecular recognition and describe how it accounts for the action of a pharmacologically active molecule.", "marks": 12, "command": "Explain" },
     { "q": "Explain what is meant by optical isomerism and describe how the enantiomers of a chiral molecule are identified and represented.", "marks": 9, "command": "Explain" },
     { "q": "Discuss the importance of optical isomerism in the action and manufacture of medicines.", "marks": 12, "command": "Discuss" },
+    { "q": "Explain how a high-resolution mass spectrum is used to deduce the molecular formula of a compound, and why a low-resolution spectrum cannot do the same.", "marks": 9, "command": "Explain" },
+    { "q": "Discuss how mass spectrometry, infrared spectroscopy and NMR are combined to determine the structure of an organic molecule, and explain what each technique can and cannot establish on its own.", "marks": 12, "command": "Discuss" },
   ],
 
   // O — Oceans
