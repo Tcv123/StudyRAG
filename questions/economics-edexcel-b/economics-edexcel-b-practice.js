@@ -3,10 +3,51 @@
  * Shape: { topicId: { name, questions: [{ q, marks, command, markScheme, diagram? }] } }
  * 40 questions per topic; 8 topics; ids match economics-edexcel-b.js and topics-config.js.
  *
- * THEMES. The topic ids follow the real 9EB0 themes — Theme 1 Markets, consumers and
- * firms; Theme 2 The wider economic environment; Theme 3 The global economy; Theme 4
- * Making markets work. Themes 3 and 4 were transposed on this site and have been
- * corrected: 3.x is now the global economy and 4.x is making markets work.
+ * THEMES AND THE SPEC MAP. The real 9EB0 specification (Pearson, issue 1, 2014) has
+ * four themes and 23 sub-topics:
+ *   Theme 1 Markets, consumers and firms — 1.1 Scarcity, choice and potential
+ *     conflicts; 1.2 Enterprise, business and the economy; 1.3 Introducing the market;
+ *     1.4 The role of credit in the economy; 1.5 Market failure and government
+ *     intervention; 1.6 Revenue, costs, profits and cash.
+ *   Theme 2 The wider economic environment — 2.1 Business growth and competitive
+ *     advantage; 2.2 Firms, consumers and elasticities of demand; 2.3 Productive
+ *     efficiency; 2.4 Life in a global economy; 2.5 The economic cycle;
+ *     2.6 Introduction to macroeconomic policy.
+ *   Theme 3 The global economy — 3.1 Globalisation; 3.2 Economic factors in business
+ *     expansion; 3.3 Impact of globalisation on global companies; 3.4 Impact of
+ *     globalisation on local and national economies; 3.5 Global labour markets;
+ *     3.6 Inequality and re-distribution.
+ *   Theme 4 Making markets work — 4.1 Competition and market power; 4.2 Market power
+ *     and market failure; 4.3 Market failure across the economy; 4.4 Macroeconomic
+ *     policies and impact on firms and individuals; 4.5 Risk and the financial sector.
+ *   Paper 1 draws on Themes 1 and 4, Paper 2 on Themes 2 and 3, Paper 3 on all four.
+ *
+ * THIS SITE HAS EIGHT TOPICS, TWO PER THEME, so a topic id is theme + sequence, NOT a
+ * spec sub-topic number. The first digit is the real theme; the second is first or
+ * second half of it. Do not renumber 1.2 to 1.5 and so on: every site topic merges two
+ * to five spec sub-topics, so no single sub-topic number describes one, gapped ids
+ * (1.1, 1.5, 2.5, 2.6, 3.1, 3.5, 4.1, 4.3) read as broken navigation, and changing ids
+ * resets every student’s saved progress for this board. The mapping is published to
+ * students in the sub-line on each topic (topics-config.js and
+ * subject-notes/economics-edexcel-b-notes.html):
+ *   1.1 = spec 1.1 + 1.3, and 2.2 elasticities (taught with demand and supply)
+ *   1.2 = spec 1.5          2.1 = spec 2.5, and 2.4.2 indicators of growth
+ *   2.2 = spec 2.6 + 4.4    3.1 = spec 3.1–3.4, and 2.4 life in a global economy
+ *   3.2 = spec 3.5 + 3.6    4.1 = spec 4.1 + 4.2, and 2.1 business growth
+ *   4.2 = spec 4.3 + 4.4 + 4.5
+ *
+ * WHERE GROWTH AND COSTS LIVE, AND WHY. Economies of scale sit in 4.1 because spec
+ * 4.1.2(d) puts “economies of scale and their impact on cost and price” under barriers
+ * to entry in Theme 4; 2.1.1(a) lists them again as an objective of growth, so they are
+ * dual-homed on the spec itself. Business growth (organic/inorganic, horizontal,
+ * vertical and conglomerate integration) is spec 2.1.2 and so strictly Theme 2, but both
+ * Theme 2 topics here are macroeconomic, and the spec links growth to market power
+ * directly (2.1.1a “increased market power over consumers and suppliers”), so it stays
+ * next to market structures in 4.1 and the sub-line says so. The cost and revenue work
+ * in 4.1 is average cost, average revenue, marginal cost and marginal revenue — that is
+ * spec 4.1.4, not spec 1.6. Spec 1.6 is the accounting strand (contribution,
+ * break-even, margin of safety, profit margins, cash flow) and is a genuine coverage
+ * gap on this site, along with 1.2 enterprise, 1.4 credit and 2.3 productive efficiency.
  *
  * WHY THESE TARIFFS. Every question here uses a tariff that actually appears on a
  * 9EB0 paper — no invented mark values. Established from the June 2022 and June 2023
