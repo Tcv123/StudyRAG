@@ -37,7 +37,7 @@
 
 <h1>CI — The Chemical Industry</h1>
 
-<p style="color:#475569;font-size:0.97rem;margin-top:-18px;margin-bottom:26px;">OCR B (Salters) H433 storyline <strong>CI</strong>. Nitric acid, sulfuric acid and ethanoic acid: kinetics and rate equations, equilibrium constants and their calculation, and choosing the best conditions for an industrial process.</p>
+<p style="color:#475569;font-size:0.97rem;margin-top:-18px;margin-bottom:26px;">OCR B (Salters) H433 storyline <strong>CI</strong>. Nitric acid, sulfuric acid and ethanoic acid: nitrogen chemistry, kinetics and rate equations, the Arrhenius equation, equilibrium constants and their calculation, choosing the best conditions for an industrial process, and the costs, benefits and risks of running one.</p>
 
 <!-- ============================================================ -->
 <h2>1. Rate Equations and the Arrhenius Equation</h2>
@@ -59,11 +59,80 @@
 
 <p>The rate constant k changes with temperature (increases as temperature increases) and is affected by catalysts, but is independent of concentration.</p>
 
+<h3>Units of the Rate Constant</h3>
+
+<p>The units of k are not fixed: they depend on the overall order, because whatever they are, they must make the right-hand side of the rate equation come out in mol dm<sup>&minus;3</sup> s<sup>&minus;1</sup>. Rearrange the rate equation to k = rate / ([A]<sup>m</sup>[B]<sup>n</sup>) and cancel.</p>
+
+<table>
+  <tr><th>Overall order</th><th>Rate equation</th><th>Units of k</th></tr>
+  <tr><td>0</td><td>rate = k</td><td>mol dm<sup>&minus;3</sup> s<sup>&minus;1</sup></td></tr>
+  <tr><td>1</td><td>rate = k[A]</td><td>s<sup>&minus;1</sup></td></tr>
+  <tr><td>2</td><td>rate = k[A]<sup>2</sup> or k[A][B]</td><td>mol<sup>&minus;1</sup> dm<sup>3</sup> s<sup>&minus;1</sup></td></tr>
+  <tr><td>3</td><td>rate = k[A]<sup>2</sup>[B]</td><td>mol<sup>&minus;2</sup> dm<sup>6</sup> s<sup>&minus;1</sup></td></tr>
+</table>
+
+<p>The pattern is worth committing to memory: every step up in order takes one power off mol and adds three to dm. You can also spot the order of a reaction from the units you are given &mdash; if k is quoted in mol<sup>&minus;1</sup> dm<sup>3</sup> s<sup>&minus;1</sup>, the reaction is second order overall.</p>
+
 <h3>Determining Orders from Experimental Data</h3>
 
 <p>The <strong>initial rates method</strong> uses data from experiments where the initial concentration of one reactant is varied while others are held constant. Compare pairs of experiments to see how changing the concentration of one reactant affects the initial rate.</p>
 
-<p>A <strong>concentration-time graph</strong> for a first-order reaction shows exponential decay. The half-life (the time for the concentration to halve) is constant for a first-order reaction. For zero order, the concentration decreases linearly with time. For second order, the concentration decreases as a reciprocal function.</p>
+<div class="worked-example">
+  <strong>Worked Example &mdash; Rate Equation from Initial Rates:</strong><br><br>
+  Nitrogen monoxide, the intermediate in nitric acid manufacture, is reduced by hydrogen:<br>
+  2NO(g) + 2H<sub>2</sub>(g) &rarr; N<sub>2</sub>(g) + 2H<sub>2</sub>O(g)<br><br>
+  <table style="margin-top:8px;">
+    <tr><th>Experiment</th><th>[NO] / mol dm<sup>&minus;3</sup></th><th>[H<sub>2</sub>] / mol dm<sup>&minus;3</sup></th><th>Initial rate / mol dm<sup>&minus;3</sup> s<sup>&minus;1</sup></th></tr>
+    <tr><td>1</td><td>0.10</td><td>0.10</td><td>1.2 &times; 10<sup>&minus;4</sup></td></tr>
+    <tr><td>2</td><td>0.20</td><td>0.10</td><td>4.8 &times; 10<sup>&minus;4</sup></td></tr>
+    <tr><td>3</td><td>0.10</td><td>0.20</td><td>2.4 &times; 10<sup>&minus;4</sup></td></tr>
+  </table>
+  <strong>Order with respect to NO:</strong> compare 1 and 2. [H<sub>2</sub>] is unchanged; [NO] doubles and the rate goes up by 4.8/1.2 = 4 = 2<sup>2</sup>. <strong>Second order.</strong><br><br>
+  <strong>Order with respect to H<sub>2</sub>:</strong> compare 1 and 3. [NO] is unchanged; [H<sub>2</sub>] doubles and the rate goes up by 2.4/1.2 = 2 = 2<sup>1</sup>. <strong>First order.</strong><br><br>
+  <strong>Rate equation:</strong> rate = k[NO]<sup>2</sup>[H<sub>2</sub>], overall order 3.<br><br>
+  <strong>Rate constant:</strong> substitute experiment 1.<br>
+  k = rate / ([NO]<sup>2</sup>[H<sub>2</sub>]) = 1.2 &times; 10<sup>&minus;4</sup> / (0.10<sup>2</sup> &times; 0.10) = 1.2 &times; 10<sup>&minus;4</sup> / 1.0 &times; 10<sup>&minus;3</sup><br>
+  k = <strong>0.12 mol<sup>&minus;2</sup> dm<sup>6</sup> s<sup>&minus;1</sup></strong>
+</div>
+
+<h3>Graphs and Half-Lives</h3>
+
+<p>The second route to an order is to follow one experiment right through and plot the results. Two kinds of graph are used, and they are easy to confuse.</p>
+
+<table>
+  <tr><th>Order</th><th>Concentration&ndash;time graph</th><th>Rate&ndash;concentration graph</th><th>Successive half-lives</th></tr>
+  <tr><td>Zero</td><td>Straight line with a negative gradient; the gradient <em>is</em> the rate, and it is constant until the reactant runs out</td><td>Horizontal line</td><td>Get shorter, each one half the previous</td></tr>
+  <tr><td>First</td><td>Curve of exponential decay</td><td>Straight line through the origin</td><td><strong>Constant</strong></td></tr>
+  <tr><td>Second</td><td>Steeper curve at the start with a long flat tail</td><td>Upward curve (rate &propto; [A]<sup>2</sup>)</td><td>Get longer, each one double the previous</td></tr>
+</table>
+
+<div class="definition">
+  <strong>Half-life (t<sub>&frac12;</sub>):</strong> The time taken for the concentration of a reactant to fall to half of its value. For a first-order reaction the half-life is <em>constant</em> &mdash; it takes the same time to go from 0.80 to 0.40 mol dm<sup>&minus;3</sup> as it does to go from 0.40 to 0.20 &mdash; and it is related to the rate constant by<br><br>
+  k = ln 2 / t<sub>&frac12;</sub> = 0.693 / t<sub>&frac12;</sub>
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Half-Life to Rate Constant:</strong><br><br>
+  A concentration&ndash;time graph for the decomposition of a reactant shows the concentration falling from 0.80 to 0.40 mol dm<sup>&minus;3</sup> in 120 s, and from 0.40 to 0.20 mol dm<sup>&minus;3</sup> in a further 120 s.<br><br>
+  The two successive half-lives are equal, so the reaction is <strong>first order</strong>.<br><br>
+  k = 0.693 / t<sub>&frac12;</sub> = 0.693 / 120 = <strong>5.78 &times; 10<sup>&minus;3</sup> s<sup>&minus;1</sup></strong><br><br>
+  The unit s<sup>&minus;1</sup> confirms the first-order assignment.
+</div>
+
+<p>To find a rate at a particular moment from a concentration&ndash;time curve, draw a <strong>tangent</strong> to the curve at that point and measure its gradient. The tangent at t = 0 gives the initial rate. A tangent drawn by eye is the least precise step in the whole experiment, so take care over it.</p>
+
+<h3>Measuring Rates in Practice</h3>
+
+<p>Two experimental strategies appear in the practical work for this module.</p>
+
+<ul>
+  <li><strong>Continuous monitoring</strong> follows one reaction mixture from start to finish by measuring a property that changes as it proceeds: the volume of gas collected in a gas syringe, the loss of mass on a balance when a gas escapes, the absorbance of a coloured species in a colorimeter, the pH, or the electrical conductivity if the number of ions changes. You can also withdraw samples at timed intervals, quench them (by adding a large volume of cold water, or by neutralising the catalyst) and titrate them. The result is a concentration&ndash;time graph, from which orders come from half-lives or from tangents.</li>
+  <li><strong>The initial rates method</strong> runs several separate mixtures and measures only the very beginning of each. The usual trick is a <em>clock reaction</em>: arrange for a sudden, easily seen change &mdash; a blue-black colour appearing with starch, or a precipitate of sulfur obscuring a cross &mdash; after a small, fixed amount of reaction has occurred. The initial rate is then proportional to 1/t. Vary one reagent's concentration at a time, keeping the total volume constant by making up with water so that nothing else changes.</li>
+</ul>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> In initial-rates questions, look for the pair of experiments in which only one concentration has changed &mdash; that is the pair the examiner intends you to use, and comparing any other pair will only confuse you. If no such pair exists you must divide one rate expression by another algebraically. Always finish by quoting the units of k; they carry a mark of their own and are the easiest check that your order is right.
+</div>
 
 <h3>Rate-Determining Step</h3>
 
@@ -72,6 +141,19 @@
 </div>
 
 <p>If the rate equation is rate = k[A][B], then both A and B (or species derived from them) are involved in or before the rate-determining step. Species that appear in the balanced equation but not in the rate equation are involved in steps after the rate-determining step.</p>
+
+<p>The orders tell you <em>how many</em> molecules of each species take part in the rate-determining step. For the reduction of nitrogen monoxide above, rate = k[NO]<sup>2</sup>[H<sub>2</sub>], so that step must involve two NO molecules and one H<sub>2</sub> molecule &mdash; three particles in all, even though the overall equation calls for two of each. A mechanism consistent with this is:</p>
+
+<div class="equation">
+  Step 1 (slow): 2NO + H<sub>2</sub> &rarr; N<sub>2</sub> + H<sub>2</sub>O<sub>2</sub><br>
+  Step 2 (fast): H<sub>2</sub>O<sub>2</sub> + H<sub>2</sub> &rarr; 2H<sub>2</sub>O
+</div>
+
+<p>The two steps add up to the overall equation, and the slow step matches the rate equation. The second molecule of hydrogen is used after the bottleneck, which is precisely why it does not appear in the rate equation.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Be careful with the logic in both directions. A rate equation is consistent with a proposed mechanism or it is not; it can never <em>prove</em> a mechanism, because several mechanisms may share the same slow step. So write "these data are consistent with&nbsp;&hellip;" or "these data rule out&nbsp;&hellip;", not "this proves the mechanism is&nbsp;&hellip;". When you are asked to check a proposed mechanism, do two things: add the steps to see whether they give the overall equation, and read the species in the slow step to see whether they give the rate equation.
+</div>
 
 <h3>The Arrhenius Equation</h3>
 
@@ -101,6 +183,30 @@
   Therefore order with respect to A = <strong>2</strong> (second order).
 </div>
 
+<p>When rate constants are given at two temperatures rather than as a graph, subtract one form of the equation from the other. The ln A terms cancel and you are left with a version you can use directly:</p>
+
+<div class="equation">
+  ln(k<sub>2</sub>/k<sub>1</sub>) = (E<sub>a</sub>/R)(1/T<sub>1</sub> &minus; 1/T<sub>2</sub>)
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Activation Enthalpy from Two Rate Constants:</strong><br><br>
+  For the oxidation of sulfur dioxide over a vanadium(V) oxide catalyst, k = 1.20 &times; 10<sup>&minus;3</sup> mol<sup>&minus;1</sup> dm<sup>3</sup> s<sup>&minus;1</sup> at 500 K and 9.60 &times; 10<sup>&minus;3</sup> mol<sup>&minus;1</sup> dm<sup>3</sup> s<sup>&minus;1</sup> at 550 K. Calculate E<sub>a</sub>. (R = 8.314 J K<sup>&minus;1</sup> mol<sup>&minus;1</sup>)<br><br>
+  ln(k<sub>2</sub>/k<sub>1</sub>) = ln(9.60 &times; 10<sup>&minus;3</sup> / 1.20 &times; 10<sup>&minus;3</sup>) = ln 8.00 = 2.079<br>
+  1/T<sub>1</sub> &minus; 1/T<sub>2</sub> = 1/500 &minus; 1/550 = 2.000 &times; 10<sup>&minus;3</sup> &minus; 1.818 &times; 10<sup>&minus;3</sup> = 1.818 &times; 10<sup>&minus;4</sup> K<sup>&minus;1</sup><br><br>
+  E<sub>a</sub> = R &times; ln(k<sub>2</sub>/k<sub>1</sub>) / (1/T<sub>1</sub> &minus; 1/T<sub>2</sub>) = 8.314 &times; 2.079 / 1.818 &times; 10<sup>&minus;4</sup><br>
+  E<sub>a</sub> = 9.51 &times; 10<sup>4</sup> J mol<sup>&minus;1</sup> = <strong>95.1 kJ mol<sup>&minus;1</sup></strong><br><br>
+  Note that a 50 K rise &mdash; 10% in absolute temperature &mdash; has multiplied the rate constant by eight.
+</div>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; Activation Enthalpy from a Graph:</strong><br><br>
+  A plot of ln k against 1/T is a straight line of gradient &minus;1.14 &times; 10<sup>4</sup> K. Calculate E<sub>a</sub>.<br><br>
+  gradient = &minus;E<sub>a</sub>/R, so E<sub>a</sub> = &minus;gradient &times; R<br>
+  E<sub>a</sub> = 1.14 &times; 10<sup>4</sup> &times; 8.314 = 9.48 &times; 10<sup>4</sup> J mol<sup>&minus;1</sup> = <strong>94.8 kJ mol<sup>&minus;1</sup></strong><br><br>
+  The y-intercept of the same line is ln A, so A = e<sup>(intercept)</sup>.
+</div>
+
 <!-- ============================================================ -->
 <h2>2. Equilibrium Constants</h2>
 
@@ -115,6 +221,37 @@
 <p>where square brackets denote equilibrium concentrations in mol dm<sup>&minus;3</sup>. K<sub>c</sub> is constant at a given temperature. A large K<sub>c</sub> means the equilibrium lies to the right (products favoured); a small K<sub>c</sub> means it lies to the left (reactants favoured).</p>
 
 <p>Only species in the aqueous or gaseous phase are included in the expression. Pure solids and pure liquids are excluded because their concentrations are effectively constant.</p>
+
+<h3>Working Out the Units of K<sub>c</sub></h3>
+
+<p>You met K<sub>c</sub> in ES without worrying about units. Here you must work them out, and the method never varies: write the expression with mol dm<sup>&minus;3</sup> in place of every concentration, and cancel.</p>
+
+<table>
+  <tr><th>Equilibrium</th><th>K<sub>c</sub> expression</th><th>Units</th></tr>
+  <tr><td>H<sub>2</sub> + I<sub>2</sub> &rlhar; 2HI</td><td>[HI]<sup>2</sup> / ([H<sub>2</sub>][I<sub>2</sub>])</td><td><strong>None</strong> &mdash; the units cancel exactly</td></tr>
+  <tr><td>N<sub>2</sub>O<sub>4</sub> &rlhar; 2NO<sub>2</sub></td><td>[NO<sub>2</sub>]<sup>2</sup> / [N<sub>2</sub>O<sub>4</sub>]</td><td>mol dm<sup>&minus;3</sup></td></tr>
+  <tr><td>2SO<sub>2</sub> + O<sub>2</sub> &rlhar; 2SO<sub>3</sub></td><td>[SO<sub>3</sub>]<sup>2</sup> / ([SO<sub>2</sub>]<sup>2</sup>[O<sub>2</sub>])</td><td>mol<sup>&minus;1</sup> dm<sup>3</sup></td></tr>
+  <tr><td>N<sub>2</sub> + 3H<sub>2</sub> &rlhar; 2NH<sub>3</sub></td><td>[NH<sub>3</sub>]<sup>2</sup> / ([N<sub>2</sub>][H<sub>2</sub>]<sup>3</sup>)</td><td>mol<sup>&minus;2</sup> dm<sup>6</sup></td></tr>
+</table>
+
+<p>In short, the power of (mol dm<sup>&minus;3</sup>) in the units is the number of moles of gas or solution species on the product side minus the number on the reactant side. When those totals are equal, K<sub>c</sub> has no units at all &mdash; and "no units" is a perfectly good answer that you must write down rather than leave blank.</p>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; K<sub>c</sub> for the Contact Process, with Units:</strong><br><br>
+  2.00 mol of SO<sub>2</sub> and 1.00 mol of O<sub>2</sub> are sealed in a 1.00 dm<sup>3</sup> vessel with a catalyst and allowed to reach equilibrium, at which point 1.80 mol of SO<sub>3</sub> has formed. Calculate K<sub>c</sub>.<br><br>
+  <strong>Step 1 &mdash; amounts used.</strong> 2 mol SO<sub>3</sub> is formed from 2 mol SO<sub>2</sub> and 1 mol O<sub>2</sub>, so 1.80 mol SO<sub>3</sub> has consumed 1.80 mol SO<sub>2</sub> and 0.90 mol O<sub>2</sub>.<br><br>
+  <strong>Step 2 &mdash; equilibrium amounts.</strong><br>
+  SO<sub>2</sub>: 2.00 &minus; 1.80 = 0.20 mol &nbsp;&nbsp; O<sub>2</sub>: 1.00 &minus; 0.90 = 0.10 mol &nbsp;&nbsp; SO<sub>3</sub>: 1.80 mol<br><br>
+  <strong>Step 3 &mdash; concentrations.</strong> The volume is 1.00 dm<sup>3</sup>, so the concentrations are numerically the same: 0.20, 0.10 and 1.80 mol dm<sup>&minus;3</sup>.<br><br>
+  <strong>Step 4 &mdash; substitute.</strong><br>
+  K<sub>c</sub> = 1.80<sup>2</sup> / (0.20<sup>2</sup> &times; 0.10) = 3.24 / (0.040 &times; 0.10) = 3.24 / 4.0 &times; 10<sup>&minus;3</sup><br>
+  K<sub>c</sub> = <strong>810 mol<sup>&minus;1</sup> dm<sup>3</sup></strong><br><br>
+  K<sub>c</sub> &gt;&gt; 1, so the equilibrium lies well over towards sulfur trioxide &mdash; which is exactly what makes the Contact process worth running.
+</div>
+
+<h3>Measuring K<sub>c</sub> Experimentally</h3>
+
+<p>To determine K<sub>c</sub> you need the equilibrium concentrations, and the difficulty is that any measurement which consumes a reactant will disturb the very equilibrium you are trying to measure. The standard solution is to mix known amounts, leave the mixture in a thermostatted bath for long enough to be sure equilibrium has been reached (confirmed by taking readings until they stop changing), then withdraw a sample, <strong>quench</strong> it &mdash; typically by running it into a large volume of cold water, which both dilutes it and chills it so that the position of equilibrium is effectively frozen &mdash; and titrate it at once. Knowing one equilibrium amount and the starting amounts, the stoichiometry gives all the others.</p>
 
 <h3>The Equilibrium Constant K<sub>p</sub></h3>
 
@@ -134,6 +271,36 @@
 <div class="exam-tip">
   <strong>Exam Tip:</strong> When calculating K<sub>p</sub>, pay careful attention to units. The units of K<sub>p</sub> depend on the stoichiometry of the reaction. Work out the overall power of pressure in the numerator minus the denominator to determine the unit (e.g. Pa, kPa, atm, or dimensionless).
 </div>
+
+<div class="worked-example">
+  <strong>Worked Example &mdash; K<sub>p</sub> from Mole Fractions:</strong><br><br>
+  An equilibrium mixture of the brown gas NO<sub>2</sub> and its colourless dimer N<sub>2</sub>O<sub>4</sub>,<br>
+  N<sub>2</sub>O<sub>4</sub>(g) &rlhar; 2NO<sub>2</sub>(g),<br>
+  contains 0.60 mol N<sub>2</sub>O<sub>4</sub> and 0.40 mol NO<sub>2</sub> at a total pressure of 100 kPa. Calculate K<sub>p</sub>.<br><br>
+  <strong>Step 1 &mdash; total moles of gas:</strong> 0.60 + 0.40 = 1.00 mol<br><br>
+  <strong>Step 2 &mdash; mole fractions:</strong> x(N<sub>2</sub>O<sub>4</sub>) = 0.60/1.00 = 0.60; x(NO<sub>2</sub>) = 0.40/1.00 = 0.40<br>
+  (They must add to 1 &mdash; check this every time.)<br><br>
+  <strong>Step 3 &mdash; partial pressures:</strong> p = x &times; P<sub>total</sub><br>
+  p(N<sub>2</sub>O<sub>4</sub>) = 0.60 &times; 100 = 60 kPa; p(NO<sub>2</sub>) = 0.40 &times; 100 = 40 kPa<br><br>
+  <strong>Step 4 &mdash; substitute:</strong><br>
+  K<sub>p</sub> = p(NO<sub>2</sub>)<sup>2</sup> / p(N<sub>2</sub>O<sub>4</sub>) = 40<sup>2</sup> / 60 = 1600 / 60 = <strong>26.7 kPa</strong><br><br>
+  The unit is kPa because there are two moles of gas on top and one underneath: kPa<sup>2</sup>/kPa = kPa.
+</div>
+
+<h3>What Changes the Value of K &mdash; and What Does Not</h3>
+
+<p>This is the point of the whole section, and it is the one examiners test hardest, because the everyday language of "shifting the equilibrium" invites the wrong answer.</p>
+
+<table>
+  <tr><th>Change</th><th>Position of equilibrium</th><th>Value of K<sub>c</sub> or K<sub>p</sub></th></tr>
+  <tr><td>Increase the concentration of a reactant</td><td>Shifts right</td><td><strong>Unchanged</strong></td></tr>
+  <tr><td>Increase the total pressure</td><td>Shifts towards the side with fewer moles of gas (no shift if the totals are equal)</td><td><strong>Unchanged</strong></td></tr>
+  <tr><td>Add a catalyst</td><td><strong>Unchanged</strong> &mdash; equilibrium is simply reached sooner</td><td><strong>Unchanged</strong></td></tr>
+  <tr><td>Increase the temperature, forward reaction exothermic</td><td>Shifts left</td><td><strong>Decreases</strong></td></tr>
+  <tr><td>Increase the temperature, forward reaction endothermic</td><td>Shifts right</td><td><strong>Increases</strong></td></tr>
+</table>
+
+<p>The logic behind the first two rows is worth spelling out, because it is the answer to "explain why". K is a fixed number at a fixed temperature. If you raise one concentration on the bottom of the expression, the value would momentarily fall below K, so the reaction proceeds forward until the top has risen and the bottom fallen enough to restore the original value. The position has moved; the constant has not. Only a change of temperature alters K itself, and it does so in the direction that absorbs the energy you have added &mdash; which is why K for the Contact process, an exothermic reaction, gets <em>smaller</em> as the plant is run hotter.</p>
 
 <!-- SVG: Kc and Kp - What they tell us -->
 <div style="margin: 20px auto; text-align: center;">
@@ -171,6 +338,231 @@
   <text x="250" y="236" text-anchor="middle" font-family="system-ui" font-size="10" fill="#16A34A">&#10004; Temperature changes K (shifts equilibrium in endothermic direction)</text>
   <text x="250" y="253" text-anchor="middle" font-family="system-ui" font-size="10" fill="#DC2626">&#10008; Concentration, pressure, and catalysts do NOT change K</text>
 </svg>
+</div>
+
+<!-- ============================================================ -->
+<h2>3. Nitrogen Chemistry</h2>
+
+<p>The storyline opens with crop production and the nitrogen cycle, and the chemistry that follows is all about one awkward fact: the atmosphere is 78% nitrogen, and almost nothing can use it.</p>
+
+<h3>Bonding in Nitrogen, Ammonia and the Ammonium Ion</h3>
+
+<p>A nitrogen atom has the configuration 1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>3</sup> &mdash; five outer electrons, three of them unpaired.</p>
+
+<ul>
+  <li><strong>N<sub>2</sub></strong> forms when two nitrogen atoms share three pairs of electrons, giving a <strong>triple bond</strong>, N&equiv;N, and leaving a lone pair on each atom. The bond enthalpy is 945 kJ mol<sup>&minus;1</sup>, one of the strongest bonds in all of chemistry, and this is why nitrogen gas is so unreactive: almost any reaction has to start by breaking it, so the activation enthalpy is enormous. It is also why the Haber process needs a catalyst and high temperature, and why explosives based on nitrogen compounds release so much energy &mdash; forming N&equiv;N is hugely exothermic.</li>
+  <li><strong>NH<sub>3</sub></strong> has three bonding pairs and one lone pair around the nitrogen. Four electron pairs arrange themselves tetrahedrally, but only three are bonds, so the <em>shape</em> is <strong>pyramidal</strong>. The lone pair repels more strongly than the bonding pairs, closing the H&ndash;N&ndash;H angle from 109.5&deg; to <strong>107&deg;</strong>. The molecule is polar and hydrogen bonds to its neighbours, which is why ammonia is so soluble in water and can be liquefied so easily.</li>
+  <li><strong>NH<sub>4</sub><sup>+</sup></strong> forms when that lone pair is donated to an H<sup>+</sup> ion, which has no electrons of its own. Both electrons in the new bond come from the nitrogen, making it a <strong>dative covalent</strong> (coordinate) bond, usually drawn as an arrow. Once formed it is identical in length and strength to the other three, so all four bonds are equivalent: four bonding pairs and no lone pair give a <strong>tetrahedral</strong> ion with bond angles of <strong>109.5&deg;</strong>.</li>
+</ul>
+
+<h3>The Oxides of Nitrogen</h3>
+
+<table>
+  <tr><th>Formula</th><th>Name</th><th>Oxidation state of N</th><th>Appearance</th></tr>
+  <tr><td>N<sub>2</sub>O</td><td>Dinitrogen oxide</td><td>+1</td><td>Colourless gas; used as an anaesthetic, and a very potent greenhouse gas</td></tr>
+  <tr><td>NO</td><td>Nitrogen monoxide</td><td>+2</td><td>Colourless gas; turns brown the moment it meets air, as it is oxidised to NO<sub>2</sub></td></tr>
+  <tr><td>NO<sub>2</sub></td><td>Nitrogen dioxide</td><td>+4</td><td>Brown, choking, toxic gas</td></tr>
+</table>
+
+<p>Nitrogen is the great chameleon of the periodic table: it takes every oxidation state from &minus;3 to +5, and much of the chemistry in this module is simply moving it between them.</p>
+
+<table>
+  <tr><th>Oxidation state</th><th>&minus;3</th><th>0</th><th>+1</th><th>+2</th><th>+3</th><th>+4</th><th>+5</th></tr>
+  <tr><td>Species</td><td>NH<sub>3</sub>, NH<sub>4</sub><sup>+</sup></td><td>N<sub>2</sub></td><td>N<sub>2</sub>O</td><td>NO</td><td>NO<sub>2</sub><sup>&minus;</sup> (nitrate(III))</td><td>NO<sub>2</sub></td><td>NO<sub>3</sub><sup>&minus;</sup> (nitrate(V)), HNO<sub>3</sub></td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Use the systematic names in answers. NO<sub>3</sub><sup>&minus;</sup> is the <strong>nitrate(V)</strong> ion and NO<sub>2</sub><sup>&minus;</sup> is the <strong>nitrate(III)</strong> ion; "nitrite" is the older name for the latter and is best avoided, since the two are so easily confused. Work out the oxidation state from the charge every time rather than trying to remember: in NO<sub>2</sub><sup>&minus;</sup>, the two oxygens contribute 2 &times; (&minus;2) = &minus;4, and the overall charge is &minus;1, so nitrogen must be +3.
+</div>
+
+<h3>Interconverting the Nitrogen Species</h3>
+
+<p>In the soil, bacteria do the work. <strong>Nitrogen fixation</strong> converts N<sub>2</sub> to ammonia, either by root-nodule bacteria in legumes, by lightning, or industrially in the Haber process. <strong>Nitrification</strong> then oxidises the ammonium ion in two bacterial steps:</p>
+
+<div class="equation">
+  2NH<sub>4</sub><sup>+</sup> + 3O<sub>2</sub> &rarr; 2NO<sub>2</sub><sup>&minus;</sup> + 2H<sub>2</sub>O + 4H<sup>+</sup>
+</div>
+<div class="equation">
+  2NO<sub>2</sub><sup>&minus;</sup> + O<sub>2</sub> &rarr; 2NO<sub>3</sub><sup>&minus;</sup>
+</div>
+
+<p>Nitrate(V) is the form plants take up, which is why it is the form fertilisers supply. <strong>Denitrification</strong> by anaerobic bacteria runs the cycle back the other way, reducing nitrate(V) all the way to nitrogen gas and returning it to the air:</p>
+
+<div class="equation">
+  2NO<sub>3</sub><sup>&minus;</sup> + 12H<sup>+</sup> + 10e<sup>&minus;</sup> &rarr; N<sub>2</sub> + 6H<sub>2</sub>O
+</div>
+
+<p>Industrially the same interconversions are carried out deliberately: ammonia is oxidised to NO, NO to NO<sub>2</sub>, and NO<sub>2</sub> to nitric acid. That is the Ostwald process, and it is the subject of the next section.</p>
+
+<h3>Testing for Ammonium and Nitrate(V) Ions</h3>
+
+<p>Both tests end with the same observation &mdash; ammonia gas &mdash; so the order in which you do them matters.</p>
+
+<ol>
+  <li><strong>Ammonium, NH<sub>4</sub><sup>+</sup>:</strong> add sodium hydroxide solution to the sample and warm gently. Ammonia is displaced from its salt by the stronger base and is detected by its sharp smell and by holding damp <strong>red litmus paper</strong> in the mouth of the tube, where it turns <strong>blue</strong>.
+    <div class="equation">
+      NH<sub>4</sub><sup>+</sup>(aq) + OH<sup>&minus;</sup>(aq) &rarr; NH<sub>3</sub>(g) + H<sub>2</sub>O(l)
+    </div>
+  </li>
+  <li><strong>Nitrate(V), NO<sub>3</sub><sup>&minus;</sup>:</strong> to a fresh portion add sodium hydroxide solution <em>and</em> a little <strong>Devarda's alloy</strong> (an alloy of aluminium, copper and zinc), then warm. The aluminium reduces nitrate(V) in alkaline solution all the way down to ammonia, which is detected in the same way.
+    <div class="equation">
+      3NO<sub>3</sub><sup>&minus;</sup> + 8Al + 5OH<sup>&minus;</sup> + 18H<sub>2</sub>O &rarr; 3NH<sub>3</sub> + 8Al(OH)<sub>4</sub><sup>&minus;</sup>
+    </div>
+  </li>
+</ol>
+
+<p>Do the first test before the second. If ammonia is given off with sodium hydroxide <em>alone</em>, the sample already contained ammonium ions, and you cannot then tell whether the ammonia produced with Devarda's alloy came from nitrate or from the ammonium that was there all along.</p>
+
+<!-- ============================================================ -->
+<h2>4. Three Industrial Processes</h2>
+
+<p>The module hangs its chemistry on three real plants: nitric acid, sulfuric acid and ethanoic acid. You are not expected to recall the details &mdash; the specification says information will be given &mdash; but you are expected to be able to read a flow diagram and explain, in terms of rate and equilibrium, why a process is run the way it is. The three below are worth knowing well simply because they are the examples you are most likely to be handed.</p>
+
+<h3>Nitric Acid: the Ostwald Process</h3>
+
+<p>Ammonia from the Haber process is oxidised in three stages.</p>
+
+<p><strong>Stage 1 &mdash; catalytic oxidation of ammonia.</strong></p>
+<div class="equation">
+  4NH<sub>3</sub>(g) + 5O<sub>2</sub>(g) &rarr; 4NO(g) + 6H<sub>2</sub>O(g) &nbsp;&nbsp; &Delta;H = &minus;905 kJ mol<sup>&minus;1</sup>
+</div>
+<p>Ammonia mixed with air is passed over gauzes of platinum with about 10% rhodium at roughly 900 &deg;C and a few atmospheres. The contact time is of the order of a millisecond: leave the gases on the catalyst any longer and the ammonia is oxidised straight through to nitrogen, which is worthless. The reaction is so exothermic that once lit it keeps the gauzes white-hot without further heating, and the waste heat downstream raises steam.</p>
+
+<p><strong>Stage 2 &mdash; oxidation of nitrogen monoxide.</strong></p>
+<div class="equation">
+  2NO(g) + O<sub>2</sub>(g) &rlhar; 2NO<sub>2</sub>(g) &nbsp;&nbsp; &Delta;H = &minus;114 kJ mol<sup>&minus;1</sup>
+</div>
+<p>The gases are cooled before this step, for two reasons that point the same way: the reaction is exothermic, so a low temperature pushes the equilibrium towards NO<sub>2</sub>, and unusually this reaction also goes faster as it is cooled. Three moles of gas become two, so raised pressure helps as well.</p>
+
+<p><strong>Stage 3 &mdash; absorption in water.</strong></p>
+<div class="equation">
+  3NO<sub>2</sub>(g) + H<sub>2</sub>O(l) &rarr; 2HNO<sub>3</sub>(aq) + NO(g)
+</div>
+<p>The gas stream meets water flowing the other way down a tall absorption tower. A third of the nitrogen appears as nitrogen monoxide again, so extra air is blown in and the NO is recycled through stage 2 until almost all of it has ended up as acid. Taking the recycling into account, the overall absorption is:</p>
+<div class="equation">
+  4NO<sub>2</sub>(g) + O<sub>2</sub>(g) + 2H<sub>2</sub>O(l) &rarr; 4HNO<sub>3</sub>(aq)
+</div>
+<p>The tail gas leaving the top of the tower still contains a little NO<sub>2</sub>, which would be visible as a brown plume and is both toxic and a cause of acid rain, so it is catalytically reduced or scrubbed before release.</p>
+
+<h3>Sulfuric Acid: the Contact Process</h3>
+
+<p><strong>Stage 1 &mdash; make sulfur dioxide</strong>, by burning molten sulfur in dry air, or by roasting a sulfide ore:</p>
+<div class="equation">
+  S(l) + O<sub>2</sub>(g) &rarr; SO<sub>2</sub>(g) &nbsp;&nbsp; &Delta;H = &minus;297 kJ mol<sup>&minus;1</sup>
+</div>
+
+<p><strong>Stage 2 &mdash; the equilibrium step</strong>, over a vanadium(V) oxide catalyst at about 450 &deg;C and only 1&ndash;2 atmospheres:</p>
+<div class="equation">
+  2SO<sub>2</sub>(g) + O<sub>2</sub>(g) &rlhar; 2SO<sub>3</sub>(g) &nbsp;&nbsp; &Delta;H = &minus;196 kJ mol<sup>&minus;1</sup>
+</div>
+<p>The catalyst works by a redox cycle, being reduced by the sulfur dioxide and reoxidised by the oxygen, so it is returned unchanged at the end of each turnover:</p>
+<div class="equation">
+  SO<sub>2</sub> + V<sub>2</sub>O<sub>5</sub> &rarr; SO<sub>3</sub> + V<sub>2</sub>O<sub>4</sub> &nbsp;&nbsp;&nbsp; 2V<sub>2</sub>O<sub>4</sub> + O<sub>2</sub> &rarr; 2V<sub>2</sub>O<sub>5</sub>
+</div>
+
+<p><strong>Stage 3 &mdash; absorption.</strong> Sulfur trioxide is <em>not</em> added straight to water: that reaction is so violently exothermic that it produces an uncontrollable mist of sulfuric acid droplets which is impossible to condense and escapes from the plant. Instead the SO<sub>3</sub> is absorbed into concentrated sulfuric acid to give oleum, which is then diluted with the right amount of water:</p>
+<div class="equation">
+  SO<sub>3</sub>(g) + H<sub>2</sub>SO<sub>4</sub>(l) &rarr; H<sub>2</sub>S<sub>2</sub>O<sub>7</sub>(l)
+</div>
+<div class="equation">
+  H<sub>2</sub>S<sub>2</sub>O<sub>7</sub>(l) + H<sub>2</sub>O(l) &rarr; 2H<sub>2</sub>SO<sub>4</sub>(l)
+</div>
+<p>The net effect is the same as SO<sub>3</sub> + H<sub>2</sub>O &rarr; H<sub>2</sub>SO<sub>4</sub>, but under control. Passing the gas through a second catalyst bed and a second absorber &mdash; the double-absorption design &mdash; raises the overall conversion above 99.5% and so cuts the sulfur dioxide leaving the chimney to a level that emission regulations permit.</p>
+
+<h3>Ethanoic Acid: Carbonylation of Methanol</h3>
+
+<p>Most of the world's ethanoic acid is now made in a single step by reacting methanol with carbon monoxide:</p>
+<div class="equation">
+  CH<sub>3</sub>OH(l) + CO(g) &rarr; CH<sub>3</sub>COOH(l)
+</div>
+<p>The reaction is run at roughly 150&ndash;200 &deg;C and 30&ndash;40 atmospheres over a <strong>homogeneous</strong> catalyst &mdash; a rhodium complex in the older Monsanto process, an iridium complex in the Cativa process that superseded it &mdash; with iodomethane as a promoter. Both metals are dissolved in the reaction mixture rather than sitting on a surface, which gives excellent contact with the reactants but means the catalyst has to be separated from the product and recycled.</p>
+
+<p>The striking feature of this process is its <strong>atom economy of 100%</strong>: there is only one product, so every atom of methanol and carbon monoxide ends up in the ethanoic acid. Contrast that with the routes it replaced &mdash; the air oxidation of naphtha or butane, which produced a spread of oxygenated by-products that had to be separated, and the two-stage conversion of ethene to ethanal and then to ethanoic acid. Both raw materials come from synthesis gas, made from methane and steam, so the whole chain is built on natural gas.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Questions on these processes give you the data and ask you to interpret it, so practise the interpretation rather than memorising flow diagrams. Look first at the sign of &Delta;H, then at the number of moles of gas on each side, then at whether the arrow is reversible. Those three pieces of information generate almost every mark available: exothermic and reversible means low temperature for yield but a compromise for rate; fewer gas moles on the right means high pressure helps the yield; a single arrow means yield is not the issue and you should be talking about rate and selectivity instead.
+</div>
+
+<!-- ============================================================ -->
+<h2>5. Choosing the Best Conditions for an Industrial Process</h2>
+
+<p>An industrial chemist is not trying to maximise yield. They are trying to produce the most product per pound spent, and the conditions that give the best yield are almost never the conditions that do that. Four considerations pull against each other.</p>
+
+<h3>Temperature: the Central Compromise</h3>
+
+<p>For an exothermic reaction, raising the temperature moves the equilibrium to the left and reduces K &mdash; a lower yield. But lowering the temperature reduces the rate constant exponentially, so the mixture takes far longer to reach equilibrium, and a plant producing a wonderful yield after three weeks is worthless. The chosen temperature is therefore a <strong>compromise</strong>: high enough for an acceptable rate, low enough for an acceptable yield.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Never write only "a high temperature gives a faster rate" or only "a low temperature gives a better yield". The mark is for the compromise, and it is awarded for saying both halves and then naming the chosen value as the balance between them.
+</div>
+
+<h3>Pressure: Yield Against Cost</h3>
+
+<p>Raising the pressure shifts a gaseous equilibrium towards whichever side has fewer moles of gas, and also speeds the reaction up by bringing the molecules closer together. It costs a great deal, though: compressors consume large amounts of energy, vessels and pipework must be thicker and are more expensive to build and inspect, and a leak or rupture at high pressure is far more dangerous. High pressure is therefore used only where it buys enough yield to pay for itself.</p>
+
+<p>The two headline processes make the point neatly. The Haber process runs at around 200 atm because at 1 atm the conversion to ammonia would be hopelessly low. The Contact process, by contrast, runs at barely more than atmospheric pressure &mdash; even though it too has fewer moles on the right &mdash; because the conversion at 1&ndash;2 atm is already over 99%, and there is almost nothing left to gain.</p>
+
+<h3>Catalysts</h3>
+
+<p>A catalyst provides an alternative route of lower activation enthalpy, so a much greater proportion of collisions have enough energy to react. It increases the rate of the forward and reverse reactions by the same factor, so it changes neither the position of equilibrium nor the value of K &mdash; equilibrium is simply reached sooner. The real economic benefit is indirect: because the catalyst has restored the rate, the plant can be run at a <em>lower</em> temperature, which for an exothermic reaction improves the yield and cuts the fuel bill at the same time. Catalysts are expensive and can be poisoned by impurities in the feedstock, which is why plants include purification steps upstream of the reactor.</p>
+
+<h3>Removing Product and Recycling Reactants</h3>
+
+<p>Two further tricks appear on almost every flow diagram. Removing the product as it forms &mdash; condensing ammonia to a liquid, absorbing nitrogen dioxide into water &mdash; keeps the top of the equilibrium expression low, so the reaction keeps moving forward and a modest single-pass conversion becomes a high overall conversion. And recycling the unreacted gas back to the reactor means that a single pass converting only 15% of the feed can still convert nearly all of it in the end. Both are reasons why a poor equilibrium yield need not rule a process out.</p>
+
+<table>
+  <tr><th>Process</th><th>Conditions</th><th>Why</th></tr>
+  <tr><td>Haber<br>N<sub>2</sub> + 3H<sub>2</sub> &rlhar; 2NH<sub>3</sub><br>&Delta;H = &minus;92 kJ mol<sup>&minus;1</sup></td><td>Iron catalyst, about 450 &deg;C, about 200 atm, unreacted gas recycled</td><td>Exothermic and 4 moles &rarr; 2 moles, so yield wants low T and high P. Temperature is a compromise for rate; pressure is set by what the plant can safely and economically stand; recycling lifts overall conversion.</td></tr>
+  <tr><td>Contact (stage 2)<br>2SO<sub>2</sub> + O<sub>2</sub> &rlhar; 2SO<sub>3</sub><br>&Delta;H = &minus;196 kJ mol<sup>&minus;1</sup></td><td>V<sub>2</sub>O<sub>5</sub> catalyst, about 450 &deg;C, 1&ndash;2 atm, double absorption</td><td>Same compromise on temperature. High pressure is not worth paying for because conversion is already above 99%; the second catalyst bed is cheaper than compression for the last fraction of a per cent.</td></tr>
+  <tr><td>Ostwald (stage 1)<br>4NH<sub>3</sub> + 5O<sub>2</sub> &rarr; 4NO + 6H<sub>2</sub>O</td><td>Pt/Rh gauze, about 900 &deg;C, contact time of about 1 ms</td><td>Effectively irreversible, so yield is not the issue: conditions are chosen for rate and for <em>selectivity</em>. Too long on the catalyst and the ammonia is oxidised past NO to useless nitrogen.</td></tr>
+</table>
+
+<!-- ============================================================ -->
+<h2>6. Costs, Benefits and Risks</h2>
+
+<p>The last learning outcome in this module is not chemistry at all; it is the question of whether a process is worth running. You will be given data and asked to analyse it, so what matters is knowing which headings to sort that data under.</p>
+
+<h3>Where the Money Goes</h3>
+
+<table>
+  <tr><th>Type</th><th>What it covers</th><th>Behaviour</th></tr>
+  <tr><td><strong>Capital (fixed) costs</strong></td><td>Land, construction of the plant, reactors and pressure vessels, compressors, the initial catalyst charge, research and development</td><td>Paid once, before anything is sold; must be recovered over the life of the plant, so a plant is run at as high a capacity as possible</td></tr>
+  <tr><td><strong>Raw materials</strong></td><td>Feedstock, water, the catalyst as it is replaced</td><td>Roughly proportional to output; usually the largest single variable cost</td></tr>
+  <tr><td><strong>Energy</strong></td><td>Heating, compression, cooling, pumping, distillation</td><td>Proportional to output; can be offset by recovering heat from exothermic stages as steam</td></tr>
+  <tr><td><strong>Labour and overheads</strong></td><td>Operators, maintenance, safety systems, insurance</td><td>Largely fixed; a continuous plant needs few operators for its size, which is why bulk chemicals are made continuously and fine chemicals in batches</td></tr>
+  <tr><td><strong>Waste and environmental</strong></td><td>Scrubbers, effluent treatment, emission monitoring, disposal of by-products</td><td>Rises sharply if the process has a poor atom economy or a hazardous by-product</td></tr>
+</table>
+
+<p>Set against these are the credits. A <strong>co-product</strong> is something made deliberately alongside the main product and sold; a <strong>by-product</strong> is something the reaction produces whether you want it or not. If a by-product can be sold rather than disposed of, it turns a cost into income &mdash; the recovered heat from the Contact process is sold as steam or used to generate electricity, and ammonium sulfate from acid-gas scrubbing is sold as fertiliser. A process with a low atom economy is far more tolerable when its by-product has a market.</p>
+
+<h3>Benefits</h3>
+
+<ul>
+  <li><strong>Nitric acid and ammonia</strong> underpin the fertiliser industry, and with it a large part of the world's food supply; they also lead to nylon precursors, dyes and explosives.</li>
+  <li><strong>Sulfuric acid</strong> goes into phosphate fertilisers, detergents, pigments, batteries and the manufacture of almost every other industrial chemical &mdash; which is why its consumption has traditionally been used as a rough measure of a country's industrial activity.</li>
+  <li><strong>Ethanoic acid</strong> leads to ethenyl ethanoate for adhesives and emulsion paints, to cellulose acetate fibres and films, and to solvents.</li>
+</ul>
+
+<h3>Hazards and Risks</h3>
+
+<div class="definition">
+  <strong>Hazard:</strong> A property of a substance or a situation that has the potential to cause harm.<br><br>
+  <strong>Risk:</strong> The likelihood that the harm will actually occur in the circumstances of use. Risk depends on the hazard, the quantity involved, and the control measures in place &mdash; which is why a very hazardous substance can be handled at low risk, and a mildly hazardous one at high risk if it is handled carelessly or in bulk.
+</div>
+
+<table>
+  <tr><th>Hazard</th><th>Where it arises</th><th>How the risk is controlled</th></tr>
+  <tr><td>Ammonia &mdash; toxic and corrosive to eyes and lungs</td><td>Haber and Ostwald feedstock; stored and transported as a liquid under pressure</td><td>Closed systems, gas detectors, bunded storage, trained handling</td></tr>
+  <tr><td>Nitrogen dioxide &mdash; very toxic brown gas, contributes to acid rain and photochemical smog</td><td>Ostwald stages 2 and 3, and the tail gas</td><td>Tall absorption towers, catalytic reduction or scrubbing of tail gas, continuous emission monitoring</td></tr>
+  <tr><td>Sulfur dioxide &mdash; toxic, causes acid rain</td><td>Unconverted gas leaving the Contact plant</td><td>Double absorption to push conversion above 99.5%, plus scrubbing</td></tr>
+  <tr><td>Carbon monoxide &mdash; toxic, colourless and odourless</td><td>Ethanoic acid plant</td><td>Sealed high-pressure equipment, fixed CO detectors, remote operation</td></tr>
+  <tr><td>Concentrated acids and oleum &mdash; corrosive, and nitric acid is a strong oxidising agent</td><td>Storage and road or rail transport</td><td>Corrosion-resistant tanks, secondary containment, segregation from combustible material</td></tr>
+  <tr><td>High pressure and high temperature</td><td>Reactors and compressors</td><td>Pressure relief valves, scheduled inspection, automatic shutdown systems</td></tr>
+  <tr><td>Nitrate run-off into rivers, causing eutrophication; nitrous oxide released from fertilised soils, a potent greenhouse gas</td><td>Use of the product, not its manufacture</td><td>Controlled application rates, buffer strips, slow-release formulations</td></tr>
+</table>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> "Evaluate" and "discuss" questions here are marked for balance and for using the figures you are given. Quote numbers from the stem, put points on both sides, and finish with a judgement that follows from what you have written. A common trap is to treat a low atom economy or a high energy cost as automatically damning: say instead that it is a drawback, weigh it against the yield, the rate, the hazards and whether the by-product can be sold, and only then conclude.
 </div>
 
 </div>

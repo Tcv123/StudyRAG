@@ -24,6 +24,8 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Compare the bonding and properties of giant ionic and giant covalent lattices.", "marks": 9, "command": "Compare" },
     { "q": "Explain how the chemical elements are built up by nuclear fusion inside stars, and why fusion cannot produce elements heavier than iron.", "marks": 12, "command": "Explain" },
     { "q": "Describe the trends in the reactions of the Group 2 elements and their compounds, and explain them in terms of ionisation enthalpy and charge density.", "marks": 12, "command": "Describe" },
+    { "q": "Explain how emission and absorption line spectra arise, and describe the similarities and differences between them.", "marks": 12, "command": "Explain" },
+    { "q": "Describe a sequence of tests that would identify the cation and the anion in an unknown salt, and explain why the order of the tests matters.", "marks": 12, "command": "Describe" },
   ],
 
   // DF — Developing Fuels
@@ -53,6 +55,8 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Describe the reactions of concentrated sulfuric acid with the solid sodium halides and explain what they show about the reducing power of the halide ions.", "marks": 12, "command": "Describe" },
     { "q": "Describe the electrolysis of molten and of aqueous electrolytes, and explain what determines the product formed at each electrode.", "marks": 12, "command": "Describe" },
     { "q": "Evaluate the risks and the benefits of the large-scale manufacture and use of chlorine.", "marks": 9, "command": "Evaluate" },
+    { "q": "Explain how the equilibrium constant Kc is written and calculated, and how it is used to account for the effect of changing a concentration on the position of equilibrium.", "marks": 12, "command": "Explain" },
+    { "q": "Assess the usefulness of atom economy as a measure of how good an industrial process is.", "marks": 12, "command": "Assess" },
   ],
 
   // OZ — The Ozone Story
@@ -84,6 +88,8 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "To what extent does retrosynthesis allow chemists to plan the multi-step synthesis of a complex organic molecule?", "marks": 12, "command": "To what extent" },
     { "q": "Explain the principles of green chemistry and discuss how they are applied in the industrial synthesis of aspirin.", "marks": 12, "command": "Explain" },
     { "q": "Compare atom economy and percentage yield as measures of the efficiency of a chemical process.", "marks": 9, "command": "Compare" },
+    { "q": "Compare the reactions of alcohols, phenols and carboxylic acids with sodium hydroxide, sodium carbonate and neutral iron(III) chloride, and explain the differences.", "marks": 12, "command": "Compare" },
+    { "q": "Explain why phenols are acidic and why they react with acid anhydrides but not with carboxylic acids, using the synthesis of aspirin as an illustration.", "marks": 12, "command": "Explain" },
   ],
 
   // CI — The Chemical Industry
@@ -99,6 +105,10 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Explain how the equilibrium constant Kc changes with temperature for an exothermic and an endothermic reaction.", "marks": 9, "command": "Explain" },
     { "q": "Discuss how the position of equilibrium for an exothermic reversible reaction responds to changes in temperature, pressure and concentration.", "marks": 12, "command": "Discuss" },
     { "q": "To what extent does the equilibrium constant determine the yield of an industrial process given the practical constraints chemical engineers face?", "marks": 12, "command": "To what extent" },
+    { "q": "Explain the aspects of nitrogen chemistry required for the manufacture of fertilisers, including the bonding in nitrogen, ammonia and the ammonium ion.", "marks": 12, "command": "Explain" },
+    { "q": "Describe the three stages of the Ostwald process and explain how the conditions used in each stage are justified in terms of rate and equilibrium.", "marks": 12, "command": "Describe" },
+    { "q": "Evaluate the costs, benefits and risks associated with the industrial manufacture of sulfuric acid.", "marks": 12, "command": "Evaluate" },
+    { "q": "Explain how orders of reaction, half-lives and rate constants are obtained from experimental data, and how the units of the rate constant follow from the overall order.", "marks": 12, "command": "Explain" },
   ],
 
   // PL — Polymers and Life
@@ -114,6 +124,8 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Explain how the sequence of bases in DNA determines the primary structure of a protein.", "marks": 9, "command": "Explain" },
     { "q": "Discuss the characteristics of enzyme catalysis and explain each of them in terms of a three-dimensional active site.", "marks": 12, "command": "Discuss" },
     { "q": "Explain what is meant by molecular recognition and describe how it accounts for the action of a pharmacologically active molecule.", "marks": 12, "command": "Explain" },
+    { "q": "Explain what is meant by optical isomerism and describe how the enantiomers of a chiral molecule are identified and represented.", "marks": 9, "command": "Explain" },
+    { "q": "Discuss the importance of optical isomerism in the action and manufacture of medicines.", "marks": 12, "command": "Discuss" },
   ],
 
   // O — Oceans
@@ -157,5 +169,6 @@ const CHEMISTRY_OCR_B_AI_FEEDBACK = {
     { "q": "Discuss how a dye molecule is designed, explaining the roles of the chromophore, of the groups that modify it, of solubilising groups and of fibre-bonding groups.", "marks": 12, "command": "Discuss" },
     { "q": "Compare the ways in which different classes of dye attach themselves to fibres, and relate these to the fastness of the dye.", "marks": 9, "command": "Compare" },
     { "q": "Explain the structural differences between fats and oils and describe the reactions that they undergo.", "marks": 9, "command": "Explain" },
+    { "q": "Compare the electrophilic substitution reactions of benzene, including halogenation, nitration, sulfonation and the two Friedel-Crafts reactions.", "marks": 12, "command": "Compare" },
   ],
 };

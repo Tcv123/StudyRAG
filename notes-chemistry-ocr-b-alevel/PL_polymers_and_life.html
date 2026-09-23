@@ -76,7 +76,101 @@
 <p>A peptide bond (&minus;CONH&minus;) forms by a condensation reaction between the &minus;COOH of one amino acid and the &minus;NH<sub>2</sub> of another, releasing water. Proteins are polypeptides formed from many amino acids linked by peptide bonds. Peptide bonds can be broken by hydrolysis (acid or base conditions, or enzymatically).</p>
 
 <!-- ============================================================ -->
-<h2>2. Polymers</h2>
+<h2>2. Optical Isomerism</h2>
+
+<p>Look again at the general structure of an &alpha;-amino acid. The &alpha;-carbon carries four groups: &minus;NH<sub>2</sub>, &minus;COOH, &minus;H and the side chain R. For every amino acid except glycine those four groups are all different, and that single fact gives rise to a second kind of stereoisomerism &mdash; one that governs how proteins fold, how enzymes select their substrates, and why a drug can be a cure in one form and a poison in the other.</p>
+
+<div class="definition">
+  <strong>Chiral centre:</strong> A carbon atom bonded to four <em>different</em> atoms or groups. A molecule containing one is described as <strong>chiral</strong>.<br><br>
+  <strong>Enantiomers (optical isomers):</strong> The two forms of a chiral molecule, which are non-superimposable mirror images of one another.
+</div>
+
+<p>"Non-superimposable" is the key phrase and it is worth getting a feel for physically. Your two hands are mirror images, but no matter how you rotate them you cannot lay one on the other so that thumb covers thumb and palm covers palm. A chiral molecule is the same: the mirror image is a genuinely different molecule, not the same molecule viewed from another angle.</p>
+
+<h3>Finding the Chiral Centre</h3>
+
+<p>To test a carbon atom, list the four things attached to it and ask whether any two are identical. If all four differ, that carbon is a chiral centre and is usually marked with an asterisk.</p>
+
+<table>
+  <tr><th>Molecule</th><th>Groups on the carbon in question</th><th>Chiral?</th></tr>
+  <tr><td>Glycine, H<sub>2</sub>NCH<sub>2</sub>COOH</td><td>&minus;NH<sub>2</sub>, &minus;COOH, &minus;H, &minus;H</td><td>No &mdash; two hydrogens are the same</td></tr>
+  <tr><td>Alanine, CH<sub>3</sub>CH(NH<sub>2</sub>)COOH</td><td>&minus;NH<sub>2</sub>, &minus;COOH, &minus;H, &minus;CH<sub>3</sub></td><td>Yes</td></tr>
+  <tr><td>Butan-2-ol, CH<sub>3</sub>CH(OH)C<sub>2</sub>H<sub>5</sub></td><td>&minus;OH, &minus;H, &minus;CH<sub>3</sub>, &minus;C<sub>2</sub>H<sub>5</sub></td><td>Yes</td></tr>
+  <tr><td>Propan-2-ol, CH<sub>3</sub>CH(OH)CH<sub>3</sub></td><td>&minus;OH, &minus;H, &minus;CH<sub>3</sub>, &minus;CH<sub>3</sub></td><td>No &mdash; two methyl groups are the same</td></tr>
+  <tr><td>2-hydroxypropanoic acid (lactic acid)</td><td>&minus;OH, &minus;H, &minus;CH<sub>3</sub>, &minus;COOH</td><td>Yes</td></tr>
+</table>
+
+<p>Glycine is therefore the only one of the twenty amino acids coded for in proteins that is <em>not</em> chiral. All the others exist as a pair of enantiomers, and in living organisms essentially only one of each pair &mdash; the L-form &mdash; is used to build proteins.</p>
+
+<h3>Drawing Optical Isomers</h3>
+
+<p>The marks in this question are for showing three dimensions properly, so use the wedge-and-dash convention: two ordinary lines in the plane of the paper, one bold wedge coming towards you, one dashed line going away. Draw the first isomer, then draw a vertical mirror line and reflect every group across it.</p>
+
+<!-- SVG: enantiomers of alanine -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 500 250" style="max-width: 560px; width: 100%; height: auto; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px;" xmlns="http://www.w3.org/2000/svg">
+  <text x="250" y="22" text-anchor="middle" font-family="system-ui" font-size="13" font-weight="bold" fill="#1a1a2e">The Two Enantiomers of Alanine</text>
+  <text x="250" y="39" text-anchor="middle" font-family="system-ui" font-size="10" fill="#94a3b8">Non-superimposable mirror images &mdash; rotate one as you like, it will never match the other</text>
+  <!-- mirror line -->
+  <line x1="250" y1="55" x2="250" y2="225" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="250" y="243" text-anchor="middle" font-family="system-ui" font-size="9" fill="#94a3b8">mirror plane</text>
+  <!-- LEFT molecule -->
+  <text x="130" y="80" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">COOH</text>
+  <line x1="130" y1="88" x2="130" y2="130" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="130" cy="140" r="9" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="130" y="144" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">C</text>
+  <text x="142" y="133" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">*</text>
+  <line x1="130" y1="149" x2="130" y2="185" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="130" y="200" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">CH<tspan baseline-shift="sub" font-size="75%">3</tspan></text>
+  <!-- bold wedge to NH2 (towards viewer), on the left -->
+  <path d="M122,137 L72,122 L72,132 Z" fill="#16A34A"/>
+  <text x="55" y="122" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">H<tspan baseline-shift="sub" font-size="75%">2</tspan>N</text>
+  <!-- dashed bond to H (away), on the right -->
+  <line x1="139" y1="146" x2="182" y2="166" stroke="#7c3aed" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="192" y="171" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#7c3aed">H</text>
+  <!-- RIGHT molecule (mirrored) -->
+  <text x="370" y="80" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">COOH</text>
+  <line x1="370" y1="88" x2="370" y2="130" stroke="#1a1a2e" stroke-width="2"/>
+  <circle cx="370" cy="140" r="9" fill="#dbeafe" stroke="#1a73e8" stroke-width="2"/>
+  <text x="370" y="144" text-anchor="middle" font-family="system-ui" font-size="10" font-weight="bold" fill="#1a73e8">C</text>
+  <text x="352" y="133" font-family="system-ui" font-size="12" font-weight="bold" fill="#DC2626">*</text>
+  <line x1="370" y1="149" x2="370" y2="185" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="370" y="200" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#1a1a2e">CH<tspan baseline-shift="sub" font-size="75%">3</tspan></text>
+  <path d="M378,137 L428,122 L428,132 Z" fill="#16A34A"/>
+  <text x="448" y="122" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#16A34A">NH<tspan baseline-shift="sub" font-size="75%">2</tspan></text>
+  <line x1="361" y1="146" x2="318" y2="166" stroke="#7c3aed" stroke-width="2" stroke-dasharray="3,3"/>
+  <text x="308" y="171" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="bold" fill="#7c3aed">H</text>
+  <!-- key -->
+  <rect x="60" y="212" width="160" height="22" rx="5" fill="#dcfce7" stroke="#16A34A" stroke-width="1"/>
+  <text x="140" y="227" text-anchor="middle" font-family="system-ui" font-size="9" fill="#166534">bold wedge = towards you</text>
+  <rect x="280" y="212" width="160" height="22" rx="5" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="360" y="227" text-anchor="middle" font-family="system-ui" font-size="9" fill="#5b21b6">dashed = away from you</text>
+</svg>
+</div>
+
+<h3>Why the Two Forms Are Not the Same</h3>
+
+<p>A pair of enantiomers have identical melting point, boiling point, density, solubility and ordinary chemical reactivity, because every bond in one is the same as the corresponding bond in the other. They differ in only two respects, and both follow from their handedness:</p>
+
+<ul>
+  <li>They rotate the plane of <strong>plane-polarised light</strong> by equal amounts in opposite directions &mdash; one clockwise, one anticlockwise. This is what "optical" isomerism is named after, and it is how the two forms are told apart in the laboratory, using a polarimeter.</li>
+  <li>They behave differently towards <em>other</em> chiral molecules. Enzymes, receptors and antibodies are built from L-amino acids and are themselves chiral, so a chiral active site fits one enantiomer of a substrate or drug and not the other &mdash; exactly the lock-and-key idea that section 5 returns to.</li>
+</ul>
+
+<div class="definition">
+  <strong>Racemic mixture (racemate):</strong> An equal mixture of the two enantiomers. It shows no rotation of plane-polarised light, because the two opposite rotations cancel exactly. Ordinary laboratory synthesis from achiral starting materials always gives a racemate, since the reagent is equally likely to attack either face of a planar intermediate.
+</div>
+
+<h3>Why This Matters for Medicines</h3>
+
+<p>Because a receptor site can distinguish enantiomers, the two forms of a chiral drug can have quite different effects. Only one enantiomer of thalidomide acts as the intended sedative; the other is a teratogen, and the two interconvert in the body, so even administering the pure "safe" form would not have prevented harm. In the case of ibuprofen only the S-enantiomer is the active anti-inflammatory, but the body converts much of the inactive R-form into it, so the racemate can still be sold. Producing a single enantiomer is expensive &mdash; it needs a chiral starting material, a chiral catalyst, an enzyme, or separation of the racemate &mdash; but it halves the dose needed and removes whatever the unwanted enantiomer would have done.</p>
+
+<div class="exam-tip">
+  <strong>Exam Tip:</strong> Three marks are regularly lost here. First, when asked to identify chiral centres in a large molecule, check <em>every</em> carbon systematically rather than guessing &mdash; and remember a carbon in a C=C or a benzene ring can never be chiral, because it has only three groups attached. Second, when asked to draw the isomers, you must use wedges and dashes; two flat structures drawn side by side score nothing. Third, if asked how the isomers differ, "they rotate plane-polarised light in opposite directions" is the physical difference &mdash; do not say they have different melting points or different chemical reactions with ordinary achiral reagents, because they do not.
+</div>
+
+<!-- ============================================================ -->
+<h2>3. Polymers</h2>
 
 <h3>Addition Polymers</h3>
 <p>Formed from alkene monomers by breaking C=C double bonds. No by-product is formed. Examples: poly(ethene), poly(propene), PVC, PTFE. They are non-biodegradable and chemically inert (strong C&minus;C backbone).</p>
@@ -99,7 +193,7 @@
 
 
 <!-- ============================================================ -->
-<h2>3. DNA and RNA</h2>
+<h2>4. DNA and RNA</h2>
 
 <p>Proteins are condensation polymers of amino acids. DNA and RNA are condensation polymers too, built from a different monomer: the nucleotide.</p>
 
@@ -223,7 +317,7 @@
 </div>
 
 <!-- ============================================================ -->
-<h2>4. Enzyme Catalysis and Molecular Recognition</h2>
+<h2>5. Enzyme Catalysis and Molecular Recognition</h2>
 
 <div class="definition">
   <strong>Enzyme:</strong> A protein that acts as a catalyst for a biological reaction. The substrate binds to a small region called the <strong>active site</strong>, whose shape and chemistry are created by the way the protein chain folds &mdash; that is, the active site is part of the tertiary structure.
