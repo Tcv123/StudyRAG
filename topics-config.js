@@ -267,13 +267,13 @@
       topics: [
         // The ten H433 storylines, in the order OCR teaches them. H433 has no
         // "module" structure — do not reintroduce the old S1-S6 names.
-        { id: 'EL', name: 'Elements of Life', sub: 'Atomic structure, isotopes, bonding, shapes, moles, titrations' },
+        { id: 'EL', name: 'Elements of Life', sub: 'Atomic structure, spectra, bonding, shapes, moles, titrations, ion tests' },
         { id: 'DF', name: 'Developing Fuels', sub: 'Enthalpy cycles, alkanes, alkenes, cracking, addition polymers' },
         { id: 'ES', name: 'Elements from the Sea', sub: 'Halogens, redox, electrolysis, equilibrium, atom economy' },
         { id: 'OZ', name: 'The Ozone Story', sub: 'Rates, radicals, intermolecular bonding, haloalkanes' },
         { id: 'WM', name: 'What\'s in a Medicine?', sub: 'Alcohols and phenols, esters, IR and MS, chromatography' },
-        { id: 'CI', name: 'The Chemical Industry', sub: 'Rate equations, Arrhenius, Kc and Kp, industrial conditions' },
-        { id: 'PL', name: 'Polymers and Life', sub: 'Amines, amino acids, proteins, condensation polymers, NMR' },
+        { id: 'CI', name: 'The Chemical Industry', sub: 'Rate equations, Arrhenius, Kc and Kp, nitrogen chemistry, industrial conditions' },
+        { id: 'PL', name: 'Polymers and Life', sub: 'Amines, amino acids, optical isomerism, proteins, condensation polymers, NMR' },
         { id: 'O',  name: 'Oceans', sub: 'Lattice and hydration enthalpies, entropy, pH, buffers, Ksp' },
         { id: 'DM', name: 'Developing Metals', sub: 'Electrode potentials, cells, transition metal complexes' },
         { id: 'CD', name: 'Colour by Design', sub: 'Arenes, dyes and diazonium salts, carbonyl compounds, GLC' },
