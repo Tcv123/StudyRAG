@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAG Learning — Theme 2.1 National Economic Performance — Edexcel B</title>
+<title>RAG Learning — Theme 2.1 Productivity and National Economic Performance — Edexcel B</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.7; padding: 40px 24px; }
@@ -38,7 +38,7 @@ tr:nth-child(even) { background: #f8fafc; }
 <div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
 
 
-<h1>Theme 2.1 National Economic Performance — Edexcel B</h1>
+<h1>Theme 2.1 Productivity and National Economic Performance — Edexcel B</h1>
 
 <!-- ===== GDP ===== -->
 <h2>1. Measuring National Income — GDP</h2>
@@ -364,59 +364,108 @@ The decline of coal mining, steel production, and shipbuilding in the 1980s left
 The global financial crisis triggered the UK's deepest recession since WWII. GDP fell by 6.3% from peak to trough. Unemployment rose from around 5% to over 8% (peaking at 8.5% in late 2011). The banking system was on the verge of collapse — the government had to nationalise Northern Rock and inject £45.5 billion into RBS and over £20 billion into Lloyds. The Bank of England cut rates to 0.5% and introduced quantitative easing. The fiscal deficit reached over 10% of GDP. The recovery was slow — real GDP did not return to its pre-crisis peak until 2013, and the decade of low productivity growth that followed is called the "lost decade."
 </div>
 
-<!-- ===== PHILLIPS CURVE ===== -->
-<h2>6. The Phillips Curve</h2>
+<!-- ===== PRODUCTIVE EFFICIENCY ===== -->
+<h2>6. Productive Efficiency</h2>
 
+<p>Spec 2.3. National economic performance is not only a set of headline numbers &mdash; it is built out of how efficiently individual firms turn inputs into output. This section moves from the macro picture to the factory floor and back again.</p>
+
+<h3>6.1 Productivity</h3>
 <div class="def-box">
-<strong>Phillips Curve:</strong> An economic model showing the short-run inverse relationship between the rate of unemployment and the rate of inflation — as unemployment falls, inflation tends to rise, and vice versa. This implies a policy trade-off.
+<strong>Productivity:</strong> output per unit of input in a given time period. Labour productivity is usually measured as output per worker or output per hour worked.
+</div>
+<div class="eq">Labour productivity = total output &divide; number of workers (or hours worked)</div>
+
+<div class="tip-box">
+<strong>Worked example.</strong> A plant produces 96,000 units a year with 60 workers. Labour productivity = 96,000 &divide; 60 = <strong>1,600 units per worker per year</strong>. After investing in new machinery, output rises to 115,200 units with 64 workers: 115,200 &divide; 64 = <strong>1,800 units per worker</strong>. Percentage change in productivity = (1,800 &minus; 1,600) &divide; 1,600 &times; 100 = <strong>12.5%</strong>. Note that output rose 20% while productivity rose only 12.5% &mdash; part of the extra output came from hiring, not from working more efficiently. Separating those two is exactly what a data-response question is testing.
 </div>
 
-<div class="diagram-box">
-<svg viewBox="0 0 440 350" width="440" height="350">
-  <line x1="60" y1="300" x2="400" y2="300" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="60" y1="300" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="400,300 392,295 392,305" fill="#1a1a2e"/>
-  <polygon points="60,20 55,28 65,28" fill="#1a1a2e"/>
-  <!-- Short-run Phillips Curve -->
-  <path d="M 100 60 Q 160 120 200 180 Q 250 260 380 280" fill="none" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="375" y="270" font-size="13" fill="#1a73e8" font-weight="600">SRPC</text>
-  <!-- Long-run Phillips Curve -->
-  <line x1="240" y1="40" x2="240" y2="290" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="8,5"/>
-  <text x="248" y="50" font-size="13" fill="#dc2626" font-weight="600">LRPC (NRU)</text>
-  <!-- Labels -->
-  <text x="405" y="305" font-size="14" fill="#1a1a2e" font-weight="600">Unemployment (%)</text>
-  <text x="15" y="18" font-size="14" fill="#1a1a2e" font-weight="600">Inflation (%)</text>
-  <!-- Points -->
-  <circle cx="150" cy="100" r="4" fill="#1a73e8"/>
-  <text x="110" y="95" font-size="12" fill="#1a73e8">Low U, High Inf</text>
-  <circle cx="330" cy="260" r="4" fill="#1a73e8"/>
-  <text x="270" y="252" font-size="12" fill="#1a73e8">High U, Low Inf</text>
-</svg>
-<div class="diagram-caption">Figure 4: The short-run Phillips Curve (SRPC) shows the unemployment-inflation trade-off. The long-run Phillips Curve (LRPC) is vertical at the natural rate of unemployment.</div>
+<h4>Factors influencing productivity</h4>
+<ul>
+  <li><strong>Capital per worker</strong> &mdash; better machinery, software and premises. This is the main long-run driver, and it requires investment, which requires finance.</li>
+  <li><strong>Skills, education and training</strong> &mdash; human capital. Slow to build, easily lost if trained workers leave.</li>
+  <li><strong>Management quality</strong> &mdash; how work is organised, scheduled and measured. Often the cheapest source of gains.</li>
+  <li><strong>Motivation</strong> &mdash; pay structure, job design, security.</li>
+  <li><strong>Technology and process innovation</strong> &mdash; automation, better information systems.</li>
+</ul>
+
+<h4>Why productivity matters beyond the firm</h4>
+<ul>
+  <li><strong>Productivity and competitiveness:</strong> higher output per worker lowers unit labour cost, so the firm can undercut rivals or hold price and earn a wider margin. The same logic applies to a whole economy's exports.</li>
+  <li><strong>Productivity and wages:</strong> over the long run, real wages can only rise sustainably if output per worker rises. A pay rise not matched by productivity raises unit costs and feeds through to prices.</li>
+  <li><strong>Productivity and economic growth:</strong> an economy grows either by using more inputs or by using them better. Once the workforce stops growing, productivity growth is the only source of rising GDP per head &mdash; which links this section directly back to the living-standards discussion in section 1.</li>
+</ul>
+
+<h4>Labour-intensive and capital-intensive production</h4>
+<table>
+  <tr><th></th><th>Labour intensive</th><th>Capital intensive</th></tr>
+  <tr><td>Cost structure</td><td>Mostly variable cost &mdash; wages rise and fall with output</td><td>Mostly fixed cost &mdash; machinery must be paid for whether it runs or not</td></tr>
+  <tr><td>Flexibility</td><td>Output can be scaled up or down quickly</td><td>Hard to scale down; high break-even output</td></tr>
+  <tr><td>Best suited to</td><td>Bespoke, variable or service work; low labour-cost locations</td><td>Standardised, high-volume output</td></tr>
+  <tr><td>Risk in a downturn</td><td>Lower &mdash; costs fall with sales</td><td>Higher &mdash; fixed costs continue while revenue falls</td></tr>
+</table>
+
+<h3>6.2 Capacity Utilisation</h3>
+<div class="def-box">
+<strong>Capacity utilisation:</strong> the proportion of a firm's maximum possible output that it is currently producing.
+</div>
+<div class="eq">Capacity utilisation (%) = current output &divide; maximum possible output &times; 100</div>
+<p><strong>Full capacity</strong> means output is at the maximum the existing plant and workforce can produce. <strong>Spare capacity</strong> is the gap between that maximum and actual output.</p>
+
+<div class="tip-box">
+<strong>Worked example.</strong> A factory can make 25,000 units a month and is currently making 17,500. Capacity utilisation = 17,500 &divide; 25,000 &times; 100 = <strong>70%</strong>.<br><br>
+Fixed costs are &pound;150,000 a month, so fixed cost per unit = &pound;150,000 &divide; 17,500 = <strong>&pound;8.57</strong> (to 2 d.p.).<br>
+If orders rise to 22,500 units, utilisation = 22,500 &divide; 25,000 &times; 100 = <strong>90%</strong>, and fixed cost per unit falls to &pound;150,000 &divide; 22,500 = <strong>&pound;6.67</strong>.<br><br>
+Raising utilisation from 70% to 90% cut fixed cost per unit by &pound;8.57 &minus; &pound;6.67 = <strong>&pound;1.90</strong>, a fall of 1.90 &divide; 8.57 &times; 100 = <strong>22.2%</strong> &mdash; without buying a single new machine. That is the whole argument for managing capacity.
 </div>
 
-<h3>6.1 Short-Run Phillips Curve</h3>
-<p>In the short run, there appears to be a trade-off: governments can reduce unemployment by accepting higher inflation (expansionary policy), or reduce inflation by accepting higher unemployment (contractionary policy). This was observed empirically by A.W. Phillips in 1958.</p>
+<table>
+  <tr><th>Under-utilisation (low %)</th><th>Over-utilisation (near or at 100%)</th></tr>
+  <tr><td>Fixed costs spread over few units, so average cost is high</td><td>No slack to handle a breakdown, a rush order or an absence</td></tr>
+  <tr><td>Idle machinery and staff; morale and job-security worries</td><td>Machines run without maintenance windows, so failures rise</td></tr>
+  <tr><td>Signals to rivals and investors that demand is weak</td><td>Overtime and rushed work raise costs and lower quality</td></tr>
+  <tr><td>But: room to accept a large new order immediately</td><td>Staff burnout, higher turnover, missed delivery dates</td></tr>
+</table>
+<p>Most firms therefore aim for high but not maximum utilisation &mdash; typically somewhere around 85&ndash;90% &mdash; leaving a deliberate margin for maintenance and for demand that arrives unannounced.</p>
 
-<h3>6.2 Long-Run Phillips Curve (Monetarist View)</h3>
-<p>Milton Friedman and Edmund Phelps argued that the trade-off is only temporary. In the long run, the Phillips Curve is <strong>vertical</strong> at the natural rate of unemployment. If the government tries to push unemployment below the NRU, inflation accelerates — and once expectations adjust, unemployment returns to the NRU but at a higher rate of inflation. This creates a <strong>stagflation</strong> risk.</p>
+<h4>Ways of improving capacity utilisation</h4>
+<ul>
+  <li><strong>Raise demand</strong> &mdash; promotion, new markets, off-peak pricing to fill quiet periods.</li>
+  <li><strong>Subcontract in</strong> &mdash; produce for another firm under its brand, filling spare capacity with someone else's orders.</li>
+  <li><strong>Rationalise</strong> &mdash; cut the maximum: close a site, sell equipment, reduce hours. This raises utilisation by shrinking the denominator, and it is largely irreversible.</li>
+  <li><strong>Redeploy</strong> &mdash; move staff and machinery to product lines where demand is stronger.</li>
+</ul>
 
-<h3>6.3 Breakdown of the Phillips Curve</h3>
-<p>The relationship broke down in the 1970s when the UK experienced <strong>stagflation</strong> — high inflation AND high unemployment simultaneously, caused by supply-side shocks (oil crises of 1973 and 1979). This could not be explained by the original Phillips Curve and supported the monetarist/expectations-augmented view.</p>
+<h3>6.3 Efficiency and Competitiveness Using Lean Production</h3>
+<p><strong>Lean production</strong> is a set of methods aimed at producing more with less &mdash; less stock, less waste, less time, less rework.</p>
+<table>
+  <tr><th>Method</th><th>What it does</th><th>What it costs or risks</th></tr>
+  <tr><td><strong>Quality control</strong></td><td>Inspects finished output and rejects defects at the end of the line</td><td>Defective units are already made, so the materials and labour in them are wasted</td></tr>
+  <tr><td><strong>Quality assurance</strong></td><td>Builds checks into every stage so defects are caught where they occur</td><td>Needs training and worker responsibility at every stage</td></tr>
+  <tr><td><strong>Total Quality Management (TQM)</strong></td><td>Makes quality the responsibility of every employee, with the internal &quot;next stage&quot; treated as a customer; aims at zero defects</td><td>A culture change, not a procedure &mdash; slow to embed and easily lost when staff turn over</td></tr>
+  <tr><td><strong>Kaizen (continuous improvement)</strong></td><td>Many small improvements suggested by the people doing the work, applied continuously rather than in big projects</td><td>Requires genuine willingness to act on suggestions; gains are incremental, so it will not rescue a failing product</td></tr>
+  <tr><td><strong>Just in time (JIT)</strong></td><td>Stock arrives as it is needed rather than being held; frees warehouse space and working capital</td><td>No buffer, so one late delivery, strike or border delay stops production entirely</td></tr>
+</table>
 
 <div class="eval-box">
-<strong>Evaluation: The Phillips Curve</strong>
+<strong>Evaluation: lean production and competitive advantage</strong>
 <ul>
-  <li>The short-run trade-off appears to hold in many periods but is unstable and shifts.</li>
-  <li>Supply-side shocks can cause both unemployment and inflation to rise simultaneously (stagflation).</li>
-  <li>Expectations play a crucial role — if people expect inflation, they demand higher wages, perpetuating it.</li>
-  <li>The NRU itself is not fixed — supply-side policies can reduce it, improving the trade-off.</li>
-  <li>In the 2010s, low unemployment coexisted with low inflation in many countries — the curve appeared to have flattened, although the 2021-23 inflation surge in tight labour markets suggests the relationship can steepen again.</li>
+  <li><strong>The cost case:</strong> less stock means less working capital tied up and lower storage and insurance costs; fewer defects means less wasted material and less rework.</li>
+  <li><strong>The revenue case:</strong> consistent quality supports a price premium and repeat purchase; shorter development lead times let the firm reach the market before rivals, which matters most where products date quickly.</li>
+  <li><strong>The resilience case against:</strong> JIT converts a cost saving into a supply-chain risk. A firm holding no buffer stock saves money in every normal year and loses production in the abnormal one.</li>
+  <li><strong>It depends on</strong> supplier reliability, the distance and complexity of the supply chain, how predictable demand is, and whether the workforce is stable enough for TQM and Kaizen to take hold.</li>
+  <li><strong>Counter-argument:</strong> lean methods are widely known and widely copied, so they may be necessary to compete without being sufficient to win. Sustained advantage usually needs something rivals cannot imitate.</li>
 </ul>
 </div>
 
+<h3>6.4 Impact on Costs and Sales Revenue</h3>
+<ul>
+  <li><strong>Average costs fall</strong> for two separate reasons: higher utilisation spreads fixed costs over more units, and less waste lowers variable cost per unit. Keep the two mechanisms apart in an answer &mdash; examiners reward the distinction.</li>
+  <li><strong>Minimising waste of resources</strong> &mdash; scrap, rework, excess stock, unnecessary movement and waiting time are all inputs paid for that produce nothing saleable.</li>
+  <li><strong>Short product development lead times</strong> &mdash; getting from idea to sale faster means responding to a demand shift before rivals, charging a higher launch price, and recovering development costs sooner.</li>
+</ul>
+
 <div class="tip-box">
-<strong>Exam Tip:</strong> When discussing macroeconomic objectives, always acknowledge potential conflicts — e.g., reducing unemployment may cause inflation (Phillips Curve), boosting growth may worsen the current account (sucking in imports). The best answers discuss the trade-offs and explain when they may or may not apply.
+<strong>Exam Tip:</strong> When discussing macroeconomic objectives, always acknowledge potential conflicts &mdash; reducing unemployment by raising demand may push up inflation; boosting growth may worsen the current account as imports are sucked in. Productivity is the one variable that can relieve several conflicts at once, because it allows output and real wages to rise without adding to cost pressure. The best answers explain when a trade-off binds and when it does not.
 </div>
 
 </div>

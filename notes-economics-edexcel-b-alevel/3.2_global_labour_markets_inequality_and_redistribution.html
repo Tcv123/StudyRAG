@@ -595,48 +595,84 @@ UK income inequality rose very sharply in the 1980s — the Gini climbed from ro
   <li><strong>Access to credit and secure property rights</strong>, so that poor households can smooth consumption and invest.</li>
 </ul>
 
-<!-- ===== KUZNETS CURVE ===== -->
-<h2>11. The Kuznets Curve</h2>
+<!-- ===== IMPACT OF INEQUALITY ===== -->
+<h2>11. The Impact of Inequality on Individuals, Firms and the Economy</h2>
 
-<div class="def-box">
-<strong>Kuznets curve:</strong> Simon Kuznets (1955) hypothesised that as an economy industrialises and income per head rises, inequality first increases and then decreases — an inverted U. Early industrialisation moves some workers into high-productivity urban sectors while others remain in low-productivity agriculture, widening the gap; as development matures, education spreads, labour becomes scarcer and redistribution expands, narrowing it again.
-</div>
+<p>Spec 3.6.3 asks a question that measurement alone cannot answer: once you know the Gini coefficient, what follows from it? The specification splits the answer into three levels, and a strong answer keeps them apart.</p>
 
 <div class="diagram-box">
-<svg viewBox="0 0 440 320" width="440" height="320">
-  <line x1="60" y1="270" x2="410" y2="270" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="60" y1="270" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="410,270 402,265 402,275" fill="#1a1a2e"/>
-  <polygon points="60,20 55,28 65,28" fill="#1a1a2e"/>
-  <!-- Inverted U Kuznets curve -->
-  <path d="M 80 230 Q 140 100 220 70 Q 290 45 360 120 Q 395 160 410 200" fill="none" stroke="#1a73e8" stroke-width="3"/>
-  <text x="220" y="58" font-size="12" fill="#1a73e8" font-weight="600">Peak inequality</text>
-  <!-- Country examples along the curve -->
-  <circle cx="100" cy="210" r="4" fill="#059669"/>
-  <text x="60" y="207" font-size="10" fill="#059669" font-weight="600">Low-income</text>
-  <text x="60" y="220" font-size="10" fill="#059669">(largely agricultural)</text>
-  <circle cx="200" cy="80" r="4" fill="#dc2626"/>
-  <text x="155" y="72" font-size="10" fill="#dc2626" font-weight="600">Middle-income</text>
-  <text x="155" y="85" font-size="10" fill="#dc2626">(industrialising)</text>
-  <circle cx="370" cy="130" r="4" fill="#2563eb"/>
-  <text x="355" y="118" font-size="10" fill="#2563eb" font-weight="600">High-income</text>
-  <text x="355" y="131" font-size="10" fill="#2563eb">(mature)</text>
-  <!-- Axis labels -->
-  <text x="130" y="295" font-size="13" fill="#1a1a2e" font-weight="600">GDP per capita</text>
-  <text x="15" y="145" font-size="13" fill="#1a1a2e" font-weight="600" transform="rotate(-90,15,145)">Inequality (Gini)</text>
+<svg viewBox="0 0 460 300" width="460" height="300">
+  <rect x="20" y="24" width="130" height="250" rx="8" fill="#e8f0fe" stroke="#1a73e8" stroke-width="2"/>
+  <rect x="165" y="24" width="130" height="250" rx="8" fill="#fef7e0" stroke="#f59e0b" stroke-width="2"/>
+  <rect x="310" y="24" width="130" height="250" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="85" y="48" font-size="14" font-weight="600" fill="#1a73e8" text-anchor="middle">INDIVIDUALS</text>
+  <text x="230" y="48" font-size="14" font-weight="600" fill="#b45309" text-anchor="middle">FIRMS</text>
+  <text x="375" y="48" font-size="14" font-weight="600" fill="#166534" text-anchor="middle">THE ECONOMY</text>
+  <g font-size="11" fill="#1a1a2e">
+    <text x="30" y="76">Health and life</text><text x="30" y="90">expectancy gaps</text>
+    <text x="30" y="112">Less education</text><text x="30" y="126">and training</text>
+    <text x="30" y="148">Little or no saving</text>
+    <text x="30" y="170">Housing insecurity</text>
+    <text x="30" y="192">Low social</text><text x="30" y="206">mobility</text>
+    <text x="30" y="228">Weaker incentives</text><text x="30" y="242">at the bottom</text>
+
+    <text x="175" y="76">Low pay linked to</text><text x="175" y="90">low productivity</text>
+    <text x="175" y="112">High staff turnover</text><text x="175" y="126">and training costs</text>
+    <text x="175" y="148">Smaller market for</text><text x="175" y="162">mid-priced goods</text>
+    <text x="175" y="184">Skills shortages</text>
+    <text x="175" y="206">More absence and</text><text x="175" y="220">ill health</text>
+    <text x="175" y="242">Weaker demand</text><text x="175" y="256">in poorer regions</text>
+
+    <text x="320" y="76">Human capital</text><text x="320" y="90">left undeveloped</text>
+    <text x="320" y="112">Higher welfare and</text><text x="320" y="126">health spending</text>
+    <text x="320" y="148">Lower tax revenue</text><text x="320" y="162">per head</text>
+    <text x="320" y="184">Consumption is</text><text x="320" y="198">less stable</text>
+    <text x="320" y="220">Pressure for</text><text x="320" y="234">redistribution</text>
+    <text x="320" y="256">Slower growth in</text><text x="320" y="270">GDP per head</text>
+  </g>
 </svg>
-<div class="diagram-caption">Figure 5: The Kuznets curve — an inverted-U relationship between income per head and inequality. Inequality rises during early industrialisation and then falls as the economy matures.</div>
+<div class="diagram-caption">Figure 5: The three levels the specification asks for. The link between the first two columns runs both ways &mdash; low pay depresses productivity, and low productivity holds down pay.</div>
+</div>
+
+<h3>11.1 On Individuals</h3>
+<ul>
+  <li><strong>Health and longevity.</strong> Lower income is associated with worse health outcomes and shorter healthy life expectancy, partly through housing quality, diet and stress, and partly through later diagnosis.</li>
+  <li><strong>Education and human capital.</strong> A household with no financial slack cannot fund further study, unpaid internships or a move to where the jobs are. The talent is there; the finance is not.</li>
+  <li><strong>Saving and wealth.</strong> Income near subsistence leaves nothing to save, so wealth gaps widen faster than income gaps and then persist across generations through inheritance.</li>
+  <li><strong>Incentives.</strong> This cuts both ways, and the specification names it twice. Some inequality of reward is what makes education, effort and risk-taking worth undertaking; too much, combined with high effective deduction rates at the bottom, produces the poverty trap set out in section 10.</li>
+</ul>
+
+<h3>11.2 On Firms: the Low-Income, Low-Productivity Connection</h3>
+<p>Spec 3.6.3(b) singles this out, so it deserves its own paragraph. The connection runs in both directions, which is what makes it hard to break:</p>
+<ul>
+  <li><strong>Low income &rarr; low productivity.</strong> Workers who arrive underfed, poorly housed, in ill health or without training produce less per hour. Employers facing a cheap labour supply have little reason to invest in the machinery that would raise output per worker &mdash; why buy a machine when a worker is cheaper?</li>
+  <li><strong>Low productivity &rarr; low income.</strong> A firm cannot sustainably pay more than the value a worker adds, so low productivity caps wages. Raising pay without raising productivity raises unit labour costs and pushes the firm out of its market.</li>
+  <li><strong>Consequences the firm actually feels:</strong> high staff turnover and the recruitment and training costs that come with it; higher absence; more supervision; and, where inequality is wide, a shrinking middle market &mdash; demand polarises towards the cheapest and the most premium offers, and mid-priced ranges struggle.</li>
+</ul>
+<div class="tip-box">
+<strong>Exam use:</strong> this is the strongest available counter to the claim that low pay is simply good for business. A firm gains from paying less only if productivity, turnover and absence are unaffected &mdash; and the evidence is that at the bottom of the distribution they are not. That is an evaluation point, not an assertion, so attach it to the specific labour market in the extract.
+</div>
+
+<h3>11.3 On the Economy</h3>
+<ul>
+  <li><strong>Growth.</strong> Unused human capital is lost output that never appears in GDP. Against that, some inequality funds saving and investment, since higher-income households save a larger share of income &mdash; so the relationship between inequality and growth is not one-directional, and the balance depends on how the inequality arose.</li>
+  <li><strong>Demand.</strong> Poorer households have a higher marginal propensity to consume. A more unequal distribution of any given national income therefore tends to mean weaker and more credit-dependent consumption.</li>
+  <li><strong>The public finances.</strong> Wide inequality raises spending on benefits, housing support and health while narrowing the tax base, so it shows up on both sides of the government's budget.</li>
+  <li><strong>Cohesion and policy risk.</strong> Sustained inequality raises political pressure for redistribution, higher taxes on capital and tighter labour regulation &mdash; a risk firms price into long-term investment decisions.</li>
+</ul>
+
+<div class="case-study">
+<strong class="cs-title">Case Study: Measuring the UK Gap</strong><br>
+ONS measured the UK's Gini coefficient for household disposable income at 32.9% in the financial year ending 2024, against 33.1% the year before &mdash; a change ONS itself described as statistically non-significant. On a longer view the measure sits below its pre-pandemic level of 35.4% in FYE 2020 and below 34.7% a decade earlier in FYE 2015. Two lessons for an answer. First, single-year movements in the Gini are usually noise, so do not build an argument on one. Second, a falling Gini is not automatically good news: ONS attributed the FYE 2024 fall partly to lower mean disposable income among both the poorest and the richest households, which is inequality narrowing because the top fell, not because the bottom rose.
 </div>
 
 <div class="eval-box">
-<strong>Evaluation: Is the Kuznets Curve Valid?</strong>
+<strong>Evaluation: how much does inequality actually matter for growth?</strong>
 <ul>
-  <li><strong>Supporting evidence:</strong> the UK, the US and Western Europe broadly followed this path — inequality rose through 19th-century industrialisation and fell through the mid-20th century as mass education, trade unions, progressive taxation and welfare states developed.</li>
-  <li><strong>Counter-evidence:</strong> Brazil and South Africa reached middle- and upper-middle incomes without descending the right-hand side. China's growth transformed poverty while its official Gini rose to 0.467 by 2022, remaining high.</li>
-  <li><strong>The post-1980 reversal:</strong> inequality rose again in the US, the UK and many rich economies from the 1980s, despite very high income levels — technology, globalisation, financial deregulation and weaker unions all pushing the other way. The simple Kuznets prediction cannot explain this.</li>
-  <li><strong>It is descriptive, not causal.</strong> The fall on the right-hand side of the curve historically required deliberate policy — universal education, progressive tax, collective bargaining — not an automatic mechanism. Nothing guarantees it happens.</li>
-  <li><strong>Data problems:</strong> Kuznets worked with a handful of countries and short, patchy series; the apparent pattern may partly be an artefact of which countries had data.</li>
-  <li><strong>The environmental Kuznets curve</strong> makes the analogous claim for pollution. It holds reasonably for local pollutants such as particulates and sulphur dioxide, but much less well for CO<sub>2</sub>, partly because rich countries have offshored emissions-intensive production rather than eliminated it.</li>
+  <li><strong>Depends on the cause.</strong> Inequality that reflects genuine differences in effort, skill and risk-taking preserves incentives; inequality that reflects inherited wealth, rationed education or monopoly rent destroys them.</li>
+  <li><strong>Depends on the level of development.</strong> In a low-income economy, concentrating income may be the only way to mobilise savings for investment; in a rich economy with deep capital markets, that argument is much weaker.</li>
+  <li><strong>Depends on mobility.</strong> A wide distribution with high mobility between positions has very different effects from the same distribution with none.</li>
+  <li><strong>Measurement caveat.</strong> The Gini compresses a whole distribution into one number and is relatively insensitive to what happens at the very top and the very bottom &mdash; exactly where the effects discussed above are concentrated. Pair it with the Lorenz curve and with poverty measures before drawing conclusions.</li>
 </ul>
 </div>
 

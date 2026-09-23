@@ -385,9 +385,9 @@
       emoji: '📈',
       page: 'diagnostics/economics-edexcel-b-diagnostic.html',
       topics: [
-        { id: '1.1', name: 'How Markets Work & Surplus', sub: 'Spec 1.1 and 1.3 (plus 2.2 elasticities): scarcity, demand, supply, equilibrium, price mechanism' },
-        { id: '1.2', name: 'Market Failure & Government Intervention', sub: 'Spec 1.5: externalities, social costs and benefits, methods of intervention, government failure' },
-        { id: '2.1', name: 'National Economic Performance', sub: 'Spec 2.5 (plus 2.4.2): the economic cycle, circular flow, inflation, unemployment, GDP and HDI' },
+        { id: '1.1', name: 'Scarcity, Enterprise & How Markets Work', sub: 'Spec 1.1 to 1.3 (plus 2.2 elasticities): scarcity, business objectives, enterprise, demand, supply, price mechanism, PED and YED' },
+        { id: '1.2', name: 'Credit, Market Failure, Costs & Profit', sub: 'Spec 1.4 to 1.6: banks and credit, externalities and intervention, revenue, costs, break-even, profit and cash flow' },
+        { id: '2.1', name: 'Productivity & National Economic Performance', sub: 'Spec 2.5 and 2.3 (plus 2.4.2): the economic cycle, inflation, unemployment, GDP, productivity, capacity utilisation, lean production' },
         { id: '2.2', name: 'Macroeconomic Policy', sub: 'Spec 2.6 and 4.4: objectives, AD/AS, fiscal, monetary and supply-side policy, multiplier, conflicts' },
         { id: '3.1', name: 'Globalisation, Trade & Global Business', sub: 'Spec 3.1 to 3.4 (plus 2.4): globalisation, trade, exchange rates, blocs, expansion, MNCs and FDI' },
         { id: '3.2', name: 'Global Labour Markets, Inequality & Redistribution', sub: 'Spec 3.5 and 3.6: migration, wages, minimum wage, poverty, Lorenz curve and Gini, aid' },

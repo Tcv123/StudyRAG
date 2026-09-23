@@ -5,7 +5,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAG Learning — Theme 1.2 Market Failure — Edexcel B</title>
+<title>RAG Learning — Theme 1.2 Credit, Market Failure, Costs and Profit — Edexcel B</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; background: #fff; color: #1a1a1a; line-height: 1.7; padding: 40px 24px; }
@@ -38,16 +38,73 @@ tr:nth-child(even) { background: #f8fafc; }
 <div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
 
 
-<h1>Theme 1.2 Market Failure — Edexcel B</h1>
+<h1>Theme 1.2 Credit, Market Failure, Costs and Profit — Edexcel B</h1>
+
+<!-- ===== CREDIT ===== -->
+<h2>1. The Role of Credit in the Economy</h2>
+
+<p>Spec 1.4. Firms borrow for two quite different reasons: <strong>capital investment</strong> (a machine, a vehicle, a building &mdash; assets that will earn for years) and <strong>working capital</strong> (stock, wages and bills that must be paid before customers pay you). Borrowing for either is useful and risky at the same time, and the spec wants both halves.</p>
+
+<h3>1.1 The Role of Banks</h3>
+<ul>
+  <li><strong>Channelling savings towards investment.</strong> Households have surplus funds and want them back quickly; firms need money for years. A bank stands between the two, accepting deposits repayable on demand and lending long. This is <em>maturity transformation</em>, and it is why a bank can fail when too many depositors ask at once.</li>
+  <li><strong>Providing credit.</strong> The bank assesses whether the borrower's expected cash flows will cover the repayments, and prices the loan accordingly.</li>
+  <li><strong>Interest rates.</strong> The price of credit. Commercial lending rates move broadly with Bank Rate, but each borrower pays a margin above it reflecting their own risk. The Bank of England held Bank Rate at 3.75% at its 17 September 2026 decision, the sixth consecutive hold since it was cut to that level in December 2025 &mdash; so a firm refinancing in 2026 faced a stable policy rate but still had to negotiate its own margin.</li>
+  <li><strong>Collateral.</strong> An asset the lender can seize if the borrower defaults &mdash; property, equipment, sometimes the owner's own home. Collateral lowers the lender's loss if the borrower defaults, so it lowers the interest rate charged. A firm with few tangible assets, which describes most young service businesses, therefore borrows at a higher rate or not at all.</li>
+</ul>
+
+<h3>1.2 Risk and Liability</h3>
+<div class="def-box">
+<strong>Risk:</strong> the possibility that the actual outcome differs from the expected one &mdash; here, that the business does not generate the cash to repay.
+</div>
+<table>
+  <tr><th></th><th>Unlimited liability</th><th>Limited liability</th></tr>
+  <tr><td>Who</td><td>Sole traders and ordinary partnerships</td><td>Private and public limited companies</td></tr>
+  <tr><td>If the business cannot pay</td><td>The owner's personal assets can be taken to settle business debts</td><td>The shareholder can lose only what they put in</td></tr>
+  <tr><td>Effect on risk-taking</td><td>Discourages large or novel ventures</td><td>Caps the downside, so more capital is offered to risky projects</td></tr>
+  <tr><td>Effect on lenders</td><td>Lender can pursue the owner, so may lend more readily</td><td>Lender's claim stops at the company, so it often demands a personal guarantee anyway</td></tr>
+</table>
+<p>Limited liability is the reason large-scale private investment is possible at all: without it, nobody would buy a small stake in a company whose debts they could be pursued for.</p>
+
+<h3>1.3 Types and Sources of Credit and Finance</h3>
+<table>
+  <tr><th>Type of credit</th><th>What it is</th><th>Best used for</th></tr>
+  <tr><td><strong>Loan</strong></td><td>A fixed sum repaid over an agreed term, usually with interest and often secured</td><td>Capital investment &mdash; matches a long-lived asset to long-term finance</td></tr>
+  <tr><td><strong>Overdraft</strong></td><td>A facility to go below zero on the current account up to a limit; interest only on what is used</td><td>Short gaps in working capital; expensive if used permanently</td></tr>
+  <tr><td><strong>Trade credit</strong></td><td>A supplier delivers now and is paid in, say, 30 or 60 days</td><td>Free short-term finance for the buyer &mdash; and a cash-flow problem for the supplier</td></tr>
+</table>
+<table>
+  <tr><th>Other finance</th><th>What the provider gets</th><th>The trade-off</th></tr>
+  <tr><td><strong>Venture capital</strong></td><td>An equity stake, plus usually a board seat, in a high-risk high-growth firm</td><td>Money plus expertise, at the cost of control and a large share of any success</td></tr>
+  <tr><td><strong>Share capital</strong></td><td>Ownership and a claim on dividends</td><td>No repayment obligation, but ownership is diluted permanently</td></tr>
+  <tr><td><strong>Leasing</strong></td><td>Rental payments; the lessor keeps ownership of the asset</td><td>Use of the asset without a large upfront outlay; total cost over time is higher than buying</td></tr>
+</table>
+<p><strong>Sources that are not credit at all</strong> (spec 1.4.3d): the owner's own capital and personal savings; <strong>retained profit</strong>, the cheapest source because it carries no interest and no dilution, though it is only available to a firm already profitable; <strong>sale of assets</strong>, which raises cash once and removes the asset's future earnings; <strong>individual investors</strong>, often called business angels; and <strong>online collaborative funding</strong> &mdash; crowdfunding, where many small backers each contribute, in return for a reward, a share, or a promised repayment.</p>
+
+<h3>1.4 Challenges in Obtaining Credit, and the Impact of Credit on the Economy</h3>
+<ul>
+  <li><strong>Asymmetric information.</strong> The borrower knows more about their prospects than the lender. The lender responds by demanding collateral, a track record and audited accounts &mdash; exactly what a new firm cannot produce.</li>
+  <li><strong>Size.</strong> Assessing a &pound;40,000 loan costs the bank nearly as much as assessing a &pound;4m one, so small firms face proportionally higher costs and more refusals.</li>
+  <li><strong>The cycle.</strong> Credit conditions tighten precisely when firms most need funds. In an upturn, lending standards loosen, borrowing funds investment and consumption, and demand rises. In a downturn, banks rebuild capital and cut lending, so viable firms fail for want of working capital. Credit therefore <em>amplifies</em> the economic cycle rather than smoothing it.</li>
+</ul>
+
+<div class="eval-box">
+<strong>Evaluation: is easier credit good for the economy?</strong>
+<ul>
+  <li><strong>For:</strong> investment that raises productive capacity gets funded; firms survive temporary cash shortfalls; consumers smooth spending, stabilising demand.</li>
+  <li><strong>Against:</strong> cheap credit can fund asset purchases rather than productive investment, inflating prices; highly indebted firms and households cut spending sharply when rates rise, deepening downturns.</li>
+  <li><strong>It depends on</strong> what the credit is used for, how well lenders price risk, and whether borrowers could absorb a rate rise &mdash; which is the question a firm on a variable-rate facility should be asking every year.</li>
+</ul>
+</div>
 
 <!-- ===== INTRODUCTION ===== -->
-<h2>1. What Is Market Failure?</h2>
+<h2>2. What Is Market Failure?</h2>
 
 <div class="def-box">
 <strong>Market failure:</strong> When the free market mechanism leads to a misallocation of resources — the market either over-produces or under-produces certain goods relative to the socially optimal level. Resources are not allocated efficiently, meaning social welfare is not maximised.
 </div>
 
-<h3>1.1 Types of Market Failure</h3>
+<h3>2.1 Types of Market Failure</h3>
 <ul>
   <li><strong>Externalities</strong> — costs or benefits that affect third parties not involved in the transaction.</li>
   <li><strong>Public goods</strong> — goods that the market fails to provide due to non-excludability and non-rivalry.</li>
@@ -73,13 +130,13 @@ tr:nth-child(even) { background: #f8fafc; }
 <p>The socially optimal output is where <strong>MSC = MSB</strong>. If the market produces at a different level, there is a welfare loss (deadweight loss).</p>
 
 <!-- ===== EXTERNALITIES ===== -->
-<h2>2. Externalities</h2>
+<h2>3. Externalities</h2>
 
 <div class="def-box">
 <strong>Externality:</strong> A cost or benefit that arises from an economic transaction and falls on a third party who is not directly involved in the transaction. Externalities cause a divergence between private and social costs or benefits, leading to market failure.
 </div>
 
-<h3>2.1 Negative Externalities of Production</h3>
+<h3>3.1 Negative Externalities of Production</h3>
 <p>When the production of a good imposes costs on third parties. The MPC understates the true cost to society — the MSC is greater than the MPC. The market over-produces relative to the social optimum.</p>
 
 <div class="diagram-box">
@@ -128,7 +185,7 @@ tr:nth-child(even) { background: #f8fafc; }
 The UK's manufacturing and energy sectors impose significant negative externalities through air pollution. According to Public Health England, air pollution contributes to approximately 28,000-36,000 deaths per year in the UK. The market price of goods produced by polluting industries does not reflect the health costs borne by local communities, NHS treatment costs, or environmental damage. This is why the UK runs its own Emissions Trading Scheme (the UK ETS, which replaced EU ETS membership in 2021) — to internalise these external costs and move production closer to the socially optimal level.
 </div>
 
-<h3>2.2 Negative Externalities of Consumption</h3>
+<h3>3.2 Negative Externalities of Consumption</h3>
 <p>When consumption of a good imposes costs on third parties. The MPB overstates the true benefit to society — the MSB is less than the MPB. The market over-consumes relative to the social optimum.</p>
 
 <div class="diagram-box">
@@ -165,11 +222,11 @@ The UK's manufacturing and energy sectors impose significant negative externalit
 
 <p><strong>Examples:</strong> Smoking (passive smoking harms others, NHS costs), alcohol consumption (antisocial behaviour, policing costs, NHS costs), driving (congestion, pollution, accidents affecting third parties).</p>
 
-<h3>2.3 Positive Externalities of Production</h3>
+<h3>3.3 Positive Externalities of Production</h3>
 <p>When production of a good creates benefits for third parties. The MPC overstates the true cost to society — the MSC is less than the MPC. The market under-produces relative to the social optimum.</p>
 <p><strong>Example:</strong> A firm that trains its workers generates positive externalities — those workers may move to other firms, spreading skills across the economy. Bee-keepers produce honey, but their bees also pollinate neighbouring crops, benefiting farmers.</p>
 
-<h3>2.4 Positive Externalities of Consumption</h3>
+<h3>3.4 Positive Externalities of Consumption</h3>
 <p>When consumption of a good creates benefits for third parties. The MPB understates the true benefit to society — the MSB is greater than the MPB. The market under-consumes relative to the social optimum.</p>
 
 <div class="diagram-box">
@@ -211,7 +268,7 @@ The UK's manufacturing and energy sectors impose significant negative externalit
 The UK's COVID-19 vaccination programme is a textbook example of positive consumption externalities. Each person vaccinated not only protects themselves but also reduces the likelihood of transmitting the virus to others (herd immunity). If left to the free market, the vaccine would have been under-consumed — many people would weigh only their private costs and benefits, ignoring the social benefits. The government intervened by making the vaccine free at the point of use and running mass vaccination centres, moving consumption towards the socially optimal level.
 </div>
 
-<h3>2.5 Summary of Externalities</h3>
+<h3>3.5 Summary of Externalities</h3>
 <table>
   <tr><th>Type</th><th>Key Relationship</th><th>Market Outcome</th><th>Solution Direction</th></tr>
   <tr><td>Negative production externality</td><td>MSC &gt; MPC</td><td>Over-production</td><td>Tax, regulation, tradeable permits</td></tr>
@@ -221,16 +278,16 @@ The UK's COVID-19 vaccination programme is a textbook example of positive consum
 </table>
 
 <!-- ===== PUBLIC GOODS ===== -->
-<h2>3. Public Goods</h2>
+<h2>4. Public Goods</h2>
 
 <div class="def-box">
 <strong>Public good:</strong> A good that has two characteristics — <strong>non-excludability</strong> (it is impossible to prevent anyone from consuming it) and <strong>non-rivalry</strong> (one person's consumption does not reduce the amount available for others). Because of these properties, the free market fails to provide public goods — this is known as the <strong>missing market</strong>.
 </div>
 
-<h3>3.1 The Free-Rider Problem</h3>
+<h3>4.1 The Free-Rider Problem</h3>
 <p>Because public goods are non-excludable, rational consumers have an incentive to free-ride — to benefit from the good without paying for it. If everyone free-rides, no one pays, and the good is not provided. This is why the free market under-provides or completely fails to provide public goods.</p>
 
-<h3>3.2 Examples</h3>
+<h3>4.2 Examples</h3>
 <table>
   <tr><th>Public Goods</th><th>Quasi-Public Goods</th><th>Private Goods</th></tr>
   <tr><td>National defence</td><td>Roads (excludable via tolls; rivalrous in congestion)</td><td>Food, clothing</td></tr>
@@ -252,9 +309,9 @@ The UK's COVID-19 vaccination programme is a textbook example of positive consum
 </div>
 
 <!-- ===== MERIT AND DEMERIT GOODS ===== -->
-<h2>4. Merit and Demerit Goods</h2>
+<h2>5. Merit and Demerit Goods</h2>
 
-<h3>4.1 Merit Goods</h3>
+<h3>5.1 Merit Goods</h3>
 <div class="def-box">
 <strong>Merit good:</strong> A good that is under-consumed in the free market because consumers do not fully appreciate its private benefits (imperfect information) and/or because it generates positive externalities. Society judges that consumption should be higher than the free market level.
 </div>
@@ -267,7 +324,7 @@ The UK's COVID-19 vaccination programme is a textbook example of positive consum
 
 <p><strong>Examples:</strong> Education, healthcare, vaccinations, museums, exercise, healthy eating.</p>
 
-<h3>4.2 Demerit Goods</h3>
+<h3>5.2 Demerit Goods</h3>
 <div class="def-box">
 <strong>Demerit good:</strong> A good that is over-consumed in the free market because consumers do not fully appreciate its private costs (imperfect information) and/or because it generates negative externalities.
 </div>
@@ -290,20 +347,20 @@ The UK provides the NHS free at the point of use and compulsory education until 
 </div>
 
 <!-- ===== INFORMATION FAILURE ===== -->
-<h2>5. Information Failure</h2>
+<h2>6. Information Failure</h2>
 
 <div class="def-box">
 <strong>Information failure (asymmetric information):</strong> When economic agents lack complete, accurate, or symmetric information to make rational decisions. This leads to a misallocation of resources.
 </div>
 
-<h3>5.1 Types of Information Failure</h3>
+<h3>6.1 Types of Information Failure</h3>
 <ul>
   <li><strong>Imperfect information:</strong> Consumers or producers lack knowledge needed for rational decisions (e.g., not knowing the true sugar content of food).</li>
   <li><strong>Asymmetric information:</strong> One party in a transaction has more information than the other (e.g., a used car seller knows more about the car than the buyer — Akerlof's "market for lemons").</li>
   <li><strong>Bounded rationality:</strong> Consumers may have information but lack the ability to process it rationally (behavioural economics concept).</li>
 </ul>
 
-<h3>5.2 Consequences</h3>
+<h3>6.2 Consequences</h3>
 <ul>
   <li><strong>Adverse selection:</strong> The informed party exploits their advantage before a transaction (e.g., unhealthy people are more likely to buy insurance).</li>
   <li><strong>Moral hazard:</strong> The informed party changes behaviour after a transaction (e.g., insured drivers take more risks).</li>
@@ -316,9 +373,9 @@ The payday lending market in the UK illustrated severe information failure. Firm
 </div>
 
 <!-- ===== GOVERNMENT INTERVENTION ===== -->
-<h2>6. Government Intervention to Correct Market Failure</h2>
+<h2>7. Government Intervention to Correct Market Failure</h2>
 
-<h3>6.1 Indirect Taxes</h3>
+<h3>7.1 Indirect Taxes</h3>
 <div class="def-box">
 <strong>Indirect tax:</strong> A tax on spending — levied on producers but partially passed on to consumers through higher prices. Used to internalise negative externalities by raising the private cost of production/consumption.
 </div>
@@ -370,7 +427,7 @@ The payday lending market in the UK illustrated severe information failure. Firm
 </ul>
 </div>
 
-<h3>6.2 Subsidies</h3>
+<h3>7.2 Subsidies</h3>
 <div class="def-box">
 <strong>Subsidy:</strong> A payment by the government to producers that reduces the cost of production and shifts the supply curve to the right. Used to encourage production and consumption of goods with positive externalities.
 </div>
@@ -388,7 +445,7 @@ The payday lending market in the UK illustrated severe information failure. Firm
 </ul>
 </div>
 
-<h3>6.3 Maximum and Minimum Prices</h3>
+<h3>7.3 Maximum and Minimum Prices</h3>
 
 <h4>Maximum Price (Price Ceiling)</h4>
 <p>A legally imposed maximum price set below the equilibrium. Purpose: to make goods affordable for consumers (e.g., rent controls).</p>
@@ -406,7 +463,7 @@ The payday lending market in the UK illustrated severe information failure. Firm
   <li>Consumers pay more; may be regressive.</li>
 </ul>
 
-<h3>6.4 Tradeable Pollution Permits</h3>
+<h3>7.4 Tradeable Pollution Permits</h3>
 <div class="def-box">
 <strong>Tradeable permits:</strong> A government sets a total cap on pollution, then issues permits that firms can buy, sell, and trade. Firms that can reduce pollution cheaply sell permits; those that find it expensive to reduce pollution buy permits. This creates a market-based incentive to reduce pollution.
 </div>
@@ -425,7 +482,7 @@ The payday lending market in the UK illustrated severe information failure. Firm
 </ul>
 </div>
 
-<h3>6.5 Regulation and Legislation</h3>
+<h3>7.5 Regulation and Legislation</h3>
 <p>The government can directly ban or restrict activities that cause market failure:</p>
 <ul>
   <li>Banning smoking in public places (Health Act 2006).</li>
@@ -435,7 +492,7 @@ The payday lending market in the UK illustrated severe information failure. Firm
   <li>Compulsory education until age 18.</li>
 </ul>
 
-<h3>6.6 Provision of Information</h3>
+<h3>7.6 Provision of Information</h3>
 <p>The government can address information failures by requiring or funding information provision:</p>
 <ul>
   <li>Health warnings on cigarette packets and alcohol.</li>
@@ -445,7 +502,7 @@ The payday lending market in the UK illustrated severe information failure. Firm
   <li>Financial literacy programmes.</li>
 </ul>
 
-<h3>6.7 State Provision</h3>
+<h3>7.7 State Provision</h3>
 <p>The government directly provides goods and services when the market would under-provide or fail entirely:</p>
 <ul>
   <li>Public goods (defence, street lighting, flood defences).</li>
@@ -453,18 +510,18 @@ The payday lending market in the UK illustrated severe information failure. Firm
   <li>Natural monopolies (historically rail, water, energy).</li>
 </ul>
 
-<h3>6.8 Property Rights and the Coase Theorem</h3>
+<h3>7.8 Property Rights and the Coase Theorem</h3>
 <p>If property rights are clearly defined and transaction costs are low, private bargaining between parties can solve externality problems without government intervention. For example, if residents downstream have a legal right to clean water, they can negotiate compensation from a polluting factory — internalising the externality.</p>
 <p>However, in practice this often fails because transaction costs are high, property rights are unclear, and large numbers of affected parties make negotiation impractical.</p>
 
 <!-- ===== GOVERNMENT FAILURE ===== -->
-<h2>7. Government Failure</h2>
+<h2>8. Government Failure</h2>
 
 <div class="def-box">
 <strong>Government failure:</strong> When government intervention to correct market failure leads to a worse allocation of resources than the free market would have achieved — creating a net welfare loss rather than a gain.
 </div>
 
-<h3>7.1 Causes of Government Failure</h3>
+<h3>8.1 Causes of Government Failure</h3>
 <ul>
   <li><strong>Unintended consequences:</strong> Policies may have effects that were not anticipated. For example, rent controls designed to help tenants may reduce the supply of rental housing, making the problem worse long-term.</li>
   <li><strong>Distortion of price signals:</strong> Intervention (taxes, subsidies, price controls) distorts the information that prices convey, leading to misallocation.</li>
@@ -495,6 +552,135 @@ The CAP is a frequently cited example of government failure. Minimum prices (pri
 <div class="tip-box">
 <strong>Exam Tip:</strong> When evaluating any government intervention, always discuss the potential for government failure. Consider: (1) Is the information available to set the right policy level? (2) What are the unintended consequences? (3) What are the administrative costs? (4) Are there political incentives that distort the policy? This balanced analysis is essential for top marks on evaluation questions.
 </div>
+
+<!-- ===== REVENUE, COSTS, PROFIT AND CASH ===== -->
+<h2>9. Revenue, Costs, Profit and Cash</h2>
+
+<p>Spec 1.6. This is the numerate part of Theme 1 and it is examined with a calculation, so every formula below comes with a worked answer. Show your working: the calculation questions on Papers 1 and 3 say so explicitly.</p>
+
+<h3>9.1 Revenue and Costs</h3>
+<div class="def-box">
+<strong>Sales revenue</strong> = selling price &times; quantity sold<br>
+<strong>Total cost</strong> = total fixed cost + total variable cost<br>
+<strong>Average (unit) cost</strong> = total cost &divide; output<br>
+<strong>Percentage change</strong> = (new &minus; old) &divide; old &times; 100
+</div>
+<p><strong>Fixed costs</strong> do not change with output in the short run &mdash; rent, business rates, salaried staff, insurance. <strong>Variable costs</strong> change directly with output &mdash; materials, components, piece-rate labour, packaging.</p>
+
+<div class="tip-box">
+<strong>Worked example.</strong> A bakery sells loaves at &pound;2.60. Ingredients and packaging cost &pound;0.95 a loaf. Rent, rates and salaried staff come to &pound;5,940 a month. In March it sold 7,200 loaves.<br><br>
+Sales revenue = 7,200 &times; &pound;2.60 = <strong>&pound;18,720</strong><br>
+Total variable cost = 7,200 &times; &pound;0.95 = <strong>&pound;6,840</strong><br>
+Total cost = &pound;5,940 + &pound;6,840 = <strong>&pound;12,780</strong><br>
+Average cost = &pound;12,780 &divide; 7,200 = <strong>&pound;1.78 per loaf</strong> (to 2 d.p.)<br>
+Profit = &pound;18,720 &minus; &pound;12,780 = <strong>&pound;5,940</strong><br><br>
+In April output rises to 8,100 loaves. Percentage change in output = (8,100 &minus; 7,200) &divide; 7,200 &times; 100 = 900 &divide; 7,200 &times; 100 = <strong>12.5%</strong>. Average cost falls to (&pound;5,940 + 8,100 &times; &pound;0.95) &divide; 8,100 = (&pound;5,940 + &pound;7,695) &divide; 8,100 = &pound;13,635 &divide; 8,100 = <strong>&pound;1.68</strong> &mdash; the fixed cost is spread over more loaves.
+</div>
+
+<h3>9.2 Contribution, Break-Even and the Margin of Safety</h3>
+<div class="def-box">
+<strong>Contribution per unit</strong> = selling price &minus; variable cost per unit<br>
+<strong>Break-even output</strong> = total fixed costs &divide; contribution per unit<br>
+At break-even, total fixed costs + total variable costs = total sales revenue.<br>
+<strong>Margin of safety</strong> = actual (or forecast) output &minus; break-even output
+</div>
+
+<div class="tip-box">
+<strong>Worked example.</strong> A firm sells a product for &pound;25. Variable cost is &pound;15 a unit. Fixed costs are &pound;40,000 a month.<br><br>
+Contribution per unit = &pound;25 &minus; &pound;15 = <strong>&pound;10</strong><br>
+Break-even output = &pound;40,000 &divide; &pound;10 = <strong>4,000 units</strong><br>
+<em>Check:</em> at 4,000 units revenue = 4,000 &times; &pound;25 = &pound;100,000, and total cost = &pound;40,000 + (4,000 &times; &pound;15) = &pound;40,000 + &pound;60,000 = &pound;100,000. They are equal, so 4,000 is right.<br><br>
+It forecasts sales of 5,200 units.<br>
+Margin of safety = 5,200 &minus; 4,000 = <strong>1,200 units</strong>, which is 1,200 &divide; 5,200 &times; 100 = <strong>23.1%</strong> of forecast sales.<br>
+Profit = margin of safety &times; contribution = 1,200 &times; &pound;10 = <strong>&pound;12,000</strong><br>
+<em>Check:</em> revenue = 5,200 &times; &pound;25 = &pound;130,000; total cost = &pound;40,000 + (5,200 &times; &pound;15) = &pound;118,000; profit = &pound;12,000. Agrees.
+</div>
+
+<div class="diagram-box">
+<svg viewBox="0 0 460 340" width="460" height="340">
+  <line x1="60" y1="290" x2="430" y2="290" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="60" y1="290" x2="60" y2="20" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="430,290 422,285 422,295" fill="#1a1a2e"/>
+  <polygon points="60,20 55,28 65,28" fill="#1a1a2e"/>
+  <line x1="60" y1="250" x2="410" y2="250" stroke="#64748b" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="300" y="244" font-size="12" fill="#64748b" font-weight="600">Fixed cost &pound;40,000</text>
+  <line x1="60" y1="250" x2="410" y2="120" stroke="#e53e3e" stroke-width="2.5"/>
+  <text x="414" y="118" font-size="13" fill="#e53e3e" font-weight="600">TC</text>
+  <line x1="60" y1="290" x2="410" y2="73" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="414" y="70" font-size="13" fill="#2563eb" font-weight="600">TR</text>
+  <circle cx="221" cy="190" r="5" fill="#1a1a2e"/>
+  <line x1="221" y1="190" x2="221" y2="290" stroke="#1a1a2e" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="203" y="307" font-size="12" fill="#1a1a2e" font-weight="600">4,000</text>
+  <text x="232" y="178" font-size="12" fill="#1a1a2e" font-weight="600">Break-even</text>
+  <line x1="269" y1="160" x2="269" y2="290" stroke="#16a34a" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="251" y="307" font-size="12" fill="#16a34a" font-weight="600">5,200</text>
+  <line x1="221" y1="276" x2="269" y2="276" stroke="#16a34a" stroke-width="2"/>
+  <text x="245" y="269" font-size="11" fill="#16a34a" font-weight="600" text-anchor="middle">margin of safety</text>
+  <text x="352" y="322" font-size="13" fill="#1a1a2e" font-weight="600">Output (units)</text>
+  <text x="14" y="18" font-size="13" fill="#1a1a2e" font-weight="600">&pound;</text>
+  <text x="335" y="140" font-size="12" fill="#16a34a" font-weight="600">profit</text>
+  <text x="100" y="252" font-size="12" fill="#b91c1c" font-weight="600">loss</text>
+</svg>
+<div class="diagram-caption">Figure 5: Break-even chart for the worked example. TR and TC cross at 4,000 units; the gap between break-even and forecast output of 5,200 is the margin of safety, and the vertical gap between TR and TC at that output is the &pound;12,000 profit.</div>
+</div>
+
+<h4>Limitations of break-even analysis</h4>
+<ul>
+  <li>It assumes the selling price is the same for every unit &mdash; discounts, offers and bulk pricing break that.</li>
+  <li>It assumes variable cost per unit is constant, ignoring bulk-buying discounts on materials and overtime premiums at high output.</li>
+  <li>It assumes everything produced is sold, so it says nothing about unsold stock.</li>
+  <li>Fixed costs are only fixed within a range: pass a certain output and you need a second unit, a bigger site, another supervisor &mdash; and the whole chart shifts.</li>
+  <li>It is a snapshot, so it dates the moment any cost or price changes.</li>
+</ul>
+
+<h3>9.3 Profit and Profitability</h3>
+<p>Profit is an <strong>incentive</strong> and a <strong>signal</strong>. Persistent high profit in a market attracts entry; losses drive exit. That entry and exit is how a competitive market reallocates resources without anyone directing it.</p>
+<div class="def-box">
+<strong>Gross profit</strong> = revenue &minus; cost of sales<br>
+<strong>Operating profit</strong> = gross profit &minus; operating expenses (overheads)<br>
+<strong>Profit for the year (net profit)</strong> = operating profit &minus; interest &minus; tax<br><br>
+Each has a margin: <strong>margin = profit &divide; revenue &times; 100</strong>
+</div>
+<p>These three lines, set out in order, are the <strong>statement of comprehensive income</strong> (the profit and loss account).</p>
+
+<div class="tip-box">
+<strong>Worked example.</strong> Revenue &pound;850,000; cost of sales &pound;510,000; operating expenses &pound;238,000; interest &pound;17,000; tax &pound;17,000.<br><br>
+Gross profit = &pound;850,000 &minus; &pound;510,000 = <strong>&pound;340,000</strong> &rarr; gross profit margin = 340,000 &divide; 850,000 &times; 100 = <strong>40.0%</strong><br>
+Operating profit = &pound;340,000 &minus; &pound;238,000 = <strong>&pound;102,000</strong> &rarr; operating profit margin = 102,000 &divide; 850,000 &times; 100 = <strong>12.0%</strong><br>
+Profit for the year = &pound;102,000 &minus; &pound;17,000 &minus; &pound;17,000 = <strong>&pound;68,000</strong> &rarr; net profit margin = 68,000 &divide; 850,000 &times; 100 = <strong>8.0%</strong><br><br>
+Reading the three together tells you <em>where</em> the money goes: a healthy 40% gross margin is cut to 8% by overheads, interest and tax, so this firm's problem is overheads, not pricing.
+</div>
+
+<h4>How firms increase profit</h4>
+<ul>
+  <li><strong>Raise price</strong> &mdash; works only if demand is price inelastic, otherwise revenue falls.</li>
+  <li><strong>Raise volume</strong> &mdash; through marketing or new markets, but it adds variable cost too, so it only helps if contribution per unit is positive.</li>
+  <li><strong>Cut variable cost</strong> &mdash; renegotiate suppliers, redesign the product, reduce waste. Directly raises contribution.</li>
+  <li><strong>Cut fixed cost</strong> &mdash; smaller premises, fewer salaried roles. Lowers break-even output immediately.</li>
+  <li><strong>Change the sales mix</strong> &mdash; sell proportionally more of the high-contribution lines.</li>
+</ul>
+
+<h3>9.4 Cash Flow and Business Survival</h3>
+<div class="def-box">
+<strong>Profit</strong> is revenue minus costs over a period, recorded when a sale is made.<br>
+<strong>Cash flow</strong> is money actually entering and leaving the bank account, recorded when it moves.<br>
+They differ because of credit terms, stock, and the timing of large one-off payments. <strong>A profitable firm can run out of cash and fail.</strong>
+</div>
+<p>A firm that sells on 60-day terms but pays its own suppliers in 30 days must fund the 30-day gap out of its own resources every single month. Growing fast makes this worse, not better: more sales means more stock and more unpaid invoices before any of the extra cash arrives. This is <strong>overtrading</strong>.</p>
+
+<div class="tip-box">
+<strong>Worked cash-flow forecast.</strong> Opening balance in January &pound;6,000.<br><br>
+<em>January:</em> receipts &pound;42,000, payments &pound;47,500. Net cash flow = &pound;42,000 &minus; &pound;47,500 = <strong>&minus;&pound;5,500</strong>. Closing balance = &pound;6,000 &minus; &pound;5,500 = <strong>&pound;500</strong>.<br>
+<em>February:</em> receipts &pound;38,000, payments &pound;46,000. Net cash flow = <strong>&minus;&pound;8,000</strong>. Closing balance = &pound;500 &minus; &pound;8,000 = <strong>&minus;&pound;7,500</strong>.<br><br>
+The forecast has done its job: it shows, before February arrives, that the firm needs an overdraft facility of at least &pound;7,500, or must pull some receipts forward or push some payments back. That is what spec 1.6.4(d) means by using a cash-flow forecast to identify credit requirements and minimise risk.
+</div>
+
+<h4>Interpreting a cash-flow forecast</h4>
+<ul>
+  <li>Look for the <strong>lowest closing balance</strong> in the period &mdash; that is the size of facility required, not the average.</li>
+  <li>Check whether the deficit is <strong>seasonal</strong> (an overdraft is the right tool) or <strong>structural</strong> (an overdraft only postpones failure).</li>
+  <li>A forecast is only as good as its assumptions about when customers actually pay; test it by asking what happens if receipts arrive a month late.</li>
+</ul>
 
 </div>
 </body>

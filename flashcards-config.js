@@ -257,9 +257,9 @@
       { num: '4.2', name: 'Poverty, Inequality & Development' },
     ],
     'Economics|Edexcel B': [
-      { num: '1.1', name: 'How Markets Work & Surplus' },
-      { num: '1.2', name: 'Market Failure & Government Intervention' },
-      { num: '2.1', name: 'National Economic Performance' },
+      { num: '1.1', name: 'Scarcity, Enterprise & How Markets Work' },
+      { num: '1.2', name: 'Credit, Market Failure, Costs & Profit' },
+      { num: '2.1', name: 'Productivity & National Economic Performance' },
       { num: '2.2', name: 'Macroeconomic Policy' },
       { num: '3.1', name: 'Globalisation, Trade & Global Business' },
       { num: '3.2', name: 'Global Labour Markets, Inequality & Redistribution' },
