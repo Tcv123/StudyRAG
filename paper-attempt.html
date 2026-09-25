@@ -1903,6 +1903,7 @@ builtins.input = __qbq_input
                     const j = JSON.parse(body);
                     if (j?.error === 'pro_required') msg = 'AI marking is a Pro feature.';
                     else if (j?.error === 'rate_limited') msg = 'Rate-limited by the AI provider. Wait a moment and try again.';
+                    else if (j?.error === 'model_unavailable') msg = "AI marking is temporarily unavailable — the AI provider isn't reachable right now. Try again later; if it persists, it needs a look at the server config.";
                     else if (j?.error) msg = `${j.error}${j.message ? ` — ${j.message}` : ''}`;
                   } catch (_) {
                     if (body && body.length < 400) msg = body;

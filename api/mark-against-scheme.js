@@ -14,6 +14,7 @@
  */
 const Groq = require('groq-sdk');
 const { createClient } = require('@supabase/supabase-js');
+const { createCompletion, classifyGroqError } = require('./_groq');
 
 let groq = null;
 let supabaseAdmin = null;
@@ -156,8 +157,7 @@ module.exports = async function handler(req, res) {
     }
 
     // ---- Call Groq ----
-    const completion = await groq.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+    const completion = await createCompletion(groq, {
       messages: [
         { role: 'system', content: buildSystemPrompt({ subject: subject || 'Computer Science', board: board || 'OCR', paperCode, msType: markScheme.type,
             gridNames: [...new Set((markScheme.levels || []).map(l => l.grid).filter(Boolean))] }) },
@@ -198,9 +198,7 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ result, usage: completion.usage });
   } catch (err) {
     console.error('mark-against-scheme error:', err);
-    const msg = String(err?.message || err);
-    if (/429|rate.?limit|quota/i.test(msg))    return res.status(429).json({ error: 'rate_limited',    message: msg });
-    if (/401|API key|invalid.*key/i.test(msg)) return res.status(502).json({ error: 'api_key_invalid', message: msg });
-    return res.status(500).json({ error: 'internal_error', message: msg });
+    const { code, body } = classifyGroqError(err);
+    return res.status(code).json(body);
   }
 };

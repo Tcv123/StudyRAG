@@ -14,6 +14,7 @@
  */
 const Groq = require('groq-sdk');
 const { createClient } = require('@supabase/supabase-js');
+const { createCompletion, classifyGroqError } = require('./_groq');
 
 // Lazy client init — keeps env-var/SDK errors *inside* the handler so we get
 // a proper JSON error instead of FUNCTION_INVOCATION_FAILED.
@@ -147,8 +148,7 @@ module.exports = async function handler(req, res) {
     if (question.length > 4000) return res.status(413).json({ error: 'question_too_long' });
 
     // ---- Call Groq ----
-    const completion = await groq.chat.completions.create({
-      model: 'llama-3.3-70b-versatile',
+    const completion = await createCompletion(groq, {
       messages: [
         { role: 'system', content: buildSystemPrompt({ subject: subject || 'this subject', board: board || 'this board', level }) },
         { role: 'user',   content: buildUserPrompt({ question, marks, command, modelAnswer, studentAnswer, topicName }) },
@@ -180,9 +180,7 @@ module.exports = async function handler(req, res) {
     return res.status(200).json({ feedback, usage: completion.usage });
   } catch (err) {
     console.error('mark-essay error:', err);
-    const msg = String(err?.message || err);
-    if (/429|rate.?limit|quota/i.test(msg))    return res.status(429).json({ error: 'rate_limited',    message: msg });
-    if (/401|API key|invalid.*key/i.test(msg)) return res.status(502).json({ error: 'api_key_invalid', message: msg });
-    return res.status(500).json({ error: 'internal_error', message: msg });
+    const { code, body } = classifyGroqError(err);
+    return res.status(code).json(body);
   }
 };
