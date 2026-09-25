@@ -15,6 +15,7 @@
 const Groq = require('groq-sdk');
 const { createClient } = require('@supabase/supabase-js');
 const { createCompletion, classifyGroqError } = require('./_groq');
+const { bandsFor, rubricRules } = require('./_mark-bands');
 const crypto = require('crypto');
 
 let groq = null;
@@ -38,8 +39,22 @@ function questionHash(text) {
   return crypto.createHash('sha256').update(String(text).trim()).digest('hex');
 }
 
-function buildSystemPrompt({ subject, board, level }) {
+function buildSystemPrompt({ subject, board, level, marks, question, rawSubject, rawBoard }) {
   const examLevel = level === 'alevel' ? 'A-level' : 'GCSE';
+  // Where the board publishes a grid, write to what its TOP band actually
+  // describes rather than to a generic idea of "full-mark quality" — and
+  // obey any rubric the question itself sets (source-only, named thinkers,
+  // exactly three points), because an anchor that breaks the rubric teaches
+  // the student to break it too.
+  const grid = bandsFor(rawSubject, rawBoard, marks);
+  const top = grid && grid.levels[0];
+  const topBand = top
+    ? `\nTHE STANDARD TO HIT — this board's top band for a ${marks}-mark answer (${top.descriptor}, ${top.range[0]}-${top.range[1]} marks):\n${top.criteria}\nAssessment objectives: ${grid.ao}\n`
+    : '';
+  const rules = rubricRules(question);
+  const ruleBlock = rules.length
+    ? `\nRULES THIS QUESTION SETS — the answer must obey them:\n${rules.map(r => `- ${r}`).join('\n')}\n`
+    : '';
   return `You are a senior ${examLevel} ${subject} examiner for the ${board} exam board, writing a top-band model answer that demonstrates full-mark quality.
 
 Scale the length and depth of your answer to the mark allocation:
@@ -49,6 +64,7 @@ Scale the length and depth of your answer to the mark allocation:
 - 14-16 marks: four paragraphs (~500-650 words). Sustained argument with developed analysis and a justified conclusion.
 - 18-20 marks: full essay (~650-800 words). Clear thesis, structured paragraphs, balanced evaluation, judged conclusion.
 - 22-25 marks: extended essay (~800-1000 words). Sophisticated argument, multiple perspectives, weighted evaluation, justified judgement.
+- 26-30 marks: extended essay (~1000-1200 words). This is the top tariff in UK A-level politics and social science papers, where a board typically allows ~45 minutes. Sustained thesis, several developed lines of argument on each side, explicit weighing of them against each other, and a conclusion that decides the question rather than summarising it.
 
 Quality requirements:
 - Demonstrate the level of knowledge, application, analysis and evaluation appropriate to the command word.
@@ -58,6 +74,7 @@ Quality requirements:
 - Write in flowing prose, like a real exam answer. No bullet points, no numbered lists, no section headings unless they're conventional for the subject.
 - Do not introduce yourself, do not preface with "Here is..." or "This essay will...", do not comment on the question — go straight into the answer.
 
+${topBand}${ruleBlock}
 Output: just the model answer text. No preamble, no metadata, no closing remarks.`;
 }
 
@@ -161,11 +178,14 @@ module.exports = async function handler(req, res) {
     // ---- Cache miss — call Groq ----
     const completion = await createCompletion(groq, {
       messages: [
-        { role: 'system', content: buildSystemPrompt({ subject: subjectKey, board: boardKey, level: levelKey }) },
+        { role: 'system', content: buildSystemPrompt({
+          subject: subjectKey, board: boardKey, level: levelKey,
+          marks, question, rawSubject: subject, rawBoard: board,
+        }) },
         { role: 'user',   content: buildUserPrompt({ question, marks, command, topicName }) },
       ],
       temperature: 0.4,
-      max_tokens: 2048,
+      max_tokens: 4096,
     });
 
     const rawText = completion.choices?.[0]?.message?.content || '';

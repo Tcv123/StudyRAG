@@ -1682,11 +1682,76 @@ const body = document.getElementById('contentBody');
 /* ═══════════════════════════════════════
    EXAM MODES
 ═══════════════════════════════════════ */
-const MODES = [
-  { count: 5,  minutes: 10, icon: '📝', name: 'Quick Practice',  desc: '5 questions' },
-  { count: 10, minutes: 20, icon: '📋', name: 'Standard Practice', desc: '10 questions' },
-  { count: 20, minutes: 45, icon: '📄', name: 'Full Exam Practice', desc: '20 questions' },
+// The three modes used to be fixed at 5/10/20 questions and 10/20/45 minutes
+// — two minutes a question, which only makes sense for short recall answers.
+// It broke both ways on essay subjects: A-level Politics asks nothing under 9
+// marks (Edexcel's practice bank is 12/24/30-mark essays only, against a real
+// Pearson allowance of ~45 minutes for a 30-marker), so "Quick Practice" meant
+// five essays in ten minutes; and because Politics and Business ship 10
+// questions per topic rather than OCR Computer Science's 50, the 20-question
+// mode was permanently greyed out — the longest mode simply unavailable on
+// those subjects.
+//
+// So the modes are now DERIVED from the bank in front of the student: each one
+// targets a session length, and the question count is whatever fits at real
+// exam pace. Short-answer subjects land back near the old 5/10/20; a 30-mark
+// essay subject gets 1/2/4, which is what revising those actually looks like.
+const MINUTES_PER_MARK = 1.3;   // AQA Biology 7402/1 1.32, AQA Politics 7152/1 1.22, Pearson 9PL0 Paper 1 1.43
+const MODE_TARGETS = [
+  { icon: '📝', name: 'Quick Practice',     targetMinutes: 25  },
+  { icon: '📋', name: 'Standard Practice',  targetMinutes: 55  },
+  { icon: '📄', name: 'Full Exam Practice', targetMinutes: 110 },
 ];
+// Counts snap to these so the cards read like a choice a person would make,
+// not like an optimiser's output ("31 questions").
+const FRIENDLY_COUNTS = [1, 2, 3, 4, 5, 8, 10, 15, 20, 25, 30, 40, 50];
+
+function snapCount(n, max) {
+  const capped = Math.max(1, Math.min(max, n));
+  let best = FRIENDLY_COUNTS[0];
+  FRIENDLY_COUNTS.forEach(c => {
+    if (c <= max && Math.abs(c - capped) < Math.abs(best - capped)) best = c;
+  });
+  return Math.max(1, Math.min(max, best));
+}
+
+// Mean tariff drives the pace. A bank with no marks recorded falls back to
+// 2 minutes a question, which is the behaviour this replaced.
+function buildModes(questions) {
+  const all = Array.isArray(questions) ? questions : [];
+  const total = all.length;
+  if (!total) return [];
+  const marks = all.reduce((sum, q) => sum + (Number(q && q.marks) || 0), 0);
+  const meanMarks = marks / total;
+  const minutesPerQuestion = meanMarks > 0 ? meanMarks * MINUTES_PER_MARK : 2;
+
+  const modes = [];
+  const usedCounts = new Set();
+  MODE_TARGETS.forEach(t => {
+    let count = snapCount(Math.round(t.targetMinutes / minutesPerQuestion), total);
+    // Two targets collide on a short bank or a huge tariff — at 30 marks a
+    // question, both "quick" and "standard" round to one essay. Step up to the
+    // next distinct size rather than dropping the card: three real choices is
+    // the point, and a subject losing its longest mode is the bug being fixed.
+    while (usedCounts.has(count) && count < total) {
+      const next = FRIENDLY_COUNTS.find(c => c > count && c <= total);
+      if (next === undefined) break;
+      count = next;
+    }
+    if (usedCounts.has(count)) return;   // bank genuinely too small
+    usedCounts.add(count);
+    const minutes = Math.max(5, Math.round(count * minutesPerQuestion));
+    const estMarks = Math.round(count * meanMarks);
+    modes.push({
+      icon: t.icon,
+      name: t.name,
+      count,
+      minutes,
+      desc: `${count} question${count === 1 ? '' : 's'}${estMarks ? ` · ~${estMarks} marks` : ''}`,
+    });
+  });
+  return modes;
+}
 
 /* ═══════════════════════════════════════
    INIT
@@ -1983,16 +2048,13 @@ function selectTopic(topicKey, btn) {
         <p>Written exam-style questions for <strong>${topicKey} — ${data.name}</strong><br>
         <span style="font-size:12px;color:var(--muted2);">${total} questions available</span></p>
         <div class="mode-grid">
-          ${MODES.map(m => {
-            const avail = total >= m.count;
-            return `
-              <button class="mode-btn" ${avail ? `onclick="startExam(${m.count}, ${m.minutes})"` : 'disabled style="opacity:0.4;cursor:not-allowed;"'}>
+          ${buildModes(data.questions).map(m => `
+              <button class="mode-btn" onclick="startExam(${m.count}, ${m.minutes})">
                 <div class="mode-icon">${m.icon}</div>
                 <div class="mode-name">${m.name}</div>
                 <div class="mode-desc">${m.desc}</div>
                 <div class="mode-time">⏱ ${m.minutes} minutes</div>
-              </button>`;
-          }).join('')}
+              </button>`).join('')}
         </div>
       </div>
     </div>

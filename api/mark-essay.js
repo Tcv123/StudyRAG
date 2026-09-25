@@ -15,6 +15,7 @@
 const Groq = require('groq-sdk');
 const { createClient } = require('@supabase/supabase-js');
 const { createCompletion, classifyGroqError } = require('./_groq');
+const { bandsFor, rubricRules, renderBands } = require('./_mark-bands');
 
 // Lazy client init — keeps env-var/SDK errors *inside* the handler so we get
 // a proper JSON error instead of FUNCTION_INVOCATION_FAILED.
@@ -35,8 +36,14 @@ function initClients() {
   return null;
 }
 
-function buildSystemPrompt({ subject, board, level }) {
+function buildSystemPrompt({ subject, board, level, marks, question, rawSubject, rawBoard }) {
   const examLevel = level === 'alevel' ? 'A-level' : 'GCSE';
+  // A verified published grid, where we have one, beats the generic ladder:
+  // Politics Edexcel 30-markers used to be graded against "higher-mark
+  // questions (12+)" and nothing else, so the model had no band boundaries
+  // at all for the highest tariff in the app.
+  const grid = bandsFor(rawSubject, rawBoard, marks);
+  const bandBlock = renderBands(grid, rubricRules(question));
   return `You are a senior ${examLevel} ${subject} examiner for the ${board} exam board. You mark student essays against the official mark scheme conventions used by ${board} for ${examLevel} ${subject}.
 
 Your job is to give honest, specific, evidence-based feedback that helps the student improve. Be neither lenient nor harsh — award what the answer earns, no more and no less.
@@ -47,9 +54,8 @@ Grading principles:
 - Reward demonstration of knowledge, application, analysis and evaluation appropriate to the command word.
 - A top-band model answer is provided as a grading anchor — use it to calibrate the standard expected for full marks. The student does not need to match its wording, only its quality.
 - Penalise factual errors, irrelevance, or missing the question.
-- For higher-mark questions (12+), expect structured argument with introduction, balanced analysis and a justified conclusion.
-- For ${examLevel}, follow ${board} mark scheme conventions: ${examLevel === 'A-level' ? 'levels-of-response with AO1/AO2/AO3 weighting where applicable' : 'levels-of-response with clarity, accuracy and detail criteria'}.
-
+${grid ? '' : `- For higher-mark questions (12+), expect structured argument with introduction, balanced analysis and a justified conclusion.\n`}- For ${examLevel}, follow ${board} mark scheme conventions: ${examLevel === 'A-level' ? 'levels-of-response with AO1/AO2/AO3 weighting where applicable' : 'levels-of-response with clarity, accuracy and detail criteria'}.
+${bandBlock}
 You MUST respond with a single JSON object and nothing else. The object must have these exact fields:
 {
   "awarded":      integer marks awarded (0 to total),
@@ -150,7 +156,10 @@ module.exports = async function handler(req, res) {
     // ---- Call Groq ----
     const completion = await createCompletion(groq, {
       messages: [
-        { role: 'system', content: buildSystemPrompt({ subject: subject || 'this subject', board: board || 'this board', level }) },
+        { role: 'system', content: buildSystemPrompt({
+          subject: subject || 'this subject', board: board || 'this board', level,
+          marks, question, rawSubject: subject, rawBoard: board,
+        }) },
         { role: 'user',   content: buildUserPrompt({ question, marks, command, modelAnswer, studentAnswer, topicName }) },
       ],
       response_format: { type: 'json_object' },
