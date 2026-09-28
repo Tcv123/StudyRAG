@@ -173,13 +173,15 @@ test('no past-paper question reaches the marker without its material', () => {
   check('nothing that survived points at the PDF', offenders.length === 0, offenders.slice(0, 5).join('; '));
 });
 
-test('only AQA Physics loses its whole past-paper pool', () => {
-  // Filtering by material empties one board: every extended AQA Physics part
-  // hangs off a printed graph or circuit diagram, so none can be marked here.
-  // That is the honest outcome — "Past papers" simply shows its empty state for
-  // AQA Physics, exactly as it already does for a subject with no papers added.
-  // Any OTHER board emptying is a bug in the guard or a gap in papers-config,
-  // so the expected set is pinned rather than merely counted.
+test('no subject+board loses its whole past-paper pool', () => {
+  // AQA Physics used to fail this: every one of its extended parts hangs off a
+  // printed graph, circuit diagram or apparatus sketch, and none of those had
+  // been transcribed. Its figures were then written out from the question
+  // papers, so 16 of its 17 parts are answerable from the text alone. (The
+  // seventeenth, 2023 Paper 1 question 03.4, asks for a sketch drawn on the
+  // paper's own axes — no transcription makes that markable as free text.)
+  //
+  // A board emptying now means a guard bug or a gap in papers-config.
   const emptied = [];
   for (const s of loadSubjects()) {
     for (const b of s.boards || []) {
@@ -198,10 +200,51 @@ test('only AQA Physics loses its whole past-paper pool', () => {
       if (!survivors.length) emptied.push(`${s.name} / ${b.board}`);
     }
   }
-  const EXPECTED_EMPTY = ['Physics / AQA'];
-  check('no board beyond AQA Physics loses every paper',
-    emptied.length === EXPECTED_EMPTY.length && emptied.every(e => EXPECTED_EMPTY.includes(e)),
-    emptied.join('; '));
+  check('every board keeps at least one attemptable paper', emptied.length === 0, emptied.join('; '));
+});
+
+test('the AQA Physics figures stay transcribed', () => {
+  // These were read off AQA's question papers and checked against the published
+  // mark schemes: each value below is one the scheme expects a candidate to take
+  // off the figure. If a future edit paraphrases them away, the parts that need
+  // them go back to being unanswerable, so the readings are pinned here.
+  const subjects = loadSubjects();
+  const aqa = subjects.find(s => s.name === 'Physics').boards.find(b => b.board === 'AQA');
+  const text = JSON.stringify(aqa);
+
+  const READINGS = [
+    ['2023 P1 Fig 1 speed at 5600 m',      'reading 450 m s⁻¹ at 5600 m'],
+    ['2023 P1 Fig 7 prism faces at 45°',   'each of the two shorter sides makes 45° with the longest side'],
+    ['2023 P2 Fig 2 tyre diameters',       'inner diameter 330 mm, outer diameter 660 mm'],
+    ['2023 P2 Fig 9 charging current',     '2.00 at 11 s'],
+    ['2023 P3 Fig 4 lowest plotted point', '(0.7, 0.36)'],
+    ['2022 P1 Fig 4 rope angle at M',      'each make an angle of 55° with cable C'],
+    ['2022 P1 Fig 5 cable angle at D',     'the angle between the gate and cable C at D is 12°'],
+    ['2022 P2 Fig 3 potential at 0.30 m',  '−0.60 at 0.30 m'],
+    ['2022 P3 Fig 4 time-base setting',    '50 μs per division'],
+    ['2022 P3 Fig 3 burst width',          'occupies 6 major divisions'],
+    ['2022 P3 Table 1 calliper readings',  'd₁ = 34.5 mm'],
+    ['2022 P3 Fig 8 last plotted point',   '(45.0, 29.1)'],
+    ['2022 P3 Fig 10 first plotted point', '(0.5, 89)'],
+  ];
+  READINGS.forEach(([what, snippet]) => check(what + ' is written out', text.includes(snippet)));
+
+  // And the parts those readings serve must survive the guard.
+  let usable = 0;
+  for (const p of aqa.papers.filter(x => Array.isArray(x.questions) && x.questions.length)) {
+    for (const q of p.questions) {
+      const scenario = q.scenario || '';
+      for (const part of q.parts || []) {
+        if (!(part.extended || (part.marks || 0) >= 4)) continue;
+        const figureText = figureToText(part.figure).trim();
+        const supporting = [scenario, part.preamble || '', figureText].filter(Boolean).join('\n\n');
+        if (!GUARD.materialIsOffPage(supporting, part.prompt || '', figureText)) usable++;
+      }
+    }
+  }
+  // 16 of 17. The odd one out is 2023 Paper 1 question 03.4, which asks for a
+  // sketch on the paper's axes and can never be marked from free text.
+  check('16 of the 17 extended AQA Physics parts are usable', usable === 16, String(usable));
 });
 
 test('no question bank tells a student to use material it does not include', () => {
