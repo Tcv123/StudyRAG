@@ -151,18 +151,30 @@ test('REGRESSION: Politics Edexcel gets its longest mode back', () => {
   });
 });
 
-test('REGRESSION: a 30-mark essay is no longer given two minutes', () => {
+test('REGRESSION: pace tracks the tariff instead of a flat two minutes', () => {
   const topics = byKey('Politics_Edexcel');
+  check('Politics Edexcel topics found', topics.length > 0, String(topics.length));
   topics.forEach(b => {
     const mean = meanMarks(b.questions);
     const modes = buildModes(b.questions);
-    const first = modes[0];
-    // Pearson allows ~45 min for a 30-marker. Anything near the old 2
-    // min/question would be a return of the bug.
-    check(`${b.topic}: mean tariff is essay-sized`, mean >= 12, mean.toFixed(1));
-    check(`${b.topic}: first mode gives >=25 min per question`,
-          first.minutes / first.count >= 25, `${(first.minutes / first.count).toFixed(1)} min/q`);
+    const perQuestion = modes[0].minutes / modes[0].count;
+    // Every Politics tariff is an extended answer, so a real exam allows at
+    // least ~1.1 min a mark. The old code gave 2 minutes regardless, which
+    // is what this guards: a 12-marker must get ~13+ min, a 30-marker ~33+.
+    check(`${b.topic} (mean ${mean.toFixed(0)} marks): paced at >=1.1 min/mark`,
+          perQuestion >= mean * 1.1, `${perQuestion.toFixed(1)} min/q for ${mean.toFixed(1)} marks`);
+    // And nowhere near the flat two-minute rate that caused the complaint.
+    check(`${b.topic}: not the old flat 2 min/question`,
+          perQuestion > 4, `${perQuestion.toFixed(1)} min/q`);
   });
+  // The headline case still deserves a named check: a 30-mark essay topic.
+  const essay = topics.find(b => meanMarks(b.questions) >= 29);
+  check('an all-30-mark topic exists to check', !!essay);
+  if (essay) {
+    const m = buildModes(essay.questions)[0];
+    check(`${essay.topic}: a single 30-marker gets >=33 min`,
+          m.minutes / m.count >= 33, `${(m.minutes / m.count).toFixed(1)} min/q`);
+  }
 });
 
 test('short-answer subjects still get a long session, not a truncated one', () => {
