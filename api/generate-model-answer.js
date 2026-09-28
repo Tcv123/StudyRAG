@@ -140,7 +140,10 @@ module.exports = async function handler(req, res) {
 
     if (!question || typeof question !== 'string') return res.status(400).json({ error: 'missing_question' });
     if (typeof marks !== 'number' || marks < 1) return res.status(400).json({ error: 'invalid_marks' });
-    if (question.length > 4000) return res.status(413).json({ error: 'question_too_long' });
+    // 10k, not 4k: a past-paper question arrives with its full stimulus attached,
+    // and the longest scenario in papers-config runs to ~7.3k characters. Rejecting
+    // those would leave the extract-based subjects unmarkable.
+    if (question.length > 10000) return res.status(413).json({ error: 'question_too_long' });
 
     const subjectKey = subject || 'Unknown';
     const boardKey   = board   || 'Unknown';

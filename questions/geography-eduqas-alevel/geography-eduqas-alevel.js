@@ -11,6 +11,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
   '1.1': {
     name: 'Coastal Landscapes',
     green: [
+    { q: 'The Holderness coast has one of the fastest rates of coastal erosion in Europe. Which factor is NOT a main cause?', options: ['Granitic headlands', 'Soft boulder clay geology', 'Long fetch from the north-east', 'High-energy destructive waves'], answer: 0 },
       { q: 'A coastal system includes which types of inputs?', options: ['Energy, sediment, mass (geology/tectonics)', 'Only wind', 'Only sediment', 'Only water'], answer: 0 },
       { q: 'Which wave type has a low breaking angle, strong swash, weak backwash, and deposits sediment?', options: ['Destructive', 'Constructive', 'Plunging', 'Spilling'], answer: 1 },
       { q: 'Longshore drift moves sediment along the coast because:', options: ['The moon affects beach angle', 'Offshore currents only', 'Swash follows the prevailing wind at an angle; backwash returns perpendicular due to gravity', 'Tidal surges pull sediment back'], answer: 2 },
@@ -71,6 +72,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
   '1.2': {
     name: 'Glaciated Landscapes',
     green: [
+    { q: 'Which of these is a depositional glacial feature?', options: ['Arête', 'Drumlin', 'Pyramidal peak', 'Cirque'], answer: 1 },
       { q: 'A glacier mass balance is:', options: ['Weight of glacier only', 'Temperature gradient', 'Balance of accumulation (snow, avalanche) and ablation (melt, calving, sublimation)', 'Budget for ski resorts'], answer: 2 },
       { q: 'Above the snow line, the glacier:', options: ['Loses mass', 'Is stationary', 'Always melts', 'Gains mass (accumulation zone)'], answer: 3 },
       { q: 'Plucking is:', options: ['Glacier removes rock by freezing onto it then pulling away as glacier advances', 'River transport', 'Aeolian erosion', 'Chemical weathering'], answer: 0 },
@@ -131,6 +133,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
   '1.3': {
     name: 'Changing Places',
     green: [
+    { q: 'Which is an exogenous factor shaping a place?', options: ['Local river', 'Local geology', 'International migration flows', 'Topography'], answer: 2 },
       { q: 'A "place" in human geography is:', options: ['A location imbued with meaning, identity, and attachment by people', 'GPS coordinates only', 'A political unit only', 'Any named location'], answer: 0 },
       { q: 'Sense of place refers to:', options: ['Planning policy', 'Emotional attachment and meaning individuals associate with a specific place', 'Pure statistics', 'Mapped boundaries'], answer: 1 },
       { q: 'Placelessness describes:', options: ['Seasonal migration', 'Abandoned rural areas only', 'Homogenised landscapes lacking distinctiveness (often via globalisation of chains/franchises)', 'Empty places'], answer: 2 },
@@ -191,6 +194,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
   '2.1': {
     name: 'Water Cycle & Water Insecurity',
     green: [
+    { q: 'In which theory of precipitation formation do ice crystals grow at the expense of supercooled water droplets in a cold cloud?', options: ['Orographic uplift', 'Convectional uplift', 'Collision-coalescence', 'Bergeron-Findeisen process'], answer: 3 },
       { q: 'The global water cycle has main stores:', options: ['Only oceans', 'Only clouds', 'Oceans, ice caps/glaciers, groundwater, surface water, atmosphere, biosphere', 'Only rivers'], answer: 2 },
       { q: 'Approximately what percentage of Earth\'s water is freshwater?', options: ['~50%', '~25%', '~75%', '~2.5%'], answer: 3 },
       { q: 'The largest flux in the cycle is:', options: ['Oceanic evaporation and precipitation', 'River discharge to sea', 'Groundwater flow', 'Transpiration'], answer: 0 },
@@ -251,6 +255,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
   '2.2': {
     name: 'Carbon Cycle & Energy Security',
     green: [
+    { q: 'Which is an example of negative feedback in the carbon cycle?', options: ['Ocean CO₂ uptake', 'Albedo loss', 'Amazon die-back', 'Permafrost thaw releasing methane'], answer: 0 },
       { q: 'Carbon stores include:', options: ['Atmosphere (CO₂), oceans (dissolved), biosphere, lithosphere (fossil fuels/carbonate rocks), cryosphere (trapped CH₄)', 'Only atmosphere', 'Only plants', 'Only oceans'], answer: 0 },
       { q: 'The largest carbon store on Earth is:', options: ['Oceans only', 'Sedimentary rocks (carbonates)', 'Atmosphere', 'Forests'], answer: 1 },
       { q: 'The short-term (biological) carbon cycle operates over:', options: ['Billions of years', 'Minutes', 'Years to centuries', 'Millions of years'], answer: 2 },
@@ -310,6 +315,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
 
   /* Stubs for remaining topics */
   '2.3': { name: 'Global Migration', green: [
+    { q: 'Which is a pull factor for migration?', options: ['Drought in origin', 'Higher wages at destination', 'Discrimination at origin', 'Conflict in origin'], answer: 1 },
     { q: 'International migration is:', options: ['Shopping', 'Tourism under 2 days', 'Movement of people across national borders to reside', 'Daily commute'], answer: 2 },
     { q: 'A refugee is defined by the 1951 Convention as:', options: ['Tourist', 'Economic migrant', 'Student', 'Person outside country of origin owing to well-founded fear of persecution; unable/unwilling to return'], answer: 3 },
     { q: 'Remittances are:', options: ['Money migrants send back to origin country, significant for GDP in many LICs', 'Taxes on migrants', 'Visa fees', 'Customs duties'], answer: 0 },
@@ -333,6 +339,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
   ], amber: [], red: [] },
 
   '2.4': { name: 'Global Governance of Oceans', green: [
+    { q: 'Under UNCLOS, an EEZ extends up to how many nautical miles?', options: ['12 nm', '24 nm', '200 nm', '500 nm'], answer: 2 },
     { q: 'UNCLOS 1982 establishes:', options: ['Marine biology standards', 'Air space rights', 'Legal framework for oceans: territorial seas, EEZs, continental shelves, seabed regime', 'Fishing tax'], answer: 2 },
     { q: 'Territorial seas extend:', options: ['200 nm', '500 nm', '50 nm only', 'Up to 12 nautical miles from baseline'], answer: 3 },
     { q: 'Exclusive Economic Zone (EEZ) extends:', options: ['Up to 200 nautical miles from baseline', '12 nm', '1000 nm', 'Global'], answer: 0 },
@@ -356,6 +363,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
   ], amber: [], red: [] },
 
   '2.5': { name: '21st Century Challenges', green: [
+    { q: 'Which country is NOT a BRICS member?', options: ['Brazil', 'Russia', 'India', 'Japan'], answer: 3 },
     { q: 'Superpower status typically involves:', options: ['Only territory', 'Only wealth of elites', 'Economic, military, political, cultural dominance globally', 'Only population size'], answer: 2 },
     { q: 'A Brandt Line distinguishes:', options: ['Communism', 'Tropical climates', 'Religions', 'Global North (developed) from Global South (developing)'], answer: 3 },
     { q: 'HDI combines:', options: ['Life expectancy, education, income', 'GDP only', 'Population only', 'Trade only'], answer: 0 },
@@ -379,6 +387,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
   ], amber: [], red: [] },
 
   '3.1': { name: 'Tectonic Hazards', green: [
+    { q: 'Which is a primary hazard of an earthquake?', options: ['Ground shaking', 'Liquefaction', 'Fire from broken gas mains', 'Tsunami'], answer: 0 },
     { q: 'Primary hazard from an earthquake:', options: ['Fire only', 'Traffic', 'Ground shaking from seismic waves', 'Rain'], answer: 2 },
     { q: 'Moment magnitude (Mw) measures:', options: ['Distance', 'Duration only', 'Population', 'Total energy released by an earthquake'], answer: 3 },
     { q: 'A convergent plate boundary causes:', options: ['Subduction zones, volcanic arcs, trenches (e.g. Andes, Pacific Ring of Fire)', 'Divergence only', 'Transform faults only', 'No activity'], answer: 0 },
@@ -402,6 +411,7 @@ const GEOGRAPHY_EDUQAS_ALEVEL_QUESTIONS = {
   ], amber: [], red: [] },
 
   '3.2': { name: 'Ecosystems', green: [
+    { q: 'Approximately what proportion of energy typically passes from one trophic level to the next?', options: ['1%', '10%', '50%', '90%'], answer: 1 },
     { q: 'An ecosystem includes:', options: ['Only animals', 'Only climate', 'Biotic (living) and abiotic (non-living) components interacting', 'Only plants'], answer: 2 },
     { q: 'A biome is:', options: ['Small pond', 'Single species', 'Only aquatic', 'Large-scale ecosystem with characteristic climate/vegetation (e.g. tropical rainforest, savanna, taiga)'], answer: 3 },
     { q: 'Primary succession starts on:', options: ['Newly exposed/created land with no soil (e.g. lava flow, retreating glacier)', 'Disturbed forest', 'Agricultural field', 'River only'], answer: 0 },

@@ -393,6 +393,102 @@
     });
   }
 
+  function figureToText(fig) {
+    if (!fig) return '';
+    const head = fig.label ? `${fig.label}:\n` : '';
+    if (fig.content) return `${head}${fig.content}`;
+    if (Array.isArray(fig.headers) && Array.isArray(fig.rows)) {
+      const cols = fig.headers.join(' | ');
+      const body = fig.rows.map(r => r.join(' | ')).join('\n');
+      return `${head}${cols}\n${body}`;
+    }
+    return '';
+  }
+
+  // ---------- "Can the student actually see the material?" guard ----------
+  // A question that says "Using the source…", "Study Figure 2…" or "see the
+  // question paper PDF" is unanswerable here unless the source, figure or table
+  // is reproduced in the text we render. papers-config stores the wording of
+  // every part and transcribes a lot of stimulus into the scenario, but
+  // photographs, maps, circuit diagrams, pre-release articles and Resource
+  // Booklets were never transcribed — they live only in the original PDF. Parts
+  // that lean on those must not be offered as AI feedback questions: the
+  // student is guessing, and the marker is grading an answer to a question it
+  // cannot see either.
+  //
+  // Three tests, in the order they are cheapest to be sure about:
+  //
+  //   1. The text admits the material is elsewhere — "(See Figure 11 in the
+  //      question paper PDF)", "Resource Booklet", "Advance Notice Article".
+  //   2. Everything it names by number or letter must be written out. This is
+  //      the test that matters, because it is what tells "Figure 1: Market
+  //      share of UK streaming services. Amazon Prime Video 37.9%→25.9%; …"
+  //      (transcribed, answerable) apart from "the graph in Figure 1" with no
+  //      Figure 1 anywhere (a caption for a picture we do not have). The
+  //      convention throughout papers-config is `Label N:` or `Label N (note):`
+  //      immediately before the content, so that is what is looked for.
+  //   3. An unnumbered picture — "the diagram", "the photograph" — needs the
+  //      part's own `figure`, since a picture cannot be inline any other way.
+  //
+  // The final length floor catches the rest: a reference to a source or extract
+  // with less supporting text than a stimulus could possibly fit in.
+  const OFFPAGE_MATERIAL = /(see (?:the )?(?:QP|MS|question paper|mark scheme|figure|diagram|photograph|photo|graph|table|image|map|chart|insert|article|advance notice)\b|question paper PDF|QP PDF|QP insert|in the insert\b|resource booklet|advance notice article|not reproduced|omitted here)/i;
+  const UNNUMBERED_PICTURE = /\b(the diagram|the photograph|the photo\b|the map\b|the sketch|the image)\b/i;
+  const NUMBERED_MATERIAL = /\b(figure|fig\.?|diagram|graph|chart|photograph|image|map|table|source|extract|item)\s*([0-9]+(?:\.[0-9]+)?[a-z]?|[A-F])\b/gi;
+  const REFERS_TO_MATERIAL = /\b(using the source|the source\b|the extract|extracts?\s+[A-F]\b|the passage|items?\s+[A-D]\b|the table|the graph|the figure|the chart|shown below|shown opposite)\b/i;
+
+  // Is "Figure 1" / "Extract B" / "Fig. 3.2" actually written out in the text,
+  // rather than merely pointed at? A parenthetical is allowed between the label
+  // and its colon, because papers-config writes "Extract 1 (summary): …".
+  function labelIsWrittenOut(supporting, word, num) {
+    const w = word.replace(/\.$/, '');
+    const n = num.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return new RegExp(`\\b${w}\\.?\\s*${n}\\s*(\\([^)]*\\))?\\s*[:–—-]`, 'i').test(supporting);
+  }
+
+  function materialIsOffPage(supporting, prompt, figureText) {
+    const all = `${supporting}\n${prompt}`;
+    if (OFFPAGE_MATERIAL.test(all)) return true;
+    if (figureText) return false;  // the part carries its own transcribed figure
+    if (UNNUMBERED_PICTURE.test(all)) return true;
+    NUMBERED_MATERIAL.lastIndex = 0;  // shared /g regex — reset before every scan
+    let m;
+    while ((m = NUMBERED_MATERIAL.exec(all))) {
+      if (!labelIsWrittenOut(supporting, m[1], m[2])) return true;
+    }
+    if (REFERS_TO_MATERIAL.test(all) && supporting.replace(/\s+/g, ' ').trim().length < 300) return true;
+    return false;
+  }
+
+  // Which parts of a paper can actually be marked here. Two filters:
+  //
+  //   1. Substance — extended answers, or anything worth >= 4 marks. One-liners
+  //      and MCQ don't suit free-text examiner feedback.
+  //   2. Material — the part must not lean on a figure, source or booklet that
+  //      only exists in the printed PDF (materialIsOffPage above).
+  //
+  // Returns the surviving parts with the supporting text already assembled, so
+  // pastPaperQuestionsFor and the paper picker agree on what counts as usable.
+  //
+  // Exam stimulus IS the material, so the scenario cap only catches pathological
+  // lengths — truncating a live extract would recreate the very problem this
+  // guard exists to stop. The longest in papers-config is ~7.3k (OCR Economics).
+  function usablePartsIn(paper) {
+    const out = [];
+    (paper.questions || []).forEach(q => {
+      let scenario = q.scenario || '';
+      if (scenario.length > 8000) scenario = scenario.slice(0, 8000) + '…';
+      (q.parts || []).forEach(part => {
+        if (!(part.extended || (part.marks || 0) >= 4)) return;
+        const figureText = figureToText(part.figure).trim();
+        const supporting = [scenario, part.preamble || '', figureText].filter(Boolean).join('\n\n');
+        if (materialIsOffPage(supporting, part.prompt || '', figureText)) return;
+        out.push({ part, supporting });
+      });
+    });
+    return out;
+  }
+
   // ---------- Past papers as a question source ----------
   // window.SUBJECTS (papers-config.js) holds the extracted past papers. Only
   // papers that carry a `questions` array can feed the AI marker; the rest are
@@ -420,7 +516,12 @@
     const target = normBoard(board);
     const b = (sub.boards || []).find(x => normBoard(x.board) === target);
     if (!b) return [];
-    return (b.papers || []).filter(p => Array.isArray(p.questions) && p.questions.length);
+    return (b.papers || [])
+      .filter(p => Array.isArray(p.questions) && p.questions.length)
+      // A paper whose written questions all depend on printed figures has
+      // nothing this page can mark, so it must not reach the picker — offering
+      // it would only ever produce the empty state.
+      .filter(p => usablePartsIn(p).length > 0);
   }
 
   function subjectHasAttemptablePapers(subject, board) {
@@ -472,48 +573,18 @@
     return m ? (m[1][0].toUpperCase() + m[1].slice(1).toLowerCase()) : '';
   }
 
-  function figureToText(fig) {
-    if (!fig) return '';
-    const head = fig.label ? `${fig.label}:\n` : '';
-    if (fig.content) return `${head}${fig.content}`;
-    if (Array.isArray(fig.headers) && Array.isArray(fig.rows)) {
-      const cols = fig.headers.join(' | ');
-      const body = fig.rows.map(r => r.join(' | ')).join('\n');
-      return `${head}${cols}\n${body}`;
-    }
-    return '';
-  }
-
-  // Map a paper's written parts into the {q, marks, command, modelAnswer}
-  // shape the rest of the page already speaks. We keep substantial written
-  // questions (extended, or worth >= 4 marks) and skip one-liners / MCQ that
-  // don't suit free-text examiner feedback.
+  // Map a paper's usable parts into the {q, marks, command, modelAnswer}
+  // shape the rest of the page already speaks.
   function pastPaperQuestionsFor(paperId) {
     const paper = papersForSelected().find(p => p.id === paperId);
     if (!paper) return [];
-    const out = [];
-    (paper.questions || []).forEach(q => {
-      let scenario = q.scenario || '';
-      if (scenario.length > 1200) scenario = scenario.slice(0, 1200) + '…';
-      (q.parts || []).forEach(part => {
-        if (!(part.extended || (part.marks || 0) >= 4)) return;
-        const segs = [
-          scenario,
-          part.preamble || '',
-          figureToText(part.figure).trim(),
-          part.prompt || '',
-        ].filter(Boolean);
-        const plain = segs.join('\n\n');
-        out.push({
-          q: esc(plain).replace(/\n/g, '<br>'),
-          marks: part.marks || 0,
-          command: commandFromPrompt(part.prompt),
-          modelAnswer: '',  // none stored — grader auto-generates an anchor
-          _topicName: `${paper.year} ${paper.paperName} · ${part.code}`,
-        });
-      });
-    });
-    return out;
+    return usablePartsIn(paper).map(({ part, supporting }) => ({
+      q: esc([supporting, part.prompt || ''].filter(Boolean).join('\n\n')).replace(/\n/g, '<br>'),
+      marks: part.marks || 0,
+      command: commandFromPrompt(part.prompt),
+      modelAnswer: '',  // none stored — grader auto-generates an anchor
+      _topicName: `${paper.year} ${paper.paperName} · ${part.code}`,
+    }));
   }
 
   // ---------- Practice question bank ----------
@@ -546,7 +617,49 @@
       try { await window.loadPracticeBundle(subjectKey); } catch (e) { console.warn('Practice bundle load failed:', e); }
       aiQs = window.getPracticeTopicQuestions(subjectKey, topicId);
     }
-    topicQuestions = aiQs;
+    topicQuestions = bankQuestionsWithMaterial(aiQs, subjectKey, topicId);
+  }
+
+  // Safety net for the question banks. A bank question is one string, so its
+  // source or extract has to live inside that same string — the Edexcel
+  // Politics source questions, for instance, carry the whole SOURCE paragraph
+  // after the bullets.
+  //
+  // The past-paper test above cannot be reused here: it treats any mention of
+  // "the source" as a reference to stimulus material, which is right for an
+  // exam part but wrong for a bank question about the coherence of a light
+  // source or the source country of a migration flow. So this looks only for
+  // an instruction to *use supplied material* — "Using the source", "Study
+  // Figure 1", "Read the information below" — and then insists the material is
+  // present, either as a labelled block or as a body long enough to be one.
+  //
+  // No bank question fails this today; it exists so that one added later
+  // without its source is dropped rather than shown, and named in the console.
+  const USES_SUPPLIED_MATERIAL = /\b(using the (?:source|extract|extracts|passage|figure|table|data|information)|with reference to the (?:source|extract|passage)|study (?:the )?(?:source|figure|extract|table|item)|read the (?:source|extract|passage|information|text) below|use the (?:source|extract|information) below|refer to the (?:source|extract|figure|table) (?:above|below))\b/i;
+  // A labelled block anywhere in the question means the material was written
+  // out: "SOURCE: Turnout at the 2024 general election…", "Extract A (Table 1)
+  // — written for this practice question…", "Information…". Only the label is
+  // matched, because what follows it varies too much between banks to pin down.
+  const MATERIAL_BLOCK = /(^|\n)\s*(SOURCE|EXTRACT|ITEM|PASSAGE|FIGURE|TABLE|TEXT|INFORMATION)\b/i;
+
+  function bankQuestionMissesMaterial(text) {
+    if (OFFPAGE_MATERIAL.test(text)) return true;
+    if (!USES_SUPPLIED_MATERIAL.test(text)) return false;
+    return !MATERIAL_BLOCK.test(text) && text.replace(/\s+/g, ' ').trim().length < 500;
+  }
+
+  function bankQuestionsWithMaterial(list, subjectKey, topicId) {
+    return (list || []).filter(q => {
+      const text = String(q && q.q || '');
+      if (!text) return false;
+      if (!bankQuestionMissesMaterial(text)) return true;
+      console.error(
+        `[ai-feedback] Skipped a bank question that tells the student to use material ` +
+        `it does not include (${subjectKey} · ${topicId}). Add the source/figure text ` +
+        `to the question, or reword it:\n  ${text.slice(0, 160)}…`
+      );
+      return false;
+    });
   }
 
   function rerenderQuestion() {
