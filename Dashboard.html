@@ -2185,19 +2185,29 @@ function dismissWelcome() {
   document.getElementById('helpOverlay').classList.remove('active');
 }
 
+// Deep-link form: #diagnostic=<Subject_Board> — auto-open that subject's
+// topic list so users coming from a gated notes/practice card, or from a
+// diagnostic's "Back to diagnostics" button, land on the right place.
+//
+// The key is held here rather than re-read from the hash, because
+// switchView() below rewrites the hash to a bare #diagnostic — and the first
+// call runs before load() has filled diagSubjectList, so the topic list can
+// only open on the second call, by which time the key was gone from the URL.
+let pendingDiagKey = null;
+
 function checkDiagnosticHash() {
   const hash = location.hash || '';
   if (!hash.startsWith('#diagnostic')) return;
 
+  const m = hash.match(/^#diagnostic=(.+)$/);
+  if (m) pendingDiagKey = decodeURIComponent(m[1]);
+
   const diagNav = document.querySelector('.nav-item[onclick*="Diagnostic"]');
   if (diagNav) switchView('Diagnostic', diagNav);
 
-  // Deep-link form: #diagnostic=<Subject_Board> — auto-open that subject's
-  // topic list so users coming from a gated notes/practice card land on
-  // the right place.
-  const m = hash.match(/^#diagnostic=(.+)$/);
-  if (m && diagSubjectList.length) {
-    const key = decodeURIComponent(m[1]);
+  if (pendingDiagKey && diagSubjectList.length) {
+    const key = pendingDiagKey;
+    pendingDiagKey = null;
     if (_lvLookup(DIAG_TOPICS, key)) showDiagTopics(key);
   }
 }

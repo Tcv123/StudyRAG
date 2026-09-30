@@ -45,11 +45,26 @@ if [ -n "$ROOT" ] && [ -f "$ROOT/scripts/check-bank.js" ] && command -v node >/d
   fi
 fi
 
+# DIAGNOSTIC GUARD. A diagnostic page that saves under a different subject or
+# board than the Dashboard reads loses every result silently — the student
+# sees the diagnostic finish and nothing change colour. Until 2026-09-07 four
+# pages did that, and it took a student's "The physics rag is broken" three
+# weeks later to find it. tests/diagnostic-keys.test.js pins every page's
+# reads, writes, back link and routing to one key; hold the push on failure,
+# the same way as a failing bank.
+if [ -n "$ROOT" ] && [ -f "$ROOT/tests/diagnostic-keys.test.js" ] && command -v node >/dev/null 2>&1; then
+  if ! DIAG_OUT=$(cd "$ROOT" && node tests/diagnostic-keys.test.js 2>&1); then
+    DIAG_FAIL=$(printf '%s\n' "$DIAG_OUT" | grep '✗' | head -4)
+    BANK_FAIL=$(printf '%s\n%s' "$BANK_FAIL" "tests/diagnostic-keys.test.js failed:
+$DIAG_FAIL" | sed '/^$/d')
+  fi
+fi
+
 if [ -n "$AUTOPUSH_DRY_RUN" ]; then
   echo "DRY RUN: flag present ($FLAG), branch $BRANCH"
   echo "DRY RUN: behind origin/$BRANCH by ${BEHIND:-0} commit(s)"
   if [ -n "$BANK_FAIL" ]; then
-    echo "DRY RUN: would commit but HOLD the push (check-bank failed):"; printf '%s\n' "$BANK_FAIL"
+    echo "DRY RUN: would commit but HOLD the push (a pre-push check failed):"; printf '%s\n' "$BANK_FAIL"
   elif [ "${BEHIND:-0}" -gt 0 ]; then
     echo "DRY RUN: would commit but HOLD the push (non-fast-forward)"
   else
@@ -80,7 +95,7 @@ if [ -n "$BANK_FAIL" ]; then
   # node, not printf: the report quotes bank text, backslashes included, and
   # JSON.stringify is the only escaping here that cannot produce bad JSON.
   BANK_FAIL="$BANK_FAIL" node -e 'console.log(JSON.stringify({ systemMessage:
-    "Auto-push HELD: scripts/check-bank.js failed, so nothing was pushed. Work is committed locally but NOT published. Fix the bank, then the next turn pushes as normal.\n" + process.env.BANK_FAIL }))'
+    "Auto-push HELD: a pre-push check failed (scripts/check-bank.js or tests/diagnostic-keys.test.js), so nothing was pushed. Work is committed locally but NOT published. Fix what it names, then the next turn pushes as normal.\n" + process.env.BANK_FAIL }))'
   exit 0
 fi
 

@@ -25,6 +25,7 @@
     'Biology_Edexcel A':             'diagnostics/biology-edexcel-a-diagnostic.html',
     'Biology_Edexcel B':             'diagnostics/biology-edexcel-b-diagnostic.html',
     'Biology_Edexcel|gcse':          'diagnostics/biology-edexcel-gcse-diagnostic.html',
+    'Biology_Edexcel IGCSE|gcse':    'diagnostics/biology-edexcel-igcse-diagnostic.html',
     'Biology_OCR A':                 'diagnostics/biology-ocr-a-diagnostic.html',
     'Biology_OCR A|gcse':            'diagnostics/biology-ocr-a-gcse-diagnostic.html',
     'Biology_OCR B':                 'diagnostics/biology-ocr-b-diagnostic.html',
