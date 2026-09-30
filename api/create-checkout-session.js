@@ -96,7 +96,6 @@ module.exports = async function handler(req, res) {
       customer: customerId,
       line_items: [{ price: priceId, quantity: 1 }],
       subscription_data: {
-        trial_period_days: 7,
         metadata: { supabase_user_id: user.id, plan },
       },
       allow_promotion_codes: true,

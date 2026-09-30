@@ -288,7 +288,7 @@
           <span class="plan-price-amount" id="proPriceAmount">£9.99</span>
           <span class="plan-price-period" id="proPricePeriod">/ month</span>
         </div>
-        <div class="plan-sub" id="proPriceSub">7-day free trial · cancel any time</div>
+        <div class="plan-sub" id="proPriceSub">Cancel any time · renews automatically</div>
         <ul class="plan-features">
           <li><span class="plan-check">✓</span> Unlimited practice questions across every topic</li>
           <li><span class="plan-check">✓</span> AI tutor — instant explanations on any question</li>
@@ -299,9 +299,9 @@
           <li><span class="plan-check">✓</span> Priority support &amp; ad-free experience</li>
         </ul>
         <button type="button" class="btn btn-blue plan-btn" id="proCtaBtn" data-plan="monthly">
-          Start 7-day free trial
+          Get RAG Pro
         </button>
-        <div class="plan-foot" id="proFoot">Cancel any time · No card charged during trial</div>
+        <div class="plan-foot" id="proFoot">Cancel any time · renews until you cancel</div>
         <div class="plan-foot" style="margin-top:6px;display:flex;align-items:center;justify-content:center;gap:5px;"><span aria-hidden="true">🔒</span>Payments are handled securely by Stripe — we never see or store your card details</div>
       </div>
     </div>
@@ -345,9 +345,9 @@
   function doSignOut() { supabaseClient.auth.signOut().then(() => { location.href = 'auth/login.html'; }); }
 
   const PLAN_DETAILS = {
-    monthly:  { amount: '£9.99',  period: '/ month',    sub: '7-day free trial · cancel any time' },
-    biannual: { amount: '£56.00', period: '/ 6 months', sub: '7-day free trial · £9.33/mo effective · save 7%' },
-    annual:   { amount: '£100.00', period: '/ year',     sub: '7-day free trial · £8.33/mo effective · save 17%' },
+    monthly:  { amount: '£9.99',  period: '/ month',    sub: 'Cancel any time · renews automatically' },
+    biannual: { amount: '£56.00', period: '/ 6 months', sub: '£9.33/mo effective · save 7% · cancel any time' },
+    annual:   { amount: '£100.00', period: '/ year',     sub: '£8.33/mo effective · save 17% · cancel any time' },
   };
 
   const cycleBtns = document.querySelectorAll('.cycle-btn');
