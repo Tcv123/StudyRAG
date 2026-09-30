@@ -3,8 +3,8 @@ const { createClient } = require('@supabase/supabase-js');
 
 /* Pinned so an npm upgrade cannot silently change the shape of what
  * subscriptions.retrieve returns. See the note on syncSubscriptionToProfile. */
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: '2025-02-24.acacia' });
-const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
+const stripe = new Stripe((process.env.STRIPE_SECRET_KEY || '').trim(), { apiVersion: '2025-02-24.acacia' });
+const WEBHOOK_SECRET = (process.env.STRIPE_WEBHOOK_SECRET || '').trim();
 
 const supabaseAdmin = createClient(
   process.env.SUPABASE_URL,

@@ -1,7 +1,7 @@
 const Stripe = require('stripe');
 const { createClient } = require('@supabase/supabase-js');
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: '2025-02-24.acacia' });
+const stripe = new Stripe((process.env.STRIPE_SECRET_KEY || '').trim(), { apiVersion: '2025-02-24.acacia' });
 
 const supabaseAdmin = createClient(
   process.env.SUPABASE_URL,
@@ -9,10 +9,16 @@ const supabaseAdmin = createClient(
   { auth: { persistSession: false, autoRefreshToken: false } }
 );
 
+/* Trimmed. Pasting an id into a dashboard env var field picks up a leading
+ * tab or trailing newline more easily than you would think — on 2026-09-30
+ * all three arrived with a tab in front and Stripe answered "No such price"
+ * for every plan on the site. The same guard covers the keys below. */
+const env = (name) => (process.env[name] || '').trim();
+
 const PRICE_IDS = {
-  monthly:   process.env.STRIPE_PRICE_ID_MONTHLY,
-  biannual:  process.env.STRIPE_PRICE_ID_BIANNUAL,
-  annual:    process.env.STRIPE_PRICE_ID_ANNUAL,
+  monthly:   env('STRIPE_PRICE_ID_MONTHLY'),
+  biannual:  env('STRIPE_PRICE_ID_BIANNUAL'),
+  annual:    env('STRIPE_PRICE_ID_ANNUAL'),
 };
 
 const TAX_ENABLED = process.env.STRIPE_TAX_ENABLED === 'true';
@@ -34,7 +40,13 @@ module.exports = async function handler(req, res) {
 
     const { plan } = req.body || {};
     const priceId = PRICE_IDS[plan];
-    if (!priceId) return res.status(400).json({ error: 'invalid_plan' });
+    if (!priceId) {
+      // Either the caller sent a plan we do not sell, or its price id is not
+      // configured on this deployment. They look identical from the client.
+      if (!(plan in PRICE_IDS)) return res.status(400).json({ error: 'invalid_plan' });
+      console.error(`create-checkout-session: no price id configured for plan "${plan}"`);
+      return res.status(500).json({ error: 'plan_not_configured', message: `No price is configured for the ${plan} plan.` });
+    }
 
     /* subscription_tier / subscription_status / subscription_expires_at are
      * the columns this app actually has. This used to select pro_status,
