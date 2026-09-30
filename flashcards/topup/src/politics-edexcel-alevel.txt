@@ -1,0 +1,673 @@
+deck: Politics|Edexcel|alevel
+
+## 1.1
+What is democracy? ~~ A system of government in which power rests with the people, who exercise it directly or through elected representatives.
+What is direct democracy? ~~ Citizens make decisions themselves, e.g. through referendums, rather than electing representatives.
+What is representative democracy? ~~ Citizens elect representatives to make decisions on their behalf, and hold them accountable at elections.
+Give two advantages of direct democracy. ~~ It gives decisions strong legitimacy and increases political participation and education.
+Give two disadvantages of direct democracy. ~~ Complex issues are oversimplified, and it risks the tyranny of the majority and low turnout.
+What is pluralist democracy? ~~ A democracy where power is dispersed among many competing groups, such as parties and pressure groups.
+What is the franchise? ~~ The right to vote in elections.
+When did women gain equal voting rights with men in the UK? ~~ 1928 (Representation of the People (Equal Franchise) Act); some women over 30 had gained the vote in 1918.
+When was the voting age lowered to 18 in the UK? ~~ 1969, by the Representation of the People Act.
+What are the arguments for lowering the voting age to 16? ~~ 16-year-olds pay taxes, can work and marry; it may increase engagement; and 16-year-olds already vote in Scottish and Welsh elections.
+What are the arguments against votes at 16? ~~ Lack of maturity and experience, low turnout among young voters, and inconsistency with other age limits.
+What is a pressure group? ~~ An organisation that seeks to influence government policy without seeking election to office.
+What is an insider group? ~~ A pressure group with close links to and regular access to government, e.g. the BMA.
+What is an outsider group? ~~ A pressure group without access to government, which uses public campaigns and direct action, e.g. Extinction Rebellion.
+What is a think tank? ~~ An organisation that researches and develops policy ideas to influence government, e.g. the Institute for Fiscal Studies.
+What is a lobbyist? ~~ A professional paid to influence politicians and policy on behalf of clients.
+What is e-democracy? ~~ The use of digital technology in democratic processes, e.g. online petitions and social media campaigns.
+What happens to a UK Parliament e-petition with 100,000 signatures? ~~ It is considered for debate in Parliament by the Petitions Committee.
+What are rights in the UK? ~~ Entitlements protected by law, such as freedom of speech, association and a fair trial, largely set out in the Human Rights Act 1998.
+What is the role of the Equality Act 2010? ~~ It consolidated anti-discrimination law, protecting nine characteristics including age, race, sex and disability.
+How have civil liberties been in conflict with security? ~~ E.g. anti-terror laws allowing detention without charge and surveillance powers (Investigatory Powers Act 2016).
+What is the role of pressure groups in promoting rights? ~~ Groups like Liberty and Amnesty campaign, bring legal cases, and raise awareness to protect rights.
+
+## 1.2
+What is a political party? ~~ An organised group of people with shared ideas who seek to win elections and form a government.
+What are the functions of political parties? ~~ Representation, policy formulation, recruitment of leaders, political participation and forming government.
+How are UK parties funded? ~~ Membership fees, donations from individuals, businesses and trade unions, and state funding such as Short money.
+What is Cranborne money? ~~ State funding for opposition parties in the House of Lords.
+What are the arguments for state funding of parties? ~~ It reduces the influence of wealthy donors, creates a level playing field, and allows parties to focus on policy.
+What are the arguments against state funding of parties? ~~ Taxpayers fund parties they oppose, it may favour established parties, and parties could lose touch with members.
+What is the role of the Electoral Commission? ~~ It regulates party finance and elections, including donations and spending limits.
+What were the key features of Thatcherism? ~~ Free markets, privatisation, reducing trade union power, low taxes, and a strong state on law and order.
+What was New Labour? ~~ The rebranding of Labour under Blair: the Third Way, accepting markets while investing in public services.
+What are the key ideas of the Liberal Democrats? ~~ Constitutional reform (including PR), civil liberties, pro-Europeanism, and environmental protection.
+What is a minor party? ~~ A party with limited representation in Parliament, e.g. the Greens or Reform UK.
+What is a nationalist party? ~~ A party seeking greater autonomy or independence for a nation, e.g. the SNP or Plaid Cymru.
+What is a multi-party system? ~~ A system where more than two parties have a realistic chance of forming or influencing government.
+What is a dominant-party system? ~~ A system where one party wins power repeatedly for a long period.
+How did the 2010 election affect the party system? ~~ It produced a hung parliament and a Conservative–Liberal Democrat coalition, the first since 1945.
+What was the result of the 2024 general election? ~~ Labour won a large majority (411 seats) on about 34% of the vote; the Conservatives fell to 121 seats; the Lib Dems won 72.
+How did Reform UK perform in 2024? ~~ It won about 14% of the vote but only 5 seats, showing how FPTP penalises parties with evenly spread support.
+What is party leadership selection in the Conservative Party? ~~ MPs narrow the candidates to two, then members vote in a ballot.
+What is party leadership selection in the Labour Party? ~~ Candidates need nominations from MPs (and affiliates or CLPs), then members and registered supporters vote using a preferential system.
+What is the impact of party leaders on electoral success? ~~ Leaders shape party image and media coverage; popular leaders (e.g. Blair in 1997) help, unpopular ones hinder.
+What is a manifesto? ~~ A document setting out a party's policies and promises before an election.
+What is the Salisbury Convention? ~~ The Lords do not block legislation promised in the governing party's manifesto at second reading.
+
+## 1.3
+What is First Past the Post? ~~ A plurality system: the candidate with the most votes in each constituency wins, regardless of whether they have a majority.
+What are the advantages of FPTP? ~~ Simple, quick results, strong single-party governments, and a clear MP–constituency link.
+What are the disadvantages of FPTP? ~~ Disproportionate results, wasted votes, safe seats, and tactical voting.
+What is a safe seat? ~~ A constituency where one party has a large majority and is very likely to win.
+What is a marginal seat? ~~ A constituency where the winning party has a small majority, so it could change hands.
+What is tactical voting? ~~ Voting for a less preferred candidate to prevent a disliked candidate from winning.
+What is a wasted vote? ~~ A vote that doesn't contribute to electing a candidate, e.g. votes for losing candidates or surplus votes for winners.
+What is the Supplementary Vote? ~~ Voters mark first and second preferences; if no candidate gets 50%, the top two remain and second preferences are counted. It was used for mayors and PCCs until 2023.
+Why was the Supplementary Vote replaced in England? ~~ The Elections Act 2022 switched mayoral and PCC elections to FPTP.
+What is STV? ~~ The Single Transferable Vote: voters rank candidates in multi-member constituencies, and candidates reaching a quota are elected, with surplus and eliminated votes transferred.
+Where is AMS used in the UK? ~~ The Scottish Parliament, the Senedd (until 2026) and the London Assembly.
+How is the Senedd electoral system changing? ~~ From 2026 it uses a closed list PR system with larger multi-member constituencies and 96 members.
+What are the advantages of AMS? ~~ More proportional than FPTP while keeping constituency MPs, and voters get two votes.
+What are the disadvantages of AMS? ~~ Two classes of representative, closed party lists give parties control, and it often produces coalitions.
+What is the D'Hondt formula? ~~ A method of allocating list seats: votes ÷ (seats already won + 1), used in AMS regional lists.
+What is a coalition government? ~~ A government formed by two or more parties, usually when no party has a majority.
+What is a referendum? ~~ A vote by the electorate on a single issue.
+Give two examples of UK-wide referendums. ~~ The 1975 EEC membership referendum, the 2011 AV referendum and the 2016 EU referendum.
+What was the result of the 2016 EU referendum? ~~ Leave won 51.9% to 48.1% on a 72.2% turnout.
+What are the arguments for referendums? ~~ They give legitimacy to major constitutional decisions and increase participation.
+What are the arguments against referendums? ~~ Complex issues are oversimplified, turnout can be low, and they undermine representative democracy.
+Are UK referendums legally binding? ~~ No; due to parliamentary sovereignty they are advisory, although politically very hard to ignore.
+
+## 1.4
+What is class voting? ~~ Voting based on social class, traditionally working class for Labour and middle class for the Conservatives.
+What is partisan dealignment? ~~ The decline in strong, long-term identification with a political party.
+What is class dealignment? ~~ The weakening link between social class and voting behaviour.
+How does age affect voting behaviour? ~~ Older voters are more likely to vote Conservative and to turn out; younger voters lean Labour, Green or Lib Dem.
+How does education affect voting? ~~ Graduates were more likely to vote Remain and Labour or Lib Dem in recent elections; non-graduates more likely to vote Leave and Conservative (2019).
+How does ethnicity affect voting? ~~ Ethnic minority voters have historically been more likely to vote Labour, although this varies between groups.
+How does region affect voting? ~~ Labour is strong in cities, Scotland (historically) and the North; the Conservatives in rural and southern England; the SNP has dominated Scotland since 2015.
+What is rational choice voting? ~~ Voters make decisions based on their assessment of policies, performance and self-interest.
+What is issue voting? ~~ Voting based on specific policy issues, such as Brexit or the economy.
+What is the governing competence model? ~~ Voters judge parties on their ability to govern effectively and manage the economy.
+How did Black Wednesday (1992) affect voting? ~~ It damaged the Conservatives' reputation for economic competence, contributing to their 1997 defeat.
+What was the significance of the 2017 election? ~~ Theresa May lost her majority, forming a confidence-and-supply agreement with the DUP; Labour gained among young voters.
+What is the role of opinion polls? ~~ They measure public opinion and may influence voting through bandwagon or underdog effects.
+Should opinion polls be banned before elections? ~~ Arguments for: they can influence voters and were inaccurate (e.g. 2015). Against: freedom of speech and they inform tactical voting.
+What is the role of the media in elections? ~~ It informs voters, sets agendas, and can shape perceptions of leaders and parties.
+What is media bias? ~~ Media coverage that favours one party or viewpoint, most notable in UK newspapers.
+Is UK broadcasting required to be impartial? ~~ Yes; Ofcom requires broadcasters to maintain due impartiality, unlike newspapers.
+What is the influence of social media on voting? ~~ It allows targeted campaigning, spreads information quickly, and may create echo chambers and misinformation.
+What was the 'Sun wot won it'? ~~ The Sun's claim that its support helped the Conservatives win in 1992, although evidence of media effects is contested.
+What was the significance of the 2019 election's 'Red Wall'? ~~ The Conservatives won many traditionally Labour seats in the North and Midlands, reflecting Brexit and dealignment.
+What was the significance of the 2024 election for voting behaviour? ~~ Very high volatility, a record low combined Labour–Conservative vote share, and big gains for Reform UK, the Lib Dems and Greens.
+What is the importance of campaigns in elections? ~~ Campaigns can shift votes through leaders' debates, events and gaffes, especially with more volatile voters.
+
+## 1.5
+What is traditional conservatism? ~~ A conservatism that values tradition, hierarchy, organic society and gradual change, based on Burke.
+What is paternalism? ~~ The idea that those with power and wealth have a duty to look after those less fortunate (noblesse oblige).
+What is the organic society? ~~ Society is like a living organism, with interdependent parts, which develops naturally over time.
+What is pragmatism in conservatism? ~~ Making decisions based on practical circumstances rather than abstract principles or ideology.
+What is conservatism's view of human nature? ~~ Humans are imperfect: morally, intellectually and psychologically, so need order and authority.
+What is One Nation conservatism? ~~ Disraeli's idea that society is united and the wealthy have a duty to help the poor, to prevent social division.
+What is the New Right? ~~ A combination of neoliberalism (free markets) and neoconservatism (social order and authority).
+What is neoliberalism? ~~ An ideology supporting free markets, deregulation, privatisation and a minimal state in the economy.
+What is neoconservatism? ~~ An ideology stressing traditional values, law and order, national identity and a strong state.
+What is libertarianism? ~~ An ideology prioritising individual liberty and a minimal state.
+What is Hobbes's view of the state of nature? ~~ Life without government would be "nasty, brutish and short", so people accept a strong sovereign for security.
+What is Burke's view of change? ~~ Change should be gradual and organic, preserving the wisdom of tradition, as opposed to revolution.
+What is Oakeshott's view of politics? ~~ Politics should be pragmatic and based on experience, not rationalist blueprints or ideology.
+What is Rand's objectivism? ~~ A philosophy that rational self-interest is moral and laissez-faire capitalism is the ideal system.
+What is Nozick's view of the state? ~~ Only a minimal state protecting rights is justified; redistributive taxation violates self-ownership.
+What is the conservative view of property? ~~ Property ownership gives security, encourages responsibility and respect for the law.
+What is the conservative view of the state? ~~ The state should maintain order and authority; traditional conservatives accept intervention, the New Right wants a smaller state in the economy.
+What is the conservative view of the economy? ~~ Traditional conservatives are pragmatic about intervention; neoliberals favour free markets.
+What is a tension between neoliberalism and neoconservatism? ~~ Neoliberals want individual freedom and a small state; neoconservatives want a strong state enforcing social order and morality.
+What is authority in conservatism? ~~ Authority comes from above and is natural and necessary to maintain order.
+What is hierarchy in conservatism? ~~ Society is naturally hierarchical, with people in different positions performing different roles.
+What is the conservative view of human rationality? ~~ Human reason is limited, so tradition and experience are better guides than abstract theory.
+
+## 1.6
+What is individualism in liberalism? ~~ The belief in the primacy of the individual over any social group or collective.
+What is classical liberalism? ~~ Early liberalism emphasising individual freedom, a minimal state and free markets.
+What is modern liberalism? ~~ Liberalism accepting that the state should intervene to enable individuals to achieve their potential (positive freedom).
+What is the social contract? ~~ The idea that the state's authority rests on the consent of the governed.
+What is Locke's view of the state? ~~ The state exists to protect natural rights to life, liberty and property, based on consent; people may rebel if it fails.
+What is limited government? ~~ Government power restricted by a constitution, rights and the separation of powers.
+What is tolerance in liberalism? ~~ Accepting views and lifestyles one disagrees with, as long as they don't harm others.
+What is the liberal view of human nature? ~~ Humans are rational and self-interested, but capable of reasoning and progress.
+What is Mill's view of liberty? ~~ Individuals should be free to act as they wish, as long as they don't harm others (the harm principle).
+What is Wollstonecraft's contribution to liberalism? ~~ She argued women are rational beings entitled to the same rights and education as men.
+What is Rawls's theory of justice? ~~ A just society is one people would choose behind a veil of ignorance, with equal liberties and inequalities only if they benefit the least well off.
+What is Friedan's contribution to liberalism? ~~ She argued women were trapped in domestic roles ("the problem that has no name") and campaigned for legal equality.
+What is the liberal view of the economy? ~~ Classical liberals support free markets; modern liberals support a mixed economy with state intervention (Keynesianism).
+What is the liberal view of society? ~~ Society is a collection of individuals; modern liberals accept that social conditions affect individuals' freedom.
+What is meritocracy? ~~ A society where success is based on ability and effort rather than birth or privilege.
+What is liberal democracy? ~~ A democracy with free elections, the rule of law, protection of rights and limited government.
+What is the rule of law? ~~ Everyone, including government, is subject to the law.
+What is equality of opportunity? ~~ Everyone should have the same chance to succeed, regardless of background.
+What is foundational equality? ~~ All humans are born with equal worth and rights.
+What is formal equality? ~~ All individuals have the same legal and political rights.
+What is the liberal view of the state? ~~ The state is a necessary evil (classical) or an enabler of freedom (modern).
+Why do liberals fear the tyranny of the majority? ~~ Majorities may oppress minorities and limit individual freedom, so rights must be protected.
+
+## 1.7
+What is collectivism? ~~ The belief that collective action is more effective than individual action in achieving social and economic goals.
+What is common ownership? ~~ Productive resources should be owned collectively, by the state or workers, rather than privately.
+What is social justice? ~~ A fair distribution of wealth, opportunities and privileges in society.
+What is equality of outcome? ~~ An equal distribution of wealth and resources, which socialists see as necessary for true equality.
+What is the socialist view of human nature? ~~ Humans are social, cooperative and shaped by their environment.
+What is revolutionary socialism? ~~ The belief that capitalism must be overthrown by revolution, e.g. Marxism.
+What is evolutionary socialism? ~~ The belief that socialism can be achieved gradually through democratic means and reform.
+What is social democracy? ~~ A form of socialism accepting a mixed economy and capitalism with welfare state intervention to reduce inequality.
+What is the Third Way? ~~ A revisionist approach combining market economics with social justice, associated with Giddens and New Labour.
+What is Marx's view of class? ~~ Society is divided into the bourgeoisie (owners) and proletariat (workers), whose conflict drives history.
+What is Webb's contribution to socialism? ~~ Beatrice Webb was a Fabian who argued socialism could be achieved gradually through reform and expertise.
+What is Luxemburg's view of socialism? ~~ Capitalism must be overthrown by a mass revolutionary movement, but socialism must be democratic.
+What is Crosland's view of socialism? ~~ Socialism is about equality and social justice, achievable within a mixed economy with welfare and education.
+What is Giddens's view of socialism? ~~ The Third Way: accept globalisation and markets while investing in human capital and social inclusion.
+What is the socialist view of the state? ~~ Revolutionary socialists see the state as a tool of class oppression; social democrats see it as a means to achieve reform.
+What is the socialist view of the economy? ~~ The economy should be run for social needs rather than profit, through common ownership or regulation.
+What is the socialist view of society? ~~ Society is shaped by class and economic structures; inequality is caused by capitalism.
+What is workers' control? ~~ The idea that workers should manage their workplaces democratically.
+What is cooperation in socialism? ~~ Humans naturally work together for mutual benefit rather than competing.
+What is fraternity? ~~ The bonds of comradeship and solidarity between people.
+What is the socialist critique of capitalism? ~~ It is exploitative, creates inequality, alienation, and instability.
+What is alienation? ~~ Marx's idea that under capitalism workers are separated from the products of their labour, the process, each other and their humanity.
+
+## 2.1
+What is a constitution? ~~ A set of rules that establishes the structure and powers of government and the relationship between the state and citizens.
+What is an uncodified constitution? ~~ A constitution not contained in a single document, drawn from several sources.
+What is an unentrenched constitution? ~~ A constitution that can be changed by ordinary legislation, without special procedures.
+What is a unitary constitution? ~~ Sovereignty lies with a central authority, which may delegate but not share power.
+What are the sources of the UK constitution? ~~ Statute law, common law, conventions, authoritative works and treaties.
+What is statute law? ~~ Laws passed by Parliament, e.g. the Human Rights Act 1998.
+What is common law? ~~ Law based on judicial decisions and precedent.
+What is a convention? ~~ An unwritten rule that is followed by custom, e.g. the monarch gives royal assent to bills.
+What is an authoritative work? ~~ A written text explaining how the constitution works, e.g. Bagehot's The English Constitution or Erskine May.
+What is the principle of parliamentary sovereignty? ~~ Parliament can make or unmake any law, and no Parliament can bind its successors.
+What is the rule of law in the UK constitution? ~~ All are equal before the law, no one is above the law, and punishment only follows a breach of law.
+What was the Magna Carta (1215)? ~~ A charter limiting royal power and establishing that the monarch is subject to the law.
+What was the Bill of Rights 1689? ~~ It established parliamentary sovereignty over the monarch and rights such as free elections.
+What was devolution in 1998? ~~ The transfer of powers from Westminster to a Scottish Parliament, a Welsh Assembly and a Northern Ireland Assembly.
+What was the Human Rights Act 1998? ~~ It incorporated the European Convention on Human Rights into UK law.
+What was the House of Lords Act 1999? ~~ It removed all but 92 hereditary peers from the House of Lords.
+What was the Fixed-term Parliaments Act 2011? ~~ It set five-year fixed terms and restricted early elections; it was repealed by the Dissolution and Calling of Parliament Act 2022.
+What is the West Lothian Question? ~~ Why Scottish MPs can vote on English-only matters while English MPs can't vote on devolved Scottish matters.
+What was English Votes for English Laws (EVEL)? ~~ A 2015 procedure giving English MPs a veto on England-only laws; it was abolished in 2021.
+What are the arguments for a codified constitution? ~~ Clarity, protection of rights, limits on government power, and education of citizens.
+What are the arguments against a codified constitution? ~~ Loss of flexibility, judges gaining political power, and difficulty agreeing on its content.
+What is the Sewel Convention? ~~ Westminster will not normally legislate on devolved matters without the consent of the devolved legislature.
+
+## 2.2
+What is the House of Commons? ~~ The elected lower chamber of Parliament, with 650 MPs.
+What is the House of Lords? ~~ The unelected upper chamber, made up of life peers, hereditary peers and bishops.
+What are the functions of Parliament? ~~ Legislation, scrutiny of the executive, representation, and debate.
+What is the legislative process in the UK? ~~ First reading, second reading, committee stage, report stage, third reading, then the other House, and royal assent.
+What is a Public Bill Committee? ~~ A committee that examines bills line by line after second reading.
+What is a select committee? ~~ A committee that scrutinises government departments or policy areas.
+What is Prime Minister's Questions? ~~ A weekly session where MPs question the Prime Minister.
+What is the role of the opposition? ~~ To scrutinise and criticise the government and present itself as an alternative government.
+What is an Opposition Day? ~~ Days (20 per session) when opposition parties choose the topics for debate.
+What is the Backbench Business Committee? ~~ Created in 2010, it schedules debates chosen by backbench MPs.
+What is a Private Member's Bill? ~~ A bill introduced by a backbench MP or peer rather than the government.
+What is a ten-minute rule bill? ~~ A Private Member's Bill introduced with a short speech, often used to raise awareness.
+What is the role of the whips? ~~ They maintain party discipline and ensure MPs vote with the party.
+What is a backbench rebellion? ~~ When MPs vote against their party's position.
+What is the role of MPs? ~~ Representing constituents, scrutinising government, legislating and supporting their party.
+What is the trustee model of representation? ~~ MPs use their own judgement on behalf of constituents (Burke).
+What is the delegate model of representation? ~~ MPs act according to the wishes of their constituents.
+What is the mandate model of representation? ~~ MPs are elected to deliver the manifesto of their party.
+What are the powers of the House of Lords? ~~ It can delay most legislation for about a year, revise bills, scrutinise government and hold debates.
+What are the arguments for an elected House of Lords? ~~ Democratic legitimacy, accountability, and ending patronage.
+What are the arguments against an elected House of Lords? ~~ It could challenge the Commons, lose expertise, and create gridlock.
+What is a life peer? ~~ A member of the House of Lords appointed for life, whose title is not inherited.
+
+## 2.3
+What is the Cabinet? ~~ The committee of senior ministers, chaired by the Prime Minister, that makes key decisions.
+What is the Prime Minister? ~~ The head of government, usually the leader of the largest party in the House of Commons.
+What are the powers of the Prime Minister? ~~ Appointing ministers, setting the agenda, controlling Cabinet, leading the party, and using the royal prerogative.
+What are the constraints on the Prime Minister? ~~ Size of majority, party unity, public opinion, events, Cabinet, and the media.
+What is the core executive? ~~ The network of institutions and people at the centre of government, including the PM, Cabinet, senior civil servants and advisers.
+What is a secondary legislation? ~~ Rules made by ministers under powers granted by an Act of Parliament (statutory instruments).
+What is the civil service? ~~ Permanent, politically neutral officials who implement government policy.
+What is collective ministerial responsibility? ~~ Ministers must publicly support all government decisions or resign.
+What is individual ministerial responsibility? ~~ Ministers are responsible for their own conduct and the actions of their department.
+Give an example of a resignation due to collective responsibility. ~~ Robin Cook resigned in 2003 over the Iraq War.
+Give an example of a resignation over personal conduct. ~~ Matt Hancock resigned in 2021 after breaching COVID guidance.
+What is a Cabinet reshuffle? ~~ When the Prime Minister changes the roles of ministers.
+What are special advisers? ~~ Political appointees who advise ministers and are not politically neutral, e.g. Dominic Cummings.
+What is prime ministerial government? ~~ The view that the PM dominates the executive, rather than Cabinet.
+What is Cabinet government? ~~ The view that decisions are made collectively by the Cabinet.
+What is presidentialism? ~~ The idea that the UK PM has become more like a president, with personal mandates and dominance.
+Why did Thatcher fall in 1990? ~~ Loss of Cabinet support, the poll tax, and divisions over Europe led to a leadership challenge.
+Why did Theresa May resign in 2019? ~~ She failed to pass her Brexit withdrawal agreement and lost the support of her party.
+Why did Boris Johnson resign in 2022? ~~ Scandals such as Partygate and the Pincher affair led to mass ministerial resignations.
+Why was Liz Truss's premiership so short? ~~ Her 2022 mini-budget caused market turmoil, destroying her authority; she resigned after 49 days.
+What is the role of the Cabinet Office? ~~ It supports the PM and Cabinet and coordinates government policy.
+What is the royal prerogative? ~~ Powers historically held by the monarch, now mostly exercised by ministers, e.g. treaty-making and deploying the armed forces.
+
+## 2.4
+What is the Supreme Court? ~~ The highest court of appeal in the UK, established in 2009 to replace the Law Lords.
+What is judicial review? ~~ The process by which courts review the lawfulness of decisions by public bodies.
+What is judicial independence? ~~ Judges are free from political influence, e.g. security of tenure, salary protection and independent appointment.
+What is judicial neutrality? ~~ Judges make decisions impartially, without personal bias.
+How are UK Supreme Court judges appointed? ~~ By an independent selection commission, with the Lord Chancellor's approval.
+What is a declaration of incompatibility? ~~ A court ruling that a law is incompatible with the Human Rights Act; Parliament decides whether to change it.
+What is ultra vires? ~~ Acting beyond legal authority.
+Give an example of a significant Supreme Court case on rights. ~~ Belmarsh (2004, then Law Lords): detention of foreign terror suspects without trial was incompatible with human rights.
+What was the Rwanda case (2023)? ~~ The Supreme Court ruled that the Rwanda asylum plan was unlawful because of the risk of refoulement.
+What is the relationship between Parliament and the executive? ~~ The executive usually dominates Parliament through its majority, but Parliament scrutinises and can defeat government.
+What is the relationship between the UK and the EU after Brexit? ~~ The UK left in 2020, ending the supremacy of EU law and restoring parliamentary sovereignty over those areas.
+What was the Factortame case (1990)? ~~ The Law Lords disapplied an Act of Parliament that conflicted with EU law, showing EU law's supremacy at the time.
+What is legal sovereignty? ~~ The legal authority to make law, held by Parliament in the UK.
+What is political sovereignty? ~~ Where political power actually lies, arguably with the electorate or the government.
+What is pooled sovereignty? ~~ Sharing sovereignty with other states in international organisations, such as the EU.
+What was the significance of the Miller (2017) case? ~~ The government needed parliamentary approval to trigger Article 50.
+What was the significance of Miller/Cherry (2019)? ~~ The Supreme Court ruled Johnson's prorogation of Parliament unlawful.
+What is a hung parliament? ~~ When no single party has a majority of seats in the House of Commons.
+What is the relationship between the executive and judiciary? ~~ Judges can review executive actions through judicial review and uphold rights.
+What is parliamentary privilege? ~~ Legal immunity for MPs and peers for what they say in parliamentary proceedings.
+What is the role of the European Court of Human Rights? ~~ It hears cases on the European Convention on Human Rights; the UK remains a member despite leaving the EU.
+What is the separation of powers? ~~ The division of government into legislative, executive and judicial branches, each checking the others.
+
+## 2.5
+What is the core idea of anarchism? ~~ The rejection of the state and all forms of coercive authority.
+What is collectivist anarchism? ~~ Anarchism based on common ownership and cooperation, e.g. anarcho-communism and anarcho-syndicalism.
+What is individualist anarchism? ~~ Anarchism prioritising individual sovereignty and rejecting the state, e.g. anarcho-capitalism and egoism.
+What is anarcho-communism? ~~ A stateless society with common ownership and distribution according to need.
+What is anarcho-syndicalism? ~~ Anarchism using trade unions and general strikes to overthrow capitalism and the state.
+What is anarcho-capitalism? ~~ The belief that the free market can replace the state entirely, including provision of security and justice.
+What is egoism? ~~ Stirner's belief that individuals should act solely in their own interest, rejecting all external authority.
+What is Stirner's contribution to anarchism? ~~ He argued the individual ego is supreme, and rejected the state, morality and religion.
+What is Goldman's contribution to anarchism? ~~ She linked anarchism with feminism and opposed the state, religion and marriage as oppressive.
+What is the anarchist view of human nature? ~~ Humans are naturally sociable and cooperative (collectivists) or rational and self-interested (individualists).
+What is the anarchist view of the economy? ~~ Collectivists want common ownership; individualists want free markets without the state.
+What is the anarchist view of the state? ~~ The state is coercive, corrupting and unnecessary.
+What is the anarchist view of society? ~~ Society can organise itself naturally without the state.
+What is direct action? ~~ Political action outside formal institutions, such as protests, strikes and sabotage.
+What is mutualism? ~~ Proudhon's idea of a society based on voluntary exchange and cooperative banks.
+What is the anarchist critique of religion? ~~ Religion is a form of authority that suppresses individual freedom.
+What is the anarchist critique of capitalism? ~~ Collectivists argue capitalism exploits workers and relies on the state to protect property.
+What is the anarchist view of liberty? ~~ True freedom is only possible without the state.
+What is propaganda by the deed? ~~ The use of violent acts to inspire revolution, used by some anarchists in the late 19th century.
+What is the anarchist view of democracy? ~~ Representative democracy is a form of domination; anarchists favour direct democracy or none.
+What are the criticisms of anarchism? ~~ It is utopian, unrealistic about human nature, and could lead to chaos.
+What is the anarchist view of economic freedom? ~~ Collectivists see economic freedom as freedom from exploitation; individualists as freedom of exchange.
+
+## 2.6
+What is ecologism? ~~ An ideology that places the natural environment at the centre of political thinking.
+What is shallow ecology? ~~ An anthropocentric approach that protects the environment for human benefit, e.g. sustainable development.
+What is deep ecology? ~~ An ecocentric approach that nature has intrinsic value independent of humans.
+What is sustainability? ~~ Meeting the needs of the present without compromising future generations.
+What is environmental ethics? ~~ The idea that moral consideration should extend to future generations, animals and nature.
+What is ecological consciousness? ~~ A deep awareness of humanity's connection to nature.
+What is Lovelock's Gaia hypothesis? ~~ The Earth is a self-regulating living system.
+What is Carson's contribution to ecologism? ~~ Silent Spring (1962) exposed the damage caused by pesticides, starting the modern environmental movement.
+What is Schumacher's idea of 'small is beautiful'? ~~ Economies should be small-scale, local and sustainable, using appropriate technology.
+What is social ecology? ~~ Bookchin's idea that environmental problems are caused by social hierarchies and capitalism.
+What is eco-socialism? ~~ The view that capitalism causes environmental destruction, so common ownership is needed.
+What is eco-anarchism? ~~ The belief that small, decentralised communities living in harmony with nature are ideal.
+What is eco-feminism? ~~ The view that patriarchy and environmental destruction are linked.
+What is the ecologist view of the economy? ~~ Opposition to endless growth; support for a steady-state or zero-growth economy.
+What is the ecologist view of the state? ~~ Shallow greens accept the state; deep greens favour decentralised communities.
+What is anthropocentrism? ~~ A human-centred view that nature exists for human use.
+What is ecocentrism? ~~ A nature-centred view that all life has intrinsic value.
+What is the ecologist view of human nature? ~~ Humans are part of nature, not separate from or above it.
+What is the precautionary principle? ~~ Taking action to prevent harm even if there is not full scientific certainty.
+What is Leopold's land ethic? ~~ Humans should treat land as a community to which they belong, not a commodity.
+What are the criticisms of ecologism? ~~ It may be anti-growth and anti-development, and deep ecology is seen as impractical.
+What is green consumerism? ~~ Buying environmentally friendly products, criticised by deep ecologists for not tackling underlying problems.
+
+## 2.7
+What is liberal feminism? ~~ Feminism seeking legal and political equality for women within the existing system through reform.
+What is radical feminism? ~~ Feminism arguing that patriarchy pervades all aspects of society and must be overthrown.
+What is socialist feminism? ~~ Feminism arguing that patriarchy is linked to capitalism, which exploits women's unpaid domestic labour.
+What is postmodern feminism? ~~ Feminism rejecting the idea of a single female experience and challenging fixed categories of gender.
+What is intersectionality? ~~ The idea that different forms of oppression (race, class, gender) interact.
+What is the first wave of feminism? ~~ The 19th and early 20th century movement for legal and political rights, especially suffrage.
+What is the second wave of feminism? ~~ The 1960s–80s movement challenging social and cultural inequalities, e.g. in the family and workplace.
+What is the third wave of feminism? ~~ Feminism from the 1990s emphasising diversity and individual identity.
+What is equality feminism? ~~ The belief that women and men are fundamentally equal and should be treated the same.
+What is difference feminism? ~~ The belief that women and men are different, and women's differences should be celebrated.
+What is Millett's contribution to feminism? ~~ Sexual Politics (1970) argued patriarchy operates through all social institutions, especially the family.
+What is Rowbotham's contribution to feminism? ~~ A socialist feminist who argued women's oppression is linked to capitalism and class.
+What is the feminist view of human nature? ~~ Equality feminists argue gender is socially constructed; difference feminists see natural differences.
+What is the feminist view of the state? ~~ Liberal feminists see the state as a tool for reform; radical feminists see it as patriarchal.
+What is the feminist view of the economy? ~~ Socialist feminists highlight unpaid domestic labour and economic exploitation of women.
+What is the feminist view of society? ~~ Society is patriarchal, with women systematically disadvantaged.
+What is the public/private divide? ~~ The separation of politics (public, male) from the family (private, female), which feminists challenge.
+What is gender? ~~ The socially constructed roles and behaviours associated with being male or female.
+What is sex? ~~ The biological differences between males and females.
+What is the glass ceiling? ~~ An invisible barrier preventing women from reaching senior positions.
+What is the gender pay gap? ~~ The difference in average earnings between men and women.
+What are the criticisms of feminism? ~~ It is divided, may not represent all women, and some argue equality has largely been achieved.
+
+## 2.8
+What is multiculturalism? ~~ The idea that different cultures can coexist within a society, and that cultural diversity should be recognised and valued.
+What is liberal multiculturalism? ~~ Multiculturalism within a framework of liberal values, tolerance and individual rights.
+What is pluralist multiculturalism? ~~ Multiculturalism that accepts deep value diversity, without giving liberal values priority.
+What is cosmopolitan multiculturalism? ~~ Multiculturalism that celebrates cultural mixing and a global identity.
+What is conservative multiculturalism? ~~ A critique suggesting diversity may undermine national identity and social cohesion.
+What is identity politics? ~~ Politics based on the interests and perspectives of social groups defined by identity.
+What is minority rights? ~~ Rights granted to minority groups to protect their culture and identity.
+What is the politics of recognition? ~~ Taylor's idea that groups need their identity recognised and respected.
+What is Parekh's contribution to multiculturalism? ~~ He argued cultural diversity is valuable, and societies should be a "community of communities".
+What is Kymlicka's view of multiculturalism? ~~ Minority rights are compatible with liberalism, as culture provides a context for individual choice.
+What is Berlin's view of pluralism? ~~ There are many legitimate but conflicting values, and no single way of life is best.
+What is Modood's view of multiculturalism? ~~ Religion is an important identity that should be recognised, not privatised.
+What is assimilation? ~~ Minorities adopting the culture of the majority.
+What is integration? ~~ Minorities participating fully in society while keeping aspects of their culture.
+What is social cohesion? ~~ The bonds that bring people together in a society.
+What is the criticism that multiculturalism causes segregation? ~~ Critics argue it encourages separate communities living parallel lives.
+What is the liberal criticism of multiculturalism? ~~ It may tolerate illiberal practices that harm individuals, especially women.
+What is the conservative criticism of multiculturalism? ~~ It may weaken national identity and cohesion.
+What is the feminist criticism of multiculturalism? ~~ Minority cultural practices may oppress women.
+What is interculturalism? ~~ An approach emphasising dialogue and interaction between cultures.
+What is cultural diversity? ~~ The existence of a variety of cultural groups within a society.
+What is multicultural citizenship? ~~ Kymlicka's idea of granting group-differentiated rights to minorities.
+
+## 2.9
+What is nationalism? ~~ The belief that the nation is the central principle of political organisation.
+What is liberal nationalism? ~~ Nationalism based on self-determination, democracy and respect for other nations.
+What is conservative nationalism? ~~ Nationalism emphasising tradition, national identity and social cohesion.
+What is anti-colonial nationalism? ~~ Nationalism seeking independence from colonial rule.
+What is expansionist nationalism? ~~ Aggressive nationalism seeking to expand a nation's territory, often based on superiority.
+What is self-determination? ~~ The right of a nation to govern itself.
+What is the nation-state? ~~ A state whose borders match those of a nation.
+What is cultural nationalism? ~~ Nationalism focusing on culture, language and traditions rather than political independence.
+What is ethnic nationalism? ~~ Nationalism based on a shared ethnicity or ancestry.
+What is civic nationalism? ~~ Nationalism based on shared values and citizenship rather than ethnicity.
+What is Garvey's contribution to nationalism? ~~ He promoted Black nationalism and pan-Africanism, encouraging pride and self-reliance.
+What is Mazzini's contribution to nationalism? ~~ He promoted Italian unification and liberal nationalism based on self-determination.
+What is Maurras's contribution to nationalism? ~~ He promoted integral nationalism, an authoritarian and exclusive form of French nationalism.
+What is chauvinism? ~~ The belief in the superiority of one's own nation.
+What is racialism? ~~ The belief that races are distinct and should be separated, used in expansionist nationalism.
+What is the nationalist view of human nature? ~~ Humans naturally form communities and have a need to belong to a nation.
+What is the nationalist view of the state? ~~ Each nation should have its own state.
+What is the nationalist view of society? ~~ Society is based on a shared national identity.
+What is the nationalist view of the economy? ~~ Varies: some favour protectionism and economic self-sufficiency.
+What is internationalism? ~~ Cooperation between nations; liberal nationalists support it, while expansionists reject it.
+What is pan-nationalism? ~~ A movement to unite all members of a nation or ethnic group, e.g. pan-Africanism.
+What are the criticisms of nationalism? ~~ It can lead to conflict, exclusion of minorities and aggression.
+
+## 3A.1
+What is a codified constitution? ~~ A constitution written in a single document, like the US Constitution.
+What is an entrenched constitution? ~~ A constitution protected by special amendment procedures, making it hard to change.
+What are the Articles of the US Constitution? ~~ Article I: Congress; Article II: the President; Article III: the judiciary; others cover states, amendment and supremacy.
+What is the Bill of Rights? ~~ The first ten amendments to the US Constitution, protecting individual rights.
+What is the First Amendment? ~~ Freedom of religion, speech, press, assembly and petition.
+What is the Second Amendment? ~~ The right to keep and bear arms.
+What is the Fourteenth Amendment? ~~ It guarantees equal protection of the laws and due process to all citizens.
+How is the US Constitution amended? ~~ Proposed by two-thirds of both houses of Congress (or a convention called by two-thirds of states), and ratified by three-quarters of the states.
+How many amendments have there been? ~~ 27, the last being ratified in 1992.
+What is the separation of powers in the US? ~~ Legislative power with Congress, executive power with the President, and judicial power with the courts.
+What is federalism? ~~ Power is shared between the federal government and the states.
+What is dual federalism? ~~ Federal and state governments operate in separate spheres (the "layer cake" model).
+What is cooperative federalism? ~~ Federal and state governments work together, e.g. through grants (the "marble cake" model).
+What is new federalism? ~~ Returning power to the states, associated with Nixon and Reagan.
+What is the Commerce Clause? ~~ It gives Congress power to regulate interstate commerce, used to expand federal power.
+What is the Necessary and Proper Clause? ~~ It gives Congress power to make laws needed to carry out its enumerated powers.
+What is the Supremacy Clause? ~~ Federal law takes precedence over state law.
+What are the strengths of the US Constitution? ~~ Protects rights, limits government, is flexible through interpretation, and has lasted over 230 years.
+What are the weaknesses of the US Constitution? ~~ Hard to amend, outdated provisions (e.g. the Second Amendment debate), and the Electoral College.
+What is the role of the states? ~~ States control many areas, e.g. education, criminal law and elections.
+What is the significance of the Tenth Amendment? ~~ Powers not given to the federal government are reserved to the states or the people.
+How has federal power grown? ~~ Through the New Deal, the Great Society, the Commerce Clause, and responses to crises such as 9/11.
+
+## 3A.2
+What is the House of Representatives? ~~ The lower chamber of Congress, with 435 members elected every two years based on population.
+What is the Senate? ~~ The upper chamber, with 100 members (two per state) elected for six years.
+What are the powers of Congress? ~~ Legislation, taxation, declaring war, confirming appointments (Senate), ratifying treaties (Senate) and impeachment.
+What is the power of the purse? ~~ Congress controls taxation and spending.
+What is the legislative process in the US? ~~ Introduction, committee stage, floor debate and vote in both houses, a conference committee if needed, and presidential approval or veto.
+What is a presidential veto? ~~ The President's rejection of a bill, which can be overridden by two-thirds of both houses.
+What is a pocket veto? ~~ When the President doesn't sign a bill within 10 days and Congress has adjourned, so it fails.
+What is the role of the Speaker of the House? ~~ The presiding officer and leader of the majority party, controlling the legislative agenda.
+What is the role of the Senate Majority Leader? ~~ The leader of the majority party in the Senate, controlling the floor agenda.
+What is a standing committee? ~~ A permanent committee that scrutinises legislation and oversees policy areas.
+What is the House Rules Committee? ~~ It sets the terms of debate for bills in the House.
+What is the role of Congress in oversight? ~~ Investigating and scrutinising the executive through hearings and investigations.
+What is the confirmation power of the Senate? ~~ The Senate must approve presidential appointments, including Supreme Court justices and Cabinet members.
+What is the treaty ratification power? ~~ Treaties require approval by two-thirds of the Senate.
+What is impeachment? ~~ The House can impeach (charge) federal officials; the Senate tries them, and removal requires a two-thirds vote.
+How many times has a President been impeached? ~~ Three presidents, four impeachments: Andrew Johnson (1868), Clinton (1998) and Trump (2019 and 2021). None was removed by the Senate.
+What is partisanship in Congress? ~~ Members voting along party lines; it has increased greatly in recent decades.
+What is gridlock? ~~ When Congress and the President fail to pass legislation because of divided government or partisanship.
+What is divided government? ~~ When one party controls the presidency and the other controls one or both houses of Congress.
+What is representation in Congress? ~~ Members represent their constituents, parties and interest groups.
+What is pork-barrel politics? ~~ Spending targeted at a member's district to gain support.
+What is the significance of incumbency? ~~ Incumbents have very high re-election rates due to name recognition, funding and constituency service.
+
+## 3A.3
+What are the formal powers of the President? ~~ Commander-in-chief, proposing legislation, veto, appointments, treaties, pardons and executing laws.
+What are the informal powers of the President? ~~ Persuasion, the electoral mandate, the bully pulpit, and executive orders.
+What is the power to persuade? ~~ Neustadt's argument that the President's real power lies in persuading others.
+What is an executive order? ~~ A directive issued by the President to manage the federal government, without congressional approval.
+What is a signing statement? ~~ A statement issued by the President when signing a bill, which may interpret or challenge parts of it.
+What is the Executive Office of the President? ~~ The agencies that support the President, including the White House Office and the Office of Management and Budget.
+What is the Cabinet in the US? ~~ The heads of the executive departments, who advise the President but have no collective responsibility.
+What is the bully pulpit? ~~ The President's platform to speak directly to the public and influence opinion.
+What is the imperial presidency? ~~ Schlesinger's idea that the President has become too powerful, especially in foreign policy.
+What is the imperilled presidency? ~~ The idea that the President is too weak because of constraints from Congress, courts and media.
+What are the constraints on the President? ~~ Congress, the Supreme Court, the Constitution, federalism, public opinion and the media.
+What is the War Powers Resolution 1973? ~~ It requires the President to notify Congress within 48 hours of deploying troops and limits deployments to 60 days without approval.
+What is the role of the Vice President? ~~ President of the Senate with a tie-breaking vote, and first in line to succeed the President.
+What is the 25th Amendment? ~~ It sets out procedures for presidential succession and disability.
+What is a lame duck President? ~~ A President in the final period of office, often with reduced power.
+What is the honeymoon period? ~~ The early period of a presidency when the President has high approval and can achieve more.
+What is the role of the President in foreign policy? ~~ Commander-in-chief, negotiating treaties, appointing ambassadors, and leading diplomacy.
+What is executive privilege? ~~ The President's claim to withhold information from Congress and the courts, limited by US v Nixon (1974).
+What is the significance of US v Nixon (1974)? ~~ The Supreme Court ruled the President must hand over the Watergate tapes, limiting executive privilege.
+What is the unitary executive theory? ~~ The view that the President has complete control over the executive branch.
+What is a presidential mandate? ~~ The authority to carry out policies based on winning an election.
+What is presidential approval rating? ~~ A measure of public support for the President, which affects their power.
+
+## 3A.4
+What is judicial review in the US? ~~ The power of courts to declare laws and executive actions unconstitutional.
+What is the Supreme Court's composition? ~~ Nine justices appointed for life by the President and confirmed by the Senate.
+What is judicial activism? ~~ When judges actively interpret the Constitution to shape policy.
+What is judicial restraint? ~~ When judges defer to elected branches and follow precedent.
+What is originalism? ~~ Interpreting the Constitution according to its original meaning.
+What is the living constitution? ~~ Interpreting the Constitution in light of current values.
+What is stare decisis? ~~ Following precedent in judicial decisions.
+What was Brown v Board of Education (1954)? ~~ It ruled racial segregation in public schools unconstitutional.
+What was Roe v Wade (1973)? ~~ It established a constitutional right to abortion.
+What was Dobbs v Jackson (2022)? ~~ It overturned Roe v Wade, returning abortion regulation to the states.
+What was Obergefell v Hodges (2015)? ~~ It legalised same-sex marriage nationwide.
+What was DC v Heller (2008)? ~~ It ruled the Second Amendment protects an individual right to own firearms.
+What was Students for Fair Admissions v Harvard (2023)? ~~ It ruled race-conscious affirmative action in college admissions unconstitutional.
+What is a swing justice? ~~ A justice whose vote often decides close cases, e.g. Anthony Kennedy.
+What is the politicisation of the Supreme Court? ~~ The perception that justices vote along ideological lines and that appointments are highly partisan.
+What was the controversy over the Garland nomination (2016)? ~~ The Republican Senate refused to hold hearings for Obama's nominee, Merrick Garland.
+What is the current ideological balance of the Supreme Court? ~~ A 6–3 conservative majority following Trump's three appointments.
+What is the civil rights movement? ~~ The struggle for equal rights for African Americans, especially in the 1950s and 60s.
+What was the Civil Rights Act 1964? ~~ It banned discrimination based on race, colour, religion, sex or national origin.
+What was the Voting Rights Act 1965? ~~ It outlawed discriminatory voting practices such as literacy tests.
+What was Shelby County v Holder (2013)? ~~ It struck down a key part of the Voting Rights Act requiring federal pre-clearance for some states.
+What is affirmative action? ~~ Policies giving preferential treatment to disadvantaged groups to address past discrimination.
+
+## 3A.5
+What is the presidential election process? ~~ Invisible primary, primaries and caucuses, national conventions, the general election campaign, and the Electoral College vote.
+What is the Electoral College? ~~ 538 electors allocated to states based on congressional representation; a candidate needs 270 to win.
+What is winner-takes-all? ~~ In most states, the candidate with the most votes wins all the state's electoral votes.
+Which states don't use winner-takes-all? ~~ Maine and Nebraska allocate some electoral votes by congressional district.
+What is a swing state? ~~ A state where either party could win, e.g. Pennsylvania, Michigan and Wisconsin.
+What is a national convention? ~~ A party meeting that formally nominates its presidential candidate and adopts a platform.
+What is the significance of Super Tuesday? ~~ The day when many states hold primaries, often decisive in the nomination race.
+What is campaign finance? ~~ The funding of election campaigns, regulated by law.
+What is a Super PAC? ~~ A political action committee that can raise and spend unlimited amounts, but can't coordinate directly with campaigns.
+What is soft money? ~~ Money donated to parties for general activities rather than specific candidates, restricted by the Bipartisan Campaign Reform Act 2002.
+What is the role of interest groups in the US? ~~ They lobby Congress and the executive, fund campaigns and bring legal cases.
+What is the NRA? ~~ The National Rifle Association, an influential interest group defending gun rights.
+What is lobbying? ~~ Attempting to influence legislators and officials on behalf of interest groups.
+What is the revolving door? ~~ Movement of people between government and lobbying roles.
+What are the two main parties in the US? ~~ The Democrats (liberal) and the Republicans (conservative).
+What is party polarisation? ~~ Parties moving further apart ideologically, with fewer moderates.
+What is the role of third parties? ~~ They can influence debate and act as spoilers, e.g. Ralph Nader in 2000.
+What is voter turnout in US elections? ~~ Relatively low compared with other democracies, especially in midterms.
+What is the midterm election? ~~ Elections held halfway through a presidential term, for all House seats and a third of the Senate.
+What factors influence voting in the US? ~~ Race, religion, gender, education, age, region and the economy.
+What is voter ID laws' impact? ~~ Critics argue they suppress minority turnout; supporters say they prevent fraud.
+What is the significance of the 2020 election? ~~ Biden won, and Trump's refusal to accept the result led to the 6 January 2021 Capitol attack.
+
+## 3A.6
+What is the rational approach to comparative politics? ~~ It explains outcomes by the self-interested choices of individuals.
+What is the cultural approach to comparative politics? ~~ It explains outcomes by shared values, beliefs and norms.
+What is the structural approach? ~~ It explains outcomes by institutions and the rules that shape behaviour.
+How do the UK and US constitutions differ? ~~ The UK's is uncodified, unentrenched and unitary; the US's is codified, entrenched and federal.
+How do the UK and US legislatures differ? ~~ Congress has more power over legislation and appointments; the UK Parliament is dominated by the executive.
+How do the UK and US executives differ? ~~ The US President is elected separately with fixed terms; the UK PM depends on parliamentary support.
+How do the UK and US Supreme Courts differ? ~~ The US Court can strike down laws; the UK Court can't overturn Acts of Parliament.
+How are rights protected in the UK and US? ~~ The US has an entrenched Bill of Rights; the UK relies on the Human Rights Act, which Parliament can amend.
+How do UK and US parties differ? ~~ UK parties are more centralised and disciplined; US parties are decentralised and candidate-centred.
+How do UK and US pressure groups differ? ~~ US groups have more access points and influence, including through the courts and campaign finance.
+How does federalism compare with devolution? ~~ Federalism is constitutionally entrenched; devolution can in theory be revoked by Westminster.
+How does the separation of powers compare? ~~ The US has a strict separation; the UK has a fusion of executive and legislature.
+Why do US legislators rebel more often than UK MPs? ~~ Weaker party discipline, separate elections, and primaries make members more responsive to constituents.
+How do the UK and US differ in their elections? ~~ The US has fixed terms, primaries and the Electoral College; the UK has flexible elections and party selection.
+How do the UK and US differ in campaign finance? ~~ US spending is much higher with fewer limits; the UK has strict spending limits and bans paid political TV ads.
+What is the cultural explanation for gun control differences? ~~ The US has a strong gun culture linked to history and the Second Amendment.
+Why is the US Supreme Court more powerful than the UK's? ~~ The codified, entrenched constitution gives the US Court power to overturn laws.
+What is the rational explanation for Senate filibusters? ~~ Senators use filibusters strategically to block legislation they oppose.
+What is the significance of structural differences in executive power? ~~ The US President has constitutional independence; the UK PM's power depends on parliamentary majority.
+What are the similarities between the UK and US? ~~ Both are liberal democracies with two-party dominance, FPTP elections and independent judiciaries.
+What is the convergence thesis? ~~ The idea that UK and US politics are becoming more similar, e.g. presidentialisation of UK PMs.
+Why might convergence be limited? ~~ Fundamental constitutional and institutional differences remain.
+
+## 3B.1
+What is the state? ~~ A political entity with sovereignty over a defined territory and population.
+What is national sovereignty? ~~ A state's supreme authority within its territory and independence from external control.
+What is a nation-state? ~~ A state whose population shares a common national identity.
+What is globalisation? ~~ The growing interconnectedness of states through economic, political and cultural flows.
+What is economic globalisation? ~~ The integration of national economies through trade, investment and financial flows.
+What is political globalisation? ~~ The growth of international organisations and cooperation beyond the state.
+What is cultural globalisation? ~~ The spread of cultural ideas, products and values across borders.
+What is the hyperglobalist view? ~~ Globalisation has made states less relevant, creating a borderless world.
+What is the sceptical view? ~~ States remain powerful and globalisation is exaggerated.
+What is the transformationalist view? ~~ Globalisation is transforming states and power, but states remain important.
+What is the impact of globalisation on sovereignty? ~~ States have less control over their economies, borders and policies.
+What is the role of MNCs in globalisation? ~~ They drive global trade and investment and can influence states.
+What is the Washington Consensus? ~~ Free-market policies promoted by the IMF, World Bank and US Treasury.
+What is humanitarian intervention? ~~ Military intervention in another state to protect human rights.
+What is the impact of globalisation on inequality? ~~ It has lifted many out of poverty but increased inequality within some states.
+What is anti-globalisation? ~~ Movements opposing globalisation's economic, cultural and environmental impacts.
+What is the impact of globalisation on the environment? ~~ Increased emissions and resource use, but also international cooperation on environmental issues.
+What is the impact of globalisation on culture? ~~ Cultural homogenisation, but also hybridisation and local resistance.
+What is the digital revolution's impact on globalisation? ~~ Faster communication and information flows, e-commerce and social media across borders.
+What is the role of global civil society? ~~ NGOs and social movements that act across borders to influence global issues.
+What is the impact of globalisation on democracy? ~~ It can spread democratic ideas but may reduce national democratic control.
+What is deglobalisation? ~~ A reduction in global integration, e.g. more protectionism after 2008 and COVID-19.
+
+## 3B.2
+What is the United Nations? ~~ An international organisation founded in 1945 to maintain peace and security and promote cooperation.
+What is the UN Security Council? ~~ The UN body responsible for international peace and security, with 5 permanent members and 10 elected members.
+Who are the P5? ~~ The USA, the UK, France, Russia and China, each with a veto.
+What is the UN General Assembly? ~~ The UN's main deliberative body, where all 193 members have one vote.
+What is the International Monetary Fund? ~~ An organisation promoting financial stability and providing loans to countries in crisis.
+What is the World Bank? ~~ An organisation providing loans and grants for development projects.
+What is the World Trade Organization? ~~ An organisation promoting free trade and settling trade disputes.
+What is the G7? ~~ A group of seven major advanced economies: USA, UK, France, Germany, Italy, Canada and Japan.
+What is the G20? ~~ A group of 19 major economies plus the EU (and the African Union since 2023), discussing global economic issues.
+What is NATO? ~~ The North Atlantic Treaty Organization, a military alliance founded in 1949 for collective defence.
+What is conditionality? ~~ Conditions attached to IMF and World Bank loans, e.g. economic reforms.
+What are structural adjustment programmes? ~~ IMF and World Bank programmes requiring market reforms in exchange for loans.
+What is the North–South divide? ~~ The economic gap between wealthy developed countries and poorer developing countries.
+What is the Millennium Development Goals? ~~ Eight UN goals set in 2000 to reduce poverty and improve development by 2015.
+What is the Sustainable Development Goals? ~~ 17 UN goals set in 2015 to achieve sustainable development by 2030.
+What are the criticisms of the UN Security Council? ~~ The veto causes deadlock, and membership reflects 1945 power rather than today's.
+What is the role of NATO in global security? ~~ Collective defence, crisis management and cooperative security.
+What is NATO expansion? ~~ The growth of NATO membership, including Finland (2023) and Sweden (2024).
+What is the role of the WTO in trade disputes? ~~ Its dispute settlement mechanism resolves trade conflicts between members.
+What is the Doha Round? ~~ WTO trade negotiations started in 2001 that failed to reach agreement.
+What is economic governance? ~~ The international institutions and rules governing the global economy.
+What is political governance? ~~ The international institutions and rules governing peace and security.
+
+## 3B.3
+What is the Universal Declaration of Human Rights? ~~ A 1948 UN declaration setting out fundamental human rights.
+What is the International Court of Justice? ~~ The UN's principal judicial body, settling disputes between states.
+What is the International Criminal Court? ~~ A court that prosecutes individuals for genocide, war crimes and crimes against humanity.
+What is the European Court of Human Rights? ~~ A court enforcing the European Convention on Human Rights.
+What is the Responsibility to Protect? ~~ A 2005 UN principle that states must protect their populations, and the international community should intervene if they fail.
+What is humanitarian intervention? ~~ Military intervention to prevent human rights abuses.
+Give an example of successful humanitarian intervention. ~~ Sierra Leone (2000), where UK intervention helped end the civil war.
+Give an example of unsuccessful humanitarian intervention. ~~ Libya (2011), which removed Gaddafi but led to instability and civil war.
+What is the Rwandan genocide (1994)? ~~ The mass killing of Tutsis, which the international community failed to prevent.
+What are the limits of the ICC? ~~ Major powers, including the US, China and Russia, are not members; it relies on state cooperation.
+What is global environmental governance? ~~ International institutions and agreements addressing environmental issues.
+What is the Kyoto Protocol (1997)? ~~ An agreement setting binding emissions targets for developed countries.
+What is the Paris Agreement (2015)? ~~ An agreement to limit global warming to well below 2°C, with nationally determined contributions.
+What is COP? ~~ Conference of the Parties, the annual UN climate change conference.
+What is the Intergovernmental Panel on Climate Change? ~~ The UN body assessing scientific evidence on climate change.
+What is the tragedy of the commons in global politics? ~~ Shared resources are overused because no single state has an incentive to limit its use.
+What is the North–South divide on climate change? ~~ Developing countries argue developed countries caused the problem and should bear more of the cost.
+What are the limits of global environmental governance? ~~ Lack of enforcement, national interests and free-riding.
+What is common but differentiated responsibility? ~~ All states share responsibility for climate change, but developed states have greater responsibility.
+What is the role of NGOs in human rights? ~~ They monitor abuses, campaign, and provide evidence, e.g. Amnesty International and Human Rights Watch.
+What is state sovereignty's conflict with human rights? ~~ Intervention to protect rights may violate a state's sovereignty.
+What is the significance of the Glasgow COP26 (2021)? ~~ It agreed to "phase down" coal and strengthen emissions targets.
+
+## 3B.4
+What is hard power? ~~ The use of military and economic force to influence others.
+What is soft power? ~~ The ability to influence others through attraction, culture and values.
+What is smart power? ~~ The combination of hard and soft power.
+What is a superpower? ~~ A state with global influence across economic, military and cultural areas.
+What is a great power? ~~ A state with significant influence, but less than a superpower.
+What is an emerging power? ~~ A state whose power is growing, e.g. India and Brazil.
+What is unipolarity? ~~ A world dominated by one superpower, e.g. the USA after the Cold War.
+What is bipolarity? ~~ A world dominated by two superpowers, e.g. the USA and USSR during the Cold War.
+What is multipolarity? ~~ A world with several centres of power.
+What is the rise of China? ~~ China's growing economic, military and diplomatic power.
+What is the Belt and Road Initiative? ~~ China's global infrastructure investment programme to increase its influence.
+What is the role of Russia in global politics? ~~ A nuclear power and P5 member, asserting influence through military action, e.g. the invasion of Ukraine.
+What is a failed state? ~~ A state unable to provide basic services or maintain control of its territory.
+What is a rogue state? ~~ A state seen as a threat to world peace, e.g. North Korea.
+What is democratisation? ~~ The spread of democracy to more states.
+What is the democratic peace theory? ~~ Democracies rarely go to war with each other.
+What is authoritarianism? ~~ A system of government with concentrated power and limited political freedom.
+What is a semi-democratic state? ~~ A state with some democratic features but significant restrictions on freedoms.
+What is development and its measurement? ~~ Improvement in living standards, measured by GDP per capita, HDI and other indicators.
+What is the significance of BRICS? ~~ A group of emerging economies (Brazil, Russia, India, China, South Africa and new members) challenging Western dominance.
+What is the Thucydides Trap? ~~ The idea that war is likely when a rising power challenges an established power, e.g. the US and China.
+What is polarity's effect on global stability? ~~ Realists argue bipolarity is most stable; others argue unipolarity or multipolarity can be stable.
+
+## 3B.5
+What is regionalism? ~~ Cooperation and integration between states in a geographic region.
+What is economic regionalism? ~~ Regional economic cooperation, e.g. free trade areas.
+What is security regionalism? ~~ Regional cooperation on security issues.
+What is political regionalism? ~~ Regional political cooperation and integration.
+What is the European Union? ~~ A political and economic union of 27 European states.
+What is the European Commission? ~~ The EU's executive body, proposing legislation and enforcing EU law.
+What is the European Parliament? ~~ The EU's directly elected legislative body.
+What is the Council of the European Union? ~~ The body representing member state governments, sharing legislative power with the Parliament.
+What is the European Council? ~~ The body of heads of state or government that sets the EU's overall direction.
+What is the Court of Justice of the EU? ~~ The court interpreting EU law and ensuring its uniform application.
+What is the single market? ~~ Free movement of goods, services, capital and people within the EU.
+What is the eurozone? ~~ EU member states that use the euro as their currency.
+What was the Maastricht Treaty (1992)? ~~ It created the EU, European citizenship and the path to the euro.
+What was the Lisbon Treaty (2007)? ~~ It reformed EU institutions and created Article 50 for leaving the EU.
+What is widening? ~~ Increasing the number of EU member states.
+What is deepening? ~~ Increasing integration between existing member states.
+What is supranationalism? ~~ Decision-making above the level of the state, with binding authority.
+What is intergovernmentalism? ~~ Cooperation between states where each retains sovereignty.
+What is ASEAN? ~~ The Association of Southeast Asian Nations, promoting regional cooperation.
+What is the African Union? ~~ An organisation promoting unity and cooperation among African states.
+What is the eurozone crisis? ~~ The debt crisis from 2009 affecting countries such as Greece, revealing flaws in monetary union without fiscal union.
+What is the impact of Brexit on the EU? ~~ Loss of a major member, but the EU remained united in negotiations.
+
+## 3B.6
+What is realism? ~~ A theory that states are the main actors in an anarchic international system, pursuing power and security.
+What is liberalism in global politics? ~~ A theory that cooperation between states is possible through institutions, trade and democracy.
+What is anarchy in international relations? ~~ The absence of a central authority above states.
+What is the security dilemma? ~~ When one state increases its security, others feel threatened and respond, leading to insecurity.
+What is the balance of power? ~~ States form alliances to prevent any one state from becoming too powerful.
+What is complex interdependence? ~~ The liberal idea that states are linked by many connections, making conflict costly.
+What is global governance? ~~ Cooperation between states and international organisations to manage global issues.
+What is constructivism? ~~ A theory that international relations are shaped by ideas, identities and norms.
+What is neorealism? ~~ A version of realism emphasising the structure of the international system rather than human nature.
+What is classical realism? ~~ A version of realism emphasising human nature as the cause of state behaviour (Morgenthau).
+What is neoliberal institutionalism? ~~ A liberal theory arguing institutions help states cooperate by reducing uncertainty.
+What is the realist view of human nature? ~~ Humans are selfish and power-seeking.
+What is the liberal view of human nature? ~~ Humans are capable of cooperation and progress.
+What is the realist view of the state? ~~ States are the main actors and pursue national interests.
+What is the liberal view of international organisations? ~~ They promote cooperation, peace and shared norms.
+What is the realist view of international organisations? ~~ They reflect the interests of powerful states and have limited independent influence.
+What is the liberal view of war? ~~ War can be prevented through democracy, trade and institutions.
+What is the realist view of war? ~~ War is inevitable in an anarchic system.
+What is the significance of the 2022 Russian invasion of Ukraine for realism? ~~ It supports realist views of power politics and the limits of international institutions.
+What is the significance of the EU for liberalism? ~~ It shows that cooperation and integration can bring peace between former enemies.
+What is the English School? ~~ A theory that states form an international society with shared rules and norms.
+What is the relevance of realism and liberalism today? ~~ Both explain aspects of global politics: realism explains conflict and power; liberalism explains cooperation.

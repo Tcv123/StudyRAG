@@ -1,0 +1,129 @@
+deck: Computer Science|OCR|alevel
+
+## 1.1
+What does the Program Counter (PC) hold? ~~ The memory address of the next instruction to be fetched.
+What is the role of the accumulator? ~~ A general-purpose register that holds the results of calculations performed by the ALU.
+What does the Control Unit do? ~~ It decodes instructions and sends control signals to coordinate the movement of data and the operation of other components.
+What are the three buses in a computer system? ~~ The address bus (carries addresses, one-way), data bus (carries data, two-way) and control bus (carries control signals such as read/write and clock).
+How does clock speed affect CPU performance? ~~ A higher clock speed means more fetch–decode–execute cycles per second, so instructions are executed faster.
+How do multiple cores affect performance? ~~ Each core can process instructions independently, so tasks that can be run in parallel are completed faster; not all programs benefit.
+How does cache size affect performance? ~~ More cache means more frequently used data and instructions can be stored close to the CPU, reducing slower accesses to RAM.
+What is the difference between L1, L2 and L3 cache? ~~ L1 is smallest and fastest, usually per core; L2 is larger and slower; L3 is largest, shared between cores and slowest of the three.
+What is a co-processor? ~~ An additional processor that handles specific tasks, such as floating-point arithmetic or graphics, to relieve the main CPU.
+What is multicore versus parallel processing? ~~ Multicore processors have several cores on one chip; parallel processing splits a task across multiple processors or cores to run simultaneously.
+How does a magnetic hard disk store data? ~~ Data is stored as magnetised regions on spinning platters, read and written by a moving head on an actuator arm.
+How does optical storage work? ~~ A laser reads pits and lands on a spinning disc; the change in reflection is interpreted as binary.
+Compare the characteristics of magnetic, optical and flash storage. ~~ Magnetic: high capacity, low cost per GB, moving parts. Optical: portable, low capacity, slow. Flash: fast, durable, no moving parts, higher cost per GB.
+What is an input and output device? Give examples of each. ~~ Input devices send data into the computer (keyboard, sensor, microphone); output devices present data from it (monitor, printer, speaker, actuator).
+
+## 1.2
+What is a device driver? ~~ Software that allows the operating system to communicate with a specific hardware device.
+What is memory management? ~~ The OS allocates and frees memory for processes, protects processes from accessing each other's memory, and handles paging and segmentation.
+What is segmentation? ~~ Dividing memory into logical, variable-sized blocks (segments) that match the structure of a program, such as functions or data.
+What is an interrupt service routine (ISR)? ~~ Code that handles an interrupt. The CPU saves its current state to the stack, runs the ISR, then restores its state.
+What is First Come First Served scheduling? ~~ Processes are run in the order they arrive, until each finishes. It is simple but can cause long waits behind long jobs.
+What is Shortest Remaining Time scheduling? ~~ A pre-emptive algorithm that runs the process with the least time remaining, switching when a shorter job arrives.
+What is a multi-level feedback queue? ~~ Several queues of different priority; processes move between queues based on their behaviour, balancing responsiveness and throughput.
+What is a BIOS? ~~ Firmware that performs the power-on self-test (POST) and loads the operating system bootloader when a computer starts.
+What are the types of operating system? ~~ Distributed, embedded, multi-tasking, multi-user and real-time.
+What is a virtual machine? ~~ Software that emulates a computer system, allowing programs or operating systems to run in an isolated environment, e.g. running bytecode.
+Compare open-source and closed-source software. ~~ Open source: source code available to view and modify, often free. Closed source: code kept private, sold under licence, with official support.
+What is the spiral model? ~~ A risk-driven development model that repeats cycles of planning, risk analysis, engineering and evaluation, suitable for large, high-risk projects.
+What is Extreme Programming (XP)? ~~ An agile methodology using pair programming, test-driven development, frequent releases and continuous customer feedback.
+What is Rapid Application Development (RAD)? ~~ Development using iterative prototypes, repeatedly refined with user feedback, rather than detailed upfront design.
+
+## 1.3
+What is a relational database? ~~ A database that stores data in tables (relations) linked by primary and foreign keys.
+What is a flat-file database and its drawback? ~~ A single table holding all the data. It leads to data redundancy and inconsistency.
+What is a foreign key? ~~ A field in one table that refers to the primary key of another table, creating a relationship.
+What is Second Normal Form (2NF)? ~~ The table is in 1NF and every non-key attribute depends on the whole primary key (no partial dependencies).
+Give the SQL to select all customers from London ordered by surname. ~~ SELECT * FROM Customers WHERE City = 'London' ORDER BY Surname;
+What is record locking? ~~ A technique that prevents two users from editing the same record at the same time, avoiding lost updates.
+What is redundancy in database management? ~~ Keeping duplicate copies of data or systems so data isn't lost if one fails.
+What is the TCP/IP stack? ~~ A four-layer model for networking: application, transport, internet (network) and link.
+What is the difference between a LAN and a WAN? ~~ A LAN covers a small geographical area with its own infrastructure; a WAN covers a large area using third-party infrastructure.
+What is a client–server network compared with peer-to-peer? ~~ Client–server: central servers provide services to clients. Peer-to-peer: all computers are equal and share resources directly.
+What is HTML, CSS and JavaScript used for? ~~ HTML: structure and content of web pages. CSS: presentation and layout. JavaScript: client-side interactivity.
+What is a proxy server? ~~ A server that acts as an intermediary between clients and the internet, providing anonymity, filtering and caching.
+What is dictionary-based compression? ~~ Frequently occurring patterns are replaced with references to a dictionary of those patterns.
+What is hashing used for in databases? ~~ Mapping a key to a storage location for fast direct access to records.
+
+## 1.4
+How do you convert binary to hexadecimal? ~~ Split the binary number into groups of 4 bits (nibbles) from the right and convert each to a hex digit.
+How are two binary numbers subtracted using two's complement? ~~ Convert the number being subtracted to two's complement (negate it) and add.
+What is sign and magnitude representation? ~~ The most significant bit represents the sign (0 positive, 1 negative) and the rest represent the magnitude.
+What is a bitwise AND mask used for? ~~ To clear (set to 0) specific bits while keeping others, e.g. AND 00001111 keeps the lower nibble.
+What is a bitwise OR mask used for? ~~ To set specific bits to 1 while keeping others unchanged.
+What is a bitwise XOR mask used for? ~~ To toggle (flip) specific bits.
+What is a logical shift left? ~~ Moving all bits one place left and adding a 0 on the right, which multiplies an unsigned number by 2.
+What is a linked list? ~~ A dynamic data structure where each node contains data and a pointer to the next node.
+What is a tree data structure? ~~ A hierarchical structure of nodes connected by edges, with a root node and no cycles.
+What is a tuple? ~~ An ordered, immutable collection of elements, which may be of different types.
+What is a record data structure? ~~ A collection of related fields, possibly of different data types, treated as a single unit.
+What is the difference between a static and a dynamic data structure? ~~ Static: fixed size set at compile time (e.g. an array). Dynamic: can grow and shrink at run time (e.g. a linked list).
+Simplify A.(A + B) using Boolean algebra. ~~ Absorption: A.(A + B) = A.
+What does a full adder do? ~~ It adds three bits (A, B and carry in), outputting a sum bit and a carry out bit.
+
+## 1.5
+What is the Computer Misuse Act's section 3 offence? ~~ Unauthorised acts with intent to impair the operation of a computer, e.g. spreading malware or DDoS attacks.
+What is phishing? ~~ Sending fraudulent messages that appear to come from trusted sources to trick people into revealing personal data or passwords.
+What are the ethical issues of facial recognition? ~~ Privacy, surveillance without consent, higher error rates for some groups (bias), and potential misuse by authorities.
+What are the issues with censorship on the internet? ~~ Balancing protection from harmful content against freedom of speech; different countries have different values and laws.
+What are the cultural impacts of computing? ~~ Changes to how people communicate, work and socialise, globalisation of culture, and the loss of some traditional skills.
+What is e-waste and why is it a problem? ~~ Discarded electronic devices containing toxic materials; often shipped abroad and dismantled unsafely.
+What ethical issues arise from monitoring employees? ~~ Invasion of privacy, lack of trust, and misuse of personal data, balanced against security and productivity.
+What is piracy? ~~ Illegally copying or distributing copyrighted software, music or films, which breaches the Copyright, Designs and Patents Act.
+What are the moral issues of AI decision making? ~~ Lack of transparency, accountability for mistakes, bias in training data, and job losses.
+What is the right to be forgotten? ~~ Under GDPR, individuals can request the removal of personal data that is no longer necessary or lawfully processed.
+How can computers affect people's health? ~~ Repetitive strain injury, eye strain, back problems, and reduced physical activity.
+What is layout, colour and character sets in cultural contexts? ~~ Software must be localised to different languages, scripts, right-to-left layouts and cultural meanings of colours and symbols.
+What is the responsibility of software developers regarding accessibility? ~~ To design software that can be used by people with disabilities, e.g. screen reader support, alt text and keyboard navigation.
+How can social media affect society? ~~ It can spread misinformation, cause addiction and cyberbullying, and influence elections, as well as connecting people and communities.
+
+## 2.1
+What is the purpose of identifying the components of a problem? ~~ To break a problem into smaller parts that can be solved, tested and developed separately.
+What is reusability? ~~ Designing components (functions, classes, libraries) that can be used again in other programs, saving time.
+What is a postcondition? ~~ A condition that must be true after a subroutine has executed.
+What is pipelining in computational thinking? ~~ Breaking a task into stages where the output of one stage is the input to the next, so stages can process different data at the same time.
+What is a decision point? ~~ A point in a program where the flow depends on a condition, e.g. an IF statement or loop condition.
+What is the purpose of a structure diagram? ~~ It shows how a problem is decomposed into sub-problems in a hierarchical way.
+Why might caching lead to problems? ~~ Cached data may become stale (out of date), and caching uses extra memory.
+What is prefetching? ~~ Loading instructions or data into memory or cache before they are needed, predicting future requests.
+What is the benefit of identifying the order of steps in a solution? ~~ It ensures dependencies are met, so each step has the data it needs.
+What is an example of abstraction in a map? ~~ The London Underground map shows stations and connections but ignores real distances and geography.
+What is a model in computational thinking? ~~ A simplified representation of a real-world system used to predict or analyse its behaviour.
+What is concurrent processing? ~~ Several processes are in progress at the same time, sharing processor time, though only one may run at any instant on a single core.
+What is a race condition? ~~ An error where the outcome depends on the timing of concurrent processes accessing shared data.
+How can deadlock occur? ~~ Two or more processes each hold a resource and wait for a resource held by another, so none can continue.
+
+## 2.2
+What is a global variable? ~~ A variable declared outside all subroutines, accessible throughout the whole program.
+What is a local variable? ~~ A variable declared inside a subroutine, only accessible within that subroutine.
+What is a class and an object? ~~ A class is a template defining attributes and methods; an object is an instance of a class.
+What is inheritance in OOP? ~~ A subclass inherits the attributes and methods of a superclass and can add or override them.
+What is a constructor? ~~ A special method called when an object is created, used to initialise its attributes.
+What are getter and setter methods? ~~ Methods that allow controlled access to private attributes: getters return values, setters change them with validation.
+What are the features of an IDE that help debugging? ~~ Breakpoints, stepping through code, variable watches, and error diagnostics.
+What is computational methods' "problem recognition"? ~~ Identifying that a problem can be solved computationally and what the problem actually is.
+What is visualisation as a computational method? ~~ Presenting data graphically so patterns and trends can be recognised more easily.
+What is the base case in recursion? ~~ The condition that stops the recursion, returning a value without calling itself again.
+What is an advantage of recursion? ~~ It can give shorter, more elegant solutions for problems that are naturally recursive, such as tree traversal.
+What is a disadvantage of recursion? ~~ Each call uses stack memory, which can cause stack overflow, and it can be slower than iteration.
+What is the purpose of modular programming? ~~ Breaking a program into subroutines that can be written, tested and maintained independently, and reused.
+What is an assembly language instruction LDA? ~~ Load the value from a memory address into the accumulator (LMC).
+
+## 2.3
+What is the time complexity of bubble sort? ~~ O(n^2) in the average and worst cases; O(n) in the best case with an early-exit check.
+What is the time complexity of insertion sort? ~~ O(n^2) in the average and worst cases; O(n) in the best case (already sorted).
+What is the time complexity of quick sort? ~~ O(n log n) on average, O(n^2) in the worst case (poor pivot choices).
+What is the space complexity of merge sort? ~~ O(n), because it needs extra space for merging.
+What is O(1)? ~~ Constant time: the algorithm takes the same time regardless of input size, e.g. accessing an array element by index.
+What is O(log n)? ~~ Logarithmic time: the problem size is halved at each step, e.g. binary search.
+What is O(2^n)? ~~ Exponential time: the time doubles with each additional input, e.g. brute-force solving of some problems.
+How is a stack used in depth-first traversal? ~~ Nodes are pushed onto a stack as they are visited; when a node has no unvisited neighbours, the algorithm backtracks by popping.
+How is a queue used in breadth-first traversal? ~~ Neighbours of the current node are added to a queue, so nodes are visited level by level.
+What is pre-order traversal of a tree? ~~ Visit the root, then the left subtree, then the right subtree.
+What is post-order traversal? ~~ Visit the left subtree, then the right subtree, then the root.
+How do you insert an item into a linked list? ~~ Create a new node, set its pointer to the next node, and update the previous node's pointer to point to the new node.
+How do you push an item onto a stack implemented with an array? ~~ Check the stack isn't full, increment the top pointer, then store the item at that position.
+How do you dequeue from a circular queue? ~~ Check it isn't empty, take the item at the front pointer, then move front = (front + 1) MOD size.

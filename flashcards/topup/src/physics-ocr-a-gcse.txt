@@ -1,0 +1,194 @@
+deck: Physics|OCR A|gcse
+# Shared GCSE physics content drawn from the Edexcel GCSE deck, mapped to this board's topics.
+
+## P1
+What is density? ~~ Mass per unit volume: ρ = m/V.
+What is the unit of density? ~~ kg/m³ (or g/cm³).
+Calculate the density of a 200 g block with volume 100 cm³. ~~ 200 ÷ 100 = 2 g/cm³.
+How can the density of an irregular object be found? ~~ Measure its mass with a balance and its volume by displacement of water in a measuring cylinder.
+What is the particle arrangement in a solid? ~~ Particles are closely packed in a regular pattern, vibrating about fixed positions.
+What is the particle arrangement in a liquid? ~~ Particles are close together but randomly arranged and can move past each other.
+What is the particle arrangement in a gas? ~~ Particles are far apart, randomly arranged and move quickly in all directions.
+Why are gases less dense than solids? ~~ The particles are much further apart.
+What is internal energy? ~~ The total kinetic and potential energy of all the particles in a system.
+What happens to internal energy when a substance is heated? ~~ It increases, either raising the temperature or changing the state.
+What is specific heat capacity? ~~ The energy needed to raise the temperature of 1 kg of a substance by 1 °C.
+What is the equation for specific heat capacity? ~~ ΔQ = m × c × Δθ.
+Calculate the energy needed to heat 2 kg of water by 10 °C (c = 4200 J/kg°C). ~~ 2 × 4200 × 10 = 84,000 J.
+What is specific latent heat? ~~ The energy needed to change the state of 1 kg of a substance without a change in temperature.
+What is the equation for specific latent heat? ~~ Q = m × L.
+What is the specific latent heat of fusion? ~~ The energy needed to change 1 kg from solid to liquid.
+What is the specific latent heat of vaporisation? ~~ The energy needed to change 1 kg from liquid to gas.
+Why does temperature stay constant during a change of state? ~~ The energy is used to break bonds between particles, not to increase kinetic energy.
+What is melting? ~~ Changing from solid to liquid.
+What is evaporation? ~~ Changing from liquid to gas at the surface of a liquid, below its boiling point.
+What is condensation? ~~ Changing from gas to liquid.
+What is sublimation? ~~ Changing directly from solid to gas.
+Are changes of state physical or chemical? ~~ Physical, because they are reversible and the substance keeps its chemical properties.
+Is mass conserved when a substance changes state? ~~ Yes.
+What is the structure of an atom? ~~ A small, dense, positively charged nucleus containing protons and neutrons, surrounded by electrons.
+What are the relative charges of protons, neutrons and electrons? ~~ Proton +1, neutron 0, electron −1.
+What are the relative masses of protons, neutrons and electrons? ~~ Proton 1, neutron 1, electron about 1/1840.
+What is the atomic number? ~~ The number of protons in the nucleus.
+What is the mass number? ~~ The total number of protons and neutrons in the nucleus.
+What is an isotope? ~~ Atoms of the same element with the same number of protons but different numbers of neutrons.
+
+## P2
+What is speed? ~~ The distance travelled per unit time: speed = distance ÷ time.
+What is velocity? ~~ Speed in a given direction.
+What is acceleration? ~~ The rate of change of velocity: a = (v − u) ÷ t.
+What is the unit of acceleration? ~~ m/s².
+What does the gradient of a distance–time graph show? ~~ Speed.
+What does a horizontal line on a distance–time graph show? ~~ The object is stationary.
+What does the gradient of a velocity–time graph show? ~~ Acceleration.
+What does the area under a velocity–time graph show? ~~ Distance travelled.
+What does a horizontal line on a velocity–time graph show? ~~ Constant velocity.
+What is the equation linking v, u, a and x? ~~ v² − u² = 2ax.
+A car accelerates from 10 m/s to 30 m/s in 5 s. What is its acceleration? ~~ (30 − 10) ÷ 5 = 4 m/s².
+What is the acceleration due to gravity near Earth's surface? ~~ About 10 m/s² (9.8 m/s²).
+Give typical speeds for walking, cycling and a car in town. ~~ Walking about 1.5 m/s, cycling about 6 m/s, a car in town about 13 m/s.
+What is Newton's first law? ~~ An object stays at rest or moves at constant velocity unless a resultant force acts on it.
+What is Newton's second law? ~~ Resultant force = mass × acceleration (F = ma).
+What is a resultant force? ~~ The single force that has the same effect as all the forces acting on an object.
+How do you calculate the resultant of two forces in the same direction? ~~ Add them.
+How do you calculate the resultant of two forces in opposite directions? ~~ Subtract the smaller from the larger; the resultant acts in the direction of the larger.
+What happens if the resultant force is zero? ~~ The object stays at rest or continues at constant velocity.
+What is a contact force? ~~ A force that acts when objects are touching, e.g. friction, air resistance, tension and normal contact force.
+What is a non-contact force? ~~ A force that acts at a distance, e.g. gravity, magnetism and electrostatic force.
+What is a free-body force diagram? ~~ A diagram showing all the forces acting on a single object, with arrows showing size and direction.
+How can forces be resolved? ~~ By splitting a force into two perpendicular components, e.g. horizontal and vertical.
+What is a moment? ~~ The turning effect of a force: moment = force × perpendicular distance from the pivot.
+What is the unit of a moment? ~~ Newton metre (N m).
+What is elastic deformation? ~~ When an object returns to its original shape after the force is removed.
+What is inelastic (plastic) deformation? ~~ When an object doesn't return to its original shape after the force is removed.
+What is Hooke's law? ~~ The extension of a spring is directly proportional to the force applied, up to the limit of proportionality.
+What is the equation for Hooke's law? ~~ F = k × x.
+What is the spring constant? ~~ The force needed to stretch a spring by 1 m, measured in N/m.
+
+## P3
+What is electric current? ~~ The rate of flow of charge: I = Q/t.
+What is potential difference? ~~ The energy transferred per unit charge between two points: V = E/Q.
+What is resistance? ~~ How much a component opposes the flow of current: R = V/I.
+What is Ohm's law? ~~ The current through a resistor is directly proportional to the potential difference, at constant temperature.
+Calculate the current when 12 V is applied across a 4 Ω resistor. ~~ I = 12 ÷ 4 = 3 A.
+Calculate the charge that flows when 2 A flows for 30 s. ~~ Q = 2 × 30 = 60 C.
+What is a series circuit? ~~ A circuit where components are connected in a single loop.
+What is a parallel circuit? ~~ A circuit where components are connected on separate branches.
+What happens to current in a series circuit? ~~ It is the same everywhere.
+What happens to potential difference in a series circuit? ~~ It is shared between the components.
+What happens to current in a parallel circuit? ~~ It is shared between the branches; the total current equals the sum of the branch currents.
+What happens to potential difference in a parallel circuit? ~~ It is the same across each branch.
+What is static electricity? ~~ A build-up of electric charge on the surface of an insulator.
+How does an object become charged by friction? ~~ Electrons are transferred from one material to another when they are rubbed together.
+What charge does an object get if it gains electrons? ~~ Negative.
+What charge does an object get if it loses electrons? ~~ Positive.
+Why can only electrons move when objects are charged? ~~ Protons are fixed in the nucleus; electrons are on the outside and can be transferred.
+What happens when two like charges are brought together? ~~ They repel.
+What is a magnetic field? ~~ A region where a magnetic material or magnet experiences a force.
+What is the direction of a magnetic field line? ~~ From the north pole to the south pole.
+What happens when like magnetic poles are brought together? ~~ They repel.
+What happens when unlike magnetic poles are brought together? ~~ They attract.
+What is a permanent magnet? ~~ A magnet that produces its own magnetic field all the time.
+What is an induced magnet? ~~ A material that becomes magnetic when placed in a magnetic field, and loses it when removed.
+Name three magnetic materials. ~~ Iron, nickel and cobalt (and steel).
+How can you plot a magnetic field? ~~ Using a plotting compass placed around the magnet and marking the direction of the needle.
+What is electromagnetic induction? ~~ Generating a potential difference in a conductor when it moves relative to a magnetic field.
+How can the induced potential difference be increased? ~~ Moving the magnet or wire faster, using a stronger magnet, or using more turns on the coil.
+When is a current induced? ~~ When the conductor is part of a complete circuit.
+What is the generator effect? ~~ Producing electricity by electromagnetic induction.
+
+## P4
+What is a wave? ~~ A disturbance that transfers energy from one place to another without transferring matter.
+What is a transverse wave? ~~ A wave where the vibrations are at right angles to the direction of energy transfer, e.g. light.
+What is a longitudinal wave? ~~ A wave where the vibrations are parallel to the direction of energy transfer, e.g. sound.
+What is amplitude? ~~ The maximum displacement of a point on the wave from its rest position.
+What is wavelength? ~~ The distance from one point on a wave to the same point on the next wave.
+What is frequency? ~~ The number of waves passing a point each second, measured in hertz (Hz).
+What is the period of a wave? ~~ The time for one complete wave to pass a point: T = 1/f.
+What is the wave equation? ~~ Wave speed = frequency × wavelength (v = fλ).
+What is the electromagnetic spectrum? ~~ A continuous range of transverse waves that travel at the speed of light in a vacuum.
+List the EM spectrum in order of increasing frequency. ~~ Radio, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays.
+What is the speed of EM waves in a vacuum? ~~ 3 × 10⁸ m/s.
+What are the uses of radio waves? ~~ Broadcasting TV and radio, and communications.
+What are the uses of microwaves? ~~ Cooking, satellite communications and mobile phones.
+What are the uses of infrared? ~~ Heating, thermal imaging, remote controls and optical fibres.
+What are the uses of visible light? ~~ Seeing, photography and fibre optic communication.
+What is the structure of an atom? ~~ A small, dense, positively charged nucleus containing protons and neutrons, surrounded by electrons.
+What are the relative charges of protons, neutrons and electrons? ~~ Proton +1, neutron 0, electron −1.
+What are the relative masses of protons, neutrons and electrons? ~~ Proton 1, neutron 1, electron about 1/1840.
+What is the atomic number? ~~ The number of protons in the nucleus.
+What is the mass number? ~~ The total number of protons and neutrons in the nucleus.
+What is an isotope? ~~ Atoms of the same element with the same number of protons but different numbers of neutrons.
+What is radioactive decay? ~~ The random process in which an unstable nucleus emits radiation to become more stable.
+What is an alpha particle? ~~ Two protons and two neutrons (a helium nucleus).
+What is a beta-minus particle? ~~ A fast-moving electron emitted from the nucleus when a neutron turns into a proton.
+What is a positron? ~~ A particle with the same mass as an electron but a positive charge, emitted in beta-plus decay.
+What is gamma radiation? ~~ High-frequency electromagnetic radiation emitted from the nucleus.
+What is the penetrating power of alpha, beta and gamma? ~~ Alpha is stopped by paper, beta by a few mm of aluminium, gamma is reduced by thick lead or concrete.
+What is the ionising power of alpha, beta and gamma? ~~ Alpha is highly ionising, beta moderately, gamma weakly.
+What happens in alpha decay? ~~ The mass number decreases by 4 and the atomic number decreases by 2.
+What happens in beta-minus decay? ~~ The mass number stays the same and the atomic number increases by 1.
+
+## P5
+Name the energy stores. ~~ Kinetic, gravitational potential, elastic potential, thermal, chemical, magnetic, electrostatic and nuclear.
+Name four ways energy can be transferred. ~~ Mechanically (by forces), electrically, by heating, and by radiation (light and sound).
+What is the equation for kinetic energy? ~~ KE = ½mv².
+What is the equation for gravitational potential energy? ~~ GPE = mgh.
+Calculate the KE of a 2 kg ball moving at 3 m/s. ~~ ½ × 2 × 3² = 9 J.
+Calculate the GPE gained by a 5 kg mass lifted 2 m (g = 10 N/kg). ~~ 5 × 10 × 2 = 100 J.
+What is the law of conservation of energy? ~~ Energy can't be created or destroyed, only transferred between stores.
+What is wasted energy? ~~ Energy transferred to stores that aren't useful, usually thermal energy in the surroundings.
+What is efficiency? ~~ Useful energy output ÷ total energy input (× 100 for a percentage).
+A motor uses 200 J and transfers 150 J usefully. What is its efficiency? ~~ 150 ÷ 200 = 0.75, or 75%.
+How can energy waste be reduced? ~~ Lubrication to reduce friction, and insulation to reduce heat loss.
+What is thermal conductivity? ~~ How quickly a material transfers energy by heating through conduction.
+How does the thickness of a wall affect heat loss? ~~ Thicker walls reduce the rate of heat loss.
+What is a Sankey diagram? ~~ A diagram showing energy transfers, with arrow widths proportional to the amount of energy.
+What are non-renewable energy resources? ~~ Resources that will run out, e.g. coal, oil, gas and nuclear fuel.
+What is work done? ~~ Energy transferred when a force moves an object: W = F × d.
+What is the unit of work done? ~~ The joule (J).
+Calculate the work done when a 20 N force moves an object 5 m. ~~ 20 × 5 = 100 J.
+What is power? ~~ The rate of doing work (energy transferred per second): P = E/t.
+Calculate the power of a motor that transfers 600 J in 20 s. ~~ 600 ÷ 20 = 30 W.
+What is 1 watt? ~~ 1 joule of energy transferred per second.
+Why is work done against friction wasted? ~~ It transfers energy to thermal stores, heating the surroundings.
+What happens to energy when you push a box along the floor? ~~ Work is done against friction, transferring energy to thermal energy.
+What happens to energy when a car brakes? ~~ Kinetic energy is transferred to thermal energy in the brakes.
+How is work done related to energy transfer? ~~ Work done equals energy transferred.
+What is the relationship between power, work done and time? ~~ Power = work done ÷ time.
+Two motors lift the same load to the same height. One does it faster. Which is more powerful? ~~ The faster one, because it transfers the same energy in less time.
+What are the energy transfers for a person climbing stairs? ~~ Chemical energy in muscles is transferred to GPE and thermal energy.
+What are the energy transfers in an electric kettle? ~~ Electrical energy is transferred to the thermal store of the water (and some wasted to the surroundings).
+What are the energy transfers in a car engine? ~~ Chemical energy in fuel is transferred to kinetic energy and thermal energy (wasted).
+
+## P6
+Give typical speeds for walking, cycling and a car in town. ~~ Walking about 1.5 m/s, cycling about 6 m/s, a car in town about 13 m/s.
+What is stopping distance? ~~ Thinking distance + braking distance.
+What factors affect thinking distance? ~~ Speed and reaction time (affected by tiredness, alcohol, drugs and distractions).
+What factors affect braking distance? ~~ Speed, road conditions (wet or icy), and the condition of tyres and brakes.
+What is a typical human reaction time? ~~ About 0.2–0.9 s.
+What are non-renewable energy resources? ~~ Resources that will run out, e.g. coal, oil, gas and nuclear fuel.
+What are renewable energy resources? ~~ Resources that will be replenished, e.g. solar, wind, hydroelectric, tidal, geothermal, biofuel and wave.
+Give an advantage and disadvantage of fossil fuels. ~~ Advantage: reliable and can meet demand. Disadvantage: produce CO₂ and will run out.
+Give an advantage and disadvantage of wind power. ~~ Advantage: renewable, no CO₂ during operation. Disadvantage: unreliable and can be noisy or unsightly.
+Give an advantage and disadvantage of solar power. ~~ Advantage: renewable, no emissions. Disadvantage: no power at night and less in cloudy weather.
+Give an advantage and disadvantage of nuclear power. ~~ Advantage: no CO₂ and reliable. Disadvantage: radioactive waste and risk of accidents.
+Give an advantage and disadvantage of hydroelectric power. ~~ Advantage: reliable, renewable and responds quickly. Disadvantage: floods valleys and destroys habitats.
+Give an advantage and disadvantage of tidal power. ~~ Advantage: reliable and predictable. Disadvantage: few suitable sites and affects habitats.
+Why are fossil fuels still used? ~~ They are reliable, the infrastructure already exists, and they can respond quickly to demand.
+What is a biofuel? ~~ A fuel made from plant or animal matter; it is renewable and can be carbon-neutral.
+What is geothermal energy? ~~ Energy from hot rocks underground, used to heat water and generate electricity.
+What is the trend in UK energy use? ~~ Increasing use of renewables and decreasing use of coal.
+Why is it hard to replace fossil fuels quickly? ~~ Cost of new infrastructure, the reliability of supply, and public objections to some renewables.
+What is the National Grid? ~~ A network of cables and transformers that distributes electricity across the country.
+Why is electricity transmitted at high voltage? ~~ High voltage means low current, reducing energy lost as heat in the cables.
+Where are step-up transformers used in the National Grid? ~~ At power stations, to increase the voltage for transmission.
+Where are step-down transformers used in the National Grid? ~~ Near homes and businesses, to reduce the voltage to a safe level (230 V).
+How are power stations connected to homes? ~~ Through the National Grid: power station → step-up transformer → transmission cables → step-down transformer → homes.
+What is the solar system? ~~ The Sun and everything that orbits it: planets, dwarf planets, moons, asteroids and comets.
+What are the eight planets in order from the Sun? ~~ Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.
+What keeps planets in orbit? ~~ The gravitational force of the Sun.
+What is an artificial satellite? ~~ A man-made object placed in orbit around the Earth, e.g. for communication or weather monitoring.
+How does orbital speed change with distance? ~~ Objects closer to the body they orbit must travel faster to stay in orbit.
+What is the life cycle of a star like the Sun? ~~ Nebula → protostar → main sequence star → red giant → white dwarf.
+What galaxy is our solar system in? ~~ The Milky Way.

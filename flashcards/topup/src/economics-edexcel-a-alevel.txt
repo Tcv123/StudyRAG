@@ -1,0 +1,129 @@
+deck: Economics|Edexcel A|alevel
+
+## 1.1
+What is the basic economic problem? ~~ Scarcity: unlimited wants but finite resources, so choices must be made.
+What are the four factors of production? ~~ Land, labour, capital and enterprise.
+What is specialisation? ~~ Individuals, firms or countries concentrating on producing a limited range of goods or services in which they are efficient.
+What are the functions of money? ~~ Medium of exchange, store of value, unit of account, and standard of deferred payment.
+What is a free market economy? ~~ An economy where resources are allocated by the price mechanism, with minimal government intervention.
+What does a shift in the PPF outwards represent? ~~ Economic growth: an increase in the productive potential of the economy.
+What does a demand curve show? ~~ The quantity consumers are willing and able to buy at each price, ceteris paribus.
+What is the diminishing marginal utility explanation of demand? ~~ Each extra unit gives less satisfaction, so consumers are only willing to buy more at lower prices.
+What causes a supply curve to shift right? ~~ Lower costs of production, improved technology, subsidies, more firms or favourable weather.
+What is the signalling function of price? ~~ Price changes send information to producers and consumers about where resources are needed.
+What is the incentive function of price? ~~ Higher prices encourage producers to supply more, because more profit can be made.
+What is the incidence of an indirect tax when demand is elastic? ~~ Most of the tax is borne by producers, as they cannot pass it on without a large fall in quantity demanded.
+What is a subsidy? ~~ A payment from the government to producers that lowers their costs, increasing supply and lowering price.
+What is the difference between an ad valorem and a specific tax? ~~ Ad valorem is a percentage of the price (e.g. VAT); specific is a fixed amount per unit (e.g. fuel duty).
+
+## 1.2
+Why do negative externalities lead to overproduction? ~~ Producers only consider private costs, so output is higher than the socially optimal level where MSC = MSB.
+What is marginal social cost? ~~ The cost to society of producing one more unit: marginal private cost plus marginal external cost.
+What is marginal social benefit? ~~ The benefit to society of consuming one more unit: marginal private benefit plus marginal external benefit.
+What is a merit good? ~~ A good that is underconsumed in a free market because consumers underestimate its benefits, e.g. education and healthcare.
+What is a demerit good? ~~ A good that is overconsumed because consumers underestimate its harm, e.g. cigarettes and alcohol.
+What is a public good? ~~ A good that is non-excludable and non-rival, e.g. street lighting and national defence.
+What is non-excludability? ~~ It is impossible to prevent people who don't pay from consuming the good.
+What is non-rivalry? ~~ One person's consumption doesn't reduce the amount available to others.
+What is asymmetric information? ~~ When one party in a transaction has more information than the other, e.g. used car sellers.
+What are the problems of a minimum price for alcohol? ~~ It may be regressive, encourage illegal sales, and doesn't target heavy drinkers specifically.
+What are the problems of a maximum price? ~~ Shortages, black markets, and reduced supply over time, e.g. rent controls.
+What are the causes of government failure? ~~ Distortion of price signals, unintended consequences, excessive administrative costs, and information gaps.
+What is regulatory capture? ~~ When regulators act in the interests of the industry they regulate rather than the public.
+What is the Coase theorem? ~~ If property rights are clearly defined and transaction costs are low, private bargaining can solve externalities.
+
+## 2.1
+What is economic growth? ~~ An increase in real GDP over time.
+What is the difference between GDP and GNI? ~~ GNI = GDP + net income from abroad.
+What is inflation? ~~ A sustained increase in the general price level.
+What is deflation? ~~ A sustained fall in the general price level.
+What is the RPI? ~~ The Retail Prices Index: a measure of inflation that includes housing costs such as mortgage interest payments.
+What is the difference between CPI and RPI? ~~ RPI includes housing costs and uses an arithmetic mean; CPI excludes most housing costs and uses a geometric mean.
+What are the costs of unemployment to the government? ~~ Lower tax revenue and higher spending on benefits.
+What is the employment rate? ~~ The proportion of the working-age population who are employed.
+What is the balance of trade? ~~ The difference between the value of exports and imports of goods and services.
+What is the average propensity to consume? ~~ Total consumption divided by total income.
+What is the marginal propensity to save? ~~ The proportion of extra income that is saved.
+What is the relationship between consumer confidence and consumption? ~~ Higher confidence encourages spending and borrowing; low confidence increases saving.
+What are the influences on government spending? ~~ The trade cycle, fiscal policy, and demographic factors.
+What influences net exports? ~~ Real income at home and abroad, exchange rates, relative inflation rates, and non-price competitiveness.
+
+## 2.2
+What is the short-run aggregate supply curve? ~~ A curve showing the output firms produce at each price level when factor prices are fixed.
+What is long-run aggregate supply? ~~ The productive potential of the economy when all factors of production are fully employed.
+What is the Keynesian AS curve? ~~ A curve that is horizontal at low output (spare capacity), upward-sloping as capacity is approached, and vertical at full capacity.
+What is an injection? ~~ Spending that adds to the circular flow: investment, government spending and exports.
+What is a withdrawal? ~~ Income that leaves the circular flow: saving, taxation and imports.
+What is the multiplier effect? ~~ An initial change in spending leads to a larger final change in national income.
+What is the formula for the multiplier? ~~ 1/(1 − MPC), or 1/MPW.
+What is the accelerator? ~~ Investment depends on the rate of change of national income; small changes in income cause large changes in investment.
+What is the output gap? ~~ The difference between actual and potential output.
+What are the conflicts between policy objectives? ~~ E.g. reducing unemployment may increase inflation; faster growth may worsen the current account.
+What are the limitations of monetary policy? ~~ Time lags, low confidence limiting the effect of lower rates, and interest rates close to zero.
+What is a fiscal deficit? ~~ When government spending exceeds tax revenue in a given year.
+What are market-based supply-side policies? ~~ Policies that reduce government intervention, e.g. tax cuts, deregulation and privatisation.
+What are interventionist supply-side policies? ~~ Government investment in education, training, infrastructure and R&D.
+
+## 3.1
+What is a public sector organisation? ~~ An organisation owned and controlled by the government, e.g. the NHS.
+What is a not-for-profit organisation? ~~ An organisation that reinvests surplus revenue to achieve its social goals, e.g. charities.
+What is a merger? ~~ Two firms agreeing to combine into one.
+What is a takeover? ~~ One firm buying a controlling interest in another.
+What is backward vertical integration? ~~ Merging with a firm at an earlier stage of production, e.g. a car maker buying a steel producer.
+What is forward vertical integration? ~~ Merging with a firm at a later stage of production, e.g. a manufacturer buying a retailer.
+What is a conglomerate merger? ~~ A merger between firms in unrelated industries, spreading risk.
+What is demerger? ~~ Splitting a firm into separate companies, often to focus on core activities or improve efficiency.
+What are the constraints on business growth? ~~ Size of the market, access to finance, and owner objectives.
+What is revenue maximisation? ~~ Producing where MR = 0, which maximises total revenue.
+What is sales maximisation? ~~ Producing the largest output possible while still making normal profit (where AC = AR).
+What is satisficing? ~~ Aiming to achieve satisfactory rather than maximum profits, to satisfy different stakeholders.
+Why might managers pursue revenue maximisation? ~~ Their salaries and status are often linked to the size of the firm.
+What is shut-down in the long run? ~~ A firm leaves the industry if price is below average total cost.
+
+## 3.2
+What is perfect competition? ~~ Many buyers and sellers, identical products, perfect information and no barriers to entry or exit.
+Why do perfectly competitive firms make normal profit in the long run? ~~ Supernormal profits attract new firms, increasing supply and lowering price until only normal profit is made.
+What is allocative efficiency? ~~ Producing where price equals marginal cost, so resources match consumer preferences.
+What is productive efficiency? ~~ Producing at the lowest point on the average cost curve.
+What is interdependence in oligopoly? ~~ Each firm's decisions depend on how rivals are expected to react.
+What is price leadership? ~~ One dominant firm sets the price and others follow.
+What is a price war? ~~ Firms repeatedly cut prices to gain market share, reducing profits for all.
+What are the advantages of monopoly? ~~ Economies of scale, and supernormal profits that can fund research and development.
+What are the disadvantages of monopoly? ~~ Higher prices, lower output, less choice, and allocative and productive inefficiency.
+What is monopsony? ~~ A market with a single buyer, e.g. the NHS as a buyer of drugs.
+What are the effects of monopsony power on suppliers? ~~ Lower prices paid to suppliers, which reduces their profits.
+What is wage elasticity of demand for labour? ~~ The responsiveness of labour demand to a change in the wage rate.
+What is the impact of a national minimum wage? ~~ It may raise incomes of low-paid workers but could reduce employment if set above equilibrium in a competitive market.
+What is the role of the Competition and Markets Authority? ~~ It investigates mergers and anti-competitive behaviour, and enforces competition law.
+
+## 4.1
+What is globalisation? ~~ The increasing integration and interdependence of economies around the world.
+What are the causes of globalisation? ~~ Improvements in transport and communication, trade liberalisation, and the growth of MNCs.
+What is a trading bloc? ~~ A group of countries that agree to reduce trade barriers between them.
+What is trade creation? ~~ When joining a trading bloc leads to a shift from high-cost domestic producers to lower-cost producers within the bloc.
+What is trade diversion? ~~ When joining a trading bloc leads to a shift from low-cost producers outside the bloc to higher-cost producers inside it.
+What is a quota? ~~ A physical limit on the quantity of a good that can be imported.
+What is an export subsidy? ~~ A payment to domestic exporters to make their goods cheaper abroad.
+What are non-tariff barriers? ~~ Regulations, standards and administrative procedures that restrict imports.
+What is the J-curve effect? ~~ After a depreciation, the current account initially worsens before improving, as demand for exports and imports is initially inelastic.
+What is a managed exchange rate? ~~ A floating exchange rate where the central bank intervenes to influence its value.
+What is devaluation? ~~ A deliberate reduction in the value of a currency in a fixed exchange rate system.
+What factors affect international competitiveness? ~~ Exchange rates, relative productivity, labour costs, inflation, and non-price factors like quality.
+What is unit labour cost? ~~ The cost of labour per unit of output.
+What are the benefits of FDI to a host country? ~~ Jobs, technology transfer, higher tax revenue, and improved skills.
+
+## 4.2
+What is absolute poverty? ~~ When income is insufficient to meet basic needs such as food, shelter and clothing.
+What is relative poverty? ~~ Having an income below a certain proportion (usually 60%) of median income.
+What are the causes of changes in absolute poverty? ~~ Economic growth, changes in employment, and government policies.
+What is inequality of wealth? ~~ Unequal distribution of assets such as property, savings and shares.
+What are the impacts of economic change on inequality? ~~ Globalisation and technological change can increase wage differences between skilled and unskilled workers.
+What is the Kuznets curve? ~~ The idea that inequality first rises then falls as an economy develops.
+What are the primary product dependency problems? ~~ Volatile prices, low income elasticity of demand, and the Prebisch–Singer hypothesis of declining terms of trade.
+What is the savings gap? ~~ The shortfall between savings and the investment needed for development, as in the Harrod–Domar model.
+What is capital flight? ~~ When wealth and capital leave a country, often due to instability or poor returns.
+What is corruption's effect on development? ~~ It diverts resources, discourages investment, and reduces trust in institutions.
+What are the market-orientated strategies for development? ~~ Trade liberalisation, promotion of FDI, removing subsidies, and floating exchange rates.
+What are the interventionist strategies for development? ~~ Developing human capital, protectionism, managed exchange rates, infrastructure and joint ventures.
+What is debt relief? ~~ Cancelling or reducing the debts of developing countries so resources can be used for development.
+What is the role of NGOs in development? ~~ Non-governmental organisations provide aid, expertise and advocacy, often focusing on grassroots projects.

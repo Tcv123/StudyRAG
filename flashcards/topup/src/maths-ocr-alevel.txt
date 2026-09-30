@@ -1,0 +1,393 @@
+deck: Mathematics|OCR|alevel
+# Shared A-level maths content drawn from the OCR B (MEI) deck; board-specific cards excluded.
+
+## 1.1
+What is proof by deduction? ~~ Proceeding from given assumptions through a series of logical steps to a conclusion.
+What is proof by exhaustion? ~~ Establishing a result by checking every case of a finite set of cases, having first shown the cases cover all possibilities.
+What is proof by contradiction? ~~ Assume the statement is false, reason correctly from that assumption, and derive an impossibility. The assumption must therefore be wrong.
+How do you disprove a general statement? ~~ Give a single counter-example — one case for which the statement fails. One example never proves a general statement, but one counter-example always disproves it.
+What does P ⇒ Q mean, and how does it differ from P ⇔ Q? ~~ P ⇒ Q means P implies Q. P ⇔ Q means each implies the other. Writing ⇔ requires both directions to hold.
+What is the contrapositive of 'if P then Q', and why is it useful? ~~ 'If not Q then not P'. It is logically equivalent to the original, so proving it proves the original — often easier than a direct argument.
+What is the converse of 'if P then Q'? Is it always true? ~~ 'If Q then P'. It is a different statement and need not be true, confusing the two is a common error.
+Give the counter-example that disproves 'every prime is odd'. ~~ 2 is prime and even.
+Give the counter-example that disproves 'n² − n + 41 is prime for every positive integer n'. ~~ n = 41, where the expression equals 41², divisible by 41. It does give primes for n = 1 to 40, which is why testing values is not proof.
+Outline the proof that √2 is irrational. ~~ Assume √2 = p/q in lowest terms. Then p² = 2q², so p is even, writing p = 2k gives q² = 2k², so q is even. Both even contradicts lowest terms.
+Why is 'in its lowest terms' essential to the √2 proof? ~~ It is the assumption the final contradiction violates. Without it, showing p and q are both even contradicts nothing and the proof fails.
+Why can the √2 argument not be copied to prove √4 irrational? ~~ It would need 'p² divisible by 4 ⇒ p divisible by 4', which is false (take p = 2). The proof breaks exactly where it must, since √4 = 2 is rational.
+Outline Euclid's proof that there are infinitely many primes. ~~ Assume a finite list p₁…pₙ and form N = p₁p₂⋯pₙ + 1. No prime in the list divides N, so N is prime or has a prime factor outside the list — contradicting completeness.
+In Euclid's proof, must N = p₁⋯pₙ + 1 be prime? ~~ No. It need only have no factor in the list. With 2,3,5,7,11,13 you get 30031 = 59 × 509 — composite, but both factors lie outside the list.
+What is the negation of 'all swans are white'? ~~ 'There exists a swan that is not white.' It is not 'no swans are white', which is a much stronger claim.
+What is a conjecture? ~~ A statement believed to be true but not yet proved.
+What does "if and only if" require you to prove? ~~ Both directions: P ⇒ Q and Q ⇒ P.
+Prove that the sum of two odd numbers is even. ~~ Let the odd numbers be 2m + 1 and 2n + 1. Their sum is 2m + 2n + 2 = 2(m + n + 1), which is even.
+How do you represent an even and an odd integer algebraically? ~~ Even: 2n. Odd: 2n + 1 (or 2n − 1), where n is an integer.
+How do you represent consecutive integers? ~~ n, n + 1, n + 2, … where n is an integer.
+Prove that the square of any odd number is odd. ~~ (2n + 1)² = 4n² + 4n + 1 = 2(2n² + 2n) + 1, which is odd.
+Prove that n³ − n is always divisible by 6. ~~ n³ − n = (n − 1)n(n + 1), the product of three consecutive integers. One is a multiple of 3 and at least one is even, so the product is divisible by 6.
+What is the first step in a proof by contradiction? ~~ Assume the negation of the statement you want to prove.
+How do you prove there is no largest even number? ~~ Assume N is the largest even number. Then N + 2 is even and larger, a contradiction.
+When is proof by exhaustion practical? ~~ When there is a small finite number of cases to check, e.g. all integers from 1 to 10, or cases such as n odd and n even.
+What does ∴ mean in a proof? ~~ "Therefore".
+What does the symbol ∈ mean? ~~ "Is an element of", e.g. n ∈ ℤ means n is an integer.
+What do ℕ, ℤ, ℚ and ℝ represent? ~~ Natural numbers, integers, rational numbers and real numbers respectively.
+Why is a single example not a proof of a general statement? ~~ It only shows the statement holds in that case; a proof must cover every case.
+
+## 1.2
+How do you simplify a surd such as √50? ~~ Extract the largest square factor: √50 = √(25 × 2) = 5√2.
+How do you rationalise a denominator of the form a + √b? ~~ Multiply numerator and denominator by the conjugate a − √b, using the difference of two squares to clear the surd.
+Is √(a + b) equal to √a + √b? ~~ No. The product rule holds but the sum rule does not: √(9 + 16) = 5 while √9 + √16 = 7.
+State the laws of indices for multiplication, division and powers. ~~ xᵃ × xᵇ = x^(a+b), xᵃ ÷ xᵇ = x^(a−b). (xᵃ)ᵇ = x^(ab).
+What are x⁰, x^(−a) and x^(m/n)? ~~ x⁰ = 1 for x ≠ 0, x^(−a) = 1/xᵃ, x^(m/n) = (ⁿ√x)^m — take the root first to keep the numbers small.
+What is the discriminant, and what do its three cases tell you? ~~ b² − 4ac. Positive: two distinct real roots. Zero: one repeated root. Negative: no real roots.
+What is the difference between 'two distinct real roots' and 'real roots'? ~~ Distinct requires b² − 4ac > 0, 'real roots' usually allows the repeated case, so b² − 4ac ≥ 0. The wording decides < or ≤ in the answer.
+What is the condition for a line to be tangent to a curve? ~~ Substitute the line into the curve and set the discriminant of the resulting quadratic to zero.
+How do you complete the square for x² + bx + c? ~~ Write (x + b/2)² and subtract (b/2)², then add c. For x² + 6x + 2 this gives (x + 3)² − 7, so the minimum is at (−3, −7).
+How do you solve one linear and one quadratic simultaneous equation? ~~ Always substitute the linear equation into the quadratic, then substitute the roots back into the linear equation and pair the values correctly.
+How do you solve a quadratic inequality such as x² − 4x − 5 > 0? ~~ Factorise to find the critical values, then read the sign from the parabola's shape. Upward parabola: positive outside the roots, so x < −1 or x > 5.
+Why can't you multiply an inequality through by (x − 3)? ~~ Its sign is unknown, so the inequality may or may not reverse. Instead collect over a common denominator, or multiply by the square (x − 3)², which is always positive.
+When do two solution intervals need 'or' rather than 'and'? ~~ Always, for two separate intervals. 'x < −1 and x > 5' describes no numbers at all, the union needs 'or'.
+Write the four proportion relationships and their equations. ~~ y ∝ x gives y = kx, y ∝ 1/x gives y = k/x, y ∝ xⁿ gives y = kxⁿ, y ∝ 1/x² gives y = k/x².
+What is the commonest error with repeated factors in partial fractions? ~~ Omitting the A/(x+a) term and using only B/(x+a)². The system then has no solution.
+Simplify √12 + √27. ~~ 2√3 + 3√3 = 5√3.
+State the factor theorem. ~~ If f(a) = 0 then (x − a) is a factor of f(x), and conversely.
+State the remainder theorem. ~~ The remainder when f(x) is divided by (x − a) is f(a). A remainder of zero means (x − a) is a factor.
+To test whether (x + 3) is a factor, which value do you substitute? ~~ x = −3, since (x + 3) = (x − (−3)). Substituting +3 is the standard sign error.
+When hunting for a first factor of a cubic, which values should you test? ~~ The divisors of the constant term. For a constant of 6, test ±1, ±2, ±3, ±6.
+What is the domain and what is the range of a function? ~~ The domain is the set of permitted inputs, the range is the set of outputs the function actually takes.
+What are the two usual causes of a restricted domain? ~~ You cannot divide by zero, and you cannot take the square root of a negative number.
+How do you find the range of a quadratic? ~~ Complete the square. For f(x) = x² − 4x + 7 = (x − 2)² + 3, the range is f(x) ≥ 3.
+What does fg(x) mean? ~~ f(g(x)) — apply g first, then f. The inner function is the one written next to the x.
+Is composition of functions commutative? ~~ No. With f(x) = 2x + 3 and g(x) = x², fg(x) = 2x² + 3 but gf(x) = (2x + 3)².
+When does an inverse function exist? ~~ Only when the function is one-to-one. A many-to-one function such as x² needs its domain restricted first.
+How do you find an inverse function? ~~ Write y = f(x), rearrange to make x the subject, then swap the letters. Use the given domain to choose the sign of any square root.
+How are the graphs of f and f⁻¹ related? ~~ Each is the reflection of the other in the line y = x. Domain and range swap, and for an INCREASING function any intersection lies on y = x.
+Define |x| as a piecewise function. ~~ |x| = x for x ≥ 0, and |x| = −x for x < 0. The graph is a V with vertex at the origin.
+How do you obtain y = |f(x)| from y = f(x)? ~~ Reflect the parts below the x-axis up into it, leaving the rest unchanged. It acts on the OUTPUT.
+
+## 1.3
+Write down the gradient, midpoint and distance formulae. ~~ Gradient (y₂ − y₁)/(x₂ − x₁), midpoint ((x₁+x₂)/2, (y₁+y₂)/2), distance √((x₂−x₁)² + (y₂−y₁)²).
+What is the relationship between perpendicular gradients? ~~ Their product is −1, so one is the negative reciprocal of the other. The rule fails for a vertical line, whose gradient is undefined.
+How do you show three points are collinear? ~~ Show the gradient between successive pairs is equal, and note they share a common point.
+Write down the equation of a circle with centre (a, b) and radius r. ~~ (x − a)² + (y − b)² = r². Note the signs: centre (2, −3) gives (x − 2)² + (y + 3)².
+How do you find the centre and radius from x² + y² + 2gx + 2fy + c = 0? ~~ Complete the square in both x and y. The right-hand side is then r², so remember to take the square root.
+What is the commonest error when reading a circle equation? ~~ Quoting r² as the radius. From (x − 3)² + (y + 2)² = 25 the radius is 5, not 25.
+How do you find a circle's equation from the endpoints of a diameter? ~~ The centre is the midpoint, the radius is half the distance between the endpoints.
+How do you tell whether a point is inside, on, or outside a circle? ~~ Substitute the coordinates and compare with r². Greater than r² means outside, less means inside.
+How do you find the equation of a tangent to a circle at a given point? ~~ Find the gradient of the radius to that point, take its negative reciprocal for the tangent, then use the point-gradient form.
+How do you find how many times a line meets a circle? ~~ Substitute the line into the circle and look at the discriminant of the resulting quadratic: two roots, one (tangent), or none.
+What are parametric equations? ~~ x and y are each given as functions of a third variable, the parameter. Each parameter value gives one point on the curve.
+Why are parametric equations useful? ~~ They describe curves that cannot be written as y = f(x), such as a full circle, which fails the one-output-per-input test.
+How do you convert parametric equations to Cartesian form? ~~ Eliminate the parameter. Rearrange the SIMPLER equation for the parameter, or use sin²θ + cos²θ = 1 for trigonometric parameters.
+What is dy/dx for a parametric curve? ~~ dy/dx = (dy/dt) ÷ (dx/dt). Getting the fraction the wrong way up is a standard error.
+Write down the parametric equations of a circle. ~~ x = a + r cos θ and y = b + r sin θ, for centre (a, b) and radius r. Eliminating θ with cos²θ + sin²θ = 1 returns the Cartesian form.
+Find the equation of the line through (1, 2) with gradient 3. ~~ y − 2 = 3(x − 1), so y = 3x − 1.
+What is the gradient of the line 2x + 3y = 6? ~~ Rearrange to y = −2x/3 + 2, so gradient = −2/3.
+Find the equation of the perpendicular bisector of A(0, 0) and B(4, 2). ~~ Midpoint (2, 1); gradient AB = 1/2, so perpendicular gradient = −2. y − 1 = −2(x − 2), so y = −2x + 5.
+What is the distance between (1, 2) and (4, 6)? ~~ √((4 − 1)² + (6 − 2)²) = √(9 + 16) = 5.
+Find the centre and radius of x² + y² − 4x + 6y − 12 = 0. ~~ (x − 2)² + (y + 3)² = 25: centre (2, −3), radius 5.
+What does the angle in a semicircle theorem state? ~~ The angle subtended at the circumference by a diameter is a right angle.
+What does the perpendicular from the centre to a chord do? ~~ It bisects the chord.
+What is the relationship between a tangent and a radius? ~~ A tangent is perpendicular to the radius at the point of contact.
+How do you find the equation of a circle through three points? ~~ Find the perpendicular bisectors of two chords; they intersect at the centre. Then find the radius.
+Convert x = t², y = 2t into Cartesian form. ~~ t = y/2, so x = y²/4, i.e. y² = 4x.
+Find dy/dx for x = t², y = t³. ~~ dy/dx = (3t²)/(2t) = 3t/2.
+What is the parametric form of the circle (x − a)² + (y − b)² = r²? ~~ x = a + r cos θ, y = b + r sin θ.
+How do you find where a parametric curve meets the x-axis? ~~ Set y = 0, solve for t, then substitute into x.
+What does it mean if a line meets a circle at exactly one point? ~~ The line is a tangent to the circle (the discriminant is zero).
+
+## 1.4
+Write down the nth term and sum formulae for an arithmetic sequence. ~~ uₙ = a + (n − 1)d. Sₙ = (n/2)(2a + (n − 1)d), or (n/2)(a + l) using the last term.
+Write down the nth term and sum formulae for a geometric sequence. ~~ uₙ = arⁿ⁻¹. Sₙ = a(1 − rⁿ)/(1 − r) for r ≠ 1.
+When does a geometric series converge, and what is its sum to infinity? ~~ It converges if and only if |r| < 1, and then S∞ = a/(1 − r). Always state the condition.
+What happens if you use the sum-to-infinity formula when |r| ≥ 1? ~~ It produces a plausible-looking number that is meaningless, because the series diverges.
+What is a recurrence relation? ~~ A rule defining each term from the previous one, together with a starting value — for example u₍ₙ₊₁₎ = uₙ + 3 with u₁ = 2.
+How do you find the limit of a convergent recurrence relation? ~~ Replace both u₍ₙ₊₁₎ and uₙ by L and solve for L, rejecting any root inconsistent with the sequence.
+Write the binomial expansion of (1 + x)ⁿ for a positive integer n. ~~ 1 + nx + [n(n−1)/2!]x² + [n(n−1)(n−2)/3!]x³ + … It terminates, giving exactly n + 1 terms.
+What is the standard error when expanding (1 + 2x)⁵? ~~ Forgetting to raise the coefficient too: (2x)³ = 8x³, not 2x³.
+How do you find a particular coefficient in (a + b)ⁿ? ~~ Use the term ⁿCᵣ a^(n−r) b^r, choosing r to give the required power.
+What changes when the binomial index is negative or fractional? ~~ The expansion no longer terminates — it becomes an infinite series — and it is valid only for |x| < 1.
+What is the validity condition for expanding (1 + ax)ⁿ with non-integer n? ~~ |ax| < 1, that is |x| < 1/|a|. It is NOT |x| < 1 whenever there is a coefficient on x.
+Expand (1 + x)^(1/2) as far as the term in x². ~~ 1 + x/2 − x²/8.
+How do you expand √(4 + x) using the binomial series? ~~ Factorise first: √(4 + x) = 2(1 + x/4)^(1/2). The series cannot be applied to a bracket not starting with 1.
+How do you find the nth term given the sum of the first n terms? ~~ uₙ = Sₙ − S₍ₙ₋₁₎. If Sₙ = n² then uₙ = n² − (n − 1)² = 2n − 1.
+What are Σ from k=1 to n of k, and of (2k − 1)? ~~ n(n + 1)/2 and n² respectively.
+What is the commonest confusion in sequences questions? ~~ Mixing up uₙ (a single term) with Sₙ (a running total). Read the question twice.
+Find the 10th term of the arithmetic sequence 3, 7, 11, … ~~ a = 3, d = 4: u₁₀ = 3 + 9 × 4 = 39.
+Find the sum of the first 20 terms of 3, 7, 11, … ~~ S₂₀ = 20/2 × (2 × 3 + 19 × 4) = 10 × 82 = 820.
+Find the sum to infinity of 8 + 4 + 2 + … ~~ a = 8, r = 1/2: S∞ = 8/(1 − 1/2) = 16.
+What is a periodic sequence? ~~ A sequence that repeats after a fixed number of terms, e.g. 1, −1, 1, −1, …
+What is an increasing sequence? ~~ Each term is larger than the previous one: uₙ₊₁ > uₙ for all n.
+What is a divergent sequence? ~~ A sequence that doesn't tend to a finite limit.
+What is sigma notation? ~~ A shorthand for sums: Σ from r=1 to n of f(r) means f(1) + f(2) + … + f(n).
+What is ⁿCᵣ? ~~ The number of ways of choosing r items from n: n!/(r!(n − r)!).
+Find the coefficient of x³ in (2 + x)⁵. ~~ ⁵C₃ × 2² × x³ = 10 × 4 = 40.
+Expand (1 − x)⁻¹ up to x³. ~~ 1 + x + x² + x³, valid for |x| < 1.
+Expand (1 + 2x)⁻² up to x². ~~ 1 − 4x + 12x², valid for |x| < 1/2.
+What is Pascal's triangle used for? ~~ To find binomial coefficients for small positive integer powers.
+What is n! ? ~~ n × (n − 1) × … × 2 × 1, with 0! = 1.
+How do you find the number of terms in an arithmetic sequence? ~~ Use uₙ = a + (n − 1)d, set it equal to the last term and solve for n.
+
+## 1.5
+What is a radian, and how does it relate to degrees? ~~ The angle subtended at the centre by an arc equal in length to the radius. π radians = 180°.
+Write down the arc length and sector area formulae. ~~ s = rθ and A = ½r²θ, both requiring θ in RADIANS. Using degrees gives an answer wrong by a factor of about 57.
+State the sine rule, the cosine rule and the triangle area formula. ~~ a/sin A = b/sin B = c/sin C, a² = b² + c² − 2bc cos A. Area = ½ab sin C.
+When do you use the cosine rule rather than the sine rule? ~~ With three sides, or two sides and the angle between them. Otherwise use the sine rule.
+What is the ambiguous case of the sine rule? ~~ Given two sides and a non-included angle, sin θ = k has two solutions in 0° to 180°: θ and 180° − θ. Both must be checked.
+Give the exact values of sin, cos and tan at 30°, 45° and 60°. ~~ sin: ½, √2/2, √3/2.  cos: √3/2, √2/2, ½.  tan: 1/√3, 1, √3.
+How do you find the second solution of sin x = k, cos x = k and tan x = k? ~~ For sin: π − x. For cos: 2π − x. For tan: x + π.
+How do you solve an equation such as sin 2x = k over 0° ≤ x < 360°? ~~ Widen the range FIRST: 2x runs over 0° to 720°. Solve there, then halve every answer. Halving first loses half the solutions.
+Define sec, cosec and cot. ~~ sec θ = 1/cos θ, cosec θ = 1/sin θ, cot θ = 1/tan θ. Look at the third letter: se-c goes with c-os.
+State the two identities derived from sin²θ + cos²θ = 1. ~~ 1 + tan²θ = sec²θ (divide by cos²θ), 1 + cot²θ = cosec²θ (divide by sin²θ).
+Write down the compound angle formulae for sin(A ± B) and cos(A ± B). ~~ sin(A ± B) = sin A cos B ± cos A sin B, cos(A ± B) = cos A cos B ∓ sin A sin B — note the sign flip.
+Write down the three forms of cos 2θ. ~~ cos²θ − sin²θ, 2cos²θ − 1, 1 − 2sin²θ. Choose the form matching the other function in the equation.
+What are sin 2θ and tan 2θ? ~~ sin 2θ = 2 sin θ cos θ, tan 2θ = 2tan θ/(1 − tan²θ).
+How do you write a sin x + b cos x as a single trigonometric function? ~~ As R sin(x + α) with R = √(a² + b²) and tan α = b/a. The expression then ranges between −R and R.
+State the small angle approximations. ~~ For small θ in RADIANS: sin θ ≈ θ, tan θ ≈ θ, cos θ ≈ 1 − θ²/2. Also (sin θ)/θ → 1 as θ → 0.
+What goes wrong if you divide a trigonometric equation by cos x? ~~ You lose every solution where cos x = 0. Factorise instead of dividing, and check those cases separately.
+Convert 150° to radians. ~~ 150 × π/180 = 5π/6.
+Find the arc length of a sector with radius 6 cm and angle π/3. ~~ s = rθ = 6 × π/3 = 2π cm.
+Find the area of a sector with radius 6 cm and angle π/3. ~~ A = ½r²θ = ½ × 36 × π/3 = 6π cm².
+What is the exact value of sin(π/6)? ~~ 1/2.
+What is the exact value of cos(π/4)? ~~ √2/2 (or 1/√2).
+What is the exact value of tan(π/3)? ~~ √3.
+What is the period of y = sin x and y = tan x? ~~ sin x has period 2π (360°); tan x has period π (180°).
+What is the identity linking tan, sin and cos? ~~ tan θ = sin θ/cos θ.
+What is 1 + tan²θ equal to? ~~ sec²θ.
+What is 1 + cot²θ equal to? ~~ cosec²θ.
+Solve sin x = 0.5 for 0 ≤ x < 2π. ~~ x = π/6 or x = 5π/6.
+What are the principal value ranges of arcsin, arccos and arctan? ~~ arcsin: −π/2 to π/2; arccos: 0 to π; arctan: −π/2 to π/2 (exclusive).
+Write sin 3x cos x + cos 3x sin x as a single term. ~~ sin(3x + x) = sin 4x.
+Express 3 sin x + 4 cos x as R sin(x + α). ~~ R = 5, tan α = 4/3, so α ≈ 0.927 rad (53.1°): 5 sin(x + 0.927).
+
+## 1.6
+What is the relationship between aˣ and log_a x? ~~ They are inverse functions: x = a^y is equivalent to y = log_a x. Their graphs are reflections in y = x.
+State the three laws of logarithms. ~~ log(xy) = log x + log y, log(x/y) = log x − log y, log(xᵏ) = k log x.
+Is there a law for log(x + y)? ~~ No. The addition law applies to a PRODUCT inside the logarithm, not a sum. log(x + y) ≠ log x + log y.
+What are log_a a and log_a 1? ~~ log_a a = 1 and log_a 1 = 0.
+How do you solve an equation such as 3ˣ = 20? ~~ Take logarithms of both sides, then use the power law to bring x down: x = log 20 ÷ log 3 ≈ 2.727.
+What must you check after solving a logarithmic equation? ~~ That each solution keeps every logarithm's argument positive. Reject any root that makes an argument zero or negative.
+What is special about e? ~~ It is the base for which the gradient of y = eˣ equals eˣ itself. More generally the gradient of e^(kx) is k e^(kx).
+Why does the exponential model suit so many situations? ~~ Because the derivative of e^(kt) is proportional to the function itself — exactly the condition 'rate of change proportional to current size'.
+What is ln x, and what are ln e and e^(ln x)? ~~ ln x is log to base e, the inverse of eˣ. ln e = 1, and e^(ln x) = x for x > 0.
+How do you reduce y = axⁿ to linear form? ~~ Take logs: log y = log a + n log x. Plot log y against log x — gradient n, intercept log a.
+How do you reduce y = abˣ to linear form? ~~ Take logs: log y = log a + x log b. Plot log y against PLAIN x — gradient log b, intercept log a.
+How do you tell a power law from an exponential law using graphs? ~~ A power law gives a straight line on log–log axes, an exponential law gives one with log y against plain x. The difference is whether the horizontal axis carries a logarithm.
+Write down the exponential growth and decay models. ~~ N = N₀e^(kt) for growth and N = N₀e^(−kt) for decay, with k > 0 and N₀ the value at t = 0.
+How do you find the decay constant from a half-life T? ~~ Set e^(−kT) = ½, so kT = ln 2 and k = (ln 2)/T.
+Give two criticisms of an exponential population growth model. ~~ It predicts unbounded growth, ignoring finite resources, and it assumes k stays constant, though it may drift with conditions. A logistic model adds a carrying capacity.
+Solve 2ˣ = 8. ~~ x = 3.
+Solve eˣ = 5. ~~ x = ln 5.
+Simplify log 8 + log 5 − log 4. ~~ log(8 × 5/4) = log 10.
+Write 2 log x − log y as a single log. ~~ log(x²/y).
+What is the gradient of y = eᵏˣ? ~~ keᵏˣ.
+What is log_a aˣ equal to? ~~ x.
+What is e^(ln 7)? ~~ 7.
+What is ln(e³)? ~~ 3.
+Solve ln x = 2. ~~ x = e².
+What is the change of base formula? ~~ log_a b = log_c b / log_c a.
+What is the asymptote of y = eˣ? ~~ y = 0 (the x-axis).
+What is the asymptote of y = ln x? ~~ x = 0 (the y-axis).
+If y = axⁿ, what does a log–log graph give? ~~ log y = log a + n log x: a straight line with gradient n and intercept log a.
+If y = abˣ, what does plotting log y against x give? ~~ log y = log a + x log b: a straight line with gradient log b and intercept log a.
+
+## 1.7
+Write down the definition of the derivative as a limit. ~~ f′(x) = limit as h → 0 of (f(x + h) − f(x))/h — the gradient of a chord becoming the gradient of the tangent.
+Why must you cancel the h before letting h → 0? ~~ Substituting h = 0 first gives 0/0, which is undefined. Cancelling is the whole point of the method.
+What are the derivatives of xⁿ, eˣ and ln x? ~~ nxⁿ⁻¹, eˣ, 1/x.
+What are the derivatives of sin x, cos x and tan x? ~~ cos x, −sin x, sec²x. These hold only when x is in RADIANS.
+Why do the trigonometric derivatives require radians? ~~ They follow from the limit (sin h)/h → 1, which is true only in radians. In degrees an extra constant factor appears.
+State the chain rule. ~~ The derivative of f(g(x)) is f′(g(x)) × g′(x) — the outer derivative times the inner derivative.
+State the product rule. ~~ The derivative of uv is u′v + uv′.
+State the quotient rule. ~~ The derivative of u/v is (u′v − uv′)/v². Note the minus, and that the order matters — reversing it flips every sign.
+How do you differentiate implicitly? ~~ Differentiate both sides with respect to x, applying the chain rule to every y term so each contributes a factor dy/dx, then collect and solve.
+Why does a dy/dx appear when differentiating a y term? ~~ Because y is itself a function of x, so the chain rule applies: differentiating f(y) with respect to x gives f′(y) × dy/dx.
+How do you differentiate an inverse function? ~~ Use dy/dx = 1 ÷ (dx/dy). For y = ln x, write x = e^y, so dx/dy = e^y = x and dy/dx = 1/x.
+How do you find the gradient of a tangent and of a normal? ~~ The tangent gradient is dy/dx at that point, the normal gradient is −1 divided by that value.
+How do you classify a stationary point using the second derivative? ~~ Positive means minimum, negative means maximum, zero is inconclusive and requires checking the gradient either side.
+Does d²y/dx² = 0 prove a point of inflection? ~~ No. For y = x⁴ at the origin the second derivative is zero yet the point is a minimum. A genuine inflection needs the second derivative to CHANGE SIGN.
+How do connected rates of change work? ~~ Link them by the chain rule, for example dV/dt = (dV/dr) × (dr/dt).
+What are the two marks most often lost in an optimisation question? ~~ Not justifying that the stationary point is the required maximum or minimum, and not answering the quantity actually asked for.
+Differentiate y = 3x⁴ − 2x + 7. ~~ dy/dx = 12x³ − 2.
+Differentiate y = √x. ~~ y = x^(1/2), so dy/dx = ½x^(−1/2) = 1/(2√x).
+Differentiate y = e^(3x). ~~ dy/dx = 3e^(3x).
+Differentiate y = ln(5x). ~~ dy/dx = 1/x.
+Differentiate y = sin(2x). ~~ dy/dx = 2 cos(2x).
+Differentiate y = (2x + 1)⁵. ~~ dy/dx = 5(2x + 1)⁴ × 2 = 10(2x + 1)⁴.
+Differentiate y = x² eˣ. ~~ Product rule: dy/dx = 2x eˣ + x² eˣ = x eˣ(2 + x).
+Differentiate y = (sin x)/x. ~~ Quotient rule: dy/dx = (x cos x − sin x)/x².
+What is the derivative of aˣ? ~~ aˣ ln a.
+What does it mean if dy/dx > 0? ~~ The function is increasing.
+What does a positive second derivative indicate? ~~ The curve is concave upwards (convex), and a stationary point there is a minimum.
+What is a point of inflection? ~~ A point where the curve changes concavity (d²y/dx² changes sign).
+Find the gradient of x² + y² = 25 at (3, 4). ~~ 2x + 2y dy/dx = 0, so dy/dx = −x/y = −3/4.
+What is the derivative of sec x? ~~ sec x tan x.
+
+## 1.8
+What is the integral of xⁿ, and when does it fail? ~~ x^(n+1)/(n + 1) + c, failing for n = −1 where the denominator would be zero. Then the integral of 1/x is ln|x| + c.
+Why is the modulus written in ln|x|? ~~ So the result is valid for negative x too, since the logarithm of a negative number is undefined.
+Why does an indefinite integral need + c but a definite one does not? ~~ Differentiating a constant gives zero, so it cannot be recovered. In a definite integral the constant appears in both F(b) and F(a) and cancels.
+State the Fundamental Theorem of Calculus. ~~ The definite integral from a to b of f equals F(b) − F(a), where F′ = f. It links area with the antiderivative and shows the two processes are inverse.
+What happens to a region below the x-axis in a definite integral? ~~ It contributes a negative amount. If the curve crosses the axis within the limits, split there and add the magnitudes, or the parts will cancel.
+How do you find the area between two curves? ~~ Integrate (upper − lower) between the intersections, so the integrand is non-negative and the area comes out positive.
+When is integration by substitution the right method? ~~ When the integrand contains an inner function together with its derivative — for example x e^(x²), where u = x² gives du = 2x dx.
+What must you also change when substituting in a DEFINITE integral? ~~ The limits, converting them to values of u — or substitute back to x before applying the original limits.
+State the standard result for f′(x)/f(x). ~~ Its integral is ln|f(x)| + c. For example the integral of 2x/(x² + 1) is ln(x² + 1) + c.
+State the integration by parts formula. ~~ The integral of u(dv/dx) equals uv minus the integral of v(du/dx) — the reverse of the product rule.
+How do you choose u when integrating by parts? ~~ Choose u to be the factor that becomes SIMPLER when differentiated, and dv/dx to be one you can integrate.
+How do you integrate ln x? ~~ Write it as 1 × ln x, take u = ln x and dv/dx = 1. This gives x ln x − x + c.
+How do you integrate eˣ sin x? ~~ Apply parts twice, the original integral reappears, so treat it as an unknown and solve the resulting equation algebraically.
+Why are partial fractions useful in integration? ~~ A fraction with a factorised denominator has no standard integral, but splitting it gives terms A/(x + a), each integrating to a logarithm.
+How do you integrate cos²x? ~~ Use the double angle identity cos²x = ½(1 + cos 2x), giving x/2 + (sin 2x)/4 + c.
+What are the integrals of sin x, cos x and sec²x? ~~ −cos x + c, sin x + c, tan x + c. The minus on the sine integral is the one most often dropped.
+Integrate 6x² + 4x − 3. ~~ 2x³ + 2x² − 3x + c.
+Integrate 1/x². ~~ −1/x + c.
+Integrate e^(2x). ~~ ½e^(2x) + c.
+Integrate 1/x. ~~ ln|x| + c.
+Integrate cos(3x). ~~ ⅓ sin(3x) + c.
+Integrate (2x + 1)³. ~~ (2x + 1)⁴/8 + c.
+What is the difference between a general and a particular solution? ~~ A general solution contains an arbitrary constant and represents a family of curves, a particular solution uses an initial condition to fix that constant.
+How do you separate the variables? ~~ If dy/dx = f(x)g(y), gather all the y terms with dy and all the x terms with dx, then integrate both sides.
+Translate 'the rate of growth is proportional to the size' into an equation. ~~ dP/dt = kP. For decay it is dN/dt = −kN with k positive.
+Translate 'the rate is proportional to the square of the population'. ~~ dP/dt = kP².
+Write down Newton's law of cooling. ~~ dθ/dt = −k(θ − θ₀), where θ₀ is the temperature of the surroundings — the rate is proportional to the excess temperature.
+What is the solution of dP/dt = kP with P = P₀ at t = 0? ~~ P = P₀e^(kt).
+Why is it useful to write the constant as ln A? ~~ It turns an additive constant into a multiplicative one, so ln y = ln x + c becomes y = Ax instead of y = e^c × x.
+Solve dy/dx = xy with y = 1 at x = 0. ~~ Separate to (1/y)dy = x dx, integrate to ln y = x²/2 + c, apply the condition to get c = 0, so y = e^(x²/2).
+
+## 1.9
+State the change of sign condition for locating a root. ~~ If f is CONTINUOUS on [a, b] and f(a), f(b) have opposite signs, then f(x) = 0 has at least one root in (a, b).
+Which part of the change of sign argument is most often omitted? ~~ The statement that f is continuous on the interval. Without it the argument is invalid.
+Name two situations in which a change of sign method fails. ~~ A repeated root, where the curve touches without crossing, e.g. (x − 2)², and a vertical asymptote, e.g. 1/(x − 2), where the sign changes but there is no root.
+How do you show a root is 1.86 correct to 2 decimal places? ~~ Show f changes sign between the rounding bounds 1.855 and 1.865, so every value in that interval rounds to 1.86.
+What is fixed point iteration? ~~ Rearrange f(x) = 0 into x = g(x), choose a starting value, then apply x₍ₙ₊₁₎ = g(xₙ) repeatedly.
+When does a fixed point iteration converge? ~~ When |g′(x)| < 1 near the root. If |g′(x)| > 1 it diverges, so different rearrangements of the same equation can behave differently.
+What is the difference between a staircase and a cobweb diagram? ~~ Both are drawn between y = g(x) and y = x. A staircase occurs when g′(x) > 0, a cobweb, spiralling and alternating sides, when g′(x) < 0.
+State the Newton-Raphson formula and its geometric meaning. ~~ x₍ₙ₊₁₎ = xₙ − f(xₙ)/f′(xₙ). Follow the tangent at the current point down to where it meets the x-axis.
+Why does Newton-Raphson converge faster than a simple iteration? ~~ Near a simple root the error is roughly SQUARED at each step, so the number of correct digits approximately doubles.
+When does Newton-Raphson fail? ~~ When f′(xₙ) = 0, since the tangent is horizontal and never meets the axis, and near a stationary point, where a nearly horizontal tangent throws the next estimate far away.
+State the trapezium rule. ~~ With h = (b − a)/n, the integral is approximately (h/2)[y₀ + yₙ + 2(y₁ + … + y₍ₙ₋₁₎)] — first and last counted once, interior ordinates doubled.
+How many ordinates are needed for n strips? ~~ n + 1, since adjacent strips share an ordinate.
+When does the trapezium rule give an over- or under-estimate? ~~ Concave upwards: chords lie above the curve, so it is an OVERestimate. Concave downwards: chords lie below, so it is an UNDERestimate.
+How should you justify the direction of a trapezium error? ~~ Refer to the concavity: 'the curve is concave upwards on this interval, so each chord lies above it and the estimate is too large'.
+What happens to the trapezium rule error if you halve the strip width? ~~ It reduces by a factor of roughly 4, since the error is approximately proportional to the square of the width.
+How can rectangles give bounds on an integral? ~~ For a monotonic function, left-hand and right-hand rectangle sums lie on either side of the true value, bracketing it.
+What does the change of sign method rely on? ~~ If f is continuous on [a, b] and f(a) and f(b) have opposite signs, there is a root between a and b.
+Why can a change of sign occur without a root? ~~ At a vertical asymptote (discontinuity), e.g. f(x) = 1/x between −1 and 1.
+Why might there be a root with no change of sign? ~~ A repeated root where the curve touches the x-axis, or two roots close together.
+What is decimal search? ~~ Checking values at intervals of 0.1, then 0.01, etc., to locate a root by change of sign.
+What is interval bisection? ~~ Repeatedly halving the interval containing the root and keeping the half with a sign change.
+How do you rearrange f(x) = 0 into x = g(x)? ~~ Make x the subject of part of the equation, e.g. x³ − x − 1 = 0 → x = ∛(x + 1).
+What is the convergence condition for xₙ₊₁ = g(xₙ)? ~~ |g′(x)| < 1 near the root.
+What is a staircase diagram? ~~ A diagram showing iteration converging monotonically, when 0 < g′(x) < 1.
+What is a cobweb diagram? ~~ A diagram showing iteration oscillating around the root, when −1 < g′(x) < 0.
+Apply one step of Newton–Raphson to f(x) = x² − 2 from x₀ = 1. ~~ x₁ = 1 − (1 − 2)/2 = 1.5.
+When does the trapezium rule give an overestimate? ~~ When the curve is concave up (convex) over the interval.
+When does the trapezium rule give an underestimate? ~~ When the curve is concave down over the interval.
+How do you improve the accuracy of the trapezium rule? ~~ Increase the number of strips (decrease the strip width).
+What is the width h in the trapezium rule? ~~ h = (b − a)/n, where n is the number of strips.
+
+## 1.10
+What is the difference between a scalar and a vector? ~~ A scalar has magnitude only (mass, time, speed), a vector has magnitude and direction (displacement, velocity, force).
+How are vectors written in print and by hand? ~~ Bold in print, underlined by hand. The magnitude is written |a| or a in italic.
+How do you find the magnitude of a vector in 2D and 3D? ~~ √(a₁² + a₂²) in two dimensions, √(a₁² + a₂² + a₃²) in three.
+How do you find a unit vector in the direction of a? ~~ Divide a by its magnitude: â = a/|a|. For 6i − 8j, the magnitude is 10 so the unit vector is 0.6i − 0.8j.
+When are two non-zero vectors parallel? ~~ When one is a scalar multiple of the other. A negative scalar reverses the direction but they remain parallel.
+Write down the vector AB in terms of position vectors. ~~ AB = b − a — destination minus start. Reversing it gives the same magnitude in the opposite direction.
+How do you find the distance between two points from their position vectors? ~~ It is |b − a|, the magnitude of the vector joining them.
+What is the position vector of the midpoint of AB? ~~ (a + b)/2. More generally the point dividing AB in the ratio m : n is (na + mb)/(m + n).
+How do you convert between component and magnitude-direction form? ~~ a₁ = r cos θ and a₂ = r sin θ, conversely r = √(a₁² + a₂²) and tan θ = a₂/a₁.
+Why is arctan alone not enough to give a direction? ~~ It returns angles only in the first and fourth quadrants. Use the signs of the components to identify the quadrant and adjust — (−3, −4) gives 233.1°, not 53.1°.
+How do you prove three points collinear using vectors? ~~ Show one joining vector is a scalar multiple of another, AND state that they share a common point. Parallel alone is not enough.
+What does the sum of force vectors represent? ~~ The resultant force. The specification explicitly includes using vectors for problems involving forces.
+What is the condition for a set of forces to be in equilibrium? ~~ Their vector sum is the zero vector, so drawn head to tail they form a closed figure.
+Is |a + b| equal to |a| + |b|? ~~ Not in general. It lies between ||a| − |b|| and |a| + |b|, reaching the upper value only when the vectors point the same way.
+How does 3D vector work extend the 2D case? ~~ A third component along k is added. Magnitudes involve the sum of three squares, and all the 2D techniques carry over.
+What is the zero vector? ~~ A vector with zero magnitude and no specific direction.
+Find the magnitude of 3i − 4j. ~~ √(9 + 16) = 5.
+Find the unit vector in the direction of 3i − 4j. ~~ (3i − 4j)/5 = 0.6i − 0.8j.
+If a = 2i + j and b = i − 3j, find 2a − b. ~~ 4i + 2j − i + 3j = 3i + 5j.
+What is a position vector? ~~ A vector giving the position of a point relative to the origin.
+Find the direction of 3i + 3j. ~~ 45° above the positive x-axis.
+What is the magnitude of 2i − j + 2k? ~~ √(4 + 1 + 4) = 3.
+How do you find a vector of magnitude 10 in the direction of 3i + 4j? ~~ Unit vector (3i + 4j)/5, times 10: 6i + 8j.
+If AB = b − a, what is BA? ~~ a − b.
+What is the resultant of forces (3i + 2j) N and (−i + 4j) N? ~~ 2i + 6j N.
+Express 10 N at 30° above the x-axis in component form. ~~ 10 cos 30° i + 10 sin 30° j = 5√3 i + 5j N.
+How do you show two vectors are parallel? ~~ Show one is a scalar multiple of the other.
+What is a column vector? ~~ A vector written vertically with components, e.g. (3, 4) written as a column.
+What does it mean for vectors to be equal? ~~ They have the same magnitude and direction (equal components).
+
+## 2.1
+What is the difference between a population and a sample? ~~ A population is the entire group being studied, a sample is a subset used to draw conclusions about it.
+What is the difference between a parameter and a statistic? ~~ A parameter describes the POPULATION, a statistic is calculated from a SAMPLE and used to estimate it.
+Define simple random sampling. ~~ Every possible sample of the required size has the same probability of being selected. It requires a complete sampling frame.
+What is a sampling frame? ~~ A list of all members of the population, from which the sample is drawn. An incomplete frame means some members can never be selected.
+Describe systematic sampling and its main risk. ~~ Select every kth member of an ordered list. It fails if the list has a repeating pattern matching the sampling interval.
+Describe stratified sampling. ~~ Divide the population into strata and sample each in proportion to its size, selecting AT RANDOM within each stratum.
+Name the four types of data. ~~ Categorical (labels), discrete (separate numerical values), continuous (any value in a range) and ranked (ordered positions).
+In a histogram, what represents frequency? ~~ The AREA of each bar. The vertical axis is frequency density, which is frequency divided by class width.
+How does a frequency chart differ from a histogram? ~~ A frequency chart has equal-width bars with FREQUENCY on the vertical axis, a histogram may have unequal widths and uses frequency density.
+What does a box-and-whisker diagram show? ~~ The median, the lower and upper quartiles, and the extreme values. The box spans the interquartile range.
+When is the median preferred to the mean? ~~ For skewed data or when outliers are present, since the median depends only on position in the order and resists extremes.
+When is a weighted mean appropriate? ~~ When combining groups of different sizes, weighting each group mean by the size of that group.
+How is probability calculated for equally likely outcomes? ~~ Favourable outcomes divided by total outcomes. Every probability lies between 0 and 1 inclusive.
+What is a complementary event? ~~ A′ is the event that A does not occur, and P(A′) = 1 − P(A). It is the fastest route for 'at least one' questions.
+What is the expected frequency of an event in n trials? ~~ nP(A). In 200 trials with probability 0.15, the expected frequency is 30.
+What do A ∩ B and A ∪ B mean? ~~ A ∩ B means both occur. A ∪ B means A or B or both occur.
+Define mutually exclusive events and give the addition rule. ~~ They cannot both occur, so P(A ∩ B) = 0 and P(A ∪ B) = P(A) + P(B).
+Define independent events and give the multiplication rule. ~~ The occurrence of one does not affect the probability of the other, so P(A ∩ B) = P(A)P(B).
+What is a discrete random variable? ~~ A variable taking separate values each with a given probability. Capital X denotes the variable, lower-case x or r a particular value.
+What condition must a discrete probability distribution satisfy? ~~ All probabilities non-negative and summing to 1.
+What is a discrete uniform distribution? ~~ One in which all outcomes are equally likely, such as the score on a fair die.
+State the four conditions for a binomial model. ~~ A fixed number of trials, exactly two outcomes per trial, the same probability of success each time, and independent trials.
+What does X ~ B(n, p) mean? ~~ X has the binomial distribution with n trials and probability p of success. The symbol ~ is read 'has the distribution'.
+Write down the binomial probability formula. ~~ P(X = r) = ⁿCᵣ pʳ q^(n−r), where q = 1 − p.
+What are the null and alternative hypotheses? ~~ H₀ is the default assumption being tested, always an equality. H₁ is what is concluded if H₀ is rejected.
+Must hypotheses refer to the sample or the population? ~~ The POPULATION parameter — p or μ. Writing H₀: x̄ = 50 is wrong, it must be H₀: μ = 50.
+What is the significance level? ~~ The probability of incorrectly rejecting a TRUE null hypothesis. It sets the size of the critical region.
+Define critical region, acceptance region and critical value. ~~ The critical (rejection) region contains test statistic values leading to rejection, the acceptance region those that do not, the critical value is the boundary.
+What is a p-value and how is it used? ~~ The probability of a result at least as extreme as the one observed, assuming H₀. Reject H₀ if it is below the significance level.
+When is a test one-tailed and when two-tailed? ~~ One-tailed when H₁ specifies a DIRECTION ('biased towards heads'), two-tailed when it does not ('biased', 'has changed').
+
+## 2.2
+What is the difference between distance travelled and displacement? ~~ Distance travelled is the total path length, a scalar, displacement is the net change in position, a vector.
+What is the difference between speed and velocity? ~~ Speed is the magnitude of velocity, so it is a scalar and never negative, velocity carries direction.
+Give the formulae for average speed and average velocity. ~~ Average speed = distance travelled ÷ time, average velocity = overall displacement ÷ time. A there-and-back journey has zero average velocity.
+What do the gradient and area of a velocity-time graph give? ~~ Gradient gives acceleration, area gives displacement.
+What does the gradient of a displacement-time graph give? ~~ Velocity.
+How are velocity and acceleration obtained from a position vector? ~~ By differentiating with respect to t, component by component. Integrating reverses the process.
+Why can vector calculus be done component by component? ~~ The i and j directions are fixed and independent of time, so each component is an independent function of t.
+What is the speed of a particle with velocity v? ~~ |v|, the magnitude — a scalar. Quoting a speed as a vector loses the mark.
+If r = 3t i + t² j, what are v and a? ~~ v = 3i + 2t j and a = 2j. At t = 2 the speed is |3i + 4j| = 5.
+State the four standard projectile modelling assumptions. ~~ No air resistance, the projectile is a particle, gravity always acts in the same direction, gravity is constant in magnitude.
+What is the central idea that makes projectile problems work? ~~ Horizontal and vertical motion are INDEPENDENT. Horizontally there is no acceleration, vertically the acceleration is g downwards. Time links them.
+Give the initial velocity components for launch at speed u and angle θ. ~~ Horizontal u cos θ, vertical u sin θ.
+Give the displacement components at time t. ~~ Horizontal u cos θ × t, vertical u sin θ × t − ½gt².
+Write down the time of flight, maximum height and range on level ground. ~~ T = 2u sin θ/g. H = u²sin²θ/(2g). R = u² sin 2θ/g.
+Name four common forces and their directions. ~~ Weight acts vertically downwards, normal reaction perpendicular to the surface, tension along a string pulling inwards, friction along the surface opposing motion.
+What is the difference between tension and thrust? ~~ Tension pulls the ends together, thrust pushes them apart. A string can only pull, a rod can do either.
+Is the normal reaction always equal to the weight? ~~ No. It depends on the other forces: pressing down increases it, pulling upwards at an angle reduces it, and on a slope it is mg cos θ.
+Give the components of weight on a plane inclined at θ. ~~ mg sin θ along the plane and mg cos θ perpendicular to it. Check with θ = 0: sin 0 = 0, so the along-plane component vanishes as it should.
+Why resolve parallel and perpendicular to an inclined plane? ~~ It puts the normal reaction on one axis and the friction on the other, so each equation contains fewer unknowns.
+State Newton's first law. ~~ An object continues at rest or in uniform motion in a straight line unless acted on by a resultant force.
+State Newton's second law. ~~ A resultant force F on an object of fixed mass m gives acceleration a with F = ma.
+State Newton's third law. ~~ When one object exerts a force on another, there is a reaction equal in magnitude and opposite in direction.
+What must the F in F = ma be? ~~ The RESULTANT of all forces acting. Using a single force and ignoring friction or weight is the standard structural error.
+How do you write down an equation of motion? ~~ Draw a force diagram, choose a positive direction (usually that of the acceleration), resolve in that direction and set the total equal to ma.
+How is equilibrium a special case of the second law? ~~ Setting a = 0 gives a resultant force of zero — which also recovers the first law.
+Why does the point of application matter for a rigid body but not a particle? ~~ A particle has no size, so forces only translate it. A rigid body has extent, so forces can also produce a turning effect.
+Define the moment of a force and give its units. ~~ Moment = force × perpendicular distance from the point. Units are newton metres, N m.
+What is the moment of a force acting through the pivot? ~~ Zero, since the perpendicular distance is zero. This is why choosing the pivot cleverly removes unknowns.
+State the two conditions for a rigid body to be in equilibrium. ~~ The resultant force is zero, AND the sum of the moments about any one point is zero.
+Why is the force condition alone insufficient? ~~ Two equal and opposite forces applied at different points give no net force but do produce a turning effect.
+## 1.1
+Prove that the product of two consecutive integers is even. ~~ Consider n(n + 1). One of n and n + 1 is even, so the product has a factor of 2 and is even.
+
+## 1.3
+Find the equation of the tangent to x² + y² = 25 at (3, 4). ~~ The radius has gradient 4/3, so the tangent has gradient −3/4: y − 4 = −3/4(x − 3), i.e. 3x + 4y = 25.
+
+## 1.6
+Solve 5^(2x) − 6 × 5^x + 5 = 0. ~~ Let u = 5^x: u² − 6u + 5 = 0, so u = 1 or 5, giving x = 0 or x = 1.
+
+## 1.10
+Find the angle between the vector 3i + 4j and the positive x-axis. ~~ tan θ = 4/3, so θ ≈ 53.1°.

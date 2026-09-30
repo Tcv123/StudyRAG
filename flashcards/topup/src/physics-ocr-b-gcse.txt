@@ -1,0 +1,194 @@
+deck: Physics|OCR B|gcse
+# Shared GCSE physics content drawn from the Edexcel GCSE deck, mapped to this board's topics.
+
+## P1
+What is a wave? ~~ A disturbance that transfers energy from one place to another without transferring matter.
+What is a transverse wave? ~~ A wave where the vibrations are at right angles to the direction of energy transfer, e.g. light.
+What is a longitudinal wave? ~~ A wave where the vibrations are parallel to the direction of energy transfer, e.g. sound.
+What is amplitude? ~~ The maximum displacement of a point on the wave from its rest position.
+What is wavelength? ~~ The distance from one point on a wave to the same point on the next wave.
+What is frequency? ~~ The number of waves passing a point each second, measured in hertz (Hz).
+What is the period of a wave? ~~ The time for one complete wave to pass a point: T = 1/f.
+What is the wave equation? ~~ Wave speed = frequency × wavelength (v = fλ).
+A wave has frequency 50 Hz and wavelength 2 m. What is its speed? ~~ 50 × 2 = 100 m/s.
+What is the equation linking speed, distance and time for waves? ~~ v = x/t.
+What are compressions and rarefactions? ~~ Regions in a longitudinal wave where particles are close together (compressions) and spread apart (rarefactions).
+What is reflection? ~~ When a wave bounces off a surface.
+What is the electromagnetic spectrum? ~~ A continuous range of transverse waves that travel at the speed of light in a vacuum.
+List the EM spectrum in order of increasing frequency. ~~ Radio, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays.
+What is the speed of EM waves in a vacuum? ~~ 3 × 10⁸ m/s.
+What are the uses of radio waves? ~~ Broadcasting TV and radio, and communications.
+What are the uses of microwaves? ~~ Cooking, satellite communications and mobile phones.
+What are the uses of infrared? ~~ Heating, thermal imaging, remote controls and optical fibres.
+What are the uses of visible light? ~~ Seeing, photography and fibre optic communication.
+What are the uses of ultraviolet? ~~ Fluorescent lamps, security marking, sterilising water and sun tanning.
+What are the uses of X-rays? ~~ Medical imaging and airport security scanners.
+What are the uses of gamma rays? ~~ Sterilising medical equipment, treating cancer and medical tracers.
+What are the dangers of ultraviolet? ~~ Skin damage, premature ageing, sunburn, skin cancer and eye damage.
+What are the dangers of X-rays and gamma rays? ~~ They are ionising radiation and can cause mutations and cancer.
+What are the dangers of microwaves? ~~ Internal heating of body tissue.
+What are the dangers of infrared? ~~ Skin burns.
+Why are higher-frequency EM waves more dangerous? ~~ They carry more energy and can ionise atoms.
+What is the law of reflection? ~~ The angle of incidence equals the angle of reflection.
+What is specular reflection? ~~ Reflection from a smooth surface, producing a clear image.
+What is diffuse reflection? ~~ Reflection from a rough surface, scattering light in all directions.
+
+## P2
+What are non-renewable energy resources? ~~ Resources that will run out, e.g. coal, oil, gas and nuclear fuel.
+What are renewable energy resources? ~~ Resources that will be replenished, e.g. solar, wind, hydroelectric, tidal, geothermal, biofuel and wave.
+Give an advantage and disadvantage of fossil fuels. ~~ Advantage: reliable and can meet demand. Disadvantage: produce CO₂ and will run out.
+Give an advantage and disadvantage of wind power. ~~ Advantage: renewable, no CO₂ during operation. Disadvantage: unreliable and can be noisy or unsightly.
+Give an advantage and disadvantage of solar power. ~~ Advantage: renewable, no emissions. Disadvantage: no power at night and less in cloudy weather.
+Give an advantage and disadvantage of nuclear power. ~~ Advantage: no CO₂ and reliable. Disadvantage: radioactive waste and risk of accidents.
+Give an advantage and disadvantage of hydroelectric power. ~~ Advantage: reliable, renewable and responds quickly. Disadvantage: floods valleys and destroys habitats.
+Give an advantage and disadvantage of tidal power. ~~ Advantage: reliable and predictable. Disadvantage: few suitable sites and affects habitats.
+Why are fossil fuels still used? ~~ They are reliable, the infrastructure already exists, and they can respond quickly to demand.
+What is a biofuel? ~~ A fuel made from plant or animal matter; it is renewable and can be carbon-neutral.
+What is geothermal energy? ~~ Energy from hot rocks underground, used to heat water and generate electricity.
+What happens to energy when a ball is dropped? ~~ GPE is transferred to KE; some is transferred to thermal energy by air resistance.
+What happens to energy in a pendulum? ~~ Energy is continuously transferred between GPE and KE, with some lost to the surroundings.
+How does a lubricant improve efficiency? ~~ It reduces friction between moving parts, so less energy is wasted as heat.
+What is the trend in UK energy use? ~~ Increasing use of renewables and decreasing use of coal.
+Why is it hard to replace fossil fuels quickly? ~~ Cost of new infrastructure, the reliability of supply, and public objections to some renewables.
+What is a transformer? ~~ A device that changes the size of an alternating voltage.
+What is a step-up transformer? ~~ A transformer with more turns on the secondary coil, increasing the voltage.
+What is a step-down transformer? ~~ A transformer with fewer turns on the secondary coil, decreasing the voltage.
+What is the power equation for an ideal transformer? ~~ Vp × Ip = Vs × Is.
+What is the National Grid? ~~ A network of cables and transformers that distributes electricity across the country.
+Why is electricity transmitted at high voltage? ~~ High voltage means low current, reducing energy lost as heat in the cables.
+Where are step-up transformers used in the National Grid? ~~ At power stations, to increase the voltage for transmission.
+Where are step-down transformers used in the National Grid? ~~ Near homes and businesses, to reduce the voltage to a safe level (230 V).
+What is the role of the iron core in a transformer? ~~ It links the magnetic field between the primary and secondary coils.
+How are power stations connected to homes? ~~ Through the National Grid: power station → step-up transformer → transmission cables → step-down transformer → homes.
+What is work done? ~~ Energy transferred when a force moves an object: W = F × d.
+What is the unit of work done? ~~ The joule (J).
+Calculate the work done when a 20 N force moves an object 5 m. ~~ 20 × 5 = 100 J.
+What is power? ~~ The rate of doing work (energy transferred per second): P = E/t.
+
+## P3
+What is electric current? ~~ The rate of flow of charge: I = Q/t.
+What is potential difference? ~~ The energy transferred per unit charge between two points: V = E/Q.
+What is resistance? ~~ How much a component opposes the flow of current: R = V/I.
+What is Ohm's law? ~~ The current through a resistor is directly proportional to the potential difference, at constant temperature.
+Calculate the current when 12 V is applied across a 4 Ω resistor. ~~ I = 12 ÷ 4 = 3 A.
+Calculate the charge that flows when 2 A flows for 30 s. ~~ Q = 2 × 30 = 60 C.
+What is a series circuit? ~~ A circuit where components are connected in a single loop.
+What is a parallel circuit? ~~ A circuit where components are connected on separate branches.
+What happens to current in a series circuit? ~~ It is the same everywhere.
+What happens to potential difference in a series circuit? ~~ It is shared between the components.
+What happens to current in a parallel circuit? ~~ It is shared between the branches; the total current equals the sum of the branch currents.
+What happens to potential difference in a parallel circuit? ~~ It is the same across each branch.
+How do you calculate total resistance in series? ~~ Add the resistances: R_total = R₁ + R₂.
+What happens to total resistance when resistors are added in parallel? ~~ It decreases, and is less than the smallest individual resistance.
+How is an ammeter connected? ~~ In series with the component.
+How is a voltmeter connected? ~~ In parallel across the component.
+What is the I–V graph for a fixed resistor? ~~ A straight line through the origin.
+What is the I–V graph for a filament lamp? ~~ A curve that gets less steep, because resistance increases as the filament heats up.
+What is the I–V graph for a diode? ~~ Current flows in one direction only, after a small threshold voltage.
+How does the resistance of a thermistor change? ~~ It decreases as temperature increases.
+How does the resistance of an LDR change? ~~ It decreases as light intensity increases.
+What is electrical power? ~~ P = IV = I²R.
+What is the motor effect? ~~ A current-carrying wire in a magnetic field experiences a force.
+What is Fleming's left-hand rule? ~~ First finger = field, second finger = current, thumb = motion (force).
+What is the equation for the force on a wire in a magnetic field? ~~ F = B × I × l.
+What is magnetic flux density? ~~ A measure of the strength of a magnetic field, measured in tesla (T).
+Calculate the force on a 0.5 m wire carrying 2 A in a 0.1 T field. ~~ F = 0.1 × 2 × 0.5 = 0.1 N.
+How does an electric motor work? ~~ Current in a coil in a magnetic field creates forces on opposite sides in opposite directions, making the coil rotate.
+What is the role of the split-ring commutator? ~~ It reverses the current every half turn, so the coil keeps rotating in the same direction.
+How can the speed of a motor be increased? ~~ Increase the current, use a stronger magnet, or add more turns to the coil.
+
+## P4
+What is speed? ~~ The distance travelled per unit time: speed = distance ÷ time.
+What is velocity? ~~ Speed in a given direction.
+What is acceleration? ~~ The rate of change of velocity: a = (v − u) ÷ t.
+What is the unit of acceleration? ~~ m/s².
+What does the gradient of a distance–time graph show? ~~ Speed.
+What does a horizontal line on a distance–time graph show? ~~ The object is stationary.
+What does the gradient of a velocity–time graph show? ~~ Acceleration.
+What does the area under a velocity–time graph show? ~~ Distance travelled.
+What does a horizontal line on a velocity–time graph show? ~~ Constant velocity.
+What is the equation linking v, u, a and x? ~~ v² − u² = 2ax.
+A car accelerates from 10 m/s to 30 m/s in 5 s. What is its acceleration? ~~ (30 − 10) ÷ 5 = 4 m/s².
+What is the acceleration due to gravity near Earth's surface? ~~ About 10 m/s² (9.8 m/s²).
+Give typical speeds for walking, cycling and a car in town. ~~ Walking about 1.5 m/s, cycling about 6 m/s, a car in town about 13 m/s.
+What is Newton's first law? ~~ An object stays at rest or moves at constant velocity unless a resultant force acts on it.
+What is Newton's second law? ~~ Resultant force = mass × acceleration (F = ma).
+What is Newton's third law? ~~ When two objects interact, they exert equal and opposite forces on each other.
+What is inertia? ~~ The tendency of an object to stay at rest or keep moving at constant velocity.
+What is inertial mass? ~~ A measure of how difficult it is to change an object's velocity: m = F/a.
+What is a resultant force? ~~ The single force that has the same effect as all the forces acting on an object.
+How do you calculate the resultant of two forces in the same direction? ~~ Add them.
+How do you calculate the resultant of two forces in opposite directions? ~~ Subtract the smaller from the larger; the resultant acts in the direction of the larger.
+What happens if the resultant force is zero? ~~ The object stays at rest or continues at constant velocity.
+What is a contact force? ~~ A force that acts when objects are touching, e.g. friction, air resistance, tension and normal contact force.
+What is a non-contact force? ~~ A force that acts at a distance, e.g. gravity, magnetism and electrostatic force.
+What is a free-body force diagram? ~~ A diagram showing all the forces acting on a single object, with arrows showing size and direction.
+How can forces be resolved? ~~ By splitting a force into two perpendicular components, e.g. horizontal and vertical.
+What is a moment? ~~ The turning effect of a force: moment = force × perpendicular distance from the pivot.
+What is the unit of a moment? ~~ Newton metre (N m).
+What is the principle of moments? ~~ For an object in equilibrium, the sum of clockwise moments equals the sum of anticlockwise moments.
+A 10 N force acts 0.5 m from a pivot. What is the moment? ~~ 10 × 0.5 = 5 N m.
+
+## P5
+What is the structure of an atom? ~~ A small, dense, positively charged nucleus containing protons and neutrons, surrounded by electrons.
+What are the relative charges of protons, neutrons and electrons? ~~ Proton +1, neutron 0, electron −1.
+What are the relative masses of protons, neutrons and electrons? ~~ Proton 1, neutron 1, electron about 1/1840.
+What is the atomic number? ~~ The number of protons in the nucleus.
+What is the mass number? ~~ The total number of protons and neutrons in the nucleus.
+What is an isotope? ~~ Atoms of the same element with the same number of protons but different numbers of neutrons.
+What is radioactive decay? ~~ The random process in which an unstable nucleus emits radiation to become more stable.
+What is an alpha particle? ~~ Two protons and two neutrons (a helium nucleus).
+What is a beta-minus particle? ~~ A fast-moving electron emitted from the nucleus when a neutron turns into a proton.
+What is a positron? ~~ A particle with the same mass as an electron but a positive charge, emitted in beta-plus decay.
+What is gamma radiation? ~~ High-frequency electromagnetic radiation emitted from the nucleus.
+What is the penetrating power of alpha, beta and gamma? ~~ Alpha is stopped by paper, beta by a few mm of aluminium, gamma is reduced by thick lead or concrete.
+What is the ionising power of alpha, beta and gamma? ~~ Alpha is highly ionising, beta moderately, gamma weakly.
+What happens in alpha decay? ~~ The mass number decreases by 4 and the atomic number decreases by 2.
+What happens in beta-minus decay? ~~ The mass number stays the same and the atomic number increases by 1.
+What happens in gamma emission? ~~ No change to mass number or atomic number; the nucleus loses energy.
+What is half-life? ~~ The time taken for the number of radioactive nuclei (or activity) to halve.
+What is activity? ~~ The rate at which a source decays, measured in becquerels (Bq).
+A sample has activity 800 Bq and half-life 2 hours. What is the activity after 6 hours? ~~ Three half-lives: 800 → 400 → 200 → 100 Bq.
+What is background radiation? ~~ Radiation that is always around us from natural and man-made sources.
+Name three sources of background radiation. ~~ Radon gas, rocks, cosmic rays, food, and medical X-rays.
+What is irradiation? ~~ Exposing an object to radiation; the object does not become radioactive.
+What is contamination? ~~ When radioactive atoms get onto or into an object.
+How can workers be protected from radiation? ~~ Shielding, keeping distance, limiting exposure time, and monitoring doses.
+How is radiation used in medicine? ~~ Radiotherapy to kill cancer cells, tracers to diagnose problems, and sterilising equipment.
+What did the plum pudding model suggest? ~~ The atom was a ball of positive charge with electrons embedded in it.
+What did the alpha scattering experiment show? ~~ Most of the atom is empty space and there is a small, dense, positive nucleus.
+How did Bohr improve the atomic model? ~~ He suggested electrons orbit the nucleus in fixed energy levels (shells).
+What happens when an electron moves to a higher energy level? ~~ It absorbs electromagnetic radiation.
+What is nuclear fission? ~~ Splitting a large nucleus into smaller nuclei, releasing energy and neutrons.
+
+## P6
+What is density? ~~ Mass per unit volume: ρ = m/V.
+What is the unit of density? ~~ kg/m³ (or g/cm³).
+Calculate the density of a 200 g block with volume 100 cm³. ~~ 200 ÷ 100 = 2 g/cm³.
+How can the density of an irregular object be found? ~~ Measure its mass with a balance and its volume by displacement of water in a measuring cylinder.
+What is the particle arrangement in a solid? ~~ Particles are closely packed in a regular pattern, vibrating about fixed positions.
+What is the particle arrangement in a liquid? ~~ Particles are close together but randomly arranged and can move past each other.
+What is the particle arrangement in a gas? ~~ Particles are far apart, randomly arranged and move quickly in all directions.
+Why are gases less dense than solids? ~~ The particles are much further apart.
+What is internal energy? ~~ The total kinetic and potential energy of all the particles in a system.
+What happens to internal energy when a substance is heated? ~~ It increases, either raising the temperature or changing the state.
+What is specific heat capacity? ~~ The energy needed to raise the temperature of 1 kg of a substance by 1 °C.
+What is the equation for specific heat capacity? ~~ ΔQ = m × c × Δθ.
+Calculate the energy needed to heat 2 kg of water by 10 °C (c = 4200 J/kg°C). ~~ 2 × 4200 × 10 = 84,000 J.
+What is specific latent heat? ~~ The energy needed to change the state of 1 kg of a substance without a change in temperature.
+What is the equation for specific latent heat? ~~ Q = m × L.
+What is the specific latent heat of fusion? ~~ The energy needed to change 1 kg from solid to liquid.
+What is the specific latent heat of vaporisation? ~~ The energy needed to change 1 kg from liquid to gas.
+Why does temperature stay constant during a change of state? ~~ The energy is used to break bonds between particles, not to increase kinetic energy.
+What is melting? ~~ Changing from solid to liquid.
+What is evaporation? ~~ Changing from liquid to gas at the surface of a liquid, below its boiling point.
+What is elastic deformation? ~~ When an object returns to its original shape after the force is removed.
+What is inelastic (plastic) deformation? ~~ When an object doesn't return to its original shape after the force is removed.
+What is Hooke's law? ~~ The extension of a spring is directly proportional to the force applied, up to the limit of proportionality.
+What is the equation for Hooke's law? ~~ F = k × x.
+What is the spring constant? ~~ The force needed to stretch a spring by 1 m, measured in N/m.
+Calculate the force needed to stretch a spring with k = 50 N/m by 0.2 m. ~~ 50 × 0.2 = 10 N.
+What is the limit of proportionality? ~~ The point beyond which extension is no longer proportional to force.
+What is the energy stored in a stretched spring? ~~ E = ½kx² (elastic potential energy).
+Calculate the energy stored in a spring with k = 100 N/m stretched 0.1 m. ~~ ½ × 100 × 0.1² = 0.5 J.
+What does the gradient of a force–extension graph show? ~~ The spring constant.

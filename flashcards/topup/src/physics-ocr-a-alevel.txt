@@ -1,0 +1,103 @@
+deck: Physics|OCR A|alevel
+
+## M1
+What is resolution of a measuring instrument? ~~ The smallest change in the measured quantity that gives a detectable change in the reading.
+How is the uncertainty in a mean found from repeated readings? ~~ Half the range of the repeated readings (excluding anomalies).
+How are absolute uncertainties combined when quantities are added or subtracted? ~~ The absolute uncertainties are added together.
+What is a zero error and how is it corrected? ~~ A reading that is not zero when it should be. It is a systematic error, corrected by subtracting it from every reading.
+How is parallax error avoided? ~~ Read scales with the eye level with, and perpendicular to, the reading, with the scale close to the object.
+What is an anomalous result and how should it be dealt with? ~~ A reading that does not fit the pattern of the others. Repeat it if possible, and leave it out of the mean or line of best fit, giving a reason.
+How is the uncertainty in a gradient calculated as a percentage? ~~ (|best gradient − worst gradient| ÷ best gradient) × 100%.
+What is the purpose of a control variable? ~~ A variable kept constant so that only the independent variable affects the dependent variable, making the test fair and valid.
+Why might a light gate be used instead of a stopwatch? ~~ It removes human reaction time, reducing random error and giving more precise timing.
+How should a results table be set out? ~~ Independent variable in the first column, headings with quantity and unit (e.g. t / s), and readings recorded to a consistent number of decimal places matching the instrument's resolution.
+How do you linearise T = 2π√(l/g) to find g? ~~ Plot T^2 against l: a straight line through the origin with gradient 4π^2/g, so g = 4π^2/gradient.
+How is a log–log graph used to find n in y = kx^n? ~~ Plot lg y against lg x. The gradient is n and the y-intercept is lg k.
+Why is a range of at least five values of the independent variable recommended? ~~ It gives enough points to spot a trend and draw a reliable line of best fit.
+What is the difference between a random and a systematic error in terms of a graph? ~~ Random errors scatter points about the line; a systematic error shifts all points, giving a non-zero intercept where zero is expected.
+What should be included in a risk assessment for a practical? ~~ The hazards, the risks they pose, and control measures, e.g. goggles when stretching wires, and clamping apparatus to stop it toppling.
+
+## M2
+What are the SI base quantities and their units? ~~ Mass (kg), length (m), time (s), current (A), temperature (K) and amount of substance (mol).
+What does the prefix "p" (pico) represent, and convert 470 pF to farads? ~~ Pico = 10^-12, so 470 pF = 4.70 × 10^-10 F.
+Express the newton in SI base units. ~~ N = kg m s^-2 (from F = ma).
+What is the difference between distance and displacement? ~~ Distance is a scalar (total path length); displacement is a vector (straight-line distance in a given direction from the start).
+How do you find the resultant of two non-perpendicular vectors? ~~ Draw a scale diagram (tip to tail) and measure the resultant, or use the cosine rule for its magnitude and the sine rule for its direction.
+Give three examples each of scalar and vector quantities. ~~ Scalars: mass, speed, energy. Vectors: velocity, force, acceleration.
+What is meant by a quantity being "derived"? ~~ It is defined in terms of base quantities, e.g. speed = distance/time, so m s^-1.
+Estimate the order of magnitude of the speed of a sprinter and the mass of a car. ~~ About 10 m s^-1 and about 10^3 kg.
+Estimate the power of a person climbing stairs. ~~ About 70 kg × 9.81 × 3 m ÷ 5 s ≈ 400 W, so of order 10^2 to 10^3 W.
+What is the percentage uncertainty in the area of a square of side 2.0 ± 0.1 cm? ~~ The side has 5% uncertainty, so the area has 2 × 5% = 10%: A = 4.0 ± 0.4 cm^2.
+What is the difference between the kilowatt-hour and the kilowatt? ~~ The kilowatt is a unit of power; the kilowatt-hour is a unit of energy (1 kWh = 3.6 × 10^6 J).
+How can homogeneity show an equation might be correct? ~~ If the units on both sides match, it could be correct (though constants cannot be checked). If they don't match, it is definitely wrong.
+What is the component of weight acting down a slope at angle θ? ~~ mg sin θ down the slope; the component perpendicular to the slope is mg cos θ.
+State the unit of the kelvin and how it relates to Celsius. ~~ The kelvin is the SI unit of temperature: T(K) = θ(°C) + 273 (more precisely 273.15).
+What does it mean for forces to be in equilibrium in terms of a vector diagram? ~~ The forces form a closed triangle (or polygon) when drawn tip to tail, so the resultant is zero.
+
+## M3
+What does the gradient of a displacement–time graph represent? ~~ Velocity.
+What does the area under an acceleration–time graph represent? ~~ The change in velocity.
+Describe an experiment to determine g using a light gate. ~~ Drop a card of known length through a light gate at measured heights; calculate v = length/time and plot v^2 against h. The gradient is 2g.
+What is thinking distance and braking distance? ~~ Thinking distance: distance travelled during reaction time (speed × reaction time). Braking distance: distance travelled while braking to a stop.
+What factors affect braking distance? ~~ Speed, vehicle mass, condition of brakes and tyres, and road surface (wet or icy).
+What is drag and how does it depend on speed? ~~ A resistive force on an object moving through a fluid; it increases with speed (roughly ∝ v^2 at high speed).
+What is upthrust? ~~ The upward force on an object in a fluid, equal to the weight of fluid displaced (Archimedes' principle).
+Give the equation for pressure in a fluid. ~~ p = hρg, where h is depth, ρ is density and g is gravitational field strength.
+Define the newton. ~~ The force that gives a 1 kg mass an acceleration of 1 m s^-2.
+Define impulse and its unit. ~~ Impulse = FΔt = change in momentum, with units N s (equivalent to kg m s^-1).
+In a perfectly inelastic collision, what is conserved? ~~ Momentum and total energy are conserved, but kinetic energy is not; the objects stick together.
+What is the centre of gravity and how can it be found for a lamina? ~~ The point where the weight appears to act. Hang the lamina from two points and draw plumb lines; they cross at the centre of gravity.
+State the relationship between the change in gravitational potential energy and height. ~~ ΔE_p = mgΔh.
+What is the force–extension graph area equal to? ~~ The work done in stretching (the elastic potential energy stored, if within the elastic limit).
+What is the ultimate tensile strength? ~~ The maximum stress a material can withstand before it breaks.
+
+## M4
+Define the coulomb. ~~ The charge that passes a point when a current of 1 A flows for 1 s.
+What is the elementary charge and what does quantisation of charge mean? ~~ e = 1.60 × 10^-19 C. Any charge is a whole-number multiple of e.
+Why is the drift velocity in a metal wire very small? ~~ The number density of free electrons is very high (about 10^28 m^-3), so only a small drift velocity is needed for typical currents.
+Define the volt. ~~ One joule of energy transferred per coulomb of charge: 1 V = 1 J C^-1.
+Distinguish EMF and potential difference in terms of energy transfer. ~~ EMF: energy transferred to electrical energy per coulomb by a source. Pd: electrical energy transferred to other forms per coulomb by a component.
+Describe the I–V characteristic of an LED. ~~ No current until the threshold pd is reached in forward bias (about 1.5–3 V depending on colour), then current rises steeply; no current in reverse bias.
+How does the resistance of a thermistor change with temperature? ~~ For an NTC thermistor, resistance decreases as temperature increases because more charge carriers are released.
+Define intensity of a wave. ~~ Power per unit area: I = P/A, with units W m^-2. I ∝ amplitude^2.
+What are the regions of the electromagnetic spectrum in order of decreasing wavelength? ~~ Radio, microwaves, infrared, visible, ultraviolet, X-rays, gamma rays.
+What is Malus's law in outline? ~~ When polarised light passes through a polariser, the transmitted intensity varies with the angle between the polarisation direction and the polariser's axis, falling to zero at 90°.
+How are stationary waves formed in a closed pipe, and what are the resonant frequencies? ~~ By reflection at the closed end; a node forms there and an antinode at the open end. f = nv/4L for odd n only.
+Define the electronvolt. ~~ The energy gained by an electron accelerated through a pd of 1 V: 1 eV = 1.60 × 10^-19 J.
+How can the Planck constant be found using LEDs? ~~ Measure the threshold pd V for LEDs of known wavelength λ. Then eV = hc/λ, so plot V against 1/λ; the gradient is hc/e.
+What is the work function and threshold frequency? ~~ Work function φ: minimum energy to free an electron from a metal surface. Threshold frequency f0 = φ/h.
+What is wave–particle duality? ~~ Electromagnetic radiation and matter show both wave properties (diffraction, interference) and particle properties (photoelectric effect, collisions).
+
+## M5
+State the relationship between angular velocity and period. ~~ ω = 2π/T = 2πf.
+What is the radian? ~~ The angle subtended at the centre of a circle by an arc equal in length to the radius. 2π rad = 360°.
+Define specific heat capacity. ~~ The energy needed to raise the temperature of 1 kg of a substance by 1 K: E = mcΔθ.
+Define specific latent heat of fusion and vaporisation. ~~ The energy needed to change the state of 1 kg of substance without a change in temperature (solid to liquid for fusion, liquid to gas for vaporisation): E = mL.
+What is Brownian motion evidence for? ~~ The random motion of smoke particles shows they are being hit by fast-moving, randomly moving air molecules, supporting the kinetic model.
+State the equation for mean kinetic energy of a gas molecule. ~~ (1/2)m(c_rms)^2 = (3/2)kT.
+What is the phase difference between displacement and velocity in SHM? ~~ π/2 radians (a quarter of a cycle).
+Define gravitational potential. ~~ The work done per unit mass to bring a small mass from infinity to that point: V_g = −GM/r.
+What is escape velocity and give its formula? ~~ The minimum speed needed to escape a gravitational field from a surface: v = √(2GM/r).
+What is the Chandrasekhar limit? ~~ 1.44 solar masses: the maximum mass of a white dwarf, above which electron degeneracy pressure cannot prevent further collapse.
+What are the end products of low-mass and high-mass stars? ~~ Low mass (< 1.44 solar masses core): white dwarf. High mass: supernova, leaving a neutron star or (if the core exceeds about 3 solar masses) a black hole.
+What causes an emission line spectrum? ~~ Electrons in atoms of a hot, low-pressure gas drop between discrete energy levels, emitting photons of specific wavelengths.
+What is the Doppler equation for light from a receding galaxy? ~~ Δλ/λ ≈ Δf/f ≈ v/c. A redshift (longer wavelength) shows the source is moving away.
+Define the light-year, astronomical unit and parsec. ~~ Light-year: distance light travels in a year (9.46 × 10^15 m). AU: mean Earth–Sun distance (1.50 × 10^11 m). Parsec: distance at which 1 AU subtends 1 arcsecond (3.1 × 10^16 m).
+How is the age of the universe estimated from Hubble's law? ~~ t ≈ 1/H0, about 13.7 billion years.
+
+## M6
+Define electric potential at a point. ~~ The work done per unit charge in bringing a positive test charge from infinity to that point: V = Q/(4πε0r).
+What is the uniform electric field strength between parallel plates? ~~ E = V/d.
+Describe how capacitors combine in series and in parallel. ~~ Parallel: C = C1 + C2. Series: 1/C = 1/C1 + 1/C2.
+Define the time constant of a capacitor–resistor circuit. ~~ τ = CR: the time for the charge to fall to 1/e (about 37%) of its initial value during discharge.
+What is Fleming's left-hand rule? ~~ First finger: field; second finger: current; thumb: force (motion) on a current-carrying conductor in a magnetic field.
+Define the tesla. ~~ The magnetic flux density that exerts a force of 1 N on a 1 m wire carrying 1 A at right angles to the field.
+Describe the principle of a velocity selector. ~~ Crossed electric and magnetic fields: particles with v = E/B experience equal and opposite forces and pass through undeflected.
+Define magnetic flux linkage. ~~ NΦ = BAN cos θ, measured in weber-turns (Wb).
+What is the quark composition of a proton and neutron? ~~ Proton uud; neutron udd.
+What is the equation for activity in terms of the decay constant? ~~ A = λN, and the half-life is t½ = ln 2/λ.
+What is binding energy per nucleon and why is it useful? ~~ The binding energy divided by the number of nucleons. It shows how stable a nucleus is: higher means more stable.
+What is the attenuation equation for X-rays? ~~ I = I0 e^(−µx), where µ is the attenuation coefficient.
+Name the four ways X-rays interact with matter. ~~ Simple scatter, photoelectric effect, Compton scattering and pair production.
+What is acoustic impedance and why is gel used in ultrasound? ~~ Z = ρc. Gel has an impedance similar to skin, so it removes air (which has a very different Z) and reduces reflection at the skin surface.
+How is Doppler ultrasound used to measure blood flow? ~~ Ultrasound reflected from moving red blood cells changes frequency; the frequency shift gives the blood speed: Δf = 2fv cos θ/c.

@@ -1,0 +1,141 @@
+deck: Biology|Edexcel B|alevel
+
+## 1
+What is a glycosidic bond? ~~ A covalent bond between two monosaccharides, formed by condensation with the loss of water.
+Why is glycogen more branched than amylopectin? ~~ More branches give more ends for enzymes to act on, so glucose can be released quickly to meet animals' high energy demands.
+What is an ester bond? ~~ The bond formed between the –OH of glycerol and the –COOH of a fatty acid in a condensation reaction.
+Distinguish saturated and unsaturated fatty acids. ~~ Saturated: no C=C double bonds, straight chains. Unsaturated: one or more C=C bonds, causing kinks in the chain.
+What is the primary structure of a protein? ~~ The sequence of amino acids in a polypeptide chain, held by peptide bonds.
+What is the secondary structure of a protein? ~~ Folding of the polypeptide into α-helices or β-pleated sheets, held by hydrogen bonds.
+What is the role of disulfide bridges? ~~ Strong covalent bonds between sulfur atoms of cysteine R groups, stabilising the tertiary structure.
+Describe the structure of a DNA nucleotide. ~~ A deoxyribose sugar, a phosphate group and a nitrogenous base (adenine, thymine, cytosine or guanine).
+What is a phosphodiester bond? ~~ The bond linking the phosphate of one nucleotide to the sugar of the next, forming the sugar–phosphate backbone.
+What is the role of mRNA in protein synthesis? ~~ It carries a complementary copy of the gene's base sequence from the nucleus to the ribosome.
+How does a non-competitive inhibitor work? ~~ It binds to an allosteric site, changing the shape of the active site so the substrate no longer fits. Adding more substrate doesn't reverse it.
+What is end-product inhibition? ~~ The final product of a metabolic pathway inhibits an enzyme earlier in the pathway, regulating production.
+
+## 2
+What is the role of ribosomes? ~~ The site of translation (protein synthesis). 80S in eukaryotes, 70S in prokaryotes.
+What is the role of the cell wall in plants? ~~ It provides support and strength and prevents the cell bursting when turgid; it is made of cellulose microfibrils.
+What is the role of the capsule in bacteria? ~~ A slimy layer that protects against phagocytosis and desiccation, and helps bacteria stick to surfaces.
+What is the difference between Gram-positive and Gram-negative cell walls? ~~ Gram-positive: thick peptidoglycan layer, stains purple. Gram-negative: thin peptidoglycan with an outer lipid membrane, stains red/pink.
+What is a bacteriophage? ~~ A virus that infects bacteria.
+What is a retrovirus? ~~ An RNA virus that uses reverse transcriptase to make DNA from its RNA, which is inserted into the host genome, e.g. HIV.
+What happens during prophase of mitosis? ~~ Chromosomes condense and become visible, the nuclear envelope breaks down, and spindle fibres form.
+What happens during metaphase of mitosis? ~~ Chromosomes line up at the equator and attach to spindle fibres by their centromeres.
+What happens during telophase of mitosis? ~~ Chromatids reach the poles, nuclear envelopes reform and chromosomes uncoil. Cytokinesis then divides the cytoplasm.
+What is the mitotic index? ~~ The proportion of cells in a sample undergoing mitosis: cells in mitosis ÷ total cells.
+What happens in the acrosome reaction? ~~ When sperm meet the zona pellucida, the acrosome releases digestive enzymes that allow the sperm to penetrate it.
+What is the endosperm? ~~ A triploid tissue formed when a male nucleus fuses with the two polar nuclei; it provides food for the embryo.
+
+## 3
+What is phylogeny? ~~ The evolutionary history and relationships of organisms.
+What is a cladogram? ~~ A branching diagram showing evolutionary relationships based on shared derived characteristics.
+Why do molecular data give better classification than physical features? ~~ Physical features can be similar due to convergent evolution; DNA and protein sequences give more objective evidence of relatedness.
+What is ring species? ~~ Populations where neighbouring groups can interbreed, but those at the ends of the ring cannot, showing speciation in progress.
+What are the domains Archaea, Bacteria and Eukarya? ~~ Archaea: prokaryotes with unique membranes, often in extreme environments. Bacteria: prokaryotes with peptidoglycan cell walls. Eukarya: cells with a nucleus.
+What is a behavioural adaptation? ~~ A way an organism acts to increase survival, e.g. birds migrating.
+What is a physiological adaptation? ~~ An internal process that increases survival, e.g. hibernation or producing venom.
+What is an anatomical adaptation? ~~ A structural feature that increases survival, e.g. a thick blubber layer in whales.
+What is speciation? ~~ The formation of new species when populations become reproductively isolated and diverge genetically.
+Give two types of reproductive isolation. ~~ Prezygotic (e.g. different mating seasons or courtship behaviour) and postzygotic (e.g. hybrid sterility).
+What is endemism? ~~ A species found only in one particular geographic location.
+What is biodiversity? ~~ The variety of living organisms: species diversity, genetic diversity and habitat diversity.
+
+## 4
+How does the structure of the alveolus maximise gas exchange? ~~ Large surface area, thin walls (one cell thick), moist lining, good blood supply and ventilation maintain steep concentration gradients.
+What is the role of surfactant? ~~ It reduces surface tension in the alveoli, preventing them collapsing during exhalation.
+How does counter-current flow in fish gills work? ~~ Blood and water flow in opposite directions, maintaining a concentration gradient along the whole gill lamella.
+What is the role of the sinoatrial node? ~~ It generates electrical impulses that start each heartbeat, making the atria contract.
+Why is there a delay at the atrioventricular node? ~~ It gives the atria time to empty into the ventricles before the ventricles contract.
+What is the role of the Purkyne fibres? ~~ They carry impulses from the bundle of His to the ventricle walls, so the ventricles contract from the apex upwards.
+What happens to the oxygen dissociation curve during exercise? ~~ It shifts to the right (the Bohr effect) as CO2 increases, so haemoglobin releases more oxygen to muscles.
+Why does fetal haemoglobin have a higher affinity for oxygen? ~~ It can load oxygen from the mother's blood in the placenta, where the partial pressure of oxygen is low.
+What is transpiration? ~~ The loss of water vapour from the leaves, mainly through the stomata.
+How does cohesion–tension move water up the xylem? ~~ Water evaporates from leaves, pulling water molecules up because hydrogen bonds hold them together (cohesion); they also stick to xylem walls (adhesion).
+What is translocation? ~~ The movement of organic substances such as sucrose through the phloem from sources to sinks.
+How are companion cells adapted? ~~ They have many mitochondria for active transport of sucrose into the sieve tubes.
+
+## 5
+What is the role of NAD in respiration? ~~ It accepts hydrogen (becoming reduced NAD) and carries it to the electron transport chain.
+What happens to pyruvate in the absence of oxygen in animals? ~~ It is reduced to lactate by reduced NAD, regenerating NAD so glycolysis can continue.
+What is substrate-level phosphorylation? ~~ ATP produced directly from a phosphorylated intermediate transferring a phosphate to ADP, e.g. in glycolysis and the Krebs cycle.
+What is the respiratory quotient? ~~ RQ = CO2 produced ÷ O2 consumed. Carbohydrates give about 1.0, lipids about 0.7 and proteins about 0.9.
+Why do mitochondria have folded inner membranes (cristae)? ~~ To increase the surface area for the electron transport chain and ATP synthase.
+What is photolysis of water? ~~ The splitting of water by light energy into protons, electrons and oxygen.
+What is the role of photosystems I and II? ~~ They contain chlorophyll that absorbs light, exciting electrons. PSII feeds electrons to the chain; PSI re-excites them to reduce NADP.
+What is the role of RuBisCO? ~~ It catalyses the combination of CO2 with RuBP to form two molecules of GP.
+Why does the rate of photosynthesis plateau at high light intensity? ~~ Another factor, such as CO2 concentration or temperature, becomes limiting.
+What happens in the thylakoid membranes? ~~ The light-dependent reactions: light absorption, photolysis, electron transport, and ATP and reduced NADP production.
+What happens in the stroma? ~~ The Calvin cycle (light-independent reactions), where CO2 is fixed and reduced to make GALP.
+What is the Hill reaction? ~~ Isolated chloroplasts reduce an artificial electron acceptor (e.g. DCPIP, blue to colourless) in light, showing the light-dependent reaction.
+
+## 6
+What is a nutrient medium? ~~ A substance containing the nutrients needed for microorganisms to grow, e.g. nutrient agar or broth.
+What are the phases of a bacterial growth curve? ~~ Lag, log (exponential), stationary and death (decline).
+Why do bacteria grow slowly in the lag phase? ~~ They are adapting to the new environment, synthesising enzymes and taking in water, before dividing.
+Why does growth stop in the stationary phase? ~~ Nutrients run out and toxic waste builds up, so the birth rate equals the death rate.
+What is a haemocytometer used for? ~~ Counting cells (total count) in a known volume under a microscope.
+How does turbidimetry measure bacterial growth? ~~ A colorimeter measures cloudiness (absorbance) of a culture, which increases with the number of cells (both living and dead).
+What is a pathogen? ~~ A microorganism that causes disease.
+How does a vector transmit disease? ~~ An organism (e.g. a mosquito) carries a pathogen from one host to another without being affected.
+What is the role of phagocytes in the immune response? ~~ They engulf and digest pathogens and present antigens to T cells.
+What is antigen presentation? ~~ Phagocytes display a pathogen's antigens on their surface, activating T helper cells.
+What is the role of T helper cells? ~~ They release cytokines that activate B cells, T killer cells and phagocytes.
+What do plasma cells do? ~~ They secrete large amounts of antibodies specific to one antigen.
+
+## 7
+What is a DNA probe? ~~ A short, single strand of labelled DNA complementary to a target sequence, used to find specific genes.
+What is gel electrophoresis? ~~ A method that separates DNA fragments by size using an electric current; smaller fragments move further towards the positive electrode.
+What is the role of primers in PCR? ~~ Short DNA sequences complementary to the start of the target region, providing a starting point for DNA polymerase.
+Why is PCR carried out at 95 °C, 55 °C and 72 °C? ~~ 95 °C separates the strands; 55 °C lets primers anneal; 72 °C is the optimum for Taq polymerase to extend.
+What is a promoter region? ~~ A DNA sequence upstream of a gene where RNA polymerase and transcription factors bind to start transcription.
+How can genetic modification improve crop yields? ~~ Introducing genes for pest resistance, herbicide tolerance or drought resistance.
+What are the ethical concerns about GMOs? ~~ Possible effects on the environment (gene transfer to wild plants), effects on biodiversity, corporate control of seeds, and long-term health effects.
+What is a vector in genetic engineering? ~~ A carrier, such as a plasmid or virus, used to transfer DNA into a host cell.
+What is the role of marker genes? ~~ They identify cells that have taken up recombinant DNA, e.g. antibiotic resistance or fluorescence genes.
+What are stem cells used for in medicine? ~~ Replacing damaged cells or tissues, e.g. treating Parkinson's disease, spinal cord injury and type 1 diabetes.
+Why are embryonic stem cells controversial? ~~ Obtaining them destroys an embryo, which some people consider a potential human life.
+What is a transgenic organism? ~~ An organism containing a gene from a different species.
+
+## 8
+What is a mutation? ~~ A change in the base sequence of DNA.
+What is a point mutation? ~~ A change in a single base: a substitution, insertion or deletion.
+What is a chromosome mutation? ~~ A change in the structure or number of chromosomes, e.g. deletion, duplication or translocation.
+What is dominant and recessive? ~~ Dominant: an allele always expressed in the phenotype if present. Recessive: expressed only when two copies are present.
+What is a heterozygote advantage? ~~ When heterozygotes have a survival advantage, e.g. sickle cell carriers are more resistant to malaria.
+What is epistasis? ~~ When one gene affects or masks the expression of another gene.
+What is sex determination in humans? ~~ Females are XX, males are XY. The SRY gene on the Y chromosome triggers male development.
+Why are males more likely to show X-linked recessive conditions? ~~ They have only one X chromosome, so a single recessive allele is expressed.
+What is directional selection? ~~ Selection that favours one extreme phenotype, shifting the mean, e.g. antibiotic resistance.
+What is allele frequency? ~~ The proportion of a particular allele in a population's gene pool.
+How does genetic drift differ from natural selection? ~~ Genetic drift is random and not related to fitness; natural selection is non-random, favouring advantageous alleles.
+What are the Hardy–Weinberg equations? ~~ p + q = 1 and p^2 + 2pq + q^2 = 1.
+
+## 9
+What are the components of a control system? ~~ A receptor, a coordinator (e.g. the brain) and an effector.
+What is the role of ADH? ~~ Released from the posterior pituitary when blood water potential is low; it increases the permeability of the collecting duct to water, so more water is reabsorbed.
+What is ultrafiltration in the kidney? ~~ High blood pressure in the glomerulus forces small molecules (water, glucose, urea, ions) through the capillary walls into the Bowman's capsule.
+What is selective reabsorption? ~~ The reabsorption of useful substances, such as glucose, amino acids and some water, back into the blood from the proximal convoluted tubule.
+Why is the loop of Henle longer in desert animals? ~~ A longer loop creates a steeper water potential gradient in the medulla, so more water is reabsorbed and urine is more concentrated.
+What are the roles of the pancreas in blood glucose control? ~~ β cells release insulin when glucose is high; α cells release glucagon when glucose is low.
+What is the difference between the nervous and endocrine systems? ~~ Nervous: fast, short-lived, localised electrical impulses. Endocrine: slower, longer-lasting, widespread chemical hormones.
+What is a steroid hormone and how does it act? ~~ A lipid-soluble hormone that diffuses into the cell and binds to receptors, acting as a transcription factor.
+What is the role of the fovea? ~~ The part of the retina with many cones and no rods, giving the highest visual acuity.
+What is a reflex arc? ~~ A rapid, involuntary response: receptor → sensory neurone → relay neurone → motor neurone → effector.
+What is the role of the hypothalamus in temperature control? ~~ It detects changes in blood temperature and coordinates responses such as sweating, shivering and changes in blood flow to the skin.
+What is the role of ethylene in plants? ~~ A plant hormone that promotes fruit ripening and leaf abscission.
+
+## 10
+What is a food web? ~~ A diagram showing the interconnected feeding relationships between organisms in an ecosystem.
+What is productivity? ~~ The rate at which energy is converted into biomass, per unit area per unit time.
+What is the role of decomposers? ~~ They break down dead organic matter and waste, releasing nutrients back into the ecosystem.
+What is nitrification? ~~ The conversion of ammonium into nitrites and then nitrates by nitrifying bacteria (Nitrosomonas and Nitrobacter).
+What is denitrification? ~~ Anaerobic bacteria convert nitrates back into nitrogen gas.
+What is the carbon cycle? ~~ The movement of carbon through photosynthesis, respiration, feeding, decomposition, fossilisation and combustion.
+How does deforestation affect the carbon cycle? ~~ It reduces CO2 uptake by photosynthesis, and burning or decaying trees releases CO2.
+What is a density-dependent factor? ~~ A factor whose effect depends on population density, e.g. disease, competition and predation.
+What is a density-independent factor? ~~ A factor whose effect doesn't depend on population density, e.g. floods, fire and temperature.
+What is intraspecific competition? ~~ Competition between members of the same species for resources.
+What is the Lincoln index? ~~ The population estimate from mark–recapture: N = (number marked first × total caught second) ÷ number marked in second sample.
+What is conservation? ~~ The protection and management of species and habitats to maintain biodiversity.

@@ -1,0 +1,103 @@
+deck: Chemistry|Edexcel|alevel
+
+## T1
+Define relative atomic mass. ~~ The weighted mean mass of an atom of an element relative to 1/12 of the mass of a carbon-12 atom.
+What is an orbital? ~~ A region around the nucleus that can hold up to two electrons with opposite spins.
+Give the electron configurations of Cr and Cu. ~~ Cr: [Ar] 3d5 4s1; Cu: [Ar] 3d10 4s1 (a half-filled or filled 3d sub-shell is more stable).
+Why does ionisation energy decrease from N to O? ~~ In O, two electrons share a 2p orbital; the extra repulsion makes one easier to remove.
+What is the difference between ionic and covalent bonding? ~~ Ionic: electrostatic attraction between oppositely charged ions. Covalent: a shared pair of electrons attracted to both nuclei.
+How does polarisation of an anion produce covalent character in ionic bonds? ~~ A small, highly charged cation distorts the electron cloud of a large anion, pulling electron density between the ions.
+What is a σ bond and a π bond? ~~ σ: head-on overlap of orbitals along the internuclear axis. π: sideways overlap of p orbitals above and below the axis.
+What are London forces? ~~ Temporary induced dipole–dipole attractions caused by fluctuating electron distributions. They are stronger for molecules with more electrons.
+What conditions are needed for hydrogen bonding? ~~ H bonded to N, O or F, and a lone pair on an N, O or F atom in another molecule.
+How does the shape of an XeF4 molecule arise? ~~ 4 bonding pairs and 2 lone pairs around Xe give a square planar shape (90°).
+Why do metals conduct electricity and heat? ~~ Delocalised electrons can move through the structure carrying charge and energy.
+Define standard enthalpy of neutralisation. ~~ The enthalpy change when 1 mole of water is formed from the reaction of an acid and an alkali under standard conditions.
+How is the enthalpy change of a reaction found from bond enthalpies? ~~ ΔH = Σ(bonds broken) − Σ(bonds formed).
+What is meant by exothermic and endothermic in terms of ΔH? ~~ Exothermic: ΔH negative (heat released to the surroundings). Endothermic: ΔH positive (heat absorbed).
+How do you calculate moles of gas at room temperature from volume? ~~ Moles = volume (dm^3) ÷ 24.0 dm^3 mol^-1 at RTP.
+
+## T2
+What is the collision theory explanation for the effect of temperature on rate? ~~ Particles have more kinetic energy, so a much greater proportion of collisions have energy at least Ea, and collisions are more frequent.
+What is a heterogeneous catalyst? ~~ A catalyst in a different phase from the reactants, e.g. iron in the Haber process; the reaction takes place at active sites on its surface.
+How do catalysts increase rate? ~~ They provide an alternative reaction pathway with a lower activation energy.
+Give the units of the rate constant for a second-order reaction. ~~ dm^3 mol^-1 s^-1.
+What is the initial-rates method? ~~ Measuring the rate at the start of several experiments with different starting concentrations to find the order with respect to each reactant.
+How does a clock reaction measure rate? ~~ The time for a set amount of product to form (e.g. a sudden colour change) is measured; rate ∝ 1/t.
+Why does increasing pressure shift the equilibrium N2 + 3H2 ⇌ 2NH3 to the right? ~~ The right-hand side has fewer moles of gas, so the equilibrium shifts to reduce the pressure.
+What is the effect of adding a catalyst on equilibrium? ~~ Equilibrium is reached faster, but its position and K are unchanged.
+Define oxidation and reduction in terms of electrons. ~~ Oxidation is loss of electrons; reduction is gain of electrons (OIL RIG).
+What is a disproportionation reaction? ~~ A reaction in which the same element is both oxidised and reduced.
+How is the oxidation state of an element in a compound determined? ~~ Oxidation states add up to the overall charge. Fixed values: O is −2 (except in peroxides), H is +1 (except in metal hydrides), F is −1.
+What is a salt bridge and why is it needed in a cell? ~~ A strip of filter paper soaked in saturated KNO3 that completes the circuit by allowing ions to move, without the solutions mixing.
+How are cell diagrams written? ~~ Pt | Fe2+, Fe3+ || Ag+ | Ag: the oxidation half-cell on the left, the reduction on the right, with a double line for the salt bridge.
+What is the relationship between E°cell and ΔG? ~~ ΔG = −nFE°cell; a positive E°cell gives a negative ΔG (feasible).
+What is a fuel cell? ~~ A cell that converts the chemical energy of a fuel (e.g. hydrogen) and oxygen directly into electrical energy, producing water.
+
+## T3
+Give the equation for sodium reacting with oxygen. ~~ 4Na + O2 → 2Na2O.
+Why does the reactivity of Group 1 metals increase down the group? ~~ The outer electron is further from the nucleus and more shielded, so it is lost more easily.
+Give the equation for the thermal decomposition of lithium nitrate. ~~ 4LiNO3 → 2Li2O + 4NO2 + O2 (Li behaves like Group 2, unlike other Group 1 nitrates).
+Give the equation for thermal decomposition of sodium nitrate. ~~ 2NaNO3 → 2NaNO2 + O2.
+Why are Group 2 carbonates more thermally stable down the group? ~~ Larger cations with the same charge have lower charge density, so they polarise the carbonate ion less.
+What are the flame test colours for Group 2? ~~ Ca: brick red; Sr: crimson; Ba: apple green; Mg: no colour.
+What is the trend in reactivity of the halogens, and how is it shown? ~~ Reactivity decreases down the group. A more reactive halogen displaces a less reactive halide from solution.
+Give the colours of Cl2, Br2 and I2 in water and in cyclohexane. ~~ Cl2: pale green in both. Br2: orange in water, orange/red in cyclohexane. I2: brown in water, purple in cyclohexane.
+Give the equation for iodine reacting with thiosulfate in a titration. ~~ I2 + 2S2O3^2− → 2I− + S4O6^2−. Starch is added near the endpoint; blue-black turns colourless.
+Why is Cr2O7^2− orange and CrO4^2− yellow? ~~ They are different chromium(VI) species in equilibrium. Adding acid gives orange dichromate; adding alkali gives yellow chromate.
+Give the colours of V in its four oxidation states. ~~ VO2+ (+5): yellow; VO2+ (+4): blue; V3+ (+3): green; V2+ (+2): violet.
+How is vanadium reduced from +5 to +2? ~~ Zinc and acid: the colour changes yellow → blue → green → violet.
+Describe the reaction of [Cr(H2O)6]3+ with excess NaOH. ~~ A grey-green precipitate of Cr(OH)3(H2O)3 forms, which dissolves in excess to give dark green [Cr(OH)6]3−.
+What is the shape of a [CuCl4]2− ion? ~~ Tetrahedral (Cl− ligands are large, so only four fit).
+What is the test for sulfate ions? ~~ Add acidified BaCl2 solution; a white precipitate of BaSO4 forms.
+
+## T4
+What is a structural formula? ~~ A formula showing the arrangement of atoms in a molecule without all the bonds, e.g. CH3CH2OH.
+What is a skeletal formula? ~~ A formula showing the carbon skeleton as lines, with functional groups shown and H atoms on carbons omitted.
+What is geometric (E/Z) isomerism? ~~ Stereoisomerism caused by restricted rotation about a C=C bond, where each carbon has two different groups.
+How are E and Z assigned using CIP rules? ~~ Find the higher-priority group (higher atomic number) on each carbon of the C=C. Z: both on the same side. E: on opposite sides.
+Why are alkanes unreactive? ~~ C–C and C–H bonds are strong and non-polar.
+What are the three stages of free-radical substitution? ~~ Initiation (UV splits Cl2 into radicals), propagation (radicals react with molecules and are regenerated), termination (two radicals combine).
+What are the problems with free-radical substitution for synthesis? ~~ It gives a mixture of products, including further substitution and isomers.
+What is formed when an alkene reacts with hydrogen? ~~ An alkane, with a nickel catalyst at 150 °C (hydrogenation).
+What is formed when an alkene is oxidised by acidified KMnO4? ~~ A diol; the purple solution turns colourless.
+Describe addition polymerisation. ~~ Many alkene monomers join by breaking their C=C π bonds to form a long saturated polymer chain.
+What are the environmental problems with polymers and the solutions? ~~ They are non-biodegradable and fill landfill. Solutions: recycling, incinerating for energy, and biodegradable polymers.
+What is the mechanism for OH− with a primary halogenoalkane? ~~ SN2: OH− attacks the δ+ carbon as the halide leaves in one step.
+How are halogenoalkanes compared using silver nitrate in ethanol? ~~ The precipitate forms fastest for iodo, then bromo, then chloro, because the C–I bond is weakest.
+What is the product of heating an alcohol with PCl5? ~~ A chloroalkane, POCl3 and HCl (steamy fumes; also a test for –OH).
+How is a secondary alcohol oxidised, and what is observed? ~~ Acidified K2Cr2O7, heated under reflux, gives a ketone; the colour turns from orange to green.
+
+## T5
+What is the Born–Haber cycle used for? ~~ Calculating a lattice energy from other measurable enthalpy changes using Hess's law.
+Define first electron affinity. ~~ The enthalpy change when 1 mole of gaseous atoms each gains one electron to form 1 mole of gaseous 1− ions.
+Why is the second electron affinity of oxygen endothermic? ~~ The electron is added to a negative ion, so energy is needed to overcome the repulsion.
+Define enthalpy change of atomisation. ~~ The enthalpy change when 1 mole of gaseous atoms is formed from an element in its standard state.
+What does entropy measure? ~~ The number of ways particles and their energy can be arranged (disorder).
+Give the equation for the total entropy change. ~~ ΔS_total = ΔS_system + ΔS_surroundings, where ΔS_surroundings = −ΔH/T.
+State the relationship between ΔG and K. ~~ ΔG = −RT ln K.
+Define a Brønsted–Lowry acid and base. ~~ Acid: proton donor. Base: proton acceptor.
+What is a conjugate acid–base pair? ~~ Two species differing by one proton, e.g. CH3COOH and CH3COO−.
+Calculate the pH of 0.020 mol dm^-3 HCl. ~~ pH = −log(0.020) = 1.70.
+Why is pure water neutral at all temperatures even though pH changes? ~~ [H+] always equals [OH−], even though Kw (and so pH) changes with temperature.
+How is Ka found from a half-neutralisation point? ~~ At half-neutralisation [HA] = [A−], so pH = pKa.
+Give two uses of buffers. ~~ Maintaining blood pH (carbonic acid/hydrogencarbonate) and shampoos, food and biological experiments.
+Why is phenolphthalein unsuitable for a weak base–strong acid titration? ~~ Its colour change range (pH 8.3–10) is not within the steep vertical section, which is in the acidic region.
+How does temperature affect the pH of pure water? ~~ Ionisation is endothermic, so higher temperatures increase Kw and lower the pH, although the water stays neutral.
+
+## T6
+What is the delocalised model of benzene? ~~ A planar ring of 6 carbons, each sp2, with a ring of 6 delocalised π electrons above and below the plane; all C–C bonds are equal length.
+Give evidence against the Kekulé structure. ~~ All C–C bonds are the same length, the enthalpy of hydrogenation is less exothermic than predicted, and benzene resists addition reactions.
+Describe Friedel–Crafts alkylation. ~~ A halogenoalkane with an AlCl3 catalyst forms a carbocation electrophile, which substitutes onto the benzene ring.
+Give the reaction of phenol with bromine water. ~~ White precipitate of 2,4,6-tribromophenol at room temperature, without a catalyst; bromine water is decolourised.
+How are aldehydes and ketones reduced? ~~ With LiAlH4 in dry ether (or NaBH4): aldehydes give primary alcohols and ketones give secondary alcohols.
+Give the test for methyl ketones. ~~ The iodoform test: warm with iodine in alkali; a pale yellow precipitate of CHI3 forms.
+How do carboxylic acids react with carbonates? ~~ They form a salt, water and CO2 (effervescence).
+How are acyl chlorides hydrolysed? ~~ They react vigorously with cold water to form a carboxylic acid and steamy fumes of HCl.
+Give the mechanism type for acyl chloride reactions. ~~ Nucleophilic addition–elimination.
+How is an amide formed from an acyl chloride? ~~ React with ammonia (primary amide) or an amine (N-substituted amide).
+What is the difference between primary, secondary and tertiary amines? ~~ One, two or three hydrogen atoms of ammonia replaced by alkyl or aryl groups.
+How are amino acids separated and identified? ~~ By TLC or paper chromatography, using ninhydrin to show spots and comparing Rf values with known samples.
+How do you plan a multi-step synthesis? ~~ Identify the functional groups in the starting material and product, then use known reactions (e.g. substitution, oxidation, reduction) to link them, adding a carbon with KCN if needed.
+What is the purpose of recrystallisation? ~~ To purify a solid: dissolve it in the minimum hot solvent, filter hot, cool to crystallise, then filter and dry.
+How is melting point used to check purity? ~~ A pure substance melts sharply at its known melting point; impurities lower it and broaden the range.

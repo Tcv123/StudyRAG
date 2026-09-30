@@ -1,0 +1,290 @@
+deck: Further Mathematics|AQA|alevel
+# Built from a shared Further Maths card pool; topics that span several areas combine the relevant units.
+
+## 1.1
+What is i? ~~ The imaginary unit, defined by i² = −1.
+What is a complex number? ~~ A number of the form z = a + bi, where a and b are real.
+What are Re(z) and Im(z) for z = 3 − 4i? ~~ Re(z) = 3 and Im(z) = −4.
+What is the complex conjugate of z = a + bi? ~~ z* = a − bi.
+Simplify i³ and i⁴. ~~ i³ = −i and i⁴ = 1.
+Add (2 + 3i) + (4 − i). ~~ 6 + 2i.
+Multiply (2 + 3i)(1 − i). ~~ 2 − 2i + 3i − 3i² = 5 + i.
+What is z z* for z = a + bi? ~~ a² + b², which is always real and non-negative.
+How do you divide complex numbers? ~~ Multiply the numerator and denominator by the conjugate of the denominator.
+Calculate (3 + i)/(1 − i). ~~ (3 + i)(1 + i)/2 = (3 + 4i + i²)/2 = (2 + 4i)/2 = 1 + 2i.
+Solve z² + 4 = 0. ~~ z = ±2i.
+Solve z² − 2z + 5 = 0. ~~ z = (2 ± √(4 − 20))/2 = 1 ± 2i.
+What is an Argand diagram? ~~ A diagram representing complex numbers as points, with the real part on the horizontal axis and the imaginary part on the vertical axis.
+How is z* shown on an Argand diagram? ~~ As the reflection of z in the real axis.
+What does |z − a| represent? ~~ The distance from z to the point a on the Argand diagram.
+Describe the locus |z − 2 − i| = 3. ~~ A circle with centre (2, 1) and radius 3.
+Describe the locus |z − 1| = |z + i|. ~~ The perpendicular bisector of the points 1 and −i.
+Describe the locus arg(z − 1) = π/4. ~~ A half-line from (1, 0) at angle π/4 to the positive real axis, not including the point 1.
+What does |z| < 2 represent? ~~ The interior of a circle centred at the origin with radius 2.
+Describe the region |z − 3| ≤ |z + 1|. ~~ The points closer to 3 than to −1: Re(z) ≥ 1.
+What does arg z = θ represent? ~~ A half-line from the origin at angle θ.
+What is Euler's formula? ~~ e^(iθ) = cos θ + i sin θ.
+What is the exponential form of a complex number? ~~ z = re^(iθ).
+What is e^(iπ)? ~~ −1.
+State de Moivre's theorem. ~~ [r(cos θ + i sin θ)]ⁿ = rⁿ(cos nθ + i sin nθ).
+Calculate (1 + i)⁸ using de Moivre. ~~ (√2)⁸(cos 2π + i sin 2π) = 16.
+How can de Moivre express cos 3θ in terms of cos θ? ~~ Expand (cos θ + i sin θ)³ and take the real part: cos 3θ = 4cos³θ − 3cos θ.
+Express sin 3θ in terms of sin θ. ~~ sin 3θ = 3 sin θ − 4 sin³θ.
+What is z + 1/z if z = e^(iθ)? ~~ 2 cos θ.
+What is z − 1/z if z = e^(iθ)? ~~ 2i sin θ.
+
+## 1.2
+What is the order of a matrix? ~~ The number of rows × the number of columns.
+When can two matrices be multiplied? ~~ When the number of columns in the first equals the number of rows in the second.
+Is matrix multiplication commutative? ~~ No; in general AB ≠ BA.
+Is matrix multiplication associative? ~~ Yes: (AB)C = A(BC).
+What is the identity matrix I? ~~ A square matrix with 1s on the leading diagonal and 0s elsewhere; AI = IA = A.
+What is the determinant of a 2×2 matrix (a b; c d)? ~~ ad − bc.
+What is the inverse of a 2×2 matrix (a b; c d)? ~~ (1/(ad − bc)) × (d −b; −c a).
+What is a singular matrix? ~~ A matrix with determinant zero, which has no inverse.
+What is (AB)⁻¹? ~~ B⁻¹A⁻¹.
+How do you find the determinant of a 3×3 matrix? ~~ Expand along a row or column using cofactors: a(ei − fh) − b(di − fg) + c(dh − eg).
+What does the determinant of a transformation matrix represent? ~~ The area (2D) or volume (3D) scale factor; a negative value means orientation is reversed.
+How can matrices solve simultaneous equations? ~~ Write as AX = B, then X = A⁻¹B if A is non-singular.
+What does det A = 0 mean for a system of 3 equations? ~~ There is no unique solution: either no solutions (inconsistent) or infinitely many.
+How do three planes with no unique solution appear geometrically? ~~ As a sheaf (common line), a prism (no common point), or with parallel planes.
+What is det(AB)? ~~ det A × det B.
+What is the transpose of a matrix? ~~ The matrix formed by swapping rows and columns, Aᵀ.
+How do you find the inverse of a 3×3 matrix? ~~ Find the matrix of cofactors, transpose it (adjugate), then divide by the determinant.
+What is the zero matrix? ~~ A matrix in which every element is 0.
+What transformation does (1 0; 0 −1) represent? ~~ A reflection in the x-axis.
+What transformation does (−1 0; 0 1) represent? ~~ A reflection in the y-axis.
+What transformation does (0 1; 1 0) represent? ~~ A reflection in the line y = x.
+What matrix represents an anticlockwise rotation by θ about the origin? ~~ (cos θ −sin θ; sin θ cos θ).
+What matrix represents an enlargement by scale factor k about the origin? ~~ (k 0; 0 k).
+What matrix represents a stretch parallel to the x-axis, scale factor k? ~~ (k 0; 0 1).
+What does the matrix (1 k; 0 1) represent? ~~ A shear with the x-axis invariant: each point moves parallel to the x-axis by k times its y-coordinate.
+How do you find the image of a point under a transformation? ~~ Multiply the transformation matrix by the position vector of the point.
+How do you find the matrix of a transformation? ~~ Find the images of the unit vectors i and j (and k); these form the columns.
+What is the matrix for a combined transformation "A then B"? ~~ BA (the first transformation is on the right).
+What is an invariant point? ~~ A point that maps to itself under a transformation.
+What is an invariant line? ~~ A line where every point on it maps to a point on the same line.
+
+## 1.3
+What is a rational function? ~~ A function of the form f(x) = p(x)/q(x) where p and q are polynomials.
+How do you find vertical asymptotes of y = p(x)/q(x)? ~~ Solve q(x) = 0 (where p(x) ≠ 0).
+How do you find the horizontal asymptote of y = (ax + b)/(cx + d)? ~~ y = a/c.
+What is the oblique asymptote of y = (x² + 1)/x? ~~ y = x, since y = x + 1/x.
+How can you find the range of y = (x² + 1)/(x − 1)? ~~ Rearrange into a quadratic in x and use the discriminant ≥ 0 for real x.
+What is y = 1/f(x) used for? ~~ Sketching the reciprocal graph: roots of f become vertical asymptotes, and maxima become minima.
+How is y = |f(x)| sketched? ~~ Reflect the parts of y = f(x) below the x-axis in the x-axis.
+How is y² = f(x) sketched? ~~ Plot y = ±√f(x) where f(x) ≥ 0; the graph is symmetric about the x-axis.
+Solve (x + 1)/(x − 2) > 0. ~~ Critical values −1 and 2: x < −1 or x > 2.
+Solve x/(x − 1) ≤ 2. ~~ (x − 2(x − 1))/(x − 1) ≤ 0 → (2 − x)/(x − 1) ≤ 0, so x < 1 or x ≥ 2.
+Why can't you multiply both sides of an inequality by (x − 1)? ~~ Its sign is unknown; multiply by (x − 1)² instead, or use a sign diagram.
+What is the equation of a parabola in standard form? ~~ y² = 4ax, with focus (a, 0) and directrix x = −a.
+What is the equation of an ellipse centred at the origin? ~~ x²/a² + y²/b² = 1.
+What is the equation of a hyperbola centred at the origin? ~~ x²/a² − y²/b² = 1, with asymptotes y = ±(b/a)x.
+What is a rectangular hyperbola? ~~ xy = c², with the axes as asymptotes.
+What are the parametric equations of y² = 4ax? ~~ x = at², y = 2at.
+What are the parametric equations of an ellipse? ~~ x = a cos θ, y = b sin θ.
+What are the parametric equations of xy = c²? ~~ x = ct, y = c/t.
+What is the effect of replacing x with x − a in a curve's equation? ~~ A translation by a in the x-direction.
+What is the effect of replacing y with y/b? ~~ A stretch parallel to the y-axis, scale factor b.
+How do you find stationary points of y = (x² − 3)/(x − 2) without calculus? ~~ Rearrange as a quadratic in x with parameter y, and find where the discriminant is zero.
+What is a partial fraction decomposition used for in further algebra? ~~ Summing series (method of differences) and integration.
+Sketch key features of y = 1/(x² − 1). ~~ Vertical asymptotes at x = ±1, horizontal asymptote y = 0, y-intercept −1, symmetric about the y-axis.
+What does a modulus inequality |x − 3| < 2x require? ~~ Consider both cases or square carefully (only valid when both sides are non-negative); solution x > 1.
+What is the discriminant condition for a line to meet a conic? ~~ Substitute to get a quadratic; ≥ 0 means the line meets the curve, = 0 means tangent.
+Find the asymptotes of y = (2x − 1)/(x + 3). ~~ x = −3 and y = 2.
+What happens to y = 1/f(x) where f(x) = 1? ~~ The graphs intersect, since 1/1 = 1.
+What happens to y = 1/f(x) as f(x) → ∞? ~~ It tends to 0.
+How do you sketch y = f(|x|)? ~~ Reflect the part for x ≥ 0 in the y-axis (the left part is replaced).
+What is the focus–directrix property of a parabola? ~~ Every point is equidistant from the focus and the directrix.
+
+## 1.4
+What is Σ r from r = 1 to n? ~~ n(n + 1)/2.
+What is Σ r² from r = 1 to n? ~~ n(n + 1)(2n + 1)/6.
+What is Σ r³ from r = 1 to n? ~~ n²(n + 1)²/4.
+What is Σ 1 from r = 1 to n? ~~ n.
+Evaluate Σ r² from r = 1 to 10. ~~ 10 × 11 × 21/6 = 385.
+Find Σ (2r − 1) from r = 1 to n. ~~ n(n + 1) − n = n².
+Find Σ r(r + 1) from r = 1 to n. ~~ Σr² + Σr = n(n + 1)(n + 2)/3.
+How do you evaluate Σ from r = 11 to 20? ~~ Σ from 1 to 20 minus Σ from 1 to 10.
+What is the method of differences? ~~ Writing each term as f(r) − f(r + 1) so that most terms cancel when summed.
+Use the method of differences to sum Σ 1/(r(r + 1)). ~~ 1/(r(r + 1)) = 1/r − 1/(r + 1), so the sum from 1 to n is 1 − 1/(n + 1).
+Find Σ 1/(r(r + 2)) from r = 1 to n. ~~ ½ Σ (1/r − 1/(r + 2)) = ½(3/2 − 1/(n + 1) − 1/(n + 2)).
+What is a telescoping series? ~~ A series in which consecutive terms cancel, leaving only a few terms.
+What is the sum to infinity of Σ 1/(r(r + 1))? ~~ 1.
+How do you prove a summation formula? ~~ Using the standard results, the method of differences, or proof by induction.
+What is Σ (ar + b)? ~~ aΣr + bn.
+What is a Maclaurin series? ~~ f(x) = f(0) + f'(0)x + f''(0)x²/2! + f'''(0)x³/3! + …
+What is the Maclaurin series for eˣ? ~~ 1 + x + x²/2! + x³/3! + …, valid for all x.
+What is the Maclaurin series for sin x? ~~ x − x³/3! + x⁵/5! − …, valid for all x.
+What is the Maclaurin series for cos x? ~~ 1 − x²/2! + x⁴/4! − …, valid for all x.
+What is the Maclaurin series for ln(1 + x)? ~~ x − x²/2 + x³/3 − …, valid for −1 < x ≤ 1.
+What is the Maclaurin series for (1 + x)ⁿ? ~~ 1 + nx + n(n − 1)x²/2! + …, valid for |x| < 1 (non-integer n).
+Find the Maclaurin series for e^(2x) up to x³. ~~ 1 + 2x + 2x² + (4/3)x³.
+Find the series for sin 3x up to x³. ~~ 3x − (27/6)x³ = 3x − 4.5x³.
+Find the series for eˣ sin x up to x³. ~~ (1 + x + x²/2)(x − x³/6) = x + x² + x³/3 + …
+Find the series for ln(1 − x) up to x³. ~~ −x − x²/2 − x³/3.
+What is the validity of ln(1 − x)'s series? ~~ −1 ≤ x < 1.
+How can a Maclaurin series approximate a value? ~~ Substitute a small x into the first few terms, e.g. e^0.1 ≈ 1 + 0.1 + 0.005.
+How can series find limits? ~~ Replace functions with their series and simplify, e.g. lim (sin x)/x = 1.
+Find lim (x→0) of (1 − cos x)/x². ~~ (x²/2 − …)/x² → 1/2.
+Find lim (x→0) of (eˣ − 1)/x. ~~ (x + x²/2 + …)/x → 1.
+
+## 1.5
+What is an improper integral? ~~ An integral where a limit is infinite or the integrand is undefined at a point in the range.
+How do you evaluate ∫₁^∞ 1/x² dx? ~~ lim (t→∞) [−1/x]₁ᵗ = 1.
+Does ∫₁^∞ 1/x dx converge? ~~ No; ln t → ∞, so it diverges.
+Evaluate ∫₀¹ 1/√x dx. ~~ [2√x]₀¹ = 2 (the integral converges even though 1/√x is undefined at 0).
+What is the mean value of f(x) over [a, b]? ~~ (1/(b − a)) ∫ₐᵇ f(x) dx.
+Find the mean value of x² over [0, 3]. ~~ (1/3) × 9 = 3.
+What is ∫ 1/√(1 − x²) dx? ~~ arcsin x + c.
+What is ∫ 1/(1 + x²) dx? ~~ arctan x + c.
+What is ∫ 1/√(a² − x²) dx? ~~ arcsin(x/a) + c.
+What is ∫ 1/(a² + x²) dx? ~~ (1/a) arctan(x/a) + c.
+What is the derivative of arcsin x? ~~ 1/√(1 − x²).
+What is the derivative of arccos x? ~~ −1/√(1 − x²).
+What is the derivative of arctan x? ~~ 1/(1 + x²).
+Integrate 1/(x² + 4). ~~ (1/2) arctan(x/2) + c.
+Integrate 1/√(9 − x²). ~~ arcsin(x/3) + c.
+How do you integrate 1/(x² + 2x + 5)? ~~ Complete the square: (x + 1)² + 4, giving (1/2) arctan((x + 1)/2) + c.
+How do partial fractions help integrate 1/((x + 1)(x² + 1))? ~~ Split into A/(x + 1) + (Bx + C)/(x² + 1), then integrate using ln and arctan.
+What is the partial fraction form for (px + q)/((x − a)(x² + b²))? ~~ A/(x − a) + (Bx + C)/(x² + b²).
+What is the volume of revolution about the x-axis? ~~ V = π ∫ y² dx between the limits.
+What is the volume of revolution about the y-axis? ~~ V = π ∫ x² dy between the y-limits.
+Find the volume when y = x from 0 to 3 is rotated about the x-axis. ~~ π ∫₀³ x² dx = 9π (a cone).
+Find the volume when y = √x from 0 to 4 is rotated about the x-axis. ~~ π ∫₀⁴ x dx = 8π.
+Find the volume when y = x² from 0 to 1 is rotated about the x-axis. ~~ π ∫₀¹ x⁴ dx = π/5.
+How do you find the volume between two curves rotated about the x-axis? ~~ V = π ∫ (y₁² − y₂²) dx, where y₁ is the outer curve.
+Why is it not π ∫ (y₁ − y₂)² dx? ~~ The solid is a washer: the volume is the outer solid minus the inner solid.
+How do you rotate y = x² about the y-axis between y = 0 and y = 4? ~~ x² = y, so V = π ∫₀⁴ y dy = 8π.
+What is the volume of a sphere derived by rotation? ~~ Rotate x² + y² = r² about the x-axis: π ∫₋ᵣʳ (r² − x²) dx = (4/3)πr³.
+What is the volume of a cone derived by rotation? ~~ Rotate y = (r/h)x from 0 to h: π ∫ (r²/h²)x² dx = (1/3)πr²h.
+How can volumes of revolution model real objects? ~~ E.g. vases, bottles and bowls can be modelled by rotating curves.
+What assumption is made when modelling an object with a volume of revolution? ~~ The object is perfectly symmetrical about its axis and the curve accurately describes its profile.
+
+## 1.6
+What is the vector equation of a line? ~~ r = a + λb, where a is a point on the line and b is the direction vector.
+What is the Cartesian equation of a line? ~~ (x − a₁)/b₁ = (y − a₂)/b₂ = (z − a₃)/b₃.
+What is the scalar (dot) product? ~~ a·b = a₁b₁ + a₂b₂ + a₃b₃ = |a||b| cos θ.
+What does a·b = 0 mean? ~~ The vectors are perpendicular.
+How do you find the angle between two lines? ~~ Use the dot product of their direction vectors: cos θ = (b₁·b₂)/(|b₁||b₂|).
+What is the vector equation of a plane? ~~ r = a + λb + μc, or r·n = a·n.
+What is the Cartesian equation of a plane? ~~ n₁x + n₂y + n₃z = d, where n is the normal.
+What is a normal vector to a plane? ~~ A vector perpendicular to the plane.
+How do you find the angle between a line and a plane? ~~ Find the angle between the direction and the normal, then subtract from 90°.
+How do you find the angle between two planes? ~~ Find the angle between their normals.
+How do you find where a line meets a plane? ~~ Substitute the line's parametric form into the plane equation and solve for λ.
+How do you tell if two lines are skew? ~~ They are not parallel and don't intersect.
+How do you find the intersection of two lines? ~~ Set the vector equations equal and solve for the parameters, checking all three components.
+What is the vector (cross) product? ~~ a × b, a vector perpendicular to both a and b with magnitude |a||b| sin θ.
+How do you calculate a × b? ~~ (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁).
+How do you find the normal to a plane containing vectors b and c? ~~ Calculate b × c.
+What is the perpendicular distance from a point to a plane? ~~ |ax₀ + by₀ + cz₀ − d|/√(a² + b² + c²).
+How do you find the shortest distance between skew lines? ~~ |(a₂ − a₁)·n|/|n|, where n = b₁ × b₂.
+How do you find the shortest distance from a point to a line? ~~ Find the foot of the perpendicular (where (p − r)·b = 0), then find the distance.
+What is the area of a triangle using vectors? ~~ ½|AB × AC|.
+What is the volume of a parallelepiped? ~~ |a·(b × c)| (the scalar triple product).
+What is the line of intersection of two planes? ~~ It has direction n₁ × n₂; find a point by solving the equations with one variable fixed.
+How do you find the reflection of a point in a plane? ~~ Find the foot of the perpendicular, then go the same distance beyond it.
+When are two planes parallel? ~~ When their normals are parallel.
+What does r·n = d mean geometrically? ~~ All points whose component along n is d/|n| from the origin.
+Find the angle between (1, 2, 2) and (2, −1, 2). ~~ Dot product = 2 − 2 + 4 = 4; |a| = |b| = 3; cos θ = 4/9, θ ≈ 63.6°.
+How do you check a point lies on a line? ~~ Find a λ that satisfies all three components.
+What is a unit normal? ~~ A normal vector divided by its magnitude.
+Find the Cartesian equation of the plane with normal (2, −1, 3) through (1, 1, 1). ~~ 2x − y + 3z = 4.
+What is the scalar product of a vector with itself? ~~ a·a = |a|².
+
+## 1.7
+What are polar coordinates? ~~ Coordinates (r, θ), where r is the distance from the pole and θ is the angle from the initial line.
+How do you convert polar to Cartesian? ~~ x = r cos θ, y = r sin θ.
+How do you convert Cartesian to polar? ~~ r² = x² + y², tan θ = y/x (taking care with the quadrant).
+What is the polar equation r = a? ~~ A circle with centre the pole and radius a.
+What is the polar equation θ = α? ~~ A half-line from the pole at angle α.
+What is the curve r = aθ? ~~ A spiral (Archimedean spiral).
+What is the curve r = a(1 + cos θ)? ~~ A cardioid.
+What is the curve r = a cos 2θ? ~~ A four-petalled rose curve.
+What is the curve r = 2a cos θ? ~~ A circle through the pole, with centre (a, 0) and radius a.
+What is the area enclosed by a polar curve? ~~ A = ½ ∫ r² dθ between the limits.
+Find the area enclosed by r = 2 for 0 ≤ θ ≤ 2π. ~~ ½ ∫ 4 dθ = 4π.
+Find the area of the cardioid r = 1 + cos θ. ~~ ½ ∫₀^(2π) (1 + cos θ)² dθ = 3π/2.
+How do you find where two polar curves intersect? ~~ Set the r-values equal and solve for θ, also checking the pole.
+How do you find a tangent parallel to the initial line? ~~ Set dy/dθ = 0, where y = r sin θ.
+How do you find a tangent perpendicular to the initial line? ~~ Set dx/dθ = 0, where x = r cos θ.
+Convert r = 4 sin θ to Cartesian form. ~~ r² = 4r sin θ, so x² + y² = 4y (a circle centred at (0, 2)).
+Convert x² + y² = 9 to polar form. ~~ r = 3.
+Convert y = x to polar form. ~~ θ = π/4 (and θ = −3π/4 for negative r).
+Why is r usually taken as non-negative? ~~ By convention r ≥ 0; values of θ that give negative r are excluded from the sketch.
+What does a cardioid look like? ~~ A heart shape with a cusp at the pole.
+How many petals does r = cos 3θ have? ~~ 3.
+How many petals does r = cos 2θ have? ~~ 4.
+What is the area of one petal of r = cos 2θ? ~~ ½ ∫ from −π/4 to π/4 of cos²2θ dθ = π/8.
+What identity helps integrate r² = cos²θ? ~~ cos²θ = (1 + cos 2θ)/2.
+How do you sketch a polar curve? ~~ Tabulate r for key θ values, note symmetry, and find where r = 0 and r is maximum.
+What does symmetry about the initial line mean for r = f(θ)? ~~ f(−θ) = f(θ), e.g. curves involving only cos θ.
+How do you find the area between two polar curves? ~~ Subtract the areas: ½ ∫ (r₁² − r₂²) dθ over the appropriate range.
+What is the maximum r of r = 3 + 2 cos θ? ~~ 5, when θ = 0.
+Does r = 3 + 2 cos θ pass through the pole? ~~ No, since r ≥ 1 for all θ (a dimpled limaçon).
+What is the pole? ~~ The origin in polar coordinates.
+
+## 1.8
+What is the definition of sinh x? ~~ sinh x = (eˣ − e^(−x))/2.
+What is the definition of cosh x? ~~ cosh x = (eˣ + e^(−x))/2.
+What is the definition of tanh x? ~~ tanh x = sinh x/cosh x = (eˣ − e^(−x))/(eˣ + e^(−x)).
+What is the key hyperbolic identity? ~~ cosh²x − sinh²x = 1.
+What is the range of cosh x? ~~ cosh x ≥ 1.
+What is the range of tanh x? ~~ −1 < tanh x < 1.
+What does the graph of y = cosh x look like? ~~ A U-shape (catenary) with minimum (0, 1), symmetric about the y-axis.
+What does the graph of y = sinh x look like? ~~ An S-shape through the origin, increasing, and odd.
+What is the derivative of sinh x? ~~ cosh x.
+What is the derivative of cosh x? ~~ sinh x.
+What is the derivative of tanh x? ~~ sech²x.
+What is Osborn's rule? ~~ To convert a trig identity to a hyperbolic one, replace cos with cosh and sin with sinh, but change the sign of any product of two sines.
+What is sinh 2x? ~~ 2 sinh x cosh x.
+What is cosh 2x? ~~ cosh²x + sinh²x = 2cosh²x − 1 = 1 + 2sinh²x.
+What is arsinh x in logarithmic form? ~~ ln(x + √(x² + 1)).
+What is arcosh x in logarithmic form? ~~ ln(x + √(x² − 1)), for x ≥ 1.
+What is artanh x in logarithmic form? ~~ ½ ln((1 + x)/(1 − x)), for |x| < 1.
+What is the derivative of arsinh x? ~~ 1/√(x² + 1).
+What is the derivative of arcosh x? ~~ 1/√(x² − 1).
+What is the derivative of artanh x? ~~ 1/(1 − x²).
+Solve cosh x = 2. ~~ x = ±ln(2 + √3).
+Solve sinh x = 3/4. ~~ x = ln(3/4 + 5/4) = ln 2.
+Solve 3 sinh x + cosh x = 3. ~~ In exponentials: 3(eˣ − e^(−x))/2 + (eˣ + e^(−x))/2 = 3 → 2eˣ − e^(−x) = 3 → 2e^(2x) − 3eˣ − 1 = 0, eˣ = (3 + √17)/4, x = ln((3 + √17)/4).
+What is ∫ sinh x dx? ~~ cosh x + c.
+What is ∫ cosh x dx? ~~ sinh x + c.
+What is ∫ tanh x dx? ~~ ln cosh x + c.
+What is a catenary? ~~ The shape of a hanging chain, described by y = a cosh(x/a).
+Is cosh x even or odd? ~~ Even.
+Is sinh x even or odd? ~~ Odd.
+What is sech x? ~~ 1/cosh x.
+
+## 1.9
+What is an integrating factor? ~~ For dy/dx + P(x)y = Q(x), the integrating factor is e^(∫P dx).
+How do you solve dy/dx + P(x)y = Q(x)? ~~ Multiply by the integrating factor I: d(Iy)/dx = IQ, then integrate.
+Solve dy/dx + 2y = e^(−x). ~~ IF = e^(2x): (ye^(2x))' = eˣ, so y = e^(−x) + Ce^(−2x).
+Solve x dy/dx + y = x². ~~ (xy)' = x², so xy = x³/3 + C, y = x²/3 + C/x.
+What is a second-order linear differential equation with constant coefficients? ~~ a d²y/dx² + b dy/dx + cy = f(x).
+What is the auxiliary equation? ~~ am² + bm + c = 0.
+What is the complementary function if the auxiliary equation has distinct real roots α, β? ~~ y = Ae^(αx) + Be^(βx).
+What is the complementary function for a repeated root α? ~~ y = (A + Bx)e^(αx).
+What is the complementary function for complex roots p ± qi? ~~ y = e^(px)(A cos qx + B sin qx).
+What is the general solution of a non-homogeneous second-order ODE? ~~ Complementary function + particular integral.
+What is a particular integral? ~~ Any solution of the full equation, found by trying a function similar to f(x).
+What trial function is used for f(x) = ke^(λx)? ~~ Ae^(λx) (or Axe^(λx) if λ is a root of the auxiliary equation).
+What trial function is used for f(x) = polynomial of degree n? ~~ A general polynomial of degree n.
+What trial function is used for f(x) = k cos ωx? ~~ A cos ωx + B sin ωx.
+What happens if the trial function is part of the complementary function? ~~ Multiply the trial by x (or x² for a repeated root).
+Solve y'' − 5y' + 6y = 0. ~~ m² − 5m + 6 = 0, m = 2, 3: y = Ae^(2x) + Be^(3x).
+Solve y'' + 4y = 0. ~~ m = ±2i: y = A cos 2x + B sin 2x.
+Solve y'' + 2y' + y = 0. ~~ m = −1 (repeated): y = (A + Bx)e^(−x).
+What is simple harmonic motion as a differential equation? ~~ d²x/dt² = −ω²x.
+What is the general solution of d²x/dt² = −ω²x? ~~ x = A cos ωt + B sin ωt.
+What is damped harmonic motion? ~~ d²x/dt² + k dx/dt + ω²x = 0, where the damping term reduces the amplitude.
+What is heavy damping? ~~ The auxiliary equation has two distinct real (negative) roots; the system returns to equilibrium slowly without oscillating.
+What is critical damping? ~~ The auxiliary equation has a repeated root; the system returns to equilibrium fastest without oscillating.
+What is light damping? ~~ The auxiliary equation has complex roots; the system oscillates with decreasing amplitude.
+What is forced oscillation? ~~ An oscillating system with an external driving force: x'' + kx' + ω²x = f(t).
+What is resonance in DEs? ~~ When the driving frequency equals the natural frequency, amplitude grows (the particular integral includes t).
+How is population growth with limits modelled? ~~ dP/dt = kP(1 − P/K), the logistic equation.
+How is predator–prey interaction modelled? ~~ Using coupled first-order differential equations for each population.
+What is the general strategy for coupled DEs? ~~ Eliminate one variable by differentiating to give a second-order DE in the other.
+What does the steady state of a model mean? ~~ The long-term behaviour, e.g. when derivatives are zero.

@@ -1,0 +1,103 @@
+deck: Chemistry|OCR A|alevel
+
+## M1
+How should a burette be read? ~~ At eye level, from the bottom of the meniscus, to the nearest 0.05 cm^3.
+What is the uncertainty in a titre from a burette? ~~ Each reading is ±0.05 cm^3; a titre uses two readings, so ±0.10 cm^3.
+Why is a white tile used in a titration? ~~ It makes the colour change at the end point easier to see.
+Why is the conical flask swirled during a titration? ~~ To mix the reactants thoroughly, so the end point isn't overshot locally.
+How is a separating funnel used to purify an organic liquid? ~~ Shake the organic layer with an aqueous solution (e.g. sodium carbonate to remove acid), release pressure, allow the layers to separate, then run off the lower layer.
+What is the role of anhydrous MgSO4 or CaCl2 in organic preparations? ~~ A drying agent that removes water from an organic liquid. It is added until it no longer clumps, then filtered off.
+How is a Buchner funnel used? ~~ Vacuum (suction) filtration to separate a solid from a liquid quickly, leaving a dry solid on the filter paper.
+How is melting point used to test purity? ~~ Pure substances melt sharply at a known temperature; impurities lower the melting point and widen the range.
+Why are anti-bumping granules used when heating? ~~ They promote smooth boiling, preventing large bubbles that could cause violent bumping.
+What is simple distillation used for? ~~ Separating a liquid from a solution or from liquids with very different boiling points, collecting the product at its boiling point.
+How is the enthalpy change of combustion measured using a spirit burner? ~~ Weigh the burner, heat a known mass of water in a copper can, record the temperature rise and reweigh. q = mcΔT; divide by moles burned.
+How is the rate of a gas-producing reaction measured? ~~ Collect the gas in a gas syringe (or measure mass lost on a balance) at regular time intervals.
+What is the purpose of a trial (rough) titration? ~~ To find the approximate end point, so accurate titrations can add drops carefully near it.
+How are anomalies identified in titration data? ~~ Titres that aren't concordant (within 0.10 cm^3 of the others) are excluded from the mean.
+How can heat loss in calorimetry be accounted for? ~~ Plot temperature against time and extrapolate back to the time of mixing to estimate the maximum temperature change.
+
+## M2
+What is the relative formula mass? ~~ The sum of the relative atomic masses of all the atoms in the formula of an ionic compound.
+How is water of crystallisation determined experimentally? ~~ Heat a weighed hydrated salt to constant mass. The mass lost is water; find the mole ratio of anhydrous salt to water.
+What is the molar gas volume at RTP? ~~ 24.0 dm^3 mol^-1 (at about 20 °C and 101 kPa).
+How is the ideal gas equation used to find M_r? ~~ n = pV/RT, then M_r = mass/n. Use Pa, m^3 and K.
+What is a strong acid? ~~ An acid that dissociates completely in water, e.g. HCl, HNO3, H2SO4.
+What is a weak acid? ~~ An acid that only partially dissociates in water, e.g. CH3COOH.
+What are the products of an acid with a metal oxide and with ammonia? ~~ Metal oxide: salt and water. Ammonia: an ammonium salt only.
+What is a sub-shell and how many electrons can s, p and d sub-shells hold? ~~ A group of orbitals of the same type within a shell: s holds 2, p holds 6, d holds 10.
+Why is the 4s sub-shell filled before 3d? ~~ The 4s sub-shell is lower in energy than 3d in the atoms before scandium, so it fills first (and empties first when ions form).
+What is an ionic lattice and give its properties? ~~ A giant 3D arrangement of oppositely charged ions. High melting points, soluble in polar solvents, and conduct only when molten or dissolved.
+What is a simple molecular substance and give its properties? ~~ Small molecules held by weak intermolecular forces. Low melting and boiling points, don't conduct, often soluble in non-polar solvents.
+What is a permanent dipole–dipole interaction? ~~ An attraction between permanent dipoles in neighbouring polar molecules (δ+ of one to δ− of another).
+Why is CO2 non-polar despite polar bonds? ~~ It is linear and symmetrical, so the bond dipoles cancel.
+Give the shape of SF6 and its bond angle. ~~ Octahedral, 90°.
+What is a redox reaction in terms of oxidation number? ~~ A reaction in which one species' oxidation number increases (oxidation) and another's decreases (reduction).
+
+## M3
+What is periodicity? ~~ A repeating trend in physical or chemical properties across periods of the periodic table.
+Why do melting points increase from Na to Al? ~~ Metallic bonding gets stronger: more delocalised electrons per atom and smaller, more highly charged ions.
+Why does the first ionisation energy drop from Be to B? ~~ B's outer electron is in a 2p sub-shell, higher in energy than 2s, so it is easier to remove.
+Why does reactivity of Group 2 metals increase down the group? ~~ The ionisation energies decrease (more shielding, larger atoms), so the metals lose electrons more easily.
+Give the equation for calcium reacting with oxygen. ~~ 2Ca + O2 → 2CaO.
+Why is calcium hydroxide used in agriculture? ~~ To neutralise acidic soils.
+What is the test for halide ions? ~~ Add dilute HNO3 then AgNO3(aq). Cl−: white precipitate; Br−: cream; I−: yellow. Then check solubility in dilute or concentrated NH3.
+What is a disproportionation reaction? Give a Group 7 example. ~~ The same element is simultaneously oxidised and reduced, e.g. Cl2 + 2NaOH → NaCl + NaClO + H2O.
+What are the risks and benefits of chlorinating water? ~~ Benefit: kills bacteria, preventing disease. Risks: chlorine is toxic, and it can form chlorinated hydrocarbons that may cause cancer.
+Give tests for carbonate, sulfate and halide ions and the order to do them. ~~ Carbonate (dilute HNO3, test gas with limewater), then sulfate (Ba(NO3)2), then halide (AgNO3). This order avoids false positives.
+Define average bond enthalpy. ~~ The mean energy needed to break 1 mole of a given type of bond in gaseous molecules, averaged over many compounds.
+Why is bond breaking endothermic? ~~ Energy is needed to overcome the attraction between the bonding electrons and the nuclei.
+How is the rate of a reaction found from a concentration–time graph? ~~ From the gradient of a tangent at that time.
+What is dynamic equilibrium? ~~ The forward and reverse reaction rates are equal, so the concentrations of reactants and products stay constant, in a closed system.
+What does Kc tell you about the position of equilibrium? ~~ Kc > 1: equilibrium lies to the right (products favoured). Kc < 1: equilibrium lies to the left.
+
+## M4
+What is the general formula of the alkanes, alkenes and alcohols? ~~ Alkanes CnH2n+2; alkenes CnH2n; alcohols CnH2n+1OH.
+What is a saturated and an unsaturated hydrocarbon? ~~ Saturated: only C–C single bonds. Unsaturated: at least one C=C (or C≡C) multiple bond.
+What is homolytic fission? ~~ A covalent bond breaks so each atom takes one electron, forming two radicals.
+What is heterolytic fission? ~~ A covalent bond breaks so one atom takes both electrons, forming a cation and an anion.
+What is a nucleophile? ~~ An electron-pair donor, e.g. OH−, CN−, NH3.
+What is an electrophile? ~~ An electron-pair acceptor, e.g. H+, NO2+, Br+ (δ+ Br).
+Why do branched alkanes have lower boiling points than straight-chain isomers? ~~ Branching reduces the surface contact between molecules, so London forces are weaker.
+What is the C=C made of and why is rotation restricted? ~~ A σ bond and a π bond. The π bond, from sideways p-orbital overlap, prevents rotation.
+Describe the mechanism for electrophilic addition of HBr to propene. ~~ The π electrons attack H of δ+H–Brδ−; the more stable secondary carbocation forms; Br− attacks to give mainly 2-bromopropane.
+Why is a tertiary carbocation more stable than a primary one? ~~ Alkyl groups donate electron density (inductive effect), spreading out the positive charge.
+Give the conditions for oxidising a primary alcohol to an aldehyde. ~~ Acidified K2Cr2O7, heated gently, distilling off the aldehyde as it forms.
+Why are tertiary alcohols not oxidised by acidified dichromate? ~~ There is no hydrogen on the carbon bonded to the –OH.
+Give the reaction for making a bromoalkane from an alcohol. ~~ Heat the alcohol with NaBr and concentrated H2SO4 (which make HBr): ROH + HBr → RBr + H2O.
+What does the molecular ion peak show in a mass spectrum? ~~ The M_r of the compound (the peak with the highest m/z, apart from M+1).
+Why is the reaction of halogenoalkanes with hot aqueous NaOH called hydrolysis? ~~ The C–X bond is broken by reaction with OH− (from water) to form an alcohol.
+
+## M5
+Define the half-life of a first-order reaction. ~~ The time taken for the concentration of a reactant to fall to half its value. It is constant for first order.
+How is k found from the half-life of a first-order reaction? ~~ k = ln 2 / t½.
+What is the rate-determining step? ~~ The slowest step in a multi-step mechanism, which controls the overall rate.
+How is Ea found from an Arrhenius plot? ~~ Plot ln k against 1/T: gradient = −Ea/R.
+Define standard enthalpy of hydration. ~~ The enthalpy change when 1 mole of gaseous ions dissolves in water to form aqueous ions.
+How does ionic size and charge affect lattice enthalpy? ~~ Smaller ions and higher charges give stronger attraction, so the lattice enthalpy is more exothermic.
+When is a reaction with ΔH < 0 and ΔS < 0 feasible? ~~ At low temperatures, where |ΔH| > |TΔS|, so ΔG < 0.
+Calculate the pH of a buffer with 0.10 mol dm^-3 CH3COOH and 0.20 mol dm^-3 CH3COONa (Ka = 1.8 × 10^-5). ~~ [H+] = Ka × [HA]/[A−] = 1.8 × 10^-5 × 0.5 = 9.0 × 10^-6, so pH = 5.05.
+How does the carbonic acid–hydrogencarbonate buffer control blood pH? ~~ H2CO3 ⇌ H+ + HCO3−. Added acid is removed by HCO3−; added alkali is removed by H2CO3. The pH stays about 7.4.
+What is the standard hydrogen electrode? ~~ H2 gas at 100 kPa bubbled over platinum in 1 mol dm^-3 H+ at 298 K; E° = 0.00 V.
+How do you predict the feasibility of a redox reaction from E° values? ~~ The more positive half-cell is reduced and the more negative one is oxidised. If E°cell is positive, the reaction is feasible.
+What is a stereoisomer of a complex ion? Give an example. ~~ Cis–trans (e.g. cis- and trans-platin, square planar) or optical isomers (e.g. [Ni(en)3]2+, octahedral with bidentate ligands).
+Give the colour of [Co(H2O)6]2+ and [CoCl4]2−. ~~ Pink and blue respectively. Adding concentrated HCl changes pink to blue.
+What happens when NaOH is added to Mn2+(aq) and Cr3+(aq)? ~~ Mn2+: light brown precipitate, darkening in air. Cr3+: grey-green precipitate, which dissolves in excess to give dark green [Cr(OH)6]3−.
+How is iodine–thiosulfate titration used to find the concentration of an oxidising agent? ~~ The oxidising agent releases I2 from excess I−; titrate the I2 with S2O3^2−, adding starch near the end point (blue-black to colourless).
+
+## M6
+What is the evidence that benzene has delocalised electrons? ~~ All C–C bonds are the same length (0.139 nm), hydrogenation is less exothermic than expected, and benzene resists addition reactions.
+Describe the mechanism for bromination of benzene. ~~ Br2 with FeBr3 forms Br+ (and FeBr4−); benzene's π system attacks Br+; the intermediate loses H+, which regenerates FeBr3 and forms HBr.
+Why is phenol more reactive than benzene? ~~ A lone pair on the O is partially delocalised into the ring, increasing the electron density so it can polarise electrophiles.
+What are directing effects on a benzene ring? ~~ Electron-donating groups (–OH, –NH2) direct to the 2- and 4-positions; electron-withdrawing groups (–NO2) direct to the 3-position.
+How is NaBH4 used to reduce carbonyls? ~~ NaBH4 in water or methanol provides the H− nucleophile. Aldehydes give primary alcohols; ketones give secondary alcohols.
+How is Tollens' reagent used? ~~ Warm with the sample: aldehydes give a silver mirror, ketones give no change.
+Give the products of reacting carboxylic acids with alcohols. ~~ An ester and water, catalysed by concentrated H2SO4 and heated under reflux.
+How are amides formed? ~~ From acyl chlorides with ammonia (primary amides) or amines (secondary amides).
+What is a chiral carbon? ~~ A carbon atom attached to four different groups, giving non-superimposable mirror images.
+How is a polyester formed? ~~ By condensation of a diol and a dicarboxylic acid (or a hydroxycarboxylic acid), with loss of water.
+Why can polyesters and polyamides be broken down by hydrolysis? ~~ The ester and amide links are polar and can be attacked by acid or base.
+How are carbon chains lengthened in synthesis? ~~ By nucleophilic substitution of a halogenoalkane with CN−, or addition of HCN to a carbonyl, forming nitriles.
+What is formed when a nitrile is hydrolysed? ~~ A carboxylic acid (with dilute acid under reflux).
+What does chemical shift tell you in NMR? ~~ The chemical environment of the nucleus, measured in ppm relative to TMS.
+What is the purpose of thin-layer chromatography? ~~ To separate and identify components of a mixture by comparing Rf values with known substances.

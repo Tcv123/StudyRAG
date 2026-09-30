@@ -1,0 +1,481 @@
+deck: Physics|Edexcel|gcse
+
+## 1
+What are the SI base units for length, mass and time? ~~ Metre (m), kilogram (kg) and second (s).
+What is the SI unit of current? ~~ The ampere (A).
+What is the SI unit of temperature? ~~ The kelvin (K).
+What is a derived unit? ~~ A unit made from combinations of base units, e.g. m/s for speed or N for force.
+What is the unit of force? ~~ The newton (N).
+What is the unit of energy? ~~ The joule (J).
+What is the unit of power? ~~ The watt (W), equal to one joule per second.
+What is the unit of charge? ~~ The coulomb (C).
+What is the unit of potential difference? ~~ The volt (V).
+What is the unit of resistance? ~~ The ohm (Ω).
+What does the prefix kilo mean? ~~ × 1000 (10³).
+What does the prefix mega mean? ~~ × 1,000,000 (10⁶).
+What does the prefix giga mean? ~~ × 10⁹.
+What does the prefix milli mean? ~~ ÷ 1000 (10⁻³).
+What does the prefix micro mean? ~~ × 10⁻⁶.
+What does the prefix nano mean? ~~ × 10⁻⁹.
+Convert 2.5 km to metres. ~~ 2500 m.
+Convert 450 g to kilograms. ~~ 0.45 kg.
+Convert 3 minutes to seconds. ~~ 180 s.
+Convert 250 mA to amps. ~~ 0.25 A.
+Write 0.00056 in standard form. ~~ 5.6 × 10⁻⁴.
+Write 3,400,000 in standard form. ~~ 3.4 × 10⁶.
+What is a scalar quantity? ~~ A quantity with size (magnitude) only, e.g. mass, speed, energy.
+What is a vector quantity? ~~ A quantity with both size and direction, e.g. force, velocity, displacement.
+Give three examples of vectors. ~~ Force, velocity, acceleration, displacement and momentum.
+Give three examples of scalars. ~~ Mass, speed, distance, time, energy and temperature.
+How should a calculated answer be rounded? ~~ To the same number of significant figures as the least precise data given.
+Round 0.004567 to 2 significant figures. ~~ 0.0046.
+Convert 72 km/h to m/s. ~~ 72 × 1000 ÷ 3600 = 20 m/s.
+Convert 1 kWh to joules. ~~ 1000 W × 3600 s = 3.6 × 10⁶ J.
+
+## 2
+What is speed? ~~ The distance travelled per unit time: speed = distance ÷ time.
+What is velocity? ~~ Speed in a given direction.
+What is acceleration? ~~ The rate of change of velocity: a = (v − u) ÷ t.
+What is the unit of acceleration? ~~ m/s².
+What does the gradient of a distance–time graph show? ~~ Speed.
+What does a horizontal line on a distance–time graph show? ~~ The object is stationary.
+What does the gradient of a velocity–time graph show? ~~ Acceleration.
+What does the area under a velocity–time graph show? ~~ Distance travelled.
+What does a horizontal line on a velocity–time graph show? ~~ Constant velocity.
+What is the equation linking v, u, a and x? ~~ v² − u² = 2ax.
+A car accelerates from 10 m/s to 30 m/s in 5 s. What is its acceleration? ~~ (30 − 10) ÷ 5 = 4 m/s².
+What is the acceleration due to gravity near Earth's surface? ~~ About 10 m/s² (9.8 m/s²).
+Give typical speeds for walking, cycling and a car in town. ~~ Walking about 1.5 m/s, cycling about 6 m/s, a car in town about 13 m/s.
+What is Newton's first law? ~~ An object stays at rest or moves at constant velocity unless a resultant force acts on it.
+What is Newton's second law? ~~ Resultant force = mass × acceleration (F = ma).
+What is Newton's third law? ~~ When two objects interact, they exert equal and opposite forces on each other.
+What is inertia? ~~ The tendency of an object to stay at rest or keep moving at constant velocity.
+What is inertial mass? ~~ A measure of how difficult it is to change an object's velocity: m = F/a.
+What is weight? ~~ The force acting on an object due to gravity: W = mg.
+What is the difference between mass and weight? ~~ Mass is the amount of matter (kg) and doesn't change; weight is a force (N) that depends on gravity.
+What is momentum? ~~ Mass × velocity: p = mv, measured in kg m/s.
+What is the law of conservation of momentum? ~~ In a closed system, the total momentum before an event equals the total momentum after.
+What is the equation linking force and change in momentum? ~~ F = (mv − mu) ÷ t.
+Why do seat belts and airbags reduce injuries? ~~ They increase the time taken for the person to stop, reducing the rate of change of momentum and so the force.
+What is stopping distance? ~~ Thinking distance + braking distance.
+What factors affect thinking distance? ~~ Speed and reaction time (affected by tiredness, alcohol, drugs and distractions).
+What factors affect braking distance? ~~ Speed, road conditions (wet or icy), and the condition of tyres and brakes.
+What is a typical human reaction time? ~~ About 0.2–0.9 s.
+What is terminal velocity? ~~ The maximum constant velocity reached when the drag force equals the weight, so the resultant force is zero.
+What is circular motion? ~~ Motion in a circle at constant speed; velocity changes because direction changes, so the object accelerates towards the centre.
+
+## 3
+Name the energy stores. ~~ Kinetic, gravitational potential, elastic potential, thermal, chemical, magnetic, electrostatic and nuclear.
+Name four ways energy can be transferred. ~~ Mechanically (by forces), electrically, by heating, and by radiation (light and sound).
+What is the equation for kinetic energy? ~~ KE = ½mv².
+What is the equation for gravitational potential energy? ~~ GPE = mgh.
+Calculate the KE of a 2 kg ball moving at 3 m/s. ~~ ½ × 2 × 3² = 9 J.
+Calculate the GPE gained by a 5 kg mass lifted 2 m (g = 10 N/kg). ~~ 5 × 10 × 2 = 100 J.
+What is the law of conservation of energy? ~~ Energy can't be created or destroyed, only transferred between stores.
+What is wasted energy? ~~ Energy transferred to stores that aren't useful, usually thermal energy in the surroundings.
+What is efficiency? ~~ Useful energy output ÷ total energy input (× 100 for a percentage).
+A motor uses 200 J and transfers 150 J usefully. What is its efficiency? ~~ 150 ÷ 200 = 0.75, or 75%.
+How can energy waste be reduced? ~~ Lubrication to reduce friction, and insulation to reduce heat loss.
+What is thermal conductivity? ~~ How quickly a material transfers energy by heating through conduction.
+How does the thickness of a wall affect heat loss? ~~ Thicker walls reduce the rate of heat loss.
+What is a Sankey diagram? ~~ A diagram showing energy transfers, with arrow widths proportional to the amount of energy.
+What are non-renewable energy resources? ~~ Resources that will run out, e.g. coal, oil, gas and nuclear fuel.
+What are renewable energy resources? ~~ Resources that will be replenished, e.g. solar, wind, hydroelectric, tidal, geothermal, biofuel and wave.
+Give an advantage and disadvantage of fossil fuels. ~~ Advantage: reliable and can meet demand. Disadvantage: produce CO₂ and will run out.
+Give an advantage and disadvantage of wind power. ~~ Advantage: renewable, no CO₂ during operation. Disadvantage: unreliable and can be noisy or unsightly.
+Give an advantage and disadvantage of solar power. ~~ Advantage: renewable, no emissions. Disadvantage: no power at night and less in cloudy weather.
+Give an advantage and disadvantage of nuclear power. ~~ Advantage: no CO₂ and reliable. Disadvantage: radioactive waste and risk of accidents.
+Give an advantage and disadvantage of hydroelectric power. ~~ Advantage: reliable, renewable and responds quickly. Disadvantage: floods valleys and destroys habitats.
+Give an advantage and disadvantage of tidal power. ~~ Advantage: reliable and predictable. Disadvantage: few suitable sites and affects habitats.
+Why are fossil fuels still used? ~~ They are reliable, the infrastructure already exists, and they can respond quickly to demand.
+What is a biofuel? ~~ A fuel made from plant or animal matter; it is renewable and can be carbon-neutral.
+What is geothermal energy? ~~ Energy from hot rocks underground, used to heat water and generate electricity.
+What happens to energy when a ball is dropped? ~~ GPE is transferred to KE; some is transferred to thermal energy by air resistance.
+What happens to energy in a pendulum? ~~ Energy is continuously transferred between GPE and KE, with some lost to the surroundings.
+How does a lubricant improve efficiency? ~~ It reduces friction between moving parts, so less energy is wasted as heat.
+What is the trend in UK energy use? ~~ Increasing use of renewables and decreasing use of coal.
+Why is it hard to replace fossil fuels quickly? ~~ Cost of new infrastructure, the reliability of supply, and public objections to some renewables.
+
+## 4
+What is a wave? ~~ A disturbance that transfers energy from one place to another without transferring matter.
+What is a transverse wave? ~~ A wave where the vibrations are at right angles to the direction of energy transfer, e.g. light.
+What is a longitudinal wave? ~~ A wave where the vibrations are parallel to the direction of energy transfer, e.g. sound.
+What is amplitude? ~~ The maximum displacement of a point on the wave from its rest position.
+What is wavelength? ~~ The distance from one point on a wave to the same point on the next wave.
+What is frequency? ~~ The number of waves passing a point each second, measured in hertz (Hz).
+What is the period of a wave? ~~ The time for one complete wave to pass a point: T = 1/f.
+What is the wave equation? ~~ Wave speed = frequency × wavelength (v = fλ).
+A wave has frequency 50 Hz and wavelength 2 m. What is its speed? ~~ 50 × 2 = 100 m/s.
+What is the equation linking speed, distance and time for waves? ~~ v = x/t.
+What are compressions and rarefactions? ~~ Regions in a longitudinal wave where particles are close together (compressions) and spread apart (rarefactions).
+What is reflection? ~~ When a wave bounces off a surface.
+What is refraction? ~~ The change in direction of a wave as it passes from one medium to another, due to a change in speed.
+Why do waves refract? ~~ They change speed when entering a different medium.
+What happens to light entering glass from air? ~~ It slows down and bends towards the normal.
+What is the normal? ~~ An imaginary line at 90° to the surface where the wave hits.
+How can the speed of sound in air be measured? ~~ Measure the time for sound to travel a known distance, e.g. using an echo or two microphones, then use v = d/t.
+How can the speed of water waves be measured in a ripple tank? ~~ Measure the wavelength using a strobe or ruler and count the frequency, then use v = fλ.
+What is the range of human hearing? ~~ About 20 Hz to 20,000 Hz.
+What is ultrasound? ~~ Sound with a frequency above 20,000 Hz.
+What is infrasound? ~~ Sound with a frequency below 20 Hz.
+How is ultrasound used? ~~ In medical imaging (e.g. prenatal scans), sonar, and cleaning.
+How is sonar used? ~~ Ultrasound pulses are sent out and the time taken for echoes to return is used to calculate distance.
+How are seismic waves used to study the Earth? ~~ P-waves and S-waves travel through the Earth at different speeds; S-waves can't travel through liquid, showing the outer core is liquid.
+What are P-waves? ~~ Longitudinal seismic waves that can travel through solids and liquids.
+What are S-waves? ~~ Transverse seismic waves that can only travel through solids.
+What happens when sound waves hit a solid? ~~ They cause the particles to vibrate, and the sound can be transmitted, reflected or absorbed.
+How does the ear detect sound? ~~ Sound waves make the eardrum vibrate, and the vibrations are passed through small bones to the cochlea.
+What is the speed of sound in air? ~~ About 330–340 m/s.
+Why does sound travel faster in solids than in gases? ~~ Particles are closer together, so vibrations are passed on more quickly.
+
+## 5
+What is the electromagnetic spectrum? ~~ A continuous range of transverse waves that travel at the speed of light in a vacuum.
+List the EM spectrum in order of increasing frequency. ~~ Radio, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays.
+What is the speed of EM waves in a vacuum? ~~ 3 × 10⁸ m/s.
+What are the uses of radio waves? ~~ Broadcasting TV and radio, and communications.
+What are the uses of microwaves? ~~ Cooking, satellite communications and mobile phones.
+What are the uses of infrared? ~~ Heating, thermal imaging, remote controls and optical fibres.
+What are the uses of visible light? ~~ Seeing, photography and fibre optic communication.
+What are the uses of ultraviolet? ~~ Fluorescent lamps, security marking, sterilising water and sun tanning.
+What are the uses of X-rays? ~~ Medical imaging and airport security scanners.
+What are the uses of gamma rays? ~~ Sterilising medical equipment, treating cancer and medical tracers.
+What are the dangers of ultraviolet? ~~ Skin damage, premature ageing, sunburn, skin cancer and eye damage.
+What are the dangers of X-rays and gamma rays? ~~ They are ionising radiation and can cause mutations and cancer.
+What are the dangers of microwaves? ~~ Internal heating of body tissue.
+What are the dangers of infrared? ~~ Skin burns.
+Why are higher-frequency EM waves more dangerous? ~~ They carry more energy and can ionise atoms.
+What is the law of reflection? ~~ The angle of incidence equals the angle of reflection.
+What is specular reflection? ~~ Reflection from a smooth surface, producing a clear image.
+What is diffuse reflection? ~~ Reflection from a rough surface, scattering light in all directions.
+Why do objects appear coloured? ~~ They reflect some wavelengths of light and absorb others.
+Why does a red object look red? ~~ It reflects red light and absorbs other colours.
+What does a colour filter do? ~~ It transmits light of its own colour and absorbs other colours.
+What does a converging lens do? ~~ It brings parallel rays of light together at a focal point.
+What does a diverging lens do? ~~ It spreads parallel rays of light out, as if they came from a focal point.
+What is the focal length? ~~ The distance from the centre of a lens to its principal focus.
+What is a black body? ~~ An object that absorbs all radiation falling on it and is the best possible emitter.
+How does temperature affect the radiation emitted by an object? ~~ Hotter objects emit more radiation at shorter wavelengths.
+What happens to the Earth's temperature if it absorbs more radiation than it emits? ~~ It increases.
+How are radio waves produced? ~~ By oscillations in electrical circuits.
+What happens when radio waves are absorbed by a conductor? ~~ They create an alternating current with the same frequency as the wave.
+What is total internal reflection? ~~ When light hits a boundary at an angle greater than the critical angle and is reflected completely back into the denser medium.
+
+## 6
+What is the structure of an atom? ~~ A small, dense, positively charged nucleus containing protons and neutrons, surrounded by electrons.
+What are the relative charges of protons, neutrons and electrons? ~~ Proton +1, neutron 0, electron −1.
+What are the relative masses of protons, neutrons and electrons? ~~ Proton 1, neutron 1, electron about 1/1840.
+What is the atomic number? ~~ The number of protons in the nucleus.
+What is the mass number? ~~ The total number of protons and neutrons in the nucleus.
+What is an isotope? ~~ Atoms of the same element with the same number of protons but different numbers of neutrons.
+What is radioactive decay? ~~ The random process in which an unstable nucleus emits radiation to become more stable.
+What is an alpha particle? ~~ Two protons and two neutrons (a helium nucleus).
+What is a beta-minus particle? ~~ A fast-moving electron emitted from the nucleus when a neutron turns into a proton.
+What is a positron? ~~ A particle with the same mass as an electron but a positive charge, emitted in beta-plus decay.
+What is gamma radiation? ~~ High-frequency electromagnetic radiation emitted from the nucleus.
+What is the penetrating power of alpha, beta and gamma? ~~ Alpha is stopped by paper, beta by a few mm of aluminium, gamma is reduced by thick lead or concrete.
+What is the ionising power of alpha, beta and gamma? ~~ Alpha is highly ionising, beta moderately, gamma weakly.
+What happens in alpha decay? ~~ The mass number decreases by 4 and the atomic number decreases by 2.
+What happens in beta-minus decay? ~~ The mass number stays the same and the atomic number increases by 1.
+What happens in gamma emission? ~~ No change to mass number or atomic number; the nucleus loses energy.
+What is half-life? ~~ The time taken for the number of radioactive nuclei (or activity) to halve.
+What is activity? ~~ The rate at which a source decays, measured in becquerels (Bq).
+A sample has activity 800 Bq and half-life 2 hours. What is the activity after 6 hours? ~~ Three half-lives: 800 → 400 → 200 → 100 Bq.
+What is background radiation? ~~ Radiation that is always around us from natural and man-made sources.
+Name three sources of background radiation. ~~ Radon gas, rocks, cosmic rays, food, and medical X-rays.
+What is irradiation? ~~ Exposing an object to radiation; the object does not become radioactive.
+What is contamination? ~~ When radioactive atoms get onto or into an object.
+How can workers be protected from radiation? ~~ Shielding, keeping distance, limiting exposure time, and monitoring doses.
+How is radiation used in medicine? ~~ Radiotherapy to kill cancer cells, tracers to diagnose problems, and sterilising equipment.
+What did the plum pudding model suggest? ~~ The atom was a ball of positive charge with electrons embedded in it.
+What did the alpha scattering experiment show? ~~ Most of the atom is empty space and there is a small, dense, positive nucleus.
+How did Bohr improve the atomic model? ~~ He suggested electrons orbit the nucleus in fixed energy levels (shells).
+What happens when an electron moves to a higher energy level? ~~ It absorbs electromagnetic radiation.
+What is nuclear fission? ~~ Splitting a large nucleus into smaller nuclei, releasing energy and neutrons.
+
+## 7
+What is the solar system? ~~ The Sun and everything that orbits it: planets, dwarf planets, moons, asteroids and comets.
+What are the eight planets in order from the Sun? ~~ Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune.
+What keeps planets in orbit? ~~ The gravitational force of the Sun.
+What is a moon? ~~ A natural satellite that orbits a planet.
+What is an artificial satellite? ~~ A man-made object placed in orbit around the Earth, e.g. for communication or weather monitoring.
+How does orbital speed change with distance? ~~ Objects closer to the body they orbit must travel faster to stay in orbit.
+What was the geocentric model? ~~ The early model with the Earth at the centre of the universe.
+What is the heliocentric model? ~~ The model with the Sun at the centre of the solar system.
+What evidence supported the heliocentric model? ~~ Galileo's observations of Jupiter's moons orbiting Jupiter and the phases of Venus.
+How is a star formed? ~~ A cloud of gas and dust (nebula) collapses under gravity, heats up, and nuclear fusion begins.
+What is the life cycle of a star like the Sun? ~~ Nebula → protostar → main sequence star → red giant → white dwarf.
+What is the life cycle of a massive star? ~~ Nebula → protostar → main sequence → red supergiant → supernova → neutron star or black hole.
+What keeps a main sequence star stable? ~~ The outward pressure from fusion balances the inward force of gravity.
+What is a supernova? ~~ The explosion of a massive star at the end of its life.
+What is a black hole? ~~ A region where gravity is so strong that not even light can escape.
+What is red-shift? ~~ The increase in wavelength of light from galaxies moving away from us.
+What does red-shift tell us about the universe? ~~ Distant galaxies are moving away from us, and more distant galaxies are moving away faster, so the universe is expanding.
+What is the Big Bang theory? ~~ The theory that the universe began from a very small, hot, dense region and has been expanding ever since.
+What is the Steady State theory? ~~ The theory that the universe has always existed and new matter is created as it expands.
+What is the cosmic microwave background (CMB)? ~~ Radiation left over from the early universe, detected in all directions.
+Why does the CMB support the Big Bang theory? ~~ It is predicted by the Big Bang and can't be explained by the Steady State theory.
+How do we observe the universe? ~~ Using telescopes that detect different parts of the EM spectrum.
+Why are some telescopes placed in space? ~~ To avoid absorption and distortion of radiation by the Earth's atmosphere.
+What is a galaxy? ~~ A large group of billions of stars held together by gravity.
+What galaxy is our solar system in? ~~ The Milky Way.
+What is a light year? ~~ The distance light travels in one year.
+What is nuclear fusion in stars? ~~ Hydrogen nuclei join to form helium, releasing large amounts of energy.
+Where are heavy elements made? ~~ In supernovae (elements heavier than iron) and in massive stars.
+What is a dwarf planet? ~~ A body that orbits the Sun and is nearly round, but hasn't cleared its orbit of other objects, e.g. Pluto.
+What is a comet? ~~ A ball of ice and dust in a highly elliptical orbit around the Sun.
+
+## 8
+What is work done? ~~ Energy transferred when a force moves an object: W = F × d.
+What is the unit of work done? ~~ The joule (J).
+Calculate the work done when a 20 N force moves an object 5 m. ~~ 20 × 5 = 100 J.
+What is power? ~~ The rate of doing work (energy transferred per second): P = E/t.
+Calculate the power of a motor that transfers 600 J in 20 s. ~~ 600 ÷ 20 = 30 W.
+What is 1 watt? ~~ 1 joule of energy transferred per second.
+Why is work done against friction wasted? ~~ It transfers energy to thermal stores, heating the surroundings.
+What happens to energy when you push a box along the floor? ~~ Work is done against friction, transferring energy to thermal energy.
+What happens to energy when a car brakes? ~~ Kinetic energy is transferred to thermal energy in the brakes.
+How is work done related to energy transfer? ~~ Work done equals energy transferred.
+What is the relationship between power, work done and time? ~~ Power = work done ÷ time.
+Two motors lift the same load to the same height. One does it faster. Which is more powerful? ~~ The faster one, because it transfers the same energy in less time.
+What are the energy transfers for a person climbing stairs? ~~ Chemical energy in muscles is transferred to GPE and thermal energy.
+What are the energy transfers in an electric kettle? ~~ Electrical energy is transferred to the thermal store of the water (and some wasted to the surroundings).
+What are the energy transfers in a car engine? ~~ Chemical energy in fuel is transferred to kinetic energy and thermal energy (wasted).
+What are the energy transfers in a battery-powered torch? ~~ Chemical energy in the battery is transferred electrically to light and thermal energy.
+What is useful energy? ~~ Energy transferred to the store you want.
+What is the efficiency of a device that wastes 40% of its energy? ~~ 60%.
+How do you calculate useful output from efficiency? ~~ Useful output = efficiency × total input.
+What is a closed system? ~~ A system where no energy enters or leaves, so the total energy stays constant.
+How can the efficiency of a car be improved? ~~ Streamlining to reduce air resistance, reducing friction, and using lighter materials.
+Why can no device be 100% efficient? ~~ Some energy is always wasted, usually as thermal energy due to friction or resistance.
+What is dissipation? ~~ When energy spreads out into the surroundings, becoming less useful.
+Calculate the energy transferred by a 2 kW heater in 10 minutes. ~~ 2000 × 600 = 1,200,000 J (1.2 MJ).
+What is a kilowatt-hour used for? ~~ Measuring electrical energy used by appliances for billing.
+How does work done relate to kinetic energy? ~~ Work done on an object by a resultant force increases its kinetic energy.
+What happens to the work done when stretching a spring? ~~ It is stored as elastic potential energy.
+Calculate the power when a 50 kg person climbs 3 m in 5 s (g = 10). ~~ GPE = 50 × 10 × 3 = 1500 J; P = 1500 ÷ 5 = 300 W.
+What does a power rating on an appliance tell you? ~~ How much energy it transfers per second.
+How does thermal insulation reduce energy transfer? ~~ It reduces conduction and convection, reducing the rate of heat loss.
+
+## 9
+What is a resultant force? ~~ The single force that has the same effect as all the forces acting on an object.
+How do you calculate the resultant of two forces in the same direction? ~~ Add them.
+How do you calculate the resultant of two forces in opposite directions? ~~ Subtract the smaller from the larger; the resultant acts in the direction of the larger.
+What happens if the resultant force is zero? ~~ The object stays at rest or continues at constant velocity.
+What is a contact force? ~~ A force that acts when objects are touching, e.g. friction, air resistance, tension and normal contact force.
+What is a non-contact force? ~~ A force that acts at a distance, e.g. gravity, magnetism and electrostatic force.
+What is a free-body force diagram? ~~ A diagram showing all the forces acting on a single object, with arrows showing size and direction.
+How can forces be resolved? ~~ By splitting a force into two perpendicular components, e.g. horizontal and vertical.
+What is a moment? ~~ The turning effect of a force: moment = force × perpendicular distance from the pivot.
+What is the unit of a moment? ~~ Newton metre (N m).
+What is the principle of moments? ~~ For an object in equilibrium, the sum of clockwise moments equals the sum of anticlockwise moments.
+A 10 N force acts 0.5 m from a pivot. What is the moment? ~~ 10 × 0.5 = 5 N m.
+How do levers make work easier? ~~ They increase the distance from the pivot, so a smaller force can produce the same moment.
+How do gears work? ~~ They transmit the rotational effect of forces; a small gear driving a larger gear increases the moment.
+What is the normal contact force? ~~ The force exerted by a surface on an object, perpendicular to the surface.
+What is friction? ~~ A force that opposes motion between surfaces in contact.
+What is air resistance? ~~ A frictional force that opposes an object's motion through air.
+What is tension? ~~ The force in a stretched string, rope or cable.
+What is equilibrium? ~~ When all the forces on an object are balanced, so the resultant force is zero.
+How can a vector diagram show forces in equilibrium? ~~ When drawn tip to tail, the forces form a closed shape.
+What is upthrust? ~~ An upward force exerted by a fluid on an object submerged in it.
+How does a car's driving force relate to its speed? ~~ At constant speed the driving force equals the resistive forces.
+What happens when a skydiver opens a parachute? ~~ Air resistance increases, so the skydiver decelerates to a lower terminal velocity.
+What is the effect of increasing mass on acceleration for the same force? ~~ Acceleration decreases (a = F/m).
+Calculate the resultant force on a 1000 kg car accelerating at 2 m/s². ~~ F = 1000 × 2 = 2000 N.
+What is a pivot? ~~ The point around which an object turns (the fulcrum).
+Why is a long spanner easier to use? ~~ The force acts further from the pivot, producing a larger moment.
+What is the centre of mass? ~~ The point at which the weight of an object appears to act.
+When will an object topple? ~~ When the line of action of its weight falls outside its base.
+How can an object be made more stable? ~~ Lowering its centre of mass and widening its base.
+
+## 10
+What is electric current? ~~ The rate of flow of charge: I = Q/t.
+What is potential difference? ~~ The energy transferred per unit charge between two points: V = E/Q.
+What is resistance? ~~ How much a component opposes the flow of current: R = V/I.
+What is Ohm's law? ~~ The current through a resistor is directly proportional to the potential difference, at constant temperature.
+Calculate the current when 12 V is applied across a 4 Ω resistor. ~~ I = 12 ÷ 4 = 3 A.
+Calculate the charge that flows when 2 A flows for 30 s. ~~ Q = 2 × 30 = 60 C.
+What is a series circuit? ~~ A circuit where components are connected in a single loop.
+What is a parallel circuit? ~~ A circuit where components are connected on separate branches.
+What happens to current in a series circuit? ~~ It is the same everywhere.
+What happens to potential difference in a series circuit? ~~ It is shared between the components.
+What happens to current in a parallel circuit? ~~ It is shared between the branches; the total current equals the sum of the branch currents.
+What happens to potential difference in a parallel circuit? ~~ It is the same across each branch.
+How do you calculate total resistance in series? ~~ Add the resistances: R_total = R₁ + R₂.
+What happens to total resistance when resistors are added in parallel? ~~ It decreases, and is less than the smallest individual resistance.
+How is an ammeter connected? ~~ In series with the component.
+How is a voltmeter connected? ~~ In parallel across the component.
+What is the I–V graph for a fixed resistor? ~~ A straight line through the origin.
+What is the I–V graph for a filament lamp? ~~ A curve that gets less steep, because resistance increases as the filament heats up.
+What is the I–V graph for a diode? ~~ Current flows in one direction only, after a small threshold voltage.
+How does the resistance of a thermistor change? ~~ It decreases as temperature increases.
+How does the resistance of an LDR change? ~~ It decreases as light intensity increases.
+What is electrical power? ~~ P = IV = I²R.
+Calculate the power of a lamp with 230 V and 0.5 A. ~~ P = 230 × 0.5 = 115 W.
+What is the equation for energy transferred electrically? ~~ E = IVt (or E = QV).
+What is the difference between AC and DC? ~~ AC changes direction regularly; DC flows in one direction only.
+What is the UK mains supply? ~~ AC at 230 V and 50 Hz.
+What are the three wires in a UK plug? ~~ Live (brown), neutral (blue) and earth (green and yellow).
+What is the purpose of the earth wire? ~~ It stops the casing becoming live, preventing electric shocks if there is a fault.
+What is the purpose of a fuse? ~~ It melts and breaks the circuit if the current is too high, protecting the appliance and preventing fires.
+Why does a current in a resistor cause heating? ~~ Electrons collide with ions in the lattice, transferring energy and making them vibrate more.
+
+## 11
+What is static electricity? ~~ A build-up of electric charge on the surface of an insulator.
+How does an object become charged by friction? ~~ Electrons are transferred from one material to another when they are rubbed together.
+What charge does an object get if it gains electrons? ~~ Negative.
+What charge does an object get if it loses electrons? ~~ Positive.
+Why can only electrons move when objects are charged? ~~ Protons are fixed in the nucleus; electrons are on the outside and can be transferred.
+What happens when two like charges are brought together? ~~ They repel.
+What happens when two opposite charges are brought together? ~~ They attract.
+Why does a charged balloon stick to a wall? ~~ The balloon induces an opposite charge on the wall's surface, so they attract.
+What is an electric field? ~~ A region where a charged object experiences a force.
+What is the direction of an electric field? ~~ The direction of the force on a positive charge: away from positive charges and towards negative charges.
+What does a stronger electric field look like? ~~ Field lines are closer together.
+What happens when a charged object is near an earthed conductor? ~~ Electrons flow to or from the earth, discharging the object.
+What is a spark? ~~ A discharge of static electricity through the air, when the potential difference is high enough.
+Why is static electricity dangerous when refuelling aircraft? ~~ Fuel flowing through pipes can build up charge, which could cause a spark and ignite the fuel.
+How is static electricity made safe when refuelling? ~~ The fuel tank is earthed with a bonding line so charge can flow safely to earth.
+How is static electricity used in paint spraying? ~~ Paint droplets are charged, and the object is oppositely charged, so the paint is attracted evenly.
+How is static electricity used in photocopiers? ~~ A charged drum attracts toner in the pattern of the image, which is transferred to paper.
+How is static electricity used in inkjet printers? ~~ Ink droplets are charged and deflected by charged plates to direct them onto the paper.
+How can static electricity cause shocks? ~~ Charge builds up on a person, then flows through them when they touch a conductor.
+What is earthing? ~~ Connecting an object to the ground so charge can flow away safely.
+Why are insulators able to hold static charge? ~~ Charge can't move through them, so it stays where it is.
+Why do metals not usually build up static charge? ~~ Charge flows through them to earth.
+What is induction of charge? ~~ Charges in an object are rearranged by a nearby charged object without contact.
+How does a gold-leaf electroscope show charge? ~~ Charge spreads to the leaves, which repel each other and spread apart.
+What happens to a stream of water near a charged rod? ~~ It bends towards the rod because of induced charges.
+What happens when a polythene rod is rubbed with a cloth? ~~ Electrons move from the cloth to the rod, so the rod becomes negative.
+What happens when an acetate rod is rubbed with a cloth? ~~ Electrons move from the rod to the cloth, so the rod becomes positive.
+What is lightning? ~~ A large discharge of static electricity between clouds and the ground.
+How do dust precipitators work? ~~ Smoke particles are charged and attracted to oppositely charged plates, removing them from chimney gases.
+What is the unit of charge? ~~ The coulomb (C).
+
+## 12
+What is a magnetic field? ~~ A region where a magnetic material or magnet experiences a force.
+What is the direction of a magnetic field line? ~~ From the north pole to the south pole.
+What happens when like magnetic poles are brought together? ~~ They repel.
+What happens when unlike magnetic poles are brought together? ~~ They attract.
+What is a permanent magnet? ~~ A magnet that produces its own magnetic field all the time.
+What is an induced magnet? ~~ A material that becomes magnetic when placed in a magnetic field, and loses it when removed.
+Name three magnetic materials. ~~ Iron, nickel and cobalt (and steel).
+How can you plot a magnetic field? ~~ Using a plotting compass placed around the magnet and marking the direction of the needle.
+What is the Earth's magnetic field evidence? ~~ A compass points north because the Earth has a magnetic field; its core is magnetic.
+What is the magnetic field around a current-carrying wire? ~~ Concentric circles around the wire.
+How can you find the direction of the field around a wire? ~~ Using the right-hand grip rule: thumb points in the current direction and fingers curl in the field direction.
+What is a solenoid? ~~ A coil of wire that produces a magnetic field when current flows through it, similar to a bar magnet.
+How can the strength of a solenoid be increased? ~~ More turns, a larger current, and adding an iron core.
+What is an electromagnet? ~~ A solenoid with an iron core, which can be switched on and off.
+Give two uses of electromagnets. ~~ Scrap yard cranes, electric bells, relays and door locks.
+What is the motor effect? ~~ A current-carrying wire in a magnetic field experiences a force.
+What is Fleming's left-hand rule? ~~ First finger = field, second finger = current, thumb = motion (force).
+What is the equation for the force on a wire in a magnetic field? ~~ F = B × I × l.
+What is magnetic flux density? ~~ A measure of the strength of a magnetic field, measured in tesla (T).
+Calculate the force on a 0.5 m wire carrying 2 A in a 0.1 T field. ~~ F = 0.1 × 2 × 0.5 = 0.1 N.
+How does an electric motor work? ~~ Current in a coil in a magnetic field creates forces on opposite sides in opposite directions, making the coil rotate.
+What is the role of the split-ring commutator? ~~ It reverses the current every half turn, so the coil keeps rotating in the same direction.
+How can the speed of a motor be increased? ~~ Increase the current, use a stronger magnet, or add more turns to the coil.
+How do loudspeakers work? ~~ Alternating current in a coil in a magnetic field makes the coil and cone vibrate, producing sound.
+When is the force on a wire zero? ~~ When the wire is parallel to the magnetic field.
+When is the force on a wire greatest? ~~ When the wire is at right angles to the magnetic field.
+How can the direction of the force be reversed? ~~ Reverse the current or the magnetic field.
+Why is iron used as a core in electromagnets? ~~ It is easily magnetised and demagnetised, and concentrates the magnetic field.
+What is a uniform magnetic field? ~~ A field with the same strength and direction everywhere, shown by parallel, equally spaced lines.
+Where is a bar magnet's field strongest? ~~ At the poles.
+
+## 13
+What is electromagnetic induction? ~~ Generating a potential difference in a conductor when it moves relative to a magnetic field.
+How can the induced potential difference be increased? ~~ Moving the magnet or wire faster, using a stronger magnet, or using more turns on the coil.
+When is a current induced? ~~ When the conductor is part of a complete circuit.
+What is the generator effect? ~~ Producing electricity by electromagnetic induction.
+How does an alternator work? ~~ A coil rotates in a magnetic field, inducing an alternating current, with slip rings and brushes.
+How does a dynamo work? ~~ A coil rotates in a magnetic field, inducing a direct current, using a split-ring commutator.
+How does a microphone work? ~~ Sound waves make a diaphragm and coil vibrate in a magnetic field, inducing a current that matches the sound.
+What is a transformer? ~~ A device that changes the size of an alternating voltage.
+How does a transformer work? ~~ AC in the primary coil creates a changing magnetic field in the iron core, inducing an AC voltage in the secondary coil.
+Why do transformers only work with AC? ~~ A changing magnetic field is needed to induce a voltage; DC produces a constant field.
+What is a step-up transformer? ~~ A transformer with more turns on the secondary coil, increasing the voltage.
+What is a step-down transformer? ~~ A transformer with fewer turns on the secondary coil, decreasing the voltage.
+What is the transformer equation? ~~ Vp/Vs = Np/Ns.
+A transformer has 100 primary turns and 500 secondary turns. The input is 20 V. What is the output? ~~ Vs = 20 × 500/100 = 100 V.
+What is the power equation for an ideal transformer? ~~ Vp × Ip = Vs × Is.
+What is the National Grid? ~~ A network of cables and transformers that distributes electricity across the country.
+Why is electricity transmitted at high voltage? ~~ High voltage means low current, reducing energy lost as heat in the cables.
+Where are step-up transformers used in the National Grid? ~~ At power stations, to increase the voltage for transmission.
+Where are step-down transformers used in the National Grid? ~~ Near homes and businesses, to reduce the voltage to a safe level (230 V).
+What is the direction of an induced current? ~~ It creates a magnetic field that opposes the change that caused it.
+What happens if a magnet is held stationary inside a coil? ~~ No current is induced because there is no relative movement.
+What happens if a magnet is pushed into a coil then pulled out? ~~ A current is induced in one direction, then in the opposite direction.
+What is the role of the iron core in a transformer? ~~ It links the magnetic field between the primary and secondary coils.
+Why do transformers get warm? ~~ Some energy is wasted as heat in the coils and the core.
+What is a slip ring? ~~ A connection in an alternator that allows current to flow from the rotating coil while keeping it AC.
+How does the frequency of AC from a generator relate to rotation speed? ~~ Faster rotation gives a higher frequency.
+What is the output of an alternator shown on an oscilloscope? ~~ A sine wave (alternating voltage).
+What is the output of a dynamo shown on an oscilloscope? ~~ A voltage that varies but stays positive (direct).
+How are power stations connected to homes? ~~ Through the National Grid: power station → step-up transformer → transmission cables → step-down transformer → homes.
+What is the efficiency of a transformer if the input is 100 W and the output is 95 W? ~~ 95%.
+
+## 14
+What is density? ~~ Mass per unit volume: ρ = m/V.
+What is the unit of density? ~~ kg/m³ (or g/cm³).
+Calculate the density of a 200 g block with volume 100 cm³. ~~ 200 ÷ 100 = 2 g/cm³.
+How can the density of an irregular object be found? ~~ Measure its mass with a balance and its volume by displacement of water in a measuring cylinder.
+What is the particle arrangement in a solid? ~~ Particles are closely packed in a regular pattern, vibrating about fixed positions.
+What is the particle arrangement in a liquid? ~~ Particles are close together but randomly arranged and can move past each other.
+What is the particle arrangement in a gas? ~~ Particles are far apart, randomly arranged and move quickly in all directions.
+Why are gases less dense than solids? ~~ The particles are much further apart.
+What is internal energy? ~~ The total kinetic and potential energy of all the particles in a system.
+What happens to internal energy when a substance is heated? ~~ It increases, either raising the temperature or changing the state.
+What is specific heat capacity? ~~ The energy needed to raise the temperature of 1 kg of a substance by 1 °C.
+What is the equation for specific heat capacity? ~~ ΔQ = m × c × Δθ.
+Calculate the energy needed to heat 2 kg of water by 10 °C (c = 4200 J/kg°C). ~~ 2 × 4200 × 10 = 84,000 J.
+What is specific latent heat? ~~ The energy needed to change the state of 1 kg of a substance without a change in temperature.
+What is the equation for specific latent heat? ~~ Q = m × L.
+What is the specific latent heat of fusion? ~~ The energy needed to change 1 kg from solid to liquid.
+What is the specific latent heat of vaporisation? ~~ The energy needed to change 1 kg from liquid to gas.
+Why does temperature stay constant during a change of state? ~~ The energy is used to break bonds between particles, not to increase kinetic energy.
+What is melting? ~~ Changing from solid to liquid.
+What is evaporation? ~~ Changing from liquid to gas at the surface of a liquid, below its boiling point.
+What is condensation? ~~ Changing from gas to liquid.
+What is sublimation? ~~ Changing directly from solid to gas.
+Are changes of state physical or chemical? ~~ Physical, because they are reversible and the substance keeps its chemical properties.
+Is mass conserved when a substance changes state? ~~ Yes.
+How do gas particles exert pressure? ~~ They collide with the walls of the container, exerting a force.
+What happens to gas pressure when temperature increases (constant volume)? ~~ Pressure increases because particles move faster and collide more often and with more force.
+What is absolute zero? ~~ −273 °C (0 K), the lowest possible temperature, where particles have the minimum kinetic energy.
+Convert 27 °C to kelvin. ~~ 27 + 273 = 300 K.
+What happens to gas pressure when volume decreases (constant temperature)? ~~ Pressure increases because particles hit the walls more often.
+What is the equation linking pressure and volume at constant temperature? ~~ p₁V₁ = p₂V₂.
+
+## 15
+What is elastic deformation? ~~ When an object returns to its original shape after the force is removed.
+What is inelastic (plastic) deformation? ~~ When an object doesn't return to its original shape after the force is removed.
+What is Hooke's law? ~~ The extension of a spring is directly proportional to the force applied, up to the limit of proportionality.
+What is the equation for Hooke's law? ~~ F = k × x.
+What is the spring constant? ~~ The force needed to stretch a spring by 1 m, measured in N/m.
+Calculate the force needed to stretch a spring with k = 50 N/m by 0.2 m. ~~ 50 × 0.2 = 10 N.
+What is the limit of proportionality? ~~ The point beyond which extension is no longer proportional to force.
+What is the energy stored in a stretched spring? ~~ E = ½kx² (elastic potential energy).
+Calculate the energy stored in a spring with k = 100 N/m stretched 0.1 m. ~~ ½ × 100 × 0.1² = 0.5 J.
+What does the gradient of a force–extension graph show? ~~ The spring constant.
+What does the area under a force–extension graph show? ~~ The work done (energy stored) in stretching.
+How can you investigate the extension of a spring? ~~ Hang masses on a spring, measure the extension with a ruler each time, and plot force against extension.
+Why do you need more than one force to stretch an object? ~~ One force would just move the object; two forces in opposite directions are needed to stretch, squash or bend it.
+What is pressure? ~~ Force per unit area: p = F/A.
+What is the unit of pressure? ~~ The pascal (Pa), equal to 1 N/m².
+Calculate the pressure when a 500 N force acts on 0.1 m². ~~ 500 ÷ 0.1 = 5000 Pa.
+Why do snowshoes help you walk on snow? ~~ They spread the weight over a larger area, reducing pressure.
+Why are knives sharp? ~~ A small area produces a large pressure for the same force.
+How does pressure in a liquid change with depth? ~~ It increases with depth.
+What is the equation for pressure in a liquid? ~~ p = h × ρ × g.
+Why do dams get thicker at the bottom? ~~ Water pressure is greater at greater depth.
+What is upthrust? ~~ The upward force on an object in a fluid, caused by the greater pressure below it than above.
+When does an object float? ~~ When the upthrust equals the object's weight.
+Why do objects less dense than water float? ~~ They displace their own weight of water before becoming fully submerged.
+What is atmospheric pressure? ~~ The pressure caused by the weight of air above a surface.
+How does atmospheric pressure change with height? ~~ It decreases as altitude increases, because there is less air above.
+What is the effect of pressure on a gas? ~~ Gas pressure acts in all directions at right angles to surfaces.
+Why are hydraulic systems useful? ~~ Liquids are incompressible, so a small force on a small piston creates a large force on a larger piston.
+What is compression? ~~ When forces squash an object, making it shorter.
+What is the difference between a spring and a rubber band in stretching? ~~ A spring obeys Hooke's law up to a limit; a rubber band doesn't have a linear force–extension graph.

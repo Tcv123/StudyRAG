@@ -1,0 +1,103 @@
+deck: Biology|OCR B|alevel
+
+## B1
+What is a hypothesis? ~~ A testable statement predicting the relationship between variables, based on scientific knowledge.
+What is the null hypothesis in a statistical test? ~~ The assumption that there is no significant difference or correlation; it is rejected if the test statistic exceeds the critical value.
+What is the significance level usually used in biology? ~~ p = 0.05, meaning a 5% probability that the result occurred by chance.
+When would you use a Mann–Whitney U test? ~~ To compare two sets of data that are not normally distributed (non-parametric).
+What is a paired t-test? ~~ A t-test comparing two sets of measurements from the same individuals, e.g. before and after a treatment.
+What does a standard deviation tell you? ~~ The spread of data around the mean; a larger SD means more variation in the data.
+What is the purpose of error bars? ~~ To show variability or uncertainty (e.g. ±1 SD or 95% confidence intervals); non-overlapping bars suggest a real difference.
+What is a confounding variable? ~~ A variable other than the independent variable that could affect the dependent variable, making results unreliable.
+Why is random sampling important? ~~ It avoids bias, so the sample is representative of the population.
+How can the precision of a measurement be improved? ~~ Use instruments with a smaller resolution and repeat measurements.
+How should a line graph be plotted? ~~ The independent variable on the x-axis and dependent on the y-axis, with suitable scales, labelled axes with units, and points joined or a best-fit line.
+When should a histogram be used? ~~ For continuous data grouped into classes, where the bars touch.
+What is qualitative data? ~~ Descriptive, non-numerical data, e.g. colour changes.
+What is quantitative data? ~~ Numerical data that can be measured, e.g. mass, time or volume.
+What is peer review? ~~ Other experts evaluate a scientific paper before publication to check the methods, results and conclusions are valid.
+
+## B2
+What is the role of the nucleolus? ~~ It makes ribosomal RNA and assembles ribosomes.
+What is the role of chloroplasts? ~~ The site of photosynthesis; they contain chlorophyll in thylakoid membranes.
+How are cells specialised for their function? Give an example. ~~ Red blood cells have no nucleus and a biconcave shape for more haemoglobin and a large surface area.
+What is the structure of haemoglobin? ~~ A globular protein of four polypeptide chains (quaternary structure), each with a haem group containing Fe2+ that binds O2.
+What is the role of collagen? ~~ A fibrous protein that provides strength in tendons, skin and bone, made of three polypeptide chains wound into a triple helix.
+What is the difference between α-glucose and β-glucose? ~~ In α-glucose the –OH on carbon 1 is below the ring; in β-glucose it is above.
+What is the role of phospholipids? ~~ They form the bilayer of cell membranes: hydrophilic phosphate heads face outwards and hydrophobic fatty acid tails face inwards.
+What factors affect the permeability of a membrane? ~~ Temperature, solvents such as ethanol, and pH, which can disrupt phospholipids and denature proteins.
+What is the effect of placing an animal cell in pure water? ~~ Water enters by osmosis and the cell swells and may burst (lysis) because there is no cell wall.
+What is plasmolysis? ~~ Water leaves a plant cell in a solution with lower water potential, and the cytoplasm and membrane pull away from the cell wall.
+What is the difference between a closed and an open circulatory system? ~~ Closed: blood stays in vessels (mammals). Open: blood bathes the tissues directly in a body cavity (insects).
+What is the cardiac cycle? ~~ The sequence of events in one heartbeat: atrial systole, ventricular systole and diastole.
+What is the role of the lymphatic system? ~~ It drains excess tissue fluid (lymph) back into the blood, and lymph nodes contain lymphocytes.
+What is the function of red blood cells? ~~ They carry oxygen, bound to haemoglobin, from the lungs to the tissues.
+Why is ventilation needed in mammals? ~~ To maintain a steep concentration gradient of O2 and CO2 between the alveoli and blood.
+
+## B3
+What is a checkpoint in the cell cycle? ~~ A control point where the cell checks conditions (e.g. DNA damage, correct replication) before moving to the next phase.
+What is the role of p53? ~~ A tumour suppressor protein that stops the cell cycle if DNA is damaged and can trigger apoptosis.
+What is cytokinesis? ~~ The division of the cytoplasm to form two daughter cells.
+What happens in meiosis I? ~~ Homologous chromosomes pair up (crossing over can occur) and are separated into two cells.
+What happens in meiosis II? ~~ Sister chromatids separate, producing four haploid cells.
+What is the role of stem cells in plants? ~~ Meristems contain stem cells that divide by mitosis to produce new cells for growth.
+What are the uses of stem cells in medicine? ~~ Treating leukaemia (bone marrow transplants), and potential treatments for spinal injuries, heart disease and diabetes.
+How does smoking increase cancer risk? ~~ Carcinogens in tar cause mutations in oncogenes and tumour suppressor genes, leading to uncontrolled cell division.
+What is the role of the skin as a barrier? ~~ The keratinised outer layer prevents pathogen entry, and sebum inhibits microbial growth.
+What are the roles of B cells and T cells? ~~ B cells produce antibodies (humoral response). T cells activate other cells (helper) or kill infected cells (killer).
+What is clonal selection? ~~ The specific B or T cell with complementary receptors binds to an antigen and divides by mitosis to form a clone.
+How does a vaccine work? ~~ It contains antigens (weakened or dead pathogens or fragments) that stimulate a primary response and memory cells, without causing the disease.
+What is the role of mosquito nets and insecticides against malaria? ~~ They prevent mosquitoes, the vectors of Plasmodium, from biting humans and transmitting the parasite.
+How does Plasmodium cause malaria? ~~ The parasite infects liver cells, then red blood cells, where it multiplies and bursts them, causing fever and anaemia.
+What is antibiotic resistance? ~~ A mutation gives bacteria resistance; they survive antibiotic treatment and reproduce, so the resistant allele increases in the population.
+
+## B4
+What are the products of the light-dependent reactions? ~~ ATP, reduced NADP and oxygen (a by-product).
+What is the role of chlorophyll a and accessory pigments? ~~ Chlorophyll a is the primary pigment at the reaction centre. Accessory pigments (chlorophyll b, carotenoids) absorb other wavelengths and pass energy to it.
+What is the limiting factor principle? ~~ The rate of a process is limited by the factor in shortest supply.
+What is the role of the Krebs cycle? ~~ It oxidises acetyl coenzyme A, producing CO2, reduced NAD, reduced FAD and ATP.
+What is the total ATP yield of aerobic respiration? ~~ About 30–32 ATP per glucose molecule.
+What is the role of ATP synthase? ~~ An enzyme in the inner mitochondrial membrane (and thylakoid) that uses the flow of protons to phosphorylate ADP to ATP.
+What is the difference between asexual and sexual reproduction? ~~ Asexual: one parent, genetically identical offspring, no gametes. Sexual: two parents, gametes fuse, offspring are genetically varied.
+What is spermatogenesis? ~~ The production of sperm in the seminiferous tubules of the testes by mitosis, meiosis and differentiation.
+What is the role of FSH and LH in the menstrual cycle? ~~ FSH stimulates follicle development and oestrogen production. The LH surge triggers ovulation and corpus luteum formation.
+What is the role of progesterone? ~~ It maintains the uterine lining (endometrium); falling levels cause menstruation.
+How is pollination different from fertilisation in plants? ~~ Pollination is the transfer of pollen to a stigma; fertilisation is the fusion of male and female gametes.
+What is a population growth curve? ~~ An S-shaped (sigmoid) curve with lag, exponential (log) and stationary phases as a population approaches carrying capacity.
+What is carrying capacity? ~~ The maximum population size an environment can support sustainably.
+What is predation's effect on population size? ~~ Predator and prey populations fluctuate in cycles, with predator numbers lagging behind prey numbers.
+What is a trophic level? ~~ A feeding level in a food chain: producers, primary consumers, secondary consumers and so on.
+
+## B5
+What is the role of DNA polymerase? ~~ It joins free DNA nucleotides complementary to a template strand, forming a new strand.
+What is splicing? ~~ Removing introns from pre-mRNA and joining exons together to form mature mRNA.
+What is the role of tRNA? ~~ It carries specific amino acids to the ribosome and matches its anticodon to the mRNA codon.
+What is the lac operon? ~~ A group of genes in E. coli controlling lactose metabolism. A repressor blocks transcription unless lactose is present to bind to it.
+What is a dihybrid cross? ~~ A cross involving two genes, each with two alleles, e.g. AaBb × AaBb gives a 9:3:3:1 ratio if the genes are unlinked.
+What is a sex-linked characteristic? ~~ A characteristic controlled by a gene on a sex chromosome (usually X), e.g. colour blindness.
+What is the all-or-nothing principle? ~~ An action potential is only generated if the stimulus reaches the threshold; all action potentials are the same size.
+What is saltatory conduction? ~~ Action potentials jump from one node of Ranvier to the next in myelinated neurones, speeding up transmission.
+What is the role of the hypothalamus in homeostasis? ~~ It monitors blood temperature and water potential and coordinates responses through nerves and hormones.
+What are the effects of insulin on target cells? ~~ It increases glucose uptake (more GLUT4 channels), stimulates glycogenesis in liver and muscle, and increases respiration.
+What is gluconeogenesis? ~~ Making glucose from non-carbohydrate sources such as amino acids and glycerol, in the liver.
+What is the role of the collecting duct? ~~ Water is reabsorbed in the collecting duct, controlled by ADH, which regulates the concentration of urine.
+What happens when the body is too hot? ~~ Vasodilation, sweating, hairs lying flat, and reduced metabolic rate.
+What happens when the body is too cold? ~~ Vasoconstriction, shivering, hairs raised, and increased metabolic rate (via thyroxine and adrenaline).
+What is a nephron? ~~ The functional unit of the kidney where blood is filtered and urine is formed.
+
+## B6
+What is the role of restriction enzymes? ~~ They cut DNA at specific recognition sequences, often producing sticky ends.
+What is gene sequencing? ~~ Determining the order of bases in a gene or genome, e.g. by Sanger sequencing or next-generation methods.
+What is a gene library? ~~ A collection of DNA fragments of an organism's genome, stored in vectors such as bacteria.
+What is the role of microorganisms in food production? ~~ Yeast in bread and brewing, bacteria in yoghurt and cheese; they are also used to make mycoprotein.
+What are the advantages of using microorganisms in biotechnology? ~~ Fast growth, simple nutritional needs, easy to genetically modify, and they can be grown in large fermenters.
+What conditions are controlled in a fermenter? ~~ Temperature, pH, oxygen, nutrients, and aseptic conditions.
+What is downstream processing? ~~ Separating and purifying the product from the fermentation mixture.
+What is bioremediation? ~~ Using microorganisms to break down pollutants, e.g. oil spills.
+What is the role of decomposers in the nitrogen cycle? ~~ They convert nitrogen in dead organisms and waste into ammonium ions (ammonification).
+What is eutrophication? ~~ Excess nutrients cause algal blooms, which block light; plants die, decomposers use up oxygen, and aquatic animals die.
+What is a keystone species? ~~ A species that has a disproportionately large effect on its ecosystem, e.g. sea otters controlling sea urchins.
+What is the role of hedgerows in biodiversity? ~~ They provide habitats and food, and act as corridors for wildlife between habitats.
+What is the effect of monoculture on biodiversity? ~~ Growing one crop over large areas reduces habitat and species diversity and increases pest outbreaks.
+What are the ethical issues of GM crops? ~~ Concerns over biodiversity, cross-pollination with wild plants, farmers' dependence on seed companies, and consumer choice.
+What is sustainable fishing? ~~ Using quotas, larger mesh sizes and no-fishing zones to keep fish stocks at a level that allows populations to recover.

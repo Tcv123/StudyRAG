@@ -1,0 +1,129 @@
+deck: Economics|OCR|alevel
+
+## 1.1
+What is scarcity? ~~ Unlimited wants but finite resources, meaning choices must be made.
+What are the three questions every economy must answer? ~~ What to produce, how to produce it, and for whom.
+What is economic efficiency on a PPF? ~~ Any point on the frontier represents productive efficiency; the best point for society represents allocative efficiency.
+What is the difference between a movement along and a shift of the PPF? ~~ A movement shows reallocation of resources; a shift shows a change in productive capacity.
+What are the advantages of a market economy? ~~ Efficient allocation of resources, consumer sovereignty, incentives to innovate, and greater choice.
+What are the disadvantages of a market economy? ~~ Inequality, market failures such as externalities, and under-provision of public goods.
+What is the difference between the short run and the long run in terms of PES? ~~ Supply is more elastic in the long run, as firms have time to adjust capacity.
+What is a complement? ~~ A good consumed together with another, e.g. cars and petrol; XED is negative.
+What is a substitute? ~~ A good that can be used in place of another, e.g. tea and coffee; XED is positive.
+What are the functions of the price mechanism? ~~ Signalling, incentive and rationing.
+What happens to equilibrium if demand increases and supply decreases? ~~ Price rises; the effect on quantity depends on the relative size of the shifts.
+What is excess supply? ~~ When quantity supplied exceeds quantity demanded at a given price, creating a surplus.
+What is the rational decision maker assumption? ~~ Consumers maximise utility, firms maximise profit, and all have perfect information.
+How is PED used by businesses? ~~ To set prices: raising prices on inelastic goods increases revenue, while cutting prices on elastic goods increases revenue.
+
+## 1.2
+What is a negative externality in consumption? ~~ A cost to third parties from consumption, e.g. passive smoking.
+What is the socially optimal level of output? ~~ Where marginal social cost equals marginal social benefit.
+What is a welfare loss? ~~ The loss of economic welfare when output is not at the socially optimal level.
+What is information failure? ~~ When consumers or producers lack information to make rational decisions, leading to misallocation.
+What is a quasi-public good? ~~ A good with some characteristics of a public good, e.g. roads (non-excludable but may become rival when congested).
+Why are public goods not provided by the market? ~~ The free-rider problem means firms can't charge for them and make a profit.
+What are the disadvantages of subsidies? ~~ Opportunity cost for government funds, the risk of firms becoming dependent, and difficulty setting the right amount.
+What is the problem with regulation? ~~ It can be costly to enforce, may be evaded, and may not be set at the optimal level.
+What is a tradeable pollution permit? ~~ A permit that allows a firm to emit a set amount of pollution; firms can buy or sell permits.
+What is state provision? ~~ The government provides goods and services directly, financed through taxes, e.g. healthcare.
+What are the effects of a minimum wage as a minimum price? ~~ Higher wages for employed workers, but possible unemployment if set above equilibrium.
+What are the costs of government intervention? ~~ Administrative costs, distortion of incentives, and possible government failure.
+What is moral hazard? ~~ When people take more risks because they are protected from the consequences, e.g. insured individuals.
+What is excessive administrative cost as government failure? ~~ The cost of implementing and monitoring a policy exceeds the benefit it brings.
+
+## 1.3
+What is the difference between total product, average product and marginal product? ~~ Total product: total output. Average product: output per worker. Marginal product: extra output from one more worker.
+What is the long-run average cost curve? ~~ A curve showing the lowest average cost at each level of output when all factors can vary.
+What are external economies of scale? ~~ Cost savings for firms when the whole industry grows, e.g. a skilled local workforce or specialist suppliers.
+What are managerial economies of scale? ~~ Large firms can employ specialist managers, improving efficiency.
+What is the relationship between average revenue and marginal revenue for a price maker? ~~ Marginal revenue falls faster than average revenue and lies below it.
+What is profit? ~~ Total revenue minus total cost.
+What is a loss? ~~ When total costs exceed total revenue.
+Why might a firm continue to operate in the short run when making a loss? ~~ If price covers average variable cost, it contributes towards fixed costs, which would be paid anyway.
+What is the principal–agent problem? ~~ Managers (agents) may pursue their own goals rather than maximising profit for shareholders (principals).
+What is profit satisficing? ~~ Aiming for a satisfactory level of profit rather than the maximum, balancing different stakeholder interests.
+What is organic growth? ~~ Growth through expanding the firm's own operations, e.g. opening new stores.
+What is external growth? ~~ Growth through mergers or takeovers.
+What are the benefits of vertical integration? ~~ Control over supply and quality, reduced costs, and access to markets.
+What are the constraints on firm growth? ~~ Limited finance, small market size, regulation, and owners' desire to stay small.
+
+## 1.4
+What is the long-run equilibrium in perfect competition? ~~ P = MC = minimum AC = AR = MR; firms make normal profit.
+What is excess capacity in monopolistic competition? ~~ Firms operate at an output below minimum average cost, so they are not productively efficient.
+What are the features of monopolistic competition? ~~ Many firms, differentiated products, low barriers to entry, and some price-setting power.
+What is interdependence? ~~ Firms in an oligopoly consider the reactions of their rivals when making decisions.
+What is a concentration ratio? ~~ The combined market share of the largest n firms in a market.
+What is non-price competition? ~~ Competing through quality, branding, advertising, customer service and innovation.
+What is the kinked demand curve theory? ~~ Rivals match price cuts but not price increases, so prices are sticky in oligopoly.
+What is overt collusion? ~~ A formal agreement between firms to fix prices or output (a cartel).
+What is tacit collusion? ~~ Informal coordination without an explicit agreement, e.g. price leadership.
+What are the benefits of a natural monopoly? ~~ One firm can supply the whole market at a lower average cost than several firms, due to large economies of scale.
+What is price discrimination? ~~ Charging different prices to different consumers for the same product, for reasons not related to cost.
+What are the benefits of price discrimination? ~~ Higher profits for firms, and some consumers pay lower prices.
+What are the features of a contestable market? ~~ Low barriers to entry and exit, no sunk costs, and access to the same technology.
+Why might monopoly be efficient? ~~ Economies of scale, and supernormal profits can fund R&D (dynamic efficiency).
+
+## 2.1
+What is the difference between economic growth and economic development? ~~ Growth is an increase in real GDP; development includes improvements in living standards, health and education.
+What is a trade cycle? ~~ Fluctuations in economic activity: boom, downturn, recession and recovery.
+What are the characteristics of a boom? ~~ High growth, low unemployment, rising inflation, and a worsening current account.
+What are the characteristics of a recession? ~~ Falling output, rising unemployment, falling inflation, and lower confidence.
+What is the effect of high unemployment on the economy? ~~ Lost output, lower tax revenue, higher benefit spending, social problems and a loss of skills.
+What is the claimant count? ~~ The number of people claiming unemployment-related benefits.
+What is the ILO measure of unemployment? ~~ People without work who are actively seeking work and available to start.
+What is the current account deficit? ~~ When a country's imports of goods and services and income flows exceed its exports.
+What is the relationship between the current account and the exchange rate? ~~ A large deficit may put downward pressure on the currency; a depreciation can reduce the deficit.
+What are the limitations of CPI as a measure of inflation? ~~ It doesn't reflect every household's spending, changes in quality or new products, and excludes housing costs.
+What is the base year? ~~ The year chosen as the reference point for an index, set to 100.
+How is real GDP calculated? ~~ Nominal GDP adjusted for inflation using a price deflator.
+What is GDP per capita? ~~ GDP divided by the population, giving a measure of average income.
+What is purchasing power parity? ~~ An exchange rate that equalises the cost of a basket of goods between countries.
+
+## 2.2
+What is aggregate demand? ~~ The total planned spending on goods and services in an economy: C + I + G + (X − M).
+What causes AD to shift left? ~~ Higher interest rates, lower confidence, higher taxes, lower government spending, or a stronger exchange rate.
+What causes SRAS to shift right? ~~ Lower costs of production, e.g. lower wages, raw material prices or business taxes.
+What causes LRAS to shift right? ~~ More or better-quality factors of production, technology improvements, and supply-side policies.
+What is macroeconomic equilibrium? ~~ The level of real output and price level where AD equals AS.
+What is the effect of an increase in AD when the economy has spare capacity? ~~ Output increases with little or no increase in the price level.
+What is the effect of an increase in AD near full capacity? ~~ Mainly an increase in the price level, with little increase in output.
+What is the marginal propensity to consume? ~~ The proportion of an increase in income that is spent on consumption.
+Why is the multiplier smaller in open economies? ~~ More of any extra income is spent on imports, which leaks out of the circular flow.
+What is the paradox of thrift? ~~ If everyone saves more during a recession, AD falls further, reducing income and possibly total saving.
+What is the wealth effect? ~~ Rising asset prices increase consumer spending.
+What is the relationship between investment and business confidence? ~~ Higher confidence about future profits increases investment spending.
+What is the difference between the classical and Keynesian views on the economy's self-correction? ~~ Classical: markets self-correct quickly to full employment. Keynesian: the economy can remain below full employment for long periods.
+What is the effect of a supply shock such as higher oil prices? ~~ SRAS shifts left, causing higher prices and lower output (cost-push inflation).
+
+## 2.3
+What is the role of the Bank of England? ~~ Setting monetary policy, maintaining financial stability, issuing banknotes, and acting as lender of last resort.
+What is the transmission mechanism of monetary policy? ~~ A change in Bank Rate affects market interest rates, asset prices, expectations and the exchange rate, then AD and inflation.
+What is the impact of low interest rates on savers? ~~ Lower returns on savings, which may encourage spending rather than saving.
+What is expansionary fiscal policy? ~~ Increasing government spending or cutting taxes to increase AD.
+What is the budget deficit? ~~ The amount by which government spending exceeds revenue in one year.
+What is the national debt? ~~ The total accumulated government borrowing.
+What is the effect of a large budget deficit? ~~ Higher debt interest payments, possible crowding out, and concerns about sustainability.
+What are the benefits of supply-side policies? ~~ Increased productive capacity, lower inflationary pressure, improved competitiveness and long-term growth.
+What are the disadvantages of supply-side policies? ~~ Long time lags, high costs, and possible increases in inequality from some market-based policies.
+What is labour market reform as a supply-side policy? ~~ Reducing trade union power, making employment laws more flexible, and reforming benefits to increase incentives to work.
+What is the impact of a cut in income tax? ~~ Higher disposable income, increasing consumption, and possibly increased incentives to work.
+What is an indirect tax's effect on inflation? ~~ It raises prices, contributing to cost-push inflation in the short term.
+What is the problem with forecasting in economic policy? ~~ Data is often inaccurate or revised, and shocks are unpredictable, making policy timing difficult.
+What is a policy conflict? ~~ When achieving one objective makes another harder, e.g. reducing inflation may raise unemployment.
+
+## 2.4
+What is the terms of trade? ~~ The ratio of export prices to import prices, multiplied by 100.
+What are the benefits of free trade? ~~ Lower prices, more choice, economies of scale, efficiency through competition, and access to larger markets.
+What are the costs of free trade? ~~ Job losses in uncompetitive industries, dependence on imports, and possible exploitation of workers.
+What is a customs union? ~~ Countries remove trade barriers between themselves and set a common external tariff.
+What is a single market? ~~ A customs union with free movement of goods, services, capital and labour.
+What is an exchange rate? ~~ The price of one currency in terms of another.
+What factors affect exchange rates? ~~ Interest rates, inflation, current account balance, speculation, and government intervention.
+What is an appreciation's effect on the economy? ~~ Exports become more expensive and imports cheaper, which can worsen the current account and reduce inflation.
+What is a fixed exchange rate? ~~ An exchange rate set by the government or central bank, maintained by buying and selling currency.
+What is the International Monetary Fund's role? ~~ Promoting global monetary cooperation and exchange rate stability, and lending to countries with balance of payments problems.
+What is the World Bank's role? ~~ Providing long-term loans and grants to developing countries for development projects.
+What is the Human Development Index? ~~ A composite measure of development based on life expectancy, education and GNI per capita.
+What is a barrier to development? ~~ A factor that prevents improvements in living standards, e.g. corruption, poor infrastructure, debt or lack of education.
+What is foreign aid? ~~ The transfer of resources from richer to poorer countries, as grants, soft loans or technical assistance.

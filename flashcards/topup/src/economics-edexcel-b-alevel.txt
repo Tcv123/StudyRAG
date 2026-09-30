@@ -1,0 +1,129 @@
+deck: Economics|Edexcel B|alevel
+
+## 1.1
+What is opportunity cost? ~~ The value of the next best alternative given up when making a choice.
+What is a PPF and what does a point outside it show? ~~ A curve showing the maximum combinations of two goods an economy can produce; a point outside is currently unattainable.
+What is the role of enterprise in the economy? ~~ Entrepreneurs spot opportunities, organise resources and take risks, driving innovation, competition and growth.
+What is a mass market versus a niche market? ~~ Mass market: large, general market with standardised products. Niche market: small, specialised segment with specific needs.
+What is market segmentation? ~~ Dividing a market into groups of consumers with similar characteristics, e.g. age, income, location or lifestyle.
+What is brand loyalty and why does it matter? ~~ Consumers repeatedly buy the same brand, which makes demand more price-inelastic and gives the firm pricing power.
+What is the difference between a normal and an inferior good? ~~ Demand for a normal good rises as income rises (YED > 0); demand for an inferior good falls as income rises (YED < 0).
+What is the impact of social media on consumer behaviour? ~~ It spreads information and reviews quickly, influences tastes through influencers, and enables targeted advertising.
+What are the factors that shift the demand curve? ~~ Income, tastes, prices of substitutes and complements, advertising, population and expectations.
+What is XED and what does a positive value show? ~~ Cross elasticity of demand measures the response of demand for one good to a change in another's price; a positive value shows substitutes.
+What is a social enterprise? ~~ A business with social or environmental aims that reinvests profits to achieve those aims.
+What is a stakeholder? ~~ Any individual or group affected by or with an interest in a business, e.g. employees, customers, shareholders and the local community.
+What is quantitative and qualitative market research? ~~ Quantitative produces numerical data (surveys, sales figures); qualitative explores opinions and motivations (focus groups, interviews).
+What are the benefits of sampling in market research? ~~ It is cheaper and quicker than surveying the whole population, although it may be biased or unrepresentative.
+
+## 1.2
+What is a business plan? ~~ A document setting out a firm's objectives, strategies, market analysis and financial forecasts, often used to raise finance.
+What are sources of finance for a new business? ~~ Personal savings, family and friends, bank loans, overdrafts, venture capital, crowdfunding and business angels.
+What is a bank overdraft? ~~ Short-term flexible borrowing up to an agreed limit on a current account; it is expensive if used long-term.
+What is crowdfunding? ~~ Raising finance from many individuals, usually online, in return for rewards or equity.
+What is venture capital? ~~ Finance provided to small, high-risk businesses by investors in return for equity and some control.
+What is a sole trader? ~~ A business owned by one person with unlimited liability, full control and keeping all profits.
+What is a private limited company? ~~ A company owned by shareholders with limited liability, whose shares cannot be sold to the public (Ltd).
+What is a public limited company? ~~ A company whose shares can be traded on the stock exchange, able to raise large amounts of capital (plc).
+What is the break-even point? ~~ The level of output where total revenue equals total costs, so there is neither profit nor loss.
+What is contribution per unit? ~~ Selling price minus variable cost per unit, which contributes towards fixed costs and profit.
+What is a cash-flow forecast? ~~ A prediction of the cash inflows and outflows of a business over a period, used to identify cash shortages.
+What causes business failure? ~~ Poor cash flow, lack of demand, poor management, strong competition, and external shocks.
+What is the gross profit margin? ~~ Gross profit ÷ revenue × 100.
+What is the operating profit margin? ~~ Operating profit ÷ revenue × 100.
+
+## 2.1
+What is competitiveness? ~~ The ability of a firm or country to sell goods and services in domestic and international markets at a profit.
+What factors determine international competitiveness? ~~ Productivity, wage costs, exchange rates, inflation, taxes, regulation, and non-price factors like quality.
+What is the difference between labour and capital productivity? ~~ Labour productivity is output per worker (or hour); capital productivity is output per unit of capital.
+How can productivity be increased? ~~ Training, investment in new technology, better management, lean production and incentives.
+What is just-in-time production? ~~ Holding minimal stock and receiving inputs only when needed, reducing storage costs but increasing supply chain risk.
+What is kaizen? ~~ Continuous improvement through small, incremental changes suggested by workers.
+What is quality assurance? ~~ Building quality into every stage of production to prevent defects, rather than inspecting at the end.
+What is total quality management? ~~ A culture where every worker is responsible for quality throughout the organisation.
+What is the effect of a stronger pound on UK firms? ~~ Exports become less competitive and imports cheaper, which hurts exporters but reduces the cost of imported raw materials.
+What is a recession? ~~ Two consecutive quarters of negative economic growth.
+What is the impact of recession on firms? ~~ Falling demand, lower profits, redundancies, and possible business failure, especially for luxury goods.
+What is inflation's effect on business costs? ~~ Higher raw material and wage costs, uncertainty for planning, and reduced international competitiveness.
+What is economic growth's benefit to business? ~~ Higher consumer incomes and demand, more investment opportunities, and higher profits.
+What is a dynamic market? ~~ A market that changes rapidly due to innovation, changing tastes, or new competitors.
+
+## 2.2
+What is an expansionary monetary policy? ~~ Lowering interest rates or using QE to increase aggregate demand.
+What is a contractionary fiscal policy? ~~ Reducing government spending or raising taxes to reduce aggregate demand.
+What is the effect of a rise in interest rates on firms? ~~ Higher borrowing costs, lower consumer spending on credit, and a stronger pound hurting exporters.
+How does monetary policy affect exchange rates? ~~ Higher interest rates attract hot money, increasing demand for the currency and causing appreciation.
+What is the government's budget? ~~ The annual statement of planned government spending and tax revenue.
+What are the main areas of UK government spending? ~~ Social protection (welfare and pensions), health, education, debt interest and defence.
+What are the main UK taxes? ~~ Income tax, National Insurance, VAT, and corporation tax.
+What is the impact of a rise in corporation tax on firms? ~~ Lower post-tax profits, reduced investment, and less attractive for foreign firms.
+What is the impact of a rise in VAT? ~~ Higher prices, reduced consumer spending, and a regressive impact on lower incomes.
+What is the impact of government infrastructure spending? ~~ Increases AD in the short run and productive capacity in the long run, benefiting firms through lower costs.
+What are the limitations of fiscal policy? ~~ Time lags, crowding out, and political pressures; budget deficits and debt constrain its use.
+What are the effects of supply-side policies on firms? ~~ Lower costs, a more skilled workforce, more flexible labour markets and greater competition.
+What is the difference between demand-side and supply-side policies' effect on the price level? ~~ Demand-side expansion can raise prices; supply-side policies can increase output while reducing inflationary pressure.
+What is the Office for Budget Responsibility? ~~ An independent body that produces economic forecasts and assesses the government's fiscal plans.
+
+## 3.1
+What are the drivers of global trade? ~~ Reductions in transport costs, trade liberalisation, improvements in ICT, and the growth of MNCs.
+What is comparative advantage? ~~ A country can produce a good at a lower opportunity cost than another country.
+What is a tariff? ~~ A tax on imported goods, raising their price and protecting domestic producers.
+What is a quota? ~~ A limit on the quantity of a good that can be imported.
+What is protectionism's cost to consumers? ~~ Higher prices, less choice, and lower quality, as well as inefficiency among protected domestic firms.
+What is a trading bloc? ~~ A group of countries agreeing to reduce or remove trade barriers between them, e.g. the EU or ASEAN.
+What is the impact of trading blocs on non-members? ~~ Trade diversion and reduced access to markets, as members trade more with each other.
+What is the difference between an emerging economy and a developed economy? ~~ Emerging economies have rapid growth and industrialisation (e.g. India); developed economies have high incomes and mature industries.
+What factors attract firms to a new international market? ~~ Market size and growth, low costs, skilled labour, political stability and infrastructure.
+What is offshoring? ~~ Moving production or services abroad to take advantage of lower costs.
+What is reshoring? ~~ Bringing production back to the home country, e.g. due to quality concerns or rising overseas costs.
+What is glocalisation? ~~ Adapting global products to suit local tastes and cultures.
+What are the ethical issues facing MNCs? ~~ Low wages, poor working conditions, environmental damage, and tax avoidance.
+What is transfer pricing? ~~ The prices MNCs charge for transactions between their own subsidiaries in different countries, which can be used to shift profits to low-tax countries.
+
+## 3.2
+What is labour market flexibility? ~~ The ability of the labour market to respond quickly to changes in demand, through flexible hours, contracts and wages.
+What is the brain drain? ~~ Skilled workers emigrating from developing countries, reducing their human capital.
+What are remittances? ~~ Money sent home by migrant workers to their families, an important source of income in some developing countries.
+What is the impact of skilled migration on the host country? ~~ It fills skills gaps, increases output and tax revenue, but may put pressure on public services.
+What is the national minimum wage? ~~ A legal minimum hourly wage that employers must pay.
+What is the living wage? ~~ A wage based on the cost of living, which is voluntary and higher than the legal minimum.
+What are the causes of wealth inequality? ~~ Inheritance, differences in savings, house prices, and returns on assets.
+What is redistribution? ~~ Government transfer of income and wealth from richer to poorer households through taxes and benefits.
+What is a progressive tax? ~~ A tax where higher-income earners pay a larger proportion of their income, e.g. UK income tax.
+What are the disincentive effects of high taxes? ~~ They may reduce incentives to work, invest or take risks, and encourage tax avoidance.
+What are the problems with means-tested benefits? ~~ Complexity, stigma, low take-up, and the poverty trap.
+What is the role of the state in providing education? ~~ Improving human capital and social mobility, and reducing inequality of opportunity.
+What is the impact of technology on inequality? ~~ It increases demand for highly skilled workers, widening the wage gap with low-skilled workers.
+How does inequality affect business? ~~ Lower demand from poorer groups, social unrest, and luxury markets growing while mass markets shrink.
+
+## 4.1
+What is market concentration? ~~ The degree to which a market is dominated by a small number of large firms.
+What are the barriers to entry in a market? ~~ Economies of scale, high capital costs, brand loyalty, patents, legal barriers and control of supply.
+What is a sunk cost as a barrier to entry? ~~ A cost that can't be recovered when leaving the market, which deters entry.
+What is supernormal profit? ~~ Profit above the level needed to keep a firm in the industry (above normal profit).
+What is price competition? ~~ Competing on price to attract customers, such as discounting or price-matching.
+What is the impact of market power on consumers? ~~ Higher prices, less choice and reduced innovation, although economies of scale may lower costs.
+What is the impact of market power on suppliers? ~~ Firms with monopsony power can force down prices paid to suppliers.
+What is a merger control? ~~ The CMA can block or impose conditions on mergers that would substantially lessen competition.
+What is a cartel? ~~ A group of firms that agree to fix prices or output; this is illegal in the UK.
+What is price fixing? ~~ Firms colluding to agree prices rather than competing, which harms consumers.
+What is predatory pricing? ~~ Setting prices below cost to eliminate rivals, then raising prices later.
+What is the Competition and Markets Authority? ~~ The UK body that promotes competition by investigating mergers, markets and anti-competitive behaviour.
+What is price capping? ~~ A regulator limits the price a firm can charge, e.g. RPI − X for utilities.
+What is nationalisation? ~~ Bringing a private firm or industry under government ownership.
+
+## 4.2
+What is market failure? ~~ When the free market fails to allocate resources efficiently, leading to a loss of economic welfare.
+What is an external cost? ~~ A cost suffered by third parties not involved in a transaction, e.g. pollution.
+What is a positive externality of consumption? ~~ A benefit to third parties from consumption, e.g. vaccinations reducing the spread of disease.
+What is the tragedy of the commons? ~~ Overuse of common resources that are rival but non-excludable, e.g. overfishing.
+What is government intervention to correct market failure? ~~ Taxes, subsidies, regulation, state provision, tradeable permits, and information provision.
+What is the impact of a carbon tax on firms? ~~ Higher costs for polluting firms, which may encourage cleaner technology, but can reduce competitiveness.
+What is the impact of regulation on firms? ~~ Higher compliance costs, but it can create a level playing field and protect consumers.
+What is the difference between risk and uncertainty? ~~ Risk can be measured and assigned a probability; uncertainty cannot be predicted.
+What is the role of the central bank in financial markets? ~~ Setting interest rates, acting as lender of last resort, and regulating the banking system.
+What is moral hazard in banking? ~~ Banks take excessive risks because they believe they will be bailed out if they fail.
+What is speculation? ~~ Buying assets in the expectation of making a profit from future price changes.
+What is a financial bubble? ~~ Asset prices rise far above their underlying value due to speculation, then crash.
+What caused the 2008 financial crisis? ~~ Subprime mortgage lending, securitisation, excessive leverage, and a housing bubble collapse.
+What is financial regulation's aim? ~~ To maintain the stability of the financial system and protect consumers.

@@ -1,0 +1,262 @@
+deck: Physics|Edexcel|alevel
+
+## T1
+What is the resolution of an instrument? ~~ The smallest change in a quantity that gives a detectable change in the instrument's reading.
+How are absolute uncertainties combined when adding or subtracting quantities? ~~ Add the absolute uncertainties.
+How is the uncertainty in a mean estimated? ~~ Half the range of the repeated readings.
+What is a zero error? ~~ A systematic error where an instrument reads a non-zero value when the true value is zero; it is corrected by subtracting it from all readings.
+What is parallax error and how is it reduced? ~~ An error from reading a scale at an angle; it is reduced by viewing at eye level, perpendicular to the scale.
+Give the SI prefixes from pico to tera. ~~ p 10^-12, n 10^-9, µ 10^-6, m 10^-3, k 10^3, M 10^6, G 10^9, T 10^12.
+What is percentage difference and how is it used? ~~ |experimental − accepted| ÷ accepted × 100%. It is compared with the percentage uncertainty to judge whether a result agrees with the accepted value.
+How do you find n in y = kx^n using a graph? ~~ Plot log y against log x. The gradient is n and the y-intercept is log k.
+What is an order-of-magnitude estimate? ~~ An approximate value to the nearest power of ten, used to check whether answers are reasonable.
+Express the watt in SI base units. ~~ W = J s^-1 = kg m^2 s^-3.
+How are error bars used to judge a line of best fit? ~~ A valid line of best fit should pass through all (or nearly all) error bars.
+How should results tables be headed? ~~ Quantity / unit (e.g. V / V), with the independent variable in the first column and readings to a consistent precision.
+What is an anomalous result? ~~ A result that does not fit the pattern. It should be repeated or excluded from the mean and line of best fit.
+Why use a set square or plumb line when measuring the height of a falling object? ~~ To make sure the ruler is vertical and the reading is taken level with the object, reducing systematic and parallax errors.
+What is the difference between a derived unit and a base unit? ~~ Base units are defined independently (e.g. kg, m, s); derived units are combinations of base units (e.g. N = kg m s^-2).
+
+## T2
+What does the gradient of a velocity–time graph represent? ~~ Acceleration.
+What does the area under a velocity–time graph represent? ~~ Displacement.
+Write the four SUVAT equations. ~~ v = u + at; s = (u + v)t/2; s = ut + ½at^2; v^2 = u^2 + 2as.
+What conditions are needed for the SUVAT equations to apply? ~~ The acceleration must be constant (uniform).
+Describe how to determine g using a free-fall experiment. ~~ Drop a ball through a measured height and time the fall electronically (light gates or a trapdoor). Plot 2h against t^2, or use s = ½gt^2; the gradient gives g.
+State Newton's first law. ~~ An object remains at rest or moves with constant velocity unless acted on by a resultant force.
+State Newton's third law. ~~ If body A exerts a force on body B, then B exerts an equal and opposite force of the same type on A.
+What is a free-body force diagram? ~~ A diagram showing a single object and all the forces acting on it, drawn as labelled arrows.
+How do you find the component of a weight parallel to a slope? ~~ mg sin θ, where θ is the angle of the slope to the horizontal.
+Define work done. ~~ Work = force × distance moved in the direction of the force: W = FΔs cos θ.
+State the principle of conservation of energy. ~~ Energy cannot be created or destroyed, only transferred from one form to another; the total energy of a closed system is constant.
+Define momentum. ~~ Momentum p = mv, a vector measured in kg m s^-1.
+What does the gradient of a displacement–time graph represent? ~~ Velocity.
+What is the principle of moments? ~~ For an object in equilibrium, the sum of clockwise moments about any point equals the sum of anticlockwise moments about that point.
+Why does an object launched at 45° travel furthest on level ground? ~~ The range R = u^2 sin 2θ/g is greatest when sin 2θ = 1, i.e. θ = 45° (ignoring air resistance).
+What are the energy changes for a ball thrown vertically upwards? ~~ Kinetic energy is transferred to gravitational potential energy as it rises, then back to kinetic energy as it falls (with some lost to air resistance).
+What is the relationship between power and force and velocity? ~~ P = Fv for a constant force acting at constant velocity.
+What is weight? ~~ The gravitational force on an object: W = mg.
+
+## T3
+Define potential difference. ~~ The energy transferred per unit charge between two points: V = W/Q.
+Define resistance. ~~ The ratio of pd across a component to the current through it: R = V/I.
+State the power equations for an electrical component. ~~ P = VI = I^2R = V^2/R.
+State the equation for charge flowing in a current. ~~ ΔQ = IΔt.
+Describe how to determine the resistivity of a wire. ~~ Measure the diameter with a micrometer at several points; measure R for different lengths l using an ammeter and voltmeter. Plot R against l; resistivity = gradient × cross-sectional area.
+What is the I–V characteristic of a filament lamp and why? ~~ An S-shaped curve through the origin: as current increases, the filament heats up, so ion vibrations increase and resistance rises.
+Why is the current the same at all points in a series circuit? ~~ Charge is conserved and there is only one path, so the rate of flow of charge is the same everywhere.
+Why is pd the same across parallel branches? ~~ Energy is conserved; each coulomb transfers the same energy whichever branch it goes through.
+What is the equation linking EMF, current, and resistances? ~~ ε = I(R + r).
+Describe how to measure the EMF and internal resistance of a cell. ~~ Vary an external resistor and record V and I. Plot V against I: the y-intercept is ε and the gradient is −r.
+Why does connecting more lamps in parallel to a battery reduce the brightness of each? ~~ The total current increases, so more pd is lost across the internal resistance and the terminal pd falls.
+What is the effect of an LDR in a potential divider as light intensity increases? ~~ Its resistance falls, so the pd across it falls and the pd across the fixed resistor rises.
+Give the equation for current in terms of drift velocity. ~~ I = nqvA.
+How does n (charge carrier density) differ between metals, semiconductors and insulators? ~~ Metals have very high n (about 10^28 m^-3), semiconductors much lower and increasing with temperature, and insulators very low.
+What is an ideal voltmeter and ammeter? ~~ An ideal voltmeter has infinite resistance (draws no current); an ideal ammeter has zero resistance (no pd across it).
+What are the units of resistivity? ~~ Ω m.
+Why does a battery's terminal pd fall when current is drawn? ~~ Some energy per coulomb is transferred inside the battery because of its internal resistance (lost volts = Ir).
+What is a potentiometer? ~~ A variable resistor used as a potential divider with a sliding contact, giving a continuously variable output pd.
+
+## T4
+What is upthrust? ~~ The upward force on an object in a fluid, equal to the weight of fluid displaced.
+Why does an object float? ~~ The upthrust equals its weight, which happens when it displaces its own weight of fluid.
+What is viscosity and how does it vary with temperature? ~~ A measure of a fluid's resistance to flow. For liquids, viscosity decreases as temperature increases.
+Distinguish laminar and turbulent flow. ~~ Laminar: smooth, parallel layers with no mixing. Turbulent: chaotic flow with eddies and mixing.
+Describe how to determine viscosity using a falling-ball method. ~~ Time a ball falling at terminal velocity between marks in a tube of liquid. Use W = U + F with Stokes' law F = 6πηrv to calculate η.
+Define the elastic limit. ~~ The maximum stress (or force) a material can take and still return to its original shape when the load is removed.
+Define the yield point. ~~ The point beyond which a material deforms plastically: large extension for little or no extra load.
+What is the breaking stress? ~~ The stress at which a material fractures.
+What does the gradient of a stress–strain graph show? ~~ The Young modulus (in the linear, elastic region).
+What does the area under a force–extension graph represent? ~~ The work done in stretching the material (the elastic strain energy if within the elastic limit).
+Describe how to determine the Young modulus of a wire. ~~ Hang masses from a long, thin wire, measure the extension with a vernier or travelling microscope, and measure the diameter with a micrometer. Plot stress against strain; the gradient is E.
+Why is a long, thin wire used when measuring the Young modulus? ~~ It gives a larger extension (smaller percentage uncertainty) for a given force, and a smaller area gives a larger stress.
+What is the formula for elastic strain energy? ~~ E = ½FΔx (= ½kΔx^2) for a material obeying Hooke's law.
+What is the spring constant? ~~ Force per unit extension: k = F/Δx, in N m^-1.
+What is meant by a stiff material? ~~ One with a high Young modulus; it needs a large stress to produce a given strain.
+What is meant by a tough material? ~~ One that absorbs a lot of energy before breaking, so it resists crack propagation.
+What is meant by a hard material? ~~ One that resists scratching and indentation at its surface.
+What happens to a copper wire loaded beyond its elastic limit? ~~ It deforms plastically: it is permanently stretched and does not return to its original length.
+
+## T5
+What is the equation linking wave speed, frequency and wavelength? ~~ v = fλ.
+Distinguish transverse and longitudinal waves. ~~ Transverse: oscillations perpendicular to the direction of energy transfer. Longitudinal: oscillations parallel to the direction of energy transfer.
+What is the speed of a transverse wave on a string? ~~ v = √(T/µ), where T is tension and µ is mass per unit length.
+How are nodes and antinodes produced on a stationary wave? ~~ By superposition of two waves of the same frequency travelling in opposite directions. Nodes have destructive interference; antinodes have constructive interference.
+What is the separation between adjacent nodes? ~~ λ/2.
+What is the critical angle? ~~ The angle of incidence for which the angle of refraction is 90°: sin C = 1/n (for a boundary with air).
+What is total internal reflection and when does it occur? ~~ All light is reflected at a boundary. It occurs when light goes from a denser to a less dense medium at an angle greater than the critical angle.
+How does a lens form a real image? ~~ Refraction converges rays from each point of the object to a corresponding point on the other side of the lens.
+State the thin lens equation and power of a lens. ~~ 1/u + 1/v = 1/f (real is positive), and power P = 1/f (in dioptres, f in metres).
+What is plane polarisation? ~~ Oscillations of a transverse wave restricted to one plane.
+Give an application of polarisation. ~~ Polaroid sunglasses reduce glare from reflected light; stress analysis in transparent materials.
+How do you calculate photon energy in eV? ~~ E = hf in joules, divided by 1.6 × 10^-19 to convert to electronvolts.
+What is the threshold frequency? ~~ The minimum frequency for photoelectric emission: f0 = φ/h.
+How are energy level diagrams used to find emitted wavelengths? ~~ ΔE = hf = hc/λ, where ΔE is the difference between the two energy levels involved.
+What is the Doppler effect for sound? ~~ The change in observed frequency when a source moves relative to an observer: higher when approaching, lower when receding.
+What is pulse–echo used for, and how is distance calculated? ~~ Ultrasound imaging and sonar. Distance = (speed × time)/2, since the pulse travels there and back.
+What limits the resolution of a pulse–echo system? ~~ The wavelength (smaller wavelength gives better resolution) and the pulse duration (shorter pulses give better resolution).
+What is the difference between coherent and in-phase? ~~ Coherent: constant phase difference and the same frequency. In phase: phase difference of zero.
+
+## T6
+What is the equation for the centripetal force? ~~ F = mv^2/r = mω^2r.
+Give the relationship between linear and angular velocity. ~~ v = ωr.
+What is the period of rotation related to angular velocity? ~~ T = 2π/ω.
+Define the radian. ~~ The angle subtended by an arc length equal to the radius; 2π rad = 360°.
+Why is kinetic energy not conserved in inelastic collisions? ~~ Some kinetic energy is transferred to other forms such as heat, sound and deformation.
+Give the kinetic energy in terms of momentum. ~~ E_k = p^2/(2m).
+How is momentum conserved in an explosion from rest? ~~ The total momentum before is zero, so the fragments move off with equal and opposite momenta.
+State the tension in a string at the top of a vertical circle. ~~ T = mv^2/r − mg.
+What is the minimum speed at the top of a vertical circle for the string to stay taut? ~~ v = √(gr), when tension is zero and gravity alone provides the centripetal force.
+Describe how to investigate a collision using light gates. ~~ Use trolleys on a friction-compensated track with interrupt cards. Light gates record speeds before and after, then compare total momentum before and after.
+What is the resultant force on an object moving at constant speed in a circle? ~~ A centripetal force of mv^2/r directed towards the centre.
+How is a 2D collision momentum problem solved? ~~ Resolve momenta into two perpendicular directions and apply conservation of momentum separately in each direction.
+State Newton's second law in terms of momentum. ~~ F = Δp/Δt: the resultant force equals the rate of change of momentum.
+Why does a gun recoil? ~~ The bullet gains forward momentum; by conservation of momentum the gun gains equal backward momentum.
+What is the frequency of rotation of an object with ω = 4π rad s^-1? ~~ f = ω/2π = 2 Hz.
+A 2 kg ball moving at 3 m s^-1 hits a wall and rebounds at 2 m s^-1. What is the change in momentum? ~~ Δp = 2 × (−2) − 2 × 3 = −10 kg m s^-1 (magnitude 10 kg m s^-1, directed away from the wall).
+Why do passengers feel pushed outwards on a roundabout? ~~ Their inertia tends to keep them moving in a straight line; the seat or wall provides the inward centripetal force, which they feel as an outward push.
+What is a conical pendulum? ~~ A mass on a string moving in a horizontal circle. The horizontal component of tension provides the centripetal force; the vertical component balances weight.
+
+## T7
+Define electric field strength. ~~ The force per unit positive charge: E = F/Q, in N C^-1 or V m^-1.
+State the field strength of a radial field. ~~ E = Q/(4πε0r^2).
+What is the field between parallel plates? ~~ E = V/d, uniform, from positive to negative.
+What is electric potential at a point? ~~ The work done per unit charge bringing a positive test charge from infinity: V = Q/(4πε0r).
+What are equipotentials? ~~ Lines or surfaces of equal potential. They are perpendicular to field lines, and no work is done moving a charge along them.
+Give the energy stored in a capacitor in three forms. ~~ W = ½QV = ½CV^2 = ½Q^2/C.
+Give the discharge equations for a capacitor through a resistor. ~~ Q = Q0 e^(−t/RC); V = V0 e^(−t/RC); I = I0 e^(−t/RC).
+How can you find the time constant from a discharge graph? ~~ Read the time taken for the value to fall to 37% of its initial value, or plot ln V against t; the gradient is −1/RC.
+Give the force on a current-carrying wire in a magnetic field. ~~ F = BIl sin θ.
+What is Fleming's left-hand rule used for? ~~ Finding the direction of force on a current-carrying conductor in a field: First finger = Field, seCond finger = Current, thuMb = Motion.
+What is Lenz's law? ~~ The direction of an induced EMF (or current) opposes the change that produced it.
+What is the induced EMF in a straight conductor moving through a field? ~~ ε = Blv, where l is length and v is speed perpendicular to the field.
+Describe the output of an AC generator. ~~ A sinusoidal EMF: ε = BANω sin ωt. Its peak rises with field, area, number of turns and rotation speed.
+How is a transformer designed to step up voltage? ~~ The secondary has more turns than the primary: Vs/Vp = Ns/Np.
+Why are transformers used in the National Grid? ~~ Stepping up the voltage reduces the current for the same power, reducing I^2R losses in the cables.
+What is the radius of the path of a charged particle in a magnetic field? ~~ r = p/(BQ) = mv/(BQ).
+Why doesn't a magnetic field do work on a moving charge? ~~ The force is always perpendicular to the velocity, so it changes direction but not speed or kinetic energy.
+What is the unit of magnetic flux? ~~ The weber (Wb): 1 Wb = 1 T m^2.
+
+## T8
+What is a hadron? ~~ A particle made of quarks that feels the strong force: baryons (three quarks) and mesons (quark–antiquark).
+What is a lepton? ~~ A fundamental particle that does not feel the strong force, e.g. electron, muon, tau and their neutrinos.
+Give the charges of the up, down and strange quarks. ~~ Up +2/3 e; down −1/3 e; strange −1/3 e.
+What is an antiparticle? ~~ A particle with the same mass but opposite charge and opposite quantum numbers to its partner particle.
+What happens when a particle meets its antiparticle? ~~ They annihilate, converting their mass into energy as photons (usually two, to conserve momentum).
+How does a linear accelerator (linac) work? ~~ Charged particles pass through drift tubes connected to an alternating pd; they accelerate across each gap, and tube lengths increase so the timing matches the AC frequency.
+How does a cyclotron work? ~~ A magnetic field makes particles move in semicircles within two dees; an alternating pd across the gap accelerates them each half-turn, so they spiral outwards.
+Why is the cyclotron frequency independent of speed (non-relativistically)? ~~ The time per revolution T = 2πm/(BQ) does not depend on speed or radius.
+Why do particle detectors use magnetic fields? ~~ Charged particles curve; the direction of curvature shows the sign of the charge and the radius gives the momentum (r = p/BQ).
+Why do heavier particles need more energetic collisions to create? ~~ By E = mc^2, the collision energy must at least equal the rest energy of the particles created.
+What is the unit MeV/c^2 used for? ~~ Mass in particle physics: rest energy (MeV) divided by c^2.
+What is the Standard Model? ~~ The theory that describes fundamental particles (six quarks, six leptons) and their interactions via exchange particles (gluons, photons, W and Z bosons), plus the Higgs boson.
+What is conserved in all particle interactions? ~~ Charge, baryon number, lepton number (each family), momentum and mass–energy.
+What is strangeness and when is it conserved? ~~ A quantum number for the strange quark (s = −1). It is conserved in strong and electromagnetic interactions but not in weak interactions.
+Why can't free quarks be observed? ~~ Quark confinement: the energy needed to separate quarks creates new quark–antiquark pairs instead.
+What was the evidence for quarks from deep inelastic scattering? ~~ High-energy electrons scattering off protons were deflected through large angles, showing point-like charged constituents inside the proton.
+What is the de Broglie wavelength equation? ~~ λ = h/p = h/(mv).
+Why is the electronvolt used for particle energies? ~~ It is a convenient size for atomic and nuclear energies: 1 eV = 1.6 × 10^-19 J.
+
+## T9
+What is absolute zero? ~~ 0 K (−273 °C), the lowest possible temperature, where particles have minimum kinetic energy.
+Convert 27 °C to kelvin. ~~ 27 + 273 = 300 K.
+Describe how to measure the specific heat capacity of a metal block. ~~ Heat a block of known mass with an electric heater, measuring V, I and time. Record the temperature rise; c = VIt/(mΔθ). Insulate the block to reduce heat loss.
+What is Boyle's law? ~~ For a fixed mass of gas at constant temperature, pV = constant.
+Describe how to investigate Boyle's law. ~~ Trap air in a tube using oil; change the pressure with a pump and read pressure and volume. Plot p against 1/V for a straight line through the origin.
+What is Charles's law? ~~ For a fixed mass of gas at constant pressure, V/T = constant.
+What is the pressure law? ~~ For a fixed mass of gas at constant volume, p/T = constant.
+State the Boltzmann constant. ~~ k = R/N_A ≈ 1.38 × 10^-23 J K^-1.
+What is the mean kinetic energy of an ideal gas molecule? ~~ ½m<c^2> = (3/2)kT.
+What is the root mean square speed? ~~ The square root of the mean of the squares of the molecular speeds; c_rms = √(3kT/m).
+Why do gases exert pressure? ~~ Molecules collide with the walls and change momentum; the rate of change of momentum per unit area is the pressure.
+What happens to the internal energy of an ideal gas as temperature increases? ~~ It increases, because the internal energy of an ideal gas is entirely kinetic and proportional to T.
+What happens to the Maxwell–Boltzmann distribution when temperature increases? ~~ The peak moves to higher speed and becomes lower and broader; the area under the curve stays the same.
+How can energy transferred be found from a heating curve? ~~ Flat sections: E = mL (change of state). Sloping sections: E = mcΔθ.
+What is the internal energy of a system? ~~ The sum of the random kinetic and potential energies of all its molecules.
+Why must gas laws use temperature in kelvin? ~~ The relationships are proportional only on an absolute scale, where zero means minimum energy.
+What does "ideal gas" mean? ~~ A gas that obeys pV = NkT exactly: molecules have negligible volume and no intermolecular forces except during elastic collisions.
+Calculate the number of molecules in 1.0 m^3 of gas at 1.0 × 10^5 Pa and 300 K. ~~ N = pV/(kT) = (1.0 × 10^5 × 1.0)/(1.38 × 10^-23 × 300) ≈ 2.4 × 10^25.
+
+## T10
+What is a black body? ~~ An ideal body that absorbs all radiation falling on it and emits a characteristic spectrum that depends only on its temperature.
+Give Stefan's law. ~~ L = σAT^4, where σ is the Stefan–Boltzmann constant.
+What is Wien's law? ~~ λ_max T = 2.898 × 10^-3 m K.
+What is the inverse square law for intensity from a star? ~~ I = L/(4πd^2).
+How are the radius of a star and its luminosity related? ~~ L = 4πr^2σT^4, so r can be found from luminosity and surface temperature.
+What is trigonometric parallax? ~~ The apparent shift of a nearby star against distant stars as the Earth orbits the Sun. d (parsec) = 1/p (arcsecond).
+What is a standard candle? ~~ An object of known luminosity, e.g. a Cepheid variable or a Type 1a supernova. Measuring its intensity gives its distance.
+Where is the main sequence on an HR diagram? ~~ A diagonal band from hot, luminous stars (top left) to cool, dim stars (bottom right).
+Where are red giants and white dwarfs on an HR diagram? ~~ Red giants: top right (cool, luminous). White dwarfs: bottom left (hot, dim).
+What happens when a star leaves the main sequence? ~~ Hydrogen in the core runs out, the core contracts and heats, hydrogen fuses in a shell, and the outer layers expand to form a red giant.
+What is a neutron star? ~~ The very dense remnant core of a supernova, made mainly of neutrons, supported by neutron degeneracy pressure.
+What is a black hole? ~~ A region where gravity is so strong that the escape velocity exceeds the speed of light.
+What does Hubble's constant tell us about the universe? ~~ The universe is expanding; 1/H0 estimates its age.
+What is dark matter? ~~ Matter that does not emit light, inferred from the gravitational effects (e.g. galaxy rotation curves) that visible matter cannot explain.
+What is the ultimate fate of the universe believed to depend on? ~~ Its density compared with the critical density (and dark energy): it may expand forever, stop, or collapse.
+Why is it difficult to predict the fate of the universe? ~~ The amount of dark matter and the nature of dark energy are uncertain.
+What is the Hubble constant's approximate value? ~~ About 70 km s^-1 Mpc^-1 (about 2.3 × 10^-18 s^-1).
+Why can parallax only be used for nearby stars? ~~ For distant stars the angle is too small to measure accurately.
+
+## T11
+What are the three types of nuclear radiation and their natures? ~~ Alpha: helium nucleus (2p + 2n). Beta−: fast electron. Gamma: high-frequency electromagnetic radiation.
+What stops alpha, beta and gamma radiation? ~~ Alpha: paper or a few cm of air. Beta: a few mm of aluminium. Gamma: several cm of lead (only reduced).
+What is ionising radiation and why is it harmful? ~~ Radiation that removes electrons from atoms, creating ions. This can damage DNA and cause cell mutation or death.
+What is background radiation and give its main sources? ~~ Radiation always present, mainly from radon gas, rocks and buildings, cosmic rays, food, and medical sources.
+What is the decay constant? ~~ The probability per unit time that a nucleus will decay: λ = A/N.
+Give the half-life in terms of the decay constant. ~~ t½ = ln 2/λ.
+What is meant by radioactive decay being random and spontaneous? ~~ Random: you can't predict which nucleus decays next. Spontaneous: decay is unaffected by external conditions such as temperature.
+Give the exponential decay equation for activity. ~~ A = A0 e^(−λt).
+How can you find half-life from a graph of ln A against t? ~~ The gradient is −λ; then t½ = ln 2/λ.
+Describe how to investigate the absorption of gamma radiation by lead. ~~ Measure the background count. Place increasing thicknesses of lead between the source and the GM tube, record count rates and subtract background. Plot ln(count rate) against thickness.
+What is beta-plus decay? ~~ A proton changes into a neutron, emitting a positron and an electron neutrino.
+Why is a GM tube placed at a fixed distance from a source? ~~ Count rate depends on distance (inverse square for gamma), so distance must be controlled.
+Why must gamma sources be handled with tongs? ~~ Distance reduces exposure (intensity falls with the inverse square of distance).
+What is the unit of activity? ~~ The becquerel (Bq): one decay per second.
+Why is a radioactive tracer chosen with a short half-life? ~~ It decays quickly, so the patient's dose is limited, while still lasting long enough for the procedure.
+What happens to the nucleon and proton numbers in alpha decay? ~~ The nucleon number decreases by 4 and the proton number decreases by 2.
+What happens to the nucleon and proton numbers in beta-minus decay? ~~ The nucleon number is unchanged and the proton number increases by 1.
+How is a nucleus stabilised after emitting alpha or beta? ~~ It may be left in an excited state and emit a gamma photon to reach its ground state.
+
+## T12
+State Newton's law of gravitation in equation form. ~~ F = Gm1m2/r^2, with G = 6.67 × 10^-11 N m^2 kg^-2.
+What is the gravitational field strength near Earth's surface? ~~ g ≈ 9.81 N kg^-1 (equivalent to m s^-2).
+Define gravitational potential. ~~ The work done per unit mass bringing a small test mass from infinity to that point: V = −GM/r.
+What is the relationship between g and gravitational potential? ~~ g = −ΔV/Δr.
+Give the gravitational potential energy of a mass m at distance r from M. ~~ E_p = −GMm/r.
+What is the orbital speed of a satellite at radius r? ~~ v = √(GM/r).
+What is the period of a geostationary satellite? ~~ 24 hours (one sidereal day, about 23 h 56 min), orbiting above the equator in the same direction as Earth rotates.
+Why does a satellite in a lower orbit travel faster? ~~ v = √(GM/r), so a smaller r gives a larger orbital speed.
+What happens to the total energy of a satellite moved to a higher orbit? ~~ Its total energy (−GMm/2r) increases (becomes less negative), so work must be done on it.
+Sketch the variation of g with distance from the centre of a uniform planet. ~~ g increases linearly from zero at the centre to a maximum at the surface, then decreases as 1/r^2 outside.
+What is the gravitational field inside a hollow spherical shell? ~~ Zero.
+Why do astronauts in orbit appear weightless? ~~ They and the spacecraft are both in free fall, accelerating at the same rate towards Earth, so there is no contact force.
+Define a radial field and a uniform field. ~~ Radial: field lines spread out from a point, so strength falls with distance. Uniform: parallel, equally spaced lines with constant strength (e.g. near Earth's surface).
+What is the work done to move a satellite from the Earth's surface to infinity? ~~ W = GMm/R: the magnitude of its gravitational potential energy at the surface.
+Why is the escape velocity independent of the mass of the object? ~~ Both kinetic and potential energy are proportional to m, so m cancels: v = √(2GM/r).
+What is the gravitational field strength at a height equal to Earth's radius above the surface? ~~ The distance from the centre doubles, so g falls to a quarter: about 2.45 N kg^-1.
+How can the mass of a planet be found using a moon's orbit? ~~ Measure the orbital radius r and period T; then M = 4π^2r^3/(GT^2).
+What is the difference between gravitational potential and gravitational potential energy? ~~ Potential is energy per unit mass (J kg^-1) at a point; potential energy is the energy of a specific mass at that point (J).
+Why is the gravitational force always attractive? ~~ Mass is only ever positive, unlike charge, so gravitational forces always attract.
+How does the gravitational force change if the separation between two masses is tripled? ~~ It falls to 1/9 of its original value (inverse square law).
+
+## T13
+Give the defining equation of SHM. ~~ a = −ω^2x.
+Give the displacement equation for SHM starting from maximum displacement. ~~ x = A cos ωt.
+Give the maximum speed in SHM. ~~ v_max = ωA, at the equilibrium position.
+Give the maximum acceleration in SHM. ~~ a_max = ω^2A, at maximum displacement.
+Where in SHM is velocity maximum and acceleration zero? ~~ At the equilibrium position (x = 0).
+What is the total energy of a simple harmonic oscillator? ~~ E = ½mω^2A^2, which is constant for undamped motion.
+What is the phase difference between velocity and displacement in SHM? ~~ π/2 rad (a quarter of a cycle); velocity leads displacement.
+Describe free oscillations. ~~ Oscillations at the natural frequency with no external driving force and no energy loss.
+What are forced oscillations? ~~ Oscillations caused by an external periodic driving force; the system oscillates at the driving frequency.
+What is critical damping? ~~ The level of damping that brings a system to rest at equilibrium in the shortest time without overshooting.
+How does increasing damping affect the resonance curve? ~~ The peak amplitude decreases, the peak becomes broader, and the resonant frequency shifts slightly lower.
+Describe how to investigate SHM using a mass on a spring. ~~ Displace the mass and time 10 oscillations with a fiducial marker. Repeat for different masses and plot T^2 against m; the gradient is 4π^2/k.
+How does the period of a mass-spring system change if the mass is quadrupled? ~~ T ∝ √m, so the period doubles.
+What is the angular frequency? ~~ ω = 2πf = 2π/T, in rad s^-1.
+What is the small-angle approximation needed for simple pendulum SHM? ~~ sin θ ≈ θ (in radians) for angles below about 10°, so restoring force is proportional to displacement.
+What is the phase relationship between driver and oscillator at resonance? ~~ The oscillator lags the driver by π/2.
+How do buildings in earthquake zones reduce resonance damage? ~~ Dampers (e.g. tuned mass dampers or shock absorbers) absorb energy and reduce the amplitude of oscillation.
+What happens to the energy in a damped oscillation? ~~ It is gradually transferred to the surroundings as heat, so the amplitude decreases.
+Sketch kinetic and potential energy against displacement for SHM. ~~ KE is an inverted parabola (maximum at x = 0); PE is a parabola (maximum at ±A); their sum is a constant horizontal line.
+What is the natural frequency of an oscillator? ~~ The frequency at which it oscillates freely when displaced and released without any driving force.

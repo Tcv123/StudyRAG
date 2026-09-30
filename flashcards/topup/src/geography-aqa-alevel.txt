@@ -1,0 +1,109 @@
+deck: Geography|AQA|alevel
+
+## 1.1
+What is evapotranspiration? ~~ The combined loss of water to the atmosphere by evaporation from surfaces and transpiration from plants.
+What are the three types of rainfall? ~~ Convectional (surface heating causes air to rise), frontal (warm air rises over cold air at a front) and orographic (air forced up over high ground).
+What is the difference between infiltration and percolation? ~~ Infiltration is water soaking into the soil surface; percolation is water moving down from the soil into the underlying rock.
+What is throughflow? ~~ The lateral movement of water through the soil towards a river channel.
+What is lag time on a hydrograph? ~~ The time between peak rainfall and peak discharge.
+How does urbanisation affect a storm hydrograph? ~~ Impermeable surfaces and drains increase surface runoff, so lag time shortens and peak discharge rises.
+What is carbon sequestration? ~~ The capture and long-term storage of carbon, naturally (e.g. in forests, peat, oceans) or artificially (carbon capture and storage).
+How does combustion of fossil fuels affect the carbon cycle? ~~ It transfers carbon from long-term geological stores to the atmosphere as CO2, increasing the greenhouse effect.
+What is the role of phytoplankton in the carbon cycle? ~~ They absorb CO2 through photosynthesis; when they die, some carbon sinks to the deep ocean (the biological pump).
+How does deforestation affect the water cycle? ~~ Less interception and transpiration, more surface runoff and soil erosion, and reduced local rainfall.
+
+## 1.2
+What is the difference between high-energy and low-energy coasts? ~~ High-energy: powerful waves, long fetch, erosion dominates (e.g. rocky cliffs). Low-energy: gentle waves, deposition dominates (e.g. estuaries, beaches).
+What is fetch? ~~ The distance of open water over which the wind blows, which affects wave size and energy.
+What is hydraulic action? ~~ The force of waves compressing air in cracks in the cliff, weakening and breaking the rock.
+What is abrasion? ~~ Rocks and sediment carried by waves are thrown against the cliff, wearing it away.
+What is attrition? ~~ Rocks carried by waves collide and break into smaller, rounder pieces.
+What is sub-aerial weathering? ~~ The breakdown of rock at the coast by weathering processes such as freeze–thaw, salt crystallisation, and chemical weathering.
+What is mass movement at the coast? ~~ The downslope movement of material under gravity, e.g. slumping, rockfalls and landslides.
+How does geology affect coastal landforms? ~~ Resistant rock forms headlands and cliffs; less resistant rock erodes faster to form bays. Structure and dip affect cliff profile.
+What is a raised beach? ~~ An emergent landform: an old beach left above the current sea level due to isostatic rebound or a fall in sea level.
+What is a ria? ~~ A submergent landform: a drowned river valley flooded by rising sea levels.
+
+## 1.3
+What is a destructive (convergent) plate boundary? ~~ Where plates move towards each other; denser oceanic plate subducts, causing earthquakes and explosive volcanoes.
+What is a constructive (divergent) plate boundary? ~~ Where plates move apart and magma rises to form new crust, e.g. the Mid-Atlantic Ridge.
+What is a conservative plate boundary? ~~ Where plates slide past each other, causing earthquakes but no volcanoes, e.g. the San Andreas Fault.
+What is a hotspot? ~~ An area of volcanic activity away from plate boundaries, caused by a plume of hot mantle, e.g. Hawaii.
+What is liquefaction? ~~ Saturated soil loses its strength and behaves like a liquid during earthquake shaking, causing buildings to collapse.
+What is a pyroclastic flow? ~~ A fast-moving current of hot gas and volcanic material that flows down a volcano's slopes.
+What is a lahar? ~~ A mudflow of volcanic material mixed with water, from rain or melting snow and ice.
+What is the Saffir–Simpson scale? ~~ A scale that categorises tropical storms (hurricanes) from 1 to 5 by wind speed.
+What is storm surge? ~~ A rise in sea level caused by low pressure and strong winds pushing water onshore during a tropical storm.
+What is hazard prediction versus forecasting? ~~ Prediction is stating exactly when and where a hazard will occur; forecasting gives probabilities of an event over time.
+
+## 2.1
+What is a sense of place? ~~ The subjective feelings and meanings people attach to a place.
+What are the relationships and connections that shape a place? ~~ Flows of people, money, resources and ideas linking a place to other places.
+What is meaning in the context of place? ~~ The personal and collective emotions, values and attitudes attached to a place.
+What is a representation of place? ~~ How a place is portrayed, e.g. in media, art, films, music, advertising and statistics.
+What is demographic change's effect on place? ~~ Changes in age, ethnicity and population size alter the character, services and identity of a place.
+What are informal representations of place? ~~ Representations such as art, music, literature, social media and film, which may be subjective.
+What are formal representations of place? ~~ Official sources such as census data, maps, government reports and planning documents.
+What is placelessness? ~~ The loss of unique local character as places become more alike, e.g. identical high streets with chain stores.
+What is a clone town? ~~ A town where the high street is dominated by national chain stores, losing local individuality.
+How does economic change shape places? ~~ Deindustrialisation or the growth of new industries changes employment, wealth and the built environment.
+
+## 2.2
+What is urban sprawl? ~~ The uncontrolled outward spread of urban areas into surrounding countryside.
+What is deindustrialisation? ~~ The decline of manufacturing industry in a region or country.
+What is urban resurgence? ~~ The revival of city centres through regeneration, new housing, services and population growth.
+What is an edge city? ~~ A concentration of business, shopping and entertainment outside a traditional city centre, near motorways.
+What is a gated community? ~~ A residential area with restricted access, fences and security, separating residents from surrounding areas.
+What is a brownfield site? ~~ Previously developed land, often derelict, that can be redeveloped.
+What is a greenfield site? ~~ Land that has not been built on before, often agricultural land on the urban edge.
+How can urban areas reduce flood risk? ~~ Sustainable urban drainage systems (SUDS), green roofs, permeable surfaces and river restoration.
+What is urban air pollution caused by? ~~ Vehicle emissions, industry, and domestic heating, producing particulates, NOx and ozone.
+What is a Low Emission Zone? ~~ An area where the most polluting vehicles are restricted or charged, e.g. London's ULEZ.
+
+## 2.3
+What is natural increase? ~~ The birth rate minus the death rate.
+What is the total fertility rate? ~~ The average number of children a woman is expected to have in her lifetime.
+What is replacement level fertility? ~~ About 2.1 children per woman, the level needed to keep a population stable without migration.
+What is an ageing population? ~~ A rising proportion of older people, caused by longer life expectancy and falling fertility.
+What are the challenges of an ageing population? ~~ Higher pension and healthcare costs, a smaller workforce, and a rising dependency ratio.
+What is optimum population? ~~ The population size that gives the highest standard of living for the available resources.
+What is zonal soil? ~~ A soil type related to climate and vegetation at a global scale, e.g. podzols in cold temperate areas.
+What is international migration's effect on population structure? ~~ Migrants are often young adults, which increases the working-age population and birth rates in the host country.
+What is a disease of affluence? ~~ Non-communicable diseases linked to wealthy lifestyles, e.g. heart disease, obesity and type 2 diabetes.
+What is the role of the WHO? ~~ The World Health Organization coordinates international health, sets standards, and responds to health emergencies.
+
+## 2.4
+What is resource development? ~~ The stages of making a resource available: exploration, development, exploitation and eventually exhaustion.
+What is the energy gap? ~~ The difference between energy demand and the energy a country can supply from its own resources.
+What is energy security? ~~ Reliable, affordable and uninterrupted access to energy.
+What factors affect energy consumption? ~~ Economic development, population, climate, technology and energy prices.
+What is the difference between renewable and non-renewable energy? ~~ Renewable sources are replenished naturally (wind, solar, hydro); non-renewable sources are finite (coal, oil, gas).
+What is fracking? ~~ Hydraulic fracturing: injecting fluid at high pressure to fracture shale rock and release gas or oil.
+What are the environmental impacts of mining? ~~ Habitat destruction, water pollution, air pollution, and landscape scarring.
+What is water transfer? ~~ Moving water from areas of surplus to areas of deficit, e.g. China's South–North Water Transfer Project.
+What is desalination? ~~ Removing salt from seawater to produce fresh water; it is energy-intensive and expensive.
+What is integrated water resource management? ~~ Coordinated management of water, land and related resources to maximise benefits sustainably.
+
+## 2.5
+What is the World Trade Organization's role in global governance? ~~ It regulates international trade rules, negotiates agreements and settles disputes.
+What is the International Monetary Fund? ~~ An organisation that promotes financial stability, lending to countries in economic difficulty with conditions attached.
+What is the World Bank? ~~ An organisation providing loans and grants to developing countries for development projects.
+What are the benefits of globalisation? ~~ Economic growth, access to markets and technology, cultural exchange and lower prices.
+What are the costs of globalisation? ~~ Inequality, exploitation of workers, loss of cultural identity, and environmental damage.
+What is a free trade agreement? ~~ An agreement between countries to reduce or remove barriers to trade.
+What is the role of NGOs in global governance? ~~ They influence policy, provide aid, campaign on issues, and monitor governments and TNCs.
+What is the Antarctic Treaty? ~~ A 1959 agreement that sets Antarctica aside for peaceful scientific research and bans military activity and mineral mining.
+What threatens Antarctica? ~~ Climate change, overfishing (krill), tourism, and pressure for resource exploitation.
+What is the concept of sovereignty? ~~ A state's right to govern itself without interference from other states.
+
+## 3.1
+What is a hypothesis in fieldwork? ~~ A testable statement predicting a relationship or outcome, which is accepted or rejected based on data.
+What is systematic sampling? ~~ Taking samples at regular intervals, e.g. every 10 metres along a transect.
+What is random sampling? ~~ Selecting sample points randomly, e.g. using random number tables, to avoid bias.
+What is stratified sampling? ~~ Dividing the area or population into groups and sampling each in proportion to its size.
+What is a transect? ~~ A line across an area along which data are collected at intervals.
+What is a questionnaire's advantage and disadvantage? ~~ It collects large amounts of data quickly, but responses may be biased or dishonest.
+What is a secondary data source? Give examples. ~~ Data collected by others: census data, maps, satellite images, and government reports.
+What is a choropleth map? ~~ A map where areas are shaded by the value of a variable, e.g. population density.
+What is an interquartile range? ~~ The difference between the upper and lower quartiles, showing the spread of the middle 50% of the data.
+What is the purpose of a conclusion in fieldwork? ~~ To answer the research question, link findings to the hypothesis and theory, and summarise key results.

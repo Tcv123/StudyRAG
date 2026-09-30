@@ -1,0 +1,353 @@
+deck: Computer Science|OCR|gcse
+
+## 1.1
+What is the purpose of the CPU? ~~ To fetch, decode and execute instructions, processing data to run programs.
+What does the fetch–decode–execute cycle do? ~~ The CPU repeatedly fetches an instruction from memory, decodes it to work out what to do, then executes it.
+What is the Arithmetic Logic Unit (ALU)? ~~ The part of the CPU that performs calculations and logical comparisons.
+What is the Control Unit (CU)? ~~ The part of the CPU that decodes instructions and sends control signals to coordinate the other components.
+What is cache? ~~ Very fast memory inside or close to the CPU that stores frequently used instructions and data.
+What are registers? ~~ Tiny, very fast storage locations inside the CPU that hold data and instructions currently being processed.
+What does the Program Counter (PC) store? ~~ The address of the next instruction to be fetched.
+What does the Memory Address Register (MAR) store? ~~ The address in memory of the data or instruction being fetched or stored.
+What does the Memory Data Register (MDR) store? ~~ The data or instruction that has been fetched from memory or is about to be written to memory.
+What does the accumulator store? ~~ The results of calculations carried out by the ALU.
+What is Von Neumann architecture? ~~ A design where data and instructions are stored together in the same memory, and the CPU processes them one at a time.
+What is clock speed? ~~ The number of fetch–decode–execute cycles the CPU can carry out per second, measured in hertz (e.g. 3.5 GHz).
+How does increasing clock speed affect performance? ~~ More instructions can be processed per second, so programs run faster.
+What is a core? ~~ An independent processing unit within the CPU that can fetch, decode and execute instructions.
+How does having more cores improve performance? ~~ Multiple instructions can be processed at the same time, as long as the software is designed to use them.
+Why might doubling the number of cores not double performance? ~~ Some tasks can't be split up, and cores must communicate and coordinate, which takes time.
+How does cache size affect performance? ~~ A larger cache can store more data close to the CPU, reducing slower accesses to RAM.
+What is an embedded system? ~~ A computer system built into a larger device to perform a dedicated function, e.g. in a washing machine or car.
+Give three examples of embedded systems. ~~ Washing machines, microwave ovens, car engine management systems, traffic lights and digital watches.
+What are the characteristics of embedded systems? ~~ Dedicated function, small size, low power consumption, low cost, and usually reliable.
+What is the difference between a general-purpose computer and an embedded system? ~~ A general-purpose computer can run many different programs; an embedded system performs one specific task.
+What is a bus? ~~ A set of wires that carries data, addresses or control signals between components.
+What happens in the fetch stage? ~~ The address in the PC is copied to the MAR, the instruction is fetched into the MDR, and the PC is incremented.
+What happens in the decode stage? ~~ The control unit works out what the instruction means and what needs to be done.
+What happens in the execute stage? ~~ The instruction is carried out, e.g. a calculation in the ALU or data stored in memory.
+Why is cache faster than RAM? ~~ It is physically closer to the CPU and uses faster (more expensive) memory technology.
+What is a disadvantage of cache? ~~ It is expensive, so only a small amount can be included.
+What is the purpose of the address bus? ~~ To carry memory addresses from the CPU to memory.
+What is the purpose of the data bus? ~~ To carry data between the CPU, memory and other components.
+What is a GPU? ~~ A graphics processing unit, specialised for processing images and parallel tasks.
+
+## 1.2
+What is primary storage? ~~ Memory that the CPU can access directly, such as RAM and ROM.
+What is RAM? ~~ Random access memory: volatile memory that stores data, programs and the operating system currently in use.
+What does volatile mean? ~~ The contents are lost when the power is turned off.
+What is ROM? ~~ Read-only memory: non-volatile memory that stores the boot-up instructions (BIOS).
+What is the difference between RAM and ROM? ~~ RAM is volatile and can be written to; ROM is non-volatile and usually read-only.
+Why do computers need primary storage? ~~ To hold data and instructions the CPU needs quickly, because secondary storage is too slow.
+What is virtual memory? ~~ Part of secondary storage used as extra RAM when RAM is full.
+Why is virtual memory slow? ~~ Secondary storage is much slower than RAM, so swapping data in and out slows the computer down.
+What is secondary storage? ~~ Non-volatile storage used to keep data permanently, e.g. hard drives and SSDs.
+Why do computers need secondary storage? ~~ To store files, programs and the operating system permanently when the power is off.
+What is magnetic storage? ~~ Storage that uses magnetised regions on spinning platters, e.g. a hard disk drive (HDD).
+What is optical storage? ~~ Storage that uses lasers to read and write data on discs, e.g. CDs, DVDs and Blu-ray.
+What is solid-state storage? ~~ Storage with no moving parts that uses flash memory, e.g. SSDs and USB drives.
+Give an advantage and disadvantage of magnetic storage. ~~ Advantage: high capacity at low cost. Disadvantage: moving parts can be damaged, and it is slower than SSD.
+Give an advantage and disadvantage of solid-state storage. ~~ Advantage: fast, durable and portable. Disadvantage: more expensive per GB.
+Give an advantage and disadvantage of optical storage. ~~ Advantage: cheap and portable. Disadvantage: low capacity and easily scratched.
+What are the characteristics used to compare storage? ~~ Capacity, speed, portability, durability, reliability and cost.
+What is a bit? ~~ A binary digit: 0 or 1, the smallest unit of data.
+What is a nibble? ~~ 4 bits.
+What is a byte? ~~ 8 bits.
+What are the units of data from smallest to largest? ~~ Bit, nibble, byte, kilobyte (1000 bytes), megabyte, gigabyte, terabyte, petabyte.
+Why do computers use binary? ~~ Computers are made of switches (transistors) that have two states: on and off.
+Convert binary 1011 to denary. ~~ 8 + 0 + 2 + 1 = 11.
+Convert denary 45 to 8-bit binary. ~~ 00101101.
+Convert hexadecimal 2F to denary. ~~ 2 × 16 + 15 = 47.
+Why is hexadecimal used? ~~ It is shorter and easier for humans to read and write than binary, with fewer errors.
+What is a character set? ~~ A defined list of characters and the binary codes that represent them, e.g. ASCII or Unicode.
+How is an image stored? ~~ As a grid of pixels, each represented by a binary number for its colour.
+What is colour depth? ~~ The number of bits used to represent the colour of each pixel.
+How is sound stored digitally? ~~ The amplitude of the sound wave is sampled at regular intervals and each sample is stored as a binary number.
+
+## 1.3
+What is a network? ~~ Two or more computers connected together to share data and resources.
+What is a LAN? ~~ A local area network covering a small geographical area, such as a school, using its own hardware.
+What is a WAN? ~~ A wide area network covering a large geographical area, often using third-party infrastructure; the internet is the largest WAN.
+What factors affect network performance? ~~ Bandwidth, number of users, transmission media, errors, and interference.
+What is bandwidth? ~~ The amount of data that can be transmitted per second.
+What is a client–server network? ~~ A network where servers provide services and resources to client computers.
+What is a peer-to-peer network? ~~ A network where all computers have equal status and share resources directly with each other.
+Give an advantage of a client–server network. ~~ Centralised security, backups and file management.
+Give an advantage of a peer-to-peer network. ~~ Cheap and easy to set up, with no dependence on a server.
+What is a wireless access point (WAP)? ~~ A device that allows wireless devices to connect to a wired network.
+What is a router? ~~ A device that forwards data packets between networks, e.g. between a LAN and the internet.
+What is a switch? ~~ A device that connects devices on a LAN and sends data only to the intended device using MAC addresses.
+What is a NIC? ~~ A network interface card (controller), which allows a device to connect to a network.
+What is the internet? ~~ A worldwide collection of interconnected networks.
+What is DNS? ~~ The Domain Name System, which translates domain names (e.g. bbc.co.uk) into IP addresses.
+What is hosting? ~~ Storing websites or files on a server connected to the internet so others can access them.
+What is the cloud? ~~ Remote servers accessed over the internet to store data and run software.
+Give an advantage and disadvantage of the cloud. ~~ Advantage: access from anywhere, no need for local storage. Disadvantage: needs internet access and raises security concerns.
+What is a star topology? ~~ All devices connect to a central switch.
+What is a mesh topology? ~~ Devices are connected to many other devices, so data has several possible routes.
+Give an advantage of a star topology. ~~ If one cable fails, the other devices are unaffected, and it is easy to add devices.
+Give an advantage of a mesh topology. ~~ No single point of failure; data can take another route if a connection fails.
+What is Wi-Fi? ~~ A wireless networking standard using radio waves to connect devices to a network.
+What is Ethernet? ~~ A wired networking standard for connecting devices in a LAN.
+What is an IP address? ~~ A unique address given to each device on a network, used to route data.
+What is a MAC address? ~~ A unique, permanent hardware address assigned to a network interface.
+What is a protocol? ~~ A set of rules for how data is transmitted across a network.
+What are TCP/IP and HTTP used for? ~~ TCP/IP: sending data across the internet in packets. HTTP: requesting and transferring web pages.
+What is HTTPS? ~~ A secure version of HTTP that encrypts data between browser and server.
+What is the concept of layers in networking? ~~ Protocols are divided into layers, each handling a specific part of communication, making development and troubleshooting easier.
+
+## 1.4
+What is malware? ~~ Malicious software designed to damage, disrupt or gain unauthorised access to computer systems.
+What is a virus? ~~ Malware that attaches itself to files and spreads when those files are copied or opened.
+What is a worm? ~~ Malware that replicates itself and spreads across networks without user action.
+What is a Trojan? ~~ Malware disguised as legitimate software.
+What is ransomware? ~~ Malware that encrypts a user's files and demands payment for their release.
+What is spyware? ~~ Malware that secretly monitors user activity and collects information.
+What is social engineering? ~~ Manipulating people into giving away confidential information.
+What is phishing? ~~ Sending fake emails or messages that appear to be from a trusted source to trick people into revealing personal information.
+What is shouldering? ~~ Watching someone enter a password or PIN over their shoulder.
+What is a brute-force attack? ~~ Trying every possible combination of characters to guess a password.
+What is a denial of service (DoS) attack? ~~ Flooding a server with requests so it can't respond to genuine users.
+What is data interception? ~~ Capturing data as it travels across a network, e.g. using packet sniffers.
+What is SQL injection? ~~ Entering malicious SQL code into an input field to access or change a database.
+What is penetration testing? ~~ Authorised simulated attacks on a system to find vulnerabilities.
+What is anti-malware software? ~~ Software that detects, prevents and removes malware.
+What is a firewall? ~~ Hardware or software that monitors network traffic and blocks unauthorised access.
+What are user access levels? ~~ Permissions that control which files and resources different users can access.
+Why are strong passwords important? ~~ They are harder to guess or brute-force, protecting accounts from unauthorised access.
+What makes a strong password? ~~ A long password mixing upper and lower case letters, numbers and symbols, not based on personal information.
+What is encryption? ~~ Scrambling data using a key so it can only be read by someone with the correct key.
+What is physical security? ~~ Protecting hardware from theft or damage, e.g. locks, CCTV and security guards.
+What is two-factor authentication? ~~ Requiring two forms of verification, such as a password and a code sent to a phone.
+How can SQL injection be prevented? ~~ Validating input and using parameterised queries.
+How can phishing be prevented? ~~ User training, spam filters, and checking email addresses and links before clicking.
+How can brute-force attacks be prevented? ~~ Strong passwords, account lockouts after failed attempts, and CAPTCHAs.
+How can DoS attacks be reduced? ~~ Firewalls, traffic filtering, and increasing server capacity.
+What is a vulnerability? ~~ A weakness in a system that can be exploited by an attacker.
+Why do organisations need network policies? ~~ To define acceptable use, security procedures and responsibilities, reducing risks.
+What is a backup? ~~ A copy of data stored separately so it can be restored if the original is lost or damaged.
+What is the difference between hackers and malware? ~~ Hackers are people who gain unauthorised access; malware is software used to cause harm.
+
+## 1.5
+What is an operating system? ~~ System software that manages hardware and software and provides a user interface.
+What is a user interface? ~~ The means by which a user interacts with a computer, e.g. a GUI or command line.
+What is a GUI? ~~ A graphical user interface using windows, icons, menus and pointers.
+What is a command-line interface? ~~ A text-based interface where the user types commands.
+What is memory management? ~~ The OS allocates memory to programs, moves data between RAM and virtual memory, and prevents programs interfering with each other.
+What is multitasking? ~~ Running more than one program at the same time, with the OS sharing CPU time between them.
+What is peripheral management? ~~ The OS communicates with input and output devices using device drivers.
+What is a device driver? ~~ Software that allows the OS to communicate with a hardware device.
+What is user management? ~~ The OS controls user accounts, logins, passwords and access rights.
+What is file management? ~~ The OS organises files into folders, controls naming, and allows files to be moved, copied and deleted.
+What is utility software? ~~ Software that helps maintain and optimise a computer, e.g. antivirus, backup and compression.
+What is defragmentation? ~~ Reorganising files on a hard disk so their parts are stored together, improving access speed.
+Why isn't defragmentation needed on an SSD? ~~ SSDs have no moving parts, so data access time isn't affected by fragmentation; it would also cause unnecessary wear.
+What is compression software? ~~ Software that reduces file size to save storage space and speed up transfer.
+What is encryption software? ~~ Software that encrypts data so it can't be read without a key.
+What is a full backup? ~~ A copy of all data.
+What is an incremental backup? ~~ A backup of only the data that has changed since the last backup.
+Give an advantage of incremental backups. ~~ They are faster and use less storage space than full backups.
+Give a disadvantage of incremental backups. ~~ Restoring data takes longer because the full backup and all increments are needed.
+What is system software? ~~ Software that manages the computer, including the operating system and utilities.
+What is application software? ~~ Software that helps users perform tasks, e.g. word processors and web browsers.
+Give three examples of operating systems. ~~ Windows, macOS, Linux, Android and iOS.
+Why does an operating system need to manage the CPU? ~~ To schedule processes so multiple programs can share CPU time efficiently.
+What is paging? ~~ Dividing memory into fixed-size blocks so data can be swapped between RAM and virtual memory.
+What happens when a computer boots up? ~~ The BIOS in ROM runs self-tests and loads the operating system from secondary storage into RAM.
+What is anti-virus software? ~~ Utility software that scans files for known malware signatures and removes or quarantines threats.
+What is the role of a file manager? ~~ Allowing users to organise and navigate files and folders.
+What is a disk cleanup utility? ~~ Software that removes unnecessary files to free up storage space.
+Why does the OS need to control user access? ~~ To keep data secure and ensure users can only access what they are permitted to.
+What is an interrupt? ~~ A signal to the CPU that a device or program needs attention.
+
+## 1.6
+What is the Data Protection Act 2018? ~~ UK law (implementing GDPR) controlling how personal data is collected, stored and used.
+Give three principles of data protection. ~~ Data must be used fairly and lawfully, kept secure, accurate, up to date, and not kept longer than necessary.
+What is the Computer Misuse Act 1990? ~~ UK law making unauthorised access to computer material and modification of data illegal.
+What are the three offences in the Computer Misuse Act? ~~ Unauthorised access; unauthorised access with intent to commit further crimes; unauthorised modification of data.
+What is the Copyright, Designs and Patents Act 1988? ~~ UK law protecting intellectual property, such as software, music and images, from being copied without permission.
+What is software licensing? ~~ Legal permission to use software, which sets out how it can be used.
+What is open-source software? ~~ Software whose source code is freely available to view, modify and distribute.
+What is proprietary software? ~~ Software whose source code is kept secret, usually sold with a licence restricting use.
+Give an advantage of open-source software. ~~ It is usually free and can be modified to suit users' needs.
+Give an advantage of proprietary software. ~~ It usually comes with professional support and regular updates.
+What is an ethical issue? ~~ An issue about what is morally right or wrong.
+What is a legal issue? ~~ An issue about what is permitted or forbidden by law.
+What is a cultural issue? ~~ An issue about how technology affects society, traditions and ways of life.
+What is an environmental issue? ~~ An issue about the impact of technology on the environment.
+What is the digital divide? ~~ The gap between people who have access to technology and the internet and those who don't.
+What causes the digital divide? ~~ Cost, location (rural areas), age, disability and lack of skills.
+What is e-waste? ~~ Discarded electronic devices, which contain toxic materials and are often not recycled properly.
+How does computing affect the environment? ~~ Energy use, mining for raw materials, and e-waste; but it can also reduce travel and paper use.
+What are privacy concerns with technology? ~~ Personal data collection, tracking, surveillance and data breaches.
+What are the ethical issues of artificial intelligence? ~~ Bias, job losses, accountability for decisions, and privacy.
+How has technology affected employment? ~~ It has created new jobs (e.g. in IT) but replaced some jobs through automation.
+What is cyberbullying? ~~ Using technology to harass, threaten or embarrass someone.
+What are the health issues of computer use? ~~ Eye strain, repetitive strain injury, back problems and reduced physical activity.
+What is a stakeholder? ~~ A person or group affected by a technology or decision.
+What is censorship? ~~ Restricting access to information, e.g. governments blocking websites.
+What is the Freedom of Information Act 2000? ~~ UK law giving the public the right to request information held by public authorities.
+What are the benefits of technology to society? ~~ Improved communication, access to information, healthcare advances and efficiency.
+What are self-driving cars' ethical issues? ~~ Responsibility for accidents, decisions in unavoidable collisions, and job losses for drivers.
+What is surveillance? ~~ Monitoring people's activities, e.g. CCTV and tracking online activity.
+What is a Creative Commons licence? ~~ A licence that allows creators to let others share and use their work under certain conditions.
+
+## 2.1
+What is computational thinking? ~~ Approaching problems in a way that a computer could help solve them, using abstraction, decomposition and algorithmic thinking.
+What is abstraction? ~~ Removing unnecessary detail to focus on the important parts of a problem.
+What is decomposition? ~~ Breaking a complex problem down into smaller, more manageable parts.
+What is algorithmic thinking? ~~ Identifying the steps needed to solve a problem in a logical order.
+What is an algorithm? ~~ A step-by-step set of instructions for solving a problem or completing a task.
+What is pseudocode? ~~ A way of writing algorithms using structured English that resembles code, but isn't tied to a programming language.
+What is a flowchart? ~~ A diagram that represents an algorithm using shapes connected by arrows.
+What shape is used for a decision in a flowchart? ~~ A diamond.
+What shape is used for input/output in a flowchart? ~~ A parallelogram.
+What shape is used for a process in a flowchart? ~~ A rectangle.
+What shape is used for start/stop in a flowchart? ~~ A rounded rectangle (terminator).
+What is a trace table? ~~ A table used to track the values of variables as an algorithm runs, to check it works correctly.
+How does a linear search work? ~~ It checks each item in a list in order until the target is found or the end is reached.
+How does a binary search work? ~~ It repeatedly compares the target with the middle item of a sorted list and discards the half that can't contain it.
+What is the precondition for binary search? ~~ The list must be sorted.
+Give an advantage of binary search over linear search. ~~ It is much faster for large lists.
+Give an advantage of linear search over binary search. ~~ It works on unsorted lists and is simpler to write.
+How does a bubble sort work? ~~ It repeatedly passes through a list, comparing adjacent items and swapping them if they are in the wrong order, until no swaps are needed.
+How does a merge sort work? ~~ It splits the list into single items, then repeatedly merges pairs of sorted lists until one sorted list remains.
+How does an insertion sort work? ~~ It takes each item in turn and inserts it into the correct position in the sorted part of the list.
+Which sort is most efficient for large lists? ~~ Merge sort.
+Give a disadvantage of merge sort. ~~ It uses more memory because it creates new lists.
+Give an advantage of bubble sort. ~~ It is simple to understand and implement.
+What is the input to an algorithm? ~~ The data given to the algorithm to process.
+What is the output of an algorithm? ~~ The result produced by the algorithm.
+What is an iteration in an algorithm? ~~ A repeated section of instructions (a loop).
+What is a selection in an algorithm? ~~ A decision that determines which instructions are carried out.
+What is a sequence in an algorithm? ~~ Instructions carried out one after another in order.
+How do you identify errors in an algorithm? ~~ Use trace tables and test data to check the output against expected results.
+What is the purpose of structure diagrams? ~~ To show how a problem is decomposed into sub-problems.
+
+## 2.2
+What is a variable? ~~ A named memory location whose value can change while a program runs.
+What is a constant? ~~ A named value that doesn't change while a program runs.
+What is assignment? ~~ Giving a value to a variable, e.g. x = 5.
+What are the three basic programming constructs? ~~ Sequence, selection and iteration.
+What is count-controlled iteration? ~~ A loop that repeats a set number of times, e.g. a FOR loop.
+What is condition-controlled iteration? ~~ A loop that repeats until a condition is met, e.g. a WHILE loop.
+What is an integer? ~~ A whole number data type.
+What is a real (float)? ~~ A number with a decimal point.
+What is a Boolean? ~~ A data type with two values: True or False.
+What is a character? ~~ A single letter, number or symbol.
+What is a string? ~~ A sequence of characters.
+What is casting? ~~ Converting a value from one data type to another, e.g. int("5").
+What does the MOD operator do? ~~ Returns the remainder after division, e.g. 10 MOD 3 = 1.
+What does the DIV operator do? ~~ Returns the whole-number result of division, e.g. 10 DIV 3 = 3.
+What does the ^ operator do? ~~ Raises a number to a power (exponentiation).
+What are comparison operators? ~~ ==, !=, <, <=, >, >=, used to compare values.
+What are Boolean operators? ~~ AND, OR and NOT, used to combine conditions.
+What is string manipulation? ~~ Operations on strings, e.g. finding length, extracting substrings, concatenation and changing case.
+What is concatenation? ~~ Joining strings together.
+What is an array? ~~ A data structure that stores multiple values of the same data type under one name, accessed by index.
+What is a two-dimensional array? ~~ An array with rows and columns, like a table.
+What is a subprogram? ~~ A named block of code that performs a specific task and can be called when needed.
+What is the difference between a function and a procedure? ~~ A function returns a value; a procedure doesn't.
+What is a parameter? ~~ A value passed into a subprogram.
+What is a local variable? ~~ A variable that can only be used within the subprogram where it is declared.
+What is a global variable? ~~ A variable that can be accessed anywhere in the program.
+Why use subprograms? ~~ They make code reusable, easier to read, test and maintain.
+What is file handling? ~~ Opening, reading, writing and closing files from a program.
+What is SQL used for? ~~ Searching and managing data in databases.
+Write an SQL query to select all names from a table called Students. ~~ SELECT Name FROM Students;
+
+## 2.3
+What is defensive design? ~~ Designing programs to anticipate misuse and handle errors so they don't crash.
+What is input validation? ~~ Checking that data entered is sensible and reasonable before it is processed.
+What is a range check? ~~ Checking that data is within a set range, e.g. age between 0 and 120.
+What is a type check? ~~ Checking that data is the correct data type, e.g. an integer.
+What is a presence check? ~~ Checking that data has been entered.
+What is a format check? ~~ Checking that data is in the correct format, e.g. a postcode.
+What is a length check? ~~ Checking that data has the correct number of characters.
+What is authentication? ~~ Confirming the identity of a user, e.g. with a username and password.
+What is maintainability? ~~ Writing code that is easy to understand and update.
+How can code be made more maintainable? ~~ Using comments, sensible variable names, indentation and subprograms.
+What is a syntax error? ~~ An error that breaks the rules of the programming language, so the program won't run.
+What is a logic error? ~~ An error that makes a program produce the wrong output, although it still runs.
+Give an example of a logic error. ~~ Using > instead of >= in a condition.
+What is testing? ~~ Running a program with test data to check it works correctly.
+What is iterative testing? ~~ Testing during development, after each part is written.
+What is final (terminal) testing? ~~ Testing the whole program once it is complete.
+What is normal test data? ~~ Valid data that the program should accept.
+What is boundary test data? ~~ Data at the edges of the valid range, e.g. 0 and 100 for a percentage.
+What is invalid test data? ~~ Data of the correct type that is outside the valid range and should be rejected.
+What is erroneous test data? ~~ Data of the wrong type that should be rejected, e.g. letters when a number is expected.
+What is a test plan? ~~ A document listing tests, test data and expected results.
+Why is testing important? ~~ To find and fix errors and make sure the program meets its requirements.
+What is anticipating misuse? ~~ Considering how users might enter unexpected data or try to break a program.
+What is a comment in code? ~~ Text in a program that explains what the code does and is ignored by the computer.
+What is indentation used for? ~~ Showing the structure of code, such as which lines are inside loops or selections.
+Why use meaningful variable names? ~~ They make code easier to understand and maintain.
+What is verification? ~~ Checking that data has been entered or transferred correctly, e.g. entering a password twice.
+What is the difference between validation and verification? ~~ Validation checks data is sensible; verification checks it matches the original.
+What is a runtime error? ~~ An error that occurs while a program is running, e.g. dividing by zero.
+Why might validation not prevent all errors? ~~ Data can be valid but still incorrect, e.g. a mistyped but valid date.
+
+## 2.4
+What is Boolean logic? ~~ Logic using the values TRUE (1) and FALSE (0).
+What does an AND gate do? ~~ Outputs 1 only if both inputs are 1.
+What does an OR gate do? ~~ Outputs 1 if at least one input is 1.
+What does a NOT gate do? ~~ Outputs the opposite of the input.
+Draw the truth table for AND. ~~ 0 AND 0 = 0; 0 AND 1 = 0; 1 AND 0 = 0; 1 AND 1 = 1.
+Draw the truth table for OR. ~~ 0 OR 0 = 0; 0 OR 1 = 1; 1 OR 0 = 1; 1 OR 1 = 1.
+Draw the truth table for NOT. ~~ NOT 0 = 1; NOT 1 = 0.
+What is a logic circuit? ~~ A combination of logic gates that produces an output from inputs.
+What is a truth table? ~~ A table showing the output of a logic circuit for every possible combination of inputs.
+How many rows does a truth table with 3 inputs have? ~~ 2³ = 8 rows.
+What is the Boolean expression for an AND gate? ~~ A AND B (also written A ∧ B or A.B).
+What is the Boolean expression for an OR gate? ~~ A OR B (also written A ∨ B or A + B).
+What is the Boolean expression for a NOT gate? ~~ NOT A (also written ¬A or Ā).
+What is the output of NOT (1 AND 0)? ~~ 1 AND 0 = 0, so NOT 0 = 1.
+What is the output of (1 OR 0) AND 1? ~~ (1) AND 1 = 1.
+What is the output of NOT 1 OR 0? ~~ NOT 1 = 0; 0 OR 0 = 0.
+Why are logic gates important in computers? ~~ They are the building blocks of all digital circuits, such as the CPU.
+What is the symbol shape for an AND gate? ~~ A D-shape with a flat input side.
+What is the symbol shape for an OR gate? ~~ A curved shield shape with a pointed output.
+What is the symbol shape for a NOT gate? ~~ A triangle with a small circle at the output.
+What is P = A AND NOT B when A = 1, B = 1? ~~ NOT B = 0; 1 AND 0 = 0.
+What is P = (A OR B) AND NOT C when A = 0, B = 1, C = 0? ~~ (0 OR 1) = 1; NOT 0 = 1; 1 AND 1 = 1.
+How do you write a Boolean expression from a logic circuit? ~~ Work from the inputs to the output, writing each gate's operation in turn.
+How do you draw a logic circuit from a Boolean expression? ~~ Draw gates for each operation, starting with those in brackets.
+What real-life situation uses an AND gate? ~~ A car alarm that sounds only if it is armed AND a door is opened.
+What real-life situation uses an OR gate? ~~ A light that turns on if either of two switches is pressed.
+What is the order of precedence in Boolean logic? ~~ Brackets, then NOT, then AND, then OR.
+What does 1 represent in Boolean logic? ~~ True (on).
+What does 0 represent in Boolean logic? ~~ False (off).
+How do logic gates relate to transistors? ~~ Logic gates are built from transistors acting as switches.
+
+## 2.5
+What is a high-level language? ~~ A programming language close to human language, e.g. Python or Java.
+What is a low-level language? ~~ A language close to machine code, e.g. assembly language or machine code.
+Give an advantage of high-level languages. ~~ They are easier to read, write and debug, and are portable between computers.
+Give an advantage of low-level languages. ~~ They give direct control over hardware and can be more efficient in speed and memory.
+What is machine code? ~~ Binary instructions that the CPU can execute directly.
+What is assembly language? ~~ A low-level language that uses mnemonics (e.g. ADD, LDA) to represent machine code instructions.
+What is a translator? ~~ A program that converts source code into machine code.
+What is a compiler? ~~ A translator that converts the whole program into machine code at once, producing an executable file.
+What is an interpreter? ~~ A translator that converts and runs source code one line at a time.
+What is an assembler? ~~ A translator that converts assembly language into machine code.
+Give an advantage of a compiler. ~~ The compiled program runs faster and can be distributed without the source code.
+Give a disadvantage of a compiler. ~~ Errors are reported only after the whole program is compiled, making debugging harder.
+Give an advantage of an interpreter. ~~ Errors are found line by line, making debugging easier.
+Give a disadvantage of an interpreter. ~~ The program runs more slowly and needs the interpreter every time it runs.
+What is an IDE? ~~ An integrated development environment: software that provides tools for writing, testing and debugging code.
+What is an editor in an IDE? ~~ A tool for writing and editing code, often with syntax highlighting and auto-completion.
+What is error diagnostics? ~~ An IDE feature that identifies errors and suggests where they are.
+What is a run-time environment? ~~ An IDE feature that allows a program to be run and tested within the IDE.
+What is a breakpoint? ~~ A point where program execution pauses so the programmer can inspect variables.
+What is stepping through code? ~~ Running a program one line at a time to see what happens.
+What is syntax highlighting? ~~ Colouring different parts of code (keywords, variables, strings) to make it easier to read.
+What is auto-completion? ~~ An IDE feature that suggests code as you type.
+What is auto-indentation? ~~ An IDE feature that automatically indents code to show its structure.
+What is a translator's role in an IDE? ~~ It compiles or interprets code so it can be run.
+What is source code? ~~ The code written by the programmer in a programming language.
+What is object code? ~~ The machine code produced by a compiler.
+Why can't computers understand high-level languages directly? ~~ The CPU can only execute machine code (binary instructions).
+Why are programs written in high-level languages portable? ~~ They can be translated for different types of processor.
+What is a mnemonic? ~~ A short word representing a machine code instruction in assembly language, e.g. LDA for load.
+What is debugging? ~~ Finding and fixing errors in a program.

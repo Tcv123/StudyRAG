@@ -1,0 +1,121 @@
+deck: Geography|Eduqas|alevel
+
+## 1.1
+What is a tidal range? ~~ The vertical difference between high and low tide.
+What is swash and backwash? ~~ Swash is the movement of water up a beach after a wave breaks; backwash is the water returning down the beach.
+What is solution (corrosion) at the coast? ~~ Chemical erosion where seawater dissolves soluble rocks such as limestone and chalk.
+What is traction and saltation? ~~ Traction: large sediment rolled along the seabed. Saltation: smaller sediment bouncing along the seabed.
+What is a cliff profile influenced by? ~~ Rock type, rock structure (dip, joints and faults), wave energy and sub-aerial processes.
+What is a cuspate foreland? ~~ A triangular depositional landform formed where longshore drift from two directions meets, e.g. Dungeness.
+What is a barrier beach? ~~ A ridge of sand or shingle parallel to the coast, separated from it by a lagoon.
+What is beach nourishment? ~~ Adding sand or shingle to a beach to make it wider and higher, absorbing wave energy.
+What is a groyne? ~~ A wooden or rock barrier built at right angles to the beach to trap sediment moved by longshore drift.
+What is a rock armour (rip-rap)? ~~ Large boulders placed at the foot of a cliff or along a beach to absorb wave energy.
+
+## 1.2
+What is basal sliding? ~~ The movement of a warm-based glacier over its bed, lubricated by meltwater.
+What is internal deformation? ~~ Ice crystals deforming and sliding past each other under pressure, causing a glacier to flow.
+What is a warm-based glacier? ~~ A glacier with its base at the pressure melting point, so meltwater allows basal sliding; found in temperate areas.
+What is a cold-based glacier? ~~ A glacier frozen to its bed, moving mainly by internal deformation; found in polar areas.
+What is a ribbon lake? ~~ A long, narrow lake in a glacial trough, formed where the glacier overdeepened a section of the valley floor.
+What is a terminal moraine? ~~ A ridge of till deposited at the furthest point reached by a glacier.
+What is a kame? ~~ A mound of sorted sand and gravel deposited by meltwater at the edge of or on a glacier.
+What is an outwash plain (sandur)? ~~ A flat area of sorted sediment deposited by meltwater streams in front of a glacier.
+What is a pingo? ~~ A periglacial ice-cored hill formed when groundwater freezes and expands, pushing the ground upwards.
+What is patterned ground? ~~ Circles, polygons or stripes of stones formed by frost heave and sorting in periglacial areas.
+
+## 1.3
+What is a place's identity? ~~ The distinctive characteristics that make a place unique, shaped by its people, history, economy and landscape.
+What is the role of economic restructuring in changing places? ~~ Shifts from primary and secondary to tertiary and quaternary industries change employment and the built environment.
+What is the quaternary sector? ~~ Knowledge-based industries such as research and development, IT and consultancy.
+What is a post-industrial economy? ~~ An economy dominated by services and knowledge-based industries rather than manufacturing.
+What is deprivation? ~~ A lack of access to income, jobs, housing, healthcare, education and services compared with others.
+What is social inequality? ~~ Unequal access to resources, opportunities and outcomes between different groups.
+What is spatial inequality? ~~ Differences in wealth, services and opportunities between areas.
+What is a cycle of deprivation? ~~ Low income leads to poor housing, health and education, which in turn keeps people in poverty.
+What is regeneration? ~~ Improving an area economically, socially and environmentally to reverse decline.
+What is the role of heritage in rebranding places? ~~ Promoting historical and cultural assets to attract tourism and investment.
+
+## 2.1
+What is the global hydrological cycle? ~~ A closed system of water moving between the oceans, atmosphere, land and ice.
+What is saturated overland flow? ~~ Surface runoff that occurs when the soil is already saturated and can absorb no more water.
+What is infiltration-excess overland flow? ~~ Surface runoff that occurs when rainfall intensity exceeds the infiltration capacity of the soil.
+What is baseflow? ~~ The part of river discharge supplied by groundwater, which maintains flow during dry periods.
+What is a flashy hydrograph? ~~ A hydrograph with a short lag time and high peak discharge, indicating rapid runoff.
+What is a water footprint? ~~ The total volume of fresh water used to produce the goods and services consumed by an individual or country.
+What is virtual water? ~~ The water embedded in the production of goods, e.g. food and clothing, traded between countries.
+What is groundwater depletion? ~~ Extracting groundwater faster than it is recharged, lowering water tables.
+What is water conservation? ~~ Reducing water use through efficient appliances, metering, recycling and education.
+What is a transboundary water conflict? ~~ Disputes between countries sharing rivers or aquifers, e.g. the Nile or Mekong.
+
+## 2.2
+What is a carbon sink? ~~ A store that absorbs more carbon than it releases, e.g. oceans, forests and soils.
+What is a carbon source? ~~ A store that releases more carbon than it absorbs, e.g. burning fossil fuels or deforestation.
+What is the enhanced greenhouse effect? ~~ The increase in the natural greenhouse effect caused by human emissions of greenhouse gases, leading to global warming.
+What is energy mix? ~~ The combination of different energy sources used by a country.
+What is energy intensity? ~~ The amount of energy used per unit of GDP.
+What is nuclear power's advantage and disadvantage? ~~ Advantage: low-carbon, reliable electricity. Disadvantage: radioactive waste, high costs, and risk of accidents.
+What is the role of wind power in energy security? ~~ It provides renewable, low-carbon electricity, reducing dependence on imports, but is intermittent.
+What is shale gas? ~~ Natural gas trapped in shale rock, extracted by fracking.
+What is energy poverty? ~~ Lack of access to modern energy services, or inability to afford adequate heating and power.
+What is a carbon tax? ~~ A tax on the carbon content of fossil fuels to reduce emissions.
+
+## 2.3
+What is voluntary migration? ~~ Migration by choice, usually for economic, social or lifestyle reasons.
+What is forced migration? ~~ Migration caused by conflict, persecution, disasters or development projects.
+What is an internally displaced person? ~~ Someone forced to leave their home but who remains within their own country.
+What is the UNHCR? ~~ The UN Refugee Agency, which protects and supports refugees and displaced people.
+What is a migrant stock? ~~ The total number of international migrants living in a country at a given time.
+What is circular migration? ~~ Repeated movement between source and host countries, often for seasonal work.
+What is a gravity model of migration? ~~ A model predicting that migration between two places is proportional to their population sizes and inversely proportional to the distance between them.
+What is the Mediterranean migration route? ~~ Routes across the Mediterranean from North Africa and the Middle East to Europe, often dangerous and irregular.
+What is xenophobia? ~~ Fear or hatred of foreigners, which can lead to discrimination against migrants.
+What is multiculturalism? ~~ The coexistence of different cultures within a society, with each maintaining its identity.
+
+## 2.4
+What is the continental shelf? ~~ The shallow submerged edge of a continent; states have rights to its seabed resources under UNCLOS.
+What is territorial waters? ~~ The sea within 12 nautical miles of a coast, over which a state has full sovereignty.
+What is an EEZ's extent? ~~ Up to 200 nautical miles from the coast, where a state has rights to exploit marine resources.
+What is the high seas? ~~ Ocean areas beyond national jurisdiction, open to all states.
+What is illegal, unreported and unregulated (IUU) fishing? ~~ Fishing that breaks laws, isn't reported, or occurs in unregulated areas, undermining sustainable management.
+What is bycatch? ~~ Unwanted fish and other marine species caught unintentionally during fishing.
+What is marine plastic pollution's impact? ~~ Wildlife entanglement and ingestion, microplastics entering food chains, and habitat damage.
+What is eutrophication in oceans? ~~ Excess nutrients from farming runoff cause algal blooms and oxygen depletion, creating dead zones.
+What is the International Maritime Organization? ~~ The UN agency regulating shipping safety, security and marine pollution.
+What is sustainable fishing? ~~ Fishing at levels that allow fish stocks to regenerate, using quotas and protected areas.
+
+## 2.5
+What is sustainable development? ~~ Development that meets the needs of the present without compromising the ability of future generations to meet their own needs.
+What is the Brundtland Report? ~~ The 1987 UN report that defined sustainable development.
+What is climate justice? ~~ The idea that the impacts and responsibilities of climate change should be shared fairly, as the poorest often suffer most but contribute least.
+What is loss and damage? ~~ Funding to help vulnerable countries cope with climate impacts they cannot adapt to, agreed at COP27.
+What is the circular economy? ~~ An economic model that minimises waste by reusing, repairing and recycling materials.
+What is the digital divide? ~~ Inequality in access to digital technology and the internet between and within countries.
+What is urbanisation's challenge in the 21st century? ~~ Providing housing, services, infrastructure and jobs for rapidly growing urban populations, especially in developing countries.
+What is antimicrobial resistance? ~~ Microorganisms becoming resistant to antibiotics, a major global health threat.
+What is global governance? ~~ Cooperation between states, international organisations and NGOs to address global issues.
+What is the role of the IPCC? ~~ The Intergovernmental Panel on Climate Change assesses scientific evidence on climate change and informs policy.
+
+## 3.1
+What is a volcanic hazard? ~~ A threat from volcanic activity, such as lava flows, ash fall, pyroclastic flows, lahars and gases.
+What is a tephra? ~~ Fragments of rock and ash ejected into the air during an eruption.
+What is a primary effect of an earthquake? ~~ An effect caused directly by ground shaking, e.g. buildings collapsing.
+What is a secondary effect of an earthquake? ~~ An effect caused indirectly, e.g. fires, tsunamis, landslides and disease.
+What is the Modified Mercalli scale? ~~ A scale measuring earthquake intensity by observed effects, from I to XII.
+What is a tsunami warning system? ~~ A network of seismometers and ocean buoys that detects tsunamis and issues warnings.
+What is the role of education in hazard preparedness? ~~ It teaches people what to do in a hazard event, e.g. earthquake drills, reducing casualties.
+What is the difference between a hazard and a disaster? ~~ A hazard is a potential threat; a disaster occurs when a hazard seriously disrupts a community.
+What is the role of social factors in vulnerability? ~~ Poverty, age, gender, education and poor housing increase vulnerability to hazards.
+What is resilience? ~~ The ability of a community to withstand, recover from and adapt to hazards.
+
+## 3.2
+What is a food chain? ~~ A sequence showing how energy is transferred from producers to consumers through feeding.
+What is a trophic level? ~~ A position in a food chain: producer, primary consumer, secondary consumer and so on.
+What is net primary productivity? ~~ The rate at which plants store energy as biomass, after respiration losses.
+What is the nutrient cycle? ~~ The movement of nutrients between biomass, litter and soil.
+What is a climatic climax community? ~~ The final stable community in succession, determined by the climate.
+What is an arrested succession? ~~ When succession is prevented from reaching the climax by a factor such as grazing or burning.
+What is the role of fire in savanna ecosystems? ~~ Fire maintains grassland by preventing tree growth and recycling nutrients.
+What is desertification? ~~ Land degradation in dry areas caused by climate change and human activities such as overgrazing.
+What is the biodiversity hotspot concept? ~~ Areas with very high numbers of endemic species that are under threat, prioritised for conservation.
+What is ecotourism? ~~ Responsible tourism that conserves the environment and benefits local communities.

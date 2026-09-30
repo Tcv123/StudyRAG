@@ -1,0 +1,546 @@
+deck: Further Mathematics|Edexcel|alevel
+# Built from a shared Further Maths card pool; topics that span several areas combine the relevant units.
+
+## CP1.1
+What is i? ~~ The imaginary unit, defined by i² = −1.
+What is a complex number? ~~ A number of the form z = a + bi, where a and b are real.
+What are Re(z) and Im(z) for z = 3 − 4i? ~~ Re(z) = 3 and Im(z) = −4.
+What is the complex conjugate of z = a + bi? ~~ z* = a − bi.
+Simplify i³ and i⁴. ~~ i³ = −i and i⁴ = 1.
+Add (2 + 3i) + (4 − i). ~~ 6 + 2i.
+Multiply (2 + 3i)(1 − i). ~~ 2 − 2i + 3i − 3i² = 5 + i.
+What is z z* for z = a + bi? ~~ a² + b², which is always real and non-negative.
+How do you divide complex numbers? ~~ Multiply the numerator and denominator by the conjugate of the denominator.
+Calculate (3 + i)/(1 − i). ~~ (3 + i)(1 + i)/2 = (3 + 4i + i²)/2 = (2 + 4i)/2 = 1 + 2i.
+Solve z² + 4 = 0. ~~ z = ±2i.
+Solve z² − 2z + 5 = 0. ~~ z = (2 ± √(4 − 20))/2 = 1 ± 2i.
+What is special about the complex roots of a real polynomial? ~~ They occur in conjugate pairs.
+If 2 + i is a root of a real quadratic, what is the quadratic? ~~ Roots 2 ± i: z² − 4z + 5 = 0.
+When are two complex numbers equal? ~~ When their real parts are equal and their imaginary parts are equal.
+Find the square roots of 3 + 4i. ~~ (a + bi)² = 3 + 4i gives a² − b² = 3 and ab = 2, so ±(2 + i).
+What is the modulus of z = a + bi? ~~ |z| = √(a² + b²).
+What is the argument of z? ~~ The angle θ between the positive real axis and the line to z, usually −π < θ ≤ π.
+Find the modulus and argument of 1 + i. ~~ |z| = √2 and arg z = π/4.
+Find the argument of −1 − √3 i. ~~ −2π/3.
+What is the modulus–argument form of z? ~~ z = r(cos θ + i sin θ).
+How do moduli behave under multiplication? ~~ |z₁z₂| = |z₁||z₂|.
+How do arguments behave under multiplication? ~~ arg(z₁z₂) = arg z₁ + arg z₂ (adjusted to the principal range).
+How do moduli and arguments behave under division? ~~ |z₁/z₂| = |z₁|/|z₂| and arg(z₁/z₂) = arg z₁ − arg z₂.
+Solve a cubic with a known real root: z³ − 1 = 0. ~~ (z − 1)(z² + z + 1) = 0, so z = 1 or z = −½ ± (√3/2)i.
+What is z + z* for z = a + bi? ~~ 2a, which is real.
+What is z − z*? ~~ 2bi, which is purely imaginary.
+What is (z*)*? ~~ z.
+Express 2(cos π/3 + i sin π/3) in the form a + bi. ~~ 1 + √3 i.
+Why can't complex numbers be ordered like real numbers? ~~ There is no consistent way to say which of two complex numbers is larger.
+
+## CP1.2
+What is an Argand diagram? ~~ A diagram representing complex numbers as points, with the real part on the horizontal axis and the imaginary part on the vertical axis.
+How is z* shown on an Argand diagram? ~~ As the reflection of z in the real axis.
+What does |z − a| represent? ~~ The distance from z to the point a on the Argand diagram.
+Describe the locus |z − 2 − i| = 3. ~~ A circle with centre (2, 1) and radius 3.
+Describe the locus |z − 1| = |z + i|. ~~ The perpendicular bisector of the points 1 and −i.
+Describe the locus arg(z − 1) = π/4. ~~ A half-line from (1, 0) at angle π/4 to the positive real axis, not including the point 1.
+What does |z| < 2 represent? ~~ The interior of a circle centred at the origin with radius 2.
+Describe the region |z − 3| ≤ |z + 1|. ~~ The points closer to 3 than to −1: Re(z) ≥ 1.
+What does arg z = θ represent? ~~ A half-line from the origin at angle θ.
+How is addition shown on an Argand diagram? ~~ As vector addition (the parallelogram rule).
+How is multiplication by i shown on an Argand diagram? ~~ A rotation by π/2 anticlockwise about the origin.
+What is the effect of multiplying by r(cos θ + i sin θ)? ~~ An enlargement by scale factor r and a rotation by θ about the origin.
+Find the maximum value of |z| if |z − 3 − 4i| = 2. ~~ The distance to the centre is 5, so the maximum is 5 + 2 = 7.
+Find the minimum value of |z| if |z − 3 − 4i| = 2. ~~ 5 − 2 = 3.
+How do you convert a locus like |z − 1| = 2|z + 1| into Cartesian form? ~~ Let z = x + iy, square both sides, and simplify, giving a circle (an Apollonius circle).
+What does arg((z − a)/(z − b)) = θ represent? ~~ An arc of a circle through a and b, where the angle subtended by ab is θ.
+What does arg((z − a)/(z − b)) = π/2 represent? ~~ A semicircle with diameter ab.
+How do you shade a region like π/6 ≤ arg z ≤ π/3? ~~ Shade between the two half-lines from the origin at those angles.
+How is the modulus shown on an Argand diagram? ~~ As the distance from the origin to the point.
+What locus is |z − a| = k|z − b| for k ≠ 1? ~~ A circle.
+Where are the roots of z² + 2z + 5 = 0 on an Argand diagram? ~~ At −1 + 2i and −1 − 2i, symmetric about the real axis.
+Describe |z + 2i| = 1. ~~ A circle with centre −2i (0, −2) and radius 1.
+How do you find where two loci intersect? ~~ Convert both to Cartesian equations and solve simultaneously, or use geometry.
+What does Re(z) > 2 represent? ~~ The region to the right of the line x = 2.
+What does Im(z) = −1 represent? ~~ A horizontal line through −i.
+What is the geometric meaning of |z₁ − z₂|? ~~ The distance between z₁ and z₂.
+How can the triangle inequality be written for complex numbers? ~~ |z₁ + z₂| ≤ |z₁| + |z₂|.
+Describe the locus |z| = |z − 4|. ~~ The line Re(z) = 2.
+What shape do the n-th roots of unity form on an Argand diagram? ~~ A regular n-sided polygon inscribed in the unit circle.
+How do you find the greatest arg z for z on a circle not containing the origin? ~~ Draw the tangent from the origin to the circle and use right-angled triangle trigonometry.
+
+## CP1.3
+What is Σ r from r = 1 to n? ~~ n(n + 1)/2.
+What is Σ r² from r = 1 to n? ~~ n(n + 1)(2n + 1)/6.
+What is Σ r³ from r = 1 to n? ~~ n²(n + 1)²/4.
+What is Σ 1 from r = 1 to n? ~~ n.
+Evaluate Σ r² from r = 1 to 10. ~~ 10 × 11 × 21/6 = 385.
+Find Σ (2r − 1) from r = 1 to n. ~~ n(n + 1) − n = n².
+Find Σ r(r + 1) from r = 1 to n. ~~ Σr² + Σr = n(n + 1)(n + 2)/3.
+How do you evaluate Σ from r = 11 to 20? ~~ Σ from 1 to 20 minus Σ from 1 to 10.
+What is the method of differences? ~~ Writing each term as f(r) − f(r + 1) so that most terms cancel when summed.
+Use the method of differences to sum Σ 1/(r(r + 1)). ~~ 1/(r(r + 1)) = 1/r − 1/(r + 1), so the sum from 1 to n is 1 − 1/(n + 1).
+Find Σ 1/(r(r + 2)) from r = 1 to n. ~~ ½ Σ (1/r − 1/(r + 2)) = ½(3/2 − 1/(n + 1) − 1/(n + 2)).
+What is a telescoping series? ~~ A series in which consecutive terms cancel, leaving only a few terms.
+What is the sum to infinity of Σ 1/(r(r + 1))? ~~ 1.
+How do you prove a summation formula? ~~ Using the standard results, the method of differences, or proof by induction.
+What is Σ (ar + b)? ~~ aΣr + bn.
+Express Σ r(r − 1) in terms of n. ~~ Σr² − Σr = (n − 1)n(n + 1)/3.
+Evaluate Σ r³ from r = 1 to 5. ~~ 25 × 36/4 = 225.
+What is the relationship between Σ r³ and Σ r? ~~ Σ r³ = (Σ r)².
+Why must care be taken with the lower limit when using the method of differences? ~~ The surviving terms depend on the limits; write out the first and last few terms.
+How are partial fractions useful for series? ~~ They split a term into differences that telescope.
+What is sigma notation? ~~ Σ f(r) from r = a to b means f(a) + f(a + 1) + … + f(b).
+Can a divergent series have a finite partial sum? ~~ Yes, every partial sum is finite, but the sum to infinity doesn't exist.
+Find Σ (r + 1)² from r = 1 to n. ~~ Σr² + 2Σr + n = n(n + 1)(2n + 1)/6 + n(n + 1) + n.
+What is Σ from r = 1 to n of r(r + 1)(r + 2)? ~~ n(n + 1)(n + 2)(n + 3)/4.
+Show that Σ from 1 to n of (r³ − r) = n(n + 1)(n − 1)(n + 2)/4. ~~ n²(n + 1)²/4 − n(n + 1)/2 = n(n + 1)/4 × (n(n + 1) − 2) = n(n + 1)(n − 1)(n + 2)/4.
+What is the sum of the first n odd cubes? ~~ n²(2n² − 1).
+What does convergence mean for a series? ~~ The partial sums approach a finite limit as n → ∞.
+What is the harmonic series and does it converge? ~~ Σ 1/r; it diverges.
+How do you sum Σ f(r) − f(r − 1) from 1 to n? ~~ It telescopes to f(n) − f(0).
+What is the general strategy for summing a polynomial in r? ~~ Expand, then use the standard results for Σr, Σr², Σr³ and Σ1.
+
+## CP1.4
+For ax² + bx + c = 0 with roots α, β, what are α + β and αβ? ~~ α + β = −b/a and αβ = c/a.
+For ax³ + bx² + cx + d = 0, what are Σα, Σαβ and αβγ? ~~ Σα = −b/a, Σαβ = c/a, αβγ = −d/a.
+For a quartic ax⁴ + bx³ + cx² + dx + e = 0, what is the product of the roots? ~~ αβγδ = e/a.
+Express α² + β² in terms of α + β and αβ. ~~ (α + β)² − 2αβ.
+Express α³ + β³ in terms of α + β and αβ. ~~ (α + β)³ − 3αβ(α + β).
+Express 1/α + 1/β in terms of α + β and αβ. ~~ (α + β)/αβ.
+Express α² + β² + γ² for a cubic. ~~ (Σα)² − 2Σαβ.
+How do you find an equation whose roots are 2α and 2β? ~~ Substitute x = w/2 into the original equation.
+How do you find an equation whose roots are α + 1, β + 1? ~~ Substitute x = w − 1 into the original equation.
+How do you find an equation with roots α², β² using substitution? ~~ Substitute x = √w, rearrange so √w terms are on one side, and square.
+The roots of x² − 5x + 3 = 0 are α, β. Find α² + β². ~~ 25 − 6 = 19.
+The roots of 2x³ − 3x² + x − 4 = 0 are α, β, γ. Find αβγ. ~~ −(−4)/2 = 2.
+Find the quadratic with roots α + β and αβ given α + β = 3, αβ = 2. ~~ Roots 3 and 2: x² − 5x + 6 = 0.
+If one root of x³ − 6x² + 11x − 6 = 0 is 1, find the others. ~~ (x − 1)(x² − 5x + 6), so 2 and 3.
+What does it mean if a cubic's roots form an arithmetic sequence? ~~ They can be written a − d, a, a + d, and Σα = 3a.
+Why do real polynomials have complex roots in conjugate pairs? ~~ Taking the conjugate of p(z) = 0 gives p(z*) = 0, because the coefficients are real.
+A real cubic has roots 2 and 1 + i. Find the cubic. ~~ Roots 2, 1 ± i: (x − 2)(x² − 2x + 2) = x³ − 4x² + 6x − 4.
+How many real roots can a real cubic have? ~~ One or three (counting repeated roots).
+How many complex (non-real) roots can a real quartic have? ~~ 0, 2 or 4.
+What is Σα for x⁴ − 2x³ + x − 7 = 0? ~~ 2.
+What is Σαβγ for a quartic ax⁴ + bx³ + cx² + dx + e? ~~ −d/a.
+Find α³ + β³ if α + β = 2 and αβ = −1. ~~ 8 − 3(−1)(2) = 14.
+How do you find 1/α + 1/β + 1/γ for a cubic? ~~ Σαβ/αβγ.
+What does a repeated root mean for the graph? ~~ The graph touches the x-axis at that point.
+If x = 2 + 3i is a root of a real polynomial, what else must be? ~~ 2 − 3i.
+How can the sum and product of roots check a solution? ~~ Compare the computed roots' sum and product with −b/a and c/a.
+What substitution gives roots 1/α, 1/β, 1/γ? ~~ Substitute x = 1/w (this reverses the coefficients).
+Find the equation with roots 1/α, 1/β if α, β are roots of 2x² + 3x − 1 = 0. ~~ Reverse the coefficients: −w² + 3w + 2 = 0, i.e. w² − 3w − 2 = 0.
+How many roots does a polynomial of degree n have? ~~ Exactly n roots in the complex numbers, counting multiplicity.
+What is the Fundamental Theorem of Algebra? ~~ Every non-constant polynomial has at least one complex root.
+
+## CP1.5
+What is the volume of revolution about the x-axis? ~~ V = π ∫ y² dx between the limits.
+What is the volume of revolution about the y-axis? ~~ V = π ∫ x² dy between the y-limits.
+Find the volume when y = x from 0 to 3 is rotated about the x-axis. ~~ π ∫₀³ x² dx = 9π (a cone).
+Find the volume when y = √x from 0 to 4 is rotated about the x-axis. ~~ π ∫₀⁴ x dx = 8π.
+Find the volume when y = x² from 0 to 1 is rotated about the x-axis. ~~ π ∫₀¹ x⁴ dx = π/5.
+How do you find the volume between two curves rotated about the x-axis? ~~ V = π ∫ (y₁² − y₂²) dx, where y₁ is the outer curve.
+Why is it not π ∫ (y₁ − y₂)² dx? ~~ The solid is a washer: the volume is the outer solid minus the inner solid.
+How do you rotate y = x² about the y-axis between y = 0 and y = 4? ~~ x² = y, so V = π ∫₀⁴ y dy = 8π.
+What is the volume of a sphere derived by rotation? ~~ Rotate x² + y² = r² about the x-axis: π ∫₋ᵣʳ (r² − x²) dx = (4/3)πr³.
+What is the volume of a cone derived by rotation? ~~ Rotate y = (r/h)x from 0 to h: π ∫ (r²/h²)x² dx = (1/3)πr²h.
+How can volumes of revolution model real objects? ~~ E.g. vases, bottles and bowls can be modelled by rotating curves.
+What assumption is made when modelling an object with a volume of revolution? ~~ The object is perfectly symmetrical about its axis and the curve accurately describes its profile.
+Find the volume when y = eˣ from 0 to 1 is rotated about the x-axis. ~~ π ∫₀¹ e^(2x) dx = (π/2)(e² − 1).
+Find the volume when y = 1/x from 1 to 2 is rotated about the x-axis. ~~ π ∫₁² x⁻² dx = π/2.
+What must you do before rotating about the y-axis? ~~ Rearrange to make x² the subject in terms of y, and use y-limits.
+Find the volume when y = sin x from 0 to π is rotated about the x-axis. ~~ π ∫₀^π sin²x dx = π²/2.
+How do you find the volume of a solid with a hole? ~~ Subtract the volume of the hole (inner solid) from the outer solid.
+What are the units of a volume of revolution? ~~ Cubic units.
+What is the volume of a cylinder by rotation? ~~ Rotate y = r from 0 to h about the x-axis: π ∫₀ʰ r² dx = πr²h.
+How do you find the limits for the region between y = x and y = x²? ~~ Solve x = x²: x = 0 and x = 1.
+Find the volume when the region between y = x and y = x² is rotated about the x-axis. ~~ π ∫₀¹ (x² − x⁴) dx = π(1/3 − 1/5) = 2π/15.
+What if the curve crosses the axis of rotation? ~~ y² is always positive, so the volume formula still works, but check the region carefully.
+How can a volume of revolution be scaled to model a real object? ~~ Multiply by the cube of the scale factor, or use scaled units.
+Why might a model underestimate a real vase's volume? ~~ The curve may not match the real shape exactly, or the wall thickness may be ignored.
+What volume is generated by rotating y = 2 between x = 1 and x = 3? ~~ A cylinder: π × 4 × 2 = 8π.
+Find the volume when y = x³ from 0 to 1 is rotated about the y-axis. ~~ x = y^(1/3), x² = y^(2/3): π ∫₀¹ y^(2/3) dy = 3π/5.
+What is the washer method? ~~ Finding the volume of a solid with a hole by subtracting inner from outer volumes.
+How do you find the volume of a region bounded by a curve and a line not on an axis? ~~ Find the intersection points, then subtract the volume under the line from the volume under the curve.
+Which integral gives volume about the x-axis for y = f(x)? ~~ π ∫ [f(x)]² dx.
+Why is volume of revolution an application of integration? ~~ The solid is split into thin discs of volume πy² δx, which are summed as δx → 0.
+
+## CP1.6
+What is the order of a matrix? ~~ The number of rows × the number of columns.
+When can two matrices be multiplied? ~~ When the number of columns in the first equals the number of rows in the second.
+Is matrix multiplication commutative? ~~ No; in general AB ≠ BA.
+Is matrix multiplication associative? ~~ Yes: (AB)C = A(BC).
+What is the identity matrix I? ~~ A square matrix with 1s on the leading diagonal and 0s elsewhere; AI = IA = A.
+What is the determinant of a 2×2 matrix (a b; c d)? ~~ ad − bc.
+What is the inverse of a 2×2 matrix (a b; c d)? ~~ (1/(ad − bc)) × (d −b; −c a).
+What is a singular matrix? ~~ A matrix with determinant zero, which has no inverse.
+What is (AB)⁻¹? ~~ B⁻¹A⁻¹.
+How do you find the determinant of a 3×3 matrix? ~~ Expand along a row or column using cofactors: a(ei − fh) − b(di − fg) + c(dh − eg).
+What does the determinant of a transformation matrix represent? ~~ The area (2D) or volume (3D) scale factor; a negative value means orientation is reversed.
+How can matrices solve simultaneous equations? ~~ Write as AX = B, then X = A⁻¹B if A is non-singular.
+What does det A = 0 mean for a system of 3 equations? ~~ There is no unique solution: either no solutions (inconsistent) or infinitely many.
+How do three planes with no unique solution appear geometrically? ~~ As a sheaf (common line), a prism (no common point), or with parallel planes.
+What is det(AB)? ~~ det A × det B.
+What is the transpose of a matrix? ~~ The matrix formed by swapping rows and columns, Aᵀ.
+How do you find the inverse of a 3×3 matrix? ~~ Find the matrix of cofactors, transpose it (adjugate), then divide by the determinant.
+What is the zero matrix? ~~ A matrix in which every element is 0.
+Multiply (1 2; 3 4)(0 1; 1 0). ~~ (2 1; 4 3).
+Find the determinant of (3 1; 5 2). ~~ 6 − 5 = 1.
+Find the inverse of (3 1; 5 2). ~~ (2 −1; −5 3).
+For what value of k is (k 2; 3 6) singular? ~~ 6k − 6 = 0, so k = 1.
+What is A² for a matrix A? ~~ A × A (only defined for square matrices).
+What does it mean if AB = I? ~~ B is the inverse of A (and A is the inverse of B).
+How is a system of linear equations consistent? ~~ When it has at least one solution.
+What is a minor in a 3×3 determinant? ~~ The determinant of the 2×2 matrix left after deleting a row and column.
+What is a cofactor? ~~ A minor multiplied by (−1)^(i+j).
+If det A = 3, what is det(2A) for a 3×3 matrix? ~~ 2³ × 3 = 24.
+If det A = 5, what is det(A⁻¹)? ~~ 1/5.
+How do you check a matrix inverse is correct? ~~ Multiply by the original matrix and check the result is I.
+
+## CP1.7
+What transformation does (1 0; 0 −1) represent? ~~ A reflection in the x-axis.
+What transformation does (−1 0; 0 1) represent? ~~ A reflection in the y-axis.
+What transformation does (0 1; 1 0) represent? ~~ A reflection in the line y = x.
+What matrix represents an anticlockwise rotation by θ about the origin? ~~ (cos θ −sin θ; sin θ cos θ).
+What matrix represents an enlargement by scale factor k about the origin? ~~ (k 0; 0 k).
+What matrix represents a stretch parallel to the x-axis, scale factor k? ~~ (k 0; 0 1).
+What does the matrix (1 k; 0 1) represent? ~~ A shear with the x-axis invariant: each point moves parallel to the x-axis by k times its y-coordinate.
+How do you find the image of a point under a transformation? ~~ Multiply the transformation matrix by the position vector of the point.
+How do you find the matrix of a transformation? ~~ Find the images of the unit vectors i and j (and k); these form the columns.
+What is the matrix for a combined transformation "A then B"? ~~ BA (the first transformation is on the right).
+What is an invariant point? ~~ A point that maps to itself under a transformation.
+What is an invariant line? ~~ A line where every point on it maps to a point on the same line.
+What is a line of invariant points? ~~ A line where every point maps to itself.
+How do you find invariant points of a matrix M? ~~ Solve M(x, y) = (x, y).
+How do you find invariant lines y = mx + c? ~~ Map a general point (x, mx + c) and require the image to satisfy the same equation, for all x.
+What is the area of an image under transformation M? ~~ |det M| × original area.
+What does a negative determinant tell you about a transformation? ~~ It reverses orientation (includes a reflection).
+What matrix represents a reflection in y = −x? ~~ (0 −1; −1 0).
+What matrix represents a rotation of 90° anticlockwise about the origin? ~~ (0 −1; 1 0).
+What matrix represents a rotation of 180° about the origin? ~~ (−1 0; 0 −1).
+What matrix represents a rotation about the z-axis in 3D? ~~ (cos θ −sin θ 0; sin θ cos θ 0; 0 0 1).
+What matrix represents a reflection in the plane z = 0? ~~ (1 0 0; 0 1 0; 0 0 −1).
+How do you reverse a transformation? ~~ Apply the inverse matrix.
+Why is a singular matrix transformation not reversible? ~~ It collapses the plane onto a line or point, so information is lost.
+What does a rotation matrix's determinant equal? ~~ 1.
+What does a reflection matrix's determinant equal? ~~ −1.
+Find the image of (2, 3) under (1 2; 0 1). ~~ (2 + 6, 3) = (8, 3).
+What does (2 0; 0 3) do to a unit square's area? ~~ It multiplies it by 6.
+What is the matrix for a rotation of θ clockwise? ~~ (cos θ sin θ; −sin θ cos θ).
+What is a shear's effect on area? ~~ None: a shear has determinant 1.
+
+## CP1.8
+What are the steps of proof by induction? ~~ Basis (show true for n = 1), assumption (assume true for n = k), inductive step (show true for n = k + 1), conclusion.
+What should the conclusion of an induction proof state? ~~ If true for n = k, it is true for n = k + 1; since it is true for n = 1, it is true for all positive integers n.
+Prove Σ r from 1 to n = n(n + 1)/2 by induction: what is the inductive step? ~~ Assume Σ to k = k(k + 1)/2. Then Σ to k + 1 = k(k + 1)/2 + (k + 1) = (k + 1)(k + 2)/2.
+How is induction used for divisibility? ~~ Show f(1) is divisible by m, then write f(k + 1) in terms of f(k) plus a multiple of m.
+Prove 6ⁿ − 1 is divisible by 5 for n ≥ 1. ~~ n = 1: 5. Assume 6ᵏ − 1 = 5m. Then 6^(k+1) − 1 = 6(6ᵏ − 1) + 5 = 30m + 5, divisible by 5.
+Prove 3^(2n) − 1 is divisible by 8. ~~ n = 1: 8. Assume 9ᵏ − 1 = 8m. Then 9^(k+1) − 1 = 9(9ᵏ − 1) + 8 = 72m + 8.
+How is induction used for matrices? ~~ Show the formula for Mⁿ holds for n = 1, then multiply Mᵏ by M to get the formula for M^(k+1).
+Prove by induction that (1 1; 0 1)ⁿ = (1 n; 0 1). ~~ n = 1 is true. Assume true for k; then (1 k; 0 1)(1 1; 0 1) = (1 k + 1; 0 1).
+How is induction used for recurrence relations? ~~ Show the closed form matches u₁, then use the recurrence with the assumption to show it holds for u_(k+1).
+Prove uₙ = 2ⁿ − 1 if u₁ = 1, u_(n+1) = 2uₙ + 1. ~~ n = 1: 1. Assume u_k = 2ᵏ − 1. Then u_(k+1) = 2(2ᵏ − 1) + 1 = 2^(k+1) − 1.
+How is induction used for derivatives? ~~ Show the formula for the n-th derivative holds for n = 1, then differentiate the k-th to get the (k + 1)-th.
+Prove that d^n/dx^n (x eˣ) = (x + n)eˣ. ~~ n = 1: (x + 1)eˣ. Assume true for k; differentiating (x + k)eˣ gives (x + k + 1)eˣ.
+Why is the basis step necessary? ~~ Without it, the chain of implications has no starting point.
+Why is the inductive step alone not enough? ~~ It only shows "if true for k then true for k + 1", not that it is ever true.
+Can induction start from a value other than 1? ~~ Yes; the basis can be any integer, and the result holds for all integers from there.
+What is a common error in induction proofs? ~~ Assuming the result for k + 1 instead of deriving it, or omitting the conclusion.
+Prove Σ r² = n(n + 1)(2n + 1)/6: what must be shown in the inductive step? ~~ k(k + 1)(2k + 1)/6 + (k + 1)² = (k + 1)(k + 2)(2k + 3)/6.
+Prove that 2ⁿ > n for all n ≥ 1. ~~ n = 1: 2 > 1. Assume 2ᵏ > k. Then 2^(k+1) = 2 × 2ᵏ > 2k ≥ k + 1 for k ≥ 1.
+How is induction used for inequalities? ~~ Use the assumption and then show the next case satisfies the inequality, often using extra algebraic steps.
+Prove n³ − n is divisible by 6 using induction. ~~ n = 1: 0. (k + 1)³ − (k + 1) = (k³ − k) + 3k(k + 1); k(k + 1) is even, so 3k(k + 1) is a multiple of 6.
+What is the key idea of induction? ~~ Like dominoes: if the first falls and each one knocks over the next, all fall.
+What is proof by exhaustion compared with induction? ~~ Exhaustion checks a finite number of cases; induction proves infinitely many.
+Can induction prove statements about all real numbers? ~~ No, only about integers (or well-ordered sets).
+Prove 7ⁿ − 3ⁿ is divisible by 4. ~~ n = 1: 4. 7^(k+1) − 3^(k+1) = 7(7ᵏ − 3ᵏ) + 4 × 3ᵏ, divisible by 4.
+What should you write for the assumption step? ~~ "Assume the statement is true for n = k", then write out the statement with k.
+How do you prove a sum formula for Σ r(r + 1)? ~~ Basis with n = 1, assume for k, add (k + 1)(k + 2), and factorise.
+Why must the final result be clearly shown to match the formula with k + 1? ~~ To demonstrate that the statement holds for n = k + 1.
+What does "for all n ∈ ℤ⁺" mean? ~~ For all positive integers n.
+Prove that 4ⁿ + 6n − 1 is divisible by 9. ~~ n = 1: 9. f(k + 1) − 4f(k) = 6(k + 1) − 1 − 24k + 4 = −18k + 9, a multiple of 9.
+Why might f(k + 1) − f(k) be useful in divisibility proofs? ~~ If it is divisible by m and f(k) is, then so is f(k + 1).
+
+## CP1.9
+What is the vector equation of a line? ~~ r = a + λb, where a is a point on the line and b is the direction vector.
+What is the Cartesian equation of a line? ~~ (x − a₁)/b₁ = (y − a₂)/b₂ = (z − a₃)/b₃.
+What is the scalar (dot) product? ~~ a·b = a₁b₁ + a₂b₂ + a₃b₃ = |a||b| cos θ.
+What does a·b = 0 mean? ~~ The vectors are perpendicular.
+How do you find the angle between two lines? ~~ Use the dot product of their direction vectors: cos θ = (b₁·b₂)/(|b₁||b₂|).
+What is the vector equation of a plane? ~~ r = a + λb + μc, or r·n = a·n.
+What is the Cartesian equation of a plane? ~~ n₁x + n₂y + n₃z = d, where n is the normal.
+What is a normal vector to a plane? ~~ A vector perpendicular to the plane.
+How do you find the angle between a line and a plane? ~~ Find the angle between the direction and the normal, then subtract from 90°.
+How do you find the angle between two planes? ~~ Find the angle between their normals.
+How do you find where a line meets a plane? ~~ Substitute the line's parametric form into the plane equation and solve for λ.
+How do you tell if two lines are skew? ~~ They are not parallel and don't intersect.
+How do you find the intersection of two lines? ~~ Set the vector equations equal and solve for the parameters, checking all three components.
+What is the vector (cross) product? ~~ a × b, a vector perpendicular to both a and b with magnitude |a||b| sin θ.
+How do you calculate a × b? ~~ (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁).
+How do you find the normal to a plane containing vectors b and c? ~~ Calculate b × c.
+What is the perpendicular distance from a point to a plane? ~~ |ax₀ + by₀ + cz₀ − d|/√(a² + b² + c²).
+How do you find the shortest distance between skew lines? ~~ |(a₂ − a₁)·n|/|n|, where n = b₁ × b₂.
+How do you find the shortest distance from a point to a line? ~~ Find the foot of the perpendicular (where (p − r)·b = 0), then find the distance.
+What is the area of a triangle using vectors? ~~ ½|AB × AC|.
+What is the volume of a parallelepiped? ~~ |a·(b × c)| (the scalar triple product).
+What is the line of intersection of two planes? ~~ It has direction n₁ × n₂; find a point by solving the equations with one variable fixed.
+How do you find the reflection of a point in a plane? ~~ Find the foot of the perpendicular, then go the same distance beyond it.
+When are two planes parallel? ~~ When their normals are parallel.
+What does r·n = d mean geometrically? ~~ All points whose component along n is d/|n| from the origin.
+Find the angle between (1, 2, 2) and (2, −1, 2). ~~ Dot product = 2 − 2 + 4 = 4; |a| = |b| = 3; cos θ = 4/9, θ ≈ 63.6°.
+How do you check a point lies on a line? ~~ Find a λ that satisfies all three components.
+What is a unit normal? ~~ A normal vector divided by its magnitude.
+Find the Cartesian equation of the plane with normal (2, −1, 3) through (1, 1, 1). ~~ 2x − y + 3z = 4.
+What is the scalar product of a vector with itself? ~~ a·a = |a|².
+
+## CP2.1
+What is Euler's formula? ~~ e^(iθ) = cos θ + i sin θ.
+What is the exponential form of a complex number? ~~ z = re^(iθ).
+What is e^(iπ)? ~~ −1.
+State de Moivre's theorem. ~~ [r(cos θ + i sin θ)]ⁿ = rⁿ(cos nθ + i sin nθ).
+Calculate (1 + i)⁸ using de Moivre. ~~ (√2)⁸(cos 2π + i sin 2π) = 16.
+How can de Moivre express cos 3θ in terms of cos θ? ~~ Expand (cos θ + i sin θ)³ and take the real part: cos 3θ = 4cos³θ − 3cos θ.
+Express sin 3θ in terms of sin θ. ~~ sin 3θ = 3 sin θ − 4 sin³θ.
+What is z + 1/z if z = e^(iθ)? ~~ 2 cos θ.
+What is z − 1/z if z = e^(iθ)? ~~ 2i sin θ.
+What is zⁿ + 1/zⁿ if z = e^(iθ)? ~~ 2 cos nθ.
+How do you express cos⁴θ in terms of multiple angles? ~~ Expand (z + 1/z)⁴ = 16cos⁴θ, giving cos⁴θ = (cos 4θ + 4cos 2θ + 3)/8.
+What are the n-th roots of unity? ~~ The solutions of zⁿ = 1: z = e^(2πki/n) for k = 0, 1, …, n − 1.
+What is the sum of the n-th roots of unity (n > 1)? ~~ 0.
+Find the cube roots of unity. ~~ 1, e^(2πi/3), e^(4πi/3), i.e. 1 and −½ ± (√3/2)i.
+If ω is a primitive cube root of unity, what is 1 + ω + ω²? ~~ 0.
+Solve z³ = 8i. ~~ 8i = 8e^(iπ/2), so z = 2e^(i(π/6 + 2πk/3)), k = 0, 1, 2: 2e^(iπ/6), 2e^(i5π/6), 2e^(−iπ/2).
+How do you solve zⁿ = w in general? ~~ Write w = re^(iθ); then z = r^(1/n) e^(i(θ + 2πk)/n), k = 0, …, n − 1.
+How are the n-th roots of a complex number arranged? ~~ Equally spaced around a circle of radius r^(1/n), separated by 2π/n.
+How do you sum a series like Σ cos kθ using complex numbers? ~~ Sum the geometric series Σ e^(ikθ) and take the real part.
+What is the conjugate of re^(iθ)? ~~ re^(−iθ).
+What is e^(iθ) × e^(iφ)? ~~ e^(i(θ + φ)).
+Express −2 in exponential form. ~~ 2e^(iπ).
+What is the modulus of e^(iθ)? ~~ 1.
+Use de Moivre to find (cos π/6 + i sin π/6)⁶. ~~ cos π + i sin π = −1.
+How can roots of unity solve (z + 1)⁵ = z⁵? ~~ Divide: ((z + 1)/z)⁵ = 1, so (z + 1)/z = ω, the fifth roots of unity (excluding 1), and solve for z.
+What does de Moivre's theorem say for negative n? ~~ It also holds: (cos θ + i sin θ)^(−n) = cos nθ − i sin nθ.
+How is cos θ written in exponential form? ~~ cos θ = (e^(iθ) + e^(−iθ))/2.
+How is sin θ written in exponential form? ~~ sin θ = (e^(iθ) − e^(−iθ))/(2i).
+What is the principal argument? ~~ The argument θ with −π < θ ≤ π.
+What geometric transformation does multiplying by e^(iπ/3) represent? ~~ A rotation by π/3 anticlockwise about the origin.
+
+## CP2.2
+What is a Maclaurin series? ~~ f(x) = f(0) + f'(0)x + f''(0)x²/2! + f'''(0)x³/3! + …
+What is the Maclaurin series for eˣ? ~~ 1 + x + x²/2! + x³/3! + …, valid for all x.
+What is the Maclaurin series for sin x? ~~ x − x³/3! + x⁵/5! − …, valid for all x.
+What is the Maclaurin series for cos x? ~~ 1 − x²/2! + x⁴/4! − …, valid for all x.
+What is the Maclaurin series for ln(1 + x)? ~~ x − x²/2 + x³/3 − …, valid for −1 < x ≤ 1.
+What is the Maclaurin series for (1 + x)ⁿ? ~~ 1 + nx + n(n − 1)x²/2! + …, valid for |x| < 1 (non-integer n).
+Find the Maclaurin series for e^(2x) up to x³. ~~ 1 + 2x + 2x² + (4/3)x³.
+Find the series for sin 3x up to x³. ~~ 3x − (27/6)x³ = 3x − 4.5x³.
+Find the series for eˣ sin x up to x³. ~~ (1 + x + x²/2)(x − x³/6) = x + x² + x³/3 + …
+Find the series for ln(1 − x) up to x³. ~~ −x − x²/2 − x³/3.
+What is the validity of ln(1 − x)'s series? ~~ −1 ≤ x < 1.
+How can a Maclaurin series approximate a value? ~~ Substitute a small x into the first few terms, e.g. e^0.1 ≈ 1 + 0.1 + 0.005.
+How can series find limits? ~~ Replace functions with their series and simplify, e.g. lim (sin x)/x = 1.
+Find lim (x→0) of (1 − cos x)/x². ~~ (x²/2 − …)/x² → 1/2.
+Find lim (x→0) of (eˣ − 1)/x. ~~ (x + x²/2 + …)/x → 1.
+What is a Taylor series? ~~ An expansion about x = a: f(x) = f(a) + f'(a)(x − a) + f''(a)(x − a)²/2! + …
+Why are Taylor series about x = a useful? ~~ They give good approximations near x = a, where the Maclaurin series might not converge or be accurate.
+Find the Taylor series of ln x about x = 1 up to (x − 1)². ~~ (x − 1) − (x − 1)²/2.
+Why does ln x not have a Maclaurin series? ~~ ln x and its derivatives aren't defined at x = 0.
+How do you find the series for cos²x? ~~ Use cos²x = (1 + cos 2x)/2 and the series for cos 2x: 1 − x² + x⁴/3 − …
+Find the series for √(1 + x) up to x². ~~ 1 + x/2 − x²/8.
+How do you differentiate a Maclaurin series? ~~ Differentiate term by term, e.g. the derivative of sin x's series gives cos x's series.
+How can you integrate using series? ~~ Integrate the series term by term, e.g. to approximate ∫ e^(−x²) dx.
+What is the series for arctan x? ~~ x − x³/3 + x⁵/5 − …, valid for |x| ≤ 1.
+What is the general term of the eˣ series? ~~ xʳ/r!.
+What is the general term of the sin x series? ~~ (−1)ʳ x^(2r+1)/(2r + 1)!.
+Why is only a finite number of terms used in practice? ~~ Higher terms become very small for small x, so a few terms give a good approximation.
+Find the series for tan x up to x³. ~~ x + x³/3.
+How do you find the series for e^(sin x)? ~~ Substitute the series for sin x into eᵘ = 1 + u + u²/2 + … and collect terms.
+Find the series for sinh x. ~~ x + x³/3! + x⁵/5! + …
+
+## CP2.3
+What is an improper integral? ~~ An integral where a limit is infinite or the integrand is undefined at a point in the range.
+How do you evaluate ∫₁^∞ 1/x² dx? ~~ lim (t→∞) [−1/x]₁ᵗ = 1.
+Does ∫₁^∞ 1/x dx converge? ~~ No; ln t → ∞, so it diverges.
+Evaluate ∫₀¹ 1/√x dx. ~~ [2√x]₀¹ = 2 (the integral converges even though 1/√x is undefined at 0).
+What is the mean value of f(x) over [a, b]? ~~ (1/(b − a)) ∫ₐᵇ f(x) dx.
+Find the mean value of x² over [0, 3]. ~~ (1/3) × 9 = 3.
+What is ∫ 1/√(1 − x²) dx? ~~ arcsin x + c.
+What is ∫ 1/(1 + x²) dx? ~~ arctan x + c.
+What is ∫ 1/√(a² − x²) dx? ~~ arcsin(x/a) + c.
+What is ∫ 1/(a² + x²) dx? ~~ (1/a) arctan(x/a) + c.
+What is the derivative of arcsin x? ~~ 1/√(1 − x²).
+What is the derivative of arccos x? ~~ −1/√(1 − x²).
+What is the derivative of arctan x? ~~ 1/(1 + x²).
+Integrate 1/(x² + 4). ~~ (1/2) arctan(x/2) + c.
+Integrate 1/√(9 − x²). ~~ arcsin(x/3) + c.
+How do you integrate 1/(x² + 2x + 5)? ~~ Complete the square: (x + 1)² + 4, giving (1/2) arctan((x + 1)/2) + c.
+How do partial fractions help integrate 1/((x + 1)(x² + 1))? ~~ Split into A/(x + 1) + (Bx + C)/(x² + 1), then integrate using ln and arctan.
+What is the partial fraction form for (px + q)/((x − a)(x² + b²))? ~~ A/(x − a) + (Bx + C)/(x² + b²).
+Integrate x/(x² + 1). ~~ ½ ln(x² + 1) + c.
+How do you integrate 1/√(x² + a²)? ~~ arsinh(x/a) + c, or ln(x + √(x² + a²)) + c.
+How do you integrate 1/√(x² − a²)? ~~ arcosh(x/a) + c, or ln(x + √(x² − a²)) + c.
+What is a reduction formula? ~~ A formula expressing an integral Iₙ in terms of Iₙ₋₁ or Iₙ₋₂, often found using integration by parts.
+Derive a reduction formula for Iₙ = ∫ xⁿ eˣ dx. ~~ By parts: Iₙ = xⁿeˣ − nIₙ₋₁.
+What is the arc length of a curve y = f(x)? ~~ s = ∫ √(1 + (dy/dx)²) dx.
+What is the arc length for a parametric curve? ~~ s = ∫ √((dx/dt)² + (dy/dt)²) dt.
+What is the surface area of revolution about the x-axis? ~~ S = 2π ∫ y √(1 + (dy/dx)²) dx.
+Why might an improper integral diverge? ~~ The area is infinite because the function doesn't decrease fast enough, or has an infinite discontinuity.
+How do you evaluate ∫₀^∞ e^(−x) dx? ~~ lim (t→∞) [−e^(−x)]₀ᵗ = 1.
+What is lim (x→∞) x e^(−x)? ~~ 0, because exponentials grow faster than polynomials.
+What substitution integrates 1/√(1 − x²) directly? ~~ x = sin θ.
+
+## CP2.4
+How do you find a volume of revolution for a parametric curve about the x-axis? ~~ V = π ∫ y² (dx/dt) dt, with limits in t.
+How do you find a volume about the y-axis for a parametric curve? ~~ V = π ∫ x² (dy/dt) dt.
+Find the volume when x = t², y = 2t for 0 ≤ t ≤ 1 is rotated about the x-axis. ~~ π ∫₀¹ 4t² × 2t dt = 8π × ¼ = 2π.
+Find the volume when x = cos t, y = sin t (0 ≤ t ≤ π) is rotated about the x-axis. ~~ A sphere of radius 1: 4π/3.
+Why must limits be converted to t for parametric volumes? ~~ The integral is with respect to t, so the x-limits must be replaced by corresponding t-values.
+How can you avoid sign errors in parametric volumes? ~~ Check whether x increases or decreases with t; swap limits if needed so the volume is positive.
+How can volumes of revolution model a wine glass? ~~ By rotating a curve describing the glass's profile, possibly in parts.
+How do you model a composite solid? ~~ Split it into sections, find the volume of each, and add.
+Find the volume when y = ln x from 1 to e is rotated about the y-axis. ~~ x = eʸ, x² = e^(2y): π ∫₀¹ e^(2y) dy = (π/2)(e² − 1).
+Find the volume when y = cosh x from 0 to 1 is rotated about the x-axis. ~~ π ∫₀¹ cosh²x dx = (π/2)(1 + sinh 2/2) = (π/4)(2 + sinh 2).
+How do you rotate around a line other than an axis, e.g. y = 1? ~~ Use π ∫ (y − 1)² dx, measuring the radius from the line.
+How can a volume of revolution be used to find the mass of an object? ~~ Multiply the volume by the density.
+What is the volume when the region between y = 2x and y = x² is rotated about the y-axis? ~~ x = y/2 and x = √y: π ∫₀⁴ (y − y²/4) dy = π(8 − 16/3) = 8π/3.
+How can you check a volume of revolution answer? ~~ Compare with a simple shape of similar size (cone, cylinder or sphere).
+What is the limitation of using a volume of revolution to model a bottle? ~~ Real bottles have thickness, necks and non-symmetrical features.
+Find the volume of y = √(sin x) from 0 to π rotated about the x-axis. ~~ π ∫₀^π sin x dx = 2π.
+What substitution helps find π ∫ y² dx if y = 1/√(1 + x²)? ~~ π ∫ 1/(1 + x²) dx = π arctan x.
+Find the volume when y = 1/√(1 + x²) from 0 to 1 is rotated about the x-axis. ~~ π arctan 1 = π²/4.
+Find the volume when y = sec x from 0 to π/4 is rotated about the x-axis. ~~ π ∫ sec²x dx = π tan(π/4) = π.
+How can volumes of revolution involve integration by parts? ~~ E.g. rotating y = √x eˣ requires ∫ x e^(2x) dx, which needs integration by parts.
+What is the volume of a torus (doughnut)? ~~ 2π²Rr², where R is the distance from the centre to the tube's centre and r is the tube's radius.
+How is the volume of a region rotated 360° different from rotating by 2π? ~~ They are the same: a full turn of 360° is 2π radians.
+Find the volume when x = t + 1, y = t² for 0 ≤ t ≤ 1 is rotated about the x-axis. ~~ π ∫₀¹ t⁴ × 1 dt = π/5.
+How do you find the volume when rotating about the y-axis a curve given as y = f(x)? ~~ Rearrange to x = g(y) and use π ∫ [g(y)]² dy.
+What is the volume of a hemispherical bowl of radius r? ~~ (2/3)πr³.
+What happens to the volume if the curve is scaled by factor k in both directions? ~~ The volume scales by k³.
+What happens to the volume if y is scaled by k? ~~ The volume scales by k².
+How is Pappus's theorem related to volumes of revolution? ~~ Volume = area × distance travelled by the centroid (2π × distance to the axis).
+How is a volume of revolution calculated numerically when the integral is hard? ~~ Use numerical methods such as the trapezium rule or Simpson's rule on π y².
+Why might a model use two different curves for the inside and outside of a cup? ~~ To account for the thickness of the cup's walls.
+
+## CP2.5
+What are polar coordinates? ~~ Coordinates (r, θ), where r is the distance from the pole and θ is the angle from the initial line.
+How do you convert polar to Cartesian? ~~ x = r cos θ, y = r sin θ.
+How do you convert Cartesian to polar? ~~ r² = x² + y², tan θ = y/x (taking care with the quadrant).
+What is the polar equation r = a? ~~ A circle with centre the pole and radius a.
+What is the polar equation θ = α? ~~ A half-line from the pole at angle α.
+What is the curve r = aθ? ~~ A spiral (Archimedean spiral).
+What is the curve r = a(1 + cos θ)? ~~ A cardioid.
+What is the curve r = a cos 2θ? ~~ A four-petalled rose curve.
+What is the curve r = 2a cos θ? ~~ A circle through the pole, with centre (a, 0) and radius a.
+What is the area enclosed by a polar curve? ~~ A = ½ ∫ r² dθ between the limits.
+Find the area enclosed by r = 2 for 0 ≤ θ ≤ 2π. ~~ ½ ∫ 4 dθ = 4π.
+Find the area of the cardioid r = 1 + cos θ. ~~ ½ ∫₀^(2π) (1 + cos θ)² dθ = 3π/2.
+How do you find where two polar curves intersect? ~~ Set the r-values equal and solve for θ, also checking the pole.
+How do you find a tangent parallel to the initial line? ~~ Set dy/dθ = 0, where y = r sin θ.
+How do you find a tangent perpendicular to the initial line? ~~ Set dx/dθ = 0, where x = r cos θ.
+Convert r = 4 sin θ to Cartesian form. ~~ r² = 4r sin θ, so x² + y² = 4y (a circle centred at (0, 2)).
+Convert x² + y² = 9 to polar form. ~~ r = 3.
+Convert y = x to polar form. ~~ θ = π/4 (and θ = −3π/4 for negative r).
+Why is r usually taken as non-negative? ~~ By convention r ≥ 0; values of θ that give negative r are excluded from the sketch.
+What does a cardioid look like? ~~ A heart shape with a cusp at the pole.
+How many petals does r = cos 3θ have? ~~ 3.
+How many petals does r = cos 2θ have? ~~ 4.
+What is the area of one petal of r = cos 2θ? ~~ ½ ∫ from −π/4 to π/4 of cos²2θ dθ = π/8.
+What identity helps integrate r² = cos²θ? ~~ cos²θ = (1 + cos 2θ)/2.
+How do you sketch a polar curve? ~~ Tabulate r for key θ values, note symmetry, and find where r = 0 and r is maximum.
+What does symmetry about the initial line mean for r = f(θ)? ~~ f(−θ) = f(θ), e.g. curves involving only cos θ.
+How do you find the area between two polar curves? ~~ Subtract the areas: ½ ∫ (r₁² − r₂²) dθ over the appropriate range.
+What is the maximum r of r = 3 + 2 cos θ? ~~ 5, when θ = 0.
+Does r = 3 + 2 cos θ pass through the pole? ~~ No, since r ≥ 1 for all θ (a dimpled limaçon).
+What is the pole? ~~ The origin in polar coordinates.
+
+## CP2.6
+What is the definition of sinh x? ~~ sinh x = (eˣ − e^(−x))/2.
+What is the definition of cosh x? ~~ cosh x = (eˣ + e^(−x))/2.
+What is the definition of tanh x? ~~ tanh x = sinh x/cosh x = (eˣ − e^(−x))/(eˣ + e^(−x)).
+What is the key hyperbolic identity? ~~ cosh²x − sinh²x = 1.
+What is the range of cosh x? ~~ cosh x ≥ 1.
+What is the range of tanh x? ~~ −1 < tanh x < 1.
+What does the graph of y = cosh x look like? ~~ A U-shape (catenary) with minimum (0, 1), symmetric about the y-axis.
+What does the graph of y = sinh x look like? ~~ An S-shape through the origin, increasing, and odd.
+What is the derivative of sinh x? ~~ cosh x.
+What is the derivative of cosh x? ~~ sinh x.
+What is the derivative of tanh x? ~~ sech²x.
+What is Osborn's rule? ~~ To convert a trig identity to a hyperbolic one, replace cos with cosh and sin with sinh, but change the sign of any product of two sines.
+What is sinh 2x? ~~ 2 sinh x cosh x.
+What is cosh 2x? ~~ cosh²x + sinh²x = 2cosh²x − 1 = 1 + 2sinh²x.
+What is arsinh x in logarithmic form? ~~ ln(x + √(x² + 1)).
+What is arcosh x in logarithmic form? ~~ ln(x + √(x² − 1)), for x ≥ 1.
+What is artanh x in logarithmic form? ~~ ½ ln((1 + x)/(1 − x)), for |x| < 1.
+What is the derivative of arsinh x? ~~ 1/√(x² + 1).
+What is the derivative of arcosh x? ~~ 1/√(x² − 1).
+What is the derivative of artanh x? ~~ 1/(1 − x²).
+Solve cosh x = 2. ~~ x = ±ln(2 + √3).
+Solve sinh x = 3/4. ~~ x = ln(3/4 + 5/4) = ln 2.
+Solve 3 sinh x + cosh x = 3. ~~ In exponentials: 3(eˣ − e^(−x))/2 + (eˣ + e^(−x))/2 = 3 → 2eˣ − e^(−x) = 3 → 2e^(2x) − 3eˣ − 1 = 0, eˣ = (3 + √17)/4, x = ln((3 + √17)/4).
+What is ∫ sinh x dx? ~~ cosh x + c.
+What is ∫ cosh x dx? ~~ sinh x + c.
+What is ∫ tanh x dx? ~~ ln cosh x + c.
+What is a catenary? ~~ The shape of a hanging chain, described by y = a cosh(x/a).
+Is cosh x even or odd? ~~ Even.
+Is sinh x even or odd? ~~ Odd.
+What is sech x? ~~ 1/cosh x.
+
+## CP2.7
+What is an integrating factor? ~~ For dy/dx + P(x)y = Q(x), the integrating factor is e^(∫P dx).
+How do you solve dy/dx + P(x)y = Q(x)? ~~ Multiply by the integrating factor I: d(Iy)/dx = IQ, then integrate.
+Solve dy/dx + 2y = e^(−x). ~~ IF = e^(2x): (ye^(2x))' = eˣ, so y = e^(−x) + Ce^(−2x).
+Solve x dy/dx + y = x². ~~ (xy)' = x², so xy = x³/3 + C, y = x²/3 + C/x.
+What is a second-order linear differential equation with constant coefficients? ~~ a d²y/dx² + b dy/dx + cy = f(x).
+What is the auxiliary equation? ~~ am² + bm + c = 0.
+What is the complementary function if the auxiliary equation has distinct real roots α, β? ~~ y = Ae^(αx) + Be^(βx).
+What is the complementary function for a repeated root α? ~~ y = (A + Bx)e^(αx).
+What is the complementary function for complex roots p ± qi? ~~ y = e^(px)(A cos qx + B sin qx).
+What is the general solution of a non-homogeneous second-order ODE? ~~ Complementary function + particular integral.
+What is a particular integral? ~~ Any solution of the full equation, found by trying a function similar to f(x).
+What trial function is used for f(x) = ke^(λx)? ~~ Ae^(λx) (or Axe^(λx) if λ is a root of the auxiliary equation).
+What trial function is used for f(x) = polynomial of degree n? ~~ A general polynomial of degree n.
+What trial function is used for f(x) = k cos ωx? ~~ A cos ωx + B sin ωx.
+What happens if the trial function is part of the complementary function? ~~ Multiply the trial by x (or x² for a repeated root).
+Solve y'' − 5y' + 6y = 0. ~~ m² − 5m + 6 = 0, m = 2, 3: y = Ae^(2x) + Be^(3x).
+Solve y'' + 4y = 0. ~~ m = ±2i: y = A cos 2x + B sin 2x.
+Solve y'' + 2y' + y = 0. ~~ m = −1 (repeated): y = (A + Bx)e^(−x).
+Find a particular integral for y'' − y = 2x. ~~ Try y = ax + b: −ax − b = 2x, so y = −2x.
+How are boundary conditions used? ~~ They determine the constants A and B, giving a particular solution.
+What is a homogeneous equation? ~~ One where f(x) = 0.
+How do you solve simultaneous first-order DEs such as dx/dt = ax + by, dy/dt = cx + dy? ~~ Differentiate one equation and substitute to get a second-order equation in one variable.
+What does separating variables require? ~~ The equation can be written as g(y) dy = f(x) dx.
+Solve dy/dx = y tan x. ~~ ln|y| = −ln|cos x| + c, so y = A sec x.
+Solve y'' − 4y' + 13y = 0. ~~ m = 2 ± 3i: y = e^(2x)(A cos 3x + B sin 3x).
+What trial is used for y'' + y = sin x? ~~ Since sin x is in the CF, try x(A cos x + B sin x).
+What substitution can reduce a DE to separable form? ~~ E.g. y = vx for homogeneous equations dy/dx = f(y/x).
+What is the order of a differential equation? ~~ The highest derivative that appears.
+How do you check a DE solution? ~~ Differentiate and substitute back into the equation.
+What is a first-order linear DE? ~~ One of the form dy/dx + P(x)y = Q(x).
+
+## CP2.8
+What is simple harmonic motion as a differential equation? ~~ d²x/dt² = −ω²x.
+What is the general solution of d²x/dt² = −ω²x? ~~ x = A cos ωt + B sin ωt.
+What is damped harmonic motion? ~~ d²x/dt² + k dx/dt + ω²x = 0, where the damping term reduces the amplitude.
+What is heavy damping? ~~ The auxiliary equation has two distinct real (negative) roots; the system returns to equilibrium slowly without oscillating.
+What is critical damping? ~~ The auxiliary equation has a repeated root; the system returns to equilibrium fastest without oscillating.
+What is light damping? ~~ The auxiliary equation has complex roots; the system oscillates with decreasing amplitude.
+What is forced oscillation? ~~ An oscillating system with an external driving force: x'' + kx' + ω²x = f(t).
+What is resonance in DEs? ~~ When the driving frequency equals the natural frequency, amplitude grows (the particular integral includes t).
+How is population growth with limits modelled? ~~ dP/dt = kP(1 − P/K), the logistic equation.
+How is predator–prey interaction modelled? ~~ Using coupled first-order differential equations for each population.
+What is the general strategy for coupled DEs? ~~ Eliminate one variable by differentiating to give a second-order DE in the other.
+What does the steady state of a model mean? ~~ The long-term behaviour, e.g. when derivatives are zero.
+What is the model for Newton's law of cooling? ~~ dT/dt = −k(T − T_s).
+How is a mixing problem modelled? ~~ Rate of change of amount = rate in − rate out, where rate out depends on the concentration.
+Set up a DE: a tank contains 100 L of water with 10 kg salt; brine at 0.5 kg/L enters at 2 L/min and mixture leaves at 2 L/min. ~~ dS/dt = 1 − 2S/100 = 1 − S/50.
+What is the solution of dS/dt = 1 − S/50 with S(0) = 10? ~~ S = 50 − 40e^(−t/50).
+How is air resistance included in a motion model? ~~ Add a resistive term such as −kv or −kv² to the force equation.
+Solve m dv/dt = mg − kv for v with v(0) = 0. ~~ v = (mg/k)(1 − e^(−kt/m)).
+What is the terminal velocity in m dv/dt = mg − kv? ~~ mg/k.
+How can you evaluate a DE model? ~~ Compare predictions with data, check long-term behaviour, and assess assumptions.
+What is the period of SHM x'' = −ω²x? ~~ 2π/ω.
+How do you find the amplitude of x = 3 cos 2t + 4 sin 2t? ~~ √(9 + 16) = 5.
+What does a negative coefficient in the auxiliary roots imply for long-term behaviour? ~~ Solutions decay to zero (the system is stable).
+What does a positive real root imply for long-term behaviour? ~~ Solutions grow without limit (the system is unstable).
+How is an electrical circuit modelled by a DE? ~~ E.g. L d²q/dt² + R dq/dt + q/C = E(t), analogous to damped oscillation.
+What is a limitation of the logistic model? ~~ It assumes a constant carrying capacity and growth rate.
+In a predator–prey model, what does x' = ax − bxy represent? ~~ Prey grow at rate a and are eaten at a rate proportional to encounters xy.
+How do you interpret the constants in a model? ~~ Relate each to a physical quantity or rate, e.g. k as a damping coefficient.
+What does it mean if a model gives negative populations? ~~ The model has broken down; it is only valid over a limited range.
+How can initial conditions be used in modelling DEs? ~~ They determine the constants and give the specific solution for the situation.

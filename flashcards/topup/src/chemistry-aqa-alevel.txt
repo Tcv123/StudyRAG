@@ -1,0 +1,102 @@
+deck: Chemistry|AQA|alevel
+
+## P1
+What is the relative charge and relative mass of a proton, neutron and electron? ~~ Proton +1, mass 1; neutron 0, mass 1; electron −1, mass about 1/1840.
+Why is there a decrease in first ionisation energy from Mg to Al? ~~ Al's outer electron is in a 3p sub-shell, which is higher in energy and slightly more shielded than Mg's 3s, so it is easier to remove.
+Why do successive ionisation energies always increase? ~~ Each electron is removed from an increasingly positive ion, so there is less repulsion and the remaining electrons are held more strongly.
+State Avogadro's constant and how to calculate moles from mass. ~~ N_A = 6.022 × 10^23 mol^-1. Moles = mass (g) ÷ M_r.
+How is concentration calculated from moles and volume? ~~ Concentration (mol dm^-3) = moles ÷ volume (dm^3). Divide cm^3 by 1000 to get dm^3.
+Define percentage yield. ~~ (Actual yield ÷ theoretical yield) × 100%.
+What is ionic bonding? ~~ Electrostatic attraction between oppositely charged ions in a giant lattice.
+What is a dative (coordinate) covalent bond? ~~ A covalent bond in which both shared electrons come from the same atom, e.g. in NH4+ or H3O+.
+What is metallic bonding? ~~ Electrostatic attraction between a lattice of positive metal ions and a sea of delocalised electrons.
+State the shapes and bond angles for 2, 3, 4, 5 and 6 electron pairs (all bonding). ~~ Linear 180°; trigonal planar 120°; tetrahedral 109.5°; trigonal bipyramidal 90° and 120°; octahedral 90°.
+Why is the bond angle in H2O (104.5°) smaller than in CH4? ~~ H2O has two lone pairs, which repel more strongly than bonding pairs, compressing the H–O–H angle.
+Why is graphite a good conductor but diamond is not? ~~ In graphite each C forms 3 bonds, leaving one delocalised electron per atom that can move between layers. In diamond all 4 electrons are used in bonding.
+Define standard enthalpy of formation. ~~ The enthalpy change when 1 mole of a compound is formed from its elements in their standard states under standard conditions (100 kPa, 298 K).
+Define activation energy. ~~ The minimum energy that colliding particles need for a reaction to occur.
+Why does increasing concentration increase rate? ~~ There are more particles per unit volume, so collisions happen more often and there are more successful collisions per second.
+
+## P2
+Define the half-life of a first-order reaction and state a key property. ~~ The time taken for the concentration of a reactant to halve; for a first-order reaction it is constant.
+How is the order of reaction found from a concentration–time graph? ~~ Zero order: straight line. First order: constant half-life. Second order: the half-life increases as concentration falls.
+What does a rate–concentration graph look like for zero, first and second order? ~~ Zero: horizontal line. First: straight line through the origin. Second: upward curve (parabola).
+How is the rate-determining step linked to the rate equation? ~~ Species in the rate equation (with their orders) appear in the rate-determining step; species not in the rate equation react after it.
+How is activation energy found graphically from the Arrhenius equation? ~~ Plot ln k against 1/T: the gradient is −Ea/R.
+Define mole fraction and partial pressure. ~~ Mole fraction = moles of gas ÷ total moles of gas. Partial pressure = mole fraction × total pressure.
+How does increasing total pressure affect Kp? ~~ It has no effect on Kp; only temperature changes Kp. The equilibrium position may shift, but Kp stays the same.
+Define standard enthalpy of hydration. ~~ The enthalpy change when 1 mole of gaseous ions dissolves in water to form 1 mole of aqueous ions.
+How is enthalpy of solution related to lattice and hydration enthalpies? ~~ ΔH_solution = −ΔH_lattice formation + ΣΔH_hydration (equivalently lattice dissociation + hydration).
+At what temperature does a reaction become feasible? ~~ When ΔG = 0: T = ΔH/ΔS (with ΔS in kJ K^-1 mol^-1 to match ΔH).
+What is the ionic product of water, Kw? ~~ Kw = [H+][OH−] = 1.00 × 10^-14 mol^2 dm^-6 at 298 K.
+Calculate the pH of 0.050 mol dm^-3 NaOH at 298 K. ~~ [H+] = 1.0 × 10^-14/0.050 = 2.0 × 10^-13, so pH = 12.7.
+Describe the standard hydrogen electrode. ~~ Hydrogen gas at 100 kPa bubbled over a platinum electrode in 1.00 mol dm^-3 H+ at 298 K. Its E° is defined as 0.00 V.
+Give the half-equations for the lithium-ion cell in outline. ~~ Positive electrode: Li+ + CoO2 + e− → Li+[CoO2]−. Negative electrode: Li → Li+ + e−. The reactions are reversed on recharging.
+
+## I1
+Why does first ionisation energy generally increase across Period 3? ~~ Nuclear charge increases while shielding stays similar, so outer electrons are held more strongly.
+Why does silicon have a very high melting point? ~~ It has a giant covalent (macromolecular) structure, so many strong covalent bonds must be broken.
+Why does sulfur (S8) have a higher melting point than phosphorus (P4)? ~~ S8 molecules are larger with more electrons, so van der Waals forces between them are stronger.
+Why does first ionisation energy decrease down Group 2? ~~ The outer electrons are further from the nucleus and more shielded, so less energy is needed to remove them.
+Give the equation for calcium reacting with water. ~~ Ca + 2H2O → Ca(OH)2 + H2.
+Give a use of magnesium hydroxide and calcium hydroxide. ~~ Mg(OH)2: an antacid to neutralise excess stomach acid. Ca(OH)2: slaked lime, used to neutralise acidic soils.
+Why is barium sulfate used in barium meals despite barium ions being toxic? ~~ BaSO4 is insoluble, so it isn't absorbed into the blood; it absorbs X-rays, outlining the gut.
+How is titanium extracted using magnesium? ~~ TiO2 is converted to TiCl4, which is reduced by Mg at high temperature in an argon atmosphere: TiCl4 + 2Mg → Ti + 2MgCl2.
+How is CaO used to remove SO2 from flue gases? ~~ CaO (or CaCO3) reacts with SO2 to form calcium sulfite: CaO + SO2 → CaSO3.
+Why does electronegativity decrease down Group 7? ~~ The atomic radius increases and shielding increases, so the attraction of the nucleus for bonding electrons decreases.
+Why do boiling points increase down Group 7? ~~ Molecules get larger with more electrons, so van der Waals forces are stronger.
+Give the products of NaBr with concentrated sulfuric acid. ~~ HBr (steamy fumes), then Br2 (brown fumes) and SO2, as Br− reduces sulfuric acid from +6 to +4.
+Give the equation for chlorine reacting with water. ~~ Cl2 + H2O ⇌ HCl + HClO (a disproportionation; in sunlight 2Cl2 + 2H2O → 4HCl + O2).
+What is the test for hydroxide ions? ~~ Add a few drops of red litmus or universal indicator; it turns blue or purple. Warming with NH4+ also gives ammonia gas.
+How are carbonate ions tested for? ~~ Add dilute acid; effervescence gives CO2, which turns limewater cloudy.
+
+## I2
+Give the equations for Na2O and MgO with water and the pH values. ~~ Na2O + H2O → 2NaOH (pH about 14). MgO + H2O → Mg(OH)2 (pH about 9, as it is only slightly soluble).
+Give the equation for P4O10 reacting with water. ~~ P4O10 + 6H2O → 4H3PO4 (pH about 0).
+Why is Al2O3 described as amphoteric? ~~ It reacts with both acids and bases: with HCl to form AlCl3, and with NaOH to form Na[Al(OH)4].
+Give the equation for SiO2 reacting with NaOH. ~~ SiO2 + 2NaOH → Na2SiO3 + H2O (SiO2 is acidic but insoluble in water).
+Give four characteristic properties of transition metals. ~~ Variable oxidation states, coloured ions, catalytic activity, and the ability to form complex ions.
+What is the shape of [Ag(NH3)2]+ and give its use? ~~ Linear (180°). It is Tollens' reagent, used to test for aldehydes.
+What is the geometry of cisplatin? ~~ Square planar, with two Cl− and two NH3 ligands cis to each other.
+How is the colour of a complex ion determined? ~~ Ligands split the d orbitals; electrons absorb light of energy ΔE = hν to move between them, and the complementary colour is seen.
+State three factors that change the colour of a transition metal complex. ~~ Changing the oxidation state, the ligand, or the coordination number (and so the shape).
+What is a homogeneous catalyst and give an example? ~~ A catalyst in the same phase as the reactants, e.g. Fe2+ in the reaction between I− and S2O8^2−.
+How does Fe2+ catalyse the reaction of I− and S2O8^2−? ~~ Fe2+ reduces S2O8^2− to SO4^2−, forming Fe3+; Fe3+ then oxidises I− to I2, regenerating Fe2+. Both steps involve oppositely charged ions.
+What is autocatalysis? Give an example. ~~ A reaction catalysed by one of its products, e.g. Mn2+ catalysing the reaction of MnO4− with C2O4^2−.
+Give the colour and formula of the precipitate when NaOH is added to Fe2+(aq) and Fe3+(aq). ~~ Fe(OH)2(H2O)4: green precipitate (darkens on standing). Fe(OH)3(H2O)3: brown/orange precipitate.
+What happens when Na2CO3 is added to [Al(H2O)6]3+? ~~ A white precipitate of Al(OH)3(H2O)3 forms with effervescence (CO2), because the 3+ ion is acidic enough to release CO2.
+How is manganate(VII) titration used to find the concentration of Fe2+? ~~ Titrate acidified Fe2+ with KMnO4 (self-indicating: the endpoint is the first permanent pink). MnO4− + 8H+ + 5Fe2+ → Mn2+ + 4H2O + 5Fe3+.
+
+## O1
+What is a functional group? ~~ An atom or group of atoms that gives a compound its characteristic chemical properties.
+What is chain isomerism? ~~ Isomers with the same molecular formula but different carbon skeletons (branching).
+What is position isomerism? ~~ Isomers with the same carbon skeleton and functional group, but with the functional group in a different position.
+What is fractional distillation of crude oil? ~~ Separating crude oil into fractions by boiling point in a column that is hotter at the bottom and cooler at the top.
+Compare thermal and catalytic cracking. ~~ Thermal: high temperature and pressure, producing alkenes. Catalytic: zeolite catalyst at a slight pressure, producing branched alkanes, cycloalkanes and aromatics for fuels.
+What pollutants are formed from burning alkanes, and how are they removed? ~~ CO, NOx and unburnt hydrocarbons, removed by a catalytic converter (Pt/Rh). SO2 is removed by flue gas desulfurisation.
+Why do CFCs damage the ozone layer? ~~ UV light breaks C–Cl bonds, forming Cl radicals, which catalyse the breakdown of O3: Cl• + O3 → ClO• + O2; ClO• + O3 → 2O2 + Cl•.
+Give the reagent and conditions to form a nitrile from a halogenoalkane. ~~ KCN in ethanol and water, heated under reflux (nucleophilic substitution, adding a carbon).
+Give the reagent and conditions to form an amine from a halogenoalkane. ~~ Excess ethanolic ammonia, heated under pressure (nucleophilic substitution).
+Describe the mechanism of electrophilic addition of Br2 to ethene. ~~ The π bond attacks Br (the Br–Br bond is polarised); a carbocation and Br− form; Br− attacks the carbocation to give 1,2-dibromoethane.
+How is ethanol produced industrially by hydration of ethene? ~~ Ethene and steam over a phosphoric acid catalyst at about 300 °C and 60–70 atm.
+What are the advantages and disadvantages of producing ethanol by fermentation? ~~ Advantages: renewable, low energy, can be called carbon neutral. Disadvantages: slow, batch process, impure product, uses land.
+How is an alcohol dehydrated to an alkene? ~~ Heat with concentrated phosphoric or sulfuric acid catalyst (elimination).
+What are the fingerprint region and its use in IR? ~~ Below 1500 cm^-1; its complex pattern is unique to each molecule, so comparing with a database identifies it.
+What is high-resolution mass spectrometry used for? ~~ Measuring M_r to four or more decimal places to tell apart molecules with the same nominal mass but different molecular formulae.
+
+## O2
+What is optical isomerism and what feature causes it? ~~ Stereoisomers that are non-superimposable mirror images, caused by a chiral carbon with four different groups.
+What is a racemic mixture and why is it optically inactive? ~~ A 50:50 mixture of two enantiomers. Their opposite rotations of plane-polarised light cancel.
+Why does nucleophilic addition of HCN to an aldehyde give a racemic mixture? ~~ The C=O is planar, so CN− can attack from either side with equal probability.
+How is an acyl chloride reacted with ammonia and what is formed? ~~ Nucleophilic addition–elimination at room temperature gives an amide and HCl (which reacts with more NH3 to form NH4Cl).
+Why are acid anhydrides preferred to acyl chlorides in the manufacture of aspirin? ~~ They are cheaper, less corrosive, react less violently with water, and don't produce corrosive HCl.
+Give the conditions for acid and base hydrolysis of esters. ~~ Acid: heat under reflux with dilute acid (reversible). Base: heat under reflux with NaOH, giving a carboxylate salt and alcohol (goes to completion).
+How is biodiesel made? ~~ Transesterification of vegetable oils (triglycerides) with methanol, using a KOH catalyst.
+Describe the mechanism for nitration of benzene. ~~ NO2+ (from conc. HNO3 and H2SO4 at 50 °C) is attacked by the benzene π system, giving an intermediate that loses H+ to restore aromaticity.
+How is an amine formed by reducing a nitrile? ~~ With LiAlH4 in dry ether, or with H2 and a Ni catalyst: RCN + 4[H] → RCH2NH2.
+Why are quaternary ammonium salts useful? ~~ As cationic surfactants in fabric softeners and hair conditioners.
+What is the structure of a condensation polyamide such as nylon-6,6? ~~ Formed from a diamine and a dicarboxylic acid (or diacyl chloride), with amide links (–CONH–) and water (or HCl) lost.
+Why is Kevlar so strong? ~~ Its rigid, linear chains of benzene rings are held together by many hydrogen bonds between chains.
+Describe the primary, secondary and tertiary structure of proteins. ~~ Primary: sequence of amino acids. Secondary: α-helix or β-pleated sheet held by H bonds. Tertiary: 3D folding held by H bonds, ionic bonds and disulfide bridges.
+How does 13C NMR differ from 1H NMR? ~~ 13C NMR gives one peak per carbon environment, with no splitting, over a range of about 0–220 ppm.
+Describe column chromatography. ~~ A column is packed with a stationary phase (silica or alumina); a solvent (mobile phase) carries the mixture through, and components separate by relative affinity.

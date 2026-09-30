@@ -1,0 +1,102 @@
+deck: Biology|OCR A|alevel
+
+## M1
+What is a hypothesis? ~~ A testable prediction or explanation, often stating the expected effect of the independent variable on the dependent variable.
+What is a null hypothesis? ~~ A statement that there is no significant difference or relationship; statistical tests determine whether it can be rejected.
+What does a p-value of 0.05 mean? ~~ There is a 5% probability that the result is due to chance. If the test statistic exceeds the critical value at p = 0.05, the null hypothesis is rejected.
+How are degrees of freedom calculated for a chi-squared test? ~~ Number of categories − 1.
+When is a Student's t-test used? ~~ To compare the means of two sets of continuous data that are normally distributed.
+When is Spearman's rank correlation used? ~~ To test for a correlation between two variables with at least 5 (ideally 10+) pairs of data.
+What does a correlation coefficient of −1, 0 and +1 mean? ~~ −1: perfect negative correlation. 0: no correlation. +1: perfect positive correlation.
+Why doesn't correlation prove causation? ~~ Another variable could cause both changes, or the link may be coincidental; a controlled experiment is needed to show cause.
+What is the purpose of a control experiment? ~~ It shows that the results are due to the independent variable and not other factors, e.g. using boiled enzyme.
+How is percentage error calculated for an instrument? ~~ (Uncertainty ÷ measured value) × 100.
+How is a biological drawing made correctly? ~~ Sharp pencil, clear continuous lines, no shading, labels with ruled lines, a title and magnification, and drawing only what is seen.
+What is a stage micrometer used for? ~~ Calibrating the eyepiece graticule at each magnification, so cells can be measured accurately.
+What is the formula for magnification? ~~ Magnification = image size ÷ actual size.
+What is a pilot study? ~~ A small preliminary investigation to test methods, find suitable ranges and identify problems before the main experiment.
+How can the reliability of results be improved? ~~ Repeat readings, calculate means, identify and exclude anomalies, and use more precise equipment.
+
+## M2
+What is the role of the cytoskeleton? ~~ A network of protein fibres (microfilaments and microtubules) that supports the cell, moves organelles and vesicles, and allows cell movement.
+What is the role of centrioles? ~~ Hollow cylinders of microtubules involved in forming the spindle during cell division (in animal cells).
+What is the role of lysosomes? ~~ Vesicles containing hydrolytic enzymes that break down waste, worn-out organelles and pathogens.
+What is the role of the vacuole in plant cells? ~~ It stores cell sap, maintains turgor pressure to support the cell, and is surrounded by the tonoplast.
+What is the Benedict's test for reducing sugars? ~~ Heat with Benedict's reagent; the colour changes from blue to green, yellow, orange or brick-red depending on concentration.
+What is the biuret test for proteins? ~~ Add biuret reagent; the colour changes from blue to lilac/purple if protein is present.
+What is the emulsion test for lipids? ~~ Shake with ethanol, then add water; a white emulsion forms if lipid is present.
+What is the role of inorganic ions such as Ca2+ and NH4+? ~~ Ca2+: nerve transmission, muscle contraction, bone. NH4+: nitrogen for amino acid production.
+What is a cofactor? ~~ A non-protein substance needed for an enzyme to work, e.g. Cl− for amylase. A coenzyme is an organic cofactor (e.g. NAD).
+What is a prosthetic group? ~~ A cofactor permanently bound to an enzyme, e.g. Zn2+ in carbonic anhydrase.
+What is the effect of enzyme concentration on the rate of reaction? ~~ Rate increases in proportion to enzyme concentration, provided substrate is in excess.
+What is exocytosis? ~~ Vesicles fuse with the cell surface membrane to release substances out of the cell, requiring ATP.
+What is endocytosis? ~~ The membrane surrounds a substance and pinches off to form a vesicle inside the cell, requiring ATP.
+What are the roles of the cell surface membrane? ~~ It controls what enters and leaves, and is involved in cell signalling, recognition and attachment.
+How are cells organised into tissues, organs and systems? ~~ Similar cells form tissues, tissues form organs, and organs work together as organ systems.
+
+## M3
+What is the role of the intercostal muscles and diaphragm in breathing? ~~ Inhalation: external intercostals and the diaphragm contract, increasing thorax volume. Exhalation: they relax (forced exhalation uses internal intercostals).
+What is vital capacity? ~~ The maximum volume of air that can be breathed out after taking the deepest possible breath.
+How is a spirometer used? ~~ A person breathes in and out of an oxygen-filled chamber; the trace shows tidal volume, vital capacity, breathing rate and oxygen uptake.
+What is an open circulatory system? ~~ Blood is pumped into a body cavity and bathes the organs directly, e.g. in insects.
+What is a closed double circulatory system? ~~ Blood is contained in vessels and passes through the heart twice per circuit (pulmonary and systemic), e.g. in mammals.
+What is the role of the chordae tendineae? ~~ They attach the AV valves to the ventricle walls and prevent the valves inverting when the ventricles contract.
+What does an ECG show? ~~ The heart's electrical activity: P wave (atrial depolarisation), QRS complex (ventricular depolarisation) and T wave (ventricular repolarisation).
+What is tachycardia and bradycardia? ~~ Tachycardia: a resting heart rate over 100 bpm. Bradycardia: a resting heart rate under 60 bpm.
+What is the chloride shift? ~~ HCO3− diffuses out of red blood cells into the plasma, and Cl− moves in to maintain electrical balance.
+What is the role of carbonic anhydrase? ~~ An enzyme in red blood cells that catalyses CO2 + H2O → H2CO3, which dissociates into H+ and HCO3−.
+What is the apoplast pathway? ~~ Water moves through cell walls and the spaces between cells until blocked by the Casparian strip.
+What is the symplast pathway? ~~ Water moves through the cytoplasm of cells, via plasmodesmata.
+What is the role of the Casparian strip? ~~ A waterproof band of suberin in the endodermis that forces water into the symplast pathway, controlling what enters the xylem.
+What are the adaptations of hydrophytes? ~~ Stomata on the upper surface, air spaces (aerenchyma) for buoyancy, thin cuticle and reduced xylem.
+How do environmental factors affect the rate of transpiration? ~~ It increases with light intensity, temperature and air movement, and decreases with humidity.
+
+## M4
+What is a communicable disease? ~~ A disease caused by a pathogen that can be passed from one organism to another.
+Give an example of a bacterial disease in plants and animals. ~~ Plants: ring rot (potatoes). Animals: tuberculosis and bacterial meningitis.
+Give examples of viral diseases in plants and animals. ~~ Plants: tobacco mosaic virus. Animals: HIV/AIDS and influenza.
+Give examples of protoctist and fungal diseases. ~~ Protoctist: malaria, potato blight. Fungal: athlete's foot, black sigatoka (bananas), ringworm.
+What is the role of callose in plant defence? ~~ A polysaccharide deposited in cell walls and sieve plates to block the spread of pathogens.
+What is an opsonin? ~~ A molecule (e.g. an antibody) that binds to a pathogen and makes it easier for phagocytes to engulf.
+What is an autoimmune disease? Give an example. ~~ The immune system attacks the body's own cells, e.g. rheumatoid arthritis, type 1 diabetes and lupus.
+What are the sources of new medicines? ~~ Natural sources (plants, microorganisms, e.g. penicillin), synthetic chemistry, and personalised medicine from genomics.
+What are the three types of variation? ~~ Genetic (alleles), environmental and a combination of both. Variation can be continuous or discontinuous.
+What is a phylogenetic tree? ~~ A diagram showing the evolutionary relationships between organisms and their common ancestors.
+What evidence is used to classify organisms today? ~~ DNA and protein sequences, embryology and anatomy, and the fossil record.
+Give two examples of evolution through natural selection. ~~ Antibiotic resistance in bacteria and pesticide resistance in insects (also peppered moths).
+What is the evidence for evolution? ~~ Fossils, comparative anatomy (homologous structures) and comparative biochemistry (DNA and protein sequences).
+How does human activity affect biodiversity? ~~ Habitat destruction, pollution, overexploitation, climate change and introducing non-native species.
+What are the reasons for maintaining biodiversity? ~~ Ecological (stability), economic (medicines, food, tourism) and aesthetic or ethical reasons.
+
+## M5
+What are the roles of the endocrine glands? ~~ They secrete hormones directly into the blood to act on target cells with complementary receptors.
+What is the structure of the adrenal gland? ~~ The cortex secretes steroid hormones (e.g. cortisol, aldosterone); the medulla secretes adrenaline and noradrenaline.
+How does adrenaline act on cells? ~~ It binds to receptors, activating adenylyl cyclase to make cyclic AMP (second messenger), which activates enzymes.
+How do the islets of Langerhans control blood glucose? ~~ α cells secrete glucagon (raising glucose); β cells secrete insulin (lowering glucose).
+How is insulin secretion triggered? ~~ High glucose enters β cells and increases ATP, which closes K+ channels, depolarising the cell. Ca2+ enters, triggering exocytosis of insulin.
+How do ectotherms control body temperature? ~~ By behaviour, e.g. basking in the sun, seeking shade, and changing body orientation.
+What is the role of the liver in homeostasis? ~~ It stores glycogen, deaminates excess amino acids (forming urea), detoxifies alcohol and drugs, and produces bile.
+What is kidney failure and how is it treated? ~~ The kidneys can't filter the blood effectively. Treatment is dialysis or a kidney transplant.
+What does a urine test for pregnancy detect? ~~ hCG hormone, using monoclonal antibodies.
+What are the plant responses to abiotic stress? ~~ Leaf loss (abscission) in cold, stomatal closure (abscisic acid), and production of antifreeze chemicals.
+What is the role of gibberellins? ~~ They stimulate seed germination and stem elongation.
+What is the role of the cerebellum? ~~ It coordinates muscle movement, balance and posture.
+What is the role of the medulla oblongata? ~~ It controls involuntary processes such as heart rate, breathing rate and blood pressure.
+How is the role of chemiosmosis similar in chloroplasts and mitochondria? ~~ In both, an electron transport chain pumps protons across a membrane, and they flow back through ATP synthase to make ATP.
+
+## M6
+What are the types of mutation and their effects? ~~ Substitution (may be silent, missense or nonsense), insertion and deletion (frameshift). Effects can be neutral, harmful or beneficial.
+What is a homeobox gene? ~~ A gene containing a highly conserved 180-base-pair sequence that codes for transcription factors controlling body plan development.
+What is apoptosis? ~~ Programmed cell death, which removes unwanted cells during development and damaged cells.
+What is continuous variation? ~~ Variation with a range of values and no distinct categories, controlled by many genes and the environment, e.g. height.
+What is discontinuous variation? ~~ Variation in distinct categories, controlled by one or a few genes, e.g. blood group.
+What is linkage? ~~ Genes on the same chromosome that tend to be inherited together unless separated by crossing over.
+What is a genetic bottleneck? ~~ A large fall in population size that reduces the gene pool, so genetic diversity is lower in the new population.
+What is artificial selection? ~~ Humans choose individuals with desirable traits to breed, increasing those traits over generations, e.g. dairy cattle.
+What is the role of DNA sequencing? ~~ Determining the order of bases in DNA, used to identify genes, mutations and evolutionary relationships.
+What is genetic engineering used for in agriculture? ~~ Creating pest-resistant crops (Bt maize), herbicide-resistant crops and nutritionally enhanced crops (Golden Rice).
+What is micropropagation? ~~ Growing many identical plants from small pieces of tissue (explants) on a sterile medium containing hormones.
+What is reproductive cloning in animals? ~~ Somatic cell nuclear transfer: a nucleus from a body cell is placed into an enucleated egg, which develops into a clone (e.g. Dolly the sheep).
+What is biotechnology? ~~ The use of living organisms or their parts in industrial processes, e.g. brewing, baking, penicillin and enzyme production.
+What is sustainable management? ~~ Using resources in a way that meets current needs without preventing future generations from meeting theirs, e.g. coppicing or fishing quotas.
+What is the Galapagos Islands example of human impact? ~~ Introduced species (goats, rats) and tourism have threatened native species; conservation projects remove invasive species and protect habitats.

@@ -1,0 +1,97 @@
+deck: Geography|Edexcel|alevel
+
+## T1
+What is the Benioff zone? ~~ The zone of earthquakes along a subducting plate, extending deeper as the plate descends into the mantle.
+What is the difference between the moment magnitude scale and the Mercalli scale? ~~ Moment magnitude measures the energy released (objective); Mercalli measures observed effects and damage (subjective, I–XII).
+What is palaeomagnetism and why is it evidence for plate tectonics? ~~ Magnetic stripes in ocean-floor rocks record reversals of Earth's magnetic field, showing symmetrical sea-floor spreading from ridges.
+What is the role of governance in tectonic disasters? ~~ Good governance means effective building codes, planning, emergency services and less corruption, reducing vulnerability.
+What is the Hazard Management Cycle? ~~ A cycle of mitigation, preparedness, response and recovery.
+What is land-use zoning as a tectonic hazard strategy? ~~ Restricting development in high-risk areas, e.g. near faults, lava flow paths or tsunami coasts.
+What is aseismic building design? ~~ Designing buildings to withstand earthquakes, e.g. cross-bracing, base isolators, and flexible steel frames.
+What is a mega-disaster? ~~ A large-scale, high-impact disaster affecting several countries or causing huge losses, e.g. the 2004 Indian Ocean tsunami.
+What is the role of insurance in reducing the impact of hazards? ~~ It spreads financial losses and speeds recovery, but is often unaffordable or unavailable in developing countries.
+What is a jökulhlaup? ~~ A glacial outburst flood caused by volcanic activity melting ice beneath a glacier, e.g. in Iceland.
+
+## T2
+What is the difference between a spring tide and a neap tide? ~~ Spring tides have the largest tidal range (Sun and Moon aligned); neap tides have the smallest (Sun and Moon at right angles).
+What is a storm surge? ~~ A temporary rise in sea level caused by low atmospheric pressure and strong onshore winds.
+What is coastal flood risk increased by? ~~ Rising sea levels, subsidence, storm surges, and development in low-lying areas.
+What is managed retreat (realignment)? ~~ Allowing the coast to erode or flood in a controlled way, creating new habitats such as salt marshes.
+What is cost–benefit analysis in coastal management? ~~ Comparing the costs of protection with the value of the land and property protected to decide whether defences are justified.
+What is integrated coastal zone management? ~~ Managing the whole coastline in a holistic, sustainable way, considering all stakeholders and sediment cells.
+What is a salt marsh succession? ~~ A halosere: pioneer plants trap sediment in a sheltered estuary, gradually building up land for other plants to colonise.
+What is the role of vegetation in coastal stabilisation? ~~ Plant roots bind sediment and reduce erosion, e.g. marram grass on dunes.
+What is a bar? ~~ A ridge of sand or shingle that extends across a bay, sometimes enclosing a lagoon.
+What is a tombolo? ~~ A spit or bar that connects an island to the mainland.
+
+## T3
+What is precipitation intensity? ~~ The rate of rainfall, usually in mm per hour. High intensity increases surface runoff and flood risk.
+What is interception? ~~ Precipitation caught and held by vegetation before reaching the ground.
+What is the drought risk index? ~~ A measure of the likelihood and severity of drought, based on rainfall deficit, soil moisture and water demand.
+What is meteorological drought? ~~ A prolonged period of below-average rainfall.
+What is hydrological drought? ~~ Reduced water levels in rivers, lakes, reservoirs and groundwater, following meteorological drought.
+How does El Niño affect rainfall patterns? ~~ Warm waters in the eastern Pacific bring floods to South America and droughts to Australia and Indonesia.
+What is the Falkenmark indicator? ~~ A measure of water stress based on the renewable water available per person per year; below 1000 m^3 indicates scarcity.
+What is physical water scarcity? ~~ When there is not enough water to meet demand due to the climate or overuse.
+What is economic water scarcity? ~~ When water is available but people lack the infrastructure or money to access it.
+What is a mega dam? Give an example. ~~ A very large dam built for water supply, flood control and hydroelectric power, e.g. the Three Gorges Dam.
+
+## T4
+What is the biological carbon pump? ~~ Phytoplankton absorb CO2 through photosynthesis; carbon is transferred through food chains and some sinks to the deep ocean.
+What is the physical (solubility) carbon pump? ~~ CO2 dissolves in cold surface water and is carried to the deep ocean by downwelling currents.
+What is the role of peatlands in the carbon cycle? ~~ They store large amounts of carbon in waterlogged soils; draining or burning them releases CO2.
+What is energy pathways? ~~ The routes by which energy is transported from producers to consumers, e.g. pipelines, tankers and electricity grids.
+What is the role of TNCs in energy supply? ~~ Oil and gas TNCs explore, extract, refine and distribute energy globally, with significant political influence.
+What are tar sands? ~~ Deposits of bitumen mixed with sand and clay (e.g. in Alberta, Canada); extraction is energy-intensive and environmentally damaging.
+What is carbon capture and storage? ~~ Capturing CO2 from power stations and industry and storing it underground in geological formations.
+What is biofuel? ~~ Fuel made from organic matter such as crops; it can be carbon-neutral but may compete with food production.
+What is ocean acidification? ~~ The lowering of ocean pH as it absorbs more CO2, harming coral reefs and shell-forming organisms.
+What is the Keeling Curve? ~~ A graph showing the continuous rise in atmospheric CO2 concentration since 1958, measured at Mauna Loa, Hawaii.
+
+## T5
+What is time–space compression? ~~ The shrinking of the perceived distance between places due to faster transport and communication.
+What is the role of containerisation in globalisation? ~~ Standardised shipping containers dramatically reduced transport costs and times, boosting global trade.
+What is outsourcing? ~~ Contracting out business processes to another company, often overseas.
+What is offshoring? ~~ Moving business operations to another country, usually to reduce costs.
+What is a global supply chain? ~~ The network of production and distribution across different countries involved in making and delivering a product.
+What is trade liberalisation? ~~ Reducing barriers to trade, such as tariffs and quotas.
+What is glocalisation? ~~ Adapting global products or services to suit local tastes, cultures or regulations.
+What is the digital divide? ~~ The gap between those with and without access to digital technology and the internet.
+What is a gig economy? ~~ A labour market characterised by short-term, flexible jobs, often through digital platforms.
+What is Fair Trade? ~~ A movement that ensures producers in developing countries receive a fair price and decent working conditions.
+
+## T6
+What is a demographic change in a place? ~~ Changes in the size, age structure or ethnic composition of a place's population.
+What is deindustrialisation's impact on a place? ~~ Job losses, economic decline, derelict land, outmigration, and social problems.
+What is studentification? ~~ The concentration of students in particular neighbourhoods, changing their character and housing market.
+What is segregation? ~~ The separation of different social or ethnic groups into different areas.
+What is a rural idyll? ~~ The idealised perception of rural life as peaceful, safe and close to nature, which drives counter-urbanisation.
+What is social exclusion? ~~ When people are unable to participate fully in society due to poverty, discrimination or lack of access to services.
+What is the role of local government in regeneration? ~~ Planning, funding and coordinating regeneration projects, often in partnership with private investors.
+What is a flagship project? ~~ A high-profile development designed to kick-start regeneration and attract investment, e.g. the Olympic Park.
+What is an informal representation of place? ~~ Representations such as films, music, art, novels and social media posts.
+What is a quantitative source for studying place? ~~ Census data, crime statistics, house prices and IMD scores.
+
+## T7
+What is hegemony? ~~ Dominance of one state over others through economic, military and cultural power.
+What is geo-strategic power? ~~ Power based on a country's location, resources and military reach.
+What is the role of the UN Security Council? ~~ It maintains international peace and security; the five permanent members have veto power.
+What is the Bretton Woods system? ~~ The post-1945 international economic order that created the IMF and World Bank.
+What is dependency theory? ~~ The view that developing countries remain poor because they are exploited by wealthier core countries.
+What is world systems theory? ~~ Wallerstein's model dividing the world into core, semi-periphery and periphery countries based on economic power.
+What is the role of the military in superpower status? ~~ Military strength and global reach allow power projection and influence through alliances like NATO.
+What is cultural power? ~~ Influence through culture, media, language, film and brands, e.g. American cultural exports.
+What is the role of superpowers in environmental issues? ~~ They are major emitters and have a key role in international climate agreements.
+What is resource nationalism? ~~ Governments asserting control over natural resources within their territory, often for political or economic leverage.
+
+## T8
+What is the Millennium Development Goals' successor? ~~ The Sustainable Development Goals (SDGs), 17 goals adopted by the UN in 2015 to be achieved by 2030.
+What is life expectancy? ~~ The average number of years a person is expected to live.
+What is the relationship between economic development and health? ~~ Higher incomes generally improve health through better nutrition, sanitation and healthcare.
+What is the Universal Declaration of Human Rights? ~~ A 1948 UN declaration setting out fundamental human rights for all people.
+What is the International Criminal Court? ~~ A court that prosecutes individuals for genocide, war crimes and crimes against humanity.
+What is conditional aid? ~~ Aid given with conditions attached, e.g. economic reforms or buying goods from the donor country.
+What is humanitarian aid? ~~ Short-term emergency aid to relieve suffering after disasters or conflicts.
+What is development aid? ~~ Long-term aid to improve infrastructure, education and health.
+What are the arguments against military intervention? ~~ Loss of life, violation of sovereignty, long-term instability, and mixed motives.
+What is the role of the Washington Consensus? ~~ A set of free-market policies promoted by the IMF and World Bank for developing countries.

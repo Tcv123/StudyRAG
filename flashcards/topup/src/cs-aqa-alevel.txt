@@ -1,0 +1,161 @@
+deck: Computer Science|AQA|alevel
+
+## 4.1
+What is iteration? ~~ Repeating a set of instructions, either a fixed number of times (definite, FOR) or until a condition is met (indefinite, WHILE or REPEAT).
+What is selection? ~~ Choosing which instructions to execute based on a condition, e.g. IF, ELSE IF or CASE statements.
+What is nested iteration? ~~ A loop inside another loop, e.g. iterating through the rows and columns of a 2D array.
+What is a subroutine? ~~ A named block of code that performs a specific task and can be called from elsewhere in a program.
+What are parameters and arguments? ~~ Parameters are variables in a subroutine's definition; arguments are the actual values passed when it is called.
+What is the purpose of a return value? ~~ A function passes a value back to the calling code when it finishes.
+What is exception handling? ~~ Detecting and responding to run-time errors so the program doesn't crash.
+What is the difference between a class and an object? ~~ A class is a blueprint defining attributes and methods; an object is an instance created from that class.
+What is instantiation? ~~ Creating an object from a class.
+What is aggregation? ~~ A "has-a" relationship where one object contains other objects that can exist independently (e.g. a team has players).
+What is composition? ~~ A strong "has-a" relationship where contained objects cannot exist without the container (e.g. a house has rooms).
+What is an abstract method? ~~ A method declared in a class without an implementation, which subclasses must override.
+What is the difference between public, private and protected access? ~~ Public: accessible from anywhere. Private: only within the class. Protected: within the class and its subclasses.
+Name three object-oriented design principles. ~~ Encapsulate what varies; favour composition over inheritance; program to interfaces, not implementation.
+
+## 4.2
+What is the difference between a static and a dynamic data structure? ~~ Static: fixed size (arrays). Dynamic: size can change during execution (linked lists), using the heap.
+What is a vector in data structures? ~~ A one-dimensional array of numbers that can be represented as a list, a function or an arrow. Operations include addition, scalar multiplication and dot product.
+How is the dot product of two vectors calculated? ~~ Multiply corresponding components and add: [a, b] · [c, d] = ac + bd.
+What is a graph? ~~ A set of vertices (nodes) connected by edges (arcs), which may be directed or undirected and weighted or unweighted.
+What is a tree? ~~ A connected, undirected graph with no cycles.
+What is a rooted tree? ~~ A tree with one node designated as the root, from which all other nodes descend with parent–child relationships.
+How do you push onto a stack? ~~ Check whether the stack is full; if not, increment the top pointer and insert the item at that position.
+How do you pop from a stack? ~~ Check whether it is empty; if not, return the item at the top pointer and decrement the pointer.
+How do you add to a linear queue? ~~ Check whether it is full; if not, increment the rear pointer and insert the item there.
+What is a hash table? ~~ A data structure that uses a hash function to map keys to indexes in an array, allowing near-constant-time lookup.
+What is chaining in hash tables? ~~ Each position in the table holds a linked list of all items that hash to that position, resolving collisions.
+What is rehashing? ~~ Creating a larger hash table and reinserting all items when the load factor becomes too high.
+What does peek do on a stack? ~~ It returns the top item without removing it.
+What is a weighted graph? ~~ A graph where each edge has a value (weight), such as distance or cost.
+
+## 4.3
+What is linear search? ~~ Checking each item in a list in turn until the target is found or the end is reached. O(n).
+What precondition does binary search require? ~~ The list must be sorted.
+Describe how binary search works. ~~ Compare the target with the middle item. If they are not equal, discard the half that can't contain the target, and repeat on the remaining half.
+What is the time complexity of bubble sort? ~~ O(n^2).
+Describe the merge process in merge sort. ~~ Two sorted sub-lists are combined by repeatedly comparing their first items and taking the smaller, until both are empty.
+What is a pre-order traversal used for? ~~ Copying a tree or producing prefix expressions.
+What is a post-order traversal used for? ~~ Deleting a tree, or producing Reverse Polish (postfix) notation from an expression tree.
+What is an in-order traversal used for? ~~ Outputting the contents of a binary search tree in sorted order.
+Convert (3 + 4) × 2 to Reverse Polish notation. ~~ 3 4 + 2 ×.
+Why is Reverse Polish notation useful? ~~ It removes the need for brackets and can be evaluated easily using a stack, which is efficient for computers.
+What is the time complexity of a linear search in a sorted list? ~~ Still O(n) in the worst case.
+How does BFS find the shortest path in an unweighted graph? ~~ It visits nodes level by level, so the first time the target is reached, the path uses the fewest edges.
+Give an application of depth-first search. ~~ Navigating a maze, detecting cycles, or topological sorting.
+Give an application of Dijkstra's algorithm. ~~ Finding the shortest route in satellite navigation or network routing.
+
+## 4.4
+What is a state transition diagram? ~~ A diagram showing the states of a finite state machine and the transitions between them, triggered by inputs.
+What is a state transition table? ~~ A table showing, for each current state and input, the next state (and output for a Mealy machine).
+What does an FSM with no output represent? ~~ A finite state automaton that accepts or rejects input strings, with one or more accept states.
+What is a set in computing? ~~ An unordered collection of unique values.
+What is a set comprehension? ~~ A way of defining a set by a rule, e.g. A = {x | x ∈ ℕ ∧ x < 5}.
+What is the difference between a finite and an infinite set? ~~ A finite set has a countable, fixed number of elements; an infinite set has no end, e.g. the natural numbers.
+What is a countably infinite set? ~~ An infinite set that can be put in one-to-one correspondence with the natural numbers, e.g. the integers.
+What is the Cartesian product of two sets? ~~ The set of all ordered pairs (a, b) where a is in A and b is in B.
+What do the regex metacharacters *, + and ? mean? ~~ * means zero or more; + means one or more; ? means zero or one of the preceding element.
+What does the regex a(b|c)* match? ~~ An 'a' followed by any number of 'b's and 'c's in any order, e.g. a, ab, acbc.
+What is a syntax diagram? ~~ A graphical way of representing BNF rules, showing the valid sequences of symbols.
+What is the Big-O time complexity of a brute-force travelling salesman solution? ~~ O(n!), because it tries every possible route.
+What is a heuristic approach to intractable problems? ~~ Using a rule of thumb to find a good-enough solution in reasonable time, though not necessarily the optimal one.
+What does it mean for a problem to be non-computable? ~~ No algorithm can solve it for all inputs, e.g. the Halting Problem.
+
+## 4.5
+What is a natural number, integer, rational and real number? ~~ Natural: 0, 1, 2… Integers: whole numbers including negatives. Rational: can be written as a fraction. Real: all numbers on the number line, including irrationals.
+What is an ordinal number? ~~ A number describing position in a sequence, e.g. 1st, 2nd.
+How do you convert binary 1011.101 to decimal? ~~ 8 + 2 + 1 + 0.5 + 0.125 = 11.625.
+What is the precision/range trade-off in floating-point? ~~ More mantissa bits give greater precision; more exponent bits give a greater range.
+What is absolute and relative error? ~~ Absolute error: the difference between the true and stored value. Relative error: absolute error ÷ true value.
+What is the effect of normalising a floating-point number? ~~ It maximises precision for a given number of bits and ensures each number has a unique representation.
+What is a parity bit? ~~ An extra bit added to make the number of 1s even (even parity) or odd (odd parity), used to detect single-bit errors.
+What is a checksum? ~~ A value calculated from a block of data and sent with it; the receiver recalculates it to detect errors.
+What is majority voting in error checking? ~~ Each bit is sent multiple times (e.g. three), and the receiver takes the most common value.
+What is the colour depth of an image? ~~ The number of bits used to represent the colour of each pixel.
+How is the file size of a bitmap image calculated? ~~ Width × height × colour depth (in bits), plus metadata.
+How is the file size of a sound file calculated? ~~ Sample rate × sample resolution × duration (seconds) × number of channels.
+What is MIDI? ~~ A protocol that stores music as event messages (note, pitch, velocity, duration) rather than sampled sound, giving small files that are easy to edit.
+Why is a Caesar cipher insecure? ~~ There are only 25 possible keys, so it can be broken by brute force or frequency analysis.
+
+## 4.6
+What is utility software? ~~ System software that performs maintenance tasks, e.g. backup, compression, antivirus and disk defragmentation.
+What is a library program? ~~ Pre-written, tested code (e.g. subroutines or classes) that programmers can use in their own programs.
+What is machine code? ~~ Binary instructions that the processor can execute directly.
+What is the difference between low-level and high-level languages? ~~ Low-level languages (machine code, assembly) are close to hardware and processor-specific. High-level languages are portable and closer to human language.
+What is imperative programming? ~~ Programming with a sequence of statements that change the program's state, e.g. Python and C.
+Draw the truth table for XOR. ~~ 0 XOR 0 = 0; 0 XOR 1 = 1; 1 XOR 0 = 1; 1 XOR 1 = 0.
+What is the output of a NOR gate? ~~ 1 only when both inputs are 0; otherwise 0.
+Simplify A + A.B. ~~ A (absorption law).
+Simplify NOT(NOT A). ~~ A (double negation).
+Simplify A.NOT(A). ~~ 0.
+What are the roles of the operating system? ~~ Hiding hardware complexity and managing resources: the processor (scheduling), memory, I/O devices and files.
+What is a translator? ~~ Software that converts source code into machine code: compilers, interpreters and assemblers.
+What is an advantage of a compiler over an interpreter? ~~ The compiled program runs faster and can be distributed without the source code.
+What is an advantage of an interpreter over a compiler? ~~ Errors are reported line by line, making debugging easier, and code can be run on any platform with an interpreter.
+
+## 4.7
+What is the role of the Memory Address Register (MAR)? ~~ It holds the address of the memory location to be read from or written to.
+What is the role of the Memory Buffer Register (MBR)? ~~ It holds data read from or to be written to memory.
+What is the role of the status register? ~~ It holds flags describing the result of the last operation, e.g. zero, negative, carry and overflow.
+What is an opcode and operand? ~~ The opcode specifies the operation; the operand specifies the data or address to use.
+What is direct addressing? ~~ The operand holds the memory address of the data to be used.
+What is indirect addressing? ~~ The operand holds an address, which contains the address of the data.
+What happens during the decode stage? ~~ The instruction in the CIR is split into opcode and operand, and the control unit decodes the opcode.
+What happens during the execute stage? ~~ The instruction is carried out, e.g. an ALU calculation, memory read/write or change to the PC for a branch.
+What is an interrupt? ~~ A signal to the processor that an event needs attention; the processor saves its state and runs an interrupt service routine.
+What factors affect processor performance? ~~ Clock speed, number of cores, cache size, word length, and address and data bus width.
+What is the Harvard architecture? ~~ Separate memory and buses for instructions and data, allowing simultaneous access; used in embedded systems and DSPs.
+What is the role of the clock? ~~ It generates regular pulses to synchronise all operations in the processor.
+What is a barcode reader and how does it work? ~~ A laser or LED shines on the barcode; light reflects from white bars (not black) onto a sensor, which converts the pattern to digital data.
+How does a laser printer work? ~~ A laser draws the image as charge on a rotating drum; toner sticks to charged areas, is transferred to paper and fused with heat.
+
+## 4.8
+What is the impact of computing on individual privacy? ~~ Large amounts of personal data are collected and analysed, which can be used for targeted advertising, profiling or surveillance.
+What are the benefits of big data analytics? ~~ Improved healthcare, targeted services, fraud detection and better decision-making.
+What is the Regulation of Investigatory Powers Act 2000? ~~ UK law governing surveillance and interception of communications by public bodies.
+What are the issues with cyberbullying? ~~ It can happen anonymously at any time, reaching many people quickly, and causing serious psychological harm.
+What are the ethical issues of autonomous weapons? ~~ Accountability, the lack of human judgement in life-or-death decisions, and the risk of escalation.
+How can software developers act ethically? ~~ By following professional codes (e.g. BCS), considering the public interest, being honest about system limitations and protecting user data.
+What is intellectual property? ~~ Creations of the mind, such as software, music and inventions, protected by copyright, patents and trademarks.
+What is the impact of computing on the workplace? ~~ Increased productivity, remote working, and changing skill requirements, but job losses in some sectors through automation.
+What are the benefits of cloud computing? ~~ Access anywhere, scalability, reduced hardware costs and automatic backup.
+What are the risks of cloud computing? ~~ Reliance on internet access, security and privacy concerns, and less control over data.
+What is the issue with data stored in different countries? ~~ Data protection laws differ, so it may be accessible to foreign governments or less protected.
+How can computing help the environment? ~~ Smart grids, modelling climate change, reducing travel through video conferencing, and optimising energy use.
+What is net neutrality? ~~ The principle that internet service providers should treat all data equally, without favouring or blocking content.
+What is the ethical issue with genetic data held by companies? ~~ It is highly personal and could be used for discrimination (e.g. by insurers) or shared without consent.
+
+## 4.9
+What is synchronous transmission? ~~ Data is sent in a continuous stream, synchronised by a shared clock signal.
+What is asynchronous transmission? ~~ Data is sent one byte at a time with start and stop bits, with no shared clock.
+What is latency? ~~ The delay between sending data and it being received.
+What is bandwidth? ~~ The range of frequencies a channel can carry; the bit rate is directly proportional to bandwidth.
+What is a bus topology? ~~ All devices share a single backbone cable, with terminators at each end.
+What is Wi-Fi and how does it avoid collisions? ~~ Wireless LAN technology (IEEE 802.11) using CSMA/CA: it listens before transmitting and can use RTS/CTS.
+What is a router? ~~ A device that forwards packets between networks based on IP addresses.
+What is a gateway? ~~ A device that connects networks using different protocols, translating between them.
+What is the difference between IPv4 and IPv6? ~~ IPv4 uses 32-bit addresses (about 4.3 billion); IPv6 uses 128-bit addresses, providing a vastly larger address space.
+What is a subnet mask used for? ~~ It separates the network ID from the host ID in an IP address using a bitwise AND.
+What is DHCP? ~~ A protocol that automatically assigns IP addresses and network settings to devices on a network.
+What is a port number? ~~ A number identifying a specific application or service on a host, e.g. HTTP port 80, HTTPS port 443.
+What is a socket? ~~ The combination of an IP address and a port number, identifying one end of a network connection.
+What is a thin client and a thick client? ~~ Thin client: relies on the server for processing and storage. Thick client: does most processing locally.
+
+## 4.10
+What is data consistency? ~~ All copies of the same data are the same throughout the database.
+What is data redundancy? ~~ Unnecessary duplication of data, which wastes space and can cause inconsistency.
+What is Second Normal Form (2NF)? ~~ The table is in 1NF and has no partial dependencies: all non-key attributes depend on the whole composite key.
+What is a composite key? ~~ A primary key made up of two or more attributes.
+What is an entity–relationship diagram? ~~ A diagram showing entities and the relationships between them (one-to-one, one-to-many, many-to-many).
+Write SQL to count orders per customer. ~~ SELECT CustomerID, COUNT(*) FROM Orders GROUP BY CustomerID;
+Write SQL to insert a new student record. ~~ INSERT INTO Students (StudentID, Name) VALUES (101, 'Asha');
+Write SQL to update a price. ~~ UPDATE Products SET Price = 9.99 WHERE ProductID = 5;
+Write SQL to delete old orders. ~~ DELETE FROM Orders WHERE OrderDate < '2020-01-01';
+What does CREATE TABLE do? ~~ It defines a new table, specifying its fields, data types and constraints such as PRIMARY KEY and NOT NULL.
+What is a client–server database? ~~ A database management system on a server that handles requests from multiple clients, managing concurrent access.
+What is timestamp ordering? ~~ A concurrency control method where each transaction has a timestamp and conflicting operations are ordered by timestamp.
+What is commitment ordering? ~~ A concurrency control method that orders transactions based on dependencies, so they are committed in a consistent order.
+What is fact-based modelling in big data? ~~ Storing data as immutable facts (atomic, timestamped pieces of information), often represented as graphs of nodes and edges.

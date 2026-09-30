@@ -1,0 +1,97 @@
+deck: Geography|OCR|alevel
+
+## 1.1
+What is a landscape system? ~~ A set of interrelated components (inputs, processes, stores, outputs) that together form a landscape, such as a coast or glacier.
+What is negative feedback in a landscape system? ~~ A process that counteracts change and restores equilibrium, e.g. a beach that eroded in a storm is rebuilt by constructive waves.
+What is positive feedback in a landscape system? ~~ A process that amplifies change, e.g. glacier retreat exposes darker ground, which absorbs more heat and accelerates melting.
+What is plucking? ~~ Ice freezes onto rock and pulls it away as the glacier moves.
+What is glacial abrasion? ~~ Rocks embedded in the base of a glacier scrape and wear away the bedrock like sandpaper.
+What is freeze–thaw weathering? ~~ Water enters cracks, freezes and expands, widening the cracks until the rock breaks.
+What is a roche moutonnée? ~~ A rock outcrop smoothed by abrasion on the upstream side and plucked into a jagged shape on the downstream side.
+What is a hanging valley? ~~ A tributary valley left high above a main valley that was deepened more by a larger glacier; often has a waterfall.
+What is a fjord? ~~ A drowned glacial U-shaped valley flooded by sea-level rise.
+What is glacial mass balance? ~~ The difference between accumulation (snowfall) and ablation (melting) over a year.
+
+## 1.2
+What is the residence time of water in stores? ~~ The average time water stays in a store, e.g. about 9 days in the atmosphere, thousands of years in oceans and ice sheets.
+What is condensation? ~~ Water vapour cooling to its dew point and changing into liquid droplets, forming clouds.
+What is the role of cloud cover in the water cycle and climate? ~~ Clouds produce precipitation, reflect solar radiation (cooling), and trap outgoing heat (warming).
+What is the role of the tropical rainforest in the water cycle? ~~ It has high rates of evapotranspiration, and much rainfall is recycled locally, maintaining humid conditions.
+What is the Arctic tundra's role in the carbon cycle? ~~ Permafrost stores large amounts of carbon; thawing releases CO2 and methane, creating positive feedback.
+What is weathering's role in the carbon cycle? ~~ Chemical weathering of rocks by carbonic acid removes CO2 from the atmosphere over long timescales.
+What is photosynthesis's role in the carbon cycle? ~~ Plants remove CO2 from the atmosphere and convert it into biomass.
+What is decomposition's role in the carbon cycle? ~~ Decomposers break down dead matter, releasing CO2 back into the atmosphere or storing carbon in soils.
+What is the relationship between the water and carbon cycles? ~~ They are linked through vegetation, ocean temperatures and climate; changes in one (e.g. temperature) affect the other.
+How can afforestation help the carbon cycle? ~~ Planting trees increases carbon storage in biomass and soils, removing CO2 from the atmosphere.
+
+## 1.3
+What is the lithosphere? ~~ The rigid outer layer of the Earth, comprising the crust and upper mantle, broken into tectonic plates.
+What is the asthenosphere? ~~ The semi-molten layer of the upper mantle below the lithosphere, on which plates move.
+What is sea-floor spreading? ~~ New oceanic crust forms at mid-ocean ridges as plates diverge, pushing older crust away.
+What is a fold mountain? ~~ Mountains formed by the collision of two continental plates, which crumple the crust, e.g. the Himalayas.
+What is an ocean trench? ~~ A deep depression in the ocean floor formed where an oceanic plate subducts beneath another plate.
+What is an island arc? ~~ A chain of volcanic islands formed at an ocean–ocean destructive boundary, e.g. Japan.
+What is a rift valley? ~~ A valley formed where crust is pulled apart and the land between faults drops down, e.g. the East African Rift Valley.
+What is the focus and epicentre of an earthquake? ~~ The focus is the point underground where the earthquake starts; the epicentre is the point on the surface directly above it.
+What is the role of tectonic hazard monitoring? ~~ Seismometers, GPS and gas sensors can monitor volcanic activity to give warnings and allow evacuation.
+What is a volcanic hazard map? ~~ A map showing areas at risk from lava flows, lahars and pyroclastic flows, used for planning and evacuation.
+
+## 2.1
+What is an economic characteristic of a place? ~~ The employment structure, income levels, industries and investment in an area.
+What is a social characteristic of a place? ~~ Features of a population, such as age, ethnicity, education and health.
+What is the role of the media in shaping perceptions of place? ~~ Media representations can create positive or negative images, affecting investment, tourism and migration.
+What is place marketing? ~~ Promoting a place to attract investment, tourists or residents, often through branding and slogans.
+What is rebranding? ~~ Changing a place's image to attract investment and people, often through regeneration and marketing.
+What is inequality within a place? ~~ Differences in income, health, education and housing between groups or areas within a place.
+What is the role of the IMD? ~~ The Index of Multiple Deprivation measures relative deprivation using income, employment, health, education, crime, housing and environment.
+What is gentrification's impact on existing residents? ~~ Rising property prices and rents can displace low-income residents and change the community's character.
+What is a sense of belonging? ~~ The feeling of being accepted and connected to a place and its community.
+What is the role of the built environment in place identity? ~~ Landmarks, architecture and public spaces contribute to the character and identity of a place.
+
+## 2.2
+What is the global pattern of trade? ~~ Trade is dominated by North America, Europe and East Asia, with increasing flows involving emerging economies such as China and India.
+What is a trade deficit? ~~ When the value of imports exceeds the value of exports.
+What is a trade surplus? ~~ When the value of exports exceeds the value of imports.
+What is the role of trading blocs such as the EU? ~~ They reduce trade barriers between members, increasing trade and economic integration.
+What is the role of ICT in trade? ~~ Faster communication, e-commerce and digital services increase trade flows and allow trade in services.
+What is a primary product? ~~ Raw materials such as food, minerals and timber.
+What are the problems of relying on primary product exports? ~~ Price volatility, low value added, and declining terms of trade.
+What is value added? ~~ The increase in value from processing or manufacturing a raw material into a finished product.
+What is the role of trade in development? ~~ Trade can generate income, jobs and investment, but may also increase dependency and inequality.
+What is ethical trading? ~~ Trading in a way that ensures fair wages, safe working conditions and environmental protection.
+
+## 2.3
+What is net migration? ~~ The difference between immigration and emigration.
+What is an economic migrant? ~~ A person who moves to another country to improve their standard of living, usually for work.
+What is Lee's migration model? ~~ A model of migration based on push factors, pull factors, intervening obstacles and personal factors.
+What is an intervening obstacle? ~~ A barrier to migration, e.g. cost, distance, borders and immigration laws.
+What is the role of migration policy? ~~ Governments control immigration through visas, points-based systems, quotas and border controls.
+What is a points-based immigration system? ~~ A system where migrants are admitted based on points for skills, qualifications, language and job offers.
+What are the benefits of migration to source countries? ~~ Remittances, reduced unemployment, and skills brought back by returning migrants.
+What are the costs of migration to source countries? ~~ Brain drain, loss of young workers, and an ageing population left behind.
+What is the role of migrant networks? ~~ Established migrants provide information, contacts and support to new migrants, encouraging further migration.
+What is integration? ~~ The process by which migrants become part of the host society while maintaining their own culture.
+
+## 2.4
+What is the Universal Declaration of Human Rights? ~~ A 1948 UN document setting out basic rights and freedoms for all people.
+What is freedom of speech? ~~ The right to express opinions without censorship or restraint.
+What is the role of NGOs in protecting human rights? ~~ They monitor abuses, campaign for change, and support victims, e.g. Amnesty International.
+What is the relationship between development and human rights? ~~ Development can improve rights through education and healthcare, but rights violations can occur in the pursuit of growth.
+What is a child's right under the UN Convention on the Rights of the Child? ~~ Rights including education, protection from exploitation, healthcare and play.
+What is the role of the International Criminal Court? ~~ It prosecutes individuals for genocide, war crimes and crimes against humanity.
+What are women's rights issues globally? ~~ Access to education, political representation, equal pay, and protection from violence and forced marriage.
+What is the role of the UN Human Rights Council? ~~ It promotes and protects human rights worldwide and reviews the human rights records of member states.
+What is sovereignty versus intervention? ~~ The tension between a state's right to govern itself and the international community's responsibility to protect human rights.
+What is development aid's role in human rights? ~~ It can improve access to education, health and clean water, supporting economic and social rights.
+
+## 2.5
+What is geopolitics? ~~ The study of how geography, including location and resources, influences political power and international relations.
+What is a border? ~~ A line separating two political or geographical areas, such as countries.
+What is a natural border? ~~ A border following a physical feature, such as a river or mountain range.
+What is an artificial border? ~~ A border drawn along lines of latitude or longitude, often imposed by colonial powers.
+What is a stateless nation? ~~ A national group without its own state, e.g. the Kurds.
+What is territorial integrity? ~~ The principle that a state's borders should not be changed by force.
+What is irredentism? ~~ A claim to territory in another state on the basis of shared ethnicity or history.
+What is the role of the UN in border disputes? ~~ It mediates, sends peacekeepers and upholds international law on territorial integrity.
+What is a failed state? ~~ A state whose government cannot provide basic services, security or control over its territory.
+What is the role of power in shaping borders? ~~ Powerful states can influence or redraw borders through military force, economic pressure and diplomacy.

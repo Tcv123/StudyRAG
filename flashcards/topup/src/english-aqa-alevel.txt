@@ -1,0 +1,353 @@
+deck: English Language|AQA|alevel
+
+## 1.1
+What are the language levels (frameworks) used in analysis? ~~ Phonetics/phonology/prosody, lexis and semantics, grammar (including morphology), pragmatics, discourse, and graphology.
+What is lexis? ~~ The vocabulary of a language or text.
+What is semantics? ~~ The study of meaning in words and phrases.
+What is grammar? ~~ The rules governing how words are formed and combined into sentences, including morphology and syntax.
+What is morphology? ~~ The study of the structure of words and how they are formed from morphemes.
+What is a morpheme? ~~ The smallest unit of meaning, e.g. "un-", "happy", "-ness".
+What is syntax? ~~ The arrangement of words into phrases, clauses and sentences.
+What is pragmatics? ~~ The study of implied meaning and how context affects interpretation.
+What is discourse? ~~ The structure and organisation of a text beyond the sentence level.
+What is graphology? ~~ The visual aspects of a text, such as layout, typography, images and colour.
+What is phonology? ~~ The study of the sound system of a language.
+What is prosody? ~~ Features of speech such as intonation, stress, pitch, tempo and volume.
+What is a noun phrase? ~~ A group of words with a noun as the head, e.g. "the old red car".
+What is a pre-modifier? ~~ A word placed before the head noun to add detail, e.g. "red" in "red car".
+What is a post-modifier? ~~ A word or phrase placed after the head noun, e.g. "in the garden" in "the man in the garden".
+What is a declarative sentence? ~~ A sentence that makes a statement.
+What is an interrogative sentence? ~~ A sentence that asks a question.
+What is an imperative sentence? ~~ A sentence that gives a command.
+What is an exclamative sentence? ~~ A sentence that expresses strong emotion, often beginning with "what" or "how".
+What is a simple sentence? ~~ A sentence with one independent clause.
+What is a compound sentence? ~~ A sentence with two or more independent clauses joined by a coordinating conjunction.
+What is a complex sentence? ~~ A sentence with an independent clause and at least one subordinate clause.
+What is modality? ~~ The expression of possibility, necessity or obligation, often using modal verbs such as "might", "must", "should".
+What is register? ~~ The level of formality in language, adjusted to suit the audience and context.
+What is a semantic field? ~~ A group of words related in meaning, e.g. "doctor, nurse, ward" (hospital).
+What is connotation? ~~ The associations or emotional meanings attached to a word beyond its literal meaning.
+What is denotation? ~~ The literal, dictionary meaning of a word.
+What is deixis? ~~ Words whose meaning depends on context, e.g. "here", "there", "now", "this".
+What is ellipsis? ~~ Omitting words that can be understood from context.
+What is cohesion? ~~ The ways a text is linked together, e.g. through pronouns, connectives and lexical repetition.
+
+## 1.2
+What is representation? ~~ The way language portrays people, places, events and ideas, shaping how the audience perceives them.
+What is mode? ~~ Whether a text is spoken, written or multimodal (e.g. electronic).
+What is genre? ~~ A category of text with shared conventions, e.g. news report or advert.
+What is audience? ~~ The intended readers or listeners of a text.
+What is purpose? ~~ The aim of a text, e.g. to inform, persuade, entertain or instruct.
+What is context of production? ~~ The circumstances in which a text is created.
+What is context of reception? ~~ The circumstances in which a text is read or heard.
+What is a multimodal text? ~~ A text that combines different modes, such as written language, images and sound.
+What is a synthetic personalisation? ~~ Addressing a mass audience as if they were individuals, e.g. using "you" (Fairclough).
+What is direct address? ~~ Speaking directly to the reader, often using second-person pronouns.
+What is a persona? ~~ The identity or voice a writer creates in a text.
+What is foregrounding? ~~ Making certain information prominent, e.g. by placing it first.
+What is agency? ~~ Who is shown as responsible for an action in a sentence.
+How does the passive voice affect representation? ~~ It can hide or downplay the agent, e.g. "mistakes were made".
+What is nominalisation? ~~ Turning a verb or adjective into a noun, e.g. "decide" → "decision", often making a text more formal or abstract.
+What is a rhetorical question? ~~ A question asked for effect rather than for an answer.
+What is the rule of three? ~~ Grouping ideas in threes for emphasis and memorability.
+What is hyperbole? ~~ Deliberate exaggeration for effect.
+What is euphemism? ~~ A mild or indirect word used in place of one that may be harsh or offensive.
+What is dysphemism? ~~ A harsh or offensive word used instead of a neutral one.
+What is face (politeness theory)? ~~ A person's public self-image: positive face (wanting to be liked) and negative face (wanting freedom from imposition).
+What is a face-threatening act? ~~ An act that challenges someone's positive or negative face.
+What is Grice's cooperative principle? ~~ Speakers follow maxims of quantity, quality, relation and manner to communicate effectively.
+What is flouting a maxim? ~~ Deliberately breaking a maxim to imply meaning, e.g. sarcasm.
+What is a discourse marker? ~~ A word or phrase that organises speech or writing, e.g. "so", "anyway", "however".
+What is an adjacency pair? ~~ Two related utterances by different speakers, e.g. question and answer.
+What is phatic talk? ~~ Small talk used for social purposes rather than information, e.g. "Nice weather".
+What is non-fluency? ~~ Features of spontaneous speech such as fillers, pauses, false starts and repairs.
+What is a filler? ~~ A sound or word used to fill a pause, e.g. "um", "er", "like".
+What is intertextuality? ~~ References to other texts within a text.
+
+## 1.3
+What are the stages of children's spoken language development? ~~ Pre-verbal (cooing, babbling), holophrastic, two-word, telegraphic, and post-telegraphic.
+What is cooing? ~~ Early vowel-like sounds made by babies from about 6–8 weeks.
+What is babbling? ~~ Repeated consonant–vowel combinations, e.g. "bababa", from about 6 months.
+What is the holophrastic stage? ~~ Around 12–18 months, when children use single words to express whole ideas.
+What is the two-word stage? ~~ Around 18–24 months, when children combine two words, e.g. "daddy go".
+What is the telegraphic stage? ~~ Around 24–36 months, when children use short phrases with mainly content words, omitting function words.
+What is overextension? ~~ Using a word too broadly, e.g. calling all animals "dog".
+What is underextension? ~~ Using a word too narrowly, e.g. using "cat" only for the family cat.
+What is a virtuous error? ~~ A mistake that shows a child is applying a grammar rule logically, e.g. "I goed".
+What is overgeneralisation? ~~ Applying a rule too widely, e.g. adding "-s" to make "mouses".
+What is Skinner's theory? ~~ Behaviourism: children learn language through imitation and reinforcement.
+What is Chomsky's theory? ~~ Nativism: children have an innate Language Acquisition Device (LAD) that enables them to learn language.
+What is Piaget's theory? ~~ Cognitive theory: language develops as children's thinking develops.
+What is Bruner's theory? ~~ Interactionism: children learn through interaction with caregivers, supported by a Language Acquisition Support System (LASS).
+What is child-directed speech (CDS)? ~~ The way adults speak to young children: simplified vocabulary, repetition, higher pitch and exaggerated intonation.
+What is scaffolding? ~~ Support given by adults to help children achieve what they can't yet do alone.
+What is the critical period hypothesis? ~~ The idea that there is a window in childhood when language must be acquired.
+What does the case of Genie suggest? ~~ Genie was deprived of language until 13 and never fully acquired grammar, supporting the critical period hypothesis.
+What is Halliday's instrumental function? ~~ Language used to get things, e.g. "I want".
+What is Halliday's regulatory function? ~~ Language used to control others' behaviour.
+What is Halliday's interactional function? ~~ Language used to form relationships.
+What is Halliday's personal function? ~~ Language used to express feelings and identity.
+What is Halliday's heuristic function? ~~ Language used to learn about the environment, e.g. asking questions.
+What is Halliday's imaginative function? ~~ Language used for play and storytelling.
+What is Halliday's representational function? ~~ Language used to convey information.
+What is phonological development? ~~ How children learn to produce the sounds of their language.
+What is deletion in phonological development? ~~ Omitting sounds, e.g. "nana" for "banana".
+What is substitution in phonological development? ~~ Replacing one sound with an easier one, e.g. "wabbit" for "rabbit".
+What is consonant cluster reduction? ~~ Simplifying clusters, e.g. "pider" for "spider".
+What is Brown's order of morpheme acquisition? ~~ The order in which children acquire grammatical morphemes, e.g. "-ing" first, then plural "-s", then possessive "'s".
+
+## 1.4
+What are the stages of children's written development? ~~ Kroll's stages: preparation, consolidation, differentiation and integration.
+What is Kroll's preparation stage? ~~ Up to about 6 years: learning motor skills and basic spelling.
+What is Kroll's consolidation stage? ~~ About 7–8 years: writing like speaking, with simple sentences and "and" as the main conjunction.
+What is Kroll's differentiation stage? ~~ About 9–10 years: understanding differences between speech and writing, and using genre conventions.
+What is Kroll's integration stage? ~~ Mid-teens onwards: developing a personal voice and control of style.
+What are Barclay's stages of writing? ~~ Scribbling, mock handwriting, mock letters, conventional letters, invented spelling, appropriate spelling, and correct spelling.
+What is Rothery's categorisation of children's writing? ~~ Observation/comment, recount, report and narrative.
+What is phonetic spelling? ~~ Spelling words as they sound, e.g. "sed" for "said".
+What is insertion in spelling? ~~ Adding extra letters, e.g. "whent" for "went".
+What is omission in spelling? ~~ Leaving out letters, e.g. "wich" for "which".
+What is transposition in spelling? ~~ Reversing letters, e.g. "form" for "from".
+What is overgeneralisation in spelling? ~~ Applying a spelling rule incorrectly, e.g. "happyly".
+What is a homophone error? ~~ Using the wrong word with the same sound, e.g. "there" for "their".
+What is synthetic phonics? ~~ Teaching reading by blending individual letter sounds to form words.
+What is the whole-word (look and say) approach? ~~ Teaching children to recognise whole words by sight.
+What is emergent literacy? ~~ The early reading and writing skills children develop before formal teaching.
+What does Clay's research show about writing? ~~ Children understand concepts such as directionality and spacing gradually.
+What is the role of reading in writing development? ~~ Exposure to texts helps children learn vocabulary, spelling and genre conventions.
+What are features of early narrative writing? ~~ Simple chronology, first-person perspective, repetition of "and then", and limited description.
+How do children's texts show developing cohesion? ~~ Increasing use of pronouns, connectives and varied sentence openings.
+What is the role of the teacher's feedback? ~~ It helps children correct errors and develop their writing.
+What is a genre convention? ~~ An expected feature of a type of text, e.g. "Once upon a time" in stories.
+What does increasing sentence complexity show? ~~ Growing grammatical knowledge, such as subordination and embedded clauses.
+What is the difference between spoken and written language for children? ~~ Early writing mirrors speech; children gradually learn more formal written structures.
+How does technology affect children's literacy? ~~ Texting and digital media may develop phonological awareness and creativity; there are debates over its effect on spelling.
+What did Plester's research find about texting? ~~ Children who used more textisms often had better phonological awareness and literacy.
+What is handwriting development? ~~ From scribbles to letter formation, then joined and fluent writing.
+What is metalinguistic awareness? ~~ The ability to think and talk about language itself.
+What is Kress's theory on children's writing? ~~ Children's writing develops as they learn the differences between speech and writing, and use conventions.
+What is punctuation development? ~~ Children learn full stops and capitals first, then commas, speech marks and more complex punctuation.
+
+## 2.1
+What is a dialect? ~~ A variety of language with distinctive vocabulary and grammar, linked to region or social group.
+What is an accent? ~~ A distinctive way of pronouncing words, linked to region or social group.
+What is Standard English? ~~ The prestige variety of English used in formal writing and education, not tied to a region.
+What is Received Pronunciation (RP)? ~~ A prestige accent traditionally associated with the upper and middle classes.
+What is a sociolect? ~~ A variety of language used by a particular social group.
+What is an idiolect? ~~ An individual's personal way of using language.
+What is covert prestige? ~~ Status gained by using non-standard language within a group.
+What is overt prestige? ~~ Status gained by using standard, socially recognised language.
+What is Labov's Martha's Vineyard study? ~~ Locals exaggerated their accent to show identity and distinguish themselves from tourists.
+What is Labov's department store study? ~~ Pronunciation of post-vocalic /r/ varied with social class of the store.
+What is Trudgill's Norwich study? ~~ Men used non-standard forms more than women, linked to covert prestige.
+What is Milroy's Belfast study? ~~ People in close-knit social networks used more local, non-standard features.
+What is dialect levelling? ~~ The reduction of differences between regional dialects.
+What is Estuary English? ~~ An accent spreading from the south-east of England, combining features of RP and London accents.
+What is Multicultural London English (MLE)? ~~ A variety of English spoken by young people in London, influenced by many languages.
+What are features of MLE? ~~ Words like "innit", "bare", "man" as a pronoun, and "this is me" as a quotative.
+What is code-switching? ~~ Switching between languages or varieties in a conversation.
+What is accommodation theory? ~~ Speakers adjust their speech to converge with or diverge from others (Giles).
+What is convergence? ~~ Adapting speech to become more similar to the listener's.
+What is divergence? ~~ Emphasising differences in speech from the listener's.
+What is an occupational register? ~~ Specialised language used in a particular job, e.g. medical jargon.
+What is jargon? ~~ Specialised terminology used by a particular group.
+What is slang? ~~ Informal words or phrases, often used by particular groups.
+What is a communities of practice? ~~ Groups of people who share interests and develop distinctive ways of speaking (Eckert).
+What is audience design? ~~ Bell's theory that speakers adjust their style for their audience.
+What is the Queen's English study? ~~ Harrington showed that the Queen's accent changed over time, becoming less "posh".
+What is a non-standard grammatical feature? ~~ E.g. double negatives ("I didn't do nothing") or "we was".
+What is linguistic prejudice? ~~ Negative attitudes towards people based on their accent or dialect.
+What is h-dropping? ~~ Omitting the /h/ sound at the start of words, e.g. "'ouse".
+What is glottal stopping? ~~ Replacing /t/ with a glottal stop, e.g. "wa'er" for "water".
+
+## 2.2
+What is the deficit model of gender and language? ~~ Lakoff's view that women's language is weaker and less assertive than men's.
+What features did Lakoff identify in women's speech? ~~ Hedges, tag questions, empty adjectives, super-polite forms and intensifiers.
+What is the dominance model? ~~ Zimmerman and West's view that men dominate conversation, e.g. through interruptions.
+What did Zimmerman and West find? ~~ In mixed-sex conversations, men made most of the interruptions.
+What is the difference model? ~~ Tannen's view that men and women have different conversational styles.
+What are Tannen's six contrasts? ~~ Status/support, independence/intimacy, advice/understanding, information/feelings, orders/proposals, conflict/compromise.
+What is the diversity model? ~~ The view that gender is one of many factors affecting language, and variation within genders is greater than between them.
+What did Cameron argue? ~~ Differences in language are due to context and power rather than gender; she challenged the "myth of Mars and Venus".
+What is Butler's theory of gender performativity? ~~ Gender is something we perform through repeated behaviour, including language.
+What is a hedge? ~~ A word or phrase that softens a statement, e.g. "sort of", "maybe".
+What is a tag question? ~~ A question added to a statement, e.g. "It's cold, isn't it?"
+What did Holmes find about tag questions? ~~ Women often used tag questions to facilitate conversation, not due to uncertainty.
+What did Fishman find? ~~ Women did more "conversational shitwork", asking questions to keep conversations going.
+What is sexist language? ~~ Language that discriminates or stereotypes based on gender, e.g. "fireman".
+What is semantic derogation? ~~ When words associated with women develop negative meanings over time, e.g. "mistress".
+What is the generic "he"? ~~ Using "he" to refer to people in general, now seen as exclusive.
+What is marked language? ~~ Adding a gender marker to show difference from the norm, e.g. "female doctor".
+What are gender-neutral terms? ~~ Words that don't specify gender, e.g. "firefighter" or "chair".
+What is singular "they"? ~~ Using "they" to refer to one person of unknown or non-binary gender.
+How is gender represented in the media? ~~ Through stereotypical language, e.g. focusing on women's appearance.
+What is lexical asymmetry? ~~ Unequal pairs of words, e.g. "bachelor" (positive) versus "spinster" (negative).
+What did Coates find about all-female talk? ~~ Women used cooperative strategies such as minimal responses and overlapping speech.
+What is a minimal response? ~~ Short responses like "mm" or "yeah" to show listening.
+What did Beattie find about interruptions? ~~ Women interrupted as much as men, challenging the dominance model.
+What is Jespersen's view of women's language? ~~ An early, stereotyped view that women's language was inferior and less complex.
+How do gender and language interact in the workplace? ~~ Power and role often affect language more than gender.
+What is the "gendered" language in children's toys? ~~ Boys' toys use action and power words; girls' toys use appearance and caring words.
+What is political correctness in language? ~~ Avoiding language that may exclude or offend groups.
+What is the role of social media in gendered language? ~~ It allows new identities and challenges norms, but can also reinforce stereotypes.
+What is linguistic reform? ~~ Changing language to make it less sexist, e.g. "Ms" instead of "Miss" or "Mrs".
+
+## 2.3
+What is ethnolect? ~~ A variety of language associated with an ethnic group.
+What is World English? ~~ The varieties of English used around the world.
+What is Kachru's concentric circles model? ~~ Inner circle (native speakers, e.g. UK), outer circle (second language, e.g. India), expanding circle (foreign language, e.g. China).
+What is a lingua franca? ~~ A language used for communication between speakers of different languages.
+Why is English a global lingua franca? ~~ Colonialism, US economic and cultural power, and its use in science, business and the internet.
+What is a pidgin? ~~ A simplified language that develops for communication between groups without a common language.
+What is a creole? ~~ A pidgin that has become the first language of a community, with a full grammar.
+What is Singlish? ~~ Singapore English, with influences from Malay, Chinese and Tamil.
+What is Indian English? ~~ The variety of English spoken in India, with distinctive vocabulary and grammar.
+What is linguistic imperialism? ~~ The dominance of one language over others, often linked to colonial or economic power (Phillipson).
+What is language death? ~~ When a language no longer has any native speakers.
+What is Jenkins's Lingua Franca Core? ~~ Key pronunciation features needed for international intelligibility in English.
+What is Crystal's view of global English? ~~ English will continue to spread and diversify into many varieties.
+What is McArthur's circle of World English? ~~ A model with World Standard English at the centre, surrounded by regional varieties.
+What is Multicultural London English? ~~ A multiethnolect spoken by young Londoners from diverse backgrounds.
+What is a multiethnolect? ~~ A variety that develops from contact between many ethnic groups.
+What is crossing? ~~ Using a language variety associated with a different ethnic group (Rampton).
+What did Rampton's study show? ~~ Young people used features of other ethnic groups' languages to express identity.
+What is Kerswill's research on MLE? ~~ He found MLE was spoken by young people of all ethnicities in London.
+What is identity in language? ~~ How language expresses who we are, including ethnicity, class and region.
+What are attitudes to ethnolects? ~~ Some view them negatively as "incorrect"; others see them as valid expressions of identity.
+What is language planning? ~~ Deliberate efforts to influence language use, e.g. making a language official.
+What is Global English's impact on other languages? ~~ Loanwords enter other languages, and some fear loss of linguistic diversity.
+What is code-mixing? ~~ Mixing words from two languages within a sentence.
+What is Hinglish? ~~ A mix of Hindi and English used in India.
+What is Nigerian English? ~~ A variety of English spoken in Nigeria, with distinctive vocabulary and grammar.
+What is linguistic diversity? ~~ The variety of languages and dialects in the world.
+Why do some people resist Global English? ~~ To protect national languages and cultural identity, e.g. French language laws.
+What is the role of the internet in Global English? ~~ It spreads English worldwide and creates new varieties and vocabulary.
+What is Englishisation? ~~ The influence of English on other languages and cultures.
+
+## 2.4
+What is language change? ~~ The ways a language develops over time in lexis, grammar, pronunciation and meaning.
+What is Old English? ~~ English spoken from about 450 to 1100, influenced by Germanic languages.
+What is Middle English? ~~ English spoken from about 1100 to 1500, heavily influenced by French after the Norman Conquest.
+What is Early Modern English? ~~ English from about 1500 to 1700, the time of Shakespeare and the printing press.
+What is the Great Vowel Shift? ~~ A major change in the pronunciation of long vowels in English, from about 1400 to 1700.
+What was the impact of the printing press? ~~ It helped standardise spelling and spread written English.
+What was Johnson's dictionary? ~~ Samuel Johnson's 1755 dictionary, which helped standardise spelling and meaning.
+What is prescriptivism? ~~ The view that there are correct and incorrect forms of language that should be followed.
+What is descriptivism? ~~ The view that linguists should describe how language is actually used, without judging it.
+What is neologism? ~~ A newly created word or expression.
+What is borrowing? ~~ Taking words from other languages, e.g. "café" from French.
+What is compounding? ~~ Combining two words to create a new one, e.g. "smartphone".
+What is blending? ~~ Combining parts of two words, e.g. "brunch" (breakfast + lunch).
+What is clipping? ~~ Shortening a word, e.g. "phone" from "telephone".
+What is an acronym? ~~ A word formed from initial letters and pronounced as a word, e.g. NATO.
+What is an initialism? ~~ Initial letters pronounced separately, e.g. BBC.
+What is conversion? ~~ Changing a word's class without changing its form, e.g. "Google" (noun) to "to google" (verb).
+What is affixation? ~~ Adding prefixes or suffixes to create new words, e.g. "unfriend".
+What is amelioration? ~~ When a word's meaning becomes more positive, e.g. "nice" (once meaning foolish).
+What is pejoration? ~~ When a word's meaning becomes more negative, e.g. "silly" (once meaning blessed).
+What is broadening? ~~ When a word's meaning becomes wider, e.g. "holiday" (holy day).
+What is narrowing? ~~ When a word's meaning becomes more specific, e.g. "meat" (once meaning any food).
+What is Aitchison's damp spoon syndrome? ~~ The view that language change is due to laziness, which Aitchison rejects.
+What is Aitchison's crumbling castle view? ~~ The view that language was once perfect and is decaying, which Aitchison rejects.
+What is Aitchison's infectious disease view? ~~ The view that bad language habits spread like a disease, which Aitchison rejects.
+What is the S-curve model of change? ~~ Change starts slowly, spreads rapidly, then slows as it reaches most speakers.
+What is the wave model of change? ~~ Change spreads outwards from a central point, like ripples.
+What is the functional theory of change? ~~ Language changes to meet the needs of its users, e.g. new technology.
+What is random fluctuation theory? ~~ Language changes randomly, without a specific cause.
+What is the effect of technology on language change? ~~ New words (e.g. "selfie"), new forms of communication, and faster spread of change.
+
+## 2.5
+What is a language discourse? ~~ A way of talking about language that reflects particular attitudes and ideologies.
+What is a discourse about language change? ~~ Debates about whether change represents decline or natural evolution.
+What is a prescriptive discourse? ~~ Language that argues for "correct" usage and criticises change or non-standard forms.
+What is a descriptive discourse? ~~ Language that accepts and explains variation and change without judgement.
+What are typical features of a prescriptive text? ~~ Emotive language, metaphors of decay, appeals to tradition, and negative representation of speakers.
+What metaphors are often used about language decline? ~~ Disease, decay, invasion, crime and pollution.
+What is linguistic purism? ~~ The desire to keep a language "pure" from foreign influence or change.
+What is a moral panic about language? ~~ Exaggerated public anxiety about language change, e.g. texting ruining literacy.
+What is John Humphrys's view on texting? ~~ He argued texting was "vandalising" language, a prescriptive view.
+What is David Crystal's view on texting? ~~ He argued texting is creative and doesn't harm literacy.
+What is a discourse about accents? ~~ Debates about attitudes to regional and social accents, often linking them to intelligence or class.
+What is a discourse about gender and language? ~~ Debates about sexist language and whether language should be reformed.
+What is a discourse about global English? ~~ Debates about English as a global language, including linguistic imperialism and loss of diversity.
+How are writers' attitudes to language represented? ~~ Through lexical choices, tone, metaphors and the way they represent speakers.
+What is an ideology? ~~ A set of beliefs and values that shapes how people see the world.
+What is the role of the media in language discourses? ~~ It shapes public attitudes by presenting language issues in particular ways.
+What is a genre used in language discourse? ~~ Opinion articles, letters, blogs and online comments.
+What is a rhetorical feature of discourse texts? ~~ Rhetorical questions, lists, hyperbole and emotive language.
+What is authority in discourse texts? ~~ Writers establish credibility through expertise, quotes or experience.
+What is the role of the audience in discourse texts? ~~ Writers appeal to readers' values and beliefs to persuade them.
+What is "grammar Nazi" discourse? ~~ Online criticism of others' grammar, often prescriptive and judgemental.
+What is the language of standardisation discourse? ~~ Arguments that Standard English is necessary for education and communication.
+How do descriptive linguists respond to prescriptivism? ~~ They argue all varieties are rule-governed and valid.
+What is the "lexical gap" argument? ~~ New words fill gaps in meaning, supporting functional views of change.
+What is identity in language discourse? ~~ The idea that language varieties express identity and should be respected.
+What is linguistic insecurity? ~~ When speakers feel their variety is inferior.
+What is the role of schools in language discourses? ~~ Schools often promote Standard English, which can reinforce prescriptive attitudes.
+What is Lynne Truss's view? ~~ In "Eats, Shoots & Leaves" she argued for strict punctuation rules, a prescriptive view.
+What is Steven Pinker's view? ~~ He argues language is an instinct and all speakers use complex rules, a descriptive view.
+What is a counter-discourse? ~~ An alternative way of talking about language that challenges dominant views.
+
+## 3.1
+What is a language investigation? ~~ An independent research project analysing a language data set to explore a research question.
+What is a research question? ~~ A focused question guiding an investigation.
+What is a hypothesis in language research? ~~ A prediction about what the investigation will find.
+What is qualitative analysis? ~~ Detailed analysis of language features and their meanings.
+What is quantitative analysis? ~~ Analysis using numbers, e.g. frequency counts of language features.
+What is a corpus? ~~ A large collection of texts used for analysis.
+What is primary data? ~~ Data collected by the researcher, e.g. recordings or interviews.
+What is secondary data? ~~ Data collected by others, e.g. existing texts or corpora.
+What is the observer's paradox? ~~ The way people change their speech when they know they are being observed (Labov).
+How can the observer's paradox be reduced? ~~ Recording people in natural settings, over time, or without focusing on language.
+What are ethical considerations in language research? ~~ Obtaining consent, protecting anonymity, and avoiding harm.
+What is transcription? ~~ Writing down spoken language, often using symbols for pauses and overlaps.
+What is a transcription key? ~~ A guide explaining the symbols used in a transcript.
+What is methodology? ~~ The methods used to collect and analyse data.
+What is a pilot study? ~~ A small trial to test methods before the main investigation.
+What is sampling in language research? ~~ Selecting representative data for analysis.
+What is the literature review? ~~ A summary of existing research relevant to the investigation.
+What is a conclusion in an investigation? ~~ A summary of findings, linked back to the research question and theories.
+What is an evaluation? ~~ A reflection on the strengths and limitations of the investigation.
+Why is it important to link findings to theory? ~~ It shows understanding of how data supports or challenges existing research.
+What is validity in language research? ~~ Whether the research measures what it claims to measure.
+What is reliability? ~~ Whether the findings would be consistent if repeated.
+What is the word limit for AQA NEA? ~~ 2000 words for the investigation (excluding data and references).
+What topics can a language investigation explore? ~~ E.g. gender in conversation, children's language, language change, representation in media.
+What is a comparative investigation? ~~ Comparing two or more data sets, e.g. texts from different time periods.
+What are the limitations of small data sets? ~~ Results may not be representative or generalisable.
+Why is triangulation useful? ~~ Using several methods or data sources makes findings more reliable.
+What is bias in language research? ~~ When the researcher's views or methods affect the results.
+What is a variable in language research? ~~ A factor that may affect language use, e.g. age, gender or context.
+How should findings be presented? ~~ Clearly, with examples from the data, tables where useful, and linguistic terminology.
+
+## 3.2
+What is original writing in the NEA? ~~ A piece of creative or persuasive writing based on a style model.
+What is a style model? ~~ An existing text that provides a model of genre and style for original writing.
+What is a commentary? ~~ An analysis of the language choices made in the original writing, compared with the style model.
+What genres can be used for original writing? ~~ The power of persuasion, the power of storytelling, or the power of information.
+What is the word count for AQA original writing? ~~ About 750 words for the writing and 750 for the commentary.
+What should a commentary include? ~~ Analysis of the writer's choices, their effects, and comparison with the style model, using linguistic terms.
+What is narrative voice? ~~ The perspective from which a story is told, e.g. first or third person.
+What is free indirect discourse? ~~ A narrative technique blending the narrator's voice with a character's thoughts.
+What is a hook? ~~ An opening designed to grab the reader's attention.
+What is pace in writing? ~~ The speed at which events unfold, controlled by sentence length and detail.
+What is a persuasive technique? ~~ E.g. rhetorical questions, emotive language, statistics and direct address.
+What is an informative text? ~~ A text designed to explain or inform, using clear structure, facts and subject-specific vocabulary.
+What is audience adaptation? ~~ Adjusting language to suit the intended readers.
+What is characterisation? ~~ How a writer creates and develops characters.
+What is dialogue in fiction? ~~ Conversation between characters, used to reveal personality and advance the plot.
+What is imagery? ~~ Descriptive language that creates pictures in the reader's mind.
+What is a metaphor? ~~ Describing something as if it were something else.
+What is a simile? ~~ A comparison using "like" or "as".
+What is personification? ~~ Giving human qualities to non-human things.
+What is structure in original writing? ~~ The organisation of ideas, e.g. chronological or thematic.
+What is a cyclical structure? ~~ A text that ends where it began.
+What is a flashback? ~~ A scene set earlier than the main story.
+What is register in original writing? ~~ The level of formality chosen to suit the genre and audience.
+What is the purpose of drafting? ~~ Improving writing through revision and editing.
+How should the commentary refer to the style model? ~~ It should show how the writer adapted conventions from the style model.
+What is lexical choice? ~~ The selection of particular words for effect.
+What is syntactical choice? ~~ The arrangement of sentences for effect, e.g. short sentences for tension.
+What is graphological choice? ~~ The use of layout, fonts and images to create meaning.
+Why is linguistic terminology important in the commentary? ~~ It shows precise understanding of language choices.
+What is the relationship between purpose and form? ~~ The form (genre and structure) should suit the text's purpose.

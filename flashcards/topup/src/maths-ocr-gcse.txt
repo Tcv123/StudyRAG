@@ -1,0 +1,609 @@
+deck: Mathematics|OCR|gcse
+
+## 1.1
+What is place value? ~~ The value of a digit depending on its position, e.g. the 3 in 352 is worth 300.
+What is the value of the 7 in 4.572? ~~ 7 hundredths (0.07).
+What is BIDMAS? ~~ The order of operations: Brackets, Indices, Division and Multiplication, Addition and Subtraction.
+Calculate 3 + 4 × 2. ~~ 3 + 8 = 11.
+Calculate (3 + 4) × 2. ~~ 14.
+Calculate 20 − 12 ÷ 4. ~~ 20 − 3 = 17.
+What is a factor? ~~ A number that divides exactly into another number, e.g. 3 is a factor of 12.
+What is a multiple? ~~ A number in the times table of another, e.g. 15 is a multiple of 5.
+What is a prime number? ~~ A number with exactly two factors: 1 and itself.
+List the prime numbers less than 20. ~~ 2, 3, 5, 7, 11, 13, 17, 19.
+Is 1 a prime number? ~~ No; it has only one factor.
+What is prime factorisation? ~~ Writing a number as a product of prime factors, e.g. 60 = 2² × 3 × 5.
+Write 72 as a product of prime factors. ~~ 2³ × 3².
+What is the HCF? ~~ The highest common factor: the largest number that divides into two or more numbers.
+Find the HCF of 24 and 36. ~~ 12.
+What is the LCM? ~~ The lowest common multiple: the smallest number that is a multiple of two or more numbers.
+Find the LCM of 6 and 8. ~~ 24.
+How can prime factorisation find the HCF and LCM? ~~ HCF: multiply common prime factors (lowest powers). LCM: multiply all prime factors (highest powers).
+What is a square number? ~~ A number multiplied by itself, e.g. 1, 4, 9, 16, 25.
+What is a cube number? ~~ A number multiplied by itself three times, e.g. 1, 8, 27, 64, 125.
+Calculate −5 × −3. ~~ 15.
+Calculate −12 ÷ 4. ~~ −3.
+Calculate −3 − (−7). ~~ 4.
+What is a reciprocal? ~~ 1 divided by the number, e.g. the reciprocal of 4 is 1/4.
+Calculate 234 × 16 using long multiplication. ~~ 3744.
+Calculate 672 ÷ 12. ~~ 56.
+Multiply 3.4 by 100. ~~ 340.
+Divide 56 by 0.7. ~~ 80.
+What is an integer? ~~ A whole number, which can be positive, negative or zero.
+How many ways can 3 books be arranged on a shelf? ~~ 3 × 2 × 1 = 6 (product rule for counting).
+
+## 1.2
+What is a fraction? ~~ A part of a whole, written as numerator over denominator.
+Simplify 18/24. ~~ 3/4.
+What is an equivalent fraction? ~~ A fraction with the same value, e.g. 1/2 = 3/6.
+Add 1/3 + 1/4. ~~ 4/12 + 3/12 = 7/12.
+Subtract 5/6 − 1/4. ~~ 10/12 − 3/12 = 7/12.
+Multiply 2/3 × 3/5. ~~ 6/15 = 2/5.
+Divide 3/4 ÷ 2/5. ~~ 3/4 × 5/2 = 15/8.
+Convert 2 3/5 to an improper fraction. ~~ 13/5.
+Convert 17/4 to a mixed number. ~~ 4 1/4.
+Find 3/8 of 64. ~~ 24.
+Convert 3/8 to a decimal. ~~ 0.375.
+Convert 0.65 to a fraction. ~~ 65/100 = 13/20.
+Convert 0.4 to a percentage. ~~ 40%.
+Convert 35% to a fraction. ~~ 35/100 = 7/20.
+What is a recurring decimal? ~~ A decimal where digits repeat forever, e.g. 0.333…
+Convert 0.4̇ (0.444…) to a fraction. ~~ 4/9.
+Convert 0.2̇7̇ (0.2727…) to a fraction. ~~ 27/99 = 3/11.
+Find 15% of 80. ~~ 12.
+Increase 60 by 20%. ~~ 60 × 1.2 = 72.
+Decrease 250 by 12%. ~~ 250 × 0.88 = 220.
+What is a multiplier? ~~ A number used to increase or decrease an amount by a percentage, e.g. 1.05 for a 5% increase.
+Express 18 as a percentage of 72. ~~ 18/72 × 100 = 25%.
+Calculate the percentage change from 40 to 50. ~~ (10/40) × 100 = 25% increase.
+What is reverse percentage? ~~ Finding the original amount before a percentage change, by dividing by the multiplier.
+A price after a 20% increase is £96. Find the original price. ~~ 96 ÷ 1.2 = £80.
+What is simple interest? ~~ Interest calculated only on the original amount each year.
+What is compound interest? ~~ Interest calculated on the original amount plus interest already earned.
+Find the value of £1000 after 3 years at 5% compound interest. ~~ 1000 × 1.05³ = £1157.63.
+What is depreciation? ~~ A decrease in value over time, e.g. 1000 × 0.9ⁿ for 10% per year.
+Order 0.6, 5/8 and 62% from smallest to largest. ~~ 0.6, 62%, 5/8 (0.6, 0.62, 0.625).
+
+## 1.3
+Round 3.4567 to 2 decimal places. ~~ 3.46.
+Round 45,678 to the nearest thousand. ~~ 46,000.
+Round 0.004829 to 2 significant figures. ~~ 0.0048.
+Round 6,381 to 1 significant figure. ~~ 6,000.
+What are significant figures? ~~ The digits in a number that carry meaning, starting from the first non-zero digit.
+How do you estimate a calculation? ~~ Round each number to 1 significant figure, then calculate.
+Estimate 48.7 × 21.3. ~~ 50 × 20 = 1000.
+Estimate (62.4 × 3.9)/0.51. ~~ (60 × 4)/0.5 = 480.
+What is an error interval? ~~ The range of values a rounded number could have been before rounding.
+Give the error interval for x = 7.4 rounded to 1 decimal place. ~~ 7.35 ≤ x < 7.45.
+Give the error interval for a length of 50 cm to the nearest 10 cm. ~~ 45 ≤ l < 55.
+What is truncation? ~~ Cutting off digits after a certain point without rounding.
+Truncate 3.789 to 1 decimal place. ~~ 3.7.
+Give the error interval for 4.3 truncated to 1 decimal place. ~~ 4.3 ≤ x < 4.4.
+What is the upper bound? ~~ The largest value a rounded number could have been (not included).
+What is the lower bound? ~~ The smallest value a rounded number could have been.
+How do you find the upper bound of a sum? ~~ Add the upper bounds.
+How do you find the upper bound of a difference a − b? ~~ Upper bound of a − lower bound of b.
+How do you find the upper bound of a quotient a ÷ b? ~~ Upper bound of a ÷ lower bound of b.
+How do you find the upper bound of a product? ~~ Multiply the upper bounds.
+A rectangle is 5 cm by 3 cm, both to the nearest cm. Find the upper bound of its area. ~~ 5.5 × 3.5 = 19.25 cm².
+Why do we estimate? ~~ To check answers are reasonable and to make quick calculations.
+Is an estimate using rounded-up values an overestimate? ~~ Usually, if all values are rounded up in a multiplication.
+Round 2.998 to 2 decimal places. ~~ 3.00.
+How many significant figures does 0.0503 have? ~~ 3.
+How do you give an answer to a sensible degree of accuracy? ~~ Match the accuracy of the data given, often 3 significant figures.
+Estimate √50. ~~ About 7.1 (between 7 and 8, closer to 7).
+Estimate the cost of 19 items at £4.95 each. ~~ 20 × £5 = £100.
+What does "to the nearest integer" mean? ~~ Rounded to the nearest whole number.
+Round 0.07 to 1 significant figure. ~~ 0.07.
+
+## 1.4
+What is an index (power)? ~~ The number of times a base is multiplied by itself, e.g. 2⁴ = 2 × 2 × 2 × 2.
+Simplify a³ × a⁴. ~~ a⁷.
+Simplify a⁸ ÷ a². ~~ a⁶.
+Simplify (a³)². ~~ a⁶.
+What is a⁰? ~~ 1 (for a ≠ 0).
+What is 2⁻³? ~~ 1/8.
+What is 25^(1/2)? ~~ 5.
+What is 8^(2/3)? ~~ 4.
+What is 16^(−1/2)? ~~ 1/4.
+What is standard form? ~~ A number written as A × 10ⁿ where 1 ≤ A < 10 and n is an integer.
+Write 45,000 in standard form. ~~ 4.5 × 10⁴.
+Write 0.00032 in standard form. ~~ 3.2 × 10⁻⁴.
+Write 6.1 × 10³ as an ordinary number. ~~ 6100.
+Calculate (3 × 10⁴) × (2 × 10³). ~~ 6 × 10⁷.
+Calculate (8 × 10⁶) ÷ (4 × 10²). ~~ 2 × 10⁴.
+Calculate (5 × 10³) × (4 × 10⁵) in standard form. ~~ 20 × 10⁸ = 2 × 10⁹.
+What is a square root? ~~ A number that multiplied by itself gives the original number, e.g. √36 = 6.
+What is a cube root? ~~ A number that multiplied by itself three times gives the original, e.g. ∛27 = 3.
+What is a surd? ~~ A root that can't be simplified to a whole number, e.g. √2.
+Simplify √18. ~~ 3√2.
+Simplify √12 × √3. ~~ √36 = 6.
+Simplify √50 − √8. ~~ 5√2 − 2√2 = 3√2.
+Rationalise 1/√5. ~~ √5/5.
+Rationalise 2/(3 − √2). ~~ 2(3 + √2)/7.
+Expand (2 + √3)(2 − √3). ~~ 4 − 3 = 1.
+Evaluate 3² + 2³. ~~ 9 + 8 = 17.
+What is 10⁻² as a decimal? ~~ 0.01.
+Simplify 2x³ × 5x². ~~ 10x⁵.
+Simplify (2x²)³. ~~ 8x⁶.
+What is (1/2)⁻²? ~~ 4.
+
+## 2.1
+What is an expression? ~~ A collection of terms with no equals sign, e.g. 3x + 2.
+What is an equation? ~~ A statement with an equals sign that can be solved, e.g. 3x + 2 = 11.
+What is an identity? ~~ An equation true for all values, e.g. 2(x + 1) ≡ 2x + 2.
+What is a formula? ~~ A rule linking variables, e.g. A = πr².
+Simplify 3a + 2b − a + 5b. ~~ 2a + 7b.
+Expand 4(2x − 3). ~~ 8x − 12.
+Expand and simplify 3(x + 2) − 2(x − 1). ~~ x + 8.
+Expand (x + 4)(x + 3). ~~ x² + 7x + 12.
+Expand (2x − 1)(x + 5). ~~ 2x² + 9x − 5.
+Expand (x − 3)². ~~ x² − 6x + 9.
+Expand (x + 1)(x + 2)(x + 3). ~~ x³ + 6x² + 11x + 6.
+Factorise 6x + 9. ~~ 3(2x + 3).
+Factorise x² + 5x. ~~ x(x + 5).
+Factorise x² + 7x + 10. ~~ (x + 2)(x + 5).
+Factorise x² − x − 12. ~~ (x − 4)(x + 3).
+Factorise x² − 25. ~~ (x − 5)(x + 5).
+Factorise 2x² + 5x + 3. ~~ (2x + 3)(x + 1).
+What is the difference of two squares? ~~ a² − b² = (a − b)(a + b).
+Substitute x = 3 into 2x² − 5. ~~ 2 × 9 − 5 = 13.
+Make r the subject of A = πr². ~~ r = √(A/π).
+Make x the subject of y = 3x − 4. ~~ x = (y + 4)/3.
+Make t the subject of v = u + at. ~~ t = (v − u)/a.
+Simplify (x² − 9)/(x + 3). ~~ x − 3.
+Simplify 2/x + 3/x. ~~ 5/x.
+Add 1/x + 1/(x + 1). ~~ (2x + 1)/(x(x + 1)).
+What is a function? ~~ A rule that maps each input to exactly one output, e.g. f(x) = 2x + 1.
+If f(x) = 3x − 2, find f(4). ~~ 10.
+If f(x) = 2x and g(x) = x + 3, find fg(x). ~~ f(x + 3) = 2x + 6.
+Find the inverse of f(x) = (x + 1)/2. ~~ f⁻¹(x) = 2x − 1.
+Prove that the sum of three consecutive integers is a multiple of 3. ~~ n + (n + 1) + (n + 2) = 3n + 3 = 3(n + 1).
+
+## 2.2
+Solve 3x + 5 = 17. ~~ 3x = 12, so x = 4.
+Solve 5x − 3 = 2x + 9. ~~ 3x = 12, so x = 4.
+Solve 2(x + 3) = 14. ~~ x + 3 = 7, so x = 4.
+Solve x/4 + 3 = 7. ~~ x/4 = 4, so x = 16.
+Solve (x + 2)/3 = 5. ~~ x + 2 = 15, so x = 13.
+Solve x² − 5x + 6 = 0. ~~ (x − 2)(x − 3) = 0, so x = 2 or 3.
+Solve x² = 49. ~~ x = ±7.
+State the quadratic formula. ~~ x = (−b ± √(b² − 4ac))/2a.
+Solve x² + 3x − 5 = 0 to 2 decimal places. ~~ x = (−3 ± √29)/2, so x ≈ 1.19 or x ≈ −4.19.
+Solve by completing the square: x² + 6x − 7 = 0. ~~ (x + 3)² = 16, so x = 1 or x = −7.
+Complete the square for x² − 8x + 3. ~~ (x − 4)² − 13.
+What is the turning point of y = (x − 4)² − 13? ~~ (4, −13).
+Solve the simultaneous equations x + y = 10 and x − y = 4. ~~ x = 7, y = 3.
+Solve 2x + 3y = 13 and x + y = 5. ~~ From x = 5 − y: 10 − 2y + 3y = 13, so y = 3, x = 2.
+Solve y = x + 1 and y = x² − 1. ~~ x² − x − 2 = 0, so x = 2 or −1; points (2, 3) and (−1, 0).
+Solve 2x + 1 > 7. ~~ x > 3.
+Solve −3x ≤ 12. ~~ x ≥ −4 (reverse the sign when dividing by a negative).
+Solve 4 < 2x + 2 ≤ 10. ~~ 1 < x ≤ 4.
+List the integers satisfying −2 < n ≤ 3. ~~ −1, 0, 1, 2, 3.
+Solve x² < 16. ~~ −4 < x < 4.
+Solve x² − 4x − 5 > 0. ~~ (x − 5)(x + 1) > 0, so x < −1 or x > 5.
+How are inequalities shown on a number line? ~~ Open circle for < or >, filled circle for ≤ or ≥, with an arrow showing the direction.
+How are inequalities shown on a graph? ~~ Draw the boundary line (dashed for strict) and shade the required region.
+What is an iterative method? ~~ Repeatedly using a formula to get closer to a solution, e.g. xₙ₊₁ = ∛(5 − xₙ).
+Use x₀ = 1 and xₙ₊₁ = (xₙ + 3)/2 to find x₁ and x₂. ~~ x₁ = 2, x₂ = 2.5.
+How do you show a root lies between two values? ~~ Show there is a change of sign in the function between them.
+Solve 3/(x + 1) = 2. ~~ 3 = 2x + 2, so x = 1/2.
+Solve x² + 2x = 0. ~~ x(x + 2) = 0, so x = 0 or −2.
+How do you form an equation from a word problem? ~~ Let x represent the unknown, write expressions for the quantities, and set them equal.
+The angles of a triangle are x, 2x and 3x. Find x. ~~ 6x = 180, so x = 30°.
+
+## 2.3
+What is a sequence? ~~ A list of numbers following a rule.
+What is a term-to-term rule? ~~ A rule that tells you how to get from one term to the next.
+What is a position-to-term rule (nth term)? ~~ A formula giving any term from its position n.
+Find the nth term of 5, 8, 11, 14, … ~~ 3n + 2.
+Find the nth term of 20, 16, 12, 8, … ~~ 24 − 4n.
+Is 50 a term in the sequence 3n + 2? ~~ 3n + 2 = 50 gives n = 16, so yes.
+What is an arithmetic sequence? ~~ A sequence where the difference between terms is constant.
+What is a geometric sequence? ~~ A sequence where each term is multiplied by a constant ratio.
+Find the next term in 3, 6, 12, 24, … ~~ 48.
+What is the common ratio of 2, 6, 18, 54? ~~ 3.
+What is a Fibonacci-type sequence? ~~ Each term is the sum of the two previous terms, e.g. 1, 1, 2, 3, 5, 8.
+What is a quadratic sequence? ~~ A sequence whose second differences are constant.
+Find the nth term of 2, 5, 10, 17, 26, … ~~ n² + 1.
+Find the nth term of 3, 9, 19, 33, 51, … ~~ 2n² + 1.
+How do you find the nth term of a quadratic sequence? ~~ Halve the second difference to get the coefficient of n², subtract an² from the terms, then find the linear part.
+What is the nth term of the square numbers? ~~ n².
+What is the nth term of the triangular numbers? ~~ n(n + 1)/2.
+List the first five triangular numbers. ~~ 1, 3, 6, 10, 15.
+Find the 10th term of 4n − 1. ~~ 39.
+What is the nth term of a geometric sequence with first term a and ratio r? ~~ arⁿ⁻¹.
+Find the 5th term of 3, 6, 12, … ~~ 3 × 2⁴ = 48.
+What is the first term of 7n − 3? ~~ 4.
+Find the nth term of 1, 4, 9, 16, … ~~ n².
+Find the nth term of 0, 3, 8, 15, … ~~ n² − 1.
+What is the common difference of 2n + 5? ~~ 2.
+Find the term-to-term rule for 5, 10, 20, 40. ~~ Multiply by 2.
+How can a sequence be generated from a term-to-term rule? ~~ Start with the first term and apply the rule repeatedly.
+Write the first three terms of the sequence with nth term n² + 3n. ~~ 4, 10, 18.
+What is a sequence of cube numbers? ~~ 1, 8, 27, 64, 125, …
+Find the nth term of 0.5, 1, 1.5, 2, … ~~ 0.5n.
+
+## 2.4
+What is the equation of a straight line? ~~ y = mx + c, where m is the gradient and c is the y-intercept.
+Find the gradient of the line through (1, 2) and (3, 8). ~~ (8 − 2)/(3 − 1) = 3.
+What is the gradient of y = 4x − 7? ~~ 4.
+What is the y-intercept of y = 4x − 7? ~~ −7.
+Find the equation of the line with gradient 2 through (1, 5). ~~ y = 2x + 3.
+When are two lines parallel? ~~ When they have the same gradient.
+When are two lines perpendicular? ~~ When the product of their gradients is −1.
+Find the gradient of a line perpendicular to y = 3x + 1. ~~ −1/3.
+Find the midpoint of (2, 3) and (8, 7). ~~ (5, 5).
+What does the graph of y = x² look like? ~~ A U-shaped parabola through the origin.
+What does the graph of y = x³ look like? ~~ An S-shaped curve through the origin.
+What does the graph of y = 1/x look like? ~~ A reciprocal curve in two parts, with the axes as asymptotes.
+What does the graph of y = 2ˣ look like? ~~ An exponential curve through (0, 1), increasing steeply.
+What is the equation of a circle with centre (0, 0) and radius r? ~~ x² + y² = r².
+How do you find the roots of a quadratic graph? ~~ Find where it crosses the x-axis.
+How do you find the turning point of a quadratic graph? ~~ Complete the square, or find the midpoint of the roots.
+How do you solve an equation graphically? ~~ Find the x-coordinates where the graphs intersect.
+What does the gradient of a distance–time graph represent? ~~ Speed.
+What does the gradient of a velocity–time graph represent? ~~ Acceleration.
+What does the area under a velocity–time graph represent? ~~ Distance travelled.
+How do you estimate the gradient of a curve at a point? ~~ Draw a tangent and find its gradient.
+How do you estimate the area under a curve? ~~ Split it into trapezia and add their areas.
+Describe the transformation y = f(x) + 3. ~~ A translation 3 units up.
+Describe the transformation y = f(x − 2). ~~ A translation 2 units to the right.
+Describe the transformation y = −f(x). ~~ A reflection in the x-axis.
+Describe the transformation y = f(−x). ~~ A reflection in the y-axis.
+What does the graph of y = sin x look like? ~~ A wave between −1 and 1 with period 360°.
+What does the graph of y = tan x look like? ~~ Repeating curves with period 180° and asymptotes at 90°, 270°, …
+Find the equation of the tangent to x² + y² = 25 at (3, 4). ~~ Gradient of radius 4/3, so tangent gradient −3/4: y = −3x/4 + 25/4.
+How do you find where a line crosses the x-axis? ~~ Set y = 0 and solve.
+
+## 3.1
+What is a ratio? ~~ A comparison of two or more quantities, e.g. 3 : 2.
+Simplify 12 : 18. ~~ 2 : 3.
+Share £60 in the ratio 2 : 3. ~~ £24 and £36.
+Share 84 in the ratio 1 : 2 : 4. ~~ 12, 24 and 48.
+If the ratio of boys to girls is 3 : 5 and there are 15 boys, how many girls are there? ~~ 25.
+Write the ratio 3 : 4 as a fraction of the whole. ~~ The first part is 3/7 of the total.
+What is direct proportion? ~~ When one quantity increases, the other increases at the same rate: y = kx.
+What is inverse proportion? ~~ When one quantity increases, the other decreases: y = k/x.
+If y is directly proportional to x and y = 12 when x = 3, find y when x = 5. ~~ k = 4, so y = 20.
+If y is inversely proportional to x and y = 6 when x = 4, find y when x = 8. ~~ k = 24, so y = 3.
+If y ∝ x² and y = 50 when x = 5, find y when x = 3. ~~ k = 2, so y = 18.
+If y ∝ 1/x² and y = 4 when x = 3, find y when x = 6. ~~ k = 36, so y = 1.
+What does a direct proportion graph look like? ~~ A straight line through the origin.
+What does an inverse proportion graph look like? ~~ A curve that decreases, approaching the axes.
+5 pens cost £3.50. How much do 8 pens cost? ~~ £0.70 each, so £5.60.
+4 workers take 6 days to build a wall. How long would 3 workers take? ~~ 24 worker-days ÷ 3 = 8 days.
+What is the unitary method? ~~ Finding the value of one unit first, then scaling up.
+Convert a ratio 1 : 4 into a percentage split. ~~ 20% and 80%.
+A recipe for 4 people uses 200 g of flour. How much for 6 people? ~~ 300 g.
+What is a scale on a map? ~~ A ratio comparing distance on the map to real distance, e.g. 1 : 50,000.
+On a 1 : 25,000 map, how far is 4 cm in real life? ~~ 100,000 cm = 1 km.
+What is best value? ~~ The option with the lowest cost per unit (or most units per pound).
+Which is better value: 500 g for £2.20 or 750 g for £3.15? ~~ 0.44p per g versus 0.42p per g, so 750 g is better value.
+What is exchange rate? ~~ The value of one currency in terms of another, e.g. £1 = $1.25.
+Convert £80 to dollars at £1 = $1.25. ~~ $100.
+How do you combine ratios a : b and b : c? ~~ Make the b values equal, then combine, e.g. 2 : 3 and 4 : 5 gives 8 : 12 : 15.
+Divide 45 in the ratio 4 : 5. ~~ 20 and 25.
+What is the golden ratio approximately? ~~ 1.618.
+If a : b = 3 : 4 and a = 12, find b. ~~ 16.
+What is growth and decay in proportion? ~~ Repeated percentage changes modelled by multiplying by a multiplier each time, e.g. P × 1.03ⁿ.
+
+## 3.2
+What is speed? ~~ Distance ÷ time.
+A car travels 150 km in 2.5 hours. Find its average speed. ~~ 60 km/h.
+How long does it take to travel 90 miles at 30 mph? ~~ 3 hours.
+What is density? ~~ Mass ÷ volume.
+Find the density of a 400 g object with a volume of 50 cm³. ~~ 8 g/cm³.
+What is pressure? ~~ Force ÷ area.
+Find the pressure when a force of 60 N acts on 3 m². ~~ 20 N/m² (Pa).
+Convert 36 km/h to m/s. ~~ 10 m/s.
+Convert 5 m/s to km/h. ~~ 18 km/h.
+What is a compound measure? ~~ A measure involving two quantities, e.g. speed (distance and time).
+What is a rate of change? ~~ How quickly one quantity changes compared with another.
+What does the gradient of a graph represent? ~~ The rate of change of y with respect to x.
+What is average speed for a whole journey? ~~ Total distance ÷ total time.
+A car travels 60 km at 30 km/h then 60 km at 60 km/h. Find the average speed. ~~ Time = 2 + 1 = 3 h; 120 ÷ 3 = 40 km/h.
+Convert 2.5 hours to hours and minutes. ~~ 2 hours 30 minutes.
+Convert 45 minutes to hours. ~~ 0.75 hours.
+What is flow rate? ~~ Volume ÷ time, e.g. litres per minute.
+A tank of 600 L fills at 20 L/min. How long does it take? ~~ 30 minutes.
+What is population density? ~~ Population ÷ area.
+Convert 1 m³ to cm³. ~~ 1,000,000 cm³.
+Convert 1 m² to cm². ~~ 10,000 cm².
+How do you convert units of area? ~~ Square the linear conversion factor.
+How do you convert units of volume? ~~ Cube the linear conversion factor.
+What is the formula triangle for speed? ~~ Speed = distance/time, distance = speed × time, time = distance/speed.
+What is acceleration? ~~ The rate of change of velocity: change in velocity ÷ time.
+On a velocity–time graph, what does a horizontal line mean? ~~ Constant velocity.
+Estimate the rate of change at a point on a curve. ~~ Draw a tangent and calculate its gradient.
+What is the rate of change on a straight-line graph? ~~ Constant, equal to the gradient.
+Mass = 2 kg and density = 0.5 kg/m³. Find the volume. ~~ 4 m³.
+How is average rate of change between two points found? ~~ The gradient of the chord joining them.
+
+## 4.1
+What is the sum of angles in a triangle? ~~ 180°.
+What is the sum of angles in a quadrilateral? ~~ 360°.
+What is the sum of angles on a straight line? ~~ 180°.
+What is the sum of angles around a point? ~~ 360°.
+What are vertically opposite angles? ~~ Angles opposite each other when two lines cross; they are equal.
+What are alternate angles? ~~ Equal angles on opposite sides of a transversal between parallel lines (Z-angles).
+What are corresponding angles? ~~ Equal angles in matching positions on parallel lines (F-angles).
+What are co-interior angles? ~~ Angles between parallel lines on the same side of a transversal; they add to 180° (C-angles).
+What is the sum of interior angles of an n-sided polygon? ~~ (n − 2) × 180°.
+What is the sum of exterior angles of any polygon? ~~ 360°.
+Find the interior angle of a regular hexagon. ~~ 720 ÷ 6 = 120°.
+Find the exterior angle of a regular octagon. ~~ 360 ÷ 8 = 45°.
+How many sides has a regular polygon with exterior angle 30°? ~~ 12.
+What are the properties of an isosceles triangle? ~~ Two equal sides and two equal base angles.
+What are the properties of an equilateral triangle? ~~ Three equal sides and three 60° angles.
+What are the properties of a parallelogram? ~~ Opposite sides equal and parallel, opposite angles equal.
+What are the properties of a rhombus? ~~ Four equal sides, opposite angles equal, diagonals bisect at right angles.
+What are the properties of a trapezium? ~~ One pair of parallel sides.
+What are the properties of a kite? ~~ Two pairs of adjacent equal sides and one pair of equal angles.
+What are congruent shapes? ~~ Shapes that are identical in size and shape.
+What are the conditions for congruent triangles? ~~ SSS, SAS, ASA (or AAS) and RHS.
+What are similar shapes? ~~ Shapes with the same angles, where corresponding sides are in the same ratio.
+How are areas of similar shapes related? ~~ If lengths are scaled by k, areas are scaled by k².
+How are volumes of similar shapes related? ~~ If lengths are scaled by k, volumes are scaled by k³.
+What is the angle in a semicircle? ~~ 90°.
+What is a right angle? ~~ An angle of 90°.
+What is an obtuse angle? ~~ An angle between 90° and 180°.
+What is a reflex angle? ~~ An angle between 180° and 360°.
+What are three-figure bearings? ~~ Angles measured clockwise from north, written with three digits, e.g. 045°.
+If the bearing of B from A is 070°, what is the bearing of A from B? ~~ 250°.
+
+## 4.2
+What is the area of a rectangle? ~~ Length × width.
+What is the area of a triangle? ~~ ½ × base × perpendicular height.
+What is the area of a parallelogram? ~~ Base × perpendicular height.
+What is the area of a trapezium? ~~ ½(a + b)h.
+What is the area of a circle? ~~ πr².
+What is the circumference of a circle? ~~ 2πr (or πd).
+Find the area of a circle with radius 5 cm. ~~ 25π ≈ 78.5 cm².
+Find the circumference of a circle with diameter 10 cm. ~~ 10π ≈ 31.4 cm.
+What is the arc length of a sector? ~~ (θ/360) × 2πr.
+What is the area of a sector? ~~ (θ/360) × πr².
+Find the area of a sector with radius 6 cm and angle 60°. ~~ (1/6) × 36π = 6π ≈ 18.8 cm².
+What is the volume of a cuboid? ~~ Length × width × height.
+What is the volume of a prism? ~~ Area of cross-section × length.
+What is the volume of a cylinder? ~~ πr²h.
+What is the volume of a cone? ~~ (1/3)πr²h.
+What is the volume of a sphere? ~~ (4/3)πr³.
+What is the volume of a pyramid? ~~ (1/3) × base area × height.
+What is the surface area of a sphere? ~~ 4πr².
+What is the curved surface area of a cone? ~~ πrl, where l is the slant height.
+What is the curved surface area of a cylinder? ~~ 2πrh.
+Find the volume of a cylinder with radius 3 cm and height 10 cm. ~~ 90π ≈ 283 cm³.
+Find the volume of a sphere with radius 3 cm. ~~ 36π ≈ 113 cm³.
+What is perimeter? ~~ The total distance around the outside of a shape.
+Find the perimeter of a semicircle with diameter 8 cm. ~~ 4π + 8 ≈ 20.6 cm.
+What is the surface area of a cuboid? ~~ 2(lw + lh + wh).
+What is a frustum? ~~ A cone with the top cut off parallel to the base.
+How do you find the volume of a frustum? ~~ Volume of the large cone − volume of the small cone.
+How do you find the area of a compound shape? ~~ Split it into simpler shapes and add (or subtract) their areas.
+Convert 3.5 litres to cm³. ~~ 3500 cm³.
+What is a net? ~~ A 2D shape that folds up to make a 3D shape.
+
+## 4.3
+What is a translation? ~~ Moving a shape without rotating or reflecting it, described by a vector.
+Describe the translation by the vector (3, −2). ~~ 3 units right and 2 units down.
+What is a reflection? ~~ Flipping a shape in a mirror line.
+What do you need to describe a reflection? ~~ The equation of the mirror line.
+What is a rotation? ~~ Turning a shape about a fixed point.
+What do you need to describe a rotation? ~~ The angle, the direction and the centre of rotation.
+What is an enlargement? ~~ Changing the size of a shape by a scale factor from a centre of enlargement.
+What do you need to describe an enlargement? ~~ The scale factor and the centre of enlargement.
+What happens with a scale factor of 1/2? ~~ The shape becomes half the size.
+What happens with a negative scale factor? ~~ The image is on the opposite side of the centre and is inverted.
+What is an invariant point? ~~ A point that doesn't move under a transformation.
+Which transformations produce congruent images? ~~ Translations, reflections and rotations.
+Which transformation produces a similar image? ~~ Enlargement.
+Reflect (2, 5) in the x-axis. ~~ (2, −5).
+Reflect (2, 5) in the y-axis. ~~ (−2, 5).
+Reflect (2, 5) in the line y = x. ~~ (5, 2).
+Rotate (3, 1) 90° clockwise about the origin. ~~ (1, −3).
+Rotate (3, 1) 180° about the origin. ~~ (−3, −1).
+Enlarge (2, 3) by scale factor 2 from the origin. ~~ (4, 6).
+What is a combined transformation? ~~ Two or more transformations applied one after the other.
+How do you find the centre of rotation? ~~ Draw perpendicular bisectors of lines joining corresponding points; they meet at the centre.
+How do you find the centre of enlargement? ~~ Draw lines through corresponding points; they meet at the centre.
+How do you find a scale factor? ~~ Divide an image length by the corresponding object length.
+What happens to area under an enlargement of scale factor 3? ~~ It is multiplied by 9.
+What is the equation of the line x = 2? ~~ A vertical line through x = 2.
+What is the equation of the line y = −1? ~~ A horizontal line through y = −1.
+What does a reflection in y = x do to coordinates? ~~ Swaps x and y.
+What is the order of rotational symmetry of a square? ~~ 4.
+How many lines of symmetry does a regular pentagon have? ~~ 5.
+Does a rotation change the size of a shape? ~~ No.
+
+## 4.4
+What is Pythagoras' theorem? ~~ In a right-angled triangle, a² + b² = c², where c is the hypotenuse.
+Find the hypotenuse of a right triangle with sides 6 and 8. ~~ √100 = 10.
+Find the missing side of a right triangle with hypotenuse 13 and one side 5. ~~ √(169 − 25) = 12.
+What are SOH CAH TOA? ~~ sin = opposite/hypotenuse, cos = adjacent/hypotenuse, tan = opposite/adjacent.
+Find x if sin x = 0.5. ~~ x = 30°.
+Find the opposite side if hypotenuse = 10 and angle = 30°. ~~ 10 sin 30° = 5.
+Find the angle if opposite = 7 and adjacent = 7. ~~ tan⁻¹(1) = 45°.
+What is the sine rule? ~~ a/sin A = b/sin B = c/sin C.
+What is the cosine rule? ~~ a² = b² + c² − 2bc cos A.
+What is the area of a triangle using sine? ~~ ½ab sin C.
+What are the exact values of sin 30°, cos 30° and tan 30°? ~~ 1/2, √3/2 and 1/√3.
+What are the exact values of sin 45°, cos 45° and tan 45°? ~~ √2/2, √2/2 and 1.
+What are the exact values of sin 60°, cos 60° and tan 60°? ~~ √3/2, 1/2 and √3.
+What is sin 0° and cos 0°? ~~ 0 and 1.
+What is sin 90° and cos 90°? ~~ 1 and 0.
+What is the angle of elevation? ~~ The angle measured upwards from the horizontal.
+What is the angle of depression? ~~ The angle measured downwards from the horizontal.
+How do you use Pythagoras in 3D? ~~ Find the diagonal of a cuboid: d² = a² + b² + c².
+Find the diagonal of a 3 × 4 × 12 cuboid. ~~ √(9 + 16 + 144) = 13.
+How do you find the angle between a line and a plane? ~~ Find the projection of the line onto the plane, then use trigonometry in the right-angled triangle.
+When do you use the sine rule? ~~ When you have a side and its opposite angle, plus one more side or angle.
+When do you use the cosine rule? ~~ When you have two sides and the included angle, or all three sides.
+Find c if a = 5, b = 7 and C = 60°. ~~ c² = 25 + 49 − 35 = 39, so c ≈ 6.24.
+Find the area of a triangle with sides 8 cm and 5 cm and included angle 30°. ~~ ½ × 8 × 5 × 0.5 = 10 cm².
+What is a Pythagorean triple? ~~ Three whole numbers satisfying a² + b² = c², e.g. 3, 4, 5.
+How do you check if a triangle is right-angled? ~~ Check whether a² + b² = c² for the longest side c.
+Find the distance between (1, 2) and (4, 6). ~~ √(9 + 16) = 5.
+What is the hypotenuse? ~~ The longest side of a right-angled triangle, opposite the right angle.
+A ladder 5 m long reaches 4 m up a wall. How far is its foot from the wall? ~~ 3 m.
+What is the ambiguous case of the sine rule? ~~ When finding an angle, there may be two possible answers (acute and obtuse).
+
+## 4.5
+What is the radius of a circle? ~~ The distance from the centre to the edge.
+What is the diameter? ~~ A straight line through the centre from edge to edge, twice the radius.
+What is a chord? ~~ A straight line joining two points on the circle.
+What is a tangent? ~~ A line that touches the circle at one point.
+What is an arc? ~~ Part of the circumference.
+What is a sector? ~~ The region between two radii and an arc.
+What is a segment? ~~ The region between a chord and an arc.
+What is the angle at the centre theorem? ~~ The angle at the centre is twice the angle at the circumference from the same arc.
+What is the angle in a semicircle theorem? ~~ The angle in a semicircle is 90°.
+What is the angles in the same segment theorem? ~~ Angles subtended by the same arc at the circumference are equal.
+What is the cyclic quadrilateral theorem? ~~ Opposite angles of a cyclic quadrilateral add up to 180°.
+What is the tangent–radius theorem? ~~ A tangent meets a radius at 90°.
+What is the two tangents theorem? ~~ Tangents from an external point to a circle are equal in length.
+What is the alternate segment theorem? ~~ The angle between a tangent and a chord equals the angle in the alternate segment.
+What is the perpendicular bisector of a chord theorem? ~~ The perpendicular from the centre to a chord bisects the chord.
+How do you construct a perpendicular bisector? ~~ With compasses set more than half the line's length, draw arcs from each end above and below, then join the intersections.
+How do you construct an angle bisector? ~~ Draw an arc from the vertex crossing both arms, then arcs from those points, and join the vertex to the intersection.
+How do you construct a perpendicular from a point to a line? ~~ Draw an arc from the point cutting the line twice, then bisect between those points.
+How do you construct a 60° angle? ~~ Draw an equilateral triangle using compasses.
+How do you construct a 90° angle? ~~ Construct a perpendicular bisector or a perpendicular at a point.
+What is a locus? ~~ A set of points satisfying a rule.
+What is the locus of points a fixed distance from a point? ~~ A circle.
+What is the locus of points equidistant from two points? ~~ The perpendicular bisector of the line joining them.
+What is the locus of points equidistant from two lines? ~~ The angle bisector of the lines.
+What is the locus of points a fixed distance from a line? ~~ Two parallel lines (with semicircles at the ends for a line segment).
+How do you construct a triangle given three sides? ~~ Draw one side, then use compasses to draw arcs from each end with the other side lengths; they meet at the third vertex.
+What is the equation of a circle centred at the origin? ~~ x² + y² = r².
+What is a cyclic quadrilateral? ~~ A quadrilateral with all four vertices on a circle.
+Why must you give reasons in circle theorem questions? ~~ To show which theorems justify each step.
+What is the angle between a tangent and a diameter at the point of contact? ~~ 90°.
+
+## 4.6
+What is a vector? ~~ A quantity with magnitude and direction.
+How is a vector written? ~~ As a column vector, a bold letter (a), or with an arrow (AB).
+What is the column vector from (1, 2) to (4, 7)? ~~ (3, 5).
+Add the vectors (2, 3) and (4, −1). ~~ (6, 2).
+Subtract (1, 5) from (4, 2). ~~ (3, −3).
+Multiply (3, −2) by 4. ~~ (12, −8).
+What is the magnitude of the vector (3, 4)? ~~ 5.
+What does −a mean? ~~ A vector with the same magnitude as a but in the opposite direction.
+When are two vectors parallel? ~~ When one is a multiple of the other.
+If OA = a and OB = b, what is AB? ~~ b − a.
+If M is the midpoint of AB, what is OM? ~~ ½(a + b).
+How do you show three points are collinear using vectors? ~~ Show two vectors between them are parallel and share a point.
+What is a resultant vector? ~~ The sum of two or more vectors.
+If AB = 2a + b and CD = 4a + 2b, are AB and CD parallel? ~~ Yes, CD = 2AB.
+What does 3a represent? ~~ A vector in the same direction as a, three times as long.
+How is a translation described using a vector? ~~ By a column vector showing movement in x and y.
+What is the zero vector? ~~ A vector with magnitude 0.
+If a = (2, 1) and b = (−1, 3), find 2a + b. ~~ (3, 5).
+Find the magnitude of (−5, 12). ~~ 13.
+How do vectors help with geometric proofs? ~~ By expressing sides as combinations of vectors and showing relationships like parallel lines.
+What is a position vector? ~~ A vector from the origin to a point.
+What is the position vector of (3, −2)? ~~ (3, −2).
+If P divides AB in the ratio 1 : 2, what is AP? ~~ (1/3)AB.
+What does it mean if AB = CD? ~~ The vectors are equal: the same magnitude and direction.
+How do you find the vector from B to A? ~~ a − b.
+What is a scalar? ~~ A quantity with magnitude only, e.g. 3.
+Can you add a scalar and a vector? ~~ No.
+What does a vector (0, −4) represent? ~~ A movement 4 units down.
+How do you write a route through a shape in vectors? ~~ Add the vectors along each step of the route.
+What is the difference between a vector and a coordinate? ~~ A coordinate is a position; a vector is a movement or direction.
+
+## 5.1
+What is probability? ~~ A measure of how likely an event is, from 0 (impossible) to 1 (certain).
+What is the probability of an event not happening? ~~ 1 − P(event).
+What is the probability of rolling a 6 on a fair die? ~~ 1/6.
+What is the probability of picking a red card from a standard deck? ~~ 26/52 = 1/2.
+What is relative frequency? ~~ The number of times an event happens ÷ the number of trials.
+What is expected frequency? ~~ Probability × number of trials.
+A coin is flipped 200 times. How many heads are expected? ~~ 100.
+What is a sample space? ~~ A list of all possible outcomes.
+What are mutually exclusive events? ~~ Events that can't happen at the same time.
+What is P(A or B) for mutually exclusive events? ~~ P(A) + P(B).
+What are independent events? ~~ Events where one doesn't affect the probability of the other.
+What is P(A and B) for independent events? ~~ P(A) × P(B).
+What is the probability of two heads when flipping two coins? ~~ 1/4.
+What is a tree diagram? ~~ A diagram showing all outcomes of combined events, with probabilities on branches.
+How do you use a tree diagram? ~~ Multiply along branches for "and"; add the results of different paths for "or".
+What is conditional probability? ~~ The probability of an event given that another has happened.
+A bag has 3 red and 2 blue balls. Two are taken without replacement. Find P(both red). ~~ 3/5 × 2/4 = 3/10.
+What is a Venn diagram? ~~ A diagram of overlapping circles showing sets and their intersections.
+What is A ∩ B? ~~ The intersection: elements in both A and B.
+What is A ∪ B? ~~ The union: elements in A or B or both.
+What is A'? ~~ The complement: elements not in A.
+What is a two-way table? ~~ A table showing frequencies for two categories.
+What does a larger number of trials do to relative frequency? ~~ It becomes a better estimate of the true probability.
+What does "fair" mean in probability? ~~ All outcomes are equally likely.
+What is a frequency tree? ~~ A tree diagram showing frequencies rather than probabilities.
+How many outcomes are there when rolling two dice? ~~ 36.
+What is P(sum of two dice = 7)? ~~ 6/36 = 1/6.
+What is P(at least one six) when rolling two dice? ~~ 1 − (5/6)² = 11/36.
+What is the probability of an impossible event? ~~ 0.
+If P(A) = 0.3 and P(B) = 0.5 and they are mutually exclusive, find P(neither). ~~ 1 − 0.8 = 0.2.
+
+## 6.1
+What is the mean? ~~ The sum of the values divided by the number of values.
+What is the median? ~~ The middle value when the data are in order.
+What is the mode? ~~ The most common value.
+What is the range? ~~ The largest value minus the smallest value.
+Find the mean of 3, 5, 7, 9, 11. ~~ 35 ÷ 5 = 7.
+Find the median of 4, 8, 1, 9, 6, 3. ~~ Ordered: 1, 3, 4, 6, 8, 9; median = 5.
+How do you find the mean from a frequency table? ~~ Σ(value × frequency) ÷ Σfrequency.
+How do you estimate the mean from grouped data? ~~ Use the midpoint of each class × frequency, then divide by the total frequency.
+Why is the mean from grouped data an estimate? ~~ The exact values aren't known; midpoints are used.
+What is the modal class? ~~ The class with the highest frequency.
+When is the median better than the mean? ~~ When there are outliers or skewed data.
+What is an outlier? ~~ A value much higher or lower than the rest of the data.
+What is a bar chart? ~~ A chart with bars of equal width showing frequencies of categories.
+What is a pie chart? ~~ A circle divided into sectors showing proportions.
+How do you find the angle for a pie chart sector? ~~ (Frequency ÷ total) × 360°.
+What is a pictogram? ~~ A chart using symbols to represent frequencies.
+What is a stem-and-leaf diagram? ~~ A diagram that splits each value into a stem and a leaf, keeping the original data.
+What is a frequency polygon? ~~ A line graph joining the midpoints of classes plotted against frequency.
+What is a scatter graph? ~~ A graph plotting pairs of values to show a relationship.
+What is positive correlation? ~~ As one variable increases, the other increases.
+What is negative correlation? ~~ As one variable increases, the other decreases.
+What is a line of best fit? ~~ A straight line drawn through the middle of the points on a scatter graph.
+What is interpolation? ~~ Estimating within the range of the data.
+What is extrapolation? ~~ Estimating outside the range of the data, which is less reliable.
+Does correlation mean causation? ~~ No; a third factor may cause both.
+What is a time series graph? ~~ A line graph showing how data change over time.
+What is primary data? ~~ Data you collect yourself.
+What is secondary data? ~~ Data collected by someone else.
+What is a sample? ~~ A smaller group chosen to represent a population.
+What is a biased sample? ~~ A sample that doesn't represent the population fairly.
+
+## 6.2
+What is cumulative frequency? ~~ A running total of frequencies.
+How do you plot a cumulative frequency graph? ~~ Plot cumulative frequency against the upper class boundary, and join with a smooth curve.
+How do you find the median from a cumulative frequency graph? ~~ Read across from half the total frequency.
+How do you find the lower quartile? ~~ Read across from a quarter of the total frequency.
+How do you find the upper quartile? ~~ Read across from three quarters of the total frequency.
+What is the interquartile range? ~~ Upper quartile − lower quartile.
+Why is the IQR useful? ~~ It measures the spread of the middle 50%, unaffected by outliers.
+What is a box plot? ~~ A diagram showing the minimum, lower quartile, median, upper quartile and maximum.
+How do you compare two box plots? ~~ Compare the medians (average) and the IQRs or ranges (spread), in context.
+What is a histogram? ~~ A chart for continuous data where the area of each bar represents frequency.
+What is frequency density? ~~ Frequency ÷ class width.
+Why are histograms used for unequal class widths? ~~ Frequency density adjusts for the different widths so the areas represent frequencies.
+Find the frequency density for a class 10 < x ≤ 30 with frequency 40. ~~ 40 ÷ 20 = 2.
+How do you find frequency from a histogram? ~~ Frequency = frequency density × class width.
+How do you estimate the median from a histogram? ~~ Find the value that splits the total area in half.
+What does a steep part of a cumulative frequency curve show? ~~ Many values in that range.
+What does a flat part of a cumulative frequency curve show? ~~ Few values in that range.
+How do you estimate the number above a value from a cumulative frequency graph? ~~ Read the cumulative frequency at that value and subtract from the total.
+What does a longer whisker in a box plot show? ~~ More spread in that part of the data.
+What is a symmetrical distribution on a box plot? ~~ The median is in the middle of the box, and the whiskers are equal.
+What does positive skew look like on a box plot? ~~ The median is closer to the lower quartile, and the upper whisker is longer.
+How do you find the class width of 20 ≤ x < 35? ~~ 15.
+What is the total frequency if a histogram has areas 10, 20 and 30? ~~ 60.
+Why can't you draw a histogram with frequency on the y-axis for unequal widths? ~~ It would misrepresent the data, as wider classes would look larger.
+How do you compare distributions from cumulative frequency graphs? ~~ Compare medians and IQRs.
+What is the median position for n values? ~~ The (n + 1)/2 th value.
+How do you find quartiles for a small data set? ~~ Find the medians of the lower and upper halves.
+What does the IQR tell you about consistency? ~~ A smaller IQR means more consistent data.
+What is an outlier on a box plot? ~~ A value more than 1.5 × IQR beyond the quartiles.
+What is the difference between a bar chart and a histogram? ~~ Bar charts have gaps and show categories; histograms show continuous data with no gaps and use area for frequency.
