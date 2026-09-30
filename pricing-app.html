@@ -381,12 +381,16 @@
         headers: { 'Authorization': `Bearer ${session.access_token}`, 'Content-Type': 'application/json' },
         body: JSON.stringify({ plan }),
       });
-      const data = await resp.json();
-      if (!resp.ok) { if (data.error === 'already_subscribed') { window.location = 'settings.html'; return; } throw new Error(data.error || 'checkout_failed'); }
+      const data = await resp.json().catch(() => ({}));
+      if (!resp.ok) { if (data.error === 'already_subscribed') { window.location = 'settings.html'; return; } throw new Error(`${resp.status} ${data.error || 'checkout_failed'}${data.message ? ': ' + data.message : ''}`); }
       window.location = data.url;
     } catch (err) {
       console.error(err);
-      alert('Sorry, something went wrong starting checkout. Please try again.');
+      /* The code and Stripe's own message are in the alert on purpose. A bare
+       * "something went wrong" told us nothing when checkout first failed on
+       * 2026-09-30, and this is the one screen where a user who hits a problem
+       * is worth more than the few characters of jargon costs. */
+      alert(`Sorry, we could not start checkout.\n\n${err.message}\n\nPlease try again, or contact support with that message.`);
       proCtaBtn.disabled = false; proCtaBtn.textContent = originalLabel;
     }
   });
