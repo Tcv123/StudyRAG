@@ -302,10 +302,10 @@
       <div class="billing-toggle" role="tablist" aria-label="Billing cycle">
         <button type="button" class="cycle-btn active" data-plan="monthly" role="tab" aria-selected="true">Monthly</button>
         <button type="button" class="cycle-btn" data-plan="biannual" role="tab" aria-selected="false">
-          6 months <span class="cycle-save">–5%</span>
+          6 months <span class="cycle-save">–7%</span>
         </button>
         <button type="button" class="cycle-btn" data-plan="annual" role="tab" aria-selected="false">
-          Annual <span class="cycle-save">–20%</span>
+          Annual <span class="cycle-save">–21%</span>
         </button>
       </div>
     </div>
@@ -354,6 +354,7 @@
           Start 7-day free trial
         </button>
         <div class="plan-foot">Cancel any time · No card charged during trial</div>
+        <div class="plan-foot" style="margin-top:6px;display:flex;align-items:center;justify-content:center;gap:5px;"><span aria-hidden="true">🔒</span>Payments are handled securely by Stripe — we never see or store your card details</div>
       </div>
     </div>
   </div>
@@ -362,8 +363,8 @@
 <script>
   const PLAN_DETAILS = {
     monthly:  { amount: '£9.99',  period: '/ month',     sub: '7-day free trial · cancel any time' },
-    biannual: { amount: '£56.94', period: '/ 6 months',  sub: '7-day free trial · £9.49/mo effective · save 5%' },
-    annual:   { amount: '£95.90', period: '/ year',      sub: '7-day free trial · £7.99/mo effective · save 20%' },
+    biannual: { amount: '£56.00', period: '/ 6 months',  sub: '7-day free trial · £9.33/mo effective · save 7%' },
+    annual:   { amount: '£95.00', period: '/ year',      sub: '7-day free trial · £7.92/mo effective · save 21%' },
   };
 
   const cycleBtns = document.querySelectorAll('.cycle-btn');
