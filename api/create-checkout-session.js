@@ -57,7 +57,7 @@ module.exports = async function handler(req, res) {
      * created a fresh Stripe customer for the same person. */
     const { data: profile, error: profileErr } = await supabaseAdmin
       .from('profiles')
-      .select('stripe_customer_id, email, first_name, last_name, subscription_tier, subscription_status, subscription_expires_at')
+      .select('stripe_customer_id, email, first_name, last_name, subscription_tier, subscription_status, subscription_expires_at, is_early_adopter')
       .eq('id', user.id)
       .single();
 
@@ -70,7 +70,15 @@ module.exports = async function handler(req, res) {
     const expiresAt = profile?.subscription_expires_at
       ? new Date(profile.subscription_expires_at)
       : null;
+    /* An early adopter was comped: the grant sets tier to pro_monthly with no
+     * Stripe customer behind it. Counting that as "already subscribed" meant
+     * the 122 comped accounts could not buy anything — Settings sent them to
+     * pricing, pricing got a 409 and sent them back to Settings. They are
+     * exactly the people most likely to want to pay when the comp expires. */
+    const comped = profile?.is_early_adopter && !profile?.stripe_customer_id;
+
     const alreadyPro =
+      !comped &&
       (profile?.subscription_tier || 'free') !== 'free' &&
       ['active', 'trialing'].includes(profile?.subscription_status || '') &&
       (!expiresAt || expiresAt > new Date());

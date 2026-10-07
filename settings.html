@@ -763,21 +763,41 @@ function renderPlanCard(profile) {
     pro_monthly:  { label: 'RAG Pro (Monthly)',  price: '£9.99/month'                },
   };
   const plan      = PLANS[tier] || PLANS.pro_monthly;
-  const planLabel = plan.label;
-  const planPrice = plan.price;
   const trialing  = status === 'trialing';
 
-  nameEl.textContent = trialing ? `${planLabel} — Trial` : planLabel;
-  descEl.textContent = trialing
-    ? 'Full access during your 7-day free trial.'
-    : 'Full access to past papers, AI feedback, mark schemes, and ad-free experience.';
+  /* An early adopter was comped, not charged. The grant sets the tier to
+   * pro_monthly, so this card used to tell 122 people who had never paid a
+   * penny that they were on "RAG Pro (Monthly) — £9.99/month" (bug G-05).
+   * They have no Stripe customer either, so there is nothing to manage: the
+   * honest thing to show is what they actually have and when it ends. */
+  const comped = profile?.is_early_adopter && !hasStripe;
+  const until  = profile?.premium_until ? new Date(profile.premium_until) : expiresAt;
+  const untilText = until
+    ? until.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+    : null;
+
+  const planLabel = comped ? 'Early adopter — Premium' : plan.label;
+  const planPrice = comped ? (untilText ? `Free until ${untilText}` : 'Free') : plan.price;
+
+  nameEl.textContent = comped ? planLabel : (trialing ? `${planLabel} — Trial` : planLabel);
+  descEl.textContent = comped
+    ? (untilText
+        ? `Full access, on us, until ${untilText}. You will not be charged, and nothing renews.`
+        : 'Full access, on us. You will not be charged, and nothing renews.')
+    : trialing
+      ? 'Full access during your 7-day free trial.'
+      : 'Full access to past papers, AI feedback, mark schemes, and ad-free experience.';
 
   // Add a subtle pro accent to the card
   cardEl.style.background   = 'linear-gradient(135deg, rgba(37,99,235,0.10), rgba(61,149,188,0.04))';
   cardEl.style.borderColor  = 'rgba(37,99,235,0.35)';
 
   if (priceEl)    priceEl.textContent = planPrice;
-  if (upgradeBtn) upgradeBtn.style.display = 'none';
+  if (upgradeBtn) {
+    // Comped users have something to buy; paying users do not.
+    upgradeBtn.style.display = comped ? 'inline-block' : 'none';
+    if (comped) { upgradeBtn.textContent = 'Subscribe to keep Pro'; upgradeBtn.onclick = () => { window.location = 'pricing-app.html'; }; }
+  }
   if (proFeats)   proFeats.style.display = 'none';
 }
 

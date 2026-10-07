@@ -419,6 +419,22 @@
     const proFoot  = document.getElementById('proFoot');
     if (!isPro(profile)) return;                 // Free card already says it
 
+    /* Comped early adopters hold a pro tier with no Stripe customer. Telling
+     * them they are "on this plan" and offering to manage it is wrong twice:
+     * there is nothing to manage, and they are the people we most want to be
+     * able to subscribe before the comp runs out. */
+    if (profile.is_early_adopter && !profile.stripe_customer_id) {
+      const until = profile.premium_until || profile.subscription_expires_at;
+      const untilText = until
+        ? new Date(until).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+        : null;
+      proFoot.textContent = untilText
+        ? `Your free early-adopter access ends on ${untilText}`
+        : 'Subscribe to keep Pro when your free access ends';
+      proFoot.style.fontWeight = '600';
+      return;
+    }
+
     freeFoot.textContent = 'Everything here is included in Pro';
 
     const trialing = profile.subscription_status === 'trialing';
@@ -433,7 +449,7 @@
   (async () => {
     const { data: { session } } = await supabaseClient.auth.getSession();
     if (!session) { location.href = 'auth/login.html'; return; }
-    const { data: profile } = await supabaseClient.from('profiles').select('first_name, last_name, avatar_url, subscription_tier, subscription_status, subscription_expires_at').eq('id', session.user.id).single();
+    const { data: profile } = await supabaseClient.from('profiles').select('first_name, last_name, avatar_url, subscription_tier, subscription_status, subscription_expires_at, is_early_adopter, premium_until, stripe_customer_id').eq('id', session.user.id).single();
     showCurrentPlan(profile);
     const firstName = profile?.first_name || '';
     const lastName  = profile?.last_name  || '';
