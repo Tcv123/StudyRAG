@@ -121,7 +121,11 @@
 
     .field { margin-bottom: 20px; }
     .consent-field { margin-bottom: 22px; }
-    .consent { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.6; color: var(--muted, #6B87A8); cursor: pointer; }
+    /* .field label is uppercased and letter-spaced for the short field
+       captions; a sentence of prose must opt out of all of it. */
+    .consent { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.6;
+               color: var(--muted, #6B87A8); cursor: pointer; text-transform: none; letter-spacing: normal;
+               font-weight: 400; margin-bottom: 0; }
     .consent input { width: 16px; height: 16px; margin-top: 1px; flex-shrink: 0; accent-color: var(--accent, #5BADCF); cursor: pointer; }
     .consent a { color: var(--accent-dark, #3D95BC); }
 
