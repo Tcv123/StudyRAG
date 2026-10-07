@@ -18,12 +18,36 @@
  * obvious cause. A missing key now fails immediately and loudly in the logs.
  */
 
+/* Where the form lands, and who may post to it.
+ *
+ * Until 2026-10-07 this delivered to a personal Gmail address and answered
+ * Access-Control-Allow-Origin: * — so any site on the internet could post
+ * through it, and every enquiry about a company matter arrived in a personal
+ * inbox. The company has its own address now, and the form is for this site. */
+const CONTACT_INBOX = process.env.CONTACT_INBOX || 'TChandranivasan@raglearning.uk';
+
+const ALLOWED_ORIGINS = [
+  'https://www.raglearning.uk',
+  'https://raglearning.uk',
+  'https://raglearning.vercel.app',
+];
+
 module.exports = async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const origin = req.headers.origin;
+  if (origin && ALLOWED_ORIGINS.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
+
+  /* A browser on another site sends an Origin header; curl and the page's own
+   * same-origin fetch may not. Reject only what we can see is cross-site. */
+  if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+    return res.status(403).json({ error: 'Forbidden' });
+  }
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const { name, email, subject, message } = req.body || {};
@@ -76,7 +100,7 @@ module.exports = async function handler(req, res) {
       },
       body: JSON.stringify({
         from: 'RAG Learning <contact@raglearning.uk>',
-        to: ['tcvasan2015@gmail.com'],
+        to: [CONTACT_INBOX],
         reply_to: email,
         subject: subjectLine,
         html,

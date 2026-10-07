@@ -155,6 +155,13 @@
  *   SET search_path = public
  *   AS $$
  *   BEGIN
+ *     -- security_events survives the cascade (ON DELETE SET NULL) because the
+ *     -- record of a blocked escalation outlives the account it was aimed at.
+ *     -- Its denormalised email must not. See
+ *     -- db/migrations/2026-10-07-redact-security-events-on-delete.sql.
+ *     UPDATE public.security_events SET email = NULL WHERE user_id = NEW.id;
+ *     UPDATE public.security_events SET detail = detail - 'email'
+ *      WHERE user_id = NEW.id AND detail ? 'email';
  *     DELETE FROM auth.users WHERE id = NEW.id;
  *     RETURN NULL;
  *   END;

@@ -120,6 +120,10 @@
     .name-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
     .field { margin-bottom: 20px; }
+    .consent-field { margin-bottom: 22px; }
+    .consent { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.6; color: var(--muted, #6B87A8); cursor: pointer; }
+    .consent input { width: 16px; height: 16px; margin-top: 1px; flex-shrink: 0; accent-color: var(--accent, #5BADCF); cursor: pointer; }
+    .consent a { color: var(--accent-dark, #3D95BC); }
 
     /* ── ROLE PICKER ── */
     .role-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -408,6 +412,16 @@
         </div>
       </div>
 
+      <!-- Required so the terms are actually agreed to, not merely published.
+           Native `required` blocks submission, and the signUp call checks it
+           again in case the attribute is stripped. -->
+      <div class="field consent-field">
+        <label class="consent">
+          <input type="checkbox" id="acceptTerms" required>
+          <span>I agree to the <a href="../terms.html" target="_blank" rel="noopener">Terms of Service</a> and <a href="../privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. I am 13 or over, and if I am under 18 I have a parent or guardian's permission.</span>
+        </label>
+      </div>
+
       <button class="btn btn-primary" id="registerBtn">Create Account</button>
     </form>
 
@@ -591,6 +605,12 @@ form.onsubmit = async (e) => {
     msg.className = 'msg error';
     msg.innerText = 'Passwords do not match.';
     confirmPassword.focus();
+    return;
+  }
+
+  if (!document.getElementById('acceptTerms').checked) {
+    msg.className = 'msg error';
+    msg.innerText = 'Please accept the Terms of Service and Privacy Policy to continue.';
     return;
   }
 

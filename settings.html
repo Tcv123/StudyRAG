@@ -1218,9 +1218,13 @@ async function confirmResetStreak() {
 }
 
 // ── Delete account ──
-// Schedules deletion: profiles.deletion_requested_at is set to now() and the user is signed out.
-// A pg_cron job (see supabase-config.js) purges auth.users 7 days later; ON DELETE CASCADE
-// foreign keys remove everything else. There is no way to cancel or recover the account.
+// Deletes immediately. request_account_deletion() stamps
+// profiles.deletion_requested_at, and an AFTER UPDATE trigger deletes the
+// auth.users row in the same transaction; ON DELETE CASCADE removes
+// everything else. There is no grace period and no way to recover the
+// account — this comment used to describe a pg_cron job purging seven days
+// later, which is not what the database does, and the privacy policy now
+// tells users deletion is immediate.
 async function confirmDeleteAccount() {
   if (!confirm('This will permanently delete your account and all data. This cannot be undone.')) return;
 
