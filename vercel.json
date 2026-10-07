@@ -31,11 +31,24 @@
     }
   ],
   "functions": {
-    "api/mark-essay.js":             { "maxDuration": 60 },
-    "api/generate-model-answer.js":  { "maxDuration": 60 },
-    "api/mark-against-scheme.js":    { "maxDuration": 60 },
-    "api/cron/setup-reminder.js":    { "maxDuration": 60 },
-    "api/cron/exam-timetable-check.js": { "maxDuration": 60 }
+    "api/mark-essay.js": {
+      "maxDuration": 60
+    },
+    "api/generate-model-answer.js": {
+      "maxDuration": 60
+    },
+    "api/mark-against-scheme.js": {
+      "maxDuration": 60
+    },
+    "api/cron/setup-reminder.js": {
+      "maxDuration": 60
+    },
+    "api/cron/exam-timetable-check.js": {
+      "maxDuration": 60
+    },
+    "api/cron/premium-expiry.js": {
+      "maxDuration": 60
+    }
   },
   "crons": [
     {

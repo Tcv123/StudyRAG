@@ -186,7 +186,22 @@ module.exports = async function handler(req, res) {
   }
 
   console.log(`[setup-reminder] sent ${sent}, failed ${failed}, skipped ${skipped}`);
-  return res.status(200).json({ sent, failed, skipped, due: due.length });
+
+  /* The expiry reminders ride along on this run. Vercel's Hobby plan allows
+   * two scheduled jobs and both are taken, so rather than leave the comped
+   * early adopters to find out by losing access, the daily job does both.
+   * It runs last and swallows its own errors — a problem mailing expiry
+   * notices must not turn a successful setup-reminder run into a 500 that
+   * Vercel retries, re-sending nothing but logging alarm. */
+  let premiumExpiry = null;
+  try {
+    premiumExpiry = await require('./premium-expiry').run({ supabaseAdmin, resendKey });
+  } catch (err) {
+    console.error('[setup-reminder] premium-expiry pass failed:', err.message);
+    premiumExpiry = { error: String(err.message || err) };
+  }
+
+  return res.status(200).json({ sent, failed, skipped, due: due.length, premiumExpiry });
 };
 
 
