@@ -45,12 +45,28 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
  * and returns counts rather than a response. Throws nothing: a failure here
  * must not fail the setup reminders that have already been sent. */
 async function run({ supabaseAdmin, resendKey, limit = DAILY_CAP, dryRun = false }) {
+  /* Tidy up yesterday's lapses first. Access already ended — every isPro()
+   * test checks the expiry date — but the tier column still says pro_monthly
+   * until something sets it back, which would leave the premium_users view
+   * counting comps as customers. Skipped on a dry run: a dry run must not
+   * write. See db/migrations/2026-10-07-expire-lapsed-comps.sql. */
+  let expired = 0;
+  if (!dryRun) {
+    const { data, error: expireErr } = await supabaseAdmin.rpc('expire_lapsed_comps');
+    if (expireErr) {
+      console.error('[premium-expiry] expire_lapsed_comps failed:', expireErr);
+    } else {
+      expired = data || 0;
+      if (expired) console.log(`[premium-expiry] moved ${expired} lapsed comp(s) to free`);
+    }
+  }
+
   const { data: pending, error } = await supabaseAdmin
     .rpc('pending_premium_expiry_reminders', { p_limit: limit });
 
   if (error) {
     console.error('[premium-expiry] could not load pending list:', error);
-    return { error: 'query_failed', sent: 0, failed: 0, skipped: 0, due: 0 };
+    return { error: 'query_failed', expired, sent: 0, failed: 0, skipped: 0, due: 0 };
   }
 
   const due = pending || [];
@@ -94,7 +110,7 @@ async function run({ supabaseAdmin, resendKey, limit = DAILY_CAP, dryRun = false
   if (sent || failed || skipped) {
     console.log(`[premium-expiry] sent ${sent}, failed ${failed}, skipped ${skipped}`);
   }
-  return { sent, failed, skipped, due: due.length };
+  return { expired, sent, failed, skipped, due: due.length };
 }
 
 module.exports = async function handler(req, res) {
