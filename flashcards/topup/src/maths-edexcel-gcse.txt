@@ -1,0 +1,705 @@
+deck: Mathematics|Edexcel|gcse
+
+## 1.1
+What do the symbols <, >, ≤, ≥ and ≠ mean? ~~ < less than; > greater than; ≤ less than or equal to; ≥ greater than or equal to; ≠ not equal to. The wide end faces the larger number.
+How do you order a list mixing fractions, decimals and negatives? ~~ Write each as a decimal, place the negatives first (larger digits = smaller number), then the positives, smallest to largest.
+Order 2/9, −0.3, 0.2, −1/4, smallest first. ~~ −0.3, −1/4, 0.2, 2/9 (since −1/4 = −0.25 and 2/9 = 0.222…).
+What is the 4 worth in 5 208 136.047? ~~ 4 hundredths (0.04).
+What happens to the digits when you multiply or divide by 10, 100 or 1000? ~~ × moves every digit 1, 2 or 3 places left; ÷ moves them right, e.g. 7.2 ÷ 100 = 0.072.
+Sign rules for × and ÷ with negative numbers? ~~ Same signs give a positive answer; different signs give a negative answer, e.g. (−36) ÷ (−4) = 9.
+Work out (−3) × (−5) × (−2). ~~ −30 (an odd number of negatives gives a negative product).
+Work out −4 − (−11). ~~ −4 + 11 = 7 (subtracting a negative is the same as adding).
+How do you multiply two decimals, e.g. 5.4 × 2.7? ~~ Remove the points: 54 × 27 = 1458; there are 2 decimal places in the question, so 14.58 (estimate 5 × 3 = 15).
+How do you divide by a decimal, e.g. 9.6 ÷ 0.04? ~~ Multiply both numbers by the same power of 10 so the divisor is whole: 960 ÷ 4 = 240.
+Given 52 × 34 = 1768, find 5.2 × 3.4 and 1768 ÷ 3.4. ~~ 5.2 × 3.4 = 17.68 (product 100 times smaller); 1768 ÷ 3.4 = 520 (dividing by a number 10 times smaller).
+What is the priority of operations (BIDMAS)? ~~ Brackets → Indices (powers, roots, reciprocals) → Division and Multiplication (left to right) → Addition and Subtraction (left to right).
+Work out 24 ÷ 4 × 2. ~~ 12 (÷ and × have equal priority, so work left to right: 6 × 2).
+Work out 15 − 2 × (−3)² + ∛8. ~~ (−3)² = 9 and ∛8 = 2; 2 × 9 = 18; 15 − 18 + 2 = −1.
+Which pairs of operations are inverses? ~~ + and −; × and ÷; squaring and square-rooting (cubing and cube-rooting).
+What is the reciprocal of n, of a/b and of 0.2? ~~ 1/n; b/a; 0.2 = 1/5 so its reciprocal is 5. A number × its reciprocal = 1.
+Why cancel before multiplying, e.g. (48 × 25) ÷ (16 × 5)? ~~ It keeps numbers small: 48/16 = 3 and 25/5 = 5, so the answer is 3 × 5 = 15.
+Define factor, multiple and prime number. ~~ Factor: divides exactly into a number. Multiple: the number times a whole number. Prime: exactly two factors, 1 and itself (1 is not prime; 2 is the only even prime).
+List the primes below 50. ~~ 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47.
+What does the unique factorisation theorem say? ~~ Every whole number greater than 1 can be written as a product of primes in exactly one way (apart from order).
+Write 120 as a product of prime factors in index form. ~~ 120 = 2³ × 3 × 5.
+How do you find the HCF and LCM from prime factors? ~~ HCF: primes common to both, each to its lowest power. LCM: every prime that appears, each to its highest power.
+Find the HCF and LCM of 48 and 180. ~~ 48 = 2⁴ × 3, 180 = 2² × 3² × 5: HCF = 2² × 3 = 12; LCM = 2⁴ × 3² × 5 = 720.
+In a Venn diagram of prime factors, how do you read off the HCF and LCM? ~~ HCF = product of the numbers in the overlap; LCM = product of every number in the diagram.
+Lights flash every 20 s and every 32 s. When do they next flash together? ~~ LCM of 20 and 32 = 2⁵ × 5 = 160 s (2 min 40 s).
+What kind of number has exactly three factors? ~~ The square of a prime, e.g. 121 = 11² has factors 1, 11, 121.
+What does listing outcomes systematically involve? ~~ Choosing an order and sticking to it — fix the first choice, work through every option for the rest, then change the first — or using a two-way table, so nothing is missed or repeated.
+How many 3-digit numbers use each of 1, 4 and 9 once? ~~ 6: 149, 194, 419, 491, 914, 941 (4 of them are odd).
+What is the product rule for counting? ~~ (Higher) If there are m ways to do one task and, for each, n ways to do another, the two can be done in m × n ways.
+How many odd 3-digit numbers have three different digits? ~~ (Higher) Fill the restricted places first: last digit 5 ways, first 8 (not 0 or the last), middle 8: 5 × 8 × 8 = 320.
+
+## 1.2
+Define proper fraction, improper fraction and mixed number. ~~ Proper: numerator < denominator (4/9). Improper: numerator ≥ denominator (17/5). Mixed number: whole number + proper fraction (3⅖).
+How do you write a fraction in its simplest form? ~~ Divide numerator and denominator by their HCF, e.g. 45/100 = 9/20 (÷ 5).
+Convert 4⅙ to an improper fraction. ~~ (4 × 6 + 1)/6 = 25/6.
+Convert 29/12 to a mixed number. ~~ 29 ÷ 12 = 2 remainder 5, so 2 5/12.
+How do you add or subtract fractions? ~~ Rewrite with a common denominator (the LCM keeps numbers small), then add or subtract the numerators; the denominator stays the same.
+Work out 2/3 + 4/5. ~~ 10/15 + 12/15 = 22/15 = 1 7/15.
+Work out 4⅙ − 1¾. ~~ 25/6 − 7/4 = 50/12 − 21/12 = 29/12 = 2 5/12.
+How do you multiply fractions and mixed numbers? ~~ Change mixed numbers to improper fractions, cancel common factors, then multiply numerators and multiply denominators.
+How do you divide by a fraction? ~~ Multiply by its reciprocal: a/b ÷ c/d = a/b × d/c.
+Work out 3⅓ × 1⅖. ~~ 10/3 × 7/5 = 2/3 × 7/1 = 14/3 = 4⅔.
+Work out 2¼ ÷ 1⅘. ~~ 9/4 × 5/9 = 5/4 = 1¼.
+Work out −1½ × 2⅔. ~~ −3/2 × 8/3 = −4 (different signs give a negative answer).
+What does "give your answer as an exact value" mean for fractions? ~~ Leave it as a fully simplified fraction or mixed number, not a rounded decimal.
+State 1/8, 5/8 and 3/20 as decimals and percentages. ~~ 1/8 = 0.125 = 12.5%; 5/8 = 0.625 = 62.5%; 3/20 = 0.15 = 15%.
+How do you convert a fraction to a decimal? ~~ Divide the numerator by the denominator, or find an equivalent fraction over 10, 100 or 1000, e.g. 3/20 = 15/100 = 0.15.
+How do you convert a terminating decimal to a fraction? ~~ Use the place value of the last digit, then simplify: 0.625 = 625/1000 = 5/8.
+Write 28% as a fraction in its simplest form and as a decimal. ~~ 28/100 = 7/25 = 0.28.
+Order 0.71, 7/10, 72%, 5/7, smallest first. ~~ As decimals 0.71, 0.7, 0.72, 0.714…, so 7/10, 0.71, 5/7, 72%.
+How can you tell if a fraction gives a terminating decimal? ~~ (Higher) In simplest form, it terminates only if the denominator has no prime factors other than 2 and 5; otherwise it recurs.
+What does dot notation such as 0.6̇3̇ mean? ~~ (Higher) Dots go over the first and last digits of the repeating block: 0.6̇3̇ = 0.636363…
+How do you convert a recurring decimal to a fraction algebraically? ~~ (Higher) Let x = the decimal; multiply by a power of 10 so the recurring parts line up; subtract to cancel the tails; solve for x and simplify.
+Prove that 0.6̇3̇ = 7/11. ~~ (Higher) x = 0.6363…, 100x = 63.6363…, subtract: 99x = 63, x = 63/99 = 7/11.
+Write 0.83̇ (0.8333…) as a fraction. ~~ (Higher) 100x = 83.333…, 10x = 8.333…, 90x = 75, x = 75/90 = 5/6.
+Write 2/11 as a recurring decimal. ~~ (Higher) Short division: 0.181818… = 0.1̇8̇.
+How do you find a fraction of an amount, e.g. 3/8 of 56? ~~ "Of" means multiply: 56 ÷ 8 × 3 = 21.
+Without a calculator, find 45% of £72. ~~ 10% = £7.20, so 40% = £28.80; 5% = £3.60; 45% = £32.40.
+What multiplier increases or decreases an amount by r%? ~~ Increase: × (1 + r/100), e.g. +7% → 1.07. Decrease: × (1 − r/100), e.g. −17.5% → 0.825.
+£85 trainers: 20% off, then a further 10% off. Final price? ~~ 85 × 0.8 × 0.9 = £61.20 (successive changes multiply — not the same as 30% off, £59.50).
+How do a ratio and a fraction differ? ~~ A ratio compares part with part; a fraction compares a part with the whole. For a : b the first share is a/(a + b) of the whole.
+Ravi gets 3/4 of what Sita gets. They share £154. How much each? ~~ Ravi : Sita = 3 : 4, 7 parts, 1 part = £22: Ravi £66, Sita £88.
+
+## 1.3
+State the metric length and mass conversions you must know. ~~ 10 mm = 1 cm, 100 cm = 1 m, 1000 m = 1 km; 1000 mg = 1 g, 1000 g = 1 kg, 1000 kg = 1 tonne.
+State the capacity conversions you must know. ~~ 1000 ml = 1 litre, 100 cl = 1 litre, 1 ml = 1 cm³, 1000 cm³ = 1 litre.
+Converting to a smaller unit: multiply or divide? ~~ Multiply (a smaller unit gives a bigger number); to a larger unit, divide.
+Change 0.86 km into centimetres. ~~ 0.86 × 1000 = 860 m; 860 × 100 = 86 000 cm.
+How many cm² in 1 m², and cm³ in 1 m³? ~~ 1 m² = 100² = 10 000 cm²; 1 m³ = 100³ = 1 000 000 cm³ (= 1000 litres).
+Change 3.7 m² into cm². ~~ 3.7 × 10 000 = 37 000 cm².
+Are metric–imperial conversions (e.g. 5 miles ≈ 8 km) given in 1MA1? ~~ Yes, they are always given in the question; metric conversions are not given and must be learned.
+Convert 2.15 hours into hours and minutes. ~~ 0.15 × 60 = 9, so 2 hours 9 minutes (time is base 60, not 2 h 15 min).
+State the formulae for speed, density and pressure. ~~ Speed = distance ÷ time; density = mass ÷ volume; pressure = force ÷ area.
+A lorry travels 162 km in 2 h 15 min. Average speed? ~~ 15 min = 0.25 h; 162 ÷ 2.25 = 72 km/h.
+What are the units of density and pressure? ~~ Density: g/cm³ or kg/m³ (mass ÷ volume). Pressure: N/m² (force ÷ area).
+How do you round to a given number of decimal places or significant figures? ~~ Find the last digit to keep and look at the next ("decider") digit: 5 or more rounds up, 4 or less leaves it.
+Where do significant figures start counting? ~~ At the first non-zero digit; leading zeros are not significant, zeros between or after non-zero digits in a decimal are.
+Round 0.0040519 to 3 significant figures. ~~ 0.00405 (the decider is 1, so the 5 stays).
+Round 61 482 to 2 s.f. and 4.9973 to 2 d.p. ~~ 61 000 (zeros as place holders); 5.00 (keep the zeros to show 2 d.p.).
+What does it mean to truncate a number? ~~ Chop it off at the required place with no rounding up: 5.678 truncated to 1 d.p. is 5.6 (rounded it is 5.7).
+70 people travel in 16-seat minibuses. How many minibuses? ~~ 70 ÷ 16 = 4.375, so 5 minibuses (round up in context).
+How do you estimate a calculation? ~~ Round every number to 1 significant figure, write the rounded values down, then do the simpler calculation.
+Estimate (7.83 × 41.2) ÷ 0.19. ~~ (8 × 40) ÷ 0.2 = 320 ÷ 0.2 = 1600.
+Estimate (√80.6 × 2.1³) ÷ 0.52. ~~ (9 × 8) ÷ 0.5 = 72 ÷ 0.5 = 144.
+When is an estimate an overestimate? ~~ When numbers you add or multiply by are rounded up, or a number you divide by is rounded down.
+What is an error interval? ~~ The range of possible true values of a rounded or truncated number, written with inequalities, e.g. 6.25 ≤ x < 6.35.
+Error interval for w = 23 kg to the nearest kg? ~~ 22.5 ≤ w < 23.5 (half a unit either side; upper limit excluded).
+Error interval for n = 5800 correct to 2 s.f.? ~~ To the nearest 100, so 5750 ≤ n < 5850.
+Error interval for x = 9.2 truncated to 1 d.p.? ~~ 9.2 ≤ x < 9.3 (truncation only loses digits).
+Lower and upper bounds of 150 m to the nearest 5 m? ~~ LB 147.5 m, UB 152.5 m (half of 5 either side).
+Which bounds give the upper bound of a + b, a − b, a × b and a ÷ b? ~~ (Higher) a + b: UBa + UBb; a − b: UBa − LBb; a × b: UBa × UBb; a ÷ b: UBa ÷ LBb.
+7.3 cm by 2.6 cm (1 d.p.): lower bound of the area? ~~ (Higher) 7.25 × 2.55 = 18.4875 cm².
+400 m (nearest 10 m) in 61.2 s (1 d.p.): upper bound of speed? ~~ (Higher) UB distance ÷ LB time = 405 ÷ 61.15 = 6.62 m/s (3 s.f.).
+How do you give an answer to a suitable degree of accuracy using bounds? ~~ (Higher) Work out the UB and LB, then round both; give the answer to the greatest accuracy at which they agree, and say so.
+
+## 1.4
+In 2⁵, what are the base and the index, and its value? ~~ Base 2, index (power) 5; 2⁵ = 2 × 2 × 2 × 2 × 2 = 32.
+How many square roots does 81 have, and what does √81 mean? ~~ Two, ±9; the symbol √ always means the positive root, so √81 = 9.
+What is ∛(−27)? ~~ −3, since (−3)³ = −27 (a negative number has a negative cube root).
+List the square numbers up to 15². ~~ 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225.
+List the powers of 2 up to 2¹⁰. ~~ 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024.
+List the powers of 3, 4 and 5 you should recognise. ~~ 3, 9, 27, 81, 243; 4, 16, 64, 256; 5, 25, 125, 625.
+Work out 3³ × 2² − √81. ~~ 27 × 4 − 9 = 99.
+Estimate √45 to 1 decimal place. ~~ (Higher) 6² = 36 < 45 < 49 = 7²; 6.7² = 44.89 and 6.8² = 46.24, so √45 ≈ 6.7.
+State the three index laws for multiplying, dividing and a power of a power. ~~ aᵐ × aⁿ = aᵐ⁺ⁿ; aᵐ ÷ aⁿ = aᵐ⁻ⁿ; (aᵐ)ⁿ = aᵐⁿ (same base only).
+Simplify 3⁸ × 3⁻³ ÷ 3². ~~ 3⁸⁻³⁻² = 3³ (= 27).
+Simplify (5x²)³. ~~ 5³ × x⁶ = 125x⁶ (cube the number as well as the letter).
+What are a⁰ and a⁻ⁿ? ~~ a⁰ = 1 (for a ≠ 0); a⁻ⁿ = 1/aⁿ (the reciprocal).
+Work out 5⁻² and (2/5)⁻². ~~ 5⁻² = 1/25; (2/5)⁻² = (5/2)² = 25/4.
+Find n if 2ⁿ = 32 × 2⁴. ~~ 32 = 2⁵, so 2ⁿ = 2⁹ and n = 9.
+What is the difference between (−3)² and −3²? ~~ (−3)² = 9, but −3² = −(3²) = −9.
+What do a^(1/n) and a^(m/n) mean? ~~ (Higher) a^(1/n) = ⁿ√a; a^(m/n) = (ⁿ√a)ᵐ — the denominator is the root, the numerator the power, a minus sign means reciprocal.
+Work out 125^(2/3) and 36^(−1/2). ~~ (Higher) 125^(2/3) = 5² = 25; 36^(−1/2) = 1/√36 = 1/6.
+Work out (64/27)^(−2/3). ~~ (Higher) Flip: (27/64)^(2/3); cube root 3/4; square 9/16.
+Solve 4ˣ = 1/32. ~~ (Higher) 2²ˣ = 2⁻⁵, so 2x = −5 and x = −5/2.
+What does "give your answer in terms of π" mean? ~~ Leave π as a symbol so the answer is exact, e.g. a circle of radius 9 cm has area 81π cm².
+Exact area left when a circle of diameter 8 cm is cut from an 8 cm square? ~~ 64 − 16π cm² (not like terms, so it cannot simplify further).
+What is a surd? ~~ (Higher) A root that is irrational (cannot be written as a fraction), e.g. √3, √20. √16 = 4 is not a surd.
+State the rules √(ab), √(a/b) and √a × √a. ~~ (Higher) √(ab) = √a × √b; √(a/b) = √a/√b; √a × √a = a. But √(a + b) ≠ √a + √b.
+Simplify √45 and √200. ~~ (Higher) √45 = √9 × √5 = 3√5; √200 = √100 × √2 = 10√2.
+Simplify √50 + √18 − √8. ~~ (Higher) 5√2 + 3√2 − 2√2 = 6√2.
+How do you rationalise a/√b and a/(c − √b)? ~~ (Higher) Multiply top and bottom by √b, giving a√b/b; for c − √b multiply by c + √b, making the denominator c² − b.
+Rationalise 8/(3 − √5). ~~ (Higher) 8(3 + √5)/(9 − 5) = (24 + 8√5)/4 = 6 + 2√5.
+What is standard form? ~~ A × 10ⁿ where 1 ≤ A < 10 and n is an integer; numbers ≥ 10 have positive n, numbers between 0 and 1 have negative n.
+Write 0.0000481 and 7 300 000 in standard form. ~~ 4.81 × 10⁻⁵ and 7.3 × 10⁶.
+Work out (8 × 10⁶) × (7 × 10²) in standard form. ~~ 56 × 10⁸ = 5.6 × 10⁹ (adjust so 1 ≤ A < 10).
+
+## 2.1
+How do you write p × q, 4 × m and m ÷ n in algebraic notation? ~~ pq, 4m (number first) and m/n (division as a fraction).
+What does p²q mean? ~~ p × p × q — the index belongs to p only.
+What is the difference between 3m² and (3m)²? ~~ 3m² = 3 × m × m; (3m)² = 3m × 3m = 9m².
+If x = 4, what are −x² and (−x)²? ~~ −x² = −16; (−x)² = 16.
+How should you substitute values into an expression? ~~ Replace every letter, putting negative numbers in brackets, then follow the order of operations (indices before × and ÷, then + and −).
+Work out 2a² − 5b when a = −3 and b = 4. ~~ 2 × 9 − 5 × 4 = 18 − 20 = −2.
+Work out P = I²R when I = 3 and R = 12. ~~ P = 9 × 12 = 108.
+What is a term, and what is a coefficient? ~~ Term: one part of an expression, e.g. −6y, 4x², 9. Coefficient: the number multiplying a letter, e.g. −7 in −7x².
+What is a factor of an algebraic expression? ~~ A number, letter or bracket that divides exactly, e.g. 5, y and 5y are factors of 10y; (x + 3) is a factor of x² + 7x + 12.
+Expression, equation, formula, identity, inequality: what is each? ~~ Expression: no equals sign. Equation: true for particular values. Formula: links variables. Identity (≡): true for all values. Inequality: uses <, >, ≤ or ≥.
+What are like terms? ~~ Terms with exactly the same letters raised to the same powers, e.g. 5ab and −2ba (but not 3m and 3m²).
+Simplify 8m + 3n − 5m − 7n + 2. ~~ 3m − 4n + 2.
+How do you simplify terms with coefficients and powers, e.g. 6x⁻² × 3x⁷? ~~ Multiply the numbers and add the powers letter by letter: 18x⁵.
+Simplify (2x³y)⁴ ÷ 4x⁵y². ~~ 16x¹²y⁴ ÷ 4x⁵y² = 4x⁷y².
+How do you expand a single bracket k(a − b)? ~~ Multiply every term inside by the term outside: ka − kb. A negative term outside changes every sign inside.
+Expand and simplify 5(2x + 3) − 3(x − 4). ~~ 10x + 15 − 3x + 12 = 7x + 27.
+How do you factorise using a common factor? ~~ Find the HCF of the numbers and the lowest power of each common letter, write it outside the bracket, then divide each term by it.
+Factorise fully 9a²b + 15ab³. ~~ 3ab(3a + 5b²).
+What does "factorise fully" mean? ~~ Nothing more can be taken out, e.g. 3(3a²b + 5ab³) is not fully factorised.
+Expand and simplify (x − 4)(x + 9). ~~ x² + 9x − 4x − 36 = x² + 5x − 36.
+State the expansions of (a + b)², (a − b)² and (a + b)(a − b). ~~ a² + 2ab + b²; a² − 2ab + b²; a² − b².
+Expand (x − 3)². ~~ (x − 3)(x − 3) = x² − 6x + 9 (not x² − 9).
+How do you factorise x² + bx + c? ~~ Find two numbers that multiply to c and add to b; they go in the brackets (x + p)(x + q).
+Factorise x² − 4x − 21. ~~ Product −21, sum −4: −7 and +3, so (x − 7)(x + 3).
+What is the difference of two squares? ~~ a² − b² = (a + b)(a − b), e.g. x² − 121 = (x + 11)(x − 11).
+Factorise fully 2x² + 4x − 30. ~~ 2(x² + 2x − 15) = 2(x + 5)(x − 3).
+Expand and simplify (√7 + 3)(√7 − 1). ~~ 7 − √7 + 3√7 − 3 = 4 + 2√7.
+Factorise 4x² + 4x − 15. ~~ (Higher) ac = −60; numbers 10 and −6: 4x² + 10x − 6x − 15 = 2x(2x + 5) − 3(2x + 5) = (2x − 3)(2x + 5).
+Expand and simplify (x + 1)(x − 3)(x + 5). ~~ (Higher) (x² − 2x − 3)(x + 5) = x³ + 3x² − 13x − 15.
+How do you simplify an algebraic fraction such as (x² − 9)/(2x² + 5x − 3)? ~~ (Higher) Factorise top and bottom fully, then cancel whole brackets: (x + 3)(x − 3)/((2x − 1)(x + 3)) = (x − 3)/(2x − 1).
+
+## 2.2
+What is the subject of a formula? ~~ The variable on its own on one side, e.g. F in F = ma.
+State the kinematics formulae and what u, v, a, s, t stand for. ~~ v = u + at, s = ut + ½at², v² = u² + 2as; u initial velocity, v final velocity, a acceleration, s displacement, t time (given in the exam).
+Use s = ut + ½at² to find s when u = 4, t = 5, a = 1.2. ~~ 20 + ½ × 1.2 × 25 = 20 + 15 = 35.
+Use v² = u² + 2as to find v (v > 0) when u = 6, a = 2, s = 7. ~~ v² = 36 + 28 = 64, so v = 8.
+A taxi charges £3 plus £1.50 per mile. Write a formula for the cost £C of m miles. ~~ C = 3 + 1.5m (an 8-mile journey costs £15).
+How do you change the subject of a formula? ~~ Apply inverse operations to both sides, undoing the operations on the new subject in reverse order.
+Make a the subject of v = u + at. ~~ a = (v − u)/t.
+Make x the subject of y = (2x + 7)/3 − 4. ~~ y + 4 = (2x + 7)/3 → 3y + 12 = 2x + 7 → x = (3y + 5)/2.
+Make r the subject of A = 4πr² (r > 0). ~~ r² = A/(4π), so r = √(A/(4π)).
+Make v the subject of E = ½mv² (v > 0). ~~ 2E = mv², v² = 2E/m, v = √(2E/m).
+When rearranging, why might you need ± after square-rooting? ~~ A square has two roots, so use ± unless the variable is known to be positive.
+How do you rearrange when the subject appears twice? ~~ (Higher) Clear fractions and expand; collect all subject terms on one side; factorise out the subject; divide by the bracket.
+Make x the subject of px + 5 = qx − 2. ~~ (Higher) px − qx = −7, x(p − q) = −7, x = 7/(q − p).
+Make x the subject of y = (2x − 1)/(x + 3). ~~ (Higher) xy + 3y = 2x − 1, x(y − 2) = −1 − 3y, x = (1 + 3y)/(2 − y).
+What is the difference between an equation and an identity? ~~ An equation is true only for particular values (5x − 2 = 13 when x = 3); an identity is true for all values, written with ≡, e.g. 4(x − 2) ≡ 4x − 8.
+How do you show two expressions are identically equal? ~~ Start with one side (usually the more complicated), simplify step by step showing every line until it matches the other side.
+Show that (x + 6)² − (x − 6)² ≡ 24x, and hence find 106² − 94². ~~ x² + 12x + 36 − (x² − 12x + 36) = 24x; with x = 100, 106² − 94² = 2400.
+What does "equating coefficients" mean? ~~ In an identity, the coefficients of each power of x (and the constants) must be equal on both sides.
+(x + a)(x − 5) ≡ x² + bx − 15. Find a and b. ~~ x² + (a − 5)x − 5a: −5a = −15 so a = 3; b = a − 5 = −2.
+How can you show a statement is NOT an identity? ~~ Give one counter-example, e.g. (x + 1)² = x² + 1 fails for x = 2, since 9 ≠ 5.
+How do you write an even number, an odd number and consecutive integers algebraically? ~~ Even 2n; odd 2n + 1; consecutive integers n, n + 1, n + 2, … (n an integer).
+How do you write two consecutive odd numbers, and two unrelated odd numbers? ~~ Consecutive odd: 2n + 1, 2n + 3. Any two odd numbers: use different letters, 2m + 1 and 2n + 1.
+Show the sum of five consecutive integers is a multiple of 5. ~~ n + (n + 1) + (n + 2) + (n + 3) + (n + 4) = 5n + 10 = 5(n + 2), 5 × an integer.
+Why is checking a few numerical examples not a proof? ~~ Examples only cover those cases; an algebraic argument must cover every case.
+Prove the sum of two consecutive odd numbers is a multiple of 4. ~~ (Higher) (2n + 1) + (2n + 3) = 4n + 4 = 4(n + 1), which is 4 × an integer, so a multiple of 4.
+Prove (n + 4)² − n² is always a multiple of 8. ~~ (Higher) n² + 8n + 16 − n² = 8n + 16 = 8(n + 2), 8 × an integer.
+A function machine does × 3 then + 5. The output is 38. Find the input. ~~ Reverse it: 38 − 5 = 33, 33 ÷ 3 = 11.
+If f(x) = 5 − 3x, find f(−2) and solve f(x) = −10. ~~ (Higher) f(−2) = 5 + 6 = 11; 5 − 3x = −10 gives x = 5.
+What does fg(x) mean? Find gf(x) if f(x) = 3x + 1, g(x) = x² − 2. ~~ (Higher) fg(x) = f(g(x)): apply g first, then f. gf(x) = (3x + 1)² − 2 = 9x² + 6x − 1.
+How do you find an inverse function? Find f⁻¹(x) for f(x) = 4x − 9. ~~ (Higher) Write y = f(x), make x the subject, then replace y with x: f⁻¹(x) = (x + 9)/4. (f⁻¹ is not 1/f(x).)
+
+## 2.3
+How do you write the coordinates of a point? ~~ As an ordered pair (x, y): the horizontal position first, then the vertical position.
+How are the four quadrants numbered? ~~ Anticlockwise from the top right: 1st (+, +), 2nd (−, +), 3rd (−, −), 4th (+, −).
+What is the formula for the midpoint of (x₁, y₁) and (x₂, y₂)? ~~ ((x₁ + x₂)/2, (y₁ + y₂)/2) — the average of each pair of coordinates.
+Find the midpoint of (−4, 7) and (6, −1). ~~ ((−4 + 6)/2, (7 − 1)/2) = (1, 3).
+A is (2, −1) and the midpoint of AB is M(5, 3). Find B. ~~ Repeat the step from A to M, (+3, +4), starting at M: B = (8, 7).
+ABCD is a parallelogram with A(1, 2), B(4, 3) and C(6, 7). Find D. ~~ The step B to C is (+2, +4), so A to D is the same: D = (3, 6).
+Which equations give straight-line graphs? ~~ Those where x and y appear only to the power 1 (no x², no 1/x).
+How do you plot a straight-line graph such as y = 2x − 3? ~~ Complete a table of values (3 points is enough, more act as checks), plot them and join with one ruled line across the whole range.
+Describe the graph of y = −3. ~~ A horizontal line through (0, −3), with gradient 0.
+Describe the graph of x = 4. ~~ A vertical line through (4, 0).
+What are the equations of the x-axis and the y-axis? ~~ x-axis: y = 0. y-axis: x = 0.
+Describe the lines y = x and y = −x. ~~ Both pass through the origin at 45°: y = x slopes upwards, y = −x slopes downwards.
+What is a quick way to draw 2x + 5y = 20? ~~ Find where it meets the axes: x = 0 gives (0, 4) and y = 0 gives (10, 0). Join them.
+In y = mx + c, what do m and c represent? ~~ m is the gradient (how much y increases when x increases by 1); c is the y-intercept, where the line crosses at (0, c).
+What is the formula for the gradient through two points? ~~ m = (y₂ − y₁)/(x₂ − x₁) = change in y ÷ change in x.
+Find the gradient of the line through (−2, 5) and (4, −7). ~~ (−7 − 5)/(4 − (−2)) = −12/6 = −2.
+How does the gradient show the direction and steepness of a line? ~~ Positive: uphill left to right; negative: downhill; 0: horizontal. A larger size of m means a steeper line.
+Write down the gradient and y-intercept of y = 7 − 3x. ~~ Gradient −3, y-intercept (0, 7). The gradient is the coefficient of x, whatever order the terms are in.
+Find the gradient of 4x + 2y = 9. ~~ Make y the subject: y = −2x + 4.5, so the gradient is −2.
+Where does y = 4x − 10 cross the x-axis? ~~ Put y = 0: 4x = 10, x = 2.5, so at (2.5, 0).
+How do you find the equation of a line from one point and the gradient? ~~ Put m into y = mx + c, substitute the x and y of the point, solve for c, then write out the full equation.
+Find the line with gradient −3 that passes through (2, 4). ~~ 4 = −3 × 2 + c, so c = 10: y = −3x + 10.
+Find the equation of the line through (1, 3) and (4, 12). ~~ m = (12 − 3)/(4 − 1) = 3; 3 = 3 × 1 + c, so c = 0: y = 3x.
+How do you decide whether two lines are parallel? ~~ Rearrange each into y = mx + c; the lines are parallel if their gradients are equal.
+Find the line parallel to y = 3x − 2 that passes through (1, 8). ~~ Gradient 3: 8 = 3 × 1 + c, so c = 5: y = 3x + 5.
+In a real-life straight-line graph, what do the gradient and the intercept mean? ~~ Gradient: the rate of change (vertical units per horizontal unit). Intercept: the value when the horizontal quantity is 0, e.g. a fixed charge or starting amount.
+A tank empties with V = 600 − 25t (litres, minutes). Interpret 600 and −25. ~~ 600 litres in the tank at the start; the volume decreases by 25 litres every minute.
+When are two lines perpendicular? ~~ (Higher) When their gradients multiply to give −1: m₁ × m₂ = −1, so m₂ = −1/m₁ (the negative reciprocal).
+Find the line perpendicular to y = 2x + 1 that passes through (4, 1). ~~ (Higher) Gradient −1/2: 1 = −½ × 4 + c, so c = 3: y = −½x + 3.
+How do you find the equation of the perpendicular bisector of AB? ~~ (Higher) Find the midpoint of AB and the gradient of AB; the bisector passes through the midpoint with the negative reciprocal gradient. Then find c.
+
+## 2.4
+What shape is the graph of y = ax² + bx + c? ~~ A parabola: U-shaped with a minimum if a > 0, ∩-shaped with a maximum if a < 0, symmetrical about the vertical line through its turning point.
+How do you find the y-intercept of a quadratic graph? ~~ Substitute x = 0 — it is the constant term, e.g. y = x² − 4x + 3 crosses the y-axis at (0, 3).
+What are the roots of a quadratic graph and how are they found algebraically? ~~ The x-values where the curve meets the x-axis; solve y = 0 (by factorising at Foundation).
+Find the roots of y = x² − 8x + 12. ~~ (x − 2)(x − 6) = 0, so x = 2 and x = 6.
+Where is the line of symmetry of a parabola with roots 2 and 6? ~~ Midway between the roots: x = 4.
+Find the turning point of y = x² − 8x + 12. ~~ On the line of symmetry x = 4: y = 16 − 32 + 12 = −4, so a minimum at (4, −4).
+A ball's height is h = 20t − 5t² m. When does it land and what is its greatest height? ~~ 5t(4 − t) = 0, so it lands at t = 4 s. The maximum is halfway, t = 2: h = 40 − 20 = 20 m.
+In a table of values, what is (−4)²? ~~ 16, not −16. Put negatives in brackets on a calculator; a quadratic table that is not symmetrical usually has this error.
+How do you solve f(x) = k using the graph of y = f(x)? ~~ Draw the line y = k and read the x-coordinates where it crosses the curve; give them as estimates to the accuracy of the grid.
+Describe the shape of a cubic graph such as y = x³. ~~ An S-shaped curve; with a positive x³ term it rises from bottom-left to top-right. It meets the x-axis 1, 2 or 3 times.
+Where does y = x(x − 2)(x + 5) cross the x-axis? ~~ Where each factor is 0: x = 0, x = 2 and x = −5.
+Describe the graph of y = 1/x. ~~ Two separate branches in the 1st and 3rd quadrants that get closer to both axes but never touch them.
+What is an asymptote? ~~ A line that a curve approaches more and more closely without ever reaching it, e.g. both axes for y = 1/x.
+Why can x not be 0 in y = 1/x? ~~ You cannot divide by zero.
+What do graphs of direct and inverse proportion look like? ~~ y = kx: a straight line through the origin. y = k/x: a reciprocal curve that never meets the axes.
+On a distance–time graph, what do the gradient, a horizontal section and a downward section show? ~~ Gradient = speed; horizontal = stationary; sloping down = travelling back towards the start.
+A cyclist rides 15 km in 45 minutes. What is her average speed? ~~ 15 ÷ 0.75 = 20 km/h.
+On a velocity–time graph, what does the gradient show? ~~ Acceleration. Horizontal means constant speed; a negative gradient means deceleration.
+Speed rises steadily from 4 m/s to 28 m/s in 8 s. Find the acceleration. ~~ (28 − 4) ÷ 8 = 3 m/s².
+Water fills a container at a constant rate. How do narrow and wide parts show on a depth–time graph? ~~ Narrow part: steep straight line; wide part: shallow straight line; sloping sides give a curve.
+How do you find a turning point by completing the square? ~~ (Higher) Write y = (x + p)² + q; the turning point is (−p, q), a minimum.
+Find the turning point of y = x² + 6x + 2. ~~ (Higher) (x + 3)² − 9 + 2 = (x + 3)² − 7, so (−3, −7).
+Describe the graph of y = kˣ. ~~ (Higher) Passes through (0, 1), always above the x-axis (an asymptote). k > 1 gives exponential growth; 0 < k < 1 gives decay.
+State the key features of y = sin x and y = cos x for 0° to 360°. ~~ (Higher) Both repeat every 360°, −1 ≤ y ≤ 1. sin: 0 at 0°, max at 90°, min at 270°. cos: max at 0°, 0 at 90° and 270°, min at 180°.
+State the key features of y = tan x. ~~ (Higher) Repeats every 180°; 0 at 0° and 180°; equals 1 at 45°; asymptotes at 90° and 270°.
+What do y = f(x) + a and y = f(x + a) do to a graph? ~~ (Higher) f(x) + a translates a units up, vector (0, a). f(x + a) translates a units left, vector (−a, 0).
+y = f(x) has a maximum at (2, 5). Where is it for y = f(x − 3) and for y = −f(x)? ~~ (Higher) f(x − 3): moves 3 right, maximum (5, 5). −f(x): reflects in the x-axis, so a minimum at (2, −5).
+How do you estimate the gradient of a curve at a point? ~~ (Higher) Draw the tangent at that point and find its gradient (the instantaneous rate of change); a chord gives the average rate of change.
+What does the area under a velocity–time graph represent? ~~ (Higher) The distance travelled. Split into triangles, rectangles and trapezia; estimate under a curve with equal-width trapezium strips.
+What is the equation of a circle with centre (0, 0) and radius r, and how do you find a tangent to it? ~~ (Higher) x² + y² = r². The tangent at P is perpendicular to radius OP: use the negative reciprocal of OP's gradient and substitute P into y = mx + c.
+
+## 2.5
+Solve 7x − 4 = 31. ~~ Add 4: 7x = 35. Divide by 7: x = 5.
+Solve 9x − 2 = 4x + 23. ~~ Subtract 4x (the smaller x term): 5x − 2 = 23, 5x = 25, x = 5.
+How do you clear fractions from an equation? ~~ Multiply every term on both sides by the LCM of the denominators, putting each numerator in a bracket.
+Solve (x + 3)/2 = (2x − 1)/3. ~~ Multiply by 6: 3(x + 3) = 2(2x − 1), so 3x + 9 = 4x − 2, x = 11.
+How do you find an approximate solution of 3x − 2 = 7 from a graph? ~~ Read the x-coordinate where y = 3x − 2 crosses the horizontal line y = 7 (here x = 3); off-grid crossings are estimates.
+The angles of a triangle are x°, 2x° and 3x°. Find the largest angle. ~~ x + 2x + 3x = 180, so 6x = 180, x = 30. Largest angle = 90°.
+Ali is 3 times as old as Ben. In 5 years their ages will total 50. How old is Ben now? ~~ (b + 5) + (3b + 5) = 50, so 4b + 10 = 50, b = 10. Ben is 10.
+Solve x² + 2x − 15 = 0. ~~ (x + 5)(x − 3) = 0, so x = −5 or x = 3.
+Solve x² − 9x = 0. ~~ x(x − 9) = 0, so x = 0 or x = 9. Never divide by x — it loses x = 0.
+Solve x² − 49 = 0. ~~ Difference of two squares: (x − 7)(x + 7) = 0, so x = 7 or x = −7.
+Solve x² = 2x + 24. ~~ (Higher) Rearrange: x² − 2x − 24 = 0, (x − 6)(x + 4) = 0, so x = 6 or x = −4.
+Solve 2x² + 7x + 3 = 0. ~~ (Higher) (2x + 1)(x + 3) = 0, so x = −½ or x = −3.
+What is the quadratic formula? ~~ (Higher) For ax² + bx + c = 0: x = (−b ± √(b² − 4ac)) / (2a).
+Solve 2x² − 3x − 4 = 0, giving answers to 2 d.p. ~~ (Higher) x = (3 ± √(9 + 32))/4 = (3 ± √41)/4, so x = 2.35 or x = −0.85.
+What does the discriminant b² − 4ac tell you? ~~ (Higher) > 0: two real roots; = 0: one repeated root; < 0: no real roots.
+Solve x² − 6x + 2 = 0 by completing the square. ~~ (Higher) (x − 3)² − 9 + 2 = 0, so (x − 3)² = 7, x = 3 ± √7.
+How does the elimination method work? ~~ Multiply so one variable has the same coefficient in both equations; subtract if the signs are the same, add if they are different.
+Solve 2x + 3y = 12 and 4x − 3y = 6. ~~ Add: 6x = 18, x = 3. Then 6 + 3y = 12, y = 2.
+Solve y = 3x − 1 and 2x + y = 14 by substitution. ~~ 2x + (3x − 1) = 14, so 5x = 15, x = 3, y = 8.
+What does the solution of two simultaneous equations represent on a graph? ~~ The coordinates of the point where the two graphs intersect.
+Solve y = x + 3 and y = x² + 1. ~~ (Higher) x² + 1 = x + 3, x² − x − 2 = 0, (x − 2)(x + 1) = 0: x = 2, y = 5 and x = −1, y = 2.
+Show that x³ − 4x − 1 = 0 has a solution between x = 2 and x = 3. ~~ (Higher) x = 2: 8 − 8 − 1 = −1; x = 3: 27 − 12 − 1 = 14. The sign changes, so there is a solution between 2 and 3.
+What is iteration? ~~ (Higher) Rearranging to x = g(x) and repeatedly using xₙ₊₁ = g(xₙ), feeding each answer back in, so the values converge on a solution.
+When do you reverse an inequality sign? ~~ When you multiply or divide both sides by a negative number (adding or subtracting never changes it).
+Solve 5 − 2x < 11. ~~ −2x < 6, so x > −3 (sign reversed when dividing by −2).
+n is an integer and −6 < 2n ≤ 8. List the values of n. ~~ −3 < n ≤ 4, so n = −2, −1, 0, 1, 2, 3, 4.
+Open or closed circle on a number line? ~~ Open circle for < or > (end value not included); closed circle for ≤ or ≥ (included).
+Solve x² − 2x − 8 ≤ 0. ~~ (Higher) (x − 4)(x + 2) = 0 gives critical values −2 and 4; the curve is on or below the axis between them: −2 ≤ x ≤ 4.
+Solve x² − x − 12 > 0, giving the answer in set notation. ~~ (Higher) Critical values −3 and 4; above the axis outside them: {x : x < −3} ∪ {x : x > 4}.
+How do you show a region such as x + y ≤ 5 on a graph? ~~ (Higher) Draw the boundary x + y = 5 (solid for ≤ or ≥, dashed for < or >), then test a point such as (0, 0) to decide which side to shade.
+
+## 2.6
+What is a sequence? ~~ A list of numbers (terms) in order, following a rule. The position of a term is n: first term n = 1, second n = 2, …
+What is a term-to-term rule? ~~ A rule for getting the next term from the one before, e.g. "add 5". You also need a starting term.
+The first term is 3 and the rule is "multiply by 2 then subtract 1". Write the next three terms. ~~ 5, 9, 17.
+What is a position-to-term rule? ~~ The nth term: a formula that gives any term directly by substituting its position n.
+The nth term is 4n + 3. Find the first three terms and the 25th term. ~~ 7, 11, 15; 25th term = 4 × 25 + 3 = 103.
+Write the first three terms of the sequence with nth term n² + 3. ~~ 4, 7, 12.
+uₙ₊₁ = 2uₙ − 3 and u₁ = 4. Write the first four terms. ~~ 4, 5, 7, 11 (each term is double the previous term minus 3).
+What is an arithmetic (linear) sequence? ~~ The same number, the common difference d, is added each time; d can be negative, e.g. 30, 26, 22, … has d = −4.
+What is the formula for the nth term of a linear sequence? ~~ dn + (first term − d), where d is the common difference and first term − d is the zeroth term.
+Find the nth term of 3, 10, 17, 24, … ~~ d = 7, zeroth term 3 − 7 = −4: 7n − 4.
+Find the nth term of 40, 35, 30, 25, … ~~ d = −5, zeroth term 45: 45 − 5n.
+What is the classic error when finding the nth term of 6, 10, 14, …? ~~ Writing n + 4. The number in front of n is the common difference: it is 4n + 2. Check with n = 1 and n = 2.
+How do you test whether a number is a term of a linear sequence? ~~ Set the nth term equal to the number and solve; it is a term only if n is a positive whole number.
+Is 158 a term of the sequence 6n − 4? ~~ 6n − 4 = 158, 6n = 162, n = 27: yes, it is the 27th term.
+Is 75 a term of the sequence 4n + 1? ~~ 4n + 1 = 75 gives n = 18.5, not a whole number, so no.
+1 table seats 6, 2 tables seat 10, 3 tables seat 14. How many tables are needed for 75 people? ~~ nth term 4n + 2 ≥ 75 gives n ≥ 18.25, so 19 tables (18 tables seat only 74).
+State the first five square and cube numbers with their nth terms. ~~ Squares 1, 4, 9, 16, 25 (n²); cubes 1, 8, 27, 64, 125 (n³).
+What are the triangular numbers and their nth term? ~~ 1, 3, 6, 10, 15, 21, … (gaps 2, 3, 4, 5, …); nth term n(n + 1)/2.
+Find the 20th triangular number. ~~ 20 × 21 ÷ 2 = 210.
+What is a Fibonacci-type sequence? ~~ Each term after the first two is the sum of the two terms before it, e.g. 1, 1, 2, 3, 5, 8, 13, 21, …
+A Fibonacci-type sequence starts a, b. Write the next four terms. ~~ a + b, a + 2b, 2a + 3b, 3a + 5b.
+A Fibonacci-type sequence has 3rd term 11 and 5th term 29. Find the first two terms. ~~ a + b = 11 and 2a + 3b = 29, so b = 7, a = 4: 4, 7, 11, 18, 29.
+What is a geometric sequence and how do you find r? ~~ Each term is multiplied by the same common ratio r; find r by dividing any term by the one before it.
+What is the nth term of a geometric sequence with first term a and ratio r? ~~ arⁿ⁻¹ (terms a, ar, ar², ar³, …).
+Write the next two terms of 64, 16, 4, … ~~ r = 1/4, so 1 and 1/4.
+A geometric sequence has first term 2, a positive ratio and 3rd term 50. Find the 4th term. ~~ 2r² = 50, r² = 25, r = 5, so the 4th term is 250.
+How do you recognise and continue a quadratic sequence such as 3, 8, 15, 24, …? ~~ First differences 5, 7, 9 change but the second difference (2) is constant. Next differences 11, 13 give 35, 48.
+How do you find the nth term of a quadratic sequence? ~~ (Higher) Halve the second difference to get a in an², subtract an² from each term, find the nth term of what is left, then combine and check.
+Find the nth term of 5, 14, 27, 44, 65, … ~~ (Higher) Second difference 4, so 2n²; terms − 2n² = 3, 6, 9, 12, 15 = 3n. nth term 2n² + 3n.
+Find the 9th term of the geometric sequence 3, 3√2, 6, … ~~ (Higher) r = √2: 3 × (√2)⁸ = 3 × 16 = 48.
+
+## 3.1
+What does the ratio a : b mean? ~~ For every a of the first quantity there are b of the second; the order of the parts must match the order of the words.
+When is a ratio in its simplest form? ~~ When every part is a whole number and they have no common factor except 1. Divide every part by the HCF.
+Simplify 36 : 84. ~~ HCF 12: 3 : 7.
+Simplify 2.5 kg : 750 g. ~~ Same units first: 2500 : 750 = 10 : 3.
+Simplify 0.8 : 2. ~~ Multiply by 10: 8 : 20 = 2 : 5.
+Simplify ⅔ : ¾. ~~ Multiply both by 12: 8 : 9.
+Write 8 : 14 in the form 1 : n. ~~ Divide both parts by 8: 1 : 1.75.
+Write 18 as a fraction of 48. ~~ 18/48 = 3/8.
+Write 90 cm as a fraction of 60 cm. ~~ 90/60 = 3/2 (a fraction greater than 1 is fine).
+Cats : dogs = 3 : 8. What fraction of the animals are cats? ~~ 3/11 — add the parts for the whole (not 3/8).
+If A : B = 3 : 8, how are A and B related? ~~ A = 3/8 × B and B = 8/3 × A; A is 3/11 of the total.
+How is the ratio x : y = 3 : 5 linked to a linear function? ~~ y/x = 5/3, so y = 5/3 x: a straight line through the origin with gradient 5/3.
+How do you share an amount in a ratio? ~~ Add the parts, divide the amount by the total to find one part, then multiply one part by each number in the ratio.
+Share £720 in the ratio 4 : 5. ~~ 9 parts, 1 part = £80: £320 and £400.
+Share £96 in the ratio 1 : 2 : 5. ~~ 8 parts, 1 part = £12: £12, £24 and £60.
+Girls : boys = 3 : 7 and there are 28 more boys than girls. How many children in total? ~~ The difference is 4 parts = 28, so 1 part = 7 and the total is 10 × 7 = 70.
+A : B = 3 : 4 and B : C = 6 : 5. Find A : B : C. ~~ Make B the LCM, 12: A : B = 9 : 12 and B : C = 12 : 10, so 9 : 12 : 10.
+Red : blue = 3 : 4. After 6 red are added the ratio is 1 : 1. How many counters were there at first? ~~ 3x + 6 = 4x, so x = 6: 18 red and 24 blue, 42 in total.
+How do you find the most you can make when a recipe needs several ingredients in a ratio? ~~ Work out how much each ingredient alone would allow; the smallest answer is the most you can make.
+What is the unitary method? ~~ Find the value of one unit, then scale up, e.g. 4 pens cost £2.60, so 1 pen 65p and 7 pens £4.55.
+How do you find the best buy? ~~ Compare the price per unit (lowest is best) or the amount per £1 (highest is best), then write a conclusion.
+The exchange rate is £1 = $1.25. Convert $350 into pounds. ~~ Dollars to pounds means divide: 350 ÷ 1.25 = £280.
+A map has scale 1 : 50 000. What real distance is 6 cm on the map? ~~ 6 × 50 000 = 300 000 cm = 3 km.
+A map has scale 1 : 20 000. How long on the map is a real distance of 1.5 km? ~~ 1.5 km = 150 000 cm; 150 000 ÷ 20 000 = 7.5 cm.
+Rectangles 3 cm by 4 cm and 6 cm by 8 cm: compare lengths and areas. ~~ Length ratio 1 : 2; area ratio 12 : 48 = 1 : 4 (which is 1² : 2²).
+Compare direct and inverse proportion. ~~ Direct: y = kx, y ÷ x constant, straight line through the origin. Inverse: y = k/x (y ∝ 1/x), xy constant, reciprocal curve.
+y is directly proportional to x, and y = 21 when x = 3. Find y when x = 8. ~~ k = 21 ÷ 3 = 7, so y = 7x = 56.
+5 workers take 12 days to build a wall. How long would 6 workers take? ~~ Inverse proportion: 5 × 12 = 60 worker-days, 60 ÷ 6 = 10 days.
+y is inversely proportional to x², and y = 10 when x = 3. Find y when x = 5. ~~ (Higher) y = k/x², k = 90, so y = 90 ÷ 25 = 3.6.
+Two similar solids have lengths in the ratio 2 : 5. What are the ratios of their areas and volumes? ~~ (Higher) Areas 4 : 25 (squared), volumes 8 : 125 (cubed).
+
+## 3.2
+What is a percentage? ~~ A number of parts per hundred, e.g. 48% = 48/100 = 0.48.
+What does a percentage greater than 100% mean? ~~ An amount larger than the whole, e.g. 250% of a quantity is 2.5 times the quantity.
+Write 12.5% as a fraction and as a decimal. ~~ 1/8 and 0.125.
+How do you find 17.5% of an amount without a calculator? ~~ Find 10% (÷ 10), 5% (halve 10%) and 2.5% (halve 5%), then add: 10% + 5% + 2.5%.
+How do you express A as a percentage of B? ~~ A/B × 100%, after converting both to the same units.
+Express 45 minutes as a percentage of 2 hours. ~~ 45/120 × 100 = 37.5%.
+How do you compare scores of 42 out of 60 and 52 out of 80? ~~ Convert both to percentages: 42/60 = 70% and 52/80 = 65%, so 42 out of 60 is the better score.
+What is the multiplier for an increase of r%? ~~ 1 + r/100, e.g. an increase of 12% → × 1.12.
+What is the multiplier for a decrease of r%? ~~ 1 − r/100, e.g. a decrease of 40% → × 0.6.
+Increase £85 by 12%. ~~ 85 × 1.12 = £95.20.
+Decrease £360 by 15% using a multiplier. ~~ 360 × 0.85 = £306.
+What is the formula for percentage change? ~~ Actual change ÷ original value × 100%. Always divide by the original, not the new value.
+A price rises from £40 to £46. What is the percentage increase? ~~ Change = 6, so 6/40 × 100 = 15%.
+How do you work out percentage profit? ~~ Profit ÷ cost price × 100.
+What is an original value (reverse percentage) problem? ~~ You are given the amount after a percentage change; since new = original × multiplier, original = new amount ÷ multiplier.
+After a 15% increase a price is £276. What was the original price? ~~ 115% = 276, so original = 276 ÷ 1.15 = £240.
+A coat costs £52 after a 35% reduction. What was the original price? ~~ 65% = 52, so original = 52 ÷ 0.65 = £80.
+A bill of £102 includes VAT at 20%. What is the price before VAT? ~~ 102 ÷ 1.2 = £85 (not £102 minus 20% of £102).
+How do you deal with repeated percentage changes? ~~ Multiply the multipliers together to get a single overall multiplier.
+A price goes up 10% and then down 10%. What is the overall change? ~~ 1.1 × 0.9 = 0.99, so a 1% decrease overall (not back to the start).
+What is the formula for simple interest? ~~ Interest = P × r/100 × n (P principal, r annual rate %, n years). Interest is on the original sum only, so it is the same every year.
+Find the simple interest on £2400 for 3 years at 3.5% per year. ~~ 2400 × 0.035 = £84 a year; 84 × 3 = £252.
+What is the formula for compound growth or decay? ~~ Value after n periods = P × (1 ± r/100)ⁿ: + for growth or interest, − for decay or depreciation.
+£4000 is invested at 2% compound interest for 3 years. Find its value. ~~ 4000 × 1.02³ = 4244.832 ≈ £4244.83.
+A van worth £18 000 depreciates by 20% a year. Find its value after 2 years. ~~ 18 000 × 0.8² = £11 520.
+How do you find when a growing or decaying amount first passes a target? ~~ Substitute whole numbers of years into P × multiplierⁿ and show the values either side of the target.
+£3000 grows at 5% per year compound interest. After how many years is it first over £4000? ~~ 3000 × 1.05⁵ = 3828.84 (not yet); 3000 × 1.05⁶ = 4020.29, so after 6 years.
+What is a general iterative process of the form uₙ₊₁ = auₙ + b? ~~ (Higher) A rule applied repeatedly: a is the percentage-change multiplier and b is a fixed amount added (b > 0) or removed (b < 0) each period, starting from u₀.
+If uₙ₊₁ = 1.05uₙ − 50 and u₀ = 600, find u₂. ~~ (Higher) u₁ = 1.05 × 600 − 50 = 580; u₂ = 1.05 × 580 − 50 = 559.
+How do you find the long-term value of uₙ₊₁ = 0.8uₙ + 30? ~~ (Higher) If the terms settle to a limit L, then L = 0.8L + 30, so 0.2L = 30 and L = 150.
+
+## 3.3
+How many cm³ are in 1 litre, and how many litres in 1 m³? ~~ 1 litre = 1000 cm³ (1 ml = 1 cm³); 1 m³ = 1000 litres.
+Write 2.3 hours in hours and minutes. ~~ 0.3 × 60 = 18 minutes, so 2 hours 18 minutes (not 2 hours 30 minutes).
+How many cm² are in 1 m², and how many cm³ in 1 m³? ~~ 1 m² = 100 × 100 = 10 000 cm²; 1 m³ = 100 × 100 × 100 = 1 000 000 cm³.
+If lengths convert by a factor k, how do areas and volumes convert? ~~ Areas by k², volumes by k³ (e.g. 1 cm² = 100 mm², 1 cm³ = 1000 mm³).
+Change 4500 cm³ into m³. ~~ 4500 ÷ 1 000 000 = 0.0045 m³.
+What is a compound unit? ~~ A unit made from two units that describes a rate, e.g. m/s, £ per hour, g/cm³, N/m². "Per" or "/" means divide.
+How do you convert a compound unit, e.g. km/h to m/s? ~~ Convert the top unit and the bottom unit separately, then divide.
+Change 54 km/h into m/s. ~~ 54 000 m ÷ 3600 s = 15 m/s (shortcut: km/h ÷ 3.6 = m/s).
+Change 20 m/s into km/h. ~~ 20 × 3.6 = 72 km/h.
+Change a density of 2.7 g/cm³ into kg/m³. ~~ 2.7 × 1 000 000 = 2 700 000 g = 2700 kg in 1 m³, so 2700 kg/m³ (g/cm³ → kg/m³: × 1000).
+What are the speed, distance and time formulae? ~~ Speed = distance ÷ time; distance = speed × time; time = distance ÷ speed.
+How far does a car travel in 40 minutes at 72 km/h? ~~ 40 minutes = 40/60 hour; 72 × 40/60 = 48 km.
+How long does a 150-mile journey take at 60 mph? ~~ 150 ÷ 60 = 2.5 hours = 2 hours 30 minutes.
+How do you find the average speed for a journey with several stages? ~~ Total distance ÷ total time (including stops if the question says "whole journey"). Never average the speeds.
+A car does 60 km at 120 km/h then 60 km at 40 km/h. What is its average speed? ~~ Times 0.5 h and 1.5 h; 120 km ÷ 2 h = 60 km/h (not 80 km/h).
+How do you answer a "best buy" question? ~~ Work out the same rate for every option (e.g. pence per gram), compare, and write a conclusion backed by the figures.
+500 g costs £3.20 and 750 g costs £4.65. Which is better value? ~~ 320 ÷ 500 = 0.64p per g; 465 ÷ 750 = 0.62p per g, so the 750 g pack is better value.
+Find the hourly rate for £21 060 a year, working 36 hours a week for 52 weeks. ~~ 36 × 52 = 1872 hours; 21 060 ÷ 1872 = £11.25 per hour.
+What are the density formulae and units? ~~ Density = mass ÷ volume; mass = density × volume; volume = mass ÷ density. Units g/cm³ or kg/m³.
+A metal block has volume 50 cm³ and mass 395 g. Find its density. ~~ 395 ÷ 50 = 7.9 g/cm³.
+How do you find the density of a mixture or alloy? ~~ Total mass ÷ total volume. Averaging the two densities is wrong unless the volumes are equal.
+What are the pressure formulae and units? ~~ Pressure = force ÷ area; force = pressure × area; area = force ÷ pressure. Units N/m² (pascals) or N/cm².
+A force of 240 N acts on an area of 0.6 m². Find the pressure. ~~ 240 ÷ 0.6 = 400 N/m².
+On which face does a cuboid exert its greatest pressure? ~~ Its smallest face (the same force over a smaller area gives a bigger pressure).
+What does the gradient of a straight-line graph represent? ~~ A constant rate of change, in y-units per x-unit, e.g. gradient of a distance–time graph = speed; of a cost–time graph = charge per hour.
+What does a graph of direct proportion look like? ~~ A straight line through the origin, y = kx, with gradient k. A straight line not through the origin is not direct proportion.
+What does a graph of inverse proportion look like? ~~ y = k/x: for x > 0, a curve that falls and approaches both axes without touching them; the product xy = k is constant.
+What do the gradients of a chord and a tangent to a curve represent? ~~ (Higher) Chord: the average rate of change between two points. Tangent: the instantaneous rate of change at that point.
+Find the average rate of change of y = x² between x = 1 and x = 4. ~~ (Higher) Gradient of chord = (16 − 1) ÷ (4 − 1) = 15 ÷ 3 = 5.
+How do you estimate the rate of change at a point on a curved graph? ~~ (Higher) Draw the tangent touching the curve at that point, pick two far-apart points on it, work out rise ÷ run, and interpret it with units (no calculus needed).
+
+## 4.1
+What are acute, obtuse and reflex angles? ~~ Acute: less than 90°. Obtuse: between 90° and 180°. Reflex: between 180° and 360°.
+What are the three basic angle facts at a point? ~~ Angles on a straight line add up to 180°; angles at a point add up to 360°; vertically opposite angles are equal.
+What are alternate angles? ~~ Equal angles between a pair of parallel lines, on opposite sides of the transversal. Write "alternate angles are equal", not "Z angles".
+What are corresponding angles? ~~ Equal angles in the same position at each parallel line where a transversal crosses them.
+What are co-interior angles? ~~ Angles between a pair of parallel lines on the same side of the transversal; they add up to 180°.
+How do you prove the angles in a triangle add up to 180°? ~~ Draw a line through one vertex parallel to the opposite side; the two new angles equal the base angles (alternate angles are equal) and the three angles at the vertex lie on a straight line.
+What is the exterior angle of a triangle equal to? ~~ The sum of the two interior opposite angles.
+What are the properties of an isosceles triangle? ~~ Two equal sides, the two base angles opposite them are equal, one line of symmetry.
+The angles of a triangle are x, x + 20 and 2x. Find them. ~~ 4x + 20 = 180, so x = 40: the angles are 40°, 60° and 80°.
+What do the angles in a quadrilateral add up to, and why? ~~ 360°, because a diagonal splits it into two triangles (2 × 180°).
+What are the properties of a parallelogram? ~~ Opposite sides equal and parallel, opposite angles equal, neighbouring angles add to 180°, diagonals bisect each other; no lines of symmetry, rotational symmetry order 2.
+What are the properties of a rhombus? ~~ Four equal sides, opposite sides parallel, opposite angles equal, diagonals bisect each other at 90°; 2 lines of symmetry, rotational order 2.
+What are the properties of a kite? ~~ Two pairs of equal adjacent sides, one pair of opposite angles equal, diagonals meet at 90° (one bisects the other); 1 line of symmetry.
+What are the properties of a trapezium? ~~ Exactly one pair of parallel sides; co-interior angles between them add to 180°. An isosceles trapezium has 1 line of symmetry.
+ABCD is a parallelogram with angle ABC = 70°. Find angles BCD and CDA. ~~ BCD = 180 − 70 = 110° (co-interior angles add up to 180°); CDA = 70° (opposite angles of a parallelogram are equal).
+What is the sum of the interior angles of an n-sided polygon? ~~ (n − 2) × 180°.
+What is the sum of the exterior angles of any polygon? ~~ 360°.
+How do you find the exterior and interior angles of a regular n-sided polygon? ~~ Exterior angle = 360° ÷ n; interior angle = 180° − exterior angle.
+What is each interior angle of a regular octagon? ~~ Exterior = 360 ÷ 8 = 45°, so interior = 180 − 45 = 135°.
+Each interior angle of a regular polygon is 156°. How many sides does it have? ~~ Exterior = 180 − 156 = 24°; n = 360 ÷ 24 = 15 sides.
+The interior angles of a polygon add up to 1800°. How many sides does it have? ~~ (n − 2) × 180 = 1800, so n − 2 = 10 and n = 12.
+Can a regular polygon have interior angles of 100°? ~~ No: exterior = 80° and 360 ÷ 80 = 4.5, which is not a whole number of sides.
+How do you construct the perpendicular bisector of AB? ~~ Compasses wider than half AB; draw arcs above and below AB from A, then from B with the same radius; join the two crossing points. Leave the arcs showing.
+How do you bisect an angle with ruler and compasses? ~~ From the vertex draw an arc crossing both arms; from those two points draw equal arcs that cross inside the angle; join the vertex to the crossing point.
+What is the shortest distance from a point to a line? ~~ The perpendicular distance: the length of the segment from the point that meets the line at 90°.
+What is the locus of points a fixed distance from a point, and from a line segment? ~~ From a point: a circle centred on the point. From a line segment: two parallel lines joined by a semicircle at each end.
+What is the locus of points equidistant from two points, and from two lines that meet? ~~ From two points: the perpendicular bisector of the segment joining them. From two lines: the bisector of the angle between them.
+What are the three rules for a bearing? ~~ Measured from North, measured clockwise, written with three figures (e.g. 058°).
+The bearing of B from A is 125°. What is the bearing of A from B? ~~ 125 + 180 = 305° (add 180° if under 180°, otherwise subtract 180°).
+A map has scale 1 : 25 000. Two points are 6 cm apart on the map. How far apart are they in real life? ~~ 6 × 25 000 = 150 000 cm = 1500 m = 1.5 km.
+
+## 4.2
+What does congruent mean? ~~ Identical in shape and size: all corresponding sides and angles are equal. Translations, rotations and reflections give congruent images.
+What are the four congruence tests for triangles? ~~ SSS (three sides), SAS (two sides and the included angle), ASA or AAS (two angles and a corresponding side), RHS (right angle, hypotenuse, one other side).
+Why are AAA and SSA not congruence tests? ~~ AAA only proves the triangles are similar (they could be different sizes); SSA (angle not between the sides) can give two different triangles.
+What does the "included angle" in SAS mean? ~~ The angle between the two given sides.
+How should you set out a congruence proof? ~~ One statement per line with a reason in brackets, name the test (e.g. "congruent, SAS"), then use "corresponding sides/angles of congruent triangles are equal" if needed.
+How do you describe a translation fully? ~~ By a column vector (a, b): a units right and b units up (negative means left or down).
+Translate the point (3, −2) by the vector (−4, 5). ~~ (3 − 4, −2 + 5) = (−1, 3).
+How do you describe a reflection fully? ~~ Give the equation of the mirror line, e.g. "reflection in the line y = x".
+Where do points go when reflected in y = x and in y = −x? ~~ y = x: (x, y) → (y, x). y = −x: (x, y) → (−y, −x).
+Reflect the point (7, 1) in the line x = 2. ~~ It is 5 right of the line, so goes 5 left: x = 2 × 2 − 7 = −3, giving (−3, 1).
+How do you describe a rotation fully? ~~ Give the centre, the angle and the direction (clockwise or anticlockwise); a 180° rotation needs no direction.
+How do points move under rotations about the origin? ~~ 90° clockwise: (x, y) → (y, −x). 90° anticlockwise: (x, y) → (−y, x). 180°: (x, y) → (−x, −y).
+Rotate the point (5, 2) through 90° anticlockwise about the origin. ~~ (x, y) → (−y, x), so (−2, 5).
+How do you describe an enlargement fully? ~~ Give the scale factor and the centre of enlargement.
+Is the image of an enlargement congruent to the object? ~~ No, it is similar: lengths are multiplied by the scale factor and angles stay the same (unless the scale factor is 1 or −1).
+How do you find the scale factor of an enlargement? ~~ Length on image ÷ matching length on object.
+What does a scale factor between 0 and 1 do? ~~ Makes the image smaller and closer to the centre; it is still called an enlargement.
+How do you find the centre of enlargement on a grid? ~~ Draw straight lines through each object vertex and its matching image vertex; they meet at the centre.
+Enlarge the point (5, 3) by scale factor 2, centre (1, 1). ~~ Vector from centre (4, 2), × 2 = (8, 4), add back the centre: (9, 5).
+What does a negative scale factor do in an enlargement? ~~ (Higher) The image is on the opposite side of the centre and is inverted; distances from the centre are multiplied by the size of the scale factor.
+Enlarge the point (3, 3) by scale factor −2, centre (2, 1). ~~ (Higher) Vector from centre (1, 2), × −2 = (−2, −4), add back the centre: (0, −3).
+What single transformation is an enlargement with scale factor −1? ~~ (Higher) A rotation of 180° about the same centre.
+What is an invariant point, and which points are invariant under each transformation? ~~ (Higher) A point that maps to itself. Reflection: all points on the mirror line. Rotation and enlargement: only the centre. Translation: none.
+What single transformation is a reflection in x = 1 followed by a reflection in x = 4? ~~ (Higher) A translation by the vector (6, 0): twice the gap between the parallel mirror lines.
+How do you find the single transformation equivalent to a combination of transformations? ~~ (Higher) Track the coordinates of each vertex through each step, then identify the single transformation from the original to the final image. Order usually matters.
+What does it mean for two shapes to be similar? ~~ One is an enlargement of the other: corresponding angles are equal and corresponding lengths are in the same ratio (the scale factor).
+In triangle ABC, DE is parallel to BC with D on AB and E on AC. AD = 4, DB = 2 and DE = 5. Find BC. ~~ Triangles ADE and ABC are similar; AB = 6, so scale factor = 6 ÷ 4 = 1.5 and BC = 5 × 1.5 = 7.5.
+If lengths of similar figures are in the ratio 1 : k, what are the ratios of areas and volumes? ~~ (Higher) Areas 1 : k², volumes 1 : k³.
+Two similar cylinders are 4 cm and 6 cm tall. The smaller has volume 80 cm³. Find the volume of the larger. ~~ (Higher) k = 6 ÷ 4 = 1.5; volume = 80 × 1.5³ = 270 cm³.
+Two similar solids have surface areas 25 cm² and 64 cm². What is the ratio of their volumes? ~~ (Higher) Length ratio = √25 : √64 = 5 : 8, so volumes are 5³ : 8³ = 125 : 512.
+
+## 4.3
+What are the radius and diameter of a circle? ~~ Radius: a line from the centre to the circle. Diameter: a chord through the centre; d = 2r.
+What is the difference between a chord and a tangent? ~~ A chord is a straight line joining two points on the circle; a tangent is a straight line that touches the circle at exactly one point.
+What is an arc? ~~ A part of the circumference.
+What is the difference between a sector and a segment? ~~ Sector: a region enclosed by two radii and an arc (a pizza slice). Segment: a region enclosed by a chord and an arc.
+What are a semicircle and a quadrant? ~~ A semicircle is a sector of 180°; a quadrant is a sector of 90°.
+What is the formula for the circumference of a circle? ~~ C = πd = 2πr. Learn it — use it without looking it up.
+What is the formula for the area of a circle? ~~ A = πr². Learn it — use it without looking it up.
+A circle has diameter 14 cm. Find its circumference and area in terms of π. ~~ C = 14π cm; r = 7, so A = 49π cm².
+A circle has area 64π cm². Find its circumference in terms of π. ~~ r² = 64, so r = 8 and C = 2π × 8 = 16π cm.
+A circle has circumference 50 cm. Find its radius to 3 significant figures. ~~ r = 50 ÷ 2π = 7.957… ≈ 7.96 cm.
+What is the most common mistake when finding the area of a circle? ~~ Putting the diameter into πr², which gives an answer four times too big. Halve the diameter first.
+What is the formula for arc length? ~~ Arc length = θ/360 × 2πr, where θ is the angle at the centre.
+What is the formula for the area of a sector? ~~ Sector area = θ/360 × πr².
+How do you find the perimeter of a sector? ~~ Arc length + r + r (do not forget the two radii).
+A sector has radius 6 cm and angle 120°. Find its arc length and area in terms of π. ~~ Arc = 120/360 × 12π = 4π cm; area = 120/360 × 36π = 12π cm².
+How do you find the area of a segment? ~~ Area of the sector − area of the triangle formed by the two radii and the chord.
+Find the area of the minor segment cut off by a chord subtending 90° in a circle of radius 10 cm. ~~ Sector = 1/4 × 100π = 25π; triangle = ½ × 10 × 10 = 50; segment = 25π − 50 ≈ 28.5 cm².
+A sector of radius 5 cm has area 20 cm². Find its angle. ~~ θ/360 × 25π = 20, so θ = 20 × 360 ÷ 25π = 91.67… ≈ 91.7°.
+Find the perimeter of a semicircle with diameter 10 cm. ~~ Curved part = ½ × π × 10 = 5π; perimeter = 5π + 10 ≈ 25.7 cm.
+What is the circle theorem about the angle at the centre? ~~ (Higher) The angle at the centre is twice the angle at the circumference subtended by the same arc.
+What is the angle in a semicircle? ~~ (Higher) 90°: the angle subtended by a diameter at the circumference is a right angle.
+What is the theorem about angles in the same segment? ~~ (Higher) Angles in the same segment (subtended by the same chord on the same side) are equal.
+What is the theorem about a cyclic quadrilateral? ~~ (Higher) Opposite angles of a cyclic quadrilateral (all four vertices on the circle) add up to 180°.
+What angle does a tangent make with the radius? ~~ (Higher) The tangent to a circle is perpendicular (90°) to the radius at the point of contact.
+What is the theorem about two tangents from an external point? ~~ (Higher) Tangents to a circle from an external point are equal in length.
+What does the perpendicular from the centre to a chord do? ~~ (Higher) It bisects the chord.
+What is the alternate segment theorem? ~~ (Higher) The angle between a tangent and a chord is equal to the angle in the alternate segment.
+One angle of a cyclic quadrilateral is 112°. What is the opposite angle? ~~ (Higher) 180 − 112 = 68° (opposite angles of a cyclic quadrilateral add up to 180°).
+A chord of length 24 cm is in a circle of radius 13 cm. How far is the chord from the centre? ~~ (Higher) The perpendicular from the centre bisects the chord: √(13² − 12²) = √25 = 5 cm.
+Tangents from T touch a circle, centre O, at A and B. Angle ATB = 40°. Find angle AOB. ~~ (Higher) Angles OAT and OBT are 90° (tangent perpendicular to radius), so AOB = 360 − 90 − 90 − 40 = 140°.
+
+## 4.4
+Face, edge and vertex of a solid ~~ Face: a flat surface; edge: a line where two faces or surfaces meet; vertex: a point where edges meet.
+Faces, edges and vertices of a prism with an n-sided cross-section ~~ n + 2 faces, 3n edges and 2n vertices, e.g. hexagonal prism: 8 faces, 18 edges, 12 vertices.
+Faces, edges and vertices of a pyramid on an n-sided base ~~ n + 1 faces, 2n edges and n + 1 vertices, e.g. square-based pyramid: 5, 8, 5.
+Euler's formula for solids with flat faces ~~ F + V − E = 2, e.g. cuboid: 6 + 8 − 12 = 2.
+Surfaces, edges and vertices of a cylinder, cone and sphere ~~ Cylinder: 2 flat + 1 curved surface, 2 curved edges, 0 vertices; cone: 1 flat + 1 curved, 1 edge, 1 apex; sphere: 1 curved surface, no edges or vertices.
+Plan, front elevation and side elevation ~~ Plan: view from directly above; front elevation: view from the front; side elevation: view from the side. Lengths must match between the views.
+Convert 4.5 m² to cm² ~~ 1 m² = 100² = 10 000 cm², so 4.5 × 10 000 = 45 000 cm² (not × 100).
+Convert 3 200 000 cm³ to m³ ~~ 1 m³ = 100³ = 1 000 000 cm³, so 3 200 000 ÷ 1 000 000 = 3.2 m³.
+mm² in 1 cm² and mm³ in 1 cm³ ~~ 10² = 100 mm² and 10³ = 1000 mm³.
+Litres, millilitres and cm³ ~~ 1 litre = 1000 cm³; 1 ml = 1 cm³; 1 m³ = 1000 litres.
+Area of a triangle and of a parallelogram ~~ Triangle: ½ × base × perpendicular height; parallelogram: base × perpendicular height (never the slanted side).
+Area of a trapezium ~~ A = ½(a + b)h, where a and b are the parallel sides and h is the perpendicular distance between them.
+Trapezium with parallel sides 6 cm and 10 cm, 7 cm apart: area? ~~ ½ × (6 + 10) × 7 = 56 cm².
+Circumference and area of a circle ~~ C = 2πr = πd; A = πr². Learn both so you can use them quickly.
+Circle of radius 6 cm: circumference and area in terms of π ~~ C = 12π cm; A = 36π cm².
+Perimeter of a semicircle of diameter 10 cm, in terms of π ~~ Arc = ½ × π × 10 = 5π, so perimeter = 5π + 10 cm (include the diameter).
+How do you find the area of a composite shape? ~~ Split it into rectangles, triangles, trapezia and parts of circles; add parts joined on and subtract parts cut out. For perimeter add only the outside edges.
+Volume of a right prism ~~ Volume = area of cross-section × length (a cuboid is lwh; a cylinder is πr²h).
+Cylinder with radius 5 cm and height 8 cm: volume in terms of π ~~ π × 5² × 8 = 200π cm³.
+Surface area of a closed cylinder ~~ 2πr² + 2πrh: two circular ends plus the curved surface (a rectangle 2πr by h in the net).
+Surface area of a cuboid ~~ 2(lw + lh + wh) — the total area of all six faces; sketch the net so no face is missed.
+Volume of a pyramid ~~ V = ⅓ × area of base × perpendicular height.
+Cone: volume and curved surface area ~~ V = ⅓πr²h (perpendicular height); curved surface = πrl (slant height l), where l² = r² + h².
+Sphere: volume and surface area ~~ V = 4/3 πr³; surface area = 4πr². These are given in the question when needed, but practise using them.
+Solid hemisphere: volume and total surface area ~~ V = 2/3 πr³; total surface area = 2πr² (curved) + πr² (flat) = 3πr².
+How do you find the volume or surface area of a composite solid? ~~ Add or subtract the volumes of the standard parts; for surface area include only outside surfaces, leaving out faces where parts are joined.
+Volume of a frustum ~~ Volume of the whole cone − volume of the small cone cut off its top (find missing heights with similar triangles).
+Sphere of radius 3 cm dropped into a cylinder of water of radius 6 cm: rise in level? ~~ Sphere = 36π cm³; rise = 36π ÷ (π × 6²) = 1 cm.
+Melting and recasting: how many small solids can be made? ~~ Volume of the original ÷ volume of one small solid (keep π, it cancels); round down for "how many can be made".
+Similar solids with length scale factor k ~~ (Higher) Areas are multiplied by k² and volumes by k³.
+
+## 4.5
+State Pythagoras' theorem ~~ In a right-angled triangle a² + b² = c², where c is the hypotenuse (the longest side, opposite the right angle).
+How do you find the hypotenuse? ~~ Square the two shorter sides, add, then square root: c = √(a² + b²).
+How do you find a shorter side? ~~ Square both known sides, subtract, then square root: a = √(c² − b²).
+Hypotenuse when the shorter sides are 9 cm and 12 cm ~~ √(81 + 144) = √225 = 15 cm.
+Hypotenuse 13 cm, one shorter side 5 cm: the other side? ~~ √(169 − 25) = √144 = 12 cm.
+Pythagorean triples worth knowing ~~ 3, 4, 5; 5, 12, 13; 8, 15, 17; 7, 24, 25 — and their multiples, e.g. 6, 8, 10.
+Converse of Pythagoras ~~ If the longest side c satisfies a² + b² = c², the angle opposite c is a right angle; if not, the triangle is not right-angled.
+Is a triangle with sides 9, 40 and 41 right-angled? ~~ 9² + 40² = 81 + 1600 = 1681 = 41², so yes — the right angle is opposite the 41 side.
+Length of the line segment from (1, 2) to (7, 10) ~~ Differences 6 and 8: √(6² + 8²) = √100 = 10 units.
+Height of an isosceles triangle ~~ The line of symmetry makes two right-angled triangles: height = √(equal side² − (half the base)²).
+Labelling sides for trigonometry ~~ Hypotenuse: opposite the right angle; opposite: facing the angle θ; adjacent: next to θ but not the hypotenuse.
+SOHCAHTOA ~~ sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse, tan θ = opposite/adjacent.
+How do you choose sin, cos or tan? ~~ Label O, A, H; pick the two sides involved (the one you know and the one you want) and use the ratio containing both.
+Side opposite 40° is 12 cm; find the adjacent side x ~~ tan 40° = 12/x, so x = 12 ÷ tan 40° = 14.3 cm (3 s.f.).
+Adjacent 5 cm, hypotenuse 8 cm: find the angle ~~ cos θ = 5/8, so θ = cos⁻¹(5/8) = 51.3° (1 d.p.).
+Angles of elevation and depression ~~ Both measured from the horizontal (elevation up, depression down); the angle of depression from A to B equals the angle of elevation from B to A (alternate angles).
+Exact values of sin 0°, 30°, 45°, 60°, 90° ~~ 0, 1/2, √2/2, √3/2, 1.
+Exact values of cos 0°, 30°, 45°, 60°, 90° ~~ 1, √3/2, √2/2, 1/2, 0.
+Exact values of tan 0°, 30°, 45°, 60° ~~ 0, 1/√3 (= √3/3), 1, √3. tan 90° is undefined and not required by G21.
+Triangle that gives the 30° and 60° exact values ~~ Half an equilateral triangle of side 2: sides 1, √3 and 2.
+Triangle that gives the 45° exact values ~~ A right-angled isosceles triangle with shorter sides 1 and hypotenuse √2.
+Exact length of the side opposite 60° when the hypotenuse is 8 cm ~~ 8 sin 60° = 8 × √3/2 = 4√3 cm.
+Which Pythagoras and trig facts should you know by heart? ~~ Pythagoras, SOHCAHTOA and the exact values (and, at Higher, the sine rule, cosine rule and ½ab sin C). A formulae sheet is provided in 2025–2027 exams, but fluent recall saves time.
+Space diagonal of a cuboid 3 cm by 4 cm by 12 cm ~~ (Higher) √(3² + 4² + 12²) = √169 = 13 cm.
+Angle between a line and a plane ~~ (Higher) Drop a perpendicular from the end of the line to the plane; the angle is between the line and its projection on the plane (use a right-angled triangle).
+Sine rule ~~ (Higher) a/sin A = b/sin B = c/sin C (use sin A/a = sin B/b to find an angle). Use with a side and its opposite angle plus one more side or angle.
+Ambiguous case of the sine rule ~~ (Higher) sin B = k gives B or 180° − B; both triangles may fit when the given angle is not between the given sides — check the angle sum.
+Cosine rule ~~ (Higher) a² = b² + c² − 2bc cos A, or cos A = (b² + c² − a²)/(2bc). Use for two sides and the included angle, or all three sides.
+Sides 5 cm and 7 cm with an included angle of 60°: third side? ~~ (Higher) a² = 25 + 49 − 2 × 5 × 7 × cos 60° = 74 − 35 = 39, so a = √39 = 6.24 cm (3 s.f.).
+Area of any triangle using trigonometry ~~ (Higher) Area = ½ab sin C, with C the angle between sides a and b, e.g. ½ × 8 × 11 × sin 30° = 22 cm².
+
+## 4.6
+What is a vector? ~~ A movement or quantity with both magnitude (how far) and direction (which way).
+What is a scalar? ~~ An ordinary number with size only; multiplying a vector by a scalar changes its length (and reverses it if the scalar is negative).
+Ways of writing a vector on 1MA1 papers ~~ A column vector, a bold letter such as a (underlined when handwritten), or two capital letters with an arrow, e.g. PQ from P to Q.
+What do the top and bottom numbers of a column vector mean? ~~ Top: horizontal movement (+ right, − left); bottom: vertical movement (+ up, − down).
+Column vector for a move of 5 left and 2 up ~~ (−5, 2), written as a column.
+Column vector from A(−2, 3) to B(4, 1) ~~ End minus start: (4 − (−2), 1 − 3) = (6, −2).
+If PQ = (6, −2), what is QP? ~~ QP = −PQ = (−6, 2): same length, opposite direction.
+When are two vectors equal? ~~ When they have the same magnitude and the same direction, wherever they are drawn, e.g. opposite sides of a parallelogram.
+What is −a if a = (−2, 5)? ~~ (2, −5): change the sign of both components.
+How do you describe a translation fully? ~~ Say "translation" and give its column vector — not a coordinate, and only one transformation.
+Where does the translation (a, b) send the point (x, y)? ~~ To (x + a, y + b).
+Image of (3, −2) after the translation (−4, 5) ~~ (3 − 4, −2 + 5) = (−1, 3).
+Translation (2, −3) followed by (−5, 1) as a single translation ~~ Add the vectors: (−3, −2).
+Translation that undoes (a, b) ~~ (−a, −b), e.g. (4, −1) is undone by (−4, 1).
+How do you add, subtract and scale column vectors? ~~ Add or subtract matching components; a scalar multiplies both components, k(a, b) = (ka, kb).
+a = (2, −1) and b = (−3, 4). Work out 2a + b. ~~ (4, −2) + (−3, 4) = (1, 2).
+a = (2, −1) and b = (−3, 4). Work out a − b. ~~ (2 − (−3), −1 − 4) = (5, −5).
+p = (1, 5), q = (7, −1) and p + 2r = q. Find r. ~~ 2r = q − p = (6, −6), so r = (3, −3).
+Find m and n if m(1, 1) + n(2, −1) = (7, 1) ~~ Top: m + 2n = 7; bottom: m − n = 1. Solving gives n = 2, m = 3.
+What is the resultant of two vectors? ~~ The single vector equal to following one then the other (nose to tail): it joins the start of the first to the end of the second.
+OP = p and OQ = q. Find PQ. ~~ PQ = PO + OQ = −p + q = q − p (end minus start in letters).
+Rule for writing a route on a vector diagram ~~ Write the route first (e.g. DE = DA + AE); moving with an arrow is +, moving against it is −.
+OABC is a parallelogram with OA = a and OC = c. Find OB and CA. ~~ OB = a + c; CA = CO + OA = a − c.
+Simplify 3(a + 2b) − 2(a − b) ~~ 3a + 6b − 2a + 2b = a + 8b (vectors follow the rules of algebra).
+When are two vectors parallel? ~~ (Higher) When one is a scalar multiple of the other, e.g. 6a − 9b = 3(2a − 3b); a negative multiple means parallel but opposite in direction.
+2a − 3b is parallel to ka − 12b. Find k. ~~ (Higher) −12b = 4 × (−3b), so the multiplier is 4 and k = 4 × 2 = 8.
+How do you prove A, B and C are collinear? ~~ (Higher) Show AB is a scalar multiple of BC (so parallel), then state they share point B, so A, B and C lie on a straight line.
+P is on AB with AP : PB = m : n. Write AP in terms of AB. ~~ (Higher) AP = m/(m + n) × AB — the line is split into m + n equal parts.
+OA = a, OB = b and AP : PB = 2 : 3. Find OP. ~~ (Higher) OP = a + ⅖(b − a) = ⅗a + ⅖b (coefficients add to 1 as a check).
+M is the midpoint of AB, OA = a and OB = b. Find OM. ~~ (Higher) OM = a + ½(b − a) = ½(a + b).
+
+## 5.1
+The probability scale ~~ From 0 (impossible) to 1 (certain). Give probabilities as fractions, decimals or percentages — not as ratios or "3 out of 10".
+Probability of an event when outcomes are equally likely ~~ P(event) = number of outcomes in the event ÷ total number of possible outcomes.
+Bag: 3 red, 5 blue and 12 green counters. P(not green)? ~~ 8/20 = 2/5.
+P(not A) ~~ P(not A) = 1 − P(A), because the probabilities of an exhaustive set of mutually exclusive outcomes sum to 1.
+Spinner: P(red) = 0.3, P(blue) = 0.15, P(green) = 0.2; yellow is the only other outcome. P(yellow)? ~~ 1 − (0.3 + 0.15 + 0.2) = 1 − 0.65 = 0.35.
+Probabilities x, 2x, 0.1 and 3x cover all outcomes. Find x. ~~ 6x + 0.1 = 1, so 6x = 0.9 and x = 0.15.
+What is relative frequency? ~~ Number of times an outcome happened ÷ total number of trials — an experimental estimate of the probability.
+A dice shows a six 36 times in 150 rolls. Relative frequency of a six? ~~ 36/150 = 0.24.
+What happens to relative frequency as the number of trials increases? ~~ For an unbiased experiment it settles towards the theoretical probability, so more trials give a more reliable estimate.
+Expected number of times an outcome happens ~~ Expected frequency = probability × number of trials.
+P(win) = 0.15. Expected wins in 400 games? ~~ 0.15 × 400 = 60.
+What do "fair" and "at random" mean? ~~ Fair (unbiased): every outcome is equally likely. At random: every item has the same chance of being chosen.
+What is a frequency tree? ~~ A tree that splits a group in stages showing frequencies (counts), not probabilities; the numbers at each split add up to the number before it.
+How do you list outcomes systematically? ~~ Fix the first choice and run through every option for the second, then move on — or use a table or grid so nothing is missed or repeated.
+What is a possibility (sample) space? ~~ A list, table or grid showing every possible outcome, e.g. two dice give 6 × 6 = 36 equally likely outcomes.
+Two fair dice: P(total of 7)? ~~ 6/36 = 1/6 — (1,6), (2,5), (3,4), (4,3), (5,2), (6,1).
+Two fair dice are rolled and the scores multiplied. P(product is even)? ~~ Odd only if both are odd (9 cells), so P(even) = 27/36 = 3/4.
+In what order do you fill in a Venn diagram? ~~ The overlap first, then subtract to get each "only" region, then the region outside the circles.
+30 people: 14 drink tea, 19 drink coffee, 6 drink both. How many drink neither? ~~ Tea only 8, both 6, coffee only 13: neither = 30 − 27 = 3.
+What do ξ and A′ mean? ~~ ξ is the universal set (everything being considered); A′ is the complement of A (everything not in A).
+What does A ∩ B mean? ~~ A intersection B: the elements in both A and B (the overlap).
+What does A ∪ B mean? ~~ A union B: the elements in A or B or both.
+Rule for mutually exclusive events ~~ They cannot happen at the same time: P(A or B) = P(A) + P(B).
+Rule for independent events ~~ One does not affect the other: P(A and B) = P(A) × P(B).
+How do you find P(at least one)? ~~ 1 − P(none), e.g. P(at least one six in two rolls) = 1 − 25/36 = 11/36.
+Rules for a tree diagram ~~ Multiply along the branches for "and"; add the results of different paths for "or"; each set of branches from a point adds to 1.
+Bag: 5 red and 3 blue. Two taken without replacement. P(both blue)? ~~ 3/8 × 2/7 = 6/56 = 3/28.
+With replacement vs without replacement ~~ With: probabilities stay the same (independent). Without: dependent — the total drops by 1, and so does the count of the type already taken.
+Conditional probability formula ~~ (Higher) P(A | B) = P(A ∩ B) ÷ P(B): the probability of A given that B has happened, e.g. 0.18 ÷ 0.45 = 0.4.
+How do you find a conditional probability from a two-way table or Venn diagram? ~~ (Higher) Use only the given group ("given that", "of those who"): number in both ÷ total of the given group, not the grand total. If P(A | B) = P(A), A and B are independent.
+
+## 6.1
+What is a population? ~~ Every person or item you want information about, e.g. all the pupils in a school. A census surveys the whole population.
+What is a sample? ~~ The part of the population that is actually asked, measured or tested.
+Reasons for taking a sample rather than a census ~~ It saves time and money; the population may be too large to reach; some tests destroy the item (e.g. battery life).
+Limitations of sampling ~~ A sample only gives an estimate — another sample may differ; small samples may not represent the population; biased samples give wrong conclusions.
+What is a random sample? ~~ A sample in which every member of the population has the same chance of being chosen.
+How do you take a random sample? ~~ List and number the whole population (the sampling frame), then use a random number generator to pick members, ignoring repeats, until you have enough.
+What is a biased sample? ~~ A sample that does not fairly represent the population, so some groups are over- or under-represented.
+Why is asking people in a gym about how much they exercise biased? ~~ Gym users probably exercise more than average, so people who exercise less are under-represented.
+How do you improve a biased sample? ~~ Choose at random from a list of the whole population, use a larger sample, and include all groups, times and places.
+How do you estimate a population total from a sample? ~~ (Number in the sample with the property ÷ sample size) × population size.
+9 out of a random sample of 50 pupils walk to school; the school has 2000 pupils. Estimate how many walk. ~~ 9/50 × 2000 = 360 pupils.
+What assumption is made when using a sample to describe a population? ~~ That the sample is representative of the population (e.g. random and large enough).
+How do you complete a two-way table? ~~ Use the row and column totals: each missing cell = total − the known cells; check the rows and columns both add to the grand total.
+Rules for drawing a bar chart ~~ Bars of equal width with equal gaps, both axes labelled, an even scale starting at 0.
+Dual bar chart vs composite bar chart ~~ Dual: bars for two groups side by side in each category, with a key. Composite: one bar per group split into sections that add to the group total.
+When do you use a vertical line chart? ~~ For ungrouped discrete numerical data, e.g. number of goals — thin lines instead of bars.
+What must a pictogram have? ~~ A key saying how many items one symbol represents; part of a symbol represents the same fraction of that number.
+One symbol = 12 cars. What do 2¼ symbols represent? ~~ 2.25 × 12 = 27 cars.
+Angle of a pie chart sector ~~ Angle = frequency ÷ total × 360°; the angles add up to 360°.
+A 108° sector of a pie chart of 240 people represents how many? ~~ 108/360 × 240 = 72 people.
+A 45° sector represents 15 people. How many people does the pie chart show? ~~ 45° is 1/8 of 360°, so 15 × 8 = 120 people.
+Why can't you compare two pie charts just by sector size? ~~ Pie charts show proportions, not numbers; if the totals differ, a smaller sector can represent more people.
+What is a time series graph? ~~ A line graph of data collected at regular time intervals, with time on the horizontal axis and points joined with straight lines.
+Trend and seasonal variation in a time series ~~ Trend: the overall direction over time. Seasonal variation: a pattern that repeats each cycle. Judge the trend by comparing the same season in different years.
+Ways a chart can be misleading ~~ Vertical axis not starting at 0, uneven scales, bars or pictures of different widths, 3D effects, missing labels or keys, pie charts with no total.
+Types of correlation on a scatter graph ~~ Positive: as one variable increases the other tends to increase. Negative: as one increases the other tends to decrease. None: no linear relationship. Strong means points close to a line.
+Does correlation mean one variable causes the other? ~~ No — correlation does not indicate causation; a third variable may drive both (e.g. ice-cream sales and sunburn both rise with hot weather).
+How do you draw a line of best fit? ~~ One straight ruled line following the trend, with points roughly balanced either side; ignore outliers; it need not pass through the origin.
+Interpolation vs extrapolation ~~ Interpolation: estimating within the range of the data (fairly reliable). Extrapolation: estimating outside it (unreliable — the trend may not continue).
+What is an outlier on a scatter graph? ~~ A point that does not follow the pattern of the others; give a possible reason in context and leave it out when drawing the line of best fit.
+
+## 6.2
+Discrete vs continuous data ~~ Discrete: only certain values, usually counted (number of texts). Continuous: any value in a range, measured (mass, time).
+In the class 10 < t ≤ 20, where do 10 and 20 go? ~~ Exactly 10 belongs to the class below; exactly 20 belongs in this class.
+How do you find the mean? ~~ Total of the values ÷ number of values.
+Position of the median in n ordered values ~~ The (n + 1)/2 th value — halfway between the two middle values when n is even.
+Mode and range ~~ Mode: the most common value (there may be several or none). Range: largest value − smallest value, a measure of spread.
+Mean, median, mode and range of 6, 2, 9, 4, 9, 6, 9, 3 ~~ Mean 48 ÷ 8 = 6; ordered 2, 3, 4, 6, 6, 9, 9, 9 so median 6; mode 9; range 9 − 2 = 7.
+Mean of 4 numbers is 10. A fifth number makes the mean 11. Find it. ~~ Total = mean × number: 5 × 11 − 4 × 10 = 55 − 40 = 15.
+10 boys have mean 60 and 15 girls have mean 70. Mean of all 25? ~~ (10 × 60 + 15 × 70) ÷ 25 = 1650 ÷ 25 = 66 (not 65 — the groups are different sizes).
+What is an outlier and what does it affect? ~~ A value much bigger or smaller than the rest. It has a big effect on the mean and range, but little effect on the median.
+When is each average best? ~~ Mean: numerical data with no outliers (uses every value). Median: data with outliers or skew (salaries, house prices). Mode: categorical data or the most popular item.
+Mean from a frequency table ~~ Mean = Σfx ÷ Σf: total of (value × frequency) ÷ total frequency.
+Goals 0, 1, 2, 3 with frequencies 4, 7, 6, 3. Mean? ~~ Σfx = 0 + 7 + 12 + 9 = 28; Σf = 20; mean = 28 ÷ 20 = 1.4 goals.
+Common errors with a frequency table ~~ Dividing by the number of rows instead of the total frequency; giving the highest frequency as the mode instead of its value.
+How do you find the median from a frequency table? ~~ Find the (n + 1)/2 th position, then use running totals of the frequencies to see which value or class it falls in.
+How do you estimate the mean of grouped data? ~~ Multiply each class midpoint by its frequency, add these, then divide by the total frequency.
+Why is the mean of grouped data only an estimate? ~~ The individual values are unknown, so each class is represented by its midpoint.
+Classes 0 < t ≤ 10, 10 < t ≤ 20, 20 < t ≤ 30 have frequencies 5, 8, 7. Estimate the mean. ~~ (5 × 5 + 15 × 8 + 25 × 7) ÷ 20 = 320 ÷ 20 = 16.
+What is the modal class? ~~ The class with the highest frequency.
+How do you draw a frequency polygon? ~~ Plot each frequency above its class midpoint and join the points with straight lines (do not join to the axis unless told).
+How do you compare two distributions? ~~ Compare an average (mean or median) AND a measure of spread (range, or IQR at Higher), using the numbers and in context.
+What does a smaller spread tell you? ~~ The data is more consistent. In context: for race times a lower average means faster.
+Quartiles of n ordered values ~~ (Higher) Lower quartile is the (n + 1)/4 th value; upper quartile is the 3(n + 1)/4 th value.
+Interquartile range ~~ (Higher) IQR = UQ − LQ: the spread of the middle 50% of the data, not affected by extreme values.
+LQ, median, UQ and IQR of 3, 5, 7, 8, 10, 12, 13, 15, 18, 20, 22 ~~ (Higher) n + 1 = 12: LQ = 3rd = 7, median = 6th = 12, UQ = 9th = 18, IQR = 11.
+LQ = 7 and UQ = 15. Is 30 an outlier? ~~ (Higher) IQR = 8 and 1.5 × 8 = 12; upper limit 15 + 12 = 27. 30 > 27, so yes.
+How do you plot a cumulative frequency graph? ~~ (Higher) Plot each running total at the upper class boundary, start at the lowest boundary with 0, and join with a smooth curve or straight lines.
+Reading a cumulative frequency graph with total n ~~ (Higher) Read across at n/2 for the median, n/4 for the LQ and 3n/4 for the UQ. For "more than" a value, subtract the reading from n.
+What does a box plot show? ~~ (Higher) Minimum, lower quartile, median, upper quartile and maximum on a scale; the box length is the IQR. 50% of the data lies inside the box.
+Frequency density ~~ (Higher) Frequency density = frequency ÷ class width; in a histogram the area of each bar is the frequency.
+Histogram bar for 10 < x ≤ 25 has frequency density 1.6. Frequency? ~~ (Higher) 1.6 × 15 = 24.
