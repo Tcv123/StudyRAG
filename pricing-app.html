@@ -428,8 +428,13 @@
       const untilText = until
         ? new Date(until).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
         : null;
+      /* Checkout starts billing on the comp's end date (trial_end in
+       * create-checkout-session.js), unless it is under 48 hours away. */
+      const soon = until && new Date(until).getTime() < Date.now() + 49 * 3600 * 1000;
       proFoot.textContent = untilText
-        ? `Your free early-adopter access ends on ${untilText}`
+        ? (soon
+            ? `Your free early-adopter access ends on ${untilText}`
+            : `Your free access runs until ${untilText}. Subscribe now and your first payment is not taken until then.`)
         : 'Subscribe to keep Pro when your free access ends';
       proFoot.style.fontWeight = '600';
       return;

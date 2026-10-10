@@ -588,6 +588,16 @@
         <button class="toggle" id="toggleRed" data-key="notif_red_topics" onclick="toggleSetting(this)"></button>
       </div>
       </div>
+
+      <!-- Both roles. Marketing consent under PECR, so off unless they turn
+           it on — see db/migrations/2026-10-10-marketing-opt-in.sql. -->
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Product news and offers</div>
+          <div class="toggle-desc">An occasional email about new features, plans and offers. Never more than a couple a month.</div>
+        </div>
+        <button class="toggle" id="toggleMarketing" data-key="notif_marketing" onclick="toggleSetting(this)"></button>
+      </div>
       <div class="msg" id="notifMsg"></div>
     </div>
 
@@ -673,6 +683,11 @@ const NOTIF_KEYS = [
   'notif_reminders', 'notif_streak', 'notif_content',
   'notif_class_joins', 'notif_weekly_summary', 'notif_red_topics'
 ];
+
+// Marketing consent is a toggle like the others but is never imported from
+// localStorage (it never lived there), and is kept out of NOTIF_KEYS so the
+// one-time import still works on a database without the 2026-10-10 column.
+const TOGGLE_KEYS = [...NOTIF_KEYS, 'notif_marketing'];
 
 function avatarUrlFor(style, seed) {
   return `https://api.dicebear.com/9.x/${style}/svg?seed=${encodeURIComponent(seed)}`;
@@ -785,7 +800,11 @@ function renderPlanCard(profile) {
         ? `Full access, on us, until ${untilText}. You will not be charged, and nothing renews.`
         : 'Full access, on us. You will not be charged, and nothing renews.')
     : trialing
-      ? 'Full access during your 7-day free trial.'
+      /* The only trial left is the one checkout gives a comp who subscribes
+       * early: billing starts when their free Premium would have ended. */
+      ? (expiresAt
+          ? `Full access. Your first payment is taken on ${expiresAt.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}, when your free early-adopter Premium ends.`
+          : 'Full access. Your first payment is taken when your free period ends.')
       : 'Full access to past papers, AI feedback, mark schemes, and ad-free experience.';
 
   // Add a subtle pro accent to the card
@@ -1149,7 +1168,7 @@ function renderGoalPills() {
 // attempt at a privilege column. The allowlist below is for legibility.
 async function toggleSetting(el) {
   const key = el.dataset.key;
-  if (!NOTIF_KEYS.includes(key)) return;
+  if (!TOGGLE_KEYS.includes(key)) return;
 
   const msg = document.getElementById('notifMsg');
   const turningOn = !el.classList.contains('on');

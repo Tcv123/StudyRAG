@@ -243,6 +243,21 @@
       white-space: nowrap; flex-shrink: 0;
     }
     .ea-premium-banner .ea-dismiss:hover { background: rgba(255,255,255,0.28); }
+    .ea-premium-banner .ea-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .ea-premium-banner .ea-cta {
+      background: #fff; color: #2563eb; border-radius: 8px; padding: 6px 14px;
+      font-size: 12px; font-weight: 700; text-decoration: none; white-space: nowrap;
+    }
+    .ea-premium-banner .ea-cta:hover { background: #eef2ff; }
+    .ea-premium-banner .ea-optin {
+      margin-top: 6px; background: none; border: 0; padding: 0; color: #fff;
+      font: inherit; font-size: 12px; text-decoration: underline; cursor: pointer; opacity: 0.9;
+    }
+    .ea-premium-banner .ea-optin:disabled { cursor: default; text-decoration: none; }
+    @media (max-width: 600px) {
+      .ea-premium-banner { flex-wrap: wrap; }
+      .ea-premium-banner .ea-actions { width: 100%; justify-content: flex-end; }
+    }
 
     .level-banner {
       background: linear-gradient(135deg, #2E7BAE 0%, #2563EB 100%);
@@ -688,14 +703,19 @@
     <!-- ══ DASHBOARD VIEW ══════════════════════════════════════════════ -->
     <div class="view active" id="viewDashboard">
 
-    <!-- Early adopter premium banner (shown only to early adopters, dismissable) -->
+    <!-- "Premium is available" banner — everyone not already paying, until
+         dismissed. Wording is filled in by renderPremiumBanner(). -->
     <div class="ea-premium-banner" id="eaPremiumBanner" style="display:none;">
       <span class="ea-icon">⭐</span>
       <div class="ea-body">
-        <div class="ea-title">You've got 3 months of Premium — free!</div>
-        <div class="ea-sub">You were one of our first 150 users. Enjoy full Premium access for 3 months, on us.</div>
+        <div class="ea-title" id="eaPremiumTitle"></div>
+        <div class="ea-sub" id="eaPremiumSub"></div>
+        <button type="button" class="ea-optin" id="eaOptIn" hidden onclick="optInToProductNews(this)">Email me about new features and offers</button>
       </div>
-      <button class="ea-dismiss" onclick="dismissEaPremiumBanner()">Got it</button>
+      <div class="ea-actions">
+        <a class="ea-cta" href="pricing-app.html">See plans</a>
+        <button class="ea-dismiss" onclick="dismissEaPremiumBanner()">Got it</button>
+      </div>
     </div>
 
     <!-- ══ INFO ROWS ══════════════════════════════════════════════════ -->
@@ -1147,12 +1167,72 @@ function renderLevel(level) {
 
 // Mirrors is_pro_user() in supabase-flashcards-migration.sql — swap the
 // "Unlock Pro" CTA card for a "You're on Pro" panel when the row says so.
+/* The Premium banner. It used to say "You've got 3 months of Premium —
+ * free!" to early adopters only; now that Pro can be bought it tells
+ * everyone who is not already paying. A fresh dismiss key, so people who
+ * closed the old banner still see this one once.
+ *
+ * In-app, not an email: an email whose point is "you can pay now" is
+ * marketing and needs consent, which most users have not given. The small
+ * button underneath is how they can give it — notif_marketing, see
+ * db/migrations/2026-10-10-marketing-opt-in.sql. */
+const PREMIUM_BANNER_KEY = 'premium_launch_banner_dismissed_';
+
+function renderPremiumBanner(profile, userId) {
+  const banner = document.getElementById('eaPremiumBanner');
+  if (!banner || !profile) return;
+  try { if (localStorage.getItem(PREMIUM_BANNER_KEY + userId)) return; } catch (e) {}
+
+  const tier      = profile.subscription_tier   || 'free';
+  const status    = profile.subscription_status || '';
+  const expiresAt = profile.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+  const until     = profile.premium_until ? new Date(profile.premium_until) : null;
+  // Same tests as settings.html and pricing-app.html.
+  const comped = profile.is_early_adopter && !profile.stripe_customer_id && until && until > new Date();
+  const isPro  = tier !== 'free' && ['active', 'trialing'].includes(status) && (!expiresAt || expiresAt > new Date());
+  const paying = isPro && !comped;
+  if (paying || status === 'past_due') return;
+
+  const title = document.getElementById('eaPremiumTitle');
+  const sub   = document.getElementById('eaPremiumSub');
+  if (comped) {
+    const untilText = until.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    title.textContent = 'You can now keep Premium after your free period';
+    sub.textContent   = `Your free Premium runs until ${untilText}. Subscribe now and you will not be charged until then, or do nothing and move to the free plan on that day.`;
+  } else {
+    title.textContent = 'RAG Pro is here';
+    sub.textContent   = 'Unlimited practice, AI marking on written answers and the full past-paper archive. From £8.33 a month, cancel any time.';
+  }
+
+  // Only offered when the column exists (select('*') returns it once the
+  // migration has run), they have not already said yes, and they have not
+  // switched email off altogether.
+  const optIn = document.getElementById('eaOptIn');
+  optIn.hidden = !('notif_marketing' in profile) || profile.notif_marketing === true || !!profile.email_opt_out_at;
+
+  banner.style.display = 'flex';
+}
+
+async function optInToProductNews(btn) {
+  btn.disabled = true;
+  const { error } = await supabaseClient
+    .from('profiles')
+    .update({ notif_marketing: true, notif_prefs_set_at: new Date().toISOString() })
+    .eq('id', window.currentUserId);
+  if (error) {
+    btn.disabled = false;
+    btn.textContent = 'Could not save that — try again, or use Settings';
+    return;
+  }
+  btn.textContent = 'Done. You can change this any time in Settings.';
+}
+
 function dismissEaPremiumBanner() {
   const banner = document.getElementById('eaPremiumBanner');
   if (banner) banner.style.display = 'none';
   try {
     if (window.currentUserId) {
-      localStorage.setItem(`ea_banner_dismissed_${window.currentUserId}`, '1');
+      localStorage.setItem(PREMIUM_BANNER_KEY + window.currentUserId, '1');
     }
   } catch (e) {}
 }
@@ -1429,13 +1509,8 @@ async function load() {
   // Plan CTA — swap to "You're on Pro" for active subscribers
   renderPlanCta(profile);
 
-  // Early-adopter premium banner — show once per user (dismissed permanently via localStorage)
-  if (profile?.is_early_adopter) {
-    const dismissKey = `ea_banner_dismissed_${user.id}`;
-    if (!localStorage.getItem(dismissKey)) {
-      document.getElementById('eaPremiumBanner').style.display = 'flex';
-    }
-  }
+  // Premium banner — once per user, until dismissed
+  renderPremiumBanner(profile, user.id);
 
   // Build set of current subject keys to filter old data
   const currentSubjectKeys = new Set((subjects || []).map(s => `${s.subject}_${s.exam_board}`));

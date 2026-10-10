@@ -48,13 +48,37 @@
         .from('profiles')
         .upsert(row, { onConflict: 'id', ignoreDuplicates: true });
 
-      if (!error) return true;
+      if (!error) {
+        await saveSignupMarketingChoice(user);
+        return true;
+      }
       lastErr = error;
       if (attempt < attempts) await new Promise(r => setTimeout(r, 300 * attempt));
     }
 
     console.error('[post-auth] could not create profiles row for', user.id, lastErr);
     return false;
+  }
+
+  /* The "email me news and offers" box on register.html rides in
+   * user_metadata like account_type, because the profile does not exist at
+   * sign-up. Copied across once: notif_prefs_set_at is null only until the
+   * first time preferences are written, so a later change in Settings is
+   * never overwritten on the next login.
+   *
+   * Kept out of the upsert above on purpose. If the 2026-10-10 migration has
+   * not run, the column does not exist and this update fails on its own,
+   * instead of taking profile creation down with it. */
+  async function saveSignupMarketingChoice(user) {
+    if (user.user_metadata?.marketing_opt_in !== true) return;
+    try {
+      const { error } = await supabaseClient
+        .from('profiles')
+        .update({ notif_marketing: true, notif_prefs_set_at: new Date().toISOString() })
+        .eq('id', user.id)
+        .is('notif_prefs_set_at', null);
+      if (error) console.warn('[post-auth] marketing choice not saved:', error.message);
+    } catch (e) { /* never block sign-in on this */ }
   }
 
   /* Where this user should land, as a path relative to /auth/.

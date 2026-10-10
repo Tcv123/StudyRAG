@@ -426,6 +426,16 @@
         </label>
       </div>
 
+      <!-- Optional, and unticked by default: this is marketing consent, which
+           has to be a positive choice. Saved to profiles.notif_marketing on
+           first sign-in by auth/post-auth.js. Changeable any time in Settings. -->
+      <div class="field consent-field">
+        <label class="consent">
+          <input type="checkbox" id="marketingOptIn">
+          <span>Email me occasional news about new features, plans and offers. Optional — you can turn this off any time in Settings.</span>
+        </label>
+      </div>
+
       <button class="btn btn-primary" id="registerBtn">Create Account</button>
     </form>
 
@@ -637,7 +647,8 @@ form.onsubmit = async (e) => {
       data: {
         first_name:   firstNameVal,
         last_name:    lastNameVal,
-        account_type: accountType
+        account_type: accountType,
+        marketing_opt_in: document.getElementById('marketingOptIn').checked
       }
     }
   });
