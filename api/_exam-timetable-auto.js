@@ -67,6 +67,19 @@ const SPECS = [
   aqa('Economics',           'AQA', 'gcse', [['Paper 1 — How Markets Work', '8136/1'], ['Paper 2 — How the Economy Works', '8136/2']]),
   aqa('Geography',           'AQA', 'gcse', [['Paper 1 — Living with the Physical Environment', '8035/1'], ['Paper 2 — Challenges in the Human Environment', '8035/2'], ['Paper 3 — Geographical Applications', '8035/3']]),
   aqa('English Language',    'AQA', 'gcse', [['Paper 1 — Creative Reading and Writing', '8700/1'], ['Paper 2 — Viewpoints and Perspectives', '8700/2']]),
+  aqa('English Literature',  'AQA', 'gcse', [['Paper 1 — Shakespeare and the 19th-century Novel', '8702/1'], ['Paper 2 — Modern Texts and Poetry', '8702/2']]),
+  /* Every History option in a paper is one sitting. Only the options whose
+   * line carries the date are listed — the ones with a wrapped title (1B/C,
+   * 1B/E, 2A/*) print it on the next baseline, so they never come back as
+   * rows and requiring them would hold the subject for review every year.
+   * Each code is one 1h section and a student sits two, so the paper's
+   * length is pinned to the 2h the by-date grid prints. */
+  aqa('History',             'AQA', 'gcse', [['Paper 1 — Understanding the Modern World', '8145/1A/A', '8145/1A/B', '8145/1A/C', '8145/1A/D', '8145/1B/A', '8145/1B/B', '8145/1B/D', { duration: '2h' }],
+                                             ['Paper 2 — Shaping the Nation', '8145/2B/A', '8145/2B/B', '8145/2B/C', '8145/2B/D', { duration: '2h' }]]),
+  /* Speaking is a teacher-arranged window, not a timetabled sitting. */
+  aqa('French',              'AQA', 'gcse', [['Listening', '8652/LF', '8652/LH'], ['Reading', '8652/RF', '8652/RH'], ['Writing', '8652/WF', '8652/WH']]),
+  aqa('German',              'AQA', 'gcse', [['Listening', '8662/LF', '8662/LH'], ['Reading', '8662/RF', '8662/RH'], ['Writing', '8662/WF', '8662/WH']]),
+  aqa('Spanish',             'AQA', 'gcse', [['Listening', '8692/LF', '8692/LH'], ['Reading', '8692/RF', '8692/RH'], ['Writing', '8692/WF', '8692/WH']]),
 
   /* ── OCR A-level ── */
   ocr('Biology',             'OCR A', 'alevel', [['Paper 1 — Biological Processes', 'H420/01'], ['Paper 2 — Biological Diversity', 'H420/02'], ['Paper 3 — Unified Biology', 'H420/03']]),
@@ -92,8 +105,13 @@ const SPECS = [
 
   /* ── OCR GCSE ──
    * Foundation and higher are separate codes (01–03 / 04–06 for Maths) on
-   * the same sitting. Geography is left out: 'OCR' could be Geography A
-   * (J383) or B (J384) and the site does not say which. */
+   * the same sitting.
+   *
+   * 'OCR' Geography could be A (J383) or B (J384), and History A (J410) or
+   * B (J411) — the site does not say which. OCR sits both specs of each in
+   * the same three slots, so each paper lists both and the agreement check
+   * proves they still share a slot; the year they stop, the subject goes to
+   * review instead of showing one spec's date to the other's students. */
   ocr('Biology',             'OCR A', 'gcse', [['Paper 1', 'J247/01', 'J247/03'], ['Paper 2', 'J247/02', 'J247/04']]),
   ocr('Biology',             'OCR B', 'gcse', [['Paper 1 — Breadth in Biology', 'J257/01', 'J257/03'], ['Paper 2 — Depth in Biology', 'J257/02', 'J257/04']]),
   ocr('Chemistry',           'OCR A', 'gcse', [['Paper 1', 'J248/01', 'J248/03'], ['Paper 2', 'J248/02', 'J248/04']]),
@@ -104,6 +122,14 @@ const SPECS = [
   ocr('Computer Science',    'OCR', 'gcse', [['Paper 1 — Computer Systems', 'J277/01'], ['Paper 2 — Computational Thinking, Algorithms & Programming', 'J277/02']]),
   ocr('Economics',           'OCR', 'gcse', [['Paper 1 — Introduction to Economics', 'J205/01'], ['Paper 2 — National & International Economics', 'J205/02']]),
   ocr('English Language',    'OCR', 'gcse', [['Paper 1 — Communicating Information and Ideas', 'J351/01'], ['Paper 2 — Exploring Effects and Impact', 'J351/02']]),
+  ocr('English Literature',  'OCR', 'gcse', [['Paper 1 — Exploring Modern and Literary Heritage Texts', 'J352/01'], ['Paper 2 — Exploring Poetry and Shakespeare', 'J352/02']]),
+  ocr('Geography',           'OCR', 'gcse', [['Paper 1 — Living in the UK Today (A) / Our Natural World (B)', 'J383/01', 'J384/01'],
+                                             ['Paper 2 — The World Around Us (A) / People and Society (B)', 'J383/02', 'J384/02'],
+                                             ['Paper 3 — Geographical Skills (A) / Geographical Exploration (B)', 'J383/03', 'J384/03']]),
+  /* OCR prints History's options as one range per sitting ("J410/01-07"). */
+  ocr('History',             'OCR', 'gcse', [['Period Study (A) / History Around Us (B)', 'J410/01-07', 'J411/21'],
+                                             ['Thematic Study (A) / British History (B)', 'J410/08-10', 'J411/11-19'],
+                                             ['British Depth Study (A) / World History (B)', 'J410/11-13', 'J411/31-39']]),
 
   /* ── Eduqas ──
    * GCSE Geography is spec B (C112) — the notes in notes-geography-eduqas-gcse
@@ -112,6 +138,12 @@ const SPECS = [
   eduqas('Geography',        'Eduqas', 'gcse',   [['Component 1 — Investigating Geographical Issues', 'C112U10-1'], ['Component 2 — Problem Solving Geography', 'C112U20-1'], ['Component 3 — Applied Fieldwork Enquiry', 'C112U30-1']]),
   eduqas('English Language', 'Eduqas', 'alevel', [['Component 1', 'A700U10-1'], ['Component 2', 'A700U20-1'], ['Component 3', 'A700U30-1']]),
   eduqas('English Language', 'Eduqas', 'gcse',   [['Component 1', 'C700U10-1'], ['Component 2', 'C700U20-1']]),
+  eduqas('English Literature', 'Eduqas', 'gcse', [['Component 1 — Shakespeare and Poetry', 'C720U10-1'], ['Component 2 — Post-1914 Prose/Drama, 19th-century Prose and Unseen Poetry', 'C720U20-1']]),
+  /* Studies A–H of each component are one sitting. Eduqas does not
+   * timetable GCSE French, German or Spanish in England, so those are not
+   * here — there is nothing in its PDF to find. */
+  eduqas('History',          'Eduqas', 'gcse',   [['Component 1 — Studies in Depth', 'C100UA0-1', 'C100UB0-1', 'C100UC0-1', 'C100UD0-1', 'C100UE0-1', 'C100UF0-1', 'C100UG0-1', 'C100UH0-1'],
+                                                  ['Component 2 — Studies in Breadth', 'C100U10-1', 'C100U20-1', 'C100U30-1', 'C100U40-1', 'C100U50-1', 'C100U60-1', 'C100U70-1', 'C100U80-1']]),
 
   /* ── Edexcel A-level ──
    * Codes are written "9MA0 01" in the PDF and normalised to 9MA0/01 by the
@@ -135,13 +167,24 @@ const SPECS = [
   edexcel('Business Studies',    'Edexcel',   'alevel', [['Paper 1 — Marketing, People & Global Businesses', '9BS0/01'], ['Paper 2 — Business Activities, Decisions & Strategy', '9BS0/02'], ['Paper 3 — Investigating Business', '9BS0/03']]),
 
   /* ── Edexcel GCSE / International GCSE ──
-   * Geography is left out for the same reason as OCR's: 'Edexcel' could be
-   * Geography A (1GA0) or B (1GB0). */
+   * 'Edexcel' Geography could be A (1GA0) or B (1GB0); both are listed per
+   * paper for the same reason as OCR's. Languages: Paper 1 is speaking,
+   * which is not timetabled. History's options are printed as ranges. */
   edexcel('Biology',             'Edexcel',       'gcse', [['Paper 1', '1BI0/1F', '1BI0/1H'], ['Paper 2', '1BI0/2F', '1BI0/2H']]),
   edexcel('Chemistry',           'Edexcel',       'gcse', [['Paper 1', '1CH0/1F', '1CH0/1H'], ['Paper 2', '1CH0/2F', '1CH0/2H']]),
   edexcel('Physics',             'Edexcel',       'gcse', [['Paper 1', '1PH0/1F', '1PH0/1H'], ['Paper 2', '1PH0/2F', '1PH0/2H']]),
   edexcel('Mathematics',         'Edexcel',       'gcse', [['Paper 1 — Non-calculator', '1MA1/1F', '1MA1/1H'], ['Paper 2 — Calculator', '1MA1/2F', '1MA1/2H'], ['Paper 3 — Calculator', '1MA1/3F', '1MA1/3H']]),
   edexcel('English Language',    'Edexcel',       'gcse', [['Paper 1 — Fiction and Imaginative Writing', '1EN0/01'], ['Paper 2 — Non-fiction and Transactional Writing', '1EN0/02']]),
+  edexcel('English Literature',  'Edexcel',       'gcse', [['Paper 1 — Shakespeare and Post-1914 Literature', '1ET0/01'], ['Paper 2 — 19th-century Novel and Poetry since 1789', '1ET0/02']]),
+  edexcel('History',             'Edexcel',       'gcse', [['Paper 1 — Thematic Study and Historic Environment', '1HI0/10-13'],
+                                                           ['Paper 2 — Period Study and British Depth Study', '1HI0/2A-2W'],
+                                                           ['Paper 3 — Modern Depth Study', '1HI0/30-33']]),
+  edexcel('Geography',           'Edexcel',       'gcse', [['Paper 1 — The Physical Environment (A) / Global Geographical Issues (B)', '1GA0/01', '1GB0/01'],
+                                                           ['Paper 2 — The Human Environment (A) / UK Geographical Issues (B)', '1GA0/02', '1GB0/02'],
+                                                           ['Paper 3 — Geographical Investigations (A) / Making Geographical Decisions (B)', '1GA0/03', '1GB0/03']]),
+  edexcel('French',              'Edexcel',       'gcse', [['Paper 2 — Listening', '1FR1/2F', '1FR1/2H'], ['Paper 3 — Reading', '1FR1/3F', '1FR1/3H'], ['Paper 4 — Writing', '1FR1/4F', '1FR1/4H']]),
+  edexcel('German',              'Edexcel',       'gcse', [['Paper 2 — Listening', '1GN1/2F', '1GN1/2H'], ['Paper 3 — Reading', '1GN1/3F', '1GN1/3H'], ['Paper 4 — Writing', '1GN1/4F', '1GN1/4H']]),
+  edexcel('Spanish',             'Edexcel',       'gcse', [['Paper 2 — Listening', '1SP1/2F', '1SP1/2H'], ['Paper 3 — Reading', '1SP1/3F', '1SP1/3H'], ['Paper 4 — Writing', '1SP1/4F', '1SP1/4H']]),
   edexcel('Biology',             'Edexcel IGCSE', 'gcse', [['Paper 1 (1B)', '4BI1/1B'], ['Paper 2 (2B)', '4BI1/2B']])
 ];
 
@@ -150,7 +193,10 @@ function ocr(subject, board, level, papers)    { return spec('OCR', subject, boa
 function eduqas(subject, board, level, papers) { return spec('Eduqas', subject, board, level, papers); }
 function edexcel(subject, board, level, papers) { return spec('Edexcel', subject, board, level, papers); }
 function spec(source, subject, board, level, papers) {
-  return { source, subject, board, level, papers: papers.map(([label, ...codes]) => ({ label, codes })) };
+  return { source, subject, board, level, papers: papers.map(([label, ...codes]) => {
+    const opts = typeof codes[codes.length - 1] === 'object' ? codes.pop() : {};
+    return { label, codes, ...opts };
+  }) };
 }
 
 
@@ -243,7 +289,7 @@ function readAqa(pages) {
     for (const { cells: all } of lines) {
       /* Option groups carry a side note ("Any 1 of") to the left of the
        * code column, so the code is not always the first fragment. */
-      const at = all.slice(0, 2).findIndex(c => /^\d{4}\/[0-9A-Z]{1,3}$/.test(c.s));
+      const at = all.slice(0, 2).findIndex(c => /^\d{4}\/[0-9A-Z]{1,3}(\/[A-Z])?$/.test(c.s));
       if (at < 0) continue;
       const cells = all.slice(at);
       const code = cells[0].s;
@@ -258,7 +304,7 @@ function readAqa(pages) {
         code,
         exam_date: isoDate(+m[3], MONTHS[m[2].toLowerCase()], +m[1]),
         session:   s[1].toUpperCase(),
-        duration:  durationIn(text),
+        duration:  durationIn(text.replace(code, '')),
         title:     cells[1]?.s || ''
       });
     }
@@ -274,7 +320,7 @@ function readOcr(pages, year) {
   for (const { lines } of pages) {
     for (const { cells } of lines) {
       const code = cells[0].s;
-      if (!/^([A-Z]\d{3}\/\d{2}|Y\d{3})$/.test(code)) continue;
+      if (!/^([A-Z]\d{3}\/\d{2}(-\d{2})?|Y\d{3})$/.test(code)) continue;
       const text = cells.map(c => c.s).join(' ');
 
       const m = text.match(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s+(\d{1,2})\s+(May|June)\s+(am|pm)\s*$/i);
@@ -305,7 +351,7 @@ function readEdexcel(pages, year) {
   const out = [];
   for (const { lines } of pages) {
     for (const { cells } of lines) {
-      const codeCell = cells.find(c => /^[0-9][A-Z0-9]{3} [0-9A-Z]{2}$/.test(c.s));
+      const codeCell = cells.find(c => /^[0-9][A-Z0-9]{3} [0-9A-Z]{2}(-[0-9A-Z]{2})?$/.test(c.s));
       if (!codeCell) continue;
       const text = cells.map(c => c.s).join(' ');
 
@@ -318,7 +364,7 @@ function readEdexcel(pages, year) {
         code:      codeCell.s.replace(' ', '/'),
         exam_date: isoDate(year, MONTHS[d[3].toLowerCase()], +d[2]),
         session:   /^m/i.test(s[1]) ? 'AM' : 'PM',
-        duration:  durationIn(text),
+        duration:  durationIn(text.replace(codeCell.s, '')),
         weekday:   d[1].slice(0, 3).toLowerCase(),
         title:     (cells.slice(i + 1).find(c => /^Paper/i.test(c.s)) || cells[i + 1] || {}).s || ''
       });
@@ -366,7 +412,15 @@ function readEduqas(pages, year) {
       });
     }
 
-    const codes = items.filter(it => Math.abs(it.x - mid) > 30 && /^[A-Z0-9]\d{3}U[A-Z0-9]{2}-\d$/.test(it.s));
+    /* Some codes come out as three fragments — "C100UA0", "-", "1" — on one
+     * baseline (every History option, in 2027). Rejoined here, so a code is
+     * a code however the board's PDF writer chose to set it. */
+    const split = items.filter(it => /^[A-Z0-9]\d{3}U[A-Z0-9]{2}$/.test(it.s)).flatMap(it => {
+      const after = items.filter(o => Math.abs(o.y - it.y) <= 1 && o.x > it.x && o.x - it.x < 60).sort((a, b) => a.x - b.x);
+      return after[0]?.s === '-' && /^\d$/.test(after[1]?.s || '') ? [{ ...it, s: `${it.s}-${after[1].s}` }] : [];
+    });
+
+    const codes = items.concat(split).filter(it => Math.abs(it.x - mid) > 30 && /^[A-Z0-9]\d{3}U[A-Z0-9]{2}-\d$/.test(it.s));
     for (const c of codes) {
       /* Cells are usually drawn twice (fill, then outline), so several
        * owners is normal — several owners that disagree on the date is not. */
@@ -444,7 +498,9 @@ function resolveSpecs(board, rows, year) {
         entry_code: p.codes.join(', '),
         exam_date:  h.exam_date,
         session:    h.session,
-        duration:   h.duration,
+        /* Tiers and specs sharing a slot can run for different lengths
+         * (French listening 35m F / 45m H). No duration beats a wrong one. */
+        duration:   p.duration || (new Set(hits.map(x => x.duration)).size === 1 ? h.duration : null),
         series:     `summer-${year}`
       });
     }

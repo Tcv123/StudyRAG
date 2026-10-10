@@ -122,14 +122,50 @@ test('Edexcel reader reads both printings and normalises the code', () => {
   const rows = READERS.Edexcel([page([
     [[19, 'Wednesday 12 May'], [164, '9PL0 01'], [221, 'Politics'], [374, 'Paper 1: UK Politics and Core Political Ideas'], [684, 'Morning'], [764, '2h 00m']],
     [[19, 'Politics'], [163, '9PL0 3A'], [221, 'Paper 3A: Comparative Politics - USA'], [513, 'Tuesday 15 June'], [682, 'Afternoon'], [764, '2h 00m']],
-    [[19, 'Further Mathematics'], [155, '8FM0 2A-2K'], [221, 'Paper 2: Options'], [513, 'Friday 14 May'], [682, 'Afternoon']]
+    [[19, 'History'], [155, '1HI0 2A-2W'], [221, 'Paper 2: Period study & British depth study'], [513, 'Friday 28 May'], [682, 'Morning'], [764, '1h 50m']]
   ])], 2027);
-  check('two rows (a code range is not a code)', rows.length === 2, JSON.stringify(rows));
+  check('three rows', rows.length === 3, JSON.stringify(rows));
+  check('an option range is one code', rows[2]?.code === '1HI0/2A-2W', rows[2]?.code);
   check('code normalised', rows[0].code === '9PL0/01');
   check('morning → AM', rows[0].session === 'AM');
   check('afternoon → PM', rows[1].session === 'PM');
   check('weekday kept', rows[1].weekday === 'tue');
   check('"2h 00m" → "2h"', rows[0].duration === '2h', rows[0].duration);
+});
+
+test('a tier letter in a code is not read as hours', () => {
+  const aqa = READERS.AQA([page([
+    [[113, '8652/LH'], [170, 'Listening'], [450, 'H'], [584, '45m'], [686, '26 May 2027'], [788, 'am']]
+  ])]);
+  check('AQA 8652/LH → 45m', aqa[0]?.duration === '45m', aqa[0]?.duration);
+  const edx = READERS.Edexcel([page([
+    [[19, 'Monday 14 June'], [164, '1FR1 4H'], [221, 'French'], [374, 'Paper 4: Writing in French Higher Tier'], [684, 'Afternoon'], [764, '1h 20m']]
+  ])], 2027);
+  check('Edexcel 1FR1 4H → 1h 20m', edx[0]?.duration === '1h 20m', edx[0]?.duration);
+});
+
+test('AQA reader takes three-part History option codes', () => {
+  const rows = READERS.AQA([page([
+    [[113, '8145/1A/B'], [170, 'Paper 1 Section AB: Germany, 1890-1945'], [500, '12'], [584, '1h'], [686, '20 May 2027'], [788, 'am']]
+  ])]);
+  check('read', rows[0]?.code === '8145/1A/B' && rows[0].exam_date === '2027-05-20', JSON.stringify(rows));
+});
+
+test('OCR reader takes an option range as one code', () => {
+  const rows = READERS.OCR([page([
+    [[38, 'J410/01-07'], [108, 'Period study with non-British depth study'], [535, '1 h 45 min each'], [630, 'Thu'], [724, '20 May am']]
+  ])], 2027);
+  check('read', rows[0]?.code === 'J410/01-07' && rows[0].weekday === 'thu', JSON.stringify(rows));
+});
+
+test('Eduqas reader rejoins a code split into fragments', () => {
+  const items = [
+    { x: 409, y: 486, s: 'Thursday' }, { x: 411, y: 475, s: '20 May' },
+    { x: 22, y: 476, s: 'C100UD0' }, { x: 60, y: 476, s: '-' }, { x: 66, y: 476, s: '1' }
+  ];
+  const rects = [{ x0: 393, y0: 430, x1: 462, y1: 520 }];
+  const rows = READERS.Eduqas([{ page: 1, width: 841.68, items, rects, lines: [] }], 2027);
+  check('rejoined', rows[0]?.code === 'C100UD0-1' && rows[0].exam_date === '2027-05-20', JSON.stringify(rows));
 });
 
 test('Edexcel by-date and by-subject printings that disagree hold back the subject', () => {
@@ -234,6 +270,47 @@ test('a weekday the board printed that does not match holds back the subject', (
   const { resolved, failed: f } = resolveSpecs('OCR', rows, 2027);
   check('failed', f.some(x => x.key === 'Biology OCR A A-level'));
   check('not resolved', !resolved.length);
+});
+
+test('codes in one slot that run for different lengths store no duration', () => {
+  const rows = ['2F', '2H', '3F', '3H', '4F', '4H'].map(t => row(`1FR1/${t}`,
+    { 2: '2027-05-26', 3: '2027-06-08', 4: '2027-06-14' }[t[0]], t[0] === '2' ? 'AM' : 'PM',
+    { duration: t[1] === 'F' ? '45m' : '1h' }));
+  const fr = resolveSpecs('Edexcel', rows, 2027).resolved.find(r => r.key === 'French Edexcel GCSE');
+  check('resolved', !!fr);
+  check('no duration', fr && fr.rows.every(r => r.duration === null), JSON.stringify(fr?.rows));
+});
+
+test('a pinned paper duration wins over the rows', () => {
+  const rows = ['1A/A', '1A/B', '1A/C', '1A/D', '1B/A', '1B/B', '1B/D'].map(o => row(`8145/${o}`, '2027-05-20', 'AM', { duration: '1h' }))
+    .concat(['2B/A', '2B/B', '2B/C', '2B/D'].map(o => row(`8145/${o}`, '2027-05-28', 'AM', { duration: '1h' })));
+  const h = resolveSpecs('AQA', rows, 2027).resolved.find(r => r.key === 'History AQA GCSE');
+  check('2h, not the 1h of one section', h && h.rows.every(r => r.duration === '2h'), JSON.stringify(h?.rows));
+});
+
+test('Geography A and B in different slots hold back the subject', () => {
+  const rows = [row('J383/01', '2027-05-18', 'AM'), row('J384/01', '2027-05-19', 'AM'),
+                row('J383/02', '2027-05-26', 'PM'), row('J384/02', '2027-05-26', 'PM'),
+                row('J383/03', '2027-06-10', 'PM'), row('J384/03', '2027-06-10', 'PM')];
+  const { resolved, failed: f } = resolveSpecs('OCR', rows, 2027);
+  check('failed', f.some(x => x.key === 'Geography OCR GCSE' && /disagree/.test(x.problems.join())));
+  check('not resolved', !resolved.length);
+});
+
+test('every GCSE subject and board a student can pick has a spec, or a reason it cannot', () => {
+  const src = fs.readFileSync(path.join(ROOT, 'subjects-config.js'), 'utf8');
+  const sandbox = { window: { levelSuffix: l => l } };
+  vm.runInNewContext(src, sandbox);
+  const cfg = sandbox.window.SUBJECTS_CONFIG;
+  /* Not in any June timetable those boards publish for England. */
+  const none = new Set(['French|Eduqas', 'German|Eduqas', 'Spanish|Eduqas']);
+  for (const subject of cfg.gcseSubjectNames) {
+    for (const board of cfg.getBoardsFor(subject, 'gcse')) {
+      if (none.has(`${subject}|${board}`)) continue;
+      check(`${subject} ${board} GCSE has a spec`,
+            SPECS.some(s => s.subject === subject && s.board === board && s.level === 'gcse'));
+    }
+  }
 });
 
 /* ── Finding documents ─────────────────────────────────────────────── */
