@@ -1,0 +1,225 @@
+deck: Biology|AQA|gcse
+
+## 4.1
+What is the function of the mitochondria? ~~ Site of aerobic respiration, releasing energy for the cell.
+What is the function of the nucleus? ~~ Contains genetic material (DNA in chromosomes) that controls the activities of the cell.
+What is the function of ribosomes? ~~ Site of protein synthesis.
+Name three structures found in plant cells but not animal cells. ~~ Chloroplasts (photosynthesis), a permanent vacuole filled with cell sap, and a cellulose cell wall that strengthens the cell.
+How are prokaryotic cells different from eukaryotic cells? ~~ Prokaryotes (bacteria) are much smaller, have no nucleus (a single loop of DNA in the cytoplasm) and may contain plasmids; eukaryotes have a nucleus enclosing their DNA.
+What are plasmids? ~~ Small rings of DNA found in the cytoplasm of bacteria, often carrying genes such as antibiotic resistance.
+How is a sperm cell adapted to its function? ~~ Tail to swim, many mitochondria to release energy, and an acrosome containing enzymes to digest the egg's outer layer; haploid nucleus.
+How is a root hair cell adapted to its function? ~~ Long projection gives a large surface area for absorbing water by osmosis and mineral ions by active transport; many mitochondria for active transport.
+What is cell differentiation? ~~ The process by which a cell becomes specialised for a particular function. Most animal cells differentiate early; many plant cells keep the ability to differentiate throughout life.
+Compare light and electron microscopes. ~~ Electron microscopes have much higher magnification and resolving power, so show subcellular structures (e.g. ribosomes) in detail, but need a vacuum so cannot view living cells.
+What is resolution? ~~ The ability to distinguish between two points that are close together; higher resolution gives more detail.
+Calculate the magnification if image size is 12 mm and real size is 0.04 mm. ~~ Magnification = image ÷ real = 12 ÷ 0.04 = ×300.
+A cell is 50 µm long and its image is 25 mm long. What is the magnification? ~~ Convert to the same units: 25 mm = 25 000 µm. Magnification = 25 000 ÷ 50 = ×500.
+How many micrometres are in 1 mm, and nanometres in 1 µm? ~~ 1 mm = 1000 µm; 1 µm = 1000 nm.
+Required practical (microscopy): how do you prepare an onion cell slide? ~~ Peel a thin layer of epidermis, place on a slide in a drop of iodine stain, lower a cover slip at an angle to avoid air bubbles.
+Required practical (microscopy): how should you focus on a specimen? ~~ Start with the lowest-power objective and coarse focus, then switch to higher power and use only the fine focus.
+What are chromosomes? ~~ Structures in the nucleus made of DNA, carrying many genes. Human body cells have 23 pairs (46 chromosomes).
+Describe the stages of the cell cycle. ~~ Cell grows, replicates organelles (e.g. mitochondria, ribosomes) and DNA so each chromosome is copied; mitosis separates the chromosomes to opposite poles; cytoplasm and membrane divide to form two identical cells.
+Why is mitosis important? ~~ Growth, repair of damaged tissue and asexual reproduction, producing genetically identical diploid cells.
+What is a stem cell? ~~ An undifferentiated cell that can divide to make more stem cells and can differentiate into many types of specialised cell.
+Compare embryonic stem cells, adult stem cells and plant meristem cells. ~~ Embryonic: can become most cell types. Adult (e.g. bone marrow): only a few types, e.g. blood cells. Meristem (root/shoot tips): can differentiate into any plant cell type throughout life.
+What is therapeutic cloning? ~~ An embryo is made with the same genes as the patient, so its stem cells are not rejected by the patient's immune system.
+Give two concerns about using embryonic stem cells. ~~ Ethical or religious objections to destroying embryos; risk of transferring viral infection; risk of stem cells dividing uncontrollably (cancer).
+Define diffusion. ~~ The net movement of particles from an area of higher concentration to an area of lower concentration, down a concentration gradient. Passive, needs no energy.
+Give three factors that increase the rate of diffusion. ~~ A steeper concentration gradient, a higher temperature and a larger surface area of membrane.
+Define osmosis. ~~ The diffusion of water from a dilute solution to a more concentrated solution through a partially permeable membrane.
+Define active transport. ~~ Movement of substances from a more dilute solution to a more concentrated solution (against the gradient), requiring energy from respiration.
+Calculate the surface area to volume ratio of a 2 cm cube. ~~ SA = 6 × 2 × 2 = 24 cm²; volume = 2³ = 8 cm³. Ratio = 24 : 8 = 3 : 1. Larger organisms have smaller ratios, so need exchange surfaces.
+Required practical (osmosis): a potato cylinder goes from 2.50 g to 2.20 g. What is the percentage change in mass? ~~ (2.20 − 2.50) ÷ 2.50 × 100 = −12%. Mass lost because water left by osmosis into a more concentrated solution.
+(Biology only) Required practical: how do you test the effect of antibiotics on bacterial growth? ~~ Use aseptic technique to spread bacteria on agar, add antibiotic discs plus a control disc, tape (not seal) the lid, incubate at 25 °C, then measure zones of inhibition (area = πr²).
+
+## 4.2
+What is a tissue? ~~ A group of cells with a similar structure and function, e.g. muscle tissue.
+Put these in order of increasing size: organ, cell, organ system, tissue. ~~ Cell → tissue → organ → organ system → organism.
+What is an enzyme? ~~ A biological catalyst, a protein that speeds up a reaction without being used up.
+Explain the lock and key model of enzyme action. ~~ The substrate fits into the enzyme's active site because their shapes are complementary, forming an enzyme–substrate complex; products are released.
+Why do enzymes stop working at high temperatures? ~~ The bonds holding the protein together break, so the active site changes shape (denatures) and the substrate no longer fits.
+Which enzyme digests starch, and where is it produced? ~~ Amylase breaks starch into sugars; made in the salivary glands, pancreas and small intestine.
+Which enzymes digest proteins and lipids, and what are the products? ~~ Proteases (stomach, pancreas, small intestine) give amino acids; lipases (pancreas, small intestine) give fatty acids and glycerol.
+Where is bile made and stored, and what does it do? ~~ Made in the liver, stored in the gall bladder. It is alkaline to neutralise stomach acid and emulsifies fats, increasing surface area for lipase.
+Required practical (food tests): how do you test for starch? ~~ Add iodine solution. Positive: orange-brown turns blue-black.
+Required practical (food tests): how do you test for reducing sugars? ~~ Add Benedict's solution and heat in a water bath (about 80 °C). Positive: blue turns green, yellow or brick-red.
+Required practical (food tests): how do you test for protein and for lipids? ~~ Protein: Biuret reagent, blue turns purple. Lipids: ethanol then water gives a cloudy white emulsion (or Sudan III stains red).
+Required practical (enzymes): how do you measure the effect of pH on amylase? ~~ Mix starch, amylase and pH buffer at 37 °C; every 30 s put a drop into iodine on a spotting tile; record time until iodine stays orange. Rate = 1 ÷ time.
+Starch is fully digested in 50 s. What is the rate of reaction? ~~ Rate = 1 ÷ time = 1 ÷ 50 = 0.02 s⁻¹.
+Describe the pathway of blood through the heart. ~~ Vena cava → right atrium → right ventricle → pulmonary artery → lungs → pulmonary vein → left atrium → left ventricle → aorta → body.
+Why is it called a double circulatory system? ~~ Blood passes through the heart twice per circuit: one loop to the lungs, one to the rest of the body.
+Why is the left ventricle wall thicker than the right? ~~ It must pump blood at higher pressure all around the body; the right only pumps to the nearby lungs.
+How is the natural heart rate controlled? ~~ A group of cells in the right atrium acts as a pacemaker. An artificial pacemaker can correct irregular heart rhythms.
+Compare arteries, veins and capillaries. ~~ Arteries: thick muscular elastic walls, high pressure. Veins: thin walls, large lumen, valves. Capillaries: walls one cell thick for short diffusion distance.
+Name the four components of blood and their functions. ~~ Plasma (transports substances), red blood cells (carry oxygen), white blood cells (fight infection), platelets (help clotting).
+How is a red blood cell adapted? ~~ Biconcave shape for large surface area, no nucleus for more room, and haemoglobin which binds oxygen.
+Calculate cardiac output if heart rate is 70 bpm and stroke volume is 75 ml. ~~ Cardiac output = stroke volume × heart rate = 75 × 70 = 5250 ml/min (5.25 l/min).
+How are the alveoli adapted for gas exchange? ~~ Huge surface area, thin walls (one cell thick), moist lining and a rich blood supply maintaining a steep concentration gradient.
+What is coronary heart disease? ~~ Layers of fatty material build up in coronary arteries, narrowing them and reducing blood flow, so less oxygen reaches heart muscle.
+Compare stents and statins as treatments for coronary heart disease. ~~ Stents keep arteries open (immediate, but surgery risks). Statins lower blood cholesterol, slowing fatty deposits (long-term, possible side effects, must be taken daily).
+What is the difference between benign and malignant tumours? ~~ Benign: contained in one area, do not invade. Malignant: cancers that invade neighbouring tissues and spread via the blood to form secondary tumours.
+Give lifestyle risk factors for non-communicable diseases. ~~ Smoking (lung disease, cancers), obesity (type 2 diabetes), alcohol (liver disease, brain function), poor diet and low exercise (cardiovascular disease), carcinogens such as ionising radiation.
+Compare xylem and phloem. ~~ Xylem: hollow lignified dead cells carrying water and minerals up from roots. Phloem: living elongated cells with sieve plates moving dissolved sugars up and down (translocation).
+What is transpiration? ~~ Loss of water vapour from the leaves by evaporation through the stomata, drawing water up the xylem.
+Name four factors that increase transpiration rate. ~~ Higher temperature, higher light intensity, more air movement (wind) and lower humidity.
+How do guard cells control water loss? ~~ They open and close the stomata, controlling gas exchange and water loss; stomata usually close in the dark or when the plant is short of water.
+
+## 4.3
+What is a pathogen? ~~ A microorganism that causes infectious disease: bacteria, viruses, protists or fungi.
+How do bacteria and viruses make us ill? ~~ Bacteria reproduce rapidly and may produce toxins that damage tissues. Viruses live and reproduce inside cells, causing cell damage.
+Give three ways pathogens can be spread. ~~ Directly by contact, by water, or through the air (droplets); also by vectors.
+Describe measles. ~~ Viral disease spread by droplets from sneezes and coughs; fever and red skin rash; can be fatal. Prevented by vaccination of young children.
+Describe HIV and how it is treated. ~~ Virus spread by sexual contact or exchange of body fluids; flu-like illness at first, then attacks immune cells leading to AIDS. Controlled with antiretroviral drugs.
+What is tobacco mosaic virus (TMV)? ~~ A plant virus giving a mosaic pattern of discolouration on leaves, reducing photosynthesis and so growth.
+Describe salmonella food poisoning. ~~ Bacteria in undercooked food or food prepared unhygienically; toxins cause fever, cramps, vomiting and diarrhoea. Poultry in the UK are vaccinated.
+Describe gonorrhoea. ~~ Bacterial STD; thick yellow or green discharge and pain when urinating. Treated with antibiotics (many strains resistant); spread prevented by condoms.
+What is rose black spot? ~~ Fungal disease causing purple or black spots on leaves, which turn yellow and drop early, reducing photosynthesis. Spread by water and wind; treated with fungicides and removing affected leaves.
+What causes malaria and how is it spread? ~~ A protist pathogen; mosquitoes act as vectors. Causes recurrent fever. Controlled by stopping mosquitoes breeding and using nets.
+Name the body's non-specific defences against pathogens. ~~ Skin barrier, nose hairs and mucus, trachea and bronchi (mucus and cilia), stomach acid that kills pathogens.
+Name three ways white blood cells defend the body. ~~ Phagocytosis (engulfing pathogens), producing antibodies, and producing antitoxins.
+How do antibodies work? ~~ They are specific proteins that bind to antigens on a particular pathogen, marking it for destruction or clumping pathogens together.
+How does vaccination work? ~~ Small quantities of dead or inactive pathogen are injected; white blood cells produce antibodies and memory cells, so on reinfection antibodies are made rapidly.
+What is herd immunity? ~~ If a large proportion of a population is vaccinated, the pathogen is less likely to spread, protecting unvaccinated people.
+Why can't antibiotics treat viral infections? ~~ Antibiotics kill bacteria; viruses live inside body cells, so it is hard to kill them without damaging cells.
+Exam trap: do painkillers cure disease? ~~ No. Painkillers treat symptoms only; they do not kill pathogens.
+How does antibiotic resistance develop? ~~ Random mutation makes some bacteria resistant; these survive antibiotic treatment and reproduce, so the resistant strain spreads (natural selection).
+Name three drugs and the organisms they came from. ~~ Digitalis (heart drug) from foxgloves; aspirin (painkiller) from willow; penicillin from Penicillium mould, discovered by Alexander Fleming.
+Describe the stages of developing a new drug. ~~ Preclinical testing on cells, tissues and live animals; then clinical trials on healthy volunteers (very low doses, safety), then patients to find the optimum dose.
+What are the three things a new drug is tested for? ~~ Toxicity (safety), efficacy (does it work) and dose.
+What is a double-blind trial and why is a placebo used? ~~ Neither patients nor doctors know who receives the drug or the placebo, removing bias. The placebo controls for psychological effects.
+(Biology only) How are monoclonal antibodies made? ~~ A mouse is injected with an antigen; its lymphocytes are fused with tumour cells to form hybridoma cells, which divide and make one type of antibody, then are cloned and the antibodies collected.
+(Biology only) Give four uses of monoclonal antibodies. ~~ Pregnancy tests (detect hCG), diagnosis, measuring hormone or chemical levels in blood and research, and targeting drugs or radioactive substances to cancer cells.
+(Biology only) Give a disadvantage of monoclonal antibodies. ~~ They create more side effects than expected, so are not yet as widely used as hoped.
+(Biology only) How can plant diseases be detected and identified? ~~ Signs: stunted growth, spots, decay, growths, malformed stems or leaves, discolouration, pests. Identified using gardening manuals or websites, lab testing, or monoclonal antibody testing kits.
+(Biology only) What do nitrate and magnesium deficiencies cause in plants? ~~ Nitrate deficiency: stunted growth (nitrate needed for proteins). Magnesium deficiency: chlorosis (yellow leaves) because magnesium is needed for chlorophyll.
+(Biology only) Name physical plant defences. ~~ Cellulose cell walls, tough waxy cuticle on leaves, and layers of dead cells (bark) that fall off.
+(Biology only) Name chemical and mechanical plant defences. ~~ Chemical: antibacterial chemicals (e.g. mint), poisons to deter herbivores. Mechanical: thorns and hairs, leaves that droop or curl, mimicry.
+How are aphids involved in plant disease? ~~ Aphids are insects that feed on phloem sap and can act as vectors spreading plant viruses between plants.
+
+## 4.4
+What is the word equation for photosynthesis? ~~ Carbon dioxide + water → glucose + oxygen (using light energy).
+What is the balanced symbol equation for photosynthesis? ~~ 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (light energy absorbed by chlorophyll).
+Is photosynthesis endothermic or exothermic? ~~ Endothermic: energy is transferred from the environment (light) to the chloroplasts.
+Name the factors that can limit the rate of photosynthesis. ~~ Temperature, light intensity, carbon dioxide concentration and amount of chlorophyll.
+Why does photosynthesis rate fall at high temperatures? ~~ The enzymes controlling photosynthesis denature, so the rate drops sharply.
+(Higher) What is a limiting factor? ~~ The factor in shortest supply that stops the rate increasing; on a graph, where the line levels off a different factor has become limiting.
+(Higher) State the inverse square law for light intensity. ~~ Light intensity ∝ 1 ÷ distance². Doubling the distance from the lamp reduces light intensity to a quarter.
+(Higher) If a lamp is moved from 10 cm to 20 cm, by what factor does light intensity change? ~~ Intensity ∝ 1/d²: (10/20)² = 1/4, so it falls to a quarter.
+Required practical (photosynthesis): describe the method. ~~ Put pondweed in sodium hydrogencarbonate solution; place a lamp at set distances; count oxygen bubbles (or measure gas volume) per minute at each distance; repeat.
+Required practical (photosynthesis): state the variables. ~~ Independent: light intensity (distance of lamp). Dependent: bubbles or volume of O₂ per minute. Control: temperature, CO₂ concentration, same plant, time.
+How is temperature kept constant in the photosynthesis practical? ~~ Use a water bath or a glass tank of water as a heat screen between the lamp and the plant, or an LED lamp.
+(Higher) How do farmers use limiting factors in greenhouses? ~~ Add heating, artificial light and extra CO₂ (e.g. paraffin heaters) to increase yield, balancing extra costs against extra profit.
+Give five uses of glucose made by photosynthesis. ~~ Respiration; converted to insoluble starch for storage; cellulose for cell walls; fats or oils for storage; amino acids (with nitrate ions) for protein synthesis.
+Why is glucose stored as starch? ~~ Starch is insoluble, so it does not affect water movement by osmosis in cells.
+What is the word equation for aerobic respiration? ~~ Glucose + oxygen → carbon dioxide + water (energy transferred).
+What is the balanced symbol equation for aerobic respiration? ~~ C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O.
+Is respiration endothermic or exothermic? ~~ Exothermic: it continuously transfers energy to the environment.
+What is the word equation for anaerobic respiration in muscles? ~~ Glucose → lactic acid.
+What is the word equation for anaerobic respiration in plant and yeast cells? ~~ Glucose → ethanol + carbon dioxide. In yeast this is called fermentation.
+Give two uses of fermentation. ~~ Making bread (CO₂ makes dough rise) and alcoholic drinks (ethanol).
+Compare aerobic and anaerobic respiration. ~~ Aerobic uses oxygen, releases much more energy, products CO₂ and water. Anaerobic needs no oxygen, releases much less energy due to incomplete oxidation of glucose.
+Exam trap: does respiration produce energy? ~~ No. Energy cannot be produced; say respiration releases or transfers energy from glucose.
+Why do we need energy from respiration? ~~ For chemical reactions to build larger molecules, muscle contraction (movement) and keeping warm.
+How does the body respond to exercise? ~~ Heart rate, breathing rate and breath volume increase, so more oxygenated blood reaches muscles and more CO₂ is removed.
+Why do muscles become fatigued during long exercise? ~~ Insufficient oxygen leads to anaerobic respiration; lactic acid builds up and muscles stop contracting efficiently.
+(Higher) What is oxygen debt? ~~ The amount of extra oxygen needed after exercise to react with accumulated lactic acid and remove it from cells.
+(Higher) What happens to lactic acid after exercise? ~~ Blood carries it to the liver, where it is converted back into glucose.
+What is metabolism? ~~ The sum of all the reactions in a cell or the body.
+Give four examples of metabolic reactions. ~~ Glucose to starch, glycogen and cellulose; glycerol and fatty acids forming lipids; glucose and nitrate forming amino acids then proteins; respiration; breakdown of excess proteins to urea.
+A plant produces 30 bubbles in 2 minutes. What is the rate of photosynthesis? ~~ Rate = 30 ÷ 2 = 15 bubbles per minute.
+
+## 4.5
+What is homeostasis? ~~ The regulation of internal conditions of a cell or organism to maintain optimum conditions for function, in response to internal and external changes.
+Name three things controlled by homeostasis in humans. ~~ Blood glucose concentration, body temperature and water levels.
+Name the three components of an automatic control system. ~~ Receptors (detect stimuli), coordination centres (brain, spinal cord, pancreas; process information) and effectors (muscles or glands that bring about responses).
+Describe the order of a response in the nervous system. ~~ Stimulus → receptor → sensory neurone → coordinator (CNS) → motor neurone → effector → response.
+What is a reflex action and why is it important? ~~ An automatic, rapid response that does not involve the conscious part of the brain; protects the body from harm.
+Describe a reflex arc. ~~ Stimulus → receptor → sensory neurone → relay neurone (in spinal cord) → motor neurone → effector.
+What happens at a synapse? ~~ An electrical impulse triggers release of a chemical (neurotransmitter) that diffuses across the gap and binds to receptors, starting an impulse in the next neurone.
+Required practical (reaction time): describe the ruler drop test. ~~ Subject rests arm on table; a ruler is held with 0 cm at their thumb and finger and dropped without warning; record distance caught; repeat and calculate mean; vary one factor, e.g. caffeine.
+Required practical (reaction time): state control variables. ~~ Same person, same hand, same ruler and starting position, same time of day, no distractions (unless that is the independent variable).
+(Biology only) Name three parts of the brain and their functions. ~~ Cerebral cortex: consciousness, memory, language. Cerebellum: muscle coordination and balance. Medulla: unconscious activities like heart rate and breathing.
+(Biology only) How does the eye focus on a near object? ~~ Ciliary muscles contract, suspensory ligaments slacken, so the lens becomes thicker and refracts light more strongly.
+(Biology only) What causes myopia and hyperopia, and how are they treated? ~~ Myopia (short-sight): light focused in front of retina; concave lens. Hyperopia (long-sight): focused behind retina; convex lens. Also laser surgery or replacement lenses.
+(Biology only) How does the body respond when too hot? ~~ Thermoregulatory centre detects rise; sweating (evaporation cools skin) and vasodilation (more blood near skin surface, more heat lost).
+(Biology only) How does the body respond when too cold? ~~ Vasoconstriction (less blood to skin), shivering (muscle contraction releases heat from respiration), no sweating.
+Compare nervous and hormonal responses. ~~ Nervous: electrical impulses, very fast, short-lived, precise. Hormonal: chemicals in the blood, slower, longer-lasting, act on target organs.
+Why is the pituitary gland called the master gland? ~~ It secretes hormones that act on other glands, stimulating them to release hormones.
+How does the body respond to high blood glucose? ~~ The pancreas releases insulin; glucose moves from blood into cells, and liver and muscle cells convert excess glucose to glycogen for storage.
+(Higher) How does the body respond to low blood glucose? ~~ The pancreas releases glucagon, which stimulates the liver to convert glycogen back into glucose, released into the blood.
+Compare type 1 and type 2 diabetes. ~~ Type 1: pancreas fails to produce enough insulin; treated with insulin injections. Type 2: body cells stop responding to insulin; treated by diet and exercise. Obesity is a risk factor for type 2.
+Exam trap: what is the difference between glucagon and glycogen? ~~ Glucagon is a hormone from the pancreas; glycogen is the storage carbohydrate in liver and muscles.
+(Biology only) How is urea formed? ~~ Excess amino acids are deaminated in the liver to form ammonia, which is converted into urea for excretion by the kidneys.
+(Biology only) How do the kidneys produce urine? ~~ Filtration of the blood, then selective reabsorption of useful substances (all glucose, some ions, water as needed); urea, excess ions and water form urine.
+(Biology only) How does ADH control water balance? ~~ If blood is too concentrated, the pituitary releases more ADH, making kidney tubules more permeable so more water is reabsorbed; a negative feedback mechanism.
+(Biology only) Compare dialysis and kidney transplant. ~~ Dialysis: regular, time-consuming sessions, but no rejection. Transplant: a long-term cure, but needs a donor match and immunosuppressant drugs to prevent rejection.
+What are the roles of FSH and LH in the menstrual cycle? ~~ FSH (pituitary) makes an egg mature in the ovary and stimulates oestrogen. LH (pituitary) stimulates release of the egg (ovulation).
+What are the roles of oestrogen and progesterone? ~~ Oestrogen (ovaries) thickens the uterus lining and, at high levels, inhibits FSH and stimulates LH. (Higher) Progesterone maintains the lining and inhibits FSH and LH.
+Give hormonal and non-hormonal methods of contraception. ~~ Hormonal: pill, implant, injection, patch (inhibit FSH/egg maturation). Non-hormonal: condoms and diaphragms (barriers), spermicide, copper IUD, abstinence, surgical sterilisation.
+(Higher) How is hormone treatment used in IVF? ~~ The woman is given FSH and LH to stimulate several eggs to mature; eggs are collected, fertilised in a lab, and the embryos inserted into the uterus.
+(Biology only) Explain positive phototropism in shoots. ~~ Auxin moves to the shaded side of the shoot, causing cells there to elongate more, so the shoot bends towards light.
+(Biology only) Required practical: how do you investigate light on seedling growth? ~~ Grow cress seedlings in all-round light, one-sided light and darkness; measure length and direction of growth daily. Shoots bend towards one-sided light; dark seedlings grow tall and pale.
+
+## 4.6
+Compare sexual and asexual reproduction. ~~ Sexual: fusion of male and female gametes, involves meiosis, produces variation. Asexual: one parent, mitosis only, produces genetically identical clones.
+What happens during meiosis? ~~ Genetic information is copied, then the cell divides twice to form four gametes, each with a single set of chromosomes, all genetically different.
+Exam trap: how many chromosomes in a human gamete, and how many cells does meiosis make? ~~ 23 chromosomes (haploid). Meiosis makes four genetically different cells; mitosis makes two identical cells.
+Why is fertilisation important? ~~ Gametes join to restore the normal number of chromosomes; the new cell divides by mitosis to form an embryo.
+What is DNA? ~~ A polymer made of two strands forming a double helix, contained in chromosomes.
+What is a gene? ~~ A small section of DNA on a chromosome that codes for a particular sequence of amino acids to make a specific protein.
+What is the genome, and why is studying it important? ~~ The entire genetic material of an organism. Helps find genes linked to diseases, understand and treat inherited disorders, and trace human migration.
+(Biology only) What are the DNA nucleotide bases and how do they pair? ~~ A pairs with T, C pairs with G. Each nucleotide is a phosphate, a sugar and one of four bases.
+(Biology only) Describe protein synthesis. ~~ Each three bases code for one amino acid. A template copy of the gene leaves the nucleus; ribosomes join amino acids carried by carriers in the order set by the code; the chain folds into a shape.
+Define dominant and recessive. ~~ Dominant: expressed if only one copy of the allele is present. Recessive: only expressed if two copies are present.
+Define homozygous and heterozygous. ~~ Homozygous: two identical alleles (e.g. BB or bb). Heterozygous: two different alleles (e.g. Bb).
+Define genotype and phenotype. ~~ Genotype: the alleles present (e.g. Bb). Phenotype: the characteristic expressed (e.g. brown eyes).
+Two heterozygous pea plants (Tt × Tt) are crossed. What is the ratio of offspring phenotypes? ~~ TT, Tt, Tt, tt gives 3 tall : 1 short; probability of short = 25%.
+A heterozygous parent (Ff) and a homozygous recessive parent (ff) have a child. What is the probability it has the recessive phenotype? ~~ Offspring: Ff, Ff, ff, ff, so 50% (1 in 2).
+What causes cystic fibrosis? ~~ A recessive allele; a disorder of cell membranes. A child must inherit the allele from both parents; carriers (heterozygous) are unaffected.
+What causes polydactyly? ~~ A dominant allele causing extra fingers or toes; only one parent needs to pass it on.
+What are the sex chromosomes in humans? ~~ Females XX, males XY. The chance of a boy or girl is 50% each.
+Give concerns about embryo screening. ~~ Expensive, may lead to designer babies, implies people with disorders are less valuable, and embryos are destroyed. Benefits: prevents suffering and lowers care costs.
+What causes variation? ~~ Genetic causes (genes inherited), environmental conditions, or a combination of both.
+What is a mutation? ~~ A change in DNA. Mutations occur continuously; most have no effect on phenotype, a few influence it, and very rarely a new phenotype gives a survival advantage.
+Describe evolution by natural selection. ~~ Variation exists; individuals with characteristics best suited to the environment survive and reproduce, passing on their alleles, so these become more common over many generations.
+What is the evidence for evolution? ~~ Fossils, antibiotic resistance in bacteria, and the theory of natural selection being widely accepted alongside genetic evidence.
+How do fossils form? ~~ Parts of organisms not decaying (lack of oxygen, moisture or warmth), parts replaced by minerals as they decay, or traces like footprints preserved in rock layers.
+Why is the fossil record incomplete? ~~ Early life forms were soft-bodied so left few traces; many fossils were destroyed by geological activity; many have not yet been found.
+Name four factors that can cause extinction. ~~ New predators, new diseases, new, more successful competitors, and changes to the environment over geological time (or a catastrophic event).
+Describe selective breeding. ~~ Choose parents with the desired characteristic, breed them, select the best offspring and repeat over many generations. Risk: inbreeding reduces variation, making disease susceptibility and inherited defects more likely.
+(Higher) Describe the main steps of genetic engineering. ~~ Enzymes cut out the required gene; it is inserted into a vector (bacterial plasmid or virus); the vector inserts the gene into the target cells, often at an early stage of development.
+Give examples and concerns of genetic engineering. ~~ Examples: GM crops resistant to pests or with bigger yields; bacteria making human insulin. Concerns: effects on wild flowers and insects, and long-term health effects.
+(Biology only) Describe how adult cell cloning produced Dolly the sheep. ~~ Nucleus removed from an unfertilised egg; nucleus from an adult body cell inserted; electric shock makes it divide; embryo implanted into a surrogate; offspring is a clone of the body cell donor.
+What is the three-domain system and who proposed it? ~~ Carl Woese, based on chemical analysis: Archaea (primitive bacteria), Bacteria (true bacteria) and Eukaryota (protists, fungi, plants, animals).
+
+## 4.7
+What is an ecosystem? ~~ The interaction of a community of living organisms (biotic) with the non-living (abiotic) parts of their environment.
+What is interdependence? ~~ Species in a community depend on each other for food, shelter, pollination and seed dispersal; removing one species can affect the whole community.
+What do plants and animals compete for? ~~ Plants: light, space, water and mineral ions. Animals: food, mates and territory.
+What is a stable community? ~~ One where all species and environmental factors are in balance so population sizes stay fairly constant.
+Give examples of abiotic factors. ~~ Light intensity, temperature, moisture levels, soil pH and mineral content, wind intensity and direction, CO₂ levels for plants, oxygen levels for aquatic animals.
+Give examples of biotic factors. ~~ Availability of food, new predators arriving, new pathogens, and one species outcompeting another.
+Name the three types of adaptation with an example of each. ~~ Structural (thick fur), behavioural (migration), functional (camels producing little urine).
+What are extremophiles? ~~ Organisms that live in extreme environments, e.g. high temperature, high pressure or high salt concentration, such as bacteria in deep sea vents.
+Why do populations of predators and prey rise and fall in cycles? ~~ More prey means more food so predators increase; predators eat more prey so prey falls; then predators starve and fall. Predator peaks lag behind prey.
+What is a producer and why does a food chain start with one? ~~ A photosynthetic organism (plant or alga) that makes glucose, the source of all biomass in a food chain.
+What are the trophic levels in a food chain? ~~ Producers → primary consumers (herbivores) → secondary consumers → tertiary consumers (apex predators at the top).
+Required practical (sampling): how do you estimate a population using quadrats? ~~ Place quadrats at random coordinates (random number generator), count organisms in each, find the mean per m², and multiply by total area.
+A mean of 4 daisies per 0.25 m² quadrat is found in a 200 m² field. Estimate the population. ~~ Per m² = 4 ÷ 0.25 = 16. Population = 16 × 200 = 3200 daisies.
+Required practical (sampling): when do you use a transect? ~~ To study how distribution changes across a gradient (e.g. shade to sun): lay a tape line and place quadrats at regular intervals along it.
+Why must quadrats be placed randomly? ~~ To avoid bias, so the sample is representative of the whole area.
+Describe the carbon cycle. ~~ Photosynthesis removes CO₂ from the air; respiration by plants, animals and decomposers, and combustion of fuels, return CO₂ to the atmosphere.
+Describe the water cycle. ~~ Evaporation and transpiration form water vapour, which condenses and falls as precipitation, providing fresh water for plants and animals before draining to the sea.
+What is the role of decomposers? ~~ Bacteria and fungi break down dead matter, returning carbon to the atmosphere as CO₂ and mineral ions to the soil.
+(Biology only) What factors affect the rate of decay? ~~ Temperature, water availability and oxygen availability, which affect microorganism growth and enzyme activity.
+(Biology only) Required practical (decay): how do you measure the effect of temperature on decay? ~~ Milk with lipase and phenolphthalein (with sodium carbonate, pink); time until it turns colourless as fatty acids lower pH. Repeat at different temperatures; rate = 1 ÷ time.
+(Biology only) How do biogas generators work? ~~ Anaerobic decay of waste by microorganisms produces methane gas, used as a fuel.
+What is biodiversity and why is it important? ~~ The variety of all species on Earth or in an ecosystem. High biodiversity makes ecosystems more stable, as species are less dependent on one another for food and shelter.
+How does deforestation affect the environment? ~~ Less CO₂ absorbed by photosynthesis, more released by burning and decay, reduced biodiversity; done to grow cattle, rice or biofuel crops.
+Why is peat bog destruction harmful? ~~ Burning or decaying peat releases CO₂; destroying bogs reduces habitat and biodiversity.
+What are the biological consequences of global warming? ~~ Loss of habitat (rising sea levels), changes in species distribution, changes in migration patterns, reduced biodiversity.
+Give ways of maintaining biodiversity. ~~ Breeding programmes for endangered species, protecting rare habitats, reintroducing field margins and hedgerows, reducing deforestation and carbon emissions, recycling rather than landfill.
+(Biology only) Why is biomass lost between trophic levels? ~~ Not all material is eaten or digested (lost as faeces), some is lost as waste (CO₂, water, urea), and much is used in respiration.
+(Biology only) Calculate efficiency of transfer if biomass is 500 kg in producers and 40 kg in primary consumers. ~~ Efficiency = biomass transferred ÷ biomass available × 100 = 40 ÷ 500 × 100 = 8%.
+(Biology only) Describe the stages of the nitrogen cycle. ~~ Nitrogen-fixing bacteria convert N₂ to nitrogen compounds; decomposers make ammonia; nitrifying bacteria convert it to nitrates absorbed by plants; denitrifying bacteria return N₂ to air.
+(Biology only) How can fish stocks be maintained sustainably? ~~ Control net size (so young fish escape) and fishing quotas, so fish can breed and populations recover.

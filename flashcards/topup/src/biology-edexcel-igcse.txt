@@ -1,0 +1,673 @@
+deck: Biology|Edexcel IGCSE|gcse
+
+## 1.1
+List the eight characteristics shared by living organisms. ~~ Nutrition, respiration, excretion, response to surroundings, movement, control of internal conditions, reproduction, growth and development.
+What is meant by excretion as a characteristic of life? ~~ Removal of metabolic waste products (e.g. CO2, urea) made inside the organism's cells.
+Why is egestion not the same as excretion? ~~ Egestion removes undigested food (faeces) that was never part of the body's metabolism; excretion removes waste made by metabolic reactions.
+Name the five groups of organisms studied in 4BI1. ~~ Plants, animals, fungi, protoctists, bacteria (plus viruses, which are not living organisms).
+Give three features of plants. ~~ Multicellular; cells contain chloroplasts and photosynthesise; cellulose cell walls; store carbohydrate as starch or sucrose.
+Give two named examples of plants. ~~ Flowering plants such as a cereal (e.g. maize) and a herbaceous legume (e.g. peas or beans).
+Give three features of animals. ~~ Multicellular; no chloroplasts so cannot photosynthesise; no cell walls; usually have nervous coordination and can move; store carbohydrate as glycogen.
+Give two named examples of animals. ~~ A mammal (e.g. human) and an insect (e.g. housefly or mosquito).
+How do animals store carbohydrate? ~~ As glycogen.
+Give the key features of fungi. ~~ Cannot photosynthesise; body of thread-like hyphae forming a mycelium; cell walls of chitin; feed by saprotrophic nutrition; may store glycogen.
+What is saprotrophic nutrition? ~~ Secreting extracellular digestive enzymes onto dead or decaying organic matter and absorbing the soluble products.
+Name two examples of fungi. ~~ Mucor (multicellular, hyphae) and yeast (single-celled).
+What are hyphae and a mycelium? ~~ Hyphae are thread-like structures making up a fungus; a mycelium is the network of many hyphae.
+What material makes up fungal cell walls? ~~ Chitin.
+Give the key features of bacteria. ~~ Microscopic single cells; no nucleus, with a circular chromosome of DNA; may have plasmids; cell wall, cell membrane and cytoplasm; some photosynthesise but most feed on other organisms.
+What is a plasmid? ~~ A small circular ring of DNA found in bacterial cells, separate from the main chromosome.
+Name two example bacteria and their significance. ~~ Lactobacillus bulgaricus (rod-shaped, used to make yoghurt) and Pneumococcus (spherical, causes pneumonia).
+Give the key features of protoctists. ~~ Microscopic single-celled organisms with a nucleus; some are plant-like with chloroplasts, others animal-like.
+Name two examples of protoctists. ~~ Amoeba (animal-like, lives in pond water) and Chlorella (plant-like, has chloroplasts); Plasmodium causes malaria.
+Give the key features of viruses. ~~ Small particles, smaller than bacteria; parasitic and can only reproduce inside living cells; protein coat around DNA or RNA; no cellular structure.
+Why are viruses not considered living organisms? ~~ They are not cells and can only reproduce inside a host's living cells; they show no independent nutrition, respiration or excretion.
+Name three examples of viruses. ~~ Tobacco mosaic virus (stops chloroplast formation, discoloured leaves), influenza virus (flu) and HIV (causes AIDS).
+What is a pathogen? ~~ A microorganism that causes disease.
+Give one example of a pathogen from each of fungi, bacteria, protoctists and viruses. ~~ Fungi: athlete's foot fungus; bacteria: Pneumococcus; protoctists: Plasmodium; viruses: HIV or influenza.
+Which group has cells with a nucleus but is mostly unicellular? ~~ Protoctists.
+Exam trap: do all bacteria lack a cell wall? ~~ No. Bacteria have a cell wall (not made of cellulose); they lack a nucleus, not a wall.
+How does the cell wall differ between plants, fungi and bacteria? ~~ Plants: cellulose; fungi: chitin; bacteria: a wall made of different polymers (not cellulose or chitin).
+Which organisms store carbohydrate as starch and which as glycogen? ~~ Plants store starch (or sucrose); animals and some fungi store glycogen.
+How is Plasmodium transmitted to humans? ~~ By the bite of an infected female Anopheles mosquito, which acts as a vector.
+Why is yeast classified as a fungus despite being single-celled? ~~ It has a nucleus, a cell wall of chitin, cannot photosynthesise and feeds saprotrophically like other fungi.
+
+## 2.1
+State the levels of organisation from smallest to largest. ~~ Organelles, cells, tissues, organs, organ systems, organism.
+Define a tissue. ~~ A group of similar cells working together to perform a particular function, e.g. muscle tissue.
+Define an organ. ~~ A structure made of several different tissues working together to perform a specific function, e.g. the heart or leaf.
+Define an organ system. ~~ A group of organs working together to carry out a function, e.g. the digestive system.
+What is the function of the nucleus? ~~ Contains genetic material (chromosomes of DNA) that controls the activities of the cell.
+What is the function of the cytoplasm? ~~ Site of most chemical reactions in the cell; contains enzymes and organelles.
+What is the function of the cell membrane? ~~ Controls which substances enter and leave the cell; partially permeable.
+What is the function of the mitochondria? ~~ Site of aerobic respiration, releasing energy for the cell.
+What is the function of ribosomes? ~~ Site of protein synthesis.
+What is the function of chloroplasts? ~~ Contain chlorophyll which absorbs light energy for photosynthesis.
+What is the function of the cell wall in plant cells? ~~ Made of cellulose; strengthens and supports the cell and stops it bursting when it takes in water.
+What is the function of the permanent vacuole? ~~ Contains cell sap; keeps the cell turgid to support the plant.
+Which structures are found in plant cells but not animal cells? ~~ Cellulose cell wall, chloroplasts and a large permanent vacuole containing cell sap.
+Which organelles are found in both plant and animal cells? ~~ Nucleus, cytoplasm, cell membrane, mitochondria and ribosomes.
+Exam trap: do all plant cells contain chloroplasts? ~~ No. Root hair cells and other cells not exposed to light lack chloroplasts.
+State the magnification formula. ~~ Magnification = image size ÷ actual (real) size, with both in the same units.
+Calculate the magnification if image size is 12 mm and real size is 0.04 mm. ~~ Magnification = image ÷ real = 12 ÷ 0.04 = ×300.
+A cell is 50 µm long and appears 25 mm long in a drawing. Calculate the magnification. ~~ Convert 25 mm to 25 000 µm. Magnification = 25 000 ÷ 50 = ×500.
+An image is 6 mm wide at ×400 magnification. What is the actual width in µm? ~~ Actual = image ÷ magnification = 6 ÷ 400 = 0.015 mm = 15 µm.
+How many micrometres are in one millimetre? ~~ 1000 µm = 1 mm (and 1000 nm = 1 µm).
+What is cell differentiation? ~~ The process by which a cell becomes specialised, developing structures suited to a particular function.
+Why is cell differentiation important? ~~ It produces specialised cells that form tissues and organs, allowing a multicellular organism to carry out many different functions efficiently.
+What is a stem cell? ~~ An undifferentiated cell that can divide to produce more stem cells and can differentiate into many types of specialised cell.
+Where are stem cells found? ~~ Embryos (embryonic stem cells), adult tissues such as bone marrow, and plant meristems at root and shoot tips.
+Give two advantages of using stem cells in medicine. ~~ Could replace damaged or diseased cells (e.g. diabetes, paralysis); may grow tissues or organs for transplant, reducing waiting lists.
+Give two disadvantages or concerns about using stem cells in medicine. ~~ Ethical objections to destroying embryos; risk of rejection, infection from contaminated cells, or uncontrolled division causing tumours.
+How is a palisade cell adapted for its function? ~~ Packed with many chloroplasts near the top surface of the leaf to absorb maximum light for photosynthesis.
+How is a red blood cell adapted to carry oxygen? ~~ Contains haemoglobin; no nucleus for more haemoglobin; biconcave shape gives a large surface area for diffusion.
+How does a root hair cell's structure suit its function? ~~ Long projection increases surface area for absorbing water and mineral ions; many mitochondria for active transport.
+Why must a cell contain both a nucleus and ribosomes to make enzymes? ~~ The nucleus holds the DNA code for the enzyme; ribosomes use that code to assemble the protein.
+
+## 2.2
+Which elements are found in carbohydrates? ~~ Carbon, hydrogen and oxygen.
+Which elements are found in proteins? ~~ Carbon, hydrogen, oxygen and nitrogen (sometimes sulfur).
+Which elements are found in lipids? ~~ Carbon, hydrogen and oxygen (with much less oxygen than carbohydrates).
+What are the building blocks of starch and glycogen? ~~ Glucose molecules (simple sugars) joined together.
+What are the building blocks of proteins? ~~ Amino acids.
+What are the building blocks of lipids? ~~ Fatty acids and glycerol (three fatty acids per glycerol).
+Describe the test for starch. ~~ Add iodine solution; colour changes from orange-brown to blue-black if starch is present.
+Describe the test for glucose (reducing sugar). ~~ Add Benedict's solution and heat in a water bath (about 80 °C); blue turns green, yellow, orange or brick-red if present.
+Describe the test for protein. ~~ Add biuret reagent (or sodium hydroxide then copper sulfate); blue turns purple/lilac if protein is present.
+Describe the test for lipids. ~~ Shake sample with ethanol, then add to water; a cloudy white emulsion forms if lipid is present.
+Exam trap: what must you do for the Benedict's test that is not needed for the others? ~~ Heat the mixture in a hot water bath; without heating, no colour change occurs.
+What is an enzyme? ~~ A protein that acts as a biological catalyst, speeding up chemical reactions without being used up.
+What is a biological catalyst? ~~ A substance in living organisms that increases the rate of a reaction without itself being changed.
+What is the active site of an enzyme? ~~ The region of the enzyme with a specific shape where the substrate binds.
+Why is each enzyme specific to one substrate? ~~ Only a substrate with a complementary shape fits the active site to form an enzyme–substrate complex (lock and key).
+Describe the effect of increasing temperature up to the optimum on enzyme activity. ~~ Molecules gain kinetic energy, move faster and collide more often, so more enzyme–substrate complexes form and the rate increases.
+What happens to an enzyme above its optimum temperature? ~~ Bonds holding its shape break, the active site changes shape and the substrate no longer fits; the enzyme is denatured.
+What does denatured mean? ~~ The enzyme's active site has permanently changed shape so it can no longer bind its substrate.
+Exam trap: are enzymes killed at high temperatures? ~~ No. Enzymes are not alive; they are denatured, not killed.
+What is the optimum temperature for most human enzymes? ~~ About 37 °C (body temperature).
+How does pH affect enzyme activity? ~~ Each enzyme has an optimum pH; pH far from this alters the shape of the active site, denaturing the enzyme.
+Give the optimum pH of pepsin and of amylase. ~~ Pepsin about pH 2 (stomach); salivary amylase about pH 7.
+Describe how to investigate the effect of temperature on amylase activity. ~~ Mix starch and amylase at a set temperature in a water bath; sample every 30 s onto iodine on a spotting tile; time until iodine stays orange-brown. Repeat at other temperatures.
+In the amylase experiment, what are the independent, dependent and control variables? ~~ Independent: temperature (or pH); dependent: time for starch to disappear; controls: volume and concentration of starch and amylase, pH (or temperature).
+Why are the starch and amylase solutions left in the water bath before mixing? ~~ So both reach the required temperature before the reaction starts, giving an accurate result.
+How is the rate calculated from the time taken for starch to disappear? ~~ Rate = 1 ÷ time. E.g. 120 s gives rate = 1 ÷ 120 = 0.0083 s⁻¹.
+In the amylase practical, what is the role of buffer solution? ~~ Keeps the pH constant (or sets the pH being tested) so pH does not affect the results.
+Why is a spotting tile with iodine used in the amylase practical? ~~ To test samples for starch at intervals; when iodine stays orange-brown, all starch has been broken down.
+What enzyme breaks down starch, and into what? ~~ Amylase breaks starch into maltose (and then maltase converts maltose to glucose).
+Why do enzymes not work well at very low temperatures, even though they are not denatured? ~~ Molecules have little kinetic energy, so there are fewer successful collisions between enzyme and substrate.
+
+## 2.3
+Define diffusion. ~~ The net movement of particles from a region of higher concentration to a region of lower concentration, down a concentration gradient. It is passive.
+Define osmosis. ~~ The net movement of water molecules from a region of higher water potential (dilute solution) to lower water potential, through a partially permeable membrane.
+Define active transport. ~~ Movement of substances from a lower to a higher concentration, against a concentration gradient, using energy from respiration.
+Why does active transport require mitochondria? ~~ It needs energy released by respiration, which mainly occurs in mitochondria.
+Give an example of active transport in plants. ~~ Root hair cells absorbing mineral ions (e.g. nitrate) from soil where they are less concentrated than in the cell.
+Give an example of active transport in humans. ~~ Uptake of glucose by cells of the small intestine villi (and glucose reabsorption in the kidney).
+List the factors that affect the rate of movement of substances into and out of cells. ~~ Surface area to volume ratio, distance (diffusion path), temperature and concentration gradient.
+How does surface area to volume ratio affect diffusion? ~~ A larger ratio means more membrane relative to volume, so substances diffuse in faster relative to the cell's needs.
+Calculate the SA:V ratio of a 2 cm cube. ~~ SA = 6 × 2 × 2 = 24 cm²; V = 2 × 2 × 2 = 8 cm³; ratio = 24 : 8 = 3 : 1.
+Calculate the SA:V ratio of a 1 cm cube. ~~ SA = 6 cm²; V = 1 cm³; ratio = 6 : 1, larger than bigger cubes.
+Why do large multicellular organisms need exchange surfaces and transport systems? ~~ Their small SA:V ratio and long diffusion distances mean diffusion alone across the body surface is too slow to supply all cells.
+How does temperature affect the rate of diffusion? ~~ Higher temperature gives particles more kinetic energy, so they move faster and diffusion is quicker.
+How does a steeper concentration gradient affect diffusion? ~~ It increases the rate of diffusion.
+What happens to an animal cell placed in pure water? ~~ Water enters by osmosis; the cell swells and may burst (lysis) because it has no cell wall.
+What happens to a plant cell placed in pure water? ~~ Water enters by osmosis; vacuole swells and cell becomes turgid; the cell wall prevents bursting.
+What is plasmolysis? ~~ When a plant cell loses water by osmosis in a concentrated solution, the cytoplasm and membrane shrink and pull away from the cell wall.
+What does turgid mean? ~~ A plant cell that is full of water, with cytoplasm pushing against the cell wall, giving support.
+What does flaccid mean? ~~ A plant cell that has lost water and is soft; the cytoplasm no longer presses against the wall.
+Describe the potato cylinder osmosis practical. ~~ Cut equal cylinders, blot and weigh; place in different sucrose concentrations for a set time (e.g. 30 min); blot dry and reweigh; calculate percentage change in mass.
+Why calculate percentage change in mass rather than change in mass? ~~ The cylinders may start at different masses, so percentage change allows fair comparison.
+A potato piece goes from 2.50 g to 2.20 g. Calculate the percentage change in mass. ~~ Change = 2.20 − 2.50 = −0.30 g; % change = −0.30 ÷ 2.50 × 100 = −12%.
+How do you find the concentration of potato cell sap from an osmosis graph? ~~ Plot % change in mass against concentration; where the line crosses zero, the solution has the same water potential as the cells.
+Why are potato cylinders blotted before weighing? ~~ To remove surface solution so only water absorbed into the tissue is measured.
+Describe a practical to investigate diffusion using agar cubes. ~~ Cut different-sized cubes of agar containing indicator (e.g. phenolphthalein); place in acid; time how long colour takes to disappear completely. Smaller cubes change faster.
+What is the dependent variable in the agar cube diffusion experiment? ~~ Time for the colour to disappear completely (the cube to change colour throughout).
+Describe a simple practical to show osmosis using visking tubing. ~~ Fill visking tubing with sugar solution, attach a capillary tube, place in water; the liquid rises up the tube as water enters by osmosis.
+Exam trap: in osmosis answers, why should you avoid saying water moves 'from high concentration to low concentration'? ~~ It is ambiguous; say water moves from a dilute to a more concentrated solution (higher to lower water potential) across a partially permeable membrane.
+What is a partially permeable membrane? ~~ A membrane that allows small molecules such as water through but not larger molecules such as sucrose.
+Which processes require energy from respiration: diffusion, osmosis or active transport? ~~ Only active transport. Diffusion and osmosis are passive.
+How does a shorter diffusion distance affect the rate of diffusion? ~~ It increases the rate, so exchange surfaces are often only one cell thick.
+
+## 2.4
+Write the word equation for photosynthesis. ~~ Carbon dioxide + water → glucose + oxygen (in the presence of light and chlorophyll).
+Write the balanced symbol equation for photosynthesis. ~~ 6CO2 + 6H2O → C6H12O6 + 6O2.
+What is the role of chlorophyll in photosynthesis? ~~ Absorbs light energy and converts it to chemical energy stored in glucose.
+Name the limiting factors of photosynthesis. ~~ Carbon dioxide concentration, light intensity and temperature.
+What is a limiting factor? ~~ The factor in shortest supply that limits the rate of a reaction; increasing it increases the rate.
+Explain why the rate of photosynthesis levels off as light intensity increases. ~~ Another factor, such as CO2 concentration or temperature, becomes limiting.
+How is a leaf adapted for photosynthesis? ~~ Large surface area, thin for short diffusion distance, chloroplasts in palisade layer, stomata for gas exchange, air spaces in spongy mesophyll, veins (xylem) supply water.
+Why do plants need magnesium ions? ~~ To make chlorophyll; deficiency causes yellow leaves (chlorosis).
+Why do plants need nitrate ions? ~~ To make amino acids and proteins; deficiency causes stunted growth.
+Describe how to test a leaf for starch. ~~ Boil leaf in water (kills cells), boil in ethanol in a water bath (removes chlorophyll), rinse in warm water to soften, add iodine; blue-black shows starch.
+Why must ethanol be heated in a water bath, not over a flame? ~~ Ethanol is flammable.
+How do you show that chlorophyll is needed for photosynthesis? ~~ Destarch a variegated plant, expose to light, then test a leaf for starch; only the green areas turn blue-black.
+How do you show that light is needed for photosynthesis? ~~ Destarch the plant in the dark, cover part of a leaf with foil, expose to light, then starch test; covered part stays orange-brown.
+How do you show that CO2 is needed for photosynthesis? ~~ Destarch plant, enclose a leaf with soda lime (absorbs CO2) in a sealed bag, expose to light; starch test shows no starch.
+What does destarching a plant mean and why is it done? ~~ Keeping it in the dark for 48 hours so stored starch is used up; any starch found later must have been made during the experiment.
+Describe how to investigate the effect of light intensity on photosynthesis using pondweed. ~~ Place pondweed in water with sodium hydrogencarbonate at measured distances from a lamp; count bubbles or measure gas volume per minute at each distance.
+Why is a heat shield or water bath used in the pondweed experiment? ~~ Keeps temperature constant so only light intensity changes.
+Name the components of a balanced diet. ~~ Carbohydrates, proteins, lipids, vitamins (A, C, D), minerals (calcium, iron), water and dietary fibre.
+State the functions of vitamin C and its deficiency disease. ~~ Needed to make collagen for skin and connective tissue; deficiency causes scurvy.
+State the function of iron and its deficiency disease. ~~ Needed to make haemoglobin in red blood cells; deficiency causes anaemia.
+State the functions of calcium and vitamin D. ~~ Both needed for strong bones and teeth; vitamin D helps calcium absorption. Deficiency causes rickets.
+Why is dietary fibre important? ~~ Adds bulk to food, helping peristalsis move food through the gut and preventing constipation.
+How do energy requirements vary in humans? ~~ Increase with activity level and age to adulthood; males usually need more; pregnant women need more energy.
+Name the enzyme, substrate and product for carbohydrate digestion. ~~ Amylase digests starch to maltose; maltase digests maltose to glucose.
+Name the enzyme, substrate and products for protein digestion. ~~ Proteases (e.g. pepsin, trypsin) digest proteins into amino acids.
+Name the enzyme, substrate and products for lipid digestion. ~~ Lipase digests lipids into fatty acids and glycerol.
+What are the roles of bile? ~~ Made in the liver and stored in the gall bladder; neutralises stomach acid and emulsifies fats, increasing surface area for lipase.
+Describe the order of the alimentary canal. ~~ Mouth, oesophagus, stomach, small intestine (duodenum then ileum), large intestine (colon then rectum), anus.
+What is peristalsis? ~~ Waves of contraction of circular and longitudinal muscles in the gut wall that push food along the alimentary canal.
+How are villi adapted for absorption? ~~ Large surface area (microvilli), wall one cell thick, good blood supply maintains a concentration gradient, lacteal absorbs fatty acids and glycerol.
+
+## 2.5
+Why do living organisms respire? ~~ To release energy from glucose for metabolic processes such as muscle contraction, active transport, growth and keeping warm.
+Write the word equation for aerobic respiration. ~~ Glucose + oxygen → carbon dioxide + water (energy released).
+Write the balanced symbol equation for aerobic respiration. ~~ C6H12O6 + 6O2 → 6CO2 + 6H2O.
+Where does aerobic respiration take place? ~~ Mainly in the mitochondria.
+Exam trap: does respiration produce energy? ~~ No. Energy cannot be made; respiration releases energy stored in glucose. Never write 'produces energy'.
+What is ATP? ~~ The molecule that provides energy for cells; respiration releases energy used to make ATP.
+Write the word equation for anaerobic respiration in animals. ~~ Glucose → lactic acid (small amount of energy released).
+Write the word equation for anaerobic respiration in yeast and plants. ~~ Glucose → ethanol + carbon dioxide (small amount of energy released).
+Compare the energy released by aerobic and anaerobic respiration. ~~ Aerobic releases much more energy per glucose molecule because glucose is fully broken down; anaerobic breakdown is incomplete.
+When does anaerobic respiration occur in human muscles? ~~ During vigorous exercise when oxygen cannot be supplied fast enough for aerobic respiration.
+What is oxygen debt? ~~ The extra oxygen needed after exercise to break down lactic acid that built up during anaerobic respiration.
+Why does heavy breathing continue after exercise has stopped? ~~ To repay the oxygen debt, supplying oxygen to break down lactic acid in the liver.
+What is fermentation by yeast used for? ~~ Making bread (CO2 makes dough rise) and alcoholic drinks (ethanol).
+Give two differences between aerobic and anaerobic respiration. ~~ Aerobic needs oxygen and anaerobic does not; aerobic releases more energy; aerobic makes CO2 and water, anaerobic makes lactic acid (or ethanol and CO2).
+Describe a practical to investigate CO2 production by germinating seeds. ~~ Seal germinating seeds in a tube with hydrogencarbonate indicator (not touching); indicator changes from red to yellow as CO2 is released. Use boiled seeds as a control.
+Why are boiled seeds used as a control in respiration experiments? ~~ Boiling kills the seeds and denatures enzymes so they cannot respire, showing changes are due to respiration.
+Describe how to show that respiring organisms release heat. ~~ Place germinating seeds in a vacuum flask with a thermometer, and boiled (disinfected) seeds in another; the live seeds' temperature rises.
+Why are the boiled seeds disinfected in the heat release experiment? ~~ To kill microorganisms that would respire on the dead seeds and release heat, which would affect the result.
+Why are vacuum flasks used in the seed respiration experiment? ~~ To insulate the seeds and reduce heat loss, so the temperature rise can be measured.
+Why is the vacuum flask plugged with cotton wool and placed upside down? ~~ Cotton wool lets gases exchange so seeds can respire aerobically; heat rises, so inverting reduces heat loss through the opening.
+What colour is hydrogencarbonate indicator at atmospheric, high and low CO2? ~~ Orange-red at atmospheric CO2; yellow at high CO2; purple at low CO2.
+What is the role of limewater in respiration experiments? ~~ Detects CO2: limewater turns cloudy (milky) when CO2 is bubbled through it.
+How could you investigate the effect of temperature on respiration in yeast? ~~ Mix yeast and glucose solution at different water bath temperatures; measure CO2 released (gas volume or bubbles per minute).
+Name a control variable when investigating temperature and yeast respiration. ~~ Concentration and volume of glucose, mass of yeast, or the time allowed for gas collection.
+Do plants respire at night only? ~~ No. Plants respire all the time, day and night; photosynthesis only happens in the light.
+Name the waste product of anaerobic respiration in muscles and its effect. ~~ Lactic acid; builds up causing muscle fatigue and cramp.
+Why is anaerobic respiration useful despite releasing less energy? ~~ It releases energy quickly when oxygen is in short supply, allowing muscles to keep working for a short time.
+Why are respiration and combustion similar? ~~ Both break down glucose (fuel) using oxygen to release energy and produce CO2 and water.
+How does a respirometer measure the rate of respiration? ~~ Organisms absorb O2; soda lime absorbs the CO2 released; volume decreases, so a coloured liquid moves along a capillary tube.
+In a respirometer, what is the role of soda lime? ~~ It absorbs carbon dioxide, so any change in volume is due to oxygen uptake.
+
+## 2.6
+Why do plants need gas exchange? ~~ To take in CO2 and release O2 for photosynthesis, and take in O2 and release CO2 for respiration.
+How does gas exchange in a leaf depend on light intensity? ~~ In bright light photosynthesis exceeds respiration so net CO2 uptake and O2 release; in dark only respiration so net CO2 release.
+What is the compensation point? ~~ The light intensity at which the rate of photosynthesis equals the rate of respiration, so there is no net gas exchange.
+How is a leaf adapted for gas exchange? ~~ Large surface area, thin, stomata allow gases in and out, air spaces in spongy mesophyll give large internal surface area for diffusion.
+What controls the opening and closing of stomata? ~~ Guard cells; when turgid the stoma opens, when flaccid it closes.
+Describe the hydrogencarbonate indicator experiment on leaf gas exchange. ~~ Tubes with leaves and indicator: one in light, one covered in foil, one gauze-shaded, plus a no-leaf control. Light: purple; dark: yellow; shaded: stays orange-red.
+Why is a tube with no leaf used in the hydrogencarbonate indicator experiment? ~~ It is a control, showing the colour change is caused by the leaf and not by light alone.
+Describe the structure of the human gas exchange system in order of air flow. ~~ Nose/mouth, trachea, bronchi, bronchioles, alveoli; protected by ribs and intercostal muscles, with the diaphragm below.
+What is the role of the intercostal muscles and diaphragm in breathing in? ~~ External intercostals contract, ribs move up and out; diaphragm contracts and flattens; volume of thorax increases, pressure falls, and air enters.
+What happens during breathing out at rest? ~~ Intercostal muscles and diaphragm relax; ribs move down and in, diaphragm domes upwards; thorax volume decreases, pressure rises and air is forced out.
+How are alveoli adapted for gas exchange? ~~ Huge total surface area; walls one cell thick for short diffusion distance; moist lining; rich capillary network and ventilation maintain steep concentration gradients.
+Why does a good blood supply help gas exchange in the alveoli? ~~ Blood constantly removes O2 and brings CO2, keeping a steep concentration gradient for diffusion.
+What is the role of the ribs? ~~ Protect the lungs and heart and, moved by intercostal muscles, help change thorax volume.
+What is the role of cartilage rings in the trachea? ~~ Keep the trachea open so air can flow freely, even when pressure inside falls.
+What do goblet cells and ciliated cells do in the airways? ~~ Goblet cells make mucus that traps dust and pathogens; cilia beat to sweep the mucus up to the throat to be swallowed.
+What is the role of the pleural membranes? ~~ They line the lungs and thorax; pleural fluid reduces friction during breathing.
+How does tar in cigarette smoke affect health? ~~ Tar contains carcinogens that cause lung cancer; it also damages cilia and builds up mucus.
+How does carbon monoxide in cigarette smoke affect the body? ~~ Combines irreversibly with haemoglobin, reducing the oxygen-carrying capacity of the blood.
+How does smoking cause coronary heart disease? ~~ Chemicals (e.g. nicotine) damage artery walls and raise blood pressure, leading to fatty deposits and narrowed coronary arteries.
+How does smoking lead to bronchitis and emphysema? ~~ Damaged cilia let mucus build up causing infection (bronchitis); alveolar walls break down, reducing surface area (emphysema).
+What is the effect of nicotine? ~~ Addictive; narrows blood vessels and increases heart rate and blood pressure.
+Describe a practical to investigate the effect of exercise on breathing rate. ~~ Count breaths per minute at rest, then after exercise for set times (e.g. 1, 2, 3 min of stepping); repeat and calculate means.
+Why does breathing rate increase during exercise? ~~ Muscles respire faster so need more O2 and produce more CO2; faster, deeper breathing increases gas exchange.
+Give two control variables for a breathing-rate exercise investigation. ~~ Type and intensity of exercise, duration of exercise, same person or similar age and fitness.
+Compare the composition of inhaled and exhaled air. ~~ Inhaled: about 21% O2, 0.04% CO2. Exhaled: about 16% O2, 4% CO2, more water vapour and warmer.
+A person takes 15 breaths per minute with 0.5 dm³ per breath. Calculate ventilation rate. ~~ Ventilation = 15 × 0.5 = 7.5 dm³ per minute.
+Why is the lung surface moist? ~~ Gases dissolve in the moisture before diffusing across the alveolar wall.
+In which direction do O2 and CO2 diffuse at the alveolus? ~~ O2 diffuses from the alveolar air into the blood; CO2 diffuses from the blood into the alveolar air.
+Why are fish and leaves not suited to gas exchange through their whole body surface like single cells? ~~ They are too large; their SA:V ratio is small, so specialised exchange surfaces (gills, spongy mesophyll) are needed.
+Exam trap: does the diaphragm contract during exhalation at rest? ~~ No. At rest the diaphragm relaxes during exhalation; it contracts (flattens) during inhalation.
+
+## 2.7
+Why do multicellular organisms need a transport system? ~~ Their small SA:V ratio and large size mean diffusion is too slow to supply all cells with substances and remove waste.
+What does xylem transport? ~~ Water and mineral ions from the roots to the rest of the plant, in one direction (upwards).
+What does phloem transport? ~~ Sucrose and amino acids from the leaves to other parts of the plant, in both directions (translocation).
+What is translocation? ~~ The movement of sucrose and amino acids through the phloem from where they are made to where they are used or stored.
+How is water absorbed by root hair cells? ~~ By osmosis, from the dilute soil water into the more concentrated cell sap; the root hair gives a large surface area.
+Define transpiration. ~~ The evaporation of water from the surface of mesophyll cells and its diffusion as vapour out of the leaf through the stomata.
+What is the transpiration stream? ~~ The continuous flow of water from roots up the xylem to the leaves, pulled by water loss from the leaves.
+How do light intensity, temperature, humidity and wind affect transpiration? ~~ Light and temperature increase it; humidity decreases it (smaller gradient); wind increases it (removes moist air near the leaf).
+Why does light intensity increase the rate of transpiration? ~~ More light opens more stomata, so more water vapour can diffuse out.
+Describe how a potometer is used to measure transpiration. ~~ Set up under water to avoid air bubbles; seal the shoot; measure the distance an air bubble moves in a capillary tube in a set time.
+Exam trap: what does a potometer actually measure? ~~ The rate of water uptake by the shoot, which is assumed to approximately equal the rate of transpiration.
+A bubble moves 30 mm in 5 minutes. Calculate the rate of water uptake. ~~ Rate = 30 ÷ 5 = 6 mm per minute.
+What are the four main components of blood? ~~ Plasma, red blood cells, white blood cells (phagocytes and lymphocytes) and platelets.
+What is the role of plasma? ~~ Transports CO2, digested food (glucose, amino acids), urea, hormones and heat around the body.
+How do phagocytes defend the body? ~~ They engulf and digest pathogens by phagocytosis.
+How do lymphocytes defend the body? ~~ They produce antibodies that bind to specific antigens on pathogens, helping to destroy them.
+How does vaccination give immunity? ~~ A vaccine contains harmless antigens; lymphocytes make antibodies and memory cells, so a later infection triggers a faster, larger antibody response.
+What is the role of platelets in blood clotting? ~~ Platelets trigger conversion of soluble fibrinogen to insoluble fibrin, forming a mesh that traps red blood cells to make a clot.
+Why is blood clotting important? ~~ It prevents blood loss and stops pathogens entering through the wound.
+Describe the route of blood through the heart from the vena cava. ~~ Vena cava, right atrium, tricuspid valve, right ventricle, pulmonary artery, lungs, pulmonary vein, left atrium, bicuspid valve, left ventricle, aorta.
+Why is the left ventricle wall thicker than the right? ~~ It must pump blood at high pressure around the whole body, whereas the right ventricle pumps only to the nearby lungs.
+What is the function of valves in the heart and veins? ~~ They prevent the backflow of blood, keeping it flowing in one direction.
+How does heart rate change during exercise and why? ~~ It increases to deliver more O2 and glucose to respiring muscles and remove CO2 faster.
+How does adrenaline affect heart rate? ~~ Adrenaline increases heart rate, preparing the body for 'fight or flight'.
+Name the risk factors for coronary heart disease. ~~ Smoking, high-fat diet (high cholesterol), high blood pressure, lack of exercise, obesity, stress and genetic factors.
+How are arteries adapted to their function? ~~ Thick, muscular, elastic walls withstand and maintain high pressure; narrow lumen.
+How are veins adapted to their function? ~~ Thin walls, wide lumen and valves to keep low-pressure blood flowing back to the heart.
+How are capillaries adapted to their function? ~~ Walls one cell thick for short diffusion distance; very narrow and highly branched for large surface area.
+Name the blood vessels to and from the kidneys and liver. ~~ Kidneys: renal artery and renal vein. Liver: hepatic artery and hepatic vein; hepatic portal vein brings blood from the gut.
+Why is the human circulatory system described as double? ~~ Blood passes through the heart twice per circuit: pulmonary circuit to the lungs and systemic circuit to the body.
+
+## 2.8
+Name the waste products excreted by plants. ~~ Oxygen from photosynthesis and carbon dioxide from respiration.
+Name the excretory organs in humans. ~~ Lungs (CO2), kidneys (urea, excess water and ions) and skin (sweat containing water, salts, a little urea).
+What are the two main functions of the kidneys? ~~ Excretion of urea and osmoregulation (controlling the water content of the blood).
+Where is urea made? ~~ In the liver, from the breakdown of excess amino acids (deamination).
+Describe the structure of the urinary system. ~~ Two kidneys, each with a renal artery and vein; ureters carry urine to the bladder; urethra carries urine out of the body.
+What is a nephron? ~~ The functional unit of the kidney; a tiny tubule where blood is filtered and urine is formed.
+Name the parts of the nephron in order. ~~ Bowman's capsule (around glomerulus), proximal convoluted tubule, loop of Henle, distal convoluted tubule, collecting duct.
+What is ultrafiltration? ~~ Small molecules (water, glucose, urea, salts) are forced out of the glomerulus into Bowman's capsule under high pressure.
+Why is blood pressure high in the glomerulus? ~~ The afferent arteriole bringing blood in is wider than the efferent arteriole taking blood away.
+Why are proteins and blood cells not found in the glomerular filtrate? ~~ They are too large to pass through the capillary walls and basement membrane.
+Where does selective reabsorption of glucose occur? ~~ In the proximal convoluted tubule, by active transport back into the blood.
+Why is there no glucose in the urine of a healthy person? ~~ All glucose is selectively reabsorbed in the proximal convoluted tubule.
+What is the role of the loop of Henle? ~~ Creates a high salt concentration in the medulla so water can be reabsorbed from the collecting duct by osmosis.
+Where is water reabsorbed in the nephron? ~~ Mainly in the collecting duct (and proximal tubule), by osmosis into the surrounding tissue and blood.
+Which hormone controls the water content of the blood? ~~ ADH (antidiuretic hormone), released by the pituitary gland.
+What happens when the blood is too concentrated (dehydration)? ~~ Pituitary releases more ADH; collecting ducts become more permeable; more water reabsorbed; small volume of concentrated urine.
+What happens when the blood is too dilute? ~~ Less ADH released; collecting ducts less permeable; less water reabsorbed; large volume of dilute urine.
+Which part of the brain detects blood water content? ~~ The hypothalamus, which signals the pituitary gland to release ADH.
+Name the substances in urine of a healthy person. ~~ Water, urea and salts (ions).
+Why is ADH an example of negative feedback? ~~ A change in blood water content triggers a response that reverses the change, returning it to normal.
+What is osmoregulation? ~~ Control of the water and salt balance of the body fluids.
+Why must urea be excreted? ~~ It is toxic and would damage cells if it built up in the blood.
+Compare blood in the renal artery and renal vein. ~~ Renal vein blood has less urea, less oxygen, more CO2 and regulated water and salt levels.
+A filtrate flows at 125 cm³/min and urine at 1 cm³/min. What percentage of water is reabsorbed? ~~ Reabsorbed = 124 cm³; 124 ÷ 125 × 100 = 99.2%.
+Exam trap: is urine stored in the kidney? ~~ No. Urine is stored in the bladder; ureters carry it from kidneys to bladder.
+Exam trap: does ADH cause more urine to be produced? ~~ No. ADH increases water reabsorption, producing less, more concentrated urine.
+What is the difference between the ureter and the urethra? ~~ Ureters carry urine from each kidney to the bladder; the single urethra carries urine from the bladder out of the body.
+Why do people produce more urine on a cold day? ~~ Less sweating, so more water stays in the blood; less ADH released and more dilute urine is made.
+Why might glucose appear in the urine of a person with untreated diabetes? ~~ Blood glucose is so high that not all glucose can be reabsorbed from the filtrate.
+What is the role of the skin in excretion? ~~ Sweat glands release sweat containing water, salts and small amounts of urea.
+
+## 2.9
+What is homeostasis? ~~ The maintenance of a constant internal environment, e.g. body temperature, blood glucose and water content.
+What is a stimulus? ~~ A change in the environment of an organism that can be detected.
+Why do organisms respond to stimuli? ~~ To increase their chances of survival, e.g. finding food or avoiding danger.
+What is a tropism? ~~ A growth response of a plant towards or away from a directional stimulus.
+What is phototropism? ~~ Plant growth in response to light; shoots grow towards light (positive phototropism).
+What is geotropism (gravitropism)? ~~ Plant growth in response to gravity; roots grow down (positive), shoots grow up (negative).
+Explain the role of auxin in the phototropic response of shoots. ~~ Auxin moves to the shaded side of the shoot tip and stimulates cell elongation there, so the shoot bends towards the light.
+Compare the nervous and hormonal systems. ~~ Nervous: electrical impulses, fast, short-lived, precise. Hormonal: chemicals in blood, slower, longer-lasting, widespread targets.
+What makes up the central nervous system? ~~ The brain and the spinal cord.
+Describe the pathway of a reflex arc. ~~ Stimulus, receptor, sensory neurone, relay neurone (in spinal cord), motor neurone, effector, response.
+What is a synapse? ~~ A gap between two neurones; a neurotransmitter diffuses across it to trigger an impulse in the next neurone.
+Why are reflex actions important? ~~ They are rapid and automatic, protecting the body from harm without conscious thought.
+What is an effector? ~~ A muscle or gland that brings about a response.
+How does the eye focus on a near object? ~~ Ciliary muscles contract, suspensory ligaments slacken, lens becomes fatter (more convex), refracting light more.
+How does the eye focus on a distant object? ~~ Ciliary muscles relax, suspensory ligaments tighten, lens is pulled thinner, refracting light less.
+How does the iris respond to bright light? ~~ Circular muscles contract and radial muscles relax, so the pupil becomes smaller and less light enters.
+How does the iris respond to dim light? ~~ Radial muscles contract and circular muscles relax, so the pupil widens and more light enters.
+State the functions of the cornea, retina and optic nerve. ~~ Cornea refracts light; retina contains light receptors (rods and cones); optic nerve carries impulses to the brain.
+How does the skin respond when body temperature rises? ~~ Sweating (evaporation removes heat), vasodilation of skin arterioles increases heat loss, hairs lie flat.
+How does the skin respond when body temperature falls? ~~ Vasoconstriction reduces blood flow to skin, sweating stops, shivering releases heat, hairs stand up to trap air.
+Exam trap: do blood vessels move up and down in the skin during vasodilation? ~~ No. Arterioles widen (vasodilation) or narrow (vasoconstriction); capillaries do not move.
+Which gland secretes adrenaline and what does it do? ~~ Adrenal glands; increases heart rate, breathing rate and blood glucose to prepare for fight or flight.
+Which gland secretes insulin and what does it do? ~~ Pancreas; lowers blood glucose by causing the liver to convert glucose to glycogen.
+What is the role of glucagon? ~~ Secreted by the pancreas when blood glucose is low; causes the liver to convert glycogen to glucose.
+Name the source and role of testosterone. ~~ Testes; controls male secondary sexual characteristics.
+Name the source and roles of oestrogen and progesterone. ~~ Ovaries; oestrogen develops female secondary sexual characteristics and repairs the uterus lining; progesterone maintains the uterus lining.
+Name the source and role of FSH and LH. ~~ Pituitary gland; FSH causes eggs to mature and oestrogen release; LH stimulates ovulation.
+Name the source and role of ADH. ~~ Pituitary gland; increases water reabsorption in the kidney collecting ducts.
+What is a hormone? ~~ A chemical messenger secreted by an endocrine gland into the blood, which carries it to target organs.
+Describe a practical to investigate reaction time. ~~ Partner drops a ruler between your thumb and finger without warning; record the distance before catching; repeat and convert distance to time using a table.
+
+## 3.1
+State three differences between sexual and asexual reproduction. ~~ Sexual: two parents, gametes fuse at fertilisation, offspring genetically varied. Asexual: one parent, no gametes or fusion, offspring genetically identical clones.
+What is fertilisation? ~~ The fusion of a male gamete nucleus with a female gamete nucleus to form a diploid zygote.
+Give one advantage of sexual reproduction. ~~ It produces genetic variation, so some offspring may survive environmental change or disease, allowing adaptation by natural selection.
+Give two advantages of asexual reproduction. ~~ Only one parent needed (no mate), and it is fast, producing many identical offspring suited to a stable environment.
+What is the function of the anther? ~~ Produces pollen grains, which contain the male gametes.
+What is the function of the stigma? ~~ Receives pollen grains during pollination.
+What is the function of the ovary in a flower? ~~ Contains the ovules (female gametes); develops into the fruit after fertilisation.
+What is the function of the sepals? ~~ Protect the flower while it is a bud.
+Define pollination. ~~ The transfer of pollen from an anther to a stigma.
+Compare the petals of insect-pollinated and wind-pollinated flowers. ~~ Insect-pollinated: large, brightly coloured, scented, with nectar to attract insects. Wind-pollinated: small, dull or absent, no scent or nectar.
+Compare the pollen of insect- and wind-pollinated flowers. ~~ Insect-pollinated: larger, sticky or spiky, smaller amounts. Wind-pollinated: small, smooth, light, produced in huge amounts.
+Describe the stigmas and anthers of a wind-pollinated flower. ~~ Large, feathery stigmas hang outside the flower to trap pollen; anthers hang outside on long filaments so wind blows pollen away.
+Describe how fertilisation occurs in a flowering plant after pollination. ~~ Pollen tube grows from the pollen grain down through the style to the ovule; the male nucleus travels down it and fuses with the female nucleus in the ovule.
+What do the ovule and ovary develop into after fertilisation? ~~ Ovule becomes the seed; ovary becomes the fruit.
+What three conditions are needed for seed germination? ~~ Water, oxygen and a suitable (warm) temperature. Light is not needed.
+How does a germinating seed get energy before it can photosynthesise? ~~ Food stores (starch, lipids, protein) in the cotyledons or endosperm are digested by enzymes and used in respiration for growth.
+Describe natural asexual reproduction in strawberry plants. ~~ Runners (horizontal stems) grow along the ground, take root at nodes and form new plants genetically identical to the parent.
+State the functions of the testes and sperm duct. ~~ Testes produce sperm and testosterone; sperm duct carries sperm from the testes to the urethra.
+Where does fertilisation occur in humans, and where does the embryo implant? ~~ Fertilisation occurs in the oviduct; the embryo implants in the uterus lining.
+How is a sperm cell adapted for its function? ~~ Tail for swimming, many mitochondria to release energy, acrosome containing enzymes to digest into the egg, haploid nucleus.
+How is an egg cell adapted for its function? ~~ Large cytoplasm with food reserves for the early embryo, jelly coat that changes after fertilisation to stop more sperm entering, haploid nucleus.
+Describe the role of the placenta. ~~ Exchanges substances between mother and fetus: oxygen, glucose, amino acids and antibodies to the fetus; carbon dioxide and urea to the mother. Blood does not mix.
+What is the role of the amniotic fluid? ~~ Surrounds and cushions the fetus, protecting it from physical damage and supporting it.
+Why are pregnant women advised to avoid alcohol and smoking? ~~ Alcohol, nicotine, other drugs and some viruses (e.g. rubella) can cross the placenta and harm fetal development.
+Describe the roles of oestrogen and progesterone in the menstrual cycle. ~~ Oestrogen repairs and thickens the uterus lining. Progesterone maintains the lining; when progesterone falls, the lining breaks down (menstruation).
+Describe the roles of FSH and LH in the menstrual cycle. ~~ FSH (pituitary) causes an egg follicle to mature and stimulates oestrogen release. LH (pituitary) triggers ovulation around day 14.
+What happens to the corpus luteum if fertilisation does not occur? ~~ It breaks down, progesterone levels fall, the uterus lining is shed and a new cycle begins.
+Name three male secondary sexual characteristics and the hormone responsible. ~~ Testosterone: growth of facial and body hair, deepening of voice, muscle development, sperm production.
+Name three female secondary sexual characteristics and the hormone responsible. ~~ Oestrogen: breast development, widening of hips, growth of pubic and underarm hair, start of the menstrual cycle.
+State the order of structures sperm pass through during ejaculation. ~~ Testis, sperm duct (glands add seminal fluid), urethra, out through the penis.
+
+## 3.2
+What is a gene? ~~ A section of a DNA molecule that codes for a specific protein.
+What is an allele? ~~ An alternative form of the same gene, e.g. the allele for brown eyes or blue eyes.
+Define genome. ~~ The entire DNA of an organism.
+Describe the structure of DNA. ~~ Two strands coiled into a double helix, made of nucleotides; the strands are joined by complementary base pairs: A with T, C with G.
+What are the complementary base pairs in DNA? ~~ Adenine pairs with thymine; cytosine pairs with guanine.
+Describe transcription in protein synthesis. ~~ In the nucleus, the DNA of a gene is copied into a complementary mRNA molecule, which leaves the nucleus through a pore.
+Describe translation in protein synthesis. ~~ At a ribosome, mRNA codons (triplets of bases) are read; tRNA brings matching amino acids, which are joined in order to make a polypeptide.
+How many bases code for one amino acid? ~~ Three bases (a triplet or codon) code for one amino acid.
+Define genotype and phenotype. ~~ Genotype: the alleles an organism has (e.g. Bb). Phenotype: the observable characteristics, resulting from genotype and environment.
+Define homozygous and heterozygous. ~~ Homozygous: two identical alleles of a gene (BB or bb). Heterozygous: two different alleles (Bb).
+Define dominant and recessive alleles. ~~ Dominant: expressed when one copy is present. Recessive: only expressed when two copies are present (no dominant allele).
+What is codominance? ~~ Both alleles are expressed in the heterozygote, e.g. red and white snapdragons producing pink, or IA and IB giving blood group AB.
+Give the expected phenotype ratio from crossing two heterozygotes (Bb × Bb). ~~ 3 dominant : 1 recessive (genotypes 1 BB : 2 Bb : 1 bb).
+Give the expected ratio from crossing a heterozygote with a homozygous recessive (Bb × bb). ~~ 1 dominant : 1 recessive phenotype (1 Bb : 1 bb).
+How can a test cross show whether a dominant-phenotype organism is BB or Bb? ~~ Cross it with a homozygous recessive (bb). All dominant offspring suggests BB; any recessive offspring shows it is Bb.
+How do you identify a recessive condition in a pedigree diagram? ~~ Two unaffected parents have an affected child, so both parents must be heterozygous carriers.
+How is sex determined in humans? ~~ Females are XX, males XY. Eggs all carry X; sperm carry X or Y, so there is a 50% chance of each sex.
+How many chromosomes are in human body cells and gametes? ~~ Body cells are diploid with 46 (23 pairs); gametes are haploid with 23.
+What is mitosis and what is it used for? ~~ Cell division producing two genetically identical diploid cells; used for growth, repair, cloning and asexual reproduction.
+What is meiosis and where does it occur? ~~ Cell division producing four genetically different haploid gametes; occurs in testes and ovaries (anthers and ovules in plants).
+Why is meiosis important for sexual reproduction? ~~ It halves the chromosome number so the diploid number is restored at fertilisation, and it creates genetic variation.
+State the two causes of variation. ~~ Genetic variation (different alleles inherited) and environmental variation (e.g. diet, climate); most features result from both.
+What is a mutation? ~~ A rare, random change in the base sequence of DNA. Most have no effect; a few are harmful or beneficial.
+What increases the rate of mutation? ~~ Ionising radiation (gamma, X-rays, UV) and chemical mutagens such as those in tobacco smoke.
+How can a mutation affect a protein? ~~ It changes the base sequence, which may change the amino acid sequence, altering the protein's shape and function, e.g. an enzyme's active site.
+Describe Darwin's theory of evolution by natural selection. ~~ Variation exists; more offspring are produced than survive; those with advantageous alleles survive and reproduce, passing alleles on; over generations the allele becomes more common.
+Explain how bacteria become resistant to antibiotics. ~~ A random mutation gives resistance; antibiotic kills non-resistant bacteria; resistant ones survive, reproduce and pass on the allele, so the resistant population grows.
+In a cross Rr × Rr, what is the probability of an rr offspring? ~~ 1 in 4, i.e. 25% or 0.25.
+What are continuous and discontinuous variation? Give examples. ~~ Continuous: any value in a range, e.g. height, mass (many genes plus environment). Discontinuous: distinct categories, e.g. blood group, tongue rolling.
+What is a chromosome? ~~ A long thread of DNA, carrying many genes, found in the nucleus.
+
+## 4.1
+Define population. ~~ All the organisms of one species living in the same area at the same time.
+Define community. ~~ All the populations of different species living in the same habitat at the same time.
+Define habitat. ~~ The place where an organism lives.
+Define ecosystem. ~~ A community of organisms and the non-living (abiotic) environment they interact with.
+Give four abiotic factors that affect populations. ~~ Temperature, light intensity, water availability, soil pH and minerals, oxygen or carbon dioxide levels, wind.
+Give three biotic factors that affect populations. ~~ Availability of food, predators, competition (for food, mates, space), disease and pathogens.
+How is a quadrat used to estimate population size? ~~ Place quadrats randomly, count individuals in each, find the mean per quadrat, then multiply by (total area ÷ quadrat area).
+Why must quadrats be placed randomly? ~~ To avoid bias, so the sample is representative of the whole area.
+How are random positions for quadrats generated? ~~ Lay two tape measures at right angles as axes and use a random number generator to choose coordinates.
+How can you make quadrat results more reliable? ~~ Use a larger number of quadrats (e.g. 10+) and calculate a mean.
+Calculate the population if the mean is 6 daisies per 0.25 m² quadrat in a 100 m² field. ~~ Number of quadrats fitting = 100 ÷ 0.25 = 400. Population = 6 × 400 = 2400 daisies.
+What is a transect and when is it used? ~~ A line (tape) across a habitat with quadrats at regular intervals; used to study how distribution changes with a changing factor, e.g. from shade to light.
+Define biodiversity. ~~ The variety of different species in an area, including how many species and the evenness of their numbers.
+Why is high biodiversity valuable? ~~ More stable ecosystems, less dependence on one species, source of foods and medicines, and genetic resources.
+What is percentage cover and when is it used? ~~ The percentage of the quadrat area covered by a species; used when individuals are hard to count, such as grass or moss.
+Why does light intensity affect plant distribution in a woodland? ~~ Plants need light for photosynthesis; shade-tolerant species grow under the canopy while others grow only in open, brighter areas.
+What abiotic factor might you measure along a transect, and with what? ~~ Light intensity with a light meter, soil moisture with a moisture meter, soil pH with a pH probe or indicator, temperature with a thermometer.
+Why should the same quadrat size be used when comparing two areas? ~~ So the comparison is fair; quadrat size is a control variable.
+Why might a population estimate from quadrats be inaccurate? ~~ Too few samples, non-random placement, organisms miscounted or misidentified, or uneven distribution across the area.
+How does competition affect population size? ~~ Organisms compete for limited resources (food, light, space, water); losers have fewer offspring, so population growth is limited.
+How does predation affect the population of prey? ~~ More predators reduce prey numbers; with less food, predators then decline, allowing prey to recover, giving cycles.
+How can the number of species in an area be compared between two habitats? ~~ Count species richness in the same number of random quadrats of the same size in each habitat, then compare.
+What is a species? ~~ A group of organisms that can interbreed to produce fertile offspring.
+Why are organisms not evenly distributed in a habitat? ~~ Abiotic and biotic factors vary across the habitat, so organisms are found where conditions suit their adaptations.
+Explain how water availability can limit plant populations. ~~ Water is needed for photosynthesis, support (turgor) and transport; in dry areas fewer plants survive except drought-adapted species.
+How does temperature affect organisms in an ecosystem? ~~ It affects enzyme activity, so growth, reproduction and survival rates; extremes limit which species can live there.
+What is an independent variable when comparing populations in a shaded and open area? ~~ The area (level of shade or light intensity); the dependent variable is the number of the chosen species.
+How could disease be a biotic factor reducing a population? ~~ Pathogens spread quickly in dense populations, killing or weakening individuals and reducing reproduction.
+Define abiotic and biotic. ~~ Abiotic: non-living physical or chemical factors. Biotic: living factors, i.e. other organisms.
+Why do ecologists sample rather than count every organism? ~~ Counting every organism in large areas is impractical and time-consuming; a representative sample gives a good estimate.
+
+## 4.2
+What is a producer? ~~ An organism, usually a green plant or alga, that makes its own food by photosynthesis.
+Define primary consumer. ~~ An herbivore that feeds on producers.
+Define secondary and tertiary consumers. ~~ Secondary consumers eat primary consumers; tertiary consumers eat secondary consumers. Both are carnivores.
+What is a decomposer? ~~ An organism (bacteria, fungi) that breaks down dead organisms and waste, releasing nutrients back into the environment.
+What is a trophic level? ~~ The position an organism occupies in a food chain, e.g. producer is trophic level 1.
+What do the arrows in a food chain show? ~~ The direction of energy transfer, from the organism eaten to the organism that eats it.
+What is a food web? ~~ A network of interlinked food chains showing all feeding relationships in an ecosystem.
+What is a pyramid of numbers and why can it be an odd shape? ~~ Bar diagram of numbers at each trophic level; can be inverted, e.g. one oak tree supporting thousands of caterpillars.
+What is a pyramid of biomass? ~~ Shows the dry mass of living material at each trophic level; almost always pyramid shaped.
+What is a pyramid of energy? ~~ Shows energy transferred through each trophic level per unit area per year; always pyramid shaped.
+Why is only about 10% of energy transferred between trophic levels? ~~ Energy is lost through respiration (heat), movement, excretion, egestion (faeces) and parts not eaten or digested.
+Calculate efficiency if grass contains 20 000 kJ and rabbits gain 2000 kJ. ~~ Efficiency = (energy transferred ÷ energy available) × 100 = 2000 ÷ 20 000 × 100 = 10%.
+Why are food chains usually no longer than four or five trophic levels? ~~ So much energy is lost at each level that too little remains to support further levels.
+Where does the energy in most food chains originally come from? ~~ The Sun; light energy is captured by producers in photosynthesis.
+Why is most energy from the Sun not captured by plants? ~~ Light is reflected, passes through leaves, misses leaves, or is the wrong wavelength; only a small percentage is used in photosynthesis.
+Explain why eating plants is more energy-efficient for humans than eating meat. ~~ Fewer trophic levels so less energy lost; more energy from the producer reaches humans, so more people can be fed per area.
+Predict the effect on a food web if a predator is removed. ~~ Its prey increases, which may reduce the prey's food source; other predators may also increase. Effects ripple through the web.
+Why are food webs more stable than single food chains? ~~ Consumers have several food sources, so loss of one species has a smaller effect.
+What is biomass? ~~ The mass of living material, usually measured as dry mass.
+Why is dry mass used in biomass pyramids? ~~ Water content varies greatly, so dry mass gives a more accurate, comparable measure of organic material.
+What are herbivores, carnivores and omnivores? ~~ Herbivores eat plants; carnivores eat animals; omnivores eat both plants and animals.
+How is energy lost as heat in a food chain? ~~ Respiration releases energy, much of which is lost to the surroundings as heat, especially in mammals and birds maintaining body temperature.
+Why do warm-blooded animals transfer less energy to the next trophic level? ~~ They use much energy in respiration to maintain a constant body temperature, so less is stored in biomass.
+In a food chain grass → rabbit → fox, identify the trophic levels. ~~ Grass: producer (level 1); rabbit: primary consumer (level 2); fox: secondary consumer (level 3).
+What is a parasite? ~~ An organism living on or in a host, feeding from it and causing harm, e.g. tapeworm or flea.
+Why might a pyramid of biomass be inverted in the sea? ~~ Phytoplankton reproduce very rapidly and are eaten quickly, so their biomass at any one time can be less than zooplankton.
+How does energy enter and leave a food chain? ~~ Enters as light captured by producers; leaves as heat from respiration and in waste broken down by decomposers.
+What is the role of decomposers in energy flow? ~~ They respire using energy in dead material and waste, releasing it as heat, and recycle nutrients.
+Calculate the energy reaching level 3 if producers have 50 000 kJ and transfer is 10% each time. ~~ Level 2: 5000 kJ; level 3: 500 kJ.
+Give three ways energy is lost from a cow's food. ~~ Faeces (undigested cellulose), urine, respiration as heat, movement, methane released.
+
+## 4.3
+Name the processes that remove carbon dioxide from the air. ~~ Photosynthesis by plants and algae (and dissolving in oceans).
+Name the processes that add carbon dioxide to the air. ~~ Respiration by plants, animals and decomposers, and combustion of fossil fuels and wood.
+How does carbon pass from plants to animals? ~~ Through feeding; carbon in plant carbohydrates, proteins and fats is eaten and becomes part of animal tissues.
+What is the role of decomposers in the carbon cycle? ~~ They break down dead organisms and waste, respiring and releasing carbon dioxide back to the air.
+How are fossil fuels formed? ~~ Dead organisms buried and compressed over millions of years without decay, forming coal, oil and gas that store carbon.
+Why has atmospheric carbon dioxide risen? ~~ Burning fossil fuels and deforestation (burning trees and fewer plants absorbing carbon dioxide by photosynthesis).
+Why do plants need nitrogen? ~~ To make amino acids and proteins (and DNA) for growth.
+Why can't plants use nitrogen gas directly? ~~ Nitrogen gas is very unreactive; plants absorb nitrogen only as nitrates (or ammonium ions) through roots.
+What do nitrogen-fixing bacteria do? ~~ Convert nitrogen gas into ammonium compounds; found in soil and in root nodules of legumes such as peas, beans and clover.
+What is nitrification? ~~ Nitrifying bacteria convert ammonium ions into nitrites and then nitrates, in aerobic conditions.
+What is denitrification? ~~ Denitrifying bacteria convert nitrates in soil into nitrogen gas, mainly in waterlogged, anaerobic soil.
+What is the role of decomposers in the nitrogen cycle? ~~ They break down proteins and urea in dead organisms and waste into ammonium ions (ammonification).
+How does lightning contribute to the nitrogen cycle? ~~ The high energy causes nitrogen and oxygen to react, forming nitrogen oxides that dissolve in rain to form nitrates.
+Why do farmers plough and drain fields in terms of the nitrogen cycle? ~~ It aerates soil, favouring nitrifying bacteria and reducing anaerobic conditions where denitrifying bacteria remove nitrates.
+Why is growing legumes beneficial in crop rotation? ~~ Nitrogen-fixing bacteria in root nodules increase soil nitrates, reducing the need for fertiliser.
+What relationship exists between legumes and root-nodule bacteria? ~~ Mutualism: bacteria get sugars from the plant, and the plant gets ammonium compounds for making proteins.
+Put the nitrogen cycle stages in order from dead organism to plant protein. ~~ Dead organism → decomposers produce ammonium → nitrifying bacteria make nitrites then nitrates → plant roots absorb nitrates → amino acids and proteins.
+How does carbon become locked in carbonate rocks? ~~ Shells and skeletons of marine organisms containing calcium carbonate form sedimentary rocks such as limestone.
+What conditions do decomposers work best in? ~~ Warm, moist conditions with plenty of oxygen.
+Why is decomposition slow in waterlogged soil? ~~ There is little oxygen, so aerobic decomposers cannot respire efficiently.
+In what forms is carbon stored in living organisms? ~~ Carbohydrates, proteins, lipids and other organic compounds.
+How is the carbon cycle balanced in a stable ecosystem? ~~ Carbon dioxide removed by photosynthesis roughly equals that released by respiration, so atmospheric levels stay steady.
+Why is the nitrogen cycle important for ecosystems? ~~ It recycles nitrogen so plants can keep making proteins; without it, soil nitrates would run out.
+Which bacteria in the nitrogen cycle reduce soil fertility? ~~ Denitrifying bacteria, because they turn nitrates into nitrogen gas, which plants cannot use.
+How does the carbon cycle link to the energy flow in a food chain? ~~ Carbon compounds carry energy; photosynthesis fixes carbon and stores energy, respiration releases both carbon dioxide and energy.
+What is the role of microorganisms in cycling nutrients? ~~ They decompose dead material and waste, releasing carbon dioxide and mineral ions back into the air and soil for reuse.
+How does burning wood add carbon dioxide to the atmosphere? ~~ Combustion oxidises carbon compounds in wood, releasing carbon dioxide stored by photosynthesis.
+How do animals obtain nitrogen? ~~ By eating plants or other animals; proteins are digested into amino acids and used to make their own proteins.
+What happens to urea in the nitrogen cycle? ~~ It is broken down by decomposers into ammonium ions, which nitrifying bacteria convert into nitrates.
+What is nitrogen fixation by the Haber process? ~~ Industrial conversion of nitrogen gas into ammonia, used to make artificial fertilisers that add nitrates to soil.
+
+## 4.4
+Name the greenhouse gases. ~~ Carbon dioxide, methane, water vapour, nitrous oxide and CFCs.
+Explain the greenhouse effect. ~~ Short-wave radiation from the Sun warms Earth; Earth emits longer-wave infrared, which greenhouse gases absorb and re-radiate, keeping Earth warm.
+What is the enhanced greenhouse effect? ~~ Increased greenhouse gas levels from human activity trap more heat, causing global warming.
+Give sources of methane from human activity. ~~ Cattle (digestion), rice paddy fields, landfill sites and decomposing waste.
+Give three consequences of global warming. ~~ Melting ice and sea-level rise, flooding, changes in climate and rainfall, species extinction or migration, reduced crop yields, more extreme weather.
+Name the main source of sulfur dioxide pollution and its effect. ~~ Burning fossil fuels containing sulfur; forms acid rain, which damages trees, lowers pH of lakes (killing fish) and erodes buildings.
+Why is carbon monoxide dangerous? ~~ It binds irreversibly to haemoglobin, reducing the blood's oxygen-carrying capacity; it comes from incomplete combustion such as car exhausts.
+Describe the stages of eutrophication. ~~ Fertiliser or sewage adds nitrates and phosphates → algal bloom → light blocked, plants below die → bacteria decompose them, using oxygen → fish and other animals die.
+Why does decomposition cause oxygen levels in water to fall during eutrophication? ~~ Decomposing bacteria increase in number and respire aerobically, using up dissolved oxygen.
+How does untreated sewage pollute water? ~~ It adds nutrients causing eutrophication, increases bacterial respiration (oxygen depletion) and may contain pathogens.
+Give four effects of deforestation. ~~ Reduced biodiversity, loss of habitats, soil erosion, more flooding, less carbon dioxide absorbed and more released when burned, disturbed water and carbon cycles.
+Why does deforestation lead to soil erosion? ~~ Tree roots no longer hold soil, and there is no canopy to break rainfall, so soil is washed away and nutrients lost.
+How does deforestation affect the water cycle? ~~ Less transpiration means less water vapour and rainfall; more run-off and flooding.
+How does deforestation affect carbon dioxide levels? ~~ Fewer trees photosynthesise, and burning or decomposing timber releases carbon dioxide, so levels rise.
+What is leaching and how does it link to eutrophication? ~~ Soluble fertilisers dissolve in rainwater and drain from soil into rivers and lakes, adding nutrients.
+Why does overfishing threaten fish stocks? ~~ Fish are removed faster than they can breed, so populations fall and may collapse, disrupting food webs.
+Give ways to reduce overfishing. ~~ Fishing quotas, larger mesh nets so young fish escape, closed seasons, protected areas, and fish farming.
+How can acid rain be reduced? ~~ Remove sulfur from fuels, use scrubbers in power station chimneys, catalytic converters in cars, and use less fossil fuel.
+What is a pollutant? ~~ A substance released into the environment, often by humans, that harms living organisms.
+Give three ways to reduce greenhouse gas emissions. ~~ Use renewable energy, improve energy efficiency, reduce deforestation and replant trees, reduce meat consumption, use public transport.
+Why does an algal bloom kill plants below the surface? ~~ Algae block light, so submerged plants cannot photosynthesise and die.
+How can eutrophication be reduced? ~~ Apply fertiliser carefully (not before rain), leave buffer strips by rivers, treat sewage to remove nitrates and phosphates.
+Which indicator species show clean or polluted water? ~~ Mayfly and stonefly larvae indicate clean, well-oxygenated water; bloodworms and sludgeworms indicate polluted, low-oxygen water.
+How do lichens indicate air quality? ~~ Many lichen species are sensitive to sulfur dioxide; more lichen species indicates cleaner air.
+Why is water vapour a greenhouse gas, and why is it less of a concern? ~~ It absorbs infrared radiation, but its levels are controlled mainly by natural evaporation rather than directly by human activity.
+What is the effect of nitrous oxide and where does it come from? ~~ A potent greenhouse gas released from fertilised soils, vehicle exhausts and industry.
+How do CFCs affect the environment? ~~ They are greenhouse gases and damage the ozone layer, increasing harmful UV reaching Earth; now largely banned.
+Why does acid rain kill fish? ~~ Low pH in lakes damages gills and releases toxic aluminium ions from the soil into the water.
+Why is biodiversity reduced in monoculture plantations after deforestation? ~~ A single crop species provides few habitats and food sources, so fewer species can live there.
+How does burning fossil fuels contribute to climate change? ~~ Releases carbon dioxide that was locked away for millions of years, raising atmospheric levels and enhancing the greenhouse effect.
+
+## 5.1
+Why do glasshouses increase crop yield? ~~ They raise temperature, can add carbon dioxide and artificial light, and protect from pests and weather, increasing photosynthesis rate.
+Why is carbon dioxide added to glasshouses? ~~ It is often a limiting factor for photosynthesis; more carbon dioxide increases the rate and yield. Paraffin burners also warm the air.
+Why are polythene tunnels used? ~~ A cheaper version of glasshouses; trap heat and protect crops, extending the growing season.
+Why are fertilisers used? ~~ They replace mineral ions (nitrate, phosphate, potassium) removed by crops, increasing growth and yield.
+Why do plants need nitrates? ~~ To make amino acids and proteins for growth; deficiency causes stunted growth and yellow leaves.
+Compare organic and artificial fertilisers. ~~ Organic (manure, compost): release minerals slowly, improve soil structure, cheap. Artificial: exact mineral content, fast-acting, easily leached.
+What are pesticides and give examples? ~~ Chemicals that kill pests: insecticides (insects), herbicides (weeds), fungicides (fungi).
+Give disadvantages of pesticides. ~~ Kill non-target species, can accumulate along food chains (bioaccumulation), pests may become resistant, must be reapplied.
+What is biological control? ~~ Using a natural predator, parasite or pathogen to reduce a pest population, e.g. ladybirds eating aphids.
+Give advantages and disadvantages of biological control. ~~ Advantages: specific, no chemicals, no resistance, self-sustaining. Disadvantages: slower, never removes all pests, the control organism may become a pest itself.
+Write the word equation for anaerobic respiration in yeast. ~~ Glucose → ethanol + carbon dioxide.
+How is yeast used in bread making? ~~ Yeast respires sugar, producing carbon dioxide that makes dough rise; ethanol evaporates during baking, which also kills the yeast.
+Why is dough left in a warm place? ~~ Warmth increases enzyme activity in yeast, so respiration and carbon dioxide production are faster.
+Which bacterium is used in yoghurt making? ~~ Lactobacillus.
+Describe the stages of yoghurt making. ~~ Sterilise equipment, pasteurise milk, cool to about 40 °C, add Lactobacillus, incubate; bacteria convert lactose to lactic acid, which thickens milk and lowers pH.
+Why does yoghurt have a sour taste and keep for a while? ~~ Lactic acid lowers pH, giving the sour taste and inhibiting growth of spoilage microorganisms.
+Why are equipment and milk sterilised or pasteurised? ~~ To kill unwanted microorganisms that would compete with Lactobacillus or spoil the product.
+What is an industrial fermenter used for? ~~ Growing microorganisms on a large scale in controlled conditions to make products such as penicillin, enzymes or mycoprotein.
+Why is a fermenter sterilised with steam before use? ~~ To kill contaminating microorganisms that would compete with the culture or make harmful products.
+Why does a fermenter have a water jacket? ~~ Respiration releases heat; cool water circulates to keep the temperature at the optimum for enzymes.
+Why does a fermenter have paddles (stirrers)? ~~ To mix nutrients and microorganisms evenly, and spread heat and oxygen.
+What conditions are monitored in an industrial fermenter? ~~ Temperature, pH, oxygen level, nutrient supply and asepsis (sterile conditions).
+Why is air bubbled into fermenters? ~~ To supply oxygen for aerobic respiration of the microorganisms.
+Why is pH monitored in a fermenter? ~~ Enzymes work best at an optimum pH; probes detect change and acid or alkali is added to correct it.
+How is fish farming used to produce food? ~~ Fish are raised in enclosures, in controlled conditions, to give high-protein food efficiently.
+How do fish farmers maintain water quality? ~~ Filter water, remove waste, and change or circulate water to keep oxygen high and prevent disease.
+How do fish farmers control disease and parasites? ~~ Keep stocking densities low, use biological control (e.g. wrasse eating sea lice), and limited use of antibiotics or pesticides.
+Why are different fish species and sizes kept separately in fish farms? ~~ To prevent predation (interspecific) and larger fish eating smaller ones (intraspecific).
+How is feeding controlled in fish farms? ~~ High-protein food is given in controlled amounts several times a day; overfeeding is avoided because uneaten food pollutes water.
+Why is selective breeding used in fish farming? ~~ To produce fast-growing, disease-resistant fish with good meat quality.
+
+## 5.2
+What is selective breeding? ~~ Artificial selection: humans choose individuals with desired characteristics to breed, so those features become more common over generations.
+What is another name for selective breeding? ~~ Artificial selection.
+Describe the steps of selective breeding. ~~ Choose parents with the desired trait; breed them; select offspring showing the trait most strongly; breed these; repeat over many generations.
+Why must selective breeding be repeated over many generations? ~~ Each generation increases the trait only slightly; repeated selection makes the desired alleles common and the trait consistent.
+Give an example of selective breeding in dairy cattle. ~~ Cows with the highest milk yield are bred with bulls from high-yielding mothers, increasing milk yield over generations.
+Give an example of selective breeding in beef cattle. ~~ Cattle with high muscle mass and fast growth are bred to produce more meat.
+Give characteristics wheat is selectively bred for. ~~ High grain yield, short, stiff stems that do not lodge (fall over), disease resistance, and grains ripening at the same time.
+Why is wheat bred for short stems? ~~ Short stems are less likely to be blown over in wind and rain, and more energy goes into grain rather than stem.
+Give characteristics crops are bred for, other than yield. ~~ Disease and pest resistance, drought or frost tolerance, better taste, larger fruit, longer shelf life.
+Give examples of characteristics dogs are bred for. ~~ Appearance, gentle temperament, herding ability, hunting ability or sense of smell, guarding.
+What is inbreeding? ~~ Breeding closely related individuals, which often happens in selective breeding.
+Why does inbreeding cause health problems? ~~ It increases the chance of offspring inheriting two copies of harmful recessive alleles, so genetic disorders appear more often.
+Give examples of health problems caused by selective breeding in dogs. ~~ Hip dysplasia in Labradors and German shepherds; breathing problems in bulldogs and pugs.
+Why does selective breeding reduce genetic diversity? ~~ Only a few individuals with chosen alleles are bred, so other alleles are lost from the population.
+Why is reduced genetic diversity a problem? ~~ If a new disease or environmental change occurs, few individuals may carry resistant alleles, so the whole population may be wiped out.
+State three advantages of selective breeding. ~~ Increases yield and quality, produces disease-resistant varieties, uses natural reproduction without laboratory gene manipulation.
+State three disadvantages of selective breeding. ~~ Slow, reduced genetic variation, inbreeding causes genetic disorders, unwanted traits can be inherited alongside desired ones.
+How does selective breeding differ from natural selection? ~~ In selective breeding humans choose which individuals breed for useful traits; in natural selection the environment determines which individuals survive and reproduce.
+Compare selective breeding and genetic modification. ~~ Selective breeding uses natural mating within a species over many generations; GM inserts a specific gene, often from another species, in one generation.
+Why is GM faster than selective breeding? ~~ The desired gene is inserted directly, so the trait appears in one generation instead of many.
+Can selective breeding produce a characteristic not present in the species? ~~ No; it only works with existing variation (alleles already present). GM can introduce genes from other species.
+Why might animal welfare be an ethical concern with selective breeding? ~~ Animals may suffer, e.g. very high-yield cows with leg or udder problems, or fast-growing chickens unable to support their weight.
+How can breeders reduce the problems of inbreeding? ~~ Keep records and avoid mating close relatives, or occasionally introduce unrelated individuals to increase genetic variation.
+Why are wild varieties of crops conserved in seed banks? ~~ They keep alleles lost from selectively bred crops, which may be needed for future breeding, e.g. disease resistance.
+How might selective breeding produce disease-resistant crops? ~~ Plants surviving infection are selected and bred, and the process is repeated so resistance becomes common.
+Why do selectively bred cereal crops all ripen at the same time? ~~ Breeders selected for uniform ripening so the whole crop can be harvested in one go by machine.
+Give an example of selective breeding in chickens. ~~ Chickens bred for high egg production (laying hens) or rapid growth and large breast muscle (broilers).
+Why might genes linked to desired traits cause problems? ~~ Undesirable alleles can be inherited along with selected ones, so unwanted traits may also become common.
+Describe how a farmer would breed sheep with finer wool. ~~ Select rams and ewes with the finest wool, breed them, choose the finest-wooled lambs to breed, and repeat for several generations.
+Why is a population of selectively bred crops vulnerable to new pests? ~~ Plants are genetically very similar, so if one is susceptible, most are, and a pest can spread through the whole crop.
+
+## 5.3
+What is genetic modification? ~~ Changing an organism's genome, usually by inserting a gene from another organism, to give a desired characteristic.
+What is a transgenic organism? ~~ An organism containing genetic material from a different species.
+What do restriction enzymes do? ~~ Cut DNA at specific base sequences, often leaving sticky ends.
+What does DNA ligase do? ~~ Joins pieces of DNA together, e.g. sealing a gene into a plasmid.
+What is a vector in genetic engineering? ~~ A carrier that transfers the gene into the host cell, e.g. a plasmid or a virus.
+What is a plasmid? ~~ A small circular ring of DNA found in bacteria, separate from the main chromosome, used as a vector.
+What are sticky ends and why are they useful? ~~ Short unpaired base sequences left after cutting; complementary sticky ends on the gene and plasmid pair up so they can be joined.
+Why is the same restriction enzyme used on the gene and the plasmid? ~~ It produces complementary sticky ends, so the gene fits into the opened plasmid.
+What is recombinant DNA? ~~ DNA formed by combining DNA from two different sources, e.g. a human gene in a bacterial plasmid.
+Describe the steps in producing human insulin using bacteria. ~~ Cut insulin gene from human DNA with restriction enzyme; cut plasmid with same enzyme; join with ligase; insert plasmid into bacteria; grow bacteria in fermenter; extract and purify insulin.
+Why are bacteria used to make human insulin? ~~ They reproduce rapidly, are easy to grow in fermenters, and the genetic code is universal, so they make identical human insulin.
+Give advantages of insulin from GM bacteria compared with animal insulin. ~~ Identical to human insulin (fewer allergic reactions), produced in large amounts cheaply, no ethical or religious issues about animal sources.
+Why is the genetic code described as universal? ~~ The same base triplets code for the same amino acids in all organisms, so a gene from one species can be expressed in another.
+What is Bt maize? ~~ GM maize containing a gene from Bacillus thuringiensis producing a toxin that kills insect pests that eat it.
+What are the advantages of insect-resistant GM crops? ~~ Higher yields, less insecticide sprayed, so less harm to non-target insects and lower costs.
+What are herbicide-resistant GM crops and why are they useful? ~~ Crops given a gene for herbicide resistance, so fields can be sprayed to kill weeds without harming the crop, increasing yield.
+What is Golden Rice? ~~ GM rice containing genes to make beta-carotene (converted to vitamin A), to reduce vitamin A deficiency and blindness.
+Give concerns about GM crops. ~~ Genes may spread to wild plants (superweeds), effects on non-target insects, reduced biodiversity, long-term health effects unknown, seed costs for farmers.
+Give examples of GM crop traits that increase yield. ~~ Pest resistance, herbicide resistance, drought or salt tolerance, disease resistance.
+How do you know which bacteria have taken up the recombinant plasmid? ~~ Plasmids include a marker gene (e.g. antibiotic resistance); bacteria grown on antibiotic plates survive only if they took up the plasmid.
+Why might the insulin gene be inserted into a plasmid rather than directly into bacteria? ~~ Plasmids replicate in the bacterium and are copied when it divides, so the gene is passed to all offspring.
+What happens after recombinant bacteria are placed in a fermenter? ~~ They multiply rapidly and express the gene, producing large quantities of the protein, which is then extracted and purified.
+How can a virus be used as a vector? ~~ The desired gene is inserted into the virus, which then infects target cells and delivers the gene into their DNA.
+What is gene therapy? ~~ Inserting normal alleles into a patient's cells to treat a genetic disorder such as cystic fibrosis.
+Give an ethical concern about GM animals. ~~ Animal welfare, unknown long-term effects, and the view that crossing species barriers is unnatural.
+How might GM crops help developing countries? ~~ Higher yields, crops resistant to drought or pests, and improved nutrition, e.g. Golden Rice, reduce food shortages.
+Why might GM crops reduce biodiversity? ~~ Herbicide-resistant crops allow heavy herbicide use, killing wild plants and the insects that depend on them.
+Give an example of a GM microorganism product other than insulin. ~~ Human growth hormone, enzymes such as chymosin for cheese making, or vaccines.
+Why do restriction enzymes cut at specific sequences? ~~ Each enzyme has an active site complementary to one specific base sequence (recognition site).
+Compare GM and selective breeding in terms of the genes involved. ~~ GM can transfer one specific gene between species; selective breeding mixes whole genomes within a species, so many genes change together.
+
+## 5.4
+What is a clone? ~~ An organism or cell genetically identical to its single parent, produced asexually.
+Give natural examples of cloning. ~~ Bacterial binary fission, strawberry runners, potato tubers, bulbs, and identical twins.
+What is micropropagation? ~~ Growing many genetically identical plants from small pieces of a parent plant (explants) on sterile nutrient agar.
+Describe the steps of micropropagation. ~~ Take explants from the parent; sterilise; place on agar with nutrients and hormones; callus forms then plantlets; transfer plantlets to compost.
+What is an explant? ~~ A small piece of tissue, often from a shoot tip, taken from the parent plant for micropropagation.
+Why are explants sterilised in micropropagation? ~~ To kill bacteria and fungi that would grow quickly on the nutrient agar and kill the plant tissue.
+Why are plant hormones added to the agar in micropropagation? ~~ Auxins and cytokinins stimulate cell division and growth of roots and shoots from the callus.
+What is a callus? ~~ A mass of undifferentiated plant cells that forms from the explant and develops into plantlets.
+Why are shoot tips used as explants? ~~ They contain actively dividing (meristem) cells and are usually free of viruses.
+Give advantages of micropropagation. ~~ Many identical plants produced quickly and cheaply in a small space, all year round; virus-free stock; desirable traits kept; rare species preserved.
+Give disadvantages of micropropagation. ~~ No genetic variation, so a single disease or environmental change can affect all plants; needs sterile labs and skilled workers; risk of contamination.
+Give examples of plants commercially produced by micropropagation. ~~ Bananas, orchids, strawberries, potatoes and rare or endangered plants.
+Why is cloning easier in plants than animals? ~~ Many plant cells remain totipotent (able to form any cell type), whereas most animal cells differentiate early and lose this ability.
+What is the name of the technique used to clone Dolly the sheep? ~~ Somatic cell nuclear transfer (nuclear transfer).
+Describe how Dolly the sheep was cloned. ~~ Udder cell nucleus from a Finn-Dorset ewe was inserted into an enucleated egg from a Scottish Blackface ewe, fused by electric shock, grown into an embryo and implanted into a surrogate.
+What is enucleation? ~~ Removing the nucleus from an egg cell before a donor nucleus is inserted.
+Why is an electric shock used in nuclear transfer? ~~ To fuse the donor nucleus with the egg cell and stimulate it to start dividing like a zygote.
+Which sheep was Dolly genetically identical to? ~~ The Finn-Dorset ewe that donated the udder-cell nucleus, not the egg donor or surrogate.
+Why did Dolly have a white face when the surrogate had a black face? ~~ Her nuclear DNA came from the white-faced Finn-Dorset donor, showing the nucleus controls the characteristics.
+What is the role of the surrogate mother in animal cloning? ~~ She carries the embryo through pregnancy and gives birth; she contributes no nuclear genes.
+What is embryo splitting (embryo transplantation)? ~~ Cells are separated from an early embryo of high-value parents, each grown and implanted into surrogates, producing identical offspring.
+Give uses of cloned transgenic animals. ~~ Producing human proteins in milk (e.g. drugs such as antithrombin from goats), so many identical animals produce the medicine.
+Why clone transgenic animals rather than breed them? ~~ Sexual reproduction might not pass the inserted gene to all offspring; cloning guarantees every offspring carries it.
+Give advantages of animal cloning. ~~ Copies of high-value animals (high milk yield) produced; transgenic animals reproduced reliably; may help save endangered species.
+Give disadvantages of animal cloning. ~~ Low success rate, expensive, clones may have health problems or age early, reduced genetic variation, ethical concerns.
+Give ethical objections to cloning mammals. ~~ Animal suffering from failed attempts and health problems; fear it could lead to human cloning; seen as interfering with nature.
+Compare plant micropropagation and animal nuclear transfer. ~~ Micropropagation is cheap, reliable and produces many plants; nuclear transfer is expensive, has a low success rate and produces few animals.
+How is cloning different from selective breeding? ~~ Cloning copies one organism exactly with no variation; selective breeding uses sexual reproduction, so offspring vary and traits improve gradually.
+Why might a farmer clone a prize cow rather than breed it? ~~ Sexual reproduction mixes alleles so offspring may not inherit all desirable traits; clones have exactly the same genes.
+What is the role of the nucleus in cloning? ~~ It contains the DNA, so the clone inherits its characteristics from the nucleus donor.
+
+## RP
+In the food test practical, how do you test for starch? ~~ Add iodine solution; it turns from orange-brown to blue-black if starch is present.
+How do you test a food for glucose (reducing sugar)? ~~ Add Benedict's solution and heat in a water bath at about 80 °C for 5 minutes; blue turns green, yellow, orange or brick-red if present.
+How do you test a food for protein? ~~ Add biuret reagent (potassium hydroxide then copper sulfate); blue turns purple if protein is present.
+How do you test a food for lipids? ~~ Shake with ethanol, then add water; a cloudy white emulsion forms if lipid is present. Keep ethanol away from naked flames.
+Describe how to investigate the effect of temperature on amylase activity. ~~ Equilibrate amylase and starch in water baths at different temperatures, mix, take drops every 30 s onto iodine on a spotting tile; time until iodine stays orange-brown.
+How is rate calculated in the amylase practical? ~~ Rate = 1 ÷ time taken for starch to be fully digested (iodine no longer turns blue-black).
+What results are expected for the amylase-temperature practical? ~~ Rate rises to an optimum around 37 °C, then falls sharply as the enzyme denatures and the active site changes shape.
+Describe the pH and enzyme activity practical and its variables. ~~ IV: pH (buffers 3–11); DV: time for starch to disappear (iodine test); control temperature, volumes and concentrations of starch and amylase.
+How do you investigate osmosis using potato cylinders? ~~ Cut equal cylinders with a cork borer, blot and weigh, place in different sucrose concentrations for the same time and temperature, blot and reweigh.
+How is percentage change in mass calculated in the osmosis practical? ~~ % change = (final mass − initial mass) ÷ initial mass × 100.
+How do you find the concentration of potato cytoplasm from the osmosis results? ~~ Plot % change against sucrose concentration; where the line crosses zero change is the isotonic concentration.
+Why are potato cylinders blotted before weighing? ~~ To remove surface solution, so only the mass of the tissue is measured and results are comparable.
+How can Visking tubing show diffusion? ~~ Fill with starch and glucose, stand in water; Benedict's test outside is positive (glucose passed through) but iodine test is negative (starch too large).
+How do you measure the effect of light intensity on photosynthesis using pondweed? ~~ Place pondweed in sodium hydrogencarbonate solution; vary lamp distance; count oxygen bubbles per minute; repeat at each distance.
+Why is a beaker of water placed between the lamp and pondweed? ~~ It acts as a heat shield so temperature stays constant (control variable).
+How is light intensity related to distance from the lamp? ~~ Light intensity is proportional to 1 ÷ distance² (inverse square law).
+Describe how to test a leaf for starch. ~~ Boil in water to kill cells; heat in ethanol in a water bath to remove chlorophyll; rinse in warm water to soften; add iodine; blue-black shows starch.
+Why are plants destarched before photosynthesis experiments? ~~ Keeping them in the dark for 24–48 hours uses up stored starch, so any starch detected was made during the experiment.
+How can you show chlorophyll is needed for photosynthesis? ~~ Destarch a variegated leaf, expose to light, then starch test; only the green areas turn blue-black.
+How can you show carbon dioxide is needed for photosynthesis? ~~ Enclose a destarched leaf in a flask with soda lime (absorbs carbon dioxide); after light, starch test shows no starch, unlike a control leaf.
+How do you measure the energy content of food? ~~ Burn a weighed food sample under a boiling tube of known water volume; record temperature rise. Energy (J) = mass of water × 4.2 × temperature rise.
+Why is the measured energy content of food lower than the true value? ~~ Heat is lost to the air and glassware, the food may not burn completely, and some energy is used to relight it.
+How do you show germinating seeds release heat? ~~ Put living and boiled (dead) peas, both rinsed in disinfectant, in vacuum flasks with thermometers; the living peas' temperature rises over several days.
+Why are peas rinsed in disinfectant in the respiring seeds practical? ~~ To kill microorganisms, so heat comes only from pea respiration, not microbial respiration on dead peas.
+Describe the results of the hydrogencarbonate indicator gas exchange practical. ~~ Dark: yellow (respiration only). Dim: red-orange (rates equal). Bright: purple (photosynthesis faster, carbon dioxide used).
+How do you investigate the effect of exercise on breathing rate? ~~ Measure resting breaths per minute; do set exercise (e.g. 2 min step-ups); count breaths per minute immediately and each minute until back to resting.
+How is a potometer used to measure transpiration rate? ~~ Cut a shoot underwater, set up airtight; measure distance an air bubble moves in the capillary per unit time; change one factor at a time.
+How do you investigate the conditions needed for seed germination? ~~ Set up tubes with equal seeds each lacking one factor: dry (no water), boiled water with oil layer (no oxygen), fridge (cold), plus a complete control; count germinated seeds.
+How do you estimate and compare population sizes in two areas with quadrats? ~~ Place 10+ quadrats randomly in each area, count organisms, find mean per quadrat, scale up to the total area; use the same method in both.
+How do you investigate anaerobic respiration in yeast at different temperatures? ~~ Yeast and sugar solution under an oil layer in a water bath; count bubbles or volume of carbon dioxide per minute at each temperature; rate peaks around 35–40 °C.
