@@ -53,6 +53,8 @@ revoke all on function public.admin_dismissed_signals() from public, anon;
 grant execute on function public.admin_dismissed_signals() to authenticated;
 
 
+-- A signal can name a user whose profile has since gone. The insert below
+-- then stores the dismissal without the user link rather than failing the FK.
 create or replace function public.admin_set_signal_dismissed(
   p_signal_key text,
   p_kind       text,
@@ -72,8 +74,6 @@ begin
   if p_dismissed then
     insert into admin_dismissed_signals (signal_key, kind, user_id, dismissed_by)
     values (left(p_signal_key, 2000), coalesce(p_kind, 'unknown'),
-            -- A signal can name a user whose profile has since gone; store
-            -- the dismissal without the link rather than failing the FK.
             (select p.id from profiles p where p.id = p_user_id),
             auth.uid())
     on conflict (signal_key) do update
