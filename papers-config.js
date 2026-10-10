@@ -26510,7 +26510,7 @@ window.SUBJECTS = [
       '36(b)(ii)': { type: 'points', points: ['less / low impact of freshwater run off on coral reefs', '(because) high / increased (bio)diversity index / 0.818 is high', 'fresh water supplies nutrients (to the reef)', 'species have been able to adapt / were less sensitive to freshwater run off / environmental changes'], guidance: '2 max. ALLOW ECF throughout if calculation in (b)(i) shows low diversity index. DO NOT ALLOW reference to the future of the reef. IGNORE food.' },
     } },
 
-  { id: 'bio-ocrb-h422-2022-p2', year: 'June 2022', paperName: 'Paper 2 — Scientific literacy in biology', paperCode: 'H422/02', totalMarks: 100, durationMins: 120,
+  { id: 'bio-ocrb-h422-2022-p2', year: 'June 2022', paperName: 'Paper 2 — Scientific literacy in biology', paperCode: 'H422/02', totalMarks: 100, durationMins: 135,
     qpUrl: 'https://www.ocr.org.uk/Images/676890-question-paper-scientific-literacy-in-biology.pdf',
     msUrl: 'https://www.ocr.org.uk/Images/677034-mark-scheme-scientific-literacy-in-biology.pdf',
     qbqNote: 'All 7 questions (100 marks) are wired question-by-question with the official OCR mark scheme. Q1 is based on an Advance Notice article \'Biochemistry of exercise-induced acidosis\'. Open the question paper PDF alongside for all graphs, photomicrographs, tables and the insert.',
@@ -26822,7 +26822,7 @@ window.SUBJECTS = [
           { code: '36(b)', preamble: 'Other methods can be used to count cells.\n\n“.......... is an electronic method of counting cells that uses laser beams. The cells can be tagged to make them .......... when they pass through the laser beam. The specific scattering of light as each cell passes through the beam allows them to be counted and also for their .......... and physical characteristics to be analysed.”', prompt: 'Complete the sentences about a method to count cells using the most appropriate word(s).', marks: 3 },
         ] },
     ] },
-  { id: 'bio-ocrb-h422-2023-p2', year: 'June 2023', paperName: 'Paper 2 — Scientific literacy in biology', paperCode: 'H422/02', totalMarks: 100, durationMins: 120,
+  { id: 'bio-ocrb-h422-2023-p2', year: 'June 2023', paperName: 'Paper 2 — Scientific literacy in biology', paperCode: 'H422/02', totalMarks: 100, durationMins: 135,
     qpUrl: 'https://www.ocr.org.uk/Images/703907-question-paper-scientific-literacy-in-biology.pdf',
     msUrl: 'https://www.ocr.org.uk/Images/704034-mark-scheme-scientific-literacy-in-biology.pdf',
     qbqNote: 'All 7 questions (100 marks) are wired question-by-question with the official OCR mark scheme. Q1 is based on an Advance Notice article \'Development of therapeutic antibodies for the treatment of disease\'. Open the question paper PDF alongside for all figures, graphs and diagrams.',
