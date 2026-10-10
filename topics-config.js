@@ -674,8 +674,8 @@
         { id: '1.8', name: 'Integration', sub: 'Substitution, by parts, areas, diff equations' },
         { id: '1.9', name: 'Numerical Methods', sub: 'Iteration, Newton-Raphson, trapezium rule' },
         { id: '1.10', name: 'Vectors', sub: '2D/3D vectors, scalar product, geometric problems' },
-        { id: '2.1', name: 'Statistical Sampling & Data Presentation', sub: 'Sampling methods, histograms, box plots, averages, spread' },
-        { id: '2.2', name: 'Probability', sub: 'Venn diagrams, tree diagrams, conditional probability' },
+        { id: '2.1', name: 'Statistics', sub: 'Sampling, data presentation, probability, binomial & normal distributions, hypothesis tests' },
+        { id: '2.2', name: 'Mechanics', sub: 'Kinematics, forces & Newton\'s laws, projectiles, friction, moments' },
       ],
     },
     'Mathematics_Edexcel': {
