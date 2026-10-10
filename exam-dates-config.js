@@ -43,6 +43,14 @@ const EXAM_DATES = {
     { paper: 'Paper 2 — Calculator', date: '2026-06-09', time: 'PM', duration: '1h 30m' },
     { paper: 'Paper 3 — Calculator', date: '2026-06-18', time: 'AM', duration: '1h 30m' },
   ],
+  // Edexcel 1MA1, from Pearson's FINAL GCSE Summer 2027 timetable
+  // (gcse-summer-2027final.pdf) — the by-date and by-subject tables agree.
+  // Foundation and Higher papers sit in the same slot.
+  'Mathematics_Edexcel|gcse': [
+    { paper: 'Paper 1 — Non-Calculator', date: '2027-05-14', time: 'AM', duration: '1h 30m' },
+    { paper: 'Paper 2 — Calculator', date: '2027-05-27', time: 'AM', duration: '1h 30m' },
+    { paper: 'Paper 3 — Calculator', date: '2027-06-14', time: 'AM', duration: '1h 30m' },
+  ],
   'Mathematics_OCR|alevel': [
     { paper: 'Paper 1 — Pure Mathematics', date: '2026-06-03', time: 'PM', duration: '2h' },
     { paper: 'Paper 2 — Pure Mathematics & Statistics', date: '2026-06-11', time: 'PM', duration: '2h' },
