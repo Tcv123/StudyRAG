@@ -4,7 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>RAG Learning — Features — RAG Learning</title>
+  <title>Features — RAG Learning</title>
+  <meta name="description" content="Diagnostics, Red–Amber–Green topic tracking, spec-matched notes, flashcards, past papers and AI marking — everything RAG Learning does to show UK students what to revise next.">
+  <link rel="canonical" href="https://raglearning.uk/features">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RAG Learning">
+  <meta property="og:title" content="Features — RAG Learning">
+  <meta property="og:description" content="Diagnostics, Red–Amber–Green topic tracking, spec-matched notes, flashcards, past papers and AI marking — everything RAG Learning does to show UK students what to revise next.">
+  <meta property="og:url" content="https://raglearning.uk/features">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Features — RAG Learning">
+  <meta name="twitter:description" content="Diagnostics, Red–Amber–Green topic tracking, spec-matched notes, flashcards, past papers and AI marking — everything RAG Learning does to show UK students what to revise next.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
@@ -232,6 +243,28 @@
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
 
     @media (max-width: 900px) { .nav-anchors { display: none; } }
+
+    /* ── MOBILE NAV ── (same menu as index.html) */
+    .mobile-nav-btn {
+      display: none; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      align-items: center; justify-content: center; cursor: pointer;
+      font-size: 18px; color: var(--text);
+    }
+    .mobile-nav-drawer {
+      display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(37,99,235,0.1);
+      padding: 12px 20px 20px; flex-direction: column; gap: 4px;
+    }
+    .mobile-nav-drawer.open { display: flex; }
+    .mobile-nav-link {
+      padding: 11px 14px; border-radius: 8px; font-size: 14px; font-weight: 500;
+      color: var(--muted); text-decoration: none; transition: all 0.15s;
+    }
+    .mobile-nav-link:hover { background: var(--surface2); color: var(--text); }
+    .mobile-nav-divider { height: 1px; background: var(--border); margin: 8px 0; }
+    @media (max-width: 900px) { .mobile-nav-btn { display: flex; } }
     @media (max-width: 840px) {
       .three-grid, .grid-3, .roadmap-3 { grid-template-columns: 1fr 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
@@ -270,9 +303,36 @@
     <div class="nav-right">
       <a href="auth/login.html" class="nav-btn nav-ghost">Sign in</a>
       <a href="auth/register.html" class="nav-btn nav-fill">Register</a>
+      <button class="mobile-nav-btn" id="mobileNavBtn" aria-label="Open menu" onclick="toggleMobileNav()">☰</button>
     </div>
   </div>
 </nav>
+<div class="mobile-nav-drawer" id="mobileNavDrawer">
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="features.html" class="mobile-nav-link">Features</a>
+  <a href="subjects.html" class="mobile-nav-link">Subjects</a>
+  <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+  <a href="support.html" class="mobile-nav-link">Support</a>
+  <div class="mobile-nav-divider"></div>
+  <a href="auth/login.html" class="mobile-nav-link">Sign in</a>
+  <a href="auth/register.html" class="mobile-nav-link" style="color:var(--accent-dark);font-weight:600;">Register →</a>
+</div>
+<script>
+  function toggleMobileNav() {
+    const drawer = document.getElementById('mobileNavDrawer');
+    const btn    = document.getElementById('mobileNavBtn');
+    const open   = drawer.classList.toggle('open');
+    btn.textContent = open ? '✕' : '☰';
+  }
+  document.addEventListener('click', function(e) {
+    const drawer = document.getElementById('mobileNavDrawer');
+    const btn    = document.getElementById('mobileNavBtn');
+    if (!drawer.contains(e.target) && !btn.contains(e.target)) {
+      drawer.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+</script>
 
 <!-- Page header -->
 <section class="page-header">
@@ -367,7 +427,7 @@
           <div class="step-n">1</div>
           <div class="step-body">
             <h4>Create your account</h4>
-            <p>Sign up and choose your level — GCSE, AS Level, or A Level.</p>
+            <p>Sign up and choose your level — AS Level or A Level (GCSE coming soon).</p>
           </div>
         </div>
         <div class="step">
@@ -381,7 +441,7 @@
           <div class="step-n">3</div>
           <div class="step-body">
             <h4>Take the diagnostic</h4>
-            <p>10 questions per topic: <span style="color:var(--green-text);font-weight:500">3 green</span>, <span style="color:var(--amber-text);font-weight:500">3 amber</span>, <span style="color:var(--red-text);font-weight:500">4 red</span> level.</p>
+            <p>5 questions per topic across <span style="color:var(--green-text);font-weight:500">green</span>, <span style="color:var(--amber-text);font-weight:500">amber</span> and <span style="color:var(--red-text);font-weight:500">red</span> difficulty — including one written answer.</p>
           </div>
         </div>
       </div>
@@ -390,7 +450,7 @@
           <div class="step-n">4</div>
           <div class="step-body">
             <h4>Get your RAG rating</h4>
-            <p>The algorithm places each topic automatically — no self-reporting needed.</p>
+            <p>You mark your one written answer against the model answer; the rest is automatic and the algorithm places each topic for you.</p>
           </div>
         </div>
         <div class="step">
@@ -423,7 +483,7 @@
       <div class="roadmap-card">
         <div class="roadmap-icon" aria-hidden="true">📚</div>
         <h3>Full GCSE coverage</h3>
-        <p>The same spec-matched notes, diagnostics and RAG tracking, built out across every GCSE board. Computer Science, Biology and Geography are already live — the rest of the core subjects are rolling out board by board.</p>
+        <p>The same spec-matched notes, diagnostics and RAG tracking, built out across every GCSE board. GCSE is coming soon — we're building it subject by subject and board by board.</p>
       </div>
       <div class="roadmap-card">
         <div class="roadmap-icon" aria-hidden="true">📸</div>
@@ -468,8 +528,9 @@
       <a href="privacy.html" style="font-size:13px;color:var(--muted);text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Privacy</a>
       <a href="terms.html" style="font-size:13px;color:var(--muted);text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Terms</a>
     </div>
-    <div style="font-size:12px;color:var(--muted2);">© 2025 RAG Learning · Built for UK students</div>
+    <div style="font-size:12px;color:var(--muted2);">© <span class="copy-year">2026</span> RAG Learning · Built for UK students</div>
   </div>
 </footer>
+<script>document.querySelectorAll('.copy-year').forEach(function (el) { el.textContent = new Date().getFullYear(); });</script>
 </body>
 </html>

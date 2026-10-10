@@ -111,8 +111,9 @@
   }
 
   function render(classes, isTeacher) {
-    const here = location.pathname.split('/').pop();
-    const currentId = here === 'class.html'
+    const here = (location.pathname.split('/').pop() || '').toLowerCase()
+                   .replace(/\.html$/, '');        // Vercel cleanUrls drops .html
+    const currentId = here === 'class'
       ? new URLSearchParams(location.search).get('id') : null;
 
     const rows = classes.map(c => {
@@ -200,12 +201,13 @@
      from the nav isn't enough — a teacher who reloads, bookmarks, or follows
      an old link lands on the student dashboard and sees "Your subjects",
      medals and a revision progress report that will always read zero. */
-  const STUDENT_ONLY = ['dashboard.html', 'breakdown.html', 'medals.html'];
+  const STUDENT_ONLY = ['dashboard', 'breakdown', 'medals'];   // compared without .html
 
   const ROLE_KEY = 'cached_account_type';
 
   function redirectIfStudentPage() {
-    const here = location.pathname.split('/').pop().toLowerCase();
+    const here = (location.pathname.split('/').pop() || '').toLowerCase()
+                   .replace(/\.html$/, '');        // Vercel cleanUrls drops .html
     if (!STUDENT_ONLY.includes(here)) return false;
     location.replace(BASE + 'teacher.html');
     return true;

@@ -139,6 +139,20 @@
       margin-bottom: 32px;
     }
 
+    /* Cards, pills and tabs are real <button>s for keyboard and screen-reader
+       use; :where() keeps this reset at zero specificity so each class's own
+       font-size, colour and padding still win. */
+    :where(.level-card, .subj-card, .board-pill, .avatar-style-tab) {
+      font: inherit; color: inherit; line-height: inherit;
+      margin: 0; -webkit-appearance: none; appearance: none;
+    }
+    button.level-card, button.subj-card { width: 100%; }
+    button.subj-card { text-align: left; }
+    .level-card:focus-visible, .subj-card:focus-visible, .board-pill:focus-visible,
+    .avatar-style-tab:focus-visible, .avatar-option:focus-visible, .remove-btn:focus-visible {
+      outline: 2px solid var(--accent); outline-offset: 2px;
+    }
+
     .level-card {
       border: 2px solid var(--border);
       border-radius: 14px; padding: 20px 16px;
@@ -531,12 +545,12 @@
           <div class="level-tag">Secondary school</div>
           <div class="coming-soon">Coming soon</div>
         </div>
-        <div class="level-card" onclick="selectLevel('a-level', this)">
+        <button type="button" class="level-card" data-level="a-level" aria-pressed="false" onclick="selectLevel('a-level', this)">
           <div class="level-icon">📙</div>
           <div class="level-name">A Level</div>
           <div class="level-desc">Years 12 & 13</div>
           <div class="level-tag">Sixth form</div>
-        </div>
+        </button>
       </div>
 
       <div class="footer-row">
@@ -617,14 +631,27 @@ function avatarUrlFor(style, seed) {
   return `https://api.dicebear.com/9.x/${style}/svg?seed=${encodeURIComponent(seed)}`;
 }
 
+// Re-rendering via innerHTML drops keyboard focus to <body>. Remember the
+// focused control by its onclick (unique per control) and put focus back.
+function keepFocus(container) {
+  const a = document.activeElement;
+  const key = a && container.contains(a) ? a.getAttribute('onclick') : null;
+  return () => {
+    if (!key) return;
+    const el = [...container.querySelectorAll('[onclick]')].find(e => e.getAttribute('onclick') === key);
+    if (el) el.focus();
+  };
+}
+
 // ── Avatar picker ────────────────────────────────────────────────────────
 function renderAvatarPicker() {
   const tabsEl = document.getElementById('avatarStyleTabs');
   const gridEl = document.getElementById('avatarGrid');
   const currentEl = document.getElementById('avatarCurrent');
+  const restore = keepFocus(document.getElementById('stepAvatar'));
 
   tabsEl.innerHTML = AVATAR_STYLES.map(s =>
-    `<div class="avatar-style-tab ${s.id === selectedAvatarStyle ? 'active' : ''}" onclick="pickAvatarStyle('${s.id}')">${s.name}</div>`
+    `<button type="button" class="avatar-style-tab ${s.id === selectedAvatarStyle ? 'active' : ''}" aria-pressed="${s.id === selectedAvatarStyle}" onclick="pickAvatarStyle('${s.id}')">${s.name}</button>`
   ).join('');
 
   gridEl.innerHTML = AVATAR_SEEDS.map(seed => {
@@ -632,7 +659,7 @@ function renderAvatarPicker() {
     const sameStyle = selectedAvatarUrl?.includes(`/${selectedAvatarStyle}/svg`);
     const sameSeed  = selectedAvatarUrl?.includes(`seed=${encodeURIComponent(seed)}`);
     const sel = (sameStyle && sameSeed) ? 'selected' : '';
-    return `<button type="button" class="avatar-option ${sel}" onclick="pickAvatar('${url}')"><img src="${url}" alt="" loading="lazy"></button>`;
+    return `<button type="button" class="avatar-option ${sel}" aria-label="Avatar ${seed}" aria-pressed="${!!sel}" onclick="pickAvatar('${url}')"><img src="${url}" alt="" loading="lazy"></button>`;
   }).join('');
 
   if (selectedAvatarUrl) {
@@ -640,6 +667,7 @@ function renderAvatarPicker() {
   } else {
     currentEl.textContent = '?';
   }
+  restore();
 }
 
 function pickAvatarStyle(styleId) {
@@ -673,8 +701,12 @@ function selectLevel(val, el) {
     });
   }
   selectedLevel = val;
-  document.querySelectorAll('.level-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('.level-card').forEach(c => {
+    c.classList.remove('selected');
+    if (c.dataset.level) c.setAttribute('aria-pressed', 'false');
+  });
   el.classList.add('selected');
+  el.setAttribute('aria-pressed', 'true');
   const msg1 = document.getElementById('msg1');
   if (msg1) { msg1.className = 'msg'; msg1.innerText = ''; }
 }
@@ -743,11 +775,11 @@ function renderGrid() {
     }
     const sel = selectedSubjects.some(x => x.name === s.name);
     return `
-      <div class="subj-card ${sel ? 'selected' : ''}" onclick="toggleSubject('${s.name}','${s.emoji}',this)">
-        <div class="subj-card-emoji">${window.SUBJECTS_CONFIG.iconHtml(s.name)}</div>
+      <button type="button" class="subj-card ${sel ? 'selected' : ''}" aria-pressed="${sel}" onclick="toggleSubject('${s.name}','${s.emoji}',this)">
+        <div class="subj-card-emoji" aria-hidden="true">${window.SUBJECTS_CONFIG.iconHtml(s.name)}</div>
         <div class="subj-card-name">${s.name}</div>
-        <div class="subj-check">✓</div>
-      </div>`;
+        <div class="subj-check" aria-hidden="true">✓</div>
+      </button>`;
   }).join('');
 }
 
@@ -759,11 +791,13 @@ function toggleSubject(name, emoji, el) {
     if (!subjectCurrentGrade[name]) subjectCurrentGrade[name] = null;
     if (!subjectTargetGrade[name]) subjectTargetGrade[name] = null;
     el.classList.add('selected');
+    el.setAttribute('aria-pressed', 'true');
   } else {
     selectedSubjects.splice(idx, 1);
     delete subjectBoards[name];
   delete subjectOptions[name];
     el.classList.remove('selected');
+    el.setAttribute('aria-pressed', 'false');
   }
   renderSelected();
 }
@@ -925,6 +959,7 @@ function renderSelected() {
     return;
   }
 
+  const restore = keepFocus(sec);
   sec.innerHTML = `<div class="selected-label">Selected subjects (${selectedSubjects.length})</div>
     <div class="selected-list">
       ${selectedSubjects.map(s => `
@@ -932,28 +967,31 @@ function renderSelected() {
           <div class="selected-row-top">
             <span class="selected-emoji">${s.emoji}</span>
             <span class="selected-name">${s.name}</span>
-            <button class="remove-btn" onclick="removeSubject('${s.name}')" title="Remove">✕</button>
+            <button type="button" class="remove-btn" onclick="removeSubject('${s.name}')" title="Remove" aria-label="Remove ${s.name}">✕</button>
           </div>
-          <div class="board-pills">
+          <div class="board-pills" role="group" aria-label="${s.name} exam board">
             ${getBoardsFor(s.name).map(b => `
-              <div class="board-pill ${subjectBoards[s.name] === b ? 'active' : ''}"
+              <button type="button" class="board-pill ${subjectBoards[s.name] === b ? 'active' : ''}"
+                   aria-pressed="${subjectBoards[s.name] === b}"
                    onclick="setBoard('${s.name}','${b}')">
                 ${b}
-              </div>`).join('')}
+              </button>`).join('')}
           </div>
           ${optionGroupsFor(s.name).map(g => `
             <div class="option-group">
               <div class="option-prompt">${g.prompt}</div>
-              <div class="board-pills">
+              <div class="board-pills" role="group" aria-label="${g.prompt}">
                 ${g.choices.map(c => `
-                  <div class="board-pill ${(subjectOptions[s.name] || {})[g.key] === c.value ? 'active' : ''}"
+                  <button type="button" class="board-pill ${(subjectOptions[s.name] || {})[g.key] === c.value ? 'active' : ''}"
+                       aria-pressed="${(subjectOptions[s.name] || {})[g.key] === c.value}"
                        onclick="setOption('${s.name}','${g.key}','${c.value}')">
                     ${c.label}
-                  </div>`).join('')}
+                  </button>`).join('')}
               </div>
             </div>`).join('')}
         </div>`).join('')}
     </div>`;
+  restore();
 }
 
 function renderGrades() {
@@ -975,6 +1013,7 @@ function renderGrades() {
   if (currentGradeIndex >= selectedSubjects.length) currentGradeIndex = selectedSubjects.length - 1;
   if (currentGradeIndex < 0) currentGradeIndex = 0;
 
+  const restore = keepFocus(sec);
   const total  = selectedSubjects.length;
   const s      = selectedSubjects[currentGradeIndex];
   const cur    = norm(subjectCurrentGrade[s.name]);
@@ -1006,34 +1045,38 @@ function renderGrades() {
       <div style="display:flex;gap:16px;flex-wrap:wrap;">
         <div style="flex:1;min-width:140px;">
           <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Current grade</div>
-          <div class="board-pills">
+          <div class="board-pills" role="group" aria-label="${s.name} current grade">
             ${GRADES.map(g => `
-              <div class="board-pill ${cur === g ? 'active' : ''}" style="min-width:28px;text-align:center;padding:6px 10px;"
+              <button type="button" class="board-pill ${cur === g ? 'active' : ''}" style="min-width:28px;text-align:center;padding:6px 10px;"
+                   aria-pressed="${cur === g}"
                    onclick="setCurrentGrade('${s.name}',${gradeVal(g)})">
                 ${g}
-              </div>`).join('')}
+              </button>`).join('')}
           </div>
           <div class="board-pills" style="margin-top:8px;">
-            <div class="board-pill ${noCur ? 'active' : ''}" style="padding:6px 12px;"
+            <button type="button" class="board-pill ${noCur ? 'active' : ''}" style="padding:6px 12px;"
+                 aria-pressed="${noCur}"
                  onclick="setCurrentGrade('${s.name}','none')">
               No grade yet
-            </div>
+            </button>
           </div>
         </div>
         <div style="flex:1;min-width:140px;">
           <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Target grade</div>
-          <div class="board-pills">
+          <div class="board-pills" role="group" aria-label="${s.name} target grade">
             ${maxed ? `<div class="board-pill active" style="min-width:28px;text-align:center;padding:6px 10px;">${GRADES[0]}</div>` :
               validTargets.map(g => `
-              <div class="board-pill ${tgt === g ? 'active' : ''}" style="min-width:28px;text-align:center;padding:6px 10px;"
+              <button type="button" class="board-pill ${tgt === g ? 'active' : ''}" style="min-width:28px;text-align:center;padding:6px 10px;"
+                   aria-pressed="${tgt === g}"
                    onclick="setTargetGrade('${s.name}',${gradeVal(g)})">
                 ${g}
-              </div>`).join('')}
+              </button>`).join('')}
           </div>
         </div>
       </div>
     </div>
   `;
+  restore();
 }
 
 // ── Save ─────────────────────────────────────────────────────────────────
@@ -1180,10 +1223,13 @@ async function save() {
     // Pre-select the level
     if (profile?.level) {
       selectedLevel = profile.level;
-      document.querySelectorAll('.level-card').forEach(c => c.classList.remove('selected'));
-      const levelCards = document.querySelectorAll('.level-card');
-      const levelIdx = { gcse: 0, as: 1, 'a-level': 2 }[selectedLevel];
-      if (levelCards[levelIdx]) levelCards[levelIdx].classList.add('selected');
+      // Match on the card's own level, not its position — the GCSE card is a
+      // disabled placeholder and there is no AS card, so indexes drift.
+      document.querySelectorAll('.level-card').forEach(c => {
+        const on = c.dataset.level === selectedLevel;
+        c.classList.toggle('selected', on);
+        if (c.dataset.level) c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
     }
 
     // Pre-select subjects, boards, and grades

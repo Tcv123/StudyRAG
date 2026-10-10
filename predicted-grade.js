@@ -181,7 +181,12 @@
     opts = opts || {};
     const col   = gradeColour(prediction.grade);
     const dim   = prediction.confidence === 'low';
-    const ts    = targetStatus(prediction, opts.target, opts.level);
+    // A low-confidence grade (one topic of seventeen, say) should not also
+    // claim "Above target". Opacity and a hover tip were the only signals,
+    // and touch screens never hover, so say it in words instead.
+    const ts    = dim
+      ? { label: 'Early guess — diagnose more topics', short: 'Early guess', colour: 'var(--muted,#6B7280)' }
+      : targetStatus(prediction, opts.target, opts.level);
     const parts = [`${prediction.masteryPct}% mastery`];
     if (prediction.ragScore !== null && prediction.ragScore !== undefined) parts.push(`Diagnostic ${prediction.ragScore}%`);
     if (prediction.practiceScore !== null) parts.push(`Practice ${prediction.practiceScore}%`);

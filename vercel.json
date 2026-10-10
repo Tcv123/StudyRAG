@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "buildCommand": "node scripts/check-bank.js",
+  "buildCommand": "node scripts/check-bank.js && node scripts/check-guidance.js",
   "outputDirectory": ".",
   "redirects": [
     {

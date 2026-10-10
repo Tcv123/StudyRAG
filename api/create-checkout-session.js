@@ -57,7 +57,7 @@ module.exports = async function handler(req, res) {
      * created a fresh Stripe customer for the same person. */
     const { data: profile, error: profileErr } = await supabaseAdmin
       .from('profiles')
-      .select('stripe_customer_id, email, first_name, last_name, subscription_tier, subscription_status, subscription_expires_at, is_early_adopter')
+      .select('stripe_customer_id, email, first_name, last_name, subscription_tier, subscription_status, subscription_expires_at, is_early_adopter, premium_until')
       .eq('id', user.id)
       .single();
 

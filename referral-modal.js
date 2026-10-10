@@ -5,15 +5,17 @@
    on any page a logged-in user lands on. Currently Dashboard.html and
    teacher.html, which are the two destinations in auth/post-auth.js.
 
-   Forced and unskippable: no close button, no backdrop click, no Esc.
-   It reappears on every login until the answer is stored, which means
-   existing users get caught on their next visit with no backfill needed —
-   their user_attribution row simply does not exist yet.
+   Dismissable (close button, backdrop click, Esc), but only for the rest
+   of the browser session: it comes back on the next visit until the answer
+   is stored, which means existing users get caught on their next visit
+   with no backfill needed — their user_attribution row simply does not
+   exist yet.
 
    New students are routed to auth/setup.html first, so they see this on
    their first Dashboard load, i.e. after setup rather than on top of it.
 
-   THE LOCALSTORAGE FLAG IS A CACHE, NOT THE ANSWER. It only ever skips a
+   THE LOCALSTORAGE FLAG IS A CACHE, NOT THE ANSWER. It is keyed per user
+   (rag_referral_done_<uid>) so a shared machine still asks each account. It only ever skips a
    read that would have returned a row. Clearing it costs one extra query,
    never a duplicate prompt, because the database is what decides. Setting
    it by hand cannot dodge the modal for long either — a different browser
@@ -30,7 +32,10 @@
 (function () {
   'use strict';
 
-  var CACHE_KEY = 'rag_referral_done';
+  /* Per user, like rag_welcome_seen_<uid> — a global flag meant everyone
+   * after the first person on a shared machine skipped the question. */
+  function cacheKey(uid)   { return 'rag_referral_done_' + uid; }
+  function dismissKey(uid) { return 'rag_referral_dismissed_' + uid; }
 
   /* Stable slugs, never the labels — renaming "X (Twitter)" later must not
    * split one channel into two slices of the pie. */
@@ -53,13 +58,15 @@
    *
    * Created synchronously, before any await, because the page's own script
    * reads it during its first pass. If the user closes the tab without
-   * answering it simply never resolves, which is the point — the referral
-   * question is forced, so nothing queued behind it should appear either. */
+   * answering it simply never resolves, so nothing queued behind it appears
+   * on top of it. Dismissing it (close, backdrop, Esc) settles it too. */
   var settle;
   var whenSettled = new Promise(function (resolve) { settle = resolve; });
 
   function lsGet(k) { try { return localStorage.getItem(k); } catch (_) { return null; } }
   function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (_) {} }
+  function ssGet(k) { try { return sessionStorage.getItem(k); } catch (_) { return null; } }
+  function ssSet(k, v) { try { sessionStorage.setItem(k, v); } catch (_) {} }
 
   // ── STYLES ────────────────────────────────────────────────────────
   // Tokens only (--surface, --text, --accent …) so dark mode comes free
@@ -75,14 +82,20 @@
       'opacity:0;transition:opacity .28s ease;}',
       '.rfm-backdrop.rfm-in{opacity:1;}',
 
-      '.rfm-card{width:100%;max-width:520px;max-height:calc(100vh - 40px);overflow-y:auto;',
+      '.rfm-card{position:relative;width:100%;max-width:520px;max-height:calc(100vh - 40px);overflow-y:auto;',
       'background:var(--surface);color:var(--text);border:1px solid var(--border);',
       'border-radius:18px;padding:30px 30px 26px;font-family:var(--font-body,sans-serif);',
       'box-shadow:0 24px 64px rgba(11,30,63,0.28);',
       'transform:translateY(14px) scale(.98);transition:transform .28s ease;}',
       '.rfm-backdrop.rfm-in .rfm-card{transform:none;}',
 
-      '.rfm-title{font-family:var(--font-display,serif);font-size:26px;line-height:1.2;margin-bottom:8px;}',
+      '.rfm-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border:none;',
+      'border-radius:50%;background:transparent;color:var(--muted);font:inherit;font-size:22px;',
+      'line-height:1;cursor:pointer;transition:background .15s,color .15s;}',
+      '.rfm-close:hover{background:var(--surface2,rgba(0,0,0,0.05));color:var(--text);}',
+      '.rfm-close:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}',
+
+      '.rfm-title{font-family:var(--font-display,serif);font-size:26px;line-height:1.2;margin-bottom:8px;padding-right:32px;}',
       '.rfm-sub{color:var(--muted);font-size:14px;line-height:1.5;margin-bottom:22px;}',
 
       '.rfm-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}',
@@ -139,6 +152,14 @@
     var card = document.createElement('div');
     card.className = 'rfm-card';
 
+    var closeBtn = document.createElement('button');
+    closeBtn.className = 'rfm-close';
+    closeBtn.type = 'button';
+    closeBtn.setAttribute('aria-label', 'Close');
+    closeBtn.textContent = '×';
+    closeBtn.addEventListener('click', dismiss);
+    backdrop.addEventListener('click', function (e) { if (e.target === backdrop) dismiss(); });
+
     var h = document.createElement('h2');
     h.className = 'rfm-title';
     h.id = 'rfm-title';
@@ -159,7 +180,7 @@
     detail.hidden = true;
 
     /* Revealed with the rest of step two, once a source is chosen. Optional
-     * on purpose — the modal is forced, and forcing prose out of someone who
+     * on purpose — forcing prose out of someone who
      * has nothing to say only buys you junk rows. */
     var fbWrap = document.createElement('div');
     fbWrap.className = 'rfm-fb';
@@ -242,7 +263,7 @@
         /* 23505 is a unique violation — another tab already answered. That is
          * the desired end state, so treat it exactly like a success. */
         if (res.error && res.error.code !== '23505') throw res.error;
-        lsSet(CACHE_KEY, 'true');
+        lsSet(cacheKey(user.id), 'true');
         close();
       }).catch(function (err) {
         console.error('[referral-modal] save failed', err);
@@ -261,10 +282,16 @@
       setTimeout(function () { backdrop.remove(); }, 300);
     }
 
-    /* Tab must not escape into the page behind. Esc is swallowed outright —
-     * this dialog has no dismiss path by design. */
+    /* Not answered: skip it for the rest of this browser session only, so
+     * it does not reappear on every page load but still asks next visit. */
+    function dismiss() {
+      ssSet(dismissKey(user.id), 'true');
+      close();
+    }
+
+    /* Tab must not escape into the page behind. Esc dismisses. */
     function trap(e) {
-      if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); return; }
+      if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); dismiss(); return; }
       if (e.key !== 'Tab') return;
       var focusable = card.querySelectorAll(
         'button:not(:disabled), input:not([hidden]), .rfm-fb:not([hidden]) textarea'
@@ -276,6 +303,7 @@
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     }
 
+    card.appendChild(closeBtn);
     card.appendChild(h);
     card.appendChild(sub);
     card.appendChild(grid);
@@ -300,11 +328,12 @@
   // ── ENTRY ─────────────────────────────────────────────────────────
   async function maybeAsk() {
     if (typeof supabaseClient === 'undefined') return settle();
-    if (lsGet(CACHE_KEY) === 'true')           return settle();
 
     var session = await supabaseClient.auth.getSession();
     var user = session?.data?.session?.user;
     if (!user) return settle();
+    if (lsGet(cacheKey(user.id)) === 'true')     return settle();
+    if (ssGet(dismissKey(user.id)) === 'true')   return settle();
 
     var res = await supabaseClient
       .from('user_attribution')
@@ -315,7 +344,7 @@
     /* A failed read must not prompt someone who already answered, so any
      * error means stay quiet and try again on the next page load. */
     if (res.error) { console.warn('[referral-modal] lookup failed', res.error); return settle(); }
-    if (res.data)  { lsSet(CACHE_KEY, 'true'); return settle(); }
+    if (res.data)  { lsSet(cacheKey(user.id), 'true'); return settle(); }
 
     show(user);
   }

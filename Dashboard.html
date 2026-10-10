@@ -735,7 +735,7 @@
             var cfgs = {
               gcse:      { label: 'GCSE',    icon: '📘', desc: 'Year 10–11 · Ages 14–16 · UK curriculum' },
               as:        { label: 'AS Level', icon: '📗', desc: 'Year 12 · Ages 16–17 · UK curriculum' },
-              'a-level': { label: 'A Level', icon: '📙', desc: 'Year 13 · Ages 17–18 · UK curriculum' }
+              'a-level': { label: 'A Level', icon: '📙', desc: 'Years 12 & 13 · Ages 16–18 · UK curriculum' }
             };
             try {
               var c = cfgs[localStorage.getItem('cached_level')];
@@ -933,7 +933,6 @@
 const DASH_SUBJ_COLOR  = {'Computer Science':'#06B6D4','Mathematics':'#8B5CF6','Further Mathematics':'#D946EF','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6','English Language':'#DC2626','Politics':'#A16207','Business Studies':'#4F46E5'};
 const DASH_BOARD_COLOR = {'AQA':'#7C3AED','OCR':'#0369A1','Edexcel':'#B45309','Edexcel A':'#B45309','Edexcel B':'#92400E','OCR A':'#0E7490','OCR B':'#0F766E','Eduqas':'#047857'};
 const DASH_BOARD_BG    = {'AQA':'rgba(124,58,237,0.1)','OCR':'rgba(3,105,161,0.1)','Edexcel':'rgba(180,83,9,0.1)','Edexcel A':'rgba(180,83,9,0.1)','Edexcel B':'rgba(146,64,14,0.1)','OCR A':'rgba(14,116,144,0.1)','OCR B':'rgba(15,118,110,0.1)','Eduqas':'rgba(4,120,87,0.1)'};
-const DASH_SUBJ_EMOJI  = {'Computer Science':'💻','Mathematics':'🔢','Further Mathematics':'∑','Biology':'🧬','Chemistry':'🧪','Physics':'⚛️','Economics':'📈','Geography':'🌍','English Language':'📝','Business Studies':'💼'};
 
 let _dashCalExams  = [];
 let _dashCalMonths = [];
@@ -957,10 +956,20 @@ async function renderExamDates(subjects, level) {
   dates.forEach(d => {
     const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
     const diffDays = Math.ceil((examDate - now) / 86400000);
-    _dashCalExams.push({ ...d, emoji: DASH_SUBJ_EMOJI[d.subject] || '📚', examDate, diffDays });
+    // Past papers are already sat. Keeping them opened the calendar on last
+    // June, with every exam marked Done, once a series was over.
+    if (diffDays >= 0) _dashCalExams.push({ ...d, emoji: SUBJECTS_CONFIG.emojiFor(d.subject), examDate, diffDays });
   });
 
-  if (!_dashCalExams.length) { if (row) row.style.display = 'none'; return; }
+  if (!_dashCalExams.length) {
+    if (!dates.length) { if (row) row.style.display = 'none'; return; }
+    // The student has subjects with dates, all in the past: next summer's
+    // timetable is not out yet. Say so rather than hide the panel.
+    if (row) row.style.display = '';
+    if (nav) nav.style.display = 'none';
+    grid.innerHTML = '<div style="padding:18px;text-align:center;color:var(--muted);font-size:13px;">No exams scheduled yet — next summer’s dates appear here as soon as the exam boards publish them.</div>';
+    return;
+  }
   if (row) row.style.display = '';
   if (nav) nav.style.display = 'flex';
 
@@ -1084,7 +1093,7 @@ function renderExamCalendar() {
 const LEVEL_CONFIG = {
   gcse:      { label: 'GCSE',    icon: '📘', desc: 'Year 10–11 · Ages 14–16 · UK curriculum' },
   as:        { label: 'AS Level', icon: '📗', desc: 'Year 12 · Ages 16–17 · UK curriculum' },
-  'a-level': { label: 'A Level', icon: '📙', desc: 'Year 13 · Ages 17–18 · UK curriculum' },
+  'a-level': { label: 'A Level', icon: '📙', desc: 'Years 12 & 13 · Ages 16–18 · UK curriculum' },
 };
 
 // ── RAG helpers ──────────────────────────────────────────────────────────
@@ -1241,8 +1250,10 @@ function renderPlanCta(profile) {
   const tier      = profile?.subscription_tier   || 'free';
   const status    = profile?.subscription_status || 'active';
   const expiresAt = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+  // Same test as settings.html and nav-gating.js (tier !== 'free'), so a
+  // six-month subscriber is not left looking at "Unlock Pro".
   const isPro =
-    (tier === 'pro_monthly' || tier === 'pro_annual') &&
+    tier !== 'free' &&
     (status === 'active' || status === 'trialing') &&
     (!expiresAt || expiresAt > new Date());
 
@@ -1252,7 +1263,21 @@ function renderPlanCta(profile) {
   const subEl   = document.getElementById('planCtaSub');
   const btnEl   = document.getElementById('planCtaBtn');
 
-  const planLabel = tier === 'pro_annual' ? 'RAG Pro · Annual' : 'RAG Pro · Monthly';
+  /* An early adopter is comped pro_monthly with no Stripe customer, and was
+   * shown "RAG Pro · Monthly" for a plan they never bought (G-05). */
+  const until  = profile?.premium_until ? new Date(profile.premium_until) : expiresAt;
+  const comped = profile?.is_early_adopter && !profile?.stripe_customer_id;
+  if (comped) {
+    const untilText = until
+      ? until.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+      : null;
+    if (titleEl) titleEl.textContent = `✨ Early adopter — Premium`;
+    if (subEl)   subEl.textContent   = untilText ? `Premium free until ${untilText}. Nothing renews and you will not be charged.` : 'Premium, free. Nothing renews and you will not be charged.';
+    if (btnEl)   { btnEl.textContent = 'Keep Pro'; btnEl.onclick = () => { window.location = 'pricing-app.html'; }; }
+    return;
+  }
+
+  const planLabel = { pro_annual: 'RAG Pro · Annual', pro_biannual: 'RAG Pro · 6 months' }[tier] || 'RAG Pro · Monthly';
   const trialing  = status === 'trialing';
 
   if (titleEl) titleEl.textContent = trialing ? `✨ Free trial active` : `✨ You're on Pro`;
@@ -1275,7 +1300,7 @@ function renderPlanCta(profile) {
   }
 
   if (subEl)   subEl.textContent   = trialing
-    ? `${planLabel} — full access during your 7-day trial${expiryLine}.`
+    ? `${planLabel} — free until your early-adopter Premium ends${expiryLine}.`
     : `${planLabel} — full access to past papers, AI feedback, and mark schemes${expiryLine}.`;
   if (btnEl)   { btnEl.textContent = 'Manage plan'; btnEl.onclick = () => { window.location = 'settings.html'; }; }
 }
@@ -2141,9 +2166,20 @@ function showDiagTopics(key) {
 
 // classes-nav.js links here from every other page, since the join modal
 // lives on the dashboard.
-if (location.hash === '#join-class') {
-  document.addEventListener('DOMContentLoaded', () => setTimeout(openJoinClass, 60));
+// Opens on a direct load, and on a same-page click (only the hash changes, so
+// there's no reload). The hash is cleared afterwards so clicking the link
+// again after closing the modal fires hashchange once more.
+function openJoinClassFromHash() {
+  if (location.hash !== '#join-class') return;
+  history.replaceState(null, '', location.pathname + location.search);
+  openJoinClass();
 }
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => setTimeout(openJoinClassFromHash, 60));
+} else {
+  setTimeout(openJoinClassFromHash, 60);
+}
+window.addEventListener('hashchange', openJoinClassFromHash);
 
 function openJoinClass() {
   document.getElementById('joinStepCode').style.display = 'block';

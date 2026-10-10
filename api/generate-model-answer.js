@@ -15,6 +15,7 @@
 const Groq = require('groq-sdk');
 const { createClient } = require('@supabase/supabase-js');
 const { createCompletion, classifyGroqError } = require('./_groq');
+const { consumeAiCall, quotaExceeded } = require('./_ai-quota');
 const { bandsFor, rubricRules } = require('./_mark-bands');
 const crypto = require('crypto');
 
@@ -179,6 +180,8 @@ module.exports = async function handler(req, res) {
     }
 
     // ---- Cache miss — call Groq ----
+    if (!(await consumeAiCall(supabaseAdmin, user.id))) return quotaExceeded(res);
+
     const completion = await createCompletion(groq, {
       messages: [
         { role: 'system', content: buildSystemPrompt({

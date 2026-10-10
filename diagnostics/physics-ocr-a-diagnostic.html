@@ -207,7 +207,10 @@
 
 <script>
 const W = { green: 1, amber: 2, red: 3, written_full: 3, written_partial: 1.5 };
-const THRESHOLD = { green: 8, amber: 4 };
+// Fractions of the maximum this question set can score. The written question
+// (worth 3) replaces an MCQ of a random tier, so the maximum is 9, 10 or 11;
+// 0.8 / 0.4 keep the original 8 / 4 cut-offs at the middle maximum of 10.
+const THRESHOLD = { green: 0.8, amber: 0.4 };
 
 function shuffleOptions(q) {
   // Options are stored with the answer in a fixed position (mostly B), so
@@ -281,8 +284,10 @@ function buildQuestionSet(mcq, written) {
 
 function computeRag(results) {
   const score = results.reduce((s, r) => s + (r.pts || 0), 0);
-  if (score >= THRESHOLD.green) return 'green';
-  if (score >= THRESHOLD.amber) return 'amber';
+  const max = results.reduce((s, r) => s + (r.type === 'written' ? W.written_full : (W[r.tier] || 0)), 0);
+  if (!max) return 'red';
+  if (score >= THRESHOLD.green * max) return 'green';
+  if (score >= THRESHOLD.amber * max) return 'amber';
   return 'red';
 }
 
@@ -545,7 +550,7 @@ async function renderResult() {
     const label = r.type === 'written'
       ? (r.level === 'full' ? '✓ Written' : r.level === 'partial' ? '~ Written' : '✗ Written')
       : (r.correct ? `✓ Q${i+1}` : `✗ Q${i+1}`);
-    const cls = r.pts > 0 ? (r.pts >= W.green && r.type !== 'written' ? 'hit-green' : 'hit-amber') : 'miss';
+    const cls = r.type === 'written' ? (r.level === 'full' ? 'hit-green' : r.level === 'partial' ? 'hit-amber' : 'miss') : (r.pts > 0 ? 'hit-green' : 'miss');
     return `<span class="breakdown-chip ${cls}">${label}</span>`;
   }).join('');
 

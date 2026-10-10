@@ -109,11 +109,17 @@
  *   ALTER TABLE user_medals ENABLE ROW LEVEL SECURITY;
  *   CREATE POLICY "own medals" ON user_medals FOR ALL USING (auth.uid() = user_id);
  *
- *   -- 5. Self-service account deletion (immediate, trigger-driven).
- *   -- Clicking "Delete account" calls request_account_deletion(), which stamps
- *   -- profiles.deletion_requested_at. An AFTER UPDATE trigger on that column
- *   -- immediately deletes the matching auth.users row; ON DELETE CASCADE fans
- *   -- out to every user-scoped table so nothing is left behind.
+ *   -- 5. Self-service account deletion (immediate).
+ *   -- Clicking "Delete account" calls request_account_deletion(), which
+ *   -- deletes the caller's auth.users row; ON DELETE CASCADE fans out to
+ *   -- every user-scoped table so nothing is left behind.
+ *   --
+ *   -- NOTE: the live database was built without the REFERENCES ... ON DELETE
+ *   -- CASCADE clauses shown above, so deletion left every row (and the
+ *   -- auth.users email) behind. The current request_account_deletion(), the
+ *   -- foreign keys, and a policy stopping direct profile deletes are in
+ *   -- db/migrations/2026-10-10-account-deletion-cascade.sql — that file, not
+ *   -- 5b/5c below, is the source of truth.
  *
  *   -- 5a. Flag column + generated boolean mirror for easy filtering in the dashboard.
  *   -- account_active = TRUE while deletion_requested_at IS NULL; flips to FALSE the

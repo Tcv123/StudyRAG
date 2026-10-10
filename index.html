@@ -23,6 +23,17 @@
   </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>RAG Learning — Revise Smarter</title>
+  <meta name="description" content="Know exactly what to study next. RAG Learning rates every A Level topic red, amber or green from short diagnostics, with spec-matched notes, flashcards and practice for UK exam boards.">
+  <link rel="canonical" href="https://raglearning.uk/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RAG Learning">
+  <meta property="og:title" content="RAG Learning — Revise Smarter">
+  <meta property="og:description" content="Know exactly what to study next. RAG Learning rates every A Level topic red, amber or green from short diagnostics, with spec-matched notes, flashcards and practice for UK exam boards.">
+  <meta property="og:url" content="https://raglearning.uk/">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="RAG Learning — Revise Smarter">
+  <meta name="twitter:description" content="Know exactly what to study next. RAG Learning rates every A Level topic red, amber or green from short diagnostics, with spec-matched notes, flashcards and practice for UK exam boards.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="shared.css">
@@ -615,6 +626,7 @@
     /* ── EARLY ADOPTER BANNER ── */
     .early-banner {
       position: relative; z-index: 10;
+      margin-top: 65px; /* sit below the fixed nav (64px + 1px border) */
       background: linear-gradient(90deg, #7c3aed 0%, #2563eb 100%);
       color: #fff; text-align: center;
       padding: 10px 20px;
@@ -634,6 +646,8 @@
       font-variant-numeric: tabular-nums;
     }
     .eb-pill-loading { opacity: 0.6; }
+    /* The banner already clears the nav, so the hero needs less top padding. */
+    .early-banner + .hero { padding-top: 40px; }
 
     /* Hero early-adopter nudge */
     .ea-nudge {
@@ -794,7 +808,7 @@
 <!-- Early Adopter Banner -->
 <div class="early-banner" id="earlyBanner">
   <span class="eb-star">⭐</span>
-  <span><strong>Early adopter offer:</strong> The first 150 users to sign up get <strong>3 months of Premium free</strong></span>
+  <span><strong>Early adopter offer:</strong> The first <span class="ea-limit">150</span> users to sign up get <strong>3 months of Premium free</strong></span>
   <span class="eb-pill eb-pill-loading" id="earlyBannerPill">
     <span id="earlyBannerCount">—</span>
     <span>spots left</span>
@@ -871,7 +885,7 @@
           <div class="step-n">1</div>
           <div class="step-body">
             <h4>Create your account</h4>
-            <p>Sign up and choose your level — GCSE, AS Level, or A Level.</p>
+            <p>Sign up and choose your level — AS Level or A Level (GCSE coming soon).</p>
           </div>
         </div>
         <div class="step">
@@ -885,7 +899,7 @@
           <div class="step-n">3</div>
           <div class="step-body">
             <h4>Take the diagnostic</h4>
-            <p>10 questions per topic: <span style="color:var(--green-text);font-weight:500">3 green</span>, <span style="color:var(--amber-text);font-weight:500">3 amber</span>, <span style="color:var(--red-text);font-weight:500">4 red</span> level.</p>
+            <p>5 questions per topic across <span style="color:var(--green-text);font-weight:500">green</span>, <span style="color:var(--amber-text);font-weight:500">amber</span> and <span style="color:var(--red-text);font-weight:500">red</span> difficulty — including one written answer.</p>
           </div>
         </div>
       </div>
@@ -894,7 +908,7 @@
           <div class="step-n">4</div>
           <div class="step-body">
             <h4>Get your RAG rating</h4>
-            <p>The algorithm places each topic automatically — no self-reporting needed.</p>
+            <p>You mark your one written answer against the model answer; the rest is automatic and the algorithm places each topic for you.</p>
           </div>
         </div>
         <div class="step">
@@ -1053,7 +1067,7 @@
       <div class="roadmap-card">
         <div class="roadmap-icon" aria-hidden="true">📚</div>
         <h3>Full GCSE coverage</h3>
-        <p>The same spec-matched notes, diagnostics and RAG tracking, built out across every GCSE board. Computer Science, Biology and Geography are already live — the rest of the core subjects are rolling out board by board.</p>
+        <p>The same spec-matched notes, diagnostics and RAG tracking, built out across every GCSE board. GCSE is coming soon — we're building it subject by subject and board by board.</p>
       </div>
       <div class="roadmap-card">
         <div class="roadmap-icon" aria-hidden="true">📸</div>
@@ -1135,7 +1149,7 @@
       <div class="medal-card">
         <div class="medal-emoji">⚡</div>
         <div class="medal-name">Perfect Score</div>
-        <div class="medal-desc">10/10 on a diagnostic</div>
+        <div class="medal-desc">Every question right in a diagnostic</div>
       </div>
       <div class="medal-card">
         <div class="medal-emoji">📈</div>
@@ -1172,7 +1186,7 @@
       </details>
       <details class="faq-item">
         <summary>How is my RAG rating calculated?<div class="faq-icon">+</div></summary>
-        <div class="faq-body">Each topic starts with a 10-question diagnostic covering three difficulty bands. Your score, the difficulty of the questions you got right, and how recently you last practiced the topic all feed into the rating. There's no self-reporting — the algorithm places it for you.</div>
+        <div class="faq-body">Each topic starts with a 5-question diagnostic covering three difficulty bands, including one written answer that you mark against the model answer. Your score, the difficulty of the questions you got right, and how recently you last practiced the topic all feed into the rating — the rest is automatic and the algorithm places it for you.</div>
       </details>
       <details class="faq-item">
         <summary>Can I change subjects later?<div class="faq-icon">+</div></summary>
@@ -1200,7 +1214,7 @@
     <div class="cta-box">
       <h2>Ready to revise smarter?</h2>
       <p>Create a free account and know exactly what to study — no guessing, no wasted time.<br>
-      <strong style="color:var(--accent-dark)">⭐ First 100 sign-ups get 3 months of Premium free</strong> — <span id="ctaEaCount">spots still available!</span></p>
+      <strong style="color:var(--accent-dark)">⭐ First <span class="ea-limit">150</span> sign-ups get 3 months of Premium free</strong> — <span id="ctaEaCount">spots still available!</span></p>
       <div class="cta-btns">
         <a href="auth/register.html" class="btn btn-blue">Create free account</a>
         <a href="auth/login.html" class="btn btn-white">Sign in</a>
@@ -1218,6 +1232,7 @@
   <script>
     (async function () {
       const EARLY_LIMIT = 150;
+      document.querySelectorAll('.ea-limit').forEach(el => { el.textContent = EARLY_LIMIT; });
       try {
         const { data, error } = await supabaseClient.rpc('count_early_adopters');
         if (error) throw error;
@@ -1239,7 +1254,7 @@
         // Hero nudge
         const heroCount = document.getElementById('heroEaCount');
         const heroNudge = document.getElementById('heroEaNudge');
-        if (heroCount) heroCount.textContent = left + ' of 150';
+        if (heroCount) heroCount.textContent = left + ' of ' + EARLY_LIMIT;
         if (heroNudge && left === 0) heroNudge.style.display = 'none';
 
         // CTA line
@@ -1269,8 +1284,9 @@
       <a href="privacy.html" style="font-size:13px;color:var(--muted);text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Privacy</a>
       <a href="terms.html" style="font-size:13px;color:var(--muted);text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Terms</a>
     </div>
-    <div style="font-size:12px;color:var(--muted2);">© 2025 RAG Learning · Built for UK students</div>
+    <div style="font-size:12px;color:var(--muted2);">© <span class="copy-year">2026</span> RAG Learning · Built for UK students</div>
   </div>
 </footer>
+<script>document.querySelectorAll('.copy-year').forEach(function (el) { el.textContent = new Date().getFullYear(); });</script>
 </body>
 </html>

@@ -15,6 +15,7 @@
 const Groq = require('groq-sdk');
 const { createClient } = require('@supabase/supabase-js');
 const { createCompletion, classifyGroqError } = require('./_groq');
+const { consumeAiCall, quotaExceeded } = require('./_ai-quota');
 
 let groq = null;
 let supabaseAdmin = null;
@@ -157,6 +158,8 @@ module.exports = async function handler(req, res) {
     }
 
     // ---- Call Groq ----
+    if (!(await consumeAiCall(supabaseAdmin, user.id))) return quotaExceeded(res);
+
     const completion = await createCompletion(groq, {
       messages: [
         { role: 'system', content: buildSystemPrompt({ subject: subject || 'Computer Science', board: board || 'OCR', paperCode, msType: markScheme.type,

@@ -15,6 +15,7 @@
 const Groq = require('groq-sdk');
 const { createClient } = require('@supabase/supabase-js');
 const { createCompletion, classifyGroqError } = require('./_groq');
+const { consumeAiCall, quotaExceeded } = require('./_ai-quota');
 const { bandsFor, rubricRules, renderBands } = require('./_mark-bands');
 
 // Lazy client init — keeps env-var/SDK errors *inside* the handler so we get
@@ -157,6 +158,8 @@ module.exports = async function handler(req, res) {
     if (question.length > 10000) return res.status(413).json({ error: 'question_too_long' });
 
     // ---- Call Groq ----
+    if (!(await consumeAiCall(supabaseAdmin, user.id))) return quotaExceeded(res);
+
     const completion = await createCompletion(groq, {
       messages: [
         { role: 'system', content: buildSystemPrompt({

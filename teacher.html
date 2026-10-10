@@ -288,8 +288,10 @@
       <div class="field">
         <label for="cLevel">Level</label>
         <select id="cLevel" onchange="refreshSubjects()">
-          <option value="gcse">GCSE</option>
-          <option value="as">AS</option>
+          <!-- Students can only choose A-Level in setup, so a GCSE or AS
+               class would be one nobody can join. Re-enable with setup. -->
+          <option value="gcse" disabled>GCSE — coming soon</option>
+          <option value="as" disabled>AS — coming soon</option>
           <option value="a-level" selected>A-Level</option>
         </select>
       </div>

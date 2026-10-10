@@ -930,6 +930,18 @@
     feedbackPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  // Non-JSON error bodies are usually a Vercel HTML error page, so they go to
+  // the console, never into the message the student sees.
+  function httpErrorMessage(status) {
+    if (status === 401 || status === 403) return 'Your session has expired — sign in again and retry.';
+    if (status === 413) return 'Your answer is too long to send — please trim it and try again.';
+    if (status === 429) return "You've used today's AI requests. The limit resets at midnight UTC.";
+    if (status === 504) return 'The request timed out — please try again.';
+    if (status === 502 || status === 503) return 'The server is having trouble right now — please try again in a minute.';
+    if (status >= 500) return 'Something went wrong on our side — please try again.';
+    return `Something went wrong (error ${status}) — please try again.`;
+  }
+
   // ---------- Shared model-answer fetcher ----------
   // Used by both the Show-model button (standalone) and the auto-show after
   // Mark finishes (appended below the feedback). Returns the text + marks; the
@@ -962,15 +974,17 @@
       const raw = await resp.text();
       try {
         const errBody = JSON.parse(raw);
-        if (errBody?.error === 'pro_required') msg = 'AI model answers are a Pro feature.';
+        if (errBody?.error === 'daily_limit_reached') msg = errBody.message || "You've used today's AI requests. The limit resets at midnight UTC.";
+        else if (errBody?.error === 'pro_required') msg = 'AI model answers are a Pro feature.';
         else if (errBody?.error === 'rate_limited') msg = 'Too many requests right now — wait a moment.';
         else if (errBody?.error === 'model_unavailable') msg = "Model answers are temporarily unavailable — the AI provider isn't reachable right now.";
         else if (errBody?.error) msg = `${errBody.error}${errBody.message ? ` — ${errBody.message}` : ''}`;
       } catch (_) {
+        console.error('[ai-feedback] model answer failed', resp.status, raw);
         if (resp.status === 504 || /timeout|timed out/i.test(raw)) {
           msg = 'Model-answer request timed out.';
-        } else if (raw && raw.length < 500) {
-          msg = `Server returned ${resp.status}: ${raw.slice(0, 300)}`;
+        } else {
+          msg = httpErrorMessage(resp.status);
         }
       }
       throw new Error(msg);
@@ -1066,7 +1080,8 @@
         const raw = await resp.text();
         try {
           const errBody = JSON.parse(raw);
-          if (errBody?.error === 'pro_required') msg = 'AI marking is a Pro feature. Please upgrade.';
+          if (errBody?.error === 'daily_limit_reached') msg = errBody.message || "You've used today's AI requests. The limit resets at midnight UTC.";
+          else if (errBody?.error === 'pro_required') msg = 'AI marking is a Pro feature. Please upgrade.';
           else if (errBody?.error === 'rate_limited') msg = `Rate-limited by the AI provider${errBody.message ? `: ${errBody.message}` : ''}. Wait a moment and try again.`;
           else if (errBody?.error === 'model_unavailable') msg = "AI marking is temporarily unavailable — the AI provider isn't reachable right now. Try again later; if it persists, it needs a look at the server config.";
           else if (errBody?.error === 'answer_too_long') msg = 'Your answer is too long — please trim it under 12,000 characters.';
@@ -1074,10 +1089,11 @@
           else if (errBody?.error) msg = `Error: ${errBody.error}${errBody.message ? ` — ${errBody.message}` : ''}.`;
         } catch (_) {
           // Non-JSON body — likely an HTML error page from Vercel.
+          console.error('[ai-feedback] marking failed', resp.status, raw);
           if (resp.status === 504 || /timeout|timed out/i.test(raw)) {
             msg = 'The grading request timed out. This usually means the function ran past Vercel’s limit — try again, or check your Vercel function timeout (vercel.json).';
-          } else if (raw && raw.length < 500) {
-            msg = `Server returned ${resp.status}: ${raw.slice(0, 300)}`;
+          } else {
+            msg = httpErrorMessage(resp.status);
           }
         }
         throw new Error(msg);

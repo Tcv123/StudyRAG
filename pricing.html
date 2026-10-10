@@ -4,7 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>RAG Learning — Pricing — RAG Learning</title>
+  <title>Pricing — RAG Learning</title>
+  <meta name="description" content="RAG Learning is free for UK students. Premium adds AI marking, full past papers and more — see the monthly and annual plans.">
+  <link rel="canonical" href="https://raglearning.uk/pricing">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RAG Learning">
+  <meta property="og:title" content="Pricing — RAG Learning">
+  <meta property="og:description" content="RAG Learning is free for UK students. Premium adds AI marking, full past papers and more — see the monthly and annual plans.">
+  <meta property="og:url" content="https://raglearning.uk/pricing">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pricing — RAG Learning">
+  <meta name="twitter:description" content="RAG Learning is free for UK students. Premium adds AI marking, full past papers and more — see the monthly and annual plans.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -246,6 +257,28 @@
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
 
     @media (max-width: 900px) { .nav-anchors { display: none; } }
+
+    /* ── MOBILE NAV ── (same menu as index.html) */
+    .mobile-nav-btn {
+      display: none; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      align-items: center; justify-content: center; cursor: pointer;
+      font-size: 18px; color: var(--text);
+    }
+    .mobile-nav-drawer {
+      display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(37,99,235,0.1);
+      padding: 12px 20px 20px; flex-direction: column; gap: 4px;
+    }
+    .mobile-nav-drawer.open { display: flex; }
+    .mobile-nav-link {
+      padding: 11px 14px; border-radius: 8px; font-size: 14px; font-weight: 500;
+      color: var(--muted); text-decoration: none; transition: all 0.15s;
+    }
+    .mobile-nav-link:hover { background: var(--surface2); color: var(--text); }
+    .mobile-nav-divider { height: 1px; background: var(--border); margin: 8px 0; }
+    @media (max-width: 900px) { .mobile-nav-btn { display: flex; } }
     @media (max-width: 760px) { .pricing-grid { grid-template-columns: 1fr; } .medals-grid { grid-template-columns: 1fr 1fr; } }
     @media (max-width: 520px) {
       .medals-grid { grid-template-columns: 1fr; }
@@ -280,9 +313,36 @@
     <div class="nav-right">
       <a href="auth/login.html" class="nav-btn nav-ghost">Sign in</a>
       <a href="auth/register.html" class="nav-btn nav-fill">Register</a>
+      <button class="mobile-nav-btn" id="mobileNavBtn" aria-label="Open menu" onclick="toggleMobileNav()">☰</button>
     </div>
   </div>
 </nav>
+<div class="mobile-nav-drawer" id="mobileNavDrawer">
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="features.html" class="mobile-nav-link">Features</a>
+  <a href="subjects.html" class="mobile-nav-link">Subjects</a>
+  <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+  <a href="support.html" class="mobile-nav-link">Support</a>
+  <div class="mobile-nav-divider"></div>
+  <a href="auth/login.html" class="mobile-nav-link">Sign in</a>
+  <a href="auth/register.html" class="mobile-nav-link" style="color:var(--accent-dark);font-weight:600;">Register →</a>
+</div>
+<script>
+  function toggleMobileNav() {
+    const drawer = document.getElementById('mobileNavDrawer');
+    const btn    = document.getElementById('mobileNavBtn');
+    const open   = drawer.classList.toggle('open');
+    btn.textContent = open ? '✕' : '☰';
+  }
+  document.addEventListener('click', function(e) {
+    const drawer = document.getElementById('mobileNavDrawer');
+    const btn    = document.getElementById('mobileNavBtn');
+    if (!drawer.contains(e.target) && !btn.contains(e.target)) {
+      drawer.classList.remove('open');
+      btn.textContent = '☰';
+    }
+  });
+</script>
 
 <!-- Page header -->
 <section class="page-header">
@@ -322,7 +382,7 @@
         <div class="plan-sub">For every UK student. No card needed.</div>
         <ul class="plan-features">
           <li><span class="plan-check">✓</span> Spec-matched notes for every supported subject</li>
-          <li><span class="plan-check">✓</span> 10-question diagnostic per topic</li>
+          <li><span class="plan-check">✓</span> 5-question diagnostic per topic</li>
           <li><span class="plan-check">✓</span> Full RAG tracking &amp; progress dashboard</li>
           <li><span class="plan-check">✓</span> Core practice-question bank</li>
           <li><span class="plan-check">✓</span> Streaks, medals &amp; study tracker</li>
@@ -457,7 +517,7 @@
       <div class="medal-card">
         <div class="medal-emoji">⚡</div>
         <div class="medal-name">Perfect Score</div>
-        <div class="medal-desc">10/10 on a diagnostic</div>
+        <div class="medal-desc">Every question right in a diagnostic</div>
       </div>
       <div class="medal-card">
         <div class="medal-emoji">📈</div>
@@ -488,8 +548,9 @@
       <a href="privacy.html" style="font-size:13px;color:var(--muted);text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Privacy</a>
       <a href="terms.html" style="font-size:13px;color:var(--muted);text-decoration:none;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--muted)'">Terms</a>
     </div>
-    <div style="font-size:12px;color:var(--muted2);">© 2025 RAG Learning · Built for UK students</div>
+    <div style="font-size:12px;color:var(--muted2);">© <span class="copy-year">2026</span> RAG Learning · Built for UK students</div>
   </div>
 </footer>
+<script>document.querySelectorAll('.copy-year').forEach(function (el) { el.textContent = new Date().getFullYear(); });</script>
 </body>
 </html>

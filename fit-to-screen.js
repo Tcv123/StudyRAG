@@ -43,6 +43,10 @@
   function fit() {
     root.style.zoom = '1';              // reset before measuring
     var view = window.innerWidth || root.clientWidth;
+    // Hidden/backgrounded tabs can report a 0 width; 0/content would clamp
+    // to MIN_ZOOM and leave the page tiny until the next resize. Skip — the
+    // resize/load listeners re-fit once the tab has a real width.
+    if (!view) return;
     var content = naturalWidth();
 
     var z = 1;

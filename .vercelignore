@@ -9,6 +9,10 @@
 # Claude Code settings, hooks and worktrees.
 /.claude
 
+# Dev mockups. Nothing links to them, and they were public with no noindex.
+/ai-feedback-mockup.html
+/flashcard-demo.html
+
 # Repo housekeeping, not needed to build or serve anything.
 /.gitignore
 

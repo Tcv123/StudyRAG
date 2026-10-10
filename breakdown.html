@@ -621,7 +621,7 @@
       <div id="examsEmpty" class="fc-empty" style="display:none;">
         <div class="fc-empty-icon">📅</div>
         <div style="font-family:var(--font-display);font-size:17px;color:var(--text);margin-bottom:4px;">No upcoming exams</div>
-        <div style="font-size:13px;">Add subjects in setup to see exam dates here.</div>
+        <div id="examsEmptyText" style="font-size:13px;">Add subjects in setup to see exam dates here.</div>
       </div>
     </div>
 
@@ -1095,7 +1095,6 @@ function renderSummaryBar(green, amber, red, pending) {
 const SUBJ_COLOR  = {'Computer Science':'#06B6D4','Mathematics':'#8B5CF6','Further Mathematics':'#D946EF','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6','English Language':'#DC2626','Politics':'#A16207','Business Studies':'#4F46E5'};
 const BOARD_COLOR = {'AQA':'#7C3AED','OCR':'#0369A1','Edexcel':'#B45309','Edexcel A':'#B45309','Edexcel B':'#92400E','OCR A':'#0E7490','OCR B':'#0F766E','Eduqas':'#047857'};
 const BOARD_BG    = {'AQA':'rgba(124,58,237,0.1)','OCR':'rgba(3,105,161,0.1)','Edexcel':'rgba(180,83,9,0.1)','Edexcel A':'rgba(180,83,9,0.1)','Edexcel B':'rgba(146,64,14,0.1)','OCR A':'rgba(14,116,144,0.1)','OCR B':'rgba(15,118,110,0.1)','Eduqas':'rgba(4,120,87,0.1)'};
-const SUBJ_EMOJI  = {'Computer Science':'💻','Mathematics':'🔢','Further Mathematics':'∑','Biology':'🧬','Chemistry':'🧪','Physics':'⚛️','Economics':'📈','Geography':'🌍','English Language':'📝','Business Studies':'💼'};
 
 let _calExams = [];
 let _calYear  = 0;
@@ -1118,13 +1117,17 @@ async function renderBreakdownExams(subjects) {
   dates.forEach(d => {
     const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
     const diffDays = Math.ceil((examDate - now) / 86400000);
-    if (diffDays >= 0) _calExams.push({ ...d, emoji: SUBJ_EMOJI[d.subject]||'📚', examDate, diffDays });
+    if (diffDays >= 0) _calExams.push({ ...d, emoji: SUBJECTS_CONFIG.emojiFor(d.subject), examDate, diffDays });
   });
 
   const empty = document.getElementById('examsEmpty');
   if (!_calExams.length) {
     row.style.display = 'none';
     if (empty) empty.style.display = 'block';
+    // Dates exist but are all past: the student has done nothing wrong,
+    // the next series just is not published yet.
+    const emptyText = document.getElementById('examsEmptyText');
+    if (emptyText && dates.length) emptyText.textContent = 'No exams scheduled yet — next summer’s dates appear here as soon as the exam boards publish them.';
     return;
   }
   row.style.display = '';

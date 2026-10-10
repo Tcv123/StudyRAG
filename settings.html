@@ -1257,10 +1257,10 @@ async function confirmResetStreak() {
 }
 
 // ── Delete account ──
-// Deletes immediately. request_account_deletion() stamps
-// profiles.deletion_requested_at, and an AFTER UPDATE trigger deletes the
-// auth.users row in the same transaction; ON DELETE CASCADE removes
-// everything else. There is no grace period and no way to recover the
+// Deletes immediately. request_account_deletion() deletes the auth.users
+// row for auth.uid(), and ON DELETE CASCADE removes everything else (see
+// db/migrations/2026-10-10-account-deletion-cascade.sql — before it, the
+// cascade did not exist and every row was left behind). There is no grace period and no way to recover the
 // account — this comment used to describe a pg_cron job purging seven days
 // later, which is not what the database does, and the privacy policy now
 // tells users deletion is immediate.

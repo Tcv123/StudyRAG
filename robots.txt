@@ -1,0 +1,30 @@
+# RAG Learning — https://raglearning.uk
+# Public marketing pages are crawlable; signed-in app pages, admin, auth
+# flows and the API are not useful in search results.
+User-agent: *
+Disallow: /admin
+Disallow: /auth/
+Disallow: /api/
+Disallow: /Dashboard
+Disallow: /ai-feedback
+Disallow: /breakdown
+Disallow: /class
+Disallow: /contact-app
+Disallow: /diagnostics/
+Disallow: /flashcard-demo
+Disallow: /flashcards
+Disallow: /mark-schemes
+Disallow: /medals
+Disallow: /notes
+Disallow: /paper-attempt
+Disallow: /past-papers
+Disallow: /practice
+Disallow: /pricing-app
+Disallow: /revision-timetable
+Disallow: /settings
+Disallow: /support-app
+Disallow: /teacher
+Disallow: /test-history
+Disallow: /unsubscribe
+
+Sitemap: https://raglearning.uk/sitemap.xml
