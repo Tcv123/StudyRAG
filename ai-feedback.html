@@ -332,6 +332,7 @@
   const subjectMap = new Map();
   (userSubjects || []).forEach(row => {
     if (BANKLESS_SUBJECTS.has(row.subject) &&
+        !window.levelLookup(window.AI_FEEDBACK_BUNDLE_MAP || {}, `${row.subject}_${row.exam_board}`) &&
         !subjectHasAttemptablePapers(row.subject, row.exam_board)) return;
     if (!subjectMap.has(row.subject)) subjectMap.set(row.subject, row);
   });
