@@ -152,6 +152,19 @@ html[data-theme="dark"] body::before { opacity: 0.4; }
 html[data-theme="dark"] nav { background: rgba(22,32,53,0.92); }
 html[data-theme="dark"] .preview-card { background: var(--surface); }
 
+/* White text sits on the status colours (--red, --green, --amber) in a few
+   places. Dark mode lightens those colours, so white on them drops below
+   2:1. The sign-out button keeps a deep red; dots and answer letters take dark
+   text instead. */
+@media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .signout-btn.confirm { background: #DC2626; border-color: #DC2626; color: #fff; }
+    html:not([data-theme="light"]) .signout-btn.confirm:hover { background: #B91C1C; border-color: #B91C1C; }
+    html:not([data-theme="light"]) .day-done, html:not([data-theme="light"]) .day-today, html:not([data-theme="light"]) .option-btn.correct .option-letter, html:not([data-theme="light"]) .option-btn.wrong .option-letter, html:not([data-theme="light"]) .option-btn.reveal .option-letter { color: #0F1B2D; }
+}
+html[data-theme="dark"] .signout-btn.confirm { background: #DC2626; border-color: #DC2626; color: #fff; }
+html[data-theme="dark"] .signout-btn.confirm:hover { background: #B91C1C; border-color: #B91C1C; }
+html[data-theme="dark"] .day-done, html[data-theme="dark"] .day-today, html[data-theme="dark"] .option-btn.correct .option-letter, html[data-theme="dark"] .option-btn.wrong .option-letter, html[data-theme="dark"] .option-btn.reveal .option-letter { color: #0F1B2D; }
+
 /* Force light — overrides system dark preference when user chose light */
 html[data-theme="light"] {
   --bg: #EAF2FC; --surface: #FFFFFF; --surface2: #F0F6FD; --surface3: #DBE8F6;
