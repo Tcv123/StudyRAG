@@ -90,7 +90,7 @@ pre { max-width: 100%; overflow-x: auto; }
     --border-hover: #3B82F6;
     --text:         #E2ECFB;
     --muted:        #7B98BF;
-    --muted2:       #506A8A;
+    --muted2:       #7088AB;
     --accent:       #3B82F6;
     --accent-dark:  #60A5FA;
     --accent-dim:   rgba(59,130,246,0.15);
@@ -110,6 +110,11 @@ pre { max-width: 100%; overflow-x: auto; }
     --green-bg:     rgba(74,222,128,0.12);
     --green-border: rgba(74,222,128,0.28);
     --green-text:   #86EFAC;
+
+    /* Pro-card gradients fade to this; light mode falls back to #F6FBFE. */
+    --card-glow-end: var(--surface2);
+    /* Weekend tint in the exam calendars; light falls back to a pale wash. */
+    --cal-weekend: rgba(255,255,255,0.03);
   }
 
   /* Soften heavy orb blobs so they don't over-power the dark background */
@@ -133,12 +138,14 @@ pre { max-width: 100%; overflow-x: auto; }
 html[data-theme="dark"] {
   --bg: #0F1B2D; --surface: #162035; --surface2: #1C2A42; --surface3: #243350;
   --border: #2C3F5C; --border-hover: #3B82F6;
-  --text: #E2ECFB; --muted: #7B98BF; --muted2: #506A8A;
+  --text: #E2ECFB; --muted: #7B98BF; --muted2: #7088AB;
   --accent: #3B82F6; --accent-dark: #60A5FA;
   --accent-dim: rgba(59,130,246,0.15); --accent-glow: rgba(59,130,246,0.28);
   --red: #F87171; --red-bg: rgba(248,113,113,0.12); --red-border: rgba(248,113,113,0.28); --red-text: #FCA5A5;
   --amber: #FBBF24; --amber-bg: rgba(251,191,36,0.12); --amber-border: rgba(251,191,36,0.28); --amber-text: #FDE68A;
   --green: #4ADE80; --green-bg: rgba(74,222,128,0.12); --green-border: rgba(74,222,128,0.28); --green-text: #86EFAC;
+  --card-glow-end: var(--surface2);
+  --cal-weekend: rgba(255,255,255,0.03);
 }
 html[data-theme="dark"] .orb { opacity: 0.5; }
 html[data-theme="dark"] body::before { opacity: 0.4; }
@@ -155,4 +162,6 @@ html[data-theme="light"] {
   --red: #DC2626; --red-bg: rgba(220,38,38,0.07); --red-border: rgba(220,38,38,0.18); --red-text: #B91C1C;
   --amber: #D97706; --amber-bg: rgba(217,119,6,0.07); --amber-border: rgba(217,119,6,0.18); --amber-text: #B45309;
   --green: #16A34A; --green-bg: rgba(22,163,74,0.07); --green-border: rgba(22,163,74,0.18); --green-text: #15803D;
+  --card-glow-end: #F6FBFE;
+  --cal-weekend: rgba(248,251,254,0.6);
 }

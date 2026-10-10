@@ -146,7 +146,20 @@
     U: '#DC2626', '2': '#DC2626', '1': '#DC2626',
   };
 
-  function gradeColour(g) { return GRADE_COLOUR[g] || '#6B7280'; }
+  // These are tuned for a light page. In dark mode the same hues are too
+  // dark to read on the navy surfaces, so swap in lighter ones. They stay
+  // six-digit hex because callers append an alpha byte (e.g. col + '14').
+  const DARK_SWAP = {
+    '#15803D': '#4ADE80', '#16A34A': '#4ADE80', '#22C55E': '#86EFAC',
+    '#2563EB': '#60A5FA', '#D97706': '#FBBF24', '#DC2626': '#F87171',
+    '#6B7280': '#9CA3AF',
+  };
+  function forTheme(hex) {
+    const dark = typeof window.isDarkMode === 'function' && window.isDarkMode();
+    return dark ? (DARK_SWAP[hex] || hex) : hex;
+  }
+
+  function gradeColour(g) { return forTheme(GRADE_COLOUR[g] || '#6B7280'); }
 
   // ── Grade ordering, for predicted-vs-target comparison ────────────────────
   // Bands are listed best→worst, so a lower index is a better grade. We flip
@@ -165,10 +178,10 @@
     const tr = gradeRank(target, level);
     if (pr < 0 || tr < 0) return null;
     const diff = pr - tr;
-    if (diff >= 1)   return { label: '✓ Above target',          short: '✓ Above',    colour: '#15803D' };
-    if (diff === 0)  return { label: '✓ On track',              short: '✓ On track', colour: '#16A34A' };
-    if (diff === -1) return { label: '1 grade below target',    short: '1 below',    colour: '#D97706' };
-    return             { label: `${-diff} grades below target`, short: `${-diff} below`, colour: '#DC2626' };
+    if (diff >= 1)   return { label: '✓ Above target',          short: '✓ Above',    colour: forTheme('#15803D') };
+    if (diff === 0)  return { label: '✓ On track',              short: '✓ On track', colour: forTheme('#16A34A') };
+    if (diff === -1) return { label: '1 grade below target',    short: '1 below',    colour: forTheme('#D97706') };
+    return             { label: `${-diff} grades below target`, short: `${-diff} below`, colour: forTheme('#DC2626') };
   }
 
   // ── Predicted-grade badge ─────────────────────────────────────────────────

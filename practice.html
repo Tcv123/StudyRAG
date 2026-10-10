@@ -133,6 +133,11 @@
       color: #B45309; padding: 2px 7px; border-radius: 12px;
       margin-left: 6px; vertical-align: middle;
     }
+    /* Dark shades above are for a light page; lift them in dark mode. */
+    @media (prefers-color-scheme: dark) {
+      html:not([data-theme="light"]) .subj-pick-diag-tag { color: var(--amber-text); }
+    }
+    html[data-theme="dark"] .subj-pick-diag-tag { color: var(--amber-text); }
     .subj-pick-emoji {
       width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
       background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2);

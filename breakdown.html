@@ -434,6 +434,17 @@
     .subj-pill.amber   .dot { background: var(--amber); }
     .subj-pill.red     .dot { background: var(--red); }
     .subj-pill.pending .dot { background: var(--muted2); }
+    /* The pill text colours above are dark shades for a light page. */
+    @media (prefers-color-scheme: dark) {
+      html:not([data-theme="light"]) .subj-pill.green { color: var(--green-text); }
+      html:not([data-theme="light"]) .subj-pill.amber { color: var(--amber-text); }
+      html:not([data-theme="light"]) .subj-pill.red   { color: var(--red-text); }
+      html:not([data-theme="light"]) .fc-due-badge    { color: var(--amber-text); }
+    }
+    html[data-theme="dark"] .subj-pill.green { color: var(--green-text); }
+    html[data-theme="dark"] .subj-pill.amber { color: var(--amber-text); }
+    html[data-theme="dark"] .subj-pill.red   { color: var(--red-text); }
+    html[data-theme="dark"] .fc-due-badge    { color: var(--amber-text); }
     @media (max-width: 768px) {
       .subj-row { grid-template-columns: 1fr; gap: 10px; }
       .subj-row-pills { justify-content: flex-start; }
@@ -1233,7 +1244,7 @@ function renderCalendar() {
     }).join('');
 
     const hasExams = examsOnDay.length > 0;
-    html += `<div style="min-height:${hasExams ? '120' : '70'}px;padding:8px 7px;border-right:${isLast?'none':'1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday?'var(--accent-dim)':isPast?'var(--surface2)':isWeekend?'rgba(248,251,254,0.6)':'var(--surface)'};">
+    html += `<div style="min-height:${hasExams ? '120' : '70'}px;padding:8px 7px;border-right:${isLast?'none':'1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday?'var(--accent-dim)':isPast?'var(--surface2)':isWeekend?'var(--cal-weekend, rgba(248,251,254,0.6))':'var(--surface)'};">
       <div style="font-size:${isToday?'14':'13'}px;font-weight:${isToday?'800':'500'};color:${isToday?'var(--accent-dark)':isPast?'var(--muted2)':'var(--text)'};${isToday?'background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;':''}">${day}</div>
       ${inlineEvents}
     </div>`;
