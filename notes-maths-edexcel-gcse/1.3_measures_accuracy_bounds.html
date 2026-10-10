@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 1.3 — Measures, Accuracy &amp; Bounds</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>1.3 Measures, Accuracy &amp; Bounds</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Number &mdash; spec refs N13–N16 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<!-- ===================== 1.3.1 UNITS ===================== -->
+<h2>1.3.1 Standard Units and Compound Measures (N13)</h2>
+
+<p>Edexcel N13 asks you to use standard units of <strong>mass, length, time, money and other measures</strong> &mdash; including standard compound measures such as speed, density and pressure &mdash; using decimal quantities where appropriate. Metric conversion factors are not given on the paper, so you must <strong>know</strong> them. Conversions between metric and imperial units (for example 5 miles &asymp; 8 km) are always <strong>given in the question</strong>.</p>
+
+<table>
+  <thead><tr><th>Measure</th><th>Conversions you must know</th></tr></thead>
+  <tbody>
+    <tr><td>Length</td><td>10 mm = 1 cm &nbsp;&nbsp; 100 cm = 1 m &nbsp;&nbsp; 1000 m = 1 km</td></tr>
+    <tr><td>Mass</td><td>1000 mg = 1 g &nbsp;&nbsp; 1000 g = 1 kg &nbsp;&nbsp; 1000 kg = 1 tonne</td></tr>
+    <tr><td>Capacity</td><td>1000 ml = 1 litre &nbsp;&nbsp; 100 cl = 1 litre &nbsp;&nbsp; 1 ml = 1 cm³ &nbsp;&nbsp; 1000 cm³ = 1 litre</td></tr>
+    <tr><td>Time</td><td>60 s = 1 min &nbsp;&nbsp; 60 min = 1 hour &nbsp;&nbsp; 24 h = 1 day &nbsp;&nbsp; 7 days = 1 week &nbsp;&nbsp; 365 days = 1 year (366 in a leap year)</td></tr>
+    <tr><td>Money</td><td>100p = £1</td></tr>
+  </tbody>
+</table>
+
+<div class="definition">
+  <strong>Which way?</strong> Changing to a <em>smaller</em> unit gives a <em>bigger</em> number, so <strong>multiply</strong>. Changing to a <em>larger</em> unit gives a smaller number, so <strong>divide</strong>. A quick sense check: there are more centimetres than metres in any length.
+</div>
+
+<div class="worked-example">
+  Change 0.86 km into centimetres.<br><br>
+  $0.86 \text{ km} = 0.86 \times 1000 = 860 \text{ m}$<br>
+  $860 \text{ m} = 860 \times 100 = \mathbf{86\,000 \text{ cm}}$
+</div>
+
+<h3>Area and Volume Units</h3>
+<p>An area unit is a square, so the length factor is applied <strong>twice</strong> (squared). A volume unit is a cube, so the length factor is applied <strong>three times</strong> (cubed).</p>
+
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="260" height="220" viewBox="0 0 260 220" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <rect x="50" y="30" width="160" height="160" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="50" y1="110" x2="210" y2="110" stroke="#93c5fd" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="130" y1="30" x2="130" y2="190" stroke="#93c5fd" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="130" y="210" font-size="14" fill="#1e40af" font-family="sans-serif" font-weight="700" text-anchor="middle">1 cm = 10 mm</text>
+  <text x="30" y="114" font-size="14" fill="#1e40af" font-family="sans-serif" font-weight="700" text-anchor="middle" transform="rotate(-90 30 114)">1 cm = 10 mm</text>
+  <text x="130" y="105" font-size="15" fill="#1a1a2e" font-family="sans-serif" font-weight="700" text-anchor="middle">1 cm²</text>
+  <text x="130" y="128" font-size="13" fill="#374151" font-family="sans-serif" text-anchor="middle">= 10 × 10</text>
+  <text x="130" y="146" font-size="13" fill="#374151" font-family="sans-serif" text-anchor="middle">= 100 mm²</text>
+</svg>
+<div style="flex:1; min-width:200px;">
+  <div class="formula-box" style="margin-top:0;">
+    <strong>Area</strong><br>
+    $1 \text{ cm}^2 = 10^2 = 100 \text{ mm}^2$<br>
+    $1 \text{ m}^2 = 100^2 = 10\,000 \text{ cm}^2$<br><br>
+    <strong>Volume and capacity</strong><br>
+    $1 \text{ cm}^3 = 10^3 = 1000 \text{ mm}^3$<br>
+    $1 \text{ m}^3 = 100^3 = 1\,000\,000 \text{ cm}^3$<br>
+    $1 \text{ m}^3 = 1000 \text{ litres}$, &nbsp; $1 \text{ litre} = 1000 \text{ cm}^3$
+  </div>
+</div>
+</div>
+
+<div class="worked-example">
+  Change 3.7 m² into cm².<br><br>
+  $3.7 \times 100 \times 100 = 3.7 \times 10\,000 = \mathbf{37\,000 \text{ cm}^2}$
+</div>
+
+<div class="worked-example">
+  A water butt holds 2.5 m³. How many litres is this? How many 750 cm³ jugs could be filled from 3 litres?<br><br>
+  $2.5 \times 1000 = \mathbf{2500 \text{ litres}}$<br>
+  $3 \text{ litres} = 3000 \text{ cm}^3$, and $3000 \div 750 = \mathbf{4 \text{ jugs}}$
+</div>
+
+<div class="exam-tip">
+  Do not convert m² to cm² by multiplying by 100. Picture the 1 m by 1 m square: it is 100 cm by 100 cm, so it contains 10 000 cm². The same trap appears with m³ (factor 1 000 000, not 100).
+</div>
+
+<h3>Time and Compound Measures</h3>
+<p>Time is <strong>base 60</strong>, not base 10. 2.15 hours is <em>not</em> 2 hours 15 minutes: $0.15 \times 60 = 9$, so it is 2 hours 9 minutes. To turn minutes into a decimal of an hour, divide by 60.</p>
+
+<div class="formula-box">
+  $$\text{speed} = \frac{\text{distance}}{\text{time}} \qquad \text{density} = \frac{\text{mass}}{\text{volume}} \qquad \text{pressure} = \frac{\text{force}}{\text{area}}$$
+  Units follow the formula: km &divide; hours gives km/h; g &divide; cm³ gives g/cm³; N &divide; m² gives N/m².
+</div>
+
+<div class="worked-example">
+  A lorry travels 162 km in 2 hours 15 minutes. Work out its average speed.<br><br>
+  $15 \text{ min} = 15 \div 60 = 0.25 \text{ h}$, so the time is 2.25 h.<br>
+  $\text{speed} = 162 \div 2.25 = \mathbf{72 \text{ km/h}}$
+</div>
+
+<div class="worked-example">
+  A metal block has mass 540 g and volume 200 cm³. Work out its density.<br><br>
+  $\text{density} = 540 \div 200 = \mathbf{2.7 \text{ g/cm}^3}$
+</div>
+
+<!-- ===================== 1.3.2 ROUNDING ===================== -->
+<h2>1.3.2 Rounding and Truncating (N15)</h2>
+
+<p>You must round numbers and measures to an <strong>appropriate degree of accuracy</strong> &mdash; to a given number of decimal places (d.p.) or significant figures (s.f.) &mdash; and decide on sensible accuracy in a context.</p>
+
+<div class="definition">
+  <strong>How to round:</strong> locate the last digit you will keep and look at the digit straight after it (the "decider").
+  <ul>
+    <li>Decider 5, 6, 7, 8 or 9 &rarr; the kept digit goes <strong>up</strong> by one</li>
+    <li>Decider 0, 1, 2, 3 or 4 &rarr; the kept digit <strong>stays</strong> the same</li>
+  </ul>
+</div>
+
+<h3>Decimal Places</h3>
+<p>Count the digits <strong>after the decimal point</strong>. Keep trailing zeros that are part of the required accuracy (4.9973 to 2 d.p. is 5.00, not 5).</p>
+<table>
+  <thead><tr><th>Number</th><th>1 d.p.</th><th>2 d.p.</th><th>3 d.p.</th></tr></thead>
+  <tbody>
+    <tr><td>6.4718</td><td>6.5</td><td>6.47</td><td>6.472</td></tr>
+    <tr><td>0.0839</td><td>0.1</td><td>0.08</td><td>0.084</td></tr>
+    <tr><td>4.9973</td><td>5.0</td><td>5.00</td><td>4.997</td></tr>
+  </tbody>
+</table>
+
+<h3>Significant Figures</h3>
+<p>Start counting at the <strong>first non-zero digit</strong>. Zeros in front of it are not significant; zeros between or after non-zero digits (in a decimal) are. When rounding a large number, use <strong>zeros as place holders</strong> so the number keeps its size.</p>
+
+<svg viewBox="0 0 640 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;display:block;margin:16px auto;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa;">
+  <text x="320" y="24" text-anchor="middle" fill="#1e40af" font-family="sans-serif" font-size="14" font-weight="700">0.04070 has 4 significant figures</text>
+  <text x="320" y="66" text-anchor="middle" fill="#374151" font-family="monospace" font-size="34" font-weight="700">0 . 0 4 0 7 0</text>
+  <rect x="200" y="74" width="80" height="6" rx="3" fill="#ef4444" opacity="0.6"/>
+  <text x="240" y="98" text-anchor="middle" fill="#b91c1c" font-family="sans-serif" font-size="12">leading zeros: not significant</text>
+  <rect x="290" y="74" width="150" height="6" rx="3" fill="#16a34a" opacity="0.7"/>
+  <text x="400" y="98" text-anchor="middle" fill="#166534" font-family="sans-serif" font-size="12">4, 0, 7, 0 are significant</text>
+</svg>
+
+<table>
+  <thead><tr><th>Number</th><th>1 s.f.</th><th>2 s.f.</th><th>3 s.f.</th></tr></thead>
+  <tbody>
+    <tr><td>61 482</td><td>60 000</td><td>61 000</td><td>61 500</td></tr>
+    <tr><td>0.007351</td><td>0.007</td><td>0.0074</td><td>0.00735</td></tr>
+    <tr><td>2.0048</td><td>2</td><td>2.0</td><td>2.00</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  Round 0.0040519 to 3 significant figures.<br><br>
+  The significant figures are 4, 0, 5, then the decider is 1. That is less than 5, so the 5 stays.<br>
+  <strong>Answer: 0.00405</strong>
+</div>
+
+<h3>Truncation</h3>
+<div class="definition">
+  To <strong>truncate</strong> a number, chop it off at the required place and ignore everything after &mdash; no rounding up ever happens. 5.678 truncated to 1 d.p. is 5.6 (rounded to 1 d.p. it would be 5.7).
+</div>
+
+<h3>Sensible Accuracy in Context</h3>
+<ul>
+  <li>Money is written to 2 d.p.: £8.5 should be written £8.50.</li>
+  <li>Let the context decide the direction: 70 people travelling in 16-seat minibuses need $70 \div 16 = 4.375 \Rightarrow$ <strong>5 minibuses</strong>, but £70 buys only <strong>4 tickets</strong> at £16 each.</li>
+  <li>Do not give an answer more accurately than the measurements it came from; matching the least accurate value used is a good rule.</li>
+</ul>
+
+<div class="exam-tip">
+  On the calculator papers, keep the full value on your calculator throughout a multi-step question and round only at the very end. Rounding part-way can push the final answer outside the accepted range.
+</div>
+
+<!-- ===================== 1.3.3 ESTIMATION ===================== -->
+<h2>1.3.3 Estimating and Checking (N14)</h2>
+
+<p>N14 asks you to <strong>estimate answers</strong> and to <strong>check calculations</strong> using approximation and estimation, including answers obtained using technology. These questions usually appear on Paper 1 (non-calculator).</p>
+
+<div class="formula-box">
+  <strong>Method:</strong> round each number to <strong>1 significant figure</strong> unless the question says otherwise, write the rounded values down, then work out the simpler calculation. The rounded values earn the method mark.
+</div>
+
+<div class="worked-example">
+  Work out an estimate for $\dfrac{7.83 \times 41.2}{0.19}$.<br><br>
+  $7.83 \approx 8$, $\;41.2 \approx 40$, $\;0.19 \approx 0.2$<br>
+  $\dfrac{8 \times 40}{0.2} = \dfrac{320}{0.2} = \mathbf{1600}$ &nbsp; (the exact value is about 1698)
+</div>
+
+<div class="worked-example">
+  Zara uses her calculator to work out $52.3 \times 0.187$ and gets 97.801. Use estimation to check her answer.<br><br>
+  Estimate: $50 \times 0.2 = 10$. Her answer is about 10 times too big, so it must be wrong (the correct value is 9.7801).
+</div>
+
+<h3>Is the Estimate Too Big or Too Small?</h3>
+<ul>
+  <li>Rounding a number you <strong>add or multiply</strong> <em>up</em> makes the estimate an overestimate.</li>
+  <li>Rounding a number you <strong>divide by</strong> <em>up</em> makes the estimate an underestimate (you divide by more).</li>
+  <li>If the roundings pull in different directions you cannot tell straight away &mdash; you need to compare with the exact answer.</li>
+</ul>
+
+<div class="exam-tip">
+  Dividing by 0.2 is the same as multiplying by 5: $320 \div 0.2 = 1600$. If you get a smaller answer when dividing by a number less than 1, something has gone wrong.
+</div>
+
+<h3>Estimating with Powers and Roots</h3>
+<div class="worked-example">
+  Work out an estimate for $\dfrac{\sqrt{80.6} \times 2.1^3}{0.52}$.<br><br>
+  $\sqrt{80.6} \approx \sqrt{81} = 9$, $\;2.1^3 \approx 2^3 = 8$, $\;0.52 \approx 0.5$<br>
+  $\dfrac{9 \times 8}{0.5} = \dfrac{72}{0.5} = \mathbf{144}$
+</div>
+
+<!-- ===================== 1.3.4 ERROR INTERVALS ===================== -->
+<h2>1.3.4 Error Intervals (N15)</h2>
+
+<p>A rounded or truncated value hides the true value somewhere in a range. Edexcel asks you to write this range, the <strong>error interval</strong>, using inequality notation.</p>
+
+<div class="definition">
+  If a value has been <strong>rounded</strong> to a certain unit, the true value is within <strong>half a unit</strong> of it:<br>
+  $$\text{value} - \tfrac{1}{2}\text{unit} \le x < \text{value} + \tfrac{1}{2}\text{unit}$$
+  Use $\le$ at the bottom (that value rounds up to the given value) and $<$ at the top (that value would round up to the next one).
+</div>
+
+<!-- SVG: number line for 6.3 to 1 d.p. -->
+<svg viewBox="0 0 600 120" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;display:block;margin:16px auto;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa;">
+  <line x1="40" y1="60" x2="560" y2="60" stroke="#374151" stroke-width="2"/>
+  <line x1="100" y1="52" x2="100" y2="68" stroke="#374151" stroke-width="2"/>
+  <line x1="300" y1="52" x2="300" y2="68" stroke="#374151" stroke-width="2"/>
+  <line x1="500" y1="52" x2="500" y2="68" stroke="#374151" stroke-width="2"/>
+  <text x="100" y="90" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">6.2</text>
+  <text x="300" y="90" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151" font-weight="700">6.3</text>
+  <text x="500" y="90" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">6.4</text>
+  <line x1="200" y1="40" x2="400" y2="40" stroke="#2563eb" stroke-width="5"/>
+  <circle cx="200" cy="40" r="7" fill="#2563eb"/>
+  <circle cx="400" cy="40" r="7" fill="#fff" stroke="#2563eb" stroke-width="3"/>
+  <text x="200" y="26" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1e40af" font-weight="700">6.25 (included)</text>
+  <text x="400" y="26" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1e40af" font-weight="700">6.35 (not included)</text>
+  <text x="300" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#166534">6.25 ≤ x &lt; 6.35 rounds to 6.3 (1 d.p.)</text>
+</svg>
+
+<div class="worked-example">
+  The mass $w$ of a bag of sand is 23 kg, correct to the nearest kilogram. Write down the error interval for $w$.<br><br>
+  Half of 1 kg is 0.5 kg: $\mathbf{22.5 \le w < 23.5}$
+</div>
+
+<div class="worked-example">
+  $n = 5800$, correct to 2 significant figures. Write down the error interval for $n$.<br><br>
+  The second significant figure is the hundreds digit, so this is "to the nearest 100". Half of 100 is 50: $\mathbf{5750 \le n < 5850}$
+</div>
+
+<h3>Error Intervals after Truncation</h3>
+<div class="definition">
+  A <strong>truncated</strong> value can only have lost digits, never gained them, so the true value runs from the stated value up to (but not including) the next value at that accuracy:<br>
+  $x = 9.2$ truncated to 1 d.p. &rArr; $9.2 \le x < 9.3$
+</div>
+
+<div class="worked-example">
+  A number $n$ is 3.4 when rounded to 1 d.p., but 3.3 when truncated to 1 d.p. Find the error interval for $n$.<br><br>
+  Rounding gives $3.35 \le n < 3.45$. Truncation gives $3.3 \le n < 3.4$.<br>
+  Both must hold, so $\mathbf{3.35 \le n < 3.4}$
+</div>
+
+<div class="exam-tip">
+  Write the upper limit as 23.5, not 23.49 or 23.4999&hellip; The strict "&lt;" sign is what shows the limit itself is excluded.
+</div>
+
+<!-- ===================== 1.3.5 BOUNDS ===================== -->
+<h2>1.3.5 Limits of Accuracy and Bounds (N16)</h2>
+
+<p>The <strong>lower bound</strong> (LB) and <strong>upper bound</strong> (UB) of a measurement are the ends of its error interval &mdash; the least and greatest values it could have had before rounding. Interpreting limits of accuracy for a single value is on both tiers.</p>
+
+<table>
+  <thead><tr><th>Measurement</th><th>Accuracy</th><th>Lower bound</th><th>Upper bound</th></tr></thead>
+  <tbody>
+    <tr><td>40 kg</td><td>nearest 10 kg</td><td>35 kg</td><td>45 kg</td></tr>
+    <tr><td>8.6 s</td><td>nearest 0.1 s</td><td>8.55 s</td><td>8.65 s</td></tr>
+    <tr><td>150 m</td><td>nearest 5 m</td><td>147.5 m</td><td>152.5 m</td></tr>
+    <tr><td>3.72 cm</td><td>2 d.p.</td><td>3.715 cm</td><td>3.725 cm</td></tr>
+  </tbody>
+</table>
+
+<h3>Calculating with Upper and Lower Bounds <span class="higher-tag">Higher</span></h3>
+<p>The 1MA1 Higher statement of N16 adds "including upper and lower bounds": you combine bounds in calculations. Choose, for each value, the bound that pushes the answer as <strong>high</strong> as possible (for the UB) or as <strong>low</strong> as possible (for the LB).</p>
+
+<div class="formula-box">
+  <table>
+    <thead><tr><th>Calculation</th><th>Upper bound</th><th>Lower bound</th></tr></thead>
+    <tbody>
+      <tr><td>$a + b$</td><td>$\text{UB}_a + \text{UB}_b$</td><td>$\text{LB}_a + \text{LB}_b$</td></tr>
+      <tr><td>$a - b$</td><td>$\text{UB}_a - \text{LB}_b$</td><td>$\text{LB}_a - \text{UB}_b$</td></tr>
+      <tr><td>$a \times b$</td><td>$\text{UB}_a \times \text{UB}_b$</td><td>$\text{LB}_a \times \text{LB}_b$</td></tr>
+      <tr><td>$a \div b$</td><td>$\text{UB}_a \div \text{LB}_b$</td><td>$\text{LB}_a \div \text{UB}_b$</td></tr>
+    </tbody>
+  </table>
+  Subtracting or dividing by a <em>smaller</em> number gives a <em>larger</em> answer, so the second value takes the <strong>opposite</strong> bound.
+</div>
+
+<div class="worked-example">
+  A rectangle measures 7.3 cm by 2.6 cm, both correct to 1 d.p. Work out the lower bound of its area.<br><br>
+  $\text{LB} = 7.25 \times 2.55 = \mathbf{18.4875 \text{ cm}^2}$
+</div>
+
+<div class="worked-example">
+  $a = 15.4$ and $b = 6.8$, both correct to 1 d.p. Work out the upper bound of $a - b$.<br><br>
+  $\text{UB}_a - \text{LB}_b = 15.45 - 6.75 = \mathbf{8.7}$
+</div>
+
+<div class="worked-example">
+  A cyclist rides 400 m, correct to the nearest 10 m, in 61.2 s, correct to 1 d.p. Work out the upper bound of the average speed.<br><br>
+  $\text{UB of speed} = \dfrac{\text{UB distance}}{\text{LB time}} = \dfrac{405}{61.15} = 6.623\ldots \approx \mathbf{6.62 \text{ m/s}}$ (3 s.f.)
+</div>
+
+<h3>Choosing a Suitable Degree of Accuracy <span class="higher-tag">Higher</span></h3>
+<p>Find <em>both</em> bounds and round them. The answer is given to the greatest accuracy at which the two bounds <strong>round to the same value</strong>; state this as your reason.</p>
+
+<div class="worked-example">
+  $x = 8.7$ and $y = 3.1$, both correct to 1 d.p. $z = x \div y$. Work out $z$ to a suitable degree of accuracy.<br><br>
+  $\text{UB} = 8.75 \div 3.05 = 2.868\ldots$ &nbsp;&nbsp; $\text{LB} = 8.65 \div 3.15 = 2.746\ldots$<br>
+  To 2 s.f.: 2.9 and 2.7 &mdash; they differ. To 1 s.f.: 3 and 3 &mdash; they agree.<br>
+  So $z = \mathbf{3}$ (1 s.f.), because both bounds round to 3 to 1 s.f.
+</div>
+
+<div class="worked-example">
+  A square has area 30 cm², correct to the nearest cm². Work out the lower bound of its side length.<br><br>
+  $\text{LB of area} = 29.5$, so $\text{LB of side} = \sqrt{29.5} = 5.431\ldots \approx \mathbf{5.43 \text{ cm}}$
+</div>
+
+<div class="exam-tip">
+  Write the bounds you are using before you calculate (e.g. "UB distance 405, LB time 61.15"). Each correct bound usually scores a B1 mark even if the final calculation goes wrong. Never round the bounds themselves.
+</div>
+
+<h3>Summary</h3>
+<table>
+  <thead><tr><th>Skill</th><th>Key idea</th></tr></thead>
+  <tbody>
+    <tr><td>Units and compound measures (N13)</td><td>To a smaller unit: multiply. Square the factor for area, cube it for volume. Time is base 60.</td></tr>
+    <tr><td>Rounding (N15)</td><td>Look at the decider digit; 5 or more rounds up. Keep zeros as place holders.</td></tr>
+    <tr><td>Estimation (N14)</td><td>Round each number to 1 s.f., write the values down, then calculate.</td></tr>
+    <tr><td>Error interval &mdash; rounding (N15)</td><td>value &minus; half unit $\le x <$ value + half unit</td></tr>
+    <tr><td>Error interval &mdash; truncation (N15)</td><td>value $\le x <$ value + one unit</td></tr>
+    <tr><td>Bounds in calculations (N16, Higher)</td><td>Pick the bounds that make the result largest/smallest; use the opposite bound for $-$ and $\div$.</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

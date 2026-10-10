@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Edexcel GCSE Mathematics Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../level-config.js"></script>
+  <script src="../supabase-config.js"></script>
+  <script src="../study-tracker.js"></script>
+  <script src="../nav-gating.js"></script>
+  <script src="../admin-nav.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EAF2FC; --surface: #FFFFFF; --surface2: #F0F6FD;
+      --border: #B8D0E8; --border-hover: #2563EB;
+      --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
+      --accent: #2563EB; --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+      --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px; --topics-w: 300px;
+    }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+    .app { display: flex; height: 100vh; overflow: hidden; }
+    .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; flex-shrink: 0; box-shadow: 2px 0 16px rgba(37,99,235,0.08); overflow-y: auto; }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-img { width: 24px; height: 24px; display: inline-block; vertical-align: middle; flex-shrink: 0; }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted); cursor: pointer; transition: all 0.15s; text-decoration: none; border: none; background: none; width: 100%; text-align: left; font-family: var(--font-body); }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; flex-shrink: 0; }
+    .logout-btn:hover { color: #DC2626; }
+
+    /* ── SIGN-OUT CONFIRM MODAL ── */
+    .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface, #fff); border: 1px solid var(--border, #B8D0E8); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; box-shadow: 0 20px 60px rgba(11,30,63,0.25); text-align: center; animation: signoutPop 0.22s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes signoutPop { from { opacity: 0; transform: scale(0.94) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--red-bg, rgba(220,38,38,0.07)); border: 1px solid var(--red-border, rgba(220,38,38,0.18)); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--red-text, #B91C1C); margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display, 'DM Serif Display', serif); font-size: 22px; color: var(--text, #0B1E3F); margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted, #445F85); margin-bottom: 22px; line-height: 1.5; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; font-family: var(--font-body, 'DM Sans', sans-serif); cursor: pointer; transition: all 0.15s; border: 1px solid transparent; }
+    .signout-btn.cancel { background: var(--surface2, #F0F6FD); color: var(--text, #0B1E3F); border-color: var(--border, #B8D0E8); }
+    .signout-btn.cancel:hover { background: var(--surface3, #DBE8F6); border-color: var(--border-hover, #2563EB); }
+    .signout-btn.confirm { background: var(--red, #DC2626); color: #fff; }
+    .signout-btn.confirm:hover { background: var(--red-text, #B91C1C); }
+
+    .topics-panel { width: var(--topics-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; overflow: hidden; }
+    .topics-header { padding: 28px 22px 20px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+    .topics-subject { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+    .topics-title { font-family: var(--font-display); font-size: 21px; letter-spacing: -0.01em; }
+    .topics-board { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; padding: 4px 12px; border-radius: 20px; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.25); font-size: 11px; font-weight: 600; color: var(--accent-dark); }
+    .topics-body { flex: 1; overflow-y: auto; padding: 14px; }
+    .topics-body::-webkit-scrollbar { width: 4px; }
+    .topics-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .paper-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 10px 10px 6px; margin-top: 10px; }
+    .paper-label:first-child { margin-top: 0; }
+    .topic-btn { display: flex; flex-direction: column; width: 100%; padding: 12px 14px; border: 1px solid transparent; border-radius: 12px; background: none; cursor: pointer; text-align: left; font-family: var(--font-body); transition: all 0.15s; margin-bottom: 6px; }
+    .topic-btn:hover { background: var(--surface2); border-color: var(--border); }
+    .topic-btn.active { background: var(--accent-dim); border-color: rgba(37,99,235,0.3); }
+    .topic-main { display: flex; align-items: center; gap: 12px; width: 100%; }
+    .topic-num { width: 30px; height: 30px; border-radius: 9px; flex-shrink: 0; background: var(--surface2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; color: var(--muted); }
+    .topic-btn.active .topic-num { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .topic-info { flex: 1; min-width: 0; }
+    .topic-name { font-size: 13.5px; font-weight: 500; color: var(--text); line-height: 1.4; }
+    .topic-btn.active .topic-name { color: var(--accent-dark); font-weight: 600; }
+    .topic-sub { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+    .rag-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; background: var(--border); transition: background 0.3s; }
+    .rag-dot.green { background: #22C55E; box-shadow: 0 0 6px rgba(34,197,94,0.4); }
+    .rag-dot.amber { background: #F59E0B; box-shadow: 0 0 6px rgba(245,158,11,0.4); }
+    .rag-dot.red { background: #EF4444; box-shadow: 0 0 6px rgba(239,68,68,0.4); }
+    .viewer { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .viewer-header { padding: 20px 32px; border-bottom: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+    .viewer-title { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.01em; }
+    .viewer-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+    .viewer-actions { display: flex; gap: 8px; }
+    .viewer-btn { display: flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.15s; border: 1px solid var(--border); background: var(--surface2); color: var(--muted); font-family: var(--font-body); }
+    .viewer-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .viewer-btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; border-color: var(--accent); box-shadow: 0 2px 8px var(--accent-glow); }
+    .viewer-btn.primary:hover { filter: brightness(1.05); }
+    .pdf-frame { flex: 1; border: none; display: block; }
+    .empty-state { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 48px; text-align: center; }
+    .empty-icon { font-size: 52px; opacity: 0.5; }
+    .empty-title { font-family: var(--font-display); font-size: 22px; color: var(--text); }
+    .empty-sub { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 320px; }
+    .mobile-menu-btn { display: none; width: 36px; height: 36px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); align-items: center; justify-content: center; cursor: pointer; font-size: 18px; }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
+    .mobile-overlay.active { display: block; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; top: 0; left: 0; bottom: 0; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0 !important; padding: 16px 14px !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="../Dashboard.html" class="sidebar-logo" style="text-decoration:none;color:inherit;cursor:pointer;">
+      <img src="../favicon.svg" alt="RAG Learning" class="logo-img" />
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="../Dashboard.html"><span class="nav-icon">&#x229E;</span> Dashboard</a>
+      <a class="nav-item" href="../breakdown.html"><span class="nav-icon">&#x1F4CA;</span> Breakdown</a>
+      <a class="nav-item active" href="../notes.html"><span class="nav-icon">&#x1F4C4;</span> Notes</a>
+      <a class="nav-item" href="../Dashboard.html#diagnostic"><span class="nav-icon">&#x25CE;</span> Diagnostic</a>
+      <a class="nav-item" href="../medals.html"><span class="nav-icon">&#x1F3C5;</span> Medals</a>
+      <a class="nav-item" href="../practice.html"><span class="nav-icon">&#x2726;</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">&#x1F916;</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">&#x1F4C4;</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">&#x1F4CB;</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="../auth/setup.html"><span class="nav-icon">&#x270F;&#xFE0F;</span> Edit subjects</a>
+      <a class="nav-item" href="../settings.html"><span class="nav-icon">&#x2699;</span> Settings</a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='../settings.html'" style="cursor:pointer" title="Account settings">?</div>
+        <div class="user-info" onclick="location.href='../settings.html'" style="cursor:pointer" title="Account settings">
+          <div class="user-name" id="sidebarName">Loading&#x2026;</div>
+        </div>
+        <button class="logout-btn" onclick="confirmSignOut()" title="Sign out">&#x23FB;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topics panel -->
+  <div class="topics-panel">
+    <div class="topics-header">
+      <div class="topics-subject">Mathematics</div>
+      <div class="topics-title">Revision Notes</div>
+      <div class="topics-board">&#x1F522; Edexcel &middot; GCSE</div>
+    </div>
+    <div class="topics-body">
+
+      <div class="paper-label">Number</div>
+      <button class="topic-btn" id="topicBtn-1.1" onclick="openTopic(this, '1.1', 'Structure &amp; Calculation', '../notes-maths-edexcel-gcse/1.1_structure_calculation.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.1</div>
+          <div class="topic-info">
+            <div class="topic-name">Structure &amp; Calculation</div>
+            <div class="topic-sub">Ordering, four operations, priority of operations, primes, HCF, LCM, systematic listing, product rule for counting (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-1.1"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-1.2" onclick="openTopic(this, '1.2', 'Fractions, Decimals &amp; Percentages', '../notes-maths-edexcel-gcse/1.2_fractions_decimals_percentages.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.2</div>
+          <div class="topic-info">
+            <div class="topic-name">Fractions, Decimals &amp; Percentages</div>
+            <div class="topic-sub">Fraction–decimal conversions, calculating exactly with fractions, fractions and percentages as operators, recurring decimals (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-1.2"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-1.3" onclick="openTopic(this, '1.3', 'Measures, Accuracy &amp; Bounds', '../notes-maths-edexcel-gcse/1.3_measures_accuracy_bounds.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.3</div>
+          <div class="topic-info">
+            <div class="topic-name">Measures, Accuracy &amp; Bounds</div>
+            <div class="topic-sub">Standard units, estimation, rounding to dp/sf, error intervals, upper and lower bounds (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-1.3"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-1.4" onclick="openTopic(this, '1.4', 'Powers, Roots, Surds &amp; Standard Form', '../notes-maths-edexcel-gcse/1.4_powers_roots_surds_standard_form.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.4</div>
+          <div class="topic-info">
+            <div class="topic-name">Powers, Roots, Surds &amp; Standard Form</div>
+            <div class="topic-sub">Powers and roots, index laws, standard form, fractional indices and surds (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-1.4"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Algebra</div>
+      <button class="topic-btn" id="topicBtn-2.1" onclick="openTopic(this, '2.1', 'Algebraic Notation &amp; Manipulation', '../notes-maths-edexcel-gcse/2.1_algebraic_manipulation.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.1</div>
+          <div class="topic-info">
+            <div class="topic-name">Algebraic Notation &amp; Manipulation</div>
+            <div class="topic-sub">Notation, substitution, expanding, factorising, laws of indices, algebraic fractions (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-2.1"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-2.2" onclick="openTopic(this, '2.2', 'Formulae, Identities, Proof &amp; Functions', '../notes-maths-edexcel-gcse/2.2_formulae_identities_proof_functions.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.2</div>
+          <div class="topic-info">
+            <div class="topic-name">Formulae, Identities, Proof &amp; Functions</div>
+            <div class="topic-sub">Rearranging formulae, equations vs identities, algebraic argument, proof, inverse and composite functions (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-2.2"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-2.3" onclick="openTopic(this, '2.3', 'Linear Graphs &amp; Coordinates', '../notes-maths-edexcel-gcse/2.3_linear_graphs_coordinates.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.3</div>
+          <div class="topic-info">
+            <div class="topic-name">Linear Graphs &amp; Coordinates</div>
+            <div class="topic-sub">Coordinates, y = mx + c, gradient and intercept, parallel lines, perpendicular lines (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-2.3"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-2.4" onclick="openTopic(this, '2.4', 'Non-linear Graphs', '../notes-maths-edexcel-gcse/2.4_non_linear_graphs.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.4</div>
+          <div class="topic-info">
+            <div class="topic-name">Non-linear Graphs</div>
+            <div class="topic-sub">Quadratic, cubic and reciprocal graphs, real-life graphs, exponential and trig graphs, transformations, areas under curves and circles (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-2.4"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-2.5" onclick="openTopic(this, '2.5', 'Equations &amp; Inequalities', '../notes-maths-edexcel-gcse/2.5_equations_inequalities.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.5</div>
+          <div class="topic-info">
+            <div class="topic-name">Equations &amp; Inequalities</div>
+            <div class="topic-sub">Linear and quadratic equations, simultaneous equations, inequalities, quadratic formula and iteration (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-2.5"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-2.6" onclick="openTopic(this, '2.6', 'Sequences', '../notes-maths-edexcel-gcse/2.6_sequences.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.6</div>
+          <div class="topic-info">
+            <div class="topic-name">Sequences</div>
+            <div class="topic-sub">Term-to-term and position-to-term rules, special sequences, linear nth term, quadratic nth term (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-2.6"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Ratio, Proportion &amp; Rates of Change</div>
+      <button class="topic-btn" id="topicBtn-3.1" onclick="openTopic(this, '3.1', 'Ratio &amp; Proportion', '../notes-maths-edexcel-gcse/3.1_ratio_proportion.html')">
+        <div class="topic-main">
+          <div class="topic-num">3.1</div>
+          <div class="topic-info">
+            <div class="topic-name">Ratio &amp; Proportion</div>
+            <div class="topic-sub">Ratio notation, sharing in a ratio, scale diagrams and maps, direct and inverse proportion, proportion equations (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-3.1"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-3.2" onclick="openTopic(this, '3.2', 'Percentages, Growth &amp; Decay', '../notes-maths-edexcel-gcse/3.2_percentages_growth_decay.html')">
+        <div class="topic-main">
+          <div class="topic-num">3.2</div>
+          <div class="topic-info">
+            <div class="topic-name">Percentages, Growth &amp; Decay</div>
+            <div class="topic-sub">Percentage change, original value, simple and compound interest, growth and decay, iterative processes (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-3.2"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-3.3" onclick="openTopic(this, '3.3', 'Compound Measures &amp; Rates of Change', '../notes-maths-edexcel-gcse/3.3_compound_measures_rates.html')">
+        <div class="topic-main">
+          <div class="topic-num">3.3</div>
+          <div class="topic-info">
+            <div class="topic-name">Compound Measures &amp; Rates of Change</div>
+            <div class="topic-sub">Converting standard and compound units, speed, density, pressure, gradient as a rate, instantaneous rate of change (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-3.3"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Geometry &amp; Measures</div>
+      <button class="topic-btn" id="topicBtn-4.1" onclick="openTopic(this, '4.1', 'Angles, Polygons &amp; Constructions', '../notes-maths-edexcel-gcse/4.1_angles_polygons_constructions.html')">
+        <div class="topic-main">
+          <div class="topic-num">4.1</div>
+          <div class="topic-info">
+            <div class="topic-name">Angles, Polygons &amp; Constructions</div>
+            <div class="topic-sub">Angle facts, parallel lines, polygons, properties of quadrilaterals, ruler-and-compass constructions, loci, bearings</div>
+          </div>
+          <span class="rag-dot" id="rag-4.1"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-4.2" onclick="openTopic(this, '4.2', 'Congruence, Similarity &amp; Transformations', '../notes-maths-edexcel-gcse/4.2_congruence_similarity_transformations.html')">
+        <div class="topic-main">
+          <div class="topic-num">4.2</div>
+          <div class="topic-info">
+            <div class="topic-name">Congruence, Similarity &amp; Transformations</div>
+            <div class="topic-sub">Congruence criteria, similar shapes, translation, reflection, rotation, enlargement, negative scale factors (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-4.2"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-4.3" onclick="openTopic(this, '4.3', 'Circles &amp; Circle Theorems', '../notes-maths-edexcel-gcse/4.3_circles_circle_theorems.html')">
+        <div class="topic-main">
+          <div class="topic-num">4.3</div>
+          <div class="topic-info">
+            <div class="topic-name">Circles &amp; Circle Theorems</div>
+            <div class="topic-sub">Parts of a circle, circumference and area, arcs and sectors, circle theorems (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-4.3"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-4.4" onclick="openTopic(this, '4.4', 'Mensuration: Area, Volume &amp; 3D', '../notes-maths-edexcel-gcse/4.4_mensuration_area_volume.html')">
+        <div class="topic-main">
+          <div class="topic-num">4.4</div>
+          <div class="topic-info">
+            <div class="topic-name">Mensuration: Area, Volume &amp; 3D</div>
+            <div class="topic-sub">Area of 2D shapes, plans and elevations, volume and surface area of prisms, cylinders, spheres, cones and pyramids</div>
+          </div>
+          <span class="rag-dot" id="rag-4.4"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-4.5" onclick="openTopic(this, '4.5', 'Pythagoras &amp; Trigonometry', '../notes-maths-edexcel-gcse/4.5_pythagoras_trigonometry.html')">
+        <div class="topic-main">
+          <div class="topic-num">4.5</div>
+          <div class="topic-info">
+            <div class="topic-name">Pythagoras &amp; Trigonometry</div>
+            <div class="topic-sub">Pythagoras' theorem, SOHCAHTOA, exact trig values, 3D problems, sine and cosine rules and ½ab sin C (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-4.5"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-4.6" onclick="openTopic(this, '4.6', 'Vectors', '../notes-maths-edexcel-gcse/4.6_vectors.html')">
+        <div class="topic-main">
+          <div class="topic-num">4.6</div>
+          <div class="topic-info">
+            <div class="topic-name">Vectors</div>
+            <div class="topic-sub">Translations as vectors, column vectors, vector arithmetic, vector geometry proofs (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-4.6"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Probability</div>
+      <button class="topic-btn" id="topicBtn-5.1" onclick="openTopic(this, '5.1', 'Probability', '../notes-maths-edexcel-gcse/5.1_probability.html')">
+        <div class="topic-main">
+          <div class="topic-num">5.1</div>
+          <div class="topic-info">
+            <div class="topic-name">Probability</div>
+            <div class="topic-sub">Frequency trees, relative frequency, sample spaces, Venn and tree diagrams, conditional probability (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-5.1"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Statistics</div>
+      <button class="topic-btn" id="topicBtn-6.1" onclick="openTopic(this, '6.1', 'Sampling, Charts &amp; Scatter Graphs', '../notes-maths-edexcel-gcse/6.1_sampling_charts_scatter.html')">
+        <div class="topic-main">
+          <div class="topic-num">6.1</div>
+          <div class="topic-info">
+            <div class="topic-name">Sampling, Charts &amp; Scatter Graphs</div>
+            <div class="topic-sub">Sampling, tables, bar charts, pie charts, pictograms, time series, scatter graphs and correlation</div>
+          </div>
+          <span class="rag-dot" id="rag-6.1"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-6.2" onclick="openTopic(this, '6.2', 'Averages, Spread &amp; Grouped Data', '../notes-maths-edexcel-gcse/6.2_averages_spread_grouped_data.html')">
+        <div class="topic-main">
+          <div class="topic-num">6.2</div>
+          <div class="topic-info">
+            <div class="topic-name">Averages, Spread &amp; Grouped Data</div>
+            <div class="topic-sub">Mean, median, mode, range, grouped data, cumulative frequency, box plots, histograms (Higher)</div>
+          </div>
+          <span class="rag-dot" id="rag-6.2"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

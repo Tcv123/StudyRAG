@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 4.3 — Circles &amp; Circle Theorems</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.3 Circles &amp; Circle Theorems</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Geometry and measures &mdash; spec refs G9, G10, G17 (circles), G18 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<p>This topic covers the names of the parts of a circle (G9), the circumference and area formulae (the circle part of G17), arc lengths and sector areas (G18 &mdash; both tiers in 1MA1), and the circle theorems (G10), which are Higher-tier only. Higher students must be able to apply each theorem with a correctly worded reason and to prove the theorems.</p>
+
+<!-- ===================== PARTS OF A CIRCLE ===================== -->
+<h2>4.3.1 Parts of a Circle (G9)</h2>
+
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="300" height="230" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <path d="M 150,110 L 150,30 A 80 80 0 0 0 80.7,70 Z" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <path d="M 80.7,150 A 80 80 0 0 0 219.3,150 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="150" cy="110" r="80" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="150" y1="110" x2="230" y2="110" stroke="#dc2626" stroke-width="2"/>
+  <line x1="230" y1="20" x2="230" y2="200" stroke="#7c3aed" stroke-width="2"/>
+  <circle cx="150" cy="110" r="3.5" fill="#1a1a2e"/>
+  <text x="138" y="124" font-size="12" fill="#1a1a2e" font-family="sans-serif">O</text>
+  <text x="190" y="104" font-size="12" fill="#dc2626" font-family="sans-serif" text-anchor="middle">radius</text>
+  <text x="236" y="40" font-size="12" fill="#7c3aed" font-family="sans-serif">tangent</text>
+  <text x="122" y="62" font-size="12" fill="#92400e" font-family="sans-serif" text-anchor="middle">sector</text>
+  <text x="150" y="172" font-size="12" fill="#166534" font-family="sans-serif" text-anchor="middle">segment</text>
+  <text x="150" y="146" font-size="12" fill="#166534" font-family="sans-serif" text-anchor="middle">chord</text>
+  <text x="60" y="210" font-size="12" fill="#2563eb" font-family="sans-serif">circumference</text>
+</svg>
+<div style="flex:1; min-width:220px;">
+<table>
+  <thead><tr><th>Word</th><th>Definition</th></tr></thead>
+  <tbody>
+    <tr><td>Centre</td><td>The point that is the same distance from every point on the circle</td></tr>
+    <tr><td>Radius</td><td>A line from the centre to the circle (plural: radii)</td></tr>
+    <tr><td>Diameter</td><td>A chord through the centre; $d = 2r$</td></tr>
+    <tr><td>Circumference</td><td>The distance all the way round the circle</td></tr>
+    <tr><td>Chord</td><td>A straight line joining two points on the circle</td></tr>
+    <tr><td>Tangent</td><td>A straight line that touches the circle at exactly one point</td></tr>
+    <tr><td>Arc</td><td>A part of the circumference</td></tr>
+    <tr><td>Sector</td><td>A region enclosed by two radii and an arc</td></tr>
+    <tr><td>Segment</td><td>A region enclosed by a chord and an arc</td></tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<div class="exam-tip">
+  <strong>Sector</strong> = two radii + arc (a slice of pizza). <strong>Segment</strong> = chord + arc (the piece cut off by a straight line). Both come in <em>minor</em> (smaller) and <em>major</em> (larger) versions. A semicircle is a sector of 180° and a quadrant is a sector of 90°.
+</div>
+
+<!-- ===================== CIRCUMFERENCE AND AREA ===================== -->
+<h2>4.3.2 Circumference and Area (G17)</h2>
+
+<p>G17 requires you to <strong>know</strong> these formulae &mdash; they are not given on the 1MA1 formulae sheet.</p>
+
+<div class="formula-box">
+  <strong>Circumference:</strong> $C = \pi d = 2\pi r$ &nbsp;&nbsp;&nbsp;&nbsp; <strong>Area:</strong> $A = \pi r^2$<br><br>
+  Rearranged: $r = \dfrac{C}{2\pi}$ &nbsp;&nbsp; and &nbsp;&nbsp; $r = \sqrt{\dfrac{A}{\pi}}$
+</div>
+
+<div class="worked-example">
+  A circular mirror has diameter 11 cm. Work out its circumference and its area, each correct to 1 decimal place.<br><br>
+  $C = \pi \times 11 = 34.55\ldots \approx \mathbf{34.6}$ <strong>cm</strong><br>
+  $r = 5.5$ cm, so $A = \pi \times 5.5^2 = 95.03\ldots \approx \mathbf{95.0}$ <strong>cm²</strong>
+</div>
+
+<div class="worked-example">
+  (a) A circle has area $81\pi$ cm². Find its circumference in terms of $\pi$. (b) A hoop has circumference 40 cm. Find its radius to 3 significant figures.<br><br>
+  (a) $\pi r^2 = 81\pi \Rightarrow r = 9$, so $C = 2\pi \times 9 = \mathbf{18\pi}$ <strong>cm</strong>.<br>
+  (b) $r = 40 \div 2\pi = 6.366\ldots \approx \mathbf{6.37}$ <strong>cm</strong>.
+</div>
+
+<p>Paper 1 is non-calculator, so expect "give your answer in terms of $\pi$". Keep $\pi$ as a symbol and simplify: the ring between circles of radius 9 cm and 6 cm has area $81\pi - 36\pi = 45\pi$ cm².</p>
+
+<div class="exam-tip">
+  Read carefully whether you are given the <strong>radius or the diameter</strong>. Putting the diameter into $\pi r^2$ gives an answer four times too large.
+</div>
+
+<!-- ===================== ARCS AND SECTORS ===================== -->
+<h2>4.3.3 Arc Length and Sector Area (G18)</h2>
+
+<p>In 1MA1, arcs and sectors are on both tiers. A sector with angle $\theta$ is the fraction $\dfrac{\theta}{360}$ of the full circle, so both its arc and its area are that fraction of the whole.</p>
+
+<div class="formula-box">
+  <strong>Arc length</strong> $= \dfrac{\theta}{360} \times 2\pi r$ &nbsp;&nbsp;&nbsp;&nbsp;
+  <strong>Sector area</strong> $= \dfrac{\theta}{360} \times \pi r^2$<br><br>
+  <strong>Perimeter of a sector</strong> $=$ arc length $+\ r + r$
+</div>
+
+<div class="worked-example">
+  A sector has radius 9 cm and angle 80°. Work out (a) its arc length, (b) its area, (c) its perimeter.<br><br>
+  (a) $\dfrac{80}{360} \times 2\pi \times 9 = \dfrac{2}{9} \times 18\pi = 4\pi \approx \mathbf{12.6}$ <strong>cm</strong><br>
+  (b) $\dfrac{80}{360} \times \pi \times 9^2 = \dfrac{2}{9} \times 81\pi = 18\pi \approx \mathbf{56.5}$ <strong>cm²</strong><br>
+  (c) $4\pi + 9 + 9 = 4\pi + 18 \approx \mathbf{30.6}$ <strong>cm</strong>
+</div>
+
+<h3>Finding the angle or the radius</h3>
+<div class="worked-example">
+  A sector of radius 7 cm has area 30 cm². Work out the angle of the sector.<br><br>
+  $\dfrac{\theta}{360} \times \pi \times 49 = 30 \Rightarrow \theta = \dfrac{30 \times 360}{49\pi} = 70.15\ldots \approx \mathbf{70.2°}$
+</div>
+
+<div class="worked-example">
+  A sector has angle 150° and area $15\pi$ cm². Work out its radius.<br><br>
+  $\dfrac{150}{360} \times \pi r^2 = 15\pi \Rightarrow \dfrac{5}{12} r^2 = 15 \Rightarrow r^2 = 36 \Rightarrow r = \mathbf{6}$ <strong>cm</strong>
+</div>
+
+<h3>Segments</h3>
+<p>Area of a segment $=$ area of the sector $-$ area of the triangle made by the two radii and the chord.</p>
+
+<div class="worked-example">
+  A circle has radius 8 cm and chord AB subtends 90° at the centre. Work out the area of the minor segment.<br><br>
+  Sector $= \dfrac{90}{360} \times \pi \times 64 = 16\pi$. Triangle $= \tfrac{1}{2} \times 8 \times 8 = 32$ (the radii are perpendicular).<br>
+  Segment $= 16\pi - 32 = 18.26\ldots \approx \mathbf{18.3}$ <strong>cm²</strong>
+</div>
+
+<div class="worked-example">
+  <span class="higher-tag">Higher</span> A circle has radius 6 cm and chord AB subtends 120° at the centre. Work out the area of the minor segment. (Uses area $= \tfrac{1}{2}ab\sin C$, which is Higher-only.)<br><br>
+  Sector $= \dfrac{120}{360} \times \pi \times 36 = 12\pi = 37.69\ldots$ &nbsp; Triangle $= \tfrac{1}{2} \times 6 \times 6 \times \sin 120° = 15.58\ldots$<br>
+  Segment $= 37.69\ldots - 15.58\ldots \approx \mathbf{22.1}$ <strong>cm²</strong>
+</div>
+
+<h3>Composite shapes</h3>
+<div class="worked-example">
+  A doorway is a rectangle 0.9 m wide and 2 m high with a semicircular arch on top. Work out the perimeter and the area of the doorway, to 2 decimal places.<br><br>
+  Arch $= \tfrac{1}{2} \times \pi \times 0.9 = 0.45\pi = 1.413\ldots$ m. Straight edges $= 0.9 + 2 + 2 = 4.9$ m (the top of the rectangle is inside the shape).<br>
+  Perimeter $= 4.9 + 1.413\ldots \approx \mathbf{6.31}$ <strong>m</strong>.<br>
+  Area $= 0.9 \times 2 + \tfrac{1}{2} \times \pi \times 0.45^2 = 1.8 + 0.318\ldots \approx \mathbf{2.12}$ <strong>m²</strong>.
+</div>
+
+<div class="exam-tip">
+  For a perimeter, go round the outside edge and list every piece. The two radii of a sector and the diameter of a semicircle are the edges most often forgotten; edges that are inside the shape are never counted.
+</div>
+
+<!-- ===================== CIRCLE THEOREMS ===================== -->
+<h2>4.3.4 The Circle Theorems (G10) <span class="higher-tag">Higher</span></h2>
+
+<p>G10 appears only in the 1MA1 Higher content: "apply and prove the standard circle theorems concerning angles, radii, tangents and chords". When you use a theorem, write its full wording as the reason &mdash; "circle theorem" or "because of the circle" gains no credit.</p>
+
+<table>
+  <thead><tr><th>#</th><th>Theorem &mdash; the reason to write</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>The angle at the centre is twice the angle at the circumference (subtended by the same arc).</td></tr>
+    <tr><td>2</td><td>The angle in a semicircle is 90°.</td></tr>
+    <tr><td>3</td><td>Angles in the same segment are equal.</td></tr>
+    <tr><td>4</td><td>Opposite angles of a cyclic quadrilateral add up to 180°.</td></tr>
+    <tr><td>5</td><td>The tangent to a circle is perpendicular to the radius at the point of contact.</td></tr>
+    <tr><td>6</td><td>Tangents to a circle from an external point are equal in length.</td></tr>
+    <tr><td>7</td><td>The perpendicular from the centre of a circle to a chord bisects the chord.</td></tr>
+    <tr><td>8</td><td>The angle between a tangent and a chord is equal to the angle in the alternate segment.</td></tr>
+  </tbody>
+</table>
+
+<!-- SVG row: centre theorem, semicircle, same segment -->
+<div style="display:flex; gap:16px; flex-wrap:wrap; margin: 16px 0;">
+<svg width="240" height="230" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <circle cx="150" cy="110" r="80" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <polyline points="80.7,150 136.1,31.2 219.3,150" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <polyline points="80.7,150 150,110 219.3,150" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="150" cy="110" r="3.5" fill="#1a1a2e"/>
+  <text x="140" y="56" font-size="15" fill="#166534" font-family="sans-serif" font-weight="700">x</text>
+  <text x="140" y="134" font-size="15" fill="#dc2626" font-family="sans-serif" font-weight="700">2x</text>
+  <text x="66" y="164" font-size="13" fill="#374151" font-family="sans-serif">A</text>
+  <text x="224" y="164" font-size="13" fill="#374151" font-family="sans-serif">B</text>
+  <text x="128" y="24" font-size="13" fill="#374151" font-family="sans-serif">C</text>
+  <text x="150" y="222" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle" font-weight="700">1. Centre = 2 × circumference</text>
+</svg>
+<svg width="240" height="230" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <circle cx="150" cy="110" r="80" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="70" y1="110" x2="230" y2="110" stroke="#dc2626" stroke-width="2"/>
+  <polyline points="70,110 190,40.7 230,110" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <circle cx="150" cy="110" r="3.5" fill="#1a1a2e"/>
+  <text x="178" y="62" font-size="14" fill="#166534" font-family="sans-serif" font-weight="700">90°</text>
+  <text x="54" y="114" font-size="13" fill="#374151" font-family="sans-serif">A</text>
+  <text x="236" y="114" font-size="13" fill="#374151" font-family="sans-serif">B</text>
+  <text x="192" y="34" font-size="13" fill="#374151" font-family="sans-serif">C</text>
+  <text x="150" y="128" font-size="12" fill="#dc2626" font-family="sans-serif" text-anchor="middle">diameter</text>
+  <text x="150" y="222" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle" font-weight="700">2. Angle in a semicircle</text>
+</svg>
+<svg width="240" height="230" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <circle cx="150" cy="110" r="80" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <polyline points="80.7,150 136.1,31.2 219.3,150" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <polyline points="80.7,150 204.6,51.4 219.3,150" fill="none" stroke="#7c3aed" stroke-width="2"/>
+  <line x1="80.7" y1="150" x2="219.3" y2="150" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="132" y="56" font-size="15" fill="#166534" font-family="sans-serif" font-weight="700">y</text>
+  <text x="196" y="76" font-size="15" fill="#5b21b6" font-family="sans-serif" font-weight="700">y</text>
+  <text x="66" y="164" font-size="13" fill="#374151" font-family="sans-serif">A</text>
+  <text x="224" y="164" font-size="13" fill="#374151" font-family="sans-serif">B</text>
+  <text x="150" y="222" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle" font-weight="700">3. Angles in the same segment</text>
+</svg>
+</div>
+
+<!-- SVG row: cyclic quad, tangents, alternate segment -->
+<div style="display:flex; gap:16px; flex-wrap:wrap; margin: 16px 0;">
+<svg width="240" height="230" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <circle cx="150" cy="110" r="80" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <polygon points="136.1,31.2 74.8,137.4 177.4,185.2 225.2,82.6" fill="#dbeafe" fill-opacity="0.5" stroke="#16a34a" stroke-width="2"/>
+  <text x="128" y="52" font-size="14" fill="#166534" font-family="sans-serif" font-weight="700">a</text>
+  <text x="168" y="172" font-size="14" fill="#166534" font-family="sans-serif" font-weight="700">c</text>
+  <text x="88" y="136" font-size="14" fill="#5b21b6" font-family="sans-serif" font-weight="700">b</text>
+  <text x="206" y="92" font-size="14" fill="#5b21b6" font-family="sans-serif" font-weight="700">d</text>
+  <text x="150" y="222" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle" font-weight="700">4. a + c = 180°, b + d = 180°</text>
+</svg>
+<svg width="240" height="230" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <circle cx="120" cy="100" r="60" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="280" y1="100" x2="142.5" y2="44.4" stroke="#7c3aed" stroke-width="2"/>
+  <line x1="280" y1="100" x2="142.5" y2="155.6" stroke="#7c3aed" stroke-width="2"/>
+  <line x1="120" y1="100" x2="142.5" y2="44.4" stroke="#dc2626" stroke-width="2"/>
+  <line x1="120" y1="100" x2="142.5" y2="155.6" stroke="#dc2626" stroke-width="2"/>
+  <line x1="120" y1="100" x2="280" y2="100" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <circle cx="120" cy="100" r="3.5" fill="#1a1a2e"/>
+  <text x="104" y="104" font-size="13" fill="#1a1a2e" font-family="sans-serif">O</text>
+  <text x="284" y="104" font-size="13" fill="#374151" font-family="sans-serif">T</text>
+  <text x="138" y="36" font-size="13" fill="#374151" font-family="sans-serif">A</text>
+  <text x="138" y="174" font-size="13" fill="#374151" font-family="sans-serif">B</text>
+  <text x="150" y="62" font-size="11" fill="#dc2626" font-family="sans-serif">90°</text>
+  <text x="150" y="146" font-size="11" fill="#dc2626" font-family="sans-serif">90°</text>
+  <text x="150" y="222" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle" font-weight="700">5 &amp; 6. OA ⊥ TA and TA = TB</text>
+</svg>
+<svg width="240" height="230" viewBox="0 0 300 230" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <circle cx="150" cy="100" r="70" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="40" y1="170" x2="270" y2="170" stroke="#7c3aed" stroke-width="2"/>
+  <polygon points="150,170 218.9,112.2 115,39.4" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text x="142" y="190" font-size="13" fill="#374151" font-family="sans-serif">A</text>
+  <text x="224" y="112" font-size="13" fill="#374151" font-family="sans-serif">B</text>
+  <text x="104" y="34" font-size="13" fill="#374151" font-family="sans-serif">C</text>
+  <text x="196" y="164" font-size="15" fill="#dc2626" font-family="sans-serif" font-weight="700">z</text>
+  <text x="124" y="62" font-size="15" fill="#dc2626" font-family="sans-serif" font-weight="700">z</text>
+  <text x="150" y="222" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle" font-weight="700">8. Alternate segment theorem</text>
+</svg>
+</div>
+
+<div class="definition">
+  A <strong>cyclic quadrilateral</strong> has all four vertices on the circumference of one circle. In theorem 8, the <strong>alternate segment</strong> is the segment on the opposite side of the chord from the tangent&ndash;chord angle.
+</div>
+
+<h3>Using the theorems</h3>
+<div class="worked-example">
+  A and B lie on a circle centre O, and angle $OAB = 31°$. C lies on the major arc AB. Work out angle $ACB$.<br><br>
+  $OA = OB$ (radii), so triangle OAB is isosceles and angle $OBA = 31°$.<br>
+  Angle $AOB = 180 - 31 - 31 = 118°$ (angles in a triangle add up to 180°).<br>
+  Angle $ACB = 118 \div 2 = \mathbf{59°}$ (the angle at the centre is twice the angle at the circumference).
+</div>
+
+<div class="worked-example">
+  TA and TB are tangents to a circle centre O at A and B. Angle $ATB = 52°$. Work out angles $AOB$ and $OAB$.<br><br>
+  Angle $OAT$ = angle $OBT = 90°$ (tangent is perpendicular to the radius).<br>
+  Angle $AOB = 360 - 90 - 90 - 52 = \mathbf{128°}$ (angles in a quadrilateral add up to 360°).<br>
+  $OA = OB$ (radii), so angle $OAB = (180 - 128) \div 2 = \mathbf{26°}$.
+</div>
+
+<div class="worked-example">
+  ABCD is a cyclic quadrilateral. Angle $ABC = (2x + 15)°$ and angle $ADC = (3x - 5)°$. Work out the size of each angle.<br><br>
+  $2x + 15 + 3x - 5 = 180$ (opposite angles of a cyclic quadrilateral add up to 180°)<br>
+  $5x + 10 = 180$, so $x = 34$. Angle $ABC = \mathbf{83°}$, angle $ADC = \mathbf{97°}$.
+</div>
+
+<div class="worked-example">
+  A chord of length 30 cm lies in a circle of radius 17 cm. How far is the chord from the centre?<br><br>
+  The perpendicular from the centre bisects the chord, giving a right-angled triangle with hypotenuse 17 cm and one side 15 cm.<br>
+  Distance $= \sqrt{17^2 - 15^2} = \sqrt{64} = \mathbf{8}$ <strong>cm</strong>.
+</div>
+
+<div class="worked-example">
+  AB is a diameter of a circle and C is a point on the circumference with angle $CAB = 23°$. D is another point on the circle, on the same side of chord BC as A. Work out angle $ABC$ and angle $BDC$.<br><br>
+  Angle $ACB = 90°$ (angle in a semicircle), so angle $ABC = 180 - 90 - 23 = \mathbf{67°}$ (angles in a triangle).<br>
+  Angles $BDC$ and $BAC$ are both subtended by chord BC in the same segment, so angle $BDC = \mathbf{23°}$ (angles in the same segment are equal).
+</div>
+
+<div class="worked-example">
+  The tangent at P makes an angle of 47° with the chord PQ. R lies in the alternate segment and angle $PQR = 68°$. Work out angle $QPR$.<br><br>
+  Angle $PRQ = 47°$ (alternate segment theorem).<br>
+  Angle $QPR = 180 - 47 - 68 = \mathbf{65°}$ (angles in a triangle add up to 180°).
+</div>
+
+<div class="exam-tip">
+  Before calculating, mark every radius (they are all equal, so look for isosceles triangles) and every tangent&ndash;radius right angle. Write each angle on the diagram as you find it, with its reason in your working.
+</div>
+
+<!-- ===================== PROOFS ===================== -->
+<h2>4.3.5 Proving the Circle Theorems (G10) <span class="higher-tag">Higher</span></h2>
+
+<p>Edexcel can ask you to prove a standard theorem or to use the theorems to prove a related result. Use letters for unknown angles, give a reason for every line, and end by stating exactly what was to be proved.</p>
+
+<div class="worked-example">
+  <strong>Prove that the angle at the centre is twice the angle at the circumference.</strong><br><br>
+  Let A, B, C be on the circle with centre O. Draw the line from C through O to a point D on the circle.<br>
+  $OA = OC$ (radii), so angle $OAC$ = angle $OCA = a$. The exterior angle of triangle OAC is angle $AOD = a + a = 2a$.<br>
+  $OB = OC$ (radii), so angle $OBC$ = angle $OCB = b$, and angle $BOD = 2b$.<br>
+  So angle $AOB = 2a + 2b = 2(a + b) = 2 \times$ angle $ACB$. $\blacksquare$
+</div>
+
+<div class="worked-example">
+  <strong>Prove that angles in the same segment are equal.</strong><br><br>
+  Let C and D be on the same arc, both subtending chord AB, with centre O.<br>
+  Angle $ACB = \tfrac{1}{2}$ angle $AOB$ and angle $ADB = \tfrac{1}{2}$ angle $AOB$ (angle at the centre is twice the angle at the circumference).<br>
+  Therefore angle $ACB$ = angle $ADB$. $\blacksquare$
+</div>
+
+<div class="worked-example">
+  <strong>Prove that the opposite angles of a cyclic quadrilateral add up to 180°.</strong><br><br>
+  Let ABCD be cyclic with centre O; let angle $DAB = p$ and angle $BCD = q$. Draw radii OB and OD.<br>
+  The angle BOD facing C is $2p$, and the reflex angle BOD facing A is $2q$ (angle at the centre is twice the angle at the circumference).<br>
+  Angles around a point: $2p + 2q = 360$, so $p + q = 180°$. $\blacksquare$
+</div>
+
+<div class="worked-example">
+  <strong>Prove that tangents from an external point are equal in length.</strong><br><br>
+  Tangents from T touch the circle, centre O, at A and B. Angle $OAT$ = angle $OBT = 90°$ (tangent is perpendicular to the radius). $OA = OB$ (radii). $OT$ is common, and is the hypotenuse of both triangles.<br>
+  So triangles OAT and OBT are congruent (RHS) and $TA = TB$. $\blacksquare$
+</div>
+
+<div class="worked-example">
+  <strong>Prove that the perpendicular from the centre to a chord bisects the chord.</strong><br><br>
+  Let M be the point on chord AB with $OM \perp AB$. Angle $OMA$ = angle $OMB = 90°$; $OA = OB$ (radii); $OM$ is common.<br>
+  So triangles OMA and OMB are congruent (RHS) and $AM = BM$. $\blacksquare$
+</div>
+
+<div class="worked-example">
+  <strong>Prove the alternate segment theorem.</strong><br><br>
+  Let the tangent at A make angle $t$ with chord AB. Draw the diameter AE. Angle $EAT = 90°$ (tangent is perpendicular to the radius), so angle $EAB = 90 - t$.<br>
+  Angle $ABE = 90°$ (angle in a semicircle), so angle $AEB = 180 - 90 - (90 - t) = t$.<br>
+  Any angle $ACB$ in the same segment as E equals angle $AEB$ (angles in the same segment are equal), so angle $ACB = t$. $\blacksquare$
+</div>
+
+<div class="exam-tip">
+  A proof needs general letters, not numbers: checking one numerical case is not a proof. Proofs often rely on G5/G6 skills &mdash; isosceles triangles from radii and congruence (RHS) &mdash; so revise topic 4.2 alongside this one.
+</div>
+
+<h2>Summary</h2>
+<table>
+  <thead><tr><th>Topic</th><th>Key facts</th></tr></thead>
+  <tbody>
+    <tr><td>Parts of a circle (G9)</td><td>Radius, diameter, chord, tangent, arc, sector, segment</td></tr>
+    <tr><td>Circumference and area (G17)</td><td>$C = \pi d = 2\pi r$, &nbsp; $A = \pi r^2$</td></tr>
+    <tr><td>Arc length (G18)</td><td>$\dfrac{\theta}{360} \times 2\pi r$</td></tr>
+    <tr><td>Sector area (G18)</td><td>$\dfrac{\theta}{360} \times \pi r^2$; segment $=$ sector $-$ triangle</td></tr>
+    <tr><td>Circle theorems (G10) <span class="higher-tag">Higher</span></td><td>Centre = 2 &times; circumference; semicircle 90°; same segment equal; cyclic quadrilateral 180°; tangent &perp; radius; equal tangents; perpendicular bisects chord; alternate segment</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

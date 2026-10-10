@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 4.4 — Mensuration: Area, Volume &amp; 3D</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.4 Mensuration: Area, Volume &amp; 3D</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Geometry and measures &mdash; spec refs G12–G14, G16, G17 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<p>Mensuration means measuring: lengths, areas and volumes. In the Edexcel 1MA1 specification the statements G12–G14, G16 and G17 are <strong>identical at Foundation and Higher</strong>, so every formula on this page is examinable on both tiers &mdash; including cones, spheres, pyramids and composite solids. What makes a Higher question harder is the extra content it is combined with: Pythagoras in 3D, area and volume scale factors for similar solids, bounds, surds and algebra. Those links are collected in the final section, which is the only part tagged Higher.</p>
+
+<!-- ===================== 4.4.1 3D SOLIDS ===================== -->
+<h2>4.4.1 Faces, Edges and Vertices of 3D Solids (G12)</h2>
+
+<div class="definition">
+  <strong>Face</strong> &mdash; a flat surface of a solid. <strong>Surface</strong> &mdash; any outside surface, flat or curved. <strong>Edge</strong> &mdash; a line where two faces or surfaces meet. <strong>Vertex</strong> (plural vertices) &mdash; a point where edges meet.
+</div>
+
+<div style="display:flex; gap:20px; flex-wrap:wrap; margin:16px 0; align-items:flex-end;">
+  <div style="text-align:center;">
+    <svg width="130" height="110" viewBox="0 0 130 110" xmlns="http://www.w3.org/2000/svg" aria-label="Cuboid">
+      <polygon points="15,40 85,40 85,100 15,100" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+      <polygon points="15,40 45,15 115,15 85,40" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+      <polygon points="85,40 115,15 115,75 85,100" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+    </svg>
+    <div style="font-size:0.88rem;color:#6b7280;">Cuboid</div>
+  </div>
+  <div style="text-align:center;">
+    <svg width="130" height="110" viewBox="0 0 130 110" xmlns="http://www.w3.org/2000/svg" aria-label="Triangular prism">
+      <polygon points="15,100 55,100 35,55" fill="#d1fae5" stroke="#16a34a" stroke-width="2"/>
+      <polygon points="35,55 95,25 115,70 55,100" fill="#ecfdf5" stroke="#16a34a" stroke-width="2"/>
+      <line x1="55" y1="100" x2="115" y2="70" stroke="#16a34a" stroke-width="2"/>
+    </svg>
+    <div style="font-size:0.88rem;color:#6b7280;">Triangular prism</div>
+  </div>
+  <div style="text-align:center;">
+    <svg width="130" height="110" viewBox="0 0 130 110" xmlns="http://www.w3.org/2000/svg" aria-label="Square-based pyramid">
+      <polygon points="15,90 85,90 115,70 45,70" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+      <line x1="15" y1="90" x2="65" y2="10" stroke="#ca8a04" stroke-width="2"/>
+      <line x1="85" y1="90" x2="65" y2="10" stroke="#ca8a04" stroke-width="2"/>
+      <line x1="115" y1="70" x2="65" y2="10" stroke="#ca8a04" stroke-width="2"/>
+      <line x1="45" y1="70" x2="65" y2="10" stroke="#ca8a04" stroke-width="1.5" stroke-dasharray="4,3"/>
+    </svg>
+    <div style="font-size:0.88rem;color:#6b7280;">Square-based pyramid</div>
+  </div>
+  <div style="text-align:center;">
+    <svg width="110" height="110" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" aria-label="Cylinder">
+      <ellipse cx="55" cy="20" rx="35" ry="10" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
+      <line x1="20" y1="20" x2="20" y2="90" stroke="#7c3aed" stroke-width="2"/>
+      <line x1="90" y1="20" x2="90" y2="90" stroke="#7c3aed" stroke-width="2"/>
+      <path d="M20,90 A35,10 0 0 0 90,90" fill="none" stroke="#7c3aed" stroke-width="2"/>
+      <path d="M20,90 A35,10 0 0 1 90,90" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="4,3"/>
+    </svg>
+    <div style="font-size:0.88rem;color:#6b7280;">Cylinder</div>
+  </div>
+  <div style="text-align:center;">
+    <svg width="110" height="110" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" aria-label="Cone">
+      <line x1="20" y1="90" x2="55" y2="10" stroke="#dc2626" stroke-width="2"/>
+      <line x1="90" y1="90" x2="55" y2="10" stroke="#dc2626" stroke-width="2"/>
+      <path d="M20,90 A35,10 0 0 0 90,90" fill="none" stroke="#dc2626" stroke-width="2"/>
+      <path d="M20,90 A35,10 0 0 1 90,90" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+    </svg>
+    <div style="font-size:0.88rem;color:#6b7280;">Cone</div>
+  </div>
+</div>
+
+<table>
+  <thead><tr><th>Solid</th><th>Faces / surfaces</th><th>Edges</th><th>Vertices</th></tr></thead>
+  <tbody>
+    <tr><td>Cube / cuboid</td><td>6 faces</td><td>12</td><td>8</td></tr>
+    <tr><td>Triangular prism</td><td>5 faces (2 triangles, 3 rectangles)</td><td>9</td><td>6</td></tr>
+    <tr><td>Pentagonal prism</td><td>7 faces (2 pentagons, 5 rectangles)</td><td>15</td><td>10</td></tr>
+    <tr><td>Square-based pyramid</td><td>5 faces (1 square, 4 triangles)</td><td>8</td><td>5</td></tr>
+    <tr><td>Tetrahedron (triangular-based pyramid)</td><td>4 faces</td><td>6</td><td>4</td></tr>
+    <tr><td>Cylinder</td><td>2 flat circles + 1 curved surface</td><td>2 (curved)</td><td>0</td></tr>
+    <tr><td>Cone</td><td>1 flat circle + 1 curved surface</td><td>1 (curved)</td><td>1 (apex)</td></tr>
+    <tr><td>Sphere</td><td>1 curved surface</td><td>0</td><td>0</td></tr>
+  </tbody>
+</table>
+
+<p>A <strong>prism</strong> has the same cross-section all the way along its length. A prism whose cross-section has $n$ sides has $n + 2$ faces, $3n$ edges and $2n$ vertices. A <strong>pyramid</strong> on an $n$-sided base has $n + 1$ faces, $2n$ edges and $n + 1$ vertices. For any solid with flat faces, Euler's formula $F + V - E = 2$ is a useful check.</p>
+
+<div class="worked-example">
+  A prism has a hexagonal cross-section. How many faces, edges and vertices does it have? Check with Euler's formula.<br><br>
+  $n = 6$: faces $= 6 + 2 = \mathbf{8}$, edges $= 3 \times 6 = \mathbf{18}$, vertices $= 2 \times 6 = \mathbf{12}$<br>
+  Check: $8 + 12 - 18 = 2$ ✓
+</div>
+
+<!-- ===================== 4.4.2 PLANS AND ELEVATIONS ===================== -->
+<h2>4.4.2 Plans and Elevations (G13)</h2>
+
+<div class="definition">
+  <strong>Plan</strong> &mdash; the view from directly above. <strong>Front elevation</strong> &mdash; the view from the front. <strong>Side elevation</strong> &mdash; the view from the side. Each is a 2D drawing that shows true lengths as seen from that direction.
+</div>
+
+<svg width="520" height="170" viewBox="0 0 520 170" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin:16px 0; max-width:100%;" aria-label="An L-shaped solid with its plan, front elevation and side elevation">
+  <!-- 3D L-shape -->
+  <polygon points="20,140 110,140 110,110 60,110 60,60 20,60" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="20,60 45,40 85,40 60,60" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="60,110 85,90 135,90 110,110" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="60,60 85,40 85,90 60,110" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <polygon points="110,140 135,120 135,90 110,110" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <text x="50" y="162" font-size="12" fill="#374151" font-family="sans-serif">Solid</text>
+  <!-- Front elevation -->
+  <polygon points="180,140 270,140 270,110 220,110 220,60 180,60" fill="#d1fae5" stroke="#16a34a" stroke-width="2"/>
+  <text x="185" y="162" font-size="12" fill="#374151" font-family="sans-serif">Front elevation</text>
+  <!-- Plan -->
+  <rect x="310" y="90" width="90" height="35" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <line x1="350" y1="90" x2="350" y2="125" stroke="#ca8a04" stroke-width="2"/>
+  <text x="340" y="162" font-size="12" fill="#374151" font-family="sans-serif">Plan</text>
+  <!-- Side elevation -->
+  <rect x="440" y="60" width="35" height="80" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
+  <line x1="440" y1="110" x2="475" y2="110" stroke="#7c3aed" stroke-width="2"/>
+  <text x="430" y="162" font-size="12" fill="#374151" font-family="sans-serif">Side elevation</text>
+</svg>
+
+<p>Draw a solid line on a plan or elevation wherever there is a visible edge &mdash; a change in height or depth. Edexcel questions ask you both to <em>construct</em> these views on a grid and to <em>interpret</em> them (for example, use a plan and elevation to work out a volume or sketch the solid).</p>
+
+<div class="worked-example">
+  A triangular prism is 8 cm long and lies on one of its rectangular faces. Its cross-section is an isosceles triangle with base 4 cm and height 3 cm. Describe its plan, front elevation (looking at the 8 cm side) and side elevation.<br><br>
+  Plan: a <strong>rectangle 8 cm by 4 cm</strong> with a line along the middle (the top ridge).<br>
+  Front elevation: a <strong>rectangle 8 cm by 3 cm</strong>.<br>
+  Side elevation: an <strong>isosceles triangle</strong> with base 4 cm and height 3 cm.
+</div>
+
+<div class="exam-tip">
+  Lengths must match between views: the width of the plan equals the width of the front elevation, and the depth of the plan equals the width of the side elevation. Use a ruler and count squares carefully on isometric or squared paper.
+</div>
+
+<!-- ===================== 4.4.3 UNITS ===================== -->
+<h2>4.4.3 Standard Units of Measure (G14)</h2>
+
+<p>Length, area and volume are measured in different units. Because area is two lengths multiplied and volume is three, the length conversion factor must be <strong>squared</strong> for area and <strong>cubed</strong> for volume.</p>
+
+<table>
+  <thead><tr><th>Length</th><th>Area</th><th>Volume / capacity</th></tr></thead>
+  <tbody>
+    <tr><td>1 cm = 10 mm</td><td>1 cm² = 10² = 100 mm²</td><td>1 cm³ = 10³ = 1000 mm³</td></tr>
+    <tr><td>1 m = 100 cm</td><td>1 m² = 100² = 10 000 cm²</td><td>1 m³ = 100³ = 1 000 000 cm³</td></tr>
+    <tr><td>1 km = 1000 m</td><td>1 km² = 1 000 000 m²</td><td>1 litre = 1000 cm³ &nbsp;&nbsp; 1 ml = 1 cm³</td></tr>
+    <tr><td></td><td></td><td>1 m³ = 1000 litres</td></tr>
+  </tbody>
+</table>
+
+<p>G14 also covers mass (1 kg = 1000 g, 1 tonne = 1000 kg), time (1 hour = 60 minutes = 3600 seconds) and money (£1 = 100p).</p>
+
+<div class="worked-example">
+  (a) Change 2.6 m² into cm². &nbsp; (b) Change 7 500 000 cm³ into m³. &nbsp; (c) A jug holds 4.8 litres. Write this in cm³.<br><br>
+  (a) $2.6 \times 10\,000 = \mathbf{26\,000}$ <strong>cm²</strong><br>
+  (b) $7\,500\,000 \div 1\,000\,000 = \mathbf{7.5}$ <strong>m³</strong><br>
+  (c) $4.8 \times 1000 = \mathbf{4800}$ <strong>cm³</strong>
+</div>
+
+<div class="exam-tip">
+  Never convert 1 m² to 100 cm². A square 1 m by 1 m is 100 cm by 100 cm, which is 10 000 cm². If in doubt, convert the lengths first and then multiply.
+</div>
+
+<!-- ===================== 4.4.4 2D AREA AND PERIMETER ===================== -->
+<h2>4.4.4 Perimeter and Area of 2D Shapes (G16, G17)</h2>
+
+<div class="definition">
+  <strong>Perimeter</strong> &mdash; the total distance around the edge of a shape (cm, m). <strong>Area</strong> &mdash; the amount of flat space it covers (cm², m²).
+</div>
+
+<div class="formula-box">
+  <table>
+    <tr><th>Shape</th><th>Area (you must know these &mdash; G16)</th></tr>
+    <tr><td>Rectangle</td><td>$A = lw$</td></tr>
+    <tr><td>Triangle</td><td>$A = \tfrac{1}{2}bh$ &nbsp;($h$ = perpendicular height)</td></tr>
+    <tr><td>Parallelogram</td><td>$A = bh$ &nbsp;($h$ = perpendicular height)</td></tr>
+    <tr><td>Trapezium</td><td>$A = \tfrac{1}{2}(a + b)h$ &nbsp;($a$, $b$ = parallel sides)</td></tr>
+  </table>
+</div>
+
+<svg width="420" height="130" viewBox="0 0 420 130" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin:16px 0; max-width:100%;" aria-label="Triangle, parallelogram and trapezium showing perpendicular heights">
+  <polygon points="20,110 120,110 80,25" fill="#d1fae5" stroke="#16a34a" stroke-width="2"/>
+  <line x1="80" y1="25" x2="80" y2="110" stroke="#374151" stroke-dasharray="4,3"/>
+  <text x="84" y="72" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">h</text>
+  <text x="65" y="126" font-size="13" fill="#16a34a" font-family="sans-serif" font-style="italic">b</text>
+  <polygon points="150,110 250,110 280,25 180,25" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <line x1="250" y1="25" x2="250" y2="110" stroke="#374151" stroke-dasharray="4,3"/>
+  <text x="254" y="72" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">h</text>
+  <text x="195" y="126" font-size="13" fill="#ca8a04" font-family="sans-serif" font-style="italic">b</text>
+  <polygon points="300,110 410,110 380,25 330,25" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
+  <line x1="355" y1="25" x2="355" y2="110" stroke="#374151" stroke-dasharray="4,3"/>
+  <text x="359" y="72" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">h</text>
+  <text x="350" y="18" font-size="13" fill="#7c3aed" font-family="sans-serif" font-style="italic">a</text>
+  <text x="350" y="126" font-size="13" fill="#7c3aed" font-family="sans-serif" font-style="italic">b</text>
+</svg>
+
+<div class="worked-example">
+  A trapezium has parallel sides 5 cm and 13 cm. The perpendicular distance between them is 8 cm. Work out its area.<br><br>
+  $A = \tfrac{1}{2}(5 + 13) \times 8 = \tfrac{1}{2} \times 18 \times 8 = \mathbf{72}$ <strong>cm²</strong>
+</div>
+
+<h3>Circles</h3>
+<div class="formula-box">
+  You must know (G17): &nbsp; Circumference $C = 2\pi r = \pi d$ &nbsp;&nbsp;&nbsp; Area $A = \pi r^2$
+</div>
+
+<div class="worked-example">
+  A circular table top has radius 9 cm. Work out its circumference and area, each to 1 decimal place.<br><br>
+  $C = 2 \times \pi \times 9 = 18\pi = 56.548\ldots \approx \mathbf{56.5}$ <strong>cm</strong><br>
+  $A = \pi \times 9^2 = 81\pi = 254.469\ldots \approx \mathbf{254.5}$ <strong>cm²</strong>
+</div>
+
+<div class="worked-example">
+  A semicircle has diameter 14 cm. Work out its perimeter and its area, in terms of $\pi$.<br><br>
+  Curved edge $= \tfrac{1}{2} \times \pi \times 14 = 7\pi$, so perimeter $= \mathbf{7\pi + 14}$ <strong>cm</strong> (include the diameter)<br>
+  Area $= \tfrac{1}{2} \times \pi \times 7^2 = \mathbf{24.5\pi}$ <strong>cm²</strong>
+</div>
+
+<p>"Give your answer <strong>in terms of $\pi$</strong>" means leave $\pi$ as a symbol, e.g. $24.5\pi$ cm². This is an exact answer and is common on Paper 1.</p>
+
+<h3>Composite Shapes</h3>
+<p>Split the shape into rectangles, triangles, trapezia and parts of circles. Add the areas of parts that are joined on; subtract the areas of parts that are cut out. For perimeter, only add the edges on the outside.</p>
+
+<div class="worked-example">
+  A rectangle 16 cm by 10 cm has a semicircle of diameter 10 cm cut out of one of its short sides. Work out the area that is left, to 1 decimal place.<br><br>
+  Rectangle $= 16 \times 10 = 160$ cm²<br>
+  Semicircle $= \tfrac{1}{2} \times \pi \times 5^2 = 12.5\pi = 39.26\ldots$ cm²<br>
+  Area left $= 160 - 12.5\pi = 120.73\ldots \approx \mathbf{120.7}$ <strong>cm²</strong>
+</div>
+
+<h3>Areas on Coordinate Axes</h3>
+<p>Horizontal lengths are differences in $x$-coordinates and vertical lengths are differences in $y$-coordinates.</p>
+<div class="worked-example">
+  A triangle has vertices $(-1, 2)$, $(5, 2)$ and $(3, 8)$. Work out its area.<br><br>
+  The base from $(-1, 2)$ to $(5, 2)$ is horizontal: $5 - (-1) = 6$. The perpendicular height is $8 - 2 = 6$.<br>
+  Area $= \tfrac{1}{2} \times 6 \times 6 = \mathbf{18}$ <strong>units²</strong>
+</div>
+
+<!-- ===================== 4.4.5 VOLUME ===================== -->
+<h2>4.4.5 Volume of Cuboids, Prisms and Cylinders (G16)</h2>
+
+<div class="formula-box">
+  <strong>Right prism:</strong> $V = \text{area of cross-section} \times \text{length}$<br>
+  <strong>Cuboid:</strong> $V = lwh$ &nbsp;&nbsp;&nbsp; <strong>Cylinder:</strong> $V = \pi r^2 h$ (a cylinder is a prism with a circular cross-section)
+</div>
+
+<div class="worked-example">
+  A prism is 12 cm long. Its cross-section is a trapezium with parallel sides 4 cm and 10 cm, 5 cm apart. Work out its volume.<br><br>
+  Cross-section $= \tfrac{1}{2}(4 + 10) \times 5 = 35$ cm²; &nbsp; $V = 35 \times 12 = \mathbf{420}$ <strong>cm³</strong>
+</div>
+
+<div class="worked-example">
+  A tin is a cylinder with diameter 8 cm and height 15 cm. Work out its volume to 3 significant figures.<br><br>
+  $r = 4$; &nbsp; $V = \pi \times 4^2 \times 15 = 240\pi = 753.98\ldots \approx \mathbf{754}$ <strong>cm³</strong>
+</div>
+
+<div class="worked-example">
+  A cuboid tank 120 cm by 60 cm by 50 cm contains water 35 cm deep. How many more litres are needed to fill it?<br><br>
+  Unfilled depth $= 50 - 35 = 15$ cm, so extra volume $= 120 \times 60 \times 15 = 108\,000$ cm³ $= \mathbf{108}$ <strong>litres</strong>
+</div>
+
+<!-- ===================== 4.4.6 SURFACE AREA ===================== -->
+<h2>4.4.6 Surface Area of Prisms and Cylinders (G16, G17)</h2>
+
+<p>Surface area is the total area of all the outside faces. Sketching the <strong>net</strong> makes sure no face is missed.</p>
+
+<div class="formula-box">
+  <strong>Cuboid:</strong> $SA = 2(lw + lh + wh)$<br>
+  <strong>Cylinder:</strong> curved surface $= 2\pi rh$; &nbsp; closed cylinder total $= 2\pi r^2 + 2\pi rh$
+</div>
+
+<svg width="300" height="160" viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin:16px 0; max-width:100%;" aria-label="Net of a cylinder: a rectangle of width 2 pi r and height h with two circles">
+  <rect x="60" y="40" width="180" height="80" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
+  <circle cx="110" cy="20" r="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <circle cx="110" cy="140" r="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="150" y="85" font-size="13" fill="#374151" font-family="sans-serif" text-anchor="middle">2&#960;r &#215; h</text>
+  <text x="250" y="85" font-size="13" fill="#374151" font-family="sans-serif">h</text>
+  <text x="135" y="25" font-size="12" fill="#374151" font-family="sans-serif">&#960;r&#178;</text>
+</svg>
+
+<div class="worked-example">
+  A closed cylinder has radius 3 cm and height 10 cm. Work out its total surface area in terms of $\pi$.<br><br>
+  Two ends: $2 \times \pi \times 3^2 = 18\pi$. Curved surface: $2 \times \pi \times 3 \times 10 = 60\pi$.<br>
+  Total $= \mathbf{78\pi}$ <strong>cm²</strong>
+</div>
+
+<div class="worked-example">
+  A prism 15 cm long has a cross-section that is a right-angled triangle with sides 6 cm, 8 cm and 10 cm. Work out its surface area.<br><br>
+  Two triangles: $2 \times \tfrac{1}{2} \times 6 \times 8 = 48$. Three rectangles: $(6 + 8 + 10) \times 15 = 360$.<br>
+  Total $= \mathbf{408}$ <strong>cm²</strong>
+</div>
+
+<!-- ===================== 4.4.7 PYRAMIDS CONES SPHERES ===================== -->
+<h2>4.4.7 Pyramids, Cones and Spheres (G17)</h2>
+
+<div class="formula-box">
+  <strong>Pyramid:</strong> $V = \tfrac{1}{3} \times \text{area of base} \times h$<br>
+  <strong>Cone:</strong> $V = \tfrac{1}{3}\pi r^2 h$; &nbsp; curved surface area $= \pi r l$ &nbsp;($l$ = slant height)<br>
+  <strong>Sphere:</strong> $V = \tfrac{4}{3}\pi r^3$; &nbsp; surface area $= 4\pi r^2$<br>
+  <strong>Hemisphere:</strong> $V = \tfrac{2}{3}\pi r^3$; &nbsp; curved surface $= 2\pi r^2$
+</div>
+
+<svg width="320" height="170" viewBox="0 0 320 170" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin:16px 0; max-width:100%;" aria-label="Cone showing radius r, perpendicular height h and slant height l, and a sphere of radius r">
+  <line x1="30" y1="140" x2="90" y2="20" stroke="#dc2626" stroke-width="2"/>
+  <line x1="150" y1="140" x2="90" y2="20" stroke="#dc2626" stroke-width="2"/>
+  <ellipse cx="90" cy="140" rx="60" ry="14" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <line x1="90" y1="20" x2="90" y2="140" stroke="#374151" stroke-dasharray="4,3"/>
+  <line x1="90" y1="140" x2="150" y2="140" stroke="#374151"/>
+  <polyline points="90,130 100,130 100,140" fill="none" stroke="#374151"/>
+  <text x="76" y="85" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">h</text>
+  <text x="124" y="78" font-size="13" fill="#dc2626" font-family="sans-serif" font-style="italic">l</text>
+  <text x="118" y="135" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">r</text>
+  <circle cx="245" cy="85" r="55" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <ellipse cx="245" cy="85" rx="55" ry="14" fill="none" stroke="#2563eb" stroke-dasharray="4,3"/>
+  <line x1="245" y1="85" x2="300" y2="85" stroke="#374151"/>
+  <text x="268" y="80" font-size="13" fill="#374151" font-family="sans-serif" font-style="italic">r</text>
+</svg>
+
+<p>On Edexcel papers the cone and sphere formulae are given in the question when they are needed (they are not on a formulae sheet), but you must be able to <em>use</em> them. The pyramid formula is usually given too. The radius $r$, perpendicular height $h$ and slant height $l$ of a cone form a right-angled triangle, so $l^2 = r^2 + h^2$.</p>
+
+<div class="worked-example">
+  A square-based pyramid has volume 245 cm³ and perpendicular height 15 cm. Work out the length of a side of the base.<br><br>
+  $\tfrac{1}{3} \times x^2 \times 15 = 245 \Rightarrow 5x^2 = 245 \Rightarrow x^2 = 49 \Rightarrow x = \mathbf{7}$ <strong>cm</strong>
+</div>
+
+<div class="worked-example">
+  A solid cone has base radius 9 cm and perpendicular height 12 cm. Work out its total surface area in terms of $\pi$.<br><br>
+  Slant height $l = \sqrt{9^2 + 12^2} = \sqrt{225} = 15$ cm<br>
+  Curved surface $= \pi \times 9 \times 15 = 135\pi$; base $= \pi \times 9^2 = 81\pi$<br>
+  Total $= \mathbf{216\pi}$ <strong>cm²</strong>
+</div>
+
+<div class="worked-example">
+  A ball is a sphere of radius 7.5 cm. Work out its volume to 3 significant figures.<br><br>
+  $V = \tfrac{4}{3} \times \pi \times 7.5^3 = 562.5\pi = 1767.1\ldots \approx \mathbf{1770}$ <strong>cm³</strong>
+</div>
+
+<div class="exam-tip">
+  Volume of a cone uses the <strong>perpendicular</strong> height $h$; curved surface area uses the <strong>slant</strong> height $l$. If the question gives the other one, use Pythagoras first.
+</div>
+
+<!-- ===================== 4.4.8 COMPOSITE SOLIDS AND FRUSTUMS ===================== -->
+<h2>4.4.8 Composite Solids and Frustums (G17)</h2>
+
+<p>"Composite solids" are named in G17 on <strong>both tiers</strong>. For <strong>volume</strong>, add or subtract the volumes of the parts. For <strong>surface area</strong>, include only the surfaces on the outside &mdash; leave out any face where two parts are joined.</p>
+
+<div class="worked-example">
+  An ice-cream model is a cone of radius 3 cm and perpendicular height 8 cm with a hemisphere of radius 3 cm on top. Work out its volume to 3 significant figures.<br><br>
+  Cone $= \tfrac{1}{3} \times \pi \times 3^2 \times 8 = 24\pi$; hemisphere $= \tfrac{2}{3} \times \pi \times 3^3 = 18\pi$<br>
+  Total $= 42\pi = 131.9\ldots \approx \mathbf{132}$ <strong>cm³</strong>
+</div>
+
+<div class="definition">
+  A <strong>frustum</strong> is the solid left when the top of a cone (or pyramid) is cut off parallel to its base.
+  $$V_{\text{frustum}} = V_{\text{large cone}} - V_{\text{small cone}}$$
+</div>
+
+<svg width="260" height="190" viewBox="0 0 260 190" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin:16px 0; max-width:100%;" aria-label="Frustum formed by removing a small cone from the top of a large cone">
+  <line x1="130" y1="15" x2="95" y2="80" stroke="#9ca3af" stroke-dasharray="4,3"/>
+  <line x1="130" y1="15" x2="165" y2="80" stroke="#9ca3af" stroke-dasharray="4,3"/>
+  <polygon points="95,80 165,80 220,165 40,165" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <ellipse cx="130" cy="80" rx="35" ry="8" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <ellipse cx="130" cy="165" rx="90" ry="14" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="150" y="45" font-size="12" fill="#6b7280" font-family="sans-serif">small cone removed</text>
+  <text x="105" y="128" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">frustum</text>
+</svg>
+
+<div class="worked-example">
+  A frustum is made by removing a cone of radius 3 cm and height 4 cm from the top of a cone of radius 12 cm and height 16 cm. Work out its volume to 3 significant figures.<br><br>
+  Large cone $= \tfrac{1}{3} \times \pi \times 12^2 \times 16 = 768\pi$<br>
+  Small cone $= \tfrac{1}{3} \times \pi \times 3^2 \times 4 = 12\pi$<br>
+  Frustum $= 768\pi - 12\pi = 756\pi = 2375.0\ldots \approx \mathbf{2380}$ <strong>cm³</strong>
+</div>
+
+<p>If you are given only the two radii and the depth of the frustum, find the height of the whole cone with similar triangles. A lampshade has radii 20 cm and 12 cm and depth 16 cm: $\dfrac{H - 16}{H} = \dfrac{12}{20}$ gives $20H - 320 = 12H$, so $H = 40$ cm and the removed cone has height 24 cm. (Frustum questions are most common on Higher papers because they combine G17 with similarity.)</p>
+
+<h3>Melting, Recasting and Displacement</h3>
+<div class="worked-example">
+  A solid metal sphere of radius 9 cm is melted down and recast into cones of radius 3 cm and height 6 cm. How many cones can be made?<br><br>
+  Sphere $= \tfrac{4}{3} \times \pi \times 9^3 = 972\pi$; cone $= \tfrac{1}{3} \times \pi \times 3^2 \times 6 = 18\pi$<br>
+  $972\pi \div 18\pi = \mathbf{54}$ <strong>cones</strong>
+</div>
+
+<div class="worked-example">
+  A cylindrical jar of radius 5 cm contains water. A metal ball of radius 3 cm is dropped in and is fully covered. By how much does the water level rise?<br><br>
+  Ball $= \tfrac{4}{3} \times \pi \times 3^3 = 36\pi$ cm³. Rise $= 36\pi \div (\pi \times 5^2) = 36 \div 25 = \mathbf{1.44}$ <strong>cm</strong>
+</div>
+
+<div class="exam-tip">
+  Keep $\pi$ in your working until the end &mdash; in "how many" questions it usually cancels. Round <em>down</em> for "how many can be made" and <em>up</em> for "how many tins are needed".
+</div>
+
+<!-- ===================== 4.4.9 HIGHER LINKS ===================== -->
+<h2>4.4.9 Mensuration with Higher-Tier Content <span class="higher-tag">Higher</span></h2>
+
+<p>These skills come from other Higher-only statements but often appear inside area and volume questions.</p>
+
+<h3>Pythagoras in 3D solids (G20)</h3>
+<div class="worked-example">
+  A box is a cuboid 2 cm by 3 cm by 6 cm. Work out the length of the longest straight rod that fits inside it.<br><br>
+  Space diagonal $= \sqrt{2^2 + 3^2 + 6^2} = \sqrt{49} = \mathbf{7}$ <strong>cm</strong>
+</div>
+
+<h3>Area and volume of similar solids (G19)</h3>
+<p>If lengths are multiplied by scale factor $k$, areas are multiplied by $k^2$ and volumes by $k^3$.</p>
+<div class="worked-example">
+  Two similar jugs have heights 10 cm and 30 cm. The smaller jug has surface area 150 cm² and capacity 400 ml. Work out the surface area and the capacity of the larger jug.<br><br>
+  $k = 30 \div 10 = 3$. Area: $150 \times 3^2 = \mathbf{1350}$ <strong>cm²</strong>. Capacity: $400 \times 3^3 = 10\,800$ ml $= \mathbf{10.8}$ <strong>litres</strong>
+</div>
+
+<h3>Bounds in mensuration (N16)</h3>
+<div class="worked-example">
+  A cylinder has radius 5.0 cm (to 1 d.p.) and height 12 cm (to the nearest cm). Work out the upper bound of its volume.<br><br>
+  Upper bounds: $r = 5.05$, $h = 12.5$. &nbsp; $V = \pi \times 5.05^2 \times 12.5 = 1001.4\ldots \approx \mathbf{1001}$ <strong>cm³</strong>
+</div>
+
+<h3>Exact answers with surds (N8)</h3>
+<div class="worked-example">
+  A circle has area $18\pi$ cm². Find its exact radius.<br><br>
+  $\pi r^2 = 18\pi \Rightarrow r^2 = 18 \Rightarrow r = \sqrt{18} = \mathbf{3\sqrt{2}}$ <strong>cm</strong>
+</div>
+
+<h3>Summary of Formulae</h3>
+<table>
+  <thead><tr><th>Shape</th><th>Volume</th><th>Surface area</th></tr></thead>
+  <tbody>
+    <tr><td>Cuboid</td><td>$lwh$</td><td>$2(lw + lh + wh)$</td></tr>
+    <tr><td>Prism</td><td>cross-section × length</td><td>sum of all faces</td></tr>
+    <tr><td>Cylinder</td><td>$\pi r^2 h$</td><td>$2\pi r^2 + 2\pi rh$</td></tr>
+    <tr><td>Pyramid</td><td>$\tfrac{1}{3} \times$ base × $h$</td><td>base + triangular faces</td></tr>
+    <tr><td>Cone</td><td>$\tfrac{1}{3}\pi r^2 h$</td><td>$\pi r l + \pi r^2$</td></tr>
+    <tr><td>Sphere</td><td>$\tfrac{4}{3}\pi r^3$</td><td>$4\pi r^2$</td></tr>
+    <tr><td>Hemisphere (solid)</td><td>$\tfrac{2}{3}\pi r^3$</td><td>$3\pi r^2$</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

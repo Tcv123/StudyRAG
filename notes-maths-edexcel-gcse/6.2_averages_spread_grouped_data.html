@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 6.2 — Averages, Spread &amp; Grouped Data</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>6.2 Averages, Spread &amp; Grouped Data</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Statistics &mdash; spec refs S3, S4 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<p>In 1MA1, S4 is on both tiers, but the Higher version adds <strong>box plots</strong>, <strong>quartiles</strong> and the <strong>inter-quartile range</strong>. S3 (histograms with equal and unequal class widths, and cumulative frequency graphs) appears <strong>only in the Higher content list</strong>. Sections marked <span class="higher-tag">Higher</span> are Higher tier only.</p>
+
+<!-- ===================== 6.2.1 TYPES OF DATA ===================== -->
+<h2>6.2.1 Types of Data (S4)</h2>
+
+<div class="definition">
+  <strong>Discrete data</strong> &mdash; can only take certain values, usually found by <em>counting</em> (number of texts sent, shoe size).<br>
+  <strong>Continuous data</strong> &mdash; can take any value within a range, found by <em>measuring</em> (mass, time, length).<br>
+  <strong>Grouped data</strong> &mdash; values sorted into classes such as $10 &lt; t \leq 20$, used when there are many different values.<br><br>
+  Inequalities matter: in $10 &lt; t \leq 20$, a time of exactly 10 belongs to the class <em>below</em>, and exactly 20 belongs in this class.
+</div>
+
+<!-- ===================== 6.2.2 AVERAGES AND RANGE ===================== -->
+<h2>6.2.2 Mean, Median, Mode and Range (S4)</h2>
+
+<div class="formula-box">
+  $$\text{Mean} = \frac{\text{total of the values}}{\text{number of values}} \qquad \text{Median} = \text{the }\left(\tfrac{n+1}{2}\right)\text{th value once the data is in order}$$
+  <strong>Mode</strong> = the most common value. &nbsp; <strong>Range</strong> = largest value $-$ smallest value (a measure of spread).
+</div>
+
+<div class="worked-example">
+  Data: 12, 7, 15, 9, 7, 18, 10, 14.<br><br>
+  Mean $= \dfrac{92}{8} = 11.5$<br>
+  In order: 7, 7, 9, 10, 12, 14, 15, 18. With $n = 8$ the median is the $4.5$th value, halfway between 10 and 12, so median $= 11$.<br>
+  Mode $= 7$. &nbsp; Range $= 18 - 7 = 11$.
+</div>
+
+<h3>Working backwards from a mean</h3>
+<p>Use $\text{total} = \text{mean} \times \text{number of values}$.</p>
+
+<div class="worked-example">
+  The mean of five numbers is 16. A sixth number is added and the mean becomes 17. Work out the sixth number.<br><br>
+  Old total $= 5 \times 16 = 80$. New total $= 6 \times 17 = 102$. Sixth number $= 102 - 80 = 22$.
+</div>
+
+<div class="worked-example">
+  14 boys did a mean of 6.5 hours of homework; 16 girls did a mean of 8 hours. Work out the mean for all 30 pupils.<br><br>
+  $\dfrac{14 \times 6.5 + 16 \times 8}{30} = \dfrac{91 + 128}{30} = \dfrac{219}{30} = 7.3$ hours.<br>
+  (Averaging the two means gives 7.25, which is wrong because the groups are different sizes.)
+</div>
+
+<h3>Outliers and choosing an average</h3>
+<div class="definition">
+  An <strong>outlier</strong> is a value that is much bigger or smaller than the rest. It may be a mistake or a genuine extreme value. Outliers have a big effect on the <strong>mean</strong> and the <strong>range</strong>, but very little effect on the median (or the IQR).
+</div>
+
+<table>
+  <tr><th>Average</th><th>Best when&hellip;</th><th>Weakness</th></tr>
+  <tr><td>Mean</td><td>Numerical data without outliers; uses every value</td><td>Pulled towards outliers</td></tr>
+  <tr><td>Median</td><td>Data has outliers or is skewed (rents, salaries, house prices)</td><td>Ignores most of the values</td></tr>
+  <tr><td>Mode</td><td>Categorical data, or the most popular item is needed (sizes to stock)</td><td>May not exist, or there may be several</td></tr>
+</table>
+
+<div class="worked-example">
+  Monthly rents on a street: £650, £700, £720, £740, £780, £2400.<br><br>
+  Mean $= 5990 \div 6 = 998.33$, i.e. £998.33. &nbsp; Median $= \dfrac{720 + 740}{2} = 730$, i.e. £730.<br>
+  The median is more typical: five of the six rents are below the mean, which has been dragged up by the outlier £2400.
+</div>
+
+<!-- ===================== 6.2.3 FREQUENCY TABLES ===================== -->
+<h2>6.2.3 Averages from a Frequency Table (S4)</h2>
+
+<div class="formula-box">
+  $$\text{Mean} = \frac{\sum fx}{\sum f} = \frac{\text{total of (value} \times \text{frequency)}}{\text{total frequency}}$$
+</div>
+
+<div class="worked-example">
+  Goals scored by a team in 25 matches:<br><br>
+  <table>
+    <tr><th>Goals $x$</th><th>Frequency $f$</th><th>$fx$</th><th>Running total</th></tr>
+    <tr><td>0</td><td>6</td><td>0</td><td>6</td></tr>
+    <tr><td>1</td><td>8</td><td>8</td><td>14</td></tr>
+    <tr><td>2</td><td>7</td><td>14</td><td>21</td></tr>
+    <tr><td>3</td><td>3</td><td>9</td><td>24</td></tr>
+    <tr><td>4</td><td>1</td><td>4</td><td>25</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>25</strong></td><td><strong>35</strong></td><td></td></tr>
+  </table>
+  Mean $= 35 \div 25 = 1.4$ goals. &nbsp; Mode $= 1$ goal.<br>
+  Median $=$ 13th value; the running total passes 13 in the "1" row (values 7 to 14), so median $= 1$ goal. &nbsp; Range $= 4 - 0 = 4$.
+</div>
+
+<div class="exam-tip">
+  Divide by the <strong>total frequency</strong> (25), not the number of rows (5). The mode is the <em>value</em> with the highest frequency (1 goal), not the frequency itself (8).
+</div>
+
+<!-- ===================== 6.2.4 GROUPED DATA ===================== -->
+<h2>6.2.4 Grouped Frequency Tables and Frequency Polygons (S4)</h2>
+
+<div class="definition">
+  With grouped data the individual values are lost, so:
+  <ul style="margin-bottom:0;">
+    <li>the mean can only be <strong>estimated</strong>, using the <strong>midpoint</strong> of each class;</li>
+    <li>we give the <strong>modal class</strong> (highest frequency) rather than a mode;</li>
+    <li>we find the <strong>class that contains the median</strong> using running totals.</li>
+  </ul>
+</div>
+
+<div class="worked-example">
+  Times taken by 50 people to solve a puzzle:<br><br>
+  <table>
+    <tr><th>Time $t$ (min)</th><th>$f$</th><th>Midpoint $x$</th><th>$fx$</th><th>Running total</th></tr>
+    <tr><td>$0 &lt; t \leq 4$</td><td>7</td><td>2</td><td>14</td><td>7</td></tr>
+    <tr><td>$4 &lt; t \leq 8$</td><td>16</td><td>6</td><td>96</td><td>23</td></tr>
+    <tr><td>$8 &lt; t \leq 12$</td><td>18</td><td>10</td><td>180</td><td>41</td></tr>
+    <tr><td>$12 &lt; t \leq 16$</td><td>9</td><td>14</td><td>126</td><td>50</td></tr>
+    <tr><td><strong>Total</strong></td><td><strong>50</strong></td><td></td><td><strong>416</strong></td><td></td></tr>
+  </table>
+  Estimated mean $= 416 \div 50 = 8.32$ minutes.<br>
+  Modal class: $8 &lt; t \leq 12$. &nbsp; The median is the $25.5$th value; running totals 23 then 41, so it lies in $8 &lt; t \leq 12$.
+</div>
+
+<div class="exam-tip">
+  Sense-check: an estimated mean must lie between the smallest and largest possible values (0 and 16 here). Getting 104 means you divided by 4 classes instead of 50 people.
+</div>
+
+<h3>Frequency polygons</h3>
+<p>Plot each class frequency above the class <strong>midpoint</strong> and join the points with straight lines (do not join the first and last points to the axis unless told to). Two frequency polygons on the same axes are a quick way to compare distributions.</p>
+
+<!-- SVG: frequency polygon -->
+<svg width="500" height="270" viewBox="0 0 500 270" xmlns="http://www.w3.org/2000/svg" aria-label="Frequency polygon of puzzle times" style="display:block;margin:16px auto;">
+  <text x="250" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Frequency polygon — puzzle times of 50 people</text>
+  <line x1="60" y1="230" x2="470" y2="230" stroke="#374151" stroke-width="2"/>
+  <line x1="60" y1="230" x2="60" y2="30" stroke="#374151" stroke-width="2"/>
+  <!-- x: 60 + 25t ; y: 230 - 10f -->
+  <text x="60" y="246" text-anchor="middle" font-size="11" fill="#374151">0</text>
+  <text x="160" y="246" text-anchor="middle" font-size="11" fill="#374151">4</text>
+  <text x="260" y="246" text-anchor="middle" font-size="11" fill="#374151">8</text>
+  <text x="360" y="246" text-anchor="middle" font-size="11" fill="#374151">12</text>
+  <text x="460" y="246" text-anchor="middle" font-size="11" fill="#374151">16</text>
+  <text x="54" y="234" text-anchor="end" font-size="11" fill="#374151">0</text>
+  <text x="54" y="184" text-anchor="end" font-size="11" fill="#374151">5</text>
+  <text x="54" y="134" text-anchor="end" font-size="11" fill="#374151">10</text>
+  <text x="54" y="84" text-anchor="end" font-size="11" fill="#374151">15</text>
+  <text x="54" y="34" text-anchor="end" font-size="11" fill="#374151">20</text>
+  <text x="260" y="264" text-anchor="middle" font-size="12" fill="#374151">Time t (minutes)</text>
+  <polyline points="110,160 210,70 310,50 410,140" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="110" cy="160" r="4" fill="#2563eb"/><circle cx="210" cy="70" r="4" fill="#2563eb"/>
+  <circle cx="310" cy="50" r="4" fill="#2563eb"/><circle cx="410" cy="140" r="4" fill="#2563eb"/>
+  <text x="110" y="152" text-anchor="middle" font-size="10" fill="#1e3a5f">(2, 7)</text>
+  <text x="210" y="62" text-anchor="middle" font-size="10" fill="#1e3a5f">(6, 16)</text>
+  <text x="310" y="42" text-anchor="middle" font-size="10" fill="#1e3a5f">(10, 18)</text>
+  <text x="410" y="132" text-anchor="middle" font-size="10" fill="#1e3a5f">(14, 9)</text>
+</svg>
+
+<!-- ===================== 6.2.5 COMPARING ===================== -->
+<h2>6.2.5 Comparing Distributions (S4)</h2>
+
+<div class="definition">
+  A full comparison has <strong>two</strong> parts, each using numbers and written in context:
+  <ol style="margin-bottom:0;">
+    <li><strong>Average</strong> (mean or median): which group is higher or lower on average?</li>
+    <li><strong>Spread</strong> (range, or IQR on Higher): which group is more consistent? A smaller spread means more consistent.</li>
+  </ol>
+</div>
+
+<div class="worked-example">
+  Morning group's quiz scores: 14, 18, 15, 20, 17, 16, 19. Afternoon group: median 15, range 11.<br><br>
+  Morning: in order 14, 15, 16, 17, 18, 19, 20, so median $= 17$ and range $= 20 - 14 = 6$.<br>
+  The morning group had the higher median (17 vs 15), so they scored better on average.<br>
+  The morning group had the smaller range (6 vs 11), so their scores were more consistent.
+</div>
+
+<div class="exam-tip">
+  Write comparisons like "Group A's median is higher, so on average Group A ..." and "Group B's range is smaller, so Group B's ... were more consistent." Be careful with context: for race times, a <em>lower</em> average means <em>faster</em>.
+</div>
+
+<!-- ===================== 6.2.6 QUARTILES ===================== -->
+<h2>6.2.6 Quartiles and Inter-Quartile Range (S4) <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  For ordered data with $n$ values:
+  <ul style="margin-bottom:0;">
+    <li><strong>Lower quartile (LQ)</strong> &mdash; the $\left(\tfrac{n+1}{4}\right)$th value; a quarter of the data is below it.</li>
+    <li><strong>Median</strong> &mdash; the $\left(\tfrac{n+1}{2}\right)$th value.</li>
+    <li><strong>Upper quartile (UQ)</strong> &mdash; the $\left(\tfrac{3(n+1)}{4}\right)$th value; three quarters of the data is below it.</li>
+  </ul>
+</div>
+
+<div class="formula-box">
+  $$\text{IQR} = \text{UQ} - \text{LQ}$$
+  The IQR is the spread of the <strong>middle half</strong> of the data, so extreme values do not affect it.
+</div>
+
+<div class="worked-example">
+  Reaction times (hundredths of a second) of 11 students: 13, 15, 18, 20, 21, 24, 26, 27, 30, 33, 36.<br><br>
+  $n + 1 = 12$: LQ $=$ 3rd value $= 18$; median $=$ 6th value $= 24$; UQ $=$ 9th value $= 30$.<br>
+  IQR $= 30 - 18 = 12$. &nbsp; Range $= 36 - 13 = 23$.
+</div>
+
+<div class="worked-example">
+  <strong>Testing for outliers.</strong> A common rule: a value is an outlier if it is more than $1.5 \times \text{IQR}$ above the UQ or below the LQ.<br>
+  Data: 2, 5, 6, 8, 9, 10, 12, 13, 14, 16, 31. &nbsp; LQ $= 6$, UQ $= 14$, IQR $= 8$, and $1.5 \times 8 = 12$.<br>
+  Upper limit $= 14 + 12 = 26$; lower limit $= 6 - 12 = -6$. Since $31 &gt; 26$, 31 is an outlier; no value is below $-6$.
+</div>
+
+<!-- ===================== 6.2.7 CUMULATIVE FREQUENCY ===================== -->
+<h2>6.2.7 Cumulative Frequency Graphs (S3) <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  <strong>Cumulative frequency</strong> is a running total of the frequencies. Plot each cumulative frequency at the <strong>upper class boundary</strong>, start at the lowest boundary with cumulative frequency 0, and join the points with a smooth curve or straight lines.<br><br>
+  With $n$ values: <strong>median</strong> at $\tfrac{n}{2}$, <strong>LQ</strong> at $\tfrac{n}{4}$, <strong>UQ</strong> at $\tfrac{3n}{4}$ on the cumulative frequency axis.
+</div>
+
+<div class="worked-example">
+  Heights of 100 seedlings:<br><br>
+  <table>
+    <tr><th>Height $h$ (cm)</th><th>Frequency</th><th>Cumulative frequency</th><th>Point to plot</th></tr>
+    <tr><td>$0 &lt; h \leq 5$</td><td>8</td><td>8</td><td>$(5, 8)$</td></tr>
+    <tr><td>$5 &lt; h \leq 10$</td><td>22</td><td>30</td><td>$(10, 30)$</td></tr>
+    <tr><td>$10 &lt; h \leq 15$</td><td>35</td><td>65</td><td>$(15, 65)$</td></tr>
+    <tr><td>$15 &lt; h \leq 20$</td><td>25</td><td>90</td><td>$(20, 90)$</td></tr>
+    <tr><td>$20 &lt; h \leq 25$</td><td>10</td><td>100</td><td>$(25, 100)$</td></tr>
+  </table>
+  Start the graph at $(0, 0)$.
+</div>
+
+<!-- SVG: cumulative frequency -->
+<svg width="560" height="360" viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" aria-label="Cumulative frequency graph of seedling heights with median and quartiles" style="display:block;margin:16px auto;">
+  <text x="280" y="20" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Cumulative frequency graph (n = 100)</text>
+  <line x1="70" y1="310" x2="500" y2="310" stroke="#374151" stroke-width="2"/>
+  <line x1="70" y1="310" x2="70" y2="30" stroke="#374151" stroke-width="2"/>
+  <!-- x = 70 + 16h ; y = 310 - 2.7cf -->
+  <text x="70" y="328" text-anchor="middle" font-size="11" fill="#374151">0</text>
+  <text x="150" y="328" text-anchor="middle" font-size="11" fill="#374151">5</text>
+  <text x="230" y="328" text-anchor="middle" font-size="11" fill="#374151">10</text>
+  <text x="310" y="328" text-anchor="middle" font-size="11" fill="#374151">15</text>
+  <text x="390" y="328" text-anchor="middle" font-size="11" fill="#374151">20</text>
+  <text x="470" y="328" text-anchor="middle" font-size="11" fill="#374151">25</text>
+  <text x="62" y="314" text-anchor="end" font-size="11" fill="#374151">0</text>
+  <text x="62" y="260" text-anchor="end" font-size="11" fill="#374151">20</text>
+  <text x="62" y="206" text-anchor="end" font-size="11" fill="#374151">40</text>
+  <text x="62" y="152" text-anchor="end" font-size="11" fill="#374151">60</text>
+  <text x="62" y="98" text-anchor="end" font-size="11" fill="#374151">80</text>
+  <text x="62" y="44" text-anchor="end" font-size="11" fill="#374151">100</text>
+  <text x="285" y="348" text-anchor="middle" font-size="12" fill="#374151">Height (cm)</text>
+  <text x="20" y="175" text-anchor="middle" font-size="12" fill="#374151" transform="rotate(-90,20,175)">Cumulative frequency</text>
+  <polyline points="70,310 150,288.4 230,229 310,134.5 390,67 470,40" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <g fill="#2563eb">
+    <circle cx="70" cy="310" r="4"/><circle cx="150" cy="288.4" r="4"/><circle cx="230" cy="229" r="4"/>
+    <circle cx="310" cy="134.5" r="4"/><circle cx="390" cy="67" r="4"/><circle cx="470" cy="40" r="4"/>
+  </g>
+  <!-- LQ: cf 25 -> y 242.5, h 8.9 -> x 211.8 -->
+  <line x1="70" y1="242.5" x2="211.8" y2="242.5" stroke="#f59e0b" stroke-dasharray="5,3" stroke-width="1.5"/>
+  <line x1="211.8" y1="242.5" x2="211.8" y2="310" stroke="#f59e0b" stroke-dasharray="5,3" stroke-width="1.5"/>
+  <text x="205" y="302" text-anchor="end" font-size="11" fill="#b45309" font-weight="600">LQ ≈ 8.9</text>
+  <!-- Median: cf 50 -> y 175, h 12.9 -> x 275.7 -->
+  <line x1="70" y1="175" x2="275.7" y2="175" stroke="#dc2626" stroke-dasharray="5,3" stroke-width="1.5"/>
+  <line x1="275.7" y1="175" x2="275.7" y2="310" stroke="#dc2626" stroke-dasharray="5,3" stroke-width="1.5"/>
+  <text x="281" y="298" font-size="11" fill="#dc2626" font-weight="600">Median ≈ 12.9</text>
+  <!-- UQ: cf 75 -> y 107.5, h 17 -> x 342 -->
+  <line x1="70" y1="107.5" x2="342" y2="107.5" stroke="#16a34a" stroke-dasharray="5,3" stroke-width="1.5"/>
+  <line x1="342" y1="107.5" x2="342" y2="310" stroke="#16a34a" stroke-dasharray="5,3" stroke-width="1.5"/>
+  <text x="348" y="270" font-size="11" fill="#16a34a" font-weight="600">UQ ≈ 17</text>
+</svg>
+
+<p>Reading the graph: LQ $\approx 8.9$ cm, median $\approx 12.9$ cm, UQ $\approx 17$ cm, so IQR $\approx 17 - 8.9 = 8.1$ cm. (A curve drawn by hand gives slightly different readings; mark schemes accept a range.)</p>
+
+<div class="worked-example">
+  <strong>"How many are more than&hellip;?"</strong> Estimate how many seedlings are taller than 18 cm.<br><br>
+  Read up from 18 cm: cumulative frequency $\approx 80$. So about $100 - 80 = 20$ seedlings are taller than 18 cm.
+</div>
+
+<div class="exam-tip">
+  Plot at the <strong>upper</strong> boundary, never the midpoint. Leave your reading lines on the graph &mdash; they earn method marks. For "more than" questions, subtract your reading from the total.
+</div>
+
+<!-- ===================== 6.2.8 BOX PLOTS ===================== -->
+<h2>6.2.8 Box Plots (S4) <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  A <strong>box plot</strong> is drawn on a scale and shows five values: <strong>minimum, LQ, median, UQ, maximum</strong>. The box goes from LQ to UQ (its length is the IQR) with a line at the median; whiskers reach out to the minimum and maximum.
+</div>
+
+<!-- SVG: two box plots -->
+<svg width="540" height="230" viewBox="0 0 540 230" xmlns="http://www.w3.org/2000/svg" aria-label="Box plots comparing reaction times of group A and group B" style="display:block;margin:16px auto;">
+  <text x="270" y="18" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Reaction times (hundredths of a second)</text>
+  <!-- scale x = 40 + 10(v - 5) -->
+  <line x1="40" y1="190" x2="500" y2="190" stroke="#374151" stroke-width="1.5"/>
+  <text x="40" y="206" text-anchor="middle" font-size="11" fill="#374151">5</text>
+  <text x="90" y="206" text-anchor="middle" font-size="11" fill="#374151">10</text>
+  <text x="140" y="206" text-anchor="middle" font-size="11" fill="#374151">15</text>
+  <text x="190" y="206" text-anchor="middle" font-size="11" fill="#374151">20</text>
+  <text x="240" y="206" text-anchor="middle" font-size="11" fill="#374151">25</text>
+  <text x="290" y="206" text-anchor="middle" font-size="11" fill="#374151">30</text>
+  <text x="340" y="206" text-anchor="middle" font-size="11" fill="#374151">35</text>
+  <text x="390" y="206" text-anchor="middle" font-size="11" fill="#374151">40</text>
+  <text x="440" y="206" text-anchor="middle" font-size="11" fill="#374151">45</text>
+  <text x="490" y="206" text-anchor="middle" font-size="11" fill="#374151">50</text>
+  <!-- Group A: 13,18,24,30,36 -> 120,170,230,290,350 -->
+  <text x="6" y="74" font-size="12" fill="#1e40af" font-weight="600">A</text>
+  <line x1="120" y1="70" x2="170" y2="70" stroke="#1e40af" stroke-width="2"/>
+  <line x1="120" y1="58" x2="120" y2="82" stroke="#1e40af" stroke-width="2"/>
+  <rect x="170" y="50" width="120" height="40" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+  <line x1="230" y1="50" x2="230" y2="90" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="290" y1="70" x2="350" y2="70" stroke="#1e40af" stroke-width="2"/>
+  <line x1="350" y1="58" x2="350" y2="82" stroke="#1e40af" stroke-width="2"/>
+  <!-- Group B: 10,20,28,31,45 -> 90,190,270,300,440 -->
+  <text x="6" y="144" font-size="12" fill="#7e22ce" font-weight="600">B</text>
+  <line x1="90" y1="140" x2="190" y2="140" stroke="#7e22ce" stroke-width="2"/>
+  <line x1="90" y1="128" x2="90" y2="152" stroke="#7e22ce" stroke-width="2"/>
+  <rect x="190" y="120" width="110" height="40" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2"/>
+  <line x1="270" y1="120" x2="270" y2="160" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="300" y1="140" x2="440" y2="140" stroke="#7e22ce" stroke-width="2"/>
+  <line x1="440" y1="128" x2="440" y2="152" stroke="#7e22ce" stroke-width="2"/>
+</svg>
+
+<div class="worked-example">
+  Group A (from 6.2.6): min 13, LQ 18, median 24, UQ 30, max 36. &nbsp; Group B: min 10, LQ 20, median 28, UQ 31, max 45.<br><br>
+  IQR: A $= 30 - 18 = 12$; B $= 31 - 20 = 11$.<br>
+  <em>Average:</em> A's median (24) is lower than B's (28), so Group A generally reacted <strong>faster</strong>.<br>
+  <em>Spread:</em> B's IQR (11) is slightly smaller than A's (12), so the middle half of Group B was slightly <strong>more consistent</strong>, even though B's range (35) is much larger than A's (23).
+</div>
+
+<div class="exam-tip">
+  A box plot tells you proportions: 25% of values are below the LQ, 50% lie inside the box, 75% are below the UQ. It does <em>not</em> show the mean or how many values there are. When comparing, use the median and IQR rather than the range, since the range depends on just two (possibly extreme) values.
+</div>
+
+<!-- ===================== 6.2.9 HISTOGRAMS ===================== -->
+<h2>6.2.9 Histograms (S3) <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  A <strong>histogram</strong> shows grouped continuous data on a continuous horizontal scale, with <strong>no gaps</strong> between bars. The <strong>area</strong> of each bar represents its frequency, so the vertical axis is <strong>frequency density</strong>. When all classes have the same width, bar heights are in proportion to the frequencies; with <strong>unequal</strong> widths you must use frequency density.
+</div>
+
+<div class="formula-box">
+  $$\text{Frequency density} = \frac{\text{frequency}}{\text{class width}} \qquad \text{Frequency} = \text{frequency density} \times \text{class width}$$
+</div>
+
+<div class="worked-example">
+  Masses of 65 letters:<br><br>
+  <table>
+    <tr><th>Mass $m$ (g)</th><th>Frequency</th><th>Class width</th><th>Frequency density</th></tr>
+    <tr><td>$0 &lt; m \leq 20$</td><td>12</td><td>20</td><td>$12 \div 20 = 0.6$</td></tr>
+    <tr><td>$20 &lt; m \leq 30$</td><td>18</td><td>10</td><td>$18 \div 10 = 1.8$</td></tr>
+    <tr><td>$30 &lt; m \leq 35$</td><td>14</td><td>5</td><td>$14 \div 5 = 2.8$</td></tr>
+    <tr><td>$35 &lt; m \leq 40$</td><td>11</td><td>5</td><td>$11 \div 5 = 2.2$</td></tr>
+    <tr><td>$40 &lt; m \leq 60$</td><td>10</td><td>20</td><td>$10 \div 20 = 0.5$</td></tr>
+  </table>
+</div>
+
+<!-- SVG: histogram -->
+<svg width="540" height="320" viewBox="0 0 540 320" xmlns="http://www.w3.org/2000/svg" aria-label="Histogram of letter masses with unequal class widths" style="display:block;margin:16px auto;">
+  <text x="280" y="20" text-anchor="middle" font-size="13" font-weight="600" fill="#374151">Histogram — masses of letters</text>
+  <line x1="60" y1="270" x2="500" y2="270" stroke="#374151" stroke-width="2"/>
+  <line x1="60" y1="270" x2="60" y2="40" stroke="#374151" stroke-width="2"/>
+  <!-- x = 60 + 7m ; y = 270 - 70*FD -->
+  <text x="60" y="286" text-anchor="middle" font-size="11" fill="#374151">0</text>
+  <text x="200" y="286" text-anchor="middle" font-size="11" fill="#374151">20</text>
+  <text x="270" y="286" text-anchor="middle" font-size="11" fill="#374151">30</text>
+  <text x="340" y="286" text-anchor="middle" font-size="11" fill="#374151">40</text>
+  <text x="410" y="286" text-anchor="middle" font-size="11" fill="#374151">50</text>
+  <text x="480" y="286" text-anchor="middle" font-size="11" fill="#374151">60</text>
+  <text x="54" y="274" text-anchor="end" font-size="11" fill="#374151">0</text>
+  <text x="54" y="204" text-anchor="end" font-size="11" fill="#374151">1</text>
+  <text x="54" y="134" text-anchor="end" font-size="11" fill="#374151">2</text>
+  <text x="54" y="64" text-anchor="end" font-size="11" fill="#374151">3</text>
+  <text x="280" y="306" text-anchor="middle" font-size="12" fill="#374151">Mass m (grams)</text>
+  <text x="18" y="160" text-anchor="middle" font-size="12" fill="#374151" transform="rotate(-90,18,160)">Frequency density</text>
+  <rect x="60" y="228" width="140" height="42" fill="#93c5fd" stroke="#1e40af" stroke-width="1.5"/>
+  <rect x="200" y="144" width="70" height="126" fill="#3b82f6" stroke="#1e40af" stroke-width="1.5"/>
+  <rect x="270" y="74" width="35" height="196" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+  <rect x="305" y="116" width="35" height="154" fill="#3b82f6" stroke="#1e40af" stroke-width="1.5"/>
+  <rect x="340" y="235" width="140" height="35" fill="#93c5fd" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="130" y="222" text-anchor="middle" font-size="10" fill="#1e3a5f" font-weight="600">0.6</text>
+  <text x="235" y="138" text-anchor="middle" font-size="10" fill="#1e3a5f" font-weight="600">1.8</text>
+  <text x="287.5" y="68" text-anchor="middle" font-size="10" fill="#1e3a5f" font-weight="600">2.8</text>
+  <text x="322.5" y="110" text-anchor="middle" font-size="10" fill="#1e3a5f" font-weight="600">2.2</text>
+  <text x="410" y="229" text-anchor="middle" font-size="10" fill="#1e3a5f" font-weight="600">0.5</text>
+</svg>
+
+<div class="worked-example">
+  <strong>Part of a class.</strong> Estimate how many letters have a mass between 25 g and 50 g.<br><br>
+  25 to 30: $5 \times 1.8 = 9$; &nbsp; 30 to 40: $14 + 11 = 25$; &nbsp; 40 to 50: $10 \times 0.5 = 5$.<br>
+  Estimate $= 9 + 25 + 5 = 39$ letters (assuming the values are spread evenly within each class).
+</div>
+
+<div class="worked-example">
+  <strong>Finding the total.</strong> A histogram has bars $0$&ndash;$10$ with FD 1.4, $10$&ndash;$25$ with FD 2 and $25$&ndash;$45$ with FD 0.65.<br><br>
+  Frequencies: $10 \times 1.4 = 14$, $15 \times 2 = 30$, $20 \times 0.65 = 13$. Total $= 57$.
+</div>
+
+<div class="exam-tip">
+  If the frequency density axis has no numbers, use a class whose frequency you know to find the scale (frequency $\div$ width $=$ FD for that bar's height). Label the axis "Frequency density", never "Frequency".
+</div>
+
+<h3>Choosing a diagram for grouped data (S3)</h3>
+<table>
+  <tr><th>Diagram</th><th>Use it to&hellip;</th></tr>
+  <tr><td>Frequency polygon</td><td>Show the shape of grouped data and compare two distributions on one grid</td></tr>
+  <tr><td>Histogram <span class="higher-tag">Higher</span></td><td>Display continuous data, especially with unequal class widths</td></tr>
+  <tr><td>Cumulative frequency graph <span class="higher-tag">Higher</span></td><td>Estimate the median, quartiles and "how many above/below" a value</td></tr>
+  <tr><td>Box plot <span class="higher-tag">Higher</span></td><td>Compare medians and IQRs of two or more data sets at a glance</td></tr>
+</table>
+
+<!-- ===================== SUMMARY ===================== -->
+<h2>Summary</h2>
+<table>
+  <tr><th>Measure / diagram</th><th>Key fact</th></tr>
+  <tr><td>Mean</td><td>Total $\div n$; from a table $\sum fx \div \sum f$; grouped data uses midpoints (an estimate)</td></tr>
+  <tr><td>Median</td><td>$\left(\tfrac{n+1}{2}\right)$th value in order</td></tr>
+  <tr><td>Mode / modal class</td><td>Most frequent value / class</td></tr>
+  <tr><td>Range</td><td>Largest $-$ smallest; badly affected by outliers</td></tr>
+  <tr><td>Comparing</td><td>One average and one spread, both in context</td></tr>
+  <tr><td>Quartiles, IQR <span class="higher-tag">Higher</span></td><td>LQ $\left(\tfrac{n+1}{4}\right)$th, UQ $\left(\tfrac{3(n+1)}{4}\right)$th; IQR $=$ UQ $-$ LQ</td></tr>
+  <tr><td>Cumulative frequency <span class="higher-tag">Higher</span></td><td>Plot at upper class boundaries; read at $\tfrac{n}{4}$, $\tfrac{n}{2}$, $\tfrac{3n}{4}$</td></tr>
+  <tr><td>Box plot <span class="higher-tag">Higher</span></td><td>Min, LQ, median, UQ, max</td></tr>
+  <tr><td>Histogram <span class="higher-tag">Higher</span></td><td>FD $=$ frequency $\div$ class width; area $=$ frequency</td></tr>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

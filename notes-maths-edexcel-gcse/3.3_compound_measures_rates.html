@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 3.3 — Compound Measures &amp; Rates of Change</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+<h1>3.3 Compound Measures &amp; Rates of Change</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Ratio, proportion and rates of change &mdash; spec refs R1, R11, R14, R15 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<!-- ===================== 3.3.1 UNITS ===================== -->
+<h2>3.3.1 Converting Between Standard Units (R1)</h2>
+
+<p>Every compound measure question starts with a units check. If a speed is in km/h, the time must be in hours; if a pressure is wanted in N/m², the area must be in m². Edexcel mark schemes usually give the method mark only when the conversion has been done correctly, so convert <strong>first</strong>, then calculate.</p>
+
+<h3>Length, mass, capacity and time</h3>
+<table>
+  <thead><tr><th>Quantity</th><th>Facts you must know</th></tr></thead>
+  <tbody>
+    <tr><td>Length</td><td>10 mm = 1 cm &nbsp;&nbsp; 100 cm = 1 m &nbsp;&nbsp; 1000 m = 1 km</td></tr>
+    <tr><td>Mass</td><td>1000 mg = 1 g &nbsp;&nbsp; 1000 g = 1 kg &nbsp;&nbsp; 1000 kg = 1 tonne</td></tr>
+    <tr><td>Capacity</td><td>1000 ml = 1 litre &nbsp;&nbsp; 100 cl = 1 litre &nbsp;&nbsp; 1 ml = 1 cm³ &nbsp;&nbsp; 1000 litres = 1 m³</td></tr>
+    <tr><td>Time</td><td>60 s = 1 min &nbsp;&nbsp; 60 min = 1 h &nbsp;&nbsp; 3600 s = 1 h &nbsp;&nbsp; 24 h = 1 day</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">
+  Hours are not decimal minutes. 1.4 hours is 1 hour 24 minutes (0.4 × 60 = 24), not 1 hour 40 minutes. Going the other way, 50 minutes = $\frac{50}{60} = \frac{5}{6}$ hour &mdash; on Paper 1 keep it as a fraction rather than writing 0.83.
+</div>
+
+<h3>Area and volume units</h3>
+<p>A square centimetre is a square 10 mm by 10 mm, so it contains $10 \times 10 = 100$ mm². Area conversions use the length factor <strong>squared</strong> and volume conversions use it <strong>cubed</strong>.</p>
+
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="300" height="190" viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <rect x="40" y="30" width="120" height="120" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="40" y1="54" x2="160" y2="54" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="40" y1="78" x2="160" y2="78" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="40" y1="102" x2="160" y2="102" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="40" y1="126" x2="160" y2="126" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="64" y1="30" x2="64" y2="150" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="88" y1="30" x2="88" y2="150" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="112" y1="30" x2="112" y2="150" stroke="#93c5fd" stroke-width="1"/>
+  <line x1="136" y1="30" x2="136" y2="150" stroke="#93c5fd" stroke-width="1"/>
+  <text x="100" y="172" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle">1 m = 100 cm</text>
+  <text x="22" y="95" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle" transform="rotate(-90 22 95)">1 m = 100 cm</text>
+  <text x="230" y="80" font-size="14" fill="#7c3aed" font-family="sans-serif" font-weight="700" text-anchor="middle">1 m²</text>
+  <text x="230" y="102" font-size="13" fill="#374151" font-family="sans-serif" text-anchor="middle">= 100 × 100</text>
+  <text x="230" y="122" font-size="13" fill="#374151" font-family="sans-serif" text-anchor="middle">= 10 000 cm²</text>
+</svg>
+<div style="flex:1; min-width:200px;">
+  <div class="formula-box" style="margin-top:0;">
+    <strong>Area:</strong> 1 cm² = 100 mm² &nbsp; 1 m² = 10 000 cm² &nbsp; 1 km² = 1 000 000 m²<br>
+    <strong>Volume:</strong> 1 cm³ = 1000 mm³ &nbsp; 1 m³ = 1 000 000 cm³<br><br>
+    Length factor $k$ &rarr; area factor $k^2$ &rarr; volume factor $k^3$.
+  </div>
+</div>
+</div>
+
+<div class="worked-example">
+  Change 7200 cm³ into m³.<br><br>
+  1 m³ = $100^3$ = 1 000 000 cm³, so divide:<br>
+  $7200 \div 1\,000\,000 = \mathbf{0.0072}$ <strong>m³</strong>
+</div>
+
+<div class="worked-example">
+  Change 0.65 m² into cm².<br><br>
+  $0.65 \times 10\,000 = \mathbf{6500}$ <strong>cm²</strong>
+</div>
+
+<!-- ===================== 3.3.2 COMPOUND UNITS ===================== -->
+<h2>3.3.2 Compound Units (R1, R11)</h2>
+
+<div class="definition">
+  A <strong>compound unit</strong> is made from two units and describes a rate: how much of one quantity there is for each unit of another. Examples: m/s, km/h, mph, £ per hour, pence per gram, g/cm³, kg/m³, N/m².
+</div>
+
+<p>The &ldquo;/&rdquo; or the word &ldquo;per&rdquo; means <strong>divide</strong>. A unit price in pence per gram is pence ÷ grams; a density in g/cm³ is grams ÷ cm³. If you forget a formula, the unit tells you what to divide by what.</p>
+
+<h3>Converting compound units</h3>
+<p>Convert the top unit and the bottom unit separately, then divide.</p>
+
+<div class="worked-example">
+  Change 63 km/h into m/s.<br><br>
+  63 km = 63 000 m &nbsp;&nbsp; 1 hour = 3600 s<br>
+  $63\,000 \div 3600 = \mathbf{17.5}$ <strong>m/s</strong><br><br>
+  Check: km/h ÷ 3.6 = m/s, and $63 \div 3.6 = 17.5$ ✓
+</div>
+
+<div class="worked-example">
+  The density of copper is 8.9 g/cm³. Write this in kg/m³.<br><br>
+  1 m³ = 1 000 000 cm³, so 1 m³ of copper has mass $8.9 \times 1\,000\,000 = 8\,900\,000$ g = 8900 kg<br>
+  Density = $\mathbf{8900}$ <strong>kg/m³</strong> &nbsp; (g/cm³ → kg/m³: multiply by 1000)
+</div>
+
+<!-- ===================== 3.3.3 SPEED ===================== -->
+<h2>3.3.3 Speed, Distance and Time (R11)</h2>
+
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="220" height="180" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <polygon points="110,20 200,160 20,160" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="62" y1="95" x2="158" y2="95" stroke="#2563eb" stroke-width="2"/>
+  <line x1="110" y1="95" x2="110" y2="160" stroke="#2563eb" stroke-width="2"/>
+  <text x="110" y="78" font-size="22" fill="#1e40af" font-family="sans-serif" font-weight="700" text-anchor="middle">D</text>
+  <text x="80" y="138" font-size="22" fill="#166534" font-family="sans-serif" font-weight="700" text-anchor="middle">S</text>
+  <text x="140" y="138" font-size="22" fill="#b45309" font-family="sans-serif" font-weight="700" text-anchor="middle">T</text>
+</svg>
+<div style="flex:1; min-width:200px;">
+  <div class="formula-box" style="margin-top:0;">
+    $$\text{Speed} = \frac{\text{Distance}}{\text{Time}}$$
+    $$\text{Distance} = \text{Speed} \times \text{Time} \qquad \text{Time} = \frac{\text{Distance}}{\text{Speed}}$$
+    Cover the letter you want: what is left shows the calculation.
+  </div>
+</div>
+</div>
+
+<div class="worked-example">
+  A taxi travels for 35 minutes at an average speed of 84 km/h. How far does it travel?<br><br>
+  35 minutes = $\frac{35}{60}$ hour<br>
+  Distance = $84 \times \frac{35}{60} = \mathbf{49}$ <strong>km</strong>
+</div>
+
+<div class="worked-example">
+  A van travels 117 miles at an average speed of 52 mph. It sets off at 13:50. At what time does it arrive?<br><br>
+  Time = $117 \div 52 = 2.25$ hours = 2 hours 15 minutes<br>
+  Arrival = 13:50 + 2 h 15 min = <strong>16:05</strong>
+</div>
+
+<h3>Average speed over several stages</h3>
+<p>Average speed = <strong>total distance ÷ total time</strong>. Never average the speeds themselves &mdash; the slower stage takes longer, so it counts for more.</p>
+
+<div class="worked-example">
+  A motorbike travels 45 km at 90 km/h and then another 45 km at 60 km/h. Work out its average speed.<br><br>
+  Time 1 = $45 \div 90 = 0.5$ h &nbsp;&nbsp; Time 2 = $45 \div 60 = 0.75$ h<br>
+  Average speed = $\dfrac{90}{1.25} = \mathbf{72}$ <strong>km/h</strong> &nbsp; (not 75 km/h)
+</div>
+
+<div class="exam-tip">
+  If the question says &ldquo;for the whole journey&rdquo;, include any time spent stopped. Always give units, and sense-check: walking ≈ 5 km/h, cycling ≈ 20 km/h, motorway driving ≈ 110 km/h.
+</div>
+
+<!-- ===================== 3.3.4 OTHER RATES ===================== -->
+<h2>3.3.4 Rates of Pay and Unit Pricing (R11)</h2>
+
+<p>Edexcel often sets &ldquo;best buy&rdquo; and &ldquo;who is paid more?&rdquo; problems, typically worth 3 or 4 marks. The method is always the same: reduce every option to the <strong>same rate</strong>, then compare and write a conclusion.</p>
+
+<div class="worked-example">
+  Jar A: 340 g of jam for £2.04. Jar B: 454 g of jam for £2.59. Which jar is better value?<br><br>
+  Jar A: $204 \div 340 = 0.6$p per gram<br>
+  Jar B: $259 \div 454 = 0.570\ldots$p per gram<br>
+  <strong>Jar B</strong> is better value, because it costs less per gram (0.57p &lt; 0.6p).
+</div>
+
+<div class="worked-example">
+  Dev is paid £12.20 per hour. Erin is paid £24 960 a year for working 40 hours a week, 52 weeks a year. Who has the higher hourly rate?<br><br>
+  Erin's hours = $40 \times 52 = 2080$ &nbsp;&nbsp; Erin's rate = $24\,960 \div 2080 = £12.00$ per hour<br>
+  <strong>Dev</strong> earns 20p per hour more.
+</div>
+
+<div class="exam-tip">
+  Edexcel awards the final mark (C1) for a conclusion supported by correct figures. Writing &ldquo;Jar B&rdquo; with no comparison, or comparing price per gram for one jar with grams per penny for the other, will lose marks.
+</div>
+
+<!-- ===================== 3.3.5 DENSITY ===================== -->
+<h2>3.3.5 Density (R11)</h2>
+
+<div class="definition">
+  <strong>Density</strong> is mass per unit volume. It is usually measured in g/cm³ or kg/m³. Learn the formula and its rearrangements &mdash; do not rely on it being given in the question.
+</div>
+
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="220" height="180" viewBox="0 0 220 180" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <polygon points="110,20 200,160 20,160" fill="#f3e8ff" stroke="#7c3aed" stroke-width="2.5"/>
+  <line x1="62" y1="95" x2="158" y2="95" stroke="#7c3aed" stroke-width="2"/>
+  <line x1="110" y1="95" x2="110" y2="160" stroke="#7c3aed" stroke-width="2"/>
+  <text x="110" y="78" font-size="22" fill="#6d28d9" font-family="sans-serif" font-weight="700" text-anchor="middle">M</text>
+  <text x="80" y="138" font-size="22" fill="#166534" font-family="sans-serif" font-weight="700" text-anchor="middle">D</text>
+  <text x="140" y="138" font-size="22" fill="#b45309" font-family="sans-serif" font-weight="700" text-anchor="middle">V</text>
+</svg>
+<div style="flex:1; min-width:200px;">
+  <div class="formula-box" style="margin-top:0;">
+    $$\text{Density} = \frac{\text{Mass}}{\text{Volume}}$$
+    $$\text{Mass} = \text{Density} \times \text{Volume} \qquad \text{Volume} = \frac{\text{Mass}}{\text{Density}}$$
+  </div>
+</div>
+</div>
+
+<div class="worked-example">
+  A brass cuboid measures 8 cm by 5 cm by 3 cm and has a mass of 1020 g. Work out the density of brass.<br><br>
+  Volume = $8 \times 5 \times 3 = 120$ cm³<br>
+  Density = $1020 \div 120 = \mathbf{8.5}$ <strong>g/cm³</strong>
+</div>
+
+<div class="worked-example">
+  400 cm³ of liquid P (density 1.1 g/cm³) is mixed with 100 cm³ of liquid Q (density 0.8 g/cm³). Work out the density of the mixture.<br><br>
+  Mass of P = $400 \times 1.1 = 440$ g &nbsp;&nbsp; Mass of Q = $100 \times 0.8 = 80$ g<br>
+  Density = $\dfrac{440 + 80}{400 + 100} = \dfrac{520}{500} = \mathbf{1.04}$ <strong>g/cm³</strong>
+</div>
+
+<div class="exam-tip">
+  For a mixture or alloy, work with <strong>totals</strong>: total mass ÷ total volume. The mean of the two densities (0.95 here) is wrong unless the volumes happen to be equal.
+</div>
+
+<!-- ===================== 3.3.6 PRESSURE ===================== -->
+<h2>3.3.6 Pressure (R11)</h2>
+
+<div class="definition">
+  <strong>Pressure</strong> is force per unit area. Force is measured in newtons (N), so pressure is in N/m² (pascals) or N/cm². The formula $P = \dfrac{F}{A}$ is sometimes printed in the question, but you should know it.
+</div>
+
+<div class="formula-box">
+  $$\text{Pressure} = \frac{\text{Force}}{\text{Area}} \qquad \text{Force} = \text{Pressure} \times \text{Area} \qquad \text{Area} = \frac{\text{Force}}{\text{Pressure}}$$
+</div>
+
+<p>The same force spread over a <strong>larger</strong> area gives a <strong>smaller</strong> pressure. A cuboid exerts its greatest pressure when it stands on its smallest face.</p>
+
+<div class="worked-example">
+  A crate weighs 150 N. Its base is a rectangle 50 cm by 60 cm. Work out the pressure on the ground in N/m².<br><br>
+  Area = $0.5 \times 0.6 = 0.3$ m²<br>
+  Pressure = $150 \div 0.3 = \mathbf{500}$ <strong>N/m²</strong>
+</div>
+
+<div class="worked-example">
+  A cuboid 25 cm × 12 cm × 4 cm has a weight of 60 N. Work out the greatest pressure it can exert, in N/cm².<br><br>
+  Smallest face = $12 \times 4 = 48$ cm²<br>
+  Greatest pressure = $60 \div 48 = \mathbf{1.25}$ <strong>N/cm²</strong>
+</div>
+
+<div class="exam-tip">
+  Convert lengths to metres <em>before</em> working out an area in m². 50 cm × 60 cm = 3000 cm², and 3000 cm² = 0.3 m² (divide by 10 000, not by 100).
+</div>
+
+<!-- ===================== 3.3.7 GRADIENT AS RATE ===================== -->
+<h2>3.3.7 Gradient of a Straight Line as a Rate of Change (R14)</h2>
+
+<p>On a straight-line graph the gradient is constant, so the rate of change is the same everywhere. The units of the gradient are the $y$-axis units <strong>per</strong> $x$-axis unit.</p>
+
+<div class="formula-box">
+  $$\text{Gradient} = \frac{\text{change in } y}{\text{change in } x} = \frac{y_2 - y_1}{x_2 - x_1}$$
+</div>
+
+<table>
+  <thead><tr><th>Graph</th><th>Gradient means</th><th>Units</th></tr></thead>
+  <tbody>
+    <tr><td>Distance–time</td><td>Speed</td><td>m/s, km/h</td></tr>
+    <tr><td>Velocity–time</td><td>Acceleration</td><td>m/s²</td></tr>
+    <tr><td>Cost–time (e.g. electrician)</td><td>Charge per hour</td><td>£ per hour</td></tr>
+    <tr><td>Depth of water–time</td><td>Rate of filling or emptying</td><td>cm per minute</td></tr>
+    <tr><td>Conversion graph (e.g. litres to gallons)</td><td>Conversion rate</td><td>gallons per litre</td></tr>
+  </tbody>
+</table>
+
+<svg width="360" height="230" viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <line x1="50" y1="190" x2="340" y2="190" stroke="#374151" stroke-width="1.5"/>
+  <line x1="50" y1="190" x2="50" y2="15" stroke="#374151" stroke-width="1.5"/>
+  <text x="195" y="222" font-size="12" fill="#374151" font-family="sans-serif" text-anchor="middle">Time (hours)</text>
+  <text x="16" y="105" font-size="12" fill="#374151" font-family="sans-serif" text-anchor="middle" transform="rotate(-90 16 105)">Cost (£)</text>
+  <line x1="50" y1="140" x2="300" y2="40" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="50" cy="140" r="4" fill="#2563eb"/>
+  <circle cx="250" cy="60" r="4" fill="#2563eb"/>
+  <line x1="50" y1="140" x2="250" y2="140" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="250" y1="140" x2="250" y2="60" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="150" y="156" font-size="12" fill="#166534" font-family="sans-serif" text-anchor="middle">run = 4 h</text>
+  <text x="256" y="104" font-size="12" fill="#b91c1c" font-family="sans-serif">rise = £120</text>
+  <text x="56" y="134" font-size="12" fill="#1e40af" font-family="sans-serif">(0, 50)</text>
+  <text x="180" y="55" font-size="12" fill="#1e40af" font-family="sans-serif">(4, 170)</text>
+  <text x="44" y="194" font-size="11" fill="#374151" font-family="sans-serif" text-anchor="end">0</text>
+</svg>
+
+<div class="worked-example">
+  An electrician's charges are shown by a straight line through (0, 50) and (4, 170).<br><br>
+  Gradient = $\dfrac{170 - 50}{4 - 0} = \dfrac{120}{4} = 30$ &rarr; the electrician charges <strong>£30 per hour</strong>.<br>
+  The $y$-intercept, 50, is a fixed <strong>call-out charge of £50</strong>.<br>
+  Cost of a 6-hour job: $30 \times 6 + 50 = \mathbf{£230}$
+</div>
+
+<div class="worked-example">
+  The depth of water in a pond falls steadily from 96 cm at $t = 0$ to 36 cm at $t = 24$ minutes.<br><br>
+  Gradient = $\dfrac{36 - 96}{24} = -2.5$ &rarr; the depth <strong>falls by 2.5 cm every minute</strong>.
+</div>
+
+<div class="exam-tip">
+  &ldquo;Interpret the gradient&rdquo; means describe it in context with units: &ldquo;the electrician charges £30 for each hour worked&rdquo;. A bare number such as &ldquo;30&rdquo; does not usually get the mark.
+</div>
+
+<!-- ===================== 3.3.8 PROPORTION GRAPHS ===================== -->
+<h2>3.3.8 Graphs of Direct and Inverse Proportion (R14)</h2>
+
+<div style="margin: 20px 0; display:flex; gap:20px; flex-wrap:wrap;">
+<svg width="230" height="200" viewBox="0 0 230 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa;">
+  <line x1="30" y1="170" x2="215" y2="170" stroke="#374151" stroke-width="1.5"/>
+  <line x1="30" y1="170" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/>
+  <line x1="30" y1="170" x2="200" y2="35" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="120" y="192" font-size="12" fill="#374151" font-family="sans-serif" text-anchor="middle">Direct: y = kx</text>
+  <text x="208" y="166" font-size="12" fill="#374151" font-family="sans-serif">x</text>
+  <text x="20" y="24" font-size="12" fill="#374151" font-family="sans-serif">y</text>
+</svg>
+<svg width="230" height="200" viewBox="0 0 230 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa;">
+  <line x1="30" y1="170" x2="215" y2="170" stroke="#374151" stroke-width="1.5"/>
+  <line x1="30" y1="170" x2="30" y2="15" stroke="#374151" stroke-width="1.5"/>
+  <path d="M 42,20 Q 52,140 210,158" fill="none" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="120" y="192" font-size="12" fill="#374151" font-family="sans-serif" text-anchor="middle">Inverse: y = k/x</text>
+  <text x="208" y="166" font-size="12" fill="#374151" font-family="sans-serif">x</text>
+  <text x="20" y="24" font-size="12" fill="#374151" font-family="sans-serif">y</text>
+</svg>
+</div>
+
+<ul>
+  <li><strong>Direct proportion</strong> ($y = kx$): a straight line <strong>through the origin</strong>. Its gradient is the constant of proportionality $k$. If $x$ is multiplied by 3, so is $y$.</li>
+  <li><strong>Inverse proportion</strong> ($y = \dfrac{k}{x}$): for $x &gt; 0$, a curve that falls and approaches both axes without ever reaching them. If $x$ is multiplied by 3, $y$ is divided by 3, and the product $xy = k$ stays the same.</li>
+</ul>
+
+<div class="worked-example">
+  A graph of the number of workers, $w$, against the time, $t$ days, to build a wall is a curve through (2, 12) and (6, 4). Is this inverse proportion?<br><br>
+  $2 \times 12 = 24$ and $6 \times 4 = 24$. The product is constant, so it is consistent with <strong>inverse proportion</strong>, $t = \dfrac{24}{w}$.
+</div>
+
+<div class="exam-tip">
+  A straight line that does <strong>not</strong> go through the origin (like the electrician's charges) is linear but is <strong>not</strong> direct proportion: doubling the hours does not double the cost.
+</div>
+
+<!-- ===================== 3.3.9 INSTANTANEOUS RATE (HIGHER) ===================== -->
+<h2>3.3.9 Average and Instantaneous Rates of Change (R15) <span class="higher-tag">Higher</span></h2>
+
+<p>On a <strong>curve</strong> the gradient keeps changing, so there are two different rates to consider. R15 is Higher tier only, and the 1MA1 specification states it does not involve calculus &mdash; you find these gradients from chords and tangents.</p>
+
+<div class="definition">
+  <strong>Chord:</strong> a straight line joining two points on a curve. Its gradient is the <strong>average rate of change</strong> between those two points.<br><br>
+  <strong>Tangent:</strong> a straight line that just touches the curve at one point. Its gradient is the <strong>instantaneous rate of change</strong> at that point (the gradient of the curve there).
+</div>
+
+<svg width="380" height="250" viewBox="0 0 380 250" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <line x1="40" y1="220" x2="365" y2="220" stroke="#374151" stroke-width="1.5"/>
+  <line x1="40" y1="220" x2="40" y2="10" stroke="#374151" stroke-width="1.5"/>
+  <text x="355" y="238" font-size="12" fill="#374151" font-family="sans-serif">x</text>
+  <text x="26" y="20" font-size="12" fill="#374151" font-family="sans-serif">y</text>
+  <path d="M 40,220 Q 190,220 340,20" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="115" y1="207.5" x2="340" y2="20" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,4"/>
+  <circle cx="115" cy="207.5" r="4" fill="#16a34a"/>
+  <circle cx="340" cy="20" r="4" fill="#16a34a"/>
+  <line x1="115" y1="220" x2="295" y2="100" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="190" cy="170" r="4" fill="#dc2626"/>
+  <text x="250" y="150" font-size="12" fill="#b91c1c" font-family="sans-serif">tangent at x = 2</text>
+  <text x="200" y="70" font-size="12" fill="#166534" font-family="sans-serif">chord</text>
+  <text x="300" y="48" font-size="12" fill="#1e40af" font-family="sans-serif">y = x²</text>
+</svg>
+
+<div class="formula-box">
+  <strong>Average rate of change</strong> from $x = a$ to $x = b$ (gradient of the chord):
+  $$\frac{y(b) - y(a)}{b - a}$$
+  <strong>Instantaneous rate of change</strong> at $x = a$: draw the tangent at $x = a$, read two well-separated points on it, and work out rise ÷ run.
+</div>
+
+<div class="worked-example">
+  Work out the average rate of change of $y = x^2 + 3x$ between $x = 1$ and $x = 3$.<br><br>
+  $y(1) = 1 + 3 = 4$ &nbsp;&nbsp; $y(3) = 9 + 9 = 18$<br>
+  Gradient of chord = $\dfrac{18 - 4}{3 - 1} = \dfrac{14}{2} = \mathbf{7}$
+</div>
+
+<h3>Estimating a gradient by drawing a tangent</h3>
+<ol>
+  <li>Line up a ruler so that it touches the curve at the point, with equal gaps between ruler and curve on either side.</li>
+  <li>Draw the tangent long enough to read easily.</li>
+  <li>Choose two points on the tangent that are far apart (ideally on grid lines).</li>
+  <li>Gradient = change in $y$ ÷ change in $x$. State what it means, with units.</li>
+</ol>
+
+<div class="worked-example">
+  A distance–time graph for a runner is a curve. The tangent drawn at $t = 4$ s passes through (1, 2) and (7, 50), with distance in metres.<br><br>
+  Gradient = $\dfrac{50 - 2}{7 - 1} = \dfrac{48}{6} = 8$<br>
+  The runner's speed at $t = 4$ s is approximately $\mathbf{8}$ <strong>m/s</strong>.
+</div>
+
+<div class="worked-example">
+  The volume of water in a tank after $t$ minutes is $V = 3t^2$ litres.<br><br>
+  Average rate from $t = 1$ to $t = 4$: $\dfrac{48 - 3}{4 - 1} = \dfrac{45}{3} = 15$ litres per minute.<br>
+  The tangent at $t = 2$ passes through (1, 0) and (3, 24): gradient $= \dfrac{24 - 0}{3 - 1} = 12$.<br>
+  So water is flowing in at about $\mathbf{12}$ <strong>litres per minute</strong> at the instant $t = 2$.
+</div>
+
+<h3>Interpreting the gradient of a curve</h3>
+<table>
+  <thead><tr><th>Curved graph</th><th>Gradient of chord</th><th>Gradient of tangent</th></tr></thead>
+  <tbody>
+    <tr><td>Distance–time</td><td>Average speed over a time interval</td><td>Speed at an instant</td></tr>
+    <tr><td>Velocity–time</td><td>Average acceleration</td><td>Acceleration at an instant</td></tr>
+    <tr><td>Volume–time</td><td>Average rate of flow</td><td>Rate of flow at an instant</td></tr>
+    <tr><td>Population–time</td><td>Average growth rate</td><td>Growth rate at an instant</td></tr>
+  </tbody>
+</table>
+
+<p>A distance–time curve that gets <strong>steeper</strong> shows an object <strong>speeding up</strong>; one that gets <strong>flatter</strong> shows it <strong>slowing down</strong>. Where the tangent is horizontal, the rate of change is zero at that instant &mdash; for example, a ball at the top of its flight.</p>
+
+<div class="exam-tip">
+  Edexcel accepts a range of answers for a gradient read from a drawn tangent, but your tangent must visibly touch the curve at the right point and your working (rise ÷ run) must be shown. Say clearly whether you have found an average rate (chord) or an instantaneous rate (tangent).
+</div>
+
+<h2>Summary</h2>
+<table>
+  <thead><tr><th>Measure</th><th>Formula</th><th>Typical units</th></tr></thead>
+  <tbody>
+    <tr><td>Speed</td><td>$\text{distance} \div \text{time}$</td><td>m/s, km/h, mph</td></tr>
+    <tr><td>Density</td><td>$\text{mass} \div \text{volume}$</td><td>g/cm³, kg/m³</td></tr>
+    <tr><td>Pressure</td><td>$\text{force} \div \text{area}$</td><td>N/m² (Pa), N/cm²</td></tr>
+    <tr><td>Rate of pay</td><td>$\text{pay} \div \text{hours}$</td><td>£ per hour</td></tr>
+    <tr><td>Unit price</td><td>$\text{cost} \div \text{quantity}$</td><td>p per g, £ per litre</td></tr>
+    <tr><td>Rate of change (straight line)</td><td>gradient = rise ÷ run</td><td>$y$-units per $x$-unit</td></tr>
+    <tr><td>Rate of change (curve) <span class="higher-tag">Higher</span></td><td>chord = average; tangent = instantaneous</td><td>$y$-units per $x$-unit</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

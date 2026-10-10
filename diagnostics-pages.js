@@ -58,6 +58,7 @@
     'Mathematics_OCR|alevel':        'diagnostics/maths-ocr-alevel-diagnostic.html',
     'Mathematics_OCR|gcse':          'diagnostics/maths-ocr-gcse-diagnostic.html',
     'Mathematics_AQA|gcse':          'diagnostics/maths-aqa-gcse-diagnostic.html',
+    'Mathematics_Edexcel|gcse':      'diagnostics/maths-edexcel-gcse-diagnostic.html',
     'Mathematics_OCR B|alevel':      'diagnostics/maths-ocr-b-alevel-diagnostic.html',
     'Physics_AQA':                   'diagnostics/physics-aqa-diagnostic.html',
     'Physics_AQA|gcse':              'diagnostics/physics-aqa-gcse-diagnostic.html',

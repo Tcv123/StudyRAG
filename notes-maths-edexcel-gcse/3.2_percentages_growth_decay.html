@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 3.2 — Percentages, Growth &amp; Decay</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.2 Percentages, Growth &amp; Decay</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Ratio, proportion and rates of change &mdash; spec refs R9, R16 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<!-- ===================== 3.2.1 MEANING ===================== -->
+<h2>3.2.1 Percentages as Parts per Hundred (R9)</h2>
+
+<div class="definition">
+  A <strong>percentage</strong> is a number of parts per hundred: $48\% = \dfrac{48}{100} = 0.48$.<br>
+  Percentages above 100% describe amounts larger than the whole: $250\%$ of a quantity is $2.5$ times the quantity.
+</div>
+
+<table>
+  <thead><tr><th>Percentage</th><th>Fraction</th><th>Decimal</th></tr></thead>
+  <tbody>
+    <tr><td>$20\%$</td><td>$\tfrac{1}{5}$</td><td>$0.2$</td></tr>
+    <tr><td>$12.5\%$</td><td>$\tfrac{1}{8}$</td><td>$0.125$</td></tr>
+    <tr><td>$62.5\%$</td><td>$\tfrac{5}{8}$</td><td>$0.625$</td></tr>
+    <tr><td>$7.5\%$</td><td>$\tfrac{3}{40}$</td><td>$0.075$</td></tr>
+    <tr><td>$225\%$</td><td>$\tfrac{9}{4}$</td><td>$2.25$</td></tr>
+  </tbody>
+</table>
+
+<h3>Percentages of amounts on the non-calculator paper</h3>
+<p>Find 10% by dividing by 10, then halve for 5%, halve again for 2.5%, or divide by 100 for 1%. Combine these building blocks.</p>
+<div class="worked-example">
+  Work out $22.5\%$ of £280.<br><br>
+  $10\% = 28$, so $20\% = 56$; $2.5\% = 7$. Therefore $22.5\% = 56 + 7 = \mathbf{£63}$.
+</div>
+
+<h3>Expressing one quantity as a percentage of another</h3>
+<div class="formula-box">
+  $A$ as a percentage of $B$ $= \dfrac{A}{B} \times 100\%$ &nbsp; (convert to the same units first)
+</div>
+<div class="worked-example">
+  (a) 54 minutes as a percentage of 1.5 hours: $\dfrac{54}{90} \times 100 = \mathbf{60\%}$.<br>
+  (b) £21 as a percentage of £14: $\dfrac{21}{14} \times 100 = \mathbf{150\%}$.
+</div>
+
+<h3>Comparing two quantities using percentages</h3>
+<div class="worked-example">
+  Mia scored 39 out of 50 on a science test and 57 out of 75 on a history test. Which was the better score?<br><br>
+  Science: $\tfrac{39}{50} = 78\%$. History: $\tfrac{57}{75} = 76\%$. The <strong>science</strong> score was better.
+</div>
+
+<!-- ===================== 3.2.2 MULTIPLIERS ===================== -->
+<h2>3.2.2 Percentage Change Using Multipliers (R9)</h2>
+
+<p>R9 asks you to interpret percentage changes <strong>multiplicatively</strong>. Instead of working out the change and then adding or subtracting, multiply by a single decimal <strong>multiplier</strong>.</p>
+
+<div class="formula-box">
+  Increase by $r\%$: multiplier $= 1 + \dfrac{r}{100}$ &nbsp;&nbsp; e.g. $+15\% \to 1.15$<br>
+  Decrease by $r\%$: multiplier $= 1 - \dfrac{r}{100}$ &nbsp;&nbsp; e.g. $-35\% \to 0.65$<br>
+  New amount $=$ original amount $\times$ multiplier
+</div>
+
+<!-- SVG: multiplier bar -->
+<div style="margin: 20px 0;">
+<svg width="440" height="140" viewBox="0 0 440 140" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; max-width:100%;">
+  <rect x="20" y="20" width="280" height="30" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="160" y="40" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle">original = 100%</text>
+  <rect x="300" y="20" width="42" height="30" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+  <text x="321" y="40" font-size="11" fill="#166534" font-family="sans-serif" text-anchor="middle">15%</text>
+  <text x="350" y="40" font-size="12" fill="#166534" font-family="sans-serif">× 1.15</text>
+  <rect x="20" y="80" width="182" height="30" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="202" y="80" width="98" height="30" fill="#fee2e2" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="111" y="100" font-size="13" fill="#6d28d9" font-family="sans-serif" text-anchor="middle">65% remains</text>
+  <text x="251" y="100" font-size="11" fill="#dc2626" font-family="sans-serif" text-anchor="middle">−35%</text>
+  <text x="310" y="100" font-size="12" fill="#6d28d9" font-family="sans-serif">× 0.65</text>
+  <text x="20" y="130" font-size="11" fill="#6b7280" font-family="sans-serif">Increase: multiplier greater than 1. Decrease: multiplier less than 1.</text>
+</svg>
+</div>
+
+<div class="worked-example">
+  (a) Increase £64 by 15%: $64 \times 1.15 = \mathbf{£73.60}$.<br>
+  (b) A sofa costing £380 is reduced by 35%: $380 \times 0.65 = \mathbf{£247}$.
+</div>
+
+<h3>Finding a percentage change</h3>
+<div class="formula-box">
+  $$\text{Percentage change} = \frac{\text{actual change}}{\text{original value}} \times 100\%$$
+</div>
+<div class="worked-example">
+  Bus fares rise from £48 to £60 a month. Change $= 12$. Percentage increase $= \dfrac{12}{48} \times 100 = \mathbf{25\%}$.<br><br>
+  A suitcase&rsquo;s mass falls from 75 kg to 63 kg. Percentage decrease $= \dfrac{12}{75} \times 100 = \mathbf{16\%}$.
+</div>
+
+<div class="exam-tip">
+  Divide by the <strong>original</strong> value. Using the new value (12 &divide; 63) gives 19.0%, which scores no accuracy marks.
+</div>
+
+<h3>Profit and loss</h3>
+<p>Percentage profit $= \dfrac{\text{profit}}{\text{cost price}} \times 100$. A market stall buys 60 scarves at £5 each (cost £300), sells 45 at £8 and the other 15 at £3 (takings $360 + 45 = £405$). Profit $= £105$, so the percentage profit is $\tfrac{105}{300} \times 100 = \mathbf{35\%}$.</p>
+
+<!-- ===================== 3.2.3 REVERSE ===================== -->
+<h2>3.2.3 Original Value Problems (R9)</h2>
+
+<div class="definition">
+  In an <strong>original value</strong> (reverse percentage) problem you are told the amount <em>after</em> a percentage change. Because new $=$ original $\times$ multiplier,
+  $$\text{original} = \frac{\text{new amount}}{\text{multiplier}}$$
+</div>
+
+<div class="worked-example">
+  After an 8% rise, a season ticket costs £540. What did it cost before?<br><br>
+  $108\% = 540$, so original $= 540 \div 1.08 = \mathbf{£500}$.
+</div>
+
+<div class="worked-example">
+  In a sale a pair of boots costs £63 after a 30% reduction. Find the original price.<br><br>
+  $70\% = 63$, so original $= 63 \div 0.7 = \mathbf{£90}$.
+</div>
+
+<div class="worked-example">
+  A bill of £78 includes VAT at 20%. The amount before VAT is $78 \div 1.2 = \mathbf{£65}$.
+</div>
+
+<div class="exam-tip">
+  Do not take 20% of £78 and subtract it: $78 - 15.60 = £62.40$ is wrong, because the 20% was calculated on the price <em>before</em> VAT, not on £78.
+</div>
+
+<h3>Repeated percentage changes</h3>
+<p>Multiply the multipliers together to find a single overall multiplier.</p>
+<div class="worked-example">
+  A share price rises by 20% and then falls by 20%.<br><br>
+  Overall multiplier $= 1.2 \times 0.8 = 0.96$, so the price ends at 96% of where it started: a <strong>4% decrease</strong>.
+</div>
+<div class="worked-example">
+  Prices are cut by 25%, and then a further 10% is taken off the sale price.<br><br>
+  $0.75 \times 0.9 = 0.675$: total reduction $= 100\% - 67.5\% = \mathbf{32.5\%}$ (not 35%).
+</div>
+
+<!-- ===================== 3.2.4 SIMPLE INTEREST ===================== -->
+<h2>3.2.4 Simple Interest in Financial Mathematics (R9)</h2>
+
+<div class="definition">
+  With <strong>simple interest</strong>, interest is calculated on the original sum (the principal) only, so exactly the same interest is added each year.
+</div>
+
+<div class="formula-box">
+  $$\text{Simple interest} = P \times \frac{r}{100} \times n$$
+  $P$ = principal, $r$ = annual interest rate (%), $n$ = number of years
+</div>
+
+<div class="worked-example">
+  £1800 is invested for 4 years at 2.5% per year simple interest.<br><br>
+  Interest each year $= 1800 \times 0.025 = £45$. Total interest $= 45 \times 4 = \mathbf{£180}$.<br>
+  Value after 4 years $= 1800 + 180 = £1980$.
+</div>
+
+<!-- ===================== 3.2.5 COMPOUND ===================== -->
+<h2>3.2.5 Growth, Decay and Compound Interest (R16)</h2>
+
+<div class="definition">
+  With <strong>compound interest</strong>, each year&rsquo;s interest is added to the balance and earns interest itself. Population growth, depreciation and radioactive decay follow the same pattern: the <strong>same percentage change</strong> is applied again and again.
+</div>
+
+<div class="formula-box">
+  $$\text{Value after } n \text{ periods} = P \times \left(1 \pm \frac{r}{100}\right)^n$$
+  $+$ for growth or interest, $-$ for decay or depreciation.
+</div>
+
+<!-- SVG: simple vs compound -->
+<div style="margin: 20px 0;">
+<svg width="420" height="230" viewBox="0 0 420 230" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; max-width:100%;">
+  <line x1="50" y1="190" x2="400" y2="190" stroke="#374151" stroke-width="1.5"/>
+  <line x1="50" y1="190" x2="50" y2="20" stroke="#374151" stroke-width="1.5"/>
+  <text x="225" y="222" font-size="12" fill="#374151" font-family="sans-serif" text-anchor="middle">time (years)</text>
+  <text x="18" y="110" font-size="12" fill="#374151" font-family="sans-serif" transform="rotate(-90 18 110)" text-anchor="middle">value</text>
+  <line x1="50" y1="140" x2="390" y2="85" stroke="#2563eb" stroke-width="2.5"/>
+  <path d="M 50,140 Q 250,125 390,40" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+  <path d="M 50,140 Q 200,175 390,182" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="300" y="112" font-size="12" fill="#2563eb" font-family="sans-serif">simple (straight line)</text>
+  <text x="250" y="68" font-size="12" fill="#16a34a" font-family="sans-serif">compound growth</text>
+  <text x="250" y="170" font-size="12" fill="#dc2626" font-family="sans-serif">decay</text>
+</svg>
+</div>
+
+<div class="worked-example">
+  £5000 is invested at 3% per year compound interest for 4 years.<br><br>
+  $5000 \times 1.03^4 = 5627.544\ldots \approx \mathbf{£5627.54}$.
+</div>
+
+<div class="worked-example">
+  A car bought for £22 000 depreciates by 15% each year. Find its value after 3 years.<br><br>
+  Multiplier $= 0.85$. Value $= 22\,000 \times 0.85^3 = \mathbf{£13\,510.75}$.
+</div>
+
+<div class="worked-example">
+  A machine costs £30 000. It loses 30% of its value in the first year and 10% in each later year. Value after 3 years:<br><br>
+  $30\,000 \times 0.7 \times 0.9^2 = 30\,000 \times 0.567 = \mathbf{£17\,010}$.
+</div>
+
+<h3>Simple versus compound interest</h3>
+<div class="worked-example">
+  Account A: £8000 at 5% simple interest for 4 years. Account B: £8000 at 4.8% compound interest for 4 years.<br><br>
+  A: $8000 + 4 \times 400 = £9600$. &nbsp; B: $8000 \times 1.048^4 = £9650.17$.<br>
+  <strong>Account B</strong> pays about £50 more despite its lower rate, because the interest compounds.
+</div>
+
+<h3>How many years?</h3>
+<p>Substitute whole numbers of years into the formula and show the values either side of the target.</p>
+<div class="worked-example">
+  A herd of 2500 deer decreases by 6% each year. After how many years will there first be fewer than 2000 deer?<br><br>
+  $2500 \times 0.94^3 = 2076.5$ (still 2000 or more); $2500 \times 0.94^4 = 1951.9$ (below 2000).<br>
+  Answer: after <strong>4 years</strong>.
+</div>
+
+<h3>Working backwards</h3>
+<div class="worked-example">
+  After 3 years of 4% compound interest a balance is £5624.32. Original $= 5624.32 \div 1.04^3 = 5624.32 \div 1.124864 = \mathbf{£5000}$.
+</div>
+<div class="worked-example">
+  £6000 grows to £7146.10 in 3 years at $r\%$ per year compound interest. Find $r$.<br><br>
+  $\left(1 + \dfrac{r}{100}\right)^3 = \dfrac{7146.10}{6000} = 1.19101\ldots$, so $1 + \dfrac{r}{100} = \sqrt[3]{1.19101\ldots} = 1.06$ and $r = \mathbf{6}$.
+</div>
+
+<div class="exam-tip">
+  &ldquo;Compound&rdquo;, &ldquo;each year&rdquo; and &ldquo;depreciates by &hellip; per year&rdquo; all signal a power. Check whether the question wants the final <em>value</em> or only the <em>interest</em>, and round money to 2 decimal places at the end.
+</div>
+
+<!-- ===================== 3.2.6 ITERATIVE ===================== -->
+<h2>3.2.6 General Iterative Processes (R16) <span class="higher-tag">Higher</span></h2>
+
+<p>The Higher version of R16 adds &ldquo;work with general iterative processes&rdquo;. These combine a percentage change with a fixed amount added or taken away each period, written as an <strong>iterative formula</strong>:</p>
+
+<div class="formula-box">
+  $$u_{n+1} = a\,u_n + b$$
+  $u_0$ is the starting value, $a$ is the multiplier for the percentage change, and $b$ is the fixed amount added ($b &gt; 0$) or removed ($b &lt; 0$) each period.
+</div>
+
+<table>
+  <thead><tr><th>Formula</th><th>Interpretation</th></tr></thead>
+  <tbody>
+    <tr><td>$u_{n+1} = 1.04u_n - 30$</td><td>4% growth each period, then 30 removed</td></tr>
+    <tr><td>$u_{n+1} = 1.025u_n + 200$</td><td>2.5% interest a year, then £200 paid in</td></tr>
+    <tr><td>$P_{n+1} = 0.85P_n + 120$</td><td>15% of the population lost, then 120 added</td></tr>
+    <tr><td>$B_{n+1} = 1.005B_n - 400$</td><td>loan at 0.5% interest per month with £400 repaid monthly</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  $u_{n+1} = 1.04u_n - 30$ and $u_0 = 800$. Find $u_2$.<br><br>
+  $u_1 = 1.04 \times 800 - 30 = 832 - 30 = 802$<br>
+  $u_2 = 1.04 \times 802 - 30 = 834.08 - 30 = \mathbf{804.08}$
+</div>
+
+<div class="worked-example">
+  A town&rsquo;s population is modelled by $P_{n+1} = 1.1P_n - 60$, with $P_0 = 1000$ in 2025. In which year does the model first give a population above 1500?<br><br>
+  $P_1 = 1040,\; P_2 = 1084,\; P_3 = 1132.4,\; P_4 = 1185.64,\; P_5 = 1244.20,\; P_6 = 1308.62,\; P_7 = 1379.49,\; P_8 = 1457.44,\; P_9 = 1543.18$<br>
+  It first exceeds 1500 when $n = 9$, i.e. in <strong>2034</strong>.
+</div>
+
+<h3>Long-term behaviour</h3>
+<p>If the terms settle towards a limit $L$, then $L$ satisfies $L = aL + b$.</p>
+<div class="worked-example">
+  $u_{n+1} = 0.75u_n + 20$. Long-term value: $L = 0.75L + 20 \Rightarrow 0.25L = 20 \Rightarrow L = \mathbf{80}$.
+</div>
+<div class="worked-example">
+  A £6000 loan is charged 0.5% interest per month and only £30 is repaid each month: $B_1 = 1.005 \times 6000 - 30 = 6000$. The monthly interest (£30) equals the repayment, so the balance never goes down.
+</div>
+
+<div class="exam-tip">
+  On your calculator, enter $u_0$ and press =, then type $1.04 \times \text{Ans} - 30$ and keep pressing =. Write down every term you use so the examiner can award method marks, and do not round until the final answer.
+</div>
+
+<h2>Summary</h2>
+<table>
+  <thead><tr><th>Problem type</th><th>Method</th></tr></thead>
+  <tbody>
+    <tr><td>Percentage of an amount</td><td>Amount $\times$ decimal (or build from 10%, 5%, 1%)</td></tr>
+    <tr><td>$A$ as a % of $B$</td><td>$\tfrac{A}{B} \times 100$ (same units)</td></tr>
+    <tr><td>Increase / decrease</td><td>Original $\times$ multiplier</td></tr>
+    <tr><td>Percentage change</td><td>$\tfrac{\text{change}}{\text{original}} \times 100$</td></tr>
+    <tr><td>Original value</td><td>New amount $\div$ multiplier</td></tr>
+    <tr><td>Simple interest</td><td>$P \times \tfrac{r}{100} \times n$</td></tr>
+    <tr><td>Compound growth / decay (R16)</td><td>$P \times \text{multiplier}^n$</td></tr>
+    <tr><td>Iterative processes (R16) <span class="higher-tag">Higher</span></td><td>$u_{n+1} = au_n + b$, apply repeatedly</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

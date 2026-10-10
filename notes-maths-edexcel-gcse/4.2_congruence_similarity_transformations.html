@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 4.2 — Congruence, Similarity &amp; Transformations</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.2 Congruence, Similarity &amp; Transformations</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Geometry and measures &mdash; spec refs G5, G6, G7, G8, G19 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<p>This topic covers the four transformations (translation, reflection, rotation, enlargement), how to recognise and prove that two shapes are <strong>congruent</strong> (identical) or <strong>similar</strong> (enlargements of each other), and how to use those facts to find missing lengths. In 1MA1 the Higher tier adds negative scale factors, combinations of transformations and invariance (G8), and the link between lengths, areas and volumes of similar figures.</p>
+
+<!-- ===================== CONGRUENCE ===================== -->
+<h2>4.2.1 Congruent Triangles and Simple Proofs (G5, G6)</h2>
+
+<div class="definition">
+  Two shapes are <strong>congruent</strong> when they are identical in shape <em>and</em> size: every corresponding side and every corresponding angle is equal. A congruent copy can be produced by translating, rotating or reflecting the original (or any combination of these).
+</div>
+
+<p>For triangles, Edexcel expects you to know four tests (G5). If any one of them holds, the triangles are congruent:</p>
+
+<table>
+  <thead><tr><th>Test</th><th>What you must show is equal</th><th>Watch out for</th></tr></thead>
+  <tbody>
+    <tr><td><strong>SSS</strong></td><td>All three pairs of sides</td><td>&mdash;</td></tr>
+    <tr><td><strong>SAS</strong></td><td>Two pairs of sides and the angle <em>between</em> them</td><td>The angle must be the included angle</td></tr>
+    <tr><td><strong>ASA</strong> (also AAS)</td><td>Two pairs of angles and one pair of corresponding sides</td><td>The sides must be in matching positions</td></tr>
+    <tr><td><strong>RHS</strong></td><td>A right angle, the hypotenuses and one other pair of sides</td><td>Right-angled triangles only</td></tr>
+  </tbody>
+</table>
+
+<!-- SVG: SAS illustration -->
+<svg width="520" height="170" viewBox="0 0 520 170" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <polygon points="30,140 200,140 70,40" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <polygon points="300,140 470,140 340,40" fill="#dcfce7" stroke="#16a34a" stroke-width="2.5"/>
+  <path d="M 58,140 A 28 28 0 0 0 47,117" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <path d="M 328,140 A 28 28 0 0 0 317,117" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <line x1="112" y1="134" x2="112" y2="146" stroke="#374151" stroke-width="2"/>
+  <line x1="382" y1="134" x2="382" y2="146" stroke="#374151" stroke-width="2"/>
+  <line x1="44" y1="92" x2="56" y2="86" stroke="#374151" stroke-width="2"/><line x1="46" y1="97" x2="58" y2="91" stroke="#374151" stroke-width="2"/>
+  <line x1="314" y1="92" x2="326" y2="86" stroke="#374151" stroke-width="2"/><line x1="316" y1="97" x2="328" y2="91" stroke="#374151" stroke-width="2"/>
+  <text x="115" y="162" font-size="13" fill="#1e40af" font-family="sans-serif" text-anchor="middle">Triangle 1</text>
+  <text x="385" y="162" font-size="13" fill="#166534" font-family="sans-serif" text-anchor="middle">Triangle 2</text>
+  <text x="250" y="25" font-size="13" fill="#374151" font-family="sans-serif" text-anchor="middle">SAS: two marked sides and the angle between them match &rArr; congruent</text>
+</svg>
+
+<div class="exam-tip">
+  Three equal angles (AAA) do <strong>not</strong> prove congruence &mdash; they only prove the triangles are <em>similar</em>. Two sides with an angle that is not between them (SSA) is also not a valid test, apart from the right-angled case RHS.
+</div>
+
+<h3>Setting out a congruence proof</h3>
+<p>G6 asks you to use angle facts and congruence to build <strong>simple proofs</strong>. Write one statement per line, give a reason in brackets for each, and finish by naming the test. Then, if the question asks, use "corresponding sides/angles of congruent triangles are equal" to finish.</p>
+
+<div class="worked-example">
+  PQRS is a parallelogram whose diagonals cross at M. Prove that triangles PMQ and RMS are congruent, and hence that the diagonals bisect each other.<br><br>
+  Angle $MPQ$ = angle $MRS$ (alternate angles, $PQ \parallel SR$)<br>
+  Angle $MQP$ = angle $MSR$ (alternate angles, $PQ \parallel SR$)<br>
+  $PQ = RS$ (opposite sides of a parallelogram are equal)<br>
+  So triangles PMQ and RMS are <strong>congruent (ASA)</strong>. Corresponding sides are equal, so $PM = MR$ and $QM = MS$: the diagonals bisect each other.
+</div>
+
+<div class="worked-example">
+  ABC is a triangle with $AB = AC$. Prove that angle $ABC$ = angle $ACB$ (the base angles of an isosceles triangle are equal).<br><br>
+  Let M be the midpoint of BC. $AB = AC$ (given), $BM = CM$ (M is the midpoint), $AM$ is common.<br>
+  So triangles ABM and ACM are congruent (SSS), and therefore angle $ABM$ = angle $ACM$, i.e. angle $ABC$ = angle $ACB$. $\blacksquare$
+</div>
+
+<!-- ===================== TRANSFORMATIONS ===================== -->
+<h2>4.2.2 Translations, Reflections and Rotations (G7)</h2>
+
+<p>A transformation maps an <strong>object</strong> to an <strong>image</strong>. Edexcel questions either ask you to <em>carry out</em> a transformation on a grid or to <strong>"describe fully the single transformation"</strong>. In a "describe fully" answer, the type of transformation earns one mark and each required detail earns another.</p>
+
+<table>
+  <thead><tr><th>Transformation</th><th>Details needed to describe it fully</th><th>Image congruent to object?</th></tr></thead>
+  <tbody>
+    <tr><td>Translation</td><td>Column vector</td><td>Yes</td></tr>
+    <tr><td>Reflection</td><td>Equation of the mirror line</td><td>Yes</td></tr>
+    <tr><td>Rotation</td><td>Centre, angle and direction</td><td>Yes</td></tr>
+    <tr><td>Enlargement</td><td>Scale factor and centre</td><td>No &mdash; similar (unless the scale factor is 1 or &minus;1)</td></tr>
+  </tbody>
+</table>
+
+<h3>Translation</h3>
+<div class="definition">
+  A <strong>translation</strong> moves every point the same distance in the same direction. The column vector $\begin{pmatrix} a \\ b \end{pmatrix}$ means $a$ units right and $b$ units up; negative values mean left and down.
+</div>
+
+<div class="worked-example">
+  Translate the triangle with vertices $(2, -1)$, $(5, -1)$, $(2, 3)$ by $\begin{pmatrix} -3 \\ 4 \end{pmatrix}$.<br><br>
+  Subtract 3 from every $x$-coordinate and add 4 to every $y$-coordinate: $\mathbf{(-1, 3)}$, $\mathbf{(2, 3)}$, $\mathbf{(-1, 7)}$.
+</div>
+
+<h3>Reflection</h3>
+<p>Each image point is the same perpendicular distance from the mirror line as the object point, but on the other side. Points on the mirror line stay where they are.</p>
+<div class="formula-box">
+  Mirror line $y = 0$ ($x$-axis): $(x, y) \to (x, -y)$ &nbsp;&nbsp;&nbsp; Mirror line $x = 0$ ($y$-axis): $(x, y) \to (-x, y)$<br>
+  Mirror line $y = x$: $(x, y) \to (y, x)$ &nbsp;&nbsp;&nbsp; Mirror line $y = -x$: $(x, y) \to (-y, -x)$<br>
+  Mirror line $x = a$: new $x = 2a - x$ &nbsp;&nbsp;&nbsp; Mirror line $y = b$: new $y = 2b - y$
+</div>
+
+<div class="worked-example">
+  Reflect $(6, 2)$ in the line $x = 3$, and reflect $(4, 3)$ in the line $y = -1$.<br><br>
+  $(6, 2)$ is 3 units right of $x = 3$, so its image is 3 units left: $x = 2(3) - 6 = 0$, giving $\mathbf{(0, 2)}$.<br>
+  $(4, 3)$ is 4 units above $y = -1$, so its image is 4 units below: $y = 2(-1) - 3 = -5$, giving $\mathbf{(4, -5)}$.
+</div>
+
+<h3>Rotation</h3>
+<p>A rotation turns every point through the same angle about a fixed <strong>centre</strong>. Tracing paper may be used in the exam Tracing paper is allowed in all three 1MA1 papers &mdash; ask for it.mdash; ask for it. For rotations about the origin:</p>
+<div class="formula-box">
+  90° clockwise: $(x, y) \to (y, -x)$ &nbsp;&nbsp;&nbsp; 90° anticlockwise: $(x, y) \to (-y, x)$ &nbsp;&nbsp;&nbsp; 180°: $(x, y) \to (-x, -y)$
+</div>
+
+<div class="worked-example">
+  Rotate the point $(4, 5)$ through 90° clockwise about $(1, 2)$.<br><br>
+  Position relative to the centre: $(4 - 1,\ 5 - 2) = (3, 3)$.<br>
+  Apply 90° clockwise, $(x, y) \to (y, -x)$: $(3, -3)$.<br>
+  Add the centre back on: $(1 + 3,\ 2 - 3) = \mathbf{(4, -1)}$.
+</div>
+
+<div class="exam-tip">
+  "Describe fully" a rotation needs all three of <strong>centre, angle and direction</strong> (180° needs no direction). Giving two transformations ("reflect then translate") when the question says <em>single</em> transformation scores no marks.
+</div>
+
+<!-- ===================== ENLARGEMENT ===================== -->
+<h2>4.2.3 Enlargement (G7)</h2>
+
+<div class="definition">
+  An <strong>enlargement</strong> with scale factor $k$ and centre $C$ multiplies the distance of every point from $C$ by $k$, along the line through $C$. Every length is multiplied by $k$ and every angle stays the same, so the image is <strong>similar</strong> to the object.
+</div>
+
+<!-- SVG: Enlargement scale factor 2 with rays -->
+<svg width="300" height="210" viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <line x1="40" y1="180" x2="200" y2="140" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="40" y1="180" x2="120" y2="140" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="40" y1="180" x2="120" y2="60" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <polygon points="80,160 120,160 80,120" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <polygon points="120,140 200,140 120,60" fill="#ede9fe" fill-opacity="0.6" stroke="#7c3aed" stroke-width="2.5"/>
+  <circle cx="40" cy="180" r="4" fill="#dc2626"/>
+  <text x="30" y="200" font-size="13" fill="#dc2626" font-family="sans-serif">Centre</text>
+  <text x="86" y="152" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">A</text>
+  <text x="140" y="128" font-size="13" fill="#5b21b6" font-family="sans-serif" font-weight="700">A′ (×2)</text>
+  <text x="210" y="40" font-size="12" fill="#374151" font-family="sans-serif">Each image vertex is</text>
+  <text x="210" y="56" font-size="12" fill="#374151" font-family="sans-serif">twice as far from the</text>
+  <text x="210" y="72" font-size="12" fill="#374151" font-family="sans-serif">centre as the object</text>
+</svg>
+
+<table>
+  <thead><tr><th>Scale factor $k$</th><th>What happens</th></tr></thead>
+  <tbody>
+    <tr><td>$k &gt; 1$</td><td>Image is bigger and further from the centre</td></tr>
+    <tr><td>$0 &lt; k &lt; 1$ (fractional)</td><td>Image is smaller and closer to the centre (both tiers)</td></tr>
+    <tr><td>$k &lt; 0$ <span class="higher-tag">Higher</span></td><td>Image is on the other side of the centre and upside down</td></tr>
+  </tbody>
+</table>
+
+<div class="formula-box">
+  Scale factor $= \dfrac{\text{length on image}}{\text{matching length on object}}$<br><br>
+  Image of $P$: &nbsp; $P' = C + k\,(P - C)$ &nbsp;&nbsp; (find the vector from the centre, multiply by $k$, add back to the centre)
+</div>
+
+<div class="worked-example">
+  Enlarge the points $(7, 4)$ and $(10, 7)$ by scale factor $\tfrac{1}{3}$, centre $(1, 1)$.<br><br>
+  $(7, 4)$: vector from centre $(6, 3)$; one third of it is $(2, 1)$; image $= (1 + 2,\ 1 + 1) = \mathbf{(3, 2)}$.<br>
+  $(10, 7)$: vector from centre $(9, 6)$; one third is $(3, 2)$; image $= \mathbf{(4, 3)}$.
+</div>
+
+<h3>Finding the scale factor and centre</h3>
+<p>Compare a pair of matching sides to get $k$. To find the centre on a grid, draw straight lines through each object vertex and its image vertex; they meet at the centre. Without a grid you can use $C = \dfrac{P' - kP}{1 - k}$.</p>
+
+<div class="worked-example">
+  Triangle A has vertices $(1, 2)$, $(2, 2)$, $(1, 4)$. Triangle B has vertices $(-3, -2)$, $(0, -2)$, $(-3, 4)$. Describe fully the single transformation that maps A onto B.<br><br>
+  Side $(1, 2)$&ndash;$(2, 2)$ has length 1; the matching side $(-3, -2)$&ndash;$(0, -2)$ has length 3, so $k = 3$.<br>
+  Centre: $C = \dfrac{(-3, -2) - 3(1, 2)}{1 - 3} = \dfrac{(-6, -8)}{-2} = (3, 4)$. Check with $(1, 4)$: $(3, 4) + 3(-2, 0) = (-3, 4)$ ✓<br>
+  <strong>Enlargement, scale factor 3, centre $(3, 4)$.</strong>
+</div>
+
+<h3>Negative scale factors <span class="higher-tag">Higher</span></h3>
+<p>For $k &lt; 0$, go from the centre to an object point, multiply that distance by $|k|$, and travel that far in the <em>opposite</em> direction. The image is inverted &mdash; it looks as though it has also been rotated by 180°.</p>
+
+<!-- SVG: Negative scale factor -2 -->
+<svg width="300" height="190" viewBox="0 0 300 190" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <line x1="190" y1="90" x2="70" y2="120" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="170" y1="70" x2="110" y2="160" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="170" y1="90" x2="110" y2="120" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <polygon points="170,90 190,90 170,70" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <polygon points="110,120 70,120 110,160" fill="#ede9fe" fill-opacity="0.7" stroke="#7c3aed" stroke-width="2.5"/>
+  <circle cx="150" cy="100" r="4" fill="#dc2626"/>
+  <text x="155" y="114" font-size="12" fill="#dc2626" font-family="sans-serif">C</text>
+  <text x="196" y="80" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">Object</text>
+  <text x="20" y="150" font-size="13" fill="#5b21b6" font-family="sans-serif" font-weight="700">Image</text>
+  <text x="150" y="182" font-size="12" fill="#374151" font-family="sans-serif" text-anchor="middle">Scale factor −2: double size, opposite side, inverted</text>
+</svg>
+
+<div class="worked-example">
+  Enlarge the triangle with vertices $(3, 2)$, $(5, 2)$, $(3, 3)$ by scale factor $-2$, centre $(1, 1)$.<br><br>
+  Vectors from the centre: $(2, 1)$, $(4, 1)$, $(2, 2)$. Multiply by $-2$: $(-4, -2)$, $(-8, -2)$, $(-4, -4)$.<br>
+  Add the centre back: $\mathbf{(-3, -1)}$, $\mathbf{(-7, -1)}$, $\mathbf{(-3, -3)}$.
+</div>
+
+<div class="exam-tip">
+  Scale factor $-1$ about a centre has exactly the same effect as a rotation of 180° about that centre, so either description earns the marks. A scale factor between 0 and 1 is still called an <em>enlargement</em> in the exam, even though the shape gets smaller.
+</div>
+
+<!-- ===================== COMBINED / INVARIANCE ===================== -->
+<h2>4.2.4 Combining Transformations and Invariance (G8) <span class="higher-tag">Higher</span></h2>
+
+<p>G8 is Higher-only in 1MA1: you must describe the changes and the invariance produced by combinations of rotations, reflections and translations. Track the coordinates of each vertex through each step, then identify the single transformation that takes the original straight to the final image.</p>
+
+<div class="worked-example">
+  Triangle T has vertices $(1, 1)$, $(4, 1)$, $(1, 2)$. T is rotated 90° clockwise about the origin, and the image is then reflected in the $y$-axis. Describe fully the single transformation that maps T onto the final image.<br><br>
+  Rotate, $(x, y) \to (y, -x)$: $(1, -1)$, $(1, -4)$, $(2, -1)$.<br>
+  Reflect in the $y$-axis, $(x, y) \to (-x, y)$: $(-1, -1)$, $(-1, -4)$, $(-2, -1)$.<br>
+  Overall $(x, y) \to (-y, -x)$, so this is a <strong>reflection in the line $y = -x$</strong>. (The point $(1, 1)$ maps to $(-1, -1)$, which confirms it is not on the mirror line.)
+</div>
+
+<div class="definition">
+  A point is <strong>invariant</strong> if it is unchanged by a transformation; a line is invariant if it maps onto itself.
+  <ul>
+    <li>Reflection: every point on the mirror line is invariant, and so is every line perpendicular to the mirror.</li>
+    <li>Rotation (not 360°): only the centre is invariant.</li>
+    <li>Translation (non-zero vector): no invariant points, but lines parallel to the vector are invariant.</li>
+    <li>Enlargement ($k \ne 1$): only the centre is invariant.</li>
+  </ul>
+</div>
+
+<p>Facts that save time:</p>
+<ul>
+  <li>Reflecting in two <strong>parallel</strong> mirror lines gives a translation through twice the gap between them, e.g. reflect in $x = 4$ then $x = 6$: translation $\begin{pmatrix} 4 \\ 0 \end{pmatrix}$.</li>
+  <li>Reflecting in two <strong>intersecting</strong> lines gives a rotation about the crossing point through twice the angle between them.</li>
+  <li>Successive translations add: $\begin{pmatrix} 3 \\ -1 \end{pmatrix}$ then $\begin{pmatrix} -5 \\ 4 \end{pmatrix}$ is the single translation $\begin{pmatrix} -2 \\ 3 \end{pmatrix}$.</li>
+  <li>The order usually matters &mdash; check by working through coordinates.</li>
+</ul>
+
+<!-- ===================== SIMILARITY ===================== -->
+<h2>4.2.5 Similar Shapes and Missing Lengths (G6, G7, G19)</h2>
+
+<div class="definition">
+  Two shapes are <strong>similar</strong> if one is an enlargement of the other: all corresponding <strong>angles are equal</strong> and all corresponding <strong>lengths are in the same ratio</strong>, the scale factor $k$.
+</div>
+
+<p>Two triangles are similar if you can show any one of: all angles equal (two pairs are enough); all three pairs of sides in the same ratio; or two pairs of sides in the same ratio with the included angles equal.</p>
+
+<!-- SVG: Similar triangles from a parallel line -->
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <polygon points="150,20 40,180 260,180" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <polygon points="150,20 106,84 194,84" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="146" y="14" font-size="13" fill="#374151" font-family="sans-serif" font-weight="700">A</text>
+  <text x="26" y="190" font-size="13" fill="#374151" font-family="sans-serif" font-weight="700">B</text>
+  <text x="266" y="190" font-size="13" fill="#374151" font-family="sans-serif" font-weight="700">C</text>
+  <text x="90" y="88" font-size="13" fill="#374151" font-family="sans-serif" font-weight="700">D</text>
+  <text x="200" y="88" font-size="13" fill="#374151" font-family="sans-serif" font-weight="700">E</text>
+  <text x="150" y="80" font-size="11" fill="#92400e" font-family="sans-serif" text-anchor="middle">DE ∥ BC</text>
+  <text x="150" y="140" font-size="12" fill="#1e40af" font-family="sans-serif" text-anchor="middle">Triangle ADE ~ triangle ABC</text>
+</svg>
+
+<p>A line drawn parallel to one side of a triangle cuts off a smaller triangle similar to the whole one: the angle at A is shared and the other two pairs are corresponding angles.</p>
+
+<div class="worked-example">
+  In the diagram, $AE = 6$ cm, $EC = 3$ cm and $DE = 8$ cm. Work out $BC$.<br><br>
+  $AC = 6 + 3 = 9$ cm, so the scale factor from ADE to ABC is $9 \div 6 = 1.5$.<br>
+  $BC = 8 \times 1.5 = \mathbf{12}$ <strong>cm</strong>.
+</div>
+
+<div class="exam-tip">
+  Find the scale factor from a pair of <strong>whole</strong> corresponding sides ($AC$ with $AE$), never from the extra piece $EC$. Redraw the two triangles separately, the same way round, before matching sides.
+</div>
+
+<div class="worked-example">
+  The lines AE and BD cross at C, and AB is parallel to DE. $AB = 6$ cm, $DE = 15$ cm, $BC = 4$ cm and $CE = 12.5$ cm. Work out $CD$ and $AC$.<br><br>
+  Angle $ACB$ = angle $ECD$ (vertically opposite) and angle $ABC$ = angle $EDC$ (alternate), so triangles ABC and EDC are similar with $A \leftrightarrow E$, $B \leftrightarrow D$.<br>
+  Scale factor from ABC to EDC $= 15 \div 6 = 2.5$.<br>
+  $CD = 4 \times 2.5 = \mathbf{10}$ <strong>cm</strong>; &nbsp; $AC = 12.5 \div 2.5 = \mathbf{5}$ <strong>cm</strong>.
+</div>
+
+<!-- ===================== AREA AND VOLUME ===================== -->
+<h2>4.2.6 Areas and Volumes of Similar Figures (G19) <span class="higher-tag">Higher</span></h2>
+
+<p>In 1MA1, Foundation G19 covers lengths in similar figures only; the Higher statement adds <strong>areas and volumes</strong>. If corresponding lengths are in the ratio $1 : k$, then corresponding areas are in the ratio $1 : k^2$ and volumes in the ratio $1 : k^3$. "Area" includes surface area and the area of any face or label; "volume" includes capacity, and mass when the objects are made of the same material.</p>
+
+<div class="formula-box">
+  Length scale factor $k$ &nbsp;&rArr;&nbsp; area scale factor $k^2$ &nbsp;&rArr;&nbsp; volume scale factor $k^3$<br><br>
+  Working back: $k = \sqrt{\text{area scale factor}} = \sqrt[3]{\text{volume scale factor}}$
+</div>
+
+<table>
+  <thead><tr><th>Lengths</th><th>Areas</th><th>Volumes</th></tr></thead>
+  <tbody>
+    <tr><td>1 : 4</td><td>1 : 16</td><td>1 : 64</td></tr>
+    <tr><td>2 : 5</td><td>4 : 25</td><td>8 : 125</td></tr>
+    <tr><td>3 : 4</td><td>9 : 16</td><td>27 : 64</td></tr>
+    <tr><td>3 : 5</td><td>9 : 25</td><td>27 : 125</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  Two mathematically similar vases are 12 cm and 20 cm tall. The smaller vase holds 324 cm³ and the larger has surface area 450 cm². Work out the capacity of the larger vase and the surface area of the smaller vase.<br><br>
+  $k = \dfrac{20}{12} = \dfrac{5}{3}$.<br>
+  Capacity of larger $= 324 \times \left(\dfrac{5}{3}\right)^3 = 324 \times \dfrac{125}{27} = \mathbf{1500}$ <strong>cm³</strong>.<br>
+  Surface area of smaller $= 450 \div \left(\dfrac{5}{3}\right)^2 = 450 \times \dfrac{9}{25} = \mathbf{162}$ <strong>cm²</strong>.
+</div>
+
+<div class="worked-example">
+  Two similar statues are made from the same metal. They have masses 2 kg and 16 kg. The smaller statue is 15 cm tall and needs 0.3 litres of paint. Work out the height of the larger statue and how much paint it needs.<br><br>
+  Mass scale factor $= 16 \div 2 = 8$ is the volume scale factor, so $k = \sqrt[3]{8} = 2$.<br>
+  Height $= 15 \times 2 = \mathbf{30}$ <strong>cm</strong>. Paint covers area, so multiply by $k^2 = 4$: $0.3 \times 4 = \mathbf{1.2}$ <strong>litres</strong>.
+</div>
+
+<div class="exam-tip">
+  Always convert to the <strong>length</strong> scale factor first. Given areas and asked for a volume: square root, then cube. Multiplying a volume by the area scale factor (or vice versa) is the most common error in these questions.
+</div>
+
+<h2>Summary</h2>
+<table>
+  <thead><tr><th>Idea</th><th>Key fact</th></tr></thead>
+  <tbody>
+    <tr><td>Congruent triangles (G5)</td><td>SSS, SAS, ASA/AAS, RHS &mdash; not AAA or SSA</td></tr>
+    <tr><td>Simple proofs (G6)</td><td>Statement + reason on each line, name the test, then use corresponding parts</td></tr>
+    <tr><td>Translation</td><td>Column vector</td></tr>
+    <tr><td>Reflection</td><td>Equation of the mirror line</td></tr>
+    <tr><td>Rotation</td><td>Centre, angle, direction</td></tr>
+    <tr><td>Enlargement</td><td>Scale factor and centre; fractional $k$ gives a smaller image</td></tr>
+    <tr><td>Negative scale factor <span class="higher-tag">Higher</span></td><td>Image on opposite side of the centre, inverted</td></tr>
+    <tr><td>Combinations and invariance (G8) <span class="higher-tag">Higher</span></td><td>Work through coordinates; invariant points map to themselves</td></tr>
+    <tr><td>Similar figures (G19)</td><td>Lengths $\times k$; <span class="higher-tag">Higher</span> areas $\times k^2$, volumes $\times k^3$</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

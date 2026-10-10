@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 4.1 — Angles, Polygons &amp; Constructions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+<h1>4.1 Angles, Polygons &amp; Constructions</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Geometry and measures &mdash; spec refs G1–G4, G15 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<p>Everything on this page is on <strong>both</strong> the Foundation and Higher tiers of 1MA1. Higher papers simply use these facts in longer, multi-step problems with less guidance.</p>
+
+<!-- ===================== 4.1.1 CONVENTIONS ===================== -->
+<h2>4.1.1 Geometric Terms and Notation (G1)</h2>
+
+<table>
+  <thead><tr><th>Term</th><th>Meaning</th></tr></thead>
+  <tbody>
+    <tr><td>Point, line, plane</td><td>A point marks a position; a line is straight (a line segment has two end points); a plane is a flat surface.</td></tr>
+    <tr><td>Vertex (plural vertices)</td><td>A corner where sides or edges meet.</td></tr>
+    <tr><td>Edge</td><td>A line where two faces of a 3D solid meet.</td></tr>
+    <tr><td>Parallel lines</td><td>Lines in the same direction that never meet; shown with matching arrow marks.</td></tr>
+    <tr><td>Perpendicular lines</td><td>Lines that cross or meet at 90°; the right angle is shown with a small square.</td></tr>
+    <tr><td>Polygon</td><td>A closed 2D shape with straight sides.</td></tr>
+    <tr><td>Regular polygon</td><td>A polygon with all sides equal <strong>and</strong> all angles equal.</td></tr>
+    <tr><td>Line (reflection) symmetry</td><td>A mirror line divides the shape into two halves that are reflections of each other.</td></tr>
+    <tr><td>Rotational symmetry</td><td>The order is how many times the shape fits onto itself in one full turn. A regular $n$-gon has $n$ lines of symmetry and rotational symmetry of order $n$.</td></tr>
+  </tbody>
+</table>
+
+<h3>Labelling triangles and angles</h3>
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="260" height="190" viewBox="0 0 260 190" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <polygon points="40,160 220,160 90,40" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="28" y="172" font-size="15" fill="#1e40af" font-family="sans-serif" font-weight="700">P</text>
+  <text x="224" y="172" font-size="15" fill="#1e40af" font-family="sans-serif" font-weight="700">Q</text>
+  <text x="84" y="32" font-size="15" fill="#1e40af" font-family="sans-serif" font-weight="700">R</text>
+  <text x="130" y="178" font-size="14" fill="#dc2626" font-family="sans-serif" font-style="italic">r</text>
+  <text x="58" y="100" font-size="14" fill="#dc2626" font-family="sans-serif" font-style="italic">q</text>
+  <text x="162" y="96" font-size="14" fill="#dc2626" font-family="sans-serif" font-style="italic">p</text>
+</svg>
+<div style="flex:1; min-width:200px;">
+  <ul>
+    <li>Vertices take capital letters: triangle PQR.</li>
+    <li>The side opposite angle P is written $p$, opposite Q is $q$, opposite R is $r$.</li>
+    <li>Angle PQR (also $\angle PQR$ or $P\hat{Q}R$) is the angle <strong>at Q</strong>, between QP and QR. The middle letter is always the vertex.</li>
+    <li>The line segment joining P and Q is written PQ.</li>
+  </ul>
+</div>
+</div>
+
+<div class="exam-tip">
+  Edexcel questions sometimes give a description with no diagram (&ldquo;ABCD is a kite with AB = AD&hellip;&rdquo;). Sketch it straight away, label the vertices in order round the shape, and mark equal sides, parallel sides and right angles before you calculate anything.
+</div>
+
+<!-- ===================== 4.1.2 ANGLE FACTS ===================== -->
+<h2>4.1.2 Basic Angle Facts (G3)</h2>
+
+<table>
+  <thead><tr><th>Type of angle</th><th>Size</th></tr></thead>
+  <tbody>
+    <tr><td>Acute</td><td>Less than 90°</td></tr>
+    <tr><td>Right angle</td><td>Exactly 90°</td></tr>
+    <tr><td>Obtuse</td><td>More than 90° but less than 180°</td></tr>
+    <tr><td>Reflex</td><td>More than 180° but less than 360°</td></tr>
+  </tbody>
+</table>
+
+<div class="formula-box">
+  <strong>Angles on a straight line</strong> add up to $180°$<br>
+  <strong>Angles at a point</strong> add up to $360°$<br>
+  <strong>Vertically opposite angles</strong> are equal
+</div>
+
+<svg width="300" height="170" viewBox="0 0 300 170" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <line x1="30" y1="140" x2="270" y2="30" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="30" y1="40" x2="270" y2="130" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="96" y="90" font-size="14" fill="#dc2626" font-family="sans-serif" font-weight="700">x</text>
+  <text x="196" y="90" font-size="14" fill="#dc2626" font-family="sans-serif" font-weight="700">x</text>
+  <text x="146" y="60" font-size="14" fill="#16a34a" font-family="sans-serif" font-weight="700">y</text>
+  <text x="146" y="122" font-size="14" fill="#16a34a" font-family="sans-serif" font-weight="700">y</text>
+  <text x="150" y="160" font-size="12" fill="#374151" font-family="sans-serif" text-anchor="middle">x + y = 180°; vertically opposite angles equal</text>
+</svg>
+
+<div class="worked-example">
+  Two angles on a straight line are $4x$ and $5x$. Work out the size of the larger angle.<br><br>
+  $4x + 5x = 180 \Rightarrow 9x = 180 \Rightarrow x = 20$<br>
+  Larger angle = $5 \times 20 = \mathbf{100°}$
+</div>
+
+<!-- ===================== 4.1.3 PARALLEL LINES ===================== -->
+<h2>4.1.3 Angles and Parallel Lines (G3)</h2>
+
+<p>A line crossing a pair of parallel lines is a <strong>transversal</strong>. It makes the same set of angles at each parallel line, which gives three key relationships.</p>
+
+<svg width="380" height="220" viewBox="0 0 380 220" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <line x1="20" y1="70" x2="360" y2="70" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="20" y1="160" x2="360" y2="160" stroke="#2563eb" stroke-width="2.5"/>
+  <polyline points="300,64 310,70 300,76" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <polyline points="300,154 310,160 300,166" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <line x1="120" y1="20" x2="260" y2="210" stroke="#374151" stroke-width="2"/>
+  <text x="164" y="64" font-size="14" fill="#dc2626" font-family="sans-serif" font-weight="700">a</text>
+  <text x="138" y="88" font-size="14" fill="#16a34a" font-family="sans-serif" font-weight="700">b</text>
+  <text x="231" y="154" font-size="14" fill="#dc2626" font-family="sans-serif" font-weight="700">a</text>
+  <text x="205" y="178" font-size="14" fill="#16a34a" font-family="sans-serif" font-weight="700">b</text>
+  <text x="200" y="152" font-size="14" fill="#16a34a" font-family="sans-serif" font-weight="700">b</text>
+  <text x="166" y="88" font-size="14" fill="#dc2626" font-family="sans-serif" font-weight="700">a</text>
+  <text x="290" y="200" font-size="12" fill="#374151" font-family="sans-serif">a + b = 180°</text>
+</svg>
+
+<div class="formula-box">
+  <strong>Alternate angles</strong> are equal &mdash; between the parallel lines, on opposite sides of the transversal.<br>
+  <strong>Corresponding angles</strong> are equal &mdash; in the same position at each parallel line.<br>
+  <strong>Co-interior angles</strong> add up to $180°$ &mdash; between the parallel lines, on the same side of the transversal.
+</div>
+
+<div class="exam-tip">
+  When a question says &ldquo;give reasons&rdquo;, Pearson mark schemes require the angle fact written in full, such as &ldquo;alternate angles are equal&rdquo;. Shorthand like &ldquo;Z angles&rdquo; or &ldquo;F angles&rdquo; is not accepted.
+</div>
+
+<div class="worked-example">
+  A transversal crosses two parallel lines. Two corresponding angles are $(3x + 5)°$ and $(5x - 37)°$. Work out $x$.<br><br>
+  Corresponding angles are equal: $3x + 5 = 5x - 37$<br>
+  $42 = 2x \Rightarrow x = \mathbf{21}$ &nbsp; (each angle is 68°)
+</div>
+
+<div class="worked-example">
+  PQ and RS are parallel with Q and S on the right. Point T lies between them, to the right of P and R. Angle QPT = 48° and angle SRT = 27°. Work out angle PTR.<br><br>
+  Draw a line through T parallel to PQ and RS.<br>
+  Angle between TP and this line = 48° (alternate angles are equal).<br>
+  Angle between TR and this line = 27° (alternate angles are equal).<br>
+  Angle PTR = $48 + 27 = \mathbf{75°}$
+</div>
+
+<!-- ===================== 4.1.4 TRIANGLES ===================== -->
+<h2>4.1.4 Triangles (G3, G4)</h2>
+
+<table>
+  <thead><tr><th>Triangle</th><th>Properties</th></tr></thead>
+  <tbody>
+    <tr><td>Equilateral</td><td>3 equal sides, 3 angles of 60°, 3 lines of symmetry, rotational symmetry of order 3</td></tr>
+    <tr><td>Isosceles</td><td>2 equal sides, the 2 base angles opposite them are equal, 1 line of symmetry</td></tr>
+    <tr><td>Scalene</td><td>All sides different, all angles different</td></tr>
+    <tr><td>Right-angled</td><td>One angle of 90°</td></tr>
+    <tr><td>Acute-angled</td><td>Every angle less than 90°</td></tr>
+    <tr><td>Obtuse-angled</td><td>One angle more than 90°</td></tr>
+  </tbody>
+</table>
+
+<h3>Deriving the angle sum of a triangle</h3>
+<svg width="320" height="180" viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <line x1="20" y1="40" x2="300" y2="40" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6,4"/>
+  <polygon points="40,150 270,150 140,40" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="135" y="32" font-size="14" fill="#1e40af" font-family="sans-serif" font-weight="700">A</text>
+  <text x="26" y="166" font-size="14" fill="#1e40af" font-family="sans-serif" font-weight="700">B</text>
+  <text x="274" y="166" font-size="14" fill="#1e40af" font-family="sans-serif" font-weight="700">C</text>
+  <text x="58" y="144" font-size="13" fill="#16a34a" font-family="sans-serif" font-weight="700">b</text>
+  <text x="240" y="144" font-size="13" fill="#dc2626" font-family="sans-serif" font-weight="700">c</text>
+  <text x="136" y="60" font-size="13" fill="#b45309" font-family="sans-serif" font-weight="700">a</text>
+  <text x="106" y="54" font-size="13" fill="#16a34a" font-family="sans-serif" font-weight="700">b</text>
+  <text x="164" y="54" font-size="13" fill="#dc2626" font-family="sans-serif" font-weight="700">c</text>
+</svg>
+
+<div class="worked-example">
+  Through A draw the line parallel to BC.<br>
+  On the left of angle $a$ the angle is $b$ (alternate angles are equal, using transversal AB).<br>
+  On the right of angle $a$ the angle is $c$ (alternate angles are equal, using transversal AC).<br>
+  The three angles $b$, $a$, $c$ make a straight line, so $a + b + c = 180°$. &nbsp;&#8718;
+</div>
+
+<h3>Exterior angle of a triangle</h3>
+<div class="formula-box">
+  If one side of a triangle is extended, the <strong>exterior angle</strong> equals the <strong>sum of the two interior opposite angles</strong>.<br>
+  Reason: $a + b + c = 180$ (angles in a triangle) and $c + e = 180$ (angles on a straight line), so $e = a + b$.
+</div>
+
+<div class="worked-example">
+  The angles of a triangle are $x$, $2x + 10$ and $3x - 40$ (in degrees). Work out each angle.<br><br>
+  $x + 2x + 10 + 3x - 40 = 180 \Rightarrow 6x - 30 = 180 \Rightarrow x = 35$<br>
+  Angles: $\mathbf{35°}$, $\mathbf{80°}$ and $\mathbf{65°}$ &nbsp; (check: 35 + 80 + 65 = 180 ✓)
+</div>
+
+<!-- ===================== 4.1.5 QUADRILATERALS ===================== -->
+<h2>4.1.5 Special Quadrilaterals (G4)</h2>
+
+<p>Any quadrilateral can be split by a diagonal into two triangles, so its angles add up to $2 \times 180° = $ <strong>360°</strong>.</p>
+
+<table>
+  <thead><tr><th>Shape</th><th>Sides</th><th>Angles</th><th>Diagonals</th><th>Symmetry (lines / rotation)</th></tr></thead>
+  <tbody>
+    <tr><td>Square</td><td>4 equal; opposite sides parallel</td><td>All 90°</td><td>Equal; bisect each other at 90°</td><td>4 / order 4</td></tr>
+    <tr><td>Rectangle</td><td>Opposite sides equal and parallel</td><td>All 90°</td><td>Equal; bisect each other</td><td>2 / order 2</td></tr>
+    <tr><td>Rhombus</td><td>4 equal; opposite sides parallel</td><td>Opposite angles equal</td><td>Bisect each other at 90°</td><td>2 / order 2</td></tr>
+    <tr><td>Parallelogram</td><td>Opposite sides equal and parallel</td><td>Opposite angles equal; neighbouring angles add to 180°</td><td>Bisect each other</td><td>0 / order 2</td></tr>
+    <tr><td>Kite</td><td>Two pairs of equal adjacent sides</td><td>One pair of opposite angles equal</td><td>Meet at 90°; one bisects the other</td><td>1 / order 1</td></tr>
+    <tr><td>Trapezium</td><td>Exactly one pair of parallel sides</td><td>Co-interior angles between the parallel sides add to 180°</td><td>No special property (equal in an isosceles trapezium)</td><td>0 / order 1 (isosceles trapezium: 1 line)</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  The angles of a quadrilateral are $3x$, $2x + 15$, $x + 45$ and $4x$ (in degrees). Work out the largest angle.<br><br>
+  $10x + 60 = 360 \Rightarrow 10x = 300 \Rightarrow x = 30$<br>
+  Angles: 90°, 75°, 75°, 120°. Largest angle = $\mathbf{120°}$
+</div>
+
+<div class="worked-example">
+  ABCD is a parallelogram with angle ABC = 68°. Work out angle BCD and angle CDA.<br><br>
+  AB is parallel to DC, so angles ABC and BCD are co-interior: angle BCD = $180 - 68 = \mathbf{112°}$<br>
+  Opposite angles of a parallelogram are equal: angle CDA = angle ABC = $\mathbf{68°}$
+</div>
+
+<div class="exam-tip">
+  Shapes sit inside families: every square is a rectangle and a rhombus, and every rhombus is a parallelogram. If asked to give a property that distinguishes two shapes, pick one the other shape genuinely lacks &mdash; e.g. a rectangle's diagonals are equal, a general parallelogram's are not.
+</div>
+
+<!-- ===================== 4.1.6 POLYGONS ===================== -->
+<h2>4.1.6 Angles in Polygons (G3)</h2>
+
+<table>
+  <thead><tr><th>Sides</th><th>Name</th><th>Interior angle sum</th><th>Each interior angle (regular)</th><th>Each exterior angle (regular)</th></tr></thead>
+  <tbody>
+    <tr><td>3</td><td>Triangle</td><td>180°</td><td>60°</td><td>120°</td></tr>
+    <tr><td>4</td><td>Quadrilateral</td><td>360°</td><td>90°</td><td>90°</td></tr>
+    <tr><td>5</td><td>Pentagon</td><td>540°</td><td>108°</td><td>72°</td></tr>
+    <tr><td>6</td><td>Hexagon</td><td>720°</td><td>120°</td><td>60°</td></tr>
+    <tr><td>8</td><td>Octagon</td><td>1080°</td><td>135°</td><td>45°</td></tr>
+    <tr><td>9</td><td>Nonagon</td><td>1260°</td><td>140°</td><td>40°</td></tr>
+    <tr><td>10</td><td>Decagon</td><td>1440°</td><td>144°</td><td>36°</td></tr>
+  </tbody>
+</table>
+
+<div class="formula-box">
+  Sum of interior angles of an $n$-sided polygon $= (n - 2) \times 180°$<br>
+  Sum of exterior angles of <strong>any</strong> polygon $= 360°$<br>
+  Regular polygon: exterior angle $= \dfrac{360°}{n}$, &nbsp; interior angle $= 180° - \text{exterior angle}$
+</div>
+
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <polygon points="150,20 245,89 209,181 91,181 55,89" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="150" y1="20" x2="209" y2="181" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <line x1="150" y1="20" x2="91" y2="181" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="150" y="196" font-size="12" fill="#374151" font-family="sans-serif" text-anchor="middle">From one vertex: 5 − 2 = 3 triangles, 3 × 180° = 540°</text>
+</svg>
+
+<div class="worked-example">
+  Each interior angle of a regular polygon is 170°. Work out the number of sides.<br><br>
+  Exterior angle $= 180 - 170 = 10°$<br>
+  $n = 360 \div 10 = \mathbf{36}$ sides
+</div>
+
+<div class="worked-example">
+  The interior angles of a polygon add up to 2520°. How many sides does it have?<br><br>
+  $(n - 2) \times 180 = 2520 \Rightarrow n - 2 = 14 \Rightarrow n = \mathbf{16}$
+</div>
+
+<div class="worked-example">
+  Show that a regular polygon cannot have interior angles of 130°.<br><br>
+  Exterior angle = $180 - 130 = 50°$, so $n = 360 \div 50 = 7.2$.<br>
+  The number of sides must be a whole number, so no regular polygon has interior angles of 130°.
+</div>
+
+<div class="exam-tip">
+  Go via the exterior angle whenever you can &mdash; on Paper 1, $360 \div 10$ is far quicker and safer than solving $(n - 2) \times 180 = 170n$.
+</div>
+
+<!-- ===================== 4.1.7 REASONING ===================== -->
+<h2>4.1.7 Multi-step Angle Reasoning (G3, G4)</h2>
+
+<p>Longer problems combine several facts: polygon angles, isosceles triangles and parallel lines. Work one angle at a time, write each angle on the diagram, and give the reason beside each step.</p>
+
+<div class="worked-example">
+  ABCDEF is a regular hexagon. Work out angle ACD.<br><br>
+  Interior angle of a regular hexagon = $(6 - 2) \times 180 \div 6 = 120°$.<br>
+  AB = BC (sides of a regular hexagon), so triangle ABC is isosceles and angle BCA = $(180 - 120) \div 2 = 30°$ (base angles equal, angles in a triangle add to 180°).<br>
+  Angle ACD = angle BCD − angle BCA = $120 - 30 = \mathbf{90°}$
+</div>
+
+<div class="worked-example">
+  Triangle XYZ has XY = XZ. The line through X parallel to YZ makes an angle of 54° with XY. Work out angle YXZ.<br><br>
+  Angle XYZ = 54° (alternate angles are equal).<br>
+  Angle XZY = 54° (base angles of an isosceles triangle are equal).<br>
+  Angle YXZ = $180 - 54 - 54 = \mathbf{72°}$ (angles in a triangle add up to 180°)
+</div>
+
+<div class="exam-tip">
+  &ldquo;Give reasons&rdquo; questions on Edexcel papers typically award a separate mark for a full set of correct reasons. Name the triangle that is isosceles and say why (e.g. &ldquo;AB = BC, sides of a regular hexagon&rdquo;).
+</div>
+
+<!-- ===================== 4.1.8 CONSTRUCTIONS ===================== -->
+<h2>4.1.8 Ruler and Compass Constructions (G2)</h2>
+
+<p>You need a sharp pencil, a ruler and a pair of compasses. Do not use a protractor unless the question allows it. <strong>Every construction arc must be left visible</strong> &mdash; the arcs are the evidence the examiner is looking for.</p>
+
+<h3>Perpendicular bisector of a line segment AB</h3>
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="260" height="210" viewBox="0 0 260 210" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <line x1="50" y1="105" x2="210" y2="105" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="50" cy="105" r="3" fill="#2563eb"/>
+  <circle cx="210" cy="105" r="3" fill="#2563eb"/>
+  <text x="36" y="110" font-size="14" fill="#1e40af" font-family="sans-serif" font-weight="700">A</text>
+  <text x="216" y="110" font-size="14" fill="#1e40af" font-family="sans-serif" font-weight="700">B</text>
+  <path d="M 145,25 A 110 110 0 0 1 160,60" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
+  <path d="M 160,150 A 110 110 0 0 1 145,185" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
+  <path d="M 100,60 A 110 110 0 0 1 115,25" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
+  <path d="M 115,185 A 110 110 0 0 1 100,150" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
+  <line x1="130" y1="22" x2="130" y2="188" stroke="#dc2626" stroke-width="2"/>
+  <polyline points="130,95 140,95 140,105" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+</svg>
+<div style="flex:1; min-width:200px;">
+  <ol>
+    <li>Set the compasses to a radius greater than half of AB.</li>
+    <li>Put the point on A and draw an arc above AB and an arc below it.</li>
+    <li>Without changing the radius, do the same from B so that the arcs cross in two places.</li>
+    <li>Draw a straight line through the two crossing points. It cuts AB at its midpoint, at 90°.</li>
+  </ol>
+</div>
+</div>
+
+<h3>Perpendicular from a point P to a line</h3>
+<ol>
+  <li>With the compass point on P, draw an arc that crosses the line at two points, X and Y.</li>
+  <li>From X and then from Y (same radius), draw arcs on the opposite side of the line from P so they cross.</li>
+  <li>Join P to the crossing point. This line meets the original line at 90°.</li>
+</ol>
+
+<h3>Perpendicular at a point P on a line</h3>
+<ol>
+  <li>With centre P, mark two points X and Y on the line, the same distance either side of P.</li>
+  <li>Widen the compasses and draw arcs from X and from Y that cross above P.</li>
+  <li>Join P to the crossing point.</li>
+</ol>
+
+<div class="definition">
+  The <strong>shortest distance</strong> from a point to a line is the <strong>perpendicular distance</strong>: the length of the line segment from the point that meets the line at 90°.
+</div>
+
+<h3>Bisecting an angle</h3>
+<ol>
+  <li>With centre at the vertex O, draw an arc crossing both arms of the angle, at X and Y.</li>
+  <li>From X and from Y, using the same radius, draw two arcs that cross at Z inside the angle.</li>
+  <li>Draw the line OZ. It divides the angle into two equal angles.</li>
+</ol>
+
+<h3>Constructing angles of 60°, 30°, 90° and 45°</h3>
+<ol>
+  <li>For 60°: mark O on a line, draw an arc centred on O cutting the line at X, then with the <strong>same radius</strong> draw an arc centred on X cutting the first arc at Y. Triangle OXY is equilateral, so angle XOY = 60°.</li>
+  <li>For 30°: bisect the 60° angle.</li>
+  <li>For 90°: construct the perpendicular at a point on a line. For 45°: bisect the 90° angle.</li>
+</ol>
+
+<div class="exam-tip">
+  Rubbing out construction arcs normally costs the marks even if the final line is correct. Edexcel usually allows a tolerance of about 2 mm for lengths and 2° for angles.
+</div>
+
+<!-- ===================== 4.1.9 LOCI ===================== -->
+<h2>4.1.9 Loci (G2)</h2>
+
+<div class="definition">
+  A <strong>locus</strong> (plural loci) is the set of all points that satisfy a rule.
+</div>
+
+<table>
+  <thead><tr><th>Rule</th><th>Locus</th></tr></thead>
+  <tbody>
+    <tr><td>A fixed distance from a point P</td><td>A circle with centre P</td></tr>
+    <tr><td>A fixed distance from a line segment AB</td><td>Two lines parallel to AB, joined by a semicircle at each end</td></tr>
+    <tr><td>Equidistant from two points A and B</td><td>The perpendicular bisector of AB</td></tr>
+    <tr><td>Equidistant from two lines that meet</td><td>The bisector of the angle between them</td></tr>
+  </tbody>
+</table>
+
+<p>Regions use inequality language: &ldquo;less than 3 m from P&rdquo; is the inside of the circle; &ldquo;nearer to A than to B&rdquo; is the side of the perpendicular bisector containing A; &ldquo;nearer to AB than to AD&rdquo; is the side of the angle bisector containing AB. When there are several conditions, shade only the region where they all hold, and label it R.</p>
+
+<svg width="340" height="210" viewBox="0 0 340 210" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0;">
+  <rect x="40" y="40" width="250" height="150" fill="none" stroke="#374151" stroke-width="2"/>
+  <path d="M 40,190 L 140,190 A 100 100 0 0 0 110.7,119.3 Z" fill="#bbf7d0" stroke="none"/>
+  <path d="M 140,190 A 100 100 0 0 0 40,90" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <line x1="40" y1="190" x2="190" y2="40" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6,4"/>
+  <text x="26" y="204" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">A</text>
+  <text x="294" y="204" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">B</text>
+  <text x="294" y="38" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">C</text>
+  <text x="26" y="38" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">D</text>
+  <text x="150" y="150" font-size="11" fill="#166534" font-family="sans-serif">R: within 4 m of A, nearer AB than AD</text>
+</svg>
+
+<div class="worked-example">
+  A rectangular yard ABCD is drawn to a scale of 1 cm to 2 m. A lamp must be within 8 m of A and nearer to AB than to AD. How do you show the region?<br><br>
+  8 m at 1 cm to 2 m is $8 \div 2 = 4$ cm: draw an arc of radius 4 cm, centre A.<br>
+  Construct the bisector of angle DAB with compasses.<br>
+  Shade the region inside the arc and on the AB side of the bisector (as in the diagram).
+</div>
+
+<!-- ===================== 4.1.10 MEASURING, SCALE, BEARINGS ===================== -->
+<h2>4.1.10 Measuring, Scale Drawings and Bearings (G15)</h2>
+
+<h3>Measuring and scale drawings</h3>
+<ul>
+  <li>Measure lengths to the nearest millimetre. Measure angles to the nearest degree, reading the protractor scale that starts at 0° on the arm you are measuring from.</li>
+  <li>A map scale can be written as 1 cm to 500 m or as a ratio such as 1 : 50 000 (1 cm on the map is 50 000 cm in real life).</li>
+  <li>Real length = map length × scale factor; map length = real length ÷ scale factor. Then convert: 100 000 cm = 1 km.</li>
+</ul>
+
+<div class="worked-example">
+  A map has scale 1 : 40 000. Two stations are 7.5 cm apart on the map. Work out the real distance in kilometres.<br><br>
+  $7.5 \times 40\,000 = 300\,000$ cm $= 3000$ m $= \mathbf{3}$ <strong>km</strong>
+</div>
+
+<div class="worked-example">
+  On the same map, how far apart are two farms that are really 1.8 km apart?<br><br>
+  1.8 km = 180 000 cm, and $180\,000 \div 40\,000 = \mathbf{4.5}$ <strong>cm</strong>
+</div>
+
+<h3>Bearings</h3>
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="240" height="230" viewBox="0 0 240 230" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <line x1="120" y1="200" x2="120" y2="30" stroke="#374151" stroke-width="2"/>
+  <polygon points="120,22 114,36 126,36" fill="#374151"/>
+  <text x="114" y="18" font-size="13" fill="#374151" font-family="sans-serif" font-weight="700">N</text>
+  <!-- bearing 058: direction (sin58, -cos58) = (0.848, -0.530) * 100 -->
+  <line x1="120" y1="120" x2="204.8" y2="67" stroke="#2563eb" stroke-width="2.5"/>
+  <path d="M 120,80 A 40 40 0 0 1 153.9,98.8" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="134" y="76" font-size="13" fill="#dc2626" font-family="sans-serif" font-weight="700">058°</text>
+  <circle cx="120" cy="120" r="4" fill="#1e40af"/>
+  <text x="104" y="136" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">A</text>
+  <text x="206" y="64" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">B</text>
+</svg>
+<div style="flex:1; min-width:200px;">
+  <div class="formula-box" style="margin-top:0;">
+    A bearing is:<br>
+    1. measured from <strong>North</strong><br>
+    2. measured <strong>clockwise</strong><br>
+    3. written with <strong>three figures</strong> (e.g. 058°, 305°)<br><br>
+    <strong>Back bearing</strong>: add 180° if the bearing is less than 180°, otherwise subtract 180°
+  </div>
+</div>
+</div>
+
+<table>
+  <thead><tr><th>Compass point</th><th>N</th><th>NE</th><th>E</th><th>SE</th><th>S</th><th>SW</th><th>W</th><th>NW</th></tr></thead>
+  <tbody>
+    <tr><td>Bearing</td><td>000°</td><td>045°</td><td>090°</td><td>135°</td><td>180°</td><td>225°</td><td>270°</td><td>315°</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  The bearing of B from A is 058°. Work out the bearing of A from B.<br><br>
+  $058 + 180 = \mathbf{238°}$ &nbsp; (the North lines at A and B are parallel, so co-interior angles add to 180°)
+</div>
+
+<div class="worked-example">
+  A boat sails from P on a bearing of 040° to A. It then sails on a bearing of 130° to B. Show that angle PAB = 90°.<br><br>
+  Bearing of P from A = $040 + 180 = 220°$<br>
+  Angle PAB = $220 - 130 = \mathbf{90°}$
+</div>
+
+<div class="exam-tip">
+  Read &ldquo;the bearing of X <strong>from</strong> Y&rdquo; as: stand at Y, face North, turn clockwise until you face X. Draw the North line at Y before measuring, and always write three figures &mdash; 58° should be written 058°.
+</div>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

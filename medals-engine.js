@@ -72,6 +72,7 @@ const SUBJECT_TOPIC_KEY = {
   'Mathematics_AQA': 'maths-aqa',
   'Mathematics_OCR|gcse': 'maths-ocr-gcse',
   'Mathematics_AQA|gcse': 'maths-aqa-gcse',
+  'Mathematics_Edexcel|gcse': 'maths-edexcel-gcse',
   'Mathematics_OCR|alevel': 'maths-ocr-alevel',
   'Mathematics_Edexcel': 'maths-edexcel',
   'Further Mathematics_Edexcel': 'further-maths-edexcel',

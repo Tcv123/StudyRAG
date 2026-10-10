@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 1.1 — Structure &amp; Calculation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        .katex-display { margin: 16px 0; }
+        .diagram-caption { text-align: center; font-size: 0.88rem; color: #6b7280; margin-top: 6px; margin-bottom: 20px; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.1 Structure &amp; Calculation</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Number &mdash; spec refs N1–N5 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<p>Everything else in 1MA1 rests on this topic: ordering numbers, calculating accurately with integers and decimals (positive and negative), applying the priority of operations, and using primes, factors and multiples. Paper 1 has no calculator, so you must be fluent with formal written methods. Systematic listing is on both tiers; the product rule for counting is <strong>Higher only</strong>.</p>
+
+<!-- ===================== 1.1.1 Ordering ===================== -->
+<h2>1.1.1 Ordering Numbers and Inequality Symbols (N1)</h2>
+
+<div class="definition">
+<ul>
+  <li><strong>$=$</strong> equal to &nbsp; <strong>$\neq$</strong> not equal to</li>
+  <li><strong>$&lt;$</strong> less than &nbsp; <strong>$&gt;$</strong> greater than</li>
+  <li><strong>$\le$</strong> less than or equal to &nbsp; <strong>$\ge$</strong> greater than or equal to</li>
+</ul>
+<p>Read the symbol from left to right: $-9 &lt; -4$ says "negative nine is less than negative four". The wide end of the symbol faces the larger number.</p>
+</div>
+
+<p>On a number line, values <strong>increase as you move right</strong>. For negative numbers, the bigger the digits, the further left the number sits, so $-9$ is smaller than $-4$ even though 9 is bigger than 4.</p>
+
+<svg viewBox="0 0 720 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;display:block;margin:16px auto;">
+  <line x1="30" y1="55" x2="690" y2="55" stroke="#1a1a2e" stroke-width="2"/>
+  <polygon points="690,55 680,50 680,60" fill="#1a1a2e"/>
+  <polygon points="30,55 40,50 40,60" fill="#1a1a2e"/>
+  <g font-family="system-ui,sans-serif" font-size="13" fill="#1a1a2e" text-anchor="middle">
+    <line x1="60" y1="48" x2="60" y2="62" stroke="#1a1a2e"/><text x="60" y="82">−1</text>
+    <line x1="160" y1="48" x2="160" y2="62" stroke="#1a1a2e"/><text x="160" y="82">−0.75</text>
+    <line x1="260" y1="48" x2="260" y2="62" stroke="#1a1a2e"/><text x="260" y="82">−0.5</text>
+    <line x1="360" y1="48" x2="360" y2="62" stroke="#1a1a2e"/><text x="360" y="82">−0.25</text>
+    <line x1="460" y1="48" x2="460" y2="62" stroke="#1a1a2e"/><text x="460" y="82">0</text>
+    <line x1="560" y1="48" x2="560" y2="62" stroke="#1a1a2e"/><text x="560" y="82">0.25</text>
+    <line x1="660" y1="48" x2="660" y2="62" stroke="#1a1a2e"/><text x="660" y="82">0.5</text>
+  </g>
+  <circle cx="340" cy="55" r="6" fill="#dc2626"/><text x="340" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#dc2626">−0.3</text>
+  <circle cx="540" cy="55" r="6" fill="#2563eb"/><text x="530" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#2563eb">0.2</text>
+  <circle cx="549" cy="55" r="6" fill="#16a34a"/><text x="566" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#16a34a">2/9</text>
+  <text x="360" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" fill="#6b7280">smaller ← &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;→ larger</text>
+</svg>
+<p class="diagram-caption">$-0.3 &lt; -\frac{1}{4} &lt; 0.2 &lt; \frac{2}{9}$: $\frac{2}{9} = 0.222\ldots$ sits just to the right of $0.2$.</p>
+
+<h3>Ordering decimals and fractions</h3>
+<ul>
+  <li><strong>Decimals:</strong> give every number the same number of decimal places by adding zeros, then compare from the left. $0.57, 0.507, 0.5 \to 0.570, 0.507, 0.500$, so $0.5 &lt; 0.507 &lt; 0.57$.</li>
+  <li><strong>Fractions:</strong> change to decimals, or rewrite over a common denominator.</li>
+  <li><strong>Negatives:</strong> order them as if positive, then reverse: $0.705 &lt; 0.75$, so $-0.75 &lt; -0.705$.</li>
+</ul>
+
+<div class="worked-example">
+<p>Write in order of size, smallest first: $\frac{2}{9},\; -0.3,\; 0.2,\; -\frac{1}{4}$</p>
+<p>$\frac{2}{9} = 0.222\ldots$ and $-\frac{1}{4} = -0.25$.</p>
+<p>Negatives: $0.3 &gt; 0.25$, so $-0.3 &lt; -0.25$. Positives: $0.2 &lt; 0.222\ldots$</p>
+<p><strong>Answer: $-0.3,\; -\frac{1}{4},\; 0.2,\; \frac{2}{9}$</strong></p>
+</div>
+
+<div class="exam-tip">
+Edexcel often mixes fractions, decimals and negatives in one list. Write the decimal equivalent above each number before you start, and tick each one off as you place it so none are missed.
+</div>
+
+<!-- ===================== 1.1.2 Four operations ===================== -->
+<h2>1.1.2 The Four Operations and Place Value (N2)</h2>
+
+<h3>Place value</h3>
+<table>
+  <thead><tr><th>Millions</th><th>Hundred thousands</th><th>Ten thousands</th><th>Thousands</th><th>Hundreds</th><th>Tens</th><th>Units</th><th>.</th><th>Tenths</th><th>Hundredths</th><th>Thousandths</th></tr></thead>
+  <tbody><tr><td>5</td><td>2</td><td>0</td><td>8</td><td>1</td><td>3</td><td>6</td><td>.</td><td>0</td><td>4</td><td>7</td></tr></tbody>
+</table>
+<p>In $5\,208\,136.047$ the 2 is worth $200\,000$, the 4 is worth $\frac{4}{100} = 0.04$ and the 7 is worth $\frac{7}{1000} = 0.007$.</p>
+<p>Multiplying by 10, 100, 1000 moves every digit 1, 2, 3 places to the <strong>left</strong>; dividing moves them to the <strong>right</strong>: $7.2 \div 100 = 0.072$.</p>
+
+<h3>Negative numbers</h3>
+<div class="formula-box">
+<p><strong>× and ÷:</strong> same signs give a positive answer; different signs give a negative answer.</p>
+<p>$(-36) \div (-4) = 9 \qquad (-3)\times(-5)\times(-2) = -30 \qquad (-3)^3 = -27$</p>
+<p><strong>+ and −:</strong> subtracting a negative is the same as adding: $-4 - (-11) = -4 + 11 = 7$.</p>
+</div>
+
+<h3>Formal written methods</h3>
+<p>1MA1 expects column addition and subtraction, long multiplication (or the grid method) and short or long division, applied to integers, decimals, fractions and mixed numbers, both positive and negative.</p>
+
+<div class="worked-example">
+<p>Work out $5.4 \times 2.7$ without a calculator.</p>
+<p>Remove the decimal points: $54 \times 27 = 1080 + 378 = 1458$.</p>
+<p>The question has $1 + 1 = 2$ decimal places, so the answer has 2: <strong>$14.58$</strong>. Estimate check: $5 \times 3 = 15$.</p>
+</div>
+
+<div class="worked-example">
+<p>Work out $9.6 \div 0.04$.</p>
+<p>Multiply both numbers by 100 so the divisor is a whole number: $960 \div 4 = \mathbf{240}$.</p>
+</div>
+
+<div class="formula-box">
+<p><strong>Dividing by a decimal:</strong> scale <em>both</em> numbers by the same power of 10 until you are dividing by a whole number. The answer is unchanged:</p>
+$$25.2 \div 0.7 = 252 \div 7 = 36$$
+</div>
+
+<h3>Using a given fact</h3>
+<p>You are given $52 \times 34 = 1768$. Track the powers of 10:</p>
+<ul>
+  <li>$5.2 \times 3.4$: each factor is 10 times smaller, so the product is 100 times smaller $= 17.68$</li>
+  <li>$1768 \div 3.4$: $1768 \div 34 = 52$; dividing by a number 10 times smaller gives an answer 10 times bigger $= 520$</li>
+</ul>
+
+<div class="worked-example">
+<p>A café buys 40 bottles of juice for £0.85 each and sells them all for £1.60 each. Work out the profit.</p>
+<p>Cost: $40 \times 0.85 = £34$. Takings: $40 \times 1.60 = £64$.</p>
+<p>Profit $= 64 - 34 = \mathbf{£30}$.</p>
+</div>
+
+<div class="exam-tip">
+On Paper 1, always write a quick estimate next to a decimal calculation. If $5.4 \times 2.7$ came out as $145.8$ or $1.458$, the estimate of 15 shows you misplaced the decimal point.
+</div>
+
+<!-- ===================== 1.1.3 Operations ===================== -->
+<h2>1.1.3 Priority of Operations and Inverse Operations (N3)</h2>
+
+<div class="definition">
+<p><strong>BIDMAS</strong> sets the order in which operations are carried out:</p>
+<p><strong>B</strong>rackets &rarr; <strong>I</strong>ndices (powers, roots, reciprocals) &rarr; <strong>D</strong>ivision and <strong>M</strong>ultiplication (working left to right) &rarr; <strong>A</strong>ddition and <strong>S</strong>ubtraction (working left to right)</p>
+</div>
+
+<div class="worked-example">
+<p>Work out $15 - 2 \times (-3)^2 + \sqrt[3]{8}$.</p>
+<p>Indices and roots first: $(-3)^2 = 9$ and $\sqrt[3]{8} = 2$. Then multiply: $2 \times 9 = 18$.</p>
+<p>Finally left to right: $15 - 18 + 2 = \mathbf{-1}$.</p>
+</div>
+
+<div class="worked-example">
+<p>Work out $24 \div 4 \times 2$.</p>
+<p>Division and multiplication have equal priority, so work left to right: $24 \div 4 = 6$, then $6 \times 2 = \mathbf{12}$.</p>
+<p>(Doing $4 \times 2$ first gives $24 \div 8 = 3$, which is wrong.)</p>
+</div>
+
+<h3>Inverse operations, reciprocals and cancellation</h3>
+<ul>
+  <li>Addition and subtraction are inverses; multiplication and division are inverses; squaring and square-rooting are inverses.</li>
+  <li>The <strong>reciprocal</strong> of $n$ is $\frac{1}{n}$; the reciprocal of $\frac{a}{b}$ is $\frac{b}{a}$. The reciprocal of $0.2 = \frac{1}{5}$ is $5$. A number times its reciprocal is 1.</li>
+  <li>Dividing by $n$ is the same as multiplying by $\frac{1}{n}$.</li>
+  <li>Cancel common factors before multiplying out: $\dfrac{48 \times 25}{16 \times 5} = 3 \times 5 = 15$.</li>
+</ul>
+
+<div class="exam-tip">
+Check divisions with the inverse: if you find $1458 \div 27 = 54$, confirm that $54 \times 27 = 1458$. A fraction line works like a bracket &mdash; finish the whole numerator and the whole denominator before dividing.
+</div>
+
+<!-- ===================== 1.1.4 Primes ===================== -->
+<h2>1.1.4 Primes, Factors and Multiples (N4)</h2>
+
+<div class="definition">
+<ul>
+  <li><strong>Factor (divisor):</strong> a whole number that divides exactly into another. Factors of 20: 1, 2, 4, 5, 10, 20.</li>
+  <li><strong>Multiple:</strong> the result of multiplying by a whole number. Multiples of 7: 7, 14, 21, 28, …</li>
+  <li><strong>Prime number:</strong> has exactly two factors, 1 and itself. 1 is <em>not</em> prime; 2 is the only even prime.</li>
+  <li><strong>HCF:</strong> highest common factor &mdash; the biggest number that divides into every number in the set.</li>
+  <li><strong>LCM:</strong> lowest common multiple &mdash; the smallest number that every number in the set divides into.</li>
+</ul>
+</div>
+
+<p>Primes below 50: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47.</p>
+
+<h3>Prime factorisation</h3>
+<p>The <strong>unique factorisation theorem</strong> says every whole number greater than 1 is a product of primes in exactly one way (apart from order). Find it with a factor tree or repeated division by primes, and write the answer using <strong>product notation</strong> in index form.</p>
+
+<svg viewBox="0 0 360 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;display:block;margin:16px auto;">
+  <g stroke="#2563eb" stroke-width="2">
+    <line x1="180" y1="35" x2="110" y2="80"/><line x1="180" y1="35" x2="250" y2="80"/>
+    <line x1="250" y1="95" x2="200" y2="140"/><line x1="250" y1="95" x2="300" y2="140"/>
+    <line x1="200" y1="155" x2="160" y2="195"/><line x1="200" y1="155" x2="240" y2="195"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="16" text-anchor="middle" font-weight="700">
+    <text x="180" y="28" fill="#1a1a2e">120</text>
+    <circle cx="110" cy="88" r="15" fill="#dcfce7" stroke="#16a34a"/><text x="110" y="94" fill="#166534">2</text>
+    <text x="250" y="92" fill="#1a1a2e">60</text>
+    <text x="200" y="152" fill="#1a1a2e">30</text>
+    <circle cx="300" cy="148" r="15" fill="#dcfce7" stroke="#16a34a"/><text x="300" y="154" fill="#166534">2</text>
+    <circle cx="160" cy="203" r="15" fill="#dcfce7" stroke="#16a34a"/><text x="160" y="209" fill="#166534">2</text>
+    <text x="240" y="209" fill="#1a1a2e">15</text>
+  </g>
+  <text x="290" y="212" font-family="system-ui,sans-serif" font-size="13" fill="#6b7280">15 = 3 × 5</text>
+</svg>
+<p class="diagram-caption">Factor tree for 120: circle each prime as you reach it. $120 = 2 \times 2 \times 2 \times 3 \times 5 = 2^3 \times 3 \times 5$.</p>
+
+<h3>HCF and LCM from prime factors</h3>
+<div class="formula-box">
+<p><strong>HCF</strong> = product of the primes common to <em>both</em> numbers, each to its <strong>lowest</strong> power.</p>
+<p><strong>LCM</strong> = product of <em>every</em> prime that appears, each to its <strong>highest</strong> power.</p>
+</div>
+
+<div class="worked-example">
+<p>Find the HCF and the LCM of 48 and 180.</p>
+<p>$48 = 2^4 \times 3$ &nbsp;&nbsp; $180 = 2^2 \times 3^2 \times 5$</p>
+<p>HCF $= 2^2 \times 3 = \mathbf{12}$ &nbsp;&nbsp; LCM $= 2^4 \times 3^2 \times 5 = \mathbf{720}$</p>
+</div>
+
+<svg viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;display:block;margin:16px auto;">
+  <circle cx="160" cy="100" r="80" fill="#dbeafe" fill-opacity="0.6" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="260" cy="100" r="80" fill="#dcfce7" fill-opacity="0.6" stroke="#16a34a" stroke-width="2"/>
+  <g font-family="system-ui,sans-serif" font-size="18" text-anchor="middle" fill="#1a1a2e">
+    <text x="160" y="14" font-size="14" fill="#1e40af">48</text>
+    <text x="260" y="14" font-size="14" fill="#166534">180</text>
+    <text x="120" y="92">2</text><text x="120" y="118">2</text>
+    <text x="210" y="85">2</text><text x="210" y="110">2</text><text x="210" y="135">3</text>
+    <text x="300" y="92">3</text><text x="300" y="118">5</text>
+  </g>
+</svg>
+<p class="diagram-caption">Venn diagram of prime factors. HCF = product of the overlap ($2 \times 2 \times 3 = 12$); LCM = product of every number shown ($2 \times 2 \times 2 \times 2 \times 3 \times 3 \times 5 = 720$).</p>
+
+<div class="worked-example">
+<p>Two lighthouses flash together. One flashes every 20 seconds, the other every 32 seconds. After how long do they next flash together?</p>
+<p>$20 = 2^2 \times 5$, $32 = 2^5$, so LCM $= 2^5 \times 5 = 160$ seconds.</p>
+<p>They next flash together after <strong>160 seconds (2 minutes 40 seconds)</strong>.</p>
+</div>
+
+<div class="worked-example">
+<p>Ribbons of length 90 cm and 150 cm are cut into pieces that are all the same length, with nothing left over. Find the longest possible piece and the total number of pieces.</p>
+<p>$90 = 2 \times 3^2 \times 5$, $150 = 2 \times 3 \times 5^2$, so HCF $= 2 \times 3 \times 5 = 30$.</p>
+<p>Longest piece: <strong>30 cm</strong>; number of pieces $= 3 + 5 = \mathbf{8}$.</p>
+</div>
+
+<div class="exam-tip">
+Read the context to decide: <strong>HCF</strong> when sharing or cutting into the largest equal groups; <strong>LCM</strong> when things repeat and you want the next time they coincide, or the smallest total that two pack sizes can both make. A number with exactly three factors is the square of a prime (121 has factors 1, 11, 121).
+</div>
+
+<!-- ===================== 1.1.5 Listing ===================== -->
+<h2>1.1.5 Systematic Listing (N5)</h2>
+
+<p>When listing all possible outcomes, choose an order and stick to it so you never miss or repeat one. Fix the first item, run through every option for the rest, then move to the next first item. Tables work well for two choices.</p>
+
+<div class="worked-example">
+<p>List every 3-digit number that uses each of the digits 1, 4 and 9 exactly once. How many are odd?</p>
+<p>1 first: 149, 194 &nbsp; | &nbsp; 4 first: 419, 491 &nbsp; | &nbsp; 9 first: 914, 941</p>
+<p>There are 6 numbers. Odd numbers end in 1 or 9: 149, 419, 491, 941, so <strong>4</strong> are odd.</p>
+</div>
+
+<table>
+  <thead><tr><th>Starter \ Main</th><th>Pasta (P)</th><th>Curry (C)</th><th>Fish (F)</th></tr></thead>
+  <tbody>
+    <tr><td>Soup (S)</td><td>S, P</td><td>S, C</td><td>S, F</td></tr>
+    <tr><td>Melon (M)</td><td>M, P</td><td>M, C</td><td>M, F</td></tr>
+  </tbody>
+</table>
+<p class="diagram-caption">A two-way table lists every starter&ndash;main pair: 2 starters and 3 mains give 6 meals.</p>
+
+<h3>The product rule for counting <span class="higher-tag">Higher</span></h3>
+
+<div class="formula-box">
+<p>If there are $m$ ways of doing one task and, for each of these, $n$ ways of doing a second task, the two tasks can be done in</p>
+$$m \times n \text{ ways.}$$
+<p>For more tasks keep multiplying: $m \times n \times p \times \ldots$</p>
+</div>
+
+<ul>
+  <li><strong>Repetition allowed:</strong> each position has the full number of choices.</li>
+  <li><strong>No repetition:</strong> each position has one fewer choice than the one before, e.g. arranging 6 different books on a shelf: $6 \times 5 \times 4 \times 3 \times 2 \times 1 = 720$.</li>
+  <li><strong>Restrictions:</strong> fill the restricted positions first.</li>
+  <li><strong>Separate cases ("or"):</strong> count each case, then add.</li>
+</ul>
+
+<div class="worked-example">
+<p>A code is 3 letters from A–Z followed by one digit from 1–9. Letters may repeat. How many codes are there?</p>
+<p>$26 \times 26 \times 26 \times 9 = \mathbf{158\,184}$.</p>
+</div>
+
+<div class="worked-example">
+<p>How many odd 3-digit numbers have three different digits?</p>
+<p>Last digit (restricted): must be 1, 3, 5, 7 or 9 &rarr; 5 ways.</p>
+<p>First digit: cannot be 0 and cannot equal the last digit &rarr; 8 ways. Middle digit: any of the 10 digits except the two used &rarr; 8 ways.</p>
+<p>Total $= 5 \times 8 \times 8 = \mathbf{320}$.</p>
+</div>
+
+<div class="worked-example">
+<p>An ice-cream van sells 6 flavours. You can have a cone with one of 3 toppings, or a tub with no topping. How many different orders are possible?</p>
+<p>Cone: $6 \times 3 = 18$. Tub: $6$. The cases are alternatives, so add: $18 + 6 = \mathbf{24}$.</p>
+</div>
+
+<div class="exam-tip">
+Before multiplying, write a box for each position and fill in the number of choices for each one. This makes restrictions and "no repeats" conditions easy to see, and earns method marks even if you slip on the arithmetic.
+</div>
+
+<!-- ===================== Summary ===================== -->
+<h2>Summary</h2>
+<table>
+  <thead><tr><th>Skill</th><th>Key point</th></tr></thead>
+  <tbody>
+    <tr><td>Ordering (N1)</td><td>Change to decimals; for negatives, larger digits mean smaller numbers; use $=, \neq, &lt;, &gt;, \le, \ge$</td></tr>
+    <tr><td>Four operations (N2)</td><td>Same signs positive, different signs negative; count decimal places; make the divisor a whole number</td></tr>
+    <tr><td>Priority of operations (N3)</td><td>BIDMAS; × and ÷ left to right; reciprocal of $n$ is $\frac{1}{n}$; cancel before multiplying</td></tr>
+    <tr><td>Primes and factors (N4)</td><td>Prime factors in index form; HCF = lowest powers of shared primes; LCM = highest powers of all primes</td></tr>
+    <tr><td>Listing (N5)</td><td>List in a fixed order; product rule $m \times n$ <span class="higher-tag">Higher</span></td></tr>
+  </tbody>
+</table>
+
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+</body>
+</html>

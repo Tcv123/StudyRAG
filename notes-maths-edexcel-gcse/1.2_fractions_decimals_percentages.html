@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 1.2 — Fractions, Decimals &amp; Percentages</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        .katex-display { margin: 16px 0; }
+        .diagram-caption { text-align: center; font-size: 0.88rem; color: #6b7280; margin-top: 6px; margin-bottom: 20px; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.2 Fractions, Decimals &amp; Percentages</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Number &mdash; spec refs N2 (fractions), N8 (exact fractions), N10–N12 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<p>A fraction, a decimal and a percentage can all describe the same quantity. In 1MA1 you must apply the four operations to fractions and mixed numbers (positive and negative), calculate <strong>exactly</strong> with fractions, switch between terminating decimals and fractions, use fractions and percentages as operators, and handle fractions inside ratio problems. Converting between <strong>recurring decimals</strong> and fractions is <strong>Higher only</strong>.</p>
+
+<!-- ===================== Quick reference ===================== -->
+<h2>Quick Reference: Equivalences to Learn</h2>
+
+<svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;display:block;margin:16px auto;">
+  <rect x="0" y="0" width="720" height="200" rx="8" fill="#f8faff" stroke="#d1d5db" stroke-width="1.5"/>
+  <rect x="0" y="0" width="720" height="40" rx="8" fill="#2563eb"/>
+  <g font-family="system-ui,sans-serif" font-size="13" text-anchor="middle">
+    <g fill="white" font-weight="700">
+      <text x="60" y="25">Fraction</text><text x="180" y="25">Decimal</text><text x="300" y="25">Percentage</text>
+      <text x="420" y="25">Fraction</text><text x="540" y="25">Decimal</text><text x="660" y="25">Percentage</text>
+    </g>
+    <line x1="360" y1="0" x2="360" y2="200" stroke="#d1d5db"/>
+    <line x1="0" y1="80" x2="720" y2="80" stroke="#e5e7eb"/><line x1="0" y1="120" x2="720" y2="120" stroke="#e5e7eb"/><line x1="0" y1="160" x2="720" y2="160" stroke="#e5e7eb"/>
+    <g fill="#1a1a2e">
+      <text x="60" y="65">1/2</text><text x="180" y="65">0.5</text><text x="300" y="65">50%</text>
+      <text x="420" y="65">1/8</text><text x="540" y="65">0.125</text><text x="660" y="65">12.5%</text>
+      <text x="60" y="105">1/4</text><text x="180" y="105">0.25</text><text x="300" y="105">25%</text>
+      <text x="420" y="105">5/8</text><text x="540" y="105">0.625</text><text x="660" y="105">62.5%</text>
+      <text x="60" y="145">3/4</text><text x="180" y="145">0.75</text><text x="300" y="145">75%</text>
+      <text x="420" y="145">2/3</text><text x="540" y="145">0.666…</text><text x="660" y="145">66⅔%</text>
+      <text x="60" y="185">2/5</text><text x="180" y="185">0.4</text><text x="300" y="185">40%</text>
+      <text x="420" y="185">3/20</text><text x="540" y="185">0.15</text><text x="660" y="185">15%</text>
+    </g>
+  </g>
+</svg>
+<p class="diagram-caption">Learn these for Paper 1. Also: $\frac{1}{5} = 0.2 = 20\%$, $\frac{1}{3} = 0.333\ldots = 33\frac{1}{3}\%$, $\frac{1}{20} = 0.05 = 5\%$, $\frac{1}{100} = 0.01 = 1\%$.</p>
+
+<!-- ===================== 1.2.1 ===================== -->
+<h2>1.2.1 Fraction Basics (N2)</h2>
+
+<div class="definition">
+<ul>
+  <li><strong>Proper fraction:</strong> the numerator is smaller than the denominator, e.g. $\frac{4}{9}$.</li>
+  <li><strong>Improper fraction:</strong> the numerator is equal to or larger than the denominator, e.g. $\frac{17}{5}$.</li>
+  <li><strong>Mixed number:</strong> a whole number with a proper fraction, e.g. $3\frac{2}{5} = \frac{17}{5}$.</li>
+  <li><strong>Equivalent fractions:</strong> equal in value, e.g. $\frac{2}{3} = \frac{10}{15}$ (top and bottom multiplied by 5).</li>
+  <li><strong>Simplest form:</strong> divide numerator and denominator by their HCF, e.g. $\frac{45}{100} = \frac{9}{20}$ (HCF 5).</li>
+</ul>
+</div>
+
+<div class="formula-box">
+<p>Mixed to improper: $a\frac{b}{c} = \dfrac{ac + b}{c}$, e.g. $4\frac{1}{6} = \frac{4 \times 6 + 1}{6} = \frac{25}{6}$.</p>
+<p>Improper to mixed: divide and write the remainder over the denominator, e.g. $\frac{29}{12} = 2\frac{5}{12}$.</p>
+</div>
+
+<!-- ===================== 1.2.2 ===================== -->
+<h2>1.2.2 Calculating Exactly with Fractions (N2, N8)</h2>
+
+<h3>Adding and subtracting</h3>
+<p>Rewrite the fractions with a <strong>common denominator</strong> (the LCM of the denominators keeps numbers small), then add or subtract the numerators. The denominator stays the same.</p>
+$$\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}$$
+
+<div class="worked-example">
+<p>Work out $\frac{2}{3} + \frac{4}{5}$.</p>
+<p>LCM of 3 and 5 is 15: $\frac{10}{15} + \frac{12}{15} = \frac{22}{15} = \mathbf{1\frac{7}{15}}$</p>
+</div>
+
+<div class="worked-example">
+<p>Work out $4\frac{1}{6} - 1\frac{3}{4}$.</p>
+<p>As improper fractions: $\frac{25}{6} - \frac{7}{4} = \frac{50}{12} - \frac{21}{12} = \frac{29}{12} = \mathbf{2\frac{5}{12}}$</p>
+</div>
+
+<h3>Multiplying and dividing</h3>
+<div class="formula-box">
+$$\frac{a}{b} \times \frac{c}{d} = \frac{ac}{bd} \qquad\qquad \frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c}$$
+<p>Change mixed numbers to improper fractions first. To divide, multiply by the <strong>reciprocal</strong> of the second fraction. Cancel common factors before you multiply.</p>
+</div>
+
+<div class="worked-example">
+<p>Work out $3\frac{1}{3} \times 1\frac{2}{5}$.</p>
+<p>$\frac{10}{3} \times \frac{7}{5}$: cancel 10 and 5 to give $\frac{2}{3} \times \frac{7}{1} = \frac{14}{3} = \mathbf{4\frac{2}{3}}$</p>
+</div>
+
+<div class="worked-example">
+<p>Work out $2\frac{1}{4} \div 1\frac{4}{5}$.</p>
+<p>$\frac{9}{4} \div \frac{9}{5} = \frac{9}{4} \times \frac{5}{9} = \frac{5}{4} = \mathbf{1\frac{1}{4}}$</p>
+</div>
+
+<div class="worked-example">
+<p>Work out $-1\frac{1}{2} \times 2\frac{2}{3}$.</p>
+<p>$-\frac{3}{2} \times \frac{8}{3} = -\frac{24}{6} = \mathbf{-4}$ (different signs, so the answer is negative).</p>
+</div>
+
+<div class="worked-example">
+<p>A rectangle is $2\frac{2}{3}$ m long and $4\frac{1}{2}$ m wide. Find its exact area and exact perimeter.</p>
+<p>Area $= \frac{8}{3} \times \frac{9}{2} = \frac{72}{6} = \mathbf{12 \text{ m}^2}$</p>
+<p>Perimeter $= 2\left(\frac{8}{3} + \frac{9}{2}\right) = 2\left(\frac{16}{6} + \frac{27}{6}\right) = \frac{43}{3} = \mathbf{14\frac{1}{3} \text{ m}}$</p>
+</div>
+
+<div class="exam-tip">
+"Give your answer as an exact value" or "in its simplest form" means a fully simplified fraction or mixed number, not a rounded decimal. Never add denominators: $\frac{2}{5} + \frac{1}{3} \neq \frac{3}{8}$. For a negative mixed number convert the whole thing: $-2\frac{1}{4} = -\frac{9}{4}$.
+</div>
+
+<!-- ===================== 1.2.3 ===================== -->
+<h2>1.2.3 Terminating Decimals and Fractions (N10)</h2>
+
+<svg viewBox="0 0 600 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;display:block;margin:16px auto;">
+  <g font-family="system-ui,sans-serif" text-anchor="middle">
+    <rect x="230" y="10" width="140" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="300" y="38" font-size="16" font-weight="700" fill="#1e40af">Fraction</text>
+    <rect x="30" y="115" width="140" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/><text x="100" y="143" font-size="16" font-weight="700" fill="#166534">Decimal</text>
+    <rect x="430" y="115" width="140" height="44" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/><text x="500" y="143" font-size="16" font-weight="700" fill="#b45309">Percentage</text>
+    <g stroke="#6b7280" stroke-width="1.5" fill="none">
+      <line x1="240" y1="56" x2="130" y2="112"/><line x1="360" y1="56" x2="470" y2="112"/><line x1="175" y1="137" x2="425" y2="137"/>
+    </g>
+    <g font-size="12" fill="#374151">
+      <text x="145" y="75">numerator ÷ denominator</text>
+      <text x="455" y="75">× 100%</text>
+      <text x="300" y="130">× 100</text>
+      <text x="300" y="155">÷ 100</text>
+    </g>
+  </g>
+</svg>
+<p class="diagram-caption">Converting between the three forms. Decimal to fraction: write over 10, 100 or 1000 using place value, then simplify.</p>
+
+<ul>
+  <li><strong>Fraction &rarr; decimal:</strong> divide (short division), or find an equivalent fraction over 10, 100 or 1000: $\frac{3}{20} = \frac{15}{100} = 0.15$.</li>
+  <li><strong>Terminating decimal &rarr; fraction:</strong> $0.625 = \frac{625}{1000} = \frac{5}{8}$; $4.25 = 4\frac{1}{4} = \frac{17}{4}$.</li>
+  <li><strong>Percentage:</strong> out of 100: $28\% = \frac{28}{100} = \frac{7}{25} = 0.28$.</li>
+</ul>
+
+<div class="worked-example">
+<p>Write in order, smallest first: $0.71,\; \frac{7}{10},\; 72\%,\; \frac{5}{7}$</p>
+<p>As decimals: $0.71,\; 0.7,\; 0.72,\; 0.714\ldots$</p>
+<p><strong>Answer: $\frac{7}{10},\; 0.71,\; \frac{5}{7},\; 72\%$</strong></p>
+</div>
+
+<div class="exam-tip">
+When converting a decimal to a fraction, the last digit tells you the denominator: 0.625 ends in the thousandths column, so start with $\frac{625}{1000}$. Then simplify fully &mdash; $\frac{625}{1000}$ alone may not get the final mark.
+</div>
+
+<!-- ===================== 1.2.4 Recurring ===================== -->
+<h2>1.2.4 Recurring Decimals and Fractions (N10) <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+<p>A <strong>recurring decimal</strong> repeats a digit or block of digits for ever. Dots are placed over the first and last digit of the repeating block:</p>
+<p>$0.\dot{4} = 0.444\ldots \qquad 0.\dot{6}\dot{3} = 0.636363\ldots \qquad 0.8\dot{3} = 0.8333\ldots \qquad 0.\dot{3}7\dot{0} = 0.370370\ldots$</p>
+</div>
+
+<h3>Which fractions terminate?</h3>
+<p>Write the fraction in its simplest form. It gives a <strong>terminating</strong> decimal only if the denominator has no prime factors other than 2 and 5; otherwise it <strong>recurs</strong>.</p>
+<table>
+  <thead><tr><th>Fraction</th><th>Denominator</th><th>Decimal</th></tr></thead>
+  <tbody>
+    <tr><td>$\frac{9}{40}$</td><td>$2^3 \times 5$</td><td>$0.225$ (terminates)</td></tr>
+    <tr><td>$\frac{5}{12}$</td><td>$2^2 \times 3$</td><td>$0.41666\ldots$ (recurs)</td></tr>
+    <tr><td>$\frac{7}{15}$</td><td>$3 \times 5$</td><td>$0.4666\ldots$ (recurs)</td></tr>
+  </tbody>
+</table>
+
+<h3>Fraction &rarr; recurring decimal</h3>
+<p>Use short division, writing extra zeros after the decimal point, until a remainder repeats.</p>
+<div class="worked-example">
+<p>Write $\frac{2}{11}$ as a recurring decimal.</p>
+<p>$2.0000 \div 11$: 20 ÷ 11 = 1 r 9; 90 ÷ 11 = 8 r 2; 20 ÷ 11 = 1 r 9 &hellip; the remainder 9 has come back, so the digits repeat.</p>
+<p>$\frac{2}{11} = 0.181818\ldots = \mathbf{0.\dot{1}\dot{8}}$</p>
+</div>
+
+<h3>Recurring decimal &rarr; fraction</h3>
+<div class="formula-box">
+<ol>
+  <li>Let $x$ equal the recurring decimal, writing out at least two cycles.</li>
+  <li>Multiply by a power of 10 so that one copy has the recurring block just after the decimal point and another copy lines up with it ($\times 10$ for one repeating digit, $\times 100$ for two, $\times 1000$ for three).</li>
+  <li>Subtract so the recurring tails cancel.</li>
+  <li>Solve for $x$ and simplify.</li>
+</ol>
+</div>
+
+<div class="worked-example">
+<p>Prove that $0.\dot{6}\dot{3} = \frac{7}{11}$.</p>
+$$\begin{aligned} x &amp;= 0.636363\ldots \\ 100x &amp;= 63.636363\ldots \\ 99x &amp;= 63 \\ x &amp;= \tfrac{63}{99} = \tfrac{7}{11} \end{aligned}$$
+</div>
+
+<div class="worked-example">
+<p>Write $0.8\dot{3}$ (= 0.8333&hellip;) as a fraction in its simplest form.</p>
+<p>The repeating digit starts one place after the point, so use $100x$ and $10x$:</p>
+$$\begin{aligned} 100x &amp;= 83.333\ldots \\ 10x &amp;= 8.333\ldots \\ 90x &amp;= 75 \\ x &amp;= \tfrac{75}{90} = \tfrac{5}{6} \end{aligned}$$
+</div>
+
+<div class="worked-example">
+<p>Show that $0.2\dot{5}\dot{4} = \frac{14}{55}$.</p>
+$$\begin{aligned} 1000x &amp;= 254.5454\ldots \\ 10x &amp;= 2.5454\ldots \\ 990x &amp;= 252 \\ x &amp;= \tfrac{252}{990} = \tfrac{14}{55} \end{aligned}$$
+</div>
+
+<table>
+  <thead><tr><th>Pattern</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>$0.\dot{a} = \frac{a}{9}$</td><td>$0.\dot{4} = \frac{4}{9}$</td></tr>
+    <tr><td>$0.\dot{a}\dot{b} = \frac{ab}{99}$</td><td>$0.\dot{1}\dot{8} = \frac{18}{99} = \frac{2}{11}$</td></tr>
+    <tr><td>$0.\dot{a}b\dot{c} = \frac{abc}{999}$</td><td>$0.\dot{3}7\dot{0} = \frac{370}{999} = \frac{10}{27}$</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">
+Edexcel "Prove algebraically" questions need the full method: define $x$, write the two multiples, subtract, and simplify. Quoting the pattern above gains no marks for a proof. Show enough repeating digits that the tails clearly cancel.
+</div>
+
+<!-- ===================== 1.2.5 Operators ===================== -->
+<h2>1.2.5 Fractions and Percentages as Operators (N12)</h2>
+
+<p>"Of" means multiply. When a fraction or percentage acts on an amount it is an <strong>operator</strong> &mdash; a multiplier.</p>
+
+<div class="formula-box">
+<p>Fraction of an amount: $\frac{3}{8}$ of $56 = 56 \div 8 \times 3 = 21$</p>
+<p>Percentage of an amount: $r\%$ of $A = \dfrac{r}{100} \times A$, e.g. $22.5\%$ of $160 = 0.225 \times 160 = 36$</p>
+<p>Increase by $r\%$: multiply by $\left(1 + \frac{r}{100}\right)$ &nbsp; &nbsp; Decrease by $r\%$: multiply by $\left(1 - \frac{r}{100}\right)$</p>
+</div>
+
+<table>
+  <thead><tr><th>Change</th><th>Multiplier</th></tr></thead>
+  <tbody>
+    <tr><td>Find 6%</td><td>0.06</td></tr>
+    <tr><td>Increase by 7%</td><td>1.07</td></tr>
+    <tr><td>Increase by 20% (e.g. adding VAT)</td><td>1.2</td></tr>
+    <tr><td>Decrease by 17.5%</td><td>0.825</td></tr>
+    <tr><td>Decrease by 2/5</td><td>3/5 (or 0.6)</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+<p>Without a calculator, work out 45% of £72.</p>
+<p>10% = £7.20, so 40% = £28.80. 5% = £3.60. 45% = 28.80 + 3.60 = <strong>£32.40</strong>.</p>
+</div>
+
+<div class="worked-example">
+<p>A flat worth £240 000 increases in value by 5% and then decreases by 5%. Find its final value.</p>
+<p>$240\,000 \times 1.05 \times 0.95 = \mathbf{£239\,400}$</p>
+<p>The 5% decrease is taken from the larger value £252 000, so the flat does not return to £240 000. Overall multiplier $1.05 \times 0.95 = 0.9975$, a 0.25% decrease.</p>
+</div>
+
+<div class="worked-example">
+<p>A pair of trainers costs £85. A shop takes 20% off, then a further 10% off the sale price. Find the final price.</p>
+<p>$85 \times 0.8 \times 0.9 = \mathbf{£61.20}$ &mdash; not the same as 30% off, which gives $85 \times 0.7 = £59.50$.</p>
+</div>
+
+<div class="exam-tip">
+Successive percentage changes are multiplied, never added. A single multiplier is the quickest method on Papers 2 and 3. Percentage change, reverse percentages and compound interest belong to the ratio and proportion topics (R9, R16).
+</div>
+
+<!-- ===================== 1.2.6 Ratio ===================== -->
+<h2>1.2.6 Fractions in Ratio Problems (N11)</h2>
+
+<p>A ratio compares <strong>part with part</strong>; a fraction compares a <strong>part with the whole</strong>.</p>
+
+<svg viewBox="0 0 560 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;display:block;margin:16px auto;">
+  <g stroke="#ffffff" stroke-width="2">
+    <rect x="20" y="20" width="64" height="44" fill="#dc2626"/><rect x="84" y="20" width="64" height="44" fill="#dc2626"/><rect x="148" y="20" width="64" height="44" fill="#dc2626"/>
+    <rect x="212" y="20" width="64" height="44" fill="#2563eb"/><rect x="276" y="20" width="64" height="44" fill="#2563eb"/><rect x="340" y="20" width="64" height="44" fill="#2563eb"/><rect x="404" y="20" width="64" height="44" fill="#2563eb"/>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="13" text-anchor="middle">
+    <text x="116" y="88" fill="#dc2626">Ravi: 3 parts = 3/7</text>
+    <text x="340" y="88" fill="#1e40af">Sita: 4 parts = 4/7</text>
+    <text x="515" y="47" fill="#374151">7 parts</text>
+  </g>
+</svg>
+<p class="diagram-caption">Ravi : Sita $= 3 : 4$. Ravi gets $\frac{3}{7}$ of the total and Sita gets $\frac{4}{7}$; Ravi's share is $\frac{3}{4}$ of Sita's.</p>
+
+<ul>
+  <li>Ratio $a : b$ &rarr; the first share is $\frac{a}{a+b}$ of the whole.</li>
+  <li>If $\frac{5}{9}$ of a club are girls, then $\frac{4}{9}$ are boys and girls : boys $= 5 : 4$.</li>
+  <li>"A gets $\frac{3}{4}$ of what B gets" means A : B $= 3 : 4$.</li>
+</ul>
+
+<div class="worked-example">
+<p>Ravi and Sita share £154. Ravi gets $\frac{3}{4}$ of the amount Sita gets. Work out how much each receives.</p>
+<p>Ravi : Sita $= 3 : 4$, a total of 7 parts. One part $= 154 \div 7 = 22$.</p>
+<p>Ravi $= 3 \times 22 = \mathbf{£66}$, Sita $= 4 \times 22 = \mathbf{£88}$.</p>
+</div>
+
+<div class="worked-example">
+<p>Adults and children at a pool are in the ratio $4 : 5$. $\frac{1}{2}$ of the adults and $\frac{2}{5}$ of the children are swimming. What fraction of all the people are swimming?</p>
+<p>Adults are $\frac{4}{9}$ of the people: $\frac{1}{2} \times \frac{4}{9} = \frac{2}{9}$. Children are $\frac{5}{9}$: $\frac{2}{5} \times \frac{5}{9} = \frac{2}{9}$.</p>
+<p>Total swimming $= \frac{2}{9} + \frac{2}{9} = \mathbf{\frac{4}{9}}$.</p>
+</div>
+
+<!-- ===================== 1.2.7 Problems ===================== -->
+<h2>1.2.7 Multi-step Fraction Problems (N8, N12)</h2>
+
+<p>When a fraction is taken of "the rest" or "the remainder", convert each part into a fraction of the <em>original</em> amount before you work with money or quantities.</p>
+
+<div class="worked-example">
+<p>Jess spends $\frac{1}{3}$ of her money on travel and $\frac{3}{4}$ of the remainder on food. She has £45 left. How much did she start with?</p>
+<p>After travel, $\frac{2}{3}$ remains. She keeps $\frac{1}{4}$ of that: $\frac{2}{3} \times \frac{1}{4} = \frac{1}{6}$ of the original.</p>
+<p>$\frac{1}{6}$ of the total $= £45 \Rightarrow$ total $= \mathbf{£270}$.</p>
+</div>
+
+<div class="worked-example">
+<p>A water butt is $\frac{5}{6}$ full. After 35 litres are used it is $\frac{1}{4}$ full. Work out its capacity.</p>
+<p>$\frac{5}{6} - \frac{1}{4} = \frac{10}{12} - \frac{3}{12} = \frac{7}{12}$ of the butt is 35 litres.</p>
+<p>$\frac{1}{12} = 5$ litres, so capacity $= \mathbf{60}$ <strong>litres</strong>.</p>
+</div>
+
+<div class="exam-tip">
+A bar model makes "remainder" problems much clearer: shade the first fraction, split what is left into the second fraction's parts, and label the final piece with the known amount. Check by working forwards from your answer.
+</div>
+
+<!-- ===================== Summary ===================== -->
+<h2>Summary</h2>
+<table>
+  <thead><tr><th>Skill</th><th>Key method</th></tr></thead>
+  <tbody>
+    <tr><td>Add / subtract fractions (N2, N8)</td><td>Common denominator, then combine numerators</td></tr>
+    <tr><td>Multiply / divide fractions (N2, N8)</td><td>Improper fractions; multiply across; divide = multiply by the reciprocal</td></tr>
+    <tr><td>Terminating decimals (N10)</td><td>Fraction &rarr; decimal: divide; decimal &rarr; fraction: place value then simplify</td></tr>
+    <tr><td>Operators (N12)</td><td>"Of" means ×; increase by $r\%$: × $(1 + \frac{r}{100})$</td></tr>
+    <tr><td>Ratio and fractions (N11)</td><td>Share ÷ total number of parts</td></tr>
+    <tr><td>Recurring decimals (N10) <span class="higher-tag">Higher</span></td><td>$x$, $10^n x$, subtract, solve, simplify</td></tr>
+  </tbody>
+</table>
+
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+</body>
+</html>

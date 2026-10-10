@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 2.6 — Sequences</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.6 Sequences</h1>
+<p class="spec-ref">Pearson Edexcel GCSE Mathematics 1MA1 &mdash; Algebra &mdash; spec refs A23–A25 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<!-- ===================== 2.6.1 GENERATING SEQUENCES ===================== -->
+<h2>2.6.1 Generating Sequences (A23)</h2>
+
+<div class="definition">
+  A <strong>sequence</strong> is a list of numbers (<strong>terms</strong>) in a particular order, following a rule. The <strong>position</strong> of a term is written $n$: the first term is at $n = 1$, the second at $n = 2$, and so on.
+</div>
+
+<h3>Term-to-term rules</h3>
+<p>A <strong>term-to-term rule</strong> says how to get the next term from the one before. It only works if you also know a starting term.</p>
+
+<div class="worked-example">
+  The first term of a sequence is 4. The term-to-term rule is "multiply by 2 then add 3". Write down the next three terms.<br><br>
+  $4 \times 2 + 3 = 11$, &nbsp; $11 \times 2 + 3 = 25$, &nbsp; $25 \times 2 + 3 = 53$<br>
+  Sequence: 4, $\mathbf{11, 25, 53}$
+</div>
+
+<p>You may see a term-to-term rule written in <strong>suffix notation</strong>, where $u_n$ is the $n$th term and $u_{n+1}$ is the next one. For example $u_{n+1} = 3u_n - 2$ with $u_1 = 2$ gives 2, 4, 10, 28, &hellip; The question will always explain the notation it uses.</p>
+
+<h3>Position-to-term rules (the $n$th term)</h3>
+<p>A <strong>position-to-term rule</strong>, or <strong>$n$th term</strong>, lets you find any term directly by substituting its position for $n$ &mdash; no need to list all the terms before it.</p>
+
+<div class="worked-example">
+  The $n$th term of a sequence is $6n - 1$. Write down the first three terms and work out the 30th term.<br><br>
+  $n = 1$: $6 - 1 = 5$; &nbsp; $n = 2$: $12 - 1 = 11$; &nbsp; $n = 3$: $18 - 1 = 17$<br>
+  $n = 30$: $6 \times 30 - 1 = \mathbf{179}$
+</div>
+
+<div class="worked-example">
+  Write down the first three terms of the sequence with $n$th term $n^2 - 2$.<br><br>
+  $1 - 2 = -1$, &nbsp; $4 - 2 = 2$, &nbsp; $9 - 2 = 7$ &nbsp; &rarr; &nbsp; $\mathbf{-1, 2, 7}$
+</div>
+
+<h3>Sequences from patterns and diagrams</h3>
+<svg width="460" height="130" viewBox="0 0 460 130" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <g stroke="#2563eb" stroke-width="3" stroke-linecap="round">
+    <!-- Pattern 1: one triangle (3 sticks) -->
+    <line x1="30" y1="75" x2="70" y2="75"/><line x1="30" y1="75" x2="50" y2="40"/><line x1="70" y1="75" x2="50" y2="40"/>
+    <!-- Pattern 2: two triangles (5 sticks) -->
+    <line x1="110" y1="75" x2="150" y2="75"/><line x1="110" y1="75" x2="130" y2="40"/><line x1="150" y1="75" x2="130" y2="40"/>
+    <line x1="130" y1="40" x2="170" y2="40"/><line x1="150" y1="75" x2="170" y2="40"/>
+    <!-- Pattern 3: three triangles (7 sticks) -->
+    <line x1="220" y1="75" x2="260" y2="75"/><line x1="220" y1="75" x2="240" y2="40"/><line x1="260" y1="75" x2="240" y2="40"/>
+    <line x1="240" y1="40" x2="280" y2="40"/><line x1="260" y1="75" x2="280" y2="40"/>
+    <line x1="260" y1="75" x2="300" y2="75"/><line x1="280" y1="40" x2="300" y2="75"/>
+  </g>
+  <g font-family="sans-serif" font-size="12" fill="#374151" text-anchor="middle">
+    <text x="50" y="98">Pattern 1</text><text x="50" y="115">3 sticks</text>
+    <text x="140" y="98">Pattern 2</text><text x="140" y="115">5 sticks</text>
+    <text x="260" y="98">Pattern 3</text><text x="260" y="115">7 sticks</text>
+    <text x="395" y="62" fill="#166534" font-weight="700">2n + 1</text>
+  </g>
+</svg>
+<p>Each extra triangle shares one stick with the previous one, so it needs only 2 more sticks. The numbers of sticks are 3, 5, 7, &hellip; with $n$th term $2n + 1$, so pattern 50 needs $2 \times 50 + 1 = 101$ sticks.</p>
+
+<!-- ===================== 2.6.2 SPECIAL SEQUENCES ===================== -->
+<h2>2.6.2 Special Sequences (A24)</h2>
+
+<table>
+  <thead><tr><th>Sequence</th><th>First terms</th><th>$n$th term</th></tr></thead>
+  <tbody>
+    <tr><td>Square numbers</td><td>1, 4, 9, 16, 25, 36, &hellip;</td><td>$n^2$</td></tr>
+    <tr><td>Cube numbers</td><td>1, 8, 27, 64, 125, &hellip;</td><td>$n^3$</td></tr>
+    <tr><td>Triangular numbers</td><td>1, 3, 6, 10, 15, 21, &hellip;</td><td>$\dfrac{n(n+1)}{2}$</td></tr>
+    <tr><td>Even numbers</td><td>2, 4, 6, 8, &hellip;</td><td>$2n$</td></tr>
+    <tr><td>Odd numbers</td><td>1, 3, 5, 7, &hellip;</td><td>$2n - 1$</td></tr>
+    <tr><td>Powers of 3</td><td>3, 9, 27, 81, &hellip;</td><td>$3^n$</td></tr>
+  </tbody>
+</table>
+
+<h3>Triangular numbers</h3>
+<svg width="420" height="130" viewBox="0 0 420 130" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <g fill="#2563eb">
+    <circle cx="40" cy="90" r="6"/>
+    <circle cx="100" cy="90" r="6"/><circle cx="120" cy="90" r="6"/><circle cx="110" cy="72" r="6"/>
+    <circle cx="170" cy="90" r="6"/><circle cx="190" cy="90" r="6"/><circle cx="210" cy="90" r="6"/><circle cx="180" cy="72" r="6"/><circle cx="200" cy="72" r="6"/><circle cx="190" cy="54" r="6"/>
+    <circle cx="260" cy="90" r="6"/><circle cx="280" cy="90" r="6"/><circle cx="300" cy="90" r="6"/><circle cx="320" cy="90" r="6"/><circle cx="270" cy="72" r="6"/><circle cx="290" cy="72" r="6"/><circle cx="310" cy="72" r="6"/><circle cx="280" cy="54" r="6"/><circle cx="300" cy="54" r="6"/><circle cx="290" cy="36" r="6"/>
+  </g>
+  <g font-family="sans-serif" font-size="13" fill="#374151" text-anchor="middle">
+    <text x="40" y="118">1</text><text x="110" y="118">3</text><text x="190" y="118">6</text><text x="290" y="118">10</text>
+    <text x="375" y="80" fill="#166534" font-weight="700">+2, +3, +4…</text>
+  </g>
+</svg>
+<p>Each new triangle of dots adds a row that is one dot longer than the last, so the gaps between triangular numbers are 2, 3, 4, 5, &hellip; Using the formula, the 15th triangular number is $\dfrac{15 \times 16}{2} = 120$.</p>
+
+<h3>Arithmetic progressions</h3>
+<div class="definition">
+  In an <strong>arithmetic</strong> (<strong>linear</strong>) sequence the same number is added each time. This is the <strong>common difference</strong> $d$, which can be negative: 25, 21, 17, 13, &hellip; has $d = -4$.
+</div>
+
+<h3>Fibonacci-type sequences</h3>
+<div class="definition">
+  In a <strong>Fibonacci-type</strong> sequence each term (after the first two) is the <strong>sum of the two terms before it</strong>. The Fibonacci sequence is 1, 1, 2, 3, 5, 8, 13, 21, &hellip; but the rule can start from any two numbers.
+</div>
+
+<p>With first two terms $a$ and $b$, the terms are $a,\ b,\ a + b,\ a + 2b,\ 2a + 3b,\ 3a + 5b, \ldots$ Writing terms like this turns "find the first two terms" questions into simultaneous equations.</p>
+
+<div class="worked-example">
+  The 3rd term of a Fibonacci-type sequence is 9 and the 5th term is 23. Work out the first two terms.<br><br>
+  3rd term: $a + b = 9$ &nbsp;&nbsp; 5th term: $2a + 3b = 23$<br>
+  Double the first: $2a + 2b = 18$. Subtract from the second: $b = 5$, so $a = 4$.<br>
+  Sequence: $\mathbf{4, 5}$, 9, 14, 23 ✓
+</div>
+
+<h3>Geometric progressions</h3>
+<div class="definition">
+  In a <strong>geometric</strong> sequence each term is <strong>multiplied</strong> by the same number, the <strong>common ratio</strong> $r$. Find $r$ by dividing any term by the term before it. On the Foundation tier $r$ is a positive rational number, such as 4, $\tfrac{1}{3}$ or 1.5.
+</div>
+
+<div class="formula-box">
+  Geometric sequence with first term $a$ and common ratio $r$:
+  $$a,\ ar,\ ar^2,\ ar^3, \ldots \qquad n\text{th term} = ar^{n-1}$$
+</div>
+
+<div class="worked-example">
+  A geometric sequence has first term 3 and a positive common ratio. The 3rd term is 48. Work out the 5th term.<br><br>
+  $3r^2 = 48 \Rightarrow r^2 = 16 \Rightarrow r = 4$<br>
+  Terms: 3, 12, 48, 192, $\mathbf{768}$
+</div>
+
+<div class="worked-example">
+  A geometric sequence begins 81, 27, &hellip; Write down the next two terms.<br><br>
+  $r = 27 \div 81 = \tfrac{1}{3}$, so the next terms are $27 \times \tfrac13 = \mathbf{9}$ and $\mathbf{3}$.
+</div>
+
+<h3>Quadratic sequences</h3>
+<p>In a <strong>quadratic</strong> sequence the first differences are not constant, but the <strong>second differences</strong> (the differences between the differences) are. Recognising and continuing quadratic sequences is on both tiers.</p>
+
+<svg width="440" height="150" viewBox="0 0 440 150" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <g font-family="sans-serif" font-size="15" fill="#1e3a5f" font-weight="700" text-anchor="middle">
+    <text x="70" y="35">2</text><text x="150" y="35">6</text><text x="230" y="35">12</text><text x="310" y="35">20</text><text x="390" y="35">30</text>
+  </g>
+  <g font-family="sans-serif" font-size="14" fill="#2563eb" text-anchor="middle">
+    <text x="110" y="80">+4</text><text x="190" y="80">+6</text><text x="270" y="80">+8</text><text x="350" y="80">+10</text>
+  </g>
+  <g font-family="sans-serif" font-size="14" fill="#dc2626" text-anchor="middle">
+    <text x="150" y="125">+2</text><text x="230" y="125">+2</text><text x="310" y="125">+2</text>
+  </g>
+  <g stroke="#9ca3af" stroke-width="1">
+    <line x1="75" y1="42" x2="105" y2="66"/><line x1="145" y1="42" x2="115" y2="66"/>
+    <line x1="155" y1="42" x2="185" y2="66"/><line x1="225" y1="42" x2="195" y2="66"/>
+    <line x1="235" y1="42" x2="265" y2="66"/><line x1="305" y1="42" x2="275" y2="66"/>
+    <line x1="315" y1="42" x2="345" y2="66"/><line x1="385" y1="42" x2="355" y2="66"/>
+  </g>
+  <g font-family="sans-serif" font-size="11" fill="#6b7280">
+    <text x="8" y="35">terms</text><text x="8" y="80">1st diff</text><text x="8" y="125">2nd diff</text>
+  </g>
+</svg>
+<p>The second difference is always 2, so 2, 6, 12, 20, 30, &hellip; is a quadratic sequence. The next first differences are +12 and +14, giving the next terms 42 and 56.</p>
+
+<div class="exam-tip">
+  Identify the type first: same first difference &rArr; arithmetic; same second difference &rArr; quadratic; same ratio &rArr; geometric; each term is the sum of the two before &rArr; Fibonacci-type.
+</div>
+
+<h3>Surd ratios and other sequences <span class="higher-tag">Higher</span></h3>
+<p>On the Higher tier the common ratio of a geometric sequence can be a <strong>surd</strong>, and you can be asked about "other sequences" such as ones with a negative ratio, or rules defined in the question.</p>
+
+<div class="worked-example">
+  A geometric sequence begins $5,\ 5\sqrt{3},\ 15, \ldots$ Work out the 7th term.<br><br>
+  $r = \dfrac{5\sqrt{3}}{5} = \sqrt{3}$<br>
+  7th term $= 5 \times (\sqrt{3})^6 = 5 \times 3^3 = 5 \times 27 = \mathbf{135}$
+</div>
+
+<div class="worked-example">
+  A geometric sequence has first term 4 and second term $4\sqrt{2}$. Find the first term that is greater than 1000.<br><br>
+  $r = \sqrt{2}$, so every two terms the value doubles: 4, $4\sqrt{2}$, 8, $8\sqrt{2}$, 16, &hellip;<br>
+  The odd-numbered terms are powers of 2 times 4: 17th term $= 4 \times 2^8 = 1024$.<br>
+  16th term $= 4 \times 2^7 \times \sqrt{2} = 512\sqrt{2} \approx 724.1$, which is less than 1000. So the answer is the $\mathbf{17th}$ term (1024).
+</div>
+
+<p>A negative common ratio makes the terms alternate in sign: 3, $-6$, 12, $-24$, 48, &hellip; has $r = -2$.</p>
+
+<!-- ===================== 2.6.3 NTH TERM OF LINEAR SEQUENCES ===================== -->
+<h2>2.6.3 The $n$th Term of a Linear Sequence (A25)</h2>
+
+<div class="formula-box">
+  For a linear sequence with common difference $d$:
+  $$n\text{th term} = dn + (\text{first term} - d)$$
+  "First term $- d$" is the <strong>zeroth term</strong>: the number that would come just before the first term.
+</div>
+
+<div class="worked-example">
+  Find the $n$th term of 5, 12, 19, 26, &hellip;<br><br>
+  The common difference is 7, so compare with $7n$: 7, 14, 21, 28, &hellip;<br>
+  Each term is 2 less than $7n$, so the $n$th term is $\mathbf{7n - 2}$.
+</div>
+
+<div class="worked-example">
+  Find the $n$th term of 50, 44, 38, 32, &hellip; and work out the 20th term.<br><br>
+  $d = -6$; zeroth term $= 50 + 6 = 56$. $n$th term $= \mathbf{56 - 6n}$<br>
+  20th term $= 56 - 120 = \mathbf{-64}$
+</div>
+
+<h3>Is a number in the sequence?</h3>
+<p>Set the $n$th term equal to the number and solve for $n$. The number is a term only if $n$ is a <strong>positive integer</strong>.</p>
+
+<div class="worked-example">
+  Is 131 a term of $9n - 4$? &nbsp; $9n - 4 = 131 \Rightarrow 9n = 135 \Rightarrow n = 15$. Yes, it is the 15th term.<br>
+  Is 90 a term of $5n + 2$? &nbsp; $5n = 88 \Rightarrow n = 17.6$. This is not a whole number, so <strong>no</strong>.
+</div>
+
+<h3>Problems with linear sequences</h3>
+<div class="worked-example">
+  Sequence A has $n$th term $6n + 1$. Sequence B begins 79, 76, 73, &hellip; Find the position at which the two sequences have the same term.<br><br>
+  B: $d = -3$, zeroth term 82, so $n$th term $= 82 - 3n$.<br>
+  $6n + 1 = 82 - 3n \Rightarrow 9n = 81 \Rightarrow n = 9$. Both 9th terms are $\mathbf{55}$.
+</div>
+
+<div class="worked-example">
+  1 table seats 5 people, 2 tables pushed together seat 8, and 3 tables seat 11. What is the least number of tables needed to seat 60 people?<br><br>
+  $n$th term $3n + 2$. Need $3n + 2 \ge 60 \Rightarrow n \ge 19.33\ldots$, so $\mathbf{20}$ tables (19 tables seat only 59).
+</div>
+
+<div class="exam-tip">
+  The number in front of $n$ is the common difference, not the first term &mdash; 4, 7, 10, 13 is $3n + 1$, not "$n + 3$". Check your expression by substituting $n = 1$ and $n = 2$ before moving on.
+</div>
+
+<!-- ===================== 2.6.4 NTH TERM OF QUADRATIC SEQUENCES ===================== -->
+<h2>2.6.4 The $n$th Term of a Quadratic Sequence <span class="higher-tag">Higher</span> (A25)</h2>
+
+<div class="formula-box">
+  For a quadratic sequence with $n$th term $an^2 + bn + c$:
+  $$a = \frac{\text{second difference}}{2}$$
+  <ol style="margin-top:8px;">
+    <li>Work out the second difference and halve it to get $a$.</li>
+    <li>Subtract $an^2$ from each term of the sequence.</li>
+    <li>Find the $n$th term of what is left (a linear sequence $bn + c$).</li>
+    <li>Combine to give $an^2 + bn + c$, and check with $n = 1$ and $n = 2$.</li>
+  </ol>
+</div>
+
+<div class="worked-example">
+  Find the $n$th term of 4, 11, 22, 37, 56, &hellip;<br><br>
+  First differences: 7, 11, 15, 19 &nbsp; Second difference: 4, so $a = 2$.<br>
+  <table style="margin-top:10px;">
+    <thead><tr><th>$n$</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr></thead>
+    <tbody>
+      <tr><td>Term</td><td>4</td><td>11</td><td>22</td><td>37</td><td>56</td></tr>
+      <tr><td>$2n^2$</td><td>2</td><td>8</td><td>18</td><td>32</td><td>50</td></tr>
+      <tr><td>Term $- 2n^2$</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+    </tbody>
+  </table>
+  What is left is $n + 1$, so the $n$th term is $\mathbf{2n^2 + n + 1}$. Check: $n = 3$: $18 + 3 + 1 = 22$ ✓
+</div>
+
+<div class="worked-example">
+  Find the $n$th term of 10, 15, 18, 19, 18, &hellip;<br><br>
+  First differences: 5, 3, 1, $-1$ &nbsp; Second difference: $-2$, so $a = -1$.<br>
+  Term $- (-n^2)$, i.e. term $+ n^2$: 11, 19, 27, 35, 43 &rArr; $8n + 3$<br>
+  $n$th term $= \mathbf{-n^2 + 8n + 3}$. Check: $n = 2$: $-4 + 16 + 3 = 15$ ✓
+</div>
+
+<div class="worked-example">
+  The $n$th term of a sequence is $n^2 + 3n$. Show that 130 is a term of the sequence.<br><br>
+  $n^2 + 3n = 130 \Rightarrow n^2 + 3n - 130 = 0 \Rightarrow (n + 13)(n - 10) = 0$<br>
+  $n = 10$ (reject $n = -13$, since positions are positive). 130 is the $\mathbf{10th}$ term.
+</div>
+
+<div class="exam-tip">
+  The coefficient of $n^2$ is <em>half</em> the second difference &mdash; using the full second difference is the most common error. A negative second difference gives a negative $n^2$ term.
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<h2>Quick Reference Summary</h2>
+<table>
+  <thead><tr><th>Sequence type</th><th>How to spot it</th><th>$n$th term</th><th>Tier (1MA1)</th></tr></thead>
+  <tbody>
+    <tr><td>Arithmetic (linear)</td><td>Constant first difference $d$</td><td>$dn + (\text{first term} - d)$</td><td>Foundation</td></tr>
+    <tr><td>Geometric</td><td>Constant ratio $r$ (term ÷ previous term)</td><td>$ar^{n-1}$</td><td>Foundation ($r$ positive rational); Higher ($r$ a surd, or other sequences)</td></tr>
+    <tr><td>Quadratic</td><td>Constant second difference</td><td>$an^2 + bn + c$, $a$ = half the second difference</td><td>Recognise and continue: Foundation; $n$th term: Higher</td></tr>
+    <tr><td>Fibonacci-type</td><td>Each term = sum of the previous two</td><td>Use $a, b, a+b, a+2b, \ldots$</td><td>Foundation</td></tr>
+    <tr><td>Square / cube / triangular</td><td>1, 4, 9&hellip; / 1, 8, 27&hellip; / 1, 3, 6&hellip;</td><td>$n^2$ / $n^3$ / $\tfrac{n(n+1)}{2}$</td><td>Foundation</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>
