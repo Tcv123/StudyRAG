@@ -633,7 +633,7 @@ const MATHS_AQA_QUESTIONS = {
       { q: 'Events \\(A\\) and \\(B\\) are independent, with \\(P(A) = 0.4\\) and \\(P(B) = 0.5\\). Then \\(P(A \\cap B) = \\)', options: ['0.2', '0.9', '0.1', '0.45'], answer: 0 },
       { q: 'In a two-tailed test at 5% significance, each tail has probability:', options: ['10%', '2.5%', '5% (each tail)', '1%'], answer: 1 },
       { q: 'The standard error of the sample mean with known \\(\\sigma\\) and sample size \\(n\\) is:', options: ['\\(\\sigma\\sqrt{n}\\)', '\\(\\sigma^2/n\\)', '\\(\\frac{\\sigma}{\\sqrt{n}}\\)', '\\(\\frac{\\sigma}{n}\\)'], answer: 2 },
-      { q: 'Which distribution models the number of successes in \\(n\\) independent trials?', options: ['Poisson (λ)', 'Normal', 'Uniform', 'Binomial'], answer: 3 },
+      { q: 'Which distribution models the number of successes in \\(n\\) independent trials?', options: ['Standard normal \\(Z\\)', 'Normal', 'Uniform', 'Binomial'], answer: 3 },
     ],
     red: [
       { q: 'A company claims the mean weight of its product is 500g. A sample of 25 gives \\(\\bar{x} = 495\\) and \\(\\sigma = 10\\). The test statistic is:', options: ['\\(Z = \\frac{495 - 500}{10/\\sqrt{25}} = -2.5\\)','\\(Z = \\frac{495 - 500}{10} = -0.5\\) (using σ only)','\\(Z = -5\\)','\\(Z = \\frac{-5}{25} = -0.2\\)'], answer: 0 },
