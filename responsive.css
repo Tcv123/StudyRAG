@@ -125,6 +125,14 @@ pre { max-width: 100%; overflow-x: auto; }
     --emerald-text:      var(--green);
     --green-text-strong: var(--green-text);
     --violet-text:       #C4B5FD;
+
+    /* Dark --accent (#3B82F6) is too light for white text (3.7:1) and too
+       dark for text on the surfaces (3.9-4.4:1). Solid fills under white
+       text use --accent-solid(-end) instead, the light theme's own blues
+       (5.2:1 / 6.7:1); accent-coloured text uses --accent-text. */
+    --accent-solid:      #2563EB;
+    --accent-solid-end:  #1D4ED8;
+    --accent-text:       var(--accent-dark);
   }
 
   /* Soften heavy orb blobs so they don't over-power the dark background */
@@ -159,6 +167,7 @@ html[data-theme="dark"] {
   --amber-text-strong: var(--amber-text); --amber-vivid: var(--amber);
   --red-vivid: var(--red); --emerald-text: var(--green);
   --green-text-strong: var(--green-text); --violet-text: #C4B5FD;
+  --accent-solid: #2563EB; --accent-solid-end: #1D4ED8; --accent-text: var(--accent-dark);
 }
 html[data-theme="dark"] .orb { opacity: 0.5; }
 html[data-theme="dark"] body::before { opacity: 0.4; }
@@ -194,4 +203,5 @@ html[data-theme="light"] {
   --amber-text-strong: initial; --amber-vivid: initial;
   --red-vivid: initial; --emerald-text: initial;
   --green-text-strong: initial; --violet-text: initial;
+  --accent-solid: initial; --accent-solid-end: initial; --accent-text: initial;
 }

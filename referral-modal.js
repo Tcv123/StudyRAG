@@ -126,7 +126,7 @@
       '.rfm-fb textarea:focus{outline:none;border-color:var(--accent);}',
 
       '.rfm-submit{width:100%;margin-top:20px;padding:14px;border:none;border-radius:11px;',
-      'background:var(--accent);color:#fff;font:inherit;font-size:15px;font-weight:600;',
+      'background:var(--accent-solid, var(--accent));color:#fff;font:inherit;font-size:15px;font-weight:600;',
       'cursor:pointer;transition:background .15s,opacity .15s;}',
       '.rfm-submit:hover:not(:disabled){background:var(--accent-dark);}',
       '.rfm-submit:disabled{opacity:.45;cursor:not-allowed;}',

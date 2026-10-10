@@ -91,7 +91,7 @@
 
     .btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 18px; border-radius: 10px; font-weight: 500; font-size: 14px; border: 1px solid var(--border); background: var(--surface); cursor: pointer; color: var(--text); font-family: var(--font-body); text-decoration: none; }
     .btn:hover { border-color: var(--accent); }
-    .btn.primary { background: var(--accent); color: white; border-color: var(--accent); }
+    .btn.primary { background: var(--accent-solid, var(--accent)); color: white; border-color: var(--accent-solid, var(--accent)); }
     .btn.primary:hover { background: var(--accent-dark); }
     .btn.ghost { background: transparent; }
     .btn.danger { color: var(--red, #DC2626); border-color: rgba(220,38,38,0.3); }
@@ -103,13 +103,13 @@
     .print-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 20px 0 4px; }
     .print-step { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 18px 16px; display: flex; flex-direction: column; gap: 8px; transition: all 0.15s; }
     .print-step:hover { border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(37,99,235,0.06); }
-    .print-step .step-num { position: absolute; top: -10px; left: 18px; width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 14px; font-weight: 600; box-shadow: 0 2px 6px rgba(37,99,235,0.3); }
+    .print-step .step-num { position: absolute; top: -10px; left: 18px; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-solid, var(--accent)); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 14px; font-weight: 600; box-shadow: 0 2px 6px rgba(37,99,235,0.3); }
     .print-step .step-icon { font-size: 26px; margin-top: 8px; }
     .print-step .step-title { font-family: var(--font-display); font-size: 16px; line-height: 1.25; }
     .print-step .step-desc { font-size: 13px; color: var(--muted); line-height: 1.55; flex: 1; }
     .print-step .step-action { margin-top: 6px; }
     .print-step .step-link { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 8px; font-size: 13px; font-weight: 500; text-decoration: none; background: var(--accent-dim); color: var(--accent-dark); border: 1px solid transparent; }
-    .print-step .step-link:hover { background: var(--accent); color: #fff; }
+    .print-step .step-link:hover { background: var(--accent-solid, var(--accent)); color: #fff; }
     .print-step .step-link.muted { background: var(--surface2); color: var(--muted); cursor: not-allowed; pointer-events: none; }
 
     .score-card { background: linear-gradient(135deg, var(--accent-dim), rgba(124,58,237,0.06)); border: 1px solid var(--accent); border-radius: 18px; padding: 28px 32px; margin-top: 22px; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
@@ -142,7 +142,7 @@
     .qbq-marks-badge { display: inline-flex; align-items: center; padding: 4px 12px; background: var(--surface2); color: var(--muted); border: 1px solid var(--border); border-radius: 999px; font-size: 12.5px; font-weight: 600; }
     .qbq-extended-badge { display: inline-flex; align-items: center; padding: 4px 12px; background: rgba(124,58,237,0.08); color: var(--violet-text, #6D28D9); border: 1px solid rgba(124,58,237,0.3); border-radius: 999px; font-size: 12px; font-weight: 600; }
     .qbq-qp-link { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; padding: 4px 11px; font-size: 12px; font-weight: 600; color: var(--accent-dark); background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 999px; text-decoration: none; }
-    .qbq-qp-link:hover { background: var(--accent); color: #fff; }
+    .qbq-qp-link:hover { background: var(--accent-solid, var(--accent)); color: #fff; }
     .qbq-scenario { margin: 12px 22px 0; padding: 14px 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; font-size: 13.5px; color: var(--muted); line-height: 1.6; }
     .qbq-scenario-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); margin-bottom: 4px; }
     .qbq-scenario p { margin-top: 4px; }

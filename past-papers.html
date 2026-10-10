@@ -96,7 +96,7 @@
     .board-card-actions { margin-top: auto; padding-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
     .pc-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 8px; font-size: 13.5px; font-weight: 500; text-decoration: none; border: 1px solid var(--border); background: var(--surface2); color: var(--text); cursor: pointer; font-family: var(--font-body); }
     .pc-btn:hover { border-color: var(--accent); }
-    .pc-btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .pc-btn.primary { background: var(--accent-solid, var(--accent)); color: #fff; border-color: var(--accent-solid, var(--accent)); }
     .pc-btn.primary:hover { background: var(--accent-dark); }
     .pc-btn.muted { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
     .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.04em; vertical-align: middle; }
@@ -140,7 +140,7 @@
     .mini-btn { display: inline-flex; align-items: center; gap: 4px; padding: 5px 11px; border-radius: 7px; font-size: 12px; font-weight: 500; text-decoration: none; border: 1px solid var(--border); background: var(--surface); color: var(--text); margin-right: 5px; transition: border-color 0.13s, color 0.13s, background 0.13s; }
     .mini-btn:last-child { margin-right: 0; }
     .mini-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
-    .mini-btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .mini-btn.primary { background: var(--accent-solid, var(--accent)); color: #fff; border-color: var(--accent-solid, var(--accent)); }
     .mini-btn.primary:hover { background: var(--accent-dark); color: #fff; }
     .mini-btn.muted { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
   </style>
