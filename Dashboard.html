@@ -1068,7 +1068,7 @@ function renderExamCalendar() {
     }).join('');
 
     const hasExams = examsOnDay.length > 0;
-    html += `<div style="min-width:0;min-height:${hasExams ? '80' : '44'}px;padding:5px 5px;border-right:${isLast ? 'none' : '1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday ? 'var(--accent-dim)' : isPast ? 'var(--surface2)' : isWeekend ? 'rgba(248,251,254,0.6)' : 'var(--surface)'};">
+    html += `<div style="min-width:0;min-height:${hasExams ? '80' : '44'}px;padding:5px 5px;border-right:${isLast ? 'none' : '1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday ? 'var(--accent-dim)' : isPast ? 'var(--surface2)' : isWeekend ? 'var(--cal-weekend, rgba(248,251,254,0.6))' : 'var(--surface)'};">
       <div style="font-size:${isToday ? '12' : '11'}px;font-weight:${isToday ? '800' : '500'};color:${isToday ? 'var(--accent-dark)' : isPast ? 'var(--muted2)' : 'var(--text)'};${isToday ? 'background:var(--accent);color:#fff;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;' : ''}">${day}</div>
       ${inlineEvents}
     </div>`;
@@ -2335,7 +2335,7 @@ load().then(() => {
   checkDiagnosticHash();
 }).catch(err => {
   console.error('Dashboard load error:', err);
-  document.querySelector('.main').innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted);"><p style="font-size:16px;margin-bottom:8px;">Something went wrong loading the dashboard.</p><p style="font-size:13px;">' + err.message + '</p><button onclick="location.reload()" style="margin-top:16px;padding:8px 20px;border-radius:8px;border:1px solid var(--border);background:var(--surface);cursor:pointer;font-size:13px;">Retry</button></div>';
+  document.querySelector('.main').innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted);"><p style="font-size:16px;margin-bottom:8px;">Something went wrong loading the dashboard.</p><p style="font-size:13px;">' + err.message + '</p><button onclick="location.reload()" style="margin-top:16px;padding:8px 20px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:13px;">Retry</button></div>';
 });
 </script>
 

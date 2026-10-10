@@ -171,6 +171,13 @@
       padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600;
     }
     .status-available { background: rgba(22,163,74,0.08); border: 1px solid rgba(22,163,74,0.2); color: #15803D; }
+    /* Dark shades above are for a light page; lift them in dark mode. */
+    @media (prefers-color-scheme: dark) {
+      html:not([data-theme="light"]) .status-diag { color: var(--amber-text); }
+      html:not([data-theme="light"]) .status-available { color: var(--green-text); }
+    }
+    html[data-theme="dark"] .status-diag { color: var(--amber-text); }
+    html[data-theme="dark"] .status-available { color: var(--green-text); }
     .status-soon      { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); }
 
     .card-topics { display: flex; flex-direction: column; gap: 5px; }

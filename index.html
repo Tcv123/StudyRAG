@@ -544,7 +544,7 @@
       width: 100%; max-width: 620px;
       background:
         radial-gradient(ellipse at 20% 0%, rgba(37,99,235,0.12) 0%, transparent 55%),
-        linear-gradient(155deg, var(--surface) 0%, #F6FBFE 100%);
+        linear-gradient(155deg, var(--surface) 0%, var(--card-glow-end, #F6FBFE) 100%);
       border: 1px solid var(--border-hover);
       border-radius: 20px;
       padding: 36px 34px 30px;
@@ -661,6 +661,13 @@
     .ea-nudge .ea-icon { font-size: 20px; flex-shrink: 0; }
     .ea-nudge strong { color: #4c1d95; font-weight: 700; }
     .ea-nudge .ea-spots { font-variant-numeric: tabular-nums; }
+    /* The purples above are for a light page; lift them in dark mode. */
+    @media (prefers-color-scheme: dark) {
+      html:not([data-theme="light"]) .ea-nudge { color: #C4B5FD; }
+      html:not([data-theme="light"]) .ea-nudge strong { color: #DDD6FE; }
+    }
+    html[data-theme="dark"] .ea-nudge { color: #C4B5FD; }
+    html[data-theme="dark"] .ea-nudge strong { color: #DDD6FE; }
 
     /* CTA */
     .cta { position: relative; z-index: 1; padding: 88px 0; }
