@@ -118,6 +118,32 @@ test('OCR reader uses the series year and keeps the printed weekday', () => {
   check('unit code without slash', rows[1].code === 'Y540');
 });
 
+test('Edexcel reader reads both printings and normalises the code', () => {
+  const rows = READERS.Edexcel([page([
+    [[19, 'Wednesday 12 May'], [164, '9PL0 01'], [221, 'Politics'], [374, 'Paper 1: UK Politics and Core Political Ideas'], [684, 'Morning'], [764, '2h 00m']],
+    [[19, 'Politics'], [163, '9PL0 3A'], [221, 'Paper 3A: Comparative Politics - USA'], [513, 'Tuesday 15 June'], [682, 'Afternoon'], [764, '2h 00m']],
+    [[19, 'Further Mathematics'], [155, '8FM0 2A-2K'], [221, 'Paper 2: Options'], [513, 'Friday 14 May'], [682, 'Afternoon']]
+  ])], 2027);
+  check('two rows (a code range is not a code)', rows.length === 2, JSON.stringify(rows));
+  check('code normalised', rows[0].code === '9PL0/01');
+  check('morning → AM', rows[0].session === 'AM');
+  check('afternoon → PM', rows[1].session === 'PM');
+  check('weekday kept', rows[1].weekday === 'tue');
+  check('"2h 00m" → "2h"', rows[0].duration === '2h', rows[0].duration);
+});
+
+test('Edexcel by-date and by-subject printings that disagree hold back the subject', () => {
+  const rows = [
+    { code: '9PL0/01', exam_date: '2027-05-12', session: 'AM', weekday: 'wed' },
+    { code: '9PL0/01', exam_date: '2027-05-12', session: 'PM', weekday: 'wed' },
+    { code: '9PL0/02', exam_date: '2027-05-24', session: 'PM', weekday: 'mon' },
+    { code: '9PL0/3A', exam_date: '2027-06-15', session: 'PM', weekday: 'tue' },
+    { code: '9PL0/3B', exam_date: '2027-06-15', session: 'PM', weekday: 'tue' }
+  ];
+  const { resolved } = resolveSpecs('Edexcel', rows, 2027);
+  check('not resolved', !resolved.some(r => r.key === 'Politics Edexcel A-level'));
+});
+
 test('Eduqas reader places codes by the drawn day cell, AM left and PM right', () => {
   const items = [
     { x: 409, y: 418, s: 'Monday' }, { x: 411, y: 406, s: '10 May' },
@@ -208,6 +234,21 @@ test('a weekday the board printed that does not match holds back the subject', (
   const { resolved, failed: f } = resolveSpecs('OCR', rows, 2027);
   check('failed', f.some(x => x.key === 'Biology OCR A A-level'));
   check('not resolved', !resolved.length);
+});
+
+/* ── Finding documents ─────────────────────────────────────────────── */
+
+test('link discovery finds document URLs outside anchors, with glued years', () => {
+  const { findTimetableLinks } = require(path.join(ROOT, 'api', 'cron', 'exam-timetable-check.js'));
+  const html = `<div data-href="/content/dam/pdf/Support/Examination-timetables-for-UK-Edexcel-GCSE/gcse-summer-2027final.pdf"></div>
+                <a href="/files/x/summer-2027-timetable.pdf">&gt; GCE June 2027 Examination Timetable</a>`;
+  const links = findTimetableLinks(html, 'https://qualifications.pearson.com/en/x.html');
+  const glued = links.find(l => /gcse-summer-2027final/.test(l.url));
+  check('data-attribute link found', !!glued);
+  check('year read from "2027final"', glued && glued.year === 2027);
+  check('summer link scores positive', glued && glued.score > 0);
+  const anchored = links.find(l => /summer-2027-timetable/.test(l.url));
+  check('"&gt;" decoded and arrow dropped', anchored && anchored.text === 'GCE June 2027 Examination Timetable', anchored && anchored.text);
 });
 
 /* ── report ────────────────────────────────────────────────────────── */

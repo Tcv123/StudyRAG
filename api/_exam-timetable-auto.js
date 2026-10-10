@@ -42,8 +42,6 @@
  * they do not take.
  *
  * Every code here was checked against the June 2027 PDFs on 10 Oct 2026.
- * Edexcel is absent because Pearson's timetable page builds its links in
- * JavaScript and the watch cannot see them (see the sources table).
  * ──────────────────────────────────────────────────────────────────────── */
 const SPECS = [
   /* ── AQA A-level ── */
@@ -113,12 +111,44 @@ const SPECS = [
   eduqas('Geography',        'Eduqas', 'alevel', [['Component 1 — Changing Landscapes & Changing Places', 'A110U10-1'], ['Component 2 — Global Systems & Global Governance', 'A110U20-1'], ['Component 3 — Contemporary Themes', 'A110U30-1']]),
   eduqas('Geography',        'Eduqas', 'gcse',   [['Component 1 — Investigating Geographical Issues', 'C112U10-1'], ['Component 2 — Problem Solving Geography', 'C112U20-1'], ['Component 3 — Applied Fieldwork Enquiry', 'C112U30-1']]),
   eduqas('English Language', 'Eduqas', 'alevel', [['Component 1', 'A700U10-1'], ['Component 2', 'A700U20-1'], ['Component 3', 'A700U30-1']]),
-  eduqas('English Language', 'Eduqas', 'gcse',   [['Component 1', 'C700U10-1'], ['Component 2', 'C700U20-1']])
+  eduqas('English Language', 'Eduqas', 'gcse',   [['Component 1', 'C700U10-1'], ['Component 2', 'C700U20-1']]),
+
+  /* ── Edexcel A-level ──
+   * Codes are written "9MA0 01" in the PDF and normalised to 9MA0/01 by the
+   * reader. Further Maths option papers 3A–3D are four different sittings;
+   * 4A–4D share one. */
+  edexcel('Mathematics',         'Edexcel',   'alevel', [['Paper 1 — Pure Mathematics 1', '9MA0/01'], ['Paper 2 — Pure Mathematics 2', '9MA0/02'], ['Paper 3 — Statistics & Mechanics', '9MA0/03']]),
+  edexcel('Further Mathematics', 'Edexcel',   'alevel', [['Paper 1 — Core Pure 1', '9FM0/01'], ['Paper 2 — Core Pure 2', '9FM0/02'],
+                                                         ['Option 3A — Further Pure 1', '9FM0/3A'], ['Option 3B — Further Statistics 1', '9FM0/3B'],
+                                                         ['Option 3C — Further Mechanics 1', '9FM0/3C'], ['Option 3D — Decision 1', '9FM0/3D'],
+                                                         ['Paper 4 — Option (4A/4B/4C/4D)', '9FM0/4A', '9FM0/4B', '9FM0/4C', '9FM0/4D']]),
+  edexcel('Biology',             'Edexcel A', 'alevel', [['Paper 1 — The Natural Environment & Species Survival', '9BN0/01'], ['Paper 2 — Energy, Exercise & Co-ordination', '9BN0/02'], ['Paper 3 — General & Practical Applications', '9BN0/03']]),
+  edexcel('Biology',             'Edexcel B', 'alevel', [['Paper 1 — Biochemistry, Microbiology & Genetics', '9BI0/01'], ['Paper 2 — Physiology, Evolution & Ecology', '9BI0/02'], ['Paper 3 — General & Practical Principles', '9BI0/03']]),
+  edexcel('Chemistry',           'Edexcel',   'alevel', [['Paper 1 — Advanced Inorganic & Physical', '9CH0/01'], ['Paper 2 — Advanced Organic & Physical', '9CH0/02'], ['Paper 3 — General & Practical Principles', '9CH0/03']]),
+  edexcel('Physics',             'Edexcel',   'alevel', [['Paper 1 — Advanced Physics I', '9PH0/01'], ['Paper 2 — Advanced Physics II', '9PH0/02'], ['Paper 3 — General & Practical Principles', '9PH0/03']]),
+  edexcel('Economics',           'Edexcel A', 'alevel', [['Paper 1 — Markets & Business Behaviour', '9EC0/01'], ['Paper 2 — The National & Global Economy', '9EC0/02'], ['Paper 3 — Microeconomics & Macroeconomics', '9EC0/03']]),
+  edexcel('Economics',           'Edexcel B', 'alevel', [['Paper 1 — Markets and How They Work', '9EB0/01'], ['Paper 2 — Competing in the Global Economy', '9EB0/02'], ['Paper 3 — The Economic Environment & Business', '9EB0/03']]),
+  edexcel('Geography',           'Edexcel',   'alevel', [['Paper 1', '9GE0/01'], ['Paper 2', '9GE0/02'], ['Paper 3', '9GE0/03']]),
+  edexcel('English Language',    'Edexcel',   'alevel', [['Paper 1 — Language Variation', '9EN0/01'], ['Paper 2 — Child Language', '9EN0/02'], ['Paper 3 — Investigating Language', '9EN0/03']]),
+  edexcel('Politics',            'Edexcel',   'alevel', [['Paper 1 — UK Politics and Core Political Ideas', '9PL0/01'], ['Paper 2 — UK Government and Non-core Political Ideas', '9PL0/02'],
+                                                         ['Paper 3 — Comparative Politics (3A USA or 3B Global)', '9PL0/3A', '9PL0/3B']]),
+  edexcel('Business Studies',    'Edexcel',   'alevel', [['Paper 1 — Marketing, People & Global Businesses', '9BS0/01'], ['Paper 2 — Business Activities, Decisions & Strategy', '9BS0/02'], ['Paper 3 — Investigating Business', '9BS0/03']]),
+
+  /* ── Edexcel GCSE / International GCSE ──
+   * Geography is left out for the same reason as OCR's: 'Edexcel' could be
+   * Geography A (1GA0) or B (1GB0). */
+  edexcel('Biology',             'Edexcel',       'gcse', [['Paper 1', '1BI0/1F', '1BI0/1H'], ['Paper 2', '1BI0/2F', '1BI0/2H']]),
+  edexcel('Chemistry',           'Edexcel',       'gcse', [['Paper 1', '1CH0/1F', '1CH0/1H'], ['Paper 2', '1CH0/2F', '1CH0/2H']]),
+  edexcel('Physics',             'Edexcel',       'gcse', [['Paper 1', '1PH0/1F', '1PH0/1H'], ['Paper 2', '1PH0/2F', '1PH0/2H']]),
+  edexcel('Mathematics',         'Edexcel',       'gcse', [['Paper 1 — Non-calculator', '1MA1/1F', '1MA1/1H'], ['Paper 2 — Calculator', '1MA1/2F', '1MA1/2H'], ['Paper 3 — Calculator', '1MA1/3F', '1MA1/3H']]),
+  edexcel('English Language',    'Edexcel',       'gcse', [['Paper 1 — Fiction and Imaginative Writing', '1EN0/01'], ['Paper 2 — Non-fiction and Transactional Writing', '1EN0/02']]),
+  edexcel('Biology',             'Edexcel IGCSE', 'gcse', [['Paper 1 (1B)', '4BI1/1B'], ['Paper 2 (2B)', '4BI1/2B']])
 ];
 
 function aqa(subject, board, level, papers)    { return spec('AQA', subject, board, level, papers); }
 function ocr(subject, board, level, papers)    { return spec('OCR', subject, board, level, papers); }
 function eduqas(subject, board, level, papers) { return spec('Eduqas', subject, board, level, papers); }
+function edexcel(subject, board, level, papers) { return spec('Edexcel', subject, board, level, papers); }
 function spec(source, subject, board, level, papers) {
   return { source, subject, board, level, papers: papers.map(([label, ...codes]) => ({ label, codes })) };
 }
@@ -263,6 +293,40 @@ function readOcr(pages, year) {
   return out;
 }
 
+/* Edexcel (Pearson): every sitting appears twice, once in the by-date
+ * section and once by subject, both on one line:
+ *
+ *   Wednesday 12 May · 9PL0 01 · Politics · Paper 1: … · Morning · 2h 00m
+ *   Politics · 9PL0 01 · Paper 1: … · Wednesday 12 May · Morning · 2h 00m
+ *
+ * Both are read. They are separate printings of the same fact, so the
+ * "codes disagree" check in resolveSpecs catches a misread of either. */
+function readEdexcel(pages, year) {
+  const out = [];
+  for (const { lines } of pages) {
+    for (const { cells } of lines) {
+      const codeCell = cells.find(c => /^[0-9][A-Z0-9]{3} [0-9A-Z]{2}$/.test(c.s));
+      if (!codeCell) continue;
+      const text = cells.map(c => c.s).join(' ');
+
+      const d = text.match(/\b(Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day\s+(\d{1,2})\s+(May|June)\b/i);
+      const s = text.match(/\b(Morning|Afternoon)\b/i);
+      if (!d || !s) continue;
+
+      const i = cells.indexOf(codeCell);
+      out.push({
+        code:      codeCell.s.replace(' ', '/'),
+        exam_date: isoDate(year, MONTHS[d[3].toLowerCase()], +d[2]),
+        session:   /^m/i.test(s[1]) ? 'AM' : 'PM',
+        duration:  durationIn(text),
+        weekday:   d[1].slice(0, 3).toLowerCase(),
+        title:     (cells.slice(i + 1).find(c => /^Paper/i.test(c.s)) || cells[i + 1] || {}).s || ''
+      });
+    }
+  }
+  return out;
+}
+
 /* Eduqas/WJEC: a by-date grid only. Morning sittings in the left half,
  * afternoon in the right, and the date printed once in a middle-column cell
  * that spans every row of that day:
@@ -328,11 +392,11 @@ function readEduqas(pages, year) {
 function durationIn(text) {
   const m = text.match(/\b(\d{1,2})\s?h(?:\s?(\d{1,2})\s?m(?:in)?)?\b/i) || text.match(/\b(\d{1,3})\s?m(?:in)?\b/i);
   if (!m) return null;
-  if (/h/i.test(m[0])) return m[2] ? `${+m[1]}h ${+m[2]}m` : `${+m[1]}h`;
+  if (/h/i.test(m[0])) return +m[2] ? `${+m[1]}h ${+m[2]}m` : `${+m[1]}h`;     // "2h 00m" → "2h"
   return `${+m[1]}m`;
 }
 
-const READERS = { AQA: readAqa, OCR: readOcr, Eduqas: readEduqas };
+const READERS = { AQA: readAqa, OCR: readOcr, Eduqas: readEduqas, Edexcel: readEdexcel };
 
 
 /* ── Resolving specs ─────────────────────────────────────────────────────

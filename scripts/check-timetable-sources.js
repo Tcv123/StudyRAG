@@ -22,9 +22,9 @@ const { findTimetableLinks } = require('../api/cron/exam-timetable-check.js');
 const SOURCES = [
   ['AQA',     'https://www.aqa.org.uk/exams-administration/dates-and-timetables'],
   ['OCR',     'https://www.ocr.org.uk/administration/key-dates-and-timetables/'],
-  /* Disabled in the database — Pearson renders its links in JavaScript, so
-   * this finds nothing. Kept here so the failure stays visible when you run
-   * the check, rather than the board quietly vanishing from the list. */
+  /* Pearson renders its links with JavaScript; findTimetableLinks picks the
+   * document URLs out of the raw HTML instead. Enable it on the review page
+   * ("Watch") if it is switched off in the database. */
   ['Edexcel', 'https://qualifications.pearson.com/en/support/support-topics/exams/exam-timetables.html'],
   ['Eduqas',  'https://www.eduqas.co.uk/home/administration/key-dates-and-timetables/']
 ];

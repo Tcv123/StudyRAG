@@ -428,32 +428,52 @@ function findTimetableLinks(html, baseUrl) {
     if (seen.has(url)) continue;
     seen.add(url);
 
-    const text    = stripTags(rawText).slice(0, 200);
-    const haystack = `${text} ${decodeURIComponent(url)}`;
-    if (!TIMETABLE_WORDS.test(haystack)) continue;
+    const scored = scoreLink(url, stripTags(rawText).slice(0, 200));
+    if (scored) out.push(scored);
+  }
 
-    /* The series year. Boards write "Summer 2027" or bury 2027 in the
-     * filename; both work. Bounded to a plausible window so a phone number
-     * or a spec code cannot be mistaken for a year. */
-    const years = [...haystack.matchAll(/\b(20[2-9]\d)\b/g)]
-      .map(m => parseInt(m[1], 10))
-      .filter(y => y >= 2024 && y <= 2099);
-    const year = years.length ? Math.max(...years) : null;
-
-    /* Prefer the summer series — it is the one students sit and the one
-     * exam-dates-config.js has always described. November and January
-     * resit timetables are real but are not what the dashboard shows. */
-    let score = 0;
-    if (/summer|june|may/i.test(haystack))      score += 3;
-    if (/final|confirmed/i.test(haystack))      score += 2;
-    if (/provisional|draft/i.test(haystack))    score -= 1;
-    if (/november|january|autumn/i.test(haystack)) score -= 3;
-    if (/\.csv(\?|#|$)/i.test(url))             score += 1;  // the one we can parse
-
-    out.push({ url, text, year, score });
+  /* Pearson's page puts its document links in data attributes that a
+   * script turns into anchors, so the loop above sees none of them. Any
+   * document URL in the raw HTML that no anchor already gave us is scored
+   * the same way, with its filename standing in for the link text. */
+  for (const [raw] of String(html).matchAll(/(?:https?:\/\/[^\s"'<>(),]+|\/content\/dam\/[^\s"'<>(),]+)\.(?:pdf|xlsx|xls|csv)\b/gi)) {
+    let url;
+    try { url = new URL(raw, baseUrl).toString(); } catch (e) { continue; }
+    if (seen.has(url)) continue;
+    seen.add(url);
+    const text = decodeURIComponent(url.split('/').pop());
+    const scored = scoreLink(url, text);
+    if (scored) out.push(scored);
   }
 
   return out;
+}
+
+function scoreLink(url, text) {
+  const haystack = `${text} ${decodeURIComponent(url)}`;
+  if (!TIMETABLE_WORDS.test(haystack)) return null;
+
+  /* The series year. Boards write "Summer 2027" or bury 2027 in the
+   * filename — Pearson glues it to the next word ("summer-2027final"), so
+   * this looks for four digits not touching other digits rather than a
+   * word boundary. Bounded to a plausible window so a phone number or a
+   * spec code cannot be mistaken for a year. */
+  const years = [...haystack.matchAll(/(?<!\d)(20[2-9]\d)(?!\d)/g)]
+    .map(m => parseInt(m[1], 10))
+    .filter(y => y >= 2024 && y <= 2099);
+  const year = years.length ? Math.max(...years) : null;
+
+  /* Prefer the summer series — it is the one students sit and the one
+   * exam-dates-config.js has always described. November and January
+   * resit timetables are real but are not what the dashboard shows. */
+  let score = 0;
+  if (/summer|june|may/i.test(haystack))      score += 3;
+  if (/final|confirmed/i.test(haystack))      score += 2;
+  if (/provisional|draft/i.test(haystack))    score -= 1;
+  if (/november|nov\b|january|october|autumn/i.test(haystack)) score -= 3;
+  if (/\.csv(\?|#|$)/i.test(url))             score += 1;  // the one we can parse
+
+  return { url, text, year, score };
 }
 
 function stripTags(html) {
