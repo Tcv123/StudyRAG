@@ -30,7 +30,7 @@ const SOURCES = [
 ];
 
 const USER_AGENT =
-  'RAGLearningTimetableBot/1.0 (+https://raglearning.uk/contact; monthly exam timetable check)';
+  'RAGLearningTimetableBot/1.0 (+https://raglearning.uk/contact; weekly exam timetable check)';
 
 async function check(board, url) {
   process.stdout.write(`\n── ${board} ${'─'.repeat(Math.max(0, 58 - board.length))}\n${url}\n`);

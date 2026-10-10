@@ -147,10 +147,25 @@
        * like any other. Falling through to the config is the right
        * answer for all of them. */
       if (error) return null;
-      return data || [];
+      return newestSeriesOnly(data || []);
     } catch (e) {
       return null;
     }
+  }
+
+  /* The timetable watch imports each summer as it is published, and last
+   * summer's rows are still in the table when next summer's arrive. Shown
+   * together they would put two years of exams on one calendar, so each
+   * subject keeps only its newest series. Per subject, not globally: a
+   * subject whose 2028 dates are not out yet still shows 2027. */
+  function newestSeriesOnly(rows) {
+    const yearOf = s => parseInt((String(s || '').match(/(20\d{2})/) || [])[1] || '0', 10);
+    const newest = new Map();
+    rows.forEach(r => {
+      const key = `${r.subject}_${r.exam_board}`;
+      newest.set(key, Math.max(newest.get(key) || 0, yearOf(r.series)));
+    });
+    return rows.filter(r => yearOf(r.series) === newest.get(`${r.subject}_${r.exam_board}`));
   }
 
   /* ── The one call a page makes ──────────────────────────────────────

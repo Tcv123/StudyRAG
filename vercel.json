@@ -44,7 +44,8 @@
       "maxDuration": 60
     },
     "api/cron/exam-timetable-check.js": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "includeFiles": "node_modules/unpdf/dist/**"
     },
     "api/cron/premium-expiry.js": {
       "maxDuration": 60
@@ -57,7 +58,7 @@
     },
     {
       "path": "/api/cron/exam-timetable-check",
-      "schedule": "0 9 1 * *"
+      "schedule": "0 9 * * 1"
     }
   ]
 }

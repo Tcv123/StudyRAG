@@ -1,30 +1,33 @@
 /**
- * Exam timetable watch — runs on the 1st of each month from a Vercel cron.
+ * Exam timetable watch — runs every Monday morning from a Vercel cron.
  *
- * Opens each board's timetable page, looks for a timetable document newer
- * than the series we already hold, and — if it finds one — records it and
- * emails you a link. Eleven months of the year it finds nothing and exits.
+ * Opens each board's timetable page, reads every summer timetable document
+ * it has not seen before, imports the dates it can verify, records each
+ * document as a finding, and emails you a summary. Most weeks it finds
+ * nothing new and exits.
  *
- * THIS FUNCTION NEVER WRITES AN EXAM DATE. It only ever inserts into
- * exam_timetable_findings. Nothing reaches exam_dates, and therefore
- * nothing reaches a student's dashboard, until an admin presses Approve on
- * admin-exam-dates.html. The reasoning is in the migration header and worth
- * repeating: boards publish PDFs whose layout changes between years, and a
- * parser that mis-reads a column would put a wrong date in front of someone
- * revising against it. A missing date is a gap; a wrong one is a disaster.
+ * WHAT IT WRITES. Every summer timetable PDF the boards publish is read by
+ * api/_exam-timetable-auto.js, which looks up the exact entry codes of every
+ * paper a student on this site can sit. A subject whose papers are ALL
+ * found, and whose dates pass every check there (series year, May/June,
+ * weekday, agrees with the weekday the board printed, tiers agree), goes
+ * straight into exam_dates and onto dashboards. No click needed.
  *
- * So the two halves have very different confidence levels, and the code
- * treats them differently:
+ * Anything that does not pass stays exactly where it used to: a pending
+ * finding on admin-exam-dates.html, with the rows it did find, for a human
+ * to finish. The rule from the migration still holds — a missing date is a
+ * gap, a wrong one is a disaster — it is enforced per subject by checks
+ * instead of for the whole board by a person.
  *
- *   DETECTION is robust. "A document we have not seen before appeared on
- *   OCR's timetable page, here is the URL" survives any layout change,
- *   because it reads nothing but <a href> and a four-digit year. This is
- *   the part that is actually worth automating.
+ * Two things it never does:
+ *   • overwrite a date an admin entered by hand (source = 'manual'). Once
+ *     you have corrected a subject for a series, it is yours.
+ *   • publish half a subject. Biology with Paper 2 missing waits for review;
+ *     Chemistry in the same PDF still goes live.
  *
- *   PARSING is best-effort and deliberately narrow. CSV only — see
- *   parseDelimited below for why there is no PDF or XLSX path here. When it
- *   cannot parse, it says so and still reports the link, so the run
- *   degrades to "go look at this" rather than to silence.
+ * DETECTION is unchanged and robust: a document we have not seen before
+ * (by content hash) on a board's timetable page. Re-issued amendments have
+ * new bytes, so they are re-read and the dates updated.
  *
  * Required Vercel environment variables:
  *   CRON_SECRET                — same secret setup-reminder.js uses. Vercel
@@ -40,8 +43,8 @@
  *   SITE_URL           — defaults to https://raglearning.uk
  *   REMINDER_FROM      — reused as the From address.
  *
- * Manual dry run (fetches the board pages, writes nothing, sends nothing —
- * returns exactly what a real run would have recorded):
+ * Manual dry run (fetches and reads the documents, writes nothing, sends
+ * nothing — returns exactly what a real run would have imported):
  *   curl -H "Authorization: Bearer $CRON_SECRET" \
  *        https://raglearning.uk/api/cron/exam-timetable-check?dry=1
  *
@@ -57,6 +60,7 @@ const { createClient } = require('@supabase/supabase-js');
  * handling, because having two would mean fixing every ambiguity twice.
  * See exam-timetable-parse.js. */
 const { parseDelimited } = require('../../exam-timetable-parse.js');
+const { extractFromPdf } = require('../_exam-timetable-auto.js');
 
 /* Four board pages, each fetched once. Vercel gives this function 60s
  * (vercel.json); a slow board should cost us one source, not the run. */
@@ -66,7 +70,7 @@ const FETCH_TIMEOUT_MS = 12000;
  * with no User-Agent gets bot-filtered by some CDNs. This is honest about
  * what it is and points at a page explaining why we are asking. */
 const USER_AGENT =
-  'RAGLearningTimetableBot/1.0 (+https://raglearning.uk/contact; monthly exam timetable check)';
+  'RAGLearningTimetableBot/1.0 (+https://raglearning.uk/contact; weekly exam timetable check)';
 
 /* Documents bigger than this are not timetables, and we only want the bytes
  * to hash them. 12MB is generous — the real ones are well under 1MB. */
@@ -77,6 +81,11 @@ const MAX_DOC_BYTES = 12 * 1024 * 1024;
  * page, and reporting those would train you to ignore the email. */
 const TIMETABLE_WORDS = /timetable|exam\s*dates|examination\s*dates/i;
 const DOC_EXTENSION   = /\.(pdf|xlsx|xls|csv)(\?|#|$)/i;
+
+/* Leave this much of Vercel's 60s for the database writes and the email.
+ * A document not reached this run is not recorded, so the next run reads
+ * it — running out of time costs a week, never a document. */
+const TIME_BUDGET_MS = 42000;
 
 
 module.exports = async function handler(req, res) {
@@ -115,16 +124,16 @@ module.exports = async function handler(req, res) {
 
   const dryRun    = req.query?.dry === '1' || req.query?.dry === 'true';
   const reportAll = req.query?.all === '1' || req.query?.all === 'true';
+  const startedAt = Date.now();
 
   /* ── What counts as "new" ────────────────────────────────────────────
-   * The floor year. Without it the first run finds the summer 2026
-   * timetable — which we already have, typed into exam-dates-config.js —
-   * and reports all four boards as if something had happened.
-   *
-   * Read from the live table rather than hard-coded, so the floor rises on
-   * its own every time you approve a series and this never needs editing.
-   * Empty table falls back to the config's series, 2026. */
-  const floorYear = await newestSeriesYear(supabaseAdmin);
+   * The summer the current academic year leads to: from July onwards that
+   * is next summer, before July it is this one. Not "newer than anything
+   * in exam_dates" — that floor rose the moment a series was imported and
+   * then hid every amendment to it for the rest of the year. Documents for
+   * the current series are re-checked each run; the content hash is what
+   * stops an unchanged one being read twice. */
+  const targetYear = currentSeriesYear(new Date());
 
   const { data: sources, error: sourcesErr } = await supabaseAdmin
     .from('exam_timetable_sources')
@@ -143,7 +152,8 @@ module.exports = async function handler(req, res) {
   const results = [];
 
   for (const source of sources) {
-    const result = { board: source.board, page_url: source.page_url };
+    const result = { board: source.board, page_url: source.page_url, documents: [] };
+    results.push(result);
 
     /* ── Fetch the board's page ──────────────────────────────────────
      * A failure here is reported, not swallowed. A watch that quietly
@@ -155,75 +165,44 @@ module.exports = async function handler(req, res) {
     } catch (err) {
       result.status = 'fetch-failed';
       result.error  = err.message;
-      results.push(result);
       if (!dryRun) await recordCheck(supabaseAdmin, source, result);
       continue;
     }
 
-    /* ── Find the candidate ──────────────────────────────────────────── */
-    const candidates = findTimetableLinks(html, source.page_url)
-      .filter(link => reportAll || (link.year && link.year > floorYear))
-      .sort((a, b) => (b.year || 0) - (a.year || 0) || b.score - a.score);
-
-    const best = candidates[0];
-    if (!best) {
-      result.status = 'no-change';
-      results.push(result);
-      if (!dryRun) await recordCheck(supabaseAdmin, source, result);
-      continue;
+    /* ── Every summer document for the series ────────────────────────
+     * Not just the best one: AQA publishes GCSE and A-level as separate
+     * PDFs, OCR five. Spreadsheets are dropped when the board also offers
+     * a PDF of the same thing, which OCR always does. */
+    let candidates = findTimetableLinks(html, source.page_url)
+      .filter(link => reportAll || (link.year && link.year >= targetYear && link.score >= 0));
+    if (candidates.some(c => /\.pdf(\?|#|$)/i.test(c.url))) {
+      candidates = candidates.filter(c => !/\.xlsx?(\?|#|$)/i.test(c.url));
     }
 
-    result.doc_url   = best.url;
-    result.doc_title = best.text;
-    result.series    = best.year ? `summer-${best.year}` : null;
-
-    /* ── Hash it ─────────────────────────────────────────────────────
-     * Hash the document's bytes, not its URL. Boards re-issue a timetable
-     * at the same URL when they amend a date — an amendment is exactly the
-     * thing you most want to be told about, and a URL comparison would
-     * miss it entirely. If the document will not download, fall back to
-     * hashing the URL so the finding is still recorded once. */
-    let bytes = null;
-    try {
-      bytes = await fetchBytes(best.url);
-      result.doc_hash = sha256(bytes);
-    } catch (err) {
-      result.doc_hash    = sha256(Buffer.from(best.url));
-      result.download_note = `Could not download the document (${err.message}) — hashed its URL instead.`;
+    for (const link of candidates) {
+      if (Date.now() - startedAt > TIME_BUDGET_MS) {
+        result.documents.push({ doc_url: link.url, status: 'deferred', note: 'Out of time this run — will be read next run.' });
+        continue;
+      }
+      result.documents.push(await processDocument(supabaseAdmin, source, link, { dryRun, reportAll, targetYear }));
     }
 
-    if (result.doc_hash === source.last_doc_hash && !reportAll) {
-      result.status = 'no-change';
-      results.push(result);
-      if (!dryRun) await recordCheck(supabaseAdmin, source, result);
-      continue;
-    }
-
-    /* ── Best-effort parse ───────────────────────────────────────────── */
-    const parsed = bytes ? parseDocument(best.url, bytes) : {
-      rows: [],
-      note: result.download_note || 'Document could not be downloaded.'
-    };
-
-    result.status     = 'new-document';
-    result.rows       = parsed.rows.length;
-    result.parse_note = parsed.note;
-    results.push(result);
-
-    if (!dryRun) {
-      await recordFinding(supabaseAdmin, source, result, parsed);
-      await recordCheck(supabaseAdmin, source, result);
-    }
+    const docs = result.documents;
+    result.status = docs.some(d => d.status === 'imported' || d.status === 'needs-review') ? 'new-document' : 'no-change';
+    const last = docs.filter(d => d.doc_hash).pop();
+    if (last) { result.doc_url = last.doc_url; result.doc_hash = last.doc_hash; }
+    if (!dryRun) await recordCheck(supabaseAdmin, source, result);
   }
 
   /* ── Tell somebody ───────────────────────────────────────────────────
-   * Only when there is something to say. A monthly "nothing happened"
-   * email is an email you stop reading, and the run you need to notice is
-   * the one eleven months later.
+   * Only when there is something to say. A weekly "nothing happened"
+   * email is an email you stop reading.
    *
    * Fetch failures count as something to say — that is the watch telling
    * you it has gone blind. */
-  const newDocs  = results.filter(r => r.status === 'new-document');
+  const docs     = results.flatMap(r => r.documents.map(d => ({ board: r.board, ...d })));
+  const newDocs  = docs.filter(d => d.status === 'imported'
+                              || (d.status === 'needs-review' && (!d.seenBefore || d.imported?.length)));
   const failures = results.filter(r => r.status === 'fetch-failed');
   let emailed = false;
 
@@ -241,14 +220,190 @@ module.exports = async function handler(req, res) {
 
   return res.status(200).json({
     dryRun,
-    floorYear,
+    targetYear,
     checked: results.length,
-    newDocuments: newDocs.length,
+    imported: docs.reduce((n, d) => n + (d.imported?.length || 0), 0),
+    needsReview: docs.reduce((n, d) => n + (d.failed?.length || 0), 0),
     failures: failures.length,
     emailed,
     results
   });
 };
+
+
+/* ── One document ────────────────────────────────────────────────────────
+ * Download, hash, skip if already handled, read, import what passes,
+ * record the rest as a finding. Returns a summary for the report.
+ * ──────────────────────────────────────────────────────────────────────── */
+async function processDocument(supabaseAdmin, source, link, { dryRun, reportAll, targetYear }) {
+  const doc = { doc_url: link.url, doc_title: link.text, series: `summer-${link.year || targetYear}` };
+  const year = link.year || targetYear;
+
+  /* Hash the document's bytes, not its URL. Boards re-issue a timetable at
+   * the same URL when they amend a date — an amendment is exactly the thing
+   * you most want picked up, and a URL comparison would miss it. */
+  let bytes;
+  try {
+    bytes = await fetchBytes(link.url);
+  } catch (err) {
+    return { ...doc, status: 'download-failed', note: err.message };
+  }
+  doc.doc_hash = sha256(bytes);
+
+  /* Already seen? A finding someone (or a previous run) finished with is
+   * left alone. A pending one is read again — that is how the findings
+   * from before this importer existed get imported, and how one that
+   * failed on a since-fixed spec gets another go. */
+  const { data: existing } = await supabaseAdmin
+    .from('exam_timetable_findings')
+    .select('id, status')
+    .eq('board', source.board)
+    .eq('doc_hash', doc.doc_hash)
+    .maybeSingle();
+
+  if (existing && existing.status !== 'pending' && !reportAll) {
+    return { ...doc, status: 'no-change' };
+  }
+
+  /* ── Read it ─────────────────────────────────────────────────────── */
+  let extracted;
+  if (/\.pdf(\?|#|$)/i.test(link.url)) {
+    try {
+      extracted = await extractFromPdf(source.board, bytes, year);
+    } catch (err) {
+      extracted = { supported: false, resolved: [], failed: [], rows: [], error: err.message };
+    }
+  } else {
+    /* CSV still goes through the old best-effort parser and waits for a
+     * human: no board currently publishes one, so there is nothing to
+     * build an automatic reader against. */
+    const parsed = parseDocument(link.url, bytes);
+    extracted = { supported: false, resolved: [], failed: [], rows: [], legacy: parsed };
+  }
+
+  /* ── Import what passed ──────────────────────────────────────────────
+   * The finding row is created first so every imported exam date can
+   * point back at the document it came from (exam_dates.finding_id). */
+  const findingId = dryRun ? null : (existing?.id || await createFinding(supabaseAdmin, source, doc));
+
+  const imported = [];
+  const skipped  = [];
+  for (const r of extracted.resolved) {
+    const outcome = dryRun
+      ? { ok: true }
+      : await importSpec(supabaseAdmin, r, findingId);
+    if (outcome.ok) imported.push({ key: r.key, rows: r.rows });
+    else skipped.push({ key: r.key, reason: outcome.reason, error: !!outcome.error });
+  }
+
+  const failed = extracted.failed.map(f => ({ key: f.key, problems: f.problems }));
+  const needsHuman = failed.length > 0 || skipped.some(s => s.error) || !!extracted.legacy?.rows?.length
+                  || (!extracted.supported && !extracted.legacy);
+
+  let status, note;
+  if (!extracted.supported && !extracted.legacy) {
+    status = 'needs-review';
+    note = extracted.error
+      ? `Could not read this PDF (${extracted.error}). Open it and use the paste box.`
+      : `No automatic reader for ${source.board} yet. Open it and use the paste box.`;
+  } else if (extracted.legacy) {
+    status = extracted.legacy.rows.length ? 'needs-review' : 'irrelevant';
+    note = extracted.legacy.note;
+  } else if (!imported.length && !failed.length && !skipped.length) {
+    status = 'irrelevant';
+    note = 'None of the subjects on the site are in this document.';
+  } else {
+    status = needsHuman ? 'needs-review' : 'imported';
+    note = summarise(imported, failed, skipped);
+  }
+
+  if (!dryRun) {
+    /* Rows for the review page: only the ones for specs that did NOT go
+     * live, in the shape the page's table already renders. */
+    const reviewRows = extracted.legacy?.rows || extracted.failed.flatMap(f => f.rows.map(r => ({
+      entry_code: r.code, title: r.title, exam_date: r.exam_date,
+      session: r.session, duration: r.duration, raw: [r.code, r.title, r.exam_date, r.session, r.duration].filter(Boolean)
+    })));
+
+    await updateFinding(supabaseAdmin, findingId, {
+      status: status === 'needs-review' ? 'pending' : status === 'imported' ? 'approved' : 'dismissed',
+      rows:   reviewRows,
+      note
+    });
+  }
+
+  return {
+    ...doc,
+    status,
+    note,
+    /* A pending finding is re-read every run. Without this, one subject
+     * that needs a human would re-send the same email every Monday. */
+    seenBefore: !!existing,
+    imported: imported.map(i => ({ key: i.key, dates: i.rows.map(r => `${r.paper}: ${r.exam_date} ${r.session}`) })),
+    failed,
+    skipped: skipped.map(({ key, reason }) => ({ key, reason }))
+  };
+}
+
+function summarise(imported, failed, skipped) {
+  const parts = [];
+  if (imported.length) parts.push(`Imported automatically: ${imported.map(i => i.key).join(', ')}.`);
+  if (skipped.length)  parts.push(`Left alone: ${skipped.map(s => `${s.key} (${s.reason})`).join('; ')}.`);
+  if (failed.length)   parts.push(`Needs checking: ${failed.map(f => `${f.key} — ${f.problems.join('; ')}`).join(' | ')}.`);
+  return parts.join(' ');
+}
+
+/* From July the next summer is the one students are revising for. */
+function currentSeriesYear(now) {
+  return now.getUTCMonth() >= 6 ? now.getUTCFullYear() + 1 : now.getUTCFullYear();
+}
+
+
+/* ── Writing exam dates ──────────────────────────────────────────────────
+ * One spec at a time, all of its papers together.
+ *
+ * Hand-entered rows win. If any row for this subject, board, level and
+ * series has source = 'manual', an admin has corrected it and the import
+ * steps aside entirely — re-importing over a correction is how a fixed
+ * date quietly un-fixes itself a week later.
+ *
+ * Import rows for the spec that are not in the new set are deleted, so an
+ * amended timetable that renames or drops a paper does not leave the old
+ * one on the dashboard next to its replacement.
+ * ──────────────────────────────────────────────────────────────────────── */
+async function importSpec(supabaseAdmin, resolved, findingId) {
+  const { spec, rows } = resolved;
+  const series = rows[0].series;
+
+  const { data: current, error: readErr } = await supabaseAdmin
+    .from('exam_dates')
+    .select('id, paper, source')
+    .eq('subject', spec.subject)
+    .eq('exam_board', spec.board)
+    .eq('level', spec.level)
+    .eq('series', series);
+
+  if (readErr) return { ok: false, error: true, reason: `could not read exam_dates: ${readErr.message}` };
+  if ((current || []).some(r => r.source === 'manual')) {
+    return { ok: false, reason: 'has hand-entered dates' };
+  }
+
+  const keep  = new Set(rows.map(r => r.paper));
+  const stale = (current || []).filter(r => !keep.has(r.paper)).map(r => r.id);
+  if (stale.length) {
+    const { error } = await supabaseAdmin.from('exam_dates').delete().in('id', stale);
+    if (error) return { ok: false, error: true, reason: `could not remove old rows: ${error.message}` };
+  }
+
+  const now = new Date().toISOString();
+  const { error } = await supabaseAdmin
+    .from('exam_dates')
+    .upsert(rows.map(r => ({ ...r, source: 'import', finding_id: findingId, updated_at: now })),
+            { onConflict: 'subject,exam_board,level,paper,series' });
+
+  if (error) return { ok: false, error: true, reason: `could not save: ${error.message}` };
+  return { ok: true };
+}
 
 
 /* ── Reading the board's page ────────────────────────────────────────────
@@ -305,25 +460,22 @@ function stripTags(html) {
   return String(html)
     .replace(/<[^>]*>/g, ' ')
     .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
+    .replace(/&gt;/g, '>')
+    .replace(/&lt;/g, '<')
+    .replace(/&quot;/g, '"')
+    .replace(/&#0?39;/g, "'")
+    .replace(/&amp;/g, '&')          // last, so "&amp;gt;" stays "&gt;"
     .replace(/\s+/g, ' ')
-    .trim();
+    .trim()
+    .replace(/^>\s*/, '');           // Eduqas prefixes every link with a ">" arrow
 }
 
 
-/* ── Parsing ─────────────────────────────────────────────────────────────
- * CSV and nothing else, on purpose.
- *
- * PDF and XLSX both need a dependency, and both are the formats whose
- * layout moves between years. Adding a parser for them would produce rows
- * that look authoritative and are wrong in ways nobody checks — the exact
- * failure this whole design is built to avoid. The admin page's paste box
- * runs the same parseDelimited over a table copied out of the board's PDF
- * or spreadsheet, which takes half a minute once a year and puts a human
- * eye on the data at the moment it enters the system.
- *
- * Everything this returns is a suggestion. The review page shows every row
- * for checking before any of it becomes an exam date.
+/* ── Parsing a CSV ───────────────────────────────────────────────────────
+ * PDFs go through api/_exam-timetable-auto.js, which matches known entry
+ * codes and can therefore import on its own. A CSV goes through the free-
+ * text parser the admin paste box uses, whose rows are guesses about which
+ * subject they belong to — so they wait on the review page, as before.
  * ──────────────────────────────────────────────────────────────────────── */
 
 function parseDocument(url, bytes) {
@@ -340,23 +492,6 @@ function parseDocument(url, bytes) {
 
 
 /* ── Talking to the database ─────────────────────────────────────────── */
-
-async function newestSeriesYear(supabaseAdmin) {
-  const { data } = await supabaseAdmin
-    .from('exam_dates')
-    .select('series')
-    .order('series', { ascending: false })
-    .limit(1);
-
-  const series = data?.[0]?.series;
-  const year   = series && parseInt(String(series).match(/(20\d{2})/)?.[1] || '', 10);
-
-  /* No rows yet means nothing has been approved, but exam-dates-config.js
-   * still describes summer 2026 and those dates are on dashboards today.
-   * Treating the table's emptiness as "we have nothing" would report the
-   * 2026 timetable as news. */
-  return Number.isFinite(year) ? year : 2026;
-}
 
 async function recordCheck(supabaseAdmin, source, result) {
   const { error } = await supabaseAdmin
@@ -376,25 +511,47 @@ async function recordCheck(supabaseAdmin, source, result) {
   if (error) console.error(`[timetable-check] ${source.board}: could not record check:`, error.message);
 }
 
-async function recordFinding(supabaseAdmin, source, result, parsed) {
-  /* onConflict on (board, doc_hash) with ignoreDuplicates is what makes a
-   * re-run safe. If you curl this by hand twice in an afternoon, the second
-   * run leaves the first finding — and any review already done on it —
-   * exactly as it was. */
+/* Insert-or-fetch on (board, doc_hash), so two runs racing on the same
+ * document end up pointing at one finding rather than two. */
+async function createFinding(supabaseAdmin, source, doc) {
   const { error } = await supabaseAdmin
     .from('exam_timetable_findings')
     .upsert({
-      source_id:   source.id,
-      board:       source.board,
-      doc_url:     result.doc_url,
-      doc_hash:    result.doc_hash,
-      doc_title:   result.doc_title || null,
-      series:      result.series || null,
-      parsed_rows: parsed.rows,
-      parse_note:  [result.download_note, parsed.note].filter(Boolean).join(' ')
+      source_id: source.id,
+      board:     source.board,
+      doc_url:   doc.doc_url,
+      doc_hash:  doc.doc_hash,
+      doc_title: doc.doc_title || null,
+      series:    doc.series || null
     }, { onConflict: 'board,doc_hash', ignoreDuplicates: true });
 
   if (error) console.error(`[timetable-check] ${source.board}: could not record finding:`, error.message);
+
+  const { data } = await supabaseAdmin
+    .from('exam_timetable_findings')
+    .select('id')
+    .eq('board', source.board)
+    .eq('doc_hash', doc.doc_hash)
+    .maybeSingle();
+  return data?.id || null;
+}
+
+/* reviewed_by stays null on an automatic decision — that null is how the
+ * review page and anyone reading the table can tell the cron did it. */
+async function updateFinding(supabaseAdmin, findingId, { status, rows, note }) {
+  if (!findingId) return;
+  const { error } = await supabaseAdmin
+    .from('exam_timetable_findings')
+    .update({
+      status,
+      parsed_rows: rows,
+      parse_note:  note,
+      reviewed_at: status === 'pending' ? null : new Date().toISOString(),
+      reviewed_by: null
+    })
+    .eq('id', findingId);
+
+  if (error) console.error('[timetable-check] could not update finding:', error.message);
 }
 
 
@@ -413,8 +570,12 @@ async function sendReport(apiKey, newDocs, failures) {
           || process.env.REMINDER_REPLY_TO
           || 'hello@raglearning.uk';
 
+  const importedCount = newDocs.reduce((n, d) => n + (d.imported?.length || 0), 0);
+  const reviewCount   = newDocs.filter(d => d.status === 'needs-review').length;
+
   const subject = newDocs.length
-    ? `Exam timetable: ${newDocs.map(d => d.board).join(', ')} published something new`
+    ? `Exam timetable: ${importedCount} subject${importedCount === 1 ? '' : 's'} updated automatically`
+      + (reviewCount ? `, ${reviewCount} document${reviewCount === 1 ? '' : 's'} need${reviewCount === 1 ? 's' : ''} a look` : '')
     : `Exam timetable watch could not reach ${failures.map(f => f.board).join(', ')}`;
 
   const payload = {
@@ -444,15 +605,29 @@ function reportHtml(newDocs, failures, siteUrl) {
            + `<h2 style="font-size:18px;margin:0 0 16px;">Exam timetable watch</h2>`;
 
   for (const doc of newDocs) {
-    html += `<div style="border:1px solid #e5e7eb;border-radius:8px;padding:14px;margin-bottom:12px;">`
+    const flagged = doc.status === 'needs-review';
+    html += `<div style="border:1px solid ${flagged ? '#fde68a' : '#e5e7eb'};${flagged ? 'background:#fffbeb;' : ''}`
+         +  `border-radius:8px;padding:14px;margin-bottom:12px;">`
          +  `<div style="font-weight:600;margin-bottom:4px;">${escHtml(doc.board)}`
          +  (doc.series ? ` — ${escHtml(doc.series)}` : '') + `</div>`
-         +  `<div style="font-size:13px;color:#4b5563;margin-bottom:8px;">${escHtml(doc.doc_title || doc.doc_url)}</div>`
-         +  `<div style="font-size:13px;color:#4b5563;margin-bottom:8px;">`
-         +  (doc.rows ? `${doc.rows} row${doc.rows === 1 ? '' : 's'} parsed — all need checking.`
-                      : escHtml(doc.parse_note || 'Not parsed.'))
-         +  `</div>`
-         +  `<a href="${escHtml(doc.doc_url)}" style="font-size:13px;color:#2563eb;">Open the document</a>`
+         +  `<div style="font-size:13px;color:#4b5563;margin-bottom:8px;">${escHtml(doc.doc_title || doc.doc_url)}</div>`;
+
+    if (doc.imported?.length) {
+      html += `<div style="font-size:13px;margin-bottom:6px;"><strong>Live now:</strong> `
+           +  escHtml(doc.imported.map(i => i.key).join(', ')) + `</div>`;
+    }
+    for (const f of doc.failed || []) {
+      html += `<div style="font-size:13px;color:#92400e;margin-bottom:4px;"><strong>Needs checking — ${escHtml(f.key)}:</strong> `
+           +  escHtml(f.problems.join('; ')) + `</div>`;
+    }
+    for (const s of doc.skipped || []) {
+      html += `<div style="font-size:13px;color:#4b5563;margin-bottom:4px;">Left alone — ${escHtml(s.key)}: ${escHtml(s.reason)}</div>`;
+    }
+    if (!doc.imported?.length && !doc.failed?.length && doc.note) {
+      html += `<div style="font-size:13px;color:#4b5563;margin-bottom:6px;">${escHtml(doc.note)}</div>`;
+    }
+
+    html += `<a href="${escHtml(doc.doc_url)}" style="font-size:13px;color:#2563eb;">Open the document</a>`
          +  `</div>`;
   }
 
@@ -465,13 +640,15 @@ function reportHtml(newDocs, failures, siteUrl) {
          +  `</div>`;
   }
 
-  if (newDocs.length) {
-    html += `<p style="font-size:14px;">Nothing is live yet. Every row waits on the review page until you approve it.</p>`;
+  if (newDocs.some(d => d.status === 'needs-review')) {
+    html += `<p style="font-size:14px;">Anything under "Needs checking" is waiting on the review page. Everything else is already on students' dashboards.</p>`;
+  } else if (newDocs.length) {
+    html += `<p style="font-size:14px;">Nothing needs you. The dates are already on students' dashboards.</p>`;
   }
 
   html += `<p style="margin-top:20px;"><a href="${escHtml(reviewUrl)}" `
        +  `style="display:inline-block;background:#111827;color:#fff;text-decoration:none;`
-       +  `padding:10px 18px;border-radius:6px;font-size:14px;">Review</a></p>`
+       +  `padding:10px 18px;border-radius:6px;font-size:14px;">Open exam dates</a></p>`
        +  `</div>`;
 
   return html;
@@ -483,7 +660,10 @@ function reportText(newDocs, failures, siteUrl) {
   for (const doc of newDocs) {
     lines.push(`${doc.board}${doc.series ? ` — ${doc.series}` : ''}`);
     lines.push(`  ${doc.doc_title || ''}`.trimEnd());
-    lines.push(`  ${doc.rows ? `${doc.rows} rows parsed — all need checking.` : (doc.parse_note || 'Not parsed.')}`);
+    if (doc.imported?.length) lines.push(`  Live now: ${doc.imported.map(i => i.key).join(', ')}`);
+    for (const f of doc.failed || [])  lines.push(`  Needs checking — ${f.key}: ${f.problems.join('; ')}`);
+    for (const s of doc.skipped || []) lines.push(`  Left alone — ${s.key}: ${s.reason}`);
+    if (!doc.imported?.length && !doc.failed?.length && doc.note) lines.push(`  ${doc.note}`);
     lines.push(`  ${doc.doc_url}`);
     lines.push('');
   }
@@ -494,8 +674,7 @@ function reportText(newDocs, failures, siteUrl) {
     lines.push('');
   }
 
-  if (newDocs.length) lines.push('Nothing is live until you approve it.');
-  lines.push(`Review: ${siteUrl}/admin-exam-dates`);
+  lines.push(`Exam dates: ${siteUrl}/admin-exam-dates`);
   return lines.join('\n');
 }
 

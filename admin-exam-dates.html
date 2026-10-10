@@ -13,20 +13,22 @@
     real gate is the RLS on exam_dates and the two watch tables — the
     check in this page only decides what to draw.
 
-    WHAT THIS PAGE IS FOR. api/cron/exam-timetable-check.js runs on the
-    1st of each month, looks at the four boards' timetable pages, and
-    records anything it has not seen before in exam_timetable_findings.
-    It never writes an exam date. This is where a finding becomes one.
+    WHAT THIS PAGE IS FOR. api/cron/exam-timetable-check.js runs every
+    Monday, reads each board's summer timetable PDF, and imports every
+    subject whose papers it can find by entry code and whose dates pass
+    its checks — those go live with no action here (they show as
+    approved findings). This page is for what is left: a subject the
+    importer could not complete, a board it has no reader for, or a date
+    you want to correct by hand.
 
-    The deliberate friction is the point. Boards publish PDFs whose
-    layout moves between years, so a parsed row is a suggestion and
-    nothing more. A wrong date on a dashboard is worse than no date at
-    all, because a student will revise to it and turn up on the wrong
-    day. So every row is shown with what the board actually said next to
-    it, and nothing is written until somebody presses Approve.
+    A wrong date on a dashboard is worse than no date at all, because a
+    student will revise to it and turn up on the wrong day. So whatever
+    lands here is shown with what the board actually said next to it,
+    and nothing from it is written until somebody presses Approve.
 
-    Schema: db/migrations/2026-09-14-exam-dates.sql
-    Parser: exam-timetable-parse.js (shared with the cron)
+    Schema:   db/migrations/2026-09-14-exam-dates.sql
+    Importer: api/_exam-timetable-auto.js
+    Parser:   exam-timetable-parse.js (paste box)
   -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -234,7 +236,7 @@
       <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
       <div>
         <h1 id="pageTitle">Exam dates</h1>
-        <p class="sub" id="pageSub">What the monthly timetable watch found, and what is live. Nothing a board publishes reaches a dashboard until you approve it here.</p>
+        <p class="sub" id="pageSub">What the weekly timetable watch found, and what is live. Subjects it can read with certainty go live automatically; anything else waits here for you.</p>
       </div>
     </div>
 
@@ -253,11 +255,11 @@
       <div class="card">
         <h2>Findings</h2>
         <p class="hint">
-          api/cron/exam-timetable-check.js checks the four boards on the 1st of each
-          month. A finding is a document it had not seen before — usually the next
-          summer's timetable, sometimes an amendment to one you already approved.
-          Parsed rows are guesses off a machine-read table; check each against the
-          document before approving it.
+          api/cron/exam-timetable-check.js checks the boards every Monday and imports
+          every subject it can read with certainty — those findings are approved
+          automatically and hidden below unless you tick "Show approved and dismissed".
+          A finding still pending here is a subject it could not finish; its note
+          says why. Check each row against the document before approving it.
         </p>
         <div id="findings"><p class="empty">Loading…</p></div>
         <label style="display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted2);margin-top:8px;cursor:pointer;">
@@ -340,10 +342,13 @@ async function logout() {
      db/migrations/2026-09-14-exam-dates.sql. The admin gate is RLS on
      those tables; the check below only decides what to draw.
 
-     THE ONE RULE: approving is the only thing that writes to
-     exam_dates. The cron cannot, the parser cannot, and neither can
-     any of the editing here until you press the button. Everything
-     before that point is a proposal sitting in a JSONB column.
+     THE ONE RULE ON THIS PAGE: approving is the only thing here that
+     writes to exam_dates. The cron's importer writes the subjects it
+     can verify by entry code on its own (api/_exam-timetable-auto.js);
+     rows that reach this page are the ones it could not, and they stay
+     a proposal in a JSONB column until you press the button. What you
+     approve is saved as source 'manual', and the importer never
+     overwrites a subject that has a manual row for that series.
      ═══════════════════════════════════════════════════════════════ */
 
   var SUBJECTS = ['Computer Science','Mathematics','Further Mathematics','Biology',
@@ -376,8 +381,8 @@ async function logout() {
     findings = res.data || [];
     if (!findings.length) {
       host.replaceChildren(msg(showHandled
-        ? 'Nothing found yet. The watch runs on the 1st of each month.'
-        : 'Nothing waiting. Eleven months of the year this is the right answer.'));
+        ? 'Nothing found yet. The watch runs every Monday.'
+        : 'Nothing waiting — everything the watch found was imported automatically.'));
       return;
     }
 
@@ -544,7 +549,10 @@ async function logout() {
         subject: subject, exam_board: board, level: level, paper: paper,
         exam_date: date, session: session, duration: duration || null,
         entry_code: (f.parsed_rows[+ticked[i].dataset.index] || {}).entry_code || null,
-        series: f.series || 'unknown', source: 'import', finding_id: f.id,
+        /* 'manual', not 'import': a person checked these, and the cron's
+         * importer steps aside for any subject with a manual row rather
+         * than overwrite a correction next Monday. */
+        series: f.series || 'unknown', source: 'manual', finding_id: f.id,
         updated_at: new Date().toISOString()
       });
     }
@@ -717,7 +725,7 @@ async function logout() {
         ? 'Last checked ' + new Date(s.last_checked_at).toLocaleDateString('en-GB')
           + ' — ' + (s.last_status || 'unknown')
           + (s.last_error ? ' (' + s.last_error + ')' : '')
-        : 'Never checked. The watch runs on the 1st of the month.';
+        : 'Never checked. The watch runs every Monday.';
       box.appendChild(status);
 
       return box;
