@@ -154,6 +154,18 @@
     .tile.alarm { background: var(--red-bg); border-color: var(--red-border); }
     .tile.alarm .tile-num { color: var(--red-text); }
 
+    /* ── Coverage tiles: each opens admin-gcse/alevel.html filtered ── */
+    a.tile { display: block; color: inherit; text-decoration: none; transition: border-color .12s; }
+    a.tile:hover { border-color: var(--border-hover); }
+    a.tile:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .tile.cov-ready .tile-num { color: var(--green-text); }
+    .tile.cov-most  .tile-num { color: var(--accent-dark); }
+    .tile.cov-gcse  .tile-num, .tile.cov-alevel .tile-num { color: var(--amber-text); }
+    .cov-sub { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+               color: var(--muted); margin: 0 0 10px; }
+    .cov-sub + .tiles + .cov-sub { margin-top: 20px; }
+    .tile.cov-none  .tile-num { color: var(--red-text); }
+
     /* ── Signal / event rows ── */
     .item {
       border-top: 1px solid var(--border);
@@ -311,6 +323,18 @@
       <div class="tiles" id="tiles"><p class="empty">Loading…</p></div>
     </div>
 
+    <!-- ── Content coverage (figures from coverage.js) ── -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Content coverage</div>
+        <div class="card-note">Subject and board pairs, worked out live from the site's config. Click a box to see those boards.</div>
+      </div>
+      <div class="cov-sub">GCSE</div>
+      <div class="tiles" id="covTiles-gcse"><p class="empty">Loading…</p></div>
+      <div class="cov-sub">A-Level</div>
+      <div class="tiles" id="covTiles-alevel"><p class="empty">Loading…</p></div>
+    </div>
+
     <!-- ── Live signals ── -->
     <div class="card">
       <div class="card-head">
@@ -353,6 +377,8 @@
       <div class="card-head"><div class="card-title">Elsewhere</div></div>
       <div class="links">
         <a href="admin-attribution.html">Where people come from →</a>
+        <a href="admin-gcse.html">GCSE coverage →</a>
+        <a href="admin-alevel.html">A-Level coverage →</a>
         <a href="admin-bugs.html">Known bugs →</a>
       </div>
     </div>
@@ -382,6 +408,12 @@
   </div>
 </div>
 
+  <script src="subjects-config.js"></script>
+  <script src="diagnostics-pages.js"></script>
+  <script src="topics-config.js"></script>
+  <script src="practice-bank-config.js"></script>
+  <script src="flashcards-config.js"></script>
+  <script src="coverage.js"></script>
   <script>
   // The user chip's buttons call these inline, so they have to be global.
   // Everything else on this page stays inside the IIFE below.
@@ -775,6 +807,28 @@
       renderFlagged(res.data || []);
     }
 
+    // Built in the browser from public config, so no RPC: a failure here
+    // only leaves this card saying so.
+    async function loadCoverage(level) {
+      var host = document.getElementById('covTiles-' + level);
+      var COV = window.COVERAGE, labels = COV.labels(level);
+      try {
+        var counts = COV.tally(level, await COV.load(level));
+        clear(host);
+        COV.statuses(level).forEach(function (k) {
+          var a = el('a', 'tile cov-' + k);
+          a.href = 'admin-' + level + '.html?status=' + k;
+          a.appendChild(el('div', 'tile-num', String(counts[k])));
+          a.appendChild(el('div', 'tile-label', labels[k]));
+          host.appendChild(a);
+        });
+      } catch (e) {
+        console.error(e);
+        clear(host);
+        host.appendChild(el('p', 'empty', 'Could not work out coverage.'));
+      }
+    }
+
     // ── Sidebar identity ─────────────────────────────────────
     // Name and avatar only. Failing here must never take the page down with
     // it, so init() fires this without awaiting and swallows the rejection.
@@ -825,7 +879,7 @@
       }
 
       document.getElementById('wrap').hidden = false;
-      await Promise.all([loadSummary(), loadSignals(), loadEvents(), loadFlagged()]);
+      await Promise.all([loadSummary(), loadSignals(), loadEvents(), loadFlagged(), loadCoverage('gcse'), loadCoverage('alevel')]);
     }
 
     init();

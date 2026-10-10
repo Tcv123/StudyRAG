@@ -13,18 +13,13 @@
     figure is worked out in the browser from the public config files — so
     the gate is only about keeping an internal view out of students' way.
 
-    WHAT IT SHOWS: every subject + board a GCSE student can pick
-    (SUBJECTS_CONFIG.getSubjectsFor('gcse') / getBoardsFor), looked up in each
-    feature's registry exactly the way the app does it, via levelLookup():
+    WHAT IT SHOWS: every subject and exam board a GCSE student can pick,
+    checked against each study feature. The figures are worked out in
+    coverage.js, which admin.html also uses for its summary tiles; see that
+    file for what green / amber / red mean.
 
-      green  the "|gcse" key exists (or the base key, when that subject/board's
-             base diagnostic is itself the GCSE one, e.g. Computer Science OCR)
-      amber  only the base key exists, so a GCSE student gets A-Level content
-      red    nothing resolves
-
-    NOTES_AVAILABLE and DIAG_PAGE live inline in notes.html, so they are read
-    by fetching that page and evaluating the two object literals. Nothing to
-    maintain here: add content to the configs and this page follows.
+    ?status=ready|most|alevel|none presets the Status filter, so each tile
+    on admin.html lands on its own boards.
   -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,21 +103,8 @@
     .card-note { font-size: 13px; color: var(--muted); line-height: 1.55; margin: -12px 0 18px; max-width: 640px; }
     .empty { color: var(--muted2); font-size: 14px; }
 
-    /* ── Tally: doubles as the filter ── */
-    .tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
-    .tally-cell { border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; background: var(--surface2);
-                  text-align: left; font-family: var(--font-body); cursor: pointer; transition: all .12s; }
-    .tally-cell:hover { border-color: var(--border-hover); }
-    .tally-cell[aria-pressed="true"] { border-color: var(--border-hover); box-shadow: 0 0 0 3px var(--accent-dim); }
-    .tally-cell:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .tally-num { font-family: var(--font-display); font-size: 34px; line-height: 1; }
-    .tally-lbl { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
-    .t-ready  .tally-num, .t-ready  .tally-lbl { color: var(--green-text); }
-    .t-most   .tally-num, .t-most   .tally-lbl { color: var(--accent-dark); }
-    .t-alevel .tally-num, .t-alevel .tally-lbl { color: var(--amber-text); }
-    .t-none   .tally-num, .t-none   .tally-lbl { color: var(--red-text); }
 
-    .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--muted); margin-top: 18px; }
+    .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--muted); margin: -6px 0 18px; }
     .legend span { display: inline-flex; align-items: center; gap: 6px; }
 
     /* ── Filter bar ── */
@@ -258,23 +240,13 @@
 
     <div id="content" hidden>
       <div class="card">
-        <div class="card-title">Where it stands</div>
-        <div class="tally" id="tally">
-          <button type="button" class="tally-cell t-ready"  data-f="ready"  aria-pressed="false"><div class="tally-num" id="n-ready">0</div><div class="tally-lbl">Fully built</div></button>
-          <button type="button" class="tally-cell t-most"   data-f="most"   aria-pressed="false"><div class="tally-num" id="n-most">0</div><div class="tally-lbl">Mostly built</div></button>
-          <button type="button" class="tally-cell t-alevel" data-f="alevel" aria-pressed="false"><div class="tally-num" id="n-alevel">0</div><div class="tally-lbl">A-Level only</div></button>
-          <button type="button" class="tally-cell t-none"   data-f="none"   aria-pressed="false"><div class="tally-num" id="n-none">0</div><div class="tally-lbl">Not started</div></button>
-        </div>
+        <div class="card-title">By subject and board</div>
         <div class="legend">
           <span><i class="dot d-g">✓</i> GCSE content</span>
           <span><i class="dot d-a">A</i> A-Level shown instead</span>
           <span><i class="dot d-r">–</i> Missing</span>
-          <span>Numbers are topic counts. Click a box to filter; click it again to show all.</span>
+          <span>Numbers are topic counts.</span>
         </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">By subject and board</div>
         <div class="fbar" role="search">
           <label class="field grow">
             <span>Search</span>
@@ -342,7 +314,8 @@
       <div class="card">
         <div class="card-title">Elsewhere</div>
         <div class="links">
-          <a href="admin.html">Security &amp; flags →</a>
+          <a href="admin.html">Admin overview →</a>
+          <a href="admin-alevel.html">A-Level coverage →</a>
           <a href="admin-bugs.html">Known bugs →</a>
         </div>
       </div>
@@ -374,6 +347,7 @@
 <script src="topics-config.js"></script>
 <script src="practice-bank-config.js"></script>
 <script src="flashcards-config.js"></script>
+<script src="coverage.js"></script>
 <script>
 function confirmSignOut(){ document.getElementById('signoutOverlay').classList.add('active'); }
 function cancelSignOut(){ document.getElementById('signoutOverlay').classList.remove('active'); }
@@ -385,78 +359,16 @@ async function logout() {
 (function () {
   'use strict';
 
-  var COLS = ['notes', 'diag', 'topics', 'practice', 'aifb', 'flash'];
-  var COL_NAMES = { notes: 'Notes', diag: 'Diagnostic', topics: 'Topic list', practice: 'Practice questions', aifb: 'AI feedback', flash: 'Flashcards' };
-  var LABEL = { ready: 'Fully built', most: 'Mostly built', alevel: 'A-Level only', none: 'Not started' };
-
-  // notes.html keeps NOTES_AVAILABLE and DIAG_PAGE inline. Pull the two
-  // object literals out of the page source by brace matching.
-  function grabLiteral(html, name) {
-    var i = html.indexOf('const ' + name + ' = {');
-    if (i < 0) return {};
-    var j = html.indexOf('{', i), depth = 0;
-    for (var k = j; k < html.length; k++) {
-      var ch = html[k];
-      if (ch === '{') depth++;
-      else if (ch === '}' && --depth === 0) {
-        try { return new Function('return (' + html.slice(j, k + 1) + ')')(); }
-        catch (e) { return {}; }
-      }
-    }
-    return {};
-  }
-
-  // 'g' | 'a' | 'r' for one registry, the way levelLookup resolves it at GCSE.
-  // A base key counts as GCSE when that subject/board's base diagnostic is a
-  // GCSE page (Computer Science OCR keeps its GCSE content unsuffixed).
-  function resolve(map, base, baseIsGcse) {
-    if (!map) return 'r';
-    if (map[base + '|gcse'] !== undefined) return 'g';
-    if (map[base] !== undefined) return baseIsGcse ? 'g' : 'a';
-    return 'r';
-  }
-  function count(map, base) {
-    var v = window.levelLookup(map, base, 'gcse');
-    if (!v) return '';
-    if (Array.isArray(v)) return /\.js$/.test(v[0] || '') ? '' : v.length;
-    if (Array.isArray(v.topics)) return v.topics.length;
-    return '';
-  }
-
-  function build(notesMap) {
-    var SC = window.SUBJECTS_CONFIG, out = [];
-    SC.getSubjectsFor('gcse').forEach(function (s) {
-      var boards = SC.getBoardsFor(s.name, 'gcse').map(function (b) {
-        var u = s.name + '_' + b, p = s.name + '|' + b;
-        var baseDiag = (window.DIAGNOSTIC_PAGES || {})[u] || '';
-        var bg = /gcse/i.test(baseDiag);
-        var cells = {
-          notes:    [resolve(notesMap, p, bg), ''],
-          diag:     [resolve(window.DIAGNOSTIC_PAGES, u, bg), ''],
-          topics:   [resolve(window.DIAG_TOPICS, u, bg), count(window.DIAG_TOPICS, u)],
-          practice: [resolve(window.PRACTICE_BUNDLE_MAP, u, bg), ''],
-          aifb:     [resolve(window.AI_FEEDBACK_BUNDLE_MAP, u, bg), ''],
-          flash:    [resolve(window.FLASHCARDS_TOPICS, p, bg), count(window.FLASHCARDS_TOPICS, p)]
-        };
-        var ks = COLS.map(function (c) { return cells[c][0]; });
-        var st = ks.every(function (k) { return k === 'g'; }) ? 'ready'
-               : ks.every(function (k) { return k === 'r'; }) ? 'none'
-               : ks.indexOf('g') < 0 ? 'alevel' : 'most';
-        return { board: b, cells: cells, status: st };
-      });
-      out.push({ subject: s.name, boards: boards });
-    });
-    return out;
-  }
+  var COV = window.COVERAGE;
+  var COLS = COV.COLS, COL_NAMES = COV.COL_NAMES, LABEL = COV.labels('gcse');
 
   function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
 
   function render(data) {
-    var counts = { ready: 0, most: 0, alevel: 0, none: 0 }, rows = '', gaps = '';
+    var rows = '', gaps = '';
     data.forEach(function (s) {
       rows += '<tr class="subj"><td colspan="8">' + esc(s.subject) + '</td></tr>';
       s.boards.forEach(function (b) {
-        counts[b.status]++;
         rows += '<tr data-subject="' + esc(s.subject) + '" data-board="' + esc(b.board) + '" data-status="' + b.status + '"' +
           COLS.map(function (c) { return ' data-' + c + '="' + b.cells[c][0] + '"'; }).join('') +
           '><td class="board">' + esc(b.board) + '</td>' +
@@ -476,7 +388,6 @@ async function logout() {
     });
     document.getElementById('rows').innerHTML = rows;
     document.getElementById('gaps').innerHTML = gaps || '<p class="empty">No gaps: every mostly-built board is complete.</p>';
-    Object.keys(counts).forEach(function (k) { document.getElementById('n-' + k).textContent = counts[k]; });
   }
 
   // Fill the subject and board dropdowns from the data, so a new subject or
@@ -502,9 +413,6 @@ async function logout() {
     var shown = 0, total = 0, heading = null, headingHasRows = false;
 
     document.getElementById('fState').disabled = !feature;
-    document.querySelectorAll('.tally-cell').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.dataset.f === status));
-    });
 
     function closeHeading() { if (heading) heading.hidden = !headingHasRows; }
 
@@ -544,14 +452,6 @@ async function logout() {
   }
 
   function wire() {
-    // The tally boxes are shortcuts for the Status dropdown.
-    document.querySelectorAll('.tally-cell').forEach(function (b) {
-      b.addEventListener('click', function () {
-        var sel = document.getElementById('fStatus');
-        sel.value = b.getAttribute('aria-pressed') === 'true' ? '' : b.dataset.f;
-        applyFilters();
-      });
-    });
     ['fSubject', 'fBoard', 'fStatus', 'fFeature', 'fState'].forEach(function (id) {
       document.getElementById(id).addEventListener('change', applyFilters);
     });
@@ -595,16 +495,13 @@ async function logout() {
       return;
     }
 
-    var notesMap = {};
-    try {
-      var html = await (await fetch('notes.html', { cache: 'no-store' })).text();
-      notesMap = grabLiteral(html, 'NOTES_AVAILABLE');
-    } catch (e) { /* notes column shows red rather than the page failing */ }
-
-    var data = build(notesMap);
+    var data = await COV.load('gcse');
     render(data);
     fillSelects(data);
     wire();
+    // Arriving from a tile on admin.html: preset the Status filter.
+    var want = new URLSearchParams(location.search).get('status');
+    if (want && LABEL[want]) document.getElementById('fStatus').value = want;
     applyFilters();
     document.getElementById('loading').hidden = true;
     document.getElementById('content').hidden = false;
