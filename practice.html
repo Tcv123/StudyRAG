@@ -85,7 +85,7 @@
     .user-name  { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; flex-shrink: 0; }
-    .logout-btn:hover { color: #DC2626; }
+    .logout-btn:hover { color: var(--red, #DC2626); }
 
     /* ── SIGN-OUT CONFIRM MODAL ── */
     .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
@@ -130,7 +130,7 @@
     .subj-pick-diag-tag {
       display: inline-block; font-size: 10px; font-weight: 600;
       background: rgba(217,119,6,0.1); border: 1px solid rgba(217,119,6,0.25);
-      color: #B45309; padding: 2px 7px; border-radius: 12px;
+      color: var(--amber-text, #B45309); padding: 2px 7px; border-radius: 12px;
       margin-left: 6px; vertical-align: middle;
     }
     /* Dark shades above are for a light page; lift them in dark mode. */

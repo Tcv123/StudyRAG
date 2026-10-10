@@ -85,7 +85,7 @@
     .user-name  { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; flex-shrink: 0; }
-    .logout-btn:hover { color: #DC2626; }
+    .logout-btn:hover { color: var(--red, #DC2626); }
 
     /* ── SIGN-OUT CONFIRM MODAL ── */
     .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
@@ -164,7 +164,7 @@
       display: inline-flex; align-items: center; gap: 6px;
       padding: 4px 10px; border-radius: 99px;
       background: var(--amber-bg); border: 1px solid var(--amber-border);
-      color: #92400E; font-size: 12px; font-weight: 600; align-self: flex-start;
+      color: var(--amber-text-strong, #92400E); font-size: 12px; font-weight: 600; align-self: flex-start;
     }
     .fc-decks-line { font-size: 12px; color: var(--muted); }
     .fc-decks-line strong { color: var(--text); font-weight: 600; }
@@ -172,7 +172,7 @@
     .fc-empty { padding: 40px 20px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--border); border-radius: 14px; }
     .fc-empty-icon { font-size: 36px; margin-bottom: 8px; opacity: 0.6; }
     .fc-lock { padding: 60px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
-    .fc-lock-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 28px; color: #B45309; margin: 0 auto 16px; }
+    .fc-lock-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 28px; color: var(--amber-text, #B45309); margin: 0 auto 16px; }
     .fc-lock-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 6px; }
     .fc-lock-msg { font-size: 14px; color: var(--muted); max-width: 460px; margin: 0 auto 20px; line-height: 1.5; }
     .fc-lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
@@ -427,7 +427,7 @@
     }
     .subj-pill .dot { width: 7px; height: 7px; border-radius: 50%; }
     .subj-pill.green   { background: var(--green-bg);  color: #166534; border: 1px solid var(--green-border); }
-    .subj-pill.amber   { background: var(--amber-bg);  color: #92400E; border: 1px solid var(--amber-border); }
+    .subj-pill.amber   { background: var(--amber-bg);  color: var(--amber-text-strong, #92400E); border: 1px solid var(--amber-border); }
     .subj-pill.red     { background: var(--red-bg);    color: #991B1B; border: 1px solid var(--red-border); }
     .subj-pill.pending { background: var(--surface2);  color: var(--muted); border: 1px solid var(--border); }
     .subj-pill.green   .dot { background: var(--green); }
@@ -1233,14 +1233,20 @@ function renderCalendar() {
       const bb  = BOARD_BG[e.board] || 'rgba(55,65,81,0.1)';
       const timeStr = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
       const urgency = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : '#059669';
+      // Text goes through tokens so dark mode gets readable shades; the hex
+      // above stays for the border, which needs an alpha suffix.
+      const urgText = e.diffDays <= 7 ? 'var(--red-vivid, #EF4444)' : e.diffDays <= 21 ? 'var(--amber-vivid, #F59E0B)' : 'var(--emerald-text, #059669)';
+      // Board colours are dark shades picked for a light page; lift the text
+      // towards white in dark mode so it stays readable on the navy cells.
+      const bcText = (typeof window.isDarkMode === 'function' && window.isDarkMode()) ? `color-mix(in srgb, ${bc} 45%, #fff)` : bc;
       const urgBg   = e.diffDays <= 7 ? 'rgba(239,68,68,0.1)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.1)' : 'rgba(5,150,105,0.1)';
       const urgLabel = e.diffDays <= 7 ? `${e.diffDays}d` : e.diffDays <= 21 ? `${e.diffDays}d` : `${e.diffDays}d`;
       return `<div style="background:${sc}15;border:1px solid ${sc}40;border-left:4px solid ${sc};border-radius:8px;padding:8px 10px;margin-top:5px;">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:4px;">
           <div style="font-size:13px;font-weight:700;color:var(--text);line-height:1.2;">${e.emoji} ${e.subject}</div>
-          <span style="font-size:11.5px;font-weight:700;color:${urgency};background:${urgBg};padding:2px 8px;border-radius:10px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${urgLabel}</span>
+          <span style="font-size:11.5px;font-weight:700;color:${urgText};background:${urgBg};padding:2px 8px;border-radius:10px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${urgLabel}</span>
         </div>
-        <div style="margin-bottom:3px;"><span style="color:${bc};font-size:11px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:1px 7px;border-radius:6px;">${e.board}</span></div>
+        <div style="margin-bottom:3px;"><span style="color:${bcText};font-size:11px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:1px 7px;border-radius:6px;">${e.board}</span></div>
         <div style="font-size:12px;font-weight:600;color:var(--text);margin-top:3px;line-height:1.3;">${e.paper}</div>
         <div style="font-size:11px;color:var(--muted);margin-top:3px;">🕐 ${timeStr}${e.duration ? ' &nbsp;·&nbsp; ⏱ '+e.duration : ''}</div>
       </div>`;

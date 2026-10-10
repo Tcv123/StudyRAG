@@ -48,7 +48,7 @@
     .user-info { flex: 1; min-width: 0; }
     .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; }
-    .logout-btn:hover { color: #DC2626; }
+    .logout-btn:hover { color: var(--red, #DC2626); }
     /* min-width: 0 lets the one-line part prompts ellipsise instead of
        widening the column (long Politics prompts pushed it past the window). */
     .main { margin-left: var(--sidebar-w); flex: 1; min-width: 0; padding: 40px 44px; }
@@ -83,7 +83,7 @@
     .q-card-head:hover { background: var(--surface2); }
     .q-num { font-family: var(--font-display); font-size: 17px; flex: 1; }
     .q-marks { font-size: 13px; color: var(--muted); }
-    .q-choice { font-size: 12px; font-weight: 600; color: var(--warn, #B45309); background: rgba(180,83,9,0.08); border: 1px solid rgba(180,83,9,0.3); border-radius: 999px; padding: 3px 10px; }
+    .q-choice { font-size: 12px; font-weight: 600; color: var(--amber-text, #B45309); background: rgba(180,83,9,0.08); border: 1px solid rgba(180,83,9,0.3); border-radius: 999px; padding: 3px 10px; }
     .q-group-note { font-size: 13.5px; color: var(--text); background: rgba(180,83,9,0.08); border-left: 3px solid var(--warn, #B45309); border-radius: 6px; padding: 10px 14px; }
     .q-scenario { padding: 12px 20px; font-size: 13.5px; color: var(--text); line-height: 1.6; background: var(--surface2); border-bottom: 1px solid var(--border); white-space: pre-line; }
     .ms-source-note { font-size: 13px; color: var(--muted); margin: -8px 0 16px; line-height: 1.5; }
@@ -128,7 +128,7 @@
     .ms-guidance { margin-top: 10px; font-size: 12.5px; color: var(--muted); font-style: italic; padding: 7px 11px; background: rgba(217,119,6,0.06); border-radius: 6px; border-left: 2px solid rgba(217,119,6,0.35); }
     .mc-sub-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted2); margin-bottom: 6px; }
     .mc-empty { font-size: 13.5px; color: var(--muted2); padding: 6px 0; }
-    .mc-model-answer-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--good); margin-bottom: 6px; margin-top: 18px; display: flex; align-items: center; gap: 5px; }
+    .mc-model-answer-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green, #16A34A); margin-bottom: 6px; margin-top: 18px; display: flex; align-items: center; gap: 5px; }
     .mc-model-answer { white-space: pre-wrap; font-size: 14px; line-height: 1.7; color: var(--text); padding: 13px 15px; background: var(--surface); border-radius: 9px; border-left: 3px solid var(--good); border: 1px solid rgba(22,163,74,0.25); border-left: 3px solid var(--good); }
     .mc-model-answer p { margin: 0 0 10px; }
     .mc-model-answer p:last-child { margin-bottom: 0; }
@@ -163,7 +163,7 @@
     .ms-point-text.type-exact { border-left-color: var(--accent); }
     .ms-note-btn { flex-shrink: 0; margin-top: 6px; background: none; border: 1px dashed var(--border); border-radius: 6px; color: var(--muted2); font-size: 11px; padding: 4px 8px; cursor: pointer; white-space: nowrap; font-family: var(--font-body); }
     .ms-note-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
-    .ms-note-btn.has-note { border-style: solid; border-color: rgba(217,119,6,0.5); color: #B45309; background: rgba(217,119,6,0.06); }
+    .ms-note-btn.has-note { border-style: solid; border-color: rgba(217,119,6,0.5); color: var(--amber-text, #B45309); background: rgba(217,119,6,0.06); }
     .ms-note-area { display: none; margin-top: 4px; }
     .ms-note-area.open { display: flex; flex-direction: column; gap: 6px; }
     .ms-note-textarea { width: 100%; min-height: 64px; padding: 8px 10px; font-family: var(--font-body); font-size: 13px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); color: var(--text); resize: vertical; line-height: 1.5; }
@@ -172,8 +172,8 @@
     .ms-note-save { padding: 5px 12px; background: var(--accent); color: #fff; border: none; border-radius: 6px; font-family: var(--font-body); font-size: 12px; font-weight: 600; cursor: pointer; }
     .ms-note-save:hover { background: var(--accent-dark); }
     .ms-note-delete { padding: 5px 10px; background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 6px; font-family: var(--font-body); font-size: 12px; cursor: pointer; }
-    .ms-note-delete:hover { border-color: #DC2626; color: #DC2626; }
-    .ms-note-display { margin-top: 4px; padding: 7px 10px; background: rgba(217,119,6,0.06); border-left: 3px solid rgba(217,119,6,0.5); border-radius: 0 6px 6px 0; font-size: 12.5px; color: #78350F; line-height: 1.5; white-space: pre-wrap; }
+    .ms-note-delete:hover { border-color: #DC2626; color: var(--red, #DC2626); }
+    .ms-note-display { margin-top: 4px; padding: 7px 10px; background: rgba(217,119,6,0.06); border-left: 3px solid rgba(217,119,6,0.5); border-radius: 0 6px 6px 0; font-size: 12.5px; color: var(--amber-text-strong, #78350F); line-height: 1.5; white-space: pre-wrap; }
 
     /* Edit panels */
     .ms-edit-bar { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
@@ -190,7 +190,7 @@
     .ms-edit-save { padding: 6px 14px; background: var(--accent); color: #fff; border: none; border-radius: 7px; font-family: var(--font-body); font-size: 12.5px; font-weight: 600; cursor: pointer; }
     .ms-edit-save:hover { background: var(--accent-dark); }
     .ms-edit-clear { padding: 6px 11px; background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 7px; font-family: var(--font-body); font-size: 12.5px; cursor: pointer; }
-    .ms-edit-clear:hover { border-color: #DC2626; color: #DC2626; }
+    .ms-edit-clear:hover { border-color: #DC2626; color: var(--red, #DC2626); }
     .ms-custom-badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 1px 6px; border-radius: 4px; background: rgba(37,99,235,0.12); color: var(--accent-dark); margin-left: 6px; vertical-align: middle; }
     .ms-model-answer { white-space: pre-wrap; font-size: 13.5px; line-height: 1.7; color: var(--text); padding: 12px 14px; background: var(--surface2); border-radius: 8px; border-left: 3px solid var(--good); }
 
@@ -203,7 +203,7 @@
     .placeholder-title { font-family: var(--font-display); font-size: 26px; margin-bottom: 10px; }
     .placeholder-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; }
     .lock-overlay { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
-    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #B45309; margin-bottom: 20px; }
+    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: var(--amber-text, #B45309); margin-bottom: 20px; }
     .lock-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
     .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
     .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
@@ -240,12 +240,12 @@
     </div>
     <div class="nav-section" style="margin-top:8px;">
       <div class="nav-label">Premium</div>
-      <a class="nav-item locked" href="#"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
-      <a class="nav-item locked" href="#"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
-      <a class="nav-item locked" href="#"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
-      <a class="nav-item locked" href="#"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
-      <a class="nav-item locked" href="#"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
-      <a class="nav-item active" href="mark-schemes.html"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
+      <a class="nav-item active" href="mark-schemes.html"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
     </div>
     <div class="nav-section" style="margin-top:8px;">
       <div class="nav-label">Account</div>

@@ -193,6 +193,9 @@
     if (!prediction) return '';
     opts = opts || {};
     const col   = gradeColour(prediction.grade);
+    // The small "Predicted" label is the grade colour at 80% alpha. On a dark
+    // card that fade drops it under 4.5:1, so dark mode uses the full colour.
+    const labelCol = (typeof window.isDarkMode === 'function' && window.isDarkMode()) ? col : col + 'CC';
     const dim   = prediction.confidence === 'low';
     // A low-confidence grade (one topic of seventeen, say) should not also
     // claim "Above target". Opacity and a hover tip were the only signals,
@@ -213,7 +216,7 @@
 
     if (opts.compact) {
       return `<div data-pred-tip="${tip}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:${col}12;border:1.5px solid ${col}40;border-radius:10px;padding:6px 14px;min-width:72px;cursor:help;opacity:${dim ? '0.72' : '1'};">
-        <span style="font-size:9px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:${col}CC;">Predicted</span>
+        <span style="font-size:9px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:${labelCol};">Predicted</span>
         <span style="font-size:20px;font-weight:800;color:${col};line-height:1;letter-spacing:-0.02em;">${prediction.grade}</span>
         ${ts ? `<span style="font-size:9px;font-weight:700;color:${ts.colour};">${ts.short}</span>` : `<span style="font-size:9px;font-weight:600;color:var(--muted,#6B7280);">${prediction.masteryPct}% mastery</span>`}
       </div>`;
@@ -223,7 +226,7 @@
     // inline on-track / below-target indicator when a target is set.
     return `<div data-pred-tip="${tip}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;background:${col}15;border:1.5px solid ${col}55;border-radius:10px;padding:8px 12px;margin-bottom:10px;cursor:help;opacity:${dim ? '0.6' : '1'};">
       <span style="display:flex;align-items:baseline;gap:8px;min-width:0;">
-        <span style="font-size:12px;font-weight:600;color:${col}CC;white-space:nowrap;">Predicted grade</span>
+        <span style="font-size:12px;font-weight:600;color:${labelCol};white-space:nowrap;">Predicted grade</span>
         ${ts ? `<span style="font-size:10px;font-weight:700;color:${ts.colour};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${ts.short}</span>` : ''}
       </span>
       <span style="font-size:20px;font-weight:800;color:${col};letter-spacing:-0.01em;line-height:1;white-space:nowrap;">${prediction.grade}</span>

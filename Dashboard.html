@@ -313,7 +313,7 @@
     .gs-goal {
       background: var(--green-bg); border: 1px solid var(--green-border);
       border-radius: 10px; padding: 12px 16px;
-      font-size: 13.5px; color: #15803D; font-weight: 500; line-height: 1.5;
+      font-size: 13.5px; color: var(--green-text, #15803D); font-weight: 500; line-height: 1.5;
     }
 
     /* ── ROW 2: SUBJECTS + BOARDS ── */
@@ -524,9 +524,9 @@
     .diag-subj-pill {
       font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 10px;
     }
-    .diag-subj-pill.green { background: rgba(22,163,74,0.08); color: #15803D; }
-    .diag-subj-pill.amber { background: rgba(217,119,6,0.08); color: #B45309; }
-    .diag-subj-pill.red { background: rgba(220,38,38,0.08); color: #B91C1C; }
+    .diag-subj-pill.green { background: rgba(22,163,74,0.08); color: var(--green-text, #15803D); }
+    .diag-subj-pill.amber { background: rgba(217,119,6,0.08); color: var(--amber-text, #B45309); }
+    .diag-subj-pill.red { background: rgba(220,38,38,0.08); color: var(--red-text, #B91C1C); }
     .diag-subj-pill.pending { background: var(--surface2); color: var(--muted); }
     .diag-subj-arrow { font-size: 16px; color: var(--accent); }
 
@@ -549,7 +549,7 @@
     .day-done  { background: var(--green);      color: #fff; }
     .day-today { background: var(--amber);      color: #fff; }
     .day-empty  { background: var(--surface2);   border: 1px solid var(--border);       color: var(--muted2); }
-    .day-missed { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: #EF4444; }
+    .day-missed { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: var(--red-vivid, #EF4444); }
 
     /* ── CTA ── */
     .cta-card { background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(61,149,188,0.06)); border: 1px solid rgba(37,99,235,0.25); border-radius: 14px; padding: 18px 20px; margin-bottom: 14px; }
@@ -1054,6 +1054,9 @@ function renderExamCalendar() {
       const timeStr = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
       const done    = e.diffDays < 0;
       const urgency = done ? '#059669' : e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : '#059669';
+      // Text goes through tokens so dark mode gets readable shades; the hex
+      // above stays for the border, which needs an alpha suffix.
+      const urgText = done ? 'var(--emerald-text, #059669)' : e.diffDays <= 7 ? 'var(--red-vivid, #EF4444)' : e.diffDays <= 21 ? 'var(--amber-vivid, #F59E0B)' : 'var(--emerald-text, #059669)';
       const urgBg   = done ? 'rgba(5,150,105,0.15)' : e.diffDays <= 7 ? 'rgba(239,68,68,0.1)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.1)' : 'rgba(5,150,105,0.1)';
       const badge   = done ? '✓ Done' : `${e.diffDays}d`;
       const cardOpacity = done ? '0.55' : '1';
@@ -1061,7 +1064,7 @@ function renderExamCalendar() {
       return `<div style="background:${sc}15;border:1px solid ${sc}40;border-left:3px solid ${sc};border-radius:6px;padding:4px 6px;margin-top:3px;opacity:${cardOpacity};${done ? 'filter:grayscale(0.3);' : ''}">
         <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2px 4px;margin-bottom:2px;">
           <div style="font-size:11px;font-weight:700;color:var(--text);line-height:1.2;min-width:0;overflow:hidden;${strike}" title="${e.subject}">${e.emoji} ${e.subject}</div>
-          <span style="font-size:10px;font-weight:700;color:${urgency};background:${urgBg};padding:1px 5px;border-radius:8px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${badge}</span>
+          <span style="font-size:10px;font-weight:700;color:${urgText};background:${urgBg};padding:1px 5px;border-radius:8px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${badge}</span>
         </div>
         <div style="font-size:10px;color:var(--muted);line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;${strike}">${e.paper}</div>
       </div>`;
@@ -1347,7 +1350,7 @@ function renderSubjectsProgress(subjects, topicRows, practiceAttempts, level) {
             <div class="subj-board">${s.exam_board}</div>
           </div>
         </div>
-        <div style="padding:14px 16px;text-align:center;font-size:12px;color:#b45309;background:rgba(245,158,11,0.10);border-top:1px solid rgba(245,158,11,0.25);border-radius:0 0 12px 12px;font-weight:600;">
+        <div style="padding:14px 16px;text-align:center;font-size:12px;color:var(--amber-text, #b45309);background:rgba(245,158,11,0.10);border-top:1px solid rgba(245,158,11,0.25);border-radius:0 0 12px 12px;font-weight:600;">
           🔒 Coming soon
         </div>
       </div>`;
@@ -1404,7 +1407,7 @@ function renderSubjectsProgress(subjects, topicRows, practiceAttempts, level) {
         <span class="subj-board-tag" style="margin-bottom:0;">${s.exam_board}</span>
         ${gradeStr ? `<span style="font-size:11px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-dark));padding:2px 8px;border-radius:20px;box-shadow:0 2px 6px var(--accent-glow);letter-spacing:0.01em;">${gradeStr}</span>` : ''}
         ${(typeof renderPredictedGradeBadge === 'function') ? renderPredictedGradeBadge(prediction, { level: _level, target: tgtGrade, inline: true }) : ''}
-        ${!diagComplete && total ? `<span title="Take the diagnostic to get your personalised weak-topic list" style="font-size:10px;font-weight:600;color:#B45309;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.25);padding:2px 8px;border-radius:20px;">🚦 Diagnostic ${tested}/${total}</span>` : ''}
+        ${!diagComplete && total ? `<span title="Take the diagnostic to get your personalised weak-topic list" style="font-size:10px;font-weight:600;color:var(--amber-text, #B45309);background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.25);padding:2px 8px;border-radius:20px;">🚦 Diagnostic ${tested}/${total}</span>` : ''}
       </div>
       <div class="subj-progress" style="display:flex;">
         ${greenPct ? `<div class="subj-fill fill-green" style="width:${greenPct}%"></div>` : ''}

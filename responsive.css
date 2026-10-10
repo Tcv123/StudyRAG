@@ -90,7 +90,7 @@ pre { max-width: 100%; overflow-x: auto; }
     --border-hover: #3B82F6;
     --text:         #E2ECFB;
     --muted:        #7B98BF;
-    --muted2:       #7088AB;
+    --muted2:       #7A93B8;
     --accent:       #3B82F6;
     --accent-dark:  #60A5FA;
     --accent-dim:   rgba(59,130,246,0.15);
@@ -115,6 +115,16 @@ pre { max-width: 100%; overflow-x: auto; }
     --card-glow-end: var(--surface2);
     /* Weekend tint in the exam calendars; light falls back to a pale wash. */
     --cal-weekend: rgba(255,255,255,0.03);
+
+    /* Dark-only text tokens. Pages write them as var(--x, #light-hex): light
+       mode never defines them, so it keeps that exact hex, and dark mode
+       swaps in a shade that reads on the navy surfaces. */
+    --amber-text-strong: var(--amber-text);
+    --amber-vivid:       var(--amber);
+    --red-vivid:         var(--red);
+    --emerald-text:      var(--green);
+    --green-text-strong: var(--green-text);
+    --violet-text:       #C4B5FD;
   }
 
   /* Soften heavy orb blobs so they don't over-power the dark background */
@@ -138,7 +148,7 @@ pre { max-width: 100%; overflow-x: auto; }
 html[data-theme="dark"] {
   --bg: #0F1B2D; --surface: #162035; --surface2: #1C2A42; --surface3: #243350;
   --border: #2C3F5C; --border-hover: #3B82F6;
-  --text: #E2ECFB; --muted: #7B98BF; --muted2: #7088AB;
+  --text: #E2ECFB; --muted: #7B98BF; --muted2: #7A93B8;
   --accent: #3B82F6; --accent-dark: #60A5FA;
   --accent-dim: rgba(59,130,246,0.15); --accent-glow: rgba(59,130,246,0.28);
   --red: #F87171; --red-bg: rgba(248,113,113,0.12); --red-border: rgba(248,113,113,0.28); --red-text: #FCA5A5;
@@ -146,6 +156,9 @@ html[data-theme="dark"] {
   --green: #4ADE80; --green-bg: rgba(74,222,128,0.12); --green-border: rgba(74,222,128,0.28); --green-text: #86EFAC;
   --card-glow-end: var(--surface2);
   --cal-weekend: rgba(255,255,255,0.03);
+  --amber-text-strong: var(--amber-text); --amber-vivid: var(--amber);
+  --red-vivid: var(--red); --emerald-text: var(--green);
+  --green-text-strong: var(--green-text); --violet-text: #C4B5FD;
 }
 html[data-theme="dark"] .orb { opacity: 0.5; }
 html[data-theme="dark"] body::before { opacity: 0.4; }
@@ -177,4 +190,8 @@ html[data-theme="light"] {
   --green: #16A34A; --green-bg: rgba(22,163,74,0.07); --green-border: rgba(22,163,74,0.18); --green-text: #15803D;
   --card-glow-end: #F6FBFE;
   --cal-weekend: rgba(248,251,254,0.6);
+  /* Unset the dark-only text tokens so each use falls back to its own hex. */
+  --amber-text-strong: initial; --amber-vivid: initial;
+  --red-vivid: initial; --emerald-text: initial;
+  --green-text-strong: initial; --violet-text: initial;
 }

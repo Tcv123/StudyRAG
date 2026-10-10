@@ -48,7 +48,7 @@
     .user-info { flex: 1; min-width: 0; }
     .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; }
-    .logout-btn:hover { color: #DC2626; }
+    .logout-btn:hover { color: var(--red, #DC2626); }
     .main { margin-left: var(--sidebar-w); flex: 1; padding: 40px 44px; }
     .topbar { margin-bottom: 32px; }
     .page-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.02em; }
@@ -58,7 +58,7 @@
     .placeholder-title { font-family: var(--font-display); font-size: 26px; margin-bottom: 10px; }
     .placeholder-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; }
     .lock-overlay { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
-    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #B45309; margin-bottom: 20px; }
+    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: var(--amber-text, #B45309); margin-bottom: 20px; }
     .lock-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
     .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
     .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
@@ -66,7 +66,7 @@
     /* Intro card */
     .intro-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px; margin-bottom: 24px; font-size: 13.5px; color: var(--muted); line-height: 1.6; }
     .intro-card strong { color: var(--text); }
-    .intro-card .official-tag { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #15803D; background: rgba(22,163,74,0.1); padding: 3px 9px; border-radius: 999px; margin-right: 8px; vertical-align: middle; }
+    .intro-card .official-tag { display: inline-block; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green-text, #15803D); background: rgba(22,163,74,0.1); padding: 3px 9px; border-radius: 999px; margin-right: 8px; vertical-align: middle; }
 
     /* Subject sections */
     .subject-section { margin-bottom: 32px; }
@@ -165,12 +165,12 @@
     </div>
     <div class="nav-section" style="margin-top:8px;">
       <div class="nav-label">Premium</div>
-      <a class="nav-item locked" href="#"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
-      <a class="nav-item locked" href="#"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
-      <a class="nav-item locked" href="#"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
-      <a class="nav-item locked" href="#"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
-      <a class="nav-item active" href="past-papers.html"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
-      <a class="nav-item locked" href="#"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
+      <a class="nav-item active" href="past-papers.html"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber, #D97706);font-weight:600;">PRO</span></a>
     </div>
     <div class="nav-section" style="margin-top:8px;">
       <div class="nav-label">Account</div>
