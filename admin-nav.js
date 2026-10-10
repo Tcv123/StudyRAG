@@ -40,6 +40,7 @@
     { file: 'admin-attribution.html', icon: '📈', label: 'Attribution' },
     { file: 'admin-bugs.html',        icon: '🐞', label: 'Known bugs'  },
     { file: 'admin-gcse.html',        icon: '🎓', label: 'GCSE coverage' },
+    { file: 'admin-alevel.html',      icon: '📚', label: 'A-Level coverage' },
     { file: 'admin-exam-dates.html',  icon: '📅', label: 'Exam dates',
       onlyWhen: 'pending_timetable_findings' }
   ];
