@@ -1905,7 +1905,8 @@ builtins.input = __qbq_input
                     markScheme:    part.markScheme,
                     subject:       paper.subject,
                     board:         paper.board,
-                    paperCode:     paper.specCode || paper.paperCode
+                    paperCode:     paper.specCode || paper.paperCode,
+                    level:         paper.level
                   })
                 });
                 if (!resp.ok) {

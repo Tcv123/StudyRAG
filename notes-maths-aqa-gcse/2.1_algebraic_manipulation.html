@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — AQA 2.1 — Algebraic Notation &amp; Manipulation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .step { margin-bottom: 8px; padding-left: 16px; border-left: 2px solid #86efac; }
+        .diagram-container { text-align: center; margin: 20px 0; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.1 Algebraic Notation &amp; Manipulation</h1>
+<p class="spec-ref">AQA GCSE Mathematics 8300 &mdash; Algebra &mdash; spec refs A1&ndash;A4 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<!-- ===================== 2.1.1 NOTATION ===================== -->
+<h2>2.1.1 Algebraic Notation (A1)</h2>
+
+<p>Algebra uses letters to stand for numbers. AQA expects you to read and write algebra using the standard conventions below, and to give answers in their <strong>simplest form</strong> even when the question does not say so.</p>
+
+<table>
+  <thead><tr><th>Instead of&hellip;</th><th>Write&hellip;</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>$a \times b$</td><td>$ab$</td><td>Leave out the $\times$ sign; letters usually in alphabetical order</td></tr>
+    <tr><td>$y + y + y$ or $3 \times y$</td><td>$3y$</td><td>Number first, then the letter</td></tr>
+    <tr><td>$a \times a$</td><td>$a^2$</td><td>&ldquo;$a$ squared&rdquo;</td></tr>
+    <tr><td>$a \times a \times a$</td><td>$a^3$</td><td>&ldquo;$a$ cubed&rdquo;</td></tr>
+    <tr><td>$a \times a \times b$</td><td>$a^2b$</td><td>Only the $a$ is squared</td></tr>
+    <tr><td>$a \div b$</td><td>$\dfrac{a}{b}$</td><td>Division is written as a fraction</td></tr>
+    <tr><td>$0.5x$</td><td>$\dfrac{1}{2}x$ or $\dfrac{x}{2}$</td><td>Coefficients written as fractions, not decimals</td></tr>
+    <tr><td>$3 \times (x + 2)$</td><td>$3(x + 2)$</td><td>Brackets group terms that are multiplied together</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">
+  $2a^2$ and $(2a)^2$ are different: $2a^2 = 2 \times a \times a$ but $(2a)^2 = 2a \times 2a = 4a^2$. The power only applies to what it is directly attached to.
+</div>
+
+<!-- ===================== 2.1.2 SUBSTITUTION ===================== -->
+<h2>2.1.2 Substitution (A2)</h2>
+
+<p><strong>Substituting</strong> means replacing each letter with its given value and then working out the answer using the correct order of operations (brackets, indices, division/multiplication, addition/subtraction). You may be given unfamiliar formulae, including scientific ones; all the information you need will be in the question.</p>
+
+<div class="worked-example">
+  Work out the value of $3p^2 - 2q$ when $p = -4$ and $q = 5$.<br><br>
+  <div class="step">$p^2 = (-4)^2 = 16$ &nbsp;(a negative number squared is positive)</div>
+  <div class="step">$3 \times 16 - 2 \times 5 = 48 - 10$</div>
+  <div class="step">$= 38$</div>
+</div>
+
+<div class="worked-example">
+  The formula $v = u + at$ gives velocity. Find $v$ when $u = 12$, $a = -3$ and $t = 5$.<br><br>
+  <div class="step">$v = 12 + (-3)(5) = 12 - 15$</div>
+  <div class="step">$v = -3$</div>
+</div>
+
+<div class="exam-tip">
+  Always put negative values in brackets when you substitute: $x = -3$ in $x^2$ gives $(-3)^2 = 9$, not $-9$. On a calculator type the bracket too.
+</div>
+
+<!-- ===================== 2.1.3 VOCABULARY ===================== -->
+<h2>2.1.3 Vocabulary: Expressions, Equations, Formulae, Identities (A3)</h2>
+
+<div class="definition">
+  <strong>Term:</strong> a single number, letter, or product of numbers and letters, e.g. $5x^2$, $-3y$, $7$.<br><br>
+  <strong>Coefficient:</strong> the number in front of a letter, e.g. in $-4x^3$ the coefficient is $-4$.<br><br>
+  <strong>Factor:</strong> something that divides exactly into a term or expression, e.g. $3$ and $x$ are factors of $3x$; $(x+2)$ is a factor of $x^2 + 5x + 6$.<br><br>
+  <strong>Expression:</strong> a collection of terms with <em>no</em> equals sign, e.g. $4x - 3$.<br><br>
+  <strong>Equation:</strong> two expressions that are equal for particular values of the letter, e.g. $2x + 1 = 9$ (true only when $x = 4$).<br><br>
+  <strong>Formula:</strong> a rule linking two or more variables, e.g. $A = lw$.<br><br>
+  <strong>Inequality:</strong> a statement using $&lt;, &gt;, \le, \ge$, e.g. $x + 4 &lt; 9$.<br><br>
+  <strong>Identity:</strong> a statement that is true for <em>every</em> value of the letter, written with $\equiv$, e.g. $5(x + 1) \equiv 5x + 5$.
+</div>
+
+<div class="worked-example">
+  Classify: (A) $4x - 3$ &nbsp; (B) $2x + 1 = 9$ &nbsp; (C) $A = lw$ &nbsp; (D) $5(x + 1) \equiv 5x + 5$.<br><br>
+  <div class="step">A has no equals sign &rarr; <strong>expression</strong></div>
+  <div class="step">B is true only when $x = 4$ &rarr; <strong>equation</strong></div>
+  <div class="step">C links area, length and width &rarr; <strong>formula</strong></div>
+  <div class="step">D is true for all $x$ &rarr; <strong>identity</strong></div>
+</div>
+
+<!-- ===================== 2.1.4 SIMPLIFYING ===================== -->
+<h2>2.1.4 Simplifying and the Laws of Indices (A4)</h2>
+
+<h3>Collecting like terms</h3>
+<p><strong>Like terms</strong> have exactly the same letters raised to the same powers. Only like terms can be added or subtracted. $3xy$ and $5yx$ are like terms; $4x$ and $4x^2$ are not.</p>
+
+<div class="worked-example">
+  Simplify $7a + 4b - 3a + 2b - b$.<br><br>
+  <div class="step">$a$ terms: $7a - 3a = 4a$</div>
+  <div class="step">$b$ terms: $4b + 2b - b = 5b$</div>
+  <div class="step">Answer: $4a + 5b$</div>
+</div>
+
+<h3>Laws of indices</h3>
+<div class="formula-box">
+  $$a^m \times a^n = a^{m+n} \qquad a^m \div a^n = a^{m-n} \qquad (a^m)^n = a^{mn}$$
+  $$a^0 = 1 \qquad a^{-n} = \frac{1}{a^n}$$
+</div>
+
+<p>To multiply terms, multiply the numbers and add the powers of each letter. To divide, divide the numbers and subtract the powers.</p>
+
+<div class="worked-example">
+  Simplify $(3x^2y^4)^2 \div x^3y$.<br><br>
+  <div class="step">$(3x^2y^4)^2 = 3^2 \times x^{4} \times y^{8} = 9x^4y^8$ &nbsp;(square the 3 as well!)</div>
+  <div class="step">$9x^4y^8 \div x^3y = 9x^{4-3}y^{8-1}$</div>
+  <div class="step">$= 9xy^7$</div>
+</div>
+
+<div class="worked-example">
+  Simplify $2x^{-3} \times 5x^5$.<br><br>
+  <div class="step">Numbers: $2 \times 5 = 10$; powers: $-3 + 5 = 2$</div>
+  <div class="step">Answer: $10x^2$</div>
+</div>
+
+<!-- ===================== 2.1.5 SINGLE BRACKETS & HCF ===================== -->
+<h2>2.1.5 Single Brackets and Common Factors (A4)</h2>
+
+<h3>Expanding a single bracket</h3>
+<p>Multiply <em>every</em> term inside the bracket by the term outside: $a(b + c) = ab + ac$.</p>
+
+<div class="worked-example">
+  Expand and simplify $4(3x - 2) - 5(x - 3)$.<br><br>
+  <div class="step">$4(3x - 2) = 12x - 8$</div>
+  <div class="step">$-5(x - 3) = -5x + 15$ &nbsp;($-5 \times -3 = +15$)</div>
+  <div class="step">$12x - 8 - 5x + 15 = 7x + 7$</div>
+</div>
+
+<h3>Factorising by taking out common factors</h3>
+<p>Factorising is the reverse of expanding. Find the <strong>highest common factor (HCF)</strong> of the numbers <em>and</em> of the letters, write it outside the bracket, then divide each term by it.</p>
+
+<div class="worked-example">
+  Factorise fully $8x^2y - 12xy^2$.<br><br>
+  <div class="step">HCF of 8 and 12 is 4; HCF of $x^2y$ and $xy^2$ is $xy$</div>
+  <div class="step">HCF $= 4xy$</div>
+  <div class="step">$8x^2y \div 4xy = 2x$ and $12xy^2 \div 4xy = 3y$</div>
+  <div class="step">Answer: $4xy(2x - 3y)$</div>
+</div>
+
+<div class="exam-tip">
+  &ldquo;Factorise fully&rdquo; means the bracket must have no common factor left. $2xy(4x - 6y)$ is only partly factorised and usually scores 1 mark out of 2.
+</div>
+
+<!-- ===================== 2.1.6 DOUBLE BRACKETS ===================== -->
+<h2>2.1.6 Expanding Products of Two Binomials (A4)</h2>
+
+<p>A <strong>binomial</strong> is an expression with two terms, like $(x + 3)$. To expand $(a + b)(c + d)$, multiply each term in the first bracket by each term in the second, giving four terms, then collect like terms. The grid method keeps this organised.</p>
+
+<div class="diagram-container">
+<svg viewBox="0 0 460 210" xmlns="http://www.w3.org/2000/svg" style="max-width:460px;width:100%;font-family:system-ui,sans-serif;">
+  <text x="230" y="22" text-anchor="middle" font-size="14" fill="#1e40af" font-weight="600">Grid method: (2x − 3)(3x + 4)</text>
+  <rect x="100" y="40" width="160" height="130" fill="none" stroke="#1e40af" stroke-width="1.5"/>
+  <rect x="100" y="40" width="80" height="50" fill="#dbeafe"/>
+  <rect x="180" y="40" width="80" height="50" fill="#dbeafe"/>
+  <text x="140" y="70" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="700">3x</text>
+  <text x="220" y="70" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="700">+4</text>
+  <rect x="40" y="90" width="60" height="40" fill="#dbeafe"/>
+  <rect x="40" y="130" width="60" height="40" fill="#dbeafe"/>
+  <text x="70" y="115" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="700">2x</text>
+  <text x="70" y="155" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="700">−3</text>
+  <rect x="100" y="90" width="80" height="40" fill="#f0fdf4" stroke="#1e40af"/>
+  <rect x="180" y="90" width="80" height="40" fill="#f0fdf4" stroke="#1e40af"/>
+  <rect x="100" y="130" width="80" height="40" fill="#fefce8" stroke="#1e40af"/>
+  <rect x="180" y="130" width="80" height="40" fill="#fefce8" stroke="#1e40af"/>
+  <text x="140" y="115" text-anchor="middle" font-size="15" fill="#166534" font-weight="600">6x²</text>
+  <text x="220" y="115" text-anchor="middle" font-size="15" fill="#166534" font-weight="600">+8x</text>
+  <text x="140" y="155" text-anchor="middle" font-size="15" fill="#92400e" font-weight="600">−9x</text>
+  <text x="220" y="155" text-anchor="middle" font-size="15" fill="#92400e" font-weight="600">−12</text>
+  <text x="290" y="110" font-size="13" fill="#374151">6x² + 8x − 9x − 12</text>
+  <line x1="285" y1="122" x2="430" y2="122" stroke="#374151" stroke-width="1"/>
+  <text x="290" y="142" font-size="14" fill="#1e40af" font-weight="700">= 6x² − x − 12</text>
+  <text x="230" y="198" text-anchor="middle" font-size="12" fill="#6b7280">Each cell = row header × column header</text>
+</svg>
+</div>
+
+<div class="worked-example">
+  Expand and simplify $(x + 6)(x - 2)$.<br><br>
+  <div class="step">$x \times x = x^2$, &nbsp; $x \times (-2) = -2x$, &nbsp; $6 \times x = 6x$, &nbsp; $6 \times (-2) = -12$</div>
+  <div class="step">$x^2 - 2x + 6x - 12 = x^2 + 4x - 12$</div>
+</div>
+
+<h3>Special products</h3>
+<div class="formula-box">
+  $$(a + b)^2 = a^2 + 2ab + b^2 \qquad (a - b)^2 = a^2 - 2ab + b^2$$
+  $$(a + b)(a - b) = a^2 - b^2 \quad \text{(difference of two squares)}$$
+</div>
+
+<div class="worked-example">
+  Kim says $(x + 5)^2 = x^2 + 25$. Show she is wrong.<br><br>
+  <div class="step">$(x + 5)^2 = (x + 5)(x + 5) = x^2 + 5x + 5x + 25 = x^2 + 10x + 25$</div>
+  <div class="step">Counter-example: $x = 1$ gives $6^2 = 36$, but $1 + 25 = 26$.</div>
+</div>
+
+<div class="exam-tip">
+  Squaring a bracket always means writing it out twice. The most common lost mark at GCSE is forgetting the middle term $2ab$.
+</div>
+
+<!-- ===================== 2.1.7 FACTORISING QUADRATICS ===================== -->
+<h2>2.1.7 Factorising Quadratics $x^2 + bx + c$ (A4)</h2>
+
+<p>To factorise $x^2 + bx + c$, find two numbers that <strong>multiply to give $c$</strong> and <strong>add to give $b$</strong>. These are the numbers in the brackets.</p>
+
+<div class="worked-example">
+  Factorise $x^2 + 9x + 20$.<br><br>
+  <div class="step">Factor pairs of 20: $1 \times 20$, $2 \times 10$, $4 \times 5$</div>
+  <div class="step">$4 + 5 = 9$ ✓</div>
+  <div class="step">Answer: $(x + 4)(x + 5)$</div>
+</div>
+
+<div class="worked-example">
+  Factorise $x^2 - 2x - 15$.<br><br>
+  <div class="step">Need product $-15$ and sum $-2$: $-5$ and $+3$</div>
+  <div class="step">Answer: $(x - 5)(x + 3)$ &nbsp;(check: $-5x + 3x = -2x$ ✓)</div>
+</div>
+
+<table>
+  <thead><tr><th>Signs in $x^2 + bx + c$</th><th>Signs in the brackets</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>$b &gt; 0,\ c &gt; 0$</td><td>both $+$</td><td>$x^2 + 7x + 12 = (x + 3)(x + 4)$</td></tr>
+    <tr><td>$b &lt; 0,\ c &gt; 0$</td><td>both $-$</td><td>$x^2 - 7x + 12 = (x - 3)(x - 4)$</td></tr>
+    <tr><td>$c &lt; 0$</td><td>one $+$, one $-$</td><td>$x^2 - x - 12 = (x - 4)(x + 3)$</td></tr>
+  </tbody>
+</table>
+
+<h3>Difference of two squares</h3>
+<p>When there is no $x$ term and both parts are perfect squares separated by a minus sign:</p>
+$$a^2 - b^2 = (a + b)(a - b)$$
+
+<div class="worked-example">
+  Factorise $x^2 - 64$.<br><br>
+  <div class="step">$x^2 - 8^2 = (x + 8)(x - 8)$</div>
+</div>
+
+<div class="worked-example">
+  Factorise fully $3x^2 - 12x - 36$.<br><br>
+  <div class="step">Common factor first: $3(x^2 - 4x - 12)$</div>
+  <div class="step">Product $-12$, sum $-4$: $-6$ and $+2$</div>
+  <div class="step">Answer: $3(x - 6)(x + 2)$</div>
+</div>
+
+<div class="exam-tip">
+  Always take out a common factor first. Then check your answer by expanding the brackets &mdash; it takes 20 seconds and catches sign errors.
+</div>
+
+<!-- ===================== 2.1.8 HIGHER: ax^2+bx+c and 3 binomials ===================== -->
+<h2>2.1.8 Factorising $ax^2 + bx + c$ and Expanding Three Binomials <span class="higher-tag">Higher</span></h2>
+
+<h3>Factorising when $a \neq 1$</h3>
+<ol>
+  <li>Work out $ac$.</li>
+  <li>Find two numbers that multiply to $ac$ and add to $b$.</li>
+  <li>Split the middle term using these numbers.</li>
+  <li>Factorise in pairs (grouping) and take out the common bracket.</li>
+</ol>
+
+<div class="worked-example">
+  Factorise $6x^2 - 7x - 3$.<br><br>
+  <div class="step">$ac = 6 \times (-3) = -18$; numbers with product $-18$ and sum $-7$: $-9$ and $+2$</div>
+  <div class="step">$6x^2 - 9x + 2x - 3$</div>
+  <div class="step">$3x(2x - 3) + 1(2x - 3)$</div>
+  <div class="step">Answer: $(2x - 3)(3x + 1)$</div>
+</div>
+
+<p>The difference of two squares also works with coefficients: $9x^2 - 16 = (3x + 4)(3x - 4)$ and $4x^2 - 1 = (2x + 1)(2x - 1)$.</p>
+
+<h3>Expanding products of three binomials</h3>
+<p>Expand any two brackets first, simplify, then multiply the result by the third bracket. You should get up to six terms before collecting.</p>
+
+<div class="worked-example">
+  Expand and simplify $(x + 4)(x - 1)(x + 2)$.<br><br>
+  <div class="step">$(x + 4)(x - 1) = x^2 + 3x - 4$</div>
+  <div class="step">$(x^2 + 3x - 4)(x + 2) = x^3 + 2x^2 + 3x^2 + 6x - 4x - 8$</div>
+  <div class="step">$= x^3 + 5x^2 + 2x - 8$</div>
+</div>
+
+<div class="exam-tip">
+  For three brackets, write the six terms in a line before collecting. Check by substituting $x = 1$ into both forms: $(5)(0)(3) = 0$ and $1 + 5 + 2 - 8 = 0$ ✓.
+</div>
+
+<!-- ===================== 2.1.9 SURDS ===================== -->
+<h2>2.1.9 Expressions Involving Surds <span class="higher-tag">Higher</span></h2>
+
+<p>Brackets containing surds are expanded in exactly the same way as algebraic brackets. Use $\sqrt{a} \times \sqrt{a} = a$ and $\sqrt{a} \times \sqrt{b} = \sqrt{ab}$, then collect like surds.</p>
+
+<div class="worked-example">
+  Expand and simplify $(\sqrt{5} + 2)(\sqrt{5} - 3)$.<br><br>
+  <div class="step">$\sqrt{5}\sqrt{5} - 3\sqrt{5} + 2\sqrt{5} - 6$</div>
+  <div class="step">$= 5 - \sqrt{5} - 6 = -1 - \sqrt{5}$</div>
+</div>
+
+<div class="worked-example">
+  Expand $(2 + \sqrt{5})^2$.<br><br>
+  <div class="step">$(2 + \sqrt{5})(2 + \sqrt{5}) = 4 + 2\sqrt{5} + 2\sqrt{5} + 5$</div>
+  <div class="step">$= 9 + 4\sqrt{5}$</div>
+</div>
+
+<p>Note that $(\sqrt{3} + 1)(\sqrt{3} - 1) = 3 - 1 = 2$: the difference of two squares removes the surd entirely.</p>
+
+<!-- ===================== 2.1.10 ALGEBRAIC FRACTIONS ===================== -->
+<h2>2.1.10 Algebraic Fractions <span class="higher-tag">Higher</span></h2>
+
+<h3>Simplifying</h3>
+<p>Factorise the numerator and denominator <em>completely</em>, then cancel any common <strong>bracket</strong> (never cancel individual terms).</p>
+
+<div class="worked-example">
+  Simplify fully $\dfrac{x^2 - 16}{2x^2 + 9x + 4}$.<br><br>
+  <div class="step">Numerator: $(x + 4)(x - 4)$</div>
+  <div class="step">Denominator: $ac = 8$, numbers $8$ and $1$: $2x^2 + 8x + x + 4 = 2x(x + 4) + 1(x + 4) = (2x + 1)(x + 4)$</div>
+  <div class="step">Cancel $(x + 4)$: $\dfrac{x - 4}{2x + 1}$</div>
+</div>
+
+<h3>Adding and subtracting</h3>
+<p>Use a common denominator (usually the product of the denominators), adjust each numerator, then combine.</p>
+
+<div class="worked-example">
+  Write $\dfrac{2}{x + 3} - \dfrac{1}{x - 2}$ as a single fraction.<br><br>
+  <div class="step">Common denominator $(x + 3)(x - 2)$</div>
+  <div class="step">$\dfrac{2(x - 2) - (x + 3)}{(x + 3)(x - 2)}$</div>
+  <div class="step">Numerator: $2x - 4 - x - 3 = x - 7$</div>
+  <div class="step">Answer: $\dfrac{x - 7}{(x + 3)(x - 2)}$</div>
+</div>
+
+<h3>Multiplying and dividing</h3>
+<p>Factorise everything, flip the second fraction if dividing, then cancel.</p>
+
+<div class="worked-example">
+  Simplify $\dfrac{x^2 + 2x - 15}{x^2 - 9} \div \dfrac{x + 5}{2x + 6}$.<br><br>
+  <div class="step">$\dfrac{(x + 5)(x - 3)}{(x + 3)(x - 3)} \times \dfrac{2(x + 3)}{x + 5}$</div>
+  <div class="step">Cancel $(x + 5)$, $(x - 3)$ and $(x + 3)$</div>
+  <div class="step">Answer: $2$</div>
+</div>
+
+<div class="exam-tip">
+  When subtracting, put the second numerator in a bracket: $-(x + 3) = -x - 3$. Missing this sign change is the most common error in algebraic fraction questions.
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<h2>Quick Reference Summary</h2>
+<table>
+  <thead><tr><th>Skill</th><th>Key rule</th></tr></thead>
+  <tbody>
+    <tr><td>Notation</td><td>$ab$, $3y$, $a^2b$, $\frac{a}{b}$; simplest form always</td></tr>
+    <tr><td>Substitution</td><td>Brackets round negatives; follow order of operations</td></tr>
+    <tr><td>Vocabulary</td><td>Expression, equation, formula, inequality, identity ($\equiv$), term, factor</td></tr>
+    <tr><td>Indices</td><td>Add when multiplying, subtract when dividing, multiply for a power of a power</td></tr>
+    <tr><td>Single bracket / HCF</td><td>$a(b + c) = ab + ac$; take out the HCF of numbers and letters</td></tr>
+    <tr><td>Two binomials</td><td>Four products, then collect; $(a \pm b)^2 = a^2 \pm 2ab + b^2$</td></tr>
+    <tr><td>$x^2 + bx + c$</td><td>Two numbers: multiply to $c$, add to $b$</td></tr>
+    <tr><td>Difference of two squares</td><td>$a^2 - b^2 = (a + b)(a - b)$</td></tr>
+    <tr><td>$ax^2 + bx + c$ <span class="higher-tag">Higher</span></td><td>Split middle term using $ac$, then group</td></tr>
+    <tr><td>Three binomials <span class="higher-tag">Higher</span></td><td>Expand two, then multiply by the third</td></tr>
+    <tr><td>Algebraic fractions <span class="higher-tag">Higher</span></td><td>Factorise fully, cancel brackets; common denominator to add/subtract</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

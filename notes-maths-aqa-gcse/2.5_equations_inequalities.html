@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — AQA 2.5 — Equations &amp; Inequalities</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.5 Equations &amp; Inequalities</h1>
+<p class="spec-ref">AQA GCSE Mathematics 8300 &mdash; Algebra &mdash; spec refs A17–A22 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<!-- ===================== 2.5.1 LINEAR EQUATIONS ===================== -->
+<h2>2.5.1 Solving Linear Equations (A17)</h2>
+
+<div class="definition">
+  An <strong>equation</strong> states that two expressions are equal and is true only for particular values of the unknown. To <strong>solve</strong> it, find the value(s) that make it true. A <strong>linear</strong> equation has no powers of $x$ higher than 1.<br><br>
+  <strong>Golden rule:</strong> whatever you do to one side, do exactly the same to the other side (use inverse operations).
+</div>
+
+<h3>Two-step equations and brackets</h3>
+<div class="worked-example">
+  Solve $4x + 9 = 37$.<br><br>
+  Subtract 9: $4x = 28$ &nbsp;&nbsp; Divide by 4: $x = \mathbf{7}$
+</div>
+
+<div class="worked-example">
+  Solve $3(x - 2) = 18$.<br><br>
+  Either expand: $3x - 6 = 18 \Rightarrow 3x = 24 \Rightarrow x = \mathbf{8}$<br>
+  or divide first: $x - 2 = 6 \Rightarrow x = \mathbf{8}$
+</div>
+
+<h3>Unknown on both sides</h3>
+<p>Collect the $x$ terms on the side with the <em>larger</em> number of $x$s (this avoids negatives), and the numbers on the other side.</p>
+<div class="worked-example">
+  Solve $7x - 4 = 3x + 16$.<br><br>
+  Subtract $3x$: $4x - 4 = 16$<br>
+  Add 4: $4x = 20$<br>
+  $x = \mathbf{5}$ &nbsp;&nbsp; Check: $7(5) - 4 = 31$ and $3(5) + 16 = 31$ ✓
+</div>
+
+<h3>Equations with fractions</h3>
+<p>Multiply every term by the lowest common denominator to clear the fractions. Put brackets round numerators.</p>
+<div class="worked-example">
+  Solve $\dfrac{2x - 1}{3} = \dfrac{x + 4}{2}$.<br><br>
+  Multiply both sides by 6: $2(2x - 1) = 3(x + 4)$<br>
+  $4x - 2 = 3x + 12$<br>
+  $x = \mathbf{14}$
+</div>
+
+<div class="worked-example">
+  Solve $\dfrac{x + 1}{2} + \dfrac{x - 2}{3} = 4$.<br><br>
+  Multiply every term by 6: $3(x + 1) + 2(x - 2) = 24$<br>
+  $3x + 3 + 2x - 4 = 24 \Rightarrow 5x - 1 = 24 \Rightarrow 5x = 25 \Rightarrow x = \mathbf{5}$
+</div>
+
+<h3>Approximate solutions from a graph</h3>
+<p>The solution of an equation such as $2x + 1 = 6$ is the $x$-coordinate where the line $y = 2x + 1$ meets the line $y = 6$. Reading from a graph gives an <strong>approximate</strong> solution &mdash; state it to a sensible accuracy (usually to the nearest small square).</p>
+
+<div class="exam-tip">
+  Always show the inverse operation on each line. A wrong final answer with clear correct working still earns method marks. Check your answer by substituting back into the original equation.
+</div>
+
+<!-- ===================== 2.5.2 FORMING EQUATIONS ===================== -->
+<h2>2.5.2 Forming and Solving Equations (A21)</h2>
+
+<p>Many questions are set in context: you must <strong>translate</strong> the words into algebra, <strong>solve</strong>, and then <strong>interpret</strong> the answer in the context (with units).</p>
+
+<ol>
+  <li>Choose a letter for the unknown (say what it stands for).</li>
+  <li>Write expressions for the quantities in the question.</li>
+  <li>Use a fact to form an equation (angles in a triangle sum to 180°, perimeter, total cost, ages&hellip;).</li>
+  <li>Solve, then answer the actual question asked.</li>
+</ol>
+
+<div class="worked-example">
+  The angles of a quadrilateral are $x°$, $2x°$, $(3x - 20)°$ and $(x + 30)°$. Find the largest angle.<br><br>
+  Angles in a quadrilateral sum to 360°: $x + 2x + 3x - 20 + x + 30 = 360$<br>
+  $7x + 10 = 360 \Rightarrow 7x = 350 \Rightarrow x = 50$<br>
+  Angles: 50°, 100°, 130°, 80°. Largest angle $= \mathbf{130°}$.
+</div>
+
+<div class="worked-example">
+  Ben is three times as old as Amy. In 5 years' time the sum of their ages will be 46. How old is Amy now?<br><br>
+  Let Amy be $a$, so Ben is $3a$. In 5 years: $(a + 5) + (3a + 5) = 46$<br>
+  $4a + 10 = 46 \Rightarrow 4a = 36 \Rightarrow a = 9$. Amy is $\mathbf{9}$ years old.
+</div>
+
+<div class="exam-tip">
+  Remember to add the time to <em>both</em> people in age problems, and to finish by answering the question &mdash; a question asking for "the largest angle" is not answered by "$x = 50$".
+</div>
+
+<!-- ===================== 2.5.3 QUADRATIC EQUATIONS ===================== -->
+<h2>2.5.3 Quadratic Equations (A18)</h2>
+
+<div class="definition">
+  A <strong>quadratic equation</strong> can be written as $ax^2 + bx + c = 0$ with $a \neq 0$. It can have <strong>two</strong>, <strong>one</strong> (repeated) or <strong>no</strong> real solutions (roots). The roots are where the graph $y = ax^2 + bx + c$ crosses the $x$-axis.
+</div>
+
+<h3>Solving by factorising</h3>
+<p>If two things multiply to give zero, at least one of them must be zero. So rearrange to "$= 0$", factorise, then set each bracket equal to zero.</p>
+
+<div class="worked-example">
+  Solve $x^2 - 9x + 20 = 0$.<br><br>
+  Two numbers that multiply to $+20$ and add to $-9$: $-4$ and $-5$.<br>
+  $(x - 4)(x - 5) = 0 \Rightarrow x = \mathbf{4}$ or $x = \mathbf{5}$
+</div>
+
+<div class="worked-example">
+  Solve $x^2 + 5x = 0$.<br><br>
+  Common factor: $x(x + 5) = 0 \Rightarrow x = \mathbf{0}$ or $x = \mathbf{-5}$<br>
+  (Do <strong>not</strong> divide by $x$ &mdash; you would lose the solution $x = 0$.)
+</div>
+
+<h3>Equations needing rearrangement <span class="higher-tag">Higher</span></h3>
+<div class="worked-example">
+  Solve $x^2 = 5x + 14$.<br><br>
+  Rearrange to $= 0$: $x^2 - 5x - 14 = 0$<br>
+  $(x - 7)(x + 2) = 0 \Rightarrow x = \mathbf{7}$ or $x = \mathbf{-2}$
+</div>
+
+<div class="worked-example">
+  Solve $2x^2 + 5x - 3 = 0$.<br><br>
+  $ac = -6$: find numbers multiplying to $-6$ and adding to $5$: $6$ and $-1$.<br>
+  $2x^2 + 6x - x - 3 = 2x(x + 3) - 1(x + 3) = (2x - 1)(x + 3) = 0$<br>
+  $x = \mathbf{\tfrac{1}{2}}$ or $x = \mathbf{-3}$
+</div>
+
+<h3>Completing the square <span class="higher-tag">Higher</span></h3>
+<div class="formula-box">
+  $$x^2 + bx + c = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 + c$$
+  Halve the coefficient of $x$ to get the number in the bracket, then subtract its square.
+</div>
+
+<div class="worked-example">
+  Solve $x^2 - 6x + 4 = 0$ by completing the square, giving answers in surd form.<br><br>
+  $(x - 3)^2 - 9 + 4 = 0 \Rightarrow (x - 3)^2 = 5$<br>
+  $x - 3 = \pm\sqrt{5} \Rightarrow x = \mathbf{3 \pm \sqrt{5}}$
+</div>
+
+<p>When $a \neq 1$, take $a$ out as a factor of the $x^2$ and $x$ terms first: $2x^2 - 12x + 5 = 2(x^2 - 6x) + 5 = 2[(x - 3)^2 - 9] + 5 = 2(x - 3)^2 - 13$.</p>
+
+<h3>The quadratic formula <span class="higher-tag">Higher</span></h3>
+<div class="formula-box">
+  For $ax^2 + bx + c = 0$:
+  $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+  The <strong>discriminant</strong> $b^2 - 4ac$: positive &rArr; two roots; zero &rArr; one repeated root; negative &rArr; no real roots.
+</div>
+
+<div class="worked-example">
+  Solve $2x^2 - 5x - 4 = 0$, giving answers to 2 decimal places.<br><br>
+  $a = 2,\ b = -5,\ c = -4$<br>
+  $x = \dfrac{5 \pm \sqrt{(-5)^2 - 4(2)(-4)}}{2(2)} = \dfrac{5 \pm \sqrt{25 + 32}}{4} = \dfrac{5 \pm \sqrt{57}}{4}$<br>
+  $x = \mathbf{3.14}$ or $x = \mathbf{-0.64}$ (2 d.p.)
+</div>
+
+<div class="exam-tip">
+  If a question says "give your answers to 2 decimal places" or "in surd form", the quadratic will not factorise &mdash; go straight to the formula or completing the square. Put negative values of $b$ and $c$ in brackets when substituting; $-b$ when $b = -5$ is $+5$.
+</div>
+
+<h3>Approximate solutions from a graph</h3>
+<p>The solutions of $ax^2 + bx + c = 0$ are the $x$-coordinates where $y = ax^2 + bx + c$ crosses the $x$-axis. To solve $x^2 - 2x - 4 = 0$ graphically, read off where the curve cuts $y = 0$: approximately $x \approx -1.2$ and $x \approx 3.2$.</p>
+
+<!-- ===================== 2.5.4 SIMULTANEOUS EQUATIONS ===================== -->
+<h2>2.5.4 Simultaneous Equations (A19)</h2>
+
+<div class="definition">
+  <strong>Simultaneous equations</strong> are two equations in two unknowns that are both true at the same time. The solution is a pair of values (an $x$ and a $y$) &mdash; graphically, the point where the two graphs <strong>intersect</strong>.
+</div>
+
+<h3>Elimination method</h3>
+<p>Make the coefficients of one variable the same size, then add (if the signs are different) or subtract (if the signs are the same) to eliminate it.</p>
+
+<div class="worked-example">
+  Solve $2x + 3y = 13$ and $5x - 2y = 4$.<br><br>
+  Multiply the first by 2: $4x + 6y = 26$<br>
+  Multiply the second by 3: $15x - 6y = 12$<br>
+  Add (signs of $y$ are different): $19x = 38 \Rightarrow x = \mathbf{2}$<br>
+  Substitute: $2(2) + 3y = 13 \Rightarrow 3y = 9 \Rightarrow y = \mathbf{3}$<br>
+  Check in the second equation: $5(2) - 2(3) = 4$ ✓
+</div>
+
+<h3>Substitution method</h3>
+<div class="worked-example">
+  Solve $y = 3x - 1$ and $2x + y = 9$.<br><br>
+  Substitute: $2x + (3x - 1) = 9 \Rightarrow 5x = 10 \Rightarrow x = \mathbf{2}$, $y = 3(2) - 1 = \mathbf{5}$
+</div>
+
+<h3>Graphical solution</h3>
+<svg width="380" height="290" viewBox="0 0 380 290" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="90" y1="20" x2="90" y2="260"/><line x1="140" y1="20" x2="140" y2="260"/><line x1="190" y1="20" x2="190" y2="260"/><line x1="240" y1="20" x2="240" y2="260"/><line x1="290" y1="20" x2="290" y2="260"/><line x1="340" y1="20" x2="340" y2="260"/>
+    <line x1="40" y1="230" x2="350" y2="230"/><line x1="40" y1="200" x2="350" y2="200"/><line x1="40" y1="170" x2="350" y2="170"/><line x1="40" y1="140" x2="350" y2="140"/><line x1="40" y1="110" x2="350" y2="110"/><line x1="40" y1="80" x2="350" y2="80"/><line x1="40" y1="50" x2="350" y2="50"/><line x1="40" y1="20" x2="350" y2="20"/>
+  </g>
+  <line x1="40" y1="260" x2="355" y2="260" stroke="#374151" stroke-width="1.5"/>
+  <line x1="40" y1="265" x2="40" y2="15" stroke="#374151" stroke-width="1.5"/>
+  <g font-size="11" fill="#374151" font-family="sans-serif" text-anchor="middle">
+    <text x="40" y="276">0</text><text x="90" y="276">1</text><text x="140" y="276">2</text><text x="190" y="276">3</text><text x="240" y="276">4</text><text x="290" y="276">5</text><text x="340" y="276">6</text>
+    <text x="30" y="204">2</text><text x="30" y="144">4</text><text x="30" y="84">6</text><text x="30" y="24">8</text>
+  </g>
+  <line x1="40" y1="230" x2="215" y2="20" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="40" y1="50" x2="340" y2="230" stroke="#dc2626" stroke-width="2.5"/>
+  <circle cx="140" cy="110" r="5" fill="#16a34a"/>
+  <text x="150" y="104" font-size="13" fill="#166534" font-family="sans-serif" font-weight="700">(2, 5)</text>
+  <text x="222" y="34" font-size="12" fill="#2563eb" font-family="sans-serif">y = 2x + 1</text>
+  <text x="262" y="200" font-size="12" fill="#dc2626" font-family="sans-serif">y = 7 − x</text>
+</svg>
+<p>The lines $y = 2x + 1$ and $y = 7 - x$ cross at $(2, 5)$, so the solution of the simultaneous equations is $x = 2$, $y = 5$. Graphical solutions are approximate unless the intersection is on grid points.</p>
+
+<h3>Linear and quadratic simultaneous equations <span class="higher-tag">Higher</span></h3>
+<p>Rearrange the linear equation to make $x$ or $y$ the subject, <strong>substitute</strong> it into the quadratic, solve the resulting quadratic, then substitute each answer back into the <em>linear</em> equation to find the partner values. There are usually <strong>two pairs</strong> of solutions (two intersection points of a line and a curve).</p>
+
+<div class="worked-example">
+  Solve $y = 2x - 1$ and $y = x^2 - 4x + 4$.<br><br>
+  $x^2 - 4x + 4 = 2x - 1 \Rightarrow x^2 - 6x + 5 = 0 \Rightarrow (x - 1)(x - 5) = 0$<br>
+  $x = 1 \Rightarrow y = 1$; &nbsp; $x = 5 \Rightarrow y = 9$<br>
+  Solutions: $\mathbf{(1, 1)}$ and $\mathbf{(5, 9)}$
+</div>
+
+<div class="worked-example">
+  Solve $x^2 + y^2 = 25$ and $y = 2x - 5$.<br><br>
+  $x^2 + (2x - 5)^2 = 25 \Rightarrow x^2 + 4x^2 - 20x + 25 = 25 \Rightarrow 5x^2 - 20x = 0$<br>
+  $5x(x - 4) = 0 \Rightarrow x = 0$ or $x = 4$<br>
+  $x = 0 \Rightarrow y = -5$; &nbsp; $x = 4 \Rightarrow y = 3$. Solutions: $\mathbf{(0, -5)}$ and $\mathbf{(4, 3)}$
+</div>
+
+<div class="exam-tip">
+  Pair your answers clearly, e.g. "$x = 1, y = 1$ and $x = 5, y = 9$". Always substitute back into the linear equation &mdash; substituting into a quadratic like $x^2 + y^2 = 25$ gives extra, wrong partner values.
+</div>
+
+<!-- ===================== 2.5.5 ITERATION ===================== -->
+<h2>2.5.5 Iteration <span class="higher-tag">Higher</span> (A20)</h2>
+
+<div class="definition">
+  <strong>Iteration</strong> finds an approximate solution to an equation by repeatedly using a formula of the form $x_{n+1} = g(x_n)$. Start with $x_1$, substitute to get $x_2$, substitute $x_2$ to get $x_3$, and so on. The values usually get closer and closer to a solution. The suffix $n$ tells you the position: $x_{n+1}$ is the term after $x_n$.
+</div>
+
+<h3>Showing a root lies in an interval</h3>
+<p>If $f(x)$ changes sign between $x = a$ and $x = b$ (and the graph is continuous), then $f(x) = 0$ has a root between $a$ and $b$.</p>
+
+<div class="worked-example">
+  (a) Show that $x^3 - 3x - 5 = 0$ has a solution between 2 and 3.<br>
+  $x = 2$: $8 - 6 - 5 = -3$ &nbsp;&nbsp; $x = 3$: $27 - 9 - 5 = 13$. Sign change, so a solution lies between 2 and 3.<br><br>
+  (b) Rearrange: $x^3 = 3x + 5 \Rightarrow x = \sqrt[3]{3x + 5}$<br><br>
+  (c) Use $x_{n+1} = \sqrt[3]{3x_n + 5}$ with $x_1 = 2$:<br>
+  $x_2 = \sqrt[3]{11} = 2.2239\ldots$<br>
+  $x_3 = \sqrt[3]{3(2.2239\ldots) + 5} = 2.2683\ldots$<br>
+  $x_4 = 2.2769\ldots$, &nbsp; $x_5 = 2.2786\ldots$ &nbsp; &rarr; converging to about $\mathbf{2.28}$
+</div>
+
+<div class="exam-tip">
+  Use the ANS key on your calculator: type 2, press =, then type the formula using ANS in place of $x_n$ and press = repeatedly. Write down each value to at least 4 decimal places but carry the full value in the calculator.
+</div>
+
+<!-- ===================== 2.5.6 INEQUALITIES ===================== -->
+<h2>2.5.6 Linear Inequalities (A22)</h2>
+
+<div class="definition">
+  An <strong>inequality</strong> compares two quantities using $&lt;$ (less than), $&gt;$ (greater than), $\le$ (less than or equal to) or $\ge$ (greater than or equal to). Its solution is usually a <strong>range</strong> of values.
+</div>
+
+<h3>Solving linear inequalities</h3>
+<p>Solve exactly like an equation, <strong>except</strong>: if you multiply or divide both sides by a <strong>negative</strong> number, <strong>reverse</strong> the inequality sign.</p>
+
+<div class="worked-example">
+  Solve $5 - 2x \le 13$.<br><br>
+  Subtract 5: $-2x \le 8$<br>
+  Divide by $-2$ and reverse the sign: $x \ge \mathbf{-4}$
+</div>
+
+<div class="worked-example">
+  $n$ is an integer with $-6 &lt; 2n \le 8$. List the possible values of $n$.<br><br>
+  Divide every part by 2: $-3 &lt; n \le 4$<br>
+  $n = \mathbf{-2, -1, 0, 1, 2, 3, 4}$ (not $-3$, because the inequality is strict)
+</div>
+
+<h3>Number lines</h3>
+<svg width="460" height="170" viewBox="0 0 460 170" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <g font-family="sans-serif" font-size="12" fill="#374151">
+    <text x="12" y="40">x &gt; 2</text>
+    <text x="12" y="95">x ≤ −1</text>
+    <text x="12" y="150">−2 ≤ x &lt; 3</text>
+  </g>
+  <g stroke="#9ca3af" stroke-width="1.5">
+    <line x1="100" y1="36" x2="440" y2="36"/><line x1="100" y1="91" x2="440" y2="91"/><line x1="100" y1="146" x2="440" y2="146"/>
+  </g>
+  <g font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">
+    <text x="120" y="52">−4</text><text x="160" y="52">−3</text><text x="200" y="52">−2</text><text x="240" y="52">−1</text><text x="280" y="52">0</text><text x="320" y="52">1</text><text x="360" y="52">2</text><text x="400" y="52">3</text>
+    <text x="120" y="107">−4</text><text x="160" y="107">−3</text><text x="200" y="107">−2</text><text x="240" y="107">−1</text><text x="280" y="107">0</text><text x="320" y="107">1</text><text x="360" y="107">2</text><text x="400" y="107">3</text>
+    <text x="120" y="162">−4</text><text x="160" y="162">−3</text><text x="200" y="162">−2</text><text x="240" y="162">−1</text><text x="280" y="162">0</text><text x="320" y="162">1</text><text x="360" y="162">2</text><text x="400" y="162">3</text>
+  </g>
+  <line x1="366" y1="36" x2="432" y2="36" stroke="#2563eb" stroke-width="3"/>
+  <polygon points="442,36 430,30 430,42" fill="#2563eb"/>
+  <circle cx="360" cy="36" r="6" fill="#fff" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="110" y1="91" x2="240" y2="91" stroke="#dc2626" stroke-width="3"/>
+  <polygon points="98,91 110,85 110,97" fill="#dc2626"/>
+  <circle cx="240" cy="91" r="6" fill="#dc2626" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="200" y1="146" x2="394" y2="146" stroke="#16a34a" stroke-width="3"/>
+  <circle cx="200" cy="146" r="6" fill="#16a34a" stroke="#16a34a" stroke-width="2.5"/>
+  <circle cx="400" cy="146" r="6" fill="#fff" stroke="#16a34a" stroke-width="2.5"/>
+</svg>
+
+<table>
+  <thead><tr><th>Symbol</th><th>Meaning</th><th>Number line</th></tr></thead>
+  <tbody>
+    <tr><td>$&lt;$ or $&gt;$</td><td>strict &mdash; boundary <strong>not</strong> included</td><td>open (empty) circle</td></tr>
+    <tr><td>$\le$ or $\ge$</td><td>boundary included</td><td>closed (filled) circle</td></tr>
+  </tbody>
+</table>
+
+<h3>Set notation <span class="higher-tag">Higher</span></h3>
+<p>Solution sets can be written in set notation: $\{x : x &gt; 5\}$ means "the set of all $x$ such that $x$ is greater than 5". Two separate regions are joined with the union symbol: $\{x : x &lt; -2\} \cup \{x : x &gt; 3\}$. A range such as $-1 \le x &lt; 4$ is written $\{x : -1 \le x &lt; 4\}$.</p>
+
+<!-- ===================== 2.5.7 QUADRATIC INEQUALITIES ===================== -->
+<h2>2.5.7 Quadratic Inequalities <span class="higher-tag">Higher</span></h2>
+
+<ol>
+  <li>Rearrange so one side is 0 and solve the equation to find the <strong>critical values</strong>.</li>
+  <li>Sketch the ∪-shaped graph through the critical values.</li>
+  <li>"$&lt; 0$" means the part of the curve <strong>below</strong> the $x$-axis (between the roots); "$&gt; 0$" means <strong>above</strong> (outside the roots &mdash; two separate inequalities).</li>
+</ol>
+
+<svg width="420" height="250" viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <line x1="40" y1="150" x2="400" y2="150" stroke="#374151" stroke-width="1.5"/>
+  <line x1="200" y1="20" x2="200" y2="240" stroke="#374151" stroke-width="1.5"/>
+  <line x1="120" y1="150" x2="320" y2="150" stroke="#dc2626" stroke-width="5"/>
+  <polyline fill="none" stroke="#2563eb" stroke-width="2.5" points="60.0,33.0 70.0,56.3 80.0,78.0 90.0,98.3 100.0,117.0 110.0,134.3 120.0,150.0 130.0,164.3 140.0,177.0 150.0,188.3 160.0,198.0 170.0,206.3 180.0,213.0 190.0,218.3 200.0,222.0 210.0,224.3 220.0,225.0 230.0,224.3 240.0,222.0 250.0,218.3 260.0,213.0 270.0,206.3 280.0,198.0 290.0,188.3 300.0,177.0 310.0,164.3 320.0,150.0 330.0,134.3 340.0,117.0 350.0,98.3 360.0,78.0 370.0,56.3 380.0,33.0"/>
+  <g font-family="sans-serif" font-size="12" fill="#374151">
+    <text x="112" y="140">−2</text><text x="324" y="140">3</text>
+    <text x="300" y="32" fill="#2563eb">y = x² − x − 6</text>
+    <text x="130" y="244" fill="#dc2626">y &lt; 0 for −2 &lt; x &lt; 3</text>
+    <text x="44" y="120" fill="#16a34a">y &gt; 0</text><text x="356" y="120" fill="#16a34a">y &gt; 0</text>
+  </g>
+</svg>
+
+<div class="worked-example">
+  Solve $x^2 - x - 6 &lt; 0$.<br><br>
+  $(x - 3)(x + 2) = 0$ gives critical values $x = -2$ and $x = 3$.<br>
+  The curve is below the axis between the roots: $\mathbf{-2 &lt; x &lt; 3}$
+</div>
+
+<div class="worked-example">
+  Solve $2x^2 - 7x - 15 &gt; 0$, giving the answer in set notation.<br><br>
+  $(2x + 3)(x - 5) = 0 \Rightarrow x = -\tfrac{3}{2}$ or $x = 5$<br>
+  Above the axis outside the roots: $x &lt; -\tfrac{3}{2}$ or $x &gt; 5$<br>
+  Set notation: $\mathbf{\{x : x &lt; -\tfrac{3}{2}\} \cup \{x : x &gt; 5\}}$
+</div>
+
+<div class="exam-tip">
+  Never write "$-2 &gt; x &gt; 3$" for the outside region &mdash; no number is both less than $-2$ and greater than 3. Write two inequalities joined by "or". Also, $x^2 &gt; 9$ is <em>not</em> just $x &gt; 3$: the full answer is $x &lt; -3$ or $x &gt; 3$.
+</div>
+
+<!-- ===================== 2.5.8 GRAPHICAL INEQUALITIES ===================== -->
+<h2>2.5.8 Inequalities in Two Variables (Regions) <span class="higher-tag">Higher</span></h2>
+
+<p>An inequality such as $x + y &lt; 6$ describes a <strong>region</strong> of the coordinate grid. Draw the boundary line $x + y = 6$, then decide which side is wanted by testing a point not on the line (the origin is easiest: $0 + 0 &lt; 6$ is true, so the origin's side is the region).</p>
+
+<div class="formula-box">
+  <strong>Boundary conventions:</strong> dashed line for $&lt;$ or $&gt;$ (points on the line are <em>not</em> included); solid line for $\le$ or $\ge$ (points on the line <em>are</em> included).
+</div>
+
+<svg width="370" height="320" viewBox="0 0 370 320" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <polygon points="65,230 290,230 140,80" fill="#bbf7d0" stroke="none"/>
+  <line x1="40" y1="280" x2="350" y2="280" stroke="#374151" stroke-width="1.5"/>
+  <line x1="40" y1="290" x2="40" y2="20" stroke="#374151" stroke-width="1.5"/>
+  <g font-size="11" fill="#374151" font-family="sans-serif" text-anchor="middle">
+    <text x="40" y="296">0</text><text x="90" y="296">1</text><text x="140" y="296">2</text><text x="190" y="296">3</text><text x="240" y="296">4</text><text x="290" y="296">5</text><text x="340" y="296">6</text>
+    <text x="30" y="234">1</text><text x="30" y="184">2</text><text x="30" y="134">3</text><text x="30" y="84">4</text><text x="30" y="34">5</text>
+  </g>
+  <line x1="40" y1="230" x2="350" y2="230" stroke="#2563eb" stroke-width="2" stroke-dasharray="7,5"/>
+  <line x1="90" y1="30" x2="340" y2="280" stroke="#dc2626" stroke-width="2" stroke-dasharray="7,5"/>
+  <line x1="40" y1="280" x2="165" y2="30" stroke="#7c3aed" stroke-width="2"/>
+  <g font-family="sans-serif" font-size="12">
+    <text x="296" y="224" fill="#2563eb">y = 1</text>
+    <text x="250" y="160" fill="#dc2626">x + y = 6</text>
+    <text x="170" y="40" fill="#7c3aed">y = 2x</text>
+    <text x="140" y="190" fill="#166534" font-weight="700">R</text>
+  </g>
+</svg>
+<p>Region R satisfies $y &gt; 1$, $x + y &lt; 6$ and $y \le 2x$. The point $(2, 3)$ lies in R: $3 &gt; 1$ ✓, $2 + 3 = 5 &lt; 6$ ✓, $3 \le 4$ ✓.</p>
+
+<div class="exam-tip">
+  When asked for integer coordinates in a region, check each candidate point against <em>every</em> inequality, and remember that points on a dashed boundary do not count.
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<h2>Quick Reference Summary</h2>
+<table>
+  <thead><tr><th>Type</th><th>Method</th><th>Tier</th></tr></thead>
+  <tbody>
+    <tr><td>Linear equation</td><td>Inverse operations; expand brackets; clear fractions by multiplying by the LCD</td><td>Foundation</td></tr>
+    <tr><td>Quadratic (factorisable)</td><td>Rearrange to $= 0$, factorise, set each bracket to 0</td><td>Foundation ($a = 1$, already $= 0$) / Higher</td></tr>
+    <tr><td>Quadratic (non-factorisable)</td><td>Quadratic formula or completing the square</td><td>Higher</td></tr>
+    <tr><td>Linear simultaneous</td><td>Elimination, substitution or graph intersection</td><td>Foundation</td></tr>
+    <tr><td>Linear/quadratic simultaneous</td><td>Substitute linear into quadratic; two pairs of answers</td><td>Higher</td></tr>
+    <tr><td>Iteration</td><td>Sign change to locate root; $x_{n+1} = g(x_n)$ repeatedly</td><td>Higher</td></tr>
+    <tr><td>Linear inequality</td><td>As an equation, reverse the sign when $\times$ or $\div$ by a negative</td><td>Foundation</td></tr>
+    <tr><td>Quadratic inequality</td><td>Critical values + sketch; between or outside the roots</td><td>Higher</td></tr>
+    <tr><td>Regions</td><td>Boundary lines (dashed/solid), test a point, shade</td><td>Higher</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

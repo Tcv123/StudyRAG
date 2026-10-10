@@ -34,8 +34,8 @@ function initClients() {
   return null;
 }
 
-function buildSystemPrompt({ subject, board, paperCode, msType, gridNames }) {
-  const examLevel = 'A-level';
+function buildSystemPrompt({ subject, board, paperCode, msType, gridNames, level }) {
+  const examLevel = level === 'GCSE' ? 'GCSE' : 'A-level';
   // Separate grids (e.g. knowledge/application/analysis + evaluation) are marked
   // independently and added; picking a single level would cap the total.
   const levelStep = gridNames && gridNames.length > 1
@@ -136,7 +136,7 @@ module.exports = async function handler(req, res) {
     // ---- Validate body ----
     const body = req.body || {};
     const { partCode, question, marks, studentAnswer, markScheme,
-            subject, board, paperCode, scenario, preamble } = body;
+            subject, board, paperCode, scenario, preamble, level } = body;
 
     if (!partCode || typeof partCode !== 'string') return res.status(400).json({ error: 'missing_partCode' });
     if (!question || typeof question !== 'string') return res.status(400).json({ error: 'missing_question' });
@@ -162,7 +162,7 @@ module.exports = async function handler(req, res) {
 
     const completion = await createCompletion(groq, {
       messages: [
-        { role: 'system', content: buildSystemPrompt({ subject: subject || 'Computer Science', board: board || 'OCR', paperCode, msType: markScheme.type,
+        { role: 'system', content: buildSystemPrompt({ subject: subject || 'Computer Science', board: board || 'OCR', paperCode, level, msType: markScheme.type,
             gridNames: [...new Set((markScheme.levels || []).map(l => l.grid).filter(Boolean))] }) },
         { role: 'user',   content: buildUserPrompt({ partCode, question, marks, studentAnswer, markScheme, preamble, scenario }) },
       ],

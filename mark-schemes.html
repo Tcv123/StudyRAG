@@ -654,7 +654,7 @@ function buildPicker(userSubs) {
   allSubjects.forEach(subj => {
     const userBoard = userBoardFor[subj.name.trim().toLowerCase()];
     if (!userBoard) return;
-    const boardEntry = (subj.boards || []).find(b => boardMatches(b.board, userBoard));
+    const boardEntry = window.boardsForLevel(subj.boards).find(b => boardMatches(b.board, userBoard));
     if (!boardEntry) return;
     if (!(boardEntry.papers || []).some(hasMarkSchemeData)) {
       // No per-question mark schemes in the app (no papers at all, or only

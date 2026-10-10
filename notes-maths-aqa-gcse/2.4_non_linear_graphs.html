@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — AQA 2.4 — Non-linear Graphs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.4 Non-linear Graphs</h1>
+<p class="spec-ref">AQA GCSE Mathematics 8300 &mdash; Algebra &mdash; spec refs A11&ndash;A16 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<p>This topic covers quadratic graphs and their roots, intercepts and turning points (A11), recognising and sketching linear, quadratic, cubic and reciprocal graphs (A12), real-life graphs including kinematics (A14). At Higher tier it adds turning points by completing the square, exponential and trigonometric graphs (A12), translations and reflections of graphs (A13), gradients and areas under graphs (A15) and circles centred at the origin with their tangents (A16).</p>
+
+<!-- ===================== 2.4.1 QUADRATIC GRAPHS ===================== -->
+<h2>2.4.1 Quadratic Graphs</h2>
+
+<div class="definition">
+  A <strong>quadratic</strong> graph has equation $y = ax^2 + bx + c$ ($a \ne 0$). Its shape is a <strong>parabola</strong>:
+  <ul>
+    <li>$a > 0$: U-shaped, with a <strong>minimum</strong> turning point.</li>
+    <li>$a < 0$: &cap;-shaped, with a <strong>maximum</strong> turning point.</li>
+  </ul>
+  Every parabola is <strong>symmetrical</strong> about a vertical line through its turning point.
+</div>
+
+<!-- SVG: y = x^2 - 2x - 3 with key features -->
+<svg width="340" height="240" viewBox="0 0 340 240" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <!-- px = 130 + 35x, py = 130 - 18y -->
+  <line x1="20" y1="130" x2="320" y2="130" stroke="#374151" stroke-width="1.5"/>
+  <line x1="130" y1="10" x2="130" y2="230" stroke="#374151" stroke-width="1.5"/>
+  <text x="312" y="146" font-size="13" fill="#374151" font-family="sans-serif">x</text>
+  <text x="136" y="20" font-size="13" fill="#374151" font-family="sans-serif">y</text>
+  <path d="M60,40 Q165,364 270,40" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="165" y1="20" x2="165" y2="225" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <circle cx="95" cy="130" r="4" fill="#dc2626"/><circle cx="235" cy="130" r="4" fill="#dc2626"/>
+  <circle cx="130" cy="184" r="4" fill="#16a34a"/><circle cx="165" cy="202" r="4" fill="#d97706"/>
+  <text x="62" y="124" font-size="12" fill="#dc2626" font-family="sans-serif">root −1</text>
+  <text x="240" y="124" font-size="12" fill="#dc2626" font-family="sans-serif">root 3</text>
+  <text x="62" y="190" font-size="12" fill="#16a34a" font-family="sans-serif">(0, −3)</text>
+  <text x="172" y="216" font-size="12" fill="#d97706" font-family="sans-serif">turning point (1, −4)</text>
+  <text x="172" y="30" font-size="12" fill="#7c3aed" font-family="sans-serif">x = 1</text>
+  <text x="200" y="70" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">y = x² − 2x − 3</text>
+</svg>
+
+<table>
+  <thead><tr><th>Feature</th><th>How to find it</th><th>For $y = x^2 - 2x - 3$</th></tr></thead>
+  <tbody>
+    <tr><td>$y$-intercept</td><td>Put $x = 0$</td><td>$(0, -3)$</td></tr>
+    <tr><td>Roots ($x$-intercepts)</td><td>Put $y = 0$ and solve</td><td>$(x - 3)(x + 1) = 0 \Rightarrow x = 3,\ x = -1$</td></tr>
+    <tr><td>Line of symmetry</td><td>Halfway between the roots</td><td>$x = \frac{-1 + 3}{2} = 1$</td></tr>
+    <tr><td>Turning point</td><td>Substitute the line of symmetry</td><td>$y = 1 - 2 - 3 = -4$, so $(1, -4)$</td></tr>
+  </tbody>
+</table>
+
+<h3>Plotting a Quadratic</h3>
+<p>Make a table of values, plot the points and join them with a <strong>smooth curve</strong> (not straight segments). The values should be symmetrical about the turning point.</p>
+<table>
+  <thead><tr><th>$x$</th><th>$-2$</th><th>$-1$</th><th>$0$</th><th>$1$</th><th>$2$</th><th>$3$</th><th>$4$</th></tr></thead>
+  <tbody><tr><td>$y = x^2 - 2x - 3$</td><td>$5$</td><td>$0$</td><td>$-3$</td><td>$-4$</td><td>$-3$</td><td>$0$</td><td>$5$</td></tr></tbody>
+</table>
+
+<div class="exam-tip">
+  Squaring a negative gives a positive: when $x = -2$, $x^2 = 4$, not $-4$. Use brackets on your calculator: $(-2)^2$. If your table is not symmetrical, check for this error.
+</div>
+
+<h3>Deducing Roots Algebraically</h3>
+<p>The roots of $y = ax^2 + bx + c$ are the solutions of $ax^2 + bx + c = 0$. Factorise (or use another method) and set each bracket to zero.</p>
+<div class="worked-example">
+  Find the roots and turning point of $y = x^2 + 2x - 8$.<br><br>
+  $(x + 4)(x - 2) = 0 \Rightarrow x = -4$ or $x = 2$<br>
+  Line of symmetry: $x = \dfrac{-4 + 2}{2} = -1$, &nbsp; $y = (-1)^2 + 2(-1) - 8 = -9$<br>
+  Turning point $\mathbf{(-1, -9)}$
+</div>
+
+<div class="worked-example">
+  A ball's height is $h = 20t - 5t^2$ metres. When does it land?<br><br>
+  $20t - 5t^2 = 0 \Rightarrow 5t(4 - t) = 0 \Rightarrow t = 0$ or $t = 4$. It lands after $\mathbf{4}$ <strong>seconds</strong>. By symmetry its greatest height is at $t = 2$: $h = 40 - 20 = 20$ m.
+</div>
+
+<h3>Solving Equations Graphically</h3>
+<p>To solve $f(x) = k$ using the graph of $y = f(x)$, draw the horizontal line $y = k$ and read off the $x$-coordinates where the line meets the curve. The roots (solutions of $f(x) = 0$) are where the curve meets $y = 0$.</p>
+<div class="worked-example">
+  Use the table above to solve $x^2 - 2x - 3 = 5$.<br><br>
+  Draw $y = 5$. It meets the curve at $x = \mathbf{-2}$ and $x = \mathbf{4}$.
+</div>
+
+<!-- ===================== 2.4.2 COMPLETING THE SQUARE [HIGHER] ===================== -->
+<h2>2.4.2 Turning Points by Completing the Square <span class="higher-tag">Higher</span></h2>
+
+<div class="formula-box">
+  $$x^2 + bx + c = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 + c$$
+  If $y = (x + p)^2 + q$, the turning point is $\mathbf{(-p,\ q)}$ and it is a <strong>minimum</strong> (since $(x + p)^2 \ge 0$).
+</div>
+
+<div class="worked-example">
+  Find the turning point of $y = x^2 - 8x + 20$.<br><br>
+  $x^2 - 8x + 20 = (x - 4)^2 - 16 + 20 = (x - 4)^2 + 4$<br>
+  Turning point $\mathbf{(4, 4)}$ (minimum). Since the minimum value 4 is above zero, the graph has <strong>no real roots</strong>.
+</div>
+
+<div class="worked-example">
+  Write $x^2 + 6x + 2$ in the form $(x + p)^2 + q$ and state the turning point.<br><br>
+  $(x + 3)^2 - 9 + 2 = (x + 3)^2 - 7$, so the turning point is $\mathbf{(-3, -7)}$.
+</div>
+
+<div class="exam-tip">
+  The sign of the $x$-coordinate flips: $(x - 4)^2$ gives $x = 4$; $(x + 3)^2$ gives $x = -3$. The $y$-coordinate keeps its sign.
+</div>
+
+<!-- ===================== 2.4.3 CUBIC AND RECIPROCAL ===================== -->
+<h2>2.4.3 Cubic and Reciprocal Graphs</h2>
+
+<div style="display:flex; gap:20px; flex-wrap:wrap; margin: 16px 0;">
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <line x1="10" y1="110" x2="210" y2="110" stroke="#374151" stroke-width="1.3"/>
+  <line x1="110" y1="10" x2="110" y2="210" stroke="#374151" stroke-width="1.3"/>
+  <polyline points="20,161 29,132 38,110 47,95 56,86 65,83 74,83 83,87 92,93 101,101 110,110 119,119 128,127 137,133 146,137 155,137 164,134 173,125 182,110 191,89 200,59" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="30" y="28" font-size="13" fill="#1e40af" font-family="sans-serif" font-weight="700">y = x³ − 4x</text>
+  <text x="32" y="126" font-size="11" fill="#dc2626" font-family="sans-serif">−2</text>
+  <text x="178" y="126" font-size="11" fill="#dc2626" font-family="sans-serif">2</text>
+</svg>
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <line x1="10" y1="110" x2="210" y2="110" stroke="#374151" stroke-width="1.3"/>
+  <line x1="110" y1="10" x2="110" y2="210" stroke="#374151" stroke-width="1.3"/>
+  <polyline points="119,8 124,48 130,65 136,75 141,81 147,86 152,89 158,91 164,93 169,95 175,96 180,97 186,98 192,99 197,100 200,100" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <polyline points="20,120 26,121 31,121 37,122 42,123 48,125 54,126 59,128 65,130 70,133 76,137 82,142 87,150 93,162 98,188 101,212" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="150" y="60" font-size="13" fill="#dc2626" font-family="sans-serif" font-weight="700">y = 1/x</text>
+  <text x="20" y="200" font-size="11" fill="#6b7280" font-family="sans-serif">axes are asymptotes</text>
+</svg>
+</div>
+
+<table>
+  <thead><tr><th>Type</th><th>General form</th><th>Shape and key features</th></tr></thead>
+  <tbody>
+    <tr><td>Linear</td><td>$y = mx + c$</td><td>Straight line</td></tr>
+    <tr><td>Quadratic</td><td>$y = ax^2 + bx + c$</td><td>Parabola (U or &cap;), one turning point, symmetrical</td></tr>
+    <tr><td>Cubic</td><td>$y = ax^3 + \dots$</td><td>S-shaped; $y = x^3$ passes through the origin; can have 1, 2 or 3 roots. If $a > 0$ it goes from bottom-left to top-right.</td></tr>
+    <tr><td>Reciprocal</td><td>$y = \dfrac{k}{x}$, $x \ne 0$</td><td>Two separate branches; the axes are <strong>asymptotes</strong>. For $k > 0$, branches in the 1st and 3rd quadrants; symmetrical about $y = x$ and $y = -x$.</td></tr>
+  </tbody>
+</table>
+
+<div class="definition">
+  An <strong>asymptote</strong> is a line that a graph gets closer and closer to but never meets. For $y = \frac{1}{x}$: as $x$ gets very large, $y$ gets closer to 0; $x = 0$ is not allowed because you cannot divide by zero.
+</div>
+
+<div class="worked-example">
+  Find the roots of $y = x^3 - 4x$.<br><br>
+  $x(x^2 - 4) = x(x - 2)(x + 2) = 0 \Rightarrow x = \mathbf{-2,\ 0,\ 2}$. It is a cubic with three roots (see the graph above).
+</div>
+
+
+<!-- ===================== 2.4.4 EXPONENTIAL & TRIG [HIGHER] ===================== -->
+<h2>2.4.4 Exponential and Trigonometric Graphs <span class="higher-tag">Higher</span></h2>
+
+<h3>Exponential Graphs $y = k^x$</h3>
+<svg width="280" height="210" viewBox="0 0 280 210" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <line x1="20" y1="190" x2="270" y2="190" stroke="#374151" stroke-width="1.3"/>
+  <line x1="140" y1="10" x2="140" y2="200" stroke="#374151" stroke-width="1.3"/>
+  <polyline points="35,188 49,187 63,186 77,184 91,182 105,180 119,177 133,173 147,167 161,160 175,150 189,137 203,120 217,98 231,69 245,30" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <polyline points="35,30 49,69 63,98 77,120 91,137 105,150 119,160 133,167 147,173 161,177 175,180 189,182 203,184 217,186 231,187 245,188" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="7,4"/>
+  <circle cx="140" cy="170" r="4" fill="#374151"/>
+  <text x="146" y="166" font-size="12" fill="#374151" font-family="sans-serif">(0, 1)</text>
+  <text x="200" y="40" font-size="13" fill="#2563eb" font-family="sans-serif" font-weight="700">y = 2ˣ</text>
+  <text x="40" y="24" font-size="13" fill="#dc2626" font-family="sans-serif" font-weight="700">y = (½)ˣ</text>
+</svg>
+<ul>
+  <li>Every graph $y = k^x$ ($k > 0$) passes through $(0, 1)$, because $k^0 = 1$.</li>
+  <li>$y$ is always positive: the $x$-axis is an asymptote.</li>
+  <li>$k > 1$: exponential <strong>growth</strong> (increasing ever more steeply). $0 < k < 1$: exponential <strong>decay</strong>.</li>
+  <li>Real-life models: compound interest $V = P \times 1.04^t$, population growth, depreciation. The vertical intercept is the starting value $P$.</li>
+</ul>
+
+<h3>Trigonometric Graphs</h3>
+<svg width="700" height="200" viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <line x1="30" y1="100" x2="690" y2="100" stroke="#9ca3af" stroke-width="1.5"/>
+  <line x1="30" y1="10" x2="30" y2="190" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="107" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">90</text>
+  <text x="193" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">180</text>
+  <text x="279" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">270</text>
+  <text x="363" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">360</text>
+  <text x="447" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">450</text>
+  <text x="533" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">540</text>
+  <text x="617" y="115" font-size="11" fill="#6b7280" font-family="sans-serif">630</text>
+  <text x="8" y="35" font-size="11" fill="#6b7280" font-family="sans-serif">1</text>
+  <text x="4" y="168" font-size="11" fill="#6b7280" font-family="sans-serif">-1</text>
+  <path d="M30,100 C57,100 71,35 110,35 C149,35 163,100 196,100 C229,100 243,165 282,165 C321,165 335,100 368,100 C401,100 415,35 454,35 C493,35 507,100 540,100 C573,100 587,165 626,165 C651,165 665,100 684,100" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <path d="M30,35 C69,35 83,100 110,100 C137,100 151,165 196,165 C241,165 255,100 282,100 C309,100 323,35 368,35 C413,35 427,100 454,100 C481,100 495,165 540,165 C585,165 599,100 626,100 C653,100 667,35 684,35" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <line x1="50" y1="185" x2="80" y2="185" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="84" y="189" font-size="12" fill="#1e40af" font-family="sans-serif">y = sin x</text>
+  <line x1="170" y1="185" x2="200" y2="185" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <text x="204" y="189" font-size="12" fill="#dc2626" font-family="sans-serif">y = cos x</text>
+  <text x="590" y="20" font-size="12" fill="#374151" font-family="sans-serif">x (degrees)</text>
+</svg>
+
+<table>
+  <thead><tr><th>Graph</th><th>Period</th><th>Range</th><th>Key points (0° to 360°)</th></tr></thead>
+  <tbody>
+    <tr><td>$y = \sin x$</td><td>360°</td><td>$-1 \le y \le 1$</td><td>$(0, 0)$, max $(90°, 1)$, $(180°, 0)$, min $(270°, -1)$, $(360°, 0)$</td></tr>
+    <tr><td>$y = \cos x$</td><td>360°</td><td>$-1 \le y \le 1$</td><td>max $(0, 1)$, $(90°, 0)$, min $(180°, -1)$, $(270°, 0)$, max $(360°, 1)$</td></tr>
+    <tr><td>$y = \tan x$</td><td>180°</td><td>all values</td><td>$(0, 0)$, $(45°, 1)$, asymptotes at $x = 90°$ and $x = 270°$, $(180°, 0)$</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  How many solutions does $\sin x = 0.5$ have for $0° \le x \le 360°$?<br><br>
+  The line $y = 0.5$ meets the sine curve twice: $x = 30°$ and, by symmetry about $x = 90°$, $x = 180° - 30° = 150°$. So <strong>2 solutions</strong>.
+</div>
+
+<div class="exam-tip">
+  The graphs repeat for angles of any size, including negative angles &mdash; use the period and symmetry to find further solutions rather than relying only on your calculator, which gives one answer.
+</div>
+
+<!-- ===================== 2.4.5 TRANSFORMATIONS [HIGHER] ===================== -->
+<h2>2.4.5 Translations and Reflections of Graphs <span class="higher-tag">Higher</span></h2>
+
+<div class="formula-box">
+  <table style="margin-bottom:0;">
+    <thead><tr><th>New graph</th><th>Transformation of $y = f(x)$</th><th>Point $(x, y)$ moves to</th></tr></thead>
+    <tbody>
+      <tr><td>$y = f(x) + a$</td><td>Translation $\begin{pmatrix} 0 \\ a \end{pmatrix}$ ($a$ up)</td><td>$(x,\ y + a)$</td></tr>
+      <tr><td>$y = f(x + a)$</td><td>Translation $\begin{pmatrix} -a \\ 0 \end{pmatrix}$ ($a$ <strong>left</strong>)</td><td>$(x - a,\ y)$</td></tr>
+      <tr><td>$y = -f(x)$</td><td>Reflection in the $x$-axis</td><td>$(x,\ -y)$</td></tr>
+      <tr><td>$y = f(-x)$</td><td>Reflection in the $y$-axis</td><td>$(-x,\ y)$</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SVG: y = x^2 and y = (x-3)^2 + 1 -->
+<svg width="320" height="220" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <!-- px = 100 + 30x, py = 190 - 20y -->
+  <line x1="10" y1="190" x2="310" y2="190" stroke="#374151" stroke-width="1.3"/>
+  <line x1="100" y1="10" x2="100" y2="210" stroke="#374151" stroke-width="1.3"/>
+  <!-- y = x^2 from x=-2 to 2: P0 (40,110), P2 (160,110), control (100, 270) -->
+  <path d="M40,110 Q100,270 160,110" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <!-- y = (x-3)^2 + 1 from x=1 to 5: P0 (130,90), P2 (250,90), control (190,250) -->
+  <path d="M130,90 Q190,250 250,90" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="7,4"/>
+  <circle cx="100" cy="190" r="4" fill="#2563eb"/><circle cx="190" cy="170" r="4" fill="#dc2626"/>
+  <line x1="104" y1="188" x2="184" y2="172" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr)"/>
+  <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#16a34a"/></marker></defs>
+  <text x="20" y="100" font-size="12" fill="#2563eb" font-family="sans-serif" font-weight="700">y = x²</text>
+  <text x="215" y="80" font-size="12" fill="#dc2626" font-family="sans-serif" font-weight="700">y = (x − 3)² + 1</text>
+  <text x="196" y="186" font-size="11" fill="#dc2626" font-family="sans-serif">(3, 1)</text>
+  <text x="120" y="208" font-size="11" fill="#16a34a" font-family="sans-serif">translation (3, 1)</text>
+</svg>
+
+<div class="worked-example">
+  $y = f(x)$ has a maximum at $(1, 6)$ and crosses the $x$-axis at $(-2, 0)$ and $(4, 0)$.<br><br>
+  $y = f(x + 2)$: shift 2 left &rArr; maximum $\mathbf{(-1, 6)}$, roots $(-4, 0)$ and $(2, 0)$.<br>
+  $y = -f(x)$: reflect in the $x$-axis &rArr; <strong>minimum</strong> $\mathbf{(1, -6)}$, roots unchanged.<br>
+  $y = f(x) - 3$: shift 3 down &rArr; maximum $\mathbf{(1, 3)}$.
+</div>
+
+<div class="exam-tip">
+  Changes <em>inside</em> the bracket affect $x$ and work the &ldquo;opposite way&rdquo;: $f(x - 4)$ moves the graph 4 to the <strong>right</strong>. Changes <em>outside</em> affect $y$ and work as expected.
+</div>
+
+<!-- ===================== 2.4.6 REAL-LIFE GRAPHS ===================== -->
+<h2>2.4.6 Real-Life and Kinematic Graphs</h2>
+
+<div class="definition">
+  <strong>Distance&ndash;time graph:</strong> gradient = <strong>speed</strong>; horizontal line = stationary; steeper = faster; a line sloping back down = returning towards the start.<br>
+  <strong>Velocity (speed)&ndash;time graph:</strong> gradient = <strong>acceleration</strong>; horizontal line = constant speed; negative gradient = deceleration; area under the graph = <strong>distance travelled</strong>.
+</div>
+
+<div class="worked-example">
+  A train travels 15 km in its first 20 minutes, stops for 10 minutes, then returns 15 km in 30 minutes. Find the speed in each moving section.<br><br>
+  First section: $15 \div \tfrac{20}{60} = \mathbf{45}$ <strong>km/h</strong>. &nbsp; Return: $15 \div \tfrac{30}{60} = \mathbf{30}$ <strong>km/h</strong>.
+</div>
+
+<div class="worked-example">
+  A car's speed increases uniformly from 0 to 24 m/s in 8 s. Acceleration $= \dfrac{24}{8} = \mathbf{3}$ <strong>m/s²</strong>.
+</div>
+
+<h3>Filling Containers and Other Contexts</h3>
+<p>When a container is filled at a constant rate, the depth&ndash;time graph is a straight line for any part with a constant cross-section. Wider parts fill more slowly (shallower gradient); narrower parts fill faster (steeper gradient). A container with sloping sides gives a curve.</p>
+
+<h3>Reciprocal and Exponential Models</h3>
+<p>Inverse relationships give reciprocal graphs: if $n$ workers take $t = \frac{24}{n}$ hours, the graph is a reciprocal curve that never reaches the $n$-axis. At Higher, growth and decay ($V = 500 \times 1.04^t$) give exponential graphs; read approximate solutions from the graph, e.g. when the value first exceeds £600.</p>
+
+
+<!-- ===================== 2.4.7 GRADIENTS AND AREAS [HIGHER] ===================== -->
+<h2>2.4.7 Gradients and Areas Under Graphs <span class="higher-tag">Higher</span></h2>
+
+<h3>Gradient of a Curve</h3>
+<ul>
+  <li><strong>Instantaneous rate of change</strong> at a point: draw a <strong>tangent</strong> to the curve at that point and find its gradient.</li>
+  <li><strong>Average rate of change</strong> between two points: find the gradient of the <strong>chord</strong> joining them.</li>
+  <li>On a distance&ndash;time curve the tangent gives the speed at that instant; on a velocity&ndash;time curve it gives the acceleration.</li>
+</ul>
+
+<h3>Area Under a Graph</h3>
+<p>Split the area into triangles, rectangles and trapezia. For a curve, use <strong>trapezia of equal width</strong> to estimate the area.</p>
+<div class="formula-box">
+  Area of a trapezium strip $= \tfrac{1}{2} \times \text{width} \times (y_{\text{left}} + y_{\text{right}})$
+</div>
+
+<!-- SVG: velocity-time trapezium graph -->
+<svg width="360" height="210" viewBox="0 0 360 210" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <!-- px = 40 + 15t, py = 180 - 8v -->
+  <polygon points="40,180 130,60 280,60 340,180" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="40" y1="180" x2="350" y2="180" stroke="#374151" stroke-width="1.5"/>
+  <line x1="40" y1="190" x2="40" y2="20" stroke="#374151" stroke-width="1.5"/>
+  <line x1="130" y1="60" x2="130" y2="180" stroke="#9ca3af" stroke-dasharray="4,3"/>
+  <line x1="280" y1="60" x2="280" y2="180" stroke="#9ca3af" stroke-dasharray="4,3"/>
+  <text x="70" y="160" font-size="12" fill="#1e40af" font-family="sans-serif">45</text>
+  <text x="195" y="130" font-size="12" fill="#1e40af" font-family="sans-serif">150</text>
+  <text x="295" y="160" font-size="12" fill="#1e40af" font-family="sans-serif">30</text>
+  <text x="126" y="198" font-size="11" fill="#6b7280" font-family="sans-serif">6</text>
+  <text x="272" y="198" font-size="11" fill="#6b7280" font-family="sans-serif">16</text>
+  <text x="332" y="198" font-size="11" fill="#6b7280" font-family="sans-serif">20</text>
+  <text x="12" y="64" font-size="11" fill="#6b7280" font-family="sans-serif">15</text>
+  <text x="200" y="16" font-size="12" fill="#374151" font-family="sans-serif">velocity (m/s) against time (s)</text>
+</svg>
+
+<div class="worked-example">
+  A car accelerates from rest to 15 m/s in 6 s, travels at 15 m/s for 10 s, then decelerates to rest in 4 s. Find the total distance.<br><br>
+  $\tfrac{1}{2} \times 6 \times 15 + 10 \times 15 + \tfrac{1}{2} \times 4 \times 15 = 45 + 150 + 30 = \mathbf{225}$ <strong>m</strong>
+</div>
+
+<div class="worked-example">
+  A velocity&ndash;time curve passes through $(0, 0)$, $(2, 6)$, $(4, 10)$, $(6, 12)$. Estimate the distance in the first 6 s.<br><br>
+  $\tfrac{1}{2}(2)(0 + 6) + \tfrac{1}{2}(2)(6 + 10) + \tfrac{1}{2}(2)(10 + 12) = 6 + 16 + 22 = \mathbf{44}$ <strong>m</strong><br>
+  The curve gets less steep, so it bends above the trapezium tops: this is an <strong>underestimate</strong>.
+</div>
+
+<div class="exam-tip">
+  Always state units: the area under a velocity&ndash;time graph (m/s &times; s) is in metres; the gradient (m/s &divide; s) is in m/s². In financial graphs the gradient is a rate such as £ per year.
+</div>
+
+<!-- ===================== 2.4.8 CIRCLES [HIGHER] ===================== -->
+<h2>2.4.8 Equation of a Circle and Tangents <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  The circle with centre the origin and radius $r$ has equation
+  $$x^2 + y^2 = r^2$$
+  e.g. $x^2 + y^2 = 49$ has centre $(0, 0)$ and radius 7. A point lies on the circle if its coordinates satisfy the equation.
+</div>
+
+<!-- SVG: circle with tangent -->
+<svg width="300" height="280" viewBox="0 0 300 280" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; margin: 16px 0; max-width:100%;">
+  <!-- origin (140,150), 22px per unit; circle r=5 -> 110px; point (3,4) -> (206, 62) -->
+  <line x1="10" y1="150" x2="290" y2="150" stroke="#374151" stroke-width="1.3"/>
+  <line x1="140" y1="20" x2="140" y2="270" stroke="#374151" stroke-width="1.3"/>
+  <circle cx="140" cy="150" r="110" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <line x1="140" y1="150" x2="206" y2="62" stroke="#7c3aed" stroke-width="2"/>
+  <!-- tangent gradient -3/4: direction (4,-3) units => px (88, 66) per 4 units -->
+  <line x1="126" y1="2" x2="294" y2="128" stroke="#dc2626" stroke-width="2.5"/>
+  <circle cx="206" cy="62" r="4" fill="#dc2626"/>
+  <text x="212" y="56" font-size="12" fill="#dc2626" font-family="sans-serif">P(3, 4)</text>
+  <text x="150" y="112" font-size="12" fill="#7c3aed" font-family="sans-serif">radius, m = 4/3</text>
+  <text x="200" y="160" font-size="12" fill="#dc2626" font-family="sans-serif">tangent, m = −3/4</text>
+  <text x="20" y="270" font-size="12" fill="#1e40af" font-family="sans-serif" font-weight="700">x² + y² = 25</text>
+</svg>
+
+<div class="formula-box">
+  <strong>Tangent at a point $P$:</strong> the tangent is perpendicular to the radius $OP$.
+  <ol style="margin-bottom:0;">
+    <li>Gradient of radius $OP = \dfrac{y_P}{x_P}$.</li>
+    <li>Tangent gradient = negative reciprocal.</li>
+    <li>Substitute $P$ into $y = mx + c$ to find $c$.</li>
+  </ol>
+</div>
+
+<div class="worked-example">
+  Find the tangent to $x^2 + y^2 = 25$ at $(3, 4)$.<br><br>
+  Radius gradient $= \tfrac{4}{3}$, so tangent gradient $= -\tfrac{3}{4}$.<br>
+  $4 = -\tfrac{3}{4}(3) + c \Rightarrow c = 4 + \tfrac{9}{4} = \tfrac{25}{4}$<br>
+  $y = -\tfrac{3}{4}x + \tfrac{25}{4}$, i.e. $\mathbf{3x + 4y = 25}$
+</div>
+
+<div class="worked-example">
+  Find the tangent to $x^2 + y^2 = 20$ at $(2, -4)$.<br><br>
+  Check: $4 + 16 = 20$ ✓. Radius gradient $= \tfrac{-4}{2} = -2$, so tangent gradient $= \tfrac{1}{2}$.<br>
+  $-4 = \tfrac{1}{2}(2) + c \Rightarrow c = -5$ &nbsp; $\Rightarrow$ &nbsp; $\mathbf{y = \tfrac{1}{2}x - 5}$
+</div>
+
+<div class="exam-tip">
+  The radius is $\sqrt{r^2}$: for $x^2 + y^2 = 50$ the radius is $\sqrt{50} = 5\sqrt{2}$, not 25. To find the equation from a point on the circle, use $r^2 = x^2 + y^2$, e.g. through $(6, -8)$: $r^2 = 36 + 64 = 100$.
+</div>
+
+<h2>Quick Reference Summary</h2>
+<table>
+  <thead><tr><th>Idea</th><th>Key fact</th></tr></thead>
+  <tbody>
+    <tr><td>Roots</td><td>Solve $y = 0$; line of symmetry halfway between roots</td></tr>
+    <tr><td>Turning point <span class="higher-tag">Higher</span></td><td>$(x + p)^2 + q \Rightarrow (-p, q)$</td></tr>
+    <tr><td>Graph shapes</td><td>Quadratic U/&cap;, cubic S, reciprocal two branches</td></tr>
+    <tr><td>Exponential <span class="higher-tag">Higher</span></td><td>$y = k^x$ through $(0, 1)$</td></tr>
+    <tr><td>Trig <span class="higher-tag">Higher</span></td><td>sin, cos period 360°; tan period 180°</td></tr>
+    <tr><td>Transformations <span class="higher-tag">Higher</span></td><td>$f(x) + a$ up; $f(x + a)$ left; $-f(x)$ and $f(-x)$ reflect</td></tr>
+    <tr><td>Kinematics</td><td>D&ndash;T gradient = speed; V&ndash;T gradient = acceleration, area = distance</td></tr>
+    <tr><td>Circle <span class="higher-tag">Higher</span></td><td>$x^2 + y^2 = r^2$; tangent &perp; radius</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

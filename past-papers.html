@@ -422,7 +422,7 @@
     //   - drop subjects that end up with no boards
     const attemptable = subjects
       .map(s => {
-        let bs = (s.boards || []).filter(b => Array.isArray(b.papers) && b.papers.length > 0);
+        let bs = window.boardsForLevel(s.boards).filter(b => Array.isArray(b.papers) && b.papers.length > 0);
         if (userBoardsBySubject) {
           const userBoards = userBoardsBySubject.get(s.name);
           if (userBoards && userBoards.size > 0) {
@@ -456,7 +456,7 @@
     // there is somewhere to send the student.
     const linksOnly = subjects
       .map(s => {
-        let bs = (s.boards || []).filter(b => b.officialPageUrl && !(b.papers || []).length);
+        let bs = window.boardsForLevel(s.boards).filter(b => b.officialPageUrl && !(b.papers || []).length);
         if (userBoardsBySubject) {
           const userBoards = userBoardsBySubject.get(s.name);
           bs = (userBoards && userBoards.size > 0)

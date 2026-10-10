@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — AQA 4.6 — Vectors</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.6 Vectors</h1>
+<p class="spec-ref">AQA GCSE Mathematics 8300 &mdash; Geometry &amp; Measures &mdash; spec refs G24, G25 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<!-- ===================== 4.6.1 WHAT IS A VECTOR ===================== -->
+<h2>4.6.1 What Is a Vector?</h2>
+
+<div class="definition">
+  A <strong>vector</strong> is a quantity that has both <strong>magnitude</strong> (size) and <strong>direction</strong>. A <strong>scalar</strong> has size only &mdash; it is just a number, such as $3$, $-2$ or $\tfrac{1}{2}$.
+</div>
+
+<p>Vectors can be written in three ways:</p>
+<ul>
+  <li><strong>Column vector:</strong> $\begin{pmatrix} 3 \\ -2 \end{pmatrix}$ &mdash; the top number is the movement in the $x$-direction (right is positive, left is negative) and the bottom number is the movement in the $y$-direction (up is positive, down is negative).</li>
+  <li><strong>Bold lower-case letter:</strong> $\mathbf{a}$. In handwriting you cannot write in bold, so <strong>underline</strong> it: $\underline{a}$.</li>
+  <li><strong>Between two points:</strong> $\overrightarrow{AB}$ means the vector that starts at $A$ and finishes at $B$.</li>
+</ul>
+
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="280" height="220" viewBox="0 0 280 220" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <defs>
+    <marker id="v1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/></marker>
+    <marker id="v2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#9ca3af"/></marker>
+  </defs>
+  <!-- grid -->
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="20" y1="20" x2="20" y2="200"/><line x1="50" y1="20" x2="50" y2="200"/><line x1="80" y1="20" x2="80" y2="200"/><line x1="110" y1="20" x2="110" y2="200"/><line x1="140" y1="20" x2="140" y2="200"/><line x1="170" y1="20" x2="170" y2="200"/><line x1="200" y1="20" x2="200" y2="200"/><line x1="230" y1="20" x2="230" y2="200"/><line x1="260" y1="20" x2="260" y2="200"/>
+    <line x1="20" y1="20" x2="260" y2="20"/><line x1="20" y1="50" x2="260" y2="50"/><line x1="20" y1="80" x2="260" y2="80"/><line x1="20" y1="110" x2="260" y2="110"/><line x1="20" y1="140" x2="260" y2="140"/><line x1="20" y1="170" x2="260" y2="170"/><line x1="20" y1="200" x2="260" y2="200"/>
+  </g>
+  <!-- A(50,80) to B(140,140): 3 right, 2 down -->
+  <line x1="50" y1="80" x2="140" y2="80" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#v2)"/>
+  <line x1="140" y1="80" x2="140" y2="140" stroke="#9ca3af" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#v2)"/>
+  <line x1="50" y1="80" x2="134" y2="136" stroke="#2563eb" stroke-width="3" marker-end="url(#v1)"/>
+  <circle cx="50" cy="80" r="3.5" fill="#1a1a2e"/><text x="36" y="74" font-size="14" font-family="sans-serif" fill="#1a1a2e" font-weight="700">A</text>
+  <circle cx="140" cy="140" r="3.5" fill="#1a1a2e"/><text x="146" y="156" font-size="14" font-family="sans-serif" fill="#1a1a2e" font-weight="700">B</text>
+  <text x="80" y="72" font-size="12" font-family="sans-serif" fill="#6b7280">3 right</text>
+  <text x="146" y="114" font-size="12" font-family="sans-serif" fill="#6b7280">2 down</text>
+  <text x="60" y="190" font-size="13" font-family="sans-serif" fill="#2563eb" font-weight="700">AB = (3, −2)</text>
+</svg>
+<div style="flex:1; min-width:200px;">
+  <div class="formula-box" style="margin-top:0;">
+    <strong>Column vector from $A(x_1, y_1)$ to $B(x_2, y_2)$:</strong>
+    $$\overrightarrow{AB} = \begin{pmatrix} x_2 - x_1 \\ y_2 - y_1 \end{pmatrix}$$
+    <strong>Reversing a vector:</strong> $\overrightarrow{BA} = -\overrightarrow{AB}$
+  </div>
+</div>
+</div>
+
+<div class="worked-example">
+  $A$ is the point $(2, 1)$ and $B$ is the point $(5, -3)$. Write down $\overrightarrow{AB}$ and $\overrightarrow{BA}$.<br><br>
+  $\overrightarrow{AB} = \begin{pmatrix} 5 - 2 \\ -3 - 1 \end{pmatrix} = \begin{pmatrix} 3 \\ -4 \end{pmatrix}$ &nbsp;&nbsp; and &nbsp;&nbsp; $\overrightarrow{BA} = \begin{pmatrix} -3 \\ 4 \end{pmatrix}$
+</div>
+
+<h3>Equal and Negative Vectors</h3>
+<p>Two vectors are <strong>equal</strong> if they have the same magnitude <em>and</em> the same direction &mdash; they do not have to be in the same place. In a parallelogram $ABCD$, $\overrightarrow{AB} = \overrightarrow{DC}$ even though they are opposite sides.</p>
+<p>The vector $-\mathbf{a}$ has the same length as $\mathbf{a}$ but points the <strong>opposite way</strong>. If $\mathbf{a} = \begin{pmatrix} 4 \\ -3 \end{pmatrix}$ then $-\mathbf{a} = \begin{pmatrix} -4 \\ 3 \end{pmatrix}$.</p>
+
+<!-- ===================== 4.6.2 TRANSLATIONS ===================== -->
+<h2>4.6.2 Translations as Vectors (G24)</h2>
+
+<div class="definition">
+  A <strong>translation</strong> slides every point of a shape the same distance in the same direction. It is described fully by the word <strong>translation</strong> and a <strong>column vector</strong>. The image is congruent to the object and has the same orientation.
+</div>
+
+<div class="formula-box">
+  Translating the point $(x, y)$ by the vector $\begin{pmatrix} a \\ b \end{pmatrix}$ gives the image $(x + a,\; y + b)$.
+</div>
+
+<div style="margin: 20px 0;">
+<svg width="320" height="220" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa;">
+  <defs>
+    <marker id="t1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+  </defs>
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="20" y1="20" x2="300" y2="20"/><line x1="20" y1="50" x2="300" y2="50"/><line x1="20" y1="80" x2="300" y2="80"/><line x1="20" y1="110" x2="300" y2="110"/><line x1="20" y1="140" x2="300" y2="140"/><line x1="20" y1="170" x2="300" y2="170"/><line x1="20" y1="200" x2="300" y2="200"/>
+    <line x1="20" y1="20" x2="20" y2="200"/><line x1="60" y1="20" x2="60" y2="200"/><line x1="100" y1="20" x2="100" y2="200"/><line x1="140" y1="20" x2="140" y2="200"/><line x1="180" y1="20" x2="180" y2="200"/><line x1="220" y1="20" x2="220" y2="200"/><line x1="260" y1="20" x2="260" y2="200"/><line x1="300" y1="20" x2="300" y2="200"/>
+  </g>
+  <!-- object triangle -->
+  <polygon points="60,170 140,170 60,110" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="74" y="160" font-size="14" font-family="sans-serif" fill="#1e40af" font-weight="700">A</text>
+  <!-- image triangle: 4 right (x40 units? here 1 unit = 40 px horiz, 30 px vert) -> 4 right=160? use 3 right=120, 2 up=60 -->
+  <polygon points="180,110 260,110 180,50" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="194" y="100" font-size="14" font-family="sans-serif" fill="#b91c1c" font-weight="700">B</text>
+  <line x1="60" y1="110" x2="174" y2="53" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#t1)"/>
+  <text x="70" y="40" font-size="13" font-family="sans-serif" fill="#374151">every vertex moves 3 right, 2 up</text>
+</svg>
+</div>
+<p>Triangle $A$ is mapped onto triangle $B$ by the <strong>translation</strong> $\begin{pmatrix} 3 \\ 2 \end{pmatrix}$. To go back from $B$ to $A$ use $\begin{pmatrix} -3 \\ -2 \end{pmatrix}$.</p>
+
+<div class="worked-example">
+  A triangle has vertices $(1, 1)$, $(3, 1)$ and $(1, 4)$. It is translated by $\begin{pmatrix} -4 \\ 2 \end{pmatrix}$. Find the vertices of the image.<br><br>
+  Add $-4$ to every $x$-coordinate and $2$ to every $y$-coordinate:<br>
+  $(1, 1) \to (-3, 3)$, &nbsp; $(3, 1) \to (-1, 3)$, &nbsp; $(1, 4) \to (-3, 6)$
+</div>
+
+<div class="worked-example">
+  Shape $P$ is translated by $\begin{pmatrix} 2 \\ -3 \end{pmatrix}$ and then by $\begin{pmatrix} -5 \\ 1 \end{pmatrix}$. Find the single translation that has the same effect.<br><br>
+  Add the vectors: $\begin{pmatrix} 2 \\ -3 \end{pmatrix} + \begin{pmatrix} -5 \\ 1 \end{pmatrix} = \begin{pmatrix} -3 \\ -2 \end{pmatrix}$
+</div>
+
+<div class="exam-tip">
+  &ldquo;Describe fully&rdquo; a translation needs two things: the word <strong>translation</strong> and the <strong>column vector</strong>. Do not write it as a coordinate like $(3, 2)$ and never use words like &ldquo;moved&rdquo; or &ldquo;shifted&rdquo; instead of &ldquo;translation&rdquo;. Count squares carefully from one vertex to its image, not from the edge of one shape to the edge of the other.
+</div>
+
+<!-- ===================== 4.6.3 VECTOR ARITHMETIC ===================== -->
+<h2>4.6.3 Adding, Subtracting and Multiplying by a Scalar (G25)</h2>
+
+<h3>Column Vectors</h3>
+<div class="formula-box">
+  <strong>Addition:</strong> $\begin{pmatrix} a \\ b \end{pmatrix} + \begin{pmatrix} c \\ d \end{pmatrix} = \begin{pmatrix} a + c \\ b + d \end{pmatrix}$ &nbsp;&nbsp;&nbsp;
+  <strong>Subtraction:</strong> $\begin{pmatrix} a \\ b \end{pmatrix} - \begin{pmatrix} c \\ d \end{pmatrix} = \begin{pmatrix} a - c \\ b - d \end{pmatrix}$<br><br>
+  <strong>Multiplying by a scalar $k$:</strong> $k\begin{pmatrix} a \\ b \end{pmatrix} = \begin{pmatrix} ka \\ kb \end{pmatrix}$
+</div>
+
+<div class="worked-example">
+  $\mathbf{a} = \begin{pmatrix} 2 \\ 5 \end{pmatrix}$ and $\mathbf{b} = \begin{pmatrix} -1 \\ 3 \end{pmatrix}$. Work out $2\mathbf{a} - 3\mathbf{b}$.<br><br>
+  $2\mathbf{a} = \begin{pmatrix} 4 \\ 10 \end{pmatrix}$, &nbsp; $3\mathbf{b} = \begin{pmatrix} -3 \\ 9 \end{pmatrix}$<br>
+  $2\mathbf{a} - 3\mathbf{b} = \begin{pmatrix} 4 - (-3) \\ 10 - 9 \end{pmatrix} = \mathbf{\begin{pmatrix} 7 \\ 1 \end{pmatrix}}$
+</div>
+
+<div class="worked-example">
+  $\mathbf{p} = \begin{pmatrix} 5 \\ -2 \end{pmatrix}$ and $\mathbf{q} = \begin{pmatrix} -3 \\ 1 \end{pmatrix}$. Find $\mathbf{r}$ such that $\mathbf{p} + 2\mathbf{r} = \mathbf{q}$.<br><br>
+  Rearrange like an equation: $2\mathbf{r} = \mathbf{q} - \mathbf{p} = \begin{pmatrix} -8 \\ 3 \end{pmatrix}$, so $\mathbf{r} = \begin{pmatrix} -4 \\ 1.5 \end{pmatrix}$
+</div>
+
+<div class="worked-example">
+  Find $m$ and $n$ such that $m\begin{pmatrix} 2 \\ -1 \end{pmatrix} + n\begin{pmatrix} 1 \\ 3 \end{pmatrix} = \begin{pmatrix} 8 \\ 3 \end{pmatrix}$.<br><br>
+  Top: $2m + n = 8$. &nbsp; Bottom: $-m + 3n = 3$, so $m = 3n - 3$.<br>
+  Substitute: $2(3n - 3) + n = 8 \Rightarrow 7n = 14 \Rightarrow n = 2$, then $m = 3$.<br>
+  Check: $3\begin{pmatrix} 2 \\ -1 \end{pmatrix} + 2\begin{pmatrix} 1 \\ 3 \end{pmatrix} = \begin{pmatrix} 8 \\ 3 \end{pmatrix}$ &#10003;
+</div>
+
+<h3>Vectors on Diagrams: the Triangle Law</h3>
+<p>Adding two vectors means following one and then the other. The <strong>resultant</strong> $\mathbf{a} + \mathbf{b}$ goes straight from the start of $\mathbf{a}$ to the end of $\mathbf{b}$. Subtracting $\mathbf{b}$ means adding $-\mathbf{b}$ (travelling backwards along $\mathbf{b}$).</p>
+
+<div style="margin: 20px 0; display:flex; gap:20px; flex-wrap:wrap;">
+<svg width="240" height="190" viewBox="0 0 240 190" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa;">
+  <defs>
+    <marker id="d1" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/></marker>
+    <marker id="d2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+    <marker id="d3" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/></marker>
+  </defs>
+  <text x="70" y="22" font-size="13" font-family="sans-serif" fill="#374151" font-weight="700">Triangle law</text>
+  <line x1="30" y1="160" x2="134" y2="64" stroke="#2563eb" stroke-width="2.5" marker-end="url(#d1)"/>
+  <text x="66" y="100" font-size="15" font-family="serif" fill="#2563eb" font-weight="700">a</text>
+  <line x1="140" y1="60" x2="206" y2="154" stroke="#dc2626" stroke-width="2.5" marker-end="url(#d2)"/>
+  <text x="182" y="100" font-size="15" font-family="serif" fill="#dc2626" font-weight="700">b</text>
+  <line x1="30" y1="160" x2="203" y2="160" stroke="#16a34a" stroke-width="2.5" stroke-dasharray="6,3" marker-end="url(#d3)"/>
+  <text x="96" y="180" font-size="15" font-family="serif" fill="#16a34a" font-weight="700">a + b</text>
+</svg>
+<svg width="260" height="190" viewBox="0 0 260 190" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa;">
+  <defs>
+    <marker id="d4" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#2563eb"/></marker>
+    <marker id="d5" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#dc2626"/></marker>
+    <marker id="d6" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7c3aed"/></marker>
+  </defs>
+  <text x="54" y="22" font-size="13" font-family="sans-serif" fill="#374151" font-weight="700">From A to B via O</text>
+  <circle cx="40" cy="160" r="3.5" fill="#1a1a2e"/><text x="24" y="176" font-size="14" font-family="sans-serif" fill="#1a1a2e" font-weight="700">O</text>
+  <circle cx="200" cy="160" r="3.5" fill="#1a1a2e"/><text x="206" y="176" font-size="14" font-family="sans-serif" fill="#1a1a2e" font-weight="700">A</text>
+  <circle cx="110" cy="50" r="3.5" fill="#1a1a2e"/><text x="98" y="44" font-size="14" font-family="sans-serif" fill="#1a1a2e" font-weight="700">B</text>
+  <line x1="40" y1="160" x2="192" y2="160" stroke="#2563eb" stroke-width="2.5" marker-end="url(#d4)"/>
+  <text x="112" y="178" font-size="15" font-family="serif" fill="#2563eb" font-weight="700">a</text>
+  <line x1="40" y1="160" x2="106" y2="57" stroke="#dc2626" stroke-width="2.5" marker-end="url(#d5)"/>
+  <text x="56" y="104" font-size="15" font-family="serif" fill="#dc2626" font-weight="700">b</text>
+  <line x1="200" y1="160" x2="116" y2="57" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="6,3" marker-end="url(#d6)"/>
+  <text x="166" y="100" font-size="14" font-family="serif" fill="#7c3aed" font-weight="700">b − a</text>
+</svg>
+</div>
+
+<div class="formula-box">
+  If $\overrightarrow{OA} = \mathbf{a}$ and $\overrightarrow{OB} = \mathbf{b}$ then
+  $$\overrightarrow{AB} = \overrightarrow{AO} + \overrightarrow{OB} = -\mathbf{a} + \mathbf{b} = \mathbf{b} - \mathbf{a}$$
+  &ldquo;End minus start&rdquo; &mdash; exactly like the column vector between two points.
+</div>
+
+<div class="worked-example">
+  $OABC$ is a parallelogram with $\overrightarrow{OA} = \mathbf{a}$ and $\overrightarrow{OC} = \mathbf{c}$. Find $\overrightarrow{OB}$, $\overrightarrow{AC}$ and $\overrightarrow{CB}$.<br><br>
+  Opposite sides of a parallelogram are equal vectors, so $\overrightarrow{AB} = \mathbf{c}$ and $\overrightarrow{CB} = \mathbf{a}$.<br>
+  $\overrightarrow{OB} = \overrightarrow{OA} + \overrightarrow{AB} = \mathbf{a} + \mathbf{c}$<br>
+  $\overrightarrow{AC} = \overrightarrow{AO} + \overrightarrow{OC} = -\mathbf{a} + \mathbf{c} = \mathbf{c} - \mathbf{a}$
+</div>
+
+<div class="worked-example">
+  $ABCD$ is a parallelogram with $\overrightarrow{AB} = \mathbf{a}$ and $\overrightarrow{AD} = \mathbf{d}$. $E$ is the midpoint of $CD$. Find $\overrightarrow{BE}$.<br><br>
+  $\overrightarrow{DC} = \mathbf{a}$, so $\overrightarrow{DE} = \tfrac{1}{2}\mathbf{a}$ and $\overrightarrow{AE} = \mathbf{d} + \tfrac{1}{2}\mathbf{a}$.<br>
+  $\overrightarrow{BE} = \overrightarrow{BA} + \overrightarrow{AE} = -\mathbf{a} + \mathbf{d} + \tfrac{1}{2}\mathbf{a} = \mathbf{d} - \tfrac{1}{2}\mathbf{a}$
+</div>
+
+<p>Vector expressions simplify just like algebra: collect like terms and expand brackets.</p>
+<div class="worked-example">
+  Simplify $3(\mathbf{a} + 2\mathbf{b}) - 2(\mathbf{a} - \mathbf{b})$.<br><br>
+  $= 3\mathbf{a} + 6\mathbf{b} - 2\mathbf{a} + 2\mathbf{b} = \mathbf{a} + 8\mathbf{b}$
+</div>
+
+<div class="exam-tip">
+  To find any vector on a diagram, pick a <strong>route</strong> along vectors you know. Going <strong>with</strong> an arrow uses $+$, going <strong>against</strong> an arrow uses $-$. Write the route first (e.g. $\overrightarrow{BE} = \overrightarrow{BA} + \overrightarrow{AE}$) &mdash; this earns method marks even if you slip later.
+</div>
+
+<!-- ===================== 4.6.4 PARALLEL AND COLLINEAR ===================== -->
+<h2>4.6.4 Parallel Vectors and Collinear Points <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  Two vectors are <strong>parallel</strong> if one is a <strong>scalar multiple</strong> of the other. For example $6\mathbf{a} + 3\mathbf{b} = 3(2\mathbf{a} + \mathbf{b})$, so $6\mathbf{a} + 3\mathbf{b}$ is parallel to $2\mathbf{a} + \mathbf{b}$ and three times as long. A negative multiple means parallel but in the <strong>opposite direction</strong>.
+</div>
+
+<p>Points are <strong>collinear</strong> if they lie on the same straight line. To prove $A$, $B$ and $C$ are collinear:</p>
+<ol>
+  <li>Find two vectors joining the points, e.g. $\overrightarrow{AB}$ and $\overrightarrow{BC}$.</li>
+  <li>Show one is a multiple of the other (so they are parallel).</li>
+  <li>State that they <strong>share a common point</strong> ($B$), so the points lie on one line.</li>
+</ol>
+
+<div class="worked-example">
+  $\overrightarrow{AB} = 3\mathbf{a} + 2\mathbf{b}$ and $\overrightarrow{BC} = 6\mathbf{a} + 4\mathbf{b}$. Prove that $A$, $B$ and $C$ are collinear.<br><br>
+  $\overrightarrow{BC} = 2(3\mathbf{a} + 2\mathbf{b}) = 2\overrightarrow{AB}$, so $\overrightarrow{AB}$ is parallel to $\overrightarrow{BC}$.<br>
+  They share the point $B$, so $A$, $B$ and $C$ are collinear. (Also $AB : BC = 1 : 2$.)
+</div>
+
+<div class="worked-example">
+  For what value of $k$ is $2\mathbf{a} + 3\mathbf{b}$ parallel to $k\mathbf{a} + 12\mathbf{b}$?<br><br>
+  $12\mathbf{b} = 4 \times 3\mathbf{b}$, so the multiplier is $4$ and $k = 4 \times 2 = \mathbf{8}$.
+</div>
+
+<!-- ===================== 4.6.5 RATIO ===================== -->
+<h2>4.6.5 Midpoints and Ratios Along a Line <span class="higher-tag">Higher</span></h2>
+
+<div class="formula-box">
+  If $P$ lies on $AB$ with $AP : PB = m : n$, then
+  $$\overrightarrow{AP} = \frac{m}{m+n}\,\overrightarrow{AB}$$
+  For the midpoint $M$ of $AB$: $\overrightarrow{AM} = \tfrac{1}{2}\overrightarrow{AB}$, and with $\overrightarrow{OA} = \mathbf{a}$, $\overrightarrow{OB} = \mathbf{b}$: $\;\overrightarrow{OM} = \tfrac{1}{2}(\mathbf{a} + \mathbf{b})$.
+</div>
+
+<div style="margin: 20px 0;">
+<svg width="340" height="90" viewBox="0 0 340 90" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa;">
+  <line x1="30" y1="45" x2="310" y2="45" stroke="#2563eb" stroke-width="3"/>
+  <circle cx="30" cy="45" r="4" fill="#1a1a2e"/><text x="24" y="30" font-size="14" font-family="sans-serif" font-weight="700" fill="#1a1a2e">A</text>
+  <circle cx="142" cy="45" r="4" fill="#dc2626"/><text x="137" y="30" font-size="14" font-family="sans-serif" font-weight="700" fill="#dc2626">P</text>
+  <circle cx="310" cy="45" r="4" fill="#1a1a2e"/><text x="304" y="30" font-size="14" font-family="sans-serif" font-weight="700" fill="#1a1a2e">B</text>
+  <text x="72" y="70" font-size="13" font-family="sans-serif" fill="#374151">2 parts</text>
+  <text x="208" y="70" font-size="13" font-family="sans-serif" fill="#374151">3 parts</text>
+  <text x="96" y="86" font-size="11" font-family="sans-serif" fill="#6b7280">AP = ⅖ AB when AP : PB = 2 : 3</text>
+</svg>
+</div>
+
+<div class="worked-example">
+  $\overrightarrow{OA} = \mathbf{a}$, $\overrightarrow{OB} = \mathbf{b}$ and $P$ is on $AB$ with $AP : PB = 2 : 3$. Find $\overrightarrow{OP}$.<br><br>
+  $\overrightarrow{AB} = \mathbf{b} - \mathbf{a}$ and $\overrightarrow{AP} = \tfrac{2}{5}(\mathbf{b} - \mathbf{a})$<br>
+  $\overrightarrow{OP} = \mathbf{a} + \tfrac{2}{5}\mathbf{b} - \tfrac{2}{5}\mathbf{a} = \mathbf{\tfrac{3}{5}a + \tfrac{2}{5}b}$
+</div>
+
+<div class="exam-tip">
+  A ratio $m : n$ splits the line into $m + n$ parts. The most common error is using $\tfrac{m}{n}$ instead of $\tfrac{m}{m+n}$ &mdash; for $AP : PB = 1 : 3$, $P$ is $\tfrac{1}{4}$ of the way along, not $\tfrac{1}{3}$.
+</div>
+
+<!-- ===================== 4.6.6 PROOFS ===================== -->
+<h2>4.6.6 Vector Proofs <span class="higher-tag">Higher</span></h2>
+
+<p>Vector proof questions usually ask you to show that two lines are <strong>parallel</strong>, that points are <strong>collinear</strong>, or to find a <strong>ratio</strong>. The method is always the same: express every relevant vector in terms of the given vectors, simplify, then look for a scalar multiple.</p>
+
+<div class="worked-example">
+  $OAB$ is a triangle with $\overrightarrow{OA} = 3\mathbf{a}$ and $\overrightarrow{OB} = 3\mathbf{b}$. $P$ is on $OA$ with $OP : PA = 1 : 2$ and $Q$ is on $AB$ with $AQ : QB = 2 : 1$. Prove that $PQ$ is parallel to $OB$.<br><br>
+  $\overrightarrow{PA} = \tfrac{2}{3} \times 3\mathbf{a} = 2\mathbf{a}$<br>
+  $\overrightarrow{AB} = 3\mathbf{b} - 3\mathbf{a}$, so $\overrightarrow{AQ} = \tfrac{2}{3}(3\mathbf{b} - 3\mathbf{a}) = 2\mathbf{b} - 2\mathbf{a}$<br>
+  $\overrightarrow{PQ} = \overrightarrow{PA} + \overrightarrow{AQ} = 2\mathbf{a} + 2\mathbf{b} - 2\mathbf{a} = 2\mathbf{b}$<br>
+  $\overrightarrow{OB} = 3\mathbf{b}$, so $\overrightarrow{PQ} = \tfrac{2}{3}\overrightarrow{OB}$: a scalar multiple, hence <strong>$PQ$ is parallel to $OB$</strong>.
+</div>
+
+<div class="worked-example">
+  $OABC$ is a parallelogram with $\overrightarrow{OA} = \mathbf{a}$, $\overrightarrow{OC} = \mathbf{c}$. $M$ is the midpoint of $AB$ and $\overrightarrow{OD} = 2\mathbf{a} + \mathbf{c}$. Prove that $O$, $M$ and $D$ are collinear.<br><br>
+  $\overrightarrow{AB} = \mathbf{c}$, so $\overrightarrow{OM} = \mathbf{a} + \tfrac{1}{2}\mathbf{c}$<br>
+  $\overrightarrow{OD} = 2\mathbf{a} + \mathbf{c} = 2(\mathbf{a} + \tfrac{1}{2}\mathbf{c}) = 2\overrightarrow{OM}$<br>
+  $\overrightarrow{OM}$ and $\overrightarrow{OD}$ are parallel and share the point $O$, so $O$, $M$ and $D$ are <strong>collinear</strong> ($M$ is the midpoint of $OD$).
+</div>
+
+<div class="exam-tip">
+  Proof marks are lost by not finishing the argument. Always end with a sentence: &ldquo;$\overrightarrow{OD}$ is a multiple of $\overrightarrow{OM}$, so they are parallel; they share point $O$, so $O$, $M$, $D$ are collinear.&rdquo; Showing the vectors are multiples on its own only proves they are parallel.
+</div>
+
+<h3>Summary</h3>
+<table>
+  <thead><tr><th>Skill</th><th>Key fact</th></tr></thead>
+  <tbody>
+    <tr><td>Translation</td><td>&ldquo;Translation by $\begin{pmatrix} a \\ b \end{pmatrix}$&rdquo; &mdash; $(x, y) \to (x + a, y + b)$</td></tr>
+    <tr><td>Vector between points</td><td>End minus start; $\overrightarrow{BA} = -\overrightarrow{AB}$</td></tr>
+    <tr><td>Arithmetic</td><td>Add/subtract components; scalar multiplies each component</td></tr>
+    <tr><td>Route on a diagram</td><td>$\overrightarrow{AB} = \mathbf{b} - \mathbf{a}$ when $\overrightarrow{OA} = \mathbf{a}$, $\overrightarrow{OB} = \mathbf{b}$</td></tr>
+    <tr><td>Parallel <span class="higher-tag">Higher</span></td><td>One vector is a scalar multiple of the other</td></tr>
+    <tr><td>Collinear <span class="higher-tag">Higher</span></td><td>Parallel <em>and</em> a common point</td></tr>
+    <tr><td>Ratio $m : n$ <span class="higher-tag">Higher</span></td><td>$\overrightarrow{AP} = \frac{m}{m+n}\overrightarrow{AB}$</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

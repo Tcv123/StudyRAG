@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — AQA 1.4 — Powers, Roots, Surds &amp; Standard Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.4 Powers, Roots, Surds &amp; Standard Form</h1>
+<p class="spec-ref">AQA GCSE Mathematics 8300 &mdash; Number &mdash; spec refs N6–N9 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<!-- ===================== 1.4.1 POWERS AND ROOTS ===================== -->
+<h2>1.4.1 Powers and Roots</h2>
+
+<div class="definition">
+  A <strong>power</strong> (or index) tells you how many times a number is multiplied by itself: $a^n = a \times a \times \cdots \times a$ ($n$ times). In $5^3$, 5 is the <strong>base</strong> and 3 is the <strong>index</strong>.<br><br>
+  A <strong>root</strong> is the inverse of a power: $\sqrt{49} = 7$ because $7^2 = 49$; $\sqrt[3]{64} = 4$ because $4^3 = 64$; $\sqrt[4]{81} = 3$ because $3^4 = 81$.
+</div>
+
+<p>Every positive number has two square roots, one positive and one negative ($\pm 7$ for 49), but the $\sqrt{\ }$ symbol means the positive one. Cube roots of negative numbers are negative: $\sqrt[3]{-8} = -2$.</p>
+
+<h3>Numbers You Should Know</h3>
+<table>
+  <thead><tr><th>Type</th><th>Values</th></tr></thead>
+  <tbody>
+    <tr><td>Squares to $15^2$</td><td>1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225</td></tr>
+    <tr><td>Cubes</td><td>1, 8, 27, 64, 125 (and $10^3 = 1000$)</td></tr>
+    <tr><td>Powers of 2</td><td>2, 4, 8, 16, 32, 64, 128, 256</td></tr>
+    <tr><td>Powers of 3</td><td>3, 9, 27, 81, 243</td></tr>
+    <tr><td>Powers of 4</td><td>4, 16, 64, 256</td></tr>
+    <tr><td>Powers of 5</td><td>5, 25, 125, 625</td></tr>
+    <tr><td>Powers of 10</td><td>$10^3 = 1000$ (one thousand), $10^6 = 1\,000\,000$ (one million)</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  Work out $2^3 \times 3^2 - \sqrt{144}$.<br><br>
+  $8 \times 9 - 12 = 72 - 12 = \mathbf{60}$
+</div>
+
+<h3>Estimating Powers and Roots <span class="higher-tag">Higher</span></h3>
+<p>To estimate a root without a calculator, find the square (or cube) numbers either side, then refine.</p>
+
+<!-- SVG: number line for sqrt 70 -->
+<svg viewBox="0 0 600 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;display:block;margin:16px auto;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa;">
+  <line x1="40" y1="55" x2="560" y2="55" stroke="#374151" stroke-width="2"/>
+  <line x1="80" y1="47" x2="80" y2="63" stroke="#374151" stroke-width="2"/>
+  <line x1="520" y1="47" x2="520" y2="63" stroke="#374151" stroke-width="2"/>
+  <text x="80" y="85" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">8² = 64</text>
+  <text x="520" y="85" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">9² = 81</text>
+  <circle cx="235" cy="55" r="7" fill="#7c3aed"/>
+  <text x="235" y="35" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#7c3aed" font-weight="700">70</text>
+  <text x="235" y="85" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#7c3aed">√70 ≈ 8.4</text>
+  <text x="300" y="104" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6b7280">70 is just over a third of the way from 64 to 81</text>
+</svg>
+
+<div class="worked-example">
+  Estimate $\sqrt{70}$ to 1 decimal place.<br><br>
+  $8^2 = 64$ and $9^2 = 81$, so $8 < \sqrt{70} < 9$.<br>
+  $8.3^2 = 68.89$ and $8.4^2 = 70.56$. 70 is closer to 70.56, so $\sqrt{70} \approx \mathbf{8.4}$
+</div>
+
+<div class="worked-example">
+  Estimate $2.9^4$.<br><br>
+  $2.9 \approx 3$, so $2.9^4 \approx 3^4 = 81$ (a slight overestimate, as 2.9 &lt; 3).
+</div>
+
+<!-- ===================== 1.4.2 INDEX LAWS ===================== -->
+<h2>1.4.2 Laws of Indices</h2>
+
+<div class="formula-box">
+  $$a^m \times a^n = a^{m+n} \qquad a^m \div a^n = a^{m-n} \qquad (a^m)^n = a^{mn}$$
+  $$a^0 = 1 \qquad a^{-n} = \frac{1}{a^n} \qquad a^1 = a$$
+  The laws only work when the <strong>bases are the same</strong>.
+</div>
+
+<div class="worked-example">
+  Simplify $4^7 \times 4^{-2} \div 4^3$, giving your answer as a power of 4.<br><br>
+  $4^{7 + (-2) - 3} = \mathbf{4^2}$ (which equals 16)
+</div>
+
+<div class="worked-example">
+  Simplify $(2x^3)^4$.<br><br>
+  Raise <em>every</em> part of the bracket to the power 4: $2^4 \times x^{12} = \mathbf{16x^{12}}$
+</div>
+
+<h3>Zero and Negative Indices</h3>
+<p>Why is $a^0 = 1$? By the division law, $5^3 \div 5^3 = 5^0$; but any non-zero number divided by itself is 1, so $5^0 = 1$.</p>
+<p>Similarly $5^2 \div 5^4 = 5^{-2}$, and $\dfrac{25}{625} = \dfrac{1}{25}$, so $5^{-2} = \dfrac{1}{5^2}$. A negative index means <strong>reciprocal</strong>.</p>
+
+<div class="worked-example">
+  Work out (a) $2^{-3}$ &nbsp; (b) $\left(\tfrac{3}{4}\right)^{-2}$<br><br>
+  (a) $\dfrac{1}{2^3} = \mathbf{\dfrac{1}{8}}$ &nbsp;&nbsp; (b) flip the fraction: $\left(\tfrac{4}{3}\right)^2 = \mathbf{\dfrac{16}{9}}$
+</div>
+
+<div class="worked-example">
+  Find $n$ when $3^n = 81 \times 3^2$.<br><br>
+  $81 = 3^4$, so $3^n = 3^4 \times 3^2 = 3^6$, giving $\mathbf{n = 6}$
+</div>
+
+<div class="exam-tip">
+  A negative index does <strong>not</strong> make the answer negative: $2^{-3} = \frac{1}{8}$, not $-8$. And $(-2)^2 = 4$ but $-2^2 = -4$ &mdash; brackets matter.
+</div>
+
+<h3>Fractional Indices <span class="higher-tag">Higher</span></h3>
+
+<div class="formula-box">
+  $$a^{\frac{1}{n}} = \sqrt[n]{a} \qquad\qquad a^{\frac{m}{n}} = \left(\sqrt[n]{a}\right)^m$$
+  The <strong>denominator</strong> is the root, the <strong>numerator</strong> is the power, and a <strong>minus sign</strong> means reciprocal.
+</div>
+
+<div class="worked-example">
+  Evaluate $8^{\frac{2}{3}}$.<br><br>
+  Root first: $\sqrt[3]{8} = 2$. Then power: $2^2 = \mathbf{4}$
+</div>
+
+<div class="worked-example">
+  Evaluate $16^{-\frac{1}{2}}$.<br><br>
+  Reciprocal: $\dfrac{1}{16^{\frac{1}{2}}} = \dfrac{1}{\sqrt{16}} = \mathbf{\dfrac{1}{4}}$
+</div>
+
+<div class="worked-example">
+  Evaluate $\left(\dfrac{27}{8}\right)^{-\frac{2}{3}}$.<br><br>
+  Reciprocal: $\left(\dfrac{8}{27}\right)^{\frac{2}{3}}$. Cube root: $\dfrac{2}{3}$. Square: $\mathbf{\dfrac{4}{9}}$
+</div>
+
+<div class="worked-example">
+  Solve $9^x = \dfrac{1}{27}$.<br><br>
+  Write both sides as powers of 3: $3^{2x} = 3^{-3}$, so $2x = -3$ and $\mathbf{x = -\tfrac{3}{2}}$
+</div>
+
+<div class="exam-tip">
+  With a fractional index, take the root <em>first</em> &mdash; the numbers stay small. $64^{\frac{2}{3}} = 4^2 = 16$ is much easier than $\sqrt[3]{4096}$.
+</div>
+
+<!-- ===================== 1.4.3 EXACT CALCULATION ===================== -->
+<h2>1.4.3 Calculating Exactly with Multiples of $\pi$</h2>
+
+<p>"Give your answer in terms of $\pi$" means leave $\pi$ in the answer as a symbol. This gives an <strong>exact</strong> answer instead of a rounded decimal.</p>
+
+<div class="worked-example">
+  A circle has diameter 10 cm. Find its exact area and circumference.<br><br>
+  $r = 5$: Area $= \pi \times 5^2 = \mathbf{25\pi \text{ cm}^2}$; Circumference $= \pi \times 10 = \mathbf{10\pi \text{ cm}}$
+</div>
+
+<div class="worked-example">
+  A circle of diameter 10 cm is cut from a square of side 10 cm. Find the exact area left.<br><br>
+  $100 - 25\pi$ cm² &mdash; this cannot be simplified further, because $100$ and $25\pi$ are not like terms.
+</div>
+
+<div class="exam-tip">
+  Treat $\pi$ like a letter in algebra: $3\pi + 5\pi = 8\pi$, $\;2 \times 6\pi = 12\pi$, but $18 + 3\pi$ stays as it is.
+</div>
+
+<!-- ===================== 1.4.4 SURDS ===================== -->
+<h2>1.4.4 Surds <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  A <strong>surd</strong> is a root that cannot be written exactly as a fraction or terminating decimal, e.g. $\sqrt{2}$, $\sqrt{5}$, $\sqrt{12}$. Leaving answers in surd form keeps them <strong>exact</strong>. ($\sqrt{9} = 3$ is not a surd.)
+</div>
+
+<div class="formula-box">
+  $$\sqrt{ab} = \sqrt{a} \times \sqrt{b} \qquad \sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}} \qquad \sqrt{a} \times \sqrt{a} = a$$
+  But $\sqrt{a + b} \ne \sqrt{a} + \sqrt{b}$.
+</div>
+
+<h3>Simplifying Surds</h3>
+<p>Find the <strong>largest square factor</strong> of the number under the root.</p>
+
+<div class="worked-example">
+  Simplify $\sqrt{12}$ and $\sqrt{72}$.<br><br>
+  $\sqrt{12} = \sqrt{4 \times 3} = \sqrt{4} \times \sqrt{3} = \mathbf{2\sqrt{3}}$<br>
+  $\sqrt{72} = \sqrt{36 \times 2} = \mathbf{6\sqrt{2}}$
+</div>
+
+<div class="worked-example">
+  Simplify $\sqrt{75} - \sqrt{27} + \sqrt{12}$.<br><br>
+  $5\sqrt{3} - 3\sqrt{3} + 2\sqrt{3} = \mathbf{4\sqrt{3}}$ &nbsp; (collect like surds just like like terms)
+</div>
+
+<h3>Expanding Brackets with Surds</h3>
+
+<div class="worked-example">
+  Expand and simplify $(2 + \sqrt{3})^2$.<br><br>
+  $(2 + \sqrt{3})(2 + \sqrt{3}) = 4 + 2\sqrt{3} + 2\sqrt{3} + 3 = \mathbf{7 + 4\sqrt{3}}$
+</div>
+
+<div class="worked-example">
+  Expand and simplify $(3 + \sqrt{2})(3 - \sqrt{2})$.<br><br>
+  $9 - 3\sqrt{2} + 3\sqrt{2} - 2 = \mathbf{7}$ &nbsp; (difference of two squares: $a^2 - b$)
+</div>
+
+<h3>Rationalising the Denominator</h3>
+<p>To <strong>rationalise</strong> means to remove the surd from the denominator of a fraction.</p>
+
+<div class="formula-box">
+  $$\frac{a}{\sqrt{b}} = \frac{a}{\sqrt{b}} \times \frac{\sqrt{b}}{\sqrt{b}} = \frac{a\sqrt{b}}{b}$$
+  $$\frac{a}{c + \sqrt{b}} \;\text{: multiply top and bottom by}\; c - \sqrt{b}\text{, so the denominator becomes } c^2 - b$$
+</div>
+
+<div class="worked-example">
+  Rationalise $\dfrac{6}{\sqrt{3}}$.<br><br>
+  $\dfrac{6}{\sqrt{3}} \times \dfrac{\sqrt{3}}{\sqrt{3}} = \dfrac{6\sqrt{3}}{3} = \mathbf{2\sqrt{3}}$
+</div>
+
+<div class="worked-example">
+  Rationalise $\dfrac{7}{3 + \sqrt{2}}$.<br><br>
+  $\dfrac{7(3 - \sqrt{2})}{(3 + \sqrt{2})(3 - \sqrt{2})} = \dfrac{21 - 7\sqrt{2}}{9 - 2} = \dfrac{21 - 7\sqrt{2}}{7} = \mathbf{3 - \sqrt{2}}$
+</div>
+
+<div class="exam-tip">
+  "Give your answer in the form $a\sqrt{b}$" means $b$ must be as small as possible: $\sqrt{72} = 6\sqrt{2}$, not $2\sqrt{18}$ or $3\sqrt{8}$.
+</div>
+
+<!-- ===================== 1.4.5 STANDARD FORM ===================== -->
+<h2>1.4.5 Standard Form</h2>
+
+<div class="definition">
+  A number is in <strong>standard form</strong> when it is written as
+  $$A \times 10^n \quad \text{where } 1 \le A < 10 \text{ and } n \text{ is an integer}$$
+  Large numbers have a positive power; numbers between 0 and 1 have a negative power.
+</div>
+
+<!-- SVG: place-value shift diagram -->
+<svg viewBox="0 0 620 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;display:block;margin:16px auto;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa;">
+  <text x="160" y="24" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1e40af" font-weight="700">Large number</text>
+  <text x="160" y="58" text-anchor="middle" font-family="monospace" font-size="24" fill="#374151">45 000</text>
+  <path d="M 200 70 Q 160 95 120 70" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text x="160" y="96" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#166534">point moves 4 places</text>
+  <text x="160" y="120" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1a1a2e" font-weight="700">4.5 × 10⁴</text>
+  <line x1="310" y1="15" x2="310" y2="120" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="460" y="24" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1e40af" font-weight="700">Small number</text>
+  <text x="460" y="58" text-anchor="middle" font-family="monospace" font-size="24" fill="#374151">0.00062</text>
+  <path d="M 425 70 Q 455 95 485 70" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="460" y="96" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#b91c1c">point moves 4 places</text>
+  <text x="460" y="120" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1a1a2e" font-weight="700">6.2 × 10⁻⁴</text>
+</svg>
+
+<table>
+  <thead><tr><th>Ordinary number</th><th>Standard form</th></tr></thead>
+  <tbody>
+    <tr><td>320 000</td><td>$3.2 \times 10^5$</td></tr>
+    <tr><td>56 000 000</td><td>$5.6 \times 10^7$</td></tr>
+    <tr><td>0.0007</td><td>$7 \times 10^{-4}$</td></tr>
+    <tr><td>0.0000362</td><td>$3.62 \times 10^{-5}$</td></tr>
+  </tbody>
+</table>
+
+<h3>Multiplying and Dividing</h3>
+<p>Deal with the number parts and the powers of 10 separately, then adjust so that $1 \le A < 10$.</p>
+
+<div class="worked-example">
+  Work out $(6 \times 10^4) \times (5 \times 10^3)$.<br><br>
+  $6 \times 5 = 30$ and $10^4 \times 10^3 = 10^7$, giving $30 \times 10^7$.<br>
+  30 is not between 1 and 10: $30 \times 10^7 = 3 \times 10^1 \times 10^7 = \mathbf{3 \times 10^8}$
+</div>
+
+<div class="worked-example">
+  Work out $(8.4 \times 10^6) \div (2.1 \times 10^{-2})$.<br><br>
+  $8.4 \div 2.1 = 4$ and $10^6 \div 10^{-2} = 10^{6-(-2)} = 10^8$, so the answer is $\mathbf{4 \times 10^8}$
+</div>
+
+<h3>Adding and Subtracting</h3>
+<p>The powers must match, so convert to ordinary numbers (or to the same power of 10) first.</p>
+
+<div class="worked-example">
+  Work out $(4.2 \times 10^5) - (3.5 \times 10^4)$.<br><br>
+  $420\,000 - 35\,000 = 385\,000 = \mathbf{3.85 \times 10^5}$
+</div>
+
+<h3>Calculator Displays</h3>
+<p>Calculators may show standard form as <code>4.7E-3</code> or <code>4.7×10⁻³</code>. Both mean $4.7 \times 10^{-3} = 0.0047$. Always rewrite these properly; "4.7E-3" is not accepted as an answer.</p>
+
+<div class="worked-example">
+  Light travels at $3 \times 10^5$ km/s. The Sun is $1.5 \times 10^8$ km from the Earth. How long does sunlight take to reach the Earth?<br><br>
+  $\text{time} = \dfrac{1.5 \times 10^8}{3 \times 10^5} = 0.5 \times 10^3 = 500$ seconds $= \mathbf{8 \text{ minutes } 20 \text{ seconds}}$
+</div>
+
+<div class="exam-tip">
+  After multiplying, check that $A$ is between 1 and 10. Answers such as $30 \times 10^7$ or $0.5 \times 10^3$ are correct in value but are <strong>not</strong> in standard form and will lose the final mark.
+</div>
+
+<h3>Summary</h3>
+<table>
+  <thead><tr><th>Topic</th><th>Key fact</th></tr></thead>
+  <tbody>
+    <tr><td>Index laws</td><td>Multiply &rarr; add powers; divide &rarr; subtract; power of a power &rarr; multiply</td></tr>
+    <tr><td>Zero / negative index</td><td>$a^0 = 1$, $\;a^{-n} = 1/a^n$</td></tr>
+    <tr><td>Fractional index (Higher)</td><td>$a^{m/n} = (\sqrt[n]{a})^m$</td></tr>
+    <tr><td>Exact answers</td><td>Leave $\pi$ and surds in the answer</td></tr>
+    <tr><td>Surds (Higher)</td><td>Simplify using square factors; rationalise by multiplying by $\sqrt{b}$ or the conjugate</td></tr>
+    <tr><td>Standard form</td><td>$A \times 10^n$, $1 \le A < 10$, $n$ an integer</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

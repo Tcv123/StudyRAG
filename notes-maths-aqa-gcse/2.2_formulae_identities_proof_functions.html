@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — AQA 2.2 — Formulae, Identities, Proof &amp; Functions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .step { margin-bottom: 8px; padding-left: 16px; border-left: 2px solid #86efac; }
+        .diagram-container { text-align: center; margin: 20px 0; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>2.2 Formulae, Identities, Proof &amp; Functions</h1>
+<p class="spec-ref">AQA GCSE Mathematics 8300 &mdash; Algebra &mdash; spec refs A5&ndash;A7 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<!-- ===================== 2.2.1 USING FORMULAE ===================== -->
+<h2>2.2.1 Using Standard Formulae (A5)</h2>
+
+<p>A <strong>formula</strong> is a rule that links two or more variables. You need to be able to use formulae given in words or in symbols, including ones from science and other subjects. Some formulae must be learned (for example area and volume formulae); others, such as the equations of motion, are given in the question.</p>
+
+<div class="definition">
+  <strong>Subject of a formula:</strong> the single variable on its own on one side of the equals sign. In $A = lw$, $A$ is the subject.<br><br>
+  <strong>Substitute:</strong> replace each letter by its value, then evaluate using the correct order of operations.
+</div>
+
+<div class="formula-box">
+  <strong>Formulae for motion</strong> (given in the exam when needed), where $u$ = initial velocity, $v$ = final velocity, $a$ = acceleration, $t$ = time, $s$ = displacement:
+  $$v = u + at \qquad s = ut + \tfrac{1}{2}at^2 \qquad v^2 = u^2 + 2as$$
+</div>
+
+<div class="worked-example">
+  Use $s = ut + \tfrac{1}{2}at^2$ to find $s$ when $u = 3$, $t = 4$ and $a = 2.5$.<br><br>
+  <div class="step">$ut = 3 \times 4 = 12$</div>
+  <div class="step">$\tfrac{1}{2}at^2 = \tfrac{1}{2} \times 2.5 \times 16 = 20$ &nbsp;(square $t$ first)</div>
+  <div class="step">$s = 12 + 20 = 32$ m</div>
+</div>
+
+<div class="worked-example">
+  A formula in words: &ldquo;To convert Celsius to Fahrenheit, multiply by 9, divide by 5, then add 32.&rdquo; Write this as a formula and convert $25\,°\text{C}$.<br><br>
+  <div class="step">$F = \dfrac{9C}{5} + 32$</div>
+  <div class="step">$F = \dfrac{9 \times 25}{5} + 32 = 45 + 32 = 77\,°\text{F}$</div>
+</div>
+
+<div class="worked-example">
+  Use $v^2 = u^2 + 2as$ to find $v$ when $u = 3$, $a = 4$ and $s = 2$ ($v &gt; 0$).<br><br>
+  <div class="step">$v^2 = 9 + 2 \times 4 \times 2 = 9 + 16 = 25$</div>
+  <div class="step">$v = \sqrt{25} = 5$</div>
+</div>
+
+<div class="exam-tip">
+  Write the formula, then write it again with the numbers substituted, before using a calculator. If you make a slip you can still earn the method mark.
+</div>
+
+<!-- ===================== 2.2.2 REARRANGING ===================== -->
+<h2>2.2.2 Rearranging Formulae to Change the Subject (A5)</h2>
+
+<p>Rearranging a formula works exactly like solving an equation: do the <strong>same inverse operation to both sides</strong>. Undo the operations in the <em>reverse</em> order to the order in which they were applied to the new subject.</p>
+
+<table>
+  <thead><tr><th>Operation on the subject</th><th>Undo it by&hellip;</th></tr></thead>
+  <tbody>
+    <tr><td>$+\,k$</td><td>subtracting $k$</td></tr>
+    <tr><td>$\times\,k$</td><td>dividing by $k$</td></tr>
+    <tr><td>$\div\,k$ (fraction)</td><td>multiplying by $k$</td></tr>
+    <tr><td>squaring</td><td>square-rooting (give $\pm$ unless told the value is positive)</td></tr>
+    <tr><td>square-rooting</td><td>squaring</td></tr>
+    <tr><td>cubing</td><td>cube-rooting</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  Make $t$ the subject of $v = u + at$.<br><br>
+  <div class="step">Subtract $u$: $v - u = at$</div>
+  <div class="step">Divide by $a$: $t = \dfrac{v - u}{a}$</div>
+</div>
+
+<div class="worked-example">
+  Make $x$ the subject of $y = \dfrac{3x - 4}{5} + 2$.<br><br>
+  <div class="step">Subtract 2: $y - 2 = \dfrac{3x - 4}{5}$</div>
+  <div class="step">Multiply by 5: $5y - 10 = 3x - 4$</div>
+  <div class="step">Add 4: $5y - 6 = 3x$</div>
+  <div class="step">Divide by 3: $x = \dfrac{5y - 6}{3}$</div>
+</div>
+
+<h3>Formulae with powers and roots</h3>
+
+<div class="worked-example">
+  Make $r$ the subject of $V = \dfrac{4}{3}\pi r^3$.<br><br>
+  <div class="step">Multiply by 3: $3V = 4\pi r^3$</div>
+  <div class="step">Divide by $4\pi$: $r^3 = \dfrac{3V}{4\pi}$</div>
+  <div class="step">Cube root: $r = \sqrt[3]{\dfrac{3V}{4\pi}}$</div>
+</div>
+
+<div class="worked-example">
+  Make $u$ the subject of $v^2 = u^2 + 2as$ (with $u &gt; 0$).<br><br>
+  <div class="step">Subtract $2as$: $u^2 = v^2 - 2as$</div>
+  <div class="step">Square root: $u = \sqrt{v^2 - 2as}$</div>
+</div>
+
+<div class="exam-tip">
+  $\sqrt{v^2 - 2as}$ is <strong>not</strong> the same as $v - \sqrt{2as}$. You cannot square-root a sum term by term. Keep the whole expression under one root sign.
+</div>
+
+<!-- ===================== 2.2.3 SUBJECT TWICE (H) ===================== -->
+<h2>2.2.3 When the Subject Appears Twice <span class="higher-tag">Higher</span></h2>
+
+<p>If the new subject appears in more than one term, you need four steps:</p>
+<ol>
+  <li>Clear any fractions (multiply both sides by the denominator) and expand brackets.</li>
+  <li>Collect all terms containing the subject on one side, everything else on the other.</li>
+  <li><strong>Factorise</strong> the subject out as a common factor.</li>
+  <li>Divide by the bracket.</li>
+</ol>
+
+<div class="worked-example">
+  Make $x$ the subject of $ax - 3 = bx + 7$.<br><br>
+  <div class="step">Collect $x$ terms: $ax - bx = 7 + 3$</div>
+  <div class="step">Factorise: $x(a - b) = 10$</div>
+  <div class="step">Divide: $x = \dfrac{10}{a - b}$</div>
+</div>
+
+<div class="worked-example">
+  Make $x$ the subject of $y = \dfrac{3x + 2}{x - 4}$.<br><br>
+  <div class="step">Multiply by $(x - 4)$: $y(x - 4) = 3x + 2$</div>
+  <div class="step">Expand: $xy - 4y = 3x + 2$</div>
+  <div class="step">Collect $x$ terms: $xy - 3x = 4y + 2$</div>
+  <div class="step">Factorise: $x(y - 3) = 4y + 2$</div>
+  <div class="step">Divide: $x = \dfrac{4y + 2}{y - 3}$</div>
+</div>
+
+<div class="exam-tip">
+  Check by substituting a number. With $x = 5$: $y = \dfrac{17}{1} = 17$, and $\dfrac{4(17) + 2}{17 - 3} = \dfrac{70}{14} = 5$ ✓.
+</div>
+
+<!-- ===================== 2.2.4 IDENTITIES ===================== -->
+<h2>2.2.4 Equations and Identities (A6)</h2>
+
+<div class="definition">
+  <strong>Equation:</strong> true only for particular value(s) of the letter. $2x + 1 = 9$ is only true when $x = 4$.<br><br>
+  <strong>Identity:</strong> true for <em>every</em> value of the letter. Written with the symbol $\equiv$, read &ldquo;is identically equal to&rdquo;. Example: $3(x + 2) \equiv 3x + 6$.
+</div>
+
+<h3>Showing two expressions are equivalent</h3>
+<p>To <strong>show</strong> an identity, start with one side (usually the more complicated one) and manipulate it until it becomes the other side. Show every step.</p>
+
+<div class="worked-example">
+  Show that $(x + 4)^2 - (x - 4)^2 \equiv 16x$. Hence work out $104^2 - 96^2$.<br><br>
+  <div class="step">$(x + 4)^2 = x^2 + 8x + 16$ and $(x - 4)^2 = x^2 - 8x + 16$</div>
+  <div class="step">$x^2 + 8x + 16 - x^2 + 8x - 16 = 16x$ ✓</div>
+  <div class="step">Hence with $x = 100$: $104^2 - 96^2 = 16 \times 100 = 1600$</div>
+</div>
+
+<h3>Finding unknown constants in an identity</h3>
+<p>Because an identity is true for all $x$, the coefficients of each power of $x$ must match on both sides (&ldquo;compare coefficients&rdquo;).</p>
+
+<div class="worked-example">
+  $(x + a)(x + 3) \equiv x^2 + bx + 12$. Find $a$ and $b$.<br><br>
+  <div class="step">Expand: $x^2 + 3x + ax + 3a = x^2 + (3 + a)x + 3a$</div>
+  <div class="step">Constants: $3a = 12 \Rightarrow a = 4$</div>
+  <div class="step">$x$ terms: $b = 3 + a = 7$</div>
+</div>
+
+<div class="exam-tip">
+  To show a statement is <em>not</em> an identity, one <strong>counter-example</strong> is enough. For $(x + 2)^2 = x^2 + 4$, try $x = 1$: $9 \ne 5$.
+</div>
+
+<!-- ===================== 2.2.5 ARGUMENT AND PROOF ===================== -->
+<h2>2.2.5 Algebraic Argument and Proof (A6)</h2>
+
+<p>All students should be able to use algebra to support an argument. At Higher tier this extends to full <strong>algebraic proof</strong>, which must work for <em>every</em> case &mdash; testing examples is never a proof.</p>
+
+<div class="formula-box">
+  <strong>Useful general forms</strong> ($n$ and $m$ are integers):<br>
+  Even number: $2n$ &nbsp;&nbsp; Odd number: $2n + 1$ &nbsp;&nbsp; Consecutive integers: $n,\ n + 1,\ n + 2$<br>
+  Consecutive even numbers: $2n,\ 2n + 2$ &nbsp;&nbsp; Consecutive odd numbers: $2n + 1,\ 2n + 3$<br>
+  Multiple of $k$: $k \times (\text{integer})$ &nbsp;&nbsp; Two <em>different</em> numbers: use different letters, e.g. $2m + 1$ and $2n + 1$
+</div>
+
+<div class="worked-example">
+  Show that the sum of any three consecutive integers is a multiple of 3.<br><br>
+  <div class="step">Let the integers be $n$, $n + 1$, $n + 2$</div>
+  <div class="step">Sum $= 3n + 3 = 3(n + 1)$</div>
+  <div class="step">$3(n + 1)$ is 3 times an integer, so it is always a multiple of 3.</div>
+</div>
+
+<h3>Algebraic proof <span class="higher-tag">Higher</span></h3>
+
+<div class="worked-example">
+  Prove that the product of any two odd numbers is odd.<br><br>
+  <div class="step">Let the odd numbers be $2m + 1$ and $2n + 1$</div>
+  <div class="step">$(2m + 1)(2n + 1) = 4mn + 2m + 2n + 1$</div>
+  <div class="step">$= 2(2mn + m + n) + 1$</div>
+  <div class="step">$2(2mn + m + n)$ is even, so the product is (even) $+ 1$, which is odd.</div>
+</div>
+
+<div class="worked-example">
+  Prove that $(2n + 3)^2 - (2n - 3)^2$ is a multiple of 12 for all positive integers $n$.<br><br>
+  <div class="step">$(4n^2 + 12n + 9) - (4n^2 - 12n + 9) = 24n$</div>
+  <div class="step">$24n = 12 \times 2n$, and $2n$ is an integer, so the expression is a multiple of 12.</div>
+</div>
+
+<div class="exam-tip">
+  A proof needs a <strong>concluding sentence</strong> that links the algebra back to the claim (e.g. &ldquo;&hellip;which is $3 \times$ an integer, so it is a multiple of 3&rdquo;). Without it you usually lose the final mark.
+</div>
+
+<!-- ===================== 2.2.6 FUNCTIONS ===================== -->
+<h2>2.2.6 Functions as Inputs and Outputs (A7)</h2>
+
+<p>A <strong>function</strong> is a rule that takes an input and gives exactly one output. Simple expressions can be thought of as functions, and function machines show the steps.</p>
+
+<div class="diagram-container">
+<svg viewBox="0 0 520 170" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;width:100%;font-family:system-ui,sans-serif;">
+  <text x="260" y="20" text-anchor="middle" font-size="14" fill="#1e40af" font-weight="600">Function machine and its inverse</text>
+  <!-- forward -->
+  <text x="30" y="65" text-anchor="middle" font-size="15" fill="#1a1a2e" font-weight="700">x</text>
+  <line x1="45" y1="60" x2="115" y2="60" stroke="#2563eb" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="120" y="40" width="100" height="40" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="170" y="66" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="700">× 4</text>
+  <line x1="220" y1="60" x2="290" y2="60" stroke="#2563eb" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="295" y="40" width="100" height="40" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="345" y="66" text-anchor="middle" font-size="15" fill="#1e40af" font-weight="700">− 7</text>
+  <line x1="395" y1="60" x2="455" y2="60" stroke="#2563eb" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="485" y="65" text-anchor="middle" font-size="15" fill="#1a1a2e" font-weight="700">4x − 7</text>
+  <!-- inverse -->
+  <text x="30" y="135" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="700">(x + 7)/4</text>
+  <line x1="115" y1="130" x2="70" y2="130" stroke="#16a34a" stroke-width="2" marker-end="url(#arrg)"/>
+  <rect x="120" y="110" width="100" height="40" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="170" y="136" text-anchor="middle" font-size="15" fill="#166534" font-weight="700">÷ 4</text>
+  <line x1="290" y1="130" x2="225" y2="130" stroke="#16a34a" stroke-width="2" marker-end="url(#arrg)"/>
+  <rect x="295" y="110" width="100" height="40" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="345" y="136" text-anchor="middle" font-size="15" fill="#166534" font-weight="700">+ 7</text>
+  <line x1="455" y1="130" x2="400" y2="130" stroke="#16a34a" stroke-width="2" marker-end="url(#arrg)"/>
+  <text x="485" y="135" text-anchor="middle" font-size="15" fill="#1a1a2e" font-weight="700">x</text>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#2563eb"/></marker>
+    <marker id="arrg" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#16a34a"/></marker>
+  </defs>
+</svg>
+</div>
+
+<div class="worked-example">
+  A function machine multiplies by 4 then subtracts 7. The output is 25. Find the input.<br><br>
+  <div class="step">Work backwards, doing the inverse operations in reverse order</div>
+  <div class="step">$25 + 7 = 32$, then $32 \div 4 = 8$</div>
+  <div class="step">Input $= 8$ (check: $8 \times 4 - 7 = 25$ ✓)</div>
+</div>
+
+<!-- ===================== 2.2.7 FUNCTION NOTATION (H) ===================== -->
+<h2>2.2.7 Function Notation, Composite and Inverse Functions <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  <strong>$f(x)$ notation:</strong> $f(x) = 3x - 2$ means &ldquo;the function $f$ multiplies by 3 then subtracts 2&rdquo;. $f(4)$ means the output when the input is 4: $f(4) = 10$.<br><br>
+  <strong>Composite function $fg(x)$:</strong> apply $g$ <em>first</em>, then apply $f$ to the result: $fg(x) = f(g(x))$.<br><br>
+  <strong>Inverse function $f^{-1}(x)$:</strong> the function that reverses $f$, so $f^{-1}(f(x)) = x$.
+</div>
+
+<div class="worked-example">
+  $f(x) = 7 - 2x$. Find $f(-3)$ and solve $f(x) = 1$.<br><br>
+  <div class="step">$f(-3) = 7 - 2(-3) = 7 + 6 = 13$</div>
+  <div class="step">$7 - 2x = 1 \Rightarrow 2x = 6 \Rightarrow x = 3$</div>
+</div>
+
+<h3>Composite functions</h3>
+
+<div class="worked-example">
+  $f(x) = 2x - 5$ and $g(x) = x^2 + 1$. Find $fg(3)$ and $gf(x)$.<br><br>
+  <div class="step">$g(3) = 10$, so $fg(3) = f(10) = 15$</div>
+  <div class="step">$gf(x) = g(2x - 5) = (2x - 5)^2 + 1$</div>
+  <div class="step">$= 4x^2 - 20x + 25 + 1 = 4x^2 - 20x + 26$</div>
+</div>
+
+<div class="exam-tip">
+  Order matters: $fg(x)$ and $gf(x)$ are usually different. Read $fg(x)$ from right to left &mdash; the function nearest the $x$ acts first.
+</div>
+
+<h3>Inverse functions</h3>
+<p>Method: write $y = f(x)$, rearrange to make $x$ the subject, then swap $y$ for $x$.</p>
+
+<div class="worked-example">
+  Find $f^{-1}(x)$ when $f(x) = 3x + 2$.<br><br>
+  <div class="step">$y = 3x + 2$</div>
+  <div class="step">$y - 2 = 3x \Rightarrow x = \dfrac{y - 2}{3}$</div>
+  <div class="step">$f^{-1}(x) = \dfrac{x - 2}{3}$</div>
+</div>
+
+<div class="worked-example">
+  $f(x) = 3x - 2$ and $g(x) = x + 4$. Solve $f^{-1}(x) = g(x)$.<br><br>
+  <div class="step">$f^{-1}(x) = \dfrac{x + 2}{3}$</div>
+  <div class="step">$\dfrac{x + 2}{3} = x + 4 \Rightarrow x + 2 = 3x + 12$</div>
+  <div class="step">$-2x = 10 \Rightarrow x = -5$</div>
+</div>
+
+<div class="exam-tip">
+  $f^{-1}(x)$ is <strong>not</strong> $\dfrac{1}{f(x)}$. The $^{-1}$ here means &ldquo;inverse function&rdquo;, not &ldquo;reciprocal&rdquo;.
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<h2>Quick Reference Summary</h2>
+<table>
+  <thead><tr><th>Skill</th><th>Key idea</th></tr></thead>
+  <tbody>
+    <tr><td>Using formulae</td><td>Write formula, substitute, then evaluate in the correct order</td></tr>
+    <tr><td>Rearranging</td><td>Inverse operations to both sides, in reverse order</td></tr>
+    <tr><td>Powers and roots</td><td>Isolate the power first, then root ($\pm$ unless told positive)</td></tr>
+    <tr><td>Subject twice <span class="higher-tag">Higher</span></td><td>Collect, factorise, divide</td></tr>
+    <tr><td>Equation vs identity</td><td>Equation: some values; identity ($\equiv$): all values</td></tr>
+    <tr><td>Showing / proving</td><td>Use $2n$, $2n + 1$, $n, n + 1$&hellip;; finish with a conclusion</td></tr>
+    <tr><td>Function machines</td><td>Reverse the operations to find an input</td></tr>
+    <tr><td>$fg(x)$ <span class="higher-tag">Higher</span></td><td>$f(g(x))$: $g$ first, then $f$</td></tr>
+    <tr><td>$f^{-1}(x)$ <span class="higher-tag">Higher</span></td><td>$y = f(x)$, make $x$ the subject, rename</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>

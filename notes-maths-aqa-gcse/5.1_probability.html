@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — AQA 5.1 — Probability</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .worked-example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .worked-example::before { content: "Worked Example: "; font-weight: 700; color: #166534; }
+        .formula-box { background: #faf5ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .higher-tag { display: inline-block; background: #7c3aed; color: #fff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+        .sohcahtoa { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+        .soh-card { flex: 1 1 140px; background: #eff6ff; border: 2px solid #2563eb; border-radius: 8px; padding: 14px; text-align: center; }
+        .soh-card .label { font-size: 1.6rem; font-weight: 800; color: #1e40af; letter-spacing: 2px; }
+        .soh-card .formula { font-size: 0.95rem; color: #374151; margin-top: 6px; }
+        .katex-display { margin: 16px 0; }
+        @media print { body { padding: 20px; font-size: 11pt; } }
+    </style>
+</head>
+<body>
+<div class="container">
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>5.1 Probability</h1>
+<p class="spec-ref">AQA GCSE Mathematics 8300 &mdash; Probability &mdash; spec refs P1&ndash;P9 &mdash; Papers 1 (non-calculator), 2 and 3 (calculator)</p>
+
+<!-- ===================== 5.1.1 BASICS ===================== -->
+<h2>5.1.1 The Probability Scale and Basic Probability</h2>
+
+<div class="definition">
+  <strong>Probability</strong> measures how likely an event is, on a scale from $0$ (<strong>impossible</strong>) to $1$ (<strong>certain</strong>). Probabilities can be written as <strong>fractions, decimals or percentages</strong> &mdash; but never as ratios or &ldquo;1 in 4&rdquo; in an exam answer.
+</div>
+
+<div style="margin: 20px 0;">
+<svg width="520" height="110" viewBox="0 0 520 110" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; max-width:100%;">
+  <defs>
+    <linearGradient id="pg" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#fee2e2"/><stop offset="0.5" stop-color="#fef3c7"/><stop offset="1" stop-color="#dcfce7"/>
+    </linearGradient>
+  </defs>
+  <rect x="40" y="38" width="440" height="16" rx="8" fill="url(#pg)" stroke="#9ca3af"/>
+  <g font-family="sans-serif" font-size="13" fill="#1a1a2e" text-anchor="middle">
+    <line x1="40" y1="32" x2="40" y2="60" stroke="#374151" stroke-width="2"/><text x="40" y="24">0</text><text x="40" y="78">impossible</text>
+    <line x1="150" y1="34" x2="150" y2="58" stroke="#374151"/><text x="150" y="24">0.25</text><text x="150" y="78">unlikely</text>
+    <line x1="260" y1="32" x2="260" y2="60" stroke="#374151" stroke-width="2"/><text x="260" y="24">0.5</text><text x="260" y="78">evens</text>
+    <line x1="370" y1="34" x2="370" y2="58" stroke="#374151"/><text x="370" y="24">0.75</text><text x="370" y="78">likely</text>
+    <line x1="480" y1="32" x2="480" y2="60" stroke="#374151" stroke-width="2"/><text x="480" y="24">1</text><text x="480" y="78">certain</text>
+  </g>
+  <text x="260" y="100" font-size="11" font-family="sans-serif" fill="#6b7280" text-anchor="middle">The 0 to 1 probability scale</text>
+</svg>
+</div>
+
+<h3>Theoretical Probability</h3>
+<div class="formula-box">
+  When all outcomes are <strong>equally likely</strong>:
+  $$P(\text{event}) = \frac{\text{number of favourable outcomes}}{\text{total number of possible outcomes}}$$
+</div>
+
+<div class="worked-example">
+  A bag contains 3 red, 5 blue and 2 green counters. One is taken at random. Find $P(\text{blue})$ and $P(\text{not green})$.<br><br>
+  Total $= 10$. &nbsp; $P(\text{blue}) = \dfrac{5}{10} = \dfrac{1}{2}$. &nbsp; $P(\text{not green}) = \dfrac{8}{10} = \dfrac{4}{5}$
+</div>
+
+<h3>Outcomes That Sum to 1 (P4)</h3>
+<div class="formula-box">
+  The probabilities of an <strong>exhaustive</strong> set of <strong>mutually exclusive</strong> outcomes add up to $1$. In particular:
+  $$P(\text{not } A) = 1 - P(A)$$
+</div>
+
+<div class="worked-example">
+  A biased spinner lands on red, blue, green or yellow. $P(\text{red}) = 0.3$, $P(\text{blue}) = 0.25$, $P(\text{green}) = 0.1$. Find $P(\text{yellow})$.<br><br>
+  $P(\text{yellow}) = 1 - (0.3 + 0.25 + 0.1) = 1 - 0.65 = \mathbf{0.35}$
+</div>
+
+<div class="worked-example">
+  A four-colour spinner has $P(\text{red}) = x$, $P(\text{blue}) = 2x$, $P(\text{yellow}) = 3x$ and $P(\text{green}) = 0.1$. Find $x$.<br><br>
+  $x + 2x + 3x + 0.1 = 1 \Rightarrow 6x = 0.9 \Rightarrow x = \mathbf{0.15}$
+</div>
+
+<div class="exam-tip">
+  Check every probability answer lies between 0 and 1. If you get $1.2$ or $-0.3$, you have made an error. Fractions do not have to be simplified unless the question asks, but must be correct.
+</div>
+
+<!-- ===================== 5.1.2 EXPERIMENTS ===================== -->
+<h2>5.1.2 Experiments, Relative Frequency and Expected Outcomes (P1, P2, P3, P5)</h2>
+
+<div class="definition">
+  <strong>Relative frequency</strong> (experimental probability) $= \dfrac{\text{number of times the outcome occurs}}{\text{total number of trials}}$. It is an <strong>estimate</strong> of the probability.
+</div>
+
+<p>Results of experiments can be recorded in <strong>frequency tables</strong> and <strong>frequency trees</strong>. As the number of trials increases, the relative frequency tends towards the <strong>theoretical probability</strong> (P5). So a larger number of trials gives a more <strong>reliable</strong> estimate.</p>
+
+<div class="worked-example">
+  A coin is thrown 200 times and lands heads 116 times. Estimate $P(\text{heads})$. Is the coin biased?<br><br>
+  Relative frequency $= \dfrac{116}{200} = 0.58$. This is above $0.5$, so the coin <em>may</em> be biased towards heads &mdash; but we cannot be certain. More throws would give a more reliable estimate.
+</div>
+
+<h3>Fairness and Randomness</h3>
+<p>An object is <strong>fair</strong> (unbiased) if every outcome is equally likely. Choosing &ldquo;at random&rdquo; means every item has the same chance of being picked. Even a fair dice will not give exactly equal frequencies in a small experiment.</p>
+
+<h3>Expected Outcomes (P2, P3)</h3>
+<div class="formula-box">
+  $$\text{Expected number of outcomes} = P(\text{outcome}) \times \text{number of trials}$$
+</div>
+
+<div class="worked-example">
+  $P(\text{win}) = 0.15$ for a game that costs £1 and pays £5 to a winner. It is played 200 times. Find the expected profit for the organiser.<br><br>
+  Expected wins $= 0.15 \times 200 = 30$. Takings = 200 &times; £1 = £200. Payouts = 30 &times; £5 = £150.<br>
+  Expected profit = £200 &minus; £150 = <strong>£50</strong>
+</div>
+
+<h3>Frequency Trees (P1)</h3>
+<p>A frequency tree splits a group into categories using <strong>numbers</strong>, not probabilities.</p>
+<div style="margin: 20px 0;">
+<svg width="420" height="200" viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; max-width:100%;">
+  <g stroke="#2563eb" stroke-width="2" fill="none">
+    <line x1="70" y1="100" x2="170" y2="50"/><line x1="70" y1="100" x2="170" y2="150"/>
+    <line x1="230" y1="50" x2="320" y2="25"/><line x1="230" y1="50" x2="320" y2="75"/>
+    <line x1="230" y1="150" x2="320" y2="125"/><line x1="230" y1="150" x2="320" y2="175"/>
+  </g>
+  <g font-family="sans-serif" font-size="13" fill="#1a1a2e">
+    <rect x="20" y="86" width="50" height="28" rx="5" fill="#dbeafe" stroke="#2563eb"/><text x="45" y="105" text-anchor="middle" font-weight="700">120</text>
+    <rect x="170" y="36" width="60" height="28" rx="5" fill="#fff" stroke="#2563eb"/><text x="200" y="55" text-anchor="middle">Men 45</text>
+    <rect x="170" y="136" width="60" height="28" rx="5" fill="#fff" stroke="#2563eb"/><text x="200" y="155" text-anchor="middle">Women 75</text>
+    <text x="326" y="29">Exercise 30</text><text x="326" y="79">Do not 15</text>
+    <text x="326" y="129">Exercise 50</text><text x="326" y="179">Do not 25</text>
+  </g>
+</svg>
+</div>
+<p>From the tree: $P(\text{a woman who exercises}) = \dfrac{50}{120} = \dfrac{5}{12}$, and $15 + 25 = 40$ people do not exercise.</p>
+
+<!-- ===================== 5.1.3 SAMPLE SPACES ===================== -->
+<h2>5.1.3 Listing Outcomes and Sample Spaces (P6, P7)</h2>
+
+<div class="definition">
+  A <strong>sample space</strong> (possibility space) is a list or table of every possible outcome. List outcomes <strong>systematically</strong> so none are missed &mdash; e.g. fix the first item and run through all choices of the second.
+</div>
+
+<div class="worked-example">
+  Ali chooses a starter (soup or salad) and a main (fish, pie or curry). List all combinations.<br><br>
+  soup&ndash;fish, soup&ndash;pie, soup&ndash;curry, salad&ndash;fish, salad&ndash;pie, salad&ndash;curry &nbsp; ($2 \times 3 = 6$ combinations)
+</div>
+
+<h3>Sample Space Diagram for Two Dice</h3>
+<table>
+  <thead><tr><th>+</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th></tr></thead>
+  <tbody>
+    <tr><th>1</th><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td><strong>7</strong></td></tr>
+    <tr><th>2</th><td>3</td><td>4</td><td>5</td><td>6</td><td><strong>7</strong></td><td>8</td></tr>
+    <tr><th>3</th><td>4</td><td>5</td><td>6</td><td><strong>7</strong></td><td>8</td><td>9</td></tr>
+    <tr><th>4</th><td>5</td><td>6</td><td><strong>7</strong></td><td>8</td><td>9</td><td>10</td></tr>
+    <tr><th>5</th><td>6</td><td><strong>7</strong></td><td>8</td><td>9</td><td>10</td><td>11</td></tr>
+    <tr><th>6</th><td><strong>7</strong></td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+  </tbody>
+</table>
+<p>There are $36$ equally likely outcomes. $P(\text{total} = 7) = \dfrac{6}{36} = \dfrac{1}{6}$ and $P(\text{total} \geq 10) = \dfrac{6}{36} = \dfrac{1}{6}$.</p>
+
+<div class="worked-example">
+  Two fair dice are rolled. Find the probability that the difference between the scores is 2.<br><br>
+  Outcomes: $(1,3), (3,1), (2,4), (4,2), (3,5), (5,3), (4,6), (6,4)$ &mdash; 8 of the 36.<br>
+  $P = \dfrac{8}{36} = \mathbf{\dfrac{2}{9}}$
+</div>
+
+<!-- ===================== 5.1.4 VENN ===================== -->
+<h2>5.1.4 Venn Diagrams (P6)</h2>
+
+<p>A Venn diagram shows how items are shared between sets. The rectangle contains everything being considered. <strong>Always fill in the overlap first</strong>, then work outwards.</p>
+
+<div style="margin: 20px 0; display:flex; gap:30px; flex-wrap:wrap; align-items:flex-start;">
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; flex-shrink:0;">
+  <rect x="10" y="10" width="280" height="180" fill="none" stroke="#374151" stroke-width="2"/>
+  <text x="20" y="30" font-size="15" font-family="serif" fill="#374151" font-style="italic">ξ</text>
+  <circle cx="115" cy="100" r="62" fill="#2563eb" fill-opacity="0.15" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="185" cy="100" r="62" fill="#dc2626" fill-opacity="0.15" stroke="#dc2626" stroke-width="2"/>
+  <text x="70" y="42" font-size="14" font-family="sans-serif" fill="#1e40af" font-weight="700">Football</text>
+  <text x="190" y="42" font-size="14" font-family="sans-serif" fill="#b91c1c" font-weight="700">Tennis</text>
+  <text x="88" y="106" font-size="18" font-family="sans-serif" fill="#1a1a2e" font-weight="700">7</text>
+  <text x="144" y="106" font-size="18" font-family="sans-serif" fill="#1a1a2e" font-weight="700">5</text>
+  <text x="200" y="106" font-size="18" font-family="sans-serif" fill="#1a1a2e" font-weight="700">10</text>
+  <text x="260" y="180" font-size="18" font-family="sans-serif" fill="#1a1a2e" font-weight="700">8</text>
+</svg>
+<div style="flex:1; min-width:200px;">
+  <div class="worked-example" style="margin-top:0;">
+    30 students: 12 play football, 15 play tennis, 5 play both.<br><br>
+    Overlap $= 5$. Football only $= 12 - 5 = 7$. Tennis only $= 15 - 5 = 10$.<br>
+    Neither $= 30 - (7 + 5 + 10) = 8$.<br>
+    $P(\text{tennis only}) = \dfrac{10}{30} = \dfrac{1}{3}$
+  </div>
+</div>
+</div>
+
+<h3>Set Notation <span class="higher-tag">Higher</span></h3>
+<table>
+  <thead><tr><th>Notation</th><th>Meaning</th><th>In the diagram above</th></tr></thead>
+  <tbody>
+    <tr><td>$\xi$</td><td>Universal set &mdash; everything</td><td>all 30 students</td></tr>
+    <tr><td>$A \cap B$</td><td>Intersection: in $A$ <strong>and</strong> $B$</td><td>5</td></tr>
+    <tr><td>$A \cup B$</td><td>Union: in $A$ <strong>or</strong> $B$ (or both)</td><td>$7 + 5 + 10 = 22$</td></tr>
+    <tr><td>$A'$</td><td>Complement: <strong>not</strong> in $A$</td><td>not football: $10 + 8 = 18$</td></tr>
+    <tr><td>$A \cap B'$</td><td>In $A$ but not $B$</td><td>football only: 7</td></tr>
+    <tr><td>$(A \cup B)'$</td><td>In neither</td><td>8</td></tr>
+  </tbody>
+</table>
+
+<div class="worked-example">
+  $\xi = \{1, 2, \ldots, 12\}$, $A = \{\text{factors of } 12\}$, $B = \{\text{odd numbers}\}$. List $A \cap B$ and $A \cup B$.<br><br>
+  $A = \{1, 2, 3, 4, 6, 12\}$, $B = \{1, 3, 5, 7, 9, 11\}$<br>
+  $A \cap B = \{1, 3\}$, &nbsp; $A \cup B = \{1, 2, 3, 4, 5, 6, 7, 9, 11, 12\}$
+</div>
+
+<!-- ===================== 5.1.5 COMBINED EVENTS ===================== -->
+<h2>5.1.5 Combined Events: When to Add and When to Multiply (P8)</h2>
+
+<div class="definition">
+  <strong>Mutually exclusive</strong> events cannot happen at the same time. <strong>Independent</strong> events do not affect each other &mdash; the outcome of one does not change the probability of the other.
+</div>
+
+<div class="formula-box">
+  <strong>OR rule</strong> (mutually exclusive): $P(A \text{ or } B) = P(A) + P(B)$<br><br>
+  <strong>AND rule</strong> (independent): $P(A \text{ and } B) = P(A) \times P(B)$<br><br>
+  <strong>At least one:</strong> $P(\text{at least one}) = 1 - P(\text{none})$
+</div>
+
+<div class="worked-example">
+  $P(\text{Sam's bus is late}) = 0.3$ and $P(\text{his train is late}) = 0.2$, independently. Find the probability that (a) both are late (b) neither is late.<br><br>
+  (a) $0.3 \times 0.2 = \mathbf{0.06}$ &nbsp;&nbsp; (b) $0.7 \times 0.8 = \mathbf{0.56}$
+</div>
+
+<div class="worked-example">
+  A fair dice is rolled twice. Find $P(\text{at least one six})$.<br><br>
+  $P(\text{no six}) = \dfrac{5}{6} \times \dfrac{5}{6} = \dfrac{25}{36}$, so $P(\text{at least one six}) = 1 - \dfrac{25}{36} = \mathbf{\dfrac{11}{36}}$
+</div>
+
+<!-- ===================== 5.1.6 TREE DIAGRAMS ===================== -->
+<h2>5.1.6 Tree Diagrams (P6, P8)</h2>
+
+<p>Tree diagrams show two or more events in sequence. <strong>Multiply along the branches</strong> to find the probability of a combined outcome, and <strong>add</strong> the end results for &ldquo;or&rdquo;. Each pair of branches from a point must add to $1$.</p>
+
+<div style="margin: 20px 0;">
+<svg width="460" height="220" viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; max-width:100%;">
+  <g stroke="#2563eb" stroke-width="2">
+    <line x1="30" y1="110" x2="140" y2="60"/><line x1="30" y1="110" x2="140" y2="160"/>
+    <line x1="160" y1="60" x2="270" y2="30"/><line x1="160" y1="60" x2="270" y2="90"/>
+    <line x1="160" y1="160" x2="270" y2="130"/><line x1="160" y1="160" x2="270" y2="190"/>
+  </g>
+  <g font-family="sans-serif" font-size="13" fill="#1a1a2e">
+    <text x="146" y="64" font-weight="700">R</text><text x="146" y="164" font-weight="700">B</text>
+    <text x="70" y="74" fill="#dc2626">0.6</text><text x="70" y="156" fill="#dc2626">0.4</text>
+    <text x="276" y="34" font-weight="700">R</text><text x="276" y="94" font-weight="700">B</text>
+    <text x="276" y="134" font-weight="700">R</text><text x="276" y="194" font-weight="700">B</text>
+    <text x="200" y="38" fill="#dc2626">0.6</text><text x="200" y="88" fill="#dc2626">0.4</text>
+    <text x="200" y="138" fill="#dc2626">0.6</text><text x="200" y="188" fill="#dc2626">0.4</text>
+    <text x="310" y="34">RR: 0.6 × 0.6 = 0.36</text>
+    <text x="310" y="94">RB: 0.6 × 0.4 = 0.24</text>
+    <text x="310" y="134">BR: 0.4 × 0.6 = 0.24</text>
+    <text x="310" y="194">BB: 0.4 × 0.4 = 0.16</text>
+  </g>
+</svg>
+</div>
+<p>A spinner with $P(\text{red}) = 0.6$ is spun twice. $P(\text{exactly one red}) = 0.24 + 0.24 = 0.48$. The four end results add to $0.36 + 0.24 + 0.24 + 0.16 = 1$ &#10003;</p>
+
+<h3>With and Without Replacement (Dependent Events)</h3>
+<p>If an item is <strong>replaced</strong>, the probabilities stay the same on each pick (independent events). If it is <strong>not replaced</strong>, the second probabilities change: the total goes down by 1, and so does the count of the colour already taken. These are <strong>dependent</strong> events.</p>
+
+<div class="worked-example">
+  A bag has 5 red and 3 blue sweets. Two are taken without replacement. Find $P(\text{one of each colour})$.<br><br>
+  $P(R, B) = \dfrac{5}{8} \times \dfrac{3}{7} = \dfrac{15}{56}$ &nbsp;&nbsp; $P(B, R) = \dfrac{3}{8} \times \dfrac{5}{7} = \dfrac{15}{56}$<br>
+  $P(\text{one of each}) = \dfrac{30}{56} = \mathbf{\dfrac{15}{28}}$
+</div>
+
+<div class="worked-example">
+  A bag contains $n$ sweets, 6 of them orange. Two are taken without replacement and $P(\text{both orange}) = \dfrac{1}{3}$. Find $n$.<br><br>
+  $\dfrac{6}{n} \times \dfrac{5}{n-1} = \dfrac{1}{3} \Rightarrow n(n-1) = 90 \Rightarrow n^2 - n - 90 = 0$<br>
+  $(n - 10)(n + 9) = 0$, so $n = \mathbf{10}$ (reject $-9$).
+</div>
+
+<div class="exam-tip">
+  The assumptions behind your calculation matter: multiplying probabilities assumes the events are <strong>independent</strong>. In &ldquo;without replacement&rdquo; questions, look out for the words &ldquo;takes two&rdquo;, &ldquo;eats&rdquo; or &ldquo;does not replace&rdquo; &mdash; the second-pick denominator must drop by 1.
+</div>
+
+<!-- ===================== 5.1.7 CONDITIONAL ===================== -->
+<h2>5.1.7 Conditional Probability (P9) <span class="higher-tag">Higher</span></h2>
+
+<div class="definition">
+  <strong>Conditional probability</strong> is the probability of an event <em>given that</em> another event has happened, written $P(A \mid B)$. Knowing $B$ has happened <strong>restricts</strong> the outcomes to those in $B$.
+  $$P(A \mid B) = \frac{P(A \cap B)}{P(B)}$$
+</div>
+
+<h3>From Two-Way Tables</h3>
+<table>
+  <thead><tr><th></th><th>Owns a bike</th><th>No bike</th><th>Total</th></tr></thead>
+  <tbody>
+    <tr><th>Year 10</th><td>20</td><td>15</td><td>35</td></tr>
+    <tr><th>Year 11</th><td>30</td><td>15</td><td>45</td></tr>
+    <tr><th>Total</th><td>50</td><td>30</td><td>80</td></tr>
+  </tbody>
+</table>
+<div class="worked-example">
+  A student who owns a bike is chosen at random. Find the probability they are in Year 11.<br><br>
+  Restrict to the &ldquo;owns a bike&rdquo; column: 50 students, of whom 30 are in Year 11.<br>
+  $P(\text{Year 11} \mid \text{bike}) = \dfrac{30}{50} = \mathbf{\dfrac{3}{5}}$ &nbsp; (compare $P(\text{Year 11}) = \dfrac{45}{80}$)
+</div>
+
+<h3>From Tree Diagrams</h3>
+<div class="worked-example">
+  $P(\text{rain}) = 0.3$. If it rains, $P(\text{Mia late}) = 0.4$; if not, $P(\text{Mia late}) = 0.1$. Given Mia is late, find the probability it rained.<br><br>
+  $P(\text{late}) = 0.3 \times 0.4 + 0.7 \times 0.1 = 0.12 + 0.07 = 0.19$<br>
+  $P(\text{rain} \mid \text{late}) = \dfrac{0.12}{0.19} = \mathbf{\dfrac{12}{19}} \approx 0.632$
+</div>
+
+<h3>From Venn Diagrams</h3>
+<div class="worked-example">
+  $P(A) = 0.45$, $P(B) = 0.3$, $P(A \cap B) = 0.1$. Find $P((A \cup B)')$ and $P(B \mid A)$.<br><br>
+  $P(A \cup B) = 0.45 + 0.3 - 0.1 = 0.65$, so $P((A \cup B)') = \mathbf{0.35}$<br>
+  $P(B \mid A) = \dfrac{0.1}{0.45} = \mathbf{\dfrac{2}{9}}$
+</div>
+
+<h3>Using Expected Frequencies</h3>
+<p>Converting probabilities to frequencies out of a convenient total (e.g. 100 or 1000 people) makes conditional questions easier: in the rain example, out of 100 days, 30 rainy days give 12 late days and 70 dry days give 7 late days, so $12$ of the $19$ late days were rainy.</p>
+
+<div class="exam-tip">
+  Look for the words &ldquo;given that&rdquo;, &ldquo;of those who&rdquo; or &ldquo;a student who&hellip; is chosen&rdquo;. The denominator is then the <strong>size of the given group</strong>, not the overall total. Independent events satisfy $P(A \mid B) = P(A)$.
+</div>
+
+<h3>Summary</h3>
+<table>
+  <thead><tr><th>Idea</th><th>Rule</th></tr></thead>
+  <tbody>
+    <tr><td>Complement</td><td>$P(\text{not } A) = 1 - P(A)$</td></tr>
+    <tr><td>Relative frequency</td><td>frequency &divide; number of trials</td></tr>
+    <tr><td>Expected frequency</td><td>probability &times; number of trials</td></tr>
+    <tr><td>Mutually exclusive (or)</td><td>$P(A) + P(B)$</td></tr>
+    <tr><td>Independent (and)</td><td>$P(A) \times P(B)$</td></tr>
+    <tr><td>At least one</td><td>$1 - P(\text{none})$</td></tr>
+    <tr><td>Conditional <span class="higher-tag">Higher</span></td><td>$P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}$</td></tr>
+  </tbody>
+</table>
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]
+    });
+});
+</script>
+</body>
+</html>
