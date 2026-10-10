@@ -1,4 +1,4 @@
-# RAG Learning — https://raglearning.uk
+# RAG Learning — https://www.raglearning.uk
 # Public marketing pages are crawlable; signed-in app pages, admin, auth
 # flows and the API are not useful in search results.
 User-agent: *
@@ -27,4 +27,4 @@ Disallow: /teacher
 Disallow: /test-history
 Disallow: /unsubscribe
 
-Sitemap: https://raglearning.uk/sitemap.xml
+Sitemap: https://www.raglearning.uk/sitemap.xml
