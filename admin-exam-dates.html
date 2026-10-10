@@ -46,6 +46,60 @@
     html, body { min-height: 100%; background: var(--bg); color: var(--text);
                  font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
 
+    .app { display: flex; min-height: 100vh; }
+
+    /* ── SIDEBAR (matches admin.html / admin-bugs.html) ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; padding: 24px 0;
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 10;
+      box-shadow: 2px 0 16px rgba(37,99,235,0.08);
+      overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-img { width: 24px; height: 24px; display: inline-block; vertical-align: middle; flex-shrink: 0; }
+    .logo-text { font-family: var(--font-display); font-size: 18px; color: var(--text); }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 12px; border-radius: 8px; font-size: 13px; font-weight: 400;
+      color: var(--muted); cursor: pointer; transition: all 0.12s; text-decoration: none;
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { font-size: 15px; width: 20px; text-align: center; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 16px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 10px; background: var(--surface2); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 12px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; cursor: pointer; color: var(--muted); font-size: 13px; transition: all 0.12s; }
+    .logout-btn:hover { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+
+    /* ── SIGN-OUT CONFIRM MODAL ── */
+    .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; box-shadow: 0 20px 60px rgba(11,30,63,0.25); text-align: center; }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--red-bg); border: 1px solid var(--red-border); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--red-text); margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.5; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; font-family: var(--font-body); cursor: pointer; transition: all 0.15s; border: 1px solid transparent; }
+    .signout-btn.cancel { background: var(--surface2); color: var(--text); border-color: var(--border); }
+    .signout-btn.cancel:hover { background: var(--surface3); border-color: var(--border-hover); }
+    .signout-btn.confirm { background: var(--red); color: #fff; }
+    .signout-btn.confirm:hover { background: var(--red-text); }
+
+    /* ── MAIN ── */
+    .main { flex: 1; min-width: 0; margin-left: var(--sidebar-w); padding: 32px 36px 48px; max-width: 1000px; }
+    .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+    h1 { font-family: var(--font-display); font-size: 30px; line-height: 1.15; }
+    .sub { color: var(--muted); font-size: 14px; margin-top: 6px; max-width: 640px; }
+
     .card { background: var(--surface); border: 1px solid var(--border);
             border-radius: 12px; padding: 18px; margin-bottom: 16px; }
     .card h2 { font-family: var(--font-display); font-size: 17px; font-weight: 400;
@@ -116,7 +170,14 @@
       .finding-actions { margin-left: 0; width: 100%; }
       .rows .raw { display: none; }
     }
+
+    @media (max-width: 860px) {
+      .sidebar { transform: translateX(-100%); transition: transform .2s; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; padding: 20px 18px 40px; }
+    }
   </style>
+  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 
