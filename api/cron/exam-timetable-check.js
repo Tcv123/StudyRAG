@@ -84,8 +84,14 @@ const DOC_EXTENSION   = /\.(pdf|xlsx|xls|csv)(\?|#|$)/i;
 
 /* Leave this much of Vercel's 60s for the database writes and the email.
  * A document not reached this run is not recorded, so the next run reads
- * it — running out of time costs a week, never a document. */
-const TIME_BUDGET_MS = 42000;
+ * it — running out of time costs a week, never a document. Checked before
+ * each document is read AND before its dates are written, so a slow one
+ * is deferred whole rather than killed halfway through its writes. */
+const TIME_BUDGET_MS = 35000;
+
+/* Board CDNs are the slow part of a run, not the parsing — download this
+ * many documents at once. */
+const DOWNLOAD_CONCURRENCY = 4;
 
 
 module.exports = async function handler(req, res) {
@@ -179,12 +185,29 @@ module.exports = async function handler(req, res) {
       candidates = candidates.filter(c => !/\.xlsx?(\?|#|$)/i.test(c.url));
     }
 
-    for (const link of candidates) {
-      if (Date.now() - startedAt > TIME_BUDGET_MS) {
-        result.documents.push({ doc_url: link.url, status: 'deferred', note: 'Out of time this run — will be read next run.' });
+    /* A document already dismissed — none of our subjects are in it, or
+     * someone dismissed it by hand — is not downloaded again. Pearson alone
+     * lists nine summer PDFs, six of them BTEC and international ones;
+     * fetching those every week is what ran the first run out of time.
+     * A re-issue at a new URL is still a new document and still read. */
+    const { data: known } = await supabaseAdmin
+      .from('exam_timetable_findings')
+      .select('doc_url, status')
+      .eq('board', source.board);
+    const dismissed = new Set((known || []).filter(k => k.status === 'dismissed').map(k => k.doc_url));
+    if (!reportAll) candidates = candidates.filter(c => !dismissed.has(c.url));
+
+    const downloads = await mapLimit(candidates, DOWNLOAD_CONCURRENCY, link =>
+      Date.now() - startedAt > TIME_BUDGET_MS
+        ? Promise.resolve({ link, deferred: true })
+        : fetchBytes(link.url).then(bytes => ({ link, bytes }), err => ({ link, error: err.message })));
+
+    for (const d of downloads) {
+      if (d.deferred || Date.now() - startedAt > TIME_BUDGET_MS) {
+        result.documents.push({ doc_url: d.link.url, status: 'deferred', note: 'Out of time this run — will be read next run.' });
         continue;
       }
-      result.documents.push(await processDocument(supabaseAdmin, source, link, { dryRun, reportAll, targetYear }));
+      result.documents.push(await processDocument(supabaseAdmin, source, d, { dryRun, reportAll, targetYear, startedAt }));
     }
 
     const docs = result.documents;
@@ -235,19 +258,14 @@ module.exports = async function handler(req, res) {
  * Download, hash, skip if already handled, read, import what passes,
  * record the rest as a finding. Returns a summary for the report.
  * ──────────────────────────────────────────────────────────────────────── */
-async function processDocument(supabaseAdmin, source, link, { dryRun, reportAll, targetYear }) {
+async function processDocument(supabaseAdmin, source, { link, bytes, error }, { dryRun, reportAll, targetYear, startedAt }) {
   const doc = { doc_url: link.url, doc_title: link.text, series: `summer-${link.year || targetYear}` };
   const year = link.year || targetYear;
 
   /* Hash the document's bytes, not its URL. Boards re-issue a timetable at
    * the same URL when they amend a date — an amendment is exactly the thing
    * you most want picked up, and a URL comparison would miss it. */
-  let bytes;
-  try {
-    bytes = await fetchBytes(link.url);
-  } catch (err) {
-    return { ...doc, status: 'download-failed', note: err.message };
-  }
+  if (error) return { ...doc, status: 'download-failed', note: error };
   doc.doc_hash = sha256(bytes);
 
   /* Already seen? A finding someone (or a previous run) finished with is
@@ -279,6 +297,13 @@ async function processDocument(supabaseAdmin, source, link, { dryRun, reportAll,
      * build an automatic reader against. */
     const parsed = parseDocument(link.url, bytes);
     extracted = { supported: false, resolved: [], failed: [], rows: [], legacy: parsed };
+  }
+
+  /* Reading took us past the budget: stop before writing anything, so the
+   * document is read again from the start next run instead of being left
+   * half-imported when Vercel kills the function. */
+  if (!dryRun && Date.now() - startedAt > TIME_BUDGET_MS + 10000) {
+    return { ...doc, status: 'deferred', note: 'Out of time after reading — will be imported next run.' };
   }
 
   /* ── Import what passed ──────────────────────────────────────────────
@@ -700,6 +725,20 @@ function reportText(newDocs, failures, siteUrl) {
 
 
 /* ── Small helpers ───────────────────────────────────────────────────── */
+
+/* Promise.all with at most `limit` in flight, results in input order. */
+async function mapLimit(items, limit, fn) {
+  const out = new Array(items.length);
+  let next = 0;
+  async function worker() {
+    while (next < items.length) {
+      const i = next++;
+      out[i] = await fn(items[i]);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return out;
+}
 
 async function fetchText(url) {
   const res = await withTimeout(url);
