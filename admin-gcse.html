@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>GCSE coverage — RAG Learning</title>
+
+  <!--
+    PRIVATE PAGE. Same shape and same gate as the other admin pages: it asks
+    is_admin() and shows nothing otherwise. Nothing here is secret — every
+    figure is worked out in the browser from the public config files — so
+    the gate is only about keeping an internal view out of students' way.
+
+    WHAT IT SHOWS: every subject + board a GCSE student can pick
+    (SUBJECTS_CONFIG.getSubjectsFor('gcse') / getBoardsFor), looked up in each
+    feature's registry exactly the way the app does it, via levelLookup():
+
+      green  the "|gcse" key exists (or the base key, when that subject/board's
+             base diagnostic is itself the GCSE one, e.g. Computer Science OCR)
+      amber  only the base key exists, so a GCSE student gets A-Level content
+      red    nothing resolves
+
+    NOTES_AVAILABLE and DIAG_PAGE live inline in notes.html, so they are read
+    by fetching that page and evaluating the two object literals. Nothing to
+    maintain here: add content to the configs and this page follows.
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="level-config.js"></script>
+  <script src="supabase-config.js"></script>
+  <script src="classes-nav.js"></script>
+  <script src="nav-gating.js"></script>
+  <script src="admin-nav.js"></script>
+  <script src="referral-modal.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* .addform sets display:flex, and an author rule beats the UA sheet's
+       [hidden] { display:none } at equal specificity — so say it here. */
+    [hidden] { display: none !important; }
+
+    html, body { min-height: 100%; background: var(--bg); color: var(--text);
+                 font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; min-height: 100vh; }
+
+    /* ── SIDEBAR (matches admin.html / admin-attribution.html) ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; padding: 24px 0;
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 10;
+      box-shadow: 2px 0 16px rgba(37,99,235,0.08);
+      overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-img { width: 24px; height: 24px; display: inline-block; vertical-align: middle; flex-shrink: 0; }
+    .logo-text { font-family: var(--font-display); font-size: 18px; color: var(--text); }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 12px; border-radius: 8px; font-size: 13px; font-weight: 400;
+      color: var(--muted); cursor: pointer; transition: all 0.12s; text-decoration: none;
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { font-size: 15px; width: 20px; text-align: center; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 16px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 10px; background: var(--surface2); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 12px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; cursor: pointer; color: var(--muted); font-size: 13px; transition: all 0.12s; }
+    .logout-btn:hover { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+
+    /* ── SIGN-OUT CONFIRM MODAL ── */
+    .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; box-shadow: 0 20px 60px rgba(11,30,63,0.25); text-align: center; }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--red-bg); border: 1px solid var(--red-border); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--red-text); margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.5; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; font-family: var(--font-body); cursor: pointer; transition: all 0.15s; border: 1px solid transparent; }
+    .signout-btn.cancel { background: var(--surface2); color: var(--text); border-color: var(--border); }
+    .signout-btn.cancel:hover { background: var(--surface3); border-color: var(--border-hover); }
+    .signout-btn.confirm { background: var(--red); color: #fff; }
+    .signout-btn.confirm:hover { background: var(--red-text); }
+
+    /* ── MAIN ── */
+    .main { flex: 1; min-width: 0; margin-left: var(--sidebar-w); padding: 32px 36px 48px; max-width: 1100px; }
+    .topbar { display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+    h1 { font-family: var(--font-display); font-size: 30px; line-height: 1.15; }
+    .sub { color: var(--muted); font-size: 14px; margin-top: 6px; max-width: 660px; }
+
+    .card { background: var(--surface); border: 1px solid var(--border);
+            border-radius: 16px; padding: 26px 26px 22px; margin-top: 22px; min-width: 0; }
+    .card-title { font-size: 13px; font-weight: 600; letter-spacing: .04em;
+                  text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+    .card-note { font-size: 13px; color: var(--muted); line-height: 1.55; margin: -12px 0 18px; max-width: 640px; }
+    .empty { color: var(--muted2); font-size: 14px; }
+
+    /* ── Tally: doubles as the filter ── */
+    .tally { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+    .tally-cell { border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; background: var(--surface2);
+                  text-align: left; font-family: var(--font-body); cursor: pointer; transition: all .12s; }
+    .tally-cell:hover { border-color: var(--border-hover); }
+    .tally-cell[aria-pressed="true"] { border-color: var(--border-hover); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .tally-cell:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .tally-num { font-family: var(--font-display); font-size: 34px; line-height: 1; }
+    .tally-lbl { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
+    .t-ready  .tally-num, .t-ready  .tally-lbl { color: var(--green-text); }
+    .t-most   .tally-num, .t-most   .tally-lbl { color: var(--accent-dark); }
+    .t-alevel .tally-num, .t-alevel .tally-lbl { color: var(--amber-text); }
+    .t-none   .tally-num, .t-none   .tally-lbl { color: var(--red-text); }
+
+    .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--muted); margin-top: 18px; }
+    .legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+    /* ── Filter bar ── */
+    .fbar { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+    .fbar .grow { grid-column: span 2; }
+    .field { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+    .field > span { font-size: 12px; font-weight: 600; color: var(--muted); }
+    .field input, .field select {
+      font-family: var(--font-body); font-size: 14px; color: var(--text);
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 9px; padding: 9px 11px; width: 100%; transition: border-color .12s;
+    }
+    .field input:focus, .field select:focus { outline: none; border-color: var(--border-hover); }
+    .field select:disabled { opacity: .55; }
+    .field input::placeholder { color: var(--muted2); }
+    .fmeta { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+             margin: 14px 0 12px; font-size: 13px; color: var(--muted); }
+    .filter {
+      font-family: var(--font-body); font-size: 13px; font-weight: 500;
+      padding: 7px 14px; border-radius: 999px; cursor: pointer;
+      background: var(--surface); color: var(--muted);
+      border: 1px solid var(--border); transition: all .12s;
+    }
+    .filter:hover { border-color: var(--border-hover); color: var(--text); }
+    .filter:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    #fEmpty { margin-bottom: 12px; }
+    @media (max-width: 560px) { .fbar .grow { grid-column: auto; } }
+
+    /* ── Matrix ── */
+    .scroll { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; font-size: 14px; }
+    th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    thead th { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600;
+               background: var(--surface2); white-space: nowrap; }
+    td.c, th.c { text-align: center; }
+    tr.subj td { background: var(--surface2); font-weight: 600; font-size: 13px; padding-top: 12px; }
+    td.board { white-space: nowrap; }
+    .dot { display: inline-grid; place-items: center; min-width: 30px; height: 24px; padding: 0 6px; border-radius: 6px;
+           font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; border: 1px solid; }
+    .d-g { color: var(--green-text); background: var(--green-bg); border-color: var(--green-border); }
+    .d-a { color: var(--amber-text); background: var(--amber-bg); border-color: var(--amber-border); }
+    .d-r { color: var(--red-text);   background: var(--red-bg);   border-color: var(--red-border); }
+    .pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11px; font-weight: 600;
+            letter-spacing: .05em; text-transform: uppercase; border: 1px solid; white-space: nowrap; }
+    .p-ready  { color: var(--green-text); background: var(--green-bg); border-color: var(--green-border); }
+    .p-most   { color: var(--accent-dark); background: var(--accent-dim); border-color: var(--border-hover); }
+    .p-alevel { color: var(--amber-text); background: var(--amber-bg); border-color: var(--amber-border); }
+    .p-none   { color: var(--red-text);   background: var(--red-bg);   border-color: var(--red-border); }
+
+    /* ── Gaps ── */
+    .gaps { display: flex; flex-direction: column; gap: 10px; }
+    .gap { display: grid; grid-template-columns: 200px 1fr; gap: 12px; padding: 10px 12px; border-radius: 10px;
+           background: var(--surface2); border: 1px solid var(--border); font-size: 14px; }
+    .gap b { font-weight: 600; }
+    .gap span { color: var(--muted); line-height: 1.5; }
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a { padding: 10px 16px; border: 1px solid var(--border); border-radius: 10px;
+               color: var(--text); text-decoration: none; font-size: 14px; transition: all .12s; }
+    .links a:hover { border-color: var(--border-hover); background: var(--surface2); }
+
+    @media (max-width: 860px) {
+      .sidebar { transform: translateX(-100%); transition: transform .2s; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; padding: 20px 18px 40px; }
+      .gap { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+  <link rel="stylesheet" href="responsive.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <aside class="sidebar">
+    <a href="Dashboard.html" class="sidebar-logo" style="text-decoration:none;color:inherit;cursor:pointer;">
+      <img src="favicon.svg" alt="RAG Learning" class="logo-img" />
+      <div class="logo-text">RAG Learning</div>
+    </a>
+
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">🚦</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="contact-app.html"><span class="nav-icon">✉️</span> Contact us</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+
+    <!-- admin-nav.js injects the Admin section here, above .sidebar-bottom -->
+
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='settings.html'" style="cursor:pointer" title="Account settings">–</div>
+        <div class="user-info" onclick="location.href='settings.html'" style="cursor:pointer" title="Account settings">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="confirmSignOut()" title="Sign out">⏻</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
+      <div>
+        <h1 id="pageTitle">GCSE coverage</h1>
+        <p class="sub" id="pageSub">Every subject and exam board a GCSE student can pick, checked against each study feature. Green is real GCSE content, amber means the student is shown the A-Level version, red means nothing is there yet. Worked out live from the site's config, so it updates itself as content lands.</p>
+      </div>
+    </div>
+
+    <div class="card" id="loading">
+      <p class="empty">Loading…</p>
+    </div>
+
+    <div id="content" hidden>
+      <div class="card">
+        <div class="card-title">Where it stands</div>
+        <div class="tally" id="tally">
+          <button type="button" class="tally-cell t-ready"  data-f="ready"  aria-pressed="false"><div class="tally-num" id="n-ready">0</div><div class="tally-lbl">Fully built</div></button>
+          <button type="button" class="tally-cell t-most"   data-f="most"   aria-pressed="false"><div class="tally-num" id="n-most">0</div><div class="tally-lbl">Mostly built</div></button>
+          <button type="button" class="tally-cell t-alevel" data-f="alevel" aria-pressed="false"><div class="tally-num" id="n-alevel">0</div><div class="tally-lbl">A-Level only</div></button>
+          <button type="button" class="tally-cell t-none"   data-f="none"   aria-pressed="false"><div class="tally-num" id="n-none">0</div><div class="tally-lbl">Not started</div></button>
+        </div>
+        <div class="legend">
+          <span><i class="dot d-g">✓</i> GCSE content</span>
+          <span><i class="dot d-a">A</i> A-Level shown instead</span>
+          <span><i class="dot d-r">–</i> Missing</span>
+          <span>Numbers are topic counts. Click a box to filter; click it again to show all.</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">By subject and board</div>
+        <div class="fbar" role="search">
+          <label class="field grow">
+            <span>Search</span>
+            <input id="fSearch" type="search" placeholder="Subject or board, e.g. biology ocr" autocomplete="off">
+          </label>
+          <label class="field">
+            <span>Subject</span>
+            <select id="fSubject"><option value="">All subjects</option></select>
+          </label>
+          <label class="field">
+            <span>Board</span>
+            <select id="fBoard"><option value="">All boards</option></select>
+          </label>
+          <label class="field">
+            <span>Status</span>
+            <select id="fStatus">
+              <option value="">Any status</option>
+              <option value="ready">Fully built</option>
+              <option value="most">Mostly built</option>
+              <option value="alevel">A-Level only</option>
+              <option value="none">Not started</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Feature</span>
+            <select id="fFeature">
+              <option value="">Any feature</option>
+              <option value="notes">Notes</option>
+              <option value="diag">Diagnostic</option>
+              <option value="topics">Topic list</option>
+              <option value="practice">Practice Qs</option>
+              <option value="aifb">AI feedback</option>
+              <option value="flash">Flashcards</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Feature is</span>
+            <select id="fState" disabled>
+              <option value="notg">Not GCSE yet</option>
+              <option value="g">GCSE content</option>
+              <option value="a">A-Level shown</option>
+              <option value="r">Missing</option>
+            </select>
+          </label>
+        </div>
+        <div class="fmeta">
+          <span id="fCount" aria-live="polite"></span>
+          <button type="button" class="filter" id="fClear">Clear filters</button>
+        </div>
+        <p class="empty" id="fEmpty" hidden>No boards match these filters.</p>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Board</th><th class="c">Notes</th><th class="c">Diagnostic</th><th class="c">Topic list</th><th class="c">Practice Qs</th><th class="c">AI feedback</th><th class="c">Flashcards</th><th>Status</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Gaps on boards that are mostly built</div>
+        <p class="card-note">The closest wins: boards with real GCSE content where one or two features still fall back to A-Level or are missing.</p>
+        <div class="gaps" id="gaps"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Elsewhere</div>
+        <div class="links">
+          <a href="admin.html">Security &amp; flags →</a>
+          <a href="admin-bugs.html">Known bugs →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="locked" hidden>
+      <p class="empty">This page is for admins only.</p>
+    </div>
+  </main>
+</div>
+
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
+
+<div class="signout-overlay" id="signoutOverlay" onclick="if(event.target===this)cancelSignOut()">
+  <div class="signout-modal" role="dialog" aria-modal="true" aria-labelledby="signoutTitle">
+    <div class="signout-icon">&#x23FB;</div>
+    <div class="signout-title" id="signoutTitle">Sign out?</div>
+    <div class="signout-msg">Are you sure you want to sign out? You'll need to log back in to access your notes, diagnostics and practice.</div>
+    <div class="signout-actions">
+      <button class="signout-btn cancel" onclick="cancelSignOut()">Cancel</button>
+      <button class="signout-btn confirm" onclick="logout()">Sign out</button>
+    </div>
+  </div>
+</div>
+
+
+<script src="subjects-config.js"></script>
+<script src="diagnostics-pages.js"></script>
+<script src="topics-config.js"></script>
+<script src="practice-bank-config.js"></script>
+<script src="flashcards-config.js"></script>
+<script>
+function confirmSignOut(){ document.getElementById('signoutOverlay').classList.add('active'); }
+function cancelSignOut(){ document.getElementById('signoutOverlay').classList.remove('active'); }
+async function logout() {
+  await supabaseClient.auth.signOut();
+  window.location = 'auth/login.html';
+}
+
+(function () {
+  'use strict';
+
+  var COLS = ['notes', 'diag', 'topics', 'practice', 'aifb', 'flash'];
+  var COL_NAMES = { notes: 'Notes', diag: 'Diagnostic', topics: 'Topic list', practice: 'Practice questions', aifb: 'AI feedback', flash: 'Flashcards' };
+  var LABEL = { ready: 'Fully built', most: 'Mostly built', alevel: 'A-Level only', none: 'Not started' };
+
+  // notes.html keeps NOTES_AVAILABLE and DIAG_PAGE inline. Pull the two
+  // object literals out of the page source by brace matching.
+  function grabLiteral(html, name) {
+    var i = html.indexOf('const ' + name + ' = {');
+    if (i < 0) return {};
+    var j = html.indexOf('{', i), depth = 0;
+    for (var k = j; k < html.length; k++) {
+      var ch = html[k];
+      if (ch === '{') depth++;
+      else if (ch === '}' && --depth === 0) {
+        try { return new Function('return (' + html.slice(j, k + 1) + ')')(); }
+        catch (e) { return {}; }
+      }
+    }
+    return {};
+  }
+
+  // 'g' | 'a' | 'r' for one registry, the way levelLookup resolves it at GCSE.
+  // A base key counts as GCSE when that subject/board's base diagnostic is a
+  // GCSE page (Computer Science OCR keeps its GCSE content unsuffixed).
+  function resolve(map, base, baseIsGcse) {
+    if (!map) return 'r';
+    if (map[base + '|gcse'] !== undefined) return 'g';
+    if (map[base] !== undefined) return baseIsGcse ? 'g' : 'a';
+    return 'r';
+  }
+  function count(map, base) {
+    var v = window.levelLookup(map, base, 'gcse');
+    if (!v) return '';
+    if (Array.isArray(v)) return /\.js$/.test(v[0] || '') ? '' : v.length;
+    if (Array.isArray(v.topics)) return v.topics.length;
+    return '';
+  }
+
+  function build(notesMap) {
+    var SC = window.SUBJECTS_CONFIG, out = [];
+    SC.getSubjectsFor('gcse').forEach(function (s) {
+      var boards = SC.getBoardsFor(s.name, 'gcse').map(function (b) {
+        var u = s.name + '_' + b, p = s.name + '|' + b;
+        var baseDiag = (window.DIAGNOSTIC_PAGES || {})[u] || '';
+        var bg = /gcse/i.test(baseDiag);
+        var cells = {
+          notes:    [resolve(notesMap, p, bg), ''],
+          diag:     [resolve(window.DIAGNOSTIC_PAGES, u, bg), ''],
+          topics:   [resolve(window.DIAG_TOPICS, u, bg), count(window.DIAG_TOPICS, u)],
+          practice: [resolve(window.PRACTICE_BUNDLE_MAP, u, bg), ''],
+          aifb:     [resolve(window.AI_FEEDBACK_BUNDLE_MAP, u, bg), ''],
+          flash:    [resolve(window.FLASHCARDS_TOPICS, p, bg), count(window.FLASHCARDS_TOPICS, p)]
+        };
+        var ks = COLS.map(function (c) { return cells[c][0]; });
+        var st = ks.every(function (k) { return k === 'g'; }) ? 'ready'
+               : ks.every(function (k) { return k === 'r'; }) ? 'none'
+               : ks.indexOf('g') < 0 ? 'alevel' : 'most';
+        return { board: b, cells: cells, status: st };
+      });
+      out.push({ subject: s.name, boards: boards });
+    });
+    return out;
+  }
+
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]; }); }
+
+  function render(data) {
+    var counts = { ready: 0, most: 0, alevel: 0, none: 0 }, rows = '', gaps = '';
+    data.forEach(function (s) {
+      rows += '<tr class="subj"><td colspan="8">' + esc(s.subject) + '</td></tr>';
+      s.boards.forEach(function (b) {
+        counts[b.status]++;
+        rows += '<tr data-subject="' + esc(s.subject) + '" data-board="' + esc(b.board) + '" data-status="' + b.status + '"' +
+          COLS.map(function (c) { return ' data-' + c + '="' + b.cells[c][0] + '"'; }).join('') +
+          '><td class="board">' + esc(b.board) + '</td>' +
+          COLS.map(function (c) {
+            var k = b.cells[c][0], n = b.cells[c][1];
+            var txt = k === 'g' ? (n || '✓') : k === 'a' ? 'A' : '–';
+            return '<td class="c"><span class="dot d-' + k + '">' + txt + '</span></td>';
+          }).join('') +
+          '<td><span class="pill p-' + b.status + '">' + LABEL[b.status] + '</span></td></tr>';
+        if (b.status === 'most') {
+          var bits = COLS.filter(function (c) { return b.cells[c][0] !== 'g'; }).map(function (c) {
+            return COL_NAMES[c] + (b.cells[c][0] === 'a' ? ' show A-Level' : ' missing');
+          });
+          gaps += '<div class="gap"><b>' + esc(s.subject + ' · ' + b.board) + '</b><span>' + esc(bits.join('; ')) + '</span></div>';
+        }
+      });
+    });
+    document.getElementById('rows').innerHTML = rows;
+    document.getElementById('gaps').innerHTML = gaps || '<p class="empty">No gaps: every mostly-built board is complete.</p>';
+    Object.keys(counts).forEach(function (k) { document.getElementById('n-' + k).textContent = counts[k]; });
+  }
+
+  // Fill the subject and board dropdowns from the data, so a new subject or
+  // board shows up here without touching this page.
+  function fillSelects(data) {
+    var subj = document.getElementById('fSubject'), board = document.getElementById('fBoard'), seen = {};
+    data.forEach(function (s) {
+      subj.add(new Option(s.subject, s.subject));
+      s.boards.forEach(function (b) { seen[b.board] = true; });
+    });
+    Object.keys(seen).sort().forEach(function (b) { board.add(new Option(b, b)); });
+  }
+
+  // Every control is ANDed together. A subject heading row stays visible
+  // while any of its boards does.
+  function applyFilters() {
+    var q       = document.getElementById('fSearch').value.trim().toLowerCase();
+    var subject = document.getElementById('fSubject').value;
+    var board   = document.getElementById('fBoard').value;
+    var status  = document.getElementById('fStatus').value;
+    var feature = document.getElementById('fFeature').value;
+    var state   = document.getElementById('fState').value;
+    var shown = 0, total = 0, heading = null, headingHasRows = false;
+
+    document.getElementById('fState').disabled = !feature;
+    document.querySelectorAll('.tally-cell').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.f === status));
+    });
+
+    function closeHeading() { if (heading) heading.hidden = !headingHasRows; }
+
+    document.querySelectorAll('#rows tr').forEach(function (tr) {
+      if (tr.classList.contains('subj')) {
+        closeHeading();
+        heading = tr; headingHasRows = false;
+        return;
+      }
+      total++;
+      var d = tr.dataset, ok = true;
+      if (q && (d.subject + ' ' + d.board).toLowerCase().indexOf(q) < 0) ok = false;
+      if (subject && d.subject !== subject) ok = false;
+      if (board && d.board !== board) ok = false;
+      if (status && d.status !== status) ok = false;
+      if (feature) {
+        var k = d[feature];
+        if (state === 'notg' ? k === 'g' : k !== state) ok = false;
+      }
+      tr.hidden = !ok;
+      if (ok) { shown++; headingHasRows = true; }
+    });
+    closeHeading();
+
+    document.getElementById('fCount').textContent = shown === total
+      ? 'Showing all ' + total + ' boards'
+      : 'Showing ' + shown + ' of ' + total + ' boards';
+    document.getElementById('fEmpty').hidden = shown !== 0;
+  }
+
+  function clearFilters() {
+    ['fSearch', 'fSubject', 'fBoard', 'fStatus', 'fFeature'].forEach(function (id) {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('fState').value = 'notg';
+    applyFilters();
+  }
+
+  function wire() {
+    // The tally boxes are shortcuts for the Status dropdown.
+    document.querySelectorAll('.tally-cell').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var sel = document.getElementById('fStatus');
+        sel.value = b.getAttribute('aria-pressed') === 'true' ? '' : b.dataset.f;
+        applyFilters();
+      });
+    });
+    ['fSubject', 'fBoard', 'fStatus', 'fFeature', 'fState'].forEach(function (id) {
+      document.getElementById(id).addEventListener('change', applyFilters);
+    });
+    document.getElementById('fSearch').addEventListener('input', applyFilters);
+    document.getElementById('fClear').addEventListener('click', clearFilters);
+  }
+
+  async function loadSidebar(userId) {
+    var res = await supabaseClient
+      .from('profiles').select('first_name, last_name, avatar_url')
+      .eq('id', userId).maybeSingle();
+    var p = res.data || {};
+    var first = p.first_name || '';
+    var last  = p.last_name  || '';
+    document.getElementById('sidebarName').textContent = (first + ' ' + last).trim() || 'Signed in';
+    var av = document.getElementById('avatarInitials');
+    if (p.avatar_url) {
+      var img = document.createElement('img');
+      img.src = p.avatar_url; img.alt = '';
+      img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+      av.replaceChildren(img);
+    } else {
+      av.textContent = ((first[0] || '') + (last[0] || '')).toUpperCase() || '?';
+    }
+  }
+
+  async function load() {
+    var session = await supabaseClient.auth.getSession();
+    var user = session && session.data && session.data.session && session.data.session.user;
+    if (!user) { location.href = 'auth/login.html'; return; }
+
+    loadSidebar(user.id);
+
+    var gate = await supabaseClient.rpc('is_admin');
+
+    if (gate.error || gate.data !== true) {
+      document.getElementById('loading').hidden = true;
+      document.getElementById('pageTitle').textContent = 'Not your page';
+      document.getElementById('pageSub').textContent = 'This view is for admins only.';
+      document.getElementById('locked').hidden = false;
+      return;
+    }
+
+    var notesMap = {};
+    try {
+      var html = await (await fetch('notes.html', { cache: 'no-store' })).text();
+      notesMap = grabLiteral(html, 'NOTES_AVAILABLE');
+    } catch (e) { /* notes column shows red rather than the page failing */ }
+
+    var data = build(notesMap);
+    render(data);
+    fillSelects(data);
+    wire();
+    applyFilters();
+    document.getElementById('loading').hidden = true;
+    document.getElementById('content').hidden = false;
+  }
+
+  load();
+})();
+</script>
+<script src="fit-to-screen.js"></script>
+</body>
+</html>

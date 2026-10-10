@@ -191,6 +191,22 @@
     button.act:disabled { opacity: .5; cursor: default; }
     button.act.danger { background: var(--red-bg); color: var(--red-text); border-color: var(--red-border); }
 
+    .actions-row { display: flex; gap: 6px; align-items: center; }
+    button.dismiss {
+      font-family: inherit; font-size: 16px; line-height: 1; cursor: pointer;
+      width: 28px; height: 28px; border-radius: 8px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: transparent; color: var(--muted2); border: 1px solid transparent;
+      transition: background .12s, color .12s, border-color .12s;
+    }
+    button.dismiss:hover { background: var(--surface2); color: var(--text); border-color: var(--border); }
+
+    .dismissed-note { font-size: 12.5px; color: var(--muted2); margin-top: 14px; }
+    .dismissed-note button {
+      font: inherit; color: var(--accent); background: none; border: none;
+      cursor: pointer; padding: 0; text-decoration: underline;
+    }
+
     .toggle { display: flex; gap: 6px; margin-left: auto; }
     .toggle button {
       font-family: inherit; font-size: 12.5px; cursor: pointer;
@@ -453,12 +469,51 @@
     }
 
     // ── Signals ─────────────────────────────────────────────────────
+    // Signals are recomputed on every load, so a dismissal has no signal row
+    // to live on. admin_dismissed_signals keeps them instead, shared by every
+    // admin, keyed on kind + user + detail: if the detail changes (say the
+    // tier moves), the key no longer matches and the signal comes back.
+    // Schema: db/migrations/2026-10-10-dismissed-signals.sql
+    var dismissed = {};
+    var lastSignals = [];
+    var showDismissed = false;
+
+    async function setDismissed(r, on) {
+      var key = signalKey(r);
+      var before = dismissed[key];
+      // Optimistic: hide straight away, put it back if the write fails.
+      if (on) dismissed[key] = new Date().toISOString(); else delete dismissed[key];
+      renderSignals(lastSignals);
+
+      var res = await supabaseClient.rpc('admin_set_signal_dismissed', {
+        p_signal_key: key, p_kind: r.kind, p_user_id: r.user_id || null, p_dismissed: on
+      });
+      if (res.error || res.data === false) {
+        console.error(res.error);
+        if (before) dismissed[key] = before; else delete dismissed[key];
+        renderSignals(lastSignals);
+      }
+    }
+
+    function signalKey(r) {
+      return [r.kind, r.user_id || '', r.detail || ''].join('|');
+    }
+
     function renderSignals(rows) {
+      lastSignals = rows;
       var host = document.getElementById('signals');
       clear(host);
 
+      var hiddenCount = 0;
+      rows = rows.filter(function (r) {
+        var hidden = !!dismissed[signalKey(r)];
+        if (hidden) hiddenCount++;
+        return showDismissed || !hidden;
+      });
+
       if (!rows.length) {
         host.appendChild(el('p', 'good', 'Nothing is tripping any of the checks right now.'));
+        appendDismissedNote(host, hiddenCount);
         return;
       }
 
@@ -493,16 +548,36 @@
 
         item.appendChild(main);
 
-        var actions = el('div', 'actions');
+        var actions = el('div', 'actions-row');
         if (r.user_id) {
           var flagBtn = el('button', 'act danger', 'Flag account');
           flagBtn.onclick = function () { flagUser(r.user_id, r.headline || r.kind, flagBtn); };
           actions.appendChild(flagBtn);
         }
+        var key = signalKey(r);
+        var isDismissed = !!dismissed[key];
+        var xBtn = el('button', 'dismiss', isDismissed ? '↺' : '×');
+        xBtn.title = isDismissed ? 'Restore this signal' : 'Dismiss this signal';
+        xBtn.setAttribute('aria-label', xBtn.title);
+        xBtn.onclick = function () { setDismissed(r, !isDismissed); };
+        actions.appendChild(xBtn);
         item.appendChild(actions);
 
+        if (isDismissed) item.style.opacity = '0.55';
         host.appendChild(item);
       });
+
+      appendDismissedNote(host, hiddenCount);
+    }
+
+    function appendDismissedNote(host, hiddenCount) {
+      if (!hiddenCount) return;
+      var note = el('div', 'dismissed-note',
+        hiddenCount + ' dismissed signal' + (hiddenCount === 1 ? '' : 's') + ' · ');
+      var toggle = el('button', null, showDismissed ? 'Hide' : 'Show');
+      toggle.onclick = function () { showDismissed = !showDismissed; renderSignals(lastSignals); };
+      note.appendChild(toggle);
+      host.appendChild(note);
     }
 
     // ── Incident log ────────────────────────────────────────────────
@@ -658,7 +733,18 @@
     }
 
     async function loadSignals() {
-      var res = await supabaseClient.rpc('admin_security_signals');
+      var both = await Promise.all([
+        supabaseClient.rpc('admin_security_signals'),
+        supabaseClient.rpc('admin_dismissed_signals')
+      ]);
+      var res = both[0];
+
+      // Dismissals failing to load (say the migration is not in yet) just
+      // means every signal shows — never a reason to hide the list itself.
+      dismissed = {};
+      if (both[1].error) console.error(both[1].error);
+      (both[1].data || []).forEach(function (d) { dismissed[d.signal_key] = d.dismissed_at; });
+
       if (res.error) {
         console.error(res.error);
         var host = document.getElementById('signals');
