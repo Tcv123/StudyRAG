@@ -12,3 +12,8 @@ compatibility_flags = ["nodejs_compat"]
 [vars]
 # Already public: the pages use it in supabase-config.js.
 SUPABASE_URL = "https://tfpnagnjnzmlgbnqeiwr.supabase.co"
+# Stripe price ids for RAG Pro. TEST MODE: swap all three for the live-mode
+# ids (and the Stripe secrets in the dashboard) when payments go live.
+STRIPE_PRICE_ID_MONTHLY = "price_1ULNSGGz8hIl88D9bmYikJYA"   # £9.99 / month
+STRIPE_PRICE_ID_BIANNUAL = "price_1ULNTyGz8hIl88D9jHvubKqF"  # £56.00 / 6 months
+STRIPE_PRICE_ID_ANNUAL = "price_1ULNUNGz8hIl88D9vu03KIZi"    # £100.00 / year
