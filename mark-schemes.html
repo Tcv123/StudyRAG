@@ -933,24 +933,6 @@ function buildPicker(userSubs) {
       document.head.appendChild(s);
     });
   }
-  // Load every subject's questions + pre-written model answers (non-fatal if missing).
-  await Promise.all([
-    ['CS_MODEL_ANSWERS', 'model-answers-cs.js'],
-    ['MATHS_QUESTIONS', 'maths-questions.js'],
-    ['FM_QUESTIONS', 'further-maths-questions.js'],
-    ['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js'],
-    ['BIO_MODEL_ANSWERS', 'model-answers-biology.js'],
-    ['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js'],
-    ['ECON_MODEL_ANSWERS', 'model-answers-economics.js'],
-    ['GEOG_MODEL_ANSWERS', 'model-answers-geography.js'],
-    ['POLITICS_MODEL_ANSWERS', 'model-answers-politics.js'],
-  ].map(([flag, src]) => window[flag] ? Promise.resolve() : new Promise((resolve) => {
-    const s = document.createElement('script');
-    s.src = src;
-    s.onload = resolve;
-    s.onerror = resolve; // non-fatal
-    document.head.appendChild(s);
-  })));
   // Fetch the user's chosen subjects and boards
   let userSubs = [];
   try {
@@ -961,6 +943,28 @@ function buildPicker(userSubs) {
       userSubs = data || [];
     }
   } catch (_) {}
+  // Load questions + pre-written model answers for the user's subjects only —
+  // the picker offers nothing else, and all subjects together are ~6 MB.
+  // Non-fatal if missing.
+  const SUBJECT_FILES = {
+    'computer science':    [['CS_MODEL_ANSWERS', 'model-answers-cs.js']],
+    'mathematics':         [['MATHS_QUESTIONS', 'maths-questions.js']],
+    'further mathematics': [['FM_QUESTIONS', 'further-maths-questions.js']],
+    'physics':             [['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js']],
+    'biology':             [['BIO_MODEL_ANSWERS', 'model-answers-biology.js']],
+    'chemistry':           [['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js']],
+    'economics':           [['ECON_MODEL_ANSWERS', 'model-answers-economics.js']],
+    'geography':           [['GEOG_MODEL_ANSWERS', 'model-answers-geography.js']],
+    'politics':            [['POLITICS_MODEL_ANSWERS', 'model-answers-politics.js']],
+  };
+  await Promise.all(userSubs.flatMap(r => SUBJECT_FILES[String(r.subject || '').trim().toLowerCase()] || [])
+    .map(([flag, src]) => window[flag] ? Promise.resolve() : new Promise((resolve) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = resolve; // non-fatal
+      document.head.appendChild(s);
+    })));
   buildPicker(userSubs);
 })();
 </script>
