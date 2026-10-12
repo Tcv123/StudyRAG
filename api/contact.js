@@ -68,7 +68,7 @@ module.exports = async function handler(req, res) {
      * missing — unlike the cron route, which only answers to CRON_SECRET and
      * can afford to name the variable. The detail goes to the log instead. */
     console.error('[contact] RESEND_API_KEY is not set — cannot send');
-    return res.status(500).json({ error: 'Failed to send message. Please try again.', _diag: 'key_missing' });
+    return res.status(500).json({ error: 'Failed to send message. Please try again.' });
   }
 
   const subjectLine = subject
@@ -110,13 +110,13 @@ module.exports = async function handler(req, res) {
     if (!response.ok) {
       const err = await response.text();
       console.error('Resend error:', err);
-      return res.status(500).json({ error: 'Failed to send message. Please try again.', _diag: `resend_status_${response.status}` });
+      return res.status(500).json({ error: 'Failed to send message. Please try again.' });
     }
 
     return res.status(200).json({ ok: true });
   } catch (err) {
     console.error('Contact send error:', err);
-    return res.status(500).json({ error: 'Failed to send message. Please try again.', _diag: `threw_${err?.name}` });
+    return res.status(500).json({ error: 'Failed to send message. Please try again.' });
   }
 };
 
