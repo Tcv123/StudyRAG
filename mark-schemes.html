@@ -620,7 +620,7 @@ function verifiedMathsEntry(id) {
 // A paper can be browsed here only if it has inline parts (e.g. CS) or
 // verified question data from a Maths side file.
 function hasMarkSchemeData(p) {
-  return (p.parts && p.parts.length > 0) || (p.questions && p.questions.length > 0)
+  return (p.parts && p.parts.length > 0) || window.paperPartCount(p) > 0
     || !!verifiedMathsEntry(p.id);
 }
 
@@ -769,7 +769,7 @@ function buildPicker(userSubs) {
     document.getElementById('msViewer').innerHTML = `<div class="placeholder"><div class="placeholder-icon">📋</div><div class="placeholder-title">Select a paper</div><div class="placeholder-msg">Choose a paper to view its mark scheme.</div></div>`;
   });
 
-  pickPaper.addEventListener('change', () => {
+  pickPaper.addEventListener('change', async () => {
     const fi = pickSubject.value;
     const pi = pickPaper.value;
     localStorage.setItem('ms_pickPaper', pi);
@@ -777,6 +777,10 @@ function buildPicker(userSubs) {
     const entry = filtered[parseInt(fi)];
     const paper = entry.papers[parseInt(pi)];
     if (!paper) return;
+    // The deployed papers-config.js leaves questions and mark schemes out
+    // until a page asks for them. Drop the result if the pick changed meanwhile.
+    await window.loadPaperDetails([paper]);
+    if (pickPaper.value !== pi) return;
     // Maths papers carry their questions + mark schemes in a side file
     // (papers-config.js lists them print-only). Merge them in on demand.
     const mq = verifiedMathsEntry(paper.id);
