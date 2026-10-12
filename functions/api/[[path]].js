@@ -34,9 +34,13 @@ export async function onRequest(context) {
   /* The handlers read configuration from process.env, several of them at
    * module load (the Stripe and Supabase clients). Copy the Pages variables
    * in before the first require so those clients see them. The require is
-   * lazy for the same reason. */
+   * lazy for the same reason.
+   *
+   * Trimmed: a key pasted into the dashboard easily brings a trailing newline
+   * or a leading tab, and an Authorization header carrying one is rejected
+   * before the request leaves Cloudflare — the provider never even sees it. */
   for (const [k, v] of Object.entries(env)) {
-    if (typeof v === 'string') process.env[k] = v;
+    if (typeof v === 'string') process.env[k] = v.trim();
   }
 
   const route = [].concat(params.path || []).join('/').replace(/\.js$/, '');
