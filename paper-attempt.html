@@ -8,17 +8,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <!-- CodeMirror 5 — syntax-highlighted code editor for AQA Paper 1 Section B "write a program" parts.
-       Modes (python/javascript/clike/pascal) are listed here so they're ready when the editor mounts.
+       Only those parts use it, so it loads on demand: ensureCodeMirror() starts when a paper with
+       code parts opens, and renderStep waits for it before showing one. The promise always
+       resolves; if the CDN fails, mountCodeMirror falls back to the plain textarea.
        Pyodide (Python-in-the-browser) is loaded lazily on the first Run click — see ensurePyodide(). -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/pascal/pascal.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/vbscript/vbscript.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    window.ensureCodeMirror = (function () {
+      const BASE = 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/';
+      const MODES = ['python', 'javascript', 'clike', 'pascal', 'vbscript'];
+      const load = (tag, attrs) => new Promise((resolve, reject) => {
+        const el = Object.assign(document.createElement(tag), attrs);
+        el.onload = resolve;
+        el.onerror = () => reject(new Error('Failed to load ' + (attrs.src || attrs.href)));
+        document.head.appendChild(el);
+      });
+      let ready = null;
+      function ensureCodeMirror() {
+        if (!ready) {
+          ready = Promise.all([
+            load('link', { rel: 'stylesheet', href: BASE + 'codemirror.min.css' }),
+            load('link', { rel: 'stylesheet', href: BASE + 'theme/eclipse.min.css' }),
+            load('script', { src: BASE + 'codemirror.min.js' })
+              .then(() => Promise.all(MODES.map(m => load('script', { src: `${BASE}mode/${m}/${m}.min.js` })))),
+          ])
+            .catch(err => console.warn('[paper-attempt] Code editor failed to load; using a plain textarea.', err))
+            .then(() => { ensureCodeMirror.done = true; });
+        }
+        return ready;
+      }
+      return ensureCodeMirror;
+    })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2"></script>
   <script src="level-config.js"></script>
   <script src="supabase-config.js"></script>
   <script src="teacher-subjects-sync.js"></script>
@@ -482,6 +503,7 @@
     // The deployed papers-config.js leaves questions and mark schemes out
     // until a page asks for them.
     await window.loadPaperDetails([paper]);
+    if (window.paperParts(paper).some(p => p.kind === 'code')) window.ensureCodeMirror();
 
     document.getElementById('paperTitle').textContent =
       `${paper.subject} · ${paper.board} · ${paper.year}`;
@@ -1348,6 +1370,16 @@ builtins.input = __qbq_input
       // Mount a CodeMirror editor inside the given <textarea> element. Returns
       // the CodeMirror instance.
       function mountCodeMirror(textarea, language) {
+        if (!window.CodeMirror) {
+          // CDN failed (see ensureCodeMirror): the same calls, on the textarea.
+          return {
+            getValue: () => textarea.value,
+            setValue: v => { textarea.value = v; textarea.dispatchEvent(new Event('input')); },
+            on: (_, fn) => textarea.addEventListener('input', () => fn()),
+            focus: () => textarea.focus(),
+            toTextArea: () => {},
+          };
+        }
         const modeMap = {
           python: 'text/x-python',
           javascript: 'text/javascript',
@@ -1370,6 +1402,12 @@ builtins.input = __qbq_input
       }
 
       function renderStep() {
+        // A code-entry part mounts CodeMirror, which loads on demand.
+        if (attempt.phase === 'attempt' && isCodeEntryPart(parts[attempt.currentIndex])
+            && !window.CodeMirror && !window.ensureCodeMirror.done) {
+          window.ensureCodeMirror().then(renderStep);
+          return;
+        }
         const idx = attempt.currentIndex;
         const part = parts[idx];
         const response = attempt.responses[idx];
