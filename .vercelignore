@@ -19,3 +19,9 @@
 # This file. Vercel reads it before applying it, so listing it here only
 # stops it being served.
 /.vercelignore
+
+# Cloudflare Pages config and code. Not used by Vercel.
+/functions
+/cron-worker
+/wrangler.toml
+/dist

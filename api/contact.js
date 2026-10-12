@@ -30,6 +30,7 @@ const ALLOWED_ORIGINS = [
   'https://www.raglearning.uk',
   'https://raglearning.uk',
   'https://raglearning.vercel.app',
+  'https://raglearning.pages.dev',
 ];
 
 module.exports = async function handler(req, res) {

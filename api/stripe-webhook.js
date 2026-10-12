@@ -128,7 +128,9 @@ module.exports = async function handler(req, res) {
   try {
     const rawBody = await readRawBody(req);
     const sig = req.headers['stripe-signature'];
-    event = stripe.webhooks.constructEvent(rawBody, sig, WEBHOOK_SECRET);
+    /* The async form, because on Cloudflare the Stripe SDK verifies with
+     * Web Crypto, which has no synchronous API. Node accepts either. */
+    event = await stripe.webhooks.constructEventAsync(rawBody, sig, WEBHOOK_SECRET);
   } catch (err) {
     console.error('webhook signature error:', err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);

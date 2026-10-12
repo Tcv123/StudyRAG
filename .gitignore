@@ -21,3 +21,8 @@ resend*
 # Local runthrough harness — fakes user-scoped tables so a full student
 # journey can be walked without an account. Never commit.
 dev-fake-backend.js
+
+# Cloudflare Pages build output
+dist/
+.dev.vars
+.wrangler/

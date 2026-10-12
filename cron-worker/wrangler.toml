@@ -1,0 +1,13 @@
+# Scheduled jobs for raglearning. Pages has no cron triggers, so this tiny
+# Worker calls the /api/cron endpoints on the schedule vercel.json used.
+# Deploy from this folder with `npx wrangler deploy`, then set its secrets:
+#   npx wrangler secret put CRON_SECRET   (same value as the Pages project)
+name = "raglearning-cron"
+main = "index.js"
+compatibility_date = "2025-09-01"
+
+[vars]
+SITE_URL = "https://raglearning.pages.dev"
+
+[triggers]
+crons = ["0 16 * * *", "0 9 * * 1"]

@@ -1,0 +1,7 @@
+# Cloudflare Pages config. Build command and secrets are set in the Pages
+# dashboard; this file only pins the runtime the /api functions need.
+name = "raglearning"
+pages_build_output_dir = "dist"
+compatibility_date = "2025-09-01"
+# Buffer, crypto and process.env for the api/ handlers and their npm packages.
+compatibility_flags = ["nodejs_compat"]
