@@ -406,8 +406,7 @@ function renderMsCard(part, paperKey, paperId) {
   // Look across every subject's model-answer map (CS, Maths, …).
   const preWritten = paperId
     ? (((window.CS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
-       ((window.MATHS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
-       ((window.FM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
+       checkedMathsAnswer(paperId, partCode) ||
        ((window.PHYSICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.BIO_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.CHEM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
@@ -615,6 +614,14 @@ window.toggleQuestion = function(qi) {
 function verifiedMathsEntry(id) {
   const e = (window.MATHS_QUESTIONS && window.MATHS_QUESTIONS[id]) || (window.FM_QUESTIONS && window.FM_QUESTIONS[id]);
   return e && e.verified ? e : null;
+}
+
+// Most Maths model answers are filed under the wrong question, so only the
+// parts listed in model-answers-maths-checked.js show theirs. Further Maths
+// answers (model-answers-fm.js) have none checked yet and are not loaded.
+function checkedMathsAnswer(paperId, partCode) {
+  const parts = (window.CHECKED_MATHS_ANSWERS || {})[paperId];
+  return parts && parts.includes(partCode) ? ((window.MATHS_MODEL_ANSWERS || {})[paperId + '::' + partCode] || '') : '';
 }
 
 // A paper can be browsed here only if it has inline parts (e.g. CS) or
@@ -948,7 +955,8 @@ function buildPicker(userSubs) {
   // Non-fatal if missing.
   const SUBJECT_FILES = {
     'computer science':    [['CS_MODEL_ANSWERS', 'model-answers-cs.js']],
-    'mathematics':         [['MATHS_QUESTIONS', 'maths-questions.js']],
+    'mathematics':         [['MATHS_QUESTIONS', 'maths-questions.js'], ['MATHS_MODEL_ANSWERS', 'model-answers-maths.js'],
+                            ['CHECKED_MATHS_ANSWERS', 'model-answers-maths-checked.js']],
     'further mathematics': [['FM_QUESTIONS', 'further-maths-questions.js']],
     'physics':             [['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js']],
     'biology':             [['BIO_MODEL_ANSWERS', 'model-answers-biology.js']],
