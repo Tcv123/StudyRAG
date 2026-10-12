@@ -1,17 +1,15 @@
 /**
- * Cloudflare Pages build: runs the same checks as the Vercel build, then
- * copies the site into dist/, which is what Pages serves.
+ * Cloudflare Pages build: runs the content checks, then copies the site into
+ * dist/, which is what Pages serves.
  *
- * Vercel serves the repo root ("outputDirectory": "."). Pages cannot do that
- * safely, because the build installs node_modules into the root and Pages
- * would publish all of it. So the site is copied out instead, keeping the
- * same rules for what stays private:
+ * The site lives at the repo root, but the build installs node_modules there
+ * too, so serving the root would publish all of it. The site is copied out
+ * instead, leaving behind everything that must stay private:
  *
- *   - everything .vercelignore lists, read from that file so the two hosts
- *     cannot drift apart
- *   - the paths vercel.json redirects to /404 (config, scripts, package files)
  *   - server code: api/ and functions/ run as code, they are not files to serve
- *   - the Cloudflare config itself
+ *   - build scripts, tests, config and package files
+ *   - SQL run by hand in the Supabase editor (db/, migrations/)
+ *   - Claude Code settings, and dev mockups nothing links to
  *
  * Only files git tracks are copied, so local scratch (.pdfwork, tmp/) never
  * ships even when building on this machine.
@@ -25,18 +23,13 @@ const OUT = path.join(ROOT, 'dist');
 
 execSync('node scripts/check-bank.js && node scripts/check-guidance.js', { cwd: ROOT, stdio: 'inherit' });
 
-const ALWAYS_PRIVATE = [
-  '/api', '/functions', '/scripts', '/cron-worker', '/tests',
-  '/vercel.json', '/wrangler.toml', '/package.json', '/package-lock.json',
+const PRIVATE = [
+  'api', 'functions', 'scripts', 'cron-worker', 'tests', 'db', 'migrations', '.claude',
+  'wrangler.toml', 'package.json', 'package-lock.json', '.gitignore',
+  'ai-feedback-mockup.html', 'flashcard-demo.html',
 ];
 
-const vercelIgnore = fs.readFileSync(path.join(ROOT, '.vercelignore'), 'utf8')
-  .split('\n')
-  .map(l => l.trim())
-  .filter(l => l && !l.startsWith('#'));
-
-const excluded = [...ALWAYS_PRIVATE, ...vercelIgnore].map(p => p.replace(/^\//, '').replace(/\/$/, ''));
-const isExcluded = (file) => excluded.some(p => file === p || file.startsWith(p + '/'));
+const isExcluded = (file) => PRIVATE.some(p => file === p || file.startsWith(p + '/'));
 
 const files = execSync('git ls-files -z', { cwd: ROOT }).toString().split('\0').filter(Boolean);
 

@@ -1,18 +1,17 @@
 /**
  * Cloudflare Pages entry point for everything under /api/.
  *
- * The handlers in api/ are written for Vercel: `(req, res) => …` with a
- * Node-style request and an Express-style response. Rather than keep two
- * copies of every endpoint, this file translates a Cloudflare Request into
- * that shape, runs the unchanged handler, and turns what it wrote into a
- * Response. The same api/ files keep working on Vercel while both hosts run.
+ * The handlers in api/ were written for Vercel, where the site used to be
+ * hosted: `(req, res) => …` with a Node-style request and an Express-style
+ * response. Rather than rewrite every endpoint, this file translates a
+ * Cloudflare Request into that shape, runs the unchanged handler, and turns
+ * what it wrote into a Response.
  *
  * Needs the nodejs_compat flag (wrangler.toml) for Buffer, crypto and the
  * npm packages the handlers pull in.
  *
- * Files whose name starts with `_` are shared modules, not endpoints. Vercel
- * refuses to route them and so does this table: only what is listed here is
- * reachable.
+ * Files whose name starts with `_` are shared modules, not endpoints. Only
+ * what is listed in ROUTES is reachable.
  */
 
 const ROUTES = {

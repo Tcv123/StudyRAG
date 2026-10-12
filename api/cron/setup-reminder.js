@@ -1,5 +1,5 @@
 /**
- * Day-3 setup reminder — runs once a day from a Vercel cron.
+ * Day-3 setup reminder — runs once a day from the cron Worker (cron-worker/).
  *
  * Finds students who confirmed their email a few days ago and never picked
  * their subjects, and sends each of them exactly one nudge back to
@@ -10,8 +10,8 @@
  * This file does three things and nothing else: check the caller is the
  * cron, walk the list the database hands it, and talk to Resend.
  *
- * Required Vercel environment variables:
- *   CRON_SECRET                — any long random string. Vercel sends it
+ * Required environment variables (Cloudflare Pages settings):
+ *   CRON_SECRET                — any long random string. The cron Worker sends it
  *                                back as `Authorization: Bearer <secret>`
  *                                on scheduled invocations. Without it set,
  *                                this endpoint refuses to run at all.
@@ -172,7 +172,7 @@ module.exports = async function handler(req, res) {
       sent++;
     } catch (err) {
       /* Log the user id, never the email — these logs are readable by
-       * anyone with Vercel access and there is no reason for a student's
+       * anyone with hosting access and there is no reason for a student's
        * address to sit in them. */
       console.error('[setup-reminder] send failed for', user.user_id, err.message);
       await supabaseAdmin.rpc('fail_setup_reminder', {
@@ -187,12 +187,12 @@ module.exports = async function handler(req, res) {
 
   console.log(`[setup-reminder] sent ${sent}, failed ${failed}, skipped ${skipped}`);
 
-  /* The expiry reminders ride along on this run. Vercel's Hobby plan allows
-   * two scheduled jobs and both are taken, so rather than leave the comped
+  /* The expiry reminders ride along on this run. Vercel's Hobby plan allowed
+   * two scheduled jobs and both were taken, so rather than leave the comped
    * early adopters to find out by losing access, the daily job does both.
    * It runs last and swallows its own errors — a problem mailing expiry
    * notices must not turn a successful setup-reminder run into a 500 that
-   * Vercel retries, re-sending nothing but logging alarm. */
+   * the cron Worker reports as failed, re-sending nothing but logging alarm. */
   let premiumExpiry = null;
   try {
     premiumExpiry = await require('./premium-expiry').run({ supabaseAdmin, resendKey });

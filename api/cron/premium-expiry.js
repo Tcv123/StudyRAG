@@ -9,8 +9,8 @@
  * Who qualifies is decided in Postgres — see
  * db/migrations/2026-10-07-premium-expiry-reminders.sql. Apply that first.
  *
- * NOT ITS OWN CRON. Vercel's Hobby plan allows two scheduled jobs and both
- * are spoken for (setup-reminder, exam-timetable-check), so the daily
+ * NOT ITS OWN CRON. Vercel's Hobby plan allowed two scheduled jobs and both
+ * were spoken for (setup-reminder, exam-timetable-check), so the daily
  * setup-reminder run calls run() here when it finishes. This file is still a
  * handler in its own right, which is what makes the dry run and the preview
  * below possible without waiting for 4pm.
@@ -95,7 +95,7 @@ async function run({ supabaseAdmin, resendKey, limit = DAILY_CAP, dryRun = false
       });
       sent++;
     } catch (err) {
-      // User id, never the email — Vercel logs are not the place for addresses.
+      // User id, never the email — server logs are not the place for addresses.
       console.error('[premium-expiry] send failed for', user.user_id, err.message);
       await supabaseAdmin.rpc('fail_premium_expiry_reminder', {
         p_user_id: user.user_id,

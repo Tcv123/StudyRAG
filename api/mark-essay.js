@@ -5,7 +5,7 @@
  * The API key MUST stay server-side; if it shipped in the browser, anyone
  * could extract it and burn through the daily quota.
  *
- * Required Vercel environment variables:
+ * Required environment variables (Cloudflare Pages settings):
  *   GROQ_API_KEY              — from https://console.groq.com/keys (free)
  *   SUPABASE_URL              — your project's API URL
  *   SUPABASE_SERVICE_ROLE_KEY — service role secret
@@ -23,9 +23,9 @@ const { bandsFor, rubricRules, renderBands } = require('./_mark-bands');
 let groq = null;
 let supabaseAdmin = null;
 function initClients() {
-  if (!process.env.GROQ_API_KEY)              return { code: 502, body: { error: 'groq_api_key_missing',  message: 'GROQ_API_KEY env var is not set on Vercel.' } };
-  if (!process.env.SUPABASE_URL)              return { code: 502, body: { error: 'supabase_url_missing',    message: 'SUPABASE_URL env var is not set on Vercel.' } };
-  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) return { code: 502, body: { error: 'supabase_key_missing',    message: 'SUPABASE_SERVICE_ROLE_KEY env var is not set on Vercel.' } };
+  if (!process.env.GROQ_API_KEY)              return { code: 502, body: { error: 'groq_api_key_missing',  message: 'GROQ_API_KEY env var is not set on Cloudflare.' } };
+  if (!process.env.SUPABASE_URL)              return { code: 502, body: { error: 'supabase_url_missing',    message: 'SUPABASE_URL env var is not set on Cloudflare.' } };
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) return { code: 502, body: { error: 'supabase_key_missing',    message: 'SUPABASE_SERVICE_ROLE_KEY env var is not set on Cloudflare.' } };
   if (!groq) groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
   if (!supabaseAdmin) {
     supabaseAdmin = createClient(

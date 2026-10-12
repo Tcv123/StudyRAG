@@ -112,7 +112,7 @@
 
   function render(classes, isTeacher) {
     const here = (location.pathname.split('/').pop() || '').toLowerCase()
-                   .replace(/\.html$/, '');        // Vercel cleanUrls drops .html
+                   .replace(/\.html$/, '');        // clean URLs drop .html
     const currentId = here === 'class'
       ? new URLSearchParams(location.search).get('id') : null;
 
@@ -207,7 +207,7 @@
 
   function redirectIfStudentPage() {
     const here = (location.pathname.split('/').pop() || '').toLowerCase()
-                   .replace(/\.html$/, '');        // Vercel cleanUrls drops .html
+                   .replace(/\.html$/, '');        // clean URLs drop .html
     if (!STUDENT_ONLY.includes(here)) return false;
     location.replace(BASE + 'teacher.html');
     return true;

@@ -4,7 +4,7 @@
  * Uses Resend (https://resend.com) — free tier: 100 emails/day, 3000/month.
  * No npm package needed; it's a plain HTTP POST.
  *
- * Required Vercel environment variable:
+ * Required environment variable (Cloudflare Pages settings):
  *   RESEND_API_KEY  — from https://resend.com/api-keys (free account)
  *
  * The "from" address must be a domain you've verified in Resend.
@@ -29,7 +29,6 @@ const CONTACT_INBOX = process.env.CONTACT_INBOX || 'TChandranivasan@raglearning.
 const ALLOWED_ORIGINS = [
   'https://www.raglearning.uk',
   'https://raglearning.uk',
-  'https://raglearning.vercel.app',
   'https://raglearning.pages.dev',
 ];
 

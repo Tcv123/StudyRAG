@@ -1,8 +1,8 @@
 /**
  * Automatic import of a board's summer timetable PDF into exam_dates.
  *
- * Used by api/cron/exam-timetable-check.js. Vercel does not route files in
- * api/ whose name begins with `_`, so this is a plain module.
+ * Used by api/cron/exam-timetable-check.js. functions/api/[[path]].js does not route files in
+ * whose name begins with `_`, so this is a plain module.
  *
  * WHY THIS IS SAFE TO AUTOMATE WHEN THE OLD PARSER WAS NOT
  * ────────────────────────────────────────────────────────

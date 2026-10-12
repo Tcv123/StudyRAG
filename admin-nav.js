@@ -148,7 +148,7 @@
     if (document.getElementById(SECTION_ID)) return;    // already there
 
     const here   = (location.pathname.split('/').pop() || '').toLowerCase()
-                     .replace(/\.html$/, '');           // Vercel cleanUrls drops .html
+                     .replace(/\.html$/, '');           // clean URLs drop .html
 
     const section = document.createElement('div');
     section.className = 'nav-section';

@@ -120,7 +120,7 @@
     const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
     // Detect the current page so we can mark the matching Pro link active.
-    // Vercel cleanUrls strips ".html" from URLs (e.g. /test-history not
+    // Clean URLs strip ".html" from URLs (e.g. /test-history not
     // /test-history.html), so normalise both sides before comparing.
     const stripExt = s => s.toLowerCase().replace(/\.html$/, '');
     const currentFile = stripExt(window.location.pathname.split('/').pop() || '');

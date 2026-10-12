@@ -1,9 +1,9 @@
 /**
  * Calls the site's cron endpoints on schedule. The work itself still happens
  * in api/cron/*.js on the Pages site; this only knocks on the door with the
- * same `Authorization: Bearer <CRON_SECRET>` Vercel's scheduler sent.
+ * `Authorization: Bearer <CRON_SECRET>` header those endpoints require.
  *
- * Times are UTC, matching the old vercel.json crons.
+ * Times are UTC.
  */
 const JOBS = {
   '0 16 * * *': '/api/cron/setup-reminder',

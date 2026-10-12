@@ -15,7 +15,7 @@
  * endpoint to repoint. Three consequences, all handled here:
  *
  *   1. The model list is ONE definition, read from env (`GROQ_MODEL`), so
- *      repointing it is a Vercel env edit rather than a deploy — and it cannot
+ *      repointing it is a Cloudflare env edit rather than a deploy — and it cannot
  *      half-land, where two endpoints get patched and the third is forgotten.
  *   2. `createCompletion` walks a fallback chain. A model the key cannot reach
  *      is skipped rather than fatal, so losing access to one model degrades
@@ -24,7 +24,7 @@
  *      404/model problem reads as `model_unavailable` instead of being
  *      swallowed by the catch-all 500.
  *
- * Vercel does not route files in `api/` whose name begins with `_`, so this is
+ * functions/api/[[path]].js does not route files whose name begins with `_`, so this is
  * a plain module, not an endpoint.
  */
 

@@ -1,5 +1,5 @@
 /**
- * Exam timetable watch — runs every Monday morning from a Vercel cron.
+ * Exam timetable watch — runs every Monday morning from the cron Worker (cron-worker/).
  *
  * Opens each board's timetable page, reads every summer timetable document
  * it has not seen before, imports the dates it can verify, records each
@@ -29,8 +29,8 @@
  * (by content hash) on a board's timetable page. Re-issued amendments have
  * new bytes, so they are re-read and the dates updated.
  *
- * Required Vercel environment variables:
- *   CRON_SECRET                — same secret setup-reminder.js uses. Vercel
+ * Required environment variables (Cloudflare Pages settings):
+ *   CRON_SECRET                — same secret setup-reminder.js uses. The cron Worker
  *                                sends it as `Authorization: Bearer <secret>`.
  *                                Unset means this endpoint refuses to run.
  *   SUPABASE_URL               — already set
@@ -62,8 +62,8 @@ const { createClient } = require('@supabase/supabase-js');
 const { parseDelimited } = require('../../exam-timetable-parse.js');
 const { extractFromPdf } = require('../_exam-timetable-auto.js');
 
-/* Four board pages, each fetched once. Vercel gives this function 60s
- * (vercel.json); a slow board should cost us one source, not the run. */
+/* Four board pages, each fetched once. Vercel gave this function 60s
+ * and it still budgets for that; a slow board should cost us one source, not the run. */
 const FETCH_TIMEOUT_MS = 12000;
 
 /* Boards serve the same public page to a browser and to us, but a request
@@ -82,7 +82,7 @@ const MAX_DOC_BYTES = 12 * 1024 * 1024;
 const TIMETABLE_WORDS = /timetable|exam\s*dates|examination\s*dates/i;
 const DOC_EXTENSION   = /\.(pdf|xlsx|xls|csv)(\?|#|$)/i;
 
-/* Leave this much of Vercel's 60s for the database writes and the email.
+/* Leave this much of the 60s budget for the database writes and the email.
  * A document not reached this run is not recorded, so the next run reads
  * it — running out of time costs a week, never a document. Checked before
  * each document is read AND before its dates are written, so a slow one
@@ -301,7 +301,7 @@ async function processDocument(supabaseAdmin, source, { link, bytes, error }, { 
 
   /* Reading took us past the budget: stop before writing anything, so the
    * document is read again from the start next run instead of being left
-   * half-imported when Vercel kills the function. */
+   * half-imported if the host kills the function. */
   if (!dryRun && Date.now() - startedAt > TIME_BUDGET_MS + 10000) {
     return { ...doc, status: 'deferred', note: 'Out of time after reading — will be imported next run.' };
   }
@@ -760,7 +760,7 @@ async function fetchBytes(url) {
 
 function withTimeout(url) {
   /* AbortSignal.timeout would be tidier but is not on every Node runtime
-   * Vercel might give us; an explicit controller works everywhere. */
+   * the host might give us; an explicit controller works everywhere. */
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
   return fetch(url, {
