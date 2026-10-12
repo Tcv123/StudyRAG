@@ -44,12 +44,15 @@ export async function onRequest(context) {
   const load = ROUTES[route];
   if (!load) return Response.json({ error: 'not_found' }, { status: 404 });
 
-  const mod = load();
-  const handler = typeof mod === 'function' ? mod : mod.default;
-  const req = await toNodeRequest(request, mod.config?.api?.bodyParser === false);
   const res = new ResponseCollector();
 
   try {
+    /* Inside the try: a handler builds its Stripe and Supabase clients when
+     * it loads, and a missing variable makes that throw. Without this the
+     * caller gets Cloudflare's bare "error code: 1101" page. */
+    const mod = load();
+    const handler = typeof mod === 'function' ? mod : mod.default;
+    const req = await toNodeRequest(request, mod.config?.api?.bodyParser === false);
     await handler(req, res);
   } catch (err) {
     console.error(`[api/${route}] unhandled error:`, err);
