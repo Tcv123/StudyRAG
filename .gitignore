@@ -26,3 +26,4 @@ dev-fake-backend.js
 dist/
 .dev.vars
 .wrangler/
+.vercel

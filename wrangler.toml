@@ -5,3 +5,10 @@ pages_build_output_dir = "dist"
 compatibility_date = "2025-09-01"
 # Buffer, crypto and process.env for the api/ handlers and their npm packages.
 compatibility_flags = ["nodejs_compat"]
+
+# Plain (non-secret) settings for the /api functions. Secret keys are set in
+# the Pages dashboard under Settings -> Variables and secrets, never here:
+# this repo is public.
+[vars]
+# Already public: the pages use it in supabase-config.js.
+SUPABASE_URL = "https://tfpnagnjnzmlgbnqeiwr.supabase.co"
