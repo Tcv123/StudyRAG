@@ -47388,7 +47388,7 @@ window.findPaper = function (id) {
 
 // Questions and mark schemes are ~9 MB of this file, so the Cloudflare build
 // (scripts/split-papers-config.js) moves each paper's into its own
-// papers-data/<id>.json and leaves `details` (that file's path) and
+// papers-data/<id>.<hash>.json and leaves `details` (that file's path) and
 // `partCount` on the paper. A page must await this before reading a paper's
 // questions or markSchemes. Papers that still carry them — as when the site
 // is served straight from the repo — resolve at once.

@@ -1,0 +1,12 @@
+# Cloudflare Pages response headers. Copied into dist/ by the build.
+#
+# Both folders hold files whose URL changes whenever their content does
+# (scripts/fingerprint-assets.js and scripts/split-papers-config.js), so
+# browsers can keep them without ever asking the server again. Everything
+# else keeps Pages' default of checking for a newer copy on each load.
+
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/papers-data/*
+  Cache-Control: public, max-age=31536000, immutable

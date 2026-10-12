@@ -4,12 +4,13 @@
  * The repo's papers-config.js is ~10 MB, nearly all of it each paper's
  * `questions` and `markSchemes`. Four pages load it, and three of them only
  * need the paper list. So the deployed copy keeps the list (~200 KB) and each
- * paper's questions + mark schemes move to dist/papers-data/<id>.json, which
+ * paper's questions + mark schemes move to dist/papers-data/<id>.<hash>.json, which
  * window.loadPaperDetails fetches on demand. Each paper left behind gets
  * `details` (that file's path) and `partCount` (what paperParts would return).
  *
  * The repo copy is untouched: edit papers-config.js as before.
  */
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
@@ -43,8 +44,11 @@ function splitPapersConfig(outDir) {
           if (paper[f]) data[f] = paper[f];
           delete paper[f];
         }
-        const rel = `${DATA_DIR}/${paper.id}.json`;
-        fs.writeFileSync(path.join(outDir, rel), JSON.stringify(data));
+        const json = JSON.stringify(data);
+        // Content hash in the name: _headers lets browsers cache these forever.
+        const hash = crypto.createHash('sha256').update(json).digest('hex').slice(0, 10);
+        const rel = `${DATA_DIR}/${paper.id}.${hash}.json`;
+        fs.writeFileSync(path.join(outDir, rel), json);
         paper.details = rel;
         paper.partCount = partCount;
         split++;
