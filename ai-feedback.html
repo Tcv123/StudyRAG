@@ -319,6 +319,15 @@
   const { data: userSubjects } = await supabaseClient
     .from('user_subjects').select('*').eq('user_id', user.id).order('created_at');
 
+  // papersFor (below) reads each paper's questions, which the deployed
+  // papers-config.js leaves out until loaded. Fetch them for the student's
+  // own subjects and boards only — the subject picker offers nothing else.
+  await window.loadPaperDetails((userSubjects || []).flatMap(row => {
+    const sub = (window.SUBJECTS || []).find(s => s.name === row.subject);
+    const b = sub && (sub.boards || []).find(x => normBoard(x.board) === normBoard(row.exam_board));
+    return (b && b.papers) || [];
+  }));
+
   // Some subjects (historically Maths & Further Maths) have no AI question
   // bank — they were print-only past-paper subjects. But a subject is still
   // useful here the moment it gains *attemptable* past papers (the Past papers
@@ -543,7 +552,7 @@
     const problems = [];
     (window.SUBJECTS || []).forEach(s => {
       (s.boards || []).forEach(b => {
-        const hasAttemptable = (b.papers || []).some(p => Array.isArray(p.questions) && p.questions.length);
+        const hasAttemptable = (b.papers || []).some(p => window.paperPartCount(p) > 0);
         if (!hasAttemptable) return; // nothing this page would surface
         const offered = pickerBoards[s.name] || [];
         const ok = offered.some(pb => normBoard(pb) === normBoard(b.board));

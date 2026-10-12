@@ -248,7 +248,7 @@
   // Same test paper-attempt.html uses to offer "Work through it question by
   // question", so the badge here can never promise a mode the paper lacks.
   function hasQbq(p) {
-    return !p.printOnly && typeof window.paperParts === 'function' && window.paperParts(p).length > 0;
+    return !p.printOnly && typeof window.paperPartCount === 'function' && window.paperPartCount(p) > 0;
   }
 
   function boardBlockHtml(board, openByDefault) {

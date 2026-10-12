@@ -479,6 +479,10 @@
       return;
     }
 
+    // The deployed papers-config.js leaves questions and mark schemes out
+    // until a page asks for them.
+    await window.loadPaperDetails([paper]);
+
     document.getElementById('paperTitle').textContent =
       `${paper.subject} · ${paper.board} · ${paper.year}`;
     document.getElementById('paperSub').textContent = paper.paperName;

@@ -47386,6 +47386,44 @@ window.findPaper = function (id) {
   return (window.PAPERS || []).find(p => p.id === id) || null;
 };
 
+// Questions and mark schemes are ~9 MB of this file, so the Cloudflare build
+// (scripts/split-papers-config.js) moves each paper's into its own
+// papers-data/<id>.json and leaves `details` (that file's path) and
+// `partCount` on the paper. A page must await this before reading a paper's
+// questions or markSchemes. Papers that still carry them — as when the site
+// is served straight from the repo — resolve at once.
+const paperDetailRequests = {};
+window.loadPaperDetails = function (papers) {
+  return Promise.all((papers || []).map(paper => {
+    if (!paper || !paper.details) return null;
+    const id = paper.id;
+    if (!paperDetailRequests[id]) {
+      paperDetailRequests[id] = fetch(paper.details)
+        .then(r => {
+          if (!r.ok) throw new Error(`${r.status} fetching ${paper.details}`);
+          return r.json();
+        })
+        .then(data => {
+          // SUBJECTS and PAPERS hold separate copies of each paper; fill both.
+          const copies = window.SUBJECTS.flatMap(s => s.boards.flatMap(b => b.papers || []))
+            .concat(window.PAPERS)
+            .filter(p => p.id === id);
+          copies.forEach(p => { Object.assign(p, data); delete p.details; });
+        })
+        .catch(err => {
+          delete paperDetailRequests[id]; // let a later call retry
+          console.warn('[papers-config] Paper details failed to load:', err);
+        });
+    }
+    return paperDetailRequests[id];
+  }));
+};
+
+// Leaf-part count without needing the questions loaded.
+window.paperPartCount = function (paper) {
+  return paper.details ? (paper.partCount || 0) : window.paperParts(paper).length;
+};
+
 // Flat list of leaf parts for a paper, for the qbq stepper. Each part is
 // augmented with its question's scenario/figures and (if present in the
 // paper's markSchemes map) the official mark-scheme criteria.

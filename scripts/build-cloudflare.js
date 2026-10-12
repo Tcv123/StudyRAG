@@ -17,6 +17,7 @@
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const { splitPapersConfig } = require('./split-papers-config');
 
 const ROOT = path.resolve(__dirname, '..');
 const OUT = path.join(ROOT, 'dist');
@@ -46,3 +47,5 @@ for (const file of files) {
 }
 
 console.log(`build-cloudflare: copied ${copied} files to dist/`);
+
+splitPapersConfig(OUT);
