@@ -2189,67 +2189,81 @@ window.MATHS_MODEL_ANSWERS = {
 
 
 
- "math-aqa-7357-2024-p3::1": "Assume for contradiction that √3 is rational. Then √3 = p/q where p, q are integers with no common factors (in lowest terms).\nSquaring: 3 = p²/q², so p² = 3q².\nHence 3 | p², which implies 3 | p (since 3 is prime). Write p = 3k.\nThen 9k² = 3q², so q² = 3k², meaning 3 | q.\nBut then p and q are both divisible by 3, contradicting the assumption that they share no common factors.\nTherefore √3 is irrational. ∎",
+ "math-aqa-7357-2024-p3::1": "For a geometric series to converge, the common ratio r must satisfy |r| < 1.\n0.1 + 0.2 + 0.4 + 0.8 + …: r = 2, so |r| > 1 (diverges).\n1 − 1 + 1 − 1 + …: r = −1, so |r| = 1 (does not converge).\n128 − 64 + 32 − 16 + …: r = −64/128 = −½, so |r| = ½ < 1 (converges).\n1 + 2 + 4 + 8 + …: r = 2, so |r| > 1 (diverges).\nAnswer: 128 − 64 + 32 − 16 + … (the third box)\n(Its sum to infinity is 128/(1 − (−½)) = 256/3.)",
+ "math-aqa-7357-2024-p3::2": "A quadratic has one repeated real root when its discriminant is zero.\nb² − 4ac = 0 with a = 4, c = 9:\nb² − 4 × 4 × 9 = 0\nb² = 144\nb = ±12\nAnswer: b = ±12 (the second option)",
+ "math-aqa-7357-2024-p3::3": "For a > 0, aˣ > 0 for every real x, so the graph of y = aˣ always lies entirely above the x-axis.\nThe first graph is possible (a > 1, increasing), the second is possible (0 < a < 1, decreasing), and the fourth is possible (a = 1 gives the horizontal line y = 1).\nThe third graph lies entirely below the x-axis (y < 0 for all x), so it cannot have an equation of the form y = aˣ.\nAnswer: the third graph (the curve below the x-axis)",
+ "math-aqa-7357-2024-p3::4": "y = x⁴ + 2ˣ\nd/dx(x⁴) = 4x³\nd/dx(aˣ) = aˣ ln a, so d/dx(2ˣ) = 2ˣ ln 2\ndy/dx = 4x³ + 2ˣ ln 2",
+ "math-aqa-7357-2024-p3::5": "Area of sector OAB = ½r²θ = ½ × 18² × π/6 = 324π/12 = 27π\nArea of triangle OAB = ½ab sin C = ½ × 18 × 18 × sin(π/6) = 162 × ½ = 81\nArea of shaded segment = sector − triangle\n= 27π − 81\n= 27(π − 3) cm²\nSo the area is k(π − 3) cm² with k = 27.",
+ "math-aqa-7357-2024-p3::6(a)": "Write 5/√x = 5x^(−1/2), so\n∫(6x² − 5/√x) dx = ∫(6x² − 5x^(−1/2)) dx\n= 6x³/3 − 5x^(1/2)/(1/2) + c\n= 2x³ − 10x^(1/2) + c",
+ "math-aqa-7357-2024-p3::6(b)": "Integrating dy/dx (using part (a)):\ny = 2x³ − 10x^(1/2) + c\nThe curve passes through (4, 90):\n90 = 2 × 4³ − 10 × 4^(1/2) + c\n90 = 128 − 20 + c\nc = −18\nEquation of the curve: y = 2x³ − 10x^(1/2) − 18 (that is, y = 2x³ − 10√x − 18)",
+ "math-aqa-7357-2024-p3::7(a)": "The region R must satisfy three conditions:\n• y ≤ 2 + 3x − 2x²: on or below the parabola;\n• x + y ≥ 1: on or above the line x + y = 1;\n• y ≥ 0: on or above the x-axis.\nThe parabola meets the x-axis where 2x² − 3x − 2 = 0, i.e. (2x + 1)(x − 2) = 0, so at x = −½ and x = 2. The line meets the x-axis at (1, 0), and A lies above the x-axis.\nSo R is the region bounded above by the arc of the parabola from A, over the top of the curve, down to (2, 0); below by the line x + y = 1 from A down to (1, 0); and then by the x-axis from (1, 0) to (2, 0).\nShade this region and label it R.\nThe part between the parabola and the line that lies below the x-axis (down towards B) is not included, because there y < 0.",
+ "math-aqa-7357-2024-p3::7(b)": "At the intersection points, y = 1 − x and y = 2 + 3x − 2x²:\n1 − x = 2 + 3x − 2x²\n2x² − 4x − 1 = 0\nx = [4 ± √(16 + 8)]/4 = (4 ± 2√6)/4 = (2 ± √6)/2\nA has x < 0 (B is the other point), so\nx = (2 − √6)/2 (≈ −0.225)\ny = 1 − x = 1 − (2 − √6)/2 = √6/2 (≈ 1.22)\nA = ((2 − √6)/2, √6/2)",
+ "math-aqa-7357-2024-p3::8(a)": "Initially t = 0, and the oven is at room temperature:\nθ = 20(11 − 10e⁰) = 20(11 − 10) = 20\nRoom temperature = 20 °C",
+ "math-aqa-7357-2024-p3::8(b)": "Since k > 0, as t becomes large, e^(−kt) → 0.\nSo θ → 20(11 − 10 × 0) = 220.\nT = 220 (the maximum temperature is 220 °C)",
+ "math-aqa-7357-2024-p3::8(c)(i)": "When t = 1, θ = 86:\n86 = 20(11 − 10e^(−k))\n4.3 = 11 − 10e^(−k)\n10e^(−k) = 6.7\ne^(−k) = 0.67\nk = −ln 0.67 = 0.40047…\nk = 0.4 (to 1 s.f.)",
+ "math-aqa-7357-2024-p3::8(c)(ii)": "Within 1 °C of the maximum means θ = T − 1 = 219, using k = 0.4:\n219 = 20(11 − 10e^(−0.4t))\n10.95 = 11 − 10e^(−0.4t)\n10e^(−0.4t) = 0.05\ne^(−0.4t) = 0.005\n−0.4t = ln 0.005\nt = ln 200 / 0.4 = 13.24…\nIt takes about 13.2 minutes.\n(Using the unrounded k = −ln 0.67 gives t ≈ 13.23 minutes, which also rounds to 13.2.)",
+ "math-aqa-7357-2024-p3::9(a)": "x² + y² = 12y − 8x − 27\nx² + 8x + y² − 12y = −27\nComplete the square in x and in y:\n(x + 4)² − 16 + (y − 6)² − 36 = −27\n(x + 4)² + (y − 6)² = 25\nSo a = −4, b = 6, k = 25.",
+ "math-aqa-7357-2024-p3::9(b)": "From (x + 4)² + (y − 6)² = 25, the centre is P(−4, 6).",
+ "math-aqa-7357-2024-p3::9(c)": "Q lies on the y-axis, so substitute x = 0 into (x + 4)² + (y − 6)² = 25:\n16 + (y − 6)² = 25\n(y − 6)² = 9\ny² − 12y + 27 = 0\n(y − 3)(y − 9) = 0\ny = 3 or y = 9\nQ is the upper intersection with the y-axis (Figure 1), so the y-coordinate of Q is 9.",
+ "math-aqa-7357-2024-p3::9(d)": "P = (−4, 6), Q = (0, 9), R = (9, −3).\nQR is a tangent at Q, so it is perpendicular to the radius PQ: angle PQR = 90°.\nPQ = radius = 5\nPR = √[(9 − (−4))² + (−3 − 6)²] = √(169 + 81) = √250 = 5√10\nIn right-angled triangle PQR:\ncos QPR = PQ/PR = 5/(5√10) = 1/√10\nQPR = cos⁻¹(1/√10) = 1.2490… rad\nAngle QPR = 1.25 radians (3 s.f.)\n(Check: QR = √(9² + 12²) = 15, and tan QPR = 15/5 = 3 gives the same angle.)",
+ "math-aqa-7357-2024-p3::10": "f(x) = 5x³ + x\nf′(x) = lim (h → 0) [f(x + h) − f(x)]/h\nf(x + h) − f(x) = 5(x + h)³ + (x + h) − (5x³ + x)\nExpand (x + h)³ = x³ + 3x²h + 3xh² + h³:\n= 5(x³ + 3x²h + 3xh² + h³) + x + h − 5x³ − x\n= 5x³ + 15x²h + 15xh² + 5h³ + h − 5x³\n= 15x²h + 15xh² + 5h³ + h\nDivide by h (h ≠ 0):\n[f(x + h) − f(x)]/h = 15x² + 15xh + 5h² + 1\nAs h → 0, 15xh → 0 and 5h² → 0, so\nf′(x) = lim (h → 0) (15x² + 15xh + 5h² + 1) = 15x² + 1\nHence f′(x) = 15x² + 1, as required.",
+ "math-aqa-7357-2024-p3::11": "Where C meets the x-axis: (x² − 8x) ln x = 0, i.e. x(x − 8) ln x = 0.\nSince x > 0, x ≠ 0, so either x = 8 or ln x = 0, which gives x = 1.\nSo R lies between x = 1 and x = 8.\nLet I = ∫₁⁸ (x² − 8x) ln x dx.\nIntegrate by parts with u = ln x and dv/dx = x² − 8x:\ndu/dx = 1/x and v = x³/3 − 4x²\n∫(x² − 8x) ln x dx = (x³/3 − 4x²) ln x − ∫(x³/3 − 4x²)(1/x) dx\n= (x³/3 − 4x²) ln x − ∫(x²/3 − 4x) dx\n= (x³/3 − 4x²) ln x − (x³/9 − 2x²)\nAt x = 8: (512/3 − 256) ln 8 − (512/9 − 128) = −(256/3) ln 8 + 640/9 = −256 ln 2 + 640/9 (since ln 8 = 3 ln 2)\nAt x = 1: (1/3 − 4) ln 1 − (1/9 − 2) = 0 + 17/9 = 17/9\nI = (−256 ln 2 + 640/9) − 17/9 = 623/9 − 256 ln 2 (≈ −108.2)\nI is negative because R lies below the x-axis, so\nArea of R = −I = −623/9 + 256 ln 2 (≈ 108.2)\nThis is p + q ln 2 with p = −623/9 and q = 256.",
+ "math-aqa-7357-2024-p3::12": "n = 84. Cumulative frequencies:\n0: 1, 1: 5, 2: 23, 3: 39, 4: 44, 5: 81, 6: 83, 7: 84\nLower quartile: the ¼ × 84 = 21st value. The 6th to 23rd values are 2, so Q₁ = 2.\nUpper quartile: the ¾ × 84 = 63rd value. The 45th to 81st values are 5, so Q₃ = 5.\nInterquartile range = Q₃ − Q₁ = 5 − 2 = 3\nAnswer: 3 (the first option)",
+ "math-aqa-7357-2024-p3::13": "(A ∪ C) ∩ B is the part of B that is also in A or in C:\n(A ∪ C) ∩ B = (A ∩ B) ∪ (B ∩ C)\nSo the shading must be exactly the overlap of A with B together with the overlap of B with C (including the centre region common to all three).\nThe top-left diagram shades A ∪ C and the top-right shades B ∪ C, which are too large. The bottom-right diagram shades (A ∩ B) ∪ (A ∩ C), which includes part of A ∩ C outside B.\nAnswer: the bottom-left diagram",
+ "math-aqa-7357-2024-p3::14(a)": "Mean = Σx/n = 945 000/350 = 2700\nThe mean annual energy cost is £2700.",
+ "math-aqa-7357-2024-p3::14(b)": "Standard deviation = √(Σx²/n − x̄²)\n= √(2 607 500 000/350 − 2700²)\n= √(7 450 000 − 7 290 000)\n= √160 000\n= 400\nThe standard deviation is £400.",
+ "math-aqa-7357-2024-p3::14(c)": "Village A: mean £2700, standard deviation £400\nVillage B: mean £3100, standard deviation £325\nSince 2700 < 3100, on average the annual cost of energy in 2021 was lower for households in Village A than in Village B.\nSince 400 > 325, the annual cost of energy varied more (was more spread out) for households in Village A than in Village B.",
+ "math-aqa-7357-2024-p3::15(a)": "For X ~ B(n, p), E(X) = np.\nE(X) = 48 × 0.175 = 8.4",
+ "math-aqa-7357-2024-p3::15(b)": "For X ~ B(n, p), Var(X) = np(1 − p).\nVar(X) = 48 × 0.175 × (1 − 0.175) = 48 × 0.175 × 0.825 = 6.93, as required.",
+ "math-aqa-7357-2024-p3::15(c)": "P(X < 10) = P(X ≤ 9)\nUsing the binomial cumulative distribution function with n = 48, p = 0.175:\nP(X ≤ 9) = 0.6742 (4 d.p.)",
+ "math-aqa-7357-2024-p3::15(d)": "P(X ≥ 6) = 1 − P(X ≤ 5)\nP(X ≤ 5) = 0.1325 (from the binomial cumulative distribution function)\nP(X ≥ 6) = 1 − 0.1325 = 0.8675",
+ "math-aqa-7357-2024-p3::15(e)": "P(9 ≤ X ≤ 15) = P(X ≤ 15) − P(X ≤ 8)\nP(X ≤ 15) = 0.9940 and P(X ≤ 8) = 0.5317\nP(9 ≤ X ≤ 15) = 0.9940 − 0.5317 = 0.4623",
+ "math-aqa-7357-2024-p3::15(f)": "Comment 1: The model has suitable values: there are 48 seats, matching n = 48, and the proportion of passengers travelling for business is 17.5%, matching p = 0.175.\nComment 2: However, the aeroplane may not be full on every flight, so the number of passengers may not be 48, and then n = 48 would not be appropriate.\n(Other valid comments: the proportion travelling on business may not stay at 0.175, for example at peak or holiday times; and passengers may book in groups, so whether passengers travel for business may not be independent.)",
+ "math-aqa-7357-2024-p3::16": "Let ρ be the population correlation coefficient between the amount of nicotine in the blood stream and energy level, in adults.\nH₀: ρ = 0\nH₁: ρ < 0\nOne-tailed test at the 2.5% level with n = 50: critical value = −0.2787 (reject H₀ if r < −0.2787).\nSample correlation coefficient r = −0.45\n−0.45 < −0.2787, so the result is in the critical region: reject H₀.\nThere is sufficient evidence at the 2.5% level to support the student's belief that, in adults, there is a negative correlation between the amount of nicotine in their blood stream and their energy level.",
+ "math-aqa-7357-2024-p3::17(a)": "The mean is 50, and a normal curve is symmetrical about its mean, so 50 is marked on the horizontal axis directly below the peak (vertex) of the curve.\nThe points of inflection of a normal curve are one standard deviation either side of the mean, at 50 ± 4. So 54 (= 50 + 4) is marked on the horizontal axis directly below the right-hand point of inflection, where the curve changes from bending downwards to bending upwards on the right-hand side.",
+ "math-aqa-7357-2024-p3::17(b)": "50 cm is the mean, and the normal distribution is symmetrical about its mean, so\nP(length < 50) = 0.5",
+ "math-aqa-7357-2024-p3::17(c)": "Let L cm be the length of a new-born baby, L ~ N(50, 4²).\nP(L > 56) = P(Z > (56 − 50)/4) = P(Z > 1.5)\n= 0.0668 (3 s.f.)",
+ "math-aqa-7357-2024-p3::17(d)": "Let L cm be the length, L ~ N(50, 4²).\nP(40 < L < 60) = P((40 − 50)/4 < Z < (60 − 50)/4) = P(−2.5 < Z < 2.5)\n= 0.9876 (4 d.p.)\n≈ 0.988",
+ "math-aqa-7357-2024-p3::17(e)": "Let L cm be the length, L ~ N(50, 4²). We need the length x with P(L > x) = 0.95, i.e. P(L < x) = 0.05.\nP(Z < z) = 0.05 gives z = −1.6449\n(x − 50)/4 = −1.6449\nx = 50 − 4 × 1.6449 = 43.42…\nThe length exceeded by 95% of new-born babies is 43.4 cm (3 s.f.).",
+ "math-aqa-7357-2024-p3::17(f)": "Let μ cm be the mean length of a new-born baby at the clinic in 2020.\nH₀: μ = 50\nH₁: μ > 50\nSignificance level 10%, one-tailed.\nSample mean: x̄ = 2060/40 = 51.5\nUnder H₀, the mean length L̄ of a random sample of 40 babies satisfies\nL̄ ~ N(50, 4²/40), i.e. N(50, 0.4), with standard deviation √0.4 = 0.6325\np-value: P(L̄ ≥ 51.5) = P(Z ≥ (51.5 − 50)/√0.4) = P(Z ≥ 2.372) = 0.0089\n0.0089 < 0.1, so reject H₀.\n(Equivalently: test statistic z = 2.37 > 1.2816; or critical value 50 + 1.2816 × 0.6325 = 50.81, and 51.5 > 50.81.)\nThere is sufficient evidence at the 10% level to suggest that the mean length of a new-born baby at the clinic in 2020 has increased compared to 2019.",
+ "math-aqa-7357-2024-p3::18(a)(i)": "P(G) = P(G ∩ H) + P(G ∩ H′) = 0.21 + 0.18 = 0.39",
+ "math-aqa-7357-2024-p3::18(a)(ii)": "P[(G ∩ H)′] = 1 − P(G ∩ H) = 1 − 0.21 = 0.79\n(Check: 0.18 + 0.07 + 0.54 = 0.79)",
+ "math-aqa-7357-2024-p3::18(a)(iii)": "P(G′) = 0.07 + 0.54 = 0.61\nP(H | G′) = P(H ∩ G′)/P(G′) = 0.07/0.61 = 7/61 (≈ 0.115)",
+ "math-aqa-7357-2024-p3::18(b)": "P(G) = 0.39 and P(H) = 0.21 + 0.07 = 0.28\nP(G) × P(H) = 0.39 × 0.28 = 0.1092\nP(G ∩ H) = 0.21\nSince P(G ∩ H) ≠ P(G) × P(H), G and H are not independent.",
+ "math-aqa-7357-2024-p3::19(a)(i)": "Let p be the proportion of diesel cars registered in 2022 with CO emissions less than 0.3 g/km.\nH₀: p = 0.8\nH₁: p ≠ 0.8\n(Two-tailed, because Talat is testing for a change in either direction.)",
+ "math-aqa-7357-2024-p3::19(a)(ii)": "Let X be the number of cars in the sample of 25 with CO emissions less than 0.3 g/km.\nUnder H₀, X ~ B(25, 0.8).\nTwo-tailed test at 10%, so allow up to 5% in each tail.\nLower tail:\nP(X ≤ 15) = 0.0173 < 0.05\nP(X ≤ 16) = 0.0468 < 0.05\nP(X ≤ 17) = 0.1091 > 0.05\nSo the lower tail of the critical region is X ≤ 16.\nUpper tail:\nP(X ≥ 23) = 0.0982 > 0.05\nP(X ≥ 24) = 0.0274 < 0.05\nP(X ≥ 25) = 0.0038 < 0.05\nSo the upper tail of the critical region is X ≥ 24.\nCritical region: X ≤ 16 or X ≥ 24",
+ "math-aqa-7357-2024-p3::19(a)(iii)": "18 is not in the critical region (X ≤ 16 or X ≥ 24), so do not reject H₀.\nThere is insufficient evidence at the 10% level to suggest that the proportion of diesel cars registered in 2022 with CO emissions less than 0.3 g/km has changed from 0.8.",
+ "math-aqa-7357-2024-p3::19(b)": "Reason 1: No diesel cars in the Large Data Set have CO emissions of more than 0.5 g/km, so the Large Data Set does not give a usable proportion to compare against.\nReason 2: The Large Data Set only uses data from cars in some regions of England, not all of them (and only some makes of car and only two years), so it is not representative of diesel cars in England as a whole.\n(Another valid reason: CO emission values are missing for some diesel cars in the Large Data Set.)",
 
- "math-aqa-7357-2024-p3::2(a)": "a · b = (2)(1) + (−1)(4) + (3)(−2)\n= 2 − 4 − 6\n= −8.",
 
- "math-aqa-7357-2024-p3::2(b)": "Compute a × b using the determinant:\na × b = |i   j   k |\n        |2  −1   3 |\n        |1   4  −2 |\n\ni component: (−1)(−2) − (3)(4) = 2 − 12 = −10\nj component: −[(2)(−2) − (3)(1)] = −(−4 − 3) = 7\nk component: (2)(4) − (−1)(1) = 8 + 1 = 9\n\nSo a × b = −10i + 7j + 9k.\n|a × b| = √(100 + 49 + 81) = √230.",
 
- "math-aqa-7357-2024-p3::3(a)": "y = x³ e^(−2x). Apply the product rule with u = x³ and v = e^(−2x):\nu′ = 3x², v′ = −2e^(−2x).\ndy/dx = 3x² e^(−2x) + x³(−2e^(−2x))\n= e^(−2x)(3x² − 2x³)\n= x²e^(−2x)(3 − 2x).",
 
- "math-aqa-7357-2024-p3::3(b)": "Set dy/dx = 0:\nx²e^(−2x)(3 − 2x) = 0.\nSince e^(−2x) > 0 for all x, we need x² = 0 or 3 − 2x = 0.\nx = 0  or  x = 3/2.",
 
- "math-aqa-7357-2024-p3::3(c)": "Use sign analysis of dy/dx = x²e^(−2x)(3 − 2x).\n\nAt x = 0: x² = 0 but check values either side — dy/dx ≥ 0 on both sides (since x² ≥ 0 and 3 − 2x > 0 near 0). The sign does not change, so x = 0 is a point of inflection.\n\nAt x = 3/2:\n— For x slightly less than 3/2: (3 − 2x) > 0 ⇒ dy/dx > 0.\n— For x slightly greater than 3/2: (3 − 2x) < 0 ⇒ dy/dx < 0.\nSign changes from + to −, so x = 3/2 is a local maximum.\nMaximum value: y = (3/2)³ e^(−3) = (27/8)e^(−3).",
 
- "math-aqa-7357-2024-p3::4(a)": "Differentiate x² + 3xy + y² = 11 implicitly with respect to x:\n2x + 3y + 3x(dy/dx) + 2y(dy/dx) = 0.\nCollect dy/dx terms:\ndy/dx(3x + 2y) = −2x − 3y.\ndy/dx = −(2x + 3y)/(3x + 2y).",
 
- "math-aqa-7357-2024-p3::4(b)": "At (1, 2): dy/dx = −(2(1) + 3(2))/(3(1) + 2(2)) = −(2 + 6)/(3 + 4) = −8/7.\nTangent at (1, 2) with gradient −8/7:\ny − 2 = −(8/7)(x − 1)\n7y − 14 = −8x + 8\n8x + 7y = 22.",
 
- "math-aqa-7357-2024-p3::5": "Use the substitution x = 3 sin θ, so dx = 3 cos θ dθ.\n√(9 − x²) = √(9 − 9sin²θ) = 3 cos θ  (taking positive root since cos θ ≥ 0 for 0 ≤ θ ≤ π/6).\n\nChange limits: x = 0 ⇒ θ = 0;  x = 3/2 ⇒ sin θ = 1/2 ⇒ θ = π/6.\n\n∫₀^(3/2) √(9 − x²) dx = ∫₀^(π/6) 3 cos θ · 3 cos θ dθ = 9∫₀^(π/6) cos²θ dθ\n= (9/2)∫₀^(π/6) (1 + cos 2θ) dθ\n= (9/2)[θ + sin 2θ/2]₀^(π/6)\n= (9/2)[π/6 + sin(π/3)/2 − 0]\n= (9/2)[π/6 + (√3/2)/2]\n= (9/2)[π/6 + √3/4]\n= 3π/4 + 9√3/8.",
 
- "math-aqa-7357-2024-p3::6(a)": "Write (5x + 1)/((2x − 1)(x + 2)) ≡ A/(2x − 1) + B/(x + 2).\n5x + 1 = A(x + 2) + B(2x − 1).\n\nSubstitute x = 1/2: 5/2 + 1 = A(5/2) ⇒ 7/2 = 5A/2 ⇒ A = 7/5.\nSubstitute x = −2: −10 + 1 = B(−5) ⇒ B = 9/5.\n\nAnswer: 7/(5(2x − 1)) + 9/(5(x + 2)).",
 
- "math-aqa-7357-2024-p3::6(b)": "∫ (5x + 1)/((2x − 1)(x + 2)) dx = ∫ [7/(5(2x − 1)) + 9/(5(x + 2))] dx\n= (7/10) ln|2x − 1| + (9/5) ln|x + 2| + c.",
 
- "math-aqa-7357-2024-p3::7(a)": "Write 1/(y(1 − y)) = A/y + B/(1 − y).\n1 = A(1 − y) + By.\ny = 0: A = 1.  y = 1: B = 1.\nSo 1/(y(1 − y)) = 1/y + 1/(1 − y).\n\n∫ [1/y + 1/(1 − y)] dy = ln|y| − ln|1 − y| + c = ln|y/(1 − y)| + c. ∎",
 
- "math-aqa-7357-2024-p3::7(b)": "Separate variables: (1/(y(1 − y))) dy = 2 dx.\nIntegrate both sides: ln|y/(1 − y)| = 2x + C.\n\nApply initial condition y = 0.1 when x = 0:\nln(0.1/0.9) = C ⇒ C = ln(1/9).\n\nSo ln(y/(1 − y)) = 2x + ln(1/9).\nTake exponentials: y/(1 − y) = (1/9)e^(2x).\n\nSolve for y:\ny = (1/9)e^(2x)(1 − y)\ny + (y/9)e^(2x) = (1/9)e^(2x)\ny(1 + (1/9)e^(2x)) = (1/9)e^(2x)\ny = (1/9)e^(2x) / (1 + (1/9)e^(2x)) = e^(2x) / (9 + e^(2x)).",
 
- "math-aqa-7357-2024-p3::8(a)": "Let f(x) = x³ + 4x − 6.\nf(1) = 1 + 4 − 6 = −1 < 0.\nf(2) = 8 + 8 − 6 = 10 > 0.\nSince f is continuous (it is a polynomial) and f(1) < 0 < f(2), by the intermediate value theorem there is a root between x = 1 and x = 2.",
 
- "math-aqa-7357-2024-p3::8(b)": "f(x) = x³ + 4x − 6,  f′(x) = 3x² + 4.\nNewton-Raphson: x₁ = x₀ − f(x₀)/f′(x₀).\n\nAt x₀ = 1.2:\nf(1.2) = (1.2)³ + 4(1.2) − 6 = 1.728 + 4.8 − 6 = 0.528.\nf′(1.2) = 3(1.44) + 4 = 4.32 + 4 = 8.32.\nx₁ = 1.2 − 0.528/8.32 = 1.2 − 0.06346… ≈ 1.137.",
 
- "math-aqa-7357-2024-p3::9(a)": "Force diagram for the 3 kg particle on the 30° incline:\n— Weight W = 3g N acting vertically downward through the centre of mass.\n— Normal reaction N perpendicular to the inclined surface (pointing away from the surface).\n— Friction force F acting up the slope (opposing the tendency to slide down).",
 
- "math-aqa-7357-2024-p3::9(b)": "Resolve perpendicular to the plane:\nN = 3g cos 30° = 3g(√3/2).\n\nResolve parallel to the plane (particle on point of sliding down, so friction acts up):\nF = 3g sin 30° = 3g(1/2).\n\nOn the point of sliding, F = μN:\nμ = F/N = (3g/2) / (3g√3/2) = (3g/2) × (2/(3g√3)) = 1/√3. ∎",
 
- "math-aqa-7357-2024-p3::10(a)": "Resolve velocities: ux = 20 cos 40°,  uy = 20 sin 40° ≈ 12.856 m s⁻¹.\nAt maximum height the vertical velocity is zero; using vy² = uy² − 2gH:\n0 = (20 sin 40°)² − 2(9.8)H.\nH = (20 sin 40°)² / (2 × 9.8) = (12.856)² / 19.6 ≈ 165.27/19.6 ≈ 8.43 m.",
 
- "math-aqa-7357-2024-p3::10(b)": "Time to reach maximum height: t_up = uy/g = 12.856/9.8 ≈ 1.312 s.\nTotal time of flight: T = 2t_up ≈ 2.624 s.\nHorizontal component (constant): ux = 20 cos 40° ≈ 15.321 m s⁻¹.\nRange = ux × T ≈ 15.321 × 2.624 ≈ 40.2 m.",
 
- "math-aqa-7357-2024-p3::10(c)": "At t = 2 s:\nHorizontal velocity: vx = 20 cos 40° ≈ 15.321 m s⁻¹ (unchanged).\nVertical velocity: vy = 20 sin 40° − 9.8 × 2 = 12.856 − 19.6 = −6.744 m s⁻¹.\nSpeed = √(vx² + vy²) = √(15.321² + 6.744²) = √(234.73 + 45.48) = √280.21 ≈ 16.7 m s⁻¹.",
 
- "math-aqa-7357-2024-p3::11(a)": "a = dv/dt = 6t − 12.\nAt t = 3: a = 6(3) − 12 = 18 − 12 = 6 m s⁻².",
 
- "math-aqa-7357-2024-p3::11(b)": "Set v = 0: 3t² − 12t + 9 = 0 ⇒ t² − 4t + 3 = 0 ⇒ (t − 1)(t − 3) = 0.\nParticle is at rest at t = 1 s and t = 3 s.",
 
- "math-aqa-7357-2024-p3::11(c)": "v = 3t² − 12t + 9 = 3(t − 1)(t − 3).\nv > 0 for 0 ≤ t < 1 (moving in positive direction).\nv < 0 for 1 < t < 3 (moving in negative direction).\n\nDisplacement in each phase:\ns = ∫ v dt = t³ − 6t² + 9t + C.\n\nFrom t = 0 to t = 1:\nDistance = [t³ − 6t² + 9t]₀¹ = (1 − 6 + 9) − 0 = 4 m.\n\nFrom t = 1 to t = 3:\nDisplacement = [t³ − 6t² + 9t]₁³ = (27 − 54 + 27) − (1 − 6 + 9) = 0 − 4 = −4 m.\nDistance = |−4| = 4 m.\n\nTotal distance = 4 + 4 = 8 m.",
 
- "math-aqa-7357-2024-p3::12(a)": "Let a be the acceleration of the system and T the tension.\nFor A (mass 5 kg, moving down): 5g − T = 5a … (1)\nFor B (mass 3 kg, moving up): T − 3g = 3a … (2)\nAdding (1) and (2): 2g = 8a ⇒ a = g/4 = 9.8/4 = 2.45 m s⁻².",
 
- "math-aqa-7357-2024-p3::12(b)": "From equation (2): T = 3g + 3a = 3(9.8) + 3(2.45) = 29.4 + 7.35 = 36.75 N.",
 
- "math-aqa-7357-2024-p3::12(c)": "The string pulls on the pulley with tension T on each side.\nForce on pulley = 2T = 2 × 36.75 = 73.5 N.",
 
- "math-aqa-7357-2024-p3::13(a)": "Let reactions at A and at the support 0.5 m from B (i.e. 1.5 m from A) be R_A and R_C respectively.\nThe rod has length 2 m and uniform mass 4 kg, so weight 4g acts at the midpoint (1 m from A).\n\nTake moments about A:\nR_C × 1.5 = 4g × 1\nR_C = 4g/1.5 = 8g/3 ≈ 26.1 N.\n\nResolve vertically: R_A + R_C = 4g\nR_A = 4g − 8g/3 = 4g/3 ≈ 13.1 N.",
 
- "math-aqa-7357-2024-p3::13(b)": "The rod tilts about the support 0.5 m from B (i.e. 1.5 m from A) when R_A = 0.\nAt this point, taking moments about the support at 1.5 m from A:\nClockwise moment from mass m at B (0.5 m from support) = mg × 0.5.\nAnticlockwise moment from rod's weight at midpoint (0.5 m from support on the other side) = 4g × 0.5.\n\nFor tipping: mg × 0.5 = 4g × 0.5\nm = 4 kg.",
 
- "math-aqa-7357-2024-p3::14(a)": "Differentiate r with respect to t:\nv = dr/dt = 2t i + (3 − 3t²) j.\n\nAt t = 1: v = 2(1) i + (3 − 3(1)²) j = 2i + 0j = 2i m s⁻¹.",
 
- "math-aqa-7357-2024-p3::14(b)": "For motion parallel to i, the j component of velocity must be zero:\n3 − 3t² = 0 ⇒ t² = 1 ⇒ t = 1 s  (taking the positive value).",
 
- "math-aqa-7357-2024-p3::14(c)": "Differentiate v to get acceleration:\na = dv/dt = 2i − 6t j.\nAt t = 2: a = 2i − 12j m s⁻².",
 
  "math-edx-9ma0-2018-p1::10(b)": "H is maximum when e^(0.1sin(0.25t)) is maximum, i.e. when sin(0.25t) = 1.\nH_max = 5e^(0.1) ≈ 5.53 m.",
 
