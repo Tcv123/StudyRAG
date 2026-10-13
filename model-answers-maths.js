@@ -1608,93 +1608,81 @@ window.MATHS_MODEL_ANSWERS = {
 
 
 
- "math-ocr-h240-2022-p1::1(a)": "Increase each power by 1 and divide by the new power:\n∫(6x² − 4x + 5) dx = 6x³/3 − 4x²/2 + 5x + c = 2x³ − 2x² + 5x + c.",
+ "math-ocr-h240-2022-p1::1(a)": "Strip width h = (3 − 1)/4 = 0.5, so the ordinates are at x = 1, 1.5, 2, 2.5, 3.\n\nx = 1: y₀ = √(1 − 1) = 0\nx = 1.5: y₁ = √(2.25 − 1) = √1.25 = √5/2 ≈ 1.1180\nx = 2: y₂ = √(4 − 1) = √3 ≈ 1.7321\nx = 2.5: y₃ = √(6.25 − 1) = √5.25 = √21/2 ≈ 2.2913\nx = 3: y₄ = √(9 − 1) = √8 = 2√2 ≈ 2.8284\n\n∫₁³ √(x² − 1) dx ≈ ½h{(y₀ + y₄) + 2(y₁ + y₂ + y₃)}\n= 0.5 × 0.5 × {(0 + 2.8284) + 2(1.1180 + 1.7321 + 2.2913)}\n= 0.25 × {2.8284 + 2 × 5.1414}\n= 0.25 × 13.1112\n= 3.2778…\n\nEstimate = 3.28 (3 s.f.)",
+ "math-ocr-h240-2022-p1::1(b)": "It is an under-estimate.\n\nThe curve y = √(x² − 1) is concave (its gradient decreases) between x = 1 and x = 3, so each chord joining the top corners of a strip lies below the curve. The tops of the trapezia are therefore below the curve, and the total area of the trapezia is less than the true area under the curve.",
+ "math-ocr-h240-2022-p1::1(c)": "Use more trapezia (more strips), each of smaller width, between the same limits x = 1 and x = 3. The chords then follow the curve more closely, so the estimate is more accurate.",
+ "math-ocr-h240-2022-p1::2(a)": "Take a = 1 and b = −2.\n\nThen a > b, since 1 > −2.\nBut a² = 1² = 1 and b² = (−2)² = 4, so a² < b² (1 < 4).\n\nSo a > b does not imply a² > b², and the statement is false.",
+ "math-ocr-h240-2022-p1::2(b)(i)": "The symbol ⇔ claims the implication works in both directions. It is true that x° = 30° ⇒ sin x° = 0.5, but sin x° = 0.5 does not imply x° = 30°, because there are other solutions: for example sin 150° = 0.5 as well (and also 390°, −210°, …).",
+ "math-ocr-h240-2022-p1::2(b)(ii)": "Only the implication from right to left is true, so the corrected statement is\n\nsin x° = 0.5 ⇐ x° = 30°\n\n(equivalently, x° = 30° ⇒ sin x° = 0.5).",
+ "math-ocr-h240-2022-p1::2(c)": "Let n be an integer. Four consecutive multiples of 4 can be written as\n\n4n, 4n + 4, 4n + 8, 4n + 12.\n\nTheir sum is\n4n + (4n + 4) + (4n + 8) + (4n + 12) = 16n + 24 = 8(2n + 3).\n\nSince n is an integer, 2n + 3 is an integer, so 8(2n + 3) is a multiple of 8.\n\nHence the sum of four consecutive multiples of 4 is always a multiple of 8.",
+ "math-ocr-h240-2022-p1::3(a)": "At the points of intersection the y-values are equal:\n\nx² − 2x + 1 = −x² + 6x − 5\n2x² − 8x + 6 = 0\nx² − 4x + 3 = 0\n(x − 1)(x − 3) = 0\nx = 1 or x = 3\n\nSubstitute into y = x² − 2x + 1 = (x − 1)²:\nx = 1: y = 0\nx = 3: y = (3 − 1)² = 4\n\n(Check in the other curve: x = 1 gives −1 + 6 − 5 = 0; x = 3 gives −9 + 18 − 5 = 4.)\n\nThe curves intersect at (1, 0) and (3, 4).",
+ "math-ocr-h240-2022-p1::3(b)": "The line y = 2x − 2 has gradient 2 (positive) and y-intercept −2 (below the origin), and it crosses the x-axis at x = 1.\n\nIt passes through both intersection points found in (a):\nx = 1: y = 2(1) − 2 = 0, so it passes through (1, 0);\nx = 3: y = 2(3) − 2 = 4, so it passes through (3, 4).\n\nSketch: draw a straight line rising from left to right, cutting the y-axis at (0, −2), passing through (1, 0) where the two parabolas meet on the x-axis, and through (3, 4) where they meet again, continuing beyond (3, 4). Between x = 1 and x = 3 the line lies between the two curves, splitting the region enclosed by the parabolas into two parts.",
+ "math-ocr-h240-2022-p1::3(c)": "y ≥ x² − 2x + 1 means on or above the U-shaped curve;\ny ≤ −x² + 6x − 5 means on or below the ∩-shaped curve;\ny ≤ 2x − 2 means on or below the line.\n\nThe first two together give the region enclosed between the two parabolas for 1 ≤ x ≤ 3. The line y = 2x − 2 joins (1, 0) and (3, 4) and splits this region into two parts; the condition y ≤ 2x − 2 selects the lower part.\n\nFor 1 ≤ x ≤ 3, (x − 1)² ≤ 2x − 2 ≤ −x² + 6x − 5, so the line lies between the curves throughout.\n\nSketch: shade the thin region between the line y = 2x − 2 (above) and the curve y = x² − 2x + 1 (below), from (1, 0) to (3, 4), and label it R.",
+ "math-ocr-h240-2022-p1::4(a)": "2x² + 6x + 7 = 2(x² + 3x) + 7\n= 2[(x + 1.5)² − 2.25] + 7\n= 2(x + 1.5)² − 4.5 + 7\n= 2(x + 1.5)² + 2.5\n\nSo p = 2, q = 1.5, r = 2.5.",
+ "math-ocr-h240-2022-p1::4(b)": "From (a), y = 2(x + 1.5)² + 2.5.\n\nSince 2(x + 1.5)² ≥ 0, the least value of y is 2.5, when x + 1.5 = 0, i.e. x = −1.5.\n\nMinimum point: (−1.5, 2.5)",
+ "math-ocr-h240-2022-p1::4(c)": "Replace x by tan θ in (a):\n\n2tan²θ + 6tanθ + 7 = 2(tanθ + 1.5)² + 2.5\n\ntan θ takes all real values, so the minimum value is 2.5, which occurs when tan θ + 1.5 = 0, i.e. tan θ = −1.5.\n\ntan θ = −1.5 ⇒ principal value θ = tan⁻¹(−1.5) = −56.3°.\ntan has period 180°, so the smallest positive solution is θ = −56.3° + 180° = 123.7°.\n\nMinimum value = 2.5, first occurring at θ = 124° (3 s.f.).",
+ "math-ocr-h240-2022-p1::5(a)(i)": "2^(x+4) = f(x + 4) where f(x) = 2ˣ, and replacing x by x + 4 moves the graph 4 units to the left.\n\nThe translation is 4 units in the negative x-direction, i.e. a translation by the vector (−4, 0) (that is, −4 horizontally, 0 vertically).",
+ "math-ocr-h240-2022-p1::5(a)(ii)": "2^(x+4) = 2⁴ × 2ˣ = 16 × 2ˣ, so every y-value is multiplied by 16.\n\nThe transformation is a stretch parallel to the y-axis (in the y-direction) with scale factor 16.",
+ "math-ocr-h240-2022-p1::5(b)": "The logarithms are defined only if 8x > 0 and 1 − x > 0, i.e. 0 < x < 1.\n\nlog₂(8x) = 1 − log₂(1 − x)\nlog₂(8x) + log₂(1 − x) = 1\nlog₂(8x(1 − x)) = 1\n8x(1 − x) = 2¹ = 2\n8x − 8x² = 2\n8x² − 8x + 2 = 0\n4x² − 4x + 1 = 0\n(2x − 1)² = 0\nx = 0.5\n\nCheck: x = 0.5 lies in 0 < x < 1. Then log₂(8 × 0.5) = log₂4 = 2 and 1 − log₂(0.5) = 1 − (−1) = 2. ✓\n\nx = 0.5 (the only solution)",
+ "math-ocr-h240-2022-p1::6(a)": "(3 + 2x)⁵ = 3⁵ + ⁵C₁ 3⁴(2x) + ⁵C₂ 3³(2x)² + ⁵C₃ 3²(2x)³ + …\n= 243 + 5 × 81 × 2x + 10 × 27 × 4x² + 10 × 9 × 8x³ + …\n= 243 + 810x + 1080x² + 720x³ + …",
+ "math-ocr-h240-2022-p1::6(b)": "Write 3 + 2y + 4y² = 3 + 2(y + 2y²), so put x = y + 2y² in the expansion from (a):\n\n(3 + 2y + 4y²)⁵ = 243 + 810(y + 2y²) + 1080(y + 2y²)² + 720(y + 2y²)³ + (terms in (y + 2y²)⁴ and (y + 2y²)⁵)\n\nThe terms in (y + 2y²)⁴ and (y + 2y²)⁵ contain only powers y⁴ and higher, and 810(y + 2y²) has no y³ term. So the y³ terms come from:\n\n1080(y + 2y²)² = 1080(y² + 4y³ + 4y⁴): y³ term = 1080 × 4y³ = 4320y³\n720(y + 2y²)³ = 720(y³ + …): y³ term = 720y³\n\nTotal: 4320y³ + 720y³ = 5040y³\n\nCoefficient of y³ = 5040",
+ "math-ocr-h240-2022-p1::7": "Differentiate 2x³ + 6xy − 3y² = 2 implicitly with respect to x (product rule on 6xy):\n\n6x² + 6y + 6x(dy/dx) − 6y(dy/dx) = 0\n\nA tangent parallel to y = x has gradient 1, so put dy/dx = 1:\n\n6x² + 6y + 6x − 6y = 0\n6x² + 6x = 0\nx² + x = 0\nx(x + 1) = 0\nx = 0 or x = −1\n\nAny such point must also lie on the curve.\n\nx = 0: 2(0) + 0 − 3y² = 2 ⇒ y² = −2/3. But y² ≥ 0 for every real y, so there is no point on the curve with x = 0.\n\nx = −1: 2(−1) + 6(−1)y − 3y² = 2 ⇒ −2 − 6y − 3y² = 2 ⇒ 3y² + 6y + 4 = 0.\nDiscriminant b² − 4ac = 6² − 4(3)(4) = 36 − 48 = −12 < 0, so this quadratic has no real roots, and there is no point on the curve with x = −1.\n\nHence there are no points on the curve where the gradient is 1, i.e. no points where the tangent is parallel to y = x.",
+ "math-ocr-h240-2022-p1::8(a)": "For exponential decay, the mass is multiplied by the same factor in each equal time interval.\n\nFrom t = 0 to t = 10: 750/1250 = 0.6, so the mass is multiplied by 0.6 every 10 minutes.\n\nMissing t: 750 × 0.6 = 450, so m = 450 occurs 10 minutes after t = 10, i.e. t = 20.\n\nMissing m: from t = 20 to t = 50 is three more 10-minute intervals, so\nm = 450 × 0.6³ = 450 × 0.216 = 97.2\n\n(Equivalently, m = 1250e^(kt) with k = ln(0.6)/10 = −0.0511 gives t = 20 for m = 450 and m = 1250 × 0.6⁵ = 97.2 at t = 50.)\n\nMissing values: t = 20 (minutes), m = 97.2 (grams).",
+ "math-ocr-h240-2022-p1::8(b)(i)": "The original mass is 160e⁰ = 160 g, so half of it is 80 g.\n\n160e^(−0.055t) = 80\ne^(−0.055t) = 0.5\n−0.055t = ln 0.5\nt = ln 0.5 / (−0.055) = 12.6026…\n\nt = 12.6 minutes",
+ "math-ocr-h240-2022-p1::8(b)(ii)": "m = 160e^(−0.055t)\n\ndm/dt = 160 × (−0.055)e^(−0.055t) = −8.8e^(−0.055t)\n\nAt t = 15:\ndm/dt = −8.8e^(−0.055 × 15) = −8.8e^(−0.825) = −3.856…\n\nThe mass is decreasing, so the rate of decay is 3.86 grams per minute.",
+ "math-ocr-h240-2022-p1::8(c)": "Model substance A as m = 1250e^(kt). From t = 10, m = 750: e^(10k) = 0.6, so k = ln(0.6)/10 = −0.0511.\n\nFor A: dm/dt = 1250k e^(kt) = −63.9e^(−0.0511t)\nAt t = 15: dm/dt = −63.9e^(−0.0511 × 15) = −29.7, so A is decaying at 29.7 g/min.\n\nFor B at t = 15 (from (b)(ii)), the rate of decay is 3.86 g/min.\n\n29.7 > 3.86, so substance A is decaying at a faster rate (in grams per minute).",
+ "math-ocr-h240-2022-p1::9": "x = 2sinθ ⇒ dx/dθ = 2cosθ, so dx = 2cosθ dθ.\n\nLimits: x = 1 ⇒ sinθ = ½ ⇒ θ = π/6;  x = √3 ⇒ sinθ = √3/2 ⇒ θ = π/3.\n\n√(4 − x²) = √(4 − 4sin²θ) = √(4cos²θ) = 2cosθ (cosθ > 0 for π/6 ≤ θ ≤ π/3).\n\n∫₁^√3 √(4 − x²) dx = ∫_(π/6)^(π/3) 2cosθ × 2cosθ dθ\n= ∫_(π/6)^(π/3) 4cos²θ dθ\n\nUsing cos2θ = 2cos²θ − 1, 4cos²θ = 2cos2θ + 2:\n= ∫_(π/6)^(π/3) (2cos2θ + 2) dθ\n= [sin2θ + 2θ]_(π/6)^(π/3)\n= (sin(2π/3) + 2π/3) − (sin(π/3) + π/3)\n= (½√3 + ⅔π) − (½√3 + ⅓π)\n= ⅓π\n\nHence ∫₁^√3 √(4 − x²) dx = π/3, as required.",
+ "math-ocr-h240-2022-p1::10(a)": "Let the radius be r, so OA = OB = r and OM = ½r.\n\nArea of triangle OMB = ½ × OM × OB × sinθ = ½(½r)(r)sinθ = ¼r²sinθ\nArea of sector OAB = ½r²θ\nArea of MAB = sector OAB − triangle OMB = ½r²θ − ¼r²sinθ\n\nOMB : MAB = 2 : 3, so 3 × area OMB = 2 × area MAB:\n3(¼r²sinθ) = 2(½r²θ − ¼r²sinθ)\n¾r²sinθ = r²θ − ½r²sinθ\n\nDivide by r² (r ≠ 0):\n¾sinθ = θ − ½sinθ\nθ = ¾sinθ + ½sinθ = 5/4 sinθ\n\nθ = 1.25sinθ, as required.",
+ "math-ocr-h240-2022-p1::10(b)": "θₙ₊₁ = 1.25sinθₙ, θ₁ = 0.5 (working in radians):\n\nθ₂ = 1.25sin(0.5) = 0.599 (0.59928…)\nθ₃ = 1.25sin(0.59928…) = 0.705 (0.70506…)\nθ₄ = 1.25sin(0.70506…) = 0.810 (0.81010…)\n\nContinuing the iteration, the values increase and settle at 1.1311…, so\n\nroot = 1.13 (3 s.f.)",
+ "math-ocr-h240-2022-p1::10(c)": "The root is where the curve y = 1.25sinθ meets the line y = θ.\n\nDiagram (described): on the given graph, draw the straight line y = θ from the origin; it crosses the curve y = 1.25sinθ at the root θ ≈ 1.13, which is before θ = ½π. Between 0 and the root the curve lies above the line.\n\nMark θ₁ = 0.5 on the θ-axis. Draw a vertical line from θ₁ up to the curve (height 1.25sin0.5 = θ₂), then a horizontal line across to y = θ (this is at θ = θ₂). Then go vertically up to the curve again, horizontally to the line, and so on. The path climbs in steps between the line and the curve, getting smaller each time, moving towards the intersection point.\n\nThis is staircase convergence.",
+ "math-ocr-h240-2022-p1::10(d)": "θₙ₊₁ = sin⁻¹(0.8θₙ) is a rearrangement of θ = 1.25sinθ, so its root is where y = sin⁻¹(0.8θ) meets y = θ.\n\nDiagram (described): for θ ≥ 0, sketch y = sin⁻¹(0.8θ). It starts at the origin with gradient 0.8 (less than 1), increases, and its gradient keeps increasing, becoming vertical at θ = 1.25. Draw y = θ from the origin. Just after the origin the line is above the curve; the curve crosses the line from below at the root θ ≈ 1.13, and is above the line after that.\n\nShow the iteration as a staircase: starting just below the root, go vertically to the curve, then horizontally to the line y = θ, and repeat. The steps move away from the root, down towards the origin. (Starting just above the root, the staircase moves away upwards.)\n\nBecause the gradient of y = sin⁻¹(0.8θ) at the root is greater than 1, the staircase diverges from the root, so this iteration does not converge to the root found in (b).",
+ "math-ocr-h240-2022-p1::11(a)": "Separate the variables:\n\n∫e^(3y) dy = ∫3x² ln x dx\n\nLeft-hand side: ∫e^(3y) dy = ⅓e^(3y)\n\nRight-hand side, by parts with u = ln x, dv/dx = 3x², so du/dx = 1/x, v = x³:\n∫3x² ln x dx = x³ln x − ∫x³ × (1/x) dx\n= x³ln x − ∫x² dx\n= x³ln x − ⅓x³ + c\n\nSo ⅓e^(3y) = x³ln x − ⅓x³ + c.\n\nThe curve passes through (e, 1), and ln e = 1:\n⅓e³ = e³ − ⅓e³ + c ⇒ c = ⅓e³ − ⅔e³ = −⅓e³\n\n⅓e^(3y) = x³ln x − ⅓x³ − ⅓e³\n\nMultiply by 3:\ne^(3y) = 3x³ln x − x³ − e³",
+ "math-ocr-h240-2022-p1::11(b)": "Substitute x = e² into e^(3y) = 3x³ln x − x³ − e³. Here x³ = e⁶ and ln e² = 2:\n\ne^(3y) = 3e⁶ × 2 − e⁶ − e³\n= 6e⁶ − e⁶ − e³\n= 5e⁶ − e³\n= e³(5e³ − 1)\n\nTake natural logs:\n3y = ln(e³(5e³ − 1)) = ln e³ + ln(5e³ − 1) = 3 + ln(5e³ − 1)\n\ny = 1 + ⅓ln(5e³ − 1)\n\nSo a = 1, b = 5, c = −1.",
+ "math-ocr-h240-2022-p1::12(a)": "x = 1/t = t⁻¹ ⇒ dx/dt = −1/t²\ny = 2t ⇒ dy/dt = 2\n\ndy/dx = (dy/dt) ÷ (dx/dt) = 2 ÷ (−1/t²) = −2t²\n\nAt P, t = p, so the gradient of the tangent is −2p².\n\nTangent at P(1/p, 2p):\ny − 2p = −2p²(x − 1/p)\ny − 2p = −2p²x + 2p\ny = −2p²x + 4p, as required.",
+ "math-ocr-h240-2022-p1::12(b)": "Tangent gradient at P is −2p², so the normal gradient is 1/(2p²).\n\nNormal at P(1/p, 2p):\ny − 2p = (1/(2p²))(x − 1/p)\ny = x/(2p²) + 2p − 1/(2p³)\n\nB (normal meets x-axis), y = 0:\nx/(2p²) = 1/(2p³) − 2p\nx = 2p²(1/(2p³) − 2p) = 1/p − 4p³\nSo B = (1/p − 4p³, 0).\n\nA (tangent meets x-axis), y = 0 in y = −2p²x + 4p:\n2p²x = 4p ⇒ x = 4p/(2p²) = 2/p\nSo A = (2/p, 0).\n\nLengths, with P = (1/p, 2p):\nPA² = (2/p − 1/p)² + (0 − 2p)² = (1/p)² + (2p)² = 1/p² + 4p² = (4p⁴ + 1)/p²\nPB² = (1/p − 4p³ − 1/p)² + (0 − 2p)² = (4p³)² + (2p)² = 16p⁶ + 4p² = 4p²(4p⁴ + 1)\n\nPA = √(4p⁴ + 1)/|p|,  PB = 2|p|√(4p⁴ + 1)\n\nPA : PB = (1/|p|)√(4p⁴ + 1) : 2|p|√(4p⁴ + 1)\n= 1/|p| : 2|p|\n= 1 : 2p²  (multiplying both by |p|, and |p|² = p²)\n\nHence PA : PB = 1 : 2p², as required.",
 
- "math-ocr-h240-2022-p1::1(b)": "Use the result from (a) with limits 1 and 3:\n[2x³ − 2x² + 5x]₁³\nAt x = 3: 2(27) − 2(9) + 5(3) = 54 − 18 + 15 = 51.\nAt x = 1: 2(1) − 2(1) + 5(1) = 2 − 2 + 5 = 5.\nValue of integral = 51 − 5 = 46.",
 
- "math-ocr-h240-2022-p1::2(a)": "Rearrange 3x + 4y = 12 into the form y = mx + c:\n4y = −3x + 12 ⟹ y = −(3/4)x + 3.\nGradient = −3/4.",
 
- "math-ocr-h240-2022-p1::2(b)": "Set y = 0 in 3x + 4y = 12:\n3x = 12 ⟹ x = 4.\nL crosses the x-axis at (4, 0).",
 
- "math-ocr-h240-2022-p1::2(c)": "Gradient of L = −3/4, so gradient of M (perpendicular) = 4/3.\nUsing point (6, 1) with gradient 4/3:\ny − 1 = (4/3)(x − 6)\ny − 1 = (4/3)x − 8\ny = (4/3)x − 7.",
 
- "math-ocr-h240-2022-p1::3(a)": "Replace sin²θ with 1 − cos²θ:\n2(1 − cos²θ) + 3cosθ = 3\n2 − 2cos²θ + 3cosθ = 3\nRearranging: 0 = 2cos²θ − 3cosθ + 1, as required.",
 
- "math-ocr-h240-2022-p1::3(b)": "Factorise 2cos²θ − 3cosθ + 1 = 0:\n(2cosθ − 1)(cosθ − 1) = 0.\nSo cosθ = 1/2 or cosθ = 1.\nFrom cosθ = 1/2: θ = 60° or θ = 300°.\nFrom cosθ = 1: θ = 0° or θ = 360°.\nSolutions: θ = 0°, 60°, 300°, 360°.",
 
- "math-ocr-h240-2022-p1::4(a)": "Differentiate term by term:\ny = x³ − 3x² − 9x + 5\ndy/dx = 3x² − 6x − 9.",
 
- "math-ocr-h240-2022-p1::4(b)": "Set dy/dx = 0:\n3x² − 6x − 9 = 0\nDivide by 3: x² − 2x − 3 = 0\nFactorise: (x − 3)(x + 1) = 0\nx = 3 or x = −1.",
 
- "math-ocr-h240-2022-p1::4(c)": "Find d²y/dx² = 6x − 6.\nAt x = 3: d²y/dx² = 6(3) − 6 = 12 > 0, so x = 3 gives a local minimum.\n  y(3) = 27 − 27 − 27 + 5 = −22, so minimum point is (3, −22).\nAt x = −1: d²y/dx² = 6(−1) − 6 = −12 < 0, so x = −1 gives a local maximum.\n  y(−1) = −1 − 3 + 9 + 5 = 10, so maximum point is (−1, 10).",
 
- "math-ocr-h240-2022-p1::5(a)": "Factor out 3 from the x terms:\n3x² − 12x + 7 = 3(x² − 4x) + 7.\nComplete the square inside the bracket:\nx² − 4x = (x − 2)² − 4.\nSo: 3((x − 2)² − 4) + 7 = 3(x − 2)² − 12 + 7 = 3(x − 2)² − 5.\nTherefore a = 3, b = 2, c = −5.",
 
- "math-ocr-h240-2022-p1::5(b)": "From the completed-square form 3(x − 2)² − 5:\nSince (x − 2)² ≥ 0 for all x, the minimum value is −5, achieved when x − 2 = 0, i.e. x = 2.\nMinimum value = −5 at x = 2.",
 
- "math-ocr-h240-2022-p1::5(c)": "The vertex is at (2, −5) — this should be marked on the sketch.\nThe axis of symmetry is the vertical line x = 2.",
 
- "math-ocr-h240-2022-p1::6(a)": "Use the factor theorem with f(1) = 0:\n2(1)³ + p(1)² − 8(1) + q = 0 ⟹ 2 + p − 8 + q = 0 ⟹ p + q = 6 … (i)\nUse f(−4) = 0:\n2(−64) + p(16) − 8(−4) + q = 0 ⟹ −128 + 16p + 32 + q = 0 ⟹ 16p + q = 96 … (ii)\nSubtract (i) from (ii): 15p = 90 ⟹ p = 6.\nSubstitute back: 6 + q = 6 ⟹ q = 0.",
 
- "math-ocr-h240-2022-p1::6(b)": "With p = 6, q = 0: f(x) = 2x³ + 6x² − 8x.\nFactor out 2x: f(x) = 2x(x² + 3x − 4).\nFactorise the quadratic: x² + 3x − 4 = (x + 4)(x − 1).\nFull factorisation: f(x) = 2x(x + 4)(x − 1).",
 
- "math-ocr-h240-2022-p1::7(a)": "Use the binomial theorem for (1 + 2x)⁸:\n(1 + 2x)⁸ = 1 + C(8,1)(2x) + C(8,2)(2x)² + C(8,3)(2x)³ + …\n= 1 + 8(2x) + 28(4x²) + 56(8x³) + …\n= 1 + 16x + 112x² + 448x³ + …",
 
- "math-ocr-h240-2022-p1::7(b)": "Write 1.02 = 1 + 2(0.01), so use x = 0.01:\n(1.02)⁸ ≈ 1 + 16(0.01) + 112(0.01)² + 448(0.01)³\n= 1 + 0.16 + 112(0.0001) + 448(0.000001)\n= 1 + 0.16 + 0.0112 + 0.000448\n= 1.171648 ≈ 1.1716 (to 4 d.p.).",
 
- "math-ocr-h240-2022-p1::8(a)": "Let the third and sixth terms be ar² and ar⁵ respectively.\nar² = 20 and ar⁵ = 160.\nDivide: (ar⁵)/(ar²) = 160/20 ⟹ r³ = 8, as required.\nTaking the real cube root: r = 2.",
 
- "math-ocr-h240-2022-p1::8(b)": "Substitute r = 2 into ar² = 20:\na × 4 = 20 ⟹ a = 5.",
 
- "math-ocr-h240-2022-p1::8(c)": "Sum of first 10 terms with a = 5, r = 2:\nS₁₀ = a(r¹⁰ − 1)/(r − 1) = 5(2¹⁰ − 1)/(2 − 1) = 5(1024 − 1)/1 = 5 × 1023 = 5115.",
 
- "math-ocr-h240-2022-p1::9(a)": "Apply log laws:\nlog₂(8p²/q) = log₂ 8 + log₂ p² − log₂ q\n= log₂ 2³ + 2 log₂ p − log₂ q\n= 3 + 2a − b.",
 
- "math-ocr-h240-2022-p1::9(b)": "Apply the quotient law to combine the logs:\nlog₃(5x − 2) − log₃(x + 1) = log₃((5x − 2)/(x + 1)) = 2.\nConvert to exponential form:\n(5x − 2)/(x + 1) = 3² = 9.\nCross-multiply: 5x − 2 = 9(x + 1) = 9x + 9.\n−4x = 11 ⟹ x = −11/4.\nCheck validity: 5(−11/4) − 2 = −55/4 − 8/4 = −63/4 < 0, which is outside the domain of log₃.\nTherefore there is no valid solution (the equation has no real solution in the domain).",
 
- "math-ocr-h240-2022-p1::10(a)": "Midpoint of AB = ((−2 + 4)/2, (5 + (−1))/2) = (1, 2).\nGradient of AB = (−1 − 5)/(4 − (−2)) = −6/6 = −1.\nGradient of perpendicular bisector = 1 (negative reciprocal).\nEquation through (1, 2) with gradient 1:\ny − 2 = 1(x − 1) ⟹ y = x + 1.",
 
- "math-ocr-h240-2022-p1::10(b)": "Substitute y = 11 into y = x + 1:\n11 = k + 1 ⟹ k = 10.",
 
- "math-ocr-h240-2022-p1::11(a)": "Complete the square for each variable:\nx² − 6x + y² + 4y = 23\n(x − 3)² − 9 + (y + 2)² − 4 = 23\n(x − 3)² + (y + 2)² = 36.\nCentre = (3, −2), radius = √36 = 6.",
 
- "math-ocr-h240-2022-p1::11(b)": "Substitute P(7, 2) into x² + y² − 6x + 4y − 23:\n= 49 + 4 − 42 + 8 − 23 = 53 − 42 + 8 − 23 = 61 − 65 = −4.\nNote: if the paper's point is P(7, −4+2) or another value, substitute accordingly. Using the circle equation (x−3)² + (y+2)² = 36:\n(7−3)² + (2+2)² = 16 + 16 = 32 ≠ 36.\nIf the paper states P(7, 2) lies on the circle, show: 49 + 4 − 42 + 8 − 23 = 0, confirming it lies on the circle. (Accept the computation as presented in the paper.)",
 
- "math-ocr-h240-2022-p1::11(c)": "Gradient of radius from centre (3, −2) to P(7, 2):\nm = (2 − (−2))/(7 − 3) = 4/4 = 1.\nGradient of tangent at P = −1 (perpendicular to radius).\nEquation of tangent through P(7, 2):\ny − 2 = −1(x − 7) ⟹ y = −x + 9.",
 
- "math-ocr-h240-2022-p1::12(a)": "f(x) = ln(3x² + 1). Apply the chain rule:\nf′(x) = 1/(3x² + 1) × 6x = 6x/(3x² + 1).",
 
- "math-ocr-h240-2022-p1::12(b)": "g(x) = x² e^(3x). Apply the product rule with u = x², v = e^(3x):\nu′ = 2x, v′ = 3e^(3x).\ng′(x) = 2x e^(3x) + x² × 3e^(3x) = e^(3x)(2x + 3x²) = x e^(3x)(2 + 3x).",
 
- "math-ocr-h240-2022-p1::12(c)": "Set g′(x) = 0:\nx e^(3x)(2 + 3x) = 0.\nSince e^(3x) > 0 for all x, we need x = 0 or 2 + 3x = 0.\nFrom 2 + 3x = 0: x = −2/3.\nThe stationary point other than x = 0 is at x = −2/3.",
 
- "math-ocr-h240-2022-p1::13(a)": "Equate the curve and line:\n4/x = 5 − x.\nMultiply both sides by x (x ≠ 0):\n4 = x(5 − x) = 5x − x².\nRearrange: x² − 5x + 4 = 0, as required.\nFactorise: (x − 1)(x − 4) = 0 ⟹ x = 1 or x = 4.\nAt x = 1: y = 4/1 = 4. Point A = (1, 4).\nAt x = 4: y = 4/4 = 1. Point B = (4, 1).",
 
- "math-ocr-h240-2022-p1::13(b)": "The enclosed area equals the integral of (line − curve) from x = 1 to x = 4:\nArea = ∫₁⁴ [(5 − x) − 4/x] dx\n= [5x − x²/2 − 4 ln x]₁⁴\nAt x = 4: 20 − 8 − 4 ln 4 = 12 − 4 ln 4.\nAt x = 1: 5 − 1/2 − 4 ln 1 = 9/2 − 0 = 9/2.\nArea = (12 − 4 ln 4) − 9/2 = 12 − 4 ln 4 − 4.5 = 7.5 − 4 ln 4.\nSince ln 4 = 2 ln 2: Area = 15/2 − 8 ln 2.",
 
- "math-ocr-h240-2022-p1::14(a)": "Since A is acute with sin A = 3/5, use a 3-4-5 triangle: cos A = 4/5.\nSince B is acute with cos B = 5/13, use a 5-12-13 triangle: sin B = 12/13.\nApply the addition formula:\nsin(A + B) = sin A cos B + cos A sin B\n= (3/5)(5/13) + (4/5)(12/13)\n= 15/65 + 48/65\n= 63/65.",
 
- "math-ocr-h240-2022-p1::14(b)": "Find tan A and tan B:\ntan A = sin A/cos A = (3/5)/(4/5) = 3/4.\ntan B = sin B/cos B = (12/13)/(5/13) = 12/5.\nApply the subtraction formula:\ntan(A − B) = (tan A − tan B)/(1 + tan A tan B)\n= (3/4 − 12/5)/(1 + (3/4)(12/5))\nNumerator: 15/20 − 48/20 = −33/20.\nDenominator: 1 + 36/20 = 56/20.\ntan(A − B) = (−33/20)/(56/20) = −33/56.\n(The exact value printed on the paper should be confirmed against the question; show all steps above.)",
 
- "math-ocr-h240-2022-p1::15(a)": "Strip width h = (2 − 0)/4 = 0.5. The five x-values are 0, 0.5, 1, 1.5, 2.\nCompute y = √(1 + x³) at each:\ny₀ = √(1 + 0) = 1\ny₁ = √(1 + 0.125) = √1.125 ≈ 1.0607\ny₂ = √(1 + 1) = √2 ≈ 1.4142\ny₃ = √(1 + 3.375) = √4.375 ≈ 2.0917\ny₄ = √(1 + 8) = √9 = 3\nTrapezium rule:\nArea ≈ (h/2)[y₀ + y₄ + 2(y₁ + y₂ + y₃)]\n= (0.5/2)[1 + 3 + 2(1.0607 + 1.4142 + 2.0917)]\n= 0.25[4 + 2(4.5666)]\n= 0.25[4 + 9.1332]\n= 0.25 × 13.1332 ≈ 3.283.",
 
- "math-ocr-h240-2022-p1::15(b)": "The function √(1 + x³) is convex (concave upward) on [0, 2] — its graph curves upward.\nFor a convex function, each trapezium lies above the curve, so the trapezium rule gives an overestimate.",
 
- "math-ocr-h240-2022-p1::16(a)": "As x → ½⁺, 2x − 1 → 0⁺, so 3/(2x − 1) → +∞ and f(x) → +∞.\nAs x → +∞, 3/(2x − 1) → 0, so f(x) → −2 from above.\nThe function is strictly decreasing on its domain, so the range is f(x) > −2.",
 
- "math-ocr-h240-2022-p1::16(b)": "Set y = 3/(2x − 1) − 2 and solve for x:\ny + 2 = 3/(2x − 1)\n2x − 1 = 3/(y + 2)\n2x = 1 + 3/(y + 2)\nx = ½ + 3/(2(y + 2)).\nSo f⁻¹(x) = ½ + 3/(2(x + 2)) = (x + 7)/(2x + 4).\nThe domain of f⁻¹ is the range of f: x > −2.",
 
- "math-ocr-h240-2022-p1::16(c)": "f(x) = f⁻¹(x) occurs on the line of symmetry y = x (since f⁻¹ is the reflection of f in y = x).\nSolve f(x) = x:\n3/(2x − 1) − 2 = x\n3/(2x − 1) = x + 2\n3 = (x + 2)(2x − 1) = 2x² + 3x − 2\n2x² + 3x − 5 = 0\n(2x + 5)(x − 1) = 0\nx = 1 or x = −5/2.\nSince the domain of f is x > ½, reject x = −5/2.\nAnswer: x = 1.",
 
- "math-ocr-h240-2022-p1::17(a)": "Differentiate with respect to t:\ndx/dt = 2t;  dy/dt = 6t² − 3.\nBy the chain rule:\ndy/dx = (dy/dt)/(dx/dt) = (6t² − 3)/(2t).",
 
- "math-ocr-h240-2022-p1::17(b)": "Set dy/dx = 0 ⟹ 6t² − 3 = 0 ⟹ t² = 1/2 ⟹ t = ±1/√2.\nAt t = 1/√2:\n  x = (1/√2)² + 1 = 1/2 + 1 = 3/2\n  y = 2(1/√2)³ − 3(1/√2) = 2/(2√2) − 3/√2 = 1/√2 − 3/√2 = −2/√2 = −√2\nAt t = −1/√2:\n  x = 1/2 + 1 = 3/2\n  y = 2(−1/√2)³ − 3(−1/√2) = −1/√2 + 3/√2 = 2/√2 = √2\nStationary points: (3/2, −√2) and (3/2, √2).",
 
- "math-ocr-h240-2022-p1::17(c)": "At t = 2: x = 4 + 1 = 5, y = 2(8) − 3(2) = 16 − 6 = 10. Point (5, 10).\nGradient: dy/dx = (6(4) − 3)/(2 × 2) = (24 − 3)/4 = 21/4.\nEquation of tangent through (5, 10):\ny − 10 = (21/4)(x − 5)\ny = (21/4)x − 105/4 + 40/4\ny = (21/4)x − 65/4.",
 
- "math-ocr-h240-2022-p1::18(a)": "Start with dP/dt = kP(1 − P/N) = kP(N − P)/N.\nSeparate variables:\nN/[P(N − P)] dP = k dt.\nPartial fractions: N/[P(N − P)] = 1/P + 1/(N − P).\nIntegrate both sides:\n∫[1/P + 1/(N − P)] dP = ∫k dt\nln|P| − ln|N − P| = kt + C\nln|P/(N − P)| = kt + C.\nExponentiate:\nP/(N − P) = Ae^(kt)  (where A = ±e^C is an arbitrary constant).\nRearrange:\nP = Ae^(kt)(N − P) = ANe^(kt) − APe^(kt)\nP(1 + Ae^(kt)) = ANe^(kt)\nP = ANe^(kt)/(1 + Ae^(kt)).\nDivide numerator and denominator by Ae^(kt):\nP = N/(1 + (1/A)e^(−kt)).\nRelabelling 1/A as A (arbitrary constant):\nP = N/(1 + Ae^(−kt)), as required.",
 
- "math-ocr-h240-2022-p1::18(b)": "Substitute t = 0 and P = N/4 into P = N/(1 + Ae^(−kt)):\nN/4 = N/(1 + A × 1)\n1 + A = 4\nA = 3.",
 
  "math-ocr-h240-2022-p2::1(a)": "Original sum = 8 × 12.5 = 100. Adding 18 gives new sum = 118. New mean = 118/9 = 13.1̄ ≈ 13.1.",
 
