@@ -407,6 +407,7 @@ function renderMsCard(part, paperKey, paperId) {
   const preWritten = paperId
     ? (((window.CS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        checkedMathsAnswer(paperId, partCode) ||
+       checkedFmAnswer(paperId, partCode) ||
        ((window.PHYSICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.BIO_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.CHEM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
@@ -616,12 +617,18 @@ function verifiedMathsEntry(id) {
   return e && e.verified ? e : null;
 }
 
-// Most Maths model answers are filed under the wrong question, so only the
-// parts listed in model-answers-maths-checked.js show theirs. Further Maths
-// answers (model-answers-fm.js) have none checked yet and are not loaded.
+// Many older Maths and Further Maths model answers were filed under the wrong
+// question, so a part shows its answer only if it is listed in
+// model-answers-maths-checked.js or model-answers-fm-checked.js.
+function checkedAnswer(checked, answers, paperId, partCode) {
+  const parts = (checked || {})[paperId];
+  return parts && parts.includes(partCode) ? ((answers || {})[paperId + '::' + partCode] || '') : '';
+}
 function checkedMathsAnswer(paperId, partCode) {
-  const parts = (window.CHECKED_MATHS_ANSWERS || {})[paperId];
-  return parts && parts.includes(partCode) ? ((window.MATHS_MODEL_ANSWERS || {})[paperId + '::' + partCode] || '') : '';
+  return checkedAnswer(window.CHECKED_MATHS_ANSWERS, window.MATHS_MODEL_ANSWERS, paperId, partCode);
+}
+function checkedFmAnswer(paperId, partCode) {
+  return checkedAnswer(window.CHECKED_FM_ANSWERS, window.FM_MODEL_ANSWERS, paperId, partCode);
 }
 
 // A paper can be browsed here only if it has inline parts (e.g. CS) or
@@ -957,7 +964,8 @@ function buildPicker(userSubs) {
     'computer science':    [['CS_MODEL_ANSWERS', 'model-answers-cs.js']],
     'mathematics':         [['MATHS_QUESTIONS', 'maths-questions.js'], ['MATHS_MODEL_ANSWERS', 'model-answers-maths.js'],
                             ['CHECKED_MATHS_ANSWERS', 'model-answers-maths-checked.js']],
-    'further mathematics': [['FM_QUESTIONS', 'further-maths-questions.js']],
+    'further mathematics': [['FM_QUESTIONS', 'further-maths-questions.js'], ['FM_MODEL_ANSWERS', 'model-answers-fm.js'],
+                            ['CHECKED_FM_ANSWERS', 'model-answers-fm-checked.js']],
     'physics':             [['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js']],
     'biology':             [['BIO_MODEL_ANSWERS', 'model-answers-biology.js']],
     'chemistry':           [['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js']],
