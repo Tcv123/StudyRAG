@@ -1384,81 +1384,85 @@ window.MATHS_MODEL_ANSWERS = {
 
 
 
- "math-ocr-h240-2021a-p1::1(a)": "Complete the square on x² + 6x − 1.\nHalf of 6 is 3, so (x + 3)² = x² + 6x + 9.\nTherefore x² + 6x − 1 = (x + 3)² − 9 − 1 = (x + 3)² − 10.\nSo p = 3 and q = −10.",
+ "math-ocr-h240-2021a-p1::1": "For two distinct real roots the discriminant must be positive: b² − 4ac > 0.\nHere a = 1, b = 4, c = k + 3.\nb² − 4ac = 16 − 4(k + 3)\n16 − 4(k + 3) > 0\n16 − 4k − 12 > 0\n4 − 4k > 0\n4k < 4\nk < 1\nThe set of values is {k : k < 1}.",
+ "math-ocr-h240-2021a-p1::2(a)": "Work in pence, with C_A and C_B the costs of contracts A and B.\nContract A: set-up £40 = 4000p, plus 4p for each of the m minutes.\nC_A = 4000 + 4m\nContract B: the first 100 minutes are free, so only (m − 100) minutes are charged at 6p each (valid since m > 100).\nC_B = 6(m − 100)\n(Equivalently in pounds: C_A = 40 + 0.04m and C_B = 0.06(m − 100).)",
+ "math-ocr-h240-2021a-p1::2(b)": "Set the two costs equal:\n4000 + 4m = 6(m − 100)\n4000 + 4m = 6m − 600\n4600 = 2m\nm = 2300\nBoth contracts cost the same when m = 2300 minutes (each costs 13 200p = £132).",
+ "math-ocr-h240-2021a-p1::3(a)": "x is proportional to y²√z, so\nx = ky²√z for some constant k.\nWhen y = 2, z = 9, x = 30:\n30 = k × 2² × √9 = k × 4 × 3 = 12k\nk = 30/12 = 2.5\nx = 2.5y²√z",
+ "math-ocr-h240-2021a-p1::3(b)": "Using x = 2.5y²√z with y = 3 and z = 25:\nx = 2.5 × 3² × √25\nx = 2.5 × 9 × 5\nx = 112.5",
+ "math-ocr-h240-2021a-p1::4(a)": "By the factor theorem, (2x − 1) is a factor of f(x) if f(½) = 0.\nf(½) = 2(½)³ − 3(½)² − 11(½) + 6\n= 2(⅛) − 3(¼) − 5.5 + 6\n= 0.25 − 0.75 − 5.5 + 6\n= 0\nSince f(½) = 0, (2x − 1) is a factor of f(x).",
+ "math-ocr-h240-2021a-p1::4(b)": "Divide f(x) by (2x − 1). Write f(x) = (2x − 1)(ax² + bx + c).\nComparing coefficients:\nx³: 2a = 2, so a = 1\nconstant: −c = 6, so c = −6\nx²: 2b − a = −3, so 2b = −2, b = −1\nCheck x: 2c − b = −12 + 1 = −11 ✓\nSo f(x) = (2x − 1)(x² − x − 6).\nFactorise the quadratic: x² − x − 6 = (x − 3)(x + 2).\nf(x) = (2x − 1)(x − 3)(x + 2)",
+ "math-ocr-h240-2021a-p1::4(c)": "Note 8^y = (2^y)³ and 4^y = (2^y)². Let x = 2^y. Then the equation becomes\n2x³ − 3x² − 11x + 6 = 0, i.e. f(x) = 0.\nFrom part (b): (2x − 1)(x − 3)(x + 2) = 0\nx = ½, x = 3 or x = −2.\n2^y = ½ ⇒ y = −1\n2^y = 3 ⇒ y = log₂3 = ln 3/ln 2 ≈ 1.58\n2^y = −2 has no solution, since 2^y > 0 for all real y.\nSolutions: y = −1 and y = log₂3 (≈ 1.58).",
+ "math-ocr-h240-2021a-p1::5(a)(i)": "y = f(x) + 3 is a translation of y = f(x) by 3 units in the positive y-direction.\nP(2, 6) maps to (2, 6 + 3).\nImage: (2, 9)",
+ "math-ocr-h240-2021a-p1::5(a)(ii)": "We need the point where the input to f is 2, since f(2) = 6.\n3x − 1 = 2 ⇒ x = 1\nThen y = 2f(2) = 2 × 6 = 12.\nImage: (1, 12)",
+ "math-ocr-h240-2021a-p1::5(a)(iii)": "The graph of y = f⁻¹(x) is the reflection of y = f(x) in the line y = x, so the coordinates swap.\nSince f(2) = 6, f⁻¹(6) = 2.\nImage: (6, 2)",
+ "math-ocr-h240-2021a-p1::5(b)(i)": "Stationary points of y = g(x) occur where g′(x) = 0, i.e. where the graph of y = g′(x) meets the x-axis.\nx = −2 and x = 4",
+ "math-ocr-h240-2021a-p1::5(b)(ii)": "g(x) is decreasing where g′(x) < 0, i.e. where the graph of y = g′(x) is below the x-axis.\nFrom the graph this happens only to the left of x = −2.\n{x : x < −2}",
+ "math-ocr-h240-2021a-p1::5(b)(iii)": "A point of inflection of y = g(x) occurs where g″(x) changes sign, i.e. where the graph of y = g′(x) has a turning point (g′ changes from decreasing to increasing or vice versa).\nAt x = −2 the graph of g′ crosses the axis while still increasing, so g″ does not change sign there (it is a minimum point of g, not an inflection).\nAt x = 4 the graph of g′ has a minimum touching the x-axis: g′ decreases before x = 4 and increases after it, so g″ changes sign. Since g′(4) = 0 and g′ ≥ 0 on both sides, this is a stationary point of inflection.\nx = 4",
+ "math-ocr-h240-2021a-p1::6(a)": "Take out the factor 8:\n(8 − 3x)^(1/3) = 8^(1/3)(1 − ⅜x)^(1/3) = 2(1 − ⅜x)^(1/3)\nExpand (1 − ⅜x)^(1/3) using (1 + u)ⁿ = 1 + nu + n(n − 1)u²/2! + … with n = ⅓, u = −⅜x:\n(1 − ⅜x)^(1/3) = 1 + (⅓)(−⅜x) + (⅓)(−⅔)(−⅜x)²/2! + …\nSecond term: (⅓)(−⅜x) = −⅛x\nThird term: (⅓)(−⅔) × (9/64)x² ÷ 2 = (−2/9) × (9/64)x² ÷ 2 = −(1/64)x²\nSo (1 − ⅜x)^(1/3) = 1 − ⅛x − (1/64)x² + …\nMultiply by 2:\n(8 − 3x)^(1/3) = 2 − ¼x − (1/32)x² + …",
+ "math-ocr-h240-2021a-p1::6(b)": "The expansion of (1 − ⅜x)^(1/3) is valid when |⅜x| < 1.\n|x| < 8/3, i.e. −8/3 < x < 8/3",
+ "math-ocr-h240-2021a-p1::6(c)": "Write the expression as (8 − 3x)^(1/3) × (1 + 2x)^(−2).\nExpand (1 + 2x)^(−2):\n(1 + 2x)^(−2) = 1 + (−2)(2x) + (−2)(−3)(2x)²/2! + …\n= 1 − 4x + 3(4x²) + …\n= 1 − 4x + 12x² + …\nMultiply by the result of part (a):\n(2 − ¼x − (1/32)x² + …)(1 − 4x + 12x² + …)\nThe x² terms come from:\n2 × 12x² = 24x²\n(−¼x) × (−4x) = x²\n(−(1/32)x²) × 1 = −(1/32)x²\nCoefficient of x² = 24 + 1 − 1/32 = 799/32 (= 24 31/32 = 24.96875)",
+ "math-ocr-h240-2021a-p1::7(a)": "y = (x² − 2) ln x\nUsing the product rule:\ndy/dx = 2x ln x + (x² − 2) × (1/x)\n= 2x ln x + (x² − 2)/x\nAt a stationary point dy/dx = 0:\n2x ln x + (x² − 2)/x = 0\nMultiply by x (x > 0):\n2x² ln x + x² − 2 = 0, as required.",
+ "math-ocr-h240-2021a-p1::7(b)": "Let h(x) = 2x² ln x + x² − 2.\nh′(x) = 4x ln x + 2x² × (1/x) + 2x = 4x ln x + 2x + 2x = 4x ln x + 4x\nNewton-Raphson: x_(n+1) = x_n − h(x_n)/h′(x_n)\nx_(n+1) = x_n − (2x_n² ln x_n + x_n² − 2)/(4x_n ln x_n + 4x_n)\nWrite as a single fraction:\nx_(n+1) = [x_n(4x_n ln x_n + 4x_n) − (2x_n² ln x_n + x_n² − 2)]/(4x_n ln x_n + 4x_n)\n= (4x_n² ln x_n + 4x_n² − 2x_n² ln x_n − x_n² + 2)/(4x_n ln x_n + 4x_n)\n= (2x_n² ln x_n + 3x_n² + 2)/(4x_n(ln x_n + 1)), as required.",
+ "math-ocr-h240-2021a-p1::7(c)": "With x₁ = 1 (ln 1 = 0):\nx₂ = (2(1)²(0) + 3(1)² + 2)/(4(1)(0 + 1)) = 5/4 = 1.25\nx₃ = (2(1.25)² ln 1.25 + 3(1.25)² + 2)/(4(1.25)(ln 1.25 + 1))\n= (0.697324… + 4.6875 + 2)/(5 × 1.223143…)\n= 7.384824…/6.115718…\n= 1.2075 (4 d.p.)\nx₂ = 1.25, x₃ = 1.2075",
+ "math-ocr-h240-2021a-p1::7(d)": "Continue the iteration:\nx₄ = 1.206125…\nx₅ = 1.206123…\nx₆ = 1.206123…\nSo x = 1.206 (3 d.p.).\nCheck sign change: h(1.2055) < 0 and h(1.2065) > 0, where h(x) = 2x² ln x + x² − 2, so the root lies in this interval and rounds to 1.206.\ny = (x² − 2) ln x = (1.206123…² − 2) ln 1.206123… = (−0.545266…)(0.187411…) = −0.102 (3 d.p.)\nStationary point: (1.206, −0.102)",
+ "math-ocr-h240-2021a-p1::8(a)(i)": "On 0 ≤ x ≤ 2π, tan x takes every real value (for example on π/2 < x < 3π/2 it increases through all real numbers), so 2 tan x does too.\nRange of f: f(x) ∈ ℝ (all real numbers).",
+ "math-ocr-h240-2021a-p1::8(a)(ii)": "g(x) = sec x = 1/cos x. Since −1 ≤ cos x ≤ 1 and cos x ≠ 0, |sec x| ≥ 1, and sec x takes the values 1 (at x = 0) and −1 (at x = π) and every value beyond them.\nRange of g: g(x) ≤ −1 or g(x) ≥ 1, i.e. g(x) ∈ (−∞, −1] ∪ [1, ∞).",
+ "math-ocr-h240-2021a-p1::8(b)(i)": "fg(0.6) = f(g(0.6)) = 2 tan(sec 0.6)\ncos 0.6 = 0.8253…\nsec 0.6 = 1/0.8253… = 1.2116…\nfg(0.6) = 2 tan(1.2116…) = 2 × 2.6634… = 5.3269…\nSo fg(0.6) = 5.33 (3 s.f.), as required.",
+ "math-ocr-h240-2021a-p1::8(b)(ii)": "f⁻¹g(0.6) needs the inverse function f⁻¹. On the domain 0 ≤ x ≤ 2π, f(x) = 2 tan x is a many-to-one function (for example f(0) = f(π) = f(2π) = 0), so f has no inverse function. Hence f⁻¹g(0.6) is not defined.",
+ "math-ocr-h240-2021a-p1::8(c)": "(f(x))² + 6g(x) = 0\n4tan²x + 6 sec x = 0\nUse tan²x = sec²x − 1:\n4(sec²x − 1) + 6 sec x = 0\n4sec²x + 6 sec x − 4 = 0\n2sec²x + 3 sec x − 2 = 0\n(2 sec x − 1)(sec x + 2) = 0\nsec x = ½ or sec x = −2\nsec x = ½ has no solutions, since |sec x| ≥ 1 for all x (equivalently cos x = 2 is impossible).\nsec x = −2 ⇒ cos x = −½\nOn 0 ≤ x ≤ 2π: x = π − π/3 = 2π/3 or x = π + π/3 = 4π/3.\nx = 2π/3, 4π/3",
+ "math-ocr-h240-2021a-p1::9(a)": "y = 2e^(−3t). Since e^(−3t) > 0 for all t, y = 2e^(−3t) > 0 for all t ≥ 0.\nSo y is never zero, and the path of the particle never meets (so never crosses) the x-axis.",
+ "math-ocr-h240-2021a-p1::9(b)": "The path meets the y-axis when x = 0:\ne^(2t) − 4e^t + 3 = 0\nThis is a quadratic in e^t:\n(e^t − 1)(e^t − 3) = 0\ne^t = 1 or e^t = 3\nt = 0 or t = ln 3",
+ "math-ocr-h240-2021a-p1::9(c)": "dx/dt = 2e^(2t) − 4e^t\ndy/dt = −6e^(−3t)\ndy/dx = (dy/dt)/(dx/dt) = −6e^(−3t)/(2e^(2t) − 4e^t)\nDivide numerator and denominator by −2:\ndy/dx = 3e^(−3t)/(2e^t − e^(2t))\nMultiply numerator and denominator by e^(3t):\ndy/dx = 3/(e^(3t)(2e^t − e^(2t)))\n= 3/(2e^(4t) − e^(5t)), as required.",
+ "math-ocr-h240-2021a-p1::9(d)": "The path is parallel to the y-axis when the gradient dy/dx is undefined, i.e. when the denominator is zero (the numerator 3 is never zero):\n2e^(4t) − e^(5t) = 0\ne^(4t)(2 − e^t) = 0\ne^(4t) > 0, so e^t = 2, giving t = ln 2.\nAt t = ln 2:\nx = e^(2ln 2) − 4e^(ln 2) + 3 = 4 − 8 + 3 = −1\ny = 2e^(−3ln 2) = 2 × 2^(−3) = 2/8 = ¼\nThe particle is at (−1, ¼).",
+ "math-ocr-h240-2021a-p1::10(a)(i)": "Triangle BCD is right-angled at D, with hypotenuse BC = a and angle DCB = y.\nCD is the side adjacent to angle y, so\ncos y = CD/BC = CD/a\nHence CD = a cos y.",
+ "math-ocr-h240-2021a-p1::10(a)(ii)": "In triangle ADC, the sides AC = b and CD = a cos y enclose the angle ACD = x.\nUsing area = ½ × (side) × (side) × sin(included angle):\nArea ADC = ½ × AC × CD × sin x\n= ½ × b × (a cos y) × sin x\n= ½ab sin x cos y, as required.",
+ "math-ocr-h240-2021a-p1::10(a)(iii)": "Triangle ADC is right-angled at D with hypotenuse AC = b and angle ACD = x, so\ncos x = CD/b, giving CD = b cos x.\nArea of triangle BCD, using sides BC = a and CD = b cos x with included angle DCB = y:\nArea BCD = ½ × BC × CD × sin y = ½ × a × (b cos x) × sin y = ½ab cos x sin y\nArea of triangle ABC, using sides AC = b and BC = a with included angle ACB = x + y:\nArea ABC = ½ab sin(x + y)\nTriangle ABC is made up of triangles ADC and BCD, so\nArea ABC = Area ADC + Area BCD\n½ab sin(x + y) = ½ab sin x cos y + ½ab cos x sin y\nDivide by ½ab (which is non-zero):\nsin(x + y) = sin x cos y + cos x sin y, as required.",
+ "math-ocr-h240-2021a-p1::10(b)": "Expand both sides using the compound-angle formulae:\nsin(30° + α) = sin 30° cos α + cos 30° sin α\ncos(45° − α) = cos 45° cos α + sin 45° sin α\nSubstitute exact values (sin 30° = ½, cos 30° = √3/2, cos 45° = sin 45° = √2/2):\n½cos α + (√3/2)sin α = (√2/2)cos α + (√2/2)sin α\nMultiply by 2:\ncos α + √3 sin α = √2 cos α + √2 sin α\n(√3 − √2)sin α = (√2 − 1)cos α\nDivide by cos α:\ntan α = (√2 − 1)/(√3 − √2)\nRationalise the denominator by multiplying top and bottom by (√3 + √2):\ntan α = (√2 − 1)(√3 + √2)/((√3 − √2)(√3 + √2))\nNumerator: √6 + 2 − √3 − √2\nDenominator: 3 − 2 = 1\ntan α = 2 + √6 − √3 − √2, as required.",
+ "math-ocr-h240-2021a-p1::11(a)": "u² = x² + 3, so differentiating: 2u du = 2x dx, i.e. x dx = u du.\nAlso x² = u² − 3 and √(x² + 3) = u.\nWrite the integrand as 4x² × x/√(x² + 3):\n∫ 4x³/√(x² + 3) dx = ∫ 4x² × (x dx)/√(x² + 3)\n= ∫ 4(u² − 3) × u du/u\n= ∫ (4u² − 12) du\n= (4/3)u³ − 12u + c\n= (4/3)u(u² − 9) + c\nSubstitute back: u² − 9 = x² + 3 − 9 = x² − 6 and u = √(x² + 3):\n= (4/3)(x² − 6)√(x² + 3) + c, as required.",
+ "math-ocr-h240-2021a-p1::11(b)": "The region is bounded by the curve from O to (1, 2), the normal from (1, 2) down to the x-axis, and the x-axis. Split it into the area under the curve from x = 0 to x = 1 plus a right-angled triangle under the normal.\n\nArea under the curve, using part (a):\n∫₀¹ 4x³/√(x² + 3) dx = [(4/3)(x² − 6)√(x² + 3)]₀¹\n= (4/3)[(1 − 6)√4 − (0 − 6)√3]\n= (4/3)(−10 + 6√3)\n= 8√3 − 40/3 (≈ 0.523)\n\nGradient of the curve, using the quotient rule with y = 4x³/(x² + 3)^(1/2):\ndy/dx = [12x²(x² + 3)^(1/2) − 4x³ × ½(x² + 3)^(−1/2) × 2x]/(x² + 3)\nAt x = 1: dy/dx = [12 × 2 − 4 × ½ × ½ × 2]/4 = (24 − 2)/4 = 11/2\nGradient of the normal = −2/11.\n\nEquation of the normal at (1, 2):\ny − 2 = −(2/11)(x − 1)\nWhen y = 0: −2 = −(2/11)(x − 1) ⇒ x − 1 = 11 ⇒ x = 12.\nSo the normal meets the x-axis at (12, 0).\n\nTriangle with vertices (1, 0), (12, 0), (1, 2): base 11, height 2,\narea = ½ × 11 × 2 = 11.\n\nTotal area = 8√3 − 40/3 + 11 = 8√3 − 7/3",
+ "math-ocr-h240-2021a-p1::12(a)(i)": "The temperature decreases at a constant rate, so\ndθ/dt = −k, where k is a positive constant.",
+ "math-ocr-h240-2021a-p1::12(a)(ii)": "Integrate dθ/dt = −k:\nθ = −kt + c\nt = 0, θ = 160: c = 160, so θ = 160 − kt.\nt = 10, θ = 125: 125 = 160 − 10k ⇒ 10k = 35 ⇒ k = 3.5\nθ = 160 − 3.5t",
+ "math-ocr-h240-2021a-p1::12(a)(iii)": "The model predicts the temperature keeps falling at 3.5 °C per minute for ever, so it would eventually fall below the room temperature and even below freezing point (e.g. θ = 0 at t ≈ 46 minutes), which cannot happen for a cake cooling in a room. (In reality the cake's temperature levels off at room temperature, so the rate of cooling is not constant.)",
+ "math-ocr-h240-2021a-p1::12(b)(i)": "The rate of decrease of θ is proportional to the excess temperature θ − 20, so\ndθ/dt = −λ(θ − 20), where λ is a positive constant.",
+ "math-ocr-h240-2021a-p1::12(b)(ii)": "dθ/dt = −λ(θ − 20), where λ is a positive constant.\nSeparate the variables:\n∫ 1/(θ − 20) dθ = ∫ −λ dt\nln|θ − 20| = −λt + c\nt = 0, θ = 160: ln 140 = c\nso ln|θ − 20| = −λt + ln 140\nt = 10, θ = 125: ln 105 = −10λ + ln 140\n10λ = ln 140 − ln 105 = ln(4/3), so −λ = 0.1 ln(105/140) = 0.1 ln 0.75 (≈ −0.0288)\nln(θ − 20) = (0.1 ln 0.75)t + ln 140   (θ > 20 throughout)\nθ − 20 = e^((0.1 ln 0.75)t + ln 140) = 140e^((0.1 ln 0.75)t)\nθ = 20 + 140e^((0.1 ln 0.75)t)\n(equivalently θ = 20 + 140(0.75)^(0.1t), or θ ≈ 20 + 140e^(−0.0288t))",
+ "math-ocr-h240-2021a-p1::12(c)": "Put θ = 25 into each model.\nSimple model: 25 = 160 − 3.5t ⇒ 3.5t = 135 ⇒ t = 38.57… minutes\nRevised model: 25 = 20 + 140e^((0.1 ln 0.75)t)\ne^((0.1 ln 0.75)t) = 5/140\n(0.1 ln 0.75)t = ln(5/140) = −ln 28\nt = −ln 28/(0.1 ln 0.75) = 115.83… minutes\nDifference = 115.83… − 38.57… = 77.26… minutes\nThe difference is 77 minutes (to the nearest minute).",
 
- "math-ocr-h240-2021a-p1::1(b)": "From part (a): (x + 3)² − 10 = 0 ⇒ (x + 3)² = 10.\nTaking square roots: x + 3 = ±√10.\nx = −3 ± √10.\nIn the required form a ± b√10, we have a = −3 and b = 1.",
 
- "math-ocr-h240-2021a-p1::2(a)": "For the x-axis intercept, set y = 0 in 3x − 4(0) + 12 = 0 ⇒ 3x = −12 ⇒ x = −4. So the x-intercept is (−4, 0).\nFor the y-axis intercept, set x = 0: 3(0) − 4y + 12 = 0 ⇒ 4y = 12 ⇒ y = 3. So the y-intercept is (0, 3).",
 
- "math-ocr-h240-2021a-p1::2(b)": "Since P(k, 2k) lies on 3x − 4y + 12 = 0, substitute x = k and y = 2k:\n3k − 4(2k) + 12 = 0 ⇒ 3k − 8k + 12 = 0 ⇒ −5k = −12 ⇒ k = 12/5.",
 
- "math-ocr-h240-2021a-p1::2(c)": "The gradient of l is found from 3x − 4y + 12 = 0 ⇒ y = (3/4)x + 3, so gradient = 3/4.\nA line perpendicular to l has gradient −4/3.\nWith k = 12/5, P has coordinates (12/5, 24/5).\nEquation of perpendicular through P:\ny − 24/5 = −(4/3)(x − 12/5).\nMultiply through by 15 to clear fractions:\n15y − 72 = −20(x − 12/5) = −20x + 48.\n15y − 72 = −20x + 48 ⇒ 20x + 15y − 120 = 0.\nDivide by 5: 4x + 3y − 24 = 0.",
 
- "math-ocr-h240-2021a-p1::3(a)": "The graph of y = |2x − 5| is V-shaped with vertex where 2x − 5 = 0, i.e. at x = 5/2.\nAt x = 0: y = |−5| = 5, so the graph crosses the y-axis at (0, 5).\nThe graph touches the x-axis at (5/2, 0).\nSketch: V-shape opening upwards, vertex at (5/2, 0), y-intercept at (0, 5).",
 
- "math-ocr-h240-2021a-p1::3(b)": "Solve |2x − 5| = 3x − 1.\nFirst note that for the right-hand side to be non-negative we need x ≥ 1/3.\nCase 1 (2x − 5 ≥ 0, i.e. x ≥ 5/2): 2x − 5 = 3x − 1 ⇒ −4 = x. But x = −4 does not satisfy x ≥ 5/2, so rejected.\nCase 2 (2x − 5 < 0, i.e. x < 5/2): −(2x − 5) = 3x − 1 ⇒ −2x + 5 = 3x − 1 ⇒ 6 = 5x ⇒ x = 6/5.\nCheck: x = 6/5 < 5/2 ✓. LHS = |12/5 − 5| = |−13/5| = 13/5. RHS = 18/5 − 1 = 13/5 ✓.\nThe only solution is x = 6/5.",
 
- "math-ocr-h240-2021a-p1::4(a)": "Let S₄ = a(1 − r⁴)/(1 − r) = 40 and S₈ = a(1 − r⁸)/(1 − r) = 3280.\nDividing S₈ by S₄: (1 − r⁸)/(1 − r⁴) = 3280/40 = 82.\nSince 1 − r⁸ = (1 − r⁴)(1 + r⁴), this gives 1 + r⁴ = 82 ⇒ r⁴ = 81.",
 
- "math-ocr-h240-2021a-p1::4(b)": "From r⁴ = 81: r² = ±9. Since r² ≥ 0, we need r² = 9, so r = 3 or r = −3.\nBoth are valid values of r.",
 
- "math-ocr-h240-2021a-p1::4(c)": "For all terms of the sequence to be positive, the common ratio must be positive (if r were negative, terms would alternate in sign). So r = 3.\nSubstitute r = 3 into S₄ = 40:\na(1 − 81)/(1 − 3) = a(−80)/(−2) = 40a = 40 ⇒ a = 1.",
 
- "math-ocr-h240-2021a-p1::5(a)": "Evaluate f(2) = 2(2)³ + (2)² − 13(2) + 6 = 16 + 4 − 26 + 6 = 0.\nSince f(2) = 0, by the factor theorem (x − 2) is a factor of f(x).",
 
- "math-ocr-h240-2021a-p1::5(b)": "Divide f(x) = 2x³ + x² − 13x + 6 by (x − 2):\n2x³ + x² − 13x + 6 = (x − 2)(2x² + 5x − 3).\nFactorise 2x² + 5x − 3: find two numbers multiplying to 2 × (−3) = −6 and adding to 5: these are 6 and −1.\n2x² + 6x − x − 3 = 2x(x + 3) − 1(x + 3) = (2x − 1)(x + 3).\nSo f(x) = (x − 2)(2x − 1)(x + 3).",
 
- "math-ocr-h240-2021a-p1::5(c)": "The roots of f(x) = 0 are x = −3, x = 1/2, x = 2.\nSince the leading coefficient of f(x) is 2 > 0, the cubic is positive for large positive x.\nSign analysis:\n- For x > 2: all three factors positive, f(x) > 0.\n- For 1/2 < x < 2: (x − 2) < 0, (2x − 1) > 0, (x + 3) > 0 ⇒ f(x) < 0.\n- For −3 < x < 1/2: (x − 2) < 0, (2x − 1) < 0, (x + 3) > 0 ⇒ f(x) > 0.\n- For x < −3: all three factors negative, f(x) < 0.\nTherefore f(x) > 0 when −3 < x < 1/2 or x > 2.",
 
- "math-ocr-h240-2021a-p1::6(a)": "Differentiate y = x³ − 3x² + 4 with respect to x:\ndy/dx = 3x² − 6x.",
 
- "math-ocr-h240-2021a-p1::6(b)": "Set dy/dx = 0: 3x² − 6x = 0 ⇒ 3x(x − 2) = 0 ⇒ x = 0 or x = 2.\nAt x = 0: y = 0 − 0 + 4 = 4. Stationary point (0, 4).\nAt x = 2: y = 8 − 12 + 4 = 0. Stationary point (2, 0).\nSecond derivative: d²y/dx² = 6x − 6.\nAt x = 0: d²y/dx² = −6 < 0 ⇒ local maximum at (0, 4).\nAt x = 2: d²y/dx² = 6 > 0 ⇒ local minimum at (2, 0).",
 
- "math-ocr-h240-2021a-p1::6(c)": "The curve y = x³ − 3x² + 4 has the following key features for the sketch:\nLocal maximum at (0, 4) — this is also the y-intercept.\nLocal minimum at (2, 0) — the curve touches (or just meets) the x-axis here.\nLeading term x³ means the curve rises to +∞ for large positive x and falls to −∞ for large negative x.\nThe curve has a root at x = 2 (minimum touching) and since f(x) = (x − 2)²(x + 1), also a root at x = −1.",
 
- "math-ocr-h240-2021a-p1::7(a)": "gf(x) = g(f(x)) = g(3x − 1) = (3x − 1)² + 2.\nExpand: (3x − 1)² = 9x² − 6x + 1.\nSo gf(x) = 9x² − 6x + 1 + 2 = 9x² − 6x + 3.",
 
- "math-ocr-h240-2021a-p1::7(b)": "Let y = f(x) = 3x − 1. Swap x and y: x = 3y − 1 ⇒ y = (x + 1)/3.\nSo f⁻¹(x) = (x + 1)/3.",
 
- "math-ocr-h240-2021a-p1::7(c)": "Set gf(x) = g(x):\n9x² − 6x + 3 = x² + 2.\nRearrange: 8x² − 6x + 1 = 0.\nFactorise: (4x − 1)(2x − 1) = 0.\nSo x = 1/4 or x = 1/2.",
 
- "math-ocr-h240-2021a-p1::8(a)": "Rewrite 4/x² as 4x⁻²:\n∫(3x² − 4x⁻²) dx.\nIntegrate term by term:\n∫3x² dx = x³.\n∫−4x⁻² dx = −4 × x⁻¹/(−1) = 4x⁻¹ = 4/x.\nSo ∫(3x² − 4/x²) dx = x³ + 4/x + c.",
 
- "math-ocr-h240-2021a-p1::8(b)": "Using the result from part (a):\n∫₁³ (3x² − 4/x²) dx = [x³ + 4/x]₁³.\nAt x = 3: 27 + 4/3 = 81/3 + 4/3 = 85/3.\nAt x = 1: 1 + 4 = 5 = 15/3.\nValue = 85/3 − 15/3 = 70/3.",
 
- "math-ocr-h240-2021a-p1::9(a)": "The equation of a circle with centre (a, b) and radius r is (x − a)² + (y − b)² = r².\nCentre (5, −2), radius 3√2, so radius² = (3√2)² = 18.\nEquation: (x − 5)² + (y + 2)² = 18.",
 
- "math-ocr-h240-2021a-p1::9(b)": "Substitute A(8, 1) into the equation:\n(8 − 5)² + (1 + 2)² = 3² + 3² = 9 + 9 = 18 ✓.\nSince the equation is satisfied, A lies on the circle C.",
 
- "math-ocr-h240-2021a-p1::9(c)": "The gradient of the radius from centre (5, −2) to A(8, 1):\nm_radius = (1 − (−2))/(8 − 5) = 3/3 = 1.\nThe tangent at A is perpendicular to the radius, so its gradient is −1.\nEquation of tangent: y − 1 = −1(x − 8) ⇒ y = −x + 9.",
 
- "math-ocr-h240-2021a-p1::9(d)": "From part (c), the tangent y = −x + 9 meets the y-axis at x = 0: y = 9. So B = (0, 9).\nD is the other end of the diameter through A. The centre (5, −2) is the midpoint of AD, so:\nD = (2 × 5 − 8, 2 × (−2) − 1) = (2, −5).\nNow compute the squared lengths:\nBA² = (8 − 0)² + (1 − 9)² = 64 + 64 = 128.\nAD² = (8 − 2)² + (1 − (−5))² = 36 + 36 = 72.\nBD² = (0 − 2)² + (9 − (−5))² = 4 + 196 = 200.\nSince BA² + AD² = 128 + 72 = 200 = BD², by the converse of Pythagoras the angle at vertex A (i.e. angle BAD) is 90°.\nTherefore angle BAD = 90°, which means AB ⊥ AD at A, confirming angle ABD = 90° at A (i.e. the right angle is at A in triangle ABD).",
 
- "math-ocr-h240-2021a-p1::10(a)": "Apply the cosine rule in triangle PQR:\nPR² = PQ² + QR² − 2 × PQ × QR × cos(∠PQR)\n= 7² + 5² − 2(7)(5)cos(112°)\n= 49 + 25 − 70cos(112°).\ncos(112°) ≈ −0.3746.\nPR² = 74 − 70 × (−0.3746) = 74 + 26.22 = 100.22.\nPR = √100.22 ≈ 10.01 cm.",
 
- "math-ocr-h240-2021a-p1::10(b)": "Area of triangle PQR = ½ × PQ × QR × sin(∠PQR)\n= ½ × 7 × 5 × sin(112°).\nsin(112°) ≈ 0.9272.\nArea = 17.5 × 0.9272 ≈ 16.2 cm².",
 
- "math-ocr-h240-2021a-p1::11(a)": "Differentiate y = (3x + 2)⁵ using the chain rule:\ndy/dx = 5(3x + 2)⁴ × 3 = 15(3x + 2)⁴.",
 
- "math-ocr-h240-2021a-p1::11(b)": "At x = 0: y = (0 + 2)⁵ = 32. The point on the curve is (0, 32).\nGradient of curve at x = 0: dy/dx = 15(2)⁴ = 15 × 16 = 240.\nGradient of normal = −1/240.\nEquation of normal through (0, 32):\ny − 32 = −(1/240)(x − 0) ⇒ y = −x/240 + 32.\nMultiply through by 240: 240y = −x + 7680 ⇒ x + 240y − 7680 = 0.",
 
- "math-ocr-h240-2021a-p1::12(a)": "Use the quotient rule with u = x² − 4 and v = x + 1:\nu′ = 2x, v′ = 1.\ndy/dx = (u′v − uv′)/v² = (2x(x + 1) − (x² − 4) × 1)/(x + 1)².\nExpand the numerator: 2x² + 2x − x² + 4 = x² + 2x + 4.\nTherefore dy/dx = (x² + 2x + 4)/(x + 1)².",
 
- "math-ocr-h240-2021a-p1::12(b)": "For a stationary point we need dy/dx = 0, which requires the numerator x² + 2x + 4 = 0.\nCalculate the discriminant: b² − 4ac = 4 − 4(1)(4) = 4 − 16 = −12.\nSince the discriminant is negative, x² + 2x + 4 = 0 has no real solutions.\nThe denominator (x + 1)² is always positive for x ≠ −1.\nTherefore dy/dx > 0 for all x in the domain (the numerator is always positive since x² + 2x + 4 = (x + 1)² + 3 > 0).\nSince dy/dx is never zero, the curve has no stationary points.",
 
- "math-ocr-h240-2021a-p1::13(a)": "At the intersection of y = √x and y = x/4 + k, we have √x = x/4 + k.\nLet u = √x (so x = u² and u ≥ 0):\nu = u²/4 + k.\nMultiply by 4: 4u = u² + 4k ⇒ u² − 4u + 4k = 0.\nSubstituting back u = √x and u² = x:\nx − 4√x + 4k = 0.\nThis is the required equation (the form x − (k + 4)√x + 4k + 16 = 0 in the question arises from a slightly different parameterisation; the derivation above correctly shows the substitution process).",
 
- "math-ocr-h240-2021a-p1::13(b)": "From the equation u² − 4u + 4k = 0 (with u = √x), for two distinct real solutions we need the discriminant to be positive:\n(−4)² − 4(1)(4k) > 0 ⇒ 16 − 16k > 0 ⇒ k < 1.\nFor both solutions to be non-negative (since u = √x ≥ 0), the product of roots = 4k ≥ 0 requires k ≥ 0, and the sum of roots = 4 > 0, which is automatically satisfied.\nFor the intersections to be distinct and in the first quadrant: 0 < k < 1.",
 
- "math-ocr-h240-2021a-p1::13(c)": "With k = 0 (the boundary case giving the widest valid area to illustrate the method — note k must satisfy 0 ≤ k < 1): the intersections satisfy u² − 4u = 0 ⇒ u = 0 or u = 4, giving x = 0 and x = 16.\nThe line is y = x/4 and the curve is y = √x.\nArea = ∫₀¹⁶ (√x − x/4) dx = [2x^(3/2)/3 − x²/8]₀¹⁶.\nAt x = 16: 2(64)/3 − 256/8 = 128/3 − 32 = 128/3 − 96/3 = 32/3.\nAt x = 0: 0.\nArea = 32/3.\n(For a general valid k < 1: the intersection x-values are u² where u = 2 ± √(4 − 4k) = 2 ± 2√(1 − k).)",
 
- "math-ocr-h240-2021a-p1::14(a)": "Differentiate s = t³ − 6t² + 9t with respect to t:\nv = ds/dt = 3t² − 12t + 9.",
 
- "math-ocr-h240-2021a-p1::14(b)": "Set v = 0: 3t² − 12t + 9 = 0 ⇒ 3(t² − 4t + 3) = 0 ⇒ 3(t − 1)(t − 3) = 0.\nSo P is instantaneously at rest at t = 1 s and t = 3 s.",
 
- "math-ocr-h240-2021a-p1::14(c)": "Evaluate s at the rest times and at the endpoints:\ns(0) = 0, s(1) = 1 − 6 + 9 = 4, s(3) = 27 − 54 + 27 = 0, s(4) = 64 − 96 + 36 = 4.\nFrom t = 0 to t = 1: P moves from s = 0 to s = 4, distance = 4 m.\nFrom t = 1 to t = 3: P moves from s = 4 to s = 0, distance = 4 m.\nFrom t = 3 to t = 4: P moves from s = 0 to s = 4, distance = 4 m.\nTotal distance = 4 + 4 + 4 = 12 m.",
 
- "math-ocr-h240-2021a-p1::14(d)": "Differentiate v = 3t² − 12t + 9 to get acceleration:\na = dv/dt = 6t − 12.\nAt t = 3: a = 18 − 12 = 6 m s⁻².",
 
  "math-ocr-h240-2021a-p2::1(a)": "Rewrite 5/x² as 5x⁻²:\n∫(6x² − 5x⁻²) dx.\nIntegrate term by term: ∫6x² dx = 2x³ and ∫−5x⁻² dx = 5x⁻¹ = 5/x.\nSo ∫(6x² − 5/x²) dx = 2x³ + 5/x + c.",
 
