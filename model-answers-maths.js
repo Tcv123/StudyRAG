@@ -1842,90 +1842,88 @@ window.MATHS_MODEL_ANSWERS = {
 
 
 
- "math-ocr-h240-2023-p2::1(a)": "Differentiate: dy/dx = 3x² − 6x − 9.\nSet equal to zero: 3x² − 6x − 9 = 0 ⇒ x² − 2x − 3 = 0 ⇒ (x − 3)(x + 1) = 0.\nx = 3 or x = −1.\nAt x = 3: y = 27 − 27 − 27 + 5 = −22. Stationary point (3, −22).\nAt x = −1: y = −1 − 3 + 9 + 5 = 10. Stationary point (−1, 10).",
+ "math-ocr-h240-2023-p2::1(a)(i)": "x² − 8x + 11 = (x − 4)² − 16 + 11\n= (x − 4)² − 5\n\nSo a = 4 and b = −5.",
+ "math-ocr-h240-2023-p2::1(a)(ii)": "(x − 4)² ≥ 0 for all x, so (x − 4)² − 5 ≥ −5, with equality when x = 4.\n\nMinimum value of x² − 8x + 11 is −5.",
+ "math-ocr-h240-2023-p2::1(b)": "x² − 8x + 11 = k ⇒ x² − 8x + (11 − k) = 0\n\nTwo equal roots ⇒ discriminant = 0:\n(−8)² − 4 × 1 × (11 − k) = 0\n64 − 44 + 4k = 0\n20 + 4k = 0\n\nk = −5\n\n(This agrees with part (a): the line y = k touches the curve y = x² − 8x + 11 only at its minimum point, where y = −5.)",
+ "math-ocr-h240-2023-p2::2(a)": "OA = (6, 0, 8), so |OA| = √(6² + 0² + 8²) = √100 = 10.\n\nSince vector OP = k × vector OA, the length OP = |k| × |OA| = |k| × 10.\n\nOP = 10|k|",
+ "math-ocr-h240-2023-p2::2(b)": "OP = (6k, 0, 8k) and OB = (1, 2, 3).\n\nBP = OP − OB = (6k − 1, −2, 8k − 3)\n\nAngle OPB = 90°, so by Pythagoras OP² + BP² = OB².\n\nOP² = 100k²\nBP² = (6k − 1)² + (−2)² + (8k − 3)² = 36k² − 12k + 1 + 4 + 64k² − 48k + 9 = 100k² − 60k + 14\nOB² = 1² + 2² + 3² = 14\n\n100k² + 100k² − 60k + 14 = 14\n200k² − 60k + 14 = 14\n200k² − 60k = 0\n20k(10k − 3) = 0\n\nk = 0 or k = 3/10. Since k is non-zero,\n\nk = 3/10\n\n(Check with the scalar product: OP · BP = 6k(6k − 1) + 0 + 8k(8k − 3) = 100k² − 30k, which is 0 when k = 3/10.)",
+ "math-ocr-h240-2023-p2::3": "For 0 ≤ x ≤ 2.5, x + 2 > 0 so y = 1/(x + 2) > 0, and the region lies above the x-axis.\n\nArea = ∫₀^2.5 1/(x + 2) dx\n= [ln(x + 2)]₀^2.5\n= ln 4.5 − ln 2\n= ln(4.5/2)\n= ln(9/4)\n\nExact area = ln(9/4) (equivalently 2ln(3/2)).",
+ "math-ocr-h240-2023-p2::4(a)": "y = x² ⇒ dy/dx = 2x\n\nAt A(1, 1): gradient of tangent = 2 × 1 = 2, so gradient of normal = −1/2.\n\nEquation of normal at A:\ny − 1 = −½(x − 1)\ny = −½x + 3/2\n\nAt B the normal meets the curve, so\nx² = −½x + 3/2\n2x² = −x + 3\n2x² + x − 3 = 0\n(2x + 3)(x − 1) = 0\nx = 1 or x = −3/2\n\nx = 1 is the point A, so at B, x = −3/2 and y = (−3/2)² = 9/4.\n\nB is (−3/2, 9/4).",
+ "math-ocr-h240-2023-p2::4(b)": "O(0, 0), A(1, 1), B(−3/2, 9/4).\n\nOA² = 1² + 1² = 2\nOB² = (3/2)² + (9/4)² = 36/16 + 81/16 = 117/16\nAB² = (1 − (−3/2))² + (1 − 9/4)² = (5/2)² + (−5/4)² = 100/16 + 25/16 = 125/16\n\nCosine rule in triangle AOB:\ncos α = (OA² + OB² − AB²)/(2 × OA × OB)\n= (2 + 117/16 − 125/16)/(2 × √2 × √(117/16))\n= (2 − 1/2)/(2 × √2 × 3√13/4)\n= (3/2)/(3√26/2)\n= 1/√26\n\ncos α > 0, so α is acute and\nsin α = √(1 − 1/26) = √(25/26) = 5/√26\n\ntan α = sin α / cos α = (5/√26)/(1/√26)\n\ntan α = 5",
+ "math-ocr-h240-2023-p2::5(a)(i)": "f(x) = cos x + √3 sin x\nf′(x) = −sin x + √3 cos x\n\nf′(x) = 0 ⇒ √3 cos x = sin x.\nIf cos x = 0 then sin x = ±1 and f′(x) = ∓1 ≠ 0, so cos x ≠ 0 at any solution and we may divide by cos x:\ntan x = √3\n\nPrincipal value x = π/3; tan has period π, so in 0 ≤ x ≤ 2π:\nx = π/3 or x = π/3 + π = 4π/3\n\n(π/3 + 2π is outside the domain, so there are no other solutions.)\n\nx = π/3, 4π/3",
+ "math-ocr-h240-2023-p2::5(a)(ii)": "f′(x) = −sin x + √3 cos x\nf″(x) = −cos x − √3 sin x\n\nf″(x) = 0 ⇒ −cos x = √3 sin x.\nIf cos x = 0 then sin x = ±1 and f″(x) = ∓√3 ≠ 0, so cos x ≠ 0 and we may divide by cos x:\n√3 tan x = −1\ntan x = −1/√3\n\ntan x is negative in the second and fourth quadrants. The reference angle is π/6, so in 0 ≤ x ≤ 2π:\nx = π − π/6 = 5π/6 or x = 2π − π/6 = 11π/6\n\nx = 5π/6, 11π/6",
+ "math-ocr-h240-2023-p2::5(b)": "A and C are where the graph of f′ crosses the x-axis, i.e. where f′(x) = 0, from (a)(i): x = π/3 and x = 4π/3.\nA(π/3, 0) and C(4π/3, 0).\n\nB and D are the turning points of f′, where f″(x) = 0, from (a)(ii): x = 5π/6 (the minimum B) and x = 11π/6 (the maximum D).\n\nf′(5π/6) = −sin(5π/6) + √3 cos(5π/6) = −1/2 + √3(−√3/2) = −1/2 − 3/2 = −2\nf′(11π/6) = −sin(11π/6) + √3 cos(11π/6) = 1/2 + √3(√3/2) = 1/2 + 3/2 = 2\n\nA(π/3, 0), B(5π/6, −2), C(4π/3, 0), D(11π/6, 2)",
+ "math-ocr-h240-2023-p2::5(c)(i)": "f(x) is increasing where its gradient f′(x) is positive, i.e. for the values of x where the graph of y = f′(x) lies above the x-axis.",
+ "math-ocr-h240-2023-p2::5(c)(ii)": "From the diagram and part (b), the graph of f′ is above the x-axis from x = 0 up to A (x = π/3), and again from C (x = 4π/3) up to x = 2π (f′(0) = √3 > 0 and f′(2π) = √3 > 0).\n\nSo f(x) is increasing for 0 ≤ x < π/3 and for 4π/3 < x ≤ 2π.\n\nIn set notation:\n{x : 0 ≤ x < π/3} ∪ {x : 4π/3 < x ≤ 2π}",
+ "math-ocr-h240-2023-p2::6(a)": "Centre: x² − 6x + y² + a = 0 ⇒ (x − 3)² + y² = 9 − a, so C is (3, 0).\n\nSubstitute y = x into the circle:\nx² − 6x + x² + a = 0\n2x² − 6x + a = 0\n\nx = (6 ± √(36 − 8a))/4 = (6 ± 2√(9 − 2a))/4 = (3 ± √(9 − 2a))/2\n\nAt A: x = (3 − √(9 − 2a))/2, at B: x = (3 + √(9 − 2a))/2, and on y = x each y-coordinate equals its x-coordinate.\n\nM is the midpoint of AB, so its x-coordinate is the mean of these:\nx = 3/2, so M is (3/2, 3/2).\n\nCM² = (3 − 3/2)² + (0 − 3/2)² = 9/4 + 9/4 = 9/2, so CM = 3/√2.\n\nAB: the x-coordinates differ by √(9 − 2a) and so do the y-coordinates, so\nBA² = (√(9 − 2a))² + (√(9 − 2a))² = 2(9 − 2a)\nBA = √2 × √(9 − 2a)\n\nM is the midpoint of the chord AB, so CM is perpendicular to AB (check: gradient of CM = (3/2 − 0)/(3/2 − 3) = −1, and (−1) × 1 = −1). So CM is the perpendicular height of triangle ABC from C to base AB.\n\nArea of ABC = ½ × BA × CM\n= ½ × √2 √(9 − 2a) × 3/√2\n= (3/2)√(9 − 2a), as required.",
+ "math-ocr-h240-2023-p2::6(b)(i)": "(3/2)√(9 − 2a) = 0 ⇒ 9 − 2a = 0\n\na = 9/2",
+ "math-ocr-h240-2023-p2::6(b)(ii)": "When a = 9/2, the equation 2x² − 6x + a = 0 has the repeated root x = 3/2, so A and B coincide at (3/2, 3/2).\n\nGeometrically, the line y = x is a tangent to the circle (it touches the circle at the single point (3/2, 3/2)).",
+ "math-ocr-h240-2023-p2::6(c)": "When a = 5, the equation 2x² − 6x + 5 = 0 has discriminant 36 − 40 = −4 < 0 (equivalently 9 − 2a = −1 < 0), so there are no real points of intersection.\n\n(The circle has centre (3, 0) and radius √(9 − 5) = 2, which is less than the perpendicular distance 3/√2 ≈ 2.12 from the centre (3, 0) to the line y = x.)\n\nGeometrically, the line y = x does not meet the circle.",
+ "math-ocr-h240-2023-p2::7(a)": "Suppose a² − 4b = 2. Then\na² = 4b + 2 = 2(2b + 1)\n\nSince 2b + 1 is an integer, a² is even.\n\nIf a were odd, say a = 2m + 1 for some integer m, then a² = 4m² + 4m + 1 = 2(2m² + 2m) + 1 would be odd. So a² even means a cannot be odd.\n\nHence a is even, i.e. a² − 4b = 2 ⇒ a is even.",
+ "math-ocr-h240-2023-p2::7(b)": "Proof by contradiction.\n\nAssume that there are positive integers a and b with a² − 4b = 2.\n\nBy part (a), a is even, so a = 2n for some integer n. Then\n(2n)² − 4b = 2\n4n² − 4b = 2\n2n² − 2b = 1\n\nThe left-hand side 2(n² − b) is even, but the right-hand side 1 is odd. An even number cannot equal an odd number, so this is a contradiction.\n\nTherefore the assumption is false, and for all positive integers a and b,\na² − 4b ≠ 2.",
+ "math-ocr-h240-2023-p2::8(a)": "The 15 heights in order are:\n2, 10, 24, 30, 32, 34, 39, 41, 42, 44, 47, 49, 53, 57, 62\n\nMedian = 8th value = 41\nLower quartile = 4th value = 30\nUpper quartile = 12th value = 49\nSmallest value = 2, largest value = 62\n\nBox-and-whisker plot (described): draw a horizontal axis labelled \"Height (cm)\" with a uniform linear scale from 0 to 70 (marked every 10 cm). Draw a box from 30 to 49 with a vertical line inside it at 41 (the median). Draw a whisker from the left end of the box at 30 out to 2, and a whisker from the right end of the box at 49 out to 62.",
+ "math-ocr-h240-2023-p2::8(b)": "Using the rule that an outlier is more than 1.5 × IQR below the lower quartile or above the upper quartile:\n\nIQR = 49 − 30 = 19\n1.5 × IQR = 28.5\n\nLower limit: Q₁ − 1.5 × IQR = 30 − 28.5 = 1.5\nUpper limit: Q₃ + 1.5 × IQR = 49 + 28.5 = 77.5\n\nThe smallest height, 2 cm, is above 1.5, and the largest, 62 cm, is below 77.5, so every height lies within the limits.\n\nThere are no outliers, so the statistician should not ignore any of the heights.",
+ "math-ocr-h240-2023-p2::9(a)": "Total number of students = 500 + 250 = 750.\nProportion in years 12 and 13 = 250/750 = 1/3.\n\nX ~ B(20, 1/3)",
+ "math-ocr-h240-2023-p2::9(b)(i)": "With X ~ B(20, 1/3):\n\nP(X = x) = ²⁰Cₓ (1/3)^x (2/3)^(20 − x)",
+ "math-ocr-h240-2023-p2::9(b)(ii)": "X counts students in a sample of 20, so x must be a whole number from 0 to 20:\n\n{x : x ∈ ℤ, 0 ≤ x ≤ 20}",
+ "math-ocr-h240-2023-p2::9(c)": "P(5 ≤ X ≤ 9) = P(X ≤ 9) − P(X ≤ 4)\n= 0.90810 − 0.15151\n= 0.75659...\n\nP(5 ≤ X ≤ 9) = 0.757 (3 s.f.)",
+ "math-ocr-h240-2023-p2::9(d)": "A random sample of 20 might, by chance, include too many students from one year group and too few (or none) from another, so the group at the parents' evening may not represent all the year groups in the school.",
+ "math-ocr-h240-2023-p2::10": "Let μ kg be the population mean mass of fish of this species in this river.\n\nAssumption: the standard deviation of the masses of fish of this species in this river is 0.25 kg, the same as for the UK.\n\nH₀: μ = 4.2\nH₁: μ < 4.2\n\nLet X̄ be the mean mass (kg) of a random sample of 100 fish from the river. Under H₀,\nX̄ ~ N(4.2, 0.25²/100), i.e. X̄ ~ N(4.2, 0.025²)\n\np-value = P(X̄ < 4.16) = P(Z < (4.16 − 4.2)/0.025) = P(Z < −1.6) = 0.0548 (3 s.f.)\n\n0.0548 > 0.05, so the result is not significant at the 5% level.\n\nDo not reject H₀.\n\nThere is insufficient evidence at the 5% significance level that the mean mass of fish of this species in this river is less than 4.2 kg, i.e. insufficient evidence that the environmentalist is correct.\n\n(Equivalently: the critical value is 4.2 − 1.645 × 0.025 = 4.159, and 4.16 > 4.159; or z = −1.6 > −1.645.)",
+ "math-ocr-h240-2023-p2::11(a)": "Standardising, Y > μ − σ corresponds to Z > ((μ − σ) − μ)/σ = −1, where Z ~ N(0, 1).\n\nP(Y > μ − σ) = P(Z > −1) = P(Z < 1) = 0.841 (3 s.f.)",
+ "math-ocr-h240-2023-p2::11(b)": "P(Y > 45) = 0.2 ⇒ P(Y < 45) = 0.8\n(45 − μ)/σ = Φ⁻¹(0.8) = 0.84162\n45 − μ = 0.84162σ   (1)\n\nP(Y < 25) = 0.3\n(25 − μ)/σ = Φ⁻¹(0.3) = −0.52440\n25 − μ = −0.52440σ   (2)\n\n(1) − (2): 20 = 1.36602σ\nσ = 14.641...\n\nμ = 45 − 0.84162 × 14.641... = 32.677...\n\nμ = 32.7 and σ = 14.6 (3 s.f.)",
+ "math-ocr-h240-2023-p2::11(c)": "U ~ N(10, 4), so the standard deviation of U is 2; V ~ N(12, 9), so the standard deviation of V is 3. Let Z ~ N(0, 1).\n\nP(U < b) = P(Z < (b − 10)/2)\nP(V > c) = P(Z > (c − 12)/3) = P(Z < (12 − c)/3), by symmetry.\n\nThese are equal, so\n(b − 10)/2 = (12 − c)/3\nb − 10 = (2/3)(12 − c) = 8 − (2/3)c\n\nb = 18 − (2/3)c",
+ "math-ocr-h240-2023-p2::12(a)": "Let p be the probability that the dice shows a six on one throw.\nH₀: p = 1/6, H₁: p < 1/6 (one-tailed, 5% level).\n\nUnder H₀, X ~ B(100, 1/6). Evidence of bias against six requires P(X ≤ x) ≤ 0.05.\n\nP(X ≤ 11) = 0.0777 (3 s.f.) > 0.05\nP(X ≤ 10) = 0.0427 (3 s.f.) < 0.05\n\nSo the critical region is X ≤ 10, and the largest value of X that would provide evidence at the 5% level that the dice is biased against six is 10.",
+ "math-ocr-h240-2023-p2::12(b)": "If the dice is fair, X ~ B(100, 1/6), and the test concludes there is significant evidence of bias against six when X is in the critical region X ≤ 10.\n\nP(X ≤ 10) = 0.0427 (3 s.f.)",
+ "math-ocr-h240-2023-p2::13(a)(i)": "Most points lie roughly along a straight line of gradient −1, running from about (5, 70) through (40, 40) towards (55, 15), and for these points x + y is roughly 75.\n\nk = 75 (any value from 70 to 80 is reasonable)",
+ "math-ocr-h240-2023-p2::13(a)(ii)": "x + y is the percentage using either public or motorised private transport, so the remaining employees (who worked from home, walked or cycled) make up about 100 − k percent.\n\n100 − 75 = 25, so approximately 25% of employees worked from home, walked or cycled.",
+ "math-ocr-h240-2023-p2::13(b)(i)": "The group with the highest percentage using motorised private transport (the points at the top left of the diagram, which also have the lowest public-transport use) will have the greater values of F, because travelling by private vehicle uses more fuel per person than travelling the same distance by public transport, where the fuel is shared among many passengers.",
+ "math-ocr-h240-2023-p2::13(b)(ii)": "Any two of, for example:\n1. The lengths of the journeys to work (distance travelled) in each LA.\n2. How many people travel in each vehicle used (the occupancy of each mode, e.g. amount of car sharing).\n(Other valid kinds: the types of vehicle or fuel used, or the proportion of electric vehicles.)",
+ "math-ocr-h240-2023-p2::13(c)(i)": "Characteristic: both LAs have a large percentage of employees who walk, cycle or work from home. For A, x + y is only about 0.5 + 23 ≈ 24, and for B only about 29.5 + 4.5 = 34, so roughly 76% and 66% respectively use neither public nor motorised private transport, far more than the 20–30% typical of the other LAs.\n\nJustification: both are likely to be small areas, so journeys to work are short and there is less need to travel by vehicle.",
+ "math-ocr-h240-2023-p2::13(c)(ii)": "A is rural (countryside) while B is urban (a city).\n\nJustification: in A almost nobody uses public transport (x ≈ 0), which suggests public transport is hardly available there, as in a remote rural area. In B almost nobody uses motorised private transport (y ≈ 4.5) but about 30% use public transport, which suggests a city centre with good public transport and heavy traffic, so very few people drive to work.",
+ "math-ocr-h240-2023-p2::13(d)": "Yes, I agree. In the dense cluster at the top left many points overlap or are too close together to distinguish, and there are no fine gridlines, so it is not possible to read accurate values for individual LAs from the diagram.",
+ "math-ocr-h240-2023-p2::14(a)": "Let D be the event that the tree has the disease and T the event that the test result is positive.\n\nP(D) = 0.35, P(T | D) = 0.95, P(T | not D) = 0.1\n\nP(T) = 0.35 × 0.95 + 0.65 × 0.1 = 0.3325 + 0.065 = 0.3975\n\nP(D | T) = P(D and T)/P(T)\n= (0.35 × 0.95)/(0.35 × 0.95 + 0.65 × 0.1)\n= 0.3325/0.3975\n= 133/159\n\nP(tree has the disease | positive result) = 0.836 (3 s.f.)",
+ "math-ocr-h240-2023-p2::14(b)": "Let p be the proportion of trees in county B that have the disease.\n\nP(positive result) = 0.95p + 0.1(1 − p)\n\nThe sample is large and random, so set this equal to the observed proportion 0.43:\n0.95p + 0.1(1 − p) = 0.43\n0.95p + 0.1 − 0.1p = 0.43\n0.85p = 0.33\np = 0.388 (3 s.f.)\n\nSo approximately 39% of the trees in county B have the disease.",
 
- "math-ocr-h240-2023-p2::1(b)": "Second derivative: d²y/dx² = 6x − 6.\nAt x = 3: d²y/dx² = 18 − 6 = 12 > 0, so (3, −22) is a local minimum.\nAt x = −1: d²y/dx² = −6 − 6 = −12 < 0, so (−1, 10) is a local maximum.",
 
- "math-ocr-h240-2023-p2::2(a)": "X ∼ B(20, 0.35).\nP(X = 7) = C(20,7) × 0.35⁷ × 0.65¹³.\nC(20,7) = 77520.\n0.35⁷ = 0.000643797, 0.65¹³ = 0.009643.\nP(X = 7) = 77520 × 0.000643797 × 0.009643 ≈ 0.1844.",
 
- "math-ocr-h240-2023-p2::2(b)": "X ∼ B(20, 0.35).\nUsing cumulative binomial tables or a calculator:\nP(X ≤ 9) ≈ 0.8782.",
 
- "math-ocr-h240-2023-p2::2(c)": "P(5 ≤ X ≤ 9) = P(X ≤ 9) − P(X ≤ 4).\nP(X ≤ 4) ≈ 0.1182.\nP(5 ≤ X ≤ 9) = 0.8782 − 0.1182 = 0.7600.",
 
- "math-ocr-h240-2023-p2::3(a)": "Use the identity cos²θ = 1 − sin²θ:\n2cos²θ − 3sinθ = 0 ⇒ 2(1 − sin²θ) − 3sinθ = 0 ⇒ 2 − 2sin²θ − 3sinθ = 0.\nRearranging: 2sin²θ + 3sinθ − 2 = 0, as required.",
 
- "math-ocr-h240-2023-p2::3(b)": "Factorise 2sin²θ + 3sinθ − 2 = 0:\n(2sinθ − 1)(sinθ + 2) = 0.\nsinθ = ½ or sinθ = −2.\nSince −1 ≤ sinθ ≤ 1, sinθ = −2 is impossible.\nsinθ = ½ ⇒ θ = 30° or θ = 180° − 30° = 150°.",
 
- "math-ocr-h240-2023-p2::4(a)": "Mean: x̄ = Σx/n = 48/8 = 6.\nVariance: σ² = Σx²/n − x̄² = 400/8 − 6² = 50 − 36 = 14.\nStandard deviation: σ = √14 ≈ 3.742.",
 
- "math-ocr-h240-2023-p2::4(b)": "For the transformation y = 3x − 2:\nMean of y = 3 × x̄ − 2 = 3 × 6 − 2 = 16.\nStandard deviation of y = 3 × σ = 3√14 ≈ 11.22 (the constant −2 does not affect spread).",
 
- "math-ocr-h240-2023-p2::5(a)": "Evaluate f(3) = 2(27) − 3(9) − 11(3) + 6 = 54 − 27 − 33 + 6 = 0.\nSince f(3) = 0, by the Factor Theorem (x − 3) is a factor of f(x).",
 
- "math-ocr-h240-2023-p2::5(b)": "Divide f(x) = 2x³ − 3x² − 11x + 6 by (x − 3) by inspection or long division:\n2x³ − 3x² − 11x + 6 = (x − 3)(2x² + 3x − 2).\nFactorise the quadratic: 2x² + 3x − 2 = (2x − 1)(x + 2).\nTherefore f(x) = (x − 3)(2x − 1)(x + 2).",
 
- "math-ocr-h240-2023-p2::5(c)": "The roots are x = −2, x = ½ and x = 3. The y-intercept is f(0) = 6.\nSince the leading coefficient is positive, the cubic rises from bottom-left to top-right.\nSketch a positive cubic crossing the x-axis at (−2, 0), (½, 0) and (3, 0), crossing the y-axis at (0, 6).",
 
- "math-ocr-h240-2023-p2::6(a)": "X ∼ B(15, 0.08). The batch is rejected when X ≥ 3.\nP(X ≥ 3) = 1 − P(X ≤ 2).\nP(X = 0) = 0.92¹⁵ = 0.2863.\nP(X = 1) = C(15,1) × 0.08 × 0.92¹⁴ = 15 × 0.08 × 0.3112 = 0.3734.\nP(X = 2) = C(15,2) × 0.08² × 0.92¹³ = 105 × 0.0064 × 0.3382 = 0.2273.\nP(X ≤ 2) = 0.2863 + 0.3734 + 0.2273 = 0.8870.\nP(X ≥ 3) = 1 − 0.8870 = 0.1130.",
 
- "math-ocr-h240-2023-p2::6(b)": "P(X = 1) = C(15,1) × 0.08¹ × 0.92¹⁴ = 15 × 0.08 × 0.3112 ≈ 0.3734.",
 
- "math-ocr-h240-2023-p2::6(c)": "P(X ≥ 2) = 1 − P(X ≤ 1) = 1 − P(X = 0) − P(X = 1) = 1 − 0.2863 − 0.3734 = 0.3403.",
 
- "math-ocr-h240-2023-p2::7(a)": "Let the first term be a and common ratio r.\nSecond term: ar = 12 — (1).\nFifth term: ar⁴ = −96 — (2).\nDivide (2) by (1): r³ = −96/12 = −8 ⇒ r = −2.\nSubstitute into (1): a(−2) = 12 ⇒ a = −6.",
 
- "math-ocr-h240-2023-p2::7(b)": "S₁₀ = a(1 − rⁿ)/(1 − r) = −6(1 − (−2)¹⁰)/(1 − (−2)) = −6(1 − 1024)/3 = −6 × (−1023)/3 = 6138/3 = 2046.",
 
- "math-ocr-h240-2023-p2::7(c)": "The sum to infinity of a geometric series exists only when |r| < 1.\nHere |r| = |−2| = 2 > 1, so the terms grow in magnitude and the series diverges.\nTherefore the sum to infinity does not exist.",
 
- "math-ocr-h240-2023-p2::8(a)": "Total ways to choose 3 counters from 12: C(12,3) = 220.\nAll red: C(5,3) = 10. All blue: C(4,3) = 4. All green: C(3,3) = 1.\nP(all same colour) = (10 + 4 + 1)/220 = 15/220 = 3/44.",
 
- "math-ocr-h240-2023-p2::8(b)": "Use the complement: P(at least one red) = 1 − P(no red).\nP(no red) = C(7,3)/C(12,3) = 35/220 = 7/44.\nP(at least one red) = 1 − 7/44 = 37/44.",
 
- "math-ocr-h240-2023-p2::9(a)": "Use the quotient rule with u = 3x − 1 and v = x + 2:\ndy/dx = (u′v − uv′)/v² = (3(x + 2) − (3x − 1)(1))/(x + 2)².\nNumerator: 3x + 6 − 3x + 1 = 7.\ndy/dx = 7/(x + 2)².",
 
- "math-ocr-h240-2023-p2::9(b)": "For a stationary point we need dy/dx = 0, i.e. 7/(x + 2)² = 0.\nThe numerator is the constant 7, which is never zero, so dy/dx > 0 for all x ≠ −2.\nTherefore C has no stationary points.",
 
- "math-ocr-h240-2023-p2::9(c)": "At x = 1: y = (3 − 1)/(1 + 2) = 2/3. Point is (1, 2/3).\nGradient of tangent = 7/(1 + 2)² = 7/9.\nGradient of normal = −9/7.\nEquation of normal: y − 2/3 = −(9/7)(x − 1).\nMultiply through by 21: 21y − 14 = −27(x − 1) = −27x + 27.\n27x + 21y = 41.",
 
- "math-ocr-h240-2023-p2::10(a)": "Data: 152, 158, 161, 163, 165, 167, 169, 172, 175, 178.\nSum = 1660, so mean x̄ = 1660/10 = 166 cm.\nΣx² = 152² + 158² + 161² + 163² + 165² + 167² + 169² + 172² + 175² + 178²\n= 23104 + 24964 + 25921 + 26569 + 27225 + 27889 + 28561 + 29584 + 30625 + 31684 = 276126.\nVariance = 276126/10 − 166² = 27612.6 − 27556 = 56.6.\nStandard deviation = √56.6 ≈ 7.52 cm.",
 
- "math-ocr-h240-2023-p2::10(b)": "The mean for condition B (168.5 cm) is slightly higher than for condition A (166 cm), so plants under condition B are on average taller.\nThe standard deviation for condition B (7.2 cm) is similar to that for condition A (≈7.52 cm), so the variability in height is comparable under both conditions.",
 
- "math-ocr-h240-2023-p2::11(a)": "Write (2x − 1)/(x(x − 1)) = A/x + B/(x − 1).\n2x − 1 = A(x − 1) + Bx.\nSet x = 0: −1 = −A ⇒ A = 1.\nSet x = 1: 1 = B ⇒ B = 1.\nSo (2x − 1)/(x(x − 1)) = 1/x + 1/(x − 1).\n∫₂³ [1/x + 1/(x − 1)] dx = [ln x + ln(x − 1)]₂³.\nAt x = 3: ln 3 + ln 2. At x = 2: ln 2 + ln 1 = ln 2 + 0 = ln 2.\nResult = (ln 3 + ln 2) − ln 2 = ln 3.\nTherefore k = 3.",
 
- "math-ocr-h240-2023-p2::12(a)": "H₀: ρ = 0 (there is no correlation between screen time and anxiety score).\nH₁: ρ > 0 (there is positive correlation).",
 
- "math-ocr-h240-2023-p2::12(b)": "This is a one-tailed test at the 5% significance level with n = 12.\nFrom tables the critical value is r_crit = 0.4973.\nSince r = 0.623 > 0.4973, we reject H₀.\nThere is sufficient evidence at the 5% level to support the researcher's belief that there is a positive correlation between daily screen time and anxiety score.",
 
- "math-ocr-h240-2023-p2::12(c)": "The data must come from a bivariate normal distribution (i.e. both variables are normally distributed).",
 
- "math-ocr-h240-2023-p2::13(a)": "f(x) = e^(2x) + 3, g(x) = ½ln(x − 3) (domain x > 3).\nCompute gf(x): g(f(x)) = g(e^(2x) + 3) = ½ln(e^(2x) + 3 − 3) = ½ln(e^(2x)) = ½ × 2x = x. ✓\nCompute fg(x): f(g(x)) = f(½ln(x−3)) = e^(2 × ½ln(x−3)) + 3 = e^(ln(x−3)) + 3 = (x − 3) + 3 = x. ✓\nSince fg(x) = x and gf(x) = x, f and g are inverse functions of each other.",
 
- "math-ocr-h240-2023-p2::13(b)": "y = f(x) = e^(2x) + 3: passes through (0, e⁰ + 3) = (0, 4); asymptote y = 3 as x → −∞; no x-intercept.\ny = g(x) = ½ln(x−3): passes through (4, ½ln1) = (4, 0); asymptote x = 3; no y-intercept.\nThe two curves are reflections of each other in the line y = x.\nLabel (0, 4) on f and (4, 0) on g.",
 
- "math-ocr-h240-2023-p2::13(c)": "fg(x) = x (since f and g are inverses). So the equation fg(x) = 4x − 1 becomes x = 4x − 1 ⇒ 3x = 1 ⇒ x = 1/3.\nCheck domain: g requires x > 3, but x = 1/3 is outside this domain.\nSolve directly: e^(2x) + 3 = 4x − 1 is needed when the composition is applied outside the standard domain; solve numerically.\nLet h(x) = e^(2x) − 4x + 4. h′(x) = 2e^(2x) − 4 = 0 ⇒ x = ½ln2 ≈ 0.347.\nMinimum value h(0.347) = e^(0.693) − 4(0.347) + 4 = 2 − 1.387 + 4 = 4.61 > 0.\nSince the minimum of h(x) is positive, there are no real solutions to e^(2x) + 3 = 4x − 1.\nConclusion: the equation fg(x) = 4x − 1 has no solution in the domain of g.",
 
- "math-ocr-h240-2023-p2::14(a)": "Under H₀, X ∼ B(25, 0.4). Observed value X = 5.\nP(X ≤ 5) = P(X=0) + P(X=1) + … + P(X=5).\nUsing tables or calculator: P(X ≤ 5) ≈ 0.0294.\nSince 0.0294 > 0.01, we do not reject H₀.\nThere is insufficient evidence at the 1% significance level to conclude that p < 0.4.",
 
- "math-ocr-h240-2023-p2::14(b)": "The critical region is the set of values of X that lead to rejection of H₀.\nFind the largest integer c such that P(X ≤ c) < 0.01.\nP(X ≤ 4) ≈ 0.0095 < 0.01; P(X ≤ 5) ≈ 0.0294 > 0.01.\nCritical region: X ≤ 4.",
 
- "math-ocr-h240-2023-p2::15(a)": "Parametric equations: x = 3t − 1, y = t³ − 3t.\ndx/dt = 3, dy/dt = 3t² − 3.\ndy/dx = (dy/dt)/(dx/dt) = (3t² − 3)/3 = t² − 1.\nSet dy/dx = 0: t² − 1 = 0 ⇒ t = 1 or t = −1.\nAt t = 1: x = 2, y = 1 − 3 = −2. Point (2, −2).\nAt t = −1: x = −4, y = −1 + 3 = 2. Point (−4, 2).",
 
- "math-ocr-h240-2023-p2::15(b)": "From x = 3t − 1: t = (x + 1)/3.\nSubstitute into y = t³ − 3t:\ny = ((x+1)/3)³ − 3·(x+1)/3 = (x+1)³/27 − (x+1).\nThis is the Cartesian equation: y = (x+1)³/27 − (x+1).",
 
- "math-ocr-h240-2023-p2::16(a)": "y = x²e^(−x). Use the product rule with u = x² and v = e^(−x):\nu′ = 2x, v′ = −e^(−x).\ndy/dx = 2x·e^(−x) + x²·(−e^(−x)) = e^(−x)(2x − x²) = xe^(−x)(2 − x), as required.",
 
- "math-ocr-h240-2023-p2::16(b)": "Set dy/dx = xe^(−x)(2 − x) = 0.\ne^(−x) > 0 for all x, so x = 0 or 2 − x = 0 ⇒ x = 2.\nAt x = 0: y = 0. Stationary point (0, 0).\nAt x = 2: y = 4e^(−2). Stationary point (2, 4e^(−2)).",
 
- "math-ocr-h240-2023-p2::16(c)": "Integrate by parts twice. Let I = ∫x²e^(−x)dx.\nFirst application (u = x², dv = e^(−x)dx): v = −e^(−x).\nI = −x²e^(−x) + ∫2xe^(−x)dx.\nSecond application (u = 2x, dv = e^(−x)dx): v = −e^(−x).\n= −x²e^(−x) + [−2xe^(−x) + ∫2e^(−x)dx]\n= −x²e^(−x) − 2xe^(−x) − 2e^(−x) + C = −e^(−x)(x² + 2x + 2) + C.\nApply limits 0 to 2:\n[−e^(−x)(x² + 2x + 2)]₀² = −e^(−2)(4 + 4 + 2) − (−e⁰(0 + 0 + 2))\n= −10e^(−2) + 2 = 2 − 10e^(−2), as required.",
 
- "math-ocr-h240-2023-p2::17(a)": "For f to be a valid pdf: ∫₀⁴ kx(4 − x) dx = 1.\n∫₀⁴ (4x − x²) dx = [2x² − x³/3]₀⁴ = (32 − 64/3) = (96 − 64)/3 = 32/3.\nSo k × 32/3 = 1 ⇒ k = 3/32, as required.",
 
- "math-ocr-h240-2023-p2::17(b)": "E(X) = ∫₀⁴ x·f(x) dx = (3/32)∫₀⁴ x²(4 − x) dx = (3/32)∫₀⁴ (4x² − x³) dx.\n= (3/32)[4x³/3 − x⁴/4]₀⁴ = (3/32)[(4×64/3) − 64] = (3/32)[256/3 − 64] = (3/32)[(256 − 192)/3]\n= (3/32)(64/3) = 64/32 = 2.",
 
- "math-ocr-h240-2023-p2::17(c)": "P(1 ≤ X ≤ 3) = (3/32)∫₁³ x(4 − x) dx = (3/32)∫₁³ (4x − x²) dx.\n= (3/32)[2x² − x³/3]₁³.\nAt x = 3: 2(9) − 9 = 18 − 9 = 9.\nAt x = 1: 2(1) − 1/3 = 2 − 1/3 = 5/3.\n= (3/32)(9 − 5/3) = (3/32)(27/3 − 5/3) = (3/32)(22/3) = 22/32 = 11/16."
-,
 
   "math-ocr-h240-2023-p3::1(a)": "(1 + 3x)^(−2): use the binomial expansion with n = −2 and replace x with 3x.\n(1 + 3x)^(−2) = 1 + (−2)(3x) + (−2)(−3)/2!(3x)² + (−2)(−3)(−4)/3!(3x)³ + …\n= 1 − 6x + 27x² − 108x³ + …\nThe expansion is valid for |3x| < 1, i.e. |x| < 1/3.",
 
