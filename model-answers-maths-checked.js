@@ -1,16 +1,16 @@
 // A-level Mathematics model answers that may be shown on mark-schemes.html.
 //
-// Most entries in model-answers-maths.js answer a different question from the
-// one they are filed under. On 2026-10-12 every answer on the 25 most promising
-// papers was read against its question and official mark scheme; only parts
-// whose answer addresses that question, agrees with the mark scheme and has
-// clean working are listed here. 44 of the rejected answers were then
-// rewritten from the official mark schemes, independently re-checked and
-// added. On 2026-10-13 every answer on Edexcel 9MA0 2023 (Papers 1, 2, 31,
-// 32) and 2024 (Papers 2, 31, 32, and the two missing parts of Paper 1) was
-// rewritten from the official question papers and mark schemes and
-// independently re-checked. The same was done for Edexcel 9MA0 2022 Papers 1,
-// 2, 31 and 32 (1,200 parts in all).
+// Each part listed here has a model answer in model-answers-maths.js that was
+// read against its question and the official mark scheme and judged correct,
+// complete and cleanly written. Many older answers were filed under the wrong
+// question, so mark-schemes.html shows a Maths model answer only for parts
+// listed here.
+//
+// As of 2026-10-13 every part of every Maths paper is listed (2,647 parts on
+// 75 papers) except OCR H240 June 2018 Paper 1, whose mark scheme is not
+// publicly available. Answers were written from the official question papers,
+// mark schemes and (for MEI Paper 3) article inserts, then independently
+// re-checked against the same pages.
 //
 // Add a part only after checking its answer the same way, and re-check a
 // part if its answer in model-answers-maths.js changes.
