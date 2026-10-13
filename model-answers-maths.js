@@ -1684,97 +1684,88 @@ window.MATHS_MODEL_ANSWERS = {
 
 
 
- "math-ocr-h240-2022-p2::1(a)": "Original sum = 8 × 12.5 = 100. Adding 18 gives new sum = 118. New mean = 118/9 = 13.1̄ ≈ 13.1.",
+ "math-ocr-h240-2022-p2::1(a)": "x/(x + 1) − (x − 1)/(x + 2) = 0   (x ≠ −1, x ≠ −2)\nMultiply through by (x + 1)(x + 2):\nx(x + 2) − (x − 1)(x + 1) = 0\nx² + 2x − (x² − 1) = 0\n2x + 1 = 0\nx = −½",
+ "math-ocr-h240-2022-p2::1(b)": "Let u = 1/x³, so 1/x⁶ = u².\nThe equation becomes 8u² − 7u − 1 = 0\n(8u + 1)(u − 1) = 0\nu = 1 or u = −⅛\nSo 1/x³ = 1 ⇒ x³ = 1 ⇒ x = 1\nor 1/x³ = −⅛ ⇒ x³ = −8 ⇒ x = −2\nSolutions: x = 1 and x = −2",
+ "math-ocr-h240-2022-p2::1(c)": "243 = 3⁵, so 1/243 = 3⁻⁵.\n3^(x² − 7) = 3⁻⁵\nx² − 7 = −5\nx² = 2\nx = ±√2  (±1.41 to 3 s.f.)",
+ "math-ocr-h240-2022-p2::2(a)": "AB = b − a = (4i + 2j − 5k) − (3i + 2j) = i − 5k\n|AB| = √(1² + 0² + (−5)²) = √26\nAB = √26 ≈ 5.10",
+ "math-ocr-h240-2022-p2::2(b)": "Since AB is a diameter and P lies on the circle, angle APB = 90°, so PA · PB = 0.\nPA = OA − OP = (3i + 2j) − (pi − 3k) = (3 − p)i + 2j + 3k\nPB = OB − OP = (4i + 2j − 5k) − (pi − 3k) = (4 − p)i + 2j − 2k\nPA · PB = (3 − p)(4 − p) + 2×2 + 3×(−2) = 0\np² − 7p + 12 + 4 − 6 = 0\np² − 7p + 10 = 0\n(p − 2)(p − 5) = 0\np = 2 or p = 5\n(Check with Pythagoras: PA² + PB² = (p − 3)² + 13 + (p − 4)² + 8 = 2p² − 14p + 46, and setting this equal to AB² = 26 gives the same equation.)",
+ "math-ocr-h240-2022-p2::3(a)": "No, I do not agree with Charlie.\nAmaya's answer is ⅓ + x + x² + ⅓x³ + c and Ben's is x + x² + ⅓x³ + c. They differ only by the constant ⅓, which can be absorbed into the arbitrary constant of integration (Ben's c = Amaya's c + ⅓). So both answers are correct; they just have different constants of integration.",
+ "math-ocr-h240-2022-p2::3(b)(i)": "∫₁ᵃ 1/(1 + x)² dx = ∫₁ᵃ (1 + x)⁻² dx\n= [ (1 + x)⁻¹/(−1) ]₁ᵃ\n= [ −1/(1 + x) ]₁ᵃ\n= −1/(1 + a) + 1/2\n= ((1 + a) − 2)/(2(1 + a))\n= (a − 1)/(2(a + 1))",
+ "math-ocr-h240-2022-p2::3(b)(ii)": "For x between 1 and a the curve is above the x-axis, so the area equals the integral from (b)(i):\n(a − 1)/(2(a + 1)) = ⅓\n3(a − 1) = 2(a + 1)\n3a − 3 = 2a + 2\na = 5",
+ "math-ocr-h240-2022-p2::3(c)": "The numerator cos2x is ½ × the derivative of the denominator, since d/dx(sin2x + 2) = 2cos2x.\nSo ∫ cos2x/(sin2x + 2) dx = ½ ln|sin2x + 2| + c\n∫₀^(π/12) cos2x/(sin2x + 2) dx = ½ [ ln(sin2x + 2) ]₀^(π/12)\n= ½ [ ln(sin(π/6) + 2) − ln(sin0 + 2) ]\n= ½ [ ln(½ + 2) − ln2 ]\n= ½ [ ln(5/2) − ln2 ]\n= ½ ln(5/4)\n(equivalently ln(√5/2))",
+ "math-ocr-h240-2022-p2::4": "The step heights form a geometric sequence with first term a = 20 and common ratio r = 0.95.\nTotal height of n steps: Sₙ = 20(1 − 0.95ⁿ)/(1 − 0.95) = 400(1 − 0.95ⁿ)\nSet Sₙ = 205:\n400(1 − 0.95ⁿ) = 205\n1 − 0.95ⁿ = 205/400\n0.95ⁿ = 195/400 = 39/80 = 0.4875\nn = ln0.4875/ln0.95 = 14.007…\nSo n = 14.\nCheck: S₁₄ = 400(1 − 0.95¹⁴) = 204.93… = 205 cm to the nearest cm (whereas S₁₃ = 194.7 and S₁₅ = 214.7).\nThe design has 14 steps.",
+ "math-ocr-h240-2022-p2::5(a)": "y = x³ − 3x² + 4x\ndy/dx = 3x² − 6x + 4\nStationary points need 3x² − 6x + 4 = 0.\nDiscriminant: b² − 4ac = (−6)² − 4×3×4 = 36 − 48 = −12 < 0\nSo the equation has no real roots: there is no value of x where dy/dx = 0.\n(Equivalently dy/dx = 3(x − 1)² + 1 > 0 for all x, so the gradient is always positive.)\nHence the curve has no stationary points.",
+ "math-ocr-h240-2022-p2::5(b)": "d²y/dx² = 6x − 6\nAt a point of inflection d²y/dx² = 0: 6x − 6 = 0 ⇒ x = 1, the only solution.\nd²y/dx² = 6(x − 1) is negative for x < 1 and positive for x > 1, so it changes sign at x = 1 and x = 1 gives a point of inflection (at (1, 2)).\nSince d²y/dx² = 0 has exactly one root, the curve has exactly one point of inflection.",
+ "math-ocr-h240-2022-p2::6(a)": "Fig. 1.1: many-one function. Each x gives exactly one y, but some y-values come from more than one x (e.g. y = 0 occurs at three different x-values).\nFig. 1.2: not a function. A single x-value (e.g. x = 0) gives two different y-values.\nFig. 1.3: one-one function and its own inverse. Each x gives one y and each y comes from only one x, and the graph is symmetric about the line y = x, so f⁻¹ = f.\nFig. 1.4: one-one function. It is increasing throughout, so each y comes from exactly one x (it is not symmetric about y = x, so it is not self-inverse).\nFig. 1.5: many-one function. For example, the two minimum points have the same y-value.\n\nTable of ticks:\n1.1 – many-one\n1.2 – not a function\n1.3 – one-one, own inverse\n1.4 – one-one\n1.5 – many-one",
+ "math-ocr-h240-2022-p2::6(b)": "f(x) = 1/x is decreasing for 0 < x ≤ 2.\nAt x = 2, f(2) = ½ (the least value, included since x = 2 is in the domain).\nAs x → 0⁺, f(x) → ∞, so there is no upper limit.\nRange of f: {y : y ≥ ½}",
+ "math-ocr-h240-2022-p2::7(a)": "Any integer can be written as 3m + r with r = 0, 1 or 2. Square each case:\nr = 0: (3m)² = 9m² = 3(3m²), which is of the form 3n.\nr = 1: (3m + 1)² = 9m² + 6m + 1 = 3(3m² + 2m) + 1, which is of the form 3n + 1.\nr = 2: (3m + 2)² = 9m² + 12m + 4 = 3(3m² + 4m + 1) + 1, which is of the form 3n + 1.\nIn each case 3m², 3m² + 2m and 3m² + 4m + 1 are integers, so every square has the form 3n or 3n + 1.\nNone of these is of the form 3n + 2, so the square of any integer cannot be expressed in the form 3n + 2.",
+ "math-ocr-h240-2022-p2::7(b)": "Write each chosen integer as 3m + r. From 1 to 99 there are exactly 33 integers with each remainder r = 0, 1, 2, so each value of r has probability ⅓, independently for the three choices.\nThe sum is divisible by 3 exactly when the remainders add to a multiple of 3, i.e. when:\n• all three have the same remainder: (0, 0, 0), (1, 1, 1) or (2, 2, 2) (sums 0, 3, 6), or\n• all three have different remainders: 0, 1, 2 in some order (sum 3).\nP(all the same) = 3 × (⅓)³ = 3/27\nP(all different) = 3! × (⅓)³ = 6/27\nP(sum divisible by 3) = 3/27 + 6/27 = 9/27 = ⅓",
+ "math-ocr-h240-2022-p2::8": "Volume in terms of h:\nThe radius r of the water surface satisfies r = h tan30° = h/√3.\nV = ⅓πr²h = ⅓π(h²/3)h = (π/9)h³\ndV/dh = (π/3)h²\nChain rule:\ndV/dt = (dV/dh)(dh/dt) ⇒ −2h = (π/3)h² dh/dt\n⇒ dh/dt = −6/(πh)\nSeparate variables:\nπ h dh = −6 dt\nIntegrate from t = 0 (h = 50) to time T when the tank is empty (h = 0):\nπ ∫₅₀⁰ h dh = −6 ∫₀ᵀ dt\nπ [h²/2]₅₀⁰ = −6T\n−π × 50²/2 = −6T\nT = 1250π/6 = 625π/3\nT = 625π/3 seconds ≈ 654 s (about 10.9 minutes)",
+ "math-ocr-h240-2022-p2::9(a)": "Probability = area of the 20–30 bar ÷ total area of the histogram (area is proportional to frequency).\nThe frequencies (from bar areas) are 4, 22, 23, 28, 29, 22, 20, 2, total 150.\nThe 20–30 bar has frequency 22.\nP(20 < X < 30) = 22/150 = 0.14666… = 0.147 (3 s.f.)",
+ "math-ocr-h240-2022-p2::9(b)(i)": "The histogram is roughly bell-shaped: it is roughly symmetrical, has a single peak in the middle, and tails off on each side. This is the shape of a normal distribution.",
+ "math-ocr-h240-2022-p2::9(b)(ii)": "Mean 40: the histogram is roughly symmetrical about 40 (the peak is at about 40), so μ ≈ 40. (Calculating with midpoints gives a mean of 5915/150 ≈ 39.4.)\nVariance 100 (σ = 10): for a normal distribution about two-thirds of the data lie within one standard deviation of the mean. The frequency between 30 and 50 (i.e. 40 ± 10) is 23 + 28 + 29 + 22 = 102, and 102/150 = 0.68 ≈ ⅔, so σ ≈ 10 and σ² ≈ 100. (Calculating with midpoints gives s ≈ 10.3.)",
+ "math-ocr-h240-2022-p2::9(c)": "Sam's model: X ~ N(40, 10²)\nP(20 < X < 30) = P(−2 < Z < −1) = 0.1359…\nP(20 < X < 30) = 0.136 (3 s.f.)",
+ "math-ocr-h240-2022-p2::9(d)": "Using class midpoints x = 15, 25, 32.5, 37.5, 42.5, 47.5, 55, 65 with frequencies f = 4, 22, 23, 28, 29, 22, 20, 2 (Σf = 150):\nΣfx = 5915\nm = 5915/150 = 39.43… ≈ 39.4\nΣfx² = 249287.5\ns² = 249287.5/150 − (39.433…)² = 106.93… ≈ 107\ns = 10.34… ≈ 10.3\nNina's model: X ~ N(39.43, 10.34²)\nP(20 < X < 30) = 0.1507… = 0.151 (3 s.f.)\n(Using the n − 1 divisor, s = 10.38, gives 0.151 as well.)",
+ "math-ocr-h240-2022-p2::9(e)(i)": "Sam's model N(40, 100):\nP(20 < X < 30) = 0.136\nP(40 < X < 45) = 0.191\nP(45 < X < 50) = 0.150\n\nNina's model N(39.43, 10.34²):\nP(20 < X < 30) = 0.151\nP(40 < X < 45) = 0.183\nP(45 < X < 50) = 0.142\n\nCompleted rows:\nSam: 0.023, 0.136, 0.150, 0.191, 0.191, 0.150, 0.136, 0.023\nNina: 0.030, 0.151, 0.153, 0.189, 0.183, 0.142, 0.130, 0.023",
+ "math-ocr-h240-2022-p2::9(e)(ii)": "Comparing each model with the histogram proportions:\nFor lower values of X (ranges below 40), Nina's model fits better. For example, for 20–30 the data give 0.147, Nina's model gives 0.151 and Sam's gives 0.136; for < 20 the data give 0.027, Nina 0.030, Sam 0.023.\nFor higher values of X (ranges above 40), Sam's model fits better. For example, for 40–45 the data give 0.193, Sam 0.191 and Nina 0.183; for 45–50 the data give 0.147, Sam 0.150 and Nina 0.142.\nSo Nina's model is the better fit for the lower heights and Sam's model is the better fit for the higher heights. (Both models overestimate the proportion above 60.)",
+ "math-ocr-h240-2022-p2::10(a)(i)": "An LA that includes a university would have a high proportion of residents aged 18 to 24 (students).",
+ "math-ocr-h240-2022-p2::10(a)(ii)": "An LA that attracts young couples would have a high proportion of residents in the younger age ranges: a high proportion aged 0 to 17 (their children) and/or aged 18 to 24.",
+ "math-ocr-h240-2022-p2::10(a)(iii)": "An LA that attracts retired people would have a low proportion of residents in the younger age ranges: a low proportion aged 0 to 17 and/or aged 18 to 24.",
+ "math-ocr-h240-2022-p2::10(b)(i)": "The four LAs with the highest proportions aged 18 to 24 are:\nH (14.79%), G (14.20%), K (13.98%), M (11.19%)\n(all others are 9.20% or less).\nSo G, H, K and M might include a university.",
+ "math-ocr-h240-2022-p2::10(b)(ii)": "The LAs with the lowest proportions in both younger age ranges are:\nN (0–17: 17.82%, 18–24: 6.01%)\nF (0–17: 18.14%, 18–24: 6.51%)\nR (0–17: 18.61%, 18–24: 7.33%)\nSo F, N and R might be attractive to retired people.",
+ "math-ocr-h240-2022-p2::10(c)": "A low proportion of young people does not necessarily mean a high proportion of retired people: the other age ranges must be considered. An LA with low percentages aged 0–17 and 18–24 might instead have a large percentage aged 25–64 (e.g. working adults), so without looking at the 65 and over column we cannot be sure it attracts retired people.",
+ "math-ocr-h240-2022-p2::10(d)": "IQR = 16.76 − 14.56 = 2.20\nUpper limit for outliers: UQ + 1.5 × IQR = 16.76 + 1.5 × 2.20 = 20.06\nF (24.21%), N (24.23%) and R (24.71%) are all above 20.06, so all three are high outliers in the 65 and over column.\nSo these three LAs really do have unusually high proportions of residents aged 65 and over. This confirms the answer to (b)(ii) (F, N, R), despite the doubt raised in (c).",
+ "math-ocr-h240-2022-p2::10(e)": "The mean (16.90%) is greater than the upper quartile (16.76%), so it is larger than at least three-quarters of the values; it has been pulled up by the three high outliers F, N and R.\nThe median (15.99%) is not affected by these outliers, so the median better represents the data for a typical LA.",
+ "math-ocr-h240-2022-p2::11": "Let μ g be the population mean mass of new-born babies (after the campaign).\nH₀: μ = 3300\nH₁: μ > 3300\nUnder H₀, X̄ ~ N(3300, 450²/200) = N(3300, 1012.5)\nP(X̄ > 3360) = 0.0297 (3 s.f.)\n(Equivalently z = (3360 − 3300)/(450/√200) = 1.886.)\nCompare with the significance level: 0.0297 > 0.025\n(equivalently 1.89 < 1.96, or 3360 < critical value 3362)\nThe result is not significant, so do not reject H₀.\nThere is insufficient evidence at the 2.5% level that the mean mass of new-born babies has increased.",
+ "math-ocr-h240-2022-p2::12(a)": "Let X be the number of underweight packets in the sample of 600.\nUnder H₀: X ~ B(600, 0.02)\nThe test is upper-tailed at 5%, so find the smallest k with P(X ≥ k) ≤ 0.05:\nP(X ≥ 18) = 1 − P(X ≤ 17) = 0.0610 > 0.05\nP(X ≥ 19) = 1 − P(X ≤ 18) = 0.0359 ≤ 0.05\nSo the critical region is X ≥ 19.\nThe researcher concludes that the firm's claim is incorrect when X ≥ 19, so, given H₀ is true,\nP(concludes claim incorrect) = P(X ≥ 19) = 0.0359 (3 s.f.)",
+ "math-ocr-h240-2022-p2::12(b)": "The statement is incorrect: a sample proportion of 3% being above 2% is not by itself evidence. A proper hypothesis test is needed, considering P(X ≥ 18) = 0.0610, which is greater than 0.05. Equivalently, the critical region is X ≥ 19, so 18 is in the acceptance region and there is insufficient evidence at the 5% level that the proportion of underweight bags is greater than 2%.",
+ "math-ocr-h240-2022-p2::13(a)": "Let x be the number who study English but not History; then 3x study History but not English.\nVenn diagram: a rectangle (the class of 25) containing two overlapping circles H and E, with\n• 3x in H only,\n• 3 in the overlap (both History and English),\n• x in E only,\n• 14 outside both circles.\nTotal: 3x + 3 + x + 14 = 25\n4x + 17 = 25\nx = 2\nSo the regions are: History only 6, both 3, English only 2, neither 14.\nNumber who study English = 2 + 3 = 5\nP(student studies English) = 5/25 = ⅕",
+ "math-ocr-h240-2022-p2::13(b)": "From (a): History only 6, both 3, English only 2, neither 14. So 5 study English and 20 do not.\nP(exactly one English) = 2 × (5/25) × (20/24) = 200/600 = ⅓\nFor exactly one English and exactly one History, the pair must be either:\n• one 'History only' and one 'English only' student, or\n• one 'both' student and one 'neither' student.\nP(exactly one E and exactly one H) = 2 × [ (6/25)(2/24) + (3/25)(14/24) ]\n= 2 × (12 + 42)/600 = 108/600 = 9/50\nRequired probability = P(exactly one E and exactly one H) ÷ P(exactly one E)\n= (9/50) ÷ (1/3)\n= 27/50 (= 0.54)",
 
- "math-ocr-h240-2022-p2::1(b)": "Recover Σx² from original data: Σx² = n(s² + x̄²) = 8(3.2² + 12.5²) = 8(10.24 + 156.25) = 8 × 166.49 = 1331.92.\nNew Σx² = 1331.92 + 18² = 1331.92 + 324 = 1655.92.\nNew variance = Σx²/9 − (new mean)² = 1655.92/9 − (118/9)² = 183.991 − 172.049 = 11.942.\nNew standard deviation = √11.942 ≈ 3.46 (3 s.f.).",
 
- "math-ocr-h240-2022-p2::2(a)": "Mean = Σh/n = 3024/18 = 168 cm.\nVariance = Σh²/n − x̄² = 504756/18 − 168² = 28042 − 28224... (use exact calculator value; accept s ≈ 12.6 cm depending on given Σh² precision).\nStandard deviation ≈ 12.6 cm.",
 
- "math-ocr-h240-2022-p2::2(b)": "Upper threshold = mean + 2 × sd = 168 + 2 × 12.6 = 193.2.\n193 cm is below 193.2, so strictly it is just within 2 sd. Accept conclusion consistent with the sd found in part (a) — if sd < 12.5, then 168 + 2sd < 193, making 193 an outlier. Clearly show the comparison: distance from mean = 193 − 168 = 25, and 25/(their sd) > 2 or ≤ 2 as appropriate.",
 
- "math-ocr-h240-2022-p2::3(a)": "All probabilities must sum to 1:\n0.15 + 0.30 + k + 0.25 + 0.10 = 1\n0.80 + k = 1\nk = 0.20.",
 
- "math-ocr-h240-2022-p2::3(b)": "E(X) = 1(0.15) + 2(0.30) + 3(0.20) + 4(0.25) + 5(0.10)\n= 0.15 + 0.60 + 0.60 + 1.00 + 0.50 = 2.85.\nE(X²) = 1²(0.15) + 2²(0.30) + 3²(0.20) + 4²(0.25) + 5²(0.10)\n= 0.15 + 1.20 + 1.80 + 4.00 + 2.50 = 9.65.\nVar(X) = E(X²) − [E(X)]² = 9.65 − 2.85² = 9.65 − 8.1225 = 1.5275.",
 
- "math-ocr-h240-2022-p2::4(a)": "Drawing without replacement: P(both red) = P(1st red) × P(2nd red | 1st red) = (5/8) × (4/7) = 20/56 = 5/14.",
 
- "math-ocr-h240-2022-p2::4(b)": "P(different colours) = P(red then blue) + P(blue then red)\n= (5/8)(3/7) + (3/8)(5/7) = 15/56 + 15/56 = 30/56 = 15/28.",
 
- "math-ocr-h240-2022-p2::5(a)": "Using B(20, 0.35) cumulative tables: P(X ≤ 8) = 0.7624.",
 
- "math-ocr-h240-2022-p2::5(b)": "P(5 ≤ X ≤ 10) = P(X ≤ 10) − P(X ≤ 4).\nFrom B(20, 0.35) tables: P(X ≤ 10) = 0.9468, P(X ≤ 4) = 0.2375.\nP(5 ≤ X ≤ 10) = 0.9468 − 0.2375 = 0.7093.",
 
- "math-ocr-h240-2022-p2::5(c)": "For X ~ B(n, p): E(X) = np = 20 × 0.35 = 7.\nVar(X) = np(1 − p) = 20 × 0.35 × 0.65 = 4.55.",
 
- "math-ocr-h240-2022-p2::6(a)": "Under H₀, X ~ B(15, 0.4). We need the largest c such that P(X ≤ c) ≤ 0.05.\nP(X ≤ 2) = 0.0271 ≤ 0.05.\nP(X ≤ 3) = 0.0905 > 0.05.\nSo the critical region is X ≤ 2.",
 
- "math-ocr-h240-2022-p2::6(b)": "The observed value x = 2 lies in the critical region X ≤ 2.\nReject H₀. There is sufficient evidence at the 5% significance level to support the claim that p < 0.4.",
 
- "math-ocr-h240-2022-p2::7(a)": "Unbiased estimate of mean: x̄ = Σw/n = 2437.5/50 = 48.75 g.\nUnbiased estimate of variance: s² = [Σw² − n x̄²]/(n − 1) = [118832.25 − 50 × 48.75²]/49\n= [118832.25 − 118828.125]/49 = 4.125/49 ≈ 0.0842.",
 
- "math-ocr-h240-2022-p2::7(b)": "H₀: μ = 49;  H₁: μ ≠ 49  (two-tailed, 1% level).\nTest statistic: z = (x̄ − μ₀)/(s/√n) = (48.75 − 49)/(√0.0842/√50) = −0.25/0.04103 ≈ −6.09.\nCritical values for 1% two-tailed test: ±2.576.\nSince |−6.09| = 6.09 > 2.576, we reject H₀.\nConclusion: there is significant evidence at the 1% level that the mean weight of components has changed from 49 g.",
 
- "math-ocr-h240-2022-p2::8(a)": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = 0.5 + 0.4 − 0.25 = 0.65.",
 
- "math-ocr-h240-2022-p2::8(b)": "If A and B were independent, P(A ∩ B) = P(A) × P(B) = 0.5 × 0.4 = 0.20.\nBut P(A ∩ B) = 0.25 ≠ 0.20.\nTherefore A and B are not independent.",
 
- "math-ocr-h240-2022-p2::8(c)": "P(A | B) = P(A ∩ B)/P(B) = 0.25/0.40 = 0.625.",
 
- "math-ocr-h240-2022-p2::9(a)": "For f to be a valid pdf, ∫₀⁴ f(x) dx = 1.\n∫₀⁴ kx(4 − x) dx = k ∫₀⁴ (4x − x²) dx = k[2x² − x³/3]₀⁴\n= k(2 × 16 − 64/3) = k(32 − 64/3) = k(96/3 − 64/3) = 32k/3.\nSetting 32k/3 = 1 gives k = 3/32.",
 
- "math-ocr-h240-2022-p2::9(b)": "E(X) = ∫₀⁴ x · (3/32)x(4 − x) dx = (3/32) ∫₀⁴ (4x² − x³) dx\n= (3/32)[4x³/3 − x⁴/4]₀⁴ = (3/32)(256/3 − 64) = (3/32)(256/3 − 192/3) = (3/32)(64/3) = 2.\nE(X²) = (3/32) ∫₀⁴ x²(4x − x²) dx = (3/32) ∫₀⁴ (4x³ − x⁴) dx\n= (3/32)[x⁴ − x⁵/5]₀⁴ = (3/32)(256 − 1024/5) = (3/32)(1280/5 − 1024/5) = (3/32)(256/5) = 768/160 = 24/5.\nVar(X) = E(X²) − [E(X)]² = 24/5 − 4 = 24/5 − 20/5 = 4/5, as required.",
 
- "math-ocr-h240-2022-p2::9(c)": "Let m be the median: ∫₀ᵐ (3/32)x(4 − x) dx = 1/2.\n(3/32)[2x² − x³/3]₀ᵐ = 1/2\n(3/32)(2m² − m³/3) = 1/2\n2m² − m³/3 = 16/3\n6m² − m³ = 16\nm³ − 6m² + 16 = 0.\nTest m = 2: 8 − 24 + 16 = 0 ✓. So (m − 2) is a factor.\nDivide: m³ − 6m² + 16 = (m − 2)(m² − 4m − 8).\nOther roots: m = (4 ± √48)/2 = 2 ± 2√3, giving ≈ −1.46 or ≈ 5.46, both outside [0, 4].\nMedian = 2.",
 
- "math-ocr-h240-2022-p2::10(a)": "Standardise: z₁ = (25 − 28)/4.5 = −0.667, z₂ = (32 − 28)/4.5 = 0.889.\nP(25 < L < 32) = Φ(0.889) − Φ(−0.667) = 0.8133 − (1 − 0.7476) = 0.8133 − 0.2524 = 0.5609.",
 
- "math-ocr-h240-2022-p2::10(b)": "P(L > l) = 0.15 means P(L < l) = 0.85.\nFind z such that Φ(z) = 0.85: z = 1.036.\nl = μ + zσ = 28 + 1.036 × 4.5 = 28 + 4.66 = 32.7 cm.",
 
- "math-ocr-h240-2022-p2::10(c)": "p = P(L > 32) = 1 − Φ(0.889) = 1 − 0.8133 = 0.1867.\nLet Y = number of fish (out of 6) with L > 32. Y ~ B(6, 0.1867).\nP(Y ≥ 4) = P(Y = 4) + P(Y = 5) + P(Y = 6)\n= C(6,4)(0.1867)⁴(0.8133)² + C(6,5)(0.1867)⁵(0.8133) + (0.1867)⁶\n≈ 15(0.001213)(0.6615) + 6(0.0002266)(0.8133) + 0.0000423\n≈ 0.01203 + 0.001106 + 0.0000423 ≈ 0.0132.",
 
- "math-ocr-h240-2022-p2::11(a)": "Using a calculator with the given data:\nd̄ = 78.7/8 = 9.8375, t̄ = 281/8 = 35.125.\nThe product moment correlation coefficient r ≈ 0.999.",
 
- "math-ocr-h240-2022-p2::11(b)": "H₀: ρ = 0;  H₁: ρ > 0 (one-tailed, 1% level).\nFor n = 8 at 1% one-tailed significance, the critical value is r = 0.7887.\nOur r = 0.999 > 0.7887, so we reject H₀.\nConclusion: there is significant evidence at the 1% level of positive correlation between distance and time.",
 
- "math-ocr-h240-2022-p2::11(c)": "b = S_{dt}/S_{dd}. Using calculator values: b ≈ 3.50 (gradient).\na = t̄ − b × d̄ = 35.125 − 3.50 × 9.8375 ≈ 35.125 − 34.43 ≈ 0.70.\nRegression line: t = 3.50d + 0.70.",
 
- "math-ocr-h240-2022-p2::11(d)": "Estimate: t = 3.50 × 9 + 0.70 = 31.5 + 0.70 = 32.2 minutes.\n9 km lies within the range of the data (3.2 to 18.3 km), so this is interpolation and the estimate is reliable.",
 
- "math-ocr-h240-2022-p2::12(a)": "4x² + 12x + 3 = 4(x² + 3x) + 3.\nComplete the square: x² + 3x = (x + 3/2)² − 9/4.\nSo 4x² + 12x + 3 = 4(x + 3/2)² − 9 + 3 = 4(x + 3/2)² − 6.\nHence a = 4, b = 3/2, c = −6.",
 
- "math-ocr-h240-2022-p2::12(b)": "From part (a): vertex is at (−3/2, −6), which is the minimum point.\ny-intercept: set x = 0, y = 3, giving (0, 3).\nThe parabola opens upward with vertex (−3/2, −6) and crosses the y-axis at (0, 3).",
 
- "math-ocr-h240-2022-p2::13(a)": "dy/dx = 3x² − 12x + 9.\nAt P(1, 6): gradient = 3(1)² − 12(1) + 9 = 3 − 12 + 9 = 0.\nThe tangent is horizontal, so its equation is y = 6.",
 
- "math-ocr-h240-2022-p2::13(b)": "Stationary points where dy/dx = 0:\n3x² − 12x + 9 = 0 ⟹ x² − 4x + 3 = 0 ⟹ (x − 1)(x − 3) = 0.\nThe other stationary point is at x = 3.\ny = 3³ − 6(3²) + 9(3) + 2 = 27 − 54 + 27 + 2 = 2. So the point is (3, 2).\nd²y/dx² = 6x − 12. At x = 3: d²y/dx² = 6 > 0, confirming (3, 2) is a local minimum.",
 
- "math-ocr-h240-2022-p2::14(a)": "Rewrite: 3x² + 5/x² − 2√x = 3x² + 5x⁻² − 2x^(½).\nIntegrate term by term:\n∫3x² dx = x³;\n∫5x⁻² dx = −5x⁻¹ = −5/x;\n∫2x^(½) dx = 2 × (2/3)x^(3/2) = (4/3)x^(3/2).\nResult: x³ − 5/x − (4/3)x^(3/2) + c.",
 
- "math-ocr-h240-2022-p2::14(b)": "Evaluate [x³ − 5/x − (4/3)x^(3/2)]₁³.\nAt x = 3: 27 − 5/3 − (4/3)(3^(3/2)) = 27 − 5/3 − (4/3)(3√3) = 27 − 5/3 − 4√3.\nAt x = 1: 1 − 5 − 4/3 = −4 − 4/3 = −16/3.\nResult = (27 − 5/3 − 4√3) − (−16/3) = 27 − 5/3 + 16/3 − 4√3 = 27 + 11/3 − 4√3\n= 81/3 + 11/3 − 4√3 = 92/3 − 4√3.",
 
- "math-ocr-h240-2022-p2::15(a)": "At x = 1: y = (2 × 1 − 1)⁵ = 1⁵ = 1, so A = (1, 1).\ndy/dx = 5(2x − 1)⁴ × 2 = 10(2x − 1)⁴.\nAt x = 1: gradient of tangent = 10(1)⁴ = 10.\nGradient of normal = −1/10.\nEquation of normal through (1, 1): y − 1 = −(1/10)(x − 1) ⟹ 10y − 10 = −x + 1 ⟹ x + 10y = 11.",
 
- "math-ocr-h240-2022-p2::15(b)": "y = (2x − 1)⁵ − 5(2x − 1). Let u = 2x − 1, so y = u⁵ − 5u.\ndy/dx = (5u⁴ − 5) × 2 = 10(2x − 1)⁴ − 10.\nSet dy/dx = 0: (2x − 1)⁴ = 1 ⟹ 2x − 1 = ±1 ⟹ x = 0 or x = 1.\nd²y/dx² = 40(2x − 1)³ × 2 = 80(2x − 1)³.\nAt x = 0: d²y/dx² = 80(−1)³ = −80 < 0 ⟹ local maximum.\nAt x = 1: d²y/dx² = 80(1)³ = 80 > 0 ⟹ local minimum.",
 
- "math-ocr-h240-2022-p2::16(a)": "y = 2e^(3x) − 6x.\ndy/dx = 6e^(3x) − 6.\nAt a stationary point, dy/dx = 0:\n6e^(3x) = 6 ⟹ e^(3x) = 1 ⟹ 3x = ln 1 = 0 ⟹ x = 0.",
 
- "math-ocr-h240-2022-p2::16(b)": "d²y/dx² = 18e^(3x).\nAt x = 0: d²y/dx² = 18e⁰ = 18 > 0.\nTherefore the stationary point is a minimum.",
 
- "math-ocr-h240-2022-p2::16(c)": "∫(2e^(3x) − 6x) dx = (2/3)e^(3x) − 3x² + c.",
 
- "math-ocr-h240-2022-p2::17(a)": "f(x) = (x² + 3)/(x − 2). Apply the quotient rule with u = x² + 3, v = x − 2:\nu' = 2x, v' = 1.\nf'(x) = (u'v − uv')/v² = (2x(x − 2) − (x² + 3)(1))/(x − 2)²\n= (2x² − 4x − x² − 3)/(x − 2)²\n= (x² − 4x − 3)/(x − 2)², as required.",
 
- "math-ocr-h240-2022-p2::17(b)": "For x > 2, find the minimum of f by solving f'(x) = 0:\nx² − 4x − 3 = 0 ⟹ x = (4 ± √(16 + 12))/2 = (4 ± √28)/2 = 2 ± √7.\nSince x > 2, take x = 2 + √7.\nf(2 + √7) = ((2 + √7)² + 3)/((2 + √7) − 2) = (4 + 4√7 + 7 + 3)/√7 = (14 + 4√7)/√7\n= 14/√7 + 4 = 14√7/7 + 4 = 2√7 + 4.\nAs x → 2⁺, f(x) → +∞ and as x → ∞, f(x) → +∞, so the minimum value is 4 + 2√7.\nRange of f: f(x) ≥ 4 + 2√7.",
 
- "math-ocr-h240-2022-p2::18(a)": "From x = 3cos t: cos t = x/3.\nFrom y = 2sin t: sin t = y/2.\nUsing the identity cos²t + sin²t = 1:\n(x/3)² + (y/2)² = 1 ⟹ x²/9 + y²/4 = 1, as required.",
 
- "math-ocr-h240-2022-p2::18(b)": "dx/dt = −3sin t,  dy/dt = 2cos t.\nBy the chain rule: dy/dx = (dy/dt)/(dx/dt) = 2cos t/(−3sin t) = −(2cos t)/(3sin t).",
 
- "math-ocr-h240-2022-p2::18(c)": "At t = π/4:\nx = 3cos(π/4) = 3/√2 = 3√2/2,  y = 2sin(π/4) = 2/√2 = √2.\nGradient = −(2cos(π/4))/(3sin(π/4)) = −(2 × 1/√2)/(3 × 1/√2) = −2/3.\nEquation of tangent through (3√2/2, √2) with gradient −2/3:\ny − √2 = −(2/3)(x − 3√2/2)\n3(y − √2) = −2(x − 3√2/2)\n3y − 3√2 = −2x + 3√2\n2x + 3y = 6√2.",
 
- "math-ocr-h240-2022-p2::19(a)": "n² + n = n(n + 1).\nFor any integer n, the two consecutive integers n and n + 1 are of opposite parity (one even, one odd).\nTherefore their product n(n + 1) is always even.\nHence n² + n is always even for all n ≥ 1.",
 
- "math-ocr-h240-2022-p2::19(b)": "Try n = 11: n² − n + 11 = 121 − 11 + 11 = 121 = 11².\n121 is not prime (it equals 11 × 11).\nThis is a counterexample to the statement, so the statement is false.",
 
  "math-ocr-h240-2022-p3::1(a)": "Differentiate: dy/dx = 3x² − 12x + 5.\nSet dy/dx = 0: 3x² − 12x + 5 = 0.\nUsing the quadratic formula: x = (12 ± √(144 − 60))/6 = (12 ± √84)/6 = (6 ± √21)/3.\nSo x₁ = (6 − √21)/3 ≈ 0.472 and x₂ = (6 + √21)/3 ≈ 3.528.\nSubstituting back into y = x³ − 6x² + 5x + 12 gives the y-coordinates.\nAt x₁ ≈ 0.472: y ≈ (0.472)³ − 6(0.472)² + 5(0.472) + 12 ≈ 0.105 − 1.336 + 2.360 + 12 ≈ 13.13.\nAt x₂ ≈ 3.528: y ≈ (3.528)³ − 6(3.528)² + 5(3.528) + 12 ≈ 43.93 − 74.69 + 17.64 + 12 ≈ −1.12.\nStationary points: approximately (0.472, 13.1) and (3.528, −1.12) (or exact: ((6−√21)/3, f((6−√21)/3)) and ((6+√21)/3, f((6+√21)/3))).",
 
