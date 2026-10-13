@@ -173,29 +173,35 @@ window.FM_MODEL_ANSWERS = {
 
 
 /* ─── AQA 7367 June 2023 Paper 3S ────────────────────────────────────────── */
-"fmath-aqa-7367-2023-p3s::1(a)": "P(X=0)+P(X=1)+P(X=2)+P(X=3)=k(1+2+3+4)=10k=1. k=1/10.",
+"fmath-aqa-7367-2023-p3s::1": "P(A = 2) = P(A ≤ 2) − P(A ≤ 0)\n= F(2) − F(0)\n= 0.6 − 0.2\n= 0.4\n\nAnswer: 0.4",
+"fmath-aqa-7367-2023-p3s::2": "If the time between showers is exponential with mean 1.25 days, then showers occur at random at a constant average rate of\n1/1.25 = 0.8 showers per day.\nEvents occurring singly, independently and at random at a constant rate give a Poisson number of events in a fixed interval.\n\nSo the number of rain showers per day has a Poisson distribution with mean 0.8.\n\nAnswer: Poisson, mean 0.8",
+"fmath-aqa-7367-2023-p3s::3": "The population standard deviation is known (σ = 4.1) and the masses are normal, so use the normal distribution.\n\nFor a 98% interval, 1% in each tail: z = 2.3263… ≈ 2.33\n\nStandard error = 4.1/√11 = 1.2362…\n\nInterval: x̄ ± z × σ/√n\n= 401.8 ± 2.33 × 4.1/√11\n= 401.8 ± 2.880…\n\nLower limit = 401.8 − 2.880 = 398.92…\nUpper limit = 401.8 + 2.880 = 404.68…\n\n98% confidence interval for μ: (398.9, 404.7) grams",
+"fmath-aqa-7367-2023-p3s::4": "H₀: μ = 100\nH₁: μ ≠ 100\nThis is a two-tailed test at the 10% significance level, so 5% is in each tail.\n\nσ² is unknown and estimated by s², so under H₀ the test statistic has a t-distribution with n − 1 = 8 − 1 = 7 degrees of freedom.\n\nTest statistic:\nt = (x̄ − 100)/√(s²/n)\n= (101.5 − 100)/√(4.8/8)\n= 1.5/√0.6\n= 1.5/0.7746…\n= 1.94 (3 s.f.)\n\nCritical values (two-tailed, 5% in each tail, t₇): ±1.895\nSo the critical region is t < −1.895 or t > 1.895.\n\nComparison: 1.94 > 1.895, so the test statistic lies in the critical region.\n\nConclusion: Reject H₀. At the 10% significance level there is sufficient evidence to suggest that the mean of X is not 100.",
+"fmath-aqa-7367-2023-p3s::5(a)": "With 11 schools and 11 activities the contingency table is 11 × 11.\n\nEvery expected frequency must be at least 5 for the χ²-test to be valid. Exactly one expected frequency is below 5, so the row (school) or column (activity) containing it must be merged with another row or column. That means two rows or two columns are combined.\n\nThe table then has 10 rows and 11 columns (or 11 rows and 10 columns), so\ndegrees of freedom = (11 − 1)(10 − 1) = 10 × 9 = 90",
+"fmath-aqa-7367-2023-p3s::5(b)": "H₀: There is no association between the school a student attends and the activity chosen.\nH₁: There is an association between the school a student attends and the activity chosen.\n\nA χ²-test for association is one-tailed: only large values of the test statistic count against H₀, so the whole 1% is in the upper tail.\n\nDegrees of freedom = 90 (from part (a)).\nCritical value: χ²₉₀ at the 1% level (upper tail) = 124.116\nCritical region: χ² > 124.116\n\nTest statistic = 124.8\n\nComparison: 124.8 > 124.116, so the test statistic is in the critical region.\n(Equivalently, P(χ²₉₀ ≥ 124.8) ≈ 0.009 < 0.01.)\n\nConclusion: Reject H₀. At the 1% level there is sufficient evidence to suggest that there is an association between the school a student attends and the activity they choose, which supports the management team's claim.",
+"fmath-aqa-7367-2023-p3s::5(c)": "The strongest source of association is the group of students who attend school 11 and chose activity 7.\n\nReason: this group has the highest value of (O − E)²/E (49.0), so it contributes the most to the χ² test statistic.",
+"fmath-aqa-7367-2023-p3s::6(a)": "X is equally likely to take any real value between 0 and 10, so X has a continuous uniform (rectangular) distribution on [0, 10].\n\nP(X > 4) = (10 − 4)/(10 − 0) = 6/10 = 0.6",
+"fmath-aqa-7367-2023-p3s::6(b)(i)": "X has a rectangular distribution on [0, 10]:\nE(X) = (0 + 10)/2 = 5\n\nY is the score on a fair six-sided dice, so Y has a discrete uniform distribution on 1, 2, 3, 4, 5, 6:\nE(Y) = (1 + 6)/2 = 3.5\n\nTotal score = X + Y, so\nE(X + Y) = E(X) + E(Y) = 5 + 3.5 = 8.5\n\nMean total score = 8.5",
+"fmath-aqa-7367-2023-p3s::6(b)(ii)": "For the rectangular distribution on [0, 10]:\nVar(X) = (10 − 0)²/12 = 100/12 = 25/3\n\nFor the discrete uniform distribution on 1, 2, …, 6 (n = 6):\nVar(Y) = (n² − 1)/12 = (6² − 1)/12 = 35/12\n\nX and Y are independent, so\nVar(X + Y) = Var(X) + Var(Y)\n= 100/12 + 35/12\n= 135/12\n= 11.25\n\nVariance of the total score = 11.25",
+"fmath-aqa-7367-2023-p3s::7(a)": "For a Poisson distribution the variance equals the mean, so\nλ = 5² = 25\n\nLet λ be the mean number of toys per week that do not pass Company A's quality checks.\nH₀: λ = 25\nH₁: λ ≠ 25\nThis is a two-tailed test at the 5% level, so 2.5% is in each tail.\n\nUnder H₀, X ~ Po(25).\n\nThe observed value 16 is below the mean 25, so find the lower-tail probability:\nP(X ≤ 16) = 0.0377…\n\nComparison: 0.0377 > 0.025, so the result is not significant.\n(Equivalently, the lower critical region is X ≤ 15, since P(X ≤ 15) = 0.0223 ≤ 0.025 but P(X ≤ 16) = 0.0377 > 0.025; 16 is not in it.)\n\nConclusion: Do not reject H₀. At the 5% level there is insufficient evidence to suggest that the average number of toys per week that do not pass the quality checks has changed.",
+"fmath-aqa-7367-2023-p3s::7(b)": "A Type II error would be concluding that the average number of toys per week that do not pass the quality checks has not changed (from 25), when in fact it has changed.",
+"fmath-aqa-7367-2023-p3s::7(c)": "X ~ Po(25) and Y ~ Po(18), and X and Y are independent.\nThe sum of independent Poisson variables is Poisson with mean equal to the sum of the means:\nX + Y ~ Po(25 + 18)\n\nX + Y ~ Po(43)",
+"fmath-aqa-7367-2023-p3s::7(d)": "Reason 1: Toys may not fail the quality checks independently of each other; for example, a single fault in the machine could cause several toys in a row to fail.\n\nReason 2: The rate at which toys fail may not be constant over time; for example, the number of toys produced each week might vary to meet demand, so the expected number failing would vary from week to week.",
+"fmath-aqa-7367-2023-p3s::8(a)": "The total probability is 1, so\n∫₀^(π/6) k sin 2x dx = 1\n\n[−(k/2) cos 2x]₀^(π/6) = 1\n\n(−(k/2) cos(π/3)) − (−(k/2) cos 0) = 1\n\n−(k/2)(1/2) + k/2 = 1\n\n−k/4 + k/2 = 1\n\nk/4 = 1\n\nk = 4 as required.",
+"fmath-aqa-7367-2023-p3s::8(b)": "For 0 ≤ x ≤ π/6:\nF(x) = ∫₀ˣ 4 sin 2t dt\n= [−2 cos 2t]₀ˣ\n= −2 cos 2x − (−2 cos 0)\n= 2 − 2 cos 2x\n\nCheck: F(π/6) = 2 − 2 cos(π/3) = 2 − 1 = 1.\n\nSo\nF(x) = 0 for x < 0\nF(x) = 2 − 2 cos 2x for 0 ≤ x ≤ π/6\nF(x) = 1 for x > π/6",
+"fmath-aqa-7367-2023-p3s::8(c)": "The median m satisfies F(m) = 0.5, with 0 ≤ m ≤ π/6:\n2 − 2 cos 2m = 0.5\n2 cos 2m = 1.5\ncos 2m = 0.75\n\nSince 0 ≤ 2m ≤ π/3, take the principal value:\n2m = cos⁻¹(0.75) = 0.72273…\nm = 0.36137…\n\nMedian = 0.361 (3 s.f.)",
+"fmath-aqa-7367-2023-p3s::8(d)": "E(X) = ∫₀^(π/6) x f(x) dx = ∫₀^(π/6) 4x sin 2x dx\n\nIntegrate by parts with u = x and dv/dx = 4 sin 2x, so du/dx = 1 and v = −2 cos 2x:\n\n∫ 4x sin 2x dx = −2x cos 2x − ∫ −2 cos 2x dx\n= −2x cos 2x + ∫ 2 cos 2x dx\n= −2x cos 2x + sin 2x\n\nSo\nE(X) = [−2x cos 2x + sin 2x]₀^(π/6)\n= (−2(π/6) cos(π/3) + sin(π/3)) − (0 + 0)\n= −(π/3)(1/2) + √3/2\n= −π/6 + √3/2\n= −π/6 + 3√3/6\n= (1/6)(3√3 − π)\n\nE(X) = (1/6)(3√3 − π), so a = 6 and b = 3.",
 
-"fmath-aqa-7367-2023-p3s::1(b)": "E(X)=0×(1/10)+1×(2/10)+2×(3/10)+3×(4/10)=(0+2+6+12)/10=20/10=2.\nE(X²)=0+2/10+12/10+36/10=50/10=5. Var(X)=5−4=1.",
 
-"fmath-aqa-7367-2023-p3s::2(a)": "E(X)=∫₀²x×(3x²/8)dx=∫₀²3x³/8 dx=[3x⁴/32]₀²=48/32=3/2.\nE(X²)=∫₀²x²×(3x²/8)dx=[3x⁵/40]₀²=96/40=12/5.\nVar(X)=12/5−(3/2)²=12/5−9/4=48/20−45/20=3/20.",
 
-"fmath-aqa-7367-2023-p3s::2(b)": "F(m)=1/2: [x³/8]₀ᵐ=m³/8=1/2 → m³=4 → m=∛4=4^(1/3).",
 
-"fmath-aqa-7367-2023-p3s::2(c)": "F(x)=0 for x<0; x³/8 for 0≤x≤2; 1 for x>2.",
 
-"fmath-aqa-7367-2023-p3s::3(a)": "Sample mean: x̄=(3.2+6.8)/2=5. Half-width: 1.8=1.96×4/√n → √n=1.96×4/1.8=4.356 → n≈19. (Check: 1.96×4/√19≈1.80 ✓) n≈19.",
 
-"fmath-aqa-7367-2023-p3s::5(a)": "G(t)=(1+2t+t²)/4=(1+t)²/4.\nP(X=0)=G(0)=1/4. P(X=1): coefficient of t in G(t)=2/4=1/2. P(X=2)=1/4. Sum=1 ✓, all ≥0 ✓.",
 
-"fmath-aqa-7367-2023-p3s::5(b)": "G'(t)=(1+t)/2; E(X)=G'(1)=2/2=1. G''(t)=1/2; G''(1)=1/2. Var(X)=G''(1)+E(X)−(E(X))²=1/2+1−1=1/2.",
 
-"fmath-aqa-7367-2023-p3s::5(c)": "PGF of X₁+X₂=[G(t)]²=((1+t)²/4)²=(1+t)⁴/16. P(X₁+X₂=2)=coeff of t² in (1+t)⁴/16=6/16=3/8.",
 
-"fmath-aqa-7367-2023-p3s::6(a)": "If X₁,…,Xₙ is a random sample from a population with mean μ and finite variance σ², then for large n, X̄≈N(μ,σ²/n) regardless of the underlying distribution.",
 
-"fmath-aqa-7367-2023-p3s::6(b)": "X̄~N(120,225/36)=N(120,6.25). P(116<X̄<124)=P(−1.6<Z<1.6)=2Φ(1.6)−1=2(0.9452)−1=0.8904.",
 
-"fmath-aqa-7367-2023-p3s::6(c)": "H₀:μ=125, H₁:μ<125. z=(120−125)/(15/6)=−5/2.5=−2. Critical value: −1.645. Since −2<−1.645, reject H₀. Significant evidence at 5% that mean is less than 125 g.",
 
 /* ─── AQA 7367 June 2022 Paper 1 ─────────────────────────────────────────── */
 "fmath-aqa-7367-2022-p1::1": "z/w = (2−5i)(1−3i)/((1+3i)(1−3i)) = (2−6i−5i+15i²)/(1+9) = (2−11i−15)/10 = (−13−11i)/10 = −13/10 − 11i/10.",
