@@ -2107,87 +2107,87 @@ window.MATHS_MODEL_ANSWERS = {
 
 
 
- "math-aqa-7357-2024-p2::1": "Assume for contradiction that there is a greatest odd integer; call it N.\nThen N + 2 is also an integer, and N + 2 > N.\nSince N is odd, N = 2m + 1 for some integer m, so N + 2 = 2m + 3 = 2(m + 1) + 1, which is also odd.\nThis contradicts N being the greatest odd integer.\nTherefore no greatest odd integer exists. ∎",
+ "math-aqa-7357-2024-p2::1": "A circle with centre (a, b) and radius r has equation (x − a)² + (y − b)² = r², where both squared terms are added and r² > 0.\nThe two equations with a minus sign between the squared terms are not circles (they are hyperbolas).\n(x + 1)² + (y + 2)² = −36 is impossible, since a sum of squares cannot be negative.\nSo the circle is\n(x + 1)² + (y + 2)² = 36\n(centre (−1, −2), radius 6).",
+ "math-aqa-7357-2024-p2::2": "Region A lies above the x-axis, so ∫₋₃⁰ f(x) dx = +189.\nRegion B lies below the x-axis, so ∫₀² f(x) dx = −64.\n∫₋₃² f(x) dx = 189 + (−64) = 125\nAnswer: 125",
+ "math-aqa-7357-2024-p2::3": "(1 − x)(x − 4) = −(x − 1)(x − 4), so the inequality is equivalent to\n(x − 1)(x − 4) > 0\nThe critical values are x = 1 and x = 4. The quadratic (x − 1)(x − 4) is a positive (U-shaped) parabola, so it is positive outside the roots:\nx < 1 or x > 4\nThe ends x = 1 and x = 4 give 0, which is not < 0, so they are excluded. \"or\" means union:\n{x : x < 1} ∪ {x : x > 4}",
+ "math-aqa-7357-2024-p2::4": "5^(x − 2) = 7^1570\nTake logs to base 5 of both sides:\nlog₅ 5^(x − 2) = log₅ 7^1570\nx − 2 = 1570 log₅ 7      (using log Aⁿ = n log A)\nx = 2 + 1570 log₅ 7\nlog₅ 7 = ln 7 / ln 5 = 1.209061…\nx = 2 + 1570 × 1.209061… = 2 + 1898.227… = 1900.227…\nx = 1900.23 (2 d.p.)",
+ "math-aqa-7357-2024-p2::5": "y = x³/sin x\nQuotient rule with u = x³ and v = sin x:\ndu/dx = 3x²,  dv/dx = cos x\ndy/dx = (v du/dx − u dv/dx)/v²\ndy/dx = (3x² sin x − x³ cos x)/sin²x",
+ "math-aqa-7357-2024-p2::6": "Expand each bracket:\n(2 sin θ + 3 cos θ)² = 4 sin²θ + 12 sin θ cos θ + 9 cos²θ\n(6 sin θ − cos θ)² = 36 sin²θ − 12 sin θ cos θ + cos²θ\nAdding, the sin θ cos θ terms cancel:\n40 sin²θ + 10 cos²θ = 30\nUse cos²θ = 1 − sin²θ:\n40 sin²θ + 10(1 − sin²θ) = 30\n30 sin²θ + 10 = 30\nsin²θ = 2/3\nsin θ = ±√(2/3) = ±√6/3\nθ is obtuse (90° < θ < 180°), so θ is in the second quadrant, where sin θ > 0. Reject the negative value.\nsin θ = √6/3",
+ "math-aqa-7357-2024-p2::7(a)": "At the start of month 3, Kate adds £50 to the balance T₂, and then interest of 0.2% multiplies the total by 1.002:\nT₃ = (T₂ + 50) × 1.002\n= (50 × 1.002² + 50 × 1.002 + 50) × 1.002\n= 50 × 1.002³ + 50 × 1.002² + 50 × 1.002, as required.",
+ "math-aqa-7357-2024-p2::7(b)(i)": "Following the pattern, after n months\nTₙ = 50 × 1.002 + 50 × 1.002² + … + 50 × 1.002ⁿ\nThis is a geometric series with first term 50 × 1.002 = 50.1, common ratio 1.002, and n terms.\n10 years = 120 months, so n = 120:\nT₁₂₀ = 50.1(1 − 1.002¹²⁰)/(1 − 1.002)\n1.002¹²⁰ = 1.270944…\nT₁₂₀ = 50.1 × (−0.270944…)/(−0.002) = 6787.1595…\nKate expects to have £6787.16 (about £6787).",
+ "math-aqa-7357-2024-p2::7(b)(ii)": "The calculation assumes the interest rate stays at 0.2% per month for the whole 10 years and that Kate pays in exactly £50 every month and never withdraws anything.\nIn reality the interest rate is unlikely to stay fixed for 10 years (and Kate may change her monthly payments or withdraw some money), so her actual balance may differ.",
+ "math-aqa-7357-2024-p2::8(a)(i)": "Substitute x = 24, y = 12 into y = a + b log₁₀ x:\n12 = a + b log₁₀ 24",
+ "math-aqa-7357-2024-p2::8(a)(ii)": "12 = a + b log₁₀ 24   (1)\n6.4 = a + b log₁₀ 3   (2)\n(1) − (2) eliminates a:\n5.6 = b log₁₀ 24 − b log₁₀ 3\n5.6 = b log₁₀ (24/3)\n5.6 = b log₁₀ 8\nb = 5.6/log₁₀ 8, as required.",
+ "math-aqa-7357-2024-p2::8(a)(iii)": "b = 5.6/log₁₀ 8 = 6.20093…\nFrom 6.4 = a + b log₁₀ 3:\na = 6.4 − 6.20093… × log₁₀ 3\na = 6.4 − 6.20093… × 0.47712… = 6.4 − 2.95860… = 3.44140…\na = 3.44 (2 d.p.)",
+ "math-aqa-7357-2024-p2::8(b)": "x is measured in months, and one week is about a quarter of a month, so take x = 0.25.\ny = 3.44 + 6.20 log₁₀ 0.25\n= 3.44 + 6.20 × (−0.60206)\n= −0.29 (to 2 d.p.)\nSince b > 0, y increases with x, so for every age less than one week (x < 0.25) the model gives an even smaller value, below −0.29.\nThe model predicts a negative median mass, which is impossible, so the model cannot be used to predict the median mass of monkeys less than one week old.\n(Equivalently, y = 0 when x ≈ 0.28 months, so the model gives a negative or zero mass for all ages up to about 8 days.)",
+ "math-aqa-7357-2024-p2::9(a)(i)": "(1 + 3x)⁻¹ = 1 + (−1)(3x) + [(−1)(−2)/2!](3x)² + …\n= 1 − 3x + 9x² + …\nUp to the x² term: 1 − 3x + 9x²",
+ "math-aqa-7357-2024-p2::9(a)(ii)": "1/(2 − 3x) = (2 − 3x)⁻¹\n= 2⁻¹(1 − 3x/2)⁻¹\n= ½(1 + (−3x/2))⁻¹\nExpand (1 + (−3x/2))⁻¹:\n= 1 + (−1)(−3x/2) + [(−1)(−2)/2!](−3x/2)² + …\n= 1 + (3/2)x + (9/4)x² + …\nSo 1/(2 − 3x) ≈ ½[1 + (3/2)x + (9/4)x²] = ½ + ¾x + (9/8)x²\nThe first three terms are ½, ¾x, (9/8)x².\n(¾x) ÷ ½ = (3/2)x\n((9/8)x²) ÷ (¾x) = (3/2)x\nEach term is the previous term multiplied by the same factor, so the terms form a geometric sequence.\nCommon ratio = 3x/2",
+ "math-aqa-7357-2024-p2::9(b)": "36x/((1 + 3x)(2 − 3x)) ≡ P/(2 − 3x) + Q/(1 + 3x)\nMultiply through by (1 + 3x)(2 − 3x):\n36x ≡ P(1 + 3x) + Q(2 − 3x)\nLet x = −⅓: 36(−⅓) = P(0) + Q(2 + 1)\n−12 = 3Q, so Q = −4\nLet x = ⅔: 36(⅔) = P(1 + 2) + Q(0)\n24 = 3P, so P = 8\nP = 8, Q = −4",
+ "math-aqa-7357-2024-p2::9(c)(i)": "From (b): 36x/((1 + 3x)(2 − 3x)) = 8/(2 − 3x) − 4/(1 + 3x)\nUsing (a)(ii) and (a)(i):\n8/(2 − 3x) ≈ 8(½ + ¾x + (9/8)x²) = 4 + 6x + 9x²\n4/(1 + 3x) ≈ 4(1 − 3x + 9x²) = 4 − 12x + 36x²\nSo 36x/((1 + 3x)(2 − 3x)) ≈ (4 + 6x + 9x²) − (4 − 12x + 36x²) = 18x − 27x²\n12x is one third of 36x, so divide by 3:\n12x/((1 + 3x)(2 − 3x)) ≈ 6x − 9x²",
+ "math-aqa-7357-2024-p2::9(c)(ii)": "The expansion of (1 + 3x)⁻¹ is valid for |3x| < 1, i.e. |x| < ⅓.\nThe expansion of (2 − 3x)⁻¹ = ½(1 − 3x/2)⁻¹ is valid for |3x/2| < 1, i.e. |x| < ⅔.\nBoth expansions must be valid, so take the narrower range:\n|x| < ⅓   (that is, −⅓ < x < ⅓)",
+ "math-aqa-7357-2024-p2::10": "f(x) = x² + 2 cos x\nf′(x) = 2x − 2 sin x\nf″(x) = 2 − 2 cos x\nAt x = 0: f″(0) = 2 − 2 cos 0 = 2 − 2 = 0\nFor a point of inflection, f″(x) must change sign as x passes through 0.\nTest either side:\nf″(−0.1) = 2 − 2 cos(−0.1) = 9.99 × 10⁻³ > 0\nf″(0.1) = 2 − 2 cos(0.1) = 9.99 × 10⁻³ > 0\nIn fact, since cos x < 1 for all x in −π ≤ x ≤ π except x = 0, f″(x) = 2 − 2 cos x > 0 everywhere in the domain except at x = 0. So f″(x) is positive on both sides of x = 0 and does not change sign; the curve is convex on both sides.\nTherefore the curve y = f(x) does not have a point of inflection at x = 0.",
+ "math-aqa-7357-2024-p2::11(a)": "The inequality 3 < k < 4 is strict, so k cannot equal 3. The number 3 is not in the interval, so it cannot be the smallest value of k in the interval.",
+ "math-aqa-7357-2024-p2::11(b)(i)": "Since 3 < x, the mean y = (3 + x)/2 lies strictly between 3 and x, so 3 < y < x.\nBecause x < 4, this also means y is in the interval 3 < k < 4.\nSo y is a number in the interval that is smaller than x, which contradicts the assumption that x is the smallest number in the interval.",
+ "math-aqa-7357-2024-p2::11(b)(ii)": "Step 1: Assume, for contradiction, that there is a largest number in the interval 3 < k < 4, and let this largest number be x. So 3 < x < 4.\nStep 2: Let y = (x + 4)/2, the mean of x and 4.\nStep 3: Since x < 4, y − x = (4 − x)/2 > 0 and 4 − y = (4 − x)/2 > 0, so x < y < 4. Also y > x > 3, so y is in the interval 3 < k < 4.\nSo y is a number in the interval that is larger than x, which contradicts x being the largest number in the interval.\nStep 4: Therefore the assumption is false, and there is no largest value of k in the interval 3 < k < 4.",
+ "math-aqa-7357-2024-p2::12": "Resultant force in the direction of motion = 10 − 4 = 6 N\nNewton's second law, F = ma:\n6 = 2 × acceleration\nacceleration = 3 m s⁻²",
+ "math-aqa-7357-2024-p2::13": "The gradient of a velocity–time graph is the acceleration.\nThe first section is a straight line with positive gradient (constant positive acceleration); the second section is horizontal (zero acceleration).\nAt the sharp corner the gradient jumps straight from a positive value to 0, so the model assumes the acceleration of the car can change instantaneously.\n(The other options are false: the car does accelerate at first; the acceleration is zero, not positive, in the second stage; and the acceleration is constant within each stage.)\nAnswer: The acceleration of the car can change instantaneously.",
+ "math-aqa-7357-2024-p2::14(a)": "r = 6t − 2t²\nt = 4: r = 6(4) − 2(4)² = 24 − 32 = −8\nr = −8 (metres)",
+ "math-aqa-7357-2024-p2::14(b)": "The displacement is positive when\n6t − 2t² > 0\n2t(3 − t) > 0\nThe critical values are t = 0 and t = 3. The quadratic −2t² + 6t is an upside-down parabola, so it is positive between its roots.\n0 < t < 3",
+ "math-aqa-7357-2024-p2::15": "Resultant force:\nF₁ + F₂ = (a + 4, 23 + b) N (column vector)\nNewton's second law, resultant force = mass × acceleration, with mass 3 kg and acceleration (4b, a):\n(a + 4, b + 23) = 3(4b, a) = (12b, 3a)\nComparing components:\na + 4 = 12b   (1)\nb + 23 = 3a   (2)\nFrom (1): a = 12b − 4. Substitute into (2):\nb + 23 = 3(12b − 4) = 36b − 12\n35 = 35b, so b = 1\na = 12(1) − 4 = 8\na = 8, b = 1",
+ "math-aqa-7357-2024-p2::16": "Each apple starts from rest (u = 0) and falls freely with acceleration 9.8 m s⁻². Use s = ut + ½at².\nFirst apple, t = 0.5 s:\ns₁ = 0 + ½(9.8)(0.5)² = 1.225 m\nSecond apple, t = 0.5 + 0.1 = 0.6 s:\ns₂ = 0 + ½(9.8)(0.6)² = 1.764 m\nThese are the heights of the two apples above the ground, so the vertical distance between them is\ns₂ − s₁ = 1.764 − 1.225 = 0.539 m = 53.9 cm\nSo d = 53.9 ≈ 54, as required.",
+ "math-aqa-7357-2024-p2::17": "Let the reaction at A be R newtons, so the reaction at B is 2R newtons.\nThe rod is uniform with length 2L, so its weight mg acts at its centre, a distance L from each end.\nDistance from A to the centre = L − x\nDistance from B to the centre = L − (x + 0.1)\nTake moments about the centre of the rod (the weight has no moment about this point). A and B are on opposite sides of the centre:\nR(L − x) = 2R(L − (x + 0.1))\nDivide by R (R ≠ 0):\nL − x = 2(L − x − 0.1)\nL − x = 2L − 2x − 0.2\n0.2 = 2L − 2x − L + x = L − x\nL − x = 0.2, so k = 0.2",
+ "math-aqa-7357-2024-p2::18(a)": "r = p + 2t − qe^(−0.2t)\nv = dr/dt = 2 + 0.2qe^(−0.2t)\nacceleration = dv/dt = −0.04qe^(−0.2t)\nWhen t = 3 the acceleration is −1.8 m s⁻²:\n−1.8 = −0.04qe^(−0.6)\nq = 1.8/(0.04e^(−0.6)) = 45e^(0.6)\nq = 45 × 1.822118… = 81.995…\nq ≈ 82, as required.",
+ "math-aqa-7357-2024-p2::18(b)": "Initial displacement means t = 0, r = 5:\n5 = p + 2(0) − qe⁰\n5 = p − q\np = 5 + q = 5 + 82 = 87\n(Using the unrounded q = 81.995…, p = 86.995… which also gives 87.)\np = 87 (2 s.f.)",
+ "math-aqa-7357-2024-p2::19(a)(i)": "Take upwards as positive. At the maximum height the ball is momentarily at rest.\nu = 7 m s⁻¹, v = 0, a = −9.8 m s⁻², s = h\nv² = u² + 2as\n0 = 7² + 2(−9.8)h\n19.6h = 49\nh = 49/19.6 = 2.5 m\nThe ball reaches a maximum height of 2.5 m, so the claim is verified.",
+ "math-aqa-7357-2024-p2::19(a)(ii)": "Any two of:\n1. There is no air resistance acting on the ball (the only force is gravity).\n2. The ball is modelled as a particle.\n3. The ball is shot from ground level (so the height gained equals the height above the ground).",
+ "math-aqa-7357-2024-p2::19(b)": "The more the ball is tilted from the vertical, the smaller its vertical component of velocity, so the lowest maximum height occurs at 11° from the vertical.\nVertical component of the initial velocity at 11° from the vertical:\nu = 7 cos 11° m s⁻¹\nAt the maximum height the vertical velocity is 0. Upwards positive: v = 0, a = −9.8, s = k\nv² = u² + 2as\n0 = (7 cos 11°)² + 2(−9.8)k\n0 = 49 cos²11° − 19.6k\nk = 49 cos²11°/19.6 = 2.5 cos²11° = 2.5 × 0.96359… = 2.4089…\nk = 2.4 (2 s.f.)",
+ "math-aqa-7357-2024-p2::20(a)": "Q moves in a straight line, so its direction of motion is the direction of its displacement.\nDisplacement of Q = (14i + 5j) − (5i − 7j) = 9i + 12j\n9i + 12j = 3(3i + 4j)\nSo Q's displacement is a scalar multiple of P's velocity 3i + 4j, meaning Q moves in the same direction as P.\nSince P and Q move in separate straight lines with the same direction, they move along parallel lines.",
+ "math-aqa-7357-2024-p2::20(b)": "The displacement only shows that Q's average velocity over the 3 seconds is (9i + 12j)/3 = 3i + 4j m s⁻¹.\nAverage velocity is not the same as constant velocity: Q's speed could change during the 3 seconds (Q could accelerate and decelerate along its line), so Q's velocity need not be constant.",
+ "math-aqa-7357-2024-p2::20(c)": "Consider the moment 3 seconds after R passes through X.\nR moves at 4 m s⁻¹, so its distance from X is XR = 4 × 3 = 12 m.\nP's speed = |3i + 4j| = √(3² + 4²) = 5 m s⁻¹.\nP passed through X 2 seconds after R, so at this moment P has been moving away from X for 3 − 2 = 1 second:\nXP = 5 × 1 = 5 m\nP and R are 13 m apart, so PR = 13 m.\nIn triangle PXR: XP² + XR² = 5² + 12² = 25 + 144 = 169 = 13² = PR²\nBy the converse of Pythagoras' theorem, triangle PXR is right-angled at X, so angle PXR = 90°.\nXP lies along P's line and XR lies along R's line, so P and R move along perpendicular lines.",
+ "math-aqa-7357-2024-p2::21(a)": "The forces on N are its weight 80g N acting downwards and the tension T N in the rope acting upwards.\nN accelerates downwards with acceleration a m s⁻², so the resultant downward force is 80g − T.\nBy Newton's second law, F = ma, with mass 80 kg:\n80g − T = 80a",
+ "math-aqa-7357-2024-p2::21(b)": "Resolve perpendicular to the slope for M. There is no acceleration perpendicular to the slope, and the rope is parallel to the slope, so the normal reaction R balances the component of the weight perpendicular to the slope:\nR = 50g cos 60° = 50g × ½ = 25g N",
+ "math-aqa-7357-2024-p2::21(c)": "M moves up the slope, so friction acts down the slope. Since M is sliding, friction is limiting:\nF = μR = μ × 25g = 25gμ\nComponent of M's weight down the slope = 50g sin 60° = 50g × (√3/2) = 25√3 g\nEquation of motion for M up the slope (resultant force = mass × acceleration):\nT − 50g sin 60° − 25gμ = 50a\nAdd the equation for N from (a), 80g − T = 80a, to eliminate T:\n80g − 50g sin 60° − 25gμ = 130a\n80g − 25√3 g − 25gμ = 130a\na = (80 − 25√3 − 25μ)g/130\na = (16 − 5√3 − 5μ)g/26\nThis expression decreases as μ increases, so a is least when μ takes its largest value, μ = 1:\na ≥ (16 − 5√3 − 5)g/26\na ≥ (11 − 5√3)g/26, as required.",
+ "math-aqa-7357-2024-p2::21(d)": "Any one of:\nThe rope is light (has no mass).\nThe rope is inextensible, so M and N have the same magnitude of acceleration.\nThe pulley is fixed (and smooth, as given).\nThere is no air resistance on the boxes.",
 
- "math-aqa-7357-2024-p2::2(a)": "gf(x) = g(f(x)) = g(3x − 2) = (3x − 2)² + 1.\nExpand: (3x − 2)² = 9x² − 12x + 4.\nSo gf(x) = 9x² − 12x + 4 + 1 = 9x² − 12x + 5.",
 
- "math-aqa-7357-2024-p2::2(b)": "Set gf(x) = 26: 9x² − 12x + 5 = 26.\n9x² − 12x − 21 = 0.\nDivide by 3: 3x² − 4x − 7 = 0.\nFactorise: (3x − 7)(x + 1) = 0.\nx = 7/3 or x = −1.",
 
- "math-aqa-7357-2024-p2::3": "y = x³ − 6x² + 5.\ndy/dx = 3x² − 12x.\nd²y/dx² = 6x − 12.\nFor concavity: d²y/dx² < 0 ⇒ 6x − 12 < 0 ⇒ x < 2.",
 
- "math-aqa-7357-2024-p2::4(a)": "For a geometric sequence the ratio between consecutive terms is constant:\nk/(k + 4) = (2k − 15)/k.\nCross-multiply: k² = (k + 4)(2k − 15) = 2k² − 15k + 8k − 60 = 2k² − 7k − 60.\nRearranging: 0 = k² − 7k − 60.\nFactorise: (k − 12)(k + 5) = 0 ⇒ k = 12 or k = −5.\nSince k is a positive constant, k = 12.",
 
- "math-aqa-7357-2024-p2::4(b)": "With k = 12: first term = k + 4 = 16, second term = k = 12.\nCommon ratio r = 12/16 = 3/4.",
 
- "math-aqa-7357-2024-p2::4(c)": "First term a = 16, common ratio r = 3/4 (|r| < 1).\nSum to infinity S∞ = a/(1 − r) = 16/(1 − 3/4) = 16/(1/4) = 64.",
 
- "math-aqa-7357-2024-p2::5(a)": "Strip width h = (5 − 1)/4 = 1.\ny-values at x = 1, 2, 3, 4, 5:\ny₀ = √(ln 1) = 0,  y₁ = √(ln 2) ≈ 0.8326,  y₂ = √(ln 3) ≈ 1.0481,  y₃ = √(ln 4) ≈ 1.1774,  y₄ = √(ln 5) ≈ 1.2686.\nTrapezium rule: Area ≈ (h/2)[y₀ + y₄ + 2(y₁ + y₂ + y₃)]\n= (1/2)[0 + 1.2686 + 2(0.8326 + 1.0481 + 1.1774)]\n= (1/2)[1.2686 + 2(3.0581)]\n= (1/2)(1.2686 + 6.1162) = (1/2)(7.3848) = 3.692.",
 
- "math-aqa-7357-2024-p2::5(b)": "The graph of y = √(ln x) is concave upward on [1, 5] (the curve bends away from the x-axis), so each trapezium lies above the curve. The trapezium rule gives an overestimate.",
 
- "math-aqa-7357-2024-p2::6(a)": "Write R sin(θ + α) = R sin θ cos α + R cos θ sin α.\nComparing with 5 cos θ + 12 sin θ: R cos α = 12 and R sin α = 5.\nR = √(12² + 5²) = √(144 + 25) = √169 = 13.\ntan α = 5/12 ⇒ α = arctan(5/12) = 22.6° (to 1 d.p.).",
 
- "math-aqa-7357-2024-p2::6(b)": "13 sin(θ + 22.6°) = 8 ⇒ sin(θ + 22.6°) = 8/13.\narcsin(8/13) = 37.98°.\nFor 0° ≤ θ ≤ 360°, θ + 22.6° is in [22.6°, 382.6°].\nSolutions: θ + 22.6° = 37.98° or θ + 22.6° = 180° − 37.98° = 142.02°.\nθ = 15.4° or θ = 119.4°.",
 
- "math-aqa-7357-2024-p2::6(c)": "Maximum value of 5 cos θ + 12 sin θ = R = 13.\nOccurs when sin(θ + 22.6°) = 1, i.e. θ + 22.6° = 90° ⇒ θ = 67.4°.",
 
- "math-aqa-7357-2024-p2::7(a)": "Integrate by parts: let u = x, dv = sin 2x dx.\nThen du = dx, v = −½ cos 2x.\n∫ x sin 2x dx = −(x/2) cos 2x − ∫ −½ cos 2x dx\n= −(x/2) cos 2x + ½ ∫ cos 2x dx\n= −(x/2) cos 2x + (1/4) sin 2x + c.",
 
- "math-aqa-7357-2024-p2::7(b)": "∫₀^(π/4) x sin 2x dx = [−(x/2) cos 2x + (1/4) sin 2x]₀^(π/4).\nAt x = π/4: −(π/8) cos(π/2) + (1/4) sin(π/2) = −(π/8)(0) + (1/4)(1) = 1/4.\nAt x = 0: 0 + 0 = 0.\nThe exact value is 1/4.",
 
- "math-aqa-7357-2024-p2::8(a)": "X ~ N(45, 8²).\nP(X > 50) = P(Z > (50 − 45)/8) = P(Z > 0.625) = 1 − Φ(0.625).\nUsing tables: Φ(0.625) ≈ 0.7340, so P(X > 50) = 1 − 0.7340 = 0.266.",
 
- "math-aqa-7357-2024-p2::8(b)": "P(X < a) = 0.2 ⇒ (a − 45)/8 = Φ⁻¹(0.2) = −0.8416.\na = 45 + 8(−0.8416) = 45 − 6.733 = 38.3 (3 s.f.).",
 
- "math-aqa-7357-2024-p2::9(a)": "Frequency densities (frequency ÷ class width):\n[10, 20): 12/10 = 1.2;  [20, 30): 25/10 = 2.5;  [30, 40): 28/10 = 2.8;  [40, 50): 11/10 = 1.1;  [50, 70): 4/20 = 0.2.\nDraw a histogram with class boundaries on the horizontal axis and frequency density on the vertical axis, using these heights.",
 
- "math-aqa-7357-2024-p2::9(b)": "Using class midpoints (15, 25, 35, 45, 60):\nΣfx = 12×15 + 25×25 + 28×35 + 11×45 + 4×60 = 180 + 625 + 980 + 495 + 240 = 2520.\nMean = 2520/80 = 31.5 cm.",
 
- "math-aqa-7357-2024-p2::9(c)": "Σfx² = 12×225 + 25×625 + 28×1225 + 11×2025 + 4×3600\n= 2700 + 15625 + 34300 + 22275 + 14400 = 89300.\nVariance = 89300/80 − 31.5² = 1116.25 − 992.25 = 124.\nStandard deviation = √124 ≈ 11.1 cm.",
 
- "math-aqa-7357-2024-p2::10(a)": "X ~ B(5, 0.35).\nP(X = 2) = C(5, 2)(0.35)²(0.65)³ = 10 × 0.1225 × 0.274625 = 0.336 (3 s.f.).",
 
- "math-aqa-7357-2024-p2::10(b)": "P(X ≥ 3) = P(X = 3) + P(X = 4) + P(X = 5).\nP(X = 3) = C(5,3)(0.35)³(0.65)² = 10 × 0.042875 × 0.4225 = 0.18115.\nP(X = 4) = C(5,4)(0.35)⁴(0.65) = 5 × 0.015006 × 0.65 = 0.04877.\nP(X = 5) = (0.35)⁵ = 0.00525.\nP(X ≥ 3) = 0.18115 + 0.04877 + 0.00525 = 0.235 (3 s.f.).",
 
- "math-aqa-7357-2024-p2::10(c)": "E(X) = np = 5 × 0.35 = 1.75 days.",
 
- "math-aqa-7357-2024-p2::11(a)": "T = ab^x.\nTaking logs (base 10): log T = log(ab^x) = log a + log b^x = log a + x log b. ∎",
 
- "math-aqa-7357-2024-p2::11(b)": "Comparing log T = log a + x log b with log T = 3.14 − 0.021x:\nlog a = 3.14 ⇒ a = 10^(3.14) ≈ 1380 (3 s.f.).\nlog b = −0.021 ⇒ b = 10^(−0.021) ≈ 0.952 (3 s.f.).",
 
- "math-aqa-7357-2024-p2::11(c)": "Substitute x = 60 into the regression equation:\nlog T = 3.14 − 0.021 × 60 = 3.14 − 1.26 = 1.88.\nT = 10^(1.88) ≈ 75.9 minutes.",
 
- "math-aqa-7357-2024-p2::11(d)": "b = 0.952 means that for each 1 °C increase in temperature, the reaction time is multiplied by 0.952 — i.e. the time decreases by approximately 4.8% per degree Celsius rise in temperature.",
 
- "math-aqa-7357-2024-p2::12(a)": "Drawing without replacement from 5 red and 3 blue:\nP(all 3 red) = (5/8) × (4/7) × (3/6) = 60/336 = 5/28.",
 
- "math-aqa-7357-2024-p2::12(b)": "P(at least one blue) = 1 − P(all red) = 1 − 5/28 = 23/28.",
 
- "math-aqa-7357-2024-p2::12(c)": "P(exactly 2 blue) = C(3,2)×C(5,1)/C(8,3) = 3×5/56 = 15/56.\nP(at least 1 blue) = 23/28 = 46/56.\nP(exactly 2 blue | at least 1 blue) = (15/56)/(46/56) = 15/46.",
 
- "math-aqa-7357-2024-p2::13(a)": "H₀: p = 0.5 (the coin is fair).\nH₁: p > 0.5 (the coin is biased towards heads).",
 
- "math-aqa-7357-2024-p2::13(b)": "Under H₀: X ~ B(20, 0.5).\nP(X ≥ 14) = 1 − P(X ≤ 13).\nFrom binomial tables: P(X ≤ 13) = 0.9423, so P(X ≥ 14) = 0.0577.\nSince 0.0577 > 0.05, we do not reject H₀.\nConclusion: there is insufficient evidence at the 5% significance level to conclude that the coin is biased towards heads.",
 
- "math-aqa-7357-2024-p2::13(c)": "Find the smallest integer c such that P(X ≥ c) ≤ 0.05 under B(20, 0.5).\nP(X ≥ 15) = 1 − P(X ≤ 14) = 1 − 0.9793 = 0.0207 < 0.05.\nP(X ≥ 14) = 0.0577 > 0.05.\nThe critical region is X ≥ 15.",
 
- "math-aqa-7357-2024-p2::14(a)": "Let u = 2x + 1, so x = (u − 1)/2 and dx = du/2.\n∫ x(2x + 1)⁵ dx = ∫ ((u − 1)/2) · u⁵ · (du/2) = (1/4)∫(u⁶ − u⁵) du\n= (1/4)[u⁷/7 − u⁶/6] + c\n= (2x + 1)⁷/28 − (2x + 1)⁶/24 + c.",
 
- "math-aqa-7357-2024-p2::14(b)": "Evaluate [(2x + 1)⁷/28 − (2x + 1)⁶/24]₀¹.\nAt x = 1: u = 3, so 3⁷/28 − 3⁶/24 = 2187/28 − 729/24.\nCommon denominator 168: 13122/168 − 5103/168 = 8019/168.\nAt x = 0: u = 1, so 1/28 − 1/24 = 6/168 − 7/168 = −1/168.\nIntegral = 8019/168 − (−1/168) = 8020/168 = 1003/21.",
 
- "math-aqa-7357-2024-p2::15(a)": "P(X > 185) = 0.10 ⇒ (185 − μ)/σ = 1.2816, i.e. 185 − μ = 1.2816σ.\nP(X < 165) = 0.25 ⇒ (165 − μ)/σ = −0.6745, i.e. 165 − μ = −0.6745σ.",
 
- "math-aqa-7357-2024-p2::15(b)": "Subtract the second equation from the first:\n(185 − μ) − (165 − μ) = 1.2816σ − (−0.6745σ)\n20 = 1.9561σ ⇒ σ = 20/1.9561 = 10.2 cm (1 d.p.).\nSubstitute back: μ = 185 − 1.2816 × 10.2 = 185 − 13.1 = 171.9 cm (1 d.p.).",
 
- "math-aqa-7357-2024-p2::16(a)": "y = (4x² − 1)/(2x − 1). Apply the quotient rule with u = 4x² − 1, v = 2x − 1:\ndy/dx = (u′v − uv′)/v² = (8x(2x − 1) − 2(4x² − 1))/(2x − 1)².\nNumerator: 16x² − 8x − 8x² + 2 = 8x² − 8x + 2.\nHence dy/dx = (8x² − 8x + 2)/(2x − 1)². ∎",
 
- "math-aqa-7357-2024-p2::16(b)": "Set dy/dx = 0: 8x² − 8x + 2 = 0 ⇒ 4x² − 4x + 1 = 0 ⇒ (2x − 1)² = 0 ⇒ x = 1/2.\nHowever, x = 1/2 makes the denominator of y zero, so x = 1/2 is not in the domain of C.\nThe curve has no stationary point.\n(Note: y = (4x² − 1)/(2x − 1) = (2x + 1)(2x − 1)/(2x − 1) = 2x + 1 for x ≠ 1/2, a straight line.)",
 
- "math-aqa-7357-2024-p2::16(c)": "Since the curve has no stationary point (the only candidate x = 1/2 is outside the domain), there is no stationary point whose nature can be determined.",
 
- "math-aqa-7357-2024-p2::17(a)": "∫₁² (3/x − 2) dx = [3 ln x − 2x]₁².\nAt x = 2: 3 ln 2 − 4.\nAt x = 1: 3 ln 1 − 2 = 0 − 2 = −2.\nValue = (3 ln 2 − 4) − (−2) = 3 ln 2 − 4 + 2 = 3 ln 2 − 2. ∎",
 
- "math-aqa-7357-2024-p2::17(b)": "The student's reasoning is invalid because f(x) = 3/x − 2 has a discontinuity at x = 0, which lies inside the interval [−1, 1]. The integral ∫₋₁¹ f(x) dx is an improper integral (the integrand is undefined at x = 0), and improper integrals of this type diverge — they cannot be evaluated by ordinary symmetry arguments. The integral does not exist (or is divergent), so the claim that it equals 0 is wrong.",
 
  "math-aqa-7357-2024-p3::1": "Assume for contradiction that √3 is rational. Then √3 = p/q where p, q are integers with no common factors (in lowest terms).\nSquaring: 3 = p²/q², so p² = 3q².\nHence 3 | p², which implies 3 | p (since 3 is prime). Write p = 3k.\nThen 9k² = 3q², so q² = 3k², meaning 3 | q.\nBut then p and q are both divisible by 3, contradicting the assumption that they share no common factors.\nTherefore √3 is irrational. ∎",
 
