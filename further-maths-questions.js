@@ -11307,7 +11307,7 @@ window.FM_QUESTIONS = {
      "M1 Area = ½|AB||CM|",
      "A1 Area = (3/2)√42"
     ],
-    "guidance": "Alternatives: ½|AB × BC| = ½|(−12, −15, 3)ᵀ| = ½√378; or via cos θ = −4/√78, sin θ = √31/√39."
+    "guidance": "Alternatives: ½|AB × BC| = ½|(−12, −15, 3)ᵀ| = ½√378; or via cos θ = −6/√78, sin θ = √(7/13) in ½|AB||BC| sin θ."
    },
    "7(a)": {
     "type": "points",
