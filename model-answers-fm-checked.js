@@ -6,6 +6,10 @@
 // question, so mark-schemes.html shows a Further Maths model answer only for
 // parts listed here.
 //
+// As of October 2026 this covers every part of every Further Maths paper on
+// the site (1,080 parts on 41 papers), each written from the official question
+// paper and mark scheme and then re-checked by a separate pass.
+//
 // Add a part only after checking its answer the same way, and re-check a
 // part if its answer in model-answers-fm.js changes.
 window.CHECKED_FM_ANSWERS = {
