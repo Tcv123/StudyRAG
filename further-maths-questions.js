@@ -16575,7 +16575,7 @@ window.FM_QUESTIONS = {
      "B1ft Sector area of C₁: ½ × 5² × 2ln 3 = 25 ln 3 (awrt 27.5)",
      "M1 Area formula ½∫ (3cosh θ)² dθ with limits ±ln 3",
      "*M1 Writes cosh²θ in integrable form, e.g. ¼(e^(2θ) + e^(−2θ) + 2)",
-     "dep*M1 Integrates and substitutes limits: area under C₂ = 10 + (9/2)ln 3 (awrt 13.3)",
+     "dep*M1 Integrates and substitutes limits: area under C₂ = 10 + (9/2)ln 3 (awrt 14.9)",
      "A1 Area of R = 25 ln 3 − (10 + (9/2)ln 3) = (41/2)ln 3 − 10 ≈ 12.52",
      "A1 12.52/0.5 = 25.04, so 26 tins"
     ],
