@@ -329,9 +329,15 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
   if (totalCurriculumTopics > 0 && totalTested >= totalCurriculumTopics) award('diag_150');
   if (totalCurriculumTopics > 0 && nonRed >= totalCurriculumTopics) award('diag_200');
 
-  // daily diagnostics — count today's entries
-  const today = new Date().toISOString().slice(0, 10);
-  const todayRows = topicRows.filter(t => t.updated_at && t.updated_at.slice(0, 10) === today);
+  // daily diagnostics — count today's entries. "Today" is the student's local
+  // day, like the time-of-day medals below; the UTC date would move midnight
+  // to 01:00 in UK summer time.
+  const localDay = (ts) => {
+    const d = new Date(ts);
+    return isNaN(d) ? '' : `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+  };
+  const today = localDay(Date.now());
+  const todayRows = topicRows.filter(t => t.updated_at && localDay(t.updated_at) === today);
   if (todayRows.length >= 3)  award('daily_3_diag');
   if (todayRows.length >= 5)  award('daily_5_diag');
   if (todayRows.length >= 7)  award('daily_7_diag');
@@ -409,7 +415,7 @@ async function checkAndAwardMedals(user, topicRows, subjects, existingMedalIds) 
 
   // ── Comeback & Recovery ──
   // comeback_kid — studied today after a 7+ day gap
-  const nonTodayRows = topicRows.filter(t => t.updated_at && t.updated_at.slice(0, 10) !== today);
+  const nonTodayRows = topicRows.filter(t => t.updated_at && localDay(t.updated_at) !== today);
   if (nonTodayRows.length > 0 && todayRows.length > 0) {
     const lastDate = nonTodayRows.reduce((max, t) => t.updated_at > max ? t.updated_at : max, '');
     if (lastDate) {

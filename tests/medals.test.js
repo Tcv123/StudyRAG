@@ -97,12 +97,12 @@ function makeDb(state) {
 }
 
 /* ── load the engine into a sandbox ────────────────────────────────── */
-function loadEngine(state) {
+function loadEngine(state, { Date: EngineDate = Date } = {}) {
   const ctx = {
     console: { log() {}, warn() {}, error() {} },
     localStorage: { getItem: () => state.profile.level || 'gcse', setItem() {} },
     supabaseClient: makeDb(state),
-    Date, Math, JSON, Set, Map, Array, Object, Promise, isNaN, window: {},
+    Date: EngineDate, Math, JSON, Set, Map, Array, Object, Promise, isNaN, window: {},
   };
   vm.createContext(ctx);
   // The real level helper, not a stub — medals-engine.js delegates its
@@ -384,6 +384,35 @@ test('Idempotency · a second run awards nothing new and writes nothing', async 
         `${afterFirst} → ${state.writes.length}`);
   check('run 2 returned the same set', second.size === first.size);
   check('no rejected batches across either run', state.rejectedBatches.length === 0);
+});
+
+test("Bug 6 · \"today\" is the student's local day, not the UTC date", async () => {
+  // 00:30 BST on 2 July is still 1 July in UTC. Work done at 00:05–00:15 BST
+  // is today; work at 23:40–23:50 BST the evening before is not.
+  const prevTZ = process.env.TZ;
+  process.env.TZ = "Europe/London";
+  try {
+    const NOW = Date.parse("2026-07-01T23:30:00Z");
+    class FrozenDate extends Date {
+      constructor(...a) { if (a.length) super(...a); else super(NOW); }
+      static now() { return NOW; }
+    }
+    const row = (i, ts) => ({ subject: "Computer Science", exam_board: "OCR", topic: "1." + i,
+                              rag_status: "green", updated_at: ts });
+    const run = async (topicRows) => {
+      const state = { topicRows, subjects: [{ subject: "Computer Science", exam_board: "OCR" }],
+                      attempts: [], medals: [], profile: baseProfile() };
+      const ctx = loadEngine(state, { Date: FrozenDate });
+      return ctx.checkAndAwardMedals(USER, topicRows, state.subjects, new Set());
+    };
+    const afterMidnight = await run([5, 10, 15].map(m => row(m, `2026-07-01T23:${String(m).padStart(2, "0")}:00+00:00`)));
+    check("3 topics just after local midnight count as today", has(afterMidnight, "daily_3_diag"));
+    check("3 greens just after local midnight count as today", has(afterMidnight, "three_green_one_day"));
+    const lastEvening = await run([40, 45, 50].map(m => row(m, `2026-07-01T22:${m}:00+00:00`)));
+    check("3 topics the evening before do not count as today", !has(lastEvening, "daily_3_diag"));
+  } finally {
+    if (prevTZ === undefined) delete process.env.TZ; else process.env.TZ = prevTZ;
+  }
 });
 
 /* ── report ────────────────────────────────────────────────────────── */
