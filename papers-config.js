@@ -10802,7 +10802,7 @@ window.SUBJECTS = [
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73671-MS-JUN22.PDF' },
           { id: 'fmath-aqa-7367-2022-p2', year: 'June 2022', paperName: 'Paper 2', paperCode: '7367/2', totalMarks: 100, durationMins: 120, printOnly: true,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73672-QP-JUN22.PDF',
-            msNote: 'AQA has not published this mark scheme on its own filestore.' },
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73672-MS-JUN22%20.PDF' },
           { id: 'fmath-aqa-7367-2022-p3d', year: 'June 2022', paperName: 'Paper 3D — Discrete', paperCode: '7367/3D', totalMarks: 50, durationMins: 120, printOnly: true,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73673D-QP-JUN22.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73673D-MS-JUN22.PDF' },
