@@ -3335,7 +3335,7 @@ r = 3.2 × 10¹⁰ m from the centre of the star
 
 (That is only about 1.5 times the star's radius of 2.1 × 10¹⁰ m.)`,
   "phys-ocra-h556-2023-p1::23(b)(iv)": `The calculation in (iii) used the average kinetic energy from the Maxwell-Boltzmann distribution. In reality, gas particles have a range of speeds — the distribution has a high-speed tail. A small fraction of helium nuclei have kinetic energies far greater than the average (3/2 k_BT), enough to exceed the gravitational PE barrier and escape to much greater distances. This is analogous to evaporation — the fastest-moving particles escape even when the average energy is not sufficient.`,
-  "phys-ocra-h556-2023-p2::16(a)": `A and D: diffraction. These are the dim regions towards the edges of the pattern, where the single-slit diffraction envelope has reduced the intensity almost to zero, so they may also be described as places where the light from the two slits arrives in antiphase and interferes destructively.
+  "phys-ocra-h556-2023-p2::16(a)": `A and D: diffraction. These dim regions towards the edges of the pattern are caused by diffraction at each slit: the single-slit diffraction envelope reduces the intensity of the light reaching the screen further from the centre.
 
 B and C: interference. B and C are bright fringes (maxima), produced where the waves from the two slits arrive in phase and interfere constructively, so the resultant amplitude — and hence the intensity — is a maximum.`,
   "phys-ocra-h556-2023-p2::16(b)": `Coherent waves have a constant phase difference (which may be zero) between them and have the same frequency (and wavelength). This means their relative phase relationship does not change with time.`,
@@ -3357,17 +3357,15 @@ Hence
 tan θ = 0.512 / 4.0 = 0.128
 θ = tan⁻¹(0.128) = 7.3°
 
-(Equivalently, using a sin θ = nλ with n = 2: sin θ = 2 × 640 × 10⁻⁹ / 1.00 × 10⁻⁵ = 0.128, giving θ = 7.4°.)
-
 θ = 7.3°`,
   "phys-ocra-h556-2023-p2::17(a)": `Ultrasound is a longitudinal, mechanical pressure wave with a frequency above the upper limit of human hearing, which is 20 000 Hz (20 kHz). Ultrasound therefore has a frequency greater than 20 kHz. Like all sound waves it requires a medium through which to travel and travels as compressions and rarefactions.`,
   "phys-ocra-h556-2023-p2::17(b)": `Production of ultrasound: The transducer contains a piezoelectric crystal. When an alternating voltage at ultrasonic frequency is applied across the crystal, it vibrates at that frequency due to the inverse piezoelectric effect (applied electric field causes mechanical deformation). These vibrations are transmitted to the patient's skin as ultrasound pressure waves.
 
-Receiving ultrasound: When the reflected ultrasound waves return and strike the piezoelectric crystal, the pressure variations cause the crystal to deform rhythmically. By the piezoelectric effect, this mechanical deformation generates an alternating voltage across the crystal, which is detected and processed electronically to form the image. The same crystal can therefore both emit and detect ultrasound.
+Receiving ultrasound: When the reflected ultrasound waves return and strike the piezoelectric crystal, the pressure variations cause the crystal to deform rhythmically. By the piezoelectric effect, this mechanical deformation generates an alternating voltage across the crystal, which is detected and processed electronically to form the image. The ultrasound is emitted in short pulses, and between pulses the same crystal acts as the receiver, so one transducer both emits and detects ultrasound.
 
 Purpose of the gel: The acoustic impedance of air is very much lower than that of tissue. Without gel, at the boundary between the transducer and skin (separated by air), almost all the ultrasound would be reflected and very little transmitted into the body. The gel has an acoustic impedance much closer to that of tissue (and the transducer surface), so it fills the air gap and greatly reduces reflection at the transducer–skin interface, allowing efficient transmission of ultrasound into the patient.`,
   "phys-ocra-h556-2023-p2::17(c)(i)": `Region A is a fluid-filled cavity (such as the amniotic fluid surrounding the baby). Ultrasound is not reflected back from A because there is no significant acoustic impedance boundary within the fluid — the wave travels through the uniform liquid without encountering an interface where a change in acoustic impedance would cause reflection.`,
-  "phys-ocra-h556-2023-p2::17(c)(ii)": `Region B is at a tissue–bone boundary (or a large impedance mismatch interface) while region C is at a softer tissue boundary (smaller impedance mismatch). The fraction of ultrasound reflected at any boundary is determined by the difference in acoustic impedances of the two media: a larger impedance mismatch produces a larger reflection coefficient. Bone has a much greater acoustic impedance than soft tissue, so the impedance mismatch at B is much greater than at C (soft tissue–soft tissue boundary). Therefore a much greater fraction of the incident ultrasound is reflected back from B than from C, giving a stronger (greater) signal at B.`,
+  "phys-ocra-h556-2023-p2::17(c)(ii)": `B is the boundary between the surrounding fluid (A) and the baby's skull (bone), while C is the boundary between the fluid and the baby's soft tissue. The fraction of ultrasound reflected at any boundary is determined by the difference in acoustic impedances of the two media: a larger impedance mismatch produces a larger reflection coefficient. Bone has a much greater acoustic impedance than soft tissue, so the impedance mismatch at B is much greater than at C (fluid–soft tissue boundary). Therefore a much greater fraction of the incident ultrasound is reflected back from B than from C, giving a stronger (greater) signal at B.`,
   "phys-ocra-h556-2023-p2::17(d)": `Using the Doppler formula for moving reflector:
 Δf = f_observed − f_emitted = 9.9987 MHz − 10.0000 MHz = −0.0013 MHz = −1300 Hz
 
@@ -3385,7 +3383,7 @@ v = |Δf| × c / (2f₀ cosθ)
 = 0.162 m s⁻¹ ≈ 0.16 m s⁻¹`,
   "phys-ocra-h556-2023-p2::18(a)": `The tube is open at both ends, so the fundamental has a displacement antinode at each open end and a single displacement node exactly half-way along the tube.
 
-Sketch: inside the tube draw one smooth half-wavelength loop — a curve starting at maximum displacement at the left-hand open end, crossing the centre line (zero displacement) at the mid-point of the tube, and reaching maximum displacement again at the right-hand open end. Draw the mirror-image curve as a dashed line to show the other extreme of the oscillation. The whole tube therefore contains half a wavelength.`,
+Sketch: inside the tube draw a smooth curve that starts at maximum displacement at the left-hand open end (touching the top wall), crosses the centre line (zero displacement) at the mid-point of the tube, and reaches maximum displacement in the opposite direction at the right-hand open end (touching the bottom wall). Draw the mirror-image curve as a dashed line to show the other extreme of the oscillation. The whole tube therefore contains half a wavelength.`,
   "phys-ocra-h556-2023-p2::18(b)": `For a tube open at both ends the fundamental fits half a wavelength into the tube, so
 
 λ₀ = 2L = 2 × 0.300 = 0.600 m
@@ -3402,7 +3400,7 @@ f₁ = v/λ₁ = 340 / 0.300 = 1133 Hz
 f₁ = 1.13 × 10³ Hz (i.e. 2f₀)`,
   "phys-ocra-h556-2023-p2::19(a)": `The experiment is electron diffraction through a thin graphite (carbon) film.
 
-Apparatus (labelled diagram description): An electron gun (cathode, anode with high voltage ~5 kV) fires a beam of electrons. The beam passes through a thin polycrystalline graphite film mounted on a mesh inside an evacuated glass tube. A fluorescent screen at the far end of the tube detects the electrons.
+Apparatus (labelled diagram description): In an electron gun, a heated filament (cathode) releases electrons by thermionic emission, and a high p.d. (about 5 kV) between the cathode and the anode accelerates them into a beam. The beam passes through a thin polycrystalline graphite film mounted on a mesh inside an evacuated glass tube. A fluorescent screen at the far end of the tube detects the electrons.
 
 Method: Electrons are accelerated through the potential difference in the electron gun, gaining kinetic energy. They strike the graphite film, where the regular atomic lattice acts as a diffraction grating. The diffracted electrons hit the fluorescent screen, producing a pattern of concentric rings of alternating light and dark.`,
   "phys-ocra-h556-2023-p2::19(b)": `The pattern of concentric bright and dark rings is produced by diffraction and interference of electron waves passing through the regular crystal lattice of graphite.
@@ -3411,7 +3409,7 @@ The bright rings occur where electrons from different atomic planes in the cryst
 
 The dark rings occur where the path difference is a half-integer multiple of the wavelength — destructive interference produces zero (or low) electron intensity.
 
-This evidence demonstrates wave-particle duality: electrons, which have mass and charge and behave as particles, also exhibit wave-like behaviour (diffraction and interference). Their de Broglie wavelength is comparable to the interatomic spacing in graphite (~10⁻¹⁰ m), which is why diffraction is observable.`,
+This evidence demonstrates wave-particle duality: electrons, which have mass and charge and behave as particles, also exhibit wave-like behaviour (diffraction and interference). Their de Broglie wavelength is comparable to the interatomic spacing in graphite, which is why diffraction is observable.`,
   "phys-ocra-h556-2023-p2::19(c)(i)": `Work done on electrons:
 W = QV = eV = 1.60 × 10⁻¹⁹ × 5000 = 8.0 × 10⁻¹⁶ J`,
   "phys-ocra-h556-2023-p2::19(c)(ii)": `The work done equals the kinetic energy gained:
@@ -3431,7 +3429,7 @@ spacing ≈ 1.7 × 10⁻¹¹ m (i.e. of the order of 10⁻¹¹ m)`,
   "phys-ocra-h556-2023-p2::20(a)": `Circuit diagram to draw:
 
 - A 6.0 V d.c. supply (cell/battery symbol).
-- A two-way switch connected to the positive terminal of the supply: in one position it connects the supply into the circuit (charging); in the other position it disconnects the supply and connects the capacitor directly across the same resistor (discharging).
+- A two-way switch whose common terminal is connected to one end of the resistor–capacitor series combination (the other end of the combination goes to the negative terminal of the supply). In one position the switch connects the combination to the positive terminal of the supply (charging); in the other position it connects that end straight to the negative terminal, bypassing the supply, so the capacitor discharges through the same resistor.
 - The 10 kΩ resistor in series with the 1.0 µF capacitor, so that the charging current and the discharging current both pass through this resistor.
 - A voltmeter connected in parallel with (directly across) the capacitor.
 
@@ -3447,10 +3445,8 @@ Q = 6.0 × 10⁻⁶ C (6.0 µC)`,
 
 τ is the time taken for the p.d. across the capacitor to fall to 1/e (about 37%) of its initial value, so in only 0.010 s the p.d. has already dropped from 6.0 V to about 2.2 V, and after about 5τ = 0.05 s the capacitor is essentially fully discharged.
 
-(Equivalently, using V = V₀e^(−t/CR): 0.6 = 6.0e^(−t/0.01) gives t = 0.023 s for the p.d. to fall to just 10% of its starting value.)
-
 These times are a few hundredths of a second, which is far shorter than a human reaction time (roughly 0.2 s), so a stopwatch could not be started, read and stopped quickly enough to record how the p.d. varies during the charging or discharging.`,
-  "phys-ocra-h556-2023-p2::20(d)": `Use a datalogger (or data logger with a voltage sensor) connected across the capacitor in place of the voltmeter. The datalogger automatically records voltage at very short, regular time intervals (e.g. every 0.01 s), giving many accurate data points throughout the charging process. The data can then be plotted and analysed on a computer.`,
+  "phys-ocra-h556-2023-p2::20(d)": `Use a datalogger (or data logger with a voltage sensor) connected across the capacitor in place of the voltmeter. The datalogger automatically records voltage at very short, regular time intervals (e.g. every 0.1 ms, much shorter than the 0.01 s time constant), giving many accurate data points throughout the charging process. The data can then be plotted and analysed on a computer.`,
   "phys-ocra-h556-2023-p2::20(e)(i)": `For discharge, V = V₀e^(−t/CR), with V₀ = 6.0 V, V = 4.12 V and CR = 1.0 × 10⁻⁶ × 10 × 10³ = 0.010 s.
 
 4.12 = 6.0 e^(−t/0.010)
@@ -3470,12 +3466,12 @@ This energy is lost in the time found in (e)(i), t = 3.76 × 10⁻³ s, so
 average rate of energy loss = ΔE/t = 9.5 × 10⁻⁶ / 3.76 × 10⁻³ = 2.53 × 10⁻³ J s⁻¹
 
 average rate at which energy is lost = 2.53 × 10⁻³ J s⁻¹`,
-  "phys-ocra-h556-2023-p2::21(a)": `The upper label, pointing to the vertical rods inside the core, is: (nuclear) fuel rods — these contain the uranium (uranium oxide) fuel.
+  "phys-ocra-h556-2023-p2::21(a)": `The upper label, pointing to the grey rods standing up from the bottom of the core, is: (nuclear) fuel rods — these contain the uranium (uranium oxide) fuel.
 
-The lower label, pointing to the material filling the core around the rods, is: moderator (for example graphite or heavy water) — the material that surrounds the fuel rods and slows the fast neutrons. (A correctly named coolant, such as carbon dioxide or water, is equally acceptable for this label.)`,
+The lower label, pointing to the material filling the core around the rods, is: moderator (for example graphite or heavy water) — the material that surrounds the fuel rods and slows the fast neutrons.`,
   "phys-ocra-h556-2023-p2::21(b)": `Inducing fission: A slow (thermal) neutron is absorbed by a U-235 nucleus, making it highly unstable. It then undergoes fission, splitting into two smaller nuclei (fission fragments) and releasing 2 or 3 fast neutrons plus energy. For example: ²³⁵₉₂U + ¹₀n → ¹⁴¹₅₆Ba + ⁹²₃₆Kr + 3¹₀n
 
-Controlling the chain reaction: The fast neutrons released must be slowed down (moderated) by the moderator before they can induce further fissions. The control rods (boron/cadmium) absorb neutrons — inserting them deeper reduces the rate of fission; withdrawing them allows more neutrons to cause fission. By adjusting the control rods, the chain reaction is kept at a steady, controlled rate (k=1, critical).
+Controlling the chain reaction: The fast neutrons released must be slowed down (moderated) by the moderator before they can induce further fissions. The control rods (boron/cadmium) absorb neutrons — inserting them deeper reduces the rate of fission; withdrawing them allows more neutrons to cause fission. By adjusting the control rods, the chain reaction is kept at a steady, controlled rate so that on average exactly one neutron from each fission goes on to cause a further fission.
 
 Energy release calculation:
 Mass defect: Δm = (mass of U-235 + mass of neutron) − (mass of Ba-141 + mass of Kr-92 + 3×mass of neutron)
@@ -3484,7 +3480,9 @@ Mass defect: Δm = (mass of U-235 + mass of neutron) − (mass of Ba-141 + mass 
 = 236.05262 − 235.86658 u
 = 0.18604 u
 
-Energy released = 0.18604 × 931.5 MeV = 173.3 MeV ≈ 173 MeV per fission
+Δm = 0.18604 × 1.661 × 10⁻²⁷ = 3.090 × 10⁻²⁸ kg
+
+Energy released = Δmc² = 3.090 × 10⁻²⁸ × (3.00 × 10⁸)² = 2.78 × 10⁻¹¹ J per fission (about 174 MeV)
 
 This is an enormous amount of energy per event — about 50 million times more than a typical chemical reaction (which releases a few eV). This is because in nuclear reactions the binding energy of the nucleus is involved (strong nuclear force), whereas chemical reactions involve only electron energy levels.`,
   "phys-ocra-h556-2023-p2::21(c)": `Advantages of fusion over fission:
@@ -3504,7 +3502,7 @@ Fission disadvantages: long-lived radioactive waste, risk of meltdown, limited u
 ¹⁸₉F → ¹⁸₈O + ⁰₊₁e + ⁰₀ν_e
 
 (A positron is emitted along with a neutrino; the daughter nucleus is oxygen-18.)`,
-  "phys-ocra-h556-2023-p2::22(b)": `In annihilation, the rest mass energy of the electron and positron is converted entirely to two gamma photons (by conservation of momentum, two photons must be produced moving in opposite directions).
+  "phys-ocra-h556-2023-p2::22(b)": `In annihilation, the rest mass energy of the electron and positron is converted entirely to two gamma photons (the electron and positron are effectively at rest, so by conservation of momentum two identical photons are produced moving in opposite directions).
 
 Energy of each photon = rest mass energy of one electron:
 E = m_e c² = 9.11 × 10⁻³¹ × (3.00 × 10⁸)² = 8.199 × 10⁻¹⁴ J
@@ -3518,7 +3516,7 @@ Using E = hc/λ:
 Gamma rays are produced by nuclear transitions — when an excited nucleus (formed after radioactive decay, such as after alpha or beta emission) drops to a lower energy state, the energy difference is emitted as a gamma-ray photon. Gamma rays originate from within the nucleus, not from electron transitions.`,
   "phys-ocra-h556-2023-p2::22(d)": `A half-life of 109.7 minutes is short, which means the activity of the F-18 tracer is high but falls away quickly.
 
-Advantage for the patient: because the tracer decays rapidly, it is present in the body for only a few hours, so the patient's total exposure to ionising radiation is kept as low as possible while still giving a strong enough signal for a clear PET image.
+Advantage for the patient: because the tracer decays rapidly, its activity in the body falls to a small fraction of its initial value within several hours, so the patient's total exposure to ionising radiation is kept as low as possible while still giving a strong enough signal for a clear PET image.
 
 Disadvantage for the radiographers: the same rapid decay means the activity falls noticeably during the procedure, so they have only a short time in which to inject the tracer and complete the scan and diagnosis. The F-18 also cannot be stored or transported far — it must be produced in a cyclotron on or near the site immediately before use, and handling such a high-activity source increases the radiographers' own exposure.`,
   "phys-ocra-h556-2023-p2::23(a)(i)": `From the table:
@@ -3527,7 +3525,7 @@ For 2 mm: intensity = 46.5 W m⁻², ln(46.5) = 3.84`,
   "phys-ocra-h556-2023-p2::23(a)(ii)": `Plot the two new points on the graph:
 (1 mm, 4.80) and (2 mm, 3.84)
 These should be added to the existing three points at (3 mm, 2.88), (4 mm, 1.92), (5 mm, 0.960).`,
-  "phys-ocra-h556-2023-p2::23(a)(iii)": `Draw a straight line of best fit through all five data points, minimising the total distance of points from the line. The line should have a negative gradient (ln(I) decreases as thickness increases) and should be extended to the y-axis to find the intercept.`,
+  "phys-ocra-h556-2023-p2::23(a)(iii)": `Draw a straight line of best fit with the five points evenly spread about the line (here they lie almost exactly on a straight line). The line should have a negative gradient (ln(I) decreases as thickness increases) and should be extended to the y-axis to find the intercept.`,
   "phys-ocra-h556-2023-p2::23(b)(i)": `The exponential absorption law: I = I₀ e^(−μx)
 
 Taking the natural log of both sides:
@@ -3539,15 +3537,13 @@ y = ln(I), x = thickness, gradient m = −μ (negative), y-intercept c = ln(I₀
 A graph of ln(I) against x is therefore a straight line with negative gradient −μ.`,
   "phys-ocra-h556-2023-p2::23(b)(ii)": `From the graph, the y-intercept (where the best-fit line meets the y-axis at x = 0) gives ln(I₀).
 
-Reading from the graph (using the five data points, which show a very regular spacing of ~0.96 per mm):
-At x = 0: ln(I₀) ≈ 4.80 + 0.96 = 5.76
-I₀ = e^5.76 = 317 W m⁻² ≈ 320 W m⁻²
-
-(Accept any value consistent with the best-fit line extended to x = 0.)`,
+Extending the best-fit line back to x = 0 (it falls by about 0.96 for each 1 mm and passes through (1 mm, 4.80)), it meets the y-axis at
+ln(I₀) = 5.76
+I₀ = e^5.76 = 317 W m⁻² ≈ 320 W m⁻²`,
   "phys-ocra-h556-2023-p2::23(b)(iii)": `The gradient of the best-fit line = −μ.
 
-Using two well-separated points on the line, e.g. (1 mm, 4.80) and (5 mm, 0.960):
-Gradient = (0.960 − 4.80)/(5 − 1) = (−3.84)/4 = −0.96 mm⁻¹
+Reading two well-separated points from the best-fit line, e.g. (1.0 mm, 4.80) and (5.0 mm, 0.96) (the data lie on the line here):
+Gradient = (0.96 − 4.80)/(5 − 1) = (−3.84)/4 = −0.96 mm⁻¹
 
 Therefore μ = 0.96 mm⁻¹`,
   "phys-ocra-h556-2023-p2::23(c)(i)": `Using voltage divider formula: V_out = V_supply × R₂/(R₁ + R₂)
@@ -3560,7 +3556,7 @@ V_out = 5 × 8000/(5000 + 8000) = 40000/13000 = 3.077 V
 
 Output voltage range = 3.077 − 0.0980 = 2.98 V ≈ 3.0 V`,
   "phys-ocra-h556-2023-p2::23(c)(ii)": `Two ways to increase the output voltage range:
-1. Reduce the value of R₁ (the fixed resistor): a smaller R₁ means a greater fraction of the supply voltage appears across R₂ at all settings, increasing V_out at all light levels and widening the range.
+1. Reduce the value of R₁ (the fixed resistor): with a smaller R₁ the maximum V_out (when R₂ = 8 kΩ) rises much more than the minimum V_out (when R₂ = 100 Ω), so the range widens; e.g. with R₁ = 1 kΩ the range is 5 × (8000/9000 − 100/1100) ≈ 4.0 V.
 2. Increase the supply voltage V_supply: since V_out is directly proportional to V_supply, a higher supply voltage proportionally increases V_out at all settings, widening the output range.`,
   "phys-ocra-h556-2023-p2::23(c)(iii)": `When light intensity increases (thinner jelly or more light reaching R₂), the resistance of R₂ (the light-dependent component) decreases. A smaller R₂ means a smaller fraction of the supply voltage is dropped across R₂, so V_out decreases. Conversely, when light intensity decreases, R₂ increases and V_out increases. The circuit therefore gives an output voltage that decreases with increasing light intensity.`,
   "phys-ocra-h556-2023-p3::1(a)(i)": `The maximum acceleration occurs at the point in the orbit where the gravitational force (and hence centripetal acceleration = GM/r²) is greatest, i.e. where the distance from Mars is smallest. This is the periapsis (closest approach point). Mark X at the point on the elliptical orbit closest to Mars (the planet is at one focus of the ellipse, so X is at the end of the orbit nearest Mars).`,
