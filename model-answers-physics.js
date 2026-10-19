@@ -5291,9 +5291,9 @@ Time 6 ms: signal level 1 mV, digitised 001
 On Fig. 32.2, add the three points (4 ms, 1 mV), (5 ms, 0 mV) and (6 ms, 1 mV) to the four already plotted. The reconstructed signal is then drawn as a staircase through all seven points: each sampled level is held constant for the whole millisecond until the next sample is taken, giving steps at 2, 4, 5, 4, 1, 0 and 1 mV.`,
   "phys-ocrb-h557-2024-p1::32(b)": `Two separate things go wrong.
 
-First, the sampling rate is too low. The signal in Fig. 32.3 contains a rapid oscillation with a period of only about 0.5 ms, i.e. a frequency of about 2 kHz, but the students take only one sample every millisecond (1 kHz). The sampling rate is therefore less than twice the highest frequency present in the signal: there is less than one sample per cycle, so whole oscillations happen between consecutive samples and are lost completely.
+First, the sampling rate is too low. The signal in Fig. 32.3 repeats about every 1.6 ms, but each repeat contains two peaks, so the signal contains a component whose period is only about 0.8 ms, i.e. a frequency of about 1.25 kHz, while the students take only one sample every millisecond (1 kHz). The sampling rate is therefore less than twice the highest frequency present in the signal: there is less than one sample per cycle, so whole oscillations happen between consecutive samples and are lost completely.
 
-Second, there are not enough quantisation levels. The levels are 1 mV apart, but much of the detail in this signal consists of variations of only a few tenths of a millivolt between one peak and the next. Those differences are smaller than the spacing of the levels, so they are rounded away and cannot be recovered.
+Second, there are not enough quantisation levels. The levels are 1 mV apart, but much of the detail in this signal is smaller than 1 mV: for example, the small peak at about 2.3 mV and the dip at about 1.6 mV just before it would both be rounded to 2 mV. Variations smaller than the spacing of the levels are rounded away and cannot be recovered.
 
 For both reasons the reconstructed signal cannot follow the original.`,
   "phys-ocrb-h557-2024-p1::33(a)": `Using s = ½at²: a = 2s / t² = (2 × 0.75) / (0.41)² = 1.50 / 0.1681 = 8.9 m s⁻² (2 s.f.).`,
@@ -5338,12 +5338,12 @@ T = 2π√(m/k) = 2π√((10/9.81)/(1.9 × 10⁴))
 = 2π√(5.37 × 10⁻⁵) = 2π × 7.33 × 10⁻³
 
 T = 4.6 × 10⁻² s`,
-  "phys-ocrb-h557-2024-p1::36(a)(iii)": `The wire oscillations are simple harmonic because the wire obeys Hooke's law throughout the range of oscillation: the restoring force is directly proportional to the displacement from equilibrium (F = –kx), which is the definition of SHM. The rubber strip does not obey Hooke's law — from Fig. 36.2 the force–extension graph is non-linear (the rubber becomes stiffer at larger extensions). Therefore the restoring force is not proportional to displacement, so the oscillations of the rubber strip are not simple harmonic.`,
+  "phys-ocrb-h557-2024-p1::36(a)(iii)": `The wire oscillations are simple harmonic because the wire obeys Hooke's law throughout the range of oscillation: the restoring force is proportional to the displacement from equilibrium and always directed back towards the equilibrium position (F = –kx), which is the condition for SHM. The rubber strip does not obey Hooke's law — from Fig. 36.2 the force–extension graph is non-linear (its gradient, the stiffness, changes with extension – it first decreases and then increases). Therefore the restoring force is not proportional to displacement, so the oscillations of the rubber strip are not simple harmonic.`,
   "phys-ocrb-h557-2024-p1::36(b)": `Structure of a metal alloy. A metal consists of positive ions packed in a regular three-dimensional lattice, held together by a sea of delocalised electrons, so the bonding is strong in every direction. In an alloy, some sites in the lattice are occupied by atoms of a different size, and these impurity atoms distort the regular planes of ions. They act as obstacles that prevent whole planes of ions from sliding over one another, so the alloy cannot deform plastically to any great extent: it is very stiff, and it is brittle rather than ductile.
 
 Structure of a polymer such as rubber. Rubber is built from very long chain molecules, each a long sequence of repeated monomer units, with occasional cross-links between neighbouring chains. When the strip is not under tension the chains are curled up and tangled together, so the strip is far shorter than the stretched-out length of its chains. The bonds along each chain are strong covalent bonds, but very little force is needed simply to uncoil and untangle a chain, and the chains coil up again when the load is removed, so the deformation is elastic.
 
-Shape of Fig. 36.1. Because the planes of ions in the alloy cannot slip, loading the wire can only pull the planes slightly further apart. For these small displacements the increase in the separation of the planes is proportional to the force applied, so the extension is proportional to the load and the graph is a straight line through the origin, with a steep gradient because the metallic bonds are stiff. The line stays straight all the way to 16 × 10⁻⁴ m, where the force becomes large enough to pull the planes of ions apart completely and the wire fractures – there is no curved, plastic region first, which is what makes the alloy brittle.
+Shape of Fig. 36.1. Because the planes of ions in the alloy cannot slip, loading the wire can only pull the planes slightly further apart. For these small displacements the increase in the separation of the planes is proportional to the force applied, so the extension is proportional to the load and the graph is a straight line through the origin. The line stays straight all the way to 16 × 10⁻⁴ m, where the force becomes large enough to pull the planes of ions apart completely and the wire fractures – there is no curved, plastic region first, which is what makes the alloy brittle.
 
 Shape of Fig. 36.2. For the rubber the graph is a curve, not a straight line, because the extension is not produced in the same way. Over the middle of the range the line is comparatively shallow: here the load is doing little more than straightening and untangling the coiled chains, so a small increase in load produces a relatively large extension and the stiffness is low. Once the chains have been pulled straight and aligned along the direction of the load, any further extension has to stretch the strong covalent bonds within the chains themselves, so a much larger increase in load is needed for the same extra extension and the curve turns sharply upwards at the largest extensions. The rubber therefore has a stiffness that changes with extension, which is why its graph is curved, while the alloy's is straight.`,
   "phys-ocrb-h557-2024-p1::37(a)": `Both strings are fixed at the same two kinds of end and oscillate in the same mode at the same frequency, so the length of the vibrating section is proportional to the wavelength:
@@ -5360,20 +5360,20 @@ v₂/v₁ = √(d₁²/d₂²) = d₁/d₂ = 1/1.4 = 0.714
 
 L₂ = 0.714 × L₁ = 0.714 × 0.18
 length = 0.13 m`,
-  "phys-ocrb-h557-2024-p1::37(b)(i)": `At the first resonance, the air column contains a quarter wavelength: L = λ/4, so λ = 4L.
-Assumption: the end correction C is negligibly small (C ≈ 0), so L ≈ 17.0 cm = 0.170 m.
+  "phys-ocrb-h557-2024-p1::37(b)(i)": `At the first resonance a quarter wavelength fits between the node at the water surface and the antinode a distance C above the top of the tube (Fig. 37.4): L + C = λ/4.
+Assumption: the end correction C is negligibly small (C ≈ 0), so λ = 4L with L = 17.0 cm = 0.170 m.
 λ = 4 × 0.170 = 0.680 m
-v = fλ = 440 × 0.680 = 299 m s⁻¹ ≈ 300 m s⁻¹ ✓
+v = fλ = 440 × 0.680 = 299 m s⁻¹ ≈ 300 m s⁻¹
 
-Assumption stated: the end correction at the open end of the tube is assumed to be zero.`,
-  "phys-ocrb-h557-2024-p1::37(b)(ii)": `Draw a large triangle on the line of best fit, using more than half the range of L. The line passes through the points (0.17 m, 0.00228 s) and (0.31 m, 0.00392 s):
+This is the minimum value: in reality C is greater than zero, so λ = 4(L + C) is longer than 4L and the true speed is greater than 299 m s⁻¹. The assumption made is that the end correction C is zero.`,
+  "phys-ocrb-h557-2024-p1::37(b)(ii)": `Draw a large triangle on the line of best fit, using more than half the range of L. The line passes through the points (0.17 m, 0.00231 s) and (0.31 m, 0.00393 s):
 
-gradient = (0.00392 − 0.00228)/(0.31 − 0.17) = 0.00164/0.14 = 0.0117 s m⁻¹
+gradient = (0.00393 − 0.00231)/(0.31 − 0.17) = 0.00162/0.14 = 0.0116 s m⁻¹
 
 The gradient is 4/v, so
 
-v = 4/gradient = 4/0.0117
-v = 3.4 × 10² m s⁻¹ (about 340 m s⁻¹)`,
+v = 4/gradient = 4/0.0116
+v = 3.5 × 10² m s⁻¹ (about 345 m s⁻¹)`,
   "phys-ocrb-h557-2024-p1::37(b)(iii)": `At resonance in a closed tube with one open end, there is a node at the closed (water) end and an antinode at the open end. The simplest resonance (fundamental) corresponds to a quarter wavelength fitting in the tube: L + C = λ/4, where C is the end correction.
 Rearranging: λ = 4(L + C).
 Since v = fλ: v = f × 4(L + C), so 1/f = 4(L + C)/v = (4/v)L + 4C/v.
@@ -5381,7 +5381,7 @@ This is a linear equation in L with gradient 4/v and intercept 4C/v. Therefore t
   "phys-ocrb-h557-2024-p1::37(b)(iv)": `There are several real advantages. A signal generator and loudspeaker produce a note of constant amplitude that continues for as long as it is needed, whereas the note from a struck tuning fork dies away within a few seconds; this gives far more time to raise the tube slowly and judge the length at which the sound is loudest, so L at resonance can be found more precisely. The note from a loudspeaker can also be made much louder than that from a tuning fork, so the resonance peak stands out more clearly and is easier to identify. In addition, the frequency of a signal generator can be set anywhere in a continuous range, rather than to the handful of values available from a set of forks, so many more points can be plotted and the line of best fit – and hence the gradient and v – is better defined.
 
 Against this, a tuning fork has its frequency stamped on it and is accurate, whereas the frequency indicated on a signal generator dial may itself be in error, so the uncertainty in f could be larger unless the frequency is checked with an oscilloscope or frequency meter. Provided that check is made, the loudspeaker method does give the more reliable determination of the speed of sound.`,
-  "phys-ocrb-h557-2024-p1::38(a)(i)": `The nitrogen is compressed at constant temperature, so Boyle's law applies, and because the volume is the cross-sectional area times the length, the volume is proportional to l:
+  "phys-ocrb-h557-2024-p1::38(a)(i)": `Assuming the nitrogen stays at the same temperature while it is compressed, Boyle's law applies, and because the volume is the cross-sectional area times the length, the volume is proportional to l:
 
 p₁l₁ = p₂l₂
 p₂ = p₁l₁/l₂ = 170 × 10.0/3.0 = 567 kPa
@@ -5411,17 +5411,17 @@ The thermometer measures to the nearest 1 °C, so the uncertainty in the tempera
 percentage uncertainty in temperature = (1/30) × 100% = 3.3%`,
   "phys-ocrb-h557-2024-p1::38(b)(ii)": `For a fixed mass of gas at constant pressure the volume is proportional to the absolute temperature, so the straight line of V against the Celsius temperature θ reaches V = 0 at absolute zero. Extrapolating the line of best fit back to V = 0 therefore gives a value for absolute zero.
 
-Use a large triangle on the line of best fit, taking two widely separated points on it, (30 °C, 61.4 cm³) and (80 °C, 71.9 cm³):
+Use a large triangle on the line of best fit, taking two widely separated points on it, (30 °C, 61.6 cm³) and (80 °C, 72.4 cm³):
 
-gradient = (71.9 − 61.4)/(80 − 30) = 10.5/50 = 0.21 cm³ °C⁻¹
+gradient = (72.4 − 61.6)/(80 − 30) = 10.8/50 = 0.216 cm³ °C⁻¹
 
-Intercept on the volume axis: c = 61.4 − (0.21 × 30) = 55 cm³, so the equation of the line is
-V = 0.21θ + 55
+Intercept on the volume axis: c = 61.6 − (0.216 × 30) = 55.1 cm³, so the equation of the line is
+V = 0.216θ + 55.1
 
 Putting V = 0 and solving for θ:
-θ = −55/0.21
+θ = −55.1/0.216
 
-absolute zero of temperature = −260 °C (compared with the accepted value of −273 °C)`,
+absolute zero of temperature = −255 °C (compared with the accepted value of −273 °C)`,
   "phys-ocrb-h557-2024-p1::39(a)": `Unstable nucleus: A nucleus is unstable when the combination of neutrons and protons in the nucleus results in a configuration that has excess energy compared to a more stable arrangement. The nuclear forces and electrostatic repulsion are not balanced in a way that gives minimum energy, so the nucleus has a tendency to decay by emitting a particle or gamma radiation to reach a more stable (lower energy) state.
 
 Random process: Radioactive decay is random in the sense that it is impossible to predict which particular nucleus in a sample will decay next, or exactly when any individual nucleus will decay. Each nucleus has a fixed, constant probability of decaying per unit time, regardless of the age of the nucleus or external conditions (temperature, pressure, chemical state).`,
@@ -5434,26 +5434,24 @@ The radon-220 is far more dangerous because it is a gas. It escapes from the rod
 Two things reduce the radon risk: its half-life is only 55 s, so much of it decays before it can be inhaled, and because radon is produced from thorium with a half-life of 1.4 × 10¹⁰ years, the rate at which it is made is extremely small. Even so, the risk of internal irradiation from inhaled radon is the more serious of the two, especially in a poorly ventilated workshop.`,
   "phys-ocrb-h557-2024-p1::39(c)(i)": `The rate of emission of alpha particles equals the activity A = λN, where N is the number of radon-220 atoms present and λ is the decay constant. Since each alpha particle causes a fixed average amount of ionisation in the chamber, the ionisation current is proportional to the activity, which is proportional to N. Therefore the ionisation current is proportional to the number of radon-220 atoms remaining.`,
   "phys-ocrb-h557-2024-p1::39(c)(ii)": `Completing the table:
-Time 140 s: ln(0.13 × 10⁻¹²) = ln(1.3 × 10⁻¹³) = ln(1.3) + ln(10⁻¹³) = 0.262 − 29.934 = −29.67 (approximately −29.67)
-Time 160 s: ln(0.10 × 10⁻¹²) = ln(1.0 × 10⁻¹³) = 0 − 29.934 = −29.93 (approximately −29.93)
+Time 140 s: ln(0.13 × 10⁻¹²) = ln(1.3 × 10⁻¹³) = ln(1.3) + ln(10⁻¹³) = 0.262 − 29.934 = −29.67
+Time 160 s: ln(0.10 × 10⁻¹²) = ln(1.0 × 10⁻¹³) = 0 − 29.934 = −29.93
 
 Plotting ln(I) against time: the points should form a straight line (since I = I₀e^(−λt), so ln(I) = ln(I₀) − λt). Plot all data points including the two completed values and draw a line of best fit.
 
 To find the half-life: the gradient of the line = −λ.
-Using two points on the best-fit line, e.g. at t = 0, ln(I) = −27.81 and at t = 160 s, ln(I) = −29.93:
+The best-fit line passes very close to the first and last points, so read from the line at t = 0, ln(I) = −27.81 and at t = 160 s, ln(I) = −29.93:
 gradient = (−29.93 − (−27.81)) / (160 − 0) = −2.12 / 160 = −0.01325 s⁻¹
 λ = 0.01325 s⁻¹
-t₁/₂ = ln2 / λ = 0.693 / 0.01325 = 52 s ≈ 52 s.
+t₁/₂ = ln2 / λ = 0.693 / 0.01325 = 52 s.
 
-The graph gives a value closer to 55 s than the student's method because the graph uses all the data points to find the best-fit line, averaging out random experimental errors. The student's method uses only two readings and is therefore more susceptible to random errors in individual measurements. The graphical method is more reliable because it is based on the overall trend of all data.`,
-  "phys-ocrb-h557-2024-p1::40(a)(i)": `Electrons are accelerated through a potential difference of V. Using energy conservation:
+The graph gives a value closer to the accepted half-life of radon-220 (about 56 s) than the student's method because the graph uses all the data points to find the best-fit line, averaging out random experimental errors. The student's method uses only two readings and is therefore more susceptible to random errors in individual measurements: radioactive decay is random, so individual current readings fluctuate, and the half-life obtained depends on which pair of readings is chosen. For example, between 60 s and 120 s the current falls from 0.42 pA to 0.18 pA, to less than half, which would give a half-life of under 60 s, so 60 s is only one of several possible values. The graphical method is more reliable because it is based on the overall trend of all data.`,
+  "phys-ocrb-h557-2024-p1::40(a)(i)": `Electrons are accelerated from rest through a potential difference V = 1.0 kV = 1000 V. Using energy conservation:
 eV = ½mv²
 v = √(2eV/m) = √(2 × 1.60 × 10⁻¹⁹ × 1000 / 9.11 × 10⁻³¹)
 = √(3.20 × 10⁻¹⁶ / 9.11 × 10⁻³¹)
 = √(3.513 × 10¹⁴)
-= 1.87 × 10⁷ m s⁻¹ ≈ 1.9 × 10⁷ m s⁻¹ ✓
-
-(Accelerating voltage assumed to be 1.0 kV = 1000 V from context.)`,
+= 1.87 × 10⁷ m s⁻¹ ≈ 1.9 × 10⁷ m s⁻¹`,
   "phys-ocrb-h557-2024-p1::40(a)(ii)": `The magnetic field is at right angles to the velocity of the electrons, so the magnetic force BQv on each electron is always perpendicular to its velocity. It therefore acts as a centripetal force and the beam follows a circular path (an arc of a circle) while it is in the field region.
 
 The field is directed into the page and the electrons travel across the page. Applying Fleming's left-hand rule, remembering that the conventional current is in the opposite direction to the motion of the electrons, the force on the beam is towards the bottom of the page, so the beam is deflected towards the bottom of the page.
