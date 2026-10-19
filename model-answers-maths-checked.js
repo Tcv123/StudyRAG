@@ -6,11 +6,12 @@
 // question, so mark-schemes.html shows a Maths model answer only for parts
 // listed here.
 //
-// As of 2026-10-13 every part of every Maths paper is listed (2,647 parts on
-// 75 papers) except OCR H240 June 2018 Paper 1, whose mark scheme is not
-// publicly available. Answers were written from the official question papers,
-// mark schemes and (for MEI Paper 3) article inserts, then independently
-// re-checked against the same pages.
+// As of 2026-10-19 every part of every Maths paper is listed (2,676 parts on
+// 76 papers). Answers were written from the official question papers, mark
+// schemes and (for MEI Paper 3) article inserts, then independently
+// re-checked against the same pages. OCR no longer hosts the H240 June 2018
+// Paper 1 mark scheme, so that paper was checked against a mirrored copy of
+// OCR's document after confirming it matches the question paper.
 //
 // Add a part only after checking its answer the same way, and re-check a
 // part if its answer in model-answers-maths.js changes.
@@ -49,6 +50,7 @@ window.CHECKED_MATHS_ANSWERS = {
   "math-edx-9ma0-2024-p2": ["1(a)", "1(b)", "2(a)", "2(b)", "2(c)", "3", "4(a)", "4(b)", "5", "6(a)", "6(b)", "6(c)", "7(a)", "7(b)", "8(a)", "8(b)", "9(a)", "9(b)", "9(c)", "10(a)", "10(b)", "11", "12(a)", "12(b)", "12(c)", "12(d)", "13(a)", "13(b)", "13(c)", "13(d)", "14(a)", "14(b)", "15(a)", "15(b)", "15(c)"],
   "math-edx-9ma0-2024-p31": ["1(a)", "1(b)", "1(c)", "1(d)", "2(a)", "2(b)", "2(c)", "2(d)", "3(a)", "3(b)", "3(c)", "4(a)", "4(b)", "4(c)", "5(a)", "5(b)", "5(c)", "5(d)", "6(a)", "6(b)", "6(c)", "6(d)", "6(e)", "6(f)"],
   "math-edx-9ma0-2024-p32": ["1(a)", "1(b)", "2(a)", "2(b)", "2(c)", "3(a)", "3(b)", "3(c)", "4(a)", "4(b)", "4(c)", "5(a)", "5(b)", "5(c)", "5(d)", "5(e)", "6(a)", "6(b)"],
+  "math-ocr-h240-2018-p1": ["1", "2(i)", "2(ii)", "3", "4", "5(i)", "5(ii)", "5(iii)", "6(i)", "6(ii)", "6(iii)", "6(iv)", "7(i)", "7(ii)", "7(iii)", "8(i)", "8(ii)", "9(i)", "9(ii)", "10(i)", "10(ii)", "10(iii)", "11(i)", "11(ii)", "12", "13(i)(a)", "13(i)(b)", "13(ii)", "13(iii)"],
   "math-ocr-h240-2018-p2": ["1(i)", "1(ii)", "1(iii)", "2(i)", "2(ii)", "2(iii)", "3(i)", "3(ii)", "3(iii)", "3(iv)", "4", "5(i)", "5(ii)", "5(iii)", "6(i)", "6(ii)", "6(iii)", "6(iv)", "7", "8(i)(a)", "8(i)(b)", "8(i)(c)", "8(ii)", "9", "10(i)", "10(ii)", "10(iii)", "11(i)(a)", "11(i)(b)", "11(ii)(a)", "11(ii)(b)", "11(ii)(c)", "12(i)", "12(ii)", "12(iii)", "12(iv)", "12(v)", "12(vi)", "13(i)", "13(ii)", "13(iii)(a)", "13(iii)(b)"],
   "math-ocr-h240-2018-p3": ["1(i)", "1(ii)", "2", "3", "4(i)(a)", "4(i)(b)", "4(ii)", "5(i)", "5(ii)", "5(iii)", "6(i)", "6(ii)", "7", "8(i)", "8(ii)", "9(i)", "9(ii)", "9(iii)", "9(iv)(a)", "9(iv)(b)", "10(i)", "10(ii)", "10(iii)(a)", "10(iii)(b)", "11(i)", "11(ii)", "12(i)(a)", "12(i)(b)", "12(ii)"],
   "math-ocr-h240-2019-p1": ["1", "2(a)(i)", "2(a)(ii)", "2(b)", "2(c)", "3(a)", "3(b)", "3(c)", "3(d)", "4(a)", "4(b)", "4(c)", "5(a)", "5(b)", "6", "7", "8(a)", "8(b)", "8(c)", "9(a)", "9(b)", "9(c)", "9(d)", "10(a)", "10(b)", "10(c)", "10(d)", "11(a)", "11(b)", "11(c)", "12(a)", "12(b)", "12(c)"],
