@@ -5849,12 +5849,11 @@ G = (1.15 ± 0.04) × 10⁻² S`,
 Use small increments of pd, and take many more readings close to the threshold pd (around 0.6–0.7 V), because that is where the current changes most rapidly and the interesting part of the curve lies; larger steps are adequate well away from it.
 
 The fixed resistor protects the circuit. Once the threshold pd is exceeded the resistance of the diode becomes very small, so without the resistor the current would rise to a very large value and destroy the diode. The resistor takes the rest of the supply emf and so limits the current to a safe value.`,
-  "phys-ocrb-h557-2024-p3::2(c)": `The graph of I against V for a semiconductor diode: In forward bias (positive V), the current is very small for V below about 0.5 V (the threshold voltage), then increases very steeply and exponentially once V exceeds the threshold (approximately 0.6–0.7 V). In reverse bias (negative V), the current is approximately zero (a very small, nearly constant reverse saturation current) for all reverse voltages within the normal operating range, until breakdown voltage is reached (not normally shown on A-level graphs). The sketch should show: a curve that hugs the x-axis for V > 0 up to ~0.6 V, then rises steeply; and a flat line very close to the I = 0 axis for negative V.`,
+  "phys-ocrb-h557-2024-p3::2(c)": `The graph of I against V for a semiconductor diode: In forward bias (positive V), the current is very small for V below about 0.5 V, then increases very steeply once V reaches the threshold pd (approximately 0.6–0.7 V for a silicon diode). In reverse bias (negative V), the current is approximately zero (a very small, nearly constant reverse saturation current) for all reverse voltages within the normal operating range, until breakdown voltage is reached (not normally shown on A-level graphs). The sketch should show: a curve that hugs the x-axis for V > 0 up to ~0.6 V, then rises steeply; and a flat line on, or just below, the V-axis for negative V (a very small negative current).`,
   "phys-ocrb-h557-2024-p3::2(d)": `In forward bias, the current increases very steeply with voltage, so very small changes in voltage produce large changes in current. A standard ammeter and voltmeter may have insufficient precision to measure both accurately. To improve accuracy:
 1. Use a milliammeter (or microammeter for reverse bias) with a small full-scale deflection and high sensitivity, so that the small forward currents near threshold and any reverse currents can be measured accurately.
 2. Use a high-precision voltmeter (with high input impedance) to measure the small potential differences across the diode accurately, particularly in the threshold region where V changes by only a few millivolts.
-3. For the reverse bias region, use a microammeter, since the reverse current may be only a few microamps.
-4. Use a rheostat or potential divider to allow fine control of the voltage, since the steep I–V characteristic means coarse voltage changes would skip many data points in the important threshold region.`,
+3. Use a rheostat or potential divider to allow fine control of the voltage, since the steep I–V characteristic means coarse voltage changes would skip many data points in the important threshold region.`,
   "phys-ocrb-h557-2024-p3::3(a)": `Using the lens formula 1/v − 1/u = 1/f (with the sign convention that u is negative for a real object):
 The formula can be written as 1/v + 1/|u| = 1/f, or in the form used here 1/v = 1/f + 1/u.
 
@@ -5889,18 +5888,18 @@ f = 1/10.45 = 0.0957 m
 
 focal length = 0.096 m`,
   "phys-ocrb-h557-2024-p3::3(d)": `Sources of uncertainty and limitations:
-1. Measurement of object distance u: the position of the object (e.g. a lamp or cross-wire) and the optical centre of the lens are difficult to locate precisely; parallax errors when reading the optical bench scale introduce uncertainty in u. Similarly, locating the exact position of the sharpest image to measure v is subjective — different observers may judge 'sharp' differently.
+1. Measurement of object distance u: u is measured to the centre of the bulb, but the filament is a three-dimensional coil inside the glass, so it is unclear exactly where to measure from; the centre line of the lens is also hard to locate, which makes both u and v uncertain. (Reading the scale to the nearest millimetre is insignificant compared with these.) Similarly, locating the exact position of the sharpest image to measure v is subjective — different observers may judge 'sharp' differently.
 2. The lens has a finite thickness; the thin lens formula assumes a thin lens, so the use of a thick lens introduces systematic error.
-3. Chromatic aberration: the focal length varies with wavelength; white light gives a slightly blurred image, so using a monochromatic filter eliminates this by ensuring all light has the same wavelength and therefore the same focal length. This reduces the spread in image position and makes determining v more precise.
+3. Chromatic aberration: the filament gives white light, and the glass refracts different wavelengths by different amounts (blue more than red), so blue light is focused closer to the lens than red. There is no single sharp image position — the image has coloured fringes and it is hard to judge where it is sharpest. A monochromatic filter passes only a narrow band of wavelengths, which all have almost the same focal length, so the image is sharper and v can be found more precisely.
 4. Spherical aberration: rays passing through the outer edges of the lens focus at a slightly different point than paraxial rays, blurring the image. Using a small aperture (stop) reduces this.
 5. The range of u values is limited by the length of the optical bench and the requirement that v must be positive (real image). Extending the range of u would give a longer best-fit line and reduce the uncertainty in the intercept (and hence in f).
 
 Improvements:
-- Use a monochromatic filter to eliminate chromatic aberration, giving a sharper image and more precise v measurements.
+- Use a monochromatic filter to greatly reduce chromatic aberration, giving a sharper image and more precise v measurements.
 - Use a bright, well-defined object (e.g. illuminated cross-wire or LED point source) to make judging the sharp image easier.
 - Take repeated measurements of v for each value of u and average them to reduce random errors.
 - Use a camera or CCD detector to objectively determine when the image is sharpest, removing the subjective judgement.
-- Use a longer optical bench to extend the range of u values and reduce the percentage uncertainty in each measurement.`,
+- Work in a darkened room so that the faint image on the screen is easier to see, and make sure the filament, the centre of the lens and the centre of the screen are at the same height, with the lens and screen parallel to each other and perpendicular to the bench.`,
   "phys-ocrb-h557-2024-p3::4(a)": `Momentum is conserved in the impact, and since the spacecraft becomes embedded the two bodies move together afterwards:
 
 m_DART × u = (m_DART + m_Dimorphos) × v
@@ -5949,22 +5948,30 @@ magnitude of force = 0.015 N`,
 v = 0.68 m s⁻¹
 
 The 250 g rider therefore moves away at 0.68 m s⁻¹, which is smaller than the 0.90 m s⁻¹ shown in Fig. 4.3 for the 150 g rider.`,
-  "phys-ocrb-h557-2024-p3::4(d)": `The graph (Fig. 4.5) shows the velocity of the rider with the sail decreasing more rapidly than the rider without the sail (Fig. 4.3). The shape of the graph is a curve (not a straight line) — the rate of decrease of velocity becomes smaller as the velocity decreases. This is because the drag force is proportional to v² (F_D ∝ v²): when the rider moves fast, the drag force is large, causing rapid deceleration; as the rider slows down, the drag force decreases (proportionally to v²), so the deceleration also decreases, producing a curved (convex) velocity–time graph rather than the linear graph seen without the sail.`,
-  "phys-ocrb-h557-2024-p3::4(e)": `Plan to investigate F_D ∝ v²:
+  "phys-ocrb-h557-2024-p3::4(d)": `The graph (Fig. 4.5) shows the velocity of the rider with the sail decreasing more rapidly than the 150 g rider without a sail (Fig. 4.3). The shape of the graph is a curve (not a straight line) — the rate of decrease of velocity becomes smaller as the velocity decreases. This is because the air resistance (drag) on the sail increases with speed: when the rider moves fast, the drag force is large, causing a large deceleration; as the rider slows down, the drag force decreases, so the deceleration (the magnitude of the gradient) also decreases, producing a curve that becomes less steep with time rather than the linear graph seen without the sail.`,
+  "phys-ocrb-h557-2024-p3::4(e)": `Plan: hold the 250 g rider with its sail at rest on the air track, blow air at the sail with the variable speed fan, and balance the force of the moving air on the sail with a hanging weight over the pulley. The collision is a distraction and is not needed: the drag force depends on the speed of the air relative to the sail, so a stationary sail in air moving at speed v experiences the same drag as a sail moving at speed v through still air. Holding the rider at rest also removes the problem that, on a short track, a moving rider may never reach a steady speed.
 
-Aim: To test whether the drag force on the rider (with sail) is proportional to the square of its velocity.
+Diagram (description): a level air track. At one end, a pulley is clamped to the end of the track and the fan stands just beyond it, raised so that it blows along the track at the height of the sail. The rider with sail sits part-way along the track. A light thread runs from the rider towards the fan end, over the pulley, to a hanging mass M. The ultrasonic ranging device is at the other end of the track, pointing at the rider.
 
-Apparatus and method:
-1. Set up the air track horizontally and attach the sail to the 250 g rider. Position the ultrasonic ranging device at one end to record the velocity–time graph of the rider after a collision.
-2. Use a pulley and hanging weights attached to the rider to apply a known, constant driving force to the rider, allowing the rider to reach a terminal velocity. At terminal velocity, the driving force equals the drag force: F_D = F_drive = mg (weight of hanging mass). Record the terminal velocity v_terminal using the ultrasonic ranging device or by reading the constant final velocity from the velocity–time graph.
-3. Vary the driving force by changing the hanging mass, and record the corresponding terminal velocity for each force. This gives pairs of (F_D, v_terminal).
-4. Alternatively (using the fan): use the variable-speed fan directed at the sail to apply a drag force while the rider moves. Use the anemometer to measure wind speed and the ranging device to measure rider deceleration after a collision (as in the original experiment). Adjust fan speed and repeat.
+Setting up and control variables:
+1. Level the air track with the air supply on: adjust the feet until the rider, with no thread attached and the fan off, stays at rest anywhere on the track and does not drift either way. A tilted track would add a component of the rider's weight to the forces being measured.
+2. Use the same rider (mass m_R = 0.250 kg) and the same sail for every reading, so the sail area, shape and orientation (face-on to the airflow) stay constant, because drag depends on all of these.
+3. Mark a fixed position on the track for the sail, at a fixed distance from the fan, and always take readings with the sail at this position, because the wind speed falls with distance from the fan.
 
-Data analysis:
-If F_D ∝ v², then F_D = kv² for some constant k. Plot F_D against v²: if the relationship holds, the graph should be a straight line through the origin. Calculate the gradient k.
-Alternatively, from the free-deceleration experiment: the equation of motion is ma = −kv². By differentiating the v–t data (finding dv/dt = a at each instant), plot a against v² — if F_D ∝ v², this graph should be linear through the origin.
+Measuring the speed v:
+4. Set the fan to a speed setting. With the rider removed, place the anemometer exactly where the centre of the sail will be and record the wind speed. The fan output fluctuates, so take several readings over about 30 s and use the mean as v. Because the sail is at rest, this wind speed is the relative speed of the air and the sail.
 
-Diagram: air track with 250 g rider fitted with sail, ultrasonic ranging device at one end, pulley at the other end with hanging masses on a string, anemometer positioned near the sail.
+Measuring the drag force F_D:
+5. Replace the rider at the marked position, attach the thread and add small masses to the hanger. The fan pushes the rider away from the fan and the hanging weight pulls it back towards the fan.
+6. Adjust M until the rider stays at rest at the marked position. Use the ultrasonic ranging device to check this: its distance reading must stay constant (velocity zero) for several seconds. The rider is then in equilibrium, so the drag force on the sail equals the tension in the thread, which equals the weight of the hanging mass:
+F_D = Mg
+7. The air track is not perfectly frictionless and the pulley has some friction. To reduce this error, find the hanging mass at which the rider just starts to move towards the pulley and the mass at which it just starts to move away from it, and take the mean of the two as M. Measure M (including the hanger) on a top-pan balance. Fig. 4.5 suggests drag forces of only about 0.05 N to 0.2 N at speeds of 0.5 to 0.9 m s⁻¹, i.e. hanging masses of roughly 5 g to 20 g, so use small masses (1 g steps or less).
 
-Conclusion criterion: If the graph of F_D against v² is a straight line passing through the origin, the hypothesis F_D ∝ v² is confirmed. If it is curved or has a non-zero intercept, the relationship does not hold.`,
+Range and repeats:
+8. Repeat steps 4 to 7 for at least six fan settings, covering wind speeds from about 0.5 m s⁻¹ up to at least 2 m s⁻¹, so the range includes the rider speeds in Fig. 4.5. Repeat each setting three times and calculate mean values of v and M.
+
+Analysis:
+9. Tabulate v, v² and F_D = Mg. If F_D ∝ v², then F_D = kv², where k is a constant.
+10. Plot a graph of F_D (y-axis) against v² (x-axis), with error bars from the spread of the repeated readings.
+11. The suggestion is supported if the points lie on a straight line through the origin (within the error bars); the gradient is k. As a numerical check, calculate F_D/v² for each reading: it should be constant within the experimental uncertainty. If the graph of F_D against v² is curved, or a best-fit straight line clearly misses the origin, the suggestion is not supported. (Equivalently, a graph of ln F_D against ln v would have a gradient of 2 if F_D ∝ v².)`,
 };
