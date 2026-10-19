@@ -245,7 +245,7 @@
           <span><i class="dot d-g">✓</i> A-Level content</span>
           <span><i class="dot d-a">G</i> GCSE shown instead</span>
           <span><i class="dot d-r">–</i> Missing</span>
-          <span>Numbers are topic counts.</span>
+          <span>Numbers are topic counts; under Past papers, the number of papers.</span>
         </div>
         <div class="fbar" role="search">
           <label class="field grow">
@@ -280,6 +280,7 @@
               <option value="practice">Practice Qs</option>
               <option value="aifb">AI feedback</option>
               <option value="flash">Flashcards</option>
+              <option value="papers">Past papers</option>
             </select>
           </label>
           <label class="field">
@@ -299,7 +300,7 @@
         <p class="empty" id="fEmpty" hidden>No boards match these filters.</p>
         <div class="scroll">
           <table>
-            <thead><tr><th>Board</th><th class="c">Notes</th><th class="c">Diagnostic</th><th class="c">Topic list</th><th class="c">Practice Qs</th><th class="c">AI feedback</th><th class="c">Flashcards</th><th>Status</th></tr></thead>
+            <thead><tr><th>Board</th><th class="c">Notes</th><th class="c">Diagnostic</th><th class="c">Topic list</th><th class="c">Practice Qs</th><th class="c">AI feedback</th><th class="c">Flashcards</th><th class="c">Past papers</th><th>Status</th></tr></thead>
             <tbody id="rows"></tbody>
           </table>
         </div>
@@ -368,7 +369,7 @@ async function logout() {
     var rows = '', gaps = '';
     data.forEach(function (s) {
       // Locked "Coming soon" subjects are still listed, so the gap is visible.
-      rows += '<tr class="subj"><td colspan="8">' + esc(s.subject) +
+      rows += '<tr class="subj"><td colspan="9">' + esc(s.subject) +
         (s.soon ? ' <span class="pill p-none" style="margin-left:6px;">Coming soon</span>' : '') + '</td></tr>';
       s.boards.forEach(function (b) {
         rows += '<tr data-subject="' + esc(s.subject) + '" data-board="' + esc(b.board) + '" data-status="' + b.status + '"' +

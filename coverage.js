@@ -24,12 +24,20 @@
 
    NOTES_AVAILABLE lives inline in notes.html, so it is read by fetching
    that page and evaluating the object literal.
+
+   Past papers come from papers-config.js the way past-papers.html shows
+   them: a board's papers count for the level its `level` label names, and
+   an unlabelled board is A-Level (boardsForLevel). Board names are matched
+   after dropping the bracketed suffix ("Edexcel (Pearson)" → "Edexcel") and
+   reading a bare "OCR" as "OCR A", as past-papers.html does. A board with
+   only an official-page link and no papers is red. papers-config.js is
+   large, so it is fetched once, only by the pages that ask for coverage.
 ═══════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  var COLS = ['notes', 'diag', 'topics', 'practice', 'aifb', 'flash'];
-  var COL_NAMES = { notes: 'Notes', diag: 'Diagnostic', topics: 'Topic list', practice: 'Practice questions', aifb: 'AI feedback', flash: 'Flashcards' };
+  var COLS = ['notes', 'diag', 'topics', 'practice', 'aifb', 'flash', 'papers'];
+  var COL_NAMES = { notes: 'Notes', diag: 'Diagnostic', topics: 'Topic list', practice: 'Practice questions', aifb: 'AI feedback', flash: 'Flashcards', papers: 'Past papers' };
   var NAME = { gcse: 'GCSE', alevel: 'A-Level' };
 
   function other(level) { return level === 'gcse' ? 'alevel' : 'gcse'; }
@@ -73,7 +81,24 @@
     return '';
   }
 
-  function build(level, notesMap) {
+  function normBoard(b) {
+    var n = String(b || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim();
+    return n === 'ocr' ? 'ocr a' : n;
+  }
+
+  // [state, paper count] for one subject + board at `level`.
+  function papersCell(papersData, subject, board, level) {
+    var subj = (papersData || []).filter(function (s) { return s.name === subject; })[0];
+    if (!subj) return ['r', ''];
+    var withPapers = (subj.boards || []).filter(function (b) {
+      return normBoard(b.board) === normBoard(board) && (b.papers || []).length > 0;
+    });
+    var mine = withPapers.filter(function (b) { return (b.level || 'alevel') === level; });
+    if (mine.length) return ['g', mine.reduce(function (n, b) { return n + b.papers.length; }, 0)];
+    return withPapers.length ? ['a', ''] : ['r', ''];
+  }
+
+  function build(level, notesMap, papersData) {
     var SC = window.SUBJECTS_CONFIG, out = [];
     SC.getSubjectsFor(level).forEach(function (s) {
       var boards = SC.getBoardsFor(s.name, level).map(function (b) {
@@ -86,7 +111,8 @@
           topics:   [resolve(window.DIAG_TOPICS, u, bg, level), count(window.DIAG_TOPICS, u, level)],
           practice: [resolve(window.PRACTICE_BUNDLE_MAP, u, bg, level), ''],
           aifb:     [resolve(window.AI_FEEDBACK_BUNDLE_MAP, u, bg, level), ''],
-          flash:    [resolve(window.FLASHCARDS_TOPICS, p, bg, level), count(window.FLASHCARDS_TOPICS, p, level)]
+          flash:    [resolve(window.FLASHCARDS_TOPICS, p, bg, level), count(window.FLASHCARDS_TOPICS, p, level)],
+          papers:   papersCell(papersData, s.name, b, level)
         };
         var ks = COLS.map(function (c) { return cells[c][0]; });
         var st = ks.every(function (k) { return k === 'g'; }) ? 'ready'
@@ -113,7 +139,27 @@
     return notesPromise;
   }
 
-  async function load(level) { return build(level, await notesMap()); }
+  // papers-config.js assigns to `window`, so it is run against a stand-in
+  // rather than the page's own window. A failed fetch shows the column red.
+  var papersPromise = null;
+  function papersData() {
+    if (!papersPromise) {
+      papersPromise = fetch('papers-config.js', { cache: 'no-store' })
+        .then(function (r) { return r.text(); })
+        .then(function (src) {
+          var w = {};
+          new Function('window', src)(w);
+          return w.SUBJECTS || [];
+        })
+        .catch(function () { return []; });
+    }
+    return papersPromise;
+  }
+
+  async function load(level) {
+    var both = await Promise.all([notesMap(), papersData()]);
+    return build(level, both[0], both[1]);
+  }
 
   function tally(level, data) {
     var counts = {};
