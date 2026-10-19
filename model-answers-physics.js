@@ -2309,12 +2309,13 @@ Protactinium-233 is produced by the alpha decay of Np-237. Since the half-life o
 Therefore, the activity of Pa-233 (and hence beta radiation from the source) is negligible compared to the alpha activity of the Am-241. The student's claim is incorrect — the amount of beta radiation from Pa-233 would not be significant after 34 years.`,
   "phys-edexcel-9ph0-2024-p3::1(a)": `The raw data has not been recorded. The table shows only the calculated extensions, not the measured positions of the bottom of the mass holder from which those extensions were worked out, so the processing cannot be checked.
 
-The values in each column are not recorded to the same precision. The masses are given to differing numbers of decimal places (0.05, 0.25 and 0.75 kg to two, but 0.1, 0.5 and 1.0 kg to one), and the extensions are not all to the same number of significant figures (0.4 cm and 0.8 cm to one, the rest to two). Every reading in a column should be recorded to the same number of decimal places / significant figures.`,
-  "phys-edexcel-9ph0-2024-p3::1(b)": `To determine the extension as accurately as possible:
-1. Use a metre rule (or vernier callipers for small extensions) aligned vertically alongside the nylon line, with a set square to ensure the rule is truly vertical and to read the position of the end of the line without parallax error.
-2. Mark the initial position of the bottom of the line clearly (e.g., with a small marker or pointer) before any load is applied, and measure the position of this marker both before and after loading; the extension = final position − initial position.
-3. Take repeat readings of the extension for each load and calculate a mean, to reduce random errors. Ensure the line is in equilibrium (has stopped moving) before taking each reading.`,
-  "phys-edexcel-9ph0-2024-p3::1(c)(i)": `The yield point is the point on a stress-strain (or force-extension) graph beyond which the material undergoes plastic deformation — it no longer returns to its original length when the load is removed. Beyond the yield point, the extension is no longer proportional to the applied force (Hooke's law no longer applies) and permanent deformation occurs.`,
+The masses are not all recorded to the same precision: 0.05, 0.25 and 0.75 kg are given to two decimal places, but 0.1, 0.5 and 1.0 kg to only one. Every value in a column should be recorded to the same number of decimal places (0.10, 0.50 and 1.00 kg).`,
+  "phys-edexcel-9ph0-2024-p3::1(b)": `The extension for each load is the difference between the reading for the bottom of the mass holder with that load and the reading with the mass holder alone (no added masses). To make each reading as accurate as possible:
+1. Use a plumb line (or a spirit level) to check that the metre rule is vertical, so that it measures the vertical movement of the mass holder.
+2. Move the metre rule as close as possible to the mass holder, and read it with your eye level with the bottom of the mass holder, to avoid parallax error.
+3. Hold a set square against the metre rule, touching the bottom of the mass holder, to transfer its position onto the scale precisely (alternatively, fix a pointer or marker to the mass holder and read its position).
+4. Record the position for each mass both while adding the masses (loading) and while removing them (unloading), and use the mean of the two readings to calculate the extension.`,
+  "phys-edexcel-9ph0-2024-p3::1(c)(i)": `The yield point is the point on a stress-strain (or force-extension) graph beyond which the material undergoes plastic deformation — it no longer returns to its original length when the load is removed. Beyond the yield point the line deforms plastically, extending considerably for little or no extra force.`,
   "phys-edexcel-9ph0-2024-p3::1(c)(ii)": `The strain at the yield point is 0.04 and the original length of the line is 2.00 m, so the extension at the yield point is
 
 Δx = ε × x = 0.04 × 2.00 = 0.080 m = 8.0 cm
@@ -2346,11 +2347,11 @@ V = 5.94 × 10⁻⁷ m³, with a percentage uncertainty of 0.4 %.`,
 The balance has a resolution of 0.1 g, so the uncertainty in the mass is ±0.05 g:
 % uncertainty in m = (0.05 / 11.2) × 100 = 0.45 %
 
-% uncertainty in ρ = % uncertainty in m + % uncertainty in V = 0.45 + 0.36 = 0.81 %
+% uncertainty in ρ = % uncertainty in m + % uncertainty in V = 0.45 + 0.37 = 0.82 %
 
-Absolute uncertainty in ρ = 0.0081 × 1.89 × 10⁴ = 150 kg m⁻³
+Absolute uncertainty in ρ = 0.0082 × 1.89 × 10⁴ ≈ 155 kg m⁻³
 
-So the largest density the coin could have is 1.89 × 10⁴ + 150 = 1.905 × 10⁴ ≈ 1.9 × 10⁴ kg m⁻³.
+So the largest density the coin could have is 1.89 × 10⁴ + 155 ≈ 1.91 × 10⁴ kg m⁻³.
 
 Even this maximum possible density is below the density of pure gold, 1.93 × 10⁴ kg m⁻³, so the coin could not be made from pure gold.`,
   "phys-edexcel-9ph0-2024-p3::2(b)": `Measure the thickness of a stack of several identical coins (say ten) with the calipers, or the mass of a stack of coins on the balance, and divide by the number of coins. The absolute uncertainty of the reading stays the same, ±0.005 mm, while the quantity measured is ten times larger, so the percentage uncertainty in the thickness — which is by far the largest contribution to the uncertainty in the volume — is reduced by a factor of ten.
@@ -2369,8 +2370,8 @@ The current in bulb 2 is therefore larger than before, so using P = V²/R its po
 So, once S2 is closed, bulb 1 is no longer as bright as bulb 2: bulb 2 is brighter than bulb 1, whereas before S2 was closed the two were equally bright.`,
   "phys-edexcel-9ph0-2024-p3::4(a)": `Step 1: Calculate the volume of the canister.
 V = (4/3)πr³ = (4/3) × π × (4.36 × 10⁻²)³
-= (4/3) × π × 8.287 × 10⁻⁵
-= 4.189 × 8.287 × 10⁻⁵
+= (4/3) × π × 8.288 × 10⁻⁵
+= 4.189 × 8.288 × 10⁻⁵
 = 3.471 × 10⁻⁴ m³
 
 Step 2: Use ideal gas law to find the number of moles.
@@ -2436,7 +2437,7 @@ L = (2n−1)v/(4f)
 
 For the fundamental (n=1): L = λ/4 = v/(4f), so v = 4fL.
 
-The student can vary f (using different tuning forks) and for each tuning fork find the length L at which resonance occurs. Plotting L against 1/f (or plotting L × f against a constant) gives a straight line through the origin with gradient v/4.
+The student can vary f (using different tuning forks) and for each tuning fork find the shortest length L at which resonance occurs (the fundamental). Plotting L against 1/f gives a straight line through the origin with gradient v/4.
 
 Specifically: plot L (y-axis) against 1/f (x-axis). The gradient of the best-fit line = v/4 (for the fundamental mode), so v = 4 × gradient. This gives the speed of sound in air.`,
   "phys-edexcel-9ph0-2024-p3::7(a)": `Conservation of mass number: 220 = A + 4 → A = 216
@@ -2462,9 +2463,9 @@ t > 4.605/0.6931 × 55.6 = 6.644 × 55.6 = 369 s
 The time required for the activity to fall below 1% is approximately 369 s, which is less than 450 s. Therefore the teacher's claim is correct — within 450 s, the activity of the radon in the chamber will be less than 1% of its initial value.`,
   "phys-edexcel-9ph0-2024-p3::8(a)": `This answer addresses the system from the instant the spring gun is released to the instant the bob reaches its maximum height.
 
-Principle of momentum conservation: The total momentum of the system (spring gun + modelling clay + pendulum bob) is conserved at all times when no external horizontal force acts. However, during the collision between the modelling clay and the pendulum bob, momentum is conserved in the horizontal direction (assuming the collision time is very short, so the impulse from the string tension is negligible). The clay has an initial horizontal momentum (from being fired by the spring gun), and after the perfectly inelastic collision (clay embeds in the bob), the combined clay-and-bob system moves together with a new, smaller horizontal velocity, such that the total horizontal momentum is unchanged.
+Principle of momentum conservation: When the spring gun is released the clay gains momentum, so it has horizontal momentum before it hits the bob. During the collision between the modelling clay and the pendulum bob, momentum is conserved in the horizontal direction (assuming the collision time is very short, so the impulse from the string tension is negligible). The clay has an initial horizontal momentum (from being fired by the spring gun), and after the perfectly inelastic collision (clay embeds in the bob), the combined clay-and-bob system moves together with a new, smaller horizontal velocity, such that the total horizontal momentum is unchanged. After the collision, tension and gravity act on the bob as it swings up, so its momentum falls to zero at maximum height: momentum conservation applies to the collision only.
 
-Principle of energy conservation: Energy is always conserved, but it is not necessarily conserved as kinetic energy alone. The spring gun initially has elastic potential energy stored in the compressed spring. When released, this elastic potential energy is converted into the kinetic energy of the clay. When the clay collides with the pendulum bob (an inelastic collision), some kinetic energy is converted to internal energy (heat, sound, deformation) — total energy is still conserved, but kinetic energy is not. After the collision, as the bob swings upward, kinetic energy is converted to gravitational potential energy, with the system decelerating until all kinetic energy has been converted to gravitational potential energy at maximum height. At maximum height, the kinetic energy is zero (momentarily at rest) and the gravitational potential energy is at its maximum. Throughout, the total energy of the system remains constant, provided no work is done against air resistance.`,
+Principle of energy conservation: Energy is always conserved, but it is not necessarily conserved as kinetic energy alone. The spring gun initially has elastic potential energy stored in the compressed spring. When released, this elastic potential energy is converted into the kinetic energy of the clay. When the clay collides with the pendulum bob (an inelastic collision), kinetic energy is transferred from the clay to the clay-and-bob combination, but some kinetic energy is converted to internal energy (heat, sound, deformation) — total energy is still conserved, but kinetic energy is not. After the collision, as the bob swings upward, kinetic energy is converted to gravitational potential energy, with the system decelerating until all kinetic energy has been converted to gravitational potential energy at maximum height. At maximum height, the kinetic energy is zero (momentarily at rest) and the gravitational potential energy is at its maximum. Throughout, the total energy remains constant (any work done against air resistance ends up as internal energy of the surroundings).`,
   "phys-edexcel-9ph0-2024-p3::8(b)(i)": `The pendulum swings from its lowest position (maximum KE) to its highest position (maximum PE) — this is a quarter of a complete oscillation.
 
 Time period of pendulum: T = 2π√(L/g) where L = 1.25 m
@@ -2487,9 +2488,9 @@ The mass of the pendulum bob is approximately 0.015 kg (15 g).`,
 
 1. The intensity of light from a point source is inversely proportional to the square of the distance (I ∝ 1/x²), not proportional to x. Therefore decreasing x by equal intervals does NOT produce uniform (equal) increases in intensity — the increase in intensity is much greater for small x than for large x. The student's assumption that intensity increases uniformly with equal decreases in x is incorrect.
 
-2. The range of distances (10 cm to 20 cm) is too small — it may not produce a sufficient range of intensities to show a clear trend, and small absolute errors in positioning would represent large percentage errors at these close distances.
+2. The range of distances (10 cm to 20 cm) is too small — a desk lamp is not a point source, so the inverse-square relationship only holds approximately, and a wider range of distances is needed.
 
-3. The student should take repeat readings at each position to check for reproducibility and reduce random error, rather than a single reading at each distance.`,
+3. Because intensity changes much faster at small x, the student should decrease x in decreasing intervals (smaller steps as the LDR gets closer to the lamp).`,
   "phys-edexcel-9ph0-2024-p3::9(a)(ii)": `The student should carry out the experiment in a darkened room, with the room lights off and the apparatus screened from any other light source.
 
 Light from the surroundings also falls on the LDR and lowers its resistance, so it increases the ammeter reading. If the background light is not excluded, the current measured is not due to the lamp alone and the readings will be inaccurate.`,
@@ -2506,32 +2507,36 @@ v_max = ωA = 2.0 × 0.22 m = 0.44 m s⁻¹
 
 0.44 m s⁻¹ is less than the suggested limit of 0.5 m s⁻¹, so it is safe for the baby to oscillate in the jumperoo with an amplitude of 22 cm.`,
   "phys-edexcel-9ph0-2024-p3::10(b)": `The heavier baby in the jumperoo has a greater mass. For a spring-mass system, the natural frequency is f = (1/2π)√(k/m). With greater mass m and the same spring stiffness k, the natural frequency is lower (period is longer). The baby must push at the natural frequency of the system to achieve resonance (maximum amplitude). Since the natural frequency is lower for the heavier baby, the heavier baby pushes at a lower frequency than the original (lighter) baby. Therefore the frequency of pushing of the larger baby is less than the frequency of pushing of the original baby.`,
-  "phys-edexcel-9ph0-2024-p3::11(a)": `When the slider S is at position X, it is at one end of the potential divider (the end connected directly to one terminal of the supply). The resistance between X and S is zero, so the voltage output V = 0 (assuming the voltmeter is connected between the slider and the lower terminal). As S moves from X towards Y, the length of the resistance wire between X and S increases. Since the voltmeter has a very high resistance (negligible current drawn), the potential divider acts ideally, and V is proportional to the fraction of the total resistance between X and S. So V increases linearly as S moves from X to Y. When S reaches Y, V = full supply voltage. Therefore V increases linearly from 0 (at X) to the maximum (supply voltage) at Y.`,
+  "phys-edexcel-9ph0-2024-p3::11(a)": `When the slider S is at position X, it is at one end of the potential divider (the end connected directly to one terminal of the supply). The resistance between X and S is zero, so the voltage output V = 0 (the voltmeter is connected across the section XS). As S moves from X towards Y, the length of the resistance wire between X and S increases. Since the voltmeter has a very high resistance (negligible current drawn), the potential divider acts ideally, and V is proportional to the fraction of the total resistance between X and S. So V increases linearly as S moves from X to Y. When S reaches Y, V = full supply voltage. Therefore V increases linearly from 0 (at X) to the maximum (supply voltage) at Y.`,
   "phys-edexcel-9ph0-2024-p3::11(b)": `The graph of I against V for the filament bulb is not a straight line through the origin (it is not ohmic). As V increases, the current I increases, but the rate of increase of I decreases (the graph curves, becoming less steep at higher V). This is because as the potential difference increases, more power is dissipated in the filament (P = IV), which causes the temperature of the filament to rise significantly. Metals have a positive temperature coefficient of resistance — as temperature increases, the resistance of the filament increases. The increasing resistance means the current does not increase as much as it would for a constant-resistance device, so the I-V graph curves rather than being linear.`,
   "phys-edexcel-9ph0-2024-p3::11(c)(i)": `Taking logarithms of T = aVᵇ:
 log T = log a + b log V
 
 This is of the form Y = mX + c, where Y = log T, X = log V, gradient m = b, and intercept c = log a. This is a linear equation in log T and log V, so a graph of log T (y-axis) against log V (x-axis) will give a straight line.`,
-  "phys-edexcel-9ph0-2024-p3::11(c)(ii)": `Processed data (log₁₀ values):
+  "phys-edexcel-9ph0-2024-p3::11(c)(ii)": `Processed data (logs to base 10):
 
-T/K | V/V | log(T) | log(V)
-1480 | 5.03 | 3.170 | 0.7016
-1680 | 6.89 | 3.225 | 0.8382
-1850 | 8.95 | 3.267 | 0.9518
-2010 | 11.11 | 3.303 | 1.0457
-2140 | 12.94 | 3.330 | 1.1119
-2280 | 15.06 | 3.358 | 1.1779
+T / K | V / V | log (V / V) | log (T / K)
+1480 | 5.03 | 0.702 | 3.170
+1680 | 6.89 | 0.838 | 3.225
+1850 | 8.95 | 0.952 | 3.267
+2010 | 11.11 | 1.046 | 3.303
+2140 | 12.94 | 1.112 | 3.330
+2280 | 15.06 | 1.178 | 3.358
 
-The student should plot these six points on the grid with log(V) on the x-axis (range approximately 0.70 to 1.18) and log(T) on the y-axis (range approximately 3.17 to 3.36). The points should lie on or close to a straight line. A best-fit straight line should be drawn through the points.`,
+Graph:
+• Label the horizontal axis log (V / V) and the vertical axis log (T / K).
+• Use sensible, easy-to-read scales that do not start at zero (false origins), e.g. on the printed grid (8 large squares across, 12 large squares up) use 0.1 per large square for log (V / V), from 0.6 to 1.4, and 0.02 per large square for log (T / K), from 3.14 to 3.38, so that the points are spread over more than half of the grid in each direction.
+• Plot the six points (log V, log T) accurately, e.g. (0.702, 3.170) and (1.178, 3.358).
+• The points lie very close to a straight line. Draw a single straight line of best fit with the points evenly balanced about it. Its gradient is about 0.39, which is the value of b used in part (iii).`,
   "phys-edexcel-9ph0-2024-p3::11(c)(iii)": `The gradient b is found by selecting two widely separated points on the best-fit line (not data points).
 
-Using the endpoints of the best-fit line from the processed data:
-At log V = 0.70, log T ≈ 3.170
-At log V = 1.18, log T ≈ 3.358
+Reading two points from near the ends of the best-fit line:
+At log (V / V) = 0.70, log (T / K) = 3.170
+At log (V / V) = 1.18, log (T / K) = 3.357
 
-Gradient b = Δ(log T) / Δ(log V) = (3.358 − 3.170) / (1.178 − 0.70) = 0.188 / 0.478 = 0.393 ≈ 0.39
+Gradient b = Δ(log T) / Δ(log V) = (3.357 − 3.170) / (1.18 − 0.70) = 0.187 / 0.48 = 0.39
 
-The value of b is approximately 0.39 (accept 0.37 to 0.41 depending on the best-fit line drawn).`,
+b ≈ 0.39`,
   "phys-edexcel-9ph0-2024-p3::12(a)(i)": `Mean time for the ball to fall 22.5 cm:
 t = (9.6 + 9.9 + 9.6) / 3 = 9.7 s
 
@@ -2550,7 +2555,7 @@ Reading the graph at η = 10.9 Pa s gives a cocoa content of about 30 %, not 35 
 Looking at it the other way round, the graph gives η ≈ 4.5 Pa s for 35 % cocoa, which would give a terminal velocity of about 0.056 m s⁻¹ and a fall time of about 4 s, not the 9.7 s measured.
 
 The student's timing data therefore does not support the 35 % cocoa content claimed on the wrapper; it indicates a cocoa content of about 30 %.`,
-  "phys-edexcel-9ph0-2024-p3::12(a)(ii)": `One reason why the data may have led to an inaccurate conclusion: The student only took three timing measurements and used a handheld stopwatch, which introduces human reaction time errors (typically ±0.2 s) into each measurement. The spread in the data (9.6 s, 9.9 s, 9.6 s) shows some variability. A reaction time error of 0.2 s on a total time of ~9.7 s gives a percentage uncertainty of about 2%, which translates into a 2% uncertainty in velocity and hence in viscosity — this could shift the apparent cocoa content reading on the graph by a noticeable amount. Using a more precise timing method (e.g., a light gate or video analysis) would reduce this source of inaccuracy.`,
+  "phys-edexcel-9ph0-2024-p3::12(a)(ii)": `One reason why the data may have led to an inaccurate conclusion: The student only took three timing measurements and used a handheld stopwatch, which introduces human reaction time errors (typically ±0.2 s) into each measurement. The spread in the data (9.6 s, 9.9 s, 9.6 s) shows some variability. A reaction time error of 0.2 s on a total time of ~9.7 s gives a percentage uncertainty of about 2%, which translates into a 2% uncertainty in velocity and hence in viscosity — so the calculated velocity, and hence the viscosity used to read the cocoa content from the graph, may be inaccurate. Using a more precise timing method (e.g., a light gate or video analysis) would reduce this source of inaccuracy.`,
   "phys-edexcel-9ph0-2024-p3::12(b)": `Step 1: Energy released when 65 g of chocolate is digested.
 E_digested = 345 kcal × 4200 J kcal⁻¹ = 1.449 × 10⁶ J
 
@@ -2559,14 +2564,14 @@ Step 2: 15% of energy released:
 
 Step 3: Energy needed to raise temperature of 65 g chocolate from 15°C to 32°C.
 m = 65 × 10⁻³ kg, c = 3.9 × 10³ J kg⁻¹ K⁻¹, ΔT = 32 − 15 = 17 K
-E_heat = mcΔT = 65 × 10⁻³ × 3.9 × 10³ × 17 = 65 × 3.9 × 17 × 10⁰ = 4305 × 10⁰ = 4305 J
+E_heat = mcΔT = 65 × 10⁻³ × 3.9 × 10³ × 17 = 4.31 × 10³ J
 
 Step 4: Energy needed to melt the chocolate (latent heat).
 L = 1.50 × 10⁵ J kg⁻¹
 E_melt = mL = 65 × 10⁻³ × 1.50 × 10⁵ = 9750 J
 
 Step 5: Total energy to melt the chocolate.
-E_total = E_heat + E_melt = 4305 + 9750 = 14055 J ≈ 1.41 × 10⁴ J
+E_total = E_heat + E_melt = 4310 + 9750 = 1.41 × 10⁴ J
 
 Step 6: Compare with 15% of digested energy.
 15% of digested energy = 2.174 × 10⁵ J
