@@ -3559,8 +3559,8 @@ Output voltage range = 3.077 − 0.0980 = 2.98 V ≈ 3.0 V`,
 1. Reduce the value of R₁ (the fixed resistor): with a smaller R₁ the maximum V_out (when R₂ = 8 kΩ) rises much more than the minimum V_out (when R₂ = 100 Ω), so the range widens; e.g. with R₁ = 1 kΩ the range is 5 × (8000/9000 − 100/1100) ≈ 4.0 V.
 2. Increase the supply voltage V_supply: since V_out is directly proportional to V_supply, a higher supply voltage proportionally increases V_out at all settings, widening the output range.`,
   "phys-ocra-h556-2023-p2::23(c)(iii)": `When light intensity increases (thinner jelly or more light reaching R₂), the resistance of R₂ (the light-dependent component) decreases. A smaller R₂ means a smaller fraction of the supply voltage is dropped across R₂, so V_out decreases. Conversely, when light intensity decreases, R₂ increases and V_out increases. The circuit therefore gives an output voltage that decreases with increasing light intensity.`,
-  "phys-ocra-h556-2023-p3::1(a)(i)": `The maximum acceleration occurs at the point in the orbit where the gravitational force (and hence centripetal acceleration = GM/r²) is greatest, i.e. where the distance from Mars is smallest. This is the periapsis (closest approach point). Mark X at the point on the elliptical orbit closest to Mars (the planet is at one focus of the ellipse, so X is at the end of the orbit nearest Mars).`,
-  "phys-ocra-h556-2023-p3::1(a)(ii)": `Kepler's 1st law states that every planet (or satellite) moves in an ellipse with the central body at one focus. MAVEN's orbit around Mars is an ellipse, with Mars located at one of the two foci of the ellipse. The orbit is not circular (the altitude varies between about 150 km and 6200 km above the Martian surface), consistent with an elliptical orbit.`,
+  "phys-ocra-h556-2023-p3::1(a)(i)": `The maximum acceleration occurs at the point in the orbit where the gravitational force (and hence the acceleration, a = GM/r²) is greatest, i.e. where the distance from Mars is smallest. This is the periapsis (closest approach point). Mark X at the point on the elliptical orbit closest to Mars (the planet is at one focus of the ellipse, so X is at the end of the orbit nearest Mars).`,
+  "phys-ocra-h556-2023-p3::1(a)(ii)": `Kepler's 1st law states that every planet (or satellite) moves in an ellipse with the central body at one focus. MAVEN's orbit around Mars is an ellipse, with Mars located at one of the two foci of the ellipse. The orbit shown in the diagram is clearly not circular: MAVEN's distance from Mars changes around the orbit, consistent with an ellipse.`,
   "phys-ocra-h556-2023-p3::1(b)(i)": `Kepler's 3rd law states that T² ∝ r³, so T²/r³ should have the same value for every orbit around Mars.
 
 MAVEN: T² = 4.5² = 20.25 h², r³ = 6500³ = 2.746 × 10¹¹ km³ → T²/r³ = 7.4 × 10⁻¹¹ h² km⁻³
@@ -3571,18 +3571,18 @@ Deimos: T² = 30² = 900 h², r³ = 23 000³ = 1.217 × 10¹³ km³ → T²/r³ 
 
 Areostationary: T² = 25² = 625 h², r³ = 20 000³ = 8.00 × 10¹² km³ → T²/r³ = 7.8 × 10⁻¹¹ h² km⁻³
 
-All four values of T²/r³ are the same to within a few per cent, so T²/r³ is constant and the data are consistent with Kepler's 3rd law.`,
-  "phys-ocra-h556-2023-p3::1(b)(ii)": `Reason 1: MAVEN's mission is to study the Martian atmosphere at various altitudes. An areostationary orbit is at a fixed high altitude (20,000 km), which would prevent MAVEN from passing through the upper atmosphere at low altitudes where measurements are needed. An elliptical orbit with a low periapsis allows MAVEN to dip into the atmosphere.
+All four values of T²/r³ are the same to within about 10%, so T²/r³ is constant and the data are consistent with Kepler's 3rd law.`,
+  "phys-ocra-h556-2023-p3::1(b)(ii)": `Reason 1: MAVEN's mission is to study the Martian atmosphere at various altitudes. An areostationary orbit is at a fixed, large distance from Mars (20 000 km from its centre), which would prevent MAVEN from passing through the upper atmosphere at low altitudes where measurements are needed. An elliptical orbit with a low periapsis allows MAVEN to dip into the atmosphere.
 
-Reason 2: An areostationary orbit is only above the Martian equator, so the satellite always observes the same region of Mars. MAVEN needs to study the entire planet (global coverage); an elliptical inclined orbit provides coverage of different latitudes and longitudes.`,
+Reason 2: An areostationary orbit is only above the Martian equator, so the satellite always observes the same region of Mars. MAVEN needs to study the entire planet (global coverage); an orbit that is not areostationary moves relative to the surface, so it passes over different latitudes and longitudes.`,
   "phys-ocra-h556-2023-p3::2(a)(i)": `The student used a micrometer screw gauge (or digital micrometer) to measure the diameter of the wire. The student measured at five different positions along the wire and/or in different orientations (to account for non-circularity), recording each reading in the table.`,
   "phys-ocra-h556-2023-p3::2(a)(ii)": `Calculating the value of diameter:
 The student identified 0.495 mm as an anomalous result (it is significantly different from the other four values). Excluding this outlier, the remaining four values are: 0.460, 0.450, 0.455, 0.455 mm.
-Mean = (0.460 + 0.450 + 0.455 + 0.455)/4 = 1.820/4 = 0.455 mm ✓
+Mean = (0.460 + 0.450 + 0.455 + 0.455)/4 = 1.820/4 = 0.455 mm
 
 Calculating the uncertainty:
 The range of the remaining four values = 0.460 − 0.450 = 0.010 mm.
-Half-range (as uncertainty) = 0.010/2 = 0.005 mm ✓
+Half-range (as uncertainty) = 0.010/2 = 0.005 mm
 
 So d = 0.455 ± 0.005 mm.`,
   "phys-ocra-h556-2023-p3::2(b)(i)": `The resistance of the wire of length L and cross-sectional area A = πd²/4 is:
@@ -3595,7 +3595,7 @@ Dividing both sides by Iε:
 1/I = (4ρL/(πd²ε)) + r/ε
 
 Rearranging:
-1/I = (4ρ/(πd²ε)) × L + r/ε  ✓
+1/I = (4ρ/(πd²ε)) × L + r/ε
 
 This is of the form y = mx + c, where y = 1/I, x = L, gradient m = 4ρ/(πd²ε), intercept c = r/ε.`,
   "phys-ocra-h556-2023-p3::2(b)(ii)1": `Take two widely separated points on the best-fit (solid) line, for example (0, 0.40 A⁻¹) and (0.60 m, 3.40 A⁻¹):
@@ -3625,21 +3625,19 @@ r_max = 0.73 × 1.50 = 1.1 Ω
 absolute uncertainty = r_max − r = 1.1 − 0.58 = 0.5 Ω
 
 r = 0.6 ± 0.5 Ω`,
-  "phys-ocra-h556-2023-p3::3(a)(i)": `A neutron star forms at the end of the life of a massive star (typically greater than about 8 solar masses). When the star's core has exhausted its nuclear fuel, the outward radiation pressure can no longer support the core against gravity. The core collapses rapidly under gravity — this collapse is so energetic that it triggers a supernova explosion of the outer layers. During the collapse, the enormous pressure forces electrons to combine with protons (inverse beta decay: p + e⁻ → n + ν_e), converting virtually all the matter to neutrons. The collapse halts when neutron degeneracy pressure becomes sufficient to resist further compression, leaving a dense, compact neutron star.`,
-  "phys-ocra-h556-2023-p3::3(a)(ii)": `A neutron star is extremely dense — its density is of the order of 10¹⁷ kg m⁻³, comparable with the density of an atomic nucleus.
-
-(Any one other correct characteristic would also do, for example that it has an extremely strong gravitational field, that it is supported against further collapse by neutron degeneracy pressure, or that no fusion takes place in it.)`,
+  "phys-ocra-h556-2023-p3::3(a)(i)": `A neutron star forms at the end of the life of a massive star (a red supergiant, of mass greater than about 10 solar masses). When the star's core has exhausted its nuclear fuel, the outward radiation pressure can no longer support the core against gravity. The core collapses rapidly under gravity — this collapse is so energetic that it triggers a supernova explosion of the outer layers. During the collapse, the enormous pressure forces electrons to combine with protons (inverse beta decay: p + e⁻ → n + ν_e), converting most of the core's matter into neutrons. The collapse halts when neutron degeneracy pressure becomes sufficient to resist further compression, leaving a dense, compact neutron star.`,
+  "phys-ocra-h556-2023-p3::3(a)(ii)": `A neutron star is extremely dense — its density is of the order of 10¹⁷ kg m⁻³, comparable with the density of an atomic nucleus.`,
   "phys-ocra-h556-2023-p3::3(b)": `Density of neutron star:
 ρ_NS = M/V = (2 × 10³⁰) / (4/3 × π × (10⁴)³)
 = 2 × 10³⁰ / (4.189 × 10¹²)
 = 4.8 × 10¹⁷ kg m⁻³
 
-Density of a nucleon (modelled as a sphere of radius 1 fm = 10⁻¹⁵ m):
+Density of a nucleus (nucleons in a nucleus are closely packed, so this is about the density of a single nucleon, modelled as a sphere of radius 1 fm = 10⁻¹⁵ m):
 Mass of nucleon ≈ 1.67 × 10⁻²⁷ kg
 V_nucleon = 4/3 × π × (10⁻¹⁵)³ = 4.189 × 10⁻⁴⁵ m³
 ρ_nucleon = 1.67 × 10⁻²⁷ / 4.189 × 10⁻⁴⁵ = 3.99 × 10¹⁷ kg m⁻³ ≈ 4 × 10¹⁷ kg m⁻³
 
-Both values are approximately 4–5 × 10¹⁷ kg m⁻³, confirming that the average density of a neutron star is similar to the density of an atomic nucleus. ✓`,
+Both values are approximately 4–5 × 10¹⁷ kg m⁻³, confirming that the average density of a neutron star is similar to the density of an atomic nucleus.`,
   "phys-ocra-h556-2023-p3::3(c)(i)": `The energy received is the area between the curve and the time axis, since E = ∫P dt.
 
 On this graph one large square is 1.0 × 10⁻³ s wide and 1.0 × 10⁻²² W high, so each large square represents
@@ -3667,20 +3665,20 @@ energy emitted = 4.0 × 10¹¹ J`,
   "phys-ocra-h556-2023-p3::4(a)": `At terminal velocity, the object has zero acceleration (constant velocity). This occurs because the drag force (air resistance) has increased to equal the weight of the object. The net force on the object is zero. By Newton's 1st law, a zero net force means no acceleration, so the object continues to fall at a constant (terminal) velocity. As the object first starts falling it accelerates due to its weight; as speed increases, drag increases (drag ∝ v or v²) until drag equals weight and terminal velocity is reached.`,
   "phys-ocra-h556-2023-p3::4(b)(i)": `Terminal velocity formula: v = 2gr²(ρ_s − ρ_f)/(9η)
 
-For rain drops: they are large water droplets, so r is relatively large (e.g. 0.5–2 mm). Since v ∝ r², larger r gives much larger terminal velocity, so rain drops fall quickly to the ground.
+For rain drops: they are large water droplets, so r is relatively large. Since v ∝ r², larger r gives much larger terminal velocity, so rain drops fall quickly to the ground.
 
-For mist droplets: these are very small water droplets, with r much smaller (e.g. r ~ 1–10 μm). Since v ∝ r², the terminal velocity is extremely small (v ∝ r² means if r is 100× smaller, v is 10,000× smaller). The droplets fall so slowly that they appear to 'float' — upward air currents and Brownian motion can keep them suspended.`,
+For mist droplets: these are very small water droplets, with r much smaller. Since v ∝ r², the terminal velocity is extremely small (v ∝ r² means if r is 100× smaller, v is 10,000× smaller). The droplets fall so slowly that they appear to 'float' — upward air currents and Brownian motion can keep them suspended.`,
   "phys-ocra-h556-2023-p3::4(b)(ii)": `Aim: To verify the expression v = 2gr²(ρ_s − ρ_f)/(9η) by measuring the terminal velocity v of solid spheres of different known radii r falling through a liquid.
 
-Apparatus: Measuring cylinder or tall glass tube filled with sunflower oil (η ≈ 50 × 10⁻³ Pa s, ρ_f = 920 kg m⁻³); steel spheres of various diameters (measured with a micrometer); ruler; stopwatch; set square to mark timing lines on the tube.
+Apparatus: Measuring cylinder or tall glass tube filled with sunflower oil (η ≈ 50 × 10⁻³ Pa s, ρ_f = 920 kg m⁻³); steel spheres of various diameters (measured with a micrometer); ruler; stopwatch; rubber bands around the tube to mark the timing lines.
 
-Method: Release a sphere from the surface of the oil. Allow it to reach terminal velocity (the velocity becomes constant — check by timing over equal intervals). Measure v by timing the sphere over a fixed distance (e.g. 200 mm) in the middle of the tube using the marked lines; v = distance/time. Repeat for spheres of several different radii r. Plot a graph of v against r² — this should be a straight line through the origin with gradient = 2g(ρ_s − ρ_f)/(9η). Compare the experimental gradient to the theoretical value to verify the expression.
+Method: Release a sphere from the surface of the oil. Allow it to reach terminal velocity (the velocity becomes constant — check by timing the sphere over two successive equal distances and confirming that the times are equal). Measure v by timing the sphere over a fixed distance (e.g. 200 mm) in the middle of the tube using the marked lines; v = distance/time. Check the tube is vertical with a plumb line, view the marks at eye level to avoid parallax error, and repeat each timing and take the mean. Repeat for spheres of several different radii r. Plot a graph of v against r² — this should be a straight line through the origin with gradient = 2g(ρ_s − ρ_f)/(9η). Compare the experimental gradient to the theoretical value to verify the expression.
 
-Estimate lowest terminal velocity for steel sphere (ρ_s = 7800 kg m⁻³), d = 1 mm so r = 5 × 10⁻⁴ m, in sunflower oil:
+The lowest terminal velocity is obtained with steel (smaller ρ_s than lead, so smaller ρ_s − ρ_f) falling through sunflower oil (η 50 times larger than for water). For a steel sphere (ρ_s = 7800 kg m⁻³) of diameter 1 mm, r = 5 × 10⁻⁴ m:
 v = 2 × 9.81 × (5 × 10⁻⁴)² × (7800 − 920) / (9 × 50 × 10⁻³)
 = 2 × 9.81 × 2.5 × 10⁻⁷ × 6880 / (0.45)
 = 2 × 9.81 × 1.72 × 10⁻³ / 0.45
-= 3.376 × 10⁻² / 0.45
+= 3.375 × 10⁻² / 0.45
 = 0.075 m s⁻¹ = 7.5 cm s⁻¹
 
 This is measurable with a stopwatch over a 200 mm drop (time ~2.7 s), so the experiment is feasible.`,
@@ -3691,14 +3689,12 @@ This is measurable with a stopwatch over a 200 mm drop (time ~2.7 s), so the exp
 C = 2 × 400 × 10⁶ / (24 × 10³)² = 8.00 × 10⁸ / 5.76 × 10⁸
 
 C = 1.4 F`,
-  "phys-ocra-h556-2023-p3::5(a)(ii)": `In a parallel combination, the same voltage V is applied across all capacitors. The total charge stored Q_total = C_total × V = nC × V (n times the charge on one). In a series combination the total capacitance would be C/n, which is much smaller, and the stored energy (E = ½CV²) would be much less. Parallel connection maximises the total capacitance and hence the total energy stored E = ½C_total V², which is needed to power the lasers. Therefore the capacitors are connected in parallel.`,
+  "phys-ocra-h556-2023-p3::5(a)(ii)": `In a parallel combination, the same voltage V is applied across all capacitors. The total charge stored Q_total = C_total × V = nC₀ × V for n identical capacitors each of capacitance C₀ (n times the charge on one). In a series combination the total capacitance would be C₀/n, which is much smaller, and the stored energy (E = ½CV²) would be much less. Parallel connection maximises the total capacitance and hence the total energy stored E = ½C_total V², which is needed to power the lasers. Therefore the capacitors are connected in parallel.`,
   "phys-ocra-h556-2023-p3::5(b)": `The network stores 400 MJ and this must all be delivered in less than 1 ms, so the power needed is
 
 P = E/t = 400 × 10⁶ / 1 × 10⁻³ = 4.0 × 10¹¹ W (400 GW)
 
 A large power station generates only about 1 GW, so the lasers would need the entire output of roughly 400 power stations at once — far more than any mains supply could deliver.
-
-(Equivalently, a 1 GW power station supplying the 400 MJ directly would take t = 400 × 10⁶ / 1 × 10⁹ = 0.40 s, which is 400 times longer than the 1 ms allowed.)
 
 The capacitors get round this because they can be charged slowly from the mains over a long period and then discharged in under a millisecond, giving the enormous peak power required.`,
   "phys-ocra-h556-2023-p3::5(c)": `Mass defect of one reaction:
@@ -3720,10 +3716,8 @@ number of fusion reactions = 1.4 × 10²⁰`,
 
 R = V²/P = 12² / 40 = 144/40
 
-R = 3.6 Ω
-
-(Equivalently, I = P/V = 40/12 = 3.33 A, then R = V/I = 12/3.33 = 3.6 Ω.)`,
-  "phys-ocra-h556-2023-p3::6(b)(i)": `The specific latent heat of fusion is the energy required to change the state of unit mass of a substance from solid to liquid (melting) at constant temperature, without any change in temperature. It is defined as L = Q/m, where Q is the energy supplied to melt a mass m of substance.`,
+R = 3.6 Ω`,
+  "phys-ocra-h556-2023-p3::6(b)(i)": `The specific latent heat of fusion is the energy required to change the state of unit mass of a substance from solid to liquid (melting) at constant temperature. It is defined as L = Q/m, where Q is the energy supplied to melt a mass m of substance.`,
   "phys-ocra-h556-2023-p3::6(b)(ii)": `The maximum mass is melted when all the energy supplied by the heater goes into melting PLA that is already at its melting point.
 
 Energy supplied in one minute: E = Pt = 40 × 60 = 2400 J
@@ -3733,7 +3727,7 @@ This energy melts a mass m where E = mL:
 m = Pt/L = 2400 / (9.4 × 10⁴) = 2.553 × 10⁻²
 
 m = 2.6 × 10⁻² kg (about 26 g)`,
-  "phys-ocra-h556-2023-p3::6(b)(iii)": `The calculation in (ii) assumed all heater power was used solely to melt PLA at its melting point. In practice: the PLA enters the heater at room temperature (20°C) and must first be heated from 20°C to the melting point of 160°C — this requires additional energy (mcΔT), so less energy is available for melting. Also, the heater loses heat to the surroundings by conduction, convection and radiation — not all electrical energy goes into the PLA. The printing mechanism itself requires time to move and deposit material, meaning the process cannot be continuous. All these factors reduce the effective melting rate below the theoretical maximum.`,
+  "phys-ocra-h556-2023-p3::6(b)(iii)": `The calculation in (ii) assumed all heater power was used solely to melt PLA at its melting point. In practice: the PLA enters the heater at room temperature (20°C) and must first be heated from 20°C to the melting point of 160°C — this requires additional energy (mcΔT), so less energy is available for melting. Also, the heater loses heat to the surroundings by conduction, convection and radiation — not all electrical energy goes into the PLA. The printing mechanism itself requires time to move and deposit material, so material is not being melted at the maximum rate all the time. All these factors reduce the effective melting rate below the theoretical maximum.`,
   "phys-ocra-h556-2023-p3::6(b)(iv)": `The temperature-time graph of PLA from A (20°C) to B (120°C) should show:
 
 1. An initial rising section (positive gradient): the solid PLA heats up from 20°C as energy is supplied by the heater — temperature increases approximately linearly with time (constant specific heat capacity of solid PLA).
@@ -3742,19 +3736,19 @@ m = 2.6 × 10⁻² kg (about 26 g)`,
 
 3. A rising section again: liquid PLA heats above 160°C.
 
-4. After being deposited and cooling: the PLA cools and solidifies. A further horizontal plateau at 160°C (solidification, releasing latent heat of fusion at constant temperature) followed by cooling from 160°C down to the final temperature of 120°C (point B).
+4. After being deposited, the liquid PLA cools back down to 160°C. Then a further horizontal plateau at 160°C (solidification, releasing latent heat of fusion at constant temperature) followed by cooling from 160°C down to the final temperature of 120°C (point B).`,
+  "phys-ocra-h556-2023-p3::6(c)(i)": `High-energy X-ray photons (MeV range) interact with matter by pair production: a single photon with energy greater than 2m_ec² = 2 × 9.11 × 10⁻³¹ × (3.00 × 10⁸)² = 1.64 × 10⁻¹³ J can convert into an electron–positron pair (a particle and its antiparticle: the positron is the antiparticle of the electron) in the electric field near an atomic nucleus. The photon's energy must exceed the rest energy of both particles (1.64 × 10⁻¹³ J), with any excess going to the kinetic energy of the electron and positron. The photon must pass close to a nucleus, which recoils so that momentum is conserved. The created electron and positron travel through the tissue depositing energy (increasing the absorbed dose) before the positron annihilates with another electron.`,
+  "phys-ocra-h556-2023-p3::6(c)(ii)": `How CAT scans work: In a Computerised Axial Tomography (CAT/CT) scan, a thin fan-shaped beam of X-rays is passed through the patient as the X-ray tube and a ring of detectors rotate around the patient, so the body is imaged from many angles. Detectors on the opposite side measure the transmitted X-ray intensity; different tissues absorb X-rays to different degrees (bone absorbs more than soft tissue). A computer reconstructs an image of each thin slice from the attenuation data at many angles; the patient is moved through the scanner so that many slices are imaged, and software combines them into a 3D image. The scan provides detailed 3D anatomical information.
 
-(Note: points A and B are marked on Fig. 6.1 as 20°C and 120°C respectively; the curve must show the melting plateau at 160°C.)`,
-  "phys-ocra-h556-2023-p3::6(c)(i)": `High-energy X-ray photons (MeV range) interact with matter by pair production: a single photon with energy greater than 2m_e c² = 2 × 0.511 MeV = 1.022 MeV can spontaneously convert into an electron–positron pair in the electric field near an atomic nucleus. The photon's energy must exceed the rest mass energy of both particles (1.022 MeV), with any excess going to the kinetic energy of the electron and positron. This process can only occur near a heavy nucleus (to conserve momentum). The created electron and positron travel through the tissue depositing energy (increasing the absorbed dose) before the positron annihilates with another electron.`,
-  "phys-ocra-h556-2023-p3::6(c)(ii)": `How CAT scans work: In a Computerised Axial Tomography (CAT/CT) scan, a narrow beam of X-rays is rotated around the patient at many angles. Detectors on the opposite side measure the transmitted X-ray intensity; different tissues absorb X-rays to different degrees (bone absorbs more than soft tissue). A computer reconstructs a 3D image of the internal structure from the attenuation data at many angles using back-projection algorithms. The scan provides detailed 3D anatomical information.
-
-How PET scans work: In Positron Emission Tomography, the patient is injected with a radiotracer (e.g. F-18 labelled glucose). The tracer accumulates in metabolically active regions. When F-18 decays by β⁺ emission, the positron travels a short distance and annihilates with an electron, producing two 511 keV gamma rays travelling in exactly opposite directions. Detectors surrounding the patient detect these coincident gamma pairs, allowing the reconstruction of the 3D distribution of the tracer — showing metabolic activity rather than anatomy.
+How PET scans work: In Positron Emission Tomography, the patient is injected with a radiotracer (e.g. F-18 labelled glucose). The tracer accumulates in metabolically active regions. When F-18 decays by β⁺ emission, the positron travels a short distance and annihilates with an electron, producing two 511 keV gamma rays travelling in opposite directions. A ring of detectors around the patient detects these gamma pairs; the difference in their arrival times locates the annihilation along the line joining the detectors, allowing the reconstruction of the 3D distribution of the tracer — showing metabolic activity rather than anatomy.
 
 Advantages and disadvantages of having a scan to produce a bolus:
 
-Advantages: A CAT or PET scan gives a precise 3D map of the patient's body shape and internal anatomy, allowing a bolus to be 3D-printed that fits perfectly — ensuring the maximum radiation dose is accurately targeted to the skin cancer. This improves treatment efficacy and reduces dose to surrounding healthy tissue. The scan is taken only once and the bolus can be reused for multiple treatment sessions.
+Advantages: A CAT or PET scan gives a 3D image of the patient's body from which the exact shape of the skin surface can be found, allowing a bolus to be 3D-printed that fits perfectly — ensuring the maximum radiation dose is accurately targeted to the skin cancer. This improves treatment efficacy and reduces dose to surrounding healthy tissue. The scan is taken only once and the bolus can be reused for multiple treatment sessions.
 
-Disadvantages: Both CAT and PET scans expose the patient to ionising radiation (X-rays for CAT; gamma rays from the radiotracer for PET), which itself carries a small risk of inducing cancer — adding to the radiation burden of the patient. PET scans additionally require injection of a radiotracer, which is invasive. The scans are expensive and require specialist equipment. The time delay between the scan and bolus manufacture must be considered if the patient's body shape changes (e.g. due to weight change or tumour response to treatment), potentially making the bolus less accurate.`,
+Disadvantages: Both CAT and PET scans expose the patient to ionising radiation (X-rays for CAT; gamma rays from the radiotracer for PET), which itself carries a small risk of inducing cancer — adding to the radiation burden of the patient. PET scans additionally require injection of a radiotracer, which is invasive. The scans are expensive and require specialist equipment. The time delay between the scan and bolus manufacture must be considered if the patient's body shape changes (e.g. due to weight change or tumour response to treatment), potentially making the bolus less accurate.
+
+Overall: the scan adds a small extra radiation risk and cost, but a well-fitting bolus makes the radiotherapy more effective, so less radiotherapy dose may be needed and the patient's chance of survival improves; the benefit outweighs the risk.`,
   "phys-ocra-h556-2024-p1::16(a)(i)": `The graph starts at v = 0 m s⁻¹ at t = 0 and increases with a decreasing gradient (curve becoming less steep). It then levels off at a horizontal plateau at v = 30 m s⁻¹. The value 30 m s⁻¹ should be marked on the vertical axis. The curve is steepest at t = 0 and becomes less and less steep, approaching 30 m s⁻¹ as the maximum speed is reached.`,
   "phys-ocra-h556-2024-p1::16(a)(ii)": `As the car accelerates down the slope, its speed increases. The resistive drag force F = kv² therefore increases as speed increases. The net (resultant) force acting on the car equals the component of weight down the slope minus the drag force. As the drag force grows, the net force decreases, so the acceleration decreases. Eventually, when the drag force equals the component of weight down the slope, the net force is zero and the acceleration is zero. The car therefore reaches a constant maximum speed (terminal velocity).`,
   "phys-ocra-h556-2024-p1::16(a)(iii)": `At the maximum speed the car is no longer accelerating, so the resultant force on it is zero: the total resistive force must equal the component of the car's weight acting down the slope.
