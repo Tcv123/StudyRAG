@@ -1900,7 +1900,7 @@ Percentage uncertainty in v = (d₁ − d₂):
 
 Percentage uncertainty in A = %u + %v = 0.57% + 2.01% = 2.6% ≈ 3%
 
-The dominant source of uncertainty is in (d₁ − d₂), since it is a small difference of two nearly equal quantities.`,
+The dominant source of uncertainty is in (d₁ − d₂), since a difference (1.99 cm) is much smaller than either diameter, so the same absolute uncertainty is a larger percentage of it.`,
   "phys-edexcel-9ph0-2023-p3::11(c)(ii)": `Mean thickness:
 
 t = (4.3 + 4.2 + 4.1 + 3.9 + 4.0) mm / 5 = 4.1 mm = 0.41 cm

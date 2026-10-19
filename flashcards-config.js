@@ -286,6 +286,18 @@
       { num: 'O1', name: 'Organic Chemistry I' },
       { num: 'O2', name: 'Organic Chemistry II' },
     ],
+    'Chemistry|AQA|gcse': [
+      { num: '4.1', name: 'Atomic Structure and the Periodic Table' },
+      { num: '4.2', name: 'Bonding, Structure and the Properties of Matter' },
+      { num: '4.3', name: 'Quantitative Chemistry' },
+      { num: '4.4', name: 'Chemical Changes' },
+      { num: '4.5', name: 'Energy Changes' },
+      { num: '4.6', name: 'The Rate and Extent of Chemical Change' },
+      { num: '4.7', name: 'Organic Chemistry' },
+      { num: '4.8', name: 'Chemical Analysis' },
+      { num: '4.9', name: 'Chemistry of the Atmosphere' },
+      { num: '4.10', name: 'Using Resources' },
+    ],
     'Chemistry|Edexcel': [
       { num: 'T1', name: 'Atomic Structure, Bonding and Energetics' },
       { num: 'T2', name: 'Kinetics, Equilibrium and Redox' },

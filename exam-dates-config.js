@@ -129,6 +129,11 @@ const EXAM_DATES = {
     { paper: 'Paper 2 — Organic & Physical', date: '2026-06-09', time: 'AM', duration: '2h' },
     { paper: 'Paper 3 — Unified', date: '2026-06-15', time: 'AM', duration: '2h' },
   ],
+  // AQA 8462, from AQA's key-dates page for the May/June 2027 series.
+  'Chemistry_AQA|gcse': [
+    { paper: 'Paper 1 — Topics 4.1–4.5', date: '2027-05-17', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 2 — Topics 4.6–4.10', date: '2027-06-15', time: 'AM', duration: '1h 45m' },
+  ],
   'Chemistry_Edexcel': [
     { paper: 'Paper 1 — Advanced Inorganic & Physical', date: '2026-06-02', time: 'AM', duration: '1h 45m' },
     { paper: 'Paper 2 — Advanced Organic & Physical', date: '2026-06-09', time: 'AM', duration: '1h 45m' },

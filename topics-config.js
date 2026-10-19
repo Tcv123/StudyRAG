@@ -262,6 +262,23 @@
         { id: 'O2', name: 'Organic Chemistry II', sub: 'Carbonyls, aromatics, amines, polymers, NMR' },
       ],
     },
+    'Chemistry_AQA|gcse': {
+      label: 'Chemistry — AQA (GCSE)',
+      emoji: '🧪',
+      page: 'diagnostics/chemistry-aqa-gcse-diagnostic.html',
+      topics: [
+        { id: '4.1', name: 'Atomic Structure and the Periodic Table', sub: 'Atoms, isotopes, electronic structure, groups 0/1/7, transition metals' },
+        { id: '4.2', name: 'Bonding, Structure and the Properties of Matter', sub: 'Ionic, covalent, metallic bonding, states, giant structures, nanoparticles' },
+        { id: '4.3', name: 'Quantitative Chemistry', sub: 'Conservation of mass, moles, concentration, yield, atom economy, gas volumes' },
+        { id: '4.4', name: 'Chemical Changes', sub: 'Reactivity series, extraction, acids, salts, pH, titrations, electrolysis' },
+        { id: '4.5', name: 'Energy Changes', sub: 'Exo/endothermic, reaction profiles, bond energies, cells, fuel cells' },
+        { id: '4.6', name: 'The Rate and Extent of Chemical Change', sub: 'Rates, collision theory, catalysts, reversible reactions, equilibrium' },
+        { id: '4.7', name: 'Organic Chemistry', sub: 'Crude oil, alkanes, cracking, alkenes, alcohols, acids, polymers' },
+        { id: '4.8', name: 'Chemical Analysis', sub: 'Purity, formulations, chromatography, gas tests, ion tests, instrumental' },
+        { id: '4.9', name: 'Chemistry of the Atmosphere', sub: 'Evolution of atmosphere, greenhouse gases, climate change, pollutants' },
+        { id: '4.10', name: 'Using Resources', sub: 'Potable water, waste water, LCA, corrosion, alloys, Haber, NPK' },
+      ],
+    },
     'Chemistry_Edexcel': {
       label: 'Chemistry — Edexcel',
       emoji: '🧪',
