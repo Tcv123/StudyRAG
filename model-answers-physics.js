@@ -4627,8 +4627,8 @@ r = (4.94×10⁻¹⁹)^(1/3) = 7.91×10⁻⁷ m
 At terminal velocity, D = W = mg = 1.8×10⁻¹⁵ × 9.81 = 1.766×10⁻¹⁴ N
 Using D = 6πη r v:
 v = D / (6πη r) = 1.766×10⁻¹⁴ / (6π × 1.8×10⁻⁵ × 7.91×10⁻⁷)
-= 1.766×10⁻¹⁴ / (2.686×10⁻¹⁰)
-= 6.57×10⁻⁵ m s⁻¹ ≈ 7×10⁻⁵ m s⁻¹ ✓`,
+= 1.766×10⁻¹⁴ / (2.684×10⁻¹⁰)
+= 6.58×10⁻⁵ m s⁻¹ ≈ 7×10⁻⁵ m s⁻¹ ✓`,
   "phys-ocrb-h557-2022-p2::1(c)(i)": `Draw six straight vertical lines running the full gap from the +V plate at the top to the 0 V plate at the bottom, equally spaced across the width of the figure with at least three lines on each side of the oil drop. Put an arrowhead on each line pointing downwards, i.e. from the positive plate towards the 0 V plate, since the field points from high to low potential. Equal spacing and parallel, straight lines show that the field is uniform (slight curvature at the edges of the plates is acceptable).`,
   "phys-ocrb-h557-2022-p2::1(c)(ii)": `For the drop to be stationary, the electric force upward must equal the weight downward:
 qE = mg
@@ -4673,8 +4673,8 @@ V_R = V_supply × R / (R + R_gauge) = 6.00 × 470 / (470 + 310)
   "phys-ocrb-h557-2022-p2::3(a)(iii)": `Rearranging the potential divider formula for the gauge resistance:
 V_R = V × R / (R + R_gauge)
 3.57 = 6.00 × 470 / (470 + R_gauge)
-470 + R_gauge = 6.00 × 470 / 3.57 = 2820 / 3.57 = 790.0
-R_gauge = 790.0 − 470 = 320 Ω`,
+470 + R_gauge = 6.00 × 470 / 3.57 = 2820 / 3.57 = 789.9
+R_gauge = 789.9 − 470 = 319.9 Ω ≈ 320 Ω`,
   "phys-ocrb-h557-2022-p2::3(b)": `Unstrained resistance of each gauge:
 R₀ = ρL₀/A₀ = (4.83 × 10⁻⁷ × 0.118)/(1.84 × 10⁻¹⁰) = 309.8 Ω
 
@@ -4682,15 +4682,15 @@ The volume of wire is constant, so if the length changes by a factor (1 + ε) th
 R = ρL/A = R₀(1 + ε)²
 
 Gauge 1 (stretched, ε = +0.01): L = 0.118 × 1.01 = 0.11918 m, A = 1.84 × 10⁻¹⁰/1.01 = 1.822 × 10⁻¹⁰ m²
-R₁ = (4.83 × 10⁻⁷ × 0.11918)/(1.822 × 10⁻¹⁰) = 316 Ω  (= 1.02 × R₀)
+R₁ = (4.83 × 10⁻⁷ × 0.11918)/(1.822 × 10⁻¹⁰) = 316.0 Ω  (= 1.01² × R₀ = 1.0201 × R₀)
 
 Gauge 2 (compressed, ε = −0.01): L = 0.118 × 0.99 = 0.11682 m, A = 1.84 × 10⁻¹⁰/0.99 = 1.859 × 10⁻¹⁰ m²
-R₂ = (4.83 × 10⁻⁷ × 0.11682)/(1.859 × 10⁻¹⁰) = 304 Ω  (= 0.98 × R₀)
+R₂ = (4.83 × 10⁻⁷ × 0.11682)/(1.859 × 10⁻¹⁰) = 303.6 Ω  (= 0.99² × R₀ = 0.9801 × R₀)
 
 The voltmeter is across gauge 2, so by the potential divider equation:
-V = 6.00 × R₂/(R₁ + R₂) = 6.00 × 303/(316 + 303) = 6.00 × 303/619
+V = 6.00 × R₂/(R₁ + R₂) = 6.00 × 303.6/(316.0 + 303.6) = 6.00 × 303.6/619.6
 V = 2.94 V`,
-  "phys-ocrb-h557-2022-p2::4(a)(i)": `When current flows in the wire, the magnetic field exerts a force on the wire (the motor effect: F = BIL). By Newton's Third Law, if the magnet exerts a force on the current-carrying wire, the wire must exert an equal and opposite force on the magnet. The magnet is attached to or resting on the balance, so the force on the magnet is transmitted to the balance, changing its reading. The force on the wire is upward (or downward), and the equal and opposite reaction force on the magnet (and balance) is downward (or upward), changing the balance reading. This pair of forces — wire on magnet and magnet on wire — is the Newton's Third Law pair.`,
+  "phys-ocrb-h557-2022-p2::4(a)(i)": `When current flows in the wire, the magnetic field exerts a force on the wire (the motor effect: F = BIL). By Newton's Third Law, if the magnet exerts a force on the current-carrying wire, the wire must exert an equal and opposite force on the magnet. The magnets rest on the balance, so this force on them changes the balance reading: if the force on the wire is upward, the equal and opposite force on the magnets is downward and the reading increases (reversing the current reverses both forces). Both forces are magnetic forces of the same type, acting on different bodies. This pair of forces — wire on magnet and magnet on wire — is the Newton's Third Law pair.`,
   "phys-ocrb-h557-2022-p2::4(a)(ii)": `Force on wire: F = BIL
 Δm = 1.4 g = 1.4×10⁻³ kg, so ΔF = Δm × g = 1.4×10⁻³ × 9.81 = 1.373×10⁻² N
 I = 3.1 A, L = 0.040 m
@@ -4709,7 +4709,7 @@ The speed of transverse waves: c = √(T/μ) = √(37 / 0.0046) = √(8043) = 89
 
 Frequency of fundamental: f = c / λ = 89.7 / 1.80 = 49.8 Hz ≈ 50 Hz
 
-When the tension is 37 N, the natural frequency of the fundamental mode exactly equals the driving frequency of 50 Hz. This is resonance — the driving force is in phase with the oscillation, so energy is transferred most efficiently to the wire each cycle. The amplitude of oscillation builds up to a maximum because the driving frequency matches the wire's natural frequency. At any other tension, the natural frequency would differ from 50 Hz and the amplitude would be smaller.`,
+When the tension is 37 N, the natural frequency of the fundamental mode (49.8 Hz) equals the driving frequency of 50 Hz to within the precision of the data. This is resonance — the driving force is in phase with the velocity of the wire, so energy is transferred most efficiently to the wire each cycle. The amplitude builds up until the energy lost per cycle (through damping) equals the energy supplied per cycle by the driving force, and this steady amplitude is largest when the driving frequency matches the wire's natural frequency. At tensions a little above or below 37 N, the natural frequency would differ from 50 Hz and the amplitude would be smaller.`,
   "phys-ocrb-h557-2022-p2::5(a)": `For a satellite of mass m in circular orbit of radius r around a planet of mass M, period T:
 
 Centripetal force = gravitational force:
@@ -4728,32 +4728,34 @@ For Ganymede: r = 1.07×10⁹ m, T = 6.18×10⁵ s, G = 6.67×10⁻¹¹ N m² kg
 
 M = 4π² × (1.07×10⁹)³ / (6.67×10⁻¹¹ × (6.18×10⁵)²)
 = 4π² × 1.225×10²⁷ / (6.67×10⁻¹¹ × 3.819×10¹¹)
-= 4.832×10²⁸ / 25.47
-= 1.897×10²⁷ kg ≈ 2×10²⁷ kg ✓`,
+= 4.836×10²⁸ / 25.47
+= 1.898×10²⁷ kg ≈ 2×10²⁷ kg ✓`,
   "phys-ocrb-h557-2022-p2::5(c)(i)": `As the spacecraft moves closer to Jupiter, it moves deeper into Jupiter's gravitational field and loses gravitational potential energy (GPE becomes more negative). By conservation of energy (no motors used), this decrease in GPE is converted into an increase in kinetic energy. Since KE = ½mv², an increase in KE means the spacecraft moves faster. Conversely, as it moves away from Jupiter its KE decreases (converts back to GPE) and it slows down. Total mechanical energy (KE + GPE) is conserved throughout the orbit.`,
   "phys-ocrb-h557-2022-p2::5(c)(ii)": `Energy per unit mass is conserved, because the motors are off:
 total energy/kg = ½v² − GM/r
 
-Using M = 2 × 10²⁷ kg from part (b) and G = 6.67 × 10⁻¹¹ N m² kg⁻², so GM = 1.33 × 10¹⁷ N m² kg⁻¹.
+Using M = 2 × 10²⁷ kg from part (b) and G = 6.67 × 10⁻¹¹ N m² kg⁻², so GM = 1.334 × 10¹⁷ N m² kg⁻¹.
 
 At closest approach (r = 7.4 × 10⁷ m, v = 5.8 × 10⁴ m s⁻¹):
 ½v² = ½ × (5.8 × 10⁴)² = 1.682 × 10⁹ J kg⁻¹
-−GM/r = −(1.33 × 10¹⁷)/(7.4 × 10⁷) = −1.803 × 10⁹ J kg⁻¹
+−GM/r = −(1.334 × 10¹⁷)/(7.4 × 10⁷) = −1.803 × 10⁹ J kg⁻¹
 total energy/kg = 1.682 × 10⁹ − 1.803 × 10⁹ = −1.21 × 10⁸ J kg⁻¹
 
 At the furthest point (r = 1.0 × 10⁹ m):
-p.e./kg = −GM/r = −(1.33 × 10¹⁷)/(1.0 × 10⁹) = −1.33 × 10⁸ J kg⁻¹
+p.e./kg = −GM/r = −(1.334 × 10¹⁷)/(1.0 × 10⁹) = −1.334 × 10⁸ J kg⁻¹
 
 So the kinetic energy per kilogram there is
-½v² = −1.21 × 10⁸ − (−1.33 × 10⁸) = 1.2 × 10⁷ J kg⁻¹
-v = √(2 × 1.2 × 10⁷) = 4.9 × 10³ m s⁻¹
+½v² = −1.21 × 10⁸ − (−1.334 × 10⁸) = 1.24 × 10⁷ J kg⁻¹
+v = √(2 × 1.24 × 10⁷) = 5.0 × 10³ m s⁻¹
 
-speed ≈ 4900 m s⁻¹`,
+speed ≈ 5.0 × 10³ m s⁻¹
+
+(The kinetic energy here is a small difference between two large energies, so the result is very sensitive to rounding: using the unrounded mass 1.90 × 10²⁷ kg from part (b) gives about 1.4 × 10⁴ m s⁻¹.)`,
   "phys-ocrb-h557-2022-p2::5(d)": `Before entering orbit, the spacecraft was travelling on a hyperbolic or parabolic trajectory approaching Jupiter, with a speed greater than Jupiter's escape velocity at that distance. At this speed, gravity alone would not cause it to follow a closed orbit — it would swing past Jupiter and continue into space.
 
 To enter a stable (closed elliptical) orbit, the spacecraft must reduce its speed so that its kinetic energy is low enough to be bound gravitationally to Jupiter. The motors were fired to decelerate the spacecraft (retro-burn), reducing its total mechanical energy so that it became negative (bound orbit). Without this deceleration, Jupiter's gravity would still be attractive but insufficient to hold the spacecraft in a closed orbit — it would escape. The burn effectively slows the craft so that it can be captured into orbit.`,
   "phys-ocrb-h557-2022-p2::6(a)(i)": `The amplitude of the displacement is constant — the graph shows that the peaks and troughs of the displacement–time curve all have the same magnitude throughout. In an undamped oscillation, there is no energy dissipation, so the amplitude remains constant. If the oscillator were damped, the amplitude would decrease over time.`,
-  "phys-ocrb-h557-2022-p2::6(a)(ii)": `The velocity is 90° (a quarter period) ahead of the displacement in phase. Draw a sinusoidal curve of the same period but shifted a quarter period to the left (or equivalently, a cosine if the displacement is a sine). The maximum velocity occurs when displacement is zero (equilibrium), and velocity is zero at maximum displacement. The amplitude of the velocity curve can be estimated as ωA (where ω = 2πf and A is the displacement amplitude), but may be drawn to the same scale for clarity. Label it 'v'.`,
+  "phys-ocrb-h557-2022-p2::6(a)(ii)": `The velocity is 90° (a quarter period) ahead of the displacement in phase. Draw a sinusoidal curve of the same period but shifted a quarter period to the left — here the displacement starts at its maximum, so the velocity starts at zero, reaches its most negative value where the displacement first crosses zero going down, is zero again at the displacement trough, and is maximum positive where the displacement next crosses zero going up. The maximum velocity occurs when displacement is zero (equilibrium), and velocity is zero at maximum displacement. There is no velocity scale on the axis, so any convenient amplitude may be used (the true peak velocity is ωA). Label it 'v'.`,
   "phys-ocrb-h557-2022-p2::6(a)(iii)": `The acceleration is 180° (half a period) out of phase with the displacement — it is an inverted version of the displacement curve. This follows from a = −ω²x: acceleration is proportional to displacement but in the opposite direction. When displacement is maximum positive, acceleration is maximum negative, and vice versa. Draw a sinusoidal curve of the same period but inverted (flipped vertically) compared to the displacement curve. Label it 'a'.`,
   "phys-ocrb-h557-2022-p2::6(b)(i)": `Using the average velocity (v_new + v_old)/2 over the time interval Δt gives a better estimate of the distance traveled than using either velocity alone. During the interval Δt, the velocity changes continuously from v_old to v_new. Using the average of these two values is the trapezium rule approximation, which is more accurate than using just the initial or final velocity. This follows from the kinematic principle that for uniformly changing velocity, displacement = average velocity × time.`,
   "phys-ocrb-h557-2022-p2::6(b)(ii)": `At t = 0.10 s: x = 0.1155 m, v_old = −0.180 m s⁻¹ (from row 2)
@@ -4772,14 +4774,14 @@ f = 1/1.15 = 0.87 Hz
 
 frequency from the graph = 0.77 Hz; frequency from the equation = 0.87 Hz.
 
-The modelled frequency is about 12% lower than the true value. Part of the difference is measurement: only a quarter of a cycle is shown, the graph has no minor gridlines, and a small error in reading the zero crossing is multiplied by four when T is found. The rest is a fault in the model itself: the acceleration is held constant at its value at the start of each 0.05 s interval, so while the mass is moving back towards equilibrium the model uses an acceleration that is too large in magnitude at the start and it also leaves the oscillator stationary for the whole of the first interval. These approximations stretch out the modelled cycle and so give too low a frequency; using a much smaller Δt would bring the model closer to 0.87 Hz.`,
+The modelled frequency is about 12% lower than the true value. Part of the difference is measurement: only a quarter of a cycle is shown, the graph has no minor gridlines, and a small error in reading the zero crossing is multiplied by four when T is found. The rest comes from the model itself. It leaves the oscillator stationary for the whole of the first 0.05 s interval (x = 0.1200 m at both t = 0 and t = 0.05 s), so every later point, including the zero crossing, is delayed by about 0.05 s; this lengthens the apparent quarter-cycle and gives too low a frequency. The model also holds the acceleration constant at its start-of-interval value during each 0.05 s step (overestimating its magnitude as the mass moves back towards equilibrium), which is only an approximation; using a much smaller Δt would bring the model closer to 0.87 Hz.`,
   "phys-ocrb-h557-2022-p2::6(c)": `Method and reasoning: for a mass–spring oscillator the total energy is E = ½kA², so E ∝ A². If the energy really does increase by the same constant factor during every oscillation, then the ratio of the squares of the amplitudes of successive peaks must be the same for every pair of consecutive peaks. So I read off the height of successive peaks from Fig. 6.5 and test whether (Aₙ₊₁/Aₙ)² is constant.
 
 Reading the four clearest successive peaks:
-A₁ ≈ 0.95 m, A₂ ≈ 1.5 m, A₃ ≈ 2.35 m, A₄ ≈ 3.6 m
+A₁ ≈ 1.0 m, A₂ ≈ 1.5 m, A₃ ≈ 2.35 m, A₄ ≈ 3.6 m
 
 Ratios of energies:
-E₂/E₁ = (1.5/0.95)² = 2.5
+E₂/E₁ = (1.5/1.0)² = 2.3
 E₃/E₂ = (2.35/1.5)² = 2.5
 E₄/E₃ = (3.6/2.35)² = 2.3
 
@@ -4820,7 +4822,7 @@ During that time the electron advances along the field line at the constant vert
 d = v_vertical × t = 4.5 × 10⁵ × 8.7 × 10⁻⁷ = 0.39 m`,
   "phys-ocrb-h557-2022-p2::8(b)(iii)": `As the electron moves nearer to the pole, the magnetic field strengthens. A stronger field increases the magnetic force on the electron, causing the radius of the circular component of its spiral to decrease (r = mv_⊥/qB, so r decreases as B increases). The spiral becomes tighter (smaller radius). The parallel velocity component v_∥ is gradually reduced as the increasing field reflects the particle (magnetic mirror effect), potentially reversing it before it reaches the dense atmosphere.
 
-If the electron does penetrate the atmosphere, it collides with atmospheric particles, transferring energy to them and causing excitation and ionisation. This causes the electron to lose kinetic energy, reducing both components of velocity. The aurora light is produced in this process. The electron slows, the spiral tightens further, and eventually the electron stops or is reflected back.`,
+If the electron does penetrate the atmosphere, it collides with atmospheric particles, transferring energy to them and causing excitation and ionisation. This causes the electron to lose kinetic energy, reducing both components of velocity. The aurora light is produced in this process. The electron slows, so the radius keeps decreasing and, because the component of velocity along the field also falls, the distance d between successive turns decreases too; eventually the electron stops or is reflected back.`,
   "phys-ocrb-h557-2022-p2::9": `Energy needed to bring two protons to within 10⁻¹⁴ m of each other (work done against the Coulomb repulsion):
 E = e²/(4πε₀r) = (1.6 × 10⁻¹⁹)²/(4π × 8.85 × 10⁻¹² × 1.0 × 10⁻¹⁴) = 2.3 × 10⁻¹⁴ J
 
@@ -4846,12 +4848,11 @@ I₂ = I₁ × (r₁/r₂)² = 1400 × (1.5×10¹¹ / 1.4×10¹⁰)²
 = 1.607×10⁵ W m⁻² ≈ 1.6×10⁵ W m⁻²`,
   "phys-ocrb-h557-2022-p2::10(b)": `Stefan's Law: I = σT⁴ (for a perfect black body at thermal equilibrium absorbing all incident radiation and re-radiating the same power per unit area)
 
-T = (I/σ)^(1/4) = (1.607×10⁵ / 5.67×10⁻⁸)^(1/4)
-= (2.834×10¹²)^(1/4)
-= (2.834×10¹²)^0.25
+T = (I/σ)^(1/4) = (1.607×10⁵ / 5.7×10⁻⁸)^(1/4)
+= (2.819×10¹²)^(1/4)
 
-(2.834×10¹²)^(1/2) = 1.684×10⁶
-(1.684×10⁶)^(1/2) = 1297 K ≈ 1300 K`,
+(2.819×10¹²)^(1/2) = 1.679×10⁶
+(1.679×10⁶)^(1/2) = 1296 K ≈ 1300 K`,
   "phys-ocrb-h557-2022-p2::10(c)": `Solar missions like the Parker Solar Probe have importance beyond scientific discovery because the Sun drives space weather — events such as solar flares and coronal mass ejections that can severely disrupt technology on Earth and in space. Understanding the Sun's behaviour enables better prediction of these events, allowing protection of satellites (communications, GPS, weather), electrical power grids, and aircraft systems that would otherwise be damaged or destroyed by intense solar particle events and magnetic storms. Improved forecasting from solar research protects critical infrastructure, economic activity, and potentially human lives (e.g. astronaut safety, airline routes over polar regions).`,
   "phys-ocrb-h557-2022-p3::1(a)": `Polarisation is a property of transverse waves in which the oscillations are restricted to a single plane (the plane of polarisation) containing the direction of propagation. In an unpolarised wave the oscillations occur in all planes perpendicular to the direction of travel; polarisation limits these to one plane.
 
