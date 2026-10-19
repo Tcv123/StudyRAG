@@ -412,6 +412,7 @@ function renderMsCard(part, paperKey, paperId) {
        ((window.BIO_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.CHEM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.CHEM_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
+       ((window.MATHS_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.ECON_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.GEOG_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.POLITICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
@@ -963,8 +964,12 @@ function buildPicker(userSubs) {
   // Non-fatal if missing.
   const SUBJECT_FILES = {
     'computer science':    [['CS_MODEL_ANSWERS', 'model-answers-cs.js']],
-    'mathematics':         [['MATHS_QUESTIONS', 'maths-questions.js'], ['MATHS_MODEL_ANSWERS', 'model-answers-maths.js'],
-                            ['CHECKED_MATHS_ANSWERS', 'model-answers-maths-checked.js']],
+    // GCSE Maths papers carry their questions inline, so a GCSE student needs
+    // only the GCSE answers file; the side files are A-Level.
+    'mathematics':         window.levelSuffix() === 'gcse'
+                             ? [['MATHS_GCSE_MODEL_ANSWERS', 'model-answers-maths-gcse.js']]
+                             : [['MATHS_QUESTIONS', 'maths-questions.js'], ['MATHS_MODEL_ANSWERS', 'model-answers-maths.js'],
+                                ['CHECKED_MATHS_ANSWERS', 'model-answers-maths-checked.js']],
     'further mathematics': [['FM_QUESTIONS', 'further-maths-questions.js'], ['FM_MODEL_ANSWERS', 'model-answers-fm.js'],
                             ['CHECKED_FM_ANSWERS', 'model-answers-fm-checked.js']],
     'physics':             [['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js']],
