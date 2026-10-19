@@ -1932,7 +1932,7 @@ Iron, at 6.9 g cm⁻³, lies within this range, but steel, at 7.9 g cm⁻³, doe
 First, define positions relative to the centre of the bus (length 11.0 m).
 Let y = distance of pivot from centre of bus.
 
-The centre of mass of the gold bars is 1.5 m from one end, so (5.5 − 1.5) = 4.0 m from the centre, on the left side (say).
+The centre of mass of the gold bars is 1.5 m from one end, so (5.5 − 1.5) = 4.0 m from the centre, on the left side (as in the diagram).
 The centre of mass of the bank robbers is 1.0 m from the other end, so (5.5 − 1.0) = 4.5 m from the centre, on the right side.
 
 For the bus to be balanced, clockwise moments = anticlockwise moments about the pivot.
@@ -1942,14 +1942,14 @@ Taking the pivot as reference, let the gold-bar end be to the left:
 - Distance from pivot to bank robbers = (4.5 + y)
 - The bus weight acts at its centre of mass, which is at distance y from the pivot (since bus is uniform)
 
-Clockwise moments (gold side):
+Anticlockwise moments (gold side):
 Moment of gold bars = 31000 × (4.0 − y)
 
-Anticlockwise moments (robber side):
+Clockwise moments (robber side):
 Moment of bank robbers = 8700 × (4.5 + y)
 Moment of bus weight = 32000 × y
 
-Setting clockwise = anticlockwise:
+Setting anticlockwise moments = clockwise moments:
 31000(4.0 − y) = 8700(4.5 + y) + 32000y
 124000 − 31000y = 39150 + 8700y + 32000y
 124000 − 39150 = 8700y + 32000y + 31000y
@@ -1961,7 +1961,7 @@ The pivot is 1.2 m from the centre of the bus (towards the gold-bar end).`,
   "phys-edexcel-9ph0-2024-p1::12": `Step 1: Calculate the resistance of the cable.
 Cross-sectional area: A = π(d/2)² = π × (0.075)² = 1.767 × 10⁻² m²
 Resistance: R = ρL/A = (1.7 × 10⁻⁸ × 720 × 10³) / (1.767 × 10⁻²)
-R = 12240 / (1.767 × 10⁻²) = 0.693 Ω ≈ 0.693 Ω
+R = (1.224 × 10⁻²) / (1.767 × 10⁻²) = 0.693 Ω
 
 Step 2: Calculate the current transmitted.
 P = VI → I = P/V = (1400 × 10⁶) / (1100 × 10³) = 1273 A
@@ -2002,7 +2002,10 @@ No leptons involved on either side: 0 = 0 ✓
 4. Conservation of energy/mass:
 Left side: 2 proton rest masses + kinetic energy available.
 Minimum energy needed = rest mass energy of the extra p + p̄ produced = 2 × 941 MeV ≈ 1882 MeV of kinetic energy required.
-This can be supplied by sufficiently energetic protons.
+This energy can come from the kinetic energy of the colliding protons: if the two beams have equal and opposite momenta, each proton needs a kinetic energy of at least about 940 MeV.
+
+5. Conservation of momentum:
+With equal and opposite momenta the total momentum before the collision is zero, so momentum is conserved provided the four product particles have zero total momentum (at the minimum energy they are all produced at rest).
 
 All conservation laws are satisfied, so it is possible to produce an antiproton in this way, provided the colliding protons have sufficient kinetic energy (at least ~1882 MeV between them in the centre-of-mass frame).`,
   "phys-edexcel-9ph0-2024-p1::14(a)": `All leptons are fundamental particles — they have no internal structure and are not made up of quarks.
@@ -2034,22 +2037,28 @@ With no current there is no potential difference across the internal resistance 
 V = E × d = 3.0 × 10⁶ × 2.0 × 10⁻³ = 6000 V = 6.0 kV
 
 The minimum potential difference across the plates for sparks to be created is 6000 V (6.0 kV).`,
-  "phys-edexcel-9ph0-2024-p1::15(b)(ii)": `When sparks are produced, the air between the plates becomes conducting (ionised), providing a low-resistance path between the plates. This means a large current flows through this path and also through the internal resistance of the power supply. The significant current flowing through the internal resistance causes a large voltage drop across it (V = Ir). By Kirchhoff's voltage law, the terminal voltage (voltmeter reading) = e.m.f. − Ir, so the voltmeter reading decreases significantly. The supply cannot maintain the full e.m.f. at its terminals when such a large current is drawn.`,
+  "phys-edexcel-9ph0-2024-p1::15(b)(ii)": `When sparks are produced, the air between the plates becomes conducting (ionised), providing a low-resistance path between the plates. This means a current is drawn from the supply: it flows through this path and also through the internal resistance of the power supply. Because the internal resistance is very large, even this current produces a large potential difference across it (Ir), the 'lost volts'. By Kirchhoff's voltage law, the terminal voltage (voltmeter reading) = e.m.f. − Ir, so the voltmeter reading decreases significantly. The supply cannot maintain the full e.m.f. at its terminals while this current is drawn.`,
   "phys-edexcel-9ph0-2024-p1::16(a)": `The bulb is labelled '1.5 V, 0.50 W', so when it is operating normally V = 1.5 V and P = 0.50 W.
 
 Using P = V²/R:
 R = V²/P = (1.5)² / 0.50 = 2.25 / 0.50 = 4.5 Ω
 
 This is about 5 Ω, as stated.`,
-  "phys-edexcel-9ph0-2024-p1::16(b)": `With the slider at A there is no length of the potentiometer track between A and the slider, so the potential difference across the filament bulb is zero. No current passes through the bulb and it is not lit.
+  "phys-edexcel-9ph0-2024-p1::16(b)": `The bulb is connected between end A and the slider, so it is in parallel with the section of track between A and the slider. The section of track between the slider and B is in series with this parallel combination, and the 1.5 V supply is connected across the whole track.
 
-As the slider is moved from A towards B, the resistance of the section of track between the slider and B (the section in series with the bulb) decreases, while the resistance of the section across which the bulb is connected increases. Because the total resistance of the potentiometer is very much larger than the resistance of the bulb, the bulb draws almost no current from the track, so the potentiometer behaves as an ideal potential divider: the 1.5 V from the supply is shared between the two sections in proportion to their resistances. The potential difference across the bulb therefore increases steadily as the slider moves towards B.
+Slider at A: the bulb is connected between two points at the same potential (the A–slider section has zero resistance), so the potential difference across the bulb is zero. No current passes through the bulb and it is not lit.
 
-As the potential difference across the bulb rises, the current in it rises too, so the power dissipated in the filament increases and the bulb becomes brighter. The filament has to reach a high temperature before it glows visibly, so the bulb stays apparently dark over much of the travel and only lights noticeably as the slider approaches B.
+Moving the slider from A towards B: the resistance of the slider–B section, which is in series with the bulb, decreases, and the resistance of the A–slider section in parallel with the bulb increases.
 
-When the slider reaches B the whole of the supply potential difference, 1.5 V, is across the bulb, the current is at its maximum and the bulb is operating normally at full brightness.
+The resistance of the bulb is only about 4.5 Ω (from part (a)), and the total resistance of the potentiometer is very much larger than this. So the parallel combination of the bulb and the A–slider section has a resistance no greater than that of the bulb, about 4.5 Ω or less, wherever the slider is. Over most of the travel the series slider–B section has a resistance very much larger than this.
 
-So the brightness increases continuously as the slider is moved from A to B, from zero at A to normal (maximum) brightness at B.`,
+The supply p.d. is shared in proportion to resistance, so almost all of the 1.5 V is across the large series slider–B section and the p.d. across the bulb remains very small. The current in the bulb is therefore very small and the bulb stays unlit over most of the movement from A to B.
+
+Only when the slider is very close to B does the resistance of the slider–B section become comparable with the resistance of the bulb. The p.d. across the bulb and the current in it then increase rapidly, so the bulb lights just before B and its brightness increases quickly as the slider moves the last short distance towards B.
+
+Slider at B: the slider–B section has zero resistance, so the bulb is connected directly across the supply and the p.d. across it is 1.5 V. The bulb operates at its rated p.d., so it is lit normally, at maximum brightness.
+
+So the brightness increases from zero at A to normal (maximum) brightness at B, but almost all of the change happens just before B, so this circuit gives poor control of the brightness of the bulb.`,
   "phys-edexcel-9ph0-2024-p1::16(c)": `The capacitor is initially uncharged, so at the instant the switch is closed the potential difference across the capacitor is zero and the whole of the 1.5 V supply potential difference is across the bulb. The current is therefore a maximum at the start, I = V/R = 1.5/5 = 0.3 A, and the bulb is lit at its brightest.
 
 As charge flows onto the capacitor the potential difference across it rises, so the potential difference across the bulb falls and the current decreases. The bulb therefore becomes steadily dimmer.
@@ -2077,9 +2086,9 @@ Since the calculated potential energy at 5.0 × 10⁻¹⁴ m (7.27 × 10⁻¹³ 
 Using Eₖ = p²/2m:
 p = √(2mEₖ) = √(2 × 6.64 × 10⁻²⁷ × 7.3 × 10⁻¹³)
 p = √(9.69 × 10⁻³⁹)
-p = 9.9 × 10⁻²⁰ kg m s⁻¹`,
+p = 9.84 × 10⁻²⁰ kg m s⁻¹ ≈ 9.8 × 10⁻²⁰ kg m s⁻¹`,
   "phys-edexcel-9ph0-2024-p1::17(c)(i)": `An elastic interaction is one in which both momentum and kinetic energy are conserved. No kinetic energy is converted to other forms (e.g., no excitation of internal energy, no radiation).`,
-  "phys-edexcel-9ph0-2024-p1::17(c)(ii)": `The gold atoms recoil (are set into motion) as a result of the elastic collisions with the alpha particles. This means the atoms in the gold foil gain kinetic energy and vibrate more, but since the gold nucleus is very much more massive than the alpha particle, the recoil of each gold atom is very small. The gold atoms are not ionised or structurally changed by these elastic interactions.`,
+  "phys-edexcel-9ph0-2024-p1::17(c)(ii)": `The gold atoms recoil (are set into motion) as a result of the elastic collisions with the alpha particles. This means the atoms in the gold foil gain kinetic energy and vibrate more, but since the gold nucleus is very much more massive than the alpha particle, the recoil of each gold atom is very small.`,
   "phys-edexcel-9ph0-2024-p1::18(a)": `As the wheels of the train turn they rotate the coil in the magnetic field of the magnet, so the magnetic flux linking the coil is continually changing. By Faraday's law this rate of change of flux linkage induces an e.m.f. across the ends of the coil.
 
 The ends of the coil are connected through the copper rings and the carbon blocks to the power transmission system, so there is a complete circuit and the induced e.m.f. drives an induced current back into the transmission system.
