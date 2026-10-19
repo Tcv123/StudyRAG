@@ -2134,9 +2134,9 @@ d = 1.67 × 10⁻⁶ m, θ = 73.3°, n = 3
 
 λ = d sin θ / n = (1.67 × 10⁻⁶ × sin 73.3°) / 3
 
-sin 73.3° = 0.9583
+sin 73.3° = 0.9578
 
-λ = (1.67 × 10⁻⁶ × 0.9583) / 3 = (1.600 × 10⁻⁶) / 3 = 5.33 × 10⁻⁷ m = 533 nm
+λ = (1.67 × 10⁻⁶ × 0.9578) / 3 = (1.600 × 10⁻⁶) / 3 = 5.33 × 10⁻⁷ m = 533 nm
 
 The wavelength of the green light is 533 nm.`,
   "phys-edexcel-9ph0-2024-p2::12(a)(i)": `The threshold frequency is the minimum frequency of electromagnetic radiation that can cause the photoelectric effect from a particular metal surface. Below this frequency, no photoelectrons are emitted regardless of the intensity of the radiation.`,
@@ -2155,7 +2155,7 @@ P₁ = 1/0.10 m = 10 D
 P₂ = 1/0.15 m = 6.7 D
 
 For thin lenses in combination, P = P₁ + P₂ = 10 + 6.7 = 16.7 D ≈ 17 D, which is about 20 D.`,
-  "phys-edexcel-9ph0-2024-p2::14(b)": `Using the lens equation with P_total ≈ 16.7 D (F = 6.0 cm = 0.060 m) and object distance u = −4 cm = −0.04 m (using sign convention where distances are measured from the lens, object on left is negative):
+  "phys-edexcel-9ph0-2024-p2::14(b)": `Using the lens equation with P_total ≈ 16.7 D (f = 6.0 cm = 0.060 m) and object distance u = −4 cm = −0.04 m (using sign convention where distances are measured from the lens, object on left is negative):
 
 1/v − 1/u = 1/f
 1/v = 1/f + 1/u = 1/0.06 + 1/(−0.04)
@@ -2171,11 +2171,11 @@ The image height is 4.2 cm.`,
   "phys-edexcel-9ph0-2024-p2::14(d)": `Two other properties of the image (in addition to being magnified):
 1. The image is virtual (it cannot be projected onto a screen).
 2. The image is upright (the same way up as the object).`,
-  "phys-edexcel-9ph0-2024-p2::15(a)": `The vibrating toothbrush head acts as a source of periodic waves that travel along the string (transverse waves). These waves travel towards the fixed end of the string and are reflected back. The reflected wave travels back in the opposite direction along the string.
+  "phys-edexcel-9ph0-2024-p2::15(a)": `The vibrating toothbrush head acts as a source of periodic waves that travel along the string (transverse waves). These waves travel down the string to the mass at the lower end and are reflected there. The reflected wave travels back in the opposite direction along the string.
 
 The incident wave and the reflected wave have the same frequency, wavelength, and amplitude (assuming little energy loss) but travel in opposite directions. When these two waves superpose (add together according to the principle of superposition), they form a standing wave. At certain positions along the string, the two waves are always in antiphase and the displacement is always zero — these are nodes. At other positions, the waves are always in phase and the amplitude is a maximum — these are antinodes.
 
-For a standing wave (and hence a loop) to form, the length of the string must equal a whole number of half-wavelengths. The toothbrush head must be vibrating at the right frequency to produce this resonance condition. The single loop visible in Photograph 2 corresponds to the fundamental mode, where the length of the string equals half a wavelength, with a node at the fixed end and at the point of attachment to the toothbrush, and an antinode in the middle.`,
+For a standing wave (and hence a loop) to form, the length of the string must equal a whole number of half-wavelengths. The toothbrush head vibrates at a fixed frequency, so as the student unwinds the string its length changes until this condition is met. The driving frequency then equals a natural frequency of the string, so resonance occurs: energy is transferred efficiently from the toothbrush to the string and large-amplitude vibrations build up. The single loop visible in Photograph 2 corresponds to the fundamental mode, where the length of the string equals half a wavelength, with a node (approximately) at the toothbrush head and a node at the mass, and an antinode in the middle of the string.`,
   "phys-edexcel-9ph0-2024-p2::15(b)": `Step 1: Determine the wavelength for 4 loops.
 With 4 loops, the string length = 4 × (λ/2) = 2λ
 So λ = L/2 = 0.69/2 = 0.345 m
@@ -2200,8 +2200,8 @@ This is the total oscillating mass, so mass of astronaut = 76.7 − 5.7 = 71 kg`
 Maximum acceleration = ω²A = 2.14² × 0.145 = 0.66 m s⁻²`,
   "phys-edexcel-9ph0-2024-p2::16(b)(ii)": `The astronaut starts from maximum displacement, so v = −Aω sin ωt.
 
-ωt = 2.14 × 3.5 = 7.48 rad
-speed = 0.145 × 2.14 × sin(7.48 rad) = 0.310 × 0.93 = 0.29 m s⁻¹`,
+ωt = 2.14 × 3.5 = 7.49 rad
+speed = 0.145 × 2.14 × sin(7.49 rad) = 0.310 × 0.93 = 0.29 m s⁻¹`,
   "phys-edexcel-9ph0-2024-p2::17(a)": `Step 1: Find the density of air at 120°C.
 Using the ideal gas law at constant pressure (since envelope is open):
 ρ ∝ 1/T (at constant pressure)
@@ -2226,10 +2226,6 @@ The balloon can take off, as the upthrust exceeds the total weight.`,
   "phys-edexcel-9ph0-2024-p2::17(b)(ii)": `From kinetic theory, the pressure exerted by an ideal gas is:
 pV = (1/3)Nm⟨c²⟩
 
-For n moles, N = nNA, and using pV = nRT (ideal gas law):
-(1/3)Nm⟨c²⟩ = nRT
-(1/3)(N/NA)(NAm)⟨c²⟩ = nRT
-
 For one molecule, the mean kinetic energy is:
 Ek = (1/2)m⟨c²⟩
 
@@ -2245,22 +2241,22 @@ Mass of one nitrogen molecule: m = 28 × u = 28 × 1.661 × 10⁻²⁷ = 4.651 �
 Using mean kinetic energy = (3/2)kT = (1/2)m⟨c²⟩:
 ⟨c²⟩ = 3kT/m = (3 × 1.38 × 10⁻²³ × 393) / (4.651 × 10⁻²⁶)
 = (1.627 × 10⁻²⁰) / (4.651 × 10⁻²⁶)
-= 3.499 × 10⁵ m² s⁻²
+= 3.498 × 10⁵ m² s⁻²
 
-c_rms = √⟨c²⟩ = √(3.499 × 10⁵) = 591 m s⁻¹
+c_rms = √⟨c²⟩ = √(3.498 × 10⁵) = 591 m s⁻¹
 
 The root-mean-square speed of nitrogen molecules at 120°C is approximately 591 m s⁻¹.`,
   "phys-edexcel-9ph0-2024-p2::18(a)": `The Sun emits a continuous spectrum of electromagnetic radiation (white light) from its hot, dense photosphere. This continuous spectrum contains all wavelengths across the visible and other regions of the spectrum.
 
-Above the photosphere is the Sun's atmosphere (the chromosphere), which contains gases at a lower temperature. These cooler gases are composed of atoms of specific elements (such as hydrogen, helium, sodium, and calcium), each of which can absorb photons of specific, discrete wavelengths corresponding to the differences between their allowed energy levels. When white light from the photosphere passes through the cooler atmospheric gases, photons of these specific wavelengths are absorbed as electrons in the gas atoms are excited to higher energy levels.
+Above this is the Sun's atmosphere, which contains gases at a lower temperature. These cooler gases are composed of atoms of specific elements (such as hydrogen, helium, sodium, and calcium), in which the electrons can only occupy discrete energy levels. A photon has energy E = hf = hc/λ, and a photon can only be absorbed if its energy exactly equals the difference between two energy levels of the atom. The energy levels are different for each element, so each element can absorb only photons of its own specific, discrete frequencies (wavelengths). When white light from the photosphere passes through the cooler atmospheric gases, photons of these specific wavelengths are absorbed as electrons in the gas atoms are excited to higher energy levels.
 
 This absorption removes those particular wavelengths from the continuous spectrum. The re-emitted photons are radiated in all directions (not just towards the observer), so the observer sees a continuous spectrum with dark lines (missing wavelengths) at positions corresponding to the absorbed frequencies. Each element absorbs a unique set of wavelengths, so each dark line can be matched to a specific element, allowing the composition of the Sun's atmosphere to be identified. These dark lines are called Fraunhofer absorption lines.`,
   "phys-edexcel-9ph0-2024-p2::18(b)": `The hydrogen-alpha line has wavelength λ = 656.46 nm.
 Energy of this photon: E = hc/λ = (6.63 × 10⁻³⁴ × 3.00 × 10⁸) / (656.46 × 10⁻⁹)
 = (1.989 × 10⁻²⁵) / (6.5646 × 10⁻⁷)
-= 3.031 × 10⁻¹⁹ J
+= 3.030 × 10⁻¹⁹ J
 
-Convert to eV: E = 3.031 × 10⁻¹⁹ / 1.60 × 10⁻¹⁹ = 1.894 eV
+Convert to eV: E = 3.030 × 10⁻¹⁹ / 1.60 × 10⁻¹⁹ = 1.894 eV
 
 This absorption line involves transitions from n = 2, so look for a transition from n = 2 to a higher level:
 ΔE(n=2 to n=3) = −1.51 − (−3.40) = 1.89 eV ✓
@@ -2284,14 +2280,14 @@ The wavelength of the hydrogen-alpha line as seen in the spectrum of Sirius A is
   "phys-edexcel-9ph0-2024-p2::19(a)(i)": `Spontaneous: nuclear decay is spontaneous because it is not triggered or influenced by external conditions such as temperature, pressure, or chemical environment — it occurs without any external cause.
 
 Random: nuclear decay is random because it is impossible to predict which particular nucleus in a sample will decay next, or exactly when a given nucleus will decay. Each nucleus has the same probability of decaying per unit time, but the moment of decay cannot be predetermined.`,
-  "phys-edexcel-9ph0-2024-p2::19(a)(ii)": `Although individual nuclear decays are random, the decay constant λ is the probability of decay per unit time for a single nucleus. When a very large number of nuclei are present (as in any macroscopic sample, where N ~ 10²³), statistical averaging means the number of decays per unit time is essentially constant and predictable. By measuring the activity (number of decays per second) of a known quantity of the isotope over time, the decay constant can be determined from A = λN. The randomness affects individual nuclei but the overall rate for a large ensemble is statistically stable, allowing λ to be measured precisely.`,
+  "phys-edexcel-9ph0-2024-p2::19(a)(ii)": `Although individual nuclear decays are random, the decay constant λ is the probability of decay per unit time for a single nucleus. When a very large number of nuclei are present (any sample contains an enormous number of nuclei), statistical averaging means the fraction of the nuclei that decay per unit time is essentially constant and predictable. By measuring the activity (number of decays per second) of a known quantity of the isotope over time, the decay constant can be determined from A = λN. The randomness affects individual nuclei but the overall rate for a large ensemble is statistically stable, allowing λ to be measured precisely.`,
   "phys-edexcel-9ph0-2024-p2::19(b)": `Method to determine the percentage of activity due to beta radiation:
 
-1. Set up the Geiger-Müller (GM) tube and ratemeter with the source at a fixed distance. Measure the background count rate with the source removed, record this as B (counts per minute).
+1. Set up the Geiger-Müller (GM) tube and ratemeter. With the source removed (well away from the tube), measure the background count rate B over a long time.
 
-2. Place the source in front of the GM tube (at a fixed, measured distance) without any absorber. Record the count rate R_total. Subtract background: corrected total activity = R_total − B.
+2. Place the source in front of the GM tube (at a fixed, measured distance) without any absorber. Record the count rate R_total. Subtract background: corrected total count rate = R_total − B.
 
-3. Place a sheet of paper or a few cm of air between the source and the GM tube. This absorbs all the alpha radiation (alpha particles are stopped by a few cm of air or a sheet of paper) but allows the beta particles to pass through. Record the new count rate R_beta. Subtract background: corrected beta activity = R_beta − B.
+3. Keeping the source–tube distance the same, place a sheet of paper between the source and the GM tube. The paper absorbs all the alpha radiation but allows (almost all) the beta particles to pass through. Record the new count rate R_beta. Subtract background: corrected beta count rate = R_beta − B.
 
 4. Calculate the percentage due to beta radiation:
 % beta = (R_beta − B) / (R_total − B) × 100%`,
@@ -2301,12 +2297,12 @@ A/A₀ = (1/2)^(34/432) = (1/2)^(0.07870)
 
 (1/2)^0.07870 = e^(−0.07870 × ln2) = e^(−0.07870 × 0.6931) = e^(−0.05454) = 0.9469
 
-Percentage remaining = 0.9469 × 100 = 94.7% ≈ 94.7%
+Percentage remaining = 0.9469 × 100 = 94.7%
 
 Approximately 94.7% of the initial activity would be expected to remain today.`,
   "phys-edexcel-9ph0-2024-p2::19(c)(ii)": `The student's statement requires assessment based on the decay chain:
 
-Neptunium-237 (t½ = 2.1 × 10⁶ years) builds up extremely slowly from americium-241 decay — after 34 years, only a negligible fraction of the Am-241 has decayed, so the amount of Np-237 present is very small.
+Americium-241 and neptunium-237 both emit only alpha particles; beta particles are emitted only when protactinium-233 decays, and Pa-233 is only produced by the decay of Np-237. After 34 years only about 5% of the Am-241 has decayed (from (i)), so only a small amount of Np-237 is present.
 
 Protactinium-233 is produced by the alpha decay of Np-237. Since the half-life of Np-237 is 2.1 × 10⁶ years, its activity (and hence the rate of production of Pa-233) is extremely low after only 34 years. Although Pa-233 has a short half-life of 27 days (meaning it quickly reaches secular equilibrium), the amount of Pa-233 in equilibrium with Np-237 is proportional to the activity of Np-237, which is tiny.
 
