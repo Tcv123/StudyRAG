@@ -710,9 +710,9 @@ By Newton's third law, P exerts an equal and opposite force of mc²/l on W.
 Pressure = force/area, and the area of W is l², so
 p = (mc²/l) / l² = mc²/l³ = mc²/V`,
   "phys-aqa-7408-2023-p2::02.1": `Volume of gas (from Figure 2) = volume of outer cylinder − volume of rim cylinder, using V = πd²h/4 with h = 0.370 m:
-outer: π × 0.660² × 0.370 / 4 = 0.1266 m³
-rim: π × 0.330² × 0.370 / 4 = 0.0316 m³
-gas volume V = 0.1266 − 0.0316 = 0.0949 m³
+outer: π × 0.660² × 0.370 / 4 = 0.12658 m³
+rim: π × 0.330² × 0.370 / 4 = 0.03165 m³
+gas volume V = 0.12658 − 0.03165 = 0.0949 m³
 
 T = 100 + 273 = 373 K. Using n = pV/RT:
 before: n₁ = (1.01 × 10⁵ × 0.0949)/(8.31 × 373) = 3.09 mol
@@ -739,14 +739,14 @@ Gain in kinetic energy:
 ΔE_k = ½m(v_B² − v_A²) = ½ × 4.9 × 10⁴ × [(1.3 × 10³)² − (1.1 × 10³)²] = ½ × 4.9 × 10⁴ × 4.8 × 10⁵ = 1.18 × 10¹⁰ J
 
 Loss in gravitational potential energy:
-ΔE_p = GMm(1/r_B − 1/r_A) = 6.67 × 10⁻¹¹ × M × 4.9 × 10⁴ × (1/1.7 × 10⁵ − 1/6.0 × 10⁶)
+ΔE_p = GMm(1/r_B − 1/r_A) = 6.67 × 10⁻¹¹ × M × 4.9 × 10⁴ × (1/(1.7 × 10⁵) − 1/(6.0 × 10⁶))
 = M × 3.268 × 10⁻⁶ × 5.716 × 10⁻⁶ = M × 1.868 × 10⁻¹¹ J
 
 Equating: M × 1.868 × 10⁻¹¹ = 1.18 × 10¹⁰
 
 M = 6.3 × 10²⁰ kg`,
   "phys-aqa-7408-2023-p2::04.1": `Draw a horizontal straight line at a constant, non-zero value of E from d = 0 (mesh) to about d = 3 mm (more than half the distance), where the equipotentials are evenly spaced (uniform field). From there the line curves upwards, rising more and more steeply towards d = 5 mm (the wire), where the equipotentials crowd together and the field is strongest.`,
-  "phys-aqa-7408-2023-p2::04.2": `Both the electron and argon ion start from rest at P and are accelerated through the same potential difference V (electron to the wire, argon ion to the mesh). Using energy conservation:
+  "phys-aqa-7408-2023-p2::04.2": `Both the electron and argon ion start from rest at P and are accelerated through the same potential difference: P lies on the 2000 V equipotential (Figure 5), so the electron moves from 2000 V to 4000 V at the wire and the argon ion from 2000 V to 0 V at the mesh, i.e. V = 2000 V for each. Using energy conservation:
 
 For electron: ½ m_e v_e² = eV → v_e = √(2eV/m_e)
 For argon ion: ½ m_Ar v_Ar² = eV → v_Ar = √(2eV/m_Ar)
@@ -786,7 +786,7 @@ R₁C = t / ln(I₀/I) = 11 / ln(6.0/2.0) = 11 / 1.099 = 10.0 s
 
 C = 10.0 / 1.0 × 10⁵ = 1.0 × 10⁻⁴ F
 
-(Check: the area under the graph from 0 to 11 s is about 80 cm² squares × 0.5 × 10⁻⁵ C ≈ 4.0 × 10⁻⁴ C, and C = Q/V = 4.0 × 10⁻⁴ / 4.0 = 1.0 × 10⁻⁴ F.)`,
+(Check: the area under the graph from 0 to 11 s is about 80 large (1 cm²) squares, each worth 1 s × 0.5 × 10⁻⁵ A = 0.5 × 10⁻⁵ C, so Q ≈ 80 × 0.5 × 10⁻⁵ C ≈ 4.0 × 10⁻⁴ C, and C = Q/V = 4.0 × 10⁻⁴ / 4.0 = 1.0 × 10⁻⁴ F.)`,
   "phys-aqa-7408-2023-p2::05.3": `During discharge the capacitor discharges through R₁ and R₂ in series (R_total = R₁ + R₂).
 
 From Figure 10 the pd falls from 4.0 V to 2.0 V (halves) between t = 11 s and t = 32 s, so the half-time is 21 s.
@@ -797,7 +797,7 @@ R_total = 21 / (0.69 × 1.0 × 10⁻⁴) = 3.0 × 10⁵ Ω
 R₁ = 1.0 × 10⁵ Ω (from 05.2), so
 R₂ = 3.0 × 10⁵ − 1.0 × 10⁵ = 2.0 × 10⁵ Ω`,
   "phys-aqa-7408-2023-p2::06.1": `Two advantages of using high-energy electrons rather than alpha particles:
-1. High-energy electrons have a much shorter de Broglie wavelength, which is comparable to the diameter of a nucleus. This allows electron diffraction to resolve nuclear-scale structures (alpha particles at the same energy would have a longer wavelength and poorer resolution).
+1. High-energy electrons have a much shorter de Broglie wavelength, which is comparable to the diameter of a nucleus. This allows electron diffraction to resolve nuclear-scale structures, so electrons give greater resolution.
 2. Electrons are not subject to the strong nuclear force (they are leptons), so the diffraction pattern is produced purely by the electromagnetic interaction with the nuclear charge distribution, making analysis simpler and more directly related to nuclear size. Alpha particles interact via the strong nuclear force as well, complicating the analysis.`,
   "phys-aqa-7408-2023-p2::06.2": `Draw a smooth curve starting high at small θ, with the intensity falling as θ increases to a single minimum that does not reach zero (the minimum is above the θ axis), then rising slightly to a small secondary maximum and falling away again, the whole curve showing an overall decrease in intensity with θ and spanning most of the θ axis.`,
   "phys-aqa-7408-2023-p2::06.3": `If R = R₀A^(1/3), then the volume of a nucleus is:
@@ -820,12 +820,12 @@ R₀ = R / A^(1/3) = 4.02 × 10⁻¹⁵ / 35^(1/3)
 R₀ = 4.02 × 10⁻¹⁵ / 3.271 = 1.229 × 10⁻¹⁵ m ≈ 1.23 × 10⁻¹⁵ m (1.23 fm)
 
 Finding density of nuclear material:
-mass of nucleus ≈ A × u = 35 × 1.661 × 10⁻²⁷ = 5.81 × 10⁻²⁶ kg
+mass of nucleus ≈ A × m_nucleon = 35 × 1.67 × 10⁻²⁷ = 5.85 × 10⁻²⁶ kg
 volume = (4/3)πR³ = (4/3)π × (4.02 × 10⁻¹⁵)³
-= (4/3)π × 6.49 × 10⁻⁴⁴
+= (4/3)π × 6.50 × 10⁻⁴⁴
 = 2.72 × 10⁻⁴³ m³
 
-ρ = m/V = 5.81 × 10⁻²⁶ / 2.72 × 10⁻⁴³ = 2.14 × 10¹⁷ kg m⁻³ ≈ 2.1 × 10¹⁷ kg m⁻³`,
+ρ = m/V = 5.85 × 10⁻²⁶ / 2.72 × 10⁻⁴³ = 2.15 × 10¹⁷ kg m⁻³ ≈ 2.1 × 10¹⁷ kg m⁻³`,
   "phys-aqa-7408-2023-p2::07.1": `Heavy water (deuterium oxide, D₂O) is commonly used as a moderator in thermal nuclear reactors. (Alternatively: water, H₂O, is also used in light-water reactors.)`,
   "phys-aqa-7408-2023-p2::07.2": `1. Slow (thermal) neutrons are much more likely to be absorbed by uranium-235 nuclei and cause fission, so a chain reaction can be sustained.
 2. Slow neutrons cause less damage to (less fatigue of) the reactor structure and shielding than fast neutrons.`,
@@ -843,8 +843,8 @@ E₀ = 1.0 MeV = 1.0 × 10⁶ × 1.60 × 10⁻¹⁹ = 1.60 × 10⁻¹³ J
 Using E_f = E₀ e^(−by):
 7.245 × 10⁻²¹ = 1.60 × 10⁻¹³ × e^(−0.73y)
 e^(−0.73y) = 7.245 × 10⁻²¹ / 1.60 × 10⁻¹³ = 4.528 × 10⁻⁸
-−0.73y = ln(4.528 × 10⁻⁸) = −16.908
-y = 16.908 / 0.73 = 23.2
+−0.73y = ln(4.528 × 10⁻⁸) = −16.910
+y = 16.910 / 0.73 = 23.2
 
 Minimum value of y ≈ 24 (rounding up to ensure E_f ≤ E_thermal)`,
   "phys-aqa-7408-2023-p2::07.5": `Figure 15 shows that v/u increases as m_M/m_N increases, so the lighter the moderator nucleus, the smaller the neutron's rebound speed and the greater the fraction of its kinetic energy lost in each collision. Moderator nuclei with a small nucleon number therefore slow the neutrons down in fewer collisions, so less moderator is needed.`,
