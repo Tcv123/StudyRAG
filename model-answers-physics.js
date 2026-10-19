@@ -3090,26 +3090,27 @@ v = 110 × 1000 / 3600 = 30.6 m s⁻¹ (to 3 s.f.)
 
 Unit: m s⁻¹`,
   "phys-ocra-h556-2023-p1::16(a)(ii)": `time = distance / speed = 40 / 30.6 = 1.31 s ≈ 1.3 s`,
-  "phys-ocra-h556-2023-p1::16(a)(iii)": `From the table, the thinking distance is the part of the stopping distance that is not braking:
+  "phys-ocra-h556-2023-p1::16(a)(iii)": `From the table, the thinking distance is the stopping distance minus the braking distance:
+thinking distance = 96 − 75 = 21 m
 
-thinking distance = 96 − 75 = 21 m  (equivalent to a thinking time of 21/31 = 0.69 s)
+At the maximum speed v = 31 m s⁻¹ (from (a)(i)), this is a thinking time of
+thinking time = 21 ÷ 31 = 0.69 s
 
-Keeping two markings between you and the vehicle in front means a gap of at least 2 × 40 = 80 m, and up to 3 × 40 = 120 m.
+If there are at least two markings visible between a driver and the vehicle in front, a whole 40 m space between two markings lies inside the gap, so the gap is always more than 40 m.
 
-Comparing these with the manual's figures for 110 km/hr:
-• The thinking distance of 21 m is much less than the 40 m spacing, so the driver has reacted before even one marking has been passed (0.69 s is well inside the 1.3 s it takes to cover one gap).
-• The braking distance of 75 m is less than the 80 m minimum gap, and the full stopping distance of 96 m is less than 120 m.
+The thinking distance of 21 m is less than the 40 m between markings (equivalently, the thinking time of 0.69 s is less than the 1.3 s from (a)(ii) taken to travel between markings).
 
-So a driver who keeps two markings visible always has more road ahead than the distance needed to think and then brake to rest, and can stop before reaching the vehicle in front — which is why the 40 m spacing helps prevent collisions.`,
-  "phys-ocra-h556-2023-p1::16(b)(i)": `First convert speed: v = 110 × 1000/3600 = 30.6 m s⁻¹
+So if the vehicle in front brakes, the following driver reacts and starts braking before reaching the point where the vehicle in front began to brake. Assuming both vehicles brake equally hard from the same speed, they need the same braking distance of 75 m, so the following vehicle comes to rest behind the vehicle in front and a collision is avoided.`,
+  "phys-ocra-h556-2023-p1::16(b)(i)": `First convert the initial speed: u = 110 × 1000/3600 = 30.6 m s⁻¹ (final speed v = 0)
 
 Using impulse-momentum theorem:
-F = Δ(mv)/Δt = m(v − u)/t = 1600 × (0 − 30.6)/5.6
-F = 1600 × 30.6 / 5.6 = 8743 N ≈ 8700 N (to 2 s.f.)
+F = Δ(mv)/Δt = m(v − u)/t = 1600 × (0 − 30.6)/5.6 = −8743 N
+(the minus sign shows that the force opposes the motion)
+Magnitude: F = 8743 N ≈ 8700 N (to 2 s.f.)
 
 The average resultant force required is approximately 8700 N.`,
   "phys-ocra-h556-2023-p1::16(b)(ii)": `On an upward slope, there is a component of the vehicle's weight acting in the direction opposing motion (down the slope), in addition to the braking force. The resultant decelerating force is therefore larger than on a flat road. Since a larger net force decelerates the vehicle, the deceleration is greater and the distance required to stop is reduced. So the stopping distance decreases on an upward slope.`,
-  "phys-ocra-h556-2023-p1::17(a)(i)": `The tension T acts along the rod, directed from the sandbag towards the pivot point at the top of the ride. The arrow labelled T should be drawn along the rod, pointing upward and inward (toward the pivot), acting on the sandbag.`,
+  "phys-ocra-h556-2023-p1::17(a)(i)": `The tension T acts along the rod, directed from the sandbag towards the top of the rod, where it is attached to the edge of the disc. The arrow labelled T should be drawn along the rod, pointing upward and inward (towards the top of the rod), acting on the sandbag.`,
   "phys-ocra-h556-2023-p1::17(a)(ii)": `The radius of the circle is the horizontal distance of the sandbag from the axis of rotation, which is the radius of the disc plus the horizontal offset of the rod.
 
 Horizontal offset of the rod = 11.1 sin 35° = 6.37 m
@@ -3152,7 +3153,7 @@ There is no horizontal force (air resistance is neglected), so the horizontal ve
 s = vt = 8.4 × 1.86
 
 s = 16 m (15.6 m)`,
-  "phys-ocra-h556-2023-p1::17(b)(iii)": `The relevant difference is that a shoe is far lighter than the 12 kg seat and sandbag while having a broadly similar size, so the drag force on it is much more significant compared with its weight; air resistance was ignored in the calculation above.
+  "phys-ocra-h556-2023-p1::17(b)(iii)": `The relevant difference is that a shoe is light for its size compared with a small, dense sandbag, so the drag force on it is much more significant compared with its weight; air resistance was ignored in the calculation above.
 
 Because of this drag the shoe is slowed horizontally as soon as it leaves the ride, so its horizontal speed is no longer the constant 8.4 m s⁻¹ used in (b)(ii) but falls steadily during the flight.
 
@@ -3176,7 +3177,7 @@ For the vertical drop, h = ½gt², so a graph of t² (y-axis) against h (x-axis)
 
 For the ramp, L = ½(g sin θ)t², so t² = (2L/g) × 1/sin θ: a graph of t² (y-axis) against 1/sin θ (x-axis) is a straight line of gradient 2L/g, giving g = 2L/gradient.
 
-In both cases error bars should be added and a worst-fit line drawn as well as the best-fit line; the uncertainty in g then follows from the difference between the best and worst gradients. Using a graph in this way averages out the random timing errors and shows up any systematic error as a non-zero intercept.`,
+In both cases error bars should be added and a worst-fit line drawn as well as the best-fit line; the uncertainty in g then follows from the difference between the best and worst gradients. Using a graph in this way averages out the random timing errors and can reveal a systematic error, such as a consistent error in measuring the drop height, as a non-zero intercept.`,
   "phys-ocra-h556-2023-p1::19(a)": `To find the centre of mass of a 2D shape:
 
 Equipment: the shape (cut from card), a pin/nail, a clamp stand, a plumb line (string with small mass attached), a pencil.
@@ -3197,7 +3198,7 @@ Average power:
 P = W/t = 9.12 × 10⁵ / 90
 
 P = 10 100 W (about 10 kW)`,
-  "phys-ocra-h556-2023-p1::19(b)(ii)": `The calculation assumed 100% efficiency and a constant load. In practice: the motor must overcome friction in the pivot and mechanical losses throughout the system; the bridge does not move at constant speed and may need to accelerate; wind may add an additional load; the motor must also have power available to stop the bridge safely at the end. A much larger maximum power ensures the motor can handle peak loads and unexpected resistive forces without stalling.`,
+  "phys-ocra-h556-2023-p1::19(b)(ii)": `The value in (b)(i) is only the average useful power, assuming no energy losses. In practice: the motor must overcome friction in the pivot and mechanical losses throughout the system; the power needed varies during the lift (the turning effect of the weight is greatest when the bridge is near horizontal), so the peak power is well above the average; the bridge may need to accelerate or be raised faster; wind may add an additional load. A much larger maximum power ensures the motor can handle peak loads and unexpected resistive forces without stalling.`,
   "phys-ocra-h556-2023-p1::20(a)": `For n moles of ideal gas: pV = nRT
 
 The mass of gas = nM (since M is molar mass).
@@ -3217,12 +3218,12 @@ p = 1.0 × 10⁵ Pa, M = 0.029 kg mol⁻¹, T = 20 + 273 = 293 K, R = 8.31 J mol
 = 1.2 × 12 000 × 9.81
 = 141 264 N ≈ 1.4 × 10⁵ N`,
   "phys-ocra-h556-2023-p1::20(b)(iii)": `By Archimedes' principle, the upthrust on the airship equals the weight of fluid (air) displaced. For the airship to float stationary, the net force must be zero. The upward upthrust equals the weight of air displaced, and this must balance the total downward weight of the airship and its contents. Since the airship is in equilibrium (stationary), upthrust = weight of airship and contents = weight of displaced air.`,
-  "phys-ocra-h556-2023-p1::20(b)(iv)": `If a higher pressure were used, the density of helium inside would increase (since ρ = pM/RT with higher p). The mass of helium in the gasbag would increase significantly. This greater mass of helium means more weight to support, reducing the net upthrust available to lift the payload (cabin and cargo). Additionally, a higher pressure would require the gasbag to be made from stronger, heavier material to withstand the pressure difference, further increasing weight. The risk of the gasbag bursting or leaking would also be greater.`,
+  "phys-ocra-h556-2023-p1::20(b)(iv)": `If a higher pressure were used, the density of helium inside would increase (since ρ = pM/RT with higher p). The mass of helium in the gasbag would increase significantly. This greater mass of helium means more weight to support, while the upthrust (which depends only on the volume of air displaced) is unchanged, so the net upward force available to lift the payload (cabin and cargo) is reduced. Additionally, a higher pressure would require the gasbag to be made from stronger, heavier material to withstand the pressure difference, further increasing weight. The risk of the gasbag bursting or leaking would also be greater.`,
   "phys-ocra-h556-2023-p1::20(c)": `Thrust = rate of change of momentum of air
 = (mass per second) × velocity
 = 7.8 × 45
 = 351 N ≈ 350 N`,
-  "phys-ocra-h556-2023-p1::20(d)": `At high altitude the air density is lower. Lower air density means the airship displaces less mass of air per unit volume, so the upthrust is smaller — however the airship's weight is unchanged. To remain aloft, the helium volume (and hence the buoyancy) must be maintained.
+  "phys-ocra-h556-2023-p1::20(d)": `At high altitude the air density is lower.
 
 For the engine: thrust = (mass flow rate) × velocity = ρ_air × A × v_fan × v_relative. At higher altitude ρ_air is smaller. Even with the same fan speed, less mass of air is moved per second, so the thrust is less. However, because the air resistance on the airship is also lower at lower density (drag ∝ ρv²), the airship needs less thrust to achieve any given speed, and the reduced drag allows a higher maximum speed despite the lower thrust available.`,
   "phys-ocra-h556-2023-p1::21(a)(i)": `Check both sides have the same SI base units.
@@ -3254,7 +3255,7 @@ Error 2: The number of significant figures is not consistent down the columns an
   "phys-ocra-h556-2023-p1::21(b)(ii)": `The first row of the table is m = 0.200 kg, T² = 0.372 s², so plot a point at (0.200, 0.372) — on the m axis a fifth of the way from 0 to 0.400, and on the T² axis just under 0.400 — marking it with a small sharp cross to within half a small square, in the same style as the points already plotted.
 
 Then draw a single straight line of best fit with a ruler, extending it across the plotted range. Judge it so that the points are evenly scattered about it, with the same number above as below and the distances from the line balanced on each side. Do not force the line through the origin — these points sit slightly above a line through the origin, and the line drawn must be the best fit to the data as plotted, because its gradient is what gives k.`,
-  "phys-ocra-h556-2023-p1::21(b)(iii)": `Rearranging T² = 2π²m/k into the form y = mx + c shows that the graph of T² against m has
+  "phys-ocra-h556-2023-p1::21(b)(iii)": `Comparing T² = (2π²/k) × m with the equation of a straight line shows that the graph of T² against m has
 
 gradient = 2π²/k,  so  k = 2π²/gradient
 
@@ -3269,7 +3270,7 @@ k = 15 N m⁻¹
 (Any correctly drawn line gives a gradient of about 1.22 to 1.44 and hence k in the range 14 to 16 N m⁻¹.)`,
   "phys-ocra-h556-2023-p1::21(c)": `Both springs stay in tension, so if the initial displacement is x₀ and each spring has extension e at the equilibrium position, at maximum displacement one spring has extension (e + x₀) and the other (e − x₀).
 
-The elastic potential energy stored in a spring is ½kx², which depends on the square of the extension. Because of that square, the energy gained by the spring that is stretched further is larger than the energy lost by the spring whose extension is reduced. Adding the two:
+The elastic potential energy stored in a spring is ½k × (extension)², which depends on the square of the extension. Because of that square, the energy gained by the spring that is stretched further is larger than the energy lost by the spring whose extension is reduced. Adding the two:
 
 E = ½k(e + x₀)² + ½k(e − x₀)² = ke² + kx₀²
 
@@ -3283,6 +3284,8 @@ The same conclusion follows from the SHM equations: ω depends only on k and m a
 When the core hydrogen is exhausted, the core contracts and heats while hydrogen burns in a shell around it. The outer layers swell enormously and cool, so the luminosity rises while the surface temperature falls: the star leaves the main sequence and tracks up and to the right into the red giant region. Helium fusion then begins in the core.
 
 Because the mass of the remnant core will be below the Chandrasekhar limit of about 1.4 solar masses, the star cannot become a neutron star. Once helium burning ends, the outer layers are thrown off as a planetary nebula, exposing the hot, dense core. The star drops almost vertically down and to the left on the diagram into the white dwarf region — very hot but very low luminosity — and then slowly cools and fades, moving to the right along the bottom of the diagram.
+
+On Fig. 22.1, label the main-sequence band (top left to bottom right), the red giant region (top right) and the white dwarf region (bottom left). Mark the star's starting point near the middle of the main sequence and draw arrows for its track: main sequence → up and to the right into the red giant region → down and to the left into the white dwarf region.
 
 Using Fig. 22.2: the curve shows relative intensity against wavelength, so the wavelength at which the intensity peaks, λ_max, can be read from it. Wien's displacement law, λ_max T = 2.90 × 10⁻³ m K, then gives the surface temperature T = 2.90 × 10⁻³/λ_max. A short peak wavelength means a hot star and a long one a cool star, and the temperature fixes the horizontal coordinate of the star on the H-R diagram, which can be marked as a vertical line on Fig. 22.1.
 
