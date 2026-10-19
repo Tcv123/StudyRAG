@@ -4181,15 +4181,12 @@ Charge reaching ground per second = 155 / (25 × 10⁻³) = 6200 C s⁻¹ = 6200
 Charge in 1.0 ms = 6200 × 1.0 × 10⁻³ = 6.2 C
 
 Number of electrons = Q/e = 6.2 / (1.60 × 10⁻¹⁹) = 3.875 × 10¹⁹ ≈ 3.9 × 10¹⁹ electrons`,
-  "phys-ocra-h556-2024-p3::1(a)": `A standard flute acts as an open pipe at both ends (both the embouchure hole and the far end are effectively open). For an open pipe, the fundamental frequency has a wavelength λ = 2L, where L is the length of the pipe.
+  "phys-ocra-h556-2024-p3::1(a)": `A flute is a tube open at both ends. For an open pipe, the fundamental frequency has a wavelength λ = 2L, where L is the length of the pipe.
 
-The lowest note on a standard flute is C4 (middle C) at approximately 262 Hz. Using v = fλ:
-v_sound = 340 m s⁻¹ (at room temperature)
+The lowest note is 262 Hz and the speed of sound in air at 20 °C is 340 m s⁻¹. Using v = fλ:
 λ = v/f = 340/262 = 1.298 m
-L = λ/2 = 1.298/2 = 0.649 m ≈ 0.65 m (as required).
-
-(Speed of sound in air at ~20°C ≈ 340 m s⁻¹; f = 262 Hz gives L ≈ 0.65 m.)`,
-  "phys-ocra-h556-2024-p3::1(b)(i)": `Assumption 1: The collisions between gas molecules and the walls of the container are perfectly elastic (no energy lost in collisions).
+L = λ/2 = 1.298/2 = 0.649 m ≈ 0.65 m (as required).`,
+  "phys-ocra-h556-2024-p3::1(b)(i)": `Assumption 1: All collisions (between molecules, and between molecules and the container walls) are perfectly elastic, so no kinetic energy is lost in collisions.
 Assumption 2: The volume of the gas molecules themselves is negligible compared to the volume of the container (molecules are treated as point masses).`,
   "phys-ocra-h556-2024-p3::1(b)(ii)": `For helium: γ = 1.67 and M = 4.00 g mol⁻¹ = 4.00 × 10⁻³ kg mol⁻¹. The temperature is T = −10 °C = 263 K, and R = 8.31 J mol⁻¹ K⁻¹.
 
@@ -4197,7 +4194,7 @@ v = √(γRT/M) = √(1.67 × 8.31 × 263 / 4.00 × 10⁻³) = √(9.12 × 10⁵
 
 The flute itself is unchanged, so the lowest note still corresponds to the fundamental of a pipe open at both ends, with λ = 2L = 2 × 0.65 = 1.30 m.
 
-f = v/λ = 955 / 1.30 = 735 Hz ≈ 730 Hz (2 s.f.)
+f = v/λ = 955 / 1.30 = 734.6 Hz ≈ 730 Hz (2 s.f.)
 
 The lowest frequency inside the chamber is about 730 Hz — much higher than 262 Hz because sound travels far faster in helium (small molar mass).`,
   "phys-ocra-h556-2024-p3::2(a)": `The N capacitors are in parallel, so the total capacitance is C_total = NC. The N resistors are in series, so the total resistance is R_total = NR. The time constant of the discharge circuit is therefore
@@ -4219,7 +4216,7 @@ ln ½ = −T/(N²RC), and since ln ½ = −ln 2, this gives ln 2 = T/(N²RC)
 Therefore T = (ln 2)N²RC, as required.`,
   "phys-ocra-h556-2024-p3::2(b)": `Data are precise when repeated readings are closely clustered about their mean — that is, when the spread (range) of the repeats is small compared with the value being measured. Judged on that basis the students' claim is largely justified, and it can be supported with numbers from their own table.
 
-For N = 1 the three readings 14.7, 14.1 and 14.3 s have a range of only 0.6 s, an uncertainty of ±0.3 s on a mean of 14.4 s, i.e. about 2%. For N = 6 the range is 512.7 − 499.5 = 13.2 s, i.e. ±6.6 s on a mean of 504.2 s, which is only about 1.3%. For N = 3 and N = 4 the spreads are smaller still (1.4 s and 1.6 s, well under 1%).
+For N = 1 the three readings 14.7, 14.1 and 14.3 s have a range of only 0.6 s, an uncertainty of ±0.3 s on a mean of 14.4 s, i.e. about 2%. For N = 6 the range is 512.7 − 499.5 = 13.2 s, i.e. ±6.6 s on a mean of 504.2 s, which is only about 1.3%. For N = 3 and N = 4 the percentage spreads are smaller still (ranges of 1.4 s and 1.6 s, i.e. ±0.7 s and ±0.8 s, well under 1%).
 
 The one weak set is N = 5, where 345.6 s lies well below 356.1 and 354.3 s: the range is 10.5 s (±5.3 s, about 1.5%), so that repeat is noticeably less consistent than the others and might be an anomaly worth repeating.
 
@@ -4240,9 +4237,9 @@ Each point should be a small, sharp cross (or a dot in a circle) placed to withi
   "phys-ocra-h556-2024-p3::2(d)(ii)": `Draw a straight line of best fit through the plotted points, passing as close as possible to all points, with roughly equal numbers of points above and below the line. The line should pass through or near the origin (since T = 0 when N = 0).`,
   "phys-ocra-h556-2024-p3::2(d)(iii)": `Draw a large gradient triangle on the best-fit line, using at least half the length of the line (Δx of at least 17.5 on the N² axis), and take the coordinates from the line itself, not from the plotted data points.
 
-The line passes essentially through the origin, so taking the points (0, 0) and (36, 504) that lie on it:
+The line passes essentially through the origin, so read two widely separated points from the line itself, for example (0, 0) and (35, 490):
 
-gradient = ΔT/Δ(N²) = (504 − 0)/(36 − 0) = 14 s
+gradient = ΔT/Δ(N²) = (490 − 0)/(35 − 0) = 14 s
 
 gradient ≈ 14 s (any value between about 13 and 15 s from a correctly drawn line).`,
   "phys-ocra-h556-2024-p3::2(d)(iv)": `Comparing T = (ln 2)N²RC with y = mx shows that the gradient of the T against N² graph is
@@ -4262,13 +4259,13 @@ R = 20 ± 1 kΩ
 (The uncertainty is given to the same number of decimal places as R.)`,
   "phys-ocra-h556-2024-p3::2(e)(i)": `Systematic error.`,
   "phys-ocra-h556-2024-p3::2(e)(ii)": `Two 470 μF capacitors in parallel give a combined capacitance of 940 μF, not 1000 μF. The capacitance used for N = 6 was less than expected (940 μF instead of 1000 μF). Since T = (ln 2)N²RC, a smaller C gives a smaller T for N = 6. This means the gradient of the T vs N² graph is slightly smaller than it should be (one data point is too low), leading to a calculated value of R that is smaller than the true value of R.`,
-  "phys-ocra-h556-2024-p3::3(a)": `By Newton's third law, when the rocket engine expels hot gas backwards (exerts a force on the gas in the backward direction), the gas exerts an equal and opposite force (thrust) on the rocket in the forward direction. By Newton's first law, before ignition the rocket is stationary (resultant force = 0). Once the engine fires, there is a resultant forward force on the rocket. By Newton's second law (F = ma), this resultant force causes the rocket to accelerate in the forward (upward) direction. Between t = 0 and t = 50 s, the thrust from the engine exceeds the weight of the rocket plus air resistance, so there is a net upward force and the rocket accelerates upward.`,
+  "phys-ocra-h556-2024-p3::3(a)": `By Newton's third law, when the rocket engine expels hot gas backwards (exerts a force on the gas in the backward direction), the gas exerts an equal and opposite force (thrust) on the rocket in the forward direction. By Newton's first law, before ignition the rocket is stationary (resultant force = 0). Once the engine fires, there is a resultant forward force on the rocket. By Newton's second law (F = ma), this resultant force causes the rocket to accelerate in the forward (upward) direction. Between t = 0 and t = 50 s, the thrust is large enough to overcome the weight of the rocket and air resistance, so there is a resultant (unbalanced) force on the rocket and it accelerates.`,
   "phys-ocra-h556-2024-p3::3(b)": `At B the rocket's velocity is 3.1 km s⁻¹ = 3100 m s⁻¹ at 75° to the horizontal, so its vertical component is
 
 v_B = 3100 sin 75° = 2994 m s⁻¹
 
 Stage 1 — A to B (powered flight, 0 to 50 s)
-Assumptions: the thrust and the mass of the rocket stay constant, so the acceleration is uniform, and the rocket climbs along the straight line A to B. Taking vertical motion with u = 0, v = 2994 m s⁻¹ and t = 50 s:
+Assumptions: the thrust and the mass of the rocket stay constant and air resistance is negligible, so the resultant force, and hence the acceleration, is uniform, and the rocket climbs along the straight line A to B. Taking vertical motion with u = 0, v = 2994 m s⁻¹ and t = 50 s:
 
 s₁ = ½(u + v)t = ½ × 2994 × 50 = 7.49 × 10⁴ m ≈ 74.9 km
 
@@ -4310,7 +4307,7 @@ F_resultant = kd = 0.62 × 5.30 = 3.3 N
 a = F/m = 3.3/0.20 = 17 m s⁻²
 
 The initial acceleration is about 17 m s⁻², directed upwards.`,
-  "phys-ocra-h556-2024-p3::4(b)(ii)": `For a mass on a spring the restoring force is F = kx, so a = −(k/m)x. Comparing this with the defining equation of simple harmonic motion, a = −ω²x, gives ω² = k/m.
+  "phys-ocra-h556-2024-p3::4(b)(ii)": `For a mass on a spring the restoring force is F = −kx (x = displacement from the equilibrium position), so a = −(k/m)x. Comparing this with the defining equation of simple harmonic motion, a = −ω²x, gives ω² = k/m.
 
 The force constant in SI units is k = 0.62 N cm⁻¹ = 62 N m⁻¹, and m = 0.20 kg:
 
@@ -4321,14 +4318,14 @@ f = ω/2π = 17.6/6.283 = 2.8 Hz
 (The same result follows from the answer to (b)(i): ω² = a/x = 16.5/0.053 = 311 s⁻², giving f = 2.8 Hz.)
 
 The frequency of the motion is 2.8 Hz.`,
-  "phys-ocra-h556-2024-p3::4(c)(i)": `As magnet M (attached to the vibration generator) oscillates in and out of coil Y, the magnetic flux through coil Y changes. By Faraday's law, this induces an alternating EMF in coil Y. Since coil Y is connected to coil X by wires, this EMF drives an alternating current through the circuit (coils X and Y connected in series). This alternating current in coil X produces a changing magnetic field inside X. By Faraday's/Lenz's law, the changing magnetic flux through coil X exerts a force on magnet L inside it. Since the current alternates at the driving frequency, the force on L alternates, causing L to oscillate. The spring-mass system with L therefore experiences a periodic driving force and oscillates.`,
+  "phys-ocra-h556-2024-p3::4(c)(i)": `As magnet M (attached to the vibration generator) oscillates in and out of coil Y, the magnetic flux through coil Y changes. By Faraday's law, this induces an alternating EMF in coil Y. Since coil Y is connected to coil X by wires, this EMF drives an alternating current through the circuit (coils X and Y connected in series). This alternating current makes coil X an electromagnet whose magnetic field reverses direction every half-cycle. This alternating field interacts with the field of magnet L inside the coil, exerting a force on L. Since the current alternates at the driving frequency, the force on L alternates, causing L to oscillate. The spring-mass system with L therefore experiences a periodic driving force and oscillates.`,
   "phys-ocra-h556-2024-p3::4(c)(ii)": `As the frequency of the vibration generator is varied from 0.5 Hz to 5.0 Hz:
 
 Amplitude: The amplitude of L's oscillations will be small at low frequencies (e.g. 0.5 Hz), will increase as the driving frequency approaches the natural frequency of the spring-mass system (2.5 Hz), reaching a maximum at resonance (driving frequency ≈ 2.5 Hz). Above 2.5 Hz, the amplitude will decrease again, becoming small at 5.0 Hz. This produces a resonance peak in the amplitude-frequency graph, with the peak at approximately 2.5 Hz.
 
 Frequency: The frequency of L's oscillations always equals the driving frequency (the forced frequency), not its natural frequency. So as the generator frequency increases from 0.5 to 5.0 Hz, the frequency of L's oscillations also increases from 0.5 to 5.0 Hz throughout.
 
-(A diagram would show an amplitude vs driving frequency curve with a sharp peak at ~2.5 Hz.)`,
+(A diagram would show an amplitude vs driving frequency curve with a peak at about 2.5 Hz.)`,
   "phys-ocra-h556-2024-p3::5(a)(i)": `The internal resistance of a cell is the resistance within the cell itself, due to the materials making up the electrodes and electrolyte. It causes a voltage drop (lost volts) inside the cell when current flows, so the terminal voltage is less than the e.m.f.`,
   "phys-ocra-h556-2024-p3::5(a)(ii)": `The e.m.f. (electromotive force) of a cell is the energy transferred (work done) by the cell per unit charge that flows around the complete circuit. It is measured in volts (J C⁻¹). It equals the terminal voltage only when no current flows.`,
   "phys-ocra-h556-2024-p3::5(b)": `The lamp and the internal resistance are in series, so
@@ -4348,16 +4345,17 @@ I = 2.8 A
 (Check: 2.8 × 1.2 = 3.4 V of lost volts, and 5.6 − 3.4 = 2.2 V across the lamp, which matches the characteristic.)`,
   "phys-ocra-h556-2024-p3::5(c)": `The student should use the thermistor as the external resistance (since its resistance ~0.1 Ω is similar to the internal resistance ~0.1 Ω, which will make the effect of internal resistance significant and measurable).
 
-Circuit: Connect the thermistor in series with the ammeter and the cell. Connect the voltmeter across the thermistor (= terminal voltage V).
+Circuit: Connect the thermistor in series with the ammeter and the cell. Connect the voltmeter directly across the terminals of the cell, so that it reads the terminal p.d. V. (Connecting it across the thermistor alone would leave out the p.d. across the ammeter, which is not negligible when r is only about 0.1 Ω.)
 
-Data collection: Change the resistance of the thermistor by changing its temperature (e.g. using a water bath at different temperatures). For each temperature, record the current I (from ammeter) and terminal voltage V (from voltmeter). Collect at least 6 pairs of (I, V) values.
+Data collection: Change the resistance of the thermistor by changing its temperature (e.g. placing it in a water bath and varying the water temperature from about 0 °C upwards, measured with a thermometer, waiting each time for the thermistor to reach the water temperature). For each temperature, record the current I (from ammeter) and terminal voltage V (from voltmeter). Collect at least 6 pairs of (I, V) values.
 
 Analysis: Use ε = V + Ir → V = ε − Ir. Plot V (y-axis) against I (x-axis). The graph should be a straight line:
 - y-intercept = ε (e.m.f.)
 - gradient = −r (negative of internal resistance)
 
 Determining uncertainties:
-- Draw lines of maximum and minimum gradient through the error bars on the graph.
+- Repeat the V and I readings at each temperature and take half the range as the uncertainty in each (or use the meters' resolution if repeats are not possible); add these as error bars.
+- Draw the best-fit line and the steepest and shallowest lines that still pass through all the error bars.
 - Uncertainty in ε = range of y-intercepts of the two extreme lines / 2.
 - Uncertainty in r = range of gradients of the two extreme lines / 2.
 - State percentage uncertainties for each.
@@ -4368,7 +4366,7 @@ Determining uncertainties:
 F = EQ = 0.90 × 1.60 × 10⁻¹⁹ = 1.4 × 10⁻¹⁹ N
 
 This is about 10⁻¹⁹ N, as required. It is constant in both magnitude and direction (vertically upwards, since the field is upwards and the proton is positive) because the field is uniform and the force does not depend on the proton's velocity.`,
-  "phys-ocra-h556-2024-p3::6(b)(i)": `The magnetic force on the proton is F = Bqv, where v is the speed of the proton. At X and Y, the electric force is the same (constant E field, constant q), but the proton has different speeds at X and Y because it has been accelerated by the electric field between X and Y. Since the magnetic force depends on the speed (F = Bqv), and the speed is different at X and Y, the magnetic force has a different magnitude at the two points.`,
+  "phys-ocra-h556-2024-p3::6(b)(i)": `The magnetic force on the proton is F = Bqv, where v is the speed of the proton. At X and Y, the electric force is the same (constant E field, constant q), but the proton has different speeds at X and Y because the electric field does work on it between X and Y (Y is lower than X, so the proton has moved against the upward electric force and is slower at Y). Since the magnetic force depends on the speed (F = Bqv), and the speed is different at X and Y, the magnetic force has a different magnitude at the two points.`,
   "phys-ocra-h556-2024-p3::6(b)(ii)": `First find the speed at X from the magnetic force, F = BQv:
 
 v = F/(BQ) = 5.6 × 10⁻¹⁹ / (5.0 × 10⁻⁵ × 1.60 × 10⁻¹⁹) = 7.0 × 10⁴ m s⁻¹
@@ -4390,7 +4388,13 @@ The two forces are at right angles, so the magnitude of the resultant is found w
 |F| = √[(3.9 × 10⁻¹⁹)² + (1.4 × 10⁻¹⁹)²] = √(15.2 + 1.96) × 10⁻¹⁹ = √17.2 × 10⁻¹⁹
 
 |F| = 4.1 × 10⁻¹⁹ N`,
-  "phys-ocra-h556-2024-p3::6(b)(iii)2": `At Y, the resultant force is not directed purely perpendicular to the velocity of the proton. The magnetic force (Bqv) is always perpendicular to the velocity, but the electric force (qE) is always in a fixed direction (along the field lines), which is not necessarily perpendicular to the velocity at Y. Since the proton's velocity direction at Y has changed (it has been deflected by the combined fields between X and Y), the electric force component along the direction of motion is non-zero at Y. This means the electric force does work on the proton at Y, changing its kinetic energy (speed). Since the speed is changing, the motion cannot be equivalent to uniform circular motion (which requires constant speed). Therefore the motion at Y is not instantaneously equivalent to circular motion at constant speed.`,
+  "phys-ocra-h556-2024-p3::6(b)(iii)2": `At Y the proton is moving vertically downwards.
+The magnetic force at Y (3.9 × 10⁻¹⁹ N) is horizontal, to the left, so it is perpendicular to the velocity.
+The electric force F = EQ = 0.90 × 1.60 × 10⁻¹⁹ ≈ 1.4 × 10⁻¹⁹ N is vertically upwards (the field is upwards and the proton is positive), so it acts directly opposite to the velocity.
+
+1. The resultant force is therefore not perpendicular to the velocity: it has a component of 1.4 × 10⁻¹⁹ N along the line of motion, so it is not directed towards the centre of a circle. For motion in a circle at constant speed the resultant force must be perpendicular to the velocity.
+
+2. Because the electric force acts along the line of motion (opposite to the velocity), it does work on the proton (negative work at Y). The kinetic energy of the proton decreases, so its speed is decreasing at Y and is not constant.`,
   "phys-ocrb-h557-2022-p1::31(a)": `The equipotential lines are equally spaced: every 1 m rise in height corresponds to the same change in gravitational potential, 1.6 J kg⁻¹. Since the gravitational field strength is the potential gradient, g = ΔV_grav/Δh, equal potential steps for equal steps in height mean that g has the same value everywhere in the region shown — the field is uniform on this scale.`,
   "phys-ocrb-h557-2022-p1::31(b)": `Assumptions: the gravitational field strength stays constant over the whole flight (the height reached is very small compared with the radius of the Moon), and there is no air resistance.
 From the diagram the potential rises by 1.6 J kg⁻¹ for each 1 m of height, so g = 1.6 N kg⁻¹.
