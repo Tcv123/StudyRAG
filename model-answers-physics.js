@@ -3982,11 +3982,11 @@ v = zc = 0.0537 × 3.00 × 10⁸ = 1.61 × 10⁷ m s⁻¹ ≈ 1.6 × 10⁷ m s�
   "phys-ocra-h556-2024-p1::23(b)(iii)": `The Big Bang theory.`,
   "phys-ocra-h556-2024-p2::16(a)": `The voltmeter has been connected in series in the circuit. The student should move the voltmeter so that it is connected in parallel with (across) the thermistor, leaving the ammeter in series with the thermistor so that it still measures the current through it.`,
   "phys-ocra-h556-2024-p2::16(b)(i)": `Plot the remaining data points on the graph: (50, 1.51), (60, 2.10), (70, 2.80), (80, 3.66), (90, 4.76). Each point should be plotted as a small cross or dot at the correct coordinates.`,
-  "phys-ocra-h556-2024-p2::16(b)(ii)": `Draw a smooth curve of best fit through all the plotted points. The curve is exponential in shape — it curves upward with increasing gradient from bottom-left to top-right, passing through or close to all the data points. The line should be smooth, not ruled between points.`,
+  "phys-ocra-h556-2024-p2::16(b)(ii)": `Draw a smooth curve of best fit through all the plotted points. It is a smooth curve that bends upward with increasing gradient from bottom-left to top-right, passing through or close to all the data points. The line should be smooth, not ruled between points.`,
   "phys-ocra-h556-2024-p2::16(c)": `As temperature increases, the current increases (from the graph). Since the voltage is constant at 3.00 V, and R = V/I:
 
-At 30 °C: R = 3.00/0.75 × 10⁻³ = 4000 Ω
-At 90 °C: R = 3.00/4.76 × 10⁻³ = 630 Ω
+At 30 °C: R = 3.00/(0.75 × 10⁻³) = 4000 Ω
+At 90 °C: R = 3.00/(4.76 × 10⁻³) = 630 Ω
 
 As temperature increases, resistance decreases significantly (from ~4000 Ω to ~630 Ω). This is the behaviour of a Negative Temperature Coefficient (NTC) thermistor — resistance decreases as temperature increases. Therefore the student used an NTC thermistor.`,
   "phys-ocra-h556-2024-p2::16(d)": `Circuit 1: V_out is taken directly across the thermistor. Since there are no other components, V_out = 3.00 V at all temperatures (the full supply voltage). The output does not change with temperature, so Circuit 1 is not suitable as a temperature-sensing circuit.
@@ -4011,7 +4011,7 @@ Then, using v = fλ:
 f = v ÷ λ = 340 ÷ 0.4375 = 777 Hz
 
 frequency ≈ 780 Hz`,
-  "phys-ocra-h556-2024-p2::17(c)": `At positions where constructive interference previously occurred (e.g. at P1), the two waves still arrive in phase, but now Y has amplitude 2A and X has amplitude A. The combined amplitude = 2A + A = 3A (constructive). At positions of destructive interference, the signals partially cancel: amplitude = 2A − A = A (not zero). The microphone will therefore observe that maxima are louder than before (larger amplitude), the minima are no longer silent (there is a minimum amplitude of A rather than zero), and there is no longer complete cancellation. The pattern still alternates between louder and quieter regions, but the minima have a non-zero signal.`,
+  "phys-ocra-h556-2024-p2::17(c)": `At positions where constructive interference previously occurred (e.g. at P1), the two waves still arrive in phase, but now Y has amplitude 2A and X has amplitude A. The combined amplitude = 2A + A = 3A (constructive). At positions of destructive interference (e.g. at P2), the signals partially cancel: amplitude = 2A − A = A (not zero). The microphone will therefore observe that maxima are louder than before (larger amplitude), the minima are no longer silent (there is a minimum amplitude of A rather than zero), and there is no longer complete cancellation. The pattern still alternates between louder and quieter regions, but the minima have a non-zero signal.`,
   "phys-ocra-h556-2024-p2::17(d)(i)": `Intensity is the power transmitted per unit area perpendicular to the direction of wave propagation. It is measured in watts per square metre (W m⁻²). Intensity is proportional to the square of the amplitude of the wave.`,
   "phys-ocra-h556-2024-p2::17(d)(ii)": `Original situation at P1: both speakers have amplitude A, and at P1 (constructive interference) the resultant amplitude = A + A = 2A.
 Intensity at P1 (original): I ∝ (2A)² = 4A²
@@ -4022,21 +4022,28 @@ Intensity at P1 (new): I' ∝ (3A)² = 9A²
 Factor by which intensity is larger = 9A²/4A² = 9/4 = 2.25
 
 The intensity at P1 in (c) is 2.25 times larger than the original intensity at P1.`,
-  "phys-ocra-h556-2024-p2::18(a)": `Circuit diagram (labelled): a low-voltage a.c. supply (or signal generator) connected across the primary coil, which is wound on the iron core; on the same core a secondary coil, connected in a loop containing an a.c. ammeter in series with a fixed load resistor. Label the number of turns on each coil (N_p and N_s), the core, the a.c. supply and the ammeter. An a.c. supply is essential, because only a changing current gives a changing flux linkage and so an induced e.m.f. in the secondary.
+  "phys-ocra-h556-2024-p2::18(a)": `Circuit diagram (labelled): a low-voltage a.c. supply (a signal generator or low-voltage a.c. power supply) connected across the primary coil, which is wound on the core. A secondary coil is wound on the same core and connected in a separate loop containing an a.c. ammeter in series with a fixed load resistor R. Label the core, the primary coil (N_p turns), the secondary coil (N_s turns), the a.c. supply, the a.c. ammeter and the load resistor R. An a.c. supply is essential: only a changing current in the primary produces a changing magnetic flux linkage in the secondary and so an induced e.m.f.
 
-Method: Wind a primary coil with a small, fixed number of turns (for example N_p = 20) and connect it to the a.c. supply. Wind a secondary coil on the same core, counting the turns as they are wound; because the transformer is to be a step-up transformer, N_s must be larger than N_p, so start with about 40 turns. Switch on and record the output current I_s shown by the a.c. ammeter and the number of secondary turns N_s. Add more turns to the secondary (for example in steps of 20, up to about 200 turns) and record I_s each time, obtaining at least six pairs of readings. Throughout the experiment keep the input a.c. voltage, the number of primary turns, the core and the load resistor unchanged, and switch off between readings so that the coils do not heat up and change resistance.
+Method:
+Wind a primary coil with a small, fixed number of turns, for example N_p = 20, and connect it to the a.c. supply. Wind the secondary coil on the same core, counting the turns as they are wound. Because the transformer must be step-up, N_s must always be greater than N_p, so start with about 40 turns.
+Switch on, record N_s and read the output current I_s on the a.c. ammeter.
+Switch off, wind on more turns (for example 20 more each time, up to about 200 turns) and repeat, so that there are at least six pairs of values of N_s and I_s. Repeat each reading and take a mean.
+Keep the following constant throughout: the input a.c. voltage V_p (check it with an a.c. voltmeter across the primary) and its frequency, the number of primary turns N_p, the same core, and the same load resistor R. Choose R much larger than the resistance of the secondary winding, so that the resistance of the extra turns of wire has a negligible effect on the current. Switch off between readings so that the coils do not heat up.
 
-Analysis: For an ideal transformer V_s / V_p = N_s / N_p, and since energy is conserved V_p I_p = V_s I_s. Combining these gives I_s = I_p N_p / N_s. With V_p, N_p and the load kept constant, this predicts that I_s is inversely proportional to N_s, i.e. I_s ∝ 1 / N_s.
-
-To test this, plot 1 / I_s on the vertical axis against N_s on the horizontal axis (or equivalently I_s against 1 / N_s). If the relationship holds, the points lie on a straight line passing through the origin.
-
-Alternatively, plot lg I_s against lg N_s. Since I_s = constant × N_s^n gives lg I_s = lg(constant) + n lg N_s, the graph is a straight line whose gradient is n; a gradient of −1 confirms that I_s ∝ 1 / N_s.`,
+Analysis:
+Assume the transformer is ideal (all the flux from the primary links the secondary). Then
+V_s / V_p = N_s / N_p, so V_s = V_p N_s / N_p.
+The output current flows through the load resistor, so by Ohm's law
+I_s = V_s / R = (V_p / (N_p R)) × N_s.
+Since V_p, N_p and R are all kept constant, the quantity V_p / (N_p R) is a constant, so the prediction is that I_s is directly proportional to N_s.
+The current drawn from the supply is not constant: power in = power out gives I_p = I_s N_s / N_p = V_p N_s² / (N_p² R). Applying Ohm's law to the load resistor shows that adding secondary turns raises V_s and hence the current through R, so the transformer draws a larger primary current. This is why the output current increases, rather than decreases, as N_s increases.
+Plot a graph of I_s (vertical axis) against N_s (horizontal axis). If I_s ∝ N_s, the points lie on a straight line passing through the origin, with gradient V_p / (N_p R). A straight line through the origin therefore establishes that the output current is directly proportional to the number of turns on the secondary coil.`,
   "phys-ocra-h556-2024-p2::18(b)(i)": `Faraday's law states that the induced e.m.f. in a conductor is directly proportional to (equal to) the rate of change of magnetic flux linkage through that conductor. (EMF = −dNΦ/dt, where NΦ is the flux linkage.)`,
   "phys-ocra-h556-2024-p2::18(b)(ii)": `Using the transformer turns ratio: V_s/V_p = N_s/N_p
 N_s = N_p × V_s/V_p = 920 × 5.0/230 = 920/46 = 20 turns (as required).`,
   "phys-ocra-h556-2024-p2::18(b)(iii)": `Using Faraday's law for the secondary coil:
 EMF = −N_s × ΔΦ/Δt
-So ΔΦ = EMF × Δt / N_s
+So, in magnitude, ΔΦ = EMF × Δt / N_s
 
 Output voltage = 3.4 V, N_s = 20, Δt = 1.2 ms = 1.2 × 10⁻³ s
 
@@ -4080,7 +4087,7 @@ Current I = number of electrons per second × charge per electron
 I = 400 × 1.60 × 10⁻¹⁹ = 6.4 × 10⁻¹⁷ A`,
   "phys-ocra-h556-2024-p2::19(b)(iv)": `That the X-ray photons arrive at a steady rate throughout the minute (one every 5 s), so that the current is continuous rather than a series of short pulses.`,
   "phys-ocra-h556-2024-p2::20(a)": `The nuclear binding energy of a nucleus is the energy required to completely separate all the nucleons (protons and neutrons) in the nucleus from each other, dispersing them to infinity. Equivalently, it is the energy released when the nucleons combine from an unbound state to form the nucleus. It equals the mass defect multiplied by c².`,
-  "phys-ocra-h556-2024-p2::20(b)": `¹₁H (a single proton) has no neutrons and no nuclear binding — it consists of a single nucleon and cannot be split into smaller nucleons. Therefore it has zero binding energy per nucleon and cannot be plotted on a binding energy per nucleon graph. (The concept of nuclear binding energy only applies to nuclei with more than one nucleon.)`,
+  "phys-ocra-h556-2024-p2::20(b)": `¹₁H (a single proton) has no neutrons and no nuclear binding — it consists of a single nucleon and cannot be split into smaller nucleons. Therefore it has no binding energy (its binding energy is zero), so there is nothing to show for it on the diagram. (The concept of nuclear binding energy only applies to nuclei with more than one nucleon.)`,
   "phys-ocra-h556-2024-p2::20(c)(i)": `On the binding energy per nucleon graph, nuclei with low mass numbers (such as hydrogen isotopes) lie on the left-hand side where the curve has a steep positive gradient. When two light nuclei fuse, the product nucleus has a higher binding energy per nucleon than the reactants. This means the product is more tightly bound, and energy is released equal to the increase in total binding energy. Fusion of light nuclei therefore releases energy. (For heavy nuclei, fission releases energy instead as they move to higher binding energy per nucleon by splitting.)`,
   "phys-ocra-h556-2024-p2::20(c)(ii)": `From the binding energy per nucleon diagram:
 - ²₁H (deuterium): binding energy per nucleon ≈ 1.1 MeV, A = 2, total BE ≈ 2.2 MeV
@@ -4109,9 +4116,7 @@ Total number of up quarks at the start = 4.`,
   "phys-ocra-h556-2024-p2::20(e)": `In β⁻ decay, a down quark changes to an up quark:
 d → u + e⁻ + ν̄ₑ
 
-For tritium decay: ³₁H → ³₂He + e⁻ + ν̄ₑ
-In terms of quarks: one down quark becomes an up quark:
-d → u + e⁻ + ν̄ₑ`,
+(For tritium, ³₁H → ³₂He + e⁻ + ν̄ₑ: a neutron (udd) becomes a proton (uud).)`,
   "phys-ocra-h556-2024-p2::21(a)(i)": `A tracer is a radioactive substance (radioisotope) that is introduced into the body (usually injected) and is designed to be taken up by specific organs or tissues. The radiation emitted by the tracer is detected outside the body to produce an image or to monitor the function of the organ. The tracer allows doctors to diagnose medical conditions without surgery.`,
   "phys-ocra-h556-2024-p2::21(a)(ii)": `Advantage 1: Gamma radiation is highly penetrating and can pass through the body tissue to be detected outside the body by a gamma camera, allowing imaging without surgery.
 
@@ -4132,18 +4137,14 @@ ln(0.030) = −λt
 −3.507 = −3.203 × 10⁻⁵ × t
 t = 3.507 / 3.203 × 10⁻⁵ = 1.095 × 10⁵ s
 
-Convert to hours: t = 1.095 × 10⁵ / 3600 = 30.4 hours ≈ 30 hours
-
-Alternatively: A/A₀ = (1/2)^(t/t½), so 0.030 = (0.5)^(t/6.01)
-t/6.01 = log(0.030)/log(0.5) = (−1.523)/(−0.3010) = 5.06
-t = 5.06 × 6.01 = 30.4 hours ≈ 30 hours`,
-  "phys-ocra-h556-2024-p2::21(c)": `The half-life of ⁹⁹₄₃Tc is over 200 000 years, which means it decays extremely slowly. The activity (decay rate) from the small amount present in the body will be negligibly small — far too low to cause significant ionising radiation dose to the patient. Furthermore, 50% of it passes out of the body relatively quickly, and the amount initially present is very small (only a few nanograms). The dose received is therefore negligible compared to natural background radiation.`,
+Convert to hours: t = 1.095 × 10⁵ / 3600 = 30.4 hours ≈ 30 hours`,
+  "phys-ocra-h556-2024-p2::21(c)": `The half-life of ⁹⁹₄₃Tc is over 200 000 years, which means it decays extremely slowly. The activity (decay rate) from the small amount present in the body will be negligibly small — far too low to cause significant ionising radiation dose to the patient. Furthermore, about 50% of it is passed out of the body, and the amount initially present is very small (only a few nanograms). The dose received is therefore negligible compared to natural background radiation.`,
   "phys-ocra-h556-2024-p2::21(d)": `Method
 Use a Geiger–Müller tube connected to a counter (or ratemeter), with a stopwatch for timing, and a clamp and stand to hold the tube.
 
 Before bringing the source out, measure the background radiation: with no source nearby, record the number of counts for one minute, and repeat over at least three minutes so that a reliable mean background count per minute is obtained.
 
-Take the source from its lead-lined box using tongs, holding it at arm's length and pointing it away from the body, and clamp it a short fixed distance in front of the GM tube. Neither the source nor the tube is moved for the rest of the experiment. Record the number of counts in exactly one minute, timed with the stopwatch, and then return the source to the lead-lined box. Repeat this once every hour for six hours.
+Take the source from its lead-lined box using tongs, holding it at arm's length and pointing it away from the body, and clamp it a short fixed distance in front of the GM tube. The GM tube is not moved, and the source is put back in exactly the same position (the same distance from the tube) for every reading. Record the number of counts in exactly one minute, timed with the stopwatch, and then return the source to the lead-lined box. Repeat this once every hour for six hours.
 
 For each reading, subtract the mean background count per minute from the measured count per minute to obtain the corrected count rate, then take its natural logarithm and plot ln(corrected count rate / minute) against time in hours.
 
@@ -4172,8 +4173,8 @@ C = (8.85 × 10⁻¹² × 4.52 × 10⁸) / (3.2 × 10³)
   "phys-ocra-h556-2024-p2::22(b)(i)": `Using V = kQ/r = Q/(4πε₀r), where the cloud acts as a point charge:
 Q = 155 C, r = 2.0 km = 2.0 × 10³ m
 V = Q/(4πε₀r) = (155) / (4π × 8.85 × 10⁻¹² × 2.0 × 10³)
-= 155 / (2.228 × 10⁻⁷)
-= 6.96 × 10⁸ V ≈ 7.0 × 10⁸ V`,
+= 155 / (2.224 × 10⁻⁷)
+= 6.97 × 10⁸ V ≈ 7.0 × 10⁸ V`,
   "phys-ocra-h556-2024-p2::22(b)(ii)": `The strike lasts 25 ms and the cloud discharges completely (155 C).
 Charge reaching ground per second = 155 / (25 × 10⁻³) = 6200 C s⁻¹ = 6200 A
 
