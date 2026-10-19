@@ -554,7 +554,7 @@ Because the prism is a right-angled isosceles triangle, the ray then strikes eac
 
 Each reflection turns the ray through 90°, so after the two reflections the ray has been turned through 180° and travels back to the longest side. It meets the longest side along the normal, at an angle of incidence of 0°, so it leaves without being refracted.
 
-The emergent ray therefore travels along the same line direction as the incident ray, i.e. parallel to it.`,
+The emergent ray therefore travels along a line parallel to the incident ray, but in the opposite direction (the path of the light is reversed).`,
   "phys-aqa-7408-2023-p1::04.3": `Continue the ray that has already reflected off the left-hand shorter side:
 
 • At the point where it meets the second (right-hand) shorter side, draw only one ray leaving that point — the totally internally reflected ray. Do not draw any refracted ray escaping through that side, because the angle of incidence there is 41.5°, i.e. at the critical angle, so all the light is reflected.
@@ -659,7 +659,7 @@ From moments about A:
 x = 1.18 m from A`,
   "phys-aqa-7408-2023-p1::06.1": `For SHM, the acceleration must be proportional to the displacement from the equilibrium position and directed toward the equilibrium position.
 
-For a pencil of length l floating vertically, if pushed down a small distance y from equilibrium, the restoring force is the net upward force (increased buoyancy minus weight): F = −ρ_water × A × g × y, where A is the cross-sectional area.
+For the floating pencil, if pushed down a small distance y from equilibrium, the restoring force is the net upward force (increased buoyancy minus weight): F = −ρ_water × A × g × y, where A is the cross-sectional area.
 
 By Newton's second law: ma = −ρ_water A g y
 So a = −(ρ_water A g / m) y
