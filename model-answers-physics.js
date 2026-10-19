@@ -884,7 +884,7 @@ Counting images from the labelled n = 40 point on Figure 3, the image just after
 Δt = (62 − 43)/f = 19/31.0 = 0.613 s
 
 horizontal velocity = 970/0.613 = 1580 mm s⁻¹ ≈ 1.6 × 10³ mm s⁻¹`,
-  "phys-aqa-7408-2023-p3::01.6": `Annotate Figure 3 by drawing a smooth curve through the four highest points of the bounce (the images either side of the peak, n ≈ 53–56) and drawing a horizontal line from the top of that curve across to the h-axis. This gives the maximum height reached between the second and third contacts:
+  "phys-aqa-7408-2023-p3::01.6": `Annotate Figure 3 by drawing a smooth curve through the four highest points of the bounce (the images either side of the peak, n = 51 to 54) and drawing a horizontal line from the top of that curve across to the h-axis. This gives the maximum height reached between the second and third contacts:
 
 h_max = 497 mm = 0.497 m
 
@@ -907,7 +907,7 @@ On Figure 4 the point at V = 3.30 V and the point at V = 11.47 V are 13 recordin
 rate of increase of V = ΔV/Δt = 8.17/5.2 = 1.57 V s⁻¹`,
   "phys-aqa-7408-2023-p3::02.2": `Two advantages of using data logging for this experiment:
 1. Data logging records voltage and current values at very short, regular time intervals automatically, providing many more data points than could be recorded manually, giving a more detailed and accurate I–V characteristic.
-2. The data logger records values continuously and simultaneously, avoiding the time delay between reading two separate meters that would occur with manual readings, reducing the error due to the changing temperature of the filament during the measurement.`,
+2. The data logger records the values of V and I simultaneously at each sampling instant, avoiding the time delay between reading two separate meters that would occur with manual readings, reducing the error due to the changing temperature of the filament during the measurement.`,
   "phys-aqa-7408-2023-p3::02.3": `Circuit 2 can produce all of the data. With X connected as a potential divider, the pd applied to L can be varied continuously from 0 V right up to the full 12 V of the supply, which covers the whole range of Figure 4.
 
 Circuit 1 cannot. There X is in series with L, so the current is smallest when X is set to its maximum resistance of 14.9 Ω:
