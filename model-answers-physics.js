@@ -5512,12 +5512,12 @@ Young modulus: E = stress/strain = (F/A)/(ΔL/L)
 ΔL = FL/(EA) = (550 × 240) / (13.2 × 10⁹ × 1.131 × 10⁻⁴)
 = 132 000 / (1.493 × 10⁶)
 = 0.0884 m ≈ 0.088 m (8.8 cm)`,
-  "phys-ocrb-h557-2024-p2::1(c)": `When the parasail moves at a greater constant horizontal velocity, the air drag on the sail increases (drag is proportional to v²). For the parasailor and sail to remain in equilibrium at the higher speed, a greater horizontal component of tension is required to balance the increased drag. Therefore the tension in the rope will increase above 550 N.`,
+  "phys-ocrb-h557-2024-p2::1(c)": `When the parasail moves at a greater constant horizontal velocity, the air drag on the sail increases (drag increases with speed). For the parasailor and sail to remain in equilibrium at the higher speed, a greater horizontal component of tension is required to balance the increased drag. Therefore the tension in the rope will increase above 550 N.`,
   "phys-ocrb-h557-2024-p2::2(a)": `Best-fit line: draw one straight ruled line through the eight points, starting from the origin (0.0, 0.0) and passing close to the highest point at (0.80, 1.27), with roughly equal numbers of points lying just above and just below it.
 
-Gradient: take two points on the line separated by more than half the range of the data, for example (0.10, 0.17) and (0.80, 1.27):
+Gradient: take two points on the line separated by more than half the range of the data, for example (0.00, 0.00) and (0.80, 1.27):
 
-gradient = (1.27 − 0.17) / (0.80 − 0.10) = 1.10 / 0.70
+gradient = (1.27 − 0.00) / (0.80 − 0.00) = 1.27 / 0.80 = 1.59
 
 gradient = 1.6 V m⁻¹ (2 s.f.)`,
   "phys-ocrb-h557-2024-p2::2(b)": `For a length L of the nichrome wire, V = IR and R = ρL/A, so V = (Iρ/A)L. The gradient of the p.d.–L graph is therefore Iρ/A, and
@@ -5546,7 +5546,7 @@ so ρ = (1.17 ± 0.09) × 10⁻⁶ Ω m.`,
 
 The resistivity of a metal increases with temperature, so the resistance of a given length of the wire is larger than it would have been at the controlled current, and a larger p.d. is recorded for that length.
 
-The extra p.d. is greatest at the short lengths and negligible at the long ones, so the points at small L are lifted above the original straight line. The graph is no longer a straight line through the origin: it rises steeply at first and then bends over, becoming a curve of (slightly) decreasing gradient.`,
+The extra p.d. is greatest at the short lengths and smaller at the long ones, so the points at small L are lifted above the original straight line. The graph is no longer a straight line through the origin: it rises steeply at first and then bends over, becoming a curve of (slightly) decreasing gradient.`,
   "phys-ocrb-h557-2024-p2::3(a)": `At the equilibrium position the upward force from the spring balances the weight of the mass:
 
 kx = mg
@@ -5556,8 +5556,8 @@ x = mg / k = (0.25 × 9.81) / 23.0 = 2.4525 / 23.0
 x = 0.107 m, which is about 0.11 m as required.`,
   "phys-ocrb-h557-2024-p2::3(b)(i)": `Fig. 3.1 is a straight line. The resultant force is zero at the equilibrium extension of about 0.107 m; for smaller extensions the resultant force is positive (downwards) and for larger extensions it is negative (upwards). So the graph shows that the resultant force is proportional to the displacement from the equilibrium position and is always directed back towards it, i.e. F ∝ −s.
 
-Since F = ma, the acceleration is also proportional to the negative of the displacement from equilibrium, a ∝ −s, and that is the defining condition for simple harmonic motion. The line stays straight for displacements of at least 0.11 m on either side of the equilibrium position, so the mass will oscillate with simple harmonic motion for any amplitude up to about 0.11 m — including the 0.03 m amplitude used here.`,
-  "phys-ocrb-h557-2024-p2::3(b)(ii)": `For oscillations with amplitude greater than 0.11 m, the mass moves upward by more than the equilibrium extension, meaning the spring would be compressed or would become slack (zero extension). Once the spring goes slack, there is no spring force, only gravity. The restoring force is no longer proportional to displacement — it cannot follow F = −kx beyond this point. Since the force–displacement relationship is no longer linear, the motion is not SHM.`,
+Since F = ma, the acceleration is also proportional to the negative of the displacement from equilibrium, a ∝ −s, and that is the defining condition for simple harmonic motion. The line stays straight all the way from zero extension (about 0.11 m above the equilibrium position) to the end of the graph below it, so the mass will oscillate with simple harmonic motion for any amplitude up to about 0.11 m — including the 0.03 m amplitude used here.`,
+  "phys-ocrb-h557-2024-p2::3(b)(ii)": `For oscillations with amplitude greater than 0.11 m, the mass moves upward by more than the equilibrium extension, meaning the spring would be compressed or would become slack (zero extension). Once the spring goes slack, there is no spring force, only gravity, so the resultant (downward) force on the mass cannot rise above its weight of 2.45 N, however far it moves above that point. The restoring force is no longer proportional to displacement — it cannot follow F = −kx beyond this point. Since the force–displacement relationship is no longer linear, the motion is not SHM.`,
   "phys-ocrb-h557-2024-p2::3(c)": `frequency = 1.5 Hz
 
 Reasoning: the amplitude is greatest at resonance, which occurs when the driving frequency of the vibration generator is equal to the natural frequency of the mass–spring system, because energy is then transferred to the oscillator most readily.
@@ -5580,7 +5580,7 @@ The frequency of infrared radiation of wavelength 3.3 × 10⁻⁶ m is
 f = c/λ = 3.0 × 10⁸ / 3.3 × 10⁻⁶ = 9.1 × 10¹³ Hz
 
 The two frequencies are equal, so this radiation drives the molecule at its natural frequency and the molecule resonates. Energy is transferred to the oscillating molecule far more readily at resonance than at any other frequency, so infrared of this wavelength is absorbed much more strongly than other wavelengths.`,
-  "phys-ocrb-h557-2024-p2::4(a)": `At points where the path difference from the two (or multiple) slits is a whole number of wavelengths (nλ, where n = 0, 1, 2, ...), the waves arrive in phase. Waves that are in phase interfere constructively, meaning the amplitudes add together, producing a bright spot (maximum intensity). Between these maxima, the path difference is not a whole number of wavelengths, so the waves are not in phase and interfere partially or completely destructively, producing dark regions. This alternating pattern of constructive interference (bright dots) and destructive interference produces a series of bright dots across the screen.`,
+  "phys-ocrb-h557-2024-p2::4(a)": `At points where the path difference between waves from adjacent slits of the grating is a whole number of wavelengths (nλ, where n = 0, 1, 2, ...), the waves arrive in phase. Waves that are in phase interfere constructively, meaning the amplitudes add together, producing a bright spot (maximum intensity). Between these maxima, the path difference is not a whole number of wavelengths, so the waves are not in phase and interfere partially or completely destructively, producing dark regions. This alternating pattern of constructive interference (bright dots) and destructive interference produces a series of bright dots across the screen.`,
   "phys-ocrb-h557-2024-p2::4(b)(i)": `Grating spacing: d = 1 / (300 × 10³ m⁻¹) = 1/300 000 = 3.333 × 10⁻⁶ m
 Using the grating equation: d sin θ = nλ
 For n = 3: sin θ = 3λ/d = (3 × 175 × 10⁻⁹) / (3.333 × 10⁻⁶)
@@ -5598,7 +5598,7 @@ E_k(max) = hf − φ = 1.136 × 10⁻¹⁸ − 6.88 × 10⁻¹⁹
 = 4.48 × 10⁻¹⁹ J ≈ 4.5 × 10⁻¹⁹ J
 
 In eV: E_k(max) = hf/e − φ/e = (1.136 × 10⁻¹⁸)/(1.60 × 10⁻¹⁹) − 4.3 = 7.10 − 4.3 = 2.8 eV`,
-  "phys-ocrb-h557-2024-p2::4(b)(iv)": `Explanation using photon model: Light consists of photons, each carrying a discrete energy E = hf. One photon interacts with one electron; the photon's energy is transferred entirely to the electron. The kinetic energy of the ejected electron equals the photon energy minus the work function: E_k = hf − φ. Since each photon has the same energy (determined only by frequency f, not intensity), all ejected electrons have the same maximum kinetic energy regardless of intensity. Increasing intensity means more photons per unit time but each photon still has the same energy hf, so the maximum kinetic energy of ejected electrons remains unchanged.
+  "phys-ocrb-h557-2024-p2::4(b)(iv)": `Explanation using photon model: Light consists of photons, each carrying a discrete energy E = hf. One photon interacts with one electron; the photon's energy is transferred entirely to the electron. The maximum kinetic energy of an ejected electron equals the photon energy minus the work function: E_k(max) = hf − φ. Since each photon has the same energy (determined only by frequency f, not intensity), all ejected electrons have the same maximum kinetic energy regardless of intensity. Increasing intensity means more photons per unit time but each photon still has the same energy hf, so the maximum kinetic energy of ejected electrons remains unchanged.
 
 Effect of increasing intensity: Increasing the intensity increases the number of photons hitting the surface per second. Since each photon can eject one electron (provided hf > φ), more photons result in more electrons being ejected per second — the photocurrent increases. However, the maximum kinetic energy of each individual ejected electron remains the same, because E_k(max) depends only on frequency, not on the number of photons.`,
   "phys-ocrb-h557-2024-p2::4(c)": `A wave-only model cannot explain the ejection of the electrons. In that model the energy arriving is spread continuously over the whole zinc surface, so an electron would have to accumulate energy gradually and the energy it gained would depend on the intensity of the light and on how long the surface was illuminated. Light of low intensity would then still eject electrons after a delay, and the maximum kinetic energy would increase with intensity — neither of which happens, and the existence of a threshold frequency cannot be explained at all.
@@ -5641,7 +5641,7 @@ p = 4.0 × 10⁻¹¹ / 3.0 × 10⁸ = 1.33 × 10⁻¹⁹ kg m s⁻¹
 
 This wavelength is comparable with the size of a nucleus, which is why these electrons are diffracted by nuclei.
 
-Diameter of the nucleus: in Fig. 5.2 the experimental curve dips well below the Rutherford curve, and the diffraction minimum lies at about θ = 22°. Using sin θ = 1.22λ/d,
+Diameter of the nucleus: in Fig. 5.2 the experimental curve dips below the Rutherford curve, and the diffraction minimum lies at about θ = 22°. Using sin θ = 1.22λ/d,
 
 d = 1.22λ / sin θ = (1.22 × 5.0 × 10⁻¹⁵) / sin 22° = 6.1 × 10⁻¹⁵ / 0.375
 
@@ -5677,7 +5677,7 @@ ln(2/3) = −λt
 −0.4055 = −λt
 t = 0.4055 / λ = 0.4055 / (4.87 × 10⁻¹⁸) = 8.33 × 10¹⁶ s
 Converting to years: t = 8.33 × 10¹⁶ / 3.156 × 10⁷ = 2.64 × 10⁹ years ≈ 2.6 × 10⁹ years`,
-  "phys-ocrb-h557-2024-p2::6(c)(i)": `The reaction shows that one neutron absorbed by a U-235 nucleus produces, among the fission products, 3 neutrons. These 3 neutrons can each go on to be absorbed by other U-235 nuclei, each producing 3 more fission events and 9 neutrons. Provided a sufficient proportion of these neutrons cause further fissions (rather than being absorbed by non-fissile materials or escaping), the number of fissions grows exponentially — this is a chain reaction. For a sustained (critical) chain reaction, on average exactly one neutron from each fission must go on to cause another fission.`,
+  "phys-ocrb-h557-2024-p2::6(c)(i)": `The reaction shows that one neutron absorbed by a U-235 nucleus produces, among the fission products, 3 neutrons. Each of these 3 neutrons can be absorbed by another U-235 nucleus, causing it to fission in turn: 3 more fissions, releasing 9 neutrons, and the process repeats. Provided a sufficient proportion of these neutrons cause further fissions (rather than being absorbed by non-fissile materials or escaping), the number of fissions grows exponentially — this is a chain reaction. For a sustained (critical) chain reaction, on average exactly one neutron from each fission must go on to cause another fission.`,
   "phys-ocrb-h557-2024-p2::6(c)(ii)": `To produce a steady power of 2.5 MW, the rate of fission of Pu-239 must be constant.
 Rate of fissions needed: rate = P / E_per_fission = 2.5 × 10⁶ / 3.3 × 10⁻¹² = 7.576 × 10¹⁷ fissions s⁻¹.
 
@@ -5691,16 +5691,15 @@ It makes the data harder to interpret because equal distances along the axis no 
   "phys-ocrb-h557-2024-p2::7(b)": `The proportion absorbed per kilometre depends on the density of the atmosphere being crossed. The air near the ground is far denser than the air at the top of the atmosphere, so there are many more atoms in each kilometre of path; the chance of a gamma photon interacting with a particle in that kilometre is correspondingly greater, so the fraction absorbed per km increases steadily as the rays descend and is not the same all the way down.
 
 The energy (and hence frequency or wavelength) of the gamma rays also matters: higher energy gamma rays have more energy to transfer in collisions and are scattered and absorbed differently from lower energy ones, so gamma rays of different energies are absorbed at different rates per kilometre.`,
-  "phys-ocrb-h557-2024-p2::8(a)": `The Rayleigh criterion gives the angular resolution limit:
-θ = 1.22λ/D = 1.22 × 2000 × 10⁻⁹ / 6.5
-= 1.22 × 2.00 × 10⁻⁶ / 6.5
-= 2.44 × 10⁻⁶ / 6.5
-= 3.75 × 10⁻⁷ rad ≈ 0.4 μrad ✓`,
+  "phys-ocrb-h557-2024-p2::8(a)": `Using the article's equation (line 19), the angular resolution limit is:
+θ = 1.2λ/d = 1.2 × 2000 × 10⁻⁹ / 6.5
+= 2.4 × 10⁻⁶ / 6.5
+= 3.69 × 10⁻⁷ rad ≈ 0.4 μrad, as required`,
   "phys-ocrb-h557-2024-p2::8(b)(i)": `image resolution = angular width / number of pixels = 0.60 × 10⁻³ / 4121
 
 image resolution = 1.5 × 10⁻⁷ rad pixel⁻¹ (0.15 μrad per pixel)
 
-Suggestion: the telescope's resolution limit is 1.22λ/D, which is proportional to wavelength. The camera also works at wavelengths much shorter than 2000 nm, and at those shorter wavelengths the resolution limit is smaller than the 0.4 μrad calculated in (a). The pixels must be small enough to resolve that finer detail; if each pixel covered more than the resolution limit the sharpness of the image would be set by the detector rather than by the optics, and detail the telescope can actually resolve would be thrown away.`,
+Suggestion: the telescope's resolution limit is 1.2λ/d (line 19 of the article), which is proportional to wavelength. The camera also works at wavelengths much shorter than 2000 nm, and at those shorter wavelengths the resolution limit is smaller than the 0.4 μrad calculated in (a). The pixels must be small enough to resolve that finer detail; if each pixel covered more than the resolution limit the sharpness of the image would be set by the detector rather than by the optics, and detail the telescope can actually resolve would be thrown away.`,
   "phys-ocrb-h557-2024-p2::8(b)(ii)": `Recession speed from the redshift:
 
 z = Δλ/λ = (668 − 657) / 657 = 11 / 657 = 0.0167
@@ -5709,19 +5708,19 @@ v = zc = 0.0167 × 3.0 × 10⁸ = 5.0 × 10⁶ m s⁻¹
 
 Distance from Hubble's law. First convert the Hubble constant to SI units:
 
-H₀ = 73 × 10³ / (3.1 × 10²²) = 2.4 × 10⁻¹⁸ s⁻¹
+H₀ = 73 × 10³ / (3.1 × 10²²) = 2.35 × 10⁻¹⁸ s⁻¹
 
-d = v / H₀ = 5.0 × 10⁶ / 2.4 × 10⁻¹⁸ = 2.1 × 10²⁴ m
+d = v / H₀ = 5.02 × 10⁶ / 2.35 × 10⁻¹⁸ = 2.14 × 10²⁴ m
 
-d = 2.1 × 10²⁴ / 9.5 × 10¹⁵ = 2.2 × 10⁸ light years, i.e. about 223 million light years.
+d = 2.14 × 10²⁴ / 9.5 × 10¹⁵ = 2.25 × 10⁸ light years, i.e. about 225 million light years.
 
 Width of the main section. The whole image in Fig. 8 spans 0.60 mrad, and the line AB is a little over half of the image width, about 0.32 mrad. For such a small angle,
 
-width = θ × d = 0.32 × 10⁻³ × 2.23 × 10⁸
+width = θ × d = 0.32 × 10⁻³ × 2.25 × 10⁸
 
 width = 7.2 × 10⁴ light years, so the main section of the galaxy is roughly 72 000 light years across.
 
-Comment on possible causes of error: the largest uncertainty is in the Hubble constant itself. The accepted value has changed considerably over the years, and measurements made in different ways still disagree by several per cent, so the distance — and therefore the width, which is proportional to it — carries the same percentage error. The Hubble 'constant' also need not have had the same value throughout the 220 million years the light has been travelling. On top of that, the angular separation AB has to be measured by eye from the image: A and B mark a diffuse edge rather than a sharp one, and the image itself is only resolved to 0.15 μrad per pixel, so the 0.32 mrad reading could easily be a few per cent out. Any motion of the galaxy of its own, in addition to the expansion of the universe, would also alter the measured redshift and hence the calculated distance.`,
+Comment on possible causes of error: the largest uncertainty is in the Hubble constant itself. The accepted value has changed considerably over the years, and measurements made in different ways still disagree by several per cent, so the distance — and therefore the width, which is proportional to it — carries the same percentage error. The Hubble 'constant' also need not have had the same value throughout the 220 million years the light has been travelling. On top of that, the angular separation AB has to be measured by eye from the image: A and B mark a diffuse edge rather than a sharp one, so the 0.32 mrad reading could easily be a few per cent out (the image resolution of 0.15 μrad per pixel limits how precisely the edges can be located, although that alone is a much smaller effect). Any motion of the galaxy of its own, in addition to the expansion of the universe, would also alter the measured redshift and hence the calculated distance.`,
   "phys-ocrb-h557-2024-p2::9": `The total energy of the satellite is constant, so the sum of its gravitational potential energy and its kinetic energy is the same at every point of the orbit. Working per kilogram of satellite:
 
 At the furthest point, r = 1.5 × 10⁸ m and v = 1.1 × 10³ m s⁻¹:
@@ -5777,7 +5776,7 @@ g_Moon = (6.67 × 10⁻¹¹ × 6.0 × 10²²) / (1.12 × 10⁹)² = 3.2 × 10⁻
 
 That is only about 0.05% of the 5.99 × 10⁻³ N kg⁻¹ already there: the maximum total field becomes 6.0 × 10⁻³ N kg⁻¹ and the orbital speed stays at 3.0 × 10⁴ m s⁻¹ to 2 s.f.
 
-So the Moon has only a very small effect and does not stop the JWST orbiting L2. Its effect is not quite zero, though: because its distance from L2 and its direction both change through the month, the resultant field at L2 varies slightly and periodically, and this varying field slowly disturbs the telescope's path around L2, so small corrections have to be made.`,
+So the Moon has only a very small effect and does not stop the JWST orbiting L2. Its effect is not quite zero, though: because its distance from L2 and its direction both change through the month, the resultant field at L2 varies slightly and periodically, and this varying field slightly disturbs the telescope's path around L2.`,
   "phys-ocrb-h557-2024-p3::1(a)": `Put a few drops of water (or of oil) into the hole before pushing the thermometer in. The liquid fills the air gap between the thermometer bulb and the aluminium, so heat passes readily from the block to the bulb and the thermometer records the block's temperature rather than lagging behind it.`,
   "phys-ocrb-h557-2024-p3::1(b)(i)": `For each data point on Fig. 1.2, draw a vertical bar (error bar) extending ±1.0°C above and below the plotted point. Each bar should be centred on the data point and have a total length corresponding to 2.0°C on the temperature axis scale.`,
   "phys-ocrb-h557-2024-p3::1(b)(ii)": `Draw the two extreme ruled straight lines that still pass inside every one of the eleven uncertainty bars, each extended right across the grid from t = 0 to t = 10 minutes.
