@@ -245,7 +245,7 @@
           <span><i class="dot d-g">✓</i> GCSE content</span>
           <span><i class="dot d-a">A</i> A-Level shown instead</span>
           <span><i class="dot d-r">–</i> Missing</span>
-          <span>Numbers are topic counts; under Past papers, the number of papers.</span>
+          <span>Numbers are topic counts; under Past papers and Mark schemes, the number of papers.</span>
         </div>
         <div class="fbar" role="search">
           <label class="field grow">
@@ -281,6 +281,7 @@
               <option value="aifb">AI feedback</option>
               <option value="flash">Flashcards</option>
               <option value="papers">Past papers</option>
+              <option value="ms">Mark schemes</option>
             </select>
           </label>
           <label class="field">
@@ -300,7 +301,7 @@
         <p class="empty" id="fEmpty" hidden>No boards match these filters.</p>
         <div class="scroll">
           <table>
-            <thead><tr><th>Board</th><th class="c">Notes</th><th class="c">Diagnostic</th><th class="c">Topic list</th><th class="c">Practice Qs</th><th class="c">AI feedback</th><th class="c">Flashcards</th><th class="c">Past papers</th><th>Status</th></tr></thead>
+            <thead><tr><th>Board</th><th class="c">Notes</th><th class="c">Diagnostic</th><th class="c">Topic list</th><th class="c">Practice Qs</th><th class="c">AI feedback</th><th class="c">Flashcards</th><th class="c">Past papers</th><th class="c">Mark schemes</th><th>Status</th></tr></thead>
             <tbody id="rows"></tbody>
           </table>
         </div>
@@ -368,7 +369,7 @@ async function logout() {
   function render(data) {
     var rows = '', gaps = '';
     data.forEach(function (s) {
-      rows += '<tr class="subj"><td colspan="9">' + esc(s.subject) + '</td></tr>';
+      rows += '<tr class="subj"><td colspan="10">' + esc(s.subject) + '</td></tr>';
       s.boards.forEach(function (b) {
         rows += '<tr data-subject="' + esc(s.subject) + '" data-board="' + esc(b.board) + '" data-status="' + b.status + '"' +
           COLS.map(function (c) { return ' data-' + c + '="' + b.cells[c][0] + '"'; }).join('') +

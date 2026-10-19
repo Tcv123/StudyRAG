@@ -30,14 +30,16 @@
    an unlabelled board is A-Level (boardsForLevel). Board names are matched
    after dropping the bracketed suffix ("Edexcel (Pearson)" → "Edexcel") and
    reading a bare "OCR" as "OCR A", as past-papers.html does. A board with
-   only an official-page link and no papers is red. papers-config.js is
+   only an official-page link and no papers is red. Mark schemes count the
+   same papers, keeping only those whose mark scheme is in the app part by
+   part (the papers mark-schemes.html can show). papers-config.js is
    large, so it is fetched once, only by the pages that ask for coverage.
 ═══════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  var COLS = ['notes', 'diag', 'topics', 'practice', 'aifb', 'flash', 'papers'];
-  var COL_NAMES = { notes: 'Notes', diag: 'Diagnostic', topics: 'Topic list', practice: 'Practice questions', aifb: 'AI feedback', flash: 'Flashcards', papers: 'Past papers' };
+  var COLS = ['notes', 'diag', 'topics', 'practice', 'aifb', 'flash', 'papers', 'ms'];
+  var COL_NAMES = { notes: 'Notes', diag: 'Diagnostic', topics: 'Topic list', practice: 'Practice questions', aifb: 'AI feedback', flash: 'Flashcards', papers: 'Past papers', ms: 'Mark schemes' };
   var NAME = { gcse: 'GCSE', alevel: 'A-Level' };
 
   function other(level) { return level === 'gcse' ? 'alevel' : 'gcse'; }
@@ -86,16 +88,33 @@
     return n === 'ocr' ? 'ocr a' : n;
   }
 
-  // [state, paper count] for one subject + board at `level`.
-  function papersCell(papersData, subject, board, level) {
-    var subj = (papersData || []).filter(function (s) { return s.name === subject; })[0];
+  // [state, paper count] for one subject + board at `level`, counting the
+  // papers `keep` accepts.
+  function papersCell(papersData, subject, board, level, keep) {
+    var subj = (papersData.subjects || []).filter(function (s) { return s.name === subject; })[0];
     if (!subj) return ['r', ''];
-    var withPapers = (subj.boards || []).filter(function (b) {
-      return normBoard(b.board) === normBoard(board) && (b.papers || []).length > 0;
-    });
-    var mine = withPapers.filter(function (b) { return (b.level || 'alevel') === level; });
-    if (mine.length) return ['g', mine.reduce(function (n, b) { return n + b.papers.length; }, 0)];
-    return withPapers.length ? ['a', ''] : ['r', ''];
+    var counted = (subj.boards || []).filter(function (b) {
+      return normBoard(b.board) === normBoard(board);
+    }).map(function (b) {
+      return { level: b.level || 'alevel', n: (b.papers || []).filter(keep).length };
+    }).filter(function (b) { return b.n > 0; });
+    var mine = counted.filter(function (b) { return b.level === level; });
+    if (mine.length) return ['g', mine.reduce(function (n, b) { return n + b.n; }, 0)];
+    return counted.length ? ['a', ''] : ['r', ''];
+  }
+
+  // A paper's mark scheme is in the app when it has per-question parts or a
+  // verified Maths / Further Maths side-file entry — the same test as
+  // hasMarkSchemeData() in mark-schemes.html (paperPartCount reads
+  // `partCount` on the deployed copy, where the parts load on demand).
+  function anyPaper() { return true; }
+  function hasMarkScheme(papersData) {
+    var verified = papersData.verified || {};
+    return function (p) {
+      return (p.parts && p.parts.length > 0) ||
+             (papersData.partCount ? papersData.partCount(p) > 0 : false) ||
+             !!verified[p.id];
+    };
   }
 
   function build(level, notesMap, papersData) {
@@ -112,7 +131,8 @@
           practice: [resolve(window.PRACTICE_BUNDLE_MAP, u, bg, level), ''],
           aifb:     [resolve(window.AI_FEEDBACK_BUNDLE_MAP, u, bg, level), ''],
           flash:    [resolve(window.FLASHCARDS_TOPICS, p, bg, level), count(window.FLASHCARDS_TOPICS, p, level)],
-          papers:   papersCell(papersData, s.name, b, level)
+          papers:   papersCell(papersData || {}, s.name, b, level, anyPaper),
+          ms:       papersCell(papersData || {}, s.name, b, level, hasMarkScheme(papersData || {}))
         };
         var ks = COLS.map(function (c) { return cells[c][0]; });
         var st = ks.every(function (k) { return k === 'g'; }) ? 'ready'
@@ -139,19 +159,29 @@
     return notesPromise;
   }
 
-  // papers-config.js assigns to `window`, so it is run against a stand-in
-  // rather than the page's own window. A failed fetch shows the column red.
+  // papers-config.js and the Maths side files assign to `window`, so each is
+  // run against a stand-in rather than the page's own window. A failed fetch
+  // leaves its part out: no papers shows the columns red, and a missing side
+  // file only drops the Maths / Further Maths mark schemes it holds.
+  function runScript(file) {
+    return fetch(file, { cache: 'no-store' })
+      .then(function (r) { return r.text(); })
+      .then(function (src) { var w = {}; new Function('window', src)(w); return w; })
+      .catch(function () { return {}; });
+  }
   var papersPromise = null;
   function papersData() {
     if (!papersPromise) {
-      papersPromise = fetch('papers-config.js', { cache: 'no-store' })
-        .then(function (r) { return r.text(); })
-        .then(function (src) {
-          var w = {};
-          new Function('window', src)(w);
-          return w.SUBJECTS || [];
-        })
-        .catch(function () { return []; });
+      papersPromise = Promise.all([runScript('papers-config.js'),
+                                   runScript('maths-questions.js'),
+                                   runScript('further-maths-questions.js')])
+        .then(function (w) {
+          var verified = {};
+          [w[1].MATHS_QUESTIONS, w[2].FM_QUESTIONS].forEach(function (side) {
+            Object.keys(side || {}).forEach(function (id) { if (side[id] && side[id].verified) verified[id] = true; });
+          });
+          return { subjects: w[0].SUBJECTS || [], partCount: w[0].paperPartCount, verified: verified };
+        });
     }
     return papersPromise;
   }
