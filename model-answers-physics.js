@@ -194,7 +194,7 @@ Draw a second smooth curve of the same rectangular-hyperbola shape lying entirel
   "phys-aqa-7408-2022-p2::03.1": `The excess electrons are located on the outer surface of the sphere.
 
 In a conducting material, electrons are free to move. The excess electrons all carry the same (negative) charge and therefore repel each other. They redistribute themselves on the surface of the conductor, moving as far from each other as possible. Since the sphere is a conductor in electrostatic equilibrium, the electric field inside must be zero. If any electrons were in the interior, they would experience a net force (due to mutual repulsion) and would move, which contradicts equilibrium. Therefore, all the excess electrons reside on the outer surface of the sphere, spread uniformly across it.`,
-  "phys-aqa-7408-2022-p3::03.1": `One problem with using callipers to measure the diameter of the putty cylinder: the callipers may compress or deform the soft putty when they are closed around it, giving a reading that is smaller than the actual diameter. (Putty is soft and deformable, so the jaws of the callipers distort the sample.)`,
+  "phys-aqa-7408-2022-p3::03.1": `One problem with using callipers to measure the diameter of the putty cylinder: the jaws of the callipers may squash (deform) the soft putty when they are closed around it, giving a reading that is smaller than the actual diameter. (Putty is soft and deformable, so the jaws of the callipers distort the sample.)`,
   "phys-aqa-7408-2022-p2::03.2": `Draw a tangent to the curve at r = 0.30 m, making it long enough to span most of the horizontal scale.
 
 The tangent cuts the V axis at about −1.2 × 10⁶ V and reaches V = 0 at about r = 0.60 m, so
@@ -335,7 +335,9 @@ speed of sound = 5800 m s⁻¹`,
 At the existing time-base setting of 50 μs per division that waveform would need 12 divisions, but the screen is only 10 divisions wide. The waveform would therefore extend beyond the edge of the screen and could not be displayed in full, so the contact time could not be measured.
 
 To get an accurate result for the speed the time-base control must be turned to a slower setting of 0.1 ms per division. The 600 μs burst then occupies 6 divisions and fits on the screen, so the contact time — and hence the speed — can be measured as before.`,
-  "phys-aqa-7408-2022-p3::02.1": `To avoid parallax error when reading the position of the pin against the ruler: position the eye so that it is directly level with (perpendicular to) both the pin and the ruler scale. If a mirror is placed behind the ruler, the observer should align their line of sight so that the image of the pin in the mirror is directly behind the actual pin — this ensures the eye is perpendicular to the scale and the pin, eliminating parallax. Alternatively, use a set square placed against the ruler to read off the position of the pin at right angles.`,
+  "phys-aqa-7408-2022-p3::02.1": `Place a plane mirror vertically behind the ruler, next to its scale, so that the pin's reflection can be seen in it.
+
+Move the eye up or down until the pin exactly hides (lines up with) its own reflection in the mirror. The line of sight is then horizontal and perpendicular to the scale, so read the ruler at the point where the pin crosses it; this removes parallax error.`,
   "phys-aqa-7408-2022-p3::02.2": `The strip is the only one available, so w and t are fixed. Choose m as the single independent variable and keep L constant.
 
 Procedure
@@ -357,7 +359,7 @@ Substitute the measured L, w and t in metres, the gradient in m kg⁻¹ and g = 
 Range = 34.5 − 32.9 = 1.6 mm
 Uncertainty in d = range/2 = 1.6/2 = 0.8 mm
 
-Percentage uncertainty = (0.8 / 33.8) × 100% = 2.37% ≈ 2.4% ✓`,
+Percentage uncertainty = (0.8 / 33.8) × 100% = 2.37% ≈ 2.4%`,
   "phys-aqa-7408-2022-p3::03.3": `Volume of cylinder V = π(d/2)²L = πd²L/4
 
 d = 33.8 mm = 33.8 × 10⁻³ m, % uncertainty in d = 2.4%
@@ -423,7 +425,7 @@ Measuring the gradient of the line in Figure 13, using the two ends of the line:
 gradient = Δlog V / Δlog p = (1.170 − 1.685) / (−0.600 − (−1.100)) = −0.515/0.500 = −1.03
 
 The measured gradient is −1.03, which is equal to −1 within the uncertainty of the read-offs. A gradient of −1 means V ∝ 1/p, so pV is constant and the air obeys Boyle's law.`,
-  "phys-aqa-7408-2022-p3::04.6": `The gradient of the line in Figure 13 is −1, so log V + log p is the same everywhere along it. Reading the upper end of the line, at log(p/MPa) = −1.100 the value of log(V/cm³) is 1.685, so
+  "phys-aqa-7408-2022-p3::04.6": `The gradient of the line in Figure 13 is −1 within experimental uncertainty (Boyle's law), so log V + log p is constant along it. Reading the upper end of the line, at log(p/MPa) = −1.100 the value of log(V/cm³) is 1.685, so
 
 log V + log p = 1.685 + (−1.100) = 0.585
 hence pV = 10^0.585 = 3.85 (MPa cm³)
