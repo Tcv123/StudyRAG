@@ -1431,7 +1431,7 @@ The current graph is a quarter of a cycle (90°) ahead of the potential differen
 The positive and negative contributions therefore cancel exactly, the mean power over a complete cycle is zero, and so the capacitor dissipates no power — it only stores energy and then gives it back to the supply.`,
   "phys-edexcel-9ph0-2023-p2::11": `The frequency of a vibrating string is given by f = (1/2L)√(T/μ), where L is the length, T is the tension, and μ is the mass per unit length (linear density).
 
-For strings of the same length and tension, f ∝ 1/√μ.
+Equivalently, the wave speed on the string is v = √(T/μ), so a greater μ gives a smaller wave speed. Since v = fλ and the wavelength of the standing wave is fixed by the length of the string (λ = 2L for the fundamental), for strings of the same length and tension f ∝ v ∝ 1/√μ.
 
 A thicker string has a greater cross-sectional area. Since μ = ρA (where ρ is the density of the material and A is the cross-sectional area), a thicker string has a greater mass per unit length μ.
 
@@ -1452,13 +1452,14 @@ c = 307 J kg⁻¹ K⁻¹
 This lies between the two tabulated values, but the block must be copper. The experimental value is an underestimate, because some energy is transferred to the surroundings and the block is unlikely to have reached the full 100 °C, so the true specific heat capacity is higher than 307 J kg⁻¹ K⁻¹ and therefore closer to the 390 J kg⁻¹ K⁻¹ of copper.
 
 Tin can also be ruled out directly: for tin the block would have to cool by 5208 J / (0.220 kg × 230 J kg⁻¹ K⁻¹) = 103 K, so it would have to start at 23 + 103 = 126 °C. That is impossible, because the block was heated in boiling water at 100 °C. The block is therefore made from copper.`,
-  "phys-edexcel-9ph0-2023-p2::13(a)": `Inside a fusion reactor, the conditions are extremely extreme:
+  "phys-edexcel-9ph0-2023-p2::13(a)": `The conditions inside a fusion reactor are extreme:
 1. Very high temperature — of the order of 10⁸ K (hundreds of millions of degrees Celsius). This is necessary so that hydrogen nuclei (e.g. deuterium and tritium) have sufficient kinetic energy to overcome the electrostatic repulsion between their positive charges and come close enough for the strong nuclear force to cause fusion.
 2. Very high pressure — the plasma must be confined at very high density so that collisions between nuclei are frequent enough to sustain the fusion reaction.
-3. The plasma (ionised gas of nuclei and free electrons) must be confined, typically using powerful magnetic fields (in a tokamak design) or inertial confinement, since no material container could withstand such temperatures.`,
+3. The plasma (ionised gas of nuclei and free electrons) must be confined, typically using powerful magnetic fields (in a tokamak design) or inertial confinement, since no material container could withstand such temperatures.
+4. The reactor walls and materials are bombarded by high-energy neutrons released by the fusion reactions.`,
   "phys-edexcel-9ph0-2023-p2::13(b)": `In fusion, two small nuclei join together to form a larger nucleus. The graph shows that the binding energy per nucleon rises very steeply over the first part of the curve, so the nucleus produced is much more tightly bound than the nuclei that formed it.
 
-For example, the graph gives a binding energy per nucleon of about 1 MeV for a nucleus of nucleon number 2 and about 7 MeV for one of nucleon number 4, an increase of roughly 6 MeV for every nucleon involved; by a nucleon number of 50 the value has risen to about 8.7 MeV.
+For example, the graph shows the binding energy per nucleon rising from about 1 MeV at a nucleon number of about 2 to about 7 MeV by a nucleon number of about 8, an increase of roughly 6 MeV for every nucleon involved; and from about 5.2 MeV at a nucleon number of 12 it rises to about 8.7 MeV by a nucleon number of 50.
 
 Because the binding energy per nucleon increases, the total binding energy of the product is greater than that of the original nuclei, so the product has a larger mass deficit and the total rest mass has decreased. That lost mass appears as released energy according to ΔE = c²Δm, and since c² is very large and the change in binding energy per nucleon is several MeV, each fusion reaction releases a large amount of energy.`,
   "phys-edexcel-9ph0-2023-p2::14(a)": `When the stove uses the butane gas, the gas escapes from the canister and is burned. To replace this gas, liquid butane inside the canister evaporates. Evaporation requires energy (the latent heat of vaporisation), which is the energy needed to break the intermolecular bonds between liquid molecules so they can escape as gas.
@@ -1466,7 +1467,7 @@ Because the binding energy per nucleon increases, the total binding energy of th
 This energy must come from the internal (thermal) energy of the remaining liquid butane and the canister itself, since the evaporation happens rapidly and heat cannot flow in from the surroundings quickly enough. As the internal energy of the liquid decreases, its temperature falls.
 
 Therefore the temperature of the canister decreases because the thermal energy of the butane (and the canister) is used to supply the latent heat needed for evaporation.`,
-  "phys-edexcel-9ph0-2023-p2::14(b)(i)": `Volume of canister: V = πr²h = π × (0.11)² × 0.23 = π × 0.0121 × 0.23 = 8.745 × 10⁻³ m³
+  "phys-edexcel-9ph0-2023-p2::14(b)(i)": `Volume of canister: V = πr²h = π × (0.11)² × 0.23 = π × 0.0121 × 0.23 = 8.743 × 10⁻³ m³
 
 Pressure: p = 220 kPa = 220 × 10³ Pa
 Temperature: T = 21 + 273 = 294 K
@@ -1474,8 +1475,8 @@ Temperature: T = 21 + 273 = 294 K
 Using the ideal gas equation: pV = NkT
 where k = 1.38 × 10⁻²³ J K⁻¹
 
-N = pV/(kT) = (220 × 10³ × 8.745 × 10⁻³) / (1.38 × 10⁻²³ × 294)
-N = (1923.9) / (4.0572 × 10⁻²¹)
+N = pV/(kT) = (220 × 10³ × 8.743 × 10⁻³) / (1.38 × 10⁻²³ × 294)
+N = (1923.5) / (4.0572 × 10⁻²¹)
 N = 4.74 × 10²³ molecules`,
   "phys-edexcel-9ph0-2023-p2::14(b)(ii)": `Using ½m<c²> = (3/2)kT, so <c²> = 3kT/m:
 
@@ -1507,7 +1508,7 @@ This value of 75 km s⁻¹ Mpc⁻¹ lies between 60 and 80 km s⁻¹ Mpc⁻¹, s
 
 So λ_emitted = λ_observed / (1 + z) = (4.0 × 10⁻⁶) / (1 + 14) = (4.0 × 10⁻⁶) / 15 = 2.67 × 10⁻⁷ m
 
-This corresponds to ultraviolet wavelength (267 nm), which is in the ultraviolet part of the spectrum.`,
+This wavelength (267 nm) is in the ultraviolet part of the spectrum.`,
   "phys-edexcel-9ph0-2023-p2::15(b)(ii)": `The light was emitted by Maisie as ultraviolet radiation (wavelength ~267 nm). As the universe has expanded during the time the light has been travelling towards us, the space through which the light travels has stretched. This stretching of space causes the wavelength of the light to increase in proportion to the expansion — this is cosmological redshift. The wavelength has been stretched by a factor of (1 + z) = 15, from ~267 nm (UV) to 4.0 × 10⁻⁶ m (4000 nm = infrared). So the light arrives at the telescope as infrared radiation because its wavelength has been redshifted by the expansion of the universe.`,
   "phys-edexcel-9ph0-2023-p2::15(c)": `Work function φ = 0.30 eV = 0.30 × 1.60 × 10⁻¹⁹ J = 4.80 × 10⁻²⁰ J
 
@@ -1516,8 +1517,6 @@ The wavelength of the light from Maisie arriving at the telescope is λ = 4.0 ×
 Energy of a photon: E = hc/λ = (6.63 × 10⁻³⁴ × 3.00 × 10⁸) / (4.0 × 10⁻⁶)
 = (1.989 × 10⁻²⁵) / (4.0 × 10⁻⁶)
 = 4.97 × 10⁻²⁰ J
-
-Convert work function to joules: φ = 4.80 × 10⁻²⁰ J
 
 Since E_photon = 4.97 × 10⁻²⁰ J > φ = 4.80 × 10⁻²⁰ J, the photon has more energy than the work function.
 
@@ -1542,7 +1541,7 @@ f = 1/T = 1 / 0.783 s = 1.28 Hz ≈ 1.3 Hz`,
   "phys-edexcel-9ph0-2023-p2::16(c)": `The conditions for simple harmonic motion are:
 1. The acceleration of the object must be proportional to its displacement from the equilibrium position.
 2. The acceleration must always be directed towards the equilibrium position (i.e. the restoring force acts opposite to the displacement).`,
-  "phys-edexcel-9ph0-2023-p2::16(d)": `Oil of high viscosity has a greater resistance to flow (it is thicker/more viscous). When the piston moves through the oil-filled cylinder, the oil must flow past or through the piston. A more viscous oil exerts a larger viscous drag force on the piston that opposes its motion. This drag force is proportional to the velocity of the piston (for viscous flow). The large resistive force removes energy from the oscillating system much more quickly than a less viscous oil would. When the energy is removed rapidly, the amplitude of oscillation decreases rapidly — this is heavy (or overdamped) damping. The system quickly returns to equilibrium without oscillating.`,
+  "phys-edexcel-9ph0-2023-p2::16(d)": `Oil of high viscosity has a greater resistance to flow (it is thicker/more viscous). When the piston moves through the oil-filled cylinder, the oil must flow past or through the piston. A more viscous oil exerts a larger viscous drag force on the piston that opposes its motion. This drag force is proportional to the velocity of the piston (for viscous flow). As the piston moves, a large amount of work is done against this resistive force, so energy is transferred from the oscillations to the oil (as thermal energy) much more quickly than with a less viscous oil. Because the energy of the oscillations is dissipated so quickly, the oscillations die away almost immediately — this is heavy damping.`,
   "phys-edexcel-9ph0-2023-p2::17(a)": `A diffraction grating has a very large number of equally spaced slits. When the light reaches the grating, each slit acts as a source of secondary waves, and the waves spreading out from the different slits overlap and superpose.
 
 In a direction where the path difference between the waves from adjacent slits is a whole number of wavelengths, the waves all arrive in phase and interfere constructively, giving a sharp bright line. In every other direction the waves from the many slits are out of phase with one another and cancel, so the regions between the bright lines are dark. The condition for a bright line is nλ = d sinθ, where d is the spacing of the slits, θ is the angle from the straight-through direction and n is the order.
@@ -1558,7 +1557,7 @@ The pattern seen is therefore a purple central line, with a separate blue line a
 
 Electrons in these atoms can only absorb photons of specific energies that exactly match the energy difference between two electron energy levels (ΔE = hf). When such a photon is absorbed, the electron is excited to a higher energy level. The absorbed photon is removed from the beam of light travelling towards us.
 
-Although the excited electron eventually re-emits a photon of the same energy when it returns to a lower level, this re-emitted photon is sent out in a random direction — not specifically towards the observer. The net effect is that photons of specific frequencies (corresponding to specific electron energy transitions) are removed from the continuous spectrum that the star's core emits, resulting in dark lines (absorption lines) at those wavelengths in the spectrum we observe.`,
+Although the excited electron soon returns to a lower level and the energy is re-emitted as one or more photons, these photons are sent out in random directions — not specifically towards the observer. The net effect is that photons of specific frequencies (corresponding to specific electron energy transitions) are removed from the continuous spectrum emitted by the hotter, denser layers of the star below, resulting in dark lines (absorption lines) at those wavelengths in the spectrum we observe.`,
   "phys-edexcel-9ph0-2023-p2::17(b)(ii)": `First find the peak wavelength from Wien's law, λ(max)T = 2.898 × 10⁻³ m K:
 λ(max) = 2.898 × 10⁻³ m K / 5800 K = 5.0 × 10⁻⁷ m = 0.50 μm
 
@@ -1612,11 +1611,11 @@ So M_J = (4π²r³) / (GT²)
 
 M_J = (4π² × (1.07 × 10⁹)³) / (6.67 × 10⁻¹¹ × (615 600)²)
 
-Numerator: 4π² × (1.07)³ × 10²⁷ = 4 × 9.870 × 1.2250 × 10²⁷ = 48.34 × 10²⁷ = 4.834 × 10²⁸
+Numerator: 4π² × (1.07)³ × 10²⁷ = 4 × 9.870 × 1.2250 × 10²⁷ = 48.36 × 10²⁷ = 4.836 × 10²⁸
 
-Denominator: 6.67 × 10⁻¹¹ × (615 600)² = 6.67 × 10⁻¹¹ × 3.790 × 10¹¹ = 6.67 × 3.790 = 25.27
+Denominator: 6.67 × 10⁻¹¹ × (615 600)² = 6.67 × 10⁻¹¹ × 3.790 × 10¹¹ = 6.67 × 3.790 = 25.28
 
-M_J = 4.834 × 10²⁸ / 25.27 = 1.91 × 10²⁷ kg`,
+M_J = 4.836 × 10²⁸ / 25.28 = 1.91 × 10²⁷ kg`,
   "phys-edexcel-9ph0-2023-p3::1(a)": `Using the diffraction grating equation: d sinθ = nλ
 
 Grating: 300 lines per mm, so d = 1/300 mm = 3.33 × 10⁻³ mm = 3.33 × 10⁻⁶ m
