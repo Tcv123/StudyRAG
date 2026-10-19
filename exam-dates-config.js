@@ -156,6 +156,12 @@ const EXAM_DATES = {
     { paper: 'Papers 1 & 3 — Topics C1–C3', date: '2027-05-17', time: 'AM', duration: '1h 45m' },
     { paper: 'Papers 2 & 4 — Topics C4–C6', date: '2027-06-15', time: 'AM', duration: '1h 45m' },
   ],
+  // OCR J258, from OCR's June 2027 final exam timetable (GCSE and Cambridge
+  // Nationals). Foundation papers 1/2 and Higher papers 3/4 share the slots.
+  'Chemistry_OCR B|gcse': [
+    { paper: 'Breadth in chemistry — Papers 1 & 3', date: '2027-05-17', time: 'AM', duration: '1h 45m' },
+    { paper: 'Depth in chemistry — Papers 2 & 4', date: '2027-06-15', time: 'AM', duration: '1h 45m' },
+  ],
   'Chemistry_OCR B': [
     { paper: 'Paper 1 — Fundamentals', date: '2026-06-02', time: 'AM', duration: '2h 15m' },
     { paper: 'Paper 2 — Scientific Literacy', date: '2026-06-09', time: 'AM', duration: '2h 15m' },

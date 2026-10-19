@@ -1,0 +1,194 @@
+deck: Chemistry|OCR B|gcse
+# OCR Twenty First Century Science Chemistry B (J258) — chapters C1–C6, written from the specification.
+
+## C1
+What does the particle model say about solids, liquids and gases? ~~ Solids: particles touching in a fixed, regular arrangement, vibrating. Liquids: particles touching but randomly arranged and able to move past each other. Gases: particles far apart, moving quickly in random directions.
+What is the difference between a physical change and a chemical change? ~~ A physical change (e.g. a change of state) makes no new substance and is easily reversed; a chemical change makes new substances.
+Why do different substances melt and boil at different temperatures? ~~ The stronger the forces between the particles, the more energy must be transferred to overcome them, so the higher the melting or boiling point.
+Do individual particles have the same properties as the bulk substance? ~~ No — e.g. a single particle of copper is not coloured or hot or cold; bulk properties come from many particles together.
+Give a limitation of the particle model when particles are drawn as inelastic spheres. ~~ It does not show the scale, real shape or movement of particles, ignores the forces between them and assumes the particles bounce without energy loss.
+What were the main gases in the Earth's early atmosphere and where did they come from? ~~ Mainly carbon dioxide and water vapour (with some nitrogen and small amounts of other gases), released by intense volcanic activity.
+How did the oceans form? ~~ As the Earth cooled, water vapour condensed to form the oceans.
+How did oxygen build up in the atmosphere? ~~ Photosynthesising organisms (algae, then plants) took in carbon dioxide and released oxygen.
+How did the amount of carbon dioxide in the atmosphere fall? ~~ It was taken in by photosynthesis, dissolved in the oceans, and locked up in sedimentary rocks (e.g. limestone), fossil fuels such as oil and gas.
+What evidence is used to work out how the atmosphere has changed? ~~ The types and chemical composition of ancient rocks and fossil evidence of early life.
+What is the approximate composition of today's dry air? ~~ About 78% nitrogen, 21% oxygen, about 1% argon and about 0.04% carbon dioxide.
+What causes carbon monoxide and particulates to form from fuels? ~~ Incomplete combustion — burning a fuel in a limited supply of oxygen.
+How is sulfur dioxide produced when fuels burn? ~~ Sulfur impurities in the fuel react with oxygen.
+How are oxides of nitrogen formed in engines? ~~ At high temperatures nitrogen from the air is oxidised; nitrogen monoxide is then further oxidised in the air.
+What harm do sulfur dioxide and oxides of nitrogen cause? ~~ They cause acid rain and breathing problems; nitrogen oxides also help form photochemical smog.
+Why is carbon monoxide dangerous? ~~ It is toxic — it reduces the blood's ability to carry oxygen.
+Name three ways of decreasing pollutant emissions from fuels. ~~ Catalytic converters, low-sulfur petrol and gas scrubbers (e.g. in power station chimneys).
+What is oxidation in terms of oxygen? ~~ Gain of oxygen — so combustion of a fuel is an oxidation reaction.
+Describe the tests for oxygen, hydrogen and carbon dioxide. ~~ Oxygen relights a glowing splint; hydrogen burns with a squeaky pop with a lighted splint; carbon dioxide turns limewater milky (cloudy).
+What is an exothermic reaction? ~~ A reaction that transfers energy to the surroundings, so the temperature of the surroundings increases (e.g. combustion).
+What is an endothermic reaction? ~~ A reaction that takes in energy from the surroundings, so the temperature of the surroundings decreases.
+What is activation energy? ~~ The minimum energy needed to break bonds so that a reaction can start.
+On a reaction profile for an exothermic reaction, where are the products? ~~ Lower in energy than the reactants; the difference is the energy given out.
+Is bond breaking exothermic or endothermic? ~~ Bond breaking takes in energy (endothermic); bond making gives out energy (exothermic).
+How do you calculate the energy change from bond energies? ~~ Energy change = energy taken in to break bonds − energy given out making bonds. A negative answer means the reaction is exothermic.
+How does a hydrogen–oxygen fuel cell compare with burning hydrogen? ~~ It uses the same overall reaction and makes only water, but transfers the energy electrically to drive a motor rather than in an engine.
+What is the greenhouse effect? ~~ The warm Earth emits infrared radiation; greenhouse gases such as carbon dioxide and methane absorb it and re-emit it in all directions, keeping the Earth warmer than it would otherwise be.
+What evidence links human activity to climate change? ~~ A correlation between rising atmospheric CO₂ concentration, fossil fuel consumption and global temperatures over the last 200 years.
+Give four possible effects of increased CO₂ and methane on the climate. ~~ Changes to where crops can be grown, more extreme weather, melting polar ice and flooding of low-lying land.
+Describe how potable water is produced and how chlorine is tested for. ~~ Ground/waste water is filtered (including membrane filtration), aerated, treated with bacteria and chlorinated; salt water can be distilled. Chlorine turns damp blue litmus paper red and then bleaches it white.
+
+## C2
+What was Dalton's model of the atom? ~~ Atoms are tiny, solid, indivisible spheres; each element has its own type of atom.
+What was Thomson's 'plum pudding' model? ~~ A ball of positive charge with negative electrons embedded in it, after he discovered the electron.
+What did Rutherford's experiment show? ~~ Most of the atom is empty space, with a tiny, dense, positively charged nucleus at the centre that contains most of the mass.
+What did Bohr add to the atomic model? ~~ Electrons orbit the nucleus in fixed shells (energy levels).
+Give the relative charges and masses of protons, neutrons and electrons. ~~ Proton +1, mass 1; neutron 0, mass 1; electron −1, mass about 1/2000 (very small).
+What is the typical size of an atom? ~~ About 10⁻¹⁰ m across; the nucleus is about 100 000 times smaller than the atom.
+How do you work out the numbers of protons, neutrons and electrons in an atom? ~~ Protons = atomic number; electrons = protons (in a neutral atom); neutrons = mass number − atomic number.
+What are isotopes? ~~ Atoms of the same element with the same number of protons but different numbers of neutrons.
+What is the electron arrangement of sodium (atomic number 11)? ~~ 2.8.1
+How is the position of an element in the Periodic Table linked to its electrons? ~~ The group number equals the number of outer-shell electrons; the period number equals the number of occupied shells.
+How did Mendeleev arrange the elements? ~~ By relative atomic mass and by their properties, putting similar elements in groups.
+Why did Mendeleev leave gaps and swap some elements? ~~ So elements lined up with others with similar properties; he predicted that the gaps were undiscovered elements and predicted their properties.
+What later evidence supported Mendeleev's table? ~~ Newly discovered elements (e.g. germanium) fitted his gaps and properties, and ordering by atomic number (proton number) explained his reorderings.
+Compare the typical physical properties of metals and non-metals. ~~ Metals: shiny, high melting points, dense, good electrical conductors. Non-metals: dull, often low melting points, low density, poor conductors (except graphite).
+What are the Group 1 metals like? ~~ Soft metals with low density that are stored under oil; they tarnish quickly in moist air and react vigorously with water and chlorine.
+What is the trend in reactivity of Group 1 and why? ~~ Reactivity increases down the group because the outer electron is further from the nucleus and more easily lost.
+What is produced when a Group 1 metal reacts with water? ~~ A metal hydroxide (an alkaline solution) and hydrogen, e.g. 2Na + 2H₂O → 2NaOH + H₂.
+Give the states and colours of chlorine, bromine and iodine at room temperature. ~~ Chlorine: pale green gas. Bromine: red-brown liquid (orange-brown vapour). Iodine: grey-black solid (purple vapour).
+What is the trend in reactivity of Group 7 and why? ~~ Reactivity decreases down the group because the outer shell is further from the nucleus, so it is harder to gain an electron.
+What is a halogen displacement reaction? ~~ A more reactive halogen displaces a less reactive halogen from a solution of its metal halide, e.g. chlorine + potassium bromide → potassium chloride + bromine.
+Why are the Group 0 elements unreactive? ~~ Their atoms have a full outer shell of electrons, so they do not need to gain, lose or share electrons; they exist as single atoms.
+What properties do the Group 0 elements have? ~~ Colourless gases at room temperature with very low melting and boiling points.
+How does ionic bonding form? ~~ A metal atom transfers electron(s) to a non-metal atom, forming a positive and a negative ion with full outer shells, which attract strongly.
+What charge do Group 1 and Group 7 ions have? ~~ Group 1 ions are 1+ (lose one electron); Group 7 ions are 1− (gain one electron).
+Describe the structure of an ionic compound. ~~ A giant lattice of positive and negative ions held together by strong electrostatic attractions in all directions.
+Why do ionic compounds have high melting points? ~~ A lot of energy is needed to overcome the strong electrostatic attraction between oppositely charged ions.
+When do ionic compounds conduct electricity? ~~ When molten or dissolved in water, because the ions can move; not when solid, because the ions are fixed.
+Give a limitation of dot-and-cross diagrams of ionic compounds. ~~ They do not show the 3-D arrangement, relative sizes of ions, or that the ions form a giant lattice.
+What do the state symbols (s), (l), (g) and (aq) mean? ~~ Solid, liquid, gas and aqueous (dissolved in water).
+What are the general properties of transition metals? ~~ High melting points and densities, less reactive than Group 1, form coloured ions with different charges (e.g. Fe²⁺, Fe³⁺) and are used as catalysts.
+
+## C3
+Describe metallic bonding. ~~ A giant lattice of positive metal ions surrounded by a 'sea' of delocalised electrons; strong electrostatic attraction holds the structure together.
+Why are metals malleable and ductile? ~~ The layers of ions can slide over each other while still being held together by the delocalised electrons.
+Why do metals conduct electricity and heat? ~~ The delocalised electrons are free to move through the structure.
+Why do metals have high melting points? ~~ There is strong electrostatic attraction between the positive ions and the delocalised electrons, which takes a lot of energy to overcome.
+How can metals be placed in a reactivity series? ~~ By comparing their reactions with water and dilute acid and their displacement reactions with compounds of other metals.
+Give the reactivity series from potassium to silver. ~~ Potassium, sodium, calcium, magnesium, aluminium, (carbon), zinc, iron, lead, (hydrogen), copper, silver.
+Why are some metals more reactive than others? ~~ More reactive metals lose electrons to form positive ions more easily.
+What is a metal displacement reaction? ~~ A more reactive metal displaces a less reactive metal from a compound, e.g. zinc + copper sulfate → zinc sulfate + copper.
+Write the ionic equation for zinc displacing copper from copper sulfate solution. ~~ Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)
+Which metals can be extracted by heating with carbon? ~~ Metals below carbon in the reactivity series, e.g. zinc, iron, lead and copper.
+In extraction with carbon, what is oxidised and what is reduced? ~~ The metal oxide is reduced (loses oxygen) and carbon is oxidised (gains oxygen).
+Why are some metals extracted by electrolysis? ~~ They are more reactive than carbon, so carbon cannot reduce their oxides (e.g. aluminium).
+What are bacterial extraction and phytoextraction? ~~ Biological methods that use bacteria or plants to extract metals (e.g. copper) from low-grade ores or waste; they save energy and new ore but are slow.
+What is electrolysis? ~~ The decomposition of an electrolyte (a molten or dissolved ionic compound) by an electric current.
+Why must an ionic compound be molten or dissolved to be electrolysed? ~~ So that the ions are free to move to the electrodes.
+What forms at each electrode with inert electrodes? ~~ Metals (or hydrogen) form at the cathode (negative); non-metals form at the anode (positive).
+What are the products of electrolysis of molten lead bromide? ~~ Lead at the cathode and bromine at the anode.
+In electrolysis, what are oxidation and reduction in terms of electrons? ~~ Oxidation is loss of electrons (at the anode); reduction is gain of electrons (at the cathode). OIL RIG.
+Write the half equation at the cathode in aluminium extraction. ~~ Al³⁺ + 3e⁻ → Al
+Why must the carbon anodes be replaced in aluminium extraction? ~~ Oxygen formed at the anode reacts with the hot carbon to form carbon dioxide, so the anodes burn away.
+In the electrolysis of an aqueous salt, when does hydrogen form at the cathode? ~~ When the metal is more reactive than hydrogen (e.g. sodium); less reactive metals such as copper or silver are deposited instead.
+What forms at the anode in electrolysis of aqueous solutions? ~~ Oxygen usually forms (from hydroxide ions from water), but a concentrated chloride solution gives chlorine.
+What are the products of electrolysis of concentrated sodium chloride solution? ~~ Hydrogen at the cathode and chlorine at the anode; sodium hydroxide is left in solution.
+What is crude oil and why is it important? ~~ A finite mixture of hydrocarbons; it is the main source of fuels and a feedstock for the petrochemical industry (including polymers).
+How does fractional distillation separate crude oil? ~~ Crude oil is vaporised; the column is hot at the bottom and cool at the top, so fractions condense at different heights according to their boiling points.
+Why do larger hydrocarbon molecules have higher boiling points? ~~ They have stronger intermolecular forces, so more energy is needed to separate the molecules.
+What is the general formula of the alkanes? ~~ CₙH₂ₙ₊₂ — e.g. methane CH₄, ethane C₂H₆, propane C₃H₈, butane C₄H₁₀.
+What is a covalent bond? ~~ A strong bond formed when two atoms share a pair of electrons.
+Why do simple molecular substances have low melting and boiling points? ~~ Only the weak intermolecular forces between molecules need to be overcome; the covalent bonds do not break.
+What is cracking and why is it done? ~~ Breaking long-chain alkanes into shorter, more useful alkanes (e.g. for petrol) and alkenes, which are used to make polymers; it matches supply to demand.
+
+## C4
+Name the main classes of material compared in C4. ~~ Glass and clay ceramics, polymers, composites and metals.
+What is a composite material? ~~ A material made of two or more materials combined to give useful properties, e.g. reinforced concrete (steel rods in concrete).
+Why are ceramics used for plates and insulators? ~~ They are hard, stiff, have high melting points and are electrical insulators, though brittle.
+What is an alloy? ~~ A mixture of a metal with other elements (usually other metals or carbon).
+Why are alloys harder than pure metals? ~~ Atoms of different sizes disrupt the regular layers, so the layers cannot slide over each other as easily.
+What is steel? ~~ An alloy of iron with carbon (and sometimes other metals, e.g. chromium in stainless steel), stronger and harder than iron.
+What is addition polymerisation? ~~ Many small alkene monomers join together when their C=C double bonds open, forming one long chain with no other product.
+What is the repeating unit of poly(ethene)? ~~ –CH₂–CH₂– (shown in brackets with 'n'), made from ethene monomers CH₂=CH₂.
+What is condensation polymerisation? ~~ Monomers with two functional groups each join together, and a small molecule (usually water) is released at each link.
+What do polyesters and polyamides form from? ~~ Polyesters: dicarboxylic acids and diols. Polyamides: dicarboxylic acids and diamines.
+Name three naturally occurring polymers and their monomers. ~~ DNA (four nucleotides), proteins (amino acids) and starch/cellulose (sugars).
+Why does carbon form so many compounds? ~~ Each carbon atom can form four covalent bonds and carbon atoms can bond to each other in chains and rings.
+Why do long polymer chains have higher melting points than small molecules? ~~ Longer chains have more intermolecular forces between them, which need more energy to overcome.
+What is the structure of diamond? ~~ A giant covalent structure in which each carbon atom is bonded to four others in a rigid 3-D lattice.
+Why is diamond very hard with a very high melting point? ~~ Many strong covalent bonds must be broken.
+What is the structure of graphite? ~~ Layers of hexagonal rings in which each carbon atom bonds to three others, with weak forces between the layers and one delocalised electron per atom.
+Why is graphite soft and slippery and why does it conduct? ~~ The layers slide over each other easily; the delocalised electrons can move through the structure.
+What are allotropes? ~~ Different structural forms of the same element, e.g. diamond, graphite, graphene and fullerenes.
+Do giant covalent substances conduct electricity? ~~ Usually not (e.g. diamond), because there are no free electrons or ions — graphite and graphene are exceptions.
+What size are nanoparticles? ~~ 1–100 nm (1 nm = 10⁻⁹ m) — similar in scale to molecules, containing a few hundred atoms.
+How does surface area to volume ratio change as particle size decreases? ~~ It increases — e.g. halving the side of a cube doubles its surface area to volume ratio.
+Why are nanoparticles good catalysts? ~~ Their very high surface area to volume ratio exposes many more atoms to react.
+What are fullerenes used for? ~~ Hollow cages (e.g. buckyballs) can carry drug molecules into the body; nanotubes are used as molecular sieves and to strengthen materials such as sports equipment.
+What are the properties of graphene? ~~ A single layer of graphite one atom thick; very strong, and an excellent conductor of electricity and heat.
+What are the possible risks of nanoparticles? ~~ Their tiny size lets them enter cells and tissues, and their large surface area may make them reactive or toxic; their long-term health effects are not well known.
+What conditions are needed for iron to rust? ~~ Both oxygen (air) and water.
+How do barrier methods prevent rusting? ~~ Paint, oil, grease or plastic keep air and water away from the iron.
+How does sacrificial protection work? ~~ A more reactive metal such as zinc is attached or coated; it is oxidised instead of the iron, even if the coating is scratched.
+What stages are considered in a life-cycle assessment (LCA)? ~~ Extracting and processing raw materials, manufacture, transport, use, and disposal (landfill, incineration, recycling) — including water, energy and environmental impact.
+Why is reusing a PET bottle better than recycling it? ~~ Reuse needs less energy than breaking down and reprocessing the material; recycling still saves crude oil compared with making new PET.
+
+## C5
+What is a pure substance in chemistry? ~~ A single element or compound, not mixed with any other substance.
+How does 'pure' in everyday language differ from the chemical meaning? ~~ Everyday 'pure' means natural or with nothing added (e.g. 'pure orange juice'), which can still be a mixture.
+What is a formulation? ~~ A mixture designed as a useful product, with components in measured proportions, e.g. paints, medicines, fertilisers.
+How can melting point show whether a substance is pure? ~~ A pure substance melts at a sharp, fixed temperature that matches data values; impurities lower the melting point and make it melt over a range.
+What are the two phases in chromatography? ~~ The stationary phase (e.g. paper) and the mobile phase (the solvent); substances separate by their distribution between the two.
+How do you calculate an Rf value? ~~ Rf = distance moved by the substance ÷ distance moved by the solvent front.
+How does chromatography show whether a substance is pure? ~~ A pure substance gives a single spot in all solvents; a mixture gives two or more spots.
+When is a locating agent needed in chromatography? ~~ When the substances are colourless, so the spots can be seen after the chromatogram has run.
+Why might a non-aqueous solvent be used in chromatography? ~~ Some substances are insoluble in water, so another solvent (e.g. ethanol) is needed to move them.
+How is an insoluble solid separated from a liquid? ~~ Filtration — the solid stays on the filter paper as the residue and the liquid passes through as the filtrate.
+How is a soluble solid obtained from its solution as crystals? ~~ Crystallisation — warm to evaporate some solvent until crystals start to form, then leave to cool and filter off the crystals.
+When is simple distillation used? ~~ To separate a solvent from a solution, e.g. pure water from salt water.
+When is fractional distillation used? ~~ To separate a mixture of miscible liquids with different boiling points, e.g. ethanol and water or crude oil.
+Why is representative sampling needed in analysis? ~~ So the sample tested has the same composition as the bulk material and any variation is detected.
+Give the flame test colours for Li⁺, Na⁺, K⁺, Ca²⁺ and Cu²⁺. ~~ Lithium crimson red, sodium yellow, potassium lilac, calcium orange-red, copper green (blue-green).
+What precipitates do Cu²⁺, Fe²⁺ and Fe³⁺ give with sodium hydroxide solution? ~~ Cu²⁺ blue, Fe²⁺ green, Fe³⁺ orange-brown.
+How do you distinguish Ca²⁺ and Zn²⁺ with sodium hydroxide? ~~ Both give a white precipitate; the zinc hydroxide precipitate dissolves in excess sodium hydroxide, the calcium one does not.
+How do you test for carbonate ions? ~~ Add dilute acid — bubbles of gas form that turn limewater milky (carbon dioxide).
+How do you test for chloride, bromide and iodide ions? ~~ Add dilute nitric acid then silver nitrate solution: chloride gives a white precipitate, bromide cream, iodide yellow.
+How do you test for sulfate ions? ~~ Add dilute hydrochloric acid then barium chloride solution — a white precipitate of barium sulfate forms.
+How is emission spectroscopy used to identify elements? ~~ A hot sample emits light with a unique pattern of lines; matching the lines to reference spectra identifies the elements.
+What are the advantages of instrumental methods of analysis? ~~ They are more sensitive, faster and more accurate, and record data automatically — but are expensive.
+What is the law of conservation of mass? ~~ No atoms are made or lost in a reaction, so the total mass of products equals the total mass of reactants.
+Why can the mass appear to change in an open container? ~~ A gas may escape (mass decreases) or a gas from the air may react with a reactant (mass increases).
+How do you calculate relative formula mass (Mr)? ~~ Add the relative atomic masses of all the atoms in the formula, e.g. Mr of H₂O = 2 + 16 = 18.
+What is the Avogadro constant? ~~ 6.02 × 10²³ — the number of particles in one mole of a substance.
+How do you calculate the number of moles from a mass? ~~ Moles = mass (g) ÷ relative formula mass.
+What volume does one mole of any gas occupy at RTP? ~~ 24 dm³ (moles of gas = volume in dm³ ÷ 24).
+How do you calculate concentration in mol/dm³? ~~ Concentration = moles of solute ÷ volume of solution in dm³.
+How is a titration carried out for precise, accurate results? ~~ Pipette a fixed volume of alkali into a flask, add indicator, add acid from a burette with swirling until the colour just changes; do a rough titre then repeat until concordant (within 0.10 cm³) and take the mean.
+
+## C6
+What are the products when an acid reacts with a metal? ~~ A salt and hydrogen, e.g. magnesium + hydrochloric acid → magnesium chloride + hydrogen.
+What are the products when an acid reacts with a metal carbonate? ~~ A salt, water and carbon dioxide.
+What are the products when an acid reacts with an alkali? ~~ A salt and water (neutralisation).
+Which salts do hydrochloric, nitric and sulfuric acid make? ~~ Chlorides, nitrates and sulfates respectively.
+What is the ionic equation for neutralisation? ~~ H⁺(aq) + OH⁻(aq) → H₂O(l)
+How do you make a pure, dry sample of a soluble salt from an insoluble base? ~~ Add excess base to warm acid, filter off the excess, heat the filtrate to evaporate some water, leave to crystallise, then filter and dry the crystals.
+How is an insoluble salt made? ~~ Mix two solutions that contain its ions (precipitation), filter, wash the precipitate with distilled water and dry it.
+How is pH measured? ~~ With universal indicator (compare the colour with a chart) or with a pH meter.
+What is the difference between a strong and a weak acid? ~~ A strong acid is completely ionised in solution; a weak acid is only partly ionised.
+What is the difference between concentrated and dilute? ~~ Concentration is the amount of acid per volume of solution — not the same as strength.
+How does pH change if the hydrogen ion concentration increases by a factor of 10? ~~ The pH decreases by 1.
+Why do weak acids react more slowly than strong acids of the same concentration? ~~ They have a lower concentration of H⁺ ions.
+Name four factors that affect the rate of a reaction. ~~ Temperature, concentration (or pressure for gases), surface area of solids, and catalysts.
+How does increasing temperature increase the rate? ~~ Particles move faster, so they collide more often and, more importantly, more collisions have energy greater than the activation energy.
+Why does increasing concentration or pressure increase the rate? ~~ There are more particles in the same volume, so collisions are more frequent.
+Why does powdering a solid increase the rate? ~~ Smaller pieces have a larger surface area to volume ratio, so more particles are exposed and collisions are more frequent.
+What is a catalyst? ~~ A substance that increases the rate of a reaction but is unchanged chemically and in mass at the end.
+How does a catalyst work? ~~ It provides an alternative reaction pathway with a lower activation energy.
+What are enzymes? ~~ Proteins that act as biological catalysts, working best within a narrow range of temperature and pH.
+How can the rate of a reaction that produces a gas be measured? ~~ Measure the volume of gas with a gas syringe (or collection over water), or measure the loss in mass on a balance, at regular time intervals.
+How can rate be measured for a reaction that forms a precipitate or changes colour? ~~ Time how long it takes for a cross under the flask to disappear, or follow the colour change by eye or with a colorimeter.
+How is rate found from a graph of product against time? ~~ The gradient of the curve; the gradient of a tangent gives the rate at a particular time.
+What does the symbol ⇌ mean? ~~ The reaction is reversible — it can go in both directions.
+What is dynamic equilibrium? ~~ In a closed system, the forward and reverse reactions happen at the same rate, so the amounts of reactants and products stay constant.
+Does a catalyst change the yield of a reversible reaction? ~~ No — it increases the rate of both forward and reverse reactions, so equilibrium is reached faster but the yield is unchanged.
+What is the equation for the Haber process? ~~ N₂(g) + 3H₂(g) ⇌ 2NH₃(g) — nitrogen from the air, hydrogen from natural gas and steam.
+What conditions are used in the Haber process? ~~ About 450 °C, about 200 atmospheres and an iron catalyst; unreacted nitrogen and hydrogen are recycled.
+Why is a compromise temperature used in the Haber process? ~~ The forward reaction is exothermic, so a lower temperature gives a higher yield but too slow a rate; very high pressures are also expensive and risky.
+Why are fertilisers needed and what problem can they cause? ~~ They replace nitrogen, phosphorus and potassium taken up by crops; overuse washes them into rivers, causing eutrophication.
+How do you calculate atom economy? ~~ Atom economy = (Mr of desired product ÷ total Mr of all reactants) × 100%; a higher atom economy is more sustainable.

@@ -334,6 +334,19 @@
         { id: 'C6', name: 'Global Challenges', sub: 'Extraction, Haber, fertilisers, organic chemistry, polymers, atmosphere, water' },
       ],
     },
+    'Chemistry_OCR B|gcse': {
+      label: 'Chemistry — OCR B (GCSE J258 21st Century)',
+      emoji: '🧪',
+      page: 'diagnostics/chemistry-ocr-b-gcse-diagnostic.html',
+      topics: [
+        { id: 'C1', name: 'Air and Water', sub: 'Atmosphere, energy changes, climate change, potable water' },
+        { id: 'C2', name: 'Chemical Patterns', sub: 'Atomic models, Periodic Table, ionic compounds, equations, transition metals' },
+        { id: 'C3', name: 'Chemicals of the Natural Environment', sub: 'Metallic bonding, extraction, electrolysis, crude oil' },
+        { id: 'C4', name: 'Material Choices', sub: 'Materials data, polymers, structure and properties, nanoparticles, LCA' },
+        { id: 'C5', name: 'Chemical Analysis', sub: 'Separation and purity, ion tests, moles, concentration, titration' },
+        { id: 'C6', name: 'Making Useful Chemicals', sub: 'Salts from acids, rates, equilibrium and yield, industrial processes' },
+      ],
+    },
     'Chemistry_OCR B': {
       label: 'Chemistry — OCR B',
       emoji: '🧪',

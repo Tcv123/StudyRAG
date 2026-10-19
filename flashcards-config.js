@@ -333,6 +333,14 @@
       { num: 'C5', name: 'Monitoring and Controlling Chemical Reactions' },
       { num: 'C6', name: 'Global Challenges' },
     ],
+    'Chemistry|OCR B|gcse': [
+      { num: 'C1', name: 'Air and Water' },
+      { num: 'C2', name: 'Chemical Patterns' },
+      { num: 'C3', name: 'Chemicals of the Natural Environment' },
+      { num: 'C4', name: 'Material Choices' },
+      { num: 'C5', name: 'Chemical Analysis' },
+      { num: 'C6', name: 'Making Useful Chemicals' },
+    ],
     'Chemistry|OCR B': [
       { num: 'EL', name: 'Elements of Life' },
       { num: 'DF', name: 'Developing Fuels' },
