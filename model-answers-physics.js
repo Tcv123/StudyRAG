@@ -2776,7 +2776,7 @@ GMm = 6.67 × 10⁻¹¹ × 2.0 × 10³⁰ × 209 = 2.788 × 10²² J m
   "phys-ocra-h556-2022-p1::23(b)(iii)": `During the launch, the burning rocket fuel does work on the satellite (the engines' thrust acts on it through a distance), transferring energy from the fuel to the satellite's kinetic and gravitational potential energy; this energy input plays no part in (ii), which treats the satellite in its orbit as moving under the Sun's gravity alone, so the satellite's total energy in orbit differs from its total energy at launch.`,
   "phys-ocra-h556-2022-p2::16(a)(i)": `The wavelength of the wave is 2.0 cm.
 The two points are 2.5 − 1.5 = 1.0 cm apart, which is exactly half a wavelength.
-Phase difference φ = (path difference / λ) × 2π = (1.0/2.0) × 2π
+Phase difference φ = (separation / λ) × 2π = (1.0/2.0) × 2π
 φ = π rad (3.1 rad)`,
   "phys-ocra-h556-2022-p2::16(a)(ii)": `The wave is progressive and travels in the direction of increasing x, so in a time of 3T/4 the whole waveform moves 3λ/4 = 3 × 2.0/4 = 1.5 cm to the right.
 The displacement at x = 1.5 cm at t = 3T/4 is therefore the displacement that was at x = 1.5 − 1.5 = 0 at t = 0.
@@ -2810,14 +2810,30 @@ h = (A s)(kg m² s⁻³ A⁻¹)(m)/(m s⁻¹)
 = (A s × kg m² s⁻³ A⁻¹ × m × s)/(m)
 = kg m² s⁻¹
 SI base units of h: kg m² s⁻¹`,
-  "phys-ocra-h556-2022-p2::17(b)": `Equipment needed: a set of LEDs with known wavelengths (or wavelengths measured with a diffraction grating/spectrometer), a variable power supply, a voltmeter, a milliammeter, and connecting wires.
+  "phys-ocra-h556-2022-p2::17(b)": `Circuit
+Connect a d.c. supply across a potentiometer (potential divider) so that the p.d. supplied can be varied smoothly from zero. Connect the LED, forward biased, in series with a protective (current-limiting) resistor and a milliammeter across the output of the potentiometer. Connect a voltmeter in parallel directly across the LED only, so that it measures the p.d. V across the LED.
 
-Determining λ: Use a diffraction grating with known slit spacing d. Illuminate the grating with light from the lit LED. Measure the angle θ of the first-order maximum using a protractor or optical bench. Use nλ = d sinθ (n = 1) to calculate λ accurately for each LED colour.
+Measuring V
+Carry out the experiment in a darkened room and look at the LED through a black tube placed over it, so that the first faint glow can be seen.
+Starting from zero, slowly increase the p.d. using the potentiometer until the LED just starts to emit light. Record the voltmeter reading at this point as V. (The switch-on point can also be identified as the p.d. at which the milliammeter first shows a non-zero reading.)
+Repeat the measurement several times for the same LED and calculate a mean value of V.
 
-Determining V (threshold voltage): Connect each LED in series with the power supply, voltmeter, and milliammeter. Gradually increase the voltage from zero while monitoring the current. Record the threshold voltage V at which the LED just begins to emit light (indicated by a small current flowing). This threshold voltage corresponds to the photon energy: eV = hc/λ.
+Measuring λ
+Shine the light from the lit LED through a diffraction grating with a known number of lines per metre N, so the slit spacing is d = 1/N, onto a screen in the darkened room.
+Measure the distance D from the grating to the screen with a metre rule, and measure the distance between the two first-order maxima on either side of the central maximum, which is 2x. Measuring across both first-order maxima and halving reduces the percentage uncertainty in x.
+Calculate the angle θ of the first-order maximum from tan θ = x/D, then calculate the wavelength from nλ = d sin θ with n = 1, so λ = d sin θ.
+(Alternatively, λ can be taken from the manufacturer's data for each LED.)
 
-Plotting the graph: Rearrange eV = hc/λ to give V = (hc/e) × (1/λ). Plot V (y-axis) against 1/λ (x-axis). A straight line through the origin (or with small intercept due to contact potential) should result. The gradient = hc/e. Since c and e are known, calculate h = gradient × e/c from the gradient of the best-fit line.`,
-  "phys-ocra-h556-2022-p2::18(a)": `The e.m.f. of the battery represents the energy transferred to the charge per unit charge by the chemical processes inside the battery (energy input per coulomb). The potential difference (p.d.) across the variable resistor represents the energy transferred from electrical energy to thermal energy (heat) per unit coulomb in the resistor (energy output per coulomb). The e.m.f. equals the total p.d. around the circuit (Kirchhoff's second law); the p.d. across the variable resistor is the e.m.f. minus the p.d. across the internal resistance.`,
+Range of results
+Repeat the measurements of V and λ for a range of LEDs of different colours (at least five, for example red, orange, yellow, green and blue).
+
+Analysis
+Rearranging eV = hc/λ gives V = (hc/e) × (1/λ).
+Calculate 1/λ for each LED and plot a graph of V (y-axis) against 1/λ (x-axis).
+Draw a line of best fit through the points. The graph should be a straight line through the origin, since V is directly proportional to 1/λ.
+Determine the gradient of the line, which equals hc/e.
+Since e and c are known, h = (gradient × e)/c.`,
+  "phys-ocra-h556-2022-p2::18(a)": `The e.m.f. of the battery represents the energy transferred to the charge per unit charge by the chemical processes inside the battery (energy input per coulomb). The potential difference (p.d.) across the variable resistor represents the energy transferred from electrical energy to thermal energy (heat) per coulomb in the resistor (energy output per coulomb). The e.m.f. equals the total p.d. around the circuit (Kirchhoff's second law); the p.d. across the variable resistor is the e.m.f. minus the p.d. across the internal resistance.`,
   "phys-ocra-h556-2022-p2::18(b)": `The length of the wire. Since R = ρL/A, increasing the length of the wire included in the circuit increases the resistance of the variable resistor.`,
   "phys-ocra-h556-2022-p2::18(c)(i)": `E = I(R + r) [Kirchhoff's second law / e.m.f. equation]
 Divide both sides by IE:
@@ -2842,9 +2858,9 @@ The maximum kinetic energy of the photoelectrons is 0.30 eV, so the work functio
 φ = 2.3 eV
 (In joules: φ = 4.18 × 10⁻¹⁹ − 4.8 × 10⁻²⁰ = 3.70 × 10⁻¹⁹ J, which is 2.3 eV.)`,
   "phys-ocra-h556-2022-p2::19(b)(i)": `The plates are parallel, so the electric field between them is uniform:
-E = V/d = 0.30/(6.0 × 10⁻³) = 50 V m⁻¹
+electric field strength = V/d = 0.30/(6.0 × 10⁻³) = 50 V m⁻¹
 The electric force on the photoelectron (charge e = 1.60 × 10⁻¹⁹ C) is
-F = eE = 1.60 × 10⁻¹⁹ × 50 = 8.0 × 10⁻¹⁸ N
+F = e × (V/d) = 1.60 × 10⁻¹⁹ × 50 = 8.0 × 10⁻¹⁸ N
 This force acts back towards plate E, opposing the motion, so from F = ma the magnitude of the deceleration is
 a = F/mₑ = 8.0 × 10⁻¹⁸ / 9.11 × 10⁻³¹
 a = 8.78 × 10¹² m s⁻², i.e. 8.8 × 10¹² m s⁻² as required.`,
@@ -2853,13 +2869,11 @@ a = 8.78 × 10¹² m s⁻², i.e. 8.8 × 10¹² m s⁻² as required.`,
 v² = (2 × 4.8×10⁻²⁰)/(9.11×10⁻³¹)
 = 9.6×10⁻²⁰ / 9.11×10⁻³¹
 = 1.054×10¹¹ m² s⁻²
-v = 3.24×10⁵ m s⁻¹ ≈ 3×10⁵ m s⁻¹ ✓`,
-  "phys-ocra-h556-2022-p2::19(b)(iii)": `The electron decelerates from v₀ = 3.24×10⁵ m s⁻¹ to rest (v = 0) over a distance of 6.0 mm = 6.0×10⁻³ m (since at plate C its KE = 0, as V = 0.30 V just stops it exactly).
+v = 3.25×10⁵ m s⁻¹ ≈ 3×10⁵ m s⁻¹ ✓`,
+  "phys-ocra-h556-2022-p2::19(b)(iii)": `The electron decelerates from v₀ = 3.25×10⁵ m s⁻¹ to rest (v = 0) over a distance of 6.0 mm = 6.0×10⁻³ m (since at plate C its KE = 0, as V = 0.30 V just stops it exactly).
 Using v = v₀ − at:
-0 = 3.24×10⁵ − 8.8×10¹² × t
-t = 3.24×10⁵ / 8.8×10¹² = 3.7×10⁻⁸ s
-Or using v² = v₀² − 2as and then v = v₀ − at:
-t = v₀/a = 3.24×10⁵ / 8.8×10¹² = 3.7×10⁻⁸ s ≈ 37 ns`,
+0 = 3.25×10⁵ − 8.8×10¹² × t
+t = 3.25×10⁵ / 8.8×10¹² = 3.7×10⁻⁸ s`,
   "phys-ocra-h556-2022-p2::19(b)(iv)": `The graph of KE against x from plate E should show: starting at KE = 4.8×10⁻²⁰ J (i.e. 4.8 on the Ek/10⁻²⁰ J axis) at x = 0. Since the electric field between parallel plates is uniform, the force on the electron is constant, so the deceleration is constant. This means KE decreases linearly with distance x (since work done = Fx, so KE = KE₀ − Fx). The graph is a straight line with negative gradient, starting at (0, 4.8) and ending at (6.0 mm, 0). The line is perfectly straight (constant deceleration → linear decrease in KE with distance).`,
   "phys-ocra-h556-2022-p2::19(c)": `A photon of higher frequency carries more energy, since E = hf. The work function of potassium is unchanged, so from hf = φ + KE(max) the photoelectrons are now emitted from plate E with a greater maximum kinetic energy, and therefore a greater speed.
 Previously the fastest photoelectrons only just reached plate C, arriving with zero kinetic energy, so no charge flowed and the ammeter read zero. Now the electrons have more kinetic energy than is needed to work against the retarding p.d., so they arrive at plate C with kinetic energy to spare, charge flows round the circuit and the ammeter gives a reading (it is no longer zero).`,
@@ -2891,7 +2905,7 @@ When the switch is opened, the current in coil A falls to zero. The magnetic flu
 Once the current in A has fully dropped to zero, the flux becomes constant (at zero), so dΦ/dt = 0 again and the induced e.m.f. in B returns to zero. The lamp goes off and remains off.`,
   "phys-ocra-h556-2022-p2::21(b)(i)": `An oscilloscope (cathode-ray oscilloscope or digital oscilloscope).`,
   "phys-ocra-h556-2022-p2::21(b)(ii)1": `The 'rate' part of Faraday's law refers to the rate of change of flux. In the equation E₀ = KI₀ANf sinθ, the quantity linked to the rate is f (frequency), since higher frequency means the flux changes more rapidly (the flux oscillates faster, so dΦ/dt is larger in proportion to f).`,
-  "phys-ocra-h556-2022-p2::21(b)(ii)2": `The 'change of magnetic flux linkage' part involves: I₀ (the maximum current, which determines the maximum magnetic field strength and hence the maximum flux), A (cross-sectional area of the search coil, which determines how much flux links the coil), N (number of turns of the search coil, since flux linkage = NΦ), and sinθ (the component of the flux perpendicular to the plane of the coil, which determines the flux linkage).`,
+  "phys-ocra-h556-2022-p2::21(b)(ii)2": `The 'change of magnetic flux linkage' part involves: I₀ (the maximum current, which determines the maximum magnetic field strength and hence the maximum flux), A (cross-sectional area of the search coil, which determines how much flux links the coil), N (number of turns of the search coil, since flux linkage = NΦ), and sinθ (the component of the solenoid's magnetic field perpendicular to the plane of the coil, which determines the flux linkage).`,
   "phys-ocra-h556-2022-p2::21(b)(iii)": `The gradient of the straight line of E₀ against sinθ is KI₀ANf, so
 f = gradient/(KI₀AN)
 f = 0.62 / (4.0 × 10⁻³ × 8.0 × 7.8 × 10⁻⁵ × 5000)
@@ -2931,14 +2945,14 @@ C = 7.8 × 10⁻⁹ F, d = 8.0 × 10⁻⁵ m, A = 3.1 × 10⁻² m²
 ε = 6.24 × 10⁻¹³/3.1 × 10⁻²
 ε = 2.0 × 10⁻¹¹ F m⁻¹`,
   "phys-ocra-h556-2022-p2::23(a)": `The collimator must be long and narrow to ensure that only gamma rays (photons) travelling in one specific direction (parallel to the axis of the collimator) can pass through. If the collimator were short or wide, gamma photons arriving at oblique angles would also pass through, reducing the spatial resolution of the image — the camera would not be able to pinpoint accurately where in the body the gamma photons originated.`,
-  "phys-ocra-h556-2022-p2::23(b)": `The scintillator converts (absorbs) each incoming gamma-ray photon into a pulse of visible light photons. The gamma photon has too high a frequency to be detected directly by the photomultiplier tube, so the scintillator acts as a transducer, producing visible light that can then be detected.`,
+  "phys-ocra-h556-2022-p2::23(b)": `The scintillator converts (absorbs) each incoming gamma-ray photon into a pulse of visible light photons. This light is then detected by the photomultiplier tubes.`,
   "phys-ocra-h556-2022-p2::23(c)": `The charge that flows during the pulse is
 Q = It = 0.32 × 10⁻⁶ × 1.2 × 10⁻⁹ = 3.84 × 10⁻¹⁶ C
 Each electron carries a charge of 1.60 × 10⁻¹⁹ C, so the number of electrons is
 n = Q/e = 3.84 × 10⁻¹⁶ / 1.60 × 10⁻¹⁹
 n = 2400`,
-  "phys-ocra-h556-2022-p2::23(d)": `Diagnosing the function and blood flow of organs such as the thyroid gland, heart, kidneys, or lungs (e.g. thyroid scan, bone scan, or cardiac stress test).`,
-  "phys-ocra-h556-2022-p2::24(a)": `In Compton scattering, an incoming X-ray photon interacts with a loosely bound (or free) electron in the material. The photon transfers some of its energy and momentum to the electron, which recoils. The photon is scattered at an angle with a lower frequency (longer wavelength) than the incident photon, since it has lost energy. The electron gains kinetic energy. The X-ray beam is attenuated because some photons are scattered out of the beam direction and some energy is transferred to electrons.`,
+  "phys-ocra-h556-2022-p2::23(d)": `A bone scan, to detect cancer that has spread to the bones.`,
+  "phys-ocra-h556-2022-p2::24(a)": `In Compton scattering, an incoming X-ray photon interacts with a loosely bound (or free) electron in the material. The photon transfers some of its energy and momentum to the electron, which is ejected (removed) from its atom. The photon is scattered at an angle with a lower frequency (longer wavelength) than the incident photon, since it has lost energy. The electron gains kinetic energy. The X-ray beam is attenuated because some photons are scattered out of the beam direction and some energy is transferred to electrons.`,
   "phys-ocra-h556-2022-p2::24(b)(i)": `The tissue is uniform between x = 0 and x = 1.0 cm, so the intensity falls exponentially there:
 I = I₀e⁻ᵘˣ
 Reading Fig. 24.2 at the two ends of this region: at x = 0, I₀ = 3.0 × 10³ W m⁻²; at x = 1.0 cm, I = 1.3 × 10³ W m⁻².
@@ -2951,7 +2965,7 @@ Here A = 1 cm² = 1.0 × 10⁻⁴ m² and E = 2.6 J:
 2.6 = 1.3 × 10³ × 1.0 × 10⁻⁴ × t
 2.6 = 0.13t
 t = 20 s`,
-  "phys-ocra-h556-2022-p2::24(b)(iii)": `Beyond x = 1.0 cm, the tissue has a larger attenuation coefficient μ₂ > μ₁. The intensity still decreases exponentially but with a steeper gradient (more rapid decrease). The curve on Fig. 24.2 should continue from where it left off at x = 1.0 cm, curving downward more steeply than the original exponential, maintaining a continuous join at x = 1.0 cm but with a smaller (more negative) gradient. It remains an exponential decay curve, but with a shorter 'half-thickness'.`,
+  "phys-ocra-h556-2022-p2::24(b)(iii)": `Beyond x = 1.0 cm, the tissue has a larger attenuation coefficient μ₂ > μ₁. The intensity still decreases exponentially but with a steeper gradient (more rapid decrease). The curve on Fig. 24.2 should continue from where it left off at x = 1.0 cm, curving downward more steeply than the original exponential, maintaining a continuous join at x = 1.0 cm but with a smaller (more negative) gradient. It remains an exponential decay curve, but with a shorter 'half-thickness', so it approaches the x-axis but never touches it.`,
   "phys-ocra-h556-2022-p3::1(a)": `g = GM/r², with M = 4.87 × 10²⁴ kg and r = 6050 km = 6.050 × 10⁶ m.
 g = (6.67 × 10⁻¹¹ × 4.87 × 10²⁴) / (6.050 × 10⁶)²
 g = 3.248 × 10¹⁴ / 3.660 × 10¹³
