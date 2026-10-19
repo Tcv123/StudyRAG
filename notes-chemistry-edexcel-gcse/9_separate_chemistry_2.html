@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Edexcel GCSE Chemistry — Topic 9: Separate Chemistry 2</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+    .container { max-width: 820px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+    .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+    h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+    h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+    p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+    strong { color: #1a1a2e; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+    th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+    tr:nth-child(even) { background: #f9fafb; }
+    .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+    .worked { background: #ecfdf5; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .worked::before { content: "Worked Example: "; font-weight: 700; color: #0f5132; }
+    code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+    .eq { display: block; text-align: center; font-size: 1.1rem; padding: 10px 16px; margin: 10px 0; background: #f0f4ff; border-radius: 6px; border: 1px solid #cfd9ff; }
+    @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .worked { break-inside: avoid; } h2 { break-after: avoid; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning
+  </a>
+</div>
+
+<h1>Topic 9 — Separate Chemistry 2</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Chemistry (1CH0) &mdash; Paper 2 &mdash; chemistry-only content</p>
+
+<p>This topic brings together four areas that appear only in GCSE Chemistry: <strong>qualitative analysis</strong> (identifying ions with chemical tests and instruments), <strong>organic chemistry</strong> beyond crude oil (alkanes, alkenes, alcohols and carboxylic acids), <strong>polymers</strong> (addition, condensation and natural polymers), and the <strong>bulk and surface properties of materials</strong>, including nanoparticles.</p>
+
+<p><strong>The whole of Topic 9 is chemistry-only</strong> — it is not in Combined Science (in the specification every point is labelled with a "C"). It contains <strong>two core practicals</strong>: identifying the ions in unknown salts, and comparing the temperature rise produced by burning different alcohols.</p>
+
+<h2>9.1 Tests for Cations — Flame Tests</h2>
+<div class="definition">
+  The test for any ion must be <strong>unique</strong>: it must give a result that <strong>no other ion</strong> gives, otherwise a positive result could not tell you which ion is present. For example, calcium and aluminium ions both give a white precipitate with a few drops of sodium hydroxide, so you must go on to add excess (or use a flame test) to tell them apart; adding dilute acid first in the anion tests removes carbonate ions that would otherwise also give a precipitate.
+</div>
+<p>Many metal ions produce a characteristic flame colour when their compounds are heated strongly. The heat excites electrons, which then release energy as light of particular colours.</p>
+
+<table>
+  <thead><tr><th>Metal ion</th><th>Flame colour</th></tr></thead>
+  <tbody>
+    <tr><td>Lithium, Li⁺</td><td><strong>red</strong> (crimson)</td></tr>
+    <tr><td>Sodium, Na⁺</td><td><strong>yellow</strong> (orange-yellow)</td></tr>
+    <tr><td>Potassium, K⁺</td><td><strong>lilac</strong></td></tr>
+    <tr><td>Calcium, Ca²⁺</td><td><strong>orange-red</strong> (brick red)</td></tr>
+    <tr><td>Copper, Cu²⁺</td><td><strong>blue-green</strong></td></tr>
+  </tbody>
+</table>
+
+<!-- Diagram: flame test -->
+<svg viewBox="0 0 720 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Flame test colours</text>
+  <g transform="translate(40,0)">
+    <path d="M 40 210 C 15 170, 25 110, 40 70 C 55 110, 65 170, 40 210 Z" fill="#dc2626" opacity="0.85"/>
+    <text x="40" y="232" text-anchor="middle" font-size="12" font-weight="bold">Li⁺</text><text x="40" y="248" text-anchor="middle" font-size="11" fill="#334155">red</text>
+  </g>
+  <g transform="translate(170,0)">
+    <path d="M 40 210 C 15 170, 25 110, 40 70 C 55 110, 65 170, 40 210 Z" fill="#facc15" opacity="0.9"/>
+    <text x="40" y="232" text-anchor="middle" font-size="12" font-weight="bold">Na⁺</text><text x="40" y="248" text-anchor="middle" font-size="11" fill="#334155">yellow</text>
+  </g>
+  <g transform="translate(300,0)">
+    <path d="M 40 210 C 15 170, 25 110, 40 70 C 55 110, 65 170, 40 210 Z" fill="#c084fc" opacity="0.85"/>
+    <text x="40" y="232" text-anchor="middle" font-size="12" font-weight="bold">K⁺</text><text x="40" y="248" text-anchor="middle" font-size="11" fill="#334155">lilac</text>
+  </g>
+  <g transform="translate(430,0)">
+    <path d="M 40 210 C 15 170, 25 110, 40 70 C 55 110, 65 170, 40 210 Z" fill="#ea580c" opacity="0.85"/>
+    <text x="40" y="232" text-anchor="middle" font-size="12" font-weight="bold">Ca²⁺</text><text x="40" y="248" text-anchor="middle" font-size="11" fill="#334155">orange-red</text>
+  </g>
+  <g transform="translate(560,0)">
+    <path d="M 40 210 C 15 170, 25 110, 40 70 C 55 110, 65 170, 40 210 Z" fill="#14b8a6" opacity="0.85"/>
+    <text x="40" y="232" text-anchor="middle" font-size="12" font-weight="bold">Cu²⁺</text><text x="40" y="248" text-anchor="middle" font-size="11" fill="#334155">blue-green</text>
+  </g>
+  <text x="360" y="45" text-anchor="middle" font-size="11" fill="#64748b">Hold a clean nichrome wire loop dipped in the sample at the edge of a roaring blue Bunsen flame</text>
+</svg>
+
+<h3>Method</h3>
+<ol>
+  <li>Clean a <strong>nichrome</strong> (or platinum) wire loop by dipping it in <strong>concentrated hydrochloric acid</strong> and holding it in a <strong>blue</strong> Bunsen flame until it gives no colour.</li>
+  <li>Dip the loop in the acid again, then into the solid sample so some sticks to it.</li>
+  <li>Hold the loop at the <strong>edge of a blue (roaring) flame</strong> and observe the colour.</li>
+  <li>Clean the wire thoroughly between tests so samples don't contaminate each other.</li>
+</ol>
+
+<div class="exam-tip">Limitations of flame tests: if a sample contains a <strong>mixture</strong> of metal ions, one colour can <strong>mask</strong> another (sodium's intense yellow hides most others). Some ions give no flame colour, and colours are judged by eye (subjective). This is one reason instrumental methods such as flame photometry are useful (9.4).</div>
+
+<h2>9.2 Tests for Cations — Sodium Hydroxide Solution</h2>
+<p>Add a few drops of <strong>dilute sodium hydroxide solution</strong> to a solution of the unknown compound. Many metal ions form an insoluble <strong>metal hydroxide precipitate</strong> with a characteristic colour.</p>
+
+<table>
+  <thead><tr><th>Ion</th><th>Observation with a few drops of NaOH(aq)</th><th>With excess NaOH(aq)</th><th>Ionic equation <strong>(HT)</strong></th></tr></thead>
+  <tbody>
+    <tr><td>Aluminium, Al³⁺</td><td><strong>white</strong> precipitate</td><td>precipitate <strong>dissolves</strong> → colourless solution</td><td>Al³⁺(aq) + 3OH⁻(aq) → Al(OH)₃(s)</td></tr>
+    <tr><td>Calcium, Ca²⁺</td><td><strong>white</strong> precipitate</td><td>precipitate <strong>remains</strong></td><td>Ca²⁺(aq) + 2OH⁻(aq) → Ca(OH)₂(s)</td></tr>
+    <tr><td>Copper(II), Cu²⁺</td><td><strong>blue</strong> precipitate</td><td>remains</td><td>Cu²⁺(aq) + 2OH⁻(aq) → Cu(OH)₂(s)</td></tr>
+    <tr><td>Iron(II), Fe²⁺</td><td><strong>green</strong> precipitate (turns brown on standing in air as it oxidises)</td><td>remains</td><td>Fe²⁺(aq) + 2OH⁻(aq) → Fe(OH)₂(s)</td></tr>
+    <tr><td>Iron(III), Fe³⁺</td><td><strong>orange-brown</strong> (rust-coloured) precipitate</td><td>remains</td><td>Fe³⁺(aq) + 3OH⁻(aq) → Fe(OH)₃(s)</td></tr>
+  </tbody>
+</table>
+
+<!-- Diagram: precipitate colours -->
+<svg viewBox="0 0 720 262" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Metal hydroxide precipitates formed with NaOH(aq)</text>
+  <g transform="translate(55,40)">
+    <path d="M 0 0 L 0 140 Q 0 160 20 160 Q 40 160 40 140 L 40 0" fill="#f8fafc" stroke="#374151" stroke-width="2"/>
+    <path d="M 2 100 L 2 140 Q 2 158 20 158 Q 38 158 38 140 L 38 100 Z" fill="#f3f4f6" stroke="#9ca3af"/>
+    <text x="20" y="185" text-anchor="middle" font-size="12" font-weight="bold">Al³⁺</text><text x="20" y="200" text-anchor="middle" font-size="10.5" fill="#334155">white;</text><text x="20" y="213" text-anchor="middle" font-size="10.5" fill="#334155">dissolves in excess</text>
+  </g>
+  <g transform="translate(195,40)">
+    <path d="M 0 0 L 0 140 Q 0 160 20 160 Q 40 160 40 140 L 40 0" fill="#f8fafc" stroke="#374151" stroke-width="2"/>
+    <path d="M 2 100 L 2 140 Q 2 158 20 158 Q 38 158 38 140 L 38 100 Z" fill="#e5e7eb" stroke="#9ca3af"/>
+    <text x="20" y="185" text-anchor="middle" font-size="12" font-weight="bold">Ca²⁺</text><text x="20" y="200" text-anchor="middle" font-size="10.5" fill="#334155">white;</text><text x="20" y="213" text-anchor="middle" font-size="10.5" fill="#334155">stays in excess</text>
+  </g>
+  <g transform="translate(335,40)">
+    <path d="M 0 0 L 0 140 Q 0 160 20 160 Q 40 160 40 140 L 40 0" fill="#f8fafc" stroke="#374151" stroke-width="2"/>
+    <path d="M 2 100 L 2 140 Q 2 158 20 158 Q 38 158 38 140 L 38 100 Z" fill="#3b82f6"/>
+    <text x="20" y="185" text-anchor="middle" font-size="12" font-weight="bold">Cu²⁺</text><text x="20" y="200" text-anchor="middle" font-size="10.5" fill="#334155">blue</text>
+  </g>
+  <g transform="translate(475,40)">
+    <path d="M 0 0 L 0 140 Q 0 160 20 160 Q 40 160 40 140 L 40 0" fill="#f8fafc" stroke="#374151" stroke-width="2"/>
+    <path d="M 2 100 L 2 140 Q 2 158 20 158 Q 38 158 38 140 L 38 100 Z" fill="#4d7c0f"/>
+    <text x="20" y="185" text-anchor="middle" font-size="12" font-weight="bold">Fe²⁺</text><text x="20" y="200" text-anchor="middle" font-size="10.5" fill="#334155">green</text>
+  </g>
+  <g transform="translate(615,40)">
+    <path d="M 0 0 L 0 140 Q 0 160 20 160 Q 40 160 40 140 L 40 0" fill="#f8fafc" stroke="#374151" stroke-width="2"/>
+    <path d="M 2 100 L 2 140 Q 2 158 20 158 Q 38 158 38 140 L 38 100 Z" fill="#b45309"/>
+    <text x="20" y="185" text-anchor="middle" font-size="12" font-weight="bold">Fe³⁺</text><text x="20" y="200" text-anchor="middle" font-size="10.5" fill="#334155">orange-brown</text>
+  </g>
+</svg>
+
+<h3>Test for the ammonium ion, NH₄⁺</h3>
+<ol>
+  <li>Add sodium hydroxide solution to the sample and <strong>warm gently</strong>.</li>
+  <li>Hold <strong>damp red litmus paper</strong> at the mouth of the test tube.</li>
+  <li>If NH₄⁺ is present, <strong>ammonia gas</strong> is given off, which turns damp red litmus paper <strong>blue</strong> (ammonia is alkaline). It also has a sharp, pungent smell.</li>
+</ol>
+<span class="eq">NH₄⁺(aq) + OH⁻(aq) → NH₃(g) + H₂O(l)</span>
+
+<div class="exam-tip">Al³⁺ and Ca²⁺ both give a white precipitate with a few drops of NaOH — to tell them apart, add <strong>excess</strong> NaOH (Al(OH)₃ dissolves; Ca(OH)₂ does not) or do a <strong>flame test</strong> (Ca²⁺ gives orange-red; Al³⁺ gives no characteristic colour). The litmus paper for ammonia must be <strong>damp</strong> — gases need to dissolve in water to affect an indicator.</div>
+
+<h2>9.3 Tests for Anions</h2>
+
+<table>
+  <thead><tr><th>Anion</th><th>Test</th><th>Positive result</th><th>Ionic equation <strong>(HT)</strong></th></tr></thead>
+  <tbody>
+    <tr><td>Chloride, Cl⁻</td><td rowspan="3">Add <strong>dilute nitric acid</strong>, then <strong>silver nitrate solution</strong></td><td><strong>white</strong> precipitate (AgCl)</td><td>Ag⁺(aq) + Cl⁻(aq) → AgCl(s)</td></tr>
+    <tr><td>Bromide, Br⁻</td><td><strong>cream</strong> precipitate (AgBr)</td><td>Ag⁺(aq) + Br⁻(aq) → AgBr(s)</td></tr>
+    <tr><td>Iodide, I⁻</td><td><strong>yellow</strong> precipitate (AgI)</td><td>Ag⁺(aq) + I⁻(aq) → AgI(s)</td></tr>
+    <tr><td>Sulfate, SO₄²⁻</td><td>Add <strong>dilute hydrochloric acid</strong>, then <strong>barium chloride solution</strong></td><td><strong>white</strong> precipitate (BaSO₄)</td><td>Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s)</td></tr>
+    <tr><td>Carbonate, CO₃²⁻</td><td>Add <strong>dilute acid</strong>; bubble any gas through <strong>limewater</strong></td><td><strong>effervescence</strong>; gas turns limewater <strong>milky (cloudy)</strong> — CO₂</td><td>CO₃²⁻(s/aq) + 2H⁺(aq) → CO₂(g) + H₂O(l)</td></tr>
+  </tbody>
+</table>
+
+<h3>Why add acid first?</h3>
+<ul>
+  <li>In the halide and sulfate tests, the acid is added first to <strong>remove carbonate ions</strong>, which would otherwise also form a precipitate with silver or barium ions and give a false positive.</li>
+  <li>For the halide test you must use <strong>nitric acid</strong>, not hydrochloric acid — HCl contains chloride ions, which would give a white precipitate whatever the sample.</li>
+  <li>For the sulfate test you use <strong>hydrochloric acid</strong>, not sulfuric acid — H₂SO₄ contains sulfate ions.</li>
+</ul>
+
+<div class="exam-tip">A really common exam question: "Why is dilute nitric acid added before silver nitrate?" Answer: to react with/remove any carbonate ions, which would also give a precipitate. "Why not hydrochloric acid?" Because it adds chloride ions, giving a white precipitate even if the sample has no chloride.</div>
+
+<h2>9.4 Core Practical — Identifying the Ions in Unknown Salts</h2>
+<p>The core practical uses the tests above to identify the cation and anion in unknown salts.</p>
+
+<!-- Diagram: identification flowchart -->
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t9ArrFlow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">A plan for identifying an unknown salt</text>
+  <rect x="270" y="38" width="180" height="34" rx="8" fill="#dbeafe" stroke="#1e40af" stroke-width="2"/>
+  <text x="360" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a8a">Unknown salt</text>
+  <line x1="320" y1="72" x2="180" y2="105" stroke="#334155" stroke-width="2" marker-end="url(#t9ArrFlow)"/>
+  <line x1="400" y1="72" x2="540" y2="105" stroke="#334155" stroke-width="2" marker-end="url(#t9ArrFlow)"/>
+  <!-- cation branch -->
+  <rect x="60" y="108" width="240" height="30" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="180" y="128" text-anchor="middle" font-size="12" font-weight="bold" fill="#78350f">Identify the CATION</text>
+  <rect x="20" y="152" width="150" height="70" rx="6" fill="#fff" stroke="#9ca3af"/>
+  <text x="95" y="170" text-anchor="middle" font-size="11" font-weight="bold">1. Flame test (solid)</text>
+  <text x="95" y="186" text-anchor="middle" font-size="10">Li⁺ red · Na⁺ yellow</text>
+  <text x="95" y="200" text-anchor="middle" font-size="10">K⁺ lilac · Ca²⁺ orange-red</text>
+  <text x="95" y="214" text-anchor="middle" font-size="10">Cu²⁺ blue-green</text>
+  <rect x="185" y="152" width="155" height="70" rx="6" fill="#fff" stroke="#9ca3af"/>
+  <text x="262" y="170" text-anchor="middle" font-size="11" font-weight="bold">2. NaOH(aq) (solution)</text>
+  <text x="262" y="186" text-anchor="middle" font-size="10">precipitate colour;</text>
+  <text x="262" y="200" text-anchor="middle" font-size="10">add excess (Al³⁺ dissolves);</text>
+  <text x="262" y="214" text-anchor="middle" font-size="10">warm: NH₃ → red litmus blue</text>
+  <line x1="140" y1="138" x2="95" y2="150" stroke="#334155" stroke-width="1.5" marker-end="url(#t9ArrFlow)"/>
+  <line x1="220" y1="138" x2="262" y2="150" stroke="#334155" stroke-width="1.5" marker-end="url(#t9ArrFlow)"/>
+  <!-- anion branch -->
+  <rect x="420" y="108" width="240" height="30" rx="6" fill="#dcfce7" stroke="#166534"/>
+  <text x="540" y="128" text-anchor="middle" font-size="12" font-weight="bold" fill="#14532d">Identify the ANION</text>
+  <rect x="380" y="152" width="320" height="34" rx="6" fill="#fff" stroke="#9ca3af"/>
+  <text x="540" y="174" text-anchor="middle" font-size="10.5">1. Add dilute HCl — fizzing, CO₂ turns limewater milky → CO₃²⁻</text>
+  <rect x="380" y="196" width="320" height="34" rx="6" fill="#fff" stroke="#9ca3af"/>
+  <text x="540" y="218" text-anchor="middle" font-size="10.5">2. Dilute HCl + BaCl₂(aq) — white ppt → SO₄²⁻</text>
+  <rect x="380" y="240" width="320" height="48" rx="6" fill="#fff" stroke="#9ca3af"/>
+  <text x="540" y="260" text-anchor="middle" font-size="10.5">3. Dilute HNO₃ + AgNO₃(aq) — white ppt → Cl⁻,</text>
+  <text x="540" y="276" text-anchor="middle" font-size="10.5">cream ppt → Br⁻, yellow ppt → I⁻</text>
+  <line x1="540" y1="138" x2="540" y2="150" stroke="#334155" stroke-width="1.5" marker-end="url(#t9ArrFlow)"/>
+  <rect x="150" y="305" width="420" height="40" rx="8" fill="#ede9fe" stroke="#6d28d9" stroke-width="2"/>
+  <text x="360" y="323" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4c1d95">Combine: e.g. lilac flame + cream ppt with AgNO₃</text>
+  <text x="360" y="338" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4c1d95">→ potassium bromide, KBr</text>
+</svg>
+
+<h3>Safety and good practice</h3>
+<ul>
+  <li>Wear eye protection; sodium hydroxide is corrosive and silver nitrate stains skin. Barium chloride is toxic. Concentrated HCl used to clean wires is corrosive.</li>
+  <li>Use <strong>small amounts</strong> (a few drops) of reagents and add NaOH dropwise so you see the first precipitate before testing with excess.</li>
+  <li>Use a fresh, clean test tube for every test to avoid contamination.</li>
+</ul>
+
+<div class="worked">
+An unknown white solid gives an orange-red flame. A solution of it gives a white precipitate with a few drops of NaOH that does not dissolve in excess. With dilute HCl and BaCl₂ solution it gives a white precipitate. Identify the salt.<br>
+Orange-red flame + white precipitate insoluble in excess → <strong>Ca²⁺</strong>. White precipitate with BaCl₂ → <strong>SO₄²⁻</strong>. The salt is <strong>calcium sulfate, CaSO₄</strong>.
+</div>
+
+<div class="worked">
+A green solution gives a green precipitate with NaOH(aq) that slowly turns brown at the surface. With dilute nitric acid and silver nitrate it gives a white precipitate. Identify the salt and <strong>(HT)</strong> write the ionic equation for the precipitate with NaOH.<br>
+Green precipitate → <strong>Fe²⁺</strong>; white ppt with AgNO₃ → <strong>Cl⁻</strong>. Salt = <strong>iron(II) chloride, FeCl₂</strong>.<br>
+Fe²⁺(aq) + 2OH⁻(aq) → Fe(OH)₂(s)
+</div>
+
+<h2>9.5 Instrumental Methods and Flame Photometry</h2>
+<p><strong>Instrumental methods</strong> of analysis use machines to detect and measure substances. Compared with simple chemical tests, they can improve:</p>
+<ul>
+  <li><strong>sensitivity</strong> — they can detect very small amounts of a substance,</li>
+  <li><strong>accuracy</strong> — results are reliable and not dependent on judging colours by eye,</li>
+  <li><strong>speed</strong> — tests are quick and can be automated, running many samples.</li>
+</ul>
+<p>Disadvantages: the equipment is expensive, needs trained operators, and results usually have to be compared with reference data.</p>
+
+<h3>Flame photometry</h3>
+<p>In a <strong>flame photometer</strong>, a solution is sprayed into a flame. The metal ions emit light; the instrument measures the <strong>wavelengths</strong> of light given out and the <strong>intensity</strong> of that light. Each metal ion produces a characteristic <strong>emission spectrum</strong> (a pattern of lines of specific wavelengths).</p>
+<p>You must be able to evaluate data from a flame photometer to:</p>
+<ol>
+  <li><strong>identify metal ions</strong> by comparing the data (e.g. emission line wavelengths) with <strong>reference data</strong>. This works even in <strong>mixtures</strong>, because each ion's lines appear separately — unlike a flame test where colours mask each other;</li>
+  <li><strong>determine the concentration of ions</strong> in dilute solution using a <strong>calibration curve</strong>.</li>
+</ol>
+
+<!-- Diagram: emission spectra comparison -->
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Identifying ions by comparing emission spectra (illustrative)</text>
+  <g font-size="11" fill="#334155">
+    <text x="20" y="62">Ion A</text><text x="20" y="112">Ion B</text><text x="20" y="162">Ion C</text><text x="20" y="212" font-weight="bold">Sample</text>
+  </g>
+  <rect x="90" y="45" width="580" height="26" fill="#111827"/>
+  <rect x="90" y="95" width="580" height="26" fill="#111827"/>
+  <rect x="90" y="145" width="580" height="26" fill="#111827"/>
+  <rect x="90" y="195" width="580" height="26" fill="#111827"/>
+  <!-- A lines -->
+  <g stroke-width="4"><line x1="200" y1="45" x2="200" y2="71" stroke="#60a5fa"/><line x1="470" y1="45" x2="470" y2="71" stroke="#facc15"/></g>
+  <!-- B lines -->
+  <g stroke-width="4"><line x1="150" y1="95" x2="150" y2="121" stroke="#a78bfa"/><line x1="320" y1="95" x2="320" y2="121" stroke="#4ade80"/><line x1="610" y1="95" x2="610" y2="121" stroke="#ef4444"/></g>
+  <!-- C lines -->
+  <g stroke-width="4"><line x1="380" y1="145" x2="380" y2="171" stroke="#22d3ee"/><line x1="560" y1="145" x2="560" y2="171" stroke="#fb923c"/></g>
+  <!-- Sample = A + C -->
+  <g stroke-width="4"><line x1="200" y1="195" x2="200" y2="221" stroke="#60a5fa"/><line x1="470" y1="195" x2="470" y2="221" stroke="#facc15"/><line x1="380" y1="195" x2="380" y2="221" stroke="#22d3ee"/><line x1="560" y1="195" x2="560" y2="221" stroke="#fb923c"/></g>
+  <text x="380" y="244" text-anchor="middle" font-size="11" fill="#334155">Every line in the sample matches a line of A or C → the sample contains ions A and C, not B.</text>
+  <text x="380" y="258" text-anchor="middle" font-size="10" fill="#64748b">wavelength →</text>
+</svg>
+
+<h3>Using a calibration curve</h3>
+<ol>
+  <li>Make up a series of <strong>standard solutions</strong> of the metal ion with known concentrations.</li>
+  <li>Measure the emission intensity (reading) for each standard with the flame photometer.</li>
+  <li>Plot <strong>reading (y)</strong> against <strong>concentration (x)</strong> and draw a line of best fit — the calibration curve.</li>
+  <li>Measure the reading for the unknown solution, then read across to the line and down to find its concentration.</li>
+</ol>
+
+<!-- Diagram: calibration curve -->
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t9ArrCal" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Calibration curve for Na⁺ (illustrative data)</text>
+  <line x1="90" y1="280" x2="90" y2="40" stroke="#334155" stroke-width="2" marker-end="url(#t9ArrCal)"/>
+  <line x1="90" y1="280" x2="620" y2="280" stroke="#334155" stroke-width="2" marker-end="url(#t9ArrCal)"/>
+  <g font-size="10.5" fill="#334155" text-anchor="middle">
+    <text x="90" y="297">0</text><text x="190" y="297">2</text><text x="290" y="297">4</text><text x="390" y="297">6</text><text x="490" y="297">8</text><text x="590" y="297">10</text>
+  </g>
+  <g font-size="10.5" fill="#334155" text-anchor="end">
+    <text x="84" y="284">0</text><text x="84" y="234">20</text><text x="84" y="184">40</text><text x="84" y="134">60</text><text x="84" y="84">80</text>
+  </g>
+  <text x="355" y="320" text-anchor="middle" font-size="12" fill="#334155">concentration of Na⁺ / mg per dm³</text>
+  <text x="35" y="165" text-anchor="middle" font-size="12" fill="#334155" transform="rotate(-90 35 165)">emission reading</text>
+  <line x1="90" y1="280" x2="590" y2="70" stroke="#2563eb" stroke-width="2.5"/>
+  <g fill="#1e40af"><circle cx="190" cy="238" r="4"/><circle cx="290" cy="196" r="4"/><circle cx="390" cy="154" r="4"/><circle cx="490" cy="112" r="4"/><circle cx="590" cy="70" r="4"/></g>
+  <line x1="90" y1="175" x2="340" y2="175" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+  <line x1="340" y1="175" x2="340" y2="280" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,4"/>
+  <circle cx="340" cy="175" r="5" fill="#dc2626"/>
+  <text x="330" y="166" text-anchor="end" font-size="11" fill="#991b1b">unknown: reading 42</text>
+  <text x="345" y="272" font-size="11" fill="#991b1b">5.0 mg/dm³</text>
+</svg>
+
+<div class="worked">
+<em>(Illustrative data.)</em> Using the calibration curve above, a sample of mineral water gives a reading of 42. Read across from 42 to the line, then down: concentration of Na⁺ = <strong>5.0 mg per dm³</strong>. If the sample had been diluted 10 times before measuring, the original concentration would be 5.0 × 10 = <strong>50 mg per dm³</strong>.
+</div>
+
+<div class="exam-tip">A calibration curve only gives reliable values <strong>within the range</strong> of the standards measured — don't extrapolate far beyond it. If the reading is too high, dilute the sample by a known factor and multiply back.</div>
+
+<h2>9.6 Alkanes and Alkenes</h2>
+
+<h3>Alkanes — saturated hydrocarbons</h3>
+<div class="definition">
+  <strong>Alkanes</strong> are hydrocarbons containing only <strong>single C–C bonds</strong>. They are <strong>saturated</strong>: each carbon atom forms four single bonds, so no more atoms can be added to the molecule. General formula <strong>CₙH₂ₙ₊₂</strong>.
+</div>
+
+<table>
+  <thead><tr><th>Name</th><th>Molecular formula</th><th>Structural formula</th></tr></thead>
+  <tbody>
+    <tr><td>methane</td><td>CH₄</td><td>CH₄</td></tr>
+    <tr><td>ethane</td><td>C₂H₆</td><td>CH₃CH₃</td></tr>
+    <tr><td>propane</td><td>C₃H₈</td><td>CH₃CH₂CH₃</td></tr>
+    <tr><td>butane</td><td>C₄H₁₀</td><td>CH₃CH₂CH₂CH₃</td></tr>
+  </tbody>
+</table>
+
+<!-- Diagram: displayed formulae of alkanes -->
+<svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;" font-family="Consolas, monospace">
+  <text x="360" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af" font-family="-apple-system, sans-serif">Displayed formulae of the first four alkanes</text>
+  <!-- methane -->
+  <g font-size="15" fill="#1a1a2e" text-anchor="middle">
+    <text x="70" y="105">C</text><text x="70" y="60">H</text><text x="70" y="150">H</text><text x="30" y="105">H</text><text x="110" y="105">H</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="1.8"><line x1="70" y1="65" x2="70" y2="90"/><line x1="70" y1="110" x2="70" y2="135"/><line x1="38" y1="100" x2="62" y2="100"/><line x1="78" y1="100" x2="102" y2="100"/></g>
+  <text x="70" y="180" text-anchor="middle" font-size="12" fill="#334155" font-family="-apple-system, sans-serif">methane</text>
+  <!-- ethane -->
+  <g font-size="15" fill="#1a1a2e" text-anchor="middle">
+    <text x="190" y="105">C</text><text x="230" y="105">C</text>
+    <text x="190" y="60">H</text><text x="230" y="60">H</text><text x="190" y="150">H</text><text x="230" y="150">H</text>
+    <text x="150" y="105">H</text><text x="270" y="105">H</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="1.8">
+    <line x1="190" y1="65" x2="190" y2="90"/><line x1="230" y1="65" x2="230" y2="90"/><line x1="190" y1="110" x2="190" y2="135"/><line x1="230" y1="110" x2="230" y2="135"/>
+    <line x1="158" y1="100" x2="182" y2="100"/><line x1="198" y1="100" x2="222" y2="100"/><line x1="238" y1="100" x2="262" y2="100"/>
+  </g>
+  <text x="210" y="180" text-anchor="middle" font-size="12" fill="#334155" font-family="-apple-system, sans-serif">ethane</text>
+  <!-- propane -->
+  <g font-size="15" fill="#1a1a2e" text-anchor="middle">
+    <text x="340" y="105">C</text><text x="380" y="105">C</text><text x="420" y="105">C</text>
+    <text x="340" y="60">H</text><text x="380" y="60">H</text><text x="420" y="60">H</text>
+    <text x="340" y="150">H</text><text x="380" y="150">H</text><text x="420" y="150">H</text>
+    <text x="300" y="105">H</text><text x="460" y="105">H</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="1.8">
+    <line x1="340" y1="65" x2="340" y2="90"/><line x1="380" y1="65" x2="380" y2="90"/><line x1="420" y1="65" x2="420" y2="90"/>
+    <line x1="340" y1="110" x2="340" y2="135"/><line x1="380" y1="110" x2="380" y2="135"/><line x1="420" y1="110" x2="420" y2="135"/>
+    <line x1="308" y1="100" x2="332" y2="100"/><line x1="348" y1="100" x2="372" y2="100"/><line x1="388" y1="100" x2="412" y2="100"/><line x1="428" y1="100" x2="452" y2="100"/>
+  </g>
+  <text x="380" y="180" text-anchor="middle" font-size="12" fill="#334155" font-family="-apple-system, sans-serif">propane</text>
+  <!-- butane -->
+  <g font-size="15" fill="#1a1a2e" text-anchor="middle">
+    <text x="530" y="105">C</text><text x="570" y="105">C</text><text x="610" y="105">C</text><text x="650" y="105">C</text>
+    <text x="530" y="60">H</text><text x="570" y="60">H</text><text x="610" y="60">H</text><text x="650" y="60">H</text>
+    <text x="530" y="150">H</text><text x="570" y="150">H</text><text x="610" y="150">H</text><text x="650" y="150">H</text>
+    <text x="495" y="105">H</text><text x="688" y="105">H</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="1.8">
+    <line x1="530" y1="65" x2="530" y2="90"/><line x1="570" y1="65" x2="570" y2="90"/><line x1="610" y1="65" x2="610" y2="90"/><line x1="650" y1="65" x2="650" y2="90"/>
+    <line x1="530" y1="110" x2="530" y2="135"/><line x1="570" y1="110" x2="570" y2="135"/><line x1="610" y1="110" x2="610" y2="135"/><line x1="650" y1="110" x2="650" y2="135"/>
+    <line x1="503" y1="100" x2="522" y2="100"/><line x1="538" y1="100" x2="562" y2="100"/><line x1="578" y1="100" x2="602" y2="100"/><line x1="618" y1="100" x2="642" y2="100"/><line x1="658" y1="100" x2="680" y2="100"/>
+  </g>
+  <text x="590" y="180" text-anchor="middle" font-size="12" fill="#334155" font-family="-apple-system, sans-serif">butane</text>
+</svg>
+
+<h3>Alkenes — unsaturated hydrocarbons</h3>
+<div class="definition">
+  <strong>Alkenes</strong> are hydrocarbons containing a <strong>carbon–carbon double bond, C=C</strong>. They are <strong>unsaturated</strong>: the double bond can open up so that more atoms can be added. The <strong>C=C double bond is the functional group</strong> of the alkenes. General formula <strong>CₙH₂ₙ</strong>.
+</div>
+
+<table>
+  <thead><tr><th>Name</th><th>Molecular formula</th><th>Structural formula</th></tr></thead>
+  <tbody>
+    <tr><td>ethene</td><td>C₂H₄</td><td>CH₂=CH₂</td></tr>
+    <tr><td>propene</td><td>C₃H₆</td><td>CH₂=CHCH₃</td></tr>
+    <tr><td>butene (but-1-ene)</td><td>C₄H₈</td><td>CH₂=CHCH₂CH₃</td></tr>
+  </tbody>
+</table>
+<p>There is no "methene" — an alkene needs at least two carbon atoms to have a C=C bond. Butene has isomers (the double bond can be in different positions); you only need to draw one correct structure.</p>
+
+<!-- Diagram: displayed alkenes -->
+<svg viewBox="0 0 720 190" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;" font-family="Consolas, monospace">
+  <text x="360" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af" font-family="-apple-system, sans-serif">Displayed formulae of alkenes (C=C in red)</text>
+  <!-- ethene -->
+  <g font-size="15" fill="#1a1a2e" text-anchor="middle">
+    <text x="80" y="105">C</text><text x="130" y="105">C</text>
+    <text x="50" y="70">H</text><text x="50" y="145">H</text><text x="160" y="70">H</text><text x="160" y="145">H</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="1.8"><line x1="74" y1="91" x2="57" y2="74"/><line x1="74" y1="106" x2="57" y2="130"/><line x1="137" y1="91" x2="154" y2="74"/><line x1="137" y1="106" x2="154" y2="130"/></g>
+  <g stroke="#dc2626" stroke-width="2.2"><line x1="89" y1="96" x2="121" y2="96"/><line x1="89" y1="103" x2="121" y2="103"/></g>
+  <text x="105" y="178" text-anchor="middle" font-size="12" fill="#334155" font-family="-apple-system, sans-serif">ethene</text>
+  <!-- propene -->
+  <g font-size="15" fill="#1a1a2e" text-anchor="middle">
+    <text x="260" y="105">C</text><text x="310" y="105">C</text><text x="360" y="105">C</text>
+    <text x="230" y="70">H</text><text x="230" y="145">H</text><text x="310" y="60">H</text><text x="360" y="60">H</text><text x="360" y="150">H</text><text x="400" y="105">H</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="1.8">
+    <line x1="254" y1="91" x2="237" y2="74"/><line x1="254" y1="106" x2="237" y2="130"/>
+    <line x1="310" y1="65" x2="310" y2="90"/><line x1="360" y1="65" x2="360" y2="90"/><line x1="360" y1="110" x2="360" y2="135"/>
+    <line x1="318" y1="100" x2="352" y2="100"/><line x1="368" y1="100" x2="392" y2="100"/>
+  </g>
+  <g stroke="#dc2626" stroke-width="2.2"><line x1="268" y1="96" x2="302" y2="96"/><line x1="268" y1="103" x2="302" y2="103"/></g>
+  <text x="315" y="178" text-anchor="middle" font-size="12" fill="#334155" font-family="-apple-system, sans-serif">propene</text>
+  <!-- but-1-ene -->
+  <g font-size="15" fill="#1a1a2e" text-anchor="middle">
+    <text x="480" y="105">C</text><text x="530" y="105">C</text><text x="580" y="105">C</text><text x="630" y="105">C</text>
+    <text x="450" y="70">H</text><text x="450" y="145">H</text><text x="530" y="60">H</text><text x="580" y="60">H</text><text x="580" y="150">H</text><text x="630" y="60">H</text><text x="630" y="150">H</text><text x="670" y="105">H</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="1.8">
+    <line x1="474" y1="91" x2="457" y2="74"/><line x1="474" y1="106" x2="457" y2="130"/>
+    <line x1="530" y1="65" x2="530" y2="90"/><line x1="580" y1="65" x2="580" y2="90"/><line x1="580" y1="110" x2="580" y2="135"/><line x1="630" y1="65" x2="630" y2="90"/><line x1="630" y1="110" x2="630" y2="135"/>
+    <line x1="538" y1="100" x2="572" y2="100"/><line x1="588" y1="100" x2="622" y2="100"/><line x1="638" y1="100" x2="662" y2="100"/>
+  </g>
+  <g stroke="#dc2626" stroke-width="2.2"><line x1="488" y1="96" x2="522" y2="96"/><line x1="488" y1="103" x2="522" y2="103"/></g>
+  <text x="560" y="178" text-anchor="middle" font-size="12" fill="#334155" font-family="-apple-system, sans-serif">butene (but-1-ene)</text>
+</svg>
+
+<h3>Addition reaction with bromine — the test for alkenes</h3>
+<p>Alkenes undergo <strong>addition reactions</strong>: the C=C double bond opens and atoms add across it, forming a saturated product. With bromine:</p>
+<span class="eq">C₂H₄ + Br₂ → C₂H₄Br₂ &nbsp;&nbsp; (ethene + bromine → 1,2-dibromoethane)</span>
+<span class="eq">CH₂=CH₂ + Br–Br → CH₂Br–CH₂Br</span>
+
+<div class="definition">
+  <strong>Test for an alkene (C=C):</strong> shake the compound with <strong>bromine water</strong> (orange). An alkene <strong>decolourises</strong> it — orange → <strong>colourless</strong>. An alkane does not react, so the bromine water <strong>stays orange</strong>.
+</div>
+
+<!-- Diagram: bromine water test -->
+<svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Bromine water test</text>
+  <g transform="translate(160,40)">
+    <path d="M 0 0 L 0 120 Q 0 145 25 145 Q 50 145 50 120 L 50 0" fill="#f8fafc" stroke="#374151" stroke-width="2"/>
+    <path d="M 2 50 L 2 120 Q 2 143 25 143 Q 48 143 48 120 L 48 50 Z" fill="#f97316" opacity="0.85"/>
+    <text x="25" y="170" text-anchor="middle" font-size="12" font-weight="bold">alkane + bromine water</text>
+    <text x="25" y="186" text-anchor="middle" font-size="11" fill="#c2410c">stays orange (no reaction)</text>
+  </g>
+  <g transform="translate(470,40)">
+    <path d="M 0 0 L 0 120 Q 0 145 25 145 Q 50 145 50 120 L 50 0" fill="#f8fafc" stroke="#374151" stroke-width="2"/>
+    <path d="M 2 50 L 2 120 Q 2 143 25 143 Q 48 143 48 120 L 48 50 Z" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <text x="25" y="170" text-anchor="middle" font-size="12" font-weight="bold">alkene + bromine water</text>
+    <text x="25" y="186" text-anchor="middle" font-size="11" fill="#334155">orange → colourless</text>
+  </g>
+</svg>
+
+<div class="exam-tip">Say "<strong>colourless</strong>", never "clear". Clear means see-through (orange bromine water is clear too!). Bromine water decolourising shows a C=C bond is present — the molecule is unsaturated.</div>
+
+<h3>Combustion of alkanes and alkenes</h3>
+<p>The <strong>complete combustion</strong> of alkanes and alkenes involves the <strong>oxidation</strong> of the hydrocarbons to produce <strong>carbon dioxide and water</strong>:</p>
+<span class="eq">C₃H₈ + 5O₂ → 3CO₂ + 4H₂O &nbsp;&nbsp; (propane)</span>
+<span class="eq">C₂H₄ + 3O₂ → 2CO₂ + 2H₂O &nbsp;&nbsp; (ethene)</span>
+<p>Alkenes tend to burn with a <strong>smokier flame</strong> than alkanes in air, because they have a higher proportion of carbon, so incomplete combustion is more likely. (Incomplete combustion is covered in Topic 8.)</p>
+
+<table>
+  <thead><tr><th></th><th>Alkanes</th><th>Alkenes</th></tr></thead>
+  <tbody>
+    <tr><td>General formula</td><td>CₙH₂ₙ₊₂</td><td>CₙH₂ₙ</td></tr>
+    <tr><td>Bonding</td><td>C–C single bonds only</td><td>contain one C=C double bond</td></tr>
+    <tr><td>Saturated?</td><td>saturated</td><td>unsaturated</td></tr>
+    <tr><td>Functional group</td><td>none (only C–C, C–H)</td><td>C=C</td></tr>
+    <tr><td>Bromine water</td><td>stays orange</td><td>decolourised</td></tr>
+    <tr><td>Reactivity</td><td>fairly unreactive (combustion only at GCSE)</td><td>more reactive — addition reactions, polymerisation</td></tr>
+    <tr><td>Main use</td><td>fuels</td><td>making polymers and other chemicals</td></tr>
+  </tbody>
+</table>
+
+<h2>9.7 Alcohols</h2>
+<div class="definition">
+  <strong>Alcohols</strong> are a homologous series of compounds containing the <strong>–OH functional group</strong> (hydroxyl group). The general formula is CₙH₂ₙ₊₁OH.
+</div>
+
+<table>
+  <thead><tr><th>Alcohol</th><th>Molecular formula</th><th>Structural formula</th></tr></thead>
+  <tbody>
+    <tr><td>methanol</td><td>CH₃OH</td><td>CH₃OH</td></tr>
+    <tr><td>ethanol</td><td>C₂H₅OH</td><td>CH₃CH₂OH</td></tr>
+    <tr><td>propanol (propan-1-ol)</td><td>C₃H₇OH</td><td>CH₃CH₂CH₂OH</td></tr>
+    <tr><td>butanol (butan-1-ol)</td><td>C₄H₉OH</td><td>CH₃CH₂CH₂CH₂OH</td></tr>
+  </tbody>
+</table>
+<p>Only the straight-chain alcohols with –OH on the end carbon (propan-1-ol, butan-1-ol) are required. Displayed formulae: draw the alkane chain and replace one end H with –O–H, e.g. ethanol: H–C(H)(H)–C(H)(H)–O–H.</p>
+
+<p>Alcohols can be <strong>dehydrated</strong> (water removed) to form <strong>alkenes</strong>, e.g. ethanol → ethene + water: C₂H₅OH → C₂H₄ + H₂O.</p>
+
+<div class="exam-tip">When drawing the displayed formula of an alcohol, show the <strong>O–H bond</strong> (draw –O–H, not just –OH, if the question says "displayed"). The –OH in an alcohol is <strong>covalently bonded</strong> — alcohols are not alkalis and do not contain hydroxide ions.</div>
+
+<h3>Making ethanol by fermentation</h3>
+<p>A solution of ethanol is made by the <strong>fermentation</strong> of carbohydrates (sugars) using <strong>yeast</strong>:</p>
+<span class="eq">C₆H₁₂O₆(aq) → 2C₂H₅OH(aq) + 2CO₂(g)</span>
+<ol>
+  <li>Dissolve a sugar (e.g. glucose or sucrose) in water and add <strong>yeast</strong>.</li>
+  <li>Keep the mixture warm — about <strong>30–40 °C</strong> (the optimum temperature for the yeast enzymes; above this the enzymes are denatured, below it the reaction is too slow).</li>
+  <li>Exclude air (<strong>anaerobic</strong> conditions) — e.g. use an air lock. With oxygen present, the yeast respires aerobically and microbes can oxidise the ethanol to ethanoic acid.</li>
+  <li>The reaction is complete when bubbles of CO₂ stop. Fermentation stops when the ethanol concentration reaches about 15% because the ethanol kills the yeast.</li>
+  <li>Remove the yeast by <strong>filtration</strong>.</li>
+</ol>
+
+<h3>Concentrating ethanol by fractional distillation</h3>
+<p>The dilute ethanol solution is <strong>concentrated by fractional distillation</strong>. Ethanol (b.p. 78 °C) has a lower boiling point than water (100 °C), so it evaporates first, rises up the fractionating column and is condensed and collected. The temperature at the top of the column stays at about 78 °C while ethanol is distilling. This is how spirits (e.g. whisky, vodka) are made, and how ethanol is concentrated for use as a fuel.</p>
+
+<!-- Diagram: fermentation and fractional distillation -->
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t9ArrFerm" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">From sugar to concentrated ethanol</text>
+  <!-- fermentation flask -->
+  <path d="M 60 250 L 95 160 L 95 110 L 125 110 L 125 160 L 160 250 Z" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <path d="M 70 225 L 150 225 L 160 250 L 60 250 Z" fill="#fef9c3"/>
+  <g fill="#e5e7eb"><circle cx="95" cy="215" r="3"/><circle cx="110" cy="205" r="3"/><circle cx="125" cy="212" r="3"/></g>
+  <rect x="92" y="98" width="36" height="14" fill="#6b7280"/>
+  <path d="M 110 98 L 110 70 Q 110 55 125 55 L 135 55 Q 150 55 150 70 L 150 85" fill="none" stroke="#374151" stroke-width="2"/>
+  <text x="110" y="275" text-anchor="middle" font-size="11" fill="#334155">sugar + yeast + water</text>
+  <text x="110" y="290" text-anchor="middle" font-size="11" fill="#334155">30–40 °C, no air</text>
+  <text x="165" y="70" font-size="10.5" fill="#334155">air lock: CO₂ out,</text>
+  <text x="165" y="84" font-size="10.5" fill="#334155">air kept out</text>
+  <line x1="200" y1="190" x2="270" y2="190" stroke="#334155" stroke-width="2.5" marker-end="url(#t9ArrFerm)"/>
+  <text x="235" y="180" text-anchor="middle" font-size="10.5" fill="#334155">filter</text>
+  <!-- distillation -->
+  <circle cx="340" cy="225" r="38" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <path d="M 304 235 Q 340 268 376 235 Z" fill="#fef9c3"/>
+  <rect x="332" y="90" width="16" height="100" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <g fill="#cbd5e1"><circle cx="340" cy="110" r="4"/><circle cx="340" cy="125" r="4"/><circle cx="340" cy="140" r="4"/><circle cx="340" cy="155" r="4"/><circle cx="340" cy="170" r="4"/></g>
+  <rect x="337" y="55" width="6" height="40" fill="#fff" stroke="#374151"/>
+  <circle cx="340" cy="92" r="4" fill="#dc2626"/>
+  <text x="352" y="62" font-size="10.5" fill="#334155">thermometer ≈ 78 °C</text>
+  <!-- condenser -->
+  <path d="M 348 100 L 540 170" stroke="#374151" stroke-width="3"/>
+  <path d="M 395 105 L 515 148 L 505 175 L 385 132 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="470" y="115" font-size="10.5" fill="#1e40af">condenser (cold water)</text>
+  <!-- collection -->
+  <path d="M 530 180 L 530 240 Q 530 255 545 255 L 575 255 Q 590 255 590 240 L 590 180" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <rect x="532" y="225" width="56" height="28" fill="#e0f2fe"/>
+  <text x="560" y="275" text-anchor="middle" font-size="11" fill="#334155">concentrated ethanol</text>
+  <path d="M 340 296 C 330 284, 335 274, 340 268 C 345 274, 350 284, 340 296 Z" fill="#93c5fd" stroke="#2563eb"/>
+  <text x="356" y="290" font-size="10.5" fill="#334155">heat gently</text>
+  <text x="325" y="140" text-anchor="end" font-size="10.5" fill="#334155">fractionating</text>
+  <text x="325" y="153" text-anchor="end" font-size="10.5" fill="#334155">column</text>
+</svg>
+
+<h3>Oxidation of ethanol to ethanoic acid</h3>
+<p>Ethanol can be <strong>oxidised</strong> to <strong>ethanoic acid</strong>, either by <strong>microbes</strong> (bacteria) in air, or by chemical oxidising agents (e.g. acidified potassium dichromate, which turns from orange to green). This is why an opened bottle of wine left exposed to air turns sour — <strong>vinegar</strong> is a dilute solution of ethanoic acid.</p>
+<span class="eq">CH₃CH₂OH + 2[O] → CH₃COOH + H₂O &nbsp;&nbsp; ([O] = oxygen from the oxidising agent)</span>
+
+<h2>9.8 Carboxylic Acids</h2>
+<div class="definition">
+  <strong>Carboxylic acids</strong> are a homologous series containing the <strong>–COOH functional group</strong> (carboxyl group). General formula CₙH₂ₙ₊₁COOH.
+</div>
+
+<table>
+  <thead><tr><th>Carboxylic acid</th><th>Formula</th><th>Carbon atoms</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td>methanoic acid</td><td>HCOOH</td><td>1</td><td>in ant and nettle stings</td></tr>
+    <tr><td>ethanoic acid</td><td>CH₃COOH</td><td>2</td><td>vinegar</td></tr>
+    <tr><td>propanoic acid</td><td>C₂H₅COOH (CH₃CH₂COOH)</td><td>3</td><td>food preservative</td></tr>
+    <tr><td>butanoic acid</td><td>C₃H₇COOH (CH₃CH₂CH₂COOH)</td><td>4</td><td>smell of rancid butter</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">Count the carbons carefully — the carbon in –COOH is included in the name. Butanoic acid has <strong>four</strong> carbons: C₃H₇COOH, not C₄H₉COOH. The displayed –COOH group is C double-bonded to one O and single-bonded to an O–H.</div>
+
+<h3>Reactions of carboxylic acids</h3>
+<p>Carboxylic acids dissolve in water to form <strong>acidic solutions</strong> (pH below 7). They are <strong>weak acids</strong> — only partially ionised in water — so they have a higher pH than a strong acid of the same concentration and react more slowly. They show typical acid reactions:</p>
+<ul>
+  <li>With <strong>metal carbonates</strong> → salt + water + carbon dioxide (fizzing):<br>
+  <span class="eq">2CH₃COOH + Na₂CO₃ → 2CH₃COONa + H₂O + CO₂</span>
+  (the salt is sodium ethanoate)</li>
+  <li>With <strong>reactive metals</strong> → salt + hydrogen: 2CH₃COOH + Mg → (CH₃COO)₂Mg + H₂</li>
+  <li>With <strong>alkalis</strong> → salt + water: CH₃COOH + NaOH → CH₃COONa + H₂O</li>
+</ul>
+
+<table>
+  <thead><tr><th>Homologous series</th><th>Functional group</th><th>Ending of name</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>alkanes</td><td>none</td><td>-ane</td><td>ethane, C₂H₆</td></tr>
+    <tr><td>alkenes</td><td>C=C</td><td>-ene</td><td>ethene, C₂H₄</td></tr>
+    <tr><td>alcohols</td><td>–OH</td><td>-ol</td><td>ethanol, C₂H₅OH</td></tr>
+    <tr><td>carboxylic acids</td><td>–COOH</td><td>-oic acid</td><td>ethanoic acid, CH₃COOH</td></tr>
+  </tbody>
+</table>
+<p>Members of the same homologous series have <strong>similar chemical reactions</strong> because their molecules contain the <strong>same functional group</strong>. So you can predict products for other members: e.g. propanol can be oxidised to propanoic acid, and propanoic acid reacts with sodium carbonate to give sodium propanoate, water and carbon dioxide.</p>
+
+<h2>9.9 Core Practical — Combustion of Alcohols</h2>
+<p>Investigate the <strong>temperature rise produced in a known mass of water by the combustion of the alcohols ethanol, propanol, butanol and pentanol</strong>.</p>
+
+<!-- Diagram: spirit burner calorimetry -->
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Comparing the energy released by burning alcohols</text>
+  <!-- clamp stand -->
+  <rect x="120" y="290" width="160" height="10" fill="#6b7280"/>
+  <rect x="135" y="60" width="8" height="232" fill="#6b7280"/>
+  <rect x="140" y="105" width="105" height="8" fill="#6b7280"/>
+  <!-- copper can -->
+  <rect x="240" y="80" width="90" height="100" rx="4" fill="#fdba74" stroke="#9a3412" stroke-width="2"/>
+  <rect x="244" y="110" width="82" height="66" fill="#bfdbfe" opacity="0.85"/>
+  <!-- thermometer -->
+  <rect x="300" y="40" width="10" height="125" rx="5" fill="#fff" stroke="#374151" stroke-width="1.5"/>
+  <circle cx="305" cy="165" r="7" fill="#dc2626"/>
+  <rect x="302" y="95" width="6" height="68" fill="#dc2626"/>
+  <!-- draught shields -->
+  <rect x="200" y="170" width="8" height="120" fill="#cbd5e1" stroke="#64748b"/>
+  <rect x="362" y="170" width="8" height="120" fill="#cbd5e1" stroke="#64748b"/>
+  <!-- spirit burner -->
+  <path d="M 255 290 L 260 250 L 310 250 L 315 290 Z" fill="#e0f2fe" stroke="#374151" stroke-width="2"/>
+  <rect x="282" y="232" width="6" height="18" fill="#a16207"/>
+  <path d="M 285 232 C 272 215, 278 198, 285 186 C 292 198, 298 215, 285 232 Z" fill="#fde68a" stroke="#f59e0b" stroke-width="1.5"/>
+  <g font-size="11" fill="#111">
+    <line x1="330" y1="95" x2="410" y2="75" stroke="#9ca3af"/><text x="415" y="78">thermometer — record start and highest temperature</text>
+    <line x1="330" y1="140" x2="410" y2="125" stroke="#9ca3af"/><text x="415" y="128">copper can with a known mass of water (e.g. 100 g)</text>
+    <line x1="370" y1="200" x2="410" y2="185" stroke="#9ca3af"/><text x="415" y="188">draught shield — reduces heat loss</text>
+    <line x1="315" y1="270" x2="410" y2="255" stroke="#9ca3af"/><text x="415" y="258">spirit burner containing the alcohol</text>
+    <text x="415" y="272">— weigh before and after burning</text>
+  </g>
+</svg>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure a known volume of water (e.g. 100 cm³ ≈ 100 g) into a copper calorimeter can; clamp it a fixed distance above the burner. Record the starting temperature.</li>
+  <li>Weigh the spirit burner (with lid) containing the alcohol.</li>
+  <li>Light the wick and heat the water, stirring with the thermometer, until the temperature has risen by a set amount (e.g. 20 °C).</li>
+  <li>Extinguish the flame with the lid and immediately reweigh the burner. Mass of alcohol burned = initial mass − final mass.</li>
+  <li>Repeat for each alcohol, keeping the mass of water, distance from flame, wick length and temperature rise the same.</li>
+  <li>Calculate <strong>temperature rise per gram</strong> of alcohol burned (or mass needed for the fixed temperature rise) to compare.</li>
+</ol>
+
+<table>
+  <thead><tr><th>Alcohol</th><th>Mass burned / g</th><th>Temperature rise / °C</th><th>Temperature rise per gram / °C g⁻¹</th></tr></thead>
+  <tbody>
+    <tr><td>ethanol</td><td>1.10</td><td>20.0</td><td>18.2</td></tr>
+    <tr><td>propanol</td><td>0.95</td><td>20.0</td><td>21.1</td></tr>
+    <tr><td>butanol</td><td>0.88</td><td>20.0</td><td>22.7</td></tr>
+    <tr><td>pentanol</td><td>0.84</td><td>20.0</td><td>23.8</td></tr>
+  </tbody>
+</table>
+<p><em>Illustrative data only.</em> Trend: as the chain gets longer, more energy is released per gram (and much more per mole), because each molecule has more C–H and C–C bonds to break and more CO₂ and H₂O bonds formed.</p>
+
+<div class="worked">
+<em>(Illustrative data.)</em> Burning 0.92 g of propanol raises the temperature of 100 g of water from 19.5 °C to 37.0 °C. Find the temperature rise per gram of propanol.<br>
+Temperature rise = 37.0 − 19.5 = 17.5 °C. Rise per gram = 17.5 ÷ 0.92 = <strong>19 °C g⁻¹</strong> (2 s.f.).
+</div>
+
+<div class="exam-tip">The measured values are always <strong>lower</strong> than the true energy released because of <strong>heat loss</strong> to the surroundings (and to heating the can), and <strong>incomplete combustion</strong> (soot on the can). Improvements: draught shields, lid on can, keep flame distance fixed and small, stir the water, use a fresh wick. Safety: alcohols are highly flammable — keep stoppered bottles away from flames.</div>
+
+<h2>9.10 Addition Polymers</h2>
+<div class="definition">
+  A <strong>polymer</strong> is a substance of <strong>high average relative molecular mass</strong> made up of <strong>small repeating units</strong>. The small molecules that join together are called <strong>monomers</strong>.
+</div>
+
+<h3>Addition polymerisation</h3>
+<p>Alkenes (and other monomers with a C=C double bond) join together in <strong>addition polymerisation</strong>. The double bond in each monomer <strong>opens up</strong> and the monomers join in a long chain. The polymer is the <strong>only product</strong>, and it is saturated (the C=C bonds are gone).</p>
+<span class="eq">n CH₂=CH₂ → –(CH₂–CH₂)ₙ– &nbsp;&nbsp; ethene → poly(ethene)</span>
+
+<!-- Diagram: addition polymerisation -->
+<svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;" font-family="Consolas, monospace">
+  <defs>
+    <marker id="t9ArrPoly" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af" font-family="-apple-system, sans-serif">Ethene → poly(ethene): drawing the repeat unit</text>
+  <!-- monomer -->
+  <text x="40" y="125" font-size="22" fill="#1a1a2e">n</text>
+  <g font-size="16" fill="#1a1a2e" text-anchor="middle">
+    <text x="100" y="125">C</text><text x="160" y="125">C</text>
+    <text x="100" y="75">H</text><text x="160" y="75">H</text><text x="100" y="175">H</text><text x="160" y="175">H</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="2"><line x1="100" y1="80" x2="100" y2="108"/><line x1="160" y1="80" x2="160" y2="108"/><line x1="100" y1="130" x2="100" y2="158"/><line x1="160" y1="130" x2="160" y2="158"/></g>
+  <g stroke="#dc2626" stroke-width="2.4"><line x1="110" y1="115" x2="150" y2="115"/><line x1="110" y1="122" x2="150" y2="122"/></g>
+  <text x="130" y="210" text-anchor="middle" font-size="12" fill="#334155" font-family="-apple-system, sans-serif">monomer: ethene (C=C)</text>
+  <line x1="215" y1="118" x2="320" y2="118" stroke="#334155" stroke-width="2.5" marker-end="url(#t9ArrPoly)"/>
+  <text x="268" y="105" text-anchor="middle" font-size="11" fill="#334155" font-family="-apple-system, sans-serif">high pressure,</text>
+  <text x="268" y="140" text-anchor="middle" font-size="11" fill="#334155" font-family="-apple-system, sans-serif">catalyst</text>
+  <!-- polymer repeat unit -->
+  <path d="M 370 60 Q 355 118 370 176" fill="none" stroke="#1a1a2e" stroke-width="2.5"/>
+  <path d="M 560 60 Q 575 118 560 176" fill="none" stroke="#1a1a2e" stroke-width="2.5"/>
+  <g font-size="16" fill="#1a1a2e" text-anchor="middle">
+    <text x="435" y="125">C</text><text x="495" y="125">C</text>
+    <text x="435" y="75">H</text><text x="495" y="75">H</text><text x="435" y="175">H</text><text x="495" y="175">H</text>
+  </g>
+  <g stroke="#1a1a2e" stroke-width="2">
+    <line x1="435" y1="80" x2="435" y2="108"/><line x1="495" y1="80" x2="495" y2="108"/><line x1="435" y1="130" x2="435" y2="158"/><line x1="495" y1="130" x2="495" y2="158"/>
+    <line x1="445" y1="119" x2="485" y2="119"/>
+  </g>
+  <g stroke="#16a34a" stroke-width="2.4"><line x1="345" y1="119" x2="427" y2="119"/><line x1="503" y1="119" x2="590" y2="119"/></g>
+  <text x="590" y="182" font-size="20" fill="#1a1a2e">n</text>
+  <text x="465" y="210" text-anchor="middle" font-size="12" fill="#334155" font-family="-apple-system, sans-serif">repeat unit: C=C now single; bonds extend out through the brackets</text>
+</svg>
+
+<h3>Other addition polymers</h3>
+<table>
+  <thead><tr><th>Monomer</th><th>Monomer structure</th><th>Polymer</th><th>Repeat unit</th></tr></thead>
+  <tbody>
+    <tr><td>ethene</td><td>CH₂=CH₂</td><td>poly(ethene)</td><td>–(CH₂–CH₂)–</td></tr>
+    <tr><td>propene</td><td>CH₂=CHCH₃</td><td>poly(propene)</td><td>–(CH₂–CH(CH₃))–</td></tr>
+    <tr><td>chloroethene</td><td>CH₂=CHCl</td><td>poly(chloroethene), <strong>PVC</strong></td><td>–(CH₂–CHCl)–</td></tr>
+    <tr><td>tetrafluoroethene</td><td>CF₂=CF₂</td><td>poly(tetrafluoroethene), <strong>PTFE</strong></td><td>–(CF₂–CF₂)–</td></tr>
+  </tbody>
+</table>
+
+<h3>Deducing structures</h3>
+<ul>
+  <li><strong>Monomer → polymer:</strong> draw the two C atoms of the C=C as a single bond; keep all the other groups attached in the same positions; add bonds out to each side through square brackets; put <em>n</em> after the bracket.</li>
+  <li><strong>Polymer → monomer:</strong> take the two-carbon repeat unit, remove the extension bonds and brackets, and put back a <strong>C=C double bond</strong> between the two carbons.</li>
+</ul>
+
+<div class="worked">
+The repeat unit of a polymer is –(CH₂–CH(C₆H₅))–. Draw the monomer.<br>
+Replace the C–C single bond in the chain by a double bond and remove the extension bonds: <strong>CH₂=CH(C₆H₅)</strong> — this is phenylethene (styrene); the polymer is poly(phenylethene), "polystyrene".
+</div>
+
+<div class="exam-tip">The main chain of an addition polymer is <strong>always carbon atoms only</strong>. Side groups (CH₃, Cl, F) hang off it. A very common error is putting the CH₃ of propene into the main chain — the repeat unit of poly(propene) has only <strong>two</strong> carbons in the backbone.</div>
+
+<h3>Uses and properties</h3>
+<table>
+  <thead><tr><th>Polymer</th><th>Properties</th><th>Uses</th></tr></thead>
+  <tbody>
+    <tr><td>Poly(ethene)</td><td>flexible, cheap, tough, easily moulded, electrical insulator</td><td>plastic bags, bottles, cling film, cable insulation</td></tr>
+    <tr><td>Poly(propene)</td><td>tough, strong, flexible, high softening point, resistant to chemicals</td><td>crates, ropes, carpets, food containers, car bumpers</td></tr>
+    <tr><td>PVC (poly(chloroethene))</td><td>tough, hard-wearing, waterproof; can be rigid or made flexible with plasticisers; electrical insulator</td><td>window frames, drainpipes, water pipes, insulation on electrical wires</td></tr>
+    <tr><td>PTFE (poly(tetrafluoroethene))</td><td>very unreactive, tough, <strong>non-stick</strong> (very low friction), high melting point</td><td>non-stick coatings for frying pans, waterproof breathable clothing, lab equipment</td></tr>
+  </tbody>
+</table>
+
+<h3>Problems with polymers</h3>
+<ul>
+  <li><strong>Availability of starting materials:</strong> most monomers come from <strong>crude oil</strong>, a finite resource; as it runs out, polymers will become more expensive.</li>
+  <li><strong>Persistence in landfill:</strong> most addition polymers are <strong>non-biodegradable</strong> — microorganisms cannot break them down — so they persist in landfill sites for hundreds of years and pollute oceans (harming wildlife; microplastics).</li>
+  <li><strong>Gases produced during disposal by combustion:</strong> burning plastics releases energy but produces <strong>CO₂</strong> (greenhouse gas) and can give <strong>toxic gases</strong> — e.g. PVC releases <strong>hydrogen chloride</strong>; incomplete combustion gives CO and soot.</li>
+</ul>
+
+<h3>Recycling polymers</h3>
+<table>
+  <thead><tr><th>Advantages of recycling</th><th>Disadvantages / problems</th></tr></thead>
+  <tbody>
+    <tr><td>Reduces the use of crude oil (finite resource)</td><td>Plastics must be <strong>collected and transported</strong> — costs money and uses fuel</td></tr>
+    <tr><td>Reduces the amount of waste in landfill</td><td>Different polymers must be <strong>sorted</strong> — difficult and labour-intensive</td></tr>
+    <tr><td>Less CO₂ / toxic gas than burning</td><td>Recycled plastic is often lower quality; can only be recycled a limited number of times</td></tr>
+    <tr><td>Usually uses less energy than making new polymer</td><td>Washing and processing uses energy and water</td></tr>
+  </tbody>
+</table>
+
+<h2>9.11 Condensation Polymers <strong>(HT)</strong></h2>
+<div class="definition">
+  In <strong>condensation polymerisation</strong>, monomers with <strong>two functional groups</strong> join together and a <strong>small molecule (usually water)</strong> is <strong>lost</strong> each time a link forms.
+</div>
+
+<h3>Polyesters</h3>
+<p>A <strong>polyester</strong> is formed when a monomer with <strong>two carboxylic acid groups</strong> (a dicarboxylic acid) reacts with a monomer with <strong>two alcohol groups</strong> (a diol). Each reaction between –COOH and –OH forms an <strong>ester link</strong> and releases <strong>one molecule of water</strong>.</p>
+<span class="eq">n HOOC–□–COOH + n HO–○–OH → –(OC–□–COO–○–O)ₙ– + 2n H₂O</span>
+
+<!-- Diagram: polyester formation -->
+<svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t9ArrCond" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Forming a polyester (□ and ○ represent the carbon chains)</text>
+  <!-- diacid -->
+  <rect x="75" y="55" width="70" height="36" rx="6" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+  <text x="110" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350f">□</text>
+  <text x="12" y="78" font-size="12" fill="#1a1a2e">n</text>
+  <text x="73" y="78" text-anchor="end" font-size="12" fill="#1a1a2e">HOOC–</text>
+  <text x="149" y="78" font-size="12" fill="#1a1a2e">–COOH</text>
+  <text x="115" y="110" text-anchor="middle" font-size="11" fill="#334155">dicarboxylic acid</text>
+  <text x="235" y="78" text-anchor="middle" font-size="18" fill="#334155">+</text>
+  <!-- diol -->
+  <circle cx="345" cy="73" r="20" fill="#bbf7d0" stroke="#166534" stroke-width="2"/>
+  <text x="345" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="#14532d">○</text>
+  <text x="278" y="78" font-size="12" fill="#1a1a2e">n</text>
+  <text x="322" y="78" text-anchor="end" font-size="12" fill="#1a1a2e">HO–</text>
+  <text x="368" y="78" font-size="12" fill="#1a1a2e">–OH</text>
+  <text x="345" y="110" text-anchor="middle" font-size="11" fill="#334155">diol</text>
+  <line x1="420" y1="73" x2="490" y2="73" stroke="#334155" stroke-width="2.5" marker-end="url(#t9ArrCond)"/>
+  <text x="600" y="78" text-anchor="middle" font-size="13" fill="#1d4ed8" font-weight="bold">+ H₂O lost</text>
+  <text x="600" y="96" text-anchor="middle" font-size="11" fill="#334155">at every link</text>
+  <!-- polymer chain -->
+  <g transform="translate(40,140)">
+    <text x="0" y="28" font-size="22" fill="#1a1a2e">[</text>
+    <text x="14" y="26" font-size="12" fill="#1a1a2e">–C(=O)–</text>
+    <rect x="72" y="8" width="56" height="28" rx="6" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
+    <text x="100" y="27" text-anchor="middle" font-size="12" fill="#78350f">□</text>
+    <text x="132" y="26" font-size="12" fill="#1a1a2e">–C(=O)–</text>
+    <text x="190" y="26" font-size="12" fill="#dc2626" font-weight="bold">O</text>
+    <text x="202" y="26" font-size="12" fill="#1a1a2e">–</text>
+    <circle cx="228" cy="21" r="15" fill="#bbf7d0" stroke="#166534" stroke-width="2"/>
+    <text x="228" y="26" text-anchor="middle" font-size="12" fill="#14532d">○</text>
+    <text x="246" y="26" font-size="12" fill="#1a1a2e">–</text>
+    <text x="256" y="26" font-size="12" fill="#dc2626" font-weight="bold">O</text>
+    <text x="268" y="28" font-size="22" fill="#1a1a2e">]</text>
+    <text x="280" y="38" font-size="14" fill="#1a1a2e">n</text>
+    <text x="310" y="26" font-size="12" fill="#334155">+ 2n H₂O</text>
+    <text x="420" y="18" font-size="11" fill="#991b1b">the –COO– group linking the units</text>
+    <text x="420" y="34" font-size="11" fill="#991b1b">is the <tspan font-weight="bold">ester link</tspan></text>
+  </g>
+</svg>
+
+<table>
+  <thead><tr><th></th><th>Addition polymerisation</th><th>Condensation polymerisation</th></tr></thead>
+  <tbody>
+    <tr><td>Monomers</td><td>one type, each with a C=C double bond</td><td>usually two different monomers, each with <strong>two</strong> functional groups</td></tr>
+    <tr><td>Products</td><td>polymer only</td><td>polymer <strong>and</strong> a small molecule (e.g. water)</td></tr>
+    <tr><td>Example</td><td>poly(ethene), PVC, PTFE</td><td>polyesters (e.g. PET for bottles and fibres)</td></tr>
+  </tbody>
+</table>
+
+<h3>Biodegradable polymers</h3>
+<p>Some polyesters (e.g. poly(lactic acid), PLA, made from plant starch) are <strong>biodegradable</strong> — they can be broken down by microorganisms, so they cause fewer landfill problems.</p>
+
+<h2>9.12 Naturally Occurring Polymers</h2>
+<p>Many important biological molecules are polymers:</p>
+<table>
+  <thead><tr><th>Natural polymer</th><th>Monomers</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><strong>DNA</strong></td><td><strong>nucleotides</strong> (four different ones, containing the bases A, T, C, G)</td><td>two polymer strands twisted into a double helix; carries genetic information</td></tr>
+    <tr><td><strong>Proteins</strong></td><td><strong>amino acids</strong> (about 20 different ones)</td><td>formed by condensation polymerisation; enzymes, muscle, hair</td></tr>
+    <tr><td><strong>Carbohydrates</strong> — starch, cellulose, glycogen</td><td><strong>sugars</strong> (e.g. glucose)</td><td>formed by condensation polymerisation; starch is an energy store in plants, cellulose forms plant cell walls</td></tr>
+  </tbody>
+</table>
+
+<h2>9.13 Bulk Properties of Materials</h2>
+<p>Materials are chosen for a job by matching their <strong>properties</strong> to the use. You need to compare the properties of <strong>ceramics, polymers, composites and metals</strong>.</p>
+
+<table>
+  <thead><tr><th>Material</th><th>Examples</th><th>Typical properties</th><th>Uses</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Ceramics</strong></td><td>glass, clay ceramics (pottery, bricks, porcelain)</td><td>hard, strong in compression, <strong>brittle</strong>, high melting point, electrical and thermal insulators, unreactive, often transparent (glass)</td><td>windows, bottles, plates, bricks, tiles, insulators on power lines</td></tr>
+    <tr><td><strong>Polymers</strong></td><td>poly(ethene), PVC, nylon</td><td>low density, flexible, easily moulded, electrical/thermal insulators, unreactive, often low melting/softening point</td><td>packaging, pipes, clothing, insulation</td></tr>
+    <tr><td><strong>Composites</strong></td><td>fibreglass (glass fibres in a polymer), carbon-fibre reinforced polymer, reinforced concrete, wood</td><td>made of a <strong>matrix</strong> (binder) surrounding <strong>reinforcement</strong> fibres/fragments; properties combine the best of both — e.g. strong, stiff and low density</td><td>boat hulls, bike frames, aircraft parts, tennis rackets, buildings and bridges</td></tr>
+    <tr><td><strong>Metals</strong></td><td>steel, aluminium, copper</td><td>strong, <strong>malleable and ductile</strong>, good conductors of heat and electricity, high density (mostly), shiny; some corrode</td><td>wires, bridges, car bodies, saucepans</td></tr>
+  </tbody>
+</table>
+
+<div class="worked">
+<em>(Illustrative data.)</em> A designer wants a material for a racing-bike frame: it must be strong, stiff and light. Which material is best?
+<table>
+  <thead><tr><th>Material</th><th>Density / g cm⁻³</th><th>Strength / MPa</th><th>Relative cost</th></tr></thead>
+  <tbody>
+    <tr><td>steel</td><td>7.8</td><td>500</td><td>low</td></tr>
+    <tr><td>aluminium alloy</td><td>2.7</td><td>300</td><td>medium</td></tr>
+    <tr><td>carbon-fibre composite</td><td>1.6</td><td>600</td><td>high</td></tr>
+    <tr><td>PVC</td><td>1.4</td><td>50</td><td>very low</td></tr>
+  </tbody>
+</table>
+Carbon-fibre composite has the <strong>highest strength and a low density</strong>, so it gives the strongest, lightest frame — the best choice for racing despite the higher cost. PVC is light but far too weak; steel is strong but heavy; aluminium is a cheaper compromise.
+</div>
+
+<div class="exam-tip">For "choose a material" questions, <strong>use the data</strong>: quote values, compare them, and link each property to the use (e.g. "low density so the bike is light"). Mention cost or other drawbacks to show evaluation.</div>
+
+<h2>9.14 Nanoparticles and Surface Properties</h2>
+<div class="definition">
+  <strong>Nanoscience</strong> refers to structures that are <strong>1–100 nm</strong> in size, of the order of a few hundred atoms. <strong>Nanoparticles</strong> are particles in this size range (1 nm = 1 × 10⁻⁹ m).
+</div>
+
+<p>For comparison, atoms are about 0.1–0.5 nm across, so a nanoparticle contains a few hundred atoms; fine dust particles (PM₂.₅) are 100–2500 nm.</p>
+
+<h3>Why nanoparticles behave differently</h3>
+<p>Nanoparticles show different properties from the same material in bulk because of their <strong>very high surface area to volume ratio</strong>. A much larger fraction of their atoms are on the surface, so:</p>
+<ul>
+  <li>they can be much more <strong>reactive</strong> and make very effective <strong>catalysts</strong> (less material needed for the same surface area);</li>
+  <li>their optical, electrical and other properties can be different (e.g. nanoparticles of gold appear red or purple, not gold-coloured; nanoparticulate titanium dioxide is transparent rather than white).</li>
+</ul>
+<p>As the side length of a cube <strong>decreases by a factor of 10</strong>, the surface area to volume ratio <strong>increases by a factor of 10</strong>.</p>
+
+<!-- Diagram: SA:V vs particle size -->
+<svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Smaller particles → larger surface area : volume</text>
+  <g>
+    <rect x="70" y="70" width="100" height="100" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+    <text x="120" y="195" text-anchor="middle" font-size="11" fill="#334155">side 100 nm</text>
+    <text x="120" y="211" text-anchor="middle" font-size="11" fill="#334155">SA : V = 6/100 = 0.06 nm⁻¹</text>
+  </g>
+  <g>
+    <rect x="300" y="95" width="50" height="50" fill="#93c5fd" stroke="#1e40af" stroke-width="2"/>
+    <text x="325" y="195" text-anchor="middle" font-size="11" fill="#334155">side 10 nm</text>
+    <text x="325" y="211" text-anchor="middle" font-size="11" fill="#334155">SA : V = 6/10 = 0.6 nm⁻¹</text>
+  </g>
+  <g>
+    <rect x="530" y="113" width="14" height="14" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <text x="537" y="195" text-anchor="middle" font-size="11" fill="#334155">side 1 nm</text>
+    <text x="537" y="211" text-anchor="middle" font-size="11" fill="#334155">SA : V = 6/1 = 6 nm⁻¹</text>
+  </g>
+  <text x="360" y="232" text-anchor="middle" font-size="10.5" fill="#64748b">(Cubes not to scale with each other.) For a cube of side L: SA = 6L², V = L³, so SA : V = 6/L.</text>
+</svg>
+
+<div class="worked">
+Calculate the surface area to volume ratio of a cube-shaped nanoparticle of side 20 nm.<br>
+SA = 6 × 20² = 2400 nm²; V = 20³ = 8000 nm³; SA : V = 2400 ÷ 8000 = <strong>0.3 nm⁻¹</strong> (or 3 : 10).<br>
+A particle of side 2 nm would have SA : V = 6 ÷ 2 = 3 nm⁻¹ — ten times larger.
+</div>
+
+<h3>Applications of nanoparticles</h3>
+<ul>
+  <li><strong>Sun creams</strong> — nanoparticles of titanium dioxide or zinc oxide absorb/block UV, give better skin coverage and are transparent (no white residue).</li>
+  <li><strong>Medicine</strong> — targeted drug delivery (nanoparticles can carry drugs into cells); <strong>silver nanoparticles</strong> are antibacterial, used in wound dressings and to coat surgical instruments.</li>
+  <li><strong>Catalysts</strong> — high surface area makes them very efficient (e.g. in catalytic converters).</li>
+  <li><strong>Electronics</strong> — tiny circuits and components; carbon nanotubes conduct electricity.</li>
+  <li><strong>Cosmetics</strong> and self-cleaning glass.</li>
+</ul>
+
+<h3>Risks of nanoparticles</h3>
+<ul>
+  <li>Their properties are <strong>not fully understood</strong>, and long-term effects have not yet been studied — they are a relatively new technology.</li>
+  <li>Because they are so small, they may be <strong>breathed in</strong> or <strong>absorbed through the skin</strong> and enter cells and the bloodstream, possibly causing damage.</li>
+  <li>Nanoparticles that are washed down drains may harm <strong>aquatic organisms</strong> and the environment (e.g. silver nanoparticles may kill helpful bacteria in sewage works).</li>
+  <li>Some people argue products containing nanoparticles should be <strong>tested more thoroughly</strong> and clearly <strong>labelled</strong>.</li>
+</ul>
+
+<div class="exam-tip">For a "discuss the use of nanoparticles" question, give a <strong>benefit linked to high surface area to volume ratio</strong>, then a <strong>risk</strong> (not fully understood, may enter the body/cells, environmental release), and come to a balanced conclusion. Be careful with units: 1 nm = 10⁻⁹ m, not 10⁻⁶ m.</div>
+
+<h2>Key Points Summary</h2>
+<ul>
+  <li><strong>Flame tests:</strong> Li⁺ red, Na⁺ yellow, K⁺ lilac, Ca²⁺ orange-red, Cu²⁺ blue-green. Clean nichrome wire with conc. HCl; mixtures can mask colours.</li>
+  <li><strong>NaOH(aq):</strong> Al³⁺ white ppt (dissolves in excess), Ca²⁺ white ppt (stays), Cu²⁺ blue, Fe²⁺ green, Fe³⁺ orange-brown. NH₄⁺: warm with NaOH → NH₃ turns damp red litmus blue.</li>
+  <li><strong>Anions:</strong> halides — dilute HNO₃ then AgNO₃: Cl⁻ white, Br⁻ cream, I⁻ yellow. Sulfate — dilute HCl then BaCl₂: white ppt. Carbonate — dilute acid: CO₂ turns limewater milky.</li>
+  <li><strong>Core practical:</strong> identify cation and anion in unknown salts by combining these tests; <strong>(HT)</strong> write ionic equations for precipitates.</li>
+  <li>Instrumental methods improve sensitivity, accuracy and speed. A flame photometer identifies ions by comparing with reference spectra (works for mixtures) and finds concentrations from a calibration curve.</li>
+  <li>Alkanes (CₙH₂ₙ₊₂: methane, ethane, propane, butane) are saturated; alkenes (CₙH₂ₙ: ethene, propene, butene) are unsaturated with a C=C functional group.</li>
+  <li>Alkenes decolourise bromine water (orange → colourless) by addition; complete combustion oxidises hydrocarbons to CO₂ + H₂O.</li>
+  <li>Alcohols have –OH (methanol, ethanol, propan-1-ol, butan-1-ol). Ethanol is made by fermenting sugar with yeast (30–40 °C, no air), then concentrated by fractional distillation.</li>
+  <li>Ethanol can be oxidised (by microbes or chemicals) to ethanoic acid. Carboxylic acids have –COOH (methanoic, ethanoic, propanoic, butanoic); they are weak acids and react with carbonates to give salt + water + CO₂.</li>
+  <li><strong>Core practical:</strong> burn ethanol, propanol, butanol, pentanol to heat a known mass of water; compare temperature rise per gram; longer chain → more energy released. Heat loss and incomplete combustion make values low.</li>
+  <li>A polymer has high average relative molecular mass made of small repeating units. Addition polymers: poly(ethene), poly(propene), PVC, PTFE — know how to go from monomer to repeat unit and back, and link uses to properties.</li>
+  <li>Polymer problems: crude-oil starting materials, non-biodegradable in landfill, toxic gases when burned; recycling helps but needs collection and sorting.</li>
+  <li><strong>(HT)</strong> Polyesters are condensation polymers of a dicarboxylic acid + diol, with water lost at each ester link.</li>
+  <li>DNA (nucleotides), proteins (amino acids), starch and cellulose (sugars) are natural polymers.</li>
+  <li>Compare ceramics (hard, brittle, insulating), polymers (light, flexible, insulating), composites (matrix + reinforcement, e.g. strong and light) and metals (strong, malleable, conductive) to choose materials for a use.</li>
+  <li>Nanoparticles are 1–100 nm; very high surface area to volume ratio gives different properties. Uses: sun creams, catalysts, medicine, antibacterial silver; risks: not fully understood, may enter cells, environmental effects.</li>
+</ul>
+
+</div>
+</body>
+</html>

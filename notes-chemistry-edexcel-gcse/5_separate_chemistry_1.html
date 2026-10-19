@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Edexcel GCSE Chemistry — Topic 5: Separate Chemistry 1</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+    .container { max-width: 820px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+    .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+    h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+    h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+    p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+    strong { color: #1a1a2e; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+    th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+    tr:nth-child(even) { background: #f9fafb; }
+    .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+    .worked { background: #ecfdf5; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .worked::before { content: "Worked Example: "; font-weight: 700; color: #0f5132; }
+    code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+    .eq { display: block; text-align: center; font-size: 1.1rem; padding: 10px 16px; margin: 10px 0; background: #f0f4ff; border-radius: 6px; border: 1px solid #cfd9ff; }
+    @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .worked { break-inside: avoid; } h2 { break-after: avoid; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning
+  </a>
+</div>
+
+<h1>Topic 5 — Separate Chemistry 1</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Chemistry (1CH0) &mdash; Paper 1</p>
+
+<p>Topic 5 gathers together the extra content that only appears in the separate science GCSE. It has four strands: <strong>transition metals, alloys and corrosion</strong>; <strong>quantitative analysis</strong> (concentrations, titrations, percentage yield, atom economy and molar gas volume); <strong>dynamic equilibria</strong> applied to industry (the Haber process conditions and fertilisers); and <strong>chemical cells and fuel cells</strong>. It builds directly on Topic 1 (moles and formula masses) and Topic 4 (reactivity, the Haber process and equilibrium), so revise those first.</p>
+
+<p><strong>The whole of Topic 5 is chemistry only</strong> &mdash; every point carries a "C" suffix in the specification (5.1C&ndash;5.27C) and is <em>not</em> examined in Combined Science. Content marked <strong>(HT)</strong> is Higher Tier only. The topic contains <strong>one core practical</strong>: an accurate acid&ndash;alkali titration (CP5, spec 5.9C).</p>
+
+<h2>5.1 Transition Metals</h2>
+
+<div class="definition">
+  The <strong>transition metals</strong> are the block of metals in the centre of the periodic table, between Group 2 and Group 3. <strong>Most metals are transition metals</strong>. Examples include iron (Fe), copper (Cu), nickel (Ni), chromium (Cr), manganese (Mn), cobalt (Co), zinc (Zn), silver (Ag), gold (Au) and platinum (Pt).
+</div>
+
+<!-- Periodic table outline showing transition block -->
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Where the transition metals are</text>
+  <g stroke="#94a3b8" stroke-width="1">
+    <!-- group 1 and 2 -->
+    <rect x="40" y="40" width="30" height="30" fill="#fee2e2"/>
+    <rect x="40" y="70" width="30" height="30" fill="#fee2e2"/><rect x="70" y="70" width="30" height="30" fill="#fef3c7"/>
+    <rect x="40" y="100" width="30" height="30" fill="#fee2e2"/><rect x="70" y="100" width="30" height="30" fill="#fef3c7"/>
+    <rect x="40" y="130" width="30" height="30" fill="#fee2e2"/><rect x="70" y="130" width="30" height="30" fill="#fef3c7"/>
+    <rect x="40" y="160" width="30" height="30" fill="#fee2e2"/><rect x="70" y="160" width="30" height="30" fill="#fef3c7"/>
+    <rect x="40" y="190" width="30" height="30" fill="#fee2e2"/><rect x="70" y="190" width="30" height="30" fill="#fef3c7"/>
+    <!-- transition block -->
+    <rect x="100" y="130" width="300" height="90" fill="#bfdbfe"/>
+    <!-- groups 3-0 -->
+    <rect x="400" y="70" width="180" height="150" fill="#f1f5f9"/>
+    <rect x="580" y="40" width="30" height="180" fill="#e0e7ff"/>
+  </g>
+  <rect x="40" y="40" width="30" height="30" fill="#f1f5f9" stroke="#94a3b8"/>
+  <g font-size="11" fill="#1a1a2e" text-anchor="middle">
+    <text x="55" y="59">H</text>
+    <text x="115" y="150">Sc</text><text x="145" y="150">Ti</text><text x="175" y="150">V</text><text x="205" y="150">Cr</text><text x="235" y="150">Mn</text>
+    <text x="265" y="150" font-weight="bold">Fe</text><text x="295" y="150">Co</text><text x="325" y="150" font-weight="bold">Ni</text><text x="355" y="150" font-weight="bold">Cu</text><text x="385" y="150">Zn</text>
+    <text x="355" y="180">Ag</text><text x="325" y="210">Pt</text><text x="355" y="210">Au</text>
+  </g>
+  <text x="250" y="240" text-anchor="middle" font-size="12" fill="#1e40af" font-weight="bold">transition metals</text>
+  <text x="55" y="234" text-anchor="middle" font-size="11" fill="#991b1b">Group 1</text>
+  <text x="85" y="247" text-anchor="middle" font-size="11" fill="#92400e">Group 2</text>
+  <text x="490" y="150" text-anchor="middle" font-size="12" fill="#334155">Groups 3&ndash;7</text>
+  <text x="595" y="234" text-anchor="middle" font-size="11" fill="#3730a3">Group 0</text>
+</svg>
+
+<h3>Typical properties of transition metals</h3>
+<p>Transition metals have the typical properties of metals (shiny, good conductors of heat and electricity, malleable, ductile) and in addition:</p>
+<ul>
+  <li><strong>High melting points</strong> (except mercury) &mdash; e.g. iron melts at about 1540 °C.</li>
+  <li><strong>High densities</strong> &mdash; e.g. iron about 7.9 g cm⁻³, copper about 8.9 g cm⁻³.</li>
+  <li>They form <strong>coloured compounds</strong>.</li>
+  <li>The metals and their compounds show <strong>catalytic activity</strong> &mdash; e.g. <strong>iron in the Haber process</strong>.</li>
+</ul>
+
+<table>
+  <thead><tr><th>Property</th><th>Transition metals (e.g. Fe, Cu)</th><th>Group 1 metals (e.g. Na, K)</th></tr></thead>
+  <tbody>
+    <tr><td>Melting point</td><td>High (Fe ~1540 °C, Cu ~1085 °C)</td><td>Low (Na 98 °C, K 63 °C)</td></tr>
+    <tr><td>Density</td><td>High (Fe 7.9 g cm⁻³)</td><td>Low (Na 0.97 g cm⁻³ &mdash; floats on water)</td></tr>
+    <tr><td>Hardness / strength</td><td>Hard and strong</td><td>Soft &mdash; can be cut with a knife</td></tr>
+    <tr><td>Reactivity with water</td><td>Slow or none</td><td>Rapid, forms hydroxide + hydrogen</td></tr>
+    <tr><td>Colour of compounds</td><td>Often coloured</td><td>White solids, colourless solutions</td></tr>
+    <tr><td>Catalytic activity</td><td>Common</td><td>Not used as catalysts</td></tr>
+  </tbody>
+</table>
+
+<h3>Coloured compounds and catalysts</h3>
+<table>
+  <thead><tr><th>Ion / compound</th><th>Colour in solution</th></tr></thead>
+  <tbody>
+    <tr><td>Copper(II), Cu²⁺ (e.g. CuSO₄)</td><td>Blue</td></tr>
+    <tr><td>Iron(II), Fe²⁺</td><td>Pale green</td></tr>
+    <tr><td>Iron(III), Fe³⁺</td><td>Yellow / orange-brown</td></tr>
+    <tr><td>Nickel(II), Ni²⁺</td><td>Green</td></tr>
+    <tr><td>Manganate(VII), MnO₄⁻</td><td>Purple</td></tr>
+  </tbody>
+</table>
+
+<table>
+  <thead><tr><th>Catalyst</th><th>Process</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Iron</strong></td><td>Haber process &mdash; making ammonia (the example named in the specification)</td></tr>
+    <tr><td>Nickel</td><td>Hydrogenation of vegetable oils to make margarine</td></tr>
+    <tr><td>Vanadium(V) oxide</td><td>Contact process &mdash; making sulfuric acid</td></tr>
+    <tr><td>Manganese(IV) oxide</td><td>Decomposition of hydrogen peroxide</td></tr>
+    <tr><td>Platinum, rhodium</td><td>Catalytic converters in car exhausts</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">Coloured compounds are a good way to <strong>identify</strong> a transition metal in a "which element is this?" question: a high-melting, dense metal that forms a blue sulfate and catalyses a reaction is a transition metal, not a Group 1 or Group 2 metal.</div>
+
+<h2>5.2 Corrosion and Rusting</h2>
+
+<div class="definition">
+  <strong>Corrosion</strong> is the gradual destruction of a metal caused by its <strong>oxidation</strong>, usually by reaction with oxygen (and often water) in the environment. <strong>Rusting</strong> is the corrosion of <strong>iron</strong> (and steel): it needs <strong>both oxygen and water</strong>.
+</div>
+
+<span class="eq">iron + oxygen + water → hydrated iron(III) oxide (rust)</span>
+
+<p>In rusting, iron atoms lose electrons to form iron ions &mdash; the iron is <strong>oxidised</strong> (it gains oxygen and loses electrons). Rust is flaky and crumbles away, exposing fresh iron underneath, so rusting continues until the iron is destroyed. Salt water speeds up rusting.</p>
+
+<!-- Rusting experiment -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">What does iron need to rust?</text>
+  <!-- tube A -->
+  <g transform="translate(90,40)">
+    <path d="M0 0 L0 170 Q0 195 25 195 Q50 195 50 170 L50 0" fill="none" stroke="#334155" stroke-width="2"/>
+    <path d="M2 110 L2 170 Q2 193 25 193 Q48 193 48 170 L48 110 Z" fill="#bfdbfe"/>
+    <rect x="22" y="30" width="6" height="150" fill="#b45309"/>
+    <text x="25" y="225" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">A</text>
+    <text x="25" y="242" text-anchor="middle" font-size="11" fill="#334155">air + water</text>
+    <text x="25" y="258" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">RUSTS</text>
+  </g>
+  <!-- tube B -->
+  <g transform="translate(320,40)">
+    <path d="M0 0 L0 170 Q0 195 25 195 Q50 195 50 170 L50 0" fill="none" stroke="#334155" stroke-width="2"/>
+    <path d="M2 70 L2 170 Q2 193 25 193 Q48 193 48 170 L48 70 Z" fill="#bfdbfe"/>
+    <rect x="2" y="56" width="46" height="14" fill="#fde68a"/>
+    <rect x="22" y="30" width="6" height="150" fill="#9ca3af"/>
+    <text x="70" y="66" font-size="11" fill="#334155">layer of oil</text>
+    <text x="70" y="130" font-size="11" fill="#334155">boiled water</text>
+    <text x="70" y="145" font-size="11" fill="#334155">(no dissolved air)</text>
+    <text x="25" y="225" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">B</text>
+    <text x="25" y="242" text-anchor="middle" font-size="11" fill="#334155">water, no air</text>
+    <text x="25" y="258" text-anchor="middle" font-size="11" fill="#16a34a" font-weight="bold">no rust</text>
+  </g>
+  <!-- tube C -->
+  <g transform="translate(550,40)">
+    <rect x="-4" y="-8" width="58" height="14" fill="#64748b"/>
+    <path d="M0 6 L0 170 Q0 195 25 195 Q50 195 50 170 L50 6" fill="none" stroke="#334155" stroke-width="2"/>
+    <path d="M2 150 L2 170 Q2 193 25 193 Q48 193 48 170 L48 150 Z" fill="#f1f5f9" stroke="#cbd5e1"/>
+    <circle cx="12" cy="165" r="3" fill="#e5e7eb" stroke="#94a3b8"/><circle cx="25" cy="172" r="3" fill="#e5e7eb" stroke="#94a3b8"/><circle cx="38" cy="163" r="3" fill="#e5e7eb" stroke="#94a3b8"/>
+    <rect x="22" y="20" width="6" height="110" fill="#9ca3af"/>
+    <text x="-12" y="168" text-anchor="end" font-size="11" fill="#334155">anhydrous calcium</text>
+    <text x="-12" y="182" text-anchor="end" font-size="11" fill="#334155">chloride (drying agent)</text>
+    <line x1="-9" y1="171" x2="8" y2="167" stroke="#94a3b8" stroke-width="1"/>
+    <text x="25" y="225" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">C</text>
+    <text x="25" y="242" text-anchor="middle" font-size="11" fill="#334155">dry air, no water</text>
+    <text x="25" y="258" text-anchor="middle" font-size="11" fill="#16a34a" font-weight="bold">no rust</text>
+  </g>
+</svg>
+
+<h3>Preventing rusting</h3>
+<p>The specification asks you to explain three approaches: excluding oxygen, excluding water, and sacrificial protection.</p>
+<table>
+  <thead><tr><th>Method</th><th>How it works</th><th>Examples</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Barrier methods</strong> &mdash; painting, oiling/greasing, coating with plastic</td><td>Form a layer that <strong>excludes oxygen and water</strong> from the iron surface</td><td>Paint on cars and bridges; grease on bike chains and machinery; plastic-coated garden wire</td></tr>
+    <tr><td><strong>Electroplating / tin-plating</strong></td><td>A thin layer of a less reactive metal acts as a barrier</td><td>Tin-plated steel food cans; chromium-plated taps</td></tr>
+    <tr><td>Storing with a <strong>drying agent</strong></td><td>Removes water vapour from the air</td><td>Silica gel packets with tools</td></tr>
+    <tr><td><strong>Sacrificial protection</strong></td><td>A <strong>more reactive</strong> metal (zinc or magnesium) is attached to or coated on the iron. It is <strong>oxidised in preference</strong> to iron, so the iron does not rust even if exposed.</td><td>Magnesium or zinc blocks bolted to ships' hulls and underground pipes</td></tr>
+    <tr><td><strong>Galvanising</strong></td><td>Coating iron with <strong>zinc</strong>. Acts as a barrier <em>and</em> provides sacrificial protection if scratched.</td><td>Galvanised buckets, fences, car bodies, lamp posts</td></tr>
+  </tbody>
+</table>
+
+<!-- Sacrificial protection -->
+<svg viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t5arrSac" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Sacrificial protection of a ship's hull</text>
+  <rect x="0" y="110" width="700" height="160" fill="#dbeafe"/>
+  <text x="690" y="260" text-anchor="end" font-size="11" fill="#1e40af">sea water</text>
+  <path d="M60 60 L640 60 L580 170 L120 170 Z" fill="#9ca3af" stroke="#334155" stroke-width="2"/>
+  <text x="350" y="100" text-anchor="middle" font-size="13" fill="#1a1a2e" font-weight="bold">steel hull (iron) &mdash; protected</text>
+  <rect x="230" y="170" width="50" height="22" fill="#e2e8f0" stroke="#334155"/>
+  <rect x="420" y="170" width="50" height="22" fill="#e2e8f0" stroke="#334155"/>
+  <text x="255" y="186" text-anchor="middle" font-size="11" fill="#1a1a2e">Zn</text>
+  <text x="445" y="186" text-anchor="middle" font-size="11" fill="#1a1a2e">Zn</text>
+  <path d="M255 170 Q255 138 295 128" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#t5arrSac)"/>
+  <path d="M445 170 Q445 138 405 128" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#t5arrSac)"/>
+  <text x="300" y="150" font-size="12" font-weight="bold" fill="#1e40af">e⁻</text>
+  <text x="400" y="150" text-anchor="end" font-size="12" font-weight="bold" fill="#1e40af">e⁻</text>
+  <text x="255" y="214" text-anchor="middle" font-size="12" fill="#1e3a5f">zinc blocks corrode instead:</text>
+  <text x="255" y="230" text-anchor="middle" font-size="12" fill="#1e3a5f">Zn → Zn²⁺ + 2e⁻</text>
+  <text x="445" y="214" text-anchor="middle" font-size="12" fill="#1e3a5f">electrons flow to the iron,</text>
+  <text x="445" y="230" text-anchor="middle" font-size="12" fill="#1e3a5f">so iron is not oxidised</text>
+</svg>
+
+<div class="worked">
+Explain why a scratched galvanised (zinc-coated) bucket does not rust, but a scratched tin-plated can does.<br><br>
+<strong>Galvanised:</strong> zinc is <strong>more reactive</strong> than iron, so where the iron is exposed the zinc is oxidised instead (Zn → Zn²⁺ + 2e⁻); the zinc is sacrificed and the iron stays protected.<br>
+<strong>Tin-plated:</strong> tin is <strong>less reactive</strong> than iron, so it only works as a barrier. Once scratched, oxygen and water reach the iron and it rusts &mdash; in fact faster than unprotected iron, because the iron now loses electrons in preference to the tin.
+</div>
+
+<div class="exam-tip">For sacrificial protection you must say the protecting metal is <strong>more reactive</strong> than iron and is <strong>oxidised instead of</strong> iron (or "loses electrons more readily"). "The zinc protects the iron" alone scores nothing. Remember the sacrificial metal must be <strong>replaced</strong> when it has corroded away.</div>
+
+<h2>5.3 Electroplating</h2>
+
+<div class="definition">
+  <strong>Electroplating</strong> uses electrolysis to coat a metal object with a thin layer of another metal. It is used to improve <strong>appearance</strong> (e.g. silver or gold plating) and/or <strong>resistance to corrosion</strong> (e.g. chromium or tin plating).
+</div>
+
+<p>The set-up:</p>
+<ul>
+  <li>The <strong>object to be plated</strong> is the <strong>cathode</strong> (negative electrode).</li>
+  <li>The <strong>anode</strong> (positive electrode) is made of the <strong>plating metal</strong>.</li>
+  <li>The <strong>electrolyte</strong> is a solution containing <strong>ions of the plating metal</strong>.</li>
+</ul>
+<p>At the cathode, metal ions gain electrons and are deposited on the object. At the anode, metal atoms lose electrons and go into solution, replacing the ions used up &mdash; so the concentration of the electrolyte stays the same.</p>
+
+<!-- Electroplating cell -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t5arrPlate" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Silver-plating a spoon</text>
+  <!-- power supply -->
+  <rect x="285" y="35" width="130" height="36" rx="4" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+  <text x="350" y="58" text-anchor="middle" font-size="12" fill="#1a1a2e">d.c. supply</text>
+  <text x="293" y="58" font-size="14" fill="#dc2626" font-weight="bold">+</text>
+  <text x="400" y="58" font-size="14" fill="#2563eb" font-weight="bold">−</text>
+  <path d="M285 53 L200 53 L200 115" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <path d="M415 53 L500 53 L500 120" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <!-- beaker -->
+  <path d="M140 110 L140 270 L560 270 L560 110" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect x="142" y="140" width="416" height="128" fill="#e0f2fe"/>
+  <!-- anode -->
+  <rect x="185" y="115" width="30" height="130" fill="#cbd5e1" stroke="#334155"/>
+  <text x="132" y="200" text-anchor="end" font-size="12" fill="#dc2626">anode</text>
+  <text x="132" y="215" text-anchor="end" font-size="11" fill="#334155">silver metal</text>
+  <!-- cathode spoon -->
+  <line x1="500" y1="120" x2="500" y2="200" stroke="#64748b" stroke-width="6"/>
+  <ellipse cx="500" cy="225" rx="18" ry="28" fill="#94a3b8" stroke="#e5e7eb" stroke-width="3"/>
+  <text x="530" y="200" font-size="12" fill="#2563eb">cathode</text>
+  <text x="530" y="215" font-size="11" fill="#334155">spoon (object)</text>
+  <!-- ions -->
+  <g font-size="11" fill="#1e3a5f">
+    <text x="270" y="190">Ag⁺</text><text x="235" y="235">Ag⁺</text><text x="390" y="180">Ag⁺</text><text x="300" y="250">NO₃⁻</text><text x="420" y="240">NO₃⁻</text>
+  </g>
+  <line x1="250" y1="200" x2="460" y2="215" stroke="#334155" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#t5arrPlate)"/>
+  <text x="350" y="290" text-anchor="middle" font-size="12" fill="#334155">electrolyte: silver nitrate solution (contains Ag⁺ ions)</text>
+  <text x="220" y="100" font-size="11" fill="#334155">Ag → Ag⁺ + e⁻</text>
+  <text x="420" y="100" font-size="11" fill="#334155">Ag⁺ + e⁻ → Ag</text>
+</svg>
+
+<table>
+  <thead><tr><th>Plating metal</th><th>Purpose</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Silver / gold</td><td>Attractive appearance at low cost; resists tarnishing</td><td>Cutlery, jewellery</td></tr>
+    <tr><td>Chromium</td><td>Shiny and hard; resists corrosion</td><td>Taps, bicycle handlebars</td></tr>
+    <tr><td>Tin</td><td>Unreactive, non-toxic barrier to corrosion</td><td>Steel food cans</td></tr>
+    <tr><td>Nickel</td><td>Corrosion resistance; base layer for chromium</td><td>Coins, fittings</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">If you are asked to "describe how to copper-plate a key", name all three parts: <strong>key = cathode</strong>, <strong>copper = anode</strong>, <strong>copper(II) sulfate solution = electrolyte</strong>, connected to a d.c. supply. <strong>(HT)</strong> Then add the cathode half equation Cu²⁺ + 2e⁻ → Cu.</div>
+
+<h2>5.4 Alloys</h2>
+
+<div class="definition">
+  An <strong>alloy</strong> is a mixture of a metal with one or more other elements (usually other metals, sometimes carbon). Converting a pure metal into an alloy often <strong>increases its strength</strong> (and hardness).
+</div>
+
+<h3>Why alloys are stronger &mdash; the model</h3>
+<p>In a <strong>pure metal</strong> all the atoms are the same size and are arranged in regular <strong>layers</strong>. When a force is applied, the layers can <strong>slide over each other</strong> easily, so pure metals are soft and malleable. In an <strong>alloy</strong>, atoms of different sizes <strong>distort the regular layers</strong>, so it is much more difficult for the layers to slide &mdash; the alloy is <strong>stronger and harder</strong>.</p>
+
+<!-- Alloy layers model -->
+<svg viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t5arrAlloy" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+  </defs>
+  <text x="175" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Pure metal</text>
+  <text x="525" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Alloy</text>
+  <g fill="#93c5fd" stroke="#1e40af" stroke-width="1">
+    <circle cx="70" cy="60" r="16"/><circle cx="104" cy="60" r="16"/><circle cx="138" cy="60" r="16"/><circle cx="172" cy="60" r="16"/><circle cx="206" cy="60" r="16"/><circle cx="240" cy="60" r="16"/><circle cx="274" cy="60" r="16"/>
+    <circle cx="70" cy="94" r="16"/><circle cx="104" cy="94" r="16"/><circle cx="138" cy="94" r="16"/><circle cx="172" cy="94" r="16"/><circle cx="206" cy="94" r="16"/><circle cx="240" cy="94" r="16"/><circle cx="274" cy="94" r="16"/>
+    <circle cx="70" cy="128" r="16"/><circle cx="104" cy="128" r="16"/><circle cx="138" cy="128" r="16"/><circle cx="172" cy="128" r="16"/><circle cx="206" cy="128" r="16"/><circle cx="240" cy="128" r="16"/><circle cx="274" cy="128" r="16"/>
+    <circle cx="70" cy="162" r="16"/><circle cx="104" cy="162" r="16"/><circle cx="138" cy="162" r="16"/><circle cx="172" cy="162" r="16"/><circle cx="206" cy="162" r="16"/><circle cx="240" cy="162" r="16"/><circle cx="274" cy="162" r="16"/>
+  </g>
+  <line x1="60" y1="111" x2="290" y2="111" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <line x1="120" y1="200" x2="230" y2="200" stroke="#dc2626" stroke-width="2.5" marker-end="url(#t5arrAlloy)"/>
+  <text x="175" y="225" text-anchor="middle" font-size="12" fill="#334155">regular layers slide easily →</text>
+  <text x="175" y="241" text-anchor="middle" font-size="12" fill="#334155">soft, malleable</text>
+  <g fill="#93c5fd" stroke="#1e40af" stroke-width="1">
+    <circle cx="420" cy="60" r="16"/><circle cx="454" cy="60" r="16"/><circle cx="488" cy="60" r="16"/><circle cx="530" cy="62" r="16"/><circle cx="564" cy="60" r="16"/><circle cx="598" cy="60" r="16"/><circle cx="632" cy="60" r="16"/>
+    <circle cx="420" cy="94" r="16"/><circle cx="454" cy="96" r="16"/><circle cx="564" cy="96" r="16"/><circle cx="598" cy="94" r="16"/><circle cx="632" cy="94" r="16"/>
+    <circle cx="420" cy="128" r="16"/><circle cx="454" cy="128" r="16"/><circle cx="488" cy="130" r="16"/><circle cx="530" cy="134" r="16"/><circle cx="564" cy="130" r="16"/><circle cx="632" cy="128" r="16"/>
+    <circle cx="420" cy="162" r="16"/><circle cx="454" cy="162" r="16"/><circle cx="488" cy="164" r="16"/><circle cx="530" cy="168" r="16"/><circle cx="564" cy="164" r="16"/><circle cx="598" cy="166" r="16"/><circle cx="632" cy="162" r="16"/>
+  </g>
+  <circle cx="507" cy="96" r="24" fill="#fca5a5" stroke="#991b1b"/>
+  <circle cx="602" cy="130" r="10" fill="#fde68a" stroke="#92400e"/>
+  <text x="525" y="225" text-anchor="middle" font-size="12" fill="#334155">different-sized atoms distort the layers →</text>
+  <text x="525" y="241" text-anchor="middle" font-size="12" fill="#334155">layers cannot slide easily → stronger, harder</text>
+</svg>
+
+<div class="exam-tip">The marking points are: pure metal → <strong>regular layers</strong> of identical atoms → layers <strong>slide</strong>; alloy → <strong>different-sized atoms</strong> → <strong>disrupt / distort the layers</strong> → harder for layers to slide → stronger. Do not say the bonds in an alloy are "stronger".</div>
+
+<h3>Alloy steels</h3>
+<p>Pure iron is too <strong>soft</strong> for most uses, and the iron straight from the blast furnace (cast iron, about 4% carbon) is <strong>brittle</strong>. Iron is therefore made into <strong>steels</strong> by controlling the carbon content and alloying it with other metals such as chromium, nickel, manganese, tungsten or vanadium. Each alloy steel has properties suited to a particular use.</p>
+<table>
+  <thead><tr><th>Steel</th><th>Composition</th><th>Properties</th><th>Uses</th></tr></thead>
+  <tbody>
+    <tr><td>Low-carbon (mild) steel</td><td>Iron + up to about 0.3% carbon</td><td>Strong, easily shaped (malleable), but rusts</td><td>Car bodies, girders, wire, nails</td></tr>
+    <tr><td>High-carbon steel</td><td>Iron + about 0.6&ndash;1.5% carbon</td><td>Very hard and strong but more brittle</td><td>Cutting tools, drill bits, railway lines</td></tr>
+    <tr><td><strong>Stainless steel</strong></td><td>Iron + <strong>chromium</strong> (and often <strong>nickel</strong>)</td><td>Hard, strong and <strong>resistant to corrosion</strong></td><td>Cutlery, sinks, surgical instruments, chemical plant</td></tr>
+    <tr><td>Tungsten / manganese steels</td><td>Iron + tungsten or manganese</td><td>Very hard, keep hardness at high temperature / tough</td><td>High-speed cutting tools; rock-crushing machinery</td></tr>
+  </tbody>
+</table>
+
+<h3>Uses of metals and alloys related to their properties</h3>
+<table>
+  <thead><tr><th>Metal / alloy</th><th>Key properties</th><th>Uses</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Aluminium</strong></td><td>Low density; resists corrosion (protective oxide layer); good conductor of heat and electricity; malleable</td><td>Overhead power cables (light, with a steel core for strength), drinks cans, cooking foil, window frames; aircraft (as alloys)</td></tr>
+    <tr><td><strong>Copper</strong></td><td>Excellent electrical and thermal conductor; ductile; unreactive (does not react with water)</td><td>Electrical wiring, water pipes, saucepan bases</td></tr>
+    <tr><td><strong>Gold</strong></td><td>Very unreactive so never tarnishes; shiny; very malleable; good conductor; but soft</td><td>Jewellery, coins, electrical connectors in computers, dental work</td></tr>
+    <tr><td><strong>Magnalium</strong> (aluminium + magnesium)</td><td>Lower density, stronger and more corrosion-resistant than pure aluminium</td><td>Aircraft and car parts, bicycle frames; high-magnesium versions are brittle and used in fireworks</td></tr>
+    <tr><td><strong>Brass</strong> (copper + zinc)</td><td>Harder and stronger than copper; resists corrosion; attractive gold colour; low friction</td><td>Musical instruments, door handles, screws, plug pins, plumbing fittings</td></tr>
+    <tr><td>Gold alloys (gold + copper/silver)</td><td>Harder and more hard-wearing than pure gold</td><td>Jewellery &mdash; 24 carat is pure gold; 18 carat is 18/24 = 75% gold</td></tr>
+  </tbody>
+</table>
+
+<div class="worked">
+A ring is made of 9 carat gold and has a mass of 4.0 g. Calculate the mass of pure gold in the ring.<br><br>
+Fraction of gold = 9 ÷ 24 = 0.375 (37.5%)<br>
+Mass of gold = 0.375 × 4.0 g = <strong>1.5 g</strong>
+</div>
+
+<div class="exam-tip">"Explain why aluminium is used for overhead power cables" needs <strong>property → reason</strong>: it is a good <em>electrical conductor</em> (carries current), has a <em>low density</em> (light, so pylons can be further apart) and <em>resists corrosion</em> (lasts outdoors). A single word list with no reasons will not get full marks.</div>
+
+<h2>5.5 Concentration of Solutions</h2>
+
+<div class="definition">
+  <strong>Concentration</strong> is the amount of solute dissolved in a given volume of solution. It can be measured in <strong>g dm⁻³</strong> (mass per volume) or <strong>mol dm⁻³</strong> (moles per volume). 1 dm³ = 1000 cm³.
+</div>
+
+<span class="eq">concentration (g dm⁻³) = mass of solute (g) ÷ volume of solution (dm³)</span>
+<p><strong>(HT)</strong> Calculating concentrations in mol dm⁻³, and converting between g dm⁻³ and mol dm⁻³ (spec 5.8C), is Higher tier only:</p>
+<span class="eq">concentration (mol dm⁻³) = amount of solute (mol) ÷ volume of solution (dm³)</span>
+<span class="eq">g dm⁻³ = mol dm⁻³ × M<sub>r</sub> &nbsp;&nbsp;&nbsp; ↔ &nbsp;&nbsp;&nbsp; mol dm⁻³ = g dm⁻³ ÷ M<sub>r</sub></span>
+
+<!-- Conversion triangle diagram -->
+<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t5arrConvR" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/></marker>
+    <marker id="t5arrConvL" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+  </defs>
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Converting between concentration units</text>
+  <rect x="80" y="55" width="180" height="60" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="170" y="91" text-anchor="middle" font-size="16" fill="#1e40af" font-weight="bold">mol dm⁻³</text>
+  <rect x="440" y="55" width="180" height="60" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="530" y="91" text-anchor="middle" font-size="16" fill="#1e40af" font-weight="bold">g dm⁻³</text>
+  <line x1="265" y1="72" x2="435" y2="72" stroke="#16a34a" stroke-width="2.5" marker-end="url(#t5arrConvR)"/>
+  <text x="350" y="64" text-anchor="middle" font-size="13" fill="#16a34a" font-weight="bold">× M<tspan font-size="10" dy="3">r</tspan></text>
+  <line x1="435" y1="100" x2="265" y2="100" stroke="#dc2626" stroke-width="2.5" marker-end="url(#t5arrConvL)"/>
+  <text x="350" y="122" text-anchor="middle" font-size="13" fill="#dc2626" font-weight="bold">÷ M<tspan font-size="10" dy="3">r</tspan></text>
+  <text x="350" y="155" text-anchor="middle" font-size="12" fill="#64748b">Always convert cm³ to dm³ first: divide by 1000.</text>
+</svg>
+
+<div class="worked">
+<strong>(HT)</strong> 5.85 g of sodium chloride (M<sub>r</sub> = 58.5) is dissolved in water to make 250 cm³ of solution. Calculate the concentration in (a) g dm⁻³ and (b) mol dm⁻³.<br><br>
+Volume = 250 ÷ 1000 = 0.250 dm³<br>
+(a) concentration = 5.85 ÷ 0.250 = <strong>23.4 g dm⁻³</strong><br>
+(b) moles = 5.85 ÷ 58.5 = 0.100 mol; concentration = 0.100 ÷ 0.250 = <strong>0.400 mol dm⁻³</strong><br>
+Check: 0.400 × 58.5 = 23.4 g dm⁻³ ✓
+</div>
+
+<div class="worked">
+<strong>(HT)</strong> A solution of sulfuric acid, H₂SO₄, has a concentration of 4.9 g dm⁻³. Convert this to mol dm⁻³. (A<sub>r</sub>: H = 1, S = 32, O = 16)<br><br>
+M<sub>r</sub> = (2 × 1) + 32 + (4 × 16) = 98<br>
+concentration = 4.9 ÷ 98 = <strong>0.050 mol dm⁻³</strong>
+</div>
+
+<h2>5.6 Core Practical: Acid&ndash;Alkali Titration (CP5)</h2>
+
+<p>A <strong>titration</strong> is used to find the exact volume of one solution that reacts with a measured volume of another. If the concentration of one is known, the other can be calculated.</p>
+
+<!-- Titration apparatus -->
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Titration apparatus</text>
+  <!-- stand -->
+  <rect x="150" y="345" width="200" height="12" fill="#64748b"/>
+  <rect x="166" y="40" width="8" height="305" fill="#94a3b8"/>
+  <rect x="170" y="110" width="92" height="8" fill="#94a3b8"/>
+  <!-- burette -->
+  <rect x="262" y="40" width="22" height="220" fill="#fff" stroke="#334155" stroke-width="2"/>
+  <rect x="264" y="70" width="18" height="188" fill="#fecaca" opacity="0.8"/>
+  <g stroke="#334155" stroke-width="1">
+    <line x1="262" y1="80" x2="272" y2="80"/><line x1="262" y1="100" x2="272" y2="100"/><line x1="262" y1="120" x2="272" y2="120"/><line x1="262" y1="140" x2="272" y2="140"/><line x1="262" y1="160" x2="272" y2="160"/><line x1="262" y1="180" x2="272" y2="180"/><line x1="262" y1="200" x2="272" y2="200"/><line x1="262" y1="220" x2="272" y2="220"/><line x1="262" y1="240" x2="272" y2="240"/>
+  </g>
+  <path d="M262 260 L284 260 L276 282 L270 282 Z" fill="#fff" stroke="#334155" stroke-width="2"/>
+  <rect x="258" y="266" width="30" height="7" fill="#334155"/>
+  <line x1="273" y1="282" x2="273" y2="295" stroke="#334155" stroke-width="2"/>
+  <!-- conical flask -->
+  <path d="M262 290 L262 300 L222 342 L324 342 L284 300 L284 290" fill="#fff" stroke="#334155" stroke-width="2"/>
+  <path d="M243 320 L303 320 L322 340 L224 340 Z" fill="#fde68a"/>
+  <rect x="200" y="342" width="146" height="4" fill="#fff" stroke="#cbd5e1"/>
+  <!-- labels -->
+  <g font-size="12" fill="#334155">
+    <line x1="290" y1="90" x2="380" y2="80" stroke="#94a3b8"/>
+    <text x="385" y="76">burette: acid of known</text>
+    <text x="385" y="91">concentration; read to 0.05 cm³</text>
+    <line x1="292" y1="268" x2="380" y2="250" stroke="#94a3b8"/>
+    <text x="385" y="252">tap: add dropwise near end-point</text>
+    <line x1="318" y1="330" x2="380" y2="300" stroke="#94a3b8"/>
+    <text x="385" y="296">conical flask: 25.0 cm³ alkali</text>
+    <text x="385" y="311">measured by pipette + few drops</text>
+    <text x="385" y="326">of indicator; swirl constantly</text>
+    <line x1="320" y1="346" x2="380" y2="350" stroke="#94a3b8"/>
+    <text x="385" y="354">white tile: shows colour change clearly</text>
+  </g>
+  <!-- pipette -->
+  <g transform="translate(620,100)">
+    <line x1="20" y1="0" x2="20" y2="60" stroke="#334155" stroke-width="2"/>
+    <ellipse cx="20" cy="85" rx="12" ry="25" fill="#fff" stroke="#334155" stroke-width="2"/>
+    <line x1="20" y1="110" x2="20" y2="150" stroke="#334155" stroke-width="2"/>
+    <line x1="12" y1="30" x2="28" y2="30" stroke="#dc2626" stroke-width="2"/>
+    <text x="40" y="34" font-size="11" fill="#dc2626">mark</text>
+    <text x="20" y="170" text-anchor="middle" font-size="12" fill="#334155">25.0 cm³ pipette</text>
+    <text x="20" y="185" text-anchor="middle" font-size="11" fill="#64748b">(use a pipette filler)</text>
+  </g>
+</svg>
+
+<h3>Method</h3>
+<ol>
+  <li>Rinse the pipette with the alkali and the burette with the acid (removes water/other substances that would dilute them).</li>
+  <li>Use a <strong>pipette and pipette filler</strong> to transfer <strong>25.0 cm³</strong> of alkali (e.g. sodium hydroxide) into a conical flask. Read the bottom of the meniscus on the mark at eye level.</li>
+  <li>Add a few drops of a suitable <strong>indicator</strong> (e.g. <strong>methyl orange</strong> or <strong>phenolphthalein</strong>) and place the flask on a <strong>white tile</strong>.</li>
+  <li>Fill the burette with acid using a funnel (then remove the funnel), make sure the jet below the tap is filled, and record the <strong>initial reading</strong> to the nearest 0.05 cm³.</li>
+  <li>Add acid while <strong>swirling</strong> the flask. Do a quick <strong>rough (range-finder) titration</strong> first.</li>
+  <li>Repeat accurately: near the expected end-point add acid <strong>drop by drop</strong> until the indicator <strong>just</strong> changes colour permanently. Record the <strong>final reading</strong>.</li>
+  <li>Calculate the <strong>titre</strong> (final &minus; initial). Repeat until you have <strong>concordant</strong> titres (within <strong>0.10 cm³</strong> of each other) and calculate the <strong>mean</strong> of the concordant titres only.</li>
+</ol>
+
+<table>
+  <thead><tr><th>Indicator</th><th>Colour in alkali</th><th>Colour in acid</th><th>Use?</th></tr></thead>
+  <tbody>
+    <tr><td>Phenolphthalein</td><td>Pink</td><td>Colourless</td><td>Yes &mdash; sharp change</td></tr>
+    <tr><td>Methyl orange</td><td>Yellow</td><td>Red (orange at end-point)</td><td>Yes &mdash; sharp change</td></tr>
+    <tr><td>Universal indicator / litmus</td><td>Range of colours</td><td>Range of colours</td><td><strong>No</strong> &mdash; gradual colour change gives no sharp end-point</td></tr>
+  </tbody>
+</table>
+
+<h3>Recording and processing results</h3>
+<table>
+  <thead><tr><th></th><th>Rough</th><th>Run 1</th><th>Run 2</th><th>Run 3</th></tr></thead>
+  <tbody>
+    <tr><td>Final reading / cm³</td><td>23.10</td><td>22.45</td><td>44.60</td><td>22.60</td></tr>
+    <tr><td>Initial reading / cm³</td><td>0.00</td><td>0.00</td><td>22.45</td><td>0.20</td></tr>
+    <tr><td>Titre / cm³</td><td>23.10</td><td>22.45</td><td>22.15</td><td>22.40</td></tr>
+  </tbody>
+</table>
+<p>Run 2 (22.15 cm³) is not within 0.10 cm³ of the others, so it is not concordant (probably the end-point was misjudged). Concordant titres: 22.45 and 22.40 cm³. Mean = (22.45 + 22.40) ÷ 2 = 22.425 = <strong>22.43 cm³</strong>. The rough titre is <strong>never</strong> included in the mean.</p>
+
+<div class="exam-tip">Precision answers: a <strong>pipette</strong> measures a fixed volume very accurately (better than a measuring cylinder); a <strong>burette</strong> delivers variable volumes accurately; the <strong>white tile</strong> makes the colour change easier to see; <strong>swirling</strong> mixes the reactants; adding <strong>dropwise</strong> avoids overshooting the end-point. To make a <em>pure salt</em> from the titration, repeat with the same volumes but <strong>no indicator</strong>, then evaporate and crystallise.</div>
+
+<h2>5.7 Titration Calculations (HT)</h2>
+
+<p>Use the results of a titration to find an <strong>unknown concentration</strong> or an <strong>unknown volume</strong>. Follow four steps every time:</p>
+<ol>
+  <li>Write the <strong>balanced equation</strong> and note the <strong>mole ratio</strong>.</li>
+  <li>Calculate the <strong>moles</strong> of the substance whose volume and concentration you know: moles = concentration × volume (dm³).</li>
+  <li>Use the ratio to find the <strong>moles</strong> of the other substance.</li>
+  <li>Calculate the unknown: concentration = moles ÷ volume (dm³), or volume = moles ÷ concentration.</li>
+</ol>
+
+<div class="worked">
+(HT) 25.0 cm³ of sodium hydroxide solution is neutralised by 21.40 cm³ of 0.100 mol dm⁻³ hydrochloric acid. Calculate the concentration of the sodium hydroxide in mol dm⁻³ and in g dm⁻³. (M<sub>r</sub> NaOH = 40)<br><br>
+NaOH + HCl → NaCl + H₂O &nbsp; (ratio 1 : 1)<br>
+moles HCl = 0.100 × (21.40 ÷ 1000) = 0.002140 mol<br>
+moles NaOH = 0.002140 mol<br>
+concentration NaOH = 0.002140 ÷ (25.0 ÷ 1000) = <strong>0.0856 mol dm⁻³</strong><br>
+in g dm⁻³: 0.0856 × 40 = <strong>3.42 g dm⁻³</strong>
+</div>
+
+<div class="worked">
+(HT) 25.0 cm³ of 0.150 mol dm⁻³ sodium hydroxide is neutralised by 18.75 cm³ of dilute sulfuric acid. Calculate the concentration of the acid.<br><br>
+H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O &nbsp; (ratio 1 : 2)<br>
+moles NaOH = 0.150 × 0.0250 = 0.00375 mol<br>
+moles H₂SO₄ = 0.00375 ÷ 2 = 0.001875 mol<br>
+concentration H₂SO₄ = 0.001875 ÷ 0.01875 = <strong>0.100 mol dm⁻³</strong>
+</div>
+
+<div class="worked">
+(HT) What volume of 0.200 mol dm⁻³ hydrochloric acid is needed to neutralise 20.0 cm³ of 0.150 mol dm⁻³ potassium hydroxide?<br><br>
+KOH + HCl → KCl + H₂O &nbsp; (1 : 1)<br>
+moles KOH = 0.150 × 0.0200 = 0.00300 mol = moles HCl<br>
+volume HCl = 0.00300 ÷ 0.200 = 0.0150 dm³ = <strong>15.0 cm³</strong>
+</div>
+
+<div class="exam-tip">The two classic errors are forgetting to divide cm³ by 1000, and ignoring the mole ratio for <strong>sulfuric acid</strong> (H₂SO₄ reacts with <strong>2</strong> NaOH). Give answers to 3 significant figures, matching the data.</div>
+
+<h2>5.8 Percentage Yield</h2>
+
+<div class="definition">
+  The <strong>theoretical yield</strong> is the maximum mass of product that could be made from the reactants, calculated from the balanced equation. The <strong>actual yield</strong> is the mass of product actually obtained.
+</div>
+
+<span class="eq">percentage yield = (actual yield ÷ theoretical yield) × 100</span>
+
+<h3>Why the actual yield is less than the theoretical yield</h3>
+<ul>
+  <li><strong>Incomplete reactions</strong> &mdash; some reactant does not react (e.g. a reversible reaction reaches equilibrium, or the reaction is stopped too soon).</li>
+  <li><strong>Practical losses</strong> during the experiment &mdash; product left behind in apparatus, lost when filtering, transferring liquids or during evaporation and crystallisation.</li>
+  <li><strong>Competing, unwanted reactions (side reactions)</strong> &mdash; some reactants form different products.</li>
+</ul>
+
+<div class="worked">
+50.0 g of calcium carbonate is heated: CaCO₃ → CaO + CO₂. 22.4 g of calcium oxide is obtained. Calculate the percentage yield. (M<sub>r</sub>: CaCO₃ = 100, CaO = 56)<br><br>
+From the equation, 100 g of CaCO₃ gives 56 g of CaO, so 50.0 g gives a theoretical yield of 56 × (50.0 ÷ 100) = 28.0 g<br>
+percentage yield = (22.4 ÷ 28.0) × 100 = <strong>80.0%</strong>
+</div>
+
+<div class="worked">
+A student expects to make 12.0 g of magnesium sulfate. The percentage yield is 65%. What mass did the student actually obtain?<br><br>
+actual yield = 65 ÷ 100 × 12.0 = <strong>7.8 g</strong>
+</div>
+
+<h2>5.9 Atom Economy</h2>
+
+<div class="definition">
+  <strong>Atom economy</strong> is a measure of the proportion of the reactants that end up as the <strong>desired (useful) product</strong>. A high atom economy means less waste.
+</div>
+
+<span class="eq">atom economy = (relative formula mass of the desired product ÷ sum of relative formula masses of all reactants) × 100%</span>
+
+<p>Use the balancing numbers from the equation. If there is only one product (an <strong>addition</strong> reaction), the atom economy is <strong>100%</strong>.</p>
+
+<div class="worked">
+Calculate the atom economy for making calcium oxide by heating limestone: CaCO₃ → CaO + CO₂ (M<sub>r</sub>: CaCO₃ = 100, CaO = 56)<br><br>
+atom economy = 56 ÷ 100 × 100 = <strong>56%</strong> (the other 44% leaves as CO₂ waste)
+</div>
+
+<div class="worked">
+Iron is produced by: Fe₂O₃ + 3CO → 2Fe + 3CO₂. Calculate the atom economy for iron. (A<sub>r</sub>: Fe = 56, C = 12, O = 16)<br><br>
+M<sub>r</sub> Fe₂O₃ = 160; 3 × M<sub>r</sub> CO = 3 × 28 = 84 &rarr; total reactants = 244<br>
+desired product = 2 × 56 = 112<br>
+atom economy = 112 ÷ 244 × 100 = <strong>45.9%</strong>
+</div>
+
+<!-- Atom economy bar comparison -->
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Two routes to ethanol &mdash; atom economy</text>
+  <text x="20" y="72" font-size="12" fill="#1a1a2e">Fermentation</text>
+  <text x="20" y="88" font-size="11" fill="#64748b">C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂</text>
+  <rect x="210" y="60" width="226" height="30" fill="#2563eb"/>
+  <rect x="436" y="60" width="216" height="30" fill="#e5e7eb" stroke="#cbd5e1"/>
+  <text x="323" y="80" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">ethanol 51%</text>
+  <text x="544" y="80" text-anchor="middle" font-size="12" fill="#334155">CO₂ by-product 49%</text>
+  <text x="20" y="142" font-size="12" fill="#1a1a2e">Hydration of ethene</text>
+  <text x="20" y="158" font-size="11" fill="#64748b">C₂H₄ + H₂O → C₂H₅OH</text>
+  <rect x="210" y="130" width="442" height="30" fill="#2563eb"/>
+  <text x="431" y="150" text-anchor="middle" font-size="12" fill="#fff" font-weight="bold">ethanol 100%</text>
+  <text x="350" y="200" text-anchor="middle" font-size="12" fill="#64748b">M<tspan font-size="9" dy="3">r</tspan><tspan dy="-3">: glucose 180, ethanol 46 → (2 × 46) ÷ 180 × 100 = 51.1%</tspan></text>
+</svg>
+
+<h3>Choosing a reaction pathway <strong>(HT)</strong></h3>
+<p>Industry chooses a route to a product by weighing up several factors, not just one:</p>
+<table>
+  <thead><tr><th>Factor</th><th>What to look for</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Atom economy</strong></td><td>High &mdash; less waste, more efficient use of raw materials, more sustainable</td></tr>
+    <tr><td><strong>Yield</strong></td><td>High percentage yield &mdash; more product from the same reactants</td></tr>
+    <tr><td><strong>Rate</strong></td><td>Fast enough to make product in an acceptable time</td></tr>
+    <tr><td><strong>Equilibrium position</strong></td><td>For reversible reactions, conditions that give an acceptable proportion of product</td></tr>
+    <tr><td><strong>Usefulness of by-products</strong></td><td>If the by-product can be sold or used, a low atom economy matters less</td></tr>
+    <tr><td>Other</td><td>Cost and availability (renewable or finite) of raw materials, energy needed, safety</td></tr>
+  </tbody>
+</table>
+
+<div class="worked">
+<strong>(HT)</strong> Compare the two routes to ethanol shown above.<br><br>
+<strong>Hydration of ethene</strong>: atom economy 100%, fast, continuous process and gives pure ethanol &mdash; but needs high temperature (~300 °C) and pressure (~60&ndash;70 atm) with a phosphoric acid catalyst, and ethene comes from crude oil, a <strong>finite</strong> resource.<br>
+<strong>Fermentation</strong>: atom economy only 51% and slow (batch process, takes days), producing a dilute solution that must be distilled &mdash; but uses <strong>renewable</strong> sugar from crops at low temperature (~30 °C), and the CO₂ by-product can be captured and sold.<br>
+<strong>Conclusion:</strong> where crude oil is cheap and plentiful, hydration is often chosen for its efficiency; where crops are plentiful and oil is expensive, fermentation may be preferred.
+</div>
+
+<h2>5.10 Molar Volume of Gases (HT)</h2>
+
+<div class="definition">
+  One mole of <strong>any gas</strong> occupies the same volume at the same temperature and pressure. At <strong>room temperature and pressure (RTP)</strong> &mdash; 20 °C and 1 atmosphere &mdash; the <strong>molar volume</strong> of a gas is <strong>24 dm³</strong> (24 000 cm³).
+</div>
+
+<span class="eq">volume of gas (dm³) = amount (mol) × 24 &nbsp;&nbsp; ↔ &nbsp;&nbsp; amount (mol) = volume (dm³) ÷ 24</span>
+<span class="eq">volume of gas (cm³) = amount (mol) × 24 000</span>
+
+<div class="worked">
+(HT) Calculate the volume of hydrogen produced at RTP when 0.48 g of magnesium reacts with excess hydrochloric acid. (A<sub>r</sub> Mg = 24)<br><br>
+Mg + 2HCl → MgCl₂ + H₂ &nbsp; (Mg : H₂ = 1 : 1)<br>
+moles Mg = 0.48 ÷ 24 = 0.020 mol → 0.020 mol H₂<br>
+volume H₂ = 0.020 × 24 = <strong>0.48 dm³</strong> (480 cm³)
+</div>
+
+<div class="worked">
+(HT) What mass of calcium carbonate must react with excess acid to produce 600 cm³ of carbon dioxide at RTP? (M<sub>r</sub> CaCO₃ = 100)<br><br>
+CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ &nbsp; (1 : 1)<br>
+moles CO₂ = 600 ÷ 24 000 = 0.0250 mol → 0.0250 mol CaCO₃<br>
+mass = 0.0250 × 100 = <strong>2.50 g</strong>
+</div>
+
+<h3>Avogadro's law &mdash; reacting volumes of gases</h3>
+<p><strong>Avogadro's law</strong>: equal volumes of all gases at the same temperature and pressure contain the <strong>same number of molecules</strong>. So for reactions between gases, the <strong>ratio of volumes</strong> is the same as the <strong>mole ratio</strong> in the balanced equation &mdash; you do not need to convert to moles at all.</p>
+
+<div class="worked">
+(HT) Propane burns completely: C₃H₈(g) + 5O₂(g) → 3CO₂(g) + 4H₂O(l). What volume of oxygen is needed to burn 20 cm³ of propane, and what volume of carbon dioxide is produced? (All volumes at RTP.)<br><br>
+Volume ratio propane : oxygen : carbon dioxide = 1 : 5 : 3<br>
+oxygen = 5 × 20 = <strong>100 cm³</strong><br>
+carbon dioxide = 3 × 20 = <strong>60 cm³</strong><br>
+(The water is a liquid at RTP, so it has a negligible volume and is not included.)
+</div>
+
+<div class="worked">
+(HT) 50 cm³ of carbon monoxide is burned in 40 cm³ of oxygen: 2CO(g) + O₂(g) → 2CO₂(g). What is the total volume of gas at the end (RTP)?<br><br>
+50 cm³ CO needs 25 cm³ O₂ → oxygen is in excess by 40 &minus; 25 = 15 cm³.<br>
+CO₂ formed = 50 cm³.<br>
+Total gas = 50 + 15 = <strong>65 cm³</strong>
+</div>
+
+<div class="exam-tip">The 24 dm³ value is given on the exam paper when needed, but you must know when to use it: <strong>only for gases</strong>, and only at RTP. Watch the units &mdash; if the volume is in cm³ use 24 000.</div>
+
+<h2>5.11 Dynamic Equilibria in Industry &mdash; the Haber Process</h2>
+
+<p>Recall from Topic 4 that the Haber process is a <strong>reversible reaction</strong> between nitrogen and hydrogen forming ammonia:</p>
+<span class="eq">N₂(g) + 3H₂(g) ⇌ 2NH₃(g) &nbsp;&nbsp; forward reaction exothermic</span>
+
+<p><strong>(HT)</strong> Industrial chemists must choose conditions that give an <strong>acceptable yield in an acceptable time</strong> at an acceptable cost. The choice depends on the <strong>availability and cost of raw materials and energy</strong>, and on the <strong>temperature, pressure and catalyst</strong>.</p>
+
+<!-- Haber yield graph -->
+<svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t5arrAxisHab" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Equilibrium yield of ammonia (shape of the trend)</text>
+  <line x1="90" y1="290" x2="640" y2="290" stroke="#334155" stroke-width="2" marker-end="url(#t5arrAxisHab)"/>
+  <line x1="90" y1="290" x2="90" y2="40" stroke="#334155" stroke-width="2" marker-end="url(#t5arrAxisHab)"/>
+  <text x="620" y="318" text-anchor="end" font-size="13" fill="#334155">temperature / °C</text>
+  <text x="40" y="170" text-anchor="middle" font-size="13" fill="#334155" transform="rotate(-90 40 170)">% ammonia at equilibrium</text>
+  <g font-size="11" fill="#64748b" text-anchor="middle">
+    <text x="150" y="306">300</text><text x="270" y="306">400</text><text x="330" y="306">450</text><text x="390" y="306">500</text><text x="510" y="306">600</text>
+  </g>
+  <path d="M120 70 C220 105 330 170 600 243" fill="none" stroke="#1e40af" stroke-width="3"/>
+  <path d="M120 105 C220 140 330 205 600 260" fill="none" stroke="#2563eb" stroke-width="3"/>
+  <path d="M120 160 C220 195 330 240 600 274" fill="none" stroke="#93c5fd" stroke-width="3"/>
+  <text x="605" y="246" font-size="11" fill="#1e40af">400 atm</text>
+  <text x="605" y="263" font-size="11" fill="#2563eb">200 atm</text>
+  <text x="605" y="279" font-size="11" fill="#60a5fa">50 atm</text>
+  <line x1="330" y1="60" x2="330" y2="290" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="330" cy="190" r="6" fill="#dc2626"/>
+  <text x="340" y="62" font-size="12" fill="#dc2626" font-weight="bold">450 °C, 200 atm: compromise</text>
+  <text x="140" y="56" font-size="11" fill="#334155">lower T, higher P → higher yield</text>
+  <text x="400" y="140" font-size="11" fill="#334155">but lower T → much slower rate</text>
+</svg>
+
+<table>
+  <thead><tr><th>Condition</th><th>Effect on yield</th><th>Effect on rate</th><th>Cost / practical issues</th><th>Choice</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Temperature</strong></td><td>Lower T gives a higher yield (forward reaction is exothermic)</td><td>Lower T makes the reaction too slow</td><td>Heating costs energy</td><td><strong>450 °C</strong> &mdash; compromise between yield and rate</td></tr>
+    <tr><td><strong>Pressure</strong></td><td>Higher P gives a higher yield (4 gas molecules → 2)</td><td>Higher P increases rate (particles closer together)</td><td>Very high pressure needs expensive, thick-walled plant and pumps; more energy to compress gases; greater safety risk</td><td><strong>200 atm</strong> &mdash; compromise between yield and cost/safety</td></tr>
+    <tr><td><strong>Catalyst</strong></td><td>No effect on yield</td><td>Increases rate &mdash; equilibrium reached faster</td><td>Cheap (iron); lasts a long time; allows a lower temperature</td><td><strong>Iron</strong></td></tr>
+  </tbody>
+</table>
+
+<h3>Rate of attainment of equilibrium <strong>(HT)</strong></h3>
+<p>Changing the conditions affects how <strong>quickly</strong> equilibrium is reached, as well as (for temperature, pressure and concentration) where the equilibrium position lies:</p>
+<ul>
+  <li><strong>Higher temperature</strong> &mdash; particles have more energy and collide more often, so equilibrium is reached <strong>faster</strong> (even though, for the Haber process, the yield at equilibrium is lower).</li>
+  <li><strong>Higher pressure</strong> (gases) &mdash; particles are closer together, collisions are more frequent, so equilibrium is reached <strong>faster</strong>.</li>
+  <li><strong>Higher concentration</strong> of reactants &mdash; more frequent collisions, so equilibrium is reached <strong>faster</strong>.</li>
+  <li><strong>Catalyst</strong> &mdash; speeds up the forward and backward reactions equally, so equilibrium is reached <strong>faster</strong> but the position of equilibrium (yield) is unchanged.</li>
+</ul>
+
+<h3>Raw materials and energy <strong>(HT)</strong></h3>
+<ul>
+  <li><strong>Nitrogen</strong> comes from the air &mdash; abundant and free (but separating it uses energy).</li>
+  <li><strong>Hydrogen</strong> comes from natural gas (methane) &mdash; cheap but a <strong>finite</strong> fossil fuel.</li>
+  <li>The reaction is exothermic: the heat released is used to <strong>pre-heat</strong> incoming gases, saving energy.</li>
+  <li>Unreacted N₂ and H₂ are <strong>recycled</strong>, so over many passes almost all the raw material is converted, even though only about 15% reacts per pass.</li>
+</ul>
+
+<div class="exam-tip"><strong>(HT)</strong> For "explain why 450 °C is used", give both halves: "a <strong>lower temperature</strong> would give a <strong>higher yield</strong> because the forward reaction is exothermic, but the <strong>rate</strong> would be too slow; 450 °C gives an <strong>acceptable yield in an acceptable time</strong>." The same compromise idea applies to pressure (yield vs cost/safety).</div>
+
+<h2>5.12 Fertilisers</h2>
+
+<div class="definition">
+  <strong>Fertilisers</strong> provide plants with essential elements to promote growth. The three main elements are <strong>nitrogen (N)</strong>, <strong>phosphorus (P)</strong> and <strong>potassium (K)</strong>. NPK fertilisers contain compounds of all three.
+</div>
+
+<p>Fertilisers must be <strong>soluble</strong> in water so that plants can absorb the ions through their roots. Many nitrogen fertilisers are <strong>ammonium salts</strong> or <strong>nitrates</strong> made from ammonia.</p>
+
+<h3>Making ammonium nitrate</h3>
+<p>Ammonia (an alkali) reacts with <strong>nitric acid</strong> in a neutralisation reaction to form <strong>ammonium nitrate</strong>, which is particularly rich in nitrogen (it contains nitrogen in both ions):</p>
+<span class="eq">ammonia + nitric acid → ammonium nitrate</span>
+<span class="eq">NH₃(aq) + HNO₃(aq) → NH₄NO₃(aq)</span>
+
+<div class="worked">
+Calculate the percentage by mass of nitrogen in ammonium nitrate, NH₄NO₃. (A<sub>r</sub>: N = 14, H = 1, O = 16)<br><br>
+M<sub>r</sub> = 14 + (4 × 1) + 14 + (3 × 16) = 80<br>
+% N = (2 × 14) ÷ 80 × 100 = <strong>35%</strong>
+</div>
+
+<h3>Ammonium sulfate &mdash; laboratory vs industry</h3>
+<span class="eq">2NH₃(aq) + H₂SO₄(aq) → (NH₄)₂SO₄(aq)</span>
+<table>
+  <thead><tr><th></th><th>Laboratory preparation</th><th>Industrial production</th></tr></thead>
+  <tbody>
+    <tr><td>Raw materials</td><td>Bought ammonia solution and dilute sulfuric acid</td><td>Must be <strong>made first</strong> in several stages: ammonia by the Haber process (N₂ from air, H₂ from natural gas); sulfuric acid by the Contact process (from sulfur, air and water)</td></tr>
+    <tr><td>Scale</td><td><strong>Small scale</strong> &mdash; a few grams</td><td><strong>Very large scale</strong> &mdash; thousands of tonnes</td></tr>
+    <tr><td>Method</td><td><strong>Titration</strong>: titrate ammonia solution with acid using methyl orange to find the reacting volumes; repeat <strong>without indicator</strong>; evaporate some water, leave to <strong>crystallise</strong>, filter and dry</td><td>Ammonia gas reacted with concentrated sulfuric acid in large reaction vessels; the product is dried (spray-drying or crystallising)</td></tr>
+    <tr><td>Process type</td><td><strong>Batch</strong></td><td><strong>Continuous</strong></td></tr>
+    <tr><td>Energy</td><td>Heating to evaporate water</td><td>Reaction is exothermic &mdash; heat used to evaporate water; less energy input needed per tonne</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">When comparing lab and industrial preparation, the specification's key words are <strong>scale</strong> (small vs much larger) and <strong>stages</strong> (in industry the raw materials ammonia and sulfuric acid have to be manufactured first). Use the words "batch" and "continuous" for extra credit.</div>
+
+<h2>5.13 Chemical Cells</h2>
+
+<div class="definition">
+  A <strong>chemical cell</strong> converts chemical energy into electrical energy. A simple cell is made by placing <strong>two different metals</strong> in an <strong>electrolyte</strong>. A chemical cell <strong>produces a voltage until one of the reactants is used up</strong>.
+</div>
+
+<p>The more reactive metal loses electrons more readily, so electrons flow through the external circuit from the more reactive metal to the less reactive metal. The <strong>bigger the difference in reactivity</strong> between the two metals, the <strong>larger the voltage</strong>. A <strong>battery</strong> is two or more cells connected in series.</p>
+
+<!-- Simple cell -->
+<svg viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t5arrCell" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">A simple chemical cell</text>
+  <circle cx="350" cy="70" r="22" fill="#fff" stroke="#334155" stroke-width="2"/>
+  <text x="350" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#334155">V</text>
+  <path d="M328 70 L240 70 L240 115" fill="none" stroke="#334155" stroke-width="2"/>
+  <path d="M372 70 L460 70 L460 115" fill="none" stroke="#334155" stroke-width="2"/>
+  <path d="M180 110 L180 240 L520 240 L520 110" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect x="182" y="150" width="336" height="88" fill="#e0f2fe"/>
+  <rect x="226" y="115" width="28" height="110" fill="#cbd5e1" stroke="#334155"/>
+  <rect x="446" y="115" width="28" height="110" fill="#d97706" stroke="#334155"/>
+  <text x="200" y="110" font-size="12" fill="#334155">zinc</text>
+  <text x="482" y="110" font-size="12" fill="#334155">copper</text>
+  <text x="350" y="200" text-anchor="middle" font-size="12" fill="#334155">electrolyte (e.g. salt solution)</text>
+  <path d="M250 52 L315 52" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#t5arrCell)"/>
+  <path d="M385 52 L450 52" fill="none" stroke="#2563eb" stroke-width="1.5" marker-end="url(#t5arrCell)"/>
+  <text x="280" y="44" text-anchor="middle" font-size="11" fill="#2563eb">electron flow</text>
+  <text x="130" y="262" font-size="11" fill="#64748b">more reactive metal: loses electrons (−)</text>
+  <text x="400" y="262" font-size="11" fill="#64748b">less reactive metal (+)</text>
+</svg>
+
+<table>
+  <thead><tr><th>Metals used</th><th>Approximate voltage</th></tr></thead>
+  <tbody>
+    <tr><td>Magnesium / copper</td><td>Large (about 2 V)</td></tr>
+    <tr><td>Zinc / copper</td><td>Medium (about 1 V)</td></tr>
+    <tr><td>Iron / copper</td><td>Small (about 0.5 V)</td></tr>
+    <tr><td>Copper / copper</td><td>Zero &mdash; the metals must be different</td></tr>
+  </tbody>
+</table>
+
+<p>In non-rechargeable cells (e.g. alkaline batteries) the chemical reactions stop when one of the reactants has been used up and the cell is "flat". Rechargeable cells can be recharged because the reactions are reversed when an external current is supplied.</p>
+
+<h2>5.14 Hydrogen&ndash;Oxygen Fuel Cells</h2>
+
+<div class="definition">
+  In a <strong>hydrogen&ndash;oxygen fuel cell</strong>, hydrogen and oxygen are used to produce a <strong>voltage</strong>, and <strong>water is the only product</strong>. Unlike a chemical cell, the reactants (fuel and oxygen) are <strong>supplied continuously</strong>, so the fuel cell keeps producing electricity as long as they are supplied.
+</div>
+
+<span class="eq">hydrogen + oxygen → water &nbsp;&nbsp;&nbsp; 2H₂(g) + O₂(g) → 2H₂O(l)</span>
+
+<!-- Fuel cell -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t5arrFuel" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+    <marker id="t5arrFuelE" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Hydrogen&ndash;oxygen fuel cell</text>
+  <rect x="200" y="80" width="300" height="170" rx="6" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <rect x="250" y="80" width="18" height="170" fill="#64748b"/>
+  <rect x="432" y="80" width="18" height="170" fill="#64748b"/>
+  <rect x="268" y="80" width="164" height="170" fill="#e0f2fe"/>
+  <text x="350" y="170" text-anchor="middle" font-size="12" fill="#334155">electrolyte</text>
+  <text x="259" y="270" text-anchor="middle" font-size="11" fill="#334155">electrode</text>
+  <text x="441" y="270" text-anchor="middle" font-size="11" fill="#334155">electrode</text>
+  <line x1="90" y1="130" x2="245" y2="130" stroke="#334155" stroke-width="2" marker-end="url(#t5arrFuel)"/>
+  <text x="90" y="122" font-size="13" fill="#1a1a2e" font-weight="bold">hydrogen in</text>
+  <line x1="610" y1="130" x2="455" y2="130" stroke="#334155" stroke-width="2" marker-end="url(#t5arrFuel)"/>
+  <text x="520" y="122" font-size="13" fill="#1a1a2e" font-weight="bold">oxygen (air) in</text>
+  <line x1="455" y1="215" x2="610" y2="215" stroke="#334155" stroke-width="2" marker-end="url(#t5arrFuel)"/>
+  <text x="520" y="235" font-size="13" fill="#1a1a2e" font-weight="bold">water out</text>
+  <path d="M259 80 L259 50 L441 50 L441 80" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <rect x="325" y="38" width="50" height="24" rx="4" fill="#fff" stroke="#334155" stroke-width="2"/>
+  <text x="350" y="55" text-anchor="middle" font-size="11" fill="#334155">motor</text>
+  <line x1="275" y1="44" x2="315" y2="44" stroke="#2563eb" stroke-width="2" marker-end="url(#t5arrFuelE)"/>
+  <text x="290" y="36" text-anchor="middle" font-size="10" fill="#2563eb">e⁻</text>
+</svg>
+
+<h3>Evaluating fuel cells</h3>
+<table>
+  <thead><tr><th>Strengths</th><th>Weaknesses</th></tr></thead>
+  <tbody>
+    <tr><td>The only product is <strong>water</strong> &mdash; no CO₂ or other pollutants at the point of use</td><td><strong>Hydrogen is a gas</strong>: it takes up a large volume, so it must be stored under high pressure or as a liquid at very low temperature; tanks are heavy and bulky</td></tr>
+    <tr><td>More <strong>efficient</strong> than burning fuel in an engine &mdash; fewer energy-transfer stages</td><td>Hydrogen is <strong>highly flammable/explosive</strong>, so storage and transport carry risks</td></tr>
+    <tr><td>Produce a <strong>continuous</strong> supply of electricity as long as fuel is supplied &mdash; no long recharging time (quick refuelling)</td><td>Hydrogen is usually made from <strong>natural gas</strong> (releases CO₂) or by electrolysis of water, which needs electricity that may come from fossil fuels</td></tr>
+    <tr><td>Few moving parts, quiet, little maintenance</td><td>Fuel cells are <strong>expensive</strong> (use catalysts such as platinum); few hydrogen refuelling stations</td></tr>
+    <tr><td>Lighter than rechargeable batteries for the same energy stored in long-range use; no toxic metal waste when disposed of</td><td>Fuel cells eventually wear out and contain materials that need careful disposal</td></tr>
+  </tbody>
+</table>
+
+<div class="worked">
+Evaluate the use of hydrogen fuel cells, rather than rechargeable lithium batteries, to power buses.<br><br>
+<strong>For fuel cells:</strong> buses can be refuelled in minutes rather than charged for hours, so they can run all day; the only exhaust is water, so there is no local air pollution; a large bus would need a very heavy battery pack.<br>
+<strong>Against:</strong> hydrogen must be stored in large high-pressure tanks and is flammable; hydrogen production often releases CO₂; refuelling infrastructure is limited and fuel cells are expensive.<br>
+<strong>Judgement:</strong> for buses running long routes from a single depot (where one hydrogen supply can be installed), fuel cells are a good choice; for short urban routes, batteries may be cheaper.
+</div>
+
+<div class="exam-tip">"Water is the only product" is only true at the point of use. In evaluation questions, gain the higher marks by mentioning <strong>where the hydrogen comes from</strong> &mdash; if it is made using fossil fuels, CO₂ is still produced overall.</div>
+
+<h2>Key Points Summary</h2>
+<ul>
+  <li><strong>5.1C</strong> &mdash; Most metals are transition metals: high melting point, high density, coloured compounds, catalytic activity (iron in the Haber process).</li>
+  <li><strong>5.2C, 5.3C</strong> &mdash; Corrosion is oxidation; rusting needs oxygen and water. Prevent it by excluding oxygen/water (paint, oil, grease, plastic, plating) or by sacrificial protection with a more reactive metal (zinc, magnesium; galvanising).</li>
+  <li><strong>5.4C</strong> &mdash; Electroplating: object = cathode, plating metal = anode, electrolyte contains ions of the plating metal; improves appearance and corrosion resistance.</li>
+  <li><strong>5.5C, 5.6C</strong> &mdash; Alloys are stronger because different-sized atoms distort the layers so they cannot slide; iron is alloyed (e.g. with chromium/nickel → stainless steel) to make alloy steels.</li>
+  <li><strong>5.7C</strong> &mdash; Relate uses to properties: aluminium, copper, gold, magnalium (Al + Mg), brass (Cu + Zn).</li>
+  <li><strong>5.8C (HT)</strong> &mdash; concentration (mol dm⁻³) = mol ÷ dm³; convert g dm⁻³ ↔ mol dm⁻³ using M<sub>r</sub>.</li>
+  <li><strong>5.9C (CP5)</strong> &mdash; Accurate titration: pipette, burette, indicator, white tile, dropwise near end-point, concordant titres within 0.10 cm³.</li>
+  <li><strong>5.10C (HT)</strong> &mdash; Calculate an unknown concentration or volume from titration results, using the mole ratio.</li>
+  <li><strong>5.11C, 5.12C</strong> &mdash; Percentage yield = actual ÷ theoretical × 100; losses from incomplete reactions, practical losses, side reactions.</li>
+  <li><strong>5.13C, 5.14C</strong> &mdash; Atom economy = M<sub>r</sub> desired product ÷ total M<sub>r</sub> reactants × 100%. <strong>5.15C (HT)</strong> &mdash; choose a pathway using atom economy, yield, rate, equilibrium position and by-products.</li>
+  <li><strong>5.16C&ndash;5.18C (HT)</strong> &mdash; Molar gas volume 24 dm³ at RTP; mass ↔ gas volume calculations; Avogadro's law: gas volume ratio = mole ratio.</li>
+  <li><strong>5.19C</strong> &mdash; The Haber process is a reversible reaction between nitrogen and hydrogen forming ammonia.</li>
+  <li><strong>5.20C, 5.21C (HT)</strong> &mdash; Higher temperature, pressure or concentration, or a catalyst, make equilibrium reached faster; Haber conditions (450 °C, 200 atm, iron) are a compromise of yield, rate, cost of raw materials and energy, and safety.</li>
+  <li><strong>5.22C&ndash;5.24C</strong> &mdash; NPK fertilisers; NH₃ + HNO₃ → NH₄NO₃; compare lab (titration, small, batch) and industrial (multi-stage, large, continuous) production of ammonium sulfate.</li>
+  <li><strong>5.25C&ndash;5.27C</strong> &mdash; A chemical cell gives a voltage until a reactant is used up; a hydrogen&ndash;oxygen fuel cell produces a voltage with water as the only product; evaluate the strengths and weaknesses of fuel cells.</li>
+</ul>
+
+</div>
+</body>
+</html>

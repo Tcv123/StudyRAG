@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Edexcel GCSE Chemistry — Topic 4: Extracting Metals and Equilibria</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+    .container { max-width: 820px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+    .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+    h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+    h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+    p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+    strong { color: #1a1a2e; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+    th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+    tr:nth-child(even) { background: #f9fafb; }
+    .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+    .worked { background: #ecfdf5; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .worked::before { content: "Worked Example: "; font-weight: 700; color: #0f5132; }
+    code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+    .eq { display: block; text-align: center; font-size: 1.1rem; padding: 10px 16px; margin: 10px 0; background: #f0f4ff; border-radius: 6px; border: 1px solid #cfd9ff; }
+    @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .worked { break-inside: avoid; } h2 { break-after: avoid; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning
+  </a>
+</div>
+
+<h1>Topic 4 — Extracting Metals and Equilibria</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Chemistry (1CH0) &mdash; Paper 1</p>
+
+<p>This topic has two halves. The first half is about <strong>metals</strong>: how reactive they are, why some are found as the pure element while most are locked up in ores, and how the position of a metal in the <strong>reactivity series</strong> decides how we get it out of the ground. It finishes with the bigger picture &mdash; biological extraction, recycling and <strong>life cycle assessments</strong>. The second half introduces <strong>reversible reactions</strong> and <strong>dynamic equilibrium</strong>, using the Haber process for ammonia as the main example, and (at Higher tier) shows how changing the conditions shifts the position of an equilibrium.</p>
+
+<p>Content marked <strong>(HT)</strong> is Higher Tier only. All of Topic 4 is examined in both GCSE Chemistry (1CH0) and Combined Science; the chemistry-only extension of the Haber process, fertilisers and yield/atom economy is in Topic 5 (Separate Chemistry 1).</p>
+
+<h2>4.1 The Reactivity Series</h2>
+
+<div class="definition">
+  The <strong>reactivity series</strong> is a list of metals arranged in order of how vigorously they react. A metal high in the series reacts readily because its atoms have a strong tendency to <strong>lose electrons and form positive ions</strong>. Carbon and hydrogen are non-metals but are included as reference points.
+</div>
+
+<p>The order you need for Edexcel is:</p>
+
+<!-- Reactivity series ladder -->
+<svg viewBox="0 0 700 430" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <linearGradient id="t4gradReact" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#dc2626"/>
+      <stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <marker id="t4arrReact" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The reactivity series (Edexcel 1CH0)</text>
+  <rect x="60" y="40" width="22" height="370" rx="6" fill="url(#t4gradReact)"/>
+  <text x="50" y="58" text-anchor="end" font-size="11" fill="#dc2626" font-weight="bold">most</text>
+  <text x="50" y="72" text-anchor="end" font-size="11" fill="#dc2626" font-weight="bold">reactive</text>
+  <text x="50" y="395" text-anchor="end" font-size="11" fill="#2563eb" font-weight="bold">least</text>
+  <text x="50" y="409" text-anchor="end" font-size="11" fill="#2563eb" font-weight="bold">reactive</text>
+  <g font-size="14" fill="#1a1a2e">
+    <rect x="100" y="42" width="180" height="26" rx="4" fill="#fee2e2" stroke="#fca5a5"/><text x="110" y="60">potassium  K</text>
+    <rect x="100" y="72" width="180" height="26" rx="4" fill="#fee2e2" stroke="#fca5a5"/><text x="110" y="90">sodium  Na</text>
+    <rect x="100" y="102" width="180" height="26" rx="4" fill="#fee2e2" stroke="#fca5a5"/><text x="110" y="120">calcium  Ca</text>
+    <rect x="100" y="132" width="180" height="26" rx="4" fill="#fee2e2" stroke="#fca5a5"/><text x="110" y="150">magnesium  Mg</text>
+    <rect x="100" y="162" width="180" height="26" rx="4" fill="#fee2e2" stroke="#fca5a5"/><text x="110" y="180">aluminium  Al</text>
+    <rect x="100" y="192" width="180" height="26" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-dasharray="4 3"/><text x="110" y="210" font-style="italic">(carbon  C)</text>
+    <rect x="100" y="222" width="180" height="26" rx="4" fill="#fef3c7" stroke="#fcd34d"/><text x="110" y="240">zinc  Zn</text>
+    <rect x="100" y="252" width="180" height="26" rx="4" fill="#fef3c7" stroke="#fcd34d"/><text x="110" y="270">iron  Fe</text>
+    <rect x="100" y="282" width="180" height="26" rx="4" fill="#e5e7eb" stroke="#9ca3af" stroke-dasharray="4 3"/><text x="110" y="300" font-style="italic">(hydrogen  H)</text>
+    <rect x="100" y="312" width="180" height="26" rx="4" fill="#dbeafe" stroke="#93c5fd"/><text x="110" y="330">copper  Cu</text>
+    <rect x="100" y="342" width="180" height="26" rx="4" fill="#dbeafe" stroke="#93c5fd"/><text x="110" y="360">silver  Ag</text>
+    <rect x="100" y="372" width="180" height="26" rx="4" fill="#dbeafe" stroke="#93c5fd"/><text x="110" y="390">gold  Au</text>
+  </g>
+  <line x1="300" y1="190" x2="300" y2="44" stroke="#dc2626" stroke-width="2"/>
+  <text x="315" y="100" font-size="12" fill="#991b1b">Above carbon:</text>
+  <text x="315" y="116" font-size="12" fill="#991b1b">extracted by electrolysis</text>
+  <text x="315" y="132" font-size="12" fill="#991b1b">of the molten compound</text>
+  <line x1="300" y1="224" x2="300" y2="366" stroke="#b45309" stroke-width="2"/>
+  <text x="315" y="250" font-size="12" fill="#92400e">Below carbon:</text>
+  <text x="315" y="266" font-size="12" fill="#92400e">extracted by heating the</text>
+  <text x="315" y="282" font-size="12" fill="#92400e">oxide with carbon (reduction)</text>
+  <line x1="300" y1="374" x2="300" y2="396" stroke="#2563eb" stroke-width="2"/>
+  <text x="315" y="390" font-size="12" fill="#1e40af">Gold (and some silver) found native, uncombined</text>
+  <line x1="520" y1="60" x2="520" y2="300" stroke="#334155" stroke-width="2" marker-end="url(#t4arrReact)"/>
+  <text x="535" y="150" font-size="12" fill="#334155">tendency to form</text>
+  <text x="535" y="166" font-size="12" fill="#334155">positive ions</text>
+  <text x="535" y="182" font-size="12" fill="#334155">decreases</text>
+  <text x="535" y="214" font-size="12" fill="#334155">resistance to</text>
+  <text x="535" y="230" font-size="12" fill="#334155">oxidation (corrosion)</text>
+  <text x="535" y="246" font-size="12" fill="#334155">increases</text>
+</svg>
+
+<div class="exam-tip">A popular mnemonic: <strong>P</strong>lease <strong>S</strong>top <strong>C</strong>alling <strong>M</strong>e <strong>A</strong> <strong>C</strong>areless <strong>Z</strong>ebra, <strong>I</strong>nstead <strong>H</strong>elp <strong>C</strong>ount <strong>S</strong>ome <strong>G</strong>iraffes &mdash; K, Na, Ca, Mg, Al, C, Zn, Fe, H, Cu, Ag, Au. Lithium is not in the Edexcel list but, if it appears, it sits between sodium and calcium.</div>
+
+<h3>Deducing an order of reactivity from experiments</h3>
+<p>You need to be able to put metals in order using three kinds of evidence: their reactions with <strong>water</strong>, with <strong>dilute acid</strong>, and <strong>displacement reactions</strong> with solutions of other metal salts. The more vigorous the reaction (more bubbles, faster temperature rise, metal disappears more quickly), the more reactive the metal.</p>
+
+<h3>Reactions with water</h3>
+<p>Reactive metals react with cold water to form a <strong>metal hydroxide</strong> and <strong>hydrogen</strong>:</p>
+<span class="eq">metal + water → metal hydroxide + hydrogen</span>
+<span class="eq">2K(s) + 2H₂O(l) → 2KOH(aq) + H₂(g)</span>
+<span class="eq">Ca(s) + 2H₂O(l) → Ca(OH)₂(aq) + H₂(g)</span>
+<p>Less reactive metals such as magnesium, zinc and iron react only very slowly with cold water but react with <strong>steam</strong> to form a <strong>metal oxide</strong> and hydrogen:</p>
+<span class="eq">Mg(s) + H₂O(g) → MgO(s) + H₂(g)</span>
+<p>Copper, silver and gold do not react with water or steam.</p>
+
+<h3>Reactions with dilute acids</h3>
+<p>Metals above hydrogen react with dilute hydrochloric or sulfuric acid to produce a <strong>salt</strong> and <strong>hydrogen</strong>. Metals below hydrogen (copper, silver, gold) do not react with dilute acids.</p>
+<span class="eq">metal + acid → salt + hydrogen</span>
+<span class="eq">Mg(s) + 2HCl(aq) → MgCl₂(aq) + H₂(g)</span>
+<span class="eq">Zn(s) + H₂SO₄(aq) → ZnSO₄(aq) + H₂(g)</span>
+<p>The hydrogen can be confirmed with a <strong>lighted splint</strong>, which burns with a squeaky pop.</p>
+
+<table>
+  <thead><tr><th>Metal</th><th>Cold water</th><th>Dilute hydrochloric acid</th></tr></thead>
+  <tbody>
+    <tr><td>Potassium</td><td>Floats, melts into a ball, fizzes violently, hydrogen ignites with a lilac flame</td><td>Explosive &mdash; never done in school</td></tr>
+    <tr><td>Sodium</td><td>Floats, melts, fizzes rapidly, moves around the surface</td><td>Explosive &mdash; never done in school</td></tr>
+    <tr><td>Calcium</td><td>Sinks, fizzes steadily, solution goes cloudy (Ca(OH)₂ is only slightly soluble)</td><td>Very vigorous</td></tr>
+    <tr><td>Magnesium</td><td>A few bubbles after a long time; reacts well with steam</td><td>Rapid fizzing, gets hot, ribbon disappears quickly</td></tr>
+    <tr><td>Zinc</td><td>No visible reaction (reacts with steam)</td><td>Steady bubbling</td></tr>
+    <tr><td>Iron</td><td>Rusts slowly over days (reacts with steam when red-hot)</td><td>Slow bubbling</td></tr>
+    <tr><td>Copper</td><td>No reaction</td><td>No reaction</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">Aluminium often seems less reactive than its position suggests because it is covered by a thin, tough layer of <strong>aluminium oxide</strong> that stops water and acid reaching the metal. If you are asked why, say the oxide layer is <em>protective</em> &mdash; not that aluminium is unreactive.</div>
+
+<h3>Making it a fair test</h3>
+<p>When comparing metals with acid, keep the following the same: the <strong>concentration</strong> and <strong>volume</strong> of acid, the <strong>temperature</strong>, and the <strong>mass and surface area</strong> of metal (e.g. use powders of similar particle size, or same-length strips). Measure something objective, such as the <strong>temperature rise</strong> in a fixed time or the <strong>volume of hydrogen</strong> collected in a gas syringe in the first minute.</p>
+
+<div class="worked">
+A student adds 0.5 g of four metal powders, W, X, Y and Z, to 25 cm³ of 1 mol dm⁻³ hydrochloric acid in turn and records the temperature rise.<br><br>
+W: +2 °C &nbsp; X: +0 °C &nbsp; Y: +18 °C &nbsp; Z: +7 °C<br><br>
+The greater the temperature rise, the more energy released and the more vigorous the reaction. Order (most → least reactive): <strong>Y &gt; Z &gt; W &gt; X</strong>. X may be copper (below hydrogen, no reaction). This is consistent with Y = magnesium, Z = zinc, W = iron.
+</div>
+
+<h2>4.2 Displacement Reactions</h2>
+
+<div class="definition">
+  In a <strong>displacement reaction</strong> a more reactive metal takes the place of a less reactive metal in one of its compounds. A metal will displace any metal <strong>below</strong> it in the reactivity series from a solution of its salt (or from its oxide when heated).
+</div>
+
+<span class="eq">magnesium + copper sulfate → magnesium sulfate + copper</span>
+<span class="eq">Mg(s) + CuSO₄(aq) → MgSO₄(aq) + Cu(s)</span>
+
+<p><strong>Observations:</strong> the blue colour of the copper(II) sulfate solution fades, a red-brown/pink coating of copper forms on the magnesium, and the mixture warms up (the reaction is exothermic). If the metal added is <em>less</em> reactive than the one in solution (e.g. copper in magnesium sulfate) there is no reaction.</p>
+
+<!-- Displacement test tube diagram -->
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t4arrDisp" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Magnesium ribbon in copper(II) sulfate solution</text>
+  <!-- before -->
+  <g transform="translate(110,40)">
+    <path d="M0 10 L0 160 Q0 190 30 190 Q60 190 60 160 L60 10" fill="none" stroke="#334155" stroke-width="2"/>
+    <path d="M2 60 L2 160 Q2 188 30 188 Q58 188 58 160 L58 60 Z" fill="#60a5fa" opacity="0.75"/>
+    <rect x="26" y="0" width="8" height="170" fill="#9ca3af" stroke="#6b7280"/>
+    <text x="30" y="215" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">Start</text>
+    <text x="80" y="40" font-size="11" fill="#334155">Mg ribbon (silvery)</text>
+    <text x="80" y="120" font-size="11" fill="#334155">blue CuSO₄(aq)</text>
+  </g>
+  <line x1="290" y1="130" x2="390" y2="130" stroke="#334155" stroke-width="2" marker-end="url(#t4arrDisp)"/>
+  <text x="340" y="120" text-anchor="middle" font-size="11" fill="#334155">a few minutes</text>
+  <!-- after -->
+  <g transform="translate(450,40)">
+    <path d="M0 10 L0 160 Q0 190 30 190 Q60 190 60 160 L60 10" fill="none" stroke="#334155" stroke-width="2"/>
+    <path d="M2 60 L2 160 Q2 188 30 188 Q58 188 58 160 L58 60 Z" fill="#bfdbfe" opacity="0.7"/>
+    <rect x="26" y="0" width="8" height="60" fill="#9ca3af" stroke="#6b7280"/>
+    <rect x="24" y="60" width="12" height="110" fill="#b45309" stroke="#92400e"/>
+    <text x="30" y="215" text-anchor="middle" font-size="12" fill="#334155" font-weight="bold">After</text>
+    <text x="80" y="110" font-size="11" fill="#334155">red-brown copper coating</text>
+    <text x="80" y="150" font-size="11" fill="#334155">solution paler / colourless</text>
+    <text x="80" y="166" font-size="11" fill="#334155">(MgSO₄ is colourless)</text>
+  </g>
+</svg>
+
+<h3>Using displacement to rank metals</h3>
+<p>A grid of results is a quick way to deduce a reactivity order: the metal that displaces the most others is the most reactive.</p>
+<table>
+  <thead><tr><th>Metal added ↓ / solution →</th><th>magnesium sulfate</th><th>zinc sulfate</th><th>iron(II) sulfate</th><th>copper(II) sulfate</th><th>Reactions</th></tr></thead>
+  <tbody>
+    <tr><td>Magnesium</td><td>&mdash;</td><td>✓</td><td>✓</td><td>✓</td><td>3</td></tr>
+    <tr><td>Zinc</td><td>✗</td><td>&mdash;</td><td>✓</td><td>✓</td><td>2</td></tr>
+    <tr><td>Iron</td><td>✗</td><td>✗</td><td>&mdash;</td><td>✓</td><td>1</td></tr>
+    <tr><td>Copper</td><td>✗</td><td>✗</td><td>✗</td><td>&mdash;</td><td>0</td></tr>
+  </tbody>
+</table>
+
+<h3>The thermite reaction</h3>
+<p>Displacement also works with solid oxides. Aluminium displaces iron from iron(III) oxide in a very exothermic reaction that produces molten iron &mdash; used to weld railway lines:</p>
+<span class="eq">2Al(s) + Fe₂O₃(s) → Al₂O₃(s) + 2Fe(l)</span>
+
+<h3>Displacement as a redox reaction (HT)</h3>
+<p>In terms of electrons, the more reactive metal <strong>loses electrons</strong> (is <strong>oxidised</strong>) and the ion of the less reactive metal <strong>gains electrons</strong> (is <strong>reduced</strong>). Because oxidation and reduction happen together, displacement reactions are <strong>redox</strong> reactions.</p>
+
+<div class="definition">
+  <strong>Oxidation is Loss</strong> of electrons; <strong>Reduction Is Gain</strong> of electrons &mdash; <strong>OIL RIG</strong>.
+</div>
+
+<p>The sulfate ions do not change; they are <strong>spectator ions</strong>. Leaving them out gives the <strong>ionic equation</strong>, which can be split into two <strong>half equations</strong>:</p>
+<span class="eq">Ionic: Mg(s) + Cu²⁺(aq) → Mg²⁺(aq) + Cu(s)</span>
+<span class="eq">Oxidation: Mg → Mg²⁺ + 2e⁻ &nbsp;&nbsp; | &nbsp;&nbsp; Reduction: Cu²⁺ + 2e⁻ → Cu</span>
+
+<div class="worked">
+(HT) Zinc powder is added to silver nitrate solution. Write the ionic equation and identify what is oxidised and reduced.<br><br>
+Full equation: Zn(s) + 2AgNO₃(aq) → Zn(NO₃)₂(aq) + 2Ag(s)<br>
+Nitrate ions are spectators. Ionic equation: <strong>Zn(s) + 2Ag⁺(aq) → Zn²⁺(aq) + 2Ag(s)</strong><br>
+Zn → Zn²⁺ + 2e⁻ &nbsp; (zinc atoms lose electrons → <strong>zinc is oxidised</strong>)<br>
+2Ag⁺ + 2e⁻ → 2Ag &nbsp; (silver ions gain electrons → <strong>silver ions are reduced</strong>)<br>
+Each zinc atom loses 2 electrons but each silver ion gains only 1, so <strong>two</strong> Ag⁺ ions are needed per Zn atom &mdash; the electrons must balance.
+</div>
+
+<div class="exam-tip">When you say what is oxidised or reduced, name the exact particle: "zinc <strong>atoms</strong> are oxidised" and "silver <strong>ions</strong> are reduced". "Silver nitrate is reduced" usually loses the mark.</div>
+
+<h2>4.3 Why Metals Differ in Reactivity</h2>
+
+<p>Metals react by <strong>losing their outer electrons</strong> to form positive ions. The reactivity series is really a list of how easily each metal does this:</p>
+<ul>
+  <li>Potassium forms K⁺ very easily, so it reacts violently with water.</li>
+  <li>Copper has only a weak tendency to form Cu²⁺, so it does not react with water or dilute acids.</li>
+  <li>Gold has almost no tendency to form ions, which is why it stays shiny for thousands of years.</li>
+</ul>
+
+<h3>Resistance to oxidation</h3>
+<p>Because the less reactive metals have a low tendency to form positive ions, they are <strong>more resistant to oxidation</strong>. This explains:</p>
+<ul>
+  <li><strong>Gold and silver</strong> are used for jewellery and electrical contacts: they do not tarnish (or tarnish only slowly).</li>
+  <li><strong>Copper</strong> is used for water pipes: it does not react with water.</li>
+  <li><strong>Iron</strong> rusts (is oxidised) quite easily and must be protected.</li>
+  <li><strong>Potassium and sodium</strong> oxidise in air within seconds and must be stored under oil.</li>
+</ul>
+
+<h2>4.4 Oxidation and Reduction &mdash; the Oxygen Definition</h2>
+
+<div class="definition">
+  <strong>Oxidation</strong> is the <strong>gain of oxygen</strong> by a substance.<br>
+  <strong>Reduction</strong> is the <strong>loss of oxygen</strong> from a substance.<br>
+  A substance that removes oxygen from another is a <strong>reducing agent</strong> (e.g. carbon, carbon monoxide).
+</div>
+
+<span class="eq">2Mg(s) + O₂(g) → 2MgO(s) &nbsp;&nbsp; (magnesium is oxidised)</span>
+<span class="eq">2CuO(s) + C(s) → 2Cu(s) + CO₂(g) &nbsp;&nbsp; (copper oxide is reduced; carbon is oxidised)</span>
+
+<p>In the second reaction, copper(II) oxide loses oxygen (reduced) while carbon gains oxygen (oxidised). Oxidation and reduction always occur together.</p>
+
+<div class="exam-tip">At Foundation you only need the oxygen definition. At Higher you may be asked to use <em>either</em> definition &mdash; read the question carefully. For reactions involving ions (displacement in solution, electrolysis) the <strong>electron</strong> definition is the one that earns marks.</div>
+
+<h2>4.5 Ores and the Extraction of Metals</h2>
+
+<div class="definition">
+  An <strong>ore</strong> is a rock containing enough of a metal or metal compound to make it economically worthwhile to extract the metal. Most metals are found in the Earth's crust combined with other elements, typically as <strong>oxides</strong>, <strong>sulfides</strong> or <strong>carbonates</strong>.
+</div>
+
+<p>Very unreactive metals such as <strong>gold</strong> (and some silver, copper and platinum) are found in the Earth's crust as the <strong>uncombined element</strong> ("native" metal), because they are too unreactive to have formed compounds. These can be separated from rock physically, e.g. by panning.</p>
+
+<table>
+  <thead><tr><th>Metal</th><th>Common ore</th><th>Main compound</th></tr></thead>
+  <tbody>
+    <tr><td>Iron</td><td>Haematite</td><td>Iron(III) oxide, Fe₂O₃</td></tr>
+    <tr><td>Aluminium</td><td>Bauxite</td><td>Aluminium oxide, Al₂O₃</td></tr>
+    <tr><td>Copper</td><td>Chalcopyrite / malachite</td><td>CuFeS₂ / copper carbonate compounds</td></tr>
+    <tr><td>Zinc</td><td>Zinc blende</td><td>Zinc sulfide, ZnS</td></tr>
+    <tr><td>Gold</td><td>Native gold</td><td>Uncombined Au</td></tr>
+  </tbody>
+</table>
+
+<h3>The method depends on reactivity</h3>
+<p>Extracting a metal from its oxide means <strong>reducing</strong> it (removing oxygen). The method chosen depends on where the metal is in the reactivity series relative to <strong>carbon</strong>:</p>
+<table>
+  <thead><tr><th>Position</th><th>Method</th><th>Examples</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td>Above carbon</td><td>Electrolysis of the molten ore (or molten compound)</td><td>K, Na, Ca, Mg, Al</td><td>Carbon is less reactive, so it cannot remove the oxygen. Electrolysis is needed but uses large amounts of electricity &mdash; expensive.</td></tr>
+    <tr><td>Below carbon</td><td>Heating with carbon (carbon reduction)</td><td>Zn, Fe, Cu</td><td>Carbon is more reactive, so it displaces the metal from its oxide. Carbon (coke) is cheap and also provides heat when it burns.</td></tr>
+    <tr><td>Very unreactive</td><td>Found native; physical separation</td><td>Au, (Ag, Pt)</td><td>Already uncombined.</td></tr>
+  </tbody>
+</table>
+
+<h3>Extracting iron &mdash; reduction with carbon</h3>
+<p>Iron is extracted from haematite in a <strong>blast furnace</strong>. Coke (carbon) burns in hot air to form carbon dioxide; this reacts with more coke to form <strong>carbon monoxide</strong>, which acts as the main reducing agent. The overall idea is simply that carbon removes oxygen from iron(III) oxide:</p>
+<span class="eq">2Fe₂O₃(s) + 3C(s) → 4Fe(l) + 3CO₂(g)</span>
+<span class="eq">Fe₂O₃(s) + 3CO(g) → 2Fe(l) + 3CO₂(g)</span>
+<p>Iron(III) oxide is <strong>reduced</strong> (loses oxygen); carbon/carbon monoxide is <strong>oxidised</strong> (gains oxygen). Limestone is added to remove acidic impurities (mainly silica) as <strong>slag</strong>.</p>
+<div class="exam-tip">The specification states that knowledge of the blast furnace is <strong>not required</strong> &mdash; you only need to know that iron is extracted by heating its oxide with carbon, because iron is below carbon in the reactivity series. The detail here is background.</div>
+
+<!-- Blast furnace simplified -->
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t4arrBF" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+    <linearGradient id="t4gradBF" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fde68a"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Blast furnace (simplified)</text>
+  <path d="M300 50 L400 50 L440 250 L260 250 Z" fill="url(#t4gradBF)" stroke="#334155" stroke-width="2"/>
+  <rect x="262" y="250" width="176" height="40" fill="#9ca3af" stroke="#334155" stroke-width="2"/>
+  <rect x="262" y="270" width="176" height="20" fill="#b91c1c"/>
+  <text x="350" y="285" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">molten iron</text>
+  <text x="350" y="265" text-anchor="middle" font-size="11" fill="#1a1a2e">molten slag</text>
+  <line x1="350" y1="30" x2="350" y2="62" stroke="#334155" stroke-width="2" marker-end="url(#t4arrBF)"/>
+  <text x="140" y="55" font-size="12" fill="#334155">iron ore (Fe₂O₃), coke (C),</text>
+  <text x="140" y="70" font-size="12" fill="#334155">limestone added at the top</text>
+  <line x1="180" y1="230" x2="268" y2="230" stroke="#334155" stroke-width="2" marker-end="url(#t4arrBF)"/>
+  <text x="80" y="226" font-size="12" fill="#334155">hot air blast</text>
+  <line x1="438" y1="260" x2="520" y2="260" stroke="#334155" stroke-width="2" marker-end="url(#t4arrBF)"/>
+  <text x="528" y="264" font-size="12" fill="#334155">slag tapped off</text>
+  <line x1="438" y1="282" x2="520" y2="300" stroke="#334155" stroke-width="2" marker-end="url(#t4arrBF)"/>
+  <text x="528" y="306" font-size="12" fill="#334155">iron tapped off</text>
+  <text x="460" y="110" font-size="12" fill="#334155">C + O₂ → CO₂</text>
+  <text x="460" y="128" font-size="12" fill="#334155">CO₂ + C → 2CO</text>
+  <text x="460" y="146" font-size="12" fill="#334155">Fe₂O₃ + 3CO → 2Fe + 3CO₂</text>
+  <text x="460" y="170" font-size="11" fill="#64748b">temperatures up to ~1500 °C</text>
+</svg>
+
+<h3>Extracting aluminium &mdash; electrolysis</h3>
+<p>Aluminium is above carbon, so it is extracted by <strong>electrolysis</strong> of aluminium oxide (purified from bauxite). Key points:</p>
+<ul>
+  <li>Aluminium oxide has a very high melting point (over 2000 °C). It is dissolved in molten <strong>cryolite</strong>, which lowers the operating temperature to about 950 °C &mdash; saving energy and cost.</li>
+  <li>The ions must be free to move, so the electrolyte must be molten (or dissolved).</li>
+  <li>At the <strong>cathode</strong> (negative electrode) aluminium ions gain electrons (<strong>(HT)</strong> Al³⁺ + 3e⁻ → Al). Molten aluminium collects at the bottom.</li>
+  <li>At the <strong>anode</strong> (positive electrode) oxide ions lose electrons (<strong>(HT)</strong> 2O²⁻ → O₂ + 4e⁻).</li>
+  <li>The anodes are made of <strong>carbon (graphite)</strong>. The hot oxygen reacts with them to form carbon dioxide (C + O₂ → CO₂), so the anodes burn away and must be <strong>replaced regularly</strong>.</li>
+</ul>
+<span class="eq">Overall: 2Al₂O₃(l) → 4Al(l) + 3O₂(g)</span>
+
+<!-- Aluminium electrolysis cell -->
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t4arrAl" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Electrolysis of molten aluminium oxide</text>
+  <!-- cell -->
+  <rect x="150" y="110" width="400" height="170" fill="#374151" stroke="#111827" stroke-width="3"/>
+  <rect x="165" y="125" width="370" height="140" fill="#fde68a"/>
+  <rect x="165" y="240" width="370" height="25" fill="#cbd5e1"/>
+  <text x="350" y="257" text-anchor="middle" font-size="12" fill="#1a1a2e">molten aluminium</text>
+  <text x="350" y="224" text-anchor="middle" font-size="12" fill="#92400e">Al₂O₃ dissolved in molten cryolite (~950 °C)</text>
+  <!-- anodes -->
+  <rect x="215" y="70" width="40" height="110" fill="#1f2937"/>
+  <rect x="330" y="70" width="40" height="110" fill="#1f2937"/>
+  <rect x="445" y="70" width="40" height="110" fill="#1f2937"/>
+  <line x1="235" y1="70" x2="235" y2="50" stroke="#dc2626" stroke-width="2"/>
+  <line x1="350" y1="70" x2="350" y2="50" stroke="#dc2626" stroke-width="2"/>
+  <line x1="465" y1="70" x2="465" y2="50" stroke="#dc2626" stroke-width="2"/>
+  <line x1="235" y1="50" x2="465" y2="50" stroke="#dc2626" stroke-width="2"/>
+  <text x="480" y="46" font-size="13" fill="#dc2626" font-weight="bold">+ carbon anodes</text>
+  <text x="560" y="140" font-size="12" fill="#334155">steel case lined</text>
+  <text x="560" y="155" font-size="12" fill="#334155">with carbon =</text>
+  <text x="560" y="170" font-size="12" fill="#2563eb" font-weight="bold">− cathode</text>
+  <circle cx="225" cy="190" r="4" fill="#fff" stroke="#64748b"/>
+  <circle cx="248" cy="186" r="3" fill="#fff" stroke="#64748b"/>
+  <circle cx="342" cy="190" r="4" fill="#fff" stroke="#64748b"/>
+  <circle cx="460" cy="188" r="4" fill="#fff" stroke="#64748b"/>
+  <text x="20" y="100" font-size="12" fill="#334155">Anode: 2O²⁻ → O₂ + 4e⁻</text>
+  <text x="20" y="116" font-size="12" fill="#334155">then C + O₂ → CO₂</text>
+  <text x="20" y="132" font-size="12" fill="#334155">(anodes burn away)</text>
+  <text x="560" y="198" font-size="12" fill="#334155">Cathode:</text>
+  <text x="560" y="214" font-size="12" fill="#334155">Al³⁺ + 3e⁻ → Al</text>
+  <line x1="545" y1="252" x2="600" y2="300" stroke="#334155" stroke-width="2" marker-end="url(#t4arrAl)"/>
+  <text x="560" y="318" font-size="11" fill="#64748b">aluminium tapped off</text>
+</svg>
+
+<div class="exam-tip">Why is aluminium expensive to extract? Give <strong>two</strong> reasons: (1) electrolysis needs a very large amount of <strong>electricity</strong>, and energy is also needed to keep the electrolyte molten; (2) the carbon <strong>anodes must be replaced</strong> because they react with oxygen. Cryolite is used to <em>reduce</em> the energy cost, not to make the ions move.</div>
+
+<div class="worked">
+Explain why zinc can be extracted by heating zinc oxide with carbon, but magnesium cannot be extracted from magnesium oxide this way.<br><br>
+Carbon can only remove oxygen from metals that are <strong>less reactive than carbon</strong>. Zinc is below carbon, so carbon reduces zinc oxide: ZnO + C → Zn + CO. Magnesium is <strong>above</strong> carbon &mdash; it holds on to oxygen more strongly than carbon does &mdash; so carbon cannot reduce magnesium oxide, and magnesium must be extracted by <strong>electrolysis</strong> of a molten compound. In general: <strong>metal below carbon → carbon reduction; metal above carbon → electrolysis</strong>.
+</div>
+
+<h2>4.6 Biological Methods of Extraction (HT)</h2>
+
+<p>The world's supply of high-grade ores (especially copper) is running out. <strong>Low-grade ores</strong> contain only a small percentage of metal, so traditional mining and smelting would be uneconomic. Two biological methods can be used:</p>
+
+<h3>Bacterial extraction (bioleaching)</h3>
+<ul>
+  <li>Certain bacteria feed on low-grade ores (e.g. copper sulfide) and produce a <strong>leachate</strong> &mdash; a solution containing metal ions such as Cu²⁺.</li>
+  <li>The metal is then recovered from the leachate, for example by <strong>displacement with scrap iron</strong> (Fe + Cu²⁺ → Fe²⁺ + Cu) or by electrolysis.</li>
+</ul>
+
+<h3>Phytoextraction (phytomining)</h3>
+<ul>
+  <li><strong>Plants</strong> are grown on soil containing low concentrations of the metal; they absorb metal ions through their roots and concentrate them in their tissues.</li>
+  <li>The plants are harvested and <strong>burned</strong>; the ash contains a high concentration of metal compounds.</li>
+  <li>The metal is extracted from the ash (e.g. dissolved in acid then electrolysed or displaced).</li>
+</ul>
+
+<!-- Phytoextraction flow -->
+<svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t4arrPhy" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/></marker>
+  </defs>
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Phytoextraction &mdash; the steps</text>
+  <g font-size="12" fill="#1a1a2e" text-anchor="middle">
+    <rect x="1" y="50" width="114" height="70" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="58" y="80">Grow plants on</text><text x="58" y="96">low-grade ore</text>
+    <rect x="147" y="50" width="114" height="70" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="204" y="80">Plants absorb</text><text x="204" y="96">metal ions</text>
+    <rect x="293" y="50" width="114" height="70" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="350" y="80">Harvest and</text><text x="350" y="96">burn plants</text>
+    <rect x="439" y="50" width="114" height="70" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="496" y="80">Ash rich in</text><text x="496" y="96">metal compounds</text>
+    <rect x="585" y="50" width="114" height="70" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="642" y="72">Electrolysis or</text><text x="642" y="88">displacement</text><text x="642" y="104">→ metal</text>
+  </g>
+  <line x1="117" y1="85" x2="145" y2="85" stroke="#16a34a" stroke-width="1.5" marker-end="url(#t4arrPhy)"/>
+  <line x1="263" y1="85" x2="291" y2="85" stroke="#16a34a" stroke-width="1.5" marker-end="url(#t4arrPhy)"/>
+  <line x1="409" y1="85" x2="437" y2="85" stroke="#16a34a" stroke-width="1.5" marker-end="url(#t4arrPhy)"/>
+  <line x1="555" y1="85" x2="583" y2="85" stroke="#16a34a" stroke-width="1.5" marker-end="url(#t4arrPhy)"/>
+  <text x="350" y="150" text-anchor="middle" font-size="12" fill="#64748b">Bioleaching is similar but bacteria produce a metal-ion solution (leachate) instead of plants and ash.</text>
+</svg>
+
+<h3>Evaluating biological methods</h3>
+<table>
+  <thead><tr><th>Advantages</th><th>Disadvantages</th></tr></thead>
+  <tbody>
+    <tr><td>Can extract metal economically from <strong>low-grade ores</strong> and mine waste that would otherwise be useless</td><td>Very <strong>slow</strong> &mdash; plants take months/years to grow; bacteria take a long time</td></tr>
+    <tr><td>Less damage to the landscape &mdash; no large open-cast mines, less waste rock</td><td>Phytoextraction needs large areas of land</td></tr>
+    <tr><td>Uses less energy than smelting; fewer greenhouse gas emissions; no sulfur dioxide from roasting sulfide ores</td><td>Bioleaching leachate can be toxic (acidic, contains metal ions) and may pollute groundwater</td></tr>
+    <tr><td>Phytoextraction can clean up (remediate) contaminated land</td><td>Small yield of metal per run; the metal compound still needs further processing</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">"Evaluate" questions need <strong>both sides</strong> and a <strong>judgement</strong>. A good finishing line: "Biological methods are better for low-grade ores where traditional extraction is uneconomic, even though they are slow."</div>
+
+<h2>4.7 Recycling Metals</h2>
+
+<p>Metal ores are <strong>finite</strong> resources. Recycling metals means collecting used items, sorting them, and melting them down to make new products.</p>
+
+<table>
+  <thead><tr><th>Advantages of recycling</th><th>Disadvantages / issues</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Conserves</strong> finite metal ores, so supplies last longer</td><td>Collection and transport of scrap uses energy and costs money</td></tr>
+    <tr><td>Usually uses much <strong>less energy</strong> than extracting from ore (e.g. recycling aluminium uses about 5% of the energy of electrolysis)</td><td>Sorting mixed metals and removing coatings is labour-intensive</td></tr>
+    <tr><td>Less mining &rarr; less damage to habitats, less noise, dust and waste rock</td><td>Some items are hard to separate (e.g. alloys, metals bonded to plastics)</td></tr>
+    <tr><td>Less waste going to <strong>landfill</strong></td><td>The quality can be lower if metals are contaminated</td></tr>
+    <tr><td>Economic benefits: saves money (cheaper energy, fewer imports), creates jobs in collection and processing</td><td>May not be economic if the metal is cheap and abundant or the price of scrap is low</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">Recycling aluminium is a favourite example because aluminium extraction by electrolysis uses so much electricity. Link the saving in energy to <strong>both</strong> lower cost <strong>and</strong> lower CO₂ emissions (if electricity is generated from fossil fuels).</div>
+
+<h2>4.8 Life Cycle Assessments</h2>
+
+<div class="definition">
+  A <strong>life cycle assessment (LCA)</strong> considers the effect on the environment of a product at each stage of its life: (1) <strong>obtaining the raw materials</strong>, (2) <strong>manufacturing</strong> the product, (3) <strong>using</strong> the product, and (4) <strong>disposing</strong> of the product when it is no longer useful.
+</div>
+
+<!-- LCA cycle -->
+<svg viewBox="0 0 700 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t4arrLCA" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The four stages of a life cycle assessment</text>
+  <g font-size="12" fill="#1a1a2e" text-anchor="middle">
+    <rect x="250" y="40" width="200" height="54" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="350" y="62" font-weight="bold">1. Raw materials</text><text x="350" y="80">mining, quarrying, drilling</text>
+    <rect x="470" y="120" width="210" height="54" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="575" y="142" font-weight="bold">2. Manufacture</text><text x="575" y="160">energy, water, packaging</text>
+    <rect x="250" y="210" width="200" height="54" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="350" y="232" font-weight="bold">3. Use</text><text x="350" y="250">fuel, electricity, lifetime</text>
+    <rect x="20" y="120" width="210" height="54" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="125" y="142" font-weight="bold">4. Disposal</text><text x="125" y="160">landfill, incineration, recycling</text>
+  </g>
+  <path d="M450 70 Q560 75 572 116" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#t4arrLCA)"/>
+  <path d="M575 176 Q560 235 454 238" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#t4arrLCA)"/>
+  <path d="M248 238 Q140 235 126 178" fill="none" stroke="#2563eb" stroke-width="2" marker-end="url(#t4arrLCA)"/>
+  <path d="M125 118 Q140 75 246 68" fill="none" stroke="#2563eb" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#t4arrLCA)"/>
+  <text x="120" y="80" text-anchor="end" font-size="11" fill="#64748b">recycling</text><text x="120" y="94" text-anchor="end" font-size="11" fill="#64748b">closes the loop</text>
+</svg>
+
+<p>At each stage an LCA looks at the use of <strong>energy</strong>, <strong>water</strong> and other resources, and the <strong>pollution and waste</strong> produced (CO₂, other gases, solid waste, effluent). Some factors, such as the amount of energy used or the mass of CO₂ released, are easy to <strong>quantify</strong>; others, such as the visual impact of a quarry or the harm from litter, need <strong>value judgements</strong>, so LCAs can be subjective or even biased (e.g. selective LCAs written to support advertising claims).</p>
+
+<h3>Evaluating LCA data</h3>
+<div class="worked">
+The table compares a single-use plastic (polythene) carrier bag and a paper bag.<br><br>
+<table>
+  <thead><tr><th>Stage / factor</th><th>Plastic bag</th><th>Paper bag</th></tr></thead>
+  <tbody>
+    <tr><td>Raw materials</td><td>Crude oil (finite)</td><td>Wood from trees (renewable)</td></tr>
+    <tr><td>Energy to manufacture (kJ per bag)</td><td>1500</td><td>2500</td></tr>
+    <tr><td>CO₂ released in manufacture (g per bag)</td><td>40</td><td>110</td></tr>
+    <tr><td>Times re-used</td><td>Many (strong, waterproof)</td><td>Usually once</td></tr>
+    <tr><td>Disposal</td><td>Not biodegradable; long-lasting in landfill/litter; can be recycled</td><td>Biodegradable; easily recycled</td></tr>
+  </tbody>
+</table>
+<strong>Evaluation:</strong> the paper bag uses <em>more</em> energy (2500 vs 1500 kJ, 1.7 × as much) and releases nearly three times as much CO₂ in manufacture, but comes from a renewable resource and biodegrades. The plastic bag uses a finite resource and persists in the environment, but has lower manufacturing impacts and can be re-used many times. <strong>Judgement:</strong> if the plastic bag is re-used several times and then recycled, it probably has the lower overall impact; the conclusion depends on how the bags are actually used and disposed of.
+</div>
+
+<div class="exam-tip">In LCA questions always (1) <strong>quote numbers</strong> from the data and compare them (e.g. "twice as much"), (2) consider <strong>every stage</strong>, and (3) end with a <strong>conclusion</strong> that is supported by the data. Mention that not all effects can be measured objectively.</div>
+
+<h2>4.9 Reversible Reactions</h2>
+
+<div class="definition">
+  A <strong>reversible reaction</strong> is one in which the products can react to re-form the original reactants. It is shown by the symbol <strong>⇌</strong>. The direction of some reversible reactions can be changed by altering the <strong>conditions</strong> (e.g. temperature).
+</div>
+
+<span class="eq">A + B ⇌ C + D</span>
+
+<h3>Examples</h3>
+<ul>
+  <li><strong>Ammonium chloride:</strong> heating the white solid decomposes it into ammonia and hydrogen chloride gases; at the cooler top of the tube these recombine to form white solid again.
+    <span class="eq">NH₄Cl(s) ⇌ NH₃(g) + HCl(g)</span></li>
+  <li><strong>Hydrated copper(II) sulfate:</strong> heating blue crystals drives off the water of crystallisation, leaving white anhydrous copper(II) sulfate; adding water turns it blue again (and releases heat). This is also used as a <strong>test for water</strong>.
+    <span class="eq">CuSO₄·5H₂O(s) ⇌ CuSO₄(s) + 5H₂O(l)</span>
+    <span class="eq">blue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; white</span></li>
+  <li><strong>The Haber process:</strong> N₂(g) + 3H₂(g) ⇌ 2NH₃(g)</li>
+</ul>
+
+<p>If a reversible reaction is <strong>exothermic</strong> in one direction, it is <strong>endothermic</strong> in the other, and the same amount of energy is transferred each way.</p>
+
+<h2>4.10 Dynamic Equilibrium</h2>
+
+<div class="definition">
+  A reversible reaction in a <strong>closed system</strong> (nothing can get in or out) reaches <strong>dynamic equilibrium</strong> when the <strong>forward and backward reactions are happening at the same rate</strong>. The reactions have not stopped, but the <strong>concentrations of reactants and products remain constant</strong>.
+</div>
+
+<p>At the start only reactants are present, so the forward reaction is fast and the backward reaction is zero. As reactants are used up, the forward rate falls; as products build up, the backward rate rises. Eventually the two rates become equal.</p>
+
+<!-- Rate vs time graph for equilibrium -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t4arrAxisEq" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Reaching dynamic equilibrium</text>
+  <line x1="90" y1="250" x2="620" y2="250" stroke="#334155" stroke-width="2" marker-end="url(#t4arrAxisEq)"/>
+  <line x1="90" y1="250" x2="90" y2="45" stroke="#334155" stroke-width="2" marker-end="url(#t4arrAxisEq)"/>
+  <text x="600" y="275" text-anchor="end" font-size="13" fill="#334155">time</text>
+  <text x="40" y="150" text-anchor="middle" font-size="13" fill="#334155" transform="rotate(-90 40 150)">rate of reaction</text>
+  <path d="M92 60 C180 130 260 155 360 158 L610 158" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <path d="M92 248 C180 190 260 162 360 158 L610 158" fill="none" stroke="#2563eb" stroke-width="3"/>
+  <line x1="360" y1="60" x2="360" y2="250" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="185" y="98" font-size="13" fill="#dc2626">forward reaction</text>
+  <text x="185" y="230" font-size="13" fill="#2563eb">backward reaction</text>
+  <text x="370" y="80" font-size="12" fill="#334155">equilibrium reached:</text>
+  <text x="370" y="96" font-size="12" fill="#334155">rates equal, concentrations constant</text>
+  <text x="485" y="148" text-anchor="middle" font-size="12" fill="#16a34a" font-weight="bold">forward rate = backward rate</text>
+</svg>
+
+<div class="exam-tip">Two common errors: (1) saying "the reaction has stopped" at equilibrium &mdash; it hasn't, both reactions continue (that is what <em>dynamic</em> means); (2) saying "the concentrations of reactants and products are equal" &mdash; they are <strong>constant</strong>, not necessarily equal.</div>
+
+<h2>4.11 The Haber Process</h2>
+
+<p>Ammonia is made by the <strong>Haber process</strong>, a reversible reaction between nitrogen and hydrogen that reaches a dynamic equilibrium:</p>
+<span class="eq">N₂(g) + 3H₂(g) ⇌ 2NH₃(g) &nbsp;&nbsp; (forward reaction exothermic)</span>
+
+<h3>Raw materials</h3>
+<ul>
+  <li><strong>Nitrogen</strong> is extracted from the <strong>air</strong> (about 78% nitrogen) by fractional distillation of liquefied air.</li>
+  <li><strong>Hydrogen</strong> is obtained from <strong>natural gas</strong> (methane), by reacting it with steam.</li>
+</ul>
+
+<h3>Conditions you must recall</h3>
+<table>
+  <thead><tr><th>Condition</th><th>Value</th></tr></thead>
+  <tbody>
+    <tr><td>Temperature</td><td><strong>450 °C</strong></td></tr>
+    <tr><td>Pressure</td><td><strong>200 atmospheres</strong></td></tr>
+    <tr><td>Catalyst</td><td><strong>Iron</strong></td></tr>
+  </tbody>
+</table>
+
+<!-- Haber process flow diagram -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t4arrHab" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The Haber process</text>
+  <g font-size="12" fill="#1a1a2e" text-anchor="middle">
+    <rect x="15" y="60" width="120" height="44" rx="8" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="75" y="80">N₂ from air</text><text x="75" y="96" font-size="11">(fractional distillation)</text>
+    <rect x="15" y="140" width="120" height="44" rx="8" fill="#eff6ff" stroke="#2563eb"/>
+    <text x="75" y="160">H₂ from natural gas</text><text x="75" y="176" font-size="11">(CH₄ + steam)</text>
+    <rect x="175" y="95" width="110" height="54" rx="8" fill="#f1f5f9" stroke="#334155"/>
+    <text x="230" y="118">compressor</text><text x="230" y="136">200 atm</text>
+    <rect x="325" y="75" width="130" height="94" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+    <text x="390" y="104" font-weight="bold">reactor</text><text x="390" y="122">iron catalyst</text><text x="390" y="140">450 °C</text>
+    <text x="390" y="158" font-size="11">~15% conversion</text>
+    <rect x="495" y="85" width="120" height="74" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="555" y="112">condenser</text><text x="555" y="130">(cooling)</text><text x="555" y="148" font-size="11">NH₃ liquefies</text>
+    <rect x="495" y="215" width="120" height="40" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="555" y="240" font-weight="bold">liquid ammonia</text>
+  </g>
+  <line x1="135" y1="82" x2="175" y2="112" stroke="#334155" stroke-width="2" marker-end="url(#t4arrHab)"/>
+  <line x1="135" y1="162" x2="175" y2="134" stroke="#334155" stroke-width="2" marker-end="url(#t4arrHab)"/>
+  <line x1="285" y1="122" x2="323" y2="122" stroke="#334155" stroke-width="2" marker-end="url(#t4arrHab)"/>
+  <line x1="455" y1="122" x2="493" y2="122" stroke="#334155" stroke-width="2" marker-end="url(#t4arrHab)"/>
+  <line x1="555" y1="159" x2="555" y2="213" stroke="#334155" stroke-width="2" marker-end="url(#t4arrHab)"/>
+  <path d="M615 105 L660 105 L660 60 L230 60 L230 93" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#t4arrHab)"/>
+  <text x="445" y="52" text-anchor="middle" font-size="12" fill="#dc2626">unreacted N₂ and H₂ recycled</text>
+</svg>
+
+<p>The gases leaving the reactor are cooled. Ammonia has a much higher boiling point than nitrogen and hydrogen, so it <strong>liquefies</strong> and is removed; the unreacted nitrogen and hydrogen are <strong>recycled</strong> back into the reactor, so very little is wasted even though only a fraction reacts on each pass.</p>
+
+<div class="exam-tip">Ammonia is used mainly to make <strong>fertilisers</strong> (e.g. ammonium nitrate). The detail of why 450 °C and 200 atm are compromise conditions, and how fertilisers are made, is chemistry-only content in Topic 5 &mdash; but the equilibrium reasoning below is needed for both.</div>
+
+<h2>4.12 Changing the Position of Equilibrium (HT)</h2>
+
+<p>When a system at equilibrium is changed, the <strong>position of equilibrium shifts</strong> to <strong>oppose the change</strong>. ("Position of equilibrium" just means the relative amounts of reactants and products.) This lets you <strong>predict</strong> the effect of changing temperature, pressure and concentration.</p>
+
+<table>
+  <thead><tr><th>Change made</th><th>The equilibrium shifts&hellip;</th><th>Effect on N₂ + 3H₂ ⇌ 2NH₃ (forward exothermic)</th></tr></thead>
+  <tbody>
+    <tr><td>Increase <strong>temperature</strong></td><td>in the <strong>endothermic</strong> direction (to absorb the extra heat)</td><td>Shifts <strong>left</strong> &mdash; less NH₃ (lower yield)</td></tr>
+    <tr><td>Decrease temperature</td><td>in the <strong>exothermic</strong> direction</td><td>Shifts <strong>right</strong> &mdash; more NH₃</td></tr>
+    <tr><td>Increase <strong>pressure</strong> (gases)</td><td>towards the side with <strong>fewer molecules of gas</strong></td><td>4 gas molecules on left, 2 on right &rarr; shifts <strong>right</strong> &mdash; more NH₃</td></tr>
+    <tr><td>Decrease pressure</td><td>towards the side with <strong>more</strong> gas molecules</td><td>Shifts <strong>left</strong></td></tr>
+    <tr><td>Increase <strong>concentration</strong> of a reactant</td><td>to use up the added substance (to the right)</td><td>Adding N₂ or H₂ &rarr; shifts <strong>right</strong> &mdash; more NH₃</td></tr>
+    <tr><td>Remove a product</td><td>to replace it (to the right)</td><td>Removing NH₃ &rarr; shifts <strong>right</strong></td></tr>
+    <tr><td>Add a <strong>catalyst</strong></td><td><strong>No shift</strong> &mdash; speeds up forward and backward reactions equally</td><td>Equilibrium reached sooner; same yield</td></tr>
+  </tbody>
+</table>
+
+<!-- Pressure / molecules diagram -->
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t4arrPress" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/></marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Why higher pressure favours ammonia</text>
+  <rect x="40" y="45" width="230" height="130" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <text x="155" y="195" text-anchor="middle" font-size="12" fill="#334155">N₂ + 3H₂: <tspan font-weight="bold">4 gas molecules</tspan></text>
+  <g>
+    <circle cx="80" cy="90" r="9" fill="#2563eb"/><circle cx="96" cy="90" r="9" fill="#2563eb"/>
+    <circle cx="160" cy="80" r="6" fill="#e5e7eb" stroke="#334155"/><circle cx="171" cy="80" r="6" fill="#e5e7eb" stroke="#334155"/>
+    <circle cx="210" cy="125" r="6" fill="#e5e7eb" stroke="#334155"/><circle cx="221" cy="125" r="6" fill="#e5e7eb" stroke="#334155"/>
+    <circle cx="110" cy="145" r="6" fill="#e5e7eb" stroke="#334155"/><circle cx="121" cy="145" r="6" fill="#e5e7eb" stroke="#334155"/>
+  </g>
+  <line x1="290" y1="110" x2="410" y2="110" stroke="#16a34a" stroke-width="3" marker-end="url(#t4arrPress)"/>
+  <text x="350" y="98" text-anchor="middle" font-size="12" fill="#16a34a" font-weight="bold">pressure ↑</text>
+  <text x="350" y="130" text-anchor="middle" font-size="11" fill="#334155">shifts to fewer molecules</text>
+  <rect x="430" y="45" width="230" height="130" rx="8" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <text x="545" y="195" text-anchor="middle" font-size="12" fill="#334155">2NH₃: <tspan font-weight="bold">2 gas molecules</tspan></text>
+  <g>
+    <circle cx="500" cy="100" r="10" fill="#2563eb"/><circle cx="488" cy="88" r="6" fill="#e5e7eb" stroke="#334155"/><circle cx="514" cy="88" r="6" fill="#e5e7eb" stroke="#334155"/><circle cx="500" cy="117" r="6" fill="#e5e7eb" stroke="#334155"/>
+    <circle cx="600" cy="130" r="10" fill="#2563eb"/><circle cx="588" cy="118" r="6" fill="#e5e7eb" stroke="#334155"/><circle cx="612" cy="118" r="6" fill="#e5e7eb" stroke="#334155"/><circle cx="600" cy="147" r="6" fill="#e5e7eb" stroke="#334155"/>
+  </g>
+</svg>
+
+<div class="worked">
+(HT) Hydrogen and iodine react in a sealed container: H₂(g) + I₂(g) ⇌ 2HI(g). The forward reaction is exothermic. Predict the effect on the amount of HI of (a) raising the temperature, (b) raising the pressure.<br><br>
+(a) Raising the temperature favours the <strong>endothermic</strong> direction, which is the <strong>backward</strong> reaction. The equilibrium shifts left, so the amount of <strong>HI decreases</strong>.<br>
+(b) There are 2 molecules of gas on the left (1 H₂ + 1 I₂) and 2 on the right. Because the number of gas molecules is the <strong>same on both sides</strong>, changing pressure has <strong>no effect</strong> on the position of equilibrium (although the rate increases).
+</div>
+
+<div class="worked">
+(HT) Nitrogen dioxide (brown) and dinitrogen tetroxide (colourless) are in equilibrium: 2NO₂(g) ⇌ N₂O₄(g). When a sealed syringe of the mixture is placed in ice, the colour becomes paler. Deduce whether the forward reaction is exothermic or endothermic.<br><br>
+Paler colour → less NO₂ → equilibrium has shifted <strong>right</strong> on cooling. Lowering the temperature favours the <strong>exothermic</strong> direction, so the <strong>forward reaction is exothermic</strong>.
+</div>
+
+<div class="exam-tip">Structure every equilibrium answer in three steps: <strong>(1)</strong> state the change; <strong>(2)</strong> state which direction is favoured and <em>why</em> (endothermic/exothermic, fewer/more gas molecules, use up added substance); <strong>(3)</strong> state the effect on the yield of the named product. Always count gas molecules using the <strong>balancing numbers</strong> and ignore solids and liquids.</div>
+
+<h2>Key Points Summary</h2>
+<ul>
+  <li><strong>4.1, 4.3</strong> &mdash; Recall the series K, Na, Ca, Mg, Al, (C), Zn, Fe, (H), Cu, Ag, Au; reactivity = tendency to form positive ions. Deduce an order from reactions with water, dilute acid and displacement.</li>
+  <li><strong>4.2 (HT)</strong> &mdash; Displacement reactions are redox: the more reactive metal loses electrons (oxidised), the less reactive metal ion gains electrons (reduced). Write ionic and half equations, leaving out spectator ions.</li>
+  <li><strong>4.5, 4.6</strong> &mdash; Oxidation = gain of oxygen; reduction = loss of oxygen. Carbon and carbon monoxide are reducing agents.</li>
+  <li><strong>4.4</strong> &mdash; Most metals are extracted from ores; unreactive metals such as gold are found uncombined.</li>
+  <li><strong>4.7</strong> &mdash; Below carbon → heat with carbon (iron in the blast furnace); above carbon → electrolysis of the molten compound (aluminium from Al₂O₃ in cryolite, carbon anodes replaced).</li>
+  <li><strong>4.8 (HT)</strong> &mdash; Evaluate bioleaching and phytoextraction for low-grade ores: less environmental damage and energy, but slow.</li>
+  <li><strong>4.9</strong> &mdash; Metals lower in the series are more resistant to oxidation (gold does not tarnish).</li>
+  <li><strong>4.10</strong> &mdash; Recycling conserves finite ores and energy, reduces landfill and mining damage; weigh up the costs of collection and sorting.</li>
+  <li><strong>4.11, 4.12</strong> &mdash; An LCA covers raw materials, manufacture, use and disposal; evaluate LCA data using numbers and reach a conclusion.</li>
+  <li><strong>4.13</strong> &mdash; Reversible reactions use ⇌; conditions can change their direction (NH₄Cl, hydrated CuSO₄).</li>
+  <li><strong>4.14</strong> &mdash; Dynamic equilibrium (closed system): forward rate = backward rate; concentrations constant.</li>
+  <li><strong>4.15, 4.16</strong> &mdash; Haber process: N₂ (from air) + 3H₂ (from natural gas) ⇌ 2NH₃; 450 °C, 200 atm, iron catalyst.</li>
+  <li><strong>4.17 (HT)</strong> &mdash; Predict shifts in equilibrium position with temperature (favours endothermic when raised), pressure (favours fewer gas molecules when raised) and concentration; a catalyst does not change the position.</li>
+</ul>
+
+</div>
+</body>
+</html>

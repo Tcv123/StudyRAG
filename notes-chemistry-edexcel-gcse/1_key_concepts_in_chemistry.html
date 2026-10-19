@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Edexcel GCSE Chemistry — Topic 1: Key Concepts in Chemistry</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+    .container { max-width: 820px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+    .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+    h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+    h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+    p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+    strong { color: #1a1a2e; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+    th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+    tr:nth-child(even) { background: #f9fafb; }
+    .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+    .worked { background: #ecfdf5; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .worked::before { content: "Worked Example: "; font-weight: 700; color: #0f5132; }
+    code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+    .eq { display: block; text-align: center; font-size: 1.1rem; padding: 10px 16px; margin: 10px 0; background: #f0f4ff; border-radius: 6px; border: 1px solid #cfd9ff; }
+    @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .worked { break-inside: avoid; } h2 { break-after: avoid; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning
+  </a>
+</div>
+
+<h1>Topic 1 — Key Concepts in Chemistry</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Chemistry (1CH0) &mdash; Paper 1 and Paper 2 (examined on both papers)</p>
+
+<p>Topic 1 is the toolkit for the whole course. It covers how we write chemical formulae and equations, what atoms are made of, how the periodic table is organised, how atoms bond together, how bonding explains the properties of substances, and how to do the core chemical calculations (relative formula mass, empirical formulae, concentration and the mole). Because it is examined on <strong>both</strong> papers, marks from this topic turn up in nearly every question &mdash; time spent here pays off everywhere.</p>
+
+<p>Content marked <strong>(HT)</strong> is Higher Tier only. Topic 1 is shared with GCSE Combined Science; the separate-chemistry-only content of 1CH0 is concentrated in Topics 5 and 9.</p>
+
+<h2>1.1 Formulae, Equations and Hazards</h2>
+
+<h3>Formulae you must recall</h3>
+<p>You are expected to know the formulae of common elements, simple compounds and ions without being given them. Many non-metal elements exist as <strong>diatomic molecules</strong> (two atoms bonded together).</p>
+<table>
+  <thead><tr><th>Type</th><th>Examples you must know</th></tr></thead>
+  <tbody>
+    <tr><td>Diatomic elements</td><td>H₂, N₂, O₂, F₂, Cl₂, Br₂, I₂</td></tr>
+    <tr><td>Monatomic elements</td><td>Metals (Na, Mg, Fe, Cu…), carbon (C), the noble gases (He, Ne, Ar)</td></tr>
+    <tr><td>Simple compounds</td><td>H₂O, CO₂, CO, NH₃, CH₄, HCl, H₂SO₄, HNO₃, NaCl, NaOH, CaCO₃</td></tr>
+    <tr><td>Positive ions</td><td>H⁺, Na⁺, K⁺, Li⁺, Ag⁺, NH₄⁺ (ammonium), Mg²⁺, Ca²⁺, Cu²⁺, Zn²⁺, Fe²⁺, Fe³⁺, Al³⁺</td></tr>
+    <tr><td>Negative ions</td><td>Cl⁻, Br⁻, I⁻, OH⁻ (hydroxide), NO₃⁻ (nitrate), O²⁻, S²⁻, SO₄²⁻ (sulfate), CO₃²⁻ (carbonate)</td></tr>
+  </tbody>
+</table>
+
+<div class="definition">
+  <strong>Naming ionic compounds:</strong> the metal (or ammonium) is named first. A name ending in <strong>-ide</strong> means the compound contains just the two elements named (sodium chlor<strong>ide</strong> = Na and Cl only; the exception is hydroxide, OH⁻). A name ending in <strong>-ate</strong> means the negative ion also contains <strong>oxygen</strong> (copper sulf<strong>ate</strong> contains SO₄²⁻; potassium nitr<strong>ate</strong> contains NO₃⁻).
+</div>
+
+<h3>Word and symbol equations</h3>
+<p>A <strong>word equation</strong> names the reactants and products. A <strong>balanced symbol equation</strong> uses formulae and has the same number of atoms of each element on both sides, because atoms are not created or destroyed in a chemical reaction. You balance an equation by changing the <em>large numbers in front</em> of formulae, never the subscripts inside them.</p>
+
+<span class="eq">magnesium + hydrochloric acid → magnesium chloride + hydrogen</span>
+<span class="eq">Mg(s) + 2HCl(aq) → MgCl₂(aq) + H₂(g)</span>
+
+<h3>State symbols</h3>
+<table>
+  <thead><tr><th>Symbol</th><th>Meaning</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>(s)</td><td>solid</td><td>CaCO₃(s), Mg(s)</td></tr>
+    <tr><td>(l)</td><td>liquid (pure liquid, not a solution)</td><td>H₂O(l), Br₂(l)</td></tr>
+    <tr><td>(g)</td><td>gas</td><td>CO₂(g), O₂(g)</td></tr>
+    <tr><td>(aq)</td><td>aqueous — dissolved in water</td><td>NaCl(aq), HCl(aq)</td></tr>
+  </tbody>
+</table>
+
+<div class="worked">
+Balance: aluminium + oxygen → aluminium oxide.<br>
+Unbalanced: Al + O₂ → Al₂O₃<br>
+Oxygen: 2 on the left, 3 on the right. The lowest common multiple is 6, so use 3O₂ and 2Al₂O₃.<br>
+Now 4 Al atoms are on the right, so use 4Al.<br>
+<strong>4Al(s) + 3O₂(g) → 2Al₂O₃(s)</strong> &nbsp; Check: Al 4 = 4; O 6 = 6. ✓
+</div>
+
+<h3>Ionic equations <strong>(HT)</strong></h3>
+<p>An <strong>ionic equation</strong> shows only the particles that actually change in a reaction. Ions that are present but do not take part are called <strong>spectator ions</strong> and are left out.</p>
+<ol>
+  <li>Write the balanced symbol equation with state symbols.</li>
+  <li>Split every <strong>aqueous</strong> ionic substance into its ions (solids, liquids, gases and covalent molecules stay as they are).</li>
+  <li>Cross out ions that appear unchanged on both sides.</li>
+  <li>Check the atoms <em>and</em> the total charge balance.</li>
+</ol>
+<div class="worked">
+Write the ionic equation for the precipitation of silver chloride:<br>
+AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)<br>
+Ag⁺(aq) + NO₃⁻(aq) + Na⁺(aq) + Cl⁻(aq) → AgCl(s) + Na⁺(aq) + NO₃⁻(aq)<br>
+Na⁺ and NO₃⁻ are spectator ions, so: <strong>Ag⁺(aq) + Cl⁻(aq) → AgCl(s)</strong>
+</div>
+<p>Other ionic equations you will meet: neutralisation, <strong>H⁺(aq) + OH⁻(aq) → H₂O(l)</strong>; and a displacement such as <strong>Zn(s) + Cu²⁺(aq) → Zn²⁺(aq) + Cu(s)</strong>.</p>
+
+<h3>Hazard symbols, risks and precautions</h3>
+<p>Hazard symbols warn about the dangers of chemicals. You should be able to describe what each means and suggest suitable precautions. A <strong>hazard</strong> is something that could cause harm; a <strong>risk</strong> is the chance of harm actually happening. Precautions reduce the risk.</p>
+
+<!-- Hazard symbols diagram -->
+<svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">GHS hazard pictograms (red diamond, black symbol)</text>
+  <g transform="translate(60,40)">
+    <polygon points="50,0 100,50 50,100 0,50" fill="#fff" stroke="#dc2626" stroke-width="5"/>
+    <path d="M50 22 C38 40 40 55 50 62 C60 55 62 40 50 22 Z M38 74 L62 74" fill="#111" stroke="#111" stroke-width="3"/>
+    <text x="50" y="125" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">Flammable</text>
+    <text x="50" y="142" text-anchor="middle" font-size="11" fill="#64748b">catches fire easily</text>
+  </g>
+  <g transform="translate(200,40)">
+    <polygon points="50,0 100,50 50,100 0,50" fill="#fff" stroke="#dc2626" stroke-width="5"/>
+    <circle cx="50" cy="52" r="12" fill="none" stroke="#111" stroke-width="3"/>
+    <path d="M50 26 C44 34 44 40 50 40 C56 40 56 34 50 26 Z" fill="#111"/>
+    <line x1="34" y1="74" x2="66" y2="74" stroke="#111" stroke-width="3"/>
+    <text x="50" y="125" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">Oxidising</text>
+    <text x="50" y="142" text-anchor="middle" font-size="11" fill="#64748b">helps other things burn</text>
+  </g>
+  <g transform="translate(340,40)">
+    <polygon points="50,0 100,50 50,100 0,50" fill="#fff" stroke="#dc2626" stroke-width="5"/>
+    <circle cx="50" cy="42" r="12" fill="#111"/>
+    <line x1="34" y1="58" x2="66" y2="74" stroke="#111" stroke-width="5"/>
+    <line x1="66" y1="58" x2="34" y2="74" stroke="#111" stroke-width="5"/>
+    <text x="50" y="125" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">Toxic</text>
+    <text x="50" y="142" text-anchor="middle" font-size="11" fill="#64748b">can cause death</text>
+  </g>
+  <g transform="translate(480,40)">
+    <polygon points="50,0 100,50 50,100 0,50" fill="#fff" stroke="#dc2626" stroke-width="5"/>
+    <rect x="30" y="34" width="14" height="10" fill="#111"/>
+    <rect x="56" y="34" width="14" height="10" fill="#111"/>
+    <line x1="37" y1="48" x2="37" y2="60" stroke="#111" stroke-width="2" stroke-dasharray="2,2"/>
+    <line x1="63" y1="48" x2="63" y2="60" stroke="#111" stroke-width="2" stroke-dasharray="2,2"/>
+    <rect x="28" y="64" width="44" height="8" fill="#111"/>
+    <text x="50" y="125" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">Corrosive</text>
+    <text x="50" y="142" text-anchor="middle" font-size="11" fill="#64748b">destroys skin, eyes, metals</text>
+  </g>
+  <text x="350" y="215" text-anchor="middle" font-size="12" fill="#64748b">Also learn: harmful/irritant (exclamation mark), environmental hazard (dead tree and fish), health hazard, explosive.</text>
+</svg>
+
+<table>
+  <thead><tr><th>Hazard</th><th>Example</th><th>Typical precaution</th></tr></thead>
+  <tbody>
+    <tr><td>Flammable</td><td>Ethanol, hydrogen</td><td>Keep away from naked flames; use a water bath or electric heater instead of a Bunsen burner</td></tr>
+    <tr><td>Oxidising</td><td>Oxygen, potassium manganate(VII)</td><td>Keep away from flammable materials</td></tr>
+    <tr><td>Toxic</td><td>Chlorine, bromine</td><td>Use in a fume cupboard; wear gloves</td></tr>
+    <tr><td>Corrosive</td><td>Concentrated acids and alkalis</td><td>Wear eye protection and gloves; use the most dilute solution that works</td></tr>
+    <tr><td>Harmful / irritant</td><td>Dilute acids and alkalis, copper sulfate</td><td>Wear eye protection; avoid skin contact; wash hands</td></tr>
+  </tbody>
+</table>
+<div class="exam-tip">In a "risk assessment" question, always pair a specific <em>hazard</em> with a specific <em>precaution</em> &mdash; "wear goggles because the acid is corrosive and could damage the eyes" scores; "be careful" does not.</div>
+
+<h2>1.2 Atomic Structure</h2>
+
+<h3>How the model of the atom developed</h3>
+<p>Our model of the atom has changed as new experimental evidence appeared. Each new model kept what still worked and changed what the evidence disproved.</p>
+<table>
+  <thead><tr><th>Scientist / date</th><th>Model</th><th>Key evidence or idea</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Dalton</strong> (early 1800s)</td><td>Atoms are tiny solid spheres that cannot be divided; atoms of one element are identical; different elements have different atoms</td><td>Explained fixed proportions in which elements combine</td></tr>
+    <tr><td><strong>Thomson</strong> (1897)</td><td>"Plum pudding": a ball of positive charge with negative electrons embedded in it</td><td>Discovery of the <strong>electron</strong> — atoms contain smaller particles, so they are divisible</td></tr>
+    <tr><td><strong>Rutherford</strong> (1909–11)</td><td>Nuclear model: tiny, dense, positive <strong>nucleus</strong> containing most of the mass, surrounded by mostly empty space where electrons are</td><td>Alpha-particle scattering (Geiger &amp; Marsden): most alpha particles passed straight through gold foil; a few were deflected; a very small number bounced back</td></tr>
+    <tr><td><strong>Bohr</strong> (1913)</td><td>Electrons orbit the nucleus in fixed <strong>energy levels</strong> (shells) at specific distances</td><td>Explained why atoms emit and absorb light only at certain energies; calculations agreed with observations</td></tr>
+    <tr><td>Later work (Chadwick, 1932)</td><td>Nucleus contains protons <em>and</em> neutrons</td><td>Discovery of the <strong>neutron</strong>, explaining why atomic masses were larger than the proton count suggested</td></tr>
+  </tbody>
+</table>
+
+<!-- Development of atomic model -->
+<svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t1Arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Development of the atomic model</text>
+  <!-- Dalton -->
+  <circle cx="90" cy="105" r="45" fill="#cbd5e1" stroke="#475569" stroke-width="2"/>
+  <text x="90" y="178" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Dalton</text>
+  <text x="90" y="196" text-anchor="middle" font-size="11" fill="#64748b">solid sphere</text>
+  <line x1="145" y1="105" x2="182" y2="105" stroke="#64748b" stroke-width="2" marker-end="url(#t1Arr)"/>
+  <!-- Thomson -->
+  <circle cx="240" cy="105" r="45" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+  <text x="240" y="95" text-anchor="middle" font-size="12" fill="#991b1b">+ &#160; + &#160; +</text>
+  <text x="240" y="125" text-anchor="middle" font-size="12" fill="#991b1b">+ &#160; + &#160; +</text>
+  <circle cx="215" cy="80" r="6" fill="#2563eb"/><circle cx="262" cy="88" r="6" fill="#2563eb"/>
+  <circle cx="225" cy="110" r="6" fill="#2563eb"/><circle cx="258" cy="130" r="6" fill="#2563eb"/>
+  <circle cx="240" cy="140" r="6" fill="#2563eb"/>
+  <text x="240" y="178" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Thomson</text>
+  <text x="240" y="196" text-anchor="middle" font-size="11" fill="#64748b">plum pudding</text>
+  <line x1="295" y1="105" x2="332" y2="105" stroke="#64748b" stroke-width="2" marker-end="url(#t1Arr)"/>
+  <!-- Rutherford -->
+  <circle cx="390" cy="105" r="45" fill="#fff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <circle cx="390" cy="105" r="6" fill="#dc2626"/>
+  <circle cx="360" cy="75" r="5" fill="#2563eb"/><circle cx="425" cy="90" r="5" fill="#2563eb"/>
+  <circle cx="375" cy="140" r="5" fill="#2563eb"/><circle cx="420" cy="132" r="5" fill="#2563eb"/>
+  <text x="390" y="178" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Rutherford</text>
+  <text x="390" y="196" text-anchor="middle" font-size="11" fill="#64748b">nucleus + empty space</text>
+  <line x1="445" y1="105" x2="482" y2="105" stroke="#64748b" stroke-width="2" marker-end="url(#t1Arr)"/>
+  <!-- Bohr -->
+  <circle cx="560" cy="105" r="20" fill="none" stroke="#1e40af" stroke-width="1.5"/>
+  <circle cx="560" cy="105" r="40" fill="none" stroke="#1e40af" stroke-width="1.5"/>
+  <circle cx="560" cy="105" r="8" fill="#dc2626"/>
+  <circle cx="540" cy="105" r="5" fill="#2563eb"/><circle cx="580" cy="105" r="5" fill="#2563eb"/>
+  <circle cx="560" cy="65" r="5" fill="#2563eb"/><circle cx="560" cy="145" r="5" fill="#2563eb"/>
+  <circle cx="600" cy="105" r="5" fill="#2563eb"/>
+  <text x="560" y="178" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Bohr</text>
+  <text x="560" y="196" text-anchor="middle" font-size="11" fill="#64748b">electrons in shells</text>
+  <text x="680" y="100" text-anchor="middle" font-size="11" fill="#64748b">+ neutrons</text>
+  <text x="680" y="116" text-anchor="middle" font-size="11" fill="#64748b">(Chadwick)</text>
+  <text x="360" y="222" text-anchor="middle" font-size="11" fill="#64748b">Red = positive charge / nucleus; blue = electrons.</text>
+</svg>
+
+<div class="exam-tip">For the alpha-scattering experiment, link each observation to a conclusion: <em>most passed straight through</em> → the atom is mostly empty space; <em>some were deflected</em> → the nucleus is positively charged; <em>very few bounced back</em> → the nucleus is very small and contains most of the mass.</div>
+
+<h3>Structure of the atom</h3>
+<p>An atom has a central <strong>nucleus</strong> containing <strong>protons</strong> and <strong>neutrons</strong>, surrounded by <strong>electrons</strong> arranged in shells (energy levels).</p>
+<table>
+  <thead><tr><th>Particle</th><th>Relative mass</th><th>Relative charge</th><th>Location</th></tr></thead>
+  <tbody>
+    <tr><td>Proton</td><td>1</td><td>+1</td><td>Nucleus</td></tr>
+    <tr><td>Neutron</td><td>1</td><td>0</td><td>Nucleus</td></tr>
+    <tr><td>Electron</td><td>1/1836 (negligible)</td><td>−1</td><td>Shells around the nucleus</td></tr>
+  </tbody>
+</table>
+<ul>
+  <li>An atom is <strong>neutral</strong> overall because it contains <strong>equal numbers of protons and electrons</strong>; their charges cancel.</li>
+  <li>The nucleus is tiny compared with the whole atom: its radius is about <strong>1/100 000</strong> of the atom's radius.</li>
+  <li>Almost all of the <strong>mass</strong> of an atom is in the nucleus, because protons and neutrons are far heavier than electrons.</li>
+  <li>Atoms are about <strong>10⁻¹⁰ m</strong> (0.1 nm) across, and simple molecules are of the same order of magnitude (about 10⁻¹⁰ to 10⁻⁹ m). The nucleus is about 10⁻¹⁴ m across.</li>
+</ul>
+
+<!-- Atom structure: sodium -->
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">A sodium atom, ²³₁₁Na — electronic configuration 2.8.1</text>
+  <g transform="translate(220,150)">
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="75" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="110" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="22" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+    <text x="0" y="-3" text-anchor="middle" font-size="10" font-weight="bold" fill="#991b1b">11 p</text>
+    <text x="0" y="10" text-anchor="middle" font-size="10" font-weight="bold" fill="#475569">12 n</text>
+    <!-- shell 1 -->
+    <circle cx="-40" cy="0" r="5" fill="#2563eb"/><circle cx="40" cy="0" r="5" fill="#2563eb"/>
+    <!-- shell 2 (8) -->
+    <circle cx="0" cy="-75" r="5" fill="#2563eb"/><circle cx="0" cy="75" r="5" fill="#2563eb"/>
+    <circle cx="-75" cy="0" r="5" fill="#2563eb"/><circle cx="75" cy="0" r="5" fill="#2563eb"/>
+    <circle cx="53" cy="-53" r="5" fill="#2563eb"/><circle cx="-53" cy="-53" r="5" fill="#2563eb"/>
+    <circle cx="53" cy="53" r="5" fill="#2563eb"/><circle cx="-53" cy="53" r="5" fill="#2563eb"/>
+    <!-- shell 3 -->
+    <circle cx="0" cy="-110" r="5" fill="#2563eb"/>
+  </g>
+  <g font-size="13" fill="#334155">
+    <text x="400" y="80">Mass number A = 23 (protons + neutrons)</text>
+    <text x="400" y="105">Atomic number Z = 11 (protons)</text>
+    <text x="400" y="130">Neutrons = 23 − 11 = 12</text>
+    <text x="400" y="155">Electrons = 11 (neutral atom)</text>
+    <text x="400" y="190" fill="#1e40af" font-weight="bold">3 shells → Period 3</text>
+    <text x="400" y="215" fill="#1e40af" font-weight="bold">1 outer electron → Group 1</text>
+  </g>
+</svg>
+
+<h3>Atomic number and mass number</h3>
+<div class="definition">
+  <strong>Atomic number (Z)</strong> = the number of <strong>protons</strong> in the nucleus. All atoms of the same element have the same number of protons, and this is what identifies the element.<br>
+  <strong>Mass number (A)</strong> = the total number of <strong>protons + neutrons</strong> in the nucleus.<br>
+  Number of neutrons = A − Z.
+</div>
+<p>Atoms are written in the notation <strong>ᴬ<sub>Z</sub>X</strong>, with the mass number on top and the atomic number below, e.g. ¹²₆C, ³⁵₁₇Cl, ⁵⁶₂₆Fe.</p>
+
+<div class="worked">
+How many protons, neutrons and electrons are in an atom of ³⁹₁₉K?<br>
+Protons = Z = 19; electrons = 19 (neutral atom); neutrons = 39 − 19 = <strong>20</strong>.
+</div>
+
+<h2>1.3 Isotopes and Relative Atomic Mass</h2>
+<div class="definition">
+  <strong>Isotopes</strong> are atoms of the <strong>same element</strong> (same number of protons) with <strong>different numbers of neutrons</strong>, and therefore different mass numbers.
+</div>
+<p>Isotopes of an element have the same electronic configuration, so they have the <strong>same chemical properties</strong>. Their physical properties that depend on mass (such as density) differ slightly.</p>
+<table>
+  <thead><tr><th>Isotope</th><th>Protons</th><th>Neutrons</th><th>Electrons</th></tr></thead>
+  <tbody>
+    <tr><td>¹H (hydrogen-1)</td><td>1</td><td>0</td><td>1</td></tr>
+    <tr><td>²H (deuterium)</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>³⁵Cl</td><td>17</td><td>18</td><td>17</td></tr>
+    <tr><td>³⁷Cl</td><td>17</td><td>20</td><td>17</td></tr>
+  </tbody>
+</table>
+
+<h3>Why relative atomic masses are not whole numbers</h3>
+<p>Most elements exist naturally as a <strong>mixture of isotopes</strong>. The <strong>relative atomic mass (Aᵣ)</strong> is the <strong>weighted mean</strong> mass of the atoms of an element, taking into account the mass and the abundance of each isotope, compared with 1/12 of the mass of a carbon-12 atom. Because it is an average, it is often not a whole number (e.g. Cl = 35.5, Cu = 63.5).</p>
+<h3>Calculating relative atomic mass <strong>(HT)</strong></h3>
+<span class="eq">Aᵣ = Σ(isotope mass × % abundance) ÷ 100</span>
+
+<div class="worked">
+<strong>(HT)</strong> Chlorine is 75% ³⁵Cl and 25% ³⁷Cl. Calculate the relative atomic mass of chlorine.<br>
+Aᵣ = (35 × 75 + 37 × 25) ÷ 100 = (2625 + 925) ÷ 100 = 3550 ÷ 100 = <strong>35.5</strong>
+</div>
+<div class="worked">
+<strong>(HT)</strong> Copper consists of 69.2% ⁶³Cu and 30.8% ⁶⁵Cu. Calculate Aᵣ(Cu) to 1 decimal place.<br>
+Aᵣ = (63 × 69.2 + 65 × 30.8) ÷ 100 = (4359.6 + 2002.0) ÷ 100 = <strong>63.6</strong>
+</div>
+<div class="exam-tip">Sanity-check your answer: Aᵣ must lie <em>between</em> the lightest and heaviest isotope masses and be closer to the more abundant isotope. If abundances are given as ratios (e.g. 3 : 1), divide by the total of the ratio (4) instead of 100.</div>
+
+<h2>1.4 The Periodic Table</h2>
+
+<h3>Mendeleev's periodic table</h3>
+<p>In 1869 <strong>Dmitri Mendeleev</strong> arranged the known elements in order of increasing <strong>relative atomic mass</strong>, but he did not follow that order blindly:</p>
+<ul>
+  <li>He placed elements with <strong>similar properties in the same vertical group</strong>, even if this meant swapping the order of some pairs.</li>
+  <li>He <strong>left gaps</strong> for elements he believed had not yet been discovered.</li>
+  <li>He used the trends in his table to <strong>predict the properties</strong> of these missing elements (e.g. "eka-silicon", later found as germanium, with properties very close to his predictions). These successful predictions convinced other scientists that his table was useful.</li>
+</ul>
+<p>Mendeleev swapped some pairs, for example <strong>tellurium (Aᵣ 127.6) and iodine (Aᵣ 126.9)</strong>: ordering by mass would have put iodine in the wrong group, so he put iodine with chlorine and bromine, whose properties it matches. Later, the discovery of <strong>protons</strong> and <strong>isotopes</strong> explained why this was correct: the elements are really in order of <strong>atomic number</strong>, and an element's Aᵣ can be "out of order" because of the relative abundance of its heavier isotopes (tellurium has a high proportion of heavy isotopes).</p>
+
+<h3>The modern periodic table</h3>
+<ul>
+  <li>Elements are arranged in order of increasing <strong>atomic number</strong>.</li>
+  <li>The horizontal rows are <strong>periods</strong>; the vertical columns are <strong>groups</strong>.</li>
+  <li>Elements in the same group have the <strong>same number of outer-shell electrons</strong> and so similar chemical properties.</li>
+  <li><strong>Metals</strong> are found to the <strong>left</strong> and in the centre; <strong>non-metals</strong> are found to the <strong>right</strong> (top right). Most elements are metals.</li>
+</ul>
+
+<!-- Periodic table outline -->
+<svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Outline of the periodic table: metals and non-metals</text>
+  <g font-size="10" fill="#334155" text-anchor="middle">
+    <!-- group labels -->
+    <text x="55" y="45">1</text><text x="90" y="45">2</text>
+    <text x="510" y="45">3</text><text x="545" y="45">4</text><text x="580" y="45">5</text>
+    <text x="615" y="45">6</text><text x="650" y="45">7</text><text x="685" y="45">0</text>
+  </g>
+  <!-- Period 1 -->
+  <rect x="40" y="52" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="56" y="71" text-anchor="middle" font-size="11">H</text>
+  <rect x="670" y="52" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="686" y="71" text-anchor="middle" font-size="11">He</text>
+  <!-- Periods 2-3 s-block -->
+  <rect x="40" y="82" width="32" height="28" fill="#dbeafe" stroke="#2563eb"/><text x="56" y="101" text-anchor="middle" font-size="11">Li</text>
+  <rect x="74" y="82" width="32" height="28" fill="#dbeafe" stroke="#2563eb"/><text x="90" y="101" text-anchor="middle" font-size="11">Be</text>
+  <rect x="40" y="112" width="32" height="28" fill="#dbeafe" stroke="#2563eb"/><text x="56" y="131" text-anchor="middle" font-size="11">Na</text>
+  <rect x="74" y="112" width="32" height="28" fill="#dbeafe" stroke="#2563eb"/><text x="90" y="131" text-anchor="middle" font-size="11">Mg</text>
+  <!-- p-block period 2 -->
+  <rect x="494" y="82" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="510" y="101" text-anchor="middle" font-size="11">B</text>
+  <rect x="529" y="82" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="545" y="101" text-anchor="middle" font-size="11">C</text>
+  <rect x="564" y="82" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="580" y="101" text-anchor="middle" font-size="11">N</text>
+  <rect x="599" y="82" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="615" y="101" text-anchor="middle" font-size="11">O</text>
+  <rect x="634" y="82" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="650" y="101" text-anchor="middle" font-size="11">F</text>
+  <rect x="670" y="82" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="686" y="101" text-anchor="middle" font-size="11">Ne</text>
+  <!-- p-block period 3 -->
+  <rect x="494" y="112" width="32" height="28" fill="#dbeafe" stroke="#2563eb"/><text x="510" y="131" text-anchor="middle" font-size="11">Al</text>
+  <rect x="529" y="112" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="545" y="131" text-anchor="middle" font-size="11">Si</text>
+  <rect x="564" y="112" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="580" y="131" text-anchor="middle" font-size="11">P</text>
+  <rect x="599" y="112" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="615" y="131" text-anchor="middle" font-size="11">S</text>
+  <rect x="634" y="112" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="650" y="131" text-anchor="middle" font-size="11">Cl</text>
+  <rect x="670" y="112" width="32" height="28" fill="#dcfce7" stroke="#16a34a"/><text x="686" y="131" text-anchor="middle" font-size="11">Ar</text>
+  <!-- periods 4-7 generic blocks -->
+  <rect x="40" y="142" width="66" height="118" fill="#dbeafe" stroke="#2563eb"/>
+  <rect x="110" y="142" width="380" height="118" fill="#e0e7ff" stroke="#4f46e5"/>
+  <text x="300" y="196" text-anchor="middle" font-size="13" font-weight="bold" fill="#3730a3">Transition metals</text>
+  <text x="300" y="214" text-anchor="middle" font-size="11" fill="#3730a3">(Fe, Cu, Zn, Ag, Au …)</text>
+  <rect x="494" y="142" width="102" height="118" fill="#dbeafe" stroke="#2563eb"/>
+  <rect x="599" y="142" width="103" height="118" fill="#dcfce7" stroke="#16a34a"/>
+  <!-- staircase line -->
+  <polyline points="492,80 492,111 527.5,111 527.5,141 597.5,141 597.5,262" fill="none" stroke="#111" stroke-width="3"/>
+  <!-- legend -->
+  <rect x="140" y="58" width="16" height="12" fill="#dbeafe" stroke="#2563eb"/><text x="162" y="69" font-size="12" fill="#334155">Metals (left of the stepped line)</text>
+  <rect x="140" y="80" width="16" height="12" fill="#e0e7ff" stroke="#4f46e5"/><text x="162" y="91" font-size="12" fill="#334155">Transition metals (central block)</text>
+  <rect x="140" y="102" width="16" height="12" fill="#dcfce7" stroke="#16a34a"/><text x="162" y="113" font-size="12" fill="#334155">Non-metals (right of the stepped line, plus H)</text>
+  <text x="360" y="282" text-anchor="middle" font-size="11" fill="#64748b">Periods run across (rows); groups run down (columns). Group 0 = noble gases.</text>
+</svg>
+
+<h2>1.5 Electronic Configuration</h2>
+<p>Electrons occupy shells (energy levels) around the nucleus. The lowest-energy shell (closest to the nucleus) fills first. For the first 20 elements:</p>
+<ul>
+  <li>1st shell holds up to <strong>2</strong> electrons</li>
+  <li>2nd shell holds up to <strong>8</strong> electrons</li>
+  <li>3rd shell: for elements 1–20, holds 8 before electrons go into the 4th shell</li>
+</ul>
+<table>
+  <thead><tr><th>Element</th><th>Z</th><th>Configuration</th><th>Element</th><th>Z</th><th>Configuration</th></tr></thead>
+  <tbody>
+    <tr><td>H</td><td>1</td><td>1</td><td>Na</td><td>11</td><td>2.8.1</td></tr>
+    <tr><td>He</td><td>2</td><td>2</td><td>Mg</td><td>12</td><td>2.8.2</td></tr>
+    <tr><td>Li</td><td>3</td><td>2.1</td><td>Al</td><td>13</td><td>2.8.3</td></tr>
+    <tr><td>Be</td><td>4</td><td>2.2</td><td>Si</td><td>14</td><td>2.8.4</td></tr>
+    <tr><td>B</td><td>5</td><td>2.3</td><td>P</td><td>15</td><td>2.8.5</td></tr>
+    <tr><td>C</td><td>6</td><td>2.4</td><td>S</td><td>16</td><td>2.8.6</td></tr>
+    <tr><td>N</td><td>7</td><td>2.5</td><td>Cl</td><td>17</td><td>2.8.7</td></tr>
+    <tr><td>O</td><td>8</td><td>2.6</td><td>Ar</td><td>18</td><td>2.8.8</td></tr>
+    <tr><td>F</td><td>9</td><td>2.7</td><td>K</td><td>19</td><td>2.8.8.1</td></tr>
+    <tr><td>Ne</td><td>10</td><td>2.8</td><td>Ca</td><td>20</td><td>2.8.8.2</td></tr>
+  </tbody>
+</table>
+
+<h3>Linking configuration to position in the table</h3>
+<ul>
+  <li><strong>Number of occupied shells = period number.</strong> Chlorine (2.8.7) has 3 shells → Period 3.</li>
+  <li><strong>Number of outer-shell electrons = group number</strong> (for Groups 1–7). Chlorine has 7 outer electrons → Group 7.</li>
+  <li>Group 0 elements have a <strong>full outer shell</strong> (2 for helium, 8 for the others), which is why they are unreactive.</li>
+</ul>
+<div class="exam-tip">You can work out a configuration from the periodic table alone: count across each period. Calcium is the 2nd element in Period 4 → shells 2, 8, 8 then 2 → <strong>2.8.8.2</strong>. Draw configurations as dots or crosses on concentric circles when asked for a diagram.</div>
+
+<h2>1.6 Ionic Bonding</h2>
+
+<h3>Forming ions</h3>
+<div class="definition">
+  An <strong>ion</strong> is an atom or group of atoms with an overall electric charge, formed when atoms <strong>lose or gain electrons</strong>.<br>
+  <strong>Cations</strong> are positive ions (electrons lost). <strong>Anions</strong> are negative ions (electrons gained).
+</div>
+<ul>
+  <li><strong>Metal</strong> atoms lose their outer-shell electrons to form <strong>positive</strong> ions. Group 1 → 1+, Group 2 → 2+, Group 3 (aluminium) → 3+.</li>
+  <li><strong>Non-metal</strong> atoms gain electrons to fill their outer shell, forming <strong>negative</strong> ions. Group 6 → 2−, Group 7 → 1−.</li>
+  <li>The ions formed have the electronic configuration of a <strong>noble gas</strong> (a full outer shell). Na⁺ is 2.8, like neon; Cl⁻ is 2.8.8, like argon.</li>
+</ul>
+
+<h3>Protons, neutrons and electrons in ions</h3>
+<p>Forming an ion changes only the number of <strong>electrons</strong>; the nucleus is unchanged.</p>
+<table>
+  <thead><tr><th>Ion</th><th>Protons</th><th>Neutrons</th><th>Electrons</th><th>Reason</th></tr></thead>
+  <tbody>
+    <tr><td>²³Na⁺</td><td>11</td><td>12</td><td>10</td><td>lost 1 electron</td></tr>
+    <tr><td>²⁴Mg²⁺</td><td>12</td><td>12</td><td>10</td><td>lost 2 electrons</td></tr>
+    <tr><td>¹⁶O²⁻</td><td>8</td><td>8</td><td>10</td><td>gained 2 electrons</td></tr>
+    <tr><td>³⁵Cl⁻</td><td>17</td><td>18</td><td>18</td><td>gained 1 electron</td></tr>
+    <tr><td>²⁷Al³⁺</td><td>13</td><td>14</td><td>10</td><td>lost 3 electrons</td></tr>
+  </tbody>
+</table>
+
+<h3>How ionic bonds form</h3>
+<p>When a metal reacts with a non-metal, <strong>electrons are transferred</strong> from the metal atoms to the non-metal atoms. The oppositely charged ions formed are held together by <strong>strong electrostatic forces of attraction</strong> — this is an <strong>ionic bond</strong>.</p>
+
+<!-- Dot and cross NaCl and MgO -->
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t1ArrE" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Ionic bonding: sodium chloride (dot-and-cross, outer shells shown)</text>
+  <!-- Atoms before -->
+  <g transform="translate(110,100)">
+    <circle r="45" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <text y="5" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">Na</text>
+    <text x="45" y="5" text-anchor="middle" font-size="16" fill="#dc2626" font-weight="bold">×</text>
+    <text y="72" text-anchor="middle" font-size="12" fill="#334155">Na atom 2.8.1</text>
+  </g>
+  <path d="M160 95 Q 215 55 262 95" fill="none" stroke="#dc2626" stroke-width="2" marker-end="url(#t1ArrE)"/>
+  <text x="212" y="58" text-anchor="middle" font-size="11" fill="#dc2626">1 e⁻ transferred</text>
+  <g transform="translate(320,100)">
+    <circle r="45" fill="none" stroke="#16a34a" stroke-width="2"/>
+    <text y="5" text-anchor="middle" font-size="16" font-weight="bold" fill="#166534">Cl</text>
+    <g fill="#111"><circle cx="-6" cy="-45" r="3.5"/><circle cx="6" cy="-45" r="3.5"/>
+    <circle cx="-6" cy="45" r="3.5"/><circle cx="6" cy="45" r="3.5"/>
+    <circle cx="45" cy="-6" r="3.5"/><circle cx="45" cy="6" r="3.5"/>
+    <circle cx="-45" cy="0" r="3.5"/></g>
+    <text y="72" text-anchor="middle" font-size="12" fill="#334155">Cl atom 2.8.7</text>
+  </g>
+  <text x="430" y="105" font-size="22" fill="#64748b">→</text>
+  <!-- Ions after -->
+  <g transform="translate(500,100)">
+    <path d="M-20 -30 h-8 v60 h8 M20 -30 h8 v60 h-8" fill="none" stroke="#334155" stroke-width="2"/>
+    <text y="5" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">Na</text>
+    <text x="32" y="-24" font-size="14" font-weight="bold" fill="#334155">+</text>
+    <text y="72" text-anchor="middle" font-size="12" fill="#334155">Na⁺ 2.8</text>
+  </g>
+  <g transform="translate(620,100)">
+    <path d="M-50 -55 h-8 v110 h8 M50 -55 h8 v110 h-8" fill="none" stroke="#334155" stroke-width="2"/>
+    <circle r="45" fill="none" stroke="#16a34a" stroke-width="2"/>
+    <text y="5" text-anchor="middle" font-size="16" font-weight="bold" fill="#166534">Cl</text>
+    <g fill="#111"><circle cx="-6" cy="-45" r="3.5"/><circle cx="6" cy="-45" r="3.5"/>
+    <circle cx="-6" cy="45" r="3.5"/><circle cx="6" cy="45" r="3.5"/>
+    <circle cx="45" cy="-6" r="3.5"/><circle cx="45" cy="6" r="3.5"/>
+    <circle cx="-45" cy="-6" r="3.5"/></g>
+    <text x="-45" y="11" text-anchor="middle" font-size="14" fill="#dc2626" font-weight="bold">×</text>
+    <text x="62" y="-48" font-size="16" font-weight="bold" fill="#334155">−</text>
+    <text y="72" text-anchor="middle" font-size="12" fill="#334155">Cl⁻ 2.8.8</text>
+  </g>
+  <rect x="60" y="205" width="600" height="70" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="360" y="230" text-anchor="middle" font-size="13" fill="#334155">Magnesium oxide: Mg (2.8.2) transfers <tspan font-weight="bold">2</tspan> electrons to O (2.6)</text>
+  <text x="360" y="252" text-anchor="middle" font-size="13" fill="#334155">→ Mg²⁺ [2.8] and O²⁻ [2.8]. Both ions have the configuration of neon.</text>
+  <text x="360" y="270" text-anchor="middle" font-size="11" fill="#64748b">Dots and crosses show which atom the electrons came from — all electrons are identical.</text>
+</svg>
+
+<h3>Formulae of ionic compounds</h3>
+<p>An ionic compound has no overall charge, so the <strong>total positive charge must equal the total negative charge</strong>.</p>
+<div class="worked">
+Work out the formula of aluminium sulfate.<br>
+Ions: Al³⁺ and SO₄²⁻. Lowest common multiple of 3 and 2 is 6 → 2 × Al³⁺ (+6) and 3 × SO₄²⁻ (−6).<br>
+Formula: <strong>Al₂(SO₄)₃</strong> (brackets are needed around a group ion when there is more than one of it).
+</div>
+<table>
+  <thead><tr><th>Compound</th><th>Ions</th><th>Formula</th></tr></thead>
+  <tbody>
+    <tr><td>Calcium chloride</td><td>Ca²⁺, Cl⁻</td><td>CaCl₂</td></tr>
+    <tr><td>Sodium oxide</td><td>Na⁺, O²⁻</td><td>Na₂O</td></tr>
+    <tr><td>Ammonium nitrate</td><td>NH₄⁺, NO₃⁻</td><td>NH₄NO₃</td></tr>
+    <tr><td>Calcium hydroxide</td><td>Ca²⁺, OH⁻</td><td>Ca(OH)₂</td></tr>
+    <tr><td>Iron(III) oxide</td><td>Fe³⁺, O²⁻</td><td>Fe₂O₃</td></tr>
+    <tr><td>Potassium carbonate</td><td>K⁺, CO₃²⁻</td><td>K₂CO₃</td></tr>
+  </tbody>
+</table>
+
+<h3>Structure of ionic compounds</h3>
+<p>Ionic compounds form <strong>giant ionic lattices</strong>: a regular three-dimensional arrangement of alternating positive and negative ions, held together by strong electrostatic forces acting in <strong>all directions</strong>.</p>
+
+<!-- Ionic lattice -->
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Giant ionic lattice (sodium chloride, one layer)</text>
+  <g transform="translate(70,45)">
+    <g stroke="#cbd5e1" stroke-width="2">
+      <line x1="20" y1="20" x2="260" y2="20"/><line x1="20" y1="80" x2="260" y2="80"/>
+      <line x1="20" y1="140" x2="260" y2="140"/>
+      <line x1="20" y1="20" x2="20" y2="140"/><line x1="80" y1="20" x2="80" y2="140"/>
+      <line x1="140" y1="20" x2="140" y2="140"/><line x1="200" y1="20" x2="200" y2="140"/>
+      <line x1="260" y1="20" x2="260" y2="140"/>
+    </g>
+    <g font-size="12" font-weight="bold" text-anchor="middle">
+      <circle cx="20" cy="20" r="14" fill="#93c5fd"/><text x="20" y="25" fill="#1e3a8a">+</text>
+      <circle cx="80" cy="20" r="20" fill="#86efac"/><text x="80" y="25" fill="#14532d">−</text>
+      <circle cx="140" cy="20" r="14" fill="#93c5fd"/><text x="140" y="25" fill="#1e3a8a">+</text>
+      <circle cx="200" cy="20" r="20" fill="#86efac"/><text x="200" y="25" fill="#14532d">−</text>
+      <circle cx="260" cy="20" r="14" fill="#93c5fd"/><text x="260" y="25" fill="#1e3a8a">+</text>
+      <circle cx="20" cy="80" r="20" fill="#86efac"/><text x="20" y="85" fill="#14532d">−</text>
+      <circle cx="80" cy="80" r="14" fill="#93c5fd"/><text x="80" y="85" fill="#1e3a8a">+</text>
+      <circle cx="140" cy="80" r="20" fill="#86efac"/><text x="140" y="85" fill="#14532d">−</text>
+      <circle cx="200" cy="80" r="14" fill="#93c5fd"/><text x="200" y="85" fill="#1e3a8a">+</text>
+      <circle cx="260" cy="80" r="20" fill="#86efac"/><text x="260" y="85" fill="#14532d">−</text>
+      <circle cx="20" cy="140" r="14" fill="#93c5fd"/><text x="20" y="145" fill="#1e3a8a">+</text>
+      <circle cx="80" cy="140" r="20" fill="#86efac"/><text x="80" y="145" fill="#14532d">−</text>
+      <circle cx="140" cy="140" r="14" fill="#93c5fd"/><text x="140" y="145" fill="#1e3a8a">+</text>
+      <circle cx="200" cy="140" r="20" fill="#86efac"/><text x="200" y="145" fill="#14532d">−</text>
+      <circle cx="260" cy="140" r="14" fill="#93c5fd"/><text x="260" y="145" fill="#1e3a8a">+</text>
+    </g>
+  </g>
+  <g font-size="13" fill="#334155">
+    <text x="400" y="75"><tspan fill="#2563eb" font-weight="bold">●</tspan> Na⁺ (smaller cation)</text>
+    <text x="400" y="100"><tspan fill="#16a34a" font-weight="bold">●</tspan> Cl⁻ (larger anion)</text>
+    <text x="400" y="135">Each ion is surrounded by</text>
+    <text x="400" y="153">ions of opposite charge.</text>
+    <text x="400" y="185">Strong electrostatic attraction</text>
+    <text x="400" y="203">in all directions → giant structure.</text>
+  </g>
+</svg>
+
+<h2>1.7 Covalent Bonding</h2>
+<div class="definition">
+  A <strong>covalent bond</strong> is a <strong>shared pair of electrons</strong> between two atoms. Covalent bonds form between <strong>non-metal atoms</strong>. The bond is strong because both nuclei are attracted to the shared pair.
+</div>
+<p>By sharing electrons, each atom usually achieves a full outer shell. A <strong>double bond</strong> (two shared pairs) is found in O₂ and CO₂; a <strong>triple bond</strong> (three shared pairs) is found in N₂.</p>
+
+<h3>Simple molecules you must be able to draw</h3>
+<table>
+  <thead><tr><th>Molecule</th><th>Bonds</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td>Hydrogen, H₂</td><td>1 single bond (H–H)</td><td>Each H has 2 electrons in its shell</td></tr>
+    <tr><td>Hydrogen chloride, HCl</td><td>1 single bond</td><td>Cl also has 3 non-bonding (lone) pairs</td></tr>
+    <tr><td>Water, H₂O</td><td>2 single bonds</td><td>O has 2 lone pairs</td></tr>
+    <tr><td>Methane, CH₄</td><td>4 single bonds</td><td>C has no lone pairs</td></tr>
+    <tr><td>Oxygen, O₂</td><td>1 double bond (O=O)</td><td>Each O has 2 lone pairs</td></tr>
+    <tr><td>Carbon dioxide, CO₂</td><td>2 double bonds (O=C=O)</td><td>Each O has 2 lone pairs</td></tr>
+  </tbody>
+</table>
+
+<!-- Dot-and-cross covalent molecules -->
+<svg viewBox="0 0 720 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Dot-and-cross diagrams (outer shells only)</text>
+  <!-- H2O -->
+  <g transform="translate(130,135)">
+    <circle cx="0" cy="0" r="42" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="-62" cy="30" r="28" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <circle cx="62" cy="30" r="28" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <text x="0" y="6" text-anchor="middle" font-size="16" font-weight="bold" fill="#991b1b">O</text>
+    <text x="-68" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">H</text>
+    <text x="68" y="36" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">H</text>
+    <!-- shared pairs in overlaps -->
+    <circle cx="-36" cy="12" r="3.5" fill="#111"/><text x="-34" y="30" text-anchor="middle" font-size="12" fill="#2563eb" font-weight="bold">×</text>
+    <circle cx="36" cy="12" r="3.5" fill="#111"/><text x="34" y="30" text-anchor="middle" font-size="12" fill="#2563eb" font-weight="bold">×</text>
+    <!-- lone pairs -->
+    <circle cx="-7" cy="-30" r="3.5" fill="#111"/><circle cx="7" cy="-30" r="3.5" fill="#111"/>
+    <circle cx="-28" cy="-14" r="3.5" fill="#111"/><circle cx="28" cy="-14" r="3.5" fill="#111"/>
+    <text x="0" y="100" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Water, H₂O</text>
+  </g>
+  <!-- CH4 -->
+  <g transform="translate(360,135)">
+    <circle cx="0" cy="0" r="38" fill="none" stroke="#334155" stroke-width="2"/>
+    <circle cx="0" cy="-62" r="26" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <circle cx="0" cy="62" r="26" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <circle cx="-62" cy="0" r="26" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <circle cx="62" cy="0" r="26" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <text x="0" y="6" text-anchor="middle" font-size="16" font-weight="bold" fill="#111">C</text>
+    <text x="0" y="-62" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">H</text>
+    <text x="0" y="72" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">H</text>
+    <text x="-68" y="5" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">H</text>
+    <text x="68" y="5" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">H</text>
+    <g fill="#111"><circle cx="-5" cy="-38" r="3"/><circle cx="-5" cy="38" r="3"/><circle cx="-38" cy="-5" r="3"/><circle cx="38" cy="-5" r="3"/></g>
+    <g font-size="11" fill="#2563eb" font-weight="bold" text-anchor="middle"><text x="6" y="-34">×</text><text x="6" y="44">×</text><text x="-38" y="12">×</text><text x="38" y="12">×</text></g>
+    <text x="0" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Methane, CH₄</text>
+  </g>
+  <!-- CO2 -->
+  <g transform="translate(590,135)">
+    <circle cx="0" cy="0" r="34" fill="none" stroke="#334155" stroke-width="2"/>
+    <circle cx="-58" cy="0" r="34" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <circle cx="58" cy="0" r="34" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <text x="0" y="-12" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">C</text>
+    <text x="-66" y="5" text-anchor="middle" font-size="14" font-weight="bold" fill="#991b1b">O</text>
+    <text x="66" y="5" text-anchor="middle" font-size="14" font-weight="bold" fill="#991b1b">O</text>
+    <!-- two shared pairs each side -->
+    <g fill="#111"><circle cx="-31" cy="-8" r="3"/><circle cx="-31" cy="8" r="3"/><circle cx="31" cy="-8" r="3"/><circle cx="31" cy="8" r="3"/></g>
+    <g font-size="11" fill="#475569" font-weight="bold" text-anchor="middle"><text x="-22" y="-4">×</text><text x="-22" y="16">×</text><text x="22" y="-4">×</text><text x="22" y="16">×</text></g>
+    <!-- lone pairs -->
+    <g fill="#111"><circle cx="-64" cy="-26" r="3"/><circle cx="-52" cy="-26" r="3"/><circle cx="-64" cy="26" r="3"/><circle cx="-52" cy="26" r="3"/>
+    <circle cx="64" cy="-26" r="3"/><circle cx="52" cy="-26" r="3"/><circle cx="64" cy="26" r="3"/><circle cx="52" cy="26" r="3"/></g>
+    <text x="0" y="70" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Carbon dioxide, CO₂</text>
+    <text x="0" y="88" text-anchor="middle" font-size="11" fill="#64748b">two C=O double bonds</text>
+  </g>
+</svg>
+
+<div class="exam-tip">When drawing dot-and-cross diagrams, put shared pairs in the overlap of the circles and count: every atom (except H, which needs 2) should end with 8 outer electrons. Check the total number of electrons equals the sum of the atoms' outer electrons.</div>
+
+<h2>1.8 Structure, Bonding and Properties</h2>
+<p>Substances can be classified by their structure and bonding into <strong>ionic</strong>, <strong>simple molecular (covalent)</strong>, <strong>giant covalent</strong> and <strong>metallic</strong>. Polymers are a further important group of covalent substances. The type of structure explains the physical properties.</p>
+
+<h3>Ionic compounds</h3>
+<ul>
+  <li><strong>High melting and boiling points</strong> — a lot of energy is needed to overcome the many strong electrostatic forces between oppositely charged ions throughout the lattice.</li>
+  <li><strong>Do not conduct electricity when solid</strong> — ions are held in fixed positions and cannot move.</li>
+  <li><strong>Conduct when molten or dissolved in water</strong> — the ions are free to move and carry charge.</li>
+  <li>Many are <strong>soluble in water</strong>.</li>
+</ul>
+
+<h3>Simple molecular substances</h3>
+<p>Examples: H₂, O₂, Cl₂, H₂O, CO₂, CH₄. Atoms <em>within</em> each molecule are held by strong covalent bonds, but the forces <em>between</em> molecules (<strong>intermolecular forces</strong>) are <strong>weak</strong>.</p>
+<ul>
+  <li><strong>Low melting and boiling points</strong> — only the weak intermolecular forces need to be overcome; the covalent bonds do not break when the substance melts or boils. Many are gases or liquids at room temperature.</li>
+  <li>Intermolecular forces get stronger as molecules get larger, so melting and boiling points generally <strong>increase with molecule size</strong>.</li>
+  <li><strong>Do not conduct electricity</strong> — the molecules have no overall charge and there are no free electrons or ions.</li>
+</ul>
+<div class="exam-tip">The most common lost mark in this topic: saying covalent bonds break when a simple molecular substance boils. They do not — only the <em>intermolecular forces</em> are overcome. Always name which forces are involved.</div>
+
+<h3>Giant covalent substances</h3>
+<p>Very large numbers of atoms joined by covalent bonds in a continuous network, e.g. <strong>diamond</strong>, <strong>graphite</strong> and <strong>silicon dioxide (silica)</strong>. They have <strong>very high melting points</strong> because many strong covalent bonds must be broken, and they are insoluble in water.</p>
+
+<h3>Allotropes of carbon</h3>
+<table>
+  <thead><tr><th>Form</th><th>Structure</th><th>Properties</th><th>Uses</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Diamond</strong></td><td>Giant covalent; each C bonded to <strong>4</strong> others in a rigid tetrahedral network</td><td>Very hard; very high melting point; does <strong>not</strong> conduct electricity (no delocalised electrons)</td><td>Cutting tools, drill tips</td></tr>
+    <tr><td><strong>Graphite</strong></td><td>Giant covalent; each C bonded to <strong>3</strong> others in flat hexagonal <strong>layers</strong>; weak forces between layers; one electron per atom <strong>delocalised</strong></td><td>Soft and slippery (layers slide); very high melting point; <strong>conducts</strong> electricity (delocalised electrons move along the layers)</td><td>Electrodes, lubricant, pencil "lead"</td></tr>
+    <tr><td><strong>Graphene</strong></td><td>A <strong>single layer</strong> of graphite (one atom thick)</td><td>Very strong; conducts electricity well; very light; almost transparent</td><td>Composites, electronics, touchscreens</td></tr>
+    <tr><td><strong>Fullerenes</strong></td><td>Molecules of carbon atoms in hollow shapes, mainly hexagonal rings (with some 5- or 7-membered rings). Buckminsterfullerene is <strong>C₆₀</strong> (spherical). <strong>Nanotubes</strong> are cylindrical fullerenes</td><td>C₆₀: simple molecular, so lower melting point than diamond and graphite, slippery; nanotubes: very high length-to-diameter ratio, high tensile strength, conduct electricity</td><td>Drug delivery (hollow cage), lubricants, catalysts (large surface area), reinforcing materials (nanotubes)</td></tr>
+  </tbody>
+</table>
+
+<!-- Diamond vs graphite -->
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Diamond and graphite</text>
+  <!-- diamond: central atom bonded to 4 -->
+  <g transform="translate(170,130)">
+    <g stroke="#334155" stroke-width="3">
+      <line x1="0" y1="0" x2="0" y2="-70"/><line x1="0" y1="0" x2="-65" y2="35"/>
+      <line x1="0" y1="0" x2="65" y2="35"/><line x1="0" y1="0" x2="18" y2="55"/>
+      <line x1="0" y1="-70" x2="-40" y2="-95"/><line x1="0" y1="-70" x2="40" y2="-95"/>
+      <line x1="-65" y1="35" x2="-110" y2="15"/><line x1="-65" y1="35" x2="-80" y2="80"/>
+      <line x1="65" y1="35" x2="110" y2="15"/><line x1="65" y1="35" x2="80" y2="80"/>
+    </g>
+    <g fill="#475569">
+      <circle cx="0" cy="0" r="11" fill="#1e40af"/><circle cx="0" cy="-70" r="9"/><circle cx="-65" cy="35" r="9"/>
+      <circle cx="65" cy="35" r="9"/><circle cx="18" cy="55" r="9"/>
+      <circle cx="-40" cy="-95" r="6"/><circle cx="40" cy="-95" r="6"/><circle cx="-110" cy="15" r="6"/>
+      <circle cx="-80" cy="80" r="6"/><circle cx="110" cy="15" r="6"/><circle cx="80" cy="80" r="6"/>
+    </g>
+    <text x="0" y="118" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Diamond: each C forms 4 bonds</text>
+  </g>
+  <!-- graphite layers -->
+  <g transform="translate(375,55)">
+    <g fill="none" stroke="#334155" stroke-width="2.5">
+      <polyline points="0,20 25,5 50,20 75,5 100,20 125,5 150,20 175,5 200,20 225,5 250,20"/>
+      <polyline points="0,20 0,40 25,55 50,40 75,55 100,40 125,55 150,40 175,55 200,40 225,55 250,40 250,20"/>
+      <line x1="50" y1="20" x2="50" y2="40"/><line x1="100" y1="20" x2="100" y2="40"/><line x1="150" y1="20" x2="150" y2="40"/><line x1="200" y1="20" x2="200" y2="40"/>
+    </g>
+    <g fill="none" stroke="#334155" stroke-width="2.5" transform="translate(0,85)">
+      <polyline points="0,20 25,5 50,20 75,5 100,20 125,5 150,20 175,5 200,20 225,5 250,20"/>
+      <polyline points="0,20 0,40 25,55 50,40 75,55 100,40 125,55 150,40 175,55 200,40 225,55 250,40 250,20"/>
+      <line x1="50" y1="20" x2="50" y2="40"/><line x1="100" y1="20" x2="100" y2="40"/><line x1="150" y1="20" x2="150" y2="40"/><line x1="200" y1="20" x2="200" y2="40"/>
+    </g>
+    <g stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="4,4">
+      <line x1="40" y1="62" x2="40" y2="88"/><line x1="125" y1="62" x2="125" y2="88"/><line x1="210" y1="62" x2="210" y2="88"/>
+    </g>
+    <text x="258" y="80" font-size="11" fill="#b45309">weak forces</text>
+    <text x="258" y="94" font-size="11" fill="#b45309">between layers</text>
+    <text x="125" y="175" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Graphite: each C forms 3 bonds;</text>
+    <text x="125" y="193" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">1 delocalised electron per atom</text>
+  </g>
+</svg>
+
+<h3>Polymers</h3>
+<p><strong>Polymers</strong> such as poly(ethene) are very large molecules made of many repeating units joined by strong covalent bonds into long chains. Because the molecules are so large, the intermolecular forces between chains are relatively strong, so polymers are <strong>solids at room temperature</strong>. Most do not conduct electricity.</p>
+
+<h3>Metallic bonding</h3>
+<div class="definition">
+  <strong>Metallic bonding</strong> is the electrostatic attraction between a lattice of <strong>positive metal ions</strong> and a "sea" of <strong>delocalised electrons</strong> (the outer-shell electrons, which are free to move through the whole structure).
+</div>
+
+<!-- Metallic bonding -->
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Metallic bonding: positive ions in a sea of delocalised electrons</text>
+  <rect x="60" y="40" width="330" height="160" rx="10" fill="#eff6ff" stroke="#93c5fd"/>
+  <g font-size="13" font-weight="bold" text-anchor="middle" fill="#7c2d12">
+    <circle cx="110" cy="80" r="20" fill="#fdba74"/><text x="110" y="85">+</text>
+    <circle cx="180" cy="80" r="20" fill="#fdba74"/><text x="180" y="85">+</text>
+    <circle cx="250" cy="80" r="20" fill="#fdba74"/><text x="250" y="85">+</text>
+    <circle cx="320" cy="80" r="20" fill="#fdba74"/><text x="320" y="85">+</text>
+    <circle cx="110" cy="160" r="20" fill="#fdba74"/><text x="110" y="165">+</text>
+    <circle cx="180" cy="160" r="20" fill="#fdba74"/><text x="180" y="165">+</text>
+    <circle cx="250" cy="160" r="20" fill="#fdba74"/><text x="250" y="165">+</text>
+    <circle cx="320" cy="160" r="20" fill="#fdba74"/><text x="320" y="165">+</text>
+  </g>
+  <g fill="#2563eb">
+    <circle cx="145" cy="60" r="4"/><circle cx="215" cy="118" r="4"/><circle cx="285" cy="58" r="4"/>
+    <circle cx="80" cy="120" r="4"/><circle cx="355" cy="122" r="4"/><circle cx="145" cy="125" r="4"/>
+    <circle cx="285" cy="185" r="4"/><circle cx="215" cy="185" r="4"/><circle cx="145" cy="185" r="4"/>
+    <circle cx="250" cy="120" r="4"/><circle cx="355" cy="185" r="4"/><circle cx="80" cy="60" r="4"/>
+  </g>
+  <g font-size="13" fill="#334155">
+    <text x="420" y="75">• Regular layers of positive ions</text>
+    <text x="420" y="100">• Delocalised electrons move freely</text>
+    <text x="420" y="125">  → conduct electricity and heat</text>
+    <text x="420" y="150">• Layers slide over one another</text>
+    <text x="420" y="175">  → malleable and ductile</text>
+  </g>
+</svg>
+
+<ul>
+  <li><strong>High melting points</strong> (mostly) — strong attraction between the positive ions and delocalised electrons.</li>
+  <li><strong>Good conductors of electricity and heat</strong> — delocalised electrons carry charge and energy through the structure.</li>
+  <li><strong>Malleable</strong> (can be hammered into shape) — the layers of ions can slide over each other while the delocalised electrons keep holding them together.</li>
+  <li>Typical metal properties: shiny, high density, solid at room temperature (except mercury), form positive ions and basic oxides. Typical non-metal properties: dull, brittle, low melting points (except giant covalent ones), poor conductors (except graphite), form negative ions and acidic oxides.</li>
+</ul>
+
+<h3>Summary of structure types</h3>
+<table>
+  <thead><tr><th>Structure</th><th>Particles and bonding</th><th>Melting point</th><th>Conducts?</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Ionic</td><td>Ions; electrostatic attraction</td><td>High</td><td>Only when molten or dissolved</td><td>NaCl, MgO</td></tr>
+    <tr><td>Simple molecular</td><td>Small molecules; covalent bonds within, weak intermolecular forces between</td><td>Low</td><td>No</td><td>H₂O, CO₂, CH₄</td></tr>
+    <tr><td>Giant covalent</td><td>Atoms; network of covalent bonds</td><td>Very high</td><td>No (except graphite, graphene)</td><td>Diamond, SiO₂</td></tr>
+    <tr><td>Metallic</td><td>Positive ions + delocalised electrons</td><td>Generally high</td><td>Yes, solid and liquid</td><td>Cu, Fe, Al</td></tr>
+    <tr><td>Polymer</td><td>Very long covalent chains</td><td>Solid at room temperature; soften over a range</td><td>No</td><td>Poly(ethene)</td></tr>
+  </tbody>
+</table>
+
+<div class="worked">
+A substance melts at 801 °C. It does not conduct as a solid but does conduct when molten. Identify its structure.<br>
+High melting point → strong forces throughout a giant structure. Conducts only when molten → charged particles that become mobile on melting → <strong>giant ionic lattice</strong> (it is sodium chloride).
+</div>
+
+<h3>Limitations of models</h3>
+<p>Chemists use several models to represent bonding and structure. Each shows something useful but has limitations:</p>
+<table>
+  <thead><tr><th>Model</th><th>Useful for</th><th>Limitations</th></tr></thead>
+  <tbody>
+    <tr><td>Dot-and-cross diagram</td><td>Showing which atom electrons came from and how many are shared/transferred</td><td>Does not show the 3D shape or relative sizes of atoms; suggests electrons from different atoms are different</td></tr>
+    <tr><td>2D structural formula (e.g. H–O–H)</td><td>Showing which atoms are bonded and how many bonds</td><td>Does not show shape, lone pairs or bond angles</td></tr>
+    <tr><td>Ball-and-stick model</td><td>Showing 3D arrangement and bond angles</td><td>Bonds are shown as sticks, but there is no physical "stick"; atoms are spaced too far apart and sizes not to scale</td></tr>
+    <tr><td>Space-filling model</td><td>Showing relative sizes and overall shape</td><td>Hard to see bonds or the structure inside</td></tr>
+    <tr><td>Lattice diagram</td><td>Showing the regular repeating arrangement of ions</td><td>Only shows a tiny part of the structure; does not show forces or movement</td></tr>
+  </tbody>
+</table>
+
+<h2>1.9 Calculations: Formula Mass, Empirical Formulae and Concentration</h2>
+
+<h3>Relative formula mass</h3>
+<div class="definition">
+  <strong>Relative formula mass (Mᵣ)</strong> is the sum of the relative atomic masses of all the atoms in the formula.
+</div>
+<div class="worked">
+Calculate Mᵣ of calcium hydroxide, Ca(OH)₂. (Ca = 40, O = 16, H = 1)<br>
+Mᵣ = 40 + 2 × (16 + 1) = 40 + 34 = <strong>74</strong>
+</div>
+<div class="worked">
+Calculate Mᵣ of hydrated copper sulfate, CuSO₄·5H₂O. (Cu = 63.5, S = 32, O = 16, H = 1)<br>
+CuSO₄ = 63.5 + 32 + 64 = 159.5; 5H₂O = 5 × 18 = 90 → Mᵣ = <strong>249.5</strong>
+</div>
+<p>Percentage by mass of an element in a compound:</p>
+<span class="eq">% by mass = (Aᵣ × number of atoms of that element) ÷ Mᵣ × 100</span>
+
+<h3>Empirical and molecular formulae</h3>
+<div class="definition">
+  The <strong>empirical formula</strong> is the <strong>simplest whole-number ratio</strong> of atoms of each element in a compound. The <strong>molecular formula</strong> is the actual number of atoms of each element in one molecule.
+</div>
+<p>Examples: ethane C₂H₆ has empirical formula CH₃; glucose C₆H₁₂O₆ has empirical formula CH₂O. For ionic and giant covalent substances we always use the empirical formula (NaCl, SiO₂).</p>
+<p>To find an empirical formula from masses (or percentages):</p>
+<ol>
+  <li>Write down the mass (or %) of each element.</li>
+  <li>Divide each by its Aᵣ.</li>
+  <li>Divide all answers by the smallest one.</li>
+  <li>If necessary, multiply to get whole numbers (e.g. 1.5 → ×2).</li>
+</ol>
+<div class="worked">
+A compound contains 2.4 g of carbon and 0.6 g of hydrogen. Its Mᵣ is 30. Find the empirical and molecular formulae.<br>
+C: 2.4 ÷ 12 = 0.2 &nbsp; H: 0.6 ÷ 1 = 0.6 → ratio 0.2 : 0.6 = 1 : 3 → empirical formula <strong>CH₃</strong>.<br>
+Mᵣ of CH₃ = 15; 30 ÷ 15 = 2 → molecular formula <strong>C₂H₆</strong>.
+</div>
+
+<h3>Practical: finding the empirical formula of magnesium oxide</h3>
+<ol>
+  <li>Weigh a clean, dry crucible and lid. Add a coiled strip of magnesium ribbon (cleaned with sandpaper to remove the oxide layer) and weigh again.</li>
+  <li>Heat strongly on a pipeclay triangle. <strong>Lift the lid slightly</strong> from time to time with tongs to let oxygen in, while preventing white magnesium oxide smoke escaping.</li>
+  <li>When the magnesium no longer glows, remove the lid and heat for a few more minutes. Allow to cool and reweigh.</li>
+  <li>Repeat heating, cooling and weighing until the mass is constant (<strong>heating to constant mass</strong>) to ensure all the magnesium has reacted.</li>
+</ol>
+<div class="worked">
+Mass of Mg = 0.24 g; mass of magnesium oxide = 0.40 g. Find the empirical formula. (Mg = 24, O = 16)<br>
+Mass of O = 0.40 − 0.24 = 0.16 g.<br>
+Mg: 0.24 ÷ 24 = 0.010 &nbsp; O: 0.16 ÷ 16 = 0.010 → ratio 1 : 1 → <strong>MgO</strong>.
+</div>
+<div class="exam-tip">Errors in this practical: if MgO smoke escapes, the final mass is too low; if some Mg does not react, the oxygen mass is too low. Both make the ratio of O to Mg smaller than it should be.</div>
+
+<h3>Conservation of mass</h3>
+<div class="definition">
+  The <strong>law of conservation of mass</strong>: no atoms are lost or made during a chemical reaction, so the total mass of products equals the total mass of reactants.
+</div>
+<ul>
+  <li>In a <strong>closed system</strong> (nothing can enter or leave, e.g. a precipitation reaction in a sealed flask), the mass measured on a balance stays the same.</li>
+  <li>In a <strong>non-enclosed system</strong> the mass on the balance may appear to change:
+    <ul>
+      <li><strong>Increase</strong> if a reactant comes from the air — e.g. when magnesium burns, oxygen from the air is added, so the solid gains mass.</li>
+      <li><strong>Decrease</strong> if a gaseous product escapes — e.g. thermal decomposition of a metal carbonate (CaCO₃ → CaO + CO₂), or a carbonate reacting with an acid, loses CO₂ to the air.</li>
+    </ul>
+  </li>
+</ul>
+<div class="worked">
+12.5 g of calcium carbonate is heated until it fully decomposes, leaving 7.0 g of calcium oxide. What mass of carbon dioxide was produced?<br>
+By conservation of mass: 12.5 − 7.0 = <strong>5.5 g</strong> of CO₂ escaped.
+</div>
+
+<h3>Reacting masses from a balanced equation</h3>
+<p>The balanced equation tells you the ratio in which substances react. Multiply each Mᵣ by its balancing number to get the reacting masses, then scale to the mass you are given. (Higher-tier students can also do this with moles &mdash; see 1.10.)</p>
+<div class="worked">
+What mass of magnesium oxide forms when 6.0 g of magnesium burns completely? 2Mg + O₂ → 2MgO (Mg = 24, O = 16)<br>
+From the equation: 2 × 24 = 48 g of Mg gives 2 × 40 = 80 g of MgO.<br>
+So 6.0 g of Mg gives 80 × (6.0 ÷ 48) = <strong>10 g</strong> of MgO.
+</div>
+
+<h3>Concentration in g dm⁻³</h3>
+<span class="eq">concentration (g dm⁻³) = mass of solute (g) ÷ volume of solution (dm³)</span>
+<p>1 dm³ = 1000 cm³, so divide a volume in cm³ by 1000 to convert to dm³.</p>
+<div class="worked">
+5.0 g of sodium hydroxide is dissolved in water to make 250 cm³ of solution. Calculate the concentration.<br>
+Volume = 250 ÷ 1000 = 0.250 dm³. Concentration = 5.0 ÷ 0.250 = <strong>20 g dm⁻³</strong>.
+</div>
+<div class="worked">
+What mass of solute is in 40 cm³ of a 15 g dm⁻³ solution?<br>
+Mass = concentration × volume = 15 × 0.040 = <strong>0.60 g</strong>.
+</div>
+
+<h2>1.10 The Mole <strong>(HT)</strong></h2>
+<div class="definition">
+  One <strong>mole</strong> of a substance contains the same number of particles (atoms, molecules, ions or electrons) as there are atoms in 12 g of carbon-12. This number is the <strong>Avogadro constant</strong>: <strong>6.02 × 10²³ per mole</strong>.<br>
+  The mass of one mole of a substance in grams is numerically equal to its Aᵣ or Mᵣ (e.g. 1 mol of H₂O has a mass of 18 g).
+</div>
+<span class="eq">number of moles = mass (g) ÷ Mᵣ &nbsp; ↔ &nbsp; n = m ÷ Mᵣ</span>
+<span class="eq">number of particles = moles × 6.02 × 10²³</span>
+
+<div class="worked">
+How many molecules are in 8.8 g of carbon dioxide? (C = 12, O = 16)<br>
+Mᵣ(CO₂) = 44 → moles = 8.8 ÷ 44 = 0.20 mol.<br>
+Molecules = 0.20 × 6.02 × 10²³ = <strong>1.2 × 10²³</strong> (2 s.f.). Number of <em>atoms</em> = 3 × that = 3.6 × 10²³.
+</div>
+
+<h3>Reacting masses using moles</h3>
+<ol>
+  <li>Calculate the moles of the substance whose mass you know (n = m ÷ Mᵣ).</li>
+  <li>Use the <strong>mole ratio</strong> from the balanced equation to find moles of the substance you want.</li>
+  <li>Convert back to mass (m = n × Mᵣ).</li>
+</ol>
+<div class="worked">
+What mass of iron is produced from 32 g of iron(III) oxide? Fe₂O₃ + 3CO → 2Fe + 3CO₂ (Fe = 56, O = 16)<br>
+Mᵣ(Fe₂O₃) = 160 → moles = 32 ÷ 160 = 0.20 mol.<br>
+Ratio Fe₂O₃ : Fe = 1 : 2 → moles Fe = 0.40 mol.<br>
+Mass Fe = 0.40 × 56 = <strong>22.4 g</strong>.
+</div>
+
+<h3>Deducing an equation from reacting masses</h3>
+<p>If you know the masses of all reactants and products, convert each to moles and then find the simplest whole-number ratio. These numbers are the balancing numbers in the equation.</p>
+<div class="worked">
+4.8 g of magnesium reacts with 3.2 g of oxygen to form 8.0 g of magnesium oxide. Deduce the balanced equation. (Mg = 24, O = 16)<br>
+Mg: 4.8 ÷ 24 = 0.20 mol; O₂: 3.2 ÷ 32 = 0.10 mol; MgO: 8.0 ÷ 40 = 0.20 mol.<br>
+Ratio 0.20 : 0.10 : 0.20 = 2 : 1 : 2 → <strong>2Mg + O₂ → 2MgO</strong>.
+</div>
+
+<h3>Limiting reactants</h3>
+<div class="definition">
+  The <strong>limiting reactant</strong> is the reactant that is completely used up; it limits the amount of product that can form. The other reactant is <strong>in excess</strong> — some is left over at the end.
+</div>
+<p>The mass of product formed is <strong>directly proportional</strong> to the amount of the limiting reactant: double the limiting reactant and you double the product (as long as the other reactant stays in excess). Chemists often use an excess of one (cheaper) reactant to make sure all of a more expensive reactant reacts.</p>
+<div class="worked">
+6.0 g of magnesium is added to a solution containing 0.40 mol of HCl. Mg + 2HCl → MgCl₂ + H₂. Which reactant is limiting, and what mass of hydrogen forms? (Mg = 24, H = 1)<br>
+Moles Mg = 6.0 ÷ 24 = 0.25 mol. To react fully it would need 2 × 0.25 = 0.50 mol HCl, but only 0.40 mol is available → <strong>HCl is limiting</strong>, Mg is in excess.<br>
+Moles H₂ = 0.40 ÷ 2 = 0.20 mol → mass = 0.20 × 2 = <strong>0.40 g</strong>.
+</div>
+<div class="exam-tip">To find the limiting reactant, divide the moles of each reactant by its balancing number in the equation; the <em>smallest</em> result is the limiting reactant. Always base the product calculation on the limiting reactant.</div>
+
+<h2>Key Points Summary</h2>
+<ul>
+  <li>Recall formulae of common elements, compounds and ions; -ide = two elements, -ate = contains oxygen.</li>
+  <li>Balance equations by changing the numbers in front of formulae; include state symbols (s), (l), (g), (aq).</li>
+  <li><strong>(HT)</strong> Ionic equations leave out spectator ions — e.g. H⁺ + OH⁻ → H₂O.</li>
+  <li>Hazard symbols: flammable, oxidising, toxic, corrosive, harmful; match each hazard to a precaution.</li>
+  <li>Atomic model: Dalton → Thomson (electron) → Rutherford (nucleus, alpha scattering) → Bohr (shells) → neutron (Chadwick).</li>
+  <li>Proton: mass 1, charge +1. Neutron: mass 1, charge 0. Electron: mass 1/1836, charge −1. Atoms ~10⁻¹⁰ m; nucleus ~1/100 000 of atomic radius but contains almost all the mass.</li>
+  <li>Atomic number = protons; mass number = protons + neutrons. Isotopes: same protons, different neutrons.</li>
+  <li>Aᵣ = weighted mean of isotope masses, so often not a whole number; <strong>(HT)</strong> calculate it from isotope masses and abundances.</li>
+  <li>Mendeleev ordered by atomic mass, left gaps, predicted properties and swapped pairs such as Te/I; the modern table is ordered by atomic number.</li>
+  <li>Electronic configuration (first 20 elements): shells = period; outer electrons = group.</li>
+  <li>Ionic bonding: electron transfer from metal to non-metal; giant lattice; high mp; conducts when molten or aqueous.</li>
+  <li>Covalent bonding: shared pairs between non-metals; simple molecules have weak intermolecular forces and low mp; giant covalent structures have very high mp.</li>
+  <li>Diamond (4 bonds, hard, non-conductor), graphite (3 bonds, layers, conducts), graphene (single layer), fullerenes (C₆₀, nanotubes).</li>
+  <li>Metallic bonding: positive ions + delocalised electrons → conductors, malleable.</li>
+  <li>Every model of bonding has limitations — know at least one for each.</li>
+  <li>Mᵣ = sum of Aᵣ; empirical formula = simplest whole-number ratio (MgO practical: heat to constant mass).</li>
+  <li>Mass is conserved; apparent changes in open systems come from gases entering or leaving.</li>
+  <li>Reacting masses: scale the masses given by (Mᵣ × balancing number) in the equation.</li>
+  <li>Concentration (g dm⁻³) = mass ÷ volume in dm³.</li>
+  <li><strong>(HT)</strong> Moles = mass ÷ Mᵣ; Avogadro constant 6.02 × 10²³; use mole ratios for reacting masses, deducing equations and limiting reactants.</li>
+</ul>
+
+</div>
+</body>
+</html>

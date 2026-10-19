@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Edexcel GCSE Chemistry — Topic 3: Chemical Changes</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+    .container { max-width: 820px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+    .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+    h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+    h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+    p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+    strong { color: #1a1a2e; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+    th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+    tr:nth-child(even) { background: #f9fafb; }
+    .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+    .worked { background: #ecfdf5; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .worked::before { content: "Worked Example: "; font-weight: 700; color: #0f5132; }
+    code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+    .eq { display: block; text-align: center; font-size: 1.1rem; padding: 10px 16px; margin: 10px 0; background: #f0f4ff; border-radius: 6px; border: 1px solid #cfd9ff; }
+    @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .worked { break-inside: avoid; } h2 { break-after: avoid; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning
+  </a>
+</div>
+
+<h1>Topic 3 — Chemical Changes</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Chemistry (1CH0) &mdash; Paper 1</p>
+
+<p>Topic 3 covers two big families of reactions. The first half is about <strong>acids</strong>: what makes a solution acidic or alkaline, the pH scale, how acids react with metals, bases and carbonates, which salts are soluble, and how to make pure samples of salts. The second half is about <strong>electrolysis</strong>: using electricity to decompose ionic compounds, and predicting what forms at each electrode. Three core practicals sit in this topic: the pH change when calcium oxide or hydroxide is added to hydrochloric acid, preparing copper sulfate crystals, and the electrolysis of copper sulfate solution.</p>
+
+<p>Content marked <strong>(HT)</strong> is Higher Tier only. Topic 3 is shared with GCSE Combined Science; the separate-chemistry-only content of 1CH0 is concentrated in Topics 5 and 9.</p>
+
+<h2>3.1 Acids, Alkalis and the pH Scale</h2>
+
+<h3>Indicators</h3>
+<p>An <strong>indicator</strong> is a dye that changes colour depending on whether it is in an acidic or alkaline solution. You must recall the colours of three single indicators:</p>
+<table>
+  <thead><tr><th>Indicator</th><th>Colour in acid</th><th>Colour in alkali</th><th>Notes</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Litmus</strong></td><td>Red</td><td>Blue</td><td>Purple in neutral solution; used as paper or solution</td></tr>
+    <tr><td><strong>Methyl orange</strong></td><td>Red</td><td>Yellow</td><td>Orange at the end point; good for titrations</td></tr>
+    <tr><td><strong>Phenolphthalein</strong></td><td>Colourless</td><td>Pink</td><td>Sharp colour change; good for titrations</td></tr>
+  </tbody>
+</table>
+<p><strong>Universal indicator</strong> is a mixture of indicators that shows a range of colours, so it can estimate the <strong>pH</strong> of a solution, not just whether it is acidic or alkaline. A <strong>pH meter</strong> (or pH probe) gives a more accurate numerical reading.</p>
+
+<!-- pH scale -->
+<svg viewBox="0 0 720 210" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t3ArrPH" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The pH scale and universal indicator colours</text>
+  <g font-size="13" font-weight="bold" text-anchor="middle" fill="#111">
+    <rect x="45" y="40" width="44" height="44" fill="#dc2626"/><text x="67" y="67" fill="#fff">0</text>
+    <rect x="89" y="40" width="44" height="44" fill="#ef4444"/><text x="111" y="67" fill="#fff">1</text>
+    <rect x="133" y="40" width="44" height="44" fill="#f97316"/><text x="155" y="67">2</text>
+    <rect x="177" y="40" width="44" height="44" fill="#fb923c"/><text x="199" y="67">3</text>
+    <rect x="221" y="40" width="44" height="44" fill="#fbbf24"/><text x="243" y="67">4</text>
+    <rect x="265" y="40" width="44" height="44" fill="#facc15"/><text x="287" y="67">5</text>
+    <rect x="309" y="40" width="44" height="44" fill="#a3e635"/><text x="331" y="67">6</text>
+    <rect x="353" y="40" width="44" height="44" fill="#22c55e"/><text x="375" y="67">7</text>
+    <rect x="397" y="40" width="44" height="44" fill="#14b8a6"/><text x="419" y="67">8</text>
+    <rect x="441" y="40" width="44" height="44" fill="#06b6d4"/><text x="463" y="67">9</text>
+    <rect x="485" y="40" width="44" height="44" fill="#3b82f6"/><text x="507" y="67" fill="#fff">10</text>
+    <rect x="529" y="40" width="44" height="44" fill="#2563eb"/><text x="551" y="67" fill="#fff">11</text>
+    <rect x="573" y="40" width="44" height="44" fill="#4f46e5"/><text x="595" y="67" fill="#fff">12</text>
+    <rect x="617" y="40" width="44" height="44" fill="#6d28d9"/><text x="639" y="67" fill="#fff">13</text>
+    <rect x="661" y="40" width="44" height="44" fill="#581c87"/><text x="683" y="67" fill="#fff">14</text>
+  </g>
+  <line x1="340" y1="105" x2="55" y2="105" stroke="#334155" stroke-width="2" marker-end="url(#t3ArrPH)"/>
+  <text x="200" y="125" text-anchor="middle" font-size="12" fill="#991b1b" font-weight="bold">increasingly acidic — more H⁺(aq)</text>
+  <line x1="410" y1="105" x2="700" y2="105" stroke="#334155" stroke-width="2" marker-end="url(#t3ArrPH)"/>
+  <text x="555" y="125" text-anchor="middle" font-size="12" fill="#3730a3" font-weight="bold">increasingly alkaline — more OH⁻(aq)</text>
+  <text x="375" y="125" text-anchor="middle" font-size="12" fill="#166534" font-weight="bold">neutral</text>
+  <g font-size="11" fill="#64748b" text-anchor="middle">
+    <text x="111" y="155">stomach acid</text><text x="111" y="170">HCl ≈ 1</text>
+    <text x="243" y="155">vinegar ≈ 3</text>
+    <text x="375" y="155">pure water</text><text x="375" y="170">= 7</text>
+    <text x="507" y="155">indigestion</text><text x="507" y="170">tablets ≈ 9–10</text>
+    <text x="639" y="155">oven cleaner</text><text x="639" y="170">NaOH ≈ 13–14</text>
+  </g>
+  <text x="360" y="200" text-anchor="middle" font-size="11" fill="#64748b">pH &lt; 7 acidic; pH = 7 neutral; pH &gt; 7 alkaline.</text>
+</svg>
+
+<h3>What makes a solution acidic or alkaline?</h3>
+<div class="definition">
+  <strong>Acids</strong> are substances that produce <strong>hydrogen ions, H⁺(aq)</strong>, when dissolved in water.<br>
+  <strong>Alkalis</strong> are substances that produce <strong>hydroxide ions, OH⁻(aq)</strong>, when dissolved in water.
+</div>
+<table>
+  <thead><tr><th>Acid</th><th>Formula</th><th>Ions in solution</th><th>Salts formed</th></tr></thead>
+  <tbody>
+    <tr><td>Hydrochloric acid</td><td>HCl</td><td>H⁺ + Cl⁻</td><td>Chlorides</td></tr>
+    <tr><td>Sulfuric acid</td><td>H₂SO₄</td><td>2H⁺ + SO₄²⁻</td><td>Sulfates</td></tr>
+    <tr><td>Nitric acid</td><td>HNO₃</td><td>H⁺ + NO₃⁻</td><td>Nitrates</td></tr>
+  </tbody>
+</table>
+<ul>
+  <li>The <strong>higher</strong> the concentration of H⁺ ions, the <strong>lower</strong> the pH.</li>
+  <li>The <strong>higher</strong> the concentration of OH⁻ ions, the <strong>higher</strong> the pH.</li>
+  <li><strong>(HT)</strong> pH is a logarithmic scale: each time the <strong>H⁺ concentration increases by a factor of 10, the pH decreases by 1</strong>. A solution of pH 2 has 10 times the H⁺ concentration of one at pH 3, and 100 times that of one at pH 4.</li>
+</ul>
+<div class="worked">
+<strong>(HT)</strong> Solution A has pH 1 and solution B has pH 4. How many times greater is the H⁺ ion concentration in A than in B?<br>
+Difference in pH = 4 − 1 = 3 → factor = 10³ = <strong>1000 times</strong> greater.
+</div>
+
+<h3>Concentrated and dilute <strong>(HT)</strong></h3>
+<div class="definition">
+  <strong>Concentration</strong> describes the <strong>amount of a substance (solute) in a given volume of solution</strong>.<br>
+  A <strong>concentrated</strong> acid has a large amount of acid dissolved per unit volume; a <strong>dilute</strong> acid has a small amount of acid per unit volume.
+</div>
+
+<h3>Strong and weak acids <strong>(HT)</strong></h3>
+<div class="definition">
+  A <strong>strong acid</strong> is <strong>completely dissociated</strong> (ionised) into ions in aqueous solution — e.g. hydrochloric, nitric and sulfuric acids: HCl(aq) → H⁺(aq) + Cl⁻(aq).<br>
+  A <strong>weak acid</strong> is only <strong>partially dissociated</strong> in aqueous solution — most of its molecules stay un-ionised — e.g. ethanoic, citric and carbonic acids: CH₃COOH(aq) ⇌ CH₃COO⁻(aq) + H⁺(aq).
+</div>
+
+<!-- Strong vs weak acid -->
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">(HT) Strong vs weak acid at the same concentration</text>
+  <!-- strong -->
+  <path d="M60 50 L60 210 Q60 220 70 220 L290 220 Q300 220 300 210 L300 50" fill="#eff6ff" stroke="#334155" stroke-width="2"/>
+  <g font-size="12" font-weight="bold" text-anchor="middle">
+    <g fill="#dc2626"><text x="90" y="90">H⁺</text><text x="150" y="80">H⁺</text><text x="220" y="95">H⁺</text><text x="270" y="130">H⁺</text><text x="110" y="160">H⁺</text><text x="190" y="190">H⁺</text></g>
+    <g fill="#16a34a"><text x="120" y="115">Cl⁻</text><text x="190" y="130">Cl⁻</text><text x="250" y="175">Cl⁻</text><text x="80" y="200">Cl⁻</text><text x="160" y="150">Cl⁻</text><text x="240" y="70">Cl⁻</text></g>
+  </g>
+  <text x="180" y="245" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Strong (HCl): fully dissociated</text>
+  <!-- weak -->
+  <path d="M420 50 L420 210 Q420 220 430 220 L650 220 Q660 220 660 210 L660 50" fill="#eff6ff" stroke="#334155" stroke-width="2"/>
+  <g font-size="11" font-weight="bold" text-anchor="middle" fill="#475569">
+    <text x="470" y="80">HA</text><text x="540" y="75">HA</text><text x="610" y="90">HA</text><text x="460" y="140">HA</text>
+    <text x="530" y="170">HA</text><text x="620" y="160">HA</text><text x="580" y="200">HA</text><text x="480" y="200">HA</text>
+  </g>
+  <g font-size="12" font-weight="bold" text-anchor="middle">
+    <text x="560" y="125" fill="#dc2626">H⁺</text><text x="600" y="128" fill="#16a34a">A⁻</text>
+  </g>
+  <text x="540" y="245" text-anchor="middle" font-size="13" font-weight="bold" fill="#334155">Weak (e.g. ethanoic): few molecules ionised</text>
+  <text x="360" y="130" text-anchor="middle" font-size="12" fill="#64748b">same</text>
+  <text x="360" y="146" text-anchor="middle" font-size="12" fill="#64748b">concentration</text>
+</svg>
+
+<p>At the <strong>same concentration</strong>, a strong acid has a <strong>higher H⁺ concentration</strong> and therefore a <strong>lower pH</strong> than a weak acid. It also reacts faster with metals and carbonates, because there are more H⁺ ions to collide with.</p>
+<table>
+  <thead><tr><th></th><th>Strong / weak</th><th>Concentrated / dilute</th></tr></thead>
+  <tbody>
+    <tr><td>Describes</td><td>The <strong>proportion</strong> of acid molecules that dissociate into ions</td><td>The <strong>amount</strong> of acid dissolved per unit volume</td></tr>
+    <tr><td>Can be changed by adding water?</td><td>No — it is a property of the acid</td><td>Yes — adding water dilutes it</td></tr>
+    <tr><td>Example</td><td>Hydrochloric acid is always strong</td><td>You can have dilute HCl or concentrated HCl</td></tr>
+  </tbody>
+</table>
+<div class="exam-tip">Never use "strong" to mean "concentrated". A <em>dilute</em> solution of a <em>strong</em> acid (e.g. 0.01 mol dm⁻³ HCl) and a <em>concentrated</em> solution of a <em>weak</em> acid are both possible. In a 4-6 mark answer, define both pairs of terms explicitly in terms of <em>dissociation</em> and <em>amount per volume</em>.</div>
+
+<h2>3.2 Bases, Alkalis and Neutralisation</h2>
+<div class="definition">
+  A <strong>base</strong> is a substance that reacts with an acid to form a salt and water only — typically a <strong>metal oxide</strong> or <strong>metal hydroxide</strong>.<br>
+  An <strong>alkali</strong> is a base that is <strong>soluble in water</strong> (e.g. sodium hydroxide, potassium hydroxide, calcium hydroxide). All alkalis are bases, but not all bases are alkalis (copper(II) oxide is an insoluble base).
+</div>
+<p><strong>Neutralisation</strong> is the reaction between an acid and a base. In terms of ions, the hydrogen ions from the acid react with hydroxide ions from the alkali to make water:</p>
+<span class="eq">H⁺(aq) + OH⁻(aq) → H₂O(l)</span>
+<p>This ionic equation is the same for <em>every</em> acid–alkali neutralisation, whichever acid and alkali are used. The other ions (e.g. Na⁺ and Cl⁻) are spectator ions that make up the salt.</p>
+
+<h3>Reactions of acids — general equations</h3>
+<table>
+  <thead><tr><th>Reaction</th><th>General equation</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Acid + metal</td><td>acid + metal → salt + hydrogen</td><td>Zn(s) + H₂SO₄(aq) → ZnSO₄(aq) + H₂(g)</td></tr>
+    <tr><td>Acid + metal oxide</td><td>acid + metal oxide → salt + water</td><td>CuO(s) + H₂SO₄(aq) → CuSO₄(aq) + H₂O(l)</td></tr>
+    <tr><td>Acid + metal hydroxide</td><td>acid + metal hydroxide → salt + water</td><td>NaOH(aq) + HCl(aq) → NaCl(aq) + H₂O(l)</td></tr>
+    <tr><td>Acid + metal carbonate</td><td>acid + metal carbonate → salt + water + carbon dioxide</td><td>CaCO₃(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l) + CO₂(g)</td></tr>
+  </tbody>
+</table>
+<ul>
+  <li>Only metals <strong>more reactive than hydrogen</strong> react with dilute acids (e.g. Mg, Zn, Fe). Copper, silver and gold do not react. Very reactive metals (sodium, potassium) react dangerously and are never added to acids in school.</li>
+  <li>With metals and carbonates you see <strong>effervescence</strong> (fizzing) as a gas is produced, and the solid disappears.</li>
+  <li>Naming the salt: first part from the metal (or ammonium), second part from the acid — hydrochloric → <strong>chloride</strong>, sulfuric → <strong>sulfate</strong>, nitric → <strong>nitrate</strong>.</li>
+</ul>
+<div class="worked">
+Write a balanced equation for magnesium oxide reacting with nitric acid.<br>
+Salt: magnesium nitrate, Mg(NO₃)₂ (Mg²⁺ and two NO₃⁻).<br>
+<strong>MgO(s) + 2HNO₃(aq) → Mg(NO₃)₂(aq) + H₂O(l)</strong>
+</div>
+
+<h3>Tests for hydrogen and carbon dioxide</h3>
+<table>
+  <thead><tr><th>Gas</th><th>Test</th><th>Positive result</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Hydrogen, H₂</strong></td><td>Hold a <strong>lighted splint</strong> at the mouth of the test tube</td><td>Burns with a <strong>squeaky pop</strong> (hydrogen reacts with oxygen to make water)</td></tr>
+    <tr><td><strong>Carbon dioxide, CO₂</strong></td><td>Bubble the gas through <strong>limewater</strong> (calcium hydroxide solution)</td><td>Limewater turns <strong>milky / cloudy</strong> (a white precipitate of calcium carbonate forms)</td></tr>
+  </tbody>
+</table>
+<p>Limewater reaction: Ca(OH)₂(aq) + CO₂(g) → CaCO₃(s) + H₂O(l). Other gas tests you will use alongside electrolysis: <strong>oxygen</strong> relights a <strong>glowing splint</strong>; <strong>chlorine</strong> turns damp blue litmus paper red and then <strong>bleaches</strong> it white.</p>
+<div class="exam-tip">Do not mix up the splints: <strong>lighted</strong> splint + squeaky pop = hydrogen; <strong>glowing</strong> splint that relights = oxygen. Carbon dioxide <em>puts out</em> a lighted splint, but so do other gases — the only accepted test for CO₂ is limewater.</div>
+
+<h2>3.3 Core Practical: pH Change When Calcium Oxide or Calcium Hydroxide is Added to Hydrochloric Acid</h2>
+<p><strong>Aim:</strong> to investigate how the pH of a fixed volume of dilute hydrochloric acid changes as powdered calcium hydroxide (or calcium oxide) is added in small portions.</p>
+<span class="eq">Ca(OH)₂(s) + 2HCl(aq) → CaCl₂(aq) + 2H₂O(l)</span>
+<span class="eq">CaO(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l)</span>
+
+<h3>Method</h3>
+<ol>
+  <li>Measure <strong>50 cm³</strong> of dilute hydrochloric acid (e.g. 0.1 mol dm⁻³) using a measuring cylinder and pour into a beaker.</li>
+  <li>Measure the starting pH, using a <strong>pH meter</strong> (calibrated first) or by placing a drop of solution on <strong>universal indicator paper</strong> with a glass rod and comparing with the colour chart.</li>
+  <li>Weigh out about <strong>0.3 g</strong> of calcium hydroxide powder on a mass balance and add it to the acid. <strong>Stir</strong> thoroughly with a glass rod.</li>
+  <li>Record the pH again.</li>
+  <li>Repeat steps 3–4 until about 10 portions have been added and the pH no longer changes.</li>
+  <li>Plot a graph of <strong>pH (y-axis) against total mass of calcium hydroxide added (x-axis)</strong>.</li>
+</ol>
+
+<!-- pH curve CP -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t3AxCP" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Typical results: pH against mass of calcium hydroxide added</text>
+  <line x1="90" y1="250" x2="640" y2="250" stroke="#334155" stroke-width="2" marker-end="url(#t3AxCP)"/>
+  <line x1="90" y1="250" x2="90" y2="35" stroke="#334155" stroke-width="2" marker-end="url(#t3AxCP)"/>
+  <text x="365" y="285" text-anchor="middle" font-size="13" fill="#334155">Total mass of Ca(OH)₂ added / g</text>
+  <text x="40" y="150" text-anchor="middle" font-size="13" fill="#334155" transform="rotate(-90 40 150)">pH</text>
+  <g font-size="11" fill="#334155" text-anchor="end">
+    <text x="84" y="236">1</text><text x="84" y="164">5</text><text x="84" y="128">7</text><text x="84" y="56">11</text>
+  </g>
+  <line x1="90" y1="124" x2="630" y2="124" stroke="#94a3b8" stroke-dasharray="4,4"/>
+  <text x="635" y="128" font-size="11" fill="#166534">neutral</text>
+  <polyline points="100,232 150,230 200,226 250,220 290,208 315,180 330,124 345,72 370,52 420,46 480,44 560,44 620,44" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <g fill="#1e40af">
+    <circle cx="100" cy="232" r="4"/><circle cx="150" cy="230" r="4"/><circle cx="200" cy="226" r="4"/><circle cx="250" cy="220" r="4"/>
+    <circle cx="290" cy="208" r="4"/><circle cx="330" cy="124" r="4"/><circle cx="370" cy="52" r="4"/><circle cx="420" cy="46" r="4"/>
+    <circle cx="480" cy="44" r="4"/><circle cx="560" cy="44" r="4"/><circle cx="620" cy="44" r="4"/>
+  </g>
+  <g font-size="11" fill="#334155">
+    <text x="105" y="198">acid in excess: pH rises slowly</text>
+    <text x="345" y="140">rapid rise near neutralisation</text>
+    <text x="430" y="72">excess Ca(OH)₂: pH levels off ≈ 11–12</text>
+  </g>
+</svg>
+
+<h3>Analysis and evaluation</h3>
+<ul>
+  <li>At first the pH rises only slowly, because the acid is in excess and most H⁺ ions remain.</li>
+  <li>Close to the neutralisation point the pH rises <strong>very steeply</strong> — a small amount of base removes the last H⁺ ions.</li>
+  <li>After neutralisation, extra calcium hydroxide makes the solution alkaline. The pH levels off at about 12 because calcium hydroxide is only <strong>slightly soluble</strong> — undissolved white solid remains in the beaker.</li>
+  <li>The mass needed to neutralise the acid can be read from the steepest part of the graph (where pH = 7).</li>
+</ul>
+<table>
+  <thead><tr><th>Issue</th><th>Improvement / explanation</th></tr></thead>
+  <tbody>
+    <tr><td>Universal indicator paper only gives whole-number pH and colour matching is subjective</td><td>Use a calibrated <strong>pH meter</strong> for more precise, objective readings</td></tr>
+    <tr><td>Powder not fully reacted when pH read</td><td>Stir for the same time (e.g. 30 s) after each addition before measuring</td></tr>
+    <tr><td>Too few points near neutralisation</td><td>Use smaller portions (e.g. 0.1 g) near the steep part of the curve</td></tr>
+    <tr><td>Hazards</td><td>Calcium hydroxide and calcium oxide are irritant/corrosive to eyes — wear eye protection; calcium oxide reacts exothermically with water</td></tr>
+  </tbody>
+</table>
+
+<h2>3.4 Solubility of Salts and Precipitation</h2>
+<p>You must recall the general <strong>solubility rules</strong> for common ionic compounds in water:</p>
+<table>
+  <thead><tr><th>Compounds</th><th>Soluble</th><th>Insoluble (main exceptions)</th></tr></thead>
+  <tbody>
+    <tr><td>Common <strong>sodium, potassium and ammonium</strong> salts</td><td><strong>All</strong> soluble</td><td>—</td></tr>
+    <tr><td><strong>Nitrates</strong></td><td><strong>All</strong> soluble</td><td>—</td></tr>
+    <tr><td>Common <strong>chlorides</strong></td><td>Soluble</td><td><strong>Silver chloride</strong> and <strong>lead chloride</strong></td></tr>
+    <tr><td>Common <strong>sulfates</strong></td><td>Soluble</td><td><strong>Lead, barium and calcium</strong> sulfates</td></tr>
+    <tr><td>Common <strong>carbonates</strong> and <strong>hydroxides</strong></td><td>Only those of <strong>sodium, potassium and ammonium</strong></td><td>All others insoluble (e.g. CaCO₃, CuCO₃, Cu(OH)₂, Fe(OH)₃)</td></tr>
+  </tbody>
+</table>
+<div class="definition">
+  A <strong>precipitate</strong> is an insoluble solid that forms when two solutions are mixed. A <strong>precipitation reaction</strong> happens when the positive ion from one solution and the negative ion from another form an insoluble salt.
+</div>
+<div class="worked">
+Will a precipitate form when barium chloride solution is mixed with sodium sulfate solution? If so, name it.<br>
+Possible new combinations: barium sulfate and sodium chloride. Sodium salts are all soluble, but <strong>barium sulfate is insoluble</strong> → a <strong>white precipitate of barium sulfate</strong> forms.<br>
+BaCl₂(aq) + Na₂SO₄(aq) → BaSO₄(s) + 2NaCl(aq) &nbsp; (<strong>(HT)</strong> ionic: Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s))
+</div>
+<div class="exam-tip">To predict a precipitate, swap partners: write down the two "new" combinations of ions and check each against the solubility rules. If either is insoluble, a precipitate forms. Remember that sodium, potassium, ammonium and nitrate compounds are <em>always</em> soluble, so they are never the precipitate.</div>
+
+<h2>3.5 Making Salts</h2>
+<p>The method you use to make a salt depends on whether the salt is <strong>soluble</strong> and whether the base you start with is <strong>soluble</strong>.</p>
+
+<!-- Choosing method flowchart -->
+<svg viewBox="0 0 720 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t3ArrFl" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Choosing a method to make a salt</text>
+  <rect x="270" y="35" width="180" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="62" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a8a">Is the salt soluble?</text>
+  <line x1="300" y1="80" x2="180" y2="118" stroke="#334155" stroke-width="2" marker-end="url(#t3ArrFl)"/>
+  <text x="225" y="94" font-size="12" fill="#166534" font-weight="bold">yes</text>
+  <line x1="420" y1="80" x2="560" y2="118" stroke="#334155" stroke-width="2" marker-end="url(#t3ArrFl)"/>
+  <text x="500" y="94" font-size="12" fill="#991b1b" font-weight="bold">no</text>
+  <rect x="80" y="120" width="200" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="180" y="140" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a8a">Is the other reactant</text>
+  <text x="180" y="156" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a8a">soluble (an alkali)?</text>
+  <rect x="470" y="120" width="210" height="64" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="575" y="142" text-anchor="middle" font-size="13" font-weight="bold" fill="#991b1b">Precipitation</text>
+  <text x="575" y="160" text-anchor="middle" font-size="11" fill="#991b1b">mix two solutions, filter,</text>
+  <text x="575" y="175" text-anchor="middle" font-size="11" fill="#991b1b">wash, dry</text>
+  <line x1="130" y1="165" x2="90" y2="200" stroke="#334155" stroke-width="2" marker-end="url(#t3ArrFl)"/>
+  <text x="85" y="185" font-size="12" fill="#991b1b" font-weight="bold">no</text>
+  <line x1="230" y1="165" x2="290" y2="200" stroke="#334155" stroke-width="2" marker-end="url(#t3ArrFl)"/>
+  <text x="270" y="182" font-size="12" fill="#166534" font-weight="bold">yes</text>
+  <rect x="10" y="202" width="200" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="110" y="222" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">Excess insoluble base /</text>
+  <text x="110" y="238" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">metal / carbonate</text>
+  <text x="110" y="254" text-anchor="middle" font-size="11" fill="#166534">filter off excess, crystallise</text>
+  <rect x="230" y="202" width="200" height="60" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="330" y="222" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">Titration</text>
+  <text x="330" y="238" text-anchor="middle" font-size="11" fill="#92400e">find exact volumes, repeat</text>
+  <text x="330" y="254" text-anchor="middle" font-size="11" fill="#92400e">without indicator, crystallise</text>
+</svg>
+
+<h3>Method 1: soluble salt from an insoluble reactant (excess solid)</h3>
+<p>When the base (or metal, or carbonate) is <strong>insoluble</strong>, add it <strong>in excess</strong> to the acid. Using excess makes sure <strong>all the acid reacts</strong>, so the final solution contains only salt and water. The unreacted solid is easy to remove by filtration because it is insoluble.</p>
+
+<h3>Core Practical: preparing pure, dry hydrated copper sulfate crystals from copper oxide</h3>
+<span class="eq">CuO(s) + H₂SO₄(aq) → CuSO₄(aq) + H₂O(l)</span>
+<ol>
+  <li>Measure about 20 cm³ of dilute <strong>sulfuric acid</strong> into a beaker and <strong>warm it gently</strong> (e.g. over a water bath or low Bunsen flame) — warming speeds up the reaction. Do not boil.</li>
+  <li>Add <strong>copper(II) oxide</strong> powder, a spatula at a time, stirring with a glass rod. Continue until <strong>no more dissolves</strong> and a little black solid remains — this shows the copper oxide is <strong>in excess</strong> and all the acid has been used up.</li>
+  <li><strong>Filter</strong> the warm mixture to remove the excess copper oxide. The filtrate is blue copper sulfate solution.</li>
+  <li>Pour the filtrate into an evaporating basin and <strong>heat</strong> it (over a water bath) to evaporate some of the water, until crystals start to form on a cold glass rod dipped in it (point of crystallisation).</li>
+  <li>Leave the basin in a cool place for a day or so so that the solution <strong>crystallises slowly</strong>, forming blue crystals.</li>
+  <li><strong>Filter</strong> or decant off the remaining liquid, and <strong>dry the crystals</strong> by patting with filter paper (or in a warm oven, not too hot).</li>
+</ol>
+
+<!-- Copper sulfate preparation steps -->
+<svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t3ArrCu" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Preparing copper sulfate crystals: the four stages</text>
+  <!-- step 1 beaker -->
+  <path d="M40 70 L40 150 Q40 160 50 160 L130 160 Q140 160 140 150 L140 70" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect x="42" y="105" width="96" height="53" fill="#93c5fd"/>
+  <g fill="#111"><circle cx="70" cy="150" r="3"/><circle cx="90" cy="153" r="3"/><circle cx="108" cy="150" r="3"/><circle cx="80" cy="146" r="3"/></g>
+  <text x="90" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">1. Warm acid +</text>
+  <text x="90" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">excess CuO</text>
+  <line x1="150" y1="115" x2="195" y2="115" stroke="#334155" stroke-width="2" marker-end="url(#t3ArrCu)"/>
+  <!-- step 2 filter -->
+  <path d="M210 60 L290 60 L260 105 L260 125 L240 125 L240 105 Z" fill="#fef3c7" stroke="#334155" stroke-width="2"/>
+  <g fill="#111"><circle cx="245" cy="85" r="3"/><circle cx="255" cy="90" r="3"/><circle cx="250" cy="80" r="3"/></g>
+  <path d="M215 130 L215 160 Q215 168 223 168 L277 168 Q285 168 285 160 L285 130" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect x="217" y="145" width="66" height="21" fill="#60a5fa"/>
+  <text x="250" y="190" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">2. Filter off</text>
+  <text x="250" y="205" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">excess CuO</text>
+  <line x1="300" y1="115" x2="345" y2="115" stroke="#334155" stroke-width="2" marker-end="url(#t3ArrCu)"/>
+  <!-- step 3 evaporate -->
+  <path d="M360 100 Q410 150 460 100" fill="#3b82f6" stroke="#334155" stroke-width="2"/>
+  <line x1="355" y1="100" x2="465" y2="100" stroke="#334155" stroke-width="2"/>
+  <g stroke="#94a3b8" stroke-width="1.5" fill="none"><path d="M395 92 q4 -8 0 -16 q-4 -8 0 -16"/><path d="M425 92 q4 -8 0 -16 q-4 -8 0 -16"/></g>
+  <text x="410" y="170" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">3. Heat to point of</text>
+  <text x="410" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">crystallisation</text>
+  <line x1="475" y1="115" x2="520" y2="115" stroke="#334155" stroke-width="2" marker-end="url(#t3ArrCu)"/>
+  <!-- step 4 crystals -->
+  <path d="M535 100 Q590 150 645 100" fill="#dbeafe" stroke="#334155" stroke-width="2"/>
+  <line x1="530" y1="100" x2="650" y2="100" stroke="#334155" stroke-width="2"/>
+  <g fill="#2563eb" stroke="#1e3a8a"><polygon points="570,112 580,108 584,118 574,122"/><polygon points="595,118 607,114 610,126 598,128"/><polygon points="615,108 625,105 628,114 618,117"/></g>
+  <text x="590" y="170" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">4. Cool slowly; filter</text>
+  <text x="590" y="185" text-anchor="middle" font-size="12" font-weight="bold" fill="#334155">and dry the crystals</text>
+</svg>
+
+<table>
+  <thead><tr><th>Step</th><th>Reason</th></tr></thead>
+  <tbody>
+    <tr><td>Warm the acid</td><td>Increases the rate of reaction</td></tr>
+    <tr><td>Add copper oxide in excess</td><td>Ensures all the acid reacts — no acid left in the product</td></tr>
+    <tr><td>Filter</td><td>Removes unreacted (insoluble) copper oxide</td></tr>
+    <tr><td>Heat only until crystallisation point; do not evaporate to dryness</td><td>Gives larger, purer crystals; keeps the water of crystallisation (CuSO₄·5H₂O is blue; overheating gives white anhydrous CuSO₄)</td></tr>
+    <tr><td>Dry with filter paper / low-temperature oven</td><td>Removes surface water without decomposing the hydrated crystals</td></tr>
+  </tbody>
+</table>
+<div class="exam-tip">Hazards: sulfuric acid is an irritant (corrosive if concentrated) and copper oxide and copper sulfate are harmful — wear eye protection, and avoid spitting by heating gently. If asked why the acid is warmed rather than boiled: boiling would cause the acid to spit and could make it more concentrated.</div>
+
+<h3>Method 2: soluble salt from an acid and an alkali — titration</h3>
+<p>When both reactants are <strong>soluble</strong>, you cannot add "excess" and filter it off, because the excess would stay dissolved and contaminate the salt. Instead you must add the <strong>exact</strong> volume of acid needed to neutralise the alkali, found by <strong>titration</strong>. This method is used to make sodium, potassium and ammonium salts.</p>
+
+<!-- Titration apparatus -->
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Titration apparatus</text>
+  <!-- stand -->
+  <rect x="120" y="290" width="160" height="10" fill="#64748b"/>
+  <rect x="135" y="40" width="8" height="250" fill="#64748b"/>
+  <rect x="143" y="80" width="60" height="8" fill="#64748b"/>
+  <!-- burette -->
+  <rect x="200" y="40" width="20" height="170" fill="#fff" stroke="#334155" stroke-width="2"/>
+  <rect x="202" y="70" width="16" height="138" fill="#fecaca"/>
+  <g stroke="#334155" stroke-width="1">
+    <line x1="200" y1="80" x2="208" y2="80"/><line x1="200" y1="100" x2="208" y2="100"/><line x1="200" y1="120" x2="208" y2="120"/>
+    <line x1="200" y1="140" x2="208" y2="140"/><line x1="200" y1="160" x2="208" y2="160"/><line x1="200" y1="180" x2="208" y2="180"/>
+  </g>
+  <path d="M200 210 L220 210 L213 225 L207 225 Z" fill="#fff" stroke="#334155" stroke-width="2"/>
+  <rect x="196" y="214" width="28" height="6" fill="#334155"/>
+  <line x1="210" y1="225" x2="210" y2="240" stroke="#334155" stroke-width="2"/>
+  <!-- conical flask -->
+  <path d="M200 245 L220 245 L220 255 L250 285 L170 285 L200 255 Z" fill="#fff" stroke="#334155" stroke-width="2"/>
+  <path d="M188 270 L232 270 L250 285 L170 285 Z" fill="#fbcfe8"/>
+  <rect x="150" y="286" width="120" height="4" fill="#fff" stroke="#94a3b8"/>
+  <g font-size="12" fill="#334155">
+    <text x="240" y="60">burette (acid), read to 0.05 cm³</text>
+    <text x="240" y="219">tap — add dropwise near end point</text>
+    <text x="265" y="268">conical flask: 25.0 cm³ alkali (from a pipette)</text>
+    <text x="265" y="284">+ a few drops of indicator (e.g. phenolphthalein)</text>
+    <text x="292" y="303">white tile under flask: shows colour change clearly</text>
+  </g>
+  <rect x="470" y="80" width="200" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="570" y="102" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">End point</text>
+  <text x="570" y="122" text-anchor="middle" font-size="11" fill="#334155">phenolphthalein:</text>
+  <text x="570" y="137" text-anchor="middle" font-size="11" fill="#334155">pink → colourless</text>
+  <text x="570" y="157" text-anchor="middle" font-size="11" fill="#334155">methyl orange:</text>
+  <text x="570" y="172" text-anchor="middle" font-size="11" fill="#334155">yellow → orange (red if overshot)</text>
+</svg>
+
+<ol>
+  <li>Use a <strong>pipette</strong> (with pipette filler) to measure exactly 25.0 cm³ of alkali (e.g. sodium hydroxide) into a conical flask. Add a few drops of a suitable indicator (phenolphthalein or methyl orange — <em>not</em> universal indicator, whose gradual colour change gives no sharp end point).</li>
+  <li>Fill a <strong>burette</strong> with the acid and record the starting volume (read the bottom of the meniscus at eye level).</li>
+  <li>Add the acid to the alkali while <strong>swirling</strong> the flask, adding <strong>drop by drop</strong> near the end point, until the indicator just changes colour. Record the final burette reading; volume added = final − initial (the <strong>titre</strong>).</li>
+  <li>Repeat to get <strong>concordant</strong> results (titres within 0.10 cm³ of each other) and calculate the mean.</li>
+  <li>Now <strong>repeat the titration without the indicator</strong>, adding exactly the mean volume of acid to a fresh 25.0 cm³ of alkali. (Alternatively, remove the indicator by adding activated charcoal and filtering.)</li>
+  <li>Heat the resulting salt solution to the point of crystallisation, leave it to cool and crystallise, then filter and dry the crystals.</li>
+</ol>
+<div class="exam-tip">Why must the titration be repeated without indicator? The indicator is a dye that would otherwise <em>contaminate</em> the salt crystals. Why can't you add excess alkali and filter? Because the alkali is <em>soluble</em> and cannot be removed by filtering — the salt would be impure.</div>
+
+<h3>Method 3: insoluble salts — precipitation</h3>
+<p>An <strong>insoluble salt</strong> is made by mixing two solutions, one containing its positive ion and one containing its negative ion. For example, to make <strong>silver chloride</strong> (or lead iodide, barium sulfate, calcium carbonate):</p>
+<span class="eq">AgNO₃(aq) + NaCl(aq) → AgCl(s) + NaNO₃(aq)</span>
+<ol>
+  <li>Dissolve each soluble reactant in <strong>distilled (deionised) water</strong> — tap water contains ions that could form other precipitates.</li>
+  <li><strong>Mix</strong> the two solutions in a beaker and stir. A precipitate forms immediately.</li>
+  <li><strong>Filter</strong> the mixture; the insoluble salt is the residue on the filter paper.</li>
+  <li><strong>Wash</strong> the residue on the filter paper with distilled water to remove the soluble impurities (the other salt, e.g. NaNO₃, and any excess reactant).</li>
+  <li><strong>Dry</strong> the solid in a warm oven or by leaving it on filter paper.</li>
+</ol>
+<div class="worked">
+Choose two solutions to make barium sulfate by precipitation.<br>
+Need a soluble barium compound and a soluble sulfate: e.g. <strong>barium chloride</strong> (or barium nitrate) and <strong>sodium sulfate</strong> (or dilute sulfuric acid).<br>
+BaCl₂(aq) + Na₂SO₄(aq) → BaSO₄(s) + 2NaCl(aq). Filter, wash with distilled water, dry.
+</div>
+
+<h2>3.6 Electrolysis</h2>
+<div class="definition">
+  An <strong>electrolyte</strong> is an <strong>ionic compound</strong> that is <strong>molten</strong> or <strong>dissolved in water</strong>, so that its ions are free to move and it can conduct electricity.<br>
+  <strong>Electrolysis</strong> is the decomposition of an electrolyte using a direct current of electricity.
+</div>
+<ul>
+  <li>The negative electrode is the <strong>cathode</strong>; the positive electrode is the <strong>anode</strong>.</li>
+  <li>Positive ions (<strong>cations</strong>) are attracted to the cathode. Negative ions (<strong>anions</strong>) are attracted to the anode.</li>
+  <li>When ions reach the electrodes they are <strong>discharged</strong>: cations <strong>gain</strong> electrons at the cathode and anions <strong>lose</strong> electrons at the anode, forming elements.</li>
+  <li><strong>Inert electrodes</strong> (graphite or platinum) do not react; they just conduct electricity into and out of the electrolyte.</li>
+  <li>Solid ionic compounds cannot be electrolysed — the ions are fixed in the lattice and cannot move.</li>
+</ul>
+
+<!-- Electrolysis cell -->
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t3ArrIon" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+    <marker id="t3ArrEl" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Electrolysis of molten lead bromide (inert electrodes)</text>
+  <!-- power supply -->
+  <line x1="340" y1="50" x2="340" y2="70" stroke="#111" stroke-width="3"/>
+  <line x1="352" y1="55" x2="352" y2="65" stroke="#111" stroke-width="5"/>
+  <text x="330" y="45" text-anchor="end" font-size="12" fill="#111">+</text>
+  <text x="365" y="45" font-size="12" fill="#111">−</text>
+  <polyline points="340,60 230,60 230,120" fill="none" stroke="#111" stroke-width="2"/>
+  <polyline points="352,60 490,60 490,120" fill="none" stroke="#111" stroke-width="2"/>
+  <!-- electrons in wire -->
+  <line x1="250" y1="75" x2="300" y2="75" stroke="#2563eb" stroke-width="1.5" marker-end="url(#t3ArrEl)"/>
+  <text x="275" y="92" text-anchor="middle" font-size="10" fill="#2563eb">e⁻ leave anode</text>
+  <line x1="400" y1="75" x2="460" y2="75" stroke="#2563eb" stroke-width="1.5" marker-end="url(#t3ArrEl)"/>
+  <text x="430" y="92" text-anchor="middle" font-size="10" fill="#2563eb">e⁻ to cathode</text>
+  <!-- beaker -->
+  <path d="M170 110 L170 250 Q170 262 182 262 L538 262 Q550 262 550 250 L550 110" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect x="172" y="150" width="376" height="110" fill="#fde68a" opacity="0.7"/>
+  <!-- electrodes -->
+  <rect x="220" y="120" width="20" height="120" fill="#475569"/>
+  <rect x="480" y="120" width="20" height="120" fill="#475569"/>
+  <text x="237" y="113" font-size="12" font-weight="bold" fill="#991b1b">anode (+)</text>
+  <text x="483" y="113" text-anchor="end" font-size="12" font-weight="bold" fill="#1e3a8a">cathode (−)</text>
+  <!-- ions -->
+  <g font-size="13" font-weight="bold">
+    <text x="330" y="190" fill="#1e3a8a">Pb²⁺</text>
+    <text x="420" y="235" fill="#1e3a8a">Pb²⁺</text>
+    <text x="300" y="235" fill="#991b1b">Br⁻</text>
+    <text x="270" y="190" fill="#991b1b">Br⁻</text>
+  </g>
+  <line x1="365" y1="185" x2="465" y2="185" stroke="#334155" stroke-width="1.5" marker-end="url(#t3ArrIon)"/>
+  <line x1="295" y1="230" x2="250" y2="230" stroke="#334155" stroke-width="1.5" marker-end="url(#t3ArrIon)"/>
+  <!-- products -->
+  <g fill="#b45309" opacity="0.7"><circle cx="250" cy="150" r="6"/><circle cx="252" cy="135" r="5"/><circle cx="210" cy="160" r="5"/></g>
+  <rect x="470" y="240" width="40" height="8" fill="#6b7280"/>
+  <g font-size="12" fill="#334155">
+    <text x="40" y="150">brown bromine</text>
+    <text x="40" y="166">vapour at anode</text>
+    <text x="565" y="240">grey molten lead</text>
+    <text x="565" y="256">at cathode</text>
+  </g>
+  <g stroke="#94a3b8" stroke-width="1"><line x1="138" y1="156" x2="203" y2="160"/><line x1="561" y1="244" x2="513" y2="244"/></g>
+  <text x="360" y="290" text-anchor="middle" font-size="11" fill="#64748b">Heat is needed to melt the lead bromide so its ions can move. Done in a fume cupboard (bromine is toxic).</text>
+</svg>
+
+<h3>Electrolysis of molten compounds</h3>
+<p>A molten binary ionic compound contains only two kinds of ion, so the products are simple: the <strong>metal</strong> forms at the cathode and the <strong>non-metal</strong> forms at the anode.</p>
+<span class="eq">lead bromide → lead + bromine &nbsp; &nbsp; PbBr₂(l) → Pb(l) + Br₂(g)</span>
+
+<h3>Electrolysis of aqueous solutions</h3>
+<p>In an aqueous solution, water also provides ions: a very small proportion of water molecules ionise, H₂O ⇌ H⁺ + OH⁻. So there are <strong>two cations</strong> (the metal ion and H⁺) competing at the cathode and <strong>two anions</strong> (the non-metal ion and OH⁻) competing at the anode. Only one of each is discharged:</p>
+<table>
+  <thead><tr><th>Electrode</th><th>Rule</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Cathode (−)</strong></td><td><strong>Hydrogen</strong> is produced, <em>unless</em> the metal is <strong>less reactive than hydrogen</strong> (e.g. copper, silver), in which case the <strong>metal</strong> is deposited.</td></tr>
+    <tr><td><strong>Anode (+)</strong></td><td><strong>Oxygen</strong> is produced, <em>unless</em> the solution contains <strong>halide ions</strong> (Cl⁻, Br⁻, I⁻), in which case the <strong>halogen</strong> is produced. (Sulfate and nitrate ions are never discharged.)</td></tr>
+  </tbody>
+</table>
+
+<h3>Electrolytes you must know (inert electrodes)</h3>
+<table>
+  <thead><tr><th>Electrolyte</th><th>Ions present</th><th>Cathode product</th><th>Anode product</th><th>Left in solution / observations</th></tr></thead>
+  <tbody>
+    <tr><td>Molten lead bromide, PbBr₂(l)</td><td>Pb²⁺, Br⁻</td><td>Lead</td><td>Bromine</td><td>Grey liquid metal; brown vapour</td></tr>
+    <tr><td>Copper chloride solution, CuCl₂(aq)</td><td>Cu²⁺, H⁺, Cl⁻, OH⁻</td><td><strong>Copper</strong> (less reactive than H)</td><td><strong>Chlorine</strong> (halide present)</td><td>Pink-brown coating on cathode; bubbles that bleach damp litmus; blue colour fades</td></tr>
+    <tr><td>Sodium chloride solution, NaCl(aq)</td><td>Na⁺, H⁺, Cl⁻, OH⁻</td><td><strong>Hydrogen</strong> (Na more reactive than H)</td><td><strong>Chlorine</strong></td><td>Sodium hydroxide solution is left</td></tr>
+    <tr><td>Sodium sulfate solution, Na₂SO₄(aq)</td><td>Na⁺, H⁺, SO₄²⁻, OH⁻</td><td><strong>Hydrogen</strong></td><td><strong>Oxygen</strong></td><td>Only water is decomposed; sodium sulfate left unchanged</td></tr>
+    <tr><td>Water acidified with sulfuric acid</td><td>H⁺, SO₄²⁻, OH⁻</td><td><strong>Hydrogen</strong></td><td><strong>Oxygen</strong></td><td>Volume of H₂ is <strong>twice</strong> the volume of O₂ (2H₂O → 2H₂ + O₂)</td></tr>
+    <tr><td>Copper sulfate solution, CuSO₄(aq)</td><td>Cu²⁺, H⁺, SO₄²⁻, OH⁻</td><td><strong>Copper</strong></td><td><strong>Oxygen</strong></td><td>Blue colour fades as Cu²⁺ is removed; solution becomes acidic (H⁺ and SO₄²⁻ left = sulfuric acid)</td></tr>
+  </tbody>
+</table>
+<div class="exam-tip">Two quick checks: pure water conducts very poorly, so a little sulfuric acid (or sodium sulfate) is added to provide ions — the acid itself is not used up. And in NaCl(aq), sodium is <em>never</em> formed at the cathode in solution; hydrogen is, because sodium is more reactive than hydrogen.</div>
+
+<h3>Oxidation, reduction and half equations <strong>(HT)</strong></h3>
+<div class="definition">
+  <strong>Oxidation is loss of electrons; reduction is gain of electrons</strong> (OIL RIG).<br>
+  In electrolysis, <strong>reduction</strong> always happens at the <strong>cathode</strong> (positive ions gain electrons) and <strong>oxidation</strong> always happens at the <strong>anode</strong> (negative ions lose electrons).
+</div>
+<p>A <strong>half equation</strong> shows what happens at one electrode, including electrons (e⁻). Both atoms and charges must balance.</p>
+<table>
+  <thead><tr><th>Electrode</th><th>Half equation</th><th>Process</th></tr></thead>
+  <tbody>
+    <tr><td>Cathode — lead</td><td>Pb²⁺ + 2e⁻ → Pb</td><td>Reduction</td></tr>
+    <tr><td>Cathode — copper</td><td>Cu²⁺ + 2e⁻ → Cu</td><td>Reduction</td></tr>
+    <tr><td>Cathode — hydrogen</td><td>2H⁺ + 2e⁻ → H₂</td><td>Reduction</td></tr>
+    <tr><td>Anode — bromine</td><td>2Br⁻ → Br₂ + 2e⁻</td><td>Oxidation</td></tr>
+    <tr><td>Anode — chlorine</td><td>2Cl⁻ → Cl₂ + 2e⁻</td><td>Oxidation</td></tr>
+    <tr><td>Anode — oxygen</td><td>4OH⁻ → O₂ + 2H₂O + 4e⁻</td><td>Oxidation</td></tr>
+    <tr><td>Anode — copper electrode dissolving</td><td>Cu → Cu²⁺ + 2e⁻</td><td>Oxidation</td></tr>
+  </tbody>
+</table>
+<div class="worked">
+<strong>(HT)</strong> Write the half equation for the formation of aluminium at the cathode during electrolysis of molten aluminium oxide.<br>
+Aluminium ions are Al³⁺, so each needs 3 electrons: <strong>Al³⁺ + 3e⁻ → Al</strong> (reduction — electrons gained).
+</div>
+<div class="exam-tip">Electrons appear on the <em>left</em> of a cathode half equation (gained) and on the <em>right</em> of an anode half equation (lost). Check charge: in 4OH⁻ → O₂ + 2H₂O + 4e⁻ the left is 4− and the right is 4− ✓.</div>
+
+<h3>Electrolysis with copper electrodes — purifying copper</h3>
+<p>If copper sulfate solution is electrolysed using <strong>copper electrodes</strong> (not inert ones), the anode itself takes part:</p>
+<ul>
+  <li>At the <strong>anode</strong>, copper atoms lose electrons and go into solution as Cu²⁺ ions (<strong>(HT)</strong> Cu → Cu²⁺ + 2e⁻). The anode gets <strong>lighter</strong>.</li>
+  <li>At the <strong>cathode</strong>, Cu²⁺ ions gain electrons and copper is deposited (<strong>(HT)</strong> Cu²⁺ + 2e⁻ → Cu). The cathode gets <strong>heavier</strong>.</li>
+  <li>Copper ions are added at the anode at the same rate they are removed at the cathode, so the <strong>concentration and blue colour of the solution stay the same</strong>.</li>
+  <li>Ideally, the <strong>mass lost by the anode equals the mass gained by the cathode</strong>.</li>
+</ul>
+<p>This is how copper is <strong>purified</strong> industrially: the anode is a block of <strong>impure copper</strong> and the cathode is a thin sheet of <strong>pure copper</strong>. Copper from the anode transfers to the cathode; impurities do not dissolve and fall to the bottom as <strong>anode sludge</strong> (which can contain valuable metals such as silver and gold). In this case the anode loses more mass than the cathode gains.</p>
+
+<!-- Copper purification -->
+<svg viewBox="0 0 720 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t3ArrCuI" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Purifying copper by electrolysis</text>
+  <line x1="340" y1="45" x2="340" y2="65" stroke="#111" stroke-width="3"/>
+  <line x1="352" y1="50" x2="352" y2="60" stroke="#111" stroke-width="5"/>
+  <text x="330" y="42" text-anchor="end" font-size="12">+</text><text x="362" y="42" font-size="12">−</text>
+  <polyline points="340,55 230,55 230,95" fill="none" stroke="#111" stroke-width="2"/>
+  <polyline points="352,55 490,55 490,95" fill="none" stroke="#111" stroke-width="2"/>
+  <path d="M160 85 L160 245 Q160 257 172 257 L548 257 Q560 257 560 245 L560 85" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect x="162" y="120" width="396" height="135" fill="#93c5fd" opacity="0.6"/>
+  <rect x="205" y="95" width="50" height="130" fill="#b45309"/>
+  <rect x="485" y="95" width="10" height="130" fill="#ea580c"/>
+  <g fill="#78716c"><circle cx="215" cy="248" r="4"/><circle cx="230" cy="250" r="3"/><circle cx="245" cy="247" r="4"/><circle cx="222" cy="244" r="3"/></g>
+  <g font-size="13" font-weight="bold" fill="#1e3a8a"><text x="330" y="178">Cu²⁺</text><text x="380" y="210">Cu²⁺</text></g>
+  <line x1="270" y1="150" x2="470" y2="150" stroke="#2563eb" stroke-width="2" marker-end="url(#t3ArrCuI)"/>
+  <g font-size="12" fill="#334155">
+    <text x="20" y="110">anode (+):</text>
+    <text x="20" y="126">impure copper</text>
+    <text x="20" y="142">Cu → Cu²⁺ + 2e⁻</text>
+    <text x="20" y="158">(gets thinner)</text>
+    <text x="20" y="250">anode sludge</text>
+    <line x1="98" y1="246" x2="208" y2="247" stroke="#94a3b8" stroke-width="1"/>
+    <text x="575" y="110">cathode (−):</text>
+    <text x="575" y="126">pure copper</text>
+    <text x="575" y="142">Cu²⁺ + 2e⁻ → Cu</text>
+    <text x="575" y="158">(gets thicker)</text>
+    <text x="405" y="244" text-anchor="middle">copper sulfate solution — colour stays the same</text>
+  </g>
+</svg>
+
+<h2>3.7 Core Practical: Electrolysis of Copper Sulfate Solution</h2>
+<p><strong>Aim:</strong> to investigate the electrolysis of copper sulfate solution using (a) inert (graphite) electrodes and (b) copper electrodes, and how the mass of copper electrodes changes with current.</p>
+
+<h3>Part A — inert (graphite) electrodes</h3>
+<ol>
+  <li>Pour copper sulfate solution into a beaker. Place two graphite rods into it, not touching, held in a lid or electrode holder.</li>
+  <li>Connect to a low-voltage d.c. supply (e.g. 4 V) and switch on.</li>
+  <li>Observe: a <strong>pink-brown deposit of copper</strong> forms on the cathode; <strong>bubbles of oxygen</strong> form at the anode (test with a glowing splint, which relights).</li>
+</ol>
+
+<h3>Part B — copper electrodes</h3>
+<ol>
+  <li>Clean two copper strips with emery paper, wash with propanone (flammable — no flames) or water, dry, and <strong>weigh</strong> each one. Label anode and cathode.</li>
+  <li>Set up the circuit with an <strong>ammeter</strong> and a <strong>variable resistor</strong> in series with the cell. Adjust the resistor so the current is a set value (e.g. 0.2 A).</li>
+  <li>Electrolyse for a fixed time (e.g. 20 minutes), keeping the current constant.</li>
+  <li>Remove the electrodes, rinse <strong>gently</strong> with distilled water then propanone, allow to dry, and <strong>reweigh</strong>.</li>
+  <li>Repeat with fresh electrodes at different currents (e.g. 0.3, 0.4, 0.5 A).</li>
+  <li>Calculate the change in mass of each electrode; plot <strong>change in mass against current</strong>.</li>
+</ol>
+<table>
+  <thead><tr><th>Variable</th><th>In this practical</th></tr></thead>
+  <tbody>
+    <tr><td>Independent</td><td>Current (A)</td></tr>
+    <tr><td>Dependent</td><td>Change in mass of each electrode (g)</td></tr>
+    <tr><td>Control</td><td>Time, concentration and volume of solution, size of electrodes and distance between them, temperature</td></tr>
+  </tbody>
+</table>
+<h3>Expected results</h3>
+<ul>
+  <li>The <strong>cathode gains mass</strong> and the <strong>anode loses mass</strong>; the two changes are about equal.</li>
+  <li>The change in mass is <strong>directly proportional to the current</strong> (a straight line through the origin), because the amount of copper transferred is proportional to the charge passed (charge = current × time).</li>
+</ul>
+<div class="worked">
+In 20 minutes at 0.40 A, a copper cathode increases from 12.45 g to 12.61 g, and the anode decreases from 12.50 g to 12.33 g. Calculate the changes and comment.<br>
+Cathode: 12.61 − 12.45 = <strong>+0.16 g</strong>; anode: 12.33 − 12.50 = <strong>−0.17 g</strong>.<br>
+The anode loss is slightly larger than the cathode gain — some copper may have flaked off the anode or been lost from the cathode while rinsing/drying.
+</div>
+<div class="exam-tip">Common sources of error to evaluate: copper deposit flaking off the cathode when rinsing (rinse gently, don't wipe); electrodes not completely dry when reweighed (dry thoroughly — water adds mass); current drifting during the run (keep adjusting the variable resistor). Hazards: copper sulfate is harmful and an irritant; propanone is highly flammable.</div>
+
+<h2>Key Points Summary</h2>
+<ul>
+  <li>Indicators: litmus (red/blue), methyl orange (red/yellow), phenolphthalein (colourless/pink). Universal indicator or a pH meter measures pH.</li>
+  <li>Acids produce H⁺(aq); alkalis produce OH⁻(aq). More H⁺ → lower pH; more OH⁻ → higher pH.</li>
+  <li><strong>(HT)</strong> Factor of 10 change in [H⁺] = 1 pH unit. Concentrated/dilute = amount per volume; strong/weak = complete/partial dissociation.</li>
+  <li>Bases neutralise acids to form a salt and water; alkalis are soluble bases. Neutralisation: H⁺ + OH⁻ → H₂O.</li>
+  <li>Acid + metal → salt + hydrogen; acid + metal oxide/hydroxide → salt + water; acid + carbonate → salt + water + CO₂.</li>
+  <li>Tests: hydrogen — lighted splint, squeaky pop; carbon dioxide — limewater turns milky.</li>
+  <li>Core practical: adding Ca(OH)₂/CaO to HCl — pH rises slowly, then steeply, then levels off at about 12.</li>
+  <li>Solubility: Na, K, NH₄⁺ salts and nitrates soluble; chlorides soluble except Ag and Pb; sulfates soluble except Pb, Ba, Ca; carbonates and hydroxides insoluble except Na, K, NH₄⁺.</li>
+  <li>Soluble salt from insoluble base: excess solid, filter, crystallise (core practical: CuSO₄·5H₂O from CuO). From an alkali: titration, repeat without indicator, crystallise. Insoluble salt: precipitation, filter, wash, dry.</li>
+  <li>Electrolysis: electrolyte = molten or dissolved ionic compound; cations to cathode (−), anions to anode (+).</li>
+  <li>Aqueous solutions: cathode gives H₂ unless the metal is less reactive than hydrogen; anode gives O₂ unless halide ions are present.</li>
+  <li>Know the products for PbBr₂(l), CuCl₂(aq), NaCl(aq), Na₂SO₄(aq), acidified water and CuSO₄(aq).</li>
+  <li><strong>(HT)</strong> Reduction (gain of e⁻) at the cathode; oxidation (loss of e⁻) at the anode; write balanced half equations.</li>
+  <li>Copper electrodes: anode dissolves, cathode gains copper, solution colour unchanged — used to purify copper. Core practical: mass change ∝ current.</li>
+</ul>
+
+</div>
+</body>
+</html>

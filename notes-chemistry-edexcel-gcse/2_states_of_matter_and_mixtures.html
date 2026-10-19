@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Edexcel GCSE Chemistry — Topic 2: States of Matter and Mixtures</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+    .container { max-width: 820px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+    .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+    h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+    h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+    p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+    strong { color: #1a1a2e; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+    th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+    tr:nth-child(even) { background: #f9fafb; }
+    .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+    .worked { background: #ecfdf5; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .worked::before { content: "Worked Example: "; font-weight: 700; color: #0f5132; }
+    code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.95em; }
+    .eq { display: block; text-align: center; font-size: 1.1rem; padding: 10px 16px; margin: 10px 0; background: #f0f4ff; border-radius: 6px; border: 1px solid #cfd9ff; }
+    @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .worked { break-inside: avoid; } h2 { break-after: avoid; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning
+  </a>
+</div>
+
+<h1>Topic 2 — States of Matter and Mixtures</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Chemistry (1CH0) &mdash; Paper 1</p>
+
+<p>This topic explains how the <strong>particle model</strong> accounts for solids, liquids and gases and the changes between them, and then uses those ideas to separate mixtures. Every separation technique works because the substances in a mixture differ in a physical property &mdash; particle size, solubility, boiling point, or how strongly they are attracted to a stationary phase. If you can name the property, you can choose the technique. The topic finishes with the treatment of water for drinking and for chemical analysis, and includes one core practical (inks: distillation and chromatography).</p>
+
+<p>Content marked <strong>(HT)</strong> is Higher Tier only &mdash; this topic has no Higher-only points. Topic 2 is shared with GCSE Combined Science; there is no chemistry-only content in it.</p>
+
+<h2>2.1 The Three States of Matter</h2>
+<p>All matter is made of tiny particles (atoms, molecules or ions). The <strong>particle model</strong> represents each particle as a small solid sphere. The state of a substance depends on how the particles are arranged, how they move and how much energy they have &mdash; and that depends on the strength of the forces between them compared with the energy of the particles.</p>
+
+<!-- Particle arrangements -->
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Particle arrangement in solids, liquids and gases</text>
+  <!-- solid -->
+  <rect x="40" y="40" width="190" height="160" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <g fill="#3b82f6" stroke="#1e3a8a" stroke-width="1">
+    <circle cx="80" cy="120" r="13"/><circle cx="107" cy="120" r="13"/><circle cx="134" cy="120" r="13"/><circle cx="161" cy="120" r="13"/><circle cx="188" cy="120" r="13"/>
+    <circle cx="80" cy="147" r="13"/><circle cx="107" cy="147" r="13"/><circle cx="134" cy="147" r="13"/><circle cx="161" cy="147" r="13"/><circle cx="188" cy="147" r="13"/>
+    <circle cx="80" cy="174" r="13"/><circle cx="107" cy="174" r="13"/><circle cx="134" cy="174" r="13"/><circle cx="161" cy="174" r="13"/><circle cx="188" cy="174" r="13"/>
+    <circle cx="80" cy="93" r="13"/><circle cx="107" cy="93" r="13"/><circle cx="134" cy="93" r="13"/><circle cx="161" cy="93" r="13"/><circle cx="188" cy="93" r="13"/>
+  </g>
+  <text x="135" y="225" text-anchor="middle" font-size="14" font-weight="bold" fill="#334155">Solid</text>
+  <text x="135" y="245" text-anchor="middle" font-size="11" fill="#64748b">regular, touching, vibrate</text>
+  <!-- liquid -->
+  <rect x="265" y="40" width="190" height="160" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <g fill="#3b82f6" stroke="#1e3a8a" stroke-width="1">
+    <circle cx="290" cy="185" r="13"/><circle cx="317" cy="183" r="13"/><circle cx="345" cy="186" r="13"/><circle cx="372" cy="182" r="13"/><circle cx="400" cy="185" r="13"/><circle cx="428" cy="184" r="13"/>
+    <circle cx="300" cy="158" r="13"/><circle cx="330" cy="156" r="13"/><circle cx="360" cy="160" r="13"/><circle cx="388" cy="157" r="13"/><circle cx="418" cy="159" r="13"/>
+    <circle cx="292" cy="132" r="13"/><circle cx="345" cy="132" r="13"/><circle cx="403" cy="131" r="13"/><circle cx="432" cy="134" r="13"/>
+  </g>
+  <text x="360" y="225" text-anchor="middle" font-size="14" font-weight="bold" fill="#334155">Liquid</text>
+  <text x="360" y="245" text-anchor="middle" font-size="11" fill="#64748b">random, touching, move past each other</text>
+  <!-- gas -->
+  <rect x="490" y="40" width="190" height="160" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+  <g fill="#3b82f6" stroke="#1e3a8a" stroke-width="1">
+    <circle cx="520" cy="70" r="13"/><circle cx="610" cy="62" r="13"/><circle cx="655" cy="115" r="13"/>
+    <circle cx="560" cy="130" r="13"/><circle cx="515" cy="175" r="13"/><circle cx="635" cy="178" r="13"/>
+  </g>
+  <g stroke="#64748b" stroke-width="1.5" fill="none">
+    <line x1="533" y1="70" x2="555" y2="76"/><line x1="610" y1="75" x2="602" y2="95"/><line x1="642" y1="115" x2="622" y2="112"/>
+    <line x1="573" y1="130" x2="595" y2="138"/><line x1="528" y1="168" x2="545" y2="158"/><line x1="648" y1="170" x2="664" y2="160"/>
+  </g>
+  <text x="585" y="225" text-anchor="middle" font-size="14" font-weight="bold" fill="#334155">Gas</text>
+  <text x="585" y="245" text-anchor="middle" font-size="11" fill="#64748b">random, far apart, move fast</text>
+</svg>
+
+<table>
+  <thead><tr><th>Property</th><th>Solid</th><th>Liquid</th><th>Gas</th></tr></thead>
+  <tbody>
+    <tr><td>Arrangement</td><td>Regular pattern (lattice)</td><td>Random</td><td>Random</td></tr>
+    <tr><td>Spacing</td><td>Very close, touching</td><td>Close, mostly touching</td><td>Far apart (on average about 10 particle diameters at room conditions)</td></tr>
+    <tr><td>Movement</td><td>Vibrate about fixed positions</td><td>Move around and slide past each other</td><td>Move quickly and randomly in all directions</td></tr>
+    <tr><td>Forces between particles</td><td>Strong</td><td>Weaker than in the solid</td><td>Very weak (almost none)</td></tr>
+    <tr><td>Energy of particles</td><td>Lowest</td><td>Higher</td><td>Highest</td></tr>
+    <tr><td>Shape</td><td>Fixed</td><td>Takes the shape of the container</td><td>Fills the whole container</td></tr>
+    <tr><td>Volume</td><td>Fixed</td><td>Fixed</td><td>Not fixed — expands to fill the container</td></tr>
+    <tr><td>Compressible?</td><td>No</td><td>No (almost)</td><td>Yes — lots of space between particles</td></tr>
+    <tr><td>Flows?</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+  </tbody>
+</table>
+
+<div class="exam-tip">When describing a state, cover three things: <strong>arrangement</strong> (regular or random), <strong>closeness</strong> (touching or far apart) and <strong>movement</strong> (vibrate, slide, move quickly). A typical 3-mark question gives one mark for each.</div>
+
+<h3>Limitations of the simple particle model</h3>
+<ul>
+  <li>Particles are shown as solid, inelastic spheres, but real particles are atoms, molecules or ions with internal structure and are not hard balls.</li>
+  <li>The model does not show the <strong>forces</strong> between particles or how strong they are.</li>
+  <li>Diagrams are 2D and not to scale — the spaces between gas particles are much larger than can be drawn.</li>
+  <li>It does not show that particles in a liquid and gas move at a <strong>range of speeds</strong>.</li>
+</ul>
+
+<h2>2.2 Changes of State</h2>
+<p>Changes of state are <strong>physical changes</strong>, not chemical changes: no new substances are formed and the change can be reversed. The particles themselves (and the mass) stay the same; only their arrangement, movement and energy change.</p>
+
+<!-- State change cycle -->
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t2ArrR" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+    <marker id="t2ArrB" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Interconversions between the three states</text>
+  <rect x="60" y="200" width="150" height="56" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="135" y="234" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e3a8a">SOLID</text>
+  <rect x="510" y="200" width="150" height="56" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="585" y="234" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e3a8a">LIQUID</text>
+  <rect x="285" y="45" width="150" height="56" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="79" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e3a8a">GAS</text>
+  <!-- solid <-> liquid -->
+  <line x1="215" y1="215" x2="505" y2="215" stroke="#dc2626" stroke-width="2.5" marker-end="url(#t2ArrR)"/>
+  <text x="360" y="208" text-anchor="middle" font-size="13" fill="#dc2626" font-weight="bold">melting (energy in)</text>
+  <line x1="505" y1="243" x2="215" y2="243" stroke="#2563eb" stroke-width="2.5" marker-end="url(#t2ArrB)"/>
+  <text x="360" y="265" text-anchor="middle" font-size="13" fill="#2563eb" font-weight="bold">freezing (energy out)</text>
+  <!-- liquid <-> gas -->
+  <line x1="560" y1="195" x2="440" y2="92" stroke="#dc2626" stroke-width="2.5" marker-end="url(#t2ArrR)"/>
+  <text x="565" y="135" font-size="13" fill="#dc2626" font-weight="bold">boiling /</text>
+  <text x="565" y="151" font-size="13" fill="#dc2626" font-weight="bold">evaporating</text>
+  <line x1="420" y1="105" x2="535" y2="198" stroke="#2563eb" stroke-width="2.5" marker-end="url(#t2ArrB)"/>
+  <text x="492" y="190" text-anchor="end" font-size="13" fill="#2563eb" font-weight="bold">condensing</text>
+  <!-- solid <-> gas -->
+  <line x1="160" y1="195" x2="280" y2="92" stroke="#dc2626" stroke-width="2.5" marker-end="url(#t2ArrR)"/>
+  <text x="95" y="135" font-size="13" fill="#dc2626" font-weight="bold">sublimation</text>
+  <line x1="300" y1="105" x2="185" y2="198" stroke="#2563eb" stroke-width="2.5" marker-end="url(#t2ArrB)"/>
+  <text x="245" y="175" font-size="13" fill="#2563eb" font-weight="bold">deposition</text>
+  <text x="360" y="292" text-anchor="middle" font-size="11" fill="#64748b">Red arrows: particles gain energy, forces overcome. Blue arrows: particles lose energy, forces form.</text>
+</svg>
+
+<h3>Explaining changes of state</h3>
+<table>
+  <thead><tr><th>Change</th><th>What happens to the particles</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Melting</strong> (solid → liquid)</td><td>Heating gives the particles more kinetic energy; they vibrate more until they have enough energy to <strong>overcome some of the forces</strong> holding them in fixed positions. They can then move past each other.</td></tr>
+    <tr><td><strong>Boiling</strong> (liquid → gas)</td><td>Particles gain enough energy to <strong>overcome almost all the forces</strong> between them and escape, moving far apart. Boiling happens throughout the liquid at the boiling point.</td></tr>
+    <tr><td><strong>Evaporation</strong> (liquid → gas)</td><td>Happens only at the <strong>surface</strong> of a liquid and at temperatures below the boiling point: the most energetic surface particles escape.</td></tr>
+    <tr><td><strong>Condensing</strong> (gas → liquid)</td><td>Cooling reduces the energy of the particles; they slow down and attractive forces pull them close together.</td></tr>
+    <tr><td><strong>Freezing</strong> (liquid → solid)</td><td>Particles lose energy and the forces between them hold them in fixed positions in a regular arrangement.</td></tr>
+    <tr><td><strong>Sublimation</strong> (solid → gas)</td><td>Particles at the surface gain enough energy to escape straight into the gas state (e.g. solid carbon dioxide, "dry ice"; iodine on warming).</td></tr>
+  </tbody>
+</table>
+
+<div class="definition">
+  The <strong>melting point</strong> is the temperature at which a solid turns into a liquid (the same temperature as the freezing point for a pure substance).<br>
+  The <strong>boiling point</strong> is the temperature at which a liquid boils, turning into a gas throughout the liquid.<br>
+  The stronger the forces between particles, the more energy is needed to overcome them, and the <strong>higher</strong> the melting and boiling points.
+</div>
+
+<h3>Heating and cooling curves</h3>
+<p>When a pure solid is heated steadily, its temperature rises until it reaches the melting point. The temperature then <strong>stays constant</strong> while it melts, even though energy is still being supplied, because the energy is being used to <strong>overcome the forces between particles</strong> rather than increase their kinetic energy. The same happens at the boiling point.</p>
+
+<!-- Heating curve -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t2AxH" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Heating curve for a pure substance (e.g. water)</text>
+  <line x1="80" y1="260" x2="640" y2="260" stroke="#334155" stroke-width="2" marker-end="url(#t2AxH)"/>
+  <line x1="80" y1="260" x2="80" y2="40" stroke="#334155" stroke-width="2" marker-end="url(#t2AxH)"/>
+  <text x="360" y="290" text-anchor="middle" font-size="13" fill="#334155">Time (heating at a steady rate)</text>
+  <text x="30" y="150" text-anchor="middle" font-size="13" fill="#334155" transform="rotate(-90 30 150)">Temperature / °C</text>
+  <polyline points="90,240 160,190 280,190 360,105 540,105 620,55" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <line x1="80" y1="190" x2="160" y2="190" stroke="#94a3b8" stroke-dasharray="4,4"/>
+  <line x1="80" y1="105" x2="360" y2="105" stroke="#94a3b8" stroke-dasharray="4,4"/>
+  <text x="72" y="194" text-anchor="end" font-size="12" fill="#334155">0</text>
+  <text x="72" y="109" text-anchor="end" font-size="12" fill="#334155">100</text>
+  <g font-size="12" fill="#1e3a8a">
+    <text x="112" y="208" text-anchor="end">solid</text>
+    <text x="220" y="182" text-anchor="middle">melting (s + l)</text>
+    <text x="330" y="170">liquid</text>
+    <text x="450" y="97" text-anchor="middle">boiling (l + g)</text>
+    <text x="590" y="95">gas</text>
+  </g>
+  <text x="220" y="215" text-anchor="middle" font-size="11" fill="#b45309">flat: energy breaks forces</text>
+  <text x="450" y="130" text-anchor="middle" font-size="11" fill="#b45309">flat: energy overcomes forces</text>
+</svg>
+
+<p>A <strong>cooling curve</strong> is the reverse: the temperature stays constant at the boiling point while the gas condenses and at the melting point while the liquid freezes, because energy is <strong>released</strong> as forces form between particles.</p>
+
+<h3>Predicting the state of a substance</h3>
+<p>You can predict the physical state of a substance at a given temperature from its melting and boiling points:</p>
+<ul>
+  <li>Temperature <strong>below</strong> the melting point → <strong>solid</strong></li>
+  <li>Temperature <strong>between</strong> the melting and boiling points → <strong>liquid</strong></li>
+  <li>Temperature <strong>above</strong> the boiling point → <strong>gas</strong></li>
+</ul>
+<table>
+  <thead><tr><th>Substance</th><th>Melting point / °C</th><th>Boiling point / °C</th><th>State at 25 °C</th></tr></thead>
+  <tbody>
+    <tr><td>Oxygen</td><td>−218</td><td>−183</td><td>Gas</td></tr>
+    <tr><td>Bromine</td><td>−7</td><td>59</td><td>Liquid</td></tr>
+    <tr><td>Ethanol</td><td>−114</td><td>78</td><td>Liquid</td></tr>
+    <tr><td>Sodium chloride</td><td>801</td><td>1413</td><td>Solid</td></tr>
+    <tr><td>Iron</td><td>1538</td><td>2862</td><td>Solid</td></tr>
+  </tbody>
+</table>
+<div class="worked">
+Substance X melts at −39 °C and boils at 357 °C. What is its state at (a) −50 °C, (b) 20 °C, (c) 400 °C?<br>
+(a) −50 °C is below the melting point → <strong>solid</strong>.<br>
+(b) 20 °C is between −39 °C and 357 °C → <strong>liquid</strong>.<br>
+(c) 400 °C is above the boiling point → <strong>gas</strong>. (X is mercury.)
+</div>
+<div class="exam-tip">Negative numbers trip students up: −7 °C is <em>higher</em> than −20 °C. Sketch a quick number line with the melting and boiling points marked before deciding.</div>
+
+<h2>2.3 Pure Substances and Mixtures</h2>
+<div class="definition">
+  In chemistry, a <strong>pure substance</strong> is a single element or a single compound, not mixed with any other substance.<br>
+  A <strong>mixture</strong> contains two or more substances (elements and/or compounds) that are <strong>not chemically joined</strong>. The substances in a mixture keep their own properties and can be separated by <strong>physical</strong> methods.
+</div>
+<p>In everyday language "pure" means natural or with nothing added — "pure orange juice" or "pure mineral water". Chemically, both are <strong>mixtures</strong> (orange juice contains water, sugars, acids; mineral water contains dissolved salts).</p>
+
+<table>
+  <thead><tr><th>Element</th><th>Compound</th><th>Mixture</th></tr></thead>
+  <tbody>
+    <tr><td>Only one type of atom</td><td>Two or more elements <strong>chemically combined</strong> in fixed proportions</td><td>Two or more substances <strong>not chemically combined</strong>; proportions can vary</td></tr>
+    <tr><td>Cannot be broken down chemically</td><td>Can only be separated by chemical reactions</td><td>Can be separated by physical methods</td></tr>
+    <tr><td>e.g. O₂, Fe, C</td><td>e.g. H₂O, NaCl, CO₂</td><td>e.g. air, sea water, ink, crude oil</td></tr>
+  </tbody>
+</table>
+
+<h3>Using melting point data to test purity</h3>
+<ul>
+  <li>A <strong>pure</strong> substance melts (and boils) at a <strong>specific, sharp</strong> temperature. Pure water melts at exactly 0 °C and boils at 100 °C at standard pressure.</li>
+  <li>An <strong>impure</strong> substance (a mixture) melts <strong>over a range of temperatures</strong>, and usually at a <strong>lower</strong> temperature than the pure substance. Impurities also usually <strong>raise the boiling point</strong> and make it boil over a range.</li>
+</ul>
+
+<!-- Melting point purity graph -->
+<svg viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t2AxM" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Cooling curves: pure substance vs mixture</text>
+  <line x1="80" y1="230" x2="630" y2="230" stroke="#334155" stroke-width="2" marker-end="url(#t2AxM)"/>
+  <line x1="80" y1="230" x2="80" y2="40" stroke="#334155" stroke-width="2" marker-end="url(#t2AxM)"/>
+  <text x="355" y="260" text-anchor="middle" font-size="13" fill="#334155">Time</text>
+  <text x="35" y="140" text-anchor="middle" font-size="13" fill="#334155" transform="rotate(-90 35 140)">Temperature</text>
+  <polyline points="90,60 210,120 420,120 560,200" fill="none" stroke="#2563eb" stroke-width="3"/>
+  <polyline points="90,75 210,140 420,175 560,215" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="8,5"/>
+  <text x="315" y="112" text-anchor="middle" font-size="12" fill="#1e40af" font-weight="bold">pure: flat at a sharp melting point</text>
+  <text x="315" y="190" text-anchor="middle" font-size="12" fill="#991b1b" font-weight="bold">impure: solidifies gradually over a range</text>
+</svg>
+
+<div class="worked">
+A sample of aspirin melts between 128 °C and 133 °C. Pure aspirin melts at 136 °C. What can you conclude?<br>
+The sample melts <strong>below</strong> the true melting point and <strong>over a range</strong> (5 °C), so it is <strong>impure</strong>.
+</div>
+
+<h2>2.4 Separating Mixtures</h2>
+<p>Choose a method by asking: what physical property is different between the substances?</p>
+<table>
+  <thead><tr><th>Mixture to separate</th><th>Property used</th><th>Technique</th></tr></thead>
+  <tbody>
+    <tr><td>Insoluble solid from a liquid (e.g. sand and water)</td><td>Particle size / solubility</td><td><strong>Filtration</strong></td></tr>
+    <tr><td>Soluble solid from its solution (e.g. salt from salt water)</td><td>Solvent evaporates, solute does not</td><td><strong>Crystallisation</strong></td></tr>
+    <tr><td>Solvent from a solution (e.g. water from sea water)</td><td>Very different boiling points</td><td><strong>Simple distillation</strong></td></tr>
+    <tr><td>Two or more miscible liquids (e.g. ethanol and water; crude oil)</td><td>Boiling points that are fairly close</td><td><strong>Fractional distillation</strong></td></tr>
+    <tr><td>Several dissolved substances (e.g. dyes in ink)</td><td>Different attraction to paper vs solvent</td><td><strong>Paper chromatography</strong></td></tr>
+  </tbody>
+</table>
+
+<h3>Filtration</h3>
+<p>The mixture is poured through <strong>filter paper</strong> in a funnel. The filter paper has tiny holes: liquid and dissolved substances (small particles) pass through as the <strong>filtrate</strong>, while the insoluble solid (larger particles) stays behind as the <strong>residue</strong>.</p>
+
+<!-- Filtration and crystallisation -->
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Filtration (left) and crystallisation (right)</text>
+  <!-- Filtration -->
+  <g transform="translate(70,40)">
+    <path d="M40 20 L160 20 L110 100 L110 140 L90 140 L90 100 Z" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+    <path d="M52 26 L148 26 L100 96 Z" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M70 50 L130 50 L100 92 Z" fill="#d6c7a1"/>
+    <g fill="#92400e"><circle cx="90" cy="70" r="3"/><circle cx="105" cy="78" r="3"/><circle cx="112" cy="62" r="3"/><circle cx="96" cy="58" r="3"/><circle cx="100" cy="86" r="3"/></g>
+    <path d="M50 180 L50 240 Q50 250 60 250 L140 250 Q150 250 150 240 L150 180" fill="none" stroke="#334155" stroke-width="2"/>
+    <rect x="52" y="215" width="96" height="33" fill="#bfdbfe"/>
+    <line x1="100" y1="142" x2="100" y2="212" stroke="#60a5fa" stroke-width="2" stroke-dasharray="3,4"/>
+    <g font-size="12" fill="#334155">
+      <text x="170" y="40">filter funnel</text>
+      <text x="170" y="65">filter paper</text>
+      <text x="170" y="88">residue (insoluble solid)</text>
+      <text x="170" y="235">filtrate (solution)</text>
+    </g>
+    <g stroke="#94a3b8" stroke-width="1">
+      <line x1="166" y1="36" x2="152" y2="24"/><line x1="166" y1="61" x2="131" y2="50"/>
+      <line x1="166" y1="84" x2="115" y2="78"/><line x1="166" y1="231" x2="140" y2="231"/>
+    </g>
+  </g>
+  <!-- Crystallisation -->
+  <g transform="translate(420,40)">
+    <path d="M30 80 Q100 140 170 80" fill="#bfdbfe" stroke="#334155" stroke-width="2"/>
+    <line x1="25" y1="80" x2="175" y2="80" stroke="#334155" stroke-width="2"/>
+    <rect x="22" y="118" width="156" height="52" fill="#dbeafe"/>
+    <path d="M20 100 L20 172 L180 172 L180 100" fill="none" stroke="#334155" stroke-width="2"/>
+    <path d="M90 232 L110 232 L105 200 L95 200 Z" fill="#94a3b8"/>
+    <path d="M100 198 C90 188 95 182 100 175 C105 182 110 188 100 198 Z" fill="#60a5fa" opacity="0.8"/>
+    <g stroke="#94a3b8" stroke-width="1.5" fill="none">
+      <path d="M70 70 q5 -10 0 -20 q-5 -10 0 -20"/><path d="M100 68 q5 -10 0 -20 q-5 -10 0 -20"/><path d="M130 70 q5 -10 0 -20 q-5 -10 0 -20"/>
+    </g>
+    <g font-size="12" fill="#334155">
+      <text x="185" y="40">steam escapes</text>
+      <text x="185" y="95">evaporating basin</text>
+      <text x="185" y="150">water bath</text>
+      <text x="185" y="225">Bunsen burner</text>
+    </g>
+  </g>
+</svg>
+
+<h3>Crystallisation</h3>
+<ol>
+  <li>Pour the solution into an <strong>evaporating basin</strong>.</li>
+  <li>Heat gently (ideally over a water bath or with a low flame) to evaporate some of the solvent and make the solution more concentrated.</li>
+  <li>Stop heating when the solution is <strong>saturated</strong> — test by dipping in a cold glass rod: crystals forming on the rod show the <strong>point of crystallisation</strong> has been reached.</li>
+  <li>Leave the solution to <strong>cool slowly</strong>; crystals form as the solubility falls.</li>
+  <li><strong>Filter</strong> off the crystals, wash with a little cold distilled water, and dry them between filter papers or in a warm oven.</li>
+</ol>
+<div class="exam-tip">Crystallisation is preferred to evaporating to dryness because (1) larger, purer crystals form, (2) soluble impurities stay in solution, and (3) hydrated salts (such as copper sulfate crystals) keep their water of crystallisation instead of decomposing to a powder.</div>
+
+<h3>Simple distillation</h3>
+<p>Simple distillation separates a <strong>solvent from a solution</strong> (e.g. pure water from salty water or ink), or a liquid from substances with a much higher boiling point.</p>
+
+<!-- Simple distillation apparatus -->
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t2ArrW" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Simple distillation apparatus</text>
+  <!-- flask -->
+  <circle cx="130" cy="185" r="55" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <path d="M80 205 Q130 250 180 205 Z" fill="#a5b4fc"/>
+  <rect x="118" y="80" width="24" height="56" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <rect x="114" y="74" width="32" height="10" fill="#475569"/>
+  <line x1="130" y1="40" x2="130" y2="118" stroke="#dc2626" stroke-width="3"/>
+  <text x="140" y="50" font-size="12" fill="#334155">thermometer (bulb at side-arm)</text>
+  <!-- side arm and condenser -->
+  <line x1="142" y1="110" x2="200" y2="110" stroke="#334155" stroke-width="2"/>
+  <g transform="rotate(14 200 110)">
+    <rect x="200" y="96" width="250" height="30" rx="4" fill="#dbeafe" stroke="#334155" stroke-width="2"/>
+    <line x1="200" y1="111" x2="470" y2="111" stroke="#334155" stroke-width="2"/>
+    <line x1="420" y1="126" x2="420" y2="150" stroke="#2563eb" stroke-width="3"/>
+    <line x1="230" y1="96" x2="230" y2="72" stroke="#2563eb" stroke-width="3"/>
+  </g>
+  <text x="396" y="216" text-anchor="end" font-size="12" fill="#2563eb">water in (bottom)</text>
+  <text x="246" y="76" font-size="12" fill="#2563eb">water out (top)</text>
+  <text x="300" y="174" text-anchor="middle" font-size="12" fill="#334155">Liebig condenser</text>
+  <!-- receiver -->
+  <path d="M470 200 L470 260 Q470 270 480 270 L540 270 Q550 270 550 260 L550 200" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect x="472" y="240" width="76" height="28" fill="#bfdbfe"/>
+  <line x1="460" y1="175" x2="505" y2="232" stroke="#60a5fa" stroke-width="2" stroke-dasharray="3,4"/>
+  <text x="560" y="250" font-size="12" fill="#334155">distillate</text>
+  <text x="560" y="266" font-size="12" fill="#334155">(pure solvent)</text>
+  <!-- heat -->
+  <path d="M120 290 L140 290 L135 255 L125 255 Z" fill="#94a3b8"/>
+  <text x="160" y="285" font-size="12" fill="#334155">heat</text>
+  <text x="20" y="232" font-size="12" fill="#334155">solution</text>
+  <line x1="68" y1="228" x2="95" y2="218" stroke="#94a3b8" stroke-width="1"/>
+</svg>
+
+<ol>
+  <li>Heat the solution in a flask. The solvent (lower boiling point) <strong>boils</strong> and turns into vapour; the dissolved solid stays behind.</li>
+  <li>The vapour passes into a <strong>Liebig condenser</strong>, cooled by cold water flowing in at the bottom and out at the top (so the jacket stays full and cooling is most efficient).</li>
+  <li>The vapour <strong>condenses</strong> back to a liquid and drips into the collecting vessel as the <strong>distillate</strong>.</li>
+  <li>The thermometer bulb is level with the side-arm so it measures the temperature of the vapour leaving the flask — this should stay at the boiling point of the pure solvent (100 °C for water).</li>
+</ol>
+<div class="exam-tip">Safety points: add anti-bumping granules to give smooth boiling; never heat a closed system (the apparatus must be open at the collecting end); do not let the flask boil dry. If the solvent is flammable, heat with an electric heater or water bath instead of a Bunsen burner.</div>
+
+<h3>Fractional distillation</h3>
+<p>Fractional distillation separates a mixture of <strong>miscible liquids with different boiling points</strong>, such as ethanol (78 °C) and water (100 °C), or the fractions of crude oil. A <strong>fractionating column</strong> filled with glass beads (or a ridged column) is placed between the flask and the condenser.</p>
+
+<!-- Fractional distillation column -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Fractional distillation of ethanol and water</text>
+  <circle cx="150" cy="235" r="45" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <path d="M110 250 Q150 290 190 250 Z" fill="#a5b4fc"/>
+  <rect x="135" y="70" width="30" height="125" fill="#f8fafc" stroke="#334155" stroke-width="2"/>
+  <g fill="#cbd5e1" stroke="#64748b">
+    <circle cx="143" cy="85" r="5"/><circle cx="157" cy="95" r="5"/><circle cx="145" cy="108" r="5"/><circle cx="157" cy="120" r="5"/>
+    <circle cx="143" cy="133" r="5"/><circle cx="157" cy="146" r="5"/><circle cx="145" cy="160" r="5"/><circle cx="157" cy="173" r="5"/><circle cx="145" cy="185" r="5"/>
+  </g>
+  <line x1="150" y1="36" x2="150" y2="78" stroke="#dc2626" stroke-width="3"/>
+  <line x1="165" y1="75" x2="230" y2="75" stroke="#334155" stroke-width="2"/>
+  <rect x="230" y="62" width="180" height="26" rx="4" fill="#dbeafe" stroke="#334155" stroke-width="2"/>
+  <line x1="410" y1="75" x2="440" y2="120" stroke="#334155" stroke-width="2"/>
+  <path d="M420 130 L420 180 Q420 190 430 190 L470 190 Q480 190 480 180 L480 130" fill="none" stroke="#334155" stroke-width="2"/>
+  <rect x="422" y="165" width="56" height="23" fill="#fde68a"/>
+  <g font-size="12" fill="#334155">
+    <text x="175" y="130">fractionating column</text>
+    <text x="175" y="146">(large surface area of glass beads)</text>
+    <text x="175" y="166" font-size="11" fill="#64748b">hotter at bottom, cooler at top</text>
+    <text x="160" y="42">thermometer: 78 °C while ethanol distils</text>
+    <text x="490" y="180">ethanol collected first</text>
+    <text x="320" y="106" text-anchor="middle">condenser</text>
+    <text x="210" y="252">ethanol + water</text>
+  </g>
+</svg>
+
+<ul>
+  <li>The mixture is heated. Both liquids evaporate, but the one with the <strong>lower boiling point</strong> evaporates more.</li>
+  <li>The column has a <strong>temperature gradient</strong>: hottest at the bottom, coolest at the top. Vapours condense on the glass beads and re-evaporate many times; at each stage the vapour becomes richer in the more volatile liquid.</li>
+  <li>The liquid with the higher boiling point condenses and runs back down into the flask. The liquid with the lower boiling point reaches the top and passes into the condenser.</li>
+  <li>The thermometer reading stays at the boiling point of the first liquid (78 °C for ethanol) while it distils. When the temperature rises, change the collecting vessel to collect the next <strong>fraction</strong>.</li>
+</ul>
+
+<h3>Paper chromatography</h3>
+<p>Paper chromatography separates a mixture of <strong>soluble</strong> substances (such as the dyes in an ink or food colouring).</p>
+<div class="definition">
+  Chromatography involves two <strong>phases</strong>:<br>
+  The <strong>stationary phase</strong> does not move — in paper chromatography it is the <strong>paper</strong> (strictly, the water held in the paper's fibres).<br>
+  The <strong>mobile phase</strong> moves through the stationary phase — it is the <strong>solvent</strong> (e.g. water or ethanol).<br>
+  Each substance is distributed between the two phases. A substance that is more <strong>soluble in the solvent</strong> (more attracted to the mobile phase) spends more time in it and travels <strong>further</strong> up the paper. A substance more strongly attracted to the paper travels a shorter distance.
+</div>
+
+<!-- Chromatogram with Rf -->
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t2Rf1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+    <marker id="t2Rf2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">A paper chromatogram</text>
+  <!-- paper -->
+  <rect x="80" y="40" width="300" height="250" fill="#fff" stroke="#475569" stroke-width="2"/>
+  <line x1="80" y1="70" x2="380" y2="70" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="390" y="74" font-size="12" fill="#2563eb">solvent front</text>
+  <line x1="80" y1="250" x2="380" y2="250" stroke="#334155" stroke-width="1.5"/>
+  <text x="390" y="254" font-size="12" fill="#334155">baseline (pencil)</text>
+  <rect x="81" y="268" width="298" height="21" fill="#bfdbfe" opacity="0.8"/>
+  <text x="390" y="284" font-size="12" fill="#334155">solvent (below baseline)</text>
+  <!-- spots: Ink X, A, B, C -->
+  <g font-size="12" fill="#334155" text-anchor="middle">
+    <text x="130" y="266">X</text><text x="200" y="266">A</text><text x="270" y="266">B</text><text x="340" y="266">C</text>
+  </g>
+  <g>
+    <circle cx="130" cy="250" r="3" fill="#94a3b8"/><circle cx="200" cy="250" r="3" fill="#94a3b8"/>
+    <circle cx="270" cy="250" r="3" fill="#94a3b8"/><circle cx="340" cy="250" r="3" fill="#94a3b8"/>
+    <!-- X has 3 spots matching A and C, plus one unknown -->
+    <ellipse cx="130" cy="106" rx="11" ry="8" fill="#ef4444"/>
+    <ellipse cx="130" cy="178" rx="11" ry="8" fill="#3b82f6"/>
+    <ellipse cx="130" cy="214" rx="11" ry="8" fill="#eab308"/>
+    <ellipse cx="200" cy="106" rx="11" ry="8" fill="#ef4444"/>
+    <ellipse cx="270" cy="140" rx="11" ry="8" fill="#22c55e"/>
+    <ellipse cx="340" cy="178" rx="11" ry="8" fill="#3b82f6"/>
+  </g>
+  <!-- measurement arrows -->
+  <line x1="98" y1="248" x2="98" y2="110" stroke="#dc2626" stroke-width="2" marker-end="url(#t2Rf1)"/>
+  <line x1="62" y1="248" x2="62" y2="74" stroke="#2563eb" stroke-width="2" marker-end="url(#t2Rf2)"/>
+  <text x="56" y="170" font-size="11" fill="#2563eb" text-anchor="end">b</text>
+  <text x="104" y="190" font-size="11" fill="#dc2626">a</text>
+  <g font-size="13" fill="#334155">
+    <text x="470" y="120" font-weight="bold" fill="#1e40af">Rf = a ÷ b</text>
+    <text x="470" y="145">a = distance moved by spot</text>
+    <text x="470" y="163">b = distance moved by solvent</text>
+    <text x="470" y="195">X contains A and C,</text>
+    <text x="470" y="213">plus one unknown dye (yellow).</text>
+    <text x="470" y="231">X does not contain B.</text>
+  </g>
+</svg>
+
+<h3>R<sub>f</sub> values</h3>
+<span class="eq">Rf = distance travelled by the substance (spot) ÷ distance travelled by the solvent (solvent front)</span>
+<ul>
+  <li>Both distances are measured from the <strong>baseline</strong>; measure to the <strong>centre</strong> of the spot.</li>
+  <li>Rf is always <strong>less than 1</strong> and has <strong>no units</strong>.</li>
+  <li>For a given solvent, paper and temperature, each substance has a <strong>characteristic</strong> Rf value, so Rf values can be compared with those of known substances (or a database) to identify unknowns.</li>
+</ul>
+<div class="worked">
+On a chromatogram the solvent front is 8.0 cm from the baseline. A red spot is 5.2 cm from the baseline. Calculate its Rf.<br>
+Rf = 5.2 ÷ 8.0 = <strong>0.65</strong>
+</div>
+<h3>Interpreting chromatograms</h3>
+<ul>
+  <li>A <strong>pure</strong> substance produces <strong>one spot</strong> (in every solvent tried). A mixture produces two or more spots — although a single spot in one solvent does not prove purity, as two substances might have the same Rf in that solvent.</li>
+  <li>An unknown substance can be <strong>identified</strong> if its spot is at the same height (same Rf) as a known reference substance run on the same paper.</li>
+  <li>A spot that stays on the baseline is <strong>insoluble</strong> in that solvent — try a different solvent.</li>
+</ul>
+<div class="exam-tip">Why is the baseline drawn in <strong>pencil</strong>, not ink? Graphite is insoluble and will not move with the solvent; ink would dissolve and separate, confusing the results. Why must the baseline be <strong>above</strong> the solvent level? Otherwise the samples dissolve straight into the solvent in the beaker instead of travelling up the paper.</div>
+
+<h2>2.5 Core Practical: Investigating Inks Using Distillation and Chromatography</h2>
+<p>This core practical separates an ink into its solvent and its dyes. You need to know the method, the reasons for each step, and how to analyse the results.</p>
+
+<h3>Part 1 — Simple distillation of ink</h3>
+<ol>
+  <li>Place about 25 cm³ of ink in a round-bottomed (or conical) flask with a few anti-bumping granules. Set up the condenser and collecting tube as in the distillation diagram.</li>
+  <li>Heat gently. Record the temperature on the thermometer when liquid starts to drip from the condenser — this is the <strong>boiling point</strong> of the solvent.</li>
+  <li>Collect a few cm³ of colourless distillate, then stop heating before the flask boils dry.</li>
+  <li>The distillate is the <strong>solvent</strong> (often water, boiling at about 100 °C). The dyes, which have much higher boiling points, are left in the flask.</li>
+</ol>
+
+<h3>Part 2 — Paper chromatography of ink</h3>
+<ol>
+  <li>Draw a <strong>pencil</strong> baseline about 1–2 cm from the bottom of a strip of chromatography paper.</li>
+  <li>Use a capillary tube to put a small, concentrated spot of the ink on the baseline (and spots of reference dyes alongside, if available). Let each spot dry and re-spot to concentrate it.</li>
+  <li>Hang the paper in a beaker containing solvent to a depth <strong>below the baseline</strong>. Cover the beaker with a lid (so the atmosphere is saturated with solvent vapour and the solvent does not evaporate from the paper).</li>
+  <li>When the solvent has risen to near the top, remove the paper and immediately mark the <strong>solvent front</strong> in pencil. Allow to dry.</li>
+  <li>Measure the distance from the baseline to the centre of each spot and to the solvent front; calculate the Rf value of each dye.</li>
+</ol>
+<table>
+  <thead><tr><th>Variable</th><th>In this practical</th></tr></thead>
+  <tbody>
+    <tr><td>Independent</td><td>The ink / dye being tested</td></tr>
+    <tr><td>Dependent</td><td>Distance moved by each spot (→ Rf); number of spots</td></tr>
+    <tr><td>Control</td><td>Same solvent, same paper, same temperature, same baseline height, lid on the beaker</td></tr>
+  </tbody>
+</table>
+<table>
+  <thead><tr><th>Problem</th><th>Cause and fix</th></tr></thead>
+  <tbody>
+    <tr><td>Spots smeared or merged</td><td>Spots too large — use a fine capillary tube and keep spots small</td></tr>
+    <tr><td>Colours very faint</td><td>Spot too dilute — re-spot several times, drying between applications</td></tr>
+    <tr><td>Spots washed away</td><td>Solvent above the baseline — reduce solvent depth</td></tr>
+    <tr><td>Spots did not move</td><td>Dyes insoluble in the solvent — use a different solvent (e.g. ethanol instead of water)</td></tr>
+    <tr><td>Uneven solvent front</td><td>Paper touching the side of the beaker — make sure it hangs freely</td></tr>
+  </tbody>
+</table>
+<div class="exam-tip">Hazards in this practical: the ink's solvent may be flammable (heat electrically if so); the distillation flask and condenser get hot; ethanol (if used as a chromatography solvent) is flammable — keep away from flames.</div>
+
+<h2>2.6 Water Treatment</h2>
+
+<h3>Making water safe to drink (potable water)</h3>
+<p><strong>Potable</strong> water is water that is safe to drink. It is <strong>not</strong> pure in the chemical sense: it contains low levels of dissolved salts, but harmful microbes and solid particles have been removed. In the UK, most drinking water comes from fresh water sources (rivers, lakes, reservoirs and groundwater); waste water can also be treated and reused. Ground water and waste water are made potable in three main stages:</p>
+
+<!-- Water treatment flow -->
+<svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="t2ArrF" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#334155"/></marker>
+  </defs>
+  <text x="360" y="20" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Treating fresh water for drinking</text>
+  <rect x="20" y="60" width="120" height="70" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="80" y="92" text-anchor="middle" font-size="13" font-weight="bold" fill="#075985">Fresh water</text>
+  <text x="80" y="110" text-anchor="middle" font-size="11" fill="#075985">river / reservoir</text>
+  <line x1="142" y1="95" x2="172" y2="95" stroke="#334155" stroke-width="2" marker-end="url(#t2ArrF)"/>
+  <rect x="175" y="50" width="150" height="90" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="250" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">1. Sedimentation</text>
+  <text x="250" y="98" text-anchor="middle" font-size="11" fill="#92400e">large insoluble particles</text>
+  <text x="250" y="114" text-anchor="middle" font-size="11" fill="#92400e">settle to the bottom</text>
+  <line x1="327" y1="95" x2="357" y2="95" stroke="#334155" stroke-width="2" marker-end="url(#t2ArrF)"/>
+  <rect x="360" y="50" width="150" height="90" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="435" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">2. Filtration</text>
+  <text x="435" y="98" text-anchor="middle" font-size="11" fill="#166534">beds of sand and gravel</text>
+  <text x="435" y="114" text-anchor="middle" font-size="11" fill="#166534">remove small particles</text>
+  <line x1="512" y1="95" x2="542" y2="95" stroke="#334155" stroke-width="2" marker-end="url(#t2ArrF)"/>
+  <rect x="545" y="50" width="155" height="90" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="622" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="#5b21b6">3. Chlorination</text>
+  <text x="622" y="98" text-anchor="middle" font-size="11" fill="#5b21b6">chlorine kills</text>
+  <text x="622" y="114" text-anchor="middle" font-size="11" fill="#5b21b6">microorganisms</text>
+  <text x="360" y="180" text-anchor="middle" font-size="12" fill="#64748b">Output: potable water — safe to drink, but still contains small amounts of dissolved substances.</text>
+</svg>
+
+<table>
+  <thead><tr><th>Stage</th><th>What it removes and how</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Sedimentation</strong></td><td>Water is left to stand in large tanks; large insoluble particles (soil, grit) sink to the bottom under gravity. Chemicals may be added to make small particles clump together (flocculation) so they settle faster.</td></tr>
+    <tr><td><strong>Filtration</strong></td><td>Water passes through filter beds of sand and gravel, which trap the smaller insoluble particles that did not settle.</td></tr>
+    <tr><td><strong>Chlorination</strong></td><td>Chlorine is added to <strong>kill harmful microorganisms</strong> (bacteria) that could cause disease. This is a chemical, not physical, step.</td></tr>
+  </tbody>
+</table>
+
+<h3>Water from the sea</h3>
+<p>Where fresh water is scarce, drinking water can be made from sea water by <strong>distillation</strong> (desalination). The water is boiled and the steam condensed, leaving the salts behind. This needs a <strong>very large amount of energy</strong> to boil the water, so it is expensive and used mainly in countries with little fresh water and plentiful cheap energy.</p>
+
+<h3>Water for chemical analysis</h3>
+<p>Tap water still contains <strong>dissolved salts</strong> (ions such as Ca²⁺, Mg²⁺, Cl⁻, SO₄²⁻) and traces of chlorine. Water used in chemical analysis must <strong>not contain dissolved salts</strong>, because these ions could react with the substances being tested or give false positive results (for example, chloride ions in tap water would give a white precipitate with silver nitrate in a test for chloride). For this reason <strong>deionised</strong> or <strong>distilled water</strong> is used in analysis, made by distilling tap water.</p>
+
+<div class="exam-tip">"Explain why distilled water rather than tap water is used to make solutions for analysis." Two marks: tap water contains <em>dissolved ions/salts</em> (1) which would <em>react with the reagents or contaminate the sample, giving inaccurate results</em> (1).</div>
+
+<h2>2.7 Choosing a Separation Method — Worked Problems</h2>
+<div class="worked">
+How would you obtain pure, dry sand and pure salt crystals from a mixture of sand and salt?<br>
+1. Add water and stir (warm gently) — salt dissolves, sand does not.<br>
+2. <strong>Filter</strong> — sand is the residue; wash it with distilled water and dry it in a warm oven.<br>
+3. Heat the filtrate in an evaporating basin until crystals start to form on a cold glass rod, then leave it to cool (<strong>crystallisation</strong>). Filter off and dry the salt crystals.
+</div>
+<div class="worked">
+Propanone boils at 56 °C and water at 100 °C. They mix completely. Which method separates them, and which liquid is collected first?<br>
+They are miscible liquids with different boiling points → <strong>fractional distillation</strong>. Propanone, with the lower boiling point, is collected <strong>first</strong> (thermometer reads 56 °C).
+</div>
+<div class="worked">
+A green food colouring gives a single spot in water but two spots (yellow and blue) when ethanol is the solvent. What does this show?<br>
+The colouring is a <strong>mixture</strong> of at least two dyes. In water they have the same Rf so they did not separate; ethanol separates them because the dyes differ in their solubility in ethanol.
+</div>
+
+<h2>Key Points Summary</h2>
+<ul>
+  <li>Solids: regular, touching, vibrate. Liquids: random, touching, move past each other. Gases: random, far apart, fast random movement.</li>
+  <li>Melting, boiling and sublimation need energy to overcome forces between particles; freezing and condensing release energy.</li>
+  <li>Changes of state are physical changes: no new substance forms and mass is conserved.</li>
+  <li>Temperature stays constant during a change of state of a pure substance (flat sections on heating/cooling curves).</li>
+  <li>Below mp = solid; between mp and bp = liquid; above bp = gas.</li>
+  <li>Chemically "pure" = a single element or compound; everyday "pure" means nothing added.</li>
+  <li>Pure substances melt at a sharp, fixed temperature; mixtures melt over a range, usually lower.</li>
+  <li>Filtration: insoluble solid from liquid. Crystallisation: soluble solid from solution. Simple distillation: solvent from solution. Fractional distillation: miscible liquids with different boiling points. Paper chromatography: soluble substances such as dyes.</li>
+  <li>Chromatography: stationary phase = paper; mobile phase = solvent. Rf = distance moved by spot ÷ distance moved by solvent; pure substance = one spot.</li>
+  <li>Core practical: distil ink to collect its solvent (record boiling point); use chromatography (pencil baseline above solvent, lid on) to separate and identify the dyes.</li>
+  <li>Drinking water: sedimentation → filtration → chlorination. Sea water can be distilled, but it uses a lot of energy.</li>
+  <li>Water for chemical analysis must be distilled/deionised because dissolved ions in tap water would interfere with tests.</li>
+</ul>
+
+</div>
+</body>
+</html>
