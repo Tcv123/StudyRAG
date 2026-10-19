@@ -411,6 +411,7 @@ function renderMsCard(part, paperKey, paperId) {
        ((window.PHYSICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.BIO_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.CHEM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
+       ((window.CHEM_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.ECON_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.GEOG_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.POLITICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
@@ -968,7 +969,11 @@ function buildPicker(userSubs) {
                             ['CHECKED_FM_ANSWERS', 'model-answers-fm-checked.js']],
     'physics':             [['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js']],
     'biology':             [['BIO_MODEL_ANSWERS', 'model-answers-biology.js']],
-    'chemistry':           [['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js']],
+    // The picker only offers papers for the student's level (boardsForLevel),
+    // so load just that level's Chemistry answers.
+    'chemistry':           window.levelSuffix() === 'gcse'
+                             ? [['CHEM_GCSE_MODEL_ANSWERS', 'model-answers-chemistry-gcse.js']]
+                             : [['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js']],
     'economics':           [['ECON_MODEL_ANSWERS', 'model-answers-economics.js']],
     'geography':           [['GEOG_MODEL_ANSWERS', 'model-answers-geography.js']],
     'politics':            [['POLITICS_MODEL_ANSWERS', 'model-answers-politics.js']],
