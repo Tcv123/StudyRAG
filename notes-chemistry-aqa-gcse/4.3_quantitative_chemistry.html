@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — AQA 4.3 — Quantitative Chemistry</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.3 Quantitative Chemistry</h1>
+<p class="spec-ref">AQA GCSE Chemistry (8462) &mdash; Paper 1</p>
+
+<p>Chemists use quantitative analysis to determine the formulae of compounds and the equations for reactions. Given this information, they can work out the quantities of reactants needed to make a certain amount of product, which matters enormously in industry where wasted chemicals cost money and harm the environment. This topic is <strong>calculation-heavy</strong> &mdash; roughly 15&ndash;20% of the marks on Paper 1 involve the mathematics here, and it underpins energy changes, rates and electrolysis questions too.</p>
+
+<h2>4.3.1 Conservation of Mass and the Quantitative Interpretation of Chemical Equations</h2>
+
+<h3>4.3.1.1 Conservation of Mass and Balanced Chemical Equations</h3>
+
+<div class="definition">
+    The <strong>law of conservation of mass</strong> states that <strong>no atoms are lost or made during a chemical reaction</strong>, so the <strong>mass of the products equals the mass of the reactants</strong>.
+</div>
+
+<p>This means that chemical reactions can be represented by symbol equations which are <strong>balanced</strong> in terms of the numbers of atoms of each element involved on both sides of the equation. Atoms are only <strong>rearranged</strong> into new substances; the total number of each type of atom stays the same.</p>
+
+<pre>
+Example:   2Mg(s)  +  O₂(g)  →  2MgO(s)
+Atoms:     Mg: 2      O: 2      Mg: 2, O: 2   ✓ balanced
+
+Masses:    2 × 24  +  2 × 16  =  2 × (24 + 16)
+           48 g    +  32 g    =  80 g          ✓ mass conserved
+</pre>
+
+<h3>4.3.1.2 Relative Formula Mass</h3>
+
+<div class="definition">
+    The <strong>relative formula mass (M<sub>r</sub>)</strong> of a compound is the <strong>sum of the relative atomic masses</strong> of the atoms in the numbers shown in the formula. It has no units.<br><br>
+    In a balanced chemical equation, the <strong>sum of the relative formula masses of the reactants</strong> in the quantities shown <strong>equals</strong> the sum of the relative formula masses of the products in the quantities shown.
+</div>
+
+<p>Relative atomic masses (A<sub>r</sub>) are read from the periodic table. Values used in this topic:</p>
+
+<table>
+    <tr><th>Element</th><th>H</th><th>C</th><th>N</th><th>O</th><th>Na</th><th>Mg</th><th>Al</th><th>S</th><th>Cl</th><th>K</th><th>Ca</th><th>Fe</th><th>Cu</th></tr>
+    <tr><td><strong>A<sub>r</sub></strong></td><td>1</td><td>12</td><td>14</td><td>16</td><td>23</td><td>24</td><td>27</td><td>32</td><td>35.5</td><td>39</td><td>40</td><td>56</td><td>63.5</td></tr>
+</table>
+
+<h3>Worked Example 1 &mdash; Calculating M<sub>r</sub></h3>
+
+<pre>
+(a) Carbon dioxide, CO₂
+    Mr = 12 + (2 × 16) = 12 + 32 = 44
+
+(b) Calcium carbonate, CaCO₃
+    Mr = 40 + 12 + (3 × 16) = 40 + 12 + 48 = 100
+
+(c) Calcium hydroxide, Ca(OH)₂
+    The bracket multiplies everything inside by 2:
+    Mr = 40 + 2 × (16 + 1) = 40 + 34 = 74
+
+(d) Ammonium sulfate, (NH₄)₂SO₄
+    Mr = 2 × (14 + 4 × 1) + 32 + (4 × 16)
+       = 2 × 18 + 32 + 64
+       = 36 + 32 + 64 = 132
+
+(e) Hydrated copper sulfate, CuSO₄·5H₂O
+    Mr = 63.5 + 32 + 64 + 5 × 18 = 159.5 + 90 = 249.5
+</pre>
+
+<h3>Percentage by Mass of an Element in a Compound</h3>
+
+<div class="definition">
+    <code>% by mass of element = (A<sub>r</sub> &times; number of atoms of that element) &divide; M<sub>r</sub> of compound &times; 100</code>
+</div>
+
+<pre>
+Question: Calculate the percentage by mass of nitrogen in
+          ammonium nitrate, NH₄NO₃ (a fertiliser).
+
+Mr of NH₄NO₃ = 14 + 4 + 14 + 48 = 80
+Mass of N    = 2 × 14 = 28
+% N          = 28 ÷ 80 × 100 = 35%
+
+Answer:  35%
+</pre>
+
+<div class="exam-tip">The most common error with M<sub>r</sub> is mishandling brackets &mdash; in Ca(OH)₂, the 2 multiplies <strong>both</strong> O and H. Another is forgetting that the big number in front of a formula in an equation (e.g. <strong>2</strong>H₂O) is <em>not</em> part of the M<sub>r</sub>: M<sub>r</sub> of H₂O is always 18. Only multiply by the coefficient when you are checking that total masses balance.</div>
+
+<h3>4.3.1.3 Mass Changes when a Reactant or Product is a Gas</h3>
+
+<p>Some reactions <strong>appear</strong> to involve a change in mass, but this can usually be explained because a <strong>reactant or product is a gas</strong> and its mass has not been taken into account. If the reaction were carried out in a sealed (closed) container, the mass would not change.</p>
+
+<table>
+    <tr><th>Situation</th><th>Example</th><th>Observed mass change (open container)</th><th>Explanation</th></tr>
+    <tr><td><strong>A gas is a reactant</strong></td><td>Metal + oxygen &rarr; metal oxide<br>2Mg(s) + O₂(g) &rarr; 2MgO(s)</td><td><strong>Increases</strong></td><td>Oxygen atoms from the air combine with the metal; the mass of the oxygen is now included in the solid product.</td></tr>
+    <tr><td><strong>A gas is a product</strong></td><td>Thermal decomposition of a metal carbonate<br>CaCO₃(s) &rarr; CaO(s) + CO₂(g)</td><td><strong>Decreases</strong></td><td>Carbon dioxide escapes into the atmosphere, so its mass is no longer measured.</td></tr>
+    <tr><td>A gas is a product</td><td>Acid + carbonate<br>CaCO₃ + 2HCl &rarr; CaCl₂ + H₂O + CO₂</td><td><strong>Decreases</strong></td><td>CO₂ escapes from the open flask.</td></tr>
+    <tr><td>No gas involved</td><td>Precipitation<br>BaCl₂(aq) + Na₂SO₄(aq) &rarr; BaSO₄(s) + 2NaCl(aq)</td><td><strong>No change</strong></td><td>All products remain in the container.</td></tr>
+</table>
+
+<!-- Diagram 1: mass changes -->
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrQ1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+    <marker id="arrQ1b" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Apparent mass changes in open containers</text>
+
+  <!-- Panel 1: crucible Mg -->
+  <rect x="15" y="40" width="355" height="245" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="192" y="62" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Heating magnesium in a crucible</text>
+  <!-- crucible -->
+  <path d="M 140 120 L 245 120 L 230 180 L 155 180 Z" fill="#e5e7eb" stroke="#374151" stroke-width="2"/>
+  <rect x="135" y="112" width="115" height="8" fill="#9ca3af" stroke="#374151" stroke-width="1"/>
+  <rect x="165" y="160" width="55" height="15" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="192" y="171" text-anchor="middle" font-size="8" fill="#374151">Mg ribbon</text>
+  <!-- O2 in -->
+  <line x1="80" y1="100" x2="132" y2="125" stroke="#2563eb" stroke-width="2" marker-end="url(#arrQ1b)"/>
+  <text x="75" y="92" text-anchor="middle" font-size="10" fill="#2563eb" font-weight="bold">O₂ from air in</text>
+  <!-- flame -->
+  <path d="M 175 230 Q 182 200 192 190 Q 202 200 209 230 Z" fill="#60a5fa"/>
+  <text x="192" y="250" text-anchor="middle" font-size="10" fill="#1e40af">Bunsen flame</text>
+  <!-- balance -->
+  <rect x="270" y="150" width="85" height="45" rx="4" fill="#fff" stroke="#374151"/>
+  <text x="312" y="168" text-anchor="middle" font-size="10" fill="#374151">mass</text>
+  <text x="312" y="185" text-anchor="middle" font-size="14" font-weight="bold" fill="#16a34a">&#8593; increases</text>
+  <text x="192" y="275" text-anchor="middle" font-size="10" fill="#374151">2Mg(s) + O₂(g) → 2MgO(s)</text>
+
+  <!-- Panel 2: carbonate -->
+  <rect x="390" y="40" width="355" height="245" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="567" y="62" text-anchor="middle" font-size="12" font-weight="bold" fill="#991b1b">Acid + marble chips on a balance</text>
+  <!-- flask -->
+  <path d="M 480 110 L 480 140 L 445 210 L 545 210 L 510 140 L 510 110 Z" fill="#fff" stroke="#374151" stroke-width="2"/>
+  <path d="M 457 185 L 533 185 L 545 210 L 445 210 Z" fill="#bfdbfe"/>
+  <circle cx="475" cy="200" r="5" fill="#d1d5db" stroke="#6b7280"/><circle cx="495" cy="203" r="5" fill="#d1d5db" stroke="#6b7280"/><circle cx="515" cy="199" r="5" fill="#d1d5db" stroke="#6b7280"/>
+  <!-- cotton wool -->
+  <ellipse cx="495" cy="108" rx="18" ry="7" fill="#fff" stroke="#9ca3af"/>
+  <text x="440" y="104" text-anchor="end" font-size="9" fill="#374151">cotton wool</text>
+  <!-- CO2 out -->
+  <line x1="495" y1="98" x2="495" y2="72" stroke="#dc2626" stroke-width="2" marker-end="url(#arrQ1)"/>
+  <text x="530" y="82" font-size="10" fill="#dc2626" font-weight="bold">CO₂ escapes</text>
+  <!-- balance -->
+  <rect x="430" y="212" width="130" height="25" rx="3" fill="#374151"/>
+  <text x="495" y="229" text-anchor="middle" font-size="11" fill="#fff" font-weight="bold">mass &#8595; decreases</text>
+  <text x="567" y="268" text-anchor="middle" font-size="10" fill="#374151">CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂(g)</text>
+</svg>
+
+<h3>Worked Example 2 &mdash; Interpreting a Mass-Loss Graph</h3>
+
+<p>When marble chips (calcium carbonate) react with hydrochloric acid in an open flask on a balance, the mass falls as carbon dioxide escapes. The graph levels off when the reaction stops &mdash; when the <strong>limiting reactant</strong> has been used up. The total mass lost equals the mass of CO₂ produced.</p>
+
+<!-- Diagram: mass vs time -->
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Mass of flask and contents against time</text>
+  <line x1="100" y1="50" x2="100" y2="260" stroke="#374151" stroke-width="1.5"/>
+  <line x1="100" y1="260" x2="640" y2="260" stroke="#374151" stroke-width="1.5"/>
+  <text x="370" y="300" text-anchor="middle" font-size="11" fill="#1e40af" font-weight="bold">Time (s)</text>
+  <text x="35" y="155" text-anchor="middle" font-size="11" fill="#1e40af" font-weight="bold" transform="rotate(-90 35 155)">Mass (g)</text>
+  <g font-size="10" fill="#374151" text-anchor="end">
+    <text x="95" y="63">150.00</text><text x="95" y="113">149.50</text><text x="95" y="163">149.00</text><text x="95" y="213">148.50</text><text x="95" y="263">148.00</text>
+  </g>
+  <g stroke="#e5e7eb" stroke-width="0.8">
+    <line x1="100" y1="60" x2="640" y2="60"/><line x1="100" y1="110" x2="640" y2="110"/><line x1="100" y1="160" x2="640" y2="160"/><line x1="100" y1="210" x2="640" y2="210"/>
+  </g>
+  <g font-size="10" fill="#374151" text-anchor="middle">
+    <text x="100" y="276">0</text><text x="208" y="276">60</text><text x="316" y="276">120</text><text x="424" y="276">180</text><text x="532" y="276">240</text><text x="640" y="276">300</text>
+  </g>
+  <path d="M 100 60 Q 220 150 330 185 Q 400 200 460 200 L 640 200" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <line x1="660" y1="60" x2="660" y2="200" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="652" y1="60" x2="668" y2="60" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="652" y1="200" x2="668" y2="200" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="520" y="110" font-size="10" fill="#1e40af" font-weight="bold">mass of CO₂ lost</text>
+  <text x="520" y="124" font-size="10" fill="#1e40af" font-weight="bold">= 150.00 &minus; 148.60 = 1.40 g</text>
+  <text x="250" y="95" font-size="10" fill="#991b1b">steep: fast reaction at start</text>
+  <text x="470" y="190" font-size="10" fill="#991b1b">flat: reaction finished</text>
+</svg>
+
+<p>In a <strong>sealed</strong> flask (e.g. with a balloon over the neck to trap the gas) the balance reading would stay constant throughout &mdash; the clearest demonstration that mass is conserved.</p>
+
+<div class="exam-tip">When explaining an apparent mass change, always <strong>name the gas</strong> and say whether it <strong>entered</strong> or <strong>left</strong> the open container. Then state that mass is still conserved: "the total mass of products equals the total mass of reactants, but the gas was not weighed". In 6-mark practical questions about the crucible experiment, mention lifting the lid occasionally to let oxygen in while preventing magnesium oxide smoke from escaping.</div>
+
+<h3>4.3.1.4 Chemical Measurements and Uncertainty</h3>
+
+<div class="definition">
+    Whenever a measurement is made there is always some <strong>uncertainty</strong> about the result obtained. The <strong>range</strong> of a set of repeat measurements about the <strong>mean</strong> can be used as a measure of uncertainty:<br><br>
+    <code>uncertainty = &plusmn; range &divide; 2</code> &nbsp;&nbsp; where &nbsp;&nbsp; <code>range = highest value &minus; lowest value</code>
+</div>
+
+<h3>Worked Example 3 &mdash; Mean and Uncertainty</h3>
+
+<pre>
+Question: A student measures the volume of gas produced in four
+          repeats: 42.0, 44.5, 43.0, 42.5 cm³. Calculate the mean
+          and the uncertainty.
+
+Mean        = (42.0 + 44.5 + 43.0 + 42.5) ÷ 4
+            = 172.0 ÷ 4 = 43.0 cm³
+Range       = 44.5 − 42.0 = 2.5 cm³
+Uncertainty = ± 2.5 ÷ 2 = ± 1.25 cm³ (≈ ± 1.3 cm³)
+
+Answer:  43.0 ± 1.3 cm³
+</pre>
+
+<p>Sources of uncertainty include the <strong>resolution</strong> of the measuring instrument (a balance reading to 0.01 g, a burette to 0.05 cm³), random errors in reading scales, and variations in conditions. Any obvious <strong>anomalous results</strong> should be identified and left out of the mean. You should also be able to represent the <strong>distribution of results</strong> and make estimations of uncertainty.</p>
+
+<h2>4.3.2 Use of Amount of Substance in Relation to Masses of Pure Substances</h2>
+
+<h3>4.3.2.1 Moles (Higher)</h3>
+
+<div class="definition">
+    Chemical amounts are measured in <strong>moles</strong>. The symbol for the unit mole is <strong>mol</strong>.<br><br>
+    The mass of one mole of a substance in grams is <strong>numerically equal to its relative formula mass</strong> (or relative atomic mass for an element).<br><br>
+    One mole of a substance contains the <strong>same number</strong> of the stated particles &mdash; atoms, molecules or ions &mdash; as one mole of any other substance. The number of atoms, molecules or ions in a mole of a given substance is the <strong>Avogadro constant</strong>, which has the value <strong>6.02 &times; 10²³ per mole</strong>.
+</div>
+
+<div class="definition">
+    <code>number of moles (mol) = mass (g) &divide; M<sub>r</sub></code><br><br>
+    <code>number of particles = number of moles &times; 6.02 &times; 10²³</code>
+</div>
+
+<!-- Diagram 2: mole triangle -->
+<svg viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrQ2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+    <marker id="arrQ2r" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Converting between mass, moles and number of particles</text>
+  <!-- triangle -->
+  <polygon points="140,60 40,230 240,230" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <line x1="80" y1="160" x2="200" y2="160" stroke="#2563eb" stroke-width="2"/>
+  <line x1="140" y1="160" x2="140" y2="230" stroke="#2563eb" stroke-width="2"/>
+  <text x="140" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">mass</text>
+  <text x="100" y="205" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">mol</text>
+  <text x="180" y="205" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e40af">Mr</text>
+  <text x="140" y="255" text-anchor="middle" font-size="10" fill="#374151">cover the one you want</text>
+
+  <!-- flow -->
+  <rect x="300" y="110" width="110" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="355" y="140" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Mass (g)</text>
+  <rect x="470" y="110" width="90" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="515" y="140" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">Moles</text>
+  <rect x="600" y="110" width="90" height="50" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="645" y="133" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">Number of</text>
+  <text x="645" y="148" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">particles</text>
+  <line x1="412" y1="125" x2="466" y2="125" stroke="#2563eb" stroke-width="2" marker-end="url(#arrQ2)"/>
+  <text x="440" y="117" text-anchor="middle" font-size="10" fill="#2563eb" font-weight="bold">&#247; Mr</text>
+  <line x1="466" y1="148" x2="412" y2="148" stroke="#dc2626" stroke-width="2" marker-end="url(#arrQ2r)"/>
+  <text x="440" y="166" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">&#215; Mr</text>
+  <line x1="562" y1="125" x2="596" y2="125" stroke="#2563eb" stroke-width="2" marker-end="url(#arrQ2)"/>
+  <text x="580" y="100" text-anchor="middle" font-size="9" fill="#2563eb" font-weight="bold">&#215; 6.02×10²³</text>
+  <line x1="596" y1="148" x2="562" y2="148" stroke="#dc2626" stroke-width="2" marker-end="url(#arrQ2r)"/>
+  <text x="580" y="180" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="bold">&#247; 6.02×10²³</text>
+</svg>
+
+<h3>Worked Example 4 &mdash; Mass to Moles to Particles (Higher)</h3>
+
+<pre>
+Question: (a) How many moles are in 22 g of carbon dioxide?
+          (b) How many molecules is this?
+          (c) How many atoms in total?
+
+(a) Mr(CO₂) = 12 + 2 × 16 = 44
+    moles   = mass ÷ Mr = 22 ÷ 44 = 0.50 mol
+
+(b) molecules = 0.50 × 6.02 × 10²³ = 3.01 × 10²³ molecules
+
+(c) Each CO₂ molecule contains 3 atoms:
+    atoms = 3 × 3.01 × 10²³ = 9.03 × 10²³ atoms
+</pre>
+
+<h3>Worked Example 5 &mdash; Mass of a Single Atom (Higher)</h3>
+
+<pre>
+Question: Calculate the mass in grams of one atom of carbon-12.
+
+1 mol of carbon-12 has a mass of 12 g and contains 6.02 × 10²³ atoms.
+mass of one atom = 12 ÷ (6.02 × 10²³)
+                 = 1.99 × 10⁻²³ g
+
+Answer:  1.99 × 10⁻²³ g (to 3 s.f.)
+</pre>
+
+<div class="exam-tip">Read particle questions carefully: "molecules", "atoms" and "ions" give different answers. One mole of Cl₂ contains 6.02 &times; 10²³ <strong>molecules</strong> but 1.204 &times; 10²⁴ <strong>atoms</strong>. One mole of CaCl₂ contains 3 moles of <strong>ions</strong> (1 Ca²⁺ + 2 Cl⁻). Give answers in standard form to the requested significant figures.</div>
+
+<h3>4.3.2.2 Amounts of Substances in Equations (Higher)</h3>
+
+<p>The <strong>masses of reactants and products</strong> can be calculated from balanced symbol equations. Chemical equations can be interpreted in terms of <strong>moles</strong>: for example, Mg + 2HCl &rarr; MgCl₂ + H₂ shows that <strong>1 mol</strong> of magnesium reacts with <strong>2 mol</strong> of hydrochloric acid to produce 1 mol of magnesium chloride and 1 mol of hydrogen gas.</p>
+
+<div class="definition">
+    <strong>Reacting-mass method (three steps):</strong><br>
+    1. Convert the known mass into <strong>moles</strong> (moles = mass &divide; M<sub>r</sub>).<br>
+    2. Use the <strong>balanced equation ratio</strong> to find moles of the substance you want.<br>
+    3. Convert those moles back to <strong>mass</strong> (mass = moles &times; M<sub>r</sub>).
+</div>
+
+<h3>Worked Example 6 &mdash; Reacting Masses (Higher)</h3>
+
+<pre>
+Question: Calculate the mass of calcium oxide produced when 50 g of
+          calcium carbonate is completely decomposed by heating.
+          CaCO₃ → CaO + CO₂
+
+Step 1: Mr(CaCO₃) = 100        moles CaCO₃ = 50 ÷ 100 = 0.50 mol
+Step 2: Ratio CaCO₃ : CaO = 1 : 1        moles CaO = 0.50 mol
+Step 3: Mr(CaO) = 40 + 16 = 56  mass CaO = 0.50 × 56 = 28 g
+
+Answer:  28 g of calcium oxide
+</pre>
+
+<h3>Worked Example 7 &mdash; Reacting Masses with a 2 : 1 Ratio (Higher)</h3>
+
+<pre>
+Question: Iron(III) oxide is reduced by carbon monoxide in a blast
+          furnace:  Fe₂O₃ + 3CO → 2Fe + 3CO₂
+          What mass of iron can be made from 800 kg of Fe₂O₃?
+
+Step 1: Mr(Fe₂O₃) = 2 × 56 + 3 × 16 = 160
+        800 kg = 800 000 g
+        moles Fe₂O₃ = 800 000 ÷ 160 = 5000 mol
+Step 2: Ratio Fe₂O₃ : Fe = 1 : 2    moles Fe = 10 000 mol
+Step 3: mass Fe = 10 000 × 56 = 560 000 g = 560 kg
+
+Answer:  560 kg of iron
+
+Shortcut: masses can be kept in kg (or tonnes) throughout,
+because the units cancel — but be consistent.
+</pre>
+
+<h3>4.3.2.3 Using Moles to Balance Equations (Higher)</h3>
+
+<p>The balancing numbers in a symbol equation can be calculated from the <strong>masses of reactants and products</strong> by converting the masses in grams to amounts in moles and converting the numbers of moles to <strong>simple whole number ratios</strong>.</p>
+
+<h3>Worked Example 8 &mdash; Balancing from Masses (Higher)</h3>
+
+<pre>
+Question: 4.8 g of magnesium reacts with 3.2 g of oxygen (O₂) to
+          produce 8.0 g of magnesium oxide. Use these masses to
+          balance the equation  __Mg + __O₂ → __MgO
+
+                 Mg              O₂               MgO
+Mass (g)         4.8             3.2              8.0
+Mr               24              32               40
+Moles            4.8÷24 = 0.20   3.2÷32 = 0.10    8.0÷40 = 0.20
+÷ smallest       0.20÷0.10 = 2   0.10÷0.10 = 1    0.20÷0.10 = 2
+
+Answer:  2Mg + O₂ → 2MgO
+</pre>
+
+<h3>4.3.2.4 Limiting Reactants (Higher)</h3>
+
+<div class="definition">
+    In a chemical reaction involving two reactants, it is common to use an <strong>excess</strong> of one of the reactants to ensure that all of the other reactant is used. The reactant that is <strong>completely used up</strong> is called the <strong>limiting reactant</strong> because it <strong>limits the amount of products</strong>.
+</div>
+
+<p>You should be able to explain the effect of a limiting quantity of a reactant on the amount of products in terms of amounts in moles or masses in grams. If you <strong>double</strong> the amount of the limiting reactant (keeping the other in excess), you <strong>double</strong> the amount of product; adding more of the reactant already in excess makes no difference.</p>
+
+<h3>Worked Example 9 &mdash; Identifying the Limiting Reactant (Higher)</h3>
+
+<pre>
+Question: 2.4 g of magnesium is added to a solution containing
+          0.15 mol of hydrochloric acid.
+          Mg + 2HCl → MgCl₂ + H₂
+          (a) Which reactant is limiting?
+          (b) What mass of hydrogen is produced?
+
+(a) moles Mg = 2.4 ÷ 24 = 0.10 mol
+    From the equation, 0.10 mol Mg needs 2 × 0.10 = 0.20 mol HCl.
+    Only 0.15 mol HCl is available → HCl runs out first.
+    HCl is the LIMITING reactant; magnesium is in excess.
+
+(b) Ratio HCl : H₂ = 2 : 1
+    moles H₂ = 0.15 ÷ 2 = 0.075 mol
+    Mr(H₂) = 2       mass H₂ = 0.075 × 2 = 0.15 g
+
+Answer:  (a) hydrochloric acid   (b) 0.15 g of hydrogen
+</pre>
+
+<div class="exam-tip">To find the limiting reactant, do <strong>not</strong> just compare the numbers of moles of each reactant &mdash; you must take the <strong>ratio in the equation</strong> into account. In Example 8 there are more moles of HCl (0.15) than Mg (0.10), yet HCl is limiting because twice as much is needed. Always base the product calculation on the <strong>limiting</strong> reactant.</div>
+
+<h3>4.3.2.5 Concentration of Solutions</h3>
+
+<div class="definition">
+    Many chemical reactions take place in solutions. The <strong>concentration</strong> of a solution can be measured in <strong>mass per given volume</strong> of solution, e.g. grams per dm³ (g/dm³).<br><br>
+    <code>concentration (g/dm³) = mass of solute (g) &divide; volume of solution (dm³)</code>
+</div>
+
+<p>Volume conversions: <strong>1 dm³ = 1000 cm³</strong> (= 1 litre). To convert cm³ to dm³, <strong>divide by 1000</strong>. You should be able to explain how the mass of a solute and the volume of a solution are related to the concentration: a <strong>larger mass</strong> of solute in the same volume gives a <strong>higher</strong> concentration; the same mass in a <strong>larger volume</strong> gives a <strong>lower</strong> concentration.</p>
+
+<h3>Worked Example 10 &mdash; Concentration in g/dm³</h3>
+
+<pre>
+Question: 25 g of sodium chloride is dissolved in water to make
+          500 cm³ of solution. Calculate the concentration in g/dm³.
+
+Convert: 500 cm³ = 500 ÷ 1000 = 0.500 dm³
+Formula: concentration = mass ÷ volume
+Working: concentration = 25 ÷ 0.500 = 50 g/dm³
+
+Answer:  50 g/dm³
+</pre>
+
+<h3>Worked Example 11 &mdash; Mass of Solute from Concentration</h3>
+
+<pre>
+Question: What mass of copper sulfate is dissolved in 75 cm³ of a
+          solution of concentration 40 g/dm³?
+
+Convert:  75 cm³ = 0.075 dm³
+Rearrange: mass = concentration × volume
+Working:   mass = 40 × 0.075 = 3.0 g
+
+Answer:  3.0 g
+</pre>
+
+<div class="exam-tip">Nearly every concentration error comes from forgetting to convert cm³ to dm³. If your concentration seems 1000 times too small or too large, check this first. Show the conversion as a separate line &mdash; examiners award a method mark for it.</div>
+
+<h2>4.3.3 Yield and Atom Economy of Chemical Reactions (Triple Only)</h2>
+
+<h3>4.3.3.1 Percentage Yield</h3>
+
+<div class="definition">
+    Even though no atoms are gained or lost in a chemical reaction, it is not always possible to obtain the calculated amount of a product. The amount of product obtained is known as the <strong>yield</strong>. When compared with the maximum <strong>theoretical</strong> amount as a percentage, it is called the <strong>percentage yield</strong>.<br><br>
+    <code>% yield = (mass of product actually made &divide; maximum theoretical mass of product) &times; 100</code>
+</div>
+
+<p>Reasons why the actual yield is less than the theoretical yield:</p>
+<ul>
+    <li>The reaction may not go to completion because it is <strong>reversible</strong> (an equilibrium is reached &mdash; e.g. the Haber process).</li>
+    <li>Some of the product may be <strong>lost when it is separated</strong> from the reaction mixture (e.g. left on filter paper, lost in transferring between containers, lost during evaporation).</li>
+    <li>Some of the reactants may react in <strong>ways different to the expected reaction</strong> (side reactions forming unwanted products).</li>
+    <li>The reactants may be <strong>impure</strong>.</li>
+</ul>
+
+<h3>Worked Example 12 &mdash; Percentage Yield</h3>
+
+<pre>
+Question: A student heats 10.0 g of calcium carbonate and obtains
+          4.2 g of calcium oxide.  CaCO₃ → CaO + CO₂
+          Calculate the percentage yield.
+
+Step 1 (theoretical yield, Higher method):
+        moles CaCO₃ = 10.0 ÷ 100 = 0.100 mol
+        moles CaO   = 0.100 mol (1 : 1)
+        max mass CaO = 0.100 × 56 = 5.6 g
+
+   (Foundation method: 100 g CaCO₃ → 56 g CaO,
+    so 10.0 g → 5.6 g by scaling.)
+
+Step 2: % yield = 4.2 ÷ 5.6 × 100 = 75%
+
+Answer:  75%
+</pre>
+
+<p>Higher-tier students should be able to calculate the theoretical mass of a product from a given mass of reactant and the balanced equation for the reaction, as in step 1 above.</p>
+
+<h3>Worked Example 13 &mdash; Percentage Yield in Industry (Higher)</h3>
+
+<pre>
+Question: In a test run of the Haber process, 28 tonnes of nitrogen
+          react with excess hydrogen and 5.1 tonnes of ammonia are
+          collected.  N₂ + 3H₂ ⇌ 2NH₃
+          Calculate the percentage yield.
+
+Mr(N₂) = 28        Mr(NH₃) = 14 + 3 = 17
+Ratio N₂ : NH₃ = 1 : 2
+28 t N₂ is 1 "tonne-mole"  →  2 "tonne-moles" NH₃
+Theoretical mass NH₃ = 2 × 17 = 34 tonnes
+% yield = 5.1 ÷ 34 × 100 = 15%
+
+The yield is low mainly because the reaction is reversible —
+unreacted N₂ and H₂ are recycled, so little is actually wasted.
+</pre>
+
+<h3>4.3.3.2 Atom Economy</h3>
+
+<div class="definition">
+    The <strong>atom economy</strong> (atom utilisation) is a measure of the amount of starting materials that end up as <strong>useful products</strong>. It is calculated using the balanced equation:<br><br>
+    <code>atom economy = (M<sub>r</sub> of desired product from equation &divide; sum of M<sub>r</sub> of all reactants from equation) &times; 100</code>
+</div>
+
+<p>It is important for <strong>sustainable development</strong> and for <strong>economic</strong> reasons to use reactions with <strong>high atom economy</strong>: less waste is produced, fewer raw materials are used, and less money is spent dealing with by-products. Remember to multiply each M<sub>r</sub> by its coefficient in the balanced equation.</p>
+
+<h3>Worked Example 14 &mdash; Atom Economy</h3>
+
+<pre>
+Question: Calculate the atom economy for making calcium oxide by
+          heating calcium carbonate.  CaCO₃ → CaO + CO₂
+
+Mr of reactants = Mr(CaCO₃) = 100
+Mr of desired product = Mr(CaO) = 56
+Atom economy = 56 ÷ 100 × 100 = 56%
+
+The other 44% ends up as CO₂ — a waste product (and a
+greenhouse gas) unless it can be captured and sold.
+</pre>
+
+<h3>Worked Example 15 &mdash; Comparing Two Routes to Ethanol</h3>
+
+<pre>
+Route A — fermentation:
+   C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂
+   Mr(glucose) = 6×12 + 12×1 + 6×16 = 180
+   Mr of 2C₂H₅OH = 2 × 46 = 92
+   Atom economy = 92 ÷ 180 × 100 = 51.1%
+
+Route B — hydration of ethene:
+   C₂H₄ + H₂O → C₂H₅OH
+   Sum of Mr reactants = 28 + 18 = 46
+   Mr(C₂H₅OH) = 46
+   Atom economy = 46 ÷ 46 × 100 = 100%
+</pre>
+
+<table>
+    <tr><th>Factor</th><th>Fermentation</th><th>Hydration of ethene</th></tr>
+    <tr><td>Atom economy</td><td>51% (CO₂ by-product)</td><td>100% (only one product)</td></tr>
+    <tr><td>Raw material</td><td>Sugar from crops &mdash; renewable</td><td>Ethene from crude oil &mdash; non-renewable</td></tr>
+    <tr><td>Conditions</td><td>~30&ndash;35 &deg;C, yeast, batch process</td><td>~300 &deg;C, 60&ndash;70 atm, phosphoric acid catalyst, continuous</td></tr>
+    <tr><td>Rate / purity</td><td>Slow; dilute ethanol needing distillation</td><td>Fast; purer product</td></tr>
+</table>
+
+<p>When choosing a reaction pathway, industrial chemists consider <strong>atom economy</strong>, <strong>yield</strong>, <strong>rate</strong>, <strong>equilibrium position</strong> and the <strong>usefulness of by-products</strong>. A reaction with high atom economy but very slow rate or low yield may not be the best choice.</p>
+
+<div class="exam-tip">Do not confuse <strong>percentage yield</strong> (based on <em>experimental</em> masses &mdash; how much you actually got) with <strong>atom economy</strong> (based on the <em>balanced equation</em> &mdash; the theoretical fraction of atoms that could end up in the product). A reaction can have 100% atom economy but a low percentage yield, e.g. if it is reversible. Addition reactions always have 100% atom economy because there is only one product.</div>
+
+<h2>4.3.4 Using Concentrations of Solutions in mol/dm³ (Triple Only, Higher)</h2>
+
+<div class="definition">
+    The <strong>concentration</strong> of a solution can be measured in <strong>mol/dm³</strong>.<br><br>
+    <code>concentration (mol/dm³) = amount of solute (mol) &divide; volume of solution (dm³)</code><br><br>
+    The amount in moles of solute or the mass in grams of solute in a given volume of solution can be calculated from its concentration in mol/dm³. To convert: <code>concentration (g/dm³) = concentration (mol/dm³) &times; M<sub>r</sub></code>.
+</div>
+
+<h3>Titrations</h3>
+
+<p>If the volumes of two solutions that react completely are known and the concentration of one solution is known, the <strong>concentration of the other solution can be calculated</strong>. The volumes are found by <strong>titration</strong> &mdash; this is a <strong>required practical</strong> for Chemistry (separate science) students.</p>
+
+<!-- Diagram 3: titration -->
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Acid&ndash;alkali titration apparatus</text>
+  <!-- stand -->
+  <rect x="120" y="340" width="160" height="12" fill="#6b7280"/>
+  <rect x="135" y="40" width="8" height="300" fill="#6b7280"/>
+  <rect x="143" y="85" width="60" height="8" fill="#6b7280"/>
+  <!-- burette -->
+  <rect x="200" y="50" width="20" height="200" fill="#fff" stroke="#374151" stroke-width="1.5"/>
+  <rect x="202" y="90" width="16" height="158" fill="#fecaca"/>
+  <g stroke="#374151" stroke-width="1">
+    <line x1="200" y1="70" x2="208" y2="70"/><line x1="200" y1="90" x2="210" y2="90"/><line x1="200" y1="110" x2="208" y2="110"/><line x1="200" y1="130" x2="210" y2="130"/><line x1="200" y1="150" x2="208" y2="150"/><line x1="200" y1="170" x2="210" y2="170"/><line x1="200" y1="190" x2="208" y2="190"/><line x1="200" y1="210" x2="210" y2="210"/><line x1="200" y1="230" x2="208" y2="230"/>
+  </g>
+  <!-- tap -->
+  <rect x="190" y="255" width="40" height="8" fill="#374151"/>
+  <polygon points="205,250 215,250 213,280 207,280" fill="#fff" stroke="#374151" stroke-width="1.5"/>
+  <!-- flask -->
+  <path d="M 200 290 L 200 305 L 165 335 L 255 335 L 220 305 L 220 290 Z" fill="#fff" stroke="#374151" stroke-width="2"/>
+  <path d="M 178 324 L 242 324 L 255 335 L 165 335 Z" fill="#fbcfe8"/>
+  <!-- white tile -->
+  <rect x="150" y="336" width="120" height="4" fill="#fff" stroke="#9ca3af"/>
+  <!-- labels -->
+  <line x1="222" y1="120" x2="330" y2="100" stroke="#6b7280" stroke-width="1"/>
+  <text x="335" y="98" font-size="11" fill="#111" font-weight="bold">Burette</text>
+  <text x="335" y="112" font-size="10" fill="#374151">contains acid of known concentration;</text>
+  <text x="335" y="125" font-size="10" fill="#374151">read to nearest 0.05 cm³ at bottom of meniscus</text>
+  <line x1="232" y1="259" x2="330" y2="200" stroke="#6b7280" stroke-width="1"/>
+  <text x="335" y="198" font-size="11" fill="#111" font-weight="bold">Tap</text>
+  <text x="335" y="212" font-size="10" fill="#374151">add acid dropwise near the end-point</text>
+  <line x1="245" y1="320" x2="330" y2="270" stroke="#6b7280" stroke-width="1"/>
+  <text x="335" y="265" font-size="11" fill="#111" font-weight="bold">Conical flask</text>
+  <text x="335" y="279" font-size="10" fill="#374151">25.0 cm³ alkali (measured with a pipette)</text>
+  <text x="335" y="292" font-size="10" fill="#374151">+ a few drops of indicator; swirl constantly</text>
+  <line x1="270" y1="340" x2="330" y2="335" stroke="#6b7280" stroke-width="1"/>
+  <text x="335" y="333" font-size="11" fill="#111" font-weight="bold">White tile</text>
+  <text x="335" y="347" font-size="10" fill="#374151">makes the colour change easier to see</text>
+</svg>
+
+<h3>Titration Method (Required Practical)</h3>
+
+<ol>
+    <li>Use a <strong>volumetric pipette</strong> and pipette filler to measure exactly <strong>25.0 cm³</strong> of the alkali into a clean conical flask.</li>
+    <li>Add a few drops of a suitable <strong>indicator</strong> (e.g. phenolphthalein: pink in alkali, colourless in acid; or methyl orange: yellow in alkali, red in acid). Place the flask on a white tile.</li>
+    <li>Fill the <strong>burette</strong> with acid using a funnel (remove the funnel afterwards); record the initial reading at eye level from the bottom of the meniscus.</li>
+    <li>Add the acid, swirling the flask. As the end-point approaches (colour starts to change temporarily), add the acid <strong>drop by drop</strong>.</li>
+    <li>Stop when the indicator <strong>just changes colour permanently</strong> (the <strong>end-point</strong>). Record the final burette reading. The <strong>titre</strong> = final &minus; initial reading.</li>
+    <li>The first run is a <strong>rough</strong> titration. Repeat until you have <strong>concordant</strong> results (within <strong>0.10 cm³</strong> of each other), then calculate the mean of the concordant titres.</li>
+</ol>
+
+<p>Universal indicator is <strong>not</strong> used in titrations because it changes colour gradually through many colours and gives no sharp end-point.</p>
+
+<h3>Worked Example 16 &mdash; Concentration from a Titration (1 : 1)</h3>
+
+<pre>
+Question: 25.0 cm³ of sodium hydroxide solution was neutralised by
+          20.0 cm³ of 0.100 mol/dm³ hydrochloric acid.
+          NaOH + HCl → NaCl + H₂O
+          Calculate the concentration of the NaOH in (a) mol/dm³
+          and (b) g/dm³.
+
+Step 1 — moles of the known solution (HCl):
+         volume = 20.0 ÷ 1000 = 0.0200 dm³
+         moles HCl = 0.100 × 0.0200 = 0.00200 mol
+Step 2 — use the ratio (NaOH : HCl = 1 : 1):
+         moles NaOH = 0.00200 mol
+Step 3 — concentration of NaOH:
+         volume = 25.0 ÷ 1000 = 0.0250 dm³
+         conc = 0.00200 ÷ 0.0250 = 0.0800 mol/dm³
+(b)      Mr(NaOH) = 23 + 16 + 1 = 40
+         conc = 0.0800 × 40 = 3.20 g/dm³
+
+Answer:  (a) 0.0800 mol/dm³   (b) 3.20 g/dm³
+</pre>
+
+<h3>Worked Example 17 &mdash; Titration with a 1 : 2 Ratio</h3>
+
+<pre>
+Question: 25.0 cm³ of 0.100 mol/dm³ sodium hydroxide was neutralised
+          by a mean titre of 12.50 cm³ of sulfuric acid.
+          H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O
+          Calculate the concentration of the sulfuric acid.
+
+Step 1: moles NaOH = 0.100 × (25.0 ÷ 1000) = 0.00250 mol
+Step 2: ratio H₂SO₄ : NaOH = 1 : 2
+        moles H₂SO₄ = 0.00250 ÷ 2 = 0.00125 mol
+Step 3: conc H₂SO₄ = 0.00125 ÷ (12.50 ÷ 1000)
+                   = 0.00125 ÷ 0.01250
+                   = 0.100 mol/dm³
+
+Answer:  0.100 mol/dm³
+</pre>
+
+<h3>Worked Example 18 &mdash; Choosing Concordant Titres</h3>
+
+<pre>
+Titration          Rough    1       2       3
+Final (cm³)        23.10    45.20   22.75   45.05
+Initial (cm³)       0.00    22.65    0.10   22.50
+Titre (cm³)        23.10    22.55   22.65   22.55
+
+Concordant titres (within 0.10 cm³): 22.55, 22.65, 22.55
+Mean titre = (22.55 + 22.65 + 22.55) ÷ 3 = 22.58 cm³
+(the rough titre is ignored)
+</pre>
+
+<h3>Worked Example 19 &mdash; Making a Solution of Known Concentration</h3>
+
+<pre>
+Question: What mass of anhydrous sodium carbonate, Na₂CO₃, is needed
+          to make 250 cm³ of a 0.200 mol/dm³ solution?
+
+Step 1: moles needed = concentration × volume
+                     = 0.200 × (250 ÷ 1000) = 0.0500 mol
+Step 2: Mr(Na₂CO₃) = 2 × 23 + 12 + 3 × 16 = 106
+Step 3: mass = 0.0500 × 106 = 5.30 g
+
+Method: weigh 5.30 g accurately, dissolve in a little distilled
+water in a beaker, transfer with rinsings to a 250 cm³ volumetric
+flask, make up to the mark and invert to mix.
+</pre>
+
+<div class="exam-tip">Titration calculations always follow the same three steps: <strong>moles of the solution you know everything about</strong> &rarr; <strong>use the equation ratio</strong> &rarr; <strong>concentration of the unknown</strong>. Write down the ratio explicitly. Convert both volumes to dm³. Give burette readings to <strong>2 decimal places</strong> (ending in 0 or 5) and never include the rough titre in the mean.</div>
+
+<h2>4.3.5 Use of Amount of Substance in Relation to Volumes of Gases (Triple Only, Higher)</h2>
+
+<div class="definition">
+    Equal amounts in moles of gases occupy the <strong>same volume</strong> under the same conditions of temperature and pressure. The volume of <strong>one mole of any gas</strong> at <strong>room temperature and pressure</strong> (RTP: 20 &deg;C and 1 atmosphere pressure) is <strong>24 dm³</strong> (24 000 cm³).<br><br>
+    <code>volume of gas at RTP (dm³) = moles &times; 24</code> &nbsp;&nbsp;&nbsp; <code>moles = volume (dm³) &divide; 24</code>
+</div>
+
+<p>This is true whatever the gas &mdash; 1 mol of hydrogen (2 g) and 1 mol of carbon dioxide (44 g) both occupy 24 dm³ at RTP, because the gas particles are so far apart that their own size is negligible compared with the space between them.</p>
+
+<!-- Diagram 4: molar volume -->
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">One mole of any gas occupies 24 dm³ at RTP</text>
+  <!-- three boxes -->
+  <rect x="50" y="50" width="160" height="140" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <g fill="#2563eb"><circle cx="80" cy="80" r="5"/><circle cx="150" cy="95" r="5"/><circle cx="110" cy="140" r="5"/><circle cx="180" cy="160" r="5"/><circle cx="75" cy="170" r="5"/><circle cx="185" cy="70" r="5"/></g>
+  <text x="130" y="210" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">1 mol H₂</text>
+  <text x="130" y="226" text-anchor="middle" font-size="10" fill="#374151">mass 2 g &mdash; 24 dm³</text>
+
+  <rect x="270" y="50" width="160" height="140" rx="6" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <g fill="#dc2626"><circle cx="300" cy="85" r="7"/><circle cx="370" cy="75" r="7"/><circle cx="330" cy="140" r="7"/><circle cx="400" cy="155" r="7"/><circle cx="295" cy="170" r="7"/><circle cx="405" cy="105" r="7"/></g>
+  <text x="350" y="210" text-anchor="middle" font-size="12" font-weight="bold" fill="#991b1b">1 mol O₂</text>
+  <text x="350" y="226" text-anchor="middle" font-size="10" fill="#374151">mass 32 g &mdash; 24 dm³</text>
+
+  <rect x="490" y="50" width="160" height="140" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <g fill="#16a34a"><circle cx="520" cy="80" r="8"/><circle cx="595" cy="90" r="8"/><circle cx="550" cy="145" r="8"/><circle cx="625" cy="160" r="8"/><circle cx="515" cy="170" r="8"/><circle cx="630" cy="70" r="8"/></g>
+  <text x="570" y="210" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">1 mol CO₂</text>
+  <text x="570" y="226" text-anchor="middle" font-size="10" fill="#374151">mass 44 g &mdash; 24 dm³</text>
+  <text x="350" y="245" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Same number of molecules (6.02 × 10²³) &rarr; same volume, regardless of mass.</text>
+</svg>
+
+<h3>Worked Example 20 &mdash; Gas Volume from a Mass</h3>
+
+<pre>
+Question: Calculate the volume of carbon dioxide, at RTP, produced
+          when 5.0 g of calcium carbonate reacts with excess acid.
+          CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂
+
+Step 1: moles CaCO₃ = 5.0 ÷ 100 = 0.050 mol
+Step 2: ratio CaCO₃ : CO₂ = 1 : 1      moles CO₂ = 0.050 mol
+Step 3: volume = 0.050 × 24 = 1.2 dm³  (= 1200 cm³)
+
+Answer:  1.2 dm³
+</pre>
+
+<h3>Worked Example 21 &mdash; Mass from a Gas Volume</h3>
+
+<pre>
+Question: What mass of oxygen gas occupies 600 cm³ at RTP?
+
+Convert: 600 cm³ = 0.600 dm³
+moles O₂ = 0.600 ÷ 24 = 0.025 mol
+mass O₂  = 0.025 × 32 = 0.80 g
+
+Answer:  0.80 g
+</pre>
+
+<h3>Reacting Volumes of Gases</h3>
+
+<p>Because equal volumes of gases contain equal numbers of moles, the <strong>ratio of gas volumes</strong> in a reaction is the same as the <strong>mole ratio</strong> in the balanced equation. You should be able to use the volumes of gaseous reactants and products to deduce the balancing numbers in an equation, and calculate the volumes of gases involved in reactions using the molar gas volume at RTP.</p>
+
+<h3>Worked Example 22 &mdash; Reacting Gas Volumes</h3>
+
+<pre>
+Question: Hydrogen burns in oxygen:  2H₂(g) + O₂(g) → 2H₂O(l)
+          What volume of oxygen is needed to react completely
+          with 50 cm³ of hydrogen? (Same temperature and pressure.)
+
+Ratio H₂ : O₂ = 2 : 1
+Volume O₂ = 50 ÷ 2 = 25 cm³
+
+Answer:  25 cm³ (no need to use 24 dm³ — the ratio is enough)
+
+Question 2: 20 cm³ of a hydrocarbon gas reacts with exactly
+            60 cm³ of oxygen to form 40 cm³ of carbon dioxide.
+            Deduce the balancing numbers.
+
+Ratio hydrocarbon : O₂ : CO₂ = 20 : 60 : 40 = 1 : 3 : 2
+Equation:  C₂H₄ + 3O₂ → 2CO₂ + 2H₂O    (ethene fits this ratio)
+</pre>
+
+<div class="exam-tip">The 24 dm³ value only applies at <strong>RTP</strong> (20 &deg;C, 1 atm) and only to <strong>gases</strong> &mdash; never use it for solids, liquids or solutions. It is given on the exam paper when needed, but you should know it. If a question involves only gas volumes, you can use the volume ratio directly without converting to moles at all.</div>
+
+<h2>Common Calculation Mistakes</h2>
+
+<table>
+    <tr><th>Mistake</th><th>Example</th><th>How to avoid it</th></tr>
+    <tr><td>Not converting cm³ to dm³</td><td>Using 25 instead of 0.025 dm³</td><td>Divide cm³ by 1000 on a separate line before substituting.</td></tr>
+    <tr><td>Ignoring the equation ratio</td><td>Assuming moles of H₂SO₄ = moles of NaOH</td><td>Write the ratio from the balanced equation on its own line.</td></tr>
+    <tr><td>Including the coefficient in M<sub>r</sub></td><td>Taking M<sub>r</sub> of 2H₂O as 36 when converting moles of water</td><td>M<sub>r</sub> is per formula; the ratio handles the coefficient.</td></tr>
+    <tr><td>Bracket errors</td><td>M<sub>r</sub> of Mg(OH)₂ as 41 instead of 58</td><td>Multiply everything inside the bracket.</td></tr>
+    <tr><td>Using diatomic gases as atoms</td><td>M<sub>r</sub> of O₂ taken as 16</td><td>H₂, N₂, O₂, Cl₂ etc. are molecules: O₂ = 32.</td></tr>
+    <tr><td>Rounding too early</td><td>Rounding moles to 1 s.f. mid-calculation</td><td>Keep full calculator values; round only the final answer (usually 3 s.f.).</td></tr>
+    <tr><td>Wrong reactant used for product mass</td><td>Basing the yield on the reactant in excess</td><td>Always use the <strong>limiting</strong> reactant.</td></tr>
+    <tr><td>Using 24 dm³ for liquids or solutions</td><td>Volume of 1 mol of water taken as 24 dm³</td><td>Molar gas volume applies only to <strong>gases at RTP</strong>.</td></tr>
+</table>
+
+<h2>Summary of Key Equations for 4.3</h2>
+
+<table>
+    <tr><th>Quantity</th><th>Equation</th><th>Units</th><th>Tier</th></tr>
+    <tr><td>Relative formula mass</td><td>M<sub>r</sub> = sum of A<sub>r</sub> values</td><td>none</td><td>All</td></tr>
+    <tr><td>% mass of element</td><td>(A<sub>r</sub> &times; no. of atoms) &divide; M<sub>r</sub> &times; 100</td><td>%</td><td>All</td></tr>
+    <tr><td>Uncertainty</td><td>&plusmn; range &divide; 2</td><td>as measured</td><td>All</td></tr>
+    <tr><td>Moles</td><td>n = mass &divide; M<sub>r</sub></td><td>mol</td><td>Higher</td></tr>
+    <tr><td>Number of particles</td><td>N = n &times; 6.02 &times; 10²³</td><td>&mdash;</td><td>Higher</td></tr>
+    <tr><td>Concentration (mass)</td><td>c = mass &divide; volume</td><td>g/dm³</td><td>All</td></tr>
+    <tr><td>Percentage yield</td><td>actual &divide; theoretical &times; 100</td><td>%</td><td>Triple</td></tr>
+    <tr><td>Atom economy</td><td>M<sub>r</sub> desired product &divide; sum M<sub>r</sub> reactants &times; 100</td><td>%</td><td>Triple</td></tr>
+    <tr><td>Concentration (moles)</td><td>c = n &divide; V</td><td>mol/dm³</td><td>Triple, Higher</td></tr>
+    <tr><td>Gas volume at RTP</td><td>V = n &times; 24</td><td>dm³</td><td>Triple, Higher</td></tr>
+</table>
+
+<h2>Summary Checklist for 4.3 Quantitative Chemistry</h2>
+
+<ul>
+    <li>State the law of conservation of mass and use it to balance equations.</li>
+    <li>Calculate relative formula mass (M<sub>r</sub>), including formulae with brackets, and the percentage by mass of an element in a compound.</li>
+    <li>Explain apparent mass changes in reactions where a gas is a reactant or product.</li>
+    <li>Calculate the mean of repeat results and estimate uncertainty from the range.</li>
+    <li>(Higher) Use the Avogadro constant and the mole: moles = mass &divide; M<sub>r</sub>; number of particles.</li>
+    <li>(Higher) Calculate reacting masses from balanced equations.</li>
+    <li>(Higher) Deduce balancing numbers from reacting masses.</li>
+    <li>(Higher) Identify limiting reactants and explain their effect on the amount of product.</li>
+    <li>Calculate concentration in g/dm³ and the mass of solute in a given volume.</li>
+    <li>(Triple) Calculate percentage yield and give reasons why yields are below 100%.</li>
+    <li>(Triple) Calculate atom economy and explain why high atom economy is important for sustainability and economics.</li>
+    <li>(Triple, Higher) Calculate concentrations in mol/dm³ from titration results and convert to g/dm³; describe the titration method.</li>
+    <li>(Triple, Higher) Use the molar gas volume (24 dm³ at RTP) to calculate gas volumes and use gas volume ratios to balance equations.</li>
+</ul>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — AQA 4.8 — Chemical Analysis</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.8 Chemical Analysis</h1>
+<p class="spec-ref">AQA GCSE Chemistry (8462) &mdash; Paper 2</p>
+
+<p>Analysts have developed a range of qualitative tests to detect specific chemicals. The tests are based on reactions that produce a <strong>gas with distinctive properties</strong>, a <strong>colour change</strong> or an <strong>insoluble solid (precipitate)</strong> that appears in a solution. Instrumental methods provide fast, sensitive and accurate means of analysing chemicals, and are particularly useful when the amount of chemical being analysed is small. This topic includes two required practicals: <strong>chromatography</strong> and <strong>identifying ions</strong>. Sections marked <strong>(Chemistry only)</strong> are not in Combined Science; content marked <strong>(HT only)</strong> is Higher Tier.</p>
+
+<h2>4.8.1 Purity, Formulations and Chromatography</h2>
+
+<h3>4.8.1.1 Pure Substances</h3>
+
+<p>The word "pure" means two different things depending on who is using it.</p>
+
+<div class="definition">
+    <strong>In chemistry</strong>, a <strong>pure substance</strong> is a <strong>single element or compound</strong>, not mixed with any other substance.<br><br>
+    <strong>In everyday language</strong>, "pure" can mean a substance that has had nothing added to it, so it is unadulterated and in its natural state &mdash; e.g. "pure milk" or "pure orange juice". These are actually <strong>mixtures</strong> of many substances.
+</div>
+
+<h3>Using Melting and Boiling Points to Test Purity</h3>
+
+<p>Pure elements and compounds <strong>melt and boil at specific (fixed) temperatures</strong>. Melting point and boiling point data can be used to distinguish pure substances from mixtures.</p>
+
+<table>
+    <tr><th>Feature</th><th>Pure substance</th><th>Impure substance (mixture)</th></tr>
+    <tr><td>Melting point</td><td>Sharp, fixed value (melts at one temperature)</td><td><strong>Lower</strong> than the pure substance and melts over a <strong>range</strong> of temperatures</td></tr>
+    <tr><td>Boiling point</td><td>Sharp, fixed value</td><td>Usually <strong>higher</strong> than the pure substance and boils over a <strong>range</strong></td></tr>
+    <tr><td>Example</td><td>Pure water: melts at exactly 0 &deg;C, boils at exactly 100 &deg;C (at standard pressure)</td><td>Sea water: freezes below 0 &deg;C (around &minus;2 &deg;C) and boils above 100 &deg;C</td></tr>
+</table>
+
+<!-- Diagram 1: Heating curves pure vs impure -->
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Melting a pure vs an impure solid</text>
+
+  <!-- Left graph: pure -->
+  <line x1="60" y1="50" x2="60" y2="250" stroke="#374151" stroke-width="1.5"/>
+  <line x1="60" y1="250" x2="340" y2="250" stroke="#374151" stroke-width="1.5"/>
+  <text x="200" y="275" text-anchor="middle" font-size="11" fill="#374151">time (heating)</text>
+  <text x="35" y="150" text-anchor="middle" font-size="11" fill="#374151" transform="rotate(-90 35 150)">temperature</text>
+  <polyline points="60,230 140,150 260,150 330,80" fill="none" stroke="#2563eb" stroke-width="3"/>
+  <line x1="60" y1="150" x2="140" y2="150" stroke="#9ca3af" stroke-dasharray="4,3"/>
+  <text x="200" y="140" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">flat: melts at ONE temperature</text>
+  <text x="200" y="45" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Pure substance</text>
+
+  <!-- Right graph: impure -->
+  <line x1="420" y1="50" x2="420" y2="250" stroke="#374151" stroke-width="1.5"/>
+  <line x1="420" y1="250" x2="700" y2="250" stroke="#374151" stroke-width="1.5"/>
+  <text x="560" y="275" text-anchor="middle" font-size="11" fill="#374151">time (heating)</text>
+  <text x="395" y="150" text-anchor="middle" font-size="11" fill="#374151" transform="rotate(-90 395 150)">temperature</text>
+  <polyline points="420,230 490,180 620,150 690,80" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <line x1="420" y1="150" x2="620" y2="150" stroke="#9ca3af" stroke-dasharray="4,3"/>
+  <line x1="420" y1="180" x2="490" y2="180" stroke="#9ca3af" stroke-dasharray="4,3"/>
+  <text x="560" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="#991b1b">sloped: melts over a RANGE</text>
+  <text x="560" y="214" text-anchor="middle" font-size="10" fill="#991b1b">starting at a lower temperature</text>
+  <text x="560" y="45" text-anchor="middle" font-size="12" font-weight="bold" fill="#991b1b">Impure substance</text>
+</svg>
+
+<div class="exam-tip">If an exam question gives you a melting point and asks whether a sample is pure, compare it with the data-book value. If the sample melts <strong>at</strong> the expected temperature, sharply, it is pure. If it melts <strong>below</strong> the expected value or <strong>over a range</strong>, it is impure. Always quote the numbers in your answer.</div>
+
+<h3>4.8.1.2 Formulations</h3>
+
+<div class="definition">
+    A <strong>formulation</strong> is a <strong>mixture</strong> that has been designed as a <strong>useful product</strong>. Many products are complex mixtures in which each chemical has a particular purpose.
+</div>
+
+<p>Formulations are made by mixing the components in <strong>carefully measured quantities</strong> to ensure that the product has the required properties. Changing the proportions changes the properties, so manufacturers follow a precise "recipe".</p>
+
+<table>
+    <tr><th>Formulation</th><th>Typical components and their purposes</th></tr>
+    <tr><td><strong>Paints</strong></td><td>Pigment (colour), binder (sticks pigment to surface and forms a film), solvent (makes it spreadable; evaporates), additives (e.g. to speed drying or prevent mould).</td></tr>
+    <tr><td><strong>Medicines</strong></td><td>Active ingredient (the drug), fillers/bulking agents (make a tablet a sensible size), binders, flavourings, colourings, coatings.</td></tr>
+    <tr><td><strong>Fuels</strong></td><td>Petrol is a mixture of hydrocarbons plus additives (e.g. anti-knock agents, detergents to clean the engine).</td></tr>
+    <tr><td><strong>Cleaning agents</strong></td><td>Surfactants (detergents), water softeners, enzymes, fragrances, bleaching agents.</td></tr>
+    <tr><td><strong>Alloys</strong></td><td>Metal mixtures with precise percentages, e.g. stainless steel (iron, chromium, nickel, carbon).</td></tr>
+    <tr><td><strong>Fertilisers</strong></td><td>Precise ratios of nitrogen, phosphorus and potassium compounds (NPK).</td></tr>
+    <tr><td><strong>Foods</strong></td><td>Ingredients, preservatives, emulsifiers, flavourings, colourings.</td></tr>
+</table>
+
+<p>Students should be able to identify formulations given appropriate information &mdash; e.g. a label listing several ingredients with precise percentages indicates a formulation. You do <strong>not</strong> need to know the components of specific formulations.</p>
+
+<div class="exam-tip">A common 2-mark question: "Explain why a toothpaste is a formulation." Answer: it is a <strong>mixture</strong> (1) of components in <strong>measured/specific quantities</strong>, designed to give a <strong>useful product</strong> with particular properties (1).</div>
+
+<h3>4.8.1.3 Chromatography</h3>
+
+<p><strong>Chromatography</strong> can be used to <strong>separate mixtures</strong> and can give information to help <strong>identify substances</strong>. It is particularly useful for coloured substances such as inks, food colourings and dyes.</p>
+
+<div class="definition">
+    Chromatography involves a <strong>stationary phase</strong> and a <strong>mobile phase</strong>.<br><br>
+    &bull; In <strong>paper chromatography</strong>, the stationary phase is the <strong>paper</strong> (more precisely, water held in the paper fibres).<br>
+    &bull; The mobile phase is the <strong>solvent</strong> (e.g. water or ethanol) that moves up the paper.<br><br>
+    Separation depends on the <strong>distribution of substances between the phases</strong>. A substance that is more soluble in the solvent and less attracted to the paper spends more time in the mobile phase, so it travels <strong>further</strong> up the paper.
+</div>
+
+<!-- Diagram 2: Chromatogram set-up -->
+<svg viewBox="0 0 760 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrCh" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#374151"/></marker>
+  </defs>
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Paper chromatography &mdash; set-up and chromatogram</text>
+
+  <!-- Beaker set-up -->
+  <text x="170" y="50" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Set-up</text>
+  <!-- glass rod -->
+  <line x1="60" y1="70" x2="280" y2="70" stroke="#6b7280" stroke-width="5"/>
+  <text x="290" y="74" font-size="10" fill="#374151">glass rod</text>
+  <!-- beaker -->
+  <path d="M 75 75 L 75 340 L 265 340 L 265 75" stroke="#374151" stroke-width="2.5" fill="none"/>
+  <!-- solvent -->
+  <rect x="77" y="300" width="186" height="38" fill="#bfdbfe"/>
+  <text x="170" y="330" text-anchor="middle" font-size="10" fill="#1e40af">solvent (mobile phase)</text>
+  <!-- paper -->
+  <rect x="125" y="70" width="90" height="250" fill="#fefce8" stroke="#a16207" stroke-width="1.5"/>
+  <!-- pencil baseline -->
+  <line x1="125" y1="285" x2="215" y2="285" stroke="#374151" stroke-width="1.5"/>
+  <circle cx="150" cy="285" r="5" fill="#7c3aed"/>
+  <circle cx="190" cy="285" r="5" fill="#16a34a"/>
+  <!-- labels -->
+  <line x1="215" y1="285" x2="300" y2="250" stroke="#374151" stroke-width="1" />
+  <text x="302" y="248" font-size="10" fill="#374151">pencil start line</text>
+  <text x="302" y="261" font-size="10" fill="#374151">ABOVE solvent level</text>
+  <line x1="215" y1="160" x2="300" y2="160" stroke="#374151" stroke-width="1" />
+  <text x="302" y="158" font-size="10" fill="#374151">chromatography paper</text>
+  <text x="302" y="171" font-size="10" fill="#374151">(stationary phase)</text>
+  <text x="170" y="365" text-anchor="middle" font-size="10" fill="#374151">Lid/watch glass on top reduces evaporation of solvent</text>
+
+  <!-- Chromatogram -->
+  <text x="580" y="50" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Finished chromatogram</text>
+  <rect x="460" y="65" width="240" height="280" fill="#fefce8" stroke="#a16207" stroke-width="1.5"/>
+  <!-- solvent front -->
+  <line x1="460" y1="95" x2="700" y2="95" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="705" y="99" font-size="10" fill="#2563eb">solvent front</text>
+  <!-- baseline -->
+  <line x1="460" y1="315" x2="700" y2="315" stroke="#374151" stroke-width="1.5"/>
+  <text x="705" y="319" font-size="10" fill="#374151">start line</text>
+  <!-- Columns: Unknown X, A, B, C -->
+  <text x="500" y="335" text-anchor="middle" font-size="11" font-weight="bold" fill="#111">X</text>
+  <text x="550" y="335" text-anchor="middle" font-size="11" font-weight="bold" fill="#111">A</text>
+  <text x="600" y="335" text-anchor="middle" font-size="11" font-weight="bold" fill="#111">B</text>
+  <text x="650" y="335" text-anchor="middle" font-size="11" font-weight="bold" fill="#111">C</text>
+  <!-- X has spots at 150 and 250 -->
+  <ellipse cx="500" cy="150" rx="9" ry="7" fill="#dc2626"/>
+  <ellipse cx="500" cy="250" rx="9" ry="7" fill="#2563eb"/>
+  <!-- A at 150 -->
+  <ellipse cx="550" cy="150" rx="9" ry="7" fill="#dc2626"/>
+  <!-- B at 200 -->
+  <ellipse cx="600" cy="200" rx="9" ry="7" fill="#f59e0b"/>
+  <!-- C at 250 -->
+  <ellipse cx="650" cy="250" rx="9" ry="7" fill="#2563eb"/>
+  <!-- Distance arrows for X red spot -->
+  <line x1="475" y1="315" x2="475" y2="153" stroke="#374151" stroke-width="1.2" marker-end="url(#arrCh)"/>
+  <text x="470" y="235" text-anchor="end" font-size="10" fill="#374151">a</text>
+  <line x1="685" y1="315" x2="685" y2="98" stroke="#374151" stroke-width="1.2" marker-end="url(#arrCh)"/>
+  <text x="692" y="210" font-size="10" fill="#374151">b</text>
+  <text x="580" y="365" text-anchor="middle" font-size="10" fill="#374151">R<tspan baseline-shift="sub" font-size="8">f</tspan> = a &divide; b. X contains A and C, but not B.</text>
+</svg>
+
+<h3>R<sub>f</sub> Values</h3>
+
+<div class="definition">
+    The ratio of the distance moved by a compound (centre of spot from origin) to the distance moved by the solvent can be expressed as its <strong>R<sub>f</sub> value</strong>:<br><br>
+    <code>R<sub>f</sub> = distance moved by substance &divide; distance moved by solvent</code><br><br>
+    R<sub>f</sub> has <strong>no units</strong> and is always <strong>between 0 and 1</strong>. Different compounds have different R<sub>f</sub> values in different solvents, which can be used to help identify the compounds.
+</div>
+
+<p>Key facts for interpreting chromatograms:</p>
+
+<ul>
+    <li>A <strong>pure</strong> compound produces a <strong>single spot</strong> in all solvents.</li>
+    <li>A mixture separates into <strong>two or more spots</strong> (though a single spot does not prove purity &mdash; two substances might have the same R<sub>f</sub> in that solvent, so you should try a different solvent).</li>
+    <li>If a spot in the unknown is at the <strong>same height</strong> (same R<sub>f</sub>) as a spot from a known reference substance <strong>in the same solvent</strong>, they are likely to be the same compound.</li>
+    <li>A substance that <strong>stays on the start line</strong> (R<sub>f</sub> = 0) is <strong>insoluble</strong> in that solvent.</li>
+</ul>
+
+<h3>Worked Example 1 &mdash; Calculating an R<sub>f</sub> Value</h3>
+
+<pre>
+Question: On a chromatogram the solvent front moved 8.0 cm from
+          the start line. A red spot moved 5.2 cm. Calculate its
+          Rf value.
+
+Given:   distance moved by substance = 5.2 cm
+         distance moved by solvent   = 8.0 cm
+Formula: Rf = distance moved by substance ÷ distance moved by solvent
+Working: Rf = 5.2 ÷ 8.0
+            = 0.65
+
+Answer:  Rf = 0.65  (no units)
+</pre>
+
+<h3>Worked Example 2 &mdash; Identifying Components</h3>
+
+<pre>
+Question: A food colouring gives spots with Rf = 0.30 and 0.72.
+          Reference dyes in the same solvent have Rf values:
+            E102 = 0.72,  E110 = 0.45,  E124 = 0.30,  E133 = 0.85
+          Which dyes are in the food colouring?
+
+Answer:   The spots match E124 (0.30) and E102 (0.72).
+          The colouring is a mixture of E124 and E102 — it does
+          not contain E110 or E133.
+</pre>
+
+<h3>Required Practical &mdash; Chromatography</h3>
+
+<p><strong>Aim:</strong> investigate how paper chromatography can be used to separate and tell the difference between coloured substances, and calculate R<sub>f</sub> values.</p>
+
+<ol>
+    <li>Draw a <strong>start line in pencil</strong> about 2 cm from the bottom of the chromatography paper.</li>
+    <li>Use a capillary tube to put a <strong>small, concentrated spot</strong> of each ink/dye on the line, spaced apart. Label each in pencil.</li>
+    <li>Pour solvent into a beaker to a depth of about 1 cm &mdash; <strong>below the start line</strong>.</li>
+    <li>Hang the paper so that its bottom edge dips into the solvent but the spots are above the solvent. Put a lid on the beaker.</li>
+    <li>Allow the solvent to rise until it is near the top. Remove the paper and immediately <strong>mark the solvent front</strong> in pencil.</li>
+    <li>Let the paper dry. Measure distances from the start line to the <strong>centre of each spot</strong> and to the solvent front. Calculate R<sub>f</sub> values.</li>
+</ol>
+
+<table>
+    <tr><th>Precaution</th><th>Reason</th></tr>
+    <tr><td>Start line drawn in <strong>pencil</strong>, not ink</td><td>Graphite is insoluble &mdash; it will not run up the paper. Ink would dissolve and separate, confusing the results.</td></tr>
+    <tr><td>Start line <strong>above</strong> the solvent level</td><td>Otherwise the samples would <strong>dissolve into the solvent</strong> in the beaker instead of travelling up the paper.</td></tr>
+    <tr><td>Lid on beaker</td><td>Keeps the atmosphere saturated with solvent vapour, so the solvent does not evaporate from the paper.</td></tr>
+    <tr><td>Small spots</td><td>Large spots spread out and overlap, making it hard to measure distances.</td></tr>
+    <tr><td>Paper must not touch the sides of the beaker</td><td>The solvent would move unevenly and the solvent front would not be straight.</td></tr>
+</table>
+
+<div class="exam-tip">The two most common chromatography exam questions are: "Why is the start line drawn in pencil?" and "Why must the start line be above the solvent?". Learn both answers word-for-word from the table above. Also remember: measure to the <strong>centre</strong> of the spot.</div>
+
+<h2>4.8.2 Identification of Common Gases</h2>
+
+<p>You must know the tests for four common gases. Each test uses a simple piece of equipment and gives a clear, distinctive result.</p>
+
+<table>
+    <tr><th>Gas</th><th>Test</th><th>Positive result</th><th>Chemistry behind it</th></tr>
+    <tr><td><strong>Hydrogen</strong> (H<sub>2</sub>)</td><td>Hold a <strong>burning splint</strong> at the open end of a test tube of the gas.</td><td>Hydrogen burns rapidly with a <strong>squeaky pop</strong>.</td><td>2H<sub>2</sub> + O<sub>2</sub> &rarr; 2H<sub>2</sub>O (rapid combustion)</td></tr>
+    <tr><td><strong>Oxygen</strong> (O<sub>2</sub>)</td><td>Insert a <strong>glowing splint</strong> into a test tube of the gas.</td><td>The splint <strong>relights</strong>.</td><td>Oxygen supports combustion &mdash; the higher concentration restarts burning.</td></tr>
+    <tr><td><strong>Carbon dioxide</strong> (CO<sub>2</sub>)</td><td>Bubble the gas through (or shake it with) <strong>limewater</strong> (calcium hydroxide solution).</td><td>Limewater turns <strong>milky (cloudy)</strong>.</td><td>Ca(OH)<sub>2</sub> + CO<sub>2</sub> &rarr; CaCO<sub>3</sub> + H<sub>2</sub>O; insoluble calcium carbonate forms a white precipitate.</td></tr>
+    <tr><td><strong>Chlorine</strong> (Cl<sub>2</sub>)</td><td>Hold <strong>damp litmus paper</strong> in the gas.</td><td>Litmus paper is <strong>bleached and turns white</strong>. (Blue litmus may first turn red briefly.)</td><td>Chlorine dissolves in the water on the paper forming acidic, bleaching solutions.</td></tr>
+</table>
+
+<!-- Diagram 3: Gas tests -->
+<svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The four gas tests</text>
+
+  <!-- Panel template -->
+  <g>
+    <rect x="15" y="40" width="175" height="195" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="102" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Hydrogen</text>
+    <rect x="80" y="110" width="30" height="95" rx="12" fill="#fff" stroke="#374151" stroke-width="2"/>
+    <line x1="140" y1="85" x2="100" y2="110" stroke="#92400e" stroke-width="4"/>
+    <path d="M 100 112 Q 92 100 100 90 Q 104 100 108 96 Q 110 106 100 112 Z" fill="#f97316"/>
+    <text x="102" y="225" text-anchor="middle" font-size="11" font-weight="bold" fill="#991b1b">burning splint &rarr; POP</text>
+  </g>
+  <g>
+    <rect x="200" y="40" width="175" height="195" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="287" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Oxygen</text>
+    <rect x="272" y="100" width="30" height="105" rx="12" fill="#fff" stroke="#374151" stroke-width="2"/>
+    <line x1="287" y1="75" x2="287" y2="150" stroke="#92400e" stroke-width="4"/>
+    <circle cx="287" cy="152" r="5" fill="#f97316"/>
+    <text x="287" y="225" text-anchor="middle" font-size="11" font-weight="bold" fill="#991b1b">glowing splint relights</text>
+  </g>
+  <g>
+    <rect x="385" y="40" width="175" height="195" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="472" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Carbon dioxide</text>
+    <rect x="455" y="100" width="34" height="105" rx="12" fill="#fff" stroke="#374151" stroke-width="2"/>
+    <rect x="457" y="140" width="30" height="62" fill="#e5e7eb"/>
+    <line x1="472" y1="75" x2="472" y2="190" stroke="#374151" stroke-width="2.5"/>
+    <circle cx="468" cy="180" r="3" fill="#fff" stroke="#6b7280"/><circle cx="476" cy="165" r="3" fill="#fff" stroke="#6b7280"/><circle cx="470" cy="152" r="3" fill="#fff" stroke="#6b7280"/>
+    <text x="472" y="225" text-anchor="middle" font-size="11" font-weight="bold" fill="#991b1b">limewater &rarr; milky</text>
+  </g>
+  <g>
+    <rect x="570" y="40" width="175" height="195" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="657" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Chlorine</text>
+    <rect x="640" y="110" width="34" height="95" rx="12" fill="#ecfccb" stroke="#374151" stroke-width="2"/>
+    <rect x="650" y="75" width="14" height="60" fill="#fff" stroke="#6b7280" stroke-width="1"/>
+    <rect x="650" y="75" width="14" height="20" fill="#60a5fa"/>
+    <text x="657" y="225" text-anchor="middle" font-size="11" font-weight="bold" fill="#991b1b">damp litmus bleached</text>
+    <text x="700" y="165" font-size="9" fill="#4d7c0f">pale green</text>
+    <text x="700" y="177" font-size="9" fill="#4d7c0f">gas</text>
+  </g>
+</svg>
+
+<div class="exam-tip">The splints are easy to mix up: <strong>burning</strong> splint for <strong>hydrogen</strong> (pop), <strong>glowing</strong> splint for <strong>oxygen</strong> (relights). The litmus for chlorine must be <strong>damp</strong> &mdash; dry litmus will not work because the chlorine has to dissolve. And for CO<sub>2</sub>, write "limewater turns <strong>milky</strong> / <strong>cloudy</strong>", never "limewater goes white".</div>
+
+<h2>4.8.3 Identification of Ions by Chemical and Spectroscopic Means (Chemistry only)</h2>
+
+<p>An ionic compound contains a <strong>positive ion</strong> (cation &mdash; usually a metal ion) and a <strong>negative ion</strong> (anion &mdash; a non-metal ion such as a halide, carbonate or sulfate). To identify the compound you need to carry out one test for the cation <em>and</em> one test for the anion.</p>
+
+<h3>4.8.3.1 Flame Tests</h3>
+
+<p>Flame tests can be used to identify some <strong>metal ions (cations)</strong>. Each metal ion gives a characteristic flame colour.</p>
+
+<table>
+    <tr><th>Metal ion</th><th>Flame colour</th></tr>
+    <tr><td><strong>Lithium</strong>, Li<sup>+</sup></td><td><span style="color:#b91c1c;font-weight:600;">Crimson</span></td></tr>
+    <tr><td><strong>Sodium</strong>, Na<sup>+</sup></td><td><span style="color:#ca8a04;font-weight:600;">Yellow</span></td></tr>
+    <tr><td><strong>Potassium</strong>, K<sup>+</sup></td><td><span style="color:#a855f7;font-weight:600;">Lilac</span></td></tr>
+    <tr><td><strong>Calcium</strong>, Ca<sup>2+</sup></td><td><span style="color:#ea580c;font-weight:600;">Orange-red</span></td></tr>
+    <tr><td><strong>Copper</strong>, Cu<sup>2+</sup></td><td><span style="color:#16a34a;font-weight:600;">Green</span> (blue-green)</td></tr>
+</table>
+
+<h3>Method</h3>
+
+<ol>
+    <li>Clean a <strong>nichrome (or platinum) wire loop</strong> by dipping it in concentrated hydrochloric acid and holding it in a <strong>blue Bunsen flame</strong> until no colour is seen.</li>
+    <li>Dip the loop into the solid sample (or solution).</li>
+    <li>Hold the loop in the <strong>edge of a roaring blue flame</strong> and observe the colour.</li>
+    <li>Clean the loop again before testing the next sample.</li>
+</ol>
+
+<h3>Limitations of Flame Tests</h3>
+
+<ul>
+    <li>If a sample contains a <strong>mixture of ions</strong>, some flame colours can be <strong>masked</strong>. For example, the bright yellow of sodium (even as a trace impurity) hides the faint lilac of potassium.</li>
+    <li>Some colours are similar (lithium crimson and calcium orange-red) and judgement of colour is subjective.</li>
+    <li>Flame tests are not quantitative &mdash; they do not show how much of an ion is present.</li>
+</ul>
+
+<div class="exam-tip">Learn the exact words AQA uses: lithium <strong>crimson</strong>, sodium <strong>yellow</strong>, potassium <strong>lilac</strong>, calcium <strong>orange-red</strong>, copper <strong>green</strong>. "Red" alone for lithium or "purple" for potassium may not be accepted. A mnemonic: "<strong>Li</strong>ttle <strong>Cr</strong>abs, <strong>Na</strong>sty <strong>Y</strong>ellow, <strong>K</strong>ind <strong>L</strong>ilac, <strong>Ca</strong>reful <strong>O</strong>range-red, <strong>Cu</strong>te <strong>G</strong>reen."</div>
+
+<h3>4.8.3.2 Metal Hydroxides</h3>
+
+<p><strong>Sodium hydroxide solution</strong> can be used to identify some metal ions. Add a few drops of dilute NaOH(aq) to a solution of the unknown compound. Many metal hydroxides are <strong>insoluble</strong> and form a coloured <strong>precipitate</strong>.</p>
+
+<table>
+    <tr><th>Metal ion</th><th>Result with a few drops of NaOH(aq)</th><th>With excess NaOH(aq)</th></tr>
+    <tr><td><strong>Aluminium</strong>, Al<sup>3+</sup></td><td><strong>White</strong> precipitate</td><td>Precipitate <strong>dissolves</strong> to give a colourless solution</td></tr>
+    <tr><td><strong>Calcium</strong>, Ca<sup>2+</sup></td><td><strong>White</strong> precipitate</td><td>Precipitate remains</td></tr>
+    <tr><td><strong>Magnesium</strong>, Mg<sup>2+</sup></td><td><strong>White</strong> precipitate</td><td>Precipitate remains</td></tr>
+    <tr><td><strong>Copper(II)</strong>, Cu<sup>2+</sup></td><td><strong>Blue</strong> precipitate</td><td>Precipitate remains</td></tr>
+    <tr><td><strong>Iron(II)</strong>, Fe<sup>2+</sup></td><td><strong>Green</strong> precipitate (turns orange-brown on standing in air)</td><td>Precipitate remains</td></tr>
+    <tr><td><strong>Iron(III)</strong>, Fe<sup>3+</sup></td><td><strong>Brown</strong> (orange-brown / rusty) precipitate</td><td>Precipitate remains</td></tr>
+</table>
+
+<p><strong>Distinguishing the white precipitates:</strong></p>
+<ul>
+    <li><strong>Aluminium</strong> is the only one whose precipitate <strong>dissolves in excess</strong> sodium hydroxide.</li>
+    <li><strong>Calcium</strong> and <strong>magnesium</strong> both stay as white precipitates. Use a <strong>flame test</strong> to tell them apart: calcium gives an <strong>orange-red</strong> flame; magnesium gives <strong>no colour</strong>.</li>
+</ul>
+
+<!-- Diagram 4: Hydroxide precipitates -->
+<svg viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Precipitates formed with sodium hydroxide solution</text>
+  <!-- tubes -->
+  <g stroke="#374151" stroke-width="2">
+    <rect x="50" y="50" width="50" height="140" rx="20" fill="#fff"/>
+    <rect x="160" y="50" width="50" height="140" rx="20" fill="#fff"/>
+    <rect x="270" y="50" width="50" height="140" rx="20" fill="#fff"/>
+    <rect x="380" y="50" width="50" height="140" rx="20" fill="#fff"/>
+    <rect x="490" y="50" width="50" height="140" rx="20" fill="#fff"/>
+    <rect x="600" y="50" width="50" height="140" rx="20" fill="#fff"/>
+  </g>
+  <!-- liquid -->
+  <g>
+    <rect x="52" y="110" width="46" height="70" fill="#f9fafb"/>
+    <rect x="162" y="110" width="46" height="70" fill="#f9fafb"/>
+    <rect x="272" y="110" width="46" height="70" fill="#f9fafb"/>
+    <rect x="382" y="110" width="46" height="70" fill="#dbeafe"/>
+    <rect x="492" y="110" width="46" height="70" fill="#ecfccb"/>
+    <rect x="602" y="110" width="46" height="70" fill="#ffedd5"/>
+  </g>
+  <!-- precipitates -->
+  <g>
+    <ellipse cx="75" cy="178" rx="20" ry="10" fill="#e5e7eb" stroke="#9ca3af"/>
+    <ellipse cx="185" cy="178" rx="20" ry="10" fill="#e5e7eb" stroke="#9ca3af"/>
+    <ellipse cx="295" cy="178" rx="20" ry="10" fill="#e5e7eb" stroke="#9ca3af"/>
+    <ellipse cx="405" cy="178" rx="20" ry="10" fill="#3b82f6"/>
+    <ellipse cx="515" cy="178" rx="20" ry="10" fill="#4d7c0f"/>
+    <ellipse cx="625" cy="178" rx="20" ry="10" fill="#b45309"/>
+  </g>
+  <g font-size="12" font-weight="bold" text-anchor="middle" fill="#111">
+    <text x="75" y="210">Al&#179;&#8314;</text>
+    <text x="185" y="210">Ca&#178;&#8314;</text>
+    <text x="295" y="210">Mg&#178;&#8314;</text>
+    <text x="405" y="210">Cu&#178;&#8314;</text>
+    <text x="515" y="210">Fe&#178;&#8314;</text>
+    <text x="625" y="210">Fe&#179;&#8314;</text>
+  </g>
+  <g font-size="10" text-anchor="middle" fill="#374151">
+    <text x="75" y="226">white (dissolves in excess)</text>
+    <text x="185" y="226">white</text>
+    <text x="295" y="226">white</text>
+    <text x="405" y="226">blue</text>
+    <text x="515" y="226">green</text>
+    <text x="625" y="226">brown</text>
+  </g>
+</svg>
+
+<h3>Equations for Hydroxide Precipitation</h3>
+
+<p>Students should be able to write balanced equations for the reactions that produce the insoluble hydroxides.</p>
+
+<pre>
+Word / symbol equations:
+
+copper(II) sulfate + sodium hydroxide → copper(II) hydroxide + sodium sulfate
+CuSO₄(aq) + 2NaOH(aq) → Cu(OH)₂(s) + Na₂SO₄(aq)
+
+iron(III) chloride + sodium hydroxide → iron(III) hydroxide + sodium chloride
+FeCl₃(aq) + 3NaOH(aq) → Fe(OH)₃(s) + 3NaCl(aq)
+
+magnesium nitrate + sodium hydroxide → magnesium hydroxide + sodium nitrate
+Mg(NO₃)₂(aq) + 2NaOH(aq) → Mg(OH)₂(s) + 2NaNO₃(aq)
+</pre>
+
+<h3>Ionic Equations for Hydroxide Precipitates (HT only)</h3>
+
+<p>Only the metal ion and the hydroxide ions take part; the other ions (e.g. Na<sup>+</sup>, SO<sub>4</sub><sup>2&minus;</sup>) are <strong>spectator ions</strong> and are left out.</p>
+
+<pre>
+Cu²⁺(aq) + 2OH⁻(aq) → Cu(OH)₂(s)        blue
+Fe²⁺(aq) + 2OH⁻(aq) → Fe(OH)₂(s)        green
+Fe³⁺(aq) + 3OH⁻(aq) → Fe(OH)₃(s)        brown
+Al³⁺(aq) + 3OH⁻(aq) → Al(OH)₃(s)        white
+Ca²⁺(aq) + 2OH⁻(aq) → Ca(OH)₂(s)        white
+Mg²⁺(aq) + 2OH⁻(aq) → Mg(OH)₂(s)        white
+</pre>
+
+<div class="exam-tip">The number of OH<sup>&minus;</sup> ions in the ionic equation equals the <strong>charge on the metal ion</strong>. That is how you balance them: a 3+ ion needs 3OH<sup>&minus;</sup>. Always include state symbols &mdash; the <strong>(s)</strong> on the hydroxide shows that it is a precipitate, which is the whole point of the test.</div>
+
+<h3>4.8.3.3 Carbonates</h3>
+
+<p><strong>Carbonates</strong> react with <strong>dilute acids</strong> to form carbon dioxide gas. Carbon dioxide can be identified with <strong>limewater</strong>.</p>
+
+<ol>
+    <li>Add a few drops of <strong>dilute hydrochloric acid</strong> to the sample.</li>
+    <li>If it <strong>fizzes</strong>, bubble the gas through <strong>limewater</strong>.</li>
+    <li>Limewater turns <strong>milky</strong> &rarr; carbonate ions (CO<sub>3</sub><sup>2&minus;</sup>) are present.</li>
+</ol>
+
+<pre>
+sodium carbonate + hydrochloric acid → sodium chloride + water + carbon dioxide
+Na₂CO₃(s) + 2HCl(aq) → 2NaCl(aq) + H₂O(l) + CO₂(g)
+
+Ionic equation (HT):  CO₃²⁻ + 2H⁺ → H₂O + CO₂
+</pre>
+
+<h3>4.8.3.4 Halides</h3>
+
+<p><strong>Halide ions</strong> (Cl<sup>&minus;</sup>, Br<sup>&minus;</sup>, I<sup>&minus;</sup>) in solution produce precipitates with <strong>silver nitrate solution</strong> in the presence of <strong>dilute nitric acid</strong>.</p>
+
+<ol>
+    <li>Add a few drops of <strong>dilute nitric acid</strong> to the solution.</li>
+    <li>Then add a few drops of <strong>silver nitrate solution</strong>.</li>
+</ol>
+
+<table>
+    <tr><th>Halide ion</th><th>Precipitate</th><th>Colour</th><th>Ionic equation</th></tr>
+    <tr><td><strong>Chloride</strong>, Cl<sup>&minus;</sup></td><td>Silver chloride, AgCl</td><td><strong>White</strong></td><td>Ag<sup>+</sup>(aq) + Cl<sup>&minus;</sup>(aq) &rarr; AgCl(s)</td></tr>
+    <tr><td><strong>Bromide</strong>, Br<sup>&minus;</sup></td><td>Silver bromide, AgBr</td><td><strong>Cream</strong></td><td>Ag<sup>+</sup>(aq) + Br<sup>&minus;</sup>(aq) &rarr; AgBr(s)</td></tr>
+    <tr><td><strong>Iodide</strong>, I<sup>&minus;</sup></td><td>Silver iodide, AgI</td><td><strong>Yellow</strong></td><td>Ag<sup>+</sup>(aq) + I<sup>&minus;</sup>(aq) &rarr; AgI(s)</td></tr>
+</table>
+
+<pre>
+Full equation example:
+sodium chloride + silver nitrate → silver chloride + sodium nitrate
+NaCl(aq) + AgNO₃(aq) → AgCl(s) + NaNO₃(aq)
+</pre>
+
+<p><strong>Why add nitric acid first?</strong> The acid reacts with and removes any <strong>carbonate ions</strong>, which would otherwise also form a precipitate (silver carbonate) with silver nitrate and give a false positive. <strong>Hydrochloric acid must not be used</strong> because it would add chloride ions, giving a white precipitate whatever the sample.</p>
+
+<h3>4.8.3.5 Sulfates</h3>
+
+<p><strong>Sulfate ions</strong> (SO<sub>4</sub><sup>2&minus;</sup>) in solution produce a <strong>white precipitate</strong> with <strong>barium chloride solution</strong> in the presence of <strong>dilute hydrochloric acid</strong>.</p>
+
+<ol>
+    <li>Add a few drops of <strong>dilute hydrochloric acid</strong>.</li>
+    <li>Then add a few drops of <strong>barium chloride solution</strong>.</li>
+    <li>A <strong>white precipitate</strong> of barium sulfate &rarr; sulfate ions present.</li>
+</ol>
+
+<pre>
+sodium sulfate + barium chloride → barium sulfate + sodium chloride
+Na₂SO₄(aq) + BaCl₂(aq) → BaSO₄(s) + 2NaCl(aq)
+
+Ionic equation:  Ba²⁺(aq) + SO₄²⁻(aq) → BaSO₄(s)
+</pre>
+
+<p><strong>Why add hydrochloric acid first?</strong> To remove <strong>carbonate ions</strong>, which would otherwise form a white precipitate of barium carbonate. <strong>Sulfuric acid must not be used</strong> because it contains sulfate ions and would always give a positive result.</p>
+
+<h3>Summary of Anion Tests</h3>
+
+<table>
+    <tr><th>Anion</th><th>Reagent(s)</th><th>Positive result</th></tr>
+    <tr><td>Carbonate, CO<sub>3</sub><sup>2&minus;</sup></td><td>Dilute acid, then gas into limewater</td><td>Fizzing; limewater turns milky</td></tr>
+    <tr><td>Chloride, Cl<sup>&minus;</sup></td><td>Dilute HNO<sub>3</sub> then AgNO<sub>3</sub>(aq)</td><td>White precipitate</td></tr>
+    <tr><td>Bromide, Br<sup>&minus;</sup></td><td>Dilute HNO<sub>3</sub> then AgNO<sub>3</sub>(aq)</td><td>Cream precipitate</td></tr>
+    <tr><td>Iodide, I<sup>&minus;</sup></td><td>Dilute HNO<sub>3</sub> then AgNO<sub>3</sub>(aq)</td><td>Yellow precipitate</td></tr>
+    <tr><td>Sulfate, SO<sub>4</sub><sup>2&minus;</sup></td><td>Dilute HCl then BaCl<sub>2</sub>(aq)</td><td>White precipitate</td></tr>
+</table>
+
+<div class="exam-tip">Pair the acid with the reagent by matching the anion: <strong>silver nitrate</strong> goes with <strong>nitric</strong> acid; <strong>barium chloride</strong> goes with <strong>hydrochloric</strong> acid. Using the "matching" acid ensures you never add the ion you are testing for. Six-mark questions often ask you to plan how to identify several unlabelled solutions &mdash; set out the tests in a logical sequence with expected results for each.</div>
+
+<h3>Required Practical &mdash; Identifying Ions</h3>
+
+<p><strong>Aim:</strong> use chemical tests to identify the ions in unknown single ionic compounds &mdash; covering flame tests (Li<sup>+</sup>, Na<sup>+</sup>, K<sup>+</sup>, Ca<sup>2+</sup>, Cu<sup>2+</sup>), hydroxide precipitates (Al<sup>3+</sup>, Ca<sup>2+</sup>, Mg<sup>2+</sup>, Cu<sup>2+</sup>, Fe<sup>2+</sup>, Fe<sup>3+</sup>), and tests for carbonate, halide and sulfate ions.</p>
+
+<h3>Worked Example 3 &mdash; Identifying an Unknown Compound</h3>
+
+<pre>
+Question: A white solid gives a lilac flame. A solution of the solid
+          gives a yellow precipitate when dilute nitric acid and
+          silver nitrate solution are added. Identify the solid.
+
+Cation:   lilac flame         → potassium ion, K⁺
+Anion:    yellow ppt with Ag⁺  → iodide ion, I⁻
+
+Answer:   potassium iodide, KI
+
+Question: A green solution gives a green precipitate with NaOH(aq)
+          and a white precipitate with HCl(aq) then BaCl₂(aq).
+
+Cation:   green ppt with OH⁻   → iron(II), Fe²⁺
+Anion:    white ppt with Ba²⁺  → sulfate, SO₄²⁻
+
+Answer:   iron(II) sulfate, FeSO₄
+</pre>
+
+<h3>Safety in Ion Tests</h3>
+
+<ul>
+    <li>Wear <strong>eye protection</strong> &mdash; sodium hydroxide is corrosive, even dilute solutions can damage eyes.</li>
+    <li>Barium chloride is <strong>toxic</strong>; silver nitrate stains skin and is an irritant.</li>
+    <li>Take care with the Bunsen flame and the hot wire loop; concentrated HCl used for cleaning is corrosive.</li>
+</ul>
+
+<h3>4.8.3.6 Instrumental Methods</h3>
+
+<p>Elements and compounds can be detected and identified using <strong>instrumental methods</strong> (machines). Examples include flame emission spectroscopy, mass spectrometry, infrared spectroscopy and gas chromatography.</p>
+
+<div class="definition">
+    Compared with chemical tests, instrumental methods are:<br>
+    &bull; <strong>Accurate</strong> &mdash; reliably identify substances and give precise measurements of concentration.<br>
+    &bull; <strong>Sensitive</strong> &mdash; can detect and identify <strong>very small amounts</strong> of substance.<br>
+    &bull; <strong>Rapid</strong> &mdash; results are obtained very quickly and the process can be automated.
+</div>
+
+<table>
+    <tr><th>Instrumental methods</th><th>Chemical (wet) tests</th></tr>
+    <tr><td>Very accurate and sensitive; work on tiny samples</td><td>Need larger samples</td></tr>
+    <tr><td>Fast; can analyse many samples automatically</td><td>Slower; carried out by hand</td></tr>
+    <tr><td>Can identify mixtures and measure concentration</td><td>Usually only identify a single ion; colours can be masked</td></tr>
+    <tr><td>Expensive equipment; needs trained operators; results compared with a reference database</td><td>Cheap, simple equipment</td></tr>
+</table>
+
+<h3>4.8.3.7 Flame Emission Spectroscopy</h3>
+
+<p><strong>Flame emission spectroscopy</strong> is an example of an instrumental method used to analyse <strong>metal ions in solutions</strong>.</p>
+
+<ol>
+    <li>The sample is put into a flame.</li>
+    <li>The metal ions absorb energy, and the light they give out is passed through a <strong>spectroscope</strong>.</li>
+    <li>The output is a <strong>line spectrum</strong> &mdash; a pattern of coloured lines at specific wavelengths.</li>
+    <li>The line spectrum can be analysed to <strong>identify the metal ions</strong> in the solution (each ion has its own unique spectrum, like a fingerprint) and to <strong>measure their concentrations</strong> (the brighter/more intense the lines, the higher the concentration).</li>
+</ol>
+
+<!-- Diagram 5: Line spectra -->
+<svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <defs>
+    <linearGradient id="specCA" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="0.2" stop-color="#2563eb"/>
+      <stop offset="0.4" stop-color="#16a34a"/>
+      <stop offset="0.6" stop-color="#facc15"/>
+      <stop offset="0.8" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Using line spectra to identify metal ions in a mixture</text>
+  <rect x="150" y="38" width="560" height="10" fill="url(#specCA)"/>
+  <text x="150" y="62" font-size="9" fill="#374151">400 nm (violet)</text>
+  <text x="710" y="62" text-anchor="end" font-size="9" fill="#374151">700 nm (red)</text>
+
+  <!-- Rows -->
+  <g font-size="12" font-weight="bold" fill="#111" text-anchor="end">
+    <text x="140" y="92">Lithium</text>
+    <text x="140" y="132">Sodium</text>
+    <text x="140" y="172">Calcium</text>
+    <text x="140" y="222">Unknown</text>
+  </g>
+  <g>
+    <rect x="150" y="75" width="560" height="25" fill="#111827"/>
+    <rect x="150" y="115" width="560" height="25" fill="#111827"/>
+    <rect x="150" y="155" width="560" height="25" fill="#111827"/>
+    <rect x="150" y="205" width="560" height="25" fill="#111827"/>
+  </g>
+  <!-- Li lines: 610, 671 nm -->
+  <g stroke-width="3">
+    <line x1="542" y1="75" x2="542" y2="100" stroke="#f97316"/>
+    <line x1="656" y1="75" x2="656" y2="100" stroke="#dc2626"/>
+    <!-- Na: 589 -->
+    <line x1="503" y1="115" x2="503" y2="140" stroke="#facc15"/>
+    <!-- Ca: 423, 616, 646 -->
+    <line x1="193" y1="155" x2="193" y2="180" stroke="#7c3aed"/>
+    <line x1="553" y1="155" x2="553" y2="180" stroke="#f97316"/>
+    <line x1="609" y1="155" x2="609" y2="180" stroke="#ef4444"/>
+    <!-- Unknown = Li + Na -->
+    <line x1="542" y1="205" x2="542" y2="230" stroke="#f97316"/>
+    <line x1="656" y1="205" x2="656" y2="230" stroke="#dc2626"/>
+    <line x1="503" y1="205" x2="503" y2="230" stroke="#facc15"/>
+  </g>
+  <text x="430" y="252" text-anchor="middle" font-size="11" fill="#374151" font-style="italic">Every line in the unknown matches either lithium or sodium &rarr; the solution contains Li&#8314; and Na&#8314; ions, but not Ca&#178;&#8314;.</text>
+</svg>
+
+<div class="exam-tip">The big advantage of flame emission spectroscopy over a simple flame test is that it can identify <strong>several metal ions in a mixture</strong> (no masking &mdash; each set of lines is separate) and can measure <strong>concentration</strong>. To interpret a spectrum question, check that <strong>every</strong> line of a reference metal appears in the unknown; if one line is missing, that metal is not present.</div>
+
+<h3>Worked Example 4 &mdash; Using a Calibration Line</h3>
+
+<pre>
+Question: Standard solutions of sodium ions give these emission
+          intensities (arbitrary units):
+              Concentration (mg/dm³):   0    2    4    6    8
+              Intensity:                0   15   30   45   60
+          A sample of river water gives an intensity of 21.
+          What is the concentration of sodium ions?
+
+Method:  Intensity is directly proportional to concentration:
+         15 units per 2 mg/dm³ → 7.5 units per 1 mg/dm³
+         concentration = 21 ÷ 7.5 = 2.8 mg/dm³
+
+Answer:  2.8 mg/dm³ (read from the calibration graph)
+</pre>
+
+<h2>Summary Checklist for 4.8 Chemical Analysis</h2>
+
+<ul>
+    <li>Define a pure substance in chemistry and contrast it with the everyday meaning.</li>
+    <li>Use melting and boiling point data to distinguish pure substances from mixtures.</li>
+    <li>Define and identify formulations (paints, medicines, fuels, alloys, fertilisers, foods, cleaning agents).</li>
+    <li>Explain chromatography in terms of stationary and mobile phases; calculate and interpret R<sub>f</sub> values.</li>
+    <li>Describe the chromatography required practical and explain each precaution.</li>
+    <li>Describe the tests for hydrogen, oxygen, carbon dioxide and chlorine and their positive results.</li>
+    <li><em>Chemistry only:</em> recall flame test colours for Li<sup>+</sup>, Na<sup>+</sup>, K<sup>+</sup>, Ca<sup>2+</sup> and Cu<sup>2+</sup>, and explain why mixtures can mask colours.</li>
+    <li><em>Chemistry only:</em> recall the hydroxide precipitate colours for Al<sup>3+</sup>, Ca<sup>2+</sup>, Mg<sup>2+</sup>, Cu<sup>2+</sup>, Fe<sup>2+</sup> and Fe<sup>3+</sup>; write balanced (and, HT, ionic) equations.</li>
+    <li><em>Chemistry only:</em> describe the tests for carbonate, halide and sulfate ions, and explain the choice of acid in each.</li>
+    <li><em>Chemistry only:</em> state the advantages of instrumental methods (accurate, sensitive, rapid).</li>
+    <li><em>Chemistry only:</em> describe flame emission spectroscopy and interpret line spectra and calibration data.</li>
+</ul>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — AQA 4.9 — Chemistry of the Atmosphere</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.9 Chemistry of the Atmosphere</h1>
+<p class="spec-ref">AQA GCSE Chemistry (8462) &mdash; Paper 2</p>
+
+<p>The Earth's atmosphere is dynamic and forever changing. The causes of these changes are sometimes man-made and sometimes part of many natural cycles. Scientists use very complex software to predict weather and climate change, as there are many variables that can influence this. The problems caused by increased levels of air pollutants require scientists and engineers to develop solutions that help to reduce the impact of human activity. This whole topic is common to both Chemistry and Combined Science; the evaluation skills (interpreting evidence, uncertainty, peer review) are tested heavily in extended-answer questions.</p>
+
+<h2>4.9.1 The Composition and Evolution of the Earth's Atmosphere</h2>
+
+<h3>4.9.1.1 The Proportions of Different Gases in the Atmosphere</h3>
+
+<p>For <strong>200 million years</strong>, the proportions of different gases in the atmosphere have been much the same as they are today.</p>
+
+<div class="definition">
+    The Earth's atmosphere today is approximately:<br>
+    &bull; about <strong>four-fifths (approximately 80%) nitrogen</strong>;<br>
+    &bull; about <strong>one-fifth (approximately 20%) oxygen</strong>;<br>
+    &bull; <strong>small proportions of various other gases</strong>, including carbon dioxide, water vapour and noble gases.
+</div>
+
+<table>
+    <tr><th>Gas</th><th>Formula</th><th>Approximate % by volume (dry air)</th></tr>
+    <tr><td><strong>Nitrogen</strong></td><td>N<sub>2</sub></td><td>78%</td></tr>
+    <tr><td><strong>Oxygen</strong></td><td>O<sub>2</sub></td><td>21%</td></tr>
+    <tr><td><strong>Argon</strong> (a noble gas)</td><td>Ar</td><td>0.93%</td></tr>
+    <tr><td><strong>Carbon dioxide</strong></td><td>CO<sub>2</sub></td><td>0.04% (about 420 parts per million)</td></tr>
+    <tr><td>Other noble gases (neon, helium, krypton, xenon)</td><td>Ne, He, Kr, Xe</td><td>Traces</td></tr>
+    <tr><td><strong>Water vapour</strong></td><td>H<sub>2</sub>O</td><td>Variable (0&ndash;4%) &mdash; not included in "dry air"</td></tr>
+</table>
+
+<!-- Diagram 1: Composition of air -->
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Composition of dry air today</text>
+  <!-- Stacked horizontal bar: total width 600 px for 100% -->
+  <rect x="50" y="60" width="468" height="60" fill="#2563eb"/>
+  <rect x="518" y="60" width="126" height="60" fill="#16a34a"/>
+  <rect x="644" y="60" width="6" height="60" fill="#f59e0b"/>
+  <rect x="50" y="60" width="600" height="60" fill="none" stroke="#1e3a5f" stroke-width="2"/>
+  <text x="284" y="96" text-anchor="middle" font-size="16" font-weight="bold" fill="#fff">Nitrogen 78%</text>
+  <text x="581" y="96" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">Oxygen 21%</text>
+  <!-- callout for the 1% -->
+  <line x1="647" y1="120" x2="600" y2="170" stroke="#374151" stroke-width="1"/>
+  <rect x="380" y="170" width="290" height="80" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="525" y="190" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">The remaining ~1%</text>
+  <text x="525" y="208" text-anchor="middle" font-size="11" fill="#374151">Argon &asymp; 0.93%</text>
+  <text x="525" y="224" text-anchor="middle" font-size="11" fill="#374151">Carbon dioxide &asymp; 0.04%</text>
+  <text x="525" y="240" text-anchor="middle" font-size="11" fill="#374151">Other noble gases &mdash; traces</text>
+  <text x="50" y="145" font-size="10" fill="#6b7280">0%</text>
+  <text x="650" y="145" text-anchor="end" font-size="10" fill="#6b7280">100%</text>
+  <text x="200" y="210" text-anchor="middle" font-size="11" fill="#374151" font-style="italic">Water vapour varies from place to place</text>
+  <text x="200" y="226" text-anchor="middle" font-size="11" fill="#374151" font-style="italic">and is usually excluded from these figures.</text>
+</svg>
+
+<div class="exam-tip">AQA's mark schemes use "about four-fifths nitrogen and about one-fifth oxygen". If a question asks for percentages, 78% and 21% (or "about 80%" and "about 20%") are both accepted. A frequent mistake is to say the atmosphere is "mostly oxygen" &mdash; it is mostly <strong>nitrogen</strong>.</div>
+
+<h3>Worked Example 1 &mdash; Using Proportions</h3>
+
+<pre>
+Question: A room contains 50 m³ of air. Estimate the volume of
+          oxygen in the room.
+
+Oxygen ≈ one-fifth (20%) of air
+Volume of oxygen = 50 × 0.20 = 10 m³
+
+(Using 21%: 50 × 0.21 = 10.5 m³ — either answer is acceptable
+ if the working is shown.)
+</pre>
+
+<h3>4.9.1.2 The Earth's Early Atmosphere</h3>
+
+<p>Theories about what was in the Earth's early atmosphere and how the atmosphere was formed have changed and developed over time. <strong>Evidence for the early atmosphere is limited</strong> because of the time scale of <strong>4.6 billion years</strong> &mdash; there are no direct samples, so scientists rely on evidence such as the composition of gases from volcanoes today, ancient rocks, and the atmospheres of other planets.</p>
+
+<p>One theory suggests:</p>
+
+<ul>
+    <li>During the <strong>first billion years</strong> of the Earth's existence there was <strong>intense volcanic activity</strong> that released gases forming the early atmosphere, and water vapour that <strong>condensed to form the oceans</strong>.</li>
+    <li>At the start of this period the Earth's atmosphere may have been like the atmospheres of <strong>Mars and Venus</strong> today, consisting of mainly <strong>carbon dioxide</strong> with <strong>little or no oxygen gas</strong>.</li>
+    <li>Volcanoes also produced <strong>nitrogen</strong>, which gradually built up in the atmosphere, and there may have been small proportions of <strong>methane</strong> and <strong>ammonia</strong>.</li>
+    <li>When the oceans formed, <strong>carbon dioxide dissolved in the water</strong> and <strong>carbonates were precipitated</strong>, producing sediments, which <strong>reduced</strong> the amount of carbon dioxide in the atmosphere.</li>
+</ul>
+
+<table>
+    <tr><th>Gas</th><th>Early atmosphere</th><th>Today</th><th>Reason for change</th></tr>
+    <tr><td>Carbon dioxide</td><td>Very high (main gas)</td><td>~0.04%</td><td>Dissolved in oceans; locked into carbonate rocks and fossil fuels; used in photosynthesis.</td></tr>
+    <tr><td>Oxygen</td><td>Little or none</td><td>~21%</td><td>Produced by photosynthesis in algae and plants.</td></tr>
+    <tr><td>Nitrogen</td><td>Small amount</td><td>~78%</td><td>Released by volcanoes; very unreactive so it gradually built up.</td></tr>
+    <tr><td>Water vapour</td><td>High</td><td>Variable, small</td><td>Condensed as the Earth cooled to form the oceans.</td></tr>
+    <tr><td>Methane, ammonia</td><td>Small amounts (possibly)</td><td>Traces</td><td>Reacted with oxygen once it appeared.</td></tr>
+</table>
+
+<div class="exam-tip">Questions often give you information about a <strong>different, unfamiliar</strong> theory of the early atmosphere (e.g. one involving comets) and ask you to interpret it. You are not expected to know these alternatives &mdash; just use the information given, and explain <strong>why the evidence is limited</strong>: it was 4.6 billion years ago and nobody was there to measure it.</div>
+
+<h3>4.9.1.3 How Oxygen Increased</h3>
+
+<p><strong>Algae and plants</strong> produced the oxygen that is now in the atmosphere by <strong>photosynthesis</strong>:</p>
+
+<div class="definition">
+    <code>carbon dioxide + water &rarr; glucose + oxygen</code><br>
+    <code>6CO<sub>2</sub> + 6H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub></code><br><br>
+    (Energy is absorbed from light; the reaction is <strong>endothermic</strong>.)
+</div>
+
+<ul>
+    <li><strong>Algae</strong> first produced oxygen about <strong>2.7 billion years ago</strong>.</li>
+    <li>Soon after this, oxygen appeared in the atmosphere.</li>
+    <li>Over the <strong>next billion years</strong>, <strong>plants evolved</strong> and the percentage of oxygen gradually increased to a level that enabled <strong>animals to evolve</strong>.</li>
+</ul>
+
+<h3>4.9.1.4 How Carbon Dioxide Decreased</h3>
+
+<p>Carbon dioxide was removed from the early atmosphere in several ways:</p>
+
+<ol>
+    <li><strong>Dissolving in the oceans</strong> &mdash; then precipitated as <strong>carbonates</strong> that formed sediments.</li>
+    <li><strong>Photosynthesis</strong> by <strong>algae and plants</strong> &mdash; CO<sub>2</sub> was converted into glucose and other carbon compounds in living things.</li>
+    <li><strong>Formation of sedimentary rocks</strong> &mdash; the shells and skeletons of marine organisms (made of <strong>calcium carbonate</strong>) built up on the sea bed and formed <strong>limestone</strong>.</li>
+    <li><strong>Formation of fossil fuels</strong> that contain carbon:
+        <ul>
+            <li><strong>Coal</strong> &mdash; a sedimentary rock made from thick plant deposits buried and compressed over millions of years.</li>
+            <li><strong>Crude oil and natural gas</strong> &mdash; formed from deposits of <strong>plankton</strong> buried in <strong>mud</strong> on the sea bed, subjected to heat and pressure.</li>
+        </ul>
+    </li>
+</ol>
+
+<!-- Diagram 2: Timeline of atmosphere evolution -->
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">How the atmosphere evolved (approximate)</text>
+  <!-- Axis: 4.6 bn years ago at x=60 to today at x=720 -->
+  <line x1="60" y1="150" x2="720" y2="150" stroke="#374151" stroke-width="3"/>
+  <!-- Ticks: scale 660px / 4.6 bn = 143.5 px per bn -->
+  <g font-size="10" fill="#374151" text-anchor="middle">
+    <line x1="60" y1="143" x2="60" y2="157" stroke="#374151" stroke-width="2"/><text x="60" y="172">4.6 bn</text>
+    <line x1="203" y1="143" x2="203" y2="157" stroke="#374151" stroke-width="2"/><text x="203" y="172">3.6 bn</text>
+    <line x1="333" y1="143" x2="333" y2="157" stroke="#374151" stroke-width="2"/><text x="333" y="172">2.7 bn</text>
+    <line x1="490" y1="143" x2="490" y2="157" stroke="#374151" stroke-width="2"/><text x="490" y="172">1.6 bn</text>
+    <line x1="691" y1="143" x2="691" y2="157" stroke="#374151" stroke-width="2"/><text x="691" y="172">0.2 bn</text>
+    <line x1="720" y1="143" x2="720" y2="157" stroke="#374151" stroke-width="2"/><text x="722" y="186">today</text>
+  </g>
+  <text x="390" y="200" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">years ago</text>
+
+  <!-- Events above -->
+  <rect x="55" y="45" width="160" height="80" rx="6" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="135" y="63" text-anchor="middle" font-size="11" font-weight="bold" fill="#991b1b">First billion years</text>
+  <text x="135" y="79" text-anchor="middle" font-size="9" fill="#374151">Intense volcanic activity</text>
+  <text x="135" y="92" text-anchor="middle" font-size="9" fill="#374151">Mainly CO&#8322;, little/no O&#8322;</text>
+  <text x="135" y="105" text-anchor="middle" font-size="9" fill="#374151">Water vapour condenses</text>
+  <text x="135" y="118" text-anchor="middle" font-size="9" fill="#374151">&rarr; oceans form</text>
+
+  <rect x="255" y="45" width="160" height="80" rx="6" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="335" y="63" text-anchor="middle" font-size="11" font-weight="bold" fill="#166534">~2.7 bn years ago</text>
+  <text x="335" y="79" text-anchor="middle" font-size="9" fill="#374151">Algae begin photosynthesis</text>
+  <text x="335" y="92" text-anchor="middle" font-size="9" fill="#374151">Oxygen appears in</text>
+  <text x="335" y="105" text-anchor="middle" font-size="9" fill="#374151">the atmosphere</text>
+  <line x1="333" y1="125" x2="333" y2="143" stroke="#16a34a" stroke-width="1.5"/>
+
+  <rect x="430" y="45" width="160" height="80" rx="6" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="510" y="63" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Next billion years</text>
+  <text x="510" y="79" text-anchor="middle" font-size="9" fill="#374151">Plants evolve; O&#8322; rises</text>
+  <text x="510" y="92" text-anchor="middle" font-size="9" fill="#374151">CO&#8322; locked in limestone,</text>
+  <text x="510" y="105" text-anchor="middle" font-size="9" fill="#374151">coal, oil and gas</text>
+
+  <rect x="600" y="45" width="150" height="80" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="675" y="63" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">Last 200 million yrs</text>
+  <text x="675" y="79" text-anchor="middle" font-size="9" fill="#374151">Proportions much the</text>
+  <text x="675" y="92" text-anchor="middle" font-size="9" fill="#374151">same as today:</text>
+  <text x="675" y="105" text-anchor="middle" font-size="9" fill="#374151">~78% N&#8322;, ~21% O&#8322;</text>
+  <line x1="691" y1="125" x2="691" y2="143" stroke="#f59e0b" stroke-width="1.5"/>
+
+  <!-- Trend lines below -->
+  <text x="60" y="225" font-size="11" font-weight="bold" fill="#dc2626">CO&#8322;</text>
+  <path d="M 90 222 C 250 225, 400 260, 720 270" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+  <text x="60" y="275" font-size="11" font-weight="bold" fill="#16a34a">O&#8322;</text>
+  <path d="M 90 272 L 330 272 C 420 265, 520 235, 720 228" stroke="#16a34a" stroke-width="2.5" fill="none"/>
+  <text x="400" y="292" text-anchor="middle" font-size="9" fill="#6b7280" font-style="italic">Schematic trends only &mdash; not to scale</text>
+</svg>
+
+<div class="exam-tip">For a 4- or 6-mark question on "how the atmosphere changed", structure your answer around the <strong>three gases</strong>: CO<sub>2</sub> went <strong>down</strong> (dissolved in oceans &rarr; carbonates/sediments; photosynthesis; limestone; fossil fuels), O<sub>2</sub> went <strong>up</strong> (photosynthesis by algae then plants), N<sub>2</sub> went <strong>up</strong> (volcanoes; unreactive so it accumulated). Give a balanced photosynthesis equation for an extra mark.</div>
+
+<h2>4.9.2 Carbon Dioxide and Methane as Greenhouse Gases</h2>
+
+<h3>4.9.2.1 Greenhouse Gases</h3>
+
+<p>Greenhouse gases in the atmosphere <strong>maintain temperatures on Earth high enough to support life</strong>. Without them, the Earth's average surface temperature would be about &minus;18 &deg;C instead of about +15 &deg;C.</p>
+
+<div class="definition">
+    <strong>Water vapour</strong>, <strong>carbon dioxide</strong> and <strong>methane</strong> are greenhouse gases.
+</div>
+
+<h3>How the Greenhouse Effect Works</h3>
+
+<ol>
+    <li>Electromagnetic radiation from the Sun, at mostly <strong>short wavelengths</strong> (visible light and ultraviolet), <strong>passes through</strong> the atmosphere.</li>
+    <li>The Earth's surface <strong>absorbs</strong> this radiation and warms up.</li>
+    <li>The warm Earth <strong>emits</strong> (radiates) energy as <strong>longer-wavelength infrared radiation</strong>.</li>
+    <li><strong>Greenhouse gases absorb</strong> some of this infrared radiation and <strong>re-emit</strong> it in all directions &mdash; including back towards the Earth.</li>
+    <li>This energy is <strong>trapped</strong> in the lower atmosphere, which keeps the Earth warm.</li>
+</ol>
+
+<!-- Diagram 3: Greenhouse effect -->
+<svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrGHy" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#d97706"/></marker>
+    <marker id="arrGHr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+  </defs>
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The greenhouse effect</text>
+
+  <!-- Sun -->
+  <circle cx="80" cy="80" r="40" fill="#fde047" stroke="#f59e0b" stroke-width="3"/>
+  <text x="80" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">Sun</text>
+
+  <!-- Atmosphere band -->
+  <rect x="150" y="110" width="600" height="70" fill="#e0f2fe" opacity="0.8"/>
+  <text x="740" y="130" text-anchor="end" font-size="11" font-weight="bold" fill="#0369a1">Atmosphere containing</text>
+  <text x="740" y="145" text-anchor="end" font-size="11" font-weight="bold" fill="#0369a1">CO&#8322;, CH&#8324;, H&#8322;O vapour</text>
+  <!-- gas molecules -->
+  <g fill="#0284c7">
+    <circle cx="300" cy="140" r="5"/><circle cx="360" cy="160" r="5"/><circle cx="430" cy="135" r="5"/>
+    <circle cx="500" cy="165" r="5"/><circle cx="560" cy="140" r="5"/><circle cx="260" cy="165" r="5"/>
+  </g>
+
+  <!-- Earth surface -->
+  <rect x="20" y="280" width="730" height="45" fill="#65a30d"/>
+  <text x="385" y="308" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">Earth's surface absorbs radiation and warms</text>
+
+  <!-- 1 Short wave incoming -->
+  <path d="M 115 105 L 170 130 L 185 120 L 230 160 L 245 150 L 290 278" stroke="#d97706" stroke-width="3" fill="none" marker-end="url(#arrGHy)"/>
+  <text x="185" y="225" font-size="11" font-weight="bold" fill="#b45309">1. short-wavelength</text>
+  <text x="185" y="239" font-size="11" fill="#b45309">radiation passes through</text>
+
+  <!-- 2 Long wave outgoing (partially escapes) -->
+  <path d="M 380 278 Q 392 250 380 230 Q 368 210 380 190 Q 392 170 380 150 Q 368 120 380 70" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#arrGHr)"/>
+  <text x="390" y="62" font-size="11" fill="#991b1b">some IR escapes to space</text>
+  <text x="335" y="255" text-anchor="end" font-size="11" font-weight="bold" fill="#991b1b">2. Earth emits</text>
+  <text x="335" y="269" text-anchor="end" font-size="11" fill="#991b1b">long-wavelength IR</text>
+
+  <!-- 3 Absorbed and re-emitted -->
+  <path d="M 520 278 Q 530 250 520 230 Q 510 210 520 190 L 525 165" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+  <circle cx="525" cy="160" r="9" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <path d="M 530 168 Q 560 200 570 230 Q 580 255 600 275" stroke="#dc2626" stroke-width="2.5" fill="none" stroke-dasharray="6,3" marker-end="url(#arrGHr)"/>
+  <path d="M 532 155 L 590 110" stroke="#dc2626" stroke-width="2" fill="none" stroke-dasharray="6,3" marker-end="url(#arrGHr)"/>
+  <text x="610" y="210" font-size="11" font-weight="bold" fill="#991b1b">3. greenhouse gases</text>
+  <text x="610" y="224" font-size="11" fill="#991b1b">absorb IR and re-emit</text>
+  <text x="610" y="238" font-size="11" fill="#991b1b">it in all directions &mdash;</text>
+  <text x="610" y="252" font-size="11" fill="#991b1b">some back to Earth</text>
+</svg>
+
+<div class="exam-tip">The key words examiners look for are: <strong>short wavelength</strong> in, <strong>long wavelength (infrared)</strong> out, greenhouse gases <strong>absorb</strong> the long-wavelength radiation and <strong>re-emit</strong> it. Do <strong>not</strong> say greenhouse gases "reflect" heat back to Earth, and do not confuse the greenhouse effect with the hole in the ozone layer &mdash; they are completely different problems.</div>
+
+<h3>4.9.2.2 Human Activities Which Contribute to an Increase in Greenhouse Gases</h3>
+
+<p>Some human activities increase the amounts of greenhouse gases in the atmosphere. This is called the <strong>enhanced greenhouse effect</strong>.</p>
+
+<table>
+    <tr><th>Greenhouse gas</th><th>Human activities that increase it</th></tr>
+    <tr><td><strong>Carbon dioxide</strong></td><td>
+        &bull; <strong>Burning fossil fuels</strong> (coal, oil, natural gas) in power stations, vehicles, homes and industry.<br>
+        &bull; <strong>Deforestation</strong> &mdash; fewer trees to remove CO<sub>2</sub> by photosynthesis; burning or rotting of cleared trees releases CO<sub>2</sub>.<br>
+        &bull; Cement manufacture (thermal decomposition of limestone).
+    </td></tr>
+    <tr><td><strong>Methane</strong></td><td>
+        &bull; <strong>Animal farming</strong> &mdash; cattle produce methane during digestion.<br>
+        &bull; <strong>Decomposition of rubbish in landfill sites</strong> (anaerobic decay).<br>
+        &bull; <strong>Rice paddy fields</strong> (waterlogged soil bacteria).<br>
+        &bull; Leaks from natural gas extraction and pipelines.
+    </td></tr>
+</table>
+
+<h3>The Evidence and Its Uncertainties</h3>
+
+<p>Based on <strong>peer-reviewed evidence</strong>, many scientists believe that human activities will cause the temperature of the Earth's atmosphere to increase at the surface and that this will result in <strong>global climate change</strong>.</p>
+
+<p>However, it is difficult to model such complex systems as global climate change. This leads to <strong>simplified models</strong>, <strong>speculation</strong> and <strong>opinions</strong> presented in the media that may be based on only parts of the evidence and which may be <strong>biased</strong>.</p>
+
+<!-- Diagram 4: CO2 and temperature graph -->
+<svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Atmospheric CO&#8322; and global temperature since 1850 (approximate)</text>
+  <!-- axes -->
+  <line x1="90" y1="50" x2="90" y2="280" stroke="#374151" stroke-width="1.5"/>
+  <line x1="90" y1="280" x2="670" y2="280" stroke="#374151" stroke-width="1.5"/>
+  <line x1="670" y1="50" x2="670" y2="280" stroke="#374151" stroke-width="1.5"/>
+  <!-- x labels: 1850 -> 90, 2025 -> 670 ; 3.314 px/yr -->
+  <g font-size="10" fill="#374151" text-anchor="middle">
+    <text x="90" y="296">1850</text>
+    <text x="256" y="296">1900</text>
+    <text x="421" y="296">1950</text>
+    <text x="587" y="296">2000</text>
+    <text x="670" y="296">2025</text>
+  </g>
+  <text x="380" y="316" text-anchor="middle" font-size="11" fill="#374151">year</text>
+  <!-- left axis CO2 280 (y=270) to 430 (y=60): 1.4 px per ppm -->
+  <g font-size="10" fill="#dc2626" text-anchor="end">
+    <text x="85" y="273">280</text>
+    <text x="85" y="203">330</text>
+    <text x="85" y="133">380</text>
+    <text x="85" y="63">430</text>
+  </g>
+  <text x="40" y="165" text-anchor="middle" font-size="11" font-weight="bold" fill="#dc2626" transform="rotate(-90 40 165)">CO&#8322; / ppm</text>
+  <!-- right axis temp anomaly -0.4 (y=270) to +1.4 (y=60): 116.7 px per °C -->
+  <g font-size="10" fill="#2563eb" text-anchor="start">
+    <text x="675" y="273">&minus;0.4</text>
+    <text x="675" y="203">+0.2</text>
+    <text x="675" y="133">+0.8</text>
+    <text x="675" y="63">+1.4</text>
+  </g>
+  <text x="725" y="165" text-anchor="middle" font-size="11" font-weight="bold" fill="#2563eb" transform="rotate(90 725 165)">temperature change / &deg;C</text>
+  <!-- gridlines -->
+  <g stroke="#e5e7eb" stroke-width="0.8">
+    <line x1="90" y1="200" x2="670" y2="200"/><line x1="90" y1="130" x2="670" y2="130"/><line x1="90" y1="60" x2="670" y2="60"/>
+  </g>
+  <!-- CO2 curve: 1850 285 ->y 263 ; 1900 296 ->248 ; 1950 311 ->227 ; 1980 339 ->187 ; 2000 370 ->144 ; 2025 425 ->67 -->
+  <path d="M 90 263 C 180 258, 256 250, 330 240 S 421 228, 480 215 S 540 190, 587 144 S 640 90, 670 67" stroke="#dc2626" stroke-width="3" fill="none"/>
+  <!-- Temp anomaly (relative to 1850-1900): 1850 -0.1 ->235 ; 1900 -0.1->235 ; 1910 -0.25 -> 252 ; 1940 +0.1 -> 212 ; 1970 0 ->223 ; 2000 +0.6 -> 153 ; 2025 +1.3 -> 72 -->
+  <polyline points="90,232 140,240 190,236 256,238 290,252 330,236 380,214 421,220 470,224 520,206 560,176 587,158 620,140 650,105 670,80" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+  <!-- legend -->
+  <rect x="110" y="62" width="200" height="44" rx="4" fill="#fff" stroke="#d1d5db"/>
+  <line x1="120" y1="76" x2="145" y2="76" stroke="#dc2626" stroke-width="3"/>
+  <text x="152" y="80" font-size="10" fill="#111">CO&#8322; concentration</text>
+  <line x1="120" y1="95" x2="145" y2="95" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="152" y="99" font-size="10" fill="#111">temperature (vs 1850&ndash;1900)</text>
+  <text x="380" y="334" text-anchor="middle" font-size="9" fill="#6b7280" font-style="italic">Illustrative shape based on published records; a correlation like this does not on its own prove causation &mdash; that requires a mechanism and peer-reviewed models.</text>
+</svg>
+
+<h3>Evaluating the Evidence</h3>
+
+<ul>
+    <li><strong>Correlation:</strong> CO<sub>2</sub> concentration and global temperature have both risen since the Industrial Revolution (about 1750&ndash;1850).</li>
+    <li><strong>Mechanism:</strong> there is a well-understood physical mechanism (absorption of infrared radiation by greenhouse gases) that explains <em>why</em> more CO<sub>2</sub> should cause warming.</li>
+    <li><strong>Peer review:</strong> scientific findings are checked by other scientists before publication, which increases confidence in the conclusions. The overwhelming majority of climate scientists agree that recent warming is mainly caused by human activity.</li>
+    <li><strong>Uncertainty:</strong> temperature varies naturally from year to year; older data (e.g. from ice cores) have greater uncertainty; climate models are simplifications with many variables; future emissions are unknown.</li>
+    <li><strong>Media:</strong> newspapers and websites may present simplified, selective or biased accounts.</li>
+</ul>
+
+<div class="exam-tip">When asked to <strong>evaluate</strong> a claim about climate change, comment on: the <strong>quality</strong> of the data (sample size, time span, source), whether it shows <strong>correlation or causation</strong>, whether it has been <strong>peer reviewed</strong>, and whether the source may be <strong>biased</strong>. Use specific numbers from any graph you are given &mdash; "CO<sub>2</sub> rose from about 315 ppm to about 420 ppm" is much stronger than "it went up".</div>
+
+<h3>4.9.2.3 Global Climate Change</h3>
+
+<p>An increase in average global temperature is a major cause of climate change. There are several potential effects of global climate change:</p>
+
+<table>
+    <tr><th>Effect</th><th>Details</th></tr>
+    <tr><td><strong>Rising sea levels</strong></td><td>Melting of polar ice caps and glaciers, and thermal expansion of seawater, may cause <strong>flooding</strong> of low-lying land and <strong>increased coastal erosion</strong>.</td></tr>
+    <tr><td><strong>More frequent and severe storms</strong></td><td>Extreme weather events (hurricanes, floods, heatwaves) become more common.</td></tr>
+    <tr><td><strong>Changes in the amount, timing and distribution of rainfall</strong></td><td>Some regions experience droughts, others flooding.</td></tr>
+    <tr><td><strong>Temperature and water stress</strong></td><td>For humans and wildlife &mdash; shortages of fresh water.</td></tr>
+    <tr><td><strong>Changes in food-producing capacity</strong></td><td>Crops may fail in some regions; some areas may no longer be able to grow certain crops.</td></tr>
+    <tr><td><strong>Changes in distribution of wildlife species</strong></td><td>Species migrate, are lost from some areas, or become extinct; pests and diseases may spread to new regions.</td></tr>
+</table>
+
+<p>Students should be able to discuss the <strong>scale, risk and environmental implications</strong> of global climate change &mdash; for example, a sea-level rise of 1 m would affect hundreds of millions of people living in low-lying coastal cities and river deltas.</p>
+
+<h3>4.9.2.4 The Carbon Footprint and Its Reduction</h3>
+
+<div class="definition">
+    The <strong>carbon footprint</strong> is the <strong>total amount of carbon dioxide and other greenhouse gases emitted over the full life cycle</strong> of a product, service or event.
+</div>
+
+<p>The carbon footprint can be reduced by reducing emissions of carbon dioxide and methane:</p>
+
+<table>
+    <tr><th>Method</th><th>How it reduces the carbon footprint</th></tr>
+    <tr><td><strong>Increased use of alternative energy supplies</strong></td><td>Wind, solar, nuclear, hydroelectric &mdash; generate electricity without burning fossil fuels.</td></tr>
+    <tr><td><strong>Energy conservation</strong></td><td>Insulating homes, using efficient appliances and LED lighting, using public transport &mdash; less fuel burned overall.</td></tr>
+    <tr><td><strong>Carbon capture and storage (CCS)</strong></td><td>CO<sub>2</sub> from power stations is captured and pumped deep underground into old oil/gas fields or porous rocks instead of being released.</td></tr>
+    <tr><td><strong>Carbon taxes and licences</strong></td><td>Make it more expensive to emit CO<sub>2</sub>, encouraging companies and individuals to emit less.</td></tr>
+    <tr><td><strong>Carbon off-setting, including through tree planting</strong></td><td>Paying for projects (e.g. planting forests) that remove an equivalent amount of CO<sub>2</sub> from the atmosphere by photosynthesis.</td></tr>
+    <tr><td><strong>Carbon-neutral fuels and processes</strong></td><td>Using fuels where no <em>net</em> CO<sub>2</sub> is released (e.g. biofuels, where the CO<sub>2</sub> released was recently absorbed by the plants).</td></tr>
+</table>
+
+<h3>Problems in Reducing the Carbon Footprint</h3>
+
+<p>Actions may be <strong>limited</strong> for several reasons:</p>
+
+<ul>
+    <li><strong>Scientific disagreement</strong> about the causes and consequences of global climate change (though this is now small).</li>
+    <li><strong>Lack of public information and education</strong>.</li>
+    <li><strong>Lifestyle changes</strong> are unpopular &mdash; e.g. flying less, eating less meat, using cars less.</li>
+    <li><strong>Economic considerations</strong> &mdash; alternatives can be expensive; developing countries may need cheap fossil fuels to grow their economies.</li>
+    <li><strong>Incomplete international cooperation</strong> &mdash; one country cutting emissions has little effect if others do not.</li>
+</ul>
+
+<h3>Worked Example 2 &mdash; Comparing Carbon Footprints</h3>
+
+<pre>
+Question: Burning 1 kg of methane releases 2.75 kg of CO₂.
+          Burning 1 kg of coal (assume pure carbon) releases how
+          much CO₂? Which fuel has the bigger carbon footprint
+          per kg? (Ar: C = 12, O = 16)
+
+Coal:    C + O₂ → CO₂
+         12 g of C → 44 g of CO₂
+         1 kg of C → 44 ÷ 12 = 3.67 kg of CO₂
+
+Methane: CH₄ + 2O₂ → CO₂ + 2H₂O
+         16 g of CH₄ → 44 g of CO₂
+         1 kg of CH₄ → 44 ÷ 16 = 2.75 kg of CO₂  ✓
+
+Answer:  Coal releases 3.67 kg CO₂ per kg, compared with 2.75 kg
+         for methane, so coal has the bigger carbon footprint per
+         kg burned. (Methane also releases more energy per kg,
+         making the difference per kJ even larger.)
+</pre>
+
+<div class="exam-tip">"Carbon neutral" does not mean "produces no CO<sub>2</sub>". It means the CO<sub>2</sub> released is <strong>balanced</strong> by CO<sub>2</sub> absorbed. In practice biofuels are rarely fully carbon neutral, because energy (often from fossil fuels) is used to grow, harvest, process and transport them &mdash; mention this for an evaluation mark.</div>
+
+<h2>4.9.3 Common Atmospheric Pollutants and Their Sources</h2>
+
+<h3>4.9.3.1 Atmospheric Pollutants from Fuels</h3>
+
+<p>The <strong>combustion of fuels</strong> is a major source of atmospheric pollutants. Most fuels, including coal, contain <strong>carbon and/or hydrogen</strong> and may also contain some <strong>sulfur</strong>.</p>
+
+<p>The gases released into the atmosphere when a fuel is burned may include <strong>carbon dioxide</strong>, <strong>water vapour</strong>, <strong>carbon monoxide</strong>, <strong>sulfur dioxide</strong> and <strong>oxides of nitrogen</strong>. Solid particles and unburned hydrocarbons may also be released that form <strong>particulates</strong> in the atmosphere.</p>
+
+<table>
+    <tr><th>Pollutant</th><th>How it is formed</th><th>Example equation</th></tr>
+    <tr><td><strong>Carbon monoxide</strong> (CO)</td><td><strong>Incomplete combustion</strong> of fuels containing carbon, when there is a limited supply of oxygen.</td><td>2CH<sub>4</sub> + 3O<sub>2</sub> &rarr; 2CO + 4H<sub>2</sub>O</td></tr>
+    <tr><td><strong>Soot / carbon particulates</strong> (C)</td><td>Incomplete combustion with very limited oxygen; unburned hydrocarbons and solid particles (especially from diesel engines).</td><td>CH<sub>4</sub> + O<sub>2</sub> &rarr; C + 2H<sub>2</sub>O</td></tr>
+    <tr><td><strong>Sulfur dioxide</strong> (SO<sub>2</sub>)</td><td><strong>Sulfur impurities</strong> in the fuel (especially coal) react with oxygen when the fuel burns.</td><td>S + O<sub>2</sub> &rarr; SO<sub>2</sub></td></tr>
+    <tr><td><strong>Oxides of nitrogen</strong> (NO<sub>x</sub>: NO, NO<sub>2</sub>)</td><td><strong>Nitrogen and oxygen from the air</strong> react at the <strong>very high temperatures</strong> inside car engines and furnaces. (The nitrogen does <em>not</em> come from the fuel.)</td><td>N<sub>2</sub> + O<sub>2</sub> &rarr; 2NO<br>2NO + O<sub>2</sub> &rarr; 2NO<sub>2</sub></td></tr>
+</table>
+
+<div class="exam-tip">A very common error: saying oxides of nitrogen come from "nitrogen in the fuel". They come from <strong>nitrogen in the air</strong> reacting with <strong>oxygen in the air</strong> at the <strong>high temperature</strong> in the engine. Similarly, sulfur dioxide comes from sulfur <strong>in the fuel</strong>, not in the air.</div>
+
+<h3>4.9.3.2 Properties and Effects of Atmospheric Pollutants</h3>
+
+<table>
+    <tr><th>Pollutant</th><th>Effects</th></tr>
+    <tr><td><strong>Carbon monoxide</strong></td><td>A <strong>toxic</strong> gas. It is <strong>colourless and odourless</strong> and so is <strong>not easily detected</strong>. It combines with haemoglobin in red blood cells, reducing the blood's ability to carry oxygen &mdash; causing drowsiness, unconsciousness and death. Faulty gas boilers are a common source indoors; CO detectors are used in homes.</td></tr>
+    <tr><td><strong>Sulfur dioxide</strong> and <strong>oxides of nitrogen</strong></td><td>Cause <strong>respiratory problems</strong> in humans (irritate the lungs; worsen asthma). They dissolve in water droplets in clouds to cause <strong>acid rain</strong>, which damages trees and plants, makes lakes and rivers too acidic for aquatic life, and corrodes limestone buildings, statues and metal structures.</td></tr>
+    <tr><td><strong>Particulates</strong></td><td>Cause <strong>global dimming</strong> &mdash; they reflect sunlight back into space, so less light reaches the Earth's surface. Small particles can be breathed deep into the lungs, causing <strong>health problems</strong> (lung and heart disease).</td></tr>
+</table>
+
+<!-- Diagram 5: Sources and effects of pollutants -->
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrPol" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#374151"/></marker>
+  </defs>
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Pollutants from burning fuels &mdash; sources and effects</text>
+  <!-- source box -->
+  <rect x="20" y="110" width="160" height="80" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="100" y="140" text-anchor="middle" font-size="12" font-weight="bold" fill="#991b1b">Burning fuels</text>
+  <text x="100" y="158" text-anchor="middle" font-size="10" fill="#374151">vehicles, power</text>
+  <text x="100" y="172" text-anchor="middle" font-size="10" fill="#374151">stations, boilers</text>
+
+  <!-- pollutant boxes -->
+  <g font-size="11">
+    <rect x="240" y="40" width="190" height="45" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="335" y="60" text-anchor="middle" font-weight="bold" fill="#111">Carbon monoxide</text>
+    <text x="335" y="76" text-anchor="middle" font-size="9" fill="#374151">incomplete combustion</text>
+
+    <rect x="240" y="100" width="190" height="45" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="335" y="120" text-anchor="middle" font-weight="bold" fill="#111">Sulfur dioxide</text>
+    <text x="335" y="136" text-anchor="middle" font-size="9" fill="#374151">sulfur impurities in fuel</text>
+
+    <rect x="240" y="160" width="190" height="45" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="335" y="180" text-anchor="middle" font-weight="bold" fill="#111">Oxides of nitrogen</text>
+    <text x="335" y="196" text-anchor="middle" font-size="9" fill="#374151">N&#8322; + O&#8322; from air, high temperature</text>
+
+    <rect x="240" y="220" width="190" height="45" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="335" y="240" text-anchor="middle" font-weight="bold" fill="#111">Particulates (soot)</text>
+    <text x="335" y="256" text-anchor="middle" font-size="9" fill="#374151">incomplete combustion, unburned HCs</text>
+  </g>
+  <g stroke="#374151" stroke-width="1.5">
+    <line x1="180" y1="140" x2="238" y2="62" marker-end="url(#arrPol)"/>
+    <line x1="180" y1="145" x2="238" y2="122" marker-end="url(#arrPol)"/>
+    <line x1="180" y1="155" x2="238" y2="182" marker-end="url(#arrPol)"/>
+    <line x1="180" y1="160" x2="238" y2="242" marker-end="url(#arrPol)"/>
+  </g>
+
+  <!-- effects -->
+  <g font-size="11">
+    <rect x="500" y="40" width="240" height="45" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="620" y="60" text-anchor="middle" font-weight="bold" fill="#92400e">Toxic &mdash; reduces O&#8322; in blood</text>
+    <text x="620" y="76" text-anchor="middle" font-size="9" fill="#374151">colourless, odourless</text>
+
+    <rect x="500" y="115" width="240" height="75" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="620" y="140" text-anchor="middle" font-weight="bold" fill="#92400e">Acid rain</text>
+    <text x="620" y="158" text-anchor="middle" font-weight="bold" fill="#92400e">Respiratory problems</text>
+    <text x="620" y="176" text-anchor="middle" font-size="9" fill="#374151">damages trees, lakes, buildings</text>
+
+    <rect x="500" y="220" width="240" height="45" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+    <text x="620" y="240" text-anchor="middle" font-weight="bold" fill="#92400e">Global dimming + lung damage</text>
+    <text x="620" y="256" text-anchor="middle" font-size="9" fill="#374151">reflect sunlight; inhaled deep into lungs</text>
+  </g>
+  <g stroke="#374151" stroke-width="1.5">
+    <line x1="430" y1="62" x2="498" y2="62" marker-end="url(#arrPol)"/>
+    <line x1="430" y1="122" x2="498" y2="145" marker-end="url(#arrPol)"/>
+    <line x1="430" y1="182" x2="498" y2="160" marker-end="url(#arrPol)"/>
+    <line x1="430" y1="242" x2="498" y2="242" marker-end="url(#arrPol)"/>
+  </g>
+</svg>
+
+<h3>Reducing Pollutants</h3>
+
+<p>Although not a separate spec point, these methods are useful for evaluation answers:</p>
+
+<ul>
+    <li><strong>Catalytic converters</strong> in car exhausts convert CO to CO<sub>2</sub> and NO<sub>x</sub> to N<sub>2</sub> (e.g. 2CO + 2NO &rarr; 2CO<sub>2</sub> + N<sub>2</sub>).</li>
+    <li><strong>Removing sulfur</strong> from fuels before they are burned (low-sulfur petrol and diesel).</li>
+    <li><strong>Flue-gas desulfurisation</strong> ("scrubbers") at power stations, using calcium carbonate/calcium oxide to remove SO<sub>2</sub>.</li>
+    <li><strong>Particulate filters</strong> on diesel vehicles.</li>
+    <li>Ensuring a good <strong>air supply</strong> (e.g. servicing boilers) to promote complete combustion.</li>
+</ul>
+
+<h3>Worked Example 3 &mdash; Incomplete Combustion Equations</h3>
+
+<pre>
+Question: Write balanced equations for the combustion of propane,
+          C₃H₈, producing (a) carbon monoxide and water, and
+          (b) carbon (soot) and water.
+
+(a)  C:  3 C → 3CO           H:  8 H → 4H₂O
+     O on right = 3 + 4 = 7 atoms → 3.5 O₂  → double everything
+     2C₃H₈ + 7O₂ → 6CO + 8H₂O
+
+(b)  C:  3 C → 3C            H:  8 H → 4H₂O
+     O on right = 4 atoms → 2 O₂
+     C₃H₈ + 2O₂ → 3C + 4H₂O
+
+Compare with complete combustion:  C₃H₈ + 5O₂ → 3CO₂ + 4H₂O
+Less oxygen available → more CO and C, less energy released.
+</pre>
+
+<div class="exam-tip">Incomplete combustion releases <strong>less energy</strong> than complete combustion for the same amount of fuel, as well as producing toxic CO and soot. A yellow, smoky flame indicates incomplete combustion; a blue flame indicates complete combustion. This links back to 4.7 (alkenes burn with smoky flames).</div>
+
+<h2>Summary Checklist for 4.9 Chemistry of the Atmosphere</h2>
+
+<ul>
+    <li>State the approximate composition of today's atmosphere (~80% N<sub>2</sub>, ~20% O<sub>2</sub>, small amounts of CO<sub>2</sub>, water vapour and noble gases) and that it has been stable for ~200 million years.</li>
+    <li>Describe one theory of the early atmosphere (volcanic activity, mainly CO<sub>2</sub>, little or no O<sub>2</sub>, like Mars and Venus) and explain why evidence is limited.</li>
+    <li>Explain how the oceans formed and how CO<sub>2</sub> dissolved and formed carbonate sediments.</li>
+    <li>Explain how oxygen increased (algae ~2.7 billion years ago, then plants) and write the photosynthesis equation.</li>
+    <li>Explain how CO<sub>2</sub> decreased (oceans, photosynthesis, limestone, coal, crude oil and natural gas).</li>
+    <li>Name the greenhouse gases (water vapour, CO<sub>2</sub>, methane) and explain the greenhouse effect in terms of short- and long-wavelength radiation.</li>
+    <li>Describe human activities that increase CO<sub>2</sub> and methane levels.</li>
+    <li>Evaluate evidence for climate change: peer review, correlation vs causation, uncertainty, simplified models and media bias.</li>
+    <li>Describe the potential effects of global climate change and discuss scale, risk and environmental implications.</li>
+    <li>Define carbon footprint; describe ways to reduce it and why action may be limited.</li>
+    <li>Describe how CO, soot/particulates, SO<sub>2</sub> and NO<sub>x</sub> are produced; write equations for complete and incomplete combustion.</li>
+    <li>Describe and explain the effects of CO (toxic, undetectable), SO<sub>2</sub>/NO<sub>x</sub> (respiratory problems, acid rain) and particulates (global dimming, health).</li>
+</ul>
+
+</div>
+</body>
+</html>
