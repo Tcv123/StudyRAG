@@ -35,6 +35,7 @@
     'Chemistry_Edexcel':             'diagnostics/chemistry-edexcel-diagnostic.html',
     'Chemistry_Edexcel|gcse':        'diagnostics/chemistry-edexcel-gcse-diagnostic.html',
     'Chemistry_OCR A':               'diagnostics/chemistry-ocr-a-diagnostic.html',
+    'Chemistry_OCR A|gcse':          'diagnostics/chemistry-ocr-a-gcse-diagnostic.html',
     'Chemistry_OCR B':               'diagnostics/chemistry-ocr-b-diagnostic.html',
     'Computer Science_AQA|alevel':   'diagnostics/cs-aqa-alevel-diagnostic.html',
     'Computer Science_AQA|gcse':     'diagnostics/cs-aqa-gcse-diagnostic.html',

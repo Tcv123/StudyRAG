@@ -325,6 +325,14 @@
       { num: 'M5', name: 'Physical Chemistry & Transition Elements' },
       { num: 'M6', name: 'Organic Chemistry & Analysis' },
     ],
+    'Chemistry|OCR A|gcse': [
+      { num: 'C1', name: 'Particles' },
+      { num: 'C2', name: 'Elements, Compounds and Mixtures' },
+      { num: 'C3', name: 'Chemical Reactions' },
+      { num: 'C4', name: 'Predicting and Identifying Reactions and Products' },
+      { num: 'C5', name: 'Monitoring and Controlling Chemical Reactions' },
+      { num: 'C6', name: 'Global Challenges' },
+    ],
     'Chemistry|OCR B': [
       { num: 'EL', name: 'Elements of Life' },
       { num: 'DF', name: 'Developing Fuels' },

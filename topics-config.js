@@ -321,6 +321,19 @@
         { id: 'M6', name: 'Organic Chemistry & Analysis', sub: 'Aromatics, carbonyls, amines, polymers, NMR' },
       ],
     },
+    'Chemistry_OCR A|gcse': {
+      label: 'Chemistry — OCR A (GCSE)',
+      emoji: '🧪',
+      page: 'diagnostics/chemistry-ocr-a-gcse-diagnostic.html',
+      topics: [
+        { id: 'C1', name: 'Particles', sub: 'Particle model, atomic structure, isotopes, history of the atom' },
+        { id: 'C2', name: 'Elements, Compounds and Mixtures', sub: 'Purity, separation, chromatography, bonding, structures, nanoparticles' },
+        { id: 'C3', name: 'Chemical Reactions', sub: 'Formulae, moles, energetics, acids, redox, electrolysis' },
+        { id: 'C4', name: 'Predicting and Identifying Reactions and Products', sub: 'Groups 1/7/0, transition metals, reactivity, ion and gas tests' },
+        { id: 'C5', name: 'Monitoring and Controlling Chemical Reactions', sub: 'Titrations, yield, atom economy, rates, equilibria' },
+        { id: 'C6', name: 'Global Challenges', sub: 'Extraction, Haber, fertilisers, organic chemistry, polymers, atmosphere, water' },
+      ],
+    },
     'Chemistry_OCR B': {
       label: 'Chemistry — OCR B',
       emoji: '🧪',
