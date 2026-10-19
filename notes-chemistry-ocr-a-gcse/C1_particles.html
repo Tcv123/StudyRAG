@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR A GCSE C1 — Particles</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 820px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .equation { background: #f0fdf4; border: 1px solid #86efac; padding: 14px 18px; margin: 14px 0; border-radius: 8px; font-family: 'Times New Roman', serif; font-size: 1.05rem; text-align: center; }
+        .case-study { background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .case-study::before { content: "Worked Example: "; font-weight: 700; color: #b91c1c; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .case-study, .equation { break-inside: avoid; } h2 { break-after: avoid; } svg { break-inside: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>C1 — Particles</h1>
+<p class="spec-ref">OCR GCSE Chemistry A (J248) &mdash; Gateway Science · Papers 1 &amp; 3 (C1.1 The particle model; C1.2 Atomic structure)</p>
+
+<p>Topic C1 is the foundation for everything else in the course. It sets out the <strong>particle model</strong> of solids, liquids and gases, and then looks inside the particles to describe <strong>atomic structure</strong>: protons, neutrons, electrons, isotopes and ions. Topic C1 is assessed on Paper 1 (Foundation) and Paper 3 (Higher), and the ideas are assumed knowledge on Papers 2 and 4.</p>
+
+<p>Content marked <strong>(HT)</strong> is tested only on the Higher tier papers. Everything else can be tested on both tiers.</p>
+
+<h2>C1.1 The Particle Model</h2>
+
+<div class="definition">
+    The <strong>particle model</strong> says that all matter is made of very small particles (atoms, molecules or ions) that are <strong>constantly moving</strong>. Whether a substance is a solid, liquid or gas depends on how its particles are <strong>arranged</strong>, how they <strong>move</strong> and how strongly they are <strong>held together</strong>.
+</div>
+
+<p>The model is a <em>model</em>: a simplified picture used to explain and predict observations. In the simple version the particles are drawn as small, solid spheres. That is enough to explain melting, boiling, diffusion and compression, but (as you will see under the limitations below) it leaves a lot out.</p>
+
+<!-- States of matter diagram -->
+<svg viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<defs><marker id="c1-ah" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#dc2626"/></marker></defs>
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Particle Arrangement in Solids, Liquids and Gases</text>
+<!-- Solid -->
+<rect x="20" y="45" width="200" height="180" rx="10" fill="#f0f9ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="120" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Solid</text>
+<g fill="#2563eb">
+<circle cx="60" cy="100" r="11"/><circle cx="83" cy="100" r="11"/><circle cx="106" cy="100" r="11"/><circle cx="129" cy="100" r="11"/><circle cx="152" cy="100" r="11"/><circle cx="175" cy="100" r="11"/>
+<circle cx="60" cy="123" r="11"/><circle cx="83" cy="123" r="11"/><circle cx="106" cy="123" r="11"/><circle cx="129" cy="123" r="11"/><circle cx="152" cy="123" r="11"/><circle cx="175" cy="123" r="11"/>
+<circle cx="60" cy="146" r="11"/><circle cx="83" cy="146" r="11"/><circle cx="106" cy="146" r="11"/><circle cx="129" cy="146" r="11"/><circle cx="152" cy="146" r="11"/><circle cx="175" cy="146" r="11"/>
+<circle cx="60" cy="169" r="11"/><circle cx="83" cy="169" r="11"/><circle cx="106" cy="169" r="11"/><circle cx="129" cy="169" r="11"/><circle cx="152" cy="169" r="11"/><circle cx="175" cy="169" r="11"/>
+<circle cx="60" cy="192" r="11"/><circle cx="83" cy="192" r="11"/><circle cx="106" cy="192" r="11"/><circle cx="129" cy="192" r="11"/><circle cx="152" cy="192" r="11"/><circle cx="175" cy="192" r="11"/>
+</g>
+<text x="120" y="245" text-anchor="middle" font-size="10.5" fill="#374151">Regular lattice · touching</text>
+<text x="120" y="260" text-anchor="middle" font-size="10.5" fill="#374151">vibrate about fixed positions</text>
+<!-- Liquid -->
+<rect x="250" y="45" width="200" height="180" rx="10" fill="#f0f9ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="350" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Liquid</text>
+<g fill="#2563eb">
+<circle cx="285" cy="200" r="11"/><circle cx="308" cy="203" r="11"/><circle cx="333" cy="199" r="11"/><circle cx="358" cy="204" r="11"/><circle cx="382" cy="200" r="11"/><circle cx="407" cy="203" r="11"/>
+<circle cx="292" cy="178" r="11"/><circle cx="318" cy="180" r="11"/><circle cx="345" cy="177" r="11"/><circle cx="370" cy="181" r="11"/><circle cx="396" cy="179" r="11"/><circle cx="420" cy="184" r="11"/>
+<circle cx="281" cy="156" r="11"/><circle cx="305" cy="157" r="11"/><circle cx="331" cy="155" r="11"/><circle cx="360" cy="158" r="11"/><circle cx="386" cy="157" r="11"/><circle cx="412" cy="162" r="11"/>
+<circle cx="296" cy="134" r="11"/><circle cx="324" cy="133" r="11"/><circle cx="350" cy="136" r="11"/><circle cx="376" cy="135" r="11"/>
+</g>
+<text x="350" y="245" text-anchor="middle" font-size="10.5" fill="#374151">Random · mostly touching</text>
+<text x="350" y="260" text-anchor="middle" font-size="10.5" fill="#374151">move around each other</text>
+<!-- Gas -->
+<rect x="480" y="45" width="200" height="180" rx="10" fill="#f0f9ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="580" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Gas</text>
+<g fill="#2563eb">
+<circle cx="510" cy="100" r="11"/><circle cx="600" cy="95" r="11"/><circle cx="655" cy="130" r="11"/>
+<circle cx="545" cy="150" r="11"/><circle cx="620" cy="175" r="11"/><circle cx="510" cy="200" r="11"/><circle cx="575" cy="205" r="11"/>
+</g>
+<line x1="522" y1="96" x2="545" y2="88" stroke="#dc2626" stroke-width="1.5" marker-end="url(#c1-ah)"/>
+<line x1="612" y1="92" x2="636" y2="82" stroke="#dc2626" stroke-width="1.5" marker-end="url(#c1-ah)"/>
+<line x1="545" y1="162" x2="535" y2="185" stroke="#dc2626" stroke-width="1.5" marker-end="url(#c1-ah)"/>
+<line x1="644" y1="138" x2="625" y2="150" stroke="#dc2626" stroke-width="1.5" marker-end="url(#c1-ah)"/>
+<line x1="632" y1="180" x2="655" y2="200" stroke="#dc2626" stroke-width="1.5" marker-end="url(#c1-ah)"/>
+<text x="580" y="245" text-anchor="middle" font-size="10.5" fill="#374151">Random · far apart</text>
+<text x="580" y="260" text-anchor="middle" font-size="10.5" fill="#374151">move quickly in all directions</text>
+</svg>
+
+<h3>Properties of the Three States</h3>
+
+<table>
+    <tr><th>Feature</th><th>Solid</th><th>Liquid</th><th>Gas</th></tr>
+    <tr><td><strong>Arrangement</strong></td><td>Regular, repeating pattern (lattice)</td><td>Random, but particles close together</td><td>Random, particles far apart</td></tr>
+    <tr><td><strong>Movement</strong></td><td>Vibrate about fixed positions</td><td>Move around / slide past each other</td><td>Move quickly and randomly in all directions</td></tr>
+    <tr><td><strong>Forces between particles</strong></td><td>Strong</td><td>Weaker than in solid</td><td>Very weak (almost none)</td></tr>
+    <tr><td><strong>Energy of particles</strong></td><td>Lowest</td><td>More</td><td>Most</td></tr>
+    <tr><td><strong>Shape</strong></td><td>Fixed</td><td>Takes the shape of the container</td><td>Fills the whole container</td></tr>
+    <tr><td><strong>Volume</strong></td><td>Fixed</td><td>Fixed</td><td>Not fixed &mdash; expands to fill space</td></tr>
+    <tr><td><strong>Can it be compressed?</strong></td><td>No</td><td>Hardly at all</td><td>Yes &mdash; large spaces between particles</td></tr>
+    <tr><td><strong>Can it flow?</strong></td><td>No</td><td>Yes</td><td>Yes</td></tr>
+</table>
+
+<p>The particle model explains these bulk properties. A gas can be squashed because there is lots of empty space between its particles. A liquid flows because its particles can move past one another. A solid keeps its shape because its particles are held in fixed positions by strong forces.</p>
+
+<div class="exam-tip">When drawing particle diagrams, keep the particles the <strong>same size</strong> in all three states. In a liquid, most particles should still be touching (no big gaps) &mdash; a very common mistake is to draw a liquid that looks like a gas. Particles do not get bigger when heated; they just move faster and (usually) further apart.</div>
+
+<h3>Changes of State</h3>
+
+<p>A <strong>change of state</strong> happens when energy is transferred to or from a substance. Heating gives the particles more kinetic energy, so they can overcome more of the forces holding them together. Cooling removes energy, so forces of attraction pull the particles closer together.</p>
+
+<!-- Changes of state diagram -->
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<defs>
+<marker id="c1-arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker>
+<marker id="c1-arb" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker>
+<marker id="c1-arp" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#7c3aed"/></marker>
+</defs>
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The Six Changes of State</text>
+<rect x="30" y="120" width="140" height="80" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="100" y="167" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e40af">SOLID</text>
+<rect x="280" y="120" width="140" height="80" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="350" y="167" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e40af">LIQUID</text>
+<rect x="530" y="120" width="140" height="80" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="600" y="167" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e40af">GAS</text>
+<line x1="172" y1="140" x2="278" y2="140" stroke="#dc2626" stroke-width="2" marker-end="url(#c1-arr)"/>
+<text x="225" y="132" text-anchor="middle" font-size="12" font-weight="bold" fill="#dc2626">melting</text>
+<line x1="278" y1="182" x2="172" y2="182" stroke="#2563eb" stroke-width="2" marker-end="url(#c1-arb)"/>
+<text x="225" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#2563eb">freezing</text>
+<line x1="422" y1="140" x2="528" y2="140" stroke="#dc2626" stroke-width="2" marker-end="url(#c1-arr)"/>
+<text x="475" y="114" text-anchor="middle" font-size="11" font-weight="bold" fill="#dc2626">boiling /</text>
+<text x="475" y="127" text-anchor="middle" font-size="11" font-weight="bold" fill="#dc2626">evaporating</text>
+<line x1="528" y1="182" x2="422" y2="182" stroke="#2563eb" stroke-width="2" marker-end="url(#c1-arb)"/>
+<text x="475" y="200" text-anchor="middle" font-size="12" font-weight="bold" fill="#2563eb">condensing</text>
+<path d="M 100 118 Q 350 30 600 118" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#c1-arp)"/>
+<text x="350" y="62" text-anchor="middle" font-size="12" font-weight="bold" fill="#7c3aed">subliming (solid → gas)</text>
+<path d="M 600 202 Q 350 290 100 202" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#c1-arp)"/>
+<text x="350" y="236" text-anchor="middle" font-size="12" font-weight="bold" fill="#7c3aed">deposition (gas → solid)</text>
+<text x="120" y="268" font-size="11" fill="#dc2626">red: energy taken in (heating)</text>
+<text x="430" y="268" font-size="11" fill="#2563eb">blue: energy given out (cooling)</text>
+</svg>
+
+<table>
+    <tr><th>Change</th><th>From → to</th><th>Energy</th><th>What happens to the particles</th></tr>
+    <tr><td><strong>Melting</strong></td><td>solid → liquid</td><td>taken in</td><td>Particles vibrate so much that they break free of fixed positions; enough forces are overcome for them to move around each other.</td></tr>
+    <tr><td><strong>Freezing</strong></td><td>liquid → solid</td><td>given out</td><td>Particles slow down; forces of attraction hold them in fixed positions.</td></tr>
+    <tr><td><strong>Boiling / evaporating</strong></td><td>liquid → gas</td><td>taken in</td><td>Particles gain enough energy to overcome almost all the forces and escape. Boiling happens throughout the liquid at the boiling point; evaporation happens only from the surface, at any temperature.</td></tr>
+    <tr><td><strong>Condensing</strong></td><td>gas → liquid</td><td>given out</td><td>Particles slow down and forces pull them close together again.</td></tr>
+    <tr><td><strong>Subliming</strong></td><td>solid → gas</td><td>taken in</td><td>Particles go straight from fixed positions to moving freely, e.g. solid carbon dioxide (dry ice), iodine.</td></tr>
+</table>
+
+<p>Changes of state are <strong>physical changes</strong>: no new substance forms, the particles themselves are unchanged and the change is <strong>reversible</strong>. The <strong>mass is conserved</strong> because the number of particles stays the same &mdash; they are only rearranged. (Ice that melts in a sealed flask has the same mass as the water it becomes.)</p>
+
+<h3>Heating and Cooling Curves</h3>
+
+<p>If a pure substance is heated steadily, its temperature rises until it reaches its melting point. The temperature then <strong>stays constant</strong> while the substance melts, even though energy is still being supplied, because the energy is being used to overcome the forces between particles rather than to make them move faster. The same happens at the boiling point.</p>
+
+<!-- Cooling curve -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<defs><marker id="c1-ax" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1f2937"/></marker></defs>
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Cooling Curve for a Pure Substance (e.g. stearic acid)</text>
+<line x1="80" y1="250" x2="650" y2="250" stroke="#1f2937" stroke-width="1.5" marker-end="url(#c1-ax)"/>
+<line x1="80" y1="250" x2="80" y2="45" stroke="#1f2937" stroke-width="1.5" marker-end="url(#c1-ax)"/>
+<text x="365" y="282" text-anchor="middle" font-size="12" fill="#374151">Time / minutes</text>
+<text x="32" y="150" text-anchor="middle" font-size="12" fill="#374151" transform="rotate(-90 32 150)">Temperature / °C</text>
+<path d="M 85 70 Q 150 110 220 150" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="220" y1="150" x2="440" y2="150" stroke="#dc2626" stroke-width="2.5"/>
+<path d="M 440 150 Q 520 200 630 228" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+<line x1="76" y1="150" x2="84" y2="150" stroke="#1f2937"/>
+<text x="72" y="154" text-anchor="end" font-size="10" fill="#374151">69</text>
+<line x1="80" y1="150" x2="220" y2="150" stroke="#9ca3af" stroke-dasharray="4,3"/>
+<text x="150" y="88" font-size="11" fill="#2563eb">liquid cooling</text>
+<text x="330" y="140" text-anchor="middle" font-size="11" font-weight="bold" fill="#dc2626">freezing: liquid + solid present</text>
+<text x="330" y="170" text-anchor="middle" font-size="10" fill="#374151">temperature constant at the melting point</text>
+<text x="330" y="184" text-anchor="middle" font-size="10" fill="#374151">(energy released as forces form balances heat lost)</text>
+<text x="540" y="200" font-size="11" fill="#2563eb">solid cooling</text>
+</svg>
+
+<p>The flat section on a cooling curve is where the substance freezes. Its temperature tells you the <strong>melting point</strong> (melting point = freezing point for a pure substance). A <em>pure</em> substance gives a sharp, flat plateau; an impure one solidifies over a range of temperatures (see C2.1).</p>
+
+<h3>Melting Point, Boiling Point and State at a Given Temperature</h3>
+
+<ul>
+    <li>Below its melting point a substance is a <strong>solid</strong>.</li>
+    <li>Between its melting point and boiling point it is a <strong>liquid</strong>.</li>
+    <li>Above its boiling point it is a <strong>gas</strong>.</li>
+</ul>
+
+<p>The <em>size</em> of the melting and boiling points depends on how strong the forces between particles are. Stronger forces need more energy to overcome, so the melting point is higher. Topic C2.3 explains this in terms of bonds and intermolecular forces.</p>
+
+<h3>Diffusion and Gas Pressure (Using the Model)</h3>
+
+<p>The particle model also explains:</p>
+<ul>
+    <li><strong>Diffusion</strong> &mdash; the net movement of particles from an area of higher concentration to lower concentration because of their random motion. Smells spread across a room; a purple crystal of potassium manganate(VII) slowly colours still water. Diffusion is fastest in gases (fast particles, large spaces) and very slow in liquids.</li>
+    <li><strong>Gas pressure</strong> &mdash; gas particles collide with the walls of their container. Heating the gas makes the particles move faster, so they collide more often and harder &mdash; the pressure increases.</li>
+</ul>
+
+<h2>Physical Changes and Chemical Changes</h2>
+
+<p>The particle model gives a clear way to tell physical and chemical changes apart:</p>
+
+<div class="definition">
+    In a <strong>physical change</strong> the particles stay the same &mdash; they are only rearranged or moved further apart / closer together. No new substance forms. Examples: melting, boiling, dissolving.<br><br>
+    In a <strong>chemical change</strong> (a chemical reaction) the <strong>atoms are rearranged into new substances</strong>: bonds between atoms are broken and new bonds are made. Examples: burning, rusting, neutralisation.
+</div>
+
+<!-- Physical vs chemical change -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<defs><marker id="c1-pc" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#1e40af"/></marker></defs>
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Physical Change vs Chemical Change</text>
+<!-- Physical -->
+<text x="175" y="50" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Physical: water boiling</text>
+<rect x="20" y="62" width="130" height="120" rx="8" fill="#f0f9ff" stroke="#2563eb"/>
+<rect x="200" y="62" width="130" height="120" rx="8" fill="#f0f9ff" stroke="#2563eb"/>
+<line x1="155" y1="122" x2="195" y2="122" stroke="#1e40af" stroke-width="2" marker-end="url(#c1-pc)"/>
+<!-- water molecules liquid: O red big, H white small -->
+<g stroke="#374151" stroke-width="0.8">
+<circle cx="50" cy="150" r="10" fill="#ef4444"/><circle cx="41" cy="160" r="6" fill="#fff"/><circle cx="59" cy="160" r="6" fill="#fff"/>
+<circle cx="85" cy="152" r="10" fill="#ef4444"/><circle cx="76" cy="162" r="6" fill="#fff"/><circle cx="94" cy="162" r="6" fill="#fff"/>
+<circle cx="120" cy="150" r="10" fill="#ef4444"/><circle cx="111" cy="160" r="6" fill="#fff"/><circle cx="129" cy="160" r="6" fill="#fff"/>
+<circle cx="68" cy="122" r="10" fill="#ef4444"/><circle cx="59" cy="132" r="6" fill="#fff"/><circle cx="77" cy="132" r="6" fill="#fff"/>
+<circle cx="104" cy="120" r="10" fill="#ef4444"/><circle cx="95" cy="130" r="6" fill="#fff"/><circle cx="113" cy="130" r="6" fill="#fff"/>
+<circle cx="86" cy="94" r="10" fill="#ef4444"/><circle cx="77" cy="104" r="6" fill="#fff"/><circle cx="95" cy="104" r="6" fill="#fff"/>
+</g>
+<g stroke="#374151" stroke-width="0.8">
+<circle cx="225" cy="85" r="10" fill="#ef4444"/><circle cx="216" cy="95" r="6" fill="#fff"/><circle cx="234" cy="95" r="6" fill="#fff"/>
+<circle cx="300" cy="80" r="10" fill="#ef4444"/><circle cx="291" cy="90" r="6" fill="#fff"/><circle cx="309" cy="90" r="6" fill="#fff"/>
+<circle cx="262" cy="125" r="10" fill="#ef4444"/><circle cx="253" cy="135" r="6" fill="#fff"/><circle cx="271" cy="135" r="6" fill="#fff"/>
+<circle cx="228" cy="158" r="10" fill="#ef4444"/><circle cx="219" cy="168" r="6" fill="#fff"/><circle cx="237" cy="168" r="6" fill="#fff"/>
+<circle cx="305" cy="140" r="10" fill="#ef4444"/><circle cx="296" cy="150" r="6" fill="#fff"/><circle cx="314" cy="150" r="6" fill="#fff"/>
+<circle cx="285" cy="165" r="10" fill="#ef4444"/><circle cx="276" cy="175" r="6" fill="#fff"/><circle cx="294" cy="175" r="6" fill="#fff"/>
+</g>
+<text x="85" y="198" text-anchor="middle" font-size="10.5" fill="#374151">liquid water</text>
+<text x="265" y="198" text-anchor="middle" font-size="10.5" fill="#374151">steam</text>
+<text x="175" y="222" text-anchor="middle" font-size="10.5" fill="#374151">Same H₂O molecules, just further apart.</text>
+<text x="175" y="238" text-anchor="middle" font-size="10.5" fill="#374151">Easily reversed by cooling.</text>
+<!-- Chemical -->
+<text x="530" y="50" text-anchor="middle" font-size="13" font-weight="bold" fill="#b91c1c">Chemical: 2H₂ + O₂ → 2H₂O</text>
+<rect x="375" y="62" width="130" height="120" rx="8" fill="#fef2f2" stroke="#dc2626"/>
+<rect x="555" y="62" width="130" height="120" rx="8" fill="#fef2f2" stroke="#dc2626"/>
+<line x1="510" y1="122" x2="550" y2="122" stroke="#1e40af" stroke-width="2" marker-end="url(#c1-pc)"/>
+<g stroke="#374151" stroke-width="0.8">
+<circle cx="400" cy="90" r="6" fill="#fff"/><circle cx="412" cy="90" r="6" fill="#fff"/>
+<circle cx="460" cy="100" r="6" fill="#fff"/><circle cx="472" cy="100" r="6" fill="#fff"/>
+<circle cx="410" cy="150" r="10" fill="#ef4444"/><circle cx="430" cy="150" r="10" fill="#ef4444"/>
+</g>
+<g stroke="#374151" stroke-width="0.8">
+<circle cx="595" cy="100" r="10" fill="#ef4444"/><circle cx="586" cy="110" r="6" fill="#fff"/><circle cx="604" cy="110" r="6" fill="#fff"/>
+<circle cx="645" cy="145" r="10" fill="#ef4444"/><circle cx="636" cy="155" r="6" fill="#fff"/><circle cx="654" cy="155" r="6" fill="#fff"/>
+</g>
+<text x="440" y="198" text-anchor="middle" font-size="10.5" fill="#374151">2 H₂ + 1 O₂</text>
+<text x="620" y="198" text-anchor="middle" font-size="10.5" fill="#374151">2 H₂O</text>
+<text x="530" y="222" text-anchor="middle" font-size="10.5" fill="#374151">Bonds broken and made: a new substance.</text>
+<text x="530" y="238" text-anchor="middle" font-size="10.5" fill="#374151">Same atoms (4 H, 2 O), so mass is conserved.</text>
+<circle cx="230" cy="275" r="8" fill="#ef4444" stroke="#374151" stroke-width="0.8"/><text x="243" y="279" font-size="11" fill="#374151">oxygen atom</text>
+<circle cx="380" cy="275" r="5" fill="#fff" stroke="#374151" stroke-width="0.8"/><text x="390" y="279" font-size="11" fill="#374151">hydrogen atom</text>
+</svg>
+
+<table>
+    <tr><th></th><th>Physical change</th><th>Chemical change</th></tr>
+    <tr><td><strong>New substance formed?</strong></td><td>No</td><td>Yes</td></tr>
+    <tr><td><strong>What happens to particles</strong></td><td>Same particles; spacing / arrangement / movement changes</td><td>Atoms rearranged; bonds broken and new bonds formed</td></tr>
+    <tr><td><strong>Reversible?</strong></td><td>Usually easily reversed (e.g. cool steam → water)</td><td>Usually hard to reverse</td></tr>
+    <tr><td><strong>Energy change</strong></td><td>Usually small</td><td>Often large (heat, light, sound)</td></tr>
+    <tr><td><strong>Mass</strong></td><td>Conserved</td><td>Conserved (in a closed system)</td></tr>
+    <tr><td><strong>Signs</strong></td><td>Change of state, shape or dissolving only</td><td>Colour change, gas given off (fizzing), precipitate, temperature change, light</td></tr>
+    <tr><td><strong>Examples</strong></td><td>Ice melting; sugar dissolving; distilling salty water</td><td>Magnesium burning; iron rusting; baking a cake</td></tr>
+</table>
+
+<div class="case-study">
+    When magnesium ribbon is heated in air it burns with a bright white light and becomes a white powder. Is this a physical or chemical change? Explain using the particle model.<br>
+    <strong>Chemical change.</strong> The magnesium atoms react with oxygen molecules from the air: the bonds in O₂ are broken and new bonds between magnesium and oxygen form, giving a <strong>new substance</strong>, magnesium oxide (2Mg + O₂ → 2MgO). The white powder cannot be turned back into magnesium by cooling. Compare this with melting wax, where the same wax molecules simply move further apart and the wax re-solidifies on cooling.
+</div>
+
+<div class="exam-tip">Dissolving is a <strong>physical</strong> change, not a chemical reaction: salt can be recovered by evaporating the water. Don't say the salt "disappears" &mdash; its particles spread out between the water particles, and the total mass of the solution = mass of salt + mass of water.</div>
+
+<h3>Elements, Compounds and Mixtures (Particle Diagrams)</h3>
+
+<p>The particle model on its own does not explain why different materials have different properties &mdash; to do that we need to look at the particles themselves. Different substances are made of different particles:</p>
+
+<ul>
+    <li>An <strong>element</strong> contains only <strong>one type of atom</strong> (e.g. Fe, O₂, He). It cannot be broken down into simpler substances by chemical means.</li>
+    <li>A <strong>compound</strong> contains atoms of <strong>two or more different elements chemically bonded</strong> in fixed proportions (e.g. H₂O, NaCl, CO₂).</li>
+    <li>A <strong>mixture</strong> contains two or more substances <strong>not chemically joined</strong>; they can be separated by physical methods (C2.1).</li>
+</ul>
+
+<!-- Elements, compounds, mixtures -->
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Particle Diagrams: Element, Compound, Mixture</text>
+<rect x="20" y="40" width="200" height="140" rx="8" fill="#f0f9ff" stroke="#2563eb"/>
+<rect x="250" y="40" width="200" height="140" rx="8" fill="#f0f9ff" stroke="#2563eb"/>
+<rect x="480" y="40" width="200" height="140" rx="8" fill="#f0f9ff" stroke="#2563eb"/>
+<g stroke="#374151" stroke-width="0.8">
+<!-- element: O2 molecules -->
+<circle cx="55" cy="75" r="10" fill="#ef4444"/><circle cx="73" cy="75" r="10" fill="#ef4444"/>
+<circle cx="140" cy="70" r="10" fill="#ef4444"/><circle cx="158" cy="70" r="10" fill="#ef4444"/>
+<circle cx="95" cy="125" r="10" fill="#ef4444"/><circle cx="113" cy="125" r="10" fill="#ef4444"/>
+<circle cx="165" cy="150" r="10" fill="#ef4444"/><circle cx="183" cy="150" r="10" fill="#ef4444"/>
+<circle cx="45" cy="155" r="10" fill="#ef4444"/><circle cx="63" cy="155" r="10" fill="#ef4444"/>
+<!-- compound: CO2 molecules -->
+<circle cx="280" cy="75" r="9" fill="#ef4444"/><circle cx="298" cy="75" r="10" fill="#374151"/><circle cx="316" cy="75" r="9" fill="#ef4444"/>
+<circle cx="370" cy="68" r="9" fill="#ef4444"/><circle cx="388" cy="68" r="10" fill="#374151"/><circle cx="406" cy="68" r="9" fill="#ef4444"/>
+<circle cx="320" cy="125" r="9" fill="#ef4444"/><circle cx="338" cy="125" r="10" fill="#374151"/><circle cx="356" cy="125" r="9" fill="#ef4444"/>
+<circle cx="390" cy="155" r="9" fill="#ef4444"/><circle cx="408" cy="155" r="10" fill="#374151"/><circle cx="426" cy="155" r="9" fill="#ef4444"/>
+<circle cx="272" cy="155" r="9" fill="#ef4444"/><circle cx="290" cy="155" r="10" fill="#374151"/><circle cx="308" cy="155" r="9" fill="#ef4444"/>
+<!-- mixture: O2, CO2 and He -->
+<circle cx="510" cy="75" r="10" fill="#ef4444"/><circle cx="528" cy="75" r="10" fill="#ef4444"/>
+<circle cx="590" cy="70" r="9" fill="#ef4444"/><circle cx="608" cy="70" r="10" fill="#374151"/><circle cx="626" cy="70" r="9" fill="#ef4444"/>
+<circle cx="650" cy="125" r="10" fill="#fbbf24"/>
+<circle cx="560" cy="120" r="10" fill="#fbbf24"/>
+<circle cx="510" cy="155" r="9" fill="#ef4444"/><circle cx="528" cy="155" r="10" fill="#374151"/><circle cx="546" cy="155" r="9" fill="#ef4444"/>
+<circle cx="610" cy="155" r="10" fill="#ef4444"/><circle cx="628" cy="155" r="10" fill="#ef4444"/>
+</g>
+<text x="120" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Element (oxygen, O₂)</text>
+<text x="120" y="214" text-anchor="middle" font-size="10" fill="#374151">one type of atom</text>
+<text x="350" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Compound (carbon dioxide, CO₂)</text>
+<text x="350" y="214" text-anchor="middle" font-size="10" fill="#374151">different atoms bonded together</text>
+<text x="580" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Mixture (O₂ + CO₂ + He)</text>
+<text x="580" y="214" text-anchor="middle" font-size="10" fill="#374151">substances not bonded to each other</text>
+</svg>
+
+<h2>Limitations of the Particle Model (HT)</h2>
+
+<p>In the simple particle model, particles are drawn as <strong>small, solid, inelastic spheres</strong> &mdash; like bowling balls. This is useful, but it is not how real particles behave. You need to be able to explain the limitations of this model when it is used to explain <strong>changes of state</strong>.</p>
+
+<!-- HT limitations -->
+<svg viewBox="0 0 700 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">(HT) "Bowling Ball" Model vs Real Particles</text>
+<rect x="20" y="40" width="315" height="190" rx="10" fill="#f0f9ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="177" y="62" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Simple model</text>
+<g fill="#6b7280" stroke="#374151">
+<circle cx="60" cy="115" r="22"/><circle cx="106" cy="115" r="22"/><circle cx="152" cy="115" r="22"/>
+<circle cx="83" cy="160" r="22"/><circle cx="129" cy="160" r="22"/><circle cx="175" cy="160" r="22"/>
+</g>
+<text x="212" y="105" font-size="10.5" fill="#374151">• hard, solid spheres</text>
+<text x="212" y="122" font-size="10.5" fill="#374151">• no forces shown</text>
+<text x="212" y="139" font-size="10.5" fill="#374151">• all one size</text>
+<text x="212" y="156" font-size="10.5" fill="#374151">• not to scale with</text>
+<text x="222" y="170" font-size="10.5" fill="#374151">the gaps</text>
+<rect x="365" y="40" width="315" height="190" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="522" y="62" text-anchor="middle" font-size="13" font-weight="bold" fill="#b91c1c">What the model misses</text>
+<g fill="#93c5fd" stroke="#1e40af">
+<circle cx="415" cy="120" r="14"/><circle cx="475" cy="112" r="14"/><circle cx="440" cy="170" r="14"/>
+</g>
+<g stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,3">
+<line x1="429" y1="118" x2="461" y2="113"/><line x1="420" y1="134" x2="434" y2="157"/><line x1="470" y1="126" x2="447" y2="157"/>
+</g>
+<text x="520" y="105" font-size="10.5" fill="#374151">• attractive forces</text>
+<text x="530" y="119" font-size="10.5" fill="#374151">between particles</text>
+<text x="520" y="139" font-size="10.5" fill="#374151">• particles are mostly</text>
+<text x="530" y="153" font-size="10.5" fill="#374151">empty space (atoms)</text>
+<text x="520" y="173" font-size="10.5" fill="#374151">• different sizes &amp;</text>
+<text x="530" y="187" font-size="10.5" fill="#374151">shapes of particles</text>
+<text x="405" y="215" font-size="10" fill="#dc2626">dashed lines = forces of attraction</text>
+<text x="350" y="258" text-anchor="middle" font-size="11" fill="#374151">The model shows <tspan font-weight="bold">where</tspan> particles are, but not <tspan font-weight="bold">why</tspan> they stay together or how much</text>
+<text x="350" y="274" text-anchor="middle" font-size="11" fill="#374151">energy is needed to separate them &mdash; so it cannot predict melting or boiling points.</text>
+</svg>
+
+<table>
+    <tr><th>Limitation (HT)</th><th>Why it matters for changes of state</th></tr>
+    <tr><td>It does <strong>not take into account the forces of attraction</strong> between particles</td><td>Changes of state happen when these forces are overcome (melting, boiling) or formed (condensing, freezing). Without forces, the model cannot explain why energy is needed to melt or boil a substance, or why different substances melt at different temperatures.</td></tr>
+    <tr><td>It does <strong>not take into account the size of the particles</strong></td><td>Real particles differ in size and shape (a helium atom vs a large wax molecule), which affects how strongly they attract each other and so their melting / boiling points. The spheres are all drawn the same size.</td></tr>
+    <tr><td>It does <strong>not take into account the space between the particles</strong></td><td>Diagrams are not to scale. In a gas the particles are much further apart than shown (about 10 particle diameters apart at room temperature), and particles themselves are mostly empty space, not solid.</td></tr>
+    <tr><td>Particles are treated as <strong>inelastic</strong> (solid, hard) spheres</td><td>Real particles are not solid balls; they do not have fixed edges and can be distorted. Molecules can also vibrate and rotate.</td></tr>
+    <tr><td>Particles are shown <strong>still</strong> in a diagram</td><td>Real particles are always moving (even in a solid they vibrate), and the amount of movement depends on temperature.</td></tr>
+</table>
+
+<div class="exam-tip">(HT) The three limitations named in the specification are: the model ignores the <strong>forces of attraction between particles</strong>, the <strong>size of the particles</strong>, and the <strong>space between them</strong>. In a 2- or 3-mark question, name the limitation <em>and</em> link it to the change of state, e.g. "the model doesn't show the forces between particles, so it can't explain why energy has to be supplied to melt the solid".</div>
+
+<div class="definition">
+    <strong>Practical opportunity (C1.1):</strong> observe changes of state and compare them with chemical changes &mdash; e.g. heat ice in a beaker and record the temperature every 30 s to plot a heating curve; melt and re-solidify wax or stearic acid (physical, reversible) and compare with heating magnesium ribbon or copper carbonate (chemical: new substance, not reversed on cooling). There is no assessed PAG attached to Topic C1, but this work develops the measuring skills used in PAG C4 and PAG C8.
+</div>
+
+<h2>C1.2 Atomic Structure</h2>
+
+<div class="definition">
+    An <strong>atom</strong> is the smallest part of an element that still has the chemical properties of that element. Atoms are made of three <strong>sub-atomic particles</strong>: <strong>protons</strong> and <strong>neutrons</strong> in a tiny central <strong>nucleus</strong>, and <strong>electrons</strong> arranged in shells (energy levels) around it.
+</div>
+
+<h3>How the Model of the Atom Has Changed</h3>
+
+<p>Our model of the atom has been developed over 200 years. Each time new <strong>experimental evidence</strong> appeared that the old model could not explain, the model was changed or replaced. This is a key example of how science works: models are tested, and kept only while they fit the evidence.</p>
+
+<!-- Timeline -->
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Timeline of the Atomic Model</text>
+<line x1="40" y1="130" x2="665" y2="130" stroke="#1e40af" stroke-width="3"/>
+<polygon points="665,124 678,130 665,136" fill="#1e40af"/>
+<g font-size="11" text-anchor="middle">
+<circle cx="70" cy="130" r="7" fill="#2563eb"/>
+<text x="70" y="112" font-weight="bold" fill="#1e40af">1803</text>
+<text x="70" y="98" font-weight="bold" fill="#1a1a2e">Dalton</text>
+<text x="70" y="155" fill="#374151">solid spheres;</text>
+<text x="70" y="169" fill="#374151">each element has</text>
+<text x="70" y="183" fill="#374151">its own atoms</text>
+
+<circle cx="190" cy="130" r="7" fill="#2563eb"/>
+<text x="190" y="112" font-weight="bold" fill="#1e40af">1897</text>
+<text x="190" y="98" font-weight="bold" fill="#1a1a2e">Thomson</text>
+<text x="190" y="155" fill="#374151">discovers electron;</text>
+<text x="190" y="169" fill="#374151">"plum pudding"</text>
+
+<circle cx="315" cy="130" r="7" fill="#2563eb"/>
+<text x="315" y="112" font-weight="bold" fill="#1e40af">1909</text>
+<text x="315" y="84" font-weight="bold" fill="#1a1a2e">Geiger &amp;</text>
+<text x="315" y="98" font-weight="bold" fill="#1a1a2e">Marsden</text>
+<text x="315" y="155" fill="#374151">alpha particles fired</text>
+<text x="315" y="169" fill="#374151">at gold foil; some</text>
+<text x="315" y="183" fill="#374151">bounce back</text>
+
+<circle cx="435" cy="130" r="7" fill="#2563eb"/>
+<text x="435" y="112" font-weight="bold" fill="#1e40af">1911</text>
+<text x="435" y="98" font-weight="bold" fill="#1a1a2e">Rutherford</text>
+<text x="435" y="155" fill="#374151">tiny, dense,</text>
+<text x="435" y="169" fill="#374151">positive nucleus;</text>
+<text x="435" y="183" fill="#374151">mostly empty space</text>
+
+<circle cx="545" cy="130" r="7" fill="#2563eb"/>
+<text x="545" y="112" font-weight="bold" fill="#1e40af">1913</text>
+<text x="545" y="98" font-weight="bold" fill="#1a1a2e">Bohr</text>
+<text x="545" y="155" fill="#374151">electrons in</text>
+<text x="545" y="169" fill="#374151">fixed shells</text>
+<text x="545" y="183" fill="#374151">(energy levels)</text>
+
+<circle cx="640" cy="130" r="7" fill="#9ca3af"/>
+<text x="640" y="112" font-weight="bold" fill="#6b7280">1932</text>
+<text x="640" y="98" font-weight="bold" fill="#6b7280">Chadwick</text>
+<text x="640" y="155" fill="#6b7280">neutron</text>
+<text x="640" y="169" fill="#6b7280">discovered</text>
+</g>
+<text x="350" y="225" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6b7280">Each change was driven by new evidence the previous model could not explain.</text>
+</svg>
+
+<table>
+    <tr><th>Scientist(s)</th><th>Model / discovery</th><th>Evidence and reason for change</th></tr>
+    <tr><td><strong>John Dalton</strong> (early 1800s)</td><td>Atoms are tiny, solid, indivisible spheres. Atoms of the same element are identical; different elements have different atoms. Atoms combine in simple whole-number ratios to make compounds.</td><td>Based on the fixed ratios in which elements combine (laws of chemical combination). First modern atomic theory.</td></tr>
+    <tr><td><strong>J. J. Thomson</strong> (1897)</td><td>Discovered the <strong>electron</strong>. "Plum pudding" model: a ball of <strong>positive charge</strong> with negative electrons embedded in it.</td><td>Cathode-ray experiments showed atoms contain much smaller, negatively charged particles &mdash; so atoms are <em>not</em> indivisible. Atoms are neutral, so there must be positive charge to balance the electrons.</td></tr>
+    <tr><td><strong>Hans Geiger &amp; Ernest Marsden</strong> (1909, working with Rutherford)</td><td>Alpha-particle scattering experiment: fired positive alpha particles at a very thin sheet of gold foil.</td><td>Most alpha particles passed straight through; a few were deflected; a very small number (about 1 in 8000) bounced back. This could not happen with the plum pudding model, where the positive charge is spread out.</td></tr>
+    <tr><td><strong>Ernest Rutherford</strong> (1911)</td><td><strong>Nuclear model</strong>: almost all the mass and all the positive charge is concentrated in a tiny central <strong>nucleus</strong>; electrons orbit around it; the atom is mostly empty space.</td><td>Explained the scattering results (see below).</td></tr>
+    <tr><td><strong>Niels Bohr</strong> (1913)</td><td>Electrons orbit the nucleus in <strong>fixed shells (energy levels)</strong> at specific distances. Electrons can move between shells by absorbing or emitting energy.</td><td>Rutherford's model could not explain why orbiting electrons do not spiral into the nucleus, or why elements give out light of specific colours (line spectra). Bohr's calculations agreed with experimental observations.</td></tr>
+    <tr><td>James Chadwick (1932)</td><td>Discovered the <strong>neutron</strong> in the nucleus.</td><td>Explained why the mass of nuclei was bigger than the mass of their protons alone, and explained isotopes.</td></tr>
+</table>
+
+<h3>The Alpha-Particle Scattering Experiment</h3>
+
+<!-- Alpha scattering -->
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<defs><marker id="c1-al" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#dc2626"/></marker>
+<marker id="c1-al2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#7c3aed"/></marker></defs>
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Alpha Particles Passing Through a Layer of Gold Atoms</text>
+<g fill="none" stroke="#93c5fd" stroke-width="1.2" stroke-dasharray="4,3">
+<circle cx="420" cy="90" r="50"/><circle cx="420" cy="190" r="50"/><circle cx="420" cy="290" r="50"/>
+</g>
+<g fill="#f59e0b" stroke="#b45309"><circle cx="420" cy="90" r="5"/><circle cx="420" cy="190" r="5"/><circle cx="420" cy="290" r="5"/></g>
+<line x1="40" y1="55" x2="650" y2="55" stroke="#dc2626" stroke-width="1.5" marker-end="url(#c1-al)"/>
+<line x1="40" y1="140" x2="650" y2="140" stroke="#dc2626" stroke-width="1.5" marker-end="url(#c1-al)"/>
+<line x1="40" y1="240" x2="650" y2="240" stroke="#dc2626" stroke-width="1.5" marker-end="url(#c1-al)"/>
+<path d="M 40 172 L 380 172 Q 420 170 455 150 L 600 95" fill="none" stroke="#dc2626" stroke-width="1.5" marker-end="url(#c1-al)"/>
+<path d="M 40 290 L 404 290 Q 412 290 404 295 L 230 335" fill="none" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#c1-al2)"/>
+<text x="560" y="48" font-size="10.5" fill="#374151">most go straight through</text>
+<text x="560" y="233" font-size="10.5" fill="#374151">most go straight through</text>
+<text x="560" y="84" font-size="10.5" fill="#374151">some deflected</text>
+<text x="130" y="345" font-size="10.5" fill="#7c3aed">very few bounce back</text>
+<text x="470" y="320" font-size="10.5" fill="#374151">gold atom (mostly empty space)</text>
+<rect x="40" y="361" width="16" height="4" fill="#dc2626"/>
+<text x="62" y="367" font-size="11" fill="#374151">α particle path (α particles are positive)</text>
+<circle cx="330" cy="363" r="5" fill="#f59e0b" stroke="#b45309"/>
+<text x="340" y="367" font-size="11" fill="#374151">gold nucleus (positive; drawn far too large)</text>
+</svg>
+
+<table>
+    <tr><th>Observation</th><th>Conclusion</th></tr>
+    <tr><td>Most alpha particles passed <strong>straight through</strong> the foil</td><td>The atom is mostly <strong>empty space</strong></td></tr>
+    <tr><td>Some were <strong>deflected</strong> through small angles</td><td>The centre of the atom is <strong>positively charged</strong> (it repels the positive alpha particles)</td></tr>
+    <tr><td>A very few <strong>bounced back</strong></td><td>The positive charge and most of the <strong>mass</strong> are concentrated in a <strong>very small</strong> nucleus</td></tr>
+</table>
+
+<!-- Plum pudding vs nuclear vs Bohr -->
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Three Models of the Atom</text>
+<!-- plum pudding -->
+<circle cx="120" cy="125" r="75" fill="#fecaca" stroke="#dc2626" stroke-width="1.5"/>
+<g font-size="13" font-weight="bold" fill="#b91c1c" text-anchor="middle">
+<text x="85" y="95">+</text><text x="150" y="92">+</text><text x="110" y="150">+</text><text x="160" y="160">+</text><text x="75" y="160">+</text><text x="125" y="115">+</text>
+</g>
+<g fill="#2563eb"><circle cx="100" cy="80" r="6"/><circle cx="160" cy="115" r="6"/><circle cx="85" cy="125" r="6"/><circle cx="135" cy="170" r="6"/><circle cx="125" cy="140" r="6"/><circle cx="60" cy="110" r="6"/></g>
+<text x="120" y="222" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Thomson: plum pudding</text>
+<text x="120" y="238" text-anchor="middle" font-size="10" fill="#374151">electrons in a ball of positive charge</text>
+<!-- nuclear -->
+<circle cx="350" cy="125" r="75" fill="none" stroke="#9ca3af" stroke-dasharray="4,3"/>
+<circle cx="350" cy="125" r="6" fill="#f59e0b" stroke="#b45309"/>
+<g fill="#2563eb"><circle cx="300" cy="80" r="6"/><circle cx="405" cy="95" r="6"/><circle cx="320" cy="175" r="6"/><circle cx="395" cy="165" r="6"/></g>
+<text x="350" y="222" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Rutherford: nuclear</text>
+<text x="350" y="238" text-anchor="middle" font-size="10" fill="#374151">tiny + nucleus; mostly empty space</text>
+<!-- Bohr -->
+<circle cx="580" cy="125" r="30" fill="none" stroke="#1e40af" stroke-width="1.5"/>
+<circle cx="580" cy="125" r="62" fill="none" stroke="#1e40af" stroke-width="1.5"/>
+<circle cx="580" cy="125" r="9" fill="#f59e0b" stroke="#b45309"/>
+<g fill="#2563eb"><circle cx="580" cy="95" r="5"/><circle cx="580" cy="155" r="5"/><circle cx="580" cy="63" r="5"/><circle cx="642" cy="125" r="5"/><circle cx="580" cy="187" r="5"/><circle cx="518" cy="125" r="5"/></g>
+<text x="580" y="222" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Bohr: electron shells</text>
+<text x="580" y="238" text-anchor="middle" font-size="10" fill="#374151">electrons at fixed energy levels (carbon, 2,4)</text>
+</svg>
+
+<div class="exam-tip">For "describe how the model changed and why" questions, always pair the <strong>new evidence</strong> with the <strong>change it caused</strong>. E.g. "Some alpha particles bounced back from the gold foil, which the plum pudding model could not explain, so Rutherford proposed that the positive charge and mass are concentrated in a tiny nucleus."</div>
+
+<h3>The Structure of the Atom Today</h3>
+
+<p>The modern model describes the atom as a <strong>positively charged nucleus</strong> surrounded by <strong>negatively charged electrons</strong>.</p>
+<ul>
+    <li>The nucleus contains <strong>protons</strong> (positive) and <strong>neutrons</strong> (no charge).</li>
+    <li>The <strong>radius of the nucleus is much smaller than the radius of the atom</strong> &mdash; about 1/10 000 (10⁻⁴) of it.</li>
+    <li><strong>Almost all of the mass</strong> of the atom is in the nucleus, because protons and neutrons are about 1836 times heavier than electrons.</li>
+    <li>The electrons occupy shells (energy levels) at different distances from the nucleus.</li>
+    <li>An atom has <strong>equal numbers of protons and electrons</strong>, so it has <strong>no overall charge</strong>.</li>
+</ul>
+
+<!-- Atom structure: lithium-7 -->
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Structure of a Lithium-7 Atom (not to scale)</text>
+<circle cx="250" cy="150" r="45" fill="none" stroke="#1e40af" stroke-width="1.5"/>
+<circle cx="250" cy="150" r="100" fill="none" stroke="#1e40af" stroke-width="1.5"/>
+<!-- nucleus: 3 protons (red +), 4 neutrons (grey) -->
+<g stroke="#374151" stroke-width="0.8">
+<circle cx="241" cy="141" r="8" fill="#ef4444"/><circle cx="259" cy="143" r="8" fill="#9ca3af"/>
+<circle cx="250" cy="155" r="8" fill="#ef4444"/><circle cx="236" cy="157" r="8" fill="#9ca3af"/>
+<circle cx="264" cy="158" r="8" fill="#ef4444"/><circle cx="250" cy="134" r="8" fill="#9ca3af"/>
+<circle cx="247" cy="168" r="8" fill="#9ca3af"/>
+</g>
+<g font-size="9" font-weight="bold" fill="#fff" text-anchor="middle"><text x="241" y="144">+</text><text x="250" y="158">+</text><text x="264" y="161">+</text></g>
+<!-- electrons: 2 then 1 -->
+<g fill="#2563eb"><circle cx="250" cy="105" r="6"/><circle cx="250" cy="195" r="6"/><circle cx="350" cy="150" r="6"/></g>
+<g font-size="9" font-weight="bold" fill="#fff" text-anchor="middle"><text x="250" y="108">−</text><text x="250" y="198">−</text><text x="350" y="153">−</text></g>
+<!-- labels -->
+<line x1="272" y1="160" x2="440" y2="215" stroke="#374151" stroke-width="1"/>
+<text x="445" y="212" font-size="11" fill="#374151"><tspan font-weight="bold">nucleus</tspan>: 3 protons + 4 neutrons</text>
+<text x="445" y="226" font-size="10.5" fill="#6b7280">positive; contains almost all the mass</text>
+<line x1="356" y1="148" x2="440" y2="120" stroke="#374151" stroke-width="1"/>
+<text x="445" y="118" font-size="11" fill="#374151"><tspan font-weight="bold">electron</tspan> (−) in outer shell</text>
+<line x1="320" y1="80" x2="440" y2="70" stroke="#374151" stroke-width="1"/>
+<text x="445" y="68" font-size="11" fill="#374151"><tspan font-weight="bold">shell</tspan> (energy level)</text>
+<text x="445" y="160" font-size="11" fill="#374151">Electron arrangement: <tspan font-weight="bold">2,1</tspan></text>
+<circle cx="60" cy="240" r="7" fill="#ef4444" stroke="#374151" stroke-width="0.8"/><text x="72" y="244" font-size="11" fill="#374151">proton</text>
+<circle cx="135" cy="240" r="7" fill="#9ca3af" stroke="#374151" stroke-width="0.8"/><text x="147" y="244" font-size="11" fill="#374151">neutron</text>
+<circle cx="215" cy="240" r="5" fill="#2563eb"/><text x="225" y="244" font-size="11" fill="#374151">electron</text>
+</svg>
+
+<h3>Size and Scale of Atoms</h3>
+
+<p>Atoms are extremely small. You need to recall the typical size (order of magnitude):</p>
+
+<div class="equation">
+    Typical atomic radius ≈ <strong>1 × 10⁻¹⁰ m</strong> (0.1 nm) &nbsp;·&nbsp; Typical bond length ≈ <strong>10⁻¹⁰ m</strong><br>
+    Radius of a nucleus ≈ 1 × 10⁻¹⁴ m (about 1/10 000 of the atomic radius)
+</div>
+
+<!-- Size scale -->
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Orders of Magnitude (metres)</text>
+<line x1="40" y1="110" x2="680" y2="110" stroke="#1f2937" stroke-width="2"/>
+<g font-size="11" fill="#374151" text-anchor="middle">
+<line x1="60" y1="104" x2="60" y2="116" stroke="#1f2937"/><text x="60" y="135">10⁻¹⁴</text>
+<line x1="160" y1="104" x2="160" y2="116" stroke="#1f2937"/><text x="160" y="135">10⁻¹²</text>
+<line x1="260" y1="104" x2="260" y2="116" stroke="#1f2937"/><text x="260" y="135">10⁻¹⁰</text>
+<line x1="360" y1="104" x2="360" y2="116" stroke="#1f2937"/><text x="360" y="135">10⁻⁸</text>
+<line x1="460" y1="104" x2="460" y2="116" stroke="#1f2937"/><text x="460" y="135">10⁻⁶</text>
+<line x1="560" y1="104" x2="560" y2="116" stroke="#1f2937"/><text x="560" y="135">10⁻⁴</text>
+<line x1="660" y1="104" x2="660" y2="116" stroke="#1f2937"/><text x="660" y="135">10⁻²</text>
+</g>
+<g font-size="10.5" text-anchor="middle">
+<circle cx="60" cy="110" r="5" fill="#f59e0b"/><text x="60" y="80" fill="#1a1a2e" font-weight="bold">nucleus</text><text x="60" y="93" fill="#6b7280">~10⁻¹⁴ m</text>
+<circle cx="260" cy="110" r="5" fill="#2563eb"/><text x="245" y="68" fill="#1a1a2e" font-weight="bold">atom; bond length</text><text x="245" y="81" fill="#6b7280">~10⁻¹⁰ m (0.1 nm)</text>
+<circle cx="295" cy="110" r="5" fill="#2563eb"/><text x="330" y="93" fill="#6b7280">small molecule ~10⁻⁹ m</text>
+<rect x="310" y="104" width="100" height="12" fill="#a78bfa" fill-opacity="0.45"/><text x="360" y="165" fill="#1a1a2e" font-weight="bold">nanoparticles</text><text x="360" y="178" fill="#6b7280">1–100 nm</text>
+<circle cx="460" cy="110" r="5" fill="#16a34a"/><text x="470" y="80" fill="#1a1a2e" font-weight="bold">bacterium</text><text x="470" y="93" fill="#6b7280">~10⁻⁶ m</text>
+<circle cx="560" cy="110" r="5" fill="#16a34a"/><text x="560" y="165" fill="#1a1a2e" font-weight="bold">human hair width</text><text x="560" y="178" fill="#6b7280">~10⁻⁴ m</text>
+<circle cx="610" cy="110" r="5" fill="#16a34a"/><text x="625" y="80" fill="#1a1a2e" font-weight="bold">grain of sand</text><text x="625" y="93" fill="#6b7280">~1 mm (10⁻³ m)</text>
+</g>
+<text x="350" y="205" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6b7280">Each step on the scale is ×100. 1 nm = 1 × 10⁻⁹ m.</text>
+</svg>
+
+<p>Some ways to relate atomic sizes to the everyday world:</p>
+<ul>
+    <li>A human hair is about 1 × 10⁻⁴ m wide &mdash; roughly <strong>1 million carbon atoms</strong> side by side (10⁻⁴ ÷ 10⁻¹⁰ = 10⁶).</li>
+    <li>If an atom were the size of a football stadium, the nucleus would be about the size of a pea in the centre.</li>
+    <li>A 1 cm line of atoms would contain about 1 × 10⁸ atoms (10⁻² ÷ 10⁻¹⁰).</li>
+</ul>
+
+<div class="case-study">
+    A gold atom has a radius of 1.4 × 10⁻¹⁰ m. Its nucleus has a radius of 7 × 10⁻¹⁵ m. How many times bigger is the atom than the nucleus?<br>
+    1.4 × 10⁻¹⁰ ÷ 7 × 10⁻¹⁵ = 0.2 × 10⁵ = <strong>2 × 10⁴ (20 000 times)</strong>.
+</div>
+
+<div class="case-study">
+    A nanoparticle has a diameter of 20 nm. About how many atoms (diameter 0.2 nm) would fit across it?<br>
+    20 nm ÷ 0.2 nm = <strong>100 atoms</strong> &mdash; so nanoparticles contain a few hundred to a few thousand atoms in total (see C2.3).
+</div>
+
+<h3>Protons, Neutrons and Electrons</h3>
+
+<table>
+    <tr><th>Particle</th><th>Relative charge</th><th>Relative mass</th><th>Where found</th></tr>
+    <tr><td><strong>Proton</strong></td><td>+1</td><td>1</td><td>Nucleus</td></tr>
+    <tr><td><strong>Neutron</strong></td><td>0</td><td>1</td><td>Nucleus</td></tr>
+    <tr><td><strong>Electron</strong></td><td>−1</td><td>very small (about 1/1840, ≈ 0.0005)</td><td>Shells around the nucleus</td></tr>
+</table>
+
+<div class="exam-tip">Write the electron's relative mass as "very small", "negligible" or "1/1840" &mdash; never 0, and never 1. Relative charges must include the sign: +1, 0, −1.</div>
+
+<h3>Atomic Number, Mass Number and Standard Notation</h3>
+
+<div class="definition">
+    <strong>Atomic number (Z)</strong> = number of <strong>protons</strong> in the nucleus. Every atom of the same element has the same atomic number, and it is different for every element. (It is also the number of electrons in a neutral atom.)<br><br>
+    <strong>Mass number (A)</strong> = total number of <strong>protons + neutrons</strong> in the nucleus.<br><br>
+    Number of neutrons = mass number − atomic number = <strong>A − Z</strong>.
+</div>
+
+<!-- Nuclide notation -->
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:20px auto;display:block;">
+<defs><marker id="c1-nn" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#374151"/></marker></defs>
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Standard Notation for an Atom</text>
+<text x="330" y="88" text-anchor="end" font-size="30" font-weight="bold" fill="#dc2626">23</text>
+<text x="330" y="150" text-anchor="end" font-size="30" font-weight="bold" fill="#2563eb">11</text>
+<text x="338" y="128" font-size="64" font-weight="bold" fill="#1a1a2e">Na</text>
+<line x1="170" y1="65" x2="278" y2="78" stroke="#374151" stroke-width="1.2" marker-end="url(#c1-nn)"/>
+<text x="160" y="58" text-anchor="end" font-size="12" font-weight="bold" fill="#dc2626">mass number (A)</text>
+<text x="160" y="74" text-anchor="end" font-size="10.5" fill="#374151">protons + neutrons</text>
+<line x1="170" y1="150" x2="290" y2="142" stroke="#374151" stroke-width="1.2" marker-end="url(#c1-nn)"/>
+<text x="160" y="148" text-anchor="end" font-size="12" font-weight="bold" fill="#2563eb">atomic number (Z)</text>
+<text x="160" y="164" text-anchor="end" font-size="10.5" fill="#374151">number of protons</text>
+<text x="460" y="70" font-size="12" fill="#374151">protons = <tspan font-weight="bold">11</tspan></text>
+<text x="460" y="95" font-size="12" fill="#374151">neutrons = 23 − 11 = <tspan font-weight="bold">12</tspan></text>
+<text x="460" y="120" font-size="12" fill="#374151">electrons = <tspan font-weight="bold">11</tspan> (neutral atom)</text>
+<text x="350" y="190" text-anchor="middle" font-size="10.5" font-style="italic" fill="#6b7280">Mass number on top (bigger number), atomic number at the bottom.</text>
+</svg>
+
+<p>On the Periodic Table, the larger number given for each element is usually the <strong>relative atomic mass</strong> (an average over its isotopes, C2.1) and the smaller number is the atomic number. For chlorine, A<sub>r</sub> = 35.5 &mdash; not a whole number, because chlorine is a mixture of isotopes.</p>
+
+<h3>Isotopes</h3>
+
+<div class="definition">
+    <strong>Isotopes</strong> are atoms of the <strong>same element</strong> (same number of protons) with <strong>different numbers of neutrons</strong>, and therefore different mass numbers.
+</div>
+
+<!-- Isotopes of carbon -->
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+<text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Isotopes of Carbon: Nuclei Compared</text>
+<g stroke="#374151" stroke-width="0.8">
+<!-- C-12: 6p 6n -->
+<circle cx="105" cy="95" r="10" fill="#ef4444"/><circle cx="125" cy="95" r="10" fill="#9ca3af"/><circle cx="145" cy="95" r="10" fill="#ef4444"/>
+<circle cx="95" cy="113" r="10" fill="#9ca3af"/><circle cx="115" cy="113" r="10" fill="#ef4444"/><circle cx="135" cy="113" r="10" fill="#9ca3af"/><circle cx="155" cy="113" r="10" fill="#ef4444"/>
+<circle cx="105" cy="131" r="10" fill="#9ca3af"/><circle cx="125" cy="131" r="10" fill="#ef4444"/><circle cx="145" cy="131" r="10" fill="#9ca3af"/>
+<circle cx="115" cy="149" r="10" fill="#ef4444"/><circle cx="135" cy="149" r="10" fill="#9ca3af"/>
+<!-- C-13: 6p 7n -->
+<circle cx="330" cy="95" r="10" fill="#ef4444"/><circle cx="350" cy="95" r="10" fill="#9ca3af"/><circle cx="370" cy="95" r="10" fill="#ef4444"/>
+<circle cx="320" cy="113" r="10" fill="#9ca3af"/><circle cx="340" cy="113" r="10" fill="#ef4444"/><circle cx="360" cy="113" r="10" fill="#9ca3af"/><circle cx="380" cy="113" r="10" fill="#ef4444"/>
+<circle cx="330" cy="131" r="10" fill="#9ca3af"/><circle cx="350" cy="131" r="10" fill="#ef4444"/><circle cx="370" cy="131" r="10" fill="#9ca3af"/>
+<circle cx="340" cy="149" r="10" fill="#ef4444"/><circle cx="360" cy="149" r="10" fill="#9ca3af"/><circle cx="350" cy="77" r="10" fill="#9ca3af"/>
+<!-- C-14: 6p 8n -->
+<circle cx="555" cy="95" r="10" fill="#ef4444"/><circle cx="575" cy="95" r="10" fill="#9ca3af"/><circle cx="595" cy="95" r="10" fill="#ef4444"/>
+<circle cx="545" cy="113" r="10" fill="#9ca3af"/><circle cx="565" cy="113" r="10" fill="#ef4444"/><circle cx="585" cy="113" r="10" fill="#9ca3af"/><circle cx="605" cy="113" r="10" fill="#ef4444"/>
+<circle cx="555" cy="131" r="10" fill="#9ca3af"/><circle cx="575" cy="131" r="10" fill="#ef4444"/><circle cx="595" cy="131" r="10" fill="#9ca3af"/>
+<circle cx="565" cy="149" r="10" fill="#ef4444"/><circle cx="585" cy="149" r="10" fill="#9ca3af"/><circle cx="565" cy="77" r="10" fill="#9ca3af"/><circle cx="585" cy="77" r="10" fill="#9ca3af"/>
+</g>
+<g text-anchor="middle">
+<text x="125" y="185" font-size="14" font-weight="bold" fill="#1a1a2e">carbon-12 (¹²₆C)</text>
+<text x="125" y="203" font-size="11" fill="#374151">6 protons, 6 neutrons</text>
+<text x="125" y="218" font-size="11" fill="#374151">6 electrons · ~98.9%</text>
+<text x="350" y="185" font-size="14" font-weight="bold" fill="#1a1a2e">carbon-13 (¹³₆C)</text>
+<text x="350" y="203" font-size="11" fill="#374151">6 protons, 7 neutrons</text>
+<text x="350" y="218" font-size="11" fill="#374151">6 electrons · ~1.1%</text>
+<text x="575" y="185" font-size="14" font-weight="bold" fill="#1a1a2e">carbon-14 (¹⁴₆C)</text>
+<text x="575" y="203" font-size="11" fill="#374151">6 protons, 8 neutrons</text>
+<text x="575" y="218" font-size="11" fill="#374151">6 electrons · trace (radioactive)</text>
+</g>
+<circle cx="230" cy="240" r="6" fill="#ef4444" stroke="#374151" stroke-width="0.8"/><text x="241" y="244" font-size="11" fill="#374151">proton</text>
+<circle cx="320" cy="240" r="6" fill="#9ca3af" stroke="#374151" stroke-width="0.8"/><text x="331" y="244" font-size="11" fill="#374151">neutron</text>
+<text x="400" y="244" font-size="11" fill="#374151">(electrons not shown)</text>
+</svg>
+
+<ul>
+    <li>Isotopes have the <strong>same chemical properties</strong>, because chemical reactions depend on electrons, and isotopes have the same number of electrons (and the same electron arrangement).</li>
+    <li>They can have slightly different <strong>physical properties</strong> (e.g. density) because their masses are different. Some isotopes are radioactive (e.g. carbon-14).</li>
+    <li>Chlorine has two common isotopes: chlorine-35 (17 p, 18 n) and chlorine-37 (17 p, 20 n).</li>
+    <li>Hydrogen has three: ¹H (no neutrons), ²H deuterium (1 neutron), ³H tritium (2 neutrons).</li>
+</ul>
+
+<div class="exam-tip">A common misconception is that a neutral atom has equal numbers of protons and neutrons. It has equal numbers of <strong>protons and electrons</strong>. The number of neutrons can be anything (sodium-23 has 11 protons but 12 neutrons; uranium-238 has 92 protons and 146 neutrons).</div>
+
+<h3>Ions</h3>
+
+<div class="definition">
+    An <strong>ion</strong> is a charged particle formed when an atom (or group of atoms) <strong>loses or gains electrons</strong>.<br>
+    • Losing electrons → more protons than electrons → <strong>positive ion</strong> (e.g. Na⁺, Mg²⁺, Al³⁺).<br>
+    • Gaining electrons → more electrons than protons → <strong>negative ion</strong> (e.g. Cl⁻, O²⁻, N³⁻).<br>
+    The <strong>nucleus does not change</strong> &mdash; the number of protons (and neutrons) stays the same.
+</div>
+
+<svg viewBox="0 0 700 262" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Forming Ions: Electrons Are Lost or Gained</text>
+<style>.c1-g1-sh{fill:none;stroke:#1e40af;stroke-width:1.5}</style><defs><circle id="c1-g1-d" r="3.6" fill="#2563eb"/><path id="c1-g1-x" d="M-3.6 -3.6 L3.6 3.6 M-3.6 3.6 L3.6 -3.6" stroke="#dc2626" stroke-width="1.8"/></defs>
+<defs><marker id="c1-io" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#1e40af"/></marker></defs>
+<circle cx="90" cy="130" r="13" fill="#fde68a" stroke="#b45309" stroke-width="1.2"/>
+<text x="90" y="134.6" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a2e">Na</text>
+<circle cx="90" cy="130" r="22" class="c1-g1-sh"/>
+<use href="#c1-g1-d" x="90" y="108"/>
+<use href="#c1-g1-d" x="90" y="152"/>
+<circle cx="90" cy="130" r="40" class="c1-g1-sh"/>
+<use href="#c1-g1-d" x="81" y="91"/>
+<use href="#c1-g1-d" x="129" y="121"/>
+<use href="#c1-g1-d" x="99" y="169"/>
+<use href="#c1-g1-d" x="51" y="139"/>
+<use href="#c1-g1-d" x="99" y="91"/>
+<use href="#c1-g1-d" x="129" y="139"/>
+<use href="#c1-g1-d" x="81" y="169"/>
+<use href="#c1-g1-d" x="51" y="121"/>
+<circle cx="90" cy="130" r="58" class="c1-g1-sh"/>
+<use href="#c1-g1-d" x="90" y="72"/>
+<text x="90" y="215" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e">Na atom  2,8,1</text>
+<text x="90" y="231" text-anchor="middle" font-size="10.5" fill="#374151">11 p, 11 e⁻ → charge 0</text>
+<line x1="160" y1="130" x2="215" y2="130" stroke="#1e40af" stroke-width="2" marker-end="url(#c1-io)"/><text x="187.5" y="122" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">loses 1 e⁻</text>
+<circle cx="280" cy="130" r="13" fill="#fde68a" stroke="#b45309" stroke-width="1.2"/>
+<text x="280" y="134.6" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a2e">Na</text>
+<circle cx="280" cy="130" r="22" class="c1-g1-sh"/>
+<use href="#c1-g1-d" x="280" y="108"/>
+<use href="#c1-g1-d" x="280" y="152"/>
+<circle cx="280" cy="130" r="40" class="c1-g1-sh"/>
+<use href="#c1-g1-d" x="271" y="91"/>
+<use href="#c1-g1-d" x="319" y="121"/>
+<use href="#c1-g1-d" x="289" y="169"/>
+<use href="#c1-g1-d" x="241" y="139"/>
+<use href="#c1-g1-d" x="289" y="91"/>
+<use href="#c1-g1-d" x="319" y="139"/>
+<use href="#c1-g1-d" x="271" y="169"/>
+<use href="#c1-g1-d" x="241" y="121"/>
+<path d="M242 82 L232 82 L232 178 L242 178 M318 82 L328 82 L328 178 L318 178" fill="none" stroke="#1a1a2e" stroke-width="2"/><text x="332" y="88" font-size="17" font-weight="bold" fill="#1a1a2e">+</text>
+<text x="280" y="215" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e">Na⁺ ion  [2,8]⁺</text>
+<text x="280" y="231" text-anchor="middle" font-size="10.5" fill="#374151">11 p, 10 e⁻ → charge +1</text>
+<line x1="355" y1="45" x2="355" y2="236" stroke="#d1d5db"/>
+<circle cx="430" cy="130" r="13" fill="#fde68a" stroke="#b45309" stroke-width="1.2"/>
+<text x="430" y="134.6" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a2e">O</text>
+<circle cx="430" cy="130" r="22" class="c1-g1-sh"/>
+<use href="#c1-g1-d" x="430" y="108"/>
+<use href="#c1-g1-d" x="430" y="152"/>
+<circle cx="430" cy="130" r="40" class="c1-g1-sh"/>
+<use href="#c1-g1-d" x="421" y="91"/>
+<use href="#c1-g1-d" x="469" y="121"/>
+<use href="#c1-g1-d" x="430" y="170"/>
+<use href="#c1-g1-d" x="390" y="130"/>
+<use href="#c1-g1-d" x="439" y="91"/>
+<use href="#c1-g1-d" x="469" y="139"/>
+<text x="430" y="215" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e">O atom  2,6</text>
+<text x="430" y="231" text-anchor="middle" font-size="10.5" fill="#374151">8 p, 8 e⁻ → charge 0</text>
+<line x1="482" y1="130" x2="540" y2="130" stroke="#1e40af" stroke-width="2" marker-end="url(#c1-io)"/><text x="511.0" y="122" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">gains 2 e⁻</text>
+<circle cx="605" cy="130" r="13" fill="#fde68a" stroke="#b45309" stroke-width="1.2"/>
+<text x="605" y="134.6" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a1a2e">O</text>
+<circle cx="605" cy="130" r="22" class="c1-g1-sh"/>
+<use href="#c1-g1-d" x="605" y="108"/>
+<use href="#c1-g1-d" x="605" y="152"/>
+<circle cx="605" cy="130" r="40" class="c1-g1-sh"/>
+<use href="#c1-g1-d" x="596" y="91"/>
+<use href="#c1-g1-d" x="644" y="121"/>
+<use href="#c1-g1-d" x="614" y="169"/>
+<use href="#c1-g1-d" x="566" y="139"/>
+<use href="#c1-g1-d" x="614" y="91"/>
+<use href="#c1-g1-d" x="644" y="139"/>
+<use href="#c1-g1-x" x="596" y="169"/>
+<use href="#c1-g1-x" x="566" y="121"/>
+<path d="M567 82 L557 82 L557 178 L567 178 M643 82 L653 82 L653 178 L643 178" fill="none" stroke="#1a1a2e" stroke-width="2"/><text x="657" y="88" font-size="17" font-weight="bold" fill="#1a1a2e">2−</text>
+<text x="605" y="215" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e">O²⁻ ion  [2,8]²⁻</text>
+<text x="605" y="231" text-anchor="middle" font-size="10.5" fill="#374151">8 p, 10 e⁻ → charge −2</text>
+<text x="350" y="252" text-anchor="middle" font-size="10.5" fill="#6b7280">Crosses (×) show the electrons gained. The nucleus (protons) never changes.</text>
+</svg>
+
+<h3>Calculating Protons, Neutrons and Electrons</h3>
+
+<div class="equation">
+    <strong>protons = Z</strong> &nbsp;·&nbsp; <strong>neutrons = A − Z</strong> &nbsp;·&nbsp; <strong>electrons = Z − (charge)</strong><br>
+    (for a 2+ ion subtract 2 electrons; for a 2− ion add 2 electrons)
+</div>
+
+<table>
+    <tr><th>Species</th><th>Atomic number</th><th>Mass number</th><th>Protons</th><th>Neutrons</th><th>Electrons</th></tr>
+    <tr><td>¹⁹₉F atom</td><td>9</td><td>19</td><td>9</td><td>10</td><td>9</td></tr>
+    <tr><td>¹⁹₉F⁻ ion</td><td>9</td><td>19</td><td>9</td><td>10</td><td><strong>10</strong></td></tr>
+    <tr><td>²⁴₁₂Mg atom</td><td>12</td><td>24</td><td>12</td><td>12</td><td>12</td></tr>
+    <tr><td>²⁴₁₂Mg²⁺ ion</td><td>12</td><td>24</td><td>12</td><td>12</td><td><strong>10</strong></td></tr>
+    <tr><td>²⁷₁₃Al³⁺ ion</td><td>13</td><td>27</td><td>13</td><td>14</td><td><strong>10</strong></td></tr>
+    <tr><td>¹⁶₈O²⁻ ion</td><td>8</td><td>16</td><td>8</td><td>8</td><td><strong>10</strong></td></tr>
+    <tr><td>³⁷₁₇Cl⁻ ion</td><td>17</td><td>37</td><td>17</td><td>20</td><td><strong>18</strong></td></tr>
+    <tr><td>³⁹₁₉K⁺ ion</td><td>19</td><td>39</td><td>19</td><td>20</td><td><strong>18</strong></td></tr>
+</table>
+
+<div class="case-study">
+    An ion has 16 protons, 18 neutrons and 18 electrons. Identify it and write it in standard notation.<br>
+    16 protons → atomic number 16 → <strong>sulfur</strong>. Mass number = 16 + 18 = 34. Electrons − protons = 18 − 16 = 2 extra electrons, so the charge is 2−.<br>
+    Answer: <strong>³⁴₁₆S²⁻</strong> (a sulfide ion of the isotope sulfur-34).
+</div>
+
+<div class="case-study">
+    Two particles, X and Y, both have 20 protons. X has 20 neutrons and 20 electrons; Y has 22 neutrons and 18 electrons. Explain how X and Y are related.<br>
+    Both have 20 protons, so both are <strong>calcium</strong>. They have different numbers of neutrons, so they are <strong>different isotopes</strong> (calcium-40 and calcium-42). Y has 2 fewer electrons than protons, so Y is a <strong>Ca²⁺ ion</strong>, while X is a neutral atom.
+</div>
+
+<div class="exam-tip">A positive ion has <strong>lost electrons</strong>, not gained protons. In "explain" answers, say e.g. "a magnesium atom loses two electrons to form Mg²⁺; it still has 12 protons but only 10 electrons, so the overall charge is 2+".</div>
+
+<h2>Quick Summary — Key Ideas for C1</h2>
+<table>
+    <tr><th>Idea</th><th>Key point</th></tr>
+    <tr><td>States of matter</td><td>Solid: regular, vibrate. Liquid: random, close, move past each other. Gas: random, far apart, fast.</td></tr>
+    <tr><td>Changes of state</td><td>Physical and reversible; mass conserved; temperature constant during the change.</td></tr>
+    <tr><td>Physical vs chemical change</td><td>Physical: same particles rearranged. Chemical: atoms rearranged into new substances.</td></tr>
+    <tr><td>(HT) Limitations of particle model</td><td>Ignores forces between particles, particle size and the space between particles.</td></tr>
+    <tr><td>Atomic models</td><td>Dalton → Thomson (electron, plum pudding) → Geiger &amp; Marsden / Rutherford (nucleus) → Bohr (shells).</td></tr>
+    <tr><td>Size</td><td>Atom radius &amp; bond length ~10⁻¹⁰ m; nucleus ~1/10 000 of the atom.</td></tr>
+    <tr><td>Sub-atomic particles</td><td>p: +1, 1 · n: 0, 1 · e: −1, ~1/1840</td></tr>
+    <tr><td>Numbers</td><td>Z = protons; A = protons + neutrons; neutrons = A − Z; electrons = Z − charge</td></tr>
+    <tr><td>Isotopes</td><td>Same protons, different neutrons; same chemical properties</td></tr>
+    <tr><td>Ions</td><td>Formed by losing / gaining electrons; nucleus unchanged</td></tr>
+</table>
+
+<h3>Specification Checklist</h3>
+<table>
+    <tr><th>Code</th><th>You should be able to…</th><th>Tier</th></tr>
+    <tr><td>C1.1a</td><td>Describe the main features of the particle model in terms of states of matter and change of state</td><td>F &amp; H</td></tr>
+    <tr><td>C1.1b</td><td>Explain, using the particle model, the difference between physical and chemical changes</td><td>F &amp; H</td></tr>
+    <tr><td>C1.1c</td><td>Explain the limitations of the particle model (inelastic spheres) in relation to changes of state: no forces, particle size or space between particles</td><td><strong>HT only</strong></td></tr>
+    <tr><td>C1.2a</td><td>Describe how and why the atomic model has changed (Dalton, Thomson, Rutherford, Bohr, Geiger and Marsden)</td><td>F &amp; H</td></tr>
+    <tr><td>C1.2b</td><td>Describe the atom as a positive nucleus surrounded by negative electrons; nucleus tiny but contains most of the mass</td><td>F &amp; H</td></tr>
+    <tr><td>C1.2c</td><td>Recall the typical size of atoms and small molecules (~10⁻¹⁰ m)</td><td>F &amp; H</td></tr>
+    <tr><td>C1.2d</td><td>Recall relative charges and approximate relative masses of protons, neutrons and electrons</td><td>F &amp; H</td></tr>
+    <tr><td>C1.2e</td><td>Calculate protons, neutrons and electrons in atoms and ions from atomic and mass numbers; define ion, atomic number, mass number, isotope; use standard notation</td><td>F &amp; H</td></tr>
+</table>
+
+</div>
+</body>
+</html>

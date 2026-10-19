@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR A GCSE — Practical Activity Groups (PAG C1–C8)</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 820px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #16a34a; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #166534; margin-top: 44px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dcfce7; }
+        h3 { font-size: 1.15rem; color: #14532d; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #ecfdf5; color: #166534; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .method { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .method::before { content: "Method: "; font-weight: 700; color: #166534; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .hazard { background: #fef2f2; border-left: 4px solid #dc2626; padding: 12px 18px; margin: 10px 0; border-radius: 0 8px 8px 0; font-size: 0.93rem; }
+        .hazard::before { content: "⚠️ Safety: "; font-weight: 700; color: #b91c1c; }
+        .equation { background: #f0fdf4; border: 1px solid #86efac; padding: 12px 18px; margin: 12px 0; border-radius: 8px; font-family: 'Times New Roman', serif; font-size: 1.05rem; text-align: center; }
+        .practical-card { border: 1px solid #d1d5db; border-radius: 12px; padding: 22px 26px; margin: 22px 0; background: #fafafa; }
+        .techniques { font-size: 0.93rem; color: #374151; }
+        @media print { body { padding: 20px; font-size: 11pt; } .method, .exam-tip, .hazard, .definition, .equation, .practical-card { break-inside: avoid; } h2 { break-after: avoid; } svg { break-inside: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>Practical Activity Groups — PAG C1 to PAG C8</h1>
+<p class="spec-ref">OCR GCSE Chemistry A (Gateway Science) (J248) &mdash; Practical Activity Group summaries</p>
+
+<p>OCR splits the required apparatus and techniques into eight <strong>Practical Activity Groups (PAGs)</strong>, C1 to C8, and you must complete at least eight practical activities that cover them. The specification gives one example activity for each PAG (your school may use different ones); each is summarised below with the apparatus and techniques it must cover, an apparatus diagram and the key expected results. You may be asked about apparatus, method, variables, or how to analyse the results in the written papers &mdash; around 15% of the marks test practical skills. Content marked <strong>(HT)</strong> is Higher tier only.</p>
+
+<table>
+    <tr><th>PAG</th><th>Title</th><th>Example activity in the specification</th></tr>
+    <tr><td>C1</td><td>Reactivity trend</td><td>Displacement reactions to identify the reactivity trend of the Group 7 elements</td></tr>
+    <tr><td>C2</td><td>Electrolysis</td><td>Electrolysis of aqueous sodium chloride or copper sulfate, testing the gases produced</td></tr>
+    <tr><td>C3</td><td>Separation techniques</td><td>Chromatography to identify the mixture of dyes in an unknown ink</td></tr>
+    <tr><td>C4</td><td>Distillation</td><td>Distillation of a mixture, e.g. orange juice, cherry cola, hydrocarbons, inks</td></tr>
+    <tr><td>C5</td><td>Identification of species</td><td>Identify an unknown compound using cation tests, anion tests and flame tests</td></tr>
+    <tr><td>C6</td><td>Titration</td><td>Titration of a strong acid and strong alkali to find the concentration of the acid, using a pH indicator</td></tr>
+    <tr><td>C7</td><td>Production of salts</td><td>Production of a pure, dry sample of a salt</td></tr>
+    <tr><td>C8</td><td>Measuring rates of reaction</td><td>Effect of surface area or concentration on the rate of an acid/carbonate reaction</td></tr>
+</table>
+
+<h2>PAG C1 — Reactivity Trend: Displacement Reactions of the Halogens</h2>
+
+<div class="practical-card">
+
+<p class="techniques"><strong>Techniques covered</strong>: safe use and careful handling of gases, liquids and solids, including careful mixing of reagents under controlled conditions, using appropriate apparatus to explore chemical changes and/or products.</p>
+
+<p><strong>Aim</strong>: use displacement reactions between halogens and halide solutions to work out the order of reactivity of chlorine, bromine and iodine.</p>
+<p><strong>Independent variable</strong>: the halogen added and the halide solution used.<br>
+<strong>Dependent variable</strong>: whether a colour change (displacement) happens.<br>
+<strong>Control variables</strong>: same volumes and concentrations of each solution, same number of drops of halogen water, observed against a white background.</p>
+
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Chlorine water added to three potassium halide solutions</text>
+  <!-- Dropper -->
+  <rect x="340" y="34" width="20" height="16" rx="4" fill="#9ca3af"/>
+  <path d="M 344 50 L 356 50 L 352 70 L 348 70 Z" fill="#e5e7eb" stroke="#6b7280"/>
+  <text x="372" y="52" font-size="10" fill="#374151">Chlorine water (a few drops into each tube)</text>
+  <!-- Tube 1: KCl -->
+  <path d="M 162 105 L 162 180 A 17 17 0 0 0 196 180 L 196 105 Z" fill="#f1f5f9"/>
+  <path d="M 160 80 L 160 180 A 19 19 0 0 0 198 180 L 198 80" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+  <text x="179" y="222" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">KCl(aq)</text>
+  <text x="179" y="238" text-anchor="middle" font-size="10" fill="#374151">no change</text>
+  <!-- Tube 2: KBr -->
+  <path d="M 333 105 L 333 180 A 17 17 0 0 0 367 180 L 367 105 Z" fill="#f59e0b" opacity="0.75"/>
+  <path d="M 331 80 L 331 180 A 19 19 0 0 0 369 180 L 369 80" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+  <text x="350" y="222" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">KBr(aq)</text>
+  <text x="350" y="238" text-anchor="middle" font-size="10" fill="#374151">turns orange (bromine formed)</text>
+  <!-- Tube 3: KI -->
+  <path d="M 504 105 L 504 180 A 17 17 0 0 0 538 180 L 538 105 Z" fill="#92400e" opacity="0.8"/>
+  <path d="M 502 80 L 502 180 A 19 19 0 0 0 540 180 L 540 80" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+  <text x="521" y="222" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">KI(aq)</text>
+  <text x="521" y="238" text-anchor="middle" font-size="10" fill="#374151">turns brown (iodine formed)</text>
+</svg>
+
+<div class="method">
+1. Put about 1 cm depth of potassium chloride, potassium bromide and potassium iodide solution into separate test tubes (or the wells of a spotting tile).<br>
+2. Add a few drops of chlorine water to each and gently shake. Record any colour change against a white background.<br>
+3. Repeat with fresh halide solutions using bromine water, then iodine solution.<br>
+4. A colour change means the halogen added has <strong>displaced</strong> a less reactive halogen from its halide.<br>
+5. Count how many halides each halogen displaces to put the halogens in order of reactivity.
+</div>
+
+<table>
+    <tr><th>Halogen added</th><th>KCl(aq)</th><th>KBr(aq)</th><th>KI(aq)</th></tr>
+    <tr><td>Chlorine water</td><td>&mdash;</td><td>Orange (Br₂ formed)</td><td>Brown (I₂ formed)</td></tr>
+    <tr><td>Bromine water</td><td>No reaction</td><td>&mdash;</td><td>Brown (I₂ formed)</td></tr>
+    <tr><td>Iodine solution</td><td>No reaction</td><td>No reaction</td><td>&mdash;</td></tr>
+</table>
+
+<div class="equation">
+    Cl₂(aq) + 2KBr(aq) → 2KCl(aq) + Br₂(aq) &nbsp;&nbsp; Cl₂(aq) + 2KI(aq) → 2KCl(aq) + I₂(aq) &nbsp;&nbsp; Br₂(aq) + 2KI(aq) → 2KBr(aq) + I₂(aq)
+</div>
+
+<ul>
+  <li>Order of reactivity: <strong>chlorine &gt; bromine &gt; iodine</strong> &mdash; reactivity decreases down Group 7 because the outer shell is further from the nucleus, so an electron is gained less easily.</li>
+  <li>(HT) As an ionic equation, chlorine gains electrons (it is reduced) and bromide ions lose electrons (they are oxidised): Cl₂ + 2Br⁻ → 2Cl⁻ + Br₂.</li>
+  <li>The same technique works for metals: a more reactive metal displaces a less reactive metal from a solution of its salt (e.g. magnesium in copper sulfate gives a brown coating of copper), which lets you deduce an order of reactivity.</li>
+</ul>
+
+<div class="hazard">Chlorine and bromine water are toxic and irritant &mdash; use small volumes in a well-ventilated room (bromine in a fume cupboard) and wear eye protection. Iodine stains skin.</div>
+
+<div class="exam-tip">Bromine water and iodine solution can look similar when dilute. Observe against a white tile, and remember that no colour change means no reaction &mdash; not that the result was missed.</div>
+
+</div>
+
+<h2>PAG C2 — Electrolysis: Aqueous Sodium Chloride and Copper Sulfate</h2>
+
+<div class="practical-card">
+
+<p class="techniques"><strong>Techniques covered</strong>: use of appropriate apparatus and techniques to draw, set up and use electrochemical cells for separation and production of elements and compounds; use of qualitative reagents and techniques to identify products, including gas tests.</p>
+
+<p><strong>Aim</strong>: electrolyse aqueous sodium chloride (or copper sulfate) using inert electrodes, collect the products and identify them.</p>
+<p><strong>Independent variable</strong>: the electrolyte used.<br>
+<strong>Dependent variable</strong>: the product formed at each electrode.<br>
+<strong>Control variables</strong>: type of electrode (inert carbon/graphite), voltage of the supply, concentration of the solution.</p>
+
+<svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Electrolysis cell with gases collected in test tubes</text>
+  <!-- Electrolyte -->
+  <rect x="222" y="110" width="256" height="108" fill="#bfdbfe" opacity="0.7"/>
+  <!-- Container -->
+  <path d="M 220 80 L 220 220 L 480 220 L 480 80" fill="none" stroke="#1e3a8a" stroke-width="2.5"/>
+  <!-- Test tube over cathode -->
+  <path d="M 282 185 L 282 88 A 18 18 0 0 1 318 88 L 318 185" fill="#bfdbfe" stroke="none" opacity="0.7"/>
+  <path d="M 283 88 A 17 17 0 0 1 317 88 L 317 105 L 283 105 Z" fill="#ffffff"/>
+  <path d="M 282 185 L 282 88 A 18 18 0 0 1 318 88 L 318 185" fill="none" stroke="#374151" stroke-width="1.8"/>
+  <!-- Test tube over anode -->
+  <path d="M 382 185 L 382 88 A 18 18 0 0 1 418 88 L 418 185" fill="#bfdbfe" stroke="none" opacity="0.7"/>
+  <path d="M 383 88 A 17 17 0 0 1 417 88 L 417 100 L 383 100 Z" fill="#ffffff"/>
+  <path d="M 382 185 L 382 88 A 18 18 0 0 1 418 88 L 418 185" fill="none" stroke="#374151" stroke-width="1.8"/>
+  <!-- Electrodes through base -->
+  <rect x="295" y="140" width="10" height="108" fill="#374151"/>
+  <rect x="395" y="140" width="10" height="108" fill="#374151"/>
+  <!-- Bubbles -->
+  <g fill="#fff" stroke="#2563eb" stroke-width="0.8">
+    <circle cx="300" cy="130" r="3"/><circle cx="297" cy="118" r="2.5"/><circle cx="302" cy="110" r="2"/>
+    <circle cx="400" cy="130" r="3"/><circle cx="403" cy="118" r="2.5"/><circle cx="398" cy="108" r="2"/>
+  </g>
+  <!-- Wires and supply -->
+  <polyline points="300,248 300,280 315,280" fill="none" stroke="#111827" stroke-width="2"/>
+  <polyline points="400,248 400,280 385,280" fill="none" stroke="#111827" stroke-width="2"/>
+  <rect x="315" y="266" width="70" height="28" fill="#111827"/>
+  <text x="350" y="284" text-anchor="middle" font-size="10" fill="#fbbf24">d.c. supply</text>
+  <text x="307" y="262" text-anchor="middle" font-size="12" font-weight="bold" fill="#111827">−</text>
+  <text x="393" y="262" text-anchor="middle" font-size="12" font-weight="bold" fill="#111827">+</text>
+  <!-- Labels left -->
+  <text x="205" y="100" text-anchor="end" font-size="10" fill="#374151">Gas collects at the</text>
+  <text x="205" y="113" text-anchor="end" font-size="10" fill="#374151">top of each tube</text>
+  <line x1="208" y1="104" x2="282" y2="96" stroke="#6b7280" stroke-width="1"/>
+  <text x="205" y="165" text-anchor="end" font-size="10" font-weight="bold" fill="#1e3a8a">Cathode (−)</text>
+  <text x="205" y="178" text-anchor="end" font-size="10" fill="#374151">inert carbon electrode</text>
+  <line x1="208" y1="168" x2="294" y2="168" stroke="#6b7280" stroke-width="1"/>
+  <!-- Labels right -->
+  <text x="495" y="165" font-size="10" font-weight="bold" fill="#b91c1c">Anode (+)</text>
+  <line x1="492" y1="162" x2="406" y2="162" stroke="#6b7280" stroke-width="1"/>
+  <text x="495" y="205" font-size="10" fill="#374151">Electrolyte, e.g. NaCl(aq)</text>
+</svg>
+
+<div class="method">
+1. Pour the electrolyte (e.g. sodium chloride solution) into the cell so that it covers both carbon electrodes.<br>
+2. Fill two small test tubes with the electrolyte and invert one over each electrode.<br>
+3. Connect the electrodes to a low-voltage d.c. supply (about 4&ndash;6 V) and switch on. Observe each electrode.<br>
+4. When a tube is nearly full of gas, switch off, remove it (keeping it upside down) and test the gas.<br>
+5. Repeat with copper sulfate solution; look for a coating on the cathode and test any gas at the anode.
+</div>
+
+<table>
+    <tr><th>Electrolyte (inert electrodes)</th><th>Cathode (−)</th><th>Anode (+)</th></tr>
+    <tr><td>NaCl(aq)</td><td>Hydrogen &mdash; lit splint gives a squeaky pop (sodium is more reactive than hydrogen, so H₂ forms)</td><td>Chlorine &mdash; bleaches damp litmus paper</td></tr>
+    <tr><td>CuSO₄(aq)</td><td>Copper &mdash; pink-brown coating (copper is less reactive than hydrogen)</td><td>Oxygen &mdash; relights a glowing splint</td></tr>
+    <tr><td>NaCl(l) (molten, not done in the lab)</td><td>Sodium</td><td>Chlorine</td></tr>
+</table>
+
+<div class="equation">
+    (HT) Half equations: &nbsp; 2H⁺ + 2e⁻ → H₂ &nbsp;&nbsp; 2Cl⁻ → Cl₂ + 2e⁻ &nbsp;&nbsp; Cu²⁺ + 2e⁻ → Cu &nbsp;&nbsp; 4OH⁻ → O₂ + 2H₂O + 4e⁻
+</div>
+
+<ul>
+  <li><strong>Competing reactions</strong>: an aqueous solution also contains H⁺ and OH⁻ ions from water. At the cathode the less reactive of the metal or hydrogen is discharged; at the anode a halide (if present) gives the halogen, otherwise oxygen is formed.</li>
+  <li><strong>Non-inert electrodes</strong>: with copper electrodes in copper sulfate solution, the copper anode dissolves (Cu → Cu²⁺ + 2e⁻) and copper is deposited on the cathode &mdash; the anode loses mass and the cathode gains mass. This is how copper is purified.</li>
+</ul>
+
+<div class="hazard">Chlorine is toxic &mdash; run the electrolysis for a short time only, in a well-ventilated room, and do not inhale the gas. Keep the voltage low and switch off before handling the electrodes. Copper sulfate solution is harmful &mdash; wear eye protection.</div>
+
+<div class="exam-tip">In an exam diagram, the cathode is joined to the negative terminal of the supply. Positive ions move to the cathode; negative ions move to the anode.</div>
+
+</div>
+
+<h2>PAG C3 — Separation Techniques: Chromatography of an Unknown Ink</h2>
+
+<div class="practical-card">
+
+<p class="techniques"><strong>Techniques covered</strong>: safe use of a range of equipment to purify and/or separate chemical mixtures, including evaporation, filtration, crystallisation, chromatography and distillation.</p>
+
+<p><strong>Aim</strong>: use paper chromatography to find which dyes are in an unknown ink, and calculate R<sub>f</sub> values.</p>
+<p><strong>Independent variable</strong>: the ink / dye spotted on the paper.<br>
+<strong>Dependent variable</strong>: the distance each spot moves (and its R<sub>f</sub> value).<br>
+<strong>Control variables</strong>: same solvent, same type of paper, same temperature, beaker covered so the solvent does not evaporate.</p>
+
+<svg viewBox="0 0 700 310" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Paper chromatography: set-up (left) and developed chromatogram (right)</text>
+  <!-- Beaker and solvent -->
+  <rect x="62" y="245" width="156" height="23" fill="#bfdbfe" opacity="0.8"/>
+  <path d="M 60 70 L 60 270 L 220 270 L 220 70" fill="none" stroke="#1e3a8a" stroke-width="2.5"/>
+  <!-- Glass rod and paper -->
+  <line x1="40" y1="55" x2="240" y2="55" stroke="#6b7280" stroke-width="5" stroke-linecap="round"/>
+  <rect x="105" y="58" width="70" height="200" fill="#fff" stroke="#9ca3af" stroke-width="1.2"/>
+  <line x1="110" y1="230" x2="170" y2="230" stroke="#374151" stroke-width="1" stroke-dasharray="4,3"/>
+  <circle cx="140" cy="230" r="4" fill="#4b5563"/>
+  <!-- Left labels -->
+  <text x="250" y="60" font-size="10" fill="#374151">Glass rod (paper hangs freely)</text>
+  <text x="250" y="226" font-size="10" fill="#374151">Pencil start line with ink spot,</text>
+  <text x="250" y="239" font-size="10" fill="#374151">above the solvent level</text>
+  <line x1="246" y1="230" x2="172" y2="230" stroke="#6b7280" stroke-width="1"/>
+  <text x="250" y="262" font-size="10" fill="#374151">Solvent (mobile phase)</text>
+  <line x1="246" y1="258" x2="222" y2="258" stroke="#6b7280" stroke-width="1"/>
+  <!-- Developed chromatogram -->
+  <rect x="490" y="45" width="180" height="230" fill="#fff" stroke="#9ca3af" stroke-width="1.2"/>
+  <line x1="490" y1="70" x2="670" y2="70" stroke="#2563eb" stroke-width="1" stroke-dasharray="5,3"/>
+  <line x1="490" y1="250" x2="670" y2="250" stroke="#374151" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="580" y="64" text-anchor="middle" font-size="9" fill="#2563eb">solvent front</text>
+  <g font-size="10" font-weight="bold" fill="#111827" text-anchor="middle">
+    <text x="515" y="266">A</text><text x="560" y="266">B</text><text x="605" y="266">C</text><text x="650" y="266">X</text>
+  </g>
+  <circle cx="515" cy="130" r="6" fill="#dc2626"/>
+  <circle cx="560" cy="190" r="6" fill="#2563eb"/>
+  <circle cx="605" cy="100" r="6" fill="#16a34a"/>
+  <circle cx="650" cy="130" r="6" fill="#dc2626"/>
+  <circle cx="650" cy="190" r="6" fill="#2563eb"/>
+  <!-- Rf measurements -->
+  <defs><marker id="rfA" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,1 L7,4 L0,7 Z" fill="#7c3aed"/></marker></defs>
+  <line x1="472" y1="250" x2="472" y2="74" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#rfA)"/>
+  <text x="466" y="165" text-anchor="end" font-size="11" font-weight="bold" fill="#7c3aed">b</text>
+  <line x1="456" y1="250" x2="456" y2="134" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#rfA)"/>
+  <text x="450" y="195" text-anchor="end" font-size="11" font-weight="bold" fill="#7c3aed">a</text>
+  <text x="580" y="295" text-anchor="middle" font-size="10" fill="#374151">X contains dyes A and B, not C.&#160; R&#8202;f = a ÷ b</text>
+</svg>
+
+<div class="method">
+1. Draw a start line in <strong>pencil</strong> about 2 cm from the bottom of a strip of chromatography paper.<br>
+2. Put a small, concentrated spot of the unknown ink and of each reference dye on the line, spaced apart.<br>
+3. Hang the paper in a beaker containing a little solvent (e.g. water). The solvent must be <em>below</em> the start line. Cover the beaker.<br>
+4. Let the solvent soak up the paper until it is near the top. Remove the paper and mark the solvent front in pencil straight away.<br>
+5. Let the chromatogram dry. Compare the spots of the unknown with the reference dyes and measure distances to calculate R<sub>f</sub> values.
+</div>
+
+<div class="equation">
+    <strong>R<sub>f</sub> = distance moved by substance ÷ distance moved by solvent front</strong> &nbsp; (always between 0 and 1)
+</div>
+
+<ul>
+  <li>Chromatography has a <strong>stationary phase</strong> (the paper, or the coating on a TLC plate) and a <strong>mobile phase</strong> (the solvent). Separation depends on how each substance distributes between the two phases &mdash; a substance more attracted to the mobile phase travels further.</li>
+  <li>A <strong>pure</strong> substance gives a single spot in every solvent; a mixture gives more than one spot. A spot that matches a reference dye's R<sub>f</sub> in the same solvent is likely to be the same substance.</li>
+  <li>Thin layer chromatography (TLC) works the same way but on a plate coated with silica; colourless substances can be shown with a locating agent (e.g. UV light or iodine). A non-aqueous solvent (e.g. ethanol) is used for substances insoluble in water.</li>
+</ul>
+
+<div class="hazard">If a non-aqueous solvent such as ethanol is used, it is flammable &mdash; keep it away from naked flames and use a lid on the beaker.</div>
+
+<div class="exam-tip">Ink would dissolve in the solvent and run, so the start line must be in pencil (graphite is insoluble). Spots below the solvent level would dissolve into the solvent instead of moving up the paper.</div>
+
+</div>
+
+<h2>PAG C4 — Distillation: Separating a Mixture of Liquids</h2>
+
+<div class="practical-card">
+
+<p class="techniques"><strong>Techniques covered</strong>: safe use of a range of equipment to purify and/or separate chemical mixtures (including distillation); safe use of appropriate heating devices and techniques, including a Bunsen burner and a water bath or electric heater; making and recording measurements accurately, including temperature.</p>
+
+<p><strong>Aim</strong>: separate a liquid (the solvent) from a mixture, for example water from orange juice, cherry cola or ink, by simple distillation.</p>
+<p><strong>Measured</strong>: the temperature at which the liquid distils (checks which substance is being collected and its purity).<br>
+<strong>Control</strong>: steady, gentle heating so the mixture does not boil over into the condenser.</p>
+
+<svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Simple distillation apparatus</text>
+  <defs><marker id="wArr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,1 L7,4 L0,7 Z" fill="#2563eb"/></marker></defs>
+  <g transform="translate(60,22)">
+    <!-- Flask liquid -->
+    <path d="M 122.3 215 A 50 50 0 0 0 217.7 215 Z" fill="#fdba74" opacity="0.8"/>
+    <!-- Flask outline -->
+    <path d="M 158 152 A 50 50 0 1 0 182 152" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+    <!-- Neck and still head -->
+    <line x1="158" y1="62" x2="158" y2="152" stroke="#1e3a8a" stroke-width="2"/>
+    <line x1="182" y1="62" x2="182" y2="75" stroke="#1e3a8a" stroke-width="2"/>
+    <line x1="182" y1="85" x2="182" y2="152" stroke="#1e3a8a" stroke-width="2"/>
+    <rect x="155" y="52" width="30" height="10" fill="#374151"/>
+    <!-- Thermometer -->
+    <rect x="167" y="25" width="6" height="52" fill="#fee2e2" stroke="#b91c1c" stroke-width="1"/>
+    <circle cx="170" cy="80" r="5" fill="#dc2626"/>
+    <!-- Anti-bumping granules -->
+    <g fill="#6b7280"><circle cx="160" cy="240" r="3"/><circle cx="172" cy="243" r="3"/><circle cx="184" cy="239" r="3"/></g>
+    <!-- Condenser (rotated) -->
+    <g transform="translate(182,80) rotate(21.8)">
+      <rect x="60" y="-16" width="220" height="32" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2"/>
+      <line x1="0" y1="-5" x2="340" y2="-5" stroke="#1e3a8a" stroke-width="2"/>
+      <line x1="0" y1="5" x2="340" y2="5" stroke="#1e3a8a" stroke-width="2"/>
+      <rect x="60" y="-4" width="220" height="8" fill="#ffffff"/>
+      <!-- water in (lower end) -->
+      <line x1="255" y1="16" x2="255" y2="38" stroke="#1e3a8a" stroke-width="2"/>
+      <line x1="265" y1="16" x2="265" y2="38" stroke="#1e3a8a" stroke-width="2"/>
+      <line x1="260" y1="46" x2="260" y2="20" stroke="#2563eb" stroke-width="2" marker-end="url(#wArr)"/>
+      <!-- water out (upper end) -->
+      <line x1="75" y1="-16" x2="75" y2="-38" stroke="#1e3a8a" stroke-width="2"/>
+      <line x1="85" y1="-16" x2="85" y2="-38" stroke="#1e3a8a" stroke-width="2"/>
+      <line x1="80" y1="-20" x2="80" y2="-46" stroke="#2563eb" stroke-width="2" marker-end="url(#wArr)"/>
+    </g>
+    <!-- Receiver conical flask -->
+    <path d="M 495 215 L 495 238 L 465 300 L 545 300 L 515 238 L 515 215" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+    <path d="M 470 290 L 540 290 L 545 299 L 465 299 Z" fill="#bfdbfe"/>
+    <!-- Gauze, tripod, Bunsen -->
+    <line x1="115" y1="252" x2="225" y2="252" stroke="#6b7280" stroke-width="3"/>
+    <line x1="125" y1="254" x2="112" y2="325" stroke="#6b7280" stroke-width="3"/>
+    <line x1="215" y1="254" x2="228" y2="325" stroke="#6b7280" stroke-width="3"/>
+    <path d="M 170 258 Q 160 272 164 282 L 176 282 Q 180 272 170 258 Z" fill="#60a5fa"/>
+    <rect x="163" y="282" width="14" height="36" fill="#9ca3af"/>
+    <rect x="150" y="318" width="40" height="7" fill="#6b7280"/>
+    <!-- Labels -->
+    <text x="195" y="34" font-size="10" fill="#374151">Thermometer &mdash; bulb level with the side arm</text>
+    <text x="270" y="60" text-anchor="middle" font-size="10" fill="#2563eb">Water out</text>
+    <text x="410" y="230" text-anchor="middle" font-size="10" fill="#2563eb">Cold water in</text>
+    <text x="320" y="185" text-anchor="middle" font-size="10" fill="#374151">Condenser</text>
+    <text x="108" y="196" text-anchor="end" font-size="10" fill="#374151">Mixture +</text>
+    <text x="108" y="209" text-anchor="end" font-size="10" fill="#374151">anti-bumping</text>
+    <text x="108" y="222" text-anchor="end" font-size="10" fill="#374151">granules</text>
+    <text x="242" y="300" font-size="10" fill="#374151">Heat (Bunsen burner or</text>
+    <text x="242" y="313" font-size="10" fill="#374151">electric heater)</text>
+    <text x="505" y="318" text-anchor="middle" font-size="10" fill="#374151">Distillate (pure liquid)</text>
+  </g>
+</svg>
+
+<div class="method">
+1. Put the mixture in a round-bottomed flask with a few anti-bumping granules (no more than half full).<br>
+2. Fit the still head with a thermometer so its bulb is level with the side arm &mdash; this measures the temperature of the vapour going into the condenser.<br>
+3. Connect the condenser so cold water flows <strong>in at the bottom</strong> (lower end) and <strong>out at the top</strong>, so the jacket stays full of cold water.<br>
+4. Heat gently. The liquid with the lower boiling point evaporates, the vapour is cooled in the condenser and condenses, and the distillate drips into the collecting flask.<br>
+5. Record the temperature while the distillate is collected; stop heating before the flask boils dry. Any solids (e.g. sugar and colourings) stay in the flask.
+</div>
+
+<ul>
+  <li><strong>Simple distillation</strong> separates a solvent from a solution (e.g. water from ink), because the solvent has a much lower boiling point than the dissolved solids.</li>
+  <li><strong>Fractional distillation</strong> separates liquids with similar boiling points (e.g. ethanol and water, or hydrocarbons in crude oil). A fractionating column is placed between the flask and the still head; it is hottest at the bottom, so each liquid distils off in turn as the temperature reading rises to its boiling point.</li>
+  <li>A <strong>pure</strong> liquid distils at a fixed temperature (e.g. water at 100 °C); a steady thermometer reading shows a pure fraction is being collected.</li>
+</ul>
+
+<div class="hazard">Never heat a sealed apparatus &mdash; the receiver must be open to the air. Use anti-bumping granules to stop violent boiling. If flammable liquids such as ethanol or hydrocarbons are distilled, use an electric heater or water bath instead of a Bunsen flame. Wear eye protection.</div>
+
+<div class="exam-tip">Common diagram errors: thermometer bulb dipping into the liquid (it would read the liquid temperature, not the vapour), water entering at the top of the condenser, and a bung sealing the collecting flask.</div>
+
+</div>
+
+<h2>PAG C5 — Identification of Species: Cation, Anion and Flame Tests</h2>
+
+<div class="practical-card">
+
+<p class="techniques"><strong>Techniques covered</strong>: use of appropriate qualitative reagents and techniques to analyse and identify unknown samples or products, including gas tests, flame tests and precipitation reactions; safe use of appropriate heating devices, including a Bunsen burner.</p>
+
+<p><strong>Aim</strong>: identify the ions in an unknown ionic compound using flame tests, sodium hydroxide (cations) and anion tests.</p>
+
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Flame test (left) and precipitates with sodium hydroxide solution (right)</text>
+  <!-- Bunsen and flame -->
+  <path d="M 120 60 Q 98 120 106 160 L 134 160 Q 142 120 120 60 Z" fill="#93c5fd" opacity="0.8"/>
+  <path d="M 120 110 Q 112 140 114 160 L 126 160 Q 128 140 120 110 Z" fill="#1d4ed8" opacity="0.8"/>
+  <rect x="110" y="160" width="20" height="80" fill="#9ca3af"/>
+  <rect x="85" y="240" width="70" height="10" fill="#6b7280"/>
+  <!-- Wire loop and holder -->
+  <circle cx="123" cy="98" r="5" fill="none" stroke="#111827" stroke-width="1.5"/>
+  <line x1="128" y1="97" x2="195" y2="80" stroke="#111827" stroke-width="1.5"/>
+  <line x1="195" y1="80" x2="245" y2="67" stroke="#92400e" stroke-width="6" stroke-linecap="round"/>
+  <text x="180" y="112" font-size="10" fill="#374151">Clean nichrome wire loop</text>
+  <text x="180" y="125" font-size="10" fill="#374151">dipped in the sample</text>
+  <text x="165" y="160" font-size="10" fill="#374151">Hot, blue Bunsen flame</text>
+  <line x1="161" y1="157" x2="137" y2="150" stroke="#6b7280" stroke-width="1"/>
+  <!-- Test tubes with precipitates -->
+  <g stroke="#1e3a8a" stroke-width="1.8">
+    <path d="M 362 140 L 362 175 A 13 13 0 0 0 388 175 L 388 140 Z" fill="#e0f2fe" stroke="none"/>
+    <path d="M 363 168 L 387 168 L 387 175 A 12 12 0 0 1 363 175 Z" fill="#2563eb" stroke="none"/>
+    <path d="M 360 70 L 360 175 A 15 15 0 0 0 390 175 L 390 70" fill="none"/>
+    <path d="M 447 140 L 447 175 A 13 13 0 0 0 473 175 L 473 140 Z" fill="#f0fdf4" stroke="none"/>
+    <path d="M 448 168 L 472 168 L 472 175 A 12 12 0 0 1 448 175 Z" fill="#4d7c0f" stroke="none"/>
+    <path d="M 445 70 L 445 175 A 15 15 0 0 0 475 175 L 475 70" fill="none"/>
+    <path d="M 532 140 L 532 175 A 13 13 0 0 0 558 175 L 558 140 Z" fill="#fff7ed" stroke="none"/>
+    <path d="M 533 168 L 557 168 L 557 175 A 12 12 0 0 1 533 175 Z" fill="#b45309" stroke="none"/>
+    <path d="M 530 70 L 530 175 A 15 15 0 0 0 560 175 L 560 70" fill="none"/>
+    <path d="M 617 140 L 617 175 A 13 13 0 0 0 643 175 L 643 140 Z" fill="#f8fafc" stroke="none"/>
+    <path d="M 618 168 L 642 168 L 642 175 A 12 12 0 0 1 618 175 Z" fill="#ffffff" stroke="#9ca3af" stroke-width="0.8"/>
+    <path d="M 615 70 L 615 175 A 15 15 0 0 0 645 175 L 645 70" fill="none"/>
+  </g>
+  <g font-size="11" font-weight="bold" fill="#111827" text-anchor="middle">
+    <text x="375" y="214">Cu²⁺</text><text x="460" y="214">Fe²⁺</text><text x="545" y="214">Fe³⁺</text><text x="630" y="214">Ca²⁺ / Zn²⁺</text>
+  </g>
+  <g font-size="10" fill="#374151" text-anchor="middle">
+    <text x="375" y="229">blue</text><text x="460" y="229">green</text><text x="545" y="229">orange-brown</text><text x="630" y="229">white</text>
+  </g>
+</svg>
+
+<div class="method">
+<strong>Flame test:</strong> clean a nichrome wire loop by dipping it in dilute hydrochloric acid and holding it in a hot blue Bunsen flame until it gives no colour. Dip the loop in the solid (or solution) and hold it at the edge of the flame. Record the flame colour.<br>
+<strong>Cations:</strong> add a few drops of dilute sodium hydroxide solution to a small volume of the solution and note the colour of any precipitate. Then add excess sodium hydroxide &mdash; this tells calcium and zinc apart.<br>
+<strong>Carbonate:</strong> add dilute acid; bubble any gas through limewater.<br>
+<strong>Halides:</strong> add dilute nitric acid, then silver nitrate solution.<br>
+<strong>Sulfate:</strong> add dilute hydrochloric acid, then barium chloride solution (or acidified barium nitrate).
+</div>
+
+<table>
+    <tr><th>Flame test ion</th><th>Flame colour</th></tr>
+    <tr><td>Lithium, Li⁺</td><td>Crimson (red)</td></tr>
+    <tr><td>Sodium, Na⁺</td><td>Yellow</td></tr>
+    <tr><td>Potassium, K⁺</td><td>Lilac</td></tr>
+    <tr><td>Calcium, Ca²⁺</td><td>Orange-red</td></tr>
+    <tr><td>Copper, Cu²⁺</td><td>Green (blue-green)</td></tr>
+</table>
+
+<table>
+    <tr><th>Cation</th><th>Add a few drops of NaOH(aq)</th><th>Add excess NaOH(aq)</th></tr>
+    <tr><td>Calcium, Ca²⁺</td><td>White precipitate</td><td>Precipitate stays</td></tr>
+    <tr><td>Zinc, Zn²⁺</td><td>White precipitate</td><td>Precipitate dissolves (colourless solution)</td></tr>
+    <tr><td>Copper, Cu²⁺</td><td>Blue precipitate</td><td>Precipitate stays</td></tr>
+    <tr><td>Iron(II), Fe²⁺</td><td>Green precipitate</td><td>Precipitate stays</td></tr>
+    <tr><td>Iron(III), Fe³⁺</td><td>Orange-brown precipitate</td><td>Precipitate stays</td></tr>
+</table>
+
+<table>
+    <tr><th>Anion</th><th>Test</th><th>Positive result</th></tr>
+    <tr><td>Carbonate, CO₃²⁻</td><td>Add dilute acid</td><td>Fizzing; the gas (CO₂) turns limewater milky</td></tr>
+    <tr><td>Chloride, Cl⁻</td><td>Dilute nitric acid, then silver nitrate</td><td>White precipitate (AgCl)</td></tr>
+    <tr><td>Bromide, Br⁻</td><td>Dilute nitric acid, then silver nitrate</td><td>Cream precipitate (AgBr)</td></tr>
+    <tr><td>Iodide, I⁻</td><td>Dilute nitric acid, then silver nitrate</td><td>Yellow precipitate (AgI)</td></tr>
+    <tr><td>Sulfate, SO₄²⁻</td><td>Dilute hydrochloric acid, then barium chloride</td><td>White precipitate (BaSO₄)</td></tr>
+</table>
+
+<table>
+    <tr><th>Gas</th><th>Test</th><th>Positive result</th></tr>
+    <tr><td>Hydrogen</td><td>Lit splint</td><td>Squeaky pop</td></tr>
+    <tr><td>Oxygen</td><td>Glowing splint</td><td>Relights</td></tr>
+    <tr><td>Carbon dioxide</td><td>Bubble through limewater</td><td>Limewater turns milky (cloudy)</td></tr>
+    <tr><td>Chlorine</td><td>Damp litmus paper</td><td>Bleached white</td></tr>
+</table>
+
+<ul>
+  <li>The acid is added first in the halide and sulfate tests to remove carbonate ions, which would also form a precipitate and give a false positive. Hydrochloric acid is not used before silver nitrate because it adds chloride ions.</li>
+  <li>Instrumental methods (e.g. flame emission spectroscopy, mass spectrometry) are more <strong>sensitive</strong>, <strong>accurate</strong> and <strong>faster</strong> than these chemical tests.</li>
+</ul>
+
+<div class="hazard">Sodium hydroxide is corrosive and silver nitrate stains skin &mdash; wear eye protection and gloves. Barium chloride is toxic. Hold the wire loop by its handle and let it cool before cleaning.</div>
+
+<div class="exam-tip">A sodium impurity gives a strong yellow flame that can hide other colours &mdash; this is why the wire must be cleaned. A mixture of metal ions can give a confusing flame colour.</div>
+
+</div>
+
+<h2>PAG C6 — Titration: Finding the Concentration of an Acid</h2>
+
+<div class="practical-card">
+
+<p class="techniques"><strong>Techniques covered</strong>: use of appropriate apparatus and techniques for conducting and monitoring chemical reactions, including reagents and/or techniques for measuring pH; determination of concentrations of strong acids and strong alkalis; making and recording measurements of volumes of liquids accurately.</p>
+
+<p><strong>Aim</strong>: find the volume of a strong acid (e.g. hydrochloric acid) needed to neutralise 25.0 cm³ of a strong alkali (e.g. sodium hydroxide) of known concentration, and use it to find the concentration of the acid.</p>
+<p><strong>Independent variable</strong>: none &mdash; the volume of alkali is fixed.<br>
+<strong>Dependent variable</strong>: the titre (volume of acid added from the burette).<br>
+<strong>Control variables</strong>: 25.0 cm³ of alkali measured with a pipette, same indicator and number of drops, same end-point colour.</p>
+
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Titration: burette, conical flask and white tile</text>
+  <!-- Stand -->
+  <rect x="120" y="300" width="100" height="10" fill="#6b7280"/>
+  <line x1="160" y1="35" x2="160" y2="300" stroke="#374151" stroke-width="5"/>
+  <line x1="160" y1="80" x2="292" y2="80" stroke="#374151" stroke-width="4"/>
+  <rect x="285" y="72" width="26" height="16" fill="none" stroke="#374151" stroke-width="2"/>
+  <!-- Burette -->
+  <rect x="291" y="50" width="14" height="168" fill="#e0f2fe"/>
+  <rect x="290" y="35" width="16" height="185" fill="none" stroke="#1e3a8a" stroke-width="1.8"/>
+  <g stroke="#1e3a8a" stroke-width="1">
+    <line x1="290" y1="60" x2="297" y2="60"/><line x1="290" y1="80" x2="297" y2="80"/><line x1="290" y1="100" x2="297" y2="100"/>
+    <line x1="290" y1="120" x2="297" y2="120"/><line x1="290" y1="140" x2="297" y2="140"/><line x1="290" y1="160" x2="297" y2="160"/>
+    <line x1="290" y1="180" x2="297" y2="180"/><line x1="290" y1="200" x2="297" y2="200"/>
+  </g>
+  <!-- Tap and tip -->
+  <rect x="282" y="222" width="32" height="7" fill="#374151"/>
+  <path d="M 294 220 L 302 220 L 300 258 L 296 258 Z" fill="#e0f2fe" stroke="#1e3a8a" stroke-width="1.5"/>
+  <!-- Conical flask -->
+  <path d="M 288 248 L 288 266 L 250 300 L 346 300 L 308 266 L 308 248" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+  <path d="M 262 289 L 334 289 L 345 299 L 251 299 Z" fill="#f9a8d4"/>
+  <!-- Tile -->
+  <rect x="232" y="300" width="132" height="10" fill="#ffffff" stroke="#9ca3af"/>
+  <!-- Labels -->
+  <text x="330" y="130" font-size="10" fill="#374151">Burette containing the acid</text>
+  <text x="330" y="143" font-size="10" fill="#374151">(read to 0.05 cm³ at the bottom of the meniscus)</text>
+  <line x1="326" y1="134" x2="308" y2="134" stroke="#6b7280" stroke-width="1"/>
+  <text x="330" y="229" font-size="10" fill="#374151">Tap &mdash; add acid drop by drop near the end point</text>
+  <line x1="326" y1="226" x2="316" y2="226" stroke="#6b7280" stroke-width="1"/>
+  <text x="370" y="276" font-size="10" fill="#374151">Conical flask: 25.0 cm³ alkali (from a pipette)</text>
+  <text x="370" y="289" font-size="10" fill="#374151">+ a few drops of indicator; swirl constantly</text>
+  <text x="372" y="309" font-size="10" fill="#374151">White tile (shows the colour change clearly)</text>
+</svg>
+
+<div class="method">
+1. Rinse a volumetric pipette with the alkali, then use a pipette filler to transfer exactly 25.0 cm³ of the alkali into a conical flask.<br>
+2. Add a few drops of indicator (e.g. phenolphthalein or methyl orange) and stand the flask on a white tile.<br>
+3. Rinse the burette with the acid, fill it (using a funnel, then remove the funnel) and record the starting reading.<br>
+4. Run in the acid while swirling the flask. Do a rough titration first to find the approximate end point.<br>
+5. Repeat accurately, adding the acid drop by drop near the end point until the indicator <strong>just</strong> changes colour permanently. Record the final reading.<br>
+6. Repeat until you have <strong>concordant</strong> titres (within 0.10 cm³ of each other) and calculate the mean of these.
+</div>
+
+<table>
+    <tr><th>Indicator</th><th>Colour in alkali</th><th>Colour in acid</th></tr>
+    <tr><td>Phenolphthalein</td><td>Pink</td><td>Colourless</td></tr>
+    <tr><td>Methyl orange</td><td>Yellow</td><td>Red</td></tr>
+    <tr><td>Universal indicator (not used for titrations &mdash; gradual colour change)</td><td>Blue / purple</td><td>Red / orange</td></tr>
+</table>
+
+<div class="equation">
+    (HT) Example: 25.0 cm³ of 0.100 mol/dm³ NaOH is neutralised by a mean titre of 20.00 cm³ HCl.<br>
+    Moles NaOH = 0.100 × (25.0 ÷ 1000) = 0.00250 mol. &nbsp; HCl + NaOH → NaCl + H₂O, so moles HCl = 0.00250 mol.<br>
+    Concentration of HCl = 0.00250 ÷ (20.00 ÷ 1000) = <strong>0.125 mol/dm³</strong>
+</div>
+
+<ul>
+  <li><strong>(HT) pH during the titration</strong>: the pH of the flask starts high (alkali), changes slowly, then drops sharply at the end point to a low value as excess acid is added. A pH probe and data logger can record this pH curve instead of using an indicator.</li>
+  <li><strong>(HT)</strong> The pH falls by 1 each time the hydrogen ion concentration increases by a factor of 10.</li>
+  <li>The same titration method makes a <strong>soluble salt</strong> with no excess reactant (e.g. potassium sulfate or ammonium sulfate fertiliser): find the end point with indicator, then repeat with the same volumes but no indicator, and crystallise the salt.</li>
+</ul>
+
+<div class="hazard">Sodium hydroxide is corrosive to eyes &mdash; wear eye protection. Fill the burette below eye level (remove it from the stand or stand on the floor) and never pipette by mouth.</div>
+
+<div class="exam-tip">Record burette readings to 2 decimal places (ending in 0 or 5, e.g. 20.05 cm³). Leaving the funnel in the burette, or an air bubble in the tip, gives an inaccurate titre.</div>
+
+</div>
+
+<h2>PAG C7 — Production of Salts: A Pure, Dry Sample of Copper Sulfate</h2>
+
+<div class="practical-card">
+
+<p class="techniques"><strong>Techniques covered</strong>: safe use of a range of equipment to purify and/or separate mixtures (filtration, evaporation, crystallisation); making and recording measurements accurately; conducting and monitoring reactions, including measuring pH; careful handling and mixing of reagents; safe use of heating devices, including a water bath.</p>
+
+<p><strong>Aim</strong>: make pure, dry crystals of copper sulfate from an insoluble base (copper(II) oxide) and dilute sulfuric acid.</p>
+
+<svg viewBox="0 0 700 270" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Excess base → filter → crystallise</text>
+  <defs><marker id="stepArr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#6b7280"/></marker></defs>
+  <!-- Step 1: beaker -->
+  <rect x="72" y="125" width="96" height="73" fill="#60a5fa" opacity="0.7"/>
+  <path d="M 70 85 L 70 200 L 170 200 L 170 85" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+  <g fill="#111827"><circle cx="90" cy="194" r="3"/><circle cx="102" cy="195" r="3"/><circle cx="115" cy="193" r="3"/><circle cx="128" cy="195" r="3"/><circle cx="141" cy="194" r="3"/><circle cx="153" cy="195" r="3"/></g>
+  <line x1="120" y1="60" x2="120" y2="185" stroke="#9ca3af" stroke-width="4" stroke-linecap="round"/>
+  <text x="120" y="222" text-anchor="middle" font-size="10" font-weight="bold" fill="#111827">1. React</text>
+  <text x="120" y="236" text-anchor="middle" font-size="10" fill="#374151">warm H₂SO₄(aq) + excess CuO</text>
+  <text x="120" y="250" text-anchor="middle" font-size="10" fill="#374151">(black solid left over)</text>
+  <line x1="190" y1="145" x2="270" y2="145" stroke="#6b7280" stroke-width="2" marker-end="url(#stepArr)"/>
+  <!-- Step 2: filtration -->
+  <path d="M 300 55 L 400 55 L 356 110 L 356 162 L 344 162 L 344 110 Z" fill="#f8fafc" stroke="#1e3a8a" stroke-width="2"/>
+  <path d="M 310 59 L 390 59 L 350 106 Z" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <g fill="#111827"><circle cx="345" cy="98" r="2.5"/><circle cx="352" cy="100" r="2.5"/><circle cx="349" cy="94" r="2.5"/><circle cx="356" cy="95" r="2.5"/></g>
+  <path d="M 336 140 L 336 158 L 302 200 L 398 200 L 364 158 L 364 140" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+  <path d="M 312 188 L 388 188 L 397 199 L 303 199 Z" fill="#60a5fa" opacity="0.7"/>
+  <text x="350" y="222" text-anchor="middle" font-size="10" font-weight="bold" fill="#111827">2. Filter</text>
+  <text x="350" y="236" text-anchor="middle" font-size="10" fill="#374151">residue: excess CuO</text>
+  <text x="350" y="250" text-anchor="middle" font-size="10" fill="#374151">filtrate: CuSO₄(aq)</text>
+  <line x1="420" y1="145" x2="500" y2="145" stroke="#6b7280" stroke-width="2" marker-end="url(#stepArr)"/>
+  <!-- Step 3: evaporating basin on water bath -->
+  <rect x="532" y="135" width="96" height="63" fill="#bfdbfe" opacity="0.6"/>
+  <path d="M 530 112 L 530 200 L 630 200 L 630 112" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+  <path d="M 518 112 Q 580 160 642 112 Z" fill="#f8fafc" stroke="#374151" stroke-width="2"/>
+  <path d="M 531 120 Q 580 150 629 120 Z" fill="#2563eb" opacity="0.75"/>
+  <text x="580" y="100" text-anchor="middle" font-size="10" fill="#374151">evaporating basin</text>
+  <text x="580" y="185" text-anchor="middle" font-size="10" fill="#1e3a8a">water bath</text>
+  <text x="580" y="222" text-anchor="middle" font-size="10" font-weight="bold" fill="#111827">3. Crystallise</text>
+  <text x="580" y="236" text-anchor="middle" font-size="10" fill="#374151">heat to concentrate, then cool;</text>
+  <text x="580" y="250" text-anchor="middle" font-size="10" fill="#374151">filter and dry the blue crystals</text>
+</svg>
+
+<div class="method">
+1. Measure about 40 cm³ of dilute sulfuric acid into a beaker and warm it gently in a water bath (do not boil).<br>
+2. Add copper(II) oxide a spatula at a time, stirring, until no more dissolves and some black solid remains &mdash; the base is <strong>in excess</strong>, so all the acid has reacted (check the pH is about 7).<br>
+3. Filter the warm mixture to remove the excess copper(II) oxide. Collect the blue filtrate in an evaporating basin.<br>
+4. Heat the filtrate over a water bath to evaporate some of the water, until crystals start to form on a glass rod dipped in and removed.<br>
+5. Leave the solution to cool slowly so larger crystals form. Filter off the crystals, rinse with a little cold water and pat dry between filter papers (or leave in a warm place).
+</div>
+
+<div class="equation">
+    CuO(s) + H₂SO₄(aq) → CuSO₄(aq) + H₂O(l)
+</div>
+
+<ul>
+  <li>Excess insoluble base (or metal, or metal carbonate) makes sure the acid is used up, and the excess is easy to filter off. With a metal carbonate the reaction fizzes, and stops when the acid is used up.</li>
+  <li>For a salt of a soluble base (an alkali, e.g. sodium chloride from NaOH and HCl), the excess cannot be filtered off, so a titration is used instead (see PAG C6).</li>
+  <li>Percentage yield = (actual mass of crystals ÷ theoretical mass) × 100. It is less than 100% because some solution is left on the filter paper and in the basin, and some salt stays dissolved.</li>
+</ul>
+
+<div class="hazard">Copper(II) oxide and copper sulfate are harmful, and dilute sulfuric acid is an irritant &mdash; wear eye protection. Do not heat the solution to dryness; it can spit and the crystals lose their water of crystallisation.</div>
+
+<div class="exam-tip">Crystallisation, not evaporation to dryness, gives a <strong>pure</strong> salt with well-shaped crystals &mdash; soluble impurities stay in the solution left after filtering off the crystals.</div>
+
+</div>
+
+<h2>PAG C8 — Measuring Rates of Reaction: Marble Chips and Hydrochloric Acid</h2>
+
+<div class="practical-card">
+
+<p class="techniques"><strong>Techniques covered</strong>: making and recording measurements accurately, including mass, time, temperature and volume of gases; making and recording appropriate observations during chemical reactions, including changes in temperature and measuring rates of reaction by a variety of methods such as production of gas and colour change.</p>
+
+<p><strong>Aim</strong>: investigate the effect of surface area (or acid concentration) on the rate of reaction between calcium carbonate and hydrochloric acid.</p>
+<p><strong>Independent variable</strong>: size of the marble chips (surface area) <em>or</em> concentration of the acid.<br>
+<strong>Dependent variable</strong>: volume of carbon dioxide produced over time (or mass lost).<br>
+<strong>Control variables</strong>: mass of marble chips, volume and concentration of acid (when varying surface area), temperature.</p>
+
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:15px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#166534">Measuring the volume of CO₂ with a gas syringe</text>
+  <!-- Conical flask -->
+  <path d="M 200 155 L 200 180 L 150 255 L 270 255 L 220 180 L 220 155" fill="none" stroke="#1e3a8a" stroke-width="2"/>
+  <path d="M 166 230 L 254 230 L 269 254 L 151 254 Z" fill="#bfdbfe" opacity="0.8"/>
+  <g fill="#e5e7eb" stroke="#6b7280"><rect x="175" y="244" width="12" height="9"/><rect x="195" y="242" width="14" height="11"/><rect x="218" y="245" width="12" height="8"/></g>
+  <g fill="#fff" stroke="#2563eb" stroke-width="0.8"><circle cx="190" cy="236" r="2.5"/><circle cx="210" cy="234" r="2"/><circle cx="224" cy="238" r="2.5"/></g>
+  <!-- Bung and delivery tube -->
+  <path d="M 196 143 L 224 143 L 221 165 L 199 165 Z" fill="#374151"/>
+  <polyline points="210,143 210,110 318,110" fill="none" stroke="#6b7280" stroke-width="4"/>
+  <!-- Gas syringe -->
+  <rect x="318" y="105" width="14" height="10" fill="#e5e7eb" stroke="#374151"/>
+  <rect x="332" y="92" width="200" height="36" fill="#f8fafc" stroke="#374151" stroke-width="2"/>
+  <g stroke="#374151" stroke-width="1">
+    <line x1="352" y1="92" x2="352" y2="100"/><line x1="372" y1="92" x2="372" y2="100"/><line x1="392" y1="92" x2="392" y2="100"/>
+    <line x1="412" y1="92" x2="412" y2="100"/><line x1="432" y1="92" x2="432" y2="100"/><line x1="452" y1="92" x2="452" y2="100"/>
+    <line x1="472" y1="92" x2="472" y2="100"/><line x1="492" y1="92" x2="492" y2="100"/><line x1="512" y1="92" x2="512" y2="100"/>
+  </g>
+  <rect x="392" y="95" width="8" height="30" fill="#6b7280"/>
+  <line x1="400" y1="110" x2="570" y2="110" stroke="#6b7280" stroke-width="4"/>
+  <rect x="570" y="92" width="8" height="36" fill="#6b7280"/>
+  <!-- Stopwatch -->
+  <circle cx="610" cy="215" r="24" fill="#fff" stroke="#111827" stroke-width="2"/>
+  <rect x="605" y="185" width="10" height="7" fill="#111827"/>
+  <line x1="610" y1="215" x2="610" y2="198" stroke="#dc2626" stroke-width="2"/>
+  <line x1="610" y1="215" x2="622" y2="221" stroke="#111827" stroke-width="2"/>
+  <!-- Labels -->
+  <text x="432" y="150" text-anchor="middle" font-size="10" fill="#374151">Gas syringe &mdash; read the volume every 10 s</text>
+  <text x="290" y="200" font-size="10" fill="#374151">Marble chips (CaCO₃)</text>
+  <text x="290" y="213" font-size="10" fill="#374151">+ dilute hydrochloric acid</text>
+  <line x1="286" y1="205" x2="232" y2="238" stroke="#6b7280" stroke-width="1"/>
+  <text x="610" y="258" text-anchor="middle" font-size="10" fill="#374151">Stopwatch</text>
+  <text x="96" y="140" font-size="10" fill="#374151">Bung</text>
+  <line x1="120" y1="143" x2="194" y2="150" stroke="#6b7280" stroke-width="1"/>
+</svg>
+
+<div class="method">
+1. Measure 50 cm³ of dilute hydrochloric acid into a conical flask and weigh out a fixed mass (e.g. 5.0 g) of large marble chips.<br>
+2. Add the chips, immediately insert the bung connected to the gas syringe and start the stopwatch.<br>
+3. Record the volume of gas in the syringe every 10 seconds until no more gas is produced.<br>
+4. Repeat with the same mass of medium chips, then small chips (or powder). For concentration, keep the chip size fixed and use different acid concentrations.<br>
+5. Plot volume of gas (y-axis) against time (x-axis) for each experiment on the same axes.
+</div>
+
+<div class="equation">
+    CaCO₃(s) + 2HCl(aq) → CaCl₂(aq) + H₂O(l) + CO₂(g)
+</div>
+
+<ul>
+  <li>The <strong>gradient</strong> of the volume&ndash;time graph is the rate. The curve is steepest at the start and levels off when one reactant is used up. Draw a tangent to find the rate at a particular time.</li>
+  <li>Smaller chips have a larger <strong>surface area to volume ratio</strong>, so collisions are more frequent and the rate is higher. If the acid is in excess and the mass of chips is the same, the final volume of gas is the same.</li>
+  <li>Higher acid concentration means more particles in the same volume, so more frequent collisions and a faster rate.</li>
+  <li>Alternative method: put the flask on a balance with a cotton wool plug and record the <strong>mass lost</strong> as CO₂ escapes.</li>
+  <li><strong>(HT)</strong> Gas volumes give moles: amount of gas = volume (dm³) ÷ 24 at room temperature and pressure. E.g. 96 cm³ of CO₂ = 0.096 ÷ 24 = 0.004 mol.</li>
+</ul>
+
+<div class="hazard">Hydrochloric acid is an irritant &mdash; wear eye protection. Do not let the syringe plunger be pushed out of the barrel; use enough acid but not so much gas that it exceeds the syringe volume (usually 100 cm³).</div>
+
+<div class="exam-tip">Gas leaking before the bung is inserted is a source of error. Using a flask with a divided compartment, or a tube of acid tipped over once sealed, prevents this.</div>
+
+</div>
+
+<div class="practical-card">
+
+<p><strong>Further C8 activities</strong> (suggested in the specification): measuring a reaction time with a colour change, and measuring temperature changes in reactions.</p>
+
+<h3>Disappearing cross (sodium thiosulfate and acid)</h3>
+
+<div class="method">
+Draw a cross on paper and put a conical flask of sodium thiosulfate solution on it. Add hydrochloric acid and start the stopwatch. Look down through the flask and stop timing when the cross can no longer be seen (a yellow precipitate of sulfur forms). Repeat at different temperatures (warm the thiosulfate in a water bath) or concentrations. Rate is proportional to <strong>1/time</strong>.
+</div>
+
+<div class="equation">
+    Na₂S₂O₃(aq) + 2HCl(aq) → 2NaCl(aq) + S(s) + SO₂(g) + H₂O(l)
+</div>
+
+<h3>Magnesium and acid at different temperatures</h3>
+
+<div class="method">
+Add a measured length of magnesium ribbon to a fixed volume of acid at a measured temperature and time how long it takes to disappear. A higher temperature gives a shorter time: particles move faster, collide more often, and more collisions have energy at least equal to the activation energy.
+</div>
+
+<h3>Catalysts</h3>
+
+<div class="method">
+Add equal masses of different black powders (e.g. manganese(IV) oxide, copper(II) oxide) to hydrogen peroxide solution and compare the volume of oxygen given off over time. Filter, dry and reweigh the powder afterwards &mdash; a catalyst is not used up. Copper powder similarly speeds up the reaction of zinc with sulfuric acid.
+</div>
+
+<h3>Temperature change in reactions</h3>
+
+<div class="method">
+Measure a fixed volume of a solution into a polystyrene cup (with a lid) and record its starting temperature. Add the second reactant (e.g. acid to alkali, or a metal or solid), stir, and record the highest (or lowest) temperature. A rise in temperature shows an <strong>exothermic</strong> reaction; a fall shows an <strong>endothermic</strong> reaction.
+</div>
+
+<div class="hazard">Sulfur dioxide from the thiosulfate reaction irritates the lungs, especially for people with asthma &mdash; use a well-ventilated room and pour away the mixture promptly. Hydrogen peroxide is an irritant; wear eye protection.</div>
+
+<div class="exam-tip">For the disappearing cross, the same person should judge the end point and the same cross should be used each time, because deciding when the cross "disappears" is subjective.</div>
+
+</div>
+
+<h2>Practical Skills — Generic Points (Assessed on Any PAG)</h2>
+
+<table>
+    <tr><th>Skill</th><th>What it means</th></tr>
+    <tr><td><strong>Accuracy</strong></td><td>How close a reading is to the true value. Improved by calibrated instruments and correct technique.</td></tr>
+    <tr><td><strong>Precision</strong></td><td>How small the scatter in repeated readings is. Improved by repeats and suitable apparatus resolution.</td></tr>
+    <tr><td><strong>Resolution</strong></td><td>The smallest change an instrument can measure. Burette: 0.05 cm³. Measuring cylinder (10 cm³): about 0.2 cm³. Two-decimal balance: 0.01 g.</td></tr>
+    <tr><td><strong>Random error</strong></td><td>Unpredictable variation. Reduce by averaging repeated readings.</td></tr>
+    <tr><td><strong>Systematic error</strong></td><td>Consistent offset (e.g. a balance not zeroed, reading the top of the meniscus). Reduce by checking zero / calibration and technique.</td></tr>
+    <tr><td><strong>Anomalous result</strong></td><td>A reading that doesn't fit the pattern — identify and repeat; do not include in averages.</td></tr>
+    <tr><td><strong>Repeatability / Reproducibility</strong></td><td>Repeatable: same person, same equipment, same result. Reproducible: different people/kit give the same result.</td></tr>
+</table>
+
+<div class="exam-tip">When writing up a practical: state hypothesis → draw labelled diagram → list IV, DV, CVs → detail step-by-step method (so another student could copy it) → include a safety section → describe how data will be analysed.</div>
+
+</div>
+</body>
+</html>
