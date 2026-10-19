@@ -2975,10 +2975,10 @@ g = 8.87 N kg⁻¹ (to 3 significant figures)`,
 a = ω²r = (2.99 × 10⁻⁷)² × 6.050 × 10⁶
 a = 5.42 × 10⁻⁷ m s⁻² (≈ 5.4 × 10⁻⁷ m s⁻²)`,
   "phys-ocra-h556-2022-p3::1(b)(ii)": `Upthrust = weight of atmosphere displaced by probe = ρ_atm × V × g
-The density of Venus's atmosphere at the surface ≈ 65 kg m⁻³ (from the question paper data).
+The density of Venus's atmosphere at the surface = 65 kg m⁻³ (from the table).
 Upthrust = 65 × 1.7 × 8.87
 = 65 × 15.08
-= 980 N ≈ 980 N`,
+= 980 N`,
   "phys-ocra-h556-2022-p3::1(b)(iii)": `Both probes are identical, so each has the same weight W = mg = 760 × 8.87 = 6740 N and each experiences the same upthrust U = 980 N from the atmosphere.
 
 Probe A is at the north pole, on the axis of rotation, so it moves in a circle of essentially zero radius and needs no centripetal force. Its forces are therefore balanced:
@@ -2988,17 +2988,17 @@ Probe B is on the equator, so it travels in a circle of radius 6.05 × 10⁶ m a
 W − U − R_B = ma
 R_B = W − U − ma = 5760 − (760 × 5.42 × 10⁻⁷) = 5760 − 4.1 × 10⁻⁴ N
 
-Because some of the resultant of the weight and the upthrust on B is "used up" in providing the centripetal force, the surface has to push up on B slightly less hard than on A. Probe A therefore experiences the greater normal contact force, although the difference is only about 4 × 10⁻⁴ N and so would be impossible to measure in practice.`,
-  "phys-ocra-h556-2022-p3::2(a)": `Set up the rod pivoted at one end (clamped or through a pin) so it can swing freely. Displace the rod by a small angle and release. Use a stopwatch to time the oscillations. To reduce uncertainty, time a large number of complete oscillations (e.g. 20 oscillations) and divide by the number to get the period T. Repeat the timing three times and take the mean value of T. A fiducial marker at the equilibrium position helps identify the exact moment the rod passes through equilibrium.`,
+Because some of the resultant of the weight and the upthrust on B is "used up" in providing the centripetal force, the surface has to push up on B slightly less hard than on A. Probe A therefore experiences the greater normal contact force, although the difference is only about 4 × 10⁻⁴ N and so is far too small to detect in practice.`,
+  "phys-ocra-h556-2022-p3::2(a)": `Hang the rod from a pin through a hole at its top end so that it can swing freely about this pivot. Displace the rod by a small angle and release. Use a stopwatch to time the oscillations. To reduce uncertainty, time a large number of complete oscillations (e.g. 20 oscillations) and divide by the number to get the period T. Repeat the timing three times and take the mean value of T. A fiducial marker at the equilibrium position helps identify the exact moment the rod passes through equilibrium.`,
   "phys-ocra-h556-2022-p3::2(b)(i)": `f = (1/2π)√(3g/2L), so T = 1/f = 2π√(2L/3g)
 T² = 4π² × (2L/3g) = (8π²/3g) × L
-Therefore, plotting T² against L gives a straight line through the origin with gradient = 8π²/(3g). ✓`,
+Therefore, plotting T² against L gives a straight line through the origin with gradient = 8π²/(3g).`,
   "phys-ocra-h556-2022-p3::2(b)(ii)": `Gradient = 8π²/(3g)
 g = 8π²/(3 × gradient) = 8π²/(3 × 2.64)
 = 8 × 9.870 / 7.92
 = 78.96 / 7.92
-= 9.97 m s⁻² ≈ 9.97 m s⁻²`,
-  "phys-ocra-h556-2022-p3::2(b)(iii)": `The worst-fit line is the steepest (or the shallowest) straight line that still passes through every error bar. For the steepest line, use a ruler to draw a single straight line from the bottom of the error bar on the first point, (0.080 m, 0.21 s²), to the top of the error bar on the last point, (0.200 m, 0.56 s²), checking as you draw that it passes inside all of the error bars in between. (The shallowest line, drawn from (0.080 m, 0.25 s²) to (0.200 m, 0.50 s²), is equally acceptable.) Label it clearly so that it is not confused with the line of best fit.`,
+g = 9.97 m s⁻²`,
+  "phys-ocra-h556-2022-p3::2(b)(iii)": `The worst-fit line is the steepest (or the shallowest) straight line that still passes through every error bar. For the steepest line, use a ruler to draw a single straight line from the bottom of the error bar on the first point, (0.080 m, 0.21 s²), to the top of the error bar on the last point, (0.200 m, 0.56 s²), checking as you draw that it passes inside all of the error bars in between. (The shallowest line, drawn from the top of the first error bar, (0.080 m, 0.25 s²), through the bottom of the error bar at (0.180 m, 0.46 s²), is equally acceptable.) Label it clearly so that it is not confused with the line of best fit.`,
   "phys-ocra-h556-2022-p3::2(b)(iv)": `Find the gradient of the worst-fit line using a large triangle covering the whole range of L. For the steepest worst line, from (0.080 m, 0.21 s²) to (0.200 m, 0.56 s²):
 gradient_worst = (0.56 − 0.21) / (0.200 − 0.080) = 0.35 / 0.120 = 2.92 s² m⁻¹
 
@@ -3012,7 +3012,7 @@ percentage uncertainty in g ≈ 10%
   "phys-ocra-h556-2022-p3::2(b)(v)": `The student's value is g = 9.97 m s⁻² and the true value is 9.81 m s⁻².
 Difference = |9.97 − 9.81| = 0.16 m s⁻²
 Percentage difference = (0.16/9.81) × 100% = 1.6%
-If the percentage uncertainty calculated in (b)(iv) is, say, 9%, then 1.6% < 9%, meaning the true value lies within the uncertainty range of the student's result. The experiment is therefore accurate — the result is consistent with the true value within experimental uncertainty.`,
+The percentage uncertainty found in (b)(iv) is about 10%, and 1.6% < 10%, meaning the true value lies within the uncertainty range of the student's result. The experiment is therefore accurate — the result is consistent with the true value within experimental uncertainty.`,
   "phys-ocra-h556-2022-p3::3(a)": `In β⁺ decay, a proton decays to a neutron, a positron, and a neutrino:
 ¹₁p → ¹₀n + ⁰₁e + ⁰₀ν_e
 Or in terms of a nuclide X decaying:
@@ -3026,7 +3026,7 @@ Now take each source in turn. Clamp it a fixed short distance from the GM tube a
 
 To tell the two beta sources apart, use the strong magnet to set up a magnetic field at right angles to the direction in which the particles travel. Gamma rays are uncharged and are not deflected at all, but beta particles are charged and so are deflected by the field. Move the GM tube to one side and then the other of the undeflected path to find which way each beam bends. Beta-minus particles are electrons and beta-plus particles are positrons, so they carry opposite charges and are deflected in opposite directions by the same field. Applying Fleming's left-hand rule (remembering that for the positrons the conventional current is in the direction the particles travel, and for the electrons it is in the opposite direction) predicts which way a positive beam should bend, so the source whose beam bends that way is the beta-plus emitter and the other is the beta-minus emitter.`,
   "phys-ocra-h556-2022-p3::4(a)": `The microwave background radiation (CMB) originated from the early universe, approximately 380 000 years after the Big Bang, at the epoch of recombination. Before this time, the universe was so hot and dense that matter was in the form of a plasma — electrons were not bound to nuclei. Photons were constantly scattered by free electrons and could not travel freely. When the universe cooled sufficiently (to about 3000 K), electrons combined with protons to form neutral hydrogen atoms. The universe became transparent to radiation for the first time. The photons that were released at this point have been travelling through the universe ever since. Due to the expansion of the universe, these photons have been redshifted from their original infrared/optical wavelengths to microwave wavelengths, giving the CMB we observe today.`,
-  "phys-ocra-h556-2022-p3::4(b)(i)": `In the distant past the universe was much hotter. According to Wien's displacement law (λ_max T = constant), a higher temperature means the peak intensity is at a shorter wavelength. The spectrum would have the same black-body shape but shifted to the left (shorter wavelengths / higher frequencies), with the peak at a much smaller wavelength than 1.1 mm, and with a much higher intensity (since luminosity ∝ T⁴).`,
+  "phys-ocra-h556-2022-p3::4(b)(i)": `In the distant past the universe was much hotter. According to Wien's displacement law (λ_max T = constant), a higher temperature means the peak intensity is at a shorter wavelength. The spectrum would have the same black-body shape but shifted to the left (shorter wavelengths / higher frequencies), with the peak at a much smaller wavelength than 1.1 mm, and with a much higher intensity (the total intensity is proportional to T⁴).`,
   "phys-ocra-h556-2022-p3::4(b)(ii)": `E = hc/λ = (6.63×10⁻³⁴ × 3.00×10⁸) / (1.1×10⁻³)
 = 1.989×10⁻²⁵ / 1.1×10⁻³
 = 1.81×10⁻²² J ≈ 1.8×10⁻²² J`,
@@ -3065,14 +3065,14 @@ A = v_max / ω = 1.12×10⁻⁴ / (6.912×10¹⁰)
 = 1.62×10⁻¹⁵ m ≈ 1.6×10⁻¹⁵ m
 (This is on the order of the size of a proton — the electrons oscillate with extremely tiny amplitude at microwave frequencies.)`,
   "phys-ocra-h556-2022-p3::5(a)(iii)": `In SHM, maximum acceleration a_max = Aω² = v_max × ω (since A = v_max/ω, so Aω² = v_max × ω). 
-Since v_max = I_max/(nAq) and remains constant (maximum current is fixed), v_max is constant. Therefore A = v_max/ω = v_max/(2πf) — amplitude decreases as f increases. The maximum acceleration a_max = Aω² = v_max × ω = v_max × 2πf. Since v_max is constant and ω = 2πf increases with f, the maximum acceleration increases proportionally with frequency f.`,
+Since v_max = I_max/(nSe), where S is the cross-sectional area of the wire, and I_max is fixed, v_max is constant. Therefore A = v_max/ω = v_max/(2πf) — amplitude decreases as f increases. The maximum acceleration a_max = Aω² = v_max × ω = v_max × 2πf. Since v_max is constant and ω = 2πf increases with f, the maximum acceleration increases proportionally with frequency f.`,
   "phys-ocra-h556-2022-p3::5(b)(i)": `Why the pattern occurs
 
 X and Y are coherent sources of the same frequency, so the waves arriving at the detector from the two transmitters keep a constant phase relationship and superpose. At a point on PQ where the path difference from X and from Y is a whole number of wavelengths, nλ, the two waves arrive exactly in phase (phase difference zero); they interfere constructively, the resultant amplitude is the sum of the two amplitudes, and the intensity is a maximum. At a point where the path difference is an odd number of half wavelengths, (n + ½)λ, the waves arrive in antiphase (phase difference π rad); they interfere destructively and the intensity is a minimum. As D is moved along PQ the path difference changes steadily, so maxima and minima are detected alternately.
 
 The expected relationship between f and x
 
-For two coherent sources separated by a distance a, with the detector line a distance D away, the separation of adjacent maxima is x = λD/a. The microwaves travel at the speed of light c, so λ = c/f and
+For two coherent sources separated by a distance a, with the detector line a distance D away (D much larger than a), the separation of adjacent maxima is x = λD/a. The microwaves travel at the speed of light c, so λ = c/f and
 
 x = cD / (af)
 
@@ -3080,7 +3080,7 @@ With a and D kept constant, c, D and a are all fixed, so x is inversely proporti
 
 How to verify the relationship experimentally
 
-Keep the separation a of the transmitters and the distance D to the line PQ fixed throughout. Set a frequency and measure it by connecting an oscilloscope to the transmitter (or to the detector) and reading the period of the trace. Move D slowly along PQ and mark the positions of the maxima; to reduce the uncertainty, measure the distance from the first to the eleventh maximum with a metre ruler and divide by ten to obtain x. Repeat for several different frequencies spread across the available range.
+Keep the separation a of the transmitters and the distance D to the line PQ fixed throughout. Set a frequency and measure it at the transmitter, using a frequency meter or a sufficiently fast oscilloscope connected to it (or read it from the transmitter's calibrated frequency control). Move D slowly along PQ and mark the positions of the maxima; to reduce the uncertainty, measure the distance from the first to the eleventh maximum with a metre ruler and divide by ten to obtain x. Repeat for several different frequencies spread across the available range.
 
 Then either calculate fx for each pair of readings and show that it is constant to within the experimental uncertainty, or plot a graph of x against 1/f (or of 1/x against f). A straight line through the origin confirms that x ∝ 1/f, and the gradient of the graph of x against 1/f equals cD/a.`,
   "phys-ocra-h556-2022-p3::5(b)(ii)": `As X is rotated about AB, the plane of polarisation of the microwaves it emits turns. Only the component of X's wave that oscillates vertically can be detected by D and can interfere with the vertically polarised wave from Y, and that component gets smaller as the angle of rotation increases. So between 0° and 90° the interference pattern is still seen but becomes less pronounced: the maxima become less intense and the minima become more intense.
@@ -3105,13 +3105,29 @@ CR = 34 − 20 = 14 ms
 (Check using the decay equation: the charge falls from 8.0 μC to 2.0 μC over the 20 ms between t = 20 ms and t = 40 ms, so 2.0 = 8.0e^(−20/CR), giving CR = 20/ln 4 = 14 ms.)
 
 time constant = 14 ms`,
-  "phys-ocra-h556-2022-p3::6(b)(iii)": `The current in the resistor is I = dQ/dt, which is the gradient of the graph, so the current is greatest where the graph is steepest – at the very start of a discharge, t = 20 ms (or t = 60 ms).
+  "phys-ocra-h556-2022-p3::6(b)(iii)": `The current in the resistor is I = dQ/dt, which is the gradient of the graph, so the current is greatest where the graph is steepest – at the very start of a discharge, t = 20 ms or 60 ms (the start of each charging section, t = 0 or 40 ms, is equally steep).
 
 Draw a tangent to the curve at that point, keeping the tangent touching the curve with no daylight between them, and take a large triangle on the tangent. The tangent drawn at t = 20 ms starts at Q = 8.0 μC and reaches Q = 0 at about t = 34 ms, so
 
 gradient = ΔQ/Δt = (0 − 8.0 × 10⁻⁶) / ((34 − 20) × 10⁻³) = −8.0 × 10⁻⁶ / 1.4 × 10⁻²
 
 maximum current = 5.7 × 10⁻⁴ A (about 6 × 10⁻⁴ A; the minus sign simply shows that the capacitor is discharging)`,
+  "phys-ocra-h556-2022-p3::6(b)(iv)": `The current in the resistor is the rate of flow of charge onto or off the capacitor plate, so I = dQ/dt, which is the gradient of Fig. 6.3.
+
+Values from Fig. 6.3:
+Maximum current (steepest gradient, at the start of each section) = 5.7 × 10⁻⁴ A ≈ 0.57 mA, from (iii).
+Time constant CR ≈ 14 ms, from (ii). Each section lasts 20 ms ≈ 1.4CR, so the current falls by a factor e^(−20/14.4) ≈ 1/4 (the same factor by which Q falls from 8.0 μC to 2.0 μC when discharging).
+Current at the end of each section ≈ 0.57/4 ≈ 0.14 mA (not zero).
+
+What to draw on Fig. 6.4:
+1. Label the vertical axis I / mA. There are 10 small squares above and 10 below the time axis, so use 1 small square = 0.1 mA and mark the scale both above and below zero, e.g. +0.5 and +1.0 above the axis and −0.5 and −1.0 below it.
+2. 0 to 20 ms (capacitor charging, Q increasing, gradient positive): the current is positive. Start at +0.57 mA at t = 0 and draw an exponential decay curve, steep at first and then flattening, down to about +0.14 mA at t = 20 ms.
+3. At t = 20 ms the input p.d. drops to zero and the capacitor starts to discharge (Q decreasing, gradient negative), so the current reverses direction. Draw a vertical jump from +0.14 mA down to −0.57 mA.
+4. 20 to 40 ms: the current is negative. Draw an exponential decay in magnitude from −0.57 mA, rising towards the axis and flattening, to about −0.14 mA at t = 40 ms.
+5. At t = 40 ms the capacitor starts charging again: jump up from −0.14 mA to +0.57 mA, then repeat the 0 to 20 ms curve (+0.57 mA decaying to +0.14 mA) from 40 to 60 ms.
+6. At t = 60 ms jump to −0.57 mA and repeat the discharge curve (−0.57 mA decaying in magnitude to −0.14 mA) from 60 to 80 ms. At 80 ms the next charging section would start, so the current switches back to positive there.
+
+Check the finished sketch: all four sections start at the same magnitude (0.57 mA), each is an exponential decay with decreasing gradient that does not reach zero, and the sign of the current alternates at 20, 40, 60 and 80 ms.`,
   "phys-ocra-h556-2023-p1::16(a)(i)": `110 km/h must be converted to SI units (m/s).
 
 v = 110 × 1000 / 3600 = 30.6 m s⁻¹ (to 3 s.f.)
