@@ -215,19 +215,19 @@ C = 4π × 8.85 × 10⁻¹² × 0.100 = 1.1 × 10⁻¹¹ F
 
 which is approximately 1 × 10⁻¹¹ F as required.
 
-(The same result follows from the graph: at the surface V = −1.8 × 10⁶ V, so Q = 4πε₀rV = 4π × 8.85 × 10⁻¹² × 0.100 × 1.8 × 10⁶ = 2.0 × 10⁻⁵ C, and C = Q/V = 2.0 × 10⁻⁵/1.8 × 10⁶ = 1.1 × 10⁻¹¹ F.)`,
+(The same result follows from the graph: at the surface the magnitude of V is 1.8 × 10⁶ V, so the magnitude of the charge is Q = 4πε₀rV = 4π × 8.85 × 10⁻¹² × 0.100 × 1.8 × 10⁶ = 2.0 × 10⁻⁵ C, and C = Q/V = 2.0 × 10⁻⁵/1.8 × 10⁶ = 1.1 × 10⁻¹¹ F.)`,
   "phys-aqa-7408-2022-p2::03.4": `Using C = 1.1 × 10⁻¹¹ F from 03.3 and E = ½CV².
 
 Fully charged, the potential of the sphere is 1.8 × 10⁶ V:
-E₁ = ½ × 1.1 × 10⁻¹¹ × (1.8 × 10⁶)² = 18 J
+E₁ = ½ × 1.1 × 10⁻¹¹ × (1.8 × 10⁶)² = 17.8 J
 
 When the potential has fallen to 1.0 × 10⁶ V:
 E₂ = ½ × 1.1 × 10⁻¹¹ × (1.0 × 10⁶)² = 5.5 J
 
-change in energy stored = 18 − 5.5 = 12.5 J
+change in energy stored = 17.8 − 5.5 = 12.3 J
 
-The energy stored has decreased by about 13 J.`,
-  "phys-aqa-7408-2022-p2::04.1": `From Figure 4, the gravitational field lines of G are more closely spaced than those of H (or the equipotential surfaces are more closely packed around G), indicating a stronger field and therefore a greater mass for G. Gravitational field strength g = GM/r², and for the same distance, a stronger field implies a larger mass M. Therefore, the mass of G is greater than the mass of H.`,
+The energy stored has decreased by about 12 J.`,
+  "phys-aqa-7408-2022-p2::04.1": `From Figure 4, more field lines converge on G than on H, so the field lines around G are more closely spaced, and the neutral (null) point between the stars is closer to H than to G. Both indicate that G produces the stronger field and therefore has the greater mass. Gravitational field strength g = GM/r², and for the same distance, a stronger field implies a larger mass M. Therefore, the mass of G is greater than the mass of H.`,
   "phys-aqa-7408-2022-p2::04.2": `Gravitational field lines always point towards the mass producing the field, because the force on a test mass is attractive.
 
 At X: draw a short arrow on the field line through X, tangential to that line, pointing along it towards G.
@@ -276,10 +276,10 @@ The secondary coil: by Faraday's law of electromagnetic induction, the changing 
 Efficiency of transformer 2 = 98%, efficiency of transmission line = 94%, efficiency of transformer 1 = 98%.
 
 Overall efficiency from 25 kV supply to consumers:
-η_total = 0.98 × 0.94 × 0.98 = 0.9025
+η_total = 0.98 × 0.94 × 0.98 = 0.9028
 
 Power input at 25 kV line from power station:
-P_input = P_consumers / η_total = 72 × 10⁶ / 0.9025 = 7.979 × 10⁷ W ≈ 79.8 MW
+P_input = P_consumers / η_total = 72 × 10⁶ / 0.9028 = 7.975 × 10⁷ W ≈ 79.8 MW
 
 Current in 25 kV line:
 I = P_input / V = 79.8 × 10⁶ / 25 × 10³ = 3190 A ≈ 3200 A
@@ -306,9 +306,9 @@ In MeV: E = 7.812 × 10⁻¹¹ / 1.60 × 10⁻¹³ = 488 MeV
 The binding energy of ⁵⁶₂₆Fe is approximately 488 MeV.`,
   "phys-aqa-7408-2022-p2::06.3": `On Figure 10, X lies at a nucleon number of about 240, on the falling part of the curve to the right of the peak.
 
-Mark F1 and F2 as two points on the curve whose nucleon numbers add up to about 240 and which sit symmetrically either side of half that value (about 120) — for example F1 at a nucleon number of about 95 and F2 at about 145. Both must be to the right of the peak of the graph, so neither can have a nucleon number below about 55.
+Mark F1 and F2 as two points on the curve whose nucleon numbers add up to about 240 and which sit symmetrically either side of half that value (about 120) — for example F1 at a nucleon number of about 95 and F2 at about 145. Both must be to the right of the peak of the graph (at a nucleon number of roughly 60); neither can lie to the left of the peak.
 
-Both fragments lie higher on the curve than X, so each nucleon in them is more tightly bound than in X, and that increase in binding energy per nucleon is the energy released by the fission.`,
+Both fragments lie higher on the curve than X, so each nucleon in them is more tightly bound than in X, and the resulting increase in total binding energy (the increase per nucleon multiplied by the number of nucleons) is the energy released by the fission.`,
   "phys-aqa-7408-2022-p2::06.4": `Figure 11 shows that the stable nuclides curve above the N = Z line: the heavier a stable nuclide is, the larger its N/Z ratio.
 
 X is a very heavy nuclide with a high N/Z ratio. When it splits, the two fragments keep roughly that same high N/Z ratio, but they have much smaller nucleon numbers, for which stability requires a lower N/Z. F1 and F2 therefore plot above and to the left of the line of stable nuclides in Figure 11 — they are neutron rich.
