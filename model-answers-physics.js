@@ -2628,8 +2628,8 @@ t² = 3.0/9.81 = 0.306 s², so t = 0.55 s
 Horizontal motion (constant velocity of 7.7 m s⁻¹ from (b)(ii)):
 R = vt = 7.7 × 0.55
 R = 4.2 m`,
-  "phys-ocra-h556-2022-p1::16(b)(iv)": `The actual value of R will be less than 4.4 m. This is because air resistance acts on the ball during flight, removing kinetic energy and reducing both the horizontal speed and the range. Additionally, some of the elastic potential energy stored in the cord is converted to thermal energy (heat) due to the inelastic nature of the cord, and some energy is stored in the vibrations of the cord itself, so the actual kinetic energy of the ball at launch is less than 1 J, giving a lower launch speed and therefore a shorter range.`,
-  "phys-ocra-h556-2022-p1::17(a)": `The engine reaches its maximum speed when all of the work done by the engine has been transferred to kinetic energy, so the minimum time is the time for the constant power output to deliver the maximum kinetic energy.
+  "phys-ocra-h556-2022-p1::16(b)(iv)": `The actual value of R will be less than the calculated value of 4.2 m. This is because air resistance acts on the ball during flight, removing kinetic energy and reducing both the horizontal speed and the range. Additionally, some of the elastic potential energy stored in the cord is converted to thermal energy (heat) due to the inelastic nature of the cord, and some energy is stored in the vibrations of the cord itself, so the actual kinetic energy of the ball at launch is less than the 0.90 J stored in the cord, giving a lower launch speed and therefore a shorter range.`,
+  "phys-ocra-h556-2022-p1::17(a)": `The time is a minimum if all of the work done by the engine is transferred to its kinetic energy (no energy transferred against resistive forces), so the minimum time is the time for the constant power output to deliver the maximum kinetic energy of 15 MJ.
 Power = energy transferred / time, so t = E/P
 t = (15 × 10⁶)/(280 × 10³) = 54 s
 This is about 1 minute. In practice the time is longer, because some of the work done is transferred against resistive forces rather than to kinetic energy.`,
@@ -2652,7 +2652,7 @@ In 3.0 s the wind carries a column of air of length vt = 12 × 3.0 = 36 m throug
 volume of air = A × v × t = 11.4 × 12 × 3.0 = 410 m³
 mass of air = ρ × volume = 1.2 × 410.4 = 492 kg
 This is about 490 kg, as required.`,
-  "phys-ocra-h556-2022-p1::18(a)(ii)": `The air deflects at 90° so all horizontal momentum is transferred to the tent. Change in velocity of air = 12 m s⁻¹ (from 12 m s⁻¹ horizontal to 0 horizontal component).
+  "phys-ocra-h556-2022-p1::18(a)(ii)": `The air is deflected through 90°, so it loses all of its momentum in the original wind direction (perpendicular to the shaded side). Change in velocity of the air in this direction = 12 m s⁻¹ (from 12 m s⁻¹ to 0).
 Change in momentum = mass × change in velocity = 490 × 12 = 5880 N s
 Force = change in momentum / time = 5880 / 3.0 = 1960 N ≈ 2000 N
 F = 2.0 kN`,
@@ -2672,8 +2672,7 @@ p = 100 × 10³ Pa, V = 15 m³, T = 23 + 273 = 296 K, R = 8.31 J mol⁻¹ K⁻¹
 n = (100 × 10³ × 15)/(8.31 × 296)
 n = 1 500 000/2 459.76
 n = 609.8 ≈ 600 mol ✓`,
-  "phys-ocra-h556-2022-p1::19(b)(ii)": `Mass = n × M_r = 610 × 0.028 = 17.08 ≈ 17 kg
-(Using n = 600 mol: mass = 600 × 0.028 = 16.8 ≈ 17 kg)`,
+  "phys-ocra-h556-2022-p1::19(b)(ii)": `Mass = n × molar mass = 610 × 0.028 = 17.08 ≈ 17 kg`,
   "phys-ocra-h556-2022-p1::19(b)(iii)": `Increase the temperature at which the nitrogen is added. For a fixed volume and pressure, pV = nRT gives n = pV/RT, so a higher temperature means fewer moles, and therefore a smaller mass, of nitrogen in the same 15 m³ each hour. (Reducing the pressure of the nitrogen would have the same effect.)`,
   "phys-ocra-h556-2022-p1::19(b)(iv)": `The liquid nitrogen absorbs heat from the air to vaporise. The heat Q is supplied by the condensation and freezing of water vapour to form ice on the pipe. Heat released by 1.3 kg of water vapour forming ice at 0 °C:
 Q = m_water × L_vap(water) + m_water × L_fus(ice)
@@ -2688,14 +2687,14 @@ L_N₂ = 1.98 × 10⁵ J kg⁻¹ ≈ 2.0 × 10⁵ J kg⁻¹`,
 Right side: ω² has units of (rad s⁻¹)² = s⁻², and x has units of m, so ω²x has units of s⁻² × m = m s⁻².
 Both sides reduce to m s⁻², so the equation is homogeneous. ✓`,
   "phys-ocra-h556-2022-p1::20(b)(i)": `The pressure difference supports the water column. The vertical height difference between the levels is 10.0 cm = 0.100 m (with x = 5.0 cm on each side).
-p = ρgh = 1000 × 9.81 × 0.100
-p = 981 Pa ≈ 980 Pa`,
+Δp = ρgh = 1000 × 9.81 × 0.100
+Δp = 981 Pa ≈ 980 Pa`,
   "phys-ocra-h556-2022-p1::20(b)(ii)1": `Comparing a = −(2gAρ/m)x with SHM equation a = −ω²x:
 ω² = 2gAρ/m = (2 × 9.81 × 1.0 × 10⁻⁴ × 1000)/0.052
 ω² = (1.962)/0.052 = 37.73 rad² s⁻²
 ω = 6.143 rad s⁻¹
 T = 2π/ω = 2π/6.143 = 1.023 s ≈ 1 s ✓`,
-  "phys-ocra-h556-2022-p1::20(b)(ii)2": `The graph should show a cosine curve (since at t = 0, x = 5.0 cm = maximum displacement). Starting at x = +5.0 cm at t = 0, the curve decreases to zero at t = T/4 ≈ 0.25 s, reaches a minimum of approximately −4 cm (slightly less than −5.0 cm due to damping) at t ≈ 0.5 s, returns through zero at t ≈ 0.75 s, and reaches a reduced maximum of about +4 cm at t = T ≈ 1.0 s. The amplitude decreases gradually with each oscillation (exponential envelope). Time axis values: 0, 0.5, 1.0, 1.5, 2.0 s. The oscillations are slightly damped so the amplitude reduces with each cycle while the period remains approximately constant at 1 s.`,
+  "phys-ocra-h556-2022-p1::20(b)(ii)2": `The graph should show a cosine curve (since at t = 0, x = 5.0 cm = maximum displacement). Starting at x = +5.0 cm at t = 0, the curve decreases to zero at t = T/4 ≈ 0.25 s, reaches a trough slightly smaller in magnitude than 5.0 cm (about −4.7 cm) at t ≈ 0.5 s, returns through zero at t ≈ 0.75 s, reaches a slightly reduced crest (about +4.4 cm) at t = T ≈ 1.0 s, and then completes a second, slightly smaller oscillation with a trough at t ≈ 1.5 s and a crest at t ≈ 2.0 s. The amplitude decreases gradually with each oscillation (exponential envelope). Time axis values: 0, 0.5, 1.0, 1.5, 2.0 s. The oscillations are slightly damped so the amplitude reduces with each cycle while the period remains approximately constant at 1 s.`,
   "phys-ocra-h556-2022-p1::20(b)(ii)3": `The natural frequency of the water's oscillation is approximately 1 Hz (T ≈ 1 s). The driving frequency from the gas supply is also about 1 Hz. This means the driving frequency matches the natural frequency of the U-tube water system, causing resonance. At resonance, the amplitude of oscillation of the water increases significantly (would increase to very large values if undamped, but the slight damping limits the amplitude to a large but finite value). The water will oscillate with large amplitude.`,
   "phys-ocra-h556-2022-p1::21(a)": `The initial collapse of the nebula is caused by gravity (gravitational attraction between the gas and dust particles). The gravitational potential energy of the particles is converted to kinetic energy as they fall inward.`,
   "phys-ocra-h556-2022-p1::21(b)(i)": `Diameter = 6.4 pc; radius = 3.2 pc
@@ -2712,24 +2711,39 @@ E_k = N × (3/2)k_BT = 4.1 × 10⁶³ × 5.175 × 10⁻²¹
 = 2.12 × 10⁴³ J ≈ 2.1 × 10⁴³ J`,
   "phys-ocra-h556-2022-p1::21(c)(i)": `Number of particles is proportional to volume (assuming same particle density of 1.0 × 10¹² m⁻³).
 Volume ∝ diameter³.
-V_X/V_Sun_nebula = (6.4/3.0)³ = (2.133)³ = 9.703
+V_X/V_Sun_nebula = (6.4/3.0)³ = (2.133)³ = 9.71
 Mass ∝ Volume (same particle density and same composition means same average particle mass).
-Mass_X/Mass_Sun_nebula = 9.703
+Mass_X/Mass_Sun_nebula = 9.71
 Since nebula that formed the Sun has mass ≈ mass of Sun:
-Mass_X/Mass_Sun = 9.7 ≈ 9.7
-Ratio ≈ 9.7`,
+Ratio Mass_X/Mass_Sun ≈ 9.7`,
   "phys-ocra-h556-2022-p1::21(c)(ii)": `After forming as a stable main-sequence star (much more massive than the Sun), nebula X will burn through its hydrogen fuel relatively quickly due to its high luminosity. When its core hydrogen is exhausted, the star will expand into a red supergiant. The core will contract and heat, fusing heavier elements (helium, then carbon, oxygen, neon, silicon) successively until an iron core forms. Since iron fusion is endothermic, no further energy can be released by fusion. The iron core collapses catastrophically under gravity, triggering a supernova explosion. The outer layers are ejected as a supernova remnant (forming a nebula). The remnant core, if massive enough (above about 3 solar masses), will collapse further to form a black hole; otherwise it forms a neutron star.`,
   "phys-ocra-h556-2022-p1::22(a)": `From Stefan's law: L = 4πr²σT⁴, so r = √(L/(4πσT⁴)).
 The fractional uncertainty in r is:
 Δr/r = (1/2)(ΔL/L) + 2(ΔT/T)
-The term from T has a factor of 2 (from T⁴, which gives 4 × ΔT/T, combined with the ½ from the square root → 2ΔT/T). If the percentage uncertainty in T is larger than ΔL/L after accounting for these factors, then T should be measured more precisely. Since ΔT/T is multiplied by 2 but ΔL/L is multiplied by ½, a given percentage uncertainty in T contributes four times as much to the uncertainty in r as the same percentage uncertainty in L. Therefore the astronomers should measure T more precisely to have the greater effect on reducing the uncertainty in r.`,
-  "phys-ocra-h556-2022-p1::22(b)": `Determining b: From the table, plotting lg(L/L☉) against lg(M/M☉) gives a straight line with gradient b. Using the data points:
-• Pi Andromedae A: lg(6.5) = 0.813, lg(800) = 2.903
-• 70 Ophiuchi A: lg(0.78) = −0.108, lg(0.4) = −0.398
-Gradient = (2.903 − (−0.398))/(0.813 − (−0.108)) = 3.301/0.921 = 3.58
-So b ≈ 3.6 (or 3.5–3.9 range is acceptable).
+The term from T has a factor of 2 (from T⁴, which gives 4 × ΔT/T, combined with the ½ from the square root → 2ΔT/T). Since ΔT/T is multiplied by 2 but ΔL/L is multiplied by ½, a given percentage uncertainty in T contributes four times as much to the uncertainty in r as the same percentage uncertainty in L. Therefore the astronomers should measure T more precisely to have the greater effect on reducing the uncertainty in r.`,
+  "phys-ocra-h556-2022-p1::22(b)": `Method
+Take lg of both sides of L/L☉ = (M/M☉)ᵇ. Using lg Xᵇ = b lg X:
+lg(L/L☉) = b lg(M/M☉)
+This has the form y = mx (with c = 0), where y = lg(L/L☉) and x = lg(M/M☉). So if the relationship is correct, the graph of lg(L/L☉) against lg(M/M☉) is a straight line through the origin, and its gradient is b.
 
-Comparing lifespans using the HR diagram: Hotter main-sequence stars are more luminous and more massive. Since L ∝ M^b, hotter stars have much greater luminosity and fuse hydrogen far faster. The main-sequence lifetime of a star is proportional to M/L ∝ M/M^b = M^(1−b). Since b > 1 (b ≈ 3.6), the exponent (1 − b) is negative, meaning lifetime ∝ M^(1−b) decreases with increasing mass. Therefore hotter (more massive, more luminous) stars have shorter lifespans than cooler stars. A star ten times as massive lives far less than one-tenth as long.`,
+Analysis of the data
+The five points on Fig. 22 lie close to a straight line through the origin (the Sun itself, with M/M☉ = 1 and L/L☉ = 1, is at the origin), so the relationship fits the data.
+Draw the best-fit straight line through the origin. It passes through about (0.80, 2.88), so
+b = gradient = 2.88 ÷ 0.80 ≈ 3.6
+This is between 3 and 4, as expected.
+Check with the table: for Pi Andromedae A, 6.5³·⁶ ≈ 840, close to the measured L/L☉ = 800.
+
+Explanation using the HR diagram
+On an HR diagram (luminosity against surface temperature, with temperature increasing to the left), the main sequence runs from cool, dim stars at the bottom right to hot, very luminous stars at the top left. So the hotter a main-sequence star is, the greater its luminosity. This agrees with Stefan's law, L = 4πr²σT⁴: hotter main-sequence stars are also larger, so their luminosity is very much greater.
+From L/L☉ = (M/M☉)³·⁶, a more luminous star is also more massive, but its mass ratio is much smaller than its luminosity ratio: M/M☉ = (L/L☉)^(1/3.6). For example, a star 10 000 times as luminous as the Sun has a mass only about 10^(4/3.6) ≈ 13 times the Sun's mass.
+
+Lifespan
+The luminosity is directly proportional to the rate of fusion of hydrogen nuclei, so a star uses its hydrogen at a rate proportional to L. The amount of hydrogen it has to fuse is proportional to its mass M. So
+lifespan ∝ M/L ∝ M ÷ M³·⁶ = M⁻²·⁶
+Using the table: Pi Andromedae A has M/L = 6.5/800 ≈ 0.008 of the Sun's value, so it lasts only about 1/120 as long as the Sun on the main sequence, whereas the cooler 70 Ophiuchi A has M/L = 0.78/0.4 ≈ 2, so it lasts about twice as long as the Sun.
+
+Conclusion
+Hotter main-sequence stars are more massive, but their luminosity (and so their rate of fusion) increases far faster than their mass. They use up their hydrogen much faster relative to the amount they have, so hotter stars have very much shorter lifespans than cooler stars.`,
   "phys-ocra-h556-2022-p1::23(a)": `For a planet of mass m in circular orbit of radius r around a star of mass M:
 Gravitational force provides centripetal force:
 GMm/r² = mv²/r = mω²r = m(2π/T)²r
@@ -2743,9 +2757,9 @@ T_Earth = 365 days, r_Earth = 1.50 × 10¹¹ m
 T_satellite = 168 days
 r_satellite³ = r_Earth³ × (T_satellite/T_Earth)²
 r_satellite³ = (1.50 × 10¹¹)³ × (168/365)²
-= 3.375 × 10³³ × 0.2120
-= 7.155 × 10³² m³
-r_satellite = (7.155 × 10³²)^(1/3) = 8.946 × 10¹⁰ m ≈ 8.9 × 10¹⁰ m`,
+= 3.375 × 10³³ × 0.2118
+= 7.150 × 10³² m³
+r_satellite = (7.150 × 10³²)^(1/3) = 8.942 × 10¹⁰ m ≈ 8.9 × 10¹⁰ m`,
   "phys-ocra-h556-2022-p1::23(b)(ii)": `The total mechanical energy E = KE + GPE is conserved.
 At furthest point: r_far = 1.37 × 10¹¹ m
 At closest point: r_close = 4.20 × 10¹⁰ m
@@ -2754,12 +2768,12 @@ Change in KE = −(change in GPE)
 ΔKE = GPE_far − GPE_close = −GMm/r_far − (−GMm/r_close)
 ΔKE = GMm(1/r_close − 1/r_far)
 G = 6.67 × 10⁻¹¹ N m² kg⁻², M = 2.0 × 10³⁰ kg, m = 209 kg
-GMm = 6.67 × 10⁻¹¹ × 2.0 × 10³⁰ × 209 = 2.790 × 10²² J m
-ΔKE = 2.790 × 10²² × (1/(4.20 × 10¹⁰) − 1/(1.37 × 10¹¹))
+GMm = 6.67 × 10⁻¹¹ × 2.0 × 10³⁰ × 209 = 2.788 × 10²² J m
+ΔKE = 2.788 × 10²² × (1/(4.20 × 10¹⁰) − 1/(1.37 × 10¹¹))
 = 2.790 × 10²² × (2.381 × 10⁻¹¹ − 7.299 × 10⁻¹²)
-= 2.790 × 10²² × 1.651 × 10⁻¹¹
-= 4.61 × 10¹¹ J ≈ 4.6 × 10¹¹ J`,
-  "phys-ocra-h556-2022-p1::23(b)(iii)": `During launch from Earth's surface, energy is provided to the satellite by the rocket engines (fuel is burned), increasing the total mechanical energy of the satellite. The satellite gains both kinetic energy and gravitational potential energy during the launch phase. Therefore the total energy of the satellite in its orbit around the Sun is greater than it would have been if it had simply been moved there without engines, and is different from the energy state at the surface of the Earth.`,
+= 2.788 × 10²² × 1.651 × 10⁻¹¹
+= 4.60 × 10¹¹ J ≈ 4.6 × 10¹¹ J`,
+  "phys-ocra-h556-2022-p1::23(b)(iii)": `During the launch, the burning rocket fuel does work on the satellite (the engines' thrust acts on it through a distance), transferring energy from the fuel to the satellite's kinetic and gravitational potential energy; this energy input plays no part in (ii), which treats the satellite in its orbit as moving under the Sun's gravity alone, so the satellite's total energy in orbit differs from its total energy at launch.`,
   "phys-ocra-h556-2022-p2::16(a)(i)": `The wavelength of the wave is 2.0 cm.
 The two points are 2.5 − 1.5 = 1.0 cm apart, which is exactly half a wavelength.
 Phase difference φ = (path difference / λ) × 2π = (1.0/2.0) × 2π
