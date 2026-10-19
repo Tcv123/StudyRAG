@@ -292,6 +292,22 @@
         { id: 'T6', name: 'Advanced Organic & Analysis', sub: 'Aromatics, carbonyls, amines, polymers, NMR, IR' },
       ],
     },
+    'Chemistry_Edexcel|gcse': {
+      label: 'Chemistry — Edexcel (GCSE)',
+      emoji: '🧪',
+      page: 'diagnostics/chemistry-edexcel-gcse-diagnostic.html',
+      topics: [
+        { id: '1', name: 'Key Concepts in Chemistry', sub: 'Atoms, isotopes, periodic table, bonding, formulae, moles, empirical formula' },
+        { id: '2', name: 'States of Matter and Mixtures', sub: 'States, pure substances, separation, chromatography, water treatment' },
+        { id: '3', name: 'Chemical Changes', sub: 'Acids, alkalis, pH, neutralisation, salts, solubility, electrolysis' },
+        { id: '4', name: 'Extracting Metals and Equilibria', sub: 'Reactivity, oxidation/reduction, extraction, recycling, LCA, equilibria' },
+        { id: '5', name: 'Separate Chemistry 1', sub: 'Transition metals, alloys, corrosion, yield, atom economy, titration, cells' },
+        { id: '6', name: 'Groups in the Periodic Table', sub: 'Group 1, Group 7, Group 0, halogen displacement' },
+        { id: '7', name: 'Rates of Reaction and Energy Changes', sub: 'Rates, collision theory, catalysts, exo/endothermic, bond energies' },
+        { id: '8', name: 'Fuels and Earth Science', sub: 'Crude oil, alkanes, cracking, combustion, atmosphere, climate change' },
+        { id: '9', name: 'Separate Chemistry 2', sub: 'Ion tests, flame photometry, alkenes, alcohols, acids, polymers, nanoparticles' },
+      ],
+    },
     'Chemistry_OCR A': {
       label: 'Chemistry — OCR A',
       emoji: '🧪',

@@ -306,6 +306,17 @@
       { num: 'T5', name: 'Thermodynamics, Acids & Bases' },
       { num: 'T6', name: 'Advanced Organic & Analysis' },
     ],
+    'Chemistry|Edexcel|gcse': [
+      { num: '1', name: 'Key Concepts in Chemistry' },
+      { num: '2', name: 'States of Matter and Mixtures' },
+      { num: '3', name: 'Chemical Changes' },
+      { num: '4', name: 'Extracting Metals and Equilibria' },
+      { num: '5', name: 'Separate Chemistry 1' },
+      { num: '6', name: 'Groups in the Periodic Table' },
+      { num: '7', name: 'Rates of Reaction and Energy Changes' },
+      { num: '8', name: 'Fuels and Earth Science' },
+      { num: '9', name: 'Separate Chemistry 2' },
+    ],
     'Chemistry|OCR A': [
       { num: 'M1', name: 'Development of Practical Skills' },
       { num: 'M2', name: 'Foundations in Chemistry' },

@@ -139,6 +139,12 @@ const EXAM_DATES = {
     { paper: 'Paper 2 — Advanced Organic & Physical', date: '2026-06-09', time: 'AM', duration: '1h 45m' },
     { paper: 'Paper 3 — General & Practical', date: '2026-06-15', time: 'AM', duration: '2h 30m' },
   ],
+  // Edexcel 1CH0, from Pearson's FINAL GCSE Summer 2027 timetable
+  // (gcse-summer-2027final.pdf) — the by-date and by-subject tables agree.
+  'Chemistry_Edexcel|gcse': [
+    { paper: 'Paper 1 — Topics 1–5', date: '2027-05-17', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 2 — Topics 1, 6–9', date: '2027-06-15', time: 'AM', duration: '1h 45m' },
+  ],
   'Chemistry_OCR A': [
     { paper: 'Paper 1 — Periodic Table & Energy', date: '2026-06-02', time: 'AM', duration: '2h 15m' },
     { paper: 'Paper 2 — Synthesis & Analytical', date: '2026-06-09', time: 'AM', duration: '2h 15m' },
