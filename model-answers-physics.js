@@ -3756,7 +3756,7 @@ Advantages and disadvantages of having a scan to produce a bolus:
 Advantages: A CAT or PET scan gives a precise 3D map of the patient's body shape and internal anatomy, allowing a bolus to be 3D-printed that fits perfectly — ensuring the maximum radiation dose is accurately targeted to the skin cancer. This improves treatment efficacy and reduces dose to surrounding healthy tissue. The scan is taken only once and the bolus can be reused for multiple treatment sessions.
 
 Disadvantages: Both CAT and PET scans expose the patient to ionising radiation (X-rays for CAT; gamma rays from the radiotracer for PET), which itself carries a small risk of inducing cancer — adding to the radiation burden of the patient. PET scans additionally require injection of a radiotracer, which is invasive. The scans are expensive and require specialist equipment. The time delay between the scan and bolus manufacture must be considered if the patient's body shape changes (e.g. due to weight change or tumour response to treatment), potentially making the bolus less accurate.`,
-  "phys-ocra-h556-2024-p1::16(a)(i)": `The graph starts at v = 0 m s⁻¹ at t = 0 and increases with a decreasing gradient (curve becoming less steep). It then levels off at a horizontal plateau at v = 30 m s⁻¹. The value 30 m s⁻¹ should be marked on the vertical axis. The shape is concave down (like a square-root curve), rising steeply at first then flattening out as terminal velocity is reached.`,
+  "phys-ocra-h556-2024-p1::16(a)(i)": `The graph starts at v = 0 m s⁻¹ at t = 0 and increases with a decreasing gradient (curve becoming less steep). It then levels off at a horizontal plateau at v = 30 m s⁻¹. The value 30 m s⁻¹ should be marked on the vertical axis. The curve is steepest at t = 0 and becomes less and less steep, approaching 30 m s⁻¹ as the maximum speed is reached.`,
   "phys-ocra-h556-2024-p1::16(a)(ii)": `As the car accelerates down the slope, its speed increases. The resistive drag force F = kv² therefore increases as speed increases. The net (resultant) force acting on the car equals the component of weight down the slope minus the drag force. As the drag force grows, the net force decreases, so the acceleration decreases. Eventually, when the drag force equals the component of weight down the slope, the net force is zero and the acceleration is zero. The car therefore reaches a constant maximum speed (terminal velocity).`,
   "phys-ocra-h556-2024-p1::16(a)(iii)": `At the maximum speed the car is no longer accelerating, so the resultant force on it is zero: the total resistive force must equal the component of the car's weight acting down the slope.
 
@@ -3787,19 +3787,16 @@ maximum speed = 44 m s⁻¹ (using the rounded value k = 1 gives 42 m s⁻¹).`,
 Horizontal component: v_x = 50 cos 30° = 50 × 0.866 = 43.3 m s⁻¹ (in original direction of flow)
 Vertical component: v_y = 50 sin 30° = 50 × 0.500 = 25.0 m s⁻¹ (downward)`,
   "phys-ocra-h556-2024-p1::17(b)(ii)": `The airflow exerts a force on the model because the air's momentum changes as it flows around the model. By Newton's second law, the rate of change of momentum of the air equals the force the model exerts on the air. By Newton's third law, the model experiences an equal and opposite force. Since the air is deflected downward, the model exerts a downward force on the air, so the air exerts an upward (lift) force on the model.`,
-  "phys-ocra-h556-2024-p1::17(b)(iii)": `Initial horizontal momentum of air per second = 35 × 50 = 1750 kg m s⁻¹
-Final horizontal momentum per second = 35 × 43.3 = 1515.5 kg m s⁻¹
-Change in horizontal momentum per second = 1750 − 1515.5 = 234.5 N (horizontal force on air, backwards)
-
-Initial vertical momentum per second = 0
-Final vertical momentum per second = 35 × 25.0 = 875 kg m s⁻¹ (downward)
-Change in vertical momentum per second = 875 N (downward force on air)
-
-By Newton's third law, the vertical force on the model (lift) = 875 N upward.
-
-F = Δp/Δt = 35 × 50 × sin 30° = 35 × 25 = 875 N`,
-  "phys-ocra-h556-2024-p1::18(a)(i)": `When F = 6.0 N, h = 0.81 m. The natural (unloaded) length corresponds to h₀ = 1.80 m.
-Extension x = 1.80 − 0.81 = 0.99 m ≈ 0.99 m`,
+  "phys-ocra-h556-2024-p1::17(b)(iii)": `The lift force equals the rate of change of the vertical momentum of the air: F = Δp/Δt
+Before reaching the model the air moves horizontally, so its vertical velocity is 0.
+After being diverted, its vertical velocity is 50 sin 30° = 25 m s⁻¹ downwards (from (b)(i)).
+In Δt = 1 s, a mass of 35 kg of air is diverted, so its change in vertical momentum is
+Δp = 35 × (25 − 0) = 875 kg m s⁻¹ downwards
+F = Δp/Δt = 875 ÷ 1 = 875 N
+This is the downward force the model exerts on the air. By Newton's third law the air exerts an equal and opposite force on the model, so the lift is upwards.
+F ≈ 880 N`,
+  "phys-ocra-h556-2024-p1::18(a)(i)": `When F = 6.0 N, h = 0.81 m. With no load, h = 1.80 m. The extension is how far the base of the masses has moved down from this height:
+x = 1.80 − 0.81 = 0.99 m`,
   "phys-ocra-h556-2024-p1::18(a)(ii)": `Plot the missing point at x = 0.99 m, F = 6.0 N, marking it with a neat cross to within half a small square.
 
 Then draw two smooth curves through the points — not ruled straight lines joining point to point.
@@ -3809,14 +3806,14 @@ Loading curve: starts at the origin and passes through the points taken as the m
 Unloading curve: passes through the points taken as the masses were removed (x = 0.67, 0.53, 0.50, 0.46, 0.35 and 0.05 m), starting from the same point at 6.0 N and ending at x = 0.05 m when F = 0, so it does not return to the origin. For any given force the extension is larger than on the loading curve, so this curve lies below (to the right of) the loading curve, enclosing a hysteresis loop.
 
 Label the upper curve "loading" and the lower curve "unloading" (or put arrows on each curve showing the direction in which the readings were taken).`,
-  "phys-ocra-h556-2024-p1::18(a)(iii)": `Hooke's law requires that extension is directly proportional to the applied force (F ∝ x). The loading curve is not a straight line through the origin — at low forces (F = 1 to 3 N) the curve may be approximately linear, but at higher forces (F = 5 to 6 N) the extension increases much more rapidly, indicating non-linear behaviour. Furthermore, the loading and unloading curves are different (hysteresis), which is inconsistent with Hooke's law. Therefore Hooke's law cannot be applied to the cord over the full range measured.`,
+  "phys-ocra-h556-2024-p1::18(a)(iii)": `Hooke's law requires that extension is directly proportional to the applied force (F ∝ x). The loading curve is not a straight line through the origin — its gradient changes markedly, and between F = 5.0 N and 6.0 N the extension jumps from 0.45 m to 0.99 m — so F is not directly proportional to x (the stiffness k is not constant). Furthermore, the unloading curve does not return to the origin (x = 0.05 m when F = 0), so the cord has been permanently (plastically) deformed. Therefore Hooke's law cannot be applied to the cord over the full range measured.`,
   "phys-ocra-h556-2024-p1::18(a)(iv)1": `The joule (J). (The area under an F–x graph has units of N × m = J.)`,
   "phys-ocra-h556-2024-p1::18(a)(iv)2": `The area between the two curves is the energy transferred to the rubber during a loading–unloading cycle that is not given back when the rubber relaxes; it appears as an increase in the internal (thermal) energy of the rubber, which therefore warms up slightly each time it is used.
 
 This matters for the planned use because the rubber mat is there to absorb the energy of a heavy object that is dropped on it. The larger this area, the more of the object's kinetic energy is absorbed and dissipated by the rubber instead of being returned to the object, so the object rebounds far less. Because the object is brought to rest over a longer distance and its energy is absorbed, the force exerted on the object, and hence the force exerted on the floor, is smaller, so both the object and the floor are less likely to be damaged.`,
-  "phys-ocra-h556-2024-p1::18(b)": `1. The pulley is not frictionless. Some of the weight of the masses is used to overcome friction at the pulley, so the tension in the cord is no longer equal to the weight hung on the other side. Every value of F is then systematically too large, which shifts the whole graph.
+  "phys-ocra-h556-2024-p1::18(b)": `1. The pulley is not frictionless. Some of the weight of the masses is used to overcome friction at the pulley, so the tension in the section of cord between the pulley and the ground is no longer equal to the weight of the masses. The recorded values of F (the weights) therefore do not equal the actual tension stretching that part of the cord.
 
-2. The masses now hang from the pulley on a rope or string, and this is not perfectly inextensible. As the load is increased the rope stretches as well, so part of the measured change in h is not extension of the rubber cord, making the values of x too large.`,
+2. The pulley hangs from the ceiling on a support (rope) that is not perfectly inextensible. As the load is increased this support stretches and the pulley moves down, reducing h, so part of the measured change in h is not extension of the rubber cord, making the values of x too large.`,
   "phys-ocra-h556-2024-p1::19": `To determine the wavelength λ of a monochromatic laser pointer using a diffraction grating:
 
 Setup: Direct the laser beam perpendicularly at the diffraction grating. Set up a screen at a measured distance D from the grating (at least 1 m). The grating has a known number of lines per mm, N, so the grating spacing d = 1/N mm = 1/(N × 10³) m.
@@ -3830,8 +3827,10 @@ Improving accuracy:
 - Measure the position of the nth-order maximum on both sides of the central maximum and average the two y values.
 - Use higher orders of diffraction (n = 2, 3) where available to extend the range of the graph.
 - Take multiple readings and calculate a mean.
-- Ensure the laser is perpendicular to the grating (zero-order maximum is at same height as the laser).
-- Darken the room to make the maxima easier to locate precisely.`,
+- Ensure the laser beam is perpendicular to the grating (maxima of the same order should be equal distances either side of the central maximum).
+- Darken the room to make the maxima easier to locate precisely.
+
+Safety: never look into the laser beam or its reflections, and point the beam away from people.`,
   "phys-ocra-h556-2024-p1::20(a)(i)": `The internal energy of an ideal gas is the sum of the random kinetic energies of all the molecules/particles in the gas. (There is no potential energy contribution since ideal gas molecules have no intermolecular forces between them.)`,
   "phys-ocra-h556-2024-p1::20(a)(ii)": `From the kinetic theory equation: pV = ⅓ Nm⟨c²⟩, so p = ⅓ (N/V)m⟨c²⟩.
 From the ideal gas equation: pV = NkT, so p = NkT/V.
@@ -3850,8 +3849,8 @@ c_rms = √182 275 = 427 m s⁻¹ ≈ 430 m s⁻¹ (as required)`,
   "phys-ocra-h556-2024-p1::20(b)(ii)": `Using ½M_m c_rms² = (3/2)RT, where M_m is the molar mass:
 M_m = 3RT / c_rms²
 = (3 × 8.31 × 290) / (430²)
-= 7230.9 / 184 900
-= 0.03911 kg mol⁻¹
+= 7229.7 / 184 900
+= 0.03910 kg mol⁻¹
 ≈ 0.039 kg mol⁻¹ (39 g mol⁻¹)
 
 (This is consistent with argon, molar mass ≈ 40 g mol⁻¹.)`,
@@ -3861,8 +3860,8 @@ M_m = 3RT / c_rms²
 p₁/290 = 120 × 10³/2400
 p₁ = (120 × 10³ × 290) / 2400
 p₁ = 34 800 000 / 2400
-p₁ = 14 500 Pa = 1.45 × 10⁴ Pa`,
-  "phys-ocra-h556-2024-p1::21(a)(i)": `Wien's displacement law states λ_max T = 2.90 × 10⁻³ m K. From Fig. 21.1, the peak wavelength of the spectrum of Nu Persei is read off the graph. If λ_max ≈ 460 nm = 4.60 × 10⁻⁷ m:
+p₁ = 14 500 Pa = 14.5 kPa`,
+  "phys-ocra-h556-2024-p1::21(a)(i)": `Wien's displacement law states λ_max T = constant. For the Sun, λ_max T = 500 × 10⁻⁹ × 5800 = 2.90 × 10⁻³ m K. From Fig. 21.1, the peak of the curve for Nu Persei is just beyond the 450 nm mark, at λ_max ≈ 460 nm = 4.60 × 10⁻⁷ m, so
 T = 2.90 × 10⁻³ / 4.60 × 10⁻⁷ = 6304 K ≈ 6300 K (as required).`,
   "phys-ocra-h556-2024-p1::21(a)(ii)": `Treat Nu Persei as a sphere radiating as a black body, so its luminosity is given by the Stefan–Boltzmann law L = 4πr²σT⁴.
 
@@ -3891,11 +3890,11 @@ With L = 2.3 × 10²⁹ W and I = 6.4 × 10⁻¹⁰ W m⁻² from (b)(i):
 
 4π × 6.4 × 10⁻¹⁰ = 8.0 × 10⁻⁹
 r² = 2.3 × 10²⁹ ÷ 8.0 × 10⁻⁹ = 2.9 × 10³⁷ m²
-r = 5.4 × 10¹⁸ m
+r = 5.35 × 10¹⁸ m ≈ 5.4 × 10¹⁸ m
 
 One light year = 9.5 × 10¹⁵ m, so
 
-distance = 5.4 × 10¹⁸ ÷ 9.5 × 10¹⁵ = 5.6 × 10²
+distance = 5.35 × 10¹⁸ ÷ 9.5 × 10¹⁵ = 5.6 × 10²
 
 distance ≈ 560 light years`,
   "phys-ocra-h556-2024-p1::21(c)": `The luminosity used in (b)(ii) was not measured directly — it was read off the HR diagram using the surface temperature of 6300 K, and that is where most of the uncertainty comes from.
@@ -3905,7 +3904,7 @@ At 6300 K the main sequence on Fig. 21.2 is a broad band of points rather than a
 Because r = √(L ÷ 4πI), the distance depends on the square root of the luminosity, so the percentage uncertainty in the distance is only half the percentage uncertainty in the luminosity. Even so, a factor of ten in L still gives a factor of about √10 ≈ 3 in the distance.
 
 In addition, there is no guarantee that Nu Persei lies on the main sequence at all; a star at 6300 K could be a giant lying well above the band, which would make its luminosity, and therefore the calculated distance, much larger. The value found in (b)(ii) is therefore only an order-of-magnitude estimate.`,
-  "phys-ocra-h556-2024-p1::22(a)(i)": `One condition: the orbit must be in the equatorial plane of the Earth (directly above the equator), and the satellite must orbit in the same direction as the Earth's rotation (west to east) with an orbital period of exactly 24 hours.`,
+  "phys-ocra-h556-2024-p1::22(a)(i)": `The orbital period must be equal to the rotational period of the Earth (one day, about 24 hours).`,
   "phys-ocra-h556-2024-p1::22(a)(ii)": `For a circular orbit, gravitational force provides centripetal force:
 GMm/r² = mω²r
 GM = ω²r³
@@ -3916,8 +3915,8 @@ Period T = 24 hours = 24 × 3600 = 86 400 s
 
 r³ = (6.67 × 10⁻¹¹ × 6.0 × 10²⁴) / (7.272 × 10⁻⁵)²
 = (4.002 × 10¹⁴) / (5.288 × 10⁻⁹)
-= 7.569 × 10²²
-r = (7.569 × 10²²)^(1/3)
+= 7.568 × 10²²
+r = (7.568 × 10²²)^(1/3)
 = 4.23 × 10⁷ m (42 300 km)`,
   "phys-ocra-h556-2024-p1::22(b)(i)": `For a satellite in circular orbit of radius r around a planet of mass M:
 Gravitational force = centripetal force:
@@ -3958,9 +3957,9 @@ At altitude 10 000 m, aircraft has:
 - Total advantage ≈ 0.026 + 0.098 ≈ 0.124 MJ
 
 Evaluation:
-Advantage: Aircraft launch gives a small energy saving (~0.12 MJ = 0.3% of 35 MJ) and can be done from anywhere without a fixed ground launch site, offering more flexibility. It avoids the need for a fixed equatorial launch site. A smaller rocket is needed, reducing cost.
+Advantage: Aircraft launch gives a small energy saving (~0.12 MJ ≈ 0.4% of 35 MJ) and can be done from anywhere without a fixed ground launch site, offering more flexibility. It avoids the need for a fixed equatorial launch site. Slightly less rocket fuel is needed, since the aircraft has already supplied about 0.12 MJ per kg.
 
-Limitation: The energy savings are very small (less than 0.5% of the total energy needed), so the rocket must still provide over 34.9 MJ. The aircraft itself consumes fuel carrying the rocket. There are safety concerns about launching a rocket from an aircraft. The rocket also needs to be designed for air launch. The Earth's rotation benefit (0.106 MJ) is similarly very small. Neither strategy provides a significant energy saving — the dominant energy requirement (35 MJ) is from climbing against gravity and gaining orbital speed.`,
+Limitation: The energy savings are very small (less than 0.5% of the total energy needed), so the rocket must still provide about 34.9 MJ per kg. The aircraft itself consumes fuel carrying the rocket. An aircraft can only carry a small rocket, so this strategy is only suitable for small satellites. The Earth's rotation benefit (0.106 MJ) is similarly very small. Neither strategy provides a significant energy saving — the dominant energy requirement (35 MJ) is from climbing against gravity and gaining orbital speed.`,
   "phys-ocra-h556-2024-p1::23(a)": `The photon carries away the energy lost by the electron as it falls from level X to level Y.
 
 ΔE = E_X − E_Y = (−0.58 × 10⁻¹⁹) − (−5.42 × 10⁻¹⁹) = 4.84 × 10⁻¹⁹ J
@@ -3973,7 +3972,7 @@ Using E = hf = hc/λ and rearranging for the wavelength:
 = 4.11 × 10⁻⁷ m
 
 λ = 411 nm, i.e. about 410 nm as required.`,
-  "phys-ocra-h556-2024-p1::23(b)(i)": `The dark lines are absorption lines. The continuous spectrum of light from the hot stars at the centre of the galaxy passes through the cooler outer atmosphere of the stars (and gas clouds). Electrons in atoms in this cooler gas absorb photons of specific wavelengths, causing them to jump to higher energy levels. These specific wavelengths are therefore removed from the spectrum, producing dark absorption lines at those wavelengths. The pattern of dark lines is characteristic of the chemical elements present.`,
+  "phys-ocra-h556-2024-p1::23(b)(i)": `The dark lines are absorption lines. The continuous spectrum of light from the hot stars in the galaxy passes through the cooler outer atmosphere of the stars (and gas clouds). Electrons in atoms in this cooler gas absorb photons of specific wavelengths, causing them to jump to higher energy levels. These specific wavelengths are therefore removed from the spectrum, producing dark absorption lines at those wavelengths. The pattern of dark lines is characteristic of the chemical elements present.`,
   "phys-ocra-h556-2024-p1::23(b)(ii)": `The transition X→Y produces a rest wavelength λ₀ = 410 nm.
 The observed wavelength is λ = 432 nm.
 Redshift z = (λ − λ₀)/λ₀ = (432 − 410)/410 = 22/410 = 0.0537
