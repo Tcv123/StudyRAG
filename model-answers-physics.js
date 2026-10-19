@@ -1630,8 +1630,8 @@ x = D tan θ = 2.75 × tan(8.97°) = 2.75 × 0.1579 = 0.434 m = 43.4 cm
 
 The measured value of x = 43.5 cm.
 
-The expected value (43.4 cm) is very close to the measured value (43.5 cm). The difference is only 0.1 cm, which is within the precision of the metre rule (0.1 cm). Therefore the spacing of the diffraction pattern is consistent with d = 3.33 × 10⁻⁶ m and λ = 520 nm.`,
-  "phys-edexcel-9ph0-2023-p3::1(b)": `The student has used the wrong word for the instrument and has confused two different ideas.
+The expected value (43.4 cm) is very close to the measured value (43.5 cm). The difference is only 0.1 cm (about 0.2%), which is no more than the resolution of the metre rule (0.1 cm). Therefore the spacing of the diffraction pattern is consistent with d = 3.33 × 10⁻⁶ m and λ = 520 nm.`,
+  "phys-edexcel-9ph0-2023-p3::1(b)": `The student has used the wrong term for the property of the instrument and has confused precision with accuracy.
 
 A metre rule has a resolution of 0.1 cm — that is the smallest division on its scale — rather than a "precision" of 0.1 cm.
 
@@ -1661,7 +1661,7 @@ A larger current flows through the internal resistance, so the lost volts (Ir) i
 Although more current flows from the battery, less current flows through bulb 1 (because the terminal voltage is lower, and V = I₁R₁, so I₁ = V_terminal/R₁ which is lower than before). Therefore, bulb 1 becomes dimmer when the switch is closed.`,
   "phys-edexcel-9ph0-2023-p3::3(a)": `The milliammeter is not in series with the heater. It is in the branch containing the supply and the variable resistor, so it measures the total current drawn from the supply rather than the current in the heater; it should be connected in series with the heater itself.
 
-The meter is also a milliammeter, so its range is far too small: the student intends to use currents of up to 5 A, which is thousands of times its full-scale deflection, so the meter would simply be overloaded. An ammeter reading to at least 5 A is needed.`,
+The meter is also a milliammeter, so its range is far too small: the student intends to use currents of up to 5 A, which is far larger than the full-scale deflection of a milliammeter, so the meter would be overloaded. An ammeter reading to at least 5 A is needed.`,
   "phys-edexcel-9ph0-2023-p3::3(b)(i)": `Label the vertical axis "reading on balance / g" and the horizontal axis "time / s".
 
 Draw a single straight line sloping downwards from left to right, i.e. with a constant negative gradient: the heater transfers energy at a constant rate once the water is boiling, so water is vaporised at a constant rate and the reading on the balance falls steadily.
@@ -1677,7 +1677,7 @@ Specific latent heat: L = E/m = 18 144 / (7.5 × 10⁻³) = 2.42 × 10⁶ J kg�
 
 Most alpha particles passed straight through the foil with little or no deflection. This shows that atoms are mostly empty space — the nuclear model has a tiny, dense nucleus occupying only a small fraction of the atom's volume, with most of the atom being empty, through which alpha particles pass undeflected.
 
-A small fraction of alpha particles were deflected through large angles (greater than 90°). This shows that within the atom there is a very small, highly concentrated region of positive charge (the nucleus). When an alpha particle (also positively charged) travels close to this concentrated positive charge, the large electrostatic repulsion causes significant deflection. If charge were spread uniformly throughout the atom (as in the Thomson 'plum pudding' model), the repulsive force would be too weak and diffuse to cause large-angle deflections.
+Some alpha particles were deflected through small angles, and a very small fraction were deflected through large angles (greater than 90°). This shows that within the atom there is a very small, highly concentrated region of positive charge (the nucleus). When an alpha particle (also positively charged) travels close to this concentrated positive charge, the large electrostatic repulsion causes significant deflection. If charge were spread uniformly throughout the atom (as in the Thomson 'plum pudding' model), the repulsive force would be too weak and diffuse to cause large-angle deflections.
 
 A very small number of alpha particles were deflected almost straight back (close to 180°). This shows the nucleus is not only very small but also very massive — the alpha particle bounced back off a target much more massive than itself, similar to a ball bouncing off a heavy wall. This rules out a model where positive charge is spread throughout the atom.
 
@@ -1740,7 +1740,7 @@ For a mass oscillating on springs, T = 2π√(m/k), so
 k = 4π²m/T² = 4π² × 0.87 kg / (0.50 s)² = 137 N m⁻¹
 
 k = 140 N m⁻¹ (2 s.f.)`,
-  "phys-edexcel-9ph0-2023-p3::7(a)": `When there is an electric current between the electrodes, free electrons in the external circuit are accelerated through the potential difference between the electrodes. These electrons collide with neon atoms in the gas between the electrodes.
+  "phys-edexcel-9ph0-2023-p3::7(a)": `When there is an electric current between the electrodes, free electrons in the gas are accelerated between the electrodes by the potential difference across them; this movement of electrons between the electrodes is the current. These electrons collide with neon atoms in the gas between the electrodes.
 
 In these collisions, electrons transfer energy to the neon atoms, exciting (raising) the orbital electrons in the neon atoms from their ground state to higher energy levels. This process is called electron excitation.
 
@@ -1816,7 +1816,7 @@ Charge: q = mgd/V = (2.133 × 10⁻¹³ × 1.55 × 10⁻²) / 4870
 Dividing by e = 1.60 × 10⁻¹⁹ C:
 n = 6.79 × 10⁻¹⁹ / 1.60 × 10⁻¹⁹ = 4.24
 
-This is close to a whole number (4) but not exactly. The expected charge is a whole-number multiple of e, so q should be ≈ 4 × 1.60 × 10⁻¹⁹ = 6.40 × 10⁻¹⁹ C. The calculated value (6.79 × 10⁻¹⁹ C) is approximately 4e within the uncertainty of the measurement. Given the experimental uncertainties (particularly in measuring the radius r, since m ∝ r³, a small error in r causes a large error in m), this is broadly consistent with 4 electrons' worth of charge. The student's expectation is approximately confirmed, with n ≈ 4.`,
+This is close to a whole number (4) but not exactly. The expected charge is a whole-number multiple of e, so q should be ≈ 4 × 1.60 × 10⁻¹⁹ = 6.40 × 10⁻¹⁹ C. The calculated value (6.79 × 10⁻¹⁹ C) is about 6% larger than 4e, so the data do not give an exact whole-number multiple of e. However, m ∝ r³, so an uncertainty of only about 2% in the measured radius gives about 6% uncertainty in q. Taking experimental uncertainty into account, the data may therefore support the student's expectation, with n ≈ 4.`,
   "phys-edexcel-9ph0-2023-p3::9(b)(i)": `When the power supply is disconnected, the oil drop begins to fall under gravity. Initially the drop may not yet be moving at terminal velocity — it must accelerate from rest until the viscous drag force equals its weight. The student should wait until the drop has reached terminal velocity (i.e., constant velocity) before beginning to measure its speed. If measurements are taken too soon, the drop is still accelerating and the measured velocity will be less than the terminal velocity, giving an inaccurate result for the weight calculation.`,
   "phys-edexcel-9ph0-2023-p3::9(b)(ii)": `Read the two positions of the drop from the millimetre scale in the microscope view: the drop starts at 2.50 mm and finishes at 6.65 mm, so the distance fallen is
 
@@ -1829,7 +1829,7 @@ v = s/t = 4.15 × 10⁻³ m / 120 s = 3.46 × 10⁻⁵ m s⁻¹
 Terminal velocity = 3.5 × 10⁻⁵ m s⁻¹`,
   "phys-edexcel-9ph0-2023-p3::9(c)": `The tallest bars in the chart are at 1.6, 3.2, 4.8, 6.4 and 8.0 × 10⁻¹⁹ C. These are exactly 1e, 2e, 3e, 4e and 5e with e = 1.6 × 10⁻¹⁹ C, so the charges do tend to cluster at whole-number multiples of the charge on an electron, as the student predicted.
 
-However, those five bars contain only 5 + 4 + 6 + 5 + 4 = 24 of the 50 drops. The remaining 26 drops — just over half of them — have charges that are not whole-number multiples of e, and there are drops in almost every interval across the chart.
+However, those five bars contain only 5 + 4 + 6 + 5 + 4 = 24 of the 50 drops. The remaining 26 drops — just over half of them — have charges that are not whole-number multiples of e, and there are drops in every interval across the chart.
 
 The bar chart therefore supports the prediction only partly: the peaks fall where the student predicts, but with fewer than half of the drops at integer multiples of e the evidence is inconclusive. The spread of the other values suggests a large experimental uncertainty in each calculated charge, mainly because the charge depends on the cube of the measured radius of the drop.`,
   "phys-edexcel-9ph0-2023-p3::10(a)(i)": `Using T = 2π√(l/g):
@@ -1839,7 +1839,7 @@ T = 2.50 s
 Rearranging: l = g(T/2π)² = 9.81 × (2.50/(2π))² = 9.81 × (0.3979)² = 9.81 × 0.1583 = 1.553 m
 
 l ≈ 1.55 m`,
-  "phys-edexcel-9ph0-2023-p3::10(a)(ii)": `The amplitude of oscillation did not stay constant because the pendulum experiences resistive (damping) forces as it oscillates. Air resistance (drag) acts on the bob and string, opposing the motion. This resistive force removes energy from the oscillating system, converting kinetic and potential energy into thermal (heat) energy in the air and the string. As energy is removed, the amplitude decreases over time — this is called damping. With each successive swing, slightly less energy remains in the system, so the pendulum swings through a smaller angle.`,
+  "phys-edexcel-9ph0-2023-p3::10(a)(ii)": `The amplitude of oscillation did not stay constant because the pendulum experiences resistive (damping) forces as it oscillates. Air resistance (drag) acts on the bob and string, opposing the motion. Work is done against this resistive force, which removes energy from the oscillating system, converting kinetic and potential energy into thermal (heat) energy in the air and the string. As energy is removed, the amplitude decreases over time — this is called damping. With each successive swing, slightly less energy remains in the system, so the pendulum swings through a smaller angle.`,
   "phys-edexcel-9ph0-2023-p3::10(b)(i)": `The relationship is A = A₀ e^(−kt/T).
 
 Taking the natural logarithm of both sides:
@@ -1861,27 +1861,28 @@ Choose sensible scales that spread the points over more than half of each axis �
 Plot each point to within half a small square and draw a single thin straight best-fit line through them; the points lie very close to a straight line of negative gradient.`,
   "phys-edexcel-9ph0-2023-p3::10(b)(iii)": `From the graph of ln A against t:
 
-Gradient = (Δ ln A)/(Δt) = (2.028 − 2.867)/(12.5 − 2.5) = −0.839/10.0 = −0.0839 s⁻¹
+Using two well-separated points on the best-fit line, (2.5 s, 2.868) and (12.5 s, 2.028):
+Gradient = (Δ ln A)/(Δt) = (2.028 − 2.868)/(12.5 − 2.5) = −0.840/10.0 = −0.0840 s⁻¹
 
 Since gradient = −k/T and T = 2.50 s:
-k = −gradient × T = 0.0839 × 2.50 = 0.210
+k = −gradient × T = 0.0840 × 2.50 = 0.210
 
 Y-intercept: when t = 0, ln A = ln A₀.
 Extrapolating the best-fit line to t = 0:
-ln A₀ = 2.867 − (gradient × 2.5) = 2.867 + 0.0839 × 2.5 = 2.867 + 0.210 = 3.077
+ln A₀ = 2.868 − (gradient × 2.5) = 2.868 + 0.0840 × 2.5 = 2.868 + 0.210 = 3.078
 (Or read directly from the y-axis intercept of the best-fit line.)
 
-A₀ = e^3.077 = 21.7 cm ≈ 22 cm
+A₀ = e^3.078 = 21.7 cm ≈ 22 cm
 
 So: A₀ ≈ 22 cm and k ≈ 0.21`,
   "phys-edexcel-9ph0-2023-p3::11(a)": `A half metre rule has a resolution of 1 mm.
 
-That is acceptable for the diameters, which are several centimetres, but it is not suitable for measuring the thickness t, which is only about 4 mm: an uncertainty of at least ±0.5 mm in a reading of 4 mm is a percentage uncertainty of more than 10%, which is far too large when this value is used to find the volume.
+The percentage uncertainty is smaller for the diameters, which are several centimetres, but the rule is not suitable for measuring the thickness t, which is only about 4 mm: an uncertainty of at least ±0.5 mm in a reading of 4 mm is a percentage uncertainty of more than 10%, which is far too large when this value is used to find the volume.
 
 She should measure the washer with vernier callipers, which have a resolution of 0.1 mm, or better with digital callipers or a micrometer, which have a resolution of 0.01 mm; the percentage uncertainty in t would then be well below 1%.`,
   "phys-edexcel-9ph0-2023-p3::11(b)": `To obtain a more accurate mean value for t (the thickness of a washer):
 
-The student should measure the thickness of all five washers together in a stack, then divide by 5 to get the mean thickness per washer. This means only one pair of readings is taken across the stack of 5 washers, so the absolute uncertainty in the total thickness (from the instrument's precision) is spread across 5 washers, giving a much smaller uncertainty per washer.
+The student should measure the thickness of all five washers together in a stack, then divide by 5 to get the mean thickness per washer. This means only one pair of readings is taken across the stack of 5 washers, so the absolute uncertainty in the total thickness (from the instrument's resolution) is spread across 5 washers, giving a much smaller uncertainty per washer. Measuring the larger distance reduces the percentage uncertainty in t.
 
 For example, if the uncertainty in a single thickness measurement is ±0.05 mm, measuring a stack of 5 gives an uncertainty of ±0.05 mm in the total of 5t, so the uncertainty per washer is ±0.01 mm — 5 times smaller than measuring individually.`,
   "phys-edexcel-9ph0-2023-p3::11(c)(i)": `The area formula is A = (π/4)(d₁ + d₂)(d₁ − d₂).
@@ -1890,15 +1891,14 @@ Let u = d₁ + d₂ and v = d₁ − d₂.
 Then A = (π/4)uv.
 
 Percentage uncertainty in u = (d₁ + d₂):
-Δu = √(Δd₁² + Δd₂²) = √(0.02² + 0.02²) = √(0.0008) = 0.0283 cm
-(or using addition in quadrature; simpler: Δu = 0.02 + 0.02 = 0.04 cm for worst case)
+Uncertainties add for a sum: Δu = Δd₁ + Δd₂ = 0.02 + 0.02 = 0.04 cm
 %u = 0.04/(4.52 + 2.53) × 100% = 0.04/7.05 × 100% = 0.57%
 
 Percentage uncertainty in v = (d₁ − d₂):
 Δv = 0.02 + 0.02 = 0.04 cm
 %v = 0.04/(4.52 − 2.53) × 100% = 0.04/1.99 × 100% = 2.01%
 
-Percentage uncertainty in A = %u + %v = 0.57% + 2.01% = 2.58% ≈ 3% ✓
+Percentage uncertainty in A = %u + %v = 0.57% + 2.01% = 2.6% ≈ 3%
 
 The dominant source of uncertainty is in (d₁ − d₂), since it is a small difference of two nearly equal quantities.`,
   "phys-edexcel-9ph0-2023-p3::11(c)(ii)": `Mean thickness:
