@@ -24,7 +24,7 @@ The change in energy level responsible for line E is approximately 2.11 eV.`,
 
 In an absorption spectrum, white light (containing all frequencies) passes through a cool gas. Electrons absorb photons whose energies exactly match the difference between energy levels, exciting electrons to higher levels. The photons of these specific frequencies are removed from the transmitted light, producing dark lines at the same discrete frequencies on a continuous spectrum. Both spectra have lines at the same frequencies because the energy level differences are the same.`,
   "phys-aqa-7408-2022-p1::02.1": `In β⁻ decay, a down quark changes into an up quark (d → u).`,
-  "phys-aqa-7408-2022-p1::02.2": `If only an electron were emitted in β⁻ decay, conservation of momentum and energy would require that all electrons have the same fixed kinetic energy (since the products are the recoiling nucleus and one electron). However, Figure 2 shows a continuous spectrum of kinetic energies for the β⁻ particles, ranging from zero up to a maximum value. This means energy is shared between the electron and another particle — the antineutrino (ν̄ₑ) — in varying proportions. The antineutrino carries the 'missing' energy and momentum, supporting its existence.`,
+  "phys-aqa-7408-2022-p1::02.2": `If only an electron were emitted in β⁻ decay, conservation of momentum and energy would require that all electrons have the same fixed kinetic energy (since the products are the recoiling nucleus and one electron). However, Figure 2 shows a continuous spectrum of kinetic energies for the β⁻ particles, ranging from zero up to a maximum value. Since the total energy released in each decay is fixed, this means energy is shared between the electron and another particle — the antineutrino (ν̄ₑ) — in varying proportions. The antineutrino carries the 'missing' energy and momentum, supporting its existence.`,
   "phys-aqa-7408-2022-p1::02.3": `Particle X is a neutron.
 
 Charge is conserved: 0 + (+1) on the left must equal (+1) + charge of X, so X is neutral. Baryon number is conserved: 0 + 1 on the left must equal 0 + baryon number of X, so X is a baryon. (Lepton number also balances: −1 on the left, −1 for the positron, so X has lepton number 0.) The only neutral baryon here is the neutron.`,
@@ -46,7 +46,7 @@ Volume of A = πr²L = π × (2.4 × 10⁻²)² × 0.23 = 4.16 × 10⁻⁴ m³
 
 If A were made of brass: mass = ρV = 8.6 × 10³ × 4.16 × 10⁻⁴ = 3.58 kg, so its weight would be 3.58 × 9.81 = 35 N.
 
-This is exactly the weight given for A, so A is made of brass. (The same volume of iron would weigh 7.8 × 10³ × 4.16 × 10⁻⁴ × 9.81 = 32 N and of concrete only 9.8 N, so neither of those fits.)`,
+This matches the weight given for A, so A is made of brass. (The same volume of iron would weigh 7.8 × 10³ × 4.16 × 10⁻⁴ × 9.81 = 32 N and of concrete only 9.8 N, so neither of those fits.)`,
   "phys-aqa-7408-2022-p1::03.2": `Pulleys P and M are frictionless and M is weightless, so the tension throughout the rope equals the weight of A, 35 N. Both sections of rope at M make an angle of 55° with the horizontal, so each pulls on M with a horizontal component of
 
 35 cos 55° = 20.1 N
@@ -70,7 +70,7 @@ The moment of the tension about the hinge is 8.1 N m.`,
 1. Increase the tension in cable C: This could be achieved by using a heavier counterweight A. A greater weight of A increases the tension in the rope, which (by the pulley arrangement) increases the tension in cable C. A greater tension, with the same geometry, produces a greater moment (moment = F × d).
 
 2. Increase the perpendicular distance from the hinge to the line of action of cable C: This could be done by moving the attachment point D further from the hinge (increasing the distance along the gate), or by changing the angle at which cable C meets the gate so that the perpendicular distance is larger. For example, repositioning pulley R so that cable C approaches the gate at a larger angle (closer to 90°) to the gate would maximise the perpendicular distance and hence the moment.`,
-  "phys-aqa-7408-2022-p1::04.1": `R = V²/P = (6.2)²/4.5 = 38.44/4.5 = 8.54 Ω ≈ 9 Ω ✓`,
+  "phys-aqa-7408-2022-p1::04.1": `R = V²/P = (6.2)²/4.5 = 38.44/4.5 = 8.54 Ω ≈ 9 Ω`,
   "phys-aqa-7408-2022-p1::04.2": `Resistance of the lamp at its working pd: R = V²/P = 6.2²/4.5 = 8.54 Ω
 
 Current in the lamp: I = V/R = 6.2/8.54 = 0.73 A
@@ -78,7 +78,7 @@ Current in the 12 Ω resistor: I = 6.2/12 = 0.52 A
 
 The lamp and the resistor are in parallel across the battery terminals, so the total current drawn from the battery is
 
-I = 0.73 + 0.52 = 1.24 A
+I = 0.726 + 0.517 = 1.24 A
 
 emf = terminal pd + Ir = 6.2 + (1.24 × 2.5) = 6.2 + 3.1 = 9.3 V`,
   "phys-aqa-7408-2022-p1::04.3": `Resistivity ρ = RA/L
@@ -122,7 +122,7 @@ The length of the simple pendulum is 1.55 m.`,
   "phys-aqa-7408-2022-p1::05.6": `Amplitude: air resistance damps the pendulum, so the pendulum's oscillations lose energy and its amplitude falls. The block is driven by the turntable and keeps a constant amplitude, so the amplitude of the pendulum's shadow becomes smaller than the amplitude of the block's shadow.
 
 Phase: as the amplitude of the pendulum falls its time period changes slightly (its frequency increases), while the block's period stays fixed at 2.50 s. The two shadows therefore no longer complete their oscillations in step, so the phase difference between them changes and they gradually drift out of phase.`,
-  "phys-aqa-7408-2022-p1::06.1": `When light travels from a denser medium to a less dense medium, it bends away from the normal (the refracted ray makes a larger angle with the normal than the incident ray). From Figure 12, the ray bends away from the normal as it crosses from A into B, meaning the ray speeds up — so the speed of light in B is greater than in A. Since refractive index n = c/v_medium, a higher speed corresponds to a lower refractive index. Therefore the refractive index of A (higher n, slower light) is greater than the refractive index of B (lower n, faster light).`,
+  "phys-aqa-7408-2022-p1::06.1": `When light travels from an optically denser medium to an optically less dense medium, it bends away from the normal (the refracted ray makes a larger angle with the normal than the incident ray). From Figure 12, the ray bends away from the normal as it crosses from A into B, meaning the ray speeds up — so the speed of light in B is greater than in A. Since refractive index n = c/v_medium, a higher speed corresponds to a lower refractive index. Therefore the refractive index of A (higher n, slower light) is greater than the refractive index of B (lower n, faster light).`,
   "phys-aqa-7408-2022-p1::06.2": `Inside A the ray runs parallel to the bottom face of the block. The A–B boundary makes an angle of 43° with that face, so the normal to the boundary makes 43° with the vertical and the angle of incidence at the boundary is
 
 i = 90° − 43° = 47°
@@ -147,7 +147,7 @@ i = 90° − 14.4° = 75.6° ≈ 76°
 
 Since 76° is greater than the critical angle of 48°, the ray is totally internally reflected at P.
 
-To draw it: from P draw a straight ray back up into B, on the other side of the (vertical) normal at P and at the same 76° to that normal — i.e. travelling up and to the right, rising only about 14° above the horizontal — continuing until it reaches the top surface of the block (roughly beneath the "not to scale" label).`,
+To draw it: from P draw a straight ray back up into B, on the other side of the (vertical) normal at P and at the same 76° to that normal — i.e. travelling up and to the right, rising only about 14° above the horizontal — continuing until it meets the right-hand vertical face of the block, at about the height of the "not to scale" label.`,
   "phys-aqa-7408-2022-p2::01.1": `Energy needed to raise the temperature of the plate:
 
 Q = mcΔθ = 1.2 × 450 × (125 − 20) = 1.2 × 450 × 105 = 5.67 × 10⁴ J
