@@ -4445,16 +4445,16 @@ The journey time is for the round trip, so the distance to the spacecraft is hal
 ½ × 0.022 × 3.00 × 10⁸ = 3.3 × 10⁶ m.
 That extra distance is covered in the 1800.00 s between the pulses, so
 v = 3.3 × 10⁶ / 1800.00 = 1.83 × 10³ m s⁻¹ (about 1830 m s⁻¹).`,
-  "phys-ocrb-h557-2022-p1::34(a)": `Shaded area: the area under a graph of charge against p.d. is the sum of VΔQ, which is the work done in moving charge onto the capacitor — that is, the energy transferred to the capacitor. The shaded strip runs from V = 0.4 V to V = 1.2 V, where the charge rises from 1.7 mC to 5.0 mC, so it represents the energy stored as the p.d. is raised from 0.4 V to 1.2 V. Using E = ½QV at each end:
+  "phys-ocrb-h557-2022-p1::34(a)": `Shaded area: because the line is straight and passes through the origin, the area under it from 0 to a p.d. V is ½QV, which is the energy stored when charge Q has been moved onto the capacitor (the work done ΣVΔQ). The shaded area is the difference between ½QV at its two edges, i.e. the energy transferred to the capacitor. The shaded strip runs from V = 0.4 V to V = 1.2 V, where the charge rises from 1.7 mC to 5.0 mC, so it represents the energy stored as the p.d. is raised from 0.4 V to 1.2 V. Using E = ½QV at each end:
 E = ½ × 5.0 × 10⁻³ × 1.2 − ½ × 1.7 × 10⁻³ × 0.4 = 3.0 × 10⁻³ − 0.34 × 10⁻³ = 2.7 × 10⁻³ J.
 Gradient: the gradient of the line is Q/V, and capacitance is defined by C = Q/V, so the gradient of this graph is the capacitance of the capacitor. The line is straight and passes through the origin, showing that C is constant; here C = 5.0 × 10⁻³/1.2 ≈ 4.2 × 10⁻³ F.`,
-  "phys-ocrb-h557-2022-p1::34(b)": `The equation ΔQ = −(Q/RC)Δt gives the small change in charge ΔQ on the capacitor in a short time interval Δt. The method is as follows:
+  "phys-ocrb-h557-2022-p1::34(b)": `Rearranging the equation ΔQ/Δt = −Q/RC gives ΔQ = −(Q/RC)Δt, the small change in charge ΔQ on the capacitor in a short time interval Δt. The method is as follows:
 
 1. Start with the initial charge Q₀ at t = 0.
 2. Calculate ΔQ = −(Q/RC)Δt using the current value of Q.
 3. Update: Q_new = Q + ΔQ (the charge decreases because ΔQ is negative).
 4. Increment time: t_new = t + Δt.
-5. Repeat steps 2–4 using Q_new as the new value of Q.
+5. Repeat steps 2–4 using Q_new as the new value of Q, until the total time reaches t.
 
 By repeating this process many times with a small Δt, the charge at any time t can be built up iteratively. The smaller Δt is chosen, the more accurate the result, as the approximation that Q is constant within each interval becomes better. The graph of Q against t will trace out an exponential decay, approximating Q = Q₀ e^(−t/RC).`,
   "phys-ocrb-h557-2022-p1::35(a)": `Method: if E ∝ 1/r² then the product E × r² must be the same for every row of the table. Working it out for each pair of values:
@@ -4462,14 +4462,22 @@ r = 0.20 m: Er² = 5.6 × 10⁵ × 0.20² = 2.24 × 10⁴
 r = 0.30 m: Er² = 2.5 × 10⁵ × 0.30² = 2.25 × 10⁴
 r = 0.40 m: Er² = 1.4 × 10⁵ × 0.40² = 2.24 × 10⁴
 The three values are the same to within the precision of the data, so Er² = constant, i.e. E = constant/r² and the field strength is inversely proportional to the square of the distance from the centre of the charge.`,
-  "phys-ocrb-h557-2022-p1::35(b)": `Electric field strength E ∝ 1/r², so E falls off rapidly with distance. Electric potential V ∝ 1/r, so V falls off more gradually. This is because V is related to E by V = ∫E dr; integrating 1/r² gives 1/r, which decreases more slowly.
+  "phys-ocrb-h557-2022-p1::35(b)": `Electric field strength E ∝ 1/r², so E falls off rapidly with distance. Electric potential V ∝ 1/r, so V falls off more gradually. This is because E = −dV/dr, so the potential at distance r is the integral of E from r out to infinity; integrating 1/r² gives 1/r, which decreases more slowly.
 
 Arithmetical example: If r doubles (say from 1 m to 2 m), E decreases by a factor of 4 (from E to E/4), whereas V decreases by only a factor of 2 (from V to V/2). So the potential drops to half its value while the field drops to a quarter of its value over the same distance change. This means V decreases more gradually than E with increasing distance.`,
-  "phys-ocrb-h557-2022-p1::36(a)": `From the diagrams, light travels in medium 1 at speed c₁ and in medium 2 at speed c₂. In time t, the wavefront in medium 1 travels a distance c₁t = AB sin i (where AB is the length along the boundary) and in medium 2 travels c₂t = AB sin r. Therefore:
+  "phys-ocrb-h557-2022-p1::36(a)": `In Fig. 36.1, x is the distance along the boundary between the two points where the wavefronts meet the boundary. The angle between a wavefront and the boundary equals the angle between the ray and the normal (wavefronts are perpendicular to rays, and the boundary is perpendicular to the normal), so these are the angles i and r of Fig. 36.2.
 
-sin i / sin r = c₁t / c₂t = c₁ / c₂
+Medium 1: the right-angled triangle above the boundary has hypotenuse x, angle i, and side c₁Δt opposite i (the distance a wavefront travels in medium 1 in time Δt). So:
+sin i = c₁Δt / x
 
-Hence sin i / sin r = c₁ / c₂. □`,
+Medium 2: the right-angled triangle below the boundary has the same hypotenuse x, angle r, and side c₂Δt opposite r (the distance a wavefront travels in medium 2 in time Δt). So:
+sin r = c₂Δt / x
+
+Dividing:
+sin i / sin r = (c₁Δt / x) / (c₂Δt / x)
+
+Δt and x cancel, so:
+sin i / sin r = c₁ / c₂`,
   "phys-ocrb-h557-2022-p1::36(b)": `Apply Snell's law at each interface, noting that as light passes from air into glass and then from glass into water, the relevant refractive indices apply. Using sin i / sin r = c₁/c₂ and noting that at each boundary the ratio of sines equals the ratio of speeds:
 
 For the air–glass interface: sin 30° / sin r_g = c_air / c_glass = 3.00×10⁸ / 1.99×10⁸
@@ -4490,7 +4498,7 @@ Refractive index of the glass block = 1.5 ± 0.3.`,
 Top speed: 300 km h⁻¹ = 300000/3600 = 83.33 m s⁻¹
 
 Using v = u + at with u = 0:
-t = v/a = 83.33 / 0.5278 ≈ 158 s ≈ 160 s ✓`,
+t = v/a = 83.33 / 0.5278 ≈ 158 s, which is about 160 s.`,
   "phys-ocrb-h557-2022-p1::37(a)(ii)": `Work done during acceleration = change in kinetic energy (ignoring friction as stated):
 Ek = ½mv² = ½ × 7.15×10⁵ × (83.33)² = ½ × 7.15×10⁵ × 6944 = 2.483×10⁹ J
 
@@ -4501,37 +4509,38 @@ F_D = ½ × C_D × A × ρ × v² = ½ × 1.5 × 13.5 × 1.2 × (83.33)²
 = ½ × 168 750 = 84 375 N
 
 Power = F_D × v = 84 375 × 83.33 ≈ 7.03×10⁶ W ≈ 7.0×10⁶ W (2 s.f.)`,
-  "phys-ocrb-h557-2022-p1::37(b)(ii)": `Estimate of passenger mass: Average mass per passenger ≈ 70 kg (must state estimate clearly)
+  "phys-ocrb-h557-2022-p1::37(b)(ii)": `Estimate of passenger mass: Estimated average mass per passenger ≈ 70 kg
 Total passenger mass = 1300 × 70 = 91 000 kg = 9.1×10⁴ kg
 Total mass (full) = 7.15×10⁵ + 9.1×10⁴ = 8.06×10⁵ kg
 
 Acceleration of full train:
 From F = ma with the same driving force F = m_empty × a_empty = 7.15×10⁵ × 0.5278 = 3.77×10⁵ N
-a_full = F / m_full = 3.77×10⁵ / 8.06×10⁵ ≈ 0.468 m s⁻² = 1.68 km h⁻¹ s⁻¹
+a_full = F / m_full = 3.77×10⁵ / 8.06×10⁵ ≈ 0.468 m s⁻² = 1.69 km h⁻¹ s⁻¹
 
 This is about 11–12% less than 1.9 km h⁻¹ s⁻¹, so the train accelerates noticeably more slowly when full.
 
 Effect on power to maintain 300 km/h against drag:
-The drag force F_D = ½C_D A ρ v² depends on v and the cross-sectional area A. The passengers do not significantly change A (they are inside the train), so the drag force at 300 km/h is unchanged. Therefore the power required to overcome air drag is the same (≈7.0 MW) whether the train is full or empty.
+The drag force F_D = ½ρC_D A v² depends only on ρ, C_D, A and v; the mass of the train does not appear in it. The passengers are inside the train and do not change the shape or cross-sectional area of its face, so at 300 km/h the drag force is unchanged. The power needed is P = F_D v, and since F_D and v are both unchanged, the power required to overcome air drag is the same (≈ 7.0 × 10⁶ W) whether the train is full or empty.
 
 Passing through a narrow tunnel:
-In a narrow tunnel, the air cannot flow freely around the train; it is forced through the gap between train and tunnel walls. This reduces the effective area available for airflow, greatly increasing the aerodynamic resistance (ram effect / piston effect). The drag force increases substantially, so a much greater power is required to maintain 300 km/h. The closer the tunnel walls are to the train (smaller gap), the larger this additional drag.`,
+In a narrow tunnel the air cannot flow around the train as easily; it has to be pushed through the small gap between the train and the tunnel walls. Air builds up in front of the train, so the pressure and density of the air meeting the face of the train increase, while the pressure behind the train falls, and there is more turbulence. Since F_D = ½ρC_D A v², a greater air density (and in effect a greater drag coefficient) gives a greater drag force at the same speed. To keep a constant 300 km/h the driving force must match this larger drag, and since P = F_D v with v unchanged, the power required increases. The narrower the gap between train and tunnel, the larger this effect.`,
   "phys-ocrb-h557-2022-p1::38(a)": `Procedure to determine absolute zero:
 1. Set up the capillary tube vertically in the water bath with the sealed end at the bottom and the liquid index trapping a column of air above the seal.
 2. Measure the length L of the trapped air column using the rule alongside the tube.
 3. Record the temperature T (in °C) using the thermometer in the water bath.
 4. Heat (or cool) the water bath to different temperatures and record L at each temperature.
-5. Plot a graph of L against T (°C). Since pressure is constant (column of air is open via the index), V ∝ T (K), so L ∝ T (K). The graph is linear.
+5. Plot a graph of L against T (°C). The top of the tube is open, so the trapped air stays at constant pressure (atmospheric pressure plus the small pressure of the index). By Charles' law V ∝ T in kelvin, so L ∝ T (K) and the graph of L against T in °C is a straight line.
 6. Extrapolate the straight line back to L = 0. The temperature at which L = 0 is absolute zero in degrees Celsius.
 
 Why constant bore is necessary: The volume of trapped gas V = A × L, where A is the cross-sectional area of the bore. If A is constant throughout, then V ∝ L and the length is a direct measure of volume. If A varies, L would not be proportional to V, invalidating the method.
 
 Sources of uncertainty and how to reduce them:
-- Reading the position of the liquid index against the rule: use a set square to avoid parallax errors; take multiple readings.
-- Temperature not being uniform throughout the tube: stir the water bath frequently and allow time to reach thermal equilibrium before recording.
-- The index itself occupying a length of tube: keep the index as short as possible.
+- Temperature: the method assumes the trapped air is at the temperature of the water. Stir the bath, change its temperature slowly and wait for thermal equilibrium before each reading. Use a thermometer with finer resolution (or a digital probe and data logger) so that T is read more precisely.
+- Length: the column is read against a rule through the water and the glass, so parallax is a problem. Keep the rule vertical and close alongside the tube, read with the eye level with the bottom of the index, and use a hand lens or travelling microscope. A longer air column reduces the percentage uncertainty in L.
+- The glass expands as it is heated, which changes the bore slightly. A thin-walled tube and a moderate temperature range reduce this systematic error.
+- Take readings over as wide a temperature range as possible so that the long extrapolation to L = 0 is better defined.
 
-Why trapped air will not give an accurate value of absolute zero: Air is not an ideal gas. At very low temperatures, air starts to liquify (oxygen liquifies at 90 K, nitrogen at 77 K), so the gas-law extrapolation breaks down before absolute zero is reached. Even above these temperatures, intermolecular forces cause deviations from ideal gas behaviour, so the straight line will curve and the extrapolated intercept will not be exactly 0 K.`,
+Why trapped air will not give an accurate value of absolute zero: the method assumes an ideal gas, but air is a real gas. Its molecules have a finite volume and attract one another, so its volume is not exactly proportional to absolute temperature. Extrapolating the measured line to zero volume therefore does not give exactly the true absolute zero (−273 °C).`,
   "phys-ocrb-h557-2022-p1::38(b)(i)": `Using the ideal gas law: pV = nRT
 V = L × A = L × 5.0×10⁻³ m²
 p = 1.0×10⁵ Pa, n = 0.24 mol, T = 298 K, R = 8.31 J mol⁻¹ K⁻¹
@@ -4570,9 +4579,9 @@ Number of fissions required:
 N_fissions = E / E_per_fission = 4.48×10¹⁶ / 3.20×10⁻¹¹ = 1.40×10²⁷
 
 Mass of ²³⁴U:
-m = N_fissions × m_atom = 1.40×10²⁷ × 3.89×10⁻²⁵ = 545 kg ≈ 540 kg (2 s.f.)`,
+m = N_fissions × m_atom = 1.40×10²⁷ × 3.89×10⁻²⁵ = 544.6 kg ≈ 540 kg (2 s.f.)`,
   "phys-ocrb-h557-2022-p1::39(c)": `Energy needed per second = 1400 MJ = 1.4×10⁹ J
-Energy per fission = 3.20×10⁻¹¹ J (from above)
+Energy per fission = 200 MeV = 200 × 1.60×10⁻¹³ J = 3.20×10⁻¹¹ J
 Number of ²³⁴U nuclei needed = 1.4×10⁹ / 3.20×10⁻¹¹ = 4.375×10¹⁹
 
 These ²³⁴U nuclei must come from decay of ²³³Pa. The decay rate ΔN/Δt = λN gives the number of ²³³Pa that decay per second:
@@ -4583,12 +4592,12 @@ N(Pa) = (ΔN/Δt) / λ = 4.375×10¹⁹ / 4.33×10⁻⁴ = 1.010×10²³
 
 Mass of ²³³Pa = N × m_atom = 1.010×10²³ × 3.87×10⁻²⁵ = 3.91×10⁻² kg ≈ 39 g
 
-This is a minimum value because: not every ²³³Pa nucleus that decays will produce a ²³⁴U nucleus that undergoes fission in time (some may not be irradiated by neutrons), and losses occur at every stage of the reaction chain. In practice, more ²³³Pa is required to account for these inefficiencies.`,
+This is a minimum value because the calculation assumes that every ²³³Pa nucleus that decays in that second gives a ²³³U nucleus that captures a neutron in the same second, and that every ²³⁴U nucleus formed undergoes fission in the same second. In practice some ²³³U does not capture a neutron (or not straight away) and some ²³⁴U does not undergo fission in that time, so more ²³³Pa would be needed.`,
   "phys-ocrb-h557-2022-p1::40(a)": `Wave-like properties: The electrons form a diffraction pattern (alternating bright and dark fringes/bands) when passed through the two gaps. Diffraction and interference are wave phenomena — the pattern can only be explained if the electrons behave as waves that spread out and superpose, producing constructive and destructive interference.
 
 Particle-like properties: Individual electrons arrive at the detector as discrete, localised events — each electron produces a single spot (flash) at one position. The pattern builds up statistically from many individual particle arrivals, not as a continuous wave. This shows electrons behave as particles when detected.`,
-  "phys-ocrb-h557-2022-p1::40(b)(i)": `At each point the two phasors have already been drawn head to tail. The resultant is the single arrow that closes the triangle: draw a straight line from the tail of the first phasor (the dot marking A, and likewise the dot marking B) to the arrowhead at the far end of the second phasor, and put an arrowhead on that end so the resultant points away from the dot.
-At A the two phasors are turned through only a small angle from one another, so the resultant is long — about 25 mm on the scale of the diagram. At B the second phasor is turned much further round, so more of the two phasors cancels and the resultant is shorter — about 19 mm.`,
+  "phys-ocrb-h557-2022-p1::40(b)(i)": `At each point the two phasors have already been drawn head to tail. The resultant is the single arrow that closes the triangle: draw a straight line from the tail of the first phasor (where the first arrow starts, just beside the letter A, and likewise at B) to the arrowhead at the far end of the second phasor, and put an arrowhead on that end so the resultant points from the start of the first phasor to the tip of the second.
+At A the second phasor is turned through about 60° relative to the first, so the resultant is long — about 25 mm on the scale of the diagram. At B it is turned through about 100°, so more of the two phasors cancels and the resultant is shorter — about 19 mm.`,
   "phys-ocrb-h557-2022-p1::40(b)(ii)": `Measure the resultant phasors drawn in (b)(i): the resultant amplitude at A is about 25 mm and at B about 19 mm.
 The probability is proportional to the square of the resultant amplitude, so
 relative probability = (25/19)² = 1.7.
