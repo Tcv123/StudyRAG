@@ -4854,18 +4854,18 @@ T = (I/σ)^(1/4) = (1.607×10⁵ / 5.7×10⁻⁸)^(1/4)
 (2.819×10¹²)^(1/2) = 1.679×10⁶
 (1.679×10⁶)^(1/2) = 1296 K ≈ 1300 K`,
   "phys-ocrb-h557-2022-p2::10(c)": `Solar missions like the Parker Solar Probe have importance beyond scientific discovery because the Sun drives space weather — events such as solar flares and coronal mass ejections that can severely disrupt technology on Earth and in space. Understanding the Sun's behaviour enables better prediction of these events, allowing protection of satellites (communications, GPS, weather), electrical power grids, and aircraft systems that would otherwise be damaged or destroyed by intense solar particle events and magnetic storms. Improved forecasting from solar research protects critical infrastructure, economic activity, and potentially human lives (e.g. astronaut safety, airline routes over polar regions).`,
-  "phys-ocrb-h557-2022-p3::1(a)": `Polarisation is a property of transverse waves in which the oscillations are restricted to a single plane (the plane of polarisation) containing the direction of propagation. In an unpolarised wave the oscillations occur in all planes perpendicular to the direction of travel; polarisation limits these to one plane.
+  "phys-ocrb-h557-2022-p3::1(a)": `Polarisation is a property of transverse waves in which the oscillations are restricted to a single plane (the plane of polarisation) containing the direction of propagation. In an unpolarised wave the oscillations occur in all directions perpendicular to the direction of travel (in many different planes); polarisation limits them to one plane.
 
 All electromagnetic waves can be polarised because they are transverse waves — the electric (and magnetic) field vectors oscillate perpendicular to the direction of propagation. This perpendicular oscillation can be restricted to a single plane by a polarising filter, unlike longitudinal waves (where oscillations are parallel to propagation) which cannot be polarised.`,
   "phys-ocrb-h557-2022-p3::1(b)": `Look at the reflected light through the filter and slowly rotate the filter about the line of sight through a complete turn.
 If the reflected light is polarised, the brightness seen through the filter changes gradually as the filter is rotated: it is a maximum when the transmission axis of the filter is parallel to the plane in which the light is oscillating, and a minimum (dark, or at least much dimmer) when the axis is perpendicular to that plane. The angle between the position of maximum intensity and the position of minimum intensity is 90°.
 If, instead, the brightness stays the same for every orientation of the filter, the reflected light is not polarised.`,
   "phys-ocrb-h557-2022-p3::1(c)(i)": `To measure the angle of rotation of the grille:
-1. Mark the initial (vertical) position of the grille clearly on the stand or a protractor fixed to it, noting it as 0°.
-2. Attach a protractor scale (or use a circular protractor) centred on the rotation axis of the grille, so that the angle can be read directly as the grille is rotated.
+1. Hang a plumbline beside the grille and turn the grille until its bars are parallel to the plumbline; this vertical starting position is 0°.
+2. Fix a protractor (or a circular protractor) to the stand, so that it does not turn with the grille, centred on the grille's rotation axis and with its 0° mark lined up with the plumbline, so that the angle can be read directly as the grille is rotated.
 3. Rotate the grille to each desired angle and read the angle from the protractor before taking the receiver reading.
 
-Alternatively, use a pointer fixed to the grille that sweeps over a fixed circular protractor scale, so the angle of rotation can be read to the nearest degree.`,
+A thin pointer fixed to the grille, sweeping over the protractor scale, lets the angle (measured from the plumbline) be read to the nearest degree.`,
   "phys-ocrb-h557-2022-p3::1(c)(ii)": `The voltage at the receiver is proportional to the intensity of the microwaves, so if intensity ∝ cos²θ then V = k cos²θ and the quantity V ÷ cos²θ must come out the same for every point on the graph.
 Reading three widely spaced points from Fig. 1.2 (avoiding the angles where V = 0, because cos²θ = 0 there too):
 θ = 60°, V = 0.8 mV: cos²60° = 0.25, so V ÷ cos²θ = 0.8 ÷ 0.25 = 3.2 mV
@@ -4889,11 +4889,11 @@ The limit is not the scale of the rule but how well the ends of the gas column c
 Unit: Pa⁻¹ (or equivalently kPa⁻¹ if pressure kept in kPa: 1/356 = 2.81×10⁻³ kPa⁻¹)`,
   "phys-ocrb-h557-2022-p3::2(c)": `Presentation of the graph
 • The y-axis carries no unit: it should read '1 / absolute pressure / 10⁻⁶ Pa⁻¹', otherwise the numbers 4, 8, 12 and 16 are meaningless.
-• The y-axis scale is too compressed. All the values lie between 2.8 and 9.0, so the points occupy only the bottom half of the grid; a scale running from 0 to 10 (or a suppressed zero) would spread them over more than half the grid and make them easier to plot and read.
-• The x-axis scale is awkward (0.06 m spread over an odd number of centimetres), so intermediate heights are hard to plot accurately; a scale such as 0.02 m per two large squares would be much easier to use.
+• The y-axis scale is too compressed. All the values lie between 2.8 and 9.0 on a scale running to 16, so the points span well under half the height of the grid; a suppressed-zero scale from 2 to 10 (1 unit per cm) would spread them over almost the whole grid and make them easier to plot and read.
+• The x-axis scale is awkward: 0.06 m per 2 cm, i.e. 0.03 m per cm (0.006 m per small square), so heights such as 0.250 m are hard to plot and read accurately; a scale of 0.05 m per 2 cm (0.005 m per small square) starting at 0.15 m would fill the grid and be much easier to use.
 • The points are drawn as blobs; fine crosses should be used so that each point can be placed and read to within half a small square.
 • Error bars should be added to show the uncertainty in h (a few mm, from (a)(iii)) and in 1/p.
-• The line of best fit is too steep: it passes below the first three points and cuts below the last one, instead of having a balanced scatter of points either side.
+• The line of best fit is too steep: it passes below the first three points and above the last three, instead of having a balanced scatter of points either side.
 • Anomalous point: the third point (h = 0.250 m, 1/p = 5.90 × 10⁻⁶ Pa⁻¹) is anomalous — its neighbours at 0.200 m and 0.300 m are 3.85 and 6.06 × 10⁻⁶ Pa⁻¹, so this reading is far too high for the trend and should be ignored when the line is drawn.
 
 Physical significance of the gradient
@@ -4906,7 +4906,7 @@ The gas behaves ideally: the molecules themselves occupy a negligible fraction o
 
 Estimating n
 gradient = A/(nRT), so n = A ÷ (RT × gradient)
-Taking A = 87.1 mm² = 87.1 × 10⁻⁶ m² from (a)(ii), T = 298 K, R = 8.31 J mol⁻¹ K⁻¹ and the gradient as 25 × 10⁻⁶ in SI units (Pa⁻¹ m⁻¹, i.e. N⁻¹ m):
+Taking A = 87.1 mm² = 87.1 × 10⁻⁶ m² from (a)(ii), T = 298 K, R = 8.31 J mol⁻¹ K⁻¹ and the gradient as 25 × 10⁻⁶ Pa⁻¹ m⁻¹ (i.e. N⁻¹ m; Table 2.1 confirms this, since (9.01 − 2.82) × 10⁻⁶ ÷ (0.400 − 0.150) ≈ 25 × 10⁻⁶ Pa⁻¹ m⁻¹, so the 'kN⁻¹' printed in the question should read N⁻¹):
 n = 87.1 × 10⁻⁶ ÷ (8.31 × 298 × 25 × 10⁻⁶) = 87.1 × 10⁻⁶ ÷ 6.19 × 10⁻² = 1.4 × 10⁻³ mol
 So the tube contains about 1.4 × 10⁻³ mol of gas, which is roughly 8 × 10²⁰ molecules.`,
   "phys-ocrb-h557-2022-p3::3(a)": `The decay constant λ represents the probability that a given nucleus will decay per unit time. It is a constant characteristic of a particular radioisotope — a larger λ means a more unstable isotope that decays more rapidly.
@@ -4919,14 +4919,14 @@ t = 4 s: N = 648, ΔN = 0.4 × 648 × 1 = 259 (259.2), N − ΔN = 648 − 259 =
   "phys-ocrb-h557-2022-p3::3(b)(ii)": `Each value in the last column of Table 3.1 is the number of nuclei left at the end of that interval, so it is plotted at the following second. The three points still missing are therefore
 (3 s, 1080), (4 s, 648) and (5 s, 389).
 Plot each one to within half a small square. They continue the falling curve already begun, each value being 0.6 of the one before.`,
-  "phys-ocrb-h557-2022-p3::3(b)(iii)": `The activity is the gradient of the graph. In each row the model produces a fixed number of decays, ΔN = λNΔt, spread over the interval Δt, so each section of the graph is a straight line whose gradient ΔN/Δt is the activity: the activity is taken to be constant throughout an interval and then steps down to a new constant value for the next one.`,
+  "phys-ocrb-h557-2022-p3::3(b)(iii)": `The activity is represented by the gradient (its magnitude) of each straight section of the graph. In each row the model produces a fixed number of decays, ΔN = λNΔt, spread over the interval Δt, so each section of the graph is a straight line whose gradient has magnitude ΔN/Δt, the activity: the activity is taken to be constant throughout an interval and then steps down to a new constant value for the next one.`,
   "phys-ocrb-h557-2022-p3::3(b)(iv)": `With Δt = 0.5 s the number of nuclei is recalculated twice as often, so twice as many points are obtained in the same total time and the graph is a smoother curve rather than a series of long straight steps.
 It is also more realistic. In a real sample the activity falls continuously, whereas the model holds the rate of decay fixed for the whole of each interval; halving the interval means the value of N used in each step stays much closer to the true, continuously changing value, so the modelled curve follows the true exponential decay more closely.`,
   "phys-ocrb-h557-2022-p3::3(c)(i)": `10-second counting intervals are suitable because:
 
-1. The half-life of protactinium-234 is about 72 seconds. A 10-second interval is sufficiently short compared to the half-life that the count rate does not change significantly within one interval, making each count rate measurement a reasonable snapshot of the activity at that time. If the interval were too long (e.g. comparable to the half-life), the count rate would change substantially during the count, making it hard to assign a time to each measurement.
+1. Protactinium-234 has a short half-life, so within a few minutes its activity falls substantially. A run of a few minutes therefore shows a large, clear decrease in count rate, while keeping the time spent near the radioactive source, and so the exposure to radiation, short.
 
-2. 10-second intervals are long enough to accumulate a statistically significant number of counts (reducing random fluctuation/percentage uncertainty in each count), while still allowing enough data points over a few minutes to map out the exponential decay adequately. A shorter interval would give too few counts per interval and large statistical uncertainty.`,
+2. 10-second intervals are long enough to accumulate a large enough number of counts (reducing random fluctuation/percentage uncertainty in each count), while still allowing enough data points over a few minutes to map out the exponential decay adequately. A shorter interval would give too few counts per interval and large statistical uncertainty.`,
   "phys-ocrb-h557-2022-p3::3(c)(ii)": `For exponential decay the count rate is R = R₀e^(−λt), so taking natural logs, ln R = ln R₀ − λt. A graph of ln(count rate) against t is therefore a straight line of gradient −λ.
 Take two points on the line of best fit that are far apart — the whole length of the line — for example (0 s, 4.38) and (140 s, 3.04):
 gradient = Δ(ln count rate)/Δt = (3.04 − 4.38)/(140 − 0) = −1.34/140 = −9.6 × 10⁻³ s⁻¹
@@ -4937,7 +4937,7 @@ Half-life ≈ 72 s.`,
 - Clamp one end of the rubber band firmly to a stand and clamp so it hangs vertically.
 - Attach a known mass hanger to the free end and measure the extension from the natural length using a ruler with a set square to avoid parallax errors.
 - Record the force (F = mg) and corresponding extension for a range of masses, adding masses in small increments.
-- Take repeat readings (load and unload) for each mass to check for hysteresis and identify any anomalous results; use the mean.
+- Repeat the whole set of loading readings and use the mean extension for each load, so that anomalous results can be spotted; record any unloading readings separately, because rubber shows hysteresis and they will not match the loading values.
 - Measure the natural length before and after loading to check for permanent deformation.
 
 Minimising uncertainties:
@@ -4950,21 +4950,21 @@ Minimising risks:
 - Wear eye protection in case the band snaps under high load.
 
 Greatest source of uncertainty: the measurement of extension, because the rubber band may oscillate or the natural length marker is hard to read precisely (especially when the band stretches non-uniformly).`,
-  "phys-ocrb-h557-2022-p3::4(a)(ii)": `The graph is not a straight line, so the rubber band does not obey Hooke's law, although the extension does increase throughout as the force is increased and the deformation stays elastic. The stiffness at any point is the gradient ΔF/Δx, and it changes three times across the range shown.
+  "phys-ocrb-h557-2022-p3::4(a)(ii)": `The graph is not a straight line, so the rubber band does not obey Hooke's law, although the extension does increase throughout as the force is increased and the deformation stays elastic. The stiffness at any point is the gradient ΔF/Δx, and it falls and then rises again across the range shown, giving three distinct sections.
 
 From 0 to about 5 cm the band is comparatively stiff: 3 N produces only 5 cm of extension, a gradient of about 0.6 N cm⁻¹.
 From about 5 cm to about 15 cm the graph is much shallower: the next 3 N produces 10 cm of extension, a gradient of only about 0.3 N cm⁻¹, so the band is far less stiff here and stretches very easily.
-Beyond about 15 cm the graph steepens again: the last 2 N produces only about 3 cm more extension, a gradient of about 0.7 N cm⁻¹, so the band becomes stiff again — stiffer even than at the start.
+Beyond about 15 cm the graph steepens again: the last 2 N produces only about 3–3.5 cm more extension, a gradient of about 0.6 N cm⁻¹, so the band becomes stiff again, roughly as stiff as it was at the start.
 
 This pattern follows from the structure of rubber. Rubber is a polymer: it is made of very long chain molecules of many repeated units. In an unstretched band these chains are coiled up and tangled together, pointing in random directions, and they are joined here and there to neighbouring chains by cross-links (sulphur atoms introduced by vulcanisation).
 
-In the first, steep section the applied force has to drag the tangled chains past one another and break or distort the cross-links and the weak bonds between neighbouring chains, so a fairly large force gives only a small extension.
+In the first, steep section the applied force has to begin untangling the coiled chains, which means breaking the many weak bonds that link neighbouring chains to one another, while the sulphur cross-links resist the chains moving apart, so a fairly large force gives only a small extension.
 In the shallow middle section the chains are free to uncoil and straighten out and to slide over one another, so a large extension is obtained for only a small extra force.
 In the final, steep section almost all the chains have been pulled straight and lined up along the direction of the force. Any further extension now has to come from stretching the strong covalent C–C bonds along the chains themselves, so a large force produces only a very small extension and the band becomes very stiff; increasing the force much further would break the band.
 
 A labelled sketch of tangled chains, then straightened chains, then chains with their bonds being stretched, drawn against the three sections of the graph, shows the same argument.`,
-  "phys-ocrb-h557-2022-p3::4(b)(i)": `There are two candidate lines that stay inside every error bar — the steepest and the shallowest — and the steepest is the one whose gradient differs most from the best-fit value, so that is the line to draw.
-Using a ruler, draw a single thin straight line from the left-hand end of the error bar on the top point, (0.0035 m, 40 N), down to (0.0005 m, 0 N), so that it passes through the right-hand ends of the error bars on the lowest points. Check as you draw that it stays within every error bar on the graph.
+  "phys-ocrb-h557-2022-p3::4(b)(i)": `Of all the straight lines that stay inside every error bar, the two extremes are the steepest and the shallowest, and the steepest is the one whose gradient differs most from the best-fit value, so that is the line to draw.
+Using a ruler, draw a single thin straight line from the left-hand end of the error bar on the top point, (0.0035 m, 40 N), down to (0.0005 m, 0 N), so that it ends at the right-hand end of the error bar on the 0 N point. Check as you draw that it stays within every error bar on the graph.
 (The shallowest possible line would run from (0.0045 m, 40 N) to (−0.0005 m, 0 N), but its gradient differs from the best-fit gradient by less than the steepest line's does.)`,
   "phys-ocrb-h557-2022-p3::4(b)(ii)": `E = stress ÷ strain = (F/A) ÷ (x/L) = (F/x) × (L/A) = gradient × L ÷ A
 A = πd²/4 = π(0.5 × 10⁻³)² / 4 = 1.96 × 10⁻⁷ m²
