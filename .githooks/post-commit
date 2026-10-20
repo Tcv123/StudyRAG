@@ -1,0 +1,62 @@
+#!/bin/bash
+# post-commit hook for StudyRAG. Enable once per clone with:
+#   git config core.hooksPath .githooks
+#
+# Pushes every commit on main straight away, so finished work reaches
+# Cloudflare Pages (which builds and deploys on each push) and the admin
+# coverage tables. On 2026-10-19 the GCSE Maths commits sat unpushed on a
+# local main for a day while admin-gcse.html on the live site still showed
+# OCR as A-Level only and 12 mark schemes instead of 36.
+#
+# Only what was committed goes up; uncommitted and untracked files stay local.
+# The push is held, with the reason printed, when main is behind origin/main
+# or a pre-push check fails (the same guards as
+# .claude/hooks/studyrag-autopush-stop.sh). The commit itself always stands.
+# Set STUDYRAG_NO_PUSH=1 to skip the push for one commit.
+
+[ -n "$STUDYRAG_NO_PUSH" ] && exit 0
+[ "$(git rev-parse --abbrev-ref HEAD 2>/dev/null)" = "main" ] || exit 0
+
+# Mid-rebase, mid-merge or mid-cherry-pick, each step commits; push once the
+# operation finishes, not part-way through it.
+GIT_DIR=$(git rev-parse --git-dir)
+for d in rebase-merge rebase-apply MERGE_HEAD CHERRY_PICK_HEAD; do
+  [ -e "$GIT_DIR/$d" ] && exit 0
+done
+
+say() { printf 'post-commit: %s\n' "$*" >&2; }
+ROOT=$(git rev-parse --show-toplevel)
+
+# Behind origin/main, a push is rejected as non-fast-forward. A failed fetch
+# leaves BEHIND at 0 and lets the push report its own error.
+git fetch --quiet origin main 2>/dev/null
+BEHIND=$(git rev-list --count HEAD..refs/remotes/origin/main 2>/dev/null || echo 0)
+if [ "${BEHIND:-0}" -gt 0 ]; then
+  say "push HELD: main is $BEHIND commit(s) behind origin/main. Committed locally, NOT published."
+  say "fix: git pull --rebase origin main && git push origin main"
+  exit 0
+fi
+
+if command -v node >/dev/null 2>&1; then
+  FAIL=""
+  if [ -f "$ROOT/scripts/check-bank.js" ] && ! OUT=$(cd "$ROOT" && node scripts/check-bank.js 2>&1); then
+    FAIL=$(printf 'scripts/check-bank.js:\n%s' "$(printf '%s\n' "$OUT" | grep -A2 '^FAIL' | head -6)")
+  fi
+  if [ -f "$ROOT/tests/diagnostic-keys.test.js" ] && ! OUT=$(cd "$ROOT" && node tests/diagnostic-keys.test.js 2>&1); then
+    FAIL=$(printf '%s\ntests/diagnostic-keys.test.js:\n%s' "$FAIL" "$(printf '%s\n' "$OUT" | grep '✗' | head -4)")
+  fi
+  if [ -n "$FAIL" ]; then
+    say "push HELD: a pre-push check failed. Committed locally, NOT published."
+    printf '%s\n' "$FAIL" >&2
+    say "fix it and commit again; the next commit pushes everything outstanding."
+    exit 0
+  fi
+fi
+
+if OUT=$(git push origin main 2>&1); then
+  say "pushed to origin/main; Cloudflare Pages will deploy it."
+else
+  say "push FAILED. Committed locally, NOT published:"
+  printf '%s\n' "$OUT" | tail -5 >&2
+fi
+exit 0
