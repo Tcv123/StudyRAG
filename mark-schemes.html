@@ -413,6 +413,7 @@ function renderMsCard(part, paperKey, paperId) {
        ((window.CHEM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.CHEM_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.MATHS_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
+       ((window.PHYS_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.ECON_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.GEOG_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.POLITICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
@@ -972,7 +973,9 @@ function buildPicker(userSubs) {
                                 ['CHECKED_MATHS_ANSWERS', 'model-answers-maths-checked.js']],
     'further mathematics': [['FM_QUESTIONS', 'further-maths-questions.js'], ['FM_MODEL_ANSWERS', 'model-answers-fm.js'],
                             ['CHECKED_FM_ANSWERS', 'model-answers-fm-checked.js']],
-    'physics':             [['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js']],
+    'physics':             window.levelSuffix() === 'gcse'
+                             ? [['PHYS_GCSE_MODEL_ANSWERS', 'model-answers-physics-gcse.js']]
+                             : [['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js']],
     'biology':             [['BIO_MODEL_ANSWERS', 'model-answers-biology.js']],
     // The picker only offers papers for the student's level (boardsForLevel),
     // so load just that level's Chemistry answers.
