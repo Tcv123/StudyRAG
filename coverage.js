@@ -52,6 +52,7 @@
     ['BIO_MODEL_ANSWERS', 'model-answers-biology.js'], ['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js'],
     ['CHEM_GCSE_MODEL_ANSWERS', 'model-answers-chemistry-gcse.js'], ['MATHS_GCSE_MODEL_ANSWERS', 'model-answers-maths-gcse.js'],
     ['PHYS_GCSE_MODEL_ANSWERS', 'model-answers-physics-gcse.js'], ['BIO_GCSE_MODEL_ANSWERS', 'model-answers-biology-gcse.js'],
+    ['CS_GCSE_MODEL_ANSWERS', 'model-answers-cs-gcse.js'],
     ['ECON_MODEL_ANSWERS', 'model-answers-economics.js'],
     ['GEOG_MODEL_ANSWERS', 'model-answers-geography.js'], ['POLITICS_MODEL_ANSWERS', 'model-answers-politics.js']
   ];
