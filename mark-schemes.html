@@ -414,6 +414,7 @@ function renderMsCard(part, paperKey, paperId) {
        ((window.CHEM_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.MATHS_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.PHYS_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
+       ((window.BIO_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.ECON_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.GEOG_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.POLITICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
@@ -656,13 +657,17 @@ function buildPicker(userSubs) {
     userBoardFor[r.subject.trim().toLowerCase()] = r.exam_board.trim().toLowerCase();
   });
 
-  // Match a user-chosen board string against a papers-config board string.
-  // Uses prefix matching so "Edexcel" matches "Edexcel (Pearson)" and
-  // "OCR B" matches "OCR B (MEI)".
+  // Match a user-chosen board string against a papers-config board string
+  // the way past-papers.html does: drop the bracketed suffix so "Edexcel"
+  // matches "Edexcel (Pearson)" and "OCR B" matches "OCR B (MEI)", and read a
+  // bare "OCR" as "OCR A". Not a prefix match, or "Edexcel" would also match
+  // "Edexcel IGCSE (Pearson)".
+  function normBoard(b) {
+    const n = String(b || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim();
+    return n === 'ocr' ? 'ocr a' : n;
+  }
   function boardMatches(configBoard, userBoard) {
-    const c = configBoard.trim().toLowerCase();
-    const u = userBoard.trim().toLowerCase();
-    return c === u || c.startsWith(u) || u.startsWith(c);
+    return normBoard(configBoard) === normBoard(userBoard);
   }
 
   // Filter allSubjects to only ones the user takes, and find their board entry
@@ -976,7 +981,9 @@ function buildPicker(userSubs) {
     'physics':             window.levelSuffix() === 'gcse'
                              ? [['PHYS_GCSE_MODEL_ANSWERS', 'model-answers-physics-gcse.js']]
                              : [['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js']],
-    'biology':             [['BIO_MODEL_ANSWERS', 'model-answers-biology.js']],
+    'biology':             window.levelSuffix() === 'gcse'
+                             ? [['BIO_GCSE_MODEL_ANSWERS', 'model-answers-biology-gcse.js']]
+                             : [['BIO_MODEL_ANSWERS', 'model-answers-biology.js']],
     // The picker only offers papers for the student's level (boardsForLevel),
     // so load just that level's Chemistry answers.
     'chemistry':           window.levelSuffix() === 'gcse'
