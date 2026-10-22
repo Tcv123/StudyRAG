@@ -239,6 +239,21 @@
           <span class="rag-dot" id="rag-3.4"></span>
         </div>
       </button>
+      <div class="paper-label">Components 2 &amp; 3 &mdash; Problem Solving and Fieldwork</div>
+      <button class="topic-btn" id="topicBtn-4.1" onclick="openTopic(this,'4.1','Problem Solving Geography','../notes-geography-eduqas-gcse/4.1_problem_solving_geography.html')">
+        <div class="topic-main">
+          <div class="topic-num">4.1</div>
+          <div class="topic-info"><div class="topic-name">Problem Solving Geography</div><div class="topic-sub">Resource Folder, evaluating solutions, making a decision</div></div>
+          <span class="rag-dot" id="rag-4.1"></span>
+        </div>
+      </button>
+      <button class="topic-btn" id="topicBtn-4.2" onclick="openTopic(this,'4.2','Applied Fieldwork Enquiry','../notes-geography-eduqas-gcse/4.2_applied_fieldwork_enquiry.html')">
+        <div class="topic-main">
+          <div class="topic-num">4.2</div>
+          <div class="topic-info"><div class="topic-name">Applied Fieldwork Enquiry</div><div class="topic-sub">Enquiry process, methods, sampling, evaluation, UK dimension</div></div>
+          <span class="rag-dot" id="rag-4.2"></span>
+        </div>
+      </button>
     </div>
   </div>
 
@@ -289,6 +304,7 @@ function openTopic(btn, id, name, url) {
   document.getElementById('viewerHeader').style.display = 'flex';
   document.getElementById('emptyState').style.display = 'none';
   document.getElementById('diagLink').href = `../diagnostics/geography-eduqas-gcse-diagnostic.html?topic=${id}`;
+  document.getElementById('diagLink').style.display = id.startsWith('4.') ? 'none' : '';
   const frame = document.getElementById('noteFrame');
   frame.src = url;
   frame.style.display = 'block';
