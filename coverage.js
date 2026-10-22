@@ -54,7 +54,7 @@
     ['PHYS_GCSE_MODEL_ANSWERS', 'model-answers-physics-gcse.js'], ['BIO_GCSE_MODEL_ANSWERS', 'model-answers-biology-gcse.js'],
     ['CS_GCSE_MODEL_ANSWERS', 'model-answers-cs-gcse.js'],
     ['ECON_MODEL_ANSWERS', 'model-answers-economics.js'],
-    ['GEOG_MODEL_ANSWERS', 'model-answers-geography.js'], ['POLITICS_MODEL_ANSWERS', 'model-answers-politics.js']
+    ['GEOG_MODEL_ANSWERS', 'model-answers-geography.js'], ['GEOG_GCSE_MODEL_ANSWERS', 'model-answers-geography-gcse.js'], ['POLITICS_MODEL_ANSWERS', 'model-answers-politics.js']
   ];
   var CHECKED_FILES = [
     ['MATHS_MODEL_ANSWERS', 'model-answers-maths.js', 'CHECKED_MATHS_ANSWERS', 'model-answers-maths-checked.js'],

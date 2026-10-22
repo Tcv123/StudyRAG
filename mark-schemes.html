@@ -418,6 +418,7 @@ function renderMsCard(part, paperKey, paperId) {
        ((window.CS_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.ECON_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.GEOG_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
+       ((window.GEOG_GCSE_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.POLITICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
     : '';
   const modelAns   = preWritten || getModelAnswer(paperKey, partCode);
@@ -993,7 +994,9 @@ function buildPicker(userSubs) {
                              ? [['CHEM_GCSE_MODEL_ANSWERS', 'model-answers-chemistry-gcse.js']]
                              : [['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js']],
     'economics':           [['ECON_MODEL_ANSWERS', 'model-answers-economics.js']],
-    'geography':           [['GEOG_MODEL_ANSWERS', 'model-answers-geography.js']],
+    'geography':           window.levelSuffix() === 'gcse'
+                             ? [['GEOG_GCSE_MODEL_ANSWERS', 'model-answers-geography-gcse.js']]
+                             : [['GEOG_MODEL_ANSWERS', 'model-answers-geography.js']],
     'politics':            [['POLITICS_MODEL_ANSWERS', 'model-answers-politics.js']],
   };
   await Promise.all(userSubs.flatMap(r => SUBJECT_FILES[String(r.subject || '').trim().toLowerCase()] || [])
