@@ -55,6 +55,7 @@
     'Geography_AQA':                 'diagnostics/geography-aqa-diagnostic.html',
     'Geography_Edexcel':             'diagnostics/geography-edexcel-diagnostic.html',
     'Geography_Eduqas|alevel':       'diagnostics/geography-eduqas-alevel-diagnostic.html',
+    'Geography_AQA|gcse':            'diagnostics/geography-aqa-gcse-diagnostic.html',
     'Geography_Eduqas|gcse':         'diagnostics/geography-eduqas-gcse-diagnostic.html',
     'Geography_OCR':                 'diagnostics/geography-ocr-diagnostic.html',
     'Mathematics_AQA':               'diagnostics/maths-aqa-diagnostic.html',

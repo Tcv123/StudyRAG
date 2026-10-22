@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — 1.2 Weather Hazards — AQA GCSE Geography</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+    h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+    h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin: 10px 0 15px 25px; }
+    li { margin-bottom: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+    th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+    tr:nth-child(even) { background: #f8fafc; }
+    .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+    .definition strong { color: #1e3a5f; }
+    .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+    .exam-tip strong { color: #b45309; }
+    .case-study { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+    .case-study strong { color: #15803d; }
+    .svg-label { font-size: 10px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    @media print { body { padding: 20px; } }
+  </style>
+</head>
+<body>
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+<div class="container">
+
+  <p style="color:#64748b;font-size:0.9rem;margin-bottom:8px;">AQA GCSE Geography (8035) — Paper 1: Living with the Physical Environment · 3.1.1 The Challenge of Natural Hazards</p>
+  <h1>1.2 Weather Hazards</h1>
+
+<h2>1. Global Atmospheric Circulation</h2>
+
+<div class="definition">
+  <strong>Global atmospheric circulation:</strong> The large-scale movement of air around the Earth driven by unequal heating. The equator receives more solar radiation than the poles, creating temperature and pressure differences. This drives a system of convection cells (Hadley, Ferrel, and Polar cells) that redistribute heat energy around the globe and create the major wind belts and climate zones.
+</div>
+
+<!-- Global Atmospheric Circulation SVG -->
+<div style="margin: 20px auto; text-align: center;">
+<svg viewBox="0 0 620 380" style="max-width:620px;width:100%;height:auto;background:#f0f8ff;border:1px solid #cbd5e1;border-radius:8px;" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="catarr" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#dc2626"/></marker>
+    <marker id="catarr2" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#2563eb"/></marker>
+    <marker id="catarr3" markerWidth="7" markerHeight="5" refX="7" refY="2.5" orient="auto"><path d="M0,0 L7,2.5 L0,5" fill="#7c3aed"/></marker>
+  </defs>
+  <text x="310" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1a1a2e">Global Atmospheric Circulation &mdash; Three Cell Model</text>
+
+  <!-- Central Earth column -->
+  <rect x="270" y="35" width="80" height="330" fill="#bfdbfe" opacity="0.2" rx="4"/>
+  <!-- Equator line -->
+  <line x1="50" y1="200" x2="570" y2="200" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="310" y="197" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">Equator (0&deg;)</text>
+
+  <!-- Latitude lines -->
+  <line x1="50" y1="115" x2="570" y2="115" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="48" y="119" text-anchor="end" font-size="10" fill="#64748b">30&deg;N</text>
+  <line x1="50" y1="285" x2="570" y2="285" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="48" y="289" text-anchor="end" font-size="10" fill="#64748b">30&deg;S</text>
+  <line x1="50" y1="60" x2="570" y2="60" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="48" y="64" text-anchor="end" font-size="10" fill="#64748b">60&deg;N</text>
+  <line x1="50" y1="340" x2="570" y2="340" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="48" y="344" text-anchor="end" font-size="10" fill="#64748b">60&deg;S</text>
+  <!-- Polar lines -->
+  <text x="48" y="43" text-anchor="end" font-size="10" fill="#64748b">90&deg;N</text>
+  <text x="48" y="364" text-anchor="end" font-size="10" fill="#64748b">90&deg;S</text>
+
+  <!-- HADLEY CELL (N) — red arrows -->
+  <!-- Rising at equator -->
+  <path d="M 310 200 Q 310 155 310 115" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#catarr)"/>
+  <!-- Poleward flow at high level -->
+  <path d="M 310 115 Q 260 112 200 115" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#catarr)"/>
+  <!-- Subsiding at 30N -->
+  <path d="M 200 115 Q 200 155 200 200" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#catarr)"/>
+  <!-- Return surface flow to equator (Trade Winds) -->
+  <path d="M 200 200 Q 255 198 308 200" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#catarr)"/>
+  <text x="160" y="205" font-size="9" fill="#dc2626" text-anchor="end">NE Trade Winds</text>
+  <text x="310" y="235" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">Hadley Cell (N)</text>
+
+  <!-- HADLEY CELL (S) — mirror -->
+  <path d="M 310 200 Q 310 245 310 285" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#catarr)"/>
+  <path d="M 310 285 Q 360 283 420 285" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#catarr)"/>
+  <path d="M 420 285 Q 420 243 420 200" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#catarr)"/>
+  <path d="M 420 200 Q 365 198 312 200" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#catarr)"/>
+  <text x="460" y="205" font-size="9" fill="#dc2626">SE Trade Winds</text>
+  <text x="310" y="170" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">Hadley Cell (S)</text>
+
+  <!-- FERREL CELL (N) — blue arrows -->
+  <path d="M 200 115 Q 200 88 200 60" stroke="#2563eb" stroke-width="2.5" fill="none" marker-end="url(#catarr2)"/>
+  <path d="M 200 60 Q 250 58 308 60" stroke="#2563eb" stroke-width="2.5" fill="none" marker-end="url(#catarr2)"/>
+  <path d="M 310 60 Q 312 88 310 115" stroke="#2563eb" stroke-width="2.5" fill="none" marker-end="url(#catarr2)"/>
+  <path d="M 310 115 Q 256 112 202 115" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+  <text x="148" y="88" font-size="9" fill="#2563eb" text-anchor="end">Westerlies</text>
+  <text x="148" y="100" font-size="9" fill="#2563eb" text-anchor="end">(SW winds, UK)</text>
+  <text x="155" y="60" text-anchor="end" font-size="10" fill="#2563eb" font-weight="bold">Ferrel Cell (N)</text>
+
+  <!-- FERREL CELL (S) -->
+  <path d="M 420 285 Q 420 313 420 340" stroke="#2563eb" stroke-width="2.5" fill="none" marker-end="url(#catarr2)"/>
+  <path d="M 420 340 Q 366 338 312 340" stroke="#2563eb" stroke-width="2.5" fill="none" marker-end="url(#catarr2)"/>
+  <path d="M 310 340 Q 310 313 310 285" stroke="#2563eb" stroke-width="2.5" fill="none" marker-end="url(#catarr2)"/>
+  <text x="462" y="315" font-size="9" fill="#2563eb">Westerlies</text>
+  <text x="460" y="340" font-size="10" fill="#2563eb" font-weight="bold">Ferrel (S)</text>
+
+  <!-- POLAR CELL (N) — purple -->
+  <path d="M 310 60 Q 310 48 310 38" stroke="#7c3aed" stroke-width="2" fill="none" marker-end="url(#catarr3)"/>
+  <text x="355" y="50" font-size="9" fill="#7c3aed">Polar Cell</text>
+  <text x="355" y="62" font-size="9" fill="#7c3aed">(N)</text>
+  <path d="M 200 60 Q 200 48 200 38" stroke="#7c3aed" stroke-width="2" fill="none" marker-end="url(#catarr3)"/>
+
+  <!-- Key pressure belts -->
+  <rect x="55" y="106" width="130" height="16" fill="#fef3c7" rx="3" opacity="0.85"/>
+  <text x="120" y="118" text-anchor="middle" font-size="9" fill="#b45309">Sub-tropical HIGH (30&deg;N) &mdash; deserts</text>
+  <rect x="55" y="197" width="120" height="14" fill="#fee2e2" rx="3" opacity="0.85"/>
+  <text x="115" y="208" text-anchor="middle" font-size="9" fill="#dc2626">ITCZ &mdash; Low pressure, heavy rain</text>
+  <rect x="55" y="51" width="130" height="16" fill="#dbeafe" rx="3" opacity="0.85"/>
+  <text x="120" y="63" text-anchor="middle" font-size="9" fill="#1d4ed8">Sub-polar LOW (60&deg;N) &mdash; frontal rain</text>
+
+  <!-- South equivalents -->
+  <rect x="435" y="276" width="130" height="16" fill="#fef3c7" rx="3" opacity="0.85"/>
+  <text x="500" y="288" text-anchor="middle" font-size="9" fill="#b45309">Sub-tropical HIGH (30&deg;S) &mdash; deserts</text>
+  <rect x="435" y="331" width="130" height="16" fill="#dbeafe" rx="3" opacity="0.85"/>
+  <text x="500" y="343" text-anchor="middle" font-size="9" fill="#1d4ed8">Sub-polar LOW (60&deg;S)</text>
+</svg>
+</div>
+
+<table>
+  <tr><th>Pressure Belt / Zone</th><th>Latitude</th><th>Conditions</th><th>Climate result</th></tr>
+  <tr><td><strong>ITCZ</strong> (Inter-Tropical Convergence Zone)</td><td>0&deg; (equator)</td><td>Rising air, intense heating, low pressure</td><td>Equatorial climate: hot, very wet all year; tropical rainforest</td></tr>
+  <tr><td>Sub-tropical high pressure</td><td>~30&deg;N/S</td><td>Descending air, high pressure, dry</td><td>Hot desert climates (Sahara, Arabian, Australian deserts)</td></tr>
+  <tr><td>Sub-polar low pressure</td><td>~60&deg;N/S</td><td>Cold polar air meets warm tropical air; fronts; rising air</td><td>Temperate climate with frontal rainfall (UK, NW Europe)</td></tr>
+  <tr><td>Polar high pressure</td><td>90&deg;N/S</td><td>Descending cold air, high pressure, very dry</td><td>Polar/tundra climate: very cold, low precipitation (mainly snow)</td></tr>
+</table>
+<h3>Surface winds</h3>
+<ul>
+  <li><strong>Trade winds</strong> blow from the sub-tropical high (30°) back towards the low pressure at the Equator. The Coriolis effect bends them, so they blow from the north-east in the Northern Hemisphere and south-east in the Southern Hemisphere.</li>
+  <li><strong>Westerlies</strong> (south-westerlies over the UK) blow from the sub-tropical high towards the sub-polar low at 60°, bringing mild, wet Atlantic air and depressions to the UK.</li>
+  <li>Where trade winds meet at the ITCZ, warm moist air rises, giving heavy convectional rain — the same rising air that helps tropical storms form over warm oceans.</li>
+</ul>
+
+<!-- ============================================================ -->
+
+  <h2>2. Global Distribution of Tropical Storms</h2>
+  <div class="definition">
+    <strong>Tropical storm</strong> — an intense low-pressure weather system with sustained wind speeds above 119 km/h (to count as a hurricane, typhoon or cyclone), heavy rainfall and a calm central eye. They are called <strong>hurricanes</strong> in the North Atlantic and NE Pacific, <strong>typhoons</strong> in the NW Pacific, and <strong>cyclones</strong> in the Indian Ocean and South Pacific.
+  </div>
+
+  <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:20px auto;display:block;border:1px solid #cbd5e1;border-radius:8px;background:#eff6ff;">
+    <rect x="0" y="0" width="640" height="300" fill="#dbeafe"/>
+    <!-- Continents (simplified blocks) -->
+    <path d="M60,60 L170,50 L190,110 L150,150 L120,140 L95,105 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <path d="M150,160 L195,165 L205,215 L180,275 L160,260 L150,200 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <path d="M290,60 L360,55 L365,95 L330,105 L295,95 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <path d="M295,110 L370,110 L385,160 L355,240 L330,240 L310,170 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <path d="M365,55 L540,50 L560,110 L500,140 L430,145 L380,110 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <path d="M500,195 L570,190 L585,235 L530,250 L505,230 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="1"/>
+    <!-- Tropics band -->
+    <line x1="0" y1="105" x2="640" y2="105" stroke="#64748b" stroke-dasharray="5,4"/>
+    <line x1="0" y1="150" x2="640" y2="150" stroke="#1e3a5f" stroke-width="1.5"/>
+    <line x1="0" y1="195" x2="640" y2="195" stroke="#64748b" stroke-dasharray="5,4"/>
+    <text x="6" y="101" font-size="10" font-family="sans-serif" fill="#475569">Tropic of Cancer (23.5°N)</text>
+    <text x="6" y="146" font-size="10" font-family="sans-serif" fill="#1e3a5f">Equator</text>
+    <text x="6" y="208" font-size="10" font-family="sans-serif" fill="#475569">Tropic of Capricorn (23.5°S)</text>
+    <!-- Storm zones -->
+    <ellipse cx="215" cy="120" rx="40" ry="16" fill="#ef4444" opacity="0.55"/>
+    <text x="215" y="124" font-size="10" font-family="sans-serif" fill="#7f1d1d" text-anchor="middle" font-weight="600">Hurricanes</text>
+    <ellipse cx="80" cy="128" rx="35" ry="13" fill="#ef4444" opacity="0.55"/>
+    <text x="80" y="132" font-size="9" font-family="sans-serif" fill="#7f1d1d" text-anchor="middle" font-weight="600">Hurricanes</text>
+    <ellipse cx="560" cy="122" rx="42" ry="16" fill="#ef4444" opacity="0.55"/>
+    <text x="560" y="126" font-size="10" font-family="sans-serif" fill="#7f1d1d" text-anchor="middle" font-weight="600">Typhoons</text>
+    <ellipse cx="420" cy="125" rx="35" ry="13" fill="#ef4444" opacity="0.55"/>
+    <text x="420" y="129" font-size="10" font-family="sans-serif" fill="#7f1d1d" text-anchor="middle" font-weight="600">Cyclones</text>
+    <ellipse cx="410" cy="182" rx="38" ry="13" fill="#ef4444" opacity="0.55"/>
+    <text x="410" y="186" font-size="10" font-family="sans-serif" fill="#7f1d1d" text-anchor="middle" font-weight="600">Cyclones</text>
+    <ellipse cx="555" cy="180" rx="36" ry="12" fill="#ef4444" opacity="0.55"/>
+    <text x="555" y="184" font-size="10" font-family="sans-serif" fill="#7f1d1d" text-anchor="middle" font-weight="600">Cyclones</text>
+    <text x="320" y="290" font-size="10" font-family="sans-serif" fill="#64748b" text-anchor="middle">Tropical storms form between about 5° and 30° north and south of the Equator (simplified map, not to scale)</text>
+  </svg>
+
+  <ul>
+    <li>Tropical storms form over <strong>warm tropical oceans</strong>, mostly between <strong>5° and 30° north and south</strong> of the Equator.</li>
+    <li>They do not form <strong>within about 5° of the Equator</strong> because the Coriolis effect is too weak there to make the air spin.</li>
+    <li>They move <strong>westwards</strong> with the trade winds, then often curve polewards. They <strong>weaken over land</strong> (no supply of warm, moist air) and over cooler water.</li>
+    <li>Most form in <strong>late summer and autumn</strong> (June–November in the Northern Hemisphere), when sea temperatures are highest.</li>
+  </ul>
+
+  <h2>3. Causes and Formation of Tropical Storms</h2>
+  <h3>Conditions needed</h3>
+  <ul>
+    <li>Ocean surface temperature of <strong>at least 26–27°C</strong>, to a depth of about 50–60 m.</li>
+    <li>Ocean <strong>at least 5° from the Equator</strong>, so the Coriolis effect can make the storm spin.</li>
+    <li><strong>Low wind shear</strong> — winds at different heights blowing at similar speeds, so the storm's structure is not torn apart.</li>
+    <li>An area of <strong>low pressure</strong> with rising, unstable, moist air.</li>
+  </ul>
+
+  <h3>Sequence of formation</h3>
+  <ol>
+    <li>Warm ocean water heats the air above it. The <strong>warm, moist air rises rapidly</strong>, creating an area of very low pressure at the surface.</li>
+    <li>As the air rises it <strong>cools and condenses</strong>, forming towering cumulonimbus clouds. Condensation releases <strong>latent heat</strong>, which warms the air further and makes it rise even faster — powering the storm.</li>
+    <li>Air rushes in at the surface to replace the rising air, creating strong winds. The <strong>Coriolis effect</strong> makes the inflowing air spiral (anticlockwise in the Northern Hemisphere).</li>
+    <li>Some cool, dry air sinks down the centre of the storm, creating the calm, cloud-free <strong>eye</strong>.</li>
+    <li>The storm is carried across the ocean by prevailing winds, growing as long as it has a supply of warm, moist air. It weakens when it reaches <strong>land or cooler water</strong> because the energy supply is cut off.</li>
+  </ol>
+
+  <h3>Structure of a tropical storm</h3>
+  <svg viewBox="0 0 620 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:620px;margin:20px auto;display:block;border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;">
+    <rect x="0" y="195" width="620" height="35" fill="#60a5fa"/>
+    <text x="310" y="218" font-size="11" font-family="sans-serif" fill="#fff" text-anchor="middle" font-weight="600">Warm ocean (26–27°C or more)</text>
+    <!-- Cloud walls -->
+    <path d="M60,190 Q80,90 150,70 Q220,55 270,80 L280,190 Z" fill="#94a3b8"/>
+    <path d="M560,190 Q540,90 470,70 Q400,55 350,80 L340,190 Z" fill="#94a3b8"/>
+    <!-- Eye wall -->
+    <rect x="270" y="70" width="12" height="120" fill="#475569"/>
+    <rect x="338" y="70" width="12" height="120" fill="#475569"/>
+    <!-- Eye -->
+    <rect x="282" y="70" width="56" height="120" fill="#e0f2fe"/>
+    <line x1="310" y1="75" x2="310" y2="180" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,3"/>
+    <polygon points="304,172 316,172 310,184" fill="#2563eb"/>
+    <!-- Rising arrows -->
+    <line x1="276" y1="185" x2="276" y2="80" stroke="#dc2626" stroke-width="2.5"/>
+    <polygon points="270,86 282,86 276,74" fill="#dc2626"/>
+    <line x1="344" y1="185" x2="344" y2="80" stroke="#dc2626" stroke-width="2.5"/>
+    <polygon points="338,86 350,86 344,74" fill="#dc2626"/>
+    <!-- Inflow arrows -->
+    <line x1="40" y1="185" x2="250" y2="185" stroke="#1e3a5f" stroke-width="2"/>
+    <polygon points="250,180 262,185 250,190" fill="#1e3a5f"/>
+    <line x1="580" y1="185" x2="370" y2="185" stroke="#1e3a5f" stroke-width="2"/>
+    <polygon points="370,180 358,185 370,190" fill="#1e3a5f"/>
+    <!-- Outflow -->
+    <line x1="270" y1="60" x2="90" y2="40" stroke="#64748b" stroke-width="1.5"/>
+    <polygon points="94,35 82,39 92,45" fill="#64748b"/>
+    <line x1="350" y1="60" x2="530" y2="40" stroke="#64748b" stroke-width="1.5"/>
+    <polygon points="526,35 538,39 528,45" fill="#64748b"/>
+    <text x="310" y="58" font-size="11" font-family="sans-serif" fill="#1e3a5f" text-anchor="middle" font-weight="600">Eye: calm, clear, sinking air</text>
+    <text x="150" y="130" font-size="10" font-family="sans-serif" fill="#fff" text-anchor="middle">Spiral rain bands</text>
+    <text x="470" y="130" font-size="10" font-family="sans-serif" fill="#fff" text-anchor="middle">Spiral rain bands</text>
+    <text x="225" y="62" font-size="10" font-family="sans-serif" fill="#7f1d1d" text-anchor="end">Eye wall: strongest winds,</text>
+    <text x="225" y="74" font-size="10" font-family="sans-serif" fill="#7f1d1d" text-anchor="end">heaviest rain</text>
+    <text x="150" y="178" font-size="10" font-family="sans-serif" fill="#1e3a5f" text-anchor="middle">Warm moist air drawn in</text>
+    <text x="90" y="30" font-size="10" font-family="sans-serif" fill="#475569" text-anchor="middle">Outflow of air at high level</text>
+  </svg>
+
+  <table>
+    <thead><tr><th>Feature</th><th>Description</th></tr></thead>
+    <tbody>
+      <tr><td>Eye</td><td>Centre of the storm, 10–50 km across. Calm, clear skies, lowest pressure, caused by sinking air.</td></tr>
+      <tr><td>Eye wall</td><td>Ring of towering cumulonimbus cloud around the eye — the most intense winds (often over 200 km/h) and heaviest rainfall.</td></tr>
+      <tr><td>Rain bands</td><td>Spiralling bands of cloud and rain extending hundreds of kilometres from the centre.</td></tr>
+      <tr><td>Size</td><td>Typically 200–700 km across; can last for 1–3 weeks.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. How Climate Change Might Affect Tropical Storms</h2>
+  <table>
+    <thead><tr><th>Aspect</th><th>Likely change</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td>Distribution</td><td>Storms may form further from the tropics (further north and south)</td><td>A larger area of ocean will reach 26–27°C</td></tr>
+      <tr><td>Frequency</td><td>Total number may stay the same or fall slightly</td><td>Scientists are uncertain — changes in wind shear may suppress some storms</td></tr>
+      <tr><td>Intensity</td><td>A higher proportion of storms reaching the strongest categories (4 and 5), with heavier rainfall</td><td>Warmer oceans supply more energy; warmer air holds more moisture</td></tr>
+      <tr><td>Storm surges</td><td>More damaging coastal flooding</td><td>Sea level rise means surges start from a higher base</td></tr>
+    </tbody>
+  </table>
+  <div class="exam-tip">
+    <strong>Exam Tip:</strong> Be careful with certainty. The evidence for <em>more intense</em> storms is much stronger than the evidence for <em>more frequent</em> storms — say "likely" or "scientists predict" rather than "will".
+  </div>
+
+  <h2>5. Case Study: Typhoon Haiyan, the Philippines, November 2013</h2>
+  <div class="case-study">
+    <strong>Typhoon Haiyan (known locally as Yolanda) — 8 November 2013</strong>
+    <p style="margin-top:10px;"><strong>Background:</strong> The Philippines is a lower-middle-income country made up of over 7,000 islands in the western Pacific — one of the most typhoon-exposed countries in the world. Haiyan was one of the strongest tropical storms ever to make landfall, with sustained winds of about <strong>315 km/h</strong>. It hit the islands of Samar and Leyte, including the city of <strong>Tacloban</strong>.</p>
+
+    <h3 style="margin-top:12px;">Primary effects</h3>
+    <ul>
+      <li>A <strong>storm surge of up to 5–6 m</strong> swept through Tacloban, flooding the city and its airport terminal.</li>
+      <li>Over <strong>6,300 people killed</strong>; around 1,000 more missing; nearly 30,000 injured.</li>
+      <li>About <strong>1.1 million homes damaged or destroyed</strong> — around 90% of Tacloban was destroyed.</li>
+      <li>Around 4 million people displaced; power lines, roads and bridges destroyed.</li>
+      <li>About 400 mm of rain caused widespread flooding.</li>
+    </ul>
+
+    <h3 style="margin-top:12px;">Secondary effects</h3>
+    <ul>
+      <li>About 14 million people affected; around 6 million workers lost their source of income.</li>
+      <li>Flooding caused <strong>landslides</strong> and blocked roads, cutting off aid to remote areas.</li>
+      <li>Shortages of food, water and shelter led to <strong>outbreaks of disease</strong> and some looting.</li>
+      <li>Rice harvests and fishing fleets destroyed, causing food shortages; coconut plantations (a major source of income) flattened.</li>
+      <li>An oil barge ran aground causing an oil spill, damaging mangroves.</li>
+    </ul>
+
+    <h3 style="margin-top:12px;">Immediate responses</h3>
+    <ul>
+      <li>The government evacuated around <strong>800,000 people</strong> before landfall, using warnings from the national weather agency (PAGASA).</li>
+      <li>International aid and teams arrived — the UK sent military aircraft and HMS Daring; the USA sent the aircraft carrier USS George Washington to supply water and food.</li>
+      <li>Field hospitals set up; emergency shelters, food, water and hygiene kits distributed by NGOs such as the Red Cross and Oxfam.</li>
+      <li>A curfew was imposed two days after the storm to reduce looting.</li>
+    </ul>
+
+    <h3 style="margin-top:12px;">Long-term responses</h3>
+    <ul>
+      <li>A <strong>"Build Back Better"</strong> reconstruction plan — rebuilding roads, bridges and airports to a higher standard.</li>
+      <li>"Cash for work" programmes paid local people to clear debris and rebuild, restoring incomes.</li>
+      <li>Rice farmers and fishermen given help to restart — seeds, tools and replacement boats.</li>
+      <li>A <strong>"no-build zone"</strong> proposed along vulnerable coasts, with communities relocated inland.</li>
+      <li>More <strong>cyclone shelters</strong> built; storm-surge warnings improved so people understood the risk (many did not know what a "storm surge" meant in 2013).</li>
+      <li>Mangroves replanted along the coast to act as a natural barrier against future surges.</li>
+    </ul>
+  </div>
+
+  <h2>6. Reducing the Effects of Tropical Storms</h2>
+  <table>
+    <thead><tr><th>Strategy</th><th>How it reduces the effects</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Monitoring</strong></td><td>Satellites, aircraft and weather buoys track the storm's position, wind speed and pressure in real time</td><td>US National Hurricane Center tracks every Atlantic hurricane</td></tr>
+      <tr><td><strong>Prediction</strong></td><td>Computer models forecast the storm's path and strength several days ahead, allowing warnings and evacuation</td><td>PAGASA warnings allowed 800,000 to evacuate before Haiyan</td></tr>
+      <tr><td><strong>Protection</strong></td><td>Storm-surge barriers, sea walls, raised buildings on stilts, reinforced roofs, cyclone shelters</td><td>Bangladesh has built thousands of raised cyclone shelters, cutting death tolls dramatically since 1991</td></tr>
+      <tr><td><strong>Planning</strong></td><td>Evacuation routes, emergency supplies, education and drills; land-use zoning to keep homes away from the coast</td><td>Florida's signed hurricane evacuation routes; Philippines' no-build zones</td></tr>
+    </tbody>
+  </table>
+  <div class="exam-tip">
+    <strong>Exam Tip:</strong> Planning and prediction save the most lives at the lowest cost — Bangladesh's 1970 Bhola cyclone killed around 300,000–500,000 people, whereas Cyclone Sidr (2007), of similar strength, killed about 3,400 thanks to early warnings and shelters. Use this contrast to evaluate strategies.
+  </div>
+
+  <h2>7. Weather Hazards in the UK</h2>
+  <p>The UK's mid-latitude location, on the boundary between warm tropical and cold polar air masses and downwind of the Atlantic, means it experiences a range of weather hazards, although these are rarely as extreme as tropical storms.</p>
+  <table>
+    <thead><tr><th>Hazard</th><th>Cause</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td>Strong winds and storms</td><td>Deep Atlantic depressions</td><td>Great Storm of 1987; Storm Eunice (February 2022) — 196 km/h gust on the Isle of Wight</td></tr>
+      <tr><td>Heavy rain and flooding</td><td>A series of depressions; slow-moving fronts</td><td>Somerset Levels 2014; Storm Desmond, Cumbria (December 2015)</td></tr>
+      <tr><td>Heatwaves and drought</td><td>Persistent summer anticyclones (blocking highs)</td><td>2003, 2018 and 2022 heatwaves</td></tr>
+      <tr><td>Snow and cold spells</td><td>Cold polar or continental air; winter anticyclones</td><td>"Beast from the East" (February–March 2018)</td></tr>
+      <tr><td>Thunderstorms and hail</td><td>Intense summer heating causing rising air</td><td>Boscastle flash flood (2004)</td></tr>
+    </tbody>
+  </table>
+
+
+<h2>8. Case Studies: Recent Extreme Weather in the UK</h2>
+
+<div class="case-study">
+  <strong>Case Study: Summer Heatwaves</strong>
+
+  <p><strong>2003 European Heatwave:</strong> France and southern UK experienced temperatures 6&ndash;7&deg;C above average for over two weeks. UK recorded 38.5&deg;C (Brogdale, Kent). Caused by a persistent anticyclone blocking Atlantic systems. Over 70,000 excess deaths across Europe; 2,000+ in UK. Crops failed; wildfires; power stations shut as river water temperatures rose too high for cooling.</p>
+
+  <p><strong>2018 UK Heatwave:</strong> Prolonged high-pressure system from June to August. Temperatures reached 35.3&deg;C (Faversham, Kent). UK's joint-hottest summer on record at the time. Drought conditions: rivers at record lows; hosepipe bans; moorland fires in Greater Manchester (Saddleworth Moor).</p>
+
+  <p><strong>2022 UK Heatwave:</strong> On 19 July 2022, the UK recorded its highest ever temperature: <strong>40.3&deg;C</strong> at Coningsby, Lincolnshire. Caused by a plume of hot air from North Africa channelled north by an anticyclone. Wildfires in London suburbs; rail lines buckled; Luton Airport tarmac melted; schools and businesses closed. Linked to climate change &mdash; Met Office stated such temperatures would have been virtually impossible without human-caused climate change.</p>
+</div>
+
+<div class="case-study">
+  <strong>Case Study: 2013&ndash;14 Somerset Levels Flooding</strong>
+
+  <p>Winter 2013&ndash;14 was the UK's wettest in 248 years of records. A series of Atlantic depressions brought relentless storms. The Somerset Levels &mdash; a low-lying floodplain in SW England &mdash; were inundated from late December 2013 to March 2014.</p>
+
+  <ul>
+    <li>65 sq km of farmland flooded; water depths up to 1 m; 17 million tonnes of water on the Levels</li>
+    <li>Villages including Moorland and Muchelney were cut off for weeks by road</li>
+    <li>Over 600 homes flooded and 16 farms evacuated; about 1,000 livestock moved to safety</li>
+    <li>Somerset County Council initially estimated over &pound;10 million of damage; a later economic impact assessment put the total cost to the county at up to &pound;147.5 million</li>
+    <li><strong>Environmental:</strong> floodwater contaminated with sewage, oil and farm chemicals; debris deposited on fields; soils waterlogged for months</li>
+    <li><strong>Causes:</strong> a run of deep Atlantic depressions brought over 350 mm of rain in January–February 2014; the Levels are flat, low-lying (much of it at or below high-tide level) with clay soils, and high tides on the River Parrett stopped water draining away</li>
+    <li>Controversy over the Environment Agency&rsquo;s decision to reduce dredging of rivers Tone and Parrett in prior years</li>
+    <li>Long-term response: &pound;100 million Somerset Levels Flood Action Plan; 8 km of rivers dredged; upgraded pumping stations; raised flood banks</li>
+  </ul>
+</div>
+
+<div class="exam-tip">
+  <strong>Exam tip:</strong> When answering extreme weather questions, always include: specific dates, specific statistics (temperatures, cost, areas affected), social impacts AND economic impacts, and &mdash; for higher marks &mdash; link to the cause (e.g. blocking anticyclone, exceptional run of Atlantic depressions).
+</div>
+
+<!-- ============================================================ -->
+
+
+  <h2>9. Is UK Weather Becoming More Extreme?</h2>
+  <p>AQA asks you to consider the <strong>evidence</strong> that weather in the UK is becoming more extreme.</p>
+  <table>
+    <thead><tr><th>Evidence</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td>Temperature records</td><td>All ten of the UK's warmest years on record have occurred since 2002. The UK first passed 40°C in July 2022 (40.3°C, Coningsby).</td></tr>
+      <tr><td>Rainfall</td><td>Winter 2013–14 was the wettest on record for England and Wales. Storm Desmond (2015) set a UK 24-hour rainfall record of 341 mm at Honister Pass, Cumbria.</td></tr>
+      <tr><td>Flooding</td><td>Major floods have become more frequent: 2007, 2009, 2012, 2013–14, 2015–16, 2019–20 (Storms Ciara and Dennis).</td></tr>
+      <tr><td>Storms</td><td>The Met Office began naming storms in 2015 to raise public awareness of the risk. Several damaging named storms now occur each winter.</td></tr>
+      <tr><td>Drought</td><td>Hosepipe bans and drought declarations in 2018, 2022 and 2025.</td></tr>
+    </tbody>
+  </table>
+  <h3>Evaluating the evidence</h3>
+  <ul>
+    <li>Records only go back to the mid-1800s, so a few decades of extreme events may be part of <strong>natural variability</strong>.</li>
+    <li>Better measurement and media coverage mean extreme events are <strong>reported more</strong> than in the past.</li>
+    <li>However, the Met Office's attribution studies show that climate change has made events such as the 2022 heatwave and the very wet winters <strong>much more likely</strong>. A warmer atmosphere holds about 7% more moisture per 1°C of warming, leading to heavier rainfall.</li>
+  </ul>
+  <div class="exam-tip">
+    <strong>Exam Tip:</strong> For a 6-mark "To what extent is UK weather becoming more extreme?" question, give evidence for (records, frequency of floods and heatwaves) and against (short records, natural variability, better reporting), then reach a clear conclusion — e.g. "the trend in temperature extremes is clear, while the trend in storminess is less certain".
+  </div>
+
+
+</div>
+</body>
+</html>
