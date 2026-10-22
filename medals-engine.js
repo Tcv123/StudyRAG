@@ -73,6 +73,7 @@ const SUBJECT_TOPIC_KEY = {
   'Geography_OCR': 'geography-ocr',
   'Geography_AQA|gcse': 'geography-aqa-gcse',
   'Geography_Edexcel|gcse': 'geography-edexcel-gcse',
+  'Geography_OCR|gcse': 'geography-ocr-gcse',
   'Geography_Eduqas|gcse': 'geography-eduqas-gcse',
   'Geography_Eduqas|alevel': 'geography-eduqas-alevel',
   'Mathematics_AQA': 'maths-aqa',
