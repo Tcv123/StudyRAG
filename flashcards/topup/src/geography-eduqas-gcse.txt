@@ -1,198 +1,8 @@
 deck: Geography|Eduqas|gcse
+# Rebuilt for the Eduqas B (C112) topics in 2026-10. The previous deck carried
+# AQA-style topics under the same topic numbers; see geography-eduqas-gcse-replace.sql.
 
 ## 1.1
-What are the four processes of coastal erosion? ~~ Hydraulic action, abrasion, attrition and solution.
-What is hydraulic action? ~~ Waves force air into cracks in the cliff, which breaks the rock apart.
-What is abrasion? ~~ Rocks carried by waves are thrown against the cliff, wearing it away.
-What is attrition? ~~ Rocks carried by waves knock against each other, becoming smaller and rounder.
-What is solution? ~~ Seawater dissolves soluble rocks such as chalk and limestone.
-What is longshore drift? ~~ The movement of sediment along the coast by waves approaching at an angle.
-What is the swash? ~~ The movement of water up the beach after a wave breaks.
-What is the backwash? ~~ The movement of water back down the beach under gravity.
-What is a constructive wave? ~~ A low, gentle wave with a strong swash and weak backwash, which builds up beaches.
-What is a destructive wave? ~~ A tall, steep wave with a weak swash and strong backwash, which erodes beaches.
-What is fetch? ~~ The distance over which the wind blows across open water, affecting wave size.
-How is a headland formed? ~~ Resistant rock erodes more slowly than softer rock, leaving land sticking out into the sea.
-How is a bay formed? ~~ Softer rock is eroded more quickly, forming a curved inlet between headlands.
-How is a stack formed? ~~ Waves erode a crack into a cave, then an arch; the arch roof collapses, leaving a stack.
-What is a stump? ~~ The remains of a stack after it has been eroded further.
-What is a wave-cut platform? ~~ A flat area of rock at the base of a cliff, left as the cliff retreats through erosion.
-How is a spit formed? ~~ Longshore drift carries sediment past a bend in the coastline, where it is deposited in the sea.
-What is a bar? ~~ A spit that grows across a bay, joining two headlands and sometimes trapping a lagoon.
-What is a beach? ~~ A deposit of sand and shingle along the coast, formed by constructive waves.
-What is a sand dune? ~~ A hill of sand formed when wind blows sand inland, trapped by vegetation such as marram grass.
-What is hard engineering? ~~ Building artificial structures to control the sea, e.g. sea walls, groynes and rock armour.
-What is soft engineering? ~~ Working with natural processes to manage the coast, e.g. beach nourishment and dune regeneration.
-What is a sea wall? ~~ A concrete wall that reflects waves back out to sea; effective but expensive.
-What is a groyne? ~~ A wooden or rock barrier built out to sea to trap sediment moved by longshore drift.
-What is rock armour? ~~ Large boulders placed at the foot of a cliff to absorb wave energy.
-What is beach nourishment? ~~ Adding sand or shingle to a beach to make it wider, absorbing wave energy.
-What is managed retreat? ~~ Allowing the coast to erode or flood naturally in low-value areas.
-What is sea-level rise's effect on coasts? ~~ It increases flooding and erosion, threatening homes, farmland and habitats.
-What is a Shoreline Management Plan? ~~ A plan that decides how each stretch of coast should be managed: hold the line, advance, retreat or do nothing.
-What is mass movement at the coast? ~~ The downhill movement of material under gravity, e.g. slumping and rockfalls.
-
-## 1.2
-What is the source of a river? ~~ Where the river begins, often in upland areas.
-What is the mouth of a river? ~~ Where the river meets the sea or a lake.
-What is a tributary? ~~ A smaller river that joins a larger one.
-What is a confluence? ~~ The point where two rivers meet.
-What is a drainage basin? ~~ The area of land drained by a river and its tributaries.
-What is a watershed? ~~ The boundary of a drainage basin, usually high ground.
-How does a river change from source to mouth? ~~ It becomes wider and deeper, with a greater discharge and gentler gradient.
-What is vertical erosion? ~~ Erosion that deepens the river channel, common in the upper course.
-What is lateral erosion? ~~ Erosion that widens the river channel, common in the middle and lower course.
-What are the four types of river transportation? ~~ Traction, saltation, suspension and solution.
-What is traction? ~~ Large boulders are rolled along the river bed.
-What is saltation? ~~ Small pebbles bounce along the river bed.
-What is suspension? ~~ Fine particles are carried in the water.
-When does a river deposit sediment? ~~ When it loses energy, e.g. when it slows down on the inside of a bend or enters the sea.
-How is a waterfall formed? ~~ Soft rock beneath hard rock is eroded, creating an overhang that collapses; the waterfall retreats, leaving a gorge.
-What is a gorge? ~~ A steep-sided valley formed as a waterfall retreats upstream.
-What is a V-shaped valley? ~~ A steep valley in the upper course, formed by vertical erosion and weathering.
-What is interlocking spurs? ~~ Hills that stick out alternately on either side of a river in the upper course.
-How is a meander formed? ~~ Erosion on the outside of a bend (fast flow) and deposition on the inside (slow flow).
-How is an oxbow lake formed? ~~ Erosion narrows the neck of a meander until the river cuts through it during a flood; deposition seals off the old loop.
-What is a floodplain? ~~ Flat land either side of a river in the lower course, covered with deposits during floods.
-What is a levée? ~~ A raised bank along a river, formed by deposition of sediment during floods.
-What is a hydrograph? ~~ A graph showing river discharge over time, often in relation to rainfall.
-What is lag time? ~~ The time between peak rainfall and peak discharge.
-What factors increase flood risk? ~~ Heavy rainfall, impermeable rock, steep slopes, urbanisation and deforestation.
-How does urbanisation increase flood risk? ~~ Impermeable surfaces increase surface runoff, and drains carry water quickly to rivers.
-What is a flood defence? ~~ A structure or strategy to reduce flooding, e.g. dams, embankments, flood relief channels.
-What is a flood relief channel? ~~ An artificial channel that diverts water away from a town when river levels are high.
-What is river restoration? ~~ Returning a river to a more natural state to reduce flood risk and improve habitats.
-What is flood zoning? ~~ Restricting building on floodplains in areas at high risk of flooding.
-
-## 1.3
-What is a glacier? ~~ A large mass of ice that moves slowly downhill under gravity.
-What is plucking? ~~ Ice freezes onto rocks and pulls them away as the glacier moves.
-What is abrasion by glaciers? ~~ Rocks frozen into the base of the glacier scrape the rock below like sandpaper.
-What is freeze–thaw weathering? ~~ Water in cracks freezes and expands, widening the crack until the rock breaks.
-What is a corrie? ~~ An armchair-shaped hollow on a mountainside, formed by glacial erosion; it may contain a lake (tarn).
-What is an arête? ~~ A sharp, knife-edge ridge between two corries.
-What is a pyramidal peak? ~~ A sharp mountain peak formed when three or more corries erode back to back.
-What is a U-shaped valley? ~~ A wide, flat-bottomed valley with steep sides, formed by a glacier.
-What is a truncated spur? ~~ A cut-off end of a spur, eroded by a glacier as it moved down the valley.
-What is a hanging valley? ~~ A small valley left high above a main glacial valley, often with a waterfall.
-What is a ribbon lake? ~~ A long, narrow lake in the bottom of a U-shaped valley.
-What is moraine? ~~ Rocks and sediment deposited by a glacier.
-What is a terminal moraine? ~~ A ridge of material marking the furthest point reached by a glacier.
-What is lateral moraine? ~~ Material deposited along the sides of a glacier.
-What is a drumlin? ~~ An egg-shaped hill of glacial deposits, with a blunt end facing the direction the ice came from.
-What is an erratic? ~~ A boulder carried by a glacier and deposited in an area with different rock.
-What is till? ~~ Unsorted sediment deposited by a glacier.
-Where are glaciated landscapes found in the UK? ~~ In upland areas such as the Lake District, Snowdonia and the Scottish Highlands.
-What was the last glacial period? ~~ The most recent ice age, which ended about 10,000 years ago.
-How is glaciated land used? ~~ Farming (sheep), tourism, forestry, quarrying, and hydroelectric power.
-What are the impacts of tourism in glaciated areas? ~~ Jobs and income, but also footpath erosion, traffic congestion and litter.
-What is footpath erosion? ~~ Damage to paths from many walkers, removing vegetation and exposing soil.
-How can footpath erosion be managed? ~~ Laying stone paths, fencing off areas, and signs to keep walkers on paths.
-What is a honeypot site? ~~ A popular tourist location that attracts large numbers of visitors.
-What conflicts can occur in glaciated areas? ~~ Between farmers, tourists, conservationists and residents over land use.
-What is a national park? ~~ A protected area of countryside managed for conservation and recreation.
-Why are glaciers retreating? ~~ Global warming is melting ice faster than it accumulates.
-What is a glacial trough? ~~ Another name for a U-shaped valley.
-What is a tarn? ~~ A small lake in a corrie.
-What is the difference between erosion and weathering? ~~ Weathering breaks down rock in place; erosion wears it away and moves it.
-
-## 1.4
-What is weather? ~~ The day-to-day conditions of the atmosphere, such as temperature, rainfall and wind.
-What is climate? ~~ The average weather conditions of a place over a long period (usually 30 years).
-What is a high-pressure system? ~~ An area of sinking air, bringing settled, dry weather (an anticyclone).
-What is a low-pressure system? ~~ An area of rising air, bringing cloudy, wet and windy weather (a depression).
-What weather does an anticyclone bring in summer? ~~ Hot, dry, sunny weather.
-What weather does an anticyclone bring in winter? ~~ Cold, clear days, frosty nights and fog.
-What is a depression? ~~ A low-pressure weather system that brings wind and rain.
-What is a warm front? ~~ The boundary where warm air rises over cold air, bringing steady rain.
-What is a cold front? ~~ The boundary where cold air pushes under warm air, bringing heavy rain and gusty winds.
-What is an air mass? ~~ A large body of air with similar temperature and moisture.
-What is a maritime air mass? ~~ An air mass that has travelled over the sea, bringing moist air.
-What is a continental air mass? ~~ An air mass that has travelled over land, bringing dry air.
-What is the UK's climate like? ~~ Temperate maritime: mild winters, cool summers, and rain throughout the year.
-Why is western Britain wetter than eastern Britain? ~~ Prevailing south-westerly winds bring moist air from the Atlantic, which rises over western hills (relief rainfall).
-What is relief rainfall? ~~ Rain caused when air is forced to rise over high ground, cools and condenses.
-What is convectional rainfall? ~~ Rain caused when the ground heats up, warm air rises, cools and condenses.
-What is frontal rainfall? ~~ Rain caused when warm air meets cold air and is forced to rise.
-What is the North Atlantic Drift? ~~ A warm ocean current that keeps the UK milder than other places at the same latitude.
-What is global atmospheric circulation? ~~ The worldwide movement of air in cells (Hadley, Ferrel and Polar), which creates climate zones.
-What is the Hadley cell? ~~ The circulation cell between the equator and about 30°, creating rainforests and deserts.
-Why is there low pressure at the equator? ~~ Intense heating makes air rise.
-Why are deserts found at about 30° north and south? ~~ Air sinks there, creating high pressure and dry conditions.
-What is a tropical storm? ~~ An intense low-pressure system with very strong winds and heavy rain, forming over warm oceans.
-What conditions are needed for a tropical storm to form? ~~ Ocean temperatures above 27 °C, low wind shear, and being at least 5° from the equator.
-What is extreme weather? ~~ Weather that is much more severe than usual, e.g. heatwaves, floods and storms.
-Give an example of extreme weather in the UK. ~~ Storm Desmond (2015), the 2022 heatwave, or the Somerset Levels floods (2014).
-What is a heatwave? ~~ A period of unusually hot weather.
-What is drought? ~~ A long period with much less rainfall than normal.
-What is microclimate? ~~ The climate of a small area that differs from the surrounding area, e.g. an urban heat island.
-What is an urban heat island? ~~ A city that is warmer than the surrounding countryside due to buildings, roads and human activity.
-
-## 1.5
-What is an ecosystem? ~~ A community of living things interacting with each other and their non-living environment.
-What is a biome? ~~ A large-scale ecosystem, e.g. tropical rainforest or hot desert.
-Where are tropical rainforests found? ~~ Near the equator, e.g. the Amazon, Congo Basin and Southeast Asia.
-What is the climate of a tropical rainforest? ~~ Hot (about 27 °C) and wet all year, with over 2000 mm of rain.
-What are the layers of the rainforest? ~~ Emergent layer, canopy, understorey and forest floor.
-What is the canopy? ~~ The dense layer of tree tops that absorbs most sunlight.
-What are buttress roots? ~~ Large roots that support tall trees in shallow soils.
-What are drip tips? ~~ Pointed leaves that allow heavy rain to run off quickly.
-What are lianas? ~~ Woody vines that climb trees to reach sunlight.
-What are epiphytes? ~~ Plants that grow on other plants to reach light, e.g. orchids.
-How are animals adapted to the rainforest? ~~ E.g. sloths move slowly and are camouflaged; monkeys have prehensile tails; frogs have sticky feet.
-What is the nutrient cycle in rainforests? ~~ Nutrients are rapidly recycled from leaf litter to plants, so the soil is poor.
-Why is rainforest soil infertile? ~~ Heavy rain washes nutrients away (leaching), and nutrients are held in plants.
-What is biodiversity? ~~ The variety of living things in an area.
-Why do rainforests have high biodiversity? ~~ Warm, wet climate all year allows plants to grow quickly, providing many habitats.
-What is deforestation? ~~ The cutting down or removal of forests.
-What are the causes of deforestation? ~~ Logging, cattle ranching, farming (e.g. palm oil and soya), mining, road building and hydroelectric dams.
-What are the impacts of deforestation? ~~ Loss of biodiversity, soil erosion, climate change, and loss of indigenous people's homes.
-How does deforestation contribute to climate change? ~~ Trees store carbon; burning or cutting them releases CO₂, and fewer trees absorb CO₂.
-What is sustainable forestry? ~~ Managing forests so trees are replanted and the forest can continue to provide resources.
-What is selective logging? ~~ Only cutting down some mature trees, leaving the rest of the forest intact.
-What is ecotourism? ~~ Tourism that conserves the environment and benefits local people.
-What is agroforestry? ~~ Growing crops and trees together, protecting soil and providing resources.
-What is debt-for-nature swap? ~~ A country's debt is reduced in exchange for protecting its rainforest.
-What role do indigenous people play in rainforests? ~~ They often live sustainably and help protect forests from exploitation.
-What is a food web? ~~ A diagram showing how feeding relationships are linked in an ecosystem.
-What is a producer? ~~ An organism that makes its own food through photosynthesis, e.g. plants.
-What is a consumer? ~~ An organism that eats other organisms.
-What is a decomposer? ~~ An organism that breaks down dead material, releasing nutrients, e.g. fungi and bacteria.
-Why is the Amazon rainforest important globally? ~~ It stores carbon, regulates climate, has huge biodiversity, and provides medicines.
-
-## 1.6
-What is a hot desert? ~~ An area with very low rainfall (under 250 mm a year) and high daytime temperatures.
-Where are hot deserts found? ~~ Around 30° north and south of the equator, e.g. the Sahara and Thar deserts.
-What is the climate of a hot desert? ~~ Very hot days, cold nights and very little rainfall.
-Why are desert nights cold? ~~ Clear skies allow heat to escape quickly.
-How are plants adapted to hot deserts? ~~ Cacti store water, have spines instead of leaves, and have long or wide roots.
-How are animals adapted to hot deserts? ~~ Camels store fat in humps and have wide feet; many animals are nocturnal.
-What is desert soil like? ~~ Sandy or stony, dry, and low in nutrients.
-What is desertification? ~~ The process by which land becomes desert-like due to climate change and human activity.
-What are the causes of desertification? ~~ Overgrazing, overcultivation, deforestation, population growth and climate change.
-Where is desertification a problem? ~~ In semi-arid areas such as the Sahel in Africa.
-How can desertification be reduced? ~~ Planting trees, water conservation, appropriate technology, and improving farming methods.
-What are magic stones (bunds)? ~~ Lines of stones that slow water runoff and trap soil, reducing erosion.
-What opportunities do hot deserts offer? ~~ Mining, energy (solar), farming with irrigation, and tourism.
-What challenges do hot deserts present? ~~ Extreme temperatures, water shortages, and poor accessibility.
-What is irrigation? ~~ Artificially watering crops.
-What is solar energy's potential in deserts? ~~ Deserts receive lots of sunshine, making them ideal for solar power plants.
-What is the Great Green Wall? ~~ A project to plant a belt of trees across the Sahel to stop desertification.
-What is an oasis? ~~ A fertile area in a desert where water is found.
-What is a nomad? ~~ A person who moves from place to place with their animals to find food and water.
-What is overgrazing? ~~ When too many animals graze an area, removing vegetation and exposing soil.
-What is overcultivation? ~~ When land is farmed too intensively, exhausting the soil.
-Why are desert ecosystems fragile? ~~ Low rainfall and extreme conditions mean they recover slowly from damage.
-What is biodiversity like in hot deserts? ~~ Lower than rainforests, but many species are specially adapted.
-How does climate change affect hot deserts? ~~ Higher temperatures and less rainfall may make them hotter and drier, expanding their area.
-What is a sand dune in a desert? ~~ A hill of sand shaped by the wind.
-What is the water cycle like in deserts? ~~ Low rainfall and high evaporation mean little water is stored.
-What is the role of tourism in deserts? ~~ It provides jobs and income, but can put pressure on water and fragile environments.
-What is mining's impact in deserts? ~~ It provides jobs and resources but uses water and can damage landscapes.
-What is the Thar Desert? ~~ A hot desert in north-west India and Pakistan.
-What is the Sahel? ~~ A semi-arid region south of the Sahara, at risk of desertification.
-
-## 2.1
 What is urbanisation? ~~ The increase in the proportion of people living in towns and cities.
 What is a megacity? ~~ A city with a population of more than 10 million.
 What causes urbanisation? ~~ Rural–urban migration and natural increase.
@@ -224,7 +34,7 @@ What are the benefits of urbanisation? ~~ Better access to jobs, education and h
 What is an urban transport problem? ~~ Traffic congestion, which causes pollution and delays.
 How can urban transport problems be reduced? ~~ Park-and-ride, congestion charges, bus lanes, cycle lanes and trams.
 
-## 2.2
+## 1.2
 What is the UK's population distribution? ~~ Most people live in cities and the south-east of England, with lower densities in upland areas.
 What is deindustrialisation? ~~ The decline of manufacturing industry.
 What caused deindustrialisation in UK cities? ~~ Competition from cheaper overseas producers, automation, and the decline of coal and steel.
@@ -256,7 +66,7 @@ What is a Local Development Plan? ~~ A council's plan for how land will be used 
 What is urban greening? ~~ Adding green spaces, trees and parks to cities to improve the environment.
 What is a sustainable community? ~~ A place with good housing, jobs, transport, services and environment for current and future residents.
 
-## 2.3
+## 1.3
 What is development? ~~ The process of improving people's standard of living and quality of life.
 What is GNI per capita? ~~ Gross national income divided by the population, a measure of average wealth.
 What is the Human Development Index? ~~ A measure of development combining life expectancy, education and income.
@@ -265,7 +75,7 @@ What is literacy rate? ~~ The percentage of adults who can read and write.
 What is infant mortality rate? ~~ The number of babies who die before their first birthday per 1000 live births.
 What is a high-income country (HIC)? ~~ A wealthy, developed country, e.g. the UK or USA.
 What is a low-income country (LIC)? ~~ A poorer country with lower development, e.g. Malawi.
-What is a newly emerging economy (NEE)? ~~ A country experiencing rapid economic growth, e.g. India or Brazil.
+What is a newly emerging economy (NIC)? ~~ A country experiencing rapid economic growth, e.g. India or Brazil.
 What is the development gap? ~~ The difference in wealth and quality of life between richer and poorer countries.
 What are the causes of uneven development? ~~ Physical factors (climate, disasters), economic factors (trade, debt) and historical factors (colonialism).
 How does trade affect development? ~~ Countries exporting low-value primary products earn less than those exporting manufactured goods.
@@ -288,39 +98,103 @@ What are the Sustainable Development Goals? ~~ 17 UN goals to end poverty, prote
 What is a top-down development project? ~~ A large-scale project planned by governments or organisations, e.g. a dam.
 What is a bottom-up development project? ~~ A small-scale project run by local communities, e.g. a village well.
 
-## 3.1
-What is the structure of the Earth? ~~ Crust, mantle, outer core and inner core.
-What is a tectonic plate? ~~ A large section of the Earth's crust that moves slowly on the mantle.
-What causes plates to move? ~~ Convection currents in the mantle, and slab pull.
-What is a destructive plate margin? ~~ Where an oceanic plate is forced under a continental plate, causing earthquakes and violent volcanoes.
-What is a constructive plate margin? ~~ Where plates move apart and magma rises to form new crust, causing gentle volcanoes.
-What is a conservative plate margin? ~~ Where plates slide past each other, causing earthquakes but no volcanoes.
-What is a collision margin? ~~ Where two continental plates collide, forming fold mountains.
-What is the focus of an earthquake? ~~ The point underground where the earthquake starts.
-What is the epicentre? ~~ The point on the surface directly above the focus.
-How are earthquakes measured? ~~ Using the moment magnitude scale (or Richter scale) and a seismometer.
-What is a composite volcano? ~~ A steep-sided volcano made of layers of ash and lava, with explosive eruptions.
-What is a shield volcano? ~~ A wide, gently sloping volcano made of runny lava, with gentle eruptions.
-What is a hotspot? ~~ An area of volcanic activity away from plate margins, e.g. Hawaii.
-What are the primary effects of earthquakes? ~~ Buildings collapse, roads and bridges are damaged, and people are killed or injured.
-What are the secondary effects of earthquakes? ~~ Fires, tsunamis, landslides, disease, and homelessness.
-What is a tsunami? ~~ A large sea wave caused by an earthquake under the ocean.
-What are the primary effects of volcanoes? ~~ Lava flows, pyroclastic flows, ash falls and gas emissions.
-What are the secondary effects of volcanoes? ~~ Lahars (mudflows), flooding, loss of tourism, and fertile soils in the long term.
-Why do people live near volcanoes? ~~ Fertile soils, tourism, geothermal energy and minerals.
-How can the effects of earthquakes be reduced? ~~ Earthquake-proof buildings, education, emergency plans, and early warning systems.
-What is an earthquake-proof building? ~~ A building designed to withstand shaking, e.g. with deep foundations, cross-bracing and shock absorbers.
-How can volcanic eruptions be predicted? ~~ Monitoring ground swelling, gas emissions and small earthquakes.
-Why do earthquakes have more impact in poorer countries? ~~ Poor-quality buildings, fewer emergency services, and less preparation.
-Give an example of an earthquake in a richer country. ~~ Japan (Tōhoku 2011) or Christchurch, New Zealand (2011).
-Give an example of an earthquake in a poorer country. ~~ Nepal (2015) or Haiti (2010).
-What is the Pacific Ring of Fire? ~~ A zone around the Pacific Ocean with many volcanoes and earthquakes.
-What is a pyroclastic flow? ~~ A fast-moving cloud of hot gas, ash and rock.
-What is a lahar? ~~ A mudflow of volcanic material mixed with water.
-What is hazard mapping? ~~ Mapping areas at risk from hazards to plan land use and evacuation.
-What is the magnitude of an earthquake? ~~ A measure of the energy released by an earthquake.
+## 2.1
+What are the four processes of coastal erosion? ~~ Hydraulic action, abrasion, attrition and solution.
+What is hydraulic action? ~~ Waves force air into cracks in the cliff, which breaks the rock apart.
+What is abrasion? ~~ Rocks carried by waves are thrown against the cliff, wearing it away.
+What is attrition? ~~ Rocks carried by waves knock against each other, becoming smaller and rounder.
+What is solution? ~~ Seawater dissolves soluble rocks such as chalk and limestone.
+What is longshore drift? ~~ The movement of sediment along the coast by waves approaching at an angle.
+What is the swash? ~~ The movement of water up the beach after a wave breaks.
+What is the backwash? ~~ The movement of water back down the beach under gravity.
+What is a constructive wave? ~~ A low, gentle wave with a strong swash and weak backwash, which builds up beaches.
+What is a destructive wave? ~~ A tall, steep wave with a weak swash and strong backwash, which erodes beaches.
+What is fetch? ~~ The distance over which the wind blows across open water, affecting wave size.
+How is a headland formed? ~~ Resistant rock erodes more slowly than softer rock, leaving land sticking out into the sea.
+How is a bay formed? ~~ Softer rock is eroded more quickly, forming a curved inlet between headlands.
+How is a stack formed? ~~ Waves erode a crack into a cave, then an arch; the arch roof collapses, leaving a stack.
+What is a stump? ~~ The remains of a stack after it has been eroded further.
+What is a wave-cut platform? ~~ A flat area of rock at the base of a cliff, left as the cliff retreats through erosion.
+How is a spit formed? ~~ Longshore drift carries sediment past a bend in the coastline, where it is deposited in the sea.
+What is a bar? ~~ A spit that grows across a bay, joining two headlands and sometimes trapping a lagoon.
+What is a beach? ~~ A deposit of sand and shingle along the coast, formed by constructive waves.
+What is a sand dune? ~~ A hill of sand formed when wind blows sand inland, trapped by vegetation such as marram grass.
+What is hard engineering? ~~ Building artificial structures to control the sea, e.g. sea walls, groynes and rock armour.
+What is soft engineering? ~~ Working with natural processes to manage the coast, e.g. beach nourishment and dune regeneration.
+What is a sea wall? ~~ A concrete wall that reflects waves back out to sea; effective but expensive.
+What is a groyne? ~~ A wooden or rock barrier built out to sea to trap sediment moved by longshore drift.
+What is rock armour? ~~ Large boulders placed at the foot of a cliff to absorb wave energy.
+What is beach nourishment? ~~ Adding sand or shingle to a beach to make it wider, absorbing wave energy.
+What is managed retreat? ~~ Allowing the coast to erode or flood naturally in low-value areas.
+What is sea-level rise's effect on coasts? ~~ It increases flooding and erosion, threatening homes, farmland and habitats.
+What is a Shoreline Management Plan? ~~ A plan that decides how each stretch of coast should be managed: hold the line, advance, retreat or do nothing.
+What is mass movement at the coast? ~~ The downhill movement of material under gravity, e.g. slumping and rockfalls.
 
-## 3.2
+## 2.2
+What is the source of a river? ~~ Where the river begins, often in upland areas.
+What is the mouth of a river? ~~ Where the river meets the sea or a lake.
+What is a tributary? ~~ A smaller river that joins a larger one.
+What is a confluence? ~~ The point where two rivers meet.
+What is a drainage basin? ~~ The area of land drained by a river and its tributaries.
+What is a watershed? ~~ The boundary of a drainage basin, usually high ground.
+How does a river change from source to mouth? ~~ It becomes wider and deeper, with a greater discharge and gentler gradient.
+What is vertical erosion? ~~ Erosion that deepens the river channel, common in the upper course.
+What is lateral erosion? ~~ Erosion that widens the river channel, common in the middle and lower course.
+What are the four types of river transportation? ~~ Traction, saltation, suspension and solution.
+What is traction? ~~ Large boulders are rolled along the river bed.
+What is saltation? ~~ Small pebbles bounce along the river bed.
+What is suspension? ~~ Fine particles are carried in the water.
+When does a river deposit sediment? ~~ When it loses energy, e.g. when it slows down on the inside of a bend or enters the sea.
+How is a waterfall formed? ~~ Soft rock beneath hard rock is eroded, creating an overhang that collapses; the waterfall retreats, leaving a gorge.
+What is a gorge? ~~ A steep-sided valley formed as a waterfall retreats upstream.
+What is a V-shaped valley? ~~ A steep valley in the upper course, formed by vertical erosion and weathering.
+What is interlocking spurs? ~~ Hills that stick out alternately on either side of a river in the upper course.
+How is a meander formed? ~~ Erosion on the outside of a bend (fast flow) and deposition on the inside (slow flow).
+How is an oxbow lake formed? ~~ Erosion narrows the neck of a meander until the river cuts through it during a flood; deposition seals off the old loop.
+What is a floodplain? ~~ Flat land either side of a river in the lower course, covered with deposits during floods.
+What is a levée? ~~ A raised bank along a river, formed by deposition of sediment during floods.
+What is a hydrograph? ~~ A graph showing river discharge over time, often in relation to rainfall.
+What is lag time? ~~ The time between peak rainfall and peak discharge.
+What factors increase flood risk? ~~ Heavy rainfall, impermeable rock, steep slopes, urbanisation and deforestation.
+How does urbanisation increase flood risk? ~~ Impermeable surfaces increase surface runoff, and drains carry water quickly to rivers.
+What is a flood defence? ~~ A structure or strategy to reduce flooding, e.g. dams, embankments, flood relief channels.
+What is a flood relief channel? ~~ An artificial channel that diverts water away from a town when river levels are high.
+What is river restoration? ~~ Returning a river to a more natural state to reduce flood risk and improve habitats.
+What is flood zoning? ~~ Restricting building on floodplains in areas at high risk of flooding.
+
+## 2.3
+What is weather? ~~ The day-to-day conditions of the atmosphere, such as temperature, rainfall and wind.
+What is climate? ~~ The average weather conditions of a place over a long period (usually 30 years).
+What is a high-pressure system? ~~ An area of sinking air, bringing settled, dry weather (an anticyclone).
+What is a low-pressure system? ~~ An area of rising air, bringing cloudy, wet and windy weather (a depression).
+What weather does an anticyclone bring in summer? ~~ Hot, dry, sunny weather.
+What weather does an anticyclone bring in winter? ~~ Cold, clear days, frosty nights and fog.
+What is a depression? ~~ A low-pressure weather system that brings wind and rain.
+What is a warm front? ~~ The boundary where warm air rises over cold air, bringing steady rain.
+What is a cold front? ~~ The boundary where cold air pushes under warm air, bringing heavy rain and gusty winds.
+What is an air mass? ~~ A large body of air with similar temperature and moisture.
+What is a maritime air mass? ~~ An air mass that has travelled over the sea, bringing moist air.
+What is a continental air mass? ~~ An air mass that has travelled over land, bringing dry air.
+What is the UK's climate like? ~~ Temperate maritime: mild winters, cool summers, and rain throughout the year.
+Why is western Britain wetter than eastern Britain? ~~ Prevailing south-westerly winds bring moist air from the Atlantic, which rises over western hills (relief rainfall).
+What is relief rainfall? ~~ Rain caused when air is forced to rise over high ground, cools and condenses.
+What is convectional rainfall? ~~ Rain caused when the ground heats up, warm air rises, cools and condenses.
+What is frontal rainfall? ~~ Rain caused when warm air meets cold air and is forced to rise.
+What is the North Atlantic Drift? ~~ A warm ocean current that keeps the UK milder than other places at the same latitude.
+What is global atmospheric circulation? ~~ The worldwide movement of air in cells (Hadley, Ferrel and Polar), which creates climate zones.
+What is the Hadley cell? ~~ The circulation cell between the equator and about 30°, creating rainforests and deserts.
+Why is there low pressure at the equator? ~~ Intense heating makes air rise.
+Why are deserts found at about 30° north and south? ~~ Air sinks there, creating high pressure and dry conditions.
+What is a tropical storm? ~~ An intense low-pressure system with very strong winds and heavy rain, forming over warm oceans.
+What conditions are needed for a tropical storm to form? ~~ Ocean temperatures above 27 °C, low wind shear, and being at least 5° from the equator.
+What is extreme weather? ~~ Weather that is much more severe than usual, e.g. heatwaves, floods and storms.
+Give an example of extreme weather in the UK. ~~ Storm Desmond (2015), the 2022 heatwave, or the Somerset Levels floods (2014).
+What is a heatwave? ~~ A period of unusually hot weather.
+What is drought? ~~ A long period with much less rainfall than normal.
+What is microclimate? ~~ The climate of a small area that differs from the surrounding area, e.g. an urban heat island.
+What is an urban heat island? ~~ A city that is warmer than the surrounding countryside due to buildings, roads and human activity.
+
+## 2.4
 What is climate change? ~~ A long-term change in the Earth's climate, including temperature and rainfall patterns.
 What is the greenhouse effect? ~~ Gases in the atmosphere trap heat from the Sun, keeping the Earth warm.
 What is the enhanced greenhouse effect? ~~ Human activities increase greenhouse gases, trapping more heat and causing global warming.
@@ -351,6 +225,70 @@ What is renewable energy? ~~ Energy from sources that won't run out, e.g. wind, 
 What is a climate refugee? ~~ Someone forced to move because of the effects of climate change.
 How do rising temperatures affect ecosystems? ~~ Species may move, adapt or become extinct, e.g. coral bleaching.
 What is coral bleaching? ~~ Corals expel algae when water is too warm, turning white and possibly dying.
+
+## 3.1
+What is a biome? ~~ A large-scale ecosystem with a distinctive climate, vegetation and animal life.
+Where is the savanna found? ~~ Between about 5° and 20° north and south of the Equator, e.g. East Africa, northern Australia and Brazil.
+What is the savanna's climate like? ~~ Hot all year, with a wet season and a long dry season.
+Why does the savanna have wet and dry seasons? ~~ The ITCZ moves north and south with the overhead sun, bringing rain for part of the year.
+What vegetation dominates the savanna? ~~ Grasses with scattered drought-resistant trees such as acacia and baobab.
+How are acacia trees adapted to the savanna? ~~ Deep roots reach groundwater, small leaves reduce water loss and thorns deter grazers.
+How is the baobab tree adapted? ~~ It stores water in its huge trunk and sheds leaves in the dry season.
+What role does fire play in the savanna? ~~ Dry-season fires stop trees taking over and recycle nutrients; grasses regrow quickly from roots.
+What is the Serengeti–Mara ecosystem known for? ~~ The great wildebeest migration of over a million animals following the rains.
+Why is decomposition slow in the savanna? ~~ Dead grass lies dry for months during the dry season.
+What is a food web? ~~ A diagram showing the feeding relationships between organisms in an ecosystem.
+What is a producer? ~~ An organism, usually a plant, that makes its own food by photosynthesis.
+Why is energy lost along a food chain? ~~ Energy is used for movement, heat and life processes at each trophic level.
+What is Kenfig National Nature Reserve? ~~ A sand dune system with dune slacks and a pool in South Wales — a small-scale UK ecosystem.
+What is a dune slack? ~~ A damp hollow between dunes where the water table is near the surface; very species-rich.
+Which rare plant is protected at Kenfig? ~~ The fen orchid, which has risen from about 200 to over 4,000 plants.
+Why is Kenfig becoming too stable? ~~ Loss of grazing and nitrogen deposition let coarse plants and scrub spread over bare sand.
+How is Kenfig managed? ~~ Scrub clearance, turf stripping, reintroduced grazing and boardwalks to control visitors.
+What is an ecosystem? ~~ A community of living things interacting with each other and their non-living environment.
+What is the climate of a tropical rainforest? ~~ Hot (about 27 °C) and wet all year, with over 2000 mm of rain.
+What are the layers of the rainforest? ~~ Emergent layer, canopy, understorey and forest floor.
+What is the canopy? ~~ The dense layer of tree tops that absorbs most sunlight.
+What are buttress roots? ~~ Large roots that support tall trees in shallow soils.
+What are drip tips? ~~ Pointed leaves that allow heavy rain to run off quickly.
+What are lianas? ~~ Woody vines that climb trees to reach sunlight.
+What are epiphytes? ~~ Plants that grow on other plants to reach light, e.g. orchids.
+How are animals adapted to the rainforest? ~~ E.g. sloths move slowly and are camouflaged; monkeys have prehensile tails; frogs have sticky feet.
+What is the nutrient cycle in rainforests? ~~ Nutrients are rapidly recycled from leaf litter to plants, so the soil is poor.
+Why is rainforest soil infertile? ~~ Heavy rain washes nutrients away (leaching), and nutrients are held in plants.
+What is biodiversity? ~~ The variety of living things in an area.
+
+## 3.2
+How do people modify ecosystems? ~~ By clearing land for farming, logging, mining, building and tourism.
+What is the biggest driver of Amazon deforestation? ~~ Cattle ranching.
+Why is Borneo's forest being cleared? ~~ Mainly for palm oil plantations, plus logging and mining.
+How is the savanna threatened? ~~ Overgrazing, population growth, conversion to farmland, poaching and climate change.
+What happens when savanna is overgrazed? ~~ Vegetation is removed, soil is exposed and eroded, and land can turn to desert.
+How does tourism affect the Maasai Mara? ~~ It brings income but vehicles damage grassland and disturb animals.
+Give a local effect of deforestation. ~~ Soil erosion, loss of habitats and loss of livelihoods for indigenous people.
+Give a global effect of deforestation. ~~ More CO₂ released and less carbon stored, adding to climate change.
+Why are ecosystems conserved? ~~ For biodiversity, ecosystem services, climate regulation, livelihoods and future resources.
+What is sustainable management? ~~ Using ecosystems to meet present needs without damaging them for future generations.
+What is selective logging? ~~ Felling only certain mature trees, leaving the rest of the forest intact.
+What is ecotourism? ~~ Small-scale tourism that protects the environment and benefits local people, e.g. Costa Rica.
+What is the Great Green Wall? ~~ An African-led project to restore land across the Sahel with trees and sustainable farming.
+What is a debt-for-nature swap? ~~ Cancelling part of a country's debt in return for protecting forests.
+What is CITES? ~~ An international agreement controlling trade in endangered species and some timber.
+What is REDD+? ~~ A UN scheme paying countries to keep forests standing to reduce carbon emissions.
+How does palm oil production harm Borneo? ~~ It destroys orangutan habitat, drains peat and pollutes rivers.
+What is the RSPO? ~~ The Roundtable on Sustainable Palm Oil, which certifies sustainably produced palm oil.
+Why do indigenous land rights help protect forests? ~~ Indigenous territories have much lower deforestation rates.
+How can grazing be managed sustainably in the savanna? ~~ By limiting herd sizes and rotating grazing to let grass recover.
+How does poaching threaten the savanna? ~~ It reduces populations of elephants and rhinos, upsetting food webs.
+What is a national park? ~~ A protected area where development is restricted to conserve landscapes and wildlife.
+Where are tropical rainforests found? ~~ Near the equator, e.g. the Amazon, Congo Basin and Southeast Asia.
+What is deforestation? ~~ The cutting down or removal of forests.
+What are the causes of deforestation? ~~ Logging, cattle ranching, farming (e.g. palm oil and soya), mining, road building and hydroelectric dams.
+What are the impacts of deforestation? ~~ Loss of biodiversity, soil erosion, climate change, and loss of indigenous people's homes.
+How does deforestation contribute to climate change? ~~ Trees store carbon; burning or cutting them releases CO₂, and fewer trees absorb CO₂.
+What is sustainable forestry? ~~ Managing forests so trees are replanted and the forest can continue to provide resources.
+What role do indigenous people play in rainforests? ~~ They often live sustainably and help protect forests from exploitation.
+Why is the Amazon rainforest important globally? ~~ It stores carbon, regulates climate, has huge biodiversity, and provides medicines.
 
 ## 3.3
 What is water security? ~~ Having reliable access to enough safe, clean water.
@@ -383,3 +321,35 @@ What is infiltration? ~~ Water soaking into the soil.
 What is surface runoff? ~~ Water flowing over the ground into rivers.
 What is water stress? ~~ When demand for water exceeds the available supply.
 What is a water conflict? ~~ A dispute between groups or countries over access to water, e.g. over the Nile.
+
+## 3.4
+What is desertification? ~~ The process by which land in dry areas becomes degraded and turns into desert.
+Which environments are most vulnerable to desertification? ~~ Semi-arid areas on the edges of hot deserts, such as the Sahel.
+Where is the Sahel? ~~ A semi-arid belt south of the Sahara, stretching from Senegal to Sudan.
+Why are desert fringes dry? ~~ They lie near the sub-tropical high pressure belt, where sinking air prevents rain.
+How has Sahel rainfall changed? ~~ It fell sharply from the 1950s–60s to the 1970s–80s, causing severe droughts.
+How does vegetation loss make desertification worse? ~~ Less evapotranspiration means less local rainfall and exposed soil is eroded.
+Name four human causes of desertification. ~~ Overgrazing, over-cultivation, deforestation for fuelwood and over-abstraction of water.
+What is overgrazing? ~~ Keeping too many animals on land, so vegetation is eaten faster than it regrows.
+What is over-cultivation? ~~ Farming land too intensively without fallow periods, exhausting the soil.
+Why do people cut trees in the Sahel? ~~ For fuelwood, building and to clear land for farming.
+How does population growth affect desertification? ~~ More people need more food, fuel and water, increasing pressure on the land.
+Give an impact of desertification on people. ~~ Falling crop yields, food insecurity and migration to cities.
+What are zai pits? ~~ Small planting pits filled with manure that collect water and nutrients for crops.
+What are stone lines (bunds)? ~~ Lines of stones along contours that slow run-off and trap soil and water.
+How can NGOs help reduce desertification? ~~ By working with communities on tree planting, water harvesting and better farming.
+Who are stakeholders in desertification? ~~ Farmers, herders, governments, NGOs and international organisations, each with different views.
+Name an international strategy against desertification. ~~ The Great Green Wall or the UN Convention to Combat Desertification.
+How might climate change affect desertification? ~~ Higher temperatures and less reliable rainfall could increase it.
+How does deforestation in the Sahel affect rainfall? ~~ Less vegetation means less moisture recycled to the air, reducing local rain.
+Why is soil erosion a problem in desertification? ~~ Fertile topsoil is blown or washed away, so crops cannot grow.
+Why do farmers in the Sahel overcultivate? ~~ Rising population and poverty mean they need more food from the same land.
+How does drought make desertification worse? ~~ Plants die, leaving soil bare and easily eroded.
+What is desert soil like? ~~ Sandy or stony, dry, and low in nutrients.
+What are the causes of desertification? ~~ Overgrazing, overcultivation, deforestation, population growth and climate change.
+Where is desertification a problem? ~~ In semi-arid areas such as the Sahel in Africa.
+How can desertification be reduced? ~~ Planting trees, water conservation, appropriate technology, and improving farming methods.
+What are magic stones (bunds)? ~~ Lines of stones that slow water runoff and trap soil, reducing erosion.
+What is the Great Green Wall? ~~ A project to plant a belt of trees across the Sahel to stop desertification.
+What is overcultivation? ~~ When land is farmed too intensively, exhausting the soil.
+What is the Sahel? ~~ A semi-arid region south of the Sahara, at risk of desertification.
