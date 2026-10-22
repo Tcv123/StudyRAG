@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — 1.4 Development Dynamics — Edexcel GCSE Geography B</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+    h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+    h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+    p { margin-bottom: 12px; }
+    ul, ol { margin: 10px 0 15px 25px; }
+    li { margin-bottom: 6px; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+    th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+    tr:nth-child(even) { background: #f8fafc; }
+    .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+    .definition strong { color: #1e3a5f; }
+    .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+    .exam-tip strong { color: #b45309; }
+    .case-study { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+    .case-study strong { color: #15803d; }
+    .svg-label { font-size: 10px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    @media print { body { padding: 20px; } }
+  </style>
+</head>
+<body>
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+<div class="container">
+
+  <p style="color:#64748b;font-size:0.9rem;margin-bottom:8px;">Edexcel GCSE Geography B (1GB0) — Component 1: Global Geographical Issues · Topic 2: Development Dynamics</p>
+  <h1>1.4 Development Dynamics</h1>
+
+
+  <h2>1. Defining Development</h2>
+  <p>Development refers to improvements in the standard of living and quality of life for people within a country. It is measured across two broad dimensions:</p>
+  <ul>
+    <li><strong>Economic development</strong> — growth in wealth, industrialisation, trade, and GDP per capita.</li>
+    <li><strong>Human development</strong> — improvements in quality of life: health, education, wellbeing, and political freedom.</li>
+  </ul>
+  <p>Development is best understood as a <strong>continuum</strong> — a sliding scale from the least to most developed — rather than a binary division of "developed" and "developing" worlds. Countries sit at different points on this continuum and move along it over time.</p>
+
+  <h3>Classification of Countries</h3>
+  <div class="definition">
+    <strong>Developed countries (High Income Countries)</strong> — GNI per capita above ~$13,900 (World Bank threshold, 2025). Examples: USA, UK, Germany, Japan, Australia.
+  </div>
+  <div class="definition">
+    <strong>Developing countries (Low Income Countries)</strong> — GNI per capita below ~$1,135 (2025). Examples: Niger, South Sudan, DR Congo, Afghanistan.
+  </div>
+  <div class="definition">
+    <strong>Emerging countries (Newly Emerging Economies)</strong> — Countries rapidly industrialising and growing, often moving from developing status. Examples: China, India, Brazil, Nigeria, Mexico, Indonesia, Turkey, South Africa.
+  </div>
+
+  <!-- Development continuum SVG -->
+  <svg viewBox="0 0 700 100" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px 0;display:block;">
+    <defs>
+      <linearGradient id="devGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#ef4444"/>
+        <stop offset="40%" stop-color="#f59e0b"/>
+        <stop offset="100%" stop-color="#16a34a"/>
+      </linearGradient>
+    </defs>
+    <rect x="20" y="35" width="660" height="20" rx="10" fill="url(#devGrad)"/>
+    <!-- Labels -->
+    <text x="20" y="28" font-size="11" fill="#ef4444" font-family="sans-serif" font-weight="600">Developing countries</text>
+    <text x="265" y="28" font-size="11" fill="#d97706" font-family="sans-serif" font-weight="600">Emerging countries / MICs</text>
+    <text x="580" y="28" font-size="11" fill="#16a34a" font-family="sans-serif" font-weight="600">Developed countries</text>
+    <!-- Arrow -->
+    <line x1="20" y1="72" x2="670" y2="72" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+    <defs>
+      <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"/>
+      </marker>
+    </defs>
+    <text x="320" y="88" font-size="11" fill="#64748b" font-family="sans-serif" text-anchor="middle">Development Continuum</text>
+    <!-- Country markers -->
+    <circle cx="60" cy="45" r="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+    <text x="60" y="92" font-size="10" fill="#1a1a2e" font-family="sans-serif" text-anchor="middle">Niger</text>
+    <circle cx="280" cy="45" r="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+    <text x="280" y="92" font-size="10" fill="#1a1a2e" font-family="sans-serif" text-anchor="middle">India</text>
+    <circle cx="420" cy="45" r="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+    <text x="420" y="92" font-size="10" fill="#1a1a2e" font-family="sans-serif" text-anchor="middle">China</text>
+    <circle cx="620" cy="45" r="6" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+    <text x="620" y="92" font-size="10" fill="#1a1a2e" font-family="sans-serif" text-anchor="middle">UK</text>
+  </svg>
+
+  <div class="exam-tip">
+    <strong>Exam Tip:</strong> Avoid using the terms "first world / third world" or "developed / developing" in exam answers — they imply a binary and are outdated. Use developed country, developing country, emerging country, or "more/less economically developed country" (MEDC/LEDC). Examiners reward precise terminology.
+  </div>
+
+
+
+  <h2>2. Measuring Development</h2>
+  <p>Development can be measured using <strong>single indicators</strong> (one measure) or <strong>composite indicators</strong> (combining multiple measures).</p>
+
+  <h3>Single Indicators</h3>
+  <table>
+    <thead>
+      <tr><th>Indicator</th><th>What It Measures</th><th>Advantage</th><th>Limitation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>GNI per capita (US$)</td><td>Average wealth per person (Gross National Income / population)</td><td>Easy to compare internationally</td><td>Ignores inequality (distribution of wealth)</td></tr>
+      <tr><td>Birth rate (per 1,000)</td><td>Number of live births per 1,000 people per year</td><td>Indicates healthcare, education level</td><td>Affected by age structure of population</td></tr>
+      <tr><td>Death rate (per 1,000)</td><td>Number of deaths per 1,000 people per year</td><td>Reflects healthcare quality</td><td>Developed countries can have high death rates due to ageing population</td></tr>
+      <tr><td>Infant mortality rate (per 1,000)</td><td>Deaths of children under 1 year per 1,000 live births</td><td>Very sensitive indicator — falls quickly with development</td><td>May not reflect adult quality of life</td></tr>
+      <tr><td>Life expectancy (years)</td><td>Average expected lifespan at birth</td><td>Reflects healthcare, nutrition, safety</td><td>Averages hide internal inequalities</td></tr>
+      <tr><td>Literacy rate (%)</td><td>% of adults who can read and write</td><td>Shows educational access</td><td>Doesn't measure quality of education</td></tr>
+      <tr><td>Access to clean water (%)</td><td>% of population with safe water supply</td><td>Directly linked to health outcomes</td><td>Data can be unreliable in developing countries</td></tr>
+      <tr><td>Calorie intake (per day)</td><td>Average daily calories consumed per person</td><td>Indicates food security and nutrition</td><td>Doesn't distinguish between nutritious/non-nutritious calories</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Composite Indicator: Human Development Index (HDI)</h3>
+  <div class="definition">
+    <strong>HDI (Human Development Index)</strong> — developed by the UNDP, combines three dimensions into a score between 0 and 1:
+    <ol style="margin:8px 0 0 20px;">
+      <li><strong>GNI per capita</strong> (economic dimension)</li>
+      <li><strong>Life expectancy at birth</strong> (health dimension)</li>
+      <li><strong>Mean years of schooling + expected years of schooling</strong> (education dimension)</li>
+    </ol>
+  </div>
+  <table>
+    <thead>
+      <tr><th>Country</th><th>HDI Score (2022)</th><th>Category</th><th>GNI per capita (PPP US$)</th><th>Life Expectancy</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Norway</td><td>0.966</td><td>Very High</td><td>$82,500</td><td>83.2 years</td></tr>
+      <tr><td>UK</td><td>0.940</td><td>Very High</td><td>$45,225</td><td>81.3 years</td></tr>
+      <tr><td>China</td><td>0.788</td><td>High</td><td>$19,590</td><td>78.2 years</td></tr>
+      <tr><td>India</td><td>0.644</td><td>Medium</td><td>$7,420</td><td>67.7 years</td></tr>
+      <tr><td>Ghana</td><td>0.602</td><td>Medium</td><td>$5,269</td><td>64.1 years</td></tr>
+      <tr><td>Niger</td><td>0.394</td><td>Low</td><td>$1,284</td><td>62.4 years</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Advantages of HDI:</strong> more rounded than single indicators; recognises that development is multidimensional; widely used for international comparison.</p>
+  <p><strong>Limitations of HDI:</strong> still doesn't capture inequality within countries; ignores environmental sustainability; ignores gender inequality, political freedom, happiness.</p>
+
+  <div class="exam-tip">
+    <strong>Exam Tip:</strong> The infant mortality rate is considered the most "sensitive" single indicator because it responds quickly to improvements in development (healthcare, sanitation, nutrition). Mention this in evaluation questions about measuring development.
+  </div>
+
+
+
+  <h2>3. Other Measures of Development</h2>
+  <table>
+    <thead><tr><th>Measure</th><th>What it shows</th></tr></thead>
+    <tbody>
+      <tr><td><strong>GDP per capita (PPP)</strong></td><td>Average economic output per person, adjusted for purchasing power (what money buys locally).</td></tr>
+      <tr><td><strong>Gini coefficient</strong></td><td>How equally income is shared within a country, from 0 (perfect equality) to 1 (one person has everything). South Africa (~0.63) is one of the most unequal; Slovakia (~0.24) one of the most equal.</td></tr>
+      <tr><td><strong>Gender inequality / female literacy</strong></td><td>Shows how far women share in development — linked to lower birth rates and better child health.</td></tr>
+      <tr><td><strong>Political corruption index</strong></td><td>Transparency International's index shows perceived corruption, which can hold back development.</td></tr>
+    </tbody>
+  </table>
+
+
+  <h2>4. Patterns of Development</h2>
+  <p>Wealth and development are unevenly distributed globally. A broad pattern is visible in the <strong>North-South divide</strong>, summarised by the <strong>Brandt Line</strong>.</p>
+
+  <!-- Brandt Line SVG -->
+  <svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px 0;display:block;border:1px solid #cbd5e1;border-radius:8px;">
+    <!-- Ocean background -->
+    <rect width="700" height="360" fill="#dbeafe" rx="8"/>
+    <!-- Landmass approximations (simplified) -->
+    <!-- N America -->
+    <ellipse cx="150" cy="130" rx="90" ry="75" fill="#86efac"/>
+    <!-- S America -->
+    <ellipse cx="180" cy="250" rx="55" ry="70" fill="#fde68a"/>
+    <!-- Europe -->
+    <ellipse cx="360" cy="100" rx="45" ry="35" fill="#86efac"/>
+    <!-- Africa -->
+    <ellipse cx="375" cy="220" rx="55" ry="75" fill="#fde68a"/>
+    <!-- Asia -->
+    <ellipse cx="520" cy="140" rx="100" ry="75" fill="#fdba74"/>
+    <!-- Australia -->
+    <ellipse cx="570" cy="270" rx="50" ry="35" fill="#86efac"/>
+    <!-- Japan -->
+    <ellipse cx="610" cy="155" rx="12" ry="22" fill="#86efac"/>
+    <!-- Brandt Line -->
+    <polyline points="0,130 100,130 200,130 250,155 310,160 360,160 400,190 500,190 600,190 700,190" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="8,4"/>
+    <!-- Labels -->
+    <rect x="10" y="10" width="80" height="22" rx="4" fill="#16a34a" opacity="0.85"/>
+    <text x="50" y="25" font-size="11" fill="#fff" font-family="sans-serif" text-anchor="middle" font-weight="600">NORTH (developed countries)</text>
+    <rect x="10" y="320" width="80" height="22" rx="4" fill="#d97706" opacity="0.85"/>
+    <text x="50" y="335" font-size="11" fill="#fff" font-family="sans-serif" text-anchor="middle" font-weight="600">SOUTH (developing countries)</text>
+    <text x="350" y="125" font-size="10" fill="#dc2626" font-family="sans-serif" font-weight="700">BRANDT LINE</text>
+    <!-- Country labels -->
+    <text x="150" y="133" font-size="10" fill="#1a1a2e" font-family="sans-serif" text-anchor="middle" font-weight="600">N. America</text>
+    <text x="180" y="252" font-size="10" fill="#1a1a2e" font-family="sans-serif" text-anchor="middle" font-weight="600">S. America</text>
+    <text x="360" y="102" font-size="10" fill="#1a1a2e" font-family="sans-serif" text-anchor="middle" font-weight="600">Europe</text>
+    <text x="375" y="222" font-size="10" fill="#1a1a2e" font-family="sans-serif" text-anchor="middle" font-weight="600">Africa</text>
+    <text x="510" y="142" font-size="10" fill="#1a1a2e" font-family="sans-serif" text-anchor="middle" font-weight="600">Asia</text>
+    <text x="570" y="272" font-size="9" fill="#1a1a2e" font-family="sans-serif" text-anchor="middle" font-weight="600">Australia</text>
+    <text x="350" y="345" font-size="10" fill="#64748b" font-family="sans-serif" text-anchor="middle">Simplified Brandt Line — separates richer North from poorer South</text>
+  </svg>
+
+  <p><strong>Key patterns of global wealth distribution:</strong></p>
+  <ul>
+    <li>Developed countries are concentrated in North America, Western Europe, Japan, and Australia/NZ.</li>
+    <li>Developing countries are concentrated in sub-Saharan Africa and parts of South/Southeast Asia.</li>
+    <li>Sub-Saharan Africa has the highest concentration of the world's developing countries.</li>
+    <li>Emerging countries — the BRICS (Brazil, Russia, India, China, South Africa) and MINT (Mexico, Indonesia, Nigeria, Turkey) — are rapidly changing the global economic landscape.</li>
+    <li>The Brandt Line is a simplification: Australia and New Zealand are geographically south but economically "north".</li>
+  </ul>
+
+  <div class="exam-tip">
+    <strong>Exam Tip:</strong> The Brandt Line is a useful concept but always note its limitations — it oversimplifies a complex spectrum. Australia and NZ are exceptions. Many emerging countries are in the "south" but are growing rapidly.
+  </div>
+
+
+
+<h2>5. The Demographic Transition Model (DTM)</h2>
+<p>The DTM shows how a country's <strong>birth rate</strong>, <strong>death rate</strong> and <strong>total population</strong> change over time as it develops.</p>
+
+<svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:20px auto;display:block;border:1px solid #cbd5e1;border-radius:8px;background:#f8fafc;">
+  <line x1="60" y1="230" x2="610" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="60" y1="30" x2="60" y2="230" stroke="#1a1a2e" stroke-width="1.5"/>
+  <line x1="170" y1="30" x2="170" y2="230" stroke="#cbd5e1" stroke-dasharray="4,3"/>
+  <line x1="280" y1="30" x2="280" y2="230" stroke="#cbd5e1" stroke-dasharray="4,3"/>
+  <line x1="390" y1="30" x2="390" y2="230" stroke="#cbd5e1" stroke-dasharray="4,3"/>
+  <line x1="500" y1="30" x2="500" y2="230" stroke="#cbd5e1" stroke-dasharray="4,3"/>
+  <!-- Birth rate -->
+  <path d="M60,60 L170,58 L280,62 C330,90 360,150 390,175 L500,190 L610,200" stroke="#2563eb" stroke-width="3" fill="none"/>
+  <!-- Death rate -->
+  <path d="M60,66 C100,58 140,75 170,70 C210,110 250,160 280,175 L390,185 L500,190 L610,182" stroke="#dc2626" stroke-width="3" fill="none"/>
+  <!-- Total population -->
+  <path d="M60,215 L170,212 C220,200 260,170 280,150 C320,110 360,85 390,75 L500,65 L610,68" stroke="#16a34a" stroke-width="3" fill="none" stroke-dasharray="7,4"/>
+  <text x="115" y="250" font-size="11" font-family="sans-serif" fill="#1e3a5f" text-anchor="middle" font-weight="600">Stage 1</text>
+  <text x="225" y="250" font-size="11" font-family="sans-serif" fill="#1e3a5f" text-anchor="middle" font-weight="600">Stage 2</text>
+  <text x="335" y="250" font-size="11" font-family="sans-serif" fill="#1e3a5f" text-anchor="middle" font-weight="600">Stage 3</text>
+  <text x="445" y="250" font-size="11" font-family="sans-serif" fill="#1e3a5f" text-anchor="middle" font-weight="600">Stage 4</text>
+  <text x="555" y="250" font-size="11" font-family="sans-serif" fill="#1e3a5f" text-anchor="middle" font-weight="600">Stage 5</text>
+  <text x="115" y="265" font-size="9" font-family="sans-serif" fill="#64748b" text-anchor="middle">High fluctuating</text>
+  <text x="225" y="265" font-size="9" font-family="sans-serif" fill="#64748b" text-anchor="middle">Early expanding</text>
+  <text x="335" y="265" font-size="9" font-family="sans-serif" fill="#64748b" text-anchor="middle">Late expanding</text>
+  <text x="445" y="265" font-size="9" font-family="sans-serif" fill="#64748b" text-anchor="middle">Low stationary</text>
+  <text x="555" y="265" font-size="9" font-family="sans-serif" fill="#64748b" text-anchor="middle">Declining</text>
+  <rect x="440" y="22" width="12" height="4" fill="#2563eb"/><text x="458" y="27" font-size="10" font-family="sans-serif" fill="#1e3a5f">Birth rate</text>
+  <rect x="440" y="36" width="12" height="4" fill="#dc2626"/><text x="458" y="41" font-size="10" font-family="sans-serif" fill="#1e3a5f">Death rate</text>
+  <rect x="530" y="22" width="12" height="4" fill="#16a34a"/><text x="548" y="27" font-size="10" font-family="sans-serif" fill="#1e3a5f">Total population</text>
+  <text x="20" y="130" font-size="10" font-family="sans-serif" fill="#64748b" transform="rotate(-90 20 130)" text-anchor="middle">Rate per 1,000 / population</text>
+</svg>
+
+<table>
+  <thead><tr><th>Stage</th><th>Birth rate</th><th>Death rate</th><th>Population</th><th>Reasons</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>High</td><td>High, fluctuating</td><td>Low, stable</td><td>No birth control; children needed for farm work; disease, famine and poor healthcare</td><td>A few remote tribes today</td></tr>
+    <tr><td>2</td><td>High</td><td>Falling rapidly</td><td>Rising rapidly</td><td>Improvements in healthcare, clean water, sanitation and food supply; birth rate stays high through tradition</td><td>Niger, Afghanistan</td></tr>
+    <tr><td>3</td><td>Falling rapidly</td><td>Falling more slowly</td><td>Rising more slowly</td><td>Contraception available; women educated and working; fewer children needed as infant mortality falls</td><td>India, Brazil, Nigeria (late stage 2/3)</td></tr>
+    <tr><td>4</td><td>Low</td><td>Low</td><td>High, stable</td><td>Family planning widespread; children expensive; good healthcare</td><td>UK, USA</td></tr>
+    <tr><td>5</td><td>Very low</td><td>Low, rising slightly</td><td>Slowly falling</td><td>Ageing population; people having children later or not at all</td><td>Japan, Italy, Germany</td></tr>
+  </tbody>
+</table>
+<div class="exam-tip"><strong>Exam Tip:</strong> The DTM links directly to development — developing countries tend to be in stages 2–3, emerging countries in stage 3, and developed countries in stages 4–5. A limitation is that it is based on the experience of European countries and assumes all countries will follow the same path.</div>
+
+
+
+
+  <h2>6. Causes of Uneven Development</h2>
+  <p>Uneven development has multiple, interrelated causes — both physical and human.</p>
+
+  <h3>Physical Causes</h3>
+  <ul>
+    <li><strong>Landlocked countries</strong> — no access to sea trade routes, making trade expensive (Mali, Chad, Zambia). 16 of the world's 32 landlocked developing countries are in Africa.</li>
+    <li><strong>Tropical climate</strong> — high temperatures and humidity increase prevalence of diseases (malaria, dengue) which reduce workforce productivity. Seasonal droughts reduce agricultural output.</li>
+    <li><strong>Natural hazards</strong> — frequent earthquakes, floods, cyclones destroy infrastructure and divert development funds to disaster relief (Haiti, Bangladesh).</li>
+    <li><strong>Lack of natural resources</strong> — limited mineral or energy wealth restricts income generation. However, the "resource curse" shows that over-reliance on a single resource (e.g. oil in Nigeria) can actually worsen inequality if wealth is poorly distributed.</li>
+  </ul>
+
+  <h3>Human Causes</h3>
+  <ul>
+    <li><strong>Colonialism</strong> — European powers extracted resources, cash crops, and labour from colonies for centuries. Infrastructure built to serve colonial export needs, not local development. Borders drawn arbitrarily, ignoring ethnic groups, causing post-independence conflict.</li>
+    <li><strong>Trade inequality</strong> — "Terms of trade" work against developing countries. Developing countries export primary commodities (cocoa, coffee, copper) at volatile, low prices; import manufactured goods at higher prices. "Commodity trap" — prices set by global markets, not producers.</li>
+    <li><strong>Debt</strong> — Many developing countries borrowed heavily in the 1970s-80s for development; interest repayments now exceed incoming aid. World Bank and IMF Structural Adjustment Programmes (SAPs) required cuts to health/education spending — worsening development.</li>
+    <li><strong>Political instability</strong> — corruption diverts funds; civil war destroys infrastructure and displaces populations. South Sudan — world's youngest nation — suffered civil war from 2013 to 2018 and continuing instability since, preventing development. Conflict deters foreign investment.</li>
+    <li><strong>Poor governance</strong> — weak institutions, lack of rule of law, and corruption reduce effectiveness of development spending.</li>
+  </ul>
+
+  <div class="exam-tip">
+    <strong>Exam Tip:</strong> "Explain why development is uneven" questions require you to state, explain, and link multiple causes. Don't just list them — explain the mechanism (e.g. "landlocked countries face higher transport costs, which makes imports more expensive and reduces trade, slowing economic growth").
+  </div>
+
+
+<h2>7. Consequences of Uneven Development</h2>
+<table>
+  <thead><tr><th>Consequence</th><th>Detail</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Disparities in wealth</strong></td><td>The richest 10% of the world's population hold around three-quarters of global wealth. GNI per capita in the UK is over 40 times that of Malawi.</td></tr>
+    <tr><td><strong>Disparities in health</strong></td><td>Life expectancy is about 81 in the UK but under 55 in Nigeria and Chad. Infant mortality in Sierra Leone is roughly 20 times that of Japan. Lack of clean water and healthcare means diseases such as malaria and cholera remain common in developing countries.</td></tr>
+    <tr><td><strong>International migration</strong></td><td>People migrate from poorer to richer countries for jobs, higher wages and safety — economic migrants (e.g. from Eastern Europe to the UK) and refugees fleeing conflict. Remittances sent home can be a major source of income for developing countries.</td></tr>
+  </tbody>
+</table>
+
+
+
+  <h2>8. Theories of Development</h2>
+  <h3>Rostow's modernisation theory (1960)</h3>
+  <p>W. W. Rostow argued that all countries pass through <strong>five stages of economic growth</strong>:</p>
+  <ol>
+    <li><strong>Traditional society</strong> — mostly subsistence farming, little technology.</li>
+    <li><strong>Pre-conditions for take-off</strong> — investment in infrastructure, education and commercial farming; some industry.</li>
+    <li><strong>Take-off</strong> — rapid growth of manufacturing industries; investment from abroad.</li>
+    <li><strong>Drive to maturity</strong> — economy diversifies; technology spreads; living standards rise.</li>
+    <li><strong>High mass consumption</strong> — wealthy society with a large service sector and high consumer spending.</li>
+  </ol>
+  <p><strong>Criticisms:</strong> based on the experience of Europe and the USA; ignores colonialism and the unequal world trading system; assumes development is only economic growth.</p>
+
+  <h3>Frank's dependency theory (1960s)</h3>
+  <ul>
+    <li>André Gunder Frank argued that the world is divided into a wealthy <strong>core</strong> (developed countries) and a poor <strong>periphery</strong> (developing countries).</li>
+    <li>The core keeps the periphery poor by buying its raw materials cheaply and selling manufactured goods back at high prices, and through debt and aid with conditions. Development in the core <strong>depends on</strong> underdevelopment in the periphery.</li>
+    <li><strong>Criticisms:</strong> it cannot explain how countries such as South Korea, Singapore and China have grown rapidly within the global economy.</li>
+  </ul>
+  <div class="exam-tip"><strong>Exam Tip:</strong> Compare the theories: Rostow is optimistic (all countries can develop by following the same path); Frank is pessimistic (the global system prevents development). India and China support parts of both.</div>
+
+
+  <h2>9. Globalisation and Development</h2>
+  <p><strong>Globalisation</strong> — the increasing interconnectedness of the world through trade, investment, migration, and communications.</p>
+
+  <h3>Transnational Corporations (TNCs)</h3>
+  <div class="definition">
+    <strong>TNCs (Transnational Corporations)</strong> — companies that operate in multiple countries. Examples: Nike, Apple, Shell, Unilever, Samsung. They locate headquarters in developed countries but manufacturing in developing and emerging countries to exploit lower labour costs, tax advantages, and weaker regulations.
+  </div>
+  <table>
+    <thead>
+      <tr><th>Positive impacts on developing and emerging countries</th><th>Negative impacts on developing and emerging countries</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Creates employment (often thousands of jobs)</td><td>Low wages — often close to minimum; poor working conditions</td></tr>
+      <tr><td>Technology transfer to local workers and firms</td><td>Profits repatriated back to developed country headquarters — "leakage"</td></tr>
+      <tr><td>Brings Foreign Direct Investment (FDI)</td><td>Environmental damage — weaker regulations exploited</td></tr>
+      <tr><td>Develops infrastructure (roads, ports)</td><td>Worker exploitation — long hours, unsafe conditions (Rana Plaza, Bangladesh 2013)</td></tr>
+      <tr><td>Increases exports and government tax revenue</td><td>Undermines local industries through competition</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The Global Shift</h3>
+  <p>Since the 1970s–80s, manufacturing has shifted from developed countries (USA, UK, Germany) to emerging countries and developing countries (China, Vietnam, Bangladesh, Mexico). This "global shift" has brought rapid industrialisation to Asia in particular, reducing absolute poverty for hundreds of millions of people. However, it has also led to deindustrialisation and job losses in traditional manufacturing regions of developed countries (e.g. Rust Belt, USA; steel towns in Wales/NE England).</p>
+
+  <div class="exam-tip">
+    <strong>Exam Tip:</strong> For TNC evaluation questions, structure your answer around: economic impacts (jobs, FDI, tax), social impacts (working conditions, urbanisation), and environmental impacts. Use a named TNC with specific details — Nike in Vietnam, or Apple's Foxconn factories in China — to access top marks.
+  </div>
+
+
+
+
+  <h2>10. Trade and Development</h2>
+  <p>International trade is a major driver of development — but access to trade and its terms are unequal.</p>
+
+  <h3>Fairtrade</h3>
+  <div class="definition">
+    <strong>Fairtrade</strong> — a trading partnership that ensures producers in developing countries receive a guaranteed minimum price for their goods, plus a "Fairtrade Premium" (extra money for community projects). Managed by the Fairtrade Foundation. Nearly 2 million farmers and workers in around 70 countries. Products include cocoa, coffee, bananas, cotton, gold.
+  </div>
+  <ul>
+    <li><strong>Benefits:</strong> stable income, social premium for schools/wells/healthcare, empowers smallholder farmers, encourages environmental standards.</li>
+    <li><strong>Criticisms:</strong> only a small fraction of the Fairtrade price reaches farmers; consumers pay more but benefit may be limited; not all large-scale producers can access Fairtrade certification.</li>
+  </ul>
+
+  <h3>Trade Blocs and the WTO</h3>
+  <ul>
+    <li><strong>Trade blocs</strong> (e.g. EU single market, NAFTA/USMCA) reduce tariffs between member countries — benefitting members but excluding developing countries.</li>
+    <li><strong>WTO (World Trade Organisation)</strong> — sets global trade rules. Accused of favouring developed country agendas; agricultural subsidies in the EU/USA undercut developing country farmers.</li>
+  </ul>
+
+  <h3>Commodity Dependence</h3>
+  <ul>
+    <li><strong>Ghana</strong> — heavily dependent on cocoa and gold exports. When cocoa prices fall, government revenue falls sharply.</li>
+    <li><strong>Nigeria</strong> — oil accounts for ~90% of export revenue and ~70% of government income. The "Dutch Disease": oil wealth causes the currency to rise, making other exports uncompetitive and damaging manufacturing.</li>
+  </ul>
+
+
+
+  <h2>11. Aid</h2>
+  <p>Aid is the transfer of resources (money, goods, expertise) from one country or organisation to another, usually to help development or respond to a crisis.</p>
+
+  <h3>Types of Aid</h3>
+  <table>
+    <thead>
+      <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Bilateral aid</td><td>Government to government, often with political strings attached ("tied aid")</td><td>UK aid to Pakistan (FCDO)</td></tr>
+      <tr><td>Multilateral aid</td><td>Channelled through international organisations (UN, World Bank, IMF)</td><td>World Bank infrastructure loans</td></tr>
+      <tr><td>NGO aid</td><td>Non-governmental organisations funded by voluntary donations</td><td>Oxfam, Red Cross, WaterAid</td></tr>
+      <tr><td>Emergency/short-term aid</td><td>Rapid response to disasters — food, shelter, medicine</td><td>Nepal earthquake 2015 response</td></tr>
+      <tr><td>Long-term/development aid</td><td>Building infrastructure, improving education, strengthening institutions</td><td>WaterAid installing clean water systems</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Tied Aid</h3>
+  <div class="definition">
+    <strong>Tied aid</strong> — aid with conditions: recipient country must spend the money on goods/services from the donor country. Critics argue this benefits donor economies more than recipients.
+  </div>
+
+  <h3>Aid Debate</h3>
+  <table>
+    <thead>
+      <tr><th>Arguments FOR aid</th><th>Arguments AGAINST aid</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Saves lives in emergency situations</td><td>Can create dependency — countries rely on aid rather than developing own economies</td></tr>
+      <tr><td>Funds education and healthcare that governments cannot afford</td><td>Tied aid benefits donor country companies, not recipients</td></tr>
+      <tr><td>Builds essential infrastructure (roads, dams, schools)</td><td>Corruption diverts aid funds away from intended recipients</td></tr>
+      <tr><td>Transfers technology and expertise</td><td>Inappropriate technology may not suit local conditions or skills</td></tr>
+      <tr><td>Helps rebuild after natural disasters</td><td>Aid can suppress local agricultural markets (food aid undercuts local farmers)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="exam-tip">
+    <strong>Exam Tip:</strong> When evaluating aid, use the phrase "sustainable development" — the most effective aid builds local capacity rather than creating dependency. Long-term development aid is generally considered more beneficial than emergency aid in the longer term.
+  </div>
+
+
+
+  <h2>12. Other Strategies to Reduce Inequality</h2>
+
+  <h3>Microfinance / Microcredit</h3>
+  <div class="definition">
+    <strong>Microfinance</strong> — small loans (micro-loans) given to individuals (often women) in developing countries to start or grow small businesses, without requiring collateral. Developed by the Grameen Bank in Bangladesh (founded 1983 by Muhammad Yunus). Over 9 million borrowers, 97% women. Average loan ~$200. Success rate high: ~98% repayment.
+  </div>
+  <p><strong>Benefits:</strong> empowers women, breaks poverty cycle, stimulates local economy, does not create national debt.<br><strong>Criticisms:</strong> high interest rates in some schemes, small scale — cannot address systemic inequality.</p>
+
+  <h3>Debt Relief</h3>
+  <p>The <strong>HIPC (Heavily Indebted Poor Countries) initiative</strong> — IMF/World Bank programme that cancelled around $76 billion of debt for over 35 qualifying countries. Freed up government funds for health and education spending (Mozambique, Uganda, Bolivia). Conditions applied — some argue these conditions still favour creditor countries.</p>
+
+  <h3>Intermediate/Appropriate Technology</h3>
+  <div class="definition">
+    <strong>Appropriate technology</strong> — technology that is suited to the local environment, skills, culture, and economic circumstances of the community. Often simple, low-cost, repairable locally. Championed by NGO Practical Action (formerly ITDG).
+  </div>
+  <ul>
+    <li>Wind pumps for irrigation (Kenya) — no fuel needed, maintained locally.</li>
+    <li>Solar cookers (India) — reduce firewood use, improve health (less indoor smoke).</li>
+    <li>Biosand filters (Cambodia) — clean water at low cost.</li>
+    <li>Treadle pumps (Bangladesh) — foot-powered irrigation for small farmers.</li>
+  </ul>
+
+  <h3>Tourism</h3>
+  <p>Tourism brings foreign exchange to developing and emerging countries. <strong>Kenya</strong> — safari and beach tourism earns billions of dollars a year, creating jobs in rural areas. <strong>Maldives</strong> — ~28% of GDP from tourism. However: leakage (profits leaving to TNC-owned hotels in developed countries), environmental damage (reef degradation), seasonality of income, vulnerability to global events (COVID-19 devastated Maldives tourism).</p>
+
+  <h3>Export Processing Zones (EPZs)</h3>
+  <p>EPZs are designated areas where companies pay reduced taxes and have relaxed regulations to attract foreign investment and manufacturing. China used EPZs (Shenzhen Special Economic Zone from 1980) as a key driver of rapid industrialisation and export growth.</p>
+
+
+
+  <h2>13. Top-Down and Bottom-Up Development</h2>
+  <table>
+    <thead><tr><th></th><th>Top-down</th><th>Bottom-up</th></tr></thead>
+    <tbody>
+      <tr><td>Definition</td><td>Large-scale projects planned and funded by governments, international organisations or TNCs</td><td>Small-scale projects run by and for local communities, often supported by NGOs</td></tr>
+      <tr><td>Examples</td><td>Large dams (Sardar Sarovar, India), motorways, industrial zones</td><td>Microfinance, appropriate technology, community water projects, solar lamps</td></tr>
+      <tr><td>Advantages</td><td>Can transform whole regions — electricity, irrigation, jobs; attract investment</td><td>Cheap, meets local needs, uses local skills, sustainable, communities have ownership</td></tr>
+      <tr><td>Disadvantages</td><td>Expensive; can create debt; local people may be displaced and benefits may go to cities and businesses</td><td>Small scale — limited impact on national development; relies on NGO funding</td></tr>
+    </tbody>
+  </table>
+
+
+  <h2>14. Case Study: India — An Emerging Country</h2>
+  <div class="case-study">
+    <strong>India — location and context</strong>
+    <ul style="margin-top:8px;">
+      <li>In South Asia, bordered by Pakistan, China, Nepal and Bangladesh, with coasts on the Arabian Sea and Bay of Bengal.</li>
+      <li>The world's most populous country (about 1.45 billion people) and one of the fastest-growing major economies; the world's fifth-largest economy by GDP.</li>
+      <li>Ruled by Britain until independence in 1947; a democratic republic. Economic reforms in <strong>1991</strong> opened the economy to foreign trade and investment.</li>
+    </ul>
+  </div>
+  <h3>Economic change and globalisation</h3>
+  <ul>
+    <li>GDP has grown at around 6–8% a year for much of the period since the 1990s.</li>
+    <li>The economic structure has shifted from agriculture towards services: agriculture employs about 45% of workers but produces under 20% of GDP; services produce over half of GDP.</li>
+    <li>India is a global centre for <strong>IT and business services</strong> — Bengaluru ("India's Silicon Valley"), Hyderabad and Pune host firms such as Infosys, Tata Consultancy Services and Wipro, and offices of Google, Microsoft and Amazon.</li>
+    <li><strong>TNCs</strong> invest in India because of a large, young, English-speaking workforce, lower labour costs and a huge domestic market. Examples: Unilever (Hindustan Unilever), Apple suppliers making iPhones near Chennai, and car makers such as Suzuki and Hyundai.</li>
+  </ul>
+  <h3>Impacts of rapid development</h3>
+  <table>
+    <thead><tr><th>Positive</th><th>Negative</th></tr></thead>
+    <tbody>
+      <tr><td>Hundreds of millions lifted out of extreme poverty; a growing middle class</td><td>Large regional disparities — states such as Kerala, Maharashtra and Tamil Nadu are much richer than Bihar and Uttar Pradesh</td></tr>
+      <tr><td>Life expectancy has risen to about 70; literacy over 75%</td><td>Inequality between rich and poor and between urban and rural areas</td></tr>
+      <tr><td>Improved infrastructure: highways, metro systems, airports, near-universal electrification of villages</td><td>Air pollution — Delhi is regularly among the world's most polluted cities; water pollution in the Ganges</td></tr>
+      <tr><td>Growing global influence (G20, space programme)</td><td>Rapid urbanisation and slums; pressure on water resources</td></tr>
+    </tbody>
+  </table>
+  <h3>Demographic and geopolitical change</h3>
+  <ul>
+    <li>Birth rate and fertility have fallen (fertility is now about 2 children per woman), giving a large working-age population — a potential "demographic dividend".</li>
+    <li>Geopolitically, India is a nuclear power, a leading member of the G20 and BRICS, and seeks a permanent seat on the UN Security Council.</li>
+  </ul>
+  <h3>Top-down vs bottom-up in India</h3>
+  <ul>
+    <li><strong>Top-down — Sardar Sarovar Dam</strong> on the Narmada River (Gujarat, completed 2017): provides irrigation water to millions of hectares, drinking water and hydroelectricity, but displaced tens of thousands of families and flooded farmland and forests; the Narmada Bachao Andolan protest movement campaigned against it for decades.</li>
+    <li><strong>Bottom-up — Barefoot College</strong> (Tilonia, Rajasthan): trains rural women, many of them illiterate, as "solar engineers" who install and maintain solar lighting in their villages; cheap, sustainable and empowering, but small-scale.</li>
+    <li><strong>Bottom-up — self-help groups and microfinance:</strong> millions of women's groups save and borrow together to start small businesses.</li>
+  </ul>
+  <div class="exam-tip"><strong>Exam Tip:</strong> A common 8-mark question is "Assess the extent to which India's economic growth has benefited all of its people." Use regional disparity, urban–rural inequality and environmental costs to balance the evidence of rising incomes and falling poverty.</div>
+
+
+</div>
+</body>
+</html>
