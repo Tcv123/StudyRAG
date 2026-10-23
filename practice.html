@@ -2409,6 +2409,12 @@ function fmtTime(sec) {
 /* ═══════════════════════════════════════
    RENDER QUESTION
 ═══════════════════════════════════════ */
+// Question and mark-scheme text is plain text, not markup: escape it so code
+// comparisons (x < y) and inequalities render instead of opening a tag.
+function escQ(s) {
+  return String(s ?? '').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+}
+
 function renderQuestion() {
   const q = questions[qIndex];
   const total = questions.length;
@@ -2436,7 +2442,7 @@ function renderQuestion() {
           <span class="q-badge written">✏️ Written</span>
           <span class="q-marks">[${q.marks} mark${q.marks > 1 ? 's' : ''}]</span>
         </div>
-        <div class="q-text">${q.q}</div>
+        <div class="q-text">${escQ(q.q)}</div>
 
         ${q.diagram ? `<div class="diagram-area">
           <div class="draw-toolbar">
@@ -2479,7 +2485,7 @@ function renderQuestion() {
         <div id="markSchemeWrap" style="display:none">
           <div class="mark-scheme-wrap">
             <div class="mark-scheme-label">📋 Mark Scheme — ${q.marks} mark${q.marks > 1 ? 's' : ''}</div>
-            <div class="mark-scheme-text">${q.markScheme}</div>
+            <div class="mark-scheme-text">${escQ(q.markScheme)}</div>
           </div>
           <p style="font-size:13px;color:var(--muted);margin-top:14px;text-align:center;">How did you do? Be honest — it helps you learn.</p>
           <div class="self-mark-row">

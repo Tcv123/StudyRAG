@@ -677,7 +677,7 @@
     if (topicQuestions.length > 0) {
       const q = topicQuestions[questionIndex % topicQuestions.length];
       currentQuestion = q;
-      questionText.innerHTML = q.q;
+      questionText.textContent = q.q;   // plain text: code and inequalities use < and >
       const m = q.marks || 0;
       state.marks = m;
       state.command = q.command || state.command;
