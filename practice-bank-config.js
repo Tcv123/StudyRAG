@@ -68,15 +68,7 @@
     'Mathematics_Edexcel|gcse':     ['questions/maths-edexcel-gcse/maths-edexcel-gcse-practice.js'],
     'Mathematics_OCR|alevel':       ['questions/maths-ocr-alevel/maths-ocr-alevel-practice.js'],
     'Mathematics_OCR B|alevel':     ['questions/maths-ocr-b-alevel/maths-ocr-b-alevel-practice.js'],
-    'Mathematics_Edexcel': [
-      'questions/maths-edexcel/w-P1-P11.js',
-      'questions/maths-edexcel/w-P12-P21.js',
-      'questions/maths-edexcel/w-S1-S8.js',
-      'questions/maths-edexcel/w-M1-M2.js',
-      'questions/maths-edexcel/w-M3-M4.js',
-      'questions/maths-edexcel/w-M5-M7.js',
-      'questions/maths-edexcel/maths-edexcel-practice.js',
-    ],
+    'Mathematics_Edexcel':          ['questions/maths-edexcel/maths-edexcel-practice.js'],
     'Further Mathematics_Edexcel': [
       'questions/further-maths-edexcel/fm-edexcel-written-cp1a.js',
       'questions/further-maths-edexcel/fm-edexcel-written-cp1b.js',
