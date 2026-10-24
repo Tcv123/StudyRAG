@@ -1,3245 +1,576 @@
 /*
  * Pearson Edexcel GCSE Mathematics (1MA1) — Exam Practice Question Bank
- * 20 questions per topic, 1-5 marks, with mark schemes ("• point (n)" lines summing to marks).
- * requiresDiagram: true where a figure is needed (it is also described in words).
- * higher: true = Higher-tier-only content.
+ * Shape: { topicId: { name, questions: [{ q, marks, command, markScheme, diagram? }] } }
+ * Topic ids unchanged so topics-config.js still matches.
+ *
+ * WHY THIS SHAPE. Real Pearson Edexcel GCSE Mathematics (1MA1) questions mix
+ * bare skills items with context problems (money, recipes, maps, timetables,
+ * shapes), multi-part questions with part marks, and 'show that' / reasoning
+ * items. Every item here follows the board's real structure and wording, with
+ * every answer computed and checked.
+ *
+ * TARIFFS. Part tariffs follow the real mix taken from the site's own past-paper
+ * data for this specification.
+ *
+ * MARK SCHEMES. Board style: one line per mark with M1 / A1 / B1 / P1 / C1 codes
+ * as the board uses them, ft and oe notes, and the final answer.
+ *
+ * Data marked "written for this practice question" is invented but realistic and
+ * every calculation has been checked.
+ * Drawing canvas flag (diagram: true) enables the sketch area in practice.html.
  */
 
 const MATHS_EDEXCEL_GCSE_PRACTICE = {
-
-  /* ─────────────────────────────────────────────────────────── 1.1 */
-  "1.1": {
-    "name": "Structure & Calculation",
-    "questions": [
-      {
-        "q": "Write these numbers in order of size. Start with the smallest number.\n0.507,  0.57,  −0.75,  −0.705",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: −0.75, −0.705, 0.507, 0.57 (1)"
-      },
-      {
-        "q": "Write down a number between 40 and 50 that is a multiple of 3 and also a factor of 90.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 45 (1)"
-      },
-      {
-        "q": "Work out 4.6 × 3.8\nYou must show your working. (Non-calculator)",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: complete method, e.g. 46 × 38 = 1748 or grid with 4 × 3, 4 × 0.8, 0.6 × 3, 0.6 × 0.8 (1)\n• A1: 17.48 (1)"
-      },
-      {
-        "q": "Work out 25.2 ÷ 0.7\nYou must show your working. (Non-calculator)",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: rewrites as 252 ÷ 7 (both numbers multiplied by 10) (1)\n• A1: 36 (1)"
-      },
-      {
-        "q": "Work out 6 + (−3)³ ÷ 9 × 2",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (−3)³ = −27, or −27 ÷ 9 = −3 seen (1)\n• A1: 0 (1)"
-      },
-      {
-        "q": "Write 252 as a product of its prime factors.\nGive your answer in index form.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: correct method, e.g. factor tree or repeated division with at least two correct steps, or 2, 2, 3, 3, 7 seen (1)\n• A1: 2² × 3² × 7 (1)"
-      },
-      {
-        "q": "Find the lowest common multiple (LCM) of 24 and 40.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: lists multiples of both (at least 3 of each) or 24 = 2³ × 3 and 40 = 2³ × 5 (1)\n• A1: 120 (1)"
-      },
-      {
-        "q": "You are given that 58 × 23 = 1334\nUse this information to write down the value of\n(a) 5.8 × 2.3\n(b) 13 340 ÷ 230",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 13.34 (1)\n• B1: (b) 58 (1)"
-      },
-      {
-        "q": "(a) Insert one pair of brackets to make this statement true:  3 + 5 × 6 − 2 = 23\n(b) Insert one pair of brackets to make this statement true:  3 + 5 × 6 − 2 = 46",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 3 + 5 × (6 − 2) = 23 (1)\n• B1: (b) (3 + 5) × 6 − 2 = 46 (1)"
-      },
-      {
-        "q": "The temperature at the top of a mountain is −8 °C. The temperature at the bottom of the mountain is 21 °C higher. During the night the temperature at the bottom falls by 15 °C. Work out the temperature at the bottom of the mountain during the night.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: −8 + 21 = 13 or 21 − 15 = 6 (1)\n• A1: −2 °C (1)"
-      },
-      {
-        "q": "A sandwich bar offers 4 types of bread, 6 fillings and 3 sauces. Each sandwich has one bread, one filling and one sauce. Work out the number of different sandwiches that are possible.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: 4 × 6 × 3 (1)\n• A1: 72 (1)"
-      },
-      {
-        "q": "Car A takes 40 seconds to drive once around a track. Car B takes 48 seconds. Both cars cross the start line together at 2:00 pm. At what time will they next cross the start line together?",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: multiples of 40 and 48 listed, or 40 = 2³ × 5 and 48 = 2⁴ × 3 (1)\n• A1: LCM = 240 seconds (1)\n• A1: 2:04 pm (1)"
-      },
-      {
-        "q": "A = 2⁴ × 3 × 5² and B = 2² × 3³ × 5\n(a) Find the highest common factor (HCF) of A and B.\n(b) Find the lowest common multiple (LCM) of A and B.\nYou may leave your answers in index form.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 2² × 3 × 5 (= 60) (1)\n• M1: (b) uses highest power of each prime, e.g. 2⁴ and 3³ and 5² (1)\n• A1: 2⁴ × 3³ × 5² (= 10 800) (1)"
-      },
-      {
-        "q": "Ella has four cards labelled 1, 3, 6 and 8. She picks two of the cards to make a 2-digit number.\n(a) List all the different 2-digit numbers she can make.\n(b) How many of these numbers are multiples of 3?",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B2: (a) all 12 numbers: 13, 16, 18, 31, 36, 38, 61, 63, 68, 81, 83, 86 with no repeats (B1 for at least 8 correct) (2)\n• B1: (b) 4 (18, 36, 63, 81) (1)"
-      },
-      {
-        "q": "Max has £320.50 in his bank account. Two payments are taken out: £148.90 and £215.35. He then pays £96 into the account. Work out the balance of his account now. (Non-calculator)",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 320.50 − 148.90 = 171.60 or 148.90 + 215.35 = 364.25 (1)\n• M1: complete method, e.g. 171.60 − 215.35 = −43.75 then + 96 (1)\n• A1: £52.25 (1)"
-      },
-      {
-        "q": "A shop buys 36 cakes for £1.25 each. It sells 30 of the cakes for £2.40 each and the rest at half this price. Work out the total profit the shop makes.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: cost 36 × 1.25 = 45 (1)\n• M1: income 30 × 2.40 + 6 × 1.20 (= 79.20) (1)\n• A1: £34.20 (1)"
-      },
-      {
-        "q": "A locker code is 3 letters chosen from A, B, C and D followed by 2 digits from 0 to 9. A letter cannot be used more than once in a code. Digits may be repeated. How many different locker codes are possible?",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: 4 × 3 × 2 (= 24) (1)\n• M1: 10 × 10 (= 100) used as a multiplier (1)\n• A1: 2400 (1)"
-      },
-      {
-        "q": "Sam has 84 red sweets and 126 blue sweets. He puts all the sweets into bags. Each bag has the same number of red sweets and the same number of blue sweets. There are no sweets left over.\n(a) Work out the greatest number of bags Sam can fill.\n(b) How many red sweets and how many blue sweets are in each bag?",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 84 = 2² × 3 × 7 and 126 = 2 × 3² × 7, or lists factors of both (1)\n• M1: identifies HCF method, e.g. 2 × 3 × 7 (1)\n• A1: (a) 42 bags (1)\n• B1: (b) 2 red and 3 blue (ft their HCF) (1)"
-      },
-      {
-        "q": "A school gives each student a username made of 2 letters (A to Z) followed by 3 digits (0 to 9). The last digit must be odd.\n(a) Letters and digits may be repeated. How many usernames are possible?\n(b) How many usernames are possible if the two letters must be different (digits may still repeat, last digit odd)?",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: (a) 26 × 26 × 10 × 10 × 5 (1)\n• A1: 338 000 (1)\n• M1: (b) 26 × 25 × 10 × 10 × 5 (1)\n• A1: 325 000 (1)"
-      },
-      {
-        "q": "Buses on Route 1 leave the bus station every 12 minutes. Buses on Route 2 leave every 18 minutes. Buses on Route 3 leave every 30 minutes. A bus from each route leaves at 7:15 am.\n(a) At what time do buses from all three routes next leave together?\n(b) How many more times after this do all three leave together before 6:00 pm?",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 12 = 2² × 3, 18 = 2 × 3², 30 = 2 × 3 × 5, or lists multiples of each (1)\n• A1: LCM = 180 minutes (1)\n• A1: (a) 10:15 am (1)\n• M1: (b) adds 3 hours repeatedly: 1:15 pm, 4:15 pm (7:15 pm is too late) (1)\n• A1: 2 more times (1)"
-      }
+  '1.1': {
+    name: 'Structure & Calculation',
+    questions: [
+      { q: `(Non-calculator)\nWrite these numbers in order of size.\nStart with the smallest number.\n\n0.407    0.47    0.074    0.4    0.704`, marks: 1, command: 'Write', markScheme: `B1 0.074, 0.4, 0.407, 0.47, 0.704 cao` },
+      { q: `(Non-calculator)\nWrite down the value of the 6 in the number 23 682`, marks: 1, command: 'Write down', markScheme: `B1 600 oe (accept six hundred or 6 hundreds)` },
+      { q: `(Non-calculator)\nHere is a list of numbers.\n\n12    15    21    24    29    35\n\nFrom the list, write down a multiple of 7`, marks: 1, command: 'Write down', markScheme: `B1 21 or 35` },
+      { q: `(Non-calculator)\nWork out 24.15 ÷ 0.7`, marks: 2, command: 'Work out', markScheme: `M1 241.5 ÷ 7 oe (a correct method with the divisor made an integer), or a complete short-division method with at most one error\nA1 34.5 cao` },
+      { q: `(Non-calculator)\nExpress 252 as a product of its prime factors.`, marks: 2, command: 'Express', markScheme: `M1 a complete method, e.g. a factor tree or repeated division with no more than one arithmetic error, or at least two correct prime factors found\nA1 2 × 2 × 3 × 3 × 7 oe (accept 2² × 3² × 7)` },
+      { q: `(Non-calculator)\nWork out an estimate for the value of\n\n\\(\\dfrac{6.12 \\times 49.6}{0.198}\\)`, marks: 2, command: 'Work out', markScheme: `M1 for rounding at least two of the numbers to 1 significant figure, e.g. 6, 50, 0.2\nA1 1500 (allow 1470 to 1500 from 6 × 49 ÷ 0.2 etc. if correct roundings are seen)\nNB a final answer of 1533.09... with no rounding seen scores M0 A0` },
+      { q: `(Calculator allowed)\n(a) Use your calculator to work out\n\n\\(\\dfrac{\\sqrt{19.6 + 4.2^2}}{2.7 - 0.85}\\)\n\nWrite down all the figures on your calculator display. [1]\n\n(b) Write your answer to (a) correct to 3 significant figures. [1]`, marks: 2, command: 'Work out', markScheme: `(a) B1 3.298626... (accept 3.2986 or better)\n(b) B1 3.30 ft from (a) provided the answer to (a) has more than 3 significant figures` },
+      { q: `(Calculator allowed)\nA restaurant has a set menu.\nThere are 4 starters, 7 main courses and 3 desserts on the menu.\n\nKareem is going to choose one starter, one main course and one dessert.\n\nWork out the number of different ways Kareem can choose his meal.`, marks: 2, command: 'Work out', markScheme: `M1 4 × 7 × 3\nA1 84 cao` },
+      { q: `(Non-calculator)\nFind the lowest common multiple (LCM) of 18 and 30`, marks: 2, command: 'Find', markScheme: `M1 at least three multiples of each of 18 and 30 listed (with at most one error), or 18 = 2 × 3² and 30 = 2 × 3 × 5\nA1 90 cao` },
+      { q: `(Non-calculator)\nThe table shows the temperature in five cities at midnight on one day.\n(data written for this practice question)\n\nCity      Temperature (°C)\nMoscow    −8\nLondon    4\nOslo      −3\nCairo     19\nToronto   −11\n\n(a) Which city had the lowest temperature? [1]\n\n(b) Work out the difference between the highest temperature and the lowest temperature. [1]`, marks: 2, command: 'Work out', markScheme: `(a) B1 Toronto\n(b) B1 30 (°C) cao` },
+      { q: `(Non-calculator)\n(a) Work out 18 − 3 × 4 + 2 [1]\n\n(b) Write brackets in the calculation below to make it correct. [1]\n\n3 + 5 × 6 − 2 = 32`, marks: 2, command: 'Work out', markScheme: `(a) B1 8 cao\n(b) B1 (3 + 5) × (6 − 2) = 32` },
+      { q: `(Non-calculator)\nSam buys 24 tickets for a concert.\nEach ticket costs £13.75\n\nSam pays with £350\n\nHow much change should Sam get?`, marks: 3, command: 'Work out', markScheme: `M1 for a complete method to find 24 × 13.75, e.g. 24 × 13 + 24 × 0.75 or 1375 × 24 ÷ 100\nM1 (dep) for 350 − "330"\nA1 £20 cao` },
+      { q: `(Non-calculator)\nElla has 84 red beads and 126 blue beads.\nShe wants to make some bracelets.\n\nEach bracelet must have the same number of red beads and the same number of blue beads.\nElla wants to use all the beads.\n\nWork out the greatest number of bracelets she can make.\nYou must show your working.`, marks: 3, command: 'Work out', markScheme: `P1 for starting to find common factors, e.g. 84 = 2² × 3 × 7 and 126 = 2 × 3² × 7, or lists of factors of both numbers\nP1 for identifying the HCF, e.g. 2 × 3 × 7\nA1 42 cao` },
+      { q: `(Non-calculator)\nA bus to Leeds leaves the bus station every 12 minutes.\nA bus to York leaves the bus station every 20 minutes.\n\nA bus to Leeds and a bus to York both leave the bus station at 8 50 am.\n\nWhen will a bus to Leeds and a bus to York next leave the bus station at the same time?`, marks: 3, command: 'Work out', markScheme: `P1 for listing multiples of 12 and 20 (at least 3 of each), or lists of departure times from 8 50 am, or 12 = 2² × 3 and 20 = 2² × 5\nP1 for identifying 60 (minutes) as the LCM, or 9 50 seen in both lists\nA1 9 50 am oe (accept 09 50)` },
+      { q: `(Non-calculator)\nMax is going to drive 387 miles.\nHis car travels 41.8 miles for every gallon of petrol.\n1 gallon = 4.55 litres\nPetrol costs 148.9p per litre.\n(data written for this practice question)\n\nWork out an estimate for the cost, in pounds, of the petrol Max will use.`, marks: 3, command: 'Work out', markScheme: `P1 for rounding and a process to find the number of gallons, e.g. 400 ÷ 40 (= 10)\nP1 for a process to find the cost, e.g. "10" × 5 × 150 (= 7500p) or "10" × 5 × 1.5\nA1 for an answer in the range £60 to £80 from correct working (£75 from the expected roundings)` },
+      { q: `(Calculator allowed)\nRuby is going to make a three-digit number using the digits 1, 2, 3, 4, 5, 6, 7, 8, 9\nEach digit can be used only once.\n\nThe number must be odd and it must be greater than 500\n\nWork out how many different numbers Ruby can make.`, marks: 3, command: 'Work out', markScheme: `P1 for splitting into cases by the first digit, e.g. first digit odd (5, 7 or 9) and first digit even (6 or 8)\nP1 for 3 × 7 × 4 (= 84) or 2 × 7 × 5 (= 70)\nA1 154 cao` },
+      { q: `(Non-calculator)\nThree lights flash at a festival.\nLight A flashes every 6 seconds.\nLight B flashes every 8 seconds.\nLight C flashes every 15 seconds.\n\nAll three lights flash together at exactly 7 pm.\n\nHow many more times will all three lights flash together between 7 pm and 8 pm, up to and including 8 pm?\nYou must show all your working.`, marks: 4, command: 'Work out', markScheme: `P1 for a start to the process, e.g. multiples of at least two of 6, 8 and 15 listed, or 6 = 2 × 3, 8 = 2³, 15 = 3 × 5\nP1 for finding the LCM, 120 (seconds) oe (2 minutes)\nP1 for 3600 ÷ "120" or 60 ÷ "2"\nA1 30 cao` },
+      { q: `(Non-calculator)\n(a) Write 1176 as a product of its prime factors.\nGive your answer in index form. [2]\n\n(b) Find the smallest positive integer n such that 1176n is a square number. [2]`, marks: 4, command: 'Write', markScheme: `(a) M1 a complete method, e.g. factor tree or repeated division, with at least two correct prime factors\nA1 2³ × 3 × 7² (factors in any order)\n(b) M1 for identifying that the powers of 2 and 3 must be made even, e.g. 2⁴ × 3² × 7² or 2 × 3 ft from (a)\nA1 6 cao` },
+      { q: `(Non-calculator)\n180 students and 16 teachers from a school are going on a trip.\nThey will travel by coach.\nEach coach can carry 52 people.\nEach coach costs £405 to hire.\n\nThe teachers do not pay.\nThe total cost of hiring the coaches is shared equally between the students.\n\nHow much does each student pay?`, marks: 4, command: 'Work out', markScheme: `P1 for 180 + 16 (= 196) and a process to find the number of coaches, e.g. 196 ÷ 52 or 52 × 3 = 156 and 52 × 4 = 208\nP1 for 4 coaches × 405 (= 1620)\nP1 for "1620" ÷ 180\nA1 £9 cao` },
+      { q: `(Calculator allowed)\nHassan is buying food for a barbecue.\n\nBread rolls are sold in packs of 8. A pack of bread rolls costs £1.35\nBurgers are sold in packs of 12. A pack of burgers costs £3.20\nCheese slices are sold in packs of 20. A pack of cheese slices costs £1.80\n(data written for this practice question)\n\nHassan wants to buy exactly the same number of bread rolls, burgers and cheese slices.\nHe buys the least possible number of packs.\n\nWork out the total cost of the packs Hassan buys.\nYou must show all your working.`, marks: 5, command: 'Work out', markScheme: `P1 for a start to the process, e.g. lists of multiples of 8, 12 and 20, or 8 = 2³, 12 = 2² × 3, 20 = 2² × 5\nP1 for finding the LCM, 120\nP1 for finding the number of packs of at least one item: 120 ÷ 8 = 15 or 120 ÷ 12 = 10 or 120 ÷ 20 = 6\nP1 for a complete process to find the total cost, e.g. 15 × 1.35 + 10 × 3.20 + 6 × 1.80\nA1 £63.05 cao` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 1.2 */
-  "1.2": {
-    "name": "Fractions, Decimals & Percentages",
-    "questions": [
-      {
-        "q": "Write 0.85 as a fraction in its simplest form.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 17/20 (1)"
-      },
-      {
-        "q": "Write 7/25 as a percentage.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 28% (1)"
-      },
-      {
-        "q": "Work out 3/4 + 2/7\nGive your answer as a mixed number.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: common denominator, e.g. 21/28 + 8/28 (1)\n• A1: 1 1/28 (1)"
-      },
-      {
-        "q": "Work out 4⅓ − 2⅗\nGive your answer as a mixed number in its simplest form.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 13/3 − 13/5 written over a common denominator, e.g. 65/15 − 39/15 (1)\n• A1: 1 11/15 (1)"
-      },
-      {
-        "q": "Work out 1⅞ × 2⅔\nGive your answer in its simplest form.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 15/8 × 8/3 (1)\n• A1: 5 (1)"
-      },
-      {
-        "q": "Work out 3⅓ ÷ 5/6\nGive your answer in its simplest form.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 10/3 × 6/5 (1)\n• A1: 4 (1)"
-      },
-      {
-        "q": "Write these numbers in order of size. Start with the smallest.\n0.43,  3/7,  42%,  9/20",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: converts to a common form, e.g. 0.428…, 0.42, 0.45 (at least two correct) (1)\n• A1: 42%, 3/7, 0.43, 9/20 (1)"
-      },
-      {
-        "q": "Without using a calculator, work out 15% of £86.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 10% = 8.60 and 5% = 4.30, or 0.15 × 86 (1)\n• A1: £12.90 (1)"
-      },
-      {
-        "q": "Write down the decimal multiplier that\n(a) increases an amount by 7%\n(b) decreases an amount by 2.5%",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 1.07 (1)\n• B1: (b) 0.975 (1)"
-      },
-      {
-        "q": "Write 5/6 as a recurring decimal.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: short division of 5 by 6 showing repeated remainder, e.g. 0.833 (1)\n• A1: 0.8333… (0.83 with a dot over the 3) (1)"
-      },
-      {
-        "q": "Lemonade is made from lemon juice, sugar syrup and water in the ratio 2 : 3 : 15\n(a) What fraction of the lemonade is water? Give your answer in its simplest form.\n(b) How much lemon juice is in 1.2 litres of lemonade? Give your answer in ml.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 3/4 (accept 15/20) (1)\n• B1: (b) 120 ml (1)"
-      },
-      {
-        "q": "Prove algebraically that 0.818181… (81 recurring) = 9/11",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: x = 0.8181… and 100x = 81.8181… (1)\n• M1: 99x = 81 (1)\n• A1: x = 81/99 = 9/11 shown (1)"
-      },
-      {
-        "q": "Leah spends 1/4 of her wages on rent and 2/3 of the remainder on bills. She has £210 left. Work out Leah's wages.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: remainder after rent is 3/4 (1)\n• M1: 1/3 × 3/4 = 1/4 of wages left (1)\n• A1: £840 (1)"
-      },
-      {
-        "q": "A car is worth £12 500. In the first year its value falls by 15%. In the second year its value falls by 10% of its value at the start of that year. Work out the value of the car after two years.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 12 500 × 0.85 (= 10 625) (1)\n• M1: × 0.9 (1)\n• A1: £9562.50 (1)"
-      },
-      {
-        "q": "Kai and Lia share £120. Kai gets 3/5 of the amount Lia gets. Work out how much each person gets.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: Kai : Lia = 3 : 5 (1)\n• M1: 120 ÷ 8 = 15 (1)\n• A1: Kai £45 and Lia £75 (1)"
-      },
-      {
-        "q": "Write 0.1777… (7 recurring) as a fraction in its simplest form. Show your working.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: 100x = 17.777… and 10x = 1.777… (1)\n• M1: 90x = 16 (1)\n• A1: 8/45 (1)"
-      },
-      {
-        "q": "A triangle has a base of 4⅖ cm and a perpendicular height of 2½ cm. Work out the exact area of the triangle.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 22/5 and 5/2 (1)\n• M1: ½ × 22/5 × 5/2 (1)\n• A1: 5½ cm² (accept 11/2) (1)"
-      },
-      {
-        "q": "Omar earns £2400 a month. He spends 3/8 of it on rent and 22% of it on food. He saves the rest.\n(a) How much does Omar save each month?\n(b) What percentage of his wages does he save?",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: rent 3/8 × 2400 = 900 (1)\n• M1: food 0.22 × 2400 = 528 (1)\n• A1: (a) £972 (1)\n• B1: (b) 40.5% (1)"
-      },
-      {
-        "q": "Show that 0.1666… (6 recurring) + 0.090909… (09 recurring) = 17/66",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: 0.1666… = 15/90 = 1/6 using 100x − 10x (1)\n• M1: 0.0909… = 9/99 = 1/11 using 100x − x (1)\n• M1: common denominator, e.g. 11/66 + 6/66 (1)\n• A1: 17/66 shown (1)"
-      },
-      {
-        "q": "A laptop normally costs £450. Three shops have offers.\nShop A: 1/5 off the normal price.\nShop B: 15% off the normal price, then a further 10% off the sale price.\nShop C: £290 plus VAT at 20%.\nWhich shop sells the laptop at the lowest price? You must show all your working.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: Shop A 450 × 4/5 = £360 (1)\n• M1: Shop B 450 × 0.85 × 0.9 (1)\n• A1: £344.25 (1)\n• M1: Shop C 290 × 1.2 = £348 (1)\n• C1: Shop B with all three correct prices (1)"
-      }
+  '1.2': {
+    name: 'Fractions, Decimals & Percentages',
+    questions: [
+      { q: `(Non-calculator)\n\nWrite 0.36 as a fraction in its simplest form.`, marks: 1, command: 'Write', markScheme: `B1: 9/25 cao` },
+      { q: `(Non-calculator)\n\nWrite 3/8 as a decimal.`, marks: 1, command: 'Write', markScheme: `B1: 0.375 cao` },
+      { q: `(Non-calculator)\n\nWrite 3/20 as a percentage.`, marks: 1, command: 'Write', markScheme: `B1: 15(%) cao` },
+      { q: `(Non-calculator)\n\nWork out 2 3/4 + 1 5/6\nGive your answer as a mixed number.`, marks: 2, command: 'Work out', markScheme: `M1: for both fractions written over a common denominator, e.g. 33/12 + 22/12 or 2 9/12 + 1 10/12 oe\nA1: 4 7/12 cao` },
+      { q: `(Non-calculator)\n\nWork out 3 1/5 ÷ 1 1/3\nGive your answer as a mixed number in its simplest form.`, marks: 2, command: 'Work out', markScheme: `M1: for 16/5 × 3/4 oe, or 48/15 ÷ 20/15\nA1: 2 2/5 cao` },
+      { q: `(Non-calculator)\n\nShow that (1 2/3 + 3/4) ÷ 2 5/12 = 1`, marks: 2, command: 'Show that', markScheme: `M1: for 1 2/3 + 3/4 written over a common denominator, e.g. 20/12 + 9/12 (= 29/12 or 2 5/12)\nA1: for 29/12 ÷ 29/12 = 1, or for showing 1 2/3 + 3/4 = 2 5/12 and stating that a number divided by itself is 1, with complete working shown` },
+      { q: `(Calculator allowed)\n\nWrite these numbers in order of size. Start with the smallest number.\n\n0.67    2/3    66%    5/8`, marks: 2, command: 'Write', markScheme: `M1: for converting at least three of the numbers to the same form, e.g. 0.67, 0.666..., 0.66, 0.625 oe\nA1: 5/8, 66%, 2/3, 0.67 (accept the numbers in their converted form)` },
+      { q: `(Calculator allowed)\n\nIn a survey, 160 people were asked how they travel to work. 23 of the people said they cycle to work.\n\nWork out 23 as a percentage of 160`, marks: 2, command: 'Work out', markScheme: `M1: for 23/160 (× 100) oe, e.g. 0.14375\nA1: 14.375(%) (accept 14.4(%) or 14(%) if 14.375 seen)` },
+      { q: `(Non-calculator)\n\nThere are 240 students in Year 11 at a school. 35% of these students walk to school.\n\nWork out the number of students in Year 11 who walk to school.`, marks: 2, command: 'Work out', markScheme: `M1: for a complete method, e.g. 10% = 24 and 5% = 12 with 3 × 24 + 12, or 35/100 × 240 oe\nA1: 84 cao` },
+      { q: `(Non-calculator)\n\nThe recurring decimal 0.4̇5̇ means 0.454545... (45 recurring).\n\nProve algebraically that the recurring decimal 0.4̇5̇ can be written as 5/11`, marks: 2, command: 'Prove', markScheme: `M1: for 100x = 45.4545... and x = 0.4545... with intention to subtract, or 99x = 45\nA1: for x = 45/99 and completing to 5/11 with all working shown` },
+      { q: `(Non-calculator)\n\nJo gets her wages each month. She spends 2/5 of her wages on rent and 1/4 of her wages on food.\n\nWhat fraction of her wages is left?`, marks: 2, command: 'Work out', markScheme: `M1: for 2/5 + 1/4 = 13/20 oe, or 8/20 and 5/20 seen, or 1 − 2/5 − 1/4 written over a common denominator\nA1: 7/20 oe` },
+      { q: `(Calculator allowed)\n\nKyle bought a car for £8400. One year later he sold the car for £6930.\n\nWork out his percentage loss.`, marks: 3, command: 'Work out', markScheme: `M1: for 8400 − 6930 (= 1470), or 6930/8400 (= 0.825)\nM1: for 1470/8400 × 100 oe, or (1 − 0.825) × 100\nA1: 17.5(%) cao` },
+      { q: `(Non-calculator)\n\nA cinema sold 360 tickets for a film.\n5/12 of the tickets were adult tickets.\n3/7 of the rest of the tickets were child tickets.\nAll the other tickets were senior tickets.\n\nWork out the number of senior tickets sold.`, marks: 3, command: 'Work out', markScheme: `P1: for 5/12 × 360 (= 150) or 360 − 150 (= 210)\nP1: for 3/7 × 210 (= 90), or 4/7 × 210\nA1: 120 cao` },
+      { q: `(Non-calculator)\n\nThe recurring decimal 0.13̇6̇ means 0.1363636... (36 recurring).\n\nWrite 0.13̇6̇ as a fraction in its simplest form.\nYou must show your working.`, marks: 3, command: 'Write', markScheme: `M1: for two correct recurring decimals that differ by a whole number or a terminating decimal, e.g. 1000x = 136.3636... and 10x = 1.3636..., or 100x = 13.6363... and x = 0.13636...\nM1: for 990x = 135 or 99x = 13.5, leading to 135/990 oe\nA1: 3/22 cao` },
+      { q: `(Calculator allowed)\n\nTwo shops sell the same washing machine.\n\nShop A: £360 plus VAT at 20%\nShop B: £450 with 1/5 off\n\nIn which shop is the washing machine cheaper?\nYou must show how you get your answer.`, marks: 3, command: 'Work out', markScheme: `P1: for 360 × 1.2 (= 432), or 20% of 360 = 72\nP1: for 450 × 4/5 (= 360), or 1/5 of 450 = 90\nC1: for Shop B with 432 and 360 (or equivalent comparable figures, e.g. 72 and 90 with correct interpretation)` },
+      { q: `(Non-calculator)\n\nNadia has a piece of wood 5 1/4 metres long. She cuts as many pieces as possible of length 2/3 metre from the wood.\n\nWork out the greatest number of pieces she can cut and the length of wood, in metres, left over.`, marks: 3, command: 'Work out', markScheme: `M1: for 21/4 ÷ 2/3 (= 63/8 or 7 7/8), or repeated addition of 2/3 up to 7 pieces\nA1: 7 (pieces)\nB1: 7/12 (m) oe ft their whole number of pieces, e.g. 21/4 − 14/3 = 63/12 − 56/12` },
+      { q: `(Calculator allowed)\n\nIn a sale, all normal prices are reduced by 15%. The sale price of a jacket is £61.20\n\nRavi says, "The normal price of the jacket was 61.20 × 1.15 = £70.38"\n\n(a) Explain why Ravi is wrong. [1]\n\n(b) Work out the normal price of the jacket. [3]`, marks: 4, command: 'Work out', markScheme: `(a)\nC1: for an explanation, e.g. the 15% is of the normal price not the sale price, or 15% of 70.38 is not 8.82 (70.38 × 0.85 = 59.82 not 61.20)\n(b)\nP1: for 100 − 15 = 85 (%) or 0.85 used\nP1: for 61.20 ÷ 0.85 oe, or 61.20 ÷ 85 (= 0.72) × 100\nA1: £72 cao (accept £72.00)` },
+      { q: `(Non-calculator)\n\nA water tank is 3/4 full. 140 litres of water are taken out of the tank. The tank is now 2/5 full.\n\nWork out how many litres of water the tank holds when it is full.`, marks: 4, command: 'Work out', markScheme: `P1: for a start to the process, e.g. 3/4 − 2/5 written over a common denominator, 15/20 − 8/20\nP1: for 7/20 (of the tank) = 140 (litres)\nP1: for 140 ÷ 7 (= 20 litres for 1/20), or 140 × 20/7\nA1: 400 cao` },
+      { q: `(Calculator allowed)\n\nThere are 1200 students in a school. 45% of the students are boys.\n2/9 of the boys play a musical instrument.\n15% of the girls play a musical instrument.\n\nWhat percentage of all the students in the school play a musical instrument?`, marks: 4, command: 'Work out', markScheme: `P1: for 0.45 × 1200 (= 540), or 1200 − 540 (= 660)\nP1: for 2/9 × 540 (= 120)\nP1: for 0.15 × 660 (= 99) and (120 + 99) ÷ 1200 (× 100)\nA1: 18.25(%) (accept 18.3(%))` },
+      { q: `(Non-calculator)\n\nBen earns £2400 each month.\nEach month he pays 1/4 of his earnings in rent.\nHe spends 15% of the rest of his earnings on bills.\nHe saves 2/5 of the money he has left after paying rent and bills.\n\nBen wants to save at least £7500 in one year.\nWill Ben save enough money in one year?\nYou must show all your working.`, marks: 5, command: 'Work out', markScheme: `P1: for 1/4 × 2400 (= 600) and 2400 − 600 (= 1800)\nP1: for 15% of 1800 (= 270), e.g. 10% = 180 and 5% = 90\nP1: for 1800 − 270 (= 1530) and 2/5 × 1530 (= 612)\nP1: for 612 × 12 (= 7344), or 7500 ÷ 12 (= 625) compared with 612\nC1: for No, with 7344 (or 612 and 625) correctly compared` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 1.3 */
-  "1.3": {
-    "name": "Measures, Accuracy & Bounds",
-    "questions": [
-      {
-        "q": "Round 0.07386 to 3 significant figures.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 0.0739 (1)"
-      },
-      {
-        "q": "Change 6.4 kg into grams.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 6400 g (1)"
-      },
-      {
-        "q": "Write 0.0030672 correct to (a) 1 significant figure (b) 3 significant figures.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 0.003 (1)\n• B1: (b) 0.00307 (1)"
-      },
-      {
-        "q": "Change 0.38 m³ into cm³.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 0.38 × 1 000 000 or 0.38 × 100 × 100 × 100 (1)\n• A1: 380 000 cm³ (1)"
-      },
-      {
-        "q": "By rounding each number to 1 significant figure, work out an estimate for (297 × 6.12) ÷ 0.52",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 300, 6 and 0.5 seen (1)\n• A1: 1800 ÷ 0.5 = 3600 (1)"
-      },
-      {
-        "q": "The height h of a door is 2.04 m, correct to 2 decimal places. Write down the error interval for h.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 2.035 ≤ h (1)\n• B1: h < 2.045, so 2.035 ≤ h < 2.045 (1)"
-      },
-      {
-        "q": "A number x is truncated to 2 decimal places. The result is 4.18. Write down the error interval for x.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 4.18 ≤ x (1)\n• B1: x < 4.19, so 4.18 ≤ x < 4.19 (1)"
-      },
-      {
-        "q": "A film lasts 2.6 hours. Write this time in hours and minutes.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 0.6 × 60 (1)\n• A1: 2 hours 36 minutes (1)"
-      },
-      {
-        "q": "Priya cycles 18 km in 45 minutes. Work out her average speed in kilometres per hour.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 45 minutes = 0.75 hours, or 18 ÷ 45 × 60 (1)\n• A1: 24 km/h (1)"
-      },
-      {
-        "q": "Liam works out (3.9 × 51.2) ÷ 0.198 on his calculator. He gets 100.85. Use estimation to show that his answer must be wrong.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (4 × 50) ÷ 0.2 or similar rounding (1)\n• A1: Estimate = 1000, so 100.85 is about 10 times too small — Liam is wrong (1)"
-      },
-      {
-        "q": "p = 5.6 and q = 1.8, both correct to 1 decimal place. Work out the lower bound of p × q.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: 5.55 × 1.75 (1)\n• A1: 9.7125 (1)"
-      },
-      {
-        "q": "A pancake recipe uses 350 ml of milk for each batch. Milk is sold in 2.5 litre bottles. Amir buys 3 bottles. Work out the greatest number of batches of pancakes Amir can make.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 3 × 2.5 = 7.5 litres = 7500 ml (1)\n• M1: 7500 ÷ 350 = 21.4… (1)\n• A1: 21 batches (1)"
-      },
-      {
-        "q": "By rounding each number to 1 significant figure, work out an estimate for (4.87² × 31.6) ÷ √98.7",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 5, 30 and √100 = 10 seen (1)\n• M1: 5² × 30 = 25 × 30 = 750 (1)\n• A1: 750 ÷ 10 = 75 (1)"
-      },
-      {
-        "q": "A gold bar has a mass of 1.544 kg. The density of gold is 19.3 g/cm³. Work out the volume of the gold bar.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 1.544 kg = 1544 g (1)\n• M1: 1544 ÷ 19.3 (1)\n• A1: 80 cm³ (1)"
-      },
-      {
-        "q": "A field is a rectangle 85 m long and 42 m wide. Both measurements are correct to the nearest metre. Work out the upper bound of the area of the field.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: 85.5 or 42.5 seen (1)\n• M1: 85.5 × 42.5 (1)\n• A1: 3633.75 m² (1)"
-      },
-      {
-        "q": "Ella runs 150 m, correct to the nearest 10 m. Her time is 32 seconds, correct to the nearest second. Work out the lower bound of her average speed. Give your answer to 3 significant figures.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: 145 and 32.5 seen (1)\n• M1: 145 ÷ 32.5 (lower distance ÷ upper time) (1)\n• A1: 4.46 m/s (4.461…) (1)"
-      },
-      {
-        "q": "A water tank is a cuboid 1.2 m long, 0.8 m wide and 0.5 m high. Water flows into the empty tank at 12 litres per minute. How many minutes does it take to fill the tank?",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: Volume = 1.2 × 0.8 × 0.5 = 0.48 m³ (1)\n• M1: 0.48 × 1000 = 480 litres (1)\n• A1: 480 ÷ 12 = 40 minutes (1)"
-      },
-      {
-        "q": "v = s ÷ t. s = 72.4 correct to 1 decimal place. t = 8.3 correct to 1 decimal place. By considering bounds, work out the value of v to a suitable degree of accuracy. You must show your working and give a reason for your answer.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: Upper bound = 72.45 ÷ 8.25 = 8.78… (1)\n• M1: Lower bound = 72.35 ÷ 8.35 = 8.66… (1)\n• A1: v = 9 (1)\n• C1: Both bounds round to 9 to 1 significant figure, but to 2 s.f. they give 8.8 and 8.7 (1)"
-      },
-      {
-        "q": "a = 3.6 correct to 1 decimal place. b = 0.42 correct to 2 decimal places. Work out the upper bound of a ÷ b. Give your answer to 3 significant figures.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: 3.65 seen (1)\n• B1: 0.415 seen (1)\n• M1: 3.65 ÷ 0.415 (upper ÷ lower) (1)\n• A1: 8.80 (8.795…) (1)"
-      },
-      {
-        "q": "Petrol costs 148.9p per litre. Sam's car uses 6.5 litres of petrol for every 100 km. Sam drives 340 km. Work out the cost of the petrol he uses. Give your answer in pounds to the nearest penny.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 340 ÷ 100 × 6.5 = 22.1 litres (1)\n• M1: 22.1 × 148.9 = 3290.69p (1)\n• M1: ÷ 100 to change pence to pounds (1)\n• A1: £32.91 (1)"
-      }
+  '1.3': {
+    name: 'Measures, Accuracy & Bounds',
+    questions: [
+      { q: `(Calculator allowed)\n\nWrite 7.3846 correct to 2 decimal places.`, marks: 1, command: 'Write', markScheme: `B1 7.38 cao` },
+      { q: `(Calculator allowed)\n\nWrite 0.0060729 correct to 3 significant figures.`, marks: 1, command: 'Write', markScheme: `B1 0.00607 cao` },
+      { q: `(Non-calculator)\n\nChange 0.75 m³ into cm³.`, marks: 1, command: 'Change', markScheme: `B1 750 000 cao` },
+      { q: `(Non-calculator)\n\nWork out an estimate for the value of\n\\(\\dfrac{61.2 \\times 3.87}{0.48}\\)`, marks: 2, command: 'Work out', markScheme: `M1 for rounding all three numbers to 1 significant figure, e.g. \\(\\dfrac{60 \\times 4}{0.5}\\) (at least two correct)\nA1 for 480 (accept 400 to 500 only if from correct 1 s.f. rounding with clear working)` },
+      { q: `(Non-calculator)\n\nThe length, L cm, of a pencil is 6.4 cm correct to 1 decimal place.\n\nWrite down the error interval for L.`, marks: 2, command: 'Write down', markScheme: `B2 for 6.35 ≤ L < 6.45\n(B1 for 6.35 ≤ L or L < 6.45 or for both values 6.35 and 6.45 written in an incorrect inequality, e.g. 6.35 < L ≤ 6.45)` },
+      { q: `(Non-calculator)\n\nJoel uses his calculator to work out the value of a number x.\nHe writes down the first two digits on his calculator display.\nHe writes 3.7\n\nWrite down the error interval for x.`, marks: 2, command: 'Write down', markScheme: `B2 for 3.7 ≤ x < 3.8\n(B1 for 3.7 ≤ x or x < 3.8, or for 3.7 and 3.8 in an inequality with the wrong signs)` },
+      { q: `(Non-calculator)\n\nA train leaves Leeds at 09 47\nIt arrives in London at 13 12\n\nHow long does the journey take?\nGive your answer in hours and minutes.`, marks: 2, command: 'How long', markScheme: `M1 for a complete method, e.g. 09 47 to 10 00 = 13 min, 10 00 to 13 00 = 3 h, 13 00 to 13 12 = 12 min, or 205 minutes\nA1 for 3 hours 25 minutes cao` },
+      { q: `(Calculator allowed)\n\nA car travels at an average speed of 72 km/h.\n\nChange 72 km/h into metres per second.`, marks: 2, command: 'Change', markScheme: `M1 for 72 × 1000 (= 72 000) or ÷ 3600 or ÷ 60 ÷ 60 seen\nA1 for 20 (m/s) cao` },
+      { q: `(Calculator allowed)\n\nThe density of a type of glass is 2.4 g/cm³.\n\nChange 2.4 g/cm³ into kg/m³.`, marks: 2, command: 'Change', markScheme: `M1 for 2.4 ÷ 1000 (kg per cm³) or 2.4 × 1 000 000 (g per m³) oe\nA1 for 2400 (kg/m³) cao` },
+      { q: `(Calculator allowed)\n\na = 8.6 correct to 1 decimal place.\nb = 3.2 correct to 1 decimal place.\n\nWork out the upper bound for the value of a − b.`, marks: 2, command: 'Work out', markScheme: `M1 for 8.65 or 3.15 seen, or for UB(a) − LB(b) with at least one bound correct\nA1 for 5.5 cao` },
+      { q: `(Non-calculator)\n\nA theatre sells 397 tickets for a show.\nEach ticket costs £4.85\n\nWork out an estimate for the total amount of money the theatre gets from selling the tickets.`, marks: 2, command: 'Work out', markScheme: `M1 for 400 × 5 or 400 × 4.9 or 397 rounded to 400 and 4.85 rounded to 5\nA1 for 2000 (accept 1960 from 400 × 4.9)` },
+      { q: `(Non-calculator)\n\n(a) Work out an estimate for the value of\n\\(\\dfrac{3.82 \\times 19.6}{0.214}\\) [2]\n\n(b) Is your answer to (a) an underestimate or an overestimate of the exact value?\nGive a reason for your answer. [1]`, marks: 3, command: 'Work out', markScheme: `(a)\nM1 for \\(\\dfrac{4 \\times 20}{0.2}\\) (at least two numbers correctly rounded to 1 s.f.)\nA1 for 400 cao\n(b)\nC1 for overestimate with a correct reason, e.g. 3.82 and 19.6 have both been rounded up so the numerator is larger, and 0.214 has been rounded down so you are dividing by a smaller number\n(Exact value 349.87… for reference)` },
+      { q: `(Calculator allowed)\n\nA rectangle has an area of 0.36 m².\nThe width of the rectangle is 45 cm.\n\nWork out the length of the rectangle.\nGive your answer in centimetres.`, marks: 3, command: 'Work out', markScheme: `M1 for converting the area to cm², e.g. 0.36 × 10 000 (= 3600)\nM1 (dep) for 3600 ÷ 45\nA1 for 80 (cm) cao\n(Alternative: M1 45 cm = 0.45 m; M1 0.36 ÷ 0.45 (= 0.8 m); A1 80 cm)` },
+      { q: `(Calculator allowed)\n\nKeira wants to buy a pair of trainers.\nThe trainers cost €87 in Spain.\nThe same trainers cost £76 in the UK.\nThe exchange rate is £1 = €1.16\n\nIn which country are the trainers cheaper, and by how much?\nGive your answer in pounds.\nYou must show your working.`, marks: 3, command: 'Work out', markScheme: `M1 for 87 ÷ 1.16 or 76 × 1.16 (= 88.16)\nA1 for 75 or 88.16\nC1 for Spain is cheaper by £1 (supported by correct working)` },
+      { q: `(Calculator allowed)\n\nA car travels a distance of 250 km, correct to the nearest 5 km.\nThe journey takes 3.2 hours, correct to 1 decimal place.\n\nWork out the lower bound for the average speed of the car.\nGive your answer correct to 3 significant figures.\nYou must show your working.`, marks: 3, command: 'Work out', markScheme: `B1 for 247.5 or 252.5 or 3.15 or 3.25 seen\nM1 for 247.5 ÷ 3.25\nA1 for 76.2 (km/h) (from 76.153…)` },
+      { q: `(Non-calculator)\n\nMia has 2.4 kg of flour.\nShe uses 350 g of flour to make one cake.\nShe makes as many cakes as she can.\n\nHow many cakes does she make, and how much flour, in grams, does she have left?`, marks: 3, command: 'Work out', markScheme: `M1 for 2.4 kg = 2400 g\nM1 for 2400 ÷ 350 or repeated subtraction/addition of 350, e.g. 6 × 350 = 2100\nA1 for 6 cakes and 300 g left` },
+      { q: `(Calculator allowed)\n\nA rectangular field has a length of 120 m, correct to the nearest 10 m.\nThe width of the field is 45 m, correct to the nearest 5 m.\n\nArjun wants to cover the whole field with grass seed.\nOne box of grass seed covers 50 m².\n\nWork out the greatest number of boxes of grass seed Arjun could need.\nYou must show all your working.`, marks: 4, command: 'Work out', markScheme: `P1 for 125 or 47.5 seen (upper bound of length or width)\nP1 for 125 × 47.5 (= 5937.5)\nP1 for 5937.5 ÷ 50 (= 118.75)\nA1 for 119 cao` },
+      { q: `(Calculator allowed)\n\nA lift can carry a maximum load of 750 kg, correct to the nearest 10 kg.\nThe mass of each man in a group of men is 80 kg, correct to the nearest 5 kg.\n\nWork out the greatest number of these men that the lift can always safely carry.\nYou must show your working.`, marks: 4, command: 'Work out', markScheme: `P1 for 745 (lower bound of the load) seen\nP1 for 82.5 (upper bound of each mass) seen\nP1 for 745 ÷ 82.5 (= 9.03…)\nA1 for 9 cao` },
+      { q: `(Calculator allowed)\n\nSam works from 08 45 to 16 15 each day, Monday to Friday.\nEach day he has a 45-minute lunch break, for which he is not paid.\nSam is paid £11.80 for each hour he works.\n\nWork out how much Sam is paid for one week.`, marks: 4, command: 'Work out', markScheme: `P1 for the length of the working day, 7 hours 30 minutes oe (7.5 hours or 450 minutes)\nP1 for subtracting the lunch break, 6 hours 45 minutes oe (6.75 hours or 405 minutes)\nP1 for 6.75 × 5 × 11.80 oe, e.g. 33.75 × 11.80, or 6.75 × 11.80 (= 79.65) × 5\nA1 for £398.25 cao` },
+      { q: `(Calculator allowed)\n\n\\(a = \\dfrac{v - u}{t}\\)\n\nv = 25.7 correct to 1 decimal place.\nu = 7.7 correct to 1 decimal place.\nt = 5.8 correct to 1 decimal place.\n\nBy considering bounds, work out the value of a to a suitable degree of accuracy.\nYou must show all your working and give a reason for your final answer.`, marks: 5, command: 'Work out', markScheme: `P1 for one correct bound for v, u or t: 25.65, 25.75, 7.65, 7.75, 5.75 or 5.85\nP1 for a correct method for the upper bound of a, \\(\\dfrac{25.75 - 7.65}{5.75}\\), or the lower bound of a, \\(\\dfrac{25.65 - 7.75}{5.85}\\)\nA1 for UB = 3.147… and LB = 3.059…\nC1 for a = 3.1 from correct bounds\nC1 for a reason, e.g. both the upper bound and the lower bound round to 3.1 correct to 2 significant figures` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 1.4 */
-  "1.4": {
-    "name": "Powers, Roots, Surds & Standard Form",
-    "questions": [
-      {
-        "q": "Write down the value of √121.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 11 (1)"
-      },
-      {
-        "q": "Write 5.6 × 10⁻⁴ as an ordinary number.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 0.00056 (1)"
-      },
-      {
-        "q": "Simplify 5⁶ × 5⁻⁴ ÷ 5⁵. Give your answer as a power of 5.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 5² seen, or 6 + (−4) − 5 (1)\n• A1: 5⁻³ (1)"
-      },
-      {
-        "q": "Write in standard form (a) 4 070 000 (b) 0.000903",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 4.07 × 10⁶ (1)\n• B1: (b) 9.03 × 10⁻⁴ (1)"
-      },
-      {
-        "q": "Work out (5 × 10⁷) × (4 × 10⁻³). Give your answer in standard form.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 20 × 10⁴ or 200 000 (1)\n• A1: 2 × 10⁵ (1)"
-      },
-      {
-        "q": "Work out the value of 4³ − 2⁵ + ∛27",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 64, 32 and 3 seen (1)\n• A1: 35 (1)"
-      },
-      {
-        "q": "Write down the value of (a) 9⁰ (b) 2⁻⁴",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 1 (1)\n• B1: (b) 1/16 (1)"
-      },
-      {
-        "q": "Work out the value of 81^(3/4).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: Fourth root of 81 = 3 seen (1)\n• A1: 3³ = 27 (1)"
-      },
-      {
-        "q": "Simplify √300. Give your answer in the form a√b where a and b are integers and b is as small as possible.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: √100 × √3 or √(100 × 3) (1)\n• A1: 10√3 (1)"
-      },
-      {
-        "q": "A semicircle has radius 8 cm. Work out the area of the semicircle. Give your answer in terms of π.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: ½ × π × 8² or 64π ÷ 2 (1)\n• A1: 32π cm² (1)"
-      },
-      {
-        "q": "Rationalise the denominator of 9/√3. Give your answer in its simplest form.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: Multiplies numerator and denominator by √3, giving 9√3/3 (1)\n• A1: 3√3 (1)"
-      },
-      {
-        "q": "Work out (9.6 × 10⁵) ÷ (3.2 × 10⁻³). Give your answer in standard form.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 9.6 ÷ 3.2 = 3 (1)\n• M1: 10⁵ ÷ 10⁻³ = 10⁸ (1)\n• A1: 3 × 10⁸ (1)"
-      },
-      {
-        "q": "A hard drive can store 2 × 10¹² bytes. Each photo uses 4 × 10⁶ bytes. Work out the greatest number of photos the hard drive can store. Give your answer in standard form.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (2 × 10¹²) ÷ (4 × 10⁶) (1)\n• M1: 0.5 × 10⁶ or 500 000 (1)\n• A1: 5 × 10⁵ (1)"
-      },
-      {
-        "q": "Simplify fully √80 − √20 + √45",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: √80 = 4√5 (1)\n• M1: √20 = 2√5 and √45 = 3√5 (1)\n• A1: 5√5 (1)"
-      },
-      {
-        "q": "Simplify (a) a⁴ × a⁷ (b) b¹² ÷ b³ (c) (4c⁵)²",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) a¹¹ (1)\n• B1: (b) b⁹ (1)\n• B1: (c) 16c¹⁰ (1)"
-      },
-      {
-        "q": "A shape is made from a rectangle measuring 10 cm by 6 cm and a semicircle. The diameter of the semicircle is one of the 6 cm sides of the rectangle, and the semicircle is outside the rectangle. Work out the area of the shape. Give your answer in terms of π.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: Rectangle area 10 × 6 = 60 (1)\n• M1: Semicircle area ½ × π × 3² = 4.5π (1)\n• A1: 60 + 4.5π cm² (1)"
-      },
-      {
-        "q": "A grain of sand has a mass of 6.7 × 10⁻⁴ g. How many grains of sand are there in 1 kg of sand? Give your answer in standard form to 3 significant figures.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 1 kg = 1000 g (or 10³ g) (1)\n• M1: 1000 ÷ (6.7 × 10⁻⁴) (1)\n• A1: 1.49 × 10⁶ (1)"
-      },
-      {
-        "q": "Show that (2 + √3)/(2 − √3) can be written in the form a + b√3, where a and b are integers. Find the values of a and b.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: Multiplies numerator and denominator by (2 + √3) (1)\n• M1: Numerator (2 + √3)² = 4 + 4√3 + 3 (1)\n• M1: Denominator 4 − 3 = 1 (1)\n• A1: 7 + 4√3, so a = 7 and b = 4 (1)"
-      },
-      {
-        "q": "A spacecraft travels 3.6 × 10⁸ km at an average speed of 4 × 10⁴ km/h. How many days does the journey take?",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: Time = (3.6 × 10⁸) ÷ (4 × 10⁴) (1)\n• M1: 0.9 × 10⁴ = 9000 hours (1)\n• M1: 9000 ÷ 24 (1)\n• A1: 375 days (1)"
-      },
-      {
-        "q": "Solve 3²ˣ × 9ˣ⁻¹ = 27ˣ⁺²",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: Writes 9 as 3² and 27 as 3³ (1)\n• M1: 9ˣ⁻¹ = 3²ˣ⁻² (1)\n• M1: 27ˣ⁺² = 3³ˣ⁺⁶ (1)\n• M1: 2x + 2x − 2 = 3x + 6 (1)\n• A1: x = 8 (1)"
-      }
+  '1.4': {
+    name: 'Powers, Roots, Surds & Standard Form',
+    questions: [
+      { q: `(Non-calculator)\nThe thickness of one sheet of paper is 1.02 × 10⁻⁴ metres.\n\nWrite 1.02 × 10⁻⁴ as an ordinary number.`, marks: 1, command: 'Write', markScheme: `B1 0.000102 cao` },
+      { q: `(Non-calculator)\n\nSimplify (y⁴)³`, marks: 1, command: 'Simplify', markScheme: `B1 y¹² cao` },
+      { q: `(Non-calculator)\n\nWrite down the value of \\(64^{\\frac{1}{3}}\\)`, marks: 1, command: 'Write down', markScheme: `B1 4 cao` },
+      { q: `(Calculator allowed)\n\n(a) Use your calculator to work out\n\\(\\dfrac{\\sqrt{28.6} + 3.7^2}{1.9 \\times 0.45}\\)\nWrite down all the figures on your calculator display. [1]\n(b) Write your answer to (a) correct to 3 significant figures. [1]`, marks: 2, command: 'Work out', markScheme: `(a) B1 for 22.26654594… (accept 22.266545… or better)\n(b) B1 ft for 22.3 (ft their answer to (a) provided it has more than 3 significant figures)` },
+      { q: `(Non-calculator)\nA computer can carry out 4.5 × 10⁷ calculations every second.\n\nWork out how many calculations the computer can carry out in 6 × 10⁻³ seconds.\nGive your answer in standard form.`, marks: 2, command: 'Work out', markScheme: `M1 for 4.5 × 6 (= 27) and 10⁷ × 10⁻³ (= 10⁴), or 27 × 10⁴ or 270 000\nA1 2.7 × 10⁵ cao` },
+      { q: `(Non-calculator)\n\nWrite √72 + √50 in the form a√2, where a is an integer.`, marks: 2, command: 'Write', markScheme: `M1 for √72 = 6√2 or √50 = 5√2\nA1 11√2 (a = 11) cao` },
+      { q: `(Non-calculator)\n\nFind the value of \\(\\left(\\dfrac{8}{27}\\right)^{-\\frac{2}{3}}\\)\nGive your answer as a fraction.`, marks: 2, command: 'Find', markScheme: `M1 for a correct first step, e.g. \\(\\left(\\frac{27}{8}\\right)^{\\frac{2}{3}}\\) or \\(\\left(\\frac{2}{3}\\right)^{-2}\\) or \\(\\left(\\frac{3}{2}\\right)^{2}\\) or \\(\\frac{4}{9}\\) seen as the value of \\(\\left(\\frac{8}{27}\\right)^{\\frac{2}{3}}\\)\nA1 \\(\\frac{9}{4}\\) oe (accept \\(2\\frac{1}{4}\\) or 2.25)` },
+      { q: `(Calculator allowed)\nThe mass of a proton is 1.673 × 10⁻²⁷ kg.\nThe mass of an electron is 9.109 × 10⁻³¹ kg.\n\nHow many times heavier is a proton than an electron?\nGive your answer correct to the nearest whole number.`, marks: 2, command: 'Work out', markScheme: `M1 for (1.673 × 10⁻²⁷) ÷ (9.109 × 10⁻³¹) or 1836.6…\nA1 1837 cao` },
+      { q: `(Non-calculator)\nA city has 6.2 × 10⁵ adults and 3.8 × 10⁴ children.\n(data written for this practice question)\n\nWork out the total number of adults and children in the city.\nGive your answer in standard form.`, marks: 2, command: 'Work out', markScheme: `M1 for 620 000 + 38 000 or 6.2 × 10⁵ + 0.38 × 10⁵ or 62 × 10⁴ + 3.8 × 10⁴ or 658 000\nA1 6.58 × 10⁵ cao` },
+      { q: `(Non-calculator)\n\nWork out 5² − ∛64 + √1.44`, marks: 2, command: 'Work out', markScheme: `M1 for at least two of 25, 4, 1.2\nA1 22.2 cao` },
+      { q: `(Non-calculator)\nA square has sides of length (2 + √3) cm.\n\nShow that the area of the square is (7 + 4√3) cm².`, marks: 2, command: 'Show that', markScheme: `M1 for (2 + √3)(2 + √3) expanded with at least 3 of the 4 terms correct, e.g. 4 + 2√3 + 2√3 + 3\nA1 for 4 + 4√3 + 3 = 7 + 4√3 with all working shown` },
+      { q: `(Non-calculator)\n\nShow that \\(\\dfrac{18}{\\sqrt{3}} - \\sqrt{12}\\) can be written in the form k√3, where k is an integer.\nYou must show your working.`, marks: 3, command: 'Show that', markScheme: `M1 for \\(\\frac{18}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}}\\) or \\(\\frac{18\\sqrt{3}}{3}\\) or 6√3\nM1 for √12 = 2√3 (or √4 × √3)\nA1 for 6√3 − 2√3 = 4√3 shown (k = 4)` },
+      { q: `(Calculator allowed)\nThe distance from the Earth to the Sun is 1.496 × 10⁸ km.\nLight travels at a speed of 3.0 × 10⁵ km per second.\n\nWork out the time it takes light to travel from the Sun to the Earth.\nGive your answer in minutes, correct to 1 decimal place.`, marks: 3, command: 'Work out', markScheme: `M1 for (1.496 × 10⁸) ÷ (3.0 × 10⁵) (= 498.66…)\nM1 for their 498.66… ÷ 60\nA1 8.3 cao (from 8.311…)` },
+      { q: `(Non-calculator)\n\nWrite these numbers in order of size. Start with the smallest number.\n\\(9^{\\frac{1}{2}}\\)    \\(2^{-3}\\)    0.2    \\(32^{\\frac{2}{5}}\\)    \\(5^0\\)`, marks: 3, command: 'Write', markScheme: `M1 for at least 3 of 3, 0.125 (or 1/8), 4, 1 correctly evaluated\nM1 for all four of 3, 0.125, 4, 1 correctly evaluated\nA1 for \\(2^{-3}\\), 0.2, \\(5^0\\), \\(9^{\\frac{1}{2}}\\), \\(32^{\\frac{2}{5}}\\) (accept values in place of the original numbers)` },
+      { q: `(Calculator allowed)\nTom has a hard drive with a capacity of 2 × 10¹² bytes.\nHe stores 240 000 photos on the hard drive.\nEach photo uses 3.5 × 10⁶ bytes.\n(data written for this practice question)\n\nWhat percentage of the capacity of the hard drive do the photos use?`, marks: 3, command: 'Work out', markScheme: `P1 for 240 000 × 3.5 × 10⁶ (= 8.4 × 10¹¹)\nP1 for (their 8.4 × 10¹¹) ÷ (2 × 10¹²) × 100\nA1 42 cao` },
+      { q: `(Non-calculator)\n\nSolve \\(4^x \\times 8^{x-1} = 2^9\\)`, marks: 3, command: 'Solve', markScheme: `M1 for writing 4ˣ as 2²ˣ or 8ˣ⁻¹ as 2³⁽ˣ⁻¹⁾\nM1 for 2x + 3(x − 1) = 9 oe, e.g. 5x − 3 = 9\nA1 \\(\\frac{12}{5}\\) oe (accept 2.4)` },
+      { q: `(Non-calculator)\n\nWrite \\(\\dfrac{4 + \\sqrt{2}}{3 - \\sqrt{2}} + \\sqrt{18}\\) in the form a + b√2, where a and b are integers.\nYou must show all your working.`, marks: 4, command: 'Write', markScheme: `M1 for multiplying numerator and denominator by (3 + √2)\nM1 for (4 + √2)(3 + √2) = 12 + 4√2 + 3√2 + 2 (= 14 + 7√2) and denominator 9 − 2 (= 7), or 2 + √2\nM1 for √18 = 3√2\nA1 2 + 4√2 cao` },
+      { q: `(Non-calculator)\nA rectangle has length (5 + √3) cm and width (5 − √3) cm.\n\n(a) Work out the area of the rectangle. [1]\n(b) Show that the length of a diagonal of the rectangle is 2√14 cm. [3]`, marks: 4, command: 'Show that', markScheme: `(a) B1 22 (cm²) cao\n(b) M1 for (5 + √3)² + (5 − √3)² oe\nM1 for (5 + √3)² = 28 + 10√3 or (5 − √3)² = 28 − 10√3\nA1 for sum = 56 and √56 = √4 × √14 = 2√14 shown` },
+      { q: `(Calculator allowed)\nA shipment contains 1.5 × 10⁵ identical boxes.\nThe total mass of the shipment is 4.8 × 10⁶ kg.\nEach box contains 40 identical tins.\nEach empty box has a mass of 1.2 kg.\n(data written for this practice question)\n\nWork out the mass of one tin.\nGive your answer in grams, in standard form.`, marks: 4, command: 'Work out', markScheme: `P1 for (4.8 × 10⁶) ÷ (1.5 × 10⁵) (= 32)\nP1 for their 32 − 1.2 (= 30.8)\nP1 for their 30.8 ÷ 40 (= 0.77 kg) or their 30.8 × 1000 ÷ 40\nA1 7.7 × 10² (grams) cao` },
+      { q: `(Non-calculator)\n\n(a) Find the value of \\(\\left(2\\frac{1}{4}\\right)^{-\\frac{1}{2}}\\) [2]\n(b) \\(\\dfrac{(\\sqrt{3})^5 \\times 9}{27^{\\frac{1}{3}}} = 3^k\\)\nFind the value of k. [3]`, marks: 5, command: 'Find', markScheme: `(a) M1 for \\(\\left(\\frac{9}{4}\\right)^{-\\frac{1}{2}}\\) or \\(\\left(\\frac{4}{9}\\right)^{\\frac{1}{2}}\\) or \\(\\frac{1}{\\frac{3}{2}}\\)\nA1 \\(\\frac{2}{3}\\) oe\n(b) M1 for at least two of \\((\\sqrt{3})^5 = 3^{\\frac{5}{2}}\\), 9 = 3², \\(27^{\\frac{1}{3}} = 3\\)\nM1 for \\(\\frac{5}{2} + 2 - 1\\) oe\nA1 \\(\\frac{7}{2}\\) oe (accept 3.5)` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 2.1 */
-  "2.1": {
-    "name": "Algebraic Notation & Manipulation",
-    "questions": [
-      {
-        "q": "Simplify 3c × 5d × c.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 15c²d (1)"
-      },
-      {
-        "q": "Simplify 8y⁹ ÷ 2y³.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 4y⁶ (1)"
-      },
-      {
-        "q": "Expand and simplify 6(x + 2) − 4(x − 3).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 6x + 12 − 4x + 12 (at least three of the four terms correct) (1)\n• A1: 2x + 24 (1)"
-      },
-      {
-        "q": "Factorise fully 14ab² − 21a²b.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: a correct partial factorisation, e.g. 7(2ab² − 3a²b) or ab(14b − 21a), or 7ab(…) with one error inside the bracket (1)\n• A1: 7ab(2b − 3a) (1)"
-      },
-      {
-        "q": "T = 3a² − 5b.\nWork out the value of T when a = −2 and b = 4.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 3 × (−2)² − 5 × 4, or 12 − 20 (1)\n• A1: −8 (1)"
-      },
-      {
-        "q": "Expand and simplify (x − 7)(x + 3).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: four terms with at least three correct, e.g. x² + 3x − 7x − 21 (1)\n• A1: x² − 4x − 21 (1)"
-      },
-      {
-        "q": "Factorise x² + 11x + 24.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (x ± 3)(x ± 8), or two numbers with product 24 and sum 11 identified (1)\n• A1: (x + 3)(x + 8) (1)"
-      },
-      {
-        "q": "(a) Factorise y² − 49.\n(b) Factorise y² − 7y.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• (a) B1: (y + 7)(y − 7) (1)\n• (b) B1: y(y − 7) (1)"
-      },
-      {
-        "q": "Simplify (2a³b²)⁴.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: two of 16, a¹², b⁸ correct in a single term (1)\n• A1: 16a¹²b⁸ (1)"
-      },
-      {
-        "q": "Here are four statements.\n(i) 7x − 2 = 5\n(ii) v = u + at\n(iii) 3(y − 1) ≡ 3y − 3\n(iv) 4p² − p\nFor each one, write down whether it is an expression, an equation, a formula or an identity.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B2: all four correct: (i) equation, (ii) formula, (iii) identity, (iv) expression (B1 for two or three correct) (2)"
-      },
-      {
-        "q": "Simplify fully (x² + 6x)/(x² − 36).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: x(x + 6) or (x + 6)(x − 6) seen (1)\n• A1: x/(x − 6) (1)"
-      },
-      {
-        "q": "Expand and simplify (3x + 2)(2x − 5).",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: four terms with at least three correct, e.g. 6x² − 15x + 4x − 10 (1)\n• A1: all four terms correct (1)\n• A1: 6x² − 11x − 10 (1)"
-      },
-      {
-        "q": "Factorise fully 4x² − 8x − 60.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: takes out the common factor: 4(x² − 2x − 15) (1)\n• M1: (x − 5)(x + 3) or a correct factorisation of the quadratic part, e.g. (2x − 10)(2x + 6) (1)\n• A1: 4(x − 5)(x + 3) (1)"
-      },
-      {
-        "q": "Simplify fully (5x³y²)² ÷ 10x⁴y.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (5x³y²)² = 25x⁶y⁴ (1)\n• M1: divides correctly for at least two of the number, x and y parts, e.g. 2.5, x², y³ (1)\n• A1: 5x²y³/2 or (5/2)x²y³ (1)"
-      },
-      {
-        "q": "A rectangle has length (x + 5) cm and width (x − 1) cm.\n(a) Show that the area of the rectangle, in cm², can be written as x² + 4x − 5.\n(b) Work out the area of the rectangle when x = 6.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• (a) M1: (x + 5)(x − 1) = x² − x + 5x − 5 (1)\n• (a) A1: = x² + 4x − 5 with no errors seen (1)\n• (b) B1: 55 cm² (1)"
-      },
-      {
-        "q": "Factorise 3x² − 10x − 8.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: identifies −12 and 2 (product −24, sum −10), or (3x ± a)(x ± b) with ab = 8 (1)\n• M1: 3x² − 12x + 2x − 8 = 3x(x − 4) + 2(x − 4), or brackets that expand to give two of the three terms correctly (1)\n• A1: (3x + 2)(x − 4) (1)"
-      },
-      {
-        "q": "Expand and simplify (x + 3)(x − 2)(x − 4).",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: expands one pair correctly, e.g. (x + 3)(x − 2) = x² + x − 6 (1)\n• M1: multiplies the quadratic by the third bracket, at least four of six terms correct, e.g. x³ − 4x² + x² − 4x − 6x + 24 (1)\n• A1: x³ − 3x² − 10x + 24 (1)"
-      },
-      {
-        "q": "Simplify fully (2x² − 7x − 4)/(x² − 16).",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: factorises the numerator: (2x + 1)(x − 4) (1)\n• M1: factorises the denominator: (x + 4)(x − 4) (1)\n• M1: cancels the common factor (x − 4) (1)\n• A1: (2x + 1)/(x + 4) (1)"
-      },
-      {
-        "q": "Write 3/(x − 1) − 2/(x + 4) as a single fraction in its simplest form.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: common denominator (x − 1)(x + 4) (1)\n• M1: numerator 3(x + 4) − 2(x − 1) (1)\n• M1: numerator simplified correctly: 3x + 12 − 2x + 2 = x + 14 (1)\n• A1: (x + 14)/((x − 1)(x + 4)) (1)"
-      },
-      {
-        "q": "A square has sides of length (x + 4) cm.\nA rectangle has length (x + 8) cm and width x cm.\nShow that the area of the square is always 16 cm² more than the area of the rectangle.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: area of square (x + 4)² = x² + 8x + 16 (1)\n• M1: area of rectangle x(x + 8) = x² + 8x (1)\n• M1: subtracts: x² + 8x + 16 − (x² + 8x) (1)\n• C1: = 16, so the square is always 16 cm² larger, for every value of x (1)"
-      }
+  '2.1': {
+    name: 'Algebraic Notation & Manipulation',
+    questions: [
+      { q: `(Non-calculator)\nSimplify (y⁴)³`, marks: 1, command: 'Simplify', markScheme: `B1 y¹² cao` },
+      { q: `(Non-calculator)\nFactorise 8w − 20`, marks: 1, command: 'Factorise', markScheme: `B1 4(2w − 5) cao` },
+      { q: `(Non-calculator)\nPens cost x pence each.\nRulers cost y pence each.\n\nWrite down an expression, in terms of x and y, for the total cost, in pence, of 4 pens and 3 rulers.`, marks: 1, command: 'Write down', markScheme: `B1 4x + 3y oe` },
+      { q: `(Non-calculator)\nSimplify 7m + 3n − 2m − 5n`, marks: 2, command: 'Simplify', markScheme: `B2 5m − 2n cao\n(B1 for 5m or −2n seen as part of a two-term expression)` },
+      { q: `(Non-calculator)\nExpand and simplify 3(2x + 5) − 4(x − 2)`, marks: 2, command: 'Expand and simplify', markScheme: `M1 for 6x + 15 or −4x + 8 (at least three of the four terms correct)\nA1 2x + 23 cao` },
+      { q: `(Non-calculator)\nExpand and simplify (x + 6)(x − 4)`, marks: 2, command: 'Expand and simplify', markScheme: `M1 for at least three of the four terms correct, e.g. x² − 4x + 6x − 24\nA1 x² + 2x − 24 cao` },
+      { q: `(Calculator allowed)\nFactorise fully 12a²b + 18ab³`, marks: 2, command: 'Factorise fully', markScheme: `B2 6ab(2a + 3b²) cao\n(B1 for a correct partial factorisation with at least two factors outside the bracket, e.g. 6a(2ab + 3b³) or 3ab(4a + 6b²), or for 6ab(…) with at most one error inside the bracket)` },
+      { q: `(Non-calculator)\nP = 3a² − 5b\n\nWork out the value of P when a = −4 and b = 3`, marks: 2, command: 'Work out', markScheme: `M1 for correct substitution, e.g. 3 × (−4)² − 5 × 3 or 3 × 16 − 15\nA1 33 cao` },
+      { q: `(Non-calculator)\nFactorise x² − 3x − 28`, marks: 2, command: 'Factorise', markScheme: `M1 for (x ± 7)(x ± 4)\nA1 (x − 7)(x + 4) cao (factors in either order)` },
+      { q: `(Non-calculator)\nSimplify fully (16x⁸y⁴)^(3/4)`, marks: 2, command: 'Simplify fully', markScheme: `B2 8x⁶y³ cao\n(B1 for two of 8, x⁶, y³ correct in a product, or for 2x²y seen)` },
+      { q: `(Non-calculator)\nFactorise 3x² + 10x − 8`, marks: 2, command: 'Factorise', markScheme: `M1 for (3x ± 2)(x ± 4), or for 3x² + 12x − 2x − 8 oe\nA1 (3x − 2)(x + 4) cao` },
+      { q: `(Non-calculator)\nShow that (x + 3)(2x − 1)(x − 4) can be written in the form ax³ + bx² + cx + d where a, b, c and d are integers.`, marks: 3, command: 'Show that', markScheme: `M1 for expanding any two brackets with at least three of the four terms correct, e.g. (x + 3)(2x − 1) = 2x² + 5x − 3, or (x + 3)(x − 4) = x² − x − 12\nM1 (dep) for multiplying their quadratic by the third bracket, with at least half of the resulting terms correct ft\nA1 2x³ − 3x² − 23x + 12 cao` },
+      { q: `(Non-calculator)\nSimplify fully\n\\((x² − 16) / (2x² + 5x − 12)\\)`, marks: 3, command: 'Simplify fully', markScheme: `B1 for (x − 4)(x + 4)\nM1 for (2x ± 3)(x ± 4)\nA1 (x − 4)/(2x − 3) cao` },
+      { q: `(Non-calculator)\nA square has sides of length (x + 4) cm.\nA rectangle has length (x + 7) cm and width (x + 1) cm.\n\nShow that, for all positive values of x, the area of the square is 9 cm² more than the area of the rectangle.`, marks: 3, command: 'Show that', markScheme: `M1 for (x + 4)² = x² + 8x + 16 or (x + 7)(x + 1) = x² + 8x + 7 (at least three of the four terms correct before simplifying)\nM1 for both expansions correct and the difference attempted, e.g. x² + 8x + 16 − (x² + 8x + 7)\nC1 for = 9 from fully correct working, with a conclusion (the difference does not depend on x)` },
+      { q: `(Non-calculator)\nA triangle has sides of length (2x + 3) cm, (3x − 1) cm and (x + 5) cm.\nA square has the same perimeter as the triangle.\n\nFind an expression, in terms of x, for the length of one side of the square.\nGive your answer in its simplest form.`, marks: 3, command: 'Find', markScheme: `M1 for adding the three sides, e.g. 2x + 3 + 3x − 1 + x + 5\nA1 for 6x + 7 (perimeter)\nB1ft for (6x + 7)/4 oe, e.g. 1.5x + 1.75 (ft their perimeter ÷ 4)` },
+      { q: `(Non-calculator)\nWrite\n\\(3/(x + 2) + 2/(x − 1)\\)\nas a single fraction in its simplest form.`, marks: 3, command: 'Write', markScheme: `M1 for a correct common denominator, e.g. (x + 2)(x − 1), with at least one numerator correct, e.g. 3(x − 1)/((x + 2)(x − 1))\nM1 for (3(x − 1) + 2(x + 2))/((x + 2)(x − 1)) oe\nA1 (5x + 1)/((x + 2)(x − 1)) oe (accept denominator x² + x − 2)` },
+      { q: `(Non-calculator)\nShow that\n\\((x² − 9)/(2x² + 7x + 3) ÷ (x − 3)/(4x + 2)\\)\nis equal to 2 for all values of x for which it is defined.`, marks: 4, command: 'Show that', markScheme: `M1 for (x − 3)(x + 3)\nM1 for (2x + 1)(x + 3)\nM1 for inverting and multiplying, e.g. (x − 3)(x + 3)/((2x + 1)(x + 3)) × (4x + 2)/(x − 3), or 4x + 2 = 2(2x + 1) seen\nC1 for complete correct working, cancelling to 2` },
+      { q: `(Non-calculator)\nA rectangular lawn has length (3x − 2) metres and width (2x + 5) metres.\nA path 1 metre wide goes all the way around the outside of the lawn.\nThe lawn and path together form a larger rectangle.\n\nShow that the area of the path is (10x + 10) m².`, marks: 4, command: 'Show that', markScheme: `P1 for the dimensions of the larger rectangle, 3x and 2x + 7\nM1 for 3x(2x + 7) = 6x² + 21x\nM1 for (3x − 2)(2x + 5) = 6x² + 11x − 10 (at least three of the four terms correct before simplifying)\nC1 for 6x² + 21x − (6x² + 11x − 10) = 10x + 10 with all working correct` },
+      { q: `(Non-calculator)\n(x + a)(2x − 3)(x + 4) = 2x³ + bx² + cx − 24\nwhere a, b and c are integers.\n\nFind the values of a, b and c.`, marks: 4, command: 'Find', markScheme: `M1 for −12a = −24 oe, or a = 2 from comparing constant terms\nA1 a = 2\nM1 for expanding (x + 2)(2x − 3)(x + 4) (ft their a) with at least two brackets correctly expanded, e.g. (x + 2)(x + 4) = x² + 6x + 8\nA1 b = 9 and c = −2` },
+      { q: `(Non-calculator)\n(a) Factorise x² − 9 [1]\n\n(b) Using your answer to (a), write\n\\(2/(x + 3) + (x + 15)/(x² − 9) − 1/(x − 3)\\)\nas a single fraction in its simplest form.\nYou must show your working. [4]`, marks: 5, command: 'Write', markScheme: `(a)\nB1 (x − 3)(x + 3) cao\n\n(b)\nM1 for a common denominator of (x + 3)(x − 3) used for at least two of the fractions, e.g. 2(x − 3)/((x + 3)(x − 3))\nM1 for a single fraction with a correct numerator, e.g. (2(x − 3) + x + 15 − (x + 3))/((x + 3)(x − 3))\nM1 for the numerator simplified to 2x + 6 or 2(x + 3)\nA1 2/(x − 3) cao` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 2.2 */
-  "2.2": {
-    "name": "Formulae, Identities, Proof & Functions",
-    "questions": [
-      {
-        "q": "Make m the subject of k = m + 12.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: m = k − 12 (1)"
-      },
-      {
-        "q": "Here is a statement.\n6x − 2x ≡ 4x\nExplain what the symbol ≡ tells you about this statement.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: it is an identity – the two sides are equal for every value of x (1)"
-      },
-      {
-        "q": "The area, A, of a trapezium is given by A = ½(a + b)h.\nWork out the value of A when a = 6.4, b = 3.6 and h = 5.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: ½ × (6.4 + 3.6) × 5 or ½ × 10 × 5 (1)\n• A1: 25 (1)"
-      },
-      {
-        "q": "Make x the subject of y = 5x − 8.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: y + 8 = 5x (1)\n• A1: x = (y + 8)/5 (1)"
-      },
-      {
-        "q": "v = u + at\nWork out the value of a when v = 41, u = 5 and t = 9.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 41 = 5 + 9a, or a = (41 − 5)/9 (1)\n• A1: 4 (1)"
-      },
-      {
-        "q": "A function machine adds 6 to the input and then multiplies the result by 2.\nThe output is 30.\nWork out the input.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: reverses the operations: 30 ÷ 2 = 15 then 15 − 6, or 2(x + 6) = 30 (1)\n• A1: 9 (1)"
-      },
-      {
-        "q": "The volume, V, of a pyramid with base area A and height h is given by V = ⅓Ah.\nMake h the subject of the formula.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 3V = Ah (1)\n• A1: h = 3V/A (1)"
-      },
-      {
-        "q": "f(x) = 3x² − 2\n(a) Work out f(−2).\n(b) Solve f(x) = 25.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• (a) B1: 10 (1)\n• (b) B1: x = 3 or x = −3 (both needed) (1)"
-      },
-      {
-        "q": "g(x) = (x + 7)/3\nFind g⁻¹(x).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: y = (x + 7)/3 rearranged to x = 3y − 7, or reverses the operations ×3 then −7 (1)\n• A1: g⁻¹(x) = 3x − 7 (1)"
-      },
-      {
-        "q": "Show that 5(x + 3) − 3(x − 1) ≡ 2x + 18.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 5x + 15 − 3x + 3 (1)\n• A1: = 2x + 18 with all working shown (1)"
-      },
-      {
-        "q": "The cost, £C, of hiring a van for d days and driving it m miles is given by the formula\nC = 45d + 0.2m\nWork out the cost of hiring the van for 3 days and driving it 250 miles.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 45 × 3 + 0.2 × 250, or 135 + 50 (1)\n• A1: £185 (1)"
-      },
-      {
-        "q": "Make t the subject of P = (2t + 3)/5 − 1.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: P + 1 = (2t + 3)/5 (1)\n• M1: 5(P + 1) = 2t + 3, i.e. 5P + 5 = 2t + 3 (1)\n• A1: t = (5P + 2)/2 (1)"
-      },
-      {
-        "q": "Show that the sum of any four consecutive integers is always 2 more than a multiple of 4.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: n, n + 1, n + 2, n + 3 (or equivalent) (1)\n• M1: sum = 4n + 6 (1)\n• C1: 4n + 6 = 4(n + 1) + 2, which is 2 more than a multiple of 4 (1)"
-      },
-      {
-        "q": "(x + a)(x − 2) ≡ x² + bx − 14, where a and b are constants.\nWork out the values of a and b.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: expands to x² − 2x + ax − 2a (1)\n• A1: −2a = −14 so a = 7 (1)\n• A1: b = a − 2 = 5 (1)"
-      },
-      {
-        "q": "f(x) = x + 4 and g(x) = 2x² − 1\nFind gf(x). Give your answer in its simplest form.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: gf(x) = 2(x + 4)² − 1 (1)\n• M1: (x + 4)² = x² + 8x + 16 (1)\n• A1: 2x² + 16x + 31 (1)"
-      },
-      {
-        "q": "Make r the subject of A = πr² + 20, where r > 0.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: A − 20 = πr² (1)\n• M1: r² = (A − 20)/π (1)\n• A1: r = √((A − 20)/π) (1)"
-      },
-      {
-        "q": "Prove that the sum of the squares of any two consecutive odd numbers is always 2 more than a multiple of 8.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: uses (2n + 1)² + (2n + 3)² or equivalent consecutive odd numbers (1)\n• M1: expands to 4n² + 4n + 1 + 4n² + 12n + 9 = 8n² + 16n + 10 (1)\n• C1: = 8(n² + 2n + 1) + 2, which is 2 more than a multiple of 8 (1)"
-      },
-      {
-        "q": "Make x the subject of y = (5x − 1)/(x + 2).",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: y(x + 2) = 5x − 1 (1)\n• M1: xy + 2y = 5x − 1 and collects x terms: xy − 5x = −1 − 2y (1)\n• M1: x(y − 5) = −1 − 2y (1)\n• A1: x = (1 + 2y)/(5 − y) or equivalent, e.g. x = (−1 − 2y)/(y − 5) (1)"
-      },
-      {
-        "q": "f(x) = 4x − 3 and g(x) = x/2 + 1\n(a) Work out fg(6).\n(b) Solve f⁻¹(x) = g(x).",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• (a) B1: 13 (1)\n• (b) M1: f⁻¹(x) = (x + 3)/4 (1)\n• (b) M1: (x + 3)/4 = x/2 + 1 leading to x + 3 = 2x + 4 (1)\n• (b) A1: x = −1 (1)"
-      },
-      {
-        "q": "The formula s = ut + ½at² gives the distance, s metres, travelled by an object.\n(a) Work out the value of s when u = 2, t = 6 and a = 1.5.\n(b) Make u the subject of the formula.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• (a) M1: 2 × 6 + ½ × 1.5 × 6² (1)\n• (a) A1: 39 (1)\n• (b) M1: s − ½at² = ut (1)\n• (b) A1: u = (s − ½at²)/t or u = (2s − at²)/(2t) (1)"
-      }
+  '2.2': {
+    name: 'Formulae, Identities, Proof & Functions',
+    questions: [
+      { q: `(Non-calculator)\nHere are four statements.\n\n5x + 1 = 16        4(x − 2) ≡ 4x − 8        A = lw        3y + 2 > 11\n\nWrite down the statement that is an identity.`, marks: 1, command: 'Write down', markScheme: `B1 4(x − 2) ≡ 4x − 8 cao` },
+      { q: `(Calculator allowed)\nf(x) = x³ − 5\n\nFind f(4)`, marks: 1, command: 'Find', markScheme: `B1 59 cao` },
+      { q: `(Non-calculator)\nThe circumference, c, of a circle with diameter d is given by the formula c = πd\n\nMake d the subject of the formula.`, marks: 1, command: 'Make', markScheme: `B1 d = c/π oe` },
+      { q: `(Calculator allowed)\nA plumber uses this formula to work out the cost, £C, of a job.\n\nC = 35 + 12h\n\nwhere h is the number of hours the job takes.\n\nWork out the cost of a job that takes 3.5 hours.`, marks: 2, command: 'Work out', markScheme: `M1 35 + 12 × 3.5 oe (12 × 3.5 = 42 seen)\nA1 (£)77 cao` },
+      { q: `(Non-calculator)\nIt costs £8 to hire a bike plus £3 for each hour the bike is hired.\nThe total cost of hiring a bike for h hours is £C.\n\nWrite down a formula for C in terms of h.`, marks: 2, command: 'Write down', markScheme: `B2 C = 8 + 3h oe\n(B1 8 + 3h oe without C = , or C = 8 + h3, or C = 8h + 3, or C = k + 3h where k ≠ 8)` },
+      { q: `(Non-calculator)\nThe formula F = 1.8C + 32 converts a temperature in degrees Celsius, C, to a temperature in degrees Fahrenheit, F.\n\nMake C the subject of the formula.`, marks: 2, command: 'Make', markScheme: `M1 F − 32 = 1.8C or a correct first step, e.g. F/1.8 = C + 32/1.8\nA1 C = (F − 32)/1.8 oe, e.g. C = 5(F − 32)/9` },
+      { q: `(Calculator allowed)\nv² = u² + 2as\n\nu = 3.2    a = 9.8    s = 5.5\n\nWork out the value of v, where v > 0\nGive your answer correct to 3 significant figures.`, marks: 2, command: 'Work out', markScheme: `M1 3.2² + 2 × 9.8 × 5.5 oe (= 118.04) or √(3.2² + 2 × 9.8 × 5.5)\nA1 10.9 (accept 10.86 to 10.87 if not rounded)` },
+      { q: `(Non-calculator)\nf(x) = 2x + 5\ng(x) = x²\n\nFind fg(−3)`, marks: 2, command: 'Find', markScheme: `M1 g(−3) = 9 or fg(x) = 2x² + 5\nA1 23 cao` },
+      { q: `(Non-calculator)\nf(x) = (x − 4)/3\n\nFind f⁻¹(x)`, marks: 2, command: 'Find', markScheme: `M1 y = (x − 4)/3 rearranged to x = 3y + 4, or a correct first step such as 3y = x − 4 (or reversing the flow diagram: × 3 then + 4)\nA1 f⁻¹(x) = 3x + 4 oe` },
+      { q: `(Non-calculator)\nShow that (n + 3)² − (n − 3)² ≡ 12n`, marks: 2, command: 'Show that', markScheme: `M1 for expanding both brackets with at least one fully correct, e.g. n² + 6n + 9 and n² − 6n + 9 (or use of difference of two squares: (n + 3 + n − 3)(n + 3 − (n − 3)))\nA1 for n² + 6n + 9 − (n² − 6n + 9) = 12n, or 2n × 6 = 12n, with full working shown` },
+      { q: `(Non-calculator)\nHere is a number machine.\n\nInput → [ × 4 ] → [ − 7 ] → Output\n\nThe output is 25\n\nWork out the input.`, marks: 2, command: 'Work out', markScheme: `M1 (25 + 7) ÷ 4 oe, or 4x − 7 = 25, or 32 seen\nA1 8 cao` },
+      { q: `(Non-calculator)\n\\(P = \\sqrt{\\dfrac{a + 4}{b}}\\)\n\nMake a the subject of the formula.`, marks: 3, command: 'Make', markScheme: `M1 squaring both sides: P² = (a + 4)/b\nM1 multiplying both sides by b: bP² = a + 4\nA1 a = bP² − 4 oe` },
+      { q: `(Non-calculator)\nSam says,\n"The difference between the squares of two consecutive even numbers is always a multiple of 4"\n\nProve that Sam is correct.`, marks: 3, command: 'Prove', markScheme: `P1 for algebraic expressions for two consecutive even numbers, e.g. 2n and 2n + 2\nP1 for (2n + 2)² − (2n)² expanded to 4n² + 8n + 4 − 4n² oe\nA1 for 8n + 4 = 4(2n + 1) with conclusion, e.g. "4(2n + 1) is a multiple of 4"` },
+      { q: `(Non-calculator)\n(3x − 2)(x + a) ≡ 3x² + bx − 8\n\nwhere a and b are integers.\n\nFind the value of a and the value of b.`, marks: 3, command: 'Find', markScheme: `M1 expanding (3x − 2)(x + a) to 3x² + 3ax − 2x − 2a (at least 3 terms correct)\nA1 a = 4 (from −2a = −8)\nA1 b = 10 (from 3a − 2 = b) ft their a` },
+      { q: `(Calculator allowed)\nThe time, T seconds, for one complete swing of a pendulum of length L metres is given by the formula\n\n\\(T = 2\\pi\\sqrt{\\dfrac{L}{g}}\\)\n\nwhere g = 9.8\n\nOne complete swing of a pendulum takes 2.5 seconds.\n\nWork out the length of the pendulum.\nGive your answer correct to 3 significant figures.`, marks: 3, command: 'Work out', markScheme: `M1 2.5 ÷ 2π (= 0.3978...) oe, or √(L/9.8) = 2.5/(2π)\nM1 L = 9.8 × (2.5/(2π))² oe, or L = gT²/(4π²) with values substituted\nA1 1.55 (m) (accept 1.55 to 1.552)` },
+      { q: `(Non-calculator)\n\\(h(x) = \\dfrac{2x + 3}{x - 1}\\)\n\nFind \\(h^{-1}(x)\\)`, marks: 3, command: 'Find', markScheme: `M1 y(x − 1) = 2x + 3 (or x(y − 1) = 2y + 3 after swapping x and y)\nM1 xy − 2x = y + 3 and x(y − 2) = y + 3, i.e. all x terms collected on one side and factorised\nA1 h⁻¹(x) = (x + 3)/(x − 2) oe` },
+      { q: `(Non-calculator)\nProve that the square of any odd number is always 1 more than a multiple of 8`, marks: 4, command: 'Prove', markScheme: `P1 for a general odd number, e.g. 2n + 1, and (2n + 1)²\nP1 for 4n² + 4n + 1\nP1 for 4n(n + 1) + 1 and a statement that n(n + 1) is even since it is the product of two consecutive integers (so 4n(n + 1) is a multiple of 8)\nC1 for a complete proof with conclusion, e.g. "4n(n + 1) = 8k so (2n + 1)² = 8k + 1, which is 1 more than a multiple of 8"\n(Testing particular numbers only scores 0)` },
+      { q: `(Calculator allowed)\nElla sells cakes at a market.\n•  It costs her £15 to hire a stall.\n•  It costs her £1.20 to make each cake.\n•  She sells each cake for £2.50\n\nElla makes and sells n cakes.\nHer profit is £P.\n\n(a) Write a formula for P in terms of n. [2]\n\n(b) Ella wants to make a profit of £50\nWork out the number of cakes she needs to sell. [2]`, marks: 4, command: 'Work out', markScheme: `(a)\nM1 2.5n − 1.2n − 15 oe, or 1.3n seen\nA1 P = 1.3n − 15 oe (e.g. P = 2.5n − (15 + 1.2n))\n(b)\nM1 1.3n − 15 = 50 oe, or (50 + 15) ÷ 1.3 ft their formula from (a)\nA1 50 cao` },
+      { q: `(Non-calculator)\n\\(\\sqrt{\\dfrac{x + 2}{x - 3}} = y\\)\n\nMake x the subject of the formula.`, marks: 4, command: 'Make', markScheme: `M1 squaring both sides: (x + 2)/(x − 3) = y²\nM1 multiplying by (x − 3) and expanding: x + 2 = xy² − 3y²\nM1 collecting x terms on one side and factorising, e.g. x(y² − 1) = 3y² + 2 or x(1 − y²) = −3y² − 2\nA1 x = (3y² + 2)/(y² − 1) oe` },
+      { q: `(Non-calculator)\nf(x) = 3x − 1\ng(x) = x² + 2\n\nSolve fg(x) = gf(x)\nGive your solutions in the form \\(\\dfrac{a \\pm \\sqrt{b}}{c}\\) where a, b and c are integers.\nYou must show all your working.`, marks: 5, command: 'Solve', markScheme: `M1 fg(x) = 3(x² + 2) − 1 (= 3x² + 5)\nM1 gf(x) = (3x − 1)² + 2 (= 9x² − 6x + 3)\nM1 equating and rearranging to a 3-term quadratic = 0, e.g. 6x² − 6x − 2 = 0 or 3x² − 3x − 1 = 0\nM1 correct substitution into the quadratic formula, e.g. (3 ± √((−3)² − 4 × 3 × (−1)))/(2 × 3), or completing the square ft their quadratic\nA1 x = (3 ± √21)/6 oe` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 2.3 */
-  "2.3": {
-    "name": "Linear Graphs & Coordinates",
-    "questions": [
-      {
-        "q": "Write down the coordinates of the point where the line y = 6 − 5x crosses the y-axis.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (0, 6) (1)"
-      },
-      {
-        "q": "Write down the equation of the straight line that passes through the points (−3, 2) and (−3, 9).",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: x = −3 (1)"
-      },
-      {
-        "q": "P is the point (−5, 6) and Q is the point (3, −2). Work out the coordinates of the midpoint of PQ.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (−5 + 3) ÷ 2 or (6 + (−2)) ÷ 2, or one coordinate correct (1)\n• A1: (−1, 2) (1)"
-      },
-      {
-        "q": "Work out the gradient of the straight line through (−1, 7) and (3, −5).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (−5 − 7) ÷ (3 − (−1)) or −12/4 (1)\n• A1: −3 (1)"
-      },
-      {
-        "q": "The line L has equation 4x + 2y = 10. Write down the gradient of L and the coordinates of the point where L crosses the y-axis.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: gradient −2 (1)\n• B1: (0, 5) (1)"
-      },
-      {
-        "q": "Complete the table of values for y = 3 − 2x for x = −2, −1, 0, 1, 2 and 3.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: at least four correct values (1)\n• B1: all six correct: 7, 5, 3, 1, −1, −3 (1)"
-      },
-      {
-        "q": "Work out the gradient of a line that is perpendicular to the line 5x + y = 4.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: rearranges to y = −5x + 4, or states gradient of given line is −5 (1)\n• A1: ⅕ (1)"
-      },
-      {
-        "q": "Find an equation of the line with gradient 3 that passes through the point (−2, 1).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 1 = 3 × (−2) + c (1)\n• A1: y = 3x + 7 (1)"
-      },
-      {
-        "q": "Here are the equations of four straight lines.\nA: y = 2x + 5   B: 2y = x + 5   C: y − 2x = 1   D: 4x + 2y = 3\nWhich two lines are parallel? Give a reason for your answer.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: A and C (1)\n• C1: both have gradient 2 (B has gradient ½, D has gradient −2) (1)"
-      },
-      {
-        "q": "A is the point (4, −1). The midpoint of AB is (1, 3). Work out the coordinates of B.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: step from A to midpoint (−3, +4) applied again, or 2 × 1 − 4 or 2 × 3 − (−1) (1)\n• A1: (−2, 7) (1)"
-      },
-      {
-        "q": "A(−3, −1), B(3, −1) and C(3, 5) are three vertices of a square ABCD. Write down the coordinates of D and work out the area of the square.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: D = (−3, 5) (1)\n• B1: area 36 (square units) (1)"
-      },
-      {
-        "q": "Find an equation of the straight line that passes through (−1, 8) and (3, −4).",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: gradient = (−4 − 8) ÷ (3 − (−1)) (1)\n• A1: gradient −3 (1)\n• A1: y = −3x + 5 (1)"
-      },
-      {
-        "q": "A plumber charges a fixed call-out fee plus an hourly rate. The graph of charge, C pounds, against time, h hours, is a straight line passing through (0, 45) and (4, 185).\nWork out the gradient of the line and interpret it in this context.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (185 − 45) ÷ 4 (1)\n• A1: 35 (1)\n• C1: the plumber charges £35 for each hour (in addition to the £45 call-out fee) (1)"
-      },
-      {
-        "q": "Line L₁ has equation y = 4x − 3. Line L₂ is parallel to L₁ and passes through the point (2, 13).\nFind the coordinates of the point where L₂ crosses the x-axis.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: uses gradient 4 with (2, 13): 13 = 4 × 2 + c (1)\n• A1: y = 4x + 5 (1)\n• A1: (−1.25, 0) (1)"
-      },
-      {
-        "q": "Find an equation of the line that is perpendicular to y = 2x − 5 and passes through (4, 3).\nGive your answer in the form ax + by = c where a, b and c are integers.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: perpendicular gradient −½ (1)\n• M1: 3 = −½ × 4 + c, so c = 5 (1)\n• A1: x + 2y = 10 (1)"
-      },
-      {
-        "q": "Show that the lines 3y = 2x + 9 and 2y + 3x = 4 are perpendicular.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: rearranges at least one equation into the form y = mx + c (1)\n• A1: gradients ⅔ and −3/2 (1)\n• C1: ⅔ × (−3/2) = −1, so the lines are perpendicular (1)"
-      },
-      {
-        "q": "A triangle has vertices A(1, 2), B(7, 2) and C(4, 8).\nShow that triangle ABC is isosceles and work out its area.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: compares AC and BC, e.g. both are 3 across and 6 up (or C lies on x = 4, the perpendicular bisector of AB) (1)\n• A1: AC = BC = √45, so the triangle is isosceles (1)\n• B1: area = ½ × 6 × 6 = 18 (1)"
-      },
-      {
-        "q": "A is the point (−2, 5) and B is the point (4, 1).\nFind an equation of the perpendicular bisector of AB.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: midpoint (1, 3) (1)\n• M1: gradient of AB = (1 − 5) ÷ (4 − (−2)) = −⅔ (1)\n• M1: perpendicular gradient 3/2 used with the midpoint (1)\n• A1: y = 1.5x + 1.5 (or 2y = 3x + 3) (1)"
-      },
-      {
-        "q": "The cost of hiring a van is a fixed charge plus a daily rate. Hiring the van for 3 days costs £155. Hiring it for 7 days costs £295.\n(a) Work out the daily rate and the fixed charge.\n(b) Work out the cost of hiring the van for 10 days.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (295 − 155) ÷ (7 − 3) (1)\n• A1: daily rate £35 (1)\n• A1: fixed charge £50 (1)\n• A1: £400 for 10 days (1)"
-      },
-      {
-        "q": "ABCD is a parallelogram. A is (−1, 2), B is (5, 4) and C is (7, 9).\n(a) Find the coordinates of D.\n(b) Find an equation of the line AD. Give your answer in the form ay = bx + c where a, b and c are integers.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: uses the step from B to A (−6, −2) applied to C, or A + C − B (1)\n• A1: D = (1, 7) (1)\n• M1: gradient of AD = (7 − 2) ÷ (1 − (−1)) = 5/2 (1)\n• M1: substitutes a point, e.g. 2 = 5/2 × (−1) + c (1)\n• A1: 2y = 5x + 9 (1)"
-      }
+  '2.3': {
+    name: 'Linear Graphs & Coordinates',
+    questions: [
+      { q: `(Non-calculator)\n\nWrite down the gradient of the straight line with equation y = 7 − 4x`, marks: 1, command: 'Write down', markScheme: `B1: −4 cao` },
+      { q: `(Non-calculator)\n\nLine L is parallel to the line with equation y = 5x − 2\nL passes through the point (0, −3).\n\nWrite down an equation of L.`, marks: 1, command: 'Write down', markScheme: `B1: y = 5x − 3 oe` },
+      { q: `(Non-calculator)\n\nA coordinate grid has x and y axes each from −5 to 5\n\nOn the grid, mark the point (−4, 2) with a cross and label it P.`, marks: 1, command: 'Mark', diagram: true, markScheme: `B1: cross at (−4, 2) labelled P` },
+      { q: `(Calculator allowed)\n\nOn a map drawn on a coordinate grid, the village of Ashby is at the point (−3, 8) and the village of Brockton is at the point (7, −2).\nA phone mast is to be built exactly halfway between the two villages.\n\nWork out the coordinates of the point where the mast is to be built.`, marks: 2, command: 'Work out', markScheme: `M1: for (−3 + 7) ÷ 2 or (8 + (−2)) ÷ 2, or one correct coordinate\nA1: (2, 3) cao` },
+      { q: `(Non-calculator)\n\nWork out the gradient of the straight line that passes through the points (−2, 9) and (4, −3).`, marks: 2, command: 'Work out', markScheme: `M1: for (−3 − 9) ÷ (4 − (−2)) oe, e.g. −12/6\nA1: −2 cao` },
+      { q: `(Calculator allowed)\n(data written for this practice question)\n\nA straight-line graph shows the cost, C pounds, of hiring a van to drive m miles.\nThe line passes through the points (0, 40) and (100, 90).\n\nWork out the gradient of the line and explain what this gradient represents.`, marks: 2, command: 'Work out', markScheme: `B1: 0.5 oe\nC1: the cost per mile (of hiring the van) is £0.50, or 50p, oe\n(Do not accept "the cost" without reference to per mile.)` },
+      { q: `(Non-calculator)\n\nLine L has equation 3x + 4y = 12\n\nFind the gradient of a line that is perpendicular to L.`, marks: 2, command: 'Find', markScheme: `M1: for rearranging to y = −¾x + 3, or for gradient of L = −¾ seen\nA1: 4/3 oe` },
+      { q: `(Non-calculator)\n\nA straight line has gradient −3 and passes through the point (2, 5).\n\nFind an equation of the line.`, marks: 2, command: 'Find', markScheme: `M1: for 5 = −3 × 2 + c oe, or y − 5 = −3(x − 2)\nA1: y = −3x + 11 oe` },
+      { q: `(Non-calculator)\n\nKai says,\n"The point (−3, −8) lies on the line with equation y = 4x + 3"\n\nIs Kai correct?\nYou must show how you get your answer.`, marks: 2, command: 'Show', markScheme: `M1: for substituting x = −3 into y = 4x + 3, e.g. 4 × (−3) + 3, or substituting y = −8 to get x = −11/4\nC1: No, with correct supporting working, e.g. when x = −3, y = −9 (not −8)` },
+      { q: `(Non-calculator)\n\nA is the point with coordinates (−5, 2).\nThe midpoint of the line segment AB is the point (1, −1).\n\nFind the coordinates of B.`, marks: 2, command: 'Find', markScheme: `M1: for a correct method for one coordinate, e.g. 1 + (1 − (−5)) or 2 × 1 − (−5), or one correct coordinate\nA1: (7, −4) cao` },
+      { q: `(Non-calculator)\n\nThe line with equation 3x + 2y = 12 crosses the x-axis at the point P and the y-axis at the point Q.\n\nFind the coordinates of P and the coordinates of Q.`, marks: 2, command: 'Find', markScheme: `B1: P = (4, 0)\nB1: Q = (0, 6)` },
+      { q: `(Non-calculator)\n\nA coordinate grid has x from −2 to 3 and y from −4 to 8\n\nOn the grid, draw the graph of y = 3 − 2x for values of x from −2 to 3`, marks: 3, command: 'Draw', diagram: true, markScheme: `B3: for a fully correct straight line from (−2, 7) to (3, −3)\n(B2: for a correct straight line through at least 3 of (−2, 7), (−1, 5), (0, 3), (1, 1), (2, −1), (3, −3), or all points correctly plotted but not joined\nB1: for at least 2 correct points stated or plotted, or a line with gradient −2, or a line through (0, 3) with negative gradient)` },
+      { q: `(Non-calculator)\n\nFind an equation of the straight line that passes through the points (−1, 7) and (3, −1).\nGive your answer in the form y = mx + c`, marks: 3, command: 'Find', markScheme: `M1: for finding the gradient, e.g. (−1 − 7) ÷ (3 − (−1)) = −2\nM1: for substituting a point into y = −2x + c, e.g. 7 = −2 × (−1) + c\nA1: y = −2x + 5 cao` },
+      { q: `(Non-calculator)\n\nA coordinate grid has x and y axes each from −2 to 6\n\nBy drawing the graphs of y = 2x − 1 and x + y = 5 on the grid, solve the simultaneous equations\ny = 2x − 1\nx + y = 5`, marks: 3, command: 'Solve', diagram: true, markScheme: `B1: for a correct line y = 2x − 1 drawn\nB1: for a correct line x + y = 5 drawn\nB1ft: x = 2, y = 3 (ft from the point of intersection of their two straight lines)` },
+      { q: `(Calculator allowed)\n(data written for this practice question)\n\nTwo plumbers charge for a job in different ways.\nPlumber A charges a fixed call-out fee of £45 plus £30 for each hour.\nPlumber B charges £60 for each hour and has no call-out fee.\nThe graph of cost against time is a straight line for each plumber.\n\nFor what length of job, in hours, do the two plumbers charge the same amount?\nYou must show your working.`, marks: 3, command: 'Work out', markScheme: `P1: for a correct expression for either plumber, e.g. 45 + 30h or 60h, or a correct value for both for the same time, e.g. 1 hour: £75 and £60\nP1: for a complete process, e.g. 45 + 30h = 60h, or trial reaching equal costs, or a graph with both lines drawn\nA1: 1.5 hours oe (e.g. 1 hour 30 minutes)` },
+      { q: `(Non-calculator)\n\nLine L₁ has equation 2y = 6x − 5\nLine L₂ is parallel to L₁ and passes through the point (2, −1).\n\nFind an equation of L₂.`, marks: 3, command: 'Find', markScheme: `M1: for rearranging L₁ to y = 3x − 5/2 oe, or gradient 3 identified\nM1: for substituting (2, −1) into y = 3x + c, e.g. −1 = 3 × 2 + c\nA1: y = 3x − 7 oe` },
+      { q: `(Non-calculator)\n\nA is the point (−4, 1) and B is the point (8, 10).\nC is the point on the line segment AB such that AC : CB = 2 : 1\n\nShow that C lies on the line with equation y = 2x − 1`, marks: 4, command: 'Show', markScheme: `M1: for finding the change in x or y from A to B, e.g. 12 and 9\nM1: for finding ⅔ of a change, e.g. 8 or 6, or 1 + ⅔ × 9\nA1: C = (4, 7)\nC1: for a complete conclusion with supporting working, e.g. 2 × 4 − 1 = 7 so C lies on y = 2x − 1` },
+      { q: `(Calculator allowed)\n\nThe straight line L passes through the points (−2, 4) and (6, 8).\nThe point (k, 11) also lies on L.\n\nFind the value of k.`, marks: 4, command: 'Find', markScheme: `M1: for gradient of L, e.g. (8 − 4) ÷ (6 − (−2)) = ½\nM1: for substituting a point to find c, e.g. 4 = ½ × (−2) + c, giving c = 5, or y = ½x + 5\nM1: for substituting y = 11 into their equation, e.g. 11 = ½k + 5\nA1: k = 12 cao` },
+      { q: `(Non-calculator)\n\nA circle has equation x² + y² = 25\nThe point P(3, −4) lies on the circle.\nThe tangent to the circle at P crosses the y-axis at the point Q.\n\nFind the coordinates of Q.`, marks: 4, command: 'Find', markScheme: `M1: for the gradient of the radius OP, −4/3 oe\nM1: for the gradient of the tangent as the negative reciprocal, 3/4 oe\nM1: for substituting (3, −4) into y = ¾x + c, e.g. −4 = ¾ × 3 + c, or y + 4 = ¾(x − 3)\nA1: (0, −25/4) oe, e.g. (0, −6.25)` },
+      { q: `(Non-calculator)\n\nA is the point (−3, 9) and B is the point (5, 1).\nThe line L is the perpendicular bisector of AB.\n\nFind the area of the triangle enclosed by L, the x-axis and the y-axis.\nYou must show all your working.`, marks: 5, command: 'Find', markScheme: `M1: for finding the midpoint of AB, (1, 5)\nM1: for the gradient of AB, (1 − 9) ÷ (5 − (−3)) = −1, and the perpendicular gradient 1\nM1: for substituting their midpoint into y = x + c using their perpendicular gradient, e.g. 5 = 1 + c\nA1: y = x + 4 oe\nA1: 8 (units²) cao` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 2.4 */
-  "2.4": {
-    "name": "Non-linear Graphs",
-    "questions": [
-      {
-        "q": "Write down the coordinates of the point where the graph of y = x² − 5x + 6 crosses the y-axis.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (0, 6) (1)"
-      },
-      {
-        "q": "Write down the equation of the line of symmetry of the graph of y = (x − 1)(x − 7).",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: x = 4 (1)"
-      },
-      {
-        "q": "Complete the table of values for y = x² − 3x − 1 for x = −1, 0, 1, 2, 3 and 4.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: at least four correct values (1)\n• B1: all six correct: 3, −1, −3, −3, −1, 3 (1)"
-      },
-      {
-        "q": "Find the roots of the graph of y = x² + x − 12.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (x + 4)(x − 3) = 0, or a correct method to solve x² + x − 12 = 0 (1)\n• A1: x = −4 and x = 3 (1)"
-      },
-      {
-        "q": "Write down the type of graph for each equation.\n(a) y = 5/x\n(b) y = 2 − x³",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) reciprocal graph (two branches, axes as asymptotes) (1)\n• B1: (b) cubic graph, going from top-left to bottom-right (1)"
-      },
-      {
-        "q": "A train travels at a constant speed. Its distance–time graph is a straight line from (0 hours, 0 km) to (2.5 hours, 200 km). Work out the speed of the train.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 200 ÷ 2.5 (1)\n• A1: 80 km/h (1)"
-      },
-      {
-        "q": "A car speeds up uniformly from rest to 18 m/s in 12 seconds. Work out the acceleration of the car.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 18 ÷ 12 (1)\n• A1: 1.5 m/s² (1)"
-      },
-      {
-        "q": "Explain why the graph of y = x² + 4 does not cross the x-axis.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: x² ≥ 0 for every value of x (1)\n• C1: so y ≥ 4 for every x, and y is never 0 (the minimum point is (0, 4)) (1)"
-      },
-      {
-        "q": "A circle has equation x² + y² = 64.\n(a) Write down the radius of the circle.\n(b) Does the point (5, 6) lie on the circle? Give a reason.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: (a) 8 (1)\n• B1: (b) No, because 5² + 6² = 61, which is not 64 (1)"
-      },
-      {
-        "q": "Write down the coordinates of the turning point of y = (x + 3)² − 8.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: x-coordinate −3 (1)\n• B1: y-coordinate −8 (1)"
-      },
-      {
-        "q": "The time, t hours, that n workers take to paint a hall is given by t = 36/n.\n(a) Work out t when n = 4.\n(b) Describe what happens to t when n is doubled.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 9 hours (1)\n• B1: (b) t halves (t is inversely proportional to n) (1)"
-      },
-      {
-        "q": "By first finding its roots, find the coordinates of the turning point of y = x² − 8x + 12.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (x − 2)(x − 6) = 0, roots 2 and 6 (1)\n• M1: x = (2 + 6) ÷ 2 = 4 and substitutes into the equation (1)\n• A1: (4, −4) (1)"
-      },
-      {
-        "q": "(a) Write x² − 6x + 14 in the form (x − p)² + q.\n(b) Hence explain why the graph of y = x² − 6x + 14 does not cross the x-axis.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: (x − 3)² − 9 + 14 (1)\n• A1: (x − 3)² + 5 (1)\n• C1: minimum value of y is 5, which is above 0, so no x-intercepts (1)"
-      },
-      {
-        "q": "A ball is kicked from the ground. Its height, h metres, after t seconds is h = 40t − 5t².\n(a) After how many seconds does the ball land?\n(b) Work out the greatest height of the ball.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 5t(8 − t) = 0, or 40t − 5t² = 0 solved (1)\n• A1: t = 8 seconds (1)\n• A1: 80 m (at t = 4) (1)"
-      },
-      {
-        "q": "Given that sin 40° = 0.643 (to 3 d.p.), find all the values of x between 0° and 360° for which\n(a) sin x = 0.643\n(b) sin x = −0.643",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: (a) 40° and 140° (1)\n• B1: (b) 220° (1)\n• B1: (b) 320° (1)"
-      },
-      {
-        "q": "Sam's distance–time graph for a trip to the shop is described here. The horizontal axis shows time from 09:00 to 10:00 and the vertical axis shows distance from home in km. The graph is a straight line from (09:00, 0) to (09:20, 1.2), then horizontal from (09:20, 1.2) to (09:30, 1.2), then a straight line down to (09:45, 0).\n(a) Work out Sam's speed, in km/h, on the way to the shop.\n(b) Was Sam faster on the way to the shop or on the way home? Show how you decide.",
-        "marks": 3,
-        "requiresDiagram": true,
-        "higher": false,
-        "markScheme": "• M1: 1.2 ÷ (20/60) (1)\n• A1: 3.6 km/h (1)\n• A1: home speed 1.2 ÷ (15/60) = 4.8 km/h, so faster on the way home (1)"
-      },
-      {
-        "q": "A velocity–time graph is described here. The horizontal axis shows time in seconds and the vertical axis shows velocity in m/s. The graph is a straight line from (0, 0) to (5, 20), then horizontal from (5, 20) to (15, 20), then a straight line from (15, 20) to (20, 0).\nWork out the total distance travelled.",
-        "marks": 3,
-        "requiresDiagram": true,
-        "higher": true,
-        "markScheme": "• M1: area of one section, e.g. ½ × 5 × 20 = 50 or 10 × 20 = 200 (1)\n• M1: complete method for total area, e.g. 50 + 200 + 50 or ½ × (20 + 10) × 20 (1)\n• A1: 300 m (1)"
-      },
-      {
-        "q": "The point P(2, −3) lies on the circle x² + y² = 13.\nFind an equation of the tangent to the circle at P.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: gradient of radius OP = −3/2 (1)\n• M1: tangent gradient = ⅔ (negative reciprocal) (1)\n• M1: −3 = ⅔ × 2 + c, so c = −13/3 (1)\n• A1: y = ⅔x − 13/3 (or 2x − 3y = 13) (1)"
-      },
-      {
-        "q": "The table shows the velocity, v m/s, of a cyclist at time t seconds.\nt: 0, 2, 4, 6, 8\nv: 0, 7, 12, 15, 16\nThe graph of v against t is a smooth curve that gets less steep as t increases.\n(a) Use 4 strips of equal width to estimate the distance travelled in the first 8 seconds.\n(b) Is your answer an underestimate or an overestimate? Give a reason.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: area of one trapezium, e.g. ½ × 2 × (0 + 7) = 7 (1)\n• M1: sum of all four: 7 + 19 + 27 + 31 (1)\n• A1: 84 m (1)\n• C1: underestimate, because the curve bends above the tops of the trapezia (1)"
-      },
-      {
-        "q": "f(x) = x² − 2x − 8\n(a) Find the roots of y = f(x) and the coordinates of its turning point.\n(b) Write down the coordinates of the turning point of\n(i) y = f(x) + 5\n(ii) y = f(x − 3)",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: (x − 4)(x + 2) = 0 (1)\n• A1: roots x = 4 and x = −2 (1)\n• A1: turning point (1, −9) (1)\n• B1: (i) (1, −4) (1)\n• B1: (ii) (4, −9) (1)"
-      }
+  '2.4': {
+    name: 'Non-linear Graphs',
+    questions: [
+      { q: `(Non-calculator)\nA circle has equation x² + y² = 45\n\nFind the radius of the circle.\nGive your answer in the form a√5 where a is an integer.`, marks: 1, command: 'Find', markScheme: `B1 3√5 cao` },
+      { q: `(Non-calculator)\nFour graphs are described below.\nGraph A: a straight line through the origin with a positive gradient.\nGraph B: a U-shaped curve with its minimum point at (0, 0).\nGraph C: a curve in two separate parts, one in the first quadrant and one in the third quadrant, getting closer to both axes but never meeting them.\nGraph D: a curve that passes through (0, 1), rises more and more steeply as x increases and gets closer to the negative x-axis as x decreases.\n\nWrite down the letter of the graph that could have the equation y = 1/x`, marks: 1, command: 'Write down', markScheme: `B1 C cao` },
+      { q: `(Non-calculator)\nThe graph of y = 3ˣ is drawn for values of x from −2 to 2\n\nWrite down the coordinates of the point where the graph crosses the y-axis.`, marks: 1, command: 'Write down', markScheme: `B1 (0, 1) cao` },
+      { q: `(Non-calculator)\nHere is a table of values for y = x³ − 4x\n\nx: −3, −2, −1, 0, 1, 2, 3\ny: ……, 0, ……, 0, −3, ……, 15\n\nComplete the table of values.`, marks: 2, command: 'Complete', markScheme: `B2 for all three correct: −15 (at x = −3), 3 (at x = −1), 0 (at x = 2)\n(B1 for 1 or 2 correct)` },
+      { q: `(Non-calculator)\nHere is a completed table of values for y = x² − 2x − 3\n\nx: −2, −1, 0, 1, 2, 3, 4\ny: 5, 0, −3, −4, −3, 0, 5\n\nOn a grid with x from −2 to 4 and y from −5 to 6, draw the graph of y = x² − 2x − 3 for values of x from −2 to 4`, marks: 2, command: 'Draw', diagram: true, markScheme: `B2 for a fully correct smooth curve through all 7 points, with minimum at (1, −4)\n(B1 for at least 5 points plotted correctly, or all 7 points plotted but joined with straight line segments)` },
+      { q: `(Calculator allowed)\nHere is a table of values for y = x² − 4x + 1\n\nx: −1, 0, 1, 2, 3, 4, 5\ny: 6, 1, −2, −3, −2, 1, 6\n\nThe graph of y = x² − 4x + 1 is a smooth curve through these points.\n\nUse the graph of y = x² − 4x + 1 to find estimates of the solutions of x² − 4x + 1 = 0`, marks: 2, command: 'Find', markScheme: `B1 for an answer in the range 0.2 to 0.4\nB1 for an answer in the range 3.6 to 3.8\n(exact values 2 ± √3 = 0.267..., 3.732...)` },
+      { q: `(Non-calculator)\nThe graph of y = x² − 6x + 5 crosses the x-axis at the points (1, 0) and (5, 0).\n\n(a) Write down the coordinates of the point where the graph crosses the y-axis. [1]\n(b) Write down the equation of the line of symmetry of the graph. [1]`, marks: 2, command: 'Write down', markScheme: `(a) B1 (0, 5) cao\n(b) B1 x = 3 cao` },
+      { q: `(Calculator allowed)\nA ball is thrown vertically upwards from ground level.\nThe height, h metres, of the ball t seconds after it is thrown is given by h = 20t − 5t²\n\nWork out the value of t when the ball hits the ground again.`, marks: 2, command: 'Work out', markScheme: `M1 for 20t − 5t² = 0 or 5t(4 − t) = 0 oe, or a correct trial in h = 20t − 5t²\nA1 4 cao (ignore t = 0)` },
+      { q: `(Non-calculator)\nSketch the graph of y = (x + 2)(x − 1)(x − 3)\nShow clearly the coordinates of any points where the graph crosses the axes.`, marks: 3, command: 'Sketch', diagram: true, markScheme: `B1 for a cubic curve of the correct shape (positive x³ coefficient: rising from bottom left to top right, with one maximum and one minimum)\nB1 for the curve crossing the x-axis at (−2, 0), (1, 0) and (3, 0)\nB1 for the curve crossing the y-axis at (0, 6)` },
+      { q: `(Non-calculator)\nThe point P has coordinates (k, 6) where k < 0\nP lies on the circle with equation x² + y² = 100\n\nFind the value of k.`, marks: 2, command: 'Find', markScheme: `M1 for k² + 6² = 100 or k² = 64 oe\nA1 −8 cao` },
+      { q: `(Calculator allowed)\nThe graph of y = sin x° is drawn for 0 ≤ x ≤ 360\nOne solution of sin x° = 0.4 is x = 23.6 correct to 1 decimal place.\n\nFind all the solutions of sin x° = −0.4 for 0 ≤ x ≤ 360\nGive your answers correct to 1 decimal place.`, marks: 2, command: 'Find', markScheme: `B1 203.6 (accept 203.5 to 203.6)\nB1 336.4 (accept 336.4 to 336.5)\n(−1 for each extra answer in the range)` },
+      { q: `(Non-calculator)\nThe curve with equation y = f(x) has a turning point at (2, −5).\n\n(a) Write down the coordinates of the turning point of the curve with equation y = f(x) + 3 [1]\n(b) Write down the coordinates of the turning point of the curve with equation y = f(−x) [1]`, marks: 2, command: 'Write down', markScheme: `(a) B1 (2, −2) cao\n(b) B1 (−2, −5) cao` },
+      { q: `(Non-calculator)\n(a) Write x² + 6x + 14 in the form (x + a)² + b where a and b are integers. [2]\n(b) Hence write down the coordinates of the turning point of the graph of y = x² + 6x + 14 [1]`, marks: 3, command: 'Write', markScheme: `(a) M1 for (x + 3)² seen, or (x + 3)² − 9 + 14 oe\nA1 (x + 3)² + 5 cao\n(b) B1ft (−3, 5) (ft their (x + a)² + b as (−a, b))` },
+      { q: `(Non-calculator)\nThe curve C has equation y = x² − 4x + 3\nC is translated by the vector (−2, 5) (that is, 2 units left and 5 units up) to give the curve D.\n\nFind the equation of D.\nGive your answer in the form y = x² + bx + c`, marks: 3, command: 'Find', markScheme: `M1 for replacing x with (x + 2): (x + 2)² − 4(x + 2) + 3, or for using the turning point of C, (2, −1), to find the turning point of D, (0, 4)\nM1 for adding 5: y = (x + 2)² − 4(x + 2) + 3 + 5 oe, or y = (x − 0)² + 4\nA1 y = x² + 4 cao` },
+      { q: `(Calculator allowed)\nThe graph of y = abˣ passes through the points (0, 3) and (2, 48).\na and b are constants and b > 0\n\nFind the value of a and the value of b.`, marks: 3, command: 'Find', markScheme: `B1 a = 3\nM1 for 3 × b² = 48 or b² = 16 (ft their a)\nA1 b = 4 cao` },
+      { q: `(Calculator allowed)\nThe graph of y = x² − 3x − 1 is drawn on a grid for values of x from −1 to 5\n\nThe solutions of x² − 5x + 2 = 0 can be found by drawing a suitable straight line on the same grid.\n\n(a) Find the equation of the straight line. [2]\n(b) Hence find estimates of the solutions of x² − 5x + 2 = 0 [1]`, marks: 3, command: 'Find', markScheme: `(a) M1 for x² − 3x − 1 = 2x − 3 oe, or x² − 3x − 1 − (x² − 5x + 2) seen\nA1 y = 2x − 3\n(b) B1 for both solutions: one in the range 0.3 to 0.6 and one in the range 4.4 to 4.7\n(exact values (5 ± √17)/2 = 0.438..., 4.561...)` },
+      { q: `(Calculator allowed)\nA car starts from rest. The distance, d metres, it travels in the first t seconds is given by d = 0.5t² for 0 ≤ t ≤ 8\n\n(a) Draw the graph of d = 0.5t² for 0 ≤ t ≤ 8 and use it to find an estimate of the gradient of the graph when t = 4 [3]\n(b) Describe what your answer represents. [1]`, marks: 4, command: 'Find', diagram: true, markScheme: `(a) M1 for a tangent drawn to the curve at t = 4\nM1 for a method to find the gradient of their tangent, e.g. difference in d ÷ difference in t\nA1 for an answer in the range 3.5 to 4.5\n(b) C1 the speed of the car (in m/s) at 4 seconds oe` },
+      { q: `(Calculator allowed)\nThe table gives information about the velocity, v m/s, of a cyclist t seconds after she starts to move.\n(data written for this practice question)\n\nt (s): 0, 2, 4, 6, 8\nv (m/s): 0, 6, 10, 12, 13\n\nThe velocity–time graph is a smooth curve through these points.\n\n(a) Work out an estimate for the distance the cyclist travels in the first 8 seconds.\nUse 4 strips of equal width. [3]\n(b) Is your answer to (a) an underestimate or an overestimate of the actual distance?\nGive a reason for your answer. [1]`, marks: 4, command: 'Work out', markScheme: `(a) M1 for splitting the area into 4 trapezia (or triangle and trapezia) of width 2\nM1 for a correct method to find the total area, e.g. ½ × 2 × 6 + ½ × 2 × (6 + 10) + ½ × 2 × (10 + 12) + ½ × 2 × (12 + 13)\nA1 69 (m) cao\n(b) C1 underestimate, with a reason, e.g. the curve is above the straight tops of the trapezia (the graph curves downwards / the rate of increase of velocity decreases)` },
+      { q: `(Non-calculator)\nThe graph of y = x² + bx + c has a turning point at (4, −9).\nThe graph crosses the x-axis at the points A and B, and crosses the y-axis at the point C.\n\nWork out the area of triangle ABC.\nYou must show all your working.`, marks: 4, command: 'Work out', markScheme: `M1 for y = (x − 4)² − 9 or y = x² − 8x + 7 oe\nM1 for C = (0, 7) or c = 7\nM1 for solving (x − 4)² − 9 = 0 or (x − 1)(x − 7) = 0 to find x = 1 and x = 7\nA1 21 cao` },
+      { q: `(Calculator allowed)\nP(6, 8) is a point on the circle with equation x² + y² = 100\nThe tangent to the circle at P crosses the x-axis at the point A and the y-axis at the point B.\nO is the origin.\n\nWork out the area of triangle OAB.\nGive your answer correct to 1 decimal place.`, marks: 5, command: 'Work out', markScheme: `M1 for gradient of OP = 8/6 (= 4/3) oe\nM1 for gradient of tangent = −3/4 (−1 ÷ their gradient of OP)\nM1 for a correct equation of the tangent, e.g. y − 8 = −3/4(x − 6) or y = −3/4x + 12.5 oe\nM1 for finding A (50/3, 0) or B (0, 12.5) from their tangent\nA1 104.2 (accept 104.1 to 104.2, or 625/6)` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 2.5 */
-  "2.5": {
-    "name": "Equations & Inequalities",
-    "questions": [
-      {
-        "q": "Solve y/6 = 8.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: y = 48 (1)"
-      },
-      {
-        "q": "A number line shows a filled (closed) circle at 3 with an arrow pointing to the left. Write down the inequality, in terms of x, that is shown.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: x ≤ 3 [must be ≤, not <] (1)"
-      },
-      {
-        "q": "Solve 6x + 11 = 2x − 5.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 4x = −16 or −16 = −4x (collecting x terms and numbers on opposite sides) (1)\n• A1: x = −4 (1)"
-      },
-      {
-        "q": "Solve 3(2x − 5) = 21.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 6x − 15 = 21 or 2x − 5 = 7 (1)\n• A1: x = 6 (1)"
-      },
-      {
-        "q": "Solve 4 − 5x > 19.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: −5x > 15 or 4 − 19 > 5x (1)\n• A1: x < −3 [inequality sign reversed correctly] (1)"
-      },
-      {
-        "q": "Solve x² + 9x + 14 = 0.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (x + 2)(x + 7) = 0 (1)\n• A1: x = −2 and x = −7 (1)"
-      },
-      {
-        "q": "n is an integer. Write down all the values of n such that −3 ≤ n < 2.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B2: −3, −2, −1, 0, 1 and no other values [B1 for four correct values with no incorrect values, or all five correct with one incorrect value] (2)"
-      },
-      {
-        "q": "Solve 3x + 4 > 19. Give your answer using set notation.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: 3x > 15 (1)\n• A1: {x : x > 5} (1)"
-      },
-      {
-        "q": "Solve (x − 4)/3 = 5.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: x − 4 = 15 (1)\n• A1: x = 19 (1)"
-      },
-      {
-        "q": "Solve x² − 10x = 0.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: x(x − 10) = 0 (1)\n• A1: x = 0 and x = 10 [both required] (1)"
-      },
-      {
-        "q": "A square has sides of length (2x + 1) cm. The perimeter of the square is 36 cm. Work out the value of x.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 4(2x + 1) = 36 or 8x + 4 = 36 (1)\n• A1: x = 4 (1)"
-      },
-      {
-        "q": "Solve the simultaneous equations\n5x + 2y = 11\n3x − 2y = 13",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: adds the equations to eliminate y, giving 8x = 24 (1)\n• A1: x = 3 (1)\n• A1: y = −2 (1)"
-      },
-      {
-        "q": "Solve (2x + 3)/5 − (x − 1)/2 = 1.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: multiplies every term by 10: 2(2x + 3) − 5(x − 1) = 10 (1)\n• M1: expands correctly: 4x + 6 − 5x + 5 = 10 (1)\n• A1: x = 1 (1)"
-      },
-      {
-        "q": "Solve 2x² + 7x − 4 = 0.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: attempt to factorise with brackets giving two of 2x², −4, or splits 7x as 8x − x (1)\n• A1: (2x − 1)(x + 4) = 0 (1)\n• A1: x = ½ and x = −4 (1)"
-      },
-      {
-        "q": "Solve 3x² − 5x − 1 = 0. Give your solutions correct to 2 decimal places.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: correct substitution into the quadratic formula: (5 ± √((−5)² − 4 × 3 × (−1))) / (2 × 3) (1)\n• M1: (5 ± √37) / 6 (1)\n• A1: x = 1.85 and x = −0.18 (1)"
-      },
-      {
-        "q": "Jo buys 3 pens and 2 rulers for £4.70. A pen costs 40p more than a ruler. Work out the cost of one pen.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• P1: forms an equation, e.g. 3(r + 0.40) + 2r = 4.70 (1)\n• P1: solves to find r = 0.70 (cost of a ruler) (1)\n• A1: £1.10 (1)"
-      },
-      {
-        "q": "(a) Solve −7 < 3x + 2 ≤ 11.\n(b) Describe how you would represent your solution on a number line.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: −9 < 3x ≤ 9 (1)\n• A1: −3 < x ≤ 3 (1)\n• B1: open circle at −3, closed (filled) circle at 3, joined by a line (1)"
-      },
-      {
-        "q": "Solve the simultaneous equations\nx² + y² = 20\ny = x + 2",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: substitutes: x² + (x + 2)² = 20 (1)\n• M1: expands and rearranges to 2x² + 4x − 16 = 0 or x² + 2x − 8 = 0 (1)\n• A1: (x + 4)(x − 2) = 0 so x = 2, x = −4 (1)\n• A1: x = 2, y = 4 and x = −4, y = −2 [correctly paired] (1)"
-      },
-      {
-        "q": "(a) Show that the equation x³ − 4x − 1 = 0 has a solution between x = 2 and x = 3.\n(b) Starting with x₁ = 2, use the iteration formula xₙ₊₁ = ∛(4xₙ + 1) to find the values of x₂, x₃ and x₄. Give x₄ correct to 3 decimal places.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: (a) f(2) = −1 and f(3) = 14; sign change so a solution lies between 2 and 3 (1)\n• M1: (b) x₂ = ∛9 = 2.0801… (1)\n• A1: x₃ = 2.1045… (1)\n• A1: x₄ = 2.112 (1)"
-      },
-      {
-        "q": "A rectangle has sides of length (3x − 2) cm and (x + 4) cm. A square has sides of length (x + 3) cm. The perimeter of the rectangle is equal to the perimeter of the square. Work out the area of the rectangle.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• P1: perimeter of rectangle = 2(3x − 2) + 2(x + 4) = 8x + 4 (1)\n• P1: perimeter of square = 4(x + 3) = 4x + 12 (1)\n• P1: forms the equation 8x + 4 = 4x + 12 (1)\n• A1: x = 2 (1)\n• A1: area = 4 × 6 = 24 cm² (1)"
-      }
+  '2.5': {
+    name: 'Equations & Inequalities',
+    questions: [
+      { q: `(Non-calculator)\n\nSolve \\(\\frac{y}{4} = 9\\)`, marks: 1, command: 'Solve', markScheme: `B1: y = 36 cao` },
+      { q: `(Non-calculator)\nA number line shows an open (empty) circle at −1 and a filled (solid) circle at 4, joined by a straight line.\n\nWrite down the inequality shown, using x as the variable.`, marks: 1, command: 'Write down', markScheme: `B1: −1 < x ≤ 4 cao (both inequality signs must be correct)` },
+      { q: `(Calculator allowed)\nUsing \\(x_{n+1} = \\sqrt[3]{5 - 2x_n}\\)\n\nStarting with \\(x_0 = 1\\), find the value of \\(x_1\\)`, marks: 1, command: 'Find', markScheme: `B1: 1.442(249…) accept 1.44 or better, or \\(\\sqrt[3]{3}\\)` },
+      { q: `(Calculator allowed)\nA taxi company charges a fixed fee of £3.50 plus £1.80 for each mile travelled.\nAyo has £25 to spend on a taxi journey.\n\nWork out the greatest whole number of miles Ayo can travel. You must show your working.`, marks: 2, command: 'Work out', markScheme: `M1: forms and starts to solve 3.50 + 1.80m ≤ 25 oe, e.g. (25 − 3.50) ÷ 1.80 (= 11.94…)\nA1: 11 cao` },
+      { q: `(Non-calculator)\nJo thinks of a number.\nShe multiplies her number by 2 and then adds 3.\nShe then multiplies the result by 5.\nHer answer is the same as 3 times her number subtract 6.\n\nFind the number Jo thought of.`, marks: 2, command: 'Find', markScheme: `M1: forms the equation 5(2n + 3) = 3n − 6 oe and expands correctly, e.g. 10n + 15 = 3n − 6, or reaches 7n = −21\nA1: −3 cao` },
+      { q: `(Non-calculator)\nn is an integer.\n\nWrite down all the values of n such that −4 < 2n ≤ 6`, marks: 2, command: 'Write down', markScheme: `B2: −1, 0, 1, 2, 3 (and no others)\n(B1: four correct values and no incorrect values, or all five correct values and one incorrect value)` },
+      { q: `(Non-calculator)\n\nSolve \\(x^2 - 3x - 28 = 0\\)`, marks: 2, command: 'Solve', markScheme: `M1: (x − 7)(x + 4) oe, or correct substitution into the quadratic formula\nA1: x = 7, x = −4 cao` },
+      { q: `(Non-calculator)\n\nSolve \\(\\frac{2x + 5}{3} = x - 1\\)`, marks: 2, command: 'Solve', markScheme: `M1: multiplies both sides by 3 correctly, e.g. 2x + 5 = 3x − 3\nA1: x = 8 cao` },
+      { q: `(Calculator allowed)\n\\(f(x) = x^3 + 4x - 1\\)\n\nShow that the equation \\(x^3 + 4x - 1 = 0\\) has a solution between x = 0 and x = 1`, marks: 2, command: 'Show that', markScheme: `M1: substitutes x = 0 and x = 1 into x³ + 4x − 1, e.g. −1 and 4\nA1: −1 and 4 with a conclusion referring to the change of sign, e.g. "there is a change of sign so there is a solution between 0 and 1"` },
+      { q: `(Non-calculator)\n\nSolve \\(2x^2 + 7x - 4 = 0\\)`, marks: 2, command: 'Solve', markScheme: `M1: (2x − 1)(x + 4) oe, or correct substitution into the quadratic formula\nA1: x = 1/2, x = −4 oe` },
+      { q: `(Non-calculator)\nA rectangle has length (2x + 3) cm and width x cm.\nThe perimeter of the rectangle is 36 cm.\n\nWork out the value of x.`, marks: 2, command: 'Work out', markScheme: `M1: forms a correct equation, e.g. 2(2x + 3) + 2x = 36 oe or 6x + 6 = 36\nA1: 5 cao` },
+      { q: `(Non-calculator)\n\nSolve \\(\\frac{x - 1}{2} + \\frac{x + 4}{3} = 5\\)`, marks: 3, command: 'Solve', markScheme: `M1: multiplies through by 6 (or a common multiple), e.g. 3(x − 1) + 2(x + 4) = 30 oe\nM1: expands and collects terms correctly, e.g. 5x + 5 = 30 oe\nA1: x = 5 cao` },
+      { q: `(Calculator allowed)\nA rectangle has length (x + 6) cm and width x cm.\nThe area of the rectangle is 4 cm².\n\nWork out the width of the rectangle.\nGive your answer correct to 2 decimal places.`, marks: 3, command: 'Work out', markScheme: `M1: forms the equation x(x + 6) = 4 and rearranges to x² + 6x − 4 = 0\nM1: correct substitution into the quadratic formula, e.g. (−6 ± √(6² − 4 × 1 × −4)) / (2 × 1), or completes the square to (x + 3)² = 13\nA1: 0.61 cao (must reject the negative solution −6.61)` },
+      { q: `(Non-calculator)\nSolve the simultaneous equations\n\n3x + 2y = 4\n5x − 3y = 13`, marks: 3, command: 'Solve', markScheme: `M1: a correct process to eliminate one variable (condone one arithmetic error), e.g. 9x + 6y = 12 and 10x − 6y = 26, giving 19x = 38\nM1: (dep) substitutes the found value into one of the equations, or a correct process to eliminate the other variable\nA1: x = 2, y = −1 cao` },
+      { q: `(Non-calculator)\n\nSolve \\(2x^2 - 5x - 12 > 0\\)`, marks: 3, command: 'Solve', markScheme: `M1: (2x + 3)(x − 4) oe, or correct substitution into the quadratic formula\nA1: critical values −3/2 and 4 oe\nA1: x < −3/2 or x > 4 oe, e.g. {x : x < −1.5} ∪ {x : x > 4}` },
+      { q: `(Non-calculator)\n(a) Write \\(x^2 - 8x + 3\\) in the form \\((x - p)^2 - q\\), where p and q are integers. [2]\n(b) Hence solve \\(x^2 - 8x + 3 = 0\\)\nGive your answers in the form \\(a \\pm \\sqrt{b}\\), where a and b are integers. [1]`, marks: 3, command: 'Write', markScheme: `(a)\nM1: (x − 4)² seen, or p = 4\nA1: (x − 4)² − 13 cao\n(b)\nB1: x = 4 ± √13 ft their p and q from (a)` },
+      { q: `(Calculator allowed)\nSam is x years old.\nAna is 3 times as old as Sam.\nBen is 4 years younger than Ana.\nThe total of their ages is 52 years.\n\nWork out Ben's age.`, marks: 4, command: 'Work out', markScheme: `P1: expressions for Ana's and Ben's ages, e.g. 3x and 3x − 4\nP1: forms an equation, e.g. x + 3x + 3x − 4 = 52 oe\nP1: solves to find x = 8, or 7x = 56\nA1: 20 cao` },
+      { q: `(Calculator allowed)\nAt a cinema, adult tickets cost £a each and child tickets cost £c each.\n2 adult tickets and 3 child tickets cost £37.75\n3 adult tickets and 1 child ticket cost £34.75\n\nWork out the cost of 1 adult ticket and the cost of 1 child ticket.`, marks: 4, command: 'Work out', markScheme: `P1: forms both equations, 2a + 3c = 37.75 and 3a + c = 34.75 oe\nP1: a correct process to eliminate one variable, e.g. 9a + 3c = 104.25 subtract 2a + 3c = 37.75 giving 7a = 66.50\nP1: a correct process to find the second variable, e.g. 3 × 9.50 + c = 34.75\nA1: adult £9.50 and child £6.25 cao` },
+      { q: `(Non-calculator)\nA coordinate grid has x-axis and y-axis each from −1 to 7.\n\nOn the grid, show by shading the region that satisfies all three of these inequalities.\nLabel the region R.\n\ny ≥ 1     x + y ≤ 6     y ≤ 2x`, marks: 4, command: 'Show', diagram: true, markScheme: `B1: line y = 1 drawn correctly\nB1: line x + y = 6 drawn correctly\nB1: line y = 2x drawn correctly\nB1: correct region identified and labelled R (the triangle with vertices (0.5, 1), (5, 1) and (2, 4))` },
+      { q: `(Non-calculator)\nSolve the simultaneous equations\n\n\\(x^2 + y^2 = 25\\)\n\\(y = 2x - 5\\)`, marks: 5, command: 'Solve', markScheme: `M1: substitutes the linear equation into the quadratic, e.g. x² + (2x − 5)² = 25\nM1: expands correctly, e.g. x² + 4x² − 20x + 25 = 25\nA1: reduces to 5x² − 20x = 0 oe\nM1: solves the quadratic, e.g. 5x(x − 4) = 0, giving x = 0 or x = 4\nA1: x = 0, y = −5 and x = 4, y = 3 (correctly paired)` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 2.6 */
-  "2.6": {
-    "name": "Sequences",
-    "questions": [
-      {
-        "q": "Write down the next term of the sequence 1, 4, 9, 16, …",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 25 (1)"
-      },
-      {
-        "q": "Write down the 6th triangular number.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 21 (1)"
-      },
-      {
-        "q": "Find an expression, in terms of n, for the nth term of the sequence 8, 13, 18, 23, …",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 5n + k for any k ≠ 3, or common difference 5 identified (1)\n• A1: 5n + 3 (1)"
-      },
-      {
-        "q": "A geometric sequence has first term 4 and common ratio −3. Write down the next three terms.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: −12 (1)\n• A1: 36 and −108 (1)"
-      },
-      {
-        "q": "The first term of a sequence is 10. The term-to-term rule is \"subtract 4 then multiply by 2\". Work out the next three terms.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 12 (1)\n• A1: 16 and 24 (1)"
-      },
-      {
-        "q": "Is 79 a term of the sequence with nth term 6n + 5? You must show how you get your answer.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 6n + 5 = 79 so 6n = 74 (1)\n• A1: n = 12.33…, not a whole number, so 79 is not a term (1)"
-      },
-      {
-        "q": "The first two terms of a Fibonacci-type sequence are 2 and 5. Write down the next three terms.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 7 and 12 (1)\n• B1: 19 (1)"
-      },
-      {
-        "q": "Here is a geometric sequence: 5, 15, 45, … Write down the next two terms.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: common ratio 3 (× 3) (1)\n• A1: 135 and 405 (1)"
-      },
-      {
-        "q": "A geometric sequence begins √2, 2, 2√2, … Work out the 6th term. Give your answer as an integer.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: common ratio √2, or continues 4, 4√2 (1)\n• A1: 8 (1)"
-      },
-      {
-        "q": "Here is a quadratic sequence: 5, 8, 13, 20, … Work out the next two terms.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: first differences 3, 5, 7 (second difference 2) (1)\n• A1: 29 and 40 (1)"
-      },
-      {
-        "q": "The nth term of a sequence is 2n² + 1. Work out the difference between the 5th term and the 4th term.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 51 or 33 (5th term or 4th term) (1)\n• A1: 18 (1)"
-      },
-      {
-        "q": "Pattern 1 uses 7 sticks, pattern 2 uses 12 sticks and pattern 3 uses 17 sticks. The patterns continue in the same way.\n(a) Find an expression, in terms of n, for the number of sticks in pattern n.\n(b) Can a pattern use exactly 100 sticks? Give a reason for your answer.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (a) 5n + k seen (1)\n• A1: (a) 5n + 2 (1)\n• C1: (b) No, with reason, e.g. 5n + 2 = 100 gives n = 19.6, not a whole number (1)"
-      },
-      {
-        "q": "Find an expression for the nth term of the sequence 4, 10, 18, 28, …",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: second difference 2, so n² term (1)\n• M1: subtracts n² to get 3, 6, 9, 12 (1)\n• A1: n² + 3n (1)"
-      },
-      {
-        "q": "The 5th term of a linear sequence is 31. The 12th term is 66. Find an expression for the nth term.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: common difference = (66 − 31) ÷ 7 = 5 (1)\n• M1: method to find the constant, e.g. 31 − 5 × 5 = 6 (1)\n• A1: 5n + 6 (1)"
-      },
-      {
-        "q": "A Fibonacci-type sequence has 3rd term 13 and 5th term 34. Work out the first two terms.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: a + b = 13 and 2a + 3b = 34, or equivalent forward/backward working (1)\n• M1: correct method to solve, e.g. b = 34 − 26 = 8 (1)\n• A1: first term 5, second term 8 (1)"
-      },
-      {
-        "q": "A ball is dropped from a height of 2.4 m. After each bounce it rises to ¾ of its previous height. After which bounce does the ball first rise to less than 1 m?",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 2.4 × 0.75 = 1.8 (first bounce) (1)\n• M1: continues 1.35, 1.0125, 0.759… (1)\n• A1: the 4th bounce (1)"
-      },
-      {
-        "q": "Sequence A has nth term 4n + 1. Sequence B has nth term 50 − 3n. Find the value of n for which the nth terms of A and B are equal, and the value of these terms.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 4n + 1 = 50 − 3n (1)\n• A1: n = 7 (1)\n• A1: both terms equal 29 (1)"
-      },
-      {
-        "q": "Find an expression for the nth term of the quadratic sequence 2, 9, 20, 35, 54, …",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: first differences 7, 11, 15, 19 and second difference 4 (1)\n• M1: coefficient of n² is 2; subtracts 2n² giving 0, 1, 2, 3, 4 (1)\n• M1: linear part n − 1 (1)\n• A1: 2n² + n − 1 (1)"
-      },
-      {
-        "q": "The nth term of a sequence is n² + 5n.\n(a) Show that 84 is a term of the sequence and state its position.\n(b) Show that 100 is not a term of the sequence.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: (a) n² + 5n − 84 = 0 (1)\n• M1: (a) (n + 12)(n − 7) = 0 (1)\n• A1: (a) n = 7, so 84 is the 7th term (n = −12 rejected) (1)\n• C1: (b) e.g. 8th term = 104 and 7th term = 84, so 100 lies between consecutive terms; or n² + 5n − 100 = 0 gives n = 7.81…, not an integer (1)"
-      },
-      {
-        "q": "Pattern 1 uses 9 tiles, pattern 2 uses 12 tiles and pattern 3 uses 15 tiles. The patterns continue in the same way.\n(a) Find an expression, in terms of n, for the number of tiles in pattern n.\n(b) How many tiles are in pattern 30?\n(c) Kim has 200 tiles. What is the number of the largest pattern she can make, and how many tiles will she have left over?",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (a) 3n + k seen (1)\n• A1: (a) 3n + 6 (1)\n• B1: (b) 96 (1)\n• M1: (c) 3n + 6 ≤ 200 or (200 − 6) ÷ 3 = 64.6… (1)\n• A1: (c) pattern 64, with 2 tiles left over (1)"
-      }
+  '2.6': {
+    name: 'Sequences',
+    questions: [
+      { q: `(Non-calculator)\nHere are the first five terms of a sequence of triangular numbers.\n1    3    6    10    15\n\nWrite down the next term of the sequence.`, marks: 1, command: 'Write down', markScheme: `B1 21 cao` },
+      { q: `(Non-calculator)\nHere are the first four terms of a Fibonacci sequence.\n2    5    7    12\n\nWrite down the next term of the sequence.`, marks: 1, command: 'Write down', markScheme: `B1 19 cao` },
+      { q: `(Non-calculator)\nWrite down a cube number that is between 50 and 100`, marks: 1, command: 'Write down', markScheme: `B1 64 cao` },
+      { q: `(Non-calculator)\nHere are the first four terms of an arithmetic sequence.\n5    11    17    23\n\nFind an expression, in terms of n, for the nth term of this sequence.`, marks: 2, command: 'Find', markScheme: `M1 6n + k where k ≠ −1, or 6n seen, or common difference 6 identified\nA1 6n − 1 oe` },
+      { q: `(Non-calculator)\nHere are the first four terms of an arithmetic sequence.\n20    17    14    11\n\nFind an expression, in terms of n, for the nth term of this sequence.`, marks: 2, command: 'Find', markScheme: `M1 −3n + k where k ≠ 23, or −3n seen\nA1 23 − 3n oe (e.g. −3n + 23)` },
+      { q: `(Non-calculator)\nHere are the first five terms of an arithmetic sequence.\n7    11    15    19    23\n\nIs 85 a term of this sequence?\nYou must give a reason for your answer.`, marks: 2, command: 'Give a reason', markScheme: `M1 nth term 4n + 3 found and 4n + 3 = 85 set up, or terms continued to show 83 and 87, or (85 − 7) ÷ 4 oe\nA1 No, with correct reason, e.g. n = 20.5 is not a whole number, or 83 and 87 are consecutive terms, or all terms are odd numbers 3 more than a multiple of 4 and 85 is not` },
+      { q: `(Calculator allowed)\nHere are the first four terms of a geometric sequence.\n2    6    18    54\n\nWork out the 7th term of this sequence.`, marks: 2, command: 'Work out', markScheme: `M1 common ratio 3 identified, e.g. continuing the sequence 162, 486 or 2 × 3⁶\nA1 1458 cao` },
+      { q: `(Calculator allowed)\nHannah makes a sequence of patterns using sticks.\nPattern number 1 uses 5 sticks, pattern number 2 uses 9 sticks and pattern number 3 uses 13 sticks.\nPattern number n uses 4n + 1 sticks.\n\nHannah has 50 sticks.\nWhat is the largest pattern number she can make?`, marks: 2, command: 'Work out', markScheme: `M1 4n + 1 = 50 or 4n + 1 ≤ 50 oe, or (50 − 1) ÷ 4 (= 12.25), or listing terms to 49 and 53\nA1 12 cao` },
+      { q: `(Non-calculator)\nThe first term of a Fibonacci sequence is 3\nThe fourth term of the sequence is 17\n\nWork out the second term of the sequence.`, marks: 2, command: 'Work out', markScheme: `M1 second term x, third term 3 + x, fourth term 3 + 2x, and 3 + 2x = 17 oe\nA1 7 cao` },
+      { q: `(Non-calculator)\nThe term-to-term rule of a sequence is\nMultiply by 2 then subtract 3\n\nThe 3rd term of the sequence is 41\nWork out the 1st term of the sequence.`, marks: 2, command: 'Work out', markScheme: `M1 a correct inverse step, e.g. (41 + 3) ÷ 2 (= 22), or 2(2a − 3) − 3 = 41 oe\nA1 12.5 oe` },
+      { q: `(Non-calculator)\nHere are the first four terms of a geometric sequence.\n\\(1 \\quad \\sqrt{3} \\quad 3 \\quad 3\\sqrt{3}\\)\n\nWork out the 9th term of this sequence.`, marks: 2, command: 'Work out', markScheme: `M1 common ratio \\(\\sqrt{3}\\) identified and used, e.g. \\((\\sqrt{3})^8\\) or terms continued to 9, \\(9\\sqrt{3}\\), 27, \\(27\\sqrt{3}\\)\nA1 81 cao` },
+      { q: `(Non-calculator)\nHere are the first four terms of sequence A.\n5    9    13    17\nHere are the first four terms of sequence B.\n47    44    41    38\n\nThere is one term number for which the term of sequence A and the term of sequence B are equal.\nFind this term number and the value of the term.\nYou must show your working.`, marks: 3, command: 'Find', markScheme: `P1 nth term of one sequence found: 4n + 1 or 50 − 3n oe\nP1 4n + 1 = 50 − 3n oe set up, or both sequences continued correctly to the 7th term\nA1 term number 7, value 29` },
+      { q: `(Non-calculator)\nHere are the first five terms of a quadratic sequence.\n4    9    18    31    48\n\nFind an expression, in terms of n, for the nth term of this sequence.`, marks: 3, command: 'Find', markScheme: `M1 second difference of 4 found or 2n² seen\nM1 for subtracting 2n² from the terms to get 2, 1, 0, −1 oe, or a correct method to find b and c (e.g. a + b + c = 4, 3a + b = 5 with a = 2)\nA1 2n² − n + 3 oe` },
+      { q: `(Calculator allowed)\nThe nth term of a sequence is n² + 3n\n\nGary says,\n"200 is a term in this sequence."\n\nIs Gary correct?\nYou must show how you get your answer.`, marks: 3, command: 'Show', markScheme: `P1 a correct process to find terms near 200, e.g. one of 12² + 3 × 12 = 180 or 13² + 3 × 13 = 208, or n² + 3n − 200 = 0 set up\nP1 both 180 and 208 found as consecutive terms (12th and 13th), or solving n² + 3n − 200 = 0 to get n = 12.7… (not an integer)\nC1 No, with correct supporting working` },
+      { q: `(Calculator allowed)\nIn a café, tables are put together in a row.\nOne table seats 6 people, 2 tables seat 10 people and 3 tables seat 14 people.\nThe pattern continues in the same way.\n\nThe café needs to seat 75 people at one row of tables.\nWork out the least number of tables needed.`, marks: 3, command: 'Work out', markScheme: `P1 a correct start, e.g. nth term 4n + 2 found, or the sequence continued with at least 3 correct further terms (18, 22, 26)\nP1 4n + 2 ≥ 75 oe or (75 − 2) ÷ 4 (= 18.25), or a list reaching 74 and 78\nA1 19 cao` },
+      { q: `(Non-calculator)\nThe first term of a geometric sequence is 8\nThe fourth term of the sequence is 1\n\nWork out the 6th term of the sequence.`, marks: 3, command: 'Work out', markScheme: `M1 8r³ = 1 oe\nA1 r = 1/2 oe\nA1 1/4 oe` },
+      { q: `(Non-calculator)\nHere are the first five terms of a quadratic sequence.\n3    10    21    36    55\n\n(a) Find an expression, in terms of n, for the nth term of this sequence. [3]\n(b) Show that 300 is a term of the sequence. [1]`, marks: 4, command: 'Find', markScheme: `(a)\nM1 second difference of 4 found or 2n² seen\nM1 for subtracting 2n² to get 1, 2, 3, 4, 5 oe, or a correct method to find b and c\nA1 2n² + n oe\n(b)\nB1 2 × 12² + 12 = 300 shown, or correct solution of 2n² + n = 300 giving n = 12 (ft their quadratic nth term)` },
+      { q: `(Non-calculator)\nHere are the first five terms of a Fibonacci sequence.\na    b    a + b    a + 2b    2a + 3b\n\nThe 3rd term of the sequence is 7\nThe 6th term of the sequence is 29\n\nFind the value of a and the value of b.`, marks: 4, command: 'Find', markScheme: `M1 6th term = 3a + 5b oe\nM1 a + b = 7 and 3a + 5b = 29 set up\nM1 a correct method to eliminate one variable, e.g. 3a + 5(7 − a) = 29 oe\nA1 a = 3, b = 4` },
+      { q: `(Calculator allowed)\nThe second term of a geometric sequence is 12\nThe fifth term of the sequence is 324\n\nWork out the 8th term of the sequence.`, marks: 4, command: 'Work out', markScheme: `M1 r³ = 324 ÷ 12 oe\nA1 r = 3\nM1 324 × 3³ oe, or first term 12 ÷ 3 = 4 and 4 × 3⁷\nA1 8748 cao` },
+      { q: `(Non-calculator)\nHere are some patterns made from white tiles and grey tiles.\nIn each pattern, a square of white tiles is surrounded by a border of grey tiles one tile wide.\nPattern number 1 has 1 white tile and 8 grey tiles.\nPattern number 2 has 4 white tiles and 12 grey tiles.\nPattern number 3 has 9 white tiles and 16 grey tiles.\nThe patterns continue in the same way.\n\n(a) Find an expression, in terms of n, for the number of grey tiles in pattern number n. [2]\n(b) In pattern number k, the number of white tiles is 41 more than the number of grey tiles.\nWork out the value of k.\nYou must show your working. [3]`, marks: 5, command: 'Work out', markScheme: `(a)\nM1 4n + c where c ≠ 4, or common difference 4 identified\nA1 4n + 4 oe\n(b)\nP1 n² − (4n + 4) = 41 oe (ft their linear expression), or n² seen for the white tiles with a list of differences\nP1 n² − 4n − 45 = 0 and a correct method to solve, e.g. (n − 9)(n + 5) = 0\nA1 k = 9 cao (81 white, 40 grey)` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 3.1 */
-  "3.1": {
-    "name": "Ratio & Proportion",
-    "questions": [
-      {
-        "q": "Write the ratio 45 : 75 in its simplest form.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 3 : 5 (1)"
-      },
-      {
-        "q": "The ratio of cars to vans in a car park is 7 : 2. What fraction of these vehicles are vans?",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 2/9 (1)"
-      },
-      {
-        "q": "Amir and Bella share £330 in the ratio 5 : 6. Work out how much each person gets.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 330 ÷ (5 + 6) = 30 (1)\n• A1: Amir £150 and Bella £180 (1)"
-      },
-      {
-        "q": "A map has a scale of 1 : 20 000. The distance between two schools on the map is 13.5 cm. Work out the real distance between the schools. Give your answer in kilometres.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 13.5 × 20 000 = 270 000 cm (1)\n• A1: 2.7 km (1)"
-      },
-      {
-        "q": "6 tins of soup cost £4.50. Work out the cost of 10 of these tins.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 4.50 ÷ 6 = 0.75 (or 4.50 ÷ 6 × 10) (1)\n• A1: £7.50 (1)"
-      },
-      {
-        "q": "Write the ratio 5 : 12 in the form 1 : n.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: divides both parts by 5 (1)\n• A1: 1 : 2.4 (1)"
-      },
-      {
-        "q": "It takes 9 cleaners 4 hours to clean an office block. Work out how long it would take 6 cleaners working at the same rate.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 9 × 4 = 36 cleaner-hours (1)\n• A1: 36 ÷ 6 = 6 hours (1)"
-      },
-      {
-        "q": "Washing powder is sold in two sizes. Box A: 1.2 kg for £5.40. Box B: 2 kg for £8.80. Which box is the better value for money? You must show your working.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 5.40 ÷ 1.2 = 4.50 (£ per kg) (1)\n• M1: 8.80 ÷ 2 = 4.40 (£ per kg) (1)\n• C1: Box B is better value, with correct comparable figures (1)"
-      },
-      {
-        "q": "The exchange rate is £1 = 165 Japanese yen. Convert ¥24 750 into pounds.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 24 750 ÷ 165 (1)\n• A1: £150 (1)"
-      },
-      {
-        "q": "The energy E stored in a spring is directly proportional to the square of its extension x. E = 0.9 when x = 0.3. Work out the value of E when x = 0.5.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: E = kx² with 0.9 = k × 0.09, so k = 10 (1)\n• A1: E = 10 × 0.25 = 2.5 (1)"
-      },
-      {
-        "q": "y is inversely proportional to x³. Describe exactly what happens to y when x is doubled.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: y = k/x³ (or 2³ = 8 seen) (1)\n• B1: y is divided by 8 (1)"
-      },
-      {
-        "q": "In a choir the ratio of sopranos to altos is 7 : 4. There are 18 more sopranos than altos. Work out the total number of sopranos and altos in the choir.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: difference 7 − 4 = 3 parts (1)\n• M1: 1 part = 18 ÷ 3 = 6 (1)\n• A1: 11 × 6 = 66 (1)"
-      },
-      {
-        "q": "A : B = 2 : 5 and B : C = 3 : 4. Find A : B : C in its simplest form.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: makes the B values equal using 15, e.g. A : B = 6 : 15 (1)\n• M1: B : C = 15 : 20 (1)\n• A1: 6 : 15 : 20 (1)"
-      },
-      {
-        "q": "Here are the ingredients for 20 flapjacks: 200 g oats, 120 g butter, 90 g syrup. Mia has 500 g oats, 270 g butter and 240 g syrup. Work out the greatest number of flapjacks Mia can make.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: compares each ingredient, e.g. 500 ÷ 200 = 2.5, 270 ÷ 120 = 2.25, 240 ÷ 90 = 2.67 (1)\n• M1: identifies butter as limiting (smallest multiplier 2.25) (1)\n• A1: 2.25 × 20 = 45 flapjacks (1)"
-      },
-      {
-        "q": "P is directly proportional to the square of r. When r = 5, P = 75.\n(a) Find a formula for P in terms of r.\n(b) Work out the value of P when r = 8.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: P = kr² and 75 = 25k (1)\n• A1: P = 3r² (1)\n• A1: (b) P = 192 (1)"
-      },
-      {
-        "q": "d is inversely proportional to the square root of t. When t = 4, d = 15. Work out the value of t when d = 6.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: d = k/√t and 15 = k/2 (1)\n• A1: k = 30, so d = 30/√t (1)\n• A1: √t = 5, so t = 25 (1)"
-      },
-      {
-        "q": "A model car is made to a scale of 1 : 25.\n(a) The real car is 4.2 m long. Work out the length of the model in centimetres.\n(b) A door on the model is 4.4 cm tall. Work out the height of the real door in metres.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (a) 420 ÷ 25 (1)\n• A1: (a) 16.8 cm (1)\n• B1: (b) 4.4 × 25 = 110 cm = 1.1 m (1)"
-      },
-      {
-        "q": "Two containers are mathematically similar. The smaller container is 10 cm tall and the larger container is 15 cm tall. The volume of the smaller container is 640 cm³.\n(a) Work out the volume of the larger container.\nThe surface area of the larger container is 540 cm².\n(b) Work out the surface area of the smaller container.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: length scale factor 15 ÷ 10 = 1.5 (1)\n• A1: (a) 640 × 1.5³ = 2160 cm³ (1)\n• M1: (b) 540 ÷ 1.5² (1)\n• A1: (b) 240 cm² (1)"
-      },
-      {
-        "q": "A bag of sweets contains lemon and orange sweets in the ratio 4 : 5. Leah eats 6 lemon sweets. The ratio of lemon to orange sweets is now 2 : 3. Work out how many sweets were in the bag at the start.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: lemon 4x and orange 5x (1)\n• M1: (4x − 6) : 5x = 2 : 3, so 3(4x − 6) = 2 × 5x (1)\n• A1: x = 9 (1)\n• A1: 9 × 9 = 81 sweets (1)"
-      },
-      {
-        "q": "Water flows into a tank. The volume of water, W litres, after t minutes is directly proportional to t. The graph of W against t is a straight line that passes through (0, 0) and (8, 60).\n(a) Explain how the graph shows that W is directly proportional to t.\n(b) Find a formula for W in terms of t.\n(c) Work out how long it takes for the tank to contain 150 litres.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• C1: (a) straight line passing through the origin (1)\n• M1: (b) gradient 60 ÷ 8 (1)\n• A1: (b) W = 7.5t (1)\n• M1: (c) 150 ÷ 7.5 (1)\n• A1: (c) 20 minutes (1)"
-      }
+  '3.1': {
+    name: 'Ratio & Proportion',
+    questions: [
+      { q: `(Non-calculator)\nWrite the ratio 24 : 36 in its simplest form.`, marks: 1, command: 'Write', markScheme: `B1 2 : 3 cao` },
+      { q: `(Non-calculator)\nA map has a scale of 1 : 50 000\nThe distance between two villages on the map is 6 cm.\n\nWork out the real distance between the two villages.\nGive your answer in kilometres.`, marks: 1, command: 'Work out', markScheme: `B1 3 (km) cao` },
+      { q: `(Non-calculator)\nIn a box there are only red pens and blue pens.\nThe ratio of the number of red pens to the number of blue pens is 2 : 3\n\nWhat fraction of the pens are red?`, marks: 1, command: 'Write down', markScheme: `B1 2/5 oe` },
+      { q: `(Non-calculator)\nAmir and Bella share £150 in the ratio 2 : 3\n\nWork out how much money Bella gets.`, marks: 2, command: 'Work out', markScheme: `M1 for 150 ÷ (2 + 3) or 30 seen, or 3/5 × 150\nA1 (£)90 cao` },
+      { q: `(Non-calculator)\nThere are 96 members in a running club.\nThe ratio of the number of men to the number of women is 3 : 5\n\nHow many more women than men are there in the club?`, marks: 2, command: 'Work out', markScheme: `M1 for 96 ÷ 8 (= 12) or for 36 or 60 seen\nA1 24 cao` },
+      { q: `(Calculator allowed)\nThe exchange rate is £1 = €1.16\n\nKaren changes €290 into pounds.\nHow many pounds does she get?`, marks: 2, command: 'Work out', markScheme: `M1 for 290 ÷ 1.16\nA1 (£)250 cao` },
+      { q: `(Non-calculator)\nHere are the ingredients needed to make 8 biscuits.\n\n120 g flour\n60 g butter\n40 g sugar\n\nLiam wants to make 20 biscuits.\n\nWork out how much flour he needs.`, marks: 2, command: 'Work out', markScheme: `M1 for 120 ÷ 8 (= 15) or 120 × 2.5 or 120 + 120 + 60 oe\nA1 300 (g) cao` },
+      { q: `(Non-calculator)\nWrite the ratio 40 cm : 2 m in the form 1 : n`, marks: 2, command: 'Write', markScheme: `M1 for 40 : 200 or 0.4 : 2 oe (both in the same units)\nA1 1 : 5 cao` },
+      { q: `(Non-calculator)\nIt takes 6 builders 10 days to build a wall.\nEach builder works at the same rate.\n\nHow many days would it take 4 builders to build the same wall?`, marks: 2, command: 'Work out', markScheme: `M1 for 6 × 10 (= 60 builder-days) or 10 × 6/4 oe\nA1 15 (days) cao` },
+      { q: `(Non-calculator)\na : b = 3 : 4\nb : c = 6 : 5\n\nFind a : b : c\nGive your answer in its simplest form.`, marks: 2, command: 'Find', markScheme: `M1 for writing both ratios with a common value for b, e.g. 9 : 12 and 12 : 10, or 18 : 24 : 20\nA1 9 : 12 : 10 cao` },
+      { q: `(Calculator allowed)\ny is directly proportional to x.\nWhen x = 8, y = 20\n\nFind the value of y when x = 14`, marks: 2, command: 'Find', markScheme: `M1 for 20 ÷ 8 (= 2.5) or y = 2.5x or 20 × 14/8 oe\nA1 35 cao` },
+      { q: `(Non-calculator)\nOrange juice is sold in 500 ml cartons and in 750 ml cartons.\n\nA 500 ml carton costs £1.35\nA 750 ml carton costs £1.95\n\nWhich size of carton is the better value for money?\nYou must show how you get your answer.`, marks: 3, command: 'Show', markScheme: `M1 for a correct method to compare for one size, e.g. 3 × 1.35 (= 4.05) for 1500 ml, or 1.35 ÷ 5 (= 0.27) per 100 ml\nM1 for a correct method to compare for the other size, e.g. 2 × 1.95 (= 3.90) for 1500 ml, or 1.95 ÷ 7.5 (= 0.26) per 100 ml\nC1 for 750 ml carton with correct comparable values, e.g. £4.05 and £3.90 for 1500 ml, or 0.27p and 0.26p per ml` },
+      { q: `(Non-calculator)\ny is directly proportional to x²\nWhen x = 2, y = 12\n\nFind the positive value of x when y = 108`, marks: 3, command: 'Find', markScheme: `M1 for y = kx² and 12 = k × 2²\nM1 for k = 3 used, e.g. 108 = 3x² or x² = 36\nA1 6 cao` },
+      { q: `(Non-calculator)\nThere are some sweets in a bag.\n2/5 of the sweets are lemon sweets.\nThe rest of the sweets are orange sweets and lime sweets in the ratio 1 : 2\n\nThere are 14 lime sweets in the bag.\n\nWork out the total number of sweets in the bag.`, marks: 3, command: 'Work out', markScheme: `P1 for 1 − 2/5 = 3/5 and lime = 2/3 of 3/5 (= 2/5 of the total) oe\nP1 for 14 ÷ 2/5 oe, or 14 ÷ 2 = 7 orange then (14 + 7) ÷ 3/5\nA1 35 cao` },
+      { q: `(Non-calculator)\nIn a bag there are only red counters and blue counters.\nThe ratio of red counters to blue counters is 4 : 5\n\nSam puts 6 more red counters into the bag.\nThe ratio of red counters to blue counters is now 6 : 5\n\nHow many blue counters are in the bag?`, marks: 3, command: 'Work out', markScheme: `P1 for a correct start, e.g. red = 4x and blue = 5x, so (4x + 6) : 5x = 6 : 5\nP1 for a correct equation, e.g. 5(4x + 6) = 30x, or 2 parts = 6 counters oe\nA1 15 cao` },
+      { q: `(Calculator allowed)\nF is inversely proportional to d²\nWhen d = 3, F = 20\n\nFind the value of F when d = 6`, marks: 3, command: 'Find', markScheme: `M1 for F = k/d² and 20 = k/3²\nM1 for k = 180 or F = 180/d²\nA1 5 cao` },
+      { q: `(Calculator allowed)\nSophie wants to buy a bottle of perfume.\nIn New York the perfume costs $85\nIn London the same perfume costs £64\n\nThe exchange rate is £1 = $1.27\n\nIn which city is the perfume cheaper, and by how much?\nGive your answer in pounds.\nYou must show your working.`, marks: 4, command: 'Work out', markScheme: `M1 for 85 ÷ 1.27 (or 64 × 1.27 = 81.28 for comparison in dollars)\nA1 for 66.92 to 66.93 (or 81.28)\nM1 for a correct method to find the difference in pounds, e.g. 66.93 − 64, or (85 − 81.28) ÷ 1.27\nA1 for London cheaper by (£)2.92 to (£)2.93` },
+      { q: `(Non-calculator)\nHere are the ingredients needed to make 12 cupcakes.\n\n180 g butter\n150 g sugar\n3 eggs\n240 g flour\n\nJo has\n500 g butter\n400 g sugar\n8 eggs\n600 g flour\n\nWork out the greatest number of cupcakes Jo can make.\nYou must show your working.`, marks: 4, command: 'Work out', markScheme: `P1 for a correct process to scale one ingredient, e.g. 180 ÷ 12 = 15 g butter per cupcake, or 600 ÷ 240 × 12 = 30\nP1 for a correct process for all four ingredients, e.g. 33(.3), 32, 32 and 30 cupcakes\nP1 for identifying flour as the limiting ingredient\nA1 30 cao` },
+      { q: `(Non-calculator)\nAmy, Ben and Cal share some money.\nThe ratio of Amy's share to Ben's share is 2 : 3\nThe ratio of Ben's share to Cal's share is 4 : 5\n\nCal gets £56 more than Amy.\n\nWork out the total amount of money they share.`, marks: 4, command: 'Work out', markScheme: `P1 for a common value for Ben's share, e.g. 8 : 12 and 12 : 15\nP1 for A : B : C = 8 : 12 : 15 oe\nP1 for 56 ÷ (15 − 8) (= 8 per part)\nA1 (£)280 cao` },
+      { q: `(Calculator allowed)\nThe time, T seconds, for a pendulum to swing is directly proportional to the square root of its length, L metres.\nWhen L = 0.81, T = 1.8\n\n(a) Find a formula for T in terms of L. [3]\n(b) Work out the length of a pendulum for which T = 2.4 [2]`, marks: 5, command: 'Find', markScheme: `(a)\nM1 for T = k√L\nM1 for 1.8 = k√0.81 or k = 1.8 ÷ 0.9\nA1 T = 2√L oe\n(b)\nM1 ft for 2.4 = 2√L or √L = 1.2\nA1 1.44 (m) cao` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 3.2 */
-  "3.2": {
-    "name": "Percentages, Growth & Decay",
-    "questions": [
-      {
-        "q": "Write 0.072 as a percentage.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 7.2% (1)"
-      },
-      {
-        "q": "Write down the single multiplier that increases an amount by 4.5%.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 1.045 (1)"
-      },
-      {
-        "q": "Without using a calculator, work out 15% of £340.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: e.g. 10% = 34 and 5% = 17 (1)\n• A1: £51 (1)"
-      },
-      {
-        "q": "Write 36 minutes as a percentage of 1.5 hours.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 36 ÷ 90 (× 100) with same units (1)\n• A1: 40% (1)"
-      },
-      {
-        "q": "Decrease £240 by 35%.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 240 × 0.65 (or 240 − 84) (1)\n• A1: £156 (1)"
-      },
-      {
-        "q": "A gym membership increases from £32 a month to £36 a month. Work out the percentage increase.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (36 − 32) ÷ 32 × 100 (1)\n• A1: 12.5% (1)"
-      },
-      {
-        "q": "£3600 is invested for 4 years at 2.25% per year simple interest. Work out the total interest earned.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 3600 × 0.0225 = 81 (1)\n• A1: 81 × 4 = £324 (1)"
-      },
-      {
-        "q": "Write 2.7 kg as a percentage of 1.8 kg.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 2.7 ÷ 1.8 × 100 (1)\n• A1: 150% (1)"
-      },
-      {
-        "q": "£7500 is invested at 3% per year compound interest. Work out the value of the investment after 2 years.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 7500 × 1.03² (1)\n• A1: £7956.75 (1)"
-      },
-      {
-        "q": "A printer costs £186 including VAT at 20%. Work out the cost of the printer before VAT was added.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 186 ÷ 1.2 (1)\n• A1: £155 (1)"
-      },
-      {
-        "q": "uₙ₊₁ = 0.95uₙ + 40 and u₀ = 600. Work out the values of u₁ and u₂.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: u₁ = 610 (1)\n• B1: u₂ = 619.5 (1)"
-      },
-      {
-        "q": "A motorbike is bought for £9600. Its value depreciates by 15% each year. Work out its value after 3 years.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: multiplier 0.85 (1)\n• M1: 9600 × 0.85³ (1)\n• A1: £5895.60 (1)"
-      },
-      {
-        "q": "After a 12% decrease, the number of visitors to a museum in one year was 30 800. Work out the number of visitors in the year before the decrease.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 88% = 30 800 (1)\n• M1: 30 800 ÷ 0.88 (1)\n• A1: 35 000 (1)"
-      },
-      {
-        "q": "Ana has £4000 to invest for 5 years. Account X pays 3% per year simple interest. Account Y pays 2.8% per year compound interest. Which account gives more money after 5 years, and by how much?",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: X: 4000 + 5 × 120 = £4600 (1)\n• M1: Y: 4000 × 1.028⁵ = £4592.25 (1)\n• A1: Account X, by £7.75 (accept £7.74 to £7.76) (1)"
-      },
-      {
-        "q": "A colony of 500 bacteria increases by 30% every hour. After how many whole hours will there first be more than 2000 bacteria?",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 500 × 1.3ⁿ for at least one value of n (1)\n• M1: 500 × 1.3⁵ = 1856 (or 1856.5) and 500 × 1.3⁶ = 2413 (or 2413.4) (1)\n• A1: 6 hours (1)"
-      },
-      {
-        "q": "The price of a guitar is reduced by 30%. The sale price is then increased by 30%. Show that the final price is 9% less than the original price.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: uses multipliers 0.7 and 1.3 (or a numerical example) (1)\n• M1: 0.7 × 1.3 = 0.91 (1)\n• C1: 0.91 means 91% of the original, so 9% less (1)"
-      },
-      {
-        "q": "A savings balance uₙ (in £) after n years is modelled by uₙ₊₁ = 1.02uₙ + 75, with u₀ = 1500. Work out the value of u₃.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: u₁ = 1.02 × 1500 + 75 = 1605 (1)\n• M1: u₂ = 1712.1 (1)\n• A1: u₃ = £1821.34 (1)"
-      },
-      {
-        "q": "In 2024 a house was worth £240 000. In 2025 it was worth £252 000.\n(a) Work out the percentage increase in value.\n(b) The value increases by the same percentage each year after 2025. Work out the value of the house in 2028.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (a) 12 000 ÷ 240 000 × 100 (1)\n• A1: (a) 5% (1)\n• M1: (b) 252 000 × 1.05³ (1)\n• A1: (b) £291 721.50 (1)"
-      },
-      {
-        "q": "£12 000 is invested at r% per year compound interest. After 3 years the investment is worth £13 693.99. Work out the value of r.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: 12 000 × m³ = 13 693.99 (1)\n• M1: m³ = 1.14116… (1)\n• M1: m = ∛1.14116… = 1.045 (1)\n• A1: r = 4.5 (1)"
-      },
-      {
-        "q": "The population of a village is modelled by Pₙ₊₁ = 1.15Pₙ − 400, where Pₙ is the population n years after 2024. In 2024 the population was 3000. In which year does the model first predict a population of more than 3500?",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: P₁ = 1.15 × 3000 − 400 = 3050 (1)\n• M1: continues iterating, e.g. P₂ = 3107.5, P₃ = 3173.6 (1)\n• A1: P₆ = 3437.7 and P₇ = 3553.3 (1)\n• A1: 2031 (1)"
-      }
+  '3.2': {
+    name: 'Percentages, Growth & Decay',
+    questions: [
+      { q: `(Non-calculator)\nThe price of a coat is reduced by 15%.\n\nWrite down the single number that the original price can be multiplied by to find the reduced price.`, marks: 1, command: 'Write down', markScheme: `B1 0.85 oe, e.g. 85/100` },
+      { q: `(Calculator allowed)\nLena invests £P in a savings account.\nThe account pays 3% compound interest per annum.\n\nWrite down an expression, in terms of P and n, for the value, in pounds, of her investment at the end of n years.`, marks: 1, command: 'Write down', markScheme: `B1 P × 1.03ⁿ oe, e.g. P(1 + 3/100)ⁿ` },
+      { q: `(Non-calculator)\nThe price of a bike is increased by 10%.\nThe new price is then decreased by 10%.\n\nTom says, "The bike is now back to its original price."\n\nIs Tom correct?\nYou must give a reason for your answer.`, marks: 1, command: 'Give a reason', markScheme: `C1 No, with a correct reason, e.g. 1.1 × 0.9 = 0.99 so the price is 99% of the original, or the 10% decrease is of a larger amount, or a correct numerical example such as £100 → £110 → £99` },
+      { q: `(Non-calculator)\nWork out 35% of £240`, marks: 2, command: 'Work out', markScheme: `M1 for a complete method, e.g. 0.35 × 240 or 10% = 24 and 5% = 12 with 3 × 24 + 12\nA1 84 cao` },
+      { q: `(Calculator allowed)\nA gym membership costs £68 per month.\nThe cost is increased by 15%.\n\nWork out the new cost per month.`, marks: 2, command: 'Work out', markScheme: `M1 for 68 × 1.15 oe, or 68 × 0.15 (= 10.2) and adds to 68\nA1 78.20 (accept 78.2)` },
+      { q: `(Non-calculator)\nIn a sale, the price of a shirt is reduced from £45 to £36\n\nWork out the percentage decrease in the price of the shirt.`, marks: 2, command: 'Work out', markScheme: `M1 for (45 − 36) ÷ 45 (× 100) oe, or 36 ÷ 45 (× 100) = 80\nA1 20 (%)` },
+      { q: `(Calculator allowed)\nIn a sale, all normal prices are reduced by 20%.\nThe sale price of a jacket is £56\n\nWork out the normal price of the jacket.`, marks: 2, command: 'Work out', markScheme: `M1 for 56 ÷ 0.8 oe, e.g. 56 ÷ 80 × 100\nA1 70 cao` },
+      { q: `(Calculator allowed)\nAmina invests £2500 for 4 years.\nThe investment pays simple interest of 3.2% per year.\n\nWork out the total amount of interest Amina gets.`, marks: 2, command: 'Work out', markScheme: `M1 for 2500 × 0.032 (= 80) or 2500 × 0.032 × 4 oe\nA1 320 cao (do not accept 2820)` },
+      { q: `(Calculator allowed)\nHarry invests £4000 in a savings account for 3 years.\nThe account pays compound interest at a rate of 2.5% per annum.\n\nWork out the value of Harry's investment at the end of 3 years.`, marks: 2, command: 'Work out', markScheme: `M1 for 4000 × 1.025³ oe, or a complete year-by-year method (4100, 4202.50, …)\nA1 4307.56 (accept 4307.5625 or 4307.6)` },
+      { q: `(Non-calculator)\nThere are 75 students in Year 11.\n18 of these students walk to school.\n\nWhat percentage of the students walk to school?`, marks: 2, command: 'Work out', markScheme: `M1 for 18/75 (× 100) oe, e.g. 6/25 or 72/300\nA1 24 (%)` },
+      { q: `(Calculator allowed)\nThe mass, in tonnes, of fish in a lake at the end of year n is Pₙ\n\nPₙ₊₁ = 1.05Pₙ − 40\n\nP₀ = 600\n\nWork out the value of P₃`, marks: 2, command: 'Work out', markScheme: `M1 for P₁ = 1.05 × 600 − 40 (= 590), or for one further correct iteration ft from their P₁\nA1 568.475 (accept 568.5 or 568)` },
+      { q: `(Calculator allowed)\nKim buys 40 boxes of chocolates for £3.50 each.\nShe sells 32 of the boxes for £6 each.\nShe sells the rest of the boxes for £2.50 each.\n\nWork out Kim's percentage profit.\nGive your answer correct to 1 decimal place.`, marks: 3, command: 'Work out', markScheme: `P1 for a process to find the total cost or total income, e.g. 40 × 3.50 (= 140) or 32 × 6 + 8 × 2.50 (= 212)\nP1 for a process to find the percentage profit, e.g. (212 − 140) ÷ 140 × 100 oe\nA1 51.4 (%) (accept 51.42...)` },
+      { q: `(Calculator allowed)\nRuby buys a new car for £18 500\nIn the first year, the value of the car depreciates by 15%.\nIn each of the next two years, the value of the car depreciates by 9%.\n\nWork out the value of the car at the end of 3 years.`, marks: 3, command: 'Work out', markScheme: `M1 for 18 500 × 0.85 (= 15 725)\nM1 for their 15 725 × 0.91² oe, or two further correct year-by-year decreases (14 309.75, …)\nA1 13 021.87 (accept 13 021.8725 or 13 022)` },
+      { q: `(Calculator allowed)\nThe population of a town increased by 6% in 2024\nThe population then increased by 6% in 2025\nAt the end of 2025 the population of the town was 33 708\n\nWork out the population of the town at the start of 2024`, marks: 3, command: 'Work out', markScheme: `M1 for 1.06² (= 1.1236) or 1.06 × 1.06 seen, or 33 708 ÷ 1.06 (= 31 800)\nM1 for 33 708 ÷ 1.06² oe, or their 31 800 ÷ 1.06\nA1 30 000 cao` },
+      { q: `(Calculator allowed)\nSam invests £5000 in a savings account for 4 years.\nThe account pays compound interest at a rate of r% per annum.\nAt the end of 4 years the value of the investment is £5627.54\n\nWork out the value of r.`, marks: 3, command: 'Work out', markScheme: `M1 for 5627.54 ÷ 5000 (= 1.125508) or 5000 × x⁴ = 5627.54 oe\nM1 for ⁴√(their 1.125508) (= 1.0299…), or a trial of 5000 × 1.03⁴ = 5627.54…\nA1 3 cao` },
+      { q: `(Non-calculator)\nThe price of a games console is increased by 30%.\nThe new price is then decreased by 30%.\n\nWork out the overall percentage change in the price of the games console.\nState whether it is an increase or a decrease.`, marks: 3, command: 'Work out', markScheme: `M1 for 1.3 × 0.7 oe, or a correct method using an assumed price, e.g. 100 → 130 → 130 − 39\nM1 for 0.91 or 91 (% of original) seen\nA1 9% decrease (must state decrease)` },
+      { q: `(Calculator allowed)\nMegan has £6000 to invest for 3 years.\n\nBank A pays 3.5% per year simple interest.\nBank B pays 3.4% per annum compound interest.\n\nMegan wants to get as much interest as possible.\n\nWhich bank should Megan choose?\nYou must show how you get your answer.`, marks: 4, command: 'Show', markScheme: `P1 for 6000 × 0.035 × 3 (= 630) or 6630 seen\nP1 for 6000 × 1.034³ oe\nA1 for 6633.04 (accept 6633.0 or 633.04 interest)\nC1 Bank B, with correct figures for both banks, e.g. 630 and 633.04, or 6630 and 6633.04` },
+      { q: `(Non-calculator)\nThe number of bacteria in a dish increases by x% each hour.\nAt 10 am there are 4000 bacteria in the dish.\nAt 1 pm there are 5324 bacteria in the dish.\n\n(a) Work out the value of x. [2]\n\n(b) The number of bacteria continues to increase at the same rate.\nWork out the number of bacteria in the dish at 3 pm. [2]`, marks: 4, command: 'Work out', markScheme: `(a)\nM1 for 5324 ÷ 4000 (= 1.331) and an attempt at the cube root, or 1.1³ = 1.331 seen\nA1 10 cao\n(b)\nM1 for 5324 × 1.1² oe, e.g. 5324 × 1.21 or 5856.4 × 1.1 (ft their x from (a))\nA1 6442 (accept 6442.04)` },
+      { q: `(Calculator allowed)\nCar A has a value of £24 000\nThe value of car A depreciates by 18% each year.\n\nCar B has a value of £18 000\nThe value of car B depreciates by 10% each year.\n\nAfter how many whole years will the value of car A first be less than the value of car B?\nYou must show all your working.`, marks: 4, command: 'Work out', markScheme: `P1 for 24 000 × 0.82ⁿ or 18 000 × 0.9ⁿ for any integer n ≥ 2, or a correct year-by-year method for either car\nP1 for values of both cars after the same number of years n ≥ 2, e.g. 16 137.60 and 14 580 (n = 2)\nP1 for values after 3 and 4 years: 13 232.83 and 13 122 (n = 3), 10 850.92 and 11 809.80 (n = 4)\nA1 4 (years) supported by correct values for n = 3 and n = 4` },
+      { q: `(Calculator allowed)\nA shop sells televisions.\nThe normal price of a television includes VAT at 20%.\n\nIn a sale, the normal price of each television is reduced by 10%.\nAli buys a television in the sale for £540\n\nThe shop paid £300 for the television.\nThe shop works out its profit using the normal price without VAT.\n\nWork out the shop's percentage profit on this television.`, marks: 5, command: 'Work out', markScheme: `P1 for 540 ÷ 0.9 (= 600) oe\nP1 for their 600 ÷ 1.2 (= 500) oe\nP1 for their 500 − 300 (= 200)\nP1 for their 200 ÷ 300 × 100 oe\nA1 66.7 (%) (accept 66.6 to 66.7)` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 3.3 */
-  "3.3": {
-    "name": "Compound Measures & Rates of Change",
-    "questions": [
-      {
-        "q": "Convert 7.3 kg into grams.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 7300 g (1)"
-      },
-      {
-        "q": "A chord is drawn joining two points on a curved graph. State what the gradient of the chord represents.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: the average rate of change (of y with respect to x) between the two points (1)"
-      },
-      {
-        "q": "A coach travels 189 km in 3 hours 30 minutes. Work out the average speed of the coach in km/h.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 189 ÷ 3.5 (1)\n• A1: 54 km/h (1)"
-      },
-      {
-        "q": "Change a speed of 81 km/h into metres per second.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 81 × 1000 ÷ 3600 or 81 ÷ 3.6 (1)\n• A1: 22.5 m/s (1)"
-      },
-      {
-        "q": "Aluminium has a density of 2.7 g/cm³. Work out the mass of a 45 cm³ block of aluminium.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 2.7 × 45 (1)\n• A1: 121.5 g (1)"
-      },
-      {
-        "q": "A force of 360 newtons acts on an area of 0.8 m². Work out the pressure, in N/m².",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 360 ÷ 0.8 (1)\n• A1: 450 N/m² (1)"
-      },
-      {
-        "q": "Change 0.042 m³ into cm³.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 0.042 × 1 000 000 or uses 1 m³ = 100³ cm³ (1)\n• A1: 42 000 cm³ (1)"
-      },
-      {
-        "q": "Priya was paid £396.75 for working 34.5 hours. Work out her hourly rate of pay.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 396.75 ÷ 34.5 (1)\n• A1: £11.50 (1)"
-      },
-      {
-        "q": "The depth of water in a tank decreases at a constant rate from 120 cm at 10:00 to 45 cm at 10:25. Work out the rate at which the depth is decreasing, in cm per minute.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (120 − 45) ÷ 25 (1)\n• A1: 3 cm per minute (1)"
-      },
-      {
-        "q": "A particle moves so that its distance, s metres, from a point O after t seconds is s = t² + 2t. Work out the average speed of the particle between t = 1 and t = 4.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: (24 − 3) ÷ (4 − 1) (1)\n• A1: 7 m/s (1)"
-      },
-      {
-        "q": "Work out the average rate of change of y = 10/x between x = 2 and x = 5.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: (2 − 5) ÷ (5 − 2) (1)\n• A1: −1 (1)"
-      },
-      {
-        "q": "A 330 ml can of juice costs 99p. A 2 litre bottle of the same juice costs £5.80. Which is the better value for money? You must show your working.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: one unit price, e.g. 99 ÷ 330 = 0.3p per ml or 580 ÷ 2000 = 0.29p per ml (1)\n• M1: both unit prices in comparable units (1)\n• C1: 2 litre bottle with correct figures 0.29p and 0.3p per ml (1)"
-      },
-      {
-        "q": "Lena drives for 40 minutes at an average speed of 69 km/h. She then drives 50 km in 50 minutes. Work out her average speed for the whole journey.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 69 × 40/60 = 46 km (1)\n• M1: (46 + 50) ÷ 1.5 (1)\n• A1: 64 km/h (1)"
-      },
-      {
-        "q": "A metal cuboid measures 6 cm by 5 cm by 4 cm and has a mass of 852 g. Work out the mass of a 50 cm³ piece of the same metal.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: volume 6 × 5 × 4 = 120 cm³ (1)\n• M1: density 852 ÷ 120 = 7.1 g/cm³ (1)\n• A1: 7.1 × 50 = 355 g (1)"
-      },
-      {
-        "q": "A box has a weight of 90 N. Its base is a rectangle 30 cm by 25 cm. Work out the pressure the box exerts on the floor in N/m².",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: area 0.3 × 0.25 = 0.075 m² (1)\n• M1: 90 ÷ 0.075 (1)\n• A1: 1200 N/m² (1)"
-      },
-      {
-        "q": "300 cm³ of liquid A has a density of 0.9 g/cm³. It is mixed with 500 g of liquid B, which has a density of 1.25 g/cm³. Work out the density of the mixture.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: mass of A = 300 × 0.9 = 270 g or volume of B = 500 ÷ 1.25 = 400 cm³ (1)\n• M1: (270 + 500) ÷ (300 + 400) (1)\n• A1: 1.1 g/cm³ (1)"
-      },
-      {
-        "q": "A curve shows the distance, d metres, travelled by a cyclist after t seconds. A tangent is drawn to the curve at t = 6. The tangent passes through the points (2, 4) and (10, 40). Estimate the speed of the cyclist at t = 6 seconds and state whether this is an average or an instantaneous speed.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: (40 − 4) ÷ (10 − 2) (1)\n• A1: 4.5 m/s (1)\n• C1: instantaneous speed, because it is the gradient of a tangent (1)"
-      },
-      {
-        "q": "Plumber A charges a £60 call-out fee plus £30 per hour. Plumber B’s charges are shown on a straight-line graph of cost (£) against time (hours) passing through (0, 0) and (4, 180). (a) Interpret the gradient of plumber B’s graph. (b) For what length of job is plumber A cheaper? Show your working.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: B charges £45 per hour (gradient 180 ÷ 4 = 45) (1)\n• M1: 60 + 30h = 45h or compares costs for a specific time (1)\n• A1: h = 4 hours (1)\n• C1: A is cheaper for jobs longer than 4 hours (1)"
-      },
-      {
-        "q": "The volume, V litres, of water in a tank after t minutes is V = 2t² + 5. (a) Work out the average rate of change of V between t = 0 and t = 2. (b) A tangent to the curve at t = 2 passes through (1, 5) and (3, 21). Use it to estimate the rate at which water is flowing in at t = 2.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: (13 − 5) ÷ (2 − 0) (1)\n• A1: 4 litres per minute (1)\n• M1: (21 − 5) ÷ (3 − 1) (1)\n• A1: 8 litres per minute (1)"
-      },
-      {
-        "q": "A swimming pool is a cuboid 25 m long, 10 m wide and 1.2 m deep. It is filled with water at a rate of 400 litres per minute, starting at 18:00. 1 m³ = 1000 litres. Will the pool be full by 07:00 the next morning? You must show your working.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: volume 25 × 10 × 1.2 = 300 m³ (1)\n• M1: 300 × 1000 = 300 000 litres (1)\n• M1: 300 000 ÷ 400 = 750 minutes (1)\n• A1: 750 minutes = 12 hours 30 minutes, so full at 06:30 (1)\n• C1: Yes, it is full by 07:00 (with correct times) (1)"
-      }
+  '3.3': {
+    name: 'Compound Measures & Rates of Change',
+    questions: [
+      { q: `(Non-calculator)\n\nThe velocity–time graph for a cyclist's journey is drawn on a grid, with time in seconds on the horizontal axis and velocity in metres per second on the vertical axis.\n\nWrite down what the area under the graph represents.`, marks: 1, command: 'Write down', markScheme: `B1: the distance travelled (by the cyclist) oe, e.g. total distance in metres` },
+      { q: `(Non-calculator)\n(data written for this practice question)\n\nA distance–time graph shows Erin's walk from her home to a shop.\nThe graph is made of three straight line segments joining the points (10 00, 0 km), (10 40, 3 km), (11 05, 3 km) and (11 25, 4.5 km).\n\nWrite down the number of minutes Erin was not moving.`, marks: 1, command: 'Write down', markScheme: `B1: 25 (minutes) cao` },
+      { q: `(Calculator allowed)\n\nWater flows from a tap at a constant rate of 12 litres per minute.\n\nWork out how many litres of water flow from the tap in 15 minutes.`, marks: 1, command: 'Work out', markScheme: `B1: 180 (litres) cao` },
+      { q: `(Calculator allowed)\n\nAmir drove 63 km from Leeds to York.\nThe journey took 1 hour 45 minutes.\n\nWork out Amir's average speed.\nGive your answer in km/h.`, marks: 2, command: 'Work out', markScheme: `M1: for 63 ÷ 1.75 oe, e.g. 63 ÷ 105 × 60\nA1: 36 (km/h) cao\n(63 ÷ 1.45 = 43.4… scores M0 A0)` },
+      { q: `(Non-calculator)\n\nA metal block has a mass of 540 g.\nThe volume of the block is 200 cm³.\n\nWork out the density of the metal.\nGive your answer in g/cm³.`, marks: 2, command: 'Work out', markScheme: `M1: for 540 ÷ 200\nA1: 2.7 (g/cm³) oe` },
+      { q: `(Non-calculator)\n\nA train is travelling at a speed of 15 metres per second.\n\nChange 15 metres per second into kilometres per hour.`, marks: 2, command: 'Change', markScheme: `M1: for 15 × 60 × 60 (= 54 000 m per hour) or 15 ÷ 1000 (= 0.015 km per second) or 15 × 3.6\nA1: 54 (km/h) cao` },
+      { q: `(Calculator allowed)\n\nA force of 180 newtons acts on an area of 0.6 m².\n\npressure = force ÷ area\n\nWork out the pressure.\nGive your answer in newtons/m².`, marks: 2, command: 'Work out', markScheme: `M1: for 180 ÷ 0.6\nA1: 300 (N/m²) cao` },
+      { q: `(Calculator allowed)\n\nLena works in a café.\nLast week she worked for 32.5 hours and was paid £351\n\nLena gets the same amount of money for each hour she works.\n\nWork out how much Lena is paid for each hour she works.`, marks: 2, command: 'Work out', markScheme: `M1: for 351 ÷ 32.5\nA1: £10.80 cao (accept £10.8)` },
+      { q: `(Non-calculator)\n(data written for this practice question)\n\nA distance–time graph for a coach journey is a straight line from (0 minutes, 0 km) to (40 minutes, 30 km).\n\nWork out the average speed of the coach in kilometres per hour.`, marks: 2, command: 'Work out', markScheme: `M1: for 30 ÷ 40 (= 0.75 km per minute) or 30 ÷ (40/60) or 30 × 1.5\nA1: 45 (km/h) cao` },
+      { q: `(Non-calculator)\n\nThe density of copper is 8.9 g/cm³\n\nChange 8.9 g/cm³ into kg/m³`, marks: 2, command: 'Change', markScheme: `M1: for × 1 000 000 (cm³ to m³) or ÷ 1000 (g to kg) seen, e.g. 8 900 000 or 0.0089\nA1: 8900 (kg/m³) cao` },
+      { q: `(Non-calculator)\n(data written for this practice question)\n\nPart of a velocity–time graph for a car is a straight line from (0 seconds, 4 m/s) to (6 seconds, 22 m/s).\n\nWork out the acceleration of the car during these 6 seconds.`, marks: 2, command: 'Work out', markScheme: `M1: for (22 − 4) ÷ 6 oe\nA1: 3 (m/s²) cao` },
+      { q: `(Non-calculator)\n\nA train leaves a station at 09 45\nIt travels 210 km to its destination at an average speed of 84 km/h.\n\nAt what time does the train arrive at its destination?`, marks: 3, command: 'Work out', markScheme: `M1: for 210 ÷ 84\nA1: 2.5 hours or 2 hours 30 minutes or 150 minutes\nA1: 12 15 oe, e.g. 12:15 pm\n(2 h 50 min, leading to 12 35, scores M1 A0 A0)` },
+      { q: `(Calculator allowed)\n\nA fish tank is in the shape of a cuboid.\nThe tank is 80 cm long, 50 cm wide and 60 cm high.\nThe tank is empty.\n\nWater flows into the tank at a constant rate of 4 litres per minute.\n1 litre = 1000 cm³\n\nWork out how many minutes it will take to fill the tank completely.`, marks: 3, command: 'Work out', markScheme: `P1: for 80 × 50 × 60 (= 240 000 cm³)\nP1: for 240 000 ÷ 1000 (= 240 litres) or 4 × 1000 (= 4000 cm³ per minute)\nA1: 60 (minutes) cao` },
+      { q: `(Non-calculator)\n(data written for this practice question)\n\nA tram starts from rest and accelerates steadily to a speed of 12 m/s in 8 seconds.\nIt then travels at 12 m/s for 20 seconds.\nIt then slows down steadily and stops after a further 6 seconds.\n\nWork out the total distance the tram travels.`, marks: 3, command: 'Work out', markScheme: `M1: for one correct area, e.g. ½ × 8 × 12 (= 48) or 20 × 12 (= 240) or ½ × 6 × 12 (= 36)\nM1: for a complete method, e.g. 48 + 240 + 36 or ½ × (34 + 20) × 12\nA1: 324 (m) cao` },
+      { q: `(Calculator allowed)\n\nA solid cuboid measures 2 m by 0.5 m by 0.4 m.\nThe cuboid rests with one of its faces on horizontal ground.\nThe cuboid exerts a force of 120 newtons on the ground.\n\npressure = force ÷ area\n\nWork out the greatest possible pressure the cuboid can exert on the ground.\nGive your answer in newtons/m².`, marks: 3, command: 'Work out', markScheme: `P1: for identifying the smallest face, 0.5 × 0.4 (= 0.2 m²)\nP1: for 120 ÷ 0.2\nA1: 600 (N/m²) cao\n(120 ÷ 1 = 120 or 120 ÷ 0.8 = 150, using a different face, scores P0 P1 A0)` },
+      { q: `(Calculator allowed)\n\nJodie runs 400 m in 52 seconds.\nKim runs at an average speed of 28 km/h.\n\nWho has the greater average speed, Jodie or Kim?\nYou must show how you get your answer.`, marks: 3, command: 'Show', markScheme: `M1: for 400 ÷ 52 (= 7.69… m/s) or 28 × 1000 ÷ 3600 (= 7.77… m/s)\nM1: for a complete method to get both speeds in the same units, e.g. 7.69… m/s and 7.77… m/s, or 27.6… km/h and 28 km/h\nC1: Kim, with 27.7 (km/h) and 28 (km/h) or 7.69 (m/s) and 7.78 (m/s) oe` },
+      { q: `(Calculator allowed)\n\nLiquid A has a density of 1.2 g/cm³\nLiquid B has a density of 1.1 g/cm³\n\nSami mixes 40 cm³ of liquid A with 66 g of liquid B to make liquid C.\n\nWork out the density of liquid C.\nGive your answer correct to 2 decimal places.`, marks: 4, command: 'Work out', markScheme: `P1: for 40 × 1.2 (= 48 g, mass of A)\nP1: for 66 ÷ 1.1 (= 60 cm³, volume of B)\nP1: for (48 + 66) ÷ (40 + 60)\nA1: 1.14 (g/cm³) cao` },
+      { q: `(Calculator allowed)\n\nAlex drives from his home to a hotel.\nFor the first 45 km of the journey, his average speed is 60 km/h.\nFor the remaining 30 km of the journey, he takes 40 minutes.\n\nWork out Alex's average speed for the whole journey.\nGive your answer correct to 1 decimal place.`, marks: 4, command: 'Work out', markScheme: `P1: for 45 ÷ 60 (= 0.75 hours or 45 minutes)\nP1: for total time, e.g. 0.75 + 40/60 (= 1.416… hours) or 45 + 40 (= 85 minutes)\nP1: for (45 + 30) ÷ total time, e.g. 75 ÷ 1.416… or 75 ÷ 85 × 60\nA1: 52.9 (km/h) cao\n(Averaging speeds, e.g. (60 + 45) ÷ 2, scores no marks)` },
+      { q: `(Calculator allowed)\n(data written for this practice question)\n\nA tank is being filled with water.\nThe table gives information about the depth of water, d cm, in the tank t minutes after filling started.\n\nt (minutes): 0, 2, 4, 6, 8\nd (cm): 10, 16, 24, 34, 46\n\nRob plots the points from the table and joins them with a smooth curve.\n\n(a) Work out the average rate of increase of the depth of water between t = 2 and t = 8 [2]\n\n(b) Rob draws a tangent to the curve at t = 5\nThe tangent passes through the points (1, 9) and (9, 49).\nUse Rob's tangent to estimate the rate at which the depth of water is increasing at t = 5\nGive the units of your answer. [2]`, marks: 4, command: 'Work out', markScheme: `(a)\nM1: for (46 − 16) ÷ (8 − 2) oe\nA1: 5 (cm per minute)\n(b)\nM1: for (49 − 9) ÷ (9 − 1) oe\nA1: 5 with units cm per minute oe, e.g. cm/min` },
+      { q: `(Non-calculator)\n\nA car starts from rest. It accelerates at a constant rate for 10 seconds until it reaches a speed of V m/s.\nIt then travels at V m/s for 30 seconds.\nIt then decelerates at a constant rate for 15 seconds until it stops.\n\nThe car travels a total distance of 1530 metres.\n\nWork out the acceleration of the car during the first 10 seconds.\nYou must show all your working.`, marks: 5, command: 'Work out', markScheme: `P1: for a correct expression for one area, e.g. ½ × 10 × V or 30V or ½ × 15 × V\nP1: for a complete expression for the total area, e.g. 5V + 30V + 7.5V or ½(55 + 30)V\nP1: for setting up and starting to solve, e.g. 42.5V = 1530\nA1: V = 36\nA1: 3.6 (m/s²) cao` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 4.1 */
-  "4.1": {
-    "name": "Angles, Polygons & Constructions",
-    "questions": [
-      {
-        "q": "Write down the special name of a quadrilateral that has four equal sides but no right angles.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: rhombus (1)"
-      },
-      {
-        "q": "Write down the three-figure bearing of the direction South-West.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 225° (1)"
-      },
-      {
-        "q": "Work out the sum of the interior angles of a nonagon (a 9-sided polygon).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (9 − 2) × 180 (1)\n• A1: 1260° (1)"
-      },
-      {
-        "q": "Each exterior angle of a regular polygon is 18°. Work out the number of sides of the polygon.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 360 ÷ 18 (1)\n• A1: 20 (1)"
-      },
-      {
-        "q": "Three angles meet at a point. They are 95°, 140° and 2x. Work out the value of x.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 2x = 360 − 95 − 140 = 125 (1)\n• A1: x = 62.5 (1)"
-      },
-      {
-        "q": "An isosceles triangle has two base angles of 34°. Work out the size of the third angle.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 180 − 2 × 34 (1)\n• A1: 112° (1)"
-      },
-      {
-        "q": "PQ and RS are parallel lines, with P and R on the left. A straight line crosses PQ at X and RS at Y. Angle PXY = 64°. Work out the size of angle XYS. Give a reason for your answer.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 64° (1)\n• C1: alternate angles are equal (1)"
-      },
-      {
-        "q": "A map has a scale of 1 : 200 000. The distance between two towns on the map is 3.7 cm. Work out the real distance between the towns in kilometres.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 3.7 × 200 000 = 740 000 cm (1)\n• A1: 7.4 km (1)"
-      },
-      {
-        "q": "The bearing of a tower T from a house H is 038°. Work out the bearing of H from T.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 038 + 180 (1)\n• A1: 218° (1)"
-      },
-      {
-        "q": "Work out the size of each interior angle of a regular 12-sided polygon.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: exterior angle 360 ÷ 12 = 30 or (12 − 2) × 180 ÷ 12 (1)\n• A1: 150° (1)"
-      },
-      {
-        "q": "Describe fully the locus of all points that are exactly 3 cm from a fixed point O.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: a circle (1)\n• B1: centre O, radius 3 cm (1)"
-      },
-      {
-        "q": "The angles of a triangle are (x + 15)°, 2x° and (3x − 15)°. Work out the size of the largest angle.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: x + 15 + 2x + 3x − 15 = 180 (1)\n• A1: x = 30 (1)\n• A1: largest angle 75° (1)"
-      },
-      {
-        "q": "Each interior angle of a regular polygon is 162°. Work out the sum of the interior angles of the polygon.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: exterior angle 180 − 162 = 18 (1)\n• M1: n = 360 ÷ 18 = 20 (1)\n• A1: (20 − 2) × 180 = 3240° (1)"
-      },
-      {
-        "q": "ABCD is a parallelogram. Angle DAB = (3x + 20)° and angle ABC = (x + 40)°. Work out the size of angle BCD.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 3x + 20 + x + 40 = 180 (co-interior angles) (1)\n• A1: x = 30 (1)\n• A1: angle BCD = angle DAB = 110° (1)"
-      },
-      {
-        "q": "Describe how to construct the perpendicular bisector of a line segment AB using only a ruler and compasses.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: open compasses to more than half of AB and draw arcs above and below AB from A (1)\n• B1: keep the same radius and draw arcs from B that cross the first arcs (1)\n• B1: join the two points where the arcs cross (1)"
-      },
-      {
-        "q": "A ship sails from port A on a bearing of 115° to a buoy B. At B it turns and sails on a bearing of 205° to C. Show that angle ABC = 90°.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: bearing of A from B = 115 + 180 = 295° or uses co-interior angles with North lines, 180 − 115 = 65 (1)\n• M1: 295 − 205 or 65 + 25 (1)\n• A1: 90° with complete working (1)"
-      },
-      {
-        "q": "In triangle ABC, the side BC is extended to D. Angle BAC = 2y, angle ABC = 3y and angle ACD = 130°. Work out the size of angle ABC.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 2y + 3y = 130 (exterior angle = sum of interior opposite angles) (1)\n• A1: y = 26 (1)\n• A1: angle ABC = 78° (1)"
-      },
-      {
-        "q": "The diagram shows a regular pentagon ABCDE and a regular hexagon ABFGHI that share the side AB. The hexagon lies on the opposite side of AB from the pentagon, so the two shapes do not overlap. E and I are the vertices next to A in the pentagon and hexagon. Work out the size of angle EAI. Give reasons for your working.",
-        "marks": 4,
-        "requiresDiagram": true,
-        "higher": false,
-        "markScheme": "• M1: pentagon interior angle (5 − 2) × 180 ÷ 5 = 108° (1)\n• M1: hexagon interior angle 120° (1)\n• A1: 360 − 108 − 120 = 132° (1)\n• C1: reasons, e.g. interior angle of a regular polygon, angles around a point add to 360° (1)"
-      },
-      {
-        "q": "The diagram shows two parallel lines AB and CD, with AB above CD and B and D on the right. Point E lies between the two lines, to the right of A and C, and is joined to A and to C. Angle BAE = 38° and angle DCE = 57°. Work out the size of angle AEC. Give reasons for each stage of your working.",
-        "marks": 4,
-        "requiresDiagram": true,
-        "higher": false,
-        "markScheme": "• M1: draws (or uses) a line through E parallel to AB and CD (1)\n• M1: angle 38° at E, alternate angles are equal (1)\n• M1: angle 57° at E, alternate angles are equal (1)\n• A1: angle AEC = 95° (1)"
-      },
-      {
-        "q": "ABCDEFGH is a regular octagon. Show that angle ACE = 90°. Give reasons for your working.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: interior angle (8 − 2) × 180 ÷ 8 (1)\n• A1: 135° (1)\n• M1: triangle ABC is isosceles (AB = BC), so angle BCA = (180 − 135) ÷ 2 = 22.5° (1)\n• A1: angle DCE = 22.5° by the same reasoning, so angle ACE = 135 − 22.5 − 22.5 = 90° (1)\n• C1: reasons given, e.g. base angles of an isosceles triangle are equal, angles in a triangle add to 180° (1)"
-      }
+  '4.1': {
+    name: 'Angles, Polygons & Constructions',
+    questions: [
+      { q: `(Non-calculator)\nABC is a straight line.\nD is a point above the line so that angle ABD = 47°.\n\nWork out the size of angle DBC.`, marks: 1, command: 'Work out', markScheme: `B1 133° cao` },
+      { q: `(Non-calculator)\nWrite down the mathematical name of a quadrilateral that has exactly one pair of parallel sides.`, marks: 1, command: 'Write down', markScheme: `B1 trapezium (accept trapezoid)` },
+      { q: `(Non-calculator)\nThe bearing of P from Q is 290°.\n\nWork out the bearing of Q from P.`, marks: 1, command: 'Work out', markScheme: `B1 110° cao (accept 110)` },
+      { q: `(Non-calculator)\nEach exterior angle of a regular polygon is 24°.\n\nWork out the number of sides of the polygon.`, marks: 2, command: 'Work out', markScheme: `M1 for 360 ÷ 24\nA1 15 cao` },
+      { q: `(Non-calculator)\nWork out the size of each interior angle of a regular octagon.`, marks: 2, command: 'Work out', markScheme: `M1 for (8 − 2) × 180 ÷ 8 oe or 180 − 360 ÷ 8 oe\nA1 135° cao` },
+      { q: `(Non-calculator)\nAB and CD are parallel straight lines, with AB above CD. A and C are on the left, B and D are on the right.\nA straight line crosses AB at the point E and crosses CD at the point F, with F to the left of E.\nAngle AEF = 58°.\n\n(a) Work out the size of angle EFD. [1]\n(b) Give a reason for your answer. [1]`, marks: 2, command: 'Work out', markScheme: `(a) B1 58° cao\n(b) C1 alternate angles are equal\n(Do not accept "Z angles". Reason must use the word alternate.)` },
+      { q: `(Non-calculator)\nTriangle ABC is isosceles with AB = AC.\nAngle BAC = 38°.\n\nWork out the size of angle ABC.`, marks: 2, command: 'Work out', markScheme: `M1 for (180 − 38) ÷ 2 oe\nA1 71° cao` },
+      { q: `(Calculator allowed)\nThe scale of a map is 1 : 50 000\nOn the map, the distance between two villages is 7.4 cm.\n\nWork out the real distance between the two villages.\nGive your answer in kilometres.`, marks: 2, command: 'Work out', markScheme: `M1 for 7.4 × 50 000 (= 370 000 cm) or 0.5 km per cm used, e.g. 7.4 × 0.5\nA1 3.7 km cao` },
+      { q: `(Non-calculator)\nA straight line AB of length 8 cm is drawn on the page.\n\nUse ruler and compasses only to construct the perpendicular bisector of AB.\nYou must show all your construction lines.`, marks: 2, command: 'Construct', diagram: true, markScheme: `M1 for a pair of intersecting arcs of equal radius (radius more than 4 cm) drawn from centres A and B, above and below AB\nA1 for a correct perpendicular bisector drawn through both points of intersection, within guidelines (passes within 2 mm of the midpoint of AB), with all arcs shown` },
+      { q: `(Non-calculator)\nUse ruler and compasses to construct triangle PQR with\nPQ = 7 cm, QR = 5 cm and PR = 6 cm.\nThe side PQ has already been drawn.\n\nYou must show all your construction lines.`, marks: 2, command: 'Construct', diagram: true, markScheme: `M1 for an arc of radius 6 cm (±2 mm) centre P and an arc of radius 5 cm (±2 mm) centre Q that intersect\nA1 for a fully correct triangle PQR, all sides within ±2 mm, with construction arcs shown` },
+      { q: `(Non-calculator)\nA pentagon has four angles of size 100°, 120°, 95° and 110°.\nThe fifth angle is x°.\n\nWork out the value of x.`, marks: 2, command: 'Work out', markScheme: `M1 for (5 − 2) × 180 (= 540) and an intention to subtract the sum of the four given angles, e.g. 540 − 425\nA1 115 cao` },
+      { q: `(Non-calculator)\nABCD is a rectangular garden with AB = 10 m and AD = 6 m. AB is the bottom edge and AD is the left-hand edge.\nThe garden is drawn accurately using a scale of 1 cm represents 2 m, so AB is drawn 5 cm long and AD is drawn 3 cm long.\nThere is a tree at the corner C.\n\nA pond is to be dug in the garden.\nThe pond must be\nless than 4 m from the tree at C\nand nearer to AB than to AD.\n\nOn the diagram, shade the region where the pond can be dug.\nUse ruler and compasses only and show all your construction lines.`, marks: 3, command: 'Shade', diagram: true, markScheme: `M1 for an arc of a circle, centre C, radius 2 cm (±2 mm) drawn inside the rectangle\nM1 for the bisector of angle DAB constructed with relevant arcs (line within guidelines)\nA1 for the correct region shaded: inside ABCD, inside the arc centre C and below the angle bisector (on the same side as AB)` },
+      { q: `(Non-calculator)\nAB and CD are parallel straight lines, with AB above CD. A and C are on the left, B and D are on the right.\nE is a point on AB. F and G are points on CD, with F to the left of G, so that EFG is a triangle.\nAngle AEF = 65°.\nAngle BEG = 50°.\n\nShow that triangle EFG is an isosceles triangle.\nGive reasons for your answer.`, marks: 3, command: 'Show that', markScheme: `M1 for angle EFG = 65° or angle FEG = 180 − 65 − 50 (= 65°)\nA1 for both angle EFG = 65° and angle FEG = 65° with a conclusion that the triangle has two equal angles so is isosceles\nC1 for appropriate reasons for their method linked to their working, e.g. alternate angles are equal; angles on a straight line add up to 180°; (angles in a triangle add up to 180°)` },
+      { q: `(Non-calculator)\nThe size of each interior angle of a regular polygon is 7 times the size of each exterior angle.\n\nWork out the number of sides of the polygon.`, marks: 3, command: 'Work out', markScheme: `P1 for a correct start, e.g. e + 7e = 180 oe\nP1 for exterior angle = 22.5° and an intention to work out 360 ÷ 22.5\nA1 16 cao` },
+      { q: `(Non-calculator)\nIn the quadrilateral ABCD,\nangle A = (2x + 10)°\nangle B = (3x − 20)°\nangle C = (x + 40)°\nangle D = 90°\n\nWork out the size of the largest angle in the quadrilateral.`, marks: 3, command: 'Work out', markScheme: `M1 for 2x + 10 + 3x − 20 + x + 40 + 90 = 360 oe\nM1 for x = 40 (correct method to isolate x, e.g. 6x = 240)\nA1 100° cao` },
+      { q: `(Non-calculator)\nB is due east of A.\nC is on a bearing of 040° from A.\nC is on a bearing of 310° from B.\n\nWork out the size of angle ACB.`, marks: 3, command: 'Work out', markScheme: `M1 for angle CAB = 50° or angle ABC = 40° (may be seen as 310 − 270)\nM1 for both 50° and 40°, and 180 − 50 − 40\nA1 90° cao` },
+      { q: `(Calculator allowed)\nA ship sails from port P on a bearing of 070° for 30 km to a point Q.\nThe ship then sails on a bearing of 160° for 40 km to a point R.\n\nWork out the bearing of R from P.\nGive your answer correct to the nearest degree.\nYou must show all your working.`, marks: 4, command: 'Work out', markScheme: `P1 for showing that angle PQR = 90°, e.g. bearing of P from Q is 250° and 250 − 160 = 90, or 70 + (180 − 160) = 90 oe\nP1 for a correct trigonometric method for angle QPR, e.g. tan⁻¹(40 ÷ 30), or PR = 50 km found by Pythagoras and used, e.g. sin⁻¹(40 ÷ 50)\nA1 for angle QPR = 53.1° (53.13…)\nA1 for 123° (accept 123.1°)` },
+      { q: `(Non-calculator)\nP is a regular polygon with n sides.\nQ is a regular polygon with 2n sides.\nEach exterior angle of P is 18° larger than each exterior angle of Q.\n\nWork out the size of each interior angle of Q.\nYou must show all your working.`, marks: 4, command: 'Work out', markScheme: `P1 for an expression for each exterior angle, e.g. 360/n and 360/(2n)\nP1 for a correct equation, e.g. 360/n − 360/(2n) = 18 oe or 180/n = 18\nA1 for n = 10 (so Q has 20 sides)\nA1 162° cao` },
+      { q: `(Non-calculator)\nABCD is a parallelogram. A is at the bottom left, B at the bottom right, C at the top right and D at the top left. AB is longer than AD.\nE is the point on DC such that DE = DA.\nAngle DAB = 64°.\n\nWork out the size of angle AEC.\nGive reasons for each stage of your working.`, marks: 4, command: 'Work out', markScheme: `P1 for angle ADC = 180 − 64 = 116°\nP1 for (180 − 116) ÷ 2 (= 32°) for angle DEA or angle DAE\nA1 148° cao\nC1 for all reasons given and linked to working, e.g. co-interior angles add up to 180° (or allied angles; or adjacent angles of a parallelogram add up to 180°); base angles of an isosceles triangle are equal; angles in a triangle add up to 180°; angles on a straight line add up to 180°` },
+      { q: `(Non-calculator)\nABCDEF is a regular hexagon.\nABGHI is a regular pentagon.\nThe hexagon and the pentagon share the side AB and lie on opposite sides of AB, with G and C both joined to B.\nThe points B, C and G are joined to form triangle BCG.\n\nWork out the size of angle BCG.\nGive reasons for each stage of your working.`, marks: 5, command: 'Work out', markScheme: `P1 for interior angle of hexagon = 120°, e.g. (6 − 2) × 180 ÷ 6\nP1 for interior angle of pentagon = 108°, e.g. (5 − 2) × 180 ÷ 5\nP1 for angle CBG = 360 − 120 − 108 (= 132°) and a recognition that BC = BG, e.g. (180 − 132) ÷ 2\nA1 24° cao\nC1 for all reasons given, e.g. interior angles of a polygon add up to (n − 2) × 180°; angles around a point add up to 360°; the polygons are regular so BC = AB = BG and triangle BCG is isosceles; base angles of an isosceles triangle are equal; angles in a triangle add up to 180°` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 4.2 */
-  "4.2": {
-    "name": "Congruence, Similarity & Transformations",
-    "questions": [
-      {
-        "q": "Write down the column vector that describes a translation of 6 units to the right and 4 units down.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: column vector with 6 on top and −4 below, i.e. (6, −4) (1)"
-      },
-      {
-        "q": "In triangles ABC and DEF, AB = DE, BC = EF and angle ABC = angle DEF. Write down the condition that shows the triangles are congruent.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: SAS (two sides and the included angle) (1)"
-      },
-      {
-        "q": "A triangle has vertices (1, 1), (4, 1) and (1, 3). It is rotated 180° about the origin. Write down the coordinates of the vertices of the image.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: at least two vertices correct, or all signs changed with one error (1)\n• A1: (−1, −1), (−4, −1), (−1, −3) (1)"
-      },
-      {
-        "q": "Rectangle A measures 5 cm by 8 cm. Rectangle B is mathematically similar to A and its longer side is 20 cm. Work out the length of the shorter side of B.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: scale factor 20 ÷ 8 = 2.5 (1)\n• A1: 12.5 cm (1)"
-      },
-      {
-        "q": "A triangle has vertices (2, 1), (4, 1) and (2, 2). It is enlarged by scale factor 3 with centre (1, 0). Work out the coordinates of the vertices of the image.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: vectors from the centre (1, 1), (3, 1), (1, 2) multiplied by 3, or two vertices correct (1)\n• A1: (4, 3), (10, 3), (4, 6) (1)"
-      },
-      {
-        "q": "Triangle A has vertices (1, 2), (3, 2) and (1, 5). Triangle B has vertices (5, −1), (7, −1) and (5, 2). Describe fully the single transformation that maps triangle A onto triangle B.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: translation (1)\n• B1: by the column vector (4, −3), i.e. 4 on top and −3 below (1)"
-      },
-      {
-        "q": "The point P has coordinates (3, 7). Write down the coordinates of the image of P after (a) a reflection in the line x = −1, (b) a reflection in the line y = 2.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) (−5, 7) (1)\n• B1: (b) (3, −3) (1)"
-      },
-      {
-        "q": "Two mathematically similar labels are 8 cm wide and 12 cm wide. The larger label has area 81 cm². Work out the area of the smaller label.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: area scale factor (12 ÷ 8)² = 2.25, or (8 ÷ 12)² = 4/9 (1)\n• A1: 36 cm² (1)"
-      },
-      {
-        "q": "Triangle A has vertices (2, 2), (6, 2) and (2, 4). Triangle B has vertices (1, 1), (3, 1) and (1, 2). Describe fully the single transformation that maps triangle A onto triangle B.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: enlargement with scale factor ½ (1)\n• B1: centre (0, 0) (1)"
-      },
-      {
-        "q": "ABCD is a kite with AB = AD and CB = CD. Prove that triangles ABC and ADC are congruent.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: states AB = AD and CB = CD (given) and AC is common to both triangles (1)\n• A1: concludes congruent by SSS (1)"
-      },
-      {
-        "q": "The point (2, 6) is enlarged by scale factor −½ with centre (4, 2). Work out the coordinates of the image.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: vector from centre (−2, 4) multiplied by −½ to give (1, −2) (1)\n• A1: (5, 0) (1)"
-      },
-      {
-        "q": "In triangle PQR, S lies on PQ and T lies on PR so that ST is parallel to QR. PS = 6 cm, SQ = 4 cm and QR = 15 cm. Work out the length of ST.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: PQ = 6 + 4 = 10 cm (1)\n• M1: scale factor 6 ÷ 10 = 0.6 (or 10 ÷ 6) used with QR (1)\n• A1: ST = 9 cm (1)"
-      },
-      {
-        "q": "Triangle A has vertices (1, 1), (3, 1) and (3, 2). Triangle B has vertices (−1, 1), (−1, 3) and (−2, 3). Describe fully the single transformation that maps triangle A onto triangle B.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: rotation (1)\n• B1: 90° anticlockwise (or 270° clockwise) (1)\n• B1: centre (0, 0) (1)"
-      },
-      {
-        "q": "Two mathematically similar bottles have heights 18 cm and 24 cm. The larger bottle holds 1280 ml. Work out how much the smaller bottle holds.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: length scale factor 18 ÷ 24 = ¾ (or 24 ÷ 18 = 4/3) (1)\n• M1: volume scale factor (¾)³ = 27/64 (1)\n• A1: 540 ml (1)"
-      },
-      {
-        "q": "A straight ramp rises from the ground. The ramp covers a horizontal distance of 4 m. A vertical support of height 0.6 m is placed under the ramp 1.5 m horizontally from the bottom end of the ramp. Work out the height of the top of the ramp above the ground.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: recognises similar triangles, scale factor 4 ÷ 1.5 = 8/3 (1)\n• M1: 0.6 × 8/3 (1)\n• A1: 1.6 m (1)"
-      },
-      {
-        "q": "Shape A is reflected in the line y = x to give shape B. Shape B is reflected in the y-axis to give shape C. Describe fully the single transformation that maps shape A onto shape C.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: rotation (1)\n• B1: 90° anticlockwise (1)\n• B1: centre (0, 0) (1)"
-      },
-      {
-        "q": "AB and CD are equal in length and parallel. The line segments AD and BC cross at E, with A and D on opposite sides of E. Prove that triangles ABE and DCE are congruent.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: angle BAE = angle CDE (alternate angles) (1)\n• B1: angle ABE = angle DCE (alternate angles), or angle AEB = angle DEC (vertically opposite) (1)\n• B1: AB = DC (given), so congruent by ASA (or AAS) (1)"
-      },
-      {
-        "q": "In triangle ABC, AB = 9 cm and AC = 12 cm. D lies on AB and E lies on AC so that DE is parallel to BC. AD = 6 cm and BC = 10.5 cm. Work out the length of DE and the length of EC.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: scale factor 6 ÷ 9 = ⅔ (1)\n• A1: DE = 7 cm (1)\n• M1: AE = 12 × ⅔ = 8 cm (1)\n• A1: EC = 4 cm (1)"
-      },
-      {
-        "q": "Two mathematically similar solid cylinders have surface areas 108 cm² and 192 cm². The volume of the larger cylinder is 384 cm³. Work out the volume of the smaller cylinder.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: area scale factor 192 ÷ 108 = 16/9 (1)\n• M1: length scale factor √(16/9) = 4/3 (1)\n• M1: volume scale factor (4/3)³ = 64/27 (1)\n• A1: 384 × 27/64 = 162 cm³ (1)"
-      },
-      {
-        "q": "The straight lines AE and BD intersect at C. AB is parallel to DE. AB = 8 cm, DE = 12 cm, AC = 5 cm and BD = 15 cm. (a) Explain why triangles ABC and EDC are similar. (b) Work out the length of CE. (c) Work out the length of BC.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: angle ACB = angle ECD (vertically opposite) and angle BAC = angle DEC (alternate), so similar (1)\n• M1: scale factor 12 ÷ 8 = 1.5 (1)\n• A1: CE = 7.5 cm (1)\n• M1: BC + 1.5 × BC = 15, i.e. 2.5 × BC = 15 (1)\n• A1: BC = 6 cm (1)"
-      }
+  '4.2': {
+    name: 'Congruence, Similarity & Transformations',
+    questions: [
+      { q: `(Non-calculator)\n\nOn a coordinate grid, triangle P has vertices (1, 1), (3, 1) and (1, 4).\nTriangle Q has vertices (2, 2), (6, 2) and (2, 8).\nTriangle Q is an enlargement of triangle P with centre (0, 0).\n\nWrite down the scale factor of the enlargement.`, marks: 1, command: 'Write down', markScheme: `B1: 2 cao` },
+      { q: `(Non-calculator)\n\nA coordinate grid has x and y axes each from −6 to 6\nShape A is a triangle with vertices (−4, 1), (−2, 1) and (−2, 4).\n\nOn the grid, translate shape A by the vector \\(\\begin{pmatrix} 5 \\\\ -3 \\end{pmatrix}\\)`, marks: 1, command: 'Translate', diagram: true, markScheme: `B1: triangle drawn with vertices (1, −2), (3, −2) and (3, 1)` },
+      { q: `(Non-calculator)\n\nIn triangle ABC and triangle DEF\nAB = DE\nBC = EF\nangle ABC = angle DEF\n\nTriangle ABC is congruent to triangle DEF.\n\nWrite down the condition of congruence that shows this.`, marks: 1, command: 'Write down', markScheme: `B1: SAS oe (e.g. "two sides and the included angle")` },
+      { q: `(Non-calculator)\n\nA coordinate grid has x and y axes each from −6 to 6\nShape T is a triangle with vertices (1, 3), (1, 5) and (2, 5).\nThe line y = x is drawn on the grid.\n\nReflect shape T in the line y = x`, marks: 2, command: 'Reflect', diagram: true, markScheme: `B2: triangle drawn with vertices (3, 1), (5, 1) and (5, 2)\n(B1 for any 2 vertices correct, or for a reflection of T in the line y = −x, i.e. (−3, −1), (−5, −1), (−5, −2))` },
+      { q: `(Non-calculator)\n\nA coordinate grid has x and y axes each from −6 to 6\nShape A is a triangle with vertices (1, 2), (4, 2) and (1, 4).\n\nRotate shape A 90° clockwise about the origin.`, marks: 2, command: 'Rotate', diagram: true, markScheme: `B2: triangle drawn with vertices (2, −1), (2, −4) and (4, −1)\n(B1 for a triangle of the correct size and orientation in the wrong position, or for a rotation of 90° anticlockwise about (0, 0), i.e. (−2, 1), (−2, 4), (−4, 1))` },
+      { q: `(Non-calculator)\n\nA coordinate grid has x and y axes each from 0 to 12\nShape B is a triangle with vertices (2, 2), (3, 2) and (2, 4).\n\nEnlarge shape B by scale factor 3, centre (1, 1).`, marks: 2, command: 'Enlarge', diagram: true, markScheme: `B2: triangle drawn with vertices (4, 4), (7, 4) and (4, 10)\n(B1 for a triangle of the correct size and orientation in the wrong position, or for 2 vertices correct)` },
+      { q: `(Calculator allowed)\n\nTriangle ABC is mathematically similar to triangle PQR.\nAngle A = angle P and angle B = angle Q.\nAB = 8 cm, BC = 10 cm and PQ = 12 cm.\n\nWork out the length of QR.`, marks: 2, command: 'Work out', markScheme: `M1: for a correct scale factor, e.g. 12 ÷ 8 (= 1.5), or 10 ÷ 8 (= 1.25)\nA1: 15 cao` },
+      { q: `(Calculator allowed)\n\nTwo rugs are mathematically similar.\nThe ratio of the length of the small rug to the length of the large rug is 2 : 5\nThe area of the small rug is 12 m².\n\nWork out the area of the large rug.`, marks: 2, command: 'Work out', markScheme: `M1: for 12 × (5/2)² oe, e.g. 12 × 6.25 or (5 : 2)² = 25 : 4 used\nA1: 75 cao` },
+      { q: `(Non-calculator)\n\nOn a coordinate grid, shape A is a triangle with vertices (1, 2), (3, 2) and (1, 5).\nShape B is a triangle with vertices (−3, −1), (−1, −1) and (−3, 2).\n\nDescribe fully the single transformation that maps shape A onto shape B.`, marks: 2, command: 'Describe', markScheme: `B1: translation\nB1: by \\(\\begin{pmatrix} -4 \\\\ -3 \\end{pmatrix}\\)\n(B0 for any combination of transformations)` },
+      { q: `(Non-calculator)\n\nA coordinate grid has x and y axes each from 0 to 10\nShape C is a triangle with vertices (5, 3), (9, 3) and (9, 7).\n\nEnlarge shape C by scale factor \\(\\frac{1}{2}\\), centre (1, 1).`, marks: 2, command: 'Enlarge', diagram: true, markScheme: `B2: triangle drawn with vertices (3, 2), (5, 2) and (5, 4)\n(B1 for a triangle of the correct size and orientation in the wrong position, or for 2 vertices correct)` },
+      { q: `(Non-calculator)\n\nIn triangle ABC, AB = 7 cm, angle BAC = 50° and angle ABC = 60°.\nIn triangle PQR, PQ = 7 cm, angle QPR = 50° and angle PRQ = 70°.\n\nAre triangles ABC and PQR congruent?\nYou must give a reason for your answer.`, marks: 2, command: 'Give reasons', markScheme: `B1: for angle PQR = 60° (180 − 50 − 70), or angle ACB = 70°\nC1: Yes, congruent, with reason ASA (or AAS), e.g. AB = PQ with angle A = angle P and angle B = angle Q` },
+      { q: `(Non-calculator)\n\nOn a coordinate grid, shape A is a triangle with vertices (1, 1), (3, 1) and (1, 2).\nShape B is a triangle with vertices (0, −2), (0, 0) and (−1, −2).\n\nDescribe fully the single transformation that maps shape A onto shape B.`, marks: 3, command: 'Describe', markScheme: `B1: rotation\nB1: 90° anticlockwise (or 270° clockwise)\nB1: centre (2, −1)\n(B0 for any combination of transformations)` },
+      { q: `(Non-calculator)\n\nOn a coordinate grid, triangle P has vertices (3, 2), (5, 2) and (3, 6).\nTriangle Q has vertices (0, 2), (−1, 2) and (0, 0).\n\nDescribe fully the single transformation that maps triangle P onto triangle Q.`, marks: 3, command: 'Describe', markScheme: `B1: enlargement\nB1: scale factor −½ oe\nB1: centre (1, 2)\n(B0 for any combination of transformations)` },
+      { q: `(Non-calculator)\n\nOn a coordinate grid, shape A is a triangle with vertices (1, 2), (3, 2) and (3, 3).\nShape A is reflected in the x-axis to give shape B.\nShape B is then rotated 90° clockwise about the origin to give shape C.\n\nDescribe fully the single transformation that maps shape A onto shape C.`, marks: 3, command: 'Describe', markScheme: `M1: for correct B with vertices (1, −2), (3, −2), (3, −3), or correct C with vertices (−2, −1), (−2, −3), (−3, −3)\nB1: reflection\nB1: in the line y = −x` },
+      { q: `(Calculator allowed)\n\nTwo cylinders, A and B, are mathematically similar.\nCylinder A has height 8 cm and volume 160 cm³.\nCylinder B has height 12 cm.\n\nWork out the volume of cylinder B.`, marks: 3, command: 'Work out', markScheme: `M1: for linear scale factor 12 ÷ 8 = 1.5 oe\nM1: for 160 × 1.5³ oe, e.g. 160 × 3.375\nA1: 540 cao` },
+      { q: `(Calculator allowed)\n\nPoster A is a rectangle 30 cm wide and 42 cm high.\nPoster B is mathematically similar to poster A.\nPoster B is 45 cm wide.\n\nWork out the area of poster B.`, marks: 3, command: 'Work out', markScheme: `M1: for scale factor 45 ÷ 30 (= 1.5) oe\nM1: for height of B = 42 × 1.5 (= 63), or area of A × 1.5², e.g. 1260 × 2.25\nA1: 2835 cao` },
+      { q: `(Calculator allowed)\n\nADB and AEC are straight lines.\nDE is parallel to BC.\nAD = 6 cm, DB = 4 cm, DE = 9 cm and AE = 7.5 cm.\n\n(a) Work out the length of BC. [2]\n(b) Work out the length of EC. [2]`, marks: 4, command: 'Work out', markScheme: `(a)\nM1: for scale factor (6 + 4) ÷ 6 oe, e.g. 10/6\nA1: 15 cao\n(b)\nM1: for AC = 7.5 × 10/6 (= 12.5) oe\nA1: 5 cao` },
+      { q: `(Non-calculator)\n\nABCD is a parallelogram.\nThe diagonals AC and BD intersect at the point M.\n\nProve that M is the midpoint of AC.`, marks: 4, command: 'Prove', markScheme: `C1: AB = CD (opposite sides of a parallelogram are equal)\nC1: angle BAM = angle DCM (alternate angles are equal), or angle ABM = angle CDM (alternate angles are equal)\nC1: second pair of equal angles with reason (alternate angles, or vertically opposite angles AMB = CMD), and triangles ABM and CDM are congruent (ASA or AAS)\nC1: so AM = CM (corresponding sides of congruent triangles), hence M is the midpoint of AC` },
+      { q: `(Calculator allowed)\n\nTwo solid ornaments, P and Q, are mathematically similar and are made from the same material.\nThe surface area of ornament P is 50 cm².\nThe surface area of ornament Q is 450 cm².\nThe mass of ornament P is 120 g.\n\nWork out the mass of ornament Q.`, marks: 4, command: 'Work out', markScheme: `M1: for area scale factor 450 ÷ 50 (= 9)\nM1: for linear scale factor √9 (= 3)\nM1: for volume scale factor 3³ (= 27), or 120 × 27\nA1: 3240 cao` },
+      { q: `(Calculator allowed)\n\nBottle A and bottle B are mathematically similar and are both full of juice.\nThe surface area of bottle A is 600 cm².\nThe surface area of bottle B is 1350 cm².\nBottle B holds 2700 cm³ of juice.\nBottle A costs £1.20 and bottle B costs £2.70\n\nWhich bottle gives the better value for money?\nYou must show your working.`, marks: 5, command: 'Show', markScheme: `P1: for area scale factor 1350 ÷ 600 (= 2.25) oe, or 600 ÷ 1350 (= 4/9)\nP1: for linear scale factor √2.25 (= 1.5) oe\nP1: for volume of A = 2700 ÷ 1.5³ (= 800)\nP1: for a correct comparison, e.g. 800 ÷ 1.20 (= 666.6...) and 2700 ÷ 2.70 (= 1000) cm³ per £, or 0.15p and 0.1p per cm³\nC1: Bottle B, with correct supporting figures` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 4.3 */
-  "4.3": {
-    "name": "Circles & Circle Theorems",
-    "questions": [
-      {
-        "q": "Write down the mathematical name for the perimeter of a circle.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: circumference (1)"
-      },
-      {
-        "q": "Write down the name of the region of a circle bounded by two radii and an arc.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: sector (1)"
-      },
-      {
-        "q": "A circle has radius 6.5 cm. Work out the area of the circle. Give your answer correct to 1 decimal place.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: π × 6.5² (1)\n• A1: 132.7 cm² (1)"
-      },
-      {
-        "q": "A circle has diameter 15 cm. Work out the circumference of the circle. Give your answer correct to 3 significant figures.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: π × 15 (1)\n• A1: 47.1 cm (1)"
-      },
-      {
-        "q": "A circle has area 49π cm². Work out the circumference of the circle. Give your answer in terms of π.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: r² = 49 so r = 7 cm (1)\n• A1: 14π cm (1)"
-      },
-      {
-        "q": "A sector of a circle has radius 12 cm and angle 75°. Work out the arc length of the sector. Give your answer correct to 3 significant figures.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 75/360 × 2 × π × 12 (1)\n• A1: 15.7 cm (1)"
-      },
-      {
-        "q": "A sector of a circle has radius 8 cm and angle 135°. Work out the area of the sector. Give your answer in terms of π.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 135/360 × π × 8² (1)\n• A1: 24π cm² (1)"
-      },
-      {
-        "q": "A circular pond has circumference 25 m. Work out the diameter of the pond. Give your answer correct to 3 significant figures.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 25 ÷ π (1)\n• A1: 7.96 m (1)"
-      },
-      {
-        "q": "A, B and C are points on a circle centre O. C lies on the major arc AB and angle AOB = 124°. Work out the size of angle ACB. Give a reason for your answer.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: 62° (1)\n• B1: the angle at the centre is twice the angle at the circumference (1)"
-      },
-      {
-        "q": "ABCD is a cyclic quadrilateral. Angle ABC = (4x − 10)° and angle ADC = (2x + 10)°. Work out the value of x.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: 4x − 10 + 2x + 10 = 180 (opposite angles of a cyclic quadrilateral add up to 180°) (1)\n• A1: x = 30 (1)"
-      },
-      {
-        "q": "A semicircle has diameter 9 cm. Work out the area of the semicircle. Give your answer correct to 1 decimal place.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: ½ × π × 4.5² (1)\n• A1: 31.8 cm² (1)"
-      },
-      {
-        "q": "A sector of a circle has radius 7 cm and angle 100°. Work out the perimeter of the sector. Give your answer correct to 1 decimal place.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: arc = 100/360 × 2 × π × 7 (= 12.2…) (1)\n• M1: arc + 7 + 7 (1)\n• A1: 26.2 cm (1)"
-      },
-      {
-        "q": "A sector of a circle has radius 9 cm and area 60 cm². Work out the angle of the sector. Give your answer correct to 1 decimal place.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: θ/360 × π × 9² = 60 (1)\n• M1: θ = 60 × 360 ÷ (81π) (1)\n• A1: 84.9° (1)"
-      },
-      {
-        "q": "TA and TB are tangents to a circle centre O, touching the circle at A and B. Angle ATB = 46°. Work out the size of angle AOB. Give reasons for your answer.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: angle OAT = angle OBT = 90° because the tangent is perpendicular to the radius (1)\n• M1: 360 − 90 − 90 − 46 (angles in a quadrilateral add up to 360°) (1)\n• A1: 134° (1)"
-      },
-      {
-        "q": "A square tile has sides of 10 cm. A quarter circle of radius 10 cm, centred at one corner of the tile, is cut out. Work out the area of the tile that remains. Give your answer correct to 1 decimal place.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: quarter circle = ¼ × π × 10² (= 78.5…) (1)\n• M1: 100 − 78.5… (1)\n• A1: 21.5 cm² (1)"
-      },
-      {
-        "q": "A bicycle wheel has diameter 60 cm. Work out the number of complete turns the wheel makes when the bicycle travels 1 km.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: circumference = π × 60 = 188.4… cm (1)\n• M1: 100 000 ÷ 188.4… (= 530.5…) (1)\n• A1: 530 (1)"
-      },
-      {
-        "q": "A, B and C are points on a circle. The tangent at A makes an angle of 58° with the chord AB. C lies in the alternate segment and angle ABC = 75°. Work out the size of angle BAC. Give reasons for your answer.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: angle ACB = 58° (alternate segment theorem) (1)\n• M1: 180 − 58 − 75 (angles in a triangle add up to 180°) (1)\n• A1: 47° (1)"
-      },
-      {
-        "q": "A circle has centre O and radius 12 cm. A and B are points on the circle with angle AOB = 90°. Work out the area of the minor segment cut off by the chord AB. Give your answer correct to 1 decimal place.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: sector = 90/360 × π × 12² (1)\n• A1: 36π or 113.1… (1)\n• M1: triangle OAB = ½ × 12 × 12 = 72 and subtracts (1)\n• A1: 41.1 cm² (1)"
-      },
-      {
-        "q": "A circle has centre O and radius 10 cm. AB is a chord of length 16 cm and M is the midpoint of AB. Work out the length OM and the size of angle AOB, giving the angle correct to 1 decimal place.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: OM ⊥ AB (perpendicular from centre bisects the chord) and OM² = 10² − 8² (1)\n• A1: OM = 6 cm (1)\n• M1: angle AOM = sin⁻¹(8/10) (or cos⁻¹(6/10)) = 53.13…° (1)\n• A1: angle AOB = 106.3° (1)"
-      },
-      {
-        "q": "A garden is a rectangle 14 m by 9 m with a semicircle of diameter 9 m on each of the two 9 m sides. Turf costs £4.50 per square metre. Work out the cost of covering the whole garden with turf.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: rectangle area 14 × 9 = 126 m² (1)\n• M1: two semicircles = π × 4.5² (= 63.6…) (1)\n• A1: total area 189.6… m² (1)\n• M1: total area × 4.50 (1)\n• A1: £853.28 (accept £853.27 to £853.29) (1)"
-      }
+  '4.3': {
+    name: 'Circles & Circle Theorems',
+    questions: [
+      { q: `(Non-calculator)\n\nA circle has centre O.\nA and B are two points on the circle. The straight line AB joins A to B and does not pass through O.\n\nWrite down the mathematical name of the line AB.`, marks: 1, command: 'Write down', markScheme: `B1: chord cao` },
+      { q: `(Non-calculator)\n\nA, B and C are points on a circle.\nAB is a diameter of the circle.\n\nWrite down the size of angle ACB.`, marks: 1, command: 'Write down', markScheme: `B1: 90(°) cao` },
+      { q: `(Non-calculator)\n\nA, B, C and D are points on a circle, in that order.\nThe chords AC and BD cross inside the circle.\nAngle ABD = 38°\n\nWrite down the size of angle ACD.`, marks: 1, command: 'Write down', markScheme: `B1: 38(°) cao\n(angles in the same segment are equal)` },
+      { q: `(Calculator allowed)\n\nA circular pond has a diameter of 3.6 m.\n\nWork out the circumference of the pond.\nGive your answer correct to 1 decimal place.`, marks: 2, command: 'Work out', markScheme: `M1: for π × 3.6 or 2 × π × 1.8\nA1: 11.3 (m) cao\n(Accept answers in the range 11.3 to 11.31 if 1 dp not given; 11.309733... seen then 11.3 gets full marks.)` },
+      { q: `(Non-calculator)\n\nA circle has radius 5 cm.\n\nWork out the area of the circle.\nGive your answer in terms of π.`, marks: 2, command: 'Work out', markScheme: `M1: for π × 5² oe\nA1: 25π (cm²) cao` },
+      { q: `(Calculator allowed)\n\nThe circumference of a circular table top is 40 cm.\n\nWork out the diameter of the table top.\nGive your answer correct to 3 significant figures.`, marks: 2, command: 'Work out', markScheme: `M1: for 40 ÷ π oe\nA1: 12.7 (cm)\n(Accept 12.73 or 12.732...)` },
+      { q: `(Non-calculator)\n\nA circle has centre O and radius 10 cm.\nAB is a chord of the circle of length 16 cm.\nM is the point on AB such that OM is perpendicular to AB.\n\nWork out the length of OM.`, marks: 2, command: 'Work out', markScheme: `M1: for AM = 8 (the perpendicular from the centre bisects the chord) and 10² − 8² oe\nA1: 6 (cm) cao` },
+      { q: `(Non-calculator)\n\nABCD is a cyclic quadrilateral.\nAngle ABC = 104°\n\nWork out the size of angle ADC.\nGive a reason for your answer.`, marks: 2, command: 'Work out', markScheme: `B1: 76(°) cao\nC1: opposite angles in a cyclic quadrilateral add up to 180° oe\n(The reason must be given in full; "cyclic quadrilateral" alone is not enough.)` },
+      { q: `(Non-calculator)\n\nA, B and C are points on a circle, centre O.\nC lies on the major arc AB.\nAngle AOB = 130°\n\nWork out the size of angle ACB.\nGive a reason for your answer.`, marks: 2, command: 'Work out', markScheme: `B1: 65(°) cao\nC1: the angle at the centre is twice the angle at the circumference oe (angle subtended by an arc at the centre is twice the angle subtended at the circumference)` },
+      { q: `(Non-calculator)\n\nA is a point on a circle, centre O.\nThe straight line PA is the tangent to the circle at A.\nAngle AOP = 58°\n\nWork out the size of angle APO.\nGive reasons for your answer.`, marks: 2, command: 'Work out', markScheme: `B1: 32(°) cao\nC1: the angle between a tangent and a radius is 90° and angles in a triangle add up to 180° oe` },
+      { q: `(Calculator allowed)\n\nThe diagram for this question shows a sector of a circle, centre O.\nThe radius of the circle is 9 cm.\nThe angle of the sector is 40°\n\nWork out the length of the arc of the sector.\nGive your answer correct to 3 significant figures.`, marks: 2, command: 'Work out', markScheme: `M1: for (40 ÷ 360) × 2 × π × 9 oe\nA1: 6.28 (cm)\n(Accept 2π or answers in the range 6.28 to 6.29)` },
+      { q: `(Calculator allowed)\n\nThe wheel of a bicycle has a diameter of 64 cm.\nJake rides the bicycle for 1 km in a straight line.\n\nWork out the number of complete turns the wheel makes.\nYou must show all your working.`, marks: 3, command: 'Work out', markScheme: `M1: for π × 64 (= 201.06...)\nM1: for 1000 × 100 ÷ "201.06..." oe (= 497.35...), with consistent units\nA1: 497 cao` },
+      { q: `(Calculator allowed)\n\nOAB is a sector of a circle, centre O.\nThe radius of the circle is 12 cm.\nAngle AOB = 75°\n\nWork out the perimeter of the sector.\nGive your answer correct to 1 decimal place.`, marks: 3, command: 'Work out', markScheme: `M1: for (75 ÷ 360) × 2 × π × 12 oe (= 15.70...)\nM1: for "15.70..." + 12 + 12\nA1: 39.7 (cm)\n(Accept answers in the range 39.7 to 39.71)` },
+      { q: `(Non-calculator)\n\nA shape is made from a rectangle and a semicircle.\nThe rectangle measures 10 cm by 6 cm.\nThe diameter of the semicircle is one of the 6 cm sides of the rectangle, and the semicircle lies outside the rectangle.\n\nWork out the area of the shape.\nGive your answer in terms of π.`, marks: 3, command: 'Work out', markScheme: `M1: for 10 × 6 (= 60)\nM1: for ½ × π × 3² (= 4.5π)\nA1: 60 + 4.5π (cm²) oe, e.g. 60 + 9π/2` },
+      { q: `(Calculator allowed)\n\nThe area of a circle is 200 cm².\n\nWork out the circumference of the circle.\nGive your answer correct to 3 significant figures.`, marks: 3, command: 'Work out', markScheme: `M1: for πr² = 200 and r² = 200 ÷ π oe (r = 7.97...)\nM1: for 2 × π × "7.97..." oe\nA1: 50.1 (cm)\n(Accept answers in the range 50.1 to 50.2)` },
+      { q: `(Non-calculator)\n\nA, B and C are points on a circle.\nThe straight line DAE is the tangent to the circle at A.\nE and C are on opposite sides of the chord AB.\nAngle BAE = 68°\nAngle CAB = 49°\n\nWork out the size of angle ABC.\nGive reasons for each stage of your working.`, marks: 3, command: 'Work out', markScheme: `B1: angle ACB = 68° (may be marked on the diagram or stated)\nB1: angle ABC = 63(°) cao\nC1: for both reasons: the angle between a tangent and a chord is equal to the angle in the alternate segment (alternate segment theorem) AND angles in a triangle add up to 180°` },
+      { q: `(Non-calculator)\n\nA and B are points on a circle, centre O.\nPA and PB are tangents to the circle from the point P outside the circle.\nAngle APB = 48°\n\nWork out the size of angle OAB.\nGive reasons for each stage of your working.`, marks: 4, command: 'Work out', markScheme: `B1: angle OAP = 90° or angle OBP = 90°\nM1: for angle AOB = 360 − 90 − 90 − 48 (= 132) or angle PAB = (180 − 48) ÷ 2 (= 66)\nA1: 24(°) cao\nC1: for appropriate reasons for their method, e.g. the angle between a tangent and a radius is 90°; angles in a quadrilateral add up to 360°; triangle OAB is isosceles as OA = OB (radii) oe, or tangents from an external point are equal in length and base angles of an isosceles triangle are equal` },
+      { q: `(Calculator allowed)\n\nA and B are points on a circle, centre O.\nThe radius of the circle is 8 cm.\nAngle AOB = 70°\nThe region between the chord AB and the minor arc AB is shaded.\n\nWork out the area of the shaded region.\nGive your answer correct to 3 significant figures.`, marks: 4, command: 'Work out', markScheme: `M1: for (70 ÷ 360) × π × 8² oe (= 39.09...)\nM1: for ½ × 8 × 8 × sin 70° oe (= 30.07...)\nM1: for "39.09..." − "30.07..."\nA1: 9.03 (cm²)\n(Accept answers in the range 9.02 to 9.03)` },
+      { q: `(Non-calculator)\n\nA, B, C and D are points on a circle, centre O.\nO lies inside the quadrilateral ABCD.\nAngle BOD = 6x°, where this is the angle at O subtended by the arc BCD.\nAngle BCD = (2x + 40)°\n\nWork out the value of x.\nGive reasons for each stage of your working.`, marks: 4, command: 'Work out', markScheme: `M1: for angle BAD = 3x (half of angle BOD)\nM1: for 3x + 2x + 40 = 180 oe\nA1: x = 28 cao\nC1: for both reasons: the angle at the centre is twice the angle at the circumference AND opposite angles in a cyclic quadrilateral add up to 180°\n(Check: angle BOD = 168°, angle BAD = 84°, angle BCD = 96°)` },
+      { q: `(Non-calculator)\n\nA, B, C and D are points on a circle, centre O, so that ABCD is a cyclic quadrilateral.\nO lies inside ABCD.\nAngle ABC = x°\n\nProve that angle ABC + angle ADC = 180°\nYou must not use the result that opposite angles in a cyclic quadrilateral add up to 180°`, marks: 5, command: 'Prove', markScheme: `M1: for joining OA and OC, and the angle AOC subtended by the arc ADC = 2x\nM1: for the other angle AOC (subtended by the arc ABC) = 360 − 2x\nM1: for angle ADC = ½(360 − 2x) = 180 − x\nC1: for reasons: the angle at the centre is twice the angle at the circumference AND angles around a point add up to 360°\nC1: for a complete and correct proof, e.g. x + (180 − x) = 180 so angle ABC + angle ADC = 180°` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 4.4 */
-  "4.4": {
-    "name": "Mensuration: Area, Volume & 3D",
-    "questions": [
-      {
-        "q": "Write down the number of faces of a square-based pyramid.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 5 (1)"
-      },
-      {
-        "q": "Change 4.2 litres into cm³.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 4200 cm³ (1)"
-      },
-      {
-        "q": "A parallelogram has base 14 cm and perpendicular height 6.5 cm. Work out the area of the parallelogram.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 14 × 6.5 (1)\n• A1: 91 cm² (1)"
-      },
-      {
-        "q": "A circle has diameter 18 cm. Work out the area of the circle. Give your answer correct to 1 decimal place.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: radius 9 and π × 9² (= 81π) (1)\n• A1: 254.5 cm² (254.46…) (1)"
-      },
-      {
-        "q": "(a) The plan of a solid is a circle. Its front elevation and side elevation are both isosceles triangles. Write down the name of the solid.\n(b) The plan of another solid is a square with both diagonals drawn on it. Its front elevation is a triangle. Write down the name of this solid.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) cone (1)\n• B1: (b) square-based pyramid (1)"
-      },
-      {
-        "q": "A circle has area 50π cm². Work out the radius of the circle. Give your answer in the form a√2 where a is an integer.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: r² = 50 so r = √50 (1)\n• A1: 5√2 cm (1)"
-      },
-      {
-        "q": "A cube has a volume of 1000 cm³, correct to the nearest 10 cm³. Work out the lower bound for the side length of the cube. Give your answer correct to 3 significant figures.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: lower bound of volume = 995 cm³ (1)\n• A1: ∛995 = 9.98 cm (9.983…) (1)"
-      },
-      {
-        "q": "A circular pond has radius 6.5 m. Work out the circumference of the pond. Give your answer correct to 3 significant figures.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 2 × π × 6.5 or 13π (1)\n• A1: 40.8 m (40.84…) (1)"
-      },
-      {
-        "q": "A triangle has vertices P(−2, 1), Q(6, 1) and R(3, −4). Work out the area of triangle PQR.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: base PQ = 8 and perpendicular height = 5 (1)\n• A1: ½ × 8 × 5 = 20 units² (1)"
-      },
-      {
-        "q": "A sphere has radius 6 cm. Work out the surface area of the sphere. Give your answer in terms of π. [Surface area of a sphere = 4πr²]",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 4 × π × 6² (1)\n• A1: 144π cm² (1)"
-      },
-      {
-        "q": "Two cones are mathematically similar. The smaller cone has height 4 cm and volume 24 cm³. The larger cone has height 10 cm. Work out the volume of the larger cone.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: volume scale factor (10 ÷ 4)³ = 2.5³ = 15.625 (1)\n• A1: 24 × 15.625 = 375 cm³ (1)"
-      },
-      {
-        "q": "A shape is made from a rectangle 14 cm by 10 cm and a semicircle. The diameter of the semicircle is one of the 10 cm sides of the rectangle, and the semicircle lies outside the rectangle. Work out the area of the shape. Give your answer correct to 1 decimal place.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: rectangle 14 × 10 = 140 (1)\n• M1: semicircle ½ × π × 5² (= 12.5π = 39.26…) (1)\n• A1: 179.3 cm² (179.26…) (1)"
-      },
-      {
-        "q": "A closed cylinder has radius 4 cm and height 11 cm. Work out the total surface area of the cylinder. Give your answer correct to 3 significant figures.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: two ends 2 × π × 4² = 32π (1)\n• M1: curved surface 2 × π × 4 × 11 = 88π (1)\n• A1: 120π = 377 cm² (376.99…) (1)"
-      },
-      {
-        "q": "A triangular prism is 20 cm long. Its cross-section is a right-angled triangle with sides 5 cm, 12 cm and 13 cm. Work out the total surface area of the prism.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: two triangles 2 × ½ × 5 × 12 = 60 (1)\n• M1: three rectangles (5 + 12 + 13) × 20 = 600 (1)\n• A1: 660 cm² (1)"
-      },
-      {
-        "q": "A cone has base radius 6 cm and slant height 10 cm. Work out the volume of the cone. Give your answer correct to 3 significant figures. [Volume of a cone = ⅓πr²h]",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: h = √(10² − 6²) = 8 (1)\n• M1: ⅓ × π × 6² × 8 (= 96π) (1)\n• A1: 302 cm³ (301.59…) (1)"
-      },
-      {
-        "q": "A paddling pool is a cylinder with diameter 2.4 m. Water is poured in to a depth of 40 cm. Work out the number of litres of water in the pool. Give your answer correct to 3 significant figures. [1 m³ = 1000 litres]",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: π × 1.2² × 0.4 (= 0.576π = 1.809… m³) or π × 120² × 40 cm³ (1)\n• M1: converting to litres (× 1000 for m³, or ÷ 1000 for cm³) (1)\n• A1: 1810 litres (1809.5…) (1)"
-      },
-      {
-        "q": "A rectangle has length 8.4 cm and width 5.7 cm, both measured correct to 1 decimal place. Work out the upper bound for the area of the rectangle.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: 8.45 (1)\n• B1: 5.75 (1)\n• A1: 8.45 × 5.75 = 48.5875 cm² (1)"
-      },
-      {
-        "q": "A solid metal cuboid measures 12 cm by 9 cm by 5 cm. It is melted down and all the metal is used to make solid spheres, each of radius 1.5 cm. Work out the greatest number of complete spheres that can be made. [Volume of a sphere = 4/3 πr³]",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: cuboid volume 12 × 9 × 5 = 540 cm³ (1)\n• M1: sphere volume 4/3 × π × 1.5³ = 4.5π = 14.13… cm³ (1)\n• M1: 540 ÷ 14.13… = 38.19… (1)\n• A1: 38 spheres (1)"
-      },
-      {
-        "q": "ABCDEFGH is a cuboid. The base ABCD is a horizontal rectangle with AB = 10 cm and BC = 6 cm. The vertical edges AE, BF, CG and DH are each 5 cm long, with EFGH directly above ABCD. Work out the size of the angle between the diagonal AG and the base ABCD. Give your answer correct to 1 decimal place.",
-        "marks": 4,
-        "requiresDiagram": true,
-        "higher": true,
-        "markScheme": "• M1: AC² = 10² + 6² = 136, AC = 11.66… (1)\n• M1: right-angled triangle ACG with CG = 5 vertical (1)\n• M1: tan θ = 5 ÷ √136 (1)\n• A1: 23.2° (23.20…) (1)"
-      },
-      {
-        "q": "A solid is made from a cylinder and a hemisphere. The cylinder has radius 3 cm and height 8 cm. The hemisphere has radius 3 cm and sits exactly on top of the cylinder. The solid is made of metal with density 7.8 g/cm³. Work out the mass of the solid in kilograms, correct to 3 significant figures. [Volume of a sphere = 4/3 πr³]",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: cylinder π × 3² × 8 = 72π (1)\n• M1: hemisphere ½ × 4/3 × π × 3³ = 18π (1)\n• M1: total 90π = 282.7… cm³ (1)\n• M1: mass = 282.7… × 7.8 = 2205.4… g (1)\n• A1: 2.21 kg (1)"
-      }
+  '4.4': {
+    name: 'Mensuration: Area, Volume & 3D',
+    questions: [
+      { q: `(Non-calculator)\n\nWrite down the number of edges of a square-based pyramid.`, marks: 1, command: 'Write down', markScheme: `B1: 8 cao` },
+      { q: `(Non-calculator)\n\nThe front elevation and the side elevation of a solid are both isosceles triangles of the same size.\nThe plan of the solid is a circle with a dot at its centre.\n\nWrite down the mathematical name of the solid.`, marks: 1, command: 'Write down', markScheme: `B1: cone` },
+      { q: `(Non-calculator)\n\nChange 3.5 m² into cm²`, marks: 1, command: 'Change', markScheme: `B1: 35 000 cao` },
+      { q: `(Non-calculator)\n\nA trapezium has parallel sides of length 7 cm and 13 cm.\nThe perpendicular distance between the parallel sides is 6 cm.\n\nWork out the area of the trapezium.`, marks: 2, command: 'Work out', markScheme: `M1: for ½ × (7 + 13) × 6 oe\nA1: 60 (cm²) cao` },
+      { q: `(Calculator allowed)\n\nA circular table top has a diameter of 15 cm.\n\nWork out the circumference of the table top.\nGive your answer correct to 1 decimal place.`, marks: 2, command: 'Work out', markScheme: `M1: for π × 15 oe\nA1: 47.1 (cm) (accept 47.1 to 47.13 if more figures seen, but final answer must be 47.1)` },
+      { q: `(Calculator allowed)\n\nA cylinder has radius 4 cm and height 9 cm.\n\nWork out the volume of the cylinder.\nGive your answer correct to 3 significant figures.`, marks: 2, command: 'Work out', markScheme: `M1: for π × 4² × 9 oe (e.g. 144π)\nA1: 452 (cm³) (accept answers in the range 452 to 452.4 seen before rounding)` },
+      { q: `(Non-calculator)\n\nA semicircle has diameter 10 cm.\n\nWork out the area of the semicircle.\nGive your answer in terms of π.`, marks: 2, command: 'Work out', markScheme: `M1: for π × 5² ÷ 2 oe\nA1: 12.5π (cm²) oe, e.g. 25π/2` },
+      { q: `(Non-calculator)\n\nA solid is made from five centimetre cubes.\nThe bottom layer has four cubes: a back row of three cubes side by side from left to right, and one cube directly in front of the left-hand cube of the back row.\nThe top layer has one cube, which sits on top of the left-hand cube of the back row.\n\nOn a centimetre grid, draw the front elevation of the solid.`, marks: 2, command: 'Draw', diagram: true, markScheme: `B2: correct front elevation: a shape 3 cm wide, with the left-hand column 2 cm tall and the middle and right-hand columns 1 cm tall (an L-shape made of 4 squares)\n(B1: for a shape 3 cm wide with one incorrect height, or the correct shape drawn as the side elevation or plan, or correct shape with incorrect orientation)` },
+      { q: `(Non-calculator)\n\nA solid square-based pyramid has a base of side 6 cm.\nThe perpendicular height of the pyramid is 10 cm.\n\nVolume of pyramid = ⅓ × area of base × height\n\nWork out the volume of the pyramid.`, marks: 2, command: 'Work out', markScheme: `M1: for ⅓ × 6 × 6 × 10 oe\nA1: 120 (cm³) cao` },
+      { q: `(Calculator allowed)\n\nA sector of a circle has radius 9 cm and angle at the centre 80°\n\nWork out the length of the arc of the sector.\nGive your answer correct to 3 significant figures.`, marks: 2, command: 'Work out', markScheme: `M1: for (80/360) × 2 × π × 9 oe (e.g. 4π)\nA1: 12.6 (cm) (accept 12.56 to 12.57 seen before rounding)` },
+      { q: `(Calculator allowed)\n\nA garden lawn is in the shape of a sector of a circle.\nThe radius of the sector is 8 m and the angle at the centre is 135°\n\nWork out the area of the lawn.\nGive your answer correct to 1 decimal place.`, marks: 2, command: 'Work out', markScheme: `M1: for (135/360) × π × 8² oe (e.g. 24π)\nA1: 75.4 (m²) (accept 75.39 to 75.4)` },
+      { q: `(Non-calculator)\n\nA fish tank is in the shape of a cuboid.\nThe tank is 60 cm long, 30 cm wide and 40 cm high.\nThe tank is filled with water to a level 5 cm below the top of the tank.\n\n1 litre = 1000 cm³\n\nWork out the number of litres of water in the tank.`, marks: 3, command: 'Work out', markScheme: `P1: for depth of water 40 − 5 = 35 (cm)\nP1: for 60 × 30 × 35 (= 63 000) oe\nA1: 63 (litres) cao\n(Award P0P1A0 for 60 × 30 × 40 = 72 000 or 72 litres)` },
+      { q: `(Calculator allowed)\n\nA shape is made from a rectangle and a semicircle.\nThe rectangle is 12 cm long and 8 cm wide.\nThe diameter of the semicircle is one of the 8 cm sides of the rectangle, and the semicircle lies outside the rectangle.\n\nWork out the area of the shape.\nGive your answer correct to 1 decimal place.`, marks: 3, command: 'Work out', markScheme: `M1: for 12 × 8 (= 96) or π × 4² ÷ 2 (= 8π or 25.1...)\nM1: for 12 × 8 + π × 4² ÷ 2 oe\nA1: 121.1 (cm²) (accept 121.1 to 121.2)\n(Using radius 8 gives 96 + 100.5... and scores M1M0A0)` },
+      { q: `(Calculator allowed)\n\nA solid cone has base radius 5 cm and slant height 13 cm.\n\nVolume of cone = ⅓πr²h\nCurved surface area of cone = πrl\n\nWork out the volume of the cone.\nGive your answer correct to 3 significant figures.`, marks: 3, command: 'Work out', markScheme: `M1: for h = √(13² − 5²) (= 12)\nM1: for ⅓ × π × 5² × 12 oe (e.g. 100π)\nA1: 314 (cm³) (accept 314 to 314.2)` },
+      { q: `(Non-calculator)\n\nA solid hemisphere has radius 6 cm.\n\nSurface area of a sphere = 4πr²\n\nWork out the total surface area of the hemisphere.\nGive your answer in terms of π.`, marks: 3, command: 'Work out', markScheme: `M1: for curved surface ½ × 4 × π × 6² (= 72π)\nM1: for base π × 6² (= 36π) added to curved surface area\nA1: 108π (cm²) cao` },
+      { q: `(Calculator allowed)\n\nWater flows into an empty cylindrical tank at a constant rate of 2 litres per minute.\nThe tank has radius 40 cm.\n\n1 litre = 1000 cm³\n\nWork out how long it takes for the depth of water in the tank to reach 50 cm.\nGive your answer in minutes, correct to the nearest minute.`, marks: 3, command: 'Work out', markScheme: `P1: for π × 40² × 50 (= 251 327...) oe\nP1: for converting to litres and dividing by 2, e.g. 251 327 ÷ 1000 ÷ 2 (= 125.66...)\nA1: 126 (minutes) (accept 125.6 to 126 if rounding not shown; final answer must be 126)` },
+      { q: `(Non-calculator)\n\nA triangular prism has length 15 cm.\nThe cross-section of the prism is a right-angled triangle.\nThe two shorter sides of the triangle are 6 cm and 8 cm.\n\nWork out the total surface area of the prism.`, marks: 4, command: 'Work out', markScheme: `P1: for hypotenuse √(6² + 8²) = 10 (cm)\nP1: for area of one triangle ½ × 6 × 8 (= 24) or both triangles (= 48)\nP1: for area of rectangular faces 6 × 15 + 8 × 15 + 10 × 15 (= 360) oe\nA1: 408 (cm²) cao` },
+      { q: `(Calculator allowed)\n\nJake is going to fill a sandpit with sand.\nThe sandpit is in the shape of a cuboid 2.4 m long and 1.5 m wide.\nHe wants the sand to be 30 cm deep.\n\nSand is sold in bags.\nEach bag contains 0.15 m³ of sand and costs £4.85\n\nJake has £40\n\nDoes Jake have enough money to buy all the sand he needs?\nYou must show all your working.`, marks: 4, command: 'Does', markScheme: `P1: for volume 2.4 × 1.5 × 0.3 (= 1.08 m³) oe (or 240 × 150 × 30 = 1 080 000 cm³)\nP1: for 1.08 ÷ 0.15 (= 7.2) oe\nP1: for rounding up to 8 bags and 8 × 4.85 (= 38.80)\nC1: Yes, with £38.80 (less than £40) oe\n(Using 7 bags gives £33.95 and scores P1P1P0C0)` },
+      { q: `(Non-calculator)\n\nA solid metal sphere has radius 6 cm.\nThe sphere is melted down and all the metal is made into a solid cone.\nThe cone has base radius 8 cm.\n\nVolume of sphere = ⁴⁄₃πr³\nVolume of cone = ⅓πr²h\n\nWork out the height of the cone.`, marks: 4, command: 'Work out', markScheme: `M1: for ⁴⁄₃ × π × 6³ (= 288π)\nM1: for ⅓ × π × 8² × h (= 64πh/3) oe\nM1: for 288π = 64πh/3 oe, or h = 288 × 3 ÷ 64\nA1: 13.5 (cm) oe` },
+      { q: `(Calculator allowed)\n\nA plant pot is in the shape of a frustum.\nThe frustum is made by removing a small cone from the top of a large cone.\nThe radius of the base of the frustum is 3 cm, the radius of the top of the frustum is 9 cm and the height of the frustum is 12 cm.\n(The large cone is upside down, so its vertex is below the base of the pot.)\n\nVolume of cone = ⅓πr²h\n\nCompost is sold in bags. Each bag contains 10 litres of compost.\n1 litre = 1000 cm³\n\nAmina wants to fill 12 of these plant pots with compost.\n\nWork out the least number of bags of compost Amina needs to buy.\nYou must show all your working.`, marks: 5, command: 'Work out', markScheme: `P1: for using similar triangles to find the height of the small cone, e.g. 3/9 = h/(h + 12), giving h = 6 (or large cone height 18)\nP1: for volume of large cone ⅓ × π × 9² × 18 (= 486π) or small cone ⅓ × π × 3² × 6 (= 18π)\nP1: for volume of frustum 486π − 18π (= 468π = 1470.2...)\nP1: for 12 × 1470.2... (= 17 643...) and conversion to litres (= 17.6...) or 2 × 10 000 = 20 000 cm³ for comparison\nA1: 2 (bags) with correct supporting working` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 4.5 */
-  "4.5": {
-    "name": "Pythagoras & Trigonometry",
-    "questions": [
-      {
-        "q": "Write down the exact value of sin 45°.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: √2/2 or 1/√2 (1)"
-      },
-      {
-        "q": "Without a calculator, write tan 30° as an exact value.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 1/√3 or √3/3 (1)"
-      },
-      {
-        "q": "A right-angled triangle has shorter sides of 7.5 cm and 4 cm. Work out the length of the hypotenuse.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 7.5² + 4² (= 72.25) (1)\n• A1: 8.5 cm (1)"
-      },
-      {
-        "q": "A right-angled triangle has hypotenuse 14.2 cm and one shorter side 9.6 cm. Work out the length of the other side. Give your answer correct to 3 significant figures.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 14.2² − 9.6² (= 109.48) (1)\n• A1: 10.5 cm (10.46…) (1)"
-      },
-      {
-        "q": "In triangle ABC, angle B = 90°, angle A = 28° and AC = 18 cm. Work out the length of BC. Give your answer correct to 3 significant figures.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 18 × sin 28° (1)\n• A1: 8.45 cm (8.450…) (1)"
-      },
-      {
-        "q": "In a right-angled triangle, the side opposite angle θ is 11 cm and the side adjacent to θ is 7 cm. Work out the size of angle θ. Give your answer correct to 1 decimal place.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: tan θ = 11/7 (1)\n• A1: 57.5° (57.52…) (1)"
-      },
-      {
-        "q": "A triangle has sides of length 9 cm, 40 cm and 41 cm. Show that the triangle is right-angled.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 9² + 40² = 81 + 1600 = 1681 (1)\n• C1: 41² = 1681, which equals 9² + 40², so the triangle is right-angled (by the converse of Pythagoras) (1)"
-      },
-      {
-        "q": "A is the point (−3, −1) and B is the point (9, 4). Work out the length of AB.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: differences 12 and 5, and 12² + 5² (= 169) (1)\n• A1: 13 units (1)"
-      },
-      {
-        "q": "Without using a calculator, work out the exact length of the side opposite the 60° angle in a right-angled triangle with hypotenuse 12 cm.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 12 × sin 60° = 12 × √3/2 (1)\n• A1: 6√3 cm (1)"
-      },
-      {
-        "q": "A triangle has two sides of length 9 cm and 14 cm. The angle between them is 72°. Work out the area of the triangle. Give your answer correct to 3 significant figures.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: ½ × 9 × 14 × sin 72° (1)\n• A1: 59.9 cm² (59.91…) (1)"
-      },
-      {
-        "q": "A cuboid measures 9 cm by 12 cm by 20 cm. Work out the length of the longest diagonal of the cuboid.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: √(9² + 12² + 20²) or √(15² + 20²) (1)\n• A1: 25 cm (1)"
-      },
-      {
-        "q": "A ladder 7 m long leans against a vertical wall. The ladder makes an angle of 72° with the horizontal ground. For safety, the top of the ladder must be at least 6.5 m above the ground. Is the ladder safe? You must show your working.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: sin 72° = h/7 (1)\n• A1: h = 6.66 m (6.657…) (1)\n• C1: Yes, since 6.66 m is more than 6.5 m (1)"
-      },
-      {
-        "q": "A cliff is 85 m high. A boat is 210 m from the foot of the cliff, on the sea at the same level as the foot of the cliff. Work out the angle of depression of the boat from the top of the cliff. Give your answer correct to 1 decimal place.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: correct right-angled triangle with opposite 85 and adjacent 210 (1)\n• M1: tan θ = 85/210 (1)\n• A1: 22.0° (22.03…) (1)"
-      },
-      {
-        "q": "An isosceles triangle has two sides of length 15 cm and a base of 18 cm. Work out the area of the triangle.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: half the base = 9 and 15² − 9² (= 144) (1)\n• A1: height = 12 cm (1)\n• A1: area = ½ × 18 × 12 = 108 cm² (1)"
-      },
-      {
-        "q": "In triangle ABC, a = 12 cm, b = 9 cm and angle A = 74°. Work out the size of angle B. Give your answer correct to 1 decimal place.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: sin B / 9 = sin 74° / 12 (1)\n• M1: sin B = 9 × sin 74° ÷ 12 (= 0.7209…) (1)\n• A1: 46.1° (46.13…) (1)"
-      },
-      {
-        "q": "In triangle ABC, AB = 9.5 cm, AC = 7.2 cm and angle BAC = 48°. Work out the length of BC. Give your answer correct to 3 significant figures.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: BC² = 7.2² + 9.5² − 2 × 7.2 × 9.5 × cos 48° (1)\n• M1: BC² = 50.55… (1)\n• A1: 7.11 cm (7.110…) (1)"
-      },
-      {
-        "q": "A rectangle is 12 cm long and 5 cm wide. (a) Work out the length of a diagonal. (b) Work out the angle between a diagonal and a longer side, correct to 1 decimal place.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) √(12² + 5²) = 13 cm (1)\n• M1: (b) tan θ = 5/12 (1)\n• A1: 22.6° (22.61…) (1)"
-      },
-      {
-        "q": "In the diagram, ABD and BCD are right-angled triangles that share the side BD. Angle ADB = 90° and D lies on the straight line AC, so angle BDC = 90° too. AB = 15 cm, angle BAD = 40° and DC = 6 cm. Work out the size of angle BCD. Give your answer correct to 1 decimal place.",
-        "marks": 4,
-        "requiresDiagram": true,
-        "higher": false,
-        "markScheme": "• M1: BD = 15 × sin 40° (1)\n• A1: BD = 9.64… cm (1)\n• M1: tan BCD = 9.64… ÷ 6 (1)\n• A1: 58.1° (58.10…) (1)"
-      },
-      {
-        "q": "A pyramid has a square base ABCD of side 8 cm. Its apex V is vertically above the centre of the base and the perpendicular height is 10 cm. Work out the angle between the edge VA and the base. Give your answer correct to 1 decimal place.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: AC = √(8² + 8²) = √128 (1)\n• M1: half diagonal = √32 = 5.65… cm (1)\n• M1: tan θ = 10 ÷ 5.65… (1)\n• A1: 60.5° (60.50…) (1)"
-      },
-      {
-        "q": "In triangle ABC, AB = 9 cm, angle BAC = 52° and angle ABC = 63°. Work out the area of the triangle. Give your answer correct to 3 significant figures.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: angle ACB = 180° − 52° − 63° = 65° (1)\n• M1: AC / sin 63° = 9 / sin 65° (1)\n• A1: AC = 8.84… cm (1)\n• M1: ½ × 9 × 8.84… × sin 52° (1)\n• A1: 31.4 cm² (31.37…) (1)"
-      }
+  '4.5': {
+    name: 'Pythagoras & Trigonometry',
+    questions: [
+      { q: `(Non-calculator)\nWrite down the exact value of tan 45°`, marks: 1, command: 'Write down', markScheme: `B1 1 cao` },
+      { q: `(Non-calculator)\nWrite down the exact value of cos 30°`, marks: 1, command: 'Write down', markScheme: `B1 \\(\\frac{\\sqrt{3}}{2}\\) oe` },
+      { q: `(Calculator allowed)\nThe bearing of B from A is 070°\n\nWork out the bearing of A from B.`, marks: 1, command: 'Work out', markScheme: `B1 250° cao` },
+      { q: `(Non-calculator)\nA is the point with coordinates (−2, 5)\nB is the point with coordinates (4, −3)\n\nWork out the length of AB.`, marks: 2, command: 'Work out', markScheme: `M1 for 6² + 8² oe, e.g. (4 − −2)² + (−3 − 5)², or 36 + 64\nA1 10 cao` },
+      { q: `(Calculator allowed)\nA ladder is 6.5 m long.\nThe ladder leans against a vertical wall.\nThe foot of the ladder is on horizontal ground, 1.8 m from the bottom of the wall.\n\nHow far up the wall does the ladder reach?\nGive your answer correct to 3 significant figures.`, marks: 2, command: 'Work out', markScheme: `M1 for 6.5² − 1.8² oe, e.g. 42.25 − 3.24 or √39.01\nA1 6.25 (accept 6.24 to 6.25) m` },
+      { q: `(Calculator allowed)\nPQR is a right-angled triangle.\nAngle PQR = 90°\nPQ = 8.4 cm\nAngle QPR = 38°\n\nWork out the length of QR.\nGive your answer correct to 1 decimal place.`, marks: 2, command: 'Work out', markScheme: `M1 for tan 38 = QR/8.4 oe, or QR = 8.4 × tan 38\nA1 6.6 (accept 6.56 to 6.6) cm` },
+      { q: `(Calculator allowed)\nIn a right-angled triangle, the hypotenuse is 15 cm long.\nThe side opposite the angle x is 11 cm long.\n\nWork out the size of angle x.\nGive your answer correct to 1 decimal place.`, marks: 2, command: 'Work out', markScheme: `M1 for sin x = 11/15 oe, or sin⁻¹(11/15)\nA1 47.2 (accept 47.1 to 47.2)°` },
+      { q: `(Non-calculator)\nABC is a right-angled triangle.\nAngle ABC = 90°\nAngle BAC = 60°\nAC = 14 cm\n\nWork out the length of AB.`, marks: 2, command: 'Work out', markScheme: `M1 for 14 × cos 60 oe, e.g. AB/14 = 1/2\nA1 7 cao (cm)` },
+      { q: `(Calculator allowed)\nTom stands on horizontal ground 25 m from the foot of a vertical tower.\nThe angle of elevation of the top of the tower from where Tom stands is 32°\nIgnore Tom's height.\n\nWork out the height of the tower.\nGive your answer correct to 3 significant figures.`, marks: 2, command: 'Work out', markScheme: `M1 for 25 × tan 32 oe\nA1 15.6 (accept 15.6 to 15.7) m` },
+      { q: `(Calculator allowed)\nIn triangle ABC\nAB = 8 cm\nAC = 11 cm\nAngle BAC = 52°\n\nWork out the area of triangle ABC.\nGive your answer correct to 3 significant figures.`, marks: 2, command: 'Work out', markScheme: `M1 for ½ × 8 × 11 × sin 52 oe\nA1 34.7 (accept 34.6 to 34.7) cm²` },
+      { q: `(Calculator allowed)\nA triangle has sides of length 9 cm, 12 cm and 16 cm.\n\nDan says,\n"This triangle is a right-angled triangle."\n\nIs Dan correct?\nYou must show how you get your answer.`, marks: 2, command: 'Is ... correct?', markScheme: `M1 for 9² + 12² (= 225) and 16² (= 256) oe, or for √(9² + 12²) = 15\nC1 for No, with correct supporting values, e.g. 225 ≠ 256 or 15 ≠ 16` },
+      { q: `(Calculator allowed)\nIn triangle ABC\nBC = 12.4 cm\nAngle BAC = 48°\nAngle ABC = 67°\n\nWork out the length of AC.\nGive your answer correct to 3 significant figures.`, marks: 3, command: 'Work out', markScheme: `M1 for AC/sin 67 = 12.4/sin 48 oe\nM1 for AC = (12.4 × sin 67)/sin 48\nA1 15.4 (accept 15.3 to 15.4) cm` },
+      { q: `(Calculator allowed)\nIn triangle PQR\nPQ = 7.3 cm\nPR = 9.1 cm\nAngle QPR = 112°\n\nWork out the length of QR.\nGive your answer correct to 3 significant figures.`, marks: 3, command: 'Work out', markScheme: `M1 for 7.3² + 9.1² − 2 × 7.3 × 9.1 × cos 112 oe\nM1 for √185.87… (accept √185.8 to √185.9)\nA1 13.6 (accept 13.6 to 13.64) cm` },
+      { q: `(Calculator allowed)\nA triangle has sides of length 6 cm, 8 cm and 11 cm.\n\nWork out the size of the largest angle in the triangle.\nGive your answer correct to 1 decimal place.`, marks: 3, command: 'Work out', markScheme: `M1 for 11² = 6² + 8² − 2 × 6 × 8 × cos x oe, or cos x = (6² + 8² − 11²)/(2 × 6 × 8)\nM1 for cos x = −21/96 oe (−0.21875)\nA1 102.6 (accept 102.6 to 102.7)°` },
+      { q: `(Non-calculator)\nABC is a right-angled triangle.\nAngle ABC = 90°\nAngle ACB = 60°\nAB = 4√3 cm\n\nWork out the perimeter of triangle ABC.\nGive your answer in the form a + b√3 where a and b are integers.`, marks: 3, command: 'Work out', markScheme: `M1 for BC = 4√3 ÷ tan 60 = 4√3 ÷ √3 (= 4) oe\nM1 for AC = 4√3 ÷ sin 60 = 4√3 ÷ (√3/2) (= 8), or AC = 2 × BC, or √((4√3)² + 4²) = √64\nA1 12 + 4√3 cao` },
+      { q: `(Calculator allowed)\nA vertical cliff is 48 m high.\nFrom the top of the cliff, the angle of depression of a boat at sea is 17°\nThe boat sails directly towards the foot of the cliff.\nThe angle of depression of the boat from the top of the cliff is now 29°\n\nWork out the distance the boat has sailed.\nGive your answer correct to the nearest metre.`, marks: 3, command: 'Work out', markScheme: `M1 for 48 ÷ tan 17 (= 157.0…) oe\nM1 for 48 ÷ tan 29 (= 86.59…) oe\nA1 70 (accept 70 to 70.5) m` },
+      { q: `(Calculator allowed)\nABCDEFGH is a cuboid.\nThe base ABCD is a horizontal rectangle with AB = 8 cm and BC = 5 cm.\nThe vertical edges AE, BF, CG and DH are each 3 cm long, so G is directly above C.\n\n(a) Work out the length of AG.\nGive your answer correct to 3 significant figures. [2]\n(b) Work out the size of the angle between AG and the plane ABCD.\nGive your answer correct to 1 decimal place. [2]`, marks: 4, command: 'Work out', markScheme: `(a)\nM1 for 8² + 5² + 3² oe, or √(AC² + 3²) where AC² = 8² + 5² = 89\nA1 9.90 (accept 9.89 to 9.9) cm\n(b)\nM1 for tan x = 3/√89 oe, or sin x = 3/9.899… ft from (a)\nA1 17.6 (accept 17.6 to 17.7)°` },
+      { q: `(Calculator allowed)\nThe diagram is made from two right-angled triangles, ABC and ACD, which share the side AC.\nIn triangle ABC, angle ABC = 90°, AB = 7.5 cm and BC = 4.2 cm.\nIn triangle ACD, angle ACD = 90° and angle CAD = 40°\n\nWork out the length of AD.\nGive your answer correct to 3 significant figures.\nYou must show all your working.`, marks: 4, command: 'Work out', markScheme: `P1 for 7.5² + 4.2² (= 73.89) oe\nA1 for AC = 8.59… (accept 8.6)\nP1 for cos 40 = AC/AD, or AD = AC ÷ cos 40\nA1 11.2 (accept 11.2 to 11.23) cm` },
+      { q: `(Calculator allowed)\nIn triangle ABC\nAB = 9 cm\nAngle BAC = 40°\nThe area of triangle ABC is 30 cm²\n\nWork out the length of BC.\nGive your answer correct to 3 significant figures.`, marks: 4, command: 'Work out', markScheme: `P1 for ½ × 9 × AC × sin 40 = 30 oe\nP1 for AC = 60 ÷ (9 × sin 40) (= 10.37…)\nP1 for BC² = 9² + 10.37…² − 2 × 9 × 10.37… × cos 40 oe\nA1 6.75 (accept 6.74 to 6.76) cm` },
+      { q: `(Calculator allowed)\nA ship sails from a harbour H on a bearing of 060° for 12 km to a point A.\nThe ship then sails on a bearing of 160° for 9 km to a point B.\n\nWork out the bearing of H from B.\nGive your answer correct to the nearest degree.\nYou must show all your working.`, marks: 5, command: 'Work out', markScheme: `P1 for angle HAB = 80° (e.g. 240 − 160, or 180 − 60 − (180 − 160))\nP1 for HB² = 12² + 9² − 2 × 12 × 9 × cos 80 oe\nA1 for HB = 13.69… (accept 13.7)\nP1 for sin ABH = 12 × sin 80 ÷ 13.69… oe (angle ABH = 59.66…), and the bearing of A from B = 340°\nA1 280 cao (accept 280.3)\n(Alternative: angle AHB = 40.3…° by sine rule, then bearing 060 + 40.3 + 180 = 280.3…)` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 4.6 */
-  "4.6": {
-    "name": "Vectors",
-    "questions": [
-      {
-        "q": "Write down the column vector that describes a translation of 3 units to the right and 7 units down.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (3, −7) (1)"
-      },
-      {
-        "q": "b = (−2, 5). Write down 4b as a column vector.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (−8, 20) (1)"
-      },
-      {
-        "q": "a = (3, −2) and b = (−4, 1). Work out a − 2b as a column vector.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 2b = (−8, 2) or one correct component of the answer (1)\n• A1: (11, −4) (1)"
-      },
-      {
-        "q": "p = (5, 0) and q = (−1, 3). Work out 2p + 3q as a column vector.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 2p = (10, 0) and 3q = (−3, 9) (1)\n• A1: (7, 9) (1)"
-      },
-      {
-        "q": "C is the point (−4, 1) and D is the point (2, −5). Write down the column vector CD.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: one correct component, 6 or −6 (1)\n• B1: (6, −6) fully correct (1)"
-      },
-      {
-        "q": "Triangle A has vertices (−3, 1), (−1, 1) and (−3, 4). Triangle B has vertices (2, −2), (4, −2) and (2, 1). Describe fully the single transformation that maps triangle A onto triangle B.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: translation (1)\n• B1: by the vector (5, −3) (1)"
-      },
-      {
-        "q": "The point R(−2, 6) is translated by the vector (3, −4).\n(a) Write down the coordinates of the image of R.\n(b) A point S is translated by the same vector and its image is (5, 0). Write down the coordinates of S.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) (1, 2) (1)\n• B1: (b) (2, 4) (1)"
-      },
-      {
-        "q": "(x, −2) − 3(1, y) = (4, 10). Find the values of x and y.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: x − 3 = 4 so x = 7 (1)\n• B1: −2 − 3y = 10 so y = −4 (1)"
-      },
-      {
-        "q": "ABCD is a parallelogram. AB = p and BC = q. Write down, in terms of p and q, (i) vector AC (ii) vector BD.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (i) AC = p + q (1)\n• B1: (ii) BD = q − p (1)"
-      },
-      {
-        "q": "Show that the vector (−6, 9) is parallel to the vector (2, −3).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: (−6, 9) = −3 × (2, −3) (1)\n• C1: states it is a scalar multiple, so the vectors are parallel (pointing in opposite directions) (1)"
-      },
-      {
-        "q": "Simplify fully 4(a − 2b) + 3(2a + b).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: expands to 4a − 8b + 6a + 3b (1)\n• A1: 10a − 5b (1)"
-      },
-      {
-        "q": "p = (−3, 4) and q = (6, −2). Find the vector r such that 3r + p = q.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 3r = q − p (1)\n• M1: 3r = (9, −6) (1)\n• A1: r = (3, −2) (1)"
-      },
-      {
-        "q": "OABC is a trapezium. O is the origin, OA = a, OC = c and CB = 2a, so CB is parallel to OA. Find, in terms of a and c, (i) vector OB (ii) vector AB (iii) vector AC.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (i) OB = c + 2a (1)\n• B1: (ii) AB = −a + c + 2a = a + c (1)\n• B1: (iii) AC = c − a (1)"
-      },
-      {
-        "q": "O is the origin, OA = a and OB = b. P is the point on AB such that AP : PB = 3 : 2. Find vector OP in terms of a and b. Give your answer in its simplest form.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: AB = b − a (1)\n• M1: AP = ⅗(b − a), so OP = a + ⅗(b − a) (1)\n• A1: OP = ⅖a + ⅗b (1)"
-      },
-      {
-        "q": "m(3, 1) + n(−1, 2) = (5, −3). Find the values of m and n.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: forms 3m − n = 5 and m + 2n = −3 (1)\n• M1: correct method to eliminate one unknown, e.g. 7m = 7 (1)\n• A1: m = 1, n = −2 (1)"
-      },
-      {
-        "q": "Point A(3, −2) is translated by the vector v to A′(−1, 4). Point B(−5, 1) is translated by the vector 2v. Find v and the coordinates of the image of B.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: v = (−4, 6) (1)\n• M1: 2v = (−8, 12) (1)\n• A1: image of B is (−13, 13) (1)"
-      },
-      {
-        "q": "ABCDEF is a regular hexagon with centre O. OA = a and OB = b. Find, in terms of a and b, (i) vector AB (ii) vector OC (iii) vector AD.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (i) AB = b − a (1)\n• B1: (ii) OC = b − a, since OABC is a rhombus (1)\n• B1: (iii) AD = −2a, since D is opposite A through O (1)"
-      },
-      {
-        "q": "OAB is a triangle. OA = 2a and OB = 2b. M is the midpoint of OA and N is the midpoint of OB. Prove that MN is parallel to AB and find the ratio MN : AB.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: AB = 2b − 2a (1)\n• M1: OM = a and ON = b, so MN = b − a (1)\n• C1: AB = 2(b − a) = 2MN, a scalar multiple, so MN is parallel to AB (1)\n• A1: MN : AB = 1 : 2 (1)"
-      },
-      {
-        "q": "OABC is a parallelogram. OA = 3a and OC = 3c. D is the point on AB such that AD : DB = 1 : 2. The point E is such that OE = 9a + 3c. Prove that O, D and E lie on a straight line.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: AB = OC = 3c, so AD = c (1)\n• A1: OD = 3a + c (1)\n• M1: OE = 9a + 3c = 3(3a + c) = 3OD (1)\n• C1: OD and OE are parallel and share the point O, so O, D and E are collinear (1)"
-      },
-      {
-        "q": "OAB is a triangle. OA = 6a and OB = 6b. P is the point on AB such that AP : PB = 1 : 2. Q is the point on OB such that OQ : QB = 1 : 2. Prove that PQ is parallel to OA and find the ratio PQ : OA.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: AB = 6b − 6a (1)\n• M1: AP = ⅓(6b − 6a) = 2b − 2a, so OP = 4a + 2b (1)\n• M1: OQ = 2b and PQ = OQ − OP (1)\n• A1: PQ = −4a, a scalar multiple of OA = 6a, so PQ is parallel to OA (1)\n• A1: PQ : OA = 4 : 6 = 2 : 3 (1)"
-      }
+  '4.6': {
+    name: 'Vectors',
+    questions: [
+      { q: `(Non-calculator)\n\n\\(\\mathbf{b} = \\begin{pmatrix}-3 \\\\ 5\\end{pmatrix}\\)\n\nWrite \\(4\\mathbf{b}\\) as a column vector.`, marks: 1, command: 'Write', markScheme: `B1: \\(\\begin{pmatrix}-12 \\\\ 20\\end{pmatrix}\\) cao` },
+      { q: `(Non-calculator)\n\nIn a computer game, a counter is at the point P(2, −1).\nThe counter is moved by the translation \\(\\begin{pmatrix}-5 \\\\ 3\\end{pmatrix}\\)\n\nWrite down the coordinates of the new position of the counter.`, marks: 1, command: 'Write down', markScheme: `B1: (−3, 2) cao` },
+      { q: `(Non-calculator)\n\nA coordinate grid has x and y axes each from −5 to 5\nThe point P(1, 2) is marked on the grid.\n\nOn the grid, draw the vector \\(\\begin{pmatrix}3 \\\\ -2\\end{pmatrix}\\) starting at the point P.`, marks: 1, command: 'Draw', diagram: true, markScheme: `B1: line segment from (1, 2) to (4, 0) with an arrow pointing towards (4, 0)` },
+      { q: `(Non-calculator)\n\n\\(\\mathbf{a} = \\begin{pmatrix}4 \\\\ -1\\end{pmatrix}\\)   \\(\\mathbf{b} = \\begin{pmatrix}-2 \\\\ 3\\end{pmatrix}\\)\n\nWork out \\(2\\mathbf{a} - 3\\mathbf{b}\\) as a column vector.`, marks: 2, command: 'Work out', markScheme: `M1: for \\(\\begin{pmatrix}8 \\\\ -2\\end{pmatrix}\\) or \\(\\begin{pmatrix}-6 \\\\ 9\\end{pmatrix}\\) seen, or one correct component in the answer\nA1: \\(\\begin{pmatrix}14 \\\\ -11\\end{pmatrix}\\) cao` },
+      { q: `(Non-calculator)\n\nOn a coordinate grid, triangle A has vertices (1, 2), (3, 2) and (1, 5).\nTriangle B has vertices (−3, −1), (−1, −1) and (−3, 2).\n\nDescribe fully the single transformation that maps triangle A onto triangle B.`, marks: 2, command: 'Describe', markScheme: `B1: translation\nB1: by \\(\\begin{pmatrix}-4 \\\\ -3\\end{pmatrix}\\)\n(Award no marks for a combination of transformations.)` },
+      { q: `(Non-calculator)\n\n\\(\\begin{pmatrix}x \\\\ 3\\end{pmatrix} + 2\\begin{pmatrix}-1 \\\\ y\\end{pmatrix} = \\begin{pmatrix}5 \\\\ -7\\end{pmatrix}\\)\n\nFind the value of x and the value of y.`, marks: 2, command: 'Find', markScheme: `B1: x = 7 (from x − 2 = 5)\nB1: y = −5 (from 3 + 2y = −7)` },
+      { q: `(Non-calculator)\n\nABCDEF is a regular hexagon with centre O.\nThe vertices are labelled in order anticlockwise.\n\\(\\overrightarrow{OA} = \\mathbf{a}\\) and \\(\\overrightarrow{OB} = \\mathbf{b}\\)\n\n(a) Write down, in terms of a and b, the vector \\(\\overrightarrow{AB}\\) [1]\n(b) Write down, in terms of a, the vector \\(\\overrightarrow{AD}\\) [1]`, marks: 2, command: 'Write down', markScheme: `(a) B1: \\(\\mathbf{b} - \\mathbf{a}\\) oe\n(b) B1: \\(-2\\mathbf{a}\\) oe` },
+      { q: `(Non-calculator)\n\nOAB is a triangle.\n\\(\\overrightarrow{OA} = \\mathbf{a}\\) and \\(\\overrightarrow{OB} = \\mathbf{b}\\)\nM is the midpoint of AB.\n\nFind \\(\\overrightarrow{OM}\\) in terms of a and b. Give your answer in its simplest form.`, marks: 2, command: 'Find', markScheme: `M1: for \\(\\overrightarrow{AB} = \\mathbf{b} - \\mathbf{a}\\) or \\(\\overrightarrow{OM} = \\mathbf{a} + \\frac{1}{2}(\\mathbf{b} - \\mathbf{a})\\) oe\nA1: \\(\\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}\\) or \\(\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})\\)` },
+      { q: `(Non-calculator)\n\n\\(\\mathbf{p} = \\begin{pmatrix}6 \\\\ -9\\end{pmatrix}\\)   \\(\\mathbf{q} = \\begin{pmatrix}-4 \\\\ 6\\end{pmatrix}\\)\n\nShow that p is parallel to q.`, marks: 2, command: 'Show that', markScheme: `M1: for writing p as a multiple of q, e.g. \\(\\mathbf{p} = -\\frac{3}{2}\\mathbf{q}\\), or both as multiples of \\(\\begin{pmatrix}2 \\\\ -3\\end{pmatrix}\\), e.g. \\(\\mathbf{p} = 3\\begin{pmatrix}2 \\\\ -3\\end{pmatrix}\\) and \\(\\mathbf{q} = -2\\begin{pmatrix}2 \\\\ -3\\end{pmatrix}\\)\nC1: conclusion that p is a multiple of q so they are parallel` },
+      { q: `(Non-calculator)\n\nA robot starts at the point (0, 0) on a coordinate grid.\nIt makes three moves.\nMove 1 is \\(\\begin{pmatrix}3 \\\\ 4\\end{pmatrix}\\)   Move 2 is \\(\\begin{pmatrix}-5 \\\\ 2\\end{pmatrix}\\)   Move 3 is \\(2\\begin{pmatrix}1 \\\\ -3\\end{pmatrix}\\)\n\nSam says, "After the three moves the robot is back where it started."\nIs Sam correct? You must show your working.`, marks: 2, command: 'Show', markScheme: `M1: for adding the three vectors with at least two correct, e.g. \\(\\begin{pmatrix}3 - 5 + 2 \\\\ 4 + 2 - 6\\end{pmatrix}\\)\nC1: \\(\\begin{pmatrix}0 \\\\ 0\\end{pmatrix}\\) and Yes, Sam is correct` },
+      { q: `(Non-calculator)\n\n\\(\\begin{pmatrix}k \\\\ 6\\end{pmatrix}\\) is parallel to \\(\\begin{pmatrix}2 \\\\ -3\\end{pmatrix}\\)\n\nFind the value of k.`, marks: 2, command: 'Find', markScheme: `M1: for \\(\\begin{pmatrix}k \\\\ 6\\end{pmatrix} = -2\\begin{pmatrix}2 \\\\ -3\\end{pmatrix}\\) or \\(\\frac{k}{2} = \\frac{6}{-3}\\) oe\nA1: k = −4 cao` },
+      { q: `(Non-calculator)\n\n\\(\\mathbf{a} = \\begin{pmatrix}3 \\\\ -2\\end{pmatrix}\\)   \\(\\mathbf{b} = \\begin{pmatrix}-1 \\\\ 4\\end{pmatrix}\\)\n\\(m\\mathbf{a} + n\\mathbf{b} = \\begin{pmatrix}7 \\\\ 2\\end{pmatrix}\\)\n\nFind the value of m and the value of n.`, marks: 3, command: 'Find', markScheme: `M1: for setting up both equations, 3m − n = 7 and −2m + 4n = 2\nM1: for a correct method to eliminate one variable, e.g. n = 3m − 7 substituted to give 10m − 28 = 2\nA1: m = 3 and n = 2` },
+      { q: `(Non-calculator)\n\nOABC is a trapezium.\n\\(\\overrightarrow{OA} = \\mathbf{a}\\) and \\(\\overrightarrow{OC} = \\mathbf{c}\\)\nCB is parallel to OA and \\(\\overrightarrow{CB} = 2\\mathbf{a}\\)\nM is the midpoint of AB.\n\nFind \\(\\overrightarrow{OM}\\) in terms of a and c. Give your answer in its simplest form.`, marks: 3, command: 'Find', markScheme: `M1: for \\(\\overrightarrow{AB} = -\\mathbf{a} + \\mathbf{c} + 2\\mathbf{a}\\) \\((= \\mathbf{a} + \\mathbf{c})\\) oe\nM1: for \\(\\overrightarrow{OM} = \\mathbf{a} + \\frac{1}{2}\\overrightarrow{AB}\\) or \\(\\mathbf{c} + 2\\mathbf{a} - \\frac{1}{2}\\overrightarrow{AB}\\) oe\nA1: \\(\\frac{3}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{c}\\) oe` },
+      { q: `(Non-calculator)\n\nOAB is a triangle.\n\\(\\overrightarrow{OA} = \\mathbf{a}\\) and \\(\\overrightarrow{OB} = \\mathbf{b}\\)\nP is the point on AB such that AP : PB = 1 : 3\n\nFind \\(\\overrightarrow{OP}\\) in terms of a and b. Give your answer in its simplest form.`, marks: 3, command: 'Find', markScheme: `M1: for \\(\\overrightarrow{AB} = \\mathbf{b} - \\mathbf{a}\\) oe\nM1: for \\(\\overrightarrow{OP} = \\mathbf{a} + \\frac{1}{4}(\\mathbf{b} - \\mathbf{a})\\) or \\(\\mathbf{b} - \\frac{3}{4}(\\mathbf{b} - \\mathbf{a})\\) oe\nA1: \\(\\frac{3}{4}\\mathbf{a} + \\frac{1}{4}\\mathbf{b}\\) oe` },
+      { q: `(Non-calculator)\n\nA is the point (−2, 1), B is the point (1, 3) and C is the point (7, 7).\n\nUse vectors to show that A, B and C lie on a straight line.`, marks: 3, command: 'Show', markScheme: `M1: for \\(\\overrightarrow{AB} = \\begin{pmatrix}3 \\\\ 2\\end{pmatrix}\\) or \\(\\overrightarrow{BC} = \\begin{pmatrix}6 \\\\ 4\\end{pmatrix}\\) or \\(\\overrightarrow{AC} = \\begin{pmatrix}9 \\\\ 6\\end{pmatrix}\\)\nM1: for two of these vectors written as a multiple of each other, e.g. \\(\\overrightarrow{BC} = 2\\overrightarrow{AB}\\)\nC1: conclusion that the vectors are parallel and share the common point B, so A, B and C lie on a straight line` },
+      { q: `(Non-calculator)\n\nABCD is a parallelogram.\nA is the point (2, 3).\n\\(\\overrightarrow{AB} = \\begin{pmatrix}5 \\\\ -2\\end{pmatrix}\\) and \\(\\overrightarrow{BC} = \\begin{pmatrix}-1 \\\\ 6\\end{pmatrix}\\)\n\nFind the coordinates of C and the coordinates of D.`, marks: 3, command: 'Find', markScheme: `B1: C = (6, 7)\nM1: for \\(\\overrightarrow{AD} = \\overrightarrow{BC}\\) used, e.g. (2 − 1, 3 + 6), or \\(\\overrightarrow{CD} = -\\overrightarrow{AB}\\) used from their C\nA1: D = (1, 9)` },
+      { q: `(Non-calculator)\n\nOABC is a parallelogram.\n\\(\\overrightarrow{OA} = \\mathbf{a}\\) and \\(\\overrightarrow{OC} = \\mathbf{c}\\)\nM is the midpoint of OA.\nP is the point on the diagonal OB such that OP : PB = 1 : 2\n\nProve that C, P and M lie on a straight line.`, marks: 4, command: 'Prove', markScheme: `M1: for \\(\\overrightarrow{OB} = \\mathbf{a} + \\mathbf{c}\\) or \\(\\overrightarrow{OP} = \\frac{1}{3}(\\mathbf{a} + \\mathbf{c})\\)\nM1: for \\(\\overrightarrow{CP} = \\frac{1}{3}\\mathbf{a} - \\frac{2}{3}\\mathbf{c}\\) oe, e.g. \\(-\\mathbf{c} + \\frac{1}{3}(\\mathbf{a} + \\mathbf{c})\\)\nM1: for \\(\\overrightarrow{CM} = \\frac{1}{2}\\mathbf{a} - \\mathbf{c}\\) oe (or \\(\\overrightarrow{PM} = \\frac{1}{6}\\mathbf{a} - \\frac{1}{3}\\mathbf{c}\\))\nC1: \\(\\overrightarrow{CM} = \\frac{3}{2}\\overrightarrow{CP}\\) oe, with the conclusion that CM and CP are parallel and share the point C, so C, P and M lie on a straight line` },
+      { q: `(Non-calculator)\n\nOAB is a triangle.\n\\(\\overrightarrow{OA} = \\mathbf{a}\\) and \\(\\overrightarrow{OB} = \\mathbf{b}\\)\nD is the midpoint of AB.\nC is the point such that OBC is a straight line and B is the midpoint of OC.\nE is the point on OA such that \\(\\overrightarrow{OE} = k\\mathbf{a}\\), where k is a number.\nC, D and E lie on a straight line.\n\nFind the value of k.`, marks: 4, command: 'Find', markScheme: `M1: for \\(\\overrightarrow{OD} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}\\) oe\nM1: for \\(\\overrightarrow{CD} = \\frac{1}{2}\\mathbf{a} - \\frac{3}{2}\\mathbf{b}\\) oe and \\(\\overrightarrow{CE} = k\\mathbf{a} - 2\\mathbf{b}\\) oe\nM1: for setting \\(\\overrightarrow{CE}\\) as a multiple of \\(\\overrightarrow{CD}\\), e.g. \\(k\\mathbf{a} - 2\\mathbf{b} = \\lambda(\\frac{1}{2}\\mathbf{a} - \\frac{3}{2}\\mathbf{b})\\) giving \\(\\lambda = \\frac{4}{3}\\)\nA1: \\(k = \\frac{2}{3}\\) oe` },
+      { q: `(Non-calculator)\n\nABCDEF is a regular hexagon.\nThe vertices are labelled in order.\n\\(\\overrightarrow{AB} = \\mathbf{a}\\) and \\(\\overrightarrow{BC} = \\mathbf{b}\\)\n\n(a) Find \\(\\overrightarrow{CD}\\) in terms of a and b. [1]\n(b) Find \\(\\overrightarrow{AD}\\) in terms of b. [1]\nX is the midpoint of CD.\n(c) Find \\(\\overrightarrow{AX}\\) in terms of a and b. Give your answer in its simplest form. [2]`, marks: 4, command: 'Find', markScheme: `(a) B1: \\(\\mathbf{b} - \\mathbf{a}\\) oe\n(b) B1: \\(2\\mathbf{b}\\) oe\n(c) M1: for \\(\\mathbf{a} + \\mathbf{b} + \\frac{1}{2}(\\mathbf{b} - \\mathbf{a})\\) or \\(2\\mathbf{b} - \\frac{1}{2}(\\mathbf{b} - \\mathbf{a})\\) oe (ft their answer from (a))\nA1: \\(\\frac{1}{2}\\mathbf{a} + \\frac{3}{2}\\mathbf{b}\\) oe` },
+      { q: `(Non-calculator)\n\nOAB is a triangle.\n\\(\\overrightarrow{OA} = \\mathbf{a}\\) and \\(\\overrightarrow{OB} = \\mathbf{b}\\)\nP is the point on OA such that OP : PA = 2 : 1\nQ is the midpoint of AB.\nR is the point such that OBR is a straight line and OB : BR = 1 : 1\n\n(a) Prove that P, Q and R lie on a straight line. [4]\n(b) Write down the ratio PQ : QR [1]`, marks: 5, command: 'Prove', markScheme: `(a) M1: for \\(\\overrightarrow{OP} = \\frac{2}{3}\\mathbf{a}\\) and \\(\\overrightarrow{OQ} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}\\) oe\nM1: for \\(\\overrightarrow{PQ} = -\\frac{1}{6}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}\\) oe\nM1: for \\(\\overrightarrow{PR} = -\\frac{2}{3}\\mathbf{a} + 2\\mathbf{b}\\) oe (or \\(\\overrightarrow{QR} = -\\frac{1}{2}\\mathbf{a} + \\frac{3}{2}\\mathbf{b}\\))\nC1: \\(\\overrightarrow{PR} = 4\\overrightarrow{PQ}\\) oe, with the conclusion that the vectors are parallel and share the point P, so P, Q and R lie on a straight line\n(b) B1: 1 : 3 cao` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 5.1 */
-  "5.1": {
-    "name": "Probability",
-    "questions": [
-      {
-        "q": "A fair 10-sided spinner is numbered 1 to 10. Write down the probability that it lands on a multiple of 3.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 3/10 (1)"
-      },
-      {
-        "q": "The probability that a football team draws its next match is 0.27. Write down the probability that the team does not draw its next match.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 0.73 (1)"
-      },
-      {
-        "q": "A biased spinner can land on A, B, C or D. P(A) = 0.15 and P(B) = 0.4. The probability of landing on C is equal to the probability of landing on D. Work out P(D).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (1 − 0.15 − 0.4) ÷ 2, or 0.45 seen (1)\n• A1: 0.225 (1)"
-      },
-      {
-        "q": "The probability that a biased spinner lands on 4 is 0.18. The spinner is spun 350 times. Work out an estimate for the number of times it lands on 4.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 0.18 × 350 (1)\n• A1: 63 (1)"
-      },
-      {
-        "q": "A drawing pin is dropped 80 times and lands point up 52 times.\n(a) Work out the relative frequency of the pin landing point up.\n(b) The pin is dropped another 500 times. Work out an estimate for the number of times it lands point up.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 52/80 = 0.65 (1)\n• B1ft: (b) 0.65 × 500 = 325 (1)"
-      },
-      {
-        "q": "Two fair six-sided dice are rolled and the two scores are multiplied. Work out the probability that the product is 12.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 36 equally likely outcomes with 4 giving 12: (2, 6), (6, 2), (3, 4), (4, 3) (1)\n• A1: 4/36 = 1/9 (1)"
-      },
-      {
-        "q": "A bag contains 6 red, 9 blue and 5 white counters. One counter is taken at random. Work out the probability that it is red or white.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 6 + 5 = 11 out of 20 (1)\n• A1: 11/20 (1)"
-      },
-      {
-        "q": "Spinner X has the letters A, B and C. Spinner Y has the numbers 1 and 2. Both spinners are spun. List all the possible outcomes.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: at least 4 correct outcomes with none wrong (1)\n• B1: all 6: A1, A2, B1, B2, C1, C2 (1)"
-      },
-      {
-        "q": "The probability that Ana passes her driving test is 0.85. The probability that Ben passes his driving test is 0.7. The two events are independent. Work out the probability that both of them fail.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 0.15 × 0.3 (1)\n• A1: 0.045 (1)"
-      },
-      {
-        "q": "ξ = {1, 2, 3, …, 15}. A = {prime numbers}. B = {multiples of 3}.\n(a) List the members of A ∩ B.\n(b) A number is chosen at random from ξ. Work out P(A ∪ B).",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) {3} (1)\n• B1: (b) A ∪ B = {2, 3, 5, 6, 7, 9, 11, 12, 13, 15}, so 10/15 = 2/3 (1)"
-      },
-      {
-        "q": "Jo spins a spinner 20 times and it lands on red 8 times. Kim spins the same spinner 200 times and it lands on red 62 times.\n(a) Whose results give the better estimate of the probability of red? Give a reason.\n(b) Use Kim's results to estimate the probability that the spinner lands on red.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• C1: (a) Kim, because she spun the spinner more times (1)\n• B1: (b) 62/200 = 0.31 (1)"
-      },
-      {
-        "q": "90 students each chose French or Spanish. 40 of the students are boys. 22 of the boys chose French. 30 of the girls chose Spanish.\n(a) How many students chose French?\n(b) A student who chose French is picked at random. Work out the probability that this student is a boy.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: girls = 50, so girls choosing French = 50 − 30 = 20 (1)\n• A1: (a) 22 + 20 = 42 (1)\n• A1: (b) 22/42 = 11/21 (1)"
-      },
-      {
-        "q": "A bag contains 2 red and 8 green balls. A ball is taken at random and replaced. A second ball is then taken at random. Work out the probability that the two balls are different colours.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 0.2 × 0.8 or 0.8 × 0.2 (1)\n• M1: 0.16 + 0.16 (1)\n• A1: 0.32 (1)"
-      },
-      {
-        "q": "A bag contains 5 lemon and 7 orange sweets. Max takes two sweets at random without replacement. Work out the probability that both sweets are orange.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 7/12 for the first sweet (1)\n• M1: 7/12 × 6/11 (1)\n• A1: 42/132 = 7/22 (1)"
-      },
-      {
-        "q": "In a group of 60 people, 34 have been to France, 21 have been to Spain and 13 have been to neither. One person who has been to France is chosen at random. Work out the probability that this person has also been to Spain.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: 60 − 13 = 47 have been to at least one country (1)\n• M1: 34 + 21 − 47 = 8 have been to both (1)\n• A1: 8/34 = 4/17 (1)"
-      },
-      {
-        "q": "P(A) = 0.5, P(B) = 0.35 and P(A ∪ B) = 0.7. Work out P(A | B).",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: P(A ∩ B) = 0.5 + 0.35 − 0.7 (1)\n• A1: P(A ∩ B) = 0.15 (1)\n• A1: P(A | B) = 0.15 ÷ 0.35 = 3/7 (1)"
-      },
-      {
-        "q": "At a fair, a game costs 50p to play. Two fair dice are rolled and a player who rolls a double wins £2.50. The game is played 180 times. Work out the expected profit for the stall holder.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: P(double) = 6/36 = 1/6, so expected wins = 180 ÷ 6 = 30 (1)\n• M1: takings 180 × £0.50 = £90 and payouts 30 × £2.50 = £75 (1)\n• A1: £15 (1)"
-      },
-      {
-        "q": "The probability that Kim's alarm goes off is 0.9. If her alarm goes off, the probability that she is on time is 0.95. If her alarm does not go off, the probability that she is on time is 0.4.\n(a) Work out the probability that Kim is on time.\n(b) Given that Kim is late, work out the probability that her alarm did not go off.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: (a) 0.9 × 0.95 + 0.1 × 0.4 (1)\n• A1: (a) 0.895 (1)\n• M1: (b) 0.1 × 0.6 = 0.06 and P(late) = 0.105 (1)\n• A1: (b) 0.06 ÷ 0.105 = 4/7 (1)"
-      },
-      {
-        "q": "The probability that an archer hits the target is 0.6. She takes three shots and each shot is independent.\n(a) Work out the probability that she misses with all three shots.\n(b) Work out the probability that she hits the target with exactly one shot.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: (a) 0.4 × 0.4 × 0.4 (1)\n• A1: (a) 0.064 (1)\n• M1: (b) 0.6 × 0.4 × 0.4 = 0.096 for one order, and 3 orders (1)\n• A1: (b) 3 × 0.096 = 0.288 (1)"
-      },
-      {
-        "q": "A bag contains n counters. 5 of the counters are blue and the rest are red. Two counters are taken at random without replacement. The probability that both counters are blue is 5/33. Show that n² − n − 132 = 0 and hence find the number of counters in the bag.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: 5/n × 4/(n − 1) (1)\n• M1: 20/(n(n − 1)) = 5/33, so 5n(n − 1) = 660 (1)\n• A1: n² − n − 132 = 0 shown convincingly (1)\n• M1: (n − 12)(n + 11) = 0 (1)\n• A1: n = 12 (reject n = −11) (1)"
-      }
+  '5.1': {
+    name: 'Probability',
+    questions: [
+      { q: `(Non-calculator)\nMaya has a fair 10-sided dice. The sides of the dice are numbered from 1 to 10\nMaya rolls the dice once.\n\nWrite down the probability that she gets a prime number.`, marks: 1, command: 'Write down', markScheme: `B1 \\(\\frac{4}{10}\\) oe (e.g. \\(\\frac{2}{5}\\), 0.4)` },
+      { q: `(Non-calculator)\nA coin is biased.\nWhen the coin is thrown once, the probability that it lands on heads is 0.38\n\nWrite down the probability that the coin lands on tails.`, marks: 1, command: 'Write down', markScheme: `B1 0.62 oe` },
+      { q: `(Non-calculator)\nξ = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}\nA = {multiples of 3}\nB = {factors of 12}\n\nList the members of the set A ∩ B`, marks: 1, command: 'List', markScheme: `B1 3, 6, 12 (and no others)` },
+      { q: `(Calculator allowed)\nA spinner can land on red, blue, green or yellow.\nThe table shows the probability that the spinner lands on red and on blue.\n\nColour:        red    blue    green    yellow\nProbability:   0.15   0.4\n\nThe probability that the spinner lands on green is the same as the probability that it lands on yellow.\n\nWork out the probability that the spinner lands on yellow.`, marks: 2, command: 'Work out', markScheme: `M1 1 − (0.15 + 0.4) (= 0.45) or 1 − 0.15 − 0.4 then ÷ 2 implied\nA1 0.225 oe` },
+      { q: `(Calculator allowed)\nThe probability that a biased dice lands on 6 is 0.15\nJoel is going to roll the dice 300 times.\n\nWork out an estimate for the number of times the dice will land on 6`, marks: 2, command: 'Work out', markScheme: `M1 0.15 × 300\nA1 45 cao` },
+      { q: `(Non-calculator)\nKim and Ravi each drop a drawing pin a number of times. They record whether it lands point up.\n\nKim drops the pin 80 times and it lands point up 28 times.\nRavi drops the pin 120 times and it lands point up 48 times.\n\nUse all of these results to work out the best estimate for the probability that the pin lands point up.`, marks: 2, command: 'Work out', markScheme: `M1 (28 + 48) ÷ (80 + 120) oe, e.g. \\(\\frac{76}{200}\\)\nA1 \\(\\frac{19}{50}\\) oe (e.g. 0.38)` },
+      { q: `(Non-calculator)\nSpinner A is a fair 3-sided spinner numbered 1, 2 and 3\nSpinner B is a fair 4-sided spinner numbered 1, 2, 3 and 4\nGrace spins both spinners and adds the two numbers to get her score.\n\nWork out the probability that her score is 5`, marks: 2, command: 'Work out', markScheme: `M1 a complete sample space of 12 outcomes, or 3 correct favourable outcomes (1, 4), (2, 3), (3, 2) identified\nA1 \\(\\frac{3}{12}\\) oe (e.g. \\(\\frac{1}{4}\\))` },
+      { q: `(Non-calculator)\nThe two-way table shows how 150 students travel to school. (data written for this practice question)\n\n             Walk   Bus   Car   Total\nYear 10       34     21    15     70\nYear 11       26     30    24     80\nTotal         60     51    39    150\n\nOne of the students who travels by bus is chosen at random.\n\nWork out the probability that this student is in Year 11`, marks: 2, command: 'Work out', markScheme: `M1 denominator 51 used, e.g. \\(\\frac{a}{51}\\) where a < 51\nA1 \\(\\frac{30}{51}\\) oe (e.g. \\(\\frac{10}{17}\\))` },
+      { q: `(Calculator allowed)\nLeila is going to take a theory test and a practical test.\nThe probability that she passes the theory test is 0.7\nThe probability that she passes the practical test is 0.6\nThe two events are independent.\n\nWork out the probability that Leila passes exactly one of the two tests.`, marks: 2, command: 'Work out', markScheme: `M1 0.7 × 0.4 (= 0.28) or 0.3 × 0.6 (= 0.18)\nA1 0.46 oe` },
+      { q: `(Non-calculator)\nThere are 50 students in a club.\n23 of the students study French.\n18 of the students study Spanish.\n7 of the students study both French and Spanish.\n\nOne of the 50 students is chosen at random.\nWork out the probability that this student studies neither French nor Spanish.`, marks: 2, command: 'Work out', markScheme: `M1 50 − (23 + 18 − 7) (= 16) or a Venn diagram with 16, 7, 11 in the correct regions\nA1 \\(\\frac{16}{50}\\) oe (e.g. \\(\\frac{8}{25}\\))` },
+      { q: `(Non-calculator)\nA Venn diagram shows two sets, A and B, inside the universal set ξ.\nThe numbers in the Venn diagram show the number of elements in each region:\nin A but not in B: 12\nin A ∩ B: 8\nin B but not in A: 15\nnot in A or B: 5\n\nAn element of ξ is chosen at random.\nGiven that the element is in B, find the probability that it is also in A.`, marks: 2, command: 'Find', markScheme: `M1 denominator 8 + 15 (= 23) used, e.g. \\(\\frac{a}{23}\\)\nA1 \\(\\frac{8}{23}\\) oe` },
+      { q: `(Non-calculator)\n80 people went to a cinema.\n45 of the people were adults. The rest were children.\n\\(\\frac{3}{5}\\) of the adults bought popcorn.\n21 of the children bought popcorn.\n\nOne of the people who bought popcorn is chosen at random.\nWork out the probability that this person is a child.\nYou may use a frequency tree to help you.`, marks: 3, command: 'Work out', markScheme: `M1 \\(\\frac{3}{5}\\) × 45 (= 27)\nM1 21 ÷ (their 27 + 21) oe\nA1 \\(\\frac{21}{48}\\) oe (e.g. \\(\\frac{7}{16}\\))` },
+      { q: `(Non-calculator)\nThere are 5 red counters and 3 blue counters in a bag.\nArjun takes at random a counter from the bag. He does not put the counter back in the bag.\nArjun then takes at random a second counter from the bag.\n\nWork out the probability that the two counters are the same colour.`, marks: 3, command: 'Work out', markScheme: `M1 \\(\\frac{5}{8} \\times \\frac{4}{7}\\) (= \\(\\frac{20}{56}\\)) or \\(\\frac{3}{8} \\times \\frac{2}{7}\\) (= \\(\\frac{6}{56}\\))\nM1 \\(\\frac{5}{8} \\times \\frac{4}{7} + \\frac{3}{8} \\times \\frac{2}{7}\\)\nA1 \\(\\frac{26}{56}\\) oe (e.g. \\(\\frac{13}{28}\\))` },
+      { q: `(Calculator allowed)\nAt a school fair, it costs 50p to spin a spinner once.\nThe probability that a person wins £2 on one spin is 0.15\nOtherwise the person wins nothing.\n\n200 people each spin the spinner once.\nWork out an estimate for the profit the school makes.`, marks: 3, command: 'Work out', markScheme: `P1 200 × 0.50 (= £100) income, or 0.15 × 200 (= 30) winners\nP1 their 30 × 2 (= £60) paid out\nA1 £40 cao` },
+      { q: `(Non-calculator)\nA biased spinner can land on red, blue or green.\nThe probability that it lands on red is 2x\nThe probability that it lands on blue is 3x\nThe probability that it lands on green is x + 0.1\n\nWork out the probability that the spinner lands on blue.`, marks: 3, command: 'Work out', markScheme: `M1 2x + 3x + x + 0.1 = 1 oe\nM1 x = 0.15\nA1 0.45 oe` },
+      { q: `(Calculator allowed)\nThe probability that a light bulb made in a factory is faulty is 0.04\nTom buys three of these light bulbs. Whether each bulb is faulty is independent of the others.\n\nWork out the probability that at least one of Tom's three bulbs is faulty.`, marks: 3, command: 'Work out', markScheme: `M1 0.96 used, e.g. 0.96 × 0.96 × 0.96 (= 0.884736)\nM1 1 − 0.96³ oe\nA1 0.115264 (accept 0.115 or 0.12 if working seen)` },
+      { q: `(Calculator allowed)\nThe probability that it rains on Saturday is 0.3\nIf it rains on Saturday, the probability that it rains on Sunday is 0.6\nIf it does not rain on Saturday, the probability that it rains on Sunday is 0.2\n\nGiven that it rains on Sunday, work out the probability that it rained on Saturday.`, marks: 4, command: 'Work out', markScheme: `M1 0.3 × 0.6 (= 0.18)\nM1 0.7 × 0.2 (= 0.14)\nM1 their 0.18 ÷ (their 0.18 + their 0.14) (= 0.32)\nA1 \\(\\frac{9}{16}\\) oe (e.g. 0.5625)` },
+      { q: `(Non-calculator)\n100 people were asked if they like coffee and if they like tea.\n70 people like coffee.\n55 people like tea.\nThe number of people who like neither coffee nor tea is half the number of people who like both.\n\nOne of the people who like tea is chosen at random.\nWork out the probability that this person also likes coffee.`, marks: 4, command: 'Work out', markScheme: `P1 x for both, with (70 − x) + (55 − x) + x + \\(\\frac{x}{2}\\) = 100 oe\nP1 x = 50 (Venn diagram with 20, 50, 5, 25)\nP1 their 50 ÷ 55\nA1 \\(\\frac{50}{55}\\) oe (e.g. \\(\\frac{10}{11}\\))` },
+      { q: `(Non-calculator)\nSam rolls two fair ordinary dice and adds the two scores together.\nShe wins the game if the total is a prime number.\n\nSam plays the game 360 times.\nWork out an estimate for the number of times she wins.`, marks: 4, command: 'Work out', markScheme: `M1 a complete sample space of 36 totals, or listing of outcomes\nM1 15 prime totals identified (2: 1, 3: 2, 5: 4, 7: 6, 11: 2)\nM1 \\(\\frac{15}{36}\\) × 360 oe\nA1 150 cao` },
+      { q: `(Non-calculator)\nThere are n sweets in a bag.\n6 of the sweets are orange. The rest of the sweets are yellow.\nHannah takes at random a sweet from the bag. She eats the sweet.\nHannah then takes at random another sweet from the bag. She eats the sweet.\nThe probability that Hannah eats two orange sweets is \\(\\frac{1}{3}\\)\n\n(a) Show that n² − n − 90 = 0 [3]\n(b) Solve n² − n − 90 = 0 to find the number of yellow sweets in the bag. [2]`, marks: 5, command: 'Show that', markScheme: `(a)\nM1 \\(\\frac{6}{n}\\) or \\(\\frac{5}{n-1}\\) seen\nM1 \\(\\frac{6}{n} \\times \\frac{5}{n-1} = \\frac{1}{3}\\) oe\nA1 (from 90 = n(n − 1)) n² − n − 90 = 0 with all steps shown\n(b)\nM1 (n − 10)(n + 9) = 0 or n = 10\nA1 4 yellow sweets cao` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 6.1 */
-  "6.1": {
-    "name": "Sampling, Charts & Scatter Graphs",
-    "questions": [
-      {
-        "q": "A scatter graph shows that as the outside temperature increases, the number of bowls of soup sold by a café decreases. Write down the type of correlation shown.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: negative (correlation) (1)"
-      },
-      {
-        "q": "Explain what is meant by a biased sample.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: a sample that does not fairly represent the population, e.g. some groups are over- or under-represented (1)"
-      },
-      {
-        "q": "60 people were asked to name their favourite fruit. 22 people chose apples. Work out the angle of the sector for apples in a pie chart.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 360 ÷ 60 = 6° per person, or 22/60 × 360 (1)\n• A1: 132° (1)"
-      },
-      {
-        "q": "A pie chart shows the favourite holiday destinations of 160 people. The sector for \"Spain\" has an angle of 63°. Work out how many people chose Spain.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 63/360 × 160 (1)\n• A1: 28 (1)"
-      },
-      {
-        "q": "In a pictogram, one symbol represents 4 cakes. On Tuesday a bakery sold 18 cakes. How many symbols should be drawn for Tuesday? Describe how the last symbol should be drawn.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 18 ÷ 4 = 4.5 (1)\n• A1: 4½ symbols — four whole symbols and half a symbol (1)"
-      },
-      {
-        "q": "Leah wants to find out what people in her town think about plans for a new swimming pool. She asks 20 people at the existing leisure centre on a Saturday morning. Give two criticisms of her sample.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: people at a leisure centre are likely to be keen on sport/swimming, so the sample is biased (1)\n• B1: sample is too small / only one place or one time, so not representative of the town (1)"
-      },
-      {
-        "q": "A company has 1200 employees. Describe how the company could select a random sample of 50 employees.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: list all 1200 employees and give each a number from 1 to 1200 (1)\n• B1: use a random number generator (or draw numbers from a hat) to choose 50 different numbers, ignoring repeats (1)"
-      },
-      {
-        "q": "Data for a number of towns shows positive correlation between the number of cafés in a town and the number of road accidents. Mo says, \"Cafés cause road accidents.\" Explain why Mo may be wrong.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: correlation does not show causation (1)\n• B1: a third factor, e.g. towns with larger populations have more cafés and more traffic (1)"
-      },
-      {
-        "q": "In a pie chart, a sector of 40° represents 14 people. Work out the total number of people represented by the pie chart.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 14 ÷ 40 = 0.35 people per degree, or 360 ÷ 40 = 9 (1)\n• A1: 126 (1)"
-      },
-      {
-        "q": "A family's gas bill (£) each quarter was: 2024: Q1 310, Q2 180, Q3 120, Q4 260; 2025: Q1 290, Q2 165, Q3 110, Q4 245. Describe (a) the seasonal pattern and (b) the trend.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) highest in Q1 (winter) and lowest in Q3 (summer) each year (1)\n• B1: (b) decreasing trend — each quarter of 2025 is lower than the same quarter of 2024 (1)"
-      },
-      {
-        "q": "A bar chart shows the sales of two phone brands, A and B. The vertical axis starts at 900 and goes up to 1000. The bar for A reaches 980 and the bar for B reaches 920, so A's bar looks four times as tall as B's. Explain why the bar chart is misleading.",
-        "marks": 2,
-        "requiresDiagram": true,
-        "higher": false,
-        "markScheme": "• B1: the vertical axis does not start at 0 (1)\n• B1: A's sales are only about 6.5% more than B's (980 vs 920), not four times as many (1)"
-      },
-      {
-        "q": "72 people were asked how they travel to work: 26 walk, 30 take the bus and 16 drive. Work out the angle of each sector for a pie chart.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 360 ÷ 72 = 5° per person (1)\n• A1: two angles correct from walk 130°, bus 150°, drive 80° (1)\n• A1: all three correct (1)"
-      },
-      {
-        "q": "A factory makes 6000 bolts a day. A random sample of 80 bolts contains 3 that are faulty.\n(a) Estimate the number of faulty bolts made in a day.\n(b) State one assumption you have made.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 3/80 × 6000 (1)\n• A1: 225 (1)\n• B1: the sample is representative of all the bolts made that day (1)"
-      },
-      {
-        "q": "For plants grown with between 2 and 12 hours of light per day, a line of best fit is H = 3.5L + 6, where H is the height in cm and L is the hours of light.\n(a) Estimate the height of a plant given 8 hours of light per day.\n(b) Explain why the line should not be used to estimate the height of a plant given 20 hours of light per day.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 3.5 × 8 + 6 (1)\n• A1: 34 cm (1)\n• B1: 20 hours is outside the range of the data (extrapolation), so the trend may not continue (1)"
-      },
-      {
-        "q": "A pie chart shows the favourite sport of 96 students. The angles are: rugby 135°, hockey 105°, netball 75°, other 45°.\n(a) How many students chose rugby?\n(b) How many more students chose hockey than netball?",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 135/360 × 96 (1)\n• A1: 36 (1)\n• B1: 8 (1)"
-      },
-      {
-        "q": "Year 10 has 180 pupils and Year 11 has 240 pupils. In a pie chart for Year 10, the sector for \"walk\" is 100°. In a pie chart for Year 11, the sector for \"walk\" is 81°. Jo says, \"More Year 10 pupils walk because their sector is bigger.\" Is Jo correct? Show your working.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 100/360 × 180 or 81/360 × 240 (1)\n• A1: Year 10 = 50 and Year 11 = 54 (1)\n• C1: No — more Year 11 pupils walk (54 > 50) (1)"
-      },
-      {
-        "q": "Choose a suitable type of diagram for each data set and give a reason.\n(a) The proportion of 40 people choosing each pizza topping.\n(b) The number of siblings of each of 30 pupils.\n(c) The height and mass of each of 20 dogs.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) pie chart — shows proportions of a whole (1)\n• B1: (b) vertical line chart (or bar chart) — ungrouped discrete data (1)\n• B1: (c) scatter graph — two variables for each dog / bivariate data (1)"
-      },
-      {
-        "q": "The hours of revision (x) and test mark (y) for 9 students are: (1, 32), (2, 40), (3, 45), (3, 85), (4, 52), (5, 58), (6, 61), (7, 70), (8, 74).\n(a) Describe the correlation.\n(b) Write down the coordinates of the outlier.\n(c) By drawing a line of best fit, estimate the mark of a student who revised for 4.5 hours.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) positive correlation (1)\n• B1: (b) (3, 85) (1)\n• M1: (c) line of best fit drawn ignoring the outlier, and reading at x = 4.5 (1)\n• A1: answer in range 50 to 58 (1)"
-      },
-      {
-        "q": "A random sample of 60 people from a town of 18 000 were asked how they travel to work: car 27, bus 15, train 8, bike 10.\n(a) Estimate how many people in the town travel to work by bus.\n(b) Work out the angle for \"car\" in a pie chart of the sample.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 15/60 × 18 000 (1)\n• A1: 4500 (1)\n• M1: 360 ÷ 60 = 6 or 27/60 × 360 (1)\n• A1: 162° (1)"
-      },
-      {
-        "q": "The age (years) and price (£) of seven used bikes of the same model are: (1, 420), (2, 360), (3, 330), (4, 270), (5, 240), (6, 180), (7, 150). A line of best fit passes through (2, 365) and (6, 185).\n(a) Describe the relationship between age and price.\n(b) Find the equation of the line of best fit in the form P = ma + c.\n(c) Interpret the gradient.\n(d) Use your equation to estimate the price of a 12-year-old bike, and comment on your answer.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) negative correlation — older bikes tend to cost less (1)\n• M1: (b) gradient = (185 − 365) ÷ (6 − 2) = −45 (1)\n• A1: P = −45a + 455 (1)\n• B1: (c) price falls by about £45 for each extra year of age (1)\n• B1: (d) −45 × 12 + 455 = −85, impossible, because 12 years is outside the data range (extrapolation) (1)"
-      }
+  '6.1': {
+    name: 'Sampling, Charts & Scatter Graphs',
+    questions: [
+      { q: `(Non-calculator)\nThe table shows the number of hours of sunshine and the number of umbrellas sold by a shop on each of 8 days.\n(data written for this practice question)\n\nHours of sunshine:   1    2    3    5    6    8    9    10\nUmbrellas sold:      42   38   35   27   25   16   14   9\n\nWrite down the type of correlation between the number of hours of sunshine and the number of umbrellas sold.`, marks: 1, command: 'Write down', markScheme: `B1 negative (correlation)` },
+      { q: `(Non-calculator)\nElla wants to find out how often people in her town use the local leisure centre.\nShe asks 50 people as they leave the leisure centre on a Saturday morning.\n\nGive one reason why this may not be a good sample to use.`, marks: 1, command: 'Give', markScheme: `C1 for a valid reason, e.g.\npeople leaving the leisure centre are more likely to use it often (biased)\nor she only asks people at one time / on one day of the week\nor people who do not use the leisure centre have no chance of being asked` },
+      { q: `(Calculator allowed)\nEight students, A to H, each took a Maths test and a Science test.\nThe table shows their marks.\n(data written for this practice question)\n\nStudent:   A    B    C    D    E    F    G    H\nMaths:     32   45   51   58   63   70   74   80\nScience:   30   41   49   55   22   68   73   78\n\nOne of the students was ill on the day of the Science test.\n\nWrite down the letter of the student who is most likely to have been ill.`, marks: 1, command: 'Write down', markScheme: `B1 E (the outlier, Maths 63 and Science 22)` },
+      { q: `(Non-calculator)\n120 people were asked to name their favourite type of food.\n35 of the people said Thai food.\n\nJenny is going to draw a pie chart to show this information.\n\nWork out the angle of the sector for Thai food.`, marks: 2, command: 'Work out', markScheme: `M1 \\(\\frac{35}{120} \\times 360\\) oe, e.g. 360 ÷ 120 (= 3) then × 35\nA1 105(°) cao` },
+      { q: `(Non-calculator)\nSome students chose one language to study.\nThe pie chart shows information about their choices.\nThe sector for Spanish has an angle of 80° and represents 24 students.\nThe sector for French has an angle of 130°.\n\nWork out the number of students who chose French.`, marks: 2, command: 'Work out', markScheme: `M1 24 ÷ 80 (= 0.3) and × 130, or 130 ÷ 80 × 24 oe\nA1 39 cao` },
+      { q: `(Calculator allowed)\nThere are 960 students at a school.\nMr Lee takes a random sample of 40 of these students.\n14 of the students in the sample walk to school.\n\nWork out an estimate for the number of students at the school who walk to school.`, marks: 2, command: 'Work out', markScheme: `M1 \\(\\frac{14}{40} \\times 960\\) oe, e.g. 960 ÷ 40 (= 24) × 14\nA1 336 cao` },
+      { q: `(Non-calculator)\nA manager draws a bar chart to show the sales of three shops last year.\nOn the bar chart\n• the vertical axis has no label\n• the numbers on the vertical axis are 200, 210, 230 and 260, equally spaced, starting from 200 at the bottom\n• the bar for Shop A is twice as wide as the bars for Shop B and Shop C\n\nWrite down two things that are wrong with the bar chart.`, marks: 2, command: 'Write down', markScheme: `C1 for one correct criticism, e.g. no label (or units) on the vertical axis\nC1 for a second different correct criticism, e.g. the scale is not consistent / not equal steps, or the vertical axis does not start at 0, or the bars are not all the same width` },
+      { q: `(Non-calculator)\nThe table shows information about the favourite fruit of some students.\n(data written for this practice question)\n\nFruit:       Apple   Banana   Orange   Grapes   Pear\nFrequency:   7       11       4        9        3\n\nOn a grid, draw a suitable diagram to show this information.`, marks: 2, command: 'Draw', diagram: true, markScheme: `B2 for a fully correct bar chart (or vertical line graph) with heights 7, 11, 4, 9, 3, bars labelled with the fruit and a linear frequency scale\n(B1 for at least 3 bars of correct height, or all correct heights with no labels or a non-linear scale)` },
+      { q: `(Non-calculator)\nA dual bar chart shows the number of books borrowed from a library by adults and by children on four days.\n(data written for this practice question)\n\nDay:        Monday   Tuesday   Wednesday   Thursday\nAdults:     18       15        22          10\nChildren:   12       20        14          24\n\n(a) On which day was the difference between the number of books borrowed by children and by adults the greatest? [1]\n(b) What fraction of all the books borrowed on Wednesday were borrowed by children? [1]`, marks: 2, command: 'Write down', markScheme: `(a) B1 Thursday\n(b) B1 \\(\\frac{14}{36}\\) oe, e.g. \\(\\frac{7}{18}\\)` },
+      { q: `(Calculator allowed)\nA scatter graph shows information about the age, in years, and the value, in pounds, of 12 cars of the same model.\nA line of best fit has been drawn on the scatter graph.\nThe line of best fit passes through the points (1, 9000) and (7, 3000), where the first coordinate is the age in years and the second is the value in pounds.\n\nUse the line of best fit to estimate the value of a car of this model that is \\(4\\frac{1}{2}\\) years old.`, marks: 2, command: 'Use', markScheme: `M1 for a correct method, e.g. gradient (3000 − 9000) ÷ (7 − 1) = −1000 per year, or 9000 − 3.5 × 1000\nA1 5500 cao (£)` },
+      { q: `(Non-calculator)\nThere are 600 members of a gym.\nKai wants to take a random sample of 30 of these members.\n\nDescribe a method Kai could use to take his random sample.`, marks: 2, command: 'Describe', markScheme: `B1 for giving each member a different number (e.g. 1 to 600) or putting all the names in a list\nB1 for using a random number generator (or drawing numbers out of a hat) to select 30 different members, ignoring repeats` },
+      { q: `(Non-calculator)\nThe table shows how 60 people travelled to a concert.\n(data written for this practice question)\n\nMethod:      Car   Bus   Walk   Cycle\nFrequency:   18    25    12     5\n\nDraw an accurate pie chart to show this information.`, marks: 3, command: 'Draw', diagram: true, markScheme: `M1 for 360 ÷ 60 (= 6) or at least one correct angle\nA1 for all correct angles: Car 108°, Bus 150°, Walk 72°, Cycle 30°\nA1 for a fully correct pie chart, sectors labelled, angles accurate to ±2°` },
+      { q: `(Non-calculator)\nHere are the ages, in years, of 15 people at a party.\n(data written for this practice question)\n\n23   41   35   28   19   37   42   30   26   35   48   31   22   17   39\n\nShow this information in an ordered stem and leaf diagram.`, marks: 3, command: 'Show', diagram: true, markScheme: `B3 for a fully correct ordered diagram with a key:\n1 | 7 9\n2 | 2 3 6 8\n3 | 0 1 5 5 7 9\n4 | 1 2 8\nKey: 1 | 7 means 17 years\n(B2 for a correct unordered diagram, or an ordered diagram with one error, with or without a key)\n(B1 for a key, or a diagram with no more than two errors)` },
+      { q: `(Calculator allowed)\nHamid wants to estimate the number of rabbits in a field.\nOn Monday he catches 36 of the rabbits. He puts a mark on each rabbit and then lets them go.\nOn Tuesday he catches 45 of the rabbits. 5 of these rabbits have a mark on them.\n\nWork out an estimate for the total number of rabbits in the field.`, marks: 3, command: 'Work out', markScheme: `P1 for starting the process, e.g. \\(\\frac{5}{45}\\) or \\(\\frac{36}{N}\\), or 45 ÷ 5 (= 9)\nP1 for a complete process, e.g. \\(\\frac{36}{N} = \\frac{5}{45}\\), or 36 × 45 ÷ 5, or 36 × 9\nA1 324 cao` },
+      { q: `(Non-calculator)\nThe stem and leaf diagram shows the times, in minutes, taken by 20 runners to complete a race.\n(data written for this practice question)\n\n1 | 6 8 9\n2 | 0 3 3 5 7 8\n3 | 1 2 4 4 6 9\n4 | 0 2 5 7 8\nKey: 2 | 3 means 23 minutes\n\n(a) Work out the range of the times. [1]\nOne of the runners is chosen at random.\n(b) Work out the probability that this runner took more than 35 minutes. [2]`, marks: 3, command: 'Work out', markScheme: `(a) B1 32 (minutes) cao (48 − 16)\n(b) M1 for identifying 7 runners (36, 39, 40, 42, 45, 47, 48) or \\(\\frac{a}{20}\\) with a < 20\nA1 \\(\\frac{7}{20}\\) oe, e.g. 0.35` },
+      { q: `(Calculator allowed)\nHere are the numbers of goals scored by a football team in each of 25 matches.\n(data written for this practice question)\n\n2  0  1  3  1  2  0  1  4  2  1  3  1  0  2  3  1  2  1  4  3  0  1  2  3\n\n(a) Complete a frequency table for the numbers of goals 0, 1, 2, 3 and 4 [1]\n(b) Work out the percentage of these matches in which the team scored more than 2 goals. [2]`, marks: 3, command: 'Work out', markScheme: `(a) B1 frequencies 0: 4, 1: 8, 2: 6, 3: 5, 4: 2\n(b) M1 \\(\\frac{5 + 2}{25} \\times 100\\) oe (ft their frequency table)\nA1 28(%) cao` },
+      { q: `(Calculator allowed)\nThe table shows the midday temperature, in °C, and the number of ice creams sold by a café on each of 10 days.\n(data written for this practice question)\n\nTemperature (°C):   14   16   17   19   20   22   23   25   26   28\nIce creams sold:    38   45   44   55   52   63   61   70   74   80\n\n(a) On a scatter graph, plot the points from the table and draw a line of best fit. [2]\n(b) Use your line of best fit to estimate the number of ice creams sold on a day when the midday temperature is 21 °C. [1]\nThe weather forecast for one day says the midday temperature will be 38 °C.\n(c) Explain why it may not be reliable to use your line of best fit to estimate the number of ice creams sold on that day. [1]`, marks: 4, command: 'Draw', diagram: true, markScheme: `(a) B1 for all 10 points plotted correctly (±½ square)\nB1 for a single straight line of best fit within the points, e.g. through about (14, 37) and (28, 79)\n(b) B1 for an answer in the range 54 to 62 (or ft their line of best fit)\n(c) C1 for a correct explanation, e.g. 38 °C is outside the range of the data (extrapolation), so the trend may not continue` },
+      { q: `(Calculator allowed)\nSanjay asked people at two companies how they travel to work.\nThe pie chart for Company P shows information about 240 people. The angles of the sectors are\nCar 135°   Bus 75°   Train 60°   Walk 90°\n\nThe table shows information about 180 people at Company Q.\n(data written for this practice question)\n\nMethod:      Car   Bus   Train   Walk\nFrequency:   70    40    35      35\n\nSanjay says, "More people travel by car at Company P than at Company Q, so the proportion of people who travel by car is greater at Company P."\n\nIs Sanjay correct?\nYou must show how you get your answer.`, marks: 4, command: 'Show', markScheme: `M1 for \\(\\frac{135}{360} \\times 240\\) (= 90) or \\(\\frac{135}{360}\\) (= 0.375 or 37.5%)\nM1 for \\(\\frac{70}{180}\\) (= 0.388… or 38.8…%) or \\(\\frac{70}{180} \\times 360\\) (= 140°)\nA1 for two comparable values, e.g. 0.375 and 0.388…, or 37.5% and 38.9%, or 135° and 140°\nC1 No, with correct comparable values: 90 > 70 but the proportion at Company Q is greater` },
+      { q: `(Non-calculator)\nThe table shows the number of umbrellas sold by a shop in each quarter of 2024 and 2025.\n(data written for this practice question)\n\nYear:         2024                   2025\nQuarter:      Q1   Q2   Q3   Q4      Q1   Q2   Q3   Q4\nUmbrellas:    42   30   25   48      46   35   29   53\n\n(a) Draw a time series graph to show this information. [2]\n(b) Describe the trend in the number of umbrellas sold. [1]\n(c) In which quarter of each year were the fewest umbrellas sold? [1]`, marks: 4, command: 'Draw', diagram: true, markScheme: `(a) B2 for all 8 points plotted correctly at the quarters and joined with straight line segments\n(B1 for at least 6 points plotted correctly, or all 8 points plotted but not joined)\n(b) B1 for the number of umbrellas sold is increasing (each quarter is higher than the same quarter the year before)\n(c) B1 Q3 (Quarter 3)` },
+      { q: `(Calculator allowed)\nRavi wants to estimate the total number of fish in two ponds, Pond A and Pond B.\n\nPond A: Ravi catches 60 fish, marks each one and puts them back. The next week he catches 45 fish. 9 of these fish are marked.\nPond B: Ravi catches 40 fish, marks each one and puts them back. The next week he catches 50 fish. 4 of these fish are marked.\n\nRavi says, "There are more than 750 fish altogether in the two ponds."\n\n(a) Is Ravi correct? You must show your working. [4]\n(b) Write down one assumption you have made about the fish. [1]`, marks: 5, command: 'Show', markScheme: `(a) P1 for a process to estimate Pond A, e.g. 60 × 45 ÷ 9 or \\(\\frac{60}{N} = \\frac{9}{45}\\)\nP1 for a process to estimate Pond B, e.g. 40 × 50 ÷ 4 or \\(\\frac{40}{N} = \\frac{4}{50}\\)\nA1 for 300 and 500\nC1 for Yes, with a total of 800 (> 750)\n(b) C1 for a valid assumption, e.g. the number of fish in each pond does not change between the two weeks (no fish born, die or leave), or the marked fish mix randomly with the others, or the marks do not come off` }
     ]
   },
-
-  /* ─────────────────────────────────────────────────────────── 6.2 */
-  "6.2": {
-    "name": "Averages, Spread & Grouped Data",
-    "questions": [
-      {
-        "q": "Write down the mode of 12, 15, 11, 15, 18, 11, 15.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 15 (1)"
-      },
-      {
-        "q": "Write down the midpoint of the class 35 < h ≤ 40.",
-        "marks": 1,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: 37.5 (1)"
-      },
-      {
-        "q": "Find the median of 23, 17, 31, 12, 26, 19.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: ordered 12, 17, 19, 23, 26, 31 with 19 and 23 identified (1)\n• A1: 21 (1)"
-      },
-      {
-        "q": "The mean of 9, 13, 7, x and 16 is 11. Work out the value of x.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 5 × 11 = 55 and 55 − (9 + 13 + 7 + 16) (1)\n• A1: x = 10 (1)"
-      },
-      {
-        "q": "The lowest temperatures (°C) on five nights were −4, 3, −9, 6, 1. Work out the range.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 6 − (−9) (1)\n• A1: 15 °C (1)"
-      },
-      {
-        "q": "The table shows the number of cars owned by 25 households: 0 cars – 4, 1 car – 11, 2 cars – 7, 3 cars – 3. Work out the mean number of cars per household.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: Σfx = 0 + 11 + 14 + 9 = 34, divided by 25 (1)\n• A1: 1.36 (1)"
-      },
-      {
-        "q": "Work out the interquartile range of 5, 8, 9, 11, 14, 16, 17, 20, 23, 25, 28.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: LQ = 9 (3rd value) or UQ = 23 (9th value) (1)\n• A1: 14 (1)"
-      },
-      {
-        "q": "(a) In a histogram, the class 10 < t ≤ 25 has frequency 27. Work out its frequency density.\n(b) The class 25 < t ≤ 30 has frequency density 4.2. Work out its frequency.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: (a) 27 ÷ 15 = 1.8 (1)\n• B1: (b) 4.2 × 5 = 21 (1)"
-      },
-      {
-        "q": "The heights of 40 plants are grouped: 150 ≤ h < 160: 6, 160 ≤ h < 170: 12, 170 ≤ h < 180: 9, 180 ≤ h < 190: 13 (cm).\n(a) Write down the modal class.\n(b) Write down the class that contains the median.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 180 ≤ h < 190 (1)\n• B1: (b) 170 ≤ h < 180 (1)"
-      },
-      {
-        "q": "Six swimmers' times (seconds) for one length are 48, 51, 50, 49, 112, 52.\n(a) Identify the outlier and suggest a reason for it.\n(b) Work out the mean of the other five times.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) 112, with a sensible reason, e.g. the swimmer stopped or it was recorded wrongly (1)\n• B1: (b) 250 ÷ 5 = 50 seconds (1)"
-      },
-      {
-        "q": "Team X's points per game have a median of 34 and a range of 20. Team Y's points per game have a median of 29 and a range of 8. Make two comparisons between the teams.",
-        "marks": 2,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: Team X scored more points on average (higher median) (1)\n• B1: Team Y was more consistent (smaller range) (1)"
-      },
-      {
-        "q": "The lengths of 40 leaves are grouped: 0 < l ≤ 10: 5, 10 < l ≤ 20: 8, 20 < l ≤ 30: 12, 30 < l ≤ 40: 15 (mm). Work out an estimate for the mean length.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: midpoints 5, 15, 25, 35 used (1)\n• M1: Σfx = 970 and division by 40 (1)\n• A1: 24.25 mm (1)"
-      },
-      {
-        "q": "The mean mass of 18 men is 82 kg. The mean mass of 12 women is 64 kg. Work out the mean mass of all 30 people.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: 18 × 82 = 1476 or 12 × 64 = 768 (1)\n• M1: (1476 + 768) ÷ 30 (1)\n• A1: 74.8 kg (1)"
-      },
-      {
-        "q": "The times taken by 74 people to finish a task are grouped: 0 < t ≤ 4: 12, 4 < t ≤ 10: 21, 10 < t ≤ 20: 25, 20 < t ≤ 40: 16 (minutes). Work out the frequency density of each class, ready to draw a histogram.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• M1: frequency ÷ class width for at least one class (1)\n• A1: two correct from 3, 3.5, 2.5, 0.8 (1)\n• A1: all four correct (1)"
-      },
-      {
-        "q": "A box plot shows minimum 15, lower quartile 22, median 30, upper quartile 37 and maximum 51.\n(a) Work out the interquartile range.\n(b) Work out the range.\n(c) What percentage of the data values are greater than 22?",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: (a) 15 (1)\n• B1: (b) 36 (1)\n• B1: (c) 75% (1)"
-      },
-      {
-        "q": "The prices of six houses on a street are £185 000, £192 000, £199 000, £210 000, £224 000 and £890 000.\n(a) Work out the mean price.\n(b) Work out the median price.\n(c) Which average better represents a typical price? Give a reason.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• B1: (a) £316 666.67 (accept £316 667) (1)\n• B1: (b) £204 500 (1)\n• C1: (c) median, because the mean is pulled up by the £890 000 outlier (1)"
-      },
-      {
-        "q": "The journey times of 40 pupils are grouped: 0 < t ≤ 5: 6, 5 < t ≤ 10: 15, 10 < t ≤ 15: 13, 15 < t ≤ 20: 6 (minutes).\n(a) Work out an estimate for the mean journey time.\n(b) Explain why your answer is only an estimate.",
-        "marks": 3,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: Σfx using midpoints = 395, divided by 40 (1)\n• A1: 9.875 minutes (1)\n• B1: the exact times are not known, so midpoints are used (1)"
-      },
-      {
-        "q": "The times of 60 runners are grouped: 20 < t ≤ 25: 4, 25 < t ≤ 30: 14, 30 < t ≤ 35: 22, 35 < t ≤ 40: 15, 40 < t ≤ 45: 5 (minutes).\n(a) Complete a cumulative frequency table.\n(b) Draw a cumulative frequency graph.\n(c) Use your graph to estimate the median and the interquartile range.",
-        "marks": 4,
-        "requiresDiagram": false,
-        "higher": true,
-        "markScheme": "• B1: (a) 4, 18, 40, 55, 60 (1)\n• B1: (b) points plotted at upper class boundaries (25, 4), (30, 18), (35, 40), (40, 55), (45, 60), joined, starting at (20, 0) (1)\n• B1: (c) median in range 32 to 33.5 (1)\n• B1: IQR in range 7 to 8.5 (1)"
-      },
-      {
-        "q": "A histogram shows the masses, w grams, of some pebbles. The bars are: 0 < w ≤ 10 with frequency density 1.5, 10 < w ≤ 15 with frequency density 4, 15 < w ≤ 20 with frequency density 5, and 20 < w ≤ 40 with frequency density 0.9.\n(a) Work out the total number of pebbles.\n(b) Estimate the number of pebbles with a mass greater than 18 g.",
-        "marks": 4,
-        "requiresDiagram": true,
-        "higher": true,
-        "markScheme": "• M1: (a) frequency density × class width for each bar: 15, 20, 25, 18 (1)\n• A1: 78 (1)\n• M1: (b) 2 × 5 = 10 from the 15–20 bar, plus 18 (1)\n• A1: 28 (1)"
-      },
-      {
-        "q": "The waiting times at Shop A are grouped: 0 < t ≤ 4: 9, 4 < t ≤ 8: 14, 8 < t ≤ 12: 5, 12 < t ≤ 16: 2 (minutes). At Shop B, an estimate of the mean waiting time is 7.4 minutes. Which shop has the shorter waiting times on average? You must show your working.",
-        "marks": 5,
-        "requiresDiagram": false,
-        "higher": false,
-        "markScheme": "• M1: midpoints 2, 6, 10, 14 used (1)\n• M1: Σfx = 18 + 84 + 50 + 28 = 180 (1)\n• M1: 180 ÷ 30 (1)\n• A1: 6 minutes (1)\n• C1: Shop A, because 6 < 7.4 (1)"
-      }
+  '6.2': {
+    name: 'Averages, Spread & Grouped Data',
+    questions: [
+      { q: `(Non-calculator)\nHere are eight numbers.\n\n4   7   3   7   5   9   7   2\n\nWrite down the mode.`, marks: 1, command: 'Write down', markScheme: `B1 7 cao` },
+      { q: `(Non-calculator)\nThe table shows the midday temperatures in six cities on one day in January. (data written for this practice question)\n\nCity:              Oslo   Rome   Berlin   Cairo   Paris   Warsaw\nTemperature (°C):   −4      3      −1       6       2       −2\n\nWork out the range of the temperatures.`, marks: 1, command: 'Work out', markScheme: `B1 10 (°C) cao` },
+      { q: `(Calculator allowed)\nA box plot shows information about the reaction times, in milliseconds, of a group of drivers. (data written for this practice question)\n\nThe box plot shows:\nshortest time 12, lower quartile 18, median 23, upper quartile 30, longest time 41\n\nWork out the interquartile range of the reaction times.`, marks: 1, command: 'Work out', markScheme: `B1 12 cao` },
+      { q: `(Non-calculator)\nHere are the numbers of goals scored by a hockey team in eight matches.\n\n13   8   21   15   9   17   11   20\n\nFind the median.`, marks: 2, command: 'Find', markScheme: `M1 numbers written in order, 8 9 11 13 15 17 20 21, or a correct method to find the midpoint of 13 and 15\nA1 14 cao` },
+      { q: `(Calculator allowed)\nAmir measures the lengths, in cm, of five leaves.\n\n23.4   18.9   21.7   25.2   19.8\n\nWork out the mean length of the leaves.`, marks: 2, command: 'Work out', markScheme: `M1 (23.4 + 18.9 + 21.7 + 25.2 + 19.8) ÷ 5 (= 109 ÷ 5)\nA1 21.8 (cm) cao` },
+      { q: `(Non-calculator)\nThe table shows information about the number of pets owned by each of 25 students. (data written for this practice question)\n\nNumber of pets:   0   1   2   3   4\nFrequency:        7   9   6   2   1\n\nFind the median number of pets.`, marks: 2, command: 'Find', markScheme: `M1 identifies the 13th value, e.g. (25 + 1) ÷ 2, or cumulative totals 7, 16 shown\nA1 1 cao` },
+      { q: `(Non-calculator)\nThere are five cards. Each card has a number on it.\nThe mean of the five numbers is 8\nFour of the numbers are 6, 9, 11 and 4\n\nWork out the number on the fifth card.`, marks: 2, command: 'Work out', markScheme: `M1 5 × 8 (= 40) and 40 − (6 + 9 + 11 + 4) oe\nA1 10 cao` },
+      { q: `(Calculator allowed)\nThe histogram shows information about the heights, h cm, of some plants. (data written for this practice question)\n\nThe bar for 10 < h ≤ 25 has a frequency density of 2.4\nThe bar for 25 < h ≤ 30 has a frequency density of 5.2\n\nWork out the number of plants with a height between 10 cm and 30 cm.`, marks: 2, command: 'Work out', markScheme: `M1 2.4 × 15 (= 36) or 5.2 × 5 (= 26)\nA1 62 cao` },
+      { q: `(Calculator allowed)\nThe box plots show information about the house prices, in thousands of pounds, in two towns, Aston and Brandford. (data written for this practice question)\n\nAston: median 34, interquartile range 12\nBrandford: median 28, interquartile range 18\n\nCompare the distribution of house prices in Aston with the distribution of house prices in Brandford.`, marks: 2, command: 'Compare', markScheme: `C1 correct comparison of medians in context, e.g. house prices in Aston are higher on average because the median is higher (34 > 28)\nC1 correct comparison of interquartile ranges in context, e.g. house prices in Brandford are more varied because the interquartile range is larger (18 > 12)\nAccept comparisons of range only if the interquartile range is not used; comparisons must refer to median and IQR (or equivalent) for both marks` },
+      { q: `(Non-calculator)\nThe table shows information about the lengths, L cm, of 40 fish caught in a lake. (data written for this practice question)\n\nLength (L cm)       Frequency\n10 < L ≤ 20             5\n20 < L ≤ 30            13\n30 < L ≤ 40            11\n40 < L ≤ 50             8\n50 < L ≤ 60             3\n\n(a) Write down the modal class. [1]\n(b) Write down the class interval that contains the median. [1]`, marks: 2, command: 'Write down', markScheme: `(a) B1 20 < L ≤ 30\n(b) B1 30 < L ≤ 40 (median is the 20th/20.5th value; cumulative frequencies 5, 18, 29)` },
+      { q: `(Non-calculator)\nHere are eleven numbers in order of size.\n\n3   5   6   8   9   11   12   14   15   18   21\n\nWork out the interquartile range.`, marks: 2, command: 'Work out', markScheme: `M1 lower quartile 6 or upper quartile 15 identified\nA1 9 cao` },
+      { q: `(Calculator allowed)\nThe table shows information about the times, t minutes, that 30 people took to complete a puzzle. (data written for this practice question)\n\nTime (t minutes)    Frequency\n0 < t ≤ 10              4\n10 < t ≤ 20             9\n20 < t ≤ 30            12\n30 < t ≤ 40             5\n\nWork out an estimate for the mean time.`, marks: 3, command: 'Work out', markScheme: `M1 uses midpoints 5, 15, 25, 35 and finds products f × x for at least 3 classes, e.g. 20, 135, 300, 175\nM1 (dep) sum of products ÷ 30, e.g. 630 ÷ 30\nA1 21 (minutes) cao` },
+      { q: `(Non-calculator)\nThe table shows the number of goals scored in each of 20 football matches. (data written for this practice question)\n\nNumber of goals:   0   1   2   3   4\nFrequency:         5   8   4   2   1\n\nWork out the mean number of goals.`, marks: 3, command: 'Work out', markScheme: `M1 finds products, e.g. 0 × 5, 1 × 8, 2 × 4, 3 × 2, 4 × 1 (0, 8, 8, 6, 4)\nM1 (dep) sum of products ÷ 20, e.g. 26 ÷ 20\nA1 1.3 oe` },
+      { q: `(Calculator allowed)\nThere are 30 students in a class: 12 boys and 18 girls.\nThe mean mark of the 12 boys in a test is 64\nThe mean mark of all 30 students in the test is 61\n\nWork out the mean mark of the 18 girls.\nYou must show your working.`, marks: 3, command: 'Work out', markScheme: `P1 30 × 61 (= 1830) or 12 × 64 (= 768)\nP1 (1830 − 768) ÷ 18 oe, e.g. 1062 ÷ 18\nA1 59 cao` },
+      { q: `(Calculator allowed)\nSome people took part in a fun run.\nThe youngest person was 18 years old and the oldest person was 62 years old.\nThe lower quartile of their ages was 27 years and the median age was 35 years.\nThe interquartile range of their ages was 19 years.\n\nOn a horizontal scale from 10 to 70 years, draw a box plot for this information.`, marks: 3, command: 'Draw', diagram: true, markScheme: `B1 upper quartile found as 46 (27 + 19), may be seen on box plot\nB1 box drawn from 27 to 46 with median line at 35\nB1 fully correct box plot with whiskers to 18 and 62` },
+      { q: `(Calculator allowed)\nThe histogram shows information about the weights, w kg, of some parcels. (data written for this practice question)\n\nThe bars of the histogram are:\n0 < w ≤ 10, frequency density 1.2\n10 < w ≤ 15, frequency density 3.6\n15 < w ≤ 20, frequency density 4.4\n20 < w ≤ 40, frequency density 0.9\n\nWork out an estimate for the number of parcels that weigh more than 17.5 kg.`, marks: 3, command: 'Work out', markScheme: `M1 4.4 × 2.5 (= 11) or 0.9 × 20 (= 18)\nM1 4.4 × 2.5 + 0.9 × 20 oe\nA1 29 cao` },
+      { q: `(Calculator allowed)\nThe table shows information about the times, t minutes, taken by 60 people to travel to work. (data written for this practice question)\n\nTime (t minutes)    Frequency\n0 < t ≤ 20              6\n20 < t ≤ 40            14\n40 < t ≤ 60            22\n60 < t ≤ 80            13\n80 < t ≤ 100            5\n\n(a) Complete the cumulative frequency table for this information. [1]\n(b) On a grid with time from 0 to 100 minutes and cumulative frequency from 0 to 60, draw a cumulative frequency graph for your table. [2]\n(c) Use your graph to find an estimate for the median time. [1]`, marks: 4, command: 'Draw', diagram: true, markScheme: `(a) B1 6, 20, 42, 55, 60\n(b) M1 (ft) at least 4 points plotted correctly at the ends of the intervals (20, 6), (40, 20), (60, 42), (80, 55), (100, 60)\nA1 fully correct cumulative frequency graph, points joined by a curve or line segments\n(c) B1 answer in the range 47 to 51 (minutes), or ft from their graph at cumulative frequency 30` },
+      { q: `(Non-calculator)\nTwo quiz teams, the Owls and the Hawks, each played five rounds.\n\nHere are the scores of the Owls in the five rounds.\n\n12   15   9   18   11\n\nThe Hawks had a mean score of 14.2 and a range of 4\n\nCompare the scores of the Owls with the scores of the Hawks.`, marks: 4, command: 'Compare', markScheme: `M1 (12 + 15 + 9 + 18 + 11) ÷ 5 (= 65 ÷ 5)\nA1 mean = 13\nB1 range = 9 (18 − 9)\nC1 correct comparison of both mean and range, ft their values, e.g. the Hawks scored higher on average (14.2 > 13) and the Hawks' scores were more consistent (range 4 < 9)` },
+      { q: `(Calculator allowed)\nThe table shows information about the times, t minutes, that 50 customers waited to be served in a café. (data written for this practice question)\n\nTime (t minutes)    Frequency\n0 < t ≤ 5               8\n5 < t ≤ 15             22\n15 < t ≤ 30            15\n30 < t ≤ 60             5\n\nThe café manager says,\n"The mean waiting time is less than 15 minutes."\n\nIs the manager correct?\nYou must show how you get your answer.`, marks: 4, command: 'Show', markScheme: `P1 uses midpoints 2.5, 10, 22.5, 45 to find at least 3 products f × x, e.g. 20, 220, 337.5, 225\nP1 sum of products, 802.5\nP1 802.5 ÷ 50 (= 16.05)\nC1 No, with 16.05 (or 16.1 or 16) shown, since 16.05 > 15` },
+      { q: `(Calculator allowed)\nThe table and the histogram give information about the heights, h cm, of some plants. (data written for this practice question)\n\nHeight (h cm)       Frequency\n0 < h ≤ 20\n20 < h ≤ 30            22\n30 < h ≤ 40\n40 < h ≤ 60            28\n60 < h ≤ 100           12\n\nThe histogram has a vertical axis labelled frequency density. Bars are drawn only for these classes:\n0 < h ≤ 20, frequency density 0.8\n30 < h ≤ 40, frequency density 3.4\n60 < h ≤ 100, frequency density 0.3\n\n(a) Use the histogram to complete the table. [2]\n(b) Use the table to complete the histogram. [2]\n(c) Work out an estimate for the number of plants with a height of more than 50 cm. [1]`, marks: 5, command: 'Complete', diagram: true, markScheme: `(a) B1 16 for 0 < h ≤ 20\nB1 34 for 30 < h ≤ 40\n(b) B1 bar for 20 < h ≤ 30 drawn at frequency density 2.2\nB1 bar for 40 < h ≤ 60 drawn at frequency density 1.4\n(c) B1 26 cao (14 + 12)` }
     ]
-  },
+  }
 };
 
 if (typeof module !== 'undefined' && module.exports) {
