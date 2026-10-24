@@ -69,14 +69,7 @@
     'Mathematics_OCR|alevel':       ['questions/maths-ocr-alevel/maths-ocr-alevel-practice.js'],
     'Mathematics_OCR B|alevel':     ['questions/maths-ocr-b-alevel/maths-ocr-b-alevel-practice.js'],
     'Mathematics_Edexcel':          ['questions/maths-edexcel/maths-edexcel-practice.js'],
-    'Further Mathematics_Edexcel': [
-      'questions/further-maths-edexcel/fm-edexcel-written-cp1a.js',
-      'questions/further-maths-edexcel/fm-edexcel-written-cp1b.js',
-      'questions/further-maths-edexcel/fm-edexcel-written-cp2a.js',
-      'questions/further-maths-edexcel/fm-edexcel-written-cp2b.js',
-      'questions/further-maths-edexcel/fm-edexcel-written.js',
-      'questions/further-maths-edexcel/fm-edexcel-practice.js',
-    ],
+    'Further Mathematics_Edexcel':  ['questions/further-maths-edexcel/fm-edexcel-practice.js'],
     'Further Mathematics_AQA':      ['questions/further-maths-aqa/fm-aqa-practice.js'],
     'Further Mathematics_OCR A':    ['questions/further-maths-ocr/fm-ocr-practice.js'],
     'Further Mathematics_OCR B': [
