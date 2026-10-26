@@ -479,7 +479,7 @@
       color: var(--accent-dark); font-size: 13px; font-weight: 500;
       cursor: pointer; white-space: nowrap; flex-shrink: 0;
     }
-    @media (max-width: 768px) {
+    @media (max-width: 1023px) {
       .mobile-menu-btn { display: flex; }
       .topics-toggle-btn { display: flex; }
       .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; }
@@ -488,8 +488,22 @@
       .topics-panel.open { transform: translateX(0); }
       .content { width: 100%; min-width: 0; }
     }
+    /* Copy that points at the topics panel: "on the left" on desktop, the
+       Topics button on phones (where the panel is a drawer). */
+    .pq-mobile-copy { display: none; }
+    @media (max-width: 1023px) {
+      .pq-desktop-copy { display: none; }
+      .pq-mobile-copy { display: inline; }
+    }
     @media (max-width: 480px) {
       .content { padding: 12px 10px; }
+    }
+    /* Keep "Practice Questions" on one line next to ☰ and Topics. */
+    @media (max-width: 420px) {
+      .content-header { padding: 14px 14px; gap: 8px; }
+      .content-title { font-size: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .content-sub { font-size: 12px; }
+      .topics-toggle-btn { padding: 6px 10px; font-size: 12.5px; }
     }
   </style>
   <link rel="stylesheet" href="responsive.css">
@@ -576,7 +590,7 @@
         <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
         <div style="min-width:0;">
           <div class="content-title" id="contentTitle">Practice Questions</div>
-          <div class="content-sub" id="contentSub">Select a topic from the left to start practising</div>
+          <div class="content-sub" id="contentSub">Select a topic to start practising</div>
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
@@ -589,7 +603,7 @@
       <div class="empty-state">
         <div class="empty-icon">✦</div>
         <div class="empty-title">Choose a topic</div>
-        <div class="empty-sub">Pick a topic from the panel on the left to practice exam-style questions with mark schemes.</div>
+        <div class="empty-sub">Pick a topic<span class="pq-desktop-copy"> from the panel on the left</span><span class="pq-mobile-copy"> with the Topics button above</span> to practise exam-style questions with mark schemes.</div>
       </div>
     </div>
   </div>
@@ -2309,17 +2323,31 @@ function startExam(count, minutes) {
 /* ═══════════════════════════════════════
    TIMER
 ═══════════════════════════════════════ */
+// Remaining time is computed from a fixed deadline on every tick rather than
+// decremented, because browsers throttle or pause intervals in background
+// tabs — a decrementing counter drifts and lets a hidden test run long.
+let timerDeadline = 0;
 function startTimer() {
   timerStarted = true;
-  timerInterval = setInterval(() => {
-    secondsLeft--;
-    updateTimerDisplay();
-    if (secondsLeft <= 0) {
-      stopTimer();
-      timeUp();
-    }
-  }, 1000);
+  timerDeadline = Date.now() + secondsLeft * 1000;
+  timerInterval = setInterval(tickTimer, 500);
 }
+
+function tickTimer() {
+  if (!timerInterval) return;
+  secondsLeft = Math.max(0, Math.ceil((timerDeadline - Date.now()) / 1000));
+  updateTimerDisplay();
+  if (secondsLeft <= 0) {
+    stopTimer();
+    timeUp();
+  }
+}
+
+// Coming back to the tab: catch up at once (and fire timeUp if the deadline
+// passed while hidden) instead of waiting for the next throttled tick.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') tickTimer();
+});
 
 function stopTimer() {
   if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
@@ -2680,6 +2708,50 @@ function nextQuestion() {
 /* ═══════════════════════════════════════
    RESULTS
 ═══════════════════════════════════════ */
+// Saving the attempt is what puts it in Test history, so a failure is shown
+// with a Retry that re-sends the exact same payload.
+function savePracticeAttempt(payload) {
+  return supabaseClient.from('practice_attempts').insert(payload)
+    .then(({ error }) => { if (error) throw error; return true; })
+    .catch(err => {
+      console.warn('Practice attempt save failed', err);
+      showAttemptSaveError(payload);
+      return false;
+    });
+}
+
+function showAttemptSaveError(payload) {
+  document.getElementById('attemptSaveToast')?.remove();
+  const t = document.createElement('div');
+  t.id = 'attemptSaveToast';
+  t.setAttribute('role', 'alert');
+  t.style.cssText = 'position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:300;'
+    + 'width:max-content;max-width:calc(100vw - 32px);display:flex;align-items:center;gap:10px;flex-wrap:wrap;'
+    + 'padding:12px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--red, #DC2626);'
+    + 'box-shadow:0 8px 24px rgba(0,0,0,0.18);font-size:13.5px;color:var(--text);';
+  t.innerHTML = `<span>⚠️ Couldn't save this attempt to your test history.</span>
+    <button type="button" class="btn-outline" data-act="retry">↻ Retry</button>
+    <button type="button" data-act="dismiss" aria-label="Dismiss" style="background:none;border:0;cursor:pointer;color:var(--muted);font-size:15px;">✕</button>`;
+  const retry = t.querySelector('[data-act="retry"]');
+  retry.onclick = async () => {
+    retry.disabled = true;
+    retry.textContent = 'Saving…';
+    t.remove();
+    const ok = await savePracticeAttempt(payload);
+    if (ok) {
+      const done = document.createElement('div');
+      done.id = 'attemptSaveToast';
+      done.setAttribute('role', 'status');
+      done.style.cssText = t.style.cssText.replace('var(--red, #DC2626)', 'var(--green, #16A34A)');
+      done.textContent = '✓ Attempt saved to your test history.';
+      document.body.appendChild(done);
+      setTimeout(() => done.remove(), 2500);
+    }
+  };
+  t.querySelector('[data-act="dismiss"]').onclick = () => t.remove();
+  document.body.appendChild(t);
+}
+
 function renderResults(timedOut) {
   stopTimer();
   const totalMarks = results.reduce((s, r) => s + r.marks, 0);
@@ -2701,7 +2773,7 @@ function renderResults(timedOut) {
       earned: r.earned,
       level: r.level,
     }));
-    supabaseClient.from('practice_attempts').insert({
+    savePracticeAttempt({
       user_id: currentUser.id,
       subject,
       exam_board: board,
@@ -2715,8 +2787,6 @@ function renderResults(timedOut) {
       time_used_sec: timeUsed,
       timed_out: !!timedOut,
       details,
-    }).then(({ error }) => {
-      if (error) console.warn('Practice attempt save failed', error);
     });
   }
 
@@ -2794,13 +2864,13 @@ function resetToEmpty() {
   document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('active'));
   activeTopic = null;
   document.getElementById('contentTitle').textContent = 'Practice Questions';
-  document.getElementById('contentSub').textContent = 'Select a topic from the left to start practising';
+  document.getElementById('contentSub').textContent = 'Select a topic to start practising';
   document.getElementById('headerActions').innerHTML = '';
   body.innerHTML = `
     <div class="empty-state">
       <div class="empty-icon">✦</div>
       <div class="empty-title">Choose a topic</div>
-      <div class="empty-sub">Pick a topic from the panel on the left to practice exam-style questions with mark schemes.</div>
+      <div class="empty-sub">Pick a topic<span class="pq-desktop-copy"> from the panel on the left</span><span class="pq-mobile-copy"> with the Topics button above</span> to practise exam-style questions with mark schemes.</div>
     </div>
   `;
 }

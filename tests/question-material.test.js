@@ -64,6 +64,7 @@ const GUARD = vm.runInNewContext([
   lift(/function materialIsOffPage[\s\S]*?\n  \}/, 'materialIsOffPage()'),
   lift(/const USES_SUPPLIED_MATERIAL = [^\n]+/, 'USES_SUPPLIED_MATERIAL'),
   lift(/const MATERIAL_BLOCK = [^\n]+/, 'MATERIAL_BLOCK'),
+  lift(/function hasInlineDataTable[\s\S]*?\n  \}/, 'hasInlineDataTable()'),
   lift(/function bankQuestionMissesMaterial[\s\S]*?\n  \}/, 'bankQuestionMissesMaterial()'),
   '({ materialIsOffPage, bankQuestionMissesMaterial })',
 ].join('\n'), {});
@@ -209,7 +210,7 @@ test('the AQA Physics figures stay transcribed', () => {
   // off the figure. If a future edit paraphrases them away, the parts that need
   // them go back to being unanswerable, so the readings are pinned here.
   const subjects = loadSubjects();
-  const aqa = subjects.find(s => s.name === 'Physics').boards.find(b => b.board === 'AQA');
+  const aqa = subjects.find(s => s.name === 'Physics').boards.find(b => b.board === 'AQA' && b.specCode === '7408');
   const text = JSON.stringify(aqa);
 
   const READINGS = [
@@ -278,6 +279,24 @@ test('the guard tells stimulus apart from a passing mention of a source', () => 
   // An inline data table counts as material even without a SOURCE: label.
   check('a labelled extract with its data is kept',
     !GUARD.bankQuestionMissesMaterial('Extract A (Table 1) — written for this practice question\nCountry X, 2026\n  Real GDP: £2 500 billion\n  Population: 68.5 million\n\nUsing the data in Extract A (Table 1), calculate real GDP per capita.'));
+
+  // A pipe table or numeric series written into the question is material too.
+  const pipeTable = 'A student investigated the effect of temperature on trypsin. (data written for this practice question)\n\n'
+    + 'Temperature / °C | Mean rate / s⁻¹ | Standard deviation\n35 | 0.042 | 0.005\n40 | 0.046 | 0.006\n\n'
+    + 'Evaluate this conclusion using the data in the table.';
+  check('an inline pipe table is kept', !GUARD.bankQuestionMissesMaterial(pipeTable));
+  check('the same question with its table removed is dropped',
+    GUARD.bankQuestionMissesMaterial(pipeTable.replace(/Temperature \/ °C \|[\s\S]*?0\.006\n/, '')));
+  check('a single pipe row is not a table',
+    GUARD.bankQuestionMissesMaterial('Rate | 0.04\n\nEvaluate the conclusion using the data in the table.'));
+  check('numeric series rows are kept',
+    !GUARD.bankQuestionMissesMaterial('(data written for this practice question)\nTemperature / °C: 30, 40, 50, 60, 70\n'
+      + 'Free lactase / %: 60, 100, 70, 20, 0\n\nUsing the data, explain the advantages of immobilised lactase.'));
+  check('a space-aligned table is kept',
+    !GUARD.bankQuestionMissesMaterial('Figure 6 shows some information about noble gases.\nnoble gas   boiling point / °C   density\n'
+      + 'helium      −269                 0.17\nneon        −246                 0.84\n\nUsing the information, explain their uses.'));
+  check('"using the data" with only the practice-question tag is dropped',
+    GUARD.bankQuestionMissesMaterial('(data written for this practice question)\nUsing the data, explain the advantages of immobilised lactase.'));
 
   check('an explicit pointer at the PDF is dropped',
     GUARD.materialIsOffPage('Figure 11 shows the stress–strain graph for a metal in tension. (See Figure 11 in the question paper PDF.)', 'Explain the shape of the graph.', ''));

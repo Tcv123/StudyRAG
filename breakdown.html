@@ -189,8 +189,11 @@
     .carousel-dot.has-data.active { background: var(--accent); }
 
     /* ── STAT CARDS ── */
-    .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 28px; }
+    /* Fluid: 5 fixed columns overflowed at iPad-portrait widths (820px with
+       the sidebar open). auto-fit wraps whatever the sidebar does. */
+    .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; margin-bottom: 28px; }
     .stat-card {
+      min-width: 0;
       background: var(--surface); border: 2px solid var(--border); border-radius: 14px;
       padding: 18px 20px; transition: all 0.2s; box-shadow: 0 1px 4px rgba(37,99,235,0.07);
       position: relative;
@@ -726,6 +729,19 @@ function examinedAcrossAll() {
 let allSubjectData = [];
 let practiceHistory = [];
 let BD_LEVEL = 'gcse';   // 'gcse' | 'as' | 'a-level' — drives predicted-grade boundaries
+let BD_UID = null;       // signed-in user — namespaces paperAttempt.<uid>.<id> keys
+
+// Paper attempts live in localStorage per user (see supabase-config.js).
+function paperAttemptStorageKey(paperId) {
+  return window.paperAttemptKey
+    ? window.paperAttemptKey(BD_UID, paperId)
+    : `paperAttempt.${BD_UID}.${paperId}`;
+}
+function readPaperAttempt(paperId) {
+  if (!BD_UID) return null;
+  try { return JSON.parse(localStorage.getItem(paperAttemptStorageKey(paperId)) || 'null'); }
+  catch (_) { return null; }
+}
 let activeFilter = 'all';
 let activeSubject = null;
 
@@ -1167,7 +1183,10 @@ function shiftCalMonth(dir) {
   _calYear  = next.year;
   _calMonth = next.month;
   renderCalendar();
-  document.getElementById('calDetail').style.display = 'none';
+  // #calDetail was removed when exam labels moved inline onto the calendar
+  // cells (a55d694d); guard so the arrows don't throw if it's ever absent.
+  const detail = document.getElementById('calDetail');
+  if (detail) detail.style.display = 'none';
 }
 
 function renderCalendar() {
@@ -1313,6 +1332,8 @@ async function load() {
   const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
   if (authErr || !user) { window.location = 'auth/login.html'; return; }
 
+  BD_UID = user.id;
+  if (window.claimLegacyPaperAttempts) window.claimLegacyPaperAttempts(user.id);
   await migrateLocalPracticeHistory(user.id);
 
   const [
@@ -1327,7 +1348,10 @@ async function load() {
     supabaseClient.from('practice_attempts').select('subject, exam_board, topic, topic_name, earned, total_marks, pct, questions, answered, time_used_sec, timed_out, taken_at').eq('user_id', user.id).order('taken_at', { ascending: false })
   ]);
 
-  BD_LEVEL = (profile?.level || localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+  // Same default as the Dashboard (predicted-grade.js predictedGradeLevel).
+  BD_LEVEL = window.predictedGradeLevel
+    ? window.predictedGradeLevel(profile?.level)
+    : (profile?.level || 'gcse').toLowerCase();
 
   // Sidebar user info
   const firstName = profile?.first_name || '';
@@ -1356,7 +1380,8 @@ async function load() {
       subject: s.subject,
       board: s.exam_board,
       emoji: diagData.emoji || s.emoji || '📚',
-      target: s.target_grade && s.target_grade !== 'none' ? s.target_grade : null
+      target: s.target_grade && s.target_grade !== 'none' ? s.target_grade : null,
+      options: s.options
     });
 
     // Only the topics this student can sit — see TOPICS_VISIBLE in
@@ -1383,7 +1408,10 @@ async function load() {
     topicName: a.topic_name || a.topic,
     earned: a.earned,
     total: a.total_marks,
-    pct: a.pct,
+    // Older rows can lack pct — derive it, and never divide by a 0 total
+    // (NaN here broke the trend-chart SVG).
+    pct: Number.isFinite(a.pct) ? a.pct
+       : (a.total_marks > 0 ? Math.round(((a.earned || 0) / a.total_marks) * 100) : 0),
     questions: a.questions,
     answered: a.answered,
     timeUsedSec: a.time_used_sec,
@@ -1451,16 +1479,18 @@ function renderSubjectOverview() {
       <div class="summary-seg red"     style="width:${pct(r)}%"></div>
       <div class="summary-seg pending" style="width:${pct(p)}%"></div>` : '';
 
-    // Predicted grade — same engine as the dashboard. Only tested topics feed
-    // the RAG signal; untested ones still count against the spec total.
-    const prediction = (typeof computePredictedGrade === 'function')
-      ? computePredictedGrade({
+    // Predicted grade — same call, same inputs as the Dashboard (see
+    // predictSubjectGrade in predicted-grade.js: visible diagnosed topics,
+    // last-60-days practice, shared level default).
+    const prediction = (typeof window.predictSubjectGrade === 'function')
+      ? window.predictSubjectGrade({
           level: BD_LEVEL,
-          totalTopics: total,
-          topicRows: topics.filter(t => t.rag !== 'pending').map(t => ({ rag_status: t.rag })),
+          diagData: _lvLookup(DIAG_TOPICS, `${s.subject}_${s.board}`),
+          options: s.options,
+          topicRows: topics.filter(t => t.rag !== 'pending').map(t => ({ topic: t.id, rag_status: t.rag })),
           practiceRows: practiceHistory
             .filter(h => h.subject === s.subject && h.board === s.board)
-            .map(h => ({ earned: h.earned, total_marks: h.total })),
+            .map(h => ({ earned: h.earned, total_marks: h.total, taken_at: h.dateISO })),
         })
       : null;
     const predChip = (prediction && typeof renderPredictedGradeBadge === 'function')
@@ -1832,10 +1862,8 @@ function renderPastPapersChecklist(subjects) {
     subj.boards.forEach(board => {
       const totalPapers = board.papers.length;
       const donePapers = board.papers.filter(p => {
-        try {
-          const stored = JSON.parse(localStorage.getItem(`paperAttempt.${p.id}`) || 'null');
-          return stored && stored.status === 'completed';
-        } catch (_) { return false; }
+        const stored = readPaperAttempt(p.id);
+        return !!(stored && stored.status === 'completed');
       }).length;
 
       const pct = totalPapers ? Math.round(donePapers / totalPapers * 100) : 0;
@@ -1873,11 +1901,8 @@ function renderPastPapersChecklist(subjects) {
         html += `<div style="font-size:12px;font-weight:600;color:var(--muted2);text-transform:uppercase;letter-spacing:0.06em;padding:4px 2px 2px;">${yr}</div>`;
         html += `<div style="display:flex;flex-direction:column;gap:6px;">`;
         papers.forEach(p => {
-          let done = false;
-          try {
-            const stored = JSON.parse(localStorage.getItem(`paperAttempt.${p.id}`) || 'null');
-            done = stored && stored.status === 'completed';
-          } catch (_) {}
+          const stored = readPaperAttempt(p.id);
+          const done = !!(stored && stored.status === 'completed');
           const checkId = `pp-chk-${p.id}`;
           const tryItUrl = `past-papers.html#paper-${encodeURIComponent(p.id)}`;
           html += `<label for="${checkId}" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;border:1px solid ${done ? 'var(--green)' : 'var(--border)'};background:${done ? 'rgba(22,163,74,0.05)' : 'var(--surface2)'};cursor:pointer;transition:border-color 0.15s,background 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='${done ? 'var(--green)' : 'var(--border)'}'">
@@ -1898,7 +1923,8 @@ function renderPastPapersChecklist(subjects) {
 
 function togglePaperDone(paperId, checkbox) {
   try {
-    const key = `paperAttempt.${paperId}`;
+    if (!BD_UID) return;
+    const key = paperAttemptStorageKey(paperId);
     if (checkbox.checked) {
       const existing = JSON.parse(localStorage.getItem(key) || 'null') || {};
       localStorage.setItem(key, JSON.stringify({ ...existing, status: 'completed' }));

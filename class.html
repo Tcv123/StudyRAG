@@ -555,7 +555,21 @@ function renderTeacher() {
     </div>
 
     <div id="tabBody"></div>`;
+  document.getElementById('tabBody').addEventListener('click', onTabBodyClick);
   renderTab();
+}
+
+/* One delegated listener instead of inline onclick="fn('${...}')" handlers.
+ * Names and topic ids come from student-controlled rows, and HTML-escaping
+ * doesn't make a value safe inside a JS string in an attribute — the browser
+ * decodes the entities before running it. Ids travel as data-* attributes and
+ * the name is looked up from the roster. */
+function onTabBodyClick(e) {
+  const el = e.target.closest('[data-student],[data-topic],[data-remove]');
+  if (!el) return;
+  if (el.dataset.student != null) { e.preventDefault(); showStudent(el.dataset.student); }
+  else if (el.dataset.topic != null) showTopic(el.dataset.topic);
+  else if (el.dataset.remove != null) removeStudent(el.dataset.remove);
 }
 
 function setTab(t) {
@@ -611,7 +625,7 @@ function renderOverview() {
       <p class="card-sub">Ranked by how many students are struggling, weighted towards topics where we have actual scores rather than self-ratings.</p>
       <div class="topic-row head-row"><div>Topic</div><div>Class</div><div>Not started</div></div>
       ${ranked.map(r => `
-        <div class="topic-row" onclick="showTopic('${esc(r.id)}')">
+        <div class="topic-row" data-topic="${esc(r.id)}">
           <div class="topic-name"><span class="tid">${esc(r.id)}</span>${esc(r.name)}</div>
           ${bar(r.s)}
           <div class="topic-count">${r.s.none}/${roster.length}</div>
@@ -638,13 +652,13 @@ function renderGrid() {
         <thead>
           <tr>
             <th class="corner">Topic</th>
-            ${roster.map(st => `<th><div class="stu-head" onclick="showStudent('${esc(st.student_id)}')" title="${esc(st.student_name)}">${esc(shortName(st.student_name))}</div></th>`).join('')}
+            ${roster.map(st => `<th><div class="stu-head" data-student="${esc(st.student_id)}" title="${esc(st.student_name)}">${esc(shortName(st.student_name))}</div></th>`).join('')}
           </tr>
         </thead>
         <tbody>
           ${topics.map(t => `
             <tr>
-              <td class="tname" onclick="showTopic('${esc(t.id)}')" title="${esc(t.name)}">${esc(t.name)}</td>
+              <td class="tname" data-topic="${esc(t.id)}" title="${esc(t.name)}">${esc(t.name)}</td>
               ${roster.map(st => {
                 const h = cellFor(st.student_id, t.id);
                 return `<td><span class="cell ${cellClass(h)}" title="${esc(cellTitle(st.student_name, t.name, h))}"></span></td>`;
@@ -695,12 +709,12 @@ function renderStudents() {
         const reasons = slipReasons(st);
         return `
           <div class="roster-row">
-            <div><a href="#" onclick="showStudent('${esc(st.student_id)}');return false;">${esc(st.student_name || 'Unnamed')}</a></div>
+            <div><a href="#" data-student="${esc(st.student_id)}">${esc(st.student_name || 'Unnamed')}</a></div>
             <div>${reasons.length
               ? `<span class="flag">${esc(reasons[0])}</span>`
               : `<span class="flag ok">Looks fine</span>`}</div>
             <div style="color:var(--muted);font-size:12px;">${st.last_active ? fmtDate(st.last_active) : 'Never'}</div>
-            <div style="text-align:right;"><button class="link-btn" onclick="removeStudent('${esc(st.student_id)}','${esc(st.student_name)}')">Remove</button></div>
+            <div style="text-align:right;"><button class="link-btn" data-remove="${esc(st.student_id)}">Remove</button></div>
           </div>`;
       }).join('')}
     </div>
@@ -827,7 +841,8 @@ async function setArchived(on) {
   await loadTeacher();
 }
 
-async function removeStudent(studentId, name) {
+async function removeStudent(studentId) {
+  const name = roster.find(s => s.student_id === studentId)?.student_name || 'this student';
   if (!confirm(`Remove ${name} from ${klass.name}?\n\nTheir own work is untouched — you just stop seeing it.`)) return;
   const { error } = await supabaseClient
     .from('class_members').delete()

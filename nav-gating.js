@@ -86,11 +86,21 @@
     } catch (e) { return; }
     if (!user) return;
 
-    const { data: profile } = await supabaseClient
-      .from('profiles')
-      .select('subscription_tier, subscription_status, subscription_expires_at')
-      .eq('id', user.id)
-      .single();
+    let profile, profileErr;
+    try {
+      const res = await supabaseClient
+        .from('profiles')
+        .select('subscription_tier, subscription_status, subscription_expires_at')
+        .eq('id', user.id)
+        .single();
+      profile = res?.data;
+      profileErr = res?.error;
+    } catch (e) { profileErr = e; }
+
+    // A failed fetch says nothing about the subscription — keep whatever is
+    // cached (and the Phase 1 override, if any) rather than writing not-Pro
+    // and re-locking the nav for a paying user.
+    if (profileErr || !profile) return;
 
     const pro = isPro(profile);
 

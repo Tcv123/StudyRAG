@@ -10,6 +10,10 @@
  *   - build scripts, tests, config and package files
  *   - SQL run by hand in the Supabase editor (db/, migrations/)
  *   - Claude Code settings, and dev mockups nothing links to
+ *   - working files by type wherever they sit: Word docs, SQL seeds, Python,
+ *     Markdown notes, text dumps (robots.txt aside), and anything under a
+ *     dot-folder or dot-named (.idea/, .githooks/, .nojekyll — a leftover
+ *     from GitHub Pages that Cloudflare doesn't need)
  *
  * Only files git tracks are copied, so local scratch (.pdfwork, tmp/) never
  * ships even when building on this machine.
@@ -31,7 +35,17 @@ const PRIVATE = [
   'ai-feedback-mockup.html', 'flashcard-demo.html',
 ];
 
-const isExcluded = (file) => PRIVATE.some(p => file === p || file.startsWith(p + '/'));
+// Nothing a page fetches at runtime has these extensions — the only .json
+// served (papers-data/) is written by splitPapersConfig after this copy.
+const PRIVATE_EXT = ['.docx', '.sql', '.py', '.md', '.txt', '.iml'];
+const PUBLIC_EXCEPTIONS = ['robots.txt'];
+
+const isExcluded = (file) => {
+  if (PUBLIC_EXCEPTIONS.includes(file)) return false;
+  if (PRIVATE.some(p => file === p || file.startsWith(p + '/'))) return true;
+  if (file.split('/').some(part => part.startsWith('.'))) return true;
+  return PRIVATE_EXT.includes(path.extname(file).toLowerCase());
+};
 
 const files = execSync('git ls-files -z', { cwd: ROOT }).toString().split('\0').filter(Boolean);
 

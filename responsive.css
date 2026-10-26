@@ -29,16 +29,37 @@ pre { max-width: 100%; overflow-x: auto; }
   .nav-right { gap: 6px; }
   .nav-btn { padding: 8px 14px; font-size: 11.5px; letter-spacing: 0.05em; }
 }
-@media (max-width: 380px) {
-  .nav-wrap { gap: 8px; }
+/* The logo never wraps onto two lines, and nothing in the bar may shrink below
+   its content and push the ☰ button off the right edge. */
+.logo-name, .nav-btn { white-space: nowrap; }
+.logo { min-width: 0; }
+/* Once the centre anchors are hidden (≤900px on every marketing page) the
+   3-column grid leaves an empty 1fr track that steals width; drop it so the
+   logo and the buttons share the bar. */
+@media (max-width: 900px) {
+  .nav-wrap { grid-template-columns: minmax(0, 1fr) auto; }
+}
+@media (max-width: 400px) {
+  .nav-wrap { gap: 8px; padding: 0 16px; }
   .nav-btn { padding: 7px 11px; letter-spacing: 0.03em; }
-  .logo-name { font-size: 17px; }
+  .logo { gap: 8px; }
+  .logo-img { width: 22px; height: 22px; }
+  .logo-name { font-size: 16px; letter-spacing: 0; }
+}
+/* Sign in is also in the ☰ drawer, so drop it on the narrowest phones. */
+@media (max-width: 360px) {
+  .nav-right .nav-ghost { display: none; }
 }
 
 /* ── 3. App pages: collapse the fixed sidebar into an off-canvas drawer ──── */
 /* Scoped to .app so marketing pages are untouched. Pages that already ship
-   this pattern inline keep working; pages that don't now get it for free. */
-@media (max-width: 768px) {
+   this pattern inline keep working; pages that don't now get it for free.
+   The breakpoint is 1023px, not 768px, so iPad portrait (768–1023) gets the
+   drawer instead of a fixed 240px sidebar squeezing the content. Most pages
+   still hard-code their own sidebar rules at max-width: 768px; the `.app`
+   prefix (and `.app .mobile-menu-btn` below) out-specifies those, so this
+   block wins in the 769–1023 band without touching each page. */
+@media (max-width: 1023px) {
   .app .sidebar {
     position: fixed; top: 0; left: 0; bottom: 0;
     transform: translateX(-100%);
@@ -49,9 +70,10 @@ pre { max-width: 100%; overflow-x: auto; }
   .app .main { margin-left: 0; }
   /* Give the hamburger room above the page title when it appears. */
   .app .topbar > .mobile-menu-btn { margin-bottom: 14px; }
+  .app .mobile-menu-btn { display: flex; }
 }
 
-/* Hamburger toggle + dimming overlay (hidden on desktop, shown on phones). */
+/* Hamburger toggle + dimming overlay (hidden on desktop, shown below 1024px). */
 .mobile-menu-btn {
   display: none;
   width: 38px; height: 38px; border-radius: 10px;
@@ -60,7 +82,7 @@ pre { max-width: 100%; overflow-x: auto; }
   align-items: center; justify-content: center;
   cursor: pointer; font-size: 18px; flex-shrink: 0;
 }
-@media (max-width: 768px) { .mobile-menu-btn { display: flex; } }
+@media (max-width: 1023px) { .mobile-menu-btn { display: flex; } }
 
 .mobile-overlay {
   display: none; position: fixed; inset: 0;

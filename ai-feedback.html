@@ -295,6 +295,11 @@
   const status = profile?.subscription_status || 'active';
   const exp = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
   const isPro = tier !== 'free' && ['active','trialing'].includes(status) && (!exp || exp > new Date());
+  // The profile is the source of truth for level; cached_level is only a
+  // fallback for when the profile read fails. Refresh the cache so the shared
+  // helpers (levelLookup etc.) agree with it.
+  const userLevel = profile?.level ? window.levelSuffix(profile.level) : window.levelSuffix();
+  if (profile?.level) { try { localStorage.setItem('cached_level', profile.level); } catch (_) {} }
   if (!isPro) {
     document.getElementById('pageBody').innerHTML = `
       <div class="lock-overlay">
@@ -341,7 +346,7 @@
   const subjectMap = new Map();
   (userSubjects || []).forEach(row => {
     if (BANKLESS_SUBJECTS.has(row.subject) &&
-        !window.levelLookup(window.AI_FEEDBACK_BUNDLE_MAP || {}, `${row.subject}_${row.exam_board}`) &&
+        !window.levelLookup(window.AI_FEEDBACK_BUNDLE_MAP || {}, `${row.subject}_${row.exam_board}`, userLevel) &&
         !subjectHasAttemptablePapers(row.subject, row.exam_board)) return;
     if (!subjectMap.has(row.subject)) subjectMap.set(row.subject, row);
   });
@@ -652,10 +657,23 @@
   // matched, because what follows it varies too much between banks to pin down.
   const MATERIAL_BLOCK = /(^|\n)\s*(SOURCE|EXTRACT|ITEM|PASSAGE|FIGURE|TABLE|TEXT|INFORMATION)\b/i;
 
+  // Data written straight into the question counts too, label or not: two or
+  // more rows of a pipe table ("35 | 0.042 | 0.005"), of a space-aligned table
+  // ("neon   2.8   −246"), or of numeric series ("Temperature / °C: 30, 40,
+  // 50"). A bare "using the data" with no rows still fails.
+  function hasInlineDataTable(text) {
+    const lines = String(text).split('\n').map(l => l.trim());
+    const pipeRows = lines.filter(l => l.includes('|') && l.split('|').filter(c => c.trim()).length >= 2).length;
+    const seriesRows = lines.filter(l => /^[^:]{1,60}:\s*[^,]*\d[^,]*(?:,[^,]*\d[^,]*){2,}$/.test(l)).length;
+    const columnRows = lines.filter(l => /\d/.test(l) && l.split(/\t|\s{2,}/).filter(Boolean).length >= 3).length;
+    return pipeRows >= 2 || seriesRows >= 2 || columnRows >= 2;
+  }
+
   function bankQuestionMissesMaterial(text) {
     if (OFFPAGE_MATERIAL.test(text)) return true;
     if (!USES_SUPPLIED_MATERIAL.test(text)) return false;
-    return !MATERIAL_BLOCK.test(text) && text.replace(/\s+/g, ' ').trim().length < 500;
+    if (MATERIAL_BLOCK.test(text) || hasInlineDataTable(text)) return false;
+    return text.replace(/\s+/g, ' ').trim().length < 500;
   }
 
   function bankQuestionsWithMaterial(list, subjectKey, topicId) {
@@ -673,11 +691,13 @@
   }
 
   function rerenderQuestion() {
+    saveDraftNow();   // keep the answer to the question being left
     const badge = document.getElementById('marksBadge');
     if (topicQuestions.length > 0) {
       const q = topicQuestions[questionIndex % topicQuestions.length];
       currentQuestion = q;
       questionText.textContent = q.q;   // plain text: code and inequalities use < and >
+      restoreDraft();
       const m = q.marks || 0;
       state.marks = m;
       state.command = q.command || state.command;
@@ -866,6 +886,58 @@
   };
   answerInput.addEventListener('input', updateWordCount);
 
+  // ---------- Essay drafts ----------
+  // An essay is long to write and easy to lose to a refresh, so the answer box
+  // is saved (debounced) per user + question, restored when that question is
+  // shown again, and cleared once it has been marked.
+  function draftKey() {
+    if (!currentQuestion) return null;
+    const id = `${state.subject}|${state.board}|${currentQuestion.q || ''}`;
+    let h = 0;
+    for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) | 0;
+    return `aiFeedback.draft.${user.id}.${(h >>> 0).toString(36)}`;
+  }
+  let markedText = null;      // the text that was last marked successfully
+  let draftTimer = null;
+  let activeDraftKey = null;  // key of the question the answer box belongs to
+  function saveDraftNow() {
+    clearTimeout(draftTimer);
+    const key = activeDraftKey;
+    if (!key) return;
+    const text = answerInput.value;
+    try {
+      if (text.trim() && text !== markedText) localStorage.setItem(key, text);
+      else localStorage.removeItem(key);
+    } catch (_) {}
+  }
+  function clearDraft() {
+    clearTimeout(draftTimer);
+    const key = activeDraftKey;
+    if (key) { try { localStorage.removeItem(key); } catch (_) {} }
+  }
+  function restoreDraft() {
+    clearTimeout(draftTimer);
+    markedText = null;
+    const key = activeDraftKey = draftKey();
+    let saved = null;
+    if (key) { try { saved = localStorage.getItem(key); } catch (_) {} }
+    answerInput.value = saved || '';
+    updateWordCount();
+  }
+  answerInput.addEventListener('input', () => {
+    clearTimeout(draftTimer);
+    draftTimer = setTimeout(saveDraftNow, 600);
+  });
+  window.addEventListener('pagehide', saveDraftNow);
+  window.addEventListener('beforeunload', (e) => {
+    const text = answerInput.value;
+    if (!text.trim() || text === markedText) return;
+    saveDraftNow();
+    e.preventDefault();
+    e.returnValue = '';
+  });
+  if (currentQuestion) restoreDraft();
+
   // ---------- AI marking ----------
 
   // Tiny escape so the model's strings can't sneak HTML into the page.
@@ -873,7 +945,9 @@
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
   function showFeedbackLoading() {
@@ -953,8 +1027,8 @@
   }
 
   // ---------- Shared model-answer fetcher ----------
-  // Used by both the Show-model button (standalone) and the auto-show after
-  // Mark finishes (appended below the feedback). Returns the text + marks; the
+  // Used by both the Show-model button (standalone) and the "Show model
+  // answer" button shown under marked feedback. Returns the text + marks; the
   // caller decides how to render it.
   async function fetchModelAnswer() {
     const { data: { session } } = await supabaseClient.auth.getSession();
@@ -974,7 +1048,7 @@
         command:   currentQuestion.command || state.command,
         subject:   state.subject,
         board:     state.board,
-        level:     window.levelSuffix(),
+        level:     userLevel,
         topicName: currentQuestion._topicName || state.topic,
       }),
     });
@@ -1035,10 +1109,34 @@
       </div>`;
   }
 
+  function appendShowModelButton() {
+    const wrap = document.createElement('div');
+    wrap.dataset.role = 'model-answer';
+    wrap.innerHTML = `
+      <div style="padding: 18px 24px; border-top:1px solid var(--border, #e5e4df); text-align:center;">
+        <button type="button" class="btn">✨ Show model answer</button>
+        <div style="font-size:12px; color:var(--muted2); margin-top:8px;">Uses one of today's AI requests.</div>
+      </div>`;
+    wrap.querySelector('button').addEventListener('click', async () => {
+      const marks = currentQuestion?.marks || state.marks || 12;
+      const placeholder = appendModelAnswerLoading(marks);
+      wrap.remove();
+      try {
+        const { text, marks: returnedMarks } = await fetchModelAnswer();
+        fillModelAnswerSection(placeholder, text, returnedMarks);
+      } catch (modelErr) {
+        console.warn('Model-answer fetch failed:', modelErr);
+        fillModelAnswerError(placeholder, modelErr.message || 'unknown error');
+        appendShowModelButton();
+      }
+    });
+    feedbackBody.appendChild(wrap);
+  }
+
   function fillModelAnswerError(el, msg) {
     el.innerHTML = `
       <div style="padding: 18px 24px; border-top:1px solid var(--border, #e5e4df); font-size:13px; color:var(--muted);">
-        Couldn't load a model answer (${esc(msg)}). You can try clicking "Show me a model answer" again.
+        Couldn't load a model answer (${esc(msg)}). You can try again below.
       </div>`;
   }
 
@@ -1077,7 +1175,7 @@
           studentAnswer: text,
           subject:       state.subject,
           board:         state.board,
-          level:         window.levelSuffix(),
+          level:         userLevel,
           topicName:     currentQuestion._topicName || state.topic,
         }),
       });
@@ -1111,19 +1209,13 @@
 
       const data = await resp.json();
       if (!data?.feedback) throw new Error('No feedback in response.');
+      markedText = answerInput.value;
+      clearDraft();
       renderFeedback(data.feedback);
 
-      // Auto-fetch the model answer and append it below the feedback so the
-      // student can compare without a second click.
-      const marks = currentQuestion.marks || state.marks || 12;
-      const placeholder = appendModelAnswerLoading(marks);
-      try {
-        const { text, marks: returnedMarks } = await fetchModelAnswer();
-        fillModelAnswerSection(placeholder, text, returnedMarks);
-      } catch (modelErr) {
-        console.warn('Auto model-answer fetch failed:', modelErr);
-        fillModelAnswerError(placeholder, modelErr.message || 'unknown error');
-      }
+      // The model answer is a second AI request against the same daily limit,
+      // so it is fetched only when the student asks for it.
+      appendShowModelButton();
     } catch (err) {
       console.error('Mark request failed:', err);
       showFeedbackError(err.message || 'Unknown error.');

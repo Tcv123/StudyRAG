@@ -146,6 +146,22 @@ module.exports = async function handler(req, res) {
     if (typeof studentAnswer !== 'string')          return res.status(400).json({ error: 'missing_studentAnswer' });
     if (studentAnswer.length > 12000)               return res.status(413).json({ error: 'answer_too_long' });
 
+    /* Everything here goes into the prompt, and nothing capped it — a caller
+     * could send a megabyte "mark scheme" and spend our Groq tokens on it.
+     * Limits sit well above the longest real ones in papers-data/ (scheme
+     * ~11.6k serialised, scenario ~7.3k, preamble ~1.9k, prompt ~1.3k). */
+    const LIMITS = [
+      ['question',   question,                         10000],
+      ['markScheme', JSON.stringify(markScheme),       20000],
+      ['scenario',   typeof scenario === 'string' ? scenario : JSON.stringify(scenario ?? ''), 10000],
+      ['preamble',   typeof preamble === 'string' ? preamble : JSON.stringify(preamble ?? ''),  5000],
+    ];
+    for (const [field, value, max] of LIMITS) {
+      if (value.length > max) {
+        return res.status(400).json({ error: 'field_too_long', field, message: `${field} is longer than ${max} characters.` });
+      }
+    }
+
     // Treat empty/whitespace-only answers as zero without burning an API call.
     if (!studentAnswer.trim()) {
       return res.status(200).json({

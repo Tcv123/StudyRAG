@@ -143,6 +143,32 @@
     .mini-btn.primary { background: var(--accent-solid, var(--accent)); color: #fff; border-color: var(--accent-solid, var(--accent)); }
     .mini-btn.primary:hover { background: var(--accent-dark); color: #fff; }
     .mini-btn.muted { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
+
+    /* Narrow phones: nothing in a board/series/paper row may force the page
+       wider than the screen. Flex children get min-width:0 and rows wrap. */
+    .main { min-width: 0; }
+    .board-summary > *, .series-summary > *, .paper-row > * { min-width: 0; }
+    @media (max-width: 480px) {
+      .board-summary { flex-wrap: wrap; gap: 8px 10px; padding: 14px 14px; }
+      .bs-name { flex-wrap: wrap; row-gap: 4px; }
+      .bs-meta { margin-left: 0; flex: 1 1 auto; }
+      .bs-chev { margin-left: auto; }
+      .board-body { padding: 12px 10px 12px; }
+      .series-summary { flex-wrap: wrap; gap: 6px 8px; padding: 11px 12px; }
+      .series-papers { padding: 0 8px 10px; }
+      .paper-row { flex-wrap: wrap; padding: 10px 12px; gap: 8px; }
+      .pr-name { flex: 1 1 100%; overflow-wrap: break-word; }
+      .pr-actions { white-space: normal; display: flex; flex-wrap: wrap; gap: 6px; }
+      .pr-actions .mini-btn { margin-right: 0; }
+      .qbq-badge { white-space: normal; margin-left: 0; }
+    }
+    @media (max-width: 360px) {
+      .series-summary { gap: 5px 6px; padding: 10px 10px; }
+      .ss-year { font-size: 13px; }
+      .ss-count, .ss-qbq { padding: 1px 7px; }
+      .board-summary { padding: 12px 12px; }
+      .bs-name { font-size: 16px; }
+    }
   </style>
   <link rel="stylesheet" href="responsive.css">
   <script src="theme.js"></script>
@@ -207,26 +233,43 @@
 
 <script>
 (async function () {
-  // Load profile in background for sidebar — does not block content render.
-  let user = null;
-  supabaseClient.auth.getSession().then(({ data: { session } }) => {
-    if (!session?.user) return;
-    user = session.user;
-    supabaseClient.from('profiles').select('first_name,last_name,avatar_url').eq('id', user.id).single()
-      .then(({ data: profile }) => {
-        if (!profile) return;
-        const fn = profile.first_name || ''; const ln = profile.last_name || '';
-        document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
-        document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
-        if (profile.avatar_url) {
-          const av = document.getElementById('avatarInitials');
-          const img = document.createElement('img');
-          img.src = profile.avatar_url;
-          img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
-          av.replaceChildren(img);
-        }
-      });
-  });
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  if (!user) { window.location = 'auth/login.html'; return; }
+
+  const { data: profile } = await supabaseClient
+    .from('profiles').select('*').eq('id', user.id).single();
+  const fn = profile?.first_name || ''; const ln = profile?.last_name || '';
+  document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
+  document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
+  if (profile?.avatar_url) {
+    const av = document.getElementById('avatarInitials');
+    const img = document.createElement('img');
+    img.src = profile.avatar_url;
+    img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+    av.replaceChildren(img);
+  }
+
+  // Pro gate — the full past-paper archive is a Pro feature.
+  const tier = profile?.subscription_tier || 'free';
+  const status = profile?.subscription_status || 'active';
+  const expires = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+  const isPro = tier !== 'free'
+    && ['active','trialing'].includes(status)
+    && (!expires || expires > new Date());
+  if (!isPro) {
+    document.getElementById('pageBody').innerHTML = `
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div class="lock-title">Past papers are a Pro feature</div>
+        <div class="lock-msg">
+          Upgrade for the full past-paper archive for your exam boards — question
+          papers, mark schemes, and on-screen attempts question by question.
+        </div>
+        <a class="lock-btn" href="pricing-app.html">✦ Upgrade to Pro</a>
+      </div>`;
+    return;
+  }
+  if (profile?.level) { try { localStorage.setItem('cached_level', profile.level); } catch (_) {} }
 
   // ---------- Pro user: render the past-papers index ----------
   function esc(s) {
@@ -332,12 +375,11 @@
   //    full list (so fresh accounts see something useful rather than an empty page).
   let userBoardsBySubject = null; // null = "no filter", show everything
   try {
-    const { data: { session } } = await supabaseClient.auth.getSession();
-    if (session?.user) {
+    {
       const { data: userSubs } = await supabaseClient
         .from('user_subjects')
         .select('subject, exam_board')
-        .eq('user_id', session.user.id);
+        .eq('user_id', user.id);
       if (Array.isArray(userSubs) && userSubs.length > 0) {
         userBoardsBySubject = new Map();
         for (const row of userSubs) {

@@ -749,8 +749,8 @@ function buildPicker(userSubs) {
 
   pickSubject.addEventListener('change', () => {
     const fi = pickSubject.value;
-    localStorage.setItem('ms_pickSubject', fi);
-    localStorage.removeItem('ms_pickPaper');
+    lsSet('ms_pickSubject', fi);
+    lsSet('ms_pickPaper', '');
     pickPaper.innerHTML = '<option value="">— Select paper —</option>';
     pickPaper.disabled = true;
     if (fi === '') return;
@@ -796,7 +796,7 @@ function buildPicker(userSubs) {
   pickPaper.addEventListener('change', async () => {
     const fi = pickSubject.value;
     const pi = pickPaper.value;
-    localStorage.setItem('ms_pickPaper', pi);
+    lsSet('ms_pickPaper', pi);
     if (pi === '') return;
     const entry = filtered[parseInt(fi)];
     const paper = entry.papers[parseInt(pi)];
@@ -913,8 +913,8 @@ function buildPicker(userSubs) {
   });
 
   // Restore saved dropdown selections after a page refresh
-  const savedSubject = localStorage.getItem('ms_pickSubject');
-  const savedPaper = localStorage.getItem('ms_pickPaper');
+  const savedSubject = lsGet('ms_pickSubject') || null;
+  const savedPaper = lsGet('ms_pickPaper') || null;
   if (savedSubject !== null && pickSubject.querySelector(`option[value="${savedSubject}"]`)) {
     pickSubject.value = savedSubject;
     pickSubject.dispatchEvent(new Event('change'));
@@ -928,25 +928,51 @@ function buildPicker(userSubs) {
   }
 }
 
-(async function () {
-  // Load profile in background for sidebar — does not block content render.
-  supabaseClient.auth.getSession().then(({ data: { session } }) => {
-    if (!session?.user) return;
-    supabaseClient.from('profiles').select('first_name,last_name,avatar_url').eq('id', session.user.id).single()
-      .then(({ data: profile }) => {
-        if (!profile) return;
-        const fn = profile.first_name || ''; const ln = profile.last_name || '';
-        document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
-        document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
-        if (profile.avatar_url) {
-          const av = document.getElementById('avatarInitials');
-          const img = document.createElement('img');
-          img.src = profile.avatar_url;
-          img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
-          av.replaceChildren(img);
-        }
-      });
-  });
+async function initMarkSchemes() {
+  const pageBody = document.getElementById('pageBody');
+  pageBody.innerHTML = `<div class="placeholder"><div class="placeholder-icon">⏳</div><div class="placeholder-title">Loading…</div><div class="placeholder-msg">Loading mark schemes…</div></div>`;
+  try {
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  if (!user) { window.location = 'auth/login.html'; return; }
+
+  const { data: profile } = await supabaseClient
+    .from('profiles').select('*').eq('id', user.id).single();
+  const fn = profile?.first_name || ''; const ln = profile?.last_name || '';
+  document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
+  document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
+  if (profile?.avatar_url) {
+    const av = document.getElementById('avatarInitials');
+    const img = document.createElement('img');
+    img.src = profile.avatar_url;
+    img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+    av.replaceChildren(img);
+  }
+
+  // Pro gate — the full mark-scheme archive is a Pro feature.
+  const tier = profile?.subscription_tier || 'free';
+  const status = profile?.subscription_status || 'active';
+  const expires = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+  const isPro = tier !== 'free'
+    && ['active','trialing'].includes(status)
+    && (!expires || expires > new Date());
+  if (!isPro) {
+    pageBody.innerHTML = `
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div class="lock-title">Mark schemes are a Pro feature</div>
+        <div class="lock-msg">
+          Upgrade to browse every past paper's mark scheme question by question,
+          with model answers and keyword analysis for your subjects.
+        </div>
+        <a class="lock-btn" href="pricing-app.html">✦ Upgrade to Pro</a>
+      </div>`;
+    return;
+  }
+
+  // Level comes from the profile; cached_level is only a fallback for when
+  // the profile read failed. Refresh the cache so boardsForLevel() agrees.
+  if (profile?.level) { try { localStorage.setItem('cached_level', profile.level); } catch (_) {} }
+  const isGcse = (profile?.level ? window.levelSuffix(profile.level) : window.levelSuffix()) === 'gcse';
   // Load papers-config.js and model answers
   if (!window.SUBJECTS) {
     await new Promise((resolve, reject) => {
@@ -960,41 +986,38 @@ function buildPicker(userSubs) {
   // Fetch the user's chosen subjects and boards
   let userSubs = [];
   try {
-    const { data: { session } } = await supabaseClient.auth.getSession();
-    if (session?.user) {
-      const { data } = await supabaseClient
-        .from('user_subjects').select('subject, exam_board').eq('user_id', session.user.id);
-      userSubs = data || [];
-    }
+    const { data } = await supabaseClient
+      .from('user_subjects').select('subject, exam_board').eq('user_id', user.id);
+    userSubs = data || [];
   } catch (_) {}
   // Load questions + pre-written model answers for the user's subjects only —
   // the picker offers nothing else, and all subjects together are ~6 MB.
   // Non-fatal if missing.
   const SUBJECT_FILES = {
-    'computer science':    window.levelSuffix() === 'gcse'
+    'computer science':    isGcse
                              ? [['CS_GCSE_MODEL_ANSWERS', 'model-answers-cs-gcse.js']]
                              : [['CS_MODEL_ANSWERS', 'model-answers-cs.js']],
     // GCSE Maths papers carry their questions inline, so a GCSE student needs
     // only the GCSE answers file; the side files are A-Level.
-    'mathematics':         window.levelSuffix() === 'gcse'
+    'mathematics':         isGcse
                              ? [['MATHS_GCSE_MODEL_ANSWERS', 'model-answers-maths-gcse.js']]
                              : [['MATHS_QUESTIONS', 'maths-questions.js'], ['MATHS_MODEL_ANSWERS', 'model-answers-maths.js'],
                                 ['CHECKED_MATHS_ANSWERS', 'model-answers-maths-checked.js']],
     'further mathematics': [['FM_QUESTIONS', 'further-maths-questions.js'], ['FM_MODEL_ANSWERS', 'model-answers-fm.js'],
                             ['CHECKED_FM_ANSWERS', 'model-answers-fm-checked.js']],
-    'physics':             window.levelSuffix() === 'gcse'
+    'physics':             isGcse
                              ? [['PHYS_GCSE_MODEL_ANSWERS', 'model-answers-physics-gcse.js']]
                              : [['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js']],
-    'biology':             window.levelSuffix() === 'gcse'
+    'biology':             isGcse
                              ? [['BIO_GCSE_MODEL_ANSWERS', 'model-answers-biology-gcse.js']]
                              : [['BIO_MODEL_ANSWERS', 'model-answers-biology.js']],
     // The picker only offers papers for the student's level (boardsForLevel),
     // so load just that level's Chemistry answers.
-    'chemistry':           window.levelSuffix() === 'gcse'
+    'chemistry':           isGcse
                              ? [['CHEM_GCSE_MODEL_ANSWERS', 'model-answers-chemistry-gcse.js']]
                              : [['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js']],
     'economics':           [['ECON_MODEL_ANSWERS', 'model-answers-economics.js']],
-    'geography':           window.levelSuffix() === 'gcse'
+    'geography':           isGcse
                              ? [['GEOG_GCSE_MODEL_ANSWERS', 'model-answers-geography-gcse.js']]
                              : [['GEOG_MODEL_ANSWERS', 'model-answers-geography.js']],
     'politics':            [['POLITICS_MODEL_ANSWERS', 'model-answers-politics.js']],
@@ -1008,7 +1031,12 @@ function buildPicker(userSubs) {
       document.head.appendChild(s);
     })));
   buildPicker(userSubs);
-})();
+  } catch (err) {
+    console.error('[mark-schemes] failed to load:', err);
+    pageBody.innerHTML = `<div class="placeholder"><div class="placeholder-icon">⚠️</div><div class="placeholder-title">Couldn't load mark schemes</div><div class="placeholder-msg">Check your connection and try again.</div><button type="button" class="lock-btn" style="margin-top:16px;border:0;cursor:pointer;" onclick="initMarkSchemes()">↻ Retry</button></div>`;
+  }
+}
+initMarkSchemes();
 </script>
 <div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
 <script src="fit-to-screen.js"></script>

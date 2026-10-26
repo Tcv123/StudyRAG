@@ -135,6 +135,53 @@
     };
   }
 
+  // ── Shared inputs (Dashboard + Breakdown) ─────────────────────────────────
+  // Both pages must predict from the SAME inputs or they show different grades
+  // for one subject. These two helpers are the single definition:
+  //   - level: profile.level, else cached_level, else 'gcse'
+  //   - topics: only the student's visible topics (TOPICS_VISIBLE) and only
+  //     the ones actually diagnosed; total = TOPICS_EXAMINED_TOTAL
+  //   - practice: attempts from the last PRACTICE_WINDOW_DAYS days (rows
+  //     need `taken_at`; rows without one are kept)
+  const PRACTICE_WINDOW_DAYS = 60;
+
+  function predictedGradeLevel(profileLevel) {
+    let l = profileLevel;
+    if (!l) { try { l = localStorage.getItem('cached_level'); } catch (e) {} }
+    return String(l || 'gcse').toLowerCase();
+  }
+
+  /**
+   * @param {object} p
+   * @param {string} p.level         — from predictedGradeLevel()
+   * @param {object} p.diagData      — DIAG_TOPICS entry for this subject/board
+   * @param {*}      p.options       — user_subjects.options (route choices)
+   * @param {Array}  p.topicRows     — topic_progress rows for this subject/board ({topic, rag_status})
+   * @param {Array}  p.practiceRows  — practice_attempts rows for this subject/board ({earned, total_marks, taken_at})
+   */
+  function predictSubjectGrade({ level, diagData, options, topicRows, practiceRows }) {
+    let rows = topicRows || [];
+    let total = 0;
+    if (diagData && typeof window.TOPICS_VISIBLE === 'function') {
+      const visible = new Set(window.TOPICS_VISIBLE(diagData, options).map(t => t.id));
+      rows = rows.filter(r => visible.has(r.topic));
+      total = (typeof window.TOPICS_EXAMINED_TOTAL === 'function'
+        ? window.TOPICS_EXAMINED_TOTAL(diagData) : 0) || visible.size;
+    }
+    const cutoff = Date.now() - PRACTICE_WINDOW_DAYS * 86400000;
+    const practice = (practiceRows || []).filter(r => {
+      if (!r.taken_at) return true;
+      const t = new Date(r.taken_at).getTime();
+      return !Number.isFinite(t) || t >= cutoff;
+    });
+    return computePredictedGrade({
+      level,
+      totalTopics: total || rows.length,
+      topicRows: rows,
+      practiceRows: practice,
+    });
+  }
+
   // ── Grade → display colour ────────────────────────────────────────────────
   const GRADE_COLOUR = {
     'A*': '#15803D', A: '#16A34A',
@@ -287,6 +334,9 @@
   }
 
   window.computePredictedGrade     = computePredictedGrade;
+  window.predictSubjectGrade       = predictSubjectGrade;
+  window.predictedGradeLevel       = predictedGradeLevel;
+  window.PREDICTED_GRADE_PRACTICE_DAYS = PRACTICE_WINDOW_DAYS;
   window.predictedGradeColour      = gradeColour;
   window.renderPredictedGradeBadge = renderPredictedGradeBadge;
 })();

@@ -5,6 +5,8 @@
      - login.html      (password sign-in)
      - confirmed.html  (email confirmation link)
      - register.html   (in-page OTP verification)
+     - verify.html     (OTP entered later)
+     - setup.html      (resuming a pending plan after setup)
 
    Three pages needed the same two things — make sure a profiles row exists,
    then work out where the user belongs — and they were drifting apart. The
@@ -81,6 +83,54 @@
     } catch (e) { /* never block sign-in on this */ }
   }
 
+  /* A plan picked on the pricing page before the user had an account.
+   *
+   * pricing.html / pricing-app.html send logged-out users to
+   * register.html?plan=X (or login.html?plan=X). Nothing downstream read it,
+   * so the choice was lost somewhere between sign-up, the OTP and setup, and
+   * checkout never resumed. It is kept in sessionStorage for the length of
+   * this tab, then handed to pricing-app.html?plan=X once the account is
+   * ready, which preselects it. Ids must match PLAN_DETAILS in the pricing
+   * pages and create-checkout-session. */
+  const PENDING_PLAN_KEY = 'rag_pending_plan';
+  const PLANS = ['monthly', 'biannual', 'annual'];
+
+  function rememberPlan(plan) {
+    if (!PLANS.includes(plan)) return;
+    try { sessionStorage.setItem(PENDING_PLAN_KEY, plan); } catch (e) { /* storage blocked */ }
+  }
+  function pendingPlan() {
+    try {
+      const p = sessionStorage.getItem(PENDING_PLAN_KEY);
+      return PLANS.includes(p) ? p : null;
+    } catch (e) { return null; }
+  }
+  function clearPendingPlan() {
+    try { sessionStorage.removeItem(PENDING_PLAN_KEY); } catch (e) { /* storage blocked */ }
+  }
+  /* The pricing URL for a pending plan (clearing it), or null if there is
+   * none. `prefix` is the path from the calling page to the site root. */
+  function takePendingPlanUrl(prefix) {
+    const plan = pendingPlan();
+    if (!plan) return null;
+    clearPendingPlan();
+    return (prefix || '') + 'pricing-app.html?plan=' + plan;
+  }
+
+  /* sessionStorage is per tab, so a user who confirms by the emailed link
+   * (which opens a new tab) would lose the plan. register.html also stores it
+   * on the account as user_metadata.pending_plan; adopt it into this tab once
+   * and clear it from the account so it only resumes a single time. */
+  function adoptAccountPlan(user) {
+    const plan = user?.user_metadata?.pending_plan;
+    if (!plan) return;
+    if (!pendingPlan()) rememberPlan(plan);
+    supabaseClient.auth.updateUser({ data: { pending_plan: null } }).catch(() => {});
+  }
+
+  // Capture ?plan= on whichever auth page loaded this script.
+  try { rememberPlan(new URLSearchParams(window.location.search).get('plan')); } catch (e) { /* no-op */ }
+
   /* Where this user should land, as a path relative to /auth/.
    *
    * Teachers skip setup.html entirely: it asks for subjects, current grades
@@ -88,6 +138,7 @@
    * sitting the exam. */
   async function destination(user) {
     if (!user) return 'login.html';
+    adoptAccountPlan(user);
 
     const { data: profile } = await supabaseClient
       .from('profiles')
@@ -95,8 +146,11 @@
       .eq('id', user.id)
       .maybeSingle();
 
-    if (profile?.account_type === 'teacher') return '../teacher.html';
-    return profile?.setup_complete ? '../Dashboard.html' : 'setup.html';
+    if (profile?.account_type === 'teacher') { clearPendingPlan(); return '../teacher.html'; }
+    // Students who still need setup keep the pending plan; setup.html
+    // resumes it when they finish.
+    if (!profile?.setup_complete) return 'setup.html';
+    return takePendingPlanUrl('../') || '../Dashboard.html';
   }
 
   /* ensureProfile + destination in one call, for the common case. */
@@ -105,5 +159,5 @@
     return destination(user);
   }
 
-  window.POST_AUTH = { ensureProfile, destination, routeAfterAuth };
+  window.POST_AUTH = { ensureProfile, destination, routeAfterAuth, rememberPlan, pendingPlan, takePendingPlanUrl };
 })();

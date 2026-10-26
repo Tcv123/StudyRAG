@@ -606,6 +606,16 @@
       .section-title { font-size: 13px; }
     }
 
+    /* Phones: the Night-mode toggle and ? button squeezed the greeting into a
+       narrow wrapping column. Give the greeting the full row and drop the
+       controls onto their own row beneath it. */
+    @media (max-width: 600px) {
+      .topbar { flex-wrap: wrap; row-gap: 10px; }
+      .topbar > :first-child { flex: 1 1 100%; min-width: 0; }
+      .topbar > :first-child > div:last-child { min-width: 0; }
+      .topbar-right { width: 100%; justify-content: flex-end; }
+    }
+
     /* Mobile menu toggle */
     .mobile-menu-btn {
       display: none; width: 36px; height: 36px; border-radius: 10px;
@@ -929,6 +939,13 @@
 <script src="exam-dates-config.js"></script>
 <script src="exam-dates.js"></script>
 <script>
+// Escape DB / user values before they go into innerHTML or an attribute.
+function escapeHtml(v) {
+  return String(v == null ? '' : v)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
 // ── Exam calendar (matches breakdown.html so the two views don't drift) ──
 const DASH_SUBJ_COLOR  = {'Computer Science':'#06B6D4','Mathematics':'#8B5CF6','Further Mathematics':'#D946EF','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6','English Language':'#DC2626','Politics':'#A16207','Business Studies':'#4F46E5'};
 const DASH_BOARD_COLOR = {'AQA':'#7C3AED','OCR':'#0369A1','Edexcel':'#B45309','Edexcel A':'#B45309','Edexcel B':'#92400E','OCR A':'#0E7490','OCR B':'#0F766E','Eduqas':'#047857'};
@@ -1063,10 +1080,10 @@ function renderExamCalendar() {
       const strike  = done ? 'text-decoration:line-through;' : '';
       return `<div style="background:${sc}15;border:1px solid ${sc}40;border-left:3px solid ${sc};border-radius:6px;padding:4px 6px;margin-top:3px;opacity:${cardOpacity};${done ? 'filter:grayscale(0.3);' : ''}">
         <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2px 4px;margin-bottom:2px;">
-          <div style="font-size:11px;font-weight:700;color:var(--text);line-height:1.2;min-width:0;overflow:hidden;${strike}" title="${e.subject}">${e.emoji} ${e.subject}</div>
+          <div style="font-size:11px;font-weight:700;color:var(--text);line-height:1.2;min-width:0;overflow:hidden;${strike}" title="${escapeHtml(e.subject)}">${escapeHtml(e.emoji)} ${escapeHtml(e.subject)}</div>
           <span style="font-size:10px;font-weight:700;color:${urgText};background:${urgBg};padding:1px 5px;border-radius:8px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${badge}</span>
         </div>
-        <div style="font-size:10px;color:var(--muted);line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;${strike}">${e.paper}</div>
+        <div style="font-size:10px;color:var(--muted);line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;${strike}">${escapeHtml(e.paper)}</div>
       </div>`;
     }).join('');
 
@@ -1148,9 +1165,9 @@ function renderSubjectsRow(subjects, topicRows) {
     const tagLabel = { green: 'Green', amber: 'Amber', red: 'Red', pending: 'Pending' }[rag];
     return `
     <div class="subj-info-card ${ragClass}">
-      <div class="subj-info-emoji">${s.emoji || '📚'}</div>
-      <div class="subj-info-name">${s.subject}</div>
-      <div class="subj-info-board">${s.exam_board}</div>
+      <div class="subj-info-emoji">${escapeHtml(s.emoji || '📚')}</div>
+      <div class="subj-info-name">${escapeHtml(s.subject)}</div>
+      <div class="subj-info-board">${escapeHtml(s.exam_board)}</div>
       <span class="rag-tag ${tagClass}">${tagLabel}</span>
     </div>`;
   }).join('');
@@ -1171,7 +1188,7 @@ function renderMedals(earnedIds) {
 
 // ── Render ───────────────────────────────────────────────────────────────
 function renderLevel(level) {
-  const cfg = LEVEL_CONFIG[level] || LEVEL_CONFIG['as'];
+  const cfg = LEVEL_CONFIG[level] || LEVEL_CONFIG['gcse'];
   document.getElementById('levelIcon').textContent  = cfg.icon;
   document.getElementById('levelValue').textContent = cfg.label;
   document.getElementById('levelDesc').textContent  = cfg.desc;
@@ -1335,19 +1352,21 @@ function renderSubjectsProgress(subjects, topicRows, practiceAttempts, level) {
     attemptsByKey[sbKey].push(a);
   });
 
-  const _level = (level || localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+  const _level = (window.predictedGradeLevel
+    ? window.predictedGradeLevel(level)
+    : (level || 'gcse')).toLowerCase();
 
   grid.innerHTML = subjects.map(s => {
     const sbKey   = `${s.subject}_${s.exam_board}`;
     // Subjects flagged "coming soon" at this level render as a locked card.
     if (window.SUBJECTS_CONFIG?.isComingSoonAlevel?.(s.subject, _level)) {
       return `
-      <div class="subj-card" style="opacity:0.6;cursor:not-allowed;" title="A-Level ${s.subject} is coming soon">
+      <div class="subj-card" style="opacity:0.6;cursor:not-allowed;" title="A-Level ${escapeHtml(s.subject)} is coming soon">
         <div class="subj-card-top">
-          <div class="subj-emoji">${s.emoji || '📚'}</div>
+          <div class="subj-emoji">${escapeHtml(s.emoji || '📚')}</div>
           <div class="subj-info">
-            <div class="subj-name">${s.subject}</div>
-            <div class="subj-board">${s.exam_board}</div>
+            <div class="subj-name">${escapeHtml(s.subject)}</div>
+            <div class="subj-board">${escapeHtml(s.exam_board)}</div>
           </div>
         </div>
         <div style="padding:14px 16px;text-align:center;font-size:12px;color:var(--amber-text, #b45309);background:rgba(245,158,11,0.10);border-top:1px solid rgba(245,158,11,0.25);border-radius:0 0 12px 12px;font-weight:600;">
@@ -1358,10 +1377,12 @@ function renderSubjectsProgress(subjects, topicRows, practiceAttempts, level) {
     const key     = _lvLookup(SUBJECT_TOPIC_KEY, sbKey);
     const topics  = bySubjKey[sbKey] || [];
     const total   = TOTAL_TOPICS_FOR(key);
-    const prediction = (typeof computePredictedGrade === 'function')
-      ? computePredictedGrade({
+    // Same call, same inputs as breakdown.html — see predictSubjectGrade.
+    const prediction = (typeof window.predictSubjectGrade === 'function')
+      ? window.predictSubjectGrade({
           level: _level,
-          totalTopics: total || topics.length,
+          diagData: _lvLookup(DIAG_TOPICS, sbKey),
+          options: s.options,
           topicRows: topics,
           practiceRows: attemptsByKey[sbKey] || [],
         })
@@ -1371,7 +1392,9 @@ function renderSubjectsProgress(subjects, topicRows, practiceAttempts, level) {
     const amber   = topics.filter(t => t.rag_status === 'amber').length;
     const red     = topics.filter(t => t.rag_status === 'red').length;
     const diagComplete = total && tested >= total;
-    const cardHref = `Dashboard.html#diagnostic=${encodeURIComponent(sbKey)}`;
+    // encodeURIComponent leaves ' alone, and this lands in a JS string inside
+    // onclick="…'…'", so encode it too.
+    const cardHref = `Dashboard.html#diagnostic=${encodeURIComponent(sbKey).replace(/'/g, '%27')}`;
 
     // Overall card RAG — use topic data if available, else fall back to stored status
     let cardRag = s.rag_status || 'pending';
@@ -1401,11 +1424,11 @@ function renderSubjectsProgress(subjects, topicRows, practiceAttempts, level) {
 
     return `
     <div class="subj-card ${ragClass(cardRag)}" onclick="window.location='${cardHref}'">
-      <span class="subj-emoji">${s.emoji || '📚'}</span>
-      <div class="subj-name">${s.subject}</div>
+      <span class="subj-emoji">${escapeHtml(s.emoji || '📚')}</span>
+      <div class="subj-name">${escapeHtml(s.subject)}</div>
       <div style="display:flex;align-items:center;flex-wrap:wrap;gap:5px;margin-bottom:6px;">
-        <span class="subj-board-tag" style="margin-bottom:0;">${s.exam_board}</span>
-        ${gradeStr ? `<span style="font-size:11px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent-solid, var(--accent)),var(--accent-solid-end, var(--accent-dark)));padding:2px 8px;border-radius:20px;box-shadow:0 2px 6px var(--accent-glow);letter-spacing:0.01em;">${gradeStr}</span>` : ''}
+        <span class="subj-board-tag" style="margin-bottom:0;">${escapeHtml(s.exam_board)}</span>
+        ${gradeStr ? `<span style="font-size:11px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent-solid, var(--accent)),var(--accent-solid-end, var(--accent-dark)));padding:2px 8px;border-radius:20px;box-shadow:0 2px 6px var(--accent-glow);letter-spacing:0.01em;">${escapeHtml(gradeStr)}</span>` : ''}
         ${(typeof renderPredictedGradeBadge === 'function') ? renderPredictedGradeBadge(prediction, { level: _level, target: tgtGrade, inline: true }) : ''}
         ${!diagComplete && total ? `<span title="Take the diagnostic to get your personalised weak-topic list" style="font-size:10px;font-weight:600;color:var(--amber-text, #B45309);background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.25);padding:2px 8px;border-radius:20px;">🚦 Diagnostic ${tested}/${total}</span>` : ''}
       </div>
@@ -1504,7 +1527,8 @@ const SUBJECT_NOTES_PAGE = {
 // ── Main load ─────────────────────────────────────────────────────────────
 async function load() {
   // Apply cached level instantly so returning users don't see the default flash
-  const cachedLevel = localStorage.getItem('cached_level');
+  let cachedLevel = null;
+  try { cachedLevel = localStorage.getItem('cached_level'); } catch (e) {}
   if (cachedLevel && LEVEL_CONFIG[cachedLevel]) renderLevel(cachedLevel);
 
   const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
@@ -1512,25 +1536,38 @@ async function load() {
   window.currentUserId = user.id;
   maybeShowWelcome();
 
-  // Load all data in parallel
-  const sixtyDaysAgo = new Date(Date.now() - 60 * 86400000).toISOString();
+  // Load all data in parallel. The practice window matches predicted-grade.js
+  // (predictSubjectGrade) so the Dashboard and Breakdown predict identically.
+  const practiceDays = window.PREDICTED_GRADE_PRACTICE_DAYS || 60;
+  const practiceSince = new Date(Date.now() - practiceDays * 86400000).toISOString();
+  const results = await Promise.all([
+    // maybeSingle: a missing row is data (null), not an error.
+    supabaseClient.from('profiles').select('*').eq('id', user.id).maybeSingle(),
+    supabaseClient.from('user_subjects').select('*').eq('user_id', user.id).order('created_at'),
+    supabaseClient.from('user_medals').select('*').eq('user_id', user.id),
+    supabaseClient.from('topic_progress').select('subject, exam_board, topic, rag_status, updated_at').eq('user_id', user.id),
+    supabaseClient.from('practice_attempts').select('subject, exam_board, earned, total_marks, taken_at').eq('user_id', user.id).gte('taken_at', practiceSince)
+  ]);
+  // Supabase reports failures as { error } rather than throwing. Treating a
+  // failed query as empty data showed a wrong picture (and a failed profile
+  // read flipped GCSE students to A-Level via the cached_level write below),
+  // so fail into the error view instead.
+  const failed = results.find(r => r && r.error);
+  if (failed) throw new Error('Could not load your data — ' + (failed.error.message || 'network error'));
   const [
     { data: profile },
     { data: subjects },
     { data: medals },
     { data: topicProgress },
     { data: recentAttempts }
-  ] = await Promise.all([
-    supabaseClient.from('profiles').select('*').eq('id', user.id).single(),
-    supabaseClient.from('user_subjects').select('*').eq('user_id', user.id).order('created_at'),
-    supabaseClient.from('user_medals').select('*').eq('user_id', user.id),
-    supabaseClient.from('topic_progress').select('subject, exam_board, topic, rag_status, updated_at').eq('user_id', user.id),
-    supabaseClient.from('practice_attempts').select('subject, exam_board, earned, total_marks').eq('user_id', user.id).gte('taken_at', sixtyDaysAgo)
-  ]);
+  ] = results;
 
   const firstName = profile?.first_name || '';
   const lastName  = profile?.last_name  || '';
-  const level     = profile?.level      || 'as';
+  // Same default as breakdown.html: profile level, else cache, else GCSE.
+  const level     = (window.predictedGradeLevel
+    ? window.predictedGradeLevel(profile?.level)
+    : (profile?.level || cachedLevel || 'gcse')).toLowerCase();
   const hour      = new Date().getHours();
   const greet     = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
 
@@ -1543,7 +1580,8 @@ async function load() {
 
   // Level banner (also cache for next visit so there's no default flash)
   renderLevel(level);
-  try { localStorage.setItem('cached_level', level); } catch (e) {}
+  // Only cache a level the profile actually has — never a fallback.
+  if (profile?.level) { try { localStorage.setItem('cached_level', profile.level); } catch (e) {} }
 
   // Plan CTA — swap to "You're on Pro" for active subscribers
   renderPlanCta(profile);
@@ -1556,7 +1594,6 @@ async function load() {
 
   // Filter topic progress to only include current subjects
   const topicRows  = (topicProgress || []).filter(t => currentSubjectKeys.has(`${t.subject}_${t.exam_board}`));
-  _cachedTopicRows = topicRows;
   const tGreen     = topicRows.filter(t => t.rag_status === 'green').length;
   const tAmber     = topicRows.filter(t => t.rag_status === 'amber').length;
   const tRed       = topicRows.filter(t => t.rag_status === 'red').length;
@@ -1624,8 +1661,8 @@ function renderRecentActivity(topicRows, medals, profile) {
       time:  new Date(t.updated_at),
       color: ragColor[rag] || 'var(--accent)',
       icon:  ragIcon[rag] || '⚪',
-      text:  `Diagnostic — <strong>${topicName}</strong>`,
-      sub:   `${subject} · ${board} · Rated <span style="color:${ragColor[rag]};font-weight:600;">${ragLabel[rag] || rag}</span>`
+      text:  `Diagnostic — <strong>${escapeHtml(topicName)}</strong>`,
+      sub:   `${escapeHtml(subject)} · ${escapeHtml(board)} · Rated <span style="color:${ragColor[rag] || 'var(--accent)'};font-weight:600;">${escapeHtml(ragLabel[rag] || rag)}</span>`
     });
   });
 
@@ -1654,7 +1691,7 @@ function renderRecentActivity(topicRows, medals, profile) {
     last = new Date(+p[0], +p[1]-1, +p[2]||1);
     last.setHours(0,0,0,0);
   }
-  const daysSinceLast = last ? Math.floor((today - last) / 86400000) : 999;
+  const daysSinceLast = last ? calendarDaysBetween(last, today) : 999;
   const streakBroken  = daysSinceLast > 1;
 
   if (streak > 0 && last) {
@@ -1739,6 +1776,12 @@ function renderRecentActivity(topicRows, medals, profile) {
 }
 
 // ── Streak ────────────────────────────────────────────────────────────────
+// Whole calendar days from a to b (both local midnights). Rounding absorbs the
+// 23h/25h days at DST changes, where Math.floor on raw ms was off by one.
+function calendarDaysBetween(a, b) {
+  return Math.round((b - a) / 86400000);
+}
+
 function renderStreak(count, lastDate) {
   // Check if streak is still valid — if last study date was more than 1 day ago, reset to 0
   const today = new Date();
@@ -1751,7 +1794,7 @@ function renderStreak(count, lastDate) {
     last.setHours(0, 0, 0, 0);
   }
 
-  const daysSinceLast = last ? Math.floor((today - last) / 86400000) : 999;
+  const daysSinceLast = last ? calendarDaysBetween(last, today) : 999;
 
   // If they missed a day (more than 1 day gap), streak is broken
   let validCount = count;
@@ -1765,8 +1808,6 @@ function renderStreak(count, lastDate) {
   streakLblEl.textContent   = validCount === 1 ? 'day in a row' : 'days in a row';
   streakNumEl.style.visibility = '';
   streakLblEl.style.visibility = '';
-  const statStreakEl = document.getElementById('statStreak');
-  if (statStreakEl) statStreakEl.textContent = `🔥 ${validCount}`;
 
   const days = ['S','M','T','W','T','F','S'];
   const dots = document.getElementById('streakDots');
@@ -1785,7 +1826,7 @@ function renderStreak(count, lastDate) {
   // Load per-day seconds log from localStorage
   let dailyLog = {};
   try { dailyLog = JSON.parse(localStorage.getItem('study_daily_log') || '{}'); } catch (_) {}
-  const goalMinsForDots = parseInt(localStorage.getItem('study_goal') || '30');
+  const goalMinsForDots = studyGoalMins();
   const goalSecsForDots = goalMinsForDots * 60;
 
   dots.innerHTML = Array.from({ length: 7 }, (_, i) => {
@@ -1796,7 +1837,8 @@ function renderStreak(count, lastDate) {
     const studied = studiedDates.has(d.toDateString());
     // A day is "missed" if: it's in the past (not today), streak was active at that point, and not studied
     const isPast  = d < today;
-    const missed  = isPast && !studied && !isToday && last && d >= new Date(last.getTime() - validCount * 86400000);
+    const streakStart = last ? new Date(last.getFullYear(), last.getMonth(), last.getDate() - validCount) : null;
+    const missed  = isPast && !studied && !isToday && last && d >= streakStart;
 
     // Look up actual seconds for this day from the local log
     const dateKey  = d.toLocaleDateString('en-CA');
@@ -1833,6 +1875,20 @@ function renderStreak(count, lastDate) {
   updateStreakProgress();
 }
 
+// Storage access throws in blocked-storage / some private modes; never let
+// that take the whole Dashboard into its error view.
+function safeLsGet(k) {
+  try { return localStorage.getItem(k); } catch (e) { return null; }
+}
+function safeLsSet(k, v) {
+  try { localStorage.setItem(k, v); } catch (e) {}
+}
+// Daily goal in minutes (settings.html → 'study_goal'); matches study-tracker.js.
+function studyGoalMins() {
+  const m = parseInt(safeLsGet('study_goal') || '', 10);
+  return Number.isFinite(m) && m > 0 ? m : 30;
+}
+
 function formatGoalMins(goalMins) {
   if (goalMins >= 60 && goalMins % 60 === 0) {
     const h = goalMins / 60;
@@ -1847,8 +1903,8 @@ function formatGoalMins(goalMins) {
 }
 
 function updateStreakProgress() {
-  const secs     = parseInt(localStorage.getItem('study_seconds') || '0');
-  const goalMins = parseInt(localStorage.getItem('study_goal') || '30');
+  const secs     = parseInt(safeLsGet('study_seconds') || '0', 10) || 0;
+  const goalMins = studyGoalMins();
   const total    = goalMins * 60;
   const mins     = Math.floor(secs / 60);
   const pct      = Math.min((secs / total) * 100, 100);
@@ -1870,9 +1926,6 @@ function updateStreakProgress() {
   label.style.color     = done ? 'var(--green-text)' : 'var(--accent-dark)';
 }
 
-
-// ── Stat card dropdown ──────────────────────────────────────────────────
-let _cachedTopicRows = [];
 
 /* Move a subject to the next choice in an option group and persist it.
    Cycling rather than opening a dialog keeps this to one tap for the only
@@ -1897,132 +1950,6 @@ async function cycleRoute(subject, board, groupKey) {
 
   row.options = options;   // keep the cached row in step so the re-render is correct
   showDiagSubjectCards();
-}
-let _activeStatFilter = null;
-
-const TOPIC_TIPS = {
-  amber: {
-    '1.1': 'Review CPU components and the fetch-execute cycle',
-    '1.2': 'Revisit storage types and memory hierarchy',
-    '1.3': 'Focus on protocols and network topologies',
-    '1.4': 'Brush up on threat types and prevention methods',
-    '1.5': 'Review OS functions and translator differences',
-    '1.6': 'Revisit legislation and ethical issues',
-    '2.1': 'Practice trace tables and sorting algorithms',
-    '2.2': 'Review data types, loops and array operations',
-    '2.3': 'Focus on testing types and validation techniques',
-    '2.4': 'Practice truth tables and Boolean simplification',
-    '2.5': 'Review compiler vs interpreter and IDE features',
-  },
-  red: {
-    '1.1': 'Start with the basics: CPU components, registers, and buses',
-    '1.2': 'Begin with RAM vs ROM, then move to storage comparisons',
-    '1.3': 'Start with LAN vs WAN and build up to protocols',
-    '1.4': 'Learn the main threat types first, then prevention',
-    '1.5': 'Focus on what an OS does before moving to translators',
-    '1.6': 'Start with the key laws: DPA, CMA, Copyright',
-    '2.1': 'Start with linear/binary search, then try sorting',
-    '2.2': 'Begin with variables and data types, then loops',
-    '2.3': 'Learn validation vs verification first',
-    '2.4': 'Start with AND, OR, NOT truth tables',
-    '2.5': 'Learn high vs low level languages first',
-  }
-};
-
-function toggleStatDropdown(filter) {
-  const dropdown = document.getElementById('statDropdown');
-  const cards = document.querySelectorAll('.stat-card');
-
-  if (_activeStatFilter === filter && dropdown.classList.contains('open')) {
-    dropdown.classList.remove('open');
-    cards.forEach(c => c.classList.remove('active'));
-    _activeStatFilter = null;
-    return;
-  }
-
-  _activeStatFilter = filter;
-  cards.forEach(c => c.classList.remove('active'));
-
-  const cardIndex = { all: 0, green: 1, amber: 2, red: 3 }[filter];
-  if (cards[cardIndex]) cards[cardIndex].classList.add('active');
-
-  const ragMap = {};
-  _cachedTopicRows.forEach(t => {
-    ragMap[`${t.subject}_${t.exam_board}_${t.topic}`] = t.rag_status;
-  });
-
-  const titles = {
-    all: 'All Topics Covered',
-    green: 'Green Topics — Confident & Ready',
-    amber: 'Amber Topics — Almost There',
-    red: 'Red Topics — Need Attention'
-  };
-  const descs = {
-    all: 'Every topic you\'ve been tested on, colour-coded by your current level.',
-    green: 'You\'re scoring well on these. Keep revising to stay sharp.',
-    amber: 'You\'re close on these topics. A bit more practice and they\'ll turn green.',
-    red: 'These need the most work. Focus your revision here for the biggest improvement.'
-  };
-
-  let topicItems = [];
-  // ragMap is keyed by the plain board name the database stores ("Edexcel"),
-  // but a third of the DIAG_TOPICS keys carry a "|alevel" / "|gcse" variant
-  // suffix, so reading the map with the raw registry key never matched and
-  // every suffixed spec vanished from this panel. Resolve the one variant
-  // that belongs to this student's level — the same levelLookup breakdown.html
-  // uses — and read the map with the unsuffixed base key it was built from.
-  // Deduping on the base matters: eleven bases have two variants, and taking
-  // both would list every topic twice, once under the wrong level's names
-  // and page links.
-  const seenBase = new Set();
-  for (const key of Object.keys(DIAG_TOPICS)) {
-    const baseKey = key.split('|')[0];
-    if (seenBase.has(baseKey)) continue;
-    seenBase.add(baseKey);
-    const diagData = window.levelLookup(DIAG_TOPICS, baseKey);
-    if (!diagData) continue;
-    /* Match the student's row for this spec so an unchosen Component 3
-       route is excluded; a user_subjects row gives only subject and board. */
-    const row = diagSubjectList.find(x => `${x.subject}_${x.exam_board}` === baseKey);
-    window.TOPICS_VISIBLE(diagData, row && row.options).forEach(t => {
-      const rag = ragMap[`${baseKey}_${t.id}`] || null;
-      if (filter === 'all' && rag) {
-        topicItems.push({ ...t, rag, subject: diagData.label, page: diagData.page, key: baseKey });
-      } else if (filter !== 'all' && rag === filter) {
-        topicItems.push({ ...t, rag, subject: diagData.label, page: diagData.page, key: baseKey });
-      }
-    });
-  }
-
-  let html = `<div class="stat-dropdown-title">${titles[filter]}</div>
-    <div class="stat-dropdown-desc">${descs[filter]}</div>`;
-
-  if (!topicItems.length) {
-    const emptyMsgs = {
-      all: 'No topics tested yet. Start a diagnostic to see your progress here.',
-      green: 'No green topics yet. Keep practising and they\'ll appear here.',
-      amber: 'No amber topics. Either you\'re all green or haven\'t started yet!',
-      red: 'No red topics — great work!'
-    };
-    html += `<div class="stat-empty-msg">${emptyMsgs[filter]}</div>`;
-  } else {
-    topicItems.forEach(t => {
-      const tip = (t.rag === 'amber' || t.rag === 'red') ? TOPIC_TIPS[t.rag]?.[t.id] : null;
-      html += `
-        <a class="stat-topic-item" href="${t.page}?topic=${t.id}">
-          <div class="stat-topic-num ${t.rag}">${t.id}</div>
-          <div class="stat-topic-info">
-            <div class="stat-topic-name">${t.name}</div>
-            <div class="stat-topic-sub">${t.subject} · ${t.sub}</div>
-            ${tip ? `<div class="stat-topic-tip ${t.rag}">${tip}</div>` : ''}
-          </div>
-          <div class="stat-topic-rag ${t.rag}"></div>
-        </a>`;
-    });
-  }
-
-  dropdown.innerHTML = html;
-  dropdown.classList.add('open');
 }
 
 // ── Topic definitions per subject for diagnostic list ────────────────────
@@ -2122,10 +2049,10 @@ function showDiagSubjectCards() {
     if (!diagData) {
       return `
         <div class="diag-subj-card" style="opacity:0.5;cursor:default;">
-          <div class="diag-subj-emoji">${emoji}</div>
+          <div class="diag-subj-emoji">${escapeHtml(emoji)}</div>
           <div class="diag-subj-info">
-            <div class="diag-subj-name">${s.subject}</div>
-            <div class="diag-subj-board">${s.exam_board} · Coming soon</div>
+            <div class="diag-subj-name">${escapeHtml(s.subject)}</div>
+            <div class="diag-subj-board">${escapeHtml(s.exam_board)} · Coming soon</div>
           </div>
         </div>`;
     }
@@ -2134,8 +2061,8 @@ function showDiagSubjectCards() {
       <div class="diag-subj-card" onclick="showDiagTopics('${key}')">
         <div class="diag-subj-emoji">${emoji}</div>
         <div class="diag-subj-info">
-          <div class="diag-subj-name">${s.subject}</div>
-          <div class="diag-subj-board">${s.exam_board} · ${tested}/${totalTopics} topics tested</div>
+          <div class="diag-subj-name">${escapeHtml(s.subject)}</div>
+          <div class="diag-subj-board">${escapeHtml(s.exam_board)} · ${tested}/${totalTopics} topics tested</div>
           ${routeLine(diagData, s)}
           <div class="diag-subj-stats">${pills}</div>
         </div>
@@ -2290,7 +2217,7 @@ function welcomeKey() {
 
 function maybeShowWelcome() {
   const key = welcomeKey();
-  if (!key || localStorage.getItem(key)) return;
+  if (!key || safeLsGet(key)) return;
 
   // Queue behind the referral question rather than stacking on top of it —
   // a brand new account is owed both, and two modals at once reads as a bug.
@@ -2306,7 +2233,7 @@ function maybeShowWelcome() {
 
 function dismissWelcome() {
   const key = welcomeKey();
-  if (key) localStorage.setItem(key, '1');
+  if (key) safeLsSet(key, '1');
   document.getElementById('helpOverlay').classList.remove('active');
 }
 
@@ -2349,7 +2276,7 @@ load().then(() => {
   checkDiagnosticHash();
 }).catch(err => {
   console.error('Dashboard load error:', err);
-  document.querySelector('.main').innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted);"><p style="font-size:16px;margin-bottom:8px;">Something went wrong loading the dashboard.</p><p style="font-size:13px;">' + err.message + '</p><button onclick="location.reload()" style="margin-top:16px;padding:8px 20px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:13px;">Retry</button></div>';
+  document.querySelector('.main').innerHTML = '<div style="padding:40px;text-align:center;color:var(--muted);"><p style="font-size:16px;margin-bottom:8px;">Something went wrong loading the dashboard.</p><p style="font-size:13px;">' + escapeHtml(err && err.message) + '</p><button onclick="location.reload()" style="margin-top:16px;padding:8px 20px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font-size:13px;">Retry</button></div>';
 });
 </script>
 

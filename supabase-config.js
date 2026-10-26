@@ -369,3 +369,99 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     };
   }
 })();
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Per-user localStorage scoping
+//
+// Several caches in localStorage belong to whoever is signed in. On a shared
+// computer the next account would otherwise inherit them (a GCSE level, a Pro
+// unlock, someone else's half-finished paper). Two pieces:
+//
+//   1. Paper attempts are keyed `paperAttempt.<uid>.<paperId>`. Old builds
+//      wrote `paperAttempt.<paperId>` with no owner. Those legacy keys are
+//      moved to the current user ONLY when this browser has never seen a
+//      second account (`rag_multi_user` unset) and `rag_last_uid` is either
+//      absent or this same user. Otherwise there is no way to know whose they
+//      are, so they are left unread rather than handed to the wrong person.
+//
+//   2. A single SIGNED_OUT handler clears the signed-out user's caches
+//      (but not their paper attempts, which exist nowhere else).
+//
+// Every localStorage access is wrapped: private-browsing / blocked-storage
+// modes throw on access.
+// ─────────────────────────────────────────────────────────────────────────────
+(function () {
+  var PAPER_PREFIX = 'paperAttempt.';
+  // Clearly user-scoped keys (grep of localStorage.setItem across the repo).
+  // Device preferences (dark_mode, study_goal, ms_pick*) are deliberately kept.
+  var USER_KEYS = [
+    'cached_level', 'cached_account_type',
+    'rag_is_pro', 'rag_pro_expires_at',
+    'rag_is_admin', 'rag_is_admin_expires_at',
+    // study-tracker.js counters — left in place they would credit today's
+    // minutes (and streak) to the next account to sign in.
+    'study_date', 'study_seconds', 'streak_marked', 'streak_writing_at', 'study_daily_log'
+  ];
+
+  function lsGet(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function lsDel(k) { try { localStorage.removeItem(k); } catch (e) {} }
+  function lsKeys() {
+    var out = [];
+    try { for (var i = 0; i < localStorage.length; i++) out.push(localStorage.key(i)); } catch (e) {}
+    return out;
+  }
+
+  window.paperAttemptKey = function (uid, paperId) {
+    return PAPER_PREFIX + uid + '.' + paperId;
+  };
+
+  // Legacy un-namespaced key: `paperAttempt.<paperId>` where the remainder is
+  // not `<uid>.<…>`. uids are UUIDs (or 'demo'), paper ids never are.
+  var UUID_DOT = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\./i;
+  function isLegacyPaperKey(k) {
+    if (!k || k.indexOf(PAPER_PREFIX) !== 0) return false;
+    var rest = k.slice(PAPER_PREFIX.length);
+    return !UUID_DOT.test(rest) && rest.indexOf('demo.') !== 0;
+  }
+
+  var migrated = {};
+  // Record who is signed in and, once, adopt legacy paper attempts for them
+  // if it is safe to (see header). Idempotent; call before reading attempts.
+  window.claimLegacyPaperAttempts = function (uid) {
+    if (!uid || uid === 'demo' || migrated[uid]) return;
+    migrated[uid] = true;
+    var last = lsGet('rag_last_uid');
+    if (last && last !== uid) lsSet('rag_multi_user', '1');
+    var safe = !lsGet('rag_multi_user') && (!last || last === uid);
+    lsSet('rag_last_uid', uid);
+    if (!safe) return;
+    lsKeys().filter(isLegacyPaperKey).forEach(function (k) {
+      var v = lsGet(k);
+      var target = window.paperAttemptKey(uid, k.slice(PAPER_PREFIX.length));
+      if (v != null && lsGet(target) == null) lsSet(target, v);
+      lsDel(k);
+    });
+  };
+
+  if (typeof supabaseClient === 'undefined' || !supabaseClient || !supabaseClient.auth) return;
+
+  var currentUid = null;
+  supabaseClient.auth.onAuthStateChange(function (event, session) {
+    var uid = session && session.user && session.user.id;
+    if (uid) {
+      if (uid !== currentUid) window.claimLegacyPaperAttempts(uid);
+      currentUid = uid;
+      return;
+    }
+    if (event !== 'SIGNED_OUT') return;
+    // Kept synchronous: logout handlers navigate away as soon as signOut()
+    // resolves, and supabase-js awaits subscribers before resolving.
+    // Paper attempts are NOT cleared: they live only on this device, and the
+    // uid in their key already hides them from any other account.
+    USER_KEYS.forEach(lsDel);
+    currentUid = null;
+    // rag_last_uid / rag_multi_user stay: they record that this browser has
+    // been used by more than one account, which the legacy migration needs.
+  });
+})();

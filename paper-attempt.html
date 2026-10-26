@@ -510,7 +510,13 @@
     document.getElementById('paperSub').textContent = paper.paperName;
 
     // ---------- Render: paper meta + mode selector ----------
-    const STORAGE_KEY = `paperAttempt.${paper.id}`;
+    // Namespaced by user so the next account on a shared computer can't see
+    // this attempt. claimLegacyPaperAttempts (supabase-config.js) moves an old
+    // un-namespaced `paperAttempt.<id>` to this user when that is safe.
+    if (window.claimLegacyPaperAttempts) window.claimLegacyPaperAttempts(user.id);
+    const STORAGE_KEY = window.paperAttemptKey
+      ? window.paperAttemptKey(user.id, paper.id)
+      : `paperAttempt.${user.id}.${paper.id}`;
     // Hoisted const values used inside hoisted render/helper functions —
     // declared up here to avoid temporal-dead-zone errors when those
     // functions execute (since they live below this dispatch).
