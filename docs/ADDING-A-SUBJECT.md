@@ -50,7 +50,7 @@ diagnostic and practice questions. Key files: `diagnostics/cs-ocr-alevel-diagnos
 |---|---|
 | Selectable | `subjects-config.js` — `subjects[]`, `boards{}` |
 | Diagnostic | `diagnostics/…-diagnostic.html` + `diagnostics-pages.js` |
-| Notes | `subject-notes/`, `notes-<subject>-<board>-<level>/`, `notes.html` (two maps) |
+| Notes | `subject-notes/`, `notes-<subject>-<board>-<level>/`, `notes.html` (two maps). Copy the `/* rag:mobile-overflow */` block from an existing notes page's `<style>` so tables and maths don't overflow phones |
 | Practice | `questions/<subject>/…-practice.js` + `practice-bank-config.js` |
 | Topics | `topics-config.js` — `DIAG_TOPICS` (emoji, colour, `examinedTotal`); read by `Dashboard.html`, `breakdown.html`, `medals.html` |
 | Flashcards | `flashcards-config.js` + a `flashcards-…-content.sql` |

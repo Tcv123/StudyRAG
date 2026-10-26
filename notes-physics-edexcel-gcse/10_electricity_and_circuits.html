@@ -26,6 +26,16 @@
     .worked::before { content: "Worked Example: "; font-weight: 700; color: #0f5132; }
     .eq { display: block; text-align: center; font-size: 1.1rem; padding: 10px 16px; margin: 10px 0; background: #f0f4ff; border-radius: 6px; border: 1px solid #cfd9ff; }
     @media print { body { padding: 20px; font-size: 11pt; } }
+/* rag:mobile-overflow */
+@media screen and (max-width: 700px) {
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+  pre, .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+  svg[viewBox], img { max-width: 100%; height: auto; }
+  .katex { position: relative; }
+  p:has(.katex), li:has(.katex), td:has(.katex) { overflow-x: auto; overflow-y: hidden; }
+  div:has(> .katex), div:has(> span > .katex) { overflow-x: auto; overflow-y: hidden; }
+  p, li, td { overflow-wrap: anywhere; }
+}
   </style>
 </head>
 <body>

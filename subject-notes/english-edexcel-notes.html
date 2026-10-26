@@ -102,6 +102,16 @@
     .empty-sub { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 320px; }
     .coming { display: inline-block; margin-left: 6px; padding: 1px 8px; border-radius: 10px; font-size: 9px; font-weight: 700; color: var(--amber); background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.3); letter-spacing: 0.04em; }
     @media (max-width: 768px) { .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; top: 0; left: 0; bottom: 0; } .sidebar.open { transform: translateX(0); } }
+/* rag:mobile-overflow */
+@media screen and (max-width: 700px) {
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+  pre, .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+  svg[viewBox], img { max-width: 100%; height: auto; }
+  .katex { position: relative; }
+  p:has(.katex), li:has(.katex), td:has(.katex) { overflow-x: auto; overflow-y: hidden; }
+  div:has(> .katex), div:has(> span > .katex) { overflow-x: auto; overflow-y: hidden; }
+  p, li, td { overflow-wrap: anywhere; }
+}
   </style>
 </head>
 <body>

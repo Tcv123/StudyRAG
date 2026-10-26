@@ -27,6 +27,16 @@
         .case::before { content: "Worked Example: "; font-weight: 700; color: #15803d; }
         code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
         @media print { body { padding: 20px; font-size: 11pt; } }
+/* rag:mobile-overflow */
+@media screen and (max-width: 700px) {
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+  pre, .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+  svg[viewBox], img { max-width: 100%; height: auto; }
+  .katex { position: relative; }
+  p:has(.katex), li:has(.katex), td:has(.katex) { overflow-x: auto; overflow-y: hidden; }
+  div:has(> .katex), div:has(> span > .katex) { overflow-x: auto; overflow-y: hidden; }
+  p, li, td { overflow-wrap: anywhere; }
+}
     </style>
 </head>
 <body>

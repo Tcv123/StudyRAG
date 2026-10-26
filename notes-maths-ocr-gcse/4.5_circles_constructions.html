@@ -35,6 +35,16 @@
         .theorem-card p { font-size: 0.9rem; margin-bottom: 6px; }
         .katex-display { margin: 16px 0; }
         @media print { body { padding: 20px; font-size: 11pt; } }
+/* rag:mobile-overflow */
+@media screen and (max-width: 700px) {
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+  pre, .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+  svg[viewBox], img { max-width: 100%; height: auto; }
+  .katex { position: relative; }
+  p:has(.katex), li:has(.katex), td:has(.katex) { overflow-x: auto; overflow-y: hidden; }
+  div:has(> .katex), div:has(> span > .katex) { overflow-x: auto; overflow-y: hidden; }
+  p, li, td { overflow-wrap: anywhere; }
+}
     </style>
 </head>
 <body>

@@ -71,7 +71,7 @@
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.nav-item').forEach(function (item) {
       item.addEventListener('click', function () {
-        if (window.innerWidth > 768) return;
+        if (window.innerWidth > 1023) return;   // drawer breakpoint in responsive.css
         var sidebar = document.querySelector('.sidebar');
         var overlay = document.querySelector('.mobile-overlay');
         if (sidebar) sidebar.classList.remove('open');

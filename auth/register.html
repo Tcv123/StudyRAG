@@ -126,8 +126,8 @@
     .consent { display: flex; align-items: flex-start; gap: 10px; font-size: 12.5px; line-height: 1.6;
                color: var(--muted, #6B87A8); cursor: pointer; text-transform: none; letter-spacing: normal;
                font-weight: 400; margin-bottom: 0; }
-    .consent input { width: 16px; height: 16px; margin-top: 1px; flex-shrink: 0; accent-color: var(--accent, #5BADCF); cursor: pointer; }
-    .consent a { color: var(--accent-dark, #3D95BC); }
+    .consent input { width: 16px; height: 16px; margin-top: 1px; flex-shrink: 0; accent-color: var(--accent, #2563EB); cursor: pointer; }
+    .consent a { color: var(--accent-dark, #1D4ED8); }
 
     /* ── ROLE PICKER ── */
     .role-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -141,7 +141,7 @@
       transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
     }
     .role-opt:hover { border-color: var(--border-hover); }
-    .role-opt input { position: absolute; opacity: 0; pointer-events: none; }
+    .role-opt input { position: absolute; top: 0; left: 0; width: 1px; height: 1px; margin: 0; opacity: 0; pointer-events: none; }
     .role-opt:has(input:checked) {
       border-color: var(--accent);
       background: var(--accent-dim);
@@ -648,7 +648,9 @@ form.onsubmit = async (e) => {
         first_name:   firstNameVal,
         last_name:    lastNameVal,
         account_type: accountType,
-        marketing_opt_in: document.getElementById('marketingOptIn').checked
+        marketing_opt_in: document.getElementById('marketingOptIn').checked,
+        // Survives the confirm-by-email-link route (new tab); see post-auth.js.
+        pending_plan: window.POST_AUTH?.pendingPlan() || null
       }
     }
   });

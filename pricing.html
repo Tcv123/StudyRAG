@@ -25,17 +25,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #EEF5FC;
+      --bg: #EAF2FC;
       --surface: #FFFFFF;
-      --surface2: #F4F9FE;
-      --border: #D2E5F3;
-      --border-hover: #93C4E2;
-      --text: #1B2D4F;
-      --muted: #6B87A8;
-      --accent: #5BADCF;
-      --accent-dark: #3D95BC;
-      --accent-dim: rgba(91,173,207,0.1);
-      --accent-glow: rgba(91,173,207,0.22);
+      --surface2: #F0F6FD;
+      --border: #B8D0E8;
+      --border-hover: #2563EB;
+      --text: #0B1E3F;
+      --muted: #445F85;
+      --accent: #2563EB;
+      --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1);
+      --accent-glow: rgba(37,99,235,0.22);
       --font-display: 'DM Serif Display', serif;
       --font-body: 'DM Sans', sans-serif;
     }
@@ -46,12 +46,12 @@
     body::before {
       content: ''; position: fixed; inset: 0;
       background-image:
-        linear-gradient(rgba(91,173,207,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(91,173,207,0.05) 1px, transparent 1px);
+        linear-gradient(rgba(37,99,235,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,0.05) 1px, transparent 1px);
       background-size: 48px 48px; pointer-events: none; z-index: 0;
     }
     .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; }
-    .orb-1 { width: 600px; height: 600px; background: rgba(91,173,207,0.12); top: -150px; left: -150px; }
+    .orb-1 { width: 600px; height: 600px; background: rgba(37,99,235,0.12); top: -150px; left: -150px; }
     .orb-2 { width: 400px; height: 400px; background: rgba(61,149,188,0.08); bottom: 100px; right: -100px; }
 
     .wrap { max-width: 960px; margin: 0 auto; padding: 0 32px; }
@@ -76,7 +76,7 @@
       display: flex; gap: 4px; align-items: center;
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 999px; padding: 5px;
-      box-shadow: 0 2px 10px rgba(91,173,207,0.06);
+      box-shadow: 0 2px 10px rgba(37,99,235,0.06);
       justify-self: center;
     }
     .nav-anchor {
@@ -110,7 +110,7 @@
     .pill {
       display: inline-flex; align-items: center; gap: 7px;
       padding: 5px 13px; border-radius: 20px;
-      background: var(--accent-dim); border: 1px solid rgba(91,173,207,0.28);
+      background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.28);
       font-size: 12px; font-weight: 500; color: var(--accent-dark);
       margin-bottom: 22px;
     }
@@ -136,7 +136,7 @@
       display: inline-flex; gap: 4px;
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 999px; padding: 5px;
-      box-shadow: 0 2px 10px rgba(91,173,207,0.06);
+      box-shadow: 0 2px 10px rgba(37,99,235,0.06);
     }
     .cycle-btn {
       background: transparent; border: none; cursor: pointer;
@@ -160,6 +160,20 @@
     @media (max-width: 520px) {
       .cycle-btn { padding: 8px 12px; font-size: 11.5px; }
     }
+    /* Phones: keep each label and its saving badge on one line, and let the
+       pill shrink to the screen instead of overflowing it. */
+    .cycle-btn, .cycle-save { white-space: nowrap; }
+    .billing-toggle { max-width: 100%; min-width: 0; }
+    .cycle-btn { min-width: 0; flex: 0 1 auto; }
+    @media (max-width: 400px) {
+      .billing-toggle { gap: 2px; padding: 4px; }
+      .cycle-btn { padding: 7px 9px; font-size: 11px; letter-spacing: 0.01em; gap: 4px; }
+      .cycle-save { font-size: 9.5px; padding: 2px 5px; letter-spacing: 0; }
+    }
+    @media (max-width: 340px) {
+      .cycle-btn { padding: 7px 7px; font-size: 10.5px; gap: 3px; }
+      .cycle-save { padding: 1px 4px; }
+    }
 
     .plan-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -169,10 +183,10 @@
     }
     .plan-card.pro {
       background:
-        radial-gradient(ellipse at 20% 0%, rgba(91,173,207,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 20% 0%, rgba(37,99,235,0.12) 0%, transparent 55%),
         linear-gradient(155deg, var(--surface) 0%, var(--card-glow-end, #F6FBFE) 100%);
       border-color: var(--border-hover);
-      box-shadow: 0 16px 48px rgba(91,173,207,0.18);
+      box-shadow: 0 16px 48px rgba(37,99,235,0.18);
     }
     .plan-card.pro::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
@@ -236,7 +250,7 @@
     }
     .cta-box::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% -10%, rgba(91,173,207,0.13) 0%, transparent 65%);
+      background: radial-gradient(ellipse at 50% -10%, rgba(37,99,235,0.13) 0%, transparent 65%);
       pointer-events: none;
     }
     .cta-box h2 { font-family: var(--font-display); font-size: clamp(28px, 3vw, 38px); letter-spacing: -0.02em; margin-bottom: 12px; position: relative; }
@@ -434,8 +448,8 @@
   const subEl     = document.getElementById('proPriceSub');
 
   function setPlan(plan) {
+    if (!Object.prototype.hasOwnProperty.call(PLAN_DETAILS, plan)) return;
     const details = PLAN_DETAILS[plan];
-    if (!details) return;
     amountEl.textContent = details.amount;
     periodEl.textContent = details.period;
     subEl.textContent    = details.sub;
@@ -451,7 +465,7 @@
 
   // ?plan=annual / ?plan=biannual deep link support
   const initialPlan = new URLSearchParams(location.search).get('plan');
-  if (initialPlan && PLAN_DETAILS[initialPlan]) setPlan(initialPlan);
+  if (initialPlan && Object.prototype.hasOwnProperty.call(PLAN_DETAILS, initialPlan)) setPlan(initialPlan);
 
   proCtaBtn.addEventListener('click', async () => {
     const plan = proCtaBtn.dataset.plan || 'monthly';

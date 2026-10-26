@@ -257,6 +257,14 @@
     }
     .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
     .mobile-overlay.active { display: block; }
+    /* Pro-lock overlay for free users */
+    .lock-overlay { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
+    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: var(--amber-text, #B45309); margin-bottom: 20px; }
+    .lock-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
+    .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
+    .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(217,119,6,0.25); }
+    .lock-btn:hover { transform: translateY(-1px); }
+
     @media (max-width: 768px) {
       .mobile-menu-btn { display: flex; }
       .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; height: 100vh; }
@@ -377,10 +385,9 @@ async function load() {
   const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
   if (authErr || !user) { window.location = 'auth/login.html'; return; }
 
-  const [{ data: profile }, { data: attempts, error: attErr }] = await Promise.all([
-    supabaseClient.from('profiles').select('first_name, last_name, avatar_url').eq('id', user.id).single(),
-    supabaseClient.from('practice_attempts').select('id, subject, exam_board, topic, topic_name, earned, total_marks, pct, questions, answered, time_used_sec, timed_out, details, taken_at').eq('user_id', user.id).order('taken_at', { ascending: false })
-  ]);
+  const { data: profile } = await supabaseClient
+    .from('profiles').select('first_name, last_name, avatar_url, subscription_tier, subscription_status, subscription_expires_at')
+    .eq('id', user.id).single();
 
   const firstName = profile?.first_name || '';
   const lastName = profile?.last_name || '';
@@ -395,6 +402,31 @@ async function load() {
     }
   });
   document.getElementById('avatarInitials').textContent = ((firstName[0] || '') + (lastName[0] || '')).toUpperCase() || '?';
+
+  // Pro gate — free users see the upsell, not their saved test reviews.
+  const tier = profile?.subscription_tier || 'free';
+  const status = profile?.subscription_status || 'active';
+  const expires = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+  const isPro = tier !== 'free'
+    && ['active','trialing'].includes(status)
+    && (!expires || expires > new Date());
+  if (!isPro) {
+    document.querySelectorAll('.stats-row, .filter-row').forEach(el => { el.style.display = 'none'; });
+    document.getElementById('listWrap').innerHTML = `
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div class="lock-title">Test history is a Pro feature</div>
+        <div class="lock-msg">
+          Upgrade to review every practice test you've taken — the exact questions,
+          the answers you wrote and the mark scheme side by side.
+        </div>
+        <a class="lock-btn" href="pricing-app.html">✦ Upgrade to Pro</a>
+      </div>`;
+    return;
+  }
+
+  const { data: attempts, error: attErr } = await supabaseClient
+    .from('practice_attempts').select('id, subject, exam_board, topic, topic_name, earned, total_marks, pct, questions, answered, time_used_sec, timed_out, details, taken_at').eq('user_id', user.id).order('taken_at', { ascending: false });
 
   if (attErr) {
     console.warn('Failed to load practice attempts', attErr);

@@ -528,7 +528,8 @@ const DEMO = new URLSearchParams(location.search).get('demo') === '1';
 
   if (!isPro(profile)) { renderLock(); return; }
 
-  await loadData();
+  try { await loadData(); }
+  catch (err) { renderLoadError(err); return; }
 
   if (!hasPrefs(profile)) {
     renderIntro();
@@ -651,15 +652,39 @@ async function loadData() {
       .select('subject,exam_board,emoji,rag_status')
       .eq('user_id', user.id),
     supabaseClient.from('topic_progress')
-      .select('subject,topic,rag_status')
+      .select('subject,exam_board,topic,rag_status')
       .eq('user_id', user.id),
     supabaseClient.from('revision_sessions')
       .select('*')
       .eq('user_id', user.id),
   ]);
+  // A failed read must not masquerade as "No subjects yet" — the caller
+  // shows an error state with a retry instead.
+  const failed = [subjRes, progRes, sessRes].find(r => r && r.error);
+  if (failed) throw failed.error;
   subjects = subjRes.data || [];
-  progress = progRes.data || [];
+  // Only rank progress for subjects the student still takes: rows for a
+  // subject (or board) they removed linger in topic_progress.
+  const norm = v => String(v || '').trim().toLowerCase();
+  const current = new Set(subjects.map(s => `${norm(s.subject)}|${norm(s.exam_board)}`));
+  progress = (progRes.data || []).filter(p => current.has(`${norm(p.subject)}|${norm(p.exam_board)}`));
   sessions = sessRes.data || [];
+}
+
+function renderLoadError(err) {
+  console.error('[revision-timetable] failed to load data:', err);
+  document.getElementById('pageBody').innerHTML = `
+    <div class="empty-state">
+      <div class="lock-icon">⚠️</div>
+      <div class="lock-title">Couldn't load your timetable</div>
+      <div class="lock-msg">Something went wrong reading your subjects and sessions. Check your connection and try again.</div>
+      <button type="button" class="lock-btn" id="rtRetryBtn" style="border:0;cursor:pointer;">↻ Retry</button>
+    </div>`;
+  document.getElementById('rtRetryBtn').onclick = async () => {
+    try { await loadData(); }
+    catch (e) { renderLoadError(e); return; }
+    if (!hasPrefs(profile)) renderIntro(); else renderPage();
+  };
 }
 
 // ── render ─────────────────────────────────────────────────────

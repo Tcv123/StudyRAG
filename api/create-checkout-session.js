@@ -1,5 +1,6 @@
 const Stripe = require('stripe');
 const { createClient } = require('@supabase/supabase-js');
+const { siteOrigin } = require('./_site-origin');
 
 const stripe = new Stripe((process.env.STRIPE_SECRET_KEY || '').trim(), { apiVersion: '2025-02-24.acacia' });
 
@@ -172,7 +173,8 @@ module.exports = async function handler(req, res) {
         ? Math.floor(compEnds.getTime() / 1000)
         : null;
 
-    const origin = req.headers.origin || `https://${req.headers.host}`;
+    // Allowlisted: the Origin header is caller-controlled. See _site-origin.js.
+    const origin = siteOrigin(req);
 
     const sessionParams = {
       mode: 'subscription',

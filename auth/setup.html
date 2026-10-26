@@ -13,6 +13,7 @@
   <script src="../topics-config.js"></script>
   <script src="../supabase-config.js"></script>
   <script src="../subjects-config.js"></script>
+  <script src="post-auth.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -111,6 +112,17 @@
     }
 
     .p-line.done { background: var(--accent); }
+
+    /* Phones: four labelled steps do not fit, so only the current step keeps
+       its label; the others collapse to their numbered circle. */
+    @media (max-width: 560px) {
+      .progress-wrap { margin-bottom: 28px; }
+      .p-step { gap: 6px; min-width: 0; }
+      .p-step:not(.active) .p-label { display: none; }
+      .p-step.active { flex: 0 1 auto; }
+      .p-step.active .p-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .p-line { margin: 0 8px; min-width: 12px; }
+    }
 
     /* ── CARD ── */
     .card {
@@ -1192,7 +1204,8 @@ async function save() {
     return;
   }
 
-  window.location = '../Dashboard.html';
+  // A plan chosen on the pricing page before sign-up resumes here.
+  window.location = (window.POST_AUTH && POST_AUTH.takePendingPlanUrl('../')) || '../Dashboard.html';
 }
 
 // ── Guard + pre-populate existing subjects ───────────────────────────────

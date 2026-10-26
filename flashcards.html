@@ -77,7 +77,7 @@
     .lock-btn:hover { transform: translateY(-1px); }
 
     /* Subject grid — same visual as notes.html */
-    .subjects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .subjects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 16px; }
     .subject-card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 24px; transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 16px; position: relative; overflow: hidden; }
     .subject-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-dark)); opacity: 0; transition: opacity 0.15s; }
     .subject-card.available:hover { border-color: var(--border-hover); box-shadow: 0 6px 24px rgba(37,99,235,0.14); transform: translateY(-2px); }
@@ -86,9 +86,9 @@
     .card-top { display: flex; align-items: center; gap: 14px; }
     .card-emoji { width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2); display: flex; align-items: center; justify-content: center; font-size: 24px; }
     .card-info { flex: 1; min-width: 0; }
-    .card-name { font-size: 17px; font-weight: 600; font-family: var(--font-display); letter-spacing: -0.01em; }
-    .card-board { font-size: 12px; color: var(--muted); margin-top: 3px; }
-    .card-status { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .card-name { font-size: 17px; font-weight: 600; font-family: var(--font-display); letter-spacing: -0.01em; overflow-wrap: break-word; }
+    .card-board { font-size: 12px; color: var(--muted); margin-top: 3px; overflow-wrap: break-word; }
+    .card-status { max-width: 100%; display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
     .status-available { background: rgba(22,163,74,0.08); border: 1px solid rgba(22,163,74,0.2); color: var(--green-text, #15803D); }
     .status-empty { background: rgba(148,163,184,0.1); border: 1px solid rgba(148,163,184,0.25); color: var(--muted); }
     .status-soon { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); }
@@ -248,6 +248,8 @@ async function load() {
     av.replaceChildren(img);
   }
 
+  if (profile?.level) { try { localStorage.setItem('cached_level', profile.level); } catch (e) {} }
+
   // Pro gate — free users see lock screen, not the subject grid.
   const tier = profile?.subscription_tier || 'free';
   const status = profile?.subscription_status || 'active';
@@ -299,7 +301,9 @@ async function load() {
   // don't bleed into each other when topic IDs collide.
   // Use head:true count queries (one per subject) — fetching all rows hit
   // Supabase's 1000-row cap and silently zeroed out subjects beyond it.
-  const dbLevel = window.levelSuffix();
+  // Level comes from the profile; cached_level is only a fallback for when
+  // the profile read failed.
+  const dbLevel = profile?.level ? window.levelSuffix(profile.level) : window.levelSuffix();
   const counts = {};
   await Promise.all(list.map(async s => {
     const { count } = await supabaseClient

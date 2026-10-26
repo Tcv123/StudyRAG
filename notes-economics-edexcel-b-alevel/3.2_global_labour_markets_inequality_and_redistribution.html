@@ -30,6 +30,16 @@ tr:nth-child(even) { background: #f8fafc; }
 .diagram-caption { font-size: 0.9rem; color: #555; margin-top: 10px; font-style: italic; }
 .eval-box { background: #faf5ff; border-left: 4px solid #8b5cf6; padding: 16px 20px; border-radius: 6px; margin: 16px 0; }
 .eq { text-align: center; font-size: 1.15rem; margin: 14px 0; font-family: "Cambria Math", "Times New Roman", serif; background: #f1f5f9; padding: 10px; border-radius: 6px; }
+/* rag:mobile-overflow */
+@media screen and (max-width: 700px) {
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+  pre, .katex-display { overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+  svg[viewBox], img { max-width: 100%; height: auto; }
+  .katex { position: relative; }
+  p:has(.katex), li:has(.katex), td:has(.katex) { overflow-x: auto; overflow-y: hidden; }
+  div:has(> .katex), div:has(> span > .katex) { overflow-x: auto; overflow-y: hidden; }
+  p, li, td { overflow-wrap: anywhere; }
+}
 </style>
 </head>
 <body>
